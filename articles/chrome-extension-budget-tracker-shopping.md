@@ -3,6 +3,7 @@ layout: default
 title: "Chrome Extension Budget Tracker Shopping"
 description: "Discover the best Chrome extensions for tracking your shopping budget, saving money on online purchases, and managing expenses while browsing"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /chrome-extension-budget-tracker-shopping/
 reviewed: true
@@ -238,14 +239,15 @@ if (price !== null) {
 }
 ```
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
+## Related Articles
+
 - [AI Presentation Maker Chrome Extension](/ai-tools-compared/ai-presentation-maker-chrome-extension/)
+- [AI Research Assistant Chrome Extension](/ai-tools-compared/ai-research-assistant-chrome-extension/)
 - [AI Summarizer Chrome Extension: A Developer Guide](/ai-tools-compared/ai-summarizer-chrome-extension/)
-- [Building an AI Research Assistant Chrome Extension: A.](/ai-tools-compared/ai-research-assistant-chrome-extension/)
+- [AI Tab Organizer Chrome Extension: Managing Browser Tabs](/ai-tools-compared/ai-tab-organizer-chrome-extension/)
+- [Screen Sharing Chrome Extension](/ai-tools-compared/screen-sharing-chrome-extension/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

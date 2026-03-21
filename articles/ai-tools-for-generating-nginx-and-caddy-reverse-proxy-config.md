@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Generating Nginx and Caddy Reverse Proxy Config"
 description: "AI tools have become remarkably capable at generating reverse proxy configurations for both Nginx and Caddy. Whether you need a quick development setup or a"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "theluckystrike"
 permalink: /ai-tools-for-generating-nginx-and-caddy-reverse-proxy-config/
 reviewed: true
@@ -238,13 +239,14 @@ AI tools produce reliable configurations, but they cannot account for your speci
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Optimize Your AI Coding Tool Configuration for Specific Project Types](/ai-tools-compared/how-to-optimize-your-ai-coding-tool-configuration-for-specif/)
-- [ChatGPT vs Claude for Writing Nginx Reverse Proxy.](/ai-tools-compared/chatgpt-vs-claude-for-writing-nginx-reverse-proxy-configurat/)
-- [Best AI Video Editor 2026: A Developer's Guide to Intelligent Video Production](/ai-tools-compared/best-ai-video-editor-2026/)
+
+## Related Articles
+
+- [ChatGPT vs Claude for Writing Nginx Reverse Proxy Configurat](/ai-tools-compared/chatgpt-vs-claude-for-writing-nginx-reverse-proxy-configurat/)
+- [Census vs HighTouch Reverse ETL AI: A Practical](/ai-tools-compared/census-vs-hightouch-reverse-etl-ai/)
+- [Configuring Cursor AI to Work with Corporate VPN and Proxy](/ai-tools-compared/configuring-cursor-ai-to-work-with-corporate-vpn-and-proxy-a/)
+- [AI Tools for Writing Nginx Configurations 2026](/ai-tools-compared/ai-tools-for-writing-nginx-configurations-2026/)
+- [Best Practices for AI Tool Project Config When Switching](/ai-tools-compared/best-practices-for-ai-tool-project-config-when-switching-between-multiple-client-projects/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

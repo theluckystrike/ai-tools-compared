@@ -3,6 +3,7 @@ layout: default
 title: "Cursor AI with Claude vs GPT Models: Which Gives Better Code"
 description: "A practical comparison of Claude and GPT models in Cursor AI for code completion. Learn which model excels at different coding tasks"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /cursor-ai-with-claude-vs-gpt-models-which-gives-better-code-/
 categories: [guides]
@@ -373,14 +374,15 @@ cursor.setModel("claude-3-5-sonnet") // Switches to Claude
 cursor.setModel("gpt-4o")              // Switches to GPT-4o
 ```
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Cursor AI: Switching Between Claude and GPT Models —.](/ai-tools-compared/cursor-ai-switching-between-claude-and-gpt-models-extra-cost/)
-- [Which AI Tool Is Better for Writing CircleCI Config YAML.](/ai-tools-compared/which-ai-tool-is-better-for-writing-circleci-config-yaml-fil/)
-- [Which AI Is Better for Writing gRPC Protobuf Service.](/ai-tools-compared/which-ai-is-better-for-writing-grpc-protobuf-service-definitions/)
+
+## Related Articles
+
+- [Cursor AI Switching Between Claude and GPT Models Extra Cost](/ai-tools-compared/cursor-ai-switching-between-claude-and-gpt-models-extra-cost/)
+- [Claude Sonnet vs GPT-4o for Code Generation: Practical](/ai-tools-compared/claude-sonnet-vs-gpt-4o-for-code-generation/)
+- [Claude Sonnet vs GPT-4o for Code Review Accuracy Comparison](/ai-tools-compared/claude-sonnet-vs-gpt-4o-for-code-review-accuracy-comparison-2026/)
+- [Switching from GPT-4o to Claude Sonnet for Code Review.](/ai-tools-compared/switching-from-gpt-4o-to-claude-sonnet-for-code-review-which/)
+- [Cursor Free Plan vs Windsurf Free Plan Which Gives More](/ai-tools-compared/cursor-free-plan-vs-windsurf-free-plan-which-gives-more/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

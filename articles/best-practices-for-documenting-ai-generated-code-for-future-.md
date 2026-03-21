@@ -3,6 +3,7 @@ layout: default
 title: "Best Practices for Documenting AI-Generated Code for Future"
 description: "Learn essential strategies for documenting AI-generated code to ensure long-term maintainability and team collaboration"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /best-practices-for-documenting-ai-generated-code-for-future-/
 categories: [guides]
@@ -271,14 +272,15 @@ This separation helps developers understand what they can safely regenerate vers
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best Practices for Combining AI Code Generation with.](/ai-tools-compared/best-practices-for-combining-ai-code-generation-with-manual-code-review/)
-- [Best Practices for Keeping AI Coding Suggestions Aligned.](/ai-tools-compared/best-practices-for-keeping-ai-coding-suggestions-aligned-with-design-patterns/)
-- [How to Get AI Code Suggestions That Follow Your Project Naming Conventions](/ai-tools-compared/how-to-get-ai-code-suggestions-that-follow-your-project-naming-conventions/)
+
+## Related Articles
+
+- [Cursor AI Apply Model How It Merges Generated Code into Exis](/ai-tools-compared/cursor-ai-apply-model-how-it-merges-generated-code-into-exis/)
+- [Effective Strategies for Reviewing AI Generated Code Before](/ai-tools-compared/effective-strategies-for-reviewing-ai-generated-code-before-committing-to-repo/)
+- [Best Practices for AI Assisted Code Review Response and Revi](/ai-tools-compared/best-practices-for-ai-assisted-code-review-response-and-revi/)
+- [Best Practices for Combining AI Code Generation](/ai-tools-compared/best-practices-for-combining-ai-code-generation-with-manual-code-review/)
+- [How to Export Dall E Generated Images at Full Resolution](/ai-tools-compared/how-to-export-dall-e-generated-images-at-full-resolution-before-leaving/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

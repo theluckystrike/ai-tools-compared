@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI for Writing Effective Runbooks and Incident"
 description: "A practical guide for developers and power users on using AI tools to create clear, actionable runbooks and incident response playbooks"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-for-writing-effective-runbooks-and-incident-playbooks/
 categories: [guides]
@@ -426,14 +427,15 @@ Build runbook improvement into your incident workflow:
 
 This creates a continuous feedback loop that improves runbooks with each incident.
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Use AI for Writing Effective Runbooks and.](/ai-tools-compared/how-to-use-ai-for-writing-effective-runbooks-and-incident-pl/)
-- [How to Use AI for Writing Effective SLI and SLO.](/ai-tools-compared/how-to-use-ai-for-writing-effective-sli-slo-definitions-for-services/)
-- [Best AI for Writing Good First Issue Descriptions That.](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attra/)
+
+## Related Articles
+
+- [How to Use AI for Writing Effective Runbooks and Incident](/ai-tools-compared/how-to-use-ai-for-writing-effective-runbooks-and-incident-pl/)
+- [Best AI Tools for Writing Ansible Playbooks and Roles](/ai-tools-compared/best-ai-tools-for-writing-ansible-playbooks-and-roles-automatically/)
+- [ChatGPT vs Claude for Writing Effective Celery Task Error](/ai-tools-compared/chatgpt-vs-claude-for-writing-effective-celery-task-error-ha/)
+- [How to Use AI for Writing Effective Prometheus Recording Rul](/ai-tools-compared/how-to-use-ai-for-writing-effective-prometheus-recording-rul/)
+- [How to Use AI for Writing Effective Sli Slo Definitions](/ai-tools-compared/how-to-use-ai-for-writing-effective-sli-slo-definitions-for-services/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

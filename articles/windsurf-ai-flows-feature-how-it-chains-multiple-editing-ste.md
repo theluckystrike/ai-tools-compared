@@ -3,6 +3,7 @@ layout: default
 title: "Windsurf AI Flows Feature How It Chains Multiple Editing Ste"
 description: "A practical guide to Windsurf AI Flows, explaining how to chain multiple editing steps for automated code workflows"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /windsurf-ai-flows-feature-how-it-chains-multiple-editing-ste/
 categories: [guides]
@@ -438,14 +439,15 @@ jobs:
           gh pr create --title "Automated code improvements"
 ```
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Cursor AI Multi-File Editing Feature: How It Actually.](/ai-tools-compared/cursor-ai-multi-file-editing-feature-how-it-actually-works-explained/)
-- [Cursor Multi-File Edit Breaking Code Fix (2026)](/ai-tools-compared/cursor-multi-file-edit-breaking-code-fix-2026/)
-- [Windsurf Cascade vs Cursor Composer: Multi-File AI.](/ai-tools-compared/windsurf-cascade-vs-cursor-composer-multi-file-ai-editing-co/)
+
+## Related Articles
+
+- [Cursor AI Multi File Editing Feature How It Actually Works](/ai-tools-compared/cursor-ai-multi-file-editing-feature-how-it-actually-works-explained/)
+- [Windsurf Cascade vs Cursor Composer: Multi-File AI Editing](/ai-tools-compared/windsurf-cascade-vs-cursor-composer-multi-file-ai-editing-co/)
+- [Best AI for Learning OAuth2 and OIDC Authentication Flows](/ai-tools-compared/best-ai-for-learning-oauth2-and-oidc-authentication-flows-wi/)
+- [How to Chain Multiple AI Tools Together for Full Stack Devel](/ai-tools-compared/how-to-chain-multiple-ai-tools-together-for-full-stack-devel/)
+- [How to Manage AI Coding Context Across Multiple Related Repo](/ai-tools-compared/how-to-manage-ai-coding-context-across-multiple-related-repo/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

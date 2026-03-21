@@ -3,6 +3,7 @@ layout: default
 title: "Best AI Tools for Code Migration Between Languages 2026"
 description: "Compare AI tools for migrating code between programming languages. Covers Python to Rust, Java to Kotlin, JS to TypeScript with Claude, GPT-4, and Gemini"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /best-ai-tools-for-code-migration-between-languages-2026/
 categories: [guides]
@@ -489,8 +490,14 @@ jobs:
           fi
 ```
 
-## Related Reading
 
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
+## Related Articles
+
+- [AI Code Completion for Java Jakarta EE Migration from Javax](/ai-tools-compared/ai-code-completion-for-java-jakarta-ee-migration-from-javax-/)
+- [Best AI Tools for Code Migration Python 2](/ai-tools-compared/best-ai-tools-for-code-migration-python-2-to-3-java-8-to-21-guide/)
+- [How to Use AI for Automated Code Migration](/ai-tools-compared/how-to-use-ai-for-automated-code-migration/)
+- [AI-Powered Database Migration Tools Comparison 2026](/ai-tools-compared/ai-powered-database-migration-tools-comparison/)
+- [AI Tools for Writing pytest Tests for Alembic Database](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

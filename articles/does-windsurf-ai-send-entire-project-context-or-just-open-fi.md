@@ -3,6 +3,7 @@ layout: default
 title: "Does WindSurf AI Send Entire Project Context or Just Open"
 description: "A technical breakdown of how WindSurf AI handles context management, what gets sent to servers, and practical implications for developers concerned"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /does-windsurf-ai-send-entire-project-context-or-just-open-fi/
 categories: [guides]
@@ -357,14 +358,15 @@ For compliance purposes, maintain records of:
 
 This documentation helps with security reviews and regulatory compliance.
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Does Claude Code Send Terminal Output to Anthropic Servers? Privacy Analysis](/ai-tools-compared/does-claude-code-send-terminal-output-to-anthropic-servers-p/)
-- [AI Code Generation for Java Virtual Threads: Project.](/ai-tools-compared/ai-code-generation-for-java-virtual-threads-project-loom-pat/)
-- [Best AI Tools for Go Project Structure and Module.](/ai-tools-compared/best-ai-tools-for-go-project-structure-and-module-organization/)
+
+## Related Articles
+
+- [Cheapest AI Tool for Generating an Entire Project](/ai-tools-compared/cheapest-ai-tool-for-generating-entire-project-from-description/)
+- [Cheapest AI Tool for Generating Entire Project](/ai-tools-compared/cheapest-ai-tool-for-generating-entire-project-from-description/)
+- [Best AI Assistant for Creating Open Source Project Branding](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)
+- [Best AI for Creating Open Source Project Architecture Docume](/ai-tools-compared/best-ai-for-creating-open-source-project-architecture-docume/)
+- [Switching from Windsurf to Cursor How to Transfer Project](/ai-tools-compared/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

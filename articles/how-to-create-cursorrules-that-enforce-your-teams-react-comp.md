@@ -3,6 +3,7 @@ layout: default
 title: "How to Create .cursorrules That Enforce Your Teams React"
 description: "Learn how to write Cursorules that enforce consistent React component composition patterns across your team. Practical examples and code snippets included"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-cursorrules-that-enforce-your-teams-react-comp/
 categories: [guides]
@@ -280,11 +281,15 @@ interface ButtonProps {
 ```
 
 
-## Related Reading
 
-- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
-- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
-- [AI Tools Hub](/guides-hub/)
+
+## Related Articles
+
+- [Create CursorRules That Enforce Your Team's Git Commit](/ai-tools-compared/how-to-create-cursorrules-that-enforce-your-teams-git-commit/)
+- [Create CursorRules That Teach Cursor Your Team's State](/ai-tools-compared/how-to-create-cursorrules-that-teach-cursor-your-teams-state/)
+- [Writing Effective CursorRules for React TypeScript Projects](/ai-tools-compared/writing-effective-cursorrules-for-react-typescript-projects-/)
+- [How to Use AI to Help Devrel Teams Create Video Tutorial Scr](/ai-tools-compared/how-to-use-ai-to-help-devrel-teams-create-video-tutorial-scr/)
+- [How to Use AI to Help Sre Teams Create on Call Handoff Docum](/ai-tools-compared/how-to-use-ai-to-help-sre-teams-create-on-call-handoff-docum/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

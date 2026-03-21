@@ -3,6 +3,7 @@ layout: default
 title: "Effective AI Coding Workflow for Building Features from Prod"
 description: "A practical workflow for developers using AI to transform product requirements documents into functional code. Learn step-by-step processes with real"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /effective-ai-coding-workflow-for-building-features-from-prod/
 categories: [guides, workflows]
@@ -263,13 +264,14 @@ Building features from product requirements documents doesn't have to be a painf
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Effective Context Management Strategies for AI Coding in.](/ai-tools-compared/effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/)
-- [Effective Workflow for Using AI to Generate and Maintain.](/ai-tools-compared/effective-workflow-for-using-ai-to-generate-and-maintain-changelog-documentation/)
-- [Writing Effective System Prompts for AI Coding.](/ai-tools-compared/writing-effective-system-prompts-for-ai-coding-assistants-th/)
+
+## Related Articles
+
+- [Effective Tool Chaining Workflow Using Copilot and Claude](/ai-tools-compared/effective-tool-chaining-workflow-using-copilot-and-claude-together-for-coding/)
+- [Effective Workflow for AI-Assisted Open Source Contribution](/ai-tools-compared/effective-workflow-for-ai-assisted-open-source-contribution-/)
+- [Effective Workflow for Using AI](/ai-tools-compared/effective-workflow-for-using-ai-to-debug-production-issues-from-logs/)
+- [Effective Workflow for Using AI](/ai-tools-compared/effective-workflow-for-using-ai-to-generate-and-maintain-changelog-documentation/)
+- [Effective Context Management Strategies for AI Coding](/ai-tools-compared/effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

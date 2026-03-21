@@ -3,6 +3,7 @@ layout: default
 title: "Claude vs ChatGPT for Creating AWS CDK Infrastructure Stacks"
 description: "A practical comparison of Claude and ChatGPT for building AWS CDK infrastructure stacks in Python, with code examples and recommendations"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /claude-vs-chatgpt-for-creating-aws-cdk-infrastructure-stacks/
 categories: [comparisons]
@@ -347,11 +348,15 @@ For CDK development specifically, both tools handle the basics well. The differe
 
 
 
-## Related Reading
 
-- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
-- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
-- [AI Tools Hub](/guides-hub/)
+
+## Related Articles
+
+- [Best AI Tools for Writing AWS CDK Infrastructure Code](/ai-tools-compared/best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/)
+- [ChatGPT vs Claude for Creating Database Migration Scripts](/ai-tools-compared/chatgpt-vs-claude-for-creating-database-migration-scripts-po/)
+- [ChatGPT vs Claude for Creating OpenAPI Spec from Existing](/ai-tools-compared/chatgpt-vs-claude-for-creating-openapi-spec-from-existing-co/)
+- [Claude vs Gpt4 Terraform Pulumi Infrastructure Code](/ai-tools-compared/claude-vs-gpt4-terraform-pulumi-infrastructure-code-2026/)
+- [AI Assistants for Writing Correct AWS IAM Policies](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -3,6 +3,7 @@ layout: default
 title: "Migrate Windsurf AI Rules to Cursor Dot Cursor Rules Format"
 description: "A practical guide to converting WindSurf AI rules to Cursor's .cursorrules format, with step-by-step instructions, code examples, and common pitfalls to avoid"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/
 categories: [guides]
@@ -292,10 +293,14 @@ Another pitfall is not updating rules when project requirements change. Your.cur
 Finally, remember that.cursorrules is project-specific. If you work on multiple projects with different coding standards, you will need separate.cursorrules files for each. Unlike some global settings, project-specific rules live in each project's root directory.
 
 
-## Related Reading
 
-- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
-- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
-- [AI Tools Hub](/guides-hub/)
+
+## Related Articles
+
+- [How to Migrate Cursor Rules File](/ai-tools-compared/migrate-cursor-rules-file-to-windsurf-rules-format-guide/)
+- [How to Migrate Cursor AI Snippets and Templates](/ai-tools-compared/migrate-cursor-ai-snippets-and-templates-to-windsurf-editor/)
+- [Migrate ChatGPT System Prompts](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-format/)
+- [Cursor AI Rules Files How to Customize AI Behavior](/ai-tools-compared/cursor-ai-rules-files-how-to-customize-ai-behavior-for-your-project/)
+- [How to Configure Cursor AI Rules for Consistent CSS and Tail](/ai-tools-compared/how-to-configure-cursor-ai-rules-for-consistent-css-and-tail/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

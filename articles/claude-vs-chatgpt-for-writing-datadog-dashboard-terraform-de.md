@@ -3,6 +3,7 @@ layout: default
 title: "Claude vs ChatGPT for Writing Datadog Dashboard Terraform"
 description: "A practical comparison of Claude and ChatGPT for creating Datadog dashboard Terraform configurations. Includes code examples and performance benchmarks"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /claude-vs-chatgpt-for-writing-datadog-dashboard-terraform-de/
 categories: [guides]
@@ -267,14 +268,15 @@ terraform {
 ```
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [ChatGPT vs Claude for Generating Pydantic Models from.](/ai-tools-compared/chatgpt-vs-claude-for-generating-pydantic-models-from-json-s/)
-- [Copilot vs Claude Code for Writing Jest.](/ai-tools-compared/copilot-vs-claude-code-for-writing--jest-test-s/)
-- [ChatGPT vs Claude for Generating Cypress Component Test.](/ai-tools-compared/chatgpt-vs-claude-for-generating-cypress-component-test-boil/)
+
+## Related Articles
+
+- [Best AI Tools for Writing Datadog Monitoring Queries and](/ai-tools-compared/best-ai-tools-for-writing-datadog-monitoring-queries-and-dashboards/)
+- [ChatGPT vs Claude for Writing API Documentation](/ai-tools-compared/chatgpt-vs-claude-for-writing-api-documentation/)
+- [ChatGPT vs Claude for Writing Cold Outreach Emails to Saas](/ai-tools-compared/chatgpt-vs-claude-for-writing-cold-outreach-emails-to-saas-f/)
+- [ChatGPT vs Claude for Writing Effective Celery Task Error](/ai-tools-compared/chatgpt-vs-claude-for-writing-effective-celery-task-error-ha/)
+- [ChatGPT vs Claude for Writing Nginx Reverse Proxy Configurat](/ai-tools-compared/chatgpt-vs-claude-for-writing-nginx-reverse-proxy-configurat/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

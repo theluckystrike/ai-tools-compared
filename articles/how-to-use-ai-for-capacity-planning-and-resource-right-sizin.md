@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI for Capacity Planning and Resource Right Sizin"
 description: "A practical guide for developers and power users on using AI to optimize infrastructure capacity planning and resource allocation across cloud"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-for-capacity-planning-and-resource-right-sizin/
 categories: [guides]
@@ -239,14 +240,15 @@ Start with baseline measurements before implementing AI predictions, then compar
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [AI Tools for Monitoring Kubernetes Cluster Health and.](/ai-tools-compared/ai-tools-for-monitoring-kubernetes-cluster-health-and-auto-remediation/)
-- [Best Practices for Sharing AI Tool Configuration Files Across Distributed Engineering Teams](/ai-tools-compared/best-practices-for-sharing-ai-tool-configuration-files-acros/)
-- [Best AI Tools for Cloud Resource Tagging Compliance.](/ai-tools-compared/best-ai-tools-for-cloud-resource-tagging-compliance-automati/)
+
+## Related Articles
+
+- [How to Use AI for Cloud Migration Planning and Dependency](/ai-tools-compared/how-to-use-ai-for-cloud-migration-planning-and-dependency-ma/)
+- [How to Use AI to Create Milestone Planning Documents](/ai-tools-compared/how-to-use-ai-to-create-milestone-planning-documents-from-is/)
+- [Best AI Tools for Cloud Resource Tagging Compliance](/ai-tools-compared/best-ai-tools-for-cloud-resource-tagging-compliance-automati/)
+- [Best AI Tools for Writing Kubernetes Custom Resource](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-custom-resource-definitions-2026/)
+- [Comparing AI Tools for Generating Retool Resource.](/ai-tools-compared/comparing-ai-tools-for-generating-retool-resource-queries-fr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

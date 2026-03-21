@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI Coding Assistants Effectively with Trunk Based"
 description: "A practical guide for developers integrating AI coding assistants into trunk-based development workflows. Learn strategies for maintaining fast"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-coding-assistants-effectively-with-trunk-based/
 categories: [guides]
@@ -306,13 +307,14 @@ Track these metrics to ensure your AI-assisted trunk workflow is working:
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [AI Coding Assistants for TypeScript GraphQL Resolver and.](/ai-tools-compared/ai-coding-assistants-for-typescript-graphql-resolver-and-schema-generation-2026/)
-- [AI Coding Assistants for TypeScript Express Middleware.](/ai-tools-compared/ai-coding-assistants-for-typescript-express-middleware-chain/)
-- [How to Use AI Coding Tools Effectively During Live.](/ai-tools-compared/how-to-use-ai-coding-tools-effectively-during-live-coding-interviews-2026/)
+
+## Related Articles
+
+- [How to Use AI Coding Tools Effectively During Live Coding](/ai-tools-compared/how-to-use-ai-coding-tools-effectively-during-live-coding-interviews-2026/)
+- [AI Coding Assistants for Go Testing Table Driven Tests Gener](/ai-tools-compared/ai-coding-assistants-for-go-testing-table-driven-tests-gener/)
+- [AI Coding Assistants for Typescript Deno Fresh Framework Com](/ai-tools-compared/ai-coding-assistants-for-typescript-deno-fresh-framework-com/)
+- [AI Coding Assistants for TypeScript Express Middleware Chain](/ai-tools-compared/ai-coding-assistants-for-typescript-express-middleware-chain/)
+- [AI Coding Assistants for Typescript Graphql Resolver and](/ai-tools-compared/ai-coding-assistants-for-typescript-graphql-resolver-and-schema-generation-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

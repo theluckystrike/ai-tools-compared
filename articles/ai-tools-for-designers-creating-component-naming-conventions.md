@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Designers Creating Component Naming Conventions"
 description: "AI tools can automatically generate consistent component naming conventions from your design system tokens by analyzing token structure, understanding semantic"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-designers-creating-component-naming-conventions/
 categories: [guides]
@@ -283,13 +284,14 @@ Iterate on prompts based on initial results. Adjust context, provide more exampl
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [AI Tools for Creating Realistic Test Datasets That.](/ai-tools-compared/ai-tools-for-creating-realistic-test-datasets-that-preserve-/)
-- [How to Create Custom Instructions for AI Coding Tools That Enforce Naming Conventions](/ai-tools-compared/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
-- [Best AI Assistant for Creating Open Source Project.](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)
+
+## Related Articles
+
+- [AI Coding Assistant Accuracy for TypeScript Svelte Component](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-svelte-component/)
+- [AI Coding Assistant Comparison for React Component](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
+- [ChatGPT vs Claude for Generating Cypress Component Test Boil](/ai-tools-compared/chatgpt-vs-claude-for-generating-cypress-component-test-boil/)
+- [How to Use AI to Generate Component Diagrams from React](/ai-tools-compared/how-to-use-ai-to-generate-component-diagrams-from-react-or-v/)
+- [How to Use AI to Generate Jest Component Tests with Testing](/ai-tools-compared/how-to-use-ai-to-generate-jest-component-tests-with-testing-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

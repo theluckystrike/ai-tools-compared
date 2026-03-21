@@ -3,6 +3,7 @@ layout: default
 title: "Configuring Claude Code to Understand Your Teams Pull Reques"
 description: "A practical guide for developers on configuring Claude Code to understand and enforce your team's pull request review checklist for consistent code quality"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /configuring-claude-code-to-understand-your-teams-pull-reques/
 categories: [guides]
@@ -424,13 +425,14 @@ Configure Claude to reduce false positives in its review:
 - Deprecation warnings on transitional code during refactors
 ```
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best Way to Configure Claude Code to Understand Your Internal Library APIs 2026](/ai-tools-compared/best-way-to-configure-claude-code-to-understand-your-interna/)
-- [Claude Code Semantic Versioning Automation: A Complete Guide](/ai-tools-compared/claude-code-semantic-versioning-automation/)
-- [How to Configure Claude Code Project Memory for.](/ai-tools-compared/how-to-configure-claude-code-project-memory-for-persistent-c/)
+
+## Related Articles
+
+- [Best Way to Configure Claude Code to Understand Your Interna](/ai-tools-compared/best-way-to-configure-claude-code-to-understand-your-interna/)
+- [Configuring AI Coding Tools to Follow Your Teams Dependency](/ai-tools-compared/configuring-ai-coding-tools-to-follow-your-teams-dependency-/)
+- [Configuring AI Coding Tools to Match Your Teams Specific Doc](/ai-tools-compared/configuring-ai-coding-tools-to-match-your-teams-specific-doc/)
+- [Configure Claude Code](/ai-tools-compared/how-to-configure-claude-code-to-follow-your-teams-feature-fl/)
+- [How to Structure Project Files So AI Coding Tools Understand](/ai-tools-compared/how-to-structure-project-files-so-ai-coding-tools-understand/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

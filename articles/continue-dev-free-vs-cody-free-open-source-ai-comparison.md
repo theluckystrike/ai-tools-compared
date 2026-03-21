@@ -3,6 +3,7 @@ layout: default
 title: "Continue Dev Free vs Cody Free: Open Source AI Comparison"
 description: "A practical comparison of Continue Dev Free and Cody Free for open source AI coding assistance. Features, limitations, and code examples for developers"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /continue-dev-free-vs-cody-free-open-source-ai-comparison/
 categories: [guides]
@@ -250,13 +251,14 @@ For pure open source enthusiasts, Continue Dev's commitment to open source (the 
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Cheapest Way to Get AI Autocomplete in Neovim 2026](/ai-tools-compared/cheapest-way-to-get-ai-autocomplete-in-neovim-2026/)
-- [Cheapest AI Tool With GPT-4 Level Code Generation 2026](/ai-tools-compared/cheapest-ai-tool-with-gpt-4-level-code-generation-2026/)
-- [Cheapest AI Tool for Generating Entire Project From.](/ai-tools-compared/cheapest-ai-tool-for-generating-entire-project-from-description/)
+
+## Related Articles
+
+- [Continue Dev vs GitHub Copilot: Open Source Comparison](/ai-tools-compared/continue-dev-vs-github-copilot-open-source-comparison/)
+- [How to Maximize GitHub Copilot Free Tier for Open Source](/ai-tools-compared/how-to-maximize-github-copilot-free-tier-for-open-source/)
+- [AI Tools for Analyzing Which Open Source Issues Would Benefi](/ai-tools-compared/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
+- [Best AI Assistant for Creating Open Source Project Branding](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)
+- [Best AI Assistant for Drafting Open Source Partnership and](/ai-tools-compared/best-ai-assistant-for-drafting-open-source-partnership-and-integration-proposals-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

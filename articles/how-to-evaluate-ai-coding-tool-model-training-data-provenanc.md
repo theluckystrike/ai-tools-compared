@@ -3,6 +3,7 @@ layout: default
 title: "How to Evaluate AI Coding Tool Model Training Data Provenanc"
 description: "A practical guide for developers and power users to assess AI coding tool training data sources, understand copyright implications, and mitigate legal"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-evaluate-ai-coding-tool-model-training-data-provenanc/
 categories: [guides]
@@ -271,13 +272,14 @@ As AI coding tools become more prevalent, this evaluation process will likely be
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Evaluate AI Coding Tool Encryption Standards for.](/ai-tools-compared/how-to-evaluate-ai-coding-tool-encryption-standards-for-data/)
-- [How to Evaluate AI Coding Tool Data Processing.](/ai-tools-compared/how-to-evaluate-ai-coding-tool-data-processing-agreements-be/)
-- [AI Coding Assistant Data Sovereignty Requirements for.](/ai-tools-compared/ai-coding-assistant-data-sovereignty-requirements-for-companies-operating-in-eu-2026/)
+
+## Related Articles
+
+- [How to Evaluate AI Coding Tool Data Processing Agreements](/ai-tools-compared/how-to-evaluate-ai-coding-tool-data-processing-agreements-be/)
+- [How to Evaluate AI Coding Tool Encryption Standards for Data](/ai-tools-compared/how-to-evaluate-ai-coding-tool-encryption-standards-for-data/)
+- [Cursor AI Model Selection Guide Which Model for Which Coding](/ai-tools-compared/cursor-ai-model-selection-guide-which-model-for-which-coding/)
+- [ChatGPT API Fine Tuning Costs Training Plus Inference Total](/ai-tools-compared/chatgpt-api-fine-tuning-costs-training-plus-inference-total-estimate/)
+- [AI Coding Assistant Data Sovereignty Requirements](/ai-tools-compared/ai-coding-assistant-data-sovereignty-requirements-for-companies-operating-in-eu-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

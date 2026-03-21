@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI to Generate Contributor Hall of Fame Pages Fro"
 description: "Recognizing contributors is essential for open source projects. A contributor hall of fame showcases the people who have invested time and effort into making"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-contributor-hall-of-fame-pages-fro/
 categories: [guides]
@@ -289,12 +290,15 @@ When using AI to generate hall of fame content, keep these considerations in min
 
 
 
-## Related Reading
 
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Generate Mermaid Sequence Diagrams from API Endpoint Descriptions Using AI](/ai-tools-compared/how-to-generate-mermaid-sequence-diagrams-from-api-endpoint-descriptions-using-ai/)
-- [How to Use AI to Generate Component Diagrams from React.](/ai-tools-compared/how-to-use-ai-to-generate-component-diagrams-from-react-or-v/)
-- [How to Use AI to Generate Activity Diagrams from User.](/ai-tools-compared/how-to-use-ai-to-generate-activity-diagrams-from-user-acceptance-criteria/)
+
+## Related Articles
+
+- [AI Tools for Generating Coloring Book Pages Compared](/ai-tools-compared/ai-tools-for-generating-coloring-book-pages-compared/)
+- [AI Tools for Generating Contributor License Agreement Explan](/ai-tools-compared/ai-tools-for-generating-contributor-license-agreement-explan/)
+- [AI Tools for Generating Grafana Dashboard JSON Templates Fro](/ai-tools-compared/ai-tools-for-generating-grafana-dashboard-json-templates-fro/)
+- [AI Tools for Generating pandas Merge and Join Operations Fro](/ai-tools-compared/ai-tools-for-generating-pandas-merge-and-join-operations-fro/)
+- [Best AI Assistant for Building Superset Dashboard Charts Fro](/ai-tools-compared/best-ai-assistant-for-building-superset-dashboard-charts-fro/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

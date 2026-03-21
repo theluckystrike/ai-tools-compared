@@ -3,6 +3,7 @@ layout: default
 title: Best AI Tools for Writing SQL Migrations in 2026
 description: Compare top AI tools and code assistants for generating, testing, and optimizing SQL migration scripts using Flyway, Alembic, and Prisma frameworks.
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence]
@@ -456,13 +457,14 @@ AI generates syntax correctly but may miss:
 
 **Use DataGrip AI if:** You focus on query optimization and work in JetBrains IDEs. Cost: $15/month.
 
-## Related Reading
 
-- [guides-hub: Database Migration Strategies](https://zovo.one/guides-hub)
-- [guides-hub: SQL Performance Optimization](https://zovo.one/guides-hub)
-- [guides-hub: Database Testing Frameworks](https://zovo.one/guides-hub)
-- [guides-hub: Version Control for Data](https://zovo.one/guides-hub)
 
----
+## Related Articles
+
+- [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
+- [Best AI for Writing dbt Macros That Generate Dynamic SQL Bas](/ai-tools-compared/best-ai-for-writing-dbt-macros-that-generate-dynamic-sql-bas/)
+- [Best AI for Writing SQL Performance Tuning Recommendations](/ai-tools-compared/best-ai-for-writing-sql-performance-tuning-recommendations-f/)
+- [Copilot vs Claude Code for Writing Complex SQL Stored Proced](/ai-tools-compared/copilot-vs-claude-code-for-writing-complex-sql-stored-proced/)
+- [Gemini vs ChatGPT for Writing BigQuery SQL Window Functions](/ai-tools-compared/gemini-vs-chatgpt-for-writing-bigquery-sql-window-functions-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -3,6 +3,7 @@ layout: default
 title: "Continue Dev vs GitHub Copilot: Open Source Comparison"
 description: "A practical comparison of Continue Dev and GitHub Copilot for developers. Learn about features, pricing, privacy, and which AI coding assistant fits"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /continue-dev-vs-github-copilot-open-source-comparison/
 reviewed: true
@@ -237,10 +238,14 @@ Choose **GitHub Copilot** if you:
 
 
 
-## Related Reading
 
-- [ChatGPT vs Claude for Creative Storytelling Compared](/ai-tools-compared/chatgpt-vs-claude-for-creative-storytelling-compared/)
-- [Aider vs Claude Code: Terminal AI Coding Assistants Compared](/ai-tools-compared/aider-vs-claude-code-terminal-ai-comparison/)
-- [AI Coding Assistant for Rust Developers Compared](/ai-tools-compared/ai-coding-assistant-for-rust-developers-compared/)
+
+## Related Articles
+
+- [Continue Dev Free vs Cody Free: Open Source AI Comparison](/ai-tools-compared/continue-dev-free-vs-cody-free-open-source-ai-comparison/)
+- [How to Maximize GitHub Copilot Free Tier for Open Source](/ai-tools-compared/how-to-maximize-github-copilot-free-tier-for-open-source/)
+- [Copilot Code Referencing Feature: How It Handles Open Source](/ai-tools-compared/copilot-code-referencing-feature-how-it-handles-open-source-/)
+- [AI Tools for Analyzing Which Open Source Issues Would Benefi](/ai-tools-compared/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
+- [Best AI Assistant for Creating Open Source Project Branding](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

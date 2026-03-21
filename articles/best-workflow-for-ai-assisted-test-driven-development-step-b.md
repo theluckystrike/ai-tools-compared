@@ -3,6 +3,7 @@ layout: default
 title: "Best Workflow for AI-Assisted Test Driven Development Step"
 description: "A practical step-by-step workflow for implementing AI-assisted test driven development in your projects, with real code examples and expert"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /best-workflow-for-ai-assisted-test-driven-development-step-b/
 categories: [guides]
@@ -258,13 +259,14 @@ As you mature with AI TDD, use advanced prompt techniques:
 ---
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Effective Workflow for AI-Assisted Open Source.](/ai-tools-compared/effective-workflow-for-ai-assisted-open-source-contribution-/)
-- [How to Use AI to Generate Jest Integration Tests for.](/ai-tools-compared/how-to-use-ai-to-generate-jest-integration-tests-for-express/)
-- [How to Use AI to Write pytest Parametrize Test Cases for.](/ai-tools-compared/how-to-use-ai-to-write-pytest-parametrize-test-cases-for-edge-conditions/)
+
+## Related Articles
+
+- [Effective Workflow for AI-Assisted Open Source Contribution](/ai-tools-compared/effective-workflow-for-ai-assisted-open-source-contribution-/)
+- [AI Tools for Qa Engineers Generating Data Driven Test Scenar](/ai-tools-compared/ai-tools-for-qa-engineers-generating-data-driven-test-scenar/)
+- [AI Coding Assistants for Go Testing Table Driven Tests Gener](/ai-tools-compared/ai-coding-assistants-for-go-testing-table-driven-tests-gener/)
+- [How to Use AI to Help Product Managers Write Data-Driven Fea](/ai-tools-compared/how-to-use-ai-to-help-product-managers-write-data-driven-fea/)
+- [AI-Assisted API Load Testing Tools Comparison 2026](/ai-tools-compared/ai-assisted-api-load-testing-tools-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

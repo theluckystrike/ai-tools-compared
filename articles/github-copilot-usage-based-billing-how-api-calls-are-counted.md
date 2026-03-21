@@ -3,6 +3,7 @@ layout: default
 title: "GitHub Copilot Usage Based Billing How API Calls Are Counted"
 description: "GitHub Copilot's usage-based billing counts API calls by measuring prompt tokens (your code context) and completion tokens (generated suggestions) rather than"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /github-copilot-usage-based-billing-how-api-calls-are-counted/
 categories: [guides]
@@ -328,13 +329,14 @@ Try usage-based for one month, track your consumption, then decide based on actu
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [GitHub Copilot Free Tier Hidden Limits You Should Know 2026](/ai-tools-compared/github-copilot-free-tier-hidden-limits-you-should-know-2026/)
-- [Cursor Pro Usage Cap: How Many Requests Per Day in 2026](/ai-tools-compared/cursor-pro-usage-cap-how-many-requests-per-day-2026/)
-- [Copilot vs Claude Code for Writing Jest.](/ai-tools-compared/copilot-vs-claude-code-for-writing--jest-test-s/)
+
+## Related Articles
+
+- [GitHub Copilot Billing Error Troubleshoot 2026: Complete](/ai-tools-compared/github-copilot-billing-error-troubleshoot-2026/)
+- [Cursor AI Making Too Many API Calls Fix: Troubleshooting](/ai-tools-compared/cursor-ai-making-too-many-api-calls-fix/)
+- [Best Practices for Writing GitHub Copilot Custom Instruction](/ai-tools-compared/best-practices-for-writing-github-copilot-custom-instruction/)
+- [Completely Free Alternatives to GitHub Copilot That Actually](/ai-tools-compared/completely-free-alternatives-to-github-copilot-that-actually/)
+- [Continue Dev vs GitHub Copilot: Open Source Comparison](/ai-tools-compared/continue-dev-vs-github-copilot-open-source-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

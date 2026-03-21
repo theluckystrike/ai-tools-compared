@@ -3,6 +3,7 @@ layout: default
 title: "AI Debugging Assistants Compared 2026"
 description: "Compare AI debugging tools in 2026: Claude Code, Cursor, Copilot Chat, and Pieces. Real error scenarios, stack trace analysis, and time-to-fix benchmarks."
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: /ai-debugging-assistants-compared-2026/
 categories: [guides]
@@ -293,13 +294,15 @@ Do any two functions acquire locks in opposite order? If so, explain the deadloc
 
 Then reuse these templates across the team with file-specific code substituted.
 
-## Related Reading
 
-- [AI Pair Programming Cursor vs Windsurf vs Claude Code 2026](/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
-- [AI Powered Log Analysis Tools for Production Debugging](/ai-powered-log-analysis-tools-for-production-debugging-compa/)
-- [AI Code Review Automation Tools Comparison](/ai-code-review-automation-tools-comparison/)
 
----
+## Related Articles
+
+- [AI Powered Log Analysis Tools for Production Debugging](/ai-tools-compared/ai-powered-log-analysis-tools-for-production-debugging-compa/)
+- [AI Tools for Debugging CSS Media Query Breakpoints Not Match](/ai-tools-compared/ai-tools-for-debugging-css-media-query-breakpoints-not-match/)
+- [AI Tools for Debugging Flaky Cypress Tests Caused by Timing](/ai-tools-compared/ai-tools-for-debugging-flaky-cypress-tests-caused-by-timing-issues/)
+- [AI Tools for Debugging iOS Autolayout Constraint Conflict Wa](/ai-tools-compared/ai-tools-for-debugging-ios-autolayout-constraint-conflict-wa/)
+- [AI Tools for Debugging Postgres Query Planner Choosing Wrong](/ai-tools-compared/ai-tools-for-debugging-postgres-query-planner-choosing-wrong/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

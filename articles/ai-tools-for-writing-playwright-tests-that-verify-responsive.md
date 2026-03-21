@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Writing Playwright Tests That Verify Responsive"
 description: "A practical comparison of AI coding tools for generating Playwright tests that validate responsive design breakpoints, media queries, and layout"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-writing-playwright-tests-that-verify-responsive/
 categories: [guides]
@@ -356,14 +357,15 @@ For CI/CD integrated test generation: Aider provides efficient terminal-based wo
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [AI Tools for Writing Playwright Tests That Verify Toast.](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-toast-noti/)
-- [AI Tools for Writing Playwright Tests That Verify Accessibility WCAG Compliance Automatically](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-accessibil/)
-- [Best AI Assistant for Creating Jest Tests That Verify.](/ai-tools-compared/best-ai-assistant-for-creating-jest-tests-that-verify-error-/)
+
+## Related Articles
+
+- [AI Tools for Writing Playwright Tests That Verify Accessibil](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-accessibil/)
+- [AI Tools for Writing Playwright Tests That Verify Toast Noti](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-toast-noti/)
+- [Best AI Assistant for Writing Playwright Tests](/ai-tools-compared/best-ai-assistant-for-writing-playwright-tests-for-drag-and-drop-interactions-2026/)
+- [Best AI for Writing Playwright Tests That Handle Dynamic Loa](/ai-tools-compared/best-ai-for-writing-playwright-tests-that-handle-dynamic-loa/)
+- [Best AI Tools for Writing Playwright E2E Tests 2026](/ai-tools-compared/best-ai-tools-for-writing-playwright-e2e-tests-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

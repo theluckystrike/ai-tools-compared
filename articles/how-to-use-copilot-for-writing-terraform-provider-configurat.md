@@ -3,6 +3,7 @@ layout: default
 title: "How to Use Copilot for Writing Terraform Provider Configurat"
 description: "Learn practical techniques for using GitHub Copilot to write Terraform provider configurations faster with less manual reference hunting. Includes real"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-copilot-for-writing-terraform-provider-configurat/
 categories: [guides]
@@ -311,13 +312,14 @@ Keep `variables.tf`, `locals.tf`, and any existing `providers.tf` open in separa
 **Does Copilot generate secure configurations by default?**
 Not always. Copilot optimizes for common patterns, which sometimes means suggesting overly permissive IAM roles or skipping encryption flags. Always review generated configurations against your security baseline before applying.
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Copilot vs Cursor for Writing Clean Prisma Schema with.](/ai-tools-compared/copilot-vs-cursor-for-writing-clean-prisma-schema-with-relat/)
+
+## Related Articles
+
+- [AI Tools for Interpreting Terraform Plan Errors](/ai-tools-compared/ai-tools-for-interpreting-terraform-plan-errors-with-provider-version-conflicts/)
 - [Copilot vs Cursor for Writing Terraform Modules from Scratch](/ai-tools-compared/copilot-vs-cursor-for-writing-terraform-modules-from-scratch/)
-- [Copilot vs Cursor for Writing Rust Error Handling with.](/ai-tools-compared/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
+- [ChatGPT vs Claude for Writing Nginx Reverse Proxy Configurat](/ai-tools-compared/chatgpt-vs-claude-for-writing-nginx-reverse-proxy-configurat/)
+- [AI Tools for Writing Terraform Infrastructure-as-Code](/ai-tools-compared/ai-tools-for-writing-terraform-infrastructure-as-code-comparison-2026/)
+- [Best AI Tools for Writing Terraform Modules 2026](/ai-tools-compared/best-ai-tools-for-writing-terraform-modules-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

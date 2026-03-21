@@ -3,6 +3,7 @@ layout: default
 title: "Claude Code Shift Left Testing Strategy Guide"
 description: "A practical guide to implementing shift left testing strategy using Claude Code CLI, with examples for catching bugs earlier in the development cycle"
 date: 2026-03-17
+last_modified_at: 2026-03-17
 author: theluckystrike
 permalink: /claude-code-shift-left-testing-strategy-guide/
 reviewed: true
@@ -419,13 +420,14 @@ Track these metrics to evaluate your shift left testing implementation:
 6. **Continuous refinement:** Adjust prompts based on results
 7. **Integrate systematically:** Embed shift left into workflows, not as optional add-on
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
+## Related Articles
+
 - [Claude Code API Snapshot Testing Guide](/ai-tools-compared/claude-code-api-snapshot-testing-guide/)
-- [Claude Code Parallel Testing Configuration - Complete.](/ai-tools-compared/claude-code-parallel-testing-configuration/)
-- [Claude Code Java Library Development Guide](/ai-tools-compared/claude-code-java-library-development-guide/)
+- [Claude Code Parallel Testing Configuration - Complete](/ai-tools-compared/claude-code-parallel-testing-configuration/)
+- [Claude Code Screen Reader Testing Workflow](/ai-tools-compared/claude-code-screen-reader-testing-workflow/)
+- [Claude Code SDK Testing Workflow Guide](/ai-tools-compared/claude-code-sdk-testing-workflow-guide/)
+- [Writing CLAUDE MD Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

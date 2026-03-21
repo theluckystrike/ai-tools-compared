@@ -3,6 +3,7 @@ layout: default
 title: "Claude vs ChatGPT for Refactoring Legacy Java Code to Kotlin"
 description: "A practical comparison of Claude and ChatGPT for converting legacy Java code to Kotlin. See real code examples and performance benchmarks"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/
 categories: [guides]
@@ -273,14 +274,15 @@ For large-scale migrations, I recommend starting with Claude and establishing co
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [ChatGPT vs Claude for Writing Cold Outreach Emails to.](/ai-tools-compared/chatgpt-vs-claude-for-writing-cold-outreach-emails-to-saas-f/)
-- [Copilot vs Claude Code for Scaffolding New Django REST.](/ai-tools-compared/copilot-vs-claude-code-for-scaffolding-new-django-rest-frame/)
-- [Copilot vs Claude Code for Writing Complex SQL Stored Procedures](/ai-tools-compared/copilot-vs-claude-code-for-writing-complex-sql-stored-proced/)
+
+## Related Articles
+
+- [Claude Code vs Cursor for Large Codebase Refactoring](/ai-tools-compared/claude-code-vs-cursor-for-large-codebase-refactoring/)
+- [Best AI Tools for Migrating Legacy Java to Modern Frameworks](/ai-tools-compared/best-ai-tools-for-migrating-legacy-java-to-modern-frameworks/)
+- [Claude Code Java Library Development Guide](/ai-tools-compared/claude-code-java-library-development-guide/)
+- [Free AI Tools for Code Refactoring That Actually Improve Qua](/ai-tools-compared/free-ai-tools-for-code-refactoring-that-actually-improve-qua/)
+- [Best AI Tools for Generating Unit Tests](/ai-tools-compared/best-ai-tools-for-generating-unit-tests-from-legacy-code-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -3,6 +3,7 @@ layout: default
 title: "Claude Code for Taint Analysis Workflow Tutorial Guide"
 description: "Learn how to use Claude Code to implement taint analysis in your development workflow. This guide covers static analysis setup, tracking untrusted data"
 date: 2026-03-18
+last_modified_at: 2026-03-18
 author: "theluckystrike"
 permalink: /claude-code-for-taint-analysis-workflow-tutorial-guide/
 categories: [guides, tutorials]
@@ -278,11 +279,15 @@ To maximize the effectiveness of your taint analysis implementation, follow thes
 5. Educate your team: Use Claude Code's explanations to help developers understand security concepts and remediation strategies.
 
 
-## Related Reading
 
-- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
-- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
-- [AI Tools Hub](/guides-hub/)
+
+## Related Articles
+
+- [Claude Code for Memory Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-memory-profiling-workflow-tutorial/)
+- [Claude Code for Node.js Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-nodejs-profiling-workflow-tutorial/)
+- [Claude Code Screen Reader Testing Workflow](/ai-tools-compared/claude-code-screen-reader-testing-workflow/)
+- [Claude Code SDK Testing Workflow Guide](/ai-tools-compared/claude-code-sdk-testing-workflow-guide/)
+- [Effective Tool Chaining Workflow Using Copilot and Claude](/ai-tools-compared/effective-tool-chaining-workflow-using-copilot-and-claude-together-for-coding/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

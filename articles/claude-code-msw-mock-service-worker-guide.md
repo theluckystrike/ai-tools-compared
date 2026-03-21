@@ -3,6 +3,7 @@ layout: default
 title: "Claude Code MSW Mock Service Worker Guide"
 description: "A guide to using MSW (Mock Service Worker) with Claude Code for API mocking in development workflows. Learn setup, configuration, and best practices"
 date: 2026-03-18
+last_modified_at: 2026-03-18
 author: theluckystrike
 permalink: /claude-code-msw-mock-service-worker-guide/
 categories: [guides]
@@ -240,11 +241,15 @@ Third, version your mock definitions alongside your API contracts. When your bac
 Finally, use MSW's request matching capabilities to create dynamic responses based on query parameters, headers, or request body content. This flexibility allows you to test complex scenarios without creating multiple handler variants.
 
 
-## Related Reading
 
-- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
-- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
-- [AI Tools Hub](/guides-hub/)
+
+## Related Articles
+
+- [AI Tools for Writing Jest Tests for Web Worker and Service](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-web-worker-and-service-w/)
+- [AI Tools for Generating API Mock Servers 2026](/ai-tools-compared/ai-tools-for-generating-api-mock-servers-2026/)
+- [AI Tools for Generating Jest Mock Implementations for Comple](/ai-tools-compared/ai-tools-for-generating-jest-mock-implementations-for-comple/)
+- [Cursor vs Windsurf for Building Next Js App from Design Mock](/ai-tools-compared/cursor-vs-windsurf-for-building-next-js-app-from-design-mock/)
+- [AI Tools for Generating Kubernetes Service Mesh](/ai-tools-compared/ai-tools-for-generating-kubernetes-service-mesh-configuratio/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

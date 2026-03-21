@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI to Debug Flaky Integration Tests in CI Pipelin"
 description: "A practical guide for developers to use AI tools for identifying, diagnosing, and fixing flaky integration tests in continuous integration"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-debug-flaky-integration-tests-in-ci-pipelin/
 categories: [guides]
@@ -278,13 +279,14 @@ def db_connection():
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [AI Tools for Debugging Flaky Cypress Tests Caused by Timing Issues](/ai-tools-compared/ai-tools-for-debugging-flaky-cypress-tests-caused-by-timing-issues/)
-- [Effective Workflow for Using AI to Debug Production.](/ai-tools-compared/effective-workflow-for-using-ai-to-debug-production-issues-from-logs/)
-- [How to Use AI to Generate Pagination Edge Case Tests for.](/ai-tools-compared/how-to-use-ai-to-generate-pagination-edge-case-tests-for-api/)
+
+## Related Articles
+
+- [AI Tools for Debugging Flaky Cypress Tests Caused by Timing](/ai-tools-compared/ai-tools-for-debugging-flaky-cypress-tests-caused-by-timing-issues/)
+- [How to Use AI to Generate Jest Integration Tests for Express](/ai-tools-compared/how-to-use-ai-to-generate-jest-integration-tests-for-express/)
+- [Claude Code Profiler Integration Guide](/ai-tools-compared/claude-code-profiler-integration-guide/)
+- [Cursor Git Integration Broken How to Fix](/ai-tools-compared/cursor-git-integration-broken-how-to-fix/)
+- [Effective Workflow for Using AI](/ai-tools-compared/effective-workflow-for-using-ai-to-debug-production-issues-from-logs/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

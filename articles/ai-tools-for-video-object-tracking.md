@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Video Object Tracking"
 description: "A practical guide to AI-powered video object tracking tools for developers, with code examples and implementation recommendations"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-video-object-tracking/
 categories: [guides]
@@ -240,13 +241,14 @@ The ecosystem continues evolving rapidly. Newer approaches like OC-SORT and MOTR
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
+## Related Articles
+
+- [Best AI Tools for Order Tracking Support](/ai-tools-compared/best-ai-tools-for-order-tracking-support/)
+- [How to Use AI to Practice Object-Oriented Design Interview](/ai-tools-compared/how-to-use-ai-to-practice-object-oriented-design-interview-q/)
+- [AI Tools for Video Accessibility Features](/ai-tools-compared/ai-tools-for-video-accessibility-features/)
+- [AI Tools for Video Color Grading](/ai-tools-compared/ai-tools-for-video-color-grading/)
 - [AI Tools for Video Compression: A Developer Guide](/ai-tools-compared/ai-tools-for-video-compression/)
-- [Best AI Writing Assistant for Freelance Writers 2026](/ai-tools-compared/best-ai-writing-assistant-for-freelance-writers-2026/)
-- [AI Tools for Video Color Grading: A Practical Guide for Developers](/ai-tools-compared/ai-tools-for-video-color-grading/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

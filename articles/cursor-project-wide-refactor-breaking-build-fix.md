@@ -3,6 +3,7 @@ layout: default
 title: "Cursor Project-Wide Refactor Breaking Build Fix"
 description: "Troubleshooting guide for fixing build errors after using Cursor's project-wide refactor feature. Step-by-step diagnostics and solutions for developers"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /cursor-project-wide-refactor-breaking-build-fix/
 reviewed: true
@@ -359,13 +360,14 @@ Avoid future build breaks with these practices:
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Troubleshooting Hub](/ai-tools-compared/troubleshooting-hub/)
-- [Cursor AI Slow on Large Monorepo Fix (2026)](/ai-tools-compared/cursor-ai-slow-on-large-monorepo-fix-2026/)
+
+## Related Articles
+
 - [Cursor Multi-File Edit Breaking Code Fix (2026)](/ai-tools-compared/cursor-multi-file-edit-breaking-code-fix-2026/)
-- [Cursor Extensions Conflicting with AI Fix.](/ai-tools-compared/cursor-extensions-conflicting-with-ai-fix/)
+- [Configuring Cursor AI Notepads for Reusable Project Context](/ai-tools-compared/configuring-cursor-ai-notepads-for-reusable-project-context-/)
+- [Switching from Windsurf to Cursor How to Transfer Project](/ai-tools-compared/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
+- [Copilot Business Org-Wide Enable: Cost If Not All Devs Use](/ai-tools-compared/copilot-business-org-wide-enable-cost-if-not-all-devs-use-it/)
+- [How to Use AI Inline Chat to Refactor Single Function Step](/ai-tools-compared/how-to-use-ai-inline-chat-to-refactor-single-function-step-by-step/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

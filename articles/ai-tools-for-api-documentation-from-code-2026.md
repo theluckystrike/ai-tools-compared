@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for API Documentation from Code 2026"
 description: "Compare AI tools that generate API docs from code in 2026: Mintlify Writer, Swimm, Speakeasy, and LLMs. OpenAPI spec generation, accuracy, and maintenance workflow."
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: /ai-tools-for-api-documentation-from-code-2026/
 categories: [guides]
@@ -345,13 +346,15 @@ For a 50-endpoint API:
 - **Claude direct:** 50 min at ~$0.50 total cost
 - **Swimm:** Setup takes time, pays off when docs change frequently
 
-## Related Reading
 
-- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-for-automated-api-documentation-from-code-comments/)
-- [ChatGPT vs Claude for Writing API Documentation](/chatgpt-vs-claude-for-writing-api-documentation/)
-- [ChatGPT vs Claude for Creating OpenAPI Spec from Existing Code](/chatgpt-vs-claude-for-creating-openapi-spec-from-existing-co/)
 
----
+## Related Articles
+
+- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)
+- [Best AI Tools for Generating API Documentation From Code](/ai-tools-compared/best-ai-tools-for-generating-api-documentation-from-code-2026/)
+- [Best AI for Generating API Reference Documentation from Jsdo](/ai-tools-compared/best-ai-for-generating-api-reference-documentation-from-jsdo/)
+- [ChatGPT vs Claude for Writing API Documentation](/ai-tools-compared/chatgpt-vs-claude-for-writing-api-documentation/)
+- [Claude vs ChatGPT for Converting REST API Documentation](/ai-tools-compared/claude-vs-chatgpt-for-converting-rest-api-documentation-to-g/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

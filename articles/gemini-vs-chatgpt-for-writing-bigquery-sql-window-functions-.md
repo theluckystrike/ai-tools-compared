@@ -3,6 +3,7 @@ layout: default
 title: "Gemini vs ChatGPT for Writing BigQuery SQL Window Functions"
 description: "A practical comparison of Gemini and ChatGPT for writing BigQuery SQL window functions. Learn which AI tool handles complex SQL patterns better"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /gemini-vs-chatgpt-for-writing-bigquery-sql-window-functions-/
 categories: [comparisons]
@@ -438,13 +439,14 @@ Choose based on your specific needs:
 | Cost optimization | Similar | Similar |
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Comparisons Hub](/ai-tools-compared/comparisons-hub/)
-- [ChatGPT vs Claude for Creating Database Migration.](/ai-tools-compared/chatgpt-vs-claude-for-creating-database-migration-scripts-po/)
-- [Gemini vs ChatGPT for Writing Google Cloud Function.](/ai-tools-compared/gemini-vs-chatgpt-for-writing-google-cloud-function-deployme/)
-- [Switching from ChatGPT Voice to Gemini Live: Conversation Differences](/ai-tools-compared/switching-from-chatgpt-voice-to-gemini-live-conversation-differences/)
+
+## Related Articles
+
+- [Gemini vs ChatGPT for Writing Google Cloud Function Deployme](/ai-tools-compared/gemini-vs-chatgpt-for-writing-google-cloud-function-deployme/)
+- [ChatGPT vs Gemini for Generating Tailwind CSS from Hand Draw](/ai-tools-compared/chatgpt-vs-gemini-for-generating-tailwind-css-from-hand-draw/)
+- [Gemini Advanced vs ChatGPT Plus Price Per Feature Comparison](/ai-tools-compared/gemini-advanced-vs-chatgpt-plus-price-per-feature-comparison-2026/)
+- [Gemini vs ChatGPT for Translating Python Data Pipelines](/ai-tools-compared/gemini-vs-chatgpt-for-translating-python-data-pipelines-to-rust/)
+- [Switching from ChatGPT Voice to Gemini Live Conversation](/ai-tools-compared/switching-from-chatgpt-voice-to-gemini-live-conversation-differences/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

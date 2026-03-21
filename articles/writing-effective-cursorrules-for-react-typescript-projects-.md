@@ -3,6 +3,7 @@ layout: default
 title: "Writing Effective CursorRules for React TypeScript Projects"
 description: "A practical guide to creating CursorRules that handle React TypeScript component patterns, custom hooks, and state management effectively"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /writing-effective-cursorrules-for-react-typescript-projects-/
 categories: [guides]
@@ -361,14 +362,15 @@ Specify testing library preferences, mock patterns, and what should be tested ve
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Writing CursorRules for Golang Projects with Specific.](/ai-tools-compared/writing-cursorrules-for-golang-projects-with-specific-concur/)
-- [Best Practices for Writing Cursorrules File That.](/ai-tools-compared/best-practices-for-writing-cursorrules-file-that-improves-co/)
-- [Writing Effective CursorRules for Next.js App Router.](/ai-tools-compared/writing-effective-cursorrules-for-nextjs-app-router-project-with-specific-file-conventions/)
+
+## Related Articles
+
+- [Writing CursorRules for Golang Projects with Specific Concur](/ai-tools-compared/writing-cursorrules-for-golang-projects-with-specific-concur/)
+- [Writing Effective .cursorrules for Next.js App Router](/ai-tools-compared/writing-effective-cursorrules-for-nextjs-app-router-project-with-specific-file-conventions/)
+- [How to Create .cursorrules That Enforce Your Teams React](/ai-tools-compared/how-to-create-cursorrules-that-enforce-your-teams-react-comp/)
+- [Copilot vs Codeium for TypeScript Projects 2026](/ai-tools-compared/copilot-vs-codeium-for-typescript-projects-2026/)
+- [Best Practices for Writing .cursorrules File That Improves](/ai-tools-compared/best-practices-for-writing-cursorrules-file-that-improves-co/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

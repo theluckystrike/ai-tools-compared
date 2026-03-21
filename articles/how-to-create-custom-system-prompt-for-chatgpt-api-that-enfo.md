@@ -3,6 +3,7 @@ layout: default
 title: "How to Create Custom System Prompt for ChatGPT API That Enfo"
 description: "Custom system prompts give you control over how the ChatGPT API behaves in your applications. When you need consistent code output that follows your team's"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-custom-system-prompt-for-chatgpt-api-that-enfo/
 categories: [guides]
@@ -240,13 +241,14 @@ This approach ensures everyone uses the same prompt version and makes updates st
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Create Custom System Prompts for AI That Match.](/ai-tools-compared/how-to-create-custom-system-prompts-for-ai-that-match-your-d/)
-- [How to Write ChatGPT Custom Instructions for Consistent.](/ai-tools-compared/how-to-write-chatgpt-custom-instructions-for-consistent-api-design-suggestions/)
-- [How to Create Custom Instructions for AI Coding Tools That Enforce Naming Conventions](/ai-tools-compared/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
+
+## Related Articles
+
+- [How to Create Custom System Prompts for AI That Match Your](/ai-tools-compared/how-to-create-custom-system-prompts-for-ai-that-match-your-d/)
+- [How to Migrate ChatGPT System Prompts](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-forma/)
+- [Migrate ChatGPT System Prompts](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-format/)
+- [How to Write ChatGPT Custom Instructions](/ai-tools-compared/how-to-write-chatgpt-custom-instructions-for-consistent-api-design-suggestions/)
+- [How to Create Reusable Prompt Templates for Common AI Coding](/ai-tools-compared/how-to-create-reusable-prompt-templates-for-common-ai-coding/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

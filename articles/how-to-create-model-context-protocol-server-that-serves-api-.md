@@ -3,6 +3,7 @@ layout: default
 title: "How to Create Model Context Protocol Server That Serves API"
 description: "Learn to build a Model Context Protocol server that exposes your API documentation to AI assistants, enabling accurate code generation and intelligent"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-model-context-protocol-server-that-serves-api-/
 categories: [guides]
@@ -510,14 +511,15 @@ async def search_endpoints_by_version(query: str, version_label: str = "current"
 
 Load both versions at startup and AI assistants can generate code targeting either, or compare endpoints across versions to identify breaking changes.
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Build a Model Context Protocol Server That Serves.](/ai-tools-compared/how-to-build-model-context-protocol-server-that-serves-opena/)
-- [How to Build Model Context Protocol Server That Provides.](/ai-tools-compared/how-to-build-model-context-protocol-server-that-provides-deployment-environment-context/)
-- [How to Set Up Model Context Protocol Server Providing.](/ai-tools-compared/how-to-set-up-model-context-protocol-server-providing-live-d/)
+
+## Related Articles
+
+- [How to Build a Model Context Protocol Server That Serves](/ai-tools-compared/how-to-build-model-context-protocol-server-that-serves-opena/)
+- [How to Build Model Context Protocol Server for Internal Desi](/ai-tools-compared/how-to-build-model-context-protocol-server-for-internal-desi/)
+- [How to Build Model Context Protocol Server That Provides](/ai-tools-compared/how-to-build-model-context-protocol-server-that-provides-deployment-environment-context/)
+- [How to Build a Model Context Protocol Server That](/ai-tools-compared/how-to-build-model-context-protocol-server-that-provides-deployment-environment-context/)
+- [How to Build Model Context Protocol Server That Provides Rea](/ai-tools-compared/how-to-build-model-context-protocol-server-that-provides-rea/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

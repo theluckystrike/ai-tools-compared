@@ -3,6 +3,7 @@ layout: default
 title: "How to Use Claude for Debugging Failed CI/CD Pipeline Logs"
 description: "A practical guide for developers using Claude to analyze and debug failed CI/CD pipeline logs. Learn effective prompts, common patterns, and real-world"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-claude-for-debugging-failed-ci-cd-pipeline-logs/
 reviewed: true
@@ -333,13 +334,14 @@ This is a common pattern: the error message points to a symptom (missing module)
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Troubleshooting Hub](/ai-tools-compared/troubleshooting-hub/)
+
+## Related Articles
+
+- [Best AI Tools for Data Pipeline Debugging 2026](/ai-tools-compared/best-ai-tools-for-data-pipeline-debugging-2026/)
 - [Claude MCP Server Connection Failed Fix (2026)](/ai-tools-compared/claude-mcp-server-connection-failed-fix-2026/)
-- [AI Powered Log Analysis Tools for Production Debugging.](/ai-tools-compared/ai-powered-log-analysis-tools-for-production-debugging-compa/)
-- [Copilot vs Claude Code for Writing GitHub Actions CI/CD.](/ai-tools-compared/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
+- [Best AI for Fixing Android Gradle Sync Failed Errors in Larg](/ai-tools-compared/best-ai-for-fixing-android-gradle-sync-failed-errors-in-larg/)
+- [DALL-E Image Generation Failed: How to Retry](/ai-tools-compared/dalle-image-generation-failed-how-to-retry/)
+- [AI CI/CD Pipeline Optimization: A Developer Guide](/ai-tools-compared/ai-ci-cd-pipeline-optimization/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

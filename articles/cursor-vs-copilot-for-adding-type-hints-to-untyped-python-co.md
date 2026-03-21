@@ -3,6 +3,7 @@ layout: default
 title: "Cursor vs Copilot for Adding Type Hints to Untyped Python"
 description: "A practical comparison of Cursor and GitHub Copilot for automatically adding type hints to legacy Python codebases. Which AI coding assistant handles"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /cursor-vs-copilot-for-adding-type-hints-to-untyped-python-co/
 categories: [guides]
@@ -416,14 +417,15 @@ Choose **GitHub Copilot** if you:
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Copilot vs Cursor for Implementing Redis Caching.](/ai-tools-compared/copilot-vs-cursor-for-implementing-redis-caching-patterns-in/)
-- [Copilot vs Cursor for Writing Pytest.](/ai-tools-compared/copilot-vs-cursor-for-writing--pytest-fixtures-/)
-- [Copilot vs Cursor for Writing Terraform Modules from Scratch](/ai-tools-compared/copilot-vs-cursor-for-writing-terraform-modules-from-scratch/)
+
+## Related Articles
+
+- [Best AI Assistant for Fixing TypeScript Strict Mode Type Nar](/ai-tools-compared/best-ai-assistant-for-fixing-typescript-strict-mode-type-nar/)
+- [Best AI Tools for TypeScript Type Inference and Generic Type](/ai-tools-compared/best-ai-tools-for-typescript-type-inference-and-generic-type/)
+- [Claude Code API Client TypeScript Guide: Build Type-Safe](/ai-tools-compared/claude-code-api-client-typescript-guide/)
+- [How Well Do AI Tools Handle Go Generics Type Parameter Const](/ai-tools-compared/how-well-do-ai-tools-handle-go-generics-type-parameter-const/)
+- [AI Code Completion Latency Comparison](/ai-tools-compared/ai-code-completion-latency-comparison-copilot-vs-cursor-vs-cody-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

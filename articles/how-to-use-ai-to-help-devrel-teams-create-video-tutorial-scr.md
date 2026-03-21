@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI to Help Devrel Teams Create Video Tutorial Scr"
 description: "A practical guide for developer relations teams on using AI tools to write tutorial scripts, generate captions, and automate post-production for screen"
 date: 2026-03-18
+last_modified_at: 2026-03-18
 author: theluckystrike
 permalink: /how-to-use-ai-to-help-devrel-teams-create-video-tutorial-scr/
 categories: [guides]
@@ -239,13 +240,14 @@ Use this data to refine your AI prompts, scripting style, and tutorial topics fo
 
 The key to success is using AI where it provides the most value—mechanical tasks like editing, transcription, and formatting—while maintaining human oversight for technical accuracy, brand voice, and strategic decisions. With this approach, DevRel teams can produce tutorials that educate, inform, and drive developer adoption at significantly higher velocity than manual production methods would allow.
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Use AI to Help DevRel Create Interactive Coding Playgrounds](/ai-tools-compared/how-to-use-ai-to-help-devrel-create-interactive-coding-playgrounds/)
-- [AI Tools for DevRel Teams Creating Developer Onboarding Checklists from Internal Wikis](/ai-tools-compared/ai-tools-for-devrel-teams-creating-developer-onboarding-chec/)
-- [How to Use AI to Help DevRel Create Comparison Tables.](/ai-tools-compared/how-to-use-ai-to-help-devrel-create-comparison-tables-for-competing-api-features/)
+
+## Related Articles
+
+- [How to Use AI to Help Devrel Create Comparison Tables](/ai-tools-compared/how-to-use-ai-to-help-devrel-create-comparison-tables-for-competing-api-features/)
+- [How to Use AI to Help Devrel Create Interactive Coding](/ai-tools-compared/how-to-use-ai-to-help-devrel-create-interactive-coding-playgrounds/)
+- [How to Use AI to Help Sre Teams Create on Call Handoff Docum](/ai-tools-compared/how-to-use-ai-to-help-sre-teams-create-on-call-handoff-docum/)
+- [AI Tools for Devrel Teams Creating Developer Onboarding Chec](/ai-tools-compared/ai-tools-for-devrel-teams-creating-developer-onboarding-chec/)
+- [How to Use AI to Help SRE Teams Draft Root Cause Analysis](/ai-tools-compared/how-to-use-ai-to-help-sre-teams-draft-root-cause-analysis-do/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

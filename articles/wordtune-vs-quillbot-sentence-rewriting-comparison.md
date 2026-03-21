@@ -3,6 +3,7 @@ layout: default
 title: "Wordtune vs Quillbot Sentence Rewriting Comparison"
 description: "Choose Wordtune if you need tight integration with AI21 Labs' ecosystem and fine-grained control over rewrite strength and style through a JavaScript or"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /wordtune-vs-quillbot-sentence-rewriting-comparison/
 reviewed: true

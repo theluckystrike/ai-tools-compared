@@ -3,6 +3,7 @@ layout: default
 title: "Copilot vs Cursor for Writing Rust Error Handling with"
 description: "A practical comparison of GitHub Copilot and Cursor IDE when writing Rust error handling code using custom error types. Learn which tool better assists"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /copilot-vs-cursor-for-writing-rust-error-handling-with-custo/
 categories: [guides]
@@ -345,14 +346,15 @@ Cursor catches this pattern and suggests returning `Result<Config, ConfigError>`
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Copilot vs Cursor for Writing Clean Prisma Schema with.](/ai-tools-compared/copilot-vs-cursor-for-writing-clean-prisma-schema-with-relat/)
-- [Best AI Tools for Writing Idiomatic Rust Error Handling.](/ai-tools-compared/best-ai-tools-for-writing-idiomatic-rust-error-handling-with/)
-- [Cursor vs Copilot for Implementing Stripe Payment.](/ai-tools-compared/cursor-vs-copilot-for-implementing-stripe-payment-integratio/)
+
+## Related Articles
+
+- [Best AI Tools for Writing Idiomatic Rust Error Handling](/ai-tools-compared/best-ai-tools-for-writing-idiomatic-rust-error-handling-with/)
+- [Writing Claude Md Files That Teach AI Your Project Specific](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/)
+- [Claude Code API Error Handling Standards](/ai-tools-compared/claude-code-api-error-handling-standards/)
+- [How to Optimize AI Coding Prompts for Generating Production](/ai-tools-compared/how-to-optimize-ai-coding-prompts-for-generating-production-ready-error-handling/)
+- [AI Tools for Interpreting Rust Compiler Borrow Checker Error](/ai-tools-compared/ai-tools-for-interpreting-rust-compiler-borrow-checker-error/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

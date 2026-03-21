@@ -3,6 +3,7 @@ layout: default
 title: "ChatGPT Edu Pricing Per Student: How Schools Get Volume"
 description: "ChatGPT Edu pricing typically falls between $10-$20 per student annually for full GPT-4 access, with volume discounts of 20-30% available through district-wide"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /chatgpt-edu-pricing-per-student-how-schools-get-volume-disco/
 categories: [guides]
@@ -288,13 +289,14 @@ The per-student pricing model scales predictably, making it easier to build into
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [ChatGPT API Token Pricing Calculator: How to Estimate.](/ai-tools-compared/chatgpt-api-token-pricing-calculator-how-to-estimate-monthly/)
-- [ChatGPT API Assistants API Pricing: Threads and Runs.](/ai-tools-compared/chatgpt-api-assistants-api-pricing-threads-and-runs-cost-breakdown/)
-- [ChatGPT Enterprise Minimum Seats and Contract Length.](/ai-tools-compared/chatgpt-enterprise-minimum-seats-and-contract-length-require/)
+
+## Related Articles
+
+- [Gemini Code Assist Enterprise Pricing Per Developer](/ai-tools-compared/gemini-code-assist-enterprise-pricing-per-developer-breakdown-2026/)
+- [ChatGPT API Assistants API Pricing Threads and Runs Cost](/ai-tools-compared/chatgpt-api-assistants-api-pricing-threads-and-runs-cost-breakdown/)
+- [ChatGPT API Token Pricing Calculator How to Estimate Monthly](/ai-tools-compared/chatgpt-api-token-pricing-calculator-how-to-estimate-monthly/)
+- [ChatGPT Plugins Replacement Custom Gpts Pricing](/ai-tools-compared/chatgpt-plugins-replacement-custom-gpts-pricing-for-developers/)
+- [ChatGPT vs Perplexity for Researching Competitor Pricing Str](/ai-tools-compared/chatgpt-vs-perplexity-for-researching-competitor-pricing-str/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

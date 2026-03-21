@@ -3,6 +3,7 @@ layout: default
 title: "Claude vs Gpt4 Terraform Pulumi Infrastructure Code"
 description: "Deep comparison of Claude, GPT-4, and specialized tools for generating production-ready IaC"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /claude-vs-gpt4-terraform-pulumi-infrastructure-code-2026/
 categories: [guides]
@@ -370,12 +371,14 @@ output "private_subnet_ids" {
 - Using Pulumi's AI features directly (integrated, optimized for Pulumi)
 - Running Terraform validation/review (native tools like Terraform plan)
 
-## Related Reading
 
-- [Best AI tools for reviewing infrastructure code](/ai-tools-compared/guides-hub/)
-- [How to use AI for cloud migration planning](/ai-tools-compared/guides-hub/)
-- [AI tools for automated infrastructure drift detection](/ai-tools-compared/guides-hub/)
 
----
+## Related Articles
+
+- [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-compared/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)
+- [Best AI Assistants for Pulumi Infrastructure Code](/ai-tools-compared/best-ai-assistants-for-pulumi-infrastructure-code-in-typescript-2026/)
+- [AI Tools for Writing Terraform Infrastructure-as-Code](/ai-tools-compared/ai-tools-for-writing-terraform-infrastructure-as-code-comparison-2026/)
+- [Claude vs ChatGPT for Creating AWS CDK Infrastructure Stacks](/ai-tools-compared/claude-vs-chatgpt-for-creating-aws-cdk-infrastructure-stacks/)
+- [Claude vs ChatGPT for Writing Datadog Dashboard Terraform](/ai-tools-compared/claude-vs-chatgpt-for-writing-datadog-dashboard-terraform-de/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

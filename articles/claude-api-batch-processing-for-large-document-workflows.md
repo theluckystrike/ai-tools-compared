@@ -3,6 +3,7 @@ layout: default
 title: "Claude API Batch Processing for Large Document Workflows"
 description: "Complete guide to using Claude API's batch processing feature for cost-effective document analysis and processing at scale with code examples"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /claude-api-batch-processing-for-large-document-workflows/
 categories: [guides]
@@ -382,9 +383,15 @@ Skip batch processing for:
 
 The batch API is ideal for engineers building scalable document processing systems that can tolerate latency in exchange for cost efficiency and reliability.
 
-## Related Reading
 
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
+## Related Articles
+
+- [Claude API Batch Processing: How Much Cheaper Than Discount](/ai-tools-compared/claude-api-batch-processing-discount-how-much-cheaper-than-r/)
+- [Claude Code vs Cursor for Large Codebase Refactoring](/ai-tools-compared/claude-code-vs-cursor-for-large-codebase-refactoring/)
+- [Gemini vs Claude for Analyzing Large CSV Datasets Over 100MB](/ai-tools-compared/gemini-vs-claude-for-analyzing-large-csv-datasets-over-100mb/)
+- [How to Transfer Notion AI Workflows to Claude Projects 2026](/ai-tools-compared/how-to-transfer-notion-ai-workflows-to-claude-projects-2026/)
+- [Migrating from ChatGPT Plugins to Claude MCP Tools for.](/ai-tools-compared/migrating-from-chatgpt-plugins-to-claude-mcp-tools-for-coding-workflows/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

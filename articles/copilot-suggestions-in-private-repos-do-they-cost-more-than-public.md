@@ -3,6 +3,7 @@ layout: default
 title: "Copilot Suggestions in Private Repos Do They Cost More Than"
 description: "Wondering if GitHub Copilot costs more for private repositories? Get the complete breakdown of Copilot pricing for public vs private repos and what it"
 date: 2026-03-18
+last_modified_at: 2026-03-18
 author: theluckystrike
 permalink: /copilot-suggestions-in-private-repos-do-they-cost-more-than-public/
 categories: [guides]
@@ -332,13 +333,14 @@ The value proposition is straightforward: unlimited Copilot access across all yo
 
 {% endraw %}
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
+## Related Articles
+
+- [Copilot Suggestions Not Showing Up Fix 2026](/ai-tools-compared/copilot-suggestions-not-showing-up-fix-2026/)
+- [Copilot Suggestions Wrong How to Fix](/ai-tools-compared/copilot-suggestions-wrong-how-to-fix/)
+- [Copilot Business Org-Wide Enable: Cost If Not All Devs Use](/ai-tools-compared/copilot-business-org-wide-enable-cost-if-not-all-devs-use-it/)
+- [Copilot Business vs Cursor Business Per Developer Cost](/ai-tools-compared/copilot-business-vs-cursor-business-per-developer-cost-comparison/)
 - [Copilot for JetBrains: Does It Cost Same as VSCode Version](/ai-tools-compared/copilot-for-jetbrains-does-it-cost-same-as-vscode-version/)
-- [Copilot Business Org-Wide Enable: Cost If Not All Devs.](/ai-tools-compared/copilot-business-org-wide-enable-cost-if-not-all-devs-use-it/)
-- [Copilot Business vs Cursor Business: Per-Developer Cost.](/ai-tools-compared/copilot-business-vs-cursor-business-per-developer-cost-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

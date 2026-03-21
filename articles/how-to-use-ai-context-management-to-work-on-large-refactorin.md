@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI Context Management to Work on Large Refactorin"
 description: "A practical guide for developers on managing AI context during large-scale code refactoring projects. Learn techniques to maintain context window"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-context-management-to-work-on-large-refactorin/
 categories: [guides, comparisons]
@@ -243,13 +244,14 @@ Run tests after each atomic refactoring step. If tests pass, commit and proceed.
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best AI Context Window Management Strategies for Large Codebases 2026](/ai-tools-compared/best-ai-context-window-management-strategies-for-large-codeb/)
-- [Effective Context Management Strategies for AI Coding in.](/ai-tools-compared/effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/)
-- [Effective Context Loading Strategies for AI Tools in.](/ai-tools-compared/effective-context-loading-strategies-for-ai-tools-in-polyglo/)
+
+## Related Articles
+
+- [Best AI Context Window Management Strategies for Large Codeb](/ai-tools-compared/best-ai-context-window-management-strategies-for-large-codeb/)
+- [Effective Context Management Strategies for AI Coding](/ai-tools-compared/effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/)
+- [Best AI Coding Tools for Python Data Science and pandas Work](/ai-tools-compared/best-ai-coding-tools-for-python-data-science-and-pandas-work/)
+- [Configuring Cursor AI to Work with Corporate VPN and Proxy](/ai-tools-compared/configuring-cursor-ai-to-work-with-corporate-vpn-and-proxy-a/)
+- [Free AI Coding Tools That Work Offline Without Internet](/ai-tools-compared/free-ai-coding-tools-that-work-offline-without-internet/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

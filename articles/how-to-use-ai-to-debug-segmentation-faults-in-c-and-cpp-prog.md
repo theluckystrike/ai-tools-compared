@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI to Debug Segmentation Faults in C and Cpp Prog"
 description: "A practical guide for developers on using AI tools to identify, analyze, and fix segmentation faults in C and C++ programs with real code examples"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-debug-segmentation-faults-in-c-and-cpp-prog/
 categories: [guides]
@@ -281,13 +282,14 @@ What's the root cause and how do I fix it?
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Use AI to Debug Race Conditions in Python Asyncio.](/ai-tools-compared/how-to-use-ai-to-debug-race-conditions-in-python-asyncio-concurrent-tasks/)
-- [How to Use AI to Debug Tailwind CSS Classes Not Applying.](/ai-tools-compared/how-to-use-ai-to-debug-tailwind-css-classes-not-applying-in-/)
-- [How to Use AI to Interpret and Fix Java OutOfMemory Heap.](/ai-tools-compared/how-to-use-ai-to-interpret-and-fix-java-outofmemory-heap-spa/)
+
+## Related Articles
+
+- [Effective Workflow for Using AI](/ai-tools-compared/effective-workflow-for-using-ai-to-debug-production-issues-from-logs/)
+- [How to Use AI to Debug CORS Errors in Cross-Origin API Reque](/ai-tools-compared/how-to-use-ai-to-debug-cors-errors-in-cross-origin-api-reque/)
+- [How to Use AI to Debug Flaky Integration Tests in CI Pipelin](/ai-tools-compared/how-to-use-ai-to-debug-flaky-integration-tests-in-ci-pipelin/)
+- [How to Use AI to Debug Race Conditions in Python Asyncio](/ai-tools-compared/how-to-use-ai-to-debug-race-conditions-in-python-asyncio-concurrent-tasks/)
+- [How to Use AI to Debug Tailwind CSS Classes Not Applying](/ai-tools-compared/how-to-use-ai-to-debug-tailwind-css-classes-not-applying-in-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

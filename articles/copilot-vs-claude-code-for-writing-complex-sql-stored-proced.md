@@ -3,6 +3,7 @@ layout: default
 title: "Copilot vs Claude Code for Writing Complex SQL Stored Proced"
 description: "A practical comparison of GitHub Copilot and Claude Code for writing complex SQL stored procedures, with code examples and recommendations for database"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /copilot-vs-claude-code-for-writing-complex-sql-stored-proced/
 categories: [guides]
@@ -266,10 +267,14 @@ Both GitHub Copilot and Claude Code serve database developers well, but their st
 
 
 
-## Related Reading
 
-- [Aider vs Claude Code: Terminal AI Coding Assistants Compared](/ai-tools-compared/aider-vs-claude-code-terminal-ai-comparison/)
-- [AI Coding Assistant for Rust Developers Compared](/ai-tools-compared/ai-coding-assistant-for-rust-developers-compared/)
-- [Best AI Coding Tools for Python Development](/ai-tools-compared/best-ai-coding-tools-python-development/)
+
+## Related Articles
+
+- [Copilot vs Claude Code for Writing Jest Test](/ai-tools-compared/copilot-vs-claude-code-for-writing--jest-test-s/)
+- [Copilot vs Claude Code for Writing GitHub Actions Cicd Workf](/ai-tools-compared/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
+- [AI Autocomplete Accuracy for Boilerplate Code vs Complex Log](/ai-tools-compared/ai-autocomplete-accuracy-for-boilerplate-code-vs-complex-log/)
+- [Copilot vs Claude Code for Scaffolding New Django REST Frame](/ai-tools-compared/copilot-vs-claude-code-for-scaffolding-new-django-rest-frame/)
+- [How to Migrate From Copilot for Neovim](/ai-tools-compared/migrate-copilot-for-neovim-setup-to-claude-code-terminal-wor/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

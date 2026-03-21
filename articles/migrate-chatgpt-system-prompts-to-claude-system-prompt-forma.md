@@ -3,6 +3,7 @@ layout: default
 title: "How to Migrate ChatGPT System Prompts"
 description: "A practical guide for developers on converting ChatGPT system prompts to Claude's format, with code examples and best practices"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /migrate-chatgpt-system-prompts-to-claude-system-prompt-forma/
 categories: [guides]
@@ -277,13 +278,14 @@ Use the `xml` thinking feature for complex reasoning. Claude's extended thinking
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Migrate ChatGPT System Prompts to Claude System Prompt Format](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-format/)
-- [How to Transfer Claude Project Knowledge to ChatGPT.](/ai-tools-compared/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-g/)
-- [Claude vs ChatGPT for Building Custom ESLint Rules for.](/ai-tools-compared/claude-vs-chatgpt-for-building-custom-eslint-rules-for-react/)
+
+## Related Articles
+
+- [Migrate ChatGPT System Prompts](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-format/)
+- [How to Create Custom System Prompt for ChatGPT API That Enfo](/ai-tools-compared/how-to-create-custom-system-prompt-for-chatgpt-api-that-enfo/)
+- [How to Create Custom System Prompts for AI That Match Your](/ai-tools-compared/how-to-create-custom-system-prompts-for-ai-that-match-your-d/)
+- [How to Write System Prompts for AI Assistants That Produce](/ai-tools-compared/how-to-write-system-prompts-for-ai-assistants-that-produce-a/)
+- [How to Write System Prompts for AI Coding Assistants Project](/ai-tools-compared/how-to-write-system-prompts-for-ai-coding-assistants-project/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

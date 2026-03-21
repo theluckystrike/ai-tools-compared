@@ -3,6 +3,7 @@ layout: default
 title: "How to Switch from Cursor to Claude Code Without Losing"
 description: "A practical guide for developers switching from Cursor AI to Claude Code. Learn how to export your snippets, keybindings, and workspace configurations"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-switch-from-cursor-to-claude-code-without-losing-settings/
 categories: [guides]
@@ -258,13 +259,14 @@ The transition requires an adjustment period. Expect reduced autocomplete sugges
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Using Claude Code for Backend and Cursor for Frontend in.](/ai-tools-compared/using-claude-code-for-backend-and-cursor-for-frontend-same-p/)
-- [How to Transfer Copilot Code Review Settings to Cursor.](/ai-tools-compared/transfer-copilot-code-review-settings-to-cursor-ai-review-co/)
-- [How to Transfer Cursor Composer Prompt Library to Claude.](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code-commands/)
+
+## Related Articles
+
+- [How to Reduce AI Coding Tool Costs Without Losing](/ai-tools-compared/how-to-reduce-ai-coding-tool-costs-without-losing-productivi/)
+- [How to Switch AI Coding Providers Without Disrupting.](/ai-tools-compared/how-to-switch-ai-coding-providers-without-disrupting-sprint-velocity-2026/)
+- [Claude Code Losing Context Across Sessions Fix](/ai-tools-compared/claude-code-losing-context-across-sessions-fix/)
+- [How to Switch From Lovable to Cursor for Building Web Apps](/ai-tools-compared/how-to-switch-from-lovable-to-cursor-for-building-web-apps-c/)
+- [Cursor AI Privacy Mode How to Use AI Features Without Sendin](/ai-tools-compared/cursor-ai-privacy-mode-how-to-use-ai-features-without-sendin/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

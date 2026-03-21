@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI to Generate Playwright Authentication Flow Tes"
 description: "Learn how to use AI tools to create Playwright authentication flow tests that use stored session state for faster, more reliable end-to-end testing"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-playwright-authentication-flow-tes/
 categories: [guides]
@@ -436,14 +437,15 @@ test('debug storage state', async ({ page, context }) => {
 });
 ```
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Use AI to Generate Jest Tests for Redux Toolkit.](/ai-tools-compared/how-to-use-ai-to-generate-jest-tests-for-redux-toolkit-slice/)
-- [AI Tools for Writing Playwright Tests That Verify Toast.](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-toast-noti/)
-- [How to Use AI to Generate Jest Integration Tests for.](/ai-tools-compared/how-to-use-ai-to-generate-jest-integration-tests-for-express/)
+
+## Related Articles
+
+- [How to Use AI to Generate Playwright Keyboard Navigation Tes](/ai-tools-compared/how-to-use-ai-to-generate-playwright-keyboard-navigation-tes/)
+- [How to Use AI to Generate Playwright Network Interception](/ai-tools-compared/how-to-use-ai-to-generate-playwright-network-interception-te/)
+- [How to Use AI to Generate Playwright Tests for Iframe and](/ai-tools-compared/how-to-use-ai-to-generate-playwright-tests-for-iframe-and-cross-origin-content/)
+- [Best AI for Learning OAuth2 and OIDC Authentication Flows](/ai-tools-compared/best-ai-for-learning-oauth2-and-oidc-authentication-flows-wi/)
+- [Cursor vs Copilot for Implementing Oauth2 Authentication Flo](/ai-tools-compared/cursor-vs-copilot-for-implementing-oauth2-authentication-flo/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

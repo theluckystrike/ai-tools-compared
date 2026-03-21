@@ -3,6 +3,7 @@ layout: default
 title: "Gemini in Google Docs Not Showing Up? Fixes for 2026"
 description: "Troubleshooting guide for developers and power users experiencing Gemini AI features missing from Google Docs. Step-by-step diagnostic tips and solutions"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /gemini-in-google-docs-not-showing-up-fix-2026/
 reviewed: true
@@ -294,14 +295,15 @@ Alternatively, submit feedback directly to Google through Help → Help Docs imp
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Troubleshooting Hub](/ai-tools-compared/troubleshooting-hub/)
-- [Notion AI Not Working as Expected Fix (2026)](/ai-tools-compared/notion-ai-not-working-as-expected-fix-2026/)
-- [ChatGPT Image Upload Not Working Fix (2026)](/ai-tools-compared/chatgpt-image-upload-not-working-fix-2026/)
-- [ChatGPT Canvas Not Saving Changes Fix (2026)](/ai-tools-compared/chatgpt-canvas-not-saving-changes-fix-2026/)
+
+## Related Articles
+
+- [Notion AI vs Google Docs AI: Complete Writing Features](/ai-tools-compared/notion-ai-writing-features-vs-google-docs-ai-compared/)
+- [Gemini AI Giving Wrong Answers: Debugging Tips and Fixes](/ai-tools-compared/gemini-ai-giving-wrong-answers-debugging-tips/)
+- [Copilot Suggestions Not Showing Up Fix 2026](/ai-tools-compared/copilot-suggestions-not-showing-up-fix-2026/)
+- [Gemini Advanced Google One Storage: Does AI Use Your Storage](/ai-tools-compared/gemini-advanced-google-one-storage-does-ai-use-your-storage-/)
+- [Gemini vs ChatGPT for Writing Google Cloud Function Deployme](/ai-tools-compared/gemini-vs-chatgpt-for-writing-google-cloud-function-deployme/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

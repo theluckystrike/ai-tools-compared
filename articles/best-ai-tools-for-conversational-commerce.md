@@ -3,6 +3,7 @@ layout: default
 title: "Best AI Tools for Conversational Commerce"
 description: "A practical comparison of AI tools for conversational commerce, with code examples and implementation guidance for developers building chat-based"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-tools-for-conversational-commerce/
 categories: [guides]

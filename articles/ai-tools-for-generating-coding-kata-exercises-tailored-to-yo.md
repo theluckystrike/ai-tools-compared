@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Generating Coding Kata Exercises Tailored to Yo"
 description: "A practical guide to AI-powered coding kata generators that adapt difficulty to your experience level, with examples and tool recommendations"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-generating-coding-kata-exercises-tailored-to-yo/
 categories: [guides]
@@ -323,10 +324,14 @@ print(kata)
 This approach lets you generate fresh practice material on a schedule without manual curation.
 
 
-## Related Reading
 
-- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
-- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
-- [AI Tools Hub](/guides-hub/)
+
+## Related Articles
+
+- [How to Optimize AI Coding Prompts for Generating Production](/ai-tools-compared/how-to-optimize-ai-coding-prompts-for-generating-production-ready-error-handling/)
+- [How to Prevent AI Coding Tools from Generating Overly](/ai-tools-compared/how-to-prevent-ai-coding-tools-from-generating-overly-complex-solutions/)
+- [AI Tools for Generating API Client SDKs 2026](/ai-tools-compared/ai-tools-for-generating-api-client-sdks-2026/)
+- [AI Tools for Generating API Mock Servers 2026](/ai-tools-compared/ai-tools-for-generating-api-mock-servers-2026/)
+- [AI Tools for Generating Coloring Book Pages Compared](/ai-tools-compared/ai-tools-for-generating-coloring-book-pages-compared/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

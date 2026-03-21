@@ -3,6 +3,7 @@ layout: default
 title: "Best AI Tools for Go Error Wrapping and Sentinel Error Patte"
 description: "A practical guide to AI coding assistants that help with Go error handling patterns, including error wrapping, sentinel errors, and custom error types"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-tools-for-go-error-wrapping-and-sentinel-error-patte/
 categories: [guides]
@@ -245,14 +246,15 @@ Regardless of which tool you choose, always verify that error wrapping preserves
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Which AI Generates Better Go Goroutine Patterns for.](/ai-tools-compared/which-ai-generates-better-go-goroutine-patterns-for-concurre/)
-- [Best AI Tools for Writing Go gRPC Service Definitions.](/ai-tools-compared/best-ai-tools-for-writing-go-grpc-service-definitions-and-implementations/)
-- [Best AI Features for Generating API Client Code from.](/ai-tools-compared/best-ai-features-for-generating-api-client-code-from-openapi/)
+
+## Related Articles
+
+- [AI Tools for Interpreting Rust Compiler Borrow Checker Error](/ai-tools-compared/ai-tools-for-interpreting-rust-compiler-borrow-checker-error/)
+- [Best AI Assistant for Creating Jest Tests That Verify Error](/ai-tools-compared/best-ai-assistant-for-creating-jest-tests-that-verify-error-/)
+- [Best AI Tools for Writing Idiomatic Rust Error Handling](/ai-tools-compared/best-ai-tools-for-writing-idiomatic-rust-error-handling-with/)
+- [ChatGPT Network Error on Long Responses: How to Fix in 2026](/ai-tools-compared/chatgpt-network-error-on-long-responses-how-to-fix-2026/)
+- [ChatGPT vs Claude for Writing Effective Celery Task Error](/ai-tools-compared/chatgpt-vs-claude-for-writing-effective-celery-task-error-ha/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

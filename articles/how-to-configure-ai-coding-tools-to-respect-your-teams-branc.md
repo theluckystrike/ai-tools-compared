@@ -3,6 +3,7 @@ layout: default
 title: "Configure AI Coding Tools"
 description: "A practical guide for developers on configuring AI coding assistants to follow your team's branch naming conventions. Code examples and configuration tips"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-configure-ai-coding-tools-to-respect-your-teams-branc/
 categories: [guides]
@@ -284,14 +285,15 @@ This catches misnamed branches before they're pushed, complementing your AI conf
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Configure Claude Code to Follow Your Team's Feature Flag Naming Conventions](/ai-tools-compared/how-to-configure-claude-code-to-follow-your-teams-feature-fl/)
-- [Writing Custom Instructions That Make AI Follow Your Team's Changelog Entry Format](/ai-tools-compared/writing-custom-instructions-that-make-ai-follow-your-teams-changelog-entry-format/)
-- [How to Create Custom Instructions for AI Coding Tools That Enforce Naming Conventions](/ai-tools-compared/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
+
+## Related Articles
+
+- [Configure Claude Code](/ai-tools-compared/how-to-configure-claude-code-to-follow-your-teams-feature-fl/)
+- [Best Way to Configure AI Coding Tools to Follow Your Databas](/ai-tools-compared/best-way-to-configure-ai-coding-tools-to-follow-your-databas/)
+- [How to Configure AI Coding Tools to Exclude Secrets and](/ai-tools-compared/how-to-configure-ai-coding-tools-to-exclude-secrets-and-env-/)
+- [Configuring AI Coding Tools to Follow Your Teams Dependency](/ai-tools-compared/configuring-ai-coding-tools-to-follow-your-teams-dependency-/)
+- [Configuring AI Coding Tools to Match Your Teams Specific Doc](/ai-tools-compared/configuring-ai-coding-tools-to-match-your-teams-specific-doc/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -3,6 +3,7 @@ layout: default
 title: "Best AI Coding Tools for Go API Development with Gin and Ech"
 description: "A practical comparison of the best AI coding assistants for building Go APIs with Gin and Echo frameworks, including code examples and quality assessment"
 date: 2026-03-17
+last_modified_at: 2026-03-17
 author: theluckystrike
 permalink: /best-ai-coding-tools-for-go-api-development-with-gin-and-ech/
 categories: [comparisons]
@@ -316,12 +317,14 @@ The frameworks themselves have different performance characteristics (Gin is gen
 
 
 
-## Related Reading
 
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best AI Tools for Developers in 2026](/ai-tools-compared/best-ai-tools-for-developers-2026/)
-- [AI Tools Comparisons Hub](/ai-tools-compared/comparisons-hub/)
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Claude Code vs Cursor for Backend Development](/ai-tools-compared/claude-code-vs-cursor-for-backend-development/)
+
+## Related Articles
+
+- [Best AI Coding Assistant for React Development](/ai-tools-compared/best-ai-coding-assistant-for-react-development/)
+- [How to Use AI Coding Tools to Enforce Consistent API](/ai-tools-compared/how-to-use-ai-coding-tools-to-enforce-consistent-api-response-formats/)
+- [How to Use Claude API Cheaply for Small Coding Projects](/ai-tools-compared/how-to-use-claude-api-cheaply-for-small-coding-projects/)
+- [AI Pair Programming Tools for C# and .NET Development](/ai-tools-compared/ai-pair-programming-tools-for-c-sharp-dotnet/)
+- [Best AI Assistant for Writing Open Source Plugin Development](/ai-tools-compared/best-ai-assistant-for-writing-open-source-plugin-development/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

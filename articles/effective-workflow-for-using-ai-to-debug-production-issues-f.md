@@ -3,6 +3,7 @@ layout: default
 title: "Effective Workflow for Using AI"
 description: "A practical workflow for developers to use AI tools when analyzing production logs and debugging issues, with real examples and code snippets"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /effective-workflow-for-using-ai-to-debug-production-issues-from-logs/
 categories: [guides]
@@ -429,13 +430,14 @@ analysis = analyzer.analyze_incident(logs, incident_context)
 print(analysis)
 ```
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Use AI to Debug CORS Errors in Cross-Origin API.](/ai-tools-compared/how-to-use-ai-to-debug-cors-errors-in-cross-origin-api-reque/)
-- [How to Use AI to Debug Flaky Integration Tests in CI.](/ai-tools-compared/how-to-use-ai-to-debug-flaky-integration-tests-in-ci-pipelin/)
-- [How to Use AI to Interpret Elixir GenServer Crash.](/ai-tools-compared/how-to-use-ai-to-interpret-elixir-genserver-crash-reports-an/)
+
+## Related Articles
+
+- [Effective AI Coding Workflow for Building Features from Prod](/ai-tools-compared/effective-ai-coding-workflow-for-building-features-from-prod/)
+- [Effective Tool Chaining Workflow Using Copilot and Claude](/ai-tools-compared/effective-tool-chaining-workflow-using-copilot-and-claude-together-for-coding/)
+- [Effective Workflow for AI-Assisted Open Source Contribution](/ai-tools-compared/effective-workflow-for-ai-assisted-open-source-contribution-/)
+- [Effective Workflow for Using AI](/ai-tools-compared/effective-workflow-for-using-ai-to-generate-and-maintain-changelog-documentation/)
+- [AI Powered Log Analysis Tools for Production Debugging](/ai-tools-compared/ai-powered-log-analysis-tools-for-production-debugging-compa/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

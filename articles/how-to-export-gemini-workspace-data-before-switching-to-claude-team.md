@@ -3,6 +3,7 @@ layout: default
 title: "How to Export Gemini Workspace Data Before Switching to"
 description: "A practical guide for developers and power users on exporting your Google Gemini workspace data before migrating to Claude Team. Includes code examples"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-export-gemini-workspace-data-before-switching-to-claude-team/
 categories: [guides]
@@ -287,13 +288,14 @@ Before canceling your Gemini subscription:
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
+## Related Articles
+
 - [How to Move ChatGPT Team Workspace Data to Claude Team](/ai-tools-compared/how-to-move-chatgpt-team-workspace-data-to-claude-team/)
-- [How to Export Grammarly Personal Dictionary Before.](/ai-tools-compared/how-to-export-grammarly-personal-dictionary-before-switching/)
-- [Switching from ChatGPT Voice to Gemini Live: Conversation Differences](/ai-tools-compared/switching-from-chatgpt-voice-to-gemini-live-conversation-differences/)
+- [Switching from Gemini Advanced to Claude Pro: What You Lose](/ai-tools-compared/switching-from-gemini-advanced-to-claude-pro-what-you-lose/)
+- [Export Perplexity Collections Before Switching to ChatGPT Se](/ai-tools-compared/export-perplexity-collections-before-switching-to-chatgpt-se/)
+- [How to Export Grammarly Personal Dictionary Before Switching](/ai-tools-compared/how-to-export-grammarly-personal-dictionary-before-switching/)
+- [Switching from ChatGPT Voice to Gemini Live Conversation](/ai-tools-compared/switching-from-chatgpt-voice-to-gemini-live-conversation-differences/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

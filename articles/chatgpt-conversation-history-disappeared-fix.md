@@ -3,6 +3,7 @@ layout: default
 title: "ChatGPT Conversation History Disappeared Fix"
 description: "A practical troubleshooting guide for developers and power users facing the issue of ChatGPT conversation history disappearing. Learn step-by-step"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /chatgpt-conversation-history-disappeared-fix/
 categories: [guides]
@@ -416,11 +417,15 @@ OpenAI maintains conversation logs server-side for Plus users and may be able to
 
 
 
-## Related Reading
 
-- [Claude Max Context Window Exceeded: What To Do](/ai-tools-compared/claude-max-context-window-exceeded-what-to-do/)
-- [Cursor Background Agent Timing Out Fix (2026)](/ai-tools-compared/cursor-background-agent-timing-out-fix-2026/)
-- [AI Pair Programming Tools for C# and.NET Development](/ai-tools-compared/ai-pair-programming-tools-for-c-sharp-dotnet/)
+
+## Related Articles
+
+- [Switching from ChatGPT Voice to Gemini Live Conversation](/ai-tools-compared/switching-from-chatgpt-voice-to-gemini-live-conversation-differences/)
+- [Writesonic Chatsonic vs ChatGPT: Conversation Comparison](/ai-tools-compared/writesonic-chatsonic-vs-chatgpt-conversation-comparison/)
+- [ChatGPT API 429 Too Many Requests Fix](/ai-tools-compared/chatgpt-api-429-too-many-requests-fix/)
+- [ChatGPT Canvas Not Saving Changes Fix (2026)](/ai-tools-compared/chatgpt-canvas-not-saving-changes-fix-2026/)
+- [ChatGPT Code Interpreter Not Running Python: Fixes and Fix](/ai-tools-compared/chatgpt-code-interpreter-not-running-python-fix/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

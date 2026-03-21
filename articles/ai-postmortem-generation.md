@@ -3,6 +3,7 @@ layout: default
 title: "AI Postmortem Generation"
 description: "When production incidents occur, writing postmortems becomes a critical but often time-consuming task. Teams must gather logs, identify root causes, document"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /ai-postmortem-generation/
 categories: [guides]
@@ -383,9 +384,15 @@ This dramatically speeds up incident response by letting teams reference similar
 ---
 
 
-## Related Reading
 
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
+## Related Articles
+
+- [AI Code Generation for Java Reactive Programming with Projec](/ai-tools-compared/ai-code-generation-for-java-reactive-programming-with-projec/)
+- [AI Code Generation for Java Virtual Threads Project Loom Pat](/ai-tools-compared/ai-code-generation-for-java-virtual-threads-project-loom-pat/)
+- [AI Code Generation for Python FastAPI Endpoints](/ai-tools-compared/ai-code-generation-for-python-fastapi-endpoints-with-pydantic-models-compared/)
+- [AI Code Generation Quality for Java JUnit 5 Parameterized](/ai-tools-compared/ai-code-generation-quality-for-java-junit-5-parameterized-te/)
+- [AI Code Generation Quality for Java Pattern Matching and Swi](/ai-tools-compared/ai-code-generation-quality-for-java-pattern-matching-and-swi/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

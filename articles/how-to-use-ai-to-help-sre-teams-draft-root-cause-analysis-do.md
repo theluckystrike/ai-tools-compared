@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI to Help SRE Teams Draft Root Cause Analysis"
 description: "A practical guide for developers and SRE professionals using AI assistants to improve incident post-mortems and root cause analysis documentation"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-help-sre-teams-draft-root-cause-analysis-do/
 categories: [guides]
@@ -378,13 +379,14 @@ As you generate RCAs, track patterns to improve incident prevention:
 Use AI to help analyze these patterns: "Analyze our last 10 RCAs for common themes in root causes." This meta-analysis identifies systemic problems.
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Use AI to Help SRE Teams Create On-Call Handoff Documents](/ai-tools-compared/how-to-use-ai-to-help-sre-teams-create-on-call-handoff-docum/)
-- [How to Use AI for Writing Effective Runbooks and.](/ai-tools-compared/how-to-use-ai-for-writing-effective-runbooks-and-incident-pl/)
-- [How to Use AI to Help DevRel Create Interactive Coding Playgrounds](/ai-tools-compared/how-to-use-ai-to-help-devrel-create-interactive-coding-playgrounds/)
+
+## Related Articles
+
+- [How to Use AI to Help Sre Teams Create on Call Handoff Docum](/ai-tools-compared/how-to-use-ai-to-help-sre-teams-create-on-call-handoff-docum/)
+- [How to Use AI to Help Devrel Teams Create Video Tutorial Scr](/ai-tools-compared/how-to-use-ai-to-help-devrel-teams-create-video-tutorial-scr/)
+- [How to Use AI to Draft Open Source Foundation Membership App](/ai-tools-compared/how-to-use-ai-to-draft-open-source-foundation-membership-app/)
+- [How to Use AI to Draft RFC Documents for Proposed Open](/ai-tools-compared/how-to-use-ai-to-draft-rfc-documents-for-proposed-open-source-feature-changes/)
+- [Best AI Tools for Help Center Content](/ai-tools-compared/best-ai-tools-for-help-center-content/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

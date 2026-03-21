@@ -3,6 +3,7 @@ layout: default
 title: "How to Build Model Context Protocol Server for Internal Desi"
 description: "A practical guide for developers on building an MCP server to serve design system component documentation to AI coding assistants. Includes code"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-build-model-context-protocol-server-for-internal-desi/
 categories: [guides]
@@ -332,13 +333,14 @@ Consider running the server as a local service that multiple team members can co
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Set Up Model Context Protocol Server Providing.](/ai-tools-compared/how-to-set-up-model-context-protocol-server-providing-live-d/)
-- [How to Set Up Model Context Protocol Server for Internal Package Registry Documentation](/ai-tools-compared/how-to-set-up-model-context-protocol-server-for-internal-pac/)
-- [How to Build a Model Context Protocol Server That.](/ai-tools-compared/how-to-build-model-context-protocol-server-that-provides-deployment-environment-context/)
+
+## Related Articles
+
+- [How to Set Up Model Context Protocol Server for Internal Pac](/ai-tools-compared/how-to-set-up-model-context-protocol-server-for-internal-pac/)
+- [How to Build Model Context Protocol Server That Provides](/ai-tools-compared/how-to-build-model-context-protocol-server-that-provides-deployment-environment-context/)
+- [How to Build a Model Context Protocol Server That](/ai-tools-compared/how-to-build-model-context-protocol-server-that-provides-deployment-environment-context/)
+- [How to Build Model Context Protocol Server That Provides Rea](/ai-tools-compared/how-to-build-model-context-protocol-server-that-provides-rea/)
+- [How to Build a Model Context Protocol Server That Serves](/ai-tools-compared/how-to-build-model-context-protocol-server-that-serves-opena/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

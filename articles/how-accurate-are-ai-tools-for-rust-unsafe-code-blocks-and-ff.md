@@ -3,6 +3,7 @@ layout: default
 title: "How Accurate Are AI Tools for Rust Unsafe Code Blocks"
 description: "A practical evaluation of how well AI coding assistants handle Rust unsafe blocks and foreign function interface programming"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-accurate-are-ai-tools-for-rust-unsafe-code-blocks-and-ff/
 categories: [guides]
@@ -245,13 +246,14 @@ Given these findings, several strategies improve results when working with AI-as
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How Accurate Are AI Tools at Generating Rust Crossbeam.](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
-- [How Accurate Are AI Tools at Generating Rust Serde.](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-serde-serialization-code/)
-- [How Accurate Are AI Tools at Rust WASM Compilation and.](/ai-tools-compared/how-accurate-are-ai-tools-at-rust-wasm-compilation-and-bindg/)
+
+## Related Articles
+
+- [How Accurate Are AI Tools at Generating Rust Crossbeam](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
+- [How Accurate Are AI Tools](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-serde-serialization-code/)
+- [How Accurate Are AI Tools at Rust WASM Compilation and Bindg](/ai-tools-compared/how-accurate-are-ai-tools-at-rust-wasm-compilation-and-bindg/)
+- [Best Prompting Strategies for Getting Accurate Code from](/ai-tools-compared/best-prompting-strategies-for-getting-accurate-code-from-ai-/)
+- [Best AI Tools for Writing Rust Async Code with Tokio Runtime](/ai-tools-compared/best-ai-tools-for-writing-rust-async-code-with-tokio-runtime/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

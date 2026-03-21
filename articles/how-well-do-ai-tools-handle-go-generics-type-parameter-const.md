@@ -3,6 +3,7 @@ layout: default
 title: "How Well Do AI Tools Handle Go Generics Type Parameter Const"
 description: "A practical analysis of AI code generation quality for Go generics, focusing on type parameter constraints with code examples and quality assessment"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-well-do-ai-tools-handle-go-generics-type-parameter-const/
 categories: [guides, comparisons]
@@ -299,13 +300,14 @@ Understand that AI assistants may not always choose optimal constraint definitio
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How Well Do AI Tools Generate Rust Macro Definitions and.](/ai-tools-compared/how-well-do-ai-tools-generate-rust-macro-definitions-and-pro/)
-- [Best AI for Analyzing Parquet Files and Generating.](/ai-tools-compared/best-ai-for-analyzing-parquet-files-and-generating-summary-s/)
-- [AI Code Completion for Java Record Classes and Sealed.](/ai-tools-compared/ai-code-completion-for-java-record-classes-and-sealed-interf/)
+
+## Related Articles
+
+- [How Well Do AI Tools Handle Rust Lifetime Elision Rules Corr](/ai-tools-compared/how-well-do-ai-tools-handle-rust-lifetime-elision-rules-corr/)
+- [Best AI for Writing Playwright Tests That Handle Dynamic Loa](/ai-tools-compared/best-ai-for-writing-playwright-tests-that-handle-dynamic-loa/)
+- [AI Autocomplete for Test Files How Well Different Tools Pred](/ai-tools-compared/ai-autocomplete-for-test-files-how-well-different-tools-pred/)
+- [Best AI Assistant for Fixing TypeScript Strict Mode Type Nar](/ai-tools-compared/best-ai-assistant-for-fixing-typescript-strict-mode-type-nar/)
+- [Best AI Tools for TypeScript Type Inference and Generic Type](/ai-tools-compared/best-ai-tools-for-typescript-type-inference-and-generic-type/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

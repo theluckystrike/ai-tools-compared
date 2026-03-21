@@ -3,6 +3,7 @@ layout: default
 title: "Best Practices for Writing .cursorrules File That Improves"
 description: "Write effective.cursorrules files by using markdown-based natural language instructions starting with a project overview, then specifying explicit coding style"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /best-practices-for-writing-cursorrules-file-that-improves-co/
 categories: [guides]
@@ -279,14 +280,15 @@ Remember that the goal is not to include every possible preference, but to focus
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Writing CursorRules for Golang Projects with Specific.](/ai-tools-compared/writing-cursorrules-for-golang-projects-with-specific-concur/)
-- [Writing Effective CursorRules for React TypeScript.](/ai-tools-compared/writing-effective-cursorrules-for-react-typescript-projects-/)
-- [Writing Effective CursorRules for Next.js App Router.](/ai-tools-compared/writing-effective-cursorrules-for-nextjs-app-router-project-with-specific-file-conventions/)
+
+## Related Articles
+
+- [Best Practices for Versioning CursorRules Files Across Team](/ai-tools-compared/best-practices-for-versioning-cursorrules-files-across-team-/)
+- [Best Practices for Claude Md File Organization in Polyglot C](/ai-tools-compared/best-practices-for-claude-md-file-organization-in-polyglot-c/)
+- [Writing CursorRules for Golang Projects with Specific Concur](/ai-tools-compared/writing-cursorrules-for-golang-projects-with-specific-concur/)
+- [Writing Effective .cursorrules for Next.js App Router](/ai-tools-compared/writing-effective-cursorrules-for-nextjs-app-router-project-with-specific-file-conventions/)
+- [Writing Effective CursorRules for React TypeScript Projects](/ai-tools-compared/writing-effective-cursorrules-for-react-typescript-projects-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

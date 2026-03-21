@@ -3,6 +3,7 @@ layout: default
 title: "Best Way to Structure Claude MD File for Python Django Proje"
 description: "A guide to structuring Claude.md files for Python Django projects, with practical examples and code snippets for developers"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /best-way-to-structure-claude-md-file-for-python-django-proje/
 categories: [guides]
@@ -425,13 +426,14 @@ Schedule regular reviews of your Claude.md file:
 
 Treat your Claude.md file as a living document that evolves with your project.
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Configuring Cursor AI Notepads for Reusable Project Context.](/ai-tools-compared/configuring-cursor-ai-notepads-for-reusable-project-context-/)
-- [Claude Max Context Window Exceeded: What To Do](/ai-tools-compared/claude-max-context-window-exceeded-what-to-do/)
-- [Best Way to Configure Claude Code to Understand Your Internal Library APIs 2026](/ai-tools-compared/best-way-to-configure-claude-code-to-understand-your-interna/)
+
+## Related Articles
+
+- [Best Way to Structure CursorRules for Microservices Project](/ai-tools-compared/best-way-to-structure-cursorrules-for-microservices-project-/)
+- [AI Tools for Interpreting Python Traceback Errors](/ai-tools-compared/ai-tools-for-interpreting-python-traceback-errors-in-django-middleware-chains/)
+- [Best Way to Configure CursorRules for Python FastAPI Project](/ai-tools-compared/best-way-to-configure-cursorrules-for-python-fastapi-project/)
+- [Copilot vs Claude Code for Scaffolding New Django REST Frame](/ai-tools-compared/copilot-vs-claude-code-for-scaffolding-new-django-rest-frame/)
+- [Best Way to Configure Claude Code to Understand Your Interna](/ai-tools-compared/best-way-to-configure-claude-code-to-understand-your-interna/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

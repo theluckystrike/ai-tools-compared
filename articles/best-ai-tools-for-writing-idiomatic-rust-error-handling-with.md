@@ -3,6 +3,7 @@ layout: default
 title: "Best AI Tools for Writing Idiomatic Rust Error Handling"
 description: "A practical comparison of AI coding assistants for writing idiomatic Rust error handling using Result types. Includes code examples and tool."
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-tools-for-writing-idiomatic-rust-error-handling-with/
 categories: [guides]
@@ -368,14 +369,15 @@ mod tests {
 
 When you ask for "tests for error handling," Claude Code and Cursor both generate comprehensive test coverage, while Copilot may skip this entirely.
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Copilot vs Cursor for Writing Rust Error Handling with.](/ai-tools-compared/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
-- [Best AI Assistant for Writing Pandas Code to Process.](/ai-tools-compared/best-ai-assistant-for-writing-pandas-code-to-process-nested-json-api-pagination/)
-- [AI Tools for Writing Playwright Tests That Verify Toast.](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-toast-noti/)
+
+## Related Articles
+
+- [Copilot vs Cursor for Writing Rust Error Handling with](/ai-tools-compared/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
+- [Writing Claude Md Files That Teach AI Your Project Specific](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/)
+- [Claude Code API Error Handling Standards](/ai-tools-compared/claude-code-api-error-handling-standards/)
+- [How to Optimize AI Coding Prompts for Generating Production](/ai-tools-compared/how-to-optimize-ai-coding-prompts-for-generating-production-ready-error-handling/)
+- [AI Tools for Interpreting Rust Compiler Borrow Checker Error](/ai-tools-compared/ai-tools-for-interpreting-rust-compiler-borrow-checker-error/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

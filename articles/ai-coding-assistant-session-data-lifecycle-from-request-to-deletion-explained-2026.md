@@ -3,6 +3,7 @@ layout: default
 title: "AI Coding Assistant Session Data Lifecycle"
 description: "Understanding how AI coding assistants handle your data throughout the entire session lifecycle helps you make informed decisions about which tools to use and"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/
 categories: [guides]
@@ -263,14 +264,15 @@ To maintain control over your AI coding assistant data:
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Audit What Source Code AI Coding Tools Transmit.](/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
-- [How to Set Up Ollama as Private AI Coding Assistant for.](/ai-tools-compared/how-to-set-up-ollama-as-private-ai-coding-assistant-for-sensitive-codebases/)
-- [AI Coding Assistant Data Sovereignty Requirements for.](/ai-tools-compared/ai-coding-assistant-data-sovereignty-requirements-for-companies-operating-in-eu-2026/)
+
+## Related Articles
+
+- [AI Coding Assistant Data Sovereignty Requirements](/ai-tools-compared/ai-coding-assistant-data-sovereignty-requirements-for-companies-operating-in-eu-2026/)
+- [Best AI Assistant for Creating Test Data Factories with Real](/ai-tools-compared/best-ai-assistant-for-creating-test-data-factories-with-real/)
+- [Best AI Assistant for Generating SQL Recursive Queries](/ai-tools-compared/best-ai-assistant-for-generating-sql-recursive-queries-for-hierarchical-org-chart-data/)
+- [How to Export ChatGPT Shared Links Before Account Deletion](/ai-tools-compared/how-to-export-chatgpt-shared-links-before-account-deletion-2026/)
+- [Best AI Coding Tools for Python Data Science and pandas Work](/ai-tools-compared/best-ai-coding-tools-for-python-data-science-and-pandas-work/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

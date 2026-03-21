@@ -3,6 +3,7 @@ layout: default
 title: "How to Configure AI Context Includes and Excludes for Monore"
 description: "A practical guide to configuring AI coding assistants to focus on specific directories in monorepo setups, improving context accuracy and response quality"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-configure-ai-context-includes-and-excludes-for-monore/
 categories: [guides]
@@ -284,13 +285,14 @@ Properly configured context includes and excludes transform AI assistance from a
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Manage AI Coding Context Across Multiple Related.](/ai-tools-compared/how-to-manage-ai-coding-context-across-multiple-related-repo/)
-- [How to Manage AI Coding Context Window to Avoid.](/ai-tools-compared/how-to-manage-ai-coding-context-window-to-avoid-hallucinated/)
-- [Best Way to Configure AI Coding Tools to Follow Your.](/ai-tools-compared/best-way-to-configure-ai-coding-tools-to-follow-your-databas/)
+
+## Related Articles
+
+- [Claude Projects Feature Which Plan Tier Includes It Explaine](/ai-tools-compared/claude-projects-feature-which-plan-tier-includes-it-explaine/)
+- [Best Way to Configure AI Coding Tools to Follow Your Databas](/ai-tools-compared/best-way-to-configure-ai-coding-tools-to-follow-your-databas/)
+- [Best Way to Configure Claude Code to Understand Your Interna](/ai-tools-compared/best-way-to-configure-claude-code-to-understand-your-interna/)
+- [Best Way to Configure CursorRules for Python FastAPI Project](/ai-tools-compared/best-way-to-configure-cursorrules-for-python-fastapi-project/)
+- [How to Configure AI Coding Tools to Exclude Secrets and](/ai-tools-compared/how-to-configure-ai-coding-tools-to-exclude-secrets-and-env-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

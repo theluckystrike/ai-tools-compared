@@ -3,6 +3,7 @@ layout: default
 title: "How to Export ChatGPT Shared Links Before Account Deletion"
 description: "A practical guide to exporting your ChatGPT shared links before deleting your account. Step-by-step instructions with Python scripts and API methods"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-export-chatgpt-shared-links-before-account-deletion-2026/
 categories: [guides]
@@ -266,13 +267,14 @@ If you want to keep using AI tools but reduce your ChatGPT footprint:
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Export Perplexity Collections Before Switching to ChatGPT Search](/ai-tools-compared/export-perplexity-collections-before-switching-to-chatgpt-se/)
-- [How to Export Grammarly Personal Dictionary Before.](/ai-tools-compared/how-to-export-grammarly-personal-dictionary-before-switching/)
+
+## Related Articles
+
+- [Export Perplexity Collections Before Switching to ChatGPT Se](/ai-tools-compared/export-perplexity-collections-before-switching-to-chatgpt-se/)
 - [How to Export ChatGPT API Fine-Tuned Model for Local Use](/ai-tools-compared/how-to-export-chatgpt-api-fine-tuned-model-for-local-use/)
+- [AI Coding Assistant Session Data Lifecycle](/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [How to Export Dall E Generated Images at Full Resolution](/ai-tools-compared/how-to-export-dall-e-generated-images-at-full-resolution-before-leaving/)
+- [How to Export Gemini Workspace Data Before Switching to](/ai-tools-compared/how-to-export-gemini-workspace-data-before-switching-to-claude-team/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -3,6 +3,7 @@ layout: default
 title: "Migrate GitHub Copilot Workspace Setup to Cursor Background"
 description: "A practical guide for developers moving from GitHub Copilot workspace configurations to Cursor's background agent workflow"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /migrate-github-copilot-workspace-setup-to-cursor-background-/
 categories: [guides]
@@ -234,13 +235,14 @@ Excluding folders like `node_modules` reduces the agent's workload without losin
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
+## Related Articles
+
+- [How to Migrate From Copilot for Neovim](/ai-tools-compared/migrate-copilot-for-neovim-setup-to-claude-code-terminal-wor/)
+- [GitHub Copilot Workspace Preview Pricing Will It Cost Extra](/ai-tools-compared/github-copilot-workspace-preview-pricing-will-it-cost-extra-2026/)
+- [Copilot Workspace vs Cursor Composer Multi File Editing Comp](/ai-tools-compared/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)
 - [How to Migrate Copilot Chat History and Context to Cursor AI](/ai-tools-compared/migrate-copilot-chat-history-and-context-to-cursor-ai-guide/)
-- [How to Migrate VSCode Copilot Keybindings to Cursor AI.](/ai-tools-compared/migrate-vscode-copilot-keybindings-to-cursor-ai-editor-2026/)
-- [How to Transfer Copilot Code Review Settings to Cursor.](/ai-tools-compared/transfer-copilot-code-review-settings-to-cursor-ai-review-co/)
+- [How to Migrate VSCode Copilot Keybindings](/ai-tools-compared/migrate-vscode-copilot-keybindings-to-cursor-ai-editor-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

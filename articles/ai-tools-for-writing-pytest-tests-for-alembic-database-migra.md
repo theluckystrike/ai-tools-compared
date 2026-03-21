@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Writing pytest Tests for Alembic Database"
 description: "A practical guide to using AI tools to generate pytest tests for Alembic database migrations. Learn how to automate testing of upgrade and downgrade"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-writing-pytest-tests-for-alembic-database-migra/
 categories: [guides]
@@ -291,14 +292,15 @@ This ensures no migration reaches your main branch without proper test coverage.
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [AI Tools for Writing Pytest Tests for Alembic Database.](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
-- [Best AI Assistant for Writing pytest Tests for Pydantic.](/ai-tools-compared/best-ai-assistant-for-writing-pytest-tests-for-pydantic-mode/)
-- [Best AI Assistant for Writing Pytest Tests for.](/ai-tools-compared/best-ai-assistant-for-writing-pytest-tests-for-background-job-retry-failure-scenarios/)
+
+## Related Articles
+
+- [AI Tools for Writing pytest Tests for Alembic Database](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
+- [AI Tools for Writing pytest Tests for Click or Typer CLI Com](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-click-or-typer-cli-com/)
+- [AI Tools for Writing pytest Tests for FastAPI Endpoints](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-fastapi-endpoints-with/)
+- [AI Tools for Writing pytest Tests with Moto Library for AWS](/ai-tools-compared/ai-tools-for-writing-pytest-tests-with-moto-library-for-aws-/)
+- [Best AI Assistant for Writing pytest Tests for Background](/ai-tools-compared/best-ai-assistant-for-writing-pytest-tests-for-background-job-retry-failure-scenarios/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

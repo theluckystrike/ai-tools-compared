@@ -3,6 +3,7 @@ layout: default
 title: "How to Transfer Copilot Inline Chat Shortcuts"
 description: "A practical guide for developers moving from GitHub Copilot to Cursor. Learn how to map inline chat keybindings to Cursor's inline edit for a workflow"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/
 categories: [guides]
@@ -284,13 +285,14 @@ ln -s ~/.dotfiles/cursor-keybindings.json \
 
 This approach keeps your keybindings synchronized across all machines where you work.
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Copilot Inline Chat vs Cursor Inline Chat: Which.](/ai-tools-compared/copilot-inline-chat-vs-cursor-inline-chat-which-understands-/)
-- [How to Transfer Cursor Editor Theme and Layout to VSCode.](/ai-tools-compared/transfer-cursor-editor-theme-and-layout-to-vscode-with-copil/)
-- [How to Migrate VSCode Copilot Keybindings to Cursor AI.](/ai-tools-compared/migrate-vscode-copilot-keybindings-to-cursor-ai-editor-2026/)
+
+## Related Articles
+
+- [Copilot Inline Chat vs Cursor Inline Chat: Which Understands](/ai-tools-compared/copilot-inline-chat-vs-cursor-inline-chat-which-understands-/)
+- [Copilot vs Cursor vs Windsurf Inline Diff Preview Comparison](/ai-tools-compared/copilot-vs-cursor-vs-windsurf-inline-diff-preview-comparison/)
+- [How to Migrate Copilot Chat History and Context to Cursor AI](/ai-tools-compared/migrate-copilot-chat-history-and-context-to-cursor-ai-guide/)
+- [Best AI Inline Chat Features in VSCode Compared to Jetbrains](/ai-tools-compared/best-ai-inline-chat-features-in-vscode-compared-to-jetbrains/)
+- [How to Use AI Inline Chat to Refactor Single Function Step](/ai-tools-compared/how-to-use-ai-inline-chat-to-refactor-single-function-step-by-step/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

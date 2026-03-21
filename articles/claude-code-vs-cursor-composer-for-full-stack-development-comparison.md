@@ -3,6 +3,7 @@ layout: default
 title: "Claude Code vs Cursor Composer"
 description: "Deep comparison of Claude Code CLI and Cursor Composer for building full-stack apps. Workflow differences, context handling, multi-file editing, pricing"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /claude-code-vs-cursor-composer-for-full-stack-development-comparison/
 categories: [guides]
@@ -404,12 +405,14 @@ Cursor wins on team pricing significantly.
 - GitHub Copilot (can layer both)
 - npm/yarn
 
-## Related Reading
 
-- [Best AI Tools for Debugging Production Incidents with Log Analysis](/ai-tools-compared/guides-hub/)
-- [AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026](/ai-tools-compared/guides-hub/)
-- [How to Create .cursorrules That Enforce Your Team's React Component Standards](/ai-tools-compared/guides-hub/)
 
----
+## Related Articles
+
+- [How to Transfer Cursor Composer Prompt Library](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code-commands/)
+- [How to Transfer Your Cursor Composer Prompt Library](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code/)
+- [How to Chain Multiple AI Tools Together for Full Stack Devel](/ai-tools-compared/how-to-chain-multiple-ai-tools-together-for-full-stack-devel/)
+- [Claude Code vs Cursor for Backend Development](/ai-tools-compared/claude-code-vs-cursor-for-backend-development/)
+- [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

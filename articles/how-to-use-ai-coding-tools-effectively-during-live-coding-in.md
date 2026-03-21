@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI Coding Tools Effectively During Live Coding"
 description: "Use AI during live coding by having AI suggestions off by default, activating it for specific problems, and narrating decisions to avoid creating confusion"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-coding-tools-effectively-during-live-coding-interviews-2026/
 categories: [guides]
@@ -267,14 +268,15 @@ AI coding tools are powerful allies in technical interviews when used thoughtful
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Use AI Coding Assistants Effectively with Trunk.](/ai-tools-compared/how-to-use-ai-coding-assistants-effectively-with-trunk-based/)
-- [How to Manage AI Coding Context When Switching Between.](/ai-tools-compared/how-to-manage-ai-coding-context-when-switching-between-diffe/)
-- [How to Train Your AI Coding Assistant on Your Team.](/ai-tools-compared/how-to-train-your-ai-coding-assistant-on-your-team-coding-st/)
+
+## Related Articles
+
+- [How to Use AI Coding Assistants Effectively with Trunk Based](/ai-tools-compared/how-to-use-ai-coding-assistants-effectively-with-trunk-based/)
+- [How to Use AI Chat History Effectively for Iterating on Code](/ai-tools-compared/how-to-use-ai-chat-history-effectively-for-iterating-on-code/)
+- [Best AI Tools for Live Stream Enhancement](/ai-tools-compared/best-ai-tools-for-live-stream-enhancement/)
+- [How to Set Up Model Context Protocol Server Providing Live](/ai-tools-compared/how-to-set-up-model-context-protocol-server-providing-live-d/)
+- [Switching from ChatGPT Voice to Gemini Live Conversation](/ai-tools-compared/switching-from-chatgpt-voice-to-gemini-live-conversation-differences/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

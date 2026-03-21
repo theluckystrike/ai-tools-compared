@@ -3,6 +3,7 @@ layout: default
 title: "Copilot vs Cursor for Writing Terraform Modules from Scratch"
 description: "A practical comparison of GitHub Copilot and Cursor for building Terraform modules from scratch, with real code examples and recommendations"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /copilot-vs-cursor-for-writing-terraform-modules-from-scratch/
 categories: [guides]
@@ -286,13 +287,14 @@ Both tools improve dramatically with clear, descriptive comments in your Terrafo
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Copilot vs Cursor for Writing Pytest.](/ai-tools-compared/copilot-vs-cursor-for-writing--pytest-fixtures-/)
-- [Copilot vs Cursor for Implementing Redis Caching.](/ai-tools-compared/copilot-vs-cursor-for-implementing-redis-caching-patterns-in/)
-- [Copilot vs Claude Code for Writing Complex SQL Stored Procedures](/ai-tools-compared/copilot-vs-claude-code-for-writing-complex-sql-stored-proced/)
+
+## Related Articles
+
+- [Best AI Tools for Writing Terraform Modules 2026](/ai-tools-compared/best-ai-tools-for-writing-terraform-modules-2026/)
+- [How to Use Copilot for Writing Terraform Provider Configurat](/ai-tools-compared/how-to-use-copilot-for-writing-terraform-provider-configurat/)
+- [Copilot vs Cursor for Writing Clean Prisma Schema with Relat](/ai-tools-compared/copilot-vs-cursor-for-writing-clean-prisma-schema-with-relat/)
+- [Copilot vs Cursor for Writing pytest Fixtures](/ai-tools-compared/copilot-vs-cursor-for-writing--pytest-fixtures-/)
+- [Copilot vs Cursor for Writing Rust Error Handling with](/ai-tools-compared/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

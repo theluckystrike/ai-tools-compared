@@ -3,6 +3,7 @@ layout: default
 title: "Effective Workflow for Using AI"
 description: "A practical workflow for developers to use AI tools for generating and maintaining changelog documentation. Learn how to automate changelog creation"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /effective-workflow-for-using-ai-to-generate-and-maintain-changelog-documentation/
 categories: [guides, workflows]
@@ -298,14 +299,15 @@ audit_changelog('CHANGELOG.md', '.')
 This creates a feedback loop where AI assists with maintenance, reducing the friction of keeping changelogs current over years.
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Effective AI Coding Workflow for Building Features from.](/ai-tools-compared/effective-ai-coding-workflow-for-building-features-from-prod/)
-- [Effective Workflow for AI-Assisted Open Source.](/ai-tools-compared/effective-workflow-for-ai-assisted-open-source-contribution-/)
-- [Effective Strategies for AI-Assisted Debugging of.](/ai-tools-compared/effective-strategies-for-ai-assisted-debugging-of-intermittent-failures/)
+
+## Related Articles
+
+- [Effective AI Coding Workflow for Building Features from Prod](/ai-tools-compared/effective-ai-coding-workflow-for-building-features-from-prod/)
+- [Effective Tool Chaining Workflow Using Copilot and Claude](/ai-tools-compared/effective-tool-chaining-workflow-using-copilot-and-claude-together-for-coding/)
+- [Effective Workflow for AI-Assisted Open Source Contribution](/ai-tools-compared/effective-workflow-for-ai-assisted-open-source-contribution-/)
+- [Effective Workflow for Using AI](/ai-tools-compared/effective-workflow-for-using-ai-to-debug-production-issues-from-logs/)
+- [Best AI Tools for Writing GitHub Actions Reusable Workflow](/ai-tools-compared/best-ai-tools-for-writing-github-actions-reusable-workflow-t/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

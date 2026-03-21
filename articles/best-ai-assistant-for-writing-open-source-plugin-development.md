@@ -3,6 +3,7 @@ layout: default
 title: "Best AI Assistant for Writing Open Source Plugin Development"
 description: "A practical guide to the best AI assistants for writing open source plugin development documentation. Compare top tools with real code examples"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-assistant-for-writing-open-source-plugin-development/
 categories: [guides]
@@ -519,14 +520,15 @@ Claude typically scores 9-10/10 on this checklist. ChatGPT Plus scores 7-8/10. G
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best AI Assistant for Creating Open Source Project.](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)
-- [Best AI Assistant for Writing Open Source Roadmap.](/ai-tools-compared/best-ai-assistant-for-writing-open-source-roadmap-documents-from-issue-milestone-data/)
-- [Best AI for Creating Open Source Project Architecture Documentation](/ai-tools-compared/best-ai-for-creating-open-source-project-architecture-docume/)
+
+## Related Articles
+
+- [Best AI Assistant for Writing Open Source Roadmap Documents](/ai-tools-compared/best-ai-assistant-for-writing-open-source-roadmap-documents-from-issue-milestone-data/)
+- [Best AI Assistant for Creating Open Source Project Branding](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)
+- [Best AI Assistant for Drafting Open Source Partnership and](/ai-tools-compared/best-ai-assistant-for-drafting-open-source-partnership-and-integration-proposals-2026/)
+- [Best AI Assistant for Generating Open Source Release](/ai-tools-compared/best-ai-assistant-for-generating-open-source-release-announcements/)
+- [Best AI for Writing: Open Source Maintainer Burnout](/ai-tools-compared/best-ai-for-writing-open-source-maintainer-burnout-preventio/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

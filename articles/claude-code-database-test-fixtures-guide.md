@@ -3,6 +3,7 @@ layout: default
 title: "Claude Code Database Test Fixtures Guide"
 description: "A guide to creating and managing database test fixtures using Claude Code, covering fixture factories, data seeding strategies, and test"
 date: 2026-03-17
+last_modified_at: 2026-03-17
 author: "theluckystrike"
 permalink: /claude-code-database-test-fixtures-guide/
 reviewed: true
@@ -313,13 +314,14 @@ Finally, document edge cases. When fixtures require special handling, add commen
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [AI Tools for Generating Pytest Fixtures from Database.](/ai-tools-compared/ai-tools-for-generating-pytest-fixtures-from-database-schema/)
-- [Best AI for Writing Playwright Multi-Browser Test.](/ai-tools-compared/best-ai-for-writing-playwright-multi-browser-test-matrices-with-github-actions-2026/)
-- [Claude Code Java Library Development Guide](/ai-tools-compared/claude-code-java-library-development-guide/)
+
+## Related Articles
+
+- [AI Tools for Generating pytest Fixtures from Database](/ai-tools-compared/ai-tools-for-generating-pytest-fixtures-from-database-schema/)
+- [AI Tools for Creating Test Data Snapshots for Database](/ai-tools-compared/ai-tools-for-creating-test-data-snapshots-for-database-rollback-between-test-runs/)
+- [Copilot vs Claude Code for Writing Jest Test](/ai-tools-compared/copilot-vs-claude-code-for-writing--jest-test-s/)
+- [ChatGPT vs Claude for Creating Database Migration Scripts](/ai-tools-compared/chatgpt-vs-claude-for-creating-database-migration-scripts-po/)
+- [ChatGPT vs Claude for Generating Cypress Component Test Boil](/ai-tools-compared/chatgpt-vs-claude-for-generating-cypress-component-test-boil/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

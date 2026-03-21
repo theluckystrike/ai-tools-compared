@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI to Write GitHub Release Tag Descriptions"
 description: "A practical guide for developers using AI to create clear, informative GitHub release notes that include download instructions and asset links"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-write-github-release-tag-descriptions-with-/
 categories: [guides]
@@ -338,14 +339,15 @@ npm install -g myapp
 ```
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Use AI to Write GitHub Actions Bot Comments for.](/ai-tools-compared/how-to-use-ai-to-write-github-actions-bot-comments-for-first/)
-- [How to Use AI to Write Security Advisory Descriptions.](/ai-tools-compared/how-to-use-ai-to-write-security-advisory-descriptions-for-cv/)
-- [Effective Strategies for Using AI to Write.](/ai-tools-compared/effective-strategies-for-using-ai-to-write--api/)
+
+## Related Articles
+
+- [How to Use AI to Write Security Advisory Descriptions](/ai-tools-compared/how-to-use-ai-to-write-security-advisory-descriptions-for-cv/)
+- [How to Use AI to Write GitHub Actions Bot Comments for First](/ai-tools-compared/how-to-use-ai-to-write-github-actions-bot-comments-for-first/)
+- [AI Tools for Creating Automated Release Changelog from Conve](/ai-tools-compared/ai-tools-for-creating-automated-release-changelog-from-conve/)
+- [AI Tools for Product Managers Drafting Release](/ai-tools-compared/ai-tools-for-product-managers-drafting-release-communication-emails-from-feature-lists/)
+- [Best AI Assistant for Generating Open Source Release](/ai-tools-compared/best-ai-assistant-for-generating-open-source-release-announcements/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

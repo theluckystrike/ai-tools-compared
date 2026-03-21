@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI to Draft RFC Documents for Proposed Open"
 description: "Artificial intelligence has become a valuable assistant for open source maintainers and contributors drafting Request for Comments (RFC) documents. When"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-draft-rfc-documents-for-proposed-open-source-feature-changes/
 categories: [guides]
@@ -337,14 +338,15 @@ Maintain your voice. Use AI to structure and draft, but add your own analysis an
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Use AI to Draft Open Source Foundation Membership.](/ai-tools-compared/how-to-use-ai-to-draft-open-source-foundation-membership-app/)
-- [Best AI Assistant for Writing Open Source Roadmap.](/ai-tools-compared/best-ai-assistant-for-writing-open-source-roadmap-documents-from-issue-milestone-data/)
-- [How to Use AI to Help SRE Teams Draft Root Cause.](/ai-tools-compared/how-to-use-ai-to-help-sre-teams-draft-root-cause-analysis-do/)
+
+## Related Articles
+
+- [How to Use AI to Draft Open Source Foundation Membership App](/ai-tools-compared/how-to-use-ai-to-draft-open-source-foundation-membership-app/)
+- [Best AI Assistant for Writing Open Source Roadmap Documents](/ai-tools-compared/best-ai-assistant-for-writing-open-source-roadmap-documents-from-issue-milestone-data/)
+- [How to Use AI to Help SRE Teams Draft Root Cause Analysis](/ai-tools-compared/how-to-use-ai-to-help-sre-teams-draft-root-cause-analysis-do/)
+- [Best AI for Product Managers Creating User Persona Documents](/ai-tools-compared/best-ai-for-product-managers-creating-user-persona-documents/)
+- [How to Use AI to Create Milestone Planning Documents](/ai-tools-compared/how-to-use-ai-to-create-milestone-planning-documents-from-is/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

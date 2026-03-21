@@ -3,6 +3,7 @@ layout: default
 title: "Gemini Code Assist Enterprise Pricing Per Developer"
 description: "Complete guide to Google Gemini Code Assist enterprise pricing. Understand per-developer costs, feature tiers, and what enterprises should expect in 2026"
 date: 2026-03-19
+last_modified_at: 2026-03-19
 author: theluckystrike
 permalink: /gemini-code-assist-enterprise-pricing-per-developer-breakdown-2026/
 categories: [guides]
@@ -252,14 +253,15 @@ Many organizations find opportunities to optimize costs through careful seat man
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Copilot Business vs Cursor Business: Per-Developer Cost.](/ai-tools-compared/copilot-business-vs-cursor-business-per-developer-cost-comparison/)
-- [Gemini Advanced vs ChatGPT Plus Price Per Feature.](/ai-tools-compared/gemini-advanced-vs-chatgpt-plus-price-per-feature-comparison-2026/)
-- [AI Coding Tools Under $10 Per Month Ranked](/ai-tools-compared/ai-coding-tools-under-10-dollars-per-month-ranked/)
+
+## Related Articles
+
+- [ChatGPT API Assistants API Pricing Threads and Runs Cost](/ai-tools-compared/chatgpt-api-assistants-api-pricing-threads-and-runs-cost-breakdown/)
+- [Claude API vs OpenAI API Pricing Breakdown 2026](/ai-tools-compared/claude-api-vs-openai-api-pricing-breakdown-2026/)
+- [ChatGPT Edu Pricing Per Student: How Schools Get Volume](/ai-tools-compared/chatgpt-edu-pricing-per-student-how-schools-get-volume-disco/)
+- [Gemini Flash vs Pro API Pricing: When to Use Which Model](/ai-tools-compared/gemini-flash-vs-pro-api-pricing-when-to-use-which-model/)
+- [Gemini Advanced vs ChatGPT Plus Price Per Feature Comparison](/ai-tools-compared/gemini-advanced-vs-chatgpt-plus-price-per-feature-comparison-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

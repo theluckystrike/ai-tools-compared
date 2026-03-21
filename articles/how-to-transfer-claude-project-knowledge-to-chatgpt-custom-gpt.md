@@ -3,6 +3,7 @@ layout: default
 title: "How to Transfer Claude Project Knowledge to ChatGPT Custom"
 description: "A practical guide to migrating your Claude project knowledge bases, instructions, and settings to ChatGPT Custom GPTs with step-by-step instructions"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-transfer-claude-project-knowledge-to-chatgpt-custom-gpt/
 categories: [tutorials, guides]
@@ -233,10 +234,14 @@ This flexibility makes Custom GPTs valuable for team workflows, though it requir
 
 
 
-## Related Reading
 
-- [ChatGPT vs Claude for Coding Compared](/ai-tools-compared/chatgpt-vs-claude-for-coding-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [Claude Code vs GitHub Copilot for Developers](/ai-tools-compared/claude-code-vs-github-copilot-for-developers/)
+
+## Related Articles
+
+- [How to Transfer Claude Project Knowledge to ChatGPT Custom](/ai-tools-compared/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-g/)
+- [Transfer ChatGPT Custom GPTs to Claude Projects Step by Step](/ai-tools-compared/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
+- [ChatGPT Custom GPT Not Following Instructions](/ai-tools-compared/chatgpt-custom-gpt-not-following-instructions/)
+- [Claude vs ChatGPT for Building Custom ESLint Rules for React](/ai-tools-compared/claude-vs-chatgpt-for-building-custom-eslint-rules-for-react/)
+- [Switching from Windsurf to Cursor How to Transfer Project](/ai-tools-compared/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -3,6 +3,7 @@ layout: default
 title: "How to Use Claude API Cheaply for Small Coding Projects"
 description: "Use Claude API cheaply by batching requests, using claude-3-5-haiku for simple tasks, and caching context across requests. This guide shows the cost"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-claude-api-cheaply-for-small-coding-projects/
 categories: [guides]
@@ -351,13 +352,14 @@ Yes. Anthropic's console lets you set monthly spend limits per API key. Set a li
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
+## Related Articles
+
+- [Writing CLAUDE.md Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy/)
+- [Writing CLAUDE MD Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
 - [Cheapest Way to Use Claude for Coding Projects 2026](/ai-tools-compared/cheapest-way-to-use-claude-for-coding-projects-2026/)
-- [Claude Sonnet vs Opus API Pricing: Is the Difference.](/ai-tools-compared/claude-sonnet-vs-opus-api-pricing-difference-worth-it-2026/)
-- [ChatGPT Plus vs Claude Pro Monthly Cost for Daily Coding](/ai-tools-compared/chatgpt-plus-vs-claude-pro-monthly-cost-for-daily-coding/)
+- [Claude Projects Feature Which Plan Tier Includes It Explaine](/ai-tools-compared/claude-projects-feature-which-plan-tier-includes-it-explaine/)
+- [How to Transfer Notion AI Workflows to Claude Projects 2026](/ai-tools-compared/how-to-transfer-notion-ai-workflows-to-claude-projects-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

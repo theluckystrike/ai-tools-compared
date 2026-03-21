@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Self Service Support Portals: Practical Guide"
 description: "A developer-focused guide to AI tools that enhance self-service support portals. Includes implementation examples, API integrations, and practical code"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-self-service-support-portals/
 categories: [guides]
@@ -337,9 +338,14 @@ Several factors affect AI implementation success in support portals:
 
 
 
-## Related Reading
 
-- [Best AI Tool for Customer Success Managers 2026](/ai-tools-compared/best-ai-tool-for-customer-success-managers-2026/)
-- [AI Tools for Multilingual Customer Support](/ai-tools-compared/ai-tools-for-multilingual-customer-support/)
+
+## Related Articles
+
+- [ChatGPT Enterprise vs Custom Support Bot: A Practical](/ai-tools-compared/chatgpt-enterprise-vs-custom-support-bot/)
+- [AI Tools for Generating Kubernetes Service Mesh](/ai-tools-compared/ai-tools-for-generating-kubernetes-service-mesh-configuratio/)
+- [AI Tools for Writing Jest Tests for Web Worker and Service](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-web-worker-and-service-w/)
+- [Best AI Tools for Telecom Customer Service](/ai-tools-compared/best-ai-tools-for-telecom-customer-service/)
+- [Best AI Tools for Writing Go gRPC Service Definitions and](/ai-tools-compared/best-ai-tools-for-writing-go-grpc-service-definitions-and-implementations/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

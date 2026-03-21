@@ -3,6 +3,7 @@ layout: default
 title: "Best AI Tool for Game Developers Design Docs Writing"
 description: "Discover how AI tools can improve game design documentation, from GDDs to technical specifications, with practical examples and real-world use cases"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-tool-for-game-developers-design-docs-writing/
 reviewed: true
@@ -281,11 +282,15 @@ interface CraftingRecipe {
 
 
 
-## Related Reading
 
-- [Best AI Coding Tool for Golang Developers 2026](/ai-tools-compared/best-ai-coding-tool-for-golang-developers-2026/)
-- [Best AI Tool for Doctors Writing Clinical Notes: A.](/ai-tools-compared/best-ai-tool-for-doctors-writing-clinical-notes/)
-- [Best AI Coding Tool for Dockerfile Generation](/ai-tools-compared/best-ai-coding-tool-for-dockerfile-generation/)
+
+## Related Articles
+
+- [Notion AI vs Google Docs AI: Complete Writing Features](/ai-tools-compared/notion-ai-writing-features-vs-google-docs-ai-compared/)
+- [Best AI Tools for Video Game Trailers](/ai-tools-compared/best-ai-tools-for-video-game-trailers/)
+- [Cheapest AI Coding Tool for Indie Game Developer 2026](/ai-tools-compared/cheapest-ai-coding-tool-for-indie-game-developer-2026/)
+- [Gemini in Google Docs Not Showing Up? Fixes for 2026](/ai-tools-compared/gemini-in-google-docs-not-showing-up-fix-2026/)
+- [AI Coding Assistant for Rust Developers Compared](/ai-tools-compared/ai-coding-assistant-for-rust-developers-compared/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -3,6 +3,7 @@ layout: default
 title: "Switching from Midjourney to Dall E 3 Prompt Adaptation Guid"
 description: "A practical guide for developers and power users adapting Midjourney prompts for DALL-E 3. Includes syntax differences, parameter mappings, and code"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /switching-from-midjourney-to-dall-e-3-prompt-adaptation-guid/
 categories: [guides]
@@ -291,13 +292,14 @@ def migrate_mj_prompt(mj_prompt, ar="1:1", quality="standard"):
 ```
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Switching from DALL-E to Midjourney: Prompt Format.](/ai-tools-compared/switching-from-dall-e-to-midjourney-prompt-format-difference/)
-- [How to Transfer Midjourney Prompt Library to Ideogram.](/ai-tools-compared/how-to-transfer-midjourney-prompt-library-to-ideogram-prompt/)
+
+## Related Articles
+
+- [Switching from Dall E to Midjourney Prompt Format Difference](/ai-tools-compared/switching-from-dall-e-to-midjourney-prompt-format-difference/)
+- [How to Transfer Midjourney Prompt Library to Ideogram Prompt](/ai-tools-compared/how-to-transfer-midjourney-prompt-library-to-ideogram-prompt/)
+- [ChatGPT Plus Browsing and DALL-E Usage Limits Per Three](/ai-tools-compared/chatgpt-plus-browsing-and-dalle-usage-limits-per-three-hours/)
+- [DALL-E 3 Credit Cost Per Image: ChatGPT Plus vs API](/ai-tools-compared/dall-e-3-credit-cost-per-image-chatgpt-plus-vs-api/)
 - [DALL-E 3 vs Gemini Imagen: Quality Compared 2026](/ai-tools-compared/dall-e-3-vs-gemini-imagen-quality-compared-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

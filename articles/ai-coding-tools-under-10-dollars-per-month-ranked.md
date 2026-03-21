@@ -3,6 +3,7 @@ layout: default
 title: "AI Coding Tools Under $10 Per Month Ranked"
 description: "A practical comparison of the best AI coding assistants available for $10 or less per month, with code examples and recommendations for developers"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /ai-coding-tools-under-10-dollars-per-month-ranked/
 categories: [guides]
@@ -288,13 +289,14 @@ Most developers benefit from combining tools—for example, using Claude Code fo
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best AI Coding Assistant for Under $5 Per Month](/ai-tools-compared/best-ai-coding-assistant-for-under-5-dollars-per-month/)
+
+## Related Articles
+
 - [Best AI Coding Tool Under $20 Per Month (2026)](/ai-tools-compared/best-ai-coding-tool-under-20-dollars-per-month-2026/)
-- [Best Budget AI Coding Assistant for Freelance Developers.](/ai-tools-compared/best-budget-ai-coding-assistant-for-freelance-developers-202/)
+- [Best AI Coding Assistant for Under $5 Per Month](/ai-tools-compared/best-ai-coding-assistant-for-under-5-dollars-per-month/)
+- [How Much Does Cursor AI Actually Cost Per Month All Plans](/ai-tools-compared/how-much-does-cursor-ai-actually-cost-per-month-all-plans/)
+- [Midjourney Basic Plan Image Limits Per Month: Real Numbers](/ai-tools-compared/midjourney-basic-plan-image-limits-per-month-real-numbers-20/)
+- [ChatGPT Plus Cancel Mid Month: Do You Keep Access Until End?](/ai-tools-compared/chatgpt-plus-cancel-mid-month-do-you-keep-access-until-end/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

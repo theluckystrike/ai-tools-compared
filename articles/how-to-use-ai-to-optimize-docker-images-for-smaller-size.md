@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI to Optimize Docker Images for Smaller Size"
 description: "A practical guide for developers on using AI tools to analyze, optimize, and reduce Docker image sizes with real code examples and strategies"
 date: 2026-03-18
+last_modified_at: 2026-03-18
 author: theluckystrike
 permalink: /how-to-use-ai-to-optimize-docker-images-for-smaller-size/
 categories: [guides]
@@ -402,11 +403,15 @@ Test thoroughly after each optimization round. Some optimizations that reduce si
 Document the optimizations you implement. This helps future maintainers understand why certain patterns were chosen and prevents well-intentioned changes from reintroducing bloat.
 
 
-## Related Reading
 
-- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
-- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
-- [AI Tools Hub](/guides-hub/)
+
+## Related Articles
+
+- [How Context Window Size Affects AI Code Suggestions](/ai-tools-compared/how-context-window-size-affects-ai-code-suggestions-in-different-idess/)
+- [AI Tools for Generating Docker Compose Files for Complex Mic](/ai-tools-compared/ai-tools-for-generating-docker-compose-files-for-complex-mic/)
+- [AI Tools for Resolving Docker Build Context Permission Denie](/ai-tools-compared/ai-tools-for-resolving-docker-build-context-permission-denie/)
+- [Best AI Tools for Writing Docker Compose Files 2026](/ai-tools-compared/best-ai-tools-for-writing-docker-compose-files-2026/)
+- [AI Tools for Generating Website Hero Images Compared](/ai-tools-compared/ai-tools-for-generating-website-hero-images-compared/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

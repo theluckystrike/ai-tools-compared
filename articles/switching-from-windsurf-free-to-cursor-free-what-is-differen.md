@@ -3,6 +3,7 @@ layout: default
 title: "Switching from Windsurf Free to Cursor Free What Is"
 description: "A practical guide for developers comparing Windsurf Free vs Cursor Free. Learn the key differences in features, rate limits, and workflow to decide"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /switching-from-windsurf-free-to-cursor-free-what-is-different/
 categories: [guides]
@@ -256,13 +257,14 @@ Both tools are capable choices for developers exploring AI-assisted coding. The 
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Switching from Windsurf to Cursor: How to Transfer.](/ai-tools-compared/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
-- [Cursor vs Windsurf for Implementing Drag and Drop.](/ai-tools-compared/cursor-vs-windsurf-for-implementing-drag-and-drop-interfaces/)
-- [Cursor vs Windsurf for Building Next.js App from Design Mockup](/ai-tools-compared/cursor-vs-windsurf-for-building-next-js-app-from-design-mock/)
+
+## Related Articles
+
+- [Switching from Windsurf to Cursor How to Transfer Project](/ai-tools-compared/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
+- [Cursor Free Plan vs Windsurf Free Plan Which Gives More](/ai-tools-compared/cursor-free-plan-vs-windsurf-free-plan-which-gives-more/)
+- [AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026](/ai-tools-compared/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
+- [Copilot vs Cursor vs Windsurf Inline Diff Preview Comparison](/ai-tools-compared/copilot-vs-cursor-vs-windsurf-inline-diff-preview-comparison/)
+- [Copilot vs Cursor vs Windsurf: Monthly Cost Breakdown](/ai-tools-compared/copilot-vs-cursor-vs-windsurf-monthly-cost-breakdown-which-saves-money-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

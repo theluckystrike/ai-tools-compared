@@ -3,6 +3,7 @@ layout: default
 title: "How to Build a RAG Pipeline with LangChain 2026"
 description: "Step-by-step guide to building a production RAG pipeline with LangChain, including chunking strategies, vector stores, retrieval tuning, and evaluation methods"
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: /how-to-build-a-rag-pipeline-with-langchain-2026/
 categories: [guides]
@@ -375,13 +376,15 @@ async def refresh_index(source_dir: str):
     return {"indexed": len(docs), "files": len(new_files)}
 ```
 
-## Related Reading
 
-- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-for-automated-api-documentation-from-code-comments/)
-- [AI Pair Programming Tools Comparison 2026](/ai-pair-programming-tools-comparison-2026/)
-- [ChatGPT vs Claude for Writing API Documentation](/chatgpt-vs-claude-for-writing-api-documentation/)
 
----
+## Related Articles
+
+- [How to Use AI to Build Data Pipeline Retry and Dead Letter](/ai-tools-compared/how-to-use-ai-to-build-data-pipeline-retry-and-dead-letter-2/)
+- [AI CI/CD Pipeline Optimization: A Developer Guide](/ai-tools-compared/ai-ci-cd-pipeline-optimization/)
+- [AI Powered Tools for Predicting CI/CD Pipeline Failures Befo](/ai-tools-compared/ai-powered-tools-for-predicting-ci-cd-pipeline-failures-befo/)
+- [AI Tools for Writing CI CD Pipeline Configurations 2026](/ai-tools-compared/ai-tools-for-writing-ci-cd-pipeline-configurations-2026/)
+- [Best AI Tools for Data Pipeline Debugging 2026](/ai-tools-compared/best-ai-tools-for-data-pipeline-debugging-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

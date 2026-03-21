@@ -3,6 +3,7 @@ layout: default
 title: "How to Migrate ChatGPT Plugins"
 description: "A practical guide for developers and power users to migrate ChatGPT plugins to Custom GPTs. Includes code examples and best practices"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /migrate-chatgpt-plugins-to-custom-gpts-step-by-step-2026/
 categories: [guides]
@@ -284,14 +285,15 @@ This approach gives you version control over your GPT configurations and enables
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
+## Related Articles
+
+- [ChatGPT Plugins Replacement Custom Gpts Pricing](/ai-tools-compared/chatgpt-plugins-replacement-custom-gpts-pricing-for-developers/)
 - [Transfer ChatGPT Custom GPTs to Claude Projects Step by Step](/ai-tools-compared/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
-- [ChatGPT Plugins Replacement: Custom GPTs Pricing for.](/ai-tools-compared/chatgpt-plugins-replacement-custom-gpts-pricing-for-developers/)
-- [How to Migrate Jasper AI Brand Voice Settings to ChatGPT Custom Instructions](/ai-tools-compared/migrate-jasper-ai-brand-voice-settings-to-chatgpt-custom-ins/)
+- [Do ChatGPT Plus Memory and Custom GPTs Count Toward](/ai-tools-compared/chatgpt-plus-memory-and-custom-gpts-count-toward-usage-limit/)
+- [Migrate Jasper AI Brand Voice Settings to ChatGPT Custom Ins](/ai-tools-compared/migrate-jasper-ai-brand-voice-settings-to-chatgpt-custom-ins/)
+- [Migrating from ChatGPT Plugins to Claude MCP Tools for.](/ai-tools-compared/migrating-from-chatgpt-plugins-to-claude-mcp-tools-for-coding-workflows/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

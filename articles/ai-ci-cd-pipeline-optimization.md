@@ -3,6 +3,7 @@ layout: default
 title: "AI CI/CD Pipeline Optimization: A Developer Guide"
 description: "Learn practical strategies for optimizing CI/CD pipelines with AI. Discover intelligent test selection, predictive resource allocation, and automated"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /ai-ci-cd-pipeline-optimization/
 categories: [guides]
@@ -319,9 +320,15 @@ Rushing to add AI optimization before the data infrastructure is in place leads 
 ---
 
 
-## Related Reading
 
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
+## Related Articles
+
+- [AI Powered Tools for Predicting CI/CD Pipeline Failures Befo](/ai-tools-compared/ai-powered-tools-for-predicting-ci-cd-pipeline-failures-befo/)
+- [AI Tools for Writing CI CD Pipeline Configurations 2026](/ai-tools-compared/ai-tools-for-writing-ci-cd-pipeline-configurations-2026/)
+- [Best AI Tools for Data Pipeline Debugging 2026](/ai-tools-compared/best-ai-tools-for-data-pipeline-debugging-2026/)
+- [How to Build a RAG Pipeline with LangChain 2026](/ai-tools-compared/how-to-build-a-rag-pipeline-with-langchain-2026/)
+- [How to Use AI to Build Data Pipeline Retry and Dead Letter](/ai-tools-compared/how-to-use-ai-to-build-data-pipeline-retry-and-dead-letter-2/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

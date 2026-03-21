@@ -3,6 +3,7 @@ layout: default
 title: "How to Use Copilot Agent Mode for Multi-Step Coding Tasks"
 description: "A practical guide for developers on using GitHub Copilot agent mode to handle complex, multi-step coding tasks with real examples"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-copilot-agent-mode-for-multi-step-coding-tasks-20/
 categories: [guides]
@@ -232,13 +233,14 @@ Agent mode represents a significant evolution in AI-assisted development. By und
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best Practices for Breaking Down Complex Coding Tasks.](/ai-tools-compared/best-practices-for-breaking-down-complex-coding-tasks-for-ai/)
-- [Copilot Workspace vs Cursor Composer: Multi-File Editing.](/ai-tools-compared/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)
-- [How to Use Copilot Chat to Generate Code from Natural.](/ai-tools-compared/how-to-use-copilot-chat-to-generate-code-from-natural-langua/)
+
+## Related Articles
+
+- [Cursor AI Background Agent Feature for Autonomous Multi Step](/ai-tools-compared/cursor-ai-background-agent-feature-for-autonomous-multi-step/)
+- [Best Practices for Breaking Down Complex Coding Tasks](/ai-tools-compared/best-practices-for-breaking-down-complex-coding-tasks-for-ai/)
+- [Migrating from JetBrains AI to Copilot in IntelliJ -.](/ai-tools-compared/migrating-jetbrains-ai-to-copilot-intellij-step-by-step-guide/)
+- [Copilot Workspace vs Cursor Composer Multi File Editing Comp](/ai-tools-compared/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)
+- [How to Use Copilot to Write Dockerfiles for Multi-Stage Buil](/ai-tools-compared/how-to-use-copilot-to-write-dockerfiles-for-multi-stage-buil/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

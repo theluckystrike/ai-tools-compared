@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI to Create Data Quality Scorecards from dbt Tes"
 description: "Learn how to use AI to transform dbt test results into actionable data quality scorecards. Practical examples and code snippets for developers"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-create-data-quality-scorecards-from-dbt-tes/
 categories: [guides]
@@ -274,14 +275,15 @@ Use the AI-generated insights to move beyond simple pass/fail reporting. Instead
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Use AI to Create Milestone Planning Documents.](/ai-tools-compared/how-to-use-ai-to-create-milestone-planning-documents-from-is/)
-- [AI Tools for Creating dbt Model Definitions from Raw.](/ai-tools-compared/ai-tools-for-creating-dbt-model-definitions-from-raw-databas/)
-- [How to Use AI to Create Data Pipeline Orchestration.](/ai-tools-compared/how-to-use-ai-to-create-data-pipeline-orchestration-configs-/)
+
+## Related Articles
+
+- [How to Use AI to Create Data Pipeline Orchestration Configs](/ai-tools-compared/how-to-use-ai-to-create-data-pipeline-orchestration-configs-/)
+- [How to Use AI to Generate Playwright Authentication Flow Tes](/ai-tools-compared/how-to-use-ai-to-generate-playwright-authentication-flow-tes/)
+- [How to Use AI to Generate Playwright Keyboard Navigation Tes](/ai-tools-compared/how-to-use-ai-to-generate-playwright-keyboard-navigation-tes/)
+- [AI Tools for Creating Dbt Documentation Blocks](/ai-tools-compared/ai-tools-for-creating-dbt-documentation-blocks-from-column-level-lineage-analysis/)
+- [AI Tools for Creating dbt Model Definitions from Raw Databas](/ai-tools-compared/ai-tools-for-creating-dbt-model-definitions-from-raw-databas/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

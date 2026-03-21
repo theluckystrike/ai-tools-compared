@@ -3,6 +3,7 @@ layout: default
 title: "Best AI for Writing dbt Macros That Generate Dynamic SQL Bas"
 description: "Writing dbt macros that generate dynamic SQL based on configuration requires understanding both Jinja2 templating and SQL generation patterns. The best AI"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-for-writing-dbt-macros-that-generate-dynamic-sql-bas/
 categories: [guides]
@@ -242,14 +243,15 @@ The right choice depends on your project complexity, team setup, and workflow pr
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best AI for Writing Playwright Tests That Handle Dynamic.](/ai-tools-compared/best-ai-for-writing-playwright-tests-that-handle-dynamic-loa/)
-- [Writing Claude.md Files That Teach AI Your Project Testing Conventions and Patterns](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-testing-conventions-and-patterns/)
-- [AI Autocomplete Comparison for Writing SQL Queries.](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
+
+## Related Articles
+
+- [Best AI for Writing Playwright Tests That Handle Dynamic Loa](/ai-tools-compared/best-ai-for-writing-playwright-tests-that-handle-dynamic-loa/)
+- [AI Tools for Writing dbt Seeds and Fixtures for Testing Mode](/ai-tools-compared/ai-tools-for-writing-dbt-seeds-and-fixtures-for-testing-mode/)
+- [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
+- [Best AI for Writing SQL Performance Tuning Recommendations](/ai-tools-compared/best-ai-for-writing-sql-performance-tuning-recommendations-f/)
+- [Best AI Tools for Writing SQL Migrations in 2026](/ai-tools-compared/articles/best-ai-tools-for-writing-sql-migrations-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

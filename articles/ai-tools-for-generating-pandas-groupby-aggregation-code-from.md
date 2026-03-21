@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Generating pandas GroupBy Aggregation Code"
 description: "Discover how AI tools can convert plain English descriptions into pandas groupby aggregation code. Practical examples and code snippets for developers"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-generating-pandas-groupby-aggregation-code-from/
 categories: [guides]
@@ -376,14 +377,15 @@ For best results with AI pandas generation:
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best AI for Generating Pandas Code to Merge Data from.](/ai-tools-compared/best-ai-for-generating-pandas-code-to-merge-data-from-multip/)
-- [AI Tools for Generating Pandas Merge and Join Operations.](/ai-tools-compared/ai-tools-for-generating-pandas-merge-and-join-operations-fro/)
-- [Best AI Features for Generating API Client Code from.](/ai-tools-compared/best-ai-features-for-generating-api-client-code-from-openapi/)
+
+## Related Articles
+
+- [Best AI for Generating pandas Code to Merge Data from Multip](/ai-tools-compared/best-ai-for-generating-pandas-code-to-merge-data-from-multip/)
+- [AI Tools for Generating pandas Merge and Join Operations Fro](/ai-tools-compared/ai-tools-for-generating-pandas-merge-and-join-operations-fro/)
+- [Best AI Assistant for Writing pandas Code](/ai-tools-compared/best-ai-assistant-for-writing-pandas-code-to-process-nested-json-api-pagination/)
+- [AI Tools for Generating OpenAPI Specs from Code](/ai-tools-compared/ai-tools-openapi-spec-generation/)
+- [Best AI Features for Generating API Client Code from](/ai-tools-compared/best-ai-features-for-generating-api-client-code-from-openapi/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

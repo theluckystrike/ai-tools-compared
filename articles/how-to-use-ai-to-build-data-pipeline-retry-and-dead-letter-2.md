@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI to Build Data Pipeline Retry and Dead Letter"
 description: "Learn how to use AI to create intelligent retry mechanisms and dead letter queue handling for data pipelines"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-build-data-pipeline-retry-and-dead-letter-2/
 categories: [guides]
@@ -265,14 +266,15 @@ The investment in AI-powered retry and dead letter handling pays dividends throu
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [AI Tools for Automated Infrastructure Drift Detection.](/ai-tools-compared/ai-tools-for-automated-infrastructure-drift-detection-and-correction/)
-- [AI Tools for Resolving Yarn Berry PnP Module Resolution.](/ai-tools-compared/ai-tools-for-resolving-yarn-berry-pnp-module-resolution-erro/)
-- [How to Use AI to Create Data Pipeline Orchestration.](/ai-tools-compared/how-to-use-ai-to-create-data-pipeline-orchestration-configs-/)
+
+## Related Articles
+
+- [How to Build a RAG Pipeline with LangChain 2026](/ai-tools-compared/how-to-build-a-rag-pipeline-with-langchain-2026/)
+- [Best AI Tools for Data Pipeline Debugging 2026](/ai-tools-compared/best-ai-tools-for-data-pipeline-debugging-2026/)
+- [How to Use AI to Create Data Pipeline Orchestration Configs](/ai-tools-compared/how-to-use-ai-to-create-data-pipeline-orchestration-configs-/)
+- [DALL-E Image Generation Failed: How to Retry](/ai-tools-compared/dalle-image-generation-failed-how-to-retry/)
+- [AI CI/CD Pipeline Optimization: A Developer Guide](/ai-tools-compared/ai-ci-cd-pipeline-optimization/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

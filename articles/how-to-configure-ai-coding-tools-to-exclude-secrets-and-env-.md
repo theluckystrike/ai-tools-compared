@@ -3,6 +3,7 @@ layout: default
 title: "How to Configure AI Coding Tools to Exclude Secrets and"
 description: "A practical guide for developers on configuring AI coding assistants like GitHub Copilot, Cursor, and Claude to exclude sensitive files from training"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-configure-ai-coding-tools-to-exclude-secrets-and-env-/
 categories: [guides, security]
@@ -334,13 +335,14 @@ Periodically review your configuration:
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Optimize Your AI Coding Tool Configuration for Specific Project Types](/ai-tools-compared/how-to-optimize-your-ai-coding-tool-configuration-for-specif/)
-- [How to Use AI Coding Tools Without Becoming Dependent on Autocomplete](/ai-tools-compared/how-to-use-ai-coding-tools-without-becoming-dependent-on-aut/)
-- [Best Local LLM Alternatives to Cloud AI Coding.](/ai-tools-compared/best-local-llm-alternatives-to-cloud-ai-coding-assistants-for-air-gapped/)
+
+## Related Articles
+
+- [Best Way to Configure AI Coding Tools to Follow Your Databas](/ai-tools-compared/best-way-to-configure-ai-coding-tools-to-follow-your-databas/)
+- [Configure AI Coding Tools](/ai-tools-compared/how-to-configure-ai-coding-tools-to-respect-your-teams-branc/)
+- [AI Tools for Automated Secrets Rotation and Vault Management](/ai-tools-compared/ai-tools-for-automated-secrets-rotation-and-vault-management/)
+- [Best Way to Configure Claude Code to Understand Your Interna](/ai-tools-compared/best-way-to-configure-claude-code-to-understand-your-interna/)
+- [Best Way to Configure CursorRules for Python FastAPI Project](/ai-tools-compared/best-way-to-configure-cursorrules-for-python-fastapi-project/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

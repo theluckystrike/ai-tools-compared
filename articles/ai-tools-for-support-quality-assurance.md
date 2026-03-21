@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Support Quality Assurance"
 description: "A practical guide to AI tools for support quality assurance, with code examples and implementation strategies for developers and power users"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-support-quality-assurance/
 categories: [guides]
@@ -301,14 +302,15 @@ The implementations above provide starting points for developers building custom
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [AI Tools for Education Student Support](/ai-tools-compared/ai-tools-for-education-student-support/)
-- [AI Tools for Multilingual Customer Support](/ai-tools-compared/ai-tools-for-multilingual-customer-support/)
-- [Best AI Tools for Support Agent Assist](/ai-tools-compared/best-ai-tools-for-support-agent-assist/)
+
+## Related Articles
+
+- [AI Code Generation Quality for Java JUnit 5 Parameterized](/ai-tools-compared/ai-code-generation-quality-for-java-junit-5-parameterized-te/)
+- [AI Code Generation Quality for Java Pattern Matching and Swi](/ai-tools-compared/ai-code-generation-quality-for-java-pattern-matching-and-swi/)
+- [AI Code Generation Quality for Java Spring Security](/ai-tools-compared/ai-code-generation-quality-for-java-spring-security-configur/)
+- [AI Code Generation Quality for JavaScript Async Await Patter](/ai-tools-compared/ai-code-generation-quality-for-javascript-async-await-patter/)
+- [AI Code Suggestion Quality When Working With Environment Var](/ai-tools-compared/ai-code-suggestion-quality-when-working-with-environment-var/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

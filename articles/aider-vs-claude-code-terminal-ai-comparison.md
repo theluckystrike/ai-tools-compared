@@ -3,6 +3,7 @@ layout: default
 title: "aider vs Claude Code: Terminal AI Coding Assistants Compared"
 description: "Choose Aider if you want automatic git integration, multi-file refactoring with import updates, and the flexibility to switch between Claude, GPT, and local"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /aider-vs-claude-code-terminal-ai-comparison/
 reviewed: true
@@ -270,10 +271,14 @@ Many developers end up using both tools for different purposes—Aider for focus
 
 
 
-## Related Reading
 
-- [ChatGPT vs Claude for Creative Storytelling Compared](/ai-tools-compared/chatgpt-vs-claude-for-creative-storytelling-compared/)
-- [AI Coding Assistant for Rust Developers Compared](/ai-tools-compared/ai-coding-assistant-for-rust-developers-compared/)
-- [Wordtune vs Quillbot: A Sentence Rewriting Comparison](/ai-tools-compared/wordtune-vs-quillbot-sentence-rewriting-comparison/)
+
+## Related Articles
+
+- [Claude Code Terminal Permission Denied Fix](/ai-tools-compared/claude-code-terminal-permission-denied-fix/)
+- [Does Claude Code Send Terminal Output to Anthropic Servers P](/ai-tools-compared/does-claude-code-send-terminal-output-to-anthropic-servers-p/)
+- [How to Migrate From Copilot for Neovim](/ai-tools-compared/migrate-copilot-for-neovim-setup-to-claude-code-terminal-wor/)
+- [AI Coding Assistants for Go Testing Table Driven Tests Gener](/ai-tools-compared/ai-coding-assistants-for-go-testing-table-driven-tests-gener/)
+- [AI Coding Assistants for Typescript Deno Fresh Framework Com](/ai-tools-compared/ai-coding-assistants-for-typescript-deno-fresh-framework-com/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

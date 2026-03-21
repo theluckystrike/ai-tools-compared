@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI to Create Changelog Entries Grouped by Breakin"
 description: "Learn practical methods for using AI to generate well-organized changelog entries that separate breaking changes from new features. Includes code"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-create-changelog-entries-grouped-by-breakin/
 categories: [guides]
@@ -244,14 +245,15 @@ When using AI for changelog generation, watch for these issues:
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Create Reusable Prompt Templates for Common AI.](/ai-tools-compared/how-to-create-reusable-prompt-templates-for-common-ai-coding/)
-- [How to Use AI to Create Edge Case Test Scenarios from API Error Documentation](/ai-tools-compared/how-to-use-ai-to-create-edge-case-test-scenarios-from-api-er/)
-- [How to Create Custom Instructions for AI Coding Tools That Enforce Naming Conventions](/ai-tools-compared/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
+
+## Related Articles
+
+- [AI Tools for Automated Changelog Generation 2026](/ai-tools-compared/ai-tools-for-automated-changelog-generation-2026/)
+- [AI Tools for Creating Automated Release Changelog from Conve](/ai-tools-compared/ai-tools-for-creating-automated-release-changelog-from-conve/)
+- [Create CursorRules That Enforce Your Team's Git Commit](/ai-tools-compared/how-to-create-cursorrules-that-enforce-your-teams-git-commit/)
+- [How to Create .cursorrules That Enforce Your Teams React](/ai-tools-compared/how-to-create-cursorrules-that-enforce-your-teams-react-comp/)
+- [Create CursorRules That Teach Cursor Your Team's State](/ai-tools-compared/how-to-create-cursorrules-that-teach-cursor-your-teams-state/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
