@@ -57,18 +57,15 @@ Browse articles by topic for focused comparisons:
 
 ## Browse by Topic
 
-{% assign code_assistants = all_articles | where_exp: "p", "p.path contains 'copilot' or p.path contains 'cursor' or p.path contains 'codeium' or p.path contains 'tabnine' or p.path contains 'autocomplete' or p.path contains 'code-completion' or p.path contains 'code-suggestion'" %}
-{% assign llm_comparisons = all_articles | where_exp: "p", "p.path contains 'chatgpt' or p.path contains 'claude' or p.path contains 'gemini' or p.path contains 'gpt-4' or p.path contains 'llm'" %}
-{% assign code_generation = all_articles | where_exp: "p", "p.path contains 'code-generation' or p.path contains 'code-gen'" %}
-{% assign code_review = all_articles | where_exp: "p", "p.path contains 'code-review' or p.path contains 'review-tool'" %}
-{% assign devops_tools = all_articles | where_exp: "p", "p.path contains 'ci-cd' or p.path contains 'devops' or p.path contains 'pipeline' or p.path contains 'deploy' or p.path contains 'infrastructure'" %}
-{% assign testing_tools = all_articles | where_exp: "p", "p.path contains 'test' or p.path contains 'junit' or p.path contains 'pytest'" %}
+{% assign code_assistants = all_articles | where_exp: "p", "p.path contains 'copilot'" %}
+{% assign llm_comparisons = all_articles | where_exp: "p", "p.path contains 'chatgpt'" %}
+{% assign testing_tools = all_articles | where_exp: "p", "p.path contains 'test'" %}
 {% assign best_of = all_articles | where_exp: "p", "p.path contains 'best-ai'" %}
 
 {% if code_assistants.size > 0 %}
-### AI Code Assistants & Autocomplete ({{ code_assistants.size }})
+### AI Code Assistants ({{ code_assistants.size }}+)
 
-<details><summary>Copilot, Cursor, Codeium, Tabnine comparisons and benchmarks</summary>
+<details><summary>Copilot, Cursor, Codeium, and Tabnine comparisons</summary>
 <ul>
 {% for p in code_assistants %}
 <li><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
@@ -78,9 +75,9 @@ Browse articles by topic for focused comparisons:
 {% endif %}
 
 {% if llm_comparisons.size > 0 %}
-### LLM Comparisons — ChatGPT vs Claude vs Gemini ({{ llm_comparisons.size }})
+### LLM Comparisons ({{ llm_comparisons.size }}+)
 
-<details><summary>Head-to-head comparisons of large language models for development</summary>
+<details><summary>ChatGPT, Claude, and Gemini head-to-head</summary>
 <ul>
 {% for p in llm_comparisons %}
 <li><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
@@ -101,48 +98,12 @@ Browse articles by topic for focused comparisons:
 </details>
 {% endif %}
 
-{% if code_generation.size > 0 %}
-### AI Code Generation ({{ code_generation.size }})
-
-<details><summary>AI-generated code quality for Java, Python, TypeScript, and more</summary>
-<ul>
-{% for p in code_generation %}
-<li><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
-{% endfor %}
-</ul>
-</details>
-{% endif %}
-
 {% if testing_tools.size > 0 %}
 ### AI for Testing & QA ({{ testing_tools.size }})
 
-<details><summary>AI-powered test generation, mutation testing, and QA automation</summary>
+<details><summary>AI-powered test generation and QA automation</summary>
 <ul>
 {% for p in testing_tools %}
-<li><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
-{% endfor %}
-</ul>
-</details>
-{% endif %}
-
-{% if devops_tools.size > 0 %}
-### AI for DevOps & Infrastructure ({{ devops_tools.size }})
-
-<details><summary>CI/CD optimization, deployment automation, and infrastructure tools</summary>
-<ul>
-{% for p in devops_tools %}
-<li><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
-{% endfor %}
-</ul>
-</details>
-{% endif %}
-
-{% if code_review.size > 0 %}
-### AI Code Review Tools ({{ code_review.size }})
-
-<details><summary>Automated code review and PR analysis tools</summary>
-<ul>
-{% for p in code_review %}
 <li><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
 {% endfor %}
 </ul>

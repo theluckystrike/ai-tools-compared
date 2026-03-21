@@ -211,6 +211,48 @@ The `claude doctor` command runs a diagnostic suite checking:
 Save the output if you need to file a support ticket.
 
 
+## Platform-Specific Quirks
+
+
+The fix sequence differs slightly depending on which Claude surface you use. Here is what to check first on each platform.
+
+
+**claude.ai web app:** Use an incognito/private browsing window to rule out browser extension conflicts. Extensions that modify cookies or block third-party requests (including some ad blockers and privacy tools) occasionally interfere with OAuth callbacks. If the incognito window shows Pro correctly, disable extensions one at a time to find the culprit.
+
+
+**Claude iOS / Android app:** Force-quit the app completely (swipe away from app switcher), then relaunch. Mobile apps cache authentication tokens differently from desktop apps. If force-quit does not help, go to Settings > Apps > Claude > Storage > Clear Cache on Android, or uninstall and reinstall on iOS.
+
+
+**Claude Code CLI (npm package):** Ensure you are running the latest version with `npm update -g @anthropic-ai/claude-code`. Older CLI versions sometimes fail to parse updated tier fields in the auth response, displaying the wrong tier even when the token is valid.
+
+
+**API usage:** If you access Claude through the API and see rate limits consistent with the Free tier, check that you are using the API key associated with your Pro account. Go to console.anthropic.com > API Keys, confirm the key you are using belongs to the correct account.
+
+
+## Billing Edge Cases: What Support Needs to See
+
+
+If none of the above fixes work and you need to escalate to Anthropic support, gather these details before contacting them:
+
+- Account email address used for the upgrade
+- Date and time of the payment transaction
+- Payment method (card last four digits or PayPal transaction ID)
+- Screenshot of the billing confirmation email
+- Output of `claude doctor` (or `claude auth status --verbose`)
+- Your region (some payment processors have regional sync delays of 24–48 hours)
+
+With this information in hand, support can manually trigger a tier sync on the backend, which resolves the issue immediately for confirmed payments.
+
+
+## Regional Payment Processing Delays
+
+
+Developers in certain regions—particularly Southeast Asia, Latin America, and parts of Eastern Europe—have reported that their Pro upgrade takes longer to reflect due to additional payment processor verification steps. This is not a bug in Claude's auth system; it is the payment provider queuing the confirmation.
+
+
+In these cases, the tier typically updates within 2–4 business hours without any action on your part. If it has been more than 24 hours and the payment email confirms success, escalate to support.
+
+
 ## Still Not Working?
 
 
@@ -232,6 +274,28 @@ To avoid this issue in the future:
 - Avoid upgrading through third-party resellers or unofficial channels
 
 - Keep your Claude CLI and desktop app updated to the latest version
+
+
+---
+
+
+## Frequently Asked Questions
+
+
+**How long does it normally take for Claude Pro to activate after payment?**
+For most users, Pro status activates within 5–10 minutes of a successful payment. If you are still seeing Free tier after 30 minutes, start with Fix 1 (sign out and back in). Only escalate to support if it has been more than 24 hours.
+
+
+**Will clearing `~/.config/claude/` delete my Projects or saved conversations?**
+Local cache clearing removes locally stored conversation history and cached auth tokens. Projects and conversations synced to claude.ai are stored server-side and will reappear after you sign back in. If you use Claude Code in offline mode with local-only conversation history, back up that directory first.
+
+
+**I upgraded through the Claude app on iOS. Why does claude.ai still show Free?**
+In-app purchases on iOS go through Apple's payment system, which triggers a separate entitlement sync with Anthropic's servers. This sync can take longer than direct web payments. Sign out of claude.ai and sign back in after 15–20 minutes. If still not reflecting, use the "Restore Purchases" option in the Claude iOS app settings.
+
+
+**Can I be charged for Pro while still seeing Free-tier limits?**
+Yes, this can happen during a sync delay—your payment succeeds but the tier hasn't propagated yet. You will not lose the Pro features; they activate once the sync completes. You will not be double-charged. If the sync never completes, support can manually apply the tier while preserving your billing cycle.
 
 
 ---
