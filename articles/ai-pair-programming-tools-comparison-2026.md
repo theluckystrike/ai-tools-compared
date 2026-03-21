@@ -331,6 +331,25 @@ Moving between tools:
 
 AI pair programming is now table stakes—the question isn't whether to use it, but which tool aligns with your team's workflow, budget, and codebase complexity. Start with Cursor or Copilot Chat; graduate to Claude Code or Aider when multi-file refactors become routine.
 
+
+### Benchmarking Multi-File Edit Performance
+
+```bash
+# Test each tool's multi-file edit capability with a real refactor
+# 1. Clone a representative project
+git clone https://github.com/gothinkster/realworld && cd realworld
+
+# 2. Time Claude Code on a cross-file rename task
+time claude -p "Rename all instances of 'article' to 'post' across src/ — update imports, tests, and types"
+
+# 3. Benchmark Copilot Chat via CLI (GitHub Copilot CLI)
+time gh copilot explain "refactor src/article to src/post in this codebase"
+
+# 4. Compare context window usage
+wc -l src/**/*.ts | tail -1    # total lines fed to context
+```
+
+
 ## Related Reading
 
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)

@@ -7,8 +7,9 @@ author: "AI Tools Compared"
 permalink: /casetext-ai-legal-research-review-2026/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
+tags: [ai-tools-compared, artificial-intelligence]
 ---
 
 Casetext has emerged as one of the most influential AI-powered legal research platforms in the industry. With its flagship AI assistant CoCounsel, Casetext offers a sophisticated blend of traditional legal database searching and modern artificial intelligence. This review examines Casetext's capabilities, pricing structure, integration options, and how it compares to other leading legal research tools in 2026.
