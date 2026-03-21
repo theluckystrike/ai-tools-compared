@@ -539,4 +539,9 @@ AI tools make CI/CD configuration approachable for developers who haven't memori
 
 For new complex pipelines, start with Claude to establish the architecture and decisions. Then iterate in Cursor for real-time refinement. Use all three tools—each excels in its context.
 
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
