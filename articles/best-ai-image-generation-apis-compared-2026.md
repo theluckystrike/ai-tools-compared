@@ -11,7 +11,7 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared]
+tags: [ai-tools-compared, comparison, best-of, artificial-intelligence, api]
 ---
 
 {% raw %}
