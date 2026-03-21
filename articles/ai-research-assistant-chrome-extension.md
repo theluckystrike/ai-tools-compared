@@ -110,11 +110,11 @@ function extractPageContent() {
   // Remove unwanted elements
   const clones = document.body.cloneNode(true);
   const removeSelectors = ['script', 'style', 'nav', 'footer', '.advertisement'];
-  
+
   removeSelectors.forEach(selector => {
     clones.querySelectorAll(selector).forEach(el => el.remove());
   });
-  
+
   return clones.body.textContent.substring(0, 8000);
 }
 
@@ -191,7 +191,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     .then(res => res.json())
     .then(data => sendResponse({ result: data.choices[0].message.content }))
     .catch(err => sendResponse({ error: err.message }));
-    
+
     return true; // Keep channel open for async response
   }
 });
@@ -202,6 +202,101 @@ async function getApiKey() {
   });
 }
 ```
+
+
+## Adding Streaming Responses
+
+
+
+One significant UX improvement over the basic implementation is streaming API responses so text appears word-by-word instead of arriving all at once. The OpenAI and Anthropic APIs both support server-sent events (SSE) for streaming:
+
+
+
+```javascript
+// background.js — streaming version
+async function streamResponse(prompt, apiKey, tabId) {
+  const response = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-api-key': apiKey,
+      'anthropic-version': '2023-06-01',
+      'anthropic-beta': 'messages-2023-12-15'
+    },
+    body: JSON.stringify({
+      model: 'claude-opus-4-6',
+      max_tokens: 1024,
+      stream: true,
+      messages: [{ role: 'user', content: prompt }]
+    })
+  });
+
+  const reader = response.body.getReader();
+  const decoder = new TextDecoder();
+
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+
+    const chunk = decoder.decode(value);
+    const lines = chunk.split('\n').filter(l => l.startsWith('data: '));
+
+    for (const line of lines) {
+      const data = JSON.parse(line.replace('data: ', ''));
+      if (data.type === 'content_block_delta') {
+        // Send each token to the popup as it arrives
+        chrome.tabs.sendMessage(tabId, {
+          action: 'streamToken',
+          token: data.delta.text
+        });
+      }
+    }
+  }
+}
+```
+
+
+Streaming reduces perceived latency from several seconds to near-instant—particularly important when analyzing long pages where the model needs time to process context.
+
+
+
+## Handling Context Window Limits
+
+
+
+A common failure mode is attempting to send entire pages to the API when they exceed the context window. A chunking strategy handles this gracefully:
+
+
+
+```javascript
+function chunkContent(text, maxTokens = 6000) {
+  // Rough approximation: 1 token ≈ 4 characters
+  const maxChars = maxTokens * 4;
+
+  if (text.length <= maxChars) return [text];
+
+  // Split on paragraph boundaries to preserve coherence
+  const paragraphs = text.split(/\n\n+/);
+  const chunks = [];
+  let current = '';
+
+  for (const para of paragraphs) {
+    if ((current + para).length > maxChars) {
+      if (current) chunks.push(current.trim());
+      current = para;
+    } else {
+      current += '\n\n' + para;
+    }
+  }
+
+  if (current) chunks.push(current.trim());
+  return chunks;
+}
+```
+
+
+For multi-chunk pages, you can summarize each chunk separately and then combine summaries—or use a map-reduce approach where the AI identifies the most relevant sections before deep analysis.
+
 
 
 ## Popular Ready-Made Solutions
@@ -268,11 +363,79 @@ When building or using AI research assistant extensions, keep several factors in
 
 
 
-**Privacy Implications** vary by implementation. Some extensions send page content to external APIs—review the privacy policy and consider using local models or self-hosted alternatives for sensitive work.
+**Privacy Implications** vary by implementation. Some extensions send page content to external APIs—review the privacy policy and consider using local models or self-hosted alternatives for sensitive work. Running Ollama locally eliminates data transmission entirely: point your extension's API handler at `http://localhost:11434/api/generate` and your page content never leaves your machine.
 
 
 
 **Rate Limits** from API providers can interrupt your workflow. Build error handling that gracefully manages limits and provides useful feedback.
+
+
+
+## Testing Your Extension Before Publishing
+
+
+
+Chrome's Extension Management page (`chrome://extensions`) supports loading unpacked extensions directly from your project folder. Enable developer mode, click "Load unpacked," and select your project directory. Changes to popup HTML/CSS take effect on the next popup open; changes to background scripts require clicking "Update" in the Extensions page.
+
+
+
+For automated testing, Puppeteer's `browser.loadExtension()` API lets you launch a Chromium instance with your extension pre-installed:
+
+
+
+```javascript
+// test/extension.test.js
+const puppeteer = require('puppeteer');
+const path = require('path');
+
+test('extension popup loads without errors', async () => {
+  const browser = await puppeteer.launch({
+    headless: false,
+    args: [
+      `--disable-extensions-except=${path.resolve('./extension')}`,
+      `--load-extension=${path.resolve('./extension')}`
+    ]
+  });
+
+  const targets = await browser.targets();
+  const extTarget = targets.find(t => t.type() === 'service_worker');
+  expect(extTarget).toBeDefined();
+
+  await browser.close();
+});
+```
+
+
+Before submitting to the Chrome Web Store, run the [Chrome Extension Manifest V3 migration guide checklist](https://developer.chrome.com/docs/extensions/develop/migrate) and verify your `host_permissions` are scoped as narrowly as possible—reviewers flag overly broad permissions and may require revisions.
+
+
+
+## Migrating from a Simple Popup to a Side Panel
+
+
+
+Chrome 114+ introduced the Side Panel API, which keeps the assistant visible while you scroll—a significant improvement over popups that close when you click away. Migrating requires one manifest change and a small JavaScript update:
+
+
+
+```json
+// manifest.json additions
+{
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "permissions": ["activeTab", "storage", "scripting", "sidePanel"]
+}
+```
+
+
+```javascript
+// In your service worker / background.js
+chrome.sidePanel.setPanelBehavior({ openPanelOnActionClick: true });
+```
+
+
+The side panel shares the same content script messaging architecture, so your existing `extractPageContent` and API handler logic requires no changes. The result is an always-visible assistant that updates its context automatically as you navigate between tabs.
 
 
 
