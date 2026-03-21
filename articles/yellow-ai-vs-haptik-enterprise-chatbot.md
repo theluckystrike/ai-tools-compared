@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /yellow-ai-vs-haptik-enterprise-chatbot/
 categories: [comparisons]
 voice-checked: true
-score: 8
+score: 9
 reviewed: true
 intent-checked: true
 tags: [ai-tools-compared, comparison, artificial-intelligence]

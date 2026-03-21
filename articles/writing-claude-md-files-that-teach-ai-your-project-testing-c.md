@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /writing-claude-md-files-that-teach-ai-your-project-testing-conventions-and-patterns/
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence, claude-ai]
-score: 8
+score: 9
 voice-checked: true
 reviewed: true
 intent-checked: true
