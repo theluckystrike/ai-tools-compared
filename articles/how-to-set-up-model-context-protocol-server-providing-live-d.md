@@ -50,6 +50,24 @@ uv init
 ```
 
 
+## Why Live Schema Context Matters
+
+
+Without live schema context, AI assistants generate code based on guesses about your database structure. They might reference columns that don't exist, use wrong data types, miss required NOT NULL columns, or ignore your foreign key relationships entirely.
+
+
+With an MCP server providing schema context, the same assistant can:
+
+- Write accurate JOIN queries using actual column names
+- Respect nullable constraints when generating INSERT statements
+- Understand your relationships and suggest correct ON DELETE behavior
+- Detect schema mismatches between ORM models and the actual database
+- Generate migration scripts that reflect the real current state
+
+
+The difference in code quality is significant—particularly on databases that have evolved through many migrations and diverged from any documentation.
+
+
 ## Building the MCP Server
 
 
@@ -60,12 +78,13 @@ Create a file named `server.py` in your project directory. This server will conn
 from fastmcp import FastMCP
 from sqlalchemy import create_engine, inspect
 from typing import List, Dict, Any
+import os
 
 # Initialize FastMCP server
 mcp = FastMCP("Database Schema Server")
 
-# Database connection string
-DATABASE_URL = "postgresql://user:password@localhost:5432/mydb"
+# Database connection string from environment
+DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://user:password@localhost:5432/mydb")
 
 def get_db_inspector():
     """Create a database inspector for schema queries."""
@@ -104,7 +123,7 @@ def get_all_schemas() -> Dict[str, Any]:
 
     schemas = {}
     for table in tables:
-        schemas[table] = inspector.get_columns(table_name)
+        schemas[table] = inspector.get_columns(table)
 
     return schemas
 
@@ -143,6 +162,37 @@ Create a file named `mcp.json` in your project:
 The exact location for this configuration file depends on your AI assistant. For Claude Desktop, place it in `~/Library/Application Support/Claude/mcp.json`. For Cursor, check the settings under the MCP configuration section.
 
 
+### Configuring for Multiple Environments
+
+
+In practice, you'll want different configurations for development, staging, and production databases. Use environment-specific configuration files:
+
+
+```json
+{
+  "mcpServers": {
+    "db-schema-dev": {
+      "command": "python",
+      "args": ["/path/to/server.py"],
+      "env": {
+        "DATABASE_URL": "postgresql://dev_user:dev_pass@localhost:5432/mydb_dev"
+      }
+    },
+    "db-schema-staging": {
+      "command": "python",
+      "args": ["/path/to/server.py"],
+      "env": {
+        "DATABASE_URL": "postgresql://staging_user:staging_pass@staging-host:5432/mydb_staging"
+      }
+    }
+  }
+}
+```
+
+
+Having both servers registered lets you ask your AI assistant "check the staging schema for this table" and get an accurate answer without manually connecting to each environment.
+
+
 ## Using the Server with AI Assistants
 
 
@@ -173,6 +223,14 @@ The AI uses the `get_table_schema` tool to retrieve foreign key constraints and 
 The AI now understands both the `users` and `orders` table structures, enabling it to write accurate JOIN queries with correct column references.
 
 
+**Validating ORM models:**
+
+> "Does my SQLAlchemy User model match the actual users table?"
+
+
+With schema access, the AI compares your model definition against the live schema and flags any mismatches—a common source of subtle bugs after migrations.
+
+
 ## Adding Dynamic Schema Updates
 
 
@@ -182,15 +240,47 @@ For development environments where the database schema changes frequently, you m
 ```python
 from functools import lru_cache
 
+@lru_cache(maxsize=None)
+def get_db_inspector_cached():
+    """Cached inspector — call refresh_schema() to clear."""
+    engine = create_engine(DATABASE_URL)
+    return inspect(engine)
+
 @mcp.tool()
 def refresh_schema() -> str:
     """Clear cached schema to force refresh on next query."""
-    get_db_inspector.cache_clear()
-    return "Schema cache cleared"
+    get_db_inspector_cached.cache_clear()
+    return "Schema cache cleared. Next query will reflect current database state."
 ```
 
 
-Add the `@lru_cache` decorator to the `get_db_inspector` function to enable caching, then provide a tool to clear it when schema changes occur.
+Add the `@lru_cache` decorator to the `get_db_inspector` function to enable caching, then provide a tool to clear it when schema changes occur. After running a migration, ask the AI to "refresh the schema cache" before asking schema-dependent questions.
+
+
+## Extending the Server with Sample Data
+
+
+Beyond schema structure, AI assistants benefit from seeing representative sample data. Add a tool that returns anonymized sample rows:
+
+
+```python
+from sqlalchemy import text
+
+@mcp.tool()
+def get_sample_rows(table_name: str, limit: int = 5) -> List[Dict[str, Any]]:
+    """Return sample rows from a table to illustrate data patterns."""
+    engine = create_engine(DATABASE_URL)
+    with engine.connect() as conn:
+        result = conn.execute(
+            text(f"SELECT * FROM {table_name} LIMIT :limit"),
+            {"limit": limit}
+        )
+        rows = [dict(row._mapping) for row in result]
+    return rows
+```
+
+
+Use this carefully with sensitive databases. For production data, apply column masking or only expose this tool against anonymized development databases. Sample data dramatically improves AI-generated queries for tables with enum-like string columns, date ranges, or unusual value distributions.
 
 
 ## Security Considerations
@@ -213,25 +303,52 @@ GRANT SELECT ON ALL TABLES IN SCHEMA public TO mcp_reader;
 **Limit network exposure:** Run the MCP server locally and avoid exposing it to untrusted networks. The stdio transport keeps all communication local to your machine.
 
 
-**Validate table names:** If your server accepts table names as parameters, validate them against the list of actual tables to prevent SQL injection through tool parameters.
+**Validate table names:** If your server accepts table names as parameters, validate them against the list of actual tables to prevent SQL injection through tool parameters:
 
 
-## Extending the Server
+```python
+@mcp.tool()
+def get_table_schema(table_name: str) -> Dict[str, Any]:
+    inspector = get_db_inspector()
+    valid_tables = inspector.get_table_names()
+    if table_name not in valid_tables:
+        return {"error": f"Table '{table_name}' not found"}
+    # ... proceed with safe table_name
+```
 
 
-Once the basic schema server is working, consider adding these capabilities:
+**Avoid logging credentials:** Never log the DATABASE_URL or connection strings. Use environment variables exclusively and ensure your logging configuration excludes environment variable values.
 
 
-- Query execution tool for running SELECT statements and returning results
-
-- Sample data generation based on table structures
-
-- Documentation generation from schema comments
-
-- Relationship visualization data
+## Extending the Server Further
 
 
-The MCP architecture makes it easy to add new tools as your needs evolve.
+Once the basic schema server is working, consider adding these capabilities to make it more useful across your entire development workflow:
+
+
+**Query execution tool** — Add a tool that runs read-only SELECT statements and returns results. This lets AI assistants verify their generated queries before you run them in your application.
+
+
+**Documentation generation** — Many PostgreSQL databases store column and table comments. Expose these through an additional tool so AI assistants can explain unfamiliar columns without you needing to look up the data dictionary manually.
+
+
+**Relationship graph** — Generate a JSON representation of all foreign key relationships. AI assistants can use this to explain the full data model and suggest correct JOIN paths for complex multi-table queries.
+
+
+**Schema diff tool** — Compare two schemas (for example, development vs. staging) and return the differences. This helps identify missing migrations or environment drift without running migration tools manually.
+
+
+```python
+@mcp.tool()
+def compare_schemas(schema_a: str, schema_b: str) -> Dict[str, Any]:
+    """Compare two schemas and return differences in table/column definitions."""
+    # Implementation: query both schemas and diff column lists
+    # Returns added tables, removed tables, changed column types
+    pass
+```
+
+
+The MCP architecture makes it easy to add new tools as your needs evolve. Start with the core schema exposure tools and layer on additional capabilities as you identify gaps in your AI assistant's database knowledge.
 
 
 ## Related Articles
