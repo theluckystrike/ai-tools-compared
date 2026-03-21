@@ -138,6 +138,25 @@ When multi-file edits consistently fail:
 Sometimes starting fresh with clearer context solves persistent issues.
 
 
+### Fix 6: Use Cursor Rules for Structural Guardrails
+
+
+Cursor's `.cursorrules` file (or the newer `cursor/rules/` directory in recent versions) lets you define persistent project-level instructions that apply to every AI interaction. This is different from per-prompt hints — rules are always active.
+
+
+For multi-file edit safety, add rules like:
+
+
+```
+When modifying a function signature, always search for all call sites before applying changes.
+Never remove an existing parameter without first checking all files in the project for usages.
+After updating an interface or type, list all files that implement or import it.
+```
+
+
+These rules nudge the model toward safer edit patterns automatically, reducing the frequency of broken refactors even when the user's prompt does not mention dependency checking.
+
+
 ## Diagnostic Tips
 
 
@@ -205,6 +224,20 @@ go build ./...
 Catching errors early prevents cascading failures across your codebase.
 
 
+### Use TypeScript Error Output as a Diagnostic Signal
+
+
+TypeScript's compiler is one of the best diagnostic tools for multi-file edit failures. After any Cursor edit session that touches types, interfaces, or function signatures, run the TypeScript compiler in no-emit mode immediately:
+
+
+```bash
+npx tsc --noEmit
+```
+
+
+The output pinpoints exactly which files and lines have type mismatches, often revealing the specific call site that Cursor updated incorrectly or missed entirely. Paste the compiler error output back into Cursor's chat and ask it to fix the remaining inconsistencies — this iterative approach resolves most multi-file refactoring issues within two or three rounds.
+
+
 ## Prevention Strategies
 
 
@@ -262,6 +295,44 @@ git stash
 # If issues arise:
 git stash pop
 ```
+
+
+### Limit Edit Scope with Gitignore-Style Patterns
+
+
+In large monorepos, Cursor sometimes pulls in files from unrelated packages when building context. You can scope the AI's awareness by temporarily renaming or moving files you want excluded from context — or by using Cursor's `@files` syntax in your prompt to explicitly specify which files are in scope, rather than letting Cursor decide. Explicit scope beats implicit inference every time for complex refactors.
+
+
+## Recovering from a Bad Multi-File Edit
+
+
+When Cursor has already broken your codebase and you need to recover quickly, a structured approach is faster than reverting everything and starting over.
+
+
+**Step 1: Assess the damage.** Run your build and test commands immediately to get a full error list. Do not start fixing individual files yet — get the complete picture first.
+
+
+**Step 2: Group errors by category.** TypeScript errors group naturally by type: missing properties, incompatible signatures, undefined references. Fixing one category often resolves multiple errors at once.
+
+
+**Step 3: Start with type/interface definitions.** If an interface or type was changed incorrectly, fixing it propagates corrections to all consumers. Address definition files before implementation files.
+
+
+**Step 4: Use Cursor's own chat to fix Cursor's mistakes.** Paste your error output and ask Cursor to identify which of its edits caused the problem. This works surprisingly well — the model can often identify that it changed a return type in file A but forgot to update the corresponding handler in file B.
+
+
+**Step 5: Verify with a clean build.** After each recovery edit, run the full build again. Do not assume an edit is correct until the build confirms it.
+
+
+```bash
+# Quick recovery workflow
+git diff --name-only HEAD  # See all changed files
+npm run build 2>&1 | head -50  # Get first 50 error lines
+npx tsc --noEmit 2>&1 | grep "error TS"  # TypeScript errors only
+```
+
+
+For catastrophic failures where more than a third of the codebase is broken, it's often faster to `git checkout -- .` and redo the edit with a more constrained prompt than to chase cascading errors one by one.
 
 
 ## When to Use Alternative Approaches
