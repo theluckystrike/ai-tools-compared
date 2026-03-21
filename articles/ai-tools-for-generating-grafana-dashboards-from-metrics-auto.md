@@ -195,6 +195,62 @@ jobs:
 ```
 
 
+## Choosing the Right Panel Type
+
+
+One area where AI tools add significant value is panel type selection. Choosing between a time series graph, stat panel, gauge, heatmap, or bar chart requires understanding both the metric semantics and Grafana's visualization strengths.
+
+
+AI tools apply these rules based on metric characteristics:
+
+
+| Metric Pattern | Recommended Panel | Reasoning |
+|---------------|-------------------|-----------|
+| Rate or counter over time | Time series graph | Shows trends and spikes |
+| Current single value | Stat panel | At-a-glance status |
+| Value within a known range | Gauge | Shows proximity to limits |
+| Distribution of values | Heatmap | Reveals latency percentile spread |
+| Comparison across services | Bar chart | Side-by-side visual comparison |
+| Error rate (0-100%) | Gauge with thresholds | Immediate red/yellow/green status |
+
+
+When you provide metric help text that describes the metric's nature—whether it's a gauge, counter, histogram, or summary—AI tools use this to select visualization type accurately. Counters always produce rate-based time series queries; gauges produce direct value displays.
+
+
+## Validating AI-Generated Dashboard JSON
+
+
+AI tools generate syntactically valid JSON most of the time, but Grafana's schema has evolved across versions. Dashboard JSON generated for Grafana 9 may not render correctly on Grafana 10 or 11 without adjustments. Validate generated dashboards programmatically before committing them.
+
+
+```python
+import json
+import subprocess
+
+def validate_dashboard(dashboard_json: dict) -> bool:
+    """Validate Grafana dashboard JSON using grafana-dash-gen or Grafana's API."""
+    # Option 1: Push to Grafana API and check for errors
+    response = requests.post(
+        f"{GRAFANA_URL}/api/dashboards/db",
+        headers={"Authorization": f"Bearer {GRAFANA_API_KEY}"},
+        json={"dashboard": dashboard_json, "overwrite": False, "folderId": 0}
+    )
+    result = response.json()
+    if result.get("status") != "success":
+        print(f"Validation failed: {result.get('message')}")
+        return False
+    # Clean up test dashboard
+    requests.delete(
+        f"{GRAFANA_URL}/api/dashboards/uid/{dashboard_json['uid']}",
+        headers={"Authorization": f"Bearer {GRAFANA_API_KEY}"}
+    )
+    return True
+```
+
+
+Incorporate validation into your CI pipeline so invalid dashboards fail the build before reaching production. This catches issues like invalid panel types, malformed PromQL queries, and missing required fields.
+
+
 ## Tools Worth Exploring
 
 
@@ -210,6 +266,27 @@ MetricFlow, the semantic layer from Posthog, can generate visualization configur
 Terraform Grafana provider enables infrastructure-as-code management of dashboards. Combined with AI-generated configurations, this approach provides version-controlled dashboard management.
 
 
+Grafana OnCall integrates alert rules directly with dashboard panels. AI tools that understand both the alerting configuration and the metric structure can generate dashboards that align threshold indicators with corresponding alert conditions—making on-call response faster by putting relevant context on the same panel.
+
+
+## Managing Dashboard Sprawl
+
+
+Automated generation can create a proliferation of dashboards that become hard to navigate. Apply governance to your generated dashboards from the start:
+
+
+- Use consistent folder structures: team name, service name, environment
+
+- Tag dashboards with the service and deployment tier they cover
+
+- Set an ownership field in dashboard metadata pointing to the owning team
+
+- Archive dashboards for decommissioned services automatically using the same pipeline that generates them
+
+
+AI tools that integrate with your service registry can automatically archive dashboards when a service is retired from the service catalog, preventing stale dashboards from cluttering your Grafana instance.
+
+
 ## Best Practices for Automated Dashboards
 
 
@@ -220,6 +297,9 @@ Validate generated dashboards before production deployment. Automated tools crea
 
 
 Maintain dashboard templates separately from generated configurations. Template changes propagate to all generated dashboards while allowing individual customization when necessary.
+
+
+Store all Grafana dashboard JSON in version control alongside your service code. This ensures dashboard changes follow the same review process as infrastructure changes, and it enables rollback when a generated dashboard introduces a regression in observability.
 
 
 ## Related Articles
