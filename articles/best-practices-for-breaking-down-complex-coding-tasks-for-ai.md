@@ -9,7 +9,7 @@ permalink: /best-practices-for-breaking-down-complex-coding-tasks-for-ai/
 categories: [guides]
 tags: [ai-tools-compared, tools, best-of]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

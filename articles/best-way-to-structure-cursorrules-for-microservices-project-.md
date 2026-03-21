@@ -9,7 +9,7 @@ permalink: /best-way-to-structure-cursorrules-for-microservices-project-/
 categories: [guides]
 tags: [ai-tools-compared, cursor, ai-tools, microservices, best-of]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
