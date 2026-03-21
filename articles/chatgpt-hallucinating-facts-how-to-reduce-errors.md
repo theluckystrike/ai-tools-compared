@@ -39,6 +39,24 @@ Understanding the root causes helps you address them effectively. ChatGPT predic
 The model prioritizes plausible-sounding output over factual accuracy. Recognizing this fundamental limitation is the first step toward mitigating it.
 
 
+## Hallucination Risk by Query Type
+
+
+Not all requests carry the same hallucination risk. Understanding where errors cluster helps you apply verification effort where it matters most:
+
+| Query Type | Hallucination Risk | Primary Cause | Recommended Mitigation |
+|---|---|---|---|
+| General conceptual explanations | Low | Well-represented in training data | Spot-check key claims |
+| Recent events (post-cutoff) | Very High | No training data available | Use web-search-enabled models or external lookup |
+| Specific citations and quotes | Very High | Model generates plausible-sounding references | Always verify independently |
+| Code examples (popular frameworks) | Low-Medium | High training data density, but API details drift | Test code before deploying |
+| Niche domain knowledge | High | Sparse training coverage | Provide authoritative context in prompt |
+| Numerical data and statistics | High | Numbers are easy to confabulate convincingly | Cross-reference with primary sources |
+| Legal and medical specifics | High | Liability-sensitive; model hedges imprecisely | Use domain experts, not AI alone |
+
+Use this table to prioritize your verification workflow. A conceptual explanation of how TCP handshakes work needs only a light review; a specific drug dosage or regulatory citation needs independent confirmation from an authoritative source.
+
+
 ## Step-by-Step Fixes and Diagnostic Tips
 
 
@@ -184,6 +202,53 @@ If unsure, explicitly state the limitation.
 System prompts provide persistent instructions that improve accuracy across the entire conversation.
 
 
+## Implementing RAG to Ground Responses in Verified Data
+
+
+Retrieval-augmented generation is the most reliable production-grade technique for eliminating hallucinations in domain-specific applications. Instead of relying on the model's parametric memory, RAG retrieves relevant documents at query time and provides them as context.
+
+```python
+import openai
+from typing import List
+
+def retrieve_relevant_chunks(query: str, knowledge_base: list, top_k: int = 3) -> List[str]:
+    """
+    Simplified retrieval step — in production, use a vector store
+    like Pinecone, Weaviate, or pgvector with embedding similarity search.
+    """
+    # Placeholder: return top_k chunks most relevant to query
+    return knowledge_base[:top_k]
+
+def rag_query(user_question: str, knowledge_base: list) -> str:
+    # Step 1: Retrieve relevant context
+    context_chunks = retrieve_relevant_chunks(user_question, knowledge_base)
+    context = "\n\n".join(context_chunks)
+
+    # Step 2: Build grounded prompt
+    system_prompt = (
+        "You are a precise assistant. Answer the user's question using ONLY "
+        "the provided context. If the context does not contain enough information "
+        "to answer, say so explicitly. Do not use outside knowledge."
+    )
+
+    user_prompt = f"Context:\n{context}\n\nQuestion: {user_question}"
+
+    # Step 3: Query the model with grounded context
+    response = openai.ChatCompletion.create(
+        model="gpt-4",
+        messages=[
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_prompt}
+        ],
+        temperature=0.1
+    )
+
+    return response.choices[0].message.content
+```
+
+The key constraint is the system prompt instruction to use only the provided context. When the model is told explicitly that inventing information outside the context is prohibited—and that admitting ignorance is acceptable—hallucination rates drop dramatically. The quality of your retrieval step determines the quality of your answers.
+
+
 ## Diagnostic Checklist for Critical Outputs
 
 
@@ -218,6 +283,22 @@ Some topics have higher hallucination rates regardless of prompt engineering:
 
 
 For these cases, consider supplementing AI with dedicated search tools or consulting primary sources directly.
+
+
+## Frequently Asked Questions
+
+
+**Does GPT-4 hallucinate less than GPT-3.5?**
+Yes, meaningfully so for factual tasks. GPT-4 shows roughly 40% fewer hallucinations on benchmarks like TruthfulQA compared to GPT-3.5 Turbo. However, both models still hallucinate, particularly on citations, niche facts, and post-cutoff events. The techniques in this guide apply to both.
+
+**Does setting temperature to 0 eliminate hallucinations?**
+No. Temperature 0 makes the model deterministic and slightly more factual, but it does not prevent the model from outputting incorrect information confidently. A temperature-0 model will give you the same wrong answer every time for a question it has poor training data on. Temperature is one lever among several.
+
+**Can I use the web browsing feature to avoid hallucinations?**
+ChatGPT's built-in web browsing (where available) reduces hallucinations for current-events queries by fetching live pages. It does not eliminate hallucinations for all content types, and retrieved pages can contain incorrect information that the model accepts uncritically. Verify any browsing-based claims the same way you would verify parametric outputs.
+
+**What is the best way to detect hallucinations programmatically?**
+Run the model's output through a second verification pass with a prompt like: "Review the following claims and identify any that you cannot confirm with high confidence. Flag each uncertain claim." For higher-stakes pipelines, cross-reference key claims against a search API or your RAG knowledge base using embedding similarity.
 
 
 ## Building Reliable AI Workflows
