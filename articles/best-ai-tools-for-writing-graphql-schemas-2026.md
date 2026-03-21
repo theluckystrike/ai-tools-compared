@@ -103,7 +103,7 @@ Weakness: smaller context window on free tier limits its ability to handle large
 
 Gemini generates functional but generic schemas. Basic types and CRUD patterns are solid. Federation support exists but felt half-baked—it generated syntactically correct but architecturally questionable federation patterns.
 
-On subscriptions: Gemini suggested using simple WebSocket patterns without leveraging Apollo's GraphQL Subscriptions spec fully. Required correction.
+On subscriptions: Gemini suggested using simple WebSocket patterns without using Apollo's GraphQL Subscriptions spec fully. Required correction.
 
 Strength: integration with Google Cloud—if you're heavily on GCP, Gemini's context about Cloud Run, Pub/Sub, and Firestore is handy. Can generate schema + deployment config together.
 

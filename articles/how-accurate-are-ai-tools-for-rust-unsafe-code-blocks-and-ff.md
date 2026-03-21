@@ -325,7 +325,7 @@ This comparison shows which unsafe patterns AI tools handle reliably:
 
 ## Testing Your Unsafe Code with AI
 
-Before deploying AI-generated unsafe code, implement comprehensive testing:
+Before deploying AI-generated unsafe code, implement testing:
 
 ```rust
 #[cfg(test)]
