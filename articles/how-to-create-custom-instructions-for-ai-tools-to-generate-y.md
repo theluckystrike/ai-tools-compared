@@ -212,6 +212,70 @@ Detect environment from NODE_ENV or DEBUG flag.
 
 The AI applies these rules intelligently, switching between formats based on your project configuration.
 
+## Comparing AI Tools for Custom Instruction Support
+
+Different AI coding assistants handle custom instructions with varying degrees of flexibility and persistence. Understanding these differences helps you choose the right tool and configure it correctly.
+
+| Tool | Instruction Method | Scope | Persistence |
+|------|-------------------|-------|-------------|
+| GitHub Copilot | `.github/copilot-instructions.md` | Repository | Per-repo, version controlled |
+| Cursor | `.cursor/rules` or UI settings | Workspace | Per-workspace |
+| Windsurf | `.windsurfrules` file | Repository | Per-repo |
+| Claude (via API) | System prompt | Per-session | Requires explicit injection |
+| ChatGPT | Custom instructions in settings | Account-wide | Global default |
+
+The file-based approaches used by Copilot and Cursor have a major advantage: your instruction configuration lives in version control. When a new team member clones the repository, they automatically inherit the team's AI configuration standards without any manual setup.
+
+Claude's API-based approach is more flexible for programmatic use cases—you can inject different system prompts depending on context, such as using stricter logging rules in production code generation versus a more relaxed format in prototyping contexts.
+
+## Step-by-Step Workflow for Setting Up a Team Logging Standard
+
+Here is a concrete workflow for rolling out custom instruction-based logging standards across a team.
+
+**Step 1: Define your log schema.** Start with a simple JSON schema document that specifies every field, its type, and its purpose. Keep this schema in your project wiki so it can be referenced independently of any AI tool configuration.
+
+**Step 2: Write example log lines.** Write three to five realistic example log entries that conform to your schema. Include edge cases like errors with stack traces, logs with nested context objects, and minimal logs with no optional fields.
+
+**Step 3: Draft the instruction file.** Translate your schema and examples into the instruction format for your chosen AI tool. Lead with the most important rules. Put the most common case first, then handle edge cases. Avoid negatives where possible—"use JSON format" is clearer than "do not use plain text format."
+
+**Step 4: Test with representative prompts.** Ask your AI assistant to write a function for each of the following: an API endpoint handler, a background job, and an error handler. Check whether the generated logging matches your schema in all three cases.
+
+**Step 5: Iterate and commit.** Refine the instructions based on what you observe. Commit the final instruction file to version control. Add a note in your onboarding documentation explaining that this file controls AI logging behavior.
+
+## Pro Tips for Better AI Logging Instructions
+
+**Anchor your instructions with a named formatter.** Instead of describing the format in prose, provide a concrete implementation of a logging formatter class and instruct the AI to use it by name. This reduces ambiguity dramatically.
+
+**Include what NOT to do.** Even though positive instructions are generally clearer, log formatting has common antipatterns worth calling out explicitly: no `print()` in production, no string interpolation that concatenates sensitive values into log messages, no logging inside tight loops without rate limiting.
+
+**Separate concerns.** Write one set of instructions for log format and a separate set for log placement (when to log). Mixing the two leads to instructions that are hard to update.
+
+**Version your instructions.** Add a comment at the top of your instruction file with a version number. When you update the format, increment the version. This makes it easy to identify which version of the standard generated a given piece of code.
+
+```markdown
+# Logging Standards v2.1
+# Updated: 2026-03-01 — Added request_id to all log context objects
+```
+
+**Test against your log aggregation tool.** If you use Datadog, Splunk, or a similar platform, paste a sample log line from AI-generated code directly into the query interface and verify it parses correctly before rolling out the instructions to your full team.
+
+## Frequently Asked Questions
+
+**Do custom instructions slow down code generation?**
+Not meaningfully. The instruction file is small and loaded once per session. Inference latency is dominated by response generation, not instruction loading.
+
+**What happens when the AI ignores my instructions?**
+This usually means the instructions are ambiguous or conflicting. Try adding a concrete example that matches your format exactly. If the AI generates a log line that looks almost right but not quite, paste that incorrect line into the instructions as a "do not do this" example.
+
+**Can I use different logging instructions for different parts of a monorepo?**
+Yes. Both Copilot and Cursor support multiple instruction files. Place a more specific instruction file in a subdirectory to override the root-level rules for that portion of the codebase.
+
+**Should the instruction file include the full formatter implementation?**
+It helps to include at least a skeleton implementation. The AI will anchor to your exact class and method names, which produces more consistent results than describing the behavior in natural language alone.
+
+**How often should I update the instructions?**
+Review them whenever your log aggregation configuration changes, when you adopt a new observability tool, or when team members report that AI-generated logging is inconsistent with the expected format. Quarterly reviews are a reasonable default for stable projects.
+
 ## Maintaining Your Instructions
 
 Review and update your custom instructions periodically. As your project evolves, logging requirements change. Keep instructions in version control so changes are tracked and can be rolled back if needed.
