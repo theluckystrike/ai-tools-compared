@@ -9,7 +9,7 @@ permalink: /switching-from-copilot-ghost-text-to-cursor-tab-autocomplete/
 categories: [guides]
 intent-checked: true
 voice-checked: true
-score: 8
+score: 9
 reviewed: true
 tags: [ai-tools-compared]
 ---
