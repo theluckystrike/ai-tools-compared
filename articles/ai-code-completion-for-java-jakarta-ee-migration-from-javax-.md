@@ -90,6 +90,21 @@ When you begin typing an import statement, AI-powered completion can:
 For example, when working with Jakarta Persistence (JPA), the tool recognizes patterns like converting `javax.persistence.Entity` to `jakarta.persistence.Entity`, and understands that related annotations like `@Id`, `@GeneratedValue`, and `@ManyToOne` follow the same namespace change.
 
 
+## AI Tool Comparison for Jakarta EE Migration
+
+Different AI coding assistants vary significantly in how effectively they handle namespace migrations. Here is a practical comparison based on real migration tasks:
+
+| Tool | Bulk Import Updates | Context Awareness | Spring Boot Support | Free Tier |
+|---|---|---|---|---|
+| GitHub Copilot | Good (single file) | Strong | Excellent | Yes (limited) |
+| Cursor AI | Excellent (multi-file) | Very strong | Excellent | Yes (trial) |
+| IntelliJ AI Assistant | Excellent (project-wide) | Strong | Good | Paid only |
+| Tabnine | Moderate | Moderate | Good | Yes |
+| Codeium | Good (single file) | Moderate | Moderate | Yes (free) |
+
+IntelliJ AI Assistant has a structural advantage here because it integrates with IntelliJ's existing refactoring engine. The IDE already knows every `javax` import in your project, and the AI can trigger the built-in "Replace Imports" refactor on your behalf. Cursor and Copilot do not have that deep AST integration but compensate with stronger multi-file reasoning when you provide the right context.
+
+
 ## Practical Migration Examples
 
 
@@ -139,7 +154,7 @@ public class ProductResource {
 ```
 
 
-AI code completion tools can detect that you're working within a JAX-RS context and provide accurate suggestions for both individual imports and批量 updates across multiple files.
+AI code completion tools can detect that you're working within a JAX-RS context and provide accurate suggestions for both individual imports and bulk updates across multiple files.
 
 
 ### Jakarta Bean Validation
@@ -183,6 +198,33 @@ public class UserRegistration {
 The AI tool understands the validation constraint hierarchy and suggests appropriate replacements while maintaining the constraint parameters.
 
 
+## Step-by-Step Migration Workflow with AI Assistance
+
+This sequence minimizes risk and gets the most out of AI code completion tooling:
+
+**Step 1: Upgrade your build file first.** In Maven, change the `jakarta.platform` BOM version to 9.x or later and update Spring Boot to 3.x (which uses Jakarta EE 9 internally):
+
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+    <version>3.2.4</version>
+</dependency>
+```
+
+Spring Boot 3.x transitively pulls in the correct Jakarta EE 10 dependencies. Do not mix `javax` and `jakarta` dependencies—the classpath conflict will produce cryptic `ClassNotFoundException` errors at runtime.
+
+**Step 2: Run a project-wide search for `javax` imports.** In IntelliJ: Edit > Find > Find in Files, pattern `import javax\.(servlet|persistence|validation|ws\.rs|ejb|inject|transaction)`. In VS Code with Cursor: open the search panel and use regex mode. This gives you a migration hit list before the AI starts suggesting changes.
+
+**Step 3: Use Cursor Composer or Copilot Chat to batch-migrate files.** Open Cursor Composer (Cmd+Shift+I), select the affected files, and prompt: "Replace all javax.servlet imports with their jakarta.servlet equivalents. Do the same for javax.persistence, javax.validation, and javax.ws.rs. Preserve all method bodies and annotations unchanged." The AI processes multiple files in one pass and shows a diff you can review before accepting.
+
+**Step 4: Handle Spring XML configuration files.** If your project uses Spring XML context files, search for `class="javax.` references manually. AI tools struggle with XML namespace migration because there is less training data for it—treat these files as manual work.
+
+**Step 5: Run tests after each service layer.** Migrate and test in this order: DTOs and entities first (JPA annotations), then validation beans, then REST resources, then servlets. Keeping the blast radius small makes failures easier to diagnose.
+
+**Step 6: Verify third-party dependencies.** Run `mvn dependency:tree | grep javax` after the migration. Any remaining `javax` references indicate a transitive dependency that has not yet released a Jakarta EE 9 compatible version. Either exclude it, find an alternative, or check if the maintainer provides a `-jakarta` classifier artifact.
+
+
 ## Limitations and Manual Verification
 
 
@@ -217,6 +259,25 @@ When using AI code completion for javax-to-jakarta migration, follow these pract
 
 
 5. Update Dependencies: Ensure your pom.xml or build.gradle references Jakarta EE compatible versions of all dependencies before attempting the migration.
+
+
+## FAQ
+
+**Q: Can AI tools handle mixed javax/jakarta codebases during a phased migration?**
+
+Yes, but you need to be explicit. Tell the AI: "This project is in the middle of migration. Only update `javax` imports in the current file—do not touch files that already use jakarta." Without this instruction, Copilot and Cursor may apply changes inconsistently across file boundaries.
+
+**Q: Does Cursor AI handle the Spring Boot 2 to 3 migration beyond just imports?**
+
+Cursor handles imports well and can assist with the `SecurityFilterChain` bean pattern replacing the deprecated `WebSecurityConfigurerAdapter`. However, the Spring Security 6 lambda DSL changes and `HttpSecurity` API shifts require careful human review—the AI generates plausible-looking code that may not reflect the exact new API surface.
+
+**Q: What about `javax.inject` and CDI annotations?**
+
+`javax.inject` annotations (`@Inject`, `@Named`, `@Singleton`) move to `jakarta.inject`. CDI annotations (`javax.enterprise.context.*`) move to `jakarta.enterprise.context.*`. AI tools handle these correctly as long as the target dependency is `jakarta.inject:jakarta.inject-api:2.0.1` or later.
+
+**Q: Is there a risk the AI will introduce `jakarta` imports that don't exist?**
+
+Yes, for obscure APIs. Common packages (servlet, persistence, validation, ws.rs) are well-represented in training data. Niche APIs like `javax.resource` (JCA) or `javax.xml.bind` (JAXB) are riskier—always verify that the suggested `jakarta.*` package has an actual release artifact on Maven Central.
 
 
 ## Related Articles
