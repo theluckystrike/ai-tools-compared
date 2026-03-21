@@ -103,7 +103,7 @@ int sensor_add_reading(float value) {
     if (reading_count >= MAX_READINGS) {
         return -1;  // Buffer full error
     }
-    
+
     readings_buffer[reading_count].timestamp = get_tick_count();
     readings_buffer[reading_count].value = value;
     reading_count++;
@@ -113,7 +113,7 @@ int sensor_add_reading(float value) {
 // AI-suggested fix for process_data
 void process_data(const char* input, size_t len) {
     char local_buffer[BUFFER_SIZE];
-    
+
     // Added bounds checking
     size_t copy_size = (len < BUFFER_SIZE) ? len : BUFFER_SIZE - 1;
     memcpy(local_buffer, input, copy_size);
@@ -143,6 +143,75 @@ Specific concerns: interrupt handler safety, DMA buffer handling
 - **Integer safety**: Could size calculations overflow?
 - **Lifetime analysis**: Are pointers used after being freed or after scope ends?
 - **Thread safety**: Are shared variables protected in ISRs?
+
+## Stack Overflow Detection in RTOS Environments
+
+Dynamic heap leaks get most of the attention, but stack overflows are often more dangerous in embedded systems because they corrupt adjacent memory silently. FreeRTOS, Zephyr, and ThreadX all provide configurable stack checking, but AI code review can identify high-risk functions before they hit a device.
+
+Patterns that AI tools consistently flag as stack overflow risks:
+
+- Large arrays allocated on the stack inside ISRs, where stack size is extremely limited
+- Deeply recursive functions without explicit depth limits
+- `alloca()` calls inside loops, which accumulate without freeing until the function returns
+- Variadic functions that copy arguments to the stack without size validation
+
+```c
+// High-risk pattern: large stack allocation inside an ISR
+void USART1_IRQHandler(void) {
+    char buffer[512];  // 512 bytes on ISR stack — dangerous
+    parse_incoming_frame(buffer, sizeof(buffer));
+}
+
+// Preferred pattern: use a global or static buffer for ISR-scope processing
+static char isr_buffer[512];  // Allocated at link time, not at runtime
+
+void USART1_IRQHandler(void) {
+    parse_incoming_frame(isr_buffer, sizeof(isr_buffer));
+}
+```
+
+When prompting Claude or ChatGPT to audit for stack usage, include the RTOS task stack sizes from your FreeRTOSConfig.h or equivalent. This gives the AI concrete numbers to evaluate against rather than reasoning about risk in the abstract.
+
+```
+Review this embedded C code for stack overflow risk.
+
+Context:
+- FreeRTOS 10.4, configMINIMAL_STACK_SIZE = 128 words (512 bytes)
+- ISR stack is shared, 1KB total
+- Target: STM32H7, Cortex-M7
+
+Flag any function that allocates more than 256 bytes on the stack,
+any ISR with local buffers, and any recursive call chains.
+```
+
+Claude correctly identifies risky ISR stack allocations and suggests static or DMA-coherent alternatives. ChatGPT usually catches the obvious cases but misses recursive call chains that span multiple files unless you paste all relevant functions.
+
+## Integer Overflow in Size Calculations
+
+Integer overflow in size calculations is a subtle class of bug that causes buffer overflows while appearing safe at first glance. AI tools vary significantly in their ability to catch these.
+
+```c
+// Dangerous: product of two uint16_t values overflows uint16_t
+uint16_t rows = 300;
+uint16_t cols = 300;
+uint16_t buffer_size = rows * cols;  // Overflows: 90000 > 65535
+
+uint8_t* image_buf = malloc(buffer_size);  // Allocates far less than needed
+memset(image_buf, 0, rows * cols);         // Writes past allocated region
+```
+
+Claude correctly identifies that `rows * cols` overflows a `uint16_t` and suggests either promoting to `uint32_t` before multiplication or using a saturating arithmetic approach. ChatGPT catches this in isolation but misses it when the multiplication is embedded in a more complex expression. Copilot does not flag integer promotion issues without being explicitly asked.
+
+The safe pattern for embedded size calculations:
+
+```c
+// Safe: use size_t for intermediate calculations
+size_t buffer_size = (size_t)rows * (size_t)cols;
+if (buffer_size > MAX_IMAGE_BYTES) {
+    return -EINVAL;  // Explicit bounds enforcement
+}
+uint8_t* image_buf = malloc(buffer_size);
+```
 
 ## Limitations and Verification
 
@@ -325,6 +394,18 @@ uint32_t get_interrupt_count(void) {
     return cached_count;
 }
 ```
+
+DMA transfers introduce additional hazards: the DMA controller writes directly to memory without CPU involvement, so a buffer that appears initialized can be partially overwritten mid-read. Prompting AI to audit DMA buffer handling requires specifying whether your architecture has a hardware cache that needs flushing:
+
+```
+Review this DMA transfer code for memory safety.
+Architecture: STM32H7, Cortex-M7 with D-cache enabled
+Question: Are cache invalidation and clean operations placed correctly
+relative to DMA start and completion? Are DMA buffers aligned to
+cache line size (32 bytes on Cortex-M7)?
+```
+
+Claude correctly identifies cache coherency issues on cached architectures. ChatGPT and Copilot sometimes miss the distinction between cached and non-cached regions unless the prompt is explicit.
 
 ## Related Reading
 
