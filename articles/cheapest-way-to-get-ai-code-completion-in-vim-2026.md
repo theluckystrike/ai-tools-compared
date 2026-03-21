@@ -170,16 +170,26 @@ The free version uses a smaller model and has limited context awareness, but it 
 
 
 | Option | Cost | Monthly Limit | Offline | Privacy |
-
 |--------|------|---------------|---------|---------|
-
 | Codeium Free | $0 | Unlimited | No | Medium |
-
 | Copilot Free | $0 | 2,000 completions | No | Medium |
-
 | Ollama + CodeGPT | $0 | Unlimited | Yes | High |
-
 | Tabnine Free | $0 | Limited | No | Medium |
+| Supermaven Free | $0 | Unlimited | No | Medium |
+
+
+
+## Supermaven: A Rising Free Contender
+
+Supermaven is worth adding to this comparison. It launched with a free tier that includes unlimited completions and supports Vim through its plugin. It uses a model specifically trained for code completion with a very large context window, which means it can draw on more of your surrounding code when generating suggestions.
+
+**Installation:**
+
+```vim
+Plug 'supermaven-inc/supermaven-nvim'
+```
+
+Note that the Supermaven plugin works better in Neovim than in classic Vim due to its Lua-based architecture. If you are on Vim 8 or 9 without Lua support, Codeium remains the more reliable free option.
 
 
 
@@ -201,7 +211,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 ```
 
 
-**Step 2: Configure your.vimrc**
+**Step 2: Configure your .vimrc**
 
 
 
@@ -229,18 +239,36 @@ Run `:Codeium Auth` in Vim and follow the prompts to link your account.
 
 
 
+## Choosing the Right Local Model for Ollama
+
+If you go the local Ollama route, model selection matters for both quality and speed. Your hardware determines what is viable:
+
+**4GB RAM or less:** `phi3:mini` or `qwen2.5-coder:1.5b` — small models that run on most machines with acceptable latency.
+
+**8GB RAM:** `codellama:7b` or `qwen2.5-coder:7b` — solid code completion quality with reasonable response times.
+
+**16GB RAM or more:** `codellama:13b` or `deepseek-coder:33b` — near cloud-quality completions with full local privacy.
+
+```bash
+# Pull the 7B coder model
+ollama pull qwen2.5-coder:7b
+
+# Test it
+ollama run qwen2.5-coder:7b "Complete this Python function: def fibonacci(n):"
+```
+
+Running a local model means zero per-completion cost and no data leaving your machine — important for proprietary codebases.
+
+
+
 ## Performance Tips
 
 
 
 Regardless of which option you choose, a few optimizations help:
 
-
-
 - Use `deoplete` or `nvim-cmp`: These completion engines play well with AI plugins and provide a smoother experience
-
 - Adjust delay settings: If suggestions feel sluggish, reduce the idle delay
-
 - Limit file types: Focus AI completion on languages you use most
 
 
@@ -254,6 +282,42 @@ let g:codeium_filetypes = {
 \ 'rust': 1,
 \ }
 ```
+
+
+## Avoiding Common Setup Problems
+
+**Tab key conflicts:** Multiple completion plugins can fight over Tab. If Codeium suggestions interfere with your existing tab-based completions, use `<C-g>` as the Codeium accept key instead:
+
+```vim
+imap <C-g> <cmd>call codeium#Accept()<CR>
+```
+
+**Slow startup:** Copilot's Node.js backend adds startup time. If Vim launch speed matters, Codeium is lighter. Local Ollama models add no startup overhead since the server runs separately.
+
+**Authentication failures:** Both Codeium and Copilot require outbound network access on first auth. If you are behind a corporate proxy, set `https_proxy` before launching Vim.
+
+**Plugin manager conflicts:** If you use `lazy.nvim` or `packer.nvim` (Neovim plugin managers), the configuration syntax differs from vim-plug examples. Check each plugin's GitHub README for the correct format for your plugin manager.
+
+
+
+## Frequently Asked Questions
+
+**Is Codeium really free forever?**
+
+Codeium's free individual tier has remained free since launch and the company has publicly committed to keeping it free for individual developers. As of 2026, there are no signs of changes to this.
+
+**Does Copilot's free tier cover professional use?**
+
+GitHub's terms of service allow the free tier for both personal and professional projects. The 2,000 completion limit is the practical constraint — a developer working full-time will likely hit it within a week.
+
+**Which option has the best completion quality?**
+
+Among fully free options, Codeium and Copilot are roughly comparable in quality. Local models at the 13B+ parameter range can match them but require capable hardware. For pure code completion quality without hardware constraints, Copilot's paid plan ($10/month) edges ahead.
+
+**Can I use two plugins at once?**
+
+Technically possible but not recommended. Conflicting Tab handlers and completion popups create more frustration than benefit. Pick one AI completion plugin and disable or remove others.
+
 
 
 ## Related Reading
