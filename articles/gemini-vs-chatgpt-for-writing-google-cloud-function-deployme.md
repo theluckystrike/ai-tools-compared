@@ -9,7 +9,7 @@ permalink: /gemini-vs-chatgpt-for-writing-google-cloud-function-deployme/
 categories: [guides]
 tags: [ai-tools-compared, tools, comparison, chatgpt]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
