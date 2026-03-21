@@ -230,16 +230,66 @@ print(f"Python version: {sys.version}")
 If this basic code fails, the issue is definitely with the environment rather than your application code.
 
 
+## Understanding Code Interpreter's Sandbox Constraints
+
+
+Code Interpreter runs in an isolated sandbox environment with specific constraints that differ from a standard Python installation. Knowing these limits helps you work within them rather than fighting against them.
+
+**File system access** -- Code Interpreter gives you access to a temporary `/tmp` directory. Files written there persist for the duration of your session but are deleted when the conversation ends. You can upload files via the attachment button, which places them in a readable location within the sandbox.
+
+**Network access** -- The sandbox does not have outbound internet access. Code that makes HTTP requests to external APIs will fail with a connection error. This is a deliberate security boundary, not a bug. If your script requires external data, upload it as a file before running your code.
+
+**Available compute** -- Code Interpreter has CPU and memory limits that are not publicly documented but are lower than a typical cloud VM. Code that runs fine on a developer laptop with 32GB RAM may hit memory limits in the sandbox. Processing data in batches of 10,000 to 50,000 rows is a practical upper bound for most Pandas operations.
+
+**Session persistence** -- Variables and imports persist within a single conversation but reset if the session times out (typically after 30 minutes of inactivity) or if you start a new conversation. If Code Interpreter seems to have forgotten variables you defined earlier, the session likely reset.
+
+
+## Common Error Patterns and Their Root Causes
+
+| Error | Likely Cause | Fix |
+|---|---|---|
+| Kernel restarting | Memory exhaustion | Process data in smaller chunks |
+| ModuleNotFoundError | Library not installed | Use a pre-installed alternative |
+| ConnectionError / Timeout | Network request blocked | Upload data as file instead |
+| Code runs but produces no output | Output suppressed by exception | Add try/except with print(e) |
+| Execution never completes | Infinite loop or blocking call | Add iteration limits or timeouts |
+| FileNotFoundError | Wrong path to uploaded file | Use `/mnt/user_data/` prefix |
+
+
 ## Preventing Future Issues
 
 
 Developers can adopt practices to minimize Code Interpreter failures:
 
+**Save critical work locally** -- Do not rely solely on Code Interpreter for important projects. Copy results and working code snippets to your local machine regularly during a session. If the session times out, you lose any variables and intermediate results.
 
-Save critical work locally and don't rely solely on Code Interpreter for important projects. Break complex tasks into smaller steps so issues are easier to debug. Keep local versions of scripts you plan to run, and stay mindful of memory and CPU consumption.
+**Break complex tasks into small steps** -- Run your code in small, verifiable increments rather than pasting a large script all at once. This makes debugging faster and avoids hitting resource limits in a single execution.
+
+**Pre-process data before uploading** -- Reduce dataset size before uploading large files. Filter to relevant columns and rows, convert to efficient formats like Parquet if possible, and compress CSV files. Smaller inputs mean faster execution and lower memory usage.
+
+**Document your imports at the top** -- Always put all import statements at the beginning of your code block. If the session resets, you can re-run just the imports to restore your environment quickly without re-running expensive data loading steps.
 
 
-## Related Articles
+## Frequently Asked Questions
+
+
+**Why does Code Interpreter say "kernel restarting" randomly?**
+This almost always indicates a memory exhaustion event. The sandbox killed the Python process and restarted it to recover. Reduce the size of the data you're working with, delete large DataFrames you no longer need using `del df`, and call `gc.collect()` explicitly to free memory.
+
+**Can I install pip packages in Code Interpreter?**
+No. The sandbox does not have pip access or outbound internet connectivity. You are limited to pre-installed packages. Ask in your conversation which packages are available, or check using `pkg_resources.working_set` as shown above. Common alternatives exist for most missing packages -- for example, `polars` is often available when you need faster DataFrame operations than Pandas provides.
+
+**Why does my code run fine locally but fail in Code Interpreter?**
+The most common reasons are: your code makes an HTTP request (blocked in sandbox), you are using a library not pre-installed in the environment, or your dataset is too large for the sandbox memory limits. Check each of these systematically before concluding there is a bug in your code.
+
+**How long can a single code execution run before timing out?**
+OpenAI does not publish the exact timeout, but user reports suggest executions that take longer than about two minutes are likely to be terminated. For long-running operations, break them into stages and save intermediate results to files between each stage.
+
+**Does ChatGPT remember my code between conversations?**
+No. Each conversation starts with a fresh sandbox. Code, variables, and uploaded files from previous conversations are not accessible. If you have a reusable script, keep a local copy and paste it at the start of each new conversation.
+
+
+## Related Reading
 
 - [Claude Code vs ChatGPT Code Interpreter Comparison](/ai-tools-compared/claude-code-vs-chatgpt-code-interpreter-comparison/)
 - [Gemini in Google Docs Not Showing Up? Fixes for 2026](/ai-tools-compared/gemini-in-google-docs-not-showing-up-fix-2026/)
