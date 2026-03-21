@@ -147,13 +147,15 @@ app.post('/webhooks/kustomer-ai', (req, res) => {
 ```
 
 
+Kustomer IQ also supports custom training data. You can feed labeled examples from your support history to improve intent accuracy for your specific product domain. Teams handling high volumes of returns, billing disputes, or technical support tickets see significant accuracy gains after uploading 500 or more labeled conversations. The platform exposes training data through the admin API, which means you can automate the feedback loop rather than relying on manual labeling sessions.
+
 Kustomer also offers bot building through visual flows, but programmatic access requires working with their conversation API.
 
 
 ### Gladly AI (Gladly Sidekick)
 
 
-Gladly's AI, branded as "Sidekick," focuses on surfacing relevant context and automating responses across channels. The AI integrates more deeply with the conversation flow:
+Gladly's AI, branded as "Sidekick," focuses on surfacing relevant context and automating responses across channels. The AI integrates more deeply into the conversation flow than Kustomer's separate IQ layer:
 
 
 ```javascript
@@ -177,7 +179,9 @@ async function getSidekickSuggestion(conversationId) {
 ```
 
 
-Gladly's AI emphasizes "topic clustering"—automatically grouping similar conversations to identify trending issues without manual tagging.
+Gladly's AI emphasizes "topic clustering"—automatically grouping similar conversations to identify trending issues without manual tagging. This is particularly useful for customer success teams that want to proactively surface emerging product problems before they escalate into widespread complaints.
+
+Sidekick also handles autonomous resolution for routine intents such as order status checks, password resets, and return requests. Unlike Kustomer's flow-builder approach, Gladly embeds these automations directly into the conversation thread so agents see both the automated and human exchanges in a single chronological view. That continuity reduces handoff friction when a bot transfers to a live agent mid-conversation.
 
 
 ## Integration Complexity
@@ -199,6 +203,26 @@ Kustomer offers:
 
 The platform supports webhooks for real-time events and provides a development mode for testing integrations without affecting production data.
 
+A common Kustomer integration pattern for e-commerce teams is pulling order history from Shopify into the customer timeline. Here is a simplified version of how that sync works:
+
+
+```javascript
+// Fetch and attach Shopify orders to Kustomer customer record
+async function syncShopifyOrders(customerId, shopifyCustomerId) {
+  const orders = await shopify.order.list({ customer_id: shopifyCustomerId });
+  await kustomer.customers.update(customerId, {
+    customAttributes: {
+      shopifyOrderCount: orders.length,
+      lastOrderDate: orders[0]?.created_at ?? null,
+      lifetimeValue: orders.reduce((sum, o) => sum + parseFloat(o.total_price), 0)
+    }
+  });
+}
+```
+
+
+This pattern works reliably because Kustomer's customer update endpoint accepts arbitrary custom attributes without schema validation errors. You can add new fields without touching the platform admin UI.
+
 
 ### Gladly Integration Points
 
@@ -216,14 +240,54 @@ Gladly emphasizes:
 
 Gladly's integration philosophy leans toward out-of-the-box connectivity, which reduces development time for common setups but may limit flexibility for highly customized workflows.
 
+Gladly's Adaptive Cards feature lets you embed structured data panels inside the agent workspace without writing frontend code. You POST a JSON payload to Gladly's lookup adapter endpoint, and the platform renders a formatted card alongside the conversation thread. This is faster to implement than Kustomer's custom KView components, which require React knowledge and a separate deployment pipeline.
+
+
+## Real-World Performance and Rate Limits
+
+
+Both platforms perform well under normal load, but edge cases reveal important differences. Kustomer's rate limit is 100 requests per minute on standard tiers. At high conversation volumes—think Black Friday for a mid-market retailer—bursting against this limit forces queuing logic on the client side:
+
+
+```javascript
+// Simple token bucket for Kustomer API calls
+class RateLimiter {
+  constructor(limit, windowMs) {
+    this.limit = limit;
+    this.windowMs = windowMs;
+    this.calls = [];
+  }
+
+  async throttle(fn) {
+    const now = Date.now();
+    this.calls = this.calls.filter(t => now - t < this.windowMs);
+    if (this.calls.length >= this.limit) {
+      const waitMs = this.windowMs - (now - this.calls[0]);
+      await new Promise(r => setTimeout(r, waitMs));
+    }
+    this.calls.push(Date.now());
+    return fn();
+  }
+}
+
+const limiter = new RateLimiter(100, 60000);
+await limiter.throttle(() => kustomer.conversations.get(id));
+```
+
+
+Gladly's rate limits vary by tier and are not publicly documented in the same detail as Kustomer's. Request explicit SLA documentation before signing a contract if your integration is latency-sensitive or needs to handle burst traffic.
+
 
 ## Developer Experience Considerations
 
 
 Kustomer suits teams that need fine-grained API control over conversation workflows, want to integrate a custom CRM deeply, rely on ticket-based metrics and reporting, or are building custom AI response flows.
 
-
 Gladly suits teams where continuous conversation threads match their service model, voice channel integration is a priority, and the team prefers configuration over custom code.
+
+Both platforms have sandbox environments and reasonable documentation, but Kustomer's developer docs are more comprehensive for API edge cases. Gladly's documentation improved significantly in 2025 but still has gaps around webhook retry behavior and error codes that sometimes require opening a support ticket.
+
+One area where Gladly clearly wins is voice. Kustomer's telephony support requires a third-party integration through partners like Five9 or Talkdesk. Gladly ships with native PSTN voice support, meaning agents handle phone calls directly inside the same workspace they use for chat and email. For teams where voice is a primary channel, this eliminates the dual-screen problem entirely.
 
 
 ## Practical Migration Considerations
@@ -233,21 +297,32 @@ If you are evaluating a switch between platforms, the data model difference matt
 
 
 | Aspect | Kustomer | Gladly |
-
 |--------|----------|--------|
-
 | Data model | Ticket/Conversation | Person/Conversation |
-
 | Channel handling | Channel-specific views | Unified thread |
-
 | API complexity | Moderate | Moderate to High |
-
 | Webhook reliability | Good | Good |
-
 | Rate limits | 100 req/min (standard) | Varies by tier |
+| Bot building | Visual flow builder | Sidekick AI-native |
+| Voice support | Third-party required | Native PSTN |
+| Custom AI training | Yes (Kustomer IQ) | Limited |
+| Sandbox environment | Yes | Yes |
+| Pricing transparency | Per-seat published | Custom quote |
 
 
 Both platforms provide sandbox environments. Request API access early in your evaluation to test the specific endpoints your application needs.
+
+One migration pitfall teams consistently underestimate is the conversation history export. Kustomer stores metadata in custom KObjects that have no direct equivalent in Gladly. Plan for a data transformation layer if historical conversation data needs to remain searchable in the new system. Similarly, moving from Gladly to Kustomer means breaking the continuous thread model into discrete tickets—agents familiar with Gladly's UI often find this disorienting during transition.
+
+For teams that cannot decide, running both platforms in parallel for 30 days on different support channels is a legitimate evaluation strategy. Route chat to one platform and email to the other, then compare CSAT scores and first-contact resolution rates before committing to a migration.
+
+
+## Common Pitfalls
+
+
+**Kustomer:** Avoid relying on the visual flow builder for complex branching logic. Flows with more than 10 decision nodes become difficult to maintain and debug. Migrate complex routing logic to webhook-driven code instead, where version control and testing are straightforward.
+
+**Gladly:** The person-centric model can create duplicate person records when customers contact support using multiple email addresses. Build a deduplication layer early in your integration to merge person records by phone number or external customer ID, or you will accumulate data quality debt that is expensive to clean up retroactively.
 
 
 ## Related Articles
