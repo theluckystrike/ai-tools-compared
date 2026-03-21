@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Postmortem Generation"
-description: "A practical guide to AI postmortem generation for developers and power users. Learn how to automate incident root cause analysis with code examples and."
+description: "When production incidents occur, writing postmortems becomes a critical but often time-consuming task. Teams must gather logs, identify root causes, document"
 date: 2026-03-20
 author: theluckystrike
 permalink: /ai-postmortem-generation/

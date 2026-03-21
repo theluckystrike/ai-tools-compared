@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Assistants for Multicloud Infrastructure Management"
-description: "Discover how AI assistants are transforming multicloud infrastructure management and deployment workflows for developers and DevOps teams."
+description: "Discover how AI assistants are transforming multicloud infrastructure management and deployment workflows for developers and DevOps teams"
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-assistants-for-multicloud-infrastructure-management-and-d/

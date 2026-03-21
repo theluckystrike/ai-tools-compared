@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "ChatGPT Hallucinating Facts: How to Reduce Errors"
-description: "A practical guide for developers and power users to minimize ChatGPT's fact-checking errors through prompt engineering and verification strategies."
+description: "A practical guide for developers and power users to minimize ChatGPT's fact-checking errors through prompt engineering and verification strategies"
 date: 2026-03-15
 author: theluckystrike
 permalink: /chatgpt-hallucinating-facts-how-to-reduce-errors/

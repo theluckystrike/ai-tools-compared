@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI CI/CD Pipeline Optimization: A Developer Guide"
-description: "Learn practical strategies for optimizing CI/CD pipelines with AI. Discover intelligent test selection, predictive resource allocation, and automated."
+description: "Learn practical strategies for optimizing CI/CD pipelines with AI. Discover intelligent test selection, predictive resource allocation, and automated"
 date: 2026-03-20
 author: theluckystrike
 permalink: /ai-ci-cd-pipeline-optimization/

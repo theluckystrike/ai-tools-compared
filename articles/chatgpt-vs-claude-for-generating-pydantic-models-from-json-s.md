@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "ChatGPT vs Claude for Generating Pydantic Models from JSON"
-description: "A practical comparison of ChatGPT and Claude for generating Pydantic models from JSON schema, with code examples and real-world use cases for developers."
+description: "A practical comparison of ChatGPT and Claude for generating Pydantic models from JSON schema, with code examples and real-world use cases for developers"
 date: 2026-03-16
 author: theluckystrike
 permalink: /chatgpt-vs-claude-for-generating-pydantic-models-from-json-s/

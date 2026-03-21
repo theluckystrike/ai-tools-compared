@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Cursor Multi-File Edit Breaking Code Fix (2026)"
-description: "A practical troubleshooting guide for developers facing Cursor multi-file edit breaking code issues. Learn step-by-step fixes and diagnostic tips."
+description: "A practical troubleshooting guide for developers facing Cursor multi-file edit breaking code issues. Learn step-by-step fixes and diagnostic tips"
 date: 2026-03-15
 author: theluckystrike
 permalink: /cursor-multi-file-edit-breaking-code-fix-2026/

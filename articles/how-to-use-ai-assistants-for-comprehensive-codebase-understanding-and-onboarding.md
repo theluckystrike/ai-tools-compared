@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI Assistants for Codebase"
-description: "A practical guide for developers on using AI assistants to understand large codebases quickly, with real examples and proven techniques for effective."
+description: "A practical guide for developers on using AI assistants to understand large codebases quickly, with real examples and proven techniques for effective"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-assistants-for--codebase-understanding-and-onboarding/

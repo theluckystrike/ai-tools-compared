@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Copilot for Students Free Access: What Exactly Is Included"
-description: "A guide for developers and power users on what GitHub Copilot for Students includes, how to get it, and practical ways to use it in your."
+description: "A guide for developers and power users on what GitHub Copilot for Students includes, how to get it, and practical ways to use it in your"
 date: 2026-03-16
 author: theluckystrike
 permalink: /copilot-for-students-free-access-what-exactly-is-included-20/

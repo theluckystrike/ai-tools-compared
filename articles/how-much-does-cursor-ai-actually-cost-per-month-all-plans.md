@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How Much Does Cursor AI Actually Cost Per Month All Plans"
-description: "A complete breakdown of Cursor AI pricing for developers. Compare all plans, features, and find the right tier for your coding workflow."
+description: "A complete breakdown of Cursor AI pricing for developers. Compare all plans, features, and find the right tier for your coding workflow"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-much-does-cursor-ai-actually-cost-per-month-all-plans/

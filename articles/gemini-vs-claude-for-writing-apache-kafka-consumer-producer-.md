@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Gemini vs Claude for Writing Apache Kafka Consumer Producer"
-description: "A practical comparison of Gemini and Claude for writing Apache Kafka consumer and producer code in Java, with real code examples and recommendations."
+description: "A practical comparison of Gemini and Claude for writing Apache Kafka consumer and producer code in Java, with real code examples and recommendations"
 date: 2026-03-16
 author: theluckystrike
 permalink: /gemini-vs-claude-for-writing-apache-kafka-consumer-producer-/

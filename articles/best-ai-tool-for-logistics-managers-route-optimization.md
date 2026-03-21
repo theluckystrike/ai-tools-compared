@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tool for Logistics Managers: Route Optimization"
-description: "Discover how AI-powered route optimization tools help logistics managers reduce fuel costs, improve delivery times, and improve fleet operations with."
+description: "The best AI route optimization tools for logistics managers are platforms that process multiple constraints simultaneously -- delivery windows, vehicle"
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-tool-for-logistics-managers-route-optimization/

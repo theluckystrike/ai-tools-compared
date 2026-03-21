@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Free AI Alternatives to Copilot for JetBrains IDE Users 2026"
-description: "Discover free AI coding assistants that work with JetBrains IDEs. Compare features, limitations, and practical setup guides for developers in 2026."
+description: "Discover free AI coding assistants that work with JetBrains IDEs. Compare features, limitations, and practical setup guides for developers in 2026"
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /free-ai-alternatives-to-copilot-for-jetbrains-ide-users-2026/

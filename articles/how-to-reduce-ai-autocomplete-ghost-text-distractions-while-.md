@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Reduce AI Autocomplete Ghost Text Distractions While"
-description: "Practical strategies to minimize AI autocomplete ghost text distractions in your IDE. Learn configuration options, keyboard shortcuts, and workflows."
+description: "Practical strategies to minimize AI autocomplete ghost text distractions in your IDE. Learn configuration options, keyboard shortcuts, and workflows"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-reduce-ai-autocomplete-ghost-text-distractions-while-coding/

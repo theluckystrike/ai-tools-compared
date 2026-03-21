@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Assistant for Generating SQL Recursive Queries"
-description: "A practical comparison of AI assistants for writing recursive SQL queries that traverse organizational hierarchies, with real code examples."
+description: "A practical comparison of AI assistants for writing recursive SQL queries that traverse organizational hierarchies, with real code examples"
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-assistant-for-generating-sql-recursive-queries-for-hierarchical-org-chart-data/

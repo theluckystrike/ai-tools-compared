@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Cursor Composer Stuck in Loop: How to Fix"
-description: "A practical guide to resolving Cursor Composer infinite loop issues with step-by-step diagnostic tips and proven fixes for developers and power users."
+description: "A practical guide to resolving Cursor Composer infinite loop issues with step-by-step diagnostic tips and proven fixes for developers and power users"
 date: 2026-03-15
 author: theluckystrike
 permalink: /cursor-composer-stuck-in-loop-how-to-fix/

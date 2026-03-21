@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Writing Nginx Configurations 2026"
-description: "Compare AI tools for generating nginx configurations. Covers reverse proxy, load balancing, SSL termination, and rate limiting with Claude, Copilot, and Cursor."
+description: "Compare AI tools for generating nginx configurations. Covers reverse proxy, load balancing, SSL termination, and rate limiting with Claude, Copilot, and Cursor"
 date: 2026-03-21
 author: theluckystrike
 permalink: /ai-tools-for-writing-nginx-configurations-2026/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Writing CI CD Pipeline Configurations 2026"
-description: "Compare AI tools for generating CI/CD pipeline configurations. Covers GitHub Actions, GitLab CI, CircleCI YAML generation with Claude, Copilot, and Cursor."
+description: "Compare AI tools for generating CI/CD pipeline configurations. Covers GitHub Actions, GitLab CI, CircleCI YAML generation with Claude, Copilot, and Cursor"
 date: 2026-03-21
 author: theluckystrike
 permalink: /ai-tools-for-writing-ci-cd-pipeline-configurations-2026/

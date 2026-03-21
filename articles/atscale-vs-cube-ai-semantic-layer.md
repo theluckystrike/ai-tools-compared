@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AtScale vs Cube AI Semantic Layer: A Developer Comparison"
-description: "A practical comparison of AtScale and Cube as AI-powered semantic layers, with code examples and recommendations for data teams."
+description: "A practical comparison of AtScale and Cube as AI-powered semantic layers, with code examples and recommendations for data teams"
 date: 2026-03-15
 author: theluckystrike
 permalink: /atscale-vs-cube-ai-semantic-layer/

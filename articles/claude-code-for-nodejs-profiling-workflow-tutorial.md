@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code for Node.js Profiling Workflow Tutorial"
-description: "Learn how to use Claude Code to improve your Node.js profiling workflow. This tutorial covers identifying performance bottlenecks, analyzing CPU and."
+description: "Claude Code is an AI-powered CLI tool that can significantly accelerate your Node.js profiling workflow. This tutorial walks you through using Claude Code to"
 date: 2026-03-15
 author: theluckystrike
 permalink: /claude-code-for-nodejs-profiling-workflow-tutorial/

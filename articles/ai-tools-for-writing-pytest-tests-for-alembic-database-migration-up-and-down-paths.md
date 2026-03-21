@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Writing pytest Tests for Alembic Database"
-description: "Discover how AI coding assistants can automate the creation of pytest tests for Alembic database migrations, covering both upgrade and rollback scenarios."
+description: "Discover how AI coding assistants can automate the creation of pytest tests for Alembic database migrations, covering both upgrade and rollback scenarios"
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/

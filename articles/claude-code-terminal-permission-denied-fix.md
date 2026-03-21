@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Terminal Permission Denied Fix"
-description: "Claude Code Terminal Permission Denied Fix — guide with practical tips, comparisons, and expert recommendations for developers and teams."
+description: "Claude Code Terminal Permission Denied Fix — guide with practical tips, comparisons, and expert recommendations for developers and teams"
 date: 2026-03-15
 author: theluckystrike
 permalink: /claude-code-terminal-permission-denied-fix/

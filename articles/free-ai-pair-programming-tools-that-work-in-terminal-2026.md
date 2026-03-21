@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Free AI Pair Programming Tools That Work in Terminal in 2026"
-description: "A practical guide to free AI pair programming tools that run directly in your terminal, with code examples and setup instructions for developers."
+description: "A practical guide to free AI pair programming tools that run directly in your terminal, with code examples and setup instructions for developers"
 date: 2026-03-16
 author: theluckystrike
 permalink: /free-ai-pair-programming-tools-that-work-in-terminal-2026/

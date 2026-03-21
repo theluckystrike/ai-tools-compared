@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Configure Claude Code Project Memory for Persistent"
-description: "A practical guide to configuring Claude Code project memory for persistent coding conventions, with setup examples and configuration strategies for."
+description: "Configure Claude Code project memory by creating a CLAUDE.md file in your project root that persists across sessions and documents coding conventions"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-configure-claude-code-project-memory-for-persistent-c/

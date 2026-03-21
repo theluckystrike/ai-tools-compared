@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Is Tabnine Free Plan Still Worth Using in 2026?"
-description: "An honest evaluation of Tabnine Free in 2026. Does it still hold up against newer AI coding assistants? We test it extensively to give you the answer."
+description: "An honest evaluation of Tabnine Free in 2026. Does it still hold up against newer AI coding assistants? We test it extensively to give you the answer"
 date: 2026-03-16
 author: theluckystrike
 permalink: /is-tabnine-free-plan-still-worth-using-in-2026/

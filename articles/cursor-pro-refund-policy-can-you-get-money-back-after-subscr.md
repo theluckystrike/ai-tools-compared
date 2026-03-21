@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Cursor Pro Refund Policy Can You Get Money Back After Subscr"
-description: "Cursor Pro Refund Policy: Can You Get Money Back After. — guide with practical tips, comparisons, and expert recommendations for."
+description: "Yes, you can get a refund from Cursor Pro if you request it within the 30-day refund window from your purchase date. To start the process, email"
 date: 2026-03-16
 author: theluckystrike
 permalink: /cursor-pro-refund-policy-can-you-get-money-back-after-subscr/

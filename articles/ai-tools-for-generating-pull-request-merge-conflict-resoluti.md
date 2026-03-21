@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Generating Pull Request Merge Conflict"
-description: "Discover AI tools that automatically generate merge conflict resolution suggestions for pull request reviewers. Practical examples and code snippets."
+description: "Discover AI tools that automatically generate merge conflict resolution suggestions for pull request reviewers. Practical examples and code snippets"
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-generating-pull-request-merge-conflict-resoluti/

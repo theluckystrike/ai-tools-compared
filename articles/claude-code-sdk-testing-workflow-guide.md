@@ -1,6 +1,6 @@
 ---
 title: "Claude Code SDK Testing Workflow Guide"
-description: "A guide to setting up and maintaining testing workflows for Claude Code SDK implementations."
+description: "A guide to setting up and maintaining testing workflows for Claude Code SDK implementations"
 author: "theluckystrike"
 date: 2026-03-17
 permalink: /claude-code-sdk-testing-workflow-guide/

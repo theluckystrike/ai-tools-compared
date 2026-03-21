@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI for Creating Negative Test Cases"
-description: "A practical guide to using AI tools that generate thorough negative test cases from Swagger/OpenAPI specifications. Includes code examples and."
+description: "Testing API endpoints thoroughly requires more than happy-path scenarios. Negative test cases—those that verify how your API handles invalid inputs, edge"
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-for-creating--negative-test-cases-from-/

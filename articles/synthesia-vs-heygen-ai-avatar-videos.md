@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Synthesia vs HeyGen AI Avatar Videos — A Developer"
-description: "A technical comparison of Synthesia and HeyGen for AI avatar video generation, with API examples, pricing analysis, and recommendations for developers."
+description: "A technical comparison of Synthesia and HeyGen for AI avatar video generation, with API examples, pricing analysis, and recommendations for developers"
 date: 2026-03-15
 author: theluckystrike
 permalink: /synthesia-vs-heygen-ai-avatar-videos/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "GitHub Copilot vs Cody Sourcegraph Comparison"
-description: "A detailed comparison of GitHub Copilot and Cody (by Sourcegraph) for developers. Learn the key differences in features, pricing, and use cases."
+description: "A detailed comparison of GitHub Copilot and Cody (by Sourcegraph) for developers. Learn the key differences in features, pricing, and use cases"
 date: 2026-03-15
 author: theluckystrike
 permalink: /github-copilot-vs-cody-sourcegraph-comparison/

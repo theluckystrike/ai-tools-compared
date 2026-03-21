@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Qa Engineers Creating Accessibility Testing Che"
-description: "Learn how QA engineers can use AI to generate accessibility testing checklists derived directly from WCAG 2.1 guidelines, with."
+description: "Accessibility testing remains one of the most time-consuming aspects of quality assurance. WCAG 2.1 contains over 78 success criteria across three conformance"
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-qa-engineers-creating-accessibility-testing-che/

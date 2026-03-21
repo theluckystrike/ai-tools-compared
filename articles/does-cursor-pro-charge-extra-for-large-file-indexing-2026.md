@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Does Cursor Pro Charge Extra for Large File Indexing in 2026"
-description: "Does Cursor Pro Charge Extra for Large File Indexing in. — guide with practical tips, comparisons, and expert recommendations for."
+description: "No, Cursor Pro does not charge extra for large file indexing. Indexing is included in the Pro subscription with no per-file or per-MB fees -- you get full"
 date: 2026-03-16
 author: theluckystrike
 permalink: /does-cursor-pro-charge-extra-for-large-file-indexing-2026/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Writing Terraform Infrastructure-as-Code"
-description: "Compare AI tools for Terraform and IaC: Copilot, Cursor, Claude, Pulumi AI. Includes HCL examples, provider coverage, and security considerations."
+description: "Compare AI tools for Terraform and IaC: Copilot, Cursor, Claude, Pulumi AI. Includes HCL examples, provider coverage, and security considerations"
 date: 2026-03-20
 author: theluckystrike
 permalink: /ai-tools-for-writing-terraform-infrastructure-as-code-comparison-2026/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Powered Incident Response Tools for DevOps Teams Compared"
-description: "Compare the best AI-powered incident response tools for DevOps teams in 2026. Find the right solution for automated debugging, runbooks, and faster MTTR."
+description: "Compare the best AI-powered incident response tools for DevOps teams in 2026. Find the right solution for automated debugging, runbooks, and faster MTTR"
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /ai-powered-incident-response-tools-for-devops-teams-compared/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI to Draft RFC Documents for Proposed Open"
-description: "Learn practical methods for using AI tools to draft RFC documents for open source feature proposals, with examples and code snippets for developers in."
+description: "Artificial intelligence has become a valuable assistant for open source maintainers and contributors drafting Request for Comments (RFC) documents. When"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-draft-rfc-documents-for-proposed-open-source-feature-changes/

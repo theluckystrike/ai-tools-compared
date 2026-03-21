@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Generating Website Hero Images Compared"
-description: "A practical comparison of AI tools for generating website hero images, with code examples and recommendations for developers."
+description: "A practical comparison of AI tools for generating website hero images, with code examples and recommendations for developers"
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-generating-website-hero-images-compared/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Comparing AI Tools for Generating Retool Resource."
-description: "A practical guide comparing AI tools that convert natural language into Retool resource queries. Learn which tools excel at translating descriptions."
+description: "A practical guide comparing AI tools that convert natural language into Retool resource queries. Learn which tools excel at translating descriptions"
 date: 2026-03-16
 author: "AI Tools Compared"
 permalink: /comparing-ai-tools-for-generating-retool-resource-queries-fr/

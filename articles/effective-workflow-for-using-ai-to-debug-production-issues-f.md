@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Effective Workflow for Using AI"
-description: "A practical workflow for developers to use AI tools when analyzing production logs and debugging issues, with real examples and code snippets."
+description: "A practical workflow for developers to use AI tools when analyzing production logs and debugging issues, with real examples and code snippets"
 date: 2026-03-16
 author: theluckystrike
 permalink: /effective-workflow-for-using-ai-to-debug-production-issues-from-logs/

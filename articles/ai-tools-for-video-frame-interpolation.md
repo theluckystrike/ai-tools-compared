@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Video Frame Interpolation"
-description: "A practical guide to AI-powered video frame interpolation tools for developers and power users, with implementation examples and tool comparisons."
+description: "A practical guide to AI-powered video frame interpolation tools for developers and power users, with implementation examples and tool comparisons"
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-video-frame-interpolation/

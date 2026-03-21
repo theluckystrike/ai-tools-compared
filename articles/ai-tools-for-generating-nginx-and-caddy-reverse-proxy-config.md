@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Generating Nginx and Caddy Reverse Proxy Config"
-description: "Compare AI coding assistants for generating production-ready Nginx and Caddy reverse proxy configurations. Practical examples, common pitfalls, and."
+description: "AI tools have become remarkably capable at generating reverse proxy configurations for both Nginx and Caddy. Whether you need a quick development setup or a"
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /ai-tools-for-generating-nginx-and-caddy-reverse-proxy-config/

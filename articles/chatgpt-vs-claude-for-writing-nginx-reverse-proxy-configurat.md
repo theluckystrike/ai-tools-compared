@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "ChatGPT vs Claude for Writing Nginx Reverse Proxy Configurat"
-description: "A practical comparison of ChatGPT and Claude for writing Nginx reverse proxy configuration files, with code examples and real-world use cases."
+description: "A practical comparison of ChatGPT and Claude for writing Nginx reverse proxy configuration files, with code examples and real-world use cases"
 date: 2026-03-16
 author: theluckystrike
 permalink: /chatgpt-vs-claude-for-writing-nginx-reverse-proxy-configurat/

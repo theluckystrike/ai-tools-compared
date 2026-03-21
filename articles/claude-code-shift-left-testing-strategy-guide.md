@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Shift Left Testing Strategy Guide"
-description: "A practical guide to implementing shift left testing strategy using Claude Code CLI, with examples for catching bugs earlier in the development cycle."
+description: "A practical guide to implementing shift left testing strategy using Claude Code CLI, with examples for catching bugs earlier in the development cycle"
 date: 2026-03-17
 author: theluckystrike
 permalink: /claude-code-shift-left-testing-strategy-guide/

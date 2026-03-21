@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Detecting Kubernetes Misconfiguration Before"
-description: "Explore how AI tools can identify Kubernetes misconfigurations before they reach your cluster. Practical examples, code patterns, and comparison of."
+description: "AI tools like Claude Code, GitHub Copilot, and Cursor can identify Kubernetes misconfigurations including security violations (secrets in environment"
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /ai-tools-for-detecting-kubernetes-misconfiguration-before-de/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI to Diagnose and Fix Golang Goroutine Deadlock"
-description: "Learn practical strategies for using AI tools to identify, analyze, and resolve goroutine deadlocks in Go applications. Includes code examples and."
+description: "AI tools can decode Go's cryptic deadlock panic messages—'fatal error: all goroutines are asleep - deadlock!'—by recognizing common patterns like unbuffered"
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /how-to-use-ai-to-diagnose-and-fix-golang-goroutine-deadlock-/

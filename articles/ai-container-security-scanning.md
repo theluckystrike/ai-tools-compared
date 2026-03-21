@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Container Security Scanning"
-description: "Learn how AI-powered container security scanning tools detect vulnerabilities, misconfigurations, and compliance issues in Docker and Kubernetes."
+description: "Learn how AI-powered container security scanning tools detect vulnerabilities, misconfigurations, and compliance issues in Docker and Kubernetes"
 date: 2026-03-20
 author: theluckystrike
 permalink: /ai-container-security-scanning/

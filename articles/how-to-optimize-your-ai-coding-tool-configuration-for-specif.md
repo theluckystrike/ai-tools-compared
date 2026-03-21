@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Optimize Your AI Coding Tool Configuration for Specif"
-description: "A practical guide to configuring AI coding assistants like GitHub Copilot, Cursor, and similar tools for different programming environments and project."
+description: "A practical guide to configuring AI coding assistants like GitHub Copilot, Cursor, and similar tools for different programming environments and project"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-optimize-your-ai-coding-tool-configuration-for-specif/

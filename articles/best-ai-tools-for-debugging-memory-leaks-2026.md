@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Debugging Memory Leaks 2026"
-description: "Compare AI tools for debugging memory leaks in Node.js, Python, and Java. Covers heap snapshots, profiling, and common leak patterns with Claude and Copilot."
+description: "Compare AI tools for debugging memory leaks in Node.js, Python, and Java. Covers heap snapshots, profiling, and common leak patterns with Claude and Copilot"
 date: 2026-03-21
 author: theluckystrike
 permalink: /best-ai-tools-for-debugging-memory-leaks-2026/

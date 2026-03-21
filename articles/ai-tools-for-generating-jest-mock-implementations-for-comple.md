@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Generating Jest Mock Implementations for Comple"
-description: "Discover how AI coding assistants can help generate Jest mock implementations for complex third-party libraries like AWS SDK, Stripe, and."
+description: "Mocking complex third-party libraries in Jest remains one of the most time-consuming aspects of writing effective unit tests. Libraries like AWS SDK, Stripe"
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-generating-jest-mock-implementations-for-comple/

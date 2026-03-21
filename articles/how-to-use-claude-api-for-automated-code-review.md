@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use the Claude API for Automated Code Review"
-description: "Build automated code review with the Claude API. Python integration, GitHub PR webhooks, review prompt engineering, and structured output parsing."
+description: "Build automated code review with the Claude API. Python integration, GitHub PR webhooks, review prompt engineering, and structured output parsing"
 date: 2026-03-20
 author: theluckystrike
 permalink: /how-to-use-claude-api-for-automated-code-review/

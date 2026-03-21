@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Pair Programming Tools Comparison 2026: Claude Code."
-description: "Compare AI pair programming tools—Claude Code, Copilot Chat, Cursor Composer, Aider, Continue.dev. Multi-file edits, context limits, pricing, performance."
+description: "Compare AI pair programming tools—Claude Code, Copilot Chat, Cursor Composer, Aider, Continue.dev. Multi-file edits, context limits, pricing, performance"
 date: 2026-03-20
 author: theluckystrike
 permalink: /ai-pair-programming-tools-comparison-2026/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI-Powered Database Migration Tools Comparison 2026"
-description: "Compare AI-assisted database migration tools: Atlas, Flyway+AI, Prisma Migrate, Hasura, SchemaHero. Includes pricing, CLI examples, rollback."
+description: "Compare AI-assisted database migration tools: Atlas, Flyway+AI, Prisma Migrate, Hasura, SchemaHero. Includes pricing, CLI examples, rollback"
 date: 2026-03-20
 author: theluckystrike
 permalink: /ai-powered-database-migration-tools-comparison/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Create Custom System Prompt for ChatGPT API That Enfo"
-description: "A practical guide for developers on creating custom system prompts that enforce coding standards when using the ChatGPT API, with code examples and."
+description: "Custom system prompts give you control over how the ChatGPT API behaves in your applications. When you need consistent code output that follows your team's"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-custom-system-prompt-for-chatgpt-api-that-enfo/

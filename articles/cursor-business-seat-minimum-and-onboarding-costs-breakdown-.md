@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Cursor Business Seat Minimum and Onboarding Costs Breakdown"
-description: "Cursor Business Seat Minimum and Onboarding Costs. — guide with practical tips, comparisons, and expert recommendations for developers."
+description: "Cursor Business Seat Minimum and Onboarding Costs. — guide with practical tips, comparisons, and expert recommendations for developers"
 date: 2026-03-16
 author: theluckystrike
 permalink: /cursor-business-seat-minimum-and-onboarding-costs-breakdown-/

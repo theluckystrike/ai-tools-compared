@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Evaluate AI Coding Tool Encryption Standards for Data"
-description: "A practical guide for developers to evaluate encryption standards when selecting AI coding tools. Learn how to assess data-in-transit security with."
+description: "When you paste code into an AI coding assistant, that code travels across network connections before reaching the service's servers. Understanding how to"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-evaluate-ai-coding-tool-encryption-standards-for-data/

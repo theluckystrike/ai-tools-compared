@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Cursor Tab vs Copilot Ghost Text Comparison"
-description: "A practical comparison of Cursor Tab and GitHub Copilot ghost text for AI-powered code completion. Learn the key differences in acceptance mechanisms."
+description: "A practical comparison of Cursor Tab and GitHub Copilot ghost text for AI-powered code completion. Learn the key differences in acceptance mechanisms"
 date: 2026-03-15
 author: theluckystrike
 permalink: /cursor-tab-vs-copilot-ghost-text-comparison/

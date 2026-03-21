@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tool for Game Developers Design Docs Writing"
-description: "Discover how AI tools can improve game design documentation, from GDDs to technical specifications, with practical examples and real-world use cases."
+description: "Discover how AI tools can improve game design documentation, from GDDs to technical specifications, with practical examples and real-world use cases"
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-tool-for-game-developers-design-docs-writing/

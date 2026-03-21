@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Landbot vs Typebot: AI Conversational Forms Compared"
-description: "A practical comparison of Landbot and Typebot for building AI-powered conversational forms, with integration examples and recommendations for developers."
+description: "A practical comparison of Landbot and Typebot for building AI-powered conversational forms, with integration examples and recommendations for developers"
 date: 2026-03-15
 author: theluckystrike
 permalink: /landbot-vs-typebot-ai-conversational-forms/

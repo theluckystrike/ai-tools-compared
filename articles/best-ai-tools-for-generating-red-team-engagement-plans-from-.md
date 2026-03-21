@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Generating Red Team Engagement Plans."
-description: "A practical comparison of AI tools that automatically generate red team engagement plans by analyzing application architecture documentation."
+description: "A practical comparison of AI tools that automatically generate red team engagement plans by analyzing application architecture documentation"
 date: 2026-03-16
 author: "AI Tools Compared"
 permalink: /best-ai-tools-for-generating-red-team-engagement-plans-from-/

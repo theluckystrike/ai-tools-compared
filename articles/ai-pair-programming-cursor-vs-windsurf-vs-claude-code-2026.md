@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026"
-description: "Deep comparison of AI coding assistants for pair programming including editor integration, code quality, and real-world workflow analysis."
+description: "Deep comparison of AI coding assistants for pair programming including editor integration, code quality, and real-world workflow analysis"
 date: 2026-03-20
 author: theluckystrike
 permalink: /ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Which AI Is Better for Writing Playwright End-to-End Tests"
-description: "A practical comparison of AI tools for generating Playwright E2E tests. Learn which AI assistant writes better test code for your automation needs."
+description: "A practical comparison of AI tools for generating Playwright E2E tests. Learn which AI assistant writes better test code for your automation needs"
 date: 2026-03-16
 author: theluckystrike
 permalink: /which-ai-is-better-for-writing-playwright-end-to-end-tests-2/

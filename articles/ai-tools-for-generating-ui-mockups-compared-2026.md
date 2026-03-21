@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Generating UI Mockups Compared in 2026"
-description: "A practical comparison of AI tools for generating UI mockups in 2026, focusing on features, integration, and output quality for developers."
+description: "A practical comparison of AI tools for generating UI mockups in 2026, focusing on features, integration, and output quality for developers"
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-generating-ui-mockups-compared-2026/

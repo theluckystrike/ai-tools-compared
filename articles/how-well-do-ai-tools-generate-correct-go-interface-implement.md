@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How Well Do AI Tools Generate Correct Go Interface Implement"
-description: "A practical evaluation of how accurately AI coding assistants generate Go interface implementations, with real code examples and testing results."
+description: "A practical evaluation of how accurately AI coding assistants generate Go interface implementations, with real code examples and testing results"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-well-do-ai-tools-generate-correct-go-interface-implement/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Practices for Claude Md File Organization in Polyglot C"
-description: "Practical strategies for organizing Markdown documentation in multi-language projects using Claude. Code examples and folder structures for Python, JS."
+description: "Practical strategies for organizing Markdown documentation in multi-language projects using Claude. Code examples and folder structures for Python, JS"
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-practices-for-claude-md-file-organization-in-polyglot-c/

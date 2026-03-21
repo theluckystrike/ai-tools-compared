@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Way to Structure CursorRules for Microservices Project"
-description: "A practical guide to structuring CursorRules files for microservices projects with shared protobuf definitions. Includes code examples and folder."
+description: "A practical guide to structuring CursorRules files for microservices projects with shared protobuf definitions. Includes code examples and folder"
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /best-way-to-structure-cursorrules-for-microservices-project-/

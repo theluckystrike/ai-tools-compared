@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "ChatGPT vs Perplexity for Researching Competitor Pricing Str"
-description: "A practical guide comparing ChatGPT and Perplexity for gathering competitor pricing intelligence. Includes code examples and workflow recommendations."
+description: "A practical guide comparing ChatGPT and Perplexity for gathering competitor pricing intelligence. Includes code examples and workflow recommendations"
 date: 2026-03-16
 author: theluckystrike
 permalink: /chatgpt-vs-perplexity-for-researching-competitor-pricing-str/

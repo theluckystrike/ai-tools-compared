@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Cursor Hobby Plan Limitations vs Paying for Pro Worth It"
-description: "Cursor Hobby Plan Limitations vs Paying for Pro — Is It. — guide with practical tips, comparisons, and expert recommendations for."
+description: "This guide compares the strengths and weaknesses of each tool for this specific task. Choose the tool that best matches your workflow, budget, and technical"
 date: 2026-03-16
 author: theluckystrike
 permalink: /cursor-hobby-plan-limitations-vs-paying-for-pro-worth-it/

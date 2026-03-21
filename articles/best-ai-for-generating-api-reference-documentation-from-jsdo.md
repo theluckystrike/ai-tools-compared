@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI for Generating API Reference Documentation from Jsdo"
-description: "A practical guide to the best AI tools for generating API reference documentation from JSDoc comments and Python docstrings. Real code examples and."
+description: "Keeping API documentation current is a persistent challenge for development teams. Manually writing and maintaining reference documentation consumes"
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-for-generating-api-reference-documentation-from-jsdo/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Reviewing Embedded C Code for Memory."
-description: "A practical guide to AI-powered tools that help identify memory leaks and buffer overflows in embedded C code, with code examples and tool comparisons."
+description: "A practical guide to AI-powered tools that help identify memory leaks and buffer overflows in embedded C code, with code examples and tool comparisons"
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-tools-for-reviewing-embedded-c-code-for-memory-leak-and-buffer-overflow/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "ChatGPT Edu Pricing Per Student: How Schools Get Volume"
-description: "A practical guide to ChatGPT Edu pricing per student and how educational institutions secure volume discounts. Includes cost breakdown and."
+description: "ChatGPT Edu pricing typically falls between $10-$20 per student annually for full GPT-4 access, with volume discounts of 20-30% available through district-wide"
 date: 2026-03-16
 author: theluckystrike
 permalink: /chatgpt-edu-pricing-per-student-how-schools-get-volume-disco/

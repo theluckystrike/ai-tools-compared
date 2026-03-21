@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tool for Dietitians Meal Plan Creation 2026"
-description: "Discover how AI tools help dietitians create personalized meal plans faster. Real-world use cases, key features to evaluate, and practical guidance for."
+description: "The best AI meal planning tool for dietitians cuts initial plan creation from 45 minutes to 15-20 minutes per client by automating nutrient calculations"
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-tool-for-dietitians-meal-plan-creation-2026/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Configure Claude Code"
-description: "A practical guide to configuring Claude Code to understand and follow your team's feature flag naming conventions with real-world examples and configuration tips."
+description: "A practical guide to configuring Claude Code to understand and follow your team's feature flag naming conventions with real-world examples and configuration"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-configure-claude-code-to-follow-your-teams-feature-fl/

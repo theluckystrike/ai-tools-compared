@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code vs ChatGPT Code Interpreter Comparison"
-description: "Claude Code vs ChatGPT Code Interpreter Comparison — guide with practical tips, comparisons, and expert recommendations for developers."
+description: "Claude Code vs ChatGPT Code Interpreter Comparison — guide with practical tips, comparisons, and expert recommendations for developers"
 date: 2026-03-15
 author: theluckystrike
 permalink: /claude-code-vs-chatgpt-code-interpreter-comparison/

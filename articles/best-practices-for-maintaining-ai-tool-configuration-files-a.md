@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Practices for Maintaining AI Tool Configuration Files"
-description: "A practical guide to managing AI tool configuration files with your code documentation, including version control strategies, environment-specific."
+description: "A practical guide to managing AI tool configuration files with your code documentation, including version control strategies, environment-specific"
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-practices-for-maintaining-ai-tool-configuration-files-a/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI to Optimize GitHub Actions Workflow Run Times"
-description: "A practical guide for developers on using AI tools to analyze, optimize, and reduce GitHub Actions workflow execution times with real code examples."
+description: "A practical guide for developers on using AI tools to analyze, optimize, and reduce GitHub Actions workflow execution times with real code examples"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-optimize-github-actions-workflow-run-times-/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Java Library Development Guide"
-description: "A practical guide to using Claude Code for building professional Java libraries, covering project setup, API design, testing, and documentation with."
+description: "Claude Code is an AI-powered CLI that assists with every phase of Java library development, from project setup and API design to testing and documentation"
 date: 2026-03-15
 author: theluckystrike
 permalink: /claude-code-java-library-development-guide/

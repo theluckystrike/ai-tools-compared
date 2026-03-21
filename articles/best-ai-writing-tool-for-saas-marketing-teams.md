@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Writing Tool for SaaS Marketing Teams"
-description: "A practical guide to choosing the best AI writing tool for SaaS marketing teams. Includes API integration examples, workflow automation patterns, and."
+description: "The best AI writing tool for SaaS marketing teams is one with an API, persistent context across sessions, and native integration with your development workflow"
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-writing-tool-for-saas-marketing-teams/

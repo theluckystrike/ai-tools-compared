@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Move Stable Diffusion Workflows to Midjourney"
-description: "A practical guide for developers and power users transitioning from Stable Diffusion to Midjourney. Learn prompt conversion, parameter mapping, and."
+description: "To move Stable Diffusion workflows to Midjourney, convert weighted prompt syntax to Midjourney's :: weight system, replace explicit sampler and CFG settings"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-move-stable-diffusion-workflows-to-midjourney-equivalent-setup/

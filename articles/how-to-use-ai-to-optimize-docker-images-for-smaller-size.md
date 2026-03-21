@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI to Optimize Docker Images for Smaller Size"
-description: "A practical guide for developers on using AI tools to analyze, optimize, and reduce Docker image sizes with real code examples and strategies."
+description: "A practical guide for developers on using AI tools to analyze, optimize, and reduce Docker image sizes with real code examples and strategies"
 date: 2026-03-18
 author: theluckystrike
 permalink: /how-to-use-ai-to-optimize-docker-images-for-smaller-size/

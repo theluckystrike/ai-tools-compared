@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Notion AI vs Google Docs AI: Complete Writing Features"
-description: "A comparison of Notion AI and Google Docs AI writing features. Discover which tool better suits your writing workflow for productivity."
+description: "A comparison of Notion AI and Google Docs AI writing features. Discover which tool better suits your writing workflow for productivity"
 date: 2026-03-18
 author: theluckystrike
 permalink: /notion-ai-writing-features-vs-google-docs-ai-compared/

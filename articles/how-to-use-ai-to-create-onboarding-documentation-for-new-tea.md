@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI to Create Onboarding Documentation for New Tea"
-description: "A practical guide for developers and power users using AI to build onboarding documentation that accelerates new team member."
+description: "A practical guide for developers and power users using AI to build onboarding documentation that accelerates new team member"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-create-onboarding-documentation-for-new-tea/
