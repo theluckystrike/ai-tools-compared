@@ -164,6 +164,128 @@ WHERE status = 'paid';
 
 Claude also explains why the partial index is better than a full composite index (smaller index, only indexes rows matching the predicate). The limitation: without connecting to your actual database, it cannot account for column correlation, TOAST access patterns, or vacuum state.
 
+## Scenario: N+1 Query Detection and Fixing
+
+A common optimization challenge:
+
+```python
+# Slow: N+1 queries
+def get_users_with_posts(limit: int = 100):
+    users = User.query.limit(limit)  # 1 query
+    result = []
+    for user in users:
+        posts = Post.query.filter_by(user_id=user.id).all()  # 100 queries
+        result.append({"user": user, "posts": posts})
+    return result
+```
+
+**Claude analysis:**
+```
+Paste this function and I'll identify the N+1 query pattern:
+- Initial query loads 100 users
+- Loop runs 100 iterations, each querying posts
+- Total: 101 queries
+
+Fix:
+posts = Post.query.filter(Post.user_id.in_([u.id for u in users])).all()
+posts_by_user = group_by_user_id(posts)
+for user in users:
+    user_posts = posts_by_user[user.id]
+```
+
+**EverSQL analysis:**
+Would require manually identifying N+1, doesn't auto-detect from code.
+
+**Metis detection:**
+If run in test suite, Metis captures each query execution and counts. It would flag "100 identical queries with different parameters" as a red flag.
+
+## Cost-Benefit Analysis by Tool
+
+| Scenario | Best Tool | Why |
+|---|---|---|
+| Quick one-off query analysis | Claude | Free, no setup, instant answers |
+| Catch performance regressions in CI | Metis | Integrated test suite analysis |
+| Production optimization at scale | pganalyze | Real workload statistics, measurable impact |
+| MySQL/MariaDB without pganalyze | EverSQL | Purpose-built for MySQL ecosystem |
+| Learning query optimization | Claude | Explains reasoning for recommendations |
+
+## Integration with Development Workflow
+
+### Before Deployment: Using Metis in CI
+
+```yaml
+# .github/workflows/test.yml
+- name: Run tests with query analysis
+  run: pytest tests/
+
+- name: Analyze slow queries
+  uses: metis-data/metis-action@v1
+  with:
+    api-key: ${{ secrets.METIS_API_KEY }}
+    db-connection: postgresql://test_db:5432/testdb
+
+- name: Comment on PR if regressions found
+  if: ${{ always() }}
+  uses: actions/github-script@v6
+  with:
+    script: |
+      const fs = require('fs');
+      const report = JSON.parse(fs.readFileSync('metis-report.json'));
+      if (report.regressions.length > 0) {
+        github.rest.issues.createComment({
+          issue_number: context.issue.number,
+          owner: context.repo.owner,
+          repo: context.repo.repo,
+          body: `⚠ Query Performance Regression Detected\n${report.summary}`
+        });
+      }
+```
+
+This workflow catches slow queries before they reach production — tests that take 2 seconds locally may take 20 seconds with production data volume.
+
+## Complex Optimization: Materialized Views
+
+For expensive aggregations that are queried repeatedly:
+
+```sql
+-- Original query (expensive, runs on-demand)
+SELECT
+    category,
+    DATE(order_date) as order_day,
+    SUM(amount) as daily_revenue,
+    COUNT(*) as order_count
+FROM orders
+GROUP BY category, DATE(order_date)
+ORDER BY order_date DESC;
+
+-- Materialized view (pre-computed nightly)
+CREATE MATERIALIZED VIEW daily_category_revenue AS
+SELECT
+    category,
+    DATE(order_date) as order_day,
+    SUM(amount) as daily_revenue,
+    COUNT(*) as order_count
+FROM orders
+GROUP BY category, DATE(order_date);
+
+CREATE INDEX idx_daily_revenue_category ON daily_category_revenue (category, order_day DESC);
+```
+
+**Claude prompt:**
+```
+I run this aggregation query 1,000 times per day. It joins three tables
+and groups by two fields. Average current runtime: 850ms.
+
+Should I create a materialized view? If yes, how do I handle incremental
+updates? Can I avoid full refresh every night?
+```
+
+Claude suggests incremental refresh strategies:
+- Partition the view by date
+- Only refresh the last N days instead of full history
+- Use triggers to update pre-aggregated summary tables
+- Consider trade-off: materialized view maintenance cost vs query speed gain
+
 ## Head-to-Head Comparison
 
 | Tool | Accuracy | Requires DB Access | CI Integration | Cost | Best For |

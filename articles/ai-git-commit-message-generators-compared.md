@@ -184,6 +184,170 @@ git config --global init.templateDir ~/.git-templates
 
 For significant commits (releases, major features), use Claude Code's `/commit` — the quality is noticeably better when the context is complex.
 
+## Advanced Hook: Custom Commit Messages for Different Types
+
+Some teams want different message formats for different change types:
+
+```bash
+#!/bin/bash
+# .git/hooks/prepare-commit-msg (advanced version)
+
+DIFF=$(git diff --cached)
+CHANGED_FILES=$(git diff --cached --name-only)
+
+# Determine change type from files
+if echo "$CHANGED_FILES" | grep -q "^tests/"; then
+    CHANGE_TYPE="test"
+elif echo "$CHANGED_FILES" | grep -q "^docs/"; then
+    CHANGE_TYPE="docs"
+elif echo "$CHANGED_FILES" | grep -q "\.yml\|\.yaml\|docker"; then
+    CHANGE_TYPE="chore"
+else
+    CHANGE_TYPE="auto"  # Let AI decide
+fi
+
+PROMPT="Generate a conventional commit message for a \`$CHANGE_TYPE\` change.
+Diff:
+$DIFF"
+
+GENERATED=$(curl -s https://api.anthropic.com/v1/messages \
+  -H "x-api-key: $ANTHROPIC_API_KEY" \
+  -H "anthropic-version: 2023-06-01" \
+  -H "content-type: application/json" \
+  -d "{
+    \"model\": \"claude-haiku-3-5\",
+    \"max_tokens\": 256,
+    \"messages\": [{\"role\": \"user\", \"content\": \"$PROMPT\"}]
+  }" | jq -r '.content[0].text')
+
+echo "$GENERATED" > "$1"
+```
+
+This hook detects the type of change and tells the AI model "this is a test change" or "this is a docs change," improving message specificity.
+
+## Integrating with Conventional Commits Linting
+
+Most teams enforce conventional commit format via pre-commit hooks:
+
+```yaml
+# .pre-commit-config.yaml
+repos:
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: v2.8.0
+    hooks:
+      - id: conventional-pre-commit
+        stages: [commit-msg]
+        args:
+          - --force-scope
+          - --scope-regex=^\(.*\)$
+          - --type-enum=feat,fix,docs,style,refactor,perf,test,chore
+```
+
+When `commitizen-cli` + AI hook work together:
+
+```bash
+git add .
+git commit  # Opens editor with AI-generated message pre-filled
+# If message fails lint checks, you edit it
+# Lint passes, commit is created
+```
+
+## Commit Messages as Documentation
+
+A well-structured repo can generate a changelog automatically:
+
+```bash
+# Extract all feat() commits from last month
+git log --since="2026-02-21" --until="2026-03-21" \
+  --grep="^feat" --pretty=format:"%s %b"
+
+# Output:
+# feat(auth): add OAuth2 PKCE flow for mobile clients
+# Implements the authorization code flow...
+#
+# feat(api): add rate limiting to user endpoints
+# Limits requests to 1000/min per user for fairness...
+```
+
+Tools like `changelog-from-commits` parse these automatically. AI-generated messages with body text make this feasible.
+
+## Multi-Author Commits
+
+For pair programming or code review sessions:
+
+```bash
+git commit -m "feat(cache): implement Redis-backed session store
+
+Collaborative implementation with @alice and @bob.
+Session TTL is configurable via SESSION_TTL env var (default: 1h).
+Includes fallback to in-memory cache if Redis is unavailable.
+
+Co-Authored-By: Alice <alice@example.com>
+Co-Authored-By: Bob <bob@example.com>"
+```
+
+AI-generated messages can include the Co-Authored-By trailer automatically if you set it in a config file.
+
+## Commit Messages for Semantic Release
+
+If using tools like `semantic-release` (for automatic versioning):
+
+```javascript
+// .releaserc.json
+{
+  "plugins": [
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        "preset": "conventionalcommits"
+      }
+    ]
+  ]
+}
+```
+
+Semantic release parses commit messages:
+- `feat()` → minor version bump (1.0.0 → 1.1.0)
+- `fix()` → patch version bump (1.0.0 → 1.0.1)
+- `BREAKING CHANGE:` in body → major version bump (1.0.0 → 2.0.0)
+
+AI-generated messages that follow the format automatically trigger correct versioning. This is why conventional commit format matters.
+
+## Team Commit Message Standards
+
+Build a shared standard for your team:
+
+```markdown
+# Commit Message Standard
+
+## Subject Line (First Line)
+- Format: `type(scope): subject`
+- Max 72 characters
+- Imperative mood ("add", not "added" or "adds")
+- Types: feat, fix, refactor, perf, test, docs, chore, ci
+
+## Body (Separate with Blank Line)
+- Explain WHAT changed and WHY, not HOW
+- Wrap at 100 characters
+- Reference issue numbers: "Closes #123"
+- If breaking change, include: "BREAKING CHANGE: description"
+
+## Example
+
+feat(auth): add OAuth2 PKCE flow for mobile clients
+
+Implements authorization code flow with PKCE extension to support
+native mobile apps that cannot securely store client secrets.
+
+- Adds PKCEChallenge generator using SHA-256
+- Stores code verifier in encrypted keychain
+- Token exchange endpoint validates code challenge
+
+Closes #456
+```
+
+Share this with your AI tool (as system prompt or in hook comment) so generated messages match your standard.
+
 ## Related Reading
 
 - [How to Write Comprehensive Git Commit Messages Using AI from Diffs](/how-to-write-comprehensive-git-commit-messages-using-ai-from-diffs/)

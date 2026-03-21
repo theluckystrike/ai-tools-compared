@@ -150,6 +150,77 @@ app.get("/api/data", (req, res) => {
 | Copilot Chat | Medium | Medium | Current file + repo | Fast |
 | Pieces | Medium (cached) | Medium | Stored snippets | Fast |
 
+## Scenario 5: Deadlock in Concurrent Rust Code
+
+```rust
+use tokio::sync::Mutex;
+
+struct State {
+    users: Mutex<HashMap<u64, User>>,
+    sessions: Mutex<HashMap<String, Session>>,
+}
+
+async fn auth_user(state: &State, id: u64) -> Result<Session> {
+    let user = state.users.lock().await; // Lock users
+    let session = state.sessions.lock().await; // Then lock sessions
+    // ...
+}
+
+async fn cleanup_session(state: &State, session_id: &str) -> Result<()> {
+    let session = state.sessions.lock().await; // Lock sessions first
+    let user = state.users.lock().await; // Then lock users
+    // Opposite order — deadlock risk
+}
+```
+
+**Claude Code:** Immediately identified the lock ordering issue. Suggested using a single Mutex wrapping both collections, or always acquiring locks in the same order. Also mentioned `parking_lot::Mutex` for better debug output.
+
+**Cursor:** Identified that two tasks could deadlock but didn't clearly explain lock ordering. Suggested adding timeouts on locks (masking the problem rather than fixing it).
+
+**Copilot Chat:** Did not identify the deadlock without being explicitly told "this might have a concurrency issue."
+
+## Scenario 6: JavaScript Event Loop Blocking
+
+```javascript
+function processLargeArray(items) {
+    const results = [];
+    // This blocks the event loop — no awaits or setImmediate calls
+    for (let i = 0; i < items.length; i++) {
+        const expensive = computeHash(items[i]); // CPU-intensive
+        results.push(expensive);
+    }
+    return results;
+}
+
+// In Express handler:
+app.post("/process", (req, res) => {
+    const result = processLargeArray(req.body.items); // Blocks 50-200ms
+    res.json(result);
+});
+```
+
+**Claude Code:** Recognized the synchronous CPU-bound loop in an async context. Suggested converting to `for...of` with `await new Promise(setImmediate(...))` or moving to a Worker thread.
+
+**Cursor:** Suggested using `Promise.all` with map — which doesn't actually help here since map executes synchronously. Needed refinement.
+
+**Pieces:** Had seen this pattern before (if previously saved) and could retrieve the solution instantly, but wouldn't generate it from scratch.
+
+## Using Claude Code's Repository Search for Debugging
+
+Claude Code can search your entire codebase to find similar bugs:
+
+```bash
+claude
+
+# In the session:
+"I'm seeing a TypeError: Cannot read property 'items' of undefined
+in the ProductList component. Search the codebase for other instances
+where we're accessing undefined.items without null checks. Show me
+how we handle this pattern elsewhere."
+```
+
+Claude Code explores the repo, finds 3 other places with similar issues, shows the correct guard pattern used in one file, and applies it consistently. This is harder in IDE-bound tools without explicit `@file` mentions.
+
 ## Quick Debugging Prompt Templates
 
 ```
@@ -164,7 +235,63 @@ The only thing that varies between requests is [variable]. What could cause this
 # For performance regressions
 "This endpoint went from 200ms to 2s after [commit]. Here are both versions [code].
 What changed that would cause a 10x slowdown?"
+
+# For concurrency bugs
+"Multiple async tasks run in parallel. Task A locks [resource], then accesses [other].
+Task B accesses [other], then locks [resource]. Could this deadlock? Here's the code: [paste]"
+
+# For data consistency issues
+"This value should equal [expected] after [operation], but it's [actual].
+I've traced through the code and don't see where it changes. Query log shows [queries]."
 ```
+
+## Debugging Workflows by Error Category
+
+### Type-Related Errors (TypeScript, Python)
+Best tool: Claude Code or Cursor with `@file` context on type definitions.
+
+### Reference/Null Errors (JavaScript, Python, Ruby)
+Best tool: Claude Code — needs to search for all access patterns in the codebase.
+
+### Performance Issues (Slow endpoints, memory leaks)
+Best tool: Claude Code — can correlate logs, code patterns, and system behavior.
+
+### Concurrency Issues (Deadlocks, race conditions, data races)
+Best tool: Claude Code (understands locking mechanics across files).
+
+### Integration Issues (API mismatches, auth failures)
+Best tool: Cursor with @mentions of all relevant integrations.
+
+## Cost Impact on Debugging
+
+For a team debugging 10 bugs/week:
+
+| Tool | Time/Bug | Weekly Cost | Notes |
+|---|---|---|---|
+| Claude Code | ~15 min | $5-7 | Full context, fewer dead ends |
+| Cursor Chat | ~20 min | $0-3 | Requires @mentions, occasionally misses context |
+| Copilot Chat | ~25 min | $1-2 | Faster feedback, often needs follow-ups |
+| Manual debugging | 45-60 min | $0 | Baseline for comparison |
+
+Across a team of 5 engineers, Claude Code's 15-min average pays for itself in reduced debugging time.
+
+## Building a Debugging Prompt Library
+
+Most teams find value in saving debugging prompts:
+
+```bash
+# Save as .claude/debugging-templates/deadlock.md
+# Debugging: Check for deadlock patterns in Rust async code
+
+I'm investigating possible deadlocks in async code using tokio::sync::Mutex.
+Here are the functions that acquire locks:
+
+[paste functions]
+
+Do any two functions acquire locks in opposite order? If so, explain the deadlock scenario.
+```
+
+Then reuse these templates across the team with file-specific code substituted.
 
 ## Related Reading
 

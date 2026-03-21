@@ -183,6 +183,152 @@ and at minimum one test per documented behavior.
 [paste function with docstring]
 ```
 
+## Test Generation for Async Code
+
+Async testing requires extra care with mocking and timing. AI tools vary in quality:
+
+```python
+# Function to test
+async def fetch_and_cache(user_id: str, ttl_seconds: int = 3600) -> User:
+    cached = await cache.get(f"user:{user_id}")
+    if cached:
+        return cached
+
+    user = await api.fetch_user(user_id)
+    await cache.set(f"user:{user_id}", user, ttl=ttl_seconds)
+    return user
+```
+
+**CodiumAI generates:**
+```python
+async def test_returns_cached_user(self):
+    # Mocks cache hit
+    mock_user = User(id="1", name="Alice")
+    cache_mock.get.return_value = mock_user
+
+    result = await fetch_and_cache("1")
+
+    assert result == mock_user
+    api.fetch_user.assert_not_called()
+
+async def test_caches_fresh_user(self):
+    # Mocks cache miss
+    mock_user = User(id="2", name="Bob")
+    cache_mock.get.return_value = None
+    api.fetch_user.return_value = mock_user
+
+    result = await fetch_and_cache("2", ttl_seconds=7200)
+
+    assert result == mock_user
+    cache_mock.set.assert_called_once_with("user:2", mock_user, ttl=7200)
+```
+
+Correct async handling with proper mock setup for both cache hit and miss paths.
+
+**Claude with weak prompt:**
+```python
+# Less specific — may not include all cases
+def test_fetch_and_cache():
+    user = fetch_and_cache("1")
+    assert user is not None
+```
+
+**Claude with strong prompt:**
+```python
+# With specific instructions, quality matches CodiumAI
+async def test_fetch_and_cache_returns_cached_when_hit():
+    mock_user = User(id="1", name="Alice")
+    cache_mock.get = AsyncMock(return_value=mock_user)
+
+    result = await fetch_and_cache("1")
+
+    assert result == mock_user
+    cache_mock.get.assert_called_once_with("user:1")
+    api.fetch_user.assert_not_called()
+
+async def test_fetch_and_cache_fetches_and_caches_on_miss():
+    mock_user = User(id="2", name="Bob")
+    cache_mock.get = AsyncMock(return_value=None)
+    api.fetch_user = AsyncMock(return_value=mock_user)
+
+    result = await fetch_and_cache("2", ttl_seconds=7200)
+
+    assert result == mock_user
+    cache_mock.set.assert_called_once()
+    args, kwargs = cache_mock.set.call_args
+    assert args == ("user:2", mock_user)
+    assert kwargs["ttl"] == 7200
+```
+
+## Integration Tests vs Unit Tests
+
+Good test generation tools distinguish between unit tests (isolated function) and integration tests (testing database interaction, external APIs).
+
+For unit tests: mock everything.
+For integration tests: use test database or fixtures.
+
+**CodiumAI:** Generates both unit and integration test suggestions, clearly labeled.
+
+**Claude:** Generates whatever you ask for. Be explicit: "Generate unit tests with mocked dependencies, not integration tests."
+
+## Parameterized Tests for Multiple Inputs
+
+Testing the same function with many input combinations:
+
+```python
+import pytest
+
+@pytest.mark.parametrize(
+    "amount,currency,expected_error",
+    [
+        (0, "USD", InvalidAmountError),
+        (-100, "USD", InvalidAmountError),
+        (1_000_001, "USD", InvalidAmountError),
+        (100, "invalid", InvalidCurrencyError),
+        (100, "usd", InvalidCurrencyError),  # lowercase
+        (100, "US", InvalidCurrencyError),  # too short
+    ],
+)
+async def test_process_payment_validation(amount, currency, expected_error):
+    with pytest.raises(expected_error):
+        await process_payment(amount, currency, mock_payment_method, "key")
+```
+
+**Tool quality on parameterized tests:**
+- **CodiumAI:** Generates parameterized tests automatically
+- **Claude:** Generates them with the right prompt: "Use pytest.mark.parametrize to test all boundary conditions"
+- **Copilot:** Usually generates loop-based tests instead of parametrized, less clean
+
+## Test Maintenance and Coverage Monitoring
+
+After generation, tests need maintenance as code changes.
+
+```bash
+# Check current coverage
+pytest --cov=services/order_service tests/
+
+# Generate coverage report
+pytest --cov=services/order_service --cov-report=html tests/
+# Opens htmlcov/index.html
+```
+
+AI-generated tests often achieve 80-95% line coverage but may miss edge cases (5-10% of real bugs live in edges). Developers need to add ~10 manual tests per module to catch domain-specific edge cases.
+
+## Test Generation for Different Frameworks
+
+Tools vary by language/framework:
+
+| Language | Best Tool | Notes |
+|---|---|---|
+| Python/pytest | Claude or CodiumAI | Both excellent |
+| Java/JUnit | Diffblue > CodiumAI | Diffblue specializes in Java |
+| TypeScript/Jest | CodiumAI or Claude | Both good |
+| Go/testing | Claude | No specialized tool yet |
+| Rust/cargo test | Claude | No specialized tool yet |
+| C++/googletest | CodiumAI or Claude | Limited specialized tools |
+
+For less common languages, Claude is reliable because it's general-purpose. For Python and Java, specialized tools have higher coverage depth.
+
 ## Related Reading
 
 - [Best AI Tools for Writing Unit Tests Comparison 2026](/best-ai-tools-for-writing-unit-tests-comparison-2026/)

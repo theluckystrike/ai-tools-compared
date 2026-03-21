@@ -183,6 +183,168 @@ Example Claude error table output:
 
 The pragmatic workflow: generate an OpenAPI spec from FastAPI/Express automatically, use Claude to generate human-readable reference pages with error tables and examples, then use Swimm to prevent those pages from going stale.
 
+## Generating TypeScript Types from API Responses
+
+A useful doc artifact is a TypeScript client library. Most teams hand-maintain this.
+
+```bash
+# Using Speakeasy to auto-generate SDKs from OpenAPI
+
+speakeasy generate sdk \
+  --schema openapi.yaml \
+  --out ./client-sdk-ts \
+  --lang typescript
+```
+
+This generates:
+```typescript
+// auto/generated/client.ts
+export interface PaymentCreateRequest {
+  amount: number; // in cents
+  currency: string; // ISO 4217 code
+  sourceToken: string; // Stripe token
+}
+
+export interface PaymentResponse {
+  id: string;
+  amount: number;
+  currency: string;
+  status: "pending" | "completed" | "failed";
+  createdAt: Date;
+}
+
+export class PaymentsClient {
+  async createPayment(request: PaymentCreateRequest): Promise<PaymentResponse> {
+    // implementation
+  }
+}
+```
+
+Type-safe client code generated from the same schema that documents the API. No manual type duplication.
+
+## Interactive Documentation with Examples
+
+Tools like Mintlify or ReadTheDocs can render markdown docs with embedded examples:
+
+```markdown
+## POST /api/v1/payments
+
+Create a payment charge through our gateway.
+
+### Example Request
+
+cURL:
+\`\`\`bash
+curl -X POST https://api.example.com/api/v1/payments \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "amount": 2999,
+    "currency": "USD",
+    "source": "tok_4242424242424242"
+  }'
+\`\`\`
+
+Python:
+\`\`\`python
+import requests
+
+response = requests.post(
+    "https://api.example.com/api/v1/payments",
+    headers={"Authorization": f"Bearer {API_KEY}"},
+    json={
+        "amount": 2999,
+        "currency": "USD",
+        "source": "tok_4242424242424242"
+    }
+)
+payment = response.json()
+```
+
+Mintlify automatically renders code blocks with syntax highlighting and tabs for language selection.
+
+## Error Documentation Best Practices
+
+The most useful error docs include:
+
+1. **HTTP Status Code** — What the client receives
+2. **Error Code** — Machine-readable identifier (e.g., "INSUFFICIENT_FUNDS")
+3. **User-Facing Message** — What to show in UI
+4. **Developer Notes** — How to fix it in code
+5. **Retry Strategy** — Is this retryable? Exponential backoff?
+
+Example:
+
+```markdown
+### Error: 402 Payment Required
+
+**Code:** `card_declined`
+
+**Message (to show users):** "Your card was declined. Please try another payment method or contact your bank."
+
+**Developer Notes:**
+This error occurs when the payment processor (Stripe, etc.) declines the charge.
+Common causes:
+- Insufficient funds
+- Card expired
+- Card flagged for fraud
+- Processing limits exceeded
+
+**Retry Strategy:** Do NOT retry automatically. This error requires user intervention.
+Inform the user and request a different payment method.
+
+**Example Response:**
+\`\`\`json
+{
+  "error": {
+    "code": "card_declined",
+    "message": "Your card was declined",
+    "charge_id": "ch_1234abc",
+    "processor_message": "Card declined - contact issuer"
+  }
+}
+\`\`\`
+```
+
+## Maintaining Docs During Refactors
+
+Using Swimm or similar tools prevents docs from going stale during refactors.
+
+**Scenario:** You rename an API endpoint from `/api/v1/users` to `/api/v2/users`.
+
+Without doc linking:
+- Docs stay outdated until someone manually updates them (days or weeks later)
+- New developers follow old docs and hit 404s
+
+With Swimm:
+1. Create a doc linked to the route definition:
+   ```
+   <!-- Swimm links to: src/routes/users.ts:getUsersHandler -->
+   The [`/api/v2/users` endpoint](../src/routes/users.ts) lists all users...
+   ```
+
+2. When the route file changes, Swimm marks the doc as "out of sync"
+
+3. PR merges are blocked until the doc is reviewed and updated
+
+This forces synchronization — outdated docs can't be merged.
+
+## Cost Breakdown for Documentation Tools
+
+| Tool | Setup | Monthly | Per-Endpoint Cost |
+|---|---|---|---|
+| Mintlify Writer (free) | 10 min | $0 | ~5 min docstring generation |
+| Mintlify (paid) | 30 min | $29 | Hosting, analytics |
+| Speakeasy SDK generation | 20 min | $0 (SDK) / varies (paid) | Automatic from OpenAPI |
+| Swimm | 60 min (initial docs) | $49 | Doc sync auditing |
+| Claude (direct) | 5 min per endpoint | API cost (~$0.01 per endpoint) | Most flexible |
+
+For a 50-endpoint API:
+- **Mintlify Writer:** 4 hours generation (free)
+- **Speakeasy:** 20 min setup (free SDK generation)
+- **Claude direct:** 50 min at ~$0.50 total cost
+- **Swimm:** Setup takes time, pays off when docs change frequently
+
 ## Related Reading
 
 - [AI Tools for Automated API Documentation from Code Comments](/ai-tools-for-automated-api-documentation-from-code-comments/)

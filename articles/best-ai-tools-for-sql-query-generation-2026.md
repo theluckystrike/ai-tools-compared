@@ -178,6 +178,164 @@ For analysts without IDE access, SQLAI.ai or Outerbase gives the best experience
 
 For production query generation, the schema-in-prompt approach with Claude is most reliable — especially for complex analytical queries where the accuracy gap between tools is widest.
 
+## Benchmark Query 4: Percentile Calculation Without Window Functions
+
+Prompt: "Find the 95th percentile of order value in the last 30 days, for each product category"
+
+```sql
+-- Claude output (correct for PostgreSQL)
+WITH ordered_values AS (
+    SELECT category, revenue
+    FROM orders
+    JOIN products USING (product_id)
+    WHERE order_date >= CURRENT_DATE - INTERVAL '30 days'
+)
+SELECT DISTINCT
+    category,
+    PERCENTILE_CONT(0.95) WITHIN GROUP (ORDER BY revenue)
+        OVER (PARTITION BY category) AS p95_revenue
+FROM ordered_values;
+```
+
+| Tool | Correct | Notes |
+|---|---|---|
+| Claude | Yes | Used correct `PERCENTILE_CONT` aggregation |
+| GPT-4o | Yes | Also correct, slightly different syntax |
+| SQLAI.ai | No | Used NTILE instead, off by one tier |
+
+## Integrating Generated Queries into Applications
+
+### Python with SQLAlchemy
+
+```python
+from sqlalchemy import text
+
+def get_revenue_by_category(session, days_back: int = 30):
+    query = text("""
+    WITH monthly_revenue AS (
+        SELECT
+            DATE_TRUNC('month', order_date) AS month,
+            category,
+            SUM(revenue) AS total_revenue
+        FROM orders
+        JOIN products USING (product_id)
+        WHERE order_date >= NOW() - INTERVAL ':days days'
+        GROUP BY 1, 2
+    )
+    SELECT
+        category,
+        month,
+        total_revenue,
+        LAG(total_revenue, 12) OVER (
+            PARTITION BY category ORDER BY month
+        ) AS prior_year_revenue
+    FROM monthly_revenue
+    ORDER BY category, month
+    """)
+
+    return session.execute(query, {"days": days_back}).fetchall()
+```
+
+When using Claude to generate `text()` queries, always include `:param_name` placeholders for parameterization. Claude respects this pattern when you show an example.
+
+### JavaScript with Knex.js
+
+```javascript
+function getProductsByRevenue(knex, minRevenue) {
+    return knex
+        .with("ranked_products", (qb) => {
+            qb.select("product_id", "category", "revenue")
+                .from("orders")
+                .join("products", "orders.product_id", "=", "products.product_id")
+                .select(knex.raw(
+                    "ROW_NUMBER() OVER (PARTITION BY category ORDER BY revenue DESC) AS rank"
+                ))
+                .where("revenue", ">", minRevenue);
+        })
+        .select("*")
+        .from("ranked_products")
+        .where("rank", "<=", 10);
+}
+```
+
+For Knex, provide Claude with the builder syntax examples from your codebase. Claude learns the pattern and generates compatible queries.
+
+### Direct Database Connection (Node.js)
+
+```javascript
+async function analyzeUserTrends(pool, userId) {
+    const query = `
+        WITH user_orders AS (
+            SELECT
+                order_id,
+                DATE(order_date) AS order_day,
+                COUNT(*) OVER (
+                    ORDER BY DATE(order_date)
+                    ROWS BETWEEN 30 PRECEDING AND CURRENT ROW
+                ) AS orders_in_window
+            FROM orders
+            WHERE user_id = $1
+        )
+        SELECT
+            order_day,
+            orders_in_window,
+            ROUND(100.0 * orders_in_window / MAX(orders_in_window) OVER (), 1) AS pct_of_max
+        FROM user_orders
+        ORDER BY order_day DESC;
+    `;
+
+    return pool.query(query, [userId]);
+}
+```
+
+## Testing Generated Queries
+
+Always validate generated queries before deploying:
+
+```python
+def test_generated_query_correctness():
+    # Test data
+    session.add_all([
+        Order(product_id=1, revenue=100, order_date=datetime(2024, 1, 1)),
+        Order(product_id=1, revenue=150, order_date=datetime(2025, 1, 1)),
+    ])
+    session.commit()
+
+    results = get_revenue_by_category(session)
+
+    # Assert: should have row for month=2025-01 with revenue=150 and prior_year=100
+    assert results[0].yoy_pct_change == 50.0
+
+def test_edge_case_no_prior_data():
+    # Test: if only current year data exists, prior_year should be NULL
+    session.add(Order(product_id=1, revenue=100, order_date=datetime(2025, 1, 1)))
+    session.commit()
+
+    results = get_revenue_by_category(session)
+    assert results[0].prior_year_revenue is None
+```
+
+## Common Query Generation Mistakes to Watch For
+
+1. **Window function frame misspecification** — ORDER BY without frame clause causes incorrect rows
+2. **Aggregation with GROUP BY missing columns** — Some databases require all non-aggregated columns in GROUP BY
+3. **NULL handling in comparisons** — `column = NULL` should be `IS NULL`
+4. **Subquery correlation errors** — Outer query columns not visible in subqueries without explicit correlation names
+5. **Date arithmetic across databases** — MySQL uses DATE_ADD, Postgres uses INTERVAL syntax
+
+Ask Claude explicitly: "Include NULL checks. Ensure all non-aggregated columns in GROUP BY. Use {database} specific syntax."
+
+## When to Skip AI Query Generation
+
+Some queries are too domain-specific for reliable generation:
+
+- Recursive hierarchies with cycle detection (CTEs with UNION clauses need manual validation)
+- Fuzzy matching / trigram similarity (database-specific, high error rate)
+- Complex graph traversal (Postgres WITH RECURSIVE, Neo4j Cypher)
+- Machine learning result scoring (requires domain context on weighting)
+
+For these, AI-generated boilerplate + manual refinement is faster than pure generation.
+
 ## Related Reading
 
 - [AI Tools for Database Performance Optimization Query Analysis](/ai-tools-for-database-performance-optimization-query-analysis/)
