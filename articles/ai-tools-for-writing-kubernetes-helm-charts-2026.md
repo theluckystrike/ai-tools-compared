@@ -12,6 +12,7 @@ score: 8
 voice-checked: true
 intent-checked: true
 ---
+{% raw %}
 
 AI coding assistants now generate syntactically correct Kubernetes manifests and Helm charts that include resource limits, health checks, security contexts, and proper templating. Rather than manually writing deployment YAML with hardcoded values, modern AI tools scaffold complete charts with values.yaml files, helper templates, and chart-level documentation. This guide compares Claude, GitHub Copilot, Cursor, and specialized tools for Kubernetes infrastructure.
 
@@ -451,3 +452,4 @@ kubectl apply -f /tmp/rendered.yaml --dry-run=client
 - [Effective Context Management Strategies for AI Coding](/ai-tools-compared/effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

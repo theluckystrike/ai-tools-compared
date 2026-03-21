@@ -12,6 +12,7 @@ voice-checked: true
 intent-checked: true
 permalink: /articles/ai-tools-for-writing-openapi-specifications-2026/
 ---
+{% raw %}
 
 # AI Tools for Writing OpenAPI Specifications in 2026
 
@@ -846,3 +847,4 @@ Customer:
 ---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
