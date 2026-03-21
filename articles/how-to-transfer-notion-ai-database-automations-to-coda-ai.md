@@ -33,6 +33,25 @@ Coda combines documents and spreadsheets into a single platform called "docs." C
 The key distinction: Notion AI operates mostly as an user-initiated action, while Coda AI allows you to embed AI responses directly into table columns using formulas.
 
 
+## Platform Comparison: Notion AI vs Coda AI for Automations
+
+
+Before migrating, it helps to understand exactly where the two platforms differ in capability:
+
+| Feature | Notion AI | Coda AI |
+|---|---|---|
+| AI trigger model | Manual (user-clicks) or external webhook | Formula column (auto-recalculates) or button |
+| AI formula language | None — requires external API calls | Native `AI.Generate`, `AI.Summarize`, `AI.Classify` |
+| Middleware required | Yes (Zapier, Make, custom scripts) | No — automations are native |
+| Model selection | Notion-hosted (limited control) | Specify model per formula (GPT-4o, Claude, etc.) |
+| Relational data | Relations + Rollups | Lookup columns + Filter formulas |
+| Automation triggers | Webhook-based via integrations | Native: row change, form submit, schedule |
+| API access | Full REST API | Full REST API |
+| Cost model | Per-workspace AI add-on | AI tokens consumed per generation |
+
+The most significant operational change is eliminating middleware. If your Notion setup relies on Zapier or Make workflows to call OpenAI and write results back, that entire layer disappears in Coda — the AI formula column handles it natively.
+
+
 ## Mapping Notion Database Automations to Coda
 
 
@@ -188,6 +207,73 @@ Filter(Tasks, [Assignee] = CurrentUser())
 ```
 
 
+## Exporting Notion Data for Migration
+
+
+Before you can recreate anything in Coda, you need your Notion data out. The Notion API is the most reliable extraction path for database contents, especially when you have more than a few hundred rows.
+
+```python
+import requests
+import json
+import os
+
+NOTION_API_KEY = os.environ["NOTION_API_KEY"]
+DATABASE_ID = os.environ["NOTION_DATABASE_ID"]
+
+headers = {
+    "Authorization": f"Bearer {NOTION_API_KEY}",
+    "Notion-Version": "2022-06-28",
+    "Content-Type": "application/json"
+}
+
+def export_database_pages(database_id: str) -> list:
+    """Paginate through all rows in a Notion database."""
+    all_results = []
+    has_more = True
+    start_cursor = None
+
+    while has_more:
+        payload = {"page_size": 100}
+        if start_cursor:
+            payload["start_cursor"] = start_cursor
+
+        response = requests.post(
+            f"https://api.notion.com/v1/databases/{database_id}/query",
+            headers=headers,
+            json=payload
+        )
+        data = response.json()
+        all_results.extend(data.get("results", []))
+        has_more = data.get("has_more", False)
+        start_cursor = data.get("next_cursor")
+
+    return all_results
+
+def extract_text_property(prop: dict) -> str:
+    """Extract plain text from a Notion rich_text property."""
+    texts = prop.get("rich_text", [])
+    return "".join([t.get("plain_text", "") for t in texts])
+
+pages = export_database_pages(DATABASE_ID)
+rows = []
+for page in pages:
+    props = page["properties"]
+    rows.append({
+        "name": props.get("Name", {}).get("title", [{}])[0].get("plain_text", ""),
+        "status": props.get("Status", {}).get("select", {}).get("name", ""),
+        "content": extract_text_property(props.get("Content", {})),
+        "tags": [t["name"] for t in props.get("Tags", {}).get("multi_select", [])]
+    })
+
+with open("notion_export.json", "w") as f:
+    json.dump(rows, f, indent=2)
+
+print(f"Exported {len(rows)} rows")
+```
+
+This script handles pagination automatically, which is critical for databases over 100 rows. The Notion API caps each response at 100 items; the `has_more` / `next_cursor` loop collects the full dataset.
+
+
 ## Practical Migration Steps
 
 
@@ -231,6 +317,31 @@ async function processWithCodaAI(tableId, rowId, content) {
   return response.json();
 }
 ```
+
+
+## Migration Pitfalls and How to Avoid Them
+
+
+**AI formula columns recalculate on every edit.** If your Coda table has a large number of rows and your AI formula references a frequently-edited column, you can burn through AI tokens quickly. Use the "Locked" formula mode in Coda to prevent recalculation after the initial generation, similar to a cache.
+
+**Rollup logic behaves differently in Coda.** Notion's rollup property aggregates values from related databases using simple operations (count, sum, average). Coda achieves the same with formulas like `Sum(Filter(Tasks, [Project] = [Project]).Hours)`. The expressiveness is higher in Coda, but you need to manually translate each rollup.
+
+**Notion's block structure doesn't map 1:1 to Coda text columns.** Rich text with nested blocks, callouts, and embeds in Notion simplifies to plain text when exported via the API. If your content relies heavily on Notion's block formatting, plan for a content cleanup pass after migration.
+
+**Test automations with a single row before enabling globally.** Coda automations that send Slack messages or emails can fire for every matching row when first enabled on an existing table. Create a test row, run the automation manually, verify the output, then enable it on the full dataset.
+
+
+## Frequently Asked Questions
+
+
+**How long does a full Notion-to-Coda migration take?**
+For a single database with under 500 rows and straightforward automations, expect 4-8 hours of setup and testing. Complex workspaces with dozens of interrelated databases and custom integrations can take several days. The data export and import is fast; the time investment is in recreating and validating formula logic.
+
+**Can I run Notion and Coda in parallel during migration?**
+Yes, and it is recommended. Keep Notion as the source of truth while you build and validate the Coda equivalent. Once the Coda setup passes all your acceptance tests, redirect your team's workflow. Avoid writing to both systems simultaneously, as sync conflicts are difficult to resolve.
+
+**Does Coda AI support Claude as well as GPT models?**
+Coda's AI formula layer uses Coda's own AI infrastructure, which abstracts the underlying model. Check Coda's current documentation for the specific models available in your plan tier. For direct model selection, use the Coda API with an external AI call as shown in the advanced section above.
 
 
 ## Related Articles
