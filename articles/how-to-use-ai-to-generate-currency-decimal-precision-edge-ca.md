@@ -96,7 +96,7 @@ AI can generate tests for this:
 ```java
 @Test
 void testZeroPrice() {
-    assertEquals(new BigDecimal("0.00"), 
+    assertEquals(new BigDecimal("0.00"),
         calculateTotal(BigDecimal.ZERO, new BigDecimal("0.10")));
 }
 
@@ -104,7 +104,7 @@ void testZeroPrice() {
 void testRoundingHalfUp() {
     // 10.995 * 1.10 = 12.0945 → should round to 12.09 or 12.10
     BigDecimal result = calculateTotal(
-        new BigDecimal("10.995"), 
+        new BigDecimal("10.995"),
         new BigDecimal("1.10")
     );
     assertEquals(new BigDecimal("12.09"), result);
@@ -122,7 +122,7 @@ void testMaximumPrecision() {
 
 @Test
 void testNegativeValues() {
-    assertThrows(IllegalArgumentException.class, 
+    assertThrows(IllegalArgumentException.class,
         () -> calculateTotal(new BigDecimal("-10.00"), new BigDecimal("1.10")));
 }
 ```
@@ -239,6 +239,75 @@ Beyond basic tests, AI tools excel at identifying less obvious edge cases:
 
 
 
+## AI Tool Comparison for Currency Test Generation
+
+Different AI tools handle financial edge case generation with varying depth. Here is how the major options compare:
+
+| Tool | Strengths | Weaknesses | Best For |
+|------|-----------|------------|----------|
+| Claude | Deep reasoning about rounding modes, explains why each test matters | Slower for large batches | Complex financial logic |
+| GitHub Copilot | Fast inline suggestions, good pattern matching | Misses subtle rounding edge cases | High-volume basic coverage |
+| ChatGPT | Broad knowledge of financial standards | Needs detailed prompting for precision | Initial test skeleton generation |
+| Gemini | Good at multi-language test generation | Less consistent on HALF_EVEN vs HALF_UP | Cross-language codebases |
+
+For complex rounding scenarios — such as banker's rounding (HALF_EVEN) applied across multi-currency pipelines — Claude consistently produces the most accurate test expectations. Copilot is faster for simple CRUD-adjacent money handling.
+
+## Handling Multi-Currency Test Scenarios
+
+When your application processes multiple currencies simultaneously, the test matrix expands significantly. AI tools can generate test fixtures that cover the full currency matrix:
+
+```python
+import pytest
+from decimal import Decimal
+from dataclasses import dataclass
+
+@dataclass
+class CurrencyAmount:
+    amount: Decimal
+    currency_code: str
+    decimal_places: int
+
+CURRENCY_SPECS = {
+    "USD": 2, "EUR": 2, "GBP": 2,
+    "JPY": 0, "KRW": 0,
+    "KWD": 3, "BHD": 3,
+}
+
+@pytest.mark.parametrize("currency,decimals", CURRENCY_SPECS.items())
+def test_rounding_respects_currency_decimals(currency, decimals):
+    """AI-generated: each currency rounds to its own decimal scale."""
+    raw = Decimal("10.123456789")
+    result = raw.quantize(Decimal(10) ** -decimals)
+    assert len(str(result).split(".")[-1]) == decimals if decimals > 0 else "." not in str(result)
+```
+
+This parameterized approach — which AI tools generate readily when asked for "currency-aware" tests — catches bugs where a single hardcoded `setScale(2)` silently truncates JPY amounts or loses KWD precision.
+
+## Prompting AI for Maximum Coverage
+
+The quality of AI-generated tests depends heavily on prompt construction. These prompt patterns consistently produce thorough edge case suites:
+
+**Pattern 1: Describe the rounding contract explicitly**
+```
+Generate JUnit 5 tests for calculateTotal(BigDecimal price, BigDecimal taxRate).
+The function must use HALF_UP rounding to 2 decimal places.
+Include tests for: zero, negative (should throw), precision boundary at exactly x.xx5,
+large values near Long.MAX_VALUE equivalent, and null inputs.
+```
+
+**Pattern 2: Provide a failing example to anchor the AI**
+```
+This test fails: calculateTotal("10.995", "1.10") returns 12.10 but should return 12.09.
+Generate 10 additional tests that would catch similar rounding off-by-one errors.
+```
+
+**Pattern 3: Ask for property-based test seeds**
+```
+Generate Hypothesis strategies for testing currency rounding invariants:
+result should always have exactly 2 decimal places, never be negative when inputs are positive,
+and satisfy (a + b).quantize() == a.quantize() + b.quantize() within tolerance.
+```
+
 ## Best Practices for AI-Generated Currency Tests
 
 
@@ -259,6 +328,23 @@ When using AI to generate currency tests, follow these guidelines:
 
 - **Review generated tests with a domain expert** — Financial calculations require accuracy
 
+- **Seed AI with known-failing cases** — Concrete bugs produce better test coverage than abstract requests
+
+- **Run AI-generated tests against a reference implementation** — Catch AI hallucinations early by cross-validating against a trusted calculator
+
+## Frequently Asked Questions
+
+**Can AI replace manual test design for financial code?**
+No. AI accelerates test generation significantly but misses domain-specific business rules — such as regulatory rounding requirements in specific jurisdictions or exchange clearing tolerances. Use AI to build the scaffolding, then have a domain expert review the expectations.
+
+**Which rounding mode should I use for currency?**
+HALF_UP (commercial rounding) is the most common for retail and e-commerce. HALF_EVEN (banker's rounding) is required by some financial standards like IEEE 754 and certain accounting regulations. Always check your regulatory context before choosing.
+
+**How do I prevent AI from generating tests with wrong expected values?**
+Provide a reference calculation alongside your prompt. For example: "10.995 × 1.10 = 12.0945, which rounds HALF_UP to 12.09." Giving AI the expected result to verify against dramatically reduces hallucinated expectations.
+
+**What about cryptocurrency decimal precision?**
+Cryptocurrencies like Bitcoin use up to 8 decimal places (satoshis). Ethereum's wei denomination requires 18 decimal places. Standard `BigDecimal` with sufficient precision handles these, but AI tools need explicit context — always specify the denomination in your prompt.
 
 ## Related Reading
 
