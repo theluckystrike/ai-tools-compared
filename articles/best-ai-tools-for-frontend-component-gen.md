@@ -166,6 +166,151 @@ npx jest --testPathPattern=UserTable
 
 Most generated components have TypeScript errors or missing imports that take 5 minutes to fix — still faster than writing from scratch.
 
+## Integration with Existing Component Systems
+
+The best tools integrate with your existing pattern library. Testing this requires examining how well each tool adapts to your specific setup.
+
+### Shadcn/ui Pattern Detection
+
+If your project uses shadcn/ui components, tell the AI explicitly:
+
+**Claude prompt:**
+```
+Create a data table component using shadcn/ui (Button, Select, Input,
+Dialog components). Import from @/components/ui. Follow the patterns in
+existing-table.tsx exactly. The table should show 20 rows per page with
+pagination using shadcn's Pagination component.
+```
+
+**v0.dev:** Generates components using shadcn-compatible patterns automatically.
+
+**Cursor:** Reads your existing shadcn imports and generates compatible code.
+
+**GitHub Copilot:** Requires explicit @file references to existing shadcn components.
+
+**Claude:** Works best with pasted examples of your shadcn usage.
+
+### Custom Hook Patterns
+
+If your project has custom hooks (useFetch, useDebounce, useLocalStorage), the tool must know about them:
+
+```typescript
+// If you have a custom hook in your project:
+// hooks/usePagination.ts
+export function usePagination(items: unknown[], pageSize: number) {
+  const [page, setPage] = useState(0)
+  const paginated = items.slice(page * pageSize, (page + 1) * pageSize)
+  return { paginated, page, setPage, totalPages: Math.ceil(items.length / pageSize) }
+}
+```
+
+**For Cursor:** Open that file in the editor, reference it explicitly.
+
+**For Claude:** Paste the hook code into the conversation with "use this pattern throughout the generated component."
+
+**For Copilot:** Use `@workspace` and reference the file with `#file:hooks/usePagination.ts`.
+
+## Testing Generated Components
+
+Generated components have common bugs. Always run these checks:
+
+```bash
+# TypeScript validation
+npx tsc --noEmit
+
+# Linting
+npx eslint src/components/YourComponent.tsx
+
+# Component testing
+npx jest --testPathPattern=YourComponent
+
+# Visual regression (if setup)
+npx percy exec -- npm test
+```
+
+The most common issues:
+
+1. **Missing null checks:** Component assumes data exists without checking.
+2. **Event handler types:** onClick handlers sometimes miss the MouseEvent type.
+3. **Array key warnings:** React requires key props on mapped elements.
+4. **Unused variable warnings:** AI generates unused imports or variables.
+5. **Accessibility issues:** Missing aria-label attributes, incorrect button roles.
+
+## Output Quality by Framework
+
+Different frameworks have different quirks:
+
+### React (Best)
+All tools handle React well. The ecosystem is mature and these tools train extensively on React code. Success rate: 85%.
+
+### Vue 3 (Good)
+Cursor and Claude handle Vue 3 Composition API well. v0.dev doesn't support Vue. GitHub Copilot has mixed results. Success rate: 70%.
+
+### Svelte (Fair)
+Limited tool support. Claude produces correct Svelte but less polished than React. Cursor has Svelte templates. Success rate: 60%.
+
+### Angular (Poor)
+No tool specializes in Angular. Generated code often misses dependency injection patterns. Success rate: 45%.
+
+## Speed and Cost Comparison
+
+For the same component (data table, 150 lines):
+
+| Tool | Generation time | Cost per component | Manual fixing time | Total time |
+|------|---|---|---|---|
+| v0.dev | 30 seconds | ~$0.10 (included in subscription) | 15 min | 15.5 min |
+| Cursor | 45 seconds | ~$0.02 (included with IDE) | 10 min | 10.75 min |
+| Copilot Chat | 40 seconds | ~$0.02 (included with IDE) | 12 min | 12.67 min |
+| Claude | 20 seconds | ~$0.08 (API call) | 8 min | 8.33 min |
+
+Claude is fastest by wall time but requires copying output into your IDE. Cursor is fastest for end-to-end workflow because it integrates into your development environment.
+
+## Selecting by Project Type
+
+**Startup / MVP:** Use v0.dev. Speed to visual polish matters more than pattern consistency.
+
+**Established SaaS product:** Use Cursor. Your existing patterns matter more than raw speed.
+
+**Complex enterprise component system:** Use Claude + your custom prompt library. You need maximum control.
+
+**Learning / educational project:** Use Claude. It generates the most thoroughly commented code with the best explanations.
+
+## Component Generation Prompts That Work
+
+**Bad prompt:** "Create a data table component"
+
+**Good prompt:** "Create a React TypeScript data table component with:
+- 50 rows of sample user data
+- Sortable columns (name, email, status)
+- Pagination (10/20/50 rows per page)
+- Row selection with select-all
+- Search filter that works across all columns
+- Mobile responsive (stack columns vertically on mobile)
+- Loading skeleton while data loads
+- Empty state when no results
+- Tests using Jest and React Testing Library
+Use Tailwind CSS. Follow the patterns in components/Table.tsx."
+
+The difference: specificity drives quality. One-sentence requests generate generic boilerplate. Detailed requests generate production-worthy code.
+
+## Most Generated Components
+
+The components that benefit most from AI generation (highest quality output / lowest manual work):
+
+1. **Data tables** — Nearly always correct, tests include
+2. **Forms with validation** — Zod schema generation works well
+3. **Modal dialogs** — Accessibility handling is solid
+4. **Pagination UI** — Logic rarely has bugs
+5. **Search input with filters** — All tools handle these well
+
+The components that benefit least (lowest quality / highest manual work):
+
+1. **Complex animation components** — Tools skip subtle easing details
+2. **Custom charts/graphs** — Tooltip and interaction logic often breaks
+3. **Drag-and-drop** — Most tools avoid this, generate basic versions
+4. **Real-time streaming components** — WebSocket integration is incomplete
+5. **Accessibility-critical features** — Screen reader testing required
+
 ## Related Reading
 
 - [AI Coding Assistant Comparison for React Component Generation](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)

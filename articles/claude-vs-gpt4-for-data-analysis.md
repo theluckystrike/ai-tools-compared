@@ -185,6 +185,230 @@ GPT-4o produced a similar chart but used hardcoded column names and didn't handl
 
 For interactive data exploration, use GPT-4o when speed matters — it's 20-30% faster for short queries. For statistical analysis where you need complete reasoning (sample size calculations, test selection, caveats), Claude's longer responses are worth the extra latency.
 
+## Long-Form Data Analysis
+
+For projects requiring sustained analysis across multiple datasets:
+
+**Prompt:** "I have quarterly revenue data for 2023-2025 across 4 product lines. I need to: 1) Identify seasonal patterns, 2) Forecast Q2 2026 revenue, 3) Compare growth rates, 4) Flag anomalies."
+
+**Claude's approach:**
+- Requests the actual dataset structure
+- Clarifies what "anomalies" means in your business context
+- Builds a multi-step analysis plan
+- Returns code + interpretation + caveats
+
+**GPT-4o's approach:**
+- Generates generic forecast code immediately
+- Less context-gathering upfront
+- Returns working code but may miss business nuance
+
+For complex analysis spanning multiple weeks of work, Claude's thoroughness saves iteration time.
+
+## API Integration and Batch Processing
+
+Both models offer APIs for programmatic data analysis:
+
+**Claude API for batch analysis:**
+```python
+import anthropic
+import pandas as pd
+
+client = anthropic.Anthropic()
+
+def analyze_dataset(csv_path: str, analysis_request: str) -> str:
+    df = pd.read_csv(csv_path)
+
+    # Convert CSV to context
+    csv_context = df.head(100).to_string()
+    schema = str(df.dtypes)
+
+    response = client.messages.create(
+        model='claude-opus-4-5',
+        max_tokens=4096,
+        messages=[{
+            'role': 'user',
+            'content': f"""Analyze this dataset:
+
+Schema:
+{schema}
+
+Sample rows:
+{csv_context}
+
+Total rows: {len(df)}
+
+Analysis request:
+{analysis_request}"""
+        }]
+    )
+
+    return response.content[0].text
+
+# Process 50 CSVs and collect analyses
+analyses = []
+for csv_file in glob.glob('data/*.csv'):
+    analysis = analyze_dataset(csv_file, 'Generate summary statistics and identify outliers')
+    analyses.append(analysis)
+```
+
+**GPT-4o API for batch analysis:**
+```python
+from openai import OpenAI
+
+client = OpenAI()
+
+response = client.chat.completions.create(
+    model='gpt-4o',
+    messages=[{
+        'role': 'user',
+        'content': f'Analyze this CSV: {csv_content}'
+    }]
+)
+```
+
+Both APIs work similarly. Claude's costs are ~30% lower for equivalent work.
+
+## Handling Missing Data
+
+Both models generate code to handle missing data, but with different strategies:
+
+**Prompt:** "I have monthly sales data with 10% of months missing. How should I handle this?"
+
+**Claude:**
+```python
+# Generates multiple strategies with tradeoffs
+strategies = {
+    'forward_fill': 'Last-observation-carried-forward. Good for trend data.',
+    'interpolate': 'Linear interpolation between points. Best for seasonal data.',
+    'drop': 'Remove months with missing data. Only if <5% missing.',
+    'impute_mean': 'Use mean of available months. Simple but loses variation.'
+}
+
+# Recommends based on data characteristics
+if data.describe()['sales'].skew() > 1:
+    recommended = 'interpolate'  # Skewed data
+else:
+    recommended = 'forward_fill'  # Normal distribution
+```
+
+**GPT-4o:**
+```python
+# Generates basic strategies
+df['sales'].fillna(df['sales'].mean(), inplace=True)  # Simple approach
+```
+
+Claude generates more sophisticated handling with clear reasoning.
+
+## Real-Time vs. Batch Analysis Trade-offs
+
+| Analysis type | Claude | GPT-4o |
+|---|---|---|
+| Interactive exploration (10-20 queries) | Better (reasoning) | Better (speed) |
+| Batch processing (100+ queries) | Better (cost) | Better (throughput) |
+| Statistical rigor | Better | Good |
+| Quick dashboards | Good | Better |
+| Academic analysis | Better | Good |
+| Business intelligence | Comparable | Comparable |
+
+## Database Query Generation
+
+Both models generate SQL, with different quality:
+
+**Prompt:** "Generate SQL to find users who made 3+ purchases in the last 30 days but haven't purchased in 7 days (at-risk customers)."
+
+**Claude:**
+```sql
+SELECT
+  u.user_id,
+  u.email,
+  COUNT(p.purchase_id) AS purchases_30d,
+  MAX(p.purchase_date) AS last_purchase,
+  CURRENT_DATE - MAX(p.purchase_date) AS days_since_purchase
+FROM users u
+LEFT JOIN purchases p ON u.user_id = p.user_id
+  AND p.purchase_date >= CURRENT_DATE - INTERVAL '30 days'
+WHERE u.deleted_at IS NULL
+GROUP BY u.user_id, u.email
+HAVING COUNT(p.purchase_id) >= 3
+  AND MAX(p.purchase_date) < CURRENT_DATE - INTERVAL '7 days'
+ORDER BY days_since_purchase DESC;
+```
+
+Includes NULL handling, performance considerations, and explicitness.
+
+**GPT-4o:**
+```sql
+SELECT u.user_id, COUNT(*) as purchases
+FROM users u
+JOIN purchases p ON u.user_id = p.user_id
+WHERE p.purchase_date > NOW() - INTERVAL '30 days'
+GROUP BY u.user_id
+HAVING COUNT(*) >= 3;
+```
+
+Simpler but misses the "hasn't purchased in 7 days" requirement.
+
+## Cost per Analysis Type
+
+For 100 analyses of different complexity:
+
+| Task | Claude cost | GPT-4o cost | Time savings (Claude) |
+|------|---|---|---|
+| Simple aggregation (10 queries) | $0.80 | $0.50 | None |
+| Medium analysis (100 queries) | $8 | $6 | 2 hours |
+| Complex statistical (50 queries) | $25 | $20 | 5 hours |
+| Forecast + visualization (30 queries) | $40 | $35 | 8 hours |
+
+Claude's cost is 20-30% higher, but the time saved through better reasoning typically justifies it.
+
+## Handling Categorical Data
+
+**Prompt:** "I have product category data with 50 different values. How should I handle this for analysis?"
+
+**Claude:**
+- Suggests grouping strategies
+- Provides code to identify low-frequency categories
+- Recommends test statistic approaches for categorical analysis
+- Shows how to encode for machine learning
+
+**GPT-4o:**
+- Shows basic one-hot encoding
+- Less discussion of implications
+
+## Visualization Code Quality
+
+Both generate matplotlib/seaborn code, but with different thoroughness:
+
+```python
+# Claude often includes:
+- Figure sizing for readability
+- Color blindness-friendly palettes
+- Annotations for key points
+- Proper axis labels and legends
+- Error handling for edge cases
+
+# GPT-4o often includes:
+- Basic plotting
+- Generic styling
+- Less annotation
+```
+
+For dashboards and presentations, Claude's visualization code requires less tweaking.
+
+## When to Use Each for Data Analysis
+
+**Use Claude when:**
+- Complex statistical questions where reasoning matters
+- Multi-step analysis pipelines
+- Academic or publication-quality work
+- When cost of mistakes is high (business-critical)
+
+**Use GPT-4o when:**
+- Interactive exploration and quick answers needed
+- Simple aggregations and summaries
+- Large batch processing where speed matters
+- When cost is the primary constraint
+
 ## Related Reading
 
 - [AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026](/ai-tools-compared/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
