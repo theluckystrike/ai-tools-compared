@@ -27,24 +27,20 @@ This guide evaluates the best AI tools for writing AWS CDK infrastructure code i
 ## Why AI Tools Matter for AWS CDK Development
 
 
-AWS CDK Python code differs from typical application code. You work with constructs from the AWS Construct Library, manage stack outputs, handle cross-stack references, and ensure proper IAM permissions. The abstraction level means more boilerplate than handwritten Terraform, and the CDK v2 to v2 migration introduced changes that still cause confusion.
+AWS CDK Python code differs from typical application code. You work with constructs from the AWS Construct Library, manage stack outputs, handle cross-stack references, and ensure proper IAM permissions. The abstraction level means more boilerplate than handwritten Terraform, and the CDK v2 migration introduced changes that still cause confusion when AI tools suggest deprecated v1 patterns.
 
 
 AI tools help in several key areas:
 
 
 - Generating complete construct definitions from high-level requirements
-
 - Creating proper IAM roles and policies with least-privilege principles
-
 - Setting up cross-stack references and output exports
-
 - Converting CloudFormation concepts to CDK equivalents
-
 - Handling AWS service-specific patterns (VPC setups, Lambda configurations, etc.)
 
 
-The best tools understand both Python typing and AWS service semantics, producing code that follows CDK best practices.
+The best tools understand both Python typing and AWS service semantics, producing code that follows CDK best practices. Poor AI suggestions in this domain typically manifest as: missing `from constructs import Construct`, using CDK v1 import paths, or generating IAM policies that grant `*` permissions rather than scoped resource ARNs.
 
 
 ## Claude Code
@@ -90,7 +86,9 @@ class VpcStack(Stack):
 ```
 
 
-Claude Code handles the CDK v2 import patterns correctly and produces syntax-valid Python. Its strength lies in generating infrastructure that follows AWS Well-Architected Framework patterns without requiring extensive prompt engineering.
+Claude Code handles the CDK v2 import patterns correctly and produces syntax-valid Python. Its strength lies in generating infrastructure that follows AWS Well-Architected Framework patterns without requiring extensive prompt engineering. It also explains why it chose particular configuration values, which is useful when onboarding engineers who are new to CDK.
+
+**Pro tip for Claude Code CDK prompts:** Include your AWS region, account structure (single-account vs. multi-account), and whether you need environment-agnostic stacks. This context significantly improves the relevance of generated cross-account configurations.
 
 
 ## GitHub Copilot
@@ -131,7 +129,9 @@ class WebsiteStack(Stack):
 ```
 
 
-The IDE integration means Copilot sees your current file and project structure, making suggestions that align with existing patterns. However, it sometimes suggests CDK v1 patterns that require adaptation for CDK v2.
+The IDE integration means Copilot sees your current file and project structure, making suggestions that align with existing patterns. However, it sometimes suggests CDK v1 patterns that require adaptation for CDK v2. Watch particularly for old-style `core.Duration` references and the deprecated `@aws-cdk/aws-*` import paths—Copilot occasionally generates these even in v2 projects.
+
+**When Copilot works best for CDK:** It excels at filling in construct properties you are mid-way through writing. Start the construct definition yourself, then let Copilot complete the property list. This approach leverages its completion strengths while avoiding the v1/v2 confusion that appears when generating from scratch.
 
 
 ## Amazon CodeWhisperer
@@ -175,7 +175,9 @@ class ApiStack(Stack):
 ```
 
 
-CodeWhisperer automatically suggests IAM permissions based on the AWS resources your code references, reducing the manual policy writing burden. This AWS-native focus makes it particularly strong for CDK development.
+CodeWhisperer automatically suggests IAM permissions based on the AWS resources your code references, reducing the manual policy writing burden. This AWS-native focus makes it particularly strong for CDK development. The professional tier also provides security scanning that flags over-permissive IAM statements before you deploy, which is a genuine time-saver during review.
+
+**CodeWhisperer's biggest advantage:** When you call `table.grant_read_write_data(handler)`, it understands that this produces scoped IAM permissions on the specific table ARN rather than a wildcard—and it propagates that understanding to suggest similarly scoped grants elsewhere in your stack.
 
 
 ## Cursor
@@ -213,7 +215,21 @@ class MainStack(Stack):
 ```
 
 
-Cursor's strength is managing inter-stack references and ensuring proper construct ordering, which becomes critical as infrastructure grows in complexity.
+Cursor's strength is managing inter-stack references and ensuring proper construct ordering, which becomes critical as infrastructure grows in complexity. When you use `@codebase` in Cursor's chat, it can read across all your stack files simultaneously and flag circular dependencies or missing outputs before you run `cdk synth`.
+
+
+## Tool Comparison at a Glance
+
+
+| Feature | Claude Code | GitHub Copilot | CodeWhisperer | Cursor |
+|---|---|---|---|---|
+| CDK v2 accuracy | Excellent | Good | Excellent | Good |
+| IAM policy quality | Good | Fair | Excellent | Good |
+| Multi-stack awareness | Good | Limited | Good | Excellent |
+| Inline IDE suggestions | No | Yes | Yes | Yes |
+| Chat-based generation | Yes | Limited | No | Yes |
+| Security scanning | No | No | Yes (Pro) | No |
+| Explains design choices | Yes | No | No | Partial |
 
 
 ## Practical Recommendations
@@ -221,26 +237,36 @@ Cursor's strength is managing inter-stack references and ensuring proper constru
 
 Choosing the right AI tool depends on your workflow and project requirements:
 
+**For terminal-focused developers:** Claude Code provides CDK generation without leaving your command-line environment. Its explanations help developers learn CDK concepts alongside implementation, making it useful for teams building their CDK knowledge.
 
-For terminal-focused developers: Claude Code provides CDK generation without leaving your command-line environment. Its explanations help developers learn CDK concepts alongside implementation.
+**For IDE-integrated workflows:** GitHub Copilot offers the smoothest integration with existing development environments, with reasonable CDK understanding despite occasional version mismatches. Use it for property completion rather than full stack generation.
 
+**For AWS-heavy projects:** Amazon CodeWhisperer's deep AWS service knowledge and automatic IAM permission suggestions provide tangible time savings for CDK development. The built-in security scanning catches common IAM mistakes before they reach production.
 
-For IDE-integrated workflows: GitHub Copilot offers the smoothest integration with existing development environments, with reasonable CDK understanding despite occasional version mismatches.
+**For complex multi-stack architectures:** Cursor's workspace awareness and chat capabilities handle projects with many interdependent stacks more effectively than inline-only solutions. The ability to reference multiple stack files in a single chat interaction is particularly valuable when debugging cross-stack reference issues.
 
-
-For AWS-heavy projects: Amazon CodeWhisperer's deep AWS service knowledge and automatic IAM permission suggestions provide tangible time savings for CDK development.
-
-
-For complex architectures: Cursor's workspace awareness and chat capabilities handle multi-stack projects more effectively than inline-only solutions.
-
-
-All tools require review before production deployment. Generated IAM policies particularly need scrutiny for least-privilege compliance, and CDK constructs should match your organization's tagging and naming conventions.
-
+All tools require review before production deployment. Generated IAM policies particularly need scrutiny for least-privilege compliance, and CDK constructs should match your organization's tagging and naming conventions. Run `cdk diff` against your existing stacks before applying AI-generated changes, even for seemingly minor modifications.
 
 The AI landscape evolves rapidly, and tool capabilities improve continuously. Testing current versions against your specific use cases provides the most accurate basis for selection.
 
 
-## Related Articles
+## Prompting Tips for Better CDK Output
+
+
+Regardless of which tool you use, how you phrase your prompts significantly affects the quality of generated CDK code.
+
+**State your CDK version explicitly.** "Generate CDK v2 Python code" avoids the v1 import pattern mistakes that affect all tools to some degree.
+
+**Provide your account and environment context.** "This stack deploys to a single AWS account in us-east-1 with no cross-account sharing" helps the AI avoid generating unnecessary `aws_cdk.Environment` configurations or cross-account role assumptions.
+
+**Ask for removal policies explicitly.** Destructive resources like databases and S3 buckets get `RemovalPolicy.RETAIN` by default in CDK, but AI tools often generate `RemovalPolicy.DESTROY` for development convenience. State your preference upfront: "Use RETAIN removal policy on all stateful resources."
+
+**Request `cdk.json` context integration.** If your project uses `cdk.json` for feature flags and environment variables, mention this. AI tools can generate code that reads from the CDK context using `self.node.try_get_context("my_value")` rather than hardcoding configuration values.
+
+**Ask for stack outputs.** Generated stacks often omit `CfnOutput` declarations. Explicitly requesting "include stack outputs for any endpoint URLs, bucket names, or ARNs that downstream systems would need" produces more complete infrastructure code.
+
+
+## Related Reading
 
 - [Claude vs ChatGPT for Creating AWS CDK Infrastructure Stacks](/ai-tools-compared/claude-vs-chatgpt-for-creating-aws-cdk-infrastructure-stacks/)
 - [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-compared/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)
