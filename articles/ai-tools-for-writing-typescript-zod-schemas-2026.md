@@ -8,7 +8,7 @@ permalink: /ai-tools-for-writing-typescript-zod-schemas-2026/
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence, typescript]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

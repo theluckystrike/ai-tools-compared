@@ -9,7 +9,7 @@ permalink: /ai-tools-for-writing-spi-flash-external-memory-driver-code-f/
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence, microcontroller, spi-flash]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
