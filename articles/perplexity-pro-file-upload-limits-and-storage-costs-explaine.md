@@ -48,11 +48,8 @@ Perplexity Pro uses a tiered storage model based on **usage hours** and storage 
 
 
 | Tier | Storage Included | Overage Rate |
-
 |------|------------------|--------------|
-
 | Pro Basic | 10 GB | $0.10/GB/day |
-
 | Pro Unlimited | 50 GB | $0.05/GB/day |
 
 
@@ -60,6 +57,24 @@ The storage costs apply only to files you choose to keep in your Perplexity work
 
 
 For most developers, the base tier provides adequate storage. If you regularly work with large datasets or maintain a knowledge base of documentation, consider the Unlimited plan to avoid unexpected charges.
+
+
+## How Perplexity Pro Compares to Competing AI Document Tools
+
+
+Understanding where Perplexity Pro sits relative to other AI document analysis tools helps developers choose the right tool for each use case:
+
+
+| Tool | File Size Limit | Monthly File Limit | Storage Model | Best For |
+|------|----------------|-------------------|---------------|----------|
+| Perplexity Pro | 25 MB | 100 files | 10-50 GB tiered | Research + web-integrated analysis |
+| ChatGPT Plus | 512 MB | Unlimited | Session only | Large file analysis, code execution |
+| Claude Pro | 10 MB per file | ~50 files/day | Session only | Long document reasoning |
+| Gemini Advanced | 1 GB (via Drive) | Unlimited (Drive) | Google Drive | Document-heavy workflows |
+| NotebookLM | 25 MB | 50 sources/notebook | Google account | Knowledge base building |
+
+
+Perplexity Pro's competitive advantage is not file size or storage — it is the combination of document analysis with live web search. When you upload a technical specification and ask "are there any newer versions of this standard?", Perplexity can answer using both your document and current web sources simultaneously. No other tool in the table does this as seamlessly.
 
 
 ## Practical Examples
@@ -179,6 +194,12 @@ documents = [
 ```
 
 
+### 4. Understand Which Files Count Toward Limits
+
+
+Not all interactions with documents count the same way toward your monthly quota. Files you upload directly to a Perplexity conversation count immediately. Files referenced through a connected knowledge base that was already uploaded count against the original upload, not against a new limit. Building a persistent knowledge base of documents you reference repeatedly is therefore more cost-efficient than uploading the same files repeatedly across sessions.
+
+
 ## Integration Considerations for Developers
 
 
@@ -279,6 +300,40 @@ def handle_upload_error(response):
     }
     return error_codes.get(response.status_code, "Unknown error")
 ```
+
+
+## When to Choose Pro Basic vs Pro Unlimited
+
+
+The decision between Pro Basic and Pro Unlimited comes down to two variables: how many files you retain long-term, and how frequently you hit the per-month upload count.
+
+
+**Stick with Pro Basic if:**
+- You use Perplexity for occasional research rather than daily document analysis
+- You delete files immediately after analysis rather than building a persistent knowledge base
+- Your average document is under 5 MB (leaving plenty of headroom before storage limits apply)
+
+**Upgrade to Pro Unlimited if:**
+- You maintain a knowledge base of 20+ documents that you reference across multiple projects
+- You process more than 60-70 files per month consistently
+- You work with embedded-image PDFs that are consistently 15-25 MB each
+
+The overage pricing on Pro Basic ($0.10/GB/day) compounds quickly if you accumulate files without cleanup. A developer who leaves 50 GB of documents sitting in a Basic workspace for a month would pay $150 in overage charges — more than the annual cost difference between the two plans. Active file management eliminates this risk entirely.
+
+
+## Practical Workflow for Teams Using Perplexity Pro
+
+
+When multiple team members share a Perplexity Pro subscription or operate under a team plan, file management becomes a shared responsibility. Teams that establish clear upload conventions avoid hitting monthly limits mid-sprint.
+
+
+A straightforward team convention:
+
+- Designate one "canonical" upload per major document (such as a product specification or architecture overview). All team members reference the shared link rather than uploading the same file independently.
+- Set a weekly file review reminder in your team calendar. Five minutes of cleanup at the end of each week prevents storage accumulation from becoming a budget issue.
+- Use descriptive filenames before upload. Perplexity indexes filenames alongside content, and well-named files are easier to retrieve in subsequent conversations without re-uploading.
+
+Teams using Perplexity alongside other AI tools in their stack — such as Claude for long-form reasoning or ChatGPT for code execution — typically reserve Perplexity specifically for research tasks that benefit from live web context. This division of labor keeps monthly upload counts manageable and ensures each tool is used where it performs best.
 
 
 ## Related Articles
