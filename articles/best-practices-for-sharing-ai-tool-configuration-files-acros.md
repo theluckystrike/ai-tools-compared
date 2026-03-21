@@ -110,6 +110,9 @@ context:
 Teams inherit these defaults but can override specific values in project-level configurations. This approach balances consistency with flexibility.
 
 
+A three-tier inheritance model works well at scale: organization defaults at the root level, team-specific overrides in a group repository, and project-specific settings committed alongside source code. Each tier only needs to specify values that differ from the parent, reducing duplication and making it easy to trace where a particular setting originates.
+
+
 ## Synchronization Methods
 
 
@@ -142,6 +145,26 @@ ln -s ~/.ai-configs/copilot.json ~/Library/Application\ Support/Code/User/settin
     section: defaults
     option: language
     value: "{{ ai_tool_language }}"
+```
+
+
+**GitHub Actions for config validation** can catch configuration drift before it reaches team members. Add a workflow that verifies configuration files match the expected schema on every pull request:
+
+
+```yaml
+# .github/workflows/validate-ai-configs.yml
+name: Validate AI Configurations
+on: [pull_request]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate Copilot config schema
+        run: |
+          npm install -g ajv-cli
+          ajv validate -s .ai-configs/schemas/copilot.schema.json \
+                       -d .ai-configs/copilot.json
 ```
 
 
@@ -203,6 +226,24 @@ return {
 ```
 
 
+## Comparing Configuration Sharing Approaches
+
+
+Different teams have different constraints. The table below summarizes the trade-offs between common strategies:
+
+
+| Method | Complexity | Audit Trail | Real-Time Sync | Best For |
+|---|---|---|---|---|
+| Git dotfiles repo | Low | Yes | No | Small teams, developers |
+| Project-level config | Low | Yes | No | Single-repo projects |
+| Config management (Ansible) | Medium | Partial | Yes | Infra-heavy orgs |
+| GitHub Actions validation | Medium | Yes | On PR | Teams with strict standards |
+| Internal package registry | High | Yes | On release | Large enterprises |
+
+
+Publishing configurations as an internal npm or PyPI package gives large organizations a versioned distribution channel. Teams pin to a specific configuration version, upgrade deliberately, and roll back if a new setting causes issues.
+
+
 ## Handling Sensitive Configuration Values
 
 
@@ -231,6 +272,18 @@ Create `.env.example` files that document required environment variables without
 OPENAI_API_KEY=
 ANTHROPIC_API_KEY=
 GITHUB_TOKEN=
+```
+
+
+For teams using secret managers like HashiCorp Vault or AWS Secrets Manager, inject values at runtime rather than storing them in configuration files at all. A developer script can pull required credentials and write them to a local-only config file on demand:
+
+
+```bash
+#!/usr/bin/env bash
+# scripts/setup-ai-keys.sh
+ANTHROPIC_API_KEY=$(vault kv get -field=value secret/ai-tools/anthropic)
+export ANTHROPIC_API_KEY
+echo "AI tool credentials loaded."
 ```
 
 
@@ -267,6 +320,28 @@ Contact #dev-tools on Slack for configuration questions.
 Include troubleshooting sections for common issues like API key problems or IDE compatibility.
 
 
+A useful addition is a self-check script that verifies a developer's environment has all required configurations applied correctly. Run it during onboarding and after any configuration update:
+
+
+```bash
+#!/usr/bin/env bash
+# scripts/check-ai-config.sh
+echo "Checking AI tool configurations..."
+
+if [ -f "$HOME/.config/claude/CLAUDE.md" ]; then
+  echo "Claude Code rules: OK"
+else
+  echo "WARNING: Claude Code rules not found. Run 'make setup-ai-tools'."
+fi
+
+if command -v gh &>/dev/null && gh copilot --version &>/dev/null; then
+  echo "GitHub Copilot CLI: OK"
+else
+  echo "WARNING: GitHub Copilot CLI not installed."
+fi
+```
+
+
 ## Testing Configuration Changes
 
 
@@ -284,7 +359,10 @@ Before rolling out configuration changes to the entire team, test them with a sm
 ```
 
 
-Collect feedback over one or two sprints, then promote stable configurations to the main files.
+Collect feedback over one or two sprints, then promote stable configurations to the main files. Treat configuration changes like feature flags: dark launch to a subset, measure impact on productivity and code quality metrics, and graduate to the full team only when results confirm improvement.
+
+
+Pair configuration changes with a changelog entry in your `.ai-configs/CHANGELOG.md` so team members understand what changed and why. When a setting modification is controversial, a recorded decision in the changelog prevents relitigating the same discussion months later.
 
 
 ## Related Articles
