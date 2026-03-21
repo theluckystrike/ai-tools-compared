@@ -18,7 +18,7 @@ tags: [ai-tools-compared]
 {% raw %}
 
 
-The Model Context Protocol (MCP) has become the standard way for AI tools to interact with external services and data sources. If you're building AI-powered applications in 2026, you'll often need to connect them to REST APIs. Instead of hardcoding API calls or manually maintaining documentation, you can build an MCP server that serves your OpenAPI specifications directly to AI tools. This approach lets AI assistants discover, understand, and interact with your APIs dynamically.
+The Model Context Protocol (MCP) has become the standard way for AI tools to interact with external services and data sources. If you're building AI-powered applications in 2026, you'll often need to connect them to REST APIs. Instead of hardcoding API calls or manually maintaining documentation, you can build an MCP server that serves your OpenAPI specifications directly to AI tools. This approach lets AI assistants discover, understand, and interact with your APIs dynamically — without requiring manual configuration updates every time your API changes.
 
 
 ## What Is MCP and Why It Matters for OpenAPI
@@ -31,6 +31,29 @@ OpenAPI specifications describe REST APIs in a machine-readable format. They inc
 
 
 The combination is powerful: your API documentation becomes executable. AI tools can read your OpenAPI spec from the MCP server and automatically generate appropriate API calls.
+
+
+Before MCP, integrating an AI assistant with a new API required hardcoding endpoint knowledge into the model's context or building custom tool definitions by hand. With an OpenAPI-aware MCP server, you write the integration once — the server reads the spec and exposes the right tools automatically. As the spec changes, the AI's understanding of the API updates without code changes.
+
+
+## Understanding the MCP Transport Layer
+
+
+MCP supports two primary transport mechanisms: stdio (standard input/output) and SSE (Server-Sent Events over HTTP). For local development and desktop AI tools, stdio is the standard choice. For server-deployed MCP servers accessible over a network, SSE provides the right transport.
+
+```
+MCP Client (Claude Desktop, Cursor, etc.)
+         |
+         | stdio (local) or SSE (remote)
+         |
+    MCP Server (your Python server)
+         |
+    OpenAPI Spec (loaded from file or URL)
+         |
+    Your REST API
+```
+
+The server you'll build uses stdio transport, which means it runs as a subprocess of the AI tool. This keeps things simple for development and avoids authentication complexity at the transport layer.
 
 
 ## Building Your MCP Server
@@ -133,6 +156,54 @@ uv run python mcp_openapi_server.py
 ```
 
 
+## Adding API Execution Capabilities
+
+
+The listing and detail tools let an AI understand your API, but the real power comes from adding an execution tool that the AI can call to make actual requests.
+
+
+```python
+@mcp.tool()
+async def call_api_endpoint(
+    path: str,
+    method: str,
+    params: dict = None,
+    body: dict = None,
+    headers: dict = None
+) -> dict:
+    """Execute an API call based on the loaded OpenAPI spec."""
+    if not openapi_spec:
+        return {"error": "No spec loaded"}
+
+    base_url = openapi_spec.get("servers", [{}])[0].get("url", "")
+    full_url = f"{base_url}{path}"
+
+    merged_headers = {"Content-Type": "application/json"}
+    if headers:
+        merged_headers.update(headers)
+    if auth_token:
+        merged_headers["Authorization"] = f"Bearer {auth_token}"
+
+    async with httpx.AsyncClient() as client:
+        response = await client.request(
+            method=method.upper(),
+            url=full_url,
+            params=params or {},
+            json=body,
+            headers=merged_headers,
+            timeout=30.0
+        )
+
+    return {
+        "status_code": response.status_code,
+        "headers": dict(response.headers),
+        "body": response.json() if response.headers.get("content-type", "").startswith("application/json") else response.text
+    }
+```
+
+With this tool in place, your AI assistant can go from reading the OpenAPI spec to making real API calls in a single conversation — discovering the right endpoint, constructing the correct request, and interpreting the response.
+
+
 ## Connecting AI Tools to Your MCP Server
 
 
@@ -157,6 +228,28 @@ Add to your `claude_desktop_config.json`:
 ```
 
 
+### Cursor IDE Configuration
+
+
+Add to your Cursor MCP settings:
+
+```json
+{
+  "mcpServers": {
+    "openapi-server": {
+      "command": "uv",
+      "args": ["run", "python", "/path/to/mcp_openapi_server.py"],
+      "env": {
+        "API_TOKEN": "${env:MY_API_TOKEN}"
+      }
+    }
+  }
+}
+```
+
+Cursor's MCP support lets you pass environment variables from your shell into the server process, which is the right way to handle authentication tokens without hardcoding them.
+
+
 ### Using with AI Assistants
 
 
@@ -170,7 +263,7 @@ Once connected, your AI assistant can:
 3. **Execute API calls** based on the OpenAPI specification
 
 
-The AI doesn't need hardcoded knowledge of your API—it learns about it from the spec served through MCP.
+The AI doesn't need hardcoded knowledge of your API — it learns about it from the spec served through MCP.
 
 
 ## Practical Use Cases
@@ -179,19 +272,25 @@ The AI doesn't need hardcoded knowledge of your API—it learns about it from th
 ### Internal API Management
 
 
-If you maintain internal APIs, an MCP server lets team members query your API through AI assistants without reading documentation. The AI can discover available endpoints and guide users through making correct requests.
+If you maintain internal APIs, an MCP server lets team members query your API through AI assistants without reading documentation. The AI can discover available endpoints and guide users through making correct requests. This is particularly valuable for infrequently-used internal services where engineers rarely remember the exact endpoint signatures.
 
 
 ### Third-Party API Integration
 
 
-Wrap external APIs with an MCP server that serves their OpenAPI specs. Your AI assistant can then interact with services like GitHub, Stripe, or Slack without manual API key setup for each integration.
+Wrap external APIs with an MCP server that serves their OpenAPI specs. Your AI assistant can then interact with services like GitHub, Stripe, or Slack without manual API key setup for each integration. Many popular APIs publish OpenAPI specs — point your MCP server at the spec URL and you have an AI-accessible interface immediately.
 
 
 ### API Testing and Exploration
 
 
-During development, use the MCP server to explore your API. Ask your AI assistant: "What endpoints are available for user management?" The assistant queries your MCP server and provides answers based on the live specification.
+During development, use the MCP server to explore your API. Ask your AI assistant: "What endpoints are available for user management?" The assistant queries your MCP server and provides answers based on the live specification. This is especially useful during rapid iteration when endpoints are being added or modified frequently.
+
+
+### Contract Validation
+
+
+Before publishing an API, use the MCP server with an AI assistant to validate that your implementation matches your spec. The AI can systematically call each endpoint, compare responses against the defined schemas, and flag discrepancies. This is faster than writing comprehensive test suites for contract validation.
 
 
 ## Advanced Patterns
@@ -218,6 +317,8 @@ Add authentication handling to your MCP server:
 
 
 ```python
+auth_token = None
+
 @mcp.tool()
 async def set_auth_token(token: str) -> str:
     """Store the authentication token for API requests."""
@@ -226,8 +327,31 @@ async def set_auth_token(token: str) -> str:
     return "Authentication token stored"
 ```
 
-
 Then modify your HTTP client to include the token in requests.
+
+
+### Spec Caching with TTL
+
+
+For remote specs, implement caching to avoid fetching the spec on every tool call:
+
+```python
+import time
+
+spec_cache = {"spec": None, "loaded_at": 0, "ttl": 300}  # 5-minute TTL
+
+async def get_cached_spec(spec_url: str) -> dict:
+    now = time.time()
+    if spec_cache["spec"] and (now - spec_cache["loaded_at"]) < spec_cache["ttl"]:
+        return spec_cache["spec"]
+
+    async with httpx.AsyncClient() as client:
+        response = await client.get(spec_url)
+        spec_cache["spec"] = response.json()
+        spec_cache["loaded_at"] = now
+
+    return spec_cache["spec"]
+```
 
 
 ## Best Practices
@@ -236,13 +360,15 @@ Then modify your HTTP client to include the token in requests.
 When building MCP servers for OpenAPI specs, consider these recommendations:
 
 
-- **Validate specs on load** to catch errors early
+**Validate specs on load** to catch errors early. An invalid spec produces confusing tool behavior; surfacing the validation error immediately makes debugging much faster.
 
-- **Cache specifications** when possible to reduce latency
+**Cache specifications** when possible to reduce latency. Fetching a large spec on every tool call adds noticeable delay to AI interactions.
 
-- **Version your specs** to maintain backward compatibility
+**Version your specs** to maintain backward compatibility. If you expose a `spec_version` resource, AI tools can detect when the spec changes and adapt accordingly.
 
-- **Document custom endpoints** that extend beyond standard REST operations
+**Document custom endpoints** that extend beyond standard REST operations. MCP tool descriptions are the primary documentation layer for AI assistants — make them precise and complete.
+
+**Handle errors gracefully.** Return structured error responses rather than raising exceptions. AI assistants handle error dicts much better than stack traces when deciding how to respond to users.
 
 
 ## Related Articles
