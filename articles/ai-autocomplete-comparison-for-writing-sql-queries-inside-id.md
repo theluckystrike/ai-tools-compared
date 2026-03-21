@@ -15,11 +15,6 @@ voice-checked: true
 
 
 {% raw %}
-
-{%- include why-choose-ai-sql-ide.html -%}
-
-
-
 For writing SQL efficiently in your IDE, choose GitHub Copilot for broad language support, Cursor for superior context awareness, or specialized database tools for schema-aware suggestions. Modern AI autocomplete tools eliminate manual column typing and join condition writing by understanding your database schema and suggesting optimized queries based on context from your codebase.
 
 

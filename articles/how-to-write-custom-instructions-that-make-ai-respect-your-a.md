@@ -15,11 +15,6 @@ voice-checked: true
 
 
 {% raw %}
-
-{%- include why-choose-custom-instructions.html -%}
-
-
-
 When integrating AI into your development workflow, understanding how to control API consumption becomes essential. Custom instructions let you define behavior boundaries that AI tools follow consistently. This guide shows you how to write custom instructions specifically designed to make AI respect your API rate limit patterns.
 
 

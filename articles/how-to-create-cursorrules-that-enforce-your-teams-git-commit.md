@@ -15,11 +15,6 @@ intent-checked: true
 
 
 {% raw %}
-
-{%- include why-choose-cursorrules-git-commit.html -%}
-
-
-
 Consistent commit messages are the backbone of a maintainable codebase. When every developer follows the same format, reading history becomes trivial, generating changelogs is automated, and code reviews flow smoother. Yet enforcing this consistency across a team often falls apart in practice. This guide shows you how to use CursorRules to automatically validate and enforce your team's git commit message format, catching violations before they reach your repository's history.
 
 

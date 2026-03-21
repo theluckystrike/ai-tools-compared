@@ -15,11 +15,6 @@ voice-checked: true
 
 
 {% raw %}
-
-{%- include why-choose-ai-dbt-macros.html -%}
-
-
-
 Writing dbt macros that generate dynamic SQL based on configuration requires understanding both Jinja2 templating and SQL generation patterns. The best AI coding assistants in 2026 can significantly speed up this process by understanding your dbt project's structure, generating reusable macro templates, and handling complex conditional logic. This guide compares the top AI tools for this specific use case.
 
 

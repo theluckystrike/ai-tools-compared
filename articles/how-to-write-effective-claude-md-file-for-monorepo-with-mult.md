@@ -15,11 +15,6 @@ voice-checked: true
 
 
 {% raw %}
-
-{%- include why-choose-claude-md-monorepo.html -%}
-
-
-
 Monorepos with multiple services present unique challenges for AI coding assistants. When your project spans dozens of services, shared packages, and interconnected dependencies, a well-crafted CLAUDE.md file becomes essential for getting useful responses from AI tools. This guide shows you how to structure your CLAUDE.md file so AI understands your monorepo's architecture and provides accurate, context-aware assistance.
 
 

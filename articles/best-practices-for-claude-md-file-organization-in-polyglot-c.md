@@ -15,11 +15,6 @@ voice-checked: true
 
 
 {% raw %}
-
-{%- include why-choose-polyglot-markdown-organization.html -%}
-
-
-
 When your project spans multiple languages—Python backend, TypeScript frontend, Go services, and Rust utilities—your documentation strategy needs to adapt. Claude works best when it can navigate your codebase intelligently, and the way you organize Markdown files directly impacts how effectively the AI assistant understands your project structure. This guide presents battle-tested practices for organizing MD files in polyglot environments that work with Claude Code and other AI coding assistants.
 
 

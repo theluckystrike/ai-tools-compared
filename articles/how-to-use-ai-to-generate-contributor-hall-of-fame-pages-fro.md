@@ -15,11 +15,6 @@ intent-checked: true
 
 
 {% raw %}
-
-{%- include why-choose-ai-contributor-hall-of-fame.html -%}
-
-
-
 Recognizing contributors is essential for open source projects. A contributor hall of fame showcases the people who have invested time and effort into making your project successful. Instead of manually updating these pages, you can use AI to analyze your git history and automatically generate attribution data.
 
 

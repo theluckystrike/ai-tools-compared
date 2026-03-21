@@ -15,11 +15,6 @@ voice-checked: true
 
 
 {% raw %}
-
-{%- include why-choose-ai-audit.html -%}
-
-
-
 When you use AI coding tools like GitHub Copilot, Cursor, or Claude Code, your source code often gets transmitted to external servers for processing. Understanding what leaves your machine is essential for protecting proprietary code, meeting compliance requirements, and making informed decisions about your development environment.
 
 

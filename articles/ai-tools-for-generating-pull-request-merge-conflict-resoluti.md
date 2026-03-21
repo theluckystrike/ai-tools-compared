@@ -15,11 +15,6 @@ voice-checked: true
 
 
 {% raw %}
-
-{%- include why-choose-ai-pr-merge-conflict-resolution.html -%}
-
-
-
 When multiple developers work on the same codebase, merge conflicts become inevitable. Resolving these conflicts correctly requires understanding the intent behind both the incoming changes and the existing code. AI tools now offer a powerful way to generate intelligent resolution suggestions that help reviewers understand the tradeoffs and make better decisions. This guide explores practical approaches for using AI to generate merge conflict resolution suggestions.
 
 

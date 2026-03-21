@@ -15,11 +15,6 @@ voice-checked: true
 
 
 {% raw %}
-
-{%- include why-choose-ai-sql-tuning.html -%}
-
-
-
 Slow query logs are one of the most valuable resources for identifying database performance bottlenecks. When queries exceed a configured execution time threshold, databases record them along with execution metrics, execution plans, and contextual information. AI tools have emerged as powerful assistants for analyzing these logs and generating actionable performance tuning recommendations. This guide explores the best approaches for using AI to transform slow query log data into optimized SQL and index improvements.
 
 

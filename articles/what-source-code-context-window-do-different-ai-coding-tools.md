@@ -15,11 +15,6 @@ voice-checked: true
 
 
 {% raw %}
-
-{%- include why-choose-context-window-comparison.html -%}
-
-
-
 When developers use AI coding assistants, understanding what happens behind the scenes matters. Each tool processes different amounts of your code locally and sends varying amounts to external servers for analysis. This article breaks down the context windows of major AI coding tools so you can make informed decisions about privacy and performance.
 
 

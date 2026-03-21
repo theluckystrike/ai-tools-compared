@@ -15,11 +15,6 @@ voice-checked: true
 
 
 {% raw %}
-
-{%- include why-choose-ai-naming-conventions.html -%}
-
-
-
 AI coding assistants can dramatically accelerate your development workflow, but they often generate code that conflicts with your established database naming conventions. When your team uses snake_case for table columns but the AI outputs camelCase, you spend more time correcting suggestions than you save. This guide shows you how to configure major AI coding tools to respect your specific naming patterns.
 
 

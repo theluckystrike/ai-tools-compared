@@ -15,11 +15,6 @@ voice-checked: true
 
 
 {% raw %}
-
-{%- include why-choose-ai-penetration-testing-findings.html -%}
-
-
-
 Security researchers have increasingly focused on AI coding tools and their IDE integrations, discovering significant vulnerabilities that affect millions of developers. This article examines common findings from penetration tests conducted on popular AI coding assistant plugins, providing practical recommendations for developers and security teams.
 
 

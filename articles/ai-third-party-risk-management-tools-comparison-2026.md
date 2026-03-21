@@ -14,9 +14,6 @@ voice-checked: true
 ---
 
 {% raw %}
-
-{%- include why-choose-tprm-tools.html -%}
-
 Managing third-party risk has become a critical concern for engineering teams. As organizations integrate more APIs, SaaS tools, and external services, the attack surface expands significantly. AI-powered third-party risk management (TPRM) tools now offer automated solutions for vendor assessment, continuous monitoring, and security posture evaluation. This comparison evaluates leading tools based on practical integration capabilities, API security features, and workflow automation for developer-centric teams.
 
 ## Understanding TPRM Tool Categories

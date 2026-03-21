@@ -15,11 +15,6 @@ voice-checked: true
 
 
 {% raw %}
-
-{%- include why-choose-ai-coding-configuration.html -%}
-
-
-
 Configuring AI coding tools effectively in large enterprise codebases requires strategic planning and ongoing optimization. When your project spans thousands of files across multiple languages and repositories, proper configuration directly impacts code suggestion quality, response times, and developer productivity. This guide covers practical approaches to get the most from your AI coding assistant.
 
 

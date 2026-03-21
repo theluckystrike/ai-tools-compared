@@ -15,11 +15,6 @@ voice-checked: true
 
 
 {% raw %}
-
-{%- include why-choose-ai-coding-assistant-lifecycle.html -%}
-
-
-
 Understanding how AI coding assistants handle your data throughout the entire session lifecycle helps you make informed decisions about which tools to use and how to configure them for your privacy requirements. This guide walks through each stage of the data journey.
 
 

@@ -15,11 +15,6 @@ voice-checked: true
 
 
 {% raw %}
-
-{%- include why-choose-mcp-server-custom-docs.html -%}
-
-
-
 Setting up a Model Context Protocol server for your custom project documentation transforms how AI coding assistants understand and interact with your codebase. When your AI tool can access your internal docs, architecture decisions, and API specifications directly through MCP, you get more accurate suggestions that align with your project's conventions.
 
 

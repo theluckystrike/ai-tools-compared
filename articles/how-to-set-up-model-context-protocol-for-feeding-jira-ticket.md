@@ -15,11 +15,6 @@ voice-checked: true
 
 
 {% raw %}
-
-{%- include why-choose-mcp-jira.html -%}
-
-
-
 Model Context Protocol (MCP) has become the standard for connecting AI assistants to external data sources. If you're building AI-powered workflows that need access to Jira tickets, MCP provides a clean, maintainable approach to this integration. This guide walks through setting up MCP to feed Jira ticket context to your AI tools.
 
 

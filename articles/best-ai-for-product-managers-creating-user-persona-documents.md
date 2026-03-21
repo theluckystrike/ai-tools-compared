@@ -15,11 +15,6 @@ voice-checked: true
 
 
 {% raw %}
-
-{%- include why-choose-user-persona-ai-tools.html -%}
-
-
-
 Creating user personas from survey responses is a repetitive but essential task for product managers. In 2026, AI tools have matured enough to handle this workflow efficiently, transforming raw survey data into structured persona documents without losing the nuances that make personas actionable. This guide examines practical approaches to automating persona generation while maintaining quality.
 
 

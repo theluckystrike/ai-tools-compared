@@ -15,11 +15,6 @@ voice-checked: true
 
 
 {% raw %}
-
-{%- include why-choose-ai-playwright-tests.html -%}
-
-
-
 Testing web applications with dynamic loading and lazy-loaded elements requires specific strategies. This guide evaluates which AI tools excel at generating Playwright tests that handle these common but tricky scenarios.
 
 

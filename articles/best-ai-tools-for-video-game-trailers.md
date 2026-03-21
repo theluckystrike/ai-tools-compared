@@ -15,11 +15,6 @@ voice-checked: true
 
 
 {% raw %}
-
-{%- include why-choose-ai-gaming.html -%}
-
-
-
 Runway ML is the best overall AI tool for video game trailers, offering text-to-video generation and style-consistent clip extension through its Gen-3 model. Pair it with ElevenLabs for voice synthesis narration and Topaz Labs for upscaling gameplay footage to 4K. For scripting, Claude or GPT-4 generates multiple trailer script variants tailored to your game's genre and audience.
 
 

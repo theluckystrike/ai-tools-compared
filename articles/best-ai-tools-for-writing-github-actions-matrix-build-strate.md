@@ -15,11 +15,6 @@ voice-checked: true
 
 
 {% raw %}
-
-{%- include why-choose-github-actions-matrix-ai-tools.html -%}
-
-
-
 Use Claude to design optimized matrix builds with proper exclude/include syntax and conditional skipping logic; use ChatGPT for basic matrix definitions. Claude understands GitHub Actions context better and avoids redundant job runs. This guide compares AI tools for creating efficient GitHub Actions matrix build strategies.
 
 

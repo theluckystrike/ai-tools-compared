@@ -15,11 +15,6 @@ voice-checked: true
 
 
 {% raw %}
-
-{%- include why-choose-ai-retrospectives.html -%}
-
-
-
 Writing sprint retrospective summaries consumes significant time for product managers. You collect feedback from the team, identify themes, and craft a document that drives improvement—all while balancing other responsibilities. AI assistants now offer practical solutions for transforming raw notes into structured summaries without losing the team's authentic voice.
 
 

@@ -15,11 +15,6 @@ voice-checked: true
 
 
 {% raw %}
-
-{%- include why-choose-pydantic-pytest-ai-assistant.html -%}
-
-
-
 Writing pytest tests for Pydantic model validation rules is essential for ensuring data integrity in Python applications. Pydantic's validation system provides powerful type checking and data validation, but thoroughly testing these rules requires careful test design. AI assistants have emerged as valuable tools for accelerating this process, helping developers generate thorough test coverage for validation edge cases.
 
 

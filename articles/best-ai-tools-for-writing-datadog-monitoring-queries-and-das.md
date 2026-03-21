@@ -15,11 +15,6 @@ voice-checked: true
 
 
 {% raw %}
-
-{%- include why-choose-datadog-ai-tools.html -%}
-
-
-
 Use Claude to write DQL queries with complex aggregations and formula logic; use ChatGPT for generating dashboard JSON from descriptions. Claude excels at metric math and time-window aggregations; ChatGPT works better for quick visualization layouts. This guide compares AI tools for building Datadog monitoring queries and dashboards.
 
 

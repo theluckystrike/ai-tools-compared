@@ -15,11 +15,6 @@ tags: [ai-tools-compared, best-of, artificial-intelligence]
 
 
 {% raw %}
-
-{%- include why-choose-ai-release.html -%}
-
-
-
 The best AI assistant for generating open source release announcements understands your project's versioning scheme, communicates technical changes clearly for diverse audiences (from maintainers to end users), maintains a consistent tone across releases, and highlights breaking changes and migration paths. Below you will find practical examples of AI-generated release notes along with the specific capabilities that make some assistants far more effective than others.
 
 

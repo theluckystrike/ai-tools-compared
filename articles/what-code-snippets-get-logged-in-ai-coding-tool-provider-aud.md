@@ -15,11 +15,6 @@ intent-checked: true
 
 
 {% raw %}
-
-{%- include ai-coding-audit-trails-intro.html -%}
-
-
-
 AI coding tools log your input code, generated suggestions, conversation context, and metadata like timestamps and file paths—but logging policies vary significantly across providers. GitHub Copilot logs all interactions for improvement and abuse detection, while tools like Claude Code offer granular control to disable logging. Understanding these audit trail differences is essential for making informed privacy and compliance decisions, especially in enterprise environments handling sensitive or proprietary code.
 
 

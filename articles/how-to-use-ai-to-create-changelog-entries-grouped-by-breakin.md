@@ -15,11 +15,6 @@ voice-checked: true
 
 
 {% raw %}
-
-{%- include why-choose-changelog-generation.html -%}
-
-
-
 Creating changelogs that clearly separate breaking changes from new features is essential for maintaining good developer experience. When done well, users can quickly assess the impact of an update and plan their upgrade path. When done poorly, important breaking changes get lost in a sea of feature descriptions, leading to production issues after upgrades.
 
 

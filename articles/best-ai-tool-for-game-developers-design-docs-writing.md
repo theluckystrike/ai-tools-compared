@@ -17,11 +17,6 @@ tags: [ai-tools-compared, best-of, artificial-intelligence]
 
 
 {% raw %}
-
-{%- include why-choose-ai-gaming.html -%}
-
-
-
 The best AI tools for game design documentation generate structured first drafts from high-level concept descriptions—you describe a roguelike deckbuilder and get a GDD covering core mechanics, run structure, card types, and progression systems that you then refine. Look for tools that handle both creative writing (game feel, narrative beats) and technical writing (data structures, system specifications), maintain context across long interconnected documents, and output markdown for version control compatibility. Here is how to evaluate and implement these tools.
 
 

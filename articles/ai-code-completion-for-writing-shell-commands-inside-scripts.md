@@ -15,11 +15,6 @@ voice-checked: true
 
 
 {% raw %}
-
-{%- include why-choose-ai-shell-scripts.html -%}
-
-
-
 Use Cursor or Claude Code for superior pipe chain generation and context-aware command suggestions in shell scripts. GitHub Copilot provides solid shell script assistance but may suggest commands unavailable on your system. The best tools understand your shell dialect (bash, zsh, fish) and can construct complex command pipelines from simple natural language descriptions.
 
 

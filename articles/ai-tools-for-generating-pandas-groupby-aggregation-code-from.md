@@ -15,11 +15,6 @@ voice-checked: true
 
 
 {% raw %}
-
-{%- include why-choose-ai-pandas-groupby-code-generation.html -%}
-
-
-
 When working with data analysis in Python, pandas aggregation operations rank among the most frequently used but also most complex transformations. Writing groupby code correctly requires remembering method names, understanding the difference between agg() and aggregate(), and knowing how to chain multiple transformations together. AI tools now offer a practical solution: they can translate plain English descriptions into working pandas groupby code, saving time and reducing errors.
 
 

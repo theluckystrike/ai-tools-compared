@@ -15,11 +15,6 @@ voice-checked: true
 
 
 {% raw %}
-
-{%- include why-choose-writing-claude-md-files-api-versioning.html -%}
-
-
-
 When working with AI coding assistants on API-driven projects, consistent versioning behavior becomes critical. A well-crafted CLAUDE.md file ensures your AI assistant understands and respects your API versioning strategy, preventing breaking changes, maintaining backward compatibility, and following your team's conventions. This guide shows you how to document API versioning strategies in CLAUDE.md files for optimal AI-assisted development.
 
 

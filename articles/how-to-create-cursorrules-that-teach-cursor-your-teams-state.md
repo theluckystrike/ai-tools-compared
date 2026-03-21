@@ -15,11 +15,6 @@ voice-checked: true
 
 
 {% raw %}
-
-{%- include why-choose-cursorrules-state-management.html -%}
-
-
-
 CursorRules offer a powerful way to communicate your team's state management patterns to Cursor. When configured correctly, these rules guide the AI to generate code that aligns with your existing architecture, whether you use React Context, Redux Toolkit, Vue's Composition API, or Zustand. This guide shows you how to write effective CursorRules that capture your team's specific patterns.
 
 

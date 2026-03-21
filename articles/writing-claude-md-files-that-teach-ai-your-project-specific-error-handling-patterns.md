@@ -15,11 +15,6 @@ voice-checked: true
 
 
 {% raw %}
-
-{%- include why-choose-writing-claude-md-files-error-handling.html -%}
-
-
-
 When you work with AI coding assistants like Claude Code, the quality of output depends heavily on context. A well-crafted CLAUDE.md file transforms generic responses into project-aligned code. This guide focuses specifically on teaching AI assistants your error handling patterns—a critical aspect that often gets overlooked but dramatically affects code quality.
 
 

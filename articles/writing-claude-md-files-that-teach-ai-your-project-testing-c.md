@@ -15,11 +15,6 @@ intent-checked: true
 
 
 {% raw %}
-
-{%- include why-choose-writing-claude-md-files-testing-conventions.html -%}
-
-
-
 When you work with Claude Code or similar AI coding assistants, the quality of output depends heavily on how well the AI understands your project's conventions. A well-crafted CLAUDE.md file transforms generic AI responses into context-aware assistance that respects your team's testing patterns, frameworks, and quality standards.
 
 

@@ -16,11 +16,6 @@ voice-checked: true
 
 
 {% raw %}
-
-{%- include why-choose-claude-code-coverage.html -%}
-
-
-
 Setting up automated code coverage reporting is essential for maintaining code quality in any development project. Claude Code can help you configure coverage tools, generate insightful reports, and establish coverage thresholds that gate your CI/CD pipeline. This guide walks you through setting up coverage reporting from scratch.
 
 

@@ -15,11 +15,6 @@ voice-checked: true
 
 
 {% raw %}
-
-{%- include why-choose-ai-autocomplete-comparison.html -%}
-
-
-
 If you're a developer evaluating AI code assistants, data privacy ranks among the top concerns. Cursor AI, built on top of VS Code, has gained significant traction for its AI-powered coding capabilities. However, understanding exactly how it handles your code data requires examining their architecture, privacy policy, and available configuration options.
 
 

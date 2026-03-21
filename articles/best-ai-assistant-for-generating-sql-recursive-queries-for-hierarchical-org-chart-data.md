@@ -15,11 +15,6 @@ intent-checked: true
 
 
 {% raw %}
-
-{%- include why-choose-ai-sql.html -%}
-
-
-
 AI assistants can generate correct recursive SQL queries for organizational hierarchies by understanding CTE syntax, proper termination conditions, and path building logic. The best AI tools produce anchor and recursive query parts separately, include safeguards against infinite loops, and explain why each component matters. They also recognize when recursion is unnecessary and offer variations for different use cases like finding descendants, entire subtrees, or reporting chains.
 
 

@@ -15,11 +15,6 @@ voice-checked: true
 
 
 {% raw %}
-
-{%- include ai-writing-tools-intro.html -%}
-
-
-
 Open source maintainers face unique challenges that often lead to burnout. The constant pressure of answering issues, reviewing pull requests, and keeping documentation up to date creates a relentless workload. AI writing tools have emerged as powerful allies in this fight, helping maintainers communicate more efficiently, automate documentation tasks, and reclaim their time for creative work.
 
 

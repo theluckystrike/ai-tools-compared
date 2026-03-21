@@ -15,11 +15,6 @@ voice-checked: true
 
 
 {% raw %}
-
-{%- include why-choose-ai-tools-for-alembic-testing.html -%}
-
-
-
 Testing database migrations is one of the most critical yet often overlooked aspects of application development. When working with Alembic for SQLAlchemy-based database migrations, you need tests that verify both upgrade (up) and downgrade (down) paths work correctly. AI tools can significantly accelerate the creation of these tests, helping you catch schema inconsistencies, data loss issues, and migration failures before they reach production.
 
 
