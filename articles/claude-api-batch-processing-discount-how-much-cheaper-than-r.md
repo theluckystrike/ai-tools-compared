@@ -73,6 +73,9 @@ Batch processing allows you to submit large volumes of requests that are process
 The trade-off is simple: you sacrifice immediate results for substantial cost savings. For many production workloads, this is an excellent trade.
 
 
+Anthropic processes batch requests within 24 hours, though in practice most complete within a few hours depending on load. You submit a JSONL-formatted payload with up to 10,000 requests per batch, each with its own `custom_id` for matching results back to inputs. The API is idempotent — if a request fails partway through, you can safely resubmit without duplicating work.
+
+
 ## Practical Code Examples
 
 
@@ -137,6 +140,25 @@ if batch.status == "ended":
 ```
 
 
+For production systems, implement polling with exponential backoff rather than a tight loop:
+
+
+```python
+import time
+
+def poll_batch_until_complete(client, batch_id, initial_wait=60, max_wait=600):
+    """Poll batch status with exponential backoff."""
+    wait = initial_wait
+    while True:
+        batch = client.messages.batch.retrieve(batch_id)
+        if batch.status == "ended":
+            return batch
+        print(f"Batch {batch_id} status: {batch.status}. Waiting {wait}s...")
+        time.sleep(wait)
+        wait = min(wait * 1.5, max_wait)
+```
+
+
 ## Real-World Cost Comparison
 
 
@@ -165,6 +187,25 @@ Let's walk through a practical example to illustrate the savings. Suppose you ne
 For high-volume workloads processing millions of tokens monthly, the savings compound significantly. A team processing 100M tokens monthly could save $500K+ annually by switching to batch processing for appropriate workloads.
 
 
+Here is a broader cost comparison across common use cases to help you decide which model and mode to use:
+
+
+| Use Case | Monthly Volume | Real-Time Cost (Sonnet) | Batch Cost (Sonnet) | Annual Savings |
+
+|----------|---------------|------------------------|---------------------|----------------|
+
+| Document summarization | 10M tokens | $45 | $22.50 | $270 |
+
+| Data annotation | 100M tokens | $450 | $225 | $2,700 |
+
+| Content generation | 500M tokens | $2,250 | $1,125 | $13,500 |
+
+| Large-scale NLP pipeline | 1B tokens | $4,500 | $2,250 | $27,000 |
+
+
+For workloads that are clearly asynchronous in nature, batch mode is almost always the correct default choice.
+
+
 ## When to Use Batch vs Real-Time
 
 
@@ -185,6 +226,8 @@ Understanding when to use each processing mode maximizes both your cost savings 
 
 - Batch translation services
 
+- Nightly ETL pipelines that call the LLM for enrichment
+
 
 **Use Real-Time Processing For:**
 
@@ -199,7 +242,7 @@ Understanding when to use each processing mode maximizes both your cost savings 
 - Single-request operations
 
 
-A hybrid approach often works best: use real-time for user-facing features and batch processing for后台 operations like analytics, reporting, and bulk processing.
+A hybrid approach often works best: use real-time for user-facing features and batch processing for background operations like analytics, reporting, and bulk processing. Many teams maintain two separate API keys with different rate limit tiers — one for interactive endpoints, one for batch pipelines — to avoid noisy-neighbor contention.
 
 
 ## Optimizing Your Batch Workflows
@@ -235,7 +278,7 @@ batch = client.messages.batch.create(requests=batch_requests)
 
 **2. Use Appropriate Max Tokens Settings**
 
-Set realistic max_tokens values to avoid overpaying for unused capacity. Analyze your typical output lengths and adjust accordingly.
+Set realistic max_tokens values to avoid overpaying for unused capacity. Analyze your typical output lengths and adjust accordingly. If your summaries average 150 tokens, setting max_tokens to 512 wastes nothing — but setting it to 4096 forces you to keep the connection open longer and adds no cost benefit. Token billing is based on actual output, not the max ceiling.
 
 
 **3. Monitor Batch Performance**
@@ -250,6 +293,40 @@ print(f"Processing time: {batch_info.processing_time}")
 print(f"Total tokens: {batch_info.total_tokens}")
 print(f"Estimated cost: ${batch_info.total_tokens * 0.0015:.2f}")
 ```
+
+
+**4. Handle Partial Failures Gracefully**
+
+Batch jobs can have individual request failures without the entire batch failing. Always check the result type for each response:
+
+
+```python
+for result in client.messages.batch.list_results(batch.id):
+    if result.result.type == "succeeded":
+        text = result.result.message.content[0].text
+        # Process successful result
+    elif result.result.type == "errored":
+        error = result.result.error
+        print(f"Request {result.custom_id} failed: {error.type} — {error.message}")
+        # Queue for retry or log for investigation
+```
+
+
+**5. Model Selection for Cost Optimization**
+
+Not every task needs Sonnet or Opus. For classification, extraction, or simple formatting tasks, Haiku delivers excellent accuracy at a fraction of the price — $0.50 input / $2.50 output per million tokens in batch mode. Run a small validation set across models before committing your entire pipeline to a specific model.
+
+
+## Common Pitfalls to Avoid
+
+
+**Submitting batches with malformed requests:** The API validates each request individually. A single malformed entry does not block the rest, but you will have silent failures if you do not check result types.
+
+**Not storing batch IDs persistently:** If your process crashes before retrieval, you need the batch ID to recover results. Write batch IDs to a database or log file immediately after creation.
+
+**Ignoring the 24-hour processing window:** Batch processing is not suitable for SLA-bound workflows. If you need guaranteed sub-minute response times, use real-time even at higher cost.
+
+**Using batch mode for tiny volumes:** The overhead of managing asynchronous state is only worth it when you have at least a few hundred requests. For 10–20 requests, real-time is simpler and the cost difference is negligible.
 
 
 ## Related Articles
