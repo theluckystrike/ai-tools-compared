@@ -200,6 +200,197 @@ Instead, break the work into discrete phases:
 Each phase produces working code you can test before proceeding. If something breaks, you know exactly which AI-assisted change caused the problem.
 
 
+## Using Git to Track AI Refactoring Progress
+
+
+Git becomes your safety net when working with AI-assisted refactorings. Create a dedicated branch for AI work and commit frequently after each successful AI interaction:
+
+
+```bash
+git checkout -b refactor/ai-assisted-order-service
+
+# After first AI generation
+git add -A
+git commit -m "refactor(order): extract validation logic to OrderValidator
+
+- AI-generated OrderValidator class with full type coverage
+- Maintains backward compatibility with OrderService
+- All existing tests passing"
+
+# After second AI modification
+git add -A
+git commit -m "refactor(order): migrate OrderService to use new validator
+
+- Updated OrderService to delegate validation to OrderValidator
+- Removed duplicated validation code
+- Test coverage increased by 8%"
+```
+
+
+If an AI modification introduces bugs, reverting becomes trivial: `git revert COMMIT_HASH`. This granular history also helps during code review—reviewers can see exactly which parts the AI generated versus which you wrote manually.
+
+
+## Prompt Templates for Effective Refactoring
+
+
+Develop reusable prompt templates that structure AI requests effectively. These templates embed your refactoring strategy into the prompt itself:
+
+
+**Template: File-by-file refactoring**
+
+```
+I'm refactoring [MODULE_NAME] to [GOAL].
+
+Current state:
+- Language: [LANGUAGE]
+- Test coverage: [COVERAGE_PERCENT]%
+- Constraints: [LIST_CONSTRAINTS]
+
+Task: Refactor [FILE_PATH] to [SPECIFIC_CHANGE]
+
+Related files (for context, don't modify):
+- [FILE1] — [BRIEF_PURPOSE]
+- [FILE2] — [BRIEF_PURPOSE]
+
+Success criteria:
+- [CRITERIA_1]
+- [CRITERIA_2]
+- Maintain the public interface of [CLASS/MODULE]
+```
+
+
+**Template: Multi-file coordination**
+
+```
+I'm coordinating changes across multiple files for [FEATURE_NAME].
+
+Architecture overview:
+- Domain models are in [DIRECTORY]
+- Data access layer is in [DIRECTORY]
+- Service layer is in [DIRECTORY]
+
+Phase [NUMBER]: [PHASE_DESCRIPTION]
+
+Files to modify in this phase: [FILE_LIST]
+
+Context from previous phases:
+[SUMMARY_OF_PREVIOUS_WORK]
+
+Please:
+1. [ACTION_1]
+2. [ACTION_2]
+3. [ACTION_3]
+
+Constraints for this phase:
+- [CONSTRAINT_1]
+- [CONSTRAINT_2]
+```
+
+
+These templates ensure consistent, high-quality prompts that set clear expectations for AI-generated code.
+
+
+## Handling Complex Dependency Graphs
+
+
+Some refactorings involve files with circular or complex dependencies. Rather than fighting these patterns, work with them:
+
+
+```
+Dependency Analysis Request:
+
+These three files have interdependencies that make refactoring tricky:
+- AuthService imports from PermissionService
+- PermissionService imports from UserService
+- UserService imports from AuthService (for token validation)
+
+Request: Without breaking these imports, identify which class should own
+which responsibility. What would a cleaner architecture look like?
+List the import changes needed to eliminate the circular dependency.
+```
+
+
+The AI can map out a refactoring path that untangles these dependencies without destroying intermediate code states.
+
+
+## Validating AI-Generated Refactoring
+
+
+Before committing AI-generated code, run additional checks beyond tests:
+
+
+```bash
+# Type checking (TypeScript/Flow)
+npm run type-check
+
+# Linting with strict rules
+npm run lint -- --max-warnings 0
+
+# Complexity analysis
+npm run complexity -- src/refactored-module
+
+# Coverage report focusing on new code
+npm run coverage -- --collect-coverage-from="src/refactored-module/**"
+
+# Build and bundle size check
+npm run build
+du -h dist/
+```
+
+
+If any of these catch issues, share the specific error with the AI. It can diagnose and fix the problem because it understands the refactoring intent.
+
+
+## Real-World Complexity: State Management Migration
+
+
+Here's how to tackle a concrete, complex scenario using these techniques. Suppose you're migrating from Redux to Zustand:
+
+
+**Phase 1: Understand Redux structure**
+
+```
+Prompt: Analyze redux/store.ts and redux/slices/auth.ts.
+What are the actions, reducers, and selectors in the authentication state?
+Create a mapping document showing the Redux concepts and their Zustand equivalents.
+```
+
+**Phase 2: Create Zustand stores in parallel**
+
+```
+Prompt: Based on the Redux structure I just described, create a Zustand store
+in zustand/authStore.ts with equivalent functionality.
+
+Redux side effects are handled with redux-thunk. In Zustand, implement
+the same side effects using async functions within the store.
+
+The Redux selectors must work identically—same input, same output—even though
+the implementation changes.
+```
+
+**Phase 3: Create an adapter layer**
+
+```
+Prompt: Create a shim file that exports both Redux and Zustand implementations
+behind a common interface. Components should work with either implementation
+without knowing which one they're using.
+
+This allows incremental migration—some components can use Zustand while
+others still use Redux.
+```
+
+**Phase 4: Migrate components incrementally**
+
+```
+Prompt: Migrate these three components from Redux (useSelector/useDispatch)
+to Zustand (useAuthStore). Test each component in isolation to ensure
+the store integration works before moving to the next component.
+```
+
+
+This phased approach keeps the codebase in a working state throughout the migration, enabling safer, faster refactoring with AI assistance.
+
+
 ## Testing AI-Assisted Refactoring
 
 

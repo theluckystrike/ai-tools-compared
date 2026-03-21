@@ -27,6 +27,18 @@ Cursor AI builds on VS Code with integrated AI capabilities that differ from Cop
 The migration involves three main areas: exporting your Copilot conversation history, transferring project-specific context, and configuring Cursor to match your workflow preferences.
 
 
+## Understanding What You Are Actually Migrating
+
+
+Before diving into the mechanics, it helps to be clear about what "migrating Copilot history" actually means in practice. There are three distinct categories of value stored in Copilot's history:
+
+1. **Conversation transcripts** — The raw back-and-forth text between you and the AI. These are rarely useful to replay verbatim, but they contain decisions and explanations.
+2. **Project-specific context** — Architecture decisions, naming conventions, and constraints that came up in conversations and shaped how the codebase evolved.
+3. **Reusable prompts** — Patterns you found yourself repeating, such as "generate a Jest test for this function following our existing test style."
+
+Only the second and third categories are worth migrating in a structured way. Conversation transcripts are useful as a reference archive, but trying to inject raw chat history into Cursor's context window just creates noise. Focus the migration effort on extracting the durable knowledge.
+
+
 ## Exporting Copilot Chat History
 
 
@@ -244,6 +256,27 @@ You are working on a React TypeScript project.
 ```
 
 
+## Copilot vs Cursor: Feature Comparison
+
+
+Understanding the differences helps you know what to reconfigure after migration:
+
+
+| Feature | GitHub Copilot | Cursor AI |
+|---------|---------------|-----------|
+| Inline code completion | Yes | Yes |
+| Chat interface | Yes (VS Code sidebar) | Yes (integrated panel) |
+| Multi-file awareness | Limited | Strong (Composer mode) |
+| Codebase indexing | No | Yes (auto-indexed) |
+| Custom instructions | Copilot instructions file | `.cursorrules` |
+| Model selection | GPT-4o (fixed) | Claude, GPT-4o, others |
+| GitHub integration | Native | Via extensions |
+| Price | $10/mo individual | $20/mo Pro |
+
+
+The most important difference for context migration is codebase indexing. Cursor's automatic codebase index means you do not need to manually feed file contents into every conversation — Cursor already knows your project structure. This changes how you write prompts: instead of pasting function signatures to provide context, you reference them with `@filename` and Cursor retrieves the content.
+
+
 ## Best Practices for the Transition
 
 
@@ -260,6 +293,26 @@ Use version control: Commit your context documents to Git so teammates benefit f
 
 
 Test before abandoning: Keep Copilot accessible for a week while you adjust to Cursor. Both tools can coexist during the transition.
+
+
+Invest in your `.cursorrules` file: This is the highest-leverage configuration step in the migration. A well-written rules file prevents Cursor from making suggestions that contradict your project conventions, reducing the cognitive load of reviewing AI output during the adjustment period.
+
+
+## Validating the Migration
+
+
+After completing the migration steps, run a structured validation to confirm Cursor is providing equivalent or better assistance compared to your Copilot setup.
+
+
+A practical validation checklist:
+
+- Open a file you worked on heavily with Copilot and ask Cursor to explain the function at the cursor position. Confirm it uses correct project terminology without needing extra prompting.
+- Trigger a multi-file refactor (rename a shared utility function) and compare how Cursor handles cross-file updates versus how Copilot handled similar tasks.
+- Ask Cursor a project-specific question that relies on your `.cursorrules` context and confirm the response respects your stated conventions.
+- Test escalating complexity: start with single-function completion, then a new feature request, then an architectural question. Each tier should benefit from the codebase index.
+
+
+Track your time-to-first-useful-suggestion during the first week. Most developers find Cursor's first-day performance roughly equivalent to Copilot's, with quality improving noticeably by day 3–5 as the codebase index refines and you learn how to frame prompts for Cursor's model selection. The transition cost is real but short-lived — typically under a week before Cursor's codebase awareness begins paying dividends on complex tasks where Copilot's limited context window was previously a bottleneck.
 
 
 ## Related Articles

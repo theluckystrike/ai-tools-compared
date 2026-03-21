@@ -15,7 +15,6 @@ voice-checked: true
 ---
 
 
-{% raw %}
 Split large files into focused modules before sharing with AI to stay within context limits while improving solution quality. Use semantic chunking—grouping related functions by feature rather than arbitrary line breaks—and always provide class/interface definitions first. This guide covers practical context window management techniques that dramatically improve AI assistance effectiveness on projects exceeding 100,000 lines of code.
 
 
@@ -210,6 +209,228 @@ Track which strategies produce the best results for your specific workflow. Reco
 Different projects suit different strategies. A monolithic repository benefits from directory grouping, while a microservices architecture might work better with targeted file selection.
 
 
+## Semantic Chunking Techniques
+
+
+Effective chunking groups code by logical function, not just file size. This preserves relationships between related code:
+
+
+```typescript
+// Anti-pattern: Chunking by line count
+// Chunk 1: lines 1-100 (incomplete class)
+// Chunk 2: lines 101-200 (methods out of context)
+
+// Better: Semantic chunking
+// Chunk 1: UserService class (lines 1-85, complete)
+// Chunk 2: AuthService class (lines 86-145, complete)
+// Chunk 3: PermissionService class (lines 146-200, complete)
+
+// This preserves class boundaries and context
+```
+
+
+When using AI, always provide complete functions or classes rather than splitting them across context boundaries. A 150-line complete class is better than two 75-line file fragments.
+
+
+## Context Window Size Comparison (2026)
+
+
+Different AI models offer vastly different context limits:
+
+| Tool | Free Tier | Pro/Paid | Notes |
+|------|-----------|---------|-------|
+| Claude | 100K tokens | 200K tokens | Largest context, best for large files |
+| GPT-4o | 128K tokens | 128K tokens | Consistent, good for most tasks |
+| Cursor AI | ~32K tokens | ~128K tokens | IDE-based, manages context for you |
+| GitHub Copilot | 4K-8K tokens | 8K-32K tokens | Limited, requires strategic chunking |
+| Windsurf | 32K tokens | 128K tokens | Editor integration helps manage limits |
+
+
+Claude's 200K token window is substantially larger, allowing you to include more code without chunking. For large refactorings, this advantage compounds.
+
+
+## Practical Context Allocation
+
+
+For a typical API endpoint refactoring, budget your context as:
+
+- **30% base cost:** Model overhead and reasoning
+- **40% code context:** The files you're modifying (try to keep to 3-5 files max)
+- **20% requirements:** Your instructions and expected behavior
+- **10% buffer:** Leave space for model to think
+
+With a 100K token context:
+- Usable space: ~70K tokens
+- Code context: ~28K tokens
+- That's roughly 7,000 lines of code (4 typical files)
+
+With a 200K token context:
+- Usable space: ~140K tokens
+- Code context: ~56K tokens
+- That's roughly 14,000 lines of code (8-10 typical files)
+
+
+## File Selection Decision Tree
+
+
+When choosing which files to include:
+
+
+```
+Is the file directly related to your task?
+├─ YES → Include it
+├─ NO  → Don't include it
+│
+Does the AI need to understand it?
+├─ YES → Include it (even if indirectly related)
+├─ NO  → Don't include it
+│
+Is it referenced by files you're including?
+├─ YES → Consider including it for context
+├─ NO  → Don't include it
+│
+Can you summarize it in comments instead?
+├─ YES → Use comments, save tokens
+├─ NO  → Include the whole file
+```
+
+
+## Context Compression Patterns
+
+
+Save tokens by compressing less critical context:
+
+
+```typescript
+// Before (full file, 500 tokens)
+export interface UserResponse {
+  id: string;
+  email: string;
+  name: string;
+  role: 'admin' | 'user' | 'editor';
+  createdAt: Date;
+  updatedAt: Date;
+  lastLogin?: Date;
+  preferences: {
+    theme: 'light' | 'dark';
+    notifications: boolean;
+    language: string;
+  };
+  // ... 20 more lines
+}
+
+// After (compressed comment, 50 tokens)
+// UserResponse interface: {id, email, name, role (admin|user|editor),
+// createdAt, updatedAt, lastLogin?, preferences {theme, notifications, language}}
+```
+
+
+This approach preserves structure while reducing tokens by 90% for less critical code.
+
+
+## Tool-Specific Context Management
+
+
+### Claude Code (CLI)
+
+Use codebase context efficiently:
+
+```bash
+# Only include relevant files
+claude chat --include "src/services/*.ts" \
+           --exclude "src/**/*.test.ts" \
+           --max-context 150000 \
+           "Refactor authentication service"
+```
+
+### Cursor AI
+
+Leverage project indexing:
+
+```
+# Use @symbols for smart context
+@auth-service.ts (include specific file)
+@/src/services (include directory)
+@User (include symbol definition)
+
+This tells Cursor exactly what matters
+```
+
+### GitHub Copilot in VS Code
+
+Work within constraints:
+
+```
+// Keep related code visible in editor
+// Only ask questions about visible code
+// Use line references: // Line 45: this pattern
+```
+
+
+## Batch Processing for Large Projects
+
+
+Break mammoth refactoring into sessions:
+
+
+```bash
+# Session 1: Analyze and plan
+# Provide 3-4 files, understand the structure
+claude --mode analyze "How would you refactor payment-service.ts?"
+
+# Session 2: Implement authentication changes
+claude --include "src/services/auth.ts" --include "src/middleware/auth.ts" \
+       "Migrate auth service to JWT tokens"
+
+# Session 3: Update dependent services
+claude --include "src/services/payment-service.ts" \
+       "Update payment service to use new auth tokens"
+
+# Session 4: Migrate tests
+claude --include "src/**/*.test.ts" \
+       "Update tests to match new auth structure"
+```
+
+
+This preserves context efficiency while maintaining logical progression.
+
+
+## Avoiding Context Waste
+
+
+Common mistakes that waste tokens:
+
+1. **Including entire node_modules or dependencies** — only include imports you care about
+2. **Copying entire build outputs** — just reference key generated types
+3. **Pasting all git history** — only include recent relevant commits
+4. **Including all comments** — focus on logic, not narrative
+5. **Using entire files when functions matter** — extract the relevant function
+
+These mistakes can waste 50% of available context on irrelevant information.
+
+
+## Testing Context Window Performance
+
+
+Measure effectiveness of your context selection:
+
+
+```bash
+# Time the response
+time claude chat --include "src/myfile.ts" "Fix this bug"
+
+# Compare responses with different context
+claude chat --include "src/myfile.ts" "Fix bug"  # Fast, might miss context
+claude chat --include "src/**" "Fix bug"         # Slow, more complete
+```
+
+
+Use timing as a signal—if response time exceeds 10 seconds, you probably have too much context.
+
+
+Different projects suit different strategies. A monolithic repository benefits from directory grouping, while a microservices architecture might work better with targeted file selection.
+
+
 ## Related Articles
 
 - [How to Use AI Context Management to Work on Large Refactorin](/ai-tools-compared/how-to-use-ai-context-management-to-work-on-large-refactorin/)
@@ -219,4 +440,3 @@ Different projects suit different strategies. A monolithic repository benefits f
 - [How to Manage AI Coding Context Window to Avoid Hallucinated](/ai-tools-compared/how-to-manage-ai-coding-context-window-to-avoid-hallucinated/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
