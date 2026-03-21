@@ -71,7 +71,7 @@ def lookup_order(order_id: str, customer_id: str):
 ```
 
 
-Claude performs particularly well when handling exceptions—like delayed shipments or address changes—because it can explain situations in customer-friendly language while providing appropriate补偿 options based on company policy.
+Claude performs particularly well when handling exceptions—like delayed shipments or address changes—because it can explain situations in customer-friendly language while providing appropriate compensation options based on company policy.
 
 
 ### GPT-4o (OpenAI)
@@ -225,6 +225,112 @@ def handle_carrier_webhook():
 
     return "OK", 200
 ```
+
+
+## Handling Edge Cases and Exceptions
+
+
+Order tracking support systems face a predictable set of hard scenarios that separate production-grade implementations from prototypes.
+
+
+### Lost Package Detection
+
+
+When a shipment stops updating for more than 48 hours, proactive detection prevents customer frustration. Build a background job that flags stalled shipments and triggers automatic outreach:
+
+
+```python
+import datetime
+
+def detect_stalled_shipments():
+    cutoff = datetime.datetime.utcnow() - datetime.timedelta(hours=48)
+    stalled = order_db.query(
+        status="in_transit",
+        last_carrier_update__lt=cutoff
+    )
+    for order in stalled:
+        escalate_to_carrier_claim(order.id)
+        notify_customer_proactively(order.customer_id, "stalled_shipment")
+```
+
+
+### Multiple Carrier Aggregation
+
+
+Large e-commerce operations route shipments through UPS, FedEx, USPS, and regional carriers simultaneously. A unified tracking layer abstracts these differences:
+
+
+```python
+CARRIER_ADAPTERS = {
+    "ups": UPSAdapter(),
+    "fedex": FedExAdapter(),
+    "usps": USPSAdapter(),
+    "lasership": LaserShipAdapter(),
+}
+
+def get_tracking_data(tracking_number: str, carrier_code: str) -> dict:
+    adapter = CARRIER_ADAPTERS.get(carrier_code)
+    if not adapter:
+        raise ValueError(f"Unsupported carrier: {carrier_code}")
+    raw = adapter.fetch(tracking_number)
+    return {
+        "status": normalize_status(raw["status"]),
+        "estimated_delivery": raw.get("eta"),
+        "last_event": raw.get("last_scan"),
+        "carrier": carrier_code,
+    }
+```
+
+
+Feeding normalized carrier data into your AI system lets the model reason about delivery status without needing to understand carrier-specific quirks.
+
+
+## AI Tool Comparison Summary
+
+
+| Capability | Claude | GPT-4o | Gemini |
+|---|---|---|---|
+| Natural language understanding | Excellent | Excellent | Good |
+| Exception handling | Excellent | Good | Good |
+| Multilingual support | Good | Excellent | Good |
+| Structured output | Good | Excellent | Good |
+| GCP integration | None | None | Native |
+| Multimodal (image) | Yes | Yes | Yes |
+| Pricing (per 1M tokens) | Moderate | Moderate | Competitive |
+| Fine-tuning availability | Limited | Yes | Limited |
+
+
+## Testing and Evaluating Your Implementation
+
+
+Before going to production, evaluate your order tracking AI against a representative sample of real customer queries. Common evaluation criteria include:
+
+
+- **Accuracy**: Does the system retrieve the correct order for the authenticated customer?
+- **Tone**: Are responses empathetic without being verbose?
+- **Completeness**: Does the AI address all parts of a multi-part question?
+- **Fallback behavior**: Does the system degrade gracefully when carrier APIs are down?
+
+
+Run at least 200 test cases covering happy paths, edge cases, and adversarial inputs (customers trying to access another person's order). Track failure modes by category and fix systematically rather than patching individual cases. A regression test suite prevents regressions when you update your AI model or system prompt.
+
+
+For response quality evaluation, a lightweight LLM-as-judge pattern works well: pass each AI response alongside the ground truth order data to a second model and ask it to score accuracy and helpfulness on a 1-5 scale. This scales better than manual review for ongoing monitoring.
+
+
+## Escalation to Human Agents
+
+
+No AI system handles every scenario. Build graceful escalation paths for cases where the AI cannot resolve the issue:
+
+
+- Orders requiring carrier investigations or insurance claims
+- Address update requests after shipment has left the facility
+- Fraud or unauthorized order queries
+- High-value customer complaints requiring empathy-driven resolution
+
+
+A good escalation trigger checks confidence scores from the AI's response and routes low-confidence cases to a human queue automatically. Store the full conversation context so the human agent can continue without asking the customer to repeat information.
 
 
 ## Choosing the Right Tool
