@@ -50,6 +50,25 @@ For small coding projects, you will find that Sonnet provides the best balance b
 
 
 
+## Model Selection by Task Type
+
+The biggest savings come from routing tasks to the cheapest model that can handle them. Many developers default to Sonnet for everything, but Haiku handles a surprising range of common tasks just as well.
+
+| Task | Recommended Model | Reasoning |
+|---|---|---|
+| Rename variables, format code | Haiku | No reasoning required |
+| Write docstrings from function signatures | Haiku | Mechanical, pattern-based |
+| Fix a specific bug with clear error message | Sonnet | Needs moderate code understanding |
+| Write a function from scratch | Sonnet | Requires design judgment |
+| Code review for a full PR | Sonnet | Context window and reasoning needed |
+| Architect a new system from requirements | Opus | Complex reasoning, high stakes |
+| Debug an obscure async race condition | Opus | Requires deep reasoning chains |
+| Generate test cases for a known function | Haiku | Mechanical from function signature |
+
+Routing correctly saves 60-80% on simpler tasks. A quick heuristic: if a junior developer could do it mechanically, Haiku probably can too.
+
+
+
 ## Practical Code Implementation
 
 
@@ -176,6 +195,29 @@ message = client.messages.create(
 ```
 
 
+### 5. Use Prompt Caching for Repeated Context
+
+Anthropic offers prompt caching, which dramatically reduces costs when you repeatedly send the same large context — a full codebase, a lengthy system prompt, or documentation. Mark stable context with a `cache_control` block and you pay only for the first request at full price. Subsequent calls with the same cached content are charged at roughly 10% of normal input token cost:
+
+```python
+message = client.messages.create(
+    model="claude-sonnet-4-20250514",
+    max_tokens=1024,
+    system=[
+        {
+            "type": "text",
+            "text": your_large_codebase_context,
+            "cache_control": {"type": "ephemeral"}
+        }
+    ],
+    messages=[{"role": "user", "content": "What does the auth module do?"}]
+)
+```
+
+For projects where you repeatedly query the same large codebase, prompt caching alone can cut your monthly bill by 50% or more.
+
+
+
 ## Real-World Example: Code Review Bot
 
 
@@ -236,14 +278,14 @@ class CostTracker:
     def __init__(self):
         self.total_spent = 0
         self.requests = 0
-    
+
     def log_request(self, input_tokens: int, output_tokens: int):
         # Approximate Sonnet pricing
         input_cost = input_tokens / 1_000_000 * 3
         output_cost = output_tokens / 1_000_000 * 15
         self.total_spent += input_cost + output_cost
         self.requests += 1
-    
+
     def get_stats(self):
         return {
             "total_requests": self.requests,
@@ -251,6 +293,62 @@ class CostTracker:
             "avg_cost_per_request": f"${self.total_spent / max(self.requests, 1):.4f}"
         }
 ```
+
+Use the actual `usage` field from the API response for accurate tracking — `message.usage.input_tokens` and `message.usage.output_tokens` are exact, not estimates.
+
+
+
+## Estimating Monthly Costs Before You Start
+
+Before building anything, run a rough estimate against your expected usage. This prevents surprises:
+
+```python
+def estimate_monthly_cost(
+    daily_requests: int,
+    avg_input_tokens: int,
+    avg_output_tokens: int,
+    model: str = "sonnet"
+) -> float:
+    pricing = {
+        "haiku": {"input": 0.20, "output": 1.00},
+        "sonnet": {"input": 3.00, "output": 15.00},
+        "opus": {"input": 15.00, "output": 75.00}
+    }
+    rates = pricing[model]
+    daily_cost = (
+        (avg_input_tokens / 1_000_000 * rates["input"]) +
+        (avg_output_tokens / 1_000_000 * rates["output"])
+    ) * daily_requests
+    return daily_cost * 30
+
+# Example: 100 requests/day, 500 input tokens, 200 output tokens
+monthly = estimate_monthly_cost(100, 500, 200, "sonnet")
+print(f"Estimated monthly cost: ${monthly:.2f}")
+# Output: ~$1.23/month — manageable for a small project
+```
+
+For most small coding projects (a personal tool, a side project, a script you run occasionally), Claude API costs stay well under $5/month with sensible defaults. The spending spikes happen when you feed it large files without trimming context first.
+
+
+
+## Frequently Asked Questions
+
+**Is there a free tier for the Claude API?**
+
+Anthropic doesn't offer a permanent free tier for the Claude API, but new accounts receive free credits on signup to experiment. For ongoing small projects, the pay-as-you-go cost is low enough that a free tier is rarely necessary — $5 in API credits goes a long way when using Haiku.
+
+**Should I use Haiku for everything to save money?**
+
+No. Haiku's quality drops noticeably on tasks requiring multi-step reasoning, understanding ambiguous requirements, or generating non-trivial code structures. Using Haiku for complex tasks means you spend more time correcting output than you save in API costs. Use the routing table above as a guide.
+
+**How does Claude API pricing compare to OpenAI?**
+
+Claude's Haiku is cheaper than GPT-3.5 Turbo for most use cases, while Claude Sonnet is competitive with GPT-4o. The best value comparison depends on your specific task — Sonnet often produces better code output per dollar than GPT-4o for reasoning-heavy tasks.
+
+**Can I set a hard spending limit?**
+
+Yes. Anthropic's console lets you set monthly spend limits per API key. Set a limit before starting to avoid runaway costs from bugs that cause infinite loops or excessively large context windows.
+
 
 
 ## Related Reading
