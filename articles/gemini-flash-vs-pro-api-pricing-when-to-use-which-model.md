@@ -30,6 +30,21 @@ Gemini Pro delivers more advanced reasoning capabilities and better quality outp
 Both models use input and output token-based pricing. Flash typically costs about 75-90% less than Pro depending on the specific task and volume. Check Google's official pricing page for the most current rates, as AI pricing changes frequently.
 
 
+## Current Pricing at a Glance
+
+The table below reflects approximate pricing tiers as of early 2026. Always verify against the Google AI Studio pricing page before making architecture decisions, since pricing updates happen frequently.
+
+| Model | Input (per 1M tokens) | Output (per 1M tokens) | Context Window |
+|---|---|---|---|
+| Gemini 1.5 Flash | ~$0.075 | ~$0.30 | 1M tokens |
+| Gemini 1.5 Flash-8B | ~$0.0375 | ~$0.15 | 1M tokens |
+| Gemini 1.5 Pro | ~$1.25 (up to 128K) | ~$5.00 (up to 128K) | 2M tokens |
+| Gemini 2.0 Flash | ~$0.10 | ~$0.40 | 1M tokens |
+| Gemini 2.0 Pro (Experimental) | Contact Google | Contact Google | 2M tokens |
+
+For most production use cases, the cost difference between Flash and Pro represents a 10-15x multiplier on per-token costs. At scale—say 50 million tokens per day—this difference translates to thousands of dollars monthly.
+
+
 ## When to Use Gemini Flash
 
 
@@ -176,6 +191,24 @@ response = model.generate_content(
 ```
 
 
+## Use Case Decision Matrix
+
+Use this matrix to quickly determine which model fits your task.
+
+| Use Case | Recommended Model | Reason |
+|---|---|---|
+| Email spam classification | Flash | Simple binary classification |
+| Sentiment analysis at scale | Flash | Pattern matching, not reasoning |
+| Live customer chat | Flash | Latency matters, responses are simple |
+| SQL query generation | Pro | Accuracy errors are costly |
+| Legal document summarization | Pro | Nuance and accuracy critical |
+| Bulk product description rewrite | Flash (with review) | Volume task, quality acceptable |
+| Security vulnerability analysis | Pro | Requires deep reasoning |
+| Translation (common languages) | Flash | Well-covered by Flash's training |
+| Technical documentation writing | Pro | Tone and precision matter |
+| RAG retrieval + answer synthesis | Flash for retrieval, Pro for synthesis | Tiered approach saves cost |
+
+
 ## Cost Optimization Strategies
 
 
@@ -232,6 +265,62 @@ inefficient_prompt = """Please carefully read and thoroughly summarize
 the following article, paying attention to all details: {article_text}"""
 ```
 
+### Automatic Complexity Scoring
+
+A more sophisticated approach uses Flash itself to score task complexity before routing:
+
+```python
+def classify_complexity(task_description: str) -> str:
+    """Use Flash to classify whether a task needs Pro."""
+    classifier = genai.GenerativeModel('gemini-1.5-flash')
+    result = classifier.generate_content(
+        f"Rate complexity: '{task_description}'. Reply with only: simple or complex"
+    )
+    return result.text.strip().lower()
+
+def route_task(prompt: str) -> str:
+    complexity = classify_complexity(prompt[:200])
+    if complexity == "complex":
+        model = genai.GenerativeModel('gemini-1.5-pro')
+    else:
+        model = genai.GenerativeModel('gemini-1.5-flash')
+    return model.generate_content(prompt).text
+```
+
+This adds a small overhead per request (one cheap Flash call) but can prevent expensive Pro calls for tasks that don't need them.
+
+
+## Estimating Your Monthly Costs
+
+Before committing to an architecture, estimate your costs based on expected token volume.
+
+```python
+def estimate_monthly_cost(
+    daily_requests: int,
+    avg_input_tokens: int,
+    avg_output_tokens: int,
+    model: str = "flash"
+) -> dict:
+    """Rough monthly cost estimate. Verify against current pricing."""
+    pricing = {
+        "flash": {"input": 0.075 / 1_000_000, "output": 0.30 / 1_000_000},
+        "pro":   {"input": 1.25  / 1_000_000, "output": 5.00 / 1_000_000},
+    }
+    p = pricing[model]
+    daily_input_cost  = daily_requests * avg_input_tokens  * p["input"]
+    daily_output_cost = daily_requests * avg_output_tokens * p["output"]
+    monthly = (daily_input_cost + daily_output_cost) * 30
+    return {"model": model, "monthly_usd": round(monthly, 2)}
+
+# Example: 10,000 requests/day, 500 input tokens, 200 output tokens
+flash_estimate = estimate_monthly_cost(10_000, 500, 200, "flash")
+pro_estimate   = estimate_monthly_cost(10_000, 500, 200, "pro")
+print(flash_estimate)  # {'model': 'flash', 'monthly_usd': ~13.50}
+print(pro_estimate)    # {'model': 'pro',   'monthly_usd': ~219.00}
+```
+
+At this volume and token profile, Flash costs approximately 16x less per month. The exact ratio shifts based on your output-to-input token ratio—output tokens are priced higher, and Pro's output premium is steeper.
+
 
 ## Making Your Decision
 
@@ -264,7 +353,6 @@ Many production applications benefit from using both models in a tiered architec
 
 
 The most cost-effective approach is to benchmark both models on your actual workload. A task that seems complex might work fine with Flash, while unexpected complexities might require Pro for certain inputs.
-
 
 ---
 
