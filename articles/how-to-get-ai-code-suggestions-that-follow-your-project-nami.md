@@ -9,7 +9,7 @@ permalink: /how-to-get-ai-code-suggestions-that-follow-your-project-naming-conve
 categories: [guides]
 tags: [ai-tools-compared, tools, productivity, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

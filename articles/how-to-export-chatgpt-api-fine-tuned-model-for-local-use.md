@@ -9,7 +9,7 @@ permalink: /how-to-export-chatgpt-api-fine-tuned-model-for-local-use/
 categories: [guides]
 tags: [ai-tools-compared, tools, chatgpt, api]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

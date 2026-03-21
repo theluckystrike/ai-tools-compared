@@ -9,7 +9,7 @@ permalink: /how-to-create-cursorrules-that-enforce-your-teams-react-comp/
 categories: [guides]
 tags: [ai-tools-compared, react, cursorrules, ai-tools]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
