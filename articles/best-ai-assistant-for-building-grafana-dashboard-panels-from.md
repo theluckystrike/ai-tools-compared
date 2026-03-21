@@ -154,9 +154,26 @@ For developers who prefer working in the terminal, Claude Code provides command-
 
 - Can generate and validate dashboard JSON files
 
-- Integrates with shell scripts for批量 dashboard creation
+- Integrates with shell scripts for bulk dashboard creation
 
 - Good for CI/CD integrated dashboard generation
+
+
+## AI Assistant Comparison Table
+
+Choosing the right tool depends on your workflow and the complexity of your dashboards. Here is a side-by-side breakdown.
+
+| Feature | Claude | GitHub Copilot | Cursor | Claude Code |
+|---|---|---|---|---|
+| PromQL knowledge depth | Excellent | Good | Good | Excellent |
+| IDE integration | No | Yes (VS Code, JetBrains) | Yes | No (terminal) |
+| Dashboard JSON generation | Yes | Limited | Yes | Yes |
+| Threshold configuration help | Yes | No | Yes | Yes |
+| GitOps / provisioning workflow | No | Yes | Yes | Yes |
+| Explains query behavior | Yes | No | Partial | Yes |
+| Best for teams | Chat-heavy workflows | Code-first workflows | Refactoring existing dashboards | Script-driven automation |
+
+For greenfield dashboard development with complex PromQL, Claude or Cursor provide the deepest support. For teams already living in VS Code and managing dashboards as code in Git, Copilot's IDE integration often wins on convenience.
 
 
 ## Practical Examples
@@ -231,6 +248,36 @@ sum(rate(api_requests_total{service="auth"}[5m]))
 AI assistants help ensure you use matching labels and appropriate rate intervals for both metrics.
 
 
+### Example 4: SLO Burn Rate Panel
+
+Burn rate panels are among the trickiest to write correctly. AI assistants reduce iteration time significantly here. A 1-hour burn rate alert for a 99.9% SLO looks like this:
+
+```promql
+(
+  sum(rate(http_requests_errors_total[1h])) / sum(rate(http_requests_total[1h]))
+)
+/
+(1 - 0.999)
+```
+
+When the burn rate exceeds 14, your error budget for a 30-day window will be exhausted in under 2 hours. Ask an AI assistant to generate both the fast-burn (1h/5m window pair) and slow-burn (6h/30m window pair) queries for a complete SLO alert setup.
+
+
+## Step-by-Step: Using an AI Assistant for a New Dashboard
+
+Here is a repeatable workflow for building Grafana panels with AI assistance.
+
+**Step 1 — Describe your metrics.** Before prompting, list your metric names, their labels, and what each represents. The more specific you are, the better the query output.
+
+**Step 2 — Request the PromQL first.** Ask for the query in isolation before asking for full panel JSON. This makes it easy to test in Grafana Explore before committing.
+
+**Step 3 — Test in Explore.** Paste the generated query into Grafana Explore to verify it returns data. If labels do not match, share the actual label output with the AI and ask it to adjust.
+
+**Step 4 — Request panel configuration.** Once the query is working, ask the AI to generate the panel JSON or YAML, including visualization type, thresholds, and legend format.
+
+**Step 5 — Validate thresholds against real data.** AI-generated threshold values (70% for warning, 85% for critical) are reasonable defaults but should be calibrated against your actual operational baselines.
+
+
 ## Choosing the Right Tool
 
 
@@ -262,6 +309,20 @@ When working with AI assistants for Grafana panel creation:
 - Start simple: Begin with basic queries, then add complexity as needed
 
 - Use rate intervals: Always use `rate()` or `irate()` for counters to avoid counter reset issues
+
+- Pin your Grafana version: Dashboard JSON schema differs between Grafana 9.x and 10.x; tell your AI which version you are targeting to avoid compatibility issues
+
+
+## Frequently Asked Questions
+
+**Can AI assistants write recording rules as well as panel queries?**
+Yes. Claude and Cursor both handle Prometheus recording rule syntax well. Provide your existing query and ask for a recording rule definition—this is especially useful for expensive cardinality-heavy queries that you want pre-computed.
+
+**What if the AI generates a query that returns no data?**
+Paste the empty-result query plus your actual metric names (from `{__name__=~".*"}` or `label_values()`) back into the chat. Ask the AI to reconcile the label discrepancy. This back-and-forth usually resolves label mismatches in one or two iterations.
+
+**Should I use AI to generate entire dashboard JSON from scratch?**
+For simple dashboards (under 10 panels), yes—AI-generated JSON is a practical starting point. For complex dashboards, use AI for individual panels and assemble the dashboard yourself to maintain control over layout and row structure.
 
 
 ## Related Articles
