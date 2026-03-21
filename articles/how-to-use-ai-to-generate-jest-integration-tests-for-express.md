@@ -44,6 +44,25 @@ module.exports = {
 ```
 
 
+For TypeScript projects, add `ts-jest` and configure accordingly:
+
+
+```bash
+npm install --save-dev ts-jest @types/jest @types/supertest
+```
+
+
+```javascript
+// jest.config.js (TypeScript)
+module.exports = {
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+  testMatch: ['**/__tests__/**/*.test.ts'],
+  verbose: true,
+};
+```
+
+
 ## Using AI to Generate Test Boilerplate
 
 
@@ -86,6 +105,18 @@ router.post('/', async (req, res) => {
 
 module.exports = router;
 ```
+
+
+### Effective Prompts for AI Test Generation
+
+
+The quality of AI-generated tests depends heavily on prompt specificity. Here are prompts that produce good results:
+
+**Weak prompt:** "Write tests for my Express users route."
+
+**Strong prompt:** "Generate Jest integration tests using supertest for the Express route handler below. Mock `userService` using `jest.mock`. Cover: GET /:id returning 200 with user object, 404 when not found, 500 on service error. POST / returning 201 on valid input, 400 when email missing, 400 when name missing, 500 on service error. Use `beforeEach` to clear mocks. Assert both status codes and response body shapes."
+
+The strong prompt tells the AI exactly which scenarios to cover and which testing patterns to use.
 
 
 ## Generated Integration Tests
@@ -183,6 +214,53 @@ describe('POST /users', () => {
 ```
 
 
+## Adding Authentication Middleware Tests
+
+
+Real-world Express routes often use authentication middleware. Here's how to test routes that require a valid JWT:
+
+
+```javascript
+// __tests__/routes/protected.test.js
+const request = require('supertest');
+const express = require('express');
+const jwt = require('jsonwebtoken');
+const protectedRouter = require('../../routes/protected');
+const authMiddleware = require('../../middleware/auth');
+
+// Partially mock the auth middleware
+jest.mock('../../middleware/auth');
+
+const app = express();
+app.use(express.json());
+app.use('/api', authMiddleware, protectedRouter);
+
+describe('Protected routes', () => {
+  it('should reject requests with no token', async () => {
+    authMiddleware.mockImplementation((req, res, next) => {
+      res.status(401).json({ error: 'Unauthorized' });
+    });
+
+    await request(app)
+      .get('/api/resource')
+      .expect(401);
+  });
+
+  it('should allow requests with valid token', async () => {
+    authMiddleware.mockImplementation((req, res, next) => {
+      req.user = { id: '1', role: 'user' };
+      next();
+    });
+
+    await request(app)
+      .get('/api/resource')
+      .set('Authorization', 'Bearer valid-token')
+      .expect(200);
+  });
+});
+```
+
+
 ## Key Elements of Good Integration Tests
 
 
@@ -198,6 +276,56 @@ Second, testing error scenarios covers important edge cases. The tests verify 40
 Third, assertions should verify both the response status and the response body. Using supertest's chainable methods like `.expect(200)` makes tests readable while ensuring the HTTP status matches expectations.
 
 
+## AI Tool Comparison for Test Generation
+
+
+| Capability | Claude | ChatGPT-4 | Copilot |
+|---|---|---|---|
+| Service mocking accuracy | Excellent | Good | Fair |
+| Error scenario coverage | Excellent | Good | Fair |
+| Middleware mock patterns | Excellent | Good | Poor |
+| TypeScript support | Excellent | Good | Good |
+| Parameterized test gen | Good | Good | Poor |
+
+Claude tends to produce the most complete test coverage, including edge cases that other tools miss. ChatGPT-4 performs similarly but sometimes generates tests that don't compile without correction. Copilot excels at autocompleting individual tests but requires more manual effort to build a complete test file.
+
+
+## Testing Routes with Query Parameters and Headers
+
+
+A commonly overlooked area in AI-generated tests is query parameter handling and custom header validation. Prompt explicitly for these:
+
+
+```javascript
+describe('GET /users with filters', () => {
+  it('should filter users by role query param', async () => {
+    const adminUsers = [{ id: '1', name: 'Admin', role: 'admin' }];
+    userService.findByRole.mockResolvedValue(adminUsers);
+
+    const response = await request(app)
+      .get('/users?role=admin')
+      .expect(200);
+
+    expect(response.body).toEqual(adminUsers);
+    expect(userService.findByRole).toHaveBeenCalledWith('admin');
+  });
+
+  it('should require X-API-Key header for admin routes', async () => {
+    await request(app)
+      .get('/users/admin-list')
+      .expect(401);
+
+    await request(app)
+      .get('/users/admin-list')
+      .set('X-API-Key', 'valid-key')
+      .expect(200);
+  });
+});
+```
+
+When prompting for these tests, include: "Also generate tests for query parameter filtering and custom header validation."
+
+
 ## Refining AI-Generated Tests
 
 
@@ -205,6 +333,9 @@ AI-generated tests provide a solid foundation, but you'll often need to refine t
 
 
 You might also want to add test cases for query parameters, headers, and content-type handling. These additional scenarios help ensure your API handles edge cases gracefully.
+
+
+**Pro tip:** After generating tests with an AI tool, ask it to review the generated tests for coverage gaps. Prompt: "Review these Jest tests and identify any error scenarios, edge cases, or middleware interactions I haven't covered." This second-pass review often surfaces missing cases.
 
 
 ## Running the Tests
@@ -226,7 +357,17 @@ npx jest --testPathPattern=users.test.js --watch
 ```
 
 
-## Related Articles
+To generate a coverage report and identify untested code paths:
+
+
+```bash
+npx jest --coverage --testPathPattern=users.test.js
+```
+
+Coverage reports help you identify which route handlers need additional test cases and where your AI-generated tests may have missed branches.
+
+
+## Related Reading
 
 - [How to Use AI to Generate Jest Component Tests with Testing](/ai-tools-compared/how-to-use-ai-to-generate-jest-component-tests-with-testing-/)
 - [How to Use AI to Generate Jest Tests for](/ai-tools-compared/how-to-use-ai-to-generate-jest-tests-for-internationalizatio/)
