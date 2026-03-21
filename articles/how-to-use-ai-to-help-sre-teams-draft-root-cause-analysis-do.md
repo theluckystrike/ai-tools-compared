@@ -222,8 +222,160 @@ Begin with low-stakes incidents to build your prompt library. Track which inputs
 
 The key is treating AI as a drafting assistant, not a replacement for human analysis. Your team's expertise and judgment remain essential for identifying true root causes and meaningful improvements.
 
+## RCA Template for AI Assistance
 
+Standardize your RCA format so AI understands your structure:
 
+```markdown
+# [Incident Title]: [Service Name] - [Date]
+
+## Executive Summary
+[1-2 sentences: what happened, impact, resolution]
+
+## Timeline
+- [HH:MM UTC] Event 1
+- [HH:MM UTC] Event 2
+- [HH:MM UTC] Resolution
+
+## Technical Root Cause
+[Specific technical failure. Not a symptom, but the underlying cause]
+
+## Contributing Factors
+[Conditions that enabled the root cause to cause impact]
+
+## Detection and Response
+[How was this caught? Response time? Process gaps?]
+
+## Impact
+[Affected users: N. Duration: M minutes. Business impact: $X]
+
+## Action Items
+- [ ] Action 1 - Owner - Target Date
+- [ ] Action 2 - Owner - Target Date
+
+## Prevention
+[What architectural or process changes prevent recurrence?]
+```
+
+Using this template consistently makes AI-generated sections more coherent and structured.
+
+## RCA Prompt Template
+
+Use this prompt structure to get better AI drafts:
+
+```
+Generate an RCA based on this incident data:
+
+INCIDENT DETAILS:
+- Service: Payment API
+- Start time: 2026-03-15 14:32 UTC
+- Detection time: 14:35 UTC (alert)
+- Resolution time: 15:19 UTC (47 minutes)
+- Impact: 8,200 failed transactions, ~$340K in unprocessed orders
+
+TIMELINE FROM LOGS:
+14:15 - Deployment of version 2.4.1 to prod
+14:32 - Error rate spikes to 15% (alert threshold 5%)
+14:35 - On-call engineer acknowledges
+14:41 - Database connection pool exhausted (monitoring shows max_connections=100, active=120)
+14:50 - Rollback initiated to 2.4.0
+15:19 - Service returns to normal (error rate <0.1%)
+
+WHAT WE KNOW:
+- New code in 2.4.1 opens 25 connections per request in parallel
+- Previous version opened 1 connection per request
+- Load was 150 req/s average
+- This is similar to incident from 2026-01-15
+
+WHAT WE DON'T KNOW YET:
+- Why didn't canary catch this?
+- Why is connection pool default 100 instead of 500?
+- What testing would have caught this?
+
+Generate sections:
+1. Root Cause (what technically failed)
+2. Contributing Factors (why failure had impact)
+3. Detection Analysis (was alert effective?)
+4. Prevention Action Items (3-5 specific improvements)
+
+Use a blameless tone. Focus on system improvements.
+```
+
+This prompt gives the AI enough context to produce an accurate, well-structured draft.
+
+## Measuring RCA Quality
+
+Evaluate whether your RCA drafting improves with AI assistance:
+
+| Metric | Before AI | After AI Assistance | Target |
+|--------|-----------|-------------------|--------|
+| Time to first draft | 3-4 hours | 30 minutes | < 1 hour |
+| Sections completed | 70% | 95% | 100% |
+| Technical accuracy | 85% | 90% | > 95% |
+| Actionable items | 2-3 | 4-5 | > 3 |
+| Team review iterations | 2-3 | 1-2 | < 2 |
+
+Track these metrics quarterly. If AI isn't improving your RCA process, adjust your prompts or reconsider the tool.
+
+## Post-Incident Review Best Practices
+
+When reviewing AI-generated RCAs with your team:
+
+**Validation checklist:**
+- [ ] Root cause explains why the system failed (not just what failed)
+- [ ] Contributing factors are distinct from root cause
+- [ ] Timeline matches monitoring data exactly
+- [ ] Action items are specific with owners and dates
+- [ ] No blame-focused language
+- [ ] Technical explanations are accessible to non-engineers on the call
+
+**Red flags that require human correction:**
+- Root cause is actually a symptom (e.g., "Connection pool exhausted" instead of "Connection limit too low for concurrent request volume")
+- Contributing factors duplicate the root cause
+- Timeline includes speculation instead of observed events
+- Action items are vague ("improve monitoring") instead of specific
+- Impact calculation doesn't match incident reports
+
+## Integrating RCA Drafts into Incident Tools
+
+Connect your AI RCA workflow to incident management systems:
+
+```python
+# Pseudocode for incident management integration
+def generate_incident_rca(incident_id):
+    incident = fetch_from_jira(incident_id)
+    notes = format_notes(incident.description)
+    timeline = parse_timeline(incident.custom_field_timeline)
+
+    # Generate draft RCA
+    draft = ai_service.generate_rca(
+        incident_title=incident.summary,
+        impact=incident.business_impact,
+        timeline=timeline,
+        notes=notes
+    )
+
+    # Attach to incident
+    jira.add_comment(incident_id, f"AI-Generated Draft:\n{draft}")
+    jira.assign_issue(incident_id, "rca-review-queue")
+
+    return draft
+
+# Team reviews the draft and edits before publication
+```
+
+This automation ensures every incident has a draft RCA ready for review within minutes.
+
+## Learning from Patterns
+
+As you generate RCAs, track patterns to improve incident prevention:
+
+- Are certain services generating similar root causes repeatedly?
+- Do certain team members respond faster to specific incident types?
+- Are action items actually getting completed before recurrence?
+- Which types of incidents get missed by monitoring?
+
+Use AI to help analyze these patterns: "Analyze our last 10 RCAs for common themes in root causes." This meta-analysis identifies systemic problems.
 
 
 ## Related Reading

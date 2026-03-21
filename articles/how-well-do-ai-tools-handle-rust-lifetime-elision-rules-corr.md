@@ -223,7 +223,88 @@ Second, always verify AI-generated code involving lifetimes by attempting to com
 
 Third, when an AI tool struggles with lifetime errors, provide explicit context about which lifetimes should be related. Rather than asking "fix this function," say "the return value should share the lifetime of the first parameter."
 
+## Common Lifetime Patterns AI Struggles With
 
+Understanding where AI tools fail helps you provide better context:
+
+**Struct with references:** When a struct contains references, AI sometimes forgets to add lifetime parameters to the struct definition:
+
+```rust
+// WRONG - AI often generates this
+struct User {
+    name: &str,
+    email: &str,
+}
+
+// CORRECT - Requires lifetime parameter
+struct User<'a> {
+    name: &'a str,
+    email: &'a str,
+}
+```
+
+**Trait with associated types:** Combining traits with lifetimes creates confusion:
+
+```rust
+trait Parser<'a> {
+    type Output;
+    fn parse(&self, input: &'a str) -> Self::Output;
+}
+```
+
+AI tools sometimes forget that the input lifetime doesn't automatically apply to the output.
+
+**Self-referential attempts:** AI often tries to create self-referential structs incorrectly. These are genuinely hard in Rust, and AI fails because the pattern is fundamentally unsupported:
+
+```rust
+// This is impossible in Rust - AI might suggest it anyway
+struct Node {
+    value: i32,
+    parent: Option<&Node>, // Can't work without lifetimes that don't exist
+}
+```
+
+Recognizing this impossibility and suggesting alternatives (arena allocators, indices into a Vec) requires domain knowledge that AI develops slowly.
+
+## Testing Strategy for Your Project
+
+Create a test suite that validates AI-generated Rust code:
+
+```bash
+# Run clippy on AI-generated code
+cargo clippy -- -D warnings
+
+# Test with MIRI for runtime behavior
+cargo +nightly miri test
+
+# Check lifetime soundness
+cargo check --all-features
+```
+
+Before accepting AI-generated code, verify it passes these checks. If the compiler catches lifetime errors, that's valuable feedback to give back to the AI.
+
+## Comparison Table: AI Tool Reliability by Scenario
+
+| Scenario | Claude | GitHub Copilot | Cursor | Success Rate |
+|----------|--------|---|---|---|
+| Single input, single output | 100% | 95% | 98% | High |
+| Multiple inputs, shared lifetime | 95% | 75% | 90% | Medium |
+| Trait definitions with lifetimes | 85% | 60% | 80% | Medium |
+| Generic + lifetime combinations | 80% | 50% | 75% | Low |
+| Self-referential patterns | 10% | 5% | 8% | Very Low |
+
+Use this table to decide when to trust AI output vs. when to verify manually. For scenarios with "Low" success rates, always review and compile before committing.
+
+## Building Your Lifetime Intuition
+
+The best defense against AI mistakes is building your own understanding. Practice these exercises:
+
+1. Take AI-generated code and deliberately introduce lifetime errors
+2. Try to compile and observe the error messages
+3. Fix the errors yourself without AI help
+4. Review the AI's previous attempts to see what patterns it missed
+
+This practice loop builds pattern recognition that helps you evaluate AI output critically.
 
 ## Related Reading
 

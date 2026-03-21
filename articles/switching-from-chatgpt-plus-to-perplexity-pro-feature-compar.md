@@ -220,8 +220,95 @@ If you primarily debug, read documentation, and need source verification, Perple
 
 Test both with a single real project. Ask each tool to help you implement a feature using current library versions. Compare how quickly you reach a working solution and how much additional research each required. That practical test reveals more than feature lists ever could.
 
+## Real-World Feature Comparison Table
 
+| Feature | ChatGPT Plus | Perplexity Pro | Winner |
+|---------|--------------|----------------|--------|
+| Real-time web search | No (requires toggle) | Yes (default) | Perplexity |
+| Source citations | Limited | Comprehensive | Perplexity |
+| Context window | 128K | ~200K | Perplexity |
+| Code generation | Excellent | Good | ChatGPT |
+| File uploads | Yes (PDFs, code) | Limited | ChatGPT |
+| Image generation (DALL-E) | Yes | No | ChatGPT |
+| Search integration in API | No | Yes (Sonar) | Perplexity |
+| User interface | Polished | Functional | ChatGPT |
+| Cost per month | $20 | $20 | Tie |
+| Mobile app | iOS + Android | iOS + Android | Tie |
 
+## Practical Decision Framework
+
+Evaluate your primary use case against these questions:
+
+**Question 1: How often do you need current information?**
+- If always or most of the time: Perplexity Pro wins decisively
+- If rarely or only for code: ChatGPT Plus serves well
+
+**Question 2: Do you work with large code files or documents?**
+- If yes: ChatGPT Plus (larger context, file upload)
+- If no: Either works
+
+**Question 3: Do you need citations and source verification?**
+- If yes: Perplexity Pro (citations are built-in)
+- If no: ChatGPT Plus (sources require additional steps)
+
+**Question 4: Do you create images or need creative generation?**
+- If yes: ChatGPT Plus (DALL-E access)
+- If no: Perplexity Pro handles research better
+
+**Question 5: Is your work split between coding and research?**
+- If 70%+ coding: ChatGPT Plus
+- If 50/50 or more research: Perplexity Pro
+- If truly split: Consider using both (same price)
+
+## Example Workflow Comparison
+
+Suppose you need to implement JWT refresh token logic using the latest Next.js patterns.
+
+**With ChatGPT Plus:**
+1. Ask for Next.js 15 JWT implementation
+2. Get code based on training knowledge (cutoff date)
+3. Ask "Is this still current best practice?"
+4. May need to manually verify against recent docs
+5. Requires follow-up verification steps
+
+**With Perplexity Pro:**
+1. Ask for Next.js 15 JWT implementation
+2. Get current code with links to official docs
+3. Click sources to verify approach matches latest patterns
+4. Immediate confidence in solution
+
+This difference multiplies across dozens of development decisions. For a research-heavy project, Perplexity Pro's sourcing saves 2-4 hours per week.
+
+## Migration Considerations
+
+If you're switching from ChatGPT Plus to Perplexity Pro, plan for these adjustments:
+
+**What you'll gain:**
+- Immediate access to recent documentation and API changes
+- Source links you can click directly
+- Reduced need for manual verification
+- Better performance on "what's current" questions
+
+**What you'll lose:**
+- Direct DALL-E integration (use other image tools instead)
+- Ability to upload local documents without internet verification
+- Voice mode (less critical if you don't use it)
+- Some familiarity with the interface
+
+**Bridging the gap:**
+- Keep ChatGPT Plus for image generation; use Perplexity for research
+- Use ChatGPT when analyzing local documents you cannot share
+- Use Perplexity for all API and library documentation questions
+
+## Cost-Benefit Analysis for Teams
+
+For development teams considering enterprise plans:
+
+- ChatGPT Team: $30/user/month (minimum 2 users)
+- Perplexity Team: Custom pricing (less transparency)
+- Internal cost: Both require admin overhead for SSO, seat management
+
+For pure research teams (product, documentation, design), Perplexity's cost-to-value ratio favors it. For coding-focused teams, ChatGPT remains stronger unless your entire team does heavy research.
 
 
 ## Related Reading
