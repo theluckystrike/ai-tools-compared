@@ -1,8 +1,11 @@
 ---
 layout: default
 title: "AI Testing Tools — Test Generation & Automation Guides"
-description: "Guides for AI-powered test generation: pytest, Jest, Playwright, and regression testing. Compare tools that auto-generate unit tests, integration tests, and E2E tests."
+description: "Guides for AI-powered test generation: pytest, Jest, Playwright, and regression testing. Compare tools that auto-generate unit tests, integration tests"
 permalink: /topics/ai-testing-tools/
+intent-checked: true
+voice-checked: true
+date: 2026-03-21
 ---
 
 # AI Testing Tools — Test Generation & Automation Guides

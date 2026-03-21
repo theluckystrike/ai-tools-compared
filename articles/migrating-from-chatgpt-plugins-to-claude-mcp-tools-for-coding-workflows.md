@@ -12,6 +12,7 @@ voice-checked: true
 categories: [guides]
 tags: [ai-tools-compared, workflow, claude-ai, chatgpt]
 
+intent-checked: true
 ---
 
 

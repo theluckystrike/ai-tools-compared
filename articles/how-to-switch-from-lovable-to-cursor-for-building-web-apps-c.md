@@ -11,6 +11,7 @@ tags: [ai-tools-compared, cursor, lovable, web-development, ai-code-editors]
 reviewed: true
 score: 9
 voice-checked: true
+intent-checked: true
 ---
 
 

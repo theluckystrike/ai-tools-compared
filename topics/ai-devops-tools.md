@@ -3,6 +3,9 @@ layout: default
 title: "AI DevOps Tools — CI/CD, Docker, Kubernetes & Infrastructure"
 description: "AI tools for DevOps automation: CI/CD pipeline optimization, Docker image building, Kubernetes configuration, Terraform, and infrastructure drift detection."
 permalink: /topics/ai-devops-tools/
+intent-checked: true
+voice-checked: true
+date: 2026-03-21
 ---
 
 # AI DevOps Tools — CI/CD, Docker, Kubernetes & Infrastructure

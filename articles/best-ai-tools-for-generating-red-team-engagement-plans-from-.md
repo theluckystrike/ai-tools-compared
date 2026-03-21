@@ -12,6 +12,7 @@ voice-checked: true
 categories: [guides]
 tags: [ai-tools-compared, best-of, artificial-intelligence]
 
+intent-checked: true
 ---
 
 Generating red team engagement plans traditionally requires significant manual effort. Security teams must parse through architecture documents, identify attack surfaces, and construct realistic attack scenarios. Recent advances in AI have produced tools that accelerate this process by analyzing your application architecture documentation and automatically generating structured engagement plans.

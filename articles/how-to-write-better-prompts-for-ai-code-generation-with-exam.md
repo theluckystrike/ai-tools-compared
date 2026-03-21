@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Write Better Prompts for AI Code Generation with"
+title: "How to Write Better Prompts for AI Code Generation"
 description: "AI coding assistants have become indispensable tools for developers, but their effectiveness depends heavily on how you communicate with them. The difference"
 date: 2026-03-16
 last_modified_at: 2026-03-16

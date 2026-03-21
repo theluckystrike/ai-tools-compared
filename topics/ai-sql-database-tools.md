@@ -3,6 +3,9 @@ layout: default
 title: "AI SQL & Database Tools — Query Optimization & Migration"
 description: "AI tools for SQL query optimization, database migration, data cataloging, and query generation inside IDEs. Compare AI-powered database management solutions."
 permalink: /topics/ai-sql-database-tools/
+intent-checked: true
+voice-checked: true
+date: 2026-03-21
 ---
 
 # AI SQL & Database Tools — Query Optimization & Migration

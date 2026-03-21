@@ -12,6 +12,7 @@ voice-checked: true
 categories: [guides]
 tags: [ai-tools-compared, artificial-intelligence]
 
+intent-checked: true
 ---
 {% raw %}
 # Comparing AI Tools for Generating Retool Resource Queries from Natural Language Descriptions

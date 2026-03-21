@@ -11,6 +11,7 @@ score: 8
 voice-checked: true
 categories: [guides]
 tags: [ai-tools-compared, artificial-intelligence]
+intent-checked: true
 ---
 
 

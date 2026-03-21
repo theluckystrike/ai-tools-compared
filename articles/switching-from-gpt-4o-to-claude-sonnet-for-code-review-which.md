@@ -12,6 +12,7 @@ voice-checked: true
 categories: [guides]
 tags: [ai-tools-compared, claude-ai]
 
+intent-checked: true
 ---
 
 

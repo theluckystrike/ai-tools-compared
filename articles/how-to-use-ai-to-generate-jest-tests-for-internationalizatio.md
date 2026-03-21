@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Generate Jest Tests for"
+title: "How to Use AI to Generate Jest Tests for Internationalizatio"
 description: "A practical guide for developers on using AI tools to create Jest tests for i18n implementation and dynamic locale switching in 2026"
 date: 2026-03-16
 last_modified_at: 2026-03-16

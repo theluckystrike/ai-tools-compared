@@ -5,7 +5,7 @@ author: theluckystrike
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence]
 title: "AI Tools for Converting Figma Designs to Code in 2026"
-description: "Compare AI tools for automatic code generation from Figma designs. Includes Locofy, Builder.io, Anima, Framer, and manual approaches with accuracy and speed benchmarks."
+description: "Compare AI tools for automatic code generation from Figma designs. Includes Locofy, Builder.io, Anima, Framer, and manual approaches with accuracy and"
 permalink: /articles/ai-tools-for-converting-figma-designs-to-code-2026/
 reviewed: true
 score: 9

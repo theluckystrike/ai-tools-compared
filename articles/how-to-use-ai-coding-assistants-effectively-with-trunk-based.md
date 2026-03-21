@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI Coding Assistants Effectively with Trunk Based"
+title: "How to Use AI Coding Assistants Effectively With Trunk Based"
 description: "A practical guide for developers integrating AI coding assistants into trunk-based development workflows. Learn strategies for maintaining fast"
 date: 2026-03-16
 last_modified_at: 2026-03-16

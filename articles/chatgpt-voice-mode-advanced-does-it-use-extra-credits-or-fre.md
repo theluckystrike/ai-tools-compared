@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "ChatGPT Voice Mode Advanced Does It Use Extra Credits or"
+title: "Chatgpt Voice Mode Advanced Does it Use Extra Credits"
 description: "A practical guide for developers and power users covering ChatGPT Advanced Voice Mode pricing, credit usage, limits, and how to maximize voice"
 date: 2026-03-16
 last_modified_at: 2026-03-16

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Configure AI Coding Tools to Exclude Secrets and"
+title: "How to Configure AI Coding Tools to Exclude Secrets and Env"
 description: "A practical guide for developers on configuring AI coding assistants like GitHub Copilot, Cursor, and Claude to exclude sensitive files from training"
 date: 2026-03-16
 last_modified_at: 2026-03-16

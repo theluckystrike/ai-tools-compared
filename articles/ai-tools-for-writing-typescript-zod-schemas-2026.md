@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Writing TypeScript Zod Schemas 2026"
-description: "Compare AI tools for generating Zod validation schemas. Evaluate Claude Code, GitHub Copilot, Cursor, and Codeium for Zod schema generation quality, type safety, and custom validation patterns."
+description: "Compare AI tools for generating Zod validation schemas. Evaluate Claude Code, GitHub Copilot, Cursor, and Codeium for Zod schema generation quality, type"
 date: 2026-03-21
 author: theluckystrike
 permalink: /ai-tools-for-writing-typescript-zod-schemas-2026/

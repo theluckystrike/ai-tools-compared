@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Writing Unit Test Mocks 2026"
-description: "Compare AI tools for generating test mocks, stubs, and test doubles. Evaluate Claude Code, GitHub Copilot, Cursor for mock generation quality, mock framework support, and assertion patterns."
+description: "Compare AI tools for generating test mocks, stubs, and test doubles. Evaluate Claude Code, GitHub Copilot, Cursor for mock generation quality, mock"
 date: 2026-03-21
 author: theluckystrike
 permalink: /best-ai-tools-for-writing-unit-test-mocks-2026/

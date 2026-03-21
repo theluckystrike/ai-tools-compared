@@ -10,7 +10,7 @@ categories: [guides]
 tags: [ai-tools-compared, ai, api, rate-limiting, abuse-detection, security, devops, testing]
 reviewed: true
 score: 8
-intent-checked: false
+intent-checked: true
 voice-checked: true
 ---
 

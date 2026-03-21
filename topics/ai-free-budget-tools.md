@@ -1,8 +1,11 @@
 ---
 layout: default
-title: "AI Tools on a Budget — Free Tiers, Pricing & Value Comparisons"
+title: "AI Tools on a Budget — Free Tiers, Pricing & Value"
 description: "Find the best free and affordable AI coding tools. Compare free tiers, pricing plans, and budget-friendly alternatives for Copilot, Claude, ChatGPT, and more."
 permalink: /topics/ai-free-budget-tools/
+intent-checked: true
+voice-checked: true
+date: 2026-03-21
 ---
 
 # AI Tools on a Budget — Free Tiers, Pricing & Value Comparisons

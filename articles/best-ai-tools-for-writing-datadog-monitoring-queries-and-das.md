@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Tools for Writing Datadog Monitoring Queries and"
+title: "Best AI Tools for Writing Datadog Monitoring Queries"
 description: "Use Claude to write DQL queries with complex aggregations and formula logic; use ChatGPT for generating dashboard JSON from descriptions. Claude excels at"
 date: 2026-03-16
 last_modified_at: 2026-03-16

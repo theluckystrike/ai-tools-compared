@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI for Git Workflow Automation"
-description: "Automate git workflows with AI: commit message generation, branch naming, PR descriptions, merge conflict resolution, and git hook integration with real examples"
+description: "Automate git workflows with AI: commit message generation, branch naming, PR descriptions, merge conflict resolution, and git hook integration with real"
 date: 2026-03-21
 author: theluckystrike
 permalink: /how-to-use-ai-for-git-workflow-automation/

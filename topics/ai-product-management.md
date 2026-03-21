@@ -1,8 +1,11 @@
 ---
 layout: default
-title: "AI Product Management Tools — Sprint Planning & Team Productivity"
+title: "AI Product Management Tools"
 description: "AI tools for product managers: sprint planning, feature prioritization, retrospective analysis, onboarding automation, and data-driven decision making."
 permalink: /topics/ai-product-management/
+intent-checked: true
+voice-checked: true
+date: 2026-03-21
 ---
 
 # AI Product Management Tools — Sprint Planning & Team Productivity
