@@ -35,7 +35,7 @@ def test_double(input_value, expected):
 ```
 
 
-This pattern becomes powerful when you need to cover not just happy paths but also boundary conditions, invalid inputs, and extreme values.
+This pattern becomes powerful when you need to cover not just happy paths but also boundary conditions, invalid inputs, and extreme values. The decorator generates individual test items for each parameter set, giving you clear failure messages that identify exactly which input combination broke.
 
 
 ## How AI Helps Identify Edge Cases
@@ -56,8 +56,17 @@ When you ask an AI assistant to generate parametrize test cases, provide context
 
 - Special characters and unicode
 
+- Whitespace-only strings
 
-## Practical Example
+- Floating point precision edge cases (0.1 + 0.2 != 0.3)
+
+- Strings that look like numbers ("123", "1e5")
+
+
+The key advantage AI brings is pattern recognition across thousands of known bug reports and test suites. When you describe a validation function, the AI recognizes common failure modes from similar functions it has been trained on and surfaces them as suggested test parameters.
+
+
+## Practical Example: Email Validation
 
 
 Consider a function that validates email addresses:
@@ -92,6 +101,8 @@ from your_module import validate_email
     ("user@example.com", True),
     ("test.email@domain.org", True),
     ("user+tag@example.co.uk", True),
+    ("123@numbers.com", True),
+    ("a@b.co", True),
 
     # Invalid formats
     ("", False),
@@ -99,18 +110,44 @@ from your_module import validate_email
     ("@nodomain.com", False),
     ("no@", False),
     ("no@domain", False),
+    ("two@@signs.com", False),
 
     # Edge cases
     (None, False),
     ("  ", False),
     ("a@b.c", True),
+    ("user@.com", False),
+    ("@.com", False),
+    ("\n@example.com", False),
 ])
 def test_validate_email(email, expected):
     assert validate_email(email) == expected
 ```
 
 
-This coverage would take significant time to compile manually. The AI identified boundary conditions like empty strings, missing components, and malformed addresses without you needing to think of each one.
+This coverage would take significant time to compile manually. The AI identified boundary conditions like empty strings, missing components, and malformed addresses without you needing to think of each one. Notice it also caught the newline character case—a common injection vector that developers frequently overlook.
+
+
+## Crafting Effective AI Prompts for Test Generation
+
+
+The quality of AI-generated parametrize cases depends heavily on what you tell the AI. Vague prompts produce generic tests; detailed prompts produce targeted edge case coverage.
+
+
+**Weak prompt:**
+> Write tests for my function.
+
+**Strong prompt:**
+> This Python function validates discount codes for an e-commerce site. Codes are 8-12 alphanumeric characters, case-insensitive, cannot start with a number, and expire after 30 days. Generate pytest parametrize cases covering valid codes, boundary lengths (7, 8, 12, 13 chars), expired codes, numeric starts, special characters, and None inputs.
+
+
+Including the following in your prompt consistently improves output quality:
+
+- The function signature with type hints
+- Business rules and invariants
+- Known failure modes from past bugs
+- Any related functions or dependencies
+- Expected return types and error behavior
 
 
 ## Refining AI-Generated Tests
@@ -127,6 +164,11 @@ AI generates a solid foundation, but you should always review and refine the out
 
 4. **Consider performance** — Very large parametrize lists slow test runs
 
+5. **Run the tests immediately** — Confirm each generated case passes or fails as expected before treating it as correct
+
+
+A common trap: AI sometimes generates plausible-looking expected values that are subtly wrong. For example, if your function returns `None` for invalid inputs rather than `False`, the AI might still generate `False` as the expected value. Always run generated tests and fix mismatches before merging.
+
 
 ## Using AI for Regression Testing
 
@@ -142,10 +184,14 @@ After fixing bugs, add the failing input as a new parametrize case. Ask AI to su
     (-5, 25),  # Bug fix case
     (-1, 1),   # AI suggested similar case
     (-100, 10000),
+    (2**31 - 1, (2**31 - 1) ** 2),  # Max int boundary
 ])
 def test_square(value, expected):
     assert value ** 2 == expected
 ```
+
+
+When you report a bug to an AI with the reproduction case, ask: "What similar inputs might trigger the same class of bug?" This surfaces related edge cases that share the same root cause—catching the whole bug family rather than just the reported instance.
 
 
 ## Advanced Parametrize Patterns
@@ -162,7 +208,9 @@ AI can also help with more complex parametrize scenarios:
     ("user", "pass123", True),
     ("", "pass123", False),
     ("user", "", False),
-], ids=["valid", "empty_username", "empty_password"])
+    ("a" * 256, "pass123", False),   # Max length exceeded
+    ("user", "pass" * 100, False),   # Password too long
+], ids=["valid", "empty_username", "empty_password", "username_too_long", "password_too_long"])
 def test_login(username, password, expected):
     pass
 ```
@@ -179,25 +227,36 @@ def db_connection():
 @pytest.mark.parametrize("query,expected_rows", [
     ("SELECT * FROM users", 100),
     ("SELECT * FROM orders", 50),
+    ("SELECT * FROM users WHERE id = -1", 0),  # Edge: no results
 ])
 def test_query_results(db_connection, query, expected_rows):
     assert len(db_connection.execute(query)) == expected_rows
 ```
 
 
-## Best Practices
+**Indirect parametrize for complex setup:**
 
 
-When using AI to generate parametrize tests, follow these guidelines:
+```python
+@pytest.fixture
+def user_session(request):
+    """Fixture that creates users with different permission levels."""
+    role = request.param
+    return create_test_user(role=role)
+
+@pytest.mark.parametrize("user_session,endpoint,expected_status", [
+    ("admin", "/api/admin/users", 200),
+    ("editor", "/api/admin/users", 403),
+    ("viewer", "/api/admin/users", 403),
+    ("anonymous", "/api/admin/users", 401),
+], indirect=["user_session"])
+def test_access_control(user_session, endpoint, expected_status):
+    response = client.get(endpoint, headers=user_session.auth_headers)
+    assert response.status_code == expected_status
+```
 
 
-- **Provide complete function signatures** — Include type hints so AI understands expected inputs
-
-- **Share existing test patterns** — Helps AI match your project's style
-
-- **Test the tests** — Run AI-generated tests to confirm they pass or fail as expected
-
-- **Version control your tests** — Track parametrize changes alongside code changes
+The indirect pattern is particularly powerful when combined with AI generation—ask the AI to enumerate all relevant permission combinations for a given endpoint.
 
 
 ## Combining Parametrize with Other Pytest Features
@@ -220,6 +279,14 @@ def test_email_validation(input_data, expected):
 @pytest.mark.parametrize("query", ["SELECT 1"])
 def test_db_connection(query):
     pass
+
+# Mark specific cases as expected failures
+@pytest.mark.parametrize("email,expected", [
+    ("user@example.com", True),
+    pytest.param("emoji@🏠.com", True, marks=pytest.mark.xfail(reason="Unicode domains not yet supported")),
+])
+def test_unicode_email(email, expected):
+    assert validate_email(email) == expected
 ```
 
 
@@ -241,6 +308,12 @@ When using AI-generated parametrize tests, watch for these common issues:
 **Flaky test data** — Avoid using timestamps, random values, or external API responses in parametrize. These create non-deterministic tests.
 
 
+**Over-reliance on happy paths** — Even with AI assistance, developers tend to confirm that AI-generated tests lean toward valid inputs. Explicitly ask for a breakdown: "generate 30% valid inputs and 70% invalid or edge case inputs."
+
+
+**Ignoring type edge cases** — If your function accepts `Union[str, int]`, ask AI to generate inputs for both types, including type coercion scenarios.
+
+
 ## Real-World Workflow
 
 
@@ -249,18 +322,20 @@ Here's a practical workflow for integrating AI into your testing process:
 
 1. **Write the function** — Implement the core logic first
 
-2. **Describe the requirements** — Explain what the function should handle
+2. **Describe the requirements** — Explain what the function should handle, including business rules
 
-3. **Generate test cases** — Ask AI for parametrize examples
+3. **Generate test cases** — Ask AI for parametrize examples, emphasizing edge conditions
 
-4. **Review and customize** — Adjust for your specific needs
+4. **Review and customize** — Adjust for your specific needs; remove duplicates, add domain cases
 
-5. **Run the tests** — Verify everything works as expected
+5. **Run the tests** — Verify everything works as expected; fix incorrect expected values
 
-6. **Iterate** — Add more cases as you discover edge conditions
+6. **Commit with tests** — Include tests alongside the implementation in the same PR
+
+7. **Iterate** — Add more cases as you discover edge conditions in production
 
 
-This approach saves hours of manual test writing while ensuring better coverage than writing tests after the fact.
+This approach saves hours of manual test writing while ensuring better coverage than writing tests after the fact. Teams that adopt this workflow consistently report catching classes of bugs in code review that would previously have reached production.
 
 
 ## Related Articles
