@@ -201,10 +201,261 @@ function handleDeepLink(url) {
 }
 ```
 
+## Debugging Deep Linking Issues
+
+When deep links aren't working, AI tools can help diagnose problems. Common issues include:
+
+**iOS Universal Links Failing:**
+```bash
+# Verify AASA file is accessible and valid
+curl -I https://yourdomain.com/.well-known/apple-app-site-association
+
+# Check file format and MIME type
+file apple-app-site-association
+# Should show: JSON data
+
+# Validate JSON structure
+cat apple-app-site-association | jq .
+```
+
+AI can interpret these debugging outputs and suggest fixes. If the MIME type is wrong, AI can generate the correct Nginx or Apache configuration:
+
+```nginx
+location /.well-known/apple-app-site-association {
+    default_type application/json;
+    add_header Cache-Control "public, max-age=604800";
+}
+```
+
+**Android App Links Debugging:**
+```bash
+# Check if assetlinks.json is correctly served
+curl https://yourdomain.com/.well-known/assetlinks.json | jq .
+
+# Verify SHA-256 fingerprint matches your signing key
+keytool -list -v -keystore myapp.keystore | grep SHA256
+```
+
+AI tools can help match fingerprints with your configuration and suggest corrections.
+
+## Automated Deep Link Testing
+
+Ask your AI assistant to generate test suites for your deep linking implementation. Here's a Flutter example:
+
+```dart
+void main() {
+  group('Deep Link Tests', () {
+    testWidgets('Product deep link navigates correctly', (WidgetTester tester) async {
+      final deepLink = 'https://shopflow.app/product/12345';
+
+      final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+      binding.window.physicalSizeTestValue = const Size(1080, 1920);
+
+      await tester.pumpWidget(const MyApp());
+
+      // Simulate deep link
+      await tester.binding.defaultBinaryMessenger.handlePlatformMessage(
+        'flutter/navigation',
+        const StandardMethodCodec().encodeMethodCall(
+          MethodCall('routeUpdated', {'route': deepLink}),
+        ),
+        (_) {},
+      );
+
+      await tester.pumpAndSettle();
+
+      expect(find.text('Product Details'), findsOneWidget);
+      expect(find.text('12345'), findsOneWidget);
+    });
+  });
+}
+```
+
+## Multi-Environment Configuration
+
+For apps with development, staging, and production builds, AI can generate environment-specific configurations:
+
+```dart
+// lib/config/deep_link_config.dart
+class DeepLinkConfig {
+  static const Map<String, String> productionDomains = {
+    'ios': 'https://shopflow.app',
+    'android': 'https://shopflow.app',
+  };
+
+  static const Map<String, String> stagingDomains = {
+    'ios': 'https://staging.shopflow.app',
+    'android': 'https://staging.shopflow.app',
+  };
+
+  static const Map<String, String> developmentDomains = {
+    'ios': 'https://dev.shopflow.app',
+    'android': 'https://dev.shopflow.app',
+  };
+
+  static String getDomain(String environment, String platform) {
+    switch (environment) {
+      case 'production':
+        return productionDomains[platform]!;
+      case 'staging':
+        return stagingDomains[platform]!;
+      default:
+        return developmentDomains[platform]!;
+    }
+  }
+}
+```
+
+## React Native Deep Link Handling
+
+AI can generate complete React Native implementations:
+
+```javascript
+import { useEffect } from 'react';
+import { Linking, Alert } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
+export function useDeepLinking() {
+  const navigation = useNavigation();
+
+  useEffect(() => {
+    // Handle initial URL if app was launched with a deep link
+    Linking.getInitialURL().then((url) => {
+      if (url != null) {
+        handleDeepLink(url);
+      }
+    });
+
+    // Listen for deep links while app is open
+    const subscription = Linking.addEventListener('url', ({ url }) => {
+      handleDeepLink(url);
+    });
+
+    return () => subscription.remove();
+  }, []);
+
+  function handleDeepLink(url) {
+    const route = url.replace(/.*?:\/\//g, '');
+    const routeName = route.split('/')[0];
+    const params = parseDeepLinkParams(route);
+
+    switch (routeName) {
+      case 'product':
+        navigation.navigate('ProductDetail', { productId: params.id });
+        break;
+      case 'category':
+        navigation.navigate('Category', { category: params.name });
+        break;
+      case 'checkout':
+        navigation.navigate('Checkout', params);
+        break;
+      default:
+        navigation.navigate('Home');
+    }
+  }
+
+  function parseDeepLinkParams(route) {
+    const parts = route.split('/');
+    const params = {};
+
+    // Match route pattern and extract parameters
+    if (parts[0] === 'product') {
+      params.id = parts[1];
+    } else if (parts[0] === 'category') {
+      params.name = parts[1];
+    }
+
+    return params;
+  }
+}
+```
+
+## Monitoring Deep Link Performance
+
+AI can help generate monitoring code to track deep link usage:
+
+```typescript
+// analytics/deepLinkAnalytics.ts
+interface DeepLinkEvent {
+  timestamp: number;
+  url: string;
+  platform: string;
+  success: boolean;
+  navigationTime: number;
+}
+
+const deepLinkEvents: DeepLinkEvent[] = [];
+
+export function trackDeepLink(url: string, platform: string, success: boolean, navigationTime: number) {
+  deepLinkEvents.push({
+    timestamp: Date.now(),
+    url,
+    platform,
+    success,
+    navigationTime,
+  });
+
+  // Send to analytics service
+  if (deepLinkEvents.length % 10 === 0) {
+    flushDeepLinkEvents();
+  }
+}
+
+function flushDeepLinkEvents() {
+  // Send batch to analytics
+  fetch('/api/analytics/deep-links', {
+    method: 'POST',
+    body: JSON.stringify(deepLinkEvents),
+  });
+  deepLinkEvents.length = 0;
+}
+```
+
+## Common Deep Linking Mistakes to Avoid
+
+AI tools can help identify these issues before they become problems:
+
+1. **Inconsistent domain registration** - Domain must be registered in both AASA and assetlinks.json
+2. **Wrong MIME type for AASA** - Must be application/json, not text/plain
+3. **Missing HTTPS** - Both AASA and assetlinks.json require HTTPS
+4. **Path handling errors** - Wildcards like `/product/*` need proper escaping
+5. **Forgetting return-to-web fallback** - Always include web fallback URLs for when app isn't installed
+
+## Practical Recommendations
+
+For developers setting up cross-platform deep linking, these results suggest:
+
+1. **Start with Claude Code or Windsurf** for initial configuration generation. Both produce complete outputs with minimal iteration.
+
+2. **Verify fingerprints manually**. No tool can generate your actual signing key fingerprints. You'll need to obtain these from your keystore (Android) or Apple Developer account (iOS).
+
+3. **Test before deploying**. Use tools like Branch.io's link checker or Apple's validator before launching. A single typo in the AASA file breaks universal links on all iOS devices.
+
+4. **Use version control for configuration files**. Deep linking configs should be in your repository, not generated dynamically. This allows rollback if changes break links.
+
+5. **Consider managed services for complex needs**. If your app requires dynamic deep links (links created after app release for marketing campaigns), AI-generated static configs won't suffice. Services like Firebase Dynamic Links, Branch, or Adjust handle this but introduce dependencies.
+
+6. **Automate CI/CD validation** - Add validation steps in your pipeline to catch configuration errors early:
+
+```bash
+#!/bin/bash
+# validate-deep-links.sh
+
+# Validate AASA JSON
+curl -s https://yourdomain.com/.well-known/apple-app-site-association | jq . || exit 1
+
+# Validate assetlinks.json
+curl -s https://yourdomain.com/.well-known/assetlinks.json | jq . || exit 1
+
+echo "Deep link configurations are valid"
+```
+
 ## Conclusion
 
 AI tools significantly speed up deep linking configuration, but outputs require manual verification. Windsurf and Claude Code provide the best starting points, with Windsurf offering more deployment guidance and Claude Code asking clarifying questions that improve output quality.
 
 The key bottleneck remains obtaining and maintaining signing key fingerprints. For teams with multiple build environments (development, staging, production), consider automation that updates configs during build rather than relying on static AI-generated files.
+
+Implement proper testing and monitoring for your deep links to catch issues early. AI can help generate both the configuration and the testing infrastructure, significantly reducing time to a working cross-platform deep linking implementation.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

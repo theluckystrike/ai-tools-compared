@@ -219,6 +219,217 @@ You can start on Standard and upgrade mid-month without losing credits. This all
 
 If stealth mode is your primary concern but speed isn't, consider whether you actually need Midjourney's premium offering. Alternative platforms like DALL-E 3 (via ChatGPT Plus, $20/month) don't publicly display generations by default and may better serve privacy-first workflows with lower cost.
 
+## Advanced Midjourney Features Comparison
+
+Beyond stealth mode and speed, the Pro plan includes access to experimental features and priority processing during peak hours.
+
+### Experimental Features (Pro Only)
+
+Midjourney regularly tests new model versions and features available first to Pro subscribers:
+
+- New generation models before public rollout
+- Advanced parameters for finer control
+- Beta testing of new image modification tools
+- Early access to video generation capabilities
+
+### Queue Priority Impact
+
+During peak usage times (UTC business hours):
+- **Standard users:** Queuing delays 5-15 minutes
+- **Pro users:** Queuing delays 30 seconds - 2 minutes
+
+For interactive design iteration, this priority queue justifies the upgrade cost alone for professional designers.
+
+## Comparing Alternative AI Image Generation Services
+
+### DALL-E 3 (via ChatGPT Plus)
+
+```
+Pricing: $20/month (ChatGPT Plus)
+Fast generations: Unlimited
+Speed: Standard
+Privacy: Private by default
+Strengths: Seamless ChatGPT integration, good photorealism
+Limitations: Less creative fine-tuning, lower generation quality
+```
+
+### Stable Diffusion (Self-Hosted)
+
+```
+Pricing: Free (self-hosted) or $10-50/month (cloud)
+Fast generations: Depends on hardware
+Speed: Highly variable
+Privacy: Complete (if self-hosted)
+Strengths: Full control, no limits, extensible
+Limitations: Setup complexity, quality inconsistency
+```
+
+### Adobe Firefly
+
+```
+Pricing: $4.99-9.99/month or free credits
+Fast generations: Limited free tier
+Speed: Variable
+Privacy: Private by default
+Strengths: Adobe Creative Suite integration
+Limitations: More expensive per image, limited fine-tuning
+```
+
+## ROI Calculation for Professional Users
+
+### Freelance Designer Using Midjourney
+
+**Setup:**
+- 8 client projects per month
+- 50 image generations per project = 400 images/month
+- Current time: 2 hours per project designing prompts and variations
+
+**Standard Plan Cost:**
+- 15 fast hours = 300 generations
+- Requires 100 relaxed generations (slower)
+- Monthly cost: $30
+
+**Pro Plan Cost:**
+- 30 fast hours = 600 generations
+- Covers all work in fast mode
+- Monthly cost: $60
+
+**Time Savings:**
+- Standard: 2 hours/project × 8 projects = 16 hours/month
+- Pro: 1.5 hours/project × 8 projects = 12 hours/month
+- Time saved: 4 hours/month
+
+**Value Calculation:**
+- Hourly rate: $100 (freelancer rate)
+- Monthly time savings: $400
+- Extra cost (Pro vs Standard): $30
+- Net ROI: $370/month = $4,440/year
+
+For freelancers, Pro plan more than pays for itself through time savings.
+
+## Features Locked to Pro Plan
+
+| Feature | Standard | Pro |
+|---------|----------|-----|
+| Fast generations | 15 hours/month | 30 hours/month |
+| Speed multiplier | 1x | 3x |
+| Stealth mode | No | Yes |
+| Relaxed generation | Unlimited | Unlimited |
+| Concurrent jobs | 10 | 12 |
+| Priority queue | No | Yes |
+| Max resolution | 1024x1024 | 1024x1024 |
+| API access | Standard | Standard |
+| Upscaling | Yes | Yes |
+| Variations | Yes | Yes |
+
+## Stealth Mode Implementation Details
+
+When stealth mode is enabled:
+
+1. **Your images never appear in the public gallery**
+2. **Existing public images remain visible** until you explicitly delete them
+3. **Midjourney can't use your images for training** (though they retain the right to in ToS)
+4. **Other users cannot discover your work** through community browsing
+5. **Your prompt history remains private** to you
+
+### Enable/Disable Stealth for Specific Projects
+
+Midjourney doesn't offer per-project stealth - it's all-or-nothing. If you need selective privacy:
+
+1. Use different Discord servers for private vs public work
+2. Create separate Midjourney accounts for client work
+3. Use alternative services for time-sensitive confidential projects
+
+## Practical Workflow Optimization
+
+### Standard Plan Workflow
+
+```
+Morning (peak hours):
+- Generate 5 key concept images (use fast generation)
+- Create variations (quick iteration)
+- Review and select finalists
+
+Evening (off-peak):
+- Generate background elements (use relaxed)
+- Process variations (relaxed acceptable)
+- Build final composites
+```
+
+**Daily limitation:** 30 minutes fast generation (15 hours / 30 days)
+
+### Pro Plan Workflow
+
+```
+Work continuously:
+- Generate 15+ images per day without worrying about fast generation limit
+- Iterate on concepts with instant feedback
+- Queue priority ensures < 1 minute response time
+- Test creative directions without time pressure
+```
+
+**Benefit:** 50+ minute fast generation daily (30 hours / 30 days)
+
+## When Standard Is Truly Sufficient
+
+- Hobbyist creators sharing work publicly
+- Learning Midjourney and prompt engineering
+- Casual daily use under 5 images/week
+- Community-focused workflow where speed doesn't matter
+- Budget-conscious creators on tight margins
+
+Standard provides excellent value at $30/month for these use cases.
+
+## When Pro Becomes Essential
+
+- Commercial design work with client deadlines
+- Confidential projects requiring stealth mode
+- High-volume generation (50+ images/week)
+- Time-sensitive creative brainstorming
+- Competitive commercial use where speed matters
+
+Pro's extra $30/month often translates to $400+ monthly time savings.
+
+## Advanced Settings and Optimization
+
+Both plans support advanced parameters that fine-tune generation:
+
+```
+/imagine a futuristic cityscape --ar 16:9 --quality 2 --style raw --chaos 50 --seed 12345
+```
+
+Understanding these parameters helps you maximize results within your generation budget:
+
+- `--quality 2`: Highest quality (uses more fast-hour credits)
+- `--quality 0.5`: Faster, uses fewer credits
+- `--chaos`: Higher values create more creative variety
+- `--seed`: Ensures reproducible results
+
+## Testing Before Upgrade
+
+Midjourney allows mid-month plan changes with prorated billing:
+
+1. Start month on Standard plan ($30)
+2. Halfway through month, upgrade to Pro ($30 remaining)
+3. Only pay difference (~$15)
+4. Experience Pro for 2 weeks before full commitment
+5. Downgrade for following month if not worth it
+
+This flexibility lets you genuinely test whether Pro fits your workflow.
+
+## Stealth Mode Alternatives
+
+If stealth mode is your primary motivation but you want cheaper solutions:
+
+| Service | Privacy Default | Cost | Stealth Equivalent |
+|---------|-----------------|------|-------------------|
+| DALL-E 3 | Private | $20/month | Built-in (no public gallery) |
+| Stable Diffusion | Self-hosted | Free | Complete control |
+| Adobe Firefly | Private | $5-10/month | Built-in privacy |
+| Midjourney Standard | Public gallery | $30/month | None (need Pro) |
+| Midjourney Pro | Toggleable | $60/month | Yes (stealth mode) |
+
+For privacy-first workflows, DALL-E 3 via ChatGPT Plus offers cheaper alternative with privacy included by default.
 
 ## Related Articles
 
