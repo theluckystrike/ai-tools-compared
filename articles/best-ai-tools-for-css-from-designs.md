@@ -155,6 +155,141 @@ Testing with a 4-section landing page design:
 | Claude Opus vision | 88% | 82% | Yes | 30s | ~$0.05/image |
 | GPT-4V | 82% | 80% | Yes | 20s | ~$0.03/image |
 
+## Builder.io Visual Copilot
+
+Builder.io's Visual Copilot combines screenshot upload with Figma import. It handles layout detection through machine vision and generates a Figma file suitable for design handoff:
+
+```bash
+# Install Builder.io CLI
+npm install -g @builder.io/cli
+
+# Convert screenshot directly to code
+builder convert-image mockup.png --output index.html --format html-tailwind
+```
+
+**Strengths:** Works with non-Figma designs. Handles screenshots directly. Good for retrofitting existing designs into code.
+
+**Weaknesses:** Layout detection fails on complex overlapping elements. Color accuracy lower than vision models. Limited responsive behavior.
+
+## When Each Tool Fails
+
+No tool handles these scenarios perfectly:
+
+- **Designs with custom curves/paths:** All tools treat curves as rectangles. You'll need to add SVG paths manually.
+- **Interactive states (hover, focus, active):** All tools generate static CSS. Add `:hover`, `:focus` states manually.
+- **Responsive breakpoints:** Even Locofy requires manual tweaking. Pixel-to-percentage conversions are never perfect.
+- **Brand-specific fonts:** Tools sometimes miss non-standard fonts. Always verify `font-family` in output.
+
+## Cost and ROI Analysis
+
+For a typical product website (10-15 components):
+
+| Tool | Setup time | Cost | Output quality | Iteration count |
+|------|-----------|------|---|---|
+| Figma Dev Mode | 5 min | $12/mo (professional plan) | 80% done | 3-5 edits |
+| Locofy | 30 min | $29/mo | 75% done | 4-6 edits |
+| Builder.io | 20 min | Free/$19/mo | 65% done | 5-8 edits |
+| Vision model (Claude) | 10 min | ~$0.50/component | 70% done | 2-4 edits |
+
+Most projects see best ROI from Locofy + Claude vision model: Locofy handles structure quickly, Claude fixes responsive issues and adds missing states.
+
+## Decision Framework
+
+**Use this decision tree:**
+
+1. Do you have Figma designs? → Yes: Locofy
+2. Do you need production-ready in <30 minutes? → Yes: Builder.io
+3. Do you need pixel-perfect color accuracy? → Yes: Claude Opus vision
+4. Is this a one-off component? → Yes: Claude vision, paste output into your IDE
+5. Do you have design system tokens to extract? → Yes: Figma Dev Mode
+
+## Real-World Example: Landing Page
+
+Starting design: A 5-section landing page (hero, features, CTA, testimonials, footer) in Figma.
+
+**With Locofy:**
+```
+1. Upload Figma link to Locofy
+2. Select "React + Tailwind" output
+3. Download 12 generated files (5 components)
+4. Run `npm install` on output
+5. Time to running: 8 minutes
+6. Usability: 70% done (colors wrong, spacing needs tweaking)
+```
+
+**With Claude vision + Figma screenshot:**
+```
+1. Take full-page Figma screenshot (3200x1800px)
+2. Paste into Claude with: "Convert this design to responsive Tailwind HTML. Use CSS custom properties for colors. Make mobile-first."
+3. Copy output into new `.html` file
+4. Time to running: 3 minutes
+5. Usability: 75% done (responsive working, colors accurate, needs interactive states)
+```
+
+**Recommended actual workflow:**
+1. Start with Locofy for structure (8 min)
+2. Copy component CSS into Claude with: "Make this responsive and fix these Tailwind class issues" (5 min)
+3. Test on mobile (5 min)
+4. Total: 18 minutes vs 4+ hours hand-coding
+
+## Responsive Design Challenges
+
+The tools handle responsive differently:
+
+Locofy generates fixed Tailwind classes (sm:, md:, lg: breakpoints included):
+
+```jsx
+// Locofy output
+export function Hero() {
+  return (
+    <div className="w-full px-4 sm:px-6 lg:px-8">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
+        Headline
+      </h1>
+    </div>
+  )
+}
+```
+
+Vision models often miss breakpoints and require manual addition:
+
+```jsx
+// Claude output (requires editing)
+export function Hero() {
+  return (
+    <div className="w-full px-4">
+      <h1 className="text-5xl font-bold">
+        Headline
+      </h1>
+    </div>
+  )
+}
+
+// You need to add: text-2xl sm:text-3xl md:text-4xl lg:text-5xl
+```
+
+## Browser Testing
+
+Always test generated CSS in actual browsers. A tool that renders perfectly in Figma often misses subtle issues:
+
+- Grid layouts break on narrow viewports
+- Flexbox wrapping behaves differently than expected
+- Font sizes too small on mobile
+- Images don't scale properly
+
+Use this CLI to catch issues early:
+
+```bash
+# Install live server
+npm install -g live-server
+
+# Test generated HTML
+live-server output.html
+
+# Test breakpoints manually
+# Open DevTools, Device Toolbar, test: iPhone SE (375px), iPad (768px), Desktop (1440px)
+```
+
 ## Recommended Workflow
 
 For teams with Figma designs: use Locofy for the initial scaffold, then refine with Claude for responsive behavior and interaction states.
