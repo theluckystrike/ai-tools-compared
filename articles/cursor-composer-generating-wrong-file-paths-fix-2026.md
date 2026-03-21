@@ -6,9 +6,9 @@ date: 2026-03-20
 author: theluckystrike
 permalink: /cursor-composer-generating-wrong-file-paths-fix-2026/
 categories: [guides]
-tags: [cursor, ai-editor, cursor-composer, file-paths, bug-fix]
+tags: [ai-tools-compared, cursor, ai-editor, cursor-composer, file-paths, bug-fix, troubleshooting]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
