@@ -67,6 +67,21 @@ insert_final_newline = true
 This configuration helps AI tools parse your code correctly and generates suggestions that match your project's style. Without it, AI-generated code might use different indentation or formatting, requiring manual cleanup.
 
 
+### Configuring AI Extensions Directly
+
+Beyond `.editorconfig`, most AI extensions expose their own settings files. In VS Code with GitHub Copilot, a `.github/copilot-instructions.md` file lets you embed persistent instructions:
+
+```markdown
+# Project Context
+This is a Node.js REST API using Express 5 and TypeScript.
+- Always use async/await, never callbacks
+- Prefer named exports over default exports
+- Error handling uses the AppError class in src/errors.ts
+```
+
+Cursor and Windsurf support similar per-project instruction files (`.cursorrules` and `.windsurfrules`). These files are read at session startup and inject context into every subsequent suggestion without occupying your conversational prompt budget.
+
+
 ## Optimizing Context Windows and Token Limits
 
 
@@ -115,6 +130,21 @@ When working on large features, decompose requests into smaller, focused interac
 
 This approach produces more accurate results and makes review easier.
 
+### What Actually Moves the Needle on Suggestion Quality
+
+Not all configuration changes have equal impact. Based on practical usage, here is how different setups rank:
+
+| Configuration | Impact on suggestion quality |
+|---|---|
+| Per-project instruction files | High — persistent context at every step |
+| Selective indexing (exclude node_modules) | High — faster retrieval, less noise |
+| Conventional directory structure | Medium — recognized patterns help completions |
+| `.editorconfig` formatting | Medium — reduces style cleanup, minor quality gain |
+| Keeping git history clean | Low — AI rarely reads commit history directly |
+| Latest model version | High — newer models consistently outperform older ones |
+
+The biggest gains come from explicit instruction files and proper indexing exclusions. Developers often spend time on cosmetic configuration while skipping the instructions file — which provides the most leverage per minute invested.
+
 
 ## Using AI-Powered Search and Navigation
 
@@ -153,6 +183,22 @@ Some AI tools maintain a knowledge graph of your codebase. Enable this feature t
 - Identification of potential breaking changes before they happen
 
 - Smart rename operations that understand context
+
+### Integrating with LSP for Deeper Context
+
+The Language Server Protocol (LSP) gives AI tools access to type information, go-to-definition data, and symbol references that plain file indexing misses. Tools like Cursor and Codeium use LSP data to provide suggestions that respect your actual type system.
+
+To maximize this, keep your language server healthy:
+
+```bash
+# For TypeScript projects, ensure tsconfig.json is accurate
+npx tsc --noEmit
+
+# Fix type errors before expecting precise AI completions
+# Type errors cause the LSP to produce incomplete symbol graphs
+```
+
+When the LSP has full type coverage, AI suggestions are significantly more accurate for function signatures, return types, and interface implementations.
 
 
 ## Automating Repetitive Workflows
@@ -194,6 +240,21 @@ npx ai-lint --staged
 
 
 This catches issues before they reach code review, though you should always validate AI suggestions personally.
+
+### Automating Prompt Templates with Scripts
+
+For repetitive documentation and test generation tasks, wrap AI calls in shell scripts so you don't retype the same prompt:
+
+```bash
+#!/bin/bash
+# gen-tests.sh — generate unit tests for a given file
+FILE=$1
+PROMPT="Write unit tests for the functions in $FILE. Use Jest. Cover edge cases."
+claude --print "$PROMPT" < "$FILE" > "${FILE%.ts}.test.ts"
+echo "Tests written to ${FILE%.ts}.test.ts"
+```
+
+Store these scripts in a `scripts/ai/` directory. Commit them so the whole team benefits from tested prompt patterns. Over time this becomes an informal prompt library that standardizes how AI is used across the project.
 
 
 ## Managing API Keys and Authentication
@@ -243,7 +304,7 @@ Configure usage limits to prevent unexpected costs:
 ```
 
 
-Monitor your usage through your provider's dashboard. Set alerts for unusual consumption patterns.
+Monitor your usage through your provider's dashboard. Set alerts for unusual consumption patterns. For team environments, consider a shared proxy like LiteLLM that enforces per-user limits and logs usage by developer, making it easy to attribute costs and catch runaway automated scripts.
 
 
 ## Measuring and Iterating on Your Setup
@@ -283,6 +344,17 @@ Review your setup monthly. Questions to ask:
 
 
 Adjust configurations based on what you learn. The best setup evolves with your project and workflow.
+
+### Benchmarking Before and After Changes
+
+When testing a configuration change — such as switching from one AI extension to another or adding a project instructions file — run a simple benchmark:
+
+1. Pick 10 representative tasks (write a function, add a test, explain a module).
+2. Time each task with and without the change.
+3. Record acceptance rate: how often the first suggestion was usable without editing.
+4. Compare results after one week.
+
+This removes guesswork. Most developers find that the instruction file change improves acceptance rate by 15–25% on familiar projects. Index exclusions primarily improve response latency rather than quality, but faster responses reduce context-switching and have a compounding effect on daily throughput.
 
 
 ---
