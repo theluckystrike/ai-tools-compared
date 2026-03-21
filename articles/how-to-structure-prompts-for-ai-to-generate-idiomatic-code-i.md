@@ -166,6 +166,57 @@ Write a Go function that reads a file using the os and io/ioutil packages. Retur
 ```
 
 
+Result:
+
+```go
+func readFile(path string) (string, error) {
+    data, err := os.ReadFile(path)
+    if err != nil {
+        return "", fmt.Errorf("readFile %s: %w", path, err)
+    }
+    return string(data), nil
+}
+```
+
+
+### TypeScript
+
+
+TypeScript idioms emphasize strict typing, discriminated unions, and leveraging the type system for correctness rather than bolting types onto JavaScript patterns.
+
+
+**Weak prompt:**
+
+```
+Write TypeScript to parse an API response that might fail.
+```
+
+
+**Strong prompt:**
+
+```
+Write a TypeScript function that parses an API response using a discriminated union Result type. Include Success and Error variants. Use generics so the function works with any response shape. Do not use try/catch internally—return the error as a value.
+```
+
+
+Result:
+
+```typescript
+type Result<T, E = Error> =
+  | { ok: true; value: T }
+  | { ok: false; error: E };
+
+async function fetchJson<T>(url: string): Promise<Result<T>> {
+  const response = await fetch(url);
+  if (!response.ok) {
+    return { ok: false, error: new Error(`HTTP ${response.status}`) };
+  }
+  const value = (await response.json()) as T;
+  return { ok: true, value };
+}
+```
+
+
 ## Specifying Patterns and Libraries
 
 
@@ -181,6 +232,29 @@ Use pandas rolling() method.
 
 
 This explicitly requests pandas rather than getting a manual implementation.
+
+
+## Prompt Patterns for Code Reviews
+
+
+Prompt engineering for idiomatic code is not just about generation—AI assistants are also effective reviewers. Structured review prompts produce more actionable feedback:
+
+
+**Weak review prompt:**
+
+```
+Review this Python code.
+```
+
+
+**Strong review prompt:**
+
+```
+Review this Python code for idiomaticity. Flag any places that use C-style loops where list comprehensions or map/filter would be more Pythonic. Identify any places where built-in functions (sum, any, all, zip) could replace manual implementations. Do not comment on correctness—focus only on style and idioms.
+```
+
+
+The strong prompt scopes the review precisely, preventing the AI from returning generic feedback about variable naming or docstring format when you want idiom-specific guidance.
 
 
 ## Handling Multi-Language Consistency
@@ -201,6 +275,75 @@ Requirements:
 Replace `[language]` with each target. This produces comparable implementations that respect each language's conventions.
 
 
+## Prompt Templates by Use Case
+
+
+The following templates are ready to copy and adapt. They are structured to consistently produce idiomatic output across the most common code generation scenarios.
+
+
+**Data transformation pipeline (Python):**
+
+```
+Write a Python function that transforms a list of raw API response dicts into a list of dataclasses.
+Language: Python 3.11+
+Input: list[dict] with fields: id (int), created_at (str ISO8601), value (float or null)
+Output: list[SaleRecord] where SaleRecord is a dataclass with typed fields
+Requirements:
+- Use dataclasses with field defaults
+- Parse created_at to datetime using fromisoformat
+- Convert null value to 0.0
+- Use a list comprehension, not a for loop
+- Include type hints on all function arguments and returns
+```
+
+
+**Async HTTP client (TypeScript):**
+
+```
+Write a TypeScript async function that fetches paginated data from a REST API.
+Language: TypeScript 5.x with strict mode
+Input: base URL string, endpoint string, auth token string
+Output: AsyncGenerator yielding arrays of T (use a generic type parameter)
+Requirements:
+- Use the Fetch API (no axios)
+- Follow the cursor-based pagination pattern: each response includes next_cursor or null
+- Yield each page's items array before fetching the next page
+- Raise a typed ApiError class on non-2xx responses
+```
+
+
+**Error handling wrapper (Rust):**
+
+```
+Write a Rust function that wraps a fallible operation with retry logic.
+Language: Rust 2021 edition
+Input: async closure that returns Result<T, E>, max_retries: u32, delay: Duration
+Output: Result<T, E>
+Requirements:
+- Use tokio::time::sleep for delays
+- Use exponential backoff: double the delay on each retry
+- Log each retry attempt with the tracing crate at warn level
+- Use generics, not trait objects
+- Avoid unwrap() anywhere
+```
+
+
+## Iterative Refinement: When the First Output Falls Short
+
+
+Even well-structured prompts sometimes produce code that is correct but not idiomatic. A refinement workflow:
+
+
+**Round 1:** Send your structured initial prompt.
+
+**Round 2:** If the output has non-idiomatic patterns, be specific: "The loop on line 8 would typically be written as a list comprehension in Python. Please rewrite using that pattern."
+
+**Round 3:** Ask the AI to self-evaluate: "Is there anything in this code that an experienced Python developer would immediately refactor? If yes, make that change."
+
+
+This three-step loop consistently moves outputs from functional-but-generic toward genuinely idiomatic code.
+
+
 ## Common Mistakes to Avoid
 
 
@@ -214,6 +357,12 @@ Replace `[language]` with each target. This produces comparable implementations 
 
 
 **Forgetting error handling** — Many prompts skip this. Add "handle edge cases" or "include proper error handling" explicitly.
+
+
+**Asking for style without naming conventions** — "Write clean code" means nothing. Instead say "follow PEP 8 naming conventions" or "use camelCase for all identifiers per the JavaScript convention."
+
+
+**Not specifying the target language version** — Python 3.10+ pattern matching, JavaScript ES2022 features, and Rust 2021 edition idioms differ meaningfully from older versions. Include the version when it matters.
 
 
 ## Testing Generated Code
@@ -230,11 +379,13 @@ Review generated code for language-specific patterns:
 
 - Go: Are errors handled explicitly with meaningful messages?
 
+- TypeScript: Does the code leverage the type system rather than using `any` as an escape hatch?
 
-If the code feels foreign to the language, refine your prompt with more specific constraints.
+
+If the code feels foreign to the language, refine your prompt with more specific constraints. Keep a personal library of prompts that reliably produce idiomatic output for the languages you use most—this prompt library becomes a force multiplier over time, letting you generate high-quality code faster than writing it manually.
 
 
-## Related Articles
+## Related Reading
 
 - [How to Write Better Prompts for AI Code Generation with](/ai-tools-compared/how-to-write-better-prompts-for-ai-code-generation-with-examples/)
 - [Best AI Tools for Writing Idiomatic Rust Error Handling](/ai-tools-compared/best-ai-tools-for-writing-idiomatic-rust-error-handling-with/)
