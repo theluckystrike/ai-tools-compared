@@ -349,6 +349,87 @@ Use this matrix to choose the appropriate tool for your translation:
 2. Ask for potential performance improvements after translation
 3. Request multiple translation approaches when unsure
 
+## Struct-Driven Architecture: The Missing Step in AI Translations
+
+Both Gemini and ChatGPT default to HashMap-based representations when Python code uses dynamic dictionaries. This is the single biggest architectural mistake in AI-generated Rust pipeline code. HashMap lookups are O(1) but carry allocation overhead; Rust structs are zero-cost by comparison and allow the compiler to validate field access at compile time.
+
+When providing a translation prompt, explicitly instruct the model to define data structures first:
+
+```
+Before translating the pipeline functions, define appropriate Rust structs
+for the data moving through the pipeline. Then translate the functions
+to use those structs rather than HashMap<String, Value>.
+```
+
+This prompt change alone dramatically improves output quality. Gemini responds to it by generating something like:
+
+```rust
+#[derive(Debug, Clone, serde::Serialize, serde::Deserialize)]
+struct SalesRecord {
+    date: chrono::NaiveDate,
+    amount: f64,
+    region: String,
+    product_id: String,
+}
+
+#[derive(Debug, Clone)]
+struct ProcessedRecord {
+    date: chrono::NaiveDate,
+    amount: f64,
+    region: String,
+    category: SalesCategory,
+}
+
+#[derive(Debug, Clone)]
+enum SalesCategory {
+    High,
+    Medium,
+    Low,
+}
+```
+
+With typed structs defined upfront, the pipeline functions become considerably simpler and the compiler catches mismatches that would surface only at runtime in the HashMap approach.
+
+## Handling Python's Dynamic Typing at the Boundary
+
+Python pipelines frequently accept heterogeneous inputs — a column that is sometimes a string and sometimes a number, or optional fields that may be absent. Rust's type system forces you to be explicit about this. AI tools handle this edge case inconsistently.
+
+Gemini tends to use `serde_json::Value` for genuinely dynamic data and `Option<T>` for optional fields, which is the idiomatic approach. ChatGPT sometimes generates `String` for everything and parses numbers at each use site, which works but shifts errors to runtime.
+
+A robust pattern for boundary data is to define a raw input struct with `Option` and `serde_json::Value` fields, then transform it into a validated internal struct:
+
+```rust
+// Input type: permissive, matches what the pipeline receives
+#[derive(serde::Deserialize)]
+struct RawRecord {
+    id: String,
+    amount: Option<f64>,
+    metadata: Option<serde_json::Value>,
+}
+
+// Internal type: validated, all fields guaranteed
+struct Record {
+    id: String,
+    amount: f64,
+    metadata: Metadata,
+}
+
+impl TryFrom<RawRecord> for Record {
+    type Error = String;
+    fn try_from(raw: RawRecord) -> Result<Self, Self::Error> {
+        Ok(Record {
+            id: raw.id,
+            amount: raw.amount.ok_or("missing amount")?,
+            metadata: raw.metadata
+                .and_then(|v| serde_json::from_value(v).ok())
+                .ok_or("invalid metadata")?,
+        })
+    }
+}
+```
+
+When you explain this two-stage pattern in your prompt, both Gemini and ChatGPT produce it correctly. Without the explanation, neither generates it reliably.
+
 ## Post-Translation Validation Checklist
 
 After receiving translated code from either tool:
