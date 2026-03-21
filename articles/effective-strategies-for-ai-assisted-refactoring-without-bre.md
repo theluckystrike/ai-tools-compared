@@ -202,6 +202,181 @@ class OrderController:
 This incremental approach keeps tests green throughout.
 
 
+## Advanced Refactoring Patterns
+
+### Pattern 1: Renaming at Scale
+
+Large refactoring projects often start with renaming—updating function names, class names, and variables throughout a codebase. This mechanical transformation is where AI excels:
+
+```bash
+# Example: Rename fetchUser() to getActiveUser() across 50+ files
+# Prompt for AI:
+# "In this JavaScript/TypeScript project, rename the function
+# fetchUser() to getActiveUser() in all files. Update all
+# call sites, tests, and documentation that reference the old name."
+
+git checkout -b refactor/rename-fetch-user
+# Let AI make the changes
+npm test  # Verify tests still pass
+git add -A && git commit -m "Refactor: rename fetchUser to getActiveUser"
+```
+
+The key is providing clear scope boundaries and asking AI to show you before/after examples for a few files to verify consistency.
+
+### Pattern 2: Type System Upgrades
+
+Converting untyped or loosely-typed code to TypeScript requires both mechanical transformation and semantic understanding. AI handles this elegantly:
+
+```javascript
+// Before: Untyped JavaScript
+function processOrderItems(items) {
+  return items.map(item => ({
+    productId: item.id,
+    quantity: item.qty,
+    price: item.amount,
+    total: item.amount * item.qty
+  }));
+}
+
+// After: TypeScript with proper types
+interface OrderItem {
+  id: string;
+  qty: number;
+  amount: number;
+}
+
+interface ProcessedItem {
+  productId: string;
+  quantity: number;
+  price: number;
+  total: number;
+}
+
+function processOrderItems(items: OrderItem[]): ProcessedItem[] {
+  return items.map(item => ({
+    productId: item.id,
+    quantity: item.qty,
+    price: item.amount,
+    total: item.amount * item.qty
+  }));
+}
+```
+
+Prompt AI with your typing conventions and existing type definitions, and let it apply them consistently across the codebase.
+
+### Pattern 3: Microservices Extraction
+
+Breaking monolithic code into reusable services is complex but follows patterns. AI can handle the mechanical separation while you verify behavior:
+
+```python
+# Start with a monolithic OrderService
+class OrderService:
+  def create_order(self, user_id, items):
+    user = self.validate_user(user_id)
+    items = self.validate_items(items)
+    inventory = self.reserve_inventory(items)
+    order = self.save_order(user, items)
+    self.send_confirmation_email(user, order)
+    return order
+
+  def validate_user(self, user_id): ...
+  def validate_items(self, items): ...
+  def reserve_inventory(self, items): ...
+  def save_order(self, user, items): ...
+  def send_confirmation_email(self, user, order): ...
+```
+
+Ask AI to extract validation logic first, keeping everything else the same:
+
+```bash
+# Prompt: "Extract all validation logic (validate_user, validate_items)
+# into a separate ValidationService class. The OrderService should
+# instantiate and delegate to this service. Ensure all existing tests
+# continue to pass without modification."
+```
+
+Then handle inventory separately, then notifications—one service at a time.
+
+## Real-World Refactoring Metrics
+
+When tracking refactoring progress with AI assistance, measure:
+
+| Metric | Without AI | With AI | Speedup |
+|--------|-----------|---------|---------|
+| Small function extraction | 15 minutes | 3 minutes | 5x |
+| Class rename (50+ refs) | 30 minutes | 5 minutes | 6x |
+| Add parameter to method (100+ calls) | 45 minutes | 8 minutes | 5.6x |
+| Extract superclass | 60 minutes | 15 minutes | 4x |
+| Type system upgrade (500 LOC) | 120 minutes | 25 minutes | 4.8x |
+| Refactor async/await patterns | 90 minutes | 20 minutes | 4.5x |
+
+The speedup is largest for mechanical transformations. For refactoring requiring architectural decisions, the improvement is more modest but still meaningful.
+
+## Test-Driven Refactoring Workflow
+
+Follow this workflow for maximum confidence:
+
+```bash
+# 1. Create feature branch
+git checkout -b refactor/feature-name
+
+# 2. Run baseline tests
+npm test > baseline_results.txt
+
+# 3. Ask AI to generate edge case tests
+# Prompt: "Write 5 additional unit tests for this function that cover
+# edge cases the current tests don't: null inputs, empty arrays,
+# very large inputs, concurrent access, etc."
+
+# 4. Run new tests (they should pass with current implementation)
+npm test > with_edge_cases.txt
+
+# 5. Let AI perform refactoring with edge cases as guard rails
+# Prompt: "Refactor this function to [specific goal]. These edge case
+# tests must continue passing after the refactoring."
+
+# 6. Verify all tests pass
+npm test
+
+# 7. Verify behavior hasn't changed with property-based tests
+npm run test:property-based
+
+# 8. Check code coverage increased
+npm run coverage
+
+# 9. Commit with clear message
+git commit -m "Refactor: [what changed] - all tests green, coverage +2%"
+```
+
+This ensures you're not just refactoring blindly but actively improving code quality metrics.
+
+## Handling Refactoring Conflicts
+
+When refactoring impacts multiple branches or team members, use AI to help resolve merge conflicts:
+
+```bash
+# If you hit a merge conflict during refactoring
+git status  # Shows conflicting files
+
+# Prompt AI with both versions:
+# "I have a merge conflict in payment.ts between:
+# - Main branch: original implementation
+# - Refactoring branch: extracted service pattern
+#
+# Here's the main branch code:
+# [paste code]
+#
+# Here's the refactoring branch code:
+# [paste code]
+#
+# Merge these intelligently, keeping the service extraction
+# pattern from the refactoring branch but preserving any
+# changes from main that aren't conflicts."
+```
+
+AI can merge intelligently when given context about intent from both branches.
+
+
 ## Related Articles
 
 - [Effective Strategies for AI Assisted Debugging of](/ai-tools-compared/effective-strategies-for-ai-assisted-debugging-of-intermittent-failures/)

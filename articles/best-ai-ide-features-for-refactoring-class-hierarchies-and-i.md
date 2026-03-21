@@ -202,6 +202,214 @@ A typical AI-assisted refactoring workflow involves these steps:
 Throughout this process, the IDE maintains awareness of your entire codebase, preventing the kind of oversights that manual refactoring often introduces.
 
 
+## IDE-Specific Refactoring Features
+
+### JetBrains IDEs (IntelliJ, PyCharm, WebStorm)
+
+JetBrains IDEs lead in hierarchy visualization and automated refactoring. Their AI-powered features include:
+
+**Structural Search and Replace**
+
+```java
+// Search for a pattern across your entire hierarchy
+// Search: method $name$($params$) with modifier "public"
+// Replace: replace visibility with "protected" if subclasses override
+
+// IDE highlights all matches and lets you review before executing
+```
+
+**Smart Extract Superclass**
+
+Select methods from multiple sibling classes, and the IDE generates an appropriate abstract superclass with proper signature management.
+
+**Hierarchy Browser with AI Analysis**
+
+The hierarchy view shows not just what methods exist but how they're used, overridden, and what call chains depend on them.
+
+### VS Code with AI Extensions
+
+VS Code requires more manual refactoring but can leverage GitHub Copilot and other AI assistants for guidance:
+
+```bash
+# With Copilot in VS Code
+# Highlight a method, ask Copilot: "Extract this method to a parent class"
+# Copilot suggests the extraction, you verify and apply
+```
+
+The workflow is more manual but integrates well with your coding flow.
+
+## Real-World Refactoring Example: E-Commerce Product Hierarchy
+
+Consider a complex inheritance structure for an e-commerce system:
+
+```python
+# Before refactoring - problematic hierarchy
+
+class Product:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+
+class PhysicalProduct(Product):
+    def __init__(self, name, price, weight, dimensions):
+        super().__init__(name, price)
+        self.weight = weight
+        self.dimensions = dimensions
+
+    def calculate_shipping_cost(self):
+        # Complex calculation based on weight/dimensions
+        pass
+
+    def get_tax_rate(self):
+        # Tax varies by location, weight
+        pass
+
+class DigitalProduct(Product):
+    def __init__(self, name, price, file_size):
+        super().__init__(name, price)
+        self.file_size = file_size
+
+    def calculate_shipping_cost(self):
+        return 0  # Digital items don't ship
+
+    def get_tax_rate(self):
+        return 0  # No tax on digital products
+
+class Subscription(Product):
+    def __init__(self, name, price, billing_period):
+        super().__init__(name, price)
+        self.billing_period = billing_period
+
+    def calculate_shipping_cost(self):
+        return 0
+
+    def get_tax_rate(self):
+        return 0  # Subscription tax varies by region, handled elsewhere
+```
+
+**Problems the AI hierarchy analysis identifies:**
+
+1. **Liskov Substitution Principle violation**: All subclasses override `calculate_shipping_cost`, but behavior is drastically different
+2. **Unused interface implementation**: `get_tax_rate` returns 0 for most subclasses
+3. **Mixed concerns**: The `Product` class handles pricing but subclasses handle tax and shipping
+4. **Tight coupling**: Shipping and tax logic depends on product type
+
+**AI-recommended refactoring:**
+
+```python
+# After refactoring - composition over inheritance
+
+class PricingStrategy:
+    def get_price(self):
+        pass
+
+class TaxCalculator:
+    def calculate_tax(self, product, region):
+        pass
+
+class ShippingCalculator:
+    def calculate_cost(self, product, destination):
+        pass
+
+class Product:
+    def __init__(self, name, price, pricing_strategy):
+        self.name = name
+        self.price = price
+        self.pricing_strategy = pricing_strategy
+
+    def calculate_tax(self, region):
+        return self.pricing_strategy.tax_calculator.calculate_tax(self, region)
+
+    def calculate_shipping(self, destination):
+        return self.pricing_strategy.shipping_calculator.calculate_cost(self, destination)
+
+# Specialized products now just configure different strategies
+physical_product = Product(
+    name="Book",
+    price=29.99,
+    pricing_strategy=PhysicalProductPricing()
+)
+
+digital_product = Product(
+    name="E-Book",
+    price=9.99,
+    pricing_strategy=DigitalProductPricing()
+)
+
+subscription = Product(
+    name="Premium Membership",
+    price=99.99,
+    pricing_strategy=SubscriptionPricing()
+)
+```
+
+The AI refactoring process would:
+
+1. Identify that `calculate_shipping_cost` and `get_tax_rate` are the divergence points
+2. Suggest extracting these behaviors into strategy objects
+3. Propose adding dependency injection
+4. Generate the new class structure
+5. Update all call sites to use the new pattern
+6. Flag any remaining type mismatches
+
+## Testing During Refactoring
+
+Critical tests to run before, during, and after hierarchy refactoring:
+
+```python
+# Test 1: Behavior preservation
+class TestProductBehavior(unittest.TestCase):
+    def test_physical_product_shipping_calculation(self):
+        # This test must pass before, during, and after refactoring
+        product = create_physical_product(weight=5, dimensions="10x10x10")
+        self.assertEqual(product.calculate_shipping("US"), expected_cost)
+
+    def test_digital_product_no_shipping(self):
+        # Digital products must always have zero shipping cost
+        product = create_digital_product()
+        self.assertEqual(product.calculate_shipping("US"), 0)
+
+# Test 2: Type compatibility
+class TestTypeCompatibility(unittest.TestCase):
+    def test_all_products_respond_to_price(self):
+        # After refactoring, all products should provide price
+        products = [physical_product, digital_product, subscription]
+        for product in products:
+            self.assertTrue(hasattr(product, 'price'))
+            self.assertIsInstance(product.price, (int, float))
+
+# Test 3: Substitutability (if keeping inheritance)
+class TestLiskovSubstitution(unittest.TestCase):
+    def handle_product(self, product):
+        # This function should work with ANY product type
+        shipping = product.calculate_shipping("US")
+        tax = product.get_tax_rate()
+        return shipping + tax
+
+    def test_substitutability(self):
+        # All product types should work in polymorphic contexts
+        products = [physical_product, digital_product, subscription]
+        for product in products:
+            result = self.handle_product(product)
+            self.assertIsNotNone(result)
+```
+
+## Measuring Refactoring Success
+
+Beyond passing tests, quantify the improvement:
+
+| Metric | Before | After | Target |
+|--------|--------|-------|--------|
+| Lines in base class | 300 | 50 | <100 |
+| Max inheritance depth | 4 | 2 | <3 |
+| Cyclomatic complexity (avg) | 8 | 4 | <5 |
+| Code duplication | 23% | 8% | <10% |
+| Test coverage | 72% | 95% | >90% |
+| Time to add new product type | 2 hours | 20 minutes | <30 min |
+
+The last metric is most important—refactoring succeeds when it becomes easier to extend the system with new types.
+
+
 ## Related Articles
 
 - [Best AI IDE Features for Database Query Writing and](/ai-tools-compared/best-ai-ide-features-for-database-query-writing-and-optimization/)
