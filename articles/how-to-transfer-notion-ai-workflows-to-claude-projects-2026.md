@@ -29,6 +29,8 @@ Notion AI operates within the constraints of a block-based document system. Your
 
 The fundamental shift involves moving from a visual, database-driven approach to a code-driven approach. Instead of configuring AI through Notion's UI, you define prompts, create custom tools, and write scripts that interact with APIs directly.
 
+This shift requires some upfront investment but pays dividends quickly. Notion AI workflows are constrained by what Notion's interface exposes — you cannot loop over a database, call an external API mid-workflow, or conditionally branch based on the result of an AI call. In Claude Projects, all of those patterns become straightforward Python or shell scripts. The migration is less about recreating what Notion did and more about unlocking what was previously impossible.
+
 
 ## Mapping Notion Concepts to Claude Projects
 
@@ -56,6 +58,8 @@ In Notion, you might have a database with AI-generated summaries in a text prope
 
 Your Claude Project can then read this file, use the AI to generate summaries, and write back the updated data.
 
+The JSON approach has an advantage over Notion databases: schema changes are trivial. Adding a new property to your Notion database requires clicking through the UI and potentially breaking existing automations. In a JSON file, you add a key. Your scripts handle missing keys gracefully with `task.get('new_field', default_value)`.
+
 
 ### From Notion Templates to Project Templates
 
@@ -72,6 +76,12 @@ OUTPUT_DIR="meetings/$(date +%Y-%m-%d)-meeting-notes.md"
 cp "$TEMPLATE_FILE" "$OUTPUT_DIR"
 echo "Created meeting notes at $OUTPUT_DIR"
 ```
+
+
+### From Notion Relations to File References
+
+
+Notion's relational database properties let you link records across databases. In Claude Projects, you represent these relationships as foreign key references in JSON, or as symlinks and relative paths in a directory structure. A task that relates to a project becomes `"project_id": "proj-042"`, resolved by looking up `projects.json`.
 
 
 ## Building Equivalent Workflows
@@ -107,6 +117,8 @@ if __name__ == "__main__":
 
 This script processes your tasks and generates AI summaries, replacing what might have been a Notion formula or AI block combination.
 
+For larger datasets, add rate limiting and batching. Notion AI processes one block at a time through the UI; your script can process in parallel with `concurrent.futures.ThreadPoolExecutor`, making bulk regeneration significantly faster than the equivalent Notion operation.
+
 
 ### Workflow Triggers
 
@@ -134,6 +146,9 @@ def on_file_change(filepath):
 if __name__ == "__main__":
     watch_file('data/tasks.json', on_file_change)
 ```
+
+
+For production use, replace the polling loop with `watchdog` (a Python library that uses OS-level filesystem events) or a simple cron entry. Cron triggers are more reliable than Notion's webhook-based triggers, which occasionally miss events under high load or during Notion's maintenance windows.
 
 
 ## Migrating Your Prompts
@@ -166,6 +181,8 @@ def summarize_content(content):
     prompt = template.replace('{{content}}', content)
     return generate_text(prompt)
 ```
+
+Making prompts explicit in files has a significant benefit: you can version-control them with git, track how output quality changes when you refine wording, and A/B test different prompt versions against the same input data. Notion AI prompts are buried in block configuration and cannot be easily compared or audited.
 
 
 ## Preserving Data During Migration
@@ -215,6 +232,9 @@ if __name__ == "__main__":
 ```
 
 
+When migrating AI-generated content (summaries, tags, extracted entities), you have a choice: migrate the existing AI output and use it as-is, or set those fields to `null` and regenerate them with Claude. Regeneration is usually worth the cost. Notion AI outputs tend to be shorter and less precise than what Claude Projects can produce with a well-crafted prompt.
+
+
 ## When Claude Projects Shines
 
 
@@ -228,6 +248,8 @@ Claude Projects offer advantages that Notion cannot match for AI workflows:
 
 
 **Programmatic control** enables complex conditional logic. Your workflows can make decisions based on code analysis, test results, or external API responses—anything you can express in code.
+
+**Audit trails** are straightforward with git. Every change to your data files, prompts, and scripts is tracked. When an AI-generated summary is wrong, you can trace back exactly which prompt version and model produced it. Notion has no equivalent audit mechanism for AI-generated content.
 
 
 ## Practical Migration Strategy
@@ -246,6 +268,20 @@ Start by identifying your most critical Notion AI workflows. For each workflow:
 
 
 Most teams find that after migration, they build additional automation they could not implement in Notion. The code-centric approach removes the limitations of block-based systems and opens new possibilities for AI-powered workflows.
+
+A reasonable migration timeline for a team with 10-20 active Notion AI workflows is two to four weeks: one week for export and data transformation, one week for prompt migration and script development, and one to two weeks for testing and parallel running before fully decommissioning the Notion workflows.
+
+
+## Handling Edge Cases in Migration
+
+
+A few Notion AI features require special handling during migration:
+
+**Notion AI summaries on linked databases**: If your AI blocks pulled content from linked databases rather than the current page, your migration script needs to resolve those links before generating summaries. Export both databases, join them by ID in Python, then pass the combined content to Claude.
+
+**Recurring AI workflows**: Notion's "Update AI block" button is manual. If you had team members clicking it on a schedule, replace this with a cron job: `0 9 * * 1-5 python /path/to/generate_content.py` runs your content generation every weekday at 9am without human intervention.
+
+**AI filters on database views**: Notion lets you filter database views by AI-generated property values. In Claude Projects, implement this as a query against your JSON data: `[t for t in tasks if 'urgent' in t.get('ai_tags', [])]`. The logic is more explicit and easier to debug than Notion's filter UI.
 
 
 ---
