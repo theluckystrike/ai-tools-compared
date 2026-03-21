@@ -44,6 +44,18 @@ The core philosophy behind Continue Dev centers on giving developers full contro
 - Supports self-hosting so you can run everything locally without sending data to external servers
 
 
+
+## Quick Comparison
+
+| Feature | Continue Dev | Github Copilot |
+|---|---|---|
+| AI Model | See specs | See specs |
+| Code Completion | Supported | Supported |
+| Context Window | See documentation | See documentation |
+| IDE Support | Multiple IDEs | Multiple IDEs |
+| Pricing | $10 | $10 |
+| Language Support | Multi-language | Multi-language |
+
 ## What is GitHub Copilot?
 
 

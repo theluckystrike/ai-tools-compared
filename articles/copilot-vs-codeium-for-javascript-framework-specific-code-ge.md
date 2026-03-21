@@ -27,6 +27,18 @@ This guide compares the strengths and weaknesses of each tool for this specific 
 Framework-specific code generation differs from general JavaScript completion. The best results come from assistants that recognize React hooks, Vue composition API patterns, component composition techniques, and framework-specific best practices. Both Copilot and Codeium offer code completion and generation capabilities, but their approaches and strengths vary significantly.
 
 
+
+## Quick Comparison
+
+| Feature | Copilot | Codeium |
+|---|---|---|
+| AI Model | See specs | See specs |
+| Code Completion | Supported | Supported |
+| Context Window | See documentation | See documentation |
+| IDE Support | Multiple IDEs | Multiple IDEs |
+| Pricing | See current pricing | Free tier available |
+| Language Support | Multi-language | Multi-language |
+
 ## GitHub Copilot for React and Vue
 
 

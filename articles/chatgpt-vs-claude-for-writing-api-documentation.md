@@ -30,6 +30,18 @@ ChatGPT, powered by OpenAI's GPT models, generates text based on patterns learne
 Claude, developed by Anthropic, emphasizes clear communication and follows instructions precisely. It tends to produce more structured output and maintains better context throughout longer conversations. Claude also demonstrates stronger reasoning capabilities, which helps when explaining complex technical concepts accurately.
 
 
+
+## Quick Comparison
+
+| Feature | Chatgpt | Claude |
+|---|---|---|
+| AI Model | See specs | See specs |
+| Code Completion | Supported | Supported |
+| Context Window | See documentation | See documentation |
+| IDE Support | Multiple IDEs | Multiple IDEs |
+| Pricing | See current pricing | See current pricing |
+| Language Support | Multi-language | Multi-language |
+
 ## Generating Endpoint Documentation
 
 

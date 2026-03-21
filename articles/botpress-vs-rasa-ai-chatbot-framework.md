@@ -80,6 +80,18 @@ nlu:
 Rasa's architecture separates NLU (natural language understanding) from dialogue management. This separation allows fine-tuned control over how conversations progress and how intents are classified.
 
 
+
+## Quick Comparison
+
+| Feature | Botpress | Rasa |
+|---|---|---|
+| AI Model | See specs | See specs |
+| Code Completion | Supported | Supported |
+| Context Window | See documentation | See documentation |
+| IDE Support | Multiple IDEs | Multiple IDEs |
+| Pricing | See current pricing | See current pricing |
+| Language Support | Multi-language | Multi-language |
+
 ## Natural Language Understanding
 
 

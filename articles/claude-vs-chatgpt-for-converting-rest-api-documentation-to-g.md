@@ -30,6 +30,18 @@ Converting REST endpoints to a GraphQL schema requires more than syntax translat
 Claude tends to excel at understanding the structural relationships in your API documentation and producing a coherent schema that follows GraphQL best practices. ChatGPT generates schemas quickly and handles large volumes of endpoints efficiently, though the output may require more manual refinement.
 
 
+
+## Quick Comparison
+
+| Feature | Claude | Chatgpt |
+|---|---|---|
+| AI Model | See specs | See specs |
+| Code Completion | Supported | Supported |
+| IDE Support | Multiple IDEs | Multiple IDEs |
+| Pricing | See current pricing | See current pricing |
+| Inline Chat | Available | Available |
+| Privacy | Privacy-focused | Privacy-focused |
+
 ## Practical Comparison
 
 

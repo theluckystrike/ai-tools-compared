@@ -60,6 +60,18 @@ def fetch_user(user_id: str) -> dict:
 ```
 
 
+
+## Quick Comparison
+
+| Feature | Claude Code | Chatgpt Code Interpreter |
+|---|---|---|
+| AI Model | See specs | See specs |
+| Code Completion | Supported | Supported |
+| Context Window | See documentation | See documentation |
+| IDE Support | Multiple IDEs | Multiple IDEs |
+| Pricing | $20/month | $20/month |
+| Language Support | Multi-language | Multi-language |
+
 ## Context and Project Awareness
 
 

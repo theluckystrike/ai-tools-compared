@@ -39,6 +39,18 @@ Claude.md supports rich, hierarchical instructions. You can nest project-specifi
 One practical advantage: because Claude.md uses natural language, non-engineers (technical writers, architects, product managers) can contribute to and review AI configuration without learning a configuration DSL. This matters in teams where institutional knowledge about conventions is spread across roles.
 
 
+
+## Quick Comparison
+
+| Feature | Ai Tool Customization Comparison Claude Md | Cursorrules Vs |
+|---|---|---|
+| AI Model | See specs | See specs |
+| Code Completion | Supported | Supported |
+| Context Window | See documentation | See documentation |
+| IDE Support | Multiple IDEs | Multiple IDEs |
+| Multi-File Editing | Supported | Supported |
+| Language Support | Multi-language | Multi-language |
+
 ## Understanding CursorRules
 
 

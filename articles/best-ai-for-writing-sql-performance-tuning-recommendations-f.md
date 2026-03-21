@@ -230,7 +230,7 @@ Iterate on the AI recommendations by providing execution plan output and asking 
 - [Best AI Tools for SQL Query Optimization and Database](/ai-tools-compared/best-ai-tools-for-sql-query-optimization-and-database-performance/)
 - [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
 - [Best AI for Writing dbt Macros That Generate Dynamic SQL Bas](/ai-tools-compared/best-ai-for-writing-dbt-macros-that-generate-dynamic-sql-bas/)
-- [Best AI Tools for Writing SQL Migrations in 2026](/ai-tools-compared/best-ai-tools-for-writing-sql-migrations-2026/)
+- [Best AI Tools for Writing SQL Migrations in 2026](/ai-tools-compared/articles/best-ai-tools-for-writing-sql-migrations-2026/)
 - [Copilot vs Claude Code for Writing Complex SQL Stored Proced](/ai-tools-compared/copilot-vs-claude-code-for-writing-complex-sql-stored-proced/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

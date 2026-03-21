@@ -57,6 +57,18 @@ const config = {
 This baseline demonstrates the kind of code both tools will interact with throughout the implementation.
 
 
+
+## Quick Comparison
+
+| Feature | Cursor | Copilot |
+|---|---|---|
+| Code Completion | Supported | Supported |
+| Context Window | See documentation | See documentation |
+| IDE Support | Multiple IDEs | Multiple IDEs |
+| Pricing | See current pricing | See current pricing |
+| Language Support | Multi-language | Multi-language |
+| Inline Chat | Available | Available |
+
 ## Copilot's Approach to OAuth2 Implementation
 
 

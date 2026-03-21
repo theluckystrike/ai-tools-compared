@@ -30,6 +30,18 @@ Stable Diffusion functions as an open-source model you can run locally or deploy
 For illustration work specifically, this architectural difference shapes your workflow fundamentally.
 
 
+
+## Quick Comparison
+
+| Feature | Dall E 3 | Stable Diffusion |
+|---|---|---|
+| AI Model | See specs | See specs |
+| Code Completion | Supported | Supported |
+| IDE Support | Multiple IDEs | Multiple IDEs |
+| Pricing | $0.04 | $0.04 |
+| Language Support | Multi-language | Multi-language |
+| Terminal Integration | Available | Available |
+
 ## API Integration and Developer Experience
 
 

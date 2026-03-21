@@ -31,6 +31,18 @@ When evaluating AI-powered customer success platforms, developers and technical 
 Both platforms aim to reduce churn and improve customer outcomes, but their approaches differ significantly for technical users.
 
 
+
+## Quick Comparison
+
+| Feature | Custify | Gainsight |
+|---|---|---|
+| AI Model | See specs | See specs |
+| Code Completion | Supported | Supported |
+| Context Window | See documentation | See documentation |
+| IDE Support | Multiple IDEs | Multiple IDEs |
+| Language Support | Multi-language | Multi-language |
+| Terminal Integration | Available | Available |
+
 ## API Architecture and Developer Experience
 
 

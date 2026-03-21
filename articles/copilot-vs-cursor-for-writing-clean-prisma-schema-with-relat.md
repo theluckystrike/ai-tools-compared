@@ -27,6 +27,18 @@ A well-structured Prisma schema requires careful attention to relation fields, s
 The challenge with AI coding assistants is that they must understand not just TypeScript or JavaScript, but also Prisma's schema language and how it maps to database relationships. The best assistant recognizes when you're defining a relation and suggests the appropriate cardinalities, onDelete behaviors, and relation mode configurations.
 
 
+
+## Quick Comparison
+
+| Feature | Copilot | Cursor |
+|---|---|---|
+| AI Model | See specs | See specs |
+| Code Completion | Supported | Supported |
+| Context Window | See documentation | See documentation |
+| IDE Support | Multiple IDEs | Multiple IDEs |
+| Language Support | Multi-language | Multi-language |
+| Inline Chat | Available | Available |
+
 ## GitHub Copilot for Prisma Schema
 
 
