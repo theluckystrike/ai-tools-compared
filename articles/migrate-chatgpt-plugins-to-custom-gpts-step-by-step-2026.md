@@ -137,13 +137,9 @@ Custom GPT Actions support multiple authentication methods. Map your plugin's au
 
 
 | Plugin Auth Type | Custom GPT Action Auth |
-
 |-----------------|----------------------|
-
 | None | No authentication |
-
 | API Key | Header or query parameter |
-
 | OAuth 2.0 | OAuth 2.0 configuration |
 
 
@@ -213,7 +209,7 @@ Monitor usage through the My GPTs dashboard. Track API call volumes and response
 ## Advanced: Programmatic GPT Creation
 
 
-For批量 migrating multiple plugins, use the Assistants API to create Custom GPTs programmatically:
+For bulk migrating multiple plugins, use the Assistants API to create Custom GPTs programmatically:
 
 
 ```python
@@ -249,6 +245,153 @@ assistant = client.beta.assistants.create(
 
 
 This approach gives you version control over your GPT configurations and enables CI/CD pipelines for GPT management.
+
+
+## Writing Effective System Prompts for Migrated GPTs
+
+
+One area where Custom GPTs diverge significantly from plugins is the system prompt. Plugins relied entirely on the `description_for_model` field in the manifest to guide behavior. Custom GPTs have a full system prompt field where you can provide detailed instructions, personas, and constraints.
+
+
+When migrating, translate your plugin's `description_for_model` into a richer system prompt:
+
+
+**Plugin manifest approach (limited):**
+```json
+{
+  "description_for_model": "Fetches current weather data for any location. Use this when users ask about weather."
+}
+```
+
+
+**Custom GPT system prompt approach (expanded):**
+```
+You are a weather assistant. When users ask about current conditions, forecasts,
+or weather-related travel planning, call the getWeather action with the
+location they specify.
+
+Always:
+- Ask for clarification if the location is ambiguous
+- Present temperatures in both Celsius and Fahrenheit
+- Include a brief description of what the conditions mean practically
+  (e.g., "light rain — bring an umbrella")
+- Suggest follow-up questions like "Would you like a 5-day forecast?"
+
+Never fabricate weather data if the API call fails — inform the user that
+the service is temporarily unavailable.
+```
+
+
+The system prompt investment pays off in user experience. Take time to write instructions that match how your plugin originally behaved, then extend them with behaviors the constrained manifest format could not express.
+
+
+## Migrating Multiple Plugins: Batch Automation Script
+
+
+If you have more than two or three plugins to migrate, automate the process. This script reads plugin manifests from a directory and creates corresponding Assistants API configurations:
+
+
+```python
+import json
+import os
+from pathlib import Path
+from openai import OpenAI
+
+client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+
+def load_plugin_manifest(manifest_path: str) -> dict:
+    with open(manifest_path) as f:
+        return json.load(f)
+
+def load_openapi_spec(spec_url: str) -> dict:
+    import requests
+    response = requests.get(spec_url)
+    response.raise_for_status()
+    return response.json()
+
+def migrate_plugin_to_assistant(manifest_path: str) -> str:
+    manifest = load_plugin_manifest(manifest_path)
+    openapi_spec = load_openapi_spec(manifest["api"]["url"])
+
+    # Extract function definitions from OpenAPI paths
+    tools = []
+    for path, methods in openapi_spec.get("paths", {}).items():
+        for method, operation in methods.items():
+            if method in ("get", "post", "put", "delete"):
+                tool = {
+                    "type": "function",
+                    "function": {
+                        "name": operation.get("operationId", f"{method}_{path.replace('/', '_')}"),
+                        "description": operation.get("summary", ""),
+                        "parameters": {
+                            "type": "object",
+                            "properties": {},
+                            "required": []
+                        }
+                    }
+                }
+                tools.append(tool)
+
+    assistant = client.beta.assistants.create(
+        name=manifest["name_for_human"],
+        description=manifest["description_for_model"],
+        model="gpt-4o",
+        tools=tools
+    )
+    return assistant.id
+
+# Migrate all plugins in a directory
+plugin_dir = Path("./plugins")
+for manifest_file in plugin_dir.glob("*/ai-plugin.json"):
+    assistant_id = migrate_plugin_to_assistant(str(manifest_file))
+    print(f"Migrated {manifest_file.parent.name} -> Assistant ID: {assistant_id}")
+```
+
+
+This script handles the mechanical conversion. You will still need to review each generated assistant and refine its system prompt and tool definitions manually.
+
+
+## Plugin Migration Compatibility Reference
+
+
+Not all plugin features translate cleanly to Custom GPTs. Use this reference when auditing your plugins:
+
+
+| Plugin Feature | Custom GPT Equivalent | Migration Effort |
+|---------------|----------------------|-----------------|
+| `description_for_model` | System prompt | Low — expand and refine |
+| `description_for_human` | GPT name + description fields | Low — copy directly |
+| No-auth API | Action with no auth | Low — paste OpenAPI spec |
+| API key auth | Action with API key auth | Low — configure in Actions panel |
+| OAuth 2.0 | Action with OAuth 2.0 | Medium — reconfigure client credentials |
+| Logo / branding | GPT profile image | Low — upload image |
+| Legal / privacy URLs | GPT Builder info fields | Low — paste URLs |
+| `contact_email` | Not required in Custom GPTs | None — field removed |
+| Multiple endpoints | Multiple operations in one Action | Low — single spec covers all |
+
+
+## Frequently Asked Questions
+
+
+**Q: Do I need to change my backend API when migrating from a plugin to a Custom GPT?**
+
+No. Your API server stays identical. Only the configuration layer changes — from the `ai-plugin.json` manifest to the GPT Builder Actions interface. The API endpoints, authentication logic, and response formats remain unchanged.
+
+**Q: Can a single Custom GPT replace multiple plugins?**
+
+Yes. A Custom GPT can have a single OpenAPI specification that covers all your plugin endpoints. Consolidating multiple plugins into one Custom GPT simplifies user experience and reduces the number of GPTs you need to maintain.
+
+**Q: What happens to users who were using my plugin before?**
+
+ChatGPT Plugins are deprecated, so existing plugin users need to discover and install your Custom GPT separately. Share the Custom GPT link with your existing users and post it wherever you originally promoted the plugin.
+
+**Q: My plugin used OAuth. How do I set that up in a Custom GPT?**
+
+In the Actions configuration panel, select "OAuth" as the authentication type. Enter your OAuth client ID, client secret, authorization URL, and token URL. The GPT Builder handles the OAuth flow for users automatically after this configuration.
+
+**Q: Can I test Actions against a local development server?**
+
+Not directly through the GPT Builder interface, which requires publicly accessible HTTPS URLs. Use a tunneling tool like ngrok or Cloudflare Tunnel to expose your local server temporarily during development and testing.
 
 
 ## Related Articles
