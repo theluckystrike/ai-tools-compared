@@ -38,6 +38,20 @@ Understanding the error type helps you apply the right solution:
 - Organization billing errors: Team or enterprise billing complications
 
 
+## Copilot Plan Comparison: Individual, Business, and Enterprise
+
+Before troubleshooting billing, it helps to confirm you are on the right plan. Billing errors often stem from a mismatch between the plan purchased and the access level expected.
+
+| Plan | Price (2026) | Seat Management | SSO/SAML | Policy Controls | Best For |
+|---|---|---|---|---|---|
+| Copilot Individual | $10/month | Self-managed | No | None | Solo developers |
+| Copilot Business | $19/seat/month | Admin dashboard | Yes | Basic | Teams (5-300) |
+| Copilot Enterprise | $39/seat/month | Admin + SSO | Yes | Full | Large orgs |
+| Copilot Free | $0 | Self-managed | No | None | Casual users |
+
+Copilot Free (launched late 2024) is limited to 2,000 completions and 50 chat messages per month. If you exhaust those limits and have not upgraded, Copilot will appear to stop working—which is often misdiagnosed as a billing error. Check your usage dashboard at **Settings > Copilot > Usage** before assuming a payment problem.
+
+
 ## Step-by-Step Troubleshooting Solutions
 
 
@@ -173,10 +187,38 @@ curl -H "Authorization: Bearer YOUR_TOKEN" \
 This returns subscription details including seat allocation and billing cycle information.
 
 
+### Verify Copilot Extension Status in VS Code
+
+
+Sometimes the billing is fine but the editor extension has a stale authentication token. In VS Code, run:
+
+1. Open the Command Palette (Cmd+Shift+P / Ctrl+Shift+P)
+2. Type **GitHub Copilot: Sign Out** and execute it
+3. Sign back in with **GitHub Copilot: Sign In**
+4. Check the Copilot icon in the status bar—it should turn from a red X to a checkmark within 30 seconds
+
+If the icon stays red after re-authentication, run `gh auth status` in the terminal to confirm your GitHub CLI token is valid. A mismatch between the CLI token and the VS Code extension token occasionally causes phantom "billing" errors that are actually authentication failures.
+
+
 ### Monitoring with GitHub Webhooks
 
 
 Organizations can set up billing webhooks to receive real-time notifications about subscription changes. Configure these in your organization settings to stay ahead of billing issues.
+
+
+## Full Troubleshooting Workflow for Organization Admins
+
+Enterprise and Business billing errors are more complex because they involve seat assignments, cost centers, and SSO. Use this sequence when an engineer reports that Copilot is not working:
+
+**Step 1: Confirm the organization subscription is active.** Go to **github.com/organizations/YOUR-ORG/settings/billing**. Look for the Copilot section. Confirm it shows "Active" and the renewal date is in the future. If the subscription lapsed, you will see a "Reactivate" button—click it and add a valid payment method.
+
+**Step 2: Verify the affected user has a seat.** Under **Organization Settings > Copilot > Access**, confirm the user appears in the seat list. If they are missing, click **Add members** and assign them. Seat provisioning typically propagates within 2-5 minutes; tell the user to reload VS Code after waiting.
+
+**Step 3: Check SSO enforcement.** If your organization enforces SAML SSO, users must authorize their personal access token for SSO before Copilot can authenticate. Navigate to **github.com/settings/tokens**, find the token used by VS Code, and click **Authorize** next to your organization name. This step is easy to miss and causes "subscription not found" errors despite an active seat.
+
+**Step 4: Review invoicing for enterprise managed users (EMUs).** EMU organizations bill differently—seats are provisioned through your identity provider, not through GitHub's billing UI. If a user's account was deprovisioned and reprovisioned by your IdP, their Copilot seat may need to be re-assigned manually even though the EMU account exists.
+
+**Step 5: Escalate with a support ticket.** Open a ticket at **support.github.com** under the **Billing** category. Include: the organization name, affected usernames, the exact error message (copy from browser dev tools if the UI is not showing it), and your most recent invoice number. GitHub billing support typically responds within 4-8 business hours for Business plans and within 1-2 hours for Enterprise.
 
 
 ## Preventing Future Billing Issues
@@ -213,18 +255,33 @@ Use GitHub's **Support** → **Billing support** category for specialized help. 
 
 
 | Error Message | Likely Cause | Quick Fix |
-
-|---------------|--------------|-----------|
-
+|---|---|---|
 | "Payment method declined" | Card issue | Update payment method |
-
 | "Subscription not found" | Sync delay | Wait 10 minutes, refresh |
-
 | "No seats available" | Organization limit | Contact org admin |
-
 | "Upgrade failed" | Pending changes | Cancel pending changes |
-
 | "Access denied" | Permissions | Verify org role |
+| "Free plan limit reached" | Usage cap hit | Upgrade to Individual |
+| "SSO authorization required" | Token not SSO-authorized | Authorize token for org |
+
+
+## FAQ
+
+**Q: My card was charged but Copilot still shows as inactive. How long should I wait?**
+
+The subscription activates within 5 minutes of a successful charge in most cases. If it has been more than 30 minutes and you have a payment confirmation email, sign out and back into GitHub on the web, then sign out and back into Copilot in your editor. If unresolved, open a billing support ticket—GitHub can manually trigger a subscription sync.
+
+**Q: Can I get a refund if I was charged for a month I didn't use Copilot?**
+
+GitHub's standard policy does not offer prorated refunds, but billing support often issues a courtesy credit for the first occurrence. State in your ticket that you were unable to access the service and include error screenshots. Credits apply to future invoices rather than card reversals.
+
+**Q: I have both a personal Copilot Individual subscription and an org Copilot Business seat. Am I being double-billed?**
+
+Yes, if both are active you are charged for both. Cancel your personal subscription after your org assigns you a Business seat: **Settings > Billing > Plans and usage > Copilot > Cancel plan**. Your org seat remains active.
+
+**Q: Our organization uses a purchase order system. What do we do?**
+
+GitHub Enterprise supports invoicing via purchase order for annual commitments. Contact GitHub Sales (sales@github.com) to set up an enterprise agreement. Once on invoiced billing, Copilot Enterprise seats are managed through the enterprise agreement rather than credit card payments.
 
 
 ## Related Articles
