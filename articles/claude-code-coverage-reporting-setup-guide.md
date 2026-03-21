@@ -31,6 +31,8 @@ Setting up automated code coverage reporting is essential for maintaining code q
 
 Code coverage metrics tell you how much of your codebase is exercised by your test suite. While 100% coverage isn't always necessary or practical, maintaining adequate coverage helps identify untested code paths, reduces bugs, and improves overall code reliability. Claude Code can assist in setting up coverage tools tailored to your project's language and testing framework.
 
+Coverage data surfaces practical insights that code review alone misses. A function with zero coverage is a blind spot — you don't know if it works because nobody has tested it. A branch with 20% coverage tells you that most of the logic paths through a conditional block have never been executed in a test. These are exactly the kinds of signals that prevent production incidents.
+
 
 
 ## Choosing Your Coverage Tools
@@ -55,7 +57,7 @@ Different languages and frameworks require different coverage tools. Here's a qu
 
 
 
-Claude Code can help you integrate the appropriate tool based on your project stack and generate configuration files automatically.
+Claude Code can help you integrate the appropriate tool based on your project stack and generate configuration files automatically. When you describe your stack and testing framework, Claude Code will suggest the right tool and produce a working configuration — not just pseudocode, but actual config files you can paste directly into your project.
 
 
 
@@ -151,6 +153,37 @@ skip_covered = false
 ```
 
 
+### For Go Projects
+
+Go has built-in coverage support, making setup minimal:
+
+```bash
+# Run tests with coverage
+go test ./... -coverprofile=coverage.out -covermode=atomic
+
+# View coverage in terminal
+go tool cover -func=coverage.out
+
+# Generate HTML report
+go tool cover -html=coverage.out -o coverage.html
+```
+
+For CI integration, Claude Code can help you set a coverage gate using a shell script:
+
+```bash
+#!/bin/bash
+# coverage-check.sh
+COVERAGE=$(go tool cover -func=coverage.out | grep total | awk '{print substr($3, 1, length($3)-1)}')
+THRESHOLD=70
+
+if (( $(echo "$COVERAGE < $THRESHOLD" | bc -l) )); then
+  echo "Coverage ${COVERAGE}% is below threshold ${THRESHOLD}%"
+  exit 1
+fi
+echo "Coverage ${COVERAGE}% meets threshold"
+```
+
+
 ## Automating Coverage Reports
 
 
@@ -173,29 +206,40 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
-      
+
       - name: Install dependencies
         run: npm ci
-      
+
       - name: Run tests with coverage
         run: npm run test:coverage
-      
+
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: ./coverage/lcov.info
           flags: unittests
-      
+
       - name: Generate HTML coverage report
         run: npm run coverage:html
+
+      - name: Comment PR with coverage summary
+        if: github.event_name == 'pull_request'
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          message: |
+            ## Coverage Report
+            Coverage data from this run is available in the Actions artifacts.
 ```
+
+Claude Code can extend this workflow to post coverage diffs on pull requests — showing not just absolute coverage, but whether a PR increased or decreased coverage compared to the base branch. This is more useful than raw coverage numbers for code review.
+
 
 
 ## Setting Realistic Coverage Thresholds
@@ -207,20 +251,37 @@ Establishing coverage thresholds requires balancing practicality with code quali
 
 
 | Threshold Type | Recommended | Description |
-
 |----------------|-------------|-------------|
-
 | Statements | 70-80% | Minimum acceptable coverage |
-
 | Branches | 65-75% | Accounts for conditional logic |
-
 | Functions | 75-85% | Ensures functions are tested |
-
 | Lines | 70-80% | Core metric for coverage |
 
 
 
 Claude Code can help you adjust these thresholds based on your project's maturity and complexity. Start with lower thresholds and gradually increase them as your test suite matures.
+
+A practical approach is to set thresholds at your current coverage level minus 2-3 percentage points. This creates a "no regression" gate without demanding improvement before you are ready. Then use Claude Code to help you write tests that fill gaps methodically — one module at a time.
+
+
+## Using Claude Code to Write Coverage-Filling Tests
+
+One of the highest-value uses of Claude Code in a coverage workflow is generating tests for uncovered code paths. After running your coverage tool, you get a report showing exactly which lines and branches are untested. Feed that report directly to Claude Code:
+
+```
+Here is my coverage report showing uncovered lines in src/utils/validator.ts:
+
+Lines 45-67 (the parseDate function) are completely uncovered.
+Branch on line 89 (the null check) is only 50% covered.
+
+Here is the source code for validator.ts: [paste code]
+
+Please write Jest tests that cover these gaps. Focus on edge cases
+and error conditions in parseDate, and add a test for the null
+path on line 89.
+```
+
+This targeted approach is more efficient than asking Claude Code to write tests from scratch. You already know what's missing — you just need help filling it.
 
 
 
@@ -233,13 +294,34 @@ You can use Claude Code to generate coverage-focused prompts for your developmen
 
 
 ```
-Generate unit tests for this function that achieve at least 80% branch coverage. 
-Focus on edge cases and error conditions. After writing tests, run coverage 
+Generate unit tests for this function that achieve at least 80% branch coverage.
+Focus on edge cases and error conditions. After writing tests, run coverage
 analysis and identify any uncovered branches.
 ```
 
 
-This approach lets Claude Code actively participate in improving your test coverage.
+This approach lets Claude Code actively participate in improving your test coverage. For functions with complex conditional logic, asking Claude Code to enumerate all possible code paths first — then generate a test for each — often produces better coverage than asking for tests directly.
+
+
+## Coverage Reporting for Monorepos
+
+Monorepos require extra configuration to generate per-package and aggregate coverage reports. Claude Code can help set this up:
+
+```json
+// jest.config.js for a monorepo with multiple packages
+module.exports = {
+  projects: ['<rootDir>/packages/*/jest.config.js'],
+  collectCoverageFrom: [
+    'packages/*/src/**/*.{ts,tsx}',
+    '!packages/*/src/**/*.d.ts',
+    '!packages/*/src/**/index.ts'
+  ],
+  coverageDirectory: '<rootDir>/coverage',
+  coverageReporters: ['text', 'lcov', 'json-summary']
+}
+```
+
+When you share your monorepo structure with Claude Code and ask for a coverage setup, it will account for the package boundaries and generate configurations that aggregate correctly in CI.
 
 
 
@@ -256,6 +338,10 @@ This approach lets Claude Code actively participate in improving your test cover
 4. Automate consistently: Run coverage on every commit to catch regressions early
 
 5. Review coverage reports: Make coverage metrics visible to the entire team
+
+6. Exclude generated code: Auto-generated files, migration files, and build artifacts should be excluded from coverage metrics — they inflate numbers without providing signal
+
+7. Treat branch coverage as primary: Line coverage is easy to game; branch coverage catches missed conditional paths that line coverage misses
 
 
 ## Related Reading
