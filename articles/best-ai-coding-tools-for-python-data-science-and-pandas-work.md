@@ -27,6 +27,9 @@ Pandas offers over 500 functions and methods, with new features added regularly.
 The best tools for pandas work understand DataFrame operations, can generate vectorized solutions instead of slow row-by-row iterations, and provide accurate code for complex transformations involving multi-index structures, categorical data, and datetime operations.
 
 
+One practical test that separates good AI tools from great ones: ask them to convert a slow `iterrows()` loop to a vectorized operation on a 10-million-row DataFrame. The best tools understand not just the syntax but the performance implications—they know when to reach for `numpy` operations, when `apply()` is acceptable, and when `transform()` is the right choice over an explicit merge.
+
+
 ## Claude Code for Pandas Development
 
 
@@ -54,6 +57,31 @@ df['rolling_std'] = df['price'].rolling(window=20).std()
 Claude Code excels at multi-step transformations. It can chain operations like `groupby().transform()` or handle complex merge operations with proper indicator columns. The tool also suggests appropriate dtypes and helps optimize memory usage for large datasets.
 
 
+For complex reshaping tasks, Claude Code handles wide-to-long and long-to-wide transformations correctly, understanding when to use `melt()` versus `stack()` and when `pivot_table()` is more appropriate than a `groupby().agg()` chain:
+
+
+```python
+# Wide to long: Claude correctly recommends melt() for this shape
+df_long = df.melt(
+    id_vars=['date', 'store_id'],
+    value_vars=['q1_sales', 'q2_sales', 'q3_sales', 'q4_sales'],
+    var_name='quarter',
+    value_name='sales'
+)
+
+# Multi-index groupby with named aggregations (pandas 0.25+ style)
+summary = (
+    df.groupby(['region', 'product_category'])
+    .agg(
+        total_sales=('sales', 'sum'),
+        avg_order=('order_value', 'mean'),
+        order_count=('order_id', 'count')
+    )
+    .reset_index()
+)
+```
+
+
 One limitation is that Claude Code sometimes suggests deprecated pandas methods, so verifying suggestions against current pandas documentation remains necessary.
 
 
@@ -77,6 +105,9 @@ df['date'] = pd.to_datetime(df['date'])
 
 
 Copilot's chat feature allows targeted questions about pandas functionality. However, it may not fully understand the context of complex data pipelines, sometimes suggesting solutions that work for small datasets but fail at scale.
+
+
+The context-from-file approach is Copilot's practical workaround for this limitation. If you write clear column names and variable names—`revenue_by_region` instead of `df2`—Copilot's predictions improve substantially. Treating your variable names as documentation for the AI pays dividends in suggestion quality.
 
 
 ## Cursor AI for Jupyter Environments
@@ -109,6 +140,9 @@ correlation_matrix = df[numeric_cols].corr()
 
 
 Cursor AI handles SQL integration with pandas well, suggesting appropriate `read_sql` patterns and helping construct complex queries that combine SQL results with pandas transformations.
+
+
+For EDA workflows specifically, Cursor AI's ability to suggest the next logical analysis step—after you've loaded and cleaned data—is its standout feature. It understands that after a `describe()` call, you probably want to check distributions of skewed columns, and it will proactively suggest the right visualization without being asked.
 
 
 ## Aider for Terminal-Based Data Science
@@ -149,6 +183,9 @@ combined = pd.concat(results, ignore_index=True)
 Aider performs well when modifying existing codebases, helping refactor pandas operations for better performance or readability.
 
 
+Aider's multi-file editing capability is particularly useful for data science projects where the same transformation pattern appears across several pipeline scripts. You can ask Aider to "update all the groupby patterns in these four files to use the newer named aggregation syntax" and it handles the changes consistently across the codebase, treating the refactoring as a single coherent operation rather than four separate edits.
+
+
 ## Codeium for Quick Pandas Snippets
 
 
@@ -173,6 +210,20 @@ df['timestamp'] = pd.to_datetime(df['timestamp'], errors='coerce')
 
 
 Codeium works well as a lightweight option, particularly for developers who want fast autocomplete without the overhead of heavier IDE integrations.
+
+
+## Tool Comparison for Specific Pandas Tasks
+
+
+| Task | Best Tool | Why |
+|------|-----------|-----|
+| Complex reshaping (melt/pivot) | Claude Code | Strongest understanding of shape semantics |
+| Exploratory analysis in notebooks | Cursor AI | Best notebook integration and EDA flow |
+| High-volume autocomplete | Codeium | Fastest suggestions, low latency |
+| Refactoring existing scripts | Aider | Multi-file editing, git integration |
+| Standard pandas operations | GitHub Copilot | Reliable for common patterns |
+| Memory optimization | Claude Code | Understands dtype selection and chunking |
+| SQL + pandas pipelines | Cursor AI | Strong cross-tool pattern recognition |
 
 
 ## Selecting the Right Tool for Your Workflow
@@ -203,9 +254,7 @@ AI-generated pandas code can sometimes include inefficient patterns. Always revi
 
 
 - Row-by-row iterations that could use vectorized operations
-
 - Missing use of `inplace=True` where appropriate for memory efficiency
-
 - Inefficient groupby operations that could benefit from aggregation optimizations
 
 
@@ -217,6 +266,53 @@ for index, row in df.iterrows():
 # Efficient alternative
 df['new_col'] = df['a'] * df['b']
 ```
+
+
+Beyond basic vectorization, watch for these subtler performance issues in AI-generated code:
+
+
+```python
+# Slow: apply() with a Python function on large DataFrames
+df['result'] = df['values'].apply(lambda x: x * 2 if x > 0 else 0)
+
+# Fast: vectorized with numpy where
+df['result'] = np.where(df['values'] > 0, df['values'] * 2, 0)
+
+# Slow: repeated string concatenation in a loop
+result = pd.DataFrame()
+for chunk in chunks:
+    result = pd.concat([result, chunk])  # quadratic time complexity
+
+# Fast: collect then concat once
+result = pd.concat(chunks, ignore_index=True)
+```
+
+
+AI tools vary in whether they catch these patterns. Claude Code and Cursor AI tend to flag the performance issue proactively. Copilot and Codeium are less likely to surface the concern unless you explicitly ask about performance.
+
+
+## Working with Large Datasets
+
+
+For datasets that exceed memory, AI tools differ significantly in their guidance quality. Claude Code reliably suggests chunked reading patterns when you mention file size:
+
+
+```python
+# Chunked processing for large CSV files
+chunk_size = 100_000
+chunks = []
+
+for chunk in pd.read_csv('large_file.csv', chunksize=chunk_size):
+    # Process each chunk
+    processed = chunk.groupby('category').agg({'value': 'sum'})
+    chunks.append(processed)
+
+# Combine results
+result = pd.concat(chunks).groupby(level=0).sum()
+```
+
+
+When working with datasets larger than available RAM, also consider whether the AI tool suggests alternatives like Dask, Polars, or DuckDB. Claude Code is more likely to mention these alternatives unprompted. Copilot typically stays within pandas unless you ask about alternatives.
 
 
 ## Related Articles
