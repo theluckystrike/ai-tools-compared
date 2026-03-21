@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /ai-tools-for-creating-test-data-snapshots-for-database-rollback-between-test-runs/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]
