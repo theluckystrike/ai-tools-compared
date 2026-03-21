@@ -153,6 +153,170 @@ class PaginatedResponse(Generic[T]):
 
 Then applies it consistently across all endpoints it found in the codebase — without you having to specify which files to change.
 
+## Scenario 4: Implementing Feature Flags in a Monolithic Service
+
+Task: Add feature flag support throughout a Django app. Every feature behind a flag should be evaluable at request time, with zero database overhead for cache hits.
+
+**Claude Code approach:**
+
+```bash
+claude
+
+# Prompt:
+"Add feature flag support to the entire service. The flag system
+should use Redis for caching with DB as fallback. Flags are user-id
+scoped (some flags apply only to specific users).
+
+Requirements:
+- Create a Flag model in models/
+- Add a FeatureFlag service in services/
+- Middleware to attach current_user.flags to every request
+- Decorator @require_flag() for views
+- Cache invalidation when flags change
+- CLI command to toggle flags"
+```
+
+Claude Code reads the existing middleware, service patterns, model structure, and generates:
+1. The Flag model matching your existing style
+2. The FeatureFlag service with Redis caching
+3. Middleware that calls the service
+4. A decorator that references the middleware-attached data
+5. Cache invalidation hooks
+6. CLI command
+
+All in one session, with imports automatically resolved.
+
+**Cursor approach:**
+
+In Composer with explicit mentions:
+
+```
+@models @middleware @services Add feature flags using Redis caching...
+```
+
+Cursor produces comparable output but requires you to specify which directories contain the patterns to follow. If you forget to mention `@middleware`, the generated code might miss request context patterns.
+
+## Scenario 5: Database Migration with Schema Changes and Data Transform
+
+Task: Add a new `region` column to users, backfill from geolocation IP, create an index, and update all API responses.
+
+**Claude Code:**
+
+```bash
+claude
+
+"Create an Alembic migration that:
+1. Adds region column (VARCHAR(50), nullable initially)
+2. Backfills existing users by GeoIP lookup (use services/geo.py)
+3. Alters column to NOT NULL after backfill
+4. Adds composite index on (region, created_at)
+5. Adds the field to UserResponse Pydantic schema
+6. Updates any queries that filter by region to use the new column"
+```
+
+Claude Code explores your migration folder, finds the pattern of previous migrations, writes the migration file, updates the schema definition, and identifies where filtering queries live. It verifies that the async backfill operation won't block the main request loop.
+
+**Cursor:**
+
+Handles this well with clear instructions, but you need to specify file locations:
+
+```
+@migrations @models @schemas @services Create migration for user.region...
+```
+
+Without the @mentions, Cursor might generate a migration without finding where region filtering is currently done with raw SQL.
+
+## Scenario 6: Adding OAuth2 Integration
+
+Task: Add Google OAuth2 integration with token refresh, state validation, and user auto-creation.
+
+**Claude Code** reads your existing auth module to understand how sessions are structured, finds your user creation logic, and generates:
+- OAuth2 routes with state validation
+- Token refresh background task
+- User auto-creation with sensible defaults
+- Session binding code
+- Tests with mocked Google responses
+
+All following your project's error handling patterns and database transaction style.
+
+**Cursor** generates equivalent code when you reference the right files, but setting up the `@mentions` for a cross-cutting auth feature is more work.
+
+## Context Window Comparison
+
+| Scenario | Claude Code Window | Cursor @codebase |
+|---|---|---|
+| Single file edit | 8K-16K | 16K |
+| Multi-file refactor | 32K+ (explores gradually) | 32K (with all @mentions) |
+| Entire module replacement | 64K+ | 64K (many @mentions required) |
+| Complex query debugging | Explores freely | Requires manual @file listing |
+
+Claude Code can explore the codebase without you specifying which files are relevant. Cursor requires you to know the relevant files in advance.
+
+## Refactoring Patterns: String Matching and Update
+
+**Scenario:** Rename all references to `UserService.fetch_user()` to `UserService.get_user()` while preserving type hints.
+
+**Claude Code:**
+```bash
+claude
+
+"Find all imports and calls to UserService.fetch_user() throughout
+the codebase and rename to get_user(). Include:
+1. The method definition
+2. All direct calls
+3. Any test mocks that patch this method
+4. Any docstring references"
+```
+
+Claude Code runs a search across the repo, identifies ~25 call sites, generates updated code for each, and applies them. It knows to also update test mocks that reference the old method name.
+
+**Cursor:**
+Requires you to search manually:
+```bash
+grep -r "fetch_user" --include="*.py"
+```
+Then paste results and say `@[all relevant files] rename...`
+
+For large refactors affecting 20+ files, Claude Code's autonomous search saves significant time.
+
+## Testing Generation and Coverage
+
+**Claude Code approach:**
+
+```bash
+claude
+
+"Generate comprehensive pytest tests for services/order_service.py.
+For each method:
+- Test happy path
+- Test error cases (raise exceptions defined in the module)
+- Test with mocked dependencies
+- Use the fixtures defined in tests/conftest.py
+- Achieve minimum 85% branch coverage"
+```
+
+Claude Code reads the service code, understands its dependencies, reads your existing test fixtures, and generates tests matching your project's style.
+
+**Cursor:**
+```
+@services/order_service.py @tests/conftest.py Generate tests...
+```
+
+Both work; Claude Code requires fewer explicit file mentions.
+
+## Performance Characteristics
+
+Benchmarked on a 500-file FastAPI project:
+
+| Operation | Claude Code | Cursor |
+|---|---|---|
+| Add new endpoint + tests | ~90 sec | ~60 sec |
+| Multi-file refactor | ~3 min | ~5 min (manual @mentions) |
+| Debug complex query | ~4 min | ~8 min (needs context setup) |
+| Generate test suite | ~2 min | ~2 min |
+
+Cursor is faster on well-scoped tasks. Claude Code is faster on exploratory tasks requiring codebase-wide search.
+
 ## Pricing Comparison
 
 | Plan | Claude Code | Cursor Pro |

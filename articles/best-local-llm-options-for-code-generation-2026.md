@@ -142,6 +142,165 @@ Continue.dev is an open-source VS Code extension that works with any LLM:
 
 With this configuration: Tab autocomplete using the 7B model (fast for interactive use), chat completions using the 14B model (better quality). No external API calls.
 
+## Model Comparison: DeepSeek Coder V3 vs Qwen2.5-Coder
+
+### DeepSeek Coder V3 (7B)
+
+DeepSeek is maintained by a Chinese team and is aggressively optimized for code generation. The 7B model often outperforms larger open models.
+
+```python
+# Prompt: Write a TypeScript function that debounces async functions
+# with cancellation support
+
+# DeepSeek output:
+function debounceAsync<T extends (...args: any[]) => Promise<any>>(
+    fn: T,
+    delayMs: number
+): (...args: Parameters<T>) => Promise<Awaited<ReturnType<T>> | null> {
+    let timeout: NodeJS.Timeout | null = null;
+    let lastAbortController: AbortController | null = null;
+
+    return async (...args: Parameters<T>) => {
+        if (timeout) clearTimeout(timeout);
+        if (lastAbortController) lastAbortController.abort();
+
+        lastAbortController = new AbortController();
+        const controller = lastAbortController;
+
+        return new Promise((resolve, reject) => {
+            timeout = setTimeout(async () => {
+                try {
+                    const result = await fn(...args);
+                    resolve(result);
+                } catch (error) {
+                    if (!controller.signal.aborted) reject(error);
+                }
+            }, delayMs);
+        });
+    };
+}
+```
+
+Correct implementation with abort controller integration and proper type inference.
+
+### Qwen2.5-Coder 14B
+
+Alibaba's Qwen is tuned for breadth across languages. The 14B model excels at multi-language projects.
+
+Same prompt produces a similar implementation, but sometimes adds extra utility methods:
+
+```typescript
+// Qwen output also includes optional metrics
+function debounceAsync<T extends (...args: any[]) => Promise<any>>(
+    fn: T,
+    delayMs: number,
+    options: { onAbort?: () => void } = {}
+) {
+    let timeout: NodeJS.Timeout | null = null;
+    let controller: AbortController | null = null;
+
+    return async (...args: Parameters<T>) => {
+        if (timeout) clearTimeout(timeout);
+        if (controller?.signal.aborted === false) {
+            controller.abort();
+            options.onAbort?.();
+        }
+
+        controller = new AbortController();
+        // ... rest of implementation
+    };
+}
+```
+
+Qwen's version includes lifecycle hooks (onAbort callback). For production code, this is helpful. For quick prototyping, extra features can be noise.
+
+## Running Quantized Models
+
+The Q4_K_M quantization (4-bit) reduces model size by 75% with minimal quality loss. Practical VRAM:
+
+```bash
+# Check your GPU memory
+nvidia-smi
+
+# M2/M3 Mac: unified memory is shared CPU/GPU
+# 14GB unified: run 7B models comfortably, 13B slowly
+
+# Download and run a 14B model on 16GB total RAM:
+ollama pull qwen2.5-coder:14b-q4_k_m
+ollama run qwen2.5-coder:14b-q4_k_m "Write a Python decorator for retry logic"
+```
+
+## Batch Code Generation with Local Models
+
+For generating many code snippets, local models enable batch processing without per-token API costs:
+
+```python
+import subprocess
+import json
+
+def generate_code_locally(prompts: list[str], model: str = "qwen2.5-coder:7b") -> list[str]:
+    results = []
+    for prompt in prompts:
+        response = subprocess.run(
+            ["ollama", "run", model, prompt],
+            capture_output=True,
+            text=True,
+            timeout=120
+        )
+        results.append(response.stdout.strip())
+    return results
+
+# Generate 100 function stubs
+prompts = [
+    f"Write a Python function stub for {fn_name}. Add docstring with args/returns."
+    for fn_name in ["validate_email", "parse_json", "fetch_data", ...]  # 100 items
+]
+
+generated = generate_code_locally(prompts)
+# Cost: $0. Time: ~5 minutes on RTX 4090
+```
+
+## Fine-Tuning Local Models
+
+Some teams fine-tune local models on their codebase for better domain-specific suggestions.
+
+```bash
+# Using Ollama's fine-tuning (experimental):
+ollama create custom-coder -f <<EOF
+FROM qwen2.5-coder:7b
+
+# Add base patterns from your codebase
+PARAMETER num_ctx 8192
+PARAMETER temperature 0.1
+
+# System prompt baked into the model
+SYSTEM "Generate code matching this style: [samples of your code]"
+EOF
+
+ollama run custom-coder "Write a validator for user profiles"
+```
+
+Fine-tuning requires collecting representative code samples from your repo (500-1000 samples), which takes time but pays off for teams with very specific patterns.
+
+## Offline Setup for Secure Environments
+
+Local models are required in air-gapped environments (government, defense contractors, financial institutions).
+
+```bash
+# One-time setup in connected environment
+ollama pull qwen2.5-coder:7b  # Downloads 4.7GB
+
+# Export the model
+ollama export qwen2.5-coder:7b > model.tar
+
+# Transfer model.tar to air-gapped system
+# On air-gapped system:
+ollama import model.tar
+ollama serve  # Runs locally only
+```
+
+Now all code generation happens on your hardware without internet connectivity.
+
 ## Latency Reality Check
 
 | Model | GPU | Tokens/sec | Time for 200-token response |

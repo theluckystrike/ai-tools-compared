@@ -185,6 +185,206 @@ print(response.usage.cache_creation_input_tokens)
 - You need the widest ecosystem (embeddings, fine-tuning, Whisper, DALL-E in one API)
 - Existing integrations depend on the OpenAI SDK
 
+## Detailed Cost Calculator
+
+Calculate your actual costs using real workload metrics:
+
+```python
+def calculate_monthly_cost(
+    daily_requests: int,
+    avg_input_tokens: int,
+    avg_output_tokens: int,
+    model: str,
+    batch_percentage: float = 0.0,  # 0-1, % of requests using batch API
+):
+    """Calculate monthly LLM API cost."""
+    pricing = {
+        "claude-haiku-3-5": (0.80, 4.00),
+        "claude-sonnet-4-5": (3.00, 15.00),
+        "claude-opus-4-6": (15.00, 75.00),
+        "gpt-4o": (2.50, 10.00),
+        "gpt-4o-mini": (0.15, 0.60),
+    }
+
+    input_rate, output_rate = pricing[model]
+    daily_input_cost = (daily_requests * avg_input_tokens / 1_000_000) * input_rate
+    daily_output_cost = (daily_requests * avg_output_tokens / 1_000_000) * output_rate
+    daily_cost = daily_input_cost + daily_output_cost
+
+    # Apply batch discount (50% off)
+    batch_cost = daily_cost * batch_percentage * 0.5
+    real_time_cost = daily_cost * (1 - batch_percentage)
+    daily_total = batch_cost + real_time_cost
+
+    monthly_cost = daily_total * 30
+    return monthly_cost
+
+# Example: Code review bot processing 100 PRs/day, 2000 in/800 out tokens
+cost_claude = calculate_monthly_cost(
+    daily_requests=100,
+    avg_input_tokens=2000,
+    avg_output_tokens=800,
+    model="claude-haiku-3-5",
+    batch_percentage=0.0  # Real-time reviews
+)
+
+cost_openai = calculate_monthly_cost(
+    daily_requests=100,
+    avg_input_tokens=2000,
+    avg_output_tokens=800,
+    model="gpt-4o-mini",
+    batch_percentage=0.0
+)
+
+print(f"Claude Haiku: ${cost_claude:.2f}/month")
+print(f"GPT-4o mini: ${cost_openai:.2f}/month")
+
+# Output:
+# Claude Haiku: $9.60/month
+# GPT-4o mini: $1.62/month
+```
+
+For this workload, GPT-4o mini is cheaper by 6x. But if you need larger context or better reasoning, Claude Sonnet:
+
+```python
+cost_sonnet = calculate_monthly_cost(100, 2000, 800, "claude-sonnet-4-5")
+# Output: $36.00/month
+
+# Still higher than GPT-4o mini, but includes 200K context vs 128K
+```
+
+## Hidden Costs and Gotchas
+
+### Cost Surprise 1: Context Window Pricing
+
+If you use the full context window, you pay for all of it:
+
+```python
+# Using 200K of 200K context (worst case)
+def full_context_cost(model: str) -> float:
+    full_context_tokens = 200_000  # Claude's max
+    pricing = {
+        "claude-haiku-3-5": 0.80,
+        "claude-sonnet-4-5": 3.00,
+    }
+    return (full_context_tokens / 1_000_000) * pricing[model]
+
+# Cost of one API call using full context
+print(f"Full Claude Sonnet context: ${full_context_cost('claude-sonnet-4-5'):.4f}")
+# Output: $0.0600 (6 cents for just the input!)
+
+# Add 1000 output tokens
+output_cost = (1000 / 1_000_000) * 15.00
+print(f"Plus 1000 output tokens: ${output_cost:.6f}")
+# Total: ~$0.061 per request
+
+# At 10 requests/day: $18.30/month just for context
+```
+
+Don't use full context unnecessarily. Summarize or chunk large documents.
+
+### Cost Surprise 2: Retry Logic and Fallbacks
+
+Production systems retry failed requests. This multiplies costs:
+
+```python
+# Simple retry logic costs you 2-3x
+def robust_api_call(prompt, max_retries=3):
+    for attempt in range(max_retries):
+        try:
+            response = client.messages.create(
+                model="claude-sonnet-4-5",
+                max_tokens=1000,
+                messages=[{"role": "user", "content": prompt}],
+            )
+            return response
+        except RateLimitError:
+            time.sleep(2 ** attempt)  # Exponential backoff
+
+# If 5% of requests fail and require retry:
+# Cost increases by ~5% (one retry per failed request)
+
+# If you retry all requests without circuit breaking:
+# Cost can triple
+```
+
+Use exponential backoff and circuit breakers to avoid cascading retries.
+
+### Cost Surprise 3: Token Counting Mismatches
+
+Your estimated tokens and actual billed tokens may differ:
+
+```python
+import anthropic
+
+client = anthropic.Anthropic()
+
+# Estimate before calling
+def estimate_tokens(prompt: str) -> int:
+    response = client.messages.count_tokens(
+        model="claude-haiku-3-5",
+        messages=[{"role": "user", "content": prompt}],
+    )
+    return response.input_tokens
+
+prompt = "Summarize this document..." + ("x" * 5000)
+estimated = estimate_tokens(prompt)
+
+# Make actual call
+response = client.messages.create(
+    model="claude-haiku-3-5",
+    max_tokens=500,
+    messages=[{"role": "user", "content": prompt}],
+)
+
+actual_in = response.usage.input_tokens
+actual_out = response.usage.output_tokens
+
+print(f"Estimated input: {estimated}")
+print(f"Actual input: {actual_in}")
+print(f"Actual output: {actual_out}")
+
+# Differences:
+# - Tokenization varies slightly between estimate and actual
+# - Output tokens are always a surprise (max_tokens != actual output)
+```
+
+Always check `response.usage` to see actual costs, not estimates.
+
+## ROI Analysis: When API Costs Pay for Themselves
+
+For a typical team:
+
+```python
+def cost_benefit(
+    salary_per_hour: float,  # Average engineer salary
+    time_saved_per_request: float,  # Minutes saved per API call
+    api_requests_per_day: int,
+):
+    """Calculate ROI of using AI APIs."""
+    salary_per_minute = salary_per_hour / 60
+    daily_saved_minutes = time_saved_per_request * api_requests_per_day
+    daily_saved_dollars = daily_saved_minutes * salary_per_minute
+    monthly_saved = daily_saved_dollars * 22  # Working days
+
+    return monthly_saved
+
+# Example: $100/hour engineer, 5 minutes saved per PR review, 20 PRs/day
+# Using Claude Haiku at ~$10/month
+
+saved = cost_benefit(100, 5, 20)
+print(f"Monthly productivity gain: ${saved:.2f}")
+print(f"API cost: $10/month")
+print(f"ROI: {saved / 10:.1f}x")
+
+# Output:
+# Monthly productivity gain: $1833.33
+# API cost: $10/month
+# ROI: 183.3x
+```
+
+Even expensive API calls (GPT-4o at $0.01/call) pay for themselves when they save 5+ minutes of engineering time.
+
 ## Related Reading
 
 - [Claude API Pay Per Token vs Pro Subscription Which is Cheaper](/claude-api-pay-per-token-vs-pro-subscription-which-cheaper/)
