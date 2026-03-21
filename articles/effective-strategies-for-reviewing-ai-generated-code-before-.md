@@ -39,6 +39,24 @@ def get_user_data(user_id, db_connection):
 The immediate red flag is the string interpolation in the SQL query. This code is vulnerable to SQL injection. Even though the AI produced functional-looking code, it contains a serious security flaw that requires correction.
 
 
+## AI Code Review Tool Comparison
+
+
+Different tools assist the review process in different ways. Knowing which tool to reach for at each stage saves significant time:
+
+
+| Tool | Review Phase | What It Catches | Best For |
+|------|-------------|----------------|----------|
+| GitHub Copilot | Inline, during editing | Obvious syntax issues, missing imports | Real-time suggestions as you read |
+| CodeRabbit | PR-level automated review | Logic flaws, test coverage gaps | Teams using GitHub PRs |
+| Snyk | Security scan | Vulnerable dependencies, SAST issues | Security-critical codebases |
+| SonarQube | Static analysis | Code smells, duplication, complexity | Enterprise CI pipelines |
+| DeepCode (Snyk Code) | Semantic analysis | Data-flow vulnerabilities | Python, JS, Java, C# |
+| Semgrep | Custom rule matching | Domain-specific anti-patterns | Teams with custom security rules |
+
+Run at minimum a linter plus one security scanner on every AI-generated file before it enters code review.
+
+
 ## Verify Security Implications
 
 
@@ -147,7 +165,29 @@ def process_order(order_id):
 ```
 
 
-This code fails if `order` is None, if `order.items` is empty, or if any step in the process fails midway. A more strong version would include proper null checks and error handling.
+This code fails if `order` is None, if `order.items` is empty, or if any step in the process fails midway. A more robust version would include proper null checks and error handling:
+
+
+```python
+def process_order(order_id):
+    order = database.get_order(order_id)
+    if order is None:
+        raise ValueError(f"Order {order_id} not found")
+    if not order.items:
+        raise ValueError(f"Order {order_id} has no items to process")
+
+    try:
+        for item in order.items:
+            item.process()
+        order.status = 'processed'
+        order.save()
+    except Exception as e:
+        order.status = 'failed'
+        order.save()
+        raise RuntimeError(f"Failed to process order {order_id}") from e
+
+    send_notification(order.customer_email)
+```
 
 
 ## Use Linters and Type Checkers
@@ -204,6 +244,26 @@ def test_handles_empty_input():
 ```
 
 
+## Step-by-Step Review Workflow
+
+
+This seven-step sequence gives your team a repeatable process for every AI-generated file:
+
+**Step 1 — First read, no execution.** Read the entire file from top to bottom. Understand what the code intends to do. Flag anything that looks unfamiliar, unexpectedly clever, or out of place with a comment.
+
+**Step 2 — Security scan.** Run Snyk or Semgrep before touching anything else. Address critical and high findings before proceeding. Never defer security fixes to a follow-up ticket.
+
+**Step 3 — Static analysis.** Run your linter and type checker. Fix all warnings, not just errors. AI-generated code frequently has unused imports and shadowed variables that create maintenance debt.
+
+**Step 4 — Local execution.** Run the code in an isolated environment. Use mocks for external dependencies. Confirm that the happy path produces expected output.
+
+**Step 5 — Edge case testing.** Manually test at least three edge cases beyond the happy path: empty input, maximum input size, and one invalid input type. If the code fails any of these, revise before writing formal tests.
+
+**Step 6 — Write unit tests.** Cover the happy path, the edge cases you just tested, and at minimum one error condition. Aim for 80% branch coverage on AI-generated functions.
+
+**Step 7 — Code review submission.** Submit the PR with a note indicating the code was AI-assisted. This signals reviewers to apply appropriate scrutiny and prevents false assumptions about how deeply the author tested it.
+
+
 ## Document Your Review Process
 
 
@@ -228,6 +288,22 @@ Maintain a checklist of items your team reviews for all AI-generated code:
 This ensures consistent quality regardless of which team member reviewed the code or which AI tool generated it.
 
 
+## Frequently Asked Questions
+
+
+**Q: How do I tell my team which parts of a PR are AI-generated?**
+Add a comment at the top of AI-generated files or functions noting the tool used and the prompt that produced the code. This context helps reviewers calibrate their scrutiny and makes it easier to regenerate or modify the code later.
+
+**Q: Should AI-generated code require more reviewers?**
+Not necessarily more reviewers, but more methodical reviewers. One experienced engineer applying the full checklist above is more valuable than two reviewers doing a quick scan.
+
+**Q: Do AI tools like CodeRabbit replace manual review?**
+No. Automated tools catch a class of deterministic issues—syntax errors, known vulnerability patterns, style violations—but miss business logic errors, misunderstood requirements, and subtle race conditions that require understanding the broader system.
+
+**Q: How do I handle AI-generated code that uses deprecated APIs?**
+Flag deprecated API usage during the static analysis step. Ask the AI to regenerate the relevant function using the current API, then re-run the full review cycle on the updated code.
+
+
 ## Gradually Build Trust Through Experience
 
 
@@ -237,7 +313,7 @@ As you review more AI-generated code, you'll notice patterns in what each tool d
 Over time, your team can create specific guidelines for working with your preferred AI coding assistant, reducing review time while maintaining code quality.
 
 
-## Related Articles
+## Related Reading
 
 - [Effective Context Loading Strategies for AI Tools in](/ai-tools-compared/effective-context-loading-strategies-for-ai-tools-in-polyglo/)
 - [Effective Context Management Strategies for AI Coding](/ai-tools-compared/effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/)
