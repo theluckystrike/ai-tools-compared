@@ -218,6 +218,136 @@ At scale (20+ configs/month), Claude's accuracy advantage saves more time than C
 
 The tooling landscape here is mature. Claude is fastest to production-ready config; Copilot saves money if you're patient with iteration. Cursor is the middle ground if you spend most of your time in an editor.
 
+## Advanced Scenarios: AI-Assisted Tuning
+
+Beyond basic configuration, AI excels at optimizing nginx for production constraints. When you have specific bottleneck data—memory usage hitting 80%, CPU spikes at 3 PM daily, database connection pool exhausting—feed these details to Claude with your current config.
+
+**Example:** "Our reverse proxy config is using 2GB of proxy_buffer_zone. We only have 4GB total memory. Show me how to reduce buffer sizes while maintaining performance for 100MB+ file downloads."
+
+Claude will suggest:
+```nginx
+proxy_buffer_size 4k;
+proxy_buffers 8 4k;
+proxy_busy_buffers_size 8k;
+proxy_max_temp_file_size 0;
+```
+
+This trades disk I/O for RAM, appropriate when files exceed memory thresholds. AI helps you make these trade-off decisions explicitly rather than guessing.
+
+## Debugging Configuration Errors with AI
+
+Nginx error messages are cryptic. "connection refused while connecting to upstream" could mean a service is down, a port is wrong, or DNS resolution failed. Paste the error with relevant config sections into Claude:
+
+```
+Error: [error] 12345#67890: *1 connect() failed (111: Connection refused)
+while connecting to upstream, client: 192.168.1.100, server: api.example.com,
+request: "GET /health HTTP/1.1", upstream: "http://backend:3000"
+
+Here's my upstream block:
+upstream backend {
+    server backend:3000;
+}
+```
+
+Claude's response will typically walk through:
+1. Verify DNS: Does `backend` resolve correctly inside the container/network?
+2. Check the backend service: Is it listening on port 3000?
+3. Network access: Are firewall rules blocking traffic?
+4. Nginx container networking: If containerized, verify network bridges.
+
+This systematic approach saves hours versus manual debugging.
+
+## Real-World Example: API Gateway Migration
+
+Moving from a monolithic reverse proxy to a multi-service architecture requires careful nginx orchestration. Here's how AI helps:
+
+**Scenario:** Your current config routes everything to one backend. Now you need to split:
+- `/api/users/*` → users-service:8001
+- `/api/payments/*` → payments-service:8002
+- `/api/analytics/*` → analytics-service:8003
+- Everything else → legacy-service:3000
+
+**Request to Claude:**
+```
+I'm splitting my API into microservices. Create an nginx config that routes
+requests to different backends based on URL path prefix. Include rate limiting
+per service (users: 1000/min, payments: 100/min, others: 500/min).
+```
+
+Claude generates:
+```nginx
+upstream users_service {
+    server users-service:8001 max_fails=3 fail_timeout=30s;
+}
+
+upstream payments_service {
+    server payments-service:8002 max_fails=2 fail_timeout=10s;
+}
+
+upstream analytics_service {
+    server analytics-service:8003;
+}
+
+upstream legacy_service {
+    server legacy-service:3000;
+}
+
+limit_req_zone $binary_remote_addr zone=users_limit:10m rate=1000r/m;
+limit_req_zone $binary_remote_addr zone=payments_limit:10m rate=100r/m;
+limit_req_zone $binary_remote_addr zone=default_limit:10m rate=500r/m;
+
+server {
+    listen 443 ssl http2;
+
+    location /api/users/ {
+        limit_req zone=users_limit burst=100 nodelay;
+        proxy_pass http://users_service;
+        proxy_http_version 1.1;
+    }
+
+    location /api/payments/ {
+        limit_req zone=payments_limit burst=10 nodelay;
+        proxy_pass http://payments_service;
+        proxy_http_version 1.1;
+    }
+
+    location /api/analytics/ {
+        limit_req zone=default_limit burst=50 nodelay;
+        proxy_pass http://analytics_service;
+        proxy_http_version 1.1;
+    }
+
+    location / {
+        limit_req zone=default_limit burst=50 nodelay;
+        proxy_pass http://legacy_service;
+        proxy_http_version 1.1;
+    }
+}
+```
+
+You get a complete, production-ready migration blueprint. AI reduces the risk of misconfigured routes or forgotten rate limits.
+
+## Performance Monitoring Integration
+
+After deploying, ask Claude how to instrument nginx for observability. It can generate configs that export metrics to Prometheus, log request traces in structured JSON, and export access logs to aggregation services.
+
+```nginx
+log_format json_format escape=json
+  '{'
+    '"timestamp":"$time_iso8601",'
+    '"client_ip":"$remote_addr",'
+    '"request":"$request",'
+    '"status":$status,'
+    '"response_time":$request_time,'
+    '"upstream_addr":"$upstream_addr",'
+    '"body_bytes":$body_bytes_sent'
+  '}';
+
+access_log /var/log/nginx/access.log.json json_format;
+```
+
+This enables alerting on latency percentiles, error rates, and service health—critical for production reliability.
+
 ---
 
 
