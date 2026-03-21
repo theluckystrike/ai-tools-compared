@@ -285,6 +285,8 @@ print(f"Estimated cost: ${batch_info.total_tokens * 0.0015:.2f}")
 
 
 
+
+
 ## Related Articles
 
 - [Claude API Batch Processing for Large Document Workflows](/ai-tools-compared/claude-api-batch-processing-for-large-document-workflows/)

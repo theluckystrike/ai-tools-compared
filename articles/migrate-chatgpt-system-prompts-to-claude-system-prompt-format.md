@@ -387,6 +387,8 @@ For simple assistants with no complex rules, paste your ChatGPT system prompt di
 
 
 
+
+
 ## Related Articles
 
 - [How to Migrate ChatGPT System Prompts](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-forma/)

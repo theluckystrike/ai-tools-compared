@@ -253,6 +253,8 @@ For pure open source enthusiasts, Continue Dev's commitment to open source (the 
 
 
 
+
+
 ## Related Articles
 
 - [Continue Dev vs GitHub Copilot: Open Source Comparison](/ai-tools-compared/continue-dev-vs-github-copilot-open-source-comparison/)

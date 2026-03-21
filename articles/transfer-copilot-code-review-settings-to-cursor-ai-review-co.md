@@ -319,6 +319,8 @@ Not formally. Cursor reads the file as plain text and interprets it using the AI
 
 
 
+
+
 ## Related Articles
 
 - [How to Transfer GitHub Copilot Organization Settings](/ai-tools-compared/transfer-github-copilot-org-settings-when-switching-to-curso/)

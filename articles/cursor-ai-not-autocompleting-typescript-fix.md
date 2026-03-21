@@ -300,6 +300,8 @@ Try creating a new TypeScript file in your project. If completions work in new f
 
 
 
+
+
 ## Related Articles
 
 - [Cursor AI Making Too Many API Calls Fix: Troubleshooting](/ai-tools-compared/cursor-ai-making-too-many-api-calls-fix/)

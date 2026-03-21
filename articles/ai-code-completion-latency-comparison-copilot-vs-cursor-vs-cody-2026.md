@@ -288,6 +288,8 @@ Try this across 10-20 files in your codebase. Your results will vary from these 
 
 
 
+
+
 ## Related Articles
 
 - [GitHub Copilot vs Cody Sourcegraph Comparison](/ai-tools-compared/github-copilot-vs-cody-sourcegraph-comparison/)

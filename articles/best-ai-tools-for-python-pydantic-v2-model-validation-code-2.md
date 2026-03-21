@@ -479,6 +479,8 @@ m3 = DataModel(optional_field='value', required_field='test')  # kept as string
 
 
 
+
+
 ## Related Articles
 
 - [AI Code Generation for Python FastAPI Endpoints](/ai-tools-compared/ai-code-generation-for-python-fastapi-endpoints-with-pydantic-models-compared/)

@@ -290,6 +290,8 @@ Before canceling your Gemini subscription:
 
 
 
+
+
 ## Related Articles
 
 - [How to Move ChatGPT Team Workspace Data to Claude Team](/ai-tools-compared/how-to-move-chatgpt-team-workspace-data-to-claude-team/)

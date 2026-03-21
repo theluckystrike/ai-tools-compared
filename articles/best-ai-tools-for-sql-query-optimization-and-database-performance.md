@@ -423,6 +423,8 @@ CREATE INDEX idx_reviews_product_rating ON reviews(product_id, rating);
 
 
 
+
+
 ## Related Articles
 
 - [AI Tools for Database Performance Optimization Query](/ai-tools-compared/ai-tools-for-database-performance-optimization-query-analysis/)

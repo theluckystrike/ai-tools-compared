@@ -313,6 +313,8 @@ def generate_with_fallback(prompt, require_text=True):
 
 
 
+
+
 ## Related Articles
 
 - [How to Transfer Midjourney Prompt Library to Ideogram Prompt](/ai-tools-compared/how-to-transfer-midjourney-prompt-library-to-ideogram-prompt/)

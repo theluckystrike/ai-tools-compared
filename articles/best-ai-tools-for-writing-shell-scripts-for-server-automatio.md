@@ -507,6 +507,8 @@ bash -x script.sh  # Trace mode to see every command
 
 
 
+
+
 ## Related Articles
 
 - [AI Code Completion for Writing Shell Commands Inside Scripts](/ai-tools-compared/ai-code-completion-for-writing-shell-commands-inside-scripts/)

@@ -398,6 +398,8 @@ await page.frameLocator('iframe').getByRole('button').click();
 
 
 
+
+
 ## Related Articles
 
 - [How to Use AI to Debug CORS Errors in Cross-Origin API Reque](/ai-tools-compared/how-to-use-ai-to-debug-cors-errors-in-cross-origin-api-reque/)

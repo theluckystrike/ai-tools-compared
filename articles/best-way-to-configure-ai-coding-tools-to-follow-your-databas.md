@@ -332,6 +332,8 @@ Store this alongside your configuration files so developers understand the conve
 
 
 
+
+
 ## Related Articles
 
 - [Configure Claude Code](/ai-tools-compared/how-to-configure-claude-code-to-follow-your-teams-feature-fl/)

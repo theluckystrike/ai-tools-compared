@@ -246,6 +246,8 @@ The API approach requires more development effort but delivers predictable costs
 
 
 
+
+
 ## Related Articles
 
 - [Windsurf Premium Model Access Which Models Cost Extra](/ai-tools-compared/windsurf-premium-model-access-which-models-cost-extra-credits-2026/)

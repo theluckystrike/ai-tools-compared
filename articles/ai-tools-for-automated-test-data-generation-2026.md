@@ -284,6 +284,8 @@ Mimesis is 2-5x faster and better for generating millions of rows for load tests
 
 
 
+
+
 ## Related Articles
 
 - [AI for Automated Regression Test Generation from Bug Reports](/ai-tools-compared/ai-for-automated-regression-test-generation-from-bug-reports/)

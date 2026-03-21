@@ -262,6 +262,8 @@ Setting up MCP with local database schema information transforms your AI assista
 
 
 
+
+
 ## Related Articles
 
 - [How to Set Up Model Context Protocol for Feeding Jira Ticket](/ai-tools-compared/how-to-set-up-model-context-protocol-for-feeding-jira-ticket/)

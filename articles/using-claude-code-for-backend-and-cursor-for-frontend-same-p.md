@@ -344,6 +344,8 @@ Running Claude Code for backend and Cursor for frontend gives you specialized as
 
 
 
+
+
 ## Related Articles
 
 - [Claude Code vs Cursor for Backend Development](/ai-tools-compared/claude-code-vs-cursor-for-backend-development/)

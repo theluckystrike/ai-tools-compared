@@ -373,6 +373,8 @@ When you find effective prompts for local AI tools, document them in your team's
 
 
 
+
+
 ## Related Articles
 
 - [Best Local LLM Alternatives to Cloud AI Coding Assistants](/ai-tools-compared/best-local-llm-alternatives-to-cloud-ai-coding-assistants-for-air-gapped/)

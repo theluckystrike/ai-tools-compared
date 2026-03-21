@@ -339,6 +339,8 @@ The platforms converge on features over time. But the underlying architectural p
 
 
 
+
+
 ## Related Articles
 
 - [Databricks vs BigQuery AI ML Features: A Practical](/ai-tools-compared/databricks-vs-bigquery-ai-ml-features/)

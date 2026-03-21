@@ -335,6 +335,8 @@ console.log('Canvas save monitor active -- try saving now.');
 
 
 
+
+
 ## Related Articles
 
 - [ChatGPT Canvas Feature Is It Included in Plus or Team Only](/ai-tools-compared/chatgpt-canvas-feature-is-it-included-in-plus-or-team-only/)

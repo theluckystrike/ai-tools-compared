@@ -307,6 +307,7 @@ If migrating a team:
 | Enterprise | Contact sales | Advanced security, compliance |
 
 
+
 ## Related Articles
 
 - [Copilot for JetBrains: Does It Cost Same as VSCode Version](/ai-tools-compared/copilot-for-jetbrains-does-it-cost-same-as-vscode-version/)

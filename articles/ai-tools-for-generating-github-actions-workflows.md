@@ -452,6 +452,7 @@ All three support `schedule:` trigger. Claude Code properly explains cron syntax
 - **Version pins**: Always specify action versions (`@v4`, not `@latest`).
 
 
+
 ## Related Articles
 
 - [AI Tools for Generating GitHub Actions Workflows](/ai-tools-compared/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)

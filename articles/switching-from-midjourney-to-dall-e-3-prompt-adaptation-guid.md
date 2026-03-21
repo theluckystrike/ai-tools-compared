@@ -294,6 +294,8 @@ def migrate_mj_prompt(mj_prompt, ar="1:1", quality="standard"):
 
 
 
+
+
 ## Related Articles
 
 - [Switching from Dall E to Midjourney Prompt Format Difference](/ai-tools-compared/switching-from-dall-e-to-midjourney-prompt-format-difference/)

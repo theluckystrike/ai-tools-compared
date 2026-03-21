@@ -294,6 +294,8 @@ These changes typically result in better long-term project health, even if initi
 
 
 
+
+
 ## Related Articles
 
 - [How to Switch from Cursor to Claude Code Without Losing](/ai-tools-compared/how-to-switch-from-cursor-to-claude-code-without-losing-settings/)

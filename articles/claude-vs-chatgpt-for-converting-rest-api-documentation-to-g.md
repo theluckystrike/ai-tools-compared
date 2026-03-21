@@ -274,6 +274,8 @@ Iterate on type design. Generate an initial schema, test it against your actual 
 
 
 
+
+
 ## Related Articles
 
 - [ChatGPT vs Claude for Writing API Documentation](/ai-tools-compared/chatgpt-vs-claude-for-writing-api-documentation/)

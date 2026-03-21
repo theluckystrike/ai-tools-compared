@@ -322,6 +322,8 @@ Yes. Combine your switcher script with direnv and a post-switch hook that opens 
 
 
 
+
+
 ## Related Articles
 
 - [Switching from Windsurf to Cursor How to Transfer Project](/ai-tools-compared/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
