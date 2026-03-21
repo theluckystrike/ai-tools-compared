@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /effective-ai-coding-workflow-for-building-features-from-prod/
 categories: [guides, workflows]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, workflow, artificial-intelligence]
