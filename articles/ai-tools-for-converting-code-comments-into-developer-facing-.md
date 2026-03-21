@@ -232,6 +232,252 @@ Many tools integrate directly with documentation hosting platforms, automaticall
 
 
 
+## Automation Scripts for Documentation Generation
+
+Set up automated documentation generation as part of your CI/CD pipeline:
+
+**Python script using Claude API:**
+
+```python
+#!/usr/bin/env python3
+import anthropic
+import glob
+import os
+
+def generate_api_docs(source_dir: str, output_dir: str):
+    """Convert Python docstrings into Markdown API docs."""
+
+    client = anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY"))
+
+    # Find all Python files
+    python_files = glob.glob(f"{source_dir}/**/*.py", recursive=True)
+
+    for file_path in python_files:
+        with open(file_path, 'r') as f:
+            source_code = f.read()
+
+        # Extract docstrings and comments
+        message = client.messages.create(
+            model="claude-3-5-sonnet-20241022",
+            max_tokens=2000,
+            messages=[{
+                "role": "user",
+                "content": f"""Convert this Python file's docstrings into professional Markdown documentation.
+Include:
+- Function signatures with parameter types
+- Return value descriptions
+- Example usage for each function
+- Any warnings or gotchas mentioned in comments
+
+Source file: {file_path}
+
+{source_code}
+
+Generate ONLY the Markdown output, no extra text."""
+            }]
+        )
+
+        # Save documentation
+        doc_file = output_dir + "/" + os.path.basename(file_path).replace('.py', '.md')
+        with open(doc_file, 'w') as f:
+            f.write(message.content[0].text)
+
+        print(f"Generated: {doc_file}")
+
+if __name__ == "__main__":
+    generate_api_docs("src/", "docs/api/")
+```
+
+**GitHub Actions workflow for auto-docs:**
+
+```yaml
+name: Generate API Documentation
+
+on:
+  push:
+    branches: [main]
+    paths: ['src/**/*.py']
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install anthropic
+
+      - name: Generate docs from comments
+        run: python scripts/generate_docs.py
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+      - name: Commit docs
+        run: |
+          git add docs/
+          git commit -m "docs: auto-generated from code comments" || true
+          git push
+```
+
+## Comparison: AI Tools for Documentation
+
+| Tool | Input Format | Output Quality | Cost | Integration |
+|------|-------------|----------------|------|-----------|
+| Claude (API) | Code files | Excellent (professional) | $3/M input tokens | Custom script |
+| GitHub Copilot | Comments in IDE | Good (conversational) | $10-20/month | Native VS Code |
+| GPT-4o (API) | Code snapshots | Good | $5/M input tokens | Custom script |
+| JSDoc/TypeDoc | TypeScript declarations | Good (structured) | Free | Build step |
+| Sphinx + AI | Python docstrings | Excellent (professional) | Free (tool) + API cost | Python-only |
+
+## Best Practices for Comment Quality
+
+AI documentation generation only works well when your source comments are clear:
+
+**Poor comments (generate vague docs):**
+
+```python
+def process_data(x):
+    # do the thing
+    y = x * 2
+    return y
+```
+
+**Good comments (generate useful docs):**
+
+```python
+def process_data(data: list[int]) -> list[int]:
+    """
+    Double each element in the input list.
+
+    Used for scaling metrics before visualization.
+    Note: Assumes positive integers only.
+
+    Args:
+        data: List of numeric values to scale
+
+    Returns:
+        List with each element multiplied by 2
+    """
+    return [x * 2 for x in data]
+```
+
+AI expands the good comments into professional documentation. It cannot rescue poor comments.
+
+## Handling Legacy Code with Minimal Comments
+
+For existing code with sparse documentation:
+
+```python
+# Strategy 1: Have AI write comprehensive comments first
+def legacy_function(a, b, c):
+    result = a + (b * c)
+    if result > 100:
+        result = 100
+    return result
+
+# Ask Claude: "Write detailed comments for this function"
+# Claude generates:
+def legacy_function(a: int, b: int, c: int) -> int:
+    """
+    Calculate a weighted sum with upper bound capping.
+
+    Computes: a + (b × c), then caps result at 100.
+
+    Used in: Score normalization for user ratings
+    See: metrics/rating.py for context
+
+    Args:
+        a: Base score (0-100)
+        b: Weight factor (0-10)
+        c: Adjustment multiplier (0-10)
+
+    Returns:
+        Capped result (max 100)
+    """
+    result = a + (b * c)
+    if result > 100:
+        result = 100
+    return result
+
+# Strategy 2: Then generate documentation from enhanced comments
+```
+
+## Generating Multiple Documentation Formats
+
+A single set of comments can generate documentation in various formats:
+
+```python
+def generate_all_formats(source_code: str):
+    client = anthropic.Anthropic()
+
+    formats = {
+        "markdown": "Generate Markdown API documentation",
+        "html": "Generate HTML documentation suitable for GitHub Pages",
+        "docstring": "Enhance and rewrite docstrings in Google format",
+        "confluence": "Generate Confluence wiki markup",
+        "swagger": "Generate OpenAPI/Swagger specification"
+    }
+
+    outputs = {}
+    for format_name, prompt_instruction in formats.items():
+        message = client.messages.create(
+            model="claude-3-5-sonnet-20241022",
+            max_tokens=2000,
+            messages=[{
+                "role": "user",
+                "content": f"{prompt_instruction}:\n\n{source_code}"
+            }]
+        )
+        outputs[format_name] = message.content[0].text
+
+    return outputs
+```
+
+## Documentation Maintenance Strategy
+
+Documentation becomes stale when code changes. Prevent this:
+
+```bash
+# Add pre-commit hook to remind about docs
+# .git/hooks/pre-commit
+
+if git diff --cached --name-only | grep -q "src/"; then
+    echo "⚠️  You modified source code."
+    echo "   Run: python scripts/generate_docs.py"
+    echo "   Then: git add docs/"
+fi
+```
+
+## Monitoring Documentation Quality
+
+Track metrics on generated documentation:
+
+```python
+# Quality checks for AI-generated docs
+def check_doc_quality(markdown_file: str) -> dict:
+    with open(markdown_file) as f:
+        content = f.read()
+
+    return {
+        "has_examples": "Example:" in content or "```" in content,
+        "has_parameters": "Args:" in content or "Parameters:" in content,
+        "has_returns": "Returns:" in content,
+        "has_errors": "Raises:" in content or "Errors:" in content,
+        "line_count": len(content.split('\n')),
+        "code_blocks": content.count("```")
+    }
+
+# Monitor these metrics weekly
+# If examples or error documentation drops below threshold,
+# retrain your documentation generation prompts
+```
+
+## Related Reading
 
 
 

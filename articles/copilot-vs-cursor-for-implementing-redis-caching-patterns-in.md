@@ -233,6 +233,278 @@ For most Node.js applications implementing Redis caching, testing both tools wit
 
 
 
+## Pricing and Cost Analysis
+
+| Factor | GitHub Copilot | Cursor |
+|--------|---|---|
+| Monthly cost | $10 (individual) / $21 (team) | $20 (Pro) / $40 (Business) |
+| IDE support | VS Code, JetBrains, Visual Studio | VS Code fork (custom) |
+| Trial period | 60 days free | 14 days free |
+| Context window | 8K-16K | 50K (Pro) |
+| Real-time suggestions | Yes (inline) | Yes (inline) |
+| Custom model training | No | Yes (Business) |
+| Fast API mode | No | Yes |
+
+For small teams (1-10 developers), Copilot's cost advantage is clear. For teams with complex caching needs requiring custom training, Cursor's business tier offers more flexibility.
+
+## Hands-On: Write-Through Cache Pattern
+
+Both tools can generate write-through caching (simultaneous writes to cache and database):
+
+**Copilot-suggested pattern:**
+
+```javascript
+async function updateUserWithWriteThrough(userId, userData) {
+  // Write to database
+  const dbResult = await db.users.update(
+    { id: userId },
+    userData
+  );
+
+  // Write to cache
+  const cacheKey = `user:${userId}`;
+  await redis.set(cacheKey, JSON.stringify(dbResult));
+
+  return dbResult;
+}
+```
+
+Copilot generates the basic pattern quickly, but you need to handle:
+- Error scenarios (what if cache write fails but DB write succeeds?)
+- Transaction rollback if either write fails
+- Cache invalidation TTL
+
+**Cursor-generated pattern (with error handling):**
+
+```javascript
+class UserService {
+  async updateUserWithWriteThrough(userId, userData) {
+    const cacheKey = `user:${userId}`;
+
+    try {
+      // Start database transaction
+      const dbResult = await db.transaction(async (trx) => {
+        const updated = await trx('users')
+          .where({ id: userId })
+          .update(userData)
+          .returning('*');
+
+        return updated[0];
+      });
+
+      // Write to cache with TTL
+      await redis.setEx(cacheKey, 3600, JSON.stringify(dbResult));
+
+      return { success: true, data: dbResult };
+    } catch (error) {
+      // Log error, attempt cache invalidation
+      await redis.del(cacheKey);
+      throw new WriteThoughError(
+        `Failed to update user ${userId}: ${error.message}`
+      );
+    }
+  }
+}
+```
+
+Cursor generates more production-ready code with explicit error handling.
+
+## Hands-On: Cache Invalidation Pattern
+
+Cache-aside with intelligent invalidation:
+
+**Copilot version:**
+
+```javascript
+async function getUserCachedOrFetch(userId) {
+  const key = `user:${userId}`;
+  const cached = await redis.get(key);
+
+  if (cached) return JSON.parse(cached);
+
+  const user = await db.users.findById(userId);
+  await redis.setex(key, 3600, JSON.stringify(user));
+
+  return user;
+}
+
+async function updateUser(userId, data) {
+  await db.users.update({ id: userId }, data);
+  await redis.del(`user:${userId}`);  // Invalidate
+}
+```
+
+Simple but misses pattern-based invalidation (invalidating related cache keys).
+
+**Cursor version (with pattern invalidation):**
+
+```javascript
+class CacheService {
+  async invalidatePattern(pattern) {
+    // Find all keys matching pattern and delete them
+    const keys = await redis.keys(pattern);
+    if (keys.length > 0) {
+      await redis.del(...keys);
+    }
+  }
+
+  async getUserWithCache(userId) {
+    const key = `user:${userId}`;
+    const cached = await redis.get(key);
+
+    if (cached) return JSON.parse(cached);
+
+    const user = await db.users.findById(userId);
+    await redis.setex(key, 3600, JSON.stringify(user));
+
+    // Also cache user's posts
+    const posts = await db.posts.find({ userId });
+    await redis.setex(
+      `user:${userId}:posts`,
+      3600,
+      JSON.stringify(posts)
+    );
+
+    return user;
+  }
+
+  async updateUser(userId, data) {
+    await db.users.update({ id: userId }, data);
+
+    // Invalidate all related cache entries
+    await this.invalidatePattern(`user:${userId}:*`);
+  }
+}
+```
+
+Cursor generates pattern-aware invalidation, reducing stale cache issues.
+
+## Integration Testing for Caching
+
+Both tools can suggest tests, but implementation quality differs:
+
+**Copilot test suggestion:**
+
+```javascript
+describe('Caching', () => {
+  it('caches user data', async () => {
+    const user = await getUser(1);
+    const cached = await redis.get('user:1');
+    expect(cached).toBeTruthy();
+  });
+
+  it('invalidates cache on update', async () => {
+    await updateUser(1, { name: 'Updated' });
+    const cached = await redis.get('user:1');
+    expect(cached).toBeNull();
+  });
+});
+```
+
+Functional but lacks isolation (requires real Redis instance).
+
+**Cursor test suggestion (with mocking):**
+
+```javascript
+describe('CacheService', () => {
+  let redisClient;
+  let dbClient;
+  let service;
+
+  beforeEach(async () => {
+    redisClient = {
+      get: jest.fn(),
+      setex: jest.fn(),
+      del: jest.fn(),
+      keys: jest.fn()
+    };
+
+    dbClient = {
+      users: { findById: jest.fn() }
+    };
+
+    service = new CacheService(redisClient, dbClient);
+  });
+
+  it('fetches from database on cache miss', async () => {
+    redisClient.get.mockResolvedValue(null);
+    dbClient.users.findById.mockResolvedValue({ id: 1, name: 'John' });
+
+    const user = await service.getUserWithCache(1);
+
+    expect(redisClient.get).toHaveBeenCalledWith('user:1');
+    expect(dbClient.users.findById).toHaveBeenCalledWith(1);
+    expect(redisClient.setex).toHaveBeenCalled();
+    expect(user.name).toBe('John');
+  });
+
+  it('invalidates pattern on update', async () => {
+    redisClient.keys.mockResolvedValue(['user:1:posts', 'user:1:comments']);
+
+    await service.updateUser(1, { name: 'Updated' });
+
+    expect(redisClient.del).toHaveBeenCalledWith('user:1:posts', 'user:1:comments');
+  });
+});
+```
+
+Cursor generates fully isolated tests with mocking.
+
+## CLI Commands for Cache Management
+
+Both tools understand cache management operations:
+
+```bash
+# Check Redis cache hit rate
+redis-cli INFO stats | grep hit_rate
+
+# Monitor Redis in real-time
+redis-cli MONITOR
+
+# Clear specific cache pattern
+redis-cli KEYS "user:*" | xargs redis-cli DEL
+
+# Analyze Redis memory usage
+redis-cli INFO memory
+
+# Check cache TTL for specific key
+redis-cli TTL "user:123"
+```
+
+When you ask either tool for "show me commands to monitor cache performance," they'll suggest these patterns. Cursor provides more complete examples with explanation.
+
+## Performance Benchmarking
+
+Comparing cache patterns with real load:
+
+```javascript
+// Benchmark cache-aside vs write-through
+async function benchmarkCachePatterns() {
+  const iterations = 10000;
+
+  // Cache-aside timing
+  const asideStart = Date.now();
+  for (let i = 0; i < iterations; i++) {
+    await cacheAsideGet(`key:${i % 100}`);
+  }
+  const asideTime = Date.now() - asideStart;
+
+  // Write-through timing
+  const throughStart = Date.now();
+  for (let i = 0; i < iterations; i++) {
+    await writeThrough(`key:${i % 100}`, `value:${i}`);
+  }
+  const throughTime = Date.now() - throughStart;
+
+  console.log(`Cache-aside: ${asideTime}ms`);
+  console.log(`Write-through: ${throughTime}ms`);
+}
+```
+
+Ask either tool: "Write a benchmark comparing cache-aside vs write-through patterns."
+Cursor generates more complete benchmarks with warmup periods and statistical analysis.
+
+## Related Reading
 
 
 
