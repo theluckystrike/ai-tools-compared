@@ -1,14 +1,14 @@
 ---
 layout: default
-title: AI Tools for Writing OpenAPI Specifications in 2026
+title: "AI Tools for Writing OpenAPI Specifications in 2026"
 description: Compare AI-powered tools for generating and documenting OpenAPI and Swagger specifications with real code examples and pricing comparisons.
 date: 2026-03-21
 last_modified_at: 2026-03-21
 author: theluckystrike
 categories: [guides]
-tags: [ai-tools-compared, tools, artificial-intelligence]
+tags: [ai-tools-compared, tools, artificial-intelligence, api]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 permalink: /articles/ai-tools-for-writing-openapi-specifications-2026/

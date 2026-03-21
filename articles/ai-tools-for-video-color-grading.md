@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /ai-tools-for-video-color-grading/
 categories: [guides]
 voice-checked: true
-score: 8
+score: 9
 reviewed: true
 intent-checked: true
 tags: [ai-tools-compared, artificial-intelligence]
