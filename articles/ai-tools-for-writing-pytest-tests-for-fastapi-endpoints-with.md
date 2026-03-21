@@ -61,6 +61,21 @@ def get_user(
 Testing this endpoint requires overriding both dependencies. The question is how effectively different AI tools handle this pattern.
 
 
+## AI Tool Comparison for FastAPI Test Generation
+
+Not all AI coding assistants handle FastAPI's dependency override system equally. Here's how the major tools compare:
+
+| Tool | DI Override Support | Async Fixtures | Cleanup Correctness | Context Awareness | Best Use Case |
+|---|---|---|---|---|---|
+| **Claude / Claude Code** | Excellent — generates full override + cleanup pattern | Yes, uses `anyio` or `asyncio` mode | Always includes `.clear()` teardown | Understands full app context | Learning, complex DI graphs |
+| **GitHub Copilot** | Good — needs explicit prompting for cleanup | Partial — may omit `anyio` fixture mode | Inconsistent cleanup | File-level context only | Autocomplete in existing test files |
+| **Cursor** | Excellent — reads project-wide structure | Yes | Yes | Full project context | Rapid iteration, teams |
+| **Aider (CLI)** | Good — generates complete fixtures | Yes | Yes | Provided files only | Terminal-first workflows, CI |
+| **Codeium** | Moderate — handles simple cases | Partial | Sometimes missing | Limited | Quick boilerplate |
+
+Claude and Cursor consistently outperform others on complex multi-layer dependency chains. Copilot works well when you seed the prompt with an example showing dependency override syntax.
+
+
 ## How AI Tools Approach Dependency Injection Testing
 
 
@@ -156,6 +171,56 @@ def override_dependencies():
 ```
 
 
+## Step-by-Step Workflow for AI-Assisted Test Generation
+
+Follow this workflow to get reliable pytest output from any AI tool:
+
+**Step 1 — Prepare context**
+
+Before prompting, collect the relevant source files: the FastAPI app definition, the dependency functions, and any Pydantic models used in request/response bodies. Paste all of these into your prompt or open them in Cursor's workspace. AI tools perform dramatically better with full context.
+
+**Step 2 — Prompt for fixture-first design**
+
+Ask explicitly for pytest fixtures rather than inline setup. Fixtures are reusable and composable; inline setup leads to repetitive test code that's hard to maintain. A good prompt:
+
+> "Generate pytest fixtures for the following FastAPI app. Use `app.dependency_overrides` to mock `get_database` and `get_current_user`. Include teardown in the fixture. Show 3 test cases: happy path, 404, and unauthenticated."
+
+**Step 3 — Validate cleanup**
+
+Check that every fixture that modifies `app.dependency_overrides` has a `yield` statement followed by `app.dependency_overrides.clear()`. Missing cleanup causes test pollution where dependencies bleed across tests, producing false positives or hard-to-debug failures.
+
+**Step 4 — Add async test support if needed**
+
+If your FastAPI app uses `async def` route handlers or async dependencies, configure pytest-anyio:
+
+```bash
+pip install anyio[asyncio] pytest-anyio
+```
+
+```ini
+# pytest.ini
+[pytest]
+anyio_mode = auto
+```
+
+Then your fixtures can be `async def` and use `AsyncMock`:
+
+```python
+@pytest.fixture
+async def async_client():
+    async with AsyncClient(app=app, base_url="http://test") as ac:
+        yield ac
+```
+
+**Step 5 — Generate edge case tests**
+
+Ask AI tools specifically for failure scenarios. The default output tends toward happy paths. Prompt separately: "Now add tests for: dependency raises an exception, database returns None, authentication token is expired."
+
+**Step 6 — Run and iterate**
+
+Run `pytest -v` and paste any failing output back to the AI tool. Claude Code and Cursor can read pytest output directly; for Aider, pipe the output: `pytest 2>&1 | aider --message "Fix these test failures: $(cat /dev/stdin)"`.
+
+
 ## Practical Patterns for Dependency Injection Testing
 
 
@@ -236,6 +301,30 @@ When evaluating AI-generated tests for FastAPI dependency injection, check for t
 4. Error case coverage: Tests for dependency failures and edge cases
 
 5. Type hints: Proper typing on mock objects
+
+
+## FAQ
+
+**Q: My AI-generated tests pass individually but fail when run together. What's happening?**
+
+This is classic test pollution from missing `app.dependency_overrides.clear()` calls. One test's override is leaking into the next test's execution. Fix by adding teardown to every fixture that sets overrides, or use a session-scoped fixture that resets overrides after each test via `autouse=True`.
+
+**Q: How do I test a FastAPI endpoint that uses `Depends(OAuth2PasswordBearer)`?**
+
+Override the `OAuth2PasswordBearer` callable with a mock that returns a fixed token string, then override the actual user-lookup dependency to return a test user. Example:
+
+```python
+app.dependency_overrides[oauth2_scheme] = lambda: "fake-token"
+app.dependency_overrides[get_current_user] = lambda: {"id": 1, "email": "test@example.com"}
+```
+
+**Q: Should I use `TestClient` or `httpx.AsyncClient` for FastAPI tests?**
+
+`TestClient` (wraps `requests`) works for most cases and is synchronous, making test code simpler. Use `httpx.AsyncClient` when you need to test WebSocket endpoints, streaming responses, or when your test fixtures are themselves async. `httpx.AsyncClient` requires `pytest-anyio` or `pytest-asyncio` configured in async mode.
+
+**Q: Which AI tool writes the most complete tests without extra prompting?**
+
+Claude (via Claude Code or the API) consistently generates the most complete test patterns including fixture teardown, edge cases, and type-correct mocks on first pass. Cursor is close behind when the full project is in context. Both produce significantly better output than prompting Copilot inline, which tends to generate only the minimum required code.
 
 
 ## Recommendations by Use Case
