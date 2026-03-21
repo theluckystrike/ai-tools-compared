@@ -222,6 +222,175 @@ Validate generated dashboards before production deployment. Automated tools crea
 Maintain dashboard templates separately from generated configurations. Template changes propagate to all generated dashboards while allowing individual customization when necessary.
 
 
+## Advanced Panel Configuration Patterns
+
+
+### Rate Limiting Panel Generation
+
+
+AI tools automatically create appropriate visualization for rate limit metrics:
+
+
+```jsonnet
+local grafana = import 'grafonnet/grafana.libsonnet';
+
+{
+  rate_limit_panels: [
+    grafana.graphPanel.new('Request Rate vs Limit')
+      .addTarget(grafana.prometheusTarget(
+        'rate(requests_total[5m])'
+      ))
+      .addTarget(grafana.prometheusTarget(
+        'rate_limit_threshold'
+      ))
+      .setUnit('reqps'),
+
+    grafana.heatmapPanel.new('Rate Limit Heatmap')
+      .addTarget(grafana.prometheusTarget(
+        'histogram_quantile(0.99, rate(request_duration_seconds_bucket[5m]))'
+      ))
+  ]
+}
+```
+
+
+### SLO Burn Rate Dashboards
+
+
+```python
+def generate_slo_dashboard(slo_targets):
+    """
+    Generate dashboard showing SLO compliance and burn rate.
+    SLO target: 99.5% availability
+    Error budget: 0.5% per month = ~21.6 minutes downtime
+    """
+
+    panels = {
+        "availability": {
+            "title": "Service Availability",
+            "query": "sum(rate(requests_total{status=~'[24]..'}[5m])) / sum(rate(requests_total[5m]))",
+            "threshold": 0.995
+        },
+        "burn_rate_1h": {
+            "title": "Burn Rate (1 hour)",
+            "query": "(1 - sum(rate(requests_total{status=~'[24]..'}[1h])) / sum(rate(requests_total[1h]))) / 0.005",
+            "threshold": 1.0  # Healthy if < 1.0
+        },
+        "burn_rate_30d": {
+            "title": "Burn Rate (30 days)",
+            "query": "(1 - sum(rate(requests_total{status=~'[24]..'}[30d])) / sum(rate(requests_total[30d]))) / 0.005"
+        }
+    }
+
+    return panels
+```
+
+
+### Multi-Cluster Dashboards
+
+
+```yaml
+# Generate dashboards aggregating metrics from multiple Kubernetes clusters
+dashboard:
+  title: "Multi-Cluster Overview"
+  panels:
+    - title: "Cluster 1 CPU Usage"
+      targets:
+        - prometheus: "us-west-cluster"
+          query: "sum(rate(container_cpu_usage_seconds_total[5m])) by (pod_namespace)"
+
+    - title: "Cluster 2 CPU Usage"
+      targets:
+        - prometheus: "us-east-cluster"
+          query: "sum(rate(container_cpu_usage_seconds_total[5m])) by (pod_namespace)"
+
+    - title: "Global Request Rate"
+      targets:
+        - prometheus: "us-west-cluster"
+          query: "sum(rate(http_requests_total[5m]))"
+        - prometheus: "us-east-cluster"
+          query: "sum(rate(http_requests_total[5m]))"
+```
+
+
+## AI-Assisted Dashboard Quality Standards
+
+
+### Validation Rules
+
+
+```python
+def validate_generated_dashboard(dashboard_json):
+    """Ensure generated dashboard meets quality standards"""
+
+    validations = {
+        "panel_count": (1, 20),  # Not too few, not too many
+        "query_efficiency": check_query_optimization,
+        "label_clarity": check_descriptive_titles,
+        "threshold_reasonableness": check_realistic_thresholds,
+        "legend_presence": check_legends_defined,
+        "unit_specification": check_units_correct
+    }
+
+    issues = []
+    for check_name, check_fn in validations.items():
+        if not check_fn(dashboard_json):
+            issues.append(f"Failed: {check_name}")
+
+    return len(issues) == 0, issues
+```
+
+
+## Comparison Table: Dashboard Generation Approaches
+
+
+| Method | Automation | Customization | Learning Curve | Best For |
+|--------|---|---|---|---|
+| Grafana UI AI | High | Low | Low | Quick dashboards, exploration |
+| LLM + JSON generation | Medium | High | Medium | Complex multi-service dashboards |
+| Jsonnet/Grafonnet | Low | Very High | High | Version-controlled, templated dashboards |
+| Rule-based generation | High | Medium | Medium | Consistent patterns across services |
+
+
+## Integration with Alerting Rules
+
+
+Dashboard generation should coordinate with alert definitions:
+
+
+```yaml
+# Generate both dashboard panels and matching alerts
+metrics:
+  - name: http_requests_latency
+    dashboard_panel:
+      type: "graph"
+      query: "histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[5m]))"
+      threshold: 500  # ms
+
+    alert_rule:
+      condition: "histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[5m])) > 500"
+      for: "5m"
+      severity: "warning"
+      message: "API latency exceeding threshold"
+```
+
+This ensures visualizations and alerts use the same thresholds, preventing confusion.
+
+
+## Production Deployment Checklist
+
+
+Before deploying generated dashboards:
+
+- Run validation script to catch quality issues
+- Review panel queries for performance implications
+- Test dashboards in staging environment with sample data
+- Verify all referenced metrics exist in your Prometheus instance
+- Create runbooks linked to alert panels
+- Document metric meanings and expected ranges
+- Set up dashboard versioning (store in Git)
+
+
 ## Related Articles
 
 - [AI Tools for Generating Grafana Dashboard JSON Templates Fro](/ai-tools-compared/ai-tools-for-generating-grafana-dashboard-json-templates-fro/)
