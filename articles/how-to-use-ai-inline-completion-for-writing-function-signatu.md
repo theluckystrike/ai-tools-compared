@@ -36,6 +36,21 @@ Modern AI completion tools like GitHub Copilot, Cursor, and others offer this fu
 The key to getting accurate suggestions is providing clear context. A function named `calculateUserMetrics` will generate better suggestions than one named `processData`.
 
 
+## How Inline Completion Differs Across Tools
+
+Before diving into techniques, it helps to understand how the major tools approach inline completion differently:
+
+| Tool | Trigger mechanism | Context window | Multi-line suggestions |
+|---|---|---|---|
+| GitHub Copilot | Automatic as you type | Current file + open tabs | Yes, full function bodies |
+| Cursor (Tab) | Automatic, accepts with Tab | Full project via codebase index | Yes, aggressive multi-line |
+| Supermaven | Automatic, very low latency | Recent edits focus | Yes |
+| Codeium | Automatic | Current file | Moderate |
+| JetBrains AI | Automatic | Project-aware | Yes |
+
+Cursor's codebase indexing gives it an edge when your codebase has consistent naming conventions—it learns your patterns from similar functions and applies them to new signatures.
+
+
 ## Practical Techniques
 
 
@@ -132,6 +147,19 @@ def fetch_user_posts(user_id: int, limit: int = 10, include_drafts: bool = False
     # AI often suggests the complete function body here
 ```
 
+For Python specifically, adding a docstring stub after the signature further primes the AI to suggest the implementation:
+
+```python
+def validate_payment_method(
+    payment_token: str,
+    amount_cents: int,
+    currency: str = "USD",
+    idempotency_key: Optional[str] = None
+) -> PaymentValidationResult:
+    """Validate a payment token against the provider and check transaction limits."""
+    # AI fills in the body from this docstring context
+```
+
 
 ### JavaScript / TypeScript
 
@@ -142,6 +170,25 @@ TypeScript's interface system helps AI understand complex parameter structures:
 ```typescript
 // AI recognizes the interface and suggests appropriate parameters
 function processOrder(order: Order, options?: ProcessingOptions): Promise<OrderResult> {
+```
+
+When you define your interfaces before writing functions, AI completion accuracy improves dramatically because the tool can resolve type information:
+
+```typescript
+interface FilterOptions {
+  startDate?: Date;
+  endDate?: Date;
+  categories?: string[];
+  minAmount?: number;
+  maxAmount?: number;
+}
+
+// Now AI suggests the full signature leveraging FilterOptions
+function filterTransactions(
+  transactions: Transaction[],
+  filters: FilterOptions,
+  sortBy: keyof Transaction = 'date'
+): Transaction[] {
 ```
 
 
@@ -155,6 +202,31 @@ Go's explicit error handling works well with AI completion:
 // AI understands the return pattern and suggests:
 func fetchUserData(ctx context.Context, userID string) (User, error) {
 ```
+
+Go conventions are consistent enough that AI tools reliably generate idiomatic signatures. The pattern of `(ctx context.Context, ...)` as the first parameter is almost always correctly suggested:
+
+```go
+// Service method with context and error return
+func (s *UserService) UpdateProfile(
+    ctx context.Context,
+    userID string,
+    update ProfileUpdate,
+) (*User, error) {
+```
+
+### Rust
+
+Rust's ownership and lifetime system is more challenging, but modern AI tools handle common patterns reliably:
+
+```rust
+// AI recognizes the builder pattern and suggests:
+pub fn parse_config(
+    path: &std::path::Path,
+    overrides: Option<&HashMap<String, String>>,
+) -> Result<Config, ConfigError> {
+```
+
+For Rust specifically, starting with a `#[doc]` comment substantially improves suggestion quality because the compiler documentation conventions constrain what the function should do.
 
 
 ## Optimizing Your Workflow
@@ -173,7 +245,7 @@ Consistent parameter naming helps AI predict similar parameters:
 
 
 ```python
-def authenticate_user(username: str, password: str, 2fa_code: str = None):
+def authenticate_user(username: str, password: str, mfa_code: str = None):
     # The "password" naming helps AI recognize authentication patterns
 ```
 
@@ -190,6 +262,19 @@ Many IDEs support code snippets alongside AI completion. Create your own snippet
 AI suggestions are predictions, not certainties. Always review the suggested signature before accepting it—verify that parameter types and names match your intent.
 
 
+## Step-by-Step Workflow for Maximum Speed
+
+Here is the keystroke-efficient workflow that experienced developers use:
+
+1. **Type the function name only** — Stop immediately after the opening parenthesis. Wait one second for the AI suggestion to appear.
+2. **Scan the suggestion** — If it looks correct, press Tab to accept the entire parameter list.
+3. **Adjust if needed** — Use your IDE's multi-cursor or parameter hints to swap out any parameter name or type that doesn't match.
+4. **Accept the return type suggestion** — For typed languages, the AI usually suggests the return type after you close the parameter list.
+5. **Accept the body stub** — Many AI tools suggest a stub body. Accept it, then replace the implementation with real logic.
+
+This workflow reduces signature writing from 30-60 seconds of active typing to 5-10 seconds of review and Tab presses.
+
+
 ## Common Pitfalls to Avoid
 
 
@@ -201,6 +286,8 @@ AI suggestions are predictions, not certainties. Always review the suggested sig
 
 **Watch for context pollution.** If your file has unrelated code above your function, the AI might pick up wrong patterns. Add strategic comments to redirect context.
 
+**Avoid vague return types.** If you let the AI infer return types from a function name alone, it may default to `any` in TypeScript or `object` in Python. Always specify the return type if you know it—this creates a contract the AI respects.
+
 
 ## Measuring Your Productivity Gain
 
@@ -209,6 +296,8 @@ Track how long it takes to write function signatures before and after adopting A
 
 
 The real productivity gain comes from staying in your flow state. Instead of pausing to think through every parameter, you review AI suggestions and make minor adjustments. This keeps your momentum going and reduces cognitive load.
+
+Over a typical 8-hour engineering day, developers write or modify 20-50 function signatures. Saving even 20 seconds per signature adds up to 7-17 minutes reclaimed per day—roughly an hour per week—without compromising code quality.
 
 
 ## Related Articles
