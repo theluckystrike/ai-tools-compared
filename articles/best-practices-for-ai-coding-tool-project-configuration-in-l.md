@@ -128,7 +128,7 @@ class PaymentController:
     @requires auth-service: validate_token()
     @requires payment-gateway: process_payment()
     """
-    
+
     def process_payment(self, amount: Decimal, token: str) -> PaymentResult:
         # ai:suggest inline
         # Your AI will provide contextually relevant suggestions here
@@ -187,14 +187,14 @@ security:
   scanPublicRepos: false
   allowNetworkAccess: false
   localProcessingOnly: true
-  
+
 compliance:
   dataResidency: "US-EAST"
   auditLogging: true
- approvedModels:
+  approvedModels:
     - "enterprise-model-v3"
     - "codex-local"
-    
+
 privacy:
   excludePatterns:
     - "**/secrets/**"
@@ -241,7 +241,65 @@ Your IDE settings significantly impact AI tool performance. For VS Code users, c
 
 Adjusting the context level and max tokens helps balance suggestion quality with response speed in large codebases.
 
+## Tool-Specific Configuration Files
 
+Different AI coding tools have their own configuration formats. Knowing which files each tool reads prevents wasted effort.
+
+**GitHub Copilot** reads `.copilotignore` (same syntax as `.gitignore`) and `.github/copilot-instructions.md` for project-level instructions. The instructions file is particularly useful for communicating patterns:
+
+```markdown
+# Copilot Instructions
+
+## Project Conventions
+- Use `Result<T, E>` error types, never throw exceptions
+- All async functions must handle cancellation via AbortSignal
+- Prefer `readonly` arrays and objects where possible
+- Use our internal `Logger` class, not console.log
+
+## Testing
+- Use Vitest, not Jest
+- Each test file mirrors the source file structure
+- Mock external services using `vi.mock()`
+```
+
+**Cursor** reads `.cursorrules` in the project root:
+
+```
+You are working in a TypeScript monorepo using NX.
+Always use named exports, never default exports.
+Prefer functional components with hooks.
+Use Zod for runtime validation of all external data.
+When generating database queries, use our QueryBuilder class, not raw SQL.
+```
+
+**Continue.dev** uses a `.continuerc.json`:
+
+```json
+{
+  "contextProviders": [
+    {
+      "name": "codebase",
+      "params": {
+        "nRetrieve": 25,
+        "useReranking": true
+      }
+    },
+    {
+      "name": "docs",
+      "params": {
+        "urls": ["https://your-internal-docs.company.com"]
+      }
+    }
+  ],
+  "slashCommands": [
+    {
+      "name": "pr",
+      "description": "Generate a PR description",
+      "prompt": "Generate a PR description following our template: Summary, Testing Done, Breaking Changes."
+    }
+  ]
+}
+```
 
 ## Team Collaboration and Shared Configurations
 
@@ -255,6 +313,8 @@ Standardize AI tool configurations across your development team by committing co
 repository-root/
 ├── .aiignore
 ├── .ai-config.yml
+├── .copilotignore
+├── .cursorrules
 ├── .vscode/
 │   └── settings.json
 └── docs/
@@ -264,7 +324,7 @@ repository-root/
 
 Create documentation explaining your team's configuration choices. This ensures new developers can set up their environment quickly and maintain consistent AI tool behavior across the team.
 
-
+When onboarding new engineers, the configuration files handle the "how do I get good suggestions?" question automatically — the AI tool reads the context files and starts following team conventions from the first day.
 
 ## Measuring and Iterating
 
@@ -275,25 +335,89 @@ Track configuration effectiveness by monitoring AI tool metrics. Most tools prov
 
 
 - Average suggestion acceptance rate
-
 - Response latency by file size
-
 - Context switching frequency
 
 
 
 Review these metrics quarterly and adjust configurations as your codebase evolves. A new team joining your project might require different exclude patterns or additional context files.
 
+The clearest signal that your configuration needs work: developers start adding workarounds to their prompts ("use our AppError class, not plain Error") to compensate for suggestions that ignore project conventions. When you see this pattern, update the configuration files instead of accepting the prompt overhead.
+
+## Handling Multi-Language Codebases
+
+Many enterprise codebases mix languages — a Python backend, TypeScript frontend, and Go services in the same repository. AI tools need per-language context to avoid cross-contaminating suggestions.
+
+The most effective approach is a layered configuration:
+
+```
+repository-root/
+├── .aiignore                     # Global excludes
+├── .cursorrules                  # Global conventions
+├── backend/
+│   ├── .aiignore                 # Python-specific excludes
+│   └── .cursorrules              # Python conventions
+├── frontend/
+│   ├── .aiignore                 # Node/TS-specific excludes
+│   └── .cursorrules              # React/TypeScript conventions
+└── services/
+    └── auth-service/
+        └── .cursorrules          # Go conventions for this service
+```
+
+When a developer opens a file in `frontend/`, the tool reads both the root `.cursorrules` (global conventions) and the `frontend/.cursorrules` (TypeScript-specific rules). This prevents the AI from suggesting Python-style error handling in TypeScript files.
+
+For Copilot, use `.copilotignore` at the subdirectory level similarly. A `.copilotignore` in `backend/` only applies when Copilot is working in that directory tree.
+
+## Context Window Budget Management
+
+AI coding tools have finite context windows. On large files (over 1,000 lines), the tool may read the beginning and end of the file but skip the middle — where your function of interest might live. This produces suggestions that don't account for helper functions defined 400 lines earlier.
+
+Strategies to work within context limits:
+
+**Keep files focused.** Files under 300 lines provide complete context to virtually every tool. Long files (1,000+ lines) regularly exceed context budgets. This is good software design advice regardless of AI tools, but the AI-productivity angle provides a concrete team-level motivation.
+
+**Use explicit context hints in prompts.** When asking for completions in a large file, reference the relevant functions by name: "Continue the `processPayment` function, which calls `validateCard` (line 45) and `chargeGateway` (line 120)." This directs the tool to include those functions in its context window.
+
+**Structure imports to serve as a table of contents.** AI tools use import statements to understand what's available. A well-organized import block communicates the module's dependencies more efficiently than inline comments.
+
+## CI Integration for Configuration Drift Detection
+
+Configuration files drift over time as individual developers add local overrides. Catch this with a simple CI check:
+
+```yaml
+# .github/workflows/ai-config-check.yml
+name: AI Config Validation
+on: [pull_request]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check for local Copilot overrides
+        run: |
+          if grep -r "copilot.enable.*false" .vscode/; then
+            echo "Error: local Copilot disable found in .vscode/"
+            exit 1
+          fi
+      - name: Validate cursorrules present
+        run: |
+          if [ ! -f .cursorrules ]; then
+            echo "Warning: .cursorrules file missing"
+          fi
+```
+
+This won't catch all drift, but prevents the most common issue: a developer disabling AI suggestions locally, committing the settings file, and degrading the experience for the rest of the team.
+
 
 
 ## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best Practices for AI Tool Project Config When Switching.](/ai-tools-compared/best-practices-for-ai-tool-project-config-when-switching-between-multiple-client-projects/)
-- [Best Practices for Sharing AI Tool Configuration Files Across Distributed Engineering Teams](/ai-tools-compared/best-practices-for-sharing-ai-tool-configuration-files-acros/)
-- [Best Practices for Using AI Coding Tools in HIPAA.](/ai-tools-compared/best-practices-for-using-ai-coding-tools-in-hipaa-regulated-/)
+- [Best AI Coding Assistants Compared](/best-ai-coding-assistants-compared/)
+- [Best Practices for AI Tool Project Config When Switching Between Multiple Client Projects](/best-practices-for-ai-tool-project-config-when-switching-bet/)
+- [Best Practices for Sharing AI Tool Configuration Files Across Distributed Engineering Teams](/best-practices-for-sharing-ai-tool-configuration-files-acros/)
+- [Best Practices for Using AI Coding Tools in HIPAA Regulated Environments](/best-practices-for-using-ai-coding-tools-in-hipaa-regulated-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
