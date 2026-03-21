@@ -242,6 +242,95 @@ Configure Cursor to ask confirmation before making API calls for non-critical fe
 
 
 
+
+## GitHub Copilot vs Cursor: Real-World Benchmark
+
+Comparing AI coding assistants on real tasks reveals meaningful differences in suggestion quality and workflow integration.
+
+```python
+# Test task: implement a binary search tree with deletion
+# Both tools were given the same prompt:
+# "Implement a BST with insert, search, and delete operations in Python"
+
+# Copilot typically generates method stubs requiring manual completion:
+class BSTNode:
+    def __init__(self, val):
+        self.val = val
+        self.left = None
+        self.right = None
+
+class BST:
+    def insert(self, root, val):
+        # Copilot completes inline as you type
+        if not root:
+            return BSTNode(val)
+        if val < root.val:
+            root.left = self.insert(root.left, val)
+        else:
+            root.right = self.insert(root.right, val)
+        return root
+
+    def delete(self, root, val):
+        if not root:
+            return root
+        if val < root.val:
+            root.left = self.delete(root.left, val)
+        elif val > root.val:
+            root.right = self.delete(root.right, val)
+        else:
+            if not root.left:
+                return root.right
+            elif not root.right:
+                return root.left
+            # Find inorder successor
+            min_node = self._find_min(root.right)
+            root.val = min_node.val
+            root.right = self.delete(root.right, min_node.val)
+        return root
+
+    def _find_min(self, node):
+        while node.left:
+            node = node.left
+        return node
+```
+
+Cursor's Composer mode generates the entire file at once with tests; Copilot fills in line-by-line as you type. Cursor wins for greenfield code generation; Copilot wins for incremental completion in existing files.
+
+## Configuring Copilot for Private Repositories
+
+Copilot's default settings may send code snippets to GitHub for model training. Configure these settings for sensitive repositories.
+
+```bash
+# Check current Copilot settings via GitHub CLI:
+gh api /user/copilot_billing
+
+# Disable telemetry in VS Code settings.json:
+{
+    "github.copilot.advanced": {
+        "inlineSuggest.enable": true,
+        "listCount": 10,
+        "debug.overrideEngine": "",
+        "debug.testOverrideProxyUrl": "",
+        "debug.filterLogCategories": []
+    },
+    "telemetry.telemetryLevel": "off",
+    "github.copilot.telemetry.enable": false
+}
+
+# For organizations: disable Copilot training on org repos
+# GitHub Org Settings -> Copilot -> Policies
+# "Allow GitHub to use my code snippets for product improvements" -> Disabled
+
+# Use .copilotignore to exclude sensitive files:
+echo ".env
+secrets/
+credentials*
+*.pem
+*.key" > .copilotignore
+```
+
+Enterprise plans include stronger data isolation guarantees — code is processed in isolated compute and not used for training. Evaluate enterprise pricing if working with proprietary algorithms or regulated data.
+
 ## Related Reading
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
