@@ -27,6 +27,23 @@ When you work with third-party SDKs in your application code, writing tests requ
 
 Consider mocking the AWS SDK v3 for DynamoDB operations. You need to handle different command types, mock successful responses, simulate errors, and ensure the correct parameters were passed to the client. Writing these mocks manually means understanding the entire API surface and often results in incomplete or incorrect implementations.
 
+The challenge compounds in TypeScript projects. Incorrect mock shapes cause type errors, but TypeScript's type system can also guide you toward correct implementations—if you know how to leverage it. AI tools that understand TypeScript generics can produce mocks that satisfy the compiler without requiring manual type annotation surgery.
+
+
+## AI Tool Comparison for Jest Mock Generation
+
+Not all AI coding assistants are equally effective at generating Jest mocks for complex libraries. The key differentiator is whether the tool can analyze your actual usage of the library (which methods you call, what arguments you pass) rather than attempting to mock the entire SDK surface.
+
+| Tool | Strengths for Mock Generation | Weaknesses | Best For |
+|---|---|---|---|
+| Claude Code | Reads entire codebase, understands call sites | Requires CLAUDE.md context for best results | Complex SDK mocks with TypeScript |
+| Cursor (Claude backend) | Inline context from open files | Needs surrounding test file context | Iterating on existing mock patterns |
+| GitHub Copilot | Fast inline completion | Often generates overly simple mocks | Simple library mocking |
+| ChatGPT (GPT-4) | Broad library knowledge | No codebase access by default | Generating mock templates from scratch |
+| Cline | Full codebase access | Slower for interactive iteration | Batch mock generation across test files |
+
+For complex SDKs with deeply nested APIs, Claude Code and Cursor with Claude backend consistently produce more accurate mocks because they can read your actual source files to understand which methods your code calls.
+
 
 ## How AI Tools Generate Jest Mocks
 
@@ -35,6 +52,8 @@ Modern AI coding assistants can analyze library documentation, understand the me
 
 
 The process typically involves describing the library methods you need to mock, specifying the expected return values or error conditions, and letting the AI generate the Jest mock structure. This approach works particularly well for libraries with consistent APIs or well-documented interfaces.
+
+The most effective prompts follow a specific pattern: show the AI your actual application code that uses the library, then ask it to generate the mock. This gives the tool precise information about which methods your code calls, in what order, and with what argument shapes—producing mocks that mirror real usage rather than the full theoretical API surface.
 
 
 ## Practical Examples
@@ -273,6 +292,57 @@ describe('PaymentProcessor', () => {
 ```
 
 
+## Effective Prompts for AI Mock Generation
+
+The quality of AI-generated mocks depends heavily on how you frame the request. These prompt patterns consistently produce accurate results:
+
+**Pattern 1: Show the implementation, ask for the mock.**
+```
+Here is my service that uses the Stripe SDK:
+[paste your service code]
+
+Generate a Jest mock for the Stripe methods this service calls.
+Include both success and error cases.
+```
+
+**Pattern 2: Specify the test scenarios explicitly.**
+```
+Generate a Jest mock for the AWS S3 SDK that covers:
+- Successful file upload (PutObjectCommand)
+- File not found error (GetObjectCommand returning NoSuchKey)
+- Access denied error (all commands)
+- Presigned URL generation (getSignedUrlPromise)
+```
+
+**Pattern 3: Ask for a reusable mock factory.**
+```
+Create a Jest mock factory for the Firebase Firestore SDK
+that lets tests configure per-test return values without
+resetting the entire mock between tests.
+```
+
+The third pattern is particularly useful for integration test suites where different tests need the same mock to return different data. AI tools can generate sophisticated mock factories with configuration helpers that make test setup readable.
+
+
+## Organizing Mocks in Large Codebases
+
+As your test suite grows, scattered `jest.mock()` calls in individual test files become hard to maintain. AI tools can help you migrate to a centralized mock structure:
+
+```
+src/
+  __mocks__/
+    stripe.js          # Automatic mock for 'stripe'
+    firebase-admin.js  # Automatic mock for 'firebase-admin'
+    @aws-sdk/
+      client-s3.js     # Automatic mock for AWS S3
+  services/
+    payment.service.ts
+    payment.service.test.ts
+```
+
+Jest automatically picks up files from `__mocks__` directories adjacent to `node_modules`. Ask your AI tool to generate centralized mocks in this structure, then individual test files can call `jest.mock('stripe')` without any factory function—the mock in `__mocks__/stripe.js` is used automatically.
+
+
 ## Best Practices for AI-Generated Mocks
 
 
@@ -283,6 +353,8 @@ Verify that the generated mocks correctly handle the return value types your cod
 
 
 Maintain your mocks alongside your code. When you add new method calls to third-party libraries in your application, update the corresponding mocks to keep test coverage accurate.
+
+Use `jest.clearAllMocks()` in a global `beforeEach` or `afterEach` rather than manually resetting individual mocks. AI-generated mocks sometimes miss resets for specific methods, leading to state leaking between tests. A global reset ensures clean state regardless of which mock methods a test exercises.
 
 
 ## Related Articles
