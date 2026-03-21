@@ -218,6 +218,229 @@ def evaluate_prediction_accuracy(predictor, metrics_client):
 Building AI-powered infrastructure prediction requires upfront investment in data pipelines and model training, but the payoff is consistent performance during traffic variations. Your systems respond to demand before users notice any degradation.
 
 
+## Deploying Prediction Models with Kubernetes
+
+Use Kubernetes to run your scaling predictor as a CronJob that triggers scaling decisions:
+
+```yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: scaling-predictor-config
+data:
+  predictor.py: |
+    import joblib
+    import pandas as pd
+    from kubernetes import client, config
+    from datetime import datetime
+
+    # Load trained model
+    model = joblib.load('/models/scaling_predictor.joblib')
+
+    # Get current metrics from Prometheus
+    def get_current_metrics():
+      # Query Prometheus for current CPU, requests, etc.
+      return {
+        'cpu_utilization': 75.3,
+        'request_count': 4200,
+        'hour': datetime.utcnow().hour,
+        'day_of_week': datetime.utcnow().weekday(),
+        'is_weekend': int(datetime.utcnow().weekday() >= 5)
+      }
+
+    # Predict and scale
+    metrics = get_current_metrics()
+    predicted_cpu = model.predict([metrics])[0]
+
+    if predicted_cpu > 70:
+      # Scale up via Kubernetes API
+      config.load_incluster_config()
+      apps_v1 = client.AppsV1Api()
+      scale = apps_v1.read_namespaced_deployment_scale('api-servers', 'default')
+      scale.spec.replicas = int(predicted_cpu / 70 * scale.spec.replicas) + 1
+      apps_v1.patch_namespaced_deployment_scale('api-servers', 'default', scale)
+
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: scaling-predictor
+spec:
+  schedule: "*/5 * * * *"  # Run every 5 minutes
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: predictor
+            image: scaling-predictor:latest
+            volumeMounts:
+            - name: model
+              mountPath: /models
+            - name: config
+              mountPath: /config
+          volumes:
+          - name: model
+            configMap:
+              name: scaling-predictor-model
+          - name: config
+            configMap:
+              name: scaling-predictor-config
+          restartPolicy: OnFailure
+```
+
+This automation runs predictions every 5 minutes and adjusts capacity proactively.
+
+## CLI Tool for Local Prediction Testing
+
+Test your model locally before deployment:
+
+```bash
+#!/bin/bash
+# test-scaling-predictor.sh
+
+MODEL_PATH=${1:-scaling_predictor.joblib}
+
+# Generate synthetic metrics
+python3 << 'EOF'
+import joblib
+import pandas as pd
+import numpy as np
+from datetime import datetime, timedelta
+
+model = joblib.load('scaling_predictor.joblib')
+
+# Test different scenarios
+scenarios = [
+  {"name": "Morning peak", "cpu": 45, "requests": 5000, "hour": 9, "dow": 1},
+  {"name": "Evening low", "cpu": 20, "requests": 800, "hour": 20, "dow": 2},
+  {"name": "Weekend spike", "cpu": 60, "requests": 3200, "hour": 15, "dow": 5},
+]
+
+for scenario in scenarios:
+  features = pd.DataFrame([scenario])
+  prediction = model.predict(features)[0]
+  print(f"{scenario['name']}: predicted {prediction:.1f}% CPU")
+EOF
+```
+
+Run this to validate predictions match your expectations.
+
+## Monitoring Prediction Accuracy in Production
+
+Once deployed, continuously monitor model performance:
+
+```python
+# monitoring.py - Track prediction accuracy
+
+from prometheus_client import Gauge, start_http_server
+import time
+import math
+
+prediction_error_gauge = Gauge(
+    'scaling_prediction_error',
+    'Difference between predicted and actual CPU utilization',
+    ['instance_group']
+)
+
+model_staleness_gauge = Gauge(
+    'scaling_model_staleness_days',
+    'Days since last model retraining'
+)
+
+def monitor_predictions(predictor, metrics_client):
+    """Check prediction accuracy every 30 minutes"""
+
+    while True:
+        # Get current metrics
+        current = metrics_client.get_current_metrics('api-servers')
+
+        # Get prediction we made 30 minutes ago
+        past_prediction = metrics_client.get_past_prediction(30)
+
+        # Compare to actual current state
+        actual_current = metrics_client.get_current_metrics('api-servers')
+
+        # Calculate error
+        error = abs(past_prediction - actual_current['cpu'])
+        prediction_error_gauge.labels('api-servers').set(error)
+
+        # Alert if error exceeds threshold
+        if error > 15:  # > 15% variance
+            send_alert(f"Prediction accuracy degraded: {error}% error")
+
+        # Log for analysis
+        log_prediction_accuracy(past_prediction, actual_current, error)
+
+        time.sleep(1800)  # 30 minutes
+```
+
+This monitoring detects when models degrade and need retraining.
+
+## Retraining Strategy
+
+Schedule regular model retraining to maintain accuracy:
+
+```python
+# retrain_scheduler.py
+
+from datetime import datetime, timedelta
+import schedule
+import joblib
+
+def retrain_scaling_model():
+    """Retrain model weekly with latest metrics"""
+
+    # Export last 90 days of metrics
+    metrics = export_metrics_for_prediction(
+        metrics_client,
+        instance_group_id='api-servers',
+        days=90
+    )
+
+    # Train new model
+    new_model = train_scaling_predictor(metrics, target_horizon_minutes=30)
+
+    # Evaluate on held-out test set
+    test_score = evaluate_model(new_model, metrics)
+
+    # Compare to current model
+    current_score = evaluate_model(load_current_model(), metrics)
+
+    # Deploy only if improvement >= 2%
+    if test_score - current_score >= 0.02:
+        backup_current_model()
+        joblib.dump(new_model, 'scaling_predictor.joblib')
+        print(f"Model updated: {current_score:.3f} -> {test_score:.3f}")
+    else:
+        print(f"New model not better: {test_score:.3f} vs {current_score:.3f}")
+
+# Schedule weekly retraining
+schedule.every().wednesday.at("02:00").do(retrain_scaling_model)
+
+# Monitor and execute
+while True:
+    schedule.run_pending()
+    time.sleep(60)
+```
+
+Automatic retraining keeps predictions accurate as your application evolves.
+
+## Cost Impact Analysis
+
+Quantify the savings from proactive scaling:
+
+| Metric | Reactive | Proactive AI |
+|--------|----------|---|
+| Peak capacity cost | $3,200/month | $2,100/month |
+| Idle capacity waste | 18% | 4% |
+| Customer impact (errors during spike) | 2-3/week | <0.2/week |
+| DevOps manual scaling time | 10 hrs/month | 1 hr/month |
+| **Monthly savings** | | **$1,100 + 9 hrs labor** |
+| **Annual savings** | | **$13,200 + 108 hours** |
+
+For a mid-size application, AI-powered scaling prediction yields $13,200-$20,000 annual savings from reduced capacity waste alone.
+
 ## Related Articles
 
 - [AI Powered Tools for Predicting CI/CD Pipeline Failures Befo](/ai-tools-compared/ai-powered-tools-for-predicting-ci-cd-pipeline-failures-befo/)

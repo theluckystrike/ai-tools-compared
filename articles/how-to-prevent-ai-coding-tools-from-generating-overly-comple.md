@@ -219,6 +219,107 @@ Just use regex and return true/false."
 
 Tools that consistently generate 3-5 line solutions are better for simplicity-first workflows. Tools requiring 10+ lines may default toward enterprise patterns.
 
+## Handling AI-Generated Boilerplate
+
+AI tools often generate defensive code—error handling, logging, configuration classes—that your project doesn't need. When this happens, ask the AI to strip it out explicitly:
+
+```javascript
+// Initial response (overcomplicated)
+class UserService {
+  constructor(logger, config) {
+    this.logger = logger;
+    this.config = config;
+  }
+
+  async getUser(id) {
+    try {
+      this.logger.info(`Fetching user ${id}`);
+      // ... 20 lines of code
+    } catch (error) {
+      this.logger.error('Failed to fetch user', error);
+      throw new UserServiceError(error);
+    }
+  }
+}
+
+// What to request:
+// "Remove the logging and error classes. Just return the user data
+// or throw the error directly. We'll handle error logging elsewhere."
+
+// Simplified result
+async function getUser(id) {
+  const response = await db.query('SELECT * FROM users WHERE id = ?', [id]);
+  return response[0];
+}
+```
+
+This iterative refinement is faster than regenerating from scratch and gives you control over which boilerplate stays.
+
+## Context Windows and Scope Management
+
+When asking AI to generate code, explicitly set the scope boundary. AI models respond to explicit constraints:
+
+Weak prompt: "How do I handle authentication?"
+Strong prompt: "Generate a login function that takes email and password, checks against a simple hardcoded user list, and returns a token string. Keep it under 10 lines. No databases, no JWT, no external libraries."
+
+The strong version eliminates the ambiguity that leads to over-engineering. Your AI tool knows exactly what you want because you defined the boundaries clearly.
+
+## Evaluating Third-Party Code
+
+When you receive AI-generated code that uses third-party libraries, question each dependency:
+
+- Is this library necessary or just convenient?
+- Can the standard library solve this?
+- Does adding this dependency create security or maintenance overhead?
+
+Ask the AI to provide a version without the dependency:
+
+```python
+# AI's version (adds lodash dependency)
+import lodash
+
+def process_users(data):
+    return lodash.map(data, lambda u: u['name'])
+
+# Your request: "Do this without lodash"
+
+# Simplified version
+def process_users(data):
+    return [u['name'] for u in data]
+```
+
+This constraint-driven approach prevents your codebase from accumulating unnecessary dependencies.
+
+## Integrating Simplicity into Your Team Workflow
+
+If you work in a team, establish simplicity standards and share them with your AI tool:
+
+1. Document your team's preferred patterns for common tasks
+2. Create a shared prompt library with examples that work well
+3. Review AI suggestions against your standards before merging
+4. Provide feedback to the AI about which outputs were too complex
+
+Over time, your tool learns your preferences. Claude Code, for instance, remembers your feedback and adjusts its output in subsequent interactions.
+
+## Measuring Code Complexity
+
+Quantify complexity to verify your AI tool is respecting your constraints:
+
+```bash
+# Lines of code per function
+# Should be under 15-20 for simple operations
+
+# Cyclomatic complexity (branches/conditionals)
+# Keep this low—avoid nested if statements
+
+# Number of function parameters
+# Limit to 3-4 unless building a configuration object
+
+# Dependency count
+# Know what you're importing and why
+```
+
+Share these metrics with your team and enforce them during code review. This gives reviewers concrete reasons to push back on over-engineered solutions.
 
 ## Related Articles
 
