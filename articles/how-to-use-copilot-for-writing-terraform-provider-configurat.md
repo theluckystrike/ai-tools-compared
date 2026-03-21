@@ -29,7 +29,22 @@ Before diving into specific techniques, ensure Copilot is configured in your env
 
 Copilot analyzes your project's structure, existing provider blocks, and variable definitions to make relevant suggestions. A project with established AWS configurations will receive more accurate suggestions for additional AWS resources than starting from a blank file.
 
+Installing the HashiCorp Terraform extension alongside Copilot also helps. The Terraform extension provides syntax highlighting, formatting, and schema validation, which gives Copilot clearer signals about what valid HCL looks like in your workspace.
 
+## Copilot vs. Cursor for Terraform: Quick Comparison
+
+Both AI coding tools assist with Terraform, but they approach it differently:
+
+| Capability | GitHub Copilot | Cursor |
+|---|---|---|
+| Inline HCL autocomplete | Strong | Strong |
+| Multi-file context | Limited | Excellent |
+| Refactor entire modules | Limited | Yes (composer) |
+| .cursorrules for IaC conventions | No | Yes |
+| GitHub integration | Native | Via extension |
+| Cost | Per-seat subscription | Per-seat subscription |
+
+For Terraform specifically, Cursor's multi-file context is a meaningful advantage when you need to generate a resource block that references variables defined in a separate `variables.tf`. Copilot works best when relevant files are open in the same editor session.
 
 ## Writing Your First Provider Block with Copilot
 
@@ -148,7 +163,33 @@ provider "aws" {
 
 This approach works well when you know what parameters you need but want to avoid consulting documentation. Copilot generates the structure; you fill in the specific values.
 
+### GCP Provider Example
 
+The same comment-driven approach works for Google Cloud:
+
+```hcl
+# Configure GCP provider with workload identity federation
+# Requirements:
+# - Project from variable
+# - Impersonate service account for least-privilege access
+# - Enable beta features for Cloud Run
+
+provider "google" {
+  project = var.gcp_project_id
+  region  = var.gcp_region
+
+  impersonate_service_account = var.terraform_sa_email
+}
+
+provider "google-beta" {
+  project = var.gcp_project_id
+  region  = var.gcp_region
+
+  impersonate_service_account = var.terraform_sa_email
+}
+```
+
+Copilot typically suggests the `google-beta` block when you have beta resources referenced elsewhere in your project, saving you the lookup of whether a resource requires the beta provider.
 
 ## Handling Provider Version Constraints
 
@@ -179,7 +220,9 @@ terraform {
 
 When you type the version constraint, Copilot typically suggests the appropriate operator (`~>` for pessimistic constraints, `>=` for minimum versions, `=` for exact versions) based on common Terraform patterns.
 
+### Locking Versions After Copilot Generates Them
 
+Copilot often suggests slightly older stable versions. After accepting a suggestion, check the registry for the current stable release and pin to that. Use `terraform providers lock` after confirming your versions to generate a `.terraform.lock.hcl` file that the whole team shares through source control.
 
 ## Module-Level Provider Configuration
 
@@ -212,7 +255,26 @@ resource "aws_instance" "example" {
 
 The `configuration_aliases` block tells Terraform that this module expects providers named `aws.primary` and `aws.secondary` to be passed in.
 
+### Calling the Module with Explicit Providers
 
+After Copilot generates the module internals, it also helps with the calling side:
+
+```hcl
+module "app_servers" {
+  source = "./modules/app"
+
+  providers = {
+    aws.primary   = aws.us_west
+    aws.secondary = aws.us_east
+  }
+
+  ami_id        = var.app_ami
+  instance_type = "t3.medium"
+  tags          = local.common_tags
+}
+```
+
+Copilot often predicts this `providers` block correctly once it sees the `configuration_aliases` defined in the module.
 
 ## Best Practices for Copilot-Assisted Terraform Writing
 
@@ -236,7 +298,19 @@ Use descriptive variable names in your project. When Copilot sees consistently n
 
 Store provider configurations in a dedicated `providers.tf` file or organize them logically. Copilot performs better with consistent file organization because it has clearer context about your infrastructure setup.
 
+## Frequently Asked Questions
 
+**Does Copilot know the latest Terraform provider API changes?**
+Copilot's training data has a knowledge cutoff and may not reflect recent provider updates. Always cross-check generated resource arguments against the official Terraform Registry documentation, especially for providers that release frequently like `hashicorp/aws`.
+
+**Can Copilot help me migrate from one provider version to another?**
+Yes, with guidance. Open the old provider block alongside a comment describing the target version's breaking changes, and Copilot can suggest an updated structure. For major version bumps (e.g., azurerm 2.x to 3.x), supplement Copilot with the official upgrade guide.
+
+**What file should I keep open to give Copilot the best context?**
+Keep `variables.tf`, `locals.tf`, and any existing `providers.tf` open in separate editor tabs. Copilot uses open files as context, so having your variable definitions visible dramatically improves the relevance of provider suggestions.
+
+**Does Copilot generate secure configurations by default?**
+Not always. Copilot optimizes for common patterns, which sometimes means suggesting overly permissive IAM roles or skipping encryption flags. Always review generated configurations against your security baseline before applying.
 
 
 
