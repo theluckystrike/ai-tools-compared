@@ -31,6 +31,25 @@ AI coding assistants and LLMs can analyze your token structure and generate appr
 
 
 
+## Which AI Tools Work Best for Naming Convention Generation
+
+Three tools consistently deliver results that require minimal correction:
+
+**Claude (Anthropic)** excels at pattern recognition across large token sets. When you feed it a complete design token JSON with 100+ entries, it identifies implicit groupings and proposes a coherent hierarchy that respects your existing conventions. It handles multi-brand design systems particularly well, keeping brand-specific tokens cleanly separated from semantic aliases.
+
+**ChatGPT (GPT-4o)** is strongest at following explicit naming templates. If you provide a BEM skeleton or an atomic design taxonomy, it fills it in precisely. It also handles edge cases gracefully—ask it what to name a "destructive-secondary-disabled" state and it reasons through the interaction correctly.
+
+**GitHub Copilot** works inside Figma plugins and VS Code simultaneously, which makes it the fastest option for designers who live between the two tools. When you are editing a `tokens.json` file, Copilot autocomplete suggests names that match surrounding entries, which enforces consistency without a separate prompt step.
+
+| Tool | Best For | Token Format Support | Free Tier |
+|------|----------|----------------------|-----------|
+| Claude | Large token hierarchies, multi-brand systems | JSON, YAML, CSS variables | Yes (limited) |
+| ChatGPT GPT-4o | Template-based generation, edge state naming | JSON, any text | Yes (limited) |
+| GitHub Copilot | In-editor autocomplete, Figma plugin workflow | JSON, YAML | No |
+| Cursor | Refactoring existing token files | JSON, TypeScript | Yes (trial) |
+
+
+
 ## Preparing Your Token Data
 
 
@@ -68,7 +87,7 @@ Before using AI tools, structure your design tokens in a machine-readable format
 ```
 
 
-This structured format allows AI tools to understand relationships between tokens and generate more accurate component names.
+This structured format allows AI tools to understand relationships between tokens and generate more accurate component names. Style Dictionary format is even better—it includes metadata like `description` and `category` fields that give AI more semantic signal to work with.
 
 
 
@@ -91,7 +110,7 @@ Provide existing examples and ask AI to extend the pattern:
 ```
 Our design system uses this naming convention for buttons:
 - Primary action: ButtonPrimary
-- Secondary action: ButtonSecondary  
+- Secondary action: ButtonSecondary
 - Destructive action: ButtonDestructive
 
 Generate consistent names for these components based on our color tokens:
@@ -137,6 +156,30 @@ Use BEM-style naming with our token prefixes: btn-, input-, feedback-
 ```
 
 
+## Step-by-Step Workflow for Teams
+
+This workflow covers the full cycle from raw tokens to a documented naming system:
+
+**Step 1 — Export tokens in a structured format.** Use Figma's Tokens Studio plugin or Style Dictionary to export tokens as JSON. The file should include all tiers: primitive values (raw hex colors), semantic aliases (success, warning), and component-level references.
+
+**Step 2 — Write a constraint document.** Before prompting any AI, list your hard rules: naming casing (PascalCase vs kebab-case), max name length, forbidden abbreviations, and any existing names that cannot change. Paste this document at the top of every AI session.
+
+**Step 3 — Generate a first pass for one component family.** Start narrow. Prompt Claude or ChatGPT with just your button tokens and ask for button component names only. Review output before expanding to the full library.
+
+**Step 4 — Cross-check against your codebase.** Run a search against your existing component library to catch collisions:
+
+```bash
+grep -r "ButtonPrimary\|ButtonSecondary" src/components/
+```
+
+**Step 5 — Resolve conflicts iteratively.** Paste conflicts back into the AI session and ask it to suggest alternatives that respect the constraints. AI handles this disambiguation step faster than manual bikeshedding.
+
+**Step 6 — Generate the full mapping table.** Once the button family is stable, expand the prompt to cover all component families. Ask the AI to output a Markdown table with columns: Token Reference, Component Name, Usage Context, and Deprecated Alias.
+
+**Step 7 — Commit the naming table to your design system docs.** Store it in your repo alongside the token files so that the naming rationale is version-controlled and searchable.
+
+
+
 ## Practical Examples
 
 
@@ -152,7 +195,7 @@ Given these tokens:
   "color": {
     "action": {
       "default": "#0066FF",
-      "hover": "#0052CC", 
+      "hover": "#0052CC",
       "active": "#003D99",
       "disabled": "#D1D5DB"
     }
@@ -166,13 +209,9 @@ An AI assistant can generate:
 
 
 | Token Reference | Generated Component Name | Usage Context |
-
 |-----------------|--------------------------|---------------|
-
 | color.action.default | ButtonActionPrimary | Main CTAs |
-
 | color.action.hover | ButtonActionPrimaryHover | State variants |
-
 | color.action.disabled | ButtonActionDisabled | Inactive states |
 
 
@@ -204,7 +243,7 @@ Output recommendations:
 ```
 Tokens:
 - heading-xl: 32px, bold
-- heading-lg: 24px, semibold  
+- heading-lg: 24px, semibold
 - body-lg: 16px, regular
 - body-sm: 14px, regular
 
@@ -221,30 +260,6 @@ Expected output:
 - TextBodyLarge (body-lg)
 
 - TextBodyDefault (body-sm)
-
-
-
-## Workflow Integration
-
-
-
-For teams adopting AI-assisted naming, consider this workflow:
-
-
-
-1. **Export tokens** from your design system (Figma, Style Dictionary, or custom JSON)
-
-2. **Define constraints** — share existing component names and patterns
-
-3. **Generate suggestions** using the prompt strategies above
-
-4. **Validate against codebase** — check for naming conflicts
-
-5. **Document decisions** — add generated names to your design system documentation
-
-
-
-Most AI coding tools can work directly with your token files. Provide the token JSON as context, then ask for naming recommendations within your IDE.
 
 
 
@@ -282,18 +297,31 @@ Iterate on prompts based on initial results. Adjust context, provide more exampl
 
 - Single-pass generation: Better results come from iterative refinement
 
+- Skipping the conflict check: AI cannot see your codebase unless you show it, so grep verification is mandatory before committing any generated names
 
 
+
+## FAQ
+
+**Q: Can AI tools read Figma's variable export directly?**
+Yes. Figma exports variables as JSON via the REST API or through the Tokens Studio plugin. Both formats are compatible with Claude, ChatGPT, and Cursor. Paste the export directly into a prompt—AI tools handle the nested variable group structure without preprocessing.
+
+**Q: What casing convention should I request?**
+PascalCase works best for React component names. kebab-case is standard for CSS custom properties. BEM (block__element--modifier) is common for utility-first token naming. Specify the casing upfront and AI tools will apply it consistently across the entire output.
+
+**Q: How do I handle multi-brand design systems?**
+Include a brand prefix constraint in your prompt: "All brand-specific tokens must start with the brand slug (acme-, bolt-, etc.) before the semantic tier." AI tools respect this rule when generating names and will keep brand namespaces cleanly separated.
+
+**Q: What happens when I rename a token that's already in production?**
+AI tools can generate a migration mapping—old name to new name—formatted as a TypeScript `Record<string, string>` or a JSON patch document. Prompt explicitly: "Generate a rename map from deprecated names to new names, formatted as JSON." Feed this into a codemod script to automate the rename across your codebase.
 
 
 
 
 ## Related Reading
 
-- [AI Coding Assistant Accuracy for TypeScript Svelte Component](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-svelte-component/)
-- [AI Coding Assistant Comparison for React Component](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
-- [ChatGPT vs Claude for Generating Cypress Component Test Boil](/ai-tools-compared/chatgpt-vs-claude-for-generating-cypress-component-test-boil/)
-- [How to Use AI to Generate Component Diagrams from React](/ai-tools-compared/how-to-use-ai-to-generate-component-diagrams-from-react-or-v/)
-- [How to Use AI to Generate Jest Component Tests with Testing](/ai-tools-compared/how-to-use-ai-to-generate-jest-component-tests-with-testing-/)
+- [AI Tools for Converting Figma Designs to Code 2026](/ai-tools-compared/ai-tools-for-converting-figma-designs-to-code-2026/)
+- [AI Tools for Designers Writing Handoff Notes That Include In](/ai-tools-compared/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
+- [Best AI for Converting Figma Designs to React Components](/ai-tools-compared/best-ai-for-converting-figma-designs-to-react-components-202/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
