@@ -201,7 +201,117 @@ Here are three example RFCs from our project that were accepted. Notice the styl
 
 This ensures your AI-generated draft matches project expectations.
 
+## Real RFC Examples and Patterns
 
+Study existing RFCs from major projects to understand tone and structure:
+
+```markdown
+# RFC Example: Rust RFC 2019-12
+## Title: Stabilize the Async/Await Syntax
+
+### Summary
+This RFC proposes stabilizing async/await syntax for futures-based
+concurrency in Rust 2018 edition.
+
+### Motivation
+Current closure-based approach requires understanding advanced type system
+features. Async/await syntax makes asynchronous code feel natural.
+
+### Detailed Design
+- Add `async` keyword to function definitions
+- Add `await` postfix operator for future execution
+- Error handling through standard Result type
+- Cancellation via drop semantics
+
+### Alternatives Considered
+1. Macro-based approach (deemed too complex)
+2. Generators + yield (insufficient for error handling)
+3. Callback-based API (original approach, poor ergonomics)
+
+### Drawbacks
+- Compiler complexity increases
+- New surface area for potential bugs
+- Learning curve for developers unfamiliar with futures
+```
+
+When you provide AI tools with 2-3 examples of accepted RFCs, the quality of generated output improves dramatically.
+
+## RFC Template for Common Patterns
+
+Create project-specific templates that AI tools can use:
+
+```markdown
+# RFC Template for {PROJECT_NAME}
+
+## Summary
+One paragraph describing what this RFC proposes. Keep it 1-2 sentences.
+
+## Motivation
+Why do we need this change? What problems does it solve? Include specific
+use cases that motivate the change. Quantify impact where possible.
+
+## Detailed Design
+The core of the RFC. Include:
+- New API signatures or configuration format
+- Database schema changes if applicable
+- Behavioral changes to existing features
+- Migration path for existing users
+
+Include code examples showing before/after.
+
+## Alternatives Considered
+List other approaches and explain why they're insufficient compared to
+the proposed design. Demonstrate that the proposed approach is optimal.
+
+## Drawbacks and Limitations
+Be honest about trade-offs. What functionality might this remove?
+What performance implications exist? What future constraints does this
+introduce?
+
+## Unresolved Questions
+What aspects remain unclear? What aspects might need further discussion
+during implementation?
+
+## Implementation Timeline
+Estimate effort and timeline. Break into phases if complex.
+- Phase 1: Core implementation (~2 weeks)
+- Phase 2: Documentation (~1 week)
+- Phase 3: Testing and feedback (~1 week)
+```
+
+Using a consistent template across all RFCs accelerates both writing and review.
+
+## AI Tool Recommendations for RFC Writing
+
+**Claude Code:** Best for complete RFC generation from requirements. Excels at writing motivation sections that articulate problems clearly.
+
+**GitHub Copilot:** Good for filling in code examples and API signatures once you've drafted motivation and design sections.
+
+**Cursor:** Excellent for iterative RFC refinement through conversation. If you have a rough draft, Cursor's chat interface helps you strengthen weak sections.
+
+**GPT-4:** Good at alternative analysis. Provide your main proposal, and ask GPT-4 to generate compelling alternatives you may not have considered.
+
+## Converting RFC Feedback to Implementation
+
+Once your RFC is accepted, AI tools help convert feedback into refined specifications:
+
+```
+RFC Feedback received:
+1. "Unclear how this handles edge case X"
+2. "Performance implications not addressed"
+3. "Migration path needs more detail for existing users"
+
+Prompt to AI:
+"Based on this RFC feedback, help me expand the following sections:
+
+1. Edge case handling for X (add 3 specific code examples)
+2. Performance analysis section (benchmark comparisons with current approach)
+3. Detailed migration guide (step-by-step for users with existing setup)
+
+Maintain the same technical tone and depth as the original RFC."
+```
+
+The AI generates expanded sections that directly address reviewer concerns.
 
 ## Best Practices for AI-Assisted RFC Writing
 

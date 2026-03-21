@@ -226,7 +226,159 @@ Deeply nested generic types can confuse AI models and produce compilation errors
 
 Both Claude and GPT models continue to improve their Scala support, but success depends heavily on how you frame requests and validate generated code against Scala's strong type system.
 
+## Advanced Scala Patterns
 
+### Working with Recursion and Tail Calls
+
+Scala's tail recursion optimization is critical for performance. AI tools often miss the `@tailrec` annotation:
+
+```scala
+// Poor—potential stack overflow on large lists
+def sum(numbers: List[Int]): Int = numbers match {
+  case Nil => 0
+  case head :: tail => head + sum(tail)
+}
+
+// Better—AI should generate this with @tailrec annotation
+@tailrec
+def sum(numbers: List[Int], accumulator: Int = 0): Int = numbers match {
+  case Nil => accumulator
+  case head :: tail => sum(tail, accumulator + head)
+}
+```
+
+When requesting recursive solutions from AI tools, explicitly ask for tail recursion and the `@tailrec` annotation to catch bugs at compile time.
+
+### Monadic Error Handling with Cats
+
+Cats provides powerful error handling patterns that AI tools should recognize:
+
+```scala
+import cats._
+import cats.implicits._
+
+case class ValidationError(msg: String)
+
+def parseInt(s: String): Either[ValidationError, Int] =
+  s.toIntOption.toRight(ValidationError(s"Cannot parse '$s' as int"))
+
+def parseUser(id: String, age: String): Either[ValidationError, (Int, Int)] =
+  for {
+    userId <- parseInt(id)
+    userAge <- parseInt(age)
+  } yield (userId, userAge)
+
+// For multiple validations that collect all errors:
+def validateUser(id: String, age: String, email: String): ValidatedNel[ValidationError, User] = (
+  parseIntValidated(id).toValidatedNel,
+  parseIntValidated(age).toValidatedNel,
+  validateEmail(email).toValidatedNel
+).mapN(User.apply)
+```
+
+Claude models typically generate this style naturally when you specify functional error handling.
+
+### Stream Processing with Akka Streams
+
+Akka Streams requires understanding backpressure and reactive principles. Good prompts for AI include the processing requirements:
+
+```scala
+import akka.actor.typed.ActorSystem
+import akka.stream.scaladsl._
+
+// Process events with controlled parallelism
+def processEventStream(
+  source: Source[Event, NotUsed],
+  batchSize: Int = 100
+): Sink[Event, Future[Done]] = {
+
+  source
+    .groupedWithin(batchSize, 5.seconds)
+    .mapAsync(parallelism = 4) { batch =>
+      Future {
+        batch.map(transformEvent).collect { case Success(e) => e }
+      }
+    }
+    .to(Sink.foreach(println))
+}
+```
+
+When requesting Akka Streams code from AI, specify the parallelism level, batch sizes, and backpressure requirements explicitly.
+
+## Tool-Specific Prompt Strategies
+
+Claude performs best with Scala when you:
+1. Specify immutability and functional constraints upfront
+2. Request sealed trait hierarchies instead of inheritance
+3. Ask for type class instances explicitly
+4. Mention specific Scala version (2.13, 3.x)
+
+GPT benefits from:
+1. Showing existing code examples from your project
+2. Explicit instruction to avoid `var` declarations
+3. Requests to "refactor this imperative code functionally"
+4. Sample outputs demonstrating expected style
+
+```scala
+// Prompt: "Refactor this to use for-comprehensions and sealed traits"
+// Claude will reliably produce this pattern:
+
+sealed trait Result[A]
+case class Success[A](value: A) extends Result[A]
+case class Failure[A](error: String) extends Result[A]
+
+def processData[A, B](input: Result[A])(f: A => Result[B]): Result[B] =
+  for {
+    a <- input match {
+      case Success(v) => Success(v)
+      case Failure(e) => Failure(e)
+    }
+    b <- f(a) match {
+      case Success(v) => Success(v)
+      case Failure(e) => Failure(e)
+    }
+  } yield b
+```
+
+## Performance Considerations
+
+AI-generated Scala can sometimes introduce performance problems inadvertently:
+
+```scala
+// Inefficient—creates intermediate lists
+def pipeline(data: List[Int]): List[Int] =
+  data.map(_ * 2).filter(_ > 10).map(_ + 1)
+
+// Better—should use Iterator or foldLeft
+def pipelineOptimized(data: List[Int]): List[Int] =
+  data.foldLeft(List[Int]()) { (acc, x) =>
+    val transformed = (x * 2) + 1
+    if (transformed > 10) acc :+ transformed else acc
+  }
+
+// Best—use Iterator for large datasets
+def pipelineStream(data: Iterator[Int]): Iterator[Int] =
+  data.map(_ * 2).filter(_ > 10).map(_ + 1)
+```
+
+Review AI-generated code for unnecessary allocations. Ask explicitly for lazy evaluation or streaming approaches when working with large datasets.
+
+## Testing Scala AI Output
+
+Always compile and run tests on AI-generated Scala code before integrating it:
+
+```bash
+# Verify compilation with strict settings
+scalac -Werror -Xlint:all src/main/scala/*.scala
+
+# Run your test suite
+sbt test
+
+# Profile for performance regressions
+sbt "jmh:run -i 10 -wi 5 -f1"
+```
+
+AI tools can produce code that compiles but violates Scala style conventions or introduces performance problems. Your test suite and static analysis tools (Scalafix, Scalastyle) catch these issues.
 
 
 

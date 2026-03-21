@@ -226,7 +226,93 @@ If proxy configuration proves intractable, consider running Cursor's AI features
 
 This approach requires more local resources but provides complete independence from network restrictions.
 
+## Automating Configuration Across Teams
 
+For IT administrators managing Cursor deployments at scale:
+
+```bash
+#!/bin/bash
+# deploy_cursor_proxy_config.sh
+
+# Deploy to all macOS machines via Jamf
+PROXY_HOST="proxy.corporate.com"
+PROXY_PORT="8080"
+PROXY_USER="$1"
+PROXY_PASS="$2"
+
+# Update launchd environment for all users
+sudo launchctl setenv HTTP_PROXY "http://${PROXY_USER}:${PROXY_PASS}@${PROXY_HOST}:${PROXY_PORT}"
+sudo launchctl setenv HTTPS_PROXY "http://${PROXY_USER}:${PROXY_PASS}@${PROXY_HOST}:${PROXY_PORT}"
+
+# Deploy Cursor settings JSON to all user Library paths
+CURSOR_SETTINGS="$HOME/Library/Application Support/Cursor/User/settings.json"
+
+jq '.["http.proxy"] = "http://'"${PROXY_HOST}:${PROXY_PORT}"'"' "$CURSOR_SETTINGS" > "$CURSOR_SETTINGS.tmp"
+jq '.["http.proxySupport"] = "on"' "$CURSOR_SETTINGS.tmp" > "$CURSOR_SETTINGS"
+rm "$CURSOR_SETTINGS.tmp"
+```
+
+Windows administrators can use Group Policy or Intune to deploy equivalent configurations.
+
+## Debugging Network Issues with Cursor
+
+When Cursor's AI features hang or fail silently, systematic debugging helps identify the root cause:
+
+```bash
+# 1. Test proxy connectivity
+curl -v -x http://proxy.corporate.com:8080 https://api.cursor.sh/health
+
+# 2. Check SSL certificate chain
+openssl s_client -connect api.cursor.sh:443 -proxy proxy.corporate.com:8080 \
+  -showcerts 2>/dev/null | grep "subject="
+
+# 3. Verify DNS resolution
+nslookup api.cursor.sh
+nslookup proxy.corporate.com
+
+# 4. Monitor actual network traffic from Cursor
+sudo tcpdump -i en0 -A dst host api.cursor.sh > /tmp/cursor_traffic.log &
+# Trigger an AI completion in Cursor
+# ^C to stop tcpdump
+cat /tmp/cursor_traffic.log | grep -i "proxy\|auth\|connection"
+
+# 5. Check Cursor's bundled Node.js version (may have proxy issues)
+/Applications/Cursor.app/Contents/Frameworks/Cursor\ Framework.framework/Versions/Current/Resources/node --version
+```
+
+These commands reveal whether the issue is proxy authentication, certificate validation, DNS, or Cursor-specific configuration.
+
+## Comparison: Cursor vs. Alternatives in Restricted Networks
+
+| Tool | Proxy Support | NTLM Auth | Local Mode | Setup Complexity |
+|------|---|---|---|---|
+| Cursor | Good | Requires cntlm | Via Ollama | Medium |
+| GitHub Copilot | Excellent | Built-in | None | Low |
+| Claude Code | Good | Possible via wrapper | Full local option | High |
+| Windsurf | Good | Requires cntlm | Via Ollama | Medium |
+
+GitHub Copilot has the best built-in NTLM support. Claude Code offers the most flexibility through local models. Cursor sits in the middle for corporate environments.
+
+## Production Readiness Checklist
+
+Before deploying Cursor to your organization:
+
+```markdown
+## Pre-Deployment Verification
+
+- [ ] Proxy authentication succeeds with valid credentials
+- [ ] SSL/TLS certificate validation passes (no MITM proxy issues)
+- [ ] AI completion latency is <3 seconds on typical requests
+- [ ] Code suggestion quality is acceptable
+- [ ] No API keys or secrets leak to Cursor logs
+- [ ] VPN disconnection handling doesn't crash Cursor
+- [ ] Air-gapped fallback (Ollama setup) works as backup
+- [ ] Team members can enable/disable features per security policy
+- [ ] Audit logging captures which files AI sees
+- [ ] Telemetry data collection meets data residency requirements
+```
+
+Running through this checklist prevents post-deployment surprises.
 
 ## Related Reading
 

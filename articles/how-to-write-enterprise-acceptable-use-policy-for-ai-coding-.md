@@ -217,9 +217,101 @@ When developers understand why certain restrictions exist, they're more likely t
 
 
 
+## Tool Pricing and License Implications
+
+Understanding pricing models helps shape policy decisions:
+
+| Tool | Pricing Model | Enterprise Tier | Data Processing | Min. Commitment |
+|------|---|---|---|---|
+| GitHub Copilot | $10/mo individual, $21/mo per-seat | Yes (seatless option) | Configurable | None |
+| Claude Code | Usage-based ($3-20/mo typical) | Enterprise available | Configurable | None |
+| Cursor | $20/mo Pro | No published enterprise tier | Local-first option | None |
+| JetBrains AI | $9/mo with subscription | Via JetBrains Enterprise | Unclear | Existing license |
+
+Claude Code and GitHub Copilot offer the clearest enterprise data processing agreements. Cursor emphasizes local processing capability, which aligns with air-gapped requirements. Factor licensing costs into your total cost of ownership calculations.
+
+## Sample Policy Template
+
+Here's a concrete policy template your organization can adapt:
+
+```markdown
+# AI Coding Assistant Acceptable Use Policy (Draft)
+
+## 1. Approved Tools and Versions
+- GitHub Copilot Enterprise (Version 1.2+)
+- Claude Code Pro/Enterprise
+- Cursor (Version 0.40+)
+- All must be configured per Section 3
+
+Unapproved tools detected via network monitoring trigger automated notifications.
+
+## 2. Prohibited Actions
+- Pasting customer data, API keys, or credentials
+- Processing payment card information
+- Sharing patient health records or PII
+- Copying proprietary algorithms not yet disclosed
+- Using AI output without review in production
+
+## 3. Configuration Requirements
+- Telemetry disabled (GitHub Copilot: telemetry.enable = false)
+- Chat history retention = 0 days
+- Context indexing limited to approved repositories
+- Proxy routing through corporate firewall
+
+## 4. Code Review Obligations
+All AI-generated code requires:
+- Manual review by non-generating developer
+- Security scan before merge
+- Documentation of AI source in commit message
+
+## 5. Training and Onboarding
+- 30-minute training for all developers (annually)
+- Policy review during code review process
+- Incident post-mortems for violations
+
+## 6. Incident Reporting
+- Developers report potential breaches within 2 hours
+- No punitive action for good-faith reports
+- Data breach timeline follows ISO 27035
+```
+
+## Monitoring and Enforcement Mechanisms
+
+Effective policies require monitoring. Here's a practical implementation approach:
+
+```bash
+#!/bin/bash
+# monitor_ai_usage.sh - detect unapproved AI tool API calls
+
+# Block suspicious external API calls
+BLOCKED_DOMAINS=(
+  "api.perplexity.com"
+  "api.huggingface.co"
+  "api.together.ai"
+)
+
+for domain in "${BLOCKED_DOMAINS[@]}"; do
+  sudo pfctl -t blocked_ai -a 0.0.0.0/0 -d $domain
+done
+
+# Log permitted tool usage
+LOG_FILE="/var/log/ai_coding_usage.log"
+tcpdump -i en0 -A 'tcp port 443 and (host api.openai.com or host api.anthropic.com or host github.com)' >> $LOG_FILE
+```
+
+This prevents developers from accidentally using prohibited tools while allowing approved platforms through. Pair this with endpoint management solutions (Jamf, Intune, Okta) for comprehensive monitoring.
+
+## Balancing Security and Developer Experience
+
+The worst policies create friction that drives developers to unauthorized workarounds. Test your policy with a pilot group before organizational rollout. Gather feedback on:
+
+- Time lost to policy compliance procedures
+- Frequency of false-positive security alerts
+- Perceived restrictions on legitimate use cases
+
+Iterate based on this feedback. A 95% usable policy that developers follow beats a 100% secure policy they circumvent.
+
 ---
-
-
 
 An effective acceptable use policy for AI coding assistants balances security requirements with developer productivity. By clearly defining approved tools, data handling rules, and enforcement mechanisms, your organization can confidently adopt AI-assisted development while maintaining compliance and protecting intellectual property.
 

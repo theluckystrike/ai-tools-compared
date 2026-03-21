@@ -227,7 +227,231 @@ AI-generated test data works best when your validation rules are explicit and ma
 
 Remember that AI tools may occasionally generate data that appears valid but violates your actual requirements. Always validate generated data against your actual validation logic before using it in production test suites. Treat AI generation as a productivity tool that accelerates data creation, not a replacement for proper testing infrastructure.
 
+## Advanced Test Data Generation Patterns
 
+### Property-Based Testing Integration
+
+AI can generate test data that works with property-based testing frameworks:
+
+```python
+from hypothesis import given, strategies as st
+from datetime import datetime, timedelta
+import json
+
+# Define data generation strategies with business constraints
+valid_email = st.emails()
+valid_password = st.text(
+    alphabet=st.characters(blacklist_categories=('Cs',)),
+    min_size=12, max_size=128
+).filter(
+    lambda p: any(c.isupper() for c in p)
+    and any(c.islower() for c in p)
+    and any(c.isdigit() for c in p)
+)
+
+valid_age = st.integers(min_value=18, max_value=120)
+valid_country = st.just('US') | st.just('CA') | st.just('UK')
+
+user_strategy = st.fixed_dictionaries({
+    'email': valid_email,
+    'password': valid_password,
+    'age': valid_age,
+    'country': valid_country
+})
+
+@given(user_strategy)
+def test_registration_accepts_valid_users(user_data):
+    """Hypothesis generates hundreds of valid user combinations automatically."""
+    validator = UserRegistrationValidator()
+    errors = validator.validate(user_data)
+    assert len(errors) == 0, f"Validation failed for {user_data}: {errors}"
+```
+
+Claude Code excels at generating property-based test strategies. Ask it to "Convert these business rules into Hypothesis strategies."
+
+### Database-Specific Test Data
+
+Different databases require different data generation approaches:
+
+```python
+# PostgreSQL: Use psycopg2 and generate JSONB data
+import psycopg2
+import json
+
+def generate_postgres_test_data():
+    """Generate test data respecting PostgreSQL types."""
+    conn = psycopg2.connect("postgresql://user:pass@localhost/testdb")
+    cursor = conn.cursor()
+
+    # Insert with JSONB validation
+    test_records = [
+        {
+            'id': 1,
+            'user_id': 100,
+            'metadata': json.dumps({
+                'tier': 'premium',
+                'features': ['analytics', 'api_access']
+            }),
+            'created_at': 'now()'
+        }
+    ]
+
+    for record in test_records:
+        cursor.execute(
+            """INSERT INTO subscriptions (id, user_id, metadata, created_at)
+               VALUES (%(id)s, %(user_id)s, %(metadata)s::jsonb, %(created_at)s)""",
+            record
+        )
+
+    conn.commit()
+
+# MongoDB: Generate documents respecting schema validation
+from pymongo import MongoClient
+
+def generate_mongodb_test_data():
+    """Generate test data for MongoDB collections."""
+    client = MongoClient('mongodb://localhost:27017')
+    db = client['testdb']
+
+    test_documents = [
+        {
+            'userId': 'usr_12345',
+            'email': 'user@example.com',
+            'preferences': {
+                'notifications': True,
+                'theme': 'dark',
+                'locale': 'en_US'
+            },
+            'createdAt': datetime.utcnow(),
+            'status': 'active'
+        }
+    ]
+
+    db.users.insert_many(test_documents)
+```
+
+When requesting database-specific test data, mention your specific database system.
+
+### Edge Case and Boundary Test Data
+
+Generate data that specifically targets edge cases:
+
+```python
+def generate_boundary_test_cases():
+    """Generate test data for boundary conditions."""
+    test_cases = [
+        # Minimum and maximum values
+        {'age': 18, 'expected': 'valid'},
+        {'age': 120, 'expected': 'valid'},
+        {'age': 17, 'expected': 'invalid'},
+        {'age': 121, 'expected': 'invalid'},
+
+        # Length boundaries
+        {'password': 'A' * 12, 'expected': 'valid'},
+        {'password': 'A' * 11, 'expected': 'invalid'},
+        {'password': 'A' * 256, 'expected': 'valid'},
+        {'password': 'A' * 257, 'expected': 'invalid'},
+
+        # Format edge cases
+        {'email': 'test+tag@example.co.uk', 'expected': 'valid'},
+        {'email': 'test.name@sub.domain.example.com', 'expected': 'valid'},
+        {'email': 'test@localhost', 'expected': 'invalid'},
+        {'email': '', 'expected': 'invalid'},
+
+        # Special characters
+        {'text': 'café', 'expected': 'valid'},
+        {'text': '测试', 'expected': 'valid'},
+        {'text': '👍', 'expected': 'depends_on_rules'},
+    ]
+
+    return test_cases
+```
+
+Prompt AI with: "Generate boundary test cases for these validation rules. Include minimum, maximum, empty, and special character scenarios."
+
+## Tool Comparison for Test Data Generation
+
+| Tool | Constraint Specification | Data Realism | Integration | Speed |
+|------|---|---|---|---|
+| Claude Code | Excellent | Very Good | Requires CLI | Fast |
+| GitHub Copilot | Good | Good | Via IDE | Fast |
+| Cursor | Very Good | Very Good | Via editor | Very Fast |
+| Windsurf | Very Good | Very Good | Via editor | Very Fast |
+
+Claude Code requires more manual setup but produces highly constrained data. Cursor and Windsurf offer faster iteration with editor integration.
+
+## Validating Generated Test Data
+
+Always validate before using in tests:
+
+```python
+import json
+from typing import List, Dict
+
+def validate_test_dataset(
+    generated_data: List[Dict],
+    validator_rules: callable,
+    min_diversity_ratio: float = 0.8
+) -> Dict:
+    """Validate AI-generated test data against business rules."""
+
+    results = {
+        'valid_records': 0,
+        'invalid_records': [],
+        'diversity_metrics': {},
+        'errors': []
+    }
+
+    # 1. Check each record passes validation
+    for i, record in enumerate(generated_data):
+        validation_errors = validator_rules(record)
+        if validation_errors:
+            results['invalid_records'].append({
+                'index': i,
+                'record': record,
+                'errors': validation_errors
+            })
+        else:
+            results['valid_records'] += 1
+
+    # 2. Check diversity (not all data identical)
+    unique_records = len(set(json.dumps(r, sort_keys=True) for r in generated_data))
+    diversity_ratio = unique_records / len(generated_data)
+    results['diversity_metrics']['unique_records'] = unique_records
+    results['diversity_metrics']['diversity_ratio'] = diversity_ratio
+
+    if diversity_ratio < min_diversity_ratio:
+        results['errors'].append(
+            f"Low diversity: {diversity_ratio:.2%} (expected >{min_diversity_ratio:.2%})"
+        )
+
+    # 3. Summary
+    if results['invalid_records']:
+        results['errors'].append(
+            f"{len(results['invalid_records'])} records failed validation"
+        )
+
+    results['passed'] = len(results['errors']) == 0
+
+    return results
+
+# Usage
+test_data = generate_test_users_with_ai(count=100)
+validation_result = validate_test_dataset(
+    test_data,
+    UserValidator().validate,
+    min_diversity_ratio=0.85
+)
+
+if not validation_result['passed']:
+    print("Generated test data is invalid:")
+    for error in validation_result['errors']:
+        print(f"  - {error}")
+else:
+    print(f"✓ Generated {validation_result['valid_records']} valid records")
+```
+
+This validation ensures AI-generated data meets your actual requirements before it reaches production tests.
 
 ## Related Reading
 

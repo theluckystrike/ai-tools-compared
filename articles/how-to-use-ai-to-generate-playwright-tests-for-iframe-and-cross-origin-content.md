@@ -225,7 +225,173 @@ AI can generate solid starting points for iframe tests, but always review the ge
 
 Building reliable iframe tests requires understanding the loading patterns of embedded content in your specific application. AI accelerates the initial code generation, while your domain knowledge ensures the tests cover the actual user interactions that matter.
 
+## Advanced Iframe Testing Patterns
 
+### Testing iframes with Form Data Submission
+
+Many iframes contain payment forms or signup forms. Here's how to test form interactions across iframe boundaries:
+
+```javascript
+import { test, expect } from '@playwright/test';
+
+test('submit form in payment iframe', async ({ page }) => {
+  await page.goto('https://example.com/checkout');
+
+  // Locate the payment iframe
+  const paymentFrame = page.frameLocator('iframe[title="payment-form"]');
+
+  // Fill form fields inside iframe
+  await paymentFrame.locator('input[name="cardNumber"]').fill('4111111111111111');
+  await paymentFrame.locator('input[name="expiry"]').fill('12/25');
+  await paymentFrame.locator('input[name="cvc"]').fill('123');
+
+  // Click submit button (within iframe context)
+  const submitButton = paymentFrame.getByRole('button', { name: 'Pay' });
+  await submitButton.click();
+
+  // Wait for success message on parent page
+  await expect(page.locator('.order-confirmation')).toBeVisible();
+  await expect(page.locator('.order-number')).toContainText(/ORD-\d+/);
+});
+```
+
+When prompting AI for iframe form tests, explicitly mention the form fields and expected outcomes on the parent page.
+
+### Handling Third-Party Analytics Iframes
+
+Analytics services (Google Analytics, Hotjar, Segment) inject iframes. Test that they load without blocking user interactions:
+
+```javascript
+import { test, expect } from '@playwright/test';
+
+test('page loads correctly with analytics iframe', async ({ page }) => {
+  // Listen for analytics network requests
+  const analyticsRequests = [];
+  page.on('request', (request) => {
+    if (request.url().includes('analytics') || request.url().includes('gtag')) {
+      analyticsRequests.push(request.url());
+    }
+  });
+
+  await page.goto('https://example.com');
+
+  // Verify main content loads even if analytics is slow
+  await expect(page.locator('main')).toBeVisible();
+  await expect(page.locator('nav')).toBeVisible();
+
+  // Wait for analytics to fire (but don't block if it fails)
+  await page.waitForTimeout(2000);
+  console.log(`Analytics requests: ${analyticsRequests.length}`);
+
+  // Verify page is still interactive
+  await page.getByRole('link', { name: /products/i }).click();
+  await expect(page).toHaveURL(/products/);
+});
+```
+
+This pattern prevents analytics iframe issues from breaking your tests.
+
+## Tool Comparison for Iframe Testing
+
+| Tool | Iframe Support | Cross-Origin | Code Completion |
+|------|---|---|---|
+| Claude Code | Excellent | Excellent | Good |
+| GitHub Copilot | Good | Limited | Excellent |
+| Cursor | Excellent | Excellent | Very Good |
+| Windsurf | Good | Good | Good |
+
+Claude Code and Cursor understand cross-origin iframe limitations better. GitHub Copilot excels at code completion for common same-origin scenarios.
+
+## Debugging Iframe Test Failures
+
+When AI-generated iframe tests fail, use these debugging techniques:
+
+```javascript
+import { test, expect, Page } from '@playwright/test';
+
+async function debugFrameLocator(page: Page, iframeSelector: string) {
+  // 1. Verify iframe exists in DOM
+  const iframeElement = page.locator(iframeSelector);
+  console.log(`iframe found: ${await iframeElement.count()}`);
+
+  // 2. Check iframe attributes
+  if (await iframeElement.count() > 0) {
+    const src = await iframeElement.getAttribute('src');
+    const title = await iframeElement.getAttribute('title');
+    console.log(`src: ${src}, title: ${title}`);
+  }
+
+  // 3. Wait for iframe to be ready
+  const frameLocator = page.frameLocator(iframeSelector);
+
+  // 4. Try to locate a test element inside
+  const testElement = frameLocator.locator('body');
+  try {
+    await testElement.waitFor({ timeout: 5000 });
+    console.log('iframe content loaded');
+  } catch (e) {
+    console.log('iframe content failed to load or is cross-origin');
+  }
+
+  // 5. Check browser console for iframe errors
+  page.on('console', msg => {
+    if (msg.type() === 'error') {
+      console.log(`Browser error: ${msg.text()}`);
+    }
+  });
+}
+
+test('debug iframe loading', async ({ page }) => {
+  await page.goto('https://example.com');
+  await debugFrameLocator(page, 'iframe[title="content"]');
+});
+```
+
+This debugging template helps identify whether failures are timing, selector, or cross-origin issues.
+
+## Best Practices for AI-Generated Iframe Tests
+
+When requesting iframe test generation from AI, include:
+
+1. **Exact iframe identifiers** - Show the HTML: `<iframe id="payment" src="...">`
+2. **Cross-origin status** - Specify: "This is a same-origin iframe" or "This loads from a different domain"
+3. **Expected interactions** - Describe what users do: "Click submit button and wait for success message"
+4. **Verification points** - Specify what you're testing for: "Verify success message appears on parent page"
+5. **Timeout expectations** - Mention: "iframe typically loads in 2-3 seconds"
+
+Providing this context produces more reliable test code that passes on first run.
+
+## Common Iframe Test Antipatterns
+
+Avoid these patterns when reviewing AI-generated code:
+
+```javascript
+// BAD: Assuming iframe content is always accessible
+const button = page.locator('#payment-button'); // Works same-origin only
+
+// GOOD: Use frameLocator for any iframe
+const button = page.frameLocator('iframe').locator('#payment-button');
+
+// BAD: Not waiting for iframe to load
+await page.goto('https://example.com');
+await page.frameLocator('iframe').locator('button').click();
+
+// GOOD: Wait for iframe content explicitly
+const iframe = page.frameLocator('iframe');
+await iframe.waitForLoadState('domcontentloaded');
+await iframe.locator('button').click();
+
+// BAD: Ignoring cross-origin restrictions
+await page.evaluate(() => {
+  // Can't access cross-origin iframe from here
+  document.querySelector('iframe').contentDocument;
+});
+
+// GOOD: Work with cross-origin iframes through page interactions
+await page.frameLocator('iframe').getByRole('button').click();
+```
+
+---
 
 
 

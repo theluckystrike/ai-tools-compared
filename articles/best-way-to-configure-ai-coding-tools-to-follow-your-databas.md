@@ -220,6 +220,109 @@ Updating conventions requires coordination. When your team changes naming standa
 
 
 
+## Comparing AI Tool Configuration Capabilities
+
+
+
+Different AI tools support different configuration mechanisms. Understanding these differences helps you choose the right approach for your workflow:
+
+| Tool | Config File | Context Method | Field-Level Control | Team Sync |
+|------|-----------|---|---|---|
+| GitHub Copilot | `.github/copilot-instructions.md` | Markdown hints | Limited | Auto via repo |
+| Cursor | `.cursorrules` | Project rules | Full | Via git |
+| Zed | `.zed/rules.md` + `settings.json` | Dual approach | High | Shared settings |
+| Claude Code | Session context | Prompt injection | Dynamic | Conversation-based |
+
+GitHub Copilot's approach works well for teams already familiar with GitHub-specific patterns. Cursor offers the most explicit field-level control through its comprehensive `.cursorrules` format. Zed's dual approach combines markdown documentation with JSON configuration for fine-grained control. Claude Code requires conversation-based context management, which suits interactive workflows but demands explicit instruction passing.
+
+## Advanced Configuration: Database-Specific Patterns
+
+Different database systems benefit from specialized configuration. Document these patterns explicitly:
+
+```
+## PostgreSQL Conventions
+- Use SERIAL or BIGSERIAL for auto-incrementing IDs
+- Leverage JSONB for semi-structured data (json_data JSONB)
+- Use ENUM types for fixed sets: CREATE TYPE status AS ENUM ('active', 'inactive')
+- Always include CHECK constraints for business rules
+
+## MySQL Conventions
+- Use UNSIGNED INT for non-negative IDs
+- Leverage CHAR(36) for UUID storage
+- Use ENUM columns for fixed sets: status ENUM('active','inactive')
+- Always include ON DELETE CASCADE/RESTRICT for referential integrity
+
+## MongoDB Conventions
+- Use camelCase for all field names: userId, createdAt
+- Implement schema validation at the collection level
+- Include indexes for frequently queried fields
+- Use ObjectId for default _id field
+```
+
+Providing database-specific guidance prevents tool confusion when working across multiple database systems.
+
+## Enforcing Configuration with Pre-commit Hooks
+
+Configuration files only work if developers actually use them. Implement automated checks to catch convention violations before code reaches version control:
+
+```bash
+#!/bin/bash
+# .git/hooks/pre-commit
+
+# Check for naming convention violations in generated code
+patterns=(
+  "camelCase.*database"  # Catches camelCase in database context
+  "create_at"            # Catches misspelled timestamp convention
+)
+
+for file in $(git diff --cached --name-only); do
+  for pattern in "${patterns[@]}"; do
+    if grep -q "$pattern" "$file"; then
+      echo "⚠️  Possible naming convention violation in $file"
+      echo "   Ensure database columns follow your naming standards"
+      exit 1
+    fi
+  done
+done
+```
+
+This prevents accidental commits of AI-generated code that violates your conventions.
+
+## Real-World Configuration Templates
+
+Here's a complete template combining all approaches for a typical SaaS application:
+
+```yaml
+# _ai_config.yaml for documentation
+database_schema:
+  naming_style: snake_case
+  table_pluralization: plural
+  column_patterns:
+    - pattern: "^id$"
+      type: uuid
+      primary_key: true
+    - pattern: "_id$"
+      type: uuid
+      foreign_key: true
+    - pattern: "^(created_at|updated_at|deleted_at)$"
+      type: timestamp
+      default_value: "now()"
+    - pattern: "^is_"
+      type: boolean
+    - pattern: "^has_"
+      type: boolean
+
+orm_mappings:
+  python:
+    import: "from sqlalchemy import Column, String, Boolean, DateTime"
+    class_decorator: "@dataclass"
+  typescript:
+    import: "import { Entity, Column } from 'typeorm'"
+    class_decorator: "@Entity()"
+```
+
+Store this alongside your configuration files so developers understand the conventions and AI tools can reference it.
+
 ---
 
 

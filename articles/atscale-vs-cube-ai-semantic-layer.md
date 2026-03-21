@@ -230,6 +230,149 @@ Here's how each platform handles the same use case—exposing revenue metrics to
 
 The Cube approach gives your AI agent structured JSON responses it can parse reliably. The AtScale approach hides more complexity but provides a smoother natural language experience out of the box.
 
+## Implementation Deep Dive
+
+### AtScale Implementation Walkthrough
+
+AtScale's setup process emphasizes visual configuration:
+
+```bash
+# 1. Install AtScale (requires Java 11+, Apache Hadoop)
+wget https://repo.atscale.io/atscale-2024.1.tar.gz
+tar -xzf atscale-2024.1.tar.gz
+cd atscale-2024.1
+./bin/setup.sh
+
+# 2. Connect to your data warehouse (Snowflake example)
+atscale datasource add \
+  --name snowflake_prod \
+  --type snowflake \
+  --host xy12345.us-east-1.snowflakecomputing.com \
+  --warehouse COMPUTE_WH \
+  --database ANALYTICS \
+  --user atscale_service \
+  --password <password>
+
+# 3. Define semantic model through UI or API
+curl -X POST http://localhost:9000/api/models \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "revenue",
+    "datasource": "snowflake_prod",
+    "table": "fact_revenue",
+    "measures": [
+      {
+        "name": "total_revenue",
+        "expression": "SUM(amount)",
+        "format": "currency"
+      }
+    ],
+    "dimensions": [
+      {
+        "name": "date",
+        "column": "revenue_date",
+        "type": "date"
+      }
+    ]
+  }'
+```
+
+AtScale's API is REST-based, making it easy to automate model creation. The system automatically routes queries to appropriate materialized views and optimized table structures.
+
+### Cube Implementation Walkthrough
+
+Cube emphasizes code-based configuration:
+
+```bash
+# 1. Create new Cube project
+npm create @cubejs-template/create-cube@latest my-app
+cd my-app
+
+# 2. Configure database connection
+# .env file
+CUBEJS_DB_TYPE=snowflake
+CUBEJS_DB_HOST=xy12345.us-east-1.snowflakecomputing.com
+CUBEJS_DB_NAME=analytics
+CUBEJS_DB_WAREHOUSE=COMPUTE_WH
+CUBEJS_DB_USER=cube_service
+CUBEJS_DB_PASS=<password>
+
+# 3. Define data model
+cat > schema/Revenue.js << 'EOF'
+cube(`Revenue`, {
+  sql_table: `analytics.fact_revenue`,
+
+  measures: {
+    total_revenue: {
+      sql: `amount`,
+      type: `sum`,
+      format: `currency`
+    },
+    average_order_value: {
+      sql: `amount`,
+      type: `avg`
+    },
+    count: {
+      type: `count`
+    }
+  },
+
+  dimensions: {
+    id: {
+      sql: `id`,
+      type: `number`,
+      primary_key: true
+    },
+    date: {
+      sql: `revenue_date`,
+      type: `date`
+    },
+    region: {
+      sql: `region`,
+      type: `string`
+    }
+  }
+});
+EOF
+
+# 4. Deploy and run
+npm run start:dev
+
+# 5. Query via GraphQL
+curl http://localhost:4000/graphql \
+  -H "Content-Type: application/json" \
+  -d '{
+    "query": "{ revenue { totalRevenue averageOrderValue count } }"
+  }'
+```
+
+Cube's code-first approach integrates seamlessly with version control and CI/CD pipelines. Schema changes follow standard git workflows.
+
+## Performance and Scalability
+
+Both platforms handle different workload profiles:
+
+**AtScale excels at:**
+- High concurrency (100+ simultaneous users querying same semantic layer)
+- Complex multi-source queries (joining data across warehouses)
+- Enterprise BI tool integration (Tableau, Power BI, Looker)
+- Query result caching with automatic invalidation
+
+**Cube excels at:**
+- AI agent workloads (structured API access, no SQL needed)
+- Rapid iteration (redeploy schema in seconds)
+- Custom application embedding (build internal analytics portals)
+- Multi-tenant architectures (one Cube instance per tenant)
+
+## Pricing Comparison at Scale
+
+For a typical mid-market data team (50 GB warehouse, 20 regular users):
+
+**AtScale:** ~$50k/year (seat-based: 5 seats × $2k/seat × 5 compute units)
+**Cube Cloud:** ~$5k/year ($500/mo standard + minimal compute usage)
+**Cube Self-Hosted:** Free (open source) + ops cost (~2 FTE for mid-scale)
+
+The cost gap widens at enterprise scale, where AtScale's managed approach reduces operational overhead, partially offsetting the licensing cost.
 
 ## Related Reading
 

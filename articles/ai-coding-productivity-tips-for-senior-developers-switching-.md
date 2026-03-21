@@ -228,7 +228,195 @@ Track your productivity improvements objectively:
 
 - Bug introduction rate: Ensure quality does not degrade with faster development
 
+## Advanced Techniques for Senior Developers
 
+### Using AI for Technical Debt Refactoring
+
+Senior developers excel at recognizing and eliminating technical debt. AI accelerates the mechanical parts of refactoring:
+
+```python
+# Original code with circular imports, mixed responsibilities
+# in services/user.py
+import services.payment
+import services.notification
+
+class UserService:
+    def create_user(self, data):
+        # Validation
+        if not data.get('email'):
+            raise ValueError('Email required')
+        # User creation
+        user = User(**data)
+        user.save()
+        # Payment setup (coupled)
+        services.payment.setup_account(user.id)
+        # Notification (coupled)
+        services.notification.send_welcome(user.email)
+        return user
+
+# Prompt to AI:
+# "Refactor this to use dependency injection, separate concerns,
+# and return Result type for error handling. Include proper typing."
+
+# AI generates:
+from typing import Protocol, Tuple
+from dataclasses import dataclass
+
+@dataclass
+class CreateUserResult:
+    success: bool
+    user: Optional[User]
+    errors: List[str]
+
+class NotificationService(Protocol):
+    def send_welcome(self, email: str) -> bool: ...
+
+class PaymentService(Protocol):
+    def setup_account(self, user_id: str) -> bool: ...
+
+class UserService:
+    def __init__(self,
+                 payment_service: PaymentService,
+                 notification_service: NotificationService):
+        self.payment = payment_service
+        self.notification = notification_service
+
+    def create_user(self, data: dict) -> CreateUserResult:
+        # Validation
+        errors = self._validate(data)
+        if errors:
+            return CreateUserResult(False, None, errors)
+
+        # User creation
+        user = User(**data)
+        user.save()
+
+        # Async triggers (not coupled)
+        self._trigger_payment_setup(user.id)
+        self._trigger_notification(user.email)
+
+        return CreateUserResult(True, user, [])
+
+    def _trigger_payment_setup(self, user_id: str) -> None:
+        try:
+            self.payment.setup_account(user_id)
+        except Exception as e:
+            logger.error(f"Payment setup failed for {user_id}: {e}")
+
+    def _trigger_notification(self, email: str) -> None:
+        try:
+            self.notification.send_welcome(email)
+        except Exception as e:
+            logger.error(f"Notification failed for {email}: {e}")
+```
+
+This refactoring takes hours manually but minutes with AI assistance.
+
+### Building Code Analysis Prompt Templates
+
+Create reusable prompts for common code review patterns:
+
+```
+# Template: Performance Analysis
+"Analyze this {LANGUAGE} code for performance issues.
+Focus on:
+1. Algorithmic complexity (report O(n²) patterns)
+2. Memory allocations in loops
+3. Unnecessary data structure conversions
+4. Database query N+1 problems
+5. Blocking operations
+
+For each issue, suggest specific improvements and estimate
+the performance impact."
+
+# Template: Security Audit
+"Review this {LANGUAGE} code for security vulnerabilities.
+Check for:
+1. SQL injection risks
+2. XSS vulnerabilities
+3. Insecure deserialization
+4. Hardcoded credentials or secrets
+5. Insufficient input validation
+
+For each finding, rate severity (Critical/High/Medium/Low)
+and provide remediation code."
+
+# Template: Test Coverage
+"Generate test cases for this function to achieve 90% code coverage.
+Include:
+1. Happy path test
+2. Edge cases (empty inputs, null values, boundary conditions)
+3. Error cases with exception handling
+4. Performance benchmarks if relevant
+
+Use pytest fixtures for reusable test data."
+```
+
+Save these templates in your knowledge base and reuse them repeatedly.
+
+### AI-Assisted Code Review
+
+Use AI to accelerate the mechanical parts of code review:
+
+```bash
+#!/bin/bash
+# ai-review.sh - Use Claude Code to review a pull request
+
+DIFF_FILE="/tmp/pr.diff"
+git diff origin/main...HEAD > "$DIFF_FILE"
+
+# Ask Claude Code to review the diff
+claude-code << EOF
+Review this pull request diff and provide:
+1. Potential bugs or logical errors
+2. Style/convention violations
+3. Performance concerns
+4. Security issues
+5. Missing tests
+
+Diff:
+$(cat $DIFF_FILE)
+EOF
+```
+
+This captures objective findings quickly. Use your human judgment for architectural concerns and design feedback.
+
+## Comparing AI Tool Capabilities for Senior Dev Work
+
+| Task | Claude Code | Cursor | Copilot | Windsurf |
+|------|---|---|---|---|
+| Refactoring large codebases | Excellent | Very Good | Good | Very Good |
+| Generating comprehensive tests | Excellent | Very Good | Good | Very Good |
+| Architecture decision support | Very Good | Very Good | Fair | Good |
+| Technical debt analysis | Excellent | Very Good | Good | Very Good |
+| Code review automation | Excellent | Good | Fair | Good |
+
+Claude Code excels at refactoring and analysis. Cursor and Windsurf offer excellent IDE integration. Copilot is strong for incremental changes within a file.
+
+## Time Investment vs. Return
+
+Track where AI provides the most value:
+
+**High ROI activities (use AI heavily):**
+- Boilerplate generation (test scaffolding, data models)
+- Refactoring across multiple files
+- Documentation generation
+- Configuration file creation
+- API client generation
+
+**Medium ROI activities (use AI selectively):**
+- Bug investigation and fixing
+- Performance optimization
+- Test case creation
+- Code review assistance
+
+**Low ROI activities (use sparingly):**
+- Architectural decisions
+- Novel algorithm design
+- Cutting-edge technology integration
+- Critical security decisions
+
+Focus AI assistance on activities that compound your expertise rather than replace it.
 
 ## Related Reading
 
