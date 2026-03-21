@@ -9,7 +9,7 @@ permalink: /chatgpt-vs-claude-for-generating-pydantic-models-from-json-s/
 categories: [guides]
 tags: [ai-tools-compared, tools, comparison, claude-ai, chatgpt]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
