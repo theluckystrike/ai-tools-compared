@@ -304,6 +304,4 @@ The key is matching your organization's specific needs against what the business
 - [ChatGPT Team vs Claude Team Cost Per Seat Comparison 2026](/ai-tools-compared/chatgpt-team-vs-claude-team-cost-per-seat-comparison-2026/)
 - [Copilot Business Org-Wide Enable: Cost If Not All Devs.](/ai-tools-compared/copilot-business-org-wide-enable-cost-if-not-all-devs-use-it/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

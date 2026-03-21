@@ -254,7 +254,5 @@ Output:
 - [How to Use AI to Help Product Managers Write Data-Driven.](/ai-tools-compared/how-to-use-ai-to-help-product-managers-write-data-driven-fea/)
 - [Best AI Tool for Procurement Managers Vendor Analysis](/ai-tools-compared/best-ai-tool-for-procurement-managers-vendor-analysis/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

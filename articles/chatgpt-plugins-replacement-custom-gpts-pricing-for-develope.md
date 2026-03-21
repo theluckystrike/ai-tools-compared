@@ -248,6 +248,4 @@ Test your migrated Custom GPTs thoroughly before deploying to production. Pay sp
 - [Do ChatGPT Plus Memory and Custom GPTs Count Toward.](/ai-tools-compared/chatgpt-plus-memory-and-custom-gpts-count-toward-usage-limit/)
 - [Transfer ChatGPT Custom GPTs to Claude Projects Step by Step](/ai-tools-compared/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

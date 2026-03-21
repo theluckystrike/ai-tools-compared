@@ -323,6 +323,4 @@ When AI tools can see exactly what you're importing, they suggest those specific
 - [How to Use AI Coding Tools Without Becoming Dependent on Autocomplete](/ai-tools-compared/how-to-use-ai-coding-tools-without-becoming-dependent-on-aut/)
 - [Which AI Tool Is Better for Writing CircleCI Config YAML.](/ai-tools-compared/which-ai-tool-is-better-for-writing-circleci-config-yaml-fil/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

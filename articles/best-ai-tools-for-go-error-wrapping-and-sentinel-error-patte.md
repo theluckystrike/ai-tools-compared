@@ -254,7 +254,5 @@ Regardless of which tool you choose, always verify that error wrapping preserves
 - [Best AI Tools for Writing Go gRPC Service Definitions.](/ai-tools-compared/best-ai-tools-for-writing-go-grpc-service-definitions-and-implementations/)
 - [Best AI Features for Generating API Client Code from.](/ai-tools-compared/best-ai-features-for-generating-api-client-code-from-openapi/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

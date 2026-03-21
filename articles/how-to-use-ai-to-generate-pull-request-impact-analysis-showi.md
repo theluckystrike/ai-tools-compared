@@ -261,7 +261,5 @@ Configuration drift—where production differs from code—can cause AI to miss 
 - [AI Tools for Generating Pull Request Merge Conflict.](/ai-tools-compared/ai-tools-for-generating-pull-request-merge-conflict-resoluti/)
 - [AI Tools for Writing Pytest Tests for FastAPI Endpoints.](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-fastapi-endpoints-with/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

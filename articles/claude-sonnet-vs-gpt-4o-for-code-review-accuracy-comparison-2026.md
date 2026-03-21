@@ -496,7 +496,7 @@ A: Start with optional AI review (comment on PRs). Once team trusts the tool, ma
 3. **Tune prompts:** Adjust instructions to match your team's concerns
 4. **Integrate into CI:** Add to GitHub Actions or GitLab CI
 5. **Monitor accuracy:** Track false positives and adjust accordingly
-6. **Combine models:** As confidence grows, use both models for comprehensive review
+6. **Combine models:** As confidence grows, use both models for review
 
 The combination of Claude and GPT-4o provides coverage that exceeds what either can deliver alone—Claude's logic reasoning plus GPT-4o's security pattern matching creates a review process stronger than human-only or single-model approaches.
 

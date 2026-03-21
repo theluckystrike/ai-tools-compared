@@ -257,6 +257,4 @@ Maintain healthy Git integration by keeping Git updated to the latest version. R
 - [Cursor Extensions Conflicting with AI Fix.](/ai-tools-compared/cursor-extensions-conflicting-with-ai-fix/)
 - [Cursor AI Slow on Large Monorepo Fix (2026)](/ai-tools-compared/cursor-ai-slow-on-large-monorepo-fix-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

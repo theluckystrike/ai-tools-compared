@@ -425,6 +425,4 @@ Document the context management approach so teammates understand it:
 - [How to Manage AI Coding Context When Switching Between.](/ai-tools-compared/how-to-manage-ai-coding-context-when-switching-between-diffe/)
 - [How to Manage AI Coding Tool Rate Limits Across a Team.](/ai-tools-compared/how-to-manage-ai-coding-tool-rate-limits-across-team-of-developers/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -108,7 +108,7 @@ Weaker outputs may omit error handling entirely or use `any` types, reducing typ
 
 
 
-Proper error handling distinguishes production-ready code from prototyping code. We tested prompts requesting robust error handling for async operations.
+Proper error handling distinguishes production-ready code from prototyping code. We tested prompts requesting strong error handling for async operations.
 
 
 
@@ -347,7 +347,5 @@ AI coding tools continue to improve their async code generation, but human revie
 - [AI Code Suggestion Quality When Working With Environment.](/ai-tools-compared/ai-code-suggestion-quality-when-working-with-environment-var/)
 - [AI Code Generation Quality for Java JUnit 5.](/ai-tools-compared/ai-code-generation-quality-for-java-junit-5-parameterized-te/)
 - [AI Code Generation Quality for Java Pattern Matching and.](/ai-tools-compared/ai-code-generation-quality-for-java-pattern-matching-and-swi/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

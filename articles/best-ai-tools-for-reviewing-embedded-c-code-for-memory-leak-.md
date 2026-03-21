@@ -223,7 +223,7 @@ Cross-reference AI findings with Coverity, MISRA, or PC-lint results. AI often c
 
 ## Real-World Example: Complete Memory Safety Audit
 
-Here's a complete code review prompt that yields comprehensive results:
+Here's a complete code review prompt that yields results:
 
 ```c
 // Code to review
@@ -325,17 +325,6 @@ uint32_t get_interrupt_count(void) {
     return cached_count;
 }
 ```
-
-## Key Takeaways
-
-AI-powered code review tools offer significant value for identifying memory leaks and buffer overflows in embedded C code. They excel at recognizing common patterns, suggesting fixes, and providing rapid feedback during development. However, they work best as part of a comprehensive quality strategy that includes static analysis, testing, and human code review.
-
-For embedded systems where reliability is critical, use AI tools to catch obvious issues early, but maintain rigorous processes for final verification. The combination of AI assistance (for logic-level issues), static analysis (for pattern matching), and traditional code review (for expertise validation) provides the best protection against memory-related failures in production embedded systems.
-
-Start with Claude or GitHub Copilot for initial review, supplement with Coverity or MISRA for deep analysis, and maintain human code review as your final quality gate.
-
----
-
 
 ## Related Reading
 

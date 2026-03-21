@@ -240,7 +240,5 @@ Updating conventions requires coordination. When your team changes naming standa
 - [How to Configure AI Coding Tools to Respect Your Team's Branch Naming Conventions](/ai-tools-compared/how-to-configure-ai-coding-tools-to-respect-your-teams-branc/)
 - [Best Practices for AI Coding Tool Project Configuration.](/ai-tools-compared/best-practices-for-ai-coding-tool-project-configuration-in-l/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

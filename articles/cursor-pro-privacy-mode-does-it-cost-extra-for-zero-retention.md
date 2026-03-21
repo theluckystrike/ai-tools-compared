@@ -344,7 +344,5 @@ sudo lsof -r 2 -i TCP -n -P | grep -i cursor
 - [Copilot Business vs Cursor Business: Per-Developer Cost.](/ai-tools-compared/copilot-business-vs-cursor-business-per-developer-cost-comparison/)
 - [Cursor Pro vs Copilot Individual Price Per Feature.](/ai-tools-compared/cursor-pro-vs-copilot-individual-price-per-feature-compariso/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

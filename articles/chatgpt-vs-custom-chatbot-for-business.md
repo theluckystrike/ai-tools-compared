@@ -243,6 +243,4 @@ The choice isn't permanent—most organizations start with ChatGPT to learn thei
 - [Tidio vs Intercom AI Chatbot: A Developer Comparison](/ai-tools-compared/tidio-vs-intercom-ai-chatbot/)
 - [Drift vs ChatGPT for Customer Support: A Technical.](/ai-tools-compared/drift-vs-chatgpt-for-customer-support/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

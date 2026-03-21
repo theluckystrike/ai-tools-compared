@@ -244,6 +244,4 @@ The good news is these options aren't mutually exclusive. Some developers use Co
 - [Running Starcoder2 Locally for Code Completion Without.](/ai-tools-compared/running-starcoder2-locally-for-code-completion-without-sendi/)
 - [Best Air Gapped AI Code Completion Solutions for Offline.](/ai-tools-compared/best-air-gapped-ai-code-completion-solutions-for-offline-dev/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

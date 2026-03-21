@@ -113,7 +113,7 @@ When Cursor generates inline edits (using Ctrl+K or Cmd+K), the tool shows a pre
 
 - Green highlighting for added lines
 
-- Red strikethrough for deleted lines 
+- Red strikethrough for deleted lines
 
 - Yellow background for modified lines
 
@@ -418,18 +418,6 @@ Test all three on the same task: Add new feature with 5 files touched.
 **Windsurf result**: 3 Cascade operations (multi-file). 32 minutes total. No fixes needed; Cascade caught edge case.
 
 **Verdict**: For complex multi-file changes, Cascade (Windsurf) is most efficient. For simple edits, Copilot is fastest.
-
-## Conclusion
-
-All three tools provide inline diff preview, but with different approaches:
-
-- **Copilot** prioritizes speed and minimal UI intrusion; ghost text requires careful reading
-- **Cursor** prioritizes clarity with explicit side-by-side diffs and granular acceptance control
-- **Windsurf** prioritizes agency with Cascade automating multi-file coordination
-
-Choose based on your primary workflow: quick completions (Copilot), detailed review (Cursor), or agentic refactoring (Windsurf). For many developers, Cursor's balance of detail and control wins, but your mileage will vary based on coding patterns and budget constraints.
-
-Test all three (most offer free trials) before committing to a long-term subscription.
 
 ## Related Reading
 

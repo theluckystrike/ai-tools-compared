@@ -262,7 +262,7 @@ export COPILOT_CODE_REVIEW="enabled"                # PR code review features
 |---------|-----------------|-----------------|
 | Monthly cost | $10 (personal) / $21 (business) | $20 (standard) / $40 (team) |
 | Seat management | GitHub org admin | Cursor dashboard |
-| Custom rules | Limited | Comprehensive `.cursorrules` |
+| Custom rules | Limited | `.cursorrules` |
 | IDE support | VS Code, JetBrains, Visual Studio | VS Code primary |
 | Data retention | Microsoft policies | Configurable |
 | Audit logs | Basic | Full detailed logs |
@@ -459,8 +459,6 @@ cursor org:disable --all-teams
 - [How to Transfer Copilot Code Review Settings to Cursor.](/ai-tools-compared/transfer-copilot-code-review-settings-to-cursor-ai-review-co/)
 - [How to Migrate Copilot Chat History and Context to Cursor AI](/ai-tools-compared/migrate-copilot-chat-history-and-context-to-cursor-ai-guide/)
 - [How to Move Copilot Suggested Code Patterns to Cursor.](/ai-tools-compared/how-to-move-copilot-suggested-code-patterns-to-cursor-snippe/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

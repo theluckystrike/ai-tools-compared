@@ -254,6 +254,4 @@ Given these findings, several strategies improve results when working with AI-as
 - [How Accurate Are AI Tools at Generating Rust Serde.](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-serde-serialization-code/)
 - [How Accurate Are AI Tools at Rust WASM Compilation and.](/ai-tools-compared/how-accurate-are-ai-tools-at-rust-wasm-compilation-and-bindg/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

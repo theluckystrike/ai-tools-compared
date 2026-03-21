@@ -304,6 +304,4 @@ This habit prevents feature creep and ensures you only pay for what you actually
 - [Cheapest AI Coding Subscription with Unlimited Requests 2026](/ai-tools-compared/cheapest-ai-coding-subscription-with-unlimited-requests-2026/)
 - [How to Set Up Ollama as Private AI Coding Assistant for.](/ai-tools-compared/how-to-set-up-ollama-as-private-ai-coding-assistant-for-sensitive-codebases/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

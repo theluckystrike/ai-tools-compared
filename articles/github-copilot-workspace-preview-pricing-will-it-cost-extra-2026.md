@@ -301,7 +301,5 @@ Workspace:
 - [GitHub Copilot Free Tier Hidden Limits You Should Know 2026](/ai-tools-compared/github-copilot-free-tier-hidden-limits-you-should-know-2026/)
 - [Copilot for JetBrains: Does It Cost Same as VSCode Version](/ai-tools-compared/copilot-for-jetbrains-does-it-cost-same-as-vscode-version/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

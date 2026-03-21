@@ -270,7 +270,5 @@ The overrides field (introduced in NPM 8.3) provides a safer middle ground by le
 - [How to Use AI to Resolve Python Import Circular Dependency Errors Step by Step](/ai-tools-compared/how-to-use-ai-to-resolve-python-import-circular-dependency-e/)
 - [How to Use AI to Resolve Nginx 502 Bad Gateway Errors.](/ai-tools-compared/how-to-use-ai-to-resolve-nginx-502-bad-gateway-errors-from-u/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

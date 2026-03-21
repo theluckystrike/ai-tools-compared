@@ -262,6 +262,4 @@ df['new_col'] = df['a'] * df['b']
 - [Enterprise Data Loss Prevention Rules for AI Coding.](/ai-tools-compared/enterprise-data-loss-prevention-rules-for-ai-coding-assistan/)
 - [Streamlit vs Gradio for AI Data Apps: A Practical Comparison](/ai-tools-compared/streamlit-vs-gradio-ai-data-apps/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

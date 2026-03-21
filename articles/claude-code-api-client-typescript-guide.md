@@ -428,7 +428,7 @@ When the API returns an unexpected field or changes a type, Zod throws a descrip
 
 ## Error Handling Patterns Worth Adopting
 
-Robust error handling distinguishes production-grade clients from prototype code. Beyond basic try/catch, consider these patterns:
+strong error handling distinguishes production-grade clients from prototype code. Beyond basic try/catch, consider these patterns:
 
 **Discriminated union results** return a result type instead of throwing, letting callers decide how to handle failures:
 
@@ -486,8 +486,6 @@ Building a type-safe TypeScript client for Claude Code ensures your integration 
 - [Best AI Features for Generating API Client Code from.](/ai-tools-compared/best-ai-features-for-generating-api-client-code-from-openapi/)
 - [AI Coding Assistants for TypeScript Express Middleware.](/ai-tools-compared/ai-coding-assistants-for-typescript-express-middleware-chain/)
 - [Best Way to Configure Claude Code to Understand Your Internal Library APIs 2026](/ai-tools-compared/best-way-to-configure-claude-code-to-understand-your-interna/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

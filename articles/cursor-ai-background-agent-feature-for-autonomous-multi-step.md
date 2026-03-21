@@ -279,6 +279,4 @@ This parallelization saves time on large implementations. For a 5-agent workflow
 - [Copilot Inline Chat vs Cursor Inline Chat: Which.](/ai-tools-compared/copilot-inline-chat-vs-cursor-inline-chat-which-understands-/)
 - [Copilot Workspace vs Cursor Composer: Multi-File Editing.](/ai-tools-compared/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

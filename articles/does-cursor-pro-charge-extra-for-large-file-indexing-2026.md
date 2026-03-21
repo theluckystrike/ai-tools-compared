@@ -296,6 +296,4 @@ To get the best performance from Cursor on large codebases:
 - [Cursor AI Codebase Indexing: How It Works and Why It.](/ai-tools-compared/cursor-ai-codebase-indexing-how-it-works-and-why-it-matters-/)
 - [Cursor Pro Refund Policy: Can You Get Money Back After.](/ai-tools-compared/cursor-pro-refund-policy-can-you-get-money-back-after-subscr/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

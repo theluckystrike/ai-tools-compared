@@ -251,7 +251,5 @@ The gap between both approaches narrows as vendors add capabilities. But the und
 - [Snowflake vs Databricks for AI Analytics: A Developer.](/ai-tools-compared/snowflake-vs-databricks-ai-analytics/)
 - [Pandas AI vs Polars AI Data Processing Compared](/ai-tools-compared/pandas-ai-vs-polars-ai-data-processing/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

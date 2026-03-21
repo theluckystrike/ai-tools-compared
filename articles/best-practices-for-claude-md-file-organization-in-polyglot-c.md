@@ -337,7 +337,5 @@ Add a documentation update checklist to your code review process:
 - [Writing Claude.md Files That Teach AI Your Project Testing Conventions and Patterns](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-testing-conventions-and-patterns/)
 - [Writing CLAUDE.md Files That Define Your Project's API Versioning Strategy](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

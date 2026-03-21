@@ -274,6 +274,4 @@ If the code feels foreign to the language, refine your prompt with more specific
 - [How to Write Better Prompts for AI Code Generation with.](/ai-tools-compared/how-to-write-better-prompts-for-ai-code-generation-with-examples/)
 - [Best Prompting Strategies for Getting Accurate Code from.](/ai-tools-compared/best-prompting-strategies-for-getting-accurate-code-from-ai-/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -263,7 +263,5 @@ Ignoring timeout scenarios misses important UX considerations. A request that ha
 - [AI Tools for Writing Playwright Tests That Verify Accessibility WCAG Compliance Automatically](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-accessibil/)
 - [How to Use AI to Generate Playwright Authentication Flow.](/ai-tools-compared/how-to-use-ai-to-generate-playwright-authentication-flow-tes/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

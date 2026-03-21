@@ -243,7 +243,5 @@ The investment in your productivity as a developer almost always pays off—and 
 - [AI Coding Assistants for TypeScript Deno Fresh Framework Compared 2026](/ai-tools-compared/ai-coding-assistants-for-typescript-deno-fresh-framework-com/)
 - [AI Coding Assistant Comparison for TypeScript Tailwind.](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-tailwind-css-c/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

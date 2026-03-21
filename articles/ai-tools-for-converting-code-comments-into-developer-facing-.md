@@ -245,7 +245,5 @@ Many tools integrate directly with documentation hosting platforms, automaticall
 - [Cursor AI Apply Model: How It Merges Generated Code into.](/ai-tools-compared/cursor-ai-apply-model-how-it-merges-generated-code-into-exis/)
 - [AI Code Completion for Writing Shell Commands Inside.](/ai-tools-compared/ai-code-completion-for-writing-shell-commands-inside-scripts/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

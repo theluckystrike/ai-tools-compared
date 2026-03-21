@@ -338,7 +338,5 @@ For developers on tight budgets,充分利用免费层:
 - [Cheapest Way to Get AI Code Completion in Vim 2026](/ai-tools-compared/cheapest-way-to-get-ai-code-completion-in-vim-2026/)
 - [Cheapest AI Tool With GPT-4 Level Code Generation 2026](/ai-tools-compared/cheapest-ai-tool-with-gpt-4-level-code-generation-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

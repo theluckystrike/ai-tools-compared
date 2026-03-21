@@ -251,7 +251,5 @@ This proactive approach catches misconfigurations before they produce cascading 
 - [How to Use AI to Resolve Nginx 502 Bad Gateway Errors.](/ai-tools-compared/how-to-use-ai-to-resolve-nginx-502-bad-gateway-errors-from-u/)
 - [How to Use AI to Debug CORS Errors in Cross-Origin API.](/ai-tools-compared/how-to-use-ai-to-debug-cors-errors-in-cross-origin-api-reque/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

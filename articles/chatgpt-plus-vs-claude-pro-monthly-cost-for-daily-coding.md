@@ -307,6 +307,4 @@ The best AI coding assistant is the one that fits into your workflow and helps y
 - [DALL-E 3 Credit Cost Per Image: ChatGPT Plus vs API.](/ai-tools-compared/dall-e-3-credit-cost-per-image-chatgpt-plus-vs-api/)
 - [Switching from ChatGPT Plus to Perplexity Pro: Feature.](/ai-tools-compared/switching-from-chatgpt-plus-to-perplexity-pro-feature-compar/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

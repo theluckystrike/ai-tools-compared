@@ -320,6 +320,4 @@ test('full GraphQL query with DataLoader batching', async () => {
 - [Best AI for Writing Jest Tests for React Custom Hooks.](/ai-tools-compared/best-ai-for-writing-jest-tests-for-react-custom-hooks-with-c/)
 - [AI Tools for Writing Jest Tests for Web Worker and.](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-web-worker-and-service-w/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

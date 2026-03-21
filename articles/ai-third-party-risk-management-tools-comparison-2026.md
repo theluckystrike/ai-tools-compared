@@ -307,7 +307,5 @@ Organizations implementing 4+ of these practices report 40% reduction in vendor-
 - [Best AI Tools for Go CLI Tool Development with Cobra and Viper in 2026](/ai-tools-compared/best-ai-tools-for-go-cli-tool-development-with-cobra-viper-2/)
 - [AI Policy Management Tools for Enterprise Compliance 2026: A Developer Guide](/ai-tools-compared/ai-policy-management-tools-enterprise-compliance-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

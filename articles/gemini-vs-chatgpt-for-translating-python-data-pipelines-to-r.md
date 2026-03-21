@@ -372,6 +372,4 @@ After receiving translated code from either tool:
 - [Claude vs Gemini for Converting Jupyter Notebooks to.](/ai-tools-compared/claude-vs-gemini-for-converting-jupyter-notebooks-to-product/)
 - [Switching from ChatGPT Voice to Gemini Live: Conversation Differences](/ai-tools-compared/switching-from-chatgpt-voice-to-gemini-live-conversation-differences/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

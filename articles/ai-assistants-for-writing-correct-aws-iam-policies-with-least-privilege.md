@@ -327,6 +327,4 @@ For most teams, Copilot Individual or CodeGuru free tier provides sufficient cap
 - [Best AI Tools for Writing AWS CDK Infrastructure Code in.](/ai-tools-compared/best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/)
 - [AI Tools for Writing License Header Templates and.](/ai-tools-compared/ai-tools-for-writing-license-header-templates-and-checking-f/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

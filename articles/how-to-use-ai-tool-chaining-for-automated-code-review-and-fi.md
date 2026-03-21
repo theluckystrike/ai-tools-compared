@@ -293,7 +293,5 @@ AI tool chaining transforms code review from a manual, time-consuming process in
 - [AI Tools for Automated Load Testing Script Generation and Analysis 2026](/ai-tools-compared/ai-tools-for-automated-load-testing-script-generation-and-an/)
 - [Best AI Tools for Language-Specific Code Style and.](/ai-tools-compared/best-ai-tools-for-language-specific-code-style-and-convention-enforcement/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

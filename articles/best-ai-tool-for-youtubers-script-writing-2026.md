@@ -294,7 +294,5 @@ Use conversational language. Avoid passive voice.
 - [Best AI Tool for Musicians Lyric Writing in 2026](/ai-tools-compared/best-ai-tool-for-musicians-lyric-writing-2026/)
 - [AI Tools for Writing App Store Descriptions 2026](/ai-tools-compared/ai-tools-for-writing-app-store-descriptions-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

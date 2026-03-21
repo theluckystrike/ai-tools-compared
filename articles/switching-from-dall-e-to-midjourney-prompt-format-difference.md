@@ -316,6 +316,4 @@ print(mj_prompt)
 - [How to Transfer Midjourney Prompt Library to Ideogram.](/ai-tools-compared/how-to-transfer-midjourney-prompt-library-to-ideogram-prompt/)
 - [How to Move Stable Diffusion Workflows to Midjourney.](/ai-tools-compared/how-to-move-stable-diffusion-workflows-to-midjourney-equivalent-setup/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

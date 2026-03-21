@@ -251,7 +251,5 @@ Start with open-source options like Amundsen or DataHub for cataloging, then add
 - [Lightdash vs Preset AI Dashboards: A Practical.](/ai-tools-compared/lightdash-vs-preset-ai-dashboards/)
 - [Best AI Tools for Data Cleaning: A Practical Guide for.](/ai-tools-compared/best-ai-tools-for-data-cleaning/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -336,7 +336,5 @@ Several techniques improve diagram generation results:
 - [How to Use AI to Generate Activity Diagrams from User.](/ai-tools-compared/how-to-use-ai-to-generate-activity-diagrams-from-user-acceptance-criteria/)
 - [Best Workflow for Using AI to Write Infrastructure as Code from Diagrams](/ai-tools-compared/best-workflow-for-using-ai-to-write-infrastructure-as-code-f/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

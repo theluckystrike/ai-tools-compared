@@ -160,7 +160,7 @@ The fast hour allocation scales with plan tier:
 
 - Basic: 3.3 hours/month
 
-- Standard: 15 hours/month 
+- Standard: 15 hours/month
 
 - Pro: 30 hours/month
 
@@ -313,8 +313,6 @@ midjourney_savings("Standard", 12)
 - [Windsurf Pro Annual vs Monthly Pricing: Actual Savings.](/ai-tools-compared/windsurf-pro-annual-vs-monthly-pricing-actual-savings-calculated/)
 - [How to Export Midjourney Images Before Downgrading Plan](/ai-tools-compared/how-to-export-midjourney-images-before-downgrading-plan-2026/)
 - [AI Tools for Subscription Management Support](/ai-tools-compared/ai-tools-for-subscription-management-support/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

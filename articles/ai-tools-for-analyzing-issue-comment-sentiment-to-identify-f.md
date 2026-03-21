@@ -299,7 +299,5 @@ The key metric is reducing response time to frustrated users. Track how quickly 
 - [Best AI Tool for Triaging GitHub Issues by Severity and.](/ai-tools-compared/best-ai-tool-for-triaging-github-issues-by-severity-and-cate/)
 - [Best AI for Writing Good First Issue Descriptions That.](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attra/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -208,7 +208,7 @@ This modular approach allows organizations to swap components, add verification 
 | Gemini | Gemini 2.0 Flash | $0.075/$0.30 per 1M tokens | 1M tokens | 2 requests/sec (free tier) |
 | MedPaLM | MedPaLM 2 | Enterprise pricing only | 8K tokens | On request |
 
-For healthcare workflows, Claude's extended context window enables longer patient education pieces and comprehensive regulatory documentation in single generations. GPT-4's fine-tuning capabilities suit organizations building proprietary healthcare content templates. Gemini offers cost advantages for high-volume content generation, though less medical specialization.
+For healthcare workflows, Claude's extended context window enables longer patient education pieces and regulatory documentation in single generations. GPT-4's fine-tuning capabilities suit organizations building proprietary healthcare content templates. Gemini offers cost advantages for high-volume content generation, though less medical specialization.
 
 ## Integration with Healthcare Systems
 
@@ -339,8 +339,6 @@ When evaluating AI writing tools for healthcare content, prioritize these practi
 - [Best AI Tool for Doctors Writing Clinical Notes](/ai-tools-compared/best-ai-tool-for-doctors-writing-clinical-notes/)
 - [Best AI Tool for Academic Paper Editing 2026](/ai-tools-compared/best-ai-tool-for-academic-paper-editing-2026/)
 - [AI Tools for Writing Grant Proposals Compared 2026](/ai-tools-compared/ai-tools-for-writing-grant-proposals-compared-2026/)
-
-Built by theluckystrike — More at [https://zovo.one](https://zovo.one)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

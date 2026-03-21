@@ -307,6 +307,4 @@ Run this script whenever you update your prompt library to keep both systems in 
 - [How to Transfer Midjourney Prompt Library to Ideogram.](/ai-tools-compared/how-to-transfer-midjourney-prompt-library-to-ideogram-prompt/)
 - [How to Transfer Copilot Code Review Settings to Cursor.](/ai-tools-compared/transfer-copilot-code-review-settings-to-cursor-ai-review-co/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

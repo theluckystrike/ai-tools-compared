@@ -265,6 +265,4 @@ Support tiers: Enterprise support may carry additional costs. Evaluate whether b
 - [Copilot Individual vs Cursor Pro Annual Cost Breakdown 2026](/ai-tools-compared/copilot-individual-vs-cursor-pro-annual-cost-breakdown-2026/)
 - [ChatGPT API Token Pricing Calculator: How to Estimate.](/ai-tools-compared/chatgpt-api-token-pricing-calculator-how-to-estimate-monthly/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

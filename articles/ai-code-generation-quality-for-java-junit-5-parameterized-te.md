@@ -388,6 +388,4 @@ AI handles framework annotations well when you provide context about your test i
 - [AI Coding Assistants for Go Testing: Table-Driven Tests.](/ai-tools-compared/ai-coding-assistants-for-go-testing-table-driven-tests-gener/)
 - [AI Code Generation for Java Reactive Programming with Project Reactor](/ai-tools-compared/ai-code-generation-for-java-reactive-programming-with-projec/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

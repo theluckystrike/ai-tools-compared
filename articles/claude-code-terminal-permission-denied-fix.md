@@ -345,7 +345,5 @@ Permission denied errors in Claude Code usually stem from executable permissions
 - [Does Claude Code Send Terminal Output to Anthropic Servers? Privacy Analysis](/ai-tools-compared/does-claude-code-send-terminal-output-to-anthropic-servers-p/)
 - [Claude MCP Server Connection Failed Fix (2026)](/ai-tools-compared/claude-mcp-server-connection-failed-fix-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

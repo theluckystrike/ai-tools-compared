@@ -426,6 +426,4 @@ The `NODE_EXTRA_CA_CERTS` environment variable is the cleanest solution — it a
 - [AI Tools for Automated SSL Certificate Management and.](/ai-tools-compared/ai-tools-for-automated-ssl-certificate-management-and-monito/)
 - [How to Use AI to Debug CORS Errors in Cross-Origin API.](/ai-tools-compared/how-to-use-ai-to-debug-cors-errors-in-cross-origin-api-reque/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

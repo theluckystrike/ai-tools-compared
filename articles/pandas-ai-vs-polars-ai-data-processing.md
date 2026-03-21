@@ -360,7 +360,7 @@ def migrate_groupby_to_polars(pandas_code):
 # Run both implementations side-by-side and measure improvements
 ```
 
-Start by migrating performance-critical sections of your code, verify correctness with comprehensive tests, and gradually convert remaining operations once you're confident in the results.
+Start by migrating performance-critical sections of your code, verify correctness with tests, and gradually convert remaining operations once you're confident in the results.
 
 ## Error Handling and Debugging Differences
 
@@ -389,7 +389,5 @@ Polars generally provides more descriptive error messages that help identify iss
 - [Lakehouse vs Data Warehouse for AI Workloads: A.](/ai-tools-compared/lakehouse-vs-data-warehouse-ai-comparison/)
 - [Observable vs Jupyter for AI Data Exploration](/ai-tools-compared/observable-vs-jupyter-ai-data-exploration/)
 - [Best AI Coding Tools for Python Data Science and Pandas.](/ai-tools-compared/best-ai-coding-tools-for-python-data-science-and-pandas-work/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

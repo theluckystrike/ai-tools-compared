@@ -365,7 +365,5 @@ For teams requiring maximum extensibility and programmatic control, Cognigy's SD
 - [Kommunicate vs Crisp AI Chat Widgets: A Developer Comparison](/ai-tools-compared/kommunicate-vs-crisp-ai-chat-widgets/)
 - [Tidio vs Intercom AI Chatbot: A Developer Comparison](/ai-tools-compared/tidio-vs-intercom-ai-chatbot/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

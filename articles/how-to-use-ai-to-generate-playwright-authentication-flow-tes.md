@@ -245,7 +245,7 @@ module.exports = {
 
 ## Authentication Setup Script
 
-AI can generate comprehensive setup scripts that create multiple authentication states:
+AI can generate setup scripts that create multiple authentication states:
 
 ```javascript
 // tests/auth.setup.ts
@@ -444,8 +444,6 @@ test('debug storage state', async ({ page, context }) => {
 - [How to Use AI to Generate Jest Tests for Redux Toolkit.](/ai-tools-compared/how-to-use-ai-to-generate-jest-tests-for-redux-toolkit-slice/)
 - [AI Tools for Writing Playwright Tests That Verify Toast.](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-toast-noti/)
 - [How to Use AI to Generate Jest Integration Tests for.](/ai-tools-compared/how-to-use-ai-to-generate-jest-integration-tests-for-express/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

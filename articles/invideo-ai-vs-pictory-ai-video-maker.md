@@ -316,7 +316,5 @@ For developers building video automation systems, InVideo's template API offers 
 - [Sora vs Runway AI Video Generation: A Technical.](/ai-tools-compared/sora-vs-runway-ai-video-generation/)
 - [Kling AI vs Gen 3 Video Generation: Developer Comparison](/ai-tools-compared/kling-ai-vs-gen-3-video-generation/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

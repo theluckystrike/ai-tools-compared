@@ -308,6 +308,4 @@ Understand that AI assistants may not always choose optimal constraint definitio
 - [Best AI for Analyzing Parquet Files and Generating.](/ai-tools-compared/best-ai-for-analyzing-parquet-files-and-generating-summary-s/)
 - [AI Code Completion for Java Record Classes and Sealed.](/ai-tools-compared/ai-code-completion-for-java-record-classes-and-sealed-interf/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

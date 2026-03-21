@@ -266,15 +266,6 @@ Robusta offers free and cloud-hosted versions. Open source Robusta is free. Clou
 
 **Large teams (25+ people)**: Deploy Robusta for continuous monitoring + Copilot ($19/month per user) + k8sgpt for ad-hoc analysis. Robusta pays for itself by reducing incident response time. Total: ~$500-1000/month depending on team size.
 
-## Key Takeaways
-
-- **k8sgpt** is fastest for specific Kubernetes issues
-- **Claude Code** provides deepest analysis for complex problems
-- **Copilot** saves time writing correct YAML and kubectl commands
-- **Robusta** reduces incident response time by surfacing AI analysis automatically
-
-The best approach combines tools: k8sgpt for quick cluster analysis, Claude Code for complex debugging, and Copilot for manifest editing. Robusta adds value for teams running critical clusters that need continuous monitoring.
-
 ## Related Reading
 
 - [Best AI Tools for Automated Code Review 2026](/ai-tools-compared/best-ai-tools-for-automated-code-review-2026/)

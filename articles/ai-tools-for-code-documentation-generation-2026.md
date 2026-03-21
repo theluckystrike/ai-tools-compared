@@ -309,7 +309,7 @@ jobs:
 
 **Real-World Quality:**
 
-- Uses Claude Opus 4.6 (cutting edge)
+- Uses Claude Opus 4.6 (modern)
 - Understands business context: "transfer" knows about debits/credits
 - Generates examples that actually work
 - Weakness: No persistent knowledge base; each call is independent
@@ -675,22 +675,6 @@ git push
 ```
 
 ---
-
-## Conclusion
-
-**For speed and ease: Mintlify.** Setup in 5 minutes, beautiful output, reasonable price.
-
-**For large teams: Swimm.** Builds a persistent knowledge base; worth $18k/year at scale.
-
-**For cost efficiency: Claude Code.** Pay ~$2 per docstring; no subscription overhead.
-
-**For API products: ReadMe AI.** Best docs UI, but requires $400/month investment.
-
-**For solo developers: GitHub Copilot.** Simplest, most integrated with VS Code.
-
-The best choice depends on team size and velocity. A 5-person startup gets ROI from Mintlify in 1 month (saves ~3 hours/week documenting). A 50-person company with 10 services needs Swimm's architecture knowledge graph—manual docs fall out of sync within weeks.
-
-Start with the tool that matches your current scale, then upgrade as you grow.
 
 ## Related Reading
 

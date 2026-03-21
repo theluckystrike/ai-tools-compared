@@ -256,7 +256,5 @@ Both tools integrate with Next.js and support Tailwind CSS out of the box. Your 
 - [Windsurf Cascade vs Cursor Composer: Multi-File AI.](/ai-tools-compared/windsurf-cascade-vs-cursor-composer-multi-file-ai-editing-co/)
 - [Cursor vs Windsurf for Implementing Drag and Drop.](/ai-tools-compared/cursor-vs-windsurf-for-implementing-drag-and-drop-interfaces/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

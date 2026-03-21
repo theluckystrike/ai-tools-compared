@@ -453,6 +453,4 @@ Before submitting AI-drafted applications:
 - [Best AI Assistant for Writing Open Source Roadmap.](/ai-tools-compared/best-ai-assistant-for-writing-open-source-roadmap-documents-from-issue-milestone-data/)
 - [How to Use AI to Write Commit Message Guidelines for Open Source Projects.](/ai-tools-compared/how-to-use-ai-to-write-commit-message-guidelines-for-open-source-projects/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

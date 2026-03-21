@@ -303,7 +303,5 @@ The AI recognized that the incoming changes moved discount logic to the model wh
 - [AI Tools for Generating Pandas Merge and Join Operations.](/ai-tools-compared/ai-tools-for-generating-pandas-merge-and-join-operations-fro/)
 - [Best AI for Generating Pandas Code to Merge Data from.](/ai-tools-compared/best-ai-for-generating-pandas-code-to-merge-data-from-multip/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

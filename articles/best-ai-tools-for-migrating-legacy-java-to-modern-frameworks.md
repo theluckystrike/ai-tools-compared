@@ -41,7 +41,7 @@ Migrating manually means rewriting tests, updating dependency versions one by on
 | **Claude 3.5 Sonnet** | Large monoliths (>100K LOC), complex business logic | Multi-module projects, architectural decisions | Excellent — flags implicit contracts | Very good — generates integration tests | 30-50 sec/file |
 | **ChatGPT-4o** | Smaller modules (<50K LOC), framework upgrades | Targeted framework updates | Good — catches API changes | Adequate — basic unit tests | 20-40 sec/file |
 | **GitHub Copilot** | Incremental line-by-line refactoring | Focused classes or methods | Limited — requires context | Poor — needs manual scaffolding | Instant (IDE) |
-| **Claude Opus 4.6** | Enterprise migrations, cross-service coordination | Full application stacks, integration points | Excellent — understands domain patterns | Excellent — generates comprehensive suites | 50-100 sec/file (thorough) |
+| **Claude Opus 4.6** | Enterprise migrations, cross-service coordination | Full application stacks, integration points | Excellent — understands domain patterns | Excellent — generates suites | 50-100 sec/file (thorough) |
 
 **Why Claude excels at Java migrations**: Claude maintains context across 200K tokens, allowing it to understand your entire monolith's structure. It catches implicit contracts (e.g., "this method returns null to signal failure") that code-only tools miss.
 
@@ -344,7 +344,7 @@ jobs:
 - Migrating >100K LOC with complex business logic
 - Need to understand implicit contracts between modules
 - Dealing with architectural decisions (switching from monolith to microservices)
-- Generating comprehensive test suites alongside refactoring
+- Generating test suites alongside refactoring
 
 **Use ChatGPT-4o when:**
 - Migrating 20-50K LOC focused on framework upgrades

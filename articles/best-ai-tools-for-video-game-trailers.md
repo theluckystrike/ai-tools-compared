@@ -280,7 +280,5 @@ Start with your core footage—AI tools enhance good source material rather than
 - [Steve AI vs Raw Shorts: AI Video Creation Comparison for.](/ai-tools-compared/steve-ai-vs-raw-shorts-ai-video/)
 - [AI Tools for Video Compression: A Developer Guide](/ai-tools-compared/ai-tools-for-video-compression/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

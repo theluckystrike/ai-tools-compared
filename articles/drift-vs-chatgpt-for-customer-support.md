@@ -240,7 +240,5 @@ The best solution is one that actually gets deployed and used. A simpler tool in
 - [ChatGPT vs Custom Chatbot for Business: A Developer Guide](/ai-tools-compared/chatgpt-vs-custom-chatbot-for-business/)
 - [Kustomer vs Gladly AI Customer Platform: A Developer.](/ai-tools-compared/kustomer-vs-gladly-ai-customer-platform/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

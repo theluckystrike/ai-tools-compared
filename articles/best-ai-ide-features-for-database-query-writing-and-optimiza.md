@@ -290,7 +290,5 @@ The best tools combine these features, providing value from your first query whi
 - [AI Tools for Writing Pytest Tests for Alembic Database.](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migra/)
 - [Notion AI vs Google Docs AI: Complete Writing Features.](/ai-tools-compared/notion-ai-writing-features-vs-google-docs-ai-compared/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

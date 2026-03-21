@@ -498,7 +498,5 @@ When troubleshooting, work through this checklist:
 - [Claude MCP Server Connection Failed Fix (2026)](/ai-tools-compared/claude-mcp-server-connection-failed-fix-2026/)
 - [Claude Pro Upgrade Not Reflecting? Here's the Fix (2026)](/ai-tools-compared/claude-pro-upgrade-not-reflecting-fix-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -371,7 +371,5 @@ export const changeLocaleAndWait = async (locale) => {
 - [Best AI for Creating Jest Tests That Verify Correct.](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-react-co/)
 - [How to Use AI to Generate Jest Tests for Redux Toolkit.](/ai-tools-compared/how-to-use-ai-to-generate-jest-tests-for-redux-toolkit-slice/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -337,6 +337,4 @@ Try usage-based for one month, track your consumption, then decide based on actu
 - [Cursor Pro Usage Cap: How Many Requests Per Day in 2026](/ai-tools-compared/cursor-pro-usage-cap-how-many-requests-per-day-2026/)
 - [Copilot vs Claude Code for Writing Jest.](/ai-tools-compared/copilot-vs-claude-code-for-writing--jest-test-s/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

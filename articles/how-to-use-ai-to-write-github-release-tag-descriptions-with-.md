@@ -347,7 +347,5 @@ npm install -g myapp
 - [How to Use AI to Write Security Advisory Descriptions.](/ai-tools-compared/how-to-use-ai-to-write-security-advisory-descriptions-for-cv/)
 - [Effective Strategies for Using AI to Write.](/ai-tools-compared/effective-strategies-for-using-ai-to-write--api/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -167,7 +167,7 @@ For large projects where editor performance matters, Zed offers the fastest expe
 
 ## Benchmarking AI Suggestions Across Tools
 
-Comprehensive evaluation of Fresh code generation on identical tasks:
+ evaluation of Fresh code generation on identical tasks:
 
 ### Task 1: Generate Route Handler with Database Query
 
@@ -367,7 +367,5 @@ Claude Code leads in accuracy and requiring fewer fixes, while Zed leads in raw 
 - [AI Coding Assistant Accuracy for TypeScript Svelte.](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-svelte-component/)
 - [AI Coding Assistants for TypeScript Express Middleware.](/ai-tools-compared/ai-coding-assistants-for-typescript-express-middleware-chain/)
 - [AI Coding Assistant Comparison for TypeScript Tailwind.](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-tailwind-css-c/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

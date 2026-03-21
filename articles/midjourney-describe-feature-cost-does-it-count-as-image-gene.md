@@ -234,6 +234,4 @@ This workflow uses describe's free operation to inform generation decisions, the
 - [DALL-E 3 Credit Cost Per Image: ChatGPT Plus vs API.](/ai-tools-compared/dall-e-3-credit-cost-per-image-chatgpt-plus-vs-api/)
 - [Cursor Pro Privacy Mode: Does It Cost Extra for Zero.](/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -497,6 +497,4 @@ Adjust your prompts and tools based on these metrics.
 - [AI Tools for Generating Grafana Dashboards from Metrics.](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
 - [How to Use AI to Generate Pull Request Impact Analysis.](/ai-tools-compared/how-to-use-ai-to-generate-pull-request-impact-analysis-showi/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

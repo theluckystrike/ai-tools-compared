@@ -312,6 +312,4 @@ For developers implementing either solution:
 - [DALL-E 3 vs Gemini Imagen: Quality Compared 2026](/ai-tools-compared/dall-e-3-vs-gemini-imagen-quality-compared-2026/)
 - [Switching from Midjourney to DALL-E 3: Prompt Adaptation.](/ai-tools-compared/switching-from-midjourney-to-dall-e-3-prompt-adaptation-guid/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

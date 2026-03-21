@@ -327,6 +327,4 @@ Both platforms continue to evolve their AI offerings, and the gap between their 
 - [Landbot vs Typebot: AI Conversational Forms Compared](/ai-tools-compared/landbot-vs-typebot-ai-conversational-forms/)
 - [Cognigy vs Boost AI Virtual Agents: A Developer Comparison](/ai-tools-compared/cognigy-vs-boost-ai-virtual-agents/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

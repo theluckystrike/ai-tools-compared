@@ -452,6 +452,4 @@ benchmark.print_benchmark_report()
 - [Runway ML vs Pika AI: Video Generation Tools Compared](/ai-tools-compared/runway-ml-vs-pika-ai-video-generation/)
 - [Runway ML vs Pika Labs: AI Video Generation Comparison 2026](/ai-tools-compared/runway-ml-vs-pika-labs-ai-video-comparison-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

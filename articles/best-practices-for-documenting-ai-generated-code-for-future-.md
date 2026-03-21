@@ -271,34 +271,6 @@ This separation helps developers understand what they can safely regenerate vers
 
 
 
-## Key Takeaways
-
-
-
-Documenting AI-generated code requires intentional effort, but the payoff is significant:
-
-
-
-- Start simple: Add origin comments to every AI-generated function
-
-- Document behavior, not just syntax: Explain what the code does and its limitations
-
-- Create context files: For larger components, maintain separate documentation
-
-- Use strong typing: Type hints serve as executable documentation
-
-- Build it into your workflow: Add documentation checks to your code review process
-
-- Track generation context: Store prompts and test results alongside code
-
-
-
-The goal isn't to document every line—it's to provide enough context that future developers (including your future self) can understand what the AI generated, why it works the way it does, and where the boundaries of its functionality lie.
-
-
-
-
-
 ## Related Reading
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
@@ -307,8 +279,6 @@ The goal isn't to document every line—it's to provide enough context that futu
 - [Best Practices for Combining AI Code Generation with.](/ai-tools-compared/best-practices-for-combining-ai-code-generation-with-manual-code-review/)
 - [Best Practices for Keeping AI Coding Suggestions Aligned.](/ai-tools-compared/best-practices-for-keeping-ai-coding-suggestions-aligned-with-design-patterns/)
 - [How to Get AI Code Suggestions That Follow Your Project Naming Conventions](/ai-tools-compared/how-to-get-ai-code-suggestions-that-follow-your-project-naming-conventions/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

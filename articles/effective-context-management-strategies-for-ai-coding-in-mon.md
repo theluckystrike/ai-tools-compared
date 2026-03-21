@@ -218,7 +218,7 @@ claude code --tokens-estimate packages/api-gateway/src/handlers/**/*.ts
 
 ### Cursor (IDE-Integrated)
 
-Cursor maintains a codebase index automatically. Leverage it effectively:
+Cursor maintains a codebase index automatically. use it effectively:
 
 ```
 Use @codebase reference for semantic search:
@@ -517,8 +517,6 @@ Built by theluckystrike — More at [zovo.one](https://zovo.one)
 - [Effective Context Loading Strategies for AI Tools in.](/ai-tools-compared/effective-context-loading-strategies-for-ai-tools-in-polyglo/)
 - [Writing Effective System Prompts for AI Coding.](/ai-tools-compared/writing-effective-system-prompts-for-ai-coding-assistants-th/)
 - [Best Prompting Strategies for Getting Accurate Code from.](/ai-tools-compared/best-prompting-strategies-for-getting-accurate-code-from-ai-/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -234,6 +234,4 @@ Contact OpenAI's enterprise sales team through their website to initiate the pro
 - [ChatGPT Enterprise vs Custom Support Bot: A Practical.](/ai-tools-compared/chatgpt-enterprise-vs-custom-support-bot/)
 - [ChatGPT Edu Pricing Per Student: How Schools Get Volume.](/ai-tools-compared/chatgpt-edu-pricing-per-student-how-schools-get-volume-disco/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

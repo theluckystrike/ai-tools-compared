@@ -227,7 +227,7 @@ Once you've implemented an AI vendor analysis tool, track these metrics to ensur
 
 **Financial impact:**
 - Cost avoidance from identified supplier risks: Quantify prevented disruptions, failed deliveries caught early
-- Renegotiation savings: Identify contracts where AI research uncovered leverage points
+- Renegotiation savings: Identify contracts where AI research uncovered use points
 - Consolidation opportunities: Suppliers identified as replaceable or consolidatable
 
 **Real example from mid-market manufacturing:**
@@ -281,7 +281,5 @@ print(analyze_vendor_risk("GlobalSupply Co.", proposal))
 - [Best AI Tools for Image Data Analysis: A Developer Guide](/ai-tools-compared/best-ai-tools-for-image-data-analysis/)
 - [AI Tools for Cohort Analysis: A Practical Guide for.](/ai-tools-compared/ai-tools-for-cohort-analysis/)
 - [Best AI Tool for Marketing Managers Campaign Briefs](/ai-tools-compared/best-ai-tool-for-marketing-managers-campaign-briefs/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

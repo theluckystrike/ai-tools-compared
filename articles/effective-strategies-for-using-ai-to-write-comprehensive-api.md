@@ -1,10 +1,10 @@
 ---
 layout: default
-title: "Effective Strategies for Using AI to Write Comprehensive API"
+title: "Effective Strategies for Using AI to Write API"
 description: "A practical guide for developers on using AI tools to create thorough, accurate, and maintainable API documentation with real-world examples."
 date: 2026-03-16
 author: theluckystrike
-permalink: /effective-strategies-for-using-ai-to-write-comprehensive-api/
+permalink: /effective-strategies-for-using-ai-to-write--api/
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence, api]
 reviewed: true
@@ -317,7 +317,5 @@ Implementing AI for API documentation works best with established practices:
 - [Effective Prompting for AI Generation of Accessible.](/ai-tools-compared/effective-prompting-for-ai-generation-of-accessible-frontend/)
 - [Effective Prompting Strategies for AI Generation of Complex SQL Queries 2026](/ai-tools-compared/effective-prompting-strategies-for-ai-generation-of-complex-/)
 - [Effective Strategies for AI-Assisted Refactoring Without.](/ai-tools-compared/effective-strategies-for-ai-assisted-refactoring-without-bre/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

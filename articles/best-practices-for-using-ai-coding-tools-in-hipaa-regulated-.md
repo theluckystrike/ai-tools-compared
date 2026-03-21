@@ -244,6 +244,4 @@ The Validation Pattern: Implement automated checks that verify AI-generated code
 - [How to Set Up Ollama as Private AI Coding Assistant for.](/ai-tools-compared/how-to-set-up-ollama-as-private-ai-coding-assistant-for-sensitive-codebases/)
 - [Best Practices for AI Coding Tool Project Configuration.](/ai-tools-compared/best-practices-for-ai-coding-tool-project-configuration-in-l/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

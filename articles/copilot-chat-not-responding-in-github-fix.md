@@ -346,7 +346,5 @@ Provide as much detail as possible—error logs, timing of when it started, whet
 - [Copilot Suggestions Not Showing Up Fix 2026](/ai-tools-compared/copilot-suggestions-not-showing-up-fix-2026/)
 - [Best Practices for Writing GitHub Copilot Custom.](/ai-tools-compared/best-practices-for-writing-github-copilot-custom-instruction/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

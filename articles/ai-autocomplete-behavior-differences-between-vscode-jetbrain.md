@@ -230,6 +230,4 @@ If you need cross-platform consistency, consider using the same AI service acros
 - [Best AI Inline Chat Features in VSCode Compared to.](/ai-tools-compared/best-ai-inline-chat-features-in-vscode-compared-to-jetbrains/)
 - [Tabnine Pro vs Free: What Autocomplete Features Are Locked](/ai-tools-compared/tabnine-pro-vs-free-what-autocomplete-features-are-locked/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

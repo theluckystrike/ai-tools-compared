@@ -124,7 +124,7 @@ Google's AI features in Gmail and Photos use cloud processing but don't necessar
 
 - Smart Reply suggestions: No storage impact
 
-- AI-powered search: No storage impact 
+- AI-powered search: No storage impact
 
 - Magic Eraser in Photos: Modifies existing photos, no extra storage
 
@@ -232,16 +232,6 @@ For developers working with large codebases or datasets, the 2TB is typically su
 
 
 
-## Key Takeaways for Developers and Power Users
-
-
-
-Core AI processing does not count against your quota—the model runs on Google's infrastructure. What does count is any explicit action you take: saving exports, downloading generated images, or enabling AI backups. Gemini reading files you already have in Drive does not create duplicates. Use Google's storage management tools to find what is actually consuming space, and if you generate significant volumes of AI content, factor that into your storage planning.
-
-
-
-
-
 ## Related Reading
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
@@ -250,7 +240,5 @@ Core AI processing does not count against your quota—the model runs on Google'
 - [Gemini vs ChatGPT for Writing Google Cloud Function.](/ai-tools-compared/gemini-vs-chatgpt-for-writing-google-cloud-function-deployme/)
 - [Notion AI vs Google Docs AI: Complete Writing Features.](/ai-tools-compared/notion-ai-writing-features-vs-google-docs-ai-compared/)
 - [Does WindSurf AI Send Entire Project Context or Just.](/ai-tools-compared/does-windsurf-ai-send-entire-project-context-or-just-open-fi/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

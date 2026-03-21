@@ -284,6 +284,4 @@ The ecosystem of AI tools for social media analytics is mature enough that you d
 - [Copy.ai vs ChatGPT for Social Media Content: A Practical Comparison](/ai-tools-compared/copy-ai-vs-chatgpt-for-social-media-content/)
 - [AI Tools for Support Quality Assurance](/ai-tools-compared/ai-tools-for-support-quality-assurance/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

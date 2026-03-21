@@ -336,6 +336,4 @@ With practice, this workflow becomes second nature. You will find yourself contr
 - [Best Workflow for AI-Assisted Test Driven Development.](/ai-tools-compared/best-workflow-for-ai-assisted-test-driven-development-step-b/)
 - [Effective Strategies for AI-Assisted Refactoring Without.](/ai-tools-compared/effective-strategies-for-ai-assisted-refactoring-without-bre/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

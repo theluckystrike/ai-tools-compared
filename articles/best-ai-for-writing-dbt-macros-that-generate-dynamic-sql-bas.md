@@ -256,7 +256,5 @@ The right choice depends on your project complexity, team setup, and workflow pr
 - [Writing Claude.md Files That Teach AI Your Project Testing Conventions and Patterns](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-testing-conventions-and-patterns/)
 - [AI Autocomplete Comparison for Writing SQL Queries.](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

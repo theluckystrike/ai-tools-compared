@@ -245,6 +245,4 @@ Start by using Claude Code for one task per day, then gradually expand as you di
 - [How to Migrate Copilot Chat History and Context to Cursor AI](/ai-tools-compared/migrate-copilot-chat-history-and-context-to-cursor-ai-guide/)
 - [Copilot vs Claude Code for Scaffolding New Django REST.](/ai-tools-compared/copilot-vs-claude-code-for-scaffolding-new-django-rest-frame/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

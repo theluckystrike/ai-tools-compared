@@ -82,9 +82,9 @@ Rather than fighting automatic suggestions, master the keyboard shortcuts that c
 
 
 
-**Accept suggestion:** `Tab` or `Ctrl + Right Arrow` 
+**Accept suggestion:** `Tab` or `Ctrl + Right Arrow`
 
-**Dismiss suggestion:** `Escape` or keep typing 
+**Dismiss suggestion:** `Escape` or keep typing
 
 **Manually trigger suggestions:** `Ctrl + Space` (VS Code default)
 
@@ -250,7 +250,5 @@ With proper configuration, AI autocomplete becomes a helpful colleague who knows
 - [Switching from Copilot Ghost Text to Cursor Tab Autocomplete: A Practical Guide](/ai-tools-compared/switching-from-copilot-ghost-text-to-cursor-tab-autocomplete/)
 - [Cursor Tab vs Copilot Ghost Text: AI Code Completion.](/ai-tools-compared/cursor-tab-vs-copilot-ghost-text-comparison/)
 - [How to Reduce AI Coding Tool Costs Without Losing.](/ai-tools-compared/how-to-reduce-ai-coding-tool-costs-without-losing-productivi/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

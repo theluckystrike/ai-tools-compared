@@ -287,6 +287,4 @@ def db_connection():
 - [Effective Workflow for Using AI to Debug Production.](/ai-tools-compared/effective-workflow-for-using-ai-to-debug-production-issues-from-logs/)
 - [How to Use AI to Generate Pagination Edge Case Tests for.](/ai-tools-compared/how-to-use-ai-to-generate-pagination-edge-case-tests-for-api/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

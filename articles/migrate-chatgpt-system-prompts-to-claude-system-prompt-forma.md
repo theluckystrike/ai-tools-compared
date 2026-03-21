@@ -286,6 +286,4 @@ Use the `xml` thinking feature for complex reasoning. Claude's extended thinking
 - [How to Transfer Claude Project Knowledge to ChatGPT.](/ai-tools-compared/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-g/)
 - [Claude vs ChatGPT for Building Custom ESLint Rules for.](/ai-tools-compared/claude-vs-chatgpt-for-building-custom-eslint-rules-for-react/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

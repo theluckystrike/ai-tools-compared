@@ -240,7 +240,7 @@ Pro Plan Value:
 ```
 
 ### Content and Editorial Teams
-Editorial teams leverage Spaces for fact-checking and source management:
+Editorial teams use Spaces for fact-checking and source management:
 
 ```
 Workflow: Article research with source validation

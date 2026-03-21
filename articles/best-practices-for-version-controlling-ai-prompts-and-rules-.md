@@ -258,6 +258,4 @@ Version controlling AI prompts and rules files transforms them from ephemeral te
 - [Best Practices for Sharing AI Tool Configuration Files Across Distributed Engineering Teams](/ai-tools-compared/best-practices-for-sharing-ai-tool-configuration-files-acros/)
 - [Best Practices for Maintaining AI Tool Configuration.](/ai-tools-compared/best-practices-for-maintaining-ai-tool-configuration-files-a/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -291,7 +291,5 @@ To avoid this issue in the future:
 - [Perplexity Pro Search Not Working Fix (2026)](/ai-tools-compared/perplexity-pro-search-not-working-fix-2026/)
 - [Claude Giving Outdated Information? How to Fix This.](/ai-tools-compared/claude-giving-outdated-information-how-to-fix/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -296,6 +296,4 @@ Before canceling your Gemini subscription:
 - [How to Export Grammarly Personal Dictionary Before.](/ai-tools-compared/how-to-export-grammarly-personal-dictionary-before-switching/)
 - [Switching from ChatGPT Voice to Gemini Live: Conversation Differences](/ai-tools-compared/switching-from-chatgpt-voice-to-gemini-live-conversation-differences/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

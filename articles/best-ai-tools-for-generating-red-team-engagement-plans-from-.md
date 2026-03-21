@@ -27,7 +27,7 @@ Before examining specific tools, understanding the core requirements helps filte
 
 ## Claude (Anthropic)
 
-Claude excels at analyzing architecture documentation and generating detailed engagement plans through its advanced reasoning capabilities. Provide it with your OpenAPI spec or architecture markdown, and it produces comprehensive red team plans.
+Claude excels at analyzing architecture documentation and generating detailed engagement plans through its advanced reasoning capabilities. Provide it with your OpenAPI spec or architecture markdown, and it produces red team plans.
 
 **Input support:** OpenAPI specs, Swagger docs, architecture markdown, Mermaid diagrams, and code snippets
 
@@ -114,7 +114,7 @@ Here's a practical approach for incorporating these tools into your engagement p
 
 ### Step 1: Document Aggregation
 
-Gather your architecture documentation into a unified format. Consolidate:
+Gather your architecture documentation into an unified format. Consolidate:
 - API specifications (OpenAPI/Swagger)
 - Architecture decision records (ADRs)
 - Network diagrams and data flow documents
@@ -298,13 +298,6 @@ Cost comparison for engagement planning:
 - Total: 3–4 hours + $20 = ~$1,200
 
 **AI value**: Reduces planning effort by 85–90%, freeing senior security staff for execution and validation rather than documentation.
-
-## Conclusion
-
-AI tools have matured significantly for red team planning from architecture documentation. Claude leads in analysis depth, GPT-4 excels in integration capabilities, and Gemini handles large documentation sets effectively. For open-source requirements, CodeLLama provides a viable path forward.
-
-Start with Claude for initial plan generation, then layer in GPT-4 or Gemini based on your automation needs and documentation scale. Always validate AI plans against NIST/MITRE frameworks, involve your security team in refinement, and maintain human oversight of scope and legal considerations. Regardless of tool choice, expert review remains the critical component for effective, safe red team engagements.
-
 
 ## Related Reading
 

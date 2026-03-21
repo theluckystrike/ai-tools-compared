@@ -387,6 +387,4 @@ Copilot generates complete, context-aware code that follows best practices.
 - [How to Migrate VSCode Copilot Keybindings to Cursor AI.](/ai-tools-compared/migrate-vscode-copilot-keybindings-to-cursor-ai-editor-2026/)
 - [How to Migrate Copilot Chat History and Context to Cursor AI](/ai-tools-compared/migrate-copilot-chat-history-and-context-to-cursor-ai-guide/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

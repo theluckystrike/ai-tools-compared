@@ -386,7 +386,5 @@ The automation doesn't eliminate human review—it accelerates the parts that ma
 - [AI Tools for Product Managers: Drafting Release.](/ai-tools-compared/ai-tools-for-product-managers-drafting-release-communication-emails-from-feature-lists/)
 - [How to Use AI to Help Product Managers Write Data-Driven.](/ai-tools-compared/how-to-use-ai-to-help-product-managers-write-data-driven-fea/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

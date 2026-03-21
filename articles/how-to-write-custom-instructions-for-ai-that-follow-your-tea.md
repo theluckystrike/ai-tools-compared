@@ -477,6 +477,4 @@ git commit -m "Update custom instructions across all AI tools"
 - [How to Write Custom Instructions That Make AI Follow.](/ai-tools-compared/how-to-write-custom-instructions-that-make-ai-follow-your-error-response-schema/)
 - [How to Create Custom System Prompts for AI That Match.](/ai-tools-compared/how-to-create-custom-system-prompts-for-ai-that-match-your-d/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -253,7 +253,7 @@ Most teams integrate release email generation into existing workflows:
 
 - Jira: Extract features from sprint completions
 
-- GitHub: Pull release notes from merged PRs 
+- GitHub: Pull release notes from merged PRs
 
 - Notion: Read from product databases
 
@@ -313,8 +313,6 @@ This approach scales with your release frequency and team size, making it practi
 - [Best AI for Product Managers Creating User Persona.](/ai-tools-compared/best-ai-for-product-managers-creating-user-persona-documents/)
 - [AI Tools for Product Managers Converting Customer.](/ai-tools-compared/ai-tools-for-product-managers-converting-customer-interview-/)
 - [How to Use AI to Help Product Managers Write Data-Driven.](/ai-tools-compared/how-to-use-ai-to-help-product-managers-write-data-driven-fea/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

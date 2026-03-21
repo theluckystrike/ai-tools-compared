@@ -391,6 +391,4 @@ Stay current with AI tool developments. The landscape evolves rapidly, with new 
 - [How to Use AI Coding Tools to Enforce Consistent API.](/ai-tools-compared/how-to-use-ai-coding-tools-to-enforce-consistent-api-response-formats/)
 - [Enterprise Data Loss Prevention Rules for AI Coding.](/ai-tools-compared/enterprise-data-loss-prevention-rules-for-ai-coding-assistan/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

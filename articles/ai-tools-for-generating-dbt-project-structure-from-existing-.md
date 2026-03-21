@@ -396,7 +396,5 @@ AI-generated models may not include optimal indexing or partitioning. Review and
 - [AI Tools for Generating Grafana Dashboards from Metrics.](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
 - [Cheapest AI Tool for Generating Entire Project From.](/ai-tools-compared/cheapest-ai-tool-for-generating-entire-project-from-description/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

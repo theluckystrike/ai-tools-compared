@@ -427,7 +427,7 @@ These production-critical features are sometimes overlooked in AI-generated code
 |---------|--------|---------|--------|-----|
 | Async runtime understanding | 9/10 | 8/10 | 8/10 | 7/10 |
 | Error handling patterns | 9/10 | 7/10 | 7/10 | 6/10 |
-| Type system leverage | 9/10 | 7/10 | 8/10 | 7/10 |
+| Type system use | 9/10 | 7/10 | 8/10 | 7/10 |
 | Middleware patterns | 9/10 | 6/10 | 7/10 | 5/10 |
 | State management | 9/10 | 6/10 | 8/10 | 5/10 |
 | IDE integration | N/A | 10/10 | 10/10 | 10/10 |
@@ -443,7 +443,5 @@ These production-critical features are sometimes overlooked in AI-generated code
 - [Best AI Tools for TypeScript Type Inference and Generic.](/ai-tools-compared/best-ai-tools-for-typescript-type-inference-and-generic-type/)
 - [Best AI Tools for Language-Specific Code Style and.](/ai-tools-compared/best-ai-tools-for-language-specific-code-style-and-convention-enforcement/)
 - [Best AI Tools for Python NumPy and Scientific Computing.](/ai-tools-compared/best-ai-tools-for-python-numpy-and-scientific-computing-code/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

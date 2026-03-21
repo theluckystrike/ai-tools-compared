@@ -297,6 +297,4 @@ The per-student pricing model scales predictably, making it easier to build into
 - [ChatGPT API Assistants API Pricing: Threads and Runs.](/ai-tools-compared/chatgpt-api-assistants-api-pricing-threads-and-runs-cost-breakdown/)
 - [ChatGPT Enterprise Minimum Seats and Contract Length.](/ai-tools-compared/chatgpt-enterprise-minimum-seats-and-contract-length-require/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

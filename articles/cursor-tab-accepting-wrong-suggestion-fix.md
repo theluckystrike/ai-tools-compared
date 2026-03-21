@@ -532,6 +532,4 @@ Share in #ai-tools-discussion Slack channel.
 - [Cursor Extensions Conflicting with AI Fix.](/ai-tools-compared/cursor-extensions-conflicting-with-ai-fix/)
 - [Switching from Copilot Ghost Text to Cursor Tab Autocomplete: A Practical Guide](/ai-tools-compared/switching-from-copilot-ghost-text-to-cursor-tab-autocomplete/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

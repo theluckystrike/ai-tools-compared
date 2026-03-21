@@ -25,7 +25,7 @@ AI tools solve this by analyzing code structure and generating tests that docume
 
 ### Claude 3.5 Sonnet with System Prompts
 
-Claude excels at understanding complex code structures and generating comprehensive test suites with edge case coverage:
+Claude excels at understanding complex code structures and generating test suites with edge case coverage:
 
 ```python
 # Example: Legacy code with implicit behavior

@@ -299,7 +299,5 @@ All three tools reduce the time spent writing matrix configurations while improv
 - [Copilot vs Claude Code for Writing GitHub Actions CI/CD.](/ai-tools-compared/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
 - [AI Tools for Generating GitHub Actions Workflows from.](/ai-tools-compared/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

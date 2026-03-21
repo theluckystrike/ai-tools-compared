@@ -294,6 +294,4 @@ For a team already invested in Canva's design ecosystem, the video capabilities 
 - [Best AI Video Editor 2026: A Developer's Guide to Intelligent Video Production](/ai-tools-compared/best-ai-video-editor-2026/)
 - [Botpress vs Rasa AI Chatbot Framework Compared](/ai-tools-compared/botpress-vs-rasa-ai-chatbot-framework/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

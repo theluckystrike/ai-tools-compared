@@ -148,7 +148,7 @@ class ErrorCode:
 
 
 
-Claude Code can help you implement robust error handling in multiple languages. Here is a Python FastAPI example:
+Claude Code can help you implement strong error handling in multiple languages. Here is a Python FastAPI example:
 
 
 

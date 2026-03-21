@@ -460,6 +460,4 @@ Use this checklist when moving your workflows:
 - [How to Move Midjourney Style References to Stable Diffusion LoRA Training](/ai-tools-compared/how-to-move-midjourney-style-references-to-stable-diffusion-/)
 - [Switching from DALL-E to Midjourney: Prompt Format.](/ai-tools-compared/switching-from-dall-e-to-midjourney-prompt-format-difference/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

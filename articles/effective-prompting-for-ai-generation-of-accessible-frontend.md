@@ -300,6 +300,4 @@ Test every AI-generated component. Use automated tools, screen readers, and keyb
 - [Effective Strategies for Using AI to Write.](/ai-tools-compared/effective-strategies-for-using-ai-to-write--api/)
 - [How to Write System Prompts for AI Assistants That.](/ai-tools-compared/how-to-write-system-prompts-for-ai-assistants-that-produce-a/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

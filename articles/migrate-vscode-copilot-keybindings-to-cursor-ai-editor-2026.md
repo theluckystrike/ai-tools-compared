@@ -600,6 +600,4 @@ This ensures consistency across your development team.
 - [How to Transfer Copilot Inline Chat Shortcuts to Cursor.](/ai-tools-compared/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)
 - [How to Transfer Cursor Editor Theme and Layout to VSCode.](/ai-tools-compared/transfer-cursor-editor-theme-and-layout-to-vscode-with-copil/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

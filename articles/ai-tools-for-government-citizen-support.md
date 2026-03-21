@@ -289,7 +289,5 @@ Government AI implementation succeeds when it augments staff capabilities rather
 - [AI Tools for Customer Escalation Management](/ai-tools-compared/ai-tools-for-customer-escalation-management/)
 - [Best AI Tools for Support Agent Assist](/ai-tools-compared/best-ai-tools-for-support-agent-assist/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

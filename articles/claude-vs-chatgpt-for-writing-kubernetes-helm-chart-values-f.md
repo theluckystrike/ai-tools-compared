@@ -275,7 +275,5 @@ The time saved debugging misconfigured resources, missing limits, or incorrect a
 - [ChatGPT vs Claude for Writing Effective Celery Task.](/ai-tools-compared/chatgpt-vs-claude-for-writing-effective-celery-task-error-ha/)
 - [ChatGPT vs Claude for Writing Nginx Reverse Proxy.](/ai-tools-compared/chatgpt-vs-claude-for-writing-nginx-reverse-proxy-configurat/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -259,6 +259,4 @@ The best workflow combines AI generation with developer review. Generate tests r
 - [AI Tools for Writing Jest Tests for Web Worker and.](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-web-worker-and-service-w/)
 - [Best AI for Creating Jest Tests That Verify Correct Suspense and Lazy Loading Behavior](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-suspense/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

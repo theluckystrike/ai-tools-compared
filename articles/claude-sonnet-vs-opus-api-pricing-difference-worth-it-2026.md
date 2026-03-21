@@ -316,7 +316,5 @@ The 2026 reality is that most applications should start with Sonnet and selectiv
 - [Claude API Batch Processing: How Much Cheaper Than.](/ai-tools-compared/claude-api-batch-processing-discount-how-much-cheaper-than-r/)
 - [Claude API Tool Use and Function Calling: Pricing and.](/ai-tools-compared/claude-api-tool-use-function-calling-pricing-how-tokens-are-/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -245,7 +245,5 @@ The best choice depends on your team's existing tool investments, incident volum
 - [AI Tools for Monitoring Kubernetes Cluster Health and.](/ai-tools-compared/ai-tools-for-monitoring-kubernetes-cluster-health-and-auto-remediation/)
 - [How to Use AI to Help SRE Teams Draft Root Cause.](/ai-tools-compared/how-to-use-ai-to-help-sre-teams-draft-root-cause-analysis-do/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

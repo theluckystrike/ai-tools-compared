@@ -249,7 +249,5 @@ Maintain a simple internal wiki or README explaining your setup. Include the dir
 - [Best Practices for Sharing AI Tool Configuration Files Across Distributed Engineering Teams](/ai-tools-compared/best-practices-for-sharing-ai-tool-configuration-files-acros/)
 - [How to Structure Project Files So AI Coding Tools.](/ai-tools-compared/how-to-structure-project-files-so-ai-coding-tools-understand/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -299,6 +299,4 @@ Follow these recommendations for the smoothest transition:
 - [Best Practices for AI Tool Project Config When Switching.](/ai-tools-compared/best-practices-for-ai-tool-project-config-when-switching-between-multiple-client-projects/)
 - [How to Manage AI Coding Context When Switching Between.](/ai-tools-compared/how-to-manage-ai-coding-context-when-switching-between-diffe/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

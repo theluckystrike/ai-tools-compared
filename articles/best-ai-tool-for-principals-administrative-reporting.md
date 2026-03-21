@@ -296,12 +296,6 @@ For tech-comfortable principals, consider:
 
 These integrations amplify efficiency—moving from hours to minutes for routine reports.
 
-## Conclusion
-
-AI-assisted administrative documentation is no longer experimental—it's becoming standard practice in forward-thinking schools. The tool that works best depends on your comfort with technology, your writing style, and your specific reporting requirements. Regardless of which tool you choose, the consistent message is the same: AI excels at organizing information, producing first drafts, and handling formatting—allowing principals to focus their time on instructional leadership and student success.
-
-
-
 ## Prompt Templates for Common Reports
 
 **Quarterly Achievement Report:**

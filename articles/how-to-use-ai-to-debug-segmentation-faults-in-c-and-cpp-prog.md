@@ -267,7 +267,7 @@ What's the root cause and how do I fix it?
 | Claude 3.5 Sonnet | Detailed reasoning about memory ownership | Complex memory lifecycle issues |
 | ChatGPT-4 | Fast analysis, good at recognizing patterns | Quick segfault identification |
 | GitHub Copilot | IDE-integrated, real-time suggestions | Immediate inline fixes |
-| Cursor AI | Multi-file context, comprehensive analysis | Large codebase segfaults |
+| Cursor AI | Multi-file context, analysis | Large codebase segfaults |
 
 ## Common Pitfalls When Using AI for Debugging
 
@@ -289,7 +289,5 @@ What's the root cause and how do I fix it?
 - [How to Use AI to Debug Race Conditions in Python Asyncio.](/ai-tools-compared/how-to-use-ai-to-debug-race-conditions-in-python-asyncio-concurrent-tasks/)
 - [How to Use AI to Debug Tailwind CSS Classes Not Applying.](/ai-tools-compared/how-to-use-ai-to-debug-tailwind-css-classes-not-applying-in-/)
 - [How to Use AI to Interpret and Fix Java OutOfMemory Heap.](/ai-tools-compared/how-to-use-ai-to-interpret-and-fix-java-outofmemory-heap-spa/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

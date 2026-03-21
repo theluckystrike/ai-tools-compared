@@ -322,7 +322,5 @@ Preprocess with AI filters, select the codec for your delivery requirements, and
 - [Best AI-Powered Platform Engineering Tools for Developer.](/ai-tools-compared/best-ai-powered-platform-engineering-tools-for-developer-sel/)
 - [InVideo AI vs Pictory AI: Video Maker Comparison for Developers](/ai-tools-compared/invideo-ai-vs-pictory-ai-video-maker/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -272,6 +272,4 @@ Building features from product requirements documents doesn't have to be a painf
 - [Effective Workflow for Using AI to Generate and Maintain.](/ai-tools-compared/effective-workflow-for-using-ai-to-generate-and-maintain-changelog-documentation/)
 - [Writing Effective System Prompts for AI Coding.](/ai-tools-compared/writing-effective-system-prompts-for-ai-coding-assistants-th/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

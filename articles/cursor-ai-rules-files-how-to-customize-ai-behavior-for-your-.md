@@ -267,12 +267,12 @@ export const useProductStore = create<ProductState>((set) => ({
 ## Folder Structure
 ```
 src/
-├── routes/          # Express route handlers
-├── services/        # Business logic
-├── models/          # Prisma models (schema.prisma)
-├── middleware/      # Express middleware
-├── utils/           # Helpers
-└── tests/           # Test files
+├── routes/ # Express route handlers
+├── services/ # Business logic
+├── models/ # Prisma models (schema.prisma)
+├── middleware/ # Express middleware
+├── utils/ # Helpers
+└── tests/ # Test files
 ```
 
 ## Naming Rules
@@ -439,7 +439,5 @@ Cursor applies all rules, letting the developer choose context through comments 
 - [How to Migrate WindSurf AI Rules to Cursor.cursorrules Format](/ai-tools-compared/migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/)
 - [Configuring Cursor AI Notepads for Reusable Project Context.](/ai-tools-compared/configuring-cursor-ai-notepads-for-reusable-project-context-/)
 - [Best AI for Analyzing Parquet Files and Generating.](/ai-tools-compared/best-ai-for-analyzing-parquet-files-and-generating-summary-s/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

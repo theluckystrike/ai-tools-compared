@@ -36,7 +36,7 @@ OpenAI charges for fine-tuning based on the number of tokens in your training da
 
 - GPT-4o Mini Fine-tuning: $1.00 per 1M training tokens
 
-- GPT-4o Fine-tuning: $3.00 per 1M training tokens 
+- GPT-4o Fine-tuning: $3.00 per 1M training tokens
 
 - GPT-4 Turbo Fine-tuning: $2.70 per 1M training tokens
 
@@ -330,7 +330,5 @@ Monitor your fine-tuning job and test the results before deploying to production
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 - [Claude vs ChatGPT for API Comparison](/ai-tools-compared/claude-vs-chatgpt-api-comparison/)
 - [Best AI Tools for Cost Optimization](/ai-tools-compared/best-ai-tools-cloud-cost-optimization/)
-
-Built by theluckystrike — More at zovo.one
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -21,7 +21,7 @@ AI coding assistants significantly accelerate SPI flash external memory driver d
 
 SPI flash drivers must handle several critical components. The driver needs correct SPI peripheral configuration including clock polarity, phase, and bit order. You need chip select (CS) line management with proper timing. Page program operations require understanding of write enable sequences and busy-wait polling. Finally, sector and chip erase commands must follow manufacturer specifications.
 
-A robust driver also handles error conditions, implements timeouts for long operations, and provides a clean API for upper-layer code. Writing this from scratch requires careful attention to datasheet specifications.
+A strong driver also handles error conditions, implements timeouts for long operations, and provides a clean API for upper-layer code. Writing this from scratch requires careful attention to datasheet specifications.
 
 ## How AI Tools Generate SPI Flash Driver Code
 
@@ -378,7 +378,7 @@ For production drivers, always:
 2. Ask for error handling and timeout protection
 3. Test generated code on actual hardware before deployment
 4. Review the generated code against manufacturer specifications
-5. Add comprehensive comments explaining timing-critical sections
+5. Add comments explaining timing-critical sections
 
 AI tools work well for generating boilerplate code, SPI configuration, and standard read/write operations. For specialized requirements like quad-SPI, DMA chains, or power management, provide explicit specifications to ensure quality output.
 

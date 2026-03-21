@@ -312,7 +312,5 @@ The time invested in configuring CursorRules properly pays dividends through imp
 - [How to Configure Cursor AI Rules for Consistent CSS and.](/ai-tools-compared/how-to-configure-cursor-ai-rules-for-consistent-css-and-tail/)
 - [How to Configure AI Coding Tools to Exclude Secrets and.](/ai-tools-compared/how-to-configure-ai-coding-tools-to-exclude-secrets-and-env-/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

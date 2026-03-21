@@ -317,7 +317,5 @@ For most teams, Claude provides the best balance of code quality and explanation
 - [Best AI Assistant for Writing Pandas Code to Process.](/ai-tools-compared/best-ai-assistant-for-writing-pandas-code-to-process-nested-json-api-pagination/)
 - [Which AI Is Better for Writing Playwright End-to-End.](/ai-tools-compared/which-ai-is-better-for-writing-playwright-end-to-end-tests-2/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

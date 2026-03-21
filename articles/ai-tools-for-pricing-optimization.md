@@ -368,6 +368,4 @@ The best choice depends on your specific requirements: e-commerce platforms have
 - [Best AI Tools for Competitor Analysis](/ai-tools-compared/best-ai-tools-for-competitor-analysis/)
 - [AI Tools for Education Student Support](/ai-tools-compared/ai-tools-for-education-student-support/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

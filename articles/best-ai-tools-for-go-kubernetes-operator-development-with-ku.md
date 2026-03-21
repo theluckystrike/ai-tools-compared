@@ -228,7 +228,5 @@ However, it may not fully understand Kubebuilder-specific annotations and marker
 - [Best AI Tools for Go Error Wrapping and Sentinel Error.](/ai-tools-compared/best-ai-tools-for-go-error-wrapping-and-sentinel-error-patte/)
 - [Which AI Generates Better Go Goroutine Patterns for.](/ai-tools-compared/which-ai-generates-better-go-goroutine-patterns-for-concurre/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

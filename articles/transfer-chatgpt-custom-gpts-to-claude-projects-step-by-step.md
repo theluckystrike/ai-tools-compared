@@ -276,6 +276,4 @@ This script automates the folder creation and file copying, letting you focus on
 - [How to Transfer Claude Project Knowledge to ChatGPT Custom GPT](/ai-tools-compared/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-gpt/)
 - [How to Move ChatGPT Team Workspace Data to Claude Team](/ai-tools-compared/how-to-move-chatgpt-team-workspace-data-to-claude-team/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

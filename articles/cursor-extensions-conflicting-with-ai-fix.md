@@ -391,7 +391,5 @@ If conflicts persist after trying all diagnostic steps:
 - [Cursor Composer Stuck in Loop: How to Fix](/ai-tools-compared/cursor-composer-stuck-in-loop-how-to-fix/)
 - [Cursor AI Making Too Many API Calls Fix: Troubleshooting.](/ai-tools-compared/cursor-ai-making-too-many-api-calls-fix/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
