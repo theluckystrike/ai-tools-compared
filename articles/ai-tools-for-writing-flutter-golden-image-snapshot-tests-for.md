@@ -1,11 +1,16 @@
 ---
+
 layout: default
 title: "AI Tools for Writing Flutter Golden Image Snapshot Tests for Widget Regression"
 description: "Discover how AI-powered tools can help you write and maintain Flutter golden image snapshot tests to catch widget regressions effectively."
 date: 2026-03-21
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /ai-tools-for-writing-flutter-golden-image-snapshot-tests-for/
+reviewed: true
+score: 8
+categories: [guides]
 ---
+
 
 {% raw %}
 
