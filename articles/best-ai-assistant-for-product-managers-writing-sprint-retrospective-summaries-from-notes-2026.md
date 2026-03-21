@@ -9,7 +9,7 @@ permalink: /best-ai-assistant-for-product-managers-writing-sprint-retrospective-
 categories: [guides]
 tags: [ai-tools-compared, product-management, ai-tools, best-of, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
