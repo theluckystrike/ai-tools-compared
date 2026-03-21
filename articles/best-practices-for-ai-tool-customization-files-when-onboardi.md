@@ -75,11 +75,9 @@ temperature: 0.7
 max_tokens: 2000
 
 # config/user overrides
-{% raw %}
 {% if user.preferences.temperature %}
 temperature: {{ user.preferences.temperature }}
 {% endif %}
-{% endraw %}
 ```
 
 

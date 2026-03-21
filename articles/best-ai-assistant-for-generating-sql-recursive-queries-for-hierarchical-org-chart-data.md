@@ -398,7 +398,6 @@ WHERE manager_id = id;  -- Circular reference found
 These diagnostic queries help data quality teams fix issues before they break recursive queries.
 
 
-{% endraw %}
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)

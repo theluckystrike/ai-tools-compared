@@ -373,7 +373,6 @@ Before deploying table tests to production CI/CD pipelines, ensure AI-generated 
 
 The combination of AI-generated scaffolding and human review produces the most reliable test suites. Use AI assistants to accelerate initial test creation, but invest time in review and refinement to ensure coverage.
 
-{% endraw %}
 
 
 

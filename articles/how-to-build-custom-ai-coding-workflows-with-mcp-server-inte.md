@@ -15,7 +15,6 @@ voice-checked: true
 ---
 
 {% raw %}
-{% raw %}
 Build custom AI coding workflows by creating MCP servers that expose your proprietary tools, database queries, or domain knowledge to Claude, then integrate into your IDE. This guide shows step-by-step how to create a basic MCP server and wire it into your coding assistant.
 
 
@@ -252,7 +251,6 @@ class WorkflowLibrary:
 
 This modular approach lets you assemble sophisticated automation pipelines from proven building blocks, reducing maintenance overhead as your AI coding workflows evolve.
 
-{% endraw %}
 
 
 
