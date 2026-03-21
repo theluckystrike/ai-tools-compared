@@ -9,7 +9,7 @@ permalink: /chatgpt-api-assistants-api-pricing-threads-and-runs-cost-breakdown/
 categories: [guides]
 tags: [ai-tools-compared, tools, chatgpt, api]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
