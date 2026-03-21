@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Assistants for Creating Security Architecture Review."
+title: "AI Assistants for Creating Security Architecture Review"
 description: "Learn how AI assistants can help automate security architecture reviews by analyzing your codebase and generating documentation"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -11,6 +11,7 @@ score: 9
 voice-checked: true
 categories: [guides]
 tags: [ai-tools-compared, security, artificial-intelligence]
+
 ---
 
 

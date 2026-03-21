@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Switch AI Coding Providers Without Disrupting."
+title: "How to Switch AI Coding Providers Without Disrupting"
 description: "A practical guide for developers on migrating between AI coding assistants while maintaining your team's sprint velocity and productivity"
 date: 2026-03-20
 last_modified_at: 2026-03-20
@@ -12,6 +12,7 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
+
 ---
 
 Switching AI coding providers mid-sprint doesn't have to derail your team. With the right approach, you can migrate from GitHub Copilot to Cursor, Claude Code, or any other AI coding assistant while maintaining—or even improving—your sprint velocity. This guide covers practical strategies to make the transition seamless for developers and power users.

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Switching from GPT-4o to Claude Sonnet for Code Review."
+title: "Switching from GPT-4o to Claude Sonnet for Code Review"
 description: "If you have been using GPT-4o for code review and are considering switching to Claude Sonnet, you likely want to know whether the transition will actually"
 date: 2026-03-20
 last_modified_at: 2026-03-20
@@ -11,6 +11,7 @@ score: 9
 voice-checked: true
 categories: [guides]
 tags: [ai-tools-compared, claude-ai]
+
 ---
 
 

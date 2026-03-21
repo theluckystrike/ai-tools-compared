@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Migrating from ChatGPT Plugins to Claude MCP Tools for."
+title: "Migrating from ChatGPT Plugins to Claude MCP Tools"
 description: "Migrating from ChatGPT Plugins to Claude MCP tools represents a significant shift in how you integrate AI capabilities into your development workflow. While"
 date: 2026-03-20
 last_modified_at: 2026-03-20
@@ -11,6 +11,7 @@ score: 9
 voice-checked: true
 categories: [guides]
 tags: [ai-tools-compared, workflow, claude-ai, chatgpt]
+
 ---
 
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Code Documentation Generation 2026."
+title: "AI Tools for Code Documentation Generation 2026"
 description: "Code documentation is the forgotten tax that grows exponentially as teams scale. Manual docstring maintenance kills velocity. This guide compares five AI"
 date: 2026-03-20
 last_modified_at: 2026-03-20
@@ -12,6 +12,7 @@ reviewed: true
 score: 9
 voice-checked: true
 intent-checked: true
+
 ---
 
 {% raw %}

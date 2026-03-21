@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Enterprise AI Coding Tool Network Security Requirements."
+title: "Enterprise AI Coding Tool Network Security Requirements"
 description: "A practical guide to securing AI coding tools in enterprise environments with firewall configuration examples"
 date: 2026-03-20
 last_modified_at: 2026-03-20
@@ -11,6 +11,7 @@ score: 9
 voice-checked: true
 categories: [guides]
 tags: [ai-tools-compared, security, artificial-intelligence]
+
 ---
 
 
