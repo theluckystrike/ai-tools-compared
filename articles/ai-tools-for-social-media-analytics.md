@@ -208,6 +208,115 @@ fig2.show()
 ```
 
 
+## Comparing Managed vs. Self-Built Analytics Tools
+
+
+Developers building social media analytics pipelines face a consistent decision: use a managed SaaS platform or assemble the stack from open-source components. Each approach suits different team sizes and use cases.
+
+| Approach | Setup Time | Monthly Cost | Customization | Scalability |
+|----------|-----------|-------------|---------------|-------------|
+| Hugging Face + Tweepy | Hours | Low (API costs only) | Full | Manual |
+| AWS Comprehend + Kinesis | Days | Medium ($0.0001/unit) | Moderate | Auto |
+| Google Cloud Natural Language | Days | Medium | Moderate | Auto |
+| Brandwatch / Sprout Social | Minutes | High ($500+) | Low | Auto |
+| spaCy + custom pipeline | Days | Low | Full | Manual |
+
+For teams with engineering resources, the self-built approach using Hugging Face models provides the highest accuracy for domain-specific topics and the most flexibility for custom metrics. For marketing teams without engineering support, managed SaaS tools provide immediate value despite the cost premium.
+
+
+## Tracking Trends Over Time with Time-Series Storage
+
+
+Point-in-time sentiment counts are useful, but tracking how sentiment evolves in response to events is where analytics becomes genuinely actionable. Storing results in a time-series database enables trend analysis.
+
+A lightweight approach using SQLite works well for datasets under a few million records:
+
+```python
+import sqlite3
+from datetime import datetime
+
+def store_analytics_results(analyzed_tweets: list, db_path: str = "analytics.db"):
+    """Store tweet analytics in SQLite for trend analysis."""
+    conn = sqlite3.connect(db_path)
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS tweet_sentiment (
+            tweet_id TEXT PRIMARY KEY,
+            collected_at TEXT,
+            sentiment_label TEXT,
+            sentiment_score REAL,
+            engagement INTEGER
+        )
+    """)
+
+    rows = [
+        (
+            tweet['id'],
+            datetime.utcnow().isoformat(),
+            tweet['sentiment']['label'],
+            tweet['sentiment']['score'],
+            tweet['metrics'].get('like_count', 0) + tweet['metrics'].get('retweet_count', 0)
+        )
+        for tweet in analyzed_tweets
+    ]
+
+    conn.executemany(
+        "INSERT OR IGNORE INTO tweet_sentiment VALUES (?, ?, ?, ?, ?)",
+        rows
+    )
+    conn.commit()
+    conn.close()
+```
+
+Running this collection on a schedule—hourly for high-velocity topics, daily for slower-moving discussions—builds a dataset that reveals sentiment shifts correlating with news events, product launches, or competitor announcements.
+
+For production workloads processing millions of records, InfluxDB or TimescaleDB handle the time-series query patterns more efficiently than SQLite.
+
+
+## Topic Modeling for Uncovering Conversation Themes
+
+
+Sentiment tells you how people feel; topic modeling tells you what they are talking about. Combining both produces a more complete picture of the conversation landscape around your brand or subject area.
+
+Latent Dirichlet Allocation (LDA) is the classic approach, but BERTopic produces substantially better topic coherence on short social media texts. BERTopic uses sentence transformers to embed documents into a semantic space before clustering, which means it handles the fragmented, abbreviated style of tweets more gracefully than LDA.
+
+```python
+from bertopic import BERTopic
+from sentence_transformers import SentenceTransformer
+
+def extract_topics(texts: list, n_topics: int = 10):
+    """Extract topics from a list of social media texts."""
+    embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
+    topic_model = BERTopic(
+        embedding_model=embedding_model,
+        nr_topics=n_topics,
+        min_topic_size=5
+    )
+
+    topics, probs = topic_model.fit_transform(texts)
+
+    topic_info = topic_model.get_topic_info()
+    return topic_model, topics, topic_info
+
+texts = [tweet['text'] for tweet in analyzed_tweets]
+topic_model, topics, topic_info = extract_topics(texts)
+print(topic_info[['Topic', 'Count', 'Name']].head(10))
+```
+
+Running this on a corpus of tweets about a product launch reveals which specific aspects of the launch are generating the most discussion—pricing, features, comparison to competitors, or shipping delays—without requiring you to define those categories in advance.
+
+
+## Using AI Writing Assistants to Summarize Analytics Findings
+
+
+After generating quantitative analytics results, translating the numbers into readable summaries is a time-consuming task that AI writing tools handle well.
+
+Provide the raw numbers to a conversational AI tool and ask for a brief summary. A prompt structured as "Here are the sentiment counts and top NER entities from 500 tweets about [topic] collected over the past 48 hours: [data]. Write a 3-paragraph executive summary highlighting the key trends and any anomalies" produces a summary that a non-technical stakeholder can act on immediately.
+
+Claude.ai and ChatGPT both handle this summarization task effectively. For automated pipelines that generate reports on a schedule, the OpenAI API or Anthropic's Claude API can be integrated directly into the reporting step, producing summaries without manual intervention.
+
+This combination—local Python pipeline for data collection and NLP, cloud AI API for narrative summarization—gives you the accuracy of specialized models with the communication quality of large language models, at a reasonable combined cost.
+
+
 ## Practical Considerations for Production Systems
 
 
