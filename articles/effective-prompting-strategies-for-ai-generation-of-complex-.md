@@ -15,7 +15,6 @@ voice-checked: true
 ---
 
 {% raw %}
-{% raw %}
 Writing SQL queries with AI requires prompting strategies that specify your database schema, expected query patterns, and performance constraints upfront. This guide demonstrates which prompt structures, examples, and follow-up questions produce correct, optimized SQL across complex joins, aggregations, and window functions.
 
 
@@ -322,5 +321,4 @@ This produces a well-structured, validated query that you can confidently deploy
 - [Effective Strategies for AI Assisted Debugging of](/ai-tools-compared/effective-strategies-for-ai-assisted-debugging-of-intermittent-failures/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
 {% endraw %}

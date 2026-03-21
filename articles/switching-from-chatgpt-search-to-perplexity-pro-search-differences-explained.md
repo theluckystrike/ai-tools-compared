@@ -15,7 +15,6 @@ tags: [ai-tools-compared, chatgpt]
 ---
 
 {% raw %}
-{% raw %}
 
 
 
@@ -360,7 +359,6 @@ Is privacy critical for your searches?
 
 Follow the "yes" path majority voting. If Perplexity wins most questions, start there. If ChatGPT wins most, commit to ChatGPT.
 
-{% endraw %}
 
 
 
