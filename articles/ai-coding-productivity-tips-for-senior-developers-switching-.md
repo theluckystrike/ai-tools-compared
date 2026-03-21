@@ -9,7 +9,7 @@ permalink: /ai-coding-productivity-tips-for-senior-developers-switching-/
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence, productivity]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
