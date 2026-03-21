@@ -54,6 +54,9 @@ To change your model in Cursor:
 ```
 
 
+You can also switch models inline during a chat session by clicking the model name shown at the top of the Composer or Chat panel. This allows rapid switching without navigating to settings—useful when you realize mid-conversation that a different model would handle the next step better.
+
+
 ## Cost Implications: What You Need to Know
 
 
@@ -64,15 +67,10 @@ Cursor AI's pricing model treats different AI providers differently. The cost st
 
 
 | Plan | Claude Models | GPT Models | Monthly Cost |
-
 |------|---------------|------------|---------------|
-
 | Free | Limited (50 credits) | Limited (200 credits) | $0 |
-
 | Pro | Full access | Full access | $19/month |
-
 | Business | Full access + team features | Full access + team features | $39/user/month |
-
 
 When you switch from Claude to GPT models (or vice versa), you consume credits from your subscription allocation. Each model has different token pricing, which Cursor normalizes into credits.
 
@@ -101,6 +99,15 @@ def calculate_cost(model, input_tokens, output_tokens):
 For example, a 2,000-token conversation using Claude 3.5 Sonnet costs approximately 2 credits. The same conversation with GPT-4o costs about 3 credits under Cursor's normalization.
 
 
+### Understanding the "Fast Request" vs. "Slow Request" System
+
+
+Cursor's credit system distinguishes between fast and slow requests. Fast requests use a fixed credit allocation and process quickly. Slow requests queue during high-traffic periods but do not consume extra credits. On the Pro plan, you receive 500 fast requests per month and unlimited slow requests for certain models.
+
+
+When you switch to a premium model like Claude 3 Opus or GPT-4, each request counts as a fast request regardless of response time. Budget-conscious developers use slower, cheaper models for exploratory conversations and switch to premium models only for critical tasks like architectural decisions or complex debugging sessions.
+
+
 ## Practical Switching Strategies
 
 
@@ -121,6 +128,8 @@ Claude excels at understanding codebase context, maintaining long conversations,
 
 - Handling multi-file edits
 
+- Explaining unfamiliar patterns or architectures
+
 
 ```javascript
 // Claude handles this multi-file refactoring efficiently
@@ -134,6 +143,9 @@ function processUserData(users) {
     .reduce(aggregateStats, {});
 }
 ```
+
+
+Claude's extended context window makes it particularly strong for tasks that require holding many files in mind simultaneously. When you ask Claude to refactor a module while keeping it consistent with interfaces defined in three other files, it handles the cross-file reasoning more reliably than models with smaller effective context windows.
 
 
 ### GPT Models for Speed
@@ -150,6 +162,8 @@ GPT-4o offers faster response times for straightforward tasks. Switch to GPT whe
 
 - Fast iteration during prototyping
 
+- Shell one-liners or quick regex patterns
+
 
 ```python
 # GPT-4o excels at rapid boilerplate generation
@@ -161,6 +175,21 @@ app = FastAPI()
 async def get_user(user_id: int):
     return {"id": user_id, "name": "Sample User"}
 ```
+
+
+### Model Comparison for Common Tasks
+
+
+| Task | Recommended Model | Reason |
+|------|-------------------|--------|
+| Multi-file refactoring | Claude 3.5 Sonnet | Better cross-file consistency |
+| Boilerplate generation | GPT-4o | Faster, lower cost |
+| Complex debugging | Claude 3.5 Sonnet | Better reasoning chains |
+| SQL query writing | GPT-4o | Fast and accurate for standard queries |
+| Architecture discussions | Claude 3 Opus | Best reasoning for trade-offs |
+| Unit test generation | Claude 3.5 Sonnet | More thorough edge case coverage |
+| Documentation | GPT-4o | Clear, concise output at lower cost |
+| Code review | Claude 3.5 Sonnet | More nuanced feedback |
 
 
 ## Managing Costs Effectively
@@ -192,6 +221,29 @@ To minimize unexpected charges while maximizing AI assistance:
 **Use the appropriate model for the task.** Don't use premium models for simple autocomplete suggestions when faster, cheaper alternatives suffice.
 
 
+**Leverage GPT-4o-mini for context building.** When you need to establish context at the start of a long conversation—pasting in files, explaining the codebase structure—use a cheaper model for the initial context-loading messages before switching to a more capable model for the actual reasoning task.
+
+
+**Set a session budget.** Before starting a major coding session, decide how many credits you're willing to spend and track usage against that budget. Premium model requests add up quickly during extended debugging sessions.
+
+
+## Bring Your Own API Key (BYOK)
+
+
+Cursor supports connecting your own OpenAI or Anthropic API keys. This approach bypasses Cursor's credit system entirely and bills you directly at provider rates.
+
+
+To configure BYOK in Cursor:
+
+1. Open Settings > Models
+2. Enable "Use OpenAI API Key" or "Use Anthropic API Key"
+3. Paste your API key from the provider dashboard
+4. Select which models to use your own key for
+
+
+BYOK makes financial sense for teams with high usage volumes and existing enterprise API agreements. At scale, direct API pricing can be 30-50% cheaper than equivalent Cursor Pro credit consumption for high-volume use cases. However, BYOK removes access to Cursor-specific optimizations like prompt caching and request batching that the platform handles automatically.
+
+
 ## Common Questions
 
 
@@ -202,6 +254,12 @@ To minimize unexpected charges while maximizing AI assistance:
 
 
 **What happens when I run out of credits?** Cursor notifies you when credits are depleted. You can upgrade your plan or wait for the next billing cycle's allocation.
+
+
+**Do context messages from previous responses count toward token costs?** Yes. In Cursor's chat mode, the full conversation history is included in each new request. Long conversations consume significantly more tokens per message than short ones. Starting a new chat session when switching to a completely different topic saves credits by discarding irrelevant context.
+
+
+**Is there a model that's best for the free tier?** GPT-4o-mini and Claude Haiku (when available) consume far fewer credits than their premium counterparts, making them the most sustainable choices on the free tier's 200-credit monthly limit.
 
 
 ## Making the Switch
