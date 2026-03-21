@@ -445,4 +445,9 @@ For a typical infrastructure project (5 stacks, ~1000 lines total):
 
 Most teams find combined approach optimal: Cursor for daily editing, Claude for complex designs, Copilot as fallback.
 
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
