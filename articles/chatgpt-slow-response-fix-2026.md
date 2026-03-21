@@ -45,6 +45,22 @@ speedtest-cli
 High latency or packet loss suggests network issues. If your connection appears stable but responses remain slow, the problem likely lies in account-level rate limits or client configuration.
 
 
+### Quick Diagnostic Checklist
+
+
+Use this checklist to narrow the root cause before applying specific fixes:
+
+- [ ] OpenAI status page shows no active incidents
+- [ ] Ping to api.openai.com returns under 100ms consistently
+- [ ] API dashboard shows TPM and RPM usage below 80% of tier limits
+- [ ] Browser console shows no JavaScript errors on chat.openai.com
+- [ ] No VPN or proxy routing traffic through distant servers
+- [ ] Browser extensions are not blocking network requests
+
+
+If you can check off all items and slowness persists, you are likely hitting server-side capacity constraints during peak hours. The fixes in subsequent sections address each failure point.
+
+
 ## Fixing Network-Related Slowdowns
 
 
@@ -91,10 +107,16 @@ for chunk in stream:
 ```
 
 
+Streaming is particularly effective for long responses. Instead of a 15-second wait for a 2,000-token completion, users see the first tokens appear within 300-500ms and the response builds progressively. This dramatically improves perceived performance even when total generation time is unchanged.
+
+
 ### Optimizing VPN and Proxy Settings
 
 
 If you use a VPN or corporate proxy, test connections with and without it. Some VPN routes introduce significant latency. Try connecting to different server locations closer to OpenAI's data centers, which primarily operate from US-based infrastructure.
+
+
+For corporate proxies, check whether the proxy applies deep packet inspection or content filtering that adds processing overhead to each request. Some organizations route AI API traffic through security scanners that add 200-500ms per request. Requesting an exemption for api.openai.com from DPI scanning typically resolves this category of slowdown.
 
 
 ## Resolving Rate Limit Constraints
@@ -143,6 +165,17 @@ def chat_with_retry(client, messages, max_retries=3):
 ```
 
 
+### Reducing Token Usage Per Request
+
+
+Rate limits apply to both requests-per-minute and tokens-per-minute. Large context windows consume TPM budget rapidly. Reduce token consumption by:
+
+
+- Trimming conversation history to keep only the last 4-6 exchanges rather than sending the full chat history
+- Compressing system prompts — verbose instructions consume tokens that count against your limit without improving output quality
+- Setting `max_tokens` explicitly to prevent runaway completions from consuming your budget for subsequent requests
+
+
 ## Optimizing Web Interface Performance
 
 
@@ -174,13 +207,13 @@ Certain extensions, particularly ad blockers and script blockers, interfere with
 3. Reload ChatGPT and test response speed
 
 
-Re-enable extensions one by one to identify problematic ones.
+Re-enable extensions one by one to identify problematic ones. Privacy Badger, uBlock Origin, and certain corporate security extensions are common culprits because they intercept WebSocket connections that ChatGPT uses for streaming responses.
 
 
 ### Ensuring Adequate System Resources
 
 
-Browser tabs consume significant memory. Close unnecessary tabs and ensure your system has adequate RAM available. Chrome's task manager (Shift+Esc) shows per-tab resource consumption.
+Browser tabs consume significant memory. Close unnecessary tabs and ensure your system has adequate RAM available. Chrome's task manager (Shift+Esc) shows per-tab resource consumption. If ChatGPT's tab is consuming more than 500MB of memory, clearing site data for chat.openai.com and reloading typically resolves runaway memory usage.
 
 
 ## API Configuration for Production Systems
@@ -238,6 +271,40 @@ def get_response(messages):
 ```
 
 
+For production deployments, replace the in-memory dict with Redis. Set TTL values based on how frequently your content changes — FAQ answers might cache for 24 hours while news summaries should cache for 15 minutes at most.
+
+
+### Parallel Request Batching
+
+
+When processing multiple independent prompts, run them in parallel rather than sequentially. Python's `asyncio` and `httpx` make this straightforward with the async OpenAI client:
+
+
+```python
+import asyncio
+from openai import AsyncOpenAI
+
+async_client = AsyncOpenAI(api_key="your-api-key")
+
+async def process_prompts(prompts: list[str]) -> list[str]:
+    tasks = [
+        async_client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=[{"role": "user", "content": p}]
+        )
+        for p in prompts
+    ]
+    results = await asyncio.gather(*tasks)
+    return [r.choices[0].message.content for r in results]
+
+# 10 prompts run in parallel instead of sequentially
+responses = asyncio.run(process_prompts(prompt_list))
+```
+
+
+This pattern reduces wall-clock time for batch workloads by the number of concurrent requests, bounded by your RPM limit.
+
+
 ## Monitoring and Maintenance
 
 
@@ -262,7 +329,7 @@ def timed_request(messages):
 ```
 
 
-Review your logs weekly to identify recurring slowdowns. Correlate these with OpenAI incident reports to distinguish between local and server-side issues.
+Review your logs weekly to identify recurring slowdowns. Correlate these with OpenAI incident reports to distinguish between local and server-side issues. Teams that track p50, p90, and p99 latency over time often discover that most slowdowns cluster around specific time windows — typically US business hours — and can schedule non-urgent batch jobs for off-peak periods to avoid contention.
 
 
 ## Related Articles
