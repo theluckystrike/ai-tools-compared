@@ -24,6 +24,9 @@ Choose Claude for production-ready Go goroutine patterns -- it consistently gene
 I evaluated four major AI coding assistants—Claude (Anthropic), ChatGPT (OpenAI), Gemini (Google), and GitHub Copilot—across three realistic concurrent API scenarios: a worker pool pattern, context-aware cancellation, and error propagation across goroutines. Each test examined correctness, Go idioms, resource management, and documentation clarity.
 
 
+All prompts were identical across tools: plain English descriptions of the concurrency requirement with no sample code provided. This tests each tool's ability to generate idiomatic Go from a specification, which is the most common real-world use case.
+
+
 ## Scenario 1: Worker Pool with Result Aggregation
 
 
@@ -219,28 +222,94 @@ ChatGPT attempted a similar approach but used an unbuffered error channel, which
 GitHub Copilot generated functional code but without proper synchronization, creating potential race conditions on shared slice access.
 
 
+## Scenario 4: Bounded Concurrency with Semaphore
+
+
+A fourth scenario tested bounded concurrency—limiting the number of goroutines executing simultaneously, a critical pattern for services calling external APIs with rate limits.
+
+
+Claude generated a clean semaphore-based approach:
+
+
+```go
+func ProcessWithConcurrencyLimit(ctx context.Context, items []Item, maxConcurrent int) ([]Result, error) {
+    sem := make(chan struct{}, maxConcurrent)
+    results := make(chan Result, len(items))
+    var wg sync.WaitGroup
+
+    for _, item := range items {
+        wg.Add(1)
+        go func(i Item) {
+            defer wg.Done()
+            sem <- struct{}{}        // acquire
+            defer func() { <-sem }() // release
+
+            select {
+            case <-ctx.Done():
+                results <- Result{Err: ctx.Err()}
+                return
+            default:
+                data, err := process(ctx, i)
+                results <- Result{Data: data, Err: err}
+            }
+        }(item)
+    }
+
+    go func() {
+        wg.Wait()
+        close(results)
+    }()
+
+    return collectResults(results)
+}
+```
+
+
+This pattern correctly uses a buffered channel as a semaphore. The `defer func() { <-sem }()` pattern releases the semaphore even if `process` panics. ChatGPT produced a functionally similar pattern but placed the semaphore acquire outside the goroutine—serializing goroutine creation rather than goroutine execution, which defeats the purpose at high item counts.
+
+
 ## Key Findings Summary
 
 
 | Criterion | Claude | ChatGPT | Gemini | Copilot |
-
 |-----------|--------|---------|--------|---------|
-
 | Goroutine Safety | Excellent | Good | Fair | Fair |
-
 | Context Handling | Excellent | Good | Poor | Fair |
-
 | Error Propagation | Excellent | Good | Fair | Fair |
-
 | Idiom Correctness | Excellent | Good | Fair | Good |
-
+| Bounded Concurrency | Excellent | Fair | Poor | Fair |
 | Documentation | Good | Good | Fair | Poor |
+| Race Condition Prevention | Excellent | Good | Fair | Fair |
+
+
+## Common Goroutine Mistakes AI Tools Make
+
+
+Understanding what AI tools get wrong helps you review generated code more effectively:
+
+
+**Closure variable capture:** The classic loop variable capture bug where goroutines reference the loop index rather than a captured copy. Claude and ChatGPT both handle this correctly on most prompts. Copilot sometimes generates the buggy version, especially in shorter prompts without explicit loop patterns.
+
+
+**Unbuffered channels in concurrent writes:** If N goroutines write to a channel and the reader starts later, an unbuffered channel blocks all goroutines until someone reads. Always use `make(chan T, n)` where n is the maximum number of concurrent writers.
+
+
+**Missing defer for channel close:** Forgetting to close channels prevents `for range` loops from terminating. Claude consistently uses the goroutine-plus-WaitGroup pattern to close channels safely. Gemini sometimes omits the close entirely.
+
+
+**Context propagation gaps:** Launching goroutines but not passing context through to blocking calls defeats cancellation. Look for HTTP client calls, database queries, or external service calls inside goroutines that don't receive the context argument.
 
 
 ## Recommendations
 
 
-When using AI-generated concurrency code, always verify: channel buffer sizes are appropriate, context is propagated correctly, goroutine lifecycle matches request lifecycle, and errors are collected without being dropped. AI assists the coding process, but human review for concurrent code remains essential.
+When using AI-generated concurrency code, always verify: channel buffer sizes are appropriate for the number of concurrent writers, context is propagated correctly to all blocking operations, goroutine lifecycle matches request lifecycle (no goroutine outlives the request that spawned it), and errors are collected without being dropped.
+
+
+Run `go test -race ./...` on any AI-generated concurrent code before integrating it. The race detector catches issues that code review misses, including subtle channel access patterns that appear correct but contain timing-dependent bugs.
+
+
+AI assists the coding process significantly for goroutine patterns, but human review for concurrent code remains essential. Use Claude as your starting point, run the race detector, and add context propagation if the generated code omits it.
 
 
 ## Related Articles
