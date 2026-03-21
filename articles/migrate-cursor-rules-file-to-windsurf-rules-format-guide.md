@@ -39,14 +39,29 @@ Before migrating, locate all your Cursor rules files. They typically appear in t
 
 
 - Project-level: `.cursor/rules/` directory in your project root
-
 - Workspace-level: Stored in Cursor's settings under the rules section
-
 - Custom rule files you have created manually
 
 
 
 Review each file and note the types of rules you have defined. Common rule categories include code style preferences, framework-specific guidelines, testing requirements, and documentation standards.
+
+
+
+## Format Differences at a Glance
+
+Before diving into conversion, understanding the structural differences saves time.
+
+| Aspect | Cursor | Windsurf |
+|---|---|---|
+| Primary format | Markdown-style plain text | YAML |
+| File location | `.cursor/rules/*.md` or `.cursorrules` | `.windsurfrules` |
+| Instruction style | Free-form prose and bullet points | Structured key-value pairs |
+| Framework rules | Inline text descriptions | Nested YAML sections |
+| Conditional logic | Not supported natively | Supported via `conditions:` |
+| Code examples | Inline markdown | Referenced external files |
+
+The key insight is that Cursor rules are intentionally informal — they read like instructions written to a human. Windsurf rules are more structured, resembling a configuration file. This means migration involves converting prose instructions into discrete YAML keys.
 
 
 
@@ -89,11 +104,11 @@ rules:
     typescript: true
     react_preference: functional
     naming_convention: camelCase
-  
+
   testing:
     framework: jest
     min_coverage: 80
-  
+
   documentation:
     use_jsdoc: true
     include_examples: true
@@ -164,25 +179,15 @@ rules:
 
 Follow these steps to migrate your rules:
 
+1. **Export your Cursor rules:** Open Cursor settings and navigate to the rules section. Export all custom rules you have created or modified.
 
+2. **Categorize each rule:** Group your rules by type — code style, testing, documentation, file organization, or framework-specific.
 
-1. Export your Cursor rules: Open Cursor settings and navigate to the rules section. Export all custom rules you have created or modified.
+3. **Create Windsurf config file:** In your project root, create or edit the Windsurf configuration file (typically `.windsurfrules` or defined in Windsurf settings).
 
+4. **Convert each rule category:** Use the conversion examples above as templates. Adjust values to match your original intent.
 
-
-2. Categorize each rule: Group your rules by type—code style, testing, documentation, file organization, or framework-specific.
-
-
-
-3. Create Windsurf config file: In your project root, create or edit the Windsurf configuration file (typically `.windsurfrules` or defined in Windsurf settings).
-
-
-
-4. Convert each rule category: Use the conversion examples above as templates. Adjust values to match your original intent.
-
-
-
-5. Test the migrated rules: Start Windsurf and verify that your rules are being applied correctly. Make adjustments as needed.
+5. **Test the migrated rules:** Start Windsurf and verify that your rules are being applied correctly. Make adjustments as needed.
 
 
 
@@ -194,7 +199,7 @@ Follow these steps to migrate your rules:
 
 
 
-Cursor rules often include inline code examples. Windsurf handles these differently—you may need to reference external files or adjust how examples are specified:
+Cursor rules often include inline code examples. Windsurf handles these differently — you may need to reference external files or adjust how examples are specified:
 
 
 
@@ -230,25 +235,95 @@ rules:
 ```
 
 
+### Prose Instructions That Cannot Be Directly Mapped
+
+Some Cursor rules are inherently conversational and do not map cleanly to YAML keys. For example:
+
+```
+When writing API route handlers, always validate request body shape
+using Zod before processing. Return 422 with a descriptive error
+message if validation fails.
+```
+
+Windsurf handles this through a `behavior:` or `custom_instructions:` block as free-form text:
+
+```yaml
+rules:
+  custom_instructions: |
+    When writing API route handlers, always validate request body shape
+    using Zod before processing. Return 422 with a descriptive error
+    message if validation fails.
+```
+
+Keep prose instructions concise — Windsurf's AI interprets them similarly to how Cursor does, but overly long instructions can produce inconsistent results.
+
+
+
+## Working with Global vs. Project-Level Rules
+
+Both Cursor and Windsurf support two scopes of rules: global (applied to all projects) and project-level (applied only to the current project).
+
+**Cursor:** Global rules live in Cursor's settings UI. Project rules live in `.cursor/rules/` or `.cursorrules` at the project root.
+
+**Windsurf:** Global rules are configured in Windsurf's preferences. Project rules go in `.windsurfrules` at the project root.
+
+When migrating, identify which of your Cursor rules are project-specific versus team-wide conventions. Project-specific rules go into `.windsurfrules`. Team-wide conventions should be set globally in Windsurf preferences or committed to a shared configuration repository.
+
+
+
 ## Verifying Your Migration
 
 
 
 After converting your rules, verify they work correctly in Windsurf:
 
-
-
 - Create a new file and check if code style rules apply
-
 - Run your test suite to confirm testing rules are followed
-
 - Generate documentation to ensure docstring requirements are met
-
 - Ask Windsurf to explain its understanding of your rules
 
-
-
 If something does not work as expected, check the Windsurf documentation for the latest configuration options, as both tools regularly update their rules systems.
+
+A useful verification prompt to give Windsurf after setting up your rules: "Summarize the rules you have for this project in bullet points." This confirms Windsurf has parsed your `.windsurfrules` file correctly and is applying the right constraints.
+
+
+
+## Keeping Rules Synchronized During Transition
+
+If your team is gradually migrating from Cursor to Windsurf and some members still use Cursor, maintaining both rule files during the transition period is practical. Keep `.cursorrules` and `.windsurfrules` in sync manually, or write a simple script that reads your canonical rule source and generates both formats.
+
+```bash
+#!/bin/bash
+# Example: generate both rule files from a shared source
+# Not a production-ready script — adapt to your actual rule format
+echo "Generating Cursor rules from shared source..."
+# your conversion logic here
+
+echo "Generating Windsurf rules from shared source..."
+# your conversion logic here
+```
+
+Committing both files to your repository ensures all team members get the correct AI behavior regardless of which editor they use.
+
+
+
+## Frequently Asked Questions
+
+**Do Windsurf rules update automatically when I change `.windsurfrules`?**
+
+Windsurf typically picks up changes to `.windsurfrules` without requiring a restart, but a session refresh may be needed for complex rule changes to take effect.
+
+**Can I import my Cursor rules directly into Windsurf without manual conversion?**
+
+As of 2026, there is no automated import tool. The conversion is manual. However, if you use AI assistance to help with the conversion — paste your `.cursorrules` into Claude or ChatGPT and ask it to convert to Windsurf YAML format — the process takes minutes rather than hours.
+
+**What happens if my `.windsurfrules` has a YAML syntax error?**
+
+Windsurf typically logs an error and falls back to default behavior. Check Windsurf's output panel or logs for parsing errors after editing your rules file.
+
+**Are Windsurf rules shared with Codeium's servers?**
+
+Review Codeium's privacy policy for current details. Project-level rules in `.windsurfrules` are read locally. Whether rule content is transmitted as part of context depends on how Windsurf sends prompts to its backend.
 
 
 
