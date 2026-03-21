@@ -198,6 +198,244 @@ Start with conservative settings and gradually increase assistance until you ide
 With proper configuration, AI autocomplete becomes a helpful colleague who knows when to speak and when to stay quiet—rather than a constant interruption demanding your attention.
 
 
+## The Neuroscience of Distraction in Code Completion
+
+Understanding why ghost text distracts helps you configure effectively. Your brain processes ghost text as:
+
+1. **Visual input:** The semi-transparent text registers as new information
+2. **Decision load:** Your brain must evaluate "is this good, wrong, or partially right?"
+3. **Attention shift:** Reading the suggestion pulls focus from your actual code
+
+This happens milliseconds, but multiply by 50-100 suggestions per coding session and it adds up to measurable cognitive overhead.
+
+Research on autocomplete shows that developers who see suggestions spend 15-20% longer on tasks, not from acceptance but from the evaluation time. The solution isn't always more suggestions—it's better-timed suggestions that require less evaluation.
+
+**Practical implication:** If ghost text appears immediately after you type 2 characters, your brain hasn't formed complete intent yet. You're more likely to critically evaluate the suggestion because you're still thinking. If it appears after 10+ characters, you're further along in thought and more likely to accept or dismiss quickly.
+
+This is why increasing suggestion delay (to 200-300ms) often improves perceived productivity even though the actual time to acceptance increases slightly. Your brain has less frequent decision-making interruptions.
+
+
+## Distraction Profiling: Know Your Specific Issues
+
+Everyone experiences autocomplete distraction differently. Profile yours:
+
+**Visual distraction profile:**
+- Do you find yourself reading every suggestion even when you didn't ask for it?
+- Fix: Reduce ghost text visibility by lowering opacity to 20% instead of 50%
+```json
+{
+  "editor.inlineSuggest.fontOpacity": 0.2
+}
+```
+
+**Decision-making distraction profile:**
+- Do you get stuck evaluating whether suggestions are good enough?
+- Fix: Set strict suggestion length limits and show only 1 suggestion
+```json
+{
+  "github.copilot.inlineSuggest.enable": true,
+  "github.copilot.inlineSuggest.maxSnippetLength": 20,
+  "editor.maxSuggestionsToShow": 1
+}
+```
+
+**Interruption distraction profile:**
+- Do suggestions appear too frequently, breaking your flow?
+- Fix: Increase delay and disable on certain file types
+```json
+{
+  "editor.suggestOnTriggerCharacters": false,
+  "[markdown]": { "editor.inlineSuggest.enabled": false },
+  "[yaml]": { "editor.inlineSuggest.enabled": false }
+}
+```
+
+**False positive distraction profile:**
+- Do suggestions often suggest wrong code for your use case?
+- Fix: Improve context through comments and type hints
+```typescript
+// Instead of: function process(data) {
+// Use: function processUserPaymentData(data: PaymentData): ProcessedPayment {
+```
+
+The more specific your distraction source, the more targeted your fix.
+
+
+## Context Quality for Better Suggestions
+
+The paradox: sometimes better suggestions reduce distraction. If suggestions are 90% relevant, you accept them quickly without evaluation. If they're 30% relevant, you spend time rejecting.
+
+Improve context so suggestions are higher quality:
+
+**Add type hints (TypeScript/Python):**
+```typescript
+// Without types (bad suggestions)
+function process(items) { }
+
+// With types (good suggestions)
+function process(items: ProcessedItem[]): ProcessedItem[] { }
+```
+
+**Write descriptive variable names:**
+```typescript
+// Bad: Suggestions struggle with ambiguous context
+const a = data.map(x => x.p);
+
+// Good: Clear naming guides better suggestions
+const userPrices = userData.map(user => user.price);
+```
+
+**Use explicit constants instead of magic numbers:**
+```typescript
+// Bad: Suggestions can't understand context
+const result = value * 0.75;
+
+// Good: Context is clear
+const DISCOUNT_RATE = 0.75;
+const discountedPrice = originalPrice * DISCOUNT_RATE;
+```
+
+Higher-quality suggestions mean you can afford more frequent triggers without distraction.
+
+
+## Language-Specific Distraction Patterns
+
+Different languages and file types show different distraction levels:
+
+**JavaScript/TypeScript:**
+- Problem: Suggestions often assume global state and common patterns
+- Solution: Disable autocomplete in test files and config files where suggestions are mostly wrong
+```json
+{
+  "[javascript]": { "editor.inlineSuggest.enabled": true },
+  "[typescript]": { "editor.inlineSuggest.enabled": true },
+  "[typescript.jest]": { "editor.inlineSuggest.enabled": false },
+  "[json]": { "editor.inlineSuggest.enabled": false }
+}
+```
+
+**Python:**
+- Problem: Indentation-based syntax makes suggestions fragile
+- Solution: Python works better with explicit acceptance rather than automatic
+```json
+{
+  "[python]": {
+    "editor.inlineSuggest.enabled": true,
+    "editor.inlineSuggest.mode": "subwordSmart"
+  }
+}
+```
+
+**SQL:**
+- Problem: Suggestions often miss your specific table schema
+- Solution: Disable entirely and use chat mode instead
+```json
+{
+  "[sql]": { "editor.inlineSuggest.enabled": false },
+  "[plpgsql]": { "editor.inlineSuggest.enabled": false }
+}
+```
+
+**Configuration files (YAML, TOML, INI):**
+- Problem: High false positive rate, very few correct suggestions
+- Solution: Disable completely
+```json
+{
+  "[yaml]": { "editor.inlineSuggest.enabled": false },
+  "[toml]": { "editor.inlineSuggest.enabled": false }
+}
+```
+
+
+## The "Focus Mode" Methodology
+
+For deep work where distraction is unacceptable, use a structured approach:
+
+**Pre-focus setup (5 minutes before deep work):**
+```bash
+# Create a shell function for instant focus mode
+focus-coding() {
+  # Disable all distracting VS Code features
+  code --settings-overrides '{"editor.inlineSuggest.enabled": false, "notifications.enabled": false}'
+}
+```
+
+**During focus (90-minute blocks):**
+- Inline suggestions completely disabled
+- Chat available with hotkey (Cmd+L) if you get stuck
+- No notifications
+- No network requests besides code execution
+
+**After focus (5 minutes):**
+- Re-enable suggestions
+- Review notifications
+- Short break
+
+This is more extreme than most developers need, but for architectural work, algorithm design, or debugging complex issues, this structure prevents decision fatigue.
+
+
+## The Role of AI Models in Distraction
+
+Different AI models have different distraction profiles:
+
+**GPT-3.5 (older models):**
+- More verbose suggestions (higher distraction)
+- Suggestions more often require modification (more evaluation)
+- But faster response (less wait time)
+
+**GPT-4 / Claude Sonnet:**
+- Tighter, more concise suggestions (lower distraction)
+- Higher quality suggestions (less evaluation needed)
+- Slightly longer response times
+
+**Copilot vs Codeium vs Claude Code:**
+- Copilot: Aggressive suggestion frequency (higher distraction potential)
+- Codeium: More conservative (lower distraction)
+- Claude Code: Explicit (zero inline distraction if you use terminal mode)
+
+If distraction is your main issue, consider tools that are inherently less aggressive. Switching from Copilot to Codeium sometimes solves distraction complaints without any configuration.
+
+
+## Measuring Distraction Reduction
+
+Track whether your changes actually reduced distraction:
+
+**Metric 1: Time to task completion**
+- Track 5 similar coding tasks before and after configuration changes
+- Did time decrease? You probably reduced distraction
+- Did time stay the same? Configuration didn't help (try other changes)
+
+**Metric 2: Code quality review feedback**
+- More distraction often correlates with lower code quality (you accepted wrong suggestions)
+- Track reviewer comments about code quality before and after
+- Improvement suggests distraction reduction
+
+**Metric 3: Subjective focus score**
+- Daily, rate your coding focus 1-10
+- Average the week before and after configuration changes
+- 2+ point improvement is significant
+
+**Metric 4: Suggestion acceptance rate**
+- If you're dismissing 80% of suggestions, your configuration is probably wrong
+- If you're accepting 60%, it's balanced
+- Optimal is 50-70% acceptance (good suggestions you're actively using)
+
+Make configuration changes, measure for one week, then evaluate whether to keep them.
+
+
+## When to Accept Distraction as Part of the Process
+
+Sometimes "distraction" is actually valuable. Suggestions that seem distracting might be teaching you new patterns:
+
+- If suggestions suggest approaches you don't know, evaluate them seriously before dismissing
+- If you're always dismissing the same type of suggestion, you might not understand the pattern
+- If suggestions from a tool are 100% accepted, you might benefit from harder suggestions
+
+The goal isn't zero distraction (that would mean suggestions are always wrong or useless). The goal is intentional distraction—suggestions that are worth your cognitive effort to evaluate.
+
+Aim for a configuration where ghost text appears at decision points where it actually matters, not constantly throughout your session.
+
+
 ## Related Articles
 
 - [Switching from Copilot Ghost Text to Cursor Tab Autocomplete](/ai-tools-compared/switching-from-copilot-ghost-text-to-cursor-tab-autocomplete/)

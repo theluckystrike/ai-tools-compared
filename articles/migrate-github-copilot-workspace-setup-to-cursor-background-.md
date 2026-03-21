@@ -201,6 +201,171 @@ The background agent consumes more resources than Copilot's plugin model because
 
 Excluding folders like `node_modules` reduces the agent's workload without losing functionality.
 
+## Comparing Feature-by-Feature: Copilot to Cursor
+
+| Feature | Copilot | Cursor | Winner |
+|---------|---------|--------|--------|
+| Inline suggestions | Yes | Yes | Tie |
+| Chat interface | Yes | Yes | Tie |
+| Background agent | No | Yes | Cursor |
+| Multi-file refactoring | Limited | Full | Cursor |
+| Context window | 8K | 128K+ | Cursor |
+| Custom instructions | copilot-instructions.md | rules.md + codebase indexing | Cursor |
+| IDE integration | VS Code only | VS Code + others | Tie |
+| Cost | $10-20/month | $10-20/month | Tie |
+
+Cursor's background agent and larger context window provide significant advantages for complex codebases.
+
+## Preserving Git History During Migration
+
+Don't discard your Copilot workflow history. Archive it:
+
+```bash
+# Export Copilot conversation logs
+cp -r ~/.vscode/extensions/github.copilot-* ./copilot_backup/
+
+# Archive your current .vscode settings
+cp ~/.vscode/settings.json ./vscode_settings_copilot.json
+
+# Create migration log
+cat > MIGRATION_LOG.md << EOF
+# Copilot to Cursor Migration Log
+Date: $(date)
+
+## Previous Configuration
+- Editor: VS Code
+- Copilot version: [extracted from backup]
+- Active extensions: [list]
+
+## Key Workflows
+- [Document workflows you relied on]
+
+## Cursor Setup
+- [How you configured Cursor]
+EOF
+
+git add copilot_backup/ vscode_settings_copilot.json MIGRATION_LOG.md
+git commit -m "Archive Copilot configuration before migration to Cursor"
+```
+
+This preserves institutional knowledge if you need to revert or reference the old setup.
+
+## Testing Cursor's Background Agent Effectiveness
+
+Validate that Cursor meets your needs before fully migrating:
+
+```bash
+# Create test branch for Cursor evaluation
+git checkout -b test/cursor-evaluation
+
+# Task 1: Simple file refactoring
+# Ask Cursor to rename a variable across 3 files
+
+# Task 2: Feature implementation
+# Request Cursor generate a new utility function
+
+# Task 3: Bug investigation
+# Provide an error and ask Cursor to find root cause
+
+# Metrics to track:
+# - Time per task (compare to Copilot)
+# - Code quality (review Cursor output)
+# - Accuracy (does it understand context?)
+
+# Review results and decide to proceed or stay with Copilot
+```
+
+A 1-2 week evaluation period reduces migration risk.
+
+## Configuring Cursor for Team Consistency
+
+Ensure all team members have matching Cursor configurations:
+
+```json
+{
+  "cursor.settings": {
+    "backgroundAgent.enabled": true,
+    "backgroundAgent.indexing.maxSize": "2GB",
+    "backgroundAgent.indexing.excludedFolders": ["node_modules", "dist", ".git", "build"],
+    "chat.contextWindow": 128000,
+    "codeCompletion.style": "aggressive",
+    "documentation.autoGenerate": true
+  },
+  "rules": {
+    "codeStyle": "Follow existing patterns in codebase",
+    "typeScript": "Use strict mode",
+    "testing": "Write tests for new functions"
+  }
+}
+```
+
+Share this configuration file via your repository so new team members start with the right setup.
+
+## Handling Performance Issues in Cursor
+
+The background agent consumes resources. Optimize if needed:
+
+```json
+{
+  "backgroundAgent": {
+    "enabled": true,
+    "cpuUsageLimit": 40,
+    "memoryUsageLimit": 1024,
+    "indexingSchedule": "idle",
+    "indexing": {
+      "enabled": true,
+      "maxFileSize": "1MB",
+      "excludedFolders": ["node_modules", ".git", "dist", "build", ".next"],
+      "excludedPatterns": ["**/*.min.js", "**/*.min.css"]
+    }
+  }
+}
+```
+
+Aggressive exclusions prevent the agent from consuming excessive resources on large projects.
+
+## Keyboard Shortcuts: Cursor vs Copilot Migration
+
+VS Code users often have muscle memory for Copilot shortcuts. Map equivalents in Cursor:
+
+```
+Copilot (VS Code) → Cursor Equivalent:
+- Ctrl+Enter → Accept suggestion → cmd+k (same)
+- Ctrl+Shift+\ → Open Copilot chat → cmd+l (same)
+- Ctrl+I → Inline edit (Copilot) → cmd+i (Cursor)
+- Alt+[ / Alt+] → Cycle through suggestions → Same in Cursor
+```
+
+Most shortcuts transfer directly, reducing the learning curve.
+
+## Migration Checklist for Teams
+
+Use this checklist to ensure complete migration:
+
+```markdown
+## Pre-Migration
+- [ ] Back up current Copilot configuration
+- [ ] Document team's Copilot workflows
+- [ ] Evaluate Cursor on test branch
+- [ ] Identify performance requirements
+
+## Migration
+- [ ] Install Cursor on all developer machines
+- [ ] Configure .cursor/rules.md with team standards
+- [ ] Set up .cursor/mcp.json for background agent
+- [ ] Distribute Cursor configuration file via repository
+- [ ] Test background agent on sample refactoring task
+- [ ] Configure IDE performance limits if needed
+
+## Post-Migration
+- [ ] Collect feedback from team on Cursor experience
+- [ ] Monitor CPU/memory usage during typical workflow
+- [ ] Document any Copilot features Cursor doesn't replicate
+- [ ] Establish support process for Cursor issues
+- [ ] Schedule 1-week follow-up to assess satisfaction
+```
+
+Structured approach prevents missing steps and ensures team adoption.
 
 ## Related Articles
 

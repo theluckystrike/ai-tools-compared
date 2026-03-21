@@ -199,6 +199,286 @@ Always verify generated configurations before deploying. Test Nginx configs with
 AI tools produce reliable configurations, but they cannot account for your specific infrastructure details. A few minutes of verification prevents hours of debugging production issues.
 
 
+## Advanced Configuration Patterns AI Tools Generate Well
+
+Certain reverse proxy patterns are well-understood by AI models because they're well-documented:
+
+**Load balancing with health checks:**
+AI tools consistently generate correct upstream blocks with health checks:
+```nginx
+upstream backend {
+    least_conn;
+    server 10.0.0.1:3000 max_fails=3 fail_timeout=30s;
+    server 10.0.0.2:3000 max_fails=3 fail_timeout=30s;
+    server 10.0.0.3:3000 max_fails=3 fail_timeout=30s;
+}
+
+server {
+    location /health {
+        access_to_upstream backend;
+        proxy_pass http://backend/health;
+        proxy_connect_timeout 2s;
+        proxy_read_timeout 2s;
+    }
+}
+```
+
+Health check configuration prevents routing to dead backends. Most AI tools include this without being asked.
+
+**CORS configuration with proper headers:**
+AI tools generally get CORS right, including the subtle issue of only allowing specific origins:
+```nginx
+location /api {
+    if ($request_method = 'OPTIONS') {
+        add_header 'Access-Control-Allow-Origin' $http_origin always;
+        add_header 'Access-Control-Allow-Methods' 'GET, POST, PUT, DELETE, OPTIONS' always;
+        add_header 'Access-Control-Allow-Headers' 'Content-Type, Authorization' always;
+        add_header 'Access-Control-Max-Age' 3600;
+        return 204;
+    }
+    proxy_pass http://backend;
+}
+```
+
+**Caching with proper cache busting:**
+Modern reverse proxy setups need intelligent caching. Claude Code particularly handles this well:
+```nginx
+location ~* \.(js|css)$ {
+    proxy_pass http://backend;
+    proxy_cache my_cache;
+    proxy_cache_valid 200 7d;
+    add_header X-Cache-Status $upstream_cache_status;
+}
+
+location / {
+    proxy_pass http://backend;
+    proxy_no_cache 1;
+    proxy_cache_bypass 1;
+}
+```
+
+The distinction between static asset caching (7 days) and dynamic content (no cache) is subtle but crucial.
+
+
+## Common Configuration Mistakes AI Tools Make
+
+Understanding what AI tools often get wrong helps you review generated configs:
+
+**Mistake 1: Buffer settings for large requests**
+```nginx
+# AI might forget this:
+client_max_body_size 100M;
+proxy_buffering on;
+proxy_buffer_size 128k;
+proxy_buffers 4 256k;
+```
+
+Without these, large file uploads fail mysteriously. Always verify buffer settings for your use case.
+
+**Mistake 2: Keeping-alive timeouts**
+```nginx
+# Copilot often misses connection optimization:
+keepalive_timeout 65;
+send_timeout 60;
+proxy_connect_timeout 60s;
+proxy_send_timeout 60s;
+proxy_read_timeout 60s;
+```
+
+Default timeouts work for many cases but can cause issues with slow clients or large data transfers.
+
+**Mistake 3: Redirect chains**
+```nginx
+# Bad pattern AI sometimes generates:
+server {
+    server_name api.example.com www.api.example.com;
+    return 301 https://$server_name$request_uri;
+}
+
+# Better: consolidate
+server {
+    server_name www.api.example.com;
+    return 301 https://api.example.com$request_uri;
+}
+```
+
+Redirect chains add latency. AI tools don't always consolidate redirects optimally.
+
+**Mistake 4: Missing IPv6**
+```nginx
+# AI sometimes forgets IPv6:
+listen 80;
+listen [::]:80;
+
+listen 443 ssl;
+listen [::]:443 ssl;
+```
+
+Without IPv6 listeners, your IPv6 traffic won't work, and modern audits flag this.
+
+
+## Prompt Engineering for Better Reverse Proxy Configs
+
+The quality of AI-generated configs depends heavily on your prompt:
+
+**Weak prompt:**
+"Generate an Nginx config for my API"
+
+**Better prompt:**
+"Generate a production-ready Nginx configuration for a REST API running on localhost:3000. Include:
+- SSL with Let's Encrypt
+- Rate limiting: 100 req/min per IP
+- Security headers (HSTS, CSP, X-Frame-Options)
+- Proper logging for debugging
+- Health check endpoint
+- Gzip compression for responses > 1KB
+- Cache static assets for 30 days
+Domain: api.mycompany.com"
+
+**Even better (includes constraints):**
+"Generate production Nginx config for:
+- Django REST API at 127.0.0.1:8000 with uWSGI
+- Let's Encrypt SSL certificates at /etc/letsencrypt/live/
+- Database behind API (no direct connection)
+- Serve static files from /var/www/static
+- Rate limit to 50 req/s globally, 10 req/s per IP
+- Include proper error pages (404, 500, 502, 503, 504)
+- Log to /var/log/nginx/ with rotation handled by logrotate
+- Use Gzip compression for text/json > 1000 bytes
+- Include security headers but NOT Content-Security-Policy (we handle that in Django)
+- Health check at /health returns 200 with empty body"
+
+The more specific your prompt, the more production-ready the output.
+
+
+## Caddy Configuration Advantages AI Tools Help With
+
+Caddy's simpler syntax makes AI tools particularly effective:
+
+**Automatic HTTPS and certificate management:**
+```
+api.example.com {
+    reverse_proxy localhost:3000
+}
+```
+
+This is all you need! Caddy automatically gets SSL from Let's Encrypt and handles renewal. AI tools consistently generate this correctly, and there's less to go wrong.
+
+**Simplified rate limiting:**
+```
+api.example.com {
+    rate_limit * 100r/m
+    reverse_proxy localhost:3000
+}
+```
+
+Compare to Nginx's rate limiting directive complexity. Caddy's simpler approach means AI suggestions are more often correct.
+
+**Matchers for conditional logic:**
+```
+api.example.com {
+    @api path /api/*
+    @static path /static/*
+
+    handle @static {
+        file_server
+        header Cache-Control "max-age=31536000"
+    }
+
+    handle @api {
+        reverse_proxy localhost:3000
+    }
+}
+```
+
+This syntax is clear enough that AI tools generate correct matchers without confusion.
+
+
+## Testing Generated Configs Before Deployment
+
+The safest workflow for AI-generated configs:
+
+**Step 1: Syntax validation**
+```bash
+# Nginx
+nginx -t -c /path/to/generated/nginx.conf
+
+# Caddy
+caddy validate --config /path/to/generated/Caddyfile
+```
+
+If this passes, basic syntax is correct. If it fails, the error message usually pinpoints the issue.
+
+**Step 2: Local testing**
+```bash
+# Spin up your backend on localhost:3000
+docker run -p 3000:3000 your-api:latest
+
+# Test the reverse proxy locally
+# For Nginx development: just reload
+sudo nginx -s reload
+
+# For Caddy development: restart
+sudo systemctl restart caddy
+
+# Test from another terminal
+curl http://localhost/api/test
+curl -H "Authorization: Bearer token" http://localhost/api/protected
+```
+
+**Step 3: Staging deployment**
+Deploy to a staging environment with actual traffic patterns before production.
+
+**Step 4: Monitoring during deployment**
+Watch logs and metrics during the first hour:
+```bash
+# Watch Nginx error log
+tail -f /var/log/nginx/error.log
+
+# Watch request times
+watch -n 5 'tail -20 /var/log/nginx/access.log | awk "{print \$NF}" | sort -n | tail -5'
+
+# Watch upstream health
+curl http://localhost/upstream_health  # if you exposed this endpoint
+```
+
+
+## Caddy vs Nginx Cost Analysis for Production
+
+AI tools help with both, but the choice affects maintenance:
+
+**Nginx with AI-generated config:**
+- Time to initial setup: 30 minutes (with AI help)
+- Maintenance overhead: 2-3 hours/year (managing SSL renewal, updates)
+- Total cost: $0 (open source)
+- Operational complexity: Medium
+
+**Caddy with AI-generated config:**
+- Time to initial setup: 15 minutes (with AI help, simpler syntax)
+- Maintenance overhead: 30 minutes/year (mostly just updates)
+- Total cost: $0 (open source)
+- Operational complexity: Low
+
+For most small teams, Caddy's simplicity pays dividends. For teams with complex Nginx-specific requirements (advanced modules, very specific configurations), Nginx is necessary.
+
+AI tools are particularly valuable for Nginx because the syntax complexity makes it error-prone. Caddy's simplicity means AI tools are helpful but less critical.
+
+
+## Version-Specific Considerations
+
+Always tell AI tools your Nginx/Caddy version:
+
+**Prompt example:**
+"Generate Nginx 1.25.3 configuration for... (I'm running Ubuntu 24.04 with Nginx from official repos)"
+
+Version matters because:
+- Module availability changes (newer Nginx versions have ngx_http_geoip2_module, older versions have ngx_http_geoip)
+- Directive names changed (gzip_vary became default in 1.25)
+- Performance tuning recommendations differ
+
+Specifying versions prevents AI tools from suggesting features your installed version doesn't support.
+
+
 ## Related Articles
 
 - [ChatGPT vs Claude for Writing Nginx Reverse Proxy Configurat](/ai-tools-compared/chatgpt-vs-claude-for-writing-nginx-reverse-proxy-configurat/)
