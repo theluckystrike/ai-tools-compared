@@ -6,7 +6,7 @@ date: 2026-03-20
 author: theluckystrike
 permalink: /copilot-completions-extremely-slow-on-large-python-files-fix/
 categories: [guides]
-tags: [ai-tools-compared, github-copilot, python, performance, productivity]
+tags: [ai-tools-compared, github-copilot, python, performance, productivity, troubleshooting]
 reviewed: true
 score: 9
 voice-checked: true
