@@ -7,7 +7,7 @@ last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /claude-haiku-vs-gpt-4o-mini-for-quick-drafts/
 reviewed: true
-score: 8
+score: 9
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
