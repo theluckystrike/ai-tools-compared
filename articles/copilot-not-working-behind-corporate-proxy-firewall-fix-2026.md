@@ -198,7 +198,7 @@ sudo update-ca-certificates
 
 ## Solution 7: Use GitHub Copilot Business or Enterprise
 
-Organizations with GitHub Copilot Business or Enterprise can leverage Microsoft's Azure backbone, which often has better proxy compatibility. These plans provide:
+Organizations with GitHub Copilot Business or Enterprise can use Microsoft's Azure backbone, which often has better proxy compatibility. These plans provide:
 
 - Dedicated endpoints that may be whitelisted more easily
 - Admin controls for proxy configuration
@@ -216,13 +216,5 @@ When Copilot fails behind a corporate proxy, work through this checklist:
 4. **Restart your IDE** — Sometimes proxy changes require a full restart
 5. **Check Copilot subscription status** — Ensure your license is active
 6. **Review extension logs** — VS Code: Help > Toggle Developer Tools > Console
-
-## Conclusion
-
-Corporate proxies and firewalls create real challenges for developer tools that rely on cloud-based AI services. The solutions range from simple environment variable configuration to enterprise-level network architecture changes. Start with the simplest solution (checking and setting environment variables) and work toward more complex options as needed.
-
-Most developers can resolve Copilot connectivity issues by configuring VS Code proxy settings and ensuring Git uses the corporate proxy. For persistent problems, involve your IT department to whitelist necessary domains or consider upgrading to Copilot Business for better enterprise support.
-
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

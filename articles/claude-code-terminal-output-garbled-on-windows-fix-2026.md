@@ -121,7 +121,7 @@ For permanent configuration, add them to your system environment variables:
 
 ## Solution: Terminal Font Compatibility
 
-Some fonts don't support the full Unicode character range that Claude Code uses. Switching to a font with comprehensive Unicode support resolves display issues:
+Some fonts don't support the full Unicode character range that Claude Code uses. Switching to a font with Unicode support resolves display issues:
 
 - **Cascadia Code**: Microsoft's monospace font with excellent Unicode support
 - **JetBrains Mono**: Popular developer font with wide character coverage
@@ -192,9 +192,3 @@ claude -p "Return JSON with special chars: {'symbol': '✓', 'arrow': '→'}"
 ```
 
 If characters display correctly, your configuration is working. If issues persist, check for conflicting environment variables or terminal-specific settings.
-
-## Summary
-
-Garbled terminal output in Claude Code on Windows stems from encoding mismatches. The fix involves configuring your terminal to use UTF-8 encoding, setting appropriate environment variables, using compatible fonts, and keeping Claude Code updated. Windows Terminal with UTF-8 configuration provides the most reliable experience. PowerShell users should set console output encoding in their profile. These changes ensure clean, readable output across all Claude Code interactions in 2026.
-
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
