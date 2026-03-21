@@ -82,6 +82,26 @@ Team workspaces include Canvas for all seat holders. Additional Team-specific fe
 Team admins can enable or disable Canvas access for specific members through the workspace settings, though it's enabled by default.
 
 
+### ChatGPT Pro ($200/month)
+
+
+Pro subscribers receive everything in Plus and Team, plus extended context windows, priority access during peak hours, and first access to experimental Canvas features. If you rely on Canvas daily for professional work, Pro's higher throughput limits justify the cost difference for heavy users.
+
+
+## Plan Comparison Table
+
+
+| Feature | Free | Plus | Team | Pro |
+|---|---|---|---|---|
+| Canvas access | No | Yes | Yes | Yes |
+| Shared team documents | No | No | Yes | No |
+| Admin controls | No | No | Yes | No |
+| Higher message limits | No | No | Yes | Yes |
+| Priority access | No | No | No | Yes |
+| Early feature access | No | No | No | Yes |
+| Price (per user/month) | $0 | $20 | $25 | $200 |
+
+
 ## How to Access Canvas
 
 
@@ -172,6 +192,18 @@ Yes. Using Canvas consumes message tokens from your plan's allocation. In Canvas
 You can generate shareable links that allow others to view (but not edit) Canvas documents. They don't need a ChatGPT account to view shared content.
 
 
+### "Does Canvas work in the ChatGPT mobile app?"
+
+
+Canvas is currently available on the web interface and the desktop application. Mobile support is limited—you can view Canvas documents on mobile but the full editing interface requires a desktop browser for the best experience.
+
+
+### "Can I use Canvas with custom GPTs?"
+
+
+Yes. If you have a custom GPT configured in Plus or Team, you can invoke it within a Canvas session. The custom GPT's system prompt applies to the Canvas context, letting you use specialized personas or domain-specific instructions while editing documents.
+
+
 ## Practical Example: Writing a Blog Post in Canvas
 
 
@@ -192,7 +224,22 @@ Here's how a content creator might use Canvas:
 The split-view makes it easy to iterate quickly without losing context.
 
 
+## Canvas Code Review Workflow
+
+
+For engineering teams using the Team plan, Canvas provides a structured code review workflow. Here is how to use it effectively:
+
+1. Paste a pull request diff or entire function into Canvas in Code mode.
+2. Prompt: "Review this code for security vulnerabilities, performance issues, and style inconsistencies."
+3. ChatGPT annotates specific lines and suggests rewrites inline.
+4. Use Suggest mode so each fix appears as a tracked change—accept or reject individually.
+5. Export the final version as a patch or copy directly into your editor.
+
+This loop eliminates the round-trip of copying code back and forth between your IDE and a chat window, and keeps the full context of the file visible throughout the review session.
+
+
 ## Canvas SEO Optimization Workflow
+
 
 Use this workflow prompt inside Canvas to optimize a blog post for search:
 
@@ -213,6 +260,18 @@ Step 4 -- Readability pass:
 Break any paragraph longer than 4 sentences. Convert lists of 4+ items to bullet points.
 Flag any sentence over 25 words for simplification.
 ```
+
+
+## Pro Tips for Power Users
+
+
+**Tip 1 — Use version history aggressively.** Before asking ChatGPT to rewrite a large section, create a version checkpoint. If the rewrite misses the mark, rolling back takes one click rather than repasting your original text.
+
+**Tip 2 — Combine Canvas with custom instructions.** Set your global custom instructions to reflect your writing voice or code style guide. Canvas inherits these instructions, so every suggestion matches your standards without re-prompting each session.
+
+**Tip 3 — Batch edits rather than single-line requests.** Canvas performs best when you give it a multi-step editing task in a single prompt. For example: "Fix all passive voice, shorten sentences over 20 words, and add a transition sentence between each section." Batching reduces token consumption compared to issuing each request separately.
+
+**Tip 4 — Export to Markdown for CMS workflows.** The Markdown export maps cleanly to most headless CMS formats. If you use Contentful, Sanity, or a static site generator, the exported Markdown requires minimal reformatting before publishing.
 
 
 ## Related Articles
