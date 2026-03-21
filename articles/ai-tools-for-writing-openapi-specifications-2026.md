@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Writing OpenAPI Specifications in 2026"
-description: Compare AI-powered tools for generating and documenting OpenAPI and Swagger specifications with real code examples and pricing comparisons.
+description: "Compare AI-powered tools for generating and documenting OpenAPI and Swagger specifications with real code examples and pricing comparisons."
 date: 2026-03-21
 last_modified_at: 2026-03-21
 author: theluckystrike
