@@ -214,8 +214,175 @@ Monitor triage accuracy metrics. Track what percentage of AI-assigned labels req
 
 Maintain human oversight for critical decisions. AI handles categorization reliably but should escalate ambiguous cases or security-related issues to humans rather than guessing incorrectly.
 
+## Building a Custom Triage System
 
+For teams with specific requirements, building a custom solution often works better than generic tools.
 
+### Combining Multiple Triage Signals
+
+Create a comprehensive triage system that combines multiple AI analyses:
+
+```python
+import anthropic
+import json
+from github import Github
+
+class ComprehensiveTriage:
+    def __init__(self, repo_name):
+        self.client = anthropic.Anthropic()
+        self.gh = Github()
+        self.repo = self.gh.get_repo(repo_name)
+
+    def analyze_issue(self, issue_number):
+        issue = self.repo.get_issue(issue_number)
+
+        # Signal 1: Category analysis
+        category = self.classify_category(issue)
+
+        # Signal 2: Severity from description
+        severity = self.assess_severity(issue)
+
+        # Signal 3: Effort estimation
+        effort = self.estimate_effort(issue)
+
+        # Signal 4: Related code impact
+        impact = self.analyze_code_impact(issue)
+
+        # Signal 5: Community signal
+        community_score = self.evaluate_community_interest(issue)
+
+        # Combine all signals for final triage
+        return self.synthesize_triage(
+            category, severity, effort, impact, community_score
+        )
+
+    def classify_category(self, issue):
+        prompt = f"""Classify this GitHub issue into exactly one category:
+        - bug: Describes something broken or not working correctly
+        - feature: Requests new functionality
+        - documentation: Issues with docs, examples, or comments
+        - question: User asking for help or clarification
+        - refactor: Code quality improvement without user impact
+        - maintenance: Dependencies, CI/CD, or infrastructure work
+
+        Issue title: {issue.title}
+        Issue body: {issue.body[:1000]}
+
+        Respond with only the category name."""
+
+        response = self.client.messages.create(
+            model="claude-sonnet-4-20250514",
+            max_tokens=50,
+            messages=[{"role": "user", "content": prompt}]
+        )
+        return response.content[0].text.strip()
+
+    def assess_severity(self, issue):
+        prompt = f"""Assess the severity of this issue on a scale of critical, high, medium, low.
+
+        Critical: Blocks core functionality, affects production, impacts many users
+        High: Affects a core feature but has workarounds, impacts some users
+        Medium: Affects non-core features or single user cases
+        Low: Minor issues, edge cases, cosmetic problems
+
+        Title: {issue.title}
+        Description: {issue.body[:1000]}
+
+        Respond with only the severity level."""
+
+        response = self.client.messages.create(
+            model="claude-sonnet-4-20250514",
+            max_tokens=50,
+            messages=[{"role": "user", "content": prompt}]
+        )
+        return response.content[0].text.strip()
+
+    def estimate_effort(self, issue):
+        prompt = f"""Estimate the effort to resolve this issue:
+        - quick: Less than 1 hour, clear fix
+        - medium: 1-4 hours, straightforward implementation
+        - substantial: 4-16 hours, requires design decisions
+        - major: 16+ hours, complex refactoring or significant work
+
+        Issue: {issue.title}
+        Details: {issue.body[:1000]}
+
+        Respond with only the effort level."""
+
+        response = self.client.messages.create(
+            model="claude-sonnet-4-20250514",
+            max_tokens=50,
+            messages=[{"role": "user", "content": prompt}]
+        )
+        return response.content[0].text.strip()
+
+    def analyze_code_impact(self, issue):
+        prompt = f"""Based on this issue description, what code components might be affected?
+        Estimate impact scope:
+        - isolated: Single function or small module
+        - module: Affects one major module or feature
+        - system: Affects multiple components or core systems
+
+        Issue: {issue.title}
+        Details: {issue.body[:1000]}
+
+        Respond with the impact level."""
+
+        response = self.client.messages.create(
+            model="claude-sonnet-4-20250514",
+            max_tokens=50,
+            messages=[{"role": "user", "content": prompt}]
+        )
+        return response.content[0].text.strip()
+
+    def evaluate_community_interest(self, issue):
+        # Analyze reactions, comments, references to similar issues
+        reactions = issue.reactions['total']
+        comment_count = issue.comments
+        is_duplicate_of_open_issues = self.check_similar_issues(issue)
+
+        if reactions > 5 or comment_count > 3:
+            return "high"
+        elif is_duplicate_of_open_issues:
+            return "duplicate"
+        else:
+            return "normal"
+
+    def synthesize_triage(self, category, severity, effort, impact, community):
+        triage = {
+            "category": category,
+            "severity": severity,
+            "effort": effort,
+            "impact": impact,
+            "community_interest": community,
+            "labels": self.generate_labels(category, severity, effort),
+            "priority": self.calculate_priority(severity, effort, community)
+        }
+        return triage
+
+    def generate_labels(self, category, severity, effort):
+        labels = [category, f"severity/{severity}", f"effort/{effort}"]
+        return labels
+
+    def calculate_priority(self, severity, effort, community):
+        # Priority = Severity + (Community Interest) - Effort
+        # Higher number = higher priority
+        severity_score = {"critical": 4, "high": 3, "medium": 2, "low": 1}.get(severity, 0)
+        community_score = {"high": 2, "normal": 0, "duplicate": -1}.get(community, 0)
+        effort_score = {"quick": 2, "medium": 1, "substantial": 0, "major": -1}.get(effort, 0)
+
+        return severity_score + community_score + effort_score
+```
+
+This multi-signal approach catches nuances that single-dimension triage misses.
+
+### Automating Triage and Handling Corrections
+
+AI triage will occasionally misclassify issues. Build feedback loops to learn from corrections and improve future triage. Save feedback as JSONL and periodically retrain or adjust thresholds based on team corrections. Customize triage rules for project-specific needs: production-critical systems prioritize security issues higher, projects with SLOs flag SLO-affecting bugs as critical, and enterprise projects flag customer-reported issues differently.
+
+## Scaling and Measuring Triage
+
+For organizations with many repositories, automate triage across all repos and track metrics including accuracy, speed, volume, coverage, and correction rates. Implement prioritization rules that surface the most important work by sorting issues by priority, severity, and effort. Monitor these metrics to ensure triage quality stays high as issue volume increases.
 
 
 ## Related Reading

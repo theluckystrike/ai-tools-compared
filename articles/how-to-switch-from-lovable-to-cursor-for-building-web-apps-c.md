@@ -144,6 +144,153 @@ Start by migrating one small project to Cursor rather than attempting to move ev
 
 As you work in Cursor, you will find that AI assistance becomes more targeted and useful since you provide the context through your existing code. The workflow shifts from AI generating everything to AI enhancing what you build, which many developers find more sustainable for serious web application development.
 
+## Advanced Cursor Workflows for Web Development
+
+Once you are comfortable with basic Cursor operations, you can leverage more advanced features for sophisticated web application development.
+
+### Using Cursor's Documentation Integration
+
+Cursor can access framework documentation and reference it during coding. When working on a Next.js project migrated from Lovable, you can highlight a specific API pattern and ask Cursor to explain how it works in Next.js specifically. This is particularly valuable when adapting Lovable code that uses basic React patterns into more optimized Next.js-specific implementations.
+
+For example, if your Lovable project used simple client-side state management, you can ask Cursor: "Show me how to refactor this useState pattern into Next.js Server Components for better performance." Cursor will provide concrete examples using Next.js conventions that you may not be familiar with.
+
+### Building Reusable Component Libraries
+
+Cursor excels at helping you extract common patterns from your code into reusable components. If you find yourself implementing similar features repeatedly, use Cursor to identify patterns and create a component library.
+
+```typescript
+// Before: Repeated pattern across components
+const FeatureOne = () => {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    fetchData().finally(() => setLoading(false));
+  }, []);
+
+  return loading ? <Spinner /> : <Data data={data} />;
+};
+
+// Cursor helps extract into reusable hook
+export function useAsyncData(fetchFn) {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    let mounted = true;
+    setLoading(true);
+
+    fetchFn()
+      .then(result => mounted && setData(result))
+      .catch(err => mounted && setError(err))
+      .finally(() => mounted && setLoading(false));
+
+    return () => { mounted = false; };
+  }, [fetchFn]);
+
+  return { data, loading, error };
+}
+
+// Now reusable across components
+const FeatureOne = () => {
+  const { data, loading } = useAsyncData(fetchData);
+  return loading ? <Spinner /> : <Data data={data} />;
+};
+```
+
+This pattern improves code maintainability and reduces duplication—benefits that become increasingly important as your application grows.
+
+### Testing Your Migrated Application
+
+Cursor can help you write comprehensive tests for your migrated code. When you paste a component or function, you can ask Cursor to generate test cases covering edge cases, error scenarios, and integration points.
+
+```typescript
+// Ask Cursor to generate test suite
+// "Write comprehensive tests for this UserProfile component including loading states, error cases, and missing data scenarios"
+
+import { render, screen, waitFor } from '@testing-library/react';
+import { UserProfile } from './UserProfile';
+
+describe('UserProfile', () => {
+  it('displays loading state initially', () => {
+    render(<UserProfile userId="123" />);
+    expect(screen.getByText('Loading...')).toBeInTheDocument();
+  });
+
+  it('displays user data when loaded', async () => {
+    global.fetch = jest.fn(() =>
+      Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve({ id: '123', name: 'John' })
+      })
+    );
+
+    render(<UserProfile userId="123" />);
+
+    await waitFor(() => {
+      expect(screen.getByText('John')).toBeInTheDocument();
+    });
+  });
+
+  it('handles fetch errors gracefully', async () => {
+    global.fetch = jest.fn(() => Promise.reject(new Error('API down')));
+
+    render(<UserProfile userId="123" />);
+
+    await waitFor(() => {
+      expect(screen.getByText(/error/i)).toBeInTheDocument();
+    });
+  });
+});
+```
+
+Writing tests with Cursor's assistance ensures your migrated code maintains quality standards and catches regressions early.
+
+### Performance Optimization After Migration
+
+A key benefit of moving to Cursor is the opportunity to optimize your code. Lovable-generated code often prioritizes functionality over performance. In Cursor, you can ask for performance improvements specific to your framework.
+
+Ask Cursor: "Review this component for performance issues. I'm concerned about unnecessary re-renders." It will identify problems like missing dependency arrays, unchanged object references being passed as props, or expensive computations in render paths. Cursor can then provide optimized versions using React.memo, useMemo, useCallback, or other performance tools appropriate to your situation.
+
+### Debugging Complex Issues
+
+As you work with Cursor, you will encounter problems that require deeper investigation. Cursor can help debug by analyzing error messages and suggesting root causes.
+
+When you paste an error stack trace and describe unexpected behavior, Cursor analyzes the execution flow and identifies likely culprits. This is particularly valuable when migrating complex Lovable projects where the original code organization may obscure the root cause of issues.
+
+## Comparing Development Speed: Lovable vs Cursor
+
+Understanding the productivity tradeoff helps set realistic expectations for your migration.
+
+**Lovable:** Write description → receive complete feature implementation in seconds. Ideal for rapid prototyping.
+
+**Cursor:** Write basic structure → get AI assistance → refine → test. Takes longer per feature but results in more production-ready code that you fully understand and can maintain.
+
+For a simple CRUD feature:
+- **Lovable:** 5-10 minutes start-to-finish
+- **Cursor:** 15-25 minutes including testing and optimization
+
+However, modifying existing Lovable features is often painful (you must regenerate or manually edit). Modifying Cursor code is straightforward—you make changes and ask Cursor for help with specific parts.
+
+## Building Your First Project in Cursor
+
+Start with a new project rather than migrating immediately to establish confidence in the workflow:
+
+1. Choose a small project—an admin dashboard, a personal tool, or a simple SaaS feature
+2. Spend the first session just exploring Cursor's capabilities without rushing
+3. Try the chat feature, tab completion, and command palette
+4. Build something end-to-end in Cursor to understand the full workflow
+5. Only then consider migrating your larger Lovable projects
+
+This approach builds muscle memory and reduces frustration when you encounter the differences between the two tools.
+
+## Long-term Considerations
+
+After migrating to Cursor, you will likely find that your development practices evolve. You will write more tests because Cursor makes test generation easy. You will refactor more often because modifying code is lower-friction than regenerating. You will care more about code organization because you maintain the codebase directly.
+
+These changes typically result in better long-term project health, even if initial development speed feels slower compared to Lovable's approach.
 
 ## Related Reading
 

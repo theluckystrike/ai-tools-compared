@@ -214,8 +214,101 @@ All these tools improve over time as they learn your team's specific patterns. S
 
 The key is consistency—using AI tools that understand and enforce your team's conventions leads to more readable, maintainable code across your entire codebase.
 
+## Advanced Style Enforcement Strategies
 
+Beyond basic suggestions, sophisticated teams use AI for comprehensive code quality management.
 
+### Building Style Guides and CI/CD Integration
+
+Create formalized style guides that AI tools enforce consistently. Integrate style enforcement directly into pull request workflows using GitHub Actions that run linters, get AI analysis, and comment on PRs with suggestions.
+
+### Pattern-Based Style Enforcement
+
+Train AI on your specific codebase patterns:
+
+```python
+# Example: Extract and enforce patterns from existing code
+
+class PatternExtractor:
+    def __init__(self, codebase_path):
+        self.patterns = self.extract_patterns(codebase_path)
+
+    def extract_patterns(self, path):
+        """Analyze existing code to identify patterns"""
+        patterns = {
+            "error_handling": self.find_error_patterns(),
+            "naming": self.find_naming_patterns(),
+            "structure": self.find_structural_patterns(),
+            "comments": self.find_comment_patterns(),
+        }
+        return patterns
+
+    def find_error_patterns(self):
+        # Analyze how errors are handled in the codebase
+        # Result: "80% of functions use try-except-finally"
+        # "Errors are always logged with context"
+        return {
+            "try_except_rate": 0.80,
+            "logging_requirement": True,
+            "error_context": "always included"
+        }
+
+    def find_naming_patterns(self):
+        # Analyze variable and function naming conventions
+        return {
+            "function_prefix": "action_" in functions_dataset,
+            "variable_pattern": "is_* for booleans",
+            "private_convention": "_" prefix
+        }
+```
+
+Then ask AI: "Generate code in this project that follows these identified patterns."
+
+### Cross-Language Style Consistency
+
+For polyglot projects, maintain consistency across languages:
+
+```typescript
+// CONSISTENCY RULES ACROSS LANGUAGES
+
+// Error handling pattern (should be similar in all languages)
+// TypeScript:
+try {
+  const result = await operation();
+  return result;
+} catch (error) {
+  logger.error("Operation failed", { error, context });
+  throw error;
+}
+
+// Python equivalent:
+try:
+    result = operation()
+    return result
+except Exception as error:
+    logger.error("Operation failed", {"error": str(error), "context": context})
+    raise
+
+// Go equivalent:
+result, err := operation()
+if err != nil {
+    logger.WithError(err).WithField("context", context).Error("Operation failed")
+    return err
+}
+
+// Ask Claude Code: "Review this error handling pattern.
+// Does it follow the same convention across Python, Go, and TypeScript?"
+```
+
+### AI-Driven Code Refactoring
+
+Use AI tools to identify and suggest refactoring opportunities. Ask Claude or Cursor to identify functions that exceed line limits, have too many parameters, or exceed nesting limits. Get suggestions for splitting into smaller, focused functions with clearer single purposes.
+
+### Dynamic Style Adaptation and Automation
+
+Configure AI tools to adapt style recommendations based on context: performance-critical systems, distributed systems, and team size all require different style enforcement levels. Beyond suggestions, automate style corrections using Black (Python), Prettier (JavaScript), rustfmt (Rust), and ESLint with AI analysis of remaining violations.
+
+For teams with unique requirements, build custom style enforcers using AI APIs that understand your specific style guide and enforce rules consistently across languages and projects.
 
 
 ## Related Reading

@@ -201,6 +201,197 @@ When migrating, watch for these common issues:
 
 **Solution:** In YAML, special characters like `:`, `{`, `}`, and `[` need proper escaping or quoting.
 
+## Summary
+
+Converting Copilot custom instructions to Cursor rules files requires restructuring your guidelines into YAML format with distinct sections. The process involves locating your current Copilot settings, converting plain text instructions into structured rules, adding Cursor-specific features like file ignore patterns and example code, and testing the new configuration thoroughly.
+
+Cursor's rule system offers more organizational options than Copilot's simple string-based instructions. Take advantage of multiple rule files, file type specificity, and example embedding to get the most out of your migration.
+
+## Advanced Cursor Rules Configuration
+
+Once you understand basic migration patterns, you can leverage Cursor's more sophisticated capabilities.
+
+### Dynamic Rules Based on File Context
+
+Cursor supports rules that apply differently based on file type, directory, or project context.
+
+```yaml
+# .cursorrules
+
+rules:
+  - description: "General coding standards"
+    rule: |
+      All code should follow these principles:
+      - Single responsibility principle
+      - DRY (Don't Repeat Yourself)
+      - Clear naming conventions
+
+# File type specific rules
+fileRules:
+  - pattern: "**/*.ts"
+    rules:
+      - description: "TypeScript strict mode"
+        rule: |
+          All TypeScript files must:
+          - Use strict: true in tsconfig
+          - Add explicit return types to all functions
+          - Use interfaces for object types, never implicit any
+          - Use readonly where appropriate for immutability
+
+  - pattern: "**/*.test.ts"
+    rules:
+      - description: "Test-specific conventions"
+        rule: |
+          Test files should:
+          - Use descriptive test names that explain the scenario
+          - Group related tests in describe blocks
+          - Mock external dependencies, never make real HTTP calls
+          - Include both happy path and error case tests
+
+  - pattern: "src/api/**/*.ts"
+    rules:
+      - description: "API endpoint conventions"
+        rule: |
+          API endpoints must:
+          - Validate all input parameters
+          - Return consistent response format
+          - Include appropriate HTTP status codes
+          - Log all requests and errors
+          - Handle errors gracefully with descriptive messages
+
+# Directory-specific architecture rules
+directoryRules:
+  - path: "src/components"
+    rules:
+      - description: "React component standards"
+        rule: |
+          React components must:
+          - Be functional components using hooks
+          - Include PropTypes or TypeScript interfaces
+          - Export as default for simple components
+          - Include JSDoc comments for component purpose
+          - Be under 300 lines maximum
+
+  - path: "src/utils"
+    rules:
+      - description: "Utility function standards"
+        rule: |
+          Utility functions should:
+          - Have single, well-defined purpose
+          - Include comprehensive docstrings
+          - Be pure functions when possible
+          - Handle edge cases explicitly
+          - Include examples in docstrings
+```
+
+This structure replaces Copilot's flat instructions with precise, contextual guidance that Cursor applies automatically.
+
+### Custom Rule Syntax and Inheritance
+
+For large projects or teams, inherit from base rules and extend them. Create a main `.cursorrules` file with company-wide standards, then create specialized `.cursorrules.react`, `.cursorrules.api`, etc. files that extend the base rules with domain-specific guidance.
+
+### Rule Enforcement with Examples
+
+Make rules more effective by including concrete examples Cursor can reference:
+
+```yaml
+rules:
+  - description: "Error handling pattern"
+    rule: |
+      Use async/await with try-catch for error handling.
+
+      **GOOD:**
+      ```typescript
+      async function fetchUser(id: string) {
+        try {
+          const response = await fetch(`/api/users/${id}`);
+          if (!response.ok) throw new Error('Not found');
+          return response.json();
+        } catch (error) {
+          console.error('Failed to fetch user:', error);
+          throw error;
+        }
+      }
+      ```
+
+      **BAD:**
+      ```typescript
+      function fetchUser(id: string) {
+        return fetch(`/api/users/${id}`)
+          .then(res => res.json())
+          .catch(err => console.log(err));
+      }
+      ```
+
+      Always include catch blocks. Always log errors. Always propagate critical errors.
+
+  - description: "Component state management"
+    rule: |
+      Use state management appropriate to component complexity.
+
+      For simple state (< 3 state variables): useState is fine
+      For complex state (> 3 variables): useReducer provides clarity
+      For shared state across many components: Context API or state library
+
+      **GOOD (simple state):**
+      ```typescript
+      const UserForm = () => {
+        const [name, setName] = useState('');
+        const [email, setEmail] = useState('');
+        // ...
+      };
+      ```
+
+      **GOOD (complex state):**
+      ```typescript
+      type FormState = { name: string; email: string; phone: string; };
+      type FormAction = { type: 'setName'; value: string } | { type: 'reset' };
+
+      const reducer = (state: FormState, action: FormAction): FormState => {
+        // ...
+      };
+
+      const UserForm = () => {
+        const [state, dispatch] = useReducer(reducer, initialState);
+        // ...
+      };
+      ```
+```
+
+### Performance Optimization in Rules
+
+For developers concerned about performance, include specific Cursor rule guidance:
+
+```yaml
+rules:
+  - description: "Render performance"
+    rule: |
+      Prevent unnecessary re-renders:
+
+      - Memoize expensive computations with useMemo
+      - Wrap callbacks with useCallback if passed to child components
+      - Use React.memo for pure components
+      - Consider useTransition for non-blocking state updates
+
+      When to optimize: Profile first with React DevTools. Only optimize
+      after identifying actual performance bottlenecks.
+
+  - description: "Bundle size awareness"
+    rule: |
+      Keep bundle size manageable:
+
+      - Avoid importing entire libraries when you only need one function
+      - Use dynamic imports for large optional features
+      - Check bundle impact before adding new dependencies
+
+      Good: `import { debounce } from 'lodash-es'`
+      Bad: `import _ from 'lodash'`
+```
+
+## Integrating Rules Across Your Team
+
+When rolling out Cursor rules across a team, start with minimal rules focused on your most important conventions. Get team feedback after a week of use, then iterate based on what works in practice. Document the rationale for each rule—explain WHY each convention exists, not just WHAT. This helps developers understand and internalize the conventions.
+
 ## Related Reading
 
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
