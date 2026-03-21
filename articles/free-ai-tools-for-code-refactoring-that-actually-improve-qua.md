@@ -262,7 +262,7 @@ As you grow comfortable with free tools, tackle more complex refactoring pattern
 
 **Unifying similar conditional logic:** GitHub Copilot handles extracting duplicated conditionals into parameterized functions well
 
-**Adding comprehensive type hints:** Sourcery for Python automatically suggests type hints that improve code clarity
+**Adding type hints:** Sourcery for Python automatically suggests type hints that improve code clarity
 
 
 ## Decision Framework for Tool Selection

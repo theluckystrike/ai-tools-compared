@@ -247,7 +247,7 @@ Provide this context to AI along with your error, and the analysis becomes much 
 
 ## Advanced Memory Analysis Techniques
 
-When basic analysis fails, leverage AI to help with advanced memory diagnostics:
+When basic analysis fails, use AI to help with advanced memory diagnostics:
 
 ```bash
 # 1. Generate heap dump on OutOfMemory
@@ -336,7 +336,7 @@ This structure gives AI everything needed for accurate diagnosis.
 
 ## Tool Comparison for Memory Analysis
 
-Different tools complement each other for comprehensive analysis:
+Different tools complement each other for analysis:
 
 | Tool | Purpose | Best For | Time to Insight |
 |------|---------|----------|-----------------|

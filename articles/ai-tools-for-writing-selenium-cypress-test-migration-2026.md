@@ -112,7 +112,7 @@ cy.get('iframe').then($iframe => {
 });
 ```
 
-GPT-4o's custom commands were less idiomatic. It didn't leverage Cypress plugins (like cypress-iframe) and generated verbose assertion chains.
+GPT-4o's custom commands were less idiomatic. It didn't use Cypress plugins (like cypress-iframe) and generated verbose assertion chains.
 
 Strength: good at understanding test intent. If you asked "what does this Selenium test do?", GPT-4o explained it well. Useful for scoping large migration projects.
 
@@ -167,7 +167,7 @@ cy.get('.success-message')
 
 This works but is redundant. Selenium translators should produce lean Cypress code.
 
-On Page Objects, Gemini struggled to map the pattern. It suggested converting Page Objects to "helper functions" but didn't leverage Cypress custom commands properly.
+On Page Objects, Gemini struggled to map the pattern. It suggested converting Page Objects to "helper functions" but didn't use Cypress custom commands properly.
 
 Strength: generates working code that passes tests.
 
