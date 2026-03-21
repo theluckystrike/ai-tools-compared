@@ -165,6 +165,18 @@ jobs:
 This approach requires an OpenAI or similar API key but gives you complete customization. Costs depend on usage—small projects remain nearly free.
 
 
+## Tool Comparison Table
+
+
+| Tool | PR Reviews | Free Public Repos | Free Private Repos | Languages | Best For |
+|------|-----------|-------------------|--------------------|-----------|----------|
+| GitHub Copilot | Inline only | Yes | Yes | All major | Real-time coding |
+| CodeRabbit | Automated | Unlimited | Limited | All major | PR automation |
+| ReviewNB | Visual diffs | Yes | Limited | Python/notebooks | Data science |
+| Sourcery | Refactoring | Yes | Limited | Python, JS, TS | Code quality |
+| Custom Actions | Fully custom | Yes | Yes (API cost) | Any | Tailored rules |
+
+
 ## Setting Up Your GitHub Integration
 
 
@@ -181,6 +193,95 @@ Most tools install through the GitHub Marketplace or as GitHub Apps. Here is the
 
 
 For organizations, verify that the tool complies with your security policies before installation.
+
+
+## Step-by-Step: Setting Up CodeRabbit for Automated PR Reviews
+
+
+CodeRabbit is the fastest path from zero to automated AI review. Here is the complete setup:
+
+
+**Step 1 — Install the GitHub App.**
+Navigate to the GitHub Marketplace, search for CodeRabbit, and click Install. Grant it access to the repositories you want reviewed.
+
+
+**Step 2 — Add a configuration file.**
+Create `.coderabbit.yaml` in your repository root. This controls what the tool checks and how verbose its comments are:
+
+
+```yaml
+reviews:
+  high_summary: true
+  auto_review_title: true
+  request_changes_workflow: false
+  checklist:
+    - name: "Security"
+      value: true
+    - name: "Performance"
+      value: true
+    - name: "Documentation"
+      value: false
+language:
+  python:
+    style_guide: "pep8"
+```
+
+
+**Step 3 — Open a test pull request.**
+Create a branch with a small change and open a PR. CodeRabbit will post a summary comment and inline review comments within a minute or two.
+
+
+**Step 4 — Tune the configuration based on noise.**
+On the first few PRs, you may get comments that are not relevant to your codebase. Adjust the checklist entries or add path exclusions to reduce noise on files like lock files and generated code.
+
+
+## Building a Custom AI Review Action
+
+
+For teams that want full control over what gets flagged, a custom GitHub Action paired with a language model API is the most flexible option. The following skeleton posts AI review comments directly on pull request diffs:
+
+
+```python
+# review_bot.py - called by GitHub Actions
+import os
+import requests
+import anthropic
+
+def get_pr_diff(repo, pr_number, token):
+    url = f"https://api.github.com/repos/{repo}/pulls/{pr_number}/files"
+    headers = {"Authorization": f"token {token}"}
+    files = requests.get(url, headers=headers).json()
+    return "\n".join(f["patch"] for f in files if "patch" in f)
+
+def review_diff(diff_text):
+    client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+    response = client.messages.create(
+        model="claude-3-haiku-20240307",
+        max_tokens=1000,
+        messages=[{
+            "role": "user",
+            "content": f"Review this code diff for bugs and security issues:\n\n{diff_text}"
+        }]
+    )
+    return response.content[0].text
+
+def post_comment(repo, pr_number, comment, token):
+    url = f"https://api.github.com/repos/{repo}/issues/{pr_number}/comments"
+    headers = {"Authorization": f"token {token}"}
+    requests.post(url, json={"body": comment}, headers=headers)
+
+if __name__ == "__main__":
+    repo = os.environ["GITHUB_REPOSITORY"]
+    pr_number = os.environ["PR_NUMBER"]
+    token = os.environ["GITHUB_TOKEN"]
+
+    diff = get_pr_diff(repo, pr_number, token)
+    review = review_diff(diff)
+    post_comment(repo, pr_number, review, token)
+```
+
+
+Using Claude Haiku, reviewing a typical pull request diff (2,000-5,000 tokens) costs under $0.01, making this approach practical even for high-volume repositories.
 
 
 ## Practical Recommendations
@@ -202,10 +303,22 @@ The free tiers of these tools provide substantial value. As your needs grow, you
 The integration quality varies—some tools work only in specific IDEs, while others operate entirely through GitHub's web interface. Test a few to find what fits your workflow best.
 
 
+## Pro Tips for Getting the Most from Free Tiers
+
+
+**Stack tools strategically.** Copilot catches issues during writing; CodeRabbit reviews the PR after the fact. Using both means you get feedback at two different stages of the development cycle.
+
+**Write descriptive PR descriptions.** AI review tools use PR title and description as context. A PR titled "fix bug" generates less targeted feedback than one describing which module changed and why.
+
+**Exclude generated and vendored files.** Most tools support path exclusions. Adding `node_modules/`, `dist/`, `*.lock`, and migration files to the exclusion list dramatically reduces irrelevant noise in PR comments.
+
+**Use the feedback loop.** When an AI reviewer catches a real bug, trace back to understand why the bug was introduced. This informs your prompt style if you're using AI to write code as well, creating a virtuous feedback loop.
+
+
 ---
 
 
-## Related Articles
+## Related Reading
 
 - [Completely Free Alternatives to GitHub Copilot That Actually](/ai-tools-compared/completely-free-alternatives-to-github-copilot-that-actually/)
 - [GitHub Copilot Free Tier Hidden Limits You Should Know 2026](/ai-tools-compared/github-copilot-free-tier-hidden-limits-you-should-know-2026/)
