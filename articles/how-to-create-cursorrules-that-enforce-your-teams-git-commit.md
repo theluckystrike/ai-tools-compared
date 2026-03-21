@@ -217,6 +217,55 @@ commit_validation:
 This configuration requires scopes for features and fixes, mandates body text for significant changes, and enforces a footer pattern for linking issues or PRs.
 
 
+## Using Husky to Share Hooks Across the Team
+
+
+A common problem with git hooks is that `.git/hooks/` is not tracked by version control, so new team members miss the validation entirely. Husky solves this by storing hooks in a committed directory and installing them automatically via `npm install`.
+
+
+Set up Husky alongside your CursorRule validation:
+
+
+```bash
+npm install --save-dev husky
+npx husky init
+```
+
+
+Then create the hook file that Husky manages:
+
+
+```bash
+# .husky/commit-msg
+#!/bin/sh
+node scripts/validate-commit.js "$(cat $1)"
+```
+
+
+Commit `.husky/` to your repository. Every developer who runs `npm install` gets the hooks installed automatically. Combined with your `.cursorrules` file—which is also committed—the full enforcement stack travels with the repository.
+
+
+## Generating Changelogs from Validated Commits
+
+
+One of the largest payoffs from enforcing Conventional Commits is automated changelog generation. Once every commit follows the format, tools like `conventional-changelog` or `release-please` can parse your git history and produce structured changelogs automatically.
+
+
+Add the generator to your package scripts:
+
+
+```json
+{
+  "scripts": {
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
+  }
+}
+```
+
+
+Run it before each release to produce a changelog that groups commits by type—features, fixes, performance improvements, and breaking changes—without any manual editing. The discipline enforced by your CursorRule and Husky hook pays dividends here: messy commit messages produce messy changelogs.
+
+
 ## Distributing Rules Across Your Team
 
 
@@ -224,6 +273,59 @@ Once you've created and tested your CursorRules, distribute them consistently. T
 
 
 For organization-wide rules, consider a shared configuration repository that teams can include as a git submodule. This approach ensures every project uses the same baseline rules while allowing project-specific overrides.
+
+
+## Handling Edge Cases and Exemptions
+
+
+Real teams hit edge cases that pure regex validation struggles with. A few patterns appear repeatedly.
+
+
+**Merge commits.** Git auto-generates merge commit messages like `Merge branch 'feature/auth' into main`. These don't follow Conventional Commits format and shouldn't be rejected. Update your validation script to skip messages that start with `Merge`:
+
+
+```javascript
+function validateCommit(message) {
+  // Skip auto-generated merge commits
+  if (message.startsWith('Merge ') || message.startsWith('Revert ')) {
+    return [];
+  }
+  // ... rest of validation
+}
+```
+
+
+**WIP commits on feature branches.** Some developers use `wip:` as a shorthand while mid-task. Rather than banning WIP commits outright, you can allow them on non-main branches by reading the current branch name inside the hook:
+
+
+```bash
+#!/bin/bash
+# .husky/commit-msg
+
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
+MSG=$(cat "$1")
+
+# Allow WIP only on feature branches
+if echo "$BRANCH" | grep -qE "^(feature|fix|chore)/"; then
+  if echo "$MSG" | grep -qi "^wip:"; then
+    exit 0
+  fi
+fi
+
+node scripts/validate-commit.js "$MSG"
+```
+
+
+**Breaking change notation.** Conventional Commits signals breaking changes with a `!` after the type or a `BREAKING CHANGE:` footer. Add explicit support for this in your validation regex so valid breaking change commits are not rejected:
+
+
+```javascript
+// Allow breaking change marker
+const pattern = /^(\w+)(?:\(([^)]+)\))?(!)?:\ (.+)$/;
+```
+
+
+Documenting these edge cases in your `.cursorrules` file or an adjacent `CONTRIBUTING.md` prevents the inevitable "why did my commit get rejected?" question from new team members.
 
 
 ## Testing Your Implementation

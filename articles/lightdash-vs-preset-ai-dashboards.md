@@ -30,6 +30,9 @@ Choose Lightdash if your team already uses dbt and wants AI-powered natural lang
 Both platforms have introduced AI features, but their implementations reflect their underlying architectural choices.
 
 
+The architectural difference has downstream effects on every aspect of the two platforms. Because Lightdash treats dbt as the source of truth for metrics, adding a new measure to a dashboard means editing a `.yml` file in your dbt project, running `dbt compile`, and letting Lightdash pick up the changes automatically. In Preset, you define metrics in the platform UI or via its API, which is more flexible but creates a second place to maintain definitions that can drift from your dbt models over time.
+
+
 ## AI Features Comparison
 
 
@@ -77,6 +80,9 @@ models:
 Lightdash AI works best when your dbt project follows best practices with well-documented metrics. The AI generates SQL behind the scenes, which means you need to understand the generated queries to validate results.
 
 
+The natural language query feature is genuinely useful for analysts who know the business domain but aren't fluent in SQL. Asking "show me daily active users by region for the past 30 days" returns a working chart because Lightdash can map the question to defined dbt metrics. The limitation appears when users ask questions that cross metric boundaries or require calculations not in the semantic layer—Lightdash returns an error or a misleading result rather than attempting a raw SQL fallback.
+
+
 ### Preset AI
 
 
@@ -113,6 +119,9 @@ def render_anomaly_dashboard(df):
 Preset also offers native AI assistants that can help build queries and generate visualizations through natural language.
 
 
+Preset's AI assistant is less tightly integrated with your data model than Lightdash's, but it compensates with broader capability. Where Lightdash only queries metrics defined in dbt, Preset's assistant can write arbitrary SQL against any connected data source. For organizations that haven't standardized on dbt or that need ad-hoc analysis beyond pre-defined metrics, this flexibility is significant.
+
+
 ## Data Integration Patterns
 
 
@@ -133,6 +142,9 @@ Both platforms connect to similar data sources, but the setup process differs:
 
 
 **Preset** connects directly to your warehouse without dbt dependency. You can use dbt if you want, but it's not required. This makes Preset more flexible for varied data architectures.
+
+
+For teams evaluating which platform to adopt, the dbt dependency is the most important filter. If your data team already writes and maintains dbt models, Lightdash requires nearly zero additional configuration—it reads your existing YAML files. If you're starting fresh or your data lives in ad-hoc SQL scripts, Preset lets you get started immediately while dbt remains optional.
 
 
 ## Building AI Dashboards: Code Examples
@@ -235,6 +247,9 @@ def create_ai_dashboard(preset_token, workspace_id):
 ```
 
 
+The API-first approach in Preset is valuable for teams that manage dashboards as infrastructure. You can version-control your dashboard definitions in the same repository as your application code, deploy them via CI/CD, and use environment variables to switch between staging and production data sources. Lightdash achieves similar reproducibility through its dbt-based YAML configs, but only for the metrics layer—the visual dashboard layout still requires manual configuration in the UI.
+
+
 ## Performance Considerations
 
 
@@ -242,16 +257,22 @@ For AI workloads, query performance matters significantly:
 
 
 | Aspect | Lightdash | Preset |
-
 |--------|-----------|--------|
-
 | Query caching | Automatic with dbt | Configurable per-chart |
-
 | Async queries | Limited | Full async support |
-
 | Large result sets | Best with dbt optimizations | Handles via pagination |
-
 | Custom Python | Not supported | Native execution |
+| Natural language queries | Strong (dbt-scoped) | Moderate (any SQL) |
+| ML model hosting | Not supported | Via Python components |
+
+
+## Pricing and Team Size Fit
+
+
+Lightdash offers a free self-hosted tier and a cloud plan starting at around $400/month for small teams. The cost scales with seats, which works well for focused analytics teams of 5–20 people where most users are analysts who benefit directly from the dbt-integrated workflow.
+
+
+Preset's pricing is usage-based and typically higher for small teams but more cost-effective for large organizations where many users need read-only dashboard access. Preset's enterprise tier includes SSO, role-based access control, and dedicated support—features that matter more at organizations with hundreds of dashboard consumers than at a startup where everyone is an admin.
 
 
 ## When to Choose Each Platform

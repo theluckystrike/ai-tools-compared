@@ -29,6 +29,18 @@ Taint analysis (also known as taint tracking) is a form of static or dynamic ana
 For example, if user input flows directly into an SQL query without parameterization, taint analysis flags this as a potential SQL injection vulnerability. This makes taint analysis an essential tool for security-conscious developers working with external data sources.
 
 
+### Taint Sources, Propagation, and Sinks
+
+
+The three core concepts in taint analysis are:
+
+- **Sources**: Entry points where untrusted data enters (HTTP request parameters, environment variables, file reads, socket input)
+- **Propagation**: How taint spreads through the codebase — string concatenation, function returns, object assignments
+- **Sinks**: Dangerous operations that should never receive unsanitized tainted data (SQL execution, shell commands, HTML output, file paths)
+
+Understanding this model helps you configure analysis tools effectively and interpret Claude Code's findings accurately.
+
+
 ## Why Use Claude Code for Taint Analysis?
 
 
@@ -44,6 +56,9 @@ Claude Code can assist with:
 - Suggesting remediation strategies with code examples
 
 - Integrating analysis results into your existing workflow
+
+
+A key advantage over standalone tools like Semgrep or CodeQL is that Claude Code can reason about your specific application logic. A generic static analyzer might flag every `fs.readFile` call as a potential sink, but Claude Code can evaluate whether a specific call is actually reachable from a taint source and whether upstream validation is meaningful.
 
 
 ## Setting Up Taint Analysis with Claude Code
@@ -80,6 +95,31 @@ module.exports = {
     },
 };
 ```
+
+
+### Adding Semgrep for Deeper Flow Analysis
+
+
+For projects that need true inter-procedural taint tracking, pairing ESLint with Semgrep provides substantially better coverage. Ask Claude Code to generate a Semgrep ruleset tailored to your framework:
+
+
+```yaml
+# semgrep-rules/taint-nodejs.yaml
+rules:
+  - id: express-sqli-taint
+    patterns:
+      - pattern: |
+          $DB.query($QUERY + $REQ.params.$PARAM, ...)
+    message: "Potential SQL injection: request parameter concatenated into query"
+    languages: [javascript, typescript]
+    severity: ERROR
+    metadata:
+      category: security
+      technology: [express, node]
+```
+
+
+Claude Code can generate rules like this when given your framework details and a description of the vulnerability class you want to catch.
 
 
 ## Using Claude Code to Enhance Taint Analysis
@@ -130,6 +170,20 @@ Create ESLint rules to detect potential SQL injection vulnerabilities in our Exp
 Claude Code can generate rule implementations that you can integrate into your linting configuration.
 
 
+### Step 4: Trace Specific Vulnerabilities
+
+
+Once a potential issue is flagged, ask Claude Code to trace the full data flow path:
+
+
+```
+Trace how req.query.filename flows from the /download route handler through to the fs.readFile call. Identify any sanitization or validation that occurs along the path.
+```
+
+
+This step-by-step tracing is where Claude Code provides genuine value over automated scanners, which report findings without the contextual narrative.
+
+
 ## Integrating Taint Analysis into CI/CD
 
 
@@ -166,6 +220,9 @@ Configure your `package.json` scripts:
     }
 }
 ```
+
+
+For teams using GitHub Actions, consider adding a step that posts the security report as a PR comment. This surfaces taint analysis findings directly in the code review workflow, where developers can ask Claude Code for remediation guidance without switching context.
 
 
 ## Interpreting and Remediating Findings
@@ -222,13 +279,37 @@ app.get('/download', (req, res) => {
 ```
 
 
+### Understanding False Positives
+
+
+Not every taint finding represents a real vulnerability. Claude Code helps distinguish between genuine risks and false positives by examining the sanitization chain. If a value passes through a validated allowlist before reaching a sink, Claude Code can confirm the path is safe and document why — important for reducing alert fatigue in security reviews.
+
+
+## Taint Analysis Across Languages
+
+
+While this guide focuses on JavaScript, the Claude Code taint analysis workflow applies broadly:
+
+
+| Language | Primary Tool | Claude Code Role |
+|---|---|---|
+| Python | Bandit, Semgrep | Generate rules, interpret findings |
+| Java | SpotBugs, CodeQL | Configure queries, trace flows |
+| Go | gosec, Semgrep | Custom rule generation |
+| Ruby | Brakeman | Explain findings, suggest patches |
+| PHP | Psalm, PHPCS | Taint source mapping |
+
+
+For each language, the workflow is identical: use the native static analysis tool to surface findings, then bring Claude Code in to explain findings, trace data flows, and generate remediation code.
+
+
 ## Best Practices for Taint Analysis Workflows
 
 
 To maximize the effectiveness of your taint analysis implementation, follow these best practices:
 
 
-1. Start with high-sriority sinks: Focus analysis on database queries, command execution, and file operations first, as these present the highest risk.
+1. Start with high-priority sinks: Focus analysis on database queries, command execution, and file operations first, as these present the highest risk.
 
 
 2. Define clear taint sources: Explicitly mark external input sources (API endpoints, form inputs, file uploads) in your analysis configuration.
@@ -241,6 +322,9 @@ To maximize the effectiveness of your taint analysis implementation, follow thes
 
 
 5. Educate your team: Use Claude Code's explanations to help developers understand security concepts and remediation strategies.
+
+
+6. Track findings over time: Integrate security reports into your issue tracker so taint findings don't get lost between sprints. Claude Code can help generate structured issue descriptions from raw analysis output.
 
 
 ## Related Articles

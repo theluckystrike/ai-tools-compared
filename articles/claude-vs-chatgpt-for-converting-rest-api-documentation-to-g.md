@@ -202,6 +202,93 @@ ChatGPT wins on speed for bulk conversions. If you have 50+ endpoints to convert
 For a quick prototype or internal tool, ChatGPT's output suffices. For a public API where schema quality affects developer experience, Claude's careful approach saves refactoring time.
 
 
+## Handling OpenAPI Specifications Directly
+
+
+Most mature REST APIs provide an OpenAPI (formerly Swagger) specification file. Both tools can accept raw OpenAPI YAML or JSON as input, but they handle it differently.
+
+
+When you paste a full OpenAPI 3.0 spec into Claude, it reads the schemas section, endpoint definitions, and response structures holistically before generating the GraphQL schema. It maps OpenAPI's `$ref` references to GraphQL named types automatically and preserves description fields as GraphQL field documentation comments:
+
+
+```graphql
+"""A physical product available for purchase"""
+type Product {
+  """Unique product identifier"""
+  id: ID!
+  """Display name shown to customers"""
+  name: String!
+  price: Float!
+}
+```
+
+
+ChatGPT also accepts OpenAPI input but tends to process it more literally, sometimes generating a type per endpoint response object rather than deduplicating shared schemas. For APIs with 10-20 endpoints this is manageable; for large APIs with 80+ endpoints the duplicate type problem compounds quickly and requires a cleanup pass.
+
+
+A practical workflow: paste your OpenAPI spec into Claude first to get the initial schema. Then use ChatGPT to convert any remaining one-off endpoints that didn't fit neatly into Claude's first pass.
+
+
+## Dealing with Polymorphic Responses
+
+
+REST APIs frequently return polymorphic responses—the same endpoint returns different shapes depending on a type discriminator field. GraphQL handles this with unions and interfaces, and getting the AI to recognize and model it correctly separates good tools from great ones.
+
+
+Consider a REST response where an order's `payment` field can be either a credit card or a bank transfer:
+
+
+```json
+{ "payment": { "type": "credit_card", "last4": "4242", "brand": "Visa" } }
+// or
+{ "payment": { "type": "bank_transfer", "routing": "021000021", "account_last4": "9876" } }
+```
+
+
+Claude, when given both response shapes and asked explicitly, correctly models this as a GraphQL union:
+
+
+```graphql
+union PaymentMethod = CreditCardPayment | BankTransferPayment
+
+type CreditCardPayment {
+  last4: String!
+  brand: String!
+}
+
+type BankTransferPayment {
+  routing: String!
+  accountLast4: String!
+}
+
+type Order {
+  id: ID!
+  payment: PaymentMethod
+}
+```
+
+
+ChatGPT sometimes handles this correctly when the prompt is explicit, but often defaults to a flat type with nullable fields for each variant—technically functional but not idiomatic GraphQL.
+
+
+## Prompting Strategies That Improve Output Quality
+
+
+The quality gap between the two tools narrows significantly with better prompts. These patterns produce more production-ready schemas from either tool:
+
+
+**Provide real response samples, not just endpoint descriptions.** Actual JSON is more informative than "returns a product object." Field names, nesting depth, and nullability can only be inferred from real data.
+
+
+**Request nullability reasoning explicitly.** Ask the AI to justify each `!` (non-null) annotation it adds. This surfaces assumptions that may be incorrect and forces the output to match your actual data guarantees.
+
+
+**Specify pagination convention upfront.** Tell the tool whether you use Relay cursor pagination, offset-based pagination, or keyset pagination. Both Claude and ChatGPT default to Relay when not instructed, which may not match your backend.
+
+
+**Iterate in multiple passes.** Generate the type definitions first, review them, then ask for queries and mutations separately. Splitting the task reduces the surface area for errors in each step.
+
+
 ## Recommendations by Use Case
 
 

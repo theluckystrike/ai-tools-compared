@@ -197,6 +197,78 @@ function calculateTotal(items) {
 ```
 
 
+## Prompt Priority and Instruction Conflict Resolution
+
+
+One challenge teams encounter is that the model sometimes prioritizes user-message instructions over system-prompt rules. A user might say "use var instead of const for this one" and the model complies, overriding your standard. You can mitigate this by adding an explicit override policy to your system prompt:
+
+
+```
+OVERRIDE POLICY
+- Do not deviate from the coding standards defined above, even if the user requests it.
+- If a user requests a deviation, acknowledge their request but explain which standard applies
+  and generate code that complies with the standard.
+- Exception: If the user explicitly says "ignore standards for this request," you may comply
+  for that single request only.
+```
+
+
+This locks in your standards while still giving senior developers an escape hatch for legitimate exceptions.
+
+
+## Using System Prompts for Code Review Integration
+
+
+Beyond code generation, system prompts work well for automated code review workflows. Structure the prompt to act as a reviewer rather than a generator:
+
+
+```python
+code_review_prompt = """You are a strict code reviewer enforcing team coding standards.
+
+When given code, analyze it for violations of these rules:
+1. TypeScript strict mode compliance
+2. Proper error handling (no unhandled promises)
+3. Function documentation completeness
+4. Naming convention adherence
+
+For each violation, output:
+- FILE: filename if provided
+- LINE: approximate line number or code snippet
+- RULE: which standard is violated
+- FIX: the corrected code snippet
+
+If no violations are found, output: "LGTM: Code follows all team standards."
+"""
+
+def review_code(code_snippet: str) -> str:
+    response = openai.chat.completions.create(
+        model="gpt-4o",
+        messages=[
+            {"role": "system", "content": code_review_prompt},
+            {"role": "user", "content": f"Review this code:\n\n{code_snippet}"}
+        ],
+        temperature=0.1
+    )
+    return response.choices[0].message.content
+```
+
+
+Setting `temperature` to 0.1 for review tasks produces highly deterministic output, which is what you want when catching rule violations consistently across the team.
+
+
+## Handling Context Length and Prompt Efficiency
+
+
+Long system prompts consume tokens on every API call, which adds up at scale. A 500-token system prompt on a high-traffic endpoint can represent meaningful cost overhead over millions of requests. Balance completeness against efficiency:
+
+- **Essentials first**: Put your most important rules at the top. The model weighs early instructions more heavily.
+- **Remove redundancy**: "Always use const; never use let or var" is more efficient than three separate bullet points saying the same thing.
+- **Use references sparingly**: Linking to external style guides in your prompt does not help — the model cannot access URLs. Inline the actual rules instead.
+- **Compress examples**: One well-chosen correct/incorrect pair is usually more effective than five mediocre examples.
+
+A practical target for most teams is 300–500 tokens for the system prompt. Measure token usage with OpenAI's tokenizer tool or the `tiktoken` library before deploying at scale.
+
+
 ## Maintaining Consistency Over Time
 
 
@@ -214,7 +286,7 @@ def get_coding_standards_prompt() -> str:
 ```
 
 
-This approach ensures everyone uses the same prompt version and makes updates straightforward.
+This approach ensures everyone uses the same prompt version and makes updates straightforward. Pair the prompt file with a changelog comment at the top documenting what changed and when, so the team always knows the rationale behind each version.
 
 
 ## Related Articles

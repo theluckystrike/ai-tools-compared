@@ -30,6 +30,26 @@ Tool chaining connects the output of one AI system as input to another, creating
 A typical chain might flow like this: a requirements document enters the pipeline, a code generator creates initial implementations, a linter checks for issues, tests are generated, and finally a deployment system pushes changes. Each stage refines the output, reducing manual intervention.
 
 
+## Matching AI Tools to Pipeline Stages
+
+
+Before building your first pipeline, understand which tools excel at which stages. Using the wrong tool for a task creates noise rather than value.
+
+
+| Stage | Best Tool | Why |
+|-------|-----------|-----|
+| Requirements analysis | Claude (claude.ai or Claude Code) | Long-context reasoning, structured output |
+| File scaffolding | Cursor Composer | Multi-file awareness, project context |
+| Inline completion | GitHub Copilot | Low-latency, IDE-native suggestions |
+| Test generation | ai-testgen or Copilot Chat | Pattern recognition from source code |
+| Code review | Claude Code or Cursor | Holistic analysis across files |
+| Security scanning | CodeWhisperer | Trained on vulnerability patterns |
+| Documentation | Claude | Coherent prose from code context |
+
+
+Resist the temptation to route everything through a single tool. Claude handles nuanced reasoning exceptionally well but is slower for autocomplete. Copilot is fast for line-level suggestions but struggles with cross-file refactors. Building pipelines that respect these boundaries produces dramatically better output.
+
+
 ## Building Your First AI Pipeline
 
 
@@ -228,6 +248,65 @@ ai-pipeline run --config pipeline.yaml
 
 
 Each stage produces artifacts consumed by dependent stages, creating a traceable development workflow.
+
+
+## Avoiding Common Pipeline Failures
+
+
+Even well-designed pipelines break. Knowing the failure modes in advance lets you build defensive pipelines from the start.
+
+
+**Context bleed between stages.** When an upstream tool's output contains ambiguous or contradictory information, downstream tools produce garbage. Solve this by including explicit output schemas for each stage and validating against them before passing data forward.
+
+
+**Token limit explosions.** Passing entire codebases through a reasoning model burns context budget fast. Scope each stage tightly: pass only the files relevant to the current task, not the entire repository. Use embeddings-based retrieval to identify which files matter.
+
+
+**Non-deterministic outputs breaking parsers.** AI models don't produce identical outputs on every run. If your pipeline parses structured output (like JSON) from a model, always include a retry with a stricter prompt when parsing fails. Never assume the first response is machine-readable.
+
+
+**Rate limit cascades.** Parallel pipeline stages that all hit the same API simultaneously will trigger rate limits. Add jitter and backoff at each stage boundary, and stagger parallel calls by at least a few hundred milliseconds.
+
+
+## Integrating Pipelines with CI/CD
+
+
+The most durable AI pipelines run inside CI/CD systems, not on developer laptops. This ensures consistency and creates an auditable record of what AI generated versus what humans wrote.
+
+
+A GitHub Actions workflow that runs AI-assisted code generation on pull requests might look like this:
+
+
+```yaml
+name: AI Feature Pipeline
+on:
+  pull_request:
+    paths:
+      - 'specs/**'
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run AI pipeline
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          npm ci
+          node scripts/ai-pipeline.js --spec specs/${{ github.event.pull_request.head.ref }}.yaml
+      - name: Commit generated code
+        run: |
+          git config user.email "ci@yourorg.com"
+          git config user.name "AI Pipeline"
+          git add src/ server/
+          git commit -m "chore: ai-generated code from spec" || echo "No changes"
+          git push
+```
+
+
+Running pipelines in CI means every developer benefits without installing anything locally, and the output is versioned in your repository history.
 
 
 ## Maintenance Considerations
