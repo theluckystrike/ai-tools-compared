@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /how-to-build-a-rag-pipeline-with-langchain-2026/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared]
