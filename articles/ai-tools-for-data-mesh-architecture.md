@@ -315,6 +315,26 @@ Choose tools that connect to your current data infrastructure and can be overrid
 
 Start with open-source options like Amundsen or DataHub for cataloging, then add commercial tools for sensitive data discovery as needs mature.
 
+A practical phased approach: in the first quarter, deploy Amundsen and integrate it with your largest two or three domains. Instrument Great Expectations on their most critical pipelines. In the second quarter, integrate lineage tracking with OpenLineage and surface the graph in your catalog UI. By month six, you have the metadata foundation and quality signal needed to make governance tooling like Purview or Apache Ranger effective. Governance without a catalog is blind enforcement — the most common reason data mesh governance initiatives fail.
+
+When AI suggestions conflict with a domain team's judgment, default to the domain team. AI tools should augment expertise, not override it. Build exception workflows that let teams document why they overrode a suggestion, which feeds back into improving the model's recommendations over time.
+
+
+
+## Frequently Asked Questions
+
+**Do I need a data mesh to benefit from these AI tools?**
+No. Tools like Great Expectations and DataHub add value in traditional monolithic data warehouses too. But the payoff multiplies in a mesh because you have many teams producing and consuming data independently — exactly where AI-driven automation reduces coordination overhead.
+
+**How does AI cataloging handle proprietary column names?**
+Modern tools like DataHub use embedding models trained on public schemas, SQL patterns, and business glossaries. They match `cust_rev_q4_usd` to "Customer Revenue Q4 USD" with reasonable accuracy. Teams should review suggestions for highly domain-specific terminology and add corrections, which improve future recommendations.
+
+**Can these tools run fully on-premises?**
+Amundsen, DataHub, Apache Atlas, OpenLineage, and Great Expectations all offer self-hosted deployment. Microsoft Purview and Databricks Lakehouse IQ require cloud infrastructure. For regulated industries with strict data residency requirements, the open-source stack is the practical path.
+
+**What is the biggest implementation mistake teams make?**
+Treating the catalog as a one-time setup task. Metadata goes stale as schemas evolve. AI tools help maintain freshness through automated rescanning, but teams still need to allocate time for reviewing and correcting suggestions on a regular cadence.
+
 
 
 ## Related Reading
