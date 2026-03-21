@@ -9,7 +9,7 @@ permalink: /ai-tool-customization-comparison-claude-md-vs-cursorrules-vs/
 categories: [guides]
 tags: [ai-tools-compared, tools, comparison, artificial-intelligence, claude-ai]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

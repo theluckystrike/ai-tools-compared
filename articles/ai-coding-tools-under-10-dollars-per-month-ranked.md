@@ -9,7 +9,7 @@ permalink: /ai-coding-tools-under-10-dollars-per-month-ranked/
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
