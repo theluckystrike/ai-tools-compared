@@ -15,8 +15,6 @@ voice-checked: true
 ---
 
 
-{% raw %}
-
 ## Introduction
 
 
@@ -196,6 +194,156 @@ src/
 This organization allows you to import only the handlers needed for specific test scenarios, keeping your test suites focused and fast.
 
 
+## Advanced Handler Patterns
+
+
+MSW supports sophisticated matching patterns that go beyond simple URL and method matching. For example, you can match requests by headers, query parameters, or request body content:
+
+
+```javascript
+import { http, HttpResponse } from 'msw';
+
+// Match by query parameter
+http.get('https://api.example.com/search', ({ request }) => {
+  const url = new URL(request.url);
+  const query = url.searchParams.get('q');
+
+  if (query?.length < 2) {
+    return HttpResponse.json({
+      error: 'Query must be at least 2 characters',
+      results: []
+    }, { status: 400 });
+  }
+
+  return HttpResponse.json({ results: [...] });
+}),
+
+// Match by request header
+http.post('https://api.example.com/admin/users', ({ request }) => {
+  const authHeader = request.headers.get('authorization');
+
+  if (!authHeader?.startsWith('Bearer ')) {
+    return HttpResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
+  return HttpResponse.json({ success: true }, { status: 201 });
+}),
+
+// Match by request body
+http.post('https://api.example.com/validate-email', async ({ request }) => {
+  const body = await request.json();
+  const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.email);
+
+  return HttpResponse.json({ valid: isValid });
+}),
+```
+
+
+These patterns enable you to test edge cases and error conditions that would be difficult to reproduce with a real API.
+
+
+## Debugging Mock Failures
+
+
+When tests fail with MSW configured, Claude Code can help diagnose issues. Common problems include unmatched requests, incorrect response shapes, or timing issues.
+
+
+Enable request logging to see what requests your application actually makes:
+
+
+```javascript
+import { http, HttpResponse } from 'msw';
+import { setupServer } from 'msw/node';
+
+const handlers = [
+  http.get('*', ({ request }) => {
+    console.log('Unhandled request:', request.method, request.url);
+    return HttpResponse.json({ error: 'Not mocked' }, { status: 404 });
+  }),
+];
+
+const server = setupServer(...handlers);
+```
+
+
+The wildcard handler at the end catches any unmatched requests and logs them. This reveals whether your application is making requests you forgot to mock.
+
+
+## Integration with React Testing Library
+
+
+MSW pairs exceptionally well with React Testing Library. Rather than mocking fetch directly, MSW intercepts at the service worker level, making tests more realistic:
+
+
+```javascript
+import { render, screen, waitFor } from '@testing-library/react';
+import { setupServer } from 'msw/node';
+import { http, HttpResponse } from 'msw';
+import UserProfile from './UserProfile';
+
+const server = setupServer(
+  http.get('https://api.example.com/user/:id', () => {
+    return HttpResponse.json({
+      id: '123',
+      name: 'Alice',
+      email: 'alice@example.com'
+    });
+  })
+);
+
+beforeAll(() => server.listen());
+afterEach(() => server.resetHandlers());
+afterAll(() => server.close());
+
+test('displays user profile', async () => {
+  render(<UserProfile userId="123" />);
+
+  await waitFor(() => {
+    expect(screen.getByText('Alice')).toBeInTheDocument();
+  });
+});
+
+test('handles loading state', async () => {
+  server.use(
+    http.get('https://api.example.com/user/:id', async () => {
+      await new Promise(resolve => setTimeout(resolve, 100));
+      return HttpResponse.json({ id: '123', name: 'Bob' });
+    })
+  );
+
+  render(<UserProfile userId="123" />);
+  expect(screen.getByRole('status', { name: /loading/i })).toBeInTheDocument();
+});
+```
+
+
+This approach tests your component's actual behavior without brittle implementation details.
+
+
+## Performance Considerations
+
+
+MSW has minimal performance overhead, but handling thousands of requests in test suites can slow execution. Optimize by:
+
+1. **Using request handlers strategically** - Only mock endpoints your test actually calls
+2. **Avoiding artificial delays** - Remove `setTimeout` from handlers once development is complete
+3. **Resetting handlers between tests** - `server.resetHandlers()` prevents state leakage
+4. **Using request scope handlers** - Override global handlers for specific tests without affecting others:
+
+
+```javascript
+test('handles API errors', async () => {
+  server.use(
+    http.get('https://api.example.com/data', () => {
+      return HttpResponse.json({ error: 'Server error' }, { status: 500 });
+    })
+  );
+
+  // Test error handling
+});
+```
+
+
 ## Best Practices
 
 
@@ -208,6 +356,21 @@ Third, version your mock definitions alongside your API contracts. When your bac
 Finally, use MSW's request matching capabilities to create dynamic responses based on query parameters, headers, or request body content. This flexibility allows you to test complex scenarios without creating multiple handler variants.
 
 
+## Comparison with Alternatives
+
+
+| Tool | Setup Complexity | Realism | Context-Aware |
+|------|-----------------|---------|---------------|
+| MSW | Moderate | Very High | Yes |
+| Jest Mocks | Low | Medium | No |
+| Sinon | Moderate | Medium | Yes |
+| node-fetch-mock | Low | Medium | No |
+| Vitest Mock | Low | Medium | No |
+
+
+MSW stands out for its service-worker-level interception, making mocked requests indistinguishable from real network calls. This realism catches more bugs than traditional mocking approaches.
+
+
 ## Related Articles
 
 - [AI Tools for Writing Jest Tests for Web Worker and Service](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-web-worker-and-service-w/)
@@ -217,4 +380,3 @@ Finally, use MSW's request matching capabilities to create dynamic responses bas
 - [AI Tools for Generating Kubernetes Service Mesh](/ai-tools-compared/ai-tools-for-generating-kubernetes-service-mesh-configuratio/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
