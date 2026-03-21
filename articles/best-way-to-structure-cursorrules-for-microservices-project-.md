@@ -270,6 +270,45 @@ event_driven:
 ```
 
 
+## CursorRules Tool Comparison for Microservices
+
+Not all approaches to CursorRules configuration deliver the same results at monorepo scale. Here is how the main strategies compare:
+
+| Approach | Maintainability | Proto Awareness | Cross-Service Context | Best For |
+|---|---|---|---|---|
+| Single root `.cursorrules` | High | Low | Poor | Small projects (<3 services) |
+| Per-service files (no root) | Low | High | None | Isolated services |
+| Root + per-service hierarchy | High | High | Good | Most monorepos |
+| Shared library `.cursorrules` | Medium | Medium | Excellent | Teams with many shared libs |
+| Dynamic injection via MCP | Very high | Very high | Excellent | Large orgs (10+ services) |
+
+For most teams, the root + per-service hierarchy provides the best balance. Dynamic injection via Model Context Protocol servers makes sense when your proto definitions change frequently and you want live context fed to the AI rather than static YAML files.
+
+
+## Step-by-Step Implementation Workflow
+
+Follow this sequence when rolling out CursorRules across an existing microservices monorepo:
+
+**Step 1: Audit your proto layout.** Run `find . -name "*.proto" | sort` to enumerate all definition files. Group them into shared (used by two or more services) and service-local categories.
+
+**Step 2: Create the root file.** Place `.cursorrules` at the repo root. Declare `project_type`, `proto_base_path`, and the `services` array. Commit this before touching individual service directories so the AI has a baseline.
+
+**Step 3: Generate per-service stubs.** For each service directory, create a `.cursorrules` that `extends` the root. Fill in the `proto_dependencies` list and any service-specific `conventions`. Use `protoc --descriptor_set_out=descriptor.pb` to produce machine-readable schema references the AI can parse.
+
+**Step 4: Validate with a test prompt.** Open a service file and ask Cursor: "Add a `ListOrders` RPC that returns paginated results using our common pagination types." The AI should pull in `common.PaginationRequest` and `common.PaginationResponse` automatically. If it invents its own types, your import rules need tightening.
+
+**Step 5: Add breaking-change guards.** Include `buf lint` and `buf breaking` in your CI pipeline:
+
+```bash
+buf lint proto/
+buf breaking --against .git#branch=main proto/
+```
+
+These commands catch field number reuse and type changes before they reach production, complementing what the AI flags in the editor.
+
+**Step 6: Document the rules for new engineers.** Add a `CURSORRULES.md` at the root explaining the hierarchy, how to extend rules, and what the shared proto packages do. The AI will incorporate this context automatically when it indexes the repo.
+
+
 ## Testing the Configuration
 
 
@@ -283,6 +322,26 @@ After setting up your CursorRules, verify they work correctly by prompting the A
 3. Check that generated code follows your conventions
 
 4. Test backward compatibility warnings
+
+
+## FAQ
+
+
+**Q: Can I use CursorRules with Buf Schema Registry instead of local proto files?**
+
+Yes. Point `proto_base_path` to a local cache populated by `buf export`, or configure your MCP server to fetch schemas from the BSR API. Either way, the AI sees the same proto definitions without needing a full local checkout.
+
+**Q: Our services use different languages (Go, Java, TypeScript). How do I handle that?**
+
+Declare `primary_language` per service in the service-specific `.cursorrules` and set `secondary_languages` only at the root. The root-level `code_generation` block can hold all three plugin configs simultaneously—Cursor picks the right one based on the file extension it is editing.
+
+**Q: How often should I update CursorRules files?**
+
+Treat them like dependency manifests: update them whenever you add a new service, introduce a new shared proto package, or change a team-wide convention. A good trigger is any PR that modifies a `.proto` file or `go.mod`/`pom.xml`.
+
+**Q: Does the `extends` field work natively in Cursor?**
+
+`extends` is a convention you document for the AI, not a built-in Cursor feature. The AI reads the parent file's content if it is within the indexed workspace. To make inheritance explicit, you can paste a `# Inherits from root .cursorrules` comment and duplicate the critical fields—this avoids any ambiguity about what the AI should apply.
 
 
 ## Maintenance and Evolution
