@@ -206,7 +206,256 @@ The best AI tool depends on your workflow:
 
 All three tools have significantly improved their Android-specific knowledge bases in 2026, making R8 debugging less painful than in previous years.
 
-Remember to always test your release builds thoroughly—R8 behavior can vary between Android Gradle Plugin versions, and AI suggestions should be validated against your specific configuration.
+## Building a Comprehensive Keep Rules Library
+
+Over time, develop a library of common keep rules that work for your project. AI tools can help organize and document these:
+
+```proguard
+# Common third-party library keep rules
+
+# Firebase
+-keep class com.google.firebase.** { *; }
+-keepclassmembers class com.google.firebase.** {
+    <init>(...);
+}
+
+# Retrofit and OkHttp
+-dontwarn okhttp3.**
+-dontwarn okio.**
+-keep class okhttp3.** { *; }
+-keep interface okhttp3.** { *; }
+-keep class retrofit2.** { *; }
+
+# Room Database
+-keep class * extends androidx.room.RoomDatabase
+-keep @androidx.room.Entity class * { *; }
+-keepclassmembers class * {
+    @androidx.room.ColumnInfo <fields>;
+}
+
+# Jetpack Compose
+-keep class androidx.compose.** { *; }
+-keepclasseswithmembernames class * {
+    native <methods>;
+}
+
+# Your custom rules
+-keepattributes SourceFile,LineNumberTable
+-renamesourcefileattribute SourceFile
+```
+
+## Advanced R8 Configuration Techniques
+
+AI can help explain and generate advanced R8 rules:
+
+```gradle
+// build.gradle
+android {
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+
+            // Use full R8 instead of ProGuard
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            // Enable additional optimization passes
+            postprocessing {
+                // Keep debugging info for better crash reports
+                keepDebuggingInformation true
+            }
+        }
+
+        // Debug build without minification for faster builds
+        debug {
+            minifyEnabled false
+            debuggable true
+        }
+    }
+}
+```
+
+## Creating Effective Prompts for AI R8 Debugging
+
+To get better R8 debugging help from AI tools, structure your prompts clearly:
+
+```
+Bad prompt:
+"My app crashes with R8. Help me fix it."
+
+Good prompt:
+"My Android app minified with R8 crashes with this stack trace:
+[paste full stack trace]
+
+The error occurs when [description of what triggers it].
+My proguard-rules.pro currently has [relevant rules].
+
+What keep rules do I need to add to fix this without keeping unnecessary code?"
+```
+
+Providing context helps AI tools understand the problem and suggest targeted solutions.
+
+## Comparing R8 vs ProGuard
+
+AI can help explain the differences:
+
+| Feature | ProGuard | R8 |
+|---------|----------|-----|
+| Shrinking | Yes | Yes |
+| Obfuscation | Yes | Yes |
+| Optimization | Basic | Advanced |
+| Integration | Standalone | Built into AGP |
+| Maintenance | Legacy | Active development |
+| Performance | Slower | Faster |
+| Keep rules syntax | Proprietary | Compatible with ProGuard |
+
+## Testing Strategy for Minified Builds
+
+AI can generate a comprehensive testing checklist:
+
+```dart
+// Example instrumented test for verifying minification safety
+class MinificationTests {
+
+  @Test
+  fun testSerializationAfterMinification() {
+    val user = User(
+      id = 123,
+      email = "test@example.com",
+      createdAt = System.currentTimeMillis()
+    )
+
+    // Verify serialization works with minified names
+    val json = gson.toJson(user)
+    val deserialized = gson.fromJson(json, User::class.java)
+
+    assertEquals(user.id, deserialized.id)
+    assertEquals(user.email, deserialized.email)
+  }
+
+  @Test
+  fun testReflectionInMinifiedBuild() {
+    // Test reflection-based code that might break with minification
+    val clazz = Class.forName("com.example.MyClass")
+    val method = clazz.getMethod("doSomething")
+    assertNotNull(method)
+  }
+
+  @Test
+  fun testNativeMethodsCalled() {
+    // Verify JNI methods still work after minification
+    val result = MyNativeLibrary.nativeFunction(42)
+    assertEquals(42, result)
+  }
+}
+```
+
+## Automated R8 Analysis Tool
+
+AI can help you create tooling to analyze R8 behavior:
+
+```python
+#!/usr/bin/env python3
+# analyze_r8_mapping.py
+
+import re
+import sys
+
+def parse_mapping_file(mapping_path):
+    """Parse R8 mapping.txt to understand obfuscation."""
+    classes = {}
+
+    with open(mapping_path) as f:
+        current_class = None
+        for line in f:
+            line = line.rstrip()
+
+            # Class mapping: com.example.MyClass -> a
+            if ' -> ' in line and ':' not in line:
+                original, obfuscated = line.split(' -> ')
+                classes[obfuscated.strip()] = {
+                    'original': original.strip(),
+                    'methods': {}
+                }
+                current_class = obfuscated.strip()
+
+            # Method mapping: void doSomething() -> b
+            elif ' -> ' in line and ':' in line and current_class:
+                parts = line.split(' -> ')
+                obfuscated_method = parts[1].strip()
+                classes[current_class]['methods'][obfuscated_method] = parts[0].strip()
+
+    return classes
+
+def decode_stack_trace(mapping, obfuscated_class, obfuscated_method):
+    """Decode obfuscated stack trace back to original names."""
+    if obfuscated_class in mapping:
+        class_info = mapping[obfuscated_class]
+        original_class = class_info['original']
+
+        if obfuscated_method in class_info['methods']:
+            original_method = class_info['methods'][obfuscated_method]
+            return f"{original_class}.{original_method}"
+
+    return f"{obfuscated_class}.{obfuscated_method}"
+
+if __name__ == '__main__':
+    mapping = parse_mapping_file(sys.argv[1])
+
+    # Example: decode "a.b(Unknown Source)"
+    decoded = decode_stack_trace(mapping, 'a', 'b')
+    print(f"Decoded: {decoded}")
+```
+
+## Integration with CI/CD
+
+AI can help generate CI/CD configurations that catch R8 issues early:
+
+```yaml
+# .github/workflows/test-minification.yml
+name: Test Minification
+
+on: [push, pull_request]
+
+jobs:
+  minification-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+
+      - name: Build release APK
+        run: ./gradlew assembleRelease
+
+      - name: Run instrumented tests on minified build
+        run: ./gradlew connectedAndroidTest -PtestBuildType=release
+
+      - name: Analyze R8 mapping
+        run: python scripts/analyze_r8_mapping.py build/outputs/mapping/release/mapping.txt
+
+      - name: Check for breaking changes
+        run: |
+          git fetch origin main
+          python scripts/check_keep_rules.py origin/main HEAD
+```
+
+## Choosing Your AI Debugging Tool
+
+The best AI tool depends on your workflow:
+
+- **For comprehensive analysis and learning**: Claude Code provides detailed explanations of why R8 is removing code and what keep rules you actually need
+
+- **For inline coding assistance**: GitHub Copilot works seamlessly in Android Studio, suggesting keep rules as you type
+
+- **For AWS-specific projects**: Amazon Q Developer offers specialized knowledge about AWS SDK obfuscation issues
+
+All three tools have significantly improved their Android-specific knowledge bases in 2026, making R8 debugging less painful than in previous years. The key to effective debugging is providing context: full stack traces, your current keep rules, and clear descriptions of what breaks.
+
+Remember to always test your release builds thoroughly—R8 behavior can vary between Android Gradle Plugin versions, and AI suggestions should be validated against your specific configuration. Create a test matrix that verifies critical code paths work correctly after minification.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
