@@ -47,6 +47,13 @@ Before writing custom instructions, you need a clearly defined error response sc
 This schema includes a success flag, nested error object with code, message, details array, timestamp, and request ID. Your custom instructions must communicate this structure clearly.
 
 
+## Why AI Deviates From Your Schema Without Instructions
+
+AI coding assistants learn from millions of codebases and naturally produce the patterns they have seen most frequently. GPT-4 and Claude have ingested thousands of Express.js, FastAPI, and Django projects, each with different error response conventions. Without explicit guidance, the model picks the structure that statistically fits the surrounding code—which may be RFC 7807 Problem Details, a flat `{ error: "message" }` object, or any number of other patterns.
+
+The result is drift: the first endpoint your AI generates returns `{ success, error: { code, message } }`, the second returns `{ status: "error", message: "..." }`, and the third returns `{ errors: [...] }`. Consumers of your API now need branching logic to handle every variant. Custom instructions lock the AI into a single canonical structure before it writes a single line.
+
+
 ## Writing Effective Custom Instructions
 
 
@@ -212,6 +219,61 @@ Always generate error responses matching our standard format:
 ```
 
 
+## Tool-by-Tool Configuration Comparison
+
+Different AI tools vary in how persistently they honor custom instructions. Understanding these differences helps you calibrate how detailed your instructions need to be:
+
+| Tool | Config Mechanism | Instruction Persistence | Schema Adherence |
+|---|---|---|---|
+| Cursor | `.cursorrules` | Per-project, always active | High with examples |
+| Claude Code | `CLAUDE.md` | Per-project, always active | High with examples |
+| GitHub Copilot | `copilot-instructions.md` | Per-repo | Moderate |
+| ChatGPT | Custom Instructions (account) | Account-wide | Moderate |
+| Cline | `.clinerules` | Per-project | High with examples |
+| Windsurf | `.windsurfrules` | Per-project | High with examples |
+
+Tools that read project-level config files on every request (Cursor, Claude Code, Cline) provide more consistent adherence than tools that rely on account-level settings or inline prompting. For critical schema enforcement, project-level config files are the most reliable mechanism.
+
+
+## Advanced: TypeScript Type-Driven Instructions
+
+If your project uses TypeScript, embedding your type definitions directly into the custom instructions is the most precise way to communicate your schema. AI models parse TypeScript interface definitions accurately and generate code that satisfies the type contracts:
+
+```typescript
+// Include this in your CLAUDE.md or .cursorrules:
+
+interface ApiError {
+  code: ErrorCode;
+  message: string;
+  details?: ValidationDetail[];
+  timestamp: string;  // ISO 8601
+  requestId: string;  // "req_" prefix required
+}
+
+interface ValidationDetail {
+  field: string;
+  message: string;
+}
+
+type ErrorCode =
+  | 'VALIDATION_ERROR'
+  | 'AUTHENTICATION_ERROR'
+  | 'AUTHORIZATION_ERROR'
+  | 'NOT_FOUND'
+  | 'RATE_LIMIT_ERROR'
+  | 'INTERNAL_ERROR'
+  | 'EXTERNAL_SERVICE_ERROR';
+
+interface ApiResponse<T> {
+  success: boolean;
+  data?: T;
+  error?: ApiError;
+}
+```
+
+With these type definitions in your custom instructions, the AI will generate code that satisfies the type checker automatically—no runtime surprises.
+
+
 ## Testing Your Custom Instructions
 
 
@@ -226,6 +288,8 @@ After adding custom instructions, verify they work by asking AI to generate erro
 
 4. Use of utilities: Using your existing error handling functions
 
+
+A useful verification workflow is to ask the AI to generate error handling for three different endpoint types in a single session: a validation-heavy POST endpoint, a resource-fetching GET endpoint, and an authenticated-only DELETE endpoint. Diffing the error response shapes across all three will reveal any inconsistencies in how your instructions are being interpreted.
 
 If the AI deviates from your schema, refine your instructions with more specific examples or constraints.
 
@@ -243,6 +307,10 @@ Forgetting validation details: Many APIs include field-level validation errors. 
 
 
 Ignoring language differences: Error handling patterns differ between languages. Provide examples for each language you use.
+
+Omitting the "why": AI models follow instructions more reliably when the instructions include brief rationale. Adding "so that API consumers can parse errors without branching logic" after your schema definition improves adherence—the model treats the instruction as a meaningful constraint rather than an arbitrary rule.
+
+Not versioning your instructions: Store your `.cursorrules`, `CLAUDE.md`, and related files in version control. When your schema evolves, update the instructions at the same time. Drift between your actual schema and your AI instructions is a common source of inconsistent code in growing codebases.
 
 
 ## Related Articles
