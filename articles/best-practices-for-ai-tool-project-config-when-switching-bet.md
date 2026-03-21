@@ -16,7 +16,7 @@ voice-checked: true
 
 
 
-Manage AI tool configurations across client projects by using environment-specific configuration files with API keys isolated in.env files, implementing a project switcher script for instant context switching, and maintaining separate configuration directories for each client. This approach prevents data leaks, reduces setup time, and keeps your multi-client workflow consistent across all projects.
+Manage AI tool configurations across client projects by using environment-specific configuration files with API keys isolated in .env files, implementing a project switcher script for instant context switching, and maintaining separate configuration directories for each client. This approach prevents data leaks, reduces setup time, and keeps your multi-client workflow consistent across all projects.
 
 
 
@@ -155,11 +155,11 @@ import os
 def init_project(client_name: str, template_path: str, output_path: str):
     with open(template_path) as f:
         config = yaml.safe_load(f)
-    
+
     config['system_prompt'] = config['system_prompt'].replace(
         '{{CLIENT_NAME}}', client_name
     )
-    
+
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     with open(output_path, 'w') as f:
         yaml.dump(config, f)
@@ -232,22 +232,100 @@ alias use-beta="cp ~/.ai-tools/client-beta.json ~/.ai-tools/config.json"
 ```
 
 
+## Tool-Specific Configuration Patterns
+
+Different AI coding tools have their own configuration conventions. Here is how to handle the most common ones across client projects:
+
+### Cursor
+
+Cursor reads `.cursorrules` from the project root. Keep a per-client version of this file and symlink or copy it when switching:
+
+```bash
+# On switch
+cp ~/projects/client-alpha/.cursorrules ~/active-project/.cursorrules
+```
+
+The `.cursorrules` file holds project-specific instructions about coding style, framework preferences, and off-limits patterns. This is especially valuable for clients with strict style guides or proprietary API conventions.
+
+### Claude Code
+
+Claude Code respects `CLAUDE.md` in the project root and any parent directories. For multi-client work, maintain a `CLAUDE.md` per client directory:
+
+```markdown
+# CLAUDE.md for Client Alpha
+
+## Project Context
+This is a fintech API project. Never suggest external dependencies without approval.
+Always use the internal logging library at `internal/logger`.
+
+## Coding Standards
+- Go 1.22+
+- Error wrapping with `fmt.Errorf("...: %w", err)`
+- All handlers must log request ID from context
+```
+
+### GitHub Copilot
+
+Copilot uses `.github/copilot-instructions.md` for workspace instructions. Add this file per repo:
+
+```markdown
+# Copilot Instructions
+
+This project uses Python 3.11 with strict type hints.
+Follow PEP 8. Use `ruff` for linting.
+Database access goes through the repository pattern only — never direct ORM calls in handlers.
+```
+
+## Multi-Tool Configuration Matrix
+
+If you use different AI tools for different clients, track the configuration files each tool expects:
+
+| Tool | Config File | Scope | Supports Multiple Profiles |
+|------|------------|-------|---------------------------|
+| Claude Code | CLAUDE.md | Per directory | Via directory structure |
+| Cursor | .cursorrules | Per project root | Manual copy/symlink |
+| GitHub Copilot | .github/copilot-instructions.md | Per repo | Per repo natively |
+| Aider | .aider.conf.yml | Per directory | Via --config flag |
+| Continue | config.json | Global | Via profile switching |
+
 ## Document Your Workflow
 
 
 
 Maintain a simple internal wiki or README explaining your setup. Include the directory structure, how to add a new client, and emergency steps if a key is compromised. This helps if you step away from a project and return months later or if another team member needs to take over.
 
+Treat your client configuration infrastructure as code: version control the templates, document the switching procedure, and test the setup on a staging machine before relying on it for billable work.
+
+## Frequently Asked Questions
+
+**What is the biggest risk when managing AI configs across multiple clients?**
+
+Cross-contamination — accidentally using one client's API key or system prompt for another client's work. Automation (direnv, project switcher scripts) eliminates most of this risk. Manual switching is error-prone.
+
+**Should I use separate AI accounts per client or one shared account?**
+
+Prefer separate API keys within one account rather than entirely separate accounts. Most providers allow you to create multiple API keys with different labels. This keeps billing consolidated while maintaining credential isolation.
+
+**How do I handle clients who have corporate data residency requirements?**
+
+Some clients require that data never leave a specific cloud region. Check whether your AI provider supports regional endpoints (Anthropic, OpenAI, and Azure all do). Configure the `api_endpoint` in each client's `.env` to point at the appropriate regional URL.
+
+**Can I automate the entire project switch in one command?**
+
+Yes. Combine your switcher script with direnv and a post-switch hook that opens the right project directory in your editor. A single `switch-client.sh client-alpha` command can load env vars, open VS Code/Cursor, and set terminal title in one step.
+
+
+
+{% endraw %}
 
 
 ## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Manage AI Coding Context When Switching Between.](/ai-tools-compared/how-to-manage-ai-coding-context-when-switching-between-diffe/)
+- [Best AI Tools for Developers in 2026](/ai-tools-compared/best-ai-tools-for-developers-2026/)
+- [AI Tools Comparisons Hub](/ai-tools-compared/comparisons-hub/)
+- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best Practices for Sharing AI Tool Configuration Files Across Distributed Engineering Teams](/ai-tools-compared/best-practices-for-sharing-ai-tool-configuration-files-acros/)
-- [How to Structure Project Files So AI Coding Tools.](/ai-tools-compared/how-to-structure-project-files-so-ai-coding-tools-understand/)
+- [How to Structure Project Files So AI Coding Tools Understand](/ai-tools-compared/how-to-structure-project-files-so-ai-coding-tools-understand/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
