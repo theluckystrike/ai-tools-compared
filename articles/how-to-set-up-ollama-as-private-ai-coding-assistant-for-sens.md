@@ -85,6 +85,21 @@ ollama list
 Models download once and remain cached locally. The storage requirement varies by model—CodeLlama typically needs 3-8GB depending on the specific variant.
 
 
+## Model Comparison for Sensitive Codebases
+
+Choosing the right model matters for both quality and performance. Here is how the leading local coding models compare on the metrics that matter most for private deployments:
+
+| Model | Size | RAM Required | Code Quality | Context Window | Best Use Case |
+|---|---|---|---|---|---|
+| CodeLlama 7B | 3.8 GB | 8 GB | Good | 16K tokens | General completion |
+| CodeLlama 13B | 7.3 GB | 16 GB | Very good | 16K tokens | Complex refactoring |
+| DeepSeek-Coder 6.7B | 3.8 GB | 8 GB | Very good | 16K tokens | Multi-language support |
+| Qwen2.5-Coder 7B | 4.1 GB | 8 GB | Excellent | 32K tokens | Long-file edits |
+| Qwen2.5-Coder 14B | 8.2 GB | 16 GB | Excellent | 128K tokens | Large codebase tasks |
+
+For most sensitive-codebase scenarios, Qwen2.5-Coder 7B delivers the best quality-to-resource ratio. Its 32K token context window lets you paste entire files without truncation, which is critical when you cannot send code to a cloud API and need the model to see the full picture.
+
+
 ## Running Ollama as a Local Server
 
 
@@ -269,6 +284,71 @@ curl http://localhost:11434/api/generate -d '{
 ```
 
 
+## Full Setup Walkthrough: Secure Team Environment
+
+This workflow covers setting up Ollama for a small engineering team where all code must stay on-premises—common in fintech, defense contracting, and healthcare software shops.
+
+**Step 1: Install on a dedicated inference server.** Instead of each developer running their own model, provision a shared Linux server with a GPU. Install Ollama and expose it on an internal network address:
+
+```bash
+OLLAMA_HOST=0.0.0.0:11434 ollama serve
+```
+
+Restrict access with your corporate firewall to the VPN subnet only. This way, engineers with lower-spec laptops get GPU-accelerated inference without each maintaining their own model cache.
+
+**Step 2: Pull the model once, share via NFS.** Ollama stores models in `~/.ollama/models`. Mount this directory from a NAS share on each machine so model downloads happen once across the team:
+
+```bash
+# On each developer workstation
+sudo mount -t nfs nas.internal:/ollama-models /home/user/.ollama/models
+ollama pull qwen2.5-coder:7b  # downloads to NAS, shared by all
+```
+
+**Step 3: Configure Continue.dev in VS Code for each developer.** The Continue extension is the most flexible client for team setups. Create a shared `~/.continue/config.json` that engineers copy:
+
+```json
+{
+  "models": [
+    {
+      "title": "Qwen2.5-Coder (Local)",
+      "provider": "ollama",
+      "model": "qwen2.5-coder:7b",
+      "apiBase": "http://gpu-server.internal:11434"
+    }
+  ],
+  "tabAutocompleteModel": {
+    "title": "Qwen2.5-Coder Autocomplete",
+    "provider": "ollama",
+    "model": "qwen2.5-coder:7b",
+    "apiBase": "http://gpu-server.internal:11434"
+  }
+}
+```
+
+**Step 4: Add a Modelfile for your codebase conventions.** Ollama supports custom system prompts via Modelfiles. Create `/etc/ollama/Modelfile.internal`:
+
+```
+FROM qwen2.5-coder:7b
+
+SYSTEM """
+You are a coding assistant for internal tooling built on Python 3.12 and FastAPI.
+Always use Pydantic v2 models. Prefer async/await patterns. Never suggest
+importing third-party packages not in requirements.txt. Do not include
+explanatory prose unless explicitly requested.
+"""
+```
+
+Build and register the model: `ollama create internal-coder -f /etc/ollama/Modelfile.internal`
+
+**Step 5: Audit inference logs for compliance.** Ollama logs prompts and responses to stdout by default. Redirect to a secured log file and rotate daily:
+
+```bash
+OLLAMA_HOST=0.0.0.0:11434 ollama serve >> /var/log/ollama/inference.log 2>&1
+```
+
+For regulated environments, store these logs for the retention period required by your compliance framework (SOC 2, HIPAA, etc.).
+
+
 ## Practical Example: Code Review Workflow
 
 
@@ -285,6 +365,25 @@ Here's how a typical code review session works with local Ollama:
 
 
 The entire interaction happens offline. No code leaves your machine.
+
+
+## FAQ
+
+**Q: How does Ollama compare to running llama.cpp directly for coding tasks?**
+
+Ollama wraps llama.cpp and adds a REST API, model management, and automatic quantization selection. For coding use cases, Ollama is strictly easier to operate. Use llama.cpp directly only if you need fine-grained quantization control (e.g., GGUF Q4_K_M vs Q5_K_S) or want to integrate into a custom inference pipeline.
+
+**Q: Can I use Ollama with JetBrains IDEs like IntelliJ or PyCharm?**
+
+Yes. Install the **AI Assistant** plugin (it supports custom endpoints) or use the **Grazie** plugin configured for local inference. Alternatively, the **Continue** plugin for JetBrains supports Ollama directly and mirrors the VS Code configuration.
+
+**Q: What happens to model performance when running on CPU only?**
+
+Inference on CPU is 10-30x slower than GPU. A 7B model generating a 200-token response takes about 2-3 minutes on a modern laptop CPU versus 5-10 seconds on an M2 Pro or NVIDIA RTX 3080. For interactive autocomplete, CPU-only inference is too slow to be practical. Consider cloud-hosted private inference (Replicate, Modal, or AWS Bedrock with private VPC endpoints) if GPU hardware is unavailable.
+
+**Q: Is there a way to prevent Ollama from phoning home for model metadata?**
+
+Set `OLLAMA_NOPRUNE=1` and `OLLAMA_SKIP_UPDATE=1` environment variables. For fully airgapped environments, download GGUF model files directly from Hugging Face on a connected machine, copy them to the isolated server, and import with `ollama create mymodel -f ./Modelfile` pointing to the local GGUF path.
 
 
 ## Related Articles
