@@ -9,7 +9,7 @@ permalink: /how-to-use-ai-to-resolve-npm-peer-dependency-conflict-errors/
 categories: [guides]
 tags: [ai-tools-compared, tools, troubleshooting, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
