@@ -789,8 +789,6 @@ ORDER BY mean_exec_time DESC;
 ---
 
 
-
-
 ## Related Articles
 
 - [Best AI Assistant for SQL Query Optimization](/ai-tools-compared/best-ai-assistant-for-sql-query-optimization/)
@@ -798,5 +796,7 @@ ORDER BY mean_exec_time DESC;
 - [AI-Powered Database Query Optimization Tools 2026](/ai-tools-compared/ai-powered-database-query-optimization-tools/)
 - [AI Tools for Database Performance Optimization Query](/ai-tools-compared/ai-tools-for-database-performance-optimization-query-analysis/)
 - [Best AI Tools for SQL Query Generation 2026](/ai-tools-compared/best-ai-tools-for-sql-query-generation-2026/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

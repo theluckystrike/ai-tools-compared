@@ -310,10 +310,6 @@ This tells you exactly what patterns to expect in your migration.
 Migration with AI tools is no longer optional for large legacy systems. The bottleneck shifts from raw conversion effort to testing and validation. Invest in test suites before migration starts.
 
 
-
-
-
-
 ## Related Articles
 
 - [AI Code Completion for Java Jakarta EE Migration from Javax](/ai-tools-compared/ai-code-completion-for-java-jakarta-ee-migration-from-javax-/)

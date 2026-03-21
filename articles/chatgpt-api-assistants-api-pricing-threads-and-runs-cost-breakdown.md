@@ -18,13 +18,10 @@ voice-checked: true
 The OpenAI Assistants API charges based on input tokens, output tokens, thread storage, and run execution, with costs varying dramatically by model. Using gpt-4o-mini, a typical run costs under a tenth of a cent ($0.15/1M input, $0.60/1M output), while the same run on gpt-4o costs roughly one cent ($2.50/1M input, $10.00/1M output). Thread storage adds a smaller but cumulative cost based on total tokens stored across all messages. This guide breaks down each cost component with practical examples to help you estimate and optimize your Assistants API spending.
 
 
-
 ## Assistants API Pricing Model Overview
 
 
-
 The Assistants API charges based on several distinct operations: assistant creation, thread storage, message handling, and run execution. Each operation has a specific cost per 1,000 tokens or per run, depending on the model you select.
-
 
 
 The primary cost drivers are:
@@ -38,29 +35,22 @@ The primary cost drivers are:
 - Run execution: Each time the assistant processes a thread
 
 
-
 Model selection significantly impacts costs. The gpt-4o-mini model offers the lowest per-token rates, while gpt-4o provides more capable reasoning at higher costs.
-
 
 
 ## Thread Storage Costs
 
 
-
 Threads maintain conversation history and context between interactions. OpenAI charges for thread storage based on the total tokens stored across all messages in a thread.
-
 
 
 Thread storage pricing is straightforward: you pay for the token count of all messages within a thread. A thread with 10 messages averaging 500 tokens each carries 5,000 tokens in storage, billed at the storage rate for your selected model.
 
 
-
 For a conversation-heavy application with 1,000 active threads averaging 3,000 tokens each, monthly storage costs would be approximately $0.75 per 1,000 threads when using gpt-4o-mini. This makes thread-based conversations economically viable for most applications, but you should monitor thread sizes to avoid unexpected accumulation.
 
 
-
 To check thread token usage programmatically:
-
 
 
 ```python
@@ -81,17 +71,13 @@ print(f"Created at: {thread.created_at}")
 ## Run Execution Costs
 
 
-
 Runs are the core execution unit in the Assistants API. Each time you invoke the assistant to process a thread, a run is created and executed. Run costs depend on two factors: the input tokens (prompt) and output tokens (completion).
-
 
 
 For gpt-4o-mini, input tokens cost $0.15 per 1M tokens and output tokens cost $0.60 per 1M tokens. For gpt-4o, input tokens cost $2.50 per 1M tokens and output tokens cost $10.00 per 1M tokens. This 16x price difference makes model selection a critical cost optimization lever.
 
 
-
 Consider a typical run with a 2,000 token input (system prompt + conversation history) and 500 token output:
-
 
 
 ```python
@@ -113,17 +99,13 @@ total_run_cost_gpt4o = input_cost_gpt4o + output_cost_gpt4o  # $0.01
 A single run on gpt-4o-mini costs less than a tenth of a cent, while the same run on gpt-4o costs approximately one cent. For high-volume applications processing millions of runs daily, this difference translates to thousands of dollars in monthly savings.
 
 
-
 ## Message and Context Handling
-
 
 
 Each message added to a thread incurs token-based charges both for storage and subsequent retrieval during runs. When a run executes, the assistant receives the entire thread context by default, which means longer conversations become more expensive per-run.
 
 
-
 You can control costs by limiting context window or using the `max_prompt_tokens` parameter:
-
 
 
 ```python
@@ -140,17 +122,13 @@ run = client.beta.threads.runs.create(
 This approach truncates older messages when the context exceeds your limit, reducing per-run costs at the potential cost of conversation continuity.
 
 
-
 ## Practical Cost Optimization Strategies
-
 
 
 Several strategies help manage Assistants API costs without sacrificing functionality:
 
 
-
 Implement smart thread management: Delete completed or stale threads rather than storing them indefinitely. Use thread metadata to identify inactive conversations:
-
 
 
 ```python
@@ -159,15 +137,15 @@ import time
 # Delete threads older than 30 days
 def cleanup_old_threads(client, assistant_id, days_old=30):
     cutoff_time = int(time.time()) - (days_old * 24 * 60 * 60)
-    
+
     threads = client.beta.threads.list(limit=100)
     deleted_count = 0
-    
+
     for thread in threads.data:
         if thread.created_at < cutoff_time:
             client.beta.threads.delete(thread.id)
             deleted_count += 1
-    
+
     return deleted_count
 ```
 
@@ -175,9 +153,7 @@ def cleanup_old_threads(client, assistant_id, days_old=30):
 Use model routing: Route simple queries to gpt-4o-mini and complex reasoning tasks to gpt-4o. This hybrid approach maintains quality where needed while keeping costs low for straightforward tasks.
 
 
-
 Cache system prompts: Store frequently used system instructions as assistant objects rather than repeating them in every message. The assistant object stores its instructions persistently.
-
 
 
 ```python
@@ -193,15 +169,14 @@ assistant = client.beta.assistants.create(
 Monitor with usage tracking: Implement logging for each run to track actual token consumption:
 
 
-
 ```python
 def log_run_cost(run_id, thread_id):
     run = client.beta.threads.runs.retrieve(run_id=run_id, thread_id=thread_id)
     usage = run.usage
-    
+
     input_cost = (usage.prompt_tokens / 1_000_000) * 2.50
     output_cost = (usage.completion_tokens / 1_000_000) * 10.00
-    
+
     print(f"Run {run_id}: ${input_cost + output_cost:.4f}")
     print(f"  Prompt tokens: {usage.prompt_tokens}")
     print(f"  Completion tokens: {usage.completion_tokens}")
@@ -211,9 +186,7 @@ def log_run_cost(run_id, thread_id):
 ## Calculating Monthly Costs
 
 
-
 For a practical estimate, consider an application with these parameters:
-
 
 
 - 10,000 active threads
@@ -225,24 +198,15 @@ For a practical estimate, consider an application with these parameters:
 - gpt-4o-mini pricing
 
 
-
 Monthly storage: 10,000 × 25,000 × $0.10/1M × 30 days = $75
 
 Monthly runs: 10,000 × 3 × 30 × 0.0006 = $540
 
 
-
 Total estimated cost: approximately $615 per month.
 
 
-
 Switching to gpt-4o for all runs would increase costs to approximately $9,000 per month. This demonstrates the importance of model selection and run optimization.
-
-
-
-
-
-
 
 
 ## Related Articles

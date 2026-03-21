@@ -20,9 +20,7 @@ Video content dominates the internet, but processing and extracting value from h
 ## Understanding Video Summarization Approaches
 
 
-
 Video summarization generally falls into two categories: **extractive** and **abstractive**. Extractive methods identify and clip the most important segments from a video. Abstractive methods generate new text descriptions that capture the video's essence. Most production tools combine both approaches.
-
 
 
 The choice between approaches depends on your use case. If you need quick highlights from sports or surveillance footage, extractive works well. For educational content or meetings, abstractive summaries provide more context.
@@ -44,13 +42,10 @@ For most production applications, Whisper combined with a capable LLM delivers t
 ## Cloud APIs for Quick Integration
 
 
-
 ### Google Cloud Video Intelligence
 
 
-
 Google's Video Intelligence API provides shot change detection and label annotation. While it does not generate full summaries, you can build summarization pipelines using its outputs.
-
 
 
 ```python
@@ -61,15 +56,15 @@ def analyze_video_shots(video_uri: str, credentials_path: str):
     client = videointelligence.VideoIntelligenceServiceClient(
         credentials=service_account.Credentials.from_service_account_file(credentials_path)
     )
-    
+
     features = [videointelligence.Feature.SHOT_CHANGE_DETECTION]
     operation = client.annotate_video(
         request={"input_uri": video_uri, "features": features}
     )
-    
+
     result = operation.result(timeout=300)
     shots = result.annotation_results[0].shot_label_annotations
-    
+
     return [shot.entity.description for shot in shots]
 ```
 
@@ -77,13 +72,10 @@ def analyze_video_shots(video_uri: str, credentials_path: str):
 This approach works well when you need timestamps for key segments. You can then use these timestamps to extract clips or generate chapter markers.
 
 
-
 ### AWS Rekognition Video
 
 
-
 AWS provides similar capabilities through Rekognition, with the added benefit of content moderation and celebrity recognition. For developers already in the AWS ecosystem, this integrates cleanly with other AWS services.
-
 
 
 ```python
@@ -91,14 +83,14 @@ import boto3
 
 def get_video_labels(bucket: str, key: str):
     rekognition = boto3.client('rekognition')
-    
+
     response = rekognition.start_label_detection(
         Video={'S3Object': {'Bucket': bucket, 'Name': key}},
         MinConfidence=75
     )
-    
+
     job_id = response['JobId']
-    
+
     # Poll for results
     while True:
         result = rekognition.get_label_detection(JobId=job_id)
@@ -111,13 +103,10 @@ def get_video_labels(bucket: str, key: str):
 ## Open-Source Libraries for Custom Solutions
 
 
-
 ### Transformers for Video Understanding
 
 
-
 The Hugging Face Transformers library now supports video understanding tasks. While primarily focused on text, you can combine video processing libraries with transformer models for custom summarization.
-
 
 
 ```python
@@ -128,26 +117,26 @@ import cv2
 def extract_key_frames(video_path: str, num_frames: int = 16):
     cap = cv2.VideoCapture(video_path)
     total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
-    
+
     frame_indices = [int(i * total_frames / num_frames) for i in range(num_frames)]
     frames = []
-    
+
     for idx in frame_indices:
         cap.set(cv2.CAP_PROP_POS_FRAMES, idx)
         ret, frame = cap.read()
         if ret:
             frames.append(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
-    
+
     cap.release()
     return frames
 
 def summarize_video_frames(frames):
     processor = VideoMAEImageProcessor.from_pretrained("MCKRN/videoMAE-small")
     model = VideoMAEForVideoClassification.from_pretrained("MCKRN/videoMAE-small")
-    
+
     inputs = processor(frames, return_tensors="pt")
     outputs = model(**inputs)
-    
+
     # Get predicted labels
     predicted_class_idx = outputs.logits.argmax(-1).item()
     return model.config.id2label[predicted_class_idx]
@@ -157,9 +146,7 @@ def summarize_video_frames(frames):
 ### Sumy for Text-Based Summarization
 
 
-
 If your video includes audio with transcription, text summarization tools work directly on the transcript. Sumy offers multiple algorithms for extractive summarization.
-
 
 
 ```python
@@ -171,13 +158,13 @@ from sumy.utils import get_stop_words
 
 def summarize_transcript(transcript_text: str, sentence_count: int = 5):
     parser = PlaintextParser.from_string(
-        transcript_text, 
+        transcript_text,
         Tokenizer("english")
     )
-    
+
     summarizer = LexRankSummarizer(Stemmer("english"))
     summarizer.stop_words = get_stop_words("english")
-    
+
     summary = summarizer(parser.document, sentence_count)
     return " ".join([str(sentence) for sentence in summary])
 ```
@@ -186,9 +173,7 @@ def summarize_transcript(transcript_text: str, sentence_count: int = 5):
 ## Building a Complete Pipeline
 
 
-
 For production applications, you typically need to chain multiple services together. Here is a practical architecture:
-
 
 
 ```python
@@ -199,15 +184,15 @@ class VideoSummarizer:
     def __init__(self, openai_api_key: str):
         self.whisper_model = whisper.load_model("base")
         self.openai_api_key = openai_api_key
-        
+
     def get_youtube_transcript(self, video_id: str) -> str:
         transcript = YouTubeTranscriptApi.get_transcript(video_id)
         return " ".join([item['text'] for item in transcript])
-    
+
     def transcribe_local_video(self, video_path: str) -> str:
         result = self.whisper_model.transcribe(video_path)
         return result['text']
-    
+
     def generate_summary(self, text: str, max_tokens: int = 200) -> str:
         # Using OpenAI API for abstractive summarization
         import openai
@@ -220,11 +205,11 @@ class VideoSummarizer:
             max_tokens=max_tokens
         )
         return response.choices[0].message.content
-    
+
     def summarize_youtube(self, video_id: str) -> dict:
         transcript = self.get_youtube_transcript(video_id)
         summary = self.generate_summary(transcript)
-        
+
         return {
             'video_id': video_id,
             'transcript_length': len(transcript),
@@ -303,13 +288,10 @@ WER = Word Error Rate. Lower is better. Whisper large-v3 consistently produces t
 ## Local Processing Options
 
 
-
 For privacy-sensitive applications or cost optimization, local processing matters. Several tools enable on-device summarization:
 
 
-
 Whisper.cpp is a C++ port optimized for efficient local transcription. Faster Whisper adds GPU acceleration to the same approach. VideoDB handles local video analysis with scene detection built in.
-
 
 
 ```bash
@@ -321,13 +303,10 @@ Whisper.cpp is a C++ port optimized for efficient local transcription. Faster Wh
 The performance trade-off depends on your hardware. Modern GPUs process video significantly faster than CPU-only solutions.
 
 
-
 ## Choosing the Right Tool
 
 
-
 Select your approach based on these factors:
-
 
 
 | Factor | Cloud APIs | Open Source | Local |
@@ -345,7 +324,6 @@ Select your approach based on these factors:
 | Latency | Network-dependent | Variable | Local |
 
 
-
 For most applications, a hybrid approach works best—cloud APIs for initial processing, open-source tools for customization, and local processing for privacy-critical content.
 
 ## FAQ
@@ -361,9 +339,6 @@ AssemblyAI's diarization feature identifies different speakers automatically. Al
 
 **Q: Is Whisper accurate enough for technical content with jargon?**
 Whisper large-v3 handles technical vocabulary reasonably well but will occasionally mishear domain-specific terms. Post-process transcripts with a custom vocabulary list using `--initial_prompt "This recording discusses Kubernetes, Helm, and GitOps"` to prime the model with relevant terminology.
-
-
-
 
 
 ## Related Articles

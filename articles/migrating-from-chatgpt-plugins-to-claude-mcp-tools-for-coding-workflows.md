@@ -149,11 +149,11 @@ async def list_tools():
         # Database operations
         Tool(name="query_database", ...),
         Tool(name="migrate_schema", ...),
-        
+
         # Development operations
         Tool(name="run_tests", ...),
         Tool(name="deploy_service", ...),
-        
+
         # Documentation
         Tool(name="generate_docs", ...),
         Tool(name="update_changelog", ...),
@@ -368,10 +368,6 @@ Tool descriptions should clearly explain the performance characteristics and app
 ## Testing and Rollout
 
 Verify your MCP migration with basic smoke tests for each tool. For organizations with both systems, migrate in phases: set up alongside plugins (Month 1), migrate half your team (Month 2), gather feedback (Month 3), then retire old plugins (Month 4). This approach reduces disruption and lets you learn from early adopters.
-
-
-
-
 
 
 ## Related Articles

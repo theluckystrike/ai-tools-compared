@@ -4,7 +4,7 @@ description: "Learn how to convert and migrate your existing ChatGPT system prom
 author: theluckystrike
 date: 2026-03-16
 last_modified_at: 2026-03-16
-tags: 
+tags:
   - ai assistants
   - chatgpt
   - claude
@@ -12,7 +12,7 @@ tags:
   - system prompts
   - migration
   - ai tools
-categories: 
+categories:
   - AI Tools Compared
 permalink: /migrate-chatgpt-system-prompts-to-claude-system-prompt-format/
 score: 8
@@ -28,21 +28,16 @@ layout: default
 # How to Migrate ChatGPT System Prompts to Claude System Prompt Format
 
 
-
 Migrating your ChatGPT system prompts to Claude's format can significantly improve your AI assistant's performance. While both platforms use system prompts to define assistant behavior, there are key differences in how each interprets and applies these instructions.
-
 
 
 ## Key Differences Between ChatGPT and Claude System Prompts
 
 
-
 ### ChatGPT System Prompt Characteristics
 
 
-
 ChatGPT system prompts typically follow this structure:
-
 
 
 ```
@@ -66,13 +61,10 @@ ChatGPT tends to work best with:
 - Concise behavioral guidelines
 
 
-
 ### Claude System Prompt Characteristics
 
 
-
 Claude uses a more nuanced approach:
-
 
 
 ```
@@ -95,17 +87,13 @@ Claude excels with:
 - Ethical considerations integrated into instructions
 
 
-
 ## Step-by-Step Migration Guide
-
 
 
 ### Step 1: Analyze Your Current ChatGPT System Prompt
 
 
-
 Review your existing ChatGPT system prompt and identify:
-
 
 
 - Core role definition: What persona or identity does the AI assume?
@@ -119,13 +107,10 @@ Review your existing ChatGPT system prompt and identify:
 - Special instructions: Any unique behaviors or capabilities?
 
 
-
 ### Step 2: Expand Context and Reasoning
 
 
-
 Claude performs better with richer context. Transform concise rules into detailed explanations:
-
 
 
 **ChatGPT format:**
@@ -147,9 +132,7 @@ Application: When users ask about medical conditions, symptoms, or treatments, I
 ### Step 3: Restructure for Claude's Thinking Process
 
 
-
 Claude's constitutional AI approach means it reasons through responses. Structure prompts to use this:
-
 
 
 ```
@@ -168,9 +151,7 @@ When explaining complex topics:
 ### Step 4: Define Clear Output Formats
 
 
-
 Specify exact output structures:
-
 
 
 ```
@@ -185,9 +166,7 @@ Response Format:
 ### Step 5: Integrate Ethical Guidelines Naturally
 
 
-
 Rather than listing prohibitions, frame guidelines as positive principles:
-
 
 
 **Instead of:**
@@ -205,7 +184,6 @@ Prioritize being helpful while respecting boundaries. Decline requests that coul
 
 
 ## Example Migration
-
 
 
 ### Original ChatGPT System Prompt:
@@ -251,9 +229,7 @@ Boundary: Focus on snippets and specific solutions rather than full application 
 ## Testing Your Migrated Prompt
 
 
-
 After migration, test your Claude system prompt by:
-
 
 
 1. **Asking the same queries** you used with ChatGPT
@@ -269,7 +245,6 @@ After migration, test your Claude system prompt by:
  - Overall helpfulness
 
 
-
 3. **Iterating** based on results:
 
  - Add more context where responses lack depth
@@ -279,9 +254,7 @@ After migration, test your Claude system prompt by:
  - Adjust boundaries as needed
 
 
-
 ## Common Migration Issues and Solutions
-
 
 
 ### Issue: Responses Too Verbose
@@ -289,17 +262,14 @@ After migration, test your Claude system prompt by:
 **Solution:** Add explicit brevity guidelines and example response lengths.
 
 
-
 ### Issue: Claude Refuses Appropriate Requests
 
 **Solution:** Review constraint language and ensure boundaries are clearly justified.
 
 
-
 ### Issue: Output Format Not Followed
 
 **Solution:** Provide more specific format examples and templates.
-
 
 
 ### Issue: Role Not Clearly Understood
@@ -384,10 +354,6 @@ Not every ChatGPT system prompt needs full migration. Prompts that work primaril
 - Refusal patterns that need tightening or relaxing for Claude's constitutional approach
 
 For simple assistants with no complex rules, paste your ChatGPT system prompt directly into the Claude API, run a test set, and only invest in migration work if you observe specific quality regressions.
-
-
-
-
 
 
 ## Related Articles

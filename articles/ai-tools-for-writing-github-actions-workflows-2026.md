@@ -62,7 +62,7 @@ jobs:
         include:
           - python-version: '3.11'
             coverage: true
-    
+
     steps:
       - uses: actions/checkout@v4
         with:
@@ -576,10 +576,6 @@ For GitHub Actions workflows:
 - **Privacy**: Tabnine with local models
 
 Always validate workflows with `act` (local testing) before merging to main branch. The cost of a broken deployment far exceeds the time spent reviewing AI-generated workflows.
-
-
-
-
 
 
 ## Related Articles

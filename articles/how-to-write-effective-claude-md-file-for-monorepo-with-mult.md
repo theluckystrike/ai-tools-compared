@@ -19,29 +19,22 @@ voice-checked: true
 Monorepos with multiple services present unique challenges for AI coding assistants. When your project spans dozens of services, shared packages, and interconnected dependencies, a well-crafted CLAUDE.md file becomes essential for getting useful responses from AI tools. This guide shows you how to structure your CLAUDE.md file so AI understands your monorepo's architecture and provides accurate, context-aware assistance.
 
 
-
 ## Why Monorepos Need Special CLAUDE.md Treatment
-
 
 
 In a monorepo containing multiple services, AI tools face several challenges that single-repo projects don't encounter. The AI needs to understand which service it's working in, what shared dependencies exist, and how services communicate with each other. Without this context, AI might suggest code that conflicts with your architectural patterns or reinvents solutions already available in shared packages.
 
 
-
 A generic CLAUDE.md file works fine for simple projects. But monorepos require explicit documentation of your project structure, service boundaries, and team conventions. The goal is to help AI make decisions that align with your existing codebase rather than generating generic solutions.
-
 
 
 ## Structuring Your Monorepo CLAUDE.md
 
 
-
 ### Define Your Directory Structure First
 
 
-
 Start by documenting the root-level organization of your monorepo. This gives AI an immediate mental map of where things live.
-
 
 
 ```markdown
@@ -82,7 +75,6 @@ Monorepos often have complex dependency graphs. AI needs to know which services 
 ## Service Dependencies
 
 
-
 - api-gateway: Depends on user-service, payment-service; uses shared-utils, database, types
 
 - user-service: Uses database, types; communicates via REST to payment-service
@@ -92,9 +84,7 @@ Monorepos often have complex dependency graphs. AI needs to know which services 
 - notification-service: Consumes events from payment-service; uses types
 
 
-
 ## Communication Patterns
-
 
 
 - Services communicate via HTTP REST APIs
@@ -115,7 +105,6 @@ Shared packages in monorepos require special attention. Document what lives in s
 ## Shared Packages Usage
 
 
-
 ### shared-utils
 
 Use for: Logging helpers, date formatting, validation utilities
@@ -123,13 +112,11 @@ Use for: Logging helpers, date formatting, validation utilities
 Do NOT use for: Business logic, database operations, service-specific concerns
 
 
-
 ### database
 
 Use for: All database connections, ORM setup, migration running
 
 Do NOT create: New database connections within services; always import from database package
-
 
 
 ### types
@@ -158,7 +145,6 @@ import { formatDate } from '@company/shared-utils';
 import { User } from '@company/types';
 
 
-
 // Avoid - relative paths across service boundaries
 
 import { User } from '../../../packages/types';
@@ -171,7 +157,6 @@ Each service in your monorepo likely has specific configuration requirements. Do
 
 ```markdown
 ## Service Configuration
-
 
 
 Each service follows the same configuration pattern:
@@ -192,7 +177,6 @@ Document the monorepo-specific commands developers use regularly:
 
 ```markdown
 ## Available Commands
-
 
 
 ```bash
@@ -216,9 +200,7 @@ npm run lint -- --scope=user-service
 ## Handling Cross-Service Changes
 
 
-
 One of the hardest things for AI to get right in monorepos is understanding the scope of changes. Document your workflow:
-
 
 
 ```markdown
@@ -234,13 +216,10 @@ One of the hardest things for AI to get right in monorepos is understanding the 
 This helps AI understand the ripple effects of its suggestions and avoid making changes that break other services.
 
 
-
 ## Testing Strategy Documentation
 
 
-
 Monorepos typically have complex testing requirements. Make sure your CLAUDE.md explains your testing philosophy:
-
 
 
 ```markdown
@@ -257,9 +236,7 @@ Monorepos typically have complex testing requirements. Make sure your CLAUDE.md 
 ## Best Practices Summary
 
 
-
 A well-structured monorepo CLAUDE.md file should answer these questions for any AI:
-
 
 
 1. **Where is the code I'm working on located?** (Directory structure)
@@ -275,20 +252,10 @@ A well-structured monorepo CLAUDE.md file should answer these questions for any 
 6. **What are the boundaries of my change?** (Service isolation)
 
 
-
 Keep your CLAUDE.md updated as your monorepo evolves. When you add a new service or change your dependency structure, update the documentation. An outdated CLAUDE.md file is worse than no file at all because it gives AI false confidence in its understanding of your project.
 
 
-
 The investment in maintaining a CLAUDE.md pays dividends in reduced AI hallucination, faster development cycles, and more accurate code generation across your entire monorepo team.
-
-
-
-
-
-
-
-
 
 
 ## Related Articles

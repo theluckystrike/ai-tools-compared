@@ -372,10 +372,6 @@ output "private_subnet_ids" {
 - Running Terraform validation/review (native tools like Terraform plan)
 
 
-
-
-
-
 ## Related Articles
 
 - [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-compared/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)

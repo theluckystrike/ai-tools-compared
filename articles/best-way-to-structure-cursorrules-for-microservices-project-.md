@@ -18,29 +18,22 @@ voice-checked: true
 {% raw %}
 
 
-
 CursorRules offer a powerful way to customize AI behavior for specific project types, but structuring them effectively for microservices architectures with shared protobuf definitions requires careful planning. This guide provides practical patterns for organizing your CursorRules files to maximize AI assistance across complex distributed systems.
-
 
 
 ## Understanding the Microservices Challenge
 
 
-
 Microservices projects present unique challenges for AI coding assistants. You deal with multiple services, shared dependencies, inter-service communication, and consistent API contracts. When your team uses protobuf for defining these contracts, the AI needs to understand the relationship between generated code and the underlying proto definitions.
-
 
 
 A well-structured CursorRules setup helps the AI understand service boundaries, recognize shared proto imports, generate consistent code across services, and maintain backward compatibility in your API contracts.
 
 
-
 ## Recommended Project Structure
 
 
-
 Organize your monorepo to support clear boundaries between services while maintaining shared dependencies. Here is an effective structure:
-
 
 
 ```
@@ -68,13 +61,10 @@ my-monorepo/
 The root-level `.cursorrules` file handles cross-cutting concerns, while service-specific files address individual service requirements.
 
 
-
 ## Root-Level CursorRules Configuration
 
 
-
 Create a root `.cursorrules` file that establishes project-wide conventions and guides the AI on proto handling:
-
 
 
 ```yaml
@@ -131,13 +121,10 @@ api_conventions:
 This configuration informs the AI about your project structure, shared proto locations, and code generation preferences.
 
 
-
 ## Service-Specific CursorRules
 
 
-
 Each service should have its own `.cursorrules` file that extends the root configuration with service-specific details:
-
 
 
 ```yaml
@@ -178,9 +165,7 @@ database:
 ## Handling Shared Proto Imports
 
 
-
 When working with microservices, shared proto definitions become critical. Configure your CursorRules to ensure the AI properly handles these imports:
-
 
 
 ```yaml
@@ -202,11 +187,11 @@ proto_import_rules:
   # Generate import statements correctly
   import_format: |
     syntax = "proto3";
-    
+
     package {{.Package}};
-    
+
     option go_package = "{{.GoPackage}}";
-    
+
     import "{{.ImportPath}}";
 ```
 
@@ -214,9 +199,7 @@ proto_import_rules:
 ## Best Practices for Proto-Aware Code Generation
 
 
-
 Configure the AI to generate code that properly integrates with your protobuf definitions:
-
 
 
 ```yaml
@@ -224,13 +207,13 @@ Configure the AI to generate code that properly integrates with your protobuf de
 generation_guidelines:
   # Always regenerate when proto changes
   auto_regenerate_on_proto_change: true
-  
+
   # Preserve custom code in generated files
   preserve_custom_code: true
   custom_code_markers:
     - "// START_CUSTOM"
     - "// END_CUSTOM"
-  
+
   # Handle breaking changes
   breaking_change_detection: true
   version_incompatibilities:
@@ -249,9 +232,7 @@ generation_guidelines:
 ## Cross-Service Communication Patterns
 
 
-
 For microservices, the AI needs to understand how services communicate:
-
 
 
 ```yaml
@@ -262,19 +243,19 @@ service_communication:
     - gRPC
     - gRPC-Web for browser clients
     - REST gateway for external API
-  
+
   # Service discovery
   discovery:
     type: consul
     host: localhost
     port: 8500
-  
+
   # Circuit breaker configuration
   circuit_breaker:
     enabled: true
     failure_threshold: 5
     timeout: 30s
-  
+
   # Retry policy
   retry:
     max_attempts: 3
@@ -292,9 +273,7 @@ event_driven:
 ## Testing the Configuration
 
 
-
 After setting up your CursorRules, verify they work correctly by prompting the AI to generate sample code:
-
 
 
 1. Ask for a new RPC method in a service
@@ -306,13 +285,10 @@ After setting up your CursorRules, verify they work correctly by prompting the A
 4. Test backward compatibility warnings
 
 
-
 ## Maintenance and Evolution
 
 
-
 As your microservices grow, update your CursorRules to reflect changes:
-
 
 
 - Add new services to the root configuration
@@ -324,20 +300,10 @@ As your microservices grow, update your CursorRules to reflect changes:
 - Document changes in a CHANGELOG for the rules themselves
 
 
-
 A well-maintained CursorRules setup ensures consistent, high-quality code generation across your entire microservices ecosystem.
 
 
-
 {% endraw %}
-
-
-
-
-
-
-
-
 
 
 ## Related Articles

@@ -49,7 +49,7 @@ from datetime import datetime
 
 def generate_postmortem(incident_data: dict, client: OpenAI) -> str:
     """Generate a postmortem document from incident data."""
-    
+
     prompt = f"""Generate a blameless postmortem for the following incident.
 
 ## Incident Summary
@@ -87,7 +87,7 @@ Use a blameless tone focused on learning."""
         ],
         temperature=0.3
     )
-    
+
     return response.choices[0].message.content
 
 # Example usage
@@ -135,12 +135,12 @@ class PostmortemGenerator:
         self.llm = llm_client
         self.logs = log_aggregator
         self.metrics = metrics_client
-    
+
     def collect_incident_data(self, incident_id: str, window_minutes: int = 60):
         """Collect all relevant data around the incident."""
         end_time = datetime.utcnow()
         start_time = end_time - timedelta(minutes=window_minutes)
-        
+
         return {
             "logs": self.logs.query(
                 service=["api-gateway", "auth-service"],
@@ -156,17 +156,17 @@ class PostmortemGenerator:
             "deployments": self.get_deployments(start_time, end_time),
             "incidents": self.get_incident_channel(incident_id)
         }
-    
+
     def analyze_root_cause(self, data: dict) -> dict:
         """Use AI to identify probable root cause."""
         analysis_prompt = f"""
         Analyze this incident data and identify the root cause.
         Focus on: temporal correlation, error patterns, recent changes.
-        
+
         Logs: {data['logs'][:2000]}
         Metrics: {data['metrics']}
         Recent Deployments: {data['deployments']}
-        
+
         Return a JSON object with:
         - root_cause: primary cause description
         - contributing_factors: array of contributing factors
@@ -174,12 +174,12 @@ class PostmortemGenerator:
         """
         # Implementation here
         pass
-    
+
     def generate_document(self, incident_id: str, window: int = 60) -> str:
         """Generate complete postmortem document."""
         data = self.collect_incident_data(incident_id, window)
         analysis = self.analyze_root_cause(data)
-        
+
         return self.render_postmortem(incident_id, data, analysis)
 ```
 
@@ -382,11 +382,6 @@ def find_similar_incidents(current_error_message):
 This dramatically speeds up incident response by letting teams reference similar past incidents.
 
 ---
-
-
-
-
-
 
 
 ## Related Articles

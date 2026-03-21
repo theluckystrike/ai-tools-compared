@@ -18,21 +18,16 @@ voice-checked: true
 {% raw %}
 
 
-
 ChatGPT's custom instructions feature lets you define persistent context that shapes every conversation. For developers working on API design, well-crafted custom instructions mean you get consistent, high-quality suggestions without repeating the same context across sessions. This guide shows you how to write custom instructions that deliver reliable API design recommendations tailored to your project requirements and coding standards.
-
 
 
 ## Understanding Custom Instructions in ChatGPT
 
 
-
 Custom instructions live in your ChatGPT settings and apply to every new conversation. They consist of two fields: "What would you like ChatGPT to know about you?" and "How would you like ChatGPT to respond?" Both fields work together to establish the context and behavioral patterns you want the model to follow.
 
 
-
 For API design work, you need to address several dimensions in your instructions:
-
 
 
 - Your technology stack and framework preferences
@@ -44,25 +39,20 @@ For API design work, you need to address several dimensions in your instructions
 - The quality standards you expect in responses
 
 
-
 The key to effective custom instructions is specificity. Generic statements like "write good API code" produce generic results. Concrete, measurable requirements generate precise, useful suggestions.
-
 
 
 ## Writing the Profile Section
 
 
-
 The first field should establish your technical context. Include your primary language, framework, and any specific constraints your projects typically face.
-
 
 
 A solid profile section might look like:
 
 
-
 ```
-I primarily work with Python using FastAPI for REST APIs and PostgreSQL for data storage. 
+I primarily work with Python using FastAPI for REST APIs and PostgreSQL for data storage.
 My team follows PEP 8 style guidelines and uses Pydantic v2 for request/response validation.
 We implement OAuth 2.0 with JWT tokens for authentication. Our APIs follow RESTful conventions
 with JSON request/response bodies. Error responses use problem details format (RFC 7807).
@@ -72,17 +62,13 @@ with JSON request/response bodies. Error responses use problem details format (R
 This tells ChatGPT exactly what tools and patterns you use, eliminating the need to repeat this information in every prompt. The model will suggest Pydantic models, FastAPI route handlers, and JWT-based auth patterns because it knows those are your standards.
 
 
-
 ## Defining Response Behavior
-
 
 
 The second custom instruction field controls how ChatGPT structures its responses. For API design, you want suggestions that are immediately usable in your codebase, not abstract concepts.
 
 
-
 Include instructions like:
-
 
 
 ```
@@ -96,7 +82,6 @@ Always include docstrings following Google style format.
 This produces functional code rather than pseudocode. You can further refine this by specifying response formats:
 
 
-
 ```
 Structure API suggestions with these sections: 1) Endpoint definition with HTTP method
 and path, 2) Request model with field types and validation, 3) Response model,
@@ -107,13 +92,10 @@ and path, 2) Request model with field types and validation, 3) Response model,
 ## Examples of Effective Custom Instructions
 
 
-
 ### Example 1: Microservices Developer
 
 
-
 If you work on microservices architectures, your instructions might emphasize:
-
 
 
 ```
@@ -127,13 +109,10 @@ Version APIs using URI versioning (/v1/, /v2/). Include rate limiting in all end
 With these instructions, ChatGPT will suggest gRPC definitions, URI versioning strategies, and Go idioms like middleware chains for rate limiting.
 
 
-
 ### Example 2: Enterprise Java Developer
 
 
-
 For enterprise Java environments:
-
 
 
 ```
@@ -148,13 +127,10 @@ Validation uses Bean Validation with custom constraint annotations.
 The model will generate Spring annotations, reactive programming patterns, and validation constraints matching enterprise requirements.
 
 
-
 ### Example 3: TypeScript/Node.js Developer
 
 
-
 For TypeScript environments:
-
 
 
 ```
@@ -169,13 +145,10 @@ Follow DDD principles with clear separation of controllers, services, and reposi
 This produces TypeScript-first suggestions with proper typing, Zod schemas, and NestJS patterns.
 
 
-
 ## Testing and Refining Your Instructions
 
 
-
 After setting up custom instructions, test them with a few API design questions:
-
 
 
 1. Ask for a CRUD endpoint for a resource like "users" or "products"
@@ -185,9 +158,7 @@ After setting up custom instructions, test them with a few API design questions:
 3. Ask for error handling implementation
 
 
-
 Evaluate whether the responses match your expectations:
-
 
 
 - Does the code use your framework of choice?
@@ -199,9 +170,7 @@ Evaluate whether the responses match your expectations:
 - Are the code examples complete enough to use directly?
 
 
-
 If something misses the mark, refine your instructions. Common adjustments include:
-
 
 
 - Adding specific libraries or packages you use
@@ -213,13 +182,10 @@ If something misses the mark, refine your instructions. Common adjustments inclu
 - Including documentation expectations
 
 
-
 ## Advanced Custom Instruction Techniques
 
 
-
 For more sophisticated control, use conditional instructions:
-
 
 
 ```
@@ -232,7 +198,6 @@ If I ask for database design, first show the ER diagram before writing schemas.
 You can also establish persona and tone:
 
 
-
 ```
 Be concise and technical in responses. Prefer working code over lengthy explanations.
 When suggesting improvements, cite specific benefits (performance, security, maintainability).
@@ -243,9 +208,7 @@ If I could achieve the same result with less code, show the simpler approach.
 ## Maintaining Consistency Across Sessions
 
 
-
 Custom instructions persist until you change them, which creates consistency but also requires maintenance. Review and update your instructions when:
-
 
 
 - Your tech stack changes
@@ -255,14 +218,7 @@ Custom instructions persist until you change them, which creates consistency but
 - You start working on a different type of project
 
 
-
 Consider keeping a backup of your custom instructions in a document. This lets you maintain different instruction sets for different project types and quickly swap between contexts.
-
-
-
-
-
-
 
 
 ## Related Articles

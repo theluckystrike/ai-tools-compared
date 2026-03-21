@@ -18,25 +18,19 @@ tags: [ai-tools-compared, artificial-intelligence]
 Writing prompts that produce clean, idiomatic code requires more than simply describing what you want. The difference between generic code and language-appropriate solutions often comes down to how you structure your request. This guide covers practical techniques for eliciting idiomatic code from AI coding assistants across multiple programming languages.
 
 
-
 ## Why Prompt Structure Determines Code Quality
-
 
 
 When you ask an AI to write code, the model responds to subtle cues in your prompt. Specify Python and you'll get Pythonic patterns. Mention Rust and you'll see ownership semantics. The key is providing the right context so the AI understands not just *what* to build, but *how* to build it in the target language's style.
 
 
-
 Generic prompts produce generic results. A request like "write a function to sort a list" might yield bubble sort in any language. A well-structured prompt that specifies the language, use case, and performance requirements gets you the built-in sorting method your language provides.
-
 
 
 ## The Core Prompt Framework
 
 
-
 Effective prompts for idiomatic code contain five elements:
-
 
 
 1. **Language specification** — Name the target language explicitly
@@ -50,9 +44,7 @@ Effective prompts for idiomatic code contain five elements:
 5. **Constraints or preferences** — Mention performance needs, edge cases, or restrictions
 
 
-
 Here's a template that works across languages:
-
 
 
 ```
@@ -66,13 +58,10 @@ Requirements: [specific patterns, libraries, or constraints]
 ## Language-Specific Prompt Patterns
 
 
-
 ### Python
 
 
-
 Python has strong conventions around list comprehensions, built-in functions, and the Zen of Python. Your prompt should reference these expectations.
-
 
 
 **Weak prompt:**
@@ -101,9 +90,7 @@ def filter_evens(numbers: list[int]) -> list[int]:
 ### JavaScript
 
 
-
 JavaScript idioms include modern ES6+ features, functional patterns, and appropriate use of array methods over loops.
-
 
 
 **Weak prompt:**
@@ -133,9 +120,7 @@ const getUniqueValues = (arr) => {
 ### Rust
 
 
-
 Rust idioms center around ownership, borrowing, iterators, and the type system. Mention these explicitly.
-
 
 
 **Weak prompt:**
@@ -164,9 +149,7 @@ fn double_values(numbers: Vec<i32>) -> Vec<i32> {
 ### Go
 
 
-
 Go emphasizes simplicity, explicit error handling, and standard library usage. Reference these patterns.
-
 
 
 **Weak prompt:**
@@ -186,9 +169,7 @@ Write a Go function that reads a file using the os and io/ioutil packages. Retur
 ## Specifying Patterns and Libraries
 
 
-
 If you need specific approaches, mention them directly. For React components, say "use functional components with hooks." For data processing, mention "use pandas DataFrames." The AI responds to these signals.
-
 
 
 ```
@@ -202,13 +183,10 @@ Use pandas rolling() method.
 This explicitly requests pandas rather than getting a manual implementation.
 
 
-
 ## Handling Multi-Language Consistency
 
 
-
 When generating code for multiple languages, structure prompts identically with language as a variable:
-
 
 
 ```
@@ -223,33 +201,25 @@ Requirements:
 Replace `[language]` with each target. This produces comparable implementations that respect each language's conventions.
 
 
-
 ## Common Mistakes to Avoid
-
 
 
 **Omitting the language** — The model guesses, and guesses may not match your intent.
 
 
-
 **Requesting multiple languages in one prompt** — This produces confused output. Generate separate prompts for each language.
-
 
 
 **Ignoring performance requirements** — "Write code to find an element" might use linear search. Specify "use O(log n) algorithm" when needed.
 
 
-
 **Forgetting error handling** — Many prompts skip this. Add "handle edge cases" or "include proper error handling" explicitly.
-
 
 
 ## Testing Generated Code
 
 
-
 Review generated code for language-specific patterns:
-
 
 
 - Python: Are list comprehensions or built-in methods used?
@@ -261,14 +231,7 @@ Review generated code for language-specific patterns:
 - Go: Are errors handled explicitly with meaningful messages?
 
 
-
 If the code feels foreign to the language, refine your prompt with more specific constraints.
-
-
-
-
-
-
 
 
 ## Related Articles

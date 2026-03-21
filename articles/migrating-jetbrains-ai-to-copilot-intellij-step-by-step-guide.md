@@ -171,9 +171,9 @@ If you had custom snippets in JetBrains AI, create similar shortcuts in Copilot:
 void should$NAME$() {
     // Arrange
     $END$
-    
+
     // Act
-    
+
     // Assert
 }
 ```
@@ -307,8 +307,6 @@ If migrating a team:
 | Enterprise | Contact sales | Advanced security, compliance |
 
 
-
-
 ## Related Articles
 
 - [Copilot for JetBrains: Does It Cost Same as VSCode Version](/ai-tools-compared/copilot-for-jetbrains-does-it-cost-same-as-vscode-version/)
@@ -316,5 +314,7 @@ If migrating a team:
 - [Migrating Copilot Custom Instructions to Cursor Rules.](/ai-tools-compared/migrating-copilot-custom-instructions-to-cursor-rules-file-f/)
 - [How to Use Copilot Agent Mode for Multi-Step Coding Tasks](/ai-tools-compared/how-to-use-copilot-agent-mode-for-multi-step-coding-tasks-20/)
 - [Best AI Inline Chat Features in VSCode Compared to Jetbrains](/ai-tools-compared/best-ai-inline-chat-features-in-vscode-compared-to-jetbrains/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

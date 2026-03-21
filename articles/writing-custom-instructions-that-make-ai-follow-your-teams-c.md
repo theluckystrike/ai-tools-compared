@@ -18,29 +18,22 @@ voice-checked: true
 {% raw %}
 
 
-
 When AI coding assistants generate release notes, version updates, or changelog entries, they often produce inconsistent formatting that doesn't match your team's established conventions. Without explicit instructions, AI tools default to generic formats that may not align with your project's documentation standards. Custom instructions solve this problem by teaching AI exactly how your team structures changelog entries.
-
 
 
 ## Why Changelog Format Consistency Matters
 
 
-
 Changelogs serve as the historical record of your project's evolution. When every entry follows the same format, teams can quickly scan for specific types of changes, users can understand what affects their usage, and automated tools can parse entries for aggregation or notifications. A well-structured changelog becomes a critical communication tool between developers and stakeholders.
-
 
 
 Teams using inconsistent formats face several challenges. Release notes become harder to scan, automated parsing breaks, and the changelog loses its value as a reliable reference. Custom AI instructions eliminate this inconsistency by providing explicit rules that the AI follows every time.
 
 
-
 ## Defining Your Team's Changelog Format
 
 
-
 Before writing custom instructions, establish what your ideal changelog entry looks like. Most teams adopt variations of established conventions like Keep a Changelog or the Angular commit message format. Your format should specify:
-
 
 
 - Entry structure and sections
@@ -54,9 +47,7 @@ Before writing custom instructions, establish what your ideal changelog entry lo
 - Heading hierarchy and ordering
 
 
-
 Here's an example of a well-defined team format:
-
 
 
 ```markdown
@@ -82,17 +73,13 @@ Here's an example of a well-defined team format:
 ## Writing Effective Custom Instructions
 
 
-
 Custom instructions work best when they provide explicit rules with concrete examples. Place these instructions in your project's AI configuration file—CLAUDE.md for Claude Code,.cursorrules for Cursor, or your preferred AI assistant's configuration file.
-
 
 
 ### Structure Your Instructions Clearly
 
 
-
 Begin with a clear statement of the required format, then provide examples showing exactly what you expect:
-
 
 
 ```markdown
@@ -129,9 +116,7 @@ Rules:
 ### Provide Context About Your Project
 
 
-
 The AI needs to understand your project's domain to generate accurate entries. Add relevant context to your instructions:
-
 
 
 ```markdown
@@ -147,9 +132,7 @@ Project context:
 ### Include Anti-Patterns
 
 
-
 Showing what NOT to do reinforces the correct format:
-
 
 
 ```markdown
@@ -164,17 +147,13 @@ Do NOT:
 ## Applying Instructions Across Different AI Tools
 
 
-
 Different AI coding assistants use different configuration mechanisms. Here's how to implement changelog instructions for common tools:
-
 
 
 ### Claude Code (CLAUDE.md)
 
 
-
 Add a dedicated section in your project's CLAUDE.md file:
-
 
 
 ```markdown
@@ -188,9 +167,7 @@ Always include issue references. Use imperative mood.
 ### Cursor (`.cursorrules`)
 
 
-
 Create or update your.cursorrules file:
-
 
 
 ```yaml
@@ -210,9 +187,7 @@ changelog:
 ### GitHub Copilot
 
 
-
 Use inline instructions in your conversations or create a copilot-instructions.md file:
-
 
 
 ```markdown
@@ -229,15 +204,13 @@ When creating changelog entries:
 ## Testing Your Instructions
 
 
-
 After implementing custom instructions, verify they work correctly by asking your AI to generate sample entries:
-
 
 
 ```markdown
 Generate a changelog entry for:
 - PR #245: Add user preferences API endpoint
-- PR #248: Refactor authentication middleware for better performance  
+- PR #248: Refactor authentication middleware for better performance
 - Issue #251: Fix CORS headers not being set on error responses
 ```
 
@@ -245,13 +218,10 @@ Generate a changelog entry for:
 Check the output against your format requirements. If the AI deviates from your instructions, refine your configuration with additional examples or explicit rules.
 
 
-
 ## Maintaining Instructions Over Time
 
 
-
 As your project evolves, your changelog format may need adjustments. Review and update your custom instructions during:
-
 
 
 - Major version releases
@@ -263,20 +233,10 @@ As your project evolves, your changelog format may need adjustments. Review and 
 - Tool migration
 
 
-
 Keep your instructions in version control alongside your project code. This ensures consistency across team members and provides history for debugging format issues.
 
 
-
 ---
-
-
-
-
-
-
-
-
 
 
 ## Related Articles

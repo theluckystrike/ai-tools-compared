@@ -19,17 +19,13 @@ voice-checked: true
 When your project spans multiple languages—Python backend, TypeScript frontend, Go services, and Rust utilities—your documentation strategy needs to adapt. Claude works best when it can navigate your codebase intelligently, and the way you organize Markdown files directly impacts how effectively the AI assistant understands your project structure. This guide presents battle-tested practices for organizing MD files in polyglot environments that work with Claude Code and other AI coding assistants.
 
 
-
 ## The Core Principle: Language-Aware Directory Structure
-
 
 
 Claude interprets your project through its file organization. Instead of dumping all documentation in a single `docs` folder, mirror your language boundaries in your documentation structure. This allows Claude to understand context faster and provide more relevant suggestions.
 
 
-
 For a project with Python, TypeScript, and Go, consider this structure:
-
 
 
 ```
@@ -60,17 +56,13 @@ project-root/
 This approach lets Claude quickly identify which language context applies when you're working in specific directories.
 
 
-
 ## CLAUDE.md Placement Strategies
-
 
 
 The `CLAUDE.md` file serves as your project's instruction manual for Claude. In polyglot repositories, placement matters more than ever. You have two primary strategies:
 
 
-
 **Root-level CLAUDE.md** works well when your project has clear entry points for each language. The file should establish which language context Claude should prioritize:
-
 
 
 ```markdown
@@ -91,7 +83,6 @@ Work in the `python/` directory unless specified otherwise.
 **Directory-specific CLAUDE.md files** provide more granular control. Place one in each language subdirectory that overrides the root context:
 
 
-
 ```
 python/CLAUDE.md
 typescript/CLAUDE.md
@@ -102,13 +93,10 @@ go/CLAUDE.md
 Each file contains language-specific instructions that activate when Claude operates within that directory.
 
 
-
 ## Documentation Naming Conventions That Help Claude
 
 
-
 Consistent naming conventions reduce cognitive load and help Claude match documentation to code. Use descriptive, action-oriented filenames:
-
 
 
 | Instead of | Use |
@@ -122,9 +110,7 @@ Consistent naming conventions reduce cognitive load and help Claude match docume
 | `guide.md` | `typescript/docs/react-components-patterns.md` |
 
 
-
 For multi-language projects, prefix documentation with language identifiers when it lives in shared spaces:
-
 
 
 ```
@@ -138,13 +124,10 @@ docs/
 This clarity helps Claude route to the right documentation without ambiguity.
 
 
-
 ## Cross-Reference Documentation Effectively
 
 
-
 Polyglot projects often have integration points between languages. Document these explicitly so Claude understands dependencies:
-
 
 
 ```markdown
@@ -156,7 +139,7 @@ The API uses JSON serialization. See `python/docs/models.md` for request/respons
 
 ## Go CLI → Python Backend
 
-The CLI calls the Python service on `localhost:8000`. 
+The CLI calls the Python service on `localhost:8000`.
 Startup order: `python/src/server.py` first, then `go/cmd/cli/main.go`.
 
 ## Environment Variables
@@ -170,17 +153,13 @@ Shared configuration lives in `.env.example`:
 This approach helps Claude understand the full stack even when working in a single language context.
 
 
-
 ## Language-Specific Documentation Templates
-
 
 
 Each language in your polyglot project benefits from standardized documentation templates. Create these once and replicate with appropriate modifications:
 
 
-
 **For Python modules:**
-
 
 
 ```markdown
@@ -207,7 +186,6 @@ Run tests with: `pytest tests/`
 
 
 **For TypeScript components:**
-
 
 
 ```markdown
@@ -239,9 +217,7 @@ How this component interacts with global state.
 ## Managing Shared Documentation
 
 
-
 Some documentation spans multiple languages—architecture decisions, deployment guides, and contributing guidelines. Store these at the repository root or in a dedicated shared folder:
-
 
 
 ```
@@ -259,11 +235,10 @@ docs-shared/
 Reference these from language-specific documentation:
 
 
-
 ```markdown
 # Python Backend Setup
 
-See [Deployment Guide](../docs-shared/deployment/docker-compose.md) 
+See [Deployment Guide](../docs-shared/deployment/docker-compose.md)
 for containerized setup instructions.
 ```
 
@@ -271,9 +246,7 @@ for containerized setup instructions.
 ## Version Alignment Documentation
 
 
-
 When languages in your polyglot project have different versions or update on different schedules, maintain a version matrix:
-
 
 
 ```markdown
@@ -286,7 +259,7 @@ When languages in your polyglot project have different versions or update on dif
 | Go        | 1.21    | 2026-02      |
 | Rust      | 1.75    | 2026-01      |
 
-Upgrading one component may require coordinated updates. 
+Upgrading one component may require coordinated updates.
 See `docs-shared/architecture/upgrade-procedure.md`.
 ```
 
@@ -294,13 +267,10 @@ See `docs-shared/architecture/upgrade-procedure.md`.
 This prevents Claude from suggesting incompatible dependency combinations.
 
 
-
 ## Practical Tips for Daily Use
 
 
-
 Keep your documentation current by updating CLAUDE.md whenever you switch context between languages:
-
 
 
 ```bash
@@ -313,7 +283,6 @@ alias claude-go="cd go && claude"
 Add a documentation update checklist to your code review process:
 
 
-
 - [ ] New files added to relevant documentation
 
 - [ ] API changes reflected in cross-reference docs
@@ -321,12 +290,6 @@ Add a documentation update checklist to your code review process:
 - [ ] Version matrix updated if dependencies changed
 
 - [ ] CLAUDE.md context still accurate
-
-
-
-
-
-
 
 
 ## Related Articles

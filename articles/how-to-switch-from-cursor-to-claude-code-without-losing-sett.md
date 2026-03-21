@@ -18,33 +18,25 @@ voice-checked: true
 Switch from Cursor to Claude Code by exporting your Cursor settings, configuring equivalent keybindings in Claude Code, and migrating your custom prompts. This guide shows the step-by-step process that minimizes friction when making the switch.
 
 
-
 Making the switch from Cursor AI to Claude Code doesn't mean abandoning your carefully configured workflow. With proper preparation, you can export most of your custom settings and continue working without missing a beat. This guide walks you through preserving your snippets, keyboard shortcuts, and workspace preferences during the transition.
-
 
 
 ## Why Switch from Cursor to Claude Code?
 
 
-
 Developers choose Claude Code for several compelling reasons. Claude Code offers deeper integration with Anthropic's latest models, giving you access to advanced reasoning capabilities that can handle complex debugging and architectural decisions. The terminal-based workflow appeals to developers who prefer staying in the command line, and the tool-use approach provides explicit control over when changes get applied to your codebase.
-
 
 
 Cursor excels at IDE-style editing with its visual interface and inline autocomplete. If you've built your workflow around Cursor's specific features, switching requires planning to avoid productivity drops.
 
 
-
 ## Exporting Cursor Snippets and Templates
-
 
 
 Cursor stores your custom snippets in a specific location. To export them, you'll need to locate the configuration directory. On macOS, this typically lives in `~/Library/Application Support/Cursor/User/snippets/`. On Linux, check `~/.config/Cursor/User/snippets/`.
 
 
-
 Each snippet exists as a separate file, usually with a `.code-snippets` or `.json` extension. Copy these files to a backup location:
-
 
 
 ```bash
@@ -54,7 +46,6 @@ cp -r ~/Library/Application\ Support/Cursor/User/snippets ~/cursor-snippets-back
 
 
 Claude Code doesn't use the same snippet format, but you can convert them for use with the `claude code` CLI. Create a simple conversion script:
-
 
 
 ```bash
@@ -68,13 +59,10 @@ done > claude-snippets.txt
 ## Preserving Keyboard Shortcuts
 
 
-
 If you've customized keybindings in Cursor, you need to recreate them for Claude Code. Cursor stores keybindings in `keybindings.json`, found in the same configuration directory as snippets.
 
 
-
 Open the keybindings file and identify your custom shortcuts:
-
 
 
 ```bash
@@ -86,13 +74,10 @@ cat ~/Library/Application\ Support/Cursor/User/keybindings.json | jq '.[] | sele
 Claude Code uses a different keybinding system based on your terminal emulator. Most developers remap common actions in their terminal configuration. For iTerm2 users, export your profile settings. For VS Code Terminal users, check the Terminal Integrated settings.
 
 
-
 ## Transferring Workspace Settings
 
 
-
 Cursor maintains workspace-specific settings in `.cursor` files within each project. These contain project-level configurations that affect AI behavior. Review each project's `.cursor` directory:
-
 
 
 ```bash
@@ -102,7 +87,6 @@ find . -name ".cursor" -type d
 
 
 For each project, note the AI model preferences and context settings. You'll need to manually configure similar behavior in Claude Code using command-line flags or environment variables:
-
 
 
 ```bash
@@ -115,9 +99,7 @@ export CLAUDE_CONTEXT_WINDOW=200000
 ## Exporting Chat History and Context
 
 
-
 Cursor stores conversation history locally. While Claude Code maintains its own conversation history, you can export important discussions from Cursor for reference. The history database typically lives in:
-
 
 
 ```bash
@@ -127,7 +109,6 @@ ls ~/Library/Application\ Support/Cursor/ExtensionHost/*/chat-history.db
 
 
 Export relevant conversations to markdown for later reference:
-
 
 
 ```bash
@@ -140,9 +121,7 @@ sqlite3 ~/Library/Application\ Support/Cursor/ExtensionHost/*/chat-history.db \
 ## Setting Up Claude Code with Your Workflow
 
 
-
 After backing up your settings, install Claude Code and configure it to match your preferences:
-
 
 
 ```bash
@@ -155,7 +134,6 @@ claude code init --model sonnet --max-tokens 4096
 
 
 Create a `~/.claude/settings.json` file to establish default behaviors:
-
 
 
 ```json
@@ -175,13 +153,10 @@ Create a `~/.claude/settings.json` file to establish default behaviors:
 ## Recreating Custom Commands
 
 
-
 If you've created custom Cursor commands or agents, build equivalents in Claude Code. The command pattern differs—Cursor uses a visual interface while Claude Code relies on natural language instructions.
 
 
-
 For example, a Cursor "Write Tests" agent becomes:
-
 
 
 ```bash
@@ -191,7 +166,6 @@ claude code "Write comprehensive unit tests for the authentication module"
 
 
 Create a bash alias for frequently used commands:
-
 
 
 ```bash
@@ -205,9 +179,7 @@ alias cc-docs='claude code "Generate documentation for"'
 ## What You'll Need to Rebuild
 
 
-
 Some Cursor-specific features don't have direct equivalents in Claude Code:
-
 
 
 - Visual autocomplete dropdowns: Claude Code provides inline suggestions through the terminal
@@ -217,9 +189,7 @@ Some Cursor-specific features don't have direct equivalents in Claude Code:
 - Project-aware AI chat: Claude Code requires manual context loading
 
 
-
 Create instruction files for each project to provide Claude Code with context:
-
 
 
 ```bash
@@ -232,9 +202,7 @@ echo "This is a React TypeScript project. Use functional components and TypeScri
 ## Verification Checklist
 
 
-
 Before deleting Cursor, verify you've transferred everything:
-
 
 
 - [ ] Exported all custom snippets
@@ -252,16 +220,7 @@ Before deleting Cursor, verify you've transferred everything:
 - [ ] Built instruction files for active projects
 
 
-
 The transition requires an adjustment period. Expect reduced autocomplete suggestions initially, but the trade-off comes with more powerful reasoning and explicit control over code changes. Start with smaller projects while building your Claude Code muscle memory.
-
-
-
-
-
-
-
-
 
 
 ## Related Articles

@@ -20,33 +20,25 @@ voice-checked: true
 When AI coding assistants generate code, commit messages, or pull requests, they often create branch names that don't align with your team's conventions. This misalignment causes friction during code reviews, breaks automated tooling, and forces developers to manually rename branches before merging. Configuring your AI tools to respect your team's branch naming conventions eliminates this friction and keeps your Git workflow consistent.
 
 
-
 This guide covers practical methods for teaching AI coding tools—including GitHub Copilot, Cursor, Claude Code, and Windsurf—to generate branch names that match your team's standards.
-
 
 
 ## Why Branch Naming Conventions Matter
 
 
-
 Most teams establish branch naming conventions for good reason. A consistent pattern like `feature/user-authentication` or `fix/payment-processing-error` makes it easy to identify what a branch contains without examining its commits. Convention-aware branches integrate with CI/CD pipelines, GitHub Actions workflows, and project management tools that parse branch names automatically.
-
 
 
 When AI tools ignore these conventions, you spend time renaming branches or explaining to teammates why their automated scripts failed. Teaching your AI assistant about your conventions once saves repeated manual corrections.
 
 
-
 ## Configuring Cursor with Branch Rules
-
 
 
 Cursor uses a `.cursorrules` file to define project-specific behaviors. Add branch naming guidelines to this file to ensure generated branches follow your conventions.
 
 
-
 Create or update your `.cursorrules` file in the project root:
-
 
 
 ```
@@ -71,17 +63,13 @@ Example: When implementing user profile editing, create `feature/user-profile-ed
 Cursor reads this configuration and applies it when generating branch names. The AI learns to match your prefix patterns and avoids special characters that cause Git issues.
 
 
-
 ## Claude Code Configuration
-
 
 
 Claude Code respects instructions in `CLAUDE.md` files within your project. Add branch naming requirements to this file for team-wide consistency.
 
 
-
 Create a `CLAUDE.md` file with these guidelines:
-
 
 
 ```
@@ -112,17 +100,13 @@ When I ask you to create a branch, apply these rules automatically.
 Place this file in your repository root. Claude Code checks for `CLAUDE.md` on each session and applies the conventions when generating branch names.
 
 
-
 ## GitHub Copilot Custom Instructions
-
 
 
 GitHub Copilot supports workspace-specific custom instructions through VS Code settings. Configure branch naming behavior in your workspace settings.
 
 
-
 Add this to your `.vscode/settings.json`:
-
 
 
 ```json
@@ -148,17 +132,13 @@ Add this to your `.vscode/settings.json`:
 Copilot uses these settings when suggesting branch names through Git commands or pull request descriptions. This approach works team-wide if you commit the settings file to your repository.
 
 
-
 ## Windsurf Rules Configuration
-
 
 
 Windsurf uses a `rules.md` file for project-specific instructions. Update your rules to include branch naming requirements.
 
 
-
 Add a `rules.md` file to your project root:
-
 
 
 ```
@@ -170,7 +150,7 @@ Format: `<type>/<short-description>`
 
 Types:
 - `feature/` - New functionality
-- `fix/` - Bug corrections  
+- `fix/` - Bug corrections
 - `hotfix/` - Urgent production fixes
 - `refactor/` - Code improvements
 - `docs/` - Documentation only
@@ -191,17 +171,13 @@ Example transformations:
 Windsurf reads this file and applies the rules when generating any branch-related output.
 
 
-
 ## Practical Example: From Request to Branch
-
 
 
 Here's how these configurations work in practice. When you ask your AI assistant:
 
 
-
 > "Create a branch for adding user authentication"
-
 
 
 Without configuration, the AI might generate:
@@ -213,23 +189,18 @@ Without configuration, the AI might generate:
 - `new-auth-system`
 
 
-
 With proper configuration, the AI generates:
 
 - `feature/user-authentication`
 
 
-
 The consistent prefix helps your team quickly identify branch purpose during standups, code reviews, and when browsing your Git history.
-
 
 
 ## Testing Your Configuration
 
 
-
 After setting up branch naming rules, verify they work by requesting a branch name:
-
 
 
 1. Ask your AI: "What branch name would you suggest for adding a payment processing feature?"
@@ -241,17 +212,13 @@ After setting up branch naming rules, verify they work by requesting a branch na
 4. Confirm the description is concise
 
 
-
 If the response doesn't match your conventions, add more explicit examples to your configuration file. AI tools learn from demonstration, so showing correct examples accelerates compliance.
-
 
 
 ## Team-Wide Enforcement
 
 
-
 To ensure consistency across your entire team:
-
 
 
 1. Commit configuration files to your repository
@@ -263,9 +230,7 @@ To ensure consistency across your entire team:
 4. Document exceptions in your team wiki
 
 
-
 A simple pre-commit hook in `.git/hooks/pre-commit` can validate branch names:
-
 
 
 ```bash
@@ -282,12 +247,6 @@ fi
 
 
 This catches misnamed branches before they're pushed, complementing your AI configuration.
-
-
-
-
-
-
 
 
 ## Related Articles

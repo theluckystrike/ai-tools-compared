@@ -485,10 +485,6 @@ After Claude generates your spec, verify:
 - Examples are realistic and valid
 
 
-
-
-
-
 ## Related Articles
 
 - [AI Tools for Generating OpenAPI Specs from Code](/ai-tools-compared/ai-tools-openapi-spec-generation/)

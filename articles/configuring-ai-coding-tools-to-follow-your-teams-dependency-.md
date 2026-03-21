@@ -19,33 +19,25 @@ voice-checked: true
 When your team adopts dependency injection (DI), you expect consistent usage across all code. Yet AI coding assistants often suggest implementations that bypass your carefully designed patterns, creating inconsistencies and technical debt. Configuring AI tools to respect your DI framework saves time during code reviews and maintains architectural integrity throughout your codebase.
 
 
-
 ## Why AI Tools Need DI Pattern Configuration
-
 
 
 AI coding assistants trained on millions of public repositories recognize popular DI frameworks, but they don't automatically prioritize your team's specific implementation. An AI might suggest creating instances directly with `new ServiceName()` when your architecture requires constructor injection through your container. This happens because public codebases frequently use simpler patterns that the AI replicates by default.
 
 
-
 Most AI assistants support context files, custom instructions, or workspace configurations that guide their suggestions. Understanding these mechanisms helps you align AI behavior with your team's conventions without sacrificing productivity gains.
-
 
 
 ## Configuring GitHub Copilot for Team DI Patterns
 
 
-
 GitHub Copilot responds to several configuration mechanisms. The most effective approach combines context files with inline annotations.
-
 
 
 ### Create a Copilot Context File
 
 
-
 Create a `.github/copilot-instructions.md` file in your repository root. This file provides persistent instructions that Copilot considers during every suggestion:
-
 
 
 ```markdown
@@ -66,7 +58,7 @@ public class OrderService
 {
     private readonly IOrderRepository _repository;
     private readonly INotificationService _notifications;
-    
+
     public OrderService(IOrderRepository repository, INotificationService notifications)
     {
         _repository = repository;
@@ -79,9 +71,7 @@ public class OrderService
 ### Inline Context for Complex Files
 
 
-
 For files requiring specific DI patterns, add comments that Copilot recognizes:
-
 
 
 ```csharp
@@ -91,7 +81,7 @@ public class AccountController : ControllerBase
 {
     private readonly IUserService _userService;
     private readonly IEmailSender _emailSender;
-    
+
     public AccountController(IUserService userService, IEmailSender emailSender)
     {
         _userService = userService;
@@ -104,17 +94,13 @@ public class AccountController : ControllerBase
 ## Configuring Codeium for DI Consistency
 
 
-
 Codeium's configuration lives in a `.codeium` directory with a `config.json` file. While Codeium doesn't support custom instructions as extensively as Copilot, you can influence behavior through workspace configuration and snippet libraries.
-
 
 
 ### Workspace Configuration
 
 
-
 Create `.codeium/config.json` in your project root:
-
 
 
 ```json
@@ -135,9 +121,7 @@ Create `.codeium/config.json` in your project root:
 ### Using Codeium's Enterprise Context
 
 
-
 For teams using Codeium Enterprise, you can upload team-specific context including DI guidelines. This works particularly well when your team maintains an internal wiki with DI patterns documented:
-
 
 
 1. Access your Codeium Enterprise dashboard
@@ -149,25 +133,19 @@ For teams using Codeium Enterprise, you can upload team-specific context includi
 4. The AI will reference these documents when generating code
 
 
-
 Codeium also respects `.gitignore`, so ensure your DI configuration files are tracked if you want consistent suggestions across team members.
-
 
 
 ## Configuring Tabnine to Respect DI Patterns
 
 
-
 Tabnine offers the most flexible configuration options through its `tabnine.toml` file and local AI model customization.
-
 
 
 ### Tabnine Configuration File
 
 
-
 Create `tabnine.toml` in your project root:
-
 
 
 ```toml
@@ -187,9 +165,7 @@ prefer_prefix_alignment = false
 ### Training Tabnine on Your Patterns
 
 
-
 Tabnine Pro allows you to train a custom model on your codebase:
-
 
 
 ```bash
@@ -201,17 +177,13 @@ tabnine train --repository ./your-project --language csharp
 After training, Tabnine recognizes your specific patterns, including constructor injection conventions, naming conventions, and container registration styles. The training process takes several hours but produces significantly more accurate suggestions for teams with unique DI implementations.
 
 
-
 ## Adding Context Through Code Comments
-
 
 
 All three tools respond well to structured comments in your code. This approach works regardless of which tool your team uses.
 
 
-
 ### Pattern Documentation Comments
-
 
 
 ```csharp
@@ -232,9 +204,7 @@ namespace MyApp.Services
 ### Suppressing Unwanted Suggestions
 
 
-
 When AI suggests incorrect patterns, use specific suppression comments:
-
 
 
 ```csharp
@@ -249,13 +219,10 @@ var service = new LegacyAdapter(); // Legacy code only
 ## Best Practices for Team Implementation
 
 
-
 ### Version Control Your AI Configuration
 
 
-
 Add your AI configuration files to version control so all team members receive the same guidance:
-
 
 
 ```bash
@@ -269,9 +236,7 @@ Add your AI configuration files to version control so all team members receive t
 ### Document Your Patterns in CODEOWNERS
 
 
-
 Create a living document that explains your DI patterns and reference it in your AI configuration:
-
 
 
 ```markdown
@@ -283,9 +248,7 @@ Create a living document that explains your DI patterns and reference it in your
 ### Test Configuration Effectiveness
 
 
-
 After implementing your configuration, verify it works by:
-
 
 
 1. Creating a new service file and checking suggestion patterns
@@ -297,22 +260,13 @@ After implementing your configuration, verify it works by:
 4. Testing edge cases like generic types and factory patterns
 
 
-
 ## Common Pitfalls to Avoid
-
 
 
 Configuration files sometimes conflict with each other. If you use multiple AI tools, ensure their instructions don't contradict. For example, don't configure Copilot to prefer constructor injection while allowing Tabnine to suggest property injection.
 
 
-
 Another common issue involves stale context. AI tools cache previous suggestions, so clear caches after updating configuration files. Most IDEs require a restart or manual cache clear after changing AI settings.
-
-
-
-
-
-
 
 
 ## Related Articles

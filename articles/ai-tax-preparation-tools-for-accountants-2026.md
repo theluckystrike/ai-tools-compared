@@ -39,18 +39,18 @@ def extract_tax_data(document_path, api_key):
     Extract structured data from tax documents using AI OCR
     """
     url = "https://api.taxai.example/v1/extract"
-    
+
     with open(document_path, 'rb') as f:
         files = {'document': f}
         headers = {'Authorization': f'Bearer {api_key}'}
-        
+
         response = requests.post(
-            url, 
-            files=files, 
+            url,
+            files=files,
             headers=headers,
             data={'document_type': 'w2'}
         )
-    
+
     return response.json()
 
 # Example usage
@@ -71,7 +71,7 @@ def compute_tax_liability(income_data, deductions, api_key):
     Compute federal and state tax liability
     """
     url = "https://api.taxai.example/v1/compute"
-    
+
     payload = {
         "filing_status": "single",
         "year": 2025,
@@ -86,12 +86,12 @@ def compute_tax_liability(income_data, deductions, api_key):
         },
         "state": "CA"
     }
-    
+
     headers = {
         'Authorization': f'Bearer {api_key}',
         'Content-Type': 'application/json'
     }
-    
+
     response = requests.post(url, json=payload, headers=headers)
     return response.json()
 
@@ -129,19 +129,19 @@ def handle_tax_update():
     """
     signature = request.headers.get('X-Webhook-Signature')
     payload = request.get_data()
-    
+
     # Verify webhook signature
     expected_sig = hmac.new(
-        WEBHOOK_SECRET.encode(), 
-        payload, 
+        WEBHOOK_SECRET.encode(),
+        payload,
         hashlib.sha256
     ).hexdigest()
-    
+
     if not hmac.compare_digest(signature, expected_sig):
         return jsonify({'error': 'Invalid signature'}), 401
-    
+
     update_data = request.json
-    
+
     # Process the regulation update
     if update_data['change_type'] == 'tax_bracket':
         # Update your tax bracket configurations
@@ -149,7 +149,7 @@ def handle_tax_update():
     elif update_data['change_type'] == 'deduction_limit':
         # Update deduction limits
         update_deduction_limits(update_data['new_limits'])
-    
+
     return jsonify({'status': 'processed'}), 200
 ```
 
@@ -165,7 +165,7 @@ def log_tax_preparation_action(action_type, details, api_key):
     Log all tax preparation actions for audit purposes
     """
     url = "https://api.taxai.example/v1/audit/log"
-    
+
     payload = {
         "timestamp": datetime.utcnow().isoformat(),
         "action": action_type,
@@ -174,13 +174,13 @@ def log_tax_preparation_action(action_type, details, api_key):
         "details": details,
         "ip_address": details.get('ip_address')
     }
-    
+
     response = requests.post(
-        url, 
+        url,
         json=payload,
         headers={'Authorization': f'Bearer {api_key}'}
     )
-    
+
     return response.status_code == 201
 ```
 

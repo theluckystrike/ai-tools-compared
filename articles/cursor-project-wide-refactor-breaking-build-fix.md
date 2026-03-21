@@ -20,13 +20,10 @@ tags: [ai-tools-compared, troubleshooting]
 To fix a broken build after a Cursor project-wide refactor, start by running `git diff --stat` to identify all modified files, then clean and rebuild with `rm -rf node_modules package-lock.json && npm install`. The most common causes are broken import paths, out-of-sync TypeScript type definitions, and stale build caches. This guide provides a systematic five-step recovery process covering import fixes, type consistency, configuration files, and dependency resolution.
 
 
-
 ## Understanding What Happens During Project-Wide Refactor
 
 
-
 When you use Cursor's project-wide refactor capability, the AI analyzes your entire codebase and applies changes across multiple files simultaneously. This includes renaming variables, updating function signatures, moving code between modules, and rewriting imports. The problem is that automated refactoring doesn't always account for:
-
 
 
 - Build configuration files that reference old variable names
@@ -40,17 +37,13 @@ When you use Cursor's project-wide refactor capability, the AI analyzes your ent
 - Environment-specific configuration
 
 
-
 ## Common Build Errors After Project-Wide Refactor
-
 
 
 ### Module Resolution Failures
 
 
-
 The most frequent issue you'll encounter is module resolution failures. After refactoring, imports often point to non-existent paths or use outdated module names.
-
 
 
 **Error messages you might see:**
@@ -62,13 +55,10 @@ The most frequent issue you'll encounter is module resolution failures. After re
 - `ESM module error: The requested module does not provide an export`
 
 
-
 ### TypeScript Compilation Errors
 
 
-
 TypeScript errors explode after a refactor because type definitions get out of sync with implementation.
-
 
 
 **Typical errors:**
@@ -80,13 +70,10 @@ TypeScript errors explode after a refactor because type definitions get out of s
 - `Cannot find name 'OldFunctionName'`
 
 
-
 ### Dependency Conflicts
 
 
-
 Refactoring can introduce incompatible dependency versions or orphaned packages.
-
 
 
 **Watch for:**
@@ -98,17 +85,13 @@ Refactoring can introduce incompatible dependency versions or orphaned packages.
 - `Package not found: @old/package-name`
 
 
-
 ## Step-by-Step Fix Guide
-
 
 
 ### Step 1: Identify the Scope of Damage
 
 
-
 Before making changes, understand the extent of the refactor damage:
-
 
 
 ```bash
@@ -126,7 +109,6 @@ git status -u
 Run your build to get a complete error list:
 
 
-
 ```bash
 # For npm projects
 npm run build 2>&1 | tee build-errors.log
@@ -142,13 +124,10 @@ pnpm build 2>&1 | tee build-errors.log
 ### Step 2: Fix Import Statements
 
 
-
 Import issues are usually the quickest to resolve. Cursor often misses updating imports when files move or rename.
 
 
-
 Use this diagnostic script to find broken imports:
-
 
 
 ```bash
@@ -161,7 +140,6 @@ grep -r "from ['\"]\.\." --include="*.ts" --include="*.tsx" src/
 
 
 For TypeScript projects, verify your `tsconfig.json` paths configuration:
-
 
 
 ```json
@@ -179,13 +157,10 @@ For TypeScript projects, verify your `tsconfig.json` paths configuration:
 ### Step 3: Restore Type Consistency
 
 
-
 TypeScript errors after refactoring typically stem from:
 
 
-
 Interface changes may not propagate fully. Create a type migration map. If `User` interface changed, find all files using `User`:
-
 
 
 ```bash
@@ -197,14 +172,12 @@ grep -r ": User)" --include="*.ts" src/
 Generic type parameters may be mismatched. Check function signatures across your codebase:
 
 
-
 ```bash
 grep -r "function.*<.*>" --include="*.ts" src/
 ```
 
 
 Enum values may have been renamed. Enums are particularly fragile, so search for hardcoded enum usages:
-
 
 
 ```bash
@@ -215,9 +188,7 @@ grep -r "Status\." --include="*.ts" src/
 ### Step 4: Clean and Rebuild
 
 
-
 Cached files often cause false positives after refactoring:
-
 
 
 ```bash
@@ -239,9 +210,7 @@ rm -rf build  # Create React App
 ### Step 5: Fix Configuration Files
 
 
-
 Build configurations often reference old names. Check these common files:
-
 
 
 - `tsconfig.json` — path aliases and includes
@@ -255,9 +224,7 @@ Build configurations often reference old names. Check these common files:
 - `.eslintrc` — rule configurations referencing old names
 
 
-
 Example vite.config.ts fix:
-
 
 
 ```typescript
@@ -279,13 +246,10 @@ export default defineConfig({
 ## Diagnostic Tips for Complex Cases
 
 
-
 ### Circular Dependency Detection
 
 
-
 Run this to find circular dependencies:
-
 
 
 ```bash
@@ -300,9 +264,7 @@ node -e "require('module')._load('./src/index.js', {}, true)"
 ### Version Conflict Resolution
 
 
-
 If you see dependency conflicts:
-
 
 
 ```bash
@@ -320,9 +282,7 @@ npx npm-check-updates
 ### Rollback Strategy
 
 
-
 If the refactor broke too much, consider a staged rollback:
-
 
 
 ```bash
@@ -341,9 +301,7 @@ git checkout <commit-hash> -- .
 ## Prevention
 
 
-
 Avoid future build breaks with these practices:
-
 
 
 1. Run incremental builds during refactoring, not just at the end
@@ -355,14 +313,7 @@ Avoid future build breaks with these practices:
 4. Test the build after each major change rather than waiting until the end
 
 
-
 {% endraw %}
-
-
-
-
-
-
 
 
 ## Related Articles

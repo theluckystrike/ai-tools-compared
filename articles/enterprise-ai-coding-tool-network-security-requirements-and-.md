@@ -144,10 +144,10 @@ def validate_allowed_domains():
     """Verify AI tool domains remain reachable"""
     allowed_domains = [
         'api.githubcopilot.com',
-        'api.cursor.sh', 
+        'api.cursor.sh',
         'api.claude.ai'
     ]
-    
+
     results = {}
     for domain in allowed_domains:
         result = subprocess.run(
@@ -155,7 +155,7 @@ def validate_allowed_domains():
             capture_output=True, text=True
         )
         results[domain] = result.returncode == 0
-    
+
     return results
 
 if __name__ == '__main__':
@@ -314,10 +314,6 @@ Integrate this detection into your IDE or pre-submission hooks to warn developer
 Several mistakes frequently cause problems in enterprise AI coding tool deployments. Avoid allowing all outbound HTTPS traffic, as this defeats the purpose of targeted firewall rules. Do not rely solely on IP-based filtering, since cloud providers frequently change underlying infrastructure. Never forget to allow license validation connections, or tools will stop working unexpectedly.
 
 Document all firewall rule changes with timestamps and justifications. This documentation aids troubleshooting and satisfies compliance auditors who need to verify that security controls exist.
-
-
-
-
 
 
 ## Related Articles

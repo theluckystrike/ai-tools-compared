@@ -30,7 +30,7 @@ Before generating Retool components, you need a clear representation of your dat
 For PostgreSQL, retrieve your schema using:
 
 ```sql
-SELECT 
+SELECT
     table_name,
     column_name,
     data_type,
@@ -44,7 +44,7 @@ ORDER BY table_name, ordinal_position;
 For MySQL, use:
 
 ```sql
-SELECT 
+SELECT
     TABLE_NAME,
     COLUMN_NAME,
     DATA_TYPE,
@@ -120,7 +120,7 @@ Update queries should reference the record being modified:
 
 ```sql
 UPDATE users
-SET 
+SET
   email = {{ form1.data.email }},
   name = {{ form1.data.name }},
   role = {{ form1.data.role }},
@@ -160,8 +160,8 @@ Beyond basic CRUD operations, AI assistants help implement common admin panel fe
 Generate full-text search queries:
 
 ```sql
-SELECT * FROM users 
-WHERE 
+SELECT * FROM users
+WHERE
   email ILIKE {{ '%' + searchInput.value + '%' }}
   OR name ILIKE {{ '%' + searchInput.value + '%' }}
 ORDER BY created_at DESC
@@ -174,7 +174,7 @@ For complex filtering requirements, AI can generate dynamic WHERE clauses:
 
 ```sql
 SELECT * FROM orders
-WHERE 
+WHERE
   ({{ filterStatus.value }} IS NULL OR status = {{ filterStatus.value }})
   AND ({{ filterDate.value }} IS NULL OR created_at >= {{ filterDate.value }})
 ORDER BY created_at DESC;
@@ -306,10 +306,6 @@ AI-generated panels work best when:
 - You have access to test data for validation
 
 For legacy systems with unclear relationships, ask the AI to generate queries for simple tables first, then build on those foundations.
-
-
-
-
 
 
 ## Related Articles

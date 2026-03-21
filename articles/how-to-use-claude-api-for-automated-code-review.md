@@ -325,10 +325,6 @@ def truncate_diff(pr_data: dict, max_chars: int = MAX_DIFF_TOKENS * 4) -> dict:
 ```
 
 
-
-
-
-
 ## Related Articles
 
 - [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)

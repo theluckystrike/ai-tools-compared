@@ -550,11 +550,6 @@ When introducing AI-generated resolvers to your team:
 5. Load test with realistic query patterns
 
 
-
-
-
-
-
 ## Related Articles
 
 - [AI Tools for Writing Jest Tests for Graphql Resolvers](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-graphql-resolvers-with-dataloader-batching/)

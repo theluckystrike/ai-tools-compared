@@ -34,14 +34,14 @@ class TestSelector:
     def __init__(self, test_history_file="test_history.json"):
         self.test_history = self._load_history(test_history_file)
         self.test_dependencies = self._build_dependency_graph()
-    
+
     def _load_history(self, filepath):
         try:
             with open(filepath) as f:
                 return json.load(f)
         except FileNotFoundError:
             return {}
-    
+
     def _build_dependency_graph(self):
         """Map tests to files they depend on."""
         dependencies = defaultdict(set)
@@ -51,11 +51,11 @@ class TestSelector:
         )
         # Parse test collection output
         return dependencies
-    
+
     def select_tests(self, changed_files):
         """Select tests most likely to fail based on changed files."""
         scored_tests = []
-        
+
         for test, history in self.test_history.items():
             impact_score = 0
             for changed_file in changed_files:
@@ -64,14 +64,14 @@ class TestSelector:
                     recent_failures = history.get("failures", [])[-10:]
                     fail_rate = sum(recent_failures) / len(recent_failures) if recent_failures else 0
                     impact_score += fail_rate
-            
+
             scored_tests.append((test, impact_score))
-        
+
         # Return top 50% by score
         scored_tests.sort(key=lambda x: x[1], reverse=True)
         cutoff = len(scored_tests) // 2
         return [t[0] for t in scored_tests[:cutoff]]
-    
+
     def _affects_test(self, file_path, test_name):
         # Simplified: check if test file imports the changed module
         return file_path.split("/")[-1].replace(".py", "") in test_name
@@ -95,28 +95,28 @@ jobs:
     strategy:
       matrix:
         python-version: ['3.10', '3.11', '3.12']
-    
+
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Predict resource needs
         id: predict
         uses: your-org/resource-predictor@v1
         with:
           changed-files: ${{ steps.get_changes.outputs.files }}
           test-count: ${{ steps.count_tests.outputs.count }}
-      
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-      
+
       - name: Run tests with allocated resources
         run: |
           pytest --maxfail=${{ steps.predict.outputs.max_failures }} \
                  -n=${{ steps.predict.outputs.parallel_workers }} \
                  tests/
-      
+
       - name: Record pipeline metrics
         if: always()
         run: |
@@ -140,63 +140,63 @@ class PipelineOptimizer:
     def __init__(self, metrics_file="pipeline_metrics.json"):
         self.metrics = self._load_metrics(metrics_file)
         self.baseline = self._calculate_baseline()
-    
+
     def _load_metrics(self, filepath):
         try:
             with open(filepath) as f:
                 return json.load(f)
         except FileNotFoundError:
             return {"runs": []}
-    
+
     def _calculate_baseline(self, days=30):
         cutoff = datetime.now() - timedelta(days=days)
         recent_runs = [
             r for r in self.metrics["runs"]
             if datetime.fromisoformat(r["timestamp"]) > cutoff
         ]
-        
+
         if not recent_runs:
             return None
-        
+
         return {
             "avg_duration": statistics.mean(r["duration"] for r in recent_runs),
             "avg_test_time": statistics.mean(r["test_duration"] for r in recent_runs),
             "avg_build_time": statistics.mean(r["build_duration"] for r in recent_runs),
             "p95_duration": sorted(r["duration"] for r in recent_runs)[int(len(recent_runs) * 0.95)]
         }
-    
+
     def analyze_slowdown(self, current_run):
         if not self.baseline:
             return {"status": "no_baseline"}
-        
+
         duration_ratio = current_run["duration"] / self.baseline["avg_duration"]
-        
+
         analysis = {
             "status": "normal" if duration_ratio < 1.2 else "slow",
             "duration_ratio": round(duration_ratio, 2),
             "recommendations": []
         }
-        
+
         if current_run["test_duration"] / self.baseline["avg_test_time"] > 1.3:
             analysis["recommendations"].append({
                 "area": "tests",
                 "suggestion": "Consider test parallelization or test selection"
             })
-        
+
         if current_run["build_duration"] / self.baseline["avg_build_time"] > 1.3:
             analysis["recommendations"].append({
                 "area": "build",
                 "suggestion": "Review dependency caching and build configuration"
             })
-        
+
         return analysis
-    
+
     def suggest_optimizations(self):
         if not self.baseline:
             return []
-        
+
         optimizations = []
-        
+
         # Analyze test execution patterns
         test_times = [r["test_duration"] for r in self.metrics["runs"]]
         if statistics.stdev(test_times) / statistics.mean(test_times) > 0.3:
@@ -205,7 +205,7 @@ class PipelineOptimizer:
                 "description": "High test time variance detected",
                 "action": "Review flaky tests and implement retry logic"
             })
-        
+
         # Check for caching opportunities
         recent_runs = self.metrics["runs"][-10:]
         dependency_fetch_times = [r.get("dependency_time", 0) for r in recent_runs]
@@ -216,7 +216,7 @@ class PipelineOptimizer:
                 "description": f"Average dependency fetch: {avg_dep_time:.0f}s",
                 "action": "Implement dependency caching with hash-based keys"
             })
-        
+
         return optimizations
 ```
 
@@ -318,11 +318,6 @@ The most effective rollout sequence for teams new to AI pipeline optimization:
 Rushing to add AI optimization before the data infrastructure is in place leads to models trained on noisy data, which erodes trust and gets disabled. Patience in the early phases pays off in a system the team trusts and maintains.
 
 ---
-
-
-
-
-
 
 
 ## Related Articles

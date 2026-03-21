@@ -99,11 +99,11 @@ class RegulatoryMonitor:
         "us_nist": "https://www.nist.gov/feed.xml",
         "uk_ico": "https://ico.org.uk/feed.xml"
     }
-    
+
     def __init__(self, db_path: str = "regulatory_updates.json"):
         self.db_path = db_path
         self.seen_hashes = self._load_seen_hashes()
-    
+
     def _load_seen_hashes(self) -> set:
         try:
             with open(self.db_path, 'r') as f:
@@ -111,26 +111,26 @@ class RegulatoryMonitor:
                 return {item['content_hash'] for item in data}
         except FileNotFoundError:
             return set()
-    
+
     def _compute_hash(self, title: str, published: str) -> str:
         content = f"{title}:{published}"
         return hashlib.sha256(content.encode()).hexdigest()
-    
+
     async def check_feeds(self) -> List[RegulatoryUpdate]:
         new_updates = []
-        
+
         async with httpx.AsyncClient() as client:
             for source_name, feed_url in self.FEED_URLS.items():
                 try:
                     response = await client.get(feed_url, timeout=10.0)
                     feed = feedparser.parse(response.text)
-                    
+
                     for entry in feed.entries[:5]:
                         content_hash = self._compute_hash(
                             entry.get('title', ''),
                             entry.get('published', '')
                         )
-                        
+
                         if content_hash not in self.seen_hashes:
                             update = RegulatoryUpdate(
                                 source=source_name,
@@ -143,22 +143,22 @@ class RegulatoryMonitor:
                             )
                             new_updates.append(update)
                             self.seen_hashes.add(content_hash)
-                            
+
                 except Exception as e:
                     print(f"Error fetching {source_name}: {e}")
-        
+
         return new_updates
-    
+
     def save_updates(self, updates: List[RegulatoryUpdate]):
         try:
             with open(self.db_path, 'r') as f:
                 existing = json.load(f)
         except FileNotFoundError:
             existing = []
-        
+
         for update in updates:
             existing.append(asdict(update))
-        
+
         with open(self.db_path, 'w') as f:
             json.dump(existing, f, indent=2)
 ```
@@ -183,7 +183,7 @@ changes = client.changes(
 
 for change in changes:
     # Check if change relates to AI/automated systems
-    if any(keyword in change.title.lower() 
+    if any(keyword in change.title.lower()
            for keyword in ['ai', 'automated', 'machine learning']):
         print(f"AI-Related: {change.title}")
         print(f"Effective: {change.effective_date}")
@@ -212,14 +212,14 @@ class RelevanceFilter:
         'artificial intelligence', 'machine learning', 'automated decision',
         'algorithmic', 'model', 'neural network', 'deep learning', 'ai system'
     ]
-    
+
     def is_relevant(self, title: str, summary: str) -> bool:
         text = f"{title} {summary}".lower()
         return any(keyword in text for keyword in self.AI_KEYWORDS)
-    
+
     def categorize_impact(self, title: str, summary: str) -> str:
         text = f"{title} {summary}".lower()
-        
+
         if any(term in text for term in ['prohibited', 'banned', 'high-risk']):
             return 'critical'
         elif any(term in text for term in ['transparency', 'disclosure', 'notice']):
@@ -260,10 +260,6 @@ When implementing regulatory change monitoring, consider these factors:
 **Response Playbooks**: Establish clear processes for responding to different types of regulatory changes. Define who reviews updates, how impact is assessed, and what actions trigger engineering involvement.
 
 **Documentation**: Maintain records of regulatory monitoring activities for compliance evidence. Many frameworks require demonstrating systematic oversight processes.
-
-
-
-
 
 
 ## Related Articles

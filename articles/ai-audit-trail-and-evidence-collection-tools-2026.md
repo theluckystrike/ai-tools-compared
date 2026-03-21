@@ -119,9 +119,9 @@ class AIAuditLogger:
     def __init__(self, storage_backend="jsonl"):
         self.storage_backend = storage_backend
         self.entries = []
-    
-    def log_completion(self, user_id: str, session_id: str, 
-                       provider: str, model: str, prompt: str, 
+
+    def log_completion(self, user_id: str, session_id: str,
+                       provider: str, model: str, prompt: str,
                        response: str, latency_ms: float,
                        metadata: dict = None):
         entry = AIAuditEntry(
@@ -141,7 +141,7 @@ class AIAuditLogger:
         )
         self.entries.append(asdict(entry))
         return entry.event_id
-    
+
     def export_to_jsonl(self, filepath: str):
         with open(filepath, 'a') as f:
             for entry in self.entries:
@@ -180,7 +180,7 @@ from datetime import datetime
 class AuditCallbackHandler(BaseCallbackHandler):
     def __init__(self, audit_logger):
         self.audit_logger = audit_logger
-    
+
     def on_llm_end(self, response: LLMResult, **kwargs):
         generation = response.generations[0][0]
         self.audit_logger.log_completion(

@@ -280,10 +280,6 @@ Rule of thumb for estimating AI migration effort:
 The time savings grow with scale. For fewer than 20 files, writing a migration prompt and validation script may take longer than just doing it manually.
 
 
-
-
-
-
 ## Related Articles
 
 - [AI Code Completion for Java Jakarta EE Migration from Javax](/ai-tools-compared/ai-code-completion-for-java-jakarta-ee-migration-from-javax-/)

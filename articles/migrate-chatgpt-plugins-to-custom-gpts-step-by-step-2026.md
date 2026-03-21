@@ -20,25 +20,19 @@ voice-checked: true
 Migrate a ChatGPT Plugin to a Custom GPT by exporting your existing OpenAPI specification, creating a new GPT in the GPT Builder, pasting the spec into the Actions configuration panel, mapping your authentication settings, and testing each endpoint. The process reuses your plugin's API server and OpenAPI schema directly, so the backend stays the same while the configuration moves into the GPT Builder interface. This step-by-step guide covers the full migration with code examples for both manual and programmatic approaches.
 
 
-
 ## Understanding the Architecture Differences
-
 
 
 ChatGPT Plugins and Custom GPTs serve similar purposes but operate differently under the hood. Plugins used a manifest file (`ai-plugin.json`) and OpenAPI specifications to define endpoints. Custom GPTs use Actions, which are conceptually similar but require a different setup approach through the GPT Builder interface or the Assistants API.
 
 
-
 The key distinction is that plugins required external server hosting with a publicly accessible HTTPS endpoint. Custom GPTs with Actions can connect to APIs the same way, but also benefit from a more improved configuration process directly within ChatGPT.
-
 
 
 ## Step 1: Audit Your Current Plugin
 
 
-
 Before migrating, document your plugin's current functionality. Create a checklist of:
-
 
 
 - All endpoints your plugin exposes
@@ -50,9 +44,7 @@ Before migrating, document your plugin's current functionality. Create a checkli
 - Any third-party dependencies
 
 
-
 For example, a typical plugin manifest looks like this:
-
 
 
 ```json
@@ -74,13 +66,10 @@ For example, a typical plugin manifest looks like this:
 ## Step 2: Export Your OpenAPI Specification
 
 
-
 Your plugin's OpenAPI specification is the foundation for your Custom GPT Action. Locate your `openapi.yaml` or `openapi.json` file from the plugin repository. Review it for compatibility with the Custom GPT Actions format.
 
 
-
 Key adjustments you may need to make:
-
 
 
 - Ensure all endpoints use HTTPS
@@ -88,7 +77,6 @@ Key adjustments you may need to make:
 - Verify response schemas are properly defined
 
 - Add operation IDs if missing (required for Actions)
-
 
 
 ```yaml
@@ -125,9 +113,7 @@ paths:
 ## Step 3: Create Your Custom GPT
 
 
-
 Navigate to ChatGPT and access the GPT Builder:
-
 
 
 1. Click your profile menu and select "My GPTs"
@@ -141,17 +127,13 @@ Navigate to ChatGPT and access the GPT Builder:
 5. Add your Action using the OpenAPI specification
 
 
-
 In the Actions configuration panel, paste your refined OpenAPI specification. The GPT Builder will parse your endpoints and generate a configuration interface.
-
 
 
 ## Step 4: Configure Authentication
 
 
-
 Custom GPT Actions support multiple authentication methods. Map your plugin's auth configuration to the appropriate Action auth type:
-
 
 
 | Plugin Auth Type | Custom GPT Action Auth |
@@ -165,9 +147,7 @@ Custom GPT Actions support multiple authentication methods. Map your plugin's au
 | OAuth 2.0 | OAuth 2.0 configuration |
 
 
-
 For API key authentication in Actions, specify how the key should be passed:
-
 
 
 ```yaml
@@ -184,13 +164,10 @@ security:
 Configure the authentication credentials in the Action settings panel, providing your API key or OAuth client credentials.
 
 
-
 ## Step 5: Test Your Migrated GPT
 
 
-
 The GPT Builder provides a testing panel where you can interact with your Custom GPT and verify the Actions work correctly. Run through each endpoint:
-
 
 
 1. Ask your GPT to perform an action your plugin supported
@@ -202,9 +179,7 @@ The GPT Builder provides a testing panel where you can interact with your Custom
 4. Test error handling with invalid inputs
 
 
-
 Common issues during testing include:
-
 
 
 - Missing authentication headers
@@ -216,17 +191,13 @@ Common issues during testing include:
 - Response parsing errors
 
 
-
 Address each issue by adjusting your OpenAPI specification or updating the Action configuration.
-
 
 
 ## Step 6: Deploy and Monitor
 
 
-
 Once testing passes, save your Custom GPT and decide on visibility:
-
 
 
 - Private: Only you can use the GPT
@@ -236,17 +207,13 @@ Once testing passes, save your Custom GPT and decide on visibility:
 - Public: Listed in the GPT Store (if available in your region)
 
 
-
 Monitor usage through the My GPTs dashboard. Track API call volumes and response times to ensure your backend can handle the load.
-
 
 
 ## Advanced: Programmatic GPT Creation
 
 
-
 For批量 migrating multiple plugins, use the Assistants API to create Custom GPTs programmatically:
-
 
 
 ```python
@@ -282,12 +249,6 @@ assistant = client.beta.assistants.create(
 
 
 This approach gives you version control over your GPT configurations and enables CI/CD pipelines for GPT management.
-
-
-
-
-
-
 
 
 ## Related Articles

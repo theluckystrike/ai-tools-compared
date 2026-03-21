@@ -187,14 +187,14 @@ During the initial transition week, focus on these daily practices:
 const transitionGuidelines = {
   // Only use new tool for new features
   // Complete pending work with familiar tool
-  
+
   // For complex refactoring, wait until comfortable
   // Don't attempt major changes during transition
-  
+
   // Use keyboard shortcuts consistently
   // Learn the new tool's chord commands
-  
-  // Leverage the new tool's strengths
+
+  // Use the new tool's strengths
   // If new tool excels at X, start there
 };
 ```
@@ -262,10 +262,6 @@ As you learn the new tool, document findings immediately:
 - Local debugging configuration
 - Proxy/network requirements
 ```
-
-
-
-
 
 
 ## Related Articles

@@ -20,21 +20,16 @@ voice-checked: true
 This guide provides practical steps and best practices to help you accomplish this task effectively. Follow the recommendations to get the best results from your AI tools.
 
 
-
 ## Understanding Cursor's Apply Model
-
 
 
 When you ask Cursor AI to generate code or make modifications, the Apply model doesn't just spit out a complete file replacement. Instead, it analyzes your existing codebase, understands the context, and generates precise changes that integrate with what you already have.
 
 
-
 The key insight behind the Apply model is that it works with diffs—specific line-by-line changes—rather than whole-file replacements. This approach dramatically reduces the risk of accidentally losing your custom implementations or configuration.
 
 
-
 Here's how a typical Apply request works:
-
 
 
 ```javascript
@@ -59,13 +54,10 @@ function fetchUserData(userId) {
 This diff-based approach means the model only adds, removes, or modifies the specific lines needed—leaving everything else in your file untouched.
 
 
-
 ## How the Merge Process Works
 
 
-
 The Apply model operates through several stages when merging generated code:
-
 
 
 **1. Context Analysis**
@@ -73,11 +65,9 @@ The Apply model operates through several stages when merging generated code:
 Before generating any code, Cursor analyzes your existing file structure, imports, function signatures, and coding patterns. This ensures the generated code follows your project's conventions.
 
 
-
 **2. Change Generation**
 
 The model generates minimal, targeted changes rather than complete file rewrites. It understands your file's current state and produces diffs that integrate cleanly.
-
 
 
 **3. Conflict Detection**
@@ -85,27 +75,21 @@ The model generates minimal, targeted changes rather than complete file rewrites
 If the generated changes conflict with existing code (such as duplicate function definitions or incompatible modifications), Cursor flags these issues for your review rather than forcing through potentially breaking changes.
 
 
-
 **4. Safe Application**
 
 You review the proposed changes in the diff view before they're applied. This gives you complete control over what gets merged into your codebase.
 
 
-
 ## Practical Applications
-
 
 
 The Apply model shines in several common development scenarios:
 
 
-
 ### Adding New Features
 
 
-
 When you need to add functionality to existing functions, the Apply model understands the surrounding code and inserts changes in the right place:
-
 
 
 ```typescript
@@ -126,9 +110,7 @@ function calculateTotal(items: CartItem[]): number {
 ### Refactoring Existing Code
 
 
-
 The Apply model can refactor specific sections without affecting the rest of your file:
-
 
 
 ```python
@@ -149,9 +131,7 @@ def process_data(data):
 ### Implementing Design Patterns
 
 
-
 When adding complex patterns like error handling, caching, or logging, the Apply model integrates these additions without disrupting your existing logic:
-
 
 
 ```go
@@ -162,10 +142,10 @@ func fetchData(key string) Result {
 +  if val, exists := cache[key]; exists {
 +    return val
 +  }
-  
+
   // Existing logic
   result := expensiveOperation(key)
-  
+
 +  cache[key] = result
   return result
 }
@@ -175,25 +155,19 @@ func fetchData(key string) Result {
 ## Best Practices for Working with Apply
 
 
-
 To get the best results from Cursor's Apply model, consider these practices:
-
 
 
 Provide clear context: Include relevant surrounding code in your prompts so the model understands where changes should go.
 
 
-
 Review diffs carefully: Always examine the proposed changes before accepting them. The diff view shows exactly what will be modified.
-
 
 
 Use incremental changes: Instead of asking for massive refactoring, break larger changes into smaller, manageable Apply requests.
 
 
-
 Test after each Apply: Run your tests after applying changes to ensure everything works as expected.
-
 
 
 ## Advanced Workflow: Multi-File Refactoring with Apply
@@ -263,12 +237,6 @@ While the Apply model is powerful, it's important to understand its limitations:
 - **Project-specific patterns** may not be understood without proper context in comments or documentation
 - **Implicit assumptions** in your codebase can cause Apply to misinterpret where changes should go
 - **Test updates** often lag behind implementation changes and may need manual iteration
-
-
-
-
-
-
 
 
 ## Related Articles

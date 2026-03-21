@@ -364,10 +364,6 @@ For most engineering teams:
 Semgrep + CodeQL is the cheapest combo for teams under GitHub Advanced Security. Snyk + Socket is best if you want both SAST + supply chain from one vendor.
 
 
-
-
-
-
 ## Related Articles
 
 - [AI Container Security Scanning](/ai-tools-compared/ai-container-security-scanning/)

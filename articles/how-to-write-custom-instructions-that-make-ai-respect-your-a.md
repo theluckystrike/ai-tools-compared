@@ -19,33 +19,25 @@ voice-checked: true
 When integrating AI into your development workflow, understanding how to control API consumption becomes essential. Custom instructions let you define behavior boundaries that AI tools follow consistently. This guide shows you how to write custom instructions specifically designed to make AI respect your API rate limit patterns.
 
 
-
 ## Why Rate Limit Awareness Matters
-
 
 
 API rate limits exist to prevent abuse and ensure service availability. When AI tools generate code without understanding your rate limits, they can trigger throttling errors, cause your application to fail, or consume more quota than intended. Writing custom instructions that explicitly define your rate limit constraints helps AI generate code that operates within those boundaries.
 
 
-
 Most AI providers implement rate limits in different ways. OpenAI uses tokens-per-minute and requests-per-minute limits. Anthropic enforces tokens-per-minute constraints. Third-party APIs like GitHub, Stripe, and various SaaS platforms each have their own throttling mechanisms. Your custom instructions should reflect the specific limits of the APIs you use.
-
 
 
 ## Writing Effective Rate Limit Instructions
 
 
-
 Effective custom instructions combine specificity with clarity. Instead of vague requests like "be careful with API calls," provide concrete numbers and patterns the AI can follow.
-
 
 
 ### Specify Exact Limits
 
 
-
 Always state your rate limits in concrete terms:
-
 
 
 ```
@@ -60,13 +52,10 @@ My application has these constraints:
 This approach gives the AI clear boundaries to work within. When generating code, the AI will naturally incorporate batching, caching, and throttling mechanisms that respect these constraints.
 
 
-
 ### Define Error Handling Behavior
 
 
-
 Include specific instructions for how to handle rate limit errors:
-
 
 
 ```
@@ -81,13 +70,10 @@ When receiving rate limit errors (HTTP 429), implement:
 The AI will then generate code with proper error handling rather than assuming successful responses.
 
 
-
 ### Request Optimized Patterns
 
 
-
 Ask for specific optimization techniques that align with your rate limits:
-
 
 
 ```
@@ -102,13 +88,10 @@ Generate code that:
 ## Practical Examples
 
 
-
 ### Example 1: OpenAI API Integration
 
 
-
 Without custom instructions, an AI might generate code that makes individual calls for each item in a loop:
-
 
 
 ```python
@@ -125,7 +108,6 @@ for item in items:
 With proper custom instructions, the AI generates batching logic:
 
 
-
 ```python
 # Optimized approach respecting rate limits
 from collections import defaultdict
@@ -138,30 +120,30 @@ class RateLimitedClient:
         self.max_tpm = max_tpm
         self.request_timestamps = []
         self.token_budget = max_tpm
-    
+
     def chat(self, messages, max_tokens=1000):
         # Check rate limit window
         now = time.time()
         self.request_timestamps = [
             ts for ts in self.request_timestamps if now - ts < 60
         ]
-        
+
         if len(self.request_timestamps) >= self.max_rpm:
             wait_time = 60 - (now - self.request_timestamps[0])
             time.sleep(wait_time)
             self.request_timestamps = []
-        
+
         # Track tokens
         estimated_tokens = sum(len(m["content"].split()) for m in messages)
         estimated_tokens += max_tokens
-        
+
         if self.token_budget < estimated_tokens:
             self.token_budget = self.max_tpm
             time.sleep(60)
-        
+
         self.token_budget -= estimated_tokens
         self.request_timestamps.append(now)
-        
+
         return self.client.chat.completions.create(
             model="gpt-4o",
             messages=messages,
@@ -173,9 +155,7 @@ class RateLimitedClient:
 ### Example 2: Multi-API Coordination
 
 
-
 When your application calls multiple APIs, custom instructions help coordinate usage:
-
 
 
 ```
@@ -192,7 +172,6 @@ Generate code that:
 
 
 The resulting code implements proper coordination:
-
 
 
 ```python
@@ -217,7 +196,7 @@ class MultiAPICoordinator:
         self.request_history: Dict[str, list] = {
             name: [] for name in limits.keys()
         }
-    
+
     async def call_api(self, api_name: str, func, *args, **kwargs):
         limit = self.limits[api_name]
         async with self.semaphores[api_name]:
@@ -225,14 +204,14 @@ class MultiAPICoordinator:
             result = await func(*args, **kwargs)
             self.request_history[api_name].append(time.time())
             return result
-    
+
     async def _wait_for_rate_limit(self, api_name: str, limit: APILimit):
         now = time.time()
         self.request_history[api_name] = [
             ts for ts in self.request_history[api_name]
             if now - ts < 60
         ]
-        
+
         if len(self.request_history[api_name]) >= limit.requests_per_minute:
             wait = 60 - (now - self.request_history[api_name][0])
             await asyncio.sleep(wait)
@@ -242,21 +221,16 @@ class MultiAPICoordinator:
 ## Testing Your Custom Instructions
 
 
-
 After writing custom instructions, verify they work as intended. Create test scenarios that stress your rate limits and observe whether the AI-generated code handles them correctly.
-
 
 
 Run tests that simulate rate limit responses. Check whether exponential backoff activates properly. Verify that batching reduces the number of requests. Monitor your actual API usage to confirm the generated code respects your defined constraints.
 
 
-
 ## Refining Your Instructions
 
 
-
 Custom instructions require iteration. Start with basic limits, generate code, then observe the results. Add more specific guidance based on gaps you discover. Common refinements include:
-
 
 
 - Adding specific retry strategies for different error codes
@@ -268,16 +242,7 @@ Custom instructions require iteration. Start with basic limits, generate code, t
 - Including circuit breaker thresholds for sustained failures
 
 
-
 The more context you provide about your specific environment and constraints, the more accurately the AI generates code that respects your rate limit patterns.
-
-
-
-
-
-
-
-
 
 
 ## Related Articles

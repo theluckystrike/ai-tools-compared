@@ -20,29 +20,22 @@ intent-checked: true
 Managing AI coding assistant configurations across distributed engineering teams presents unique challenges. When team members span multiple time zones and use different IDEs, keeping everyone aligned on AI tool settings requires deliberate strategy. This guide covers practical approaches to share configuration files effectively while maintaining flexibility for individual preferences.
 
 
-
 ## Why Configuration Sharing Matters
-
 
 
 AI coding assistants like GitHub Copilot, Claude Code, and Cursor rely on configuration files that control behavior, prompt templates, and context handling. Inconsistent configurations lead to several problems: code style diverges across the codebase, AI suggestions become unpredictable between team members, and onboarding new developers takes longer because they must discover optimal settings independently.
 
 
-
 Teams that implement configuration sharing report faster onboarding and more consistent code reviews. When everyone uses similar AI tool settings, code reviews focus on logic and architecture rather than formatting differences that AI should handle consistently.
-
 
 
 ## Version Control Strategies for AI Configurations
 
 
-
 The most effective approach treats AI configuration files as first-class code artifacts. Store these files in a dedicated repository or the main project repository alongside other development tools.
 
 
-
 Create a `.ai-configs` directory in your project root with separate files for each tool:
-
 
 
 ```
@@ -63,9 +56,7 @@ project-root/
 This structure keeps AI configurations visible and accessible. Developers can reference them during onboarding and version control provides history when settings change.
 
 
-
 For GitHub Copilot, export your configuration using the CLI:
-
 
 
 ```bash
@@ -75,7 +66,6 @@ copilot settings export > .ai-configs/copilot.json
 
 
 Claude Code users can share rule files by committing their `CLAUDE.md` or rule configurations to the shared directory:
-
 
 
 ```markdown
@@ -90,13 +80,10 @@ Claude Code users can share rule files by committing their `CLAUDE.md` or rule c
 ## Configuration Inheritance Patterns
 
 
-
 Large organizations benefit from layered configurations. Define a base configuration that applies to all projects, then allow team-specific overrides.
 
 
-
 Create a `base-ai-config.yaml` at the organization level:
-
 
 
 ```yaml
@@ -105,12 +92,12 @@ ai_settings:
   language: en
   max_tokens: 2048
   temperature: 0.7
-  
+
 code_standards:
   max_line_length: 100
   indent_size: 2
   quote_style: single
-  
+
 context:
   include_tests: true
   exclude_patterns:
@@ -123,21 +110,16 @@ context:
 Teams inherit these defaults but can override specific values in project-level configurations. This approach balances consistency with flexibility.
 
 
-
 ## Synchronization Methods
-
 
 
 Several approaches exist for keeping team configurations synchronized:
 
 
-
 **Git-based synchronization** works well for teams already using Git. Commit configuration changes and require pull request reviews for modifications. This provides audit trails and discussion opportunities when settings change.
 
 
-
 **Dotfiles repositories** remain popular for personal configurations. Create a shared team dotfiles repository with subdirectories for different tools:
-
 
 
 ```bash
@@ -150,7 +132,6 @@ ln -s ~/.ai-configs/copilot.json ~/Library/Application\ Support/Code/User/settin
 
 
 **Configuration management tools** like Ansible, Chef, or Puppet can distribute AI configurations across machines. This approach suits organizations with existing infrastructure automation:
-
 
 
 ```yaml
@@ -167,13 +148,10 @@ ln -s ~/.ai-configs/copilot.json ~/Library/Application\ Support/Code/User/settin
 ## Editor-Specific Configuration Distribution
 
 
-
 Different IDEs require different approaches for configuration distribution.
 
 
-
 **VS Code** stores settings in `settings.json`. Share a base `settings.json` through the project repository:
-
 
 
 ```json
@@ -192,9 +170,7 @@ Different IDEs require different approaches for configuration distribution.
 Include this file in `.gitignore` at the individual level but provide a `settings.json.example` in the repository.
 
 
-
 **JetBrains IDEs** use the Settings Repository plugin or IDE Features Trainer for configuration sharing. Export settings to a shared location:
-
 
 
 ```bash
@@ -204,7 +180,6 @@ idea export settings --output=team-settings.jar
 
 
 **Neovim** configurations are naturally text-based and version-control friendly. Use Lua modules for AI tool configuration:
-
 
 
 ```lua
@@ -231,13 +206,10 @@ return {
 ## Handling Sensitive Configuration Values
 
 
-
 Some AI tool configurations contain sensitive information. Never commit API keys, tokens, or credentials to version control.
 
 
-
 Use environment variables for sensitive values:
-
 
 
 ```bash
@@ -253,7 +225,6 @@ ai_provider:
 Create `.env.example` files that document required environment variables without exposing actual values:
 
 
-
 ```
 # .env.example
 # Copy to .env and fill in your values
@@ -266,9 +237,7 @@ GITHUB_TOKEN=
 ## Documentation and Onboarding
 
 
-
 Configuration files require documentation. Create a `README.md` in your `.ai-configs` directory:
-
 
 
 ```markdown
@@ -298,13 +267,10 @@ Contact #dev-tools on Slack for configuration questions.
 Include troubleshooting sections for common issues like API key problems or IDE compatibility.
 
 
-
 ## Testing Configuration Changes
 
 
-
 Before rolling out configuration changes to the entire team, test them with a small group. Create a beta configuration file and solicit feedback:
-
 
 
 ```yaml
@@ -319,11 +285,6 @@ Before rolling out configuration changes to the entire team, test them with a sm
 
 
 Collect feedback over one or two sprints, then promote stable configurations to the main files.
-
-
-
-
-
 
 
 ## Related Articles

@@ -120,28 +120,28 @@ import time
 
 async def test_abuse_detection():
     """Test various abuse patterns against the API"""
-    
+
     abuse_patterns = [
         {"name": "rapid_succession", "delay": 0},
         {"name": "distributed_ips", "ips": 50},
         {"name": "credential_stuffing", "emails": 100},
         {"name": "scraping", "sequential_ids": 500}
     ]
-    
+
     results = defaultdict(list)
-    
+
     async with aiohttp.ClientSession() as session:
         for pattern in abuse_patterns:
             start = time.time()
             responses = await simulate_attack(session, pattern)
             duration = time.time() - start
-            
+
             results[pattern["name"]] = {
                 "blocked": sum(1 for r in responses if r.status == 429),
                 "flagged": sum(1 for r in responses if "X-Abuse-Flag" in r.headers),
                 "duration": duration
             }
-    
+
     return results
 
 async def simulate_attack(session, pattern):
@@ -165,15 +165,15 @@ describe('Rate Limiting Redis Failure', () => {
   it('should allow requests when Redis is down and fault_tolerant is true', async () => {
     // Mock Redis disconnection
     redisClient.disconnect();
-    
+
     const response = await request(app)
       .get('/api/v1/data')
       .set('X-API-Key', testApiKey);
-    
+
     // Should allow request when using fail-open strategy
     expect(response.status).toBe(200);
   });
-  
+
   it('should block requests when Redis is down and fault_tolerant is false', async () => {
     const limiter = rateLimit({
       windowMs: 60000,
@@ -181,11 +181,11 @@ describe('Rate Limiting Redis Failure', () => {
       fault_tolerant: false,
       redis: new Redis('invalid-host')
     });
-    
+
     const response = await request(app)
       .get('/api/v1/data')
       .set('X-API-Key', testApiKey);
-    
+
     expect(response.status).toBe(500);
   });
 });
@@ -203,13 +203,13 @@ abuse_detection:
       window: "5m"
       action: "flag"
       severity: "high"
-    
+
     - name: "Unusual request velocity"
       condition: "requests_per_minute > avg_requests * 3"
       window: "10m"
       action: "challenge"
       severity: "medium"
-    
+
     - name: "Geographic anomaly"
       condition: "distance_from_last_request > 500km"
       window: "1m"
@@ -305,10 +305,6 @@ const distributedLimiter = rateLimit({
 ```
 
 The `prefix` parameter is important in shared Redis instances — without it, your rate limit keys can collide with session storage or cache keys from other services.
-
-
-
-
 
 
 ## Related Articles

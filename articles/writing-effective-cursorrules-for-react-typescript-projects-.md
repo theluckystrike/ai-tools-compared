@@ -16,29 +16,22 @@ voice-checked: true
 {% raw %}
 
 
-
 Write CursorRules for React TypeScript projects by specifying TypeScript configuration (strict mode, jsx setting, module resolution), React hook rules (exhaustiveDeps warnings), and component patterns (functional/arrow function preference). These rules ensure Cursor AI generates code following your team's established conventions for component composition, prop typing, hook patterns, and state management approaches.
-
 
 
 ## Why CursorRules Matter for React TypeScript
 
 
-
 When working with React and TypeScript, projects often develop unique patterns around component composition, prop typing, and state management. Without explicit guidance, AI assistants may generate code that conflicts with your established conventions. CursorRules solve this by providing persistent context about your project's specific requirements.
-
 
 
 A well-structured CursorRules file acts as documentation and enforcement mechanism simultaneously. It tells your AI assistant how to structure components, which patterns to follow, and what to avoid.
 
 
-
 ## Setting Up Basic React TypeScript Rules
 
 
-
 Start with project-specific configuration details that affect every file:
-
 
 
 ```yaml
@@ -63,21 +56,16 @@ Start with project-specific configuration details that affect every file:
 This establishes the foundation. Next, address component structure specifically.
 
 
-
 ## Component Pattern Rules
-
 
 
 React TypeScript projects benefit from consistent component patterns. Define how components should be written, including file organization, naming conventions, and typing approaches.
 
 
-
 ### Functional Components with Explicit Props
 
 
-
 For projects using explicit prop interfaces:
-
 
 
 ```typescript
@@ -91,15 +79,15 @@ interface ButtonProps {
 }
 
 // Component uses spread for additional props
-export function Button({ 
-  variant = 'primary', 
-  size = 'md', 
-  disabled = false, 
-  onClick, 
-  children 
+export function Button({
+  variant = 'primary',
+  size = 'md',
+  disabled = false,
+  onClick,
+  children
 }: ButtonProps) {
   return (
-    <button 
+    <button
       className={`btn btn-${variant} btn-${size}`}
       disabled={disabled}
       onClick={onClick}
@@ -114,13 +102,10 @@ export function Button({
 Your CursorRules should specify whether components use interfaces or types, inline styles versus CSS modules, and naming conventions for props.
 
 
-
 ### Handling Compound Components
 
 
-
 Compound components require special consideration in your rules. These patterns where a parent component manages state while child components render content need explicit guidance:
-
 
 
 ```typescript
@@ -133,12 +118,12 @@ interface TabsProps {
 
 export function Tabs({ defaultIndex = 0, children, onChange }: TabsProps) {
   const [activeIndex, setActiveIndex] = useState(defaultIndex);
-  
+
   const contextValue = { activeIndex, onTabClick: (i: number) => {
     setActiveIndex(i);
     onChange?.(i);
   }};
-  
+
   return (
     <TabsContext.Provider value={contextValue}>
       {children}
@@ -150,10 +135,10 @@ export function Tabs({ defaultIndex = 0, children, onChange }: TabsProps) {
 function Tab({ index, children }: { index: number; children: React.ReactNode }) {
   const { activeIndex, onTabClick } = useContext(TabsContext);
   const isActive = activeIndex === index;
-  
+
   return (
-    <button 
-      className={isActive ? 'active' : ''} 
+    <button
+      className={isActive ? 'active' : ''}
       onClick={() => onTabClick(index)}
     >
       {children}
@@ -166,13 +151,10 @@ function Tab({ index, children }: { index: number; children: React.ReactNode }) 
 Specify that compound components should use Context for state sharing, with clear separation between parent and child files.
 
 
-
 ## Custom Hooks Patterns
 
 
-
 Custom hooks deserve their own section in CursorRules. Define naming conventions, return types, and error handling approaches:
-
 
 
 ```typescript
@@ -192,9 +174,9 @@ export function useFetch<T>(url: string): FetchState<T> {
 
   useEffect(() => {
     const controller = new AbortController();
-    
+
     setState(prev => ({ ...prev, loading: true }));
-    
+
     fetch(url, { signal: controller.signal })
       .then(res => res.json())
       .then(data => setState({ data, loading: false, error: null }))
@@ -203,7 +185,7 @@ export function useFetch<T>(url: string): FetchState<T> {
           setState({ data: null, loading: false, error });
         }
       });
-    
+
     return () => controller.abort();
   }, [url]);
 
@@ -215,17 +197,13 @@ export function useFetch<T>(url: string): FetchState<T> {
 Rules should specify that hooks must start with "use", handle cleanup properly, and always return tuples or objects with consistent shapes.
 
 
-
 ## State Management Conventions
-
 
 
 For projects using different state management solutions, include specific rules for each:
 
 
-
 ### React Context for Global State
-
 
 
 ```typescript
@@ -246,17 +224,17 @@ const AuthContext = createContext<AuthContextValue | undefined>(undefined);
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<AuthUser | null>(null);
-  
+
   const login = async (credentials: LoginCredentials) => {
     const response = await api.login(credentials);
     setUser(response.user);
   };
-  
+
   const logout = () => {
     api.logout();
     setUser(null);
   };
-  
+
   return (
     <AuthContext.Provider value={{ user, login, logout }}>
       {children}
@@ -278,13 +256,10 @@ export function useAuth() {
 Specify that context should always include a custom hook with runtime validation, typed values properly, and include proper cleanup where needed.
 
 
-
 ## Import Organization
 
 
-
 Consistent import ordering improves readability and reduces merge conflicts:
-
 
 
 ```typescript
@@ -318,13 +293,10 @@ import styles from './UserProfile.module.css';
 Define the exact import order and enforce separation between type and value imports.
 
 
-
 ## Testing Considerations
 
 
-
 CursorRules should also address testing patterns:
-
 
 
 ```typescript
@@ -337,15 +309,15 @@ describe('Button', () => {
     render(<Button onClick={() => {}}>Click me</Button>);
     expect(screen.getByText('Click me')).toBeInTheDocument();
   });
-  
+
   it('calls onClick when clicked', () => {
     const handleClick = vi.fn();
     render(<Button onClick={handleClick}>Click me</Button>);
-    
+
     fireEvent.click(screen.getByText('Click me'));
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
-  
+
   it('is disabled when disabled prop is true', () => {
     render(
       <Button onClick={() => {}} disabled>
@@ -359,12 +331,6 @@ describe('Button', () => {
 
 
 Specify testing library preferences, mock patterns, and what should be tested versus skipped.
-
-
-
-
-
-
 
 
 ## Related Articles

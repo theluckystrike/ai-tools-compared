@@ -18,33 +18,25 @@ voice-checked: true
 AI coding assistants have become integral to modern development workflows, but their default behaviors often miss the mark when it comes to your team's specific code review standards. Rather than fighting against AI-generated code that fails pull request reviews, you can write custom instructions that guide the AI to produce code matching your team's conventions from the start.
 
 
-
 This guide shows you how to create effective custom instructions that enforce your code review standards, reducing iteration cycles and helping your AI pair-programmer become a truly valuable team member.
-
 
 
 ## Understanding Custom Instructions
 
 
-
 Custom instructions are system-level prompts that shape how an AI assistant behaves across all your interactions. Most AI coding tools support some form of custom instructions—whether through Claude's `CLAUDE.md`, Cursor's `.cursorrules`, or GitHub Copilot's custom instructions file.
-
 
 
 The key insight is that these instructions work best when they are specific, enforceable, and aligned with your actual code review checklist. Generic advice like "write clean code" rarely produces the results you want. Instead, you need precise rules that the AI can follow without ambiguity.
 
 
-
 ## Structuring Your Custom Instructions
-
 
 
 Effective custom instructions follow a structured approach. Start with your team's code review pain points—what gets flagged most often in pull requests? Common offenders include missing error handling, inadequate test coverage, inconsistent naming, and lack of documentation.
 
 
-
 Here's a template for structuring custom instructions that actually work:
-
 
 
 ```markdown
@@ -66,17 +58,13 @@ Here's a template for structuring custom instructions that actually work:
 The structure matters because it gives the AI a mental framework for generating code. When you organize instructions by category, the AI can reference the appropriate section when making different types of decisions.
 
 
-
 ## Practical Examples for Common Standards
-
 
 
 ### Enforcing Naming Conventions
 
 
-
 If your team requires specific naming patterns, make them explicit. Instead of vague preferences, provide concrete rules:
-
 
 
 ```markdown
@@ -93,13 +81,10 @@ If your team requires specific naming patterns, make them explicit. Instead of v
 This approach eliminates guesswork. When the AI needs to name a new component, it has clear guidance rather than choosing arbitrarily.
 
 
-
 ### Error Handling Standards
 
 
-
 Code review often flags inconsistent error handling. Address this directly:
-
 
 
 ```markdown
@@ -115,13 +100,10 @@ Code review often flags inconsistent error handling. Address this directly:
 With these instructions, the AI will automatically include proper error handling rather than adding it as an afterthought.
 
 
-
 ### Test Coverage Requirements
 
 
-
 If your team requires tests, specify the expectations clearly:
-
 
 
 ```markdown
@@ -137,13 +119,10 @@ If your team requires tests, specify the expectations clearly:
 The AI will then write tests alongside code rather than treating testing as a separate step.
 
 
-
 ## Making Instructions Actionable
 
 
-
 The difference between custom instructions that work and those that get ignored comes down to actionability. Vague instructions like "write secure code" are meaningless to an AI. Specific, actionable instructions produce consistent results.
-
 
 
 Consider this ineffective instruction:
@@ -151,35 +130,27 @@ Consider this ineffective instruction:
 > "Make sure to follow security best practices"
 
 
-
 Versus this actionable version:
 
 > "Never use eval(), always sanitize user inputs, use parameterized queries for SQL, implement proper authentication checks on all API routes"
 
 
-
 The second version gives the AI concrete behaviors to avoid or adopt.
-
 
 
 ## Iterating on Your Instructions
 
 
-
 Custom instructions are not an one-time setup. Start with your top five code review concerns, implement instructions for those, and observe the results. Track what gets approved on first review versus what still needs fixes.
-
 
 
 Most teams find that their instructions evolve over time. You might discover that a particular rule is too strict or not strict enough. The key is treating your custom instructions as a living document that improves through feedback from your actual code review process.
 
 
-
 ## Advanced: Context-Aware Instructions
 
 
-
 For larger projects, consider creating instruction tiers that apply based on context. Some AI tools support conditional instructions that activate based on file type, directory, or project area:
-
 
 
 ```markdown
@@ -468,10 +439,6 @@ git commit -m "Update custom instructions across all AI tools"
 **Mistake 4: Out of Date**
 ❌ Instructions reference old tech stack
 ✅ Review instructions quarterly as tools/standards evolve
-
-
-
-
 
 
 ## Related Articles

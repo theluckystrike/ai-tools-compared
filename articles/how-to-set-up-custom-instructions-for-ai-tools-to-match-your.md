@@ -18,29 +18,22 @@ tags: [ai-tools-compared, artificial-intelligence]
 When AI coding assistants generate code that violates your team's linting rules, you waste time manually fixing formatting issues, import order, or naming convention violations. Setting up custom instructions that align AI output with your linting configuration eliminates these repetitive corrections and keeps your codebase consistent across all contributions—whether written by humans or AI.
 
 
-
 ## Why Linting Rules Need AI Configuration
-
 
 
 Your ESLint, Prettier, or Ruff configuration defines code standards that your team enforces through CI checks and editor integrations. However, AI assistants don't automatically read these configuration files or follow their rules unless you explicitly instruct them to do so. Without custom instructions, AI-generated code often requires extensive post-processing to pass your linting checks.
 
 
-
 Consider a team that uses ESLint with the Airbnb configuration and a custom rule requiring specific import ordering. An AI assistant unaware of these requirements might generate imports in the wrong order, forcing developers to manually sort them before committing. By configuring your AI tool with these exact specifications, generated code arrives ready to merge without modification.
-
 
 
 ## Setting Up Custom Instructions in Popular AI Tools
 
 
-
 ### Claude Code (and Claude Desktop)
 
 
-
 Claude Code respects instructions stored in `CLAUDE.md` files within your project. Create this file in your repository root to define linting and formatting rules:
-
 
 
 ```
@@ -75,9 +68,7 @@ All imports must use named exports where available. Import ordering:
 ### GitHub Copilot
 
 
-
 GitHub Copilot uses `.github/copilot-instructions.md` or workspace-level instructions configured through GitHub settings. Add your linting requirements there:
-
 
 
 ```
@@ -94,9 +85,7 @@ Follow these linting rules for all generated code:
 ### Cursor
 
 
-
 Cursor respects `.cursorrules` files and custom rules in settings. Create a `.cursorrules` file in your project root:
-
 
 
 ```
@@ -117,9 +106,7 @@ Cursor respects `.cursorrules` files and custom rules in settings. Create a `.cu
 ### JetBrains IDEs (IntelliJ, WebStorm)
 
 
-
 JetBrains AI Assistant uses the IDE's custom scratch files and editor inspections. Configure linting awareness through `.editorconfig` and ensure AI settings reference your project's ESLint/Prettier configuration:
-
 
 
 ```
@@ -143,13 +130,10 @@ indent_size = 2
 ## Connecting AI Instructions to Your Actual Configuration
 
 
-
 The most effective approach ties AI instructions directly to your actual linting files. Reference specific rules and show concrete examples from your configuration.
 
 
-
 For ESLint, extract and include the actual rule names:
-
 
 
 ```
@@ -171,7 +155,6 @@ import { User } from '@/types';
 For Prettier, specify exact settings:
 
 
-
 ```
 ## Prettier Settings (from .prettierrc)
 {
@@ -188,13 +171,10 @@ For Prettier, specify exact settings:
 ## Testing Your AI Configuration
 
 
-
 After setting up custom instructions, verify they work by asking the AI to generate a small code snippet. Check the output against your linting rules.
 
 
-
 Create a test prompt:
-
 
 
 ```
@@ -205,7 +185,6 @@ Generate a React TypeScript component that fetches user data from /api/users/:id
 Then run ESLint on the output:
 
 
-
 ```bash
 npm run lint -- --fix src/test-component.tsx
 ```
@@ -214,17 +193,13 @@ npm run lint -- --fix src/test-component.tsx
 If fixes are applied automatically, your instructions need refinement. The goal is zero output changes when running lint with the `--fix` flag.
 
 
-
 ## Centralizing Team Rules
-
 
 
 For teams with multiple projects sharing similar standards, consider creating a shared configuration package. This package contains your linting rules, and both your AI instructions and project configs reference it.
 
 
-
 Structure:
-
 
 
 ```
@@ -238,10 +213,9 @@ packages/eslint-config-team/
 Update your AI instructions to reference this shared documentation:
 
 
-
 ```
-This project extends @yourteam/eslint-config. See 
-../packages/eslint-config-team/ai-instructions.md for 
+This project extends @yourteam/eslint-config. See
+../packages/eslint-config-team/ai-instructions.md for
 detailed rules and examples.
 ```
 
@@ -249,20 +223,10 @@ detailed rules and examples.
 ## Maintaining Consistency
 
 
-
 Review and update your AI instructions when you update your linting configuration. Treat AI instructions as version-controlled documentation that evolves with your project standards.
 
 
-
 Set a calendar reminder to audit AI-generated code monthly. Track which linting rules frequently appear as violations in AI output, then add explicit examples to your instructions. Over time, your instructions become enough that AI output requires zero manual corrections.
-
-
-
-
-
-
-
-
 
 
 ## Related Articles

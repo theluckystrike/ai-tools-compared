@@ -20,25 +20,19 @@ voice-checked: true
 # How to Use AI to Create Data Quality Scorecards from dbt Test Results
 
 
-
 Data quality is the backbone of reliable analytics. When you run dbt tests, you generate valuable information about your data's health—but transforming those raw test results into meaningful scorecards requires additional effort. AI can help you automate this process, turning complex test outputs into clear, actionable metrics that your team can monitor and improve over time.
-
 
 
 This guide shows you how to use AI to create data quality scorecards from dbt test results. You'll learn practical approaches for parsing test outputs, generating insights, and building automated reporting systems that go well beyond what dbt's native reporting offers.
 
 
-
 ## Understanding dbt Test Results
-
 
 
 dbt provides several built-in tests: `unique`, `not_null`, `accepted_values`, `relationships`, and `foreign_key`. When you run `dbt test`, these tests produce JSON or CSV output that includes test status, timing information, and failure details.
 
 
-
 Here's a typical dbt test result in JSON format:
-
 
 
 ```json
@@ -74,17 +68,13 @@ Here's a typical dbt test result in JSON format:
 The challenge is aggregating these individual test results into meaningful quality scores that stakeholders can understand at a glance.
 
 
-
 ## Building Your AI-Powered Scorecard System
-
 
 
 ### Step 1: Collect and Normalize Test Results
 
 
-
 First, run your dbt tests and capture the output. Use the `--output json` flag to get machine-readable results:
-
 
 
 ```bash
@@ -93,7 +83,6 @@ dbt test --output json > results.json
 
 
 Load and normalize these results in Python:
-
 
 
 ```python
@@ -123,9 +112,7 @@ def load_dbt_results(filepath):
 ### Step 2: Calculate Quality Metrics
 
 
-
 With normalized data, you can now calculate aggregate metrics. This is where AI adds value by identifying patterns and generating insights:
-
 
 
 ```python
@@ -149,9 +136,7 @@ def calculate_quality_score(results):
 ### Step 3: Generate AI Insights
 
 
-
 Now use an AI model to analyze the test results and generate practical recommendations:
-
 
 
 ```python
@@ -189,9 +174,7 @@ def generate_ai_insights(results, metrics):
 ### Step 4: Create the Scorecard Output
 
 
-
 Combine everything into an usable scorecard format:
-
 
 
 ```python
@@ -317,9 +300,7 @@ The biggest gains come from the AI's ability to correlate failures. When `not_nu
 ## Automating Your Pipeline
 
 
-
 Integrate this scorecard into your dbt workflow by adding a post-hook in your `dbt_project.yml`:
-
 
 
 ```yaml
@@ -333,7 +314,6 @@ models:
 You can also schedule daily or weekly runs and send results to Slack or email:
 
 
-
 ```bash
 # Daily scorecard generation
 0 9 * * * cd /path/to/project && dbt test --output json && python scripts/generate_scorecard.py
@@ -343,9 +323,7 @@ You can also schedule daily or weekly runs and send results to Slack or email:
 ## Interpreting Your Scorecard
 
 
-
 When reviewing your scorecard, focus on these key indicators:
-
 
 
 - Overall Quality Score: A percentage that represents your data's health. Aim for 95%+ in production environments.
@@ -355,7 +333,6 @@ When reviewing your scorecard, focus on these key indicators:
 - Model-Level Scores: Identify which models need the most attention.
 
 - Trend Over Time: Track scores daily or weekly to detect degradation early.
-
 
 
 Use the AI-generated insights to move beyond simple pass/fail reporting. Instead of just knowing that tests failed, you'll understand why they failed and what actions to take.
@@ -373,8 +350,6 @@ Store each scorecard in a time-series database like TimescaleDB or append result
 
 **Q: My dbt project has 2,000+ tests. Will the AI prompt exceed context limits?**
 Aggregate failure data before sending it to the AI. Instead of passing all 2,000 test results, send a grouped summary (failures by model, test type distribution, top 10 failing models). This keeps prompts under 5,000 tokens while preserving the signal the AI needs.
-
-
 
 
 ## Related Articles

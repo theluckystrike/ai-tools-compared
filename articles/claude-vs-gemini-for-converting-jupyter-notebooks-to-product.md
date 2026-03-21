@@ -18,29 +18,22 @@ voice-checked: true
 # Claude vs Gemini for Converting Jupyter Notebooks to Production Python Scripts
 
 
-
 Choose Claude if you need production-grade scripts with modular functions, structured error handling, logging, and type hints straight from the conversion. Choose Gemini if you need a fast, concise translation of linear notebook logic for prototyping or one-off scripts. Claude consistently produces more deployable code, while Gemini prioritizes speed and simplicity at the cost of production readiness.
-
 
 
 ## The Conversion Challenge
 
 
-
 Jupyter notebooks encourage iterative exploration with inline visualizations, cell-by-cell execution, and explanatory markdown. Production code requires different patterns: proper module structure, error handling, logging, and maintainable function hierarchies. The conversion process involves more than stripping out cell magic commands—it requires restructuring logic into deployable, testable code.
-
 
 
 ## Test Methodology
 
 
-
 I converted the same exploratory notebook into a production script using both Claude and Gemini, then evaluated the output across several dimensions: code organization, error handling, dependency management, and execution correctness.
 
 
-
 **Sample Notebook Content (Before Conversion):**
-
 
 
 ```python
@@ -66,9 +59,7 @@ print(avg_revenue)
 ## Claude's Approach
 
 
-
 Claude generates production scripts with a strong emphasis on modularity and error handling. When prompted to convert a notebook, Claude typically produces:
-
 
 
 ```python
@@ -110,16 +101,16 @@ def clean_data(df: pd.DataFrame) -> pd.DataFrame:
     """Clean and validate sales data."""
     if df.empty:
         raise ValueError("DataFrame is empty")
-    
+
     required_columns = ['category', 'revenue']
     missing = [col for col in required_columns if col not in df.columns]
     if missing:
         raise ValueError(f"Missing required columns: {missing}")
-    
+
     df = df.dropna(subset=['revenue']).copy()
     df['revenue'] = pd.to_numeric(df['revenue'], errors='coerce')
     df = df.dropna(subset=['revenue'])
-    
+
     logger.info(f"Cleaned data: {len(df)} records remaining")
     return df
 
@@ -132,15 +123,15 @@ def calculate_category_revenue(df: pd.DataFrame) -> pd.Series:
 def main():
     """Main execution function."""
     file_path = 'sales_data.csv'
-    
+
     try:
         df = load_data(file_path)
         df_clean = clean_data(df)
         results = calculate_category_revenue(df_clean)
-        
+
         print("Average Revenue by Category:")
         print(results)
-        
+
     except Exception as e:
         logger.error(f"Analysis failed: {e}")
         raise
@@ -154,7 +145,6 @@ if __name__ == "__main__":
 **Strengths of Claude's output:**
 
 
-
 - Full docstrings and type hints
 
 - Structured error handling with specific exception types
@@ -166,9 +156,7 @@ if __name__ == "__main__":
 - Input validation before processing
 
 
-
 **Weaknesses:**
-
 
 
 - More verbose initial output
@@ -176,13 +164,10 @@ if __name__ == "__main__":
 - May require adjusting logging levels for different environments
 
 
-
 ## Gemini's Approach
 
 
-
 Gemini tends to produce more concise conversions, focusing on getting functional code quickly:
-
 
 
 ```python
@@ -194,7 +179,7 @@ def process_sales_data(file_path):
     df = pd.read_csv(file_path)
     df = df.dropna(subset=['revenue'])
     df['revenue'] = df['revenue'].astype(float)
-    
+
     avg_revenue = df.groupby('category')['revenue'].mean()
     return avg_revenue
 
@@ -207,7 +192,6 @@ if __name__ == "__main__":
 **Strengths of Gemini's output:**
 
 
-
 - Faster, more concise generation
 
 - Direct translation of notebook logic
@@ -215,9 +199,7 @@ if __name__ == "__main__":
 - Lower initial complexity
 
 
-
 **Weaknesses:**
-
 
 
 - Minimal error handling
@@ -229,25 +211,19 @@ if __name__ == "__main__":
 - May include notebook-specific patterns that fail in production
 
 
-
 ## Comparative Analysis
-
 
 
 ### Code Organization
 
 
-
 Claude structures output into logical modules with clear function boundaries. Gemini provides a more direct translation that preserves notebook-style linear execution. For production systems where multiple teams may contribute, Claude's organized approach reduces onboarding time.
-
 
 
 ### Error Handling
 
 
-
 When testing with corrupted input files, Claude's script failed gracefully with informative error messages. Gemini's script raised unhandled exceptions without context, requiring manual debugging.
-
 
 
 ```python
@@ -264,17 +240,13 @@ df = pd.read_csv(file_path)  # Crashes without context
 ### Dependency Management
 
 
-
 Claude explicitly handles import errors and validates dependencies. Gemini assumes dependencies are pre-installed, which works for internal tools but creates deployment issues.
-
 
 
 ### Testing Readiness
 
 
-
 The modular structure of Claude's output naturally supports unit testing:
-
 
 
 ```python
@@ -292,9 +264,7 @@ def test_clean_data():
 Gemini's monolithic functions require more effort to isolate for testing.
 
 
-
 ## When to Choose Each Tool
-
 
 
 **Choose Claude when:**
@@ -308,7 +278,6 @@ Gemini's monolithic functions require more effort to isolate for testing.
 - Thorough error handling is required
 
 
-
 **Choose Gemini when:**
 
 - Rapid prototyping with minimal overhead
@@ -320,24 +289,15 @@ Gemini's monolithic functions require more effort to isolate for testing.
 - Iteration speed matters more than maintainability
 
 
-
 ## Hybrid Workflow
-
 
 
 Many developers use both tools sequentially: Gemini for quick initial conversion, then Claude for refinement and hardening. This combines Gemini's speed with Claude's production quality:
 
 
-
 1. Generate initial script with Gemini
 
 2. Pass to Claude with prompt: "Refactor this for production: add error handling, logging, type hints, and unit test scaffolding"
-
-
-
-
-
-
 
 
 ## Related Articles

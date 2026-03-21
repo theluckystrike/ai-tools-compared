@@ -20,33 +20,25 @@ voice-checked: true
 # How to Create Custom Instructions for AI Tools to Generate Your Preferred Log Format
 
 
-
 Log format consistency matters more than most developers realize. When every team member follows the same pattern, debugging becomes faster, log aggregation tools work better, and incident response improves significantly. AI coding assistants can enforce these standards automatically—but only when you teach them what you want.
-
 
 
 This guide shows you how to configure custom instructions for GitHub Copilot, Cursor, and other AI tools to generate log statements that match your preferred format.
 
 
-
 ## Understanding Custom Instructions
-
 
 
 Custom instructions are persistent preferences that AI tools reference when generating code. Unlike one-off prompts, these instructions apply across sessions and projects. Most modern AI coding assistants support this feature through configuration files, workspace settings, or dedicated instruction fields.
 
 
-
 The key is specificity. A vague instruction like "use good logging" produces inconsistent results. A detailed instruction like "always use structured JSON logging with timestamp, level, message, and context fields" gives the AI clear boundaries to work within.
-
 
 
 ## Setting Up Custom Instructions in GitHub Copilot
 
 
-
 GitHub Copilot accepts custom instructions through `.github/copilot-instructions.md` or directly in your IDE settings. Create a file called `.github/copilot-instructions.md` in your repository root:
-
 
 
 ```markdown
@@ -70,13 +62,10 @@ Use Python's logging module with JSONFormatter. Never use print() statements for
 When you write code in this repository, Copilot reads these instructions and generates log statements matching your specification. The AI understands the pattern and applies it consistently throughout your codebase.
 
 
-
 ## Configuring Cursor for Structured Logging
 
 
-
 Cursor, built on VS Code, offers a similar feature through its workspace instructions. Open `.cursor/rules` or add instructions through the settings UI:
-
 
 
 ```
@@ -97,13 +86,10 @@ For all logging statements:
 This approach works particularly well in TypeScript and JavaScript projects where you want machine-parseable log output for your logging infrastructure.
 
 
-
 ## Creating a Reusable Instruction Template
 
 
-
 For teams managing multiple projects, a shared instruction template ensures consistency across repositories. Create a file like `docs/ai-instructions.md` that teams can copy:
-
 
 
 ```markdown
@@ -120,7 +106,6 @@ import logging
 import json
 
 from datetime import datetime
-
 
 
 class JSONFormatter(logging.Formatter):
@@ -214,13 +199,11 @@ For sophisticated projects, you can create context-aware instructions that adapt
 # Environment-Specific Logging
 
 
-
 Development: Use console.log with colors and human-readable timestamps
 
 Production: Use JSON format for log aggregation tools
 
 Testing: Suppress all log output or use in-memory capture
-
 
 
 Detect environment from NODE_ENV or DEBUG flag.
@@ -238,11 +221,6 @@ Document the reasoning behind your format choices. This helps team members under
 ---
 
 Custom instructions transform AI assistants from generic code generators into domain-specific tools that understand your project's conventions. By investing time in proper configuration, you achieve consistent, structured logging without repetitive manual corrections.
-
-
-
-
-
 
 
 ## Related Articles

@@ -18,29 +18,22 @@ voice-checked: true
 The best approach combines Whisper for transcription with Claude or GPT-4 for processing—this stack handles technical terminology well, produces accurate timestamps, and outputs publication-ready show notes. For maximum privacy, use Whisper + Ollama locally; for managed infrastructure, pair AssemblyAI's speaker diarization with Claude's long-context understanding. This guide compares the most effective options and provides code examples for each combination.
 
 
-
 ## Why AI for Show Notes
-
 
 
 Manual show notes creation involves listening to entire episodes, identifying segment boundaries, noting guest information, and writing summaries. AI tools can handle much of this work by processing audio transcriptions and generating structured output. The key is selecting tools that produce accurate timestamps, handle technical terminology well, and output formats ready for publishing.
 
 
-
 The best approach combines transcription services with language models. Transcribers convert audio to text, then AI models transform that text into usable show notes. Understanding both components helps you build a reliable workflow.
-
 
 
 ## Transcription Services
 
 
-
 ### Whisper
 
 
-
 OpenAI's Whisper provides high-quality transcription with excellent handling of technical language. Running Whisper locally gives you full control over your data and avoids sending audio to third parties.
-
 
 
 ```bash
@@ -53,13 +46,10 @@ whisper episode-042.mp3 --model medium --output_dir ./transcripts
 The command outputs a text file with timestamps. For podcast use, the `--verbose True` flag provides more detailed segment timing. Whisper supports multiple languages and handles accented speech reasonably well.
 
 
-
 ### AssemblyAI
 
 
-
 AssemblyAI offers API-based transcription with built-in speaker diarization—automatically distinguishing between hosts and guests. Their model handles multiple speakers accurately, which is essential for podcast workflows.
-
 
 
 ```python
@@ -77,21 +67,16 @@ for utterance in transcript.dict()['utterances']:
 AssemblyAI's speaker labels eliminate the need to manually identify who said what, significantly reducing editing time.
 
 
-
 ## AI Processing Tools
-
 
 
 Once you have a transcript, language models transform raw text into polished show notes. Several options work well for this task.
 
 
-
 ### Claude API
 
 
-
 Anthropic's Claude handles long-context documents effectively, making it suitable for processing full podcast transcripts in a single request. The model produces coherent summaries and follows formatting instructions precisely.
-
 
 
 ```python
@@ -125,13 +110,10 @@ print(message.content[0].text)
 Claude excels at maintaining consistency across multiple episodes, making it ideal for serialized podcasts with regular formatting requirements.
 
 
-
 ### GPT-4 via OpenAI API
 
 
-
 OpenAI's GPT-4 offers strong summarization capabilities and responds well to detailed formatting instructions. The model handles technical content reasonably well and produces clean output.
-
 
 
 ```python
@@ -165,9 +147,7 @@ print(response.choices[0].message.content)
 ### Local Models with Ollama
 
 
-
 For privacy-conscious podcasters or those processing sensitive content, running models locally using Ollama provides an alternative to API-based solutions.
-
 
 
 ```bash
@@ -183,13 +163,10 @@ cat transcript.txt | ollama run llama3.1 \
 Local models require more setup and computational resources but keep all data on your machine. The quality matches API models for straightforward summarization tasks.
 
 
-
 ## Workflow Integration
 
 
-
 Combining these tools into a complete pipeline improves efficiency. A typical automated workflow:
-
 
 
 1. **Record and export** audio from your recording software
@@ -201,7 +178,6 @@ Combining these tools into a complete pipeline improves efficiency. A typical au
 4. **Post-process** using a script to add show notes template elements
 
 5. **Publish** to your website or podcast hosting platform
-
 
 
 ```bash
@@ -225,13 +201,10 @@ echo "Show notes generated: $OUTPUT_DIR/$EPISODE.md"
 This script forms the foundation of a CI/CD-style workflow that processes episodes automatically.
 
 
-
 ## Output Formatting
 
 
-
 Show notes formats vary, but most include common elements. Structured output helps readers navigate long episodes:
-
 
 
 ```markdown
@@ -257,28 +230,16 @@ Show notes formats vary, but most include common elements. Structured output hel
 ## Choosing the Right Tool
 
 
-
 Your choice depends on several factors:
-
 
 
 High-volume podcasts benefit from fully automated pipelines using Whisper and an API model. Sensitive content favors local processing with Whisper and Ollama. For highest quality, combine human review with AI-generated drafts. Local tools carry higher upfront costs but lower per-episode expenses.
 
 
-
 Whisper for transcription and Claude for generation is a reliable starting point. Adjust from there based on volume, privacy requirements, and budget.
 
 
-
 ---
-
-
-
-
-
-
-
-
 
 
 ## Related Articles

@@ -244,10 +244,6 @@ print(f"Improvement: {((baseline_loss - finetuned_loss) / baseline_loss) * 100:.
 4. **Ignoring context windows**: Code Llama supports 8K tokens; include multi-function context in prompts.
 
 
-
-
-
-
 ## Related Articles
 
 - [How to Fine-Tune Llama 3 for Code Completion](/ai-tools-compared/how-to-fine-tune-llama-3-for-code-completion/)

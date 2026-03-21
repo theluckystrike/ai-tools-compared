@@ -78,7 +78,7 @@ Thomson Reuters Westlaw Edge continues leading the enterprise legal research mar
 // Westlaw API integration pattern
 async function searchLegalPrecedent(searchParams) {
   const endpoint = 'https://api.westlaw.com/v2/search';
-  
+
   const response = await fetch(endpoint, {
     method: 'POST',
     headers: {
@@ -93,7 +93,7 @@ async function searchLegalPrecedent(searchParams) {
       max_results: 25
     })
   });
-  
+
   return response.json();
 }
 ```
@@ -127,22 +127,22 @@ class LegalResearchAssistant:
             chunk_overlap=200
         )
         self.embeddings = OpenAIEmbeddings()
-        
+
     def build_knowledge_base(self, documents):
         """Index legal documents for semantic search"""
         texts = self.text_splitter.split_documents(documents)
         vectorstore = Chroma.from_documents(
-            texts, 
+            texts,
             self.embeddings,
             collection_name="legal_precedents"
         )
         return vectorstore
-    
+
     def query(self, question, vectorstore, top_k=5):
         """Semantic search across legal documents"""
         from langchain.chains import RetrievalQA
         from langchain.llms import OpenAI
-        
+
         qa = RetrievalQA.from_chain_type(
             llm=OpenAI(),
             chain_type="stuff",
@@ -193,10 +193,10 @@ def hybrid_legal_search(query, vectorstore, keyword_index):
     """Combine semantic and keyword search for better results"""
     # Get semantic matches
     semantic_results = vectorstore.similarity_search(query, k=10)
-    
+
     # Get keyword matches
     keyword_results = keyword_index.search(query, limit=10)
-    
+
     # Merge and rerank results
     combined = rerank_results(semantic_results, keyword_results)
     return combined
@@ -509,11 +509,6 @@ Provide:
 
     return results
 ```
-
-
-
-
-
 
 
 ## Related Articles

@@ -20,17 +20,13 @@ voice-checked: true
 Add comments explaining design decisions and tradeoffs for every AI-generated function; document the AI prompt used so future developers understand the requirements. Include examples showing how to use the code correctly. Mark AI-generated sections with `// AI-generated:` comments. Document assumptions about context, error conditions, and performance characteristics. This guide covers strategies for documenting AI code for long-term team maintenance.
 
 
-
 ## Why AI-Generated Code Needs Extra Documentation
-
 
 
 When developers write code manually, they typically include comments explaining their reasoning—why a particular algorithm was chosen, what edge cases were considered, or what assumptions were made. AI models, however, optimize for generating syntactically correct code that matches patterns from their training data, often without explaining the logic behind those patterns.
 
 
-
 This creates several maintainability challenges:
-
 
 
 - Implicit assumptions: AI-generated code may rely on assumptions that aren't documented
@@ -40,17 +36,13 @@ This creates several maintainability challenges:
 - Inconsistent patterns: Different AI sessions may produce code with varying styles and approaches
 
 
-
 The solution is establishing a documentation workflow that treats AI-generated code as a first-class citizen requiring additional context.
-
 
 
 ## Strategy 1: Add AI Origin Comments
 
 
-
 The simplest starting point is documenting when and why code was AI-generated. Include the prompt or context that produced the code, along with any modifications made after generation.
-
 
 
 ```python
@@ -62,12 +54,12 @@ def fetch_paginated_results(cursor=None, limit=100):
     # Original implementation only handled successful responses
     # Added error handling for 429 rate limit responses
     response = api_client.get("/results", params={"cursor": cursor, "limit": limit})
-    
+
     if response.status_code == 429:
         wait_time = int(response.headers.get("Retry-After", 60))
         time.sleep(wait_time)
         return fetch_paginated_results(cursor, limit)
-    
+
     return response.json()
 ```
 
@@ -75,25 +67,22 @@ def fetch_paginated_results(cursor=None, limit=100):
 These comments serve multiple purposes: they help future developers understand the code's origin, provide context for decisions made during generation, and highlight which parts were modified after generation.
 
 
-
 ## Strategy 2: Document Generated Code Behavior
-
 
 
 AI-generated functions often work correctly for the happy path but lack documentation about edge cases, limitations, or expected input formats. Add docstrings that explain what the code does, what inputs it expects, and what edge cases it handles.
 
 
-
 ```javascript
 /**
  * Processes user data from the external API response.
- * 
+ *
  * @param {Object} apiResponse - Raw response from user service API
  * @param {string} apiResponse.id - Unique user identifier
  * @param {Object} apiResponse.profile - User profile object
  * @param {string} apiResponse.profile.displayName - Display name (may be null)
  * @returns {Object} Normalized user object suitable for internal use
- * 
+ *
  * Note: AI-generated from API schema. Handles null displayName by falling back
  * to username. Does NOT validate email format—that validation happens in the
  * downstream user-registration service.
@@ -111,13 +100,10 @@ function normalizeUserData(apiResponse) {
 This level of documentation prevents common issues where developers assume AI-generated code handles more cases than it actually does.
 
 
-
 ## Strategy 3: Create AI Context Files
 
 
-
 For larger AI-generated components or entire modules, create a separate context file that documents the generation context. This is particularly useful for infrastructure code, database schemas, or complex business logic.
-
 
 
 ```markdown
@@ -143,13 +129,10 @@ For larger AI-generated components or entire modules, create a separate context 
 This approach ensures that even if the original developer leaves, future maintainers understand what the code was intended to do and where its boundaries lie.
 
 
-
 ## Strategy 4: Use Type Hints and Schema Documentation
 
 
-
 Strong typing serves as documentation. When AI generates code, verify that it includes appropriate type annotations, and add documentation for complex types that explain their structure and constraints.
-
 
 
 ```python
@@ -158,7 +141,7 @@ from datetime import datetime
 
 class OrderLineItem(TypedDict, total=False):
     """Represents a single item in an order.
-    
+
     Note: The 'total=False' means all fields are optional in the type system,
     but in practice, product_id and quantity are always required. The AI generated
     the TypedDict, but manual testing revealed that discount_percentage can be
@@ -185,9 +168,7 @@ class Order(TypedDict):
 ## Strategy 5: Establish Code Review Checklists
 
 
-
 Documentation shouldn't be added after generation—it should be part of the workflow. Create a code review checklist specifically for AI-generated code:
-
 
 
 1. Origin documented: Is there a comment explaining what prompted the AI to generate this code?
@@ -203,17 +184,13 @@ Documentation shouldn't be added after generation—it should be part of the wor
 6. Modification tracked: If the code was modified after generation, are those changes documented?
 
 
-
 This checklist ensures consistency across your codebase and prevents documentation debt from accumulating.
-
 
 
 ## Strategy 6: Version AI Context Alongside Code
 
 
-
 Store the AI prompts and context alongside your code using documentation files or commit messages. When you commit AI-generated code, include the prompt in the commit message:
-
 
 
 ```
@@ -221,11 +198,11 @@ commit a1b2c3d
 
 Add: Order processing module (AI-generated)
 
-Generated with: "Create order processing workflow with inventory 
+Generated with: "Create order processing workflow with inventory
 validation, payment handling, and shipping integration"
 
 Tested: 50 unit tests, manual QA on staging
-Known issue: Does not handle partial cancellations (documented in 
+Known issue: Does not handle partial cancellations (documented in
 order_processing.md)
 ```
 
@@ -233,13 +210,10 @@ order_processing.md)
 This creates a traceable link between the generated code and its original context, making future debugging and modification easier.
 
 
-
 ## Strategy 7: Separate AI Patterns from Business Logic
 
 
-
 One challenge with AI-generated code is distinguishing between boilerplate patterns (which can be regenerated) and business logic (which requires careful modification). Document this separation clearly:
-
 
 
 ```python
@@ -259,8 +233,8 @@ def get_user(user_id):
 # ============================================================
 def calculate_discount(order, customer_tier):
     """Apply customer-tier discounts per pricing policy v2.3.
-    
-    AI-generated base, but modified to handle the new 
+
+    AI-generated base, but modified to handle the new
     enterprise tier (2026-02-28). Contact finance team before
     changing discount percentages.
     """
@@ -269,12 +243,6 @@ def calculate_discount(order, customer_tier):
 
 
 This separation helps developers understand what they can safely regenerate versus what requires careful consideration.
-
-
-
-
-
-
 
 
 ## Related Articles

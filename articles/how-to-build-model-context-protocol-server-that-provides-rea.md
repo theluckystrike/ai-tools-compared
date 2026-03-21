@@ -19,25 +19,19 @@ voice-checked: true
 Model Context Protocol (MCP) enables AI assistants to interact with external tools and data sources through a standardized interface. When your AI assistant needs access to test execution results, building a dedicated MCP server provides a clean, maintainable solution. This guide walks through creating an MCP server that streams real-time test results from your test suite to any connected AI client.
 
 
-
 ## Understanding MCP Server Architecture
-
 
 
 An MCP server exposes capabilities through well-defined tools and resources. For test result streaming, you need three core components: a test runner integration layer, an event emission system, and MCP protocol handlers. The server runs as a standalone process that AI clients connect to when they need test information.
 
 
-
 The MCP protocol uses JSON-RPC 2.0 for communication. Clients discover available tools through the `tools/list` method, then invoke specific tools with `tools/call`. For real-time updates, MCP supports server-side notifications that push data without client requests.
-
 
 
 ## Setting Up Your Project
 
 
-
 Create a new Python project with the required dependencies:
-
 
 
 ```bash
@@ -51,13 +45,10 @@ uv pip install mcp pytest pytest-asyncio aiofiles
 The MCP SDK provides the core server functionality. pytest runs your tests, and asyncio enables the non-blocking operations needed for real-time streaming.
 
 
-
 ## Implementing the MCP Server
 
 
-
 Create `server.py` with the following structure:
-
 
 
 ```python
@@ -74,7 +65,7 @@ class TestResultServer:
     def __init__(self):
         self.server = Server("test-results")
         self._register_handlers()
-        
+
     def _register_handlers(self):
         @self.server.list_tools()
         async def list_tools() -> list[Tool]:
@@ -102,7 +93,7 @@ class TestResultServer:
                     description="Get current status of running or last test execution"
                 )
             ]
-        
+
         @self.server.call_tool()
         async def call_tool(name: str, arguments: dict) -> list[TextContent]:
             if name == "run_tests":
@@ -116,35 +107,35 @@ class TestResultServer:
 
     async def run_tests(self, test_path: str, framework: str) -> list[TextContent]:
         self.status = {"running": True, "results": []}
-        
+
         cmd = self._build_command(framework, test_path)
         process = await asyncio.create_subprocess_exec(
             *cmd,
             stdout=asyncio.subprocess.PIPE,
             stderr=asyncio.subprocess.PIPE
         )
-        
+
         stdout, stderr = await process.communicate()
         results = self._parse_output(stdout.decode(), framework)
-        
+
         self.status = {
             "running": False,
             "results": results,
             "exit_code": process.returncode
         }
-        
+
         return [TextContent(type="text", text=json.dumps(results, indent=2))]
-    
+
     def _build_command(self, framework: str, test_path: str) -> list[str]:
         if framework == "pytest":
             return ["pytest", "-v", "--tb=short", test_path]
         return ["npm", "test", "--", test_path]
-    
+
     def _parse_output(self, output: str, framework: str) -> dict:
         lines = output.split("\n")
         passed = failed = 0
         details = []
-        
+
         for line in lines:
             if "PASSED" in line or "✓" in line:
                 passed += 1
@@ -152,14 +143,14 @@ class TestResultServer:
             elif "FAILED" in line or "✗" in line:
                 failed += 1
                 details.append({"status": "failed", "message": line.strip()})
-        
+
         return {
             "total": passed + failed,
             "passed": passed,
             "failed": failed,
             "details": details
         }
-    
+
     async def run(self):
         async with stdio_server() as (read_stream, write_stream):
             await self.server.run(
@@ -177,31 +168,28 @@ if __name__ == "__main__":
 This server exposes two tools: `run_tests` executes your test suite and returns structured results, while `get_test_status` provides visibility into the current execution state.
 
 
-
 ## Adding Real-Time Streaming
-
 
 
 The implementation above returns results after completion. For true real-time streaming, modify the server to emit progress notifications:
 
 
-
 ```python
 async def run_tests_streaming(self, test_path: str, framework: str):
     cmd = self._build_command(framework, test_path)
-    
+
     process = await asyncio.create_subprocess_exec(
         *cmd,
         stdout=asyncio.subprocess.PIPE,
         stderr=asyncio.subprocess.PIPE
     )
-    
+
     # Stream output line by line as tests run
     while True:
         line = await process.stdout.readline()
         if not line:
             break
-            
+
         test_update = self._parse_test_line(line.decode())
         if test_update:
             # Emit notification to connected clients
@@ -215,13 +203,10 @@ async def run_tests_streaming(self, test_path: str, framework: str):
 Clients receive these notifications automatically without polling, enabling live test result dashboards.
 
 
-
 ## Integrating with AI Assistants
 
 
-
 Once your MCP server runs, connect it to your AI assistant. In Claude Desktop or another MCP-compatible client, add the server configuration:
-
 
 
 ```json
@@ -239,17 +224,13 @@ Once your MCP server runs, connect it to your AI assistant. In Claude Desktop or
 The AI assistant can now invoke `run_tests` to execute test suites and receive structured results. This integration works with voice interfaces too—ask your assistant to run tests and describe the results audibly.
 
 
-
 ## Production Considerations
-
 
 
 For production deployments, add authentication to protect test execution capabilities. Implement request timeouts to prevent hung test runs from blocking the server. Store test history in a database if you need trend analysis over time.
 
 
-
 Containerize the server with Docker for consistent deployments:
-
 
 
 ```dockerfile
@@ -375,10 +356,6 @@ def safe_test_path(user_path: str) -> pathlib.Path:
 ```
 
 These two controls — token authentication and path restriction — prevent the most common misuse scenarios when running an MCP server in a shared or CI environment.
-
-
-
-
 
 
 ## Related Articles

@@ -16,35 +16,25 @@ voice-checked: true
 {% raw %}
 
 
-
-
-
 Write Prometheus alerts with AI by providing metric definitions, alert thresholds, and notification requirements, then validating rules in staging first. This guide shows the prompting and validation workflow that prevents broken alerts in production.
-
 
 
 Writing Prometheus alerting rules manually can be time-consuming and error-prone. AI assistance has evolved significantly, offering developers powerful ways to generate, validate, and optimize Prometheus alerting rules. This guide shows practical techniques for using AI effectively in your alerting workflow.
 
 
-
 ## Why Use AI for Prometheus Alerting Rules
-
 
 
 Prometheus alerting rules require precise syntax, understanding of PromQL, and knowledge of your specific metrics. AI models trained on vast amounts of monitoring code can accelerate rule creation while helping you avoid common pitfalls. The key lies in providing the right context and understanding how to interpret AI suggestions.
 
 
-
 ## Techniques for Effective AI-Assisted Rule Writing
-
 
 
 ### 1. Provide Clear Metric Context
 
 
-
 When asking AI to generate alerting rules, start with your actual metric names and their expected behavior. Raw PromQL generation without context often produces rules that don't match your setup.
-
 
 
 **Effective prompt structure:**
@@ -55,7 +45,7 @@ We have a metric named `http_request_duration_seconds` with labels:
 - `status`: HTTP status code
 - `endpoint`: API endpoint path
 
-Write a Prometheus alerting rule that fires when the 95th percentile 
+Write a Prometheus alerting rule that fires when the 95th percentile
 response time exceeds 2 seconds for any endpoint over a 5-minute window.
 ```
 
@@ -63,13 +53,10 @@ response time exceeds 2 seconds for any endpoint over a 5-minute window.
 This approach gives the AI the specific context it needs to generate accurate rules.
 
 
-
 ### 2. Generate Rule Templates for Common Scenarios
 
 
-
 AI excels at creating reusable templates. Here's an example of generating a CPU usage alert:
-
 
 
 ```yaml
@@ -91,13 +78,10 @@ groups:
 You can adapt this template by changing the threshold, duration, and labels to match your requirements.
 
 
-
 ### 3. Validate and Optimize AI-Generated Rules
 
 
-
 AI suggestions aren't always perfect. Always validate the generated PromQL expressions. Here's a process for checking AI-generated rules:
-
 
 
 1. **Test in Prometheus UI or PromQL playground** - Run the expression against actual data
@@ -107,13 +91,10 @@ AI suggestions aren't always perfect. Always validate the generated PromQL expre
 3. **Verify recording rules** - Complex queries benefit from pre-computed recording rules
 
 
-
 ### 4. Handle Multi-Label Scenarios
 
 
-
 Prometheus metrics often have multiple dimensions. AI can help you construct queries that handle these properly:
-
 
 
 ```yaml
@@ -133,13 +114,10 @@ Prometheus metrics often have multiple dimensions. AI can help you construct que
 This rule uses vector operations to calculate error rates per service and method combination.
 
 
-
 ## Practical Examples for Common Use Cases
 
 
-
 ### Memory Leak Detection
-
 
 
 ```yaml
@@ -159,7 +137,6 @@ This rule uses vector operations to calculate error rates per service and method
 ### Disk Space Monitoring
 
 
-
 ```yaml
 - alert: DiskSpaceLow
   expr: (node_filesystem_avail_bytes{mountpoint="/"} / node_filesystem_size_bytes{mountpoint="/"}) < 0.1
@@ -175,17 +152,13 @@ This rule uses vector operations to calculate error rates per service and method
 ## Best Practices for AI-Assisted Prometheus Rule Writing
 
 
-
 **Provide historical context.** If you have existing alerts that work well, include them in your prompt. AI can learn from your patterns.
-
 
 
 **Iterate on suggestions.** Generate a first draft, test it, then refine your prompt based on what needs improvement. Questions like "make this more sensitive" or "add a label for the team" yield better results than starting over.
 
 
-
 **Combine AI with tooling.** Use PrometheusRule CRDs for Kubernetes deployments, and validate with `promtool` before applying:
-
 
 
 ```bash
@@ -196,9 +169,7 @@ promtool rules check rules.yaml
 This catches syntax errors before they reach production.
 
 
-
 ## Common Pitfalls to Avoid
-
 
 
 AI sometimes generates overly complex expressions when simpler ones would work. Watch for:
@@ -208,7 +179,6 @@ AI sometimes generates overly complex expressions when simpler ones would work. 
 - Missing `for` clauses causing instant alert flapping
 
 - Overly broad label matchers that trigger on unintended metrics
-
 
 
 Always review the generated `for` duration—the time an condition must be true before the alert fires. Too short causes noise; too long delays detection.
@@ -326,10 +296,6 @@ def alert_to_incident(alert):
 ```
 
 The AI-generated descriptions provide engineers with immediate context about the alert, reducing mean time to resolution.
-
-
-
-
 
 
 ## Related Articles

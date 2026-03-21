@@ -18,17 +18,13 @@ intent-checked: true
 Perplexity Pro allows file uploads up to 25 MB per document and 100 files per month. Storage follows a tiered model: Pro Basic includes 10 GB (overage at $0.10/GB/day) and Pro Unlimited includes 50 GB (overage at $0.05/GB/day). Files uploaded for immediate analysis are automatically cleaned up after 7 days unless explicitly saved.
 
 
-
 ## File Upload Limits on Perplexity Pro
-
 
 
 Perplexity Pro imposes specific constraints on file uploads that differ from the free tier. As of 2026, Pro subscribers can upload files up to **25 MB per document** and process up to **100 files per month** by default. This limit applies to individual files across all supported formats.
 
 
-
 The platform accepts several document types for analysis:
-
 
 
 - PDF documents (text-based and scanned with OCR)
@@ -42,17 +38,13 @@ The platform accepts several document types for analysis:
 - JSON files for structured data
 
 
-
 For developers working with large codebases or documentation, these limits are sufficient. A typical 50-page PDF averages 1-3 MB, leaving comfortable headroom. However, technical documentation with embedded images can approach the 25 MB threshold quickly.
-
 
 
 ## Storage Cost Structure
 
 
-
 Perplexity Pro uses a tiered storage model based on **usage hours** and storage retention:
-
 
 
 | Tier | Storage Included | Overage Rate |
@@ -64,25 +56,19 @@ Perplexity Pro uses a tiered storage model based on **usage hours** and storage 
 | Pro Unlimited | 50 GB | $0.05/GB/day |
 
 
-
 The storage costs apply only to files you choose to keep in your Perplexity workspace for extended periods. Files uploaded for immediate analysis are processed and then cleaned up automatically after 7 days unless explicitly saved.
-
 
 
 For most developers, the base tier provides adequate storage. If you regularly work with large datasets or maintain a knowledge base of documentation, consider the Unlimited plan to avoid unexpected charges.
 
 
-
 ## Practical Examples
-
 
 
 ### Example 1: Analyzing a Technical Specification
 
 
-
 Suppose you have a 15 MB PDF containing API documentation:
-
 
 
 ```python
@@ -100,9 +86,7 @@ else:
 ### Example 2: Processing Multiple Code Review Documents
 
 
-
 When analyzing multiple files simultaneously, track your monthly usage:
-
 
 
 ```javascript
@@ -124,9 +108,7 @@ function uploadDocument(file) {
 ### Example 3: Optimizing Large CSV Files
 
 
-
 For data files exceeding limits, consider preprocessing:
-
 
 
 ```bash
@@ -141,13 +123,10 @@ split -l 50000 large_dataset.csv chunk_
 ## Cost Optimization Strategies
 
 
-
 ### 1. Delete Unused Files Promptly
 
 
-
 Files remain in your workspace until explicitly removed. Schedule monthly cleanup sessions:
-
 
 
 ```python
@@ -157,13 +136,13 @@ from datetime import datetime, timedelta
 def cleanup_old_files(workspace_path, days=30):
     cutoff = datetime.now() - timedelta(days=days)
     removed_count = 0
-    
+
     for filename in os.listdir(workspace_path):
         filepath = os.path.join(workspace_path, filename)
         if os.path.getmtime(filepath) < cutoff.timestamp():
             os.remove(filepath)
             removed_count += 1
-    
+
     return removed_count
 ```
 
@@ -171,9 +150,7 @@ def cleanup_old_files(workspace_path, days=30):
 ### 2. Use Appropriate File Formats
 
 
-
 Text-based PDFs are more efficient than image-scanned documents:
-
 
 
 - Prefer `.txt` or `.md` for code and notes
@@ -183,13 +160,10 @@ Text-based PDFs are more efficient than image-scanned documents:
 - Export Word documents to PDF for smaller file sizes
 
 
-
 ### 3. Use Concurrent Analysis
 
 
-
 Perplexity Pro supports batch processing. Instead of uploading files one-by-one, combine related documents:
-
 
 
 ```python
@@ -208,9 +182,7 @@ documents = [
 ## Integration Considerations for Developers
 
 
-
 When building applications that interface with Perplexity's API, implement proper error handling:
-
 
 
 ```python
@@ -225,14 +197,14 @@ def upload_with_retry(file_path, max_retries=3):
                 files={"file": open(file_path, "rb")},
                 headers={"Authorization": f"Bearer {API_KEY}"}
             )
-            
+
             if response.status_code == 413:
                 print(f"File {file_path} exceeds 25 MB limit")
                 return None
-                
+
             response.raise_for_status()
             return response.json()
-            
+
         except requests.exceptions.RequestException as e:
             if attempt < max_retries - 1:
                 time.sleep(2 ** attempt)
@@ -244,13 +216,10 @@ def upload_with_retry(file_path, max_retries=3):
 ## API Rate Limits for File Operations
 
 
-
 Beyond the user interface limits, Perplexity's API enforces rate limiting on file operations. The current API constraints allow up to **50 requests per minute** for file uploads, with burst allowances of up to 100 requests. This matters when building automated pipelines that process multiple documents.
 
 
-
 Understanding these limits helps when designing batch processing jobs:
-
 
 
 ```python
@@ -262,20 +231,20 @@ class PerplexityFileUploader:
         self.api_key = api_key
         self.semaphore = Semaphore(max_concurrent)
         self.request_times = []
-    
+
     def upload_with_rate_limiting(self, file_path):
         # Wait if we've hit rate limits
         current_time = time.time()
         self.request_times = [
-            t for t in self.request_times 
+            t for t in self.request_times
             if current_time - t < 60
         ]
-        
+
         if len(self.request_times) >= 50:
             sleep_time = 60 - (current_time - self.request_times[0])
             if sleep_time > 0:
                 time.sleep(sleep_time)
-        
+
         with self.semaphore:
             self.request_times.append(time.time())
             return self._upload_file(file_path)
@@ -285,9 +254,7 @@ class PerplexityFileUploader:
 ## Common Error Codes
 
 
-
 When working with file uploads, you may encounter specific error codes:
-
 
 
 - 413 Payload Too Large: File exceeds the 25 MB limit
@@ -299,9 +266,7 @@ When working with file uploads, you may encounter specific error codes:
 - 401 Unauthorized: Invalid or expired API key
 
 
-
 Handling these errors gracefully in your code prevents workflow disruptions:
-
 
 
 ```python
@@ -314,13 +279,6 @@ def handle_upload_error(response):
     }
     return error_codes.get(response.status_code, "Unknown error")
 ```
-
-
-
-
-
-
-
 
 
 ## Related Articles

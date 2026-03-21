@@ -15,31 +15,24 @@ voice-checked: true
 ---
 
 
-
 {% raw %}
 
 Cursorules are a powerful way to codify your team's React component composition patterns. When configured correctly, they ensure that AI coding assistants generate consistent, maintainable components that align with your architecture. This guide walks you through creating effective Cursorules specifically designed for enforcing React component composition patterns across your team.
 
 
-
 ## Why Component Composition Patterns Matter
-
 
 
 React's composition model gives developers flexibility in how they structure components. However, this flexibility can lead to inconsistency when multiple team members work on the same codebase. Without clear guidelines, you might encounter prop drilling, inconsistent component hierarchies, or mixed patterns for handling shared state.
 
 
-
 Cursorules solve this problem by providing AI assistants with explicit instructions about your team's preferred patterns. When an AI understands your composition conventions, it generates code that fits into your existing architecture.
-
 
 
 ## Defining Your Component Composition Rules
 
 
-
 Before writing Cursorules, document your team's composition patterns. Consider these questions:
-
 
 
 - How do you handle prop drilling versus context?
@@ -51,17 +44,13 @@ Before writing Cursorules, document your team's composition patterns. Consider t
 - How do you structure component exports?
 
 
-
 Once you have clear answers, translate them into Cursorules that AI assistants can follow.
-
 
 
 ## Creating Effective Cursorules
 
 
-
 Here is an example of Cursorules designed to enforce compound component patterns:
-
 
 
 ```
@@ -107,9 +96,7 @@ Each component should follow this structure:
 ## Enforcing Container-Presenter Pattern
 
 
-
 Many teams adopt the container-presenter pattern for separating logic from presentation. Here is how to encode this in Cursorules:
-
 
 
 ```
@@ -131,11 +118,11 @@ Example:
 // Container
 function UserListContainer() {
   const [users, setUsers] = useState([]);
-  
+
   useEffect(() => {
     fetchUsers().then(setUsers);
   }, []);
-  
+
   return <UserListPresenter users={users} />;
 }
 
@@ -155,9 +142,7 @@ function UserListPresenter({ users }) {
 ## Handling Component Composition in Custom Hooks
 
 
-
 Custom hooks have become the preferred way to share logic in React applications. Your Cursorules should specify how AI assistants should create and use hooks:
-
 
 
 ```
@@ -176,9 +161,7 @@ const { data, loading, error, refetch } = useUserData(userId);
 ## Testing Your Cursorules
 
 
-
 After writing your Cursorules, test them by generating sample components. Ask your AI assistant to create a component following your rules, then verify:
-
 
 
 - Does it use compound components correctly?
@@ -190,17 +173,13 @@ After writing your Cursorules, test them by generating sample components. Ask yo
 - Are forbidden patterns avoided?
 
 
-
 Iterate on your Cursorules based on what the AI generates versus what you expect.
-
 
 
 ## Sharing Cursorules Across Your Team
 
 
-
 Place your Cursorules file in your project root as `.cursorrules` or `.cursor/rules`. Ensure every team member uses the same file by:
-
 
 
 - Adding it to version control
@@ -210,13 +189,10 @@ Place your Cursorules file in your project root as `.cursorrules` or `.cursor/ru
 - Reviewing it during onboarding new developers
 
 
-
 Regular updates to your Cursorules should follow your standard code review process.
 
 
-
 ## Example: Complete Cursorules File
-
 
 
 ```
@@ -279,11 +255,6 @@ interface ButtonProps {
 - Utilities: camelCase (formatDate.ts)
 - Types: PascalCase (UserTypes.ts)
 ```
-
-
-
-
-
 
 
 ## Related Articles

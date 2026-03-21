@@ -16,21 +16,16 @@ voice-checked: true
 {% raw %}
 
 
-
 Manage AI tool configurations across client projects by using environment-specific configuration files with API keys isolated in .env files, implementing a project switcher script for instant context switching, and maintaining separate configuration directories for each client. This approach prevents data leaks, reduces setup time, and keeps your multi-client workflow consistent across all projects.
-
 
 
 ## Use Environment-Specific Configuration Files
 
 
-
 The foundation of multi-client project management is separating configuration from code. Never hardcode API keys, endpoints, or client-specific settings directly in your scripts. Instead, use environment-specific files that load based on the active project context.
 
 
-
 Create a directory structure like this:
-
 
 
 ```
@@ -51,13 +46,10 @@ projects/
 Each client directory contains its own `.env` file with API keys and endpoint URLs. The shared directory holds reusable code that references these config files dynamically.
 
 
-
 ## Implement a Project Switcher Script
 
 
-
 A simple shell script or Python utility helps you switch between client contexts instantly. Here is a practical example:
-
 
 
 ```bash
@@ -91,13 +83,10 @@ echo "API Endpoint: $AI_API_ENDPOINT"
 Run it with `./switch-project.sh client-alpha` to load that client's environment. This approach works with any AI tool that respects environment variables.
 
 
-
 ## Use Configuration Management Tools
 
 
-
 For more complex setups, tools like `direnv` automate environment loading when you enter a project directory. Add this to your `.envrc`:
-
 
 
 ```bash
@@ -108,9 +97,7 @@ layout dotenv
 Then place a `.env` file in each project root. When you `cd` into the directory, `direnv` automatically loads the correct variables. This eliminates manual switching and reduces the risk of using wrong credentials.
 
 
-
 Another option is using a tool like `SOPS` (Secrets OperationS) with `age` encryption to store sensitive config values. This keeps your configuration files version-controlled without exposing secrets:
-
 
 
 ```yaml
@@ -124,13 +111,10 @@ client_name: "acme-corp"
 Decrypt only the values you need for the active project using `sops -d config.sops.yaml`.
 
 
-
 ## Template Your Project Scaffolding
 
 
-
 When starting a new client project, use templates to ensure consistent structure. Create a starter template with placeholder configs:
-
 
 
 ```yaml
@@ -146,7 +130,6 @@ system_prompt: |
 
 
 Use a simple script to populate these placeholders:
-
 
 
 ```python
@@ -170,25 +153,19 @@ def init_project(client_name: str, template_path: str, output_path: str):
 This ensures every new client project starts with the right structure and avoids missing critical settings.
 
 
-
 ## Isolate API Keys and Credentials
-
 
 
 Never share API keys across clients. Each client should have its own credentials. If you use a single AI platform account for multiple clients, create separate API keys per project. Most providers support this through their dashboard.
 
 
-
 Store these keys in a secrets manager rather than plain text files if your workflow permits. Tools like HashiCorp Vault, AWS Secrets Manager, or even a simple encrypted YAML file work well. The key principle remains: isolate credentials so that compromising one client does not affect others.
-
 
 
 ## Use Version Control Safely
 
 
-
 Add your config directories to `.gitignore` while keeping template files tracked:
-
 
 
 ```
@@ -202,13 +179,10 @@ projects/*/config.yaml
 This preserves the directory structure in your repo without committing secrets. Document the expected file names and formats in a `README.md` so team members know what to create.
 
 
-
 ## Automate Context Switching in Your AI Tools
 
 
-
 Many AI coding assistants and CLI tools support custom configuration files. For example, if you use `aider` or similar tools:
-
 
 
 ```json
@@ -224,7 +198,6 @@ Many AI coding assistants and CLI tools support custom configuration files. For 
 
 
 Create one config per client and symlink or copy the appropriate one before starting work. A small alias in your shell makes this:
-
 
 
 ```bash
@@ -292,7 +265,6 @@ If you use different AI tools for different clients, track the configuration fil
 ## Document Your Workflow
 
 
-
 Maintain a simple internal wiki or README explaining your setup. Include the directory structure, how to add a new client, and emergency steps if a key is compromised. This helps if you step away from a project and return months later or if another team member needs to take over.
 
 Treat your client configuration infrastructure as code: version control the templates, document the switching procedure, and test the setup on a staging machine before relying on it for billable work.
@@ -316,13 +288,7 @@ Some clients require that data never leave a specific cloud region. Check whethe
 Yes. Combine your switcher script with direnv and a post-switch hook that opens the right project directory in your editor. A single `switch-client.sh client-alpha` command can load env vars, open VS Code/Cursor, and set terminal title in one step.
 
 
-
 {% endraw %}
-
-
-
-
-
 
 
 ## Related Articles

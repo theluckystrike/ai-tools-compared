@@ -18,9 +18,7 @@ tags: [ai-tools-compared, artificial-intelligence]
 Cloud migration projects frequently stall or fail due to one overlooked problem: undiscovered dependencies. That cron job connecting to an internal API, the hardcoded database hostname, or the shared library relying on a specific file path can turn a planned migration into a weekend of firefighting. AI-powered dependency analysis helps you discover these relationships before they become production incidents.
 
 
-
 ## Why Dependency Mapping Matters
-
 
 
 Migration planning requires understanding how your applications interact with databases, message queues, external services, and shared resources. Manual documentation rarely stays current. Teams inherit systems without knowing which components depend on them, leading to:
@@ -32,17 +30,13 @@ Migration planning requires understanding how your applications interact with da
 - Circular dependencies that prevent proper service segmentation
 
 
-
 AI tools can analyze your codebase, infrastructure configuration, and runtime behavior to build dependency graphs that reveal these hidden connections.
-
 
 
 ## Static Code Analysis Approaches
 
 
-
 Modern AI coding assistants can scan your repositories to identify explicit dependencies. Provide your AI tool with context about your application structure and request dependency analysis:
-
 
 
 ```
@@ -59,7 +53,6 @@ List each dependency found with the file location and explain how it's used.
 
 
 For infrastructure-as-code repositories, AI can parse Terraform, CloudFormation, or Kubernetes manifests to identify resources and their relationships:
-
 
 
 ```python
@@ -86,13 +79,10 @@ for source, targets in resources.items():
 ## Runtime Dependency Discovery
 
 
-
 Static analysis catches explicit code references but misses dynamic connections. For runtime dependencies, consider deploying traffic analysis tools alongside AI-powered log aggregation.
 
 
-
 Use eBPF-based observability to capture network connections automatically:
-
 
 
 ```bash
@@ -110,13 +100,10 @@ kubectl exec -it your-app-pod -- cat /proc/net/tcp | \
 Feed this connection data to your AI tool to map actual runtime dependencies versus what documentation claims.
 
 
-
 ## Building the Dependency Graph
 
 
-
 Once you collect static and dynamic dependency data, combine them into an actionable graph. A Python script using NetworkX can visualize the relationships:
-
 
 
 ```python
@@ -127,7 +114,7 @@ import matplotlib.pyplot as plt
 G = nx.DiGraph()
 
 # Add nodes (your services and dependencies)
-services = ['web-api', 'auth-service', 'user-db', 'cache-redis', 
+services = ['web-api', 'auth-service', 'user-db', 'cache-redis',
             'analytics-worker', 'external-payment-api']
 G.add_nodes_from(services)
 
@@ -159,13 +146,10 @@ for scc in sccs:
 This analysis reveals which services form tight coupling clusters and which have clear boundaries for independent migration.
 
 
-
 ## Prioritizing Migration Waves
 
 
-
 Not all dependencies equal. Use your dependency graph to categorize applications:
-
 
 
 1. Leaf nodes: Services with no dependents. Migrate first—they cause minimal blast radius.
@@ -177,9 +161,7 @@ Not all dependencies equal. Use your dependency graph to categorize applications
 4. Shared state: Databases and caches that multiple applications write to. Plan carefully to avoid consistency issues during transition.
 
 
-
 Ask AI to help categorize your services based on the dependency analysis:
-
 
 
 ```
@@ -194,13 +176,10 @@ Given this dependency graph, suggest a migration order that:
 ## Handling Configuration Drift
 
 
-
 After identifying dependencies, you will find configuration values that break in the cloud environment. Database connection strings might point to on-premise hosts. Environment variables might reference internal DNS names unavailable in the target cloud.
 
 
-
 Create a migration checklist by asking AI to scan for cloud-incompatible patterns:
-
 
 
 ```bash
@@ -214,19 +193,17 @@ grep -rE "(localhost|internal\.company\.com|prod-db-01)" --include="*.env" --inc
 Feed the results to your AI assistant to generate replacement patterns:
 
 
-
 ```
 These hardcoded values need parameterization for cloud migration:
 - Internal IP ranges: [list from grep results]
 - Hostnames: [list from grep results]
 
-Suggest environment variable names and configuration patterns 
+Suggest environment variable names and configuration patterns
 that allow the same code to work in both environments.
 ```
 
 
 ## Validating the Migration Plan
-
 
 
 Before executing your migration, validate assumptions with canary deployments. Route a small percentage of traffic to the cloud environment and measure:
@@ -238,14 +215,7 @@ Before executing your migration, validate assumptions with canary deployments. R
 - DNS resolution times for newly created records
 
 
-
 Ask AI to generate observability dashboards that compare on-premise versus cloud performance for each dependency path.
-
-
-
-
-
-
 
 
 ## Related Articles

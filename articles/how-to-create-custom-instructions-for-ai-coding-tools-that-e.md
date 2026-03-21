@@ -16,33 +16,25 @@ voice-checked: true
 Create custom instructions for AI coding tools by documenting your specific naming conventions (snake_case for variables, PascalCase for classes, SCREAMING_SNAKE_CASE for constants) and embedding them as persistent system-level directives. Custom instructions solve the problem of AI defaulting to training data patterns by ensuring the AI applies your exact conventions automatically across all generated code.
 
 
-
 ## Why Custom Instructions Matter for Naming Conventions
-
 
 
 Naming conventions are the backbone of maintainable codebases. They make code readable, help developers predict naming patterns, and enable tooling like autocomplete and refactoring to work effectively. When an AI coding tool ignores your conventions, you spend time manually correcting names or, worse, leave inconsistencies that confuse future developers.
 
 
-
 Custom instructions solve this problem by embedding your preferences directly into the AI's behavior. Instead of repeatedly specifying "use snake_case for variables" in every prompt, you define it once as a persistent instruction. The AI then applies these conventions automatically across all generated code.
-
 
 
 ## Creating Effective Custom Instructions
 
 
-
 The most effective custom instructions are specific, actionable, and cover the full scope of your naming requirements. Here is a practical framework for building them.
-
 
 
 ### Step 1: Document Your Naming Conventions
 
 
-
 Before writing instructions, formalize your conventions. For a Python project using snake_case, your rules might include:
-
 
 
 - Variables and functions: snake_case (e.g., `user_name`, `calculate_total`)
@@ -54,13 +46,10 @@ Before writing instructions, formalize your conventions. For a Python project us
 - Files: snake_case with descriptive names (e.g., `user_authentication.py`)
 
 
-
 ### Step 2: Write Clear, Direct Instructions
 
 
-
 AI models respond well to explicit rules formatted as requirements. Here is an example instruction set for enforcing naming conventions:
-
 
 
 ```
@@ -75,9 +64,7 @@ Prefix boolean variables with 'is_', 'has_', or 'should_'.
 ### Step 3: Add Contextual Rules
 
 
-
 Beyond basic patterns, include domain-specific rules that matter for your project:
-
 
 
 ```
@@ -90,13 +77,10 @@ For database-related code, use singular nouns for table names and prefix related
 ## Practical Examples Across Different Tools
 
 
-
 ### GitHub Copilot
 
 
-
 Copilot respects instructions placed in a `.github/copilot-instructions.md` file at the repository root or in a dedicated `docs/` folder. Here is how to structure it:
-
 
 
 ```markdown
@@ -118,9 +102,7 @@ Copilot respects instructions placed in a `.github/copilot-instructions.md` file
 ### Cursor
 
 
-
 Cursor allows custom instructions through its Rules feature. You can set these in Settings > General > Rules for AI Behavior. A practical configuration looks like this:
-
 
 
 ```
@@ -143,9 +125,7 @@ For API endpoints, use RESTful naming:
 ### Claude Code (and Claude API-based tools)
 
 
-
 For Claude Code or similar CLI tools, create a `CLAUDE.md` file in your project root:
-
 
 
 ```markdown
@@ -174,9 +154,7 @@ For Claude Code or similar CLI tools, create a `CLAUDE.md` file in your project 
 ## Testing Your Instructions
 
 
-
 After setting up custom instructions, verify they work correctly by prompting the AI to generate sample code. Create a test file and ask the AI to populate it with various code structures:
-
 
 
 1. Create a simple class with methods
@@ -188,9 +166,7 @@ After setting up custom instructions, verify they work correctly by prompting th
 4. Generate an API endpoint handler
 
 
-
 Review the output carefully. If you find violations, refine your instructions to be more specific. Common issues include:
-
 
 
 - The AI uses camelCase instead of snake_case—add an explicit example
@@ -200,17 +176,13 @@ Review the output carefully. If you find violations, refine your instructions to
 - File names are inconsistent—add a reminder at the end of your instructions
 
 
-
 ## Advanced Techniques
-
 
 
 ### Project-Specific Overrides
 
 
-
 If different parts of your project require different conventions, use conditional instructions:
-
 
 
 ```
@@ -226,9 +198,7 @@ DATABASE_URL, API_KEY, MAX_CONNECTIONS
 ### Combining with Code Review
 
 
-
 Custom instructions work best when paired with automated linting. Configure ESLint, Pylint, or your preferred linter to catch naming violations:
-
 
 
 ```javascript
@@ -246,13 +216,10 @@ module.exports = {
 When the AI generates code that violates your conventions, the linter catches it, creating a feedback loop that helps the AI learn from its mistakes over time.
 
 
-
 ## Maintaining Your Instructions
 
 
-
 Naming conventions evolve as projects grow. Schedule periodic reviews of your custom instructions to ensure they remain relevant:
-
 
 
 - Add new rules when you introduce new patterns
@@ -264,16 +231,7 @@ Naming conventions evolve as projects grow. Schedule periodic reviews of your cu
 - Document the reasoning behind complex rules
 
 
-
 Share your instructions with team members so everyone benefits from consistent AI-generated code. When developers understand why certain conventions exist, they are more likely to follow them manually and provide feedback on the instructions themselves.
-
-
-
-
-
-
-
-
 
 
 ## Related Articles

@@ -18,17 +18,13 @@ tags: [ai-tools-compared, artificial-intelligence]
 AI coding assistants have become indispensable tools for developers, but their effectiveness depends heavily on how you communicate with them. The difference between a vague request and a well-structured prompt can mean the difference between usable code and a complete rewrite. This guide provides practical techniques for writing prompts that generate higher-quality code output.
 
 
-
 ## The Foundation: Clear Context and Intent
-
 
 
 Before writing any prompt, establish the context. AI models work best when they understand your background situation, including the programming language, framework, and the specific problem you are solving.
 
 
-
 A weak prompt provides no context:
-
 
 
 ```
@@ -39,7 +35,6 @@ Write a function to process user data.
 A strong prompt establishes the necessary context:
 
 
-
 ```
 Write a Python function using FastAPI and Pydantic v2 that validates incoming user registration data. The function should accept a JSON payload with email, password, and username fields, validate that the email format is correct, ensure the password meets minimum security requirements (8+ characters, at least one number and one uppercase letter), and return appropriate validation errors or success confirmation.
 ```
@@ -48,17 +43,13 @@ Write a Python function using FastAPI and Pydantic v2 that validates incoming us
 The second version specifies the language, framework, validation requirements, and expected behavior. This specificity eliminates guesswork and produces immediately usable code.
 
 
-
 ## Specify Input and Output Formats
-
 
 
 One of the most effective prompt improvements involves clearly defining what the code should accept as input and what it should produce as output. This reduces iterations and rework.
 
 
-
 Consider this example for generating a data transformation function:
-
 
 
 ```
@@ -69,17 +60,13 @@ Create a JavaScript function that converts an array of transaction objects into 
 This prompt tells the AI exactly what the input looks like and precisely what structure the output should have. The resulting code will match your expected data structures without requiring multiple refinement cycles.
 
 
-
 ## Include Constraints and Requirements
-
 
 
 Code rarely exists in isolation. It must integrate with existing systems, follow organizational patterns, and meet specific performance or security requirements. Including these constraints in your prompts prevents the AI from generating code that needs extensive modification.
 
 
-
 A prompt with clear constraints:
-
 
 
 ```
@@ -95,17 +82,13 @@ Write a TypeScript function using the Express framework that handles file upload
 This approach produces production-ready code that aligns with your requirements from the start.
 
 
-
 ## Provide Examples of Expected Behavior
-
 
 
 When possible, include concrete examples of expected input and output. This technique, often called few-shot prompting, significantly improves accuracy for complex transformations or calculations.
 
 
-
 For instance, when asking AI to generate parsing logic:
-
 
 
 ```
@@ -126,17 +109,13 @@ Generate a TypeScript function that performs this transformation with proper err
 The example clarifies naming conventions (camelCase), data types, and error handling expectations that would otherwise require clarification.
 
 
-
 ## Break Complex Tasks into Steps
-
 
 
 For complex functionality, consider decomposing your request into logical steps. This improves both the quality of individual components and their integration.
 
 
-
 Instead of:
-
 
 
 ```
@@ -145,7 +124,6 @@ Build a complete user authentication system with registration, login, password r
 
 
 Use a stepwise approach:
-
 
 
 ```
@@ -170,17 +148,13 @@ Finally, write middleware to authenticate JWT tokens from request headers.
 This structured approach produces modular, maintainable code with clear separation of concerns.
 
 
-
 ## Specify Code Style and Conventions
-
 
 
 AI models generate code in various styles unless you specify your preferences. Include requirements for naming conventions, documentation patterns, and architectural approaches.
 
 
-
 A prompt specifying style requirements:
-
 
 
 ```
@@ -196,13 +170,10 @@ Write a Rust function to fetch and parse JSON from a REST API endpoint. Use the 
 This produces code that matches your codebase conventions without post-generation refactoring.
 
 
-
 ## Request Test Coverage
 
 
-
 Including test requirements in your prompts ensures the generated code comes with verification. This practice catches edge cases and prevents regressions.
-
 
 
 ```
@@ -221,17 +192,13 @@ Create a Python function to calculate compound interest with parameters for prin
 The resulting code arrives with built-in test coverage, immediately ready for integration.
 
 
-
 ## Iterate and Refine
-
 
 
 Even well-crafted prompts may require refinement. Treat prompt writing as an iterative process. When the output misses the mark, analyze what information was missing or ambiguous, then update your prompt accordingly.
 
 
-
 Common refinement triggers include:
-
 
 
 - The code uses a different library version than you need
@@ -243,14 +210,7 @@ Common refinement triggers include:
 - The output is incomplete or makes incorrect assumptions
 
 
-
 Document your successful prompt patterns for recurring tasks. This creates a personal library of optimized prompts that consistently produce quality results.
-
-
-
-
-
-
 
 
 ## Related Articles
