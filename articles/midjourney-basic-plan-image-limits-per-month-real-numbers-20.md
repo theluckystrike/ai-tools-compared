@@ -88,6 +88,30 @@ Using multiple parameters simultaneously increases processing time:
 The `--fast` parameter forces immediate generation and consumes hours. Without it, images enter a shared queue and process when GPU capacity becomes available—useful for bulk generation when time is not critical.
 
 
+**4. The --quality Flag**
+
+
+The `--quality` (or `--q`) flag directly multiplies fast hour consumption. This is the least-understood lever for Basic Plan users:
+
+
+```
+# Quarter quality — fastest, uses 0.25x fast hours
+/imagine: product mockup --q .25
+
+# Half quality — balanced, uses 0.5x fast hours
+/imagine: product mockup --q .5
+
+# Full quality — default, uses 1x fast hours
+/imagine: product mockup --q 1
+
+# Double quality — uses 2x fast hours (Pro feature)
+/imagine: product mockup --q 2
+```
+
+
+Using `--q .25` quadruples your effective image count on the Basic Plan, making it especially valuable for concept exploration and prompt iteration before committing full fast hours to a final render.
+
+
 ## Practical Usage Scenarios
 
 
@@ -138,6 +162,23 @@ Result: Upgrade to Standard Plan needed
 ```
 
 
+### Scenario 4: Mixed Fast and Relaxed Workflow
+
+
+A realistic production workflow uses fast mode for final selects and relaxed mode for exploration:
+
+
+```
+Month allocation strategy:
+- Use fast hours for: 60 final renders + 40 upscales = ~130 fast images
+- Use relaxed for: unlimited concept exploration
+- Net: fast hours stay under 3.3h; output volume uncapped
+```
+
+
+This hybrid approach works well for freelancers who need high-quality finals but generate many rough concepts to find the right direction. Scheduling relaxed mode generations during US off-peak hours (early morning EST) typically yields 2-4 minute wait times versus 8-15 minutes during the afternoon peak.
+
+
 ## Understanding Relaxed Mode
 
 
@@ -151,6 +192,8 @@ The Basic Plan includes **unlimited relaxed mode** generation. Relaxed images qu
 
 
 This makes the Basic Plan viable for high-volume, time-insensitive workflows. Schedule batch jobs during off-peak hours for faster relaxed processing.
+
+One practical limitation: Midjourney does not provide a formal API for automated generation. All prompts must be submitted through the Discord bot or the web interface at midjourney.com. This means automation scripts that cycle through prompt queues are against the terms of service, though manual batching across a work session is common practice.
 
 
 ## Comparing Plan Economics
@@ -169,10 +212,17 @@ Standard Plan ($30/month):
 - 800 images ÷ $30 = $0.0375 per image
 - 15 fast hours + unlimited relaxed
 - Better for production workflows
+
+Pro Plan ($60/month):
+- 1,800 images ÷ $60 = $0.033 per image
+- 30 fast hours + stealth mode + unlimited relaxed
+- Justified for agencies and heavy commercial use
 ```
 
 
 The Basic Plan offers the lowest cost per image only if you stay within 200 monthly generations. Beyond that threshold, the Standard Plan provides better value through lower per-image cost and more fast hours.
+
+The breakeven calculation matters most when deciding whether to upgrade mid-month. Midjourney does not prorate upgrades—you pay the full next tier price immediately and your fast hours reset. Upgrading in the last few days of your billing cycle is wasteful unless you have urgent deadlines.
 
 
 ## Optimizing Your Basic Plan Usage
@@ -198,11 +248,18 @@ The Basic Plan offers the lowest cost per image only if you stay within 200 mont
 
 **Conserve fast hours by:**
 
-- Testing prompts with low-resolution previews
+- Testing prompts with low-resolution previews using `--q 0.25`
 
-- Using `--q 0.25` for faster, lower-quality generations
+- Using `--quality 0.5` for intermediate exploration
 
-- Saving upscale for selected pieces only
+- Saving upscales and `--quality 1` for selected final pieces only
+
+- Running Vary (Region) edits in relaxed mode when precision is not urgent
+
+
+**Prompt efficiency tips:**
+
+Use short, specific prompts rather than long descriptive paragraphs. Midjourney's model responds better to concise style descriptors than verbose natural language. A prompt like `"brutalist office lobby, golden hour, shot on Hasselblad"` typically produces better results in fewer iterations than a three-sentence description, which stretches your fast hours further per usable output.
 
 
 ## What Changed in 2026
@@ -210,8 +267,21 @@ The Basic Plan offers the lowest cost per image only if you stay within 200 mont
 
 Midjourney's 2026 pricing structure maintains the same tier allocations as 2025, with the Basic Plan staying at $10/month. However, improvements in rendering efficiency mean the 3.3 fast hours now generate approximately 10% more images than previous years under equivalent parameters.
 
-
 The platform also introduced `--quality` parameters allowing faster generation at reduced detail, extending Basic Plan usability for developers who need quick concept previews rather than production-ready assets.
+
+The 2026 web interface at midjourney.com added a usage dashboard that displays your remaining fast hours in real time, down to the minute. Previously, users had to run `/info` in Discord to check consumption. This dashboard is now the fastest way to manage your monthly budget without switching contexts.
+
+
+## Common Pitfalls for New Basic Plan Users
+
+
+**Pitfall 1: Upscaling everything.** Many new users upscale every image they generate, not realizing it doubles fast hour consumption. Establish a habit of selecting only 1-2 candidates from each 4-image grid before upscaling.
+
+**Pitfall 2: Forgetting relaxed mode.** The default mode after subscribing is fast. Switch your default to relaxed using `/settings` in Discord so fast hours are only spent when you explicitly add `--fast` to a prompt.
+
+**Pitfall 3: Mixing --ar with --upscale repeatedly.** Each variation and upscale of the same image consumes additional fast hours. Use the Vary (Subtle) option before committing to a full upscale cycle.
+
+**Pitfall 4: Running out of fast hours early.** Without the usage dashboard, it is easy to burn through 3.3 hours in the first week of the month. Check your `/info` stats every 2-3 days until you have a stable sense of your consumption rate.
 
 
 ---
