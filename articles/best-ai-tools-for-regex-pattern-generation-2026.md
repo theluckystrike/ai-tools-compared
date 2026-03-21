@@ -243,6 +243,63 @@ Cursor also generated the simplified version, matching Copilot.
 | Password complexity | ✅ Includes anti-pattern checks | ⚠️ Basic only | ⚠️ Basic only | ⚠️ Basic only |
 | SemVer compliance | ✅ Full spec | ⚠️ Simplified | ⚠️ Simplified | ⚠️ Simplified |
 
+## Catastrophic Backtracking: The Hidden Performance Risk
+
+Beyond correctness, regex performance is a production concern. Certain patterns cause exponential backtracking — the regex engine explores every possible combination of matches before concluding a string doesn't match. This turns millisecond validation into multi-second CPU spikes.
+
+A classic example: `^(a+)+$` tested against `aaaaaaaaaaaaaaab`. The nested quantifiers force the engine to try 2^n combinations before rejecting the input. In web applications, an attacker can craft inputs that cause ReDoS (Regular Expression Denial of Service) by sending strings that trigger catastrophic backtracking.
+
+Claude correctly flags this risk and generates alternative atomic grouping patterns. When I asked Claude to validate a pattern containing nested quantifiers, it warned:
+
+```
+This pattern has potential for catastrophic backtracking on inputs
+like 'aaaaaaaaaaab'. Consider using possessive quantifiers or
+atomic groups if your regex engine supports them:
+
+# Python (no possessive quantifiers, use atomic via regex module):
+import regex
+pattern = regex.compile(r'^(?>(a+))+$')
+
+# JavaScript (no atomic groups in standard JS):
+# Rewrite to avoid ambiguity:
+/^a+$/  # simpler equivalent without nesting
+```
+
+ChatGPT and Cursor did not flag backtracking risks unprompted. This distinction matters at scale: a validation endpoint receiving 10,000 requests per second with adversarial inputs will degrade catastrophically with naive patterns.
+
+### Backtracking Risk Checklist
+
+Before deploying AI-generated regex, audit for these patterns:
+- Nested quantifiers: `(a*)*`, `(a+)+`, `([ab]+)*`
+- Alternation with overlapping branches: `(abc|ab|a)+`
+- Repeated groups with optional sections: `(a?b?)*`
+
+Use regex101.com's debugger tab to count "steps" for a given input. Anything over 10,000 steps for a realistic input is a risk.
+
+## Language-Specific Regex Engines: What AI Gets Wrong
+
+Regex syntax differs across language engines, and AI tools vary in their awareness of these differences.
+
+**Python's `re` vs `regex` module**: The standard `re` module lacks possessive quantifiers and atomic groups. Claude correctly identifies when a pattern requires the third-party `regex` module. ChatGPT sometimes generates patterns that only work in PCRE but presents them as valid Python without noting the dependency.
+
+**JavaScript's lack of lookbehind in older engines**: Lookbehind assertions (`(?<=...)`) require Node.js 10+ or Chrome 62+. For patterns targeting legacy browsers, Claude proactively rewrites them using alternative approaches. Copilot sometimes generates lookbehind patterns without noting compatibility.
+
+**Go's RE2 engine**: Go uses RE2, which guarantees linear time matching but prohibits backreferences and lookaheads entirely. When asked for a complex validation pattern, Claude immediately noted: "Go's RE2 engine doesn't support lookaheads. Here's an equivalent approach using multiple simpler patterns combined in code." Cursor generated a lookahead pattern for Go without flagging the incompatibility.
+
+**Java's Pattern class**: Java supports full PCRE features but has performance characteristics different from Perl. Claude recommends precompiling patterns with `Pattern.compile()` and caching the result, a practical performance note that ChatGPT omits.
+
+## Iterative Refinement: How Each Tool Handles Follow-Up
+
+The initial pattern is often just the starting point. Production regex typically goes through several rounds of refinement as edge cases emerge from real data.
+
+**Claude** maintains context across a conversation. When I said "the pattern rejects hyphenated names like `mary-jane@example.com`", Claude correctly identified that the original pattern already supported hyphens and traced the issue to a different pattern I'd used earlier in the conversation. It explained the difference and offered to update the specific pattern that was causing failures.
+
+**ChatGPT** handled refinement well but occasionally introduced regressions — fixing one case while breaking another. On the third iteration of the URL pattern, it reverted to making the protocol optional again. Requiring test cases in each follow-up prompt prevented this.
+
+**GitHub Copilot** doesn't maintain cross-session context, making iterative refinement purely in-IDE. For regex specifically, Copilot works best when the pattern is already partially written and you're asking it to extend or complete it.
+
+**Cursor** performed well in refinement mode with its full codebase context. When I had existing validation functions, Cursor correctly identified the pattern being used and suggested targeted changes. Its strength is understanding the surrounding code, not the regex specification itself.
+
 ## Practical Recommendations
 
 **Choose Claude** if you need production-grade regex patterns with edge case handling. Claude understands specification compliance and anti-patterns, generating patterns that work correctly across domains. The explanations help you maintain the patterns long-term.
@@ -262,8 +319,9 @@ Regardless of which tool you use, always test regex patterns with this checklist
 3. **Boundary conditions** - Empty strings, very long inputs, special characters
 4. **Edge cases specific to your domain** - International characters, historical data, Unicode
 5. **Performance** - Catastrophic backtracking on certain inputs (use regex101.com debugger)
+6. **Engine compatibility** - Confirm the pattern works in your target language's specific regex engine
 
-Use [regex101.com](https://regex101.com) with the tool's explanation feature to understand the generated pattern before deploying.
+Use [regex101.com](https://regex101.com) with the tool's explanation feature to understand the generated pattern before deploying. Set the engine to match your target language (PCRE, Python, ECMAScript, or Golang RE2) to catch compatibility issues before they reach production.
 
 ## Related Reading
 
