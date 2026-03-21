@@ -9,7 +9,7 @@ permalink: /effective-strategies-for-reviewing-ai-generated-code-before-committi
 categories: [guides]
 tags: [ai-tools-compared, code-review, best-practices, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
