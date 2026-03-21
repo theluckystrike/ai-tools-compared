@@ -37,6 +37,8 @@ The key characteristics of ChatGPT Search include:
 
 - Reasoning continuity: You can ask follow-up questions that build on previous context within the same conversation
 
+- Memory integration: For ChatGPT Plus users with memory enabled, search context can persist across sessions
+
 
 
 Here is a typical interaction with ChatGPT Search:
@@ -71,6 +73,8 @@ Key characteristics of Perplexity Pro Search include:
 
 - Focus mode: Lets you specify whether you want simple answers or research
 
+- Spaces: Shareable research collections for team collaboration
+
 
 
 A typical Perplexity Pro Search query looks like this:
@@ -94,6 +98,21 @@ Perplexity Pro Search:
 
 [Sources: auth0.com, stormpath.com, OWASP guidelines]
 ```
+
+
+## Head-to-Head Comparison Table
+
+| Feature | ChatGPT Search | Perplexity Pro Search |
+|---|---|---|
+| Source citations | Inline links | Numbered citations + source list |
+| Response format | Conversational prose | Structured sections + bullets |
+| Follow-up context | Strong (full conversation history) | Thread-based |
+| Sources per query | 3-5 | 8-15 |
+| Focus modes | One mode | Academic, Writing, Wolfram Alpha, YouTube, Reddit |
+| API access | OpenAI API (gpt-4o-search) | Perplexity API (sonar models) |
+| Pricing | ChatGPT Plus: $20/month | Perplexity Pro: $20/month |
+| File upload search | Yes | Yes (Pro only) |
+| Spaces / Projects | Projects | Spaces |
 
 
 ## Core Differences for Developers
@@ -132,19 +151,37 @@ print(response.output_text)
 
 
 ```python
-from perplexity import Perplexity
+import requests
 
-client = Perplexity(api_key="your-api-key")
+headers = {
+    "Authorization": "Bearer your-api-key",
+    "Content-Type": "application/json"
+}
 
-response = client.search(
-    query="How do I implement rate limiting in Python FastAPI?",
-    focus_mode="comprehensive",
-    return_sources=True
+payload = {
+    "model": "sonar-pro",
+    "messages": [
+        {
+            "role": "user",
+            "content": "How do I implement rate limiting in Python FastAPI?"
+        }
+    ],
+    "return_citations": True,
+    "search_recency_filter": "week"
+}
+
+response = requests.post(
+    "https://api.perplexity.ai/chat/completions",
+    headers=headers,
+    json=payload
 )
 
-print(response.answer)
-print(response.sources)
+data = response.json()
+print(data["choices"][0]["message"]["content"])
+print(data.get("citations", []))
 ```
+
+The Perplexity API's `search_recency_filter` parameter — accepting values like `hour`, `day`, `week`, `month` — is particularly useful when you need to filter for recent documentation or changelog entries. The OpenAI approach does not expose equivalent recency controls at the API level.
 
 
 ### Response Style and Depth
@@ -167,9 +204,26 @@ Both tools maintain conversation context, but they handle it differently:
 
 
 
-- ChatGPT Search: Continues the conversation naturally, remembering everything discussed
+- ChatGPT Search: Continues the conversation naturally, remembering everything discussed in the session including code snippets, variable names, and previously established context
 
-- Perplexity Pro Search: Organizes research into threads, making it easier to revisit specific research paths
+- Perplexity Pro Search: Organizes research into threads, making it easier to revisit specific research paths; threads are saved and searchable
+
+For extended debugging sessions where you are iterating on code across multiple questions, ChatGPT Search's conversational model has a clear advantage. For researching an unfamiliar technology before starting a project, Perplexity Pro Search's thread model lets you build and revisit a structured knowledge base.
+
+
+## Real-World Workflow: Technical Research Session
+
+Here is how a developer researching a migration from REST to GraphQL would use each tool.
+
+**With ChatGPT Search:**
+
+You start with "What are the main differences between REST and GraphQL?" and then follow up with "Show me how to set up Apollo Server with Express" and then "What about subscriptions — how do those work?" Each follow-up benefits from the conversation history. ChatGPT understands that "those" refers to GraphQL subscriptions and maintains the Node.js/Express context throughout.
+
+**With Perplexity Pro Search:**
+
+You create a thread titled "GraphQL Migration Research" and run parallel queries: "GraphQL vs REST performance benchmarks 2026", "Apollo Server vs Pothos TypeScript setup", "GraphQL subscription WebSocket vs SSE". Each query returns structured results with 8-15 sources. You can share the thread with teammates via Perplexity Spaces before the architecture review.
+
+Both approaches are valid. The ChatGPT approach works better for exploratory learning with many follow-ups. The Perplexity approach is better for producing a citable research summary.
 
 
 
@@ -189,6 +243,10 @@ Both tools maintain conversation context, but they handle it differently:
 
 - You are already heavily invested in the OpenAI ecosystem
 
+- You are iterating on a problem with many contextual follow-ups
+
+- You need to combine search with code generation in one thread
+
 
 
 ### Choose Perplexity Pro Search When:
@@ -203,6 +261,10 @@ Both tools maintain conversation context, but they handle it differently:
 
 - You prefer clear section-based formatting for complex topics
 
+- You are building a research artifact to share with a team
+
+- You need fine-grained recency filtering on search results (hourly, daily, weekly)
+
 
 
 ## Making the Switch
@@ -213,11 +275,11 @@ Switching from ChatGPT Search to Perplexity Pro Search requires minimal adjustme
 
 
 
-1. Adjusting query phrasing: Perplexity works well with more detailed queries due to its research focus
+1. Adjusting query phrasing: Perplexity works well with more detailed queries due to its research focus. Instead of "how does Python GIL work", try "Python GIL limitations in multi-threaded web servers 2026"
 
-2. Using focus mode: Specify whether you want brief or answers
+2. Using focus mode: Use Academic focus for peer-reviewed content, Reddit focus for developer community discussions, or Wolfram Alpha for mathematical queries
 
-3. Using threads: Organize your research into separate threads for different topics
+3. Using threads: Create a named thread for each research project and add related queries to it rather than starting new conversations each time
 
 
 
@@ -248,18 +310,33 @@ Imagine you need to understand a new API framework. Here is how each tool handle
 Both approaches have value depending on your learning style and time constraints.
 
 
+## FAQ
+
+**Q: Does Perplexity Pro Search have a better API than ChatGPT Search for building search-powered apps?**
+
+For most use cases, the Perplexity API (sonar-pro model) is better suited to search-first applications because it exposes citations, recency filters, and focus modes as API parameters. The OpenAI search API is more tightly coupled with the conversational model, making it better for chat-first applications where search is a background capability.
+
+**Q: Can ChatGPT Search cite academic papers?**
+
+Partially. ChatGPT Search can find and reference academic content but does not have Perplexity's dedicated Academic focus mode, which prioritizes peer-reviewed sources like arXiv, PubMed, and Semantic Scholar. For research requiring academic citations, Perplexity Pro Search is the stronger choice.
+
+**Q: How does pricing compare for heavy API users?**
+
+ChatGPT Search via the OpenAI API charges per token (input + output) with an additional cost for search tool calls. Perplexity's API charges per request under the sonar-pro model, typically $5 per 1,000 requests for Pro Search. At high volumes, Perplexity's per-request model is often cheaper than OpenAI's token-based model for search-heavy applications.
+
+**Q: If I use both tools, is there a way to sync their history?**
+
+No native sync exists. Some developers export ChatGPT conversations using the data export feature and store summaries in Perplexity Spaces for structured reference. This is a manual workflow, not an automated integration.
 
 
 
 
 
 
-## Related Articles
+## Related Reading
 
-- [Switching from ChatGPT Search to Perplexity Pro Search](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
-- [Switching from ChatGPT Plus to Perplexity Pro Feature Compar](/ai-tools-compared/switching-from-chatgpt-plus-to-perplexity-pro-feature-compar/)
+- [Switching from ChatGPT Plus to Perplexity Pro Feature Comparison](/ai-tools-compared/switching-from-chatgpt-plus-to-perplexity-pro-feature-compar/)
 - [Perplexity Pro Search Not Working Fix (2026)](/ai-tools-compared/perplexity-pro-search-not-working-fix-2026/)
-- [Export Perplexity Collections Before Switching to ChatGPT Se](/ai-tools-compared/export-perplexity-collections-before-switching-to-chatgpt-se/)
-- [How to Manage AI Coding Context When Switching Between Diffe](/ai-tools-compared/how-to-manage-ai-coding-context-when-switching-between-diffe/)
+- [ChatGPT vs Perplexity for Researching Competitor Pricing Strategy](/ai-tools-compared/chatgpt-vs-perplexity-for-researching-competitor-pricing-str/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
