@@ -41,6 +41,9 @@ Background agent timeouts in Cursor occur for several reasons. Understanding the
 - Outdated Cursor version. Older versions have bugs that cause premature timeouts.
 
 
+The background agent is fundamentally different from the inline autocomplete feature. Autocomplete works on the currently visible file; the background agent indexes your project, tracks changes across files, and maintains a running understanding of your codebase. That broader scope means more failure points. When something in that pipeline stalls — a slow network handshake, a large file that takes too long to tokenize, a memory allocation that fails — the agent times out rather than returning a partial result.
+
+
 ## Step-by-Step Fixes
 
 
@@ -57,6 +60,9 @@ curl -I https://api.cursor.sh
 
 
 If these fail, restart your router or switch networks. For developers behind corporate firewalls, ensure Cursor can access the necessary domains. Check your proxy settings in Cursor preferences under **Settings > Network**.
+
+
+If `ping` succeeds but `curl` times out, the issue may be TLS inspection by a corporate proxy. Cursor's API traffic uses HTTPS, and some proxy configurations break the TLS handshake or introduce enough latency to trigger timeouts at the application layer. Ask your network team whether AI tool traffic is being intercepted.
 
 
 ### Fix 2: Adjust Timeout Settings
@@ -84,6 +90,9 @@ Cursor allows configuration of agent timeout values. Access your settings file:
 Increase the timeout value from the default (usually 60 seconds) to 300 seconds (5 minutes) for complex operations. This prevents premature timeouts on larger tasks.
 
 
+The `maxRetries` setting controls how many times the agent attempts a failed request before surfacing an error. Setting this to 3 with a 5-second delay means the agent will try for up to 15 additional seconds before giving up, which covers most transient network blips without making the experience feel broken.
+
+
 ### Fix 3: Reduce Context Load
 
 
@@ -107,8 +116,16 @@ node_modules/
 dist/
 build/
 *.log
-大型目录/
+.git/
+coverage/
+.next/
+__pycache__/
+*.min.js
+*.map
 ```
+
+
+A `.cursorignore` file works similarly to `.gitignore`. Any path listed there is excluded from the agent's context window. For monorepos, be selective: ignoring `packages/legacy-service/` when you are working on `packages/api/` cuts context dramatically without losing relevant code. The agent will still be able to reference files you explicitly mention in your prompt, even if they are in an ignored directory.
 
 
 ### Fix 4: Update Cursor to the Latest Version
@@ -121,10 +138,13 @@ Newer versions include performance improvements and bug fixes. Update through:
 
 - Windows: Open Cursor and go to **Help > Check for Updates**
 
-- Linux: Reinstall the latest.deb or.AppImage package
+- Linux: Reinstall the latest .deb or .AppImage package
 
 
 After updating, restart Cursor completely and test if timeouts persist.
+
+
+Cursor releases background agent improvements frequently. Release notes for 2025-2026 versions specifically address timeout handling for large repositories, improved retry logic, and smarter context windowing. If you are more than two minor versions behind, update before attempting other fixes — the root cause may already be patched.
 
 
 ### Fix 5: Clear Cache and Reset Settings
@@ -150,6 +170,9 @@ rmdir /s /q %APPDATA%\Cursor\Cache
 After clearing cache, reset settings to default and reconfigure only what you need. This removes conflicting configurations that might cause timeouts.
 
 
+Cache corruption most commonly occurs after Cursor crashes mid-session or after an abrupt system shutdown. The agent stores partial index data in its cache; if that data is malformed, subsequent sessions may hang while trying to read it. A clean cache forces a fresh index on next launch, which takes longer initially but resolves the hang.
+
+
 ### Fix 6: Check System Resources
 
 
@@ -164,6 +187,9 @@ Insufficient system resources affect agent performance. Monitor your system:
 
 
 Close other resource-intensive applications. For developers on older hardware, consider upgrading RAM or using a faster SSD.
+
+
+On macOS, use Activity Monitor to watch Cursor's memory footprint. For large projects, the background agent process (`Cursor Helper`) can consume 1-2GB of RAM independently of the main application. If your system is under memory pressure, the OS begins swapping, and the agent's index reads slow dramatically — often enough to trigger timeouts even on a fast network.
 
 
 ### Fix 7: Configure Proxy Settings (Corporate Networks)
@@ -213,6 +239,9 @@ Turn on detailed logging to see what happens during timeouts:
 
 
 Look for error messages like "Agent request timed out" or "Connection lost" to pinpoint the failure point.
+
+
+The log format includes timestamps at millisecond precision. When you see a timeout, look for the last successful log entry before the error. The gap between the last success and the timeout message tells you where the pipeline stalled. A gap at the network request phase points to connectivity; a gap at the tokenization phase points to context size; a gap at the response parsing phase points to a malformed API response that may indicate a version mismatch.
 
 
 ### Monitor Network Requests
@@ -266,6 +295,9 @@ Once you've resolved the issue, implement preventive measures:
 - Monitor resource usage. Keep system resources healthy.
 
 - Use `.cursorignore` wisely. Exclude unnecessary directories from AI processing.
+
+
+For teams with shared development environments or remote workstations, consider adding Cursor's required domains to your network allowlist at the infrastructure level. This prevents individual developers from hitting proxy issues and ensures consistent agent performance across the team regardless of local network configuration.
 
 
 ## When to Seek Further Help
