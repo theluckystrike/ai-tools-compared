@@ -252,6 +252,89 @@ def validate_form_data(data):
 ```
 
 
+## Using AI Tools to Detect Circular Imports Proactively
+
+You do not have to wait for a runtime error to discover circular dependencies. AI assistants can analyze your project structure and map import graphs before problems surface in production.
+
+**Effective prompts for AI-assisted detection:**
+
+```
+Here are my module files. Identify any potential circular import chains and rate their severity:
+[paste file contents or import sections]
+```
+
+```
+I have a Django project with apps: accounts, orders, notifications.
+Review these import statements and flag any circular dependency risks.
+```
+
+For larger codebases, supplement AI analysis with automated tooling. The `pydeps` package generates visual dependency graphs, while `pylint` and `flake8-bugbear` include circular import checkers that integrate into CI pipelines.
+
+```bash
+# Install pydeps for dependency visualization
+pip install pydeps
+
+# Generate a dependency graph for your package
+pydeps your_package --max-bacon=2 --cluster
+```
+
+Feed the output graph description or error output back to an AI assistant for targeted refactoring suggestions.
+
+
+## AI Tool Comparison for Debugging Circular Imports
+
+Not all AI tools handle Python debugging equally well. Here is how the major options compare for this specific task.
+
+| Tool | Strengths for Circular Import Debug | Limitations |
+|---|---|---|
+| Claude | Deep reasoning about import chains, explains *why* a fix works | No live code execution |
+| GitHub Copilot | Inline suggestions while writing code | Context limited to open files |
+| Cursor | Can read full project structure, chat-based iteration | Requires Cursor IDE |
+| ChatGPT (GPT-4o) | Strong Python knowledge, good at tracing call chains | No project file access |
+| Aider (CLI) | Applies fixes directly to files, understands git context | Requires terminal workflow |
+
+For complex multi-module circular dependencies in large projects, Cursor's ability to read multiple files simultaneously gives it a practical edge—you can ask it to trace the import graph across your entire `src/` directory. For quick fixes in a single file pair, any capable LLM handles the task well.
+
+
+## Prompting Strategies That Work
+
+Getting accurate debugging help from AI requires good prompts. These patterns consistently yield actionable results:
+
+**Include the full traceback.** AI assistants reason better with the complete error message, not just the last line. The traceback shows exactly which import triggered the failure.
+
+**Share the relevant file headers.** Paste the top 20-30 lines of each module involved—just the import section and class/function signatures. This gives the AI enough context without overwhelming it with unrelated code.
+
+**Ask for the simplest fix first.** Start with: "What is the minimal change to resolve this circular import?" More elaborate refactoring can follow once the immediate error is fixed.
+
+**Validate before committing.** Ask the AI: "Does your proposed fix introduce any new circular dependencies?" This catches cases where moving an import creates a different cycle.
+
+
+## Frequently Asked Questions
+
+**Why does Python allow circular imports at all if they cause errors?**
+Python's import system handles simple circular imports without errors in some cases—specifically when the circular reference occurs after the relevant names are already defined. Errors appear when a name is imported before its module finishes executing. This is why the error message says "partially initialized module."
+
+**Can TYPE_CHECKING solve circular imports?**
+Yes, for type annotation-only imports. Wrapping imports in `if TYPE_CHECKING:` prevents them from executing at runtime while still allowing type checkers like mypy to see them:
+
+```python
+from __future__ import annotations
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from module_b import SomeClass  # Only used in type hints
+
+def my_function(arg: "SomeClass") -> None:
+    pass
+```
+
+**How common are circular imports in well-structured projects?**
+In well-architected codebases with clear layering (utilities at the bottom, business logic in the middle, controllers at the top), circular imports are rare. They most frequently appear in medium-sized projects that grew organically without enforced dependency direction rules.
+
+**Should I use absolute or relative imports?**
+For packages, relative imports (e.g., `from . import utils`) make the dependency explicit within the package boundary. For application-level code, absolute imports are clearer and easier for AI tools to trace across files. Either style can produce circular dependencies—the fix strategies are the same.
+
+
 ## Related Articles
 
 - [How to Use AI to Resolve NPM Peer Dependency Conflict Errors](/ai-tools-compared/how-to-use-ai-to-resolve-npm-peer-dependency-conflict-errors/)
