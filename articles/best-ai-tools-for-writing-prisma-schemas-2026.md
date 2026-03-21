@@ -5,7 +5,7 @@ author: theluckystrike
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence, best-of]
 title: "Best AI Tools for Writing Prisma Schemas in 2026"
-description: Compare top AI tools for generating Prisma ORM schemas from database diagrams, natural language, and existing databases. Features, pricing, and real code examples.
+description: "Compare top AI tools for generating Prisma ORM schemas from database diagrams, natural language, and existing databases. Features, pricing, and real code examples."
 permalink: /articles/best-ai-tools-for-writing-prisma-schemas-2026/
 reviewed: true
 score: 9
