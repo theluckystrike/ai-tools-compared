@@ -175,6 +175,40 @@ Supermaven offers an unique approach with its Babble feature, providing fast loc
 The tool excels at predicting code patterns and offering contextually relevant completions. Setup involves installing their IDE extension and configuring the local processing preferences.
 
 
+## Comparing Air-Gapped Solutions
+
+
+| Tool | IDE Support | Truly Air-Gapped | Model Selection | Price |
+|------|------------|-----------------|-----------------|-------|
+| Continue.dev + Ollama | VS Code, JetBrains, Neovim | Yes | Any Ollama model | Free |
+| Tabnine Local | Most major IDEs | Yes | Fixed local model | Free/$15 |
+| Codeium Enterprise | VS Code, JetBrains | Partial | Fixed | Enterprise |
+| GPT4All | Standalone / API | Yes | Many open models | Free |
+| Supermaven | VS Code | Partial offline | Fixed | $10/month |
+
+
+## Selecting the Right Model for Offline Completion
+
+
+Model selection determines suggestion quality more than any other configuration choice. The tradeoff between model size and inference speed is the central engineering decision in any air-gapped setup.
+
+**CodeLlama 7B** is the baseline for most developers. It runs comfortably on 16GB RAM without GPU acceleration and delivers suggestions in one to two seconds on a modern laptop CPU. The model understands Python, JavaScript, TypeScript, Go, Rust, and Java reasonably well and handles common patterns reliably.
+
+**DeepSeek Coder 6.7B** outperforms CodeLlama on code completion benchmarks at a similar parameter count. Teams that find CodeLlama suggestions too generic often switch to DeepSeek Coder as a direct replacement with the same hardware requirements.
+
+**CodeLlama 13B** improves suggestion quality measurably but requires either 32GB RAM or a GPU with at least 8GB VRAM for comfortable inference speeds. This model suits developers who spend most of their day in complex, large-context codebases where the quality improvement justifies the hardware investment.
+
+**Phi-3 Mini** (3.8B parameters) is the choice when inference speed matters most. It runs on 8GB RAM with suggestions appearing in under a second on most hardware. The suggestion quality is lower than larger models, but the fast feedback loop makes it productive for high-volume completion tasks like writing boilerplate.
+
+To switch models in Continue.dev, update the config and pull the new model with Ollama:
+
+```bash
+ollama pull deepseek-coder:6.7b
+```
+
+Then update `~/.continue/config.yaml` to reference `deepseek-coder:6.7b` in both the `models` and `tabAutocompleteModel` sections.
+
+
 ## Performance Considerations
 
 
@@ -200,6 +234,34 @@ models:
 ```
 
 
+## Setting Up a Fully Offline Environment
+
+
+Downloading models and dependencies requires internet access, but the working environment can be completely offline after initial setup. Here is the sequence for bootstrapping an air-gapped machine:
+
+**Step 1: Download Ollama and models on a connected machine.** Pull all models you plan to use while connected. Ollama stores models in `~/.ollama/models/` on macOS and Linux.
+
+**Step 2: Transfer model files to the air-gapped machine.** Copy the `~/.ollama/models/` directory to the air-gapped machine via USB drive or secure file transfer.
+
+**Step 3: Install extensions from VSIX files.** Download the Continue.dev VSIX package from the GitHub releases page while connected. Install it in VS Code with `code --install-extension continue.vsix`.
+
+**Step 4: Verify the configuration works offline.** Disconnect from the network and test that completions appear. If suggestions fail, check that Ollama is running (`ollama serve`) and that the `api_base` in your config points to `http://localhost:11434`.
+
+
+## Compliance Considerations for Air-Gapped Environments
+
+
+Different compliance frameworks impose specific requirements that affect how you configure local AI tools.
+
+**FedRAMP** environments typically require that no code or data leaves the authorized boundary. Any tool that phones home for telemetry, updates, or model inference fails this requirement regardless of how the vendor characterizes the data. Continue.dev with Ollama passes this test because both components are entirely local and open-source. Tabnine's local mode passes as well, but you must confirm telemetry is disabled in the enterprise configuration.
+
+**SOC 2 Type II** audits require demonstrating that customer data is not transmitted to unapproved third parties. Using a fully local AI completion tool removes intellectual property from the scope of this concern entirely, which simplifies evidence collection and auditor conversations.
+
+**ITAR and EAR** regulated environments often prohibit transmitting technical data to foreign entities or cloud providers. Local models eliminate this risk by ensuring all code stays within the developer's machine.
+
+Document which model you are using, when it was downloaded, and how it is configured. This creates an audit trail that compliance reviewers can verify without requiring access to your development machine.
+
+
 ## Best Practices for Offline AI Code Completion
 
 
@@ -215,7 +277,7 @@ Use project-specific training: Tools like Tabnine improve dramatically after ana
 Consider hybrid approaches: Some tools offer partial offline mode where basic completion works locally while complex suggestions require connectivity. Understand your tool's specific behavior.
 
 
-## Related Articles
+## Related Reading
 
 - [AI Code Completion for Java Jakarta EE Migration from Javax](/ai-tools-compared/ai-code-completion-for-java-jakarta-ee-migration-from-javax-/)
 - [AI Code Completion for Java Record Classes and Sealed Interf](/ai-tools-compared/ai-code-completion-for-java-record-classes-and-sealed-interf/)
