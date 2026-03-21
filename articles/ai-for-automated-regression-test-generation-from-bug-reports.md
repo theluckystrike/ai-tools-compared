@@ -14,7 +14,6 @@ voice-checked: true
 intent-checked: true
 ---
 
-{% raw %}
 Regression testing consumes 30-50% of QA timelines for mature products, yet AI tools can now generate 60-80% of required test cases directly from bug reports. Instead of manually writing test cases for every reported defect, modern AI coding assistants analyze the bug description, root cause, reproduction steps, and existing code to generate test suites that catch regressions in future releases.
 
 This guide shows you how to prompt AI tools effectively for test generation, which tools perform best for different tech stacks, and how to integrate AI-generated tests into your CI/CD pipeline.
@@ -159,6 +158,7 @@ describe('Order Total Calculation - Quantity Overflow Bug (REGRESSION-1247)', ()
 
 Create a workflow that reads new bug reports from your issue tracker and generates tests:
 
+{% raw %}
 ```yaml
 # .github/workflows/generate-regression-tests.yml
 name: Generate Regression Tests
@@ -202,6 +202,7 @@ jobs:
           commit-message: 'test: Add regression tests for issue #${{ github.event.issue.number }}'
           branch: regression-tests/${{ github.event.issue.number }}
 ```
+{% endraw %}
 
 ### 2. Direct Prompt in Development
 
@@ -398,5 +399,3 @@ For these cases, manually write tests or use AI to generate scaffolding that you
 - [Best AI Tool for Cybersecurity Analysts Incident Reports](/ai-tools-compared/best-ai-tool-for-cybersecurity-analysts-incident-reports/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
