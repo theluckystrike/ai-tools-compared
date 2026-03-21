@@ -235,6 +235,93 @@ This is useful for long-running tasks like refactoring an entire repository — 
 
 Use LangGraph when your workflow has more than 2 sequential LLM calls, conditional branching, retry loops, or multiple specialized agents. Use simple LLM calls for one-shot tasks or when latency is critical (graph overhead adds ~50ms).
 
+## Error Handling and Observability
+
+Production LangGraph workflows need proper error handling and logging:
+
+```python
+import logging
+
+logger = logging.getLogger('langgraph_agent')
+
+def safe_node(func):
+    def wrapper(state):
+        try:
+            result = func(state)
+            logger.info(f"Node {func.__name__} completed", extra={
+                'node': func.__name__,
+                'iteration': state.get('iterations', 0)
+            })
+            return result
+        except Exception as e:
+            logger.error(f"Node {func.__name__} failed: {e}", exc_info=True)
+            return {'status': 'failed', 'error': str(e)}
+    return wrapper
+```
+
+## LangGraph vs Alternatives Comparison
+
+| Feature | LangGraph | CrewAI | AutoGen | Custom Code |
+|---------|-----------|--------|---------|-------------|
+| State management | Built-in | Limited | Session-based | Manual |
+| Conditional routing | Native | Agent delegation | Conversation flow | If/else |
+| Checkpointing | SQLite, Postgres | None | None | Manual |
+| Parallel execution | Graph edges | Sequential | Round-robin | asyncio |
+| Learning curve | Moderate | Low | Low | Depends |
+| Debugging | LangSmith integration | Print statements | Logging | Custom |
+
+Choose LangGraph when your workflow needs state persistence, conditional branching, or retry loops. Use simpler tools for linear agent chains or one-shot tasks.
+
+## Production Deployment Tips
+
+1. **Set hard iteration limits.** Always cap the number of retry loops to prevent runaway costs.
+2. **Cache LLM responses.** If the same code appears in multiple runs, cache the AI output by content hash.
+3. **Use streaming for long tasks.** LangGraph supports streaming intermediate state.
+4. **Monitor token usage per node.** Track which nodes consume the most tokens and optimize their prompts.
+5. **Test with deterministic mocks.** Replace LLM calls with recorded responses during unit testing.
+
+## Example: Automated Documentation Generator
+
+Build a graph that reads source code, generates documentation, validates it against the code, and iterates:
+
+```python
+from typing import TypedDict, List
+from langgraph.graph import StateGraph, END
+
+class DocGenState(TypedDict):
+    source_files: List[str]
+    current_file: str
+    generated_docs: str
+    validation_errors: List[str]
+    iteration: int
+
+def read_source(state: DocGenState) -> dict:
+    with open(state['current_file']) as f:
+        code = f.read()
+    response = model.invoke([HumanMessage(
+        content=f"Generate comprehensive docstrings for all functions. "
+                f"Include parameters, return types, and usage examples.\n\n{code}"
+    )])
+    return {'generated_docs': response.content}
+
+def validate_docs(state: DocGenState) -> dict:
+    response = model.invoke([HumanMessage(
+        content=f"Validate these docs against the source code. "
+                f"List any inaccuracies or missing parameters.\n\n"
+                f"Source:\n{open(state['current_file']).read()}\n\n"
+                f"Docs:\n{state['generated_docs']}"
+    )])
+    errors = [l for l in response.content.split('\n') if l.strip().startswith('-')]
+    return {'validation_errors': errors, 'iteration': state['iteration'] + 1}
+
+def should_retry(state: DocGenState) -> str:
+    if not state['validation_errors'] or state['iteration'] >= 2:
+        return 'done'
+    return 'regenerate'
+```
+
+This pattern works for any task where AI output needs verification against a ground truth.
+
 ## Related Reading
 
 - [How to Build an AI-Powered Code Linter](/ai-tools-compared/how-to-build-ai-powered-code-linter/)

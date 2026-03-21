@@ -273,6 +273,53 @@ Implementing AI for API documentation works best with established practices:
 
 5. Version your documentation: Track changes to API contracts over time.
 
+## Measuring Documentation Quality
+
+Track completeness with automated checks:
+
+```python
+import yaml
+
+def audit_openapi_spec(spec_path):
+    with open(spec_path) as f:
+        spec = yaml.safe_load(f)
+    issues = []
+    paths = spec.get('paths', {})
+    for path, methods in paths.items():
+        for method, details in methods.items():
+            if method.startswith('x-'):
+                continue
+            if not details.get('description') and not details.get('summary'):
+                issues.append(f"{method.upper()} {path}: missing description")
+            responses = details.get('responses', {})
+            if not responses:
+                issues.append(f"{method.upper()} {path}: no responses documented")
+            if '400' not in responses and '422' not in responses:
+                issues.append(f"{method.upper()} {path}: missing error response docs")
+    return {
+        "total_endpoints": sum(
+            len([m for m in methods if not m.startswith('x-')])
+            for methods in paths.values()
+        ),
+        "issues": issues,
+        "completeness_score": max(0, 100 - len(issues) * 5)
+    }
+
+result = audit_openapi_spec('openapi.yaml')
+print(f"Completeness: {result['completeness_score']}%")
+```
+
+Run this in CI to prevent undocumented endpoints from reaching production.
+
+## AI Documentation Pitfalls to Avoid
+
+| Pitfall | Consequence | Prevention |
+|---------|-------------|------------|
+| Accepting AI output without review | Inaccurate parameter descriptions | Always verify against source |
+| Missing edge cases | Users discover errors in production | Test each documented example |
+| Stale examples | Code samples that don't compile | Run examples in CI |
+| Generic descriptions | Tells users nothing useful | Require domain-specific language |
+| Missing auth details | Failed API calls | Document auth per endpoint |
 
 ## Related Articles
 

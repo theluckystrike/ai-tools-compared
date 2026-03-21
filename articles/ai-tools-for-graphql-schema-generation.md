@@ -230,6 +230,151 @@ Run this in CI as a check: if the generated schema differs from the committed sc
 
 Claude has an edge on TypeScript-to-GraphQL due to better type inference. GPT-4o shines on SQL schemas with useful derived fields.
 
+## Approach 3: REST API Specification to GraphQL
+
+Converting an existing REST API to GraphQL is another common use case. Feed your OpenAPI/Swagger spec to an AI tool:
+
+**Input (partial OpenAPI):**
+
+```yaml
+paths:
+  /api/v1/orders:
+    get:
+      summary: List orders
+      parameters:
+        - name: status
+          in: query
+          schema:
+            type: string
+            enum: [pending, shipped, delivered, cancelled]
+    post:
+      summary: Create order
+  /api/v1/orders/{id}:
+    get:
+      summary: Get order by ID
+```
+
+**Claude's GraphQL Output:**
+
+```graphql
+enum OrderStatus {
+  PENDING
+  SHIPPED
+  DELIVERED
+  CANCELLED
+}
+
+type Order {
+  id: ID!
+  status: OrderStatus!
+  customer: Customer!
+  items: [OrderItem!]!
+  totalCents: Int!
+  createdAt: DateTime!
+  shippedAt: DateTime
+  deliveredAt: DateTime
+}
+
+type OrderItem {
+  id: ID!
+  product: Product!
+  quantity: Int!
+  unitPriceCents: Int!
+}
+
+input CreateOrderInput {
+  customerId: ID!
+  items: [OrderItemInput!]!
+}
+
+input OrderItemInput {
+  productId: ID!
+  quantity: Int!
+}
+
+type Query {
+  order(id: ID!): Order
+  orders(
+    first: Int = 20
+    after: String
+    status: OrderStatus
+    customerId: ID
+  ): OrderConnection!
+}
+
+type Mutation {
+  createOrder(input: CreateOrderInput!): Order!
+  updateOrderStatus(id: ID!, status: OrderStatus!): Order!
+  cancelOrder(id: ID!): Order!
+}
+```
+
+The AI correctly consolidated the REST endpoints into a single `orders` query with filter arguments, added relay-style pagination, and created separate mutation types for status updates versus full order creation.
+
+## Handling Edge Cases in AI-Generated Schemas
+
+AI-generated schemas need manual review for several common issues:
+
+### Circular References
+
+When types reference each other (User -> Posts -> Author -> Posts), AI tools sometimes create infinite nesting. Add connection types with explicit depth limits:
+
+```graphql
+# Better: use connections with explicit pagination
+type User {
+  posts(first: Int = 10, after: String): PostConnection!
+}
+```
+
+### Custom Scalar Validation
+
+AI tools suggest custom scalars but don't generate the validation logic. You need server-side implementations:
+
+```typescript
+import { GraphQLScalarType, Kind } from 'graphql';
+
+const DateTimeScalar = new GraphQLScalarType({
+  name: 'DateTime',
+  description: 'ISO 8601 date-time string',
+  serialize(value: Date) {
+    return value.toISOString();
+  },
+  parseValue(value: string) {
+    const date = new Date(value);
+    if (isNaN(date.getTime())) throw new Error('Invalid DateTime');
+    return date;
+  },
+  parseLiteral(ast) {
+    if (ast.kind === Kind.STRING) {
+      return new Date(ast.value);
+    }
+    return null;
+  },
+});
+```
+
+### N+1 Query Prevention
+
+AI-generated schemas often create relationships that trigger N+1 queries. Use DataLoader for batch resolution of related entities.
+
+## Pros and Cons of AI Schema Generation
+
+| Aspect | Pros | Cons |
+|--------|------|------|
+| Speed | 80-90% of schema in seconds | Still needs manual review |
+| Consistency | Follows conventions uniformly | May miss domain-specific patterns |
+| Pagination | Usually adds relay connections correctly | Sometimes over-engineers simple lists |
+| Input types | Good at separating create vs update inputs | May not understand business validation rules |
+| Naming | Follows GraphQL conventions | May not match your team's naming standards |
+
+## Best Practices for Production Use
+
+1. **Always review nullable fields.** AI tends to make too many fields nullable or not enough.
+2. **Validate against your database constraints.** The AI doesn't know your constraints unless you provide the schema.
+3. **Add field-level descriptions.** AI-generated descriptions are often generic.
+4. **Test with real queries.** Generate sample queries and verify they produce expected results.
+5. **Version your schema.** Store the AI-generated schema in version control.
+
 ## Related Reading
 
 - [AI Coding Assistants for TypeScript GraphQL Resolver and Schema](/ai-tools-compared/ai-coding-assistants-for-typescript-graphql-resolver-and-schema-generation-2026/)

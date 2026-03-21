@@ -306,4 +306,63 @@ For enterprise managers (50+ properties): Custom enterprise plans with direct AP
 
 Revenue impact typically justifies costs within 2-3 months through occupancy rate and ADR improvements.
 
+## Setting Up Automated Price Updates
+
+Manually applying pricing recommendations defeats the purpose of AI. Set up automated price synchronization:
+
+```python
+import requests
+from datetime import datetime, timedelta
+
+class AirbnbPriceSync:
+    def __init__(self, airbnb_token, pricing_api_key):
+        self.airbnb_token = airbnb_token
+        self.pricing_api_key = pricing_api_key
+
+    def get_recommendations(self, property_id, days_ahead=90):
+        url = f"https://api.pricelabs.example/v2/properties/{property_id}/calendar"
+        headers = {"Authorization": f"Bearer {self.pricing_api_key}"}
+        params = {
+            "start_date": datetime.now().isoformat(),
+            "end_date": (datetime.now() + timedelta(days=days_ahead)).isoformat()
+        }
+        response = requests.get(url, headers=headers, params=params)
+        return response.json()["dates"]
+
+    def apply_prices(self, listing_id, price_data):
+        url = f"https://api.airbnb.com/v2/calendars/{listing_id}"
+        headers = {"Authorization": f"Bearer {self.airbnb_token}"}
+        for date_entry in price_data:
+            payload = {
+                "date": date_entry["date"],
+                "price": date_entry["recommended_price"],
+                "minimum_stay": date_entry.get("min_stay", 1)
+            }
+            requests.put(url, json=payload, headers=headers)
+```
+
+Run this sync daily to keep prices current with market conditions.
+
+## Common Pricing Mistakes to Avoid
+
+Even with AI tools, hosts make predictable errors:
+
+| Mistake | Why It Hurts | Fix |
+|---------|-------------|-----|
+| Ignoring minimum stay rules | Leaves gaps between bookings | Set dynamic minimums based on demand |
+| Same price weekday/weekend | Underprices Friday-Saturday | Enable day-of-week adjustments |
+| No orphan day pricing | Single-night gaps go unbooked | Drop price 20-30% for orphan nights |
+| Manual overrides without data | Gut feelings underperform algorithms | Trust the AI for 90% of decisions |
+| Seasonal pricing only | Misses event-driven demand | Enable local event calendar integration |
+
+The most successful hosts let AI handle 90% of pricing decisions and only override for known local events or personal booking blocks.
+
+## Measuring Pricing Performance
+
+Track these metrics monthly to evaluate your AI pricing tool:
+
+- **RevPAR (Revenue Per Available Room)**: Total revenue divided by total available nights. This single metric captures both pricing and occupancy performance.
+- **Booking Lead Time**: How far in advance guests book. Shorter lead times may indicate underpricing; very long lead times suggest you could price higher.
+- **Occupancy Rate vs. Market Average**: Compare your occupancy to similar listings in your area. Healthy occupancy sits between 70-85% -- above 90% often means you are leaving money on the table.
+
 {% endraw %}
