@@ -9,7 +9,7 @@ permalink: /chatgpt-voice-mode-advanced-does-it-use-extra-credits-or-free/
 categories: [guides]
 tags: [ai-tools-compared, tools, advanced, chatgpt]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
