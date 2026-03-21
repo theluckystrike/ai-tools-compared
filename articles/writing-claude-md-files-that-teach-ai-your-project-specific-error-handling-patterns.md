@@ -171,6 +171,117 @@ This project uses TypeScript with a focus on explicit error handling.
 ```
 
 
+## Teaching the AI Your Result Type Pattern
+
+
+If your project uses a Result type instead of exceptions, show Claude Code exactly what the type looks like and how to use it. Generic descriptions produce generic code; concrete examples produce idiomatic code.
+
+
+```markdown
+### Result Type Usage
+
+This project uses a custom Result type. Always import from `@/lib/result`.
+
+```typescript
+import { Result, ok, err } from '@/lib/result';
+
+// Return ok() for success
+async function fetchUser(id: string): Promise<Result<User, UserError>> {
+  const row = await db.users.findById(id);
+  if (!row) return err(new UserError('ERR_USER_NOT_FOUND', id));
+  return ok(mapRowToUser(row));
+}
+
+// Callers use .match() or early return with isErr()
+const result = await fetchUser(userId);
+if (result.isErr()) {
+  logger.warn('user lookup failed', { error: result.error });
+  return res.status(404).json({ error: result.error.toResponse() });
+}
+const user = result.value;
+```
+
+Never throw inside functions that return Result. Catch all exceptions at service boundaries and convert them to err() values.
+```
+
+
+This level of specificity—showing the actual import path, method names, and call site patterns—produces far better alignment than a paragraph description alone.
+
+
+## Showing Before/After Examples Inline
+
+
+One of the most effective techniques is including explicit "do this / not that" examples in the CLAUDE.md file for error handling patterns that you see violated repeatedly.
+
+
+```markdown
+### Common Mistakes to Avoid
+
+**Do not catch and swallow errors silently:**
+```typescript
+// WRONG
+try {
+  await sendEmail(user.email, template);
+} catch (e) {
+  // do nothing
+}
+
+// CORRECT
+try {
+  await sendEmail(user.email, template);
+} catch (e) {
+  logger.error('email send failed', { userId: user.id, error: e });
+  throw new NotificationError('ERR_EMAIL_SEND_FAILED', { cause: e });
+}
+```
+
+**Do not expose raw error messages to API consumers:**
+```typescript
+// WRONG
+res.status(500).json({ error: e.message });
+
+// CORRECT
+logger.error('unexpected error', { requestId, error: e });
+res.status(500).json({ error: { code: 'ERR_INTERNAL', message: 'Something went wrong.' } });
+```
+```
+
+
+Claude Code treats these examples as strong signals. When it sees the WRONG pattern in your existing codebase, it will flag it; when generating new code, it will follow the CORRECT pattern.
+
+
+## Layering Error Handling for Different Architectural Tiers
+
+
+Most full-stack projects have distinct error handling needs at each tier: the API layer, the service layer, and the data layer. If your CLAUDE.md treats all three identically, the AI will apply a one-size-fits-all pattern that fits none of them well.
+
+
+Document each tier explicitly:
+
+
+```markdown
+### Error Handling by Layer
+
+**Data layer (repositories):**
+- Catch DB driver exceptions and wrap in `DatabaseError`
+- Never let Postgres/MySQL error codes leak past the repository boundary
+- Return null for not-found rather than throwing
+
+**Service layer:**
+- Translate repository nulls into domain errors (`UserNotFoundError`)
+- Orchestrate retry logic here, not in routes
+- Use Result types for expected business rule failures
+
+**API layer (routes/controllers):**
+- Convert domain errors to HTTP responses using `errorToHttpResponse()`
+- Log with request context (method, path, user ID, correlation ID)
+- Always return a structured JSON body, never a bare string
+```
+
+
+With this structure, Claude Code knows to generate `return null` in a repository function but `return err(new UserNotFoundError(id))` in the service that calls it—matching the actual conventions in your codebase.
+
+
 ## Testing Your Error Handling Instructions
 
 
