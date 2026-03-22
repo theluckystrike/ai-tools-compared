@@ -195,6 +195,65 @@ npx changeset version 2>&1 | \
   -d '{"model": "codellama", "prompt": "Format this as a clean changelog:", "stream": false}'
 ```
 
+## Tool Comparison: AI Commit and Changelog Tools
+
+| Tool | Commit Message Gen | Changelog Output | Privacy | Cost |
+|------|-------------------|-----------------|---------|------|
+| GitHub Copilot | Yes (IDE + CLI) | No (needs release-please) | Cloud | $10-19/mo |
+| Aider | Yes (built-in) | No | Cloud/Local | Free + API costs |
+| Ollama + codellama | Yes (custom scripts) | Via scripts | Local (private) | Free |
+| release-please | No | Yes (GitHub Actions) | Cloud | Free |
+| Changesets | No | Yes | Self-hosted | Free |
+| git-cliff | No | Yes (rule-based) | Local | Free |
+
+For teams with strict data privacy requirements, the Ollama approach offers commit message generation without sending diffs to external APIs. Codellama 13B handles conventional commit generation accurately for most common change types — new files, modified functions, dependency updates. Larger changes with multiple files benefit from the 34B parameter model if you have the hardware.
+
+For teams comfortable with cloud AI, GitHub Copilot provides the smoothest developer experience because it integrates directly into VS Code and JetBrains IDEs without any scripting. The commit message appears in the commit input field as a suggestion, requiring only Tab to accept.
+
+## Integrating git-cliff for Rule-Based Changelog Generation
+
+`git-cliff` is an underused tool that deserves mention alongside AI-powered options. It parses conventional commits using a configurable template engine and produces formatted changelogs without requiring AI at runtime. This makes it fast, deterministic, and free:
+
+```bash
+# Install git-cliff
+cargo install git-cliff
+# or via brew
+brew install git-cliff
+```
+
+Configure it with a `cliff.toml` file:
+
+```toml
+[changelog]
+header = "# Changelog\n"
+body = """
+{% for group, commits in commits | group_by(attribute="group") %}
+## {{ group | upper_first }}\n
+{% for commit in commits %}
+- {{ commit.message | upper_first }} ([{{ commit.id | truncate(length=7, end="") }}]({{ commit.id }}))
+{% endfor %}
+{% endfor %}
+"""
+
+[git]
+conventional_commits = true
+filter_unconventional = true
+commit_parsers = [
+  { message = "^feat", group = "Features" },
+  { message = "^fix", group = "Bug Fixes" },
+  { message = "^docs", group = "Documentation" },
+  { message = "^chore", group = "Maintenance" },
+]
+```
+
+Run it against your tag range:
+
+```bash
+git-cliff v1.0.0..HEAD --output CHANGELOG.md
+```
+
+The practical workflow combines both approaches: use an AI tool (Copilot or Ollama) to write high-quality conventional commits at the point of development, then use `git-cliff` at release time to aggregate those commits into a formatted changelog. AI handles the creative work of describing what changed; `git-cliff` handles the mechanical work of organizing it.
+
 ## Best Practices for AI-Assisted Changelog Workflow
 
 **Validate commit messages.** Use `commitlint` to ensure AI-generated commits follow your conventions:
@@ -206,6 +265,10 @@ npx commitlint --from HEAD~1 --to HEAD --format conventional
 **Review before committing.** AI makes mistakes. Always review suggested commit messages and adjust if needed.
 
 **Provide context.** When using AI for commit messages, include issue numbers or PR context in your prompts for more accurate suggestions.
+
+**Use scopes consistently.** The `scope` field in conventional commits (`feat(auth): ...`) dramatically improves changelog readability. Establish a list of valid scopes for your project and include them in your AI prompts.
+
+**Automate the release PR.** release-please creates a release PR automatically when merged commits accumulate enough changelog-worthy changes. Pair this with AI-generated commit messages to create a fully automated release documentation pipeline that requires human approval but no manual writing.
 
 **Train your model.** If using local models like Ollama, provide feedback on commit suggestions to improve accuracy over time.
 
