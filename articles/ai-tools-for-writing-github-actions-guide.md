@@ -39,21 +39,6 @@ Write a GitHub Actions workflow for a Node.js monorepo. Requirements:
 - On push to main only: build Docker image, push to ECR using OIDC (no stored AWS keys)
 - Fail fast: false for the matrix
 - Concurrency: cancel in-progress runs on the same branch
-# Best AI Tools for Writing GitHub Actions
-
-GitHub Actions YAML is verbose and error-prone. Security hardening, matrix builds, composite actions, and OIDC authentication patterns are tedious to write manually. AI tools excel at generating the boilerplate and catching common mistakes like insecure checkout practices or missing permissions.
-
-## Basic Workflow Generation
-
-**Prompt to Claude:**
-```text
-Write a GitHub Actions workflow that:
-- Triggers on push to main and pull requests
-- Runs on ubuntu-latest
-- Checks out code, sets up Node.js 20, installs dependencies with npm ci
-- Runs linting and tests
-- Only builds on main branch
-Use strict permissions: contents read, checks write.
 ```
 
 **Claude output:**
@@ -62,278 +47,83 @@ Use strict permissions: contents read, checks write.
 name: CI
 
 on:
- push:
- branches: [main, 'release/**']
- pull_request:
- branches: [main]
+  push:
+    branches: [main, 'release/**']
+  pull_request:
+    branches: [main]
 
 concurrency:
- group: ${{ github.workflow }}-${{ github.ref }}
- cancel-in-progress: true
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
- test:
- name: Test (Node ${{ matrix.node-version }} / ${{ matrix.os }})
- runs-on: ${{ matrix.os }}
- strategy:
- fail-fast: false
- matrix:
- node-version: ['18', '20', '22']
- os: [ubuntu-latest, windows-latest]
+  test:
+    name: Test (Node ${{ matrix.node-version }} / ${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: ['18', '20', '22']
+        os: [ubuntu-latest, windows-latest]
 
- steps:
- - uses: actions/checkout@v4
+    steps:
+      - uses: actions/checkout@v4
 
- - name: Setup Node.js ${{ matrix.node-version }}
- uses: actions/setup-node@v4
- with:
- node-version: ${{ matrix.node-version }}
- cache: npm
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
 
- - name: Install dependencies
- run: npm ci
+      - name: Install dependencies
+        run: npm ci
 
- - name: Run tests with coverage
- run: npm run test:coverage
+      - name: Run tests with coverage
+        run: npm run test:coverage
 
- - name: Upload coverage to Codecov
- if: matrix.os == 'ubuntu-latest' && matrix.node-version == '20'
- uses: codecov/codecov-action@v4
- with:
- token: ${{ secrets.CODECOV_TOKEN }}
- fail_ci_if_error: true
+      - name: Upload coverage to Codecov
+        if: matrix.os == 'ubuntu-latest' && matrix.node-version == '20'
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: true
 
- build-and-push:
- name: Build and Push to ECR
- needs: test
- if: github.ref == 'refs/heads/main' && github.event_name == 'push'
- runs-on: ubuntu-latest
- permissions:
- id-token: write # Required for OIDC
- contents: read
-name: Tests and Linting
-on:
- push:
- branches: [main]
- pull_request:
+  build-and-push:
+    name: Build and Push to ECR
+    needs: test
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write   # Required for OIDC
+      contents: read
 
-permissions:
- contents: read
- checks: write
+    steps:
+      - uses: actions/checkout@v4
 
-jobs:
- test:
- runs-on: ubuntu-latest
- steps:
- - uses: actions/checkout@v4
- with:
- fetch-depth: 0 # full history for better linting
+      - name: Configure AWS credentials via OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ECR_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
 
- - uses: actions/setup-node@v4
- with:
- node-version: '20'
- cache: 'npm'
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v2
 
- - run: npm ci
- - run: npm run lint
- - run: npm test
-
- build:
- runs-on: ubuntu-latest
- if: github.ref == 'refs/heads/main'
- needs: test
- steps:
- - uses: actions/checkout@v4
- - uses: actions/setup-node@v4
- with:
- node-version: '20'
- cache: 'npm'
- - run: npm ci
- - run: npm run build
- - uses: actions/upload-artifact@v4
- with:
- name: dist
- path: dist/
-```
-
-Claude adds `fetch-depth: 0` (needed by some linters), uses `npm ci` instead of `npm install` (correct for CI), and includes the `cache: 'npm'` line that saves ~30 seconds per run. It also sets strict permissions instead of the default `contents: write`.
-
-## Matrix Builds
-
-**Prompt:**
-```text
-Write a GitHub Actions matrix build for a Python package.
-Test on Python 3.9, 3.10, 3.11, 3.12 and OS: ubuntu-latest, windows-latest, macos-latest.
-Skip Python 3.9 on Windows (not supported). Use uv for dependency management.
-Include coverage report upload to Codecov.
-```
-
-**Claude output:**
-
-```yaml
-name: Matrix Tests
-on: [push, pull_request]
-
-permissions:
- contents: read
-
-jobs:
- test:
- strategy:
- matrix:
- os: [ubuntu-latest, windows-latest, macos-latest]
- python-version: ['3.9', '3.10', '3.11', '3.12']
- exclude:
- - os: windows-latest
- python-version: '3.9'
-
- runs-on: ${{ matrix.os }}
- steps:
- - uses: actions/checkout@v4
-
- - uses: astral-sh/setup-uv@v2
- with:
- python-version: ${{ matrix.python-version }}
-
- - run: uv sync
- - run: uv run pytest --cov=src tests/
- - run: uv run coverage xml
-
- - uses: codecov/codecov-action@v3
- with:
- files: coverage.xml
- flags: unittests
- os: ${{ matrix.os }}
- python-version: ${{ matrix.python-version }}
-```
-
-Claude uses `exclude` to skip the 3.9-on-Windows combination and includes `python-version` in the Codecov upload flags so reports are grouped correctly.
-
-## Composite Actions (Reusable Steps)
-
-**Prompt:**
-```text
-Write a composite GitHub Action that:
-- Checks out the code
-- Sets up Node.js with npm cache
-- Installs dependencies
-- Runs ESLint and Prettier
-
-The action should accept inputs: node-version (default 20), and cache-enabled (default true).
-Use it from a main workflow.
-```
-
-**Claude output (action.yml):**
-
-```yaml
-name: Setup and Lint
-description: Check out, install, and lint a Node.js project
-inputs:
- node-version:
- description: Node.js version
- required: false
- default: '20'
- cache-enabled:
- description: Enable npm cache
- required: false
- default: 'true'
-
-runs:
- using: composite
- steps:
- - uses: actions/checkout@v4
-
- - uses: actions/setup-node@v4
- with:
- node-version: ${{ inputs.node-version }}
- cache: ${{ inputs.cache-enabled == 'true' && 'npm' || '' }}
-
- - run: npm ci
- shell: bash
-
- - run: npm run lint
- shell: bash
-
- - run: npm run format:check
- shell: bash
-```
-
-**Usage in main workflow:**
-
-```yaml
-jobs:
- check:
- runs-on: ubuntu-latest
- steps:
- - uses: ./.github/actions/setup-and-lint
- with:
- node-version: '20'
- cache-enabled: 'true'
-```
-
-Claude correctly uses `shell: bash` in composite actions (required) and shows how to conditionally set the cache parameter.
-
-## OIDC Authentication and Token Exchange
-
-**Prompt:**
-```text
-Write a GitHub Actions workflow that:
-- Authenticates to AWS using OIDC (no static credentials)
-- Assumes a role with proper trust policy
-- Pushes a Docker image to ECR
-Include the AWS trust policy configuration.
-```
-
-**Claude output (workflow):**
-
-```yaml
-name: Build and Push to ECR
-on:
- push:
- branches: [main]
-
-permissions:
- id-token: write
- contents: read
-
-env:
- AWS_REGION: us-east-1
- ECR_REGISTRY: 123456789.dkr.ecr.us-east-1.amazonaws.com
- ECR_REPOSITORY: myapp
-
-jobs:
- build:
- runs-on: ubuntu-latest
- outputs:
- image: ${{ steps.image.outputs.image }}
-
- steps:
- - uses: actions/checkout@v4
-
- - name: Configure AWS credentials via OIDC
- uses: aws-actions/configure-aws-credentials@v4
- with:
- role-to-assume: ${{ secrets.AWS_ECR_ROLE_ARN }}
- aws-region: ${{ vars.AWS_REGION }}
-
- - name: Login to Amazon ECR
- id: login-ecr
- uses: aws-actions/amazon-ecr-login@v2
-
- - name: Build and push Docker image
- env:
- REGISTRY: ${{ steps.login-ecr.outputs.registry }}
- REPOSITORY: my-app
- IMAGE_TAG: ${{ github.sha }}
- run: |
- docker build \
- --label "git-commit=${{ github.sha }}" \
- --label "built-by=github-actions" \
- -t $REGISTRY/$REPOSITORY:$IMAGE_TAG \
- -t $REGISTRY/$REPOSITORY:latest \
- .
- docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
- docker push $REGISTRY/$REPOSITORY:latest
+      - name: Build and push Docker image
+        env:
+          REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          REPOSITORY: my-app
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          docker build \
+            --label "git-commit=${{ github.sha }}" \
+            --label "built-by=github-actions" \
+            -t $REGISTRY/$REPOSITORY:$IMAGE_TAG \
+            -t $REGISTRY/$REPOSITORY:latest \
+            .
+          docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
+          docker push $REGISTRY/$REPOSITORY:latest
 ```
 
 Key things Claude gets right automatically:
@@ -362,39 +152,39 @@ name: Setup and Build
 description: Install dependencies and build the project
 
 inputs:
- node-version:
- description: Node.js version to use
- required: false
- default: '20'
- working-directory:
- description: Directory containing package.json
- required: false
- default: '.'
+  node-version:
+    description: Node.js version to use
+    required: false
+    default: '20'
+  working-directory:
+    description: Directory containing package.json
+    required: false
+    default: '.'
 
 outputs:
- cache-hit:
- description: Whether the cache was restored
- value: ${{ steps.cache.outputs.cache-hit }}
+  cache-hit:
+    description: Whether the cache was restored
+    value: ${{ steps.cache.outputs.cache-hit }}
 
 runs:
- using: composite
- steps:
- - name: Setup Node.js
- uses: actions/setup-node@v4
- with:
- node-version: ${{ inputs.node-version }}
- cache: npm
- cache-dependency-path: ${{ inputs.working-directory }}/package-lock.json
+  using: composite
+  steps:
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ inputs.node-version }}
+        cache: npm
+        cache-dependency-path: ${{ inputs.working-directory }}/package-lock.json
 
- - name: Install dependencies
- shell: bash
- working-directory: ${{ inputs.working-directory }}
- run: npm ci
+    - name: Install dependencies
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      run: npm ci
 
- - name: Build
- shell: bash
- working-directory: ${{ inputs.working-directory }}
- run: npm run build
+    - name: Build
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      run: npm run build
 ```
 
 The `shell: bash` is required in composite actions — Claude includes it; many AI tools omit it, causing failures on Windows runners.
@@ -457,19 +247,19 @@ For production workflows, add these hardening steps that Claude applies correctl
 
 ```yaml
 # Pin all actions to full commit SHA, not tags
-- uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+- uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
 
 # Minimal permissions — override per-job
 permissions:
- contents: read
+  contents: read
 
 # Prevent script injection via environment variables
 - name: Process user input safely
- env:
- USER_INPUT: ${{ github.event.pull_request.title }}
- run: |
- # Never interpolate github context directly into run commands
- echo "PR title length: ${#USER_INPUT}"
+  env:
+    USER_INPUT: ${{ github.event.pull_request.title }}
+  run: |
+    # Never interpolate github context directly into run commands
+    echo "PR title length: ${#USER_INPUT}"
 ```
 
 The script injection pattern — interpolating `${{ github.event.pull_request.title }}` directly into a `run` block — is a common vulnerability that Copilot frequently generates. Claude warns about this and uses environment variable indirection instead.
@@ -500,47 +290,33 @@ Copilot frequently generates `permissions: write-all` or omits permissions entir
 
 ```yaml
 jobs:
- generate-matrix:
- runs-on: ubuntu-latest
- outputs:
- matrix: ${{ steps.set-matrix.outputs.matrix }}
- steps:
- - uses: actions/checkout@v4
- - id: set-matrix
- run: |
- # Build matrix dynamically from changed services
- SERVICES=$(git diff --name-only HEAD~1 HEAD | grep '^services/' | cut -d/ -f2 | sort -u | jq -R . | jq -sc .)
- echo "matrix={\"service\":$SERVICES}" >> $GITHUB_OUTPUT
-
- build-services:
- needs: generate-matrix
- if: ${{ needs.generate-matrix.outputs.matrix != '{"service":[]}' }}
- strategy:
- matrix: ${{ fromJson(needs.generate-matrix.outputs.matrix) }}
- runs-on: ubuntu-latest
- steps:
- - uses: actions/checkout@v4
- - name: Build ${{ matrix.service }}
- run: docker build services/${{ matrix.service }}
-```
-
-### Handling Empty Dynamic Matrices
-
-The `if` condition on `build-services` guards against an empty matrix — a case that causes a confusing workflow failure without it. Claude includes this guard automatically. The condition checks whether the `service` array is empty after the `generate-matrix` job runs.
-
-One edge case Claude handles correctly: when `git diff HEAD~1 HEAD` runs on the initial commit (no `HEAD~1`), it errors out. Claude adds `|| true` or fetches with `--depth=2` to handle shallow clones:
-
-```yaml
+  generate-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 2  # Required for git diff HEAD~1
-
+          fetch-depth: 2
       - id: set-matrix
         run: |
           SERVICES=$(git diff --name-only HEAD~1 HEAD 2>/dev/null | grep '^services/' | cut -d/ -f2 | sort -u | jq -R . | jq -sc .)
           SERVICES=${SERVICES:-'[]'}
           echo "matrix={\"service\":$SERVICES}" >> $GITHUB_OUTPUT
+
+  build-services:
+    needs: generate-matrix
+    if: ${{ needs.generate-matrix.outputs.matrix != '{"service":[]}' }}
+    strategy:
+      matrix: ${{ fromJson(needs.generate-matrix.outputs.matrix) }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build ${{ matrix.service }}
+        run: docker build services/${{ matrix.service }}
 ```
+
+The `if` condition on `build-services` guards against an empty matrix — a case that causes a confusing workflow failure without it. Claude includes this guard and the `fetch-depth: 2` for shallow clone compatibility. Copilot omits both.
 
 ## Caching Strategies
 
@@ -579,7 +355,60 @@ Claude differentiates between caching approaches based on package manager and mo
     restore-keys: ${{ runner.os }}-pnpm-
 ```
 
-Copilot defaults to the npm built-in cache even when the project uses pnpm or yarn, requiring a manual correction.
+Copilot defaults to the npm built-in cache even when the project uses pnpm or yarn, requiring a manual correction. Claude asks which package manager you're using before generating the caching block when the prompt is ambiguous.
+
+## Environment and Variable Handling
+
+Claude correctly distinguishes between `secrets`, `vars`, and `env` contexts — a source of confusion for developers new to Actions:
+
+- `secrets.NAME` — encrypted, masked in logs, set in repository or organization settings
+- `vars.NAME` — unencrypted configuration variables, visible in logs, suitable for non-sensitive config
+- `env.NAME` — workflow-level or job-level environment variables defined in the YAML itself
+
+```yaml
+env:
+  APP_ENV: production        # Hardcoded in YAML — visible in source
+  API_URL: ${{ vars.API_URL }}  # From repository variables — unencrypted
+
+jobs:
+  deploy:
+    env:
+      DB_PASSWORD: ${{ secrets.DB_PASSWORD }}  # Encrypted secret — masked
+    steps:
+      - name: Deploy
+        run: ./deploy.sh
+        env:
+          STEP_ONLY_VAR: value  # Step-scoped, overrides job-level if same name
+```
+
+Copilot frequently uses `secrets` for non-sensitive configuration (like AWS region or image tag prefix) and `env` for values that should be secrets. Claude recommends `vars` for the former and `secrets` for the latter, keeping the secrets store lean.
+
+### Output Variables Between Jobs
+
+Passing data between jobs requires the `outputs` pattern. Claude generates this correctly; Copilot sometimes uses artifacts for simple scalar values:
+
+```yaml
+jobs:
+  version:
+    runs-on: ubuntu-latest
+    outputs:
+      tag: ${{ steps.tag.outputs.tag }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: tag
+        run: |
+          TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.0.0")
+          echo "tag=$TAG" >> $GITHUB_OUTPUT
+
+  build:
+    needs: version
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use version tag
+        run: echo "Building version ${{ needs.version.outputs.tag }}"
+```
+
+The `>> $GITHUB_OUTPUT` pattern replaced `set-output` commands in 2022. Claude uses the current syntax; older GPT-4 responses sometimes still generate the deprecated `::set-output name=tag::` form, which now causes a warning and will eventually fail.
 
 ## Related Articles
 
@@ -587,107 +416,6 @@ Copilot defaults to the npm built-in cache even when the project uses pnpm or ya
 - [Best AI Tools for Writing Makefiles](/best-ai-tools-for-writing-makefiles-2026/)
 - [AI Tools for Automated Migration Testing](/ai-tools-for-automated-migration-testing-2026/)
 - [AI Tools for Writing GitHub Actions Workflows (2026)](/ai-tools-compared/ai-tools/best-ai-tools-for-github-actions-workflows/)
-          role-to-assume: arn:aws:iam::123456789:role/github-actions-role
-          aws-region: ${{ env.AWS_REGION }}
-
-      - name: Login to Amazon ECR
-        run: aws ecr get-login-password --region ${{ env.AWS_REGION }} | docker login --username AWS --password-stdin ${{ env.ECR_REGISTRY }}
-
-      - name: Build Docker image
-        run: docker build -t ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:${{ github.sha }} .
-
-      - name: Push to ECR
-        id: image
-        run: |
-          docker push ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:${{ github.sha }}
-          echo "image=${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:${{ github.sha }}" >> $GITHUB_OUTPUT
-```
-
-**AWS IAM Trust Policy:**
-
-```json
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Principal": {
-        "Federated": "arn:aws:iam::123456789:oidc-provider/token.actions.githubusercontent.com"
-      },
-      "Action": "sts:AssumeRoleWithWebIdentity",
-      "Condition": {
-        "StringEquals": {
-          "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
-          "token.actions.githubusercontent.com:sub": "repo:myorg/myrepo:ref:refs/heads/main"
-        }
-      }
-    }
-  ]
-}
-```
-
-Claude includes the `id-token: write` permission (required for OIDC) and shows the correct trust policy syntax with both `aud` and `sub` conditions.
-
-## Secrets Management Best Practices
-
-**Prompt:**
-```text
-Show me how to:
-- Use GitHub Secrets in a workflow
-- Encrypt sensitive data
-- Pass secrets to Docker builds without exposing in logs
-- Rotate secrets safely
-```
-
-Claude's explanation includes:
-
-```bash
-# In your workflow, use ${{ secrets.SECRET_NAME }}
-# GitHub automatically masks the value in logs
-
-# For Docker build secrets (BuildKit):
-docker build \
-  --secret DATABASE_PASSWORD \
-  --build-arg REGISTRY_URL=${{ secrets.REGISTRY_URL }} \
-  .
-
-# Dockerfile (with buildkit syntax):
-# syntax=docker/dockerfile:1
-FROM ubuntu
-RUN --mount=type=secret,id=DATABASE_PASSWORD \
-  cat /run/secrets/DATABASE_PASSWORD
-```
-
-Never echo secrets or print them to logs. GitHub masks known secrets but not dynamic ones. Rotate regularly — set an expiration date for long-lived secrets.
-
-## Tool Comparison
-
-| Task | Claude | ChatGPT |
-|------|--------|---------|
-| Basic workflows | Excellent | Excellent |
-| Matrix builds with exclusions | Handles correctly | Sometimes wrong |
-| Composite action inputs | Correct shell handling | Omits shell directive |
-| OIDC trust policy JSON | Accurate syntax | Incomplete |
-| Permission scoping | Strict (reads=read, checks=write) | Often too permissive |
-| Secrets handling | Honest about limitations | Sometimes unsafe advice |
-| Caching (npm, pip, etc) | Includes by default | Sometimes omitted |
-
-## Common Mistakes to Avoid
-
-Claude catches these automatically:
-- Using `actions/checkout@v3` (old) instead of `v4`
-- Running `npm install` in CI (use `npm ci`)
-- Using `permissions: write-all` (overly permissive)
-- Forgetting `id-token: write` for OIDC workflows
-- Using `pull_request` without specifying `branches:` on `push` (triggers on every branch)
-
-## Related Reading
-
-- [Best AI Tools for Writing GitHub Actions Matrix Build Strategies](/ai-tools-compared/best-ai-tools-for-writing-github-actions-matrix-build-strate/)
-- [Best AI Tools for Writing Kubernetes Custom Resource Definitions](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-custom-resource-definitions-2026/)
-- [AI Assistants for Writing Correct AWS IAM Policies](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
-
----
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
