@@ -28,6 +28,9 @@ The Model Context Protocol defines how AI assistants communicate with external t
 An MCP server acts as a bridge between the AI and your internal systems. When a developer asks an AI assistant about a specific package, version requirements, or API documentation, the MCP server retrieves that information from your documentation sources and returns it in a format the AI can process.
 
 
+MCP uses a JSON-RPC 2.0 transport over stdio or HTTP/SSE. The protocol defines three primitive types that servers can expose: **tools** (callable functions), **resources** (readable data sources), and **prompts** (reusable templates). For a package registry documentation server, you primarily use tools for search and retrieval and resources for exposing package metadata files directly.
+
+
 ## Prerequisites and Initial Setup
 
 
@@ -45,6 +48,37 @@ npm install @modelcontextprotocol/sdk typescript @types/node
 
 
 The SDK provides the core classes needed to implement an MCP server. TypeScript ensures type safety throughout your implementation.
+
+
+Configure your TypeScript compiler:
+
+
+```json
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "node16",
+    "moduleResolution": "node16",
+    "outDir": "./dist",
+    "strict": true,
+    "esModuleInterop": true
+  },
+  "include": ["src/**/*"]
+}
+```
+
+Add build scripts to `package.json`:
+
+```json
+{
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/server.js"
+  },
+  "type": "module"
+}
+```
 
 
 ## Creating the MCP Server Implementation
@@ -158,6 +192,53 @@ await server.connect(transport);
 This server exposes two tools that AI assistants can call: `get_package_docs` retrieves documentation for a specific package, and `search_packages` allows searching across your registry.
 
 
+## Adding a Third Tool: List Available Packages
+
+
+Extend the server with a listing tool so developers can discover what packages exist without knowing exact names:
+
+
+```typescript
+// Add to the tools array in ListToolsRequestSchema handler
+{
+  name: 'list_packages',
+  description: 'List all available packages in the internal registry with brief descriptions',
+  inputSchema: {
+    type: 'object',
+    properties: {
+      limit: {
+        type: 'number',
+        description: 'Maximum number of results to return (default 20)',
+      },
+      offset: {
+        type: 'number',
+        description: 'Pagination offset',
+      },
+    },
+    required: [],
+  },
+}
+
+// Add handler in CallToolRequestSchema handler
+if (name === 'list_packages') {
+  const limit = (args.limit as number) ?? 20;
+  const offset = (args.offset as number) ?? 0;
+
+  const response = await fetch(
+    `${process.env.REGISTRY_URL}/api/packages?limit=${limit}&offset=${offset}`
+  );
+  const packages = await response.json();
+
+  return {
+    content: [{
+      type: 'text',
+      text: JSON.stringify(packages, null, 2),
+    }],
+  };
+}
+```
+
+
 ## Configuring Your AI Assistant
 
 
@@ -179,7 +260,15 @@ After implementing the server, you need to configure your AI assistant to use it
 ```
 
 
-The exact configuration varies depending on your AI assistant. Claude Code, Cursor, and other popular assistants each have their own configuration format. Consult your assistant's documentation for the specific syntax required.
+The exact configuration varies depending on your AI assistant. Claude Code stores its MCP configuration in `~/.claude/settings.json` under the `mcpServers` key. Cursor uses `.cursor/mcp.json` in your project root. Consult your assistant's documentation for the specific syntax required.
+
+
+For Claude Code specifically, you can also add the server via the CLI:
+
+```bash
+claude mcp add registry-docs node /path/to/mcp-registry-docs/dist/server.js \
+  --env REGISTRY_URL=https://your-registry.internal
+```
 
 
 ## Connecting to Your Internal Registry
@@ -232,7 +321,22 @@ npx @modelcontextprotocol/inspector node dist/server.js
 ```
 
 
-The inspector provides an UI for testing each tool your server exposes and verifying that responses match expected formats.
+The inspector provides an UI for testing each tool your server exposes and verifying that responses match expected formats. You can call `list_tools`, then invoke `get_package_docs` with a test package name and confirm the response structure before wiring up a real AI client.
+
+
+A minimal automated integration test using Jest verifies your tool handlers without starting a real server:
+
+```typescript
+// test/tools.test.ts
+import { fetchPackageDoc } from '../src/server.js';
+
+describe('fetchPackageDoc', () => {
+  it('returns null for unknown packages', async () => {
+    const result = await fetchPackageDoc('nonexistent-pkg-xyz');
+    expect(result).toBeNull();
+  });
+});
+```
 
 
 ## Deployment Considerations
@@ -254,8 +358,22 @@ CMD ["node", "dist/server.js"]
 ```
 
 
-Build and run with `docker build -t mcp-registry-docs.` followed by `docker run mcp-registry-docs`.
+Build and run with `docker build -t mcp-registry-docs .` followed by `docker run mcp-registry-docs`.
 
+
+For teams using HTTP transport instead of stdio (useful when multiple developer machines share one MCP server), the SDK supports an SSE transport:
+
+```typescript
+import { SSEServerTransport } from '@modelcontextprotocol/sdk/server/sse.js';
+import express from 'express';
+
+const app = express();
+const transport = new SSEServerTransport('/sse', app);
+await server.connect(transport);
+app.listen(3000);
+```
+
+This lets you deploy the MCP server as a shared internal service behind your corporate VPN, so every developer's AI assistant connects to the same documentation source without each running a local copy.
 
 
 ## Frequently Asked Questions
