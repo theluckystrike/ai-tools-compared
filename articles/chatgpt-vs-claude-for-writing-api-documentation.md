@@ -33,14 +33,14 @@ Claude, developed by Anthropic, emphasizes clear communication and follows instr
 
 ## Quick Comparison
 
-| Feature | Chatgpt | Claude |
+| Feature | ChatGPT | Claude |
 |---|---|---|
-| AI Model | See specs | See specs |
-| Code Completion | Supported | Supported |
-| Context Window | See documentation | See documentation |
-| IDE Support | Multiple IDEs | Multiple IDEs |
-| Pricing | See current pricing | See current pricing |
-| Language Support | Multi-language | Multi-language |
+| Best for | Rapid multi-language snippets, first drafts | Structured long-form docs, migration guides |
+| Code examples | Fast generation, may need error handling added | Includes error handling and context by default |
+| Consistency across sections | Can drift in tone/format | Maintains format and terminology throughout |
+| Clarifying questions | Rarely asks, proceeds with assumptions | More likely to flag ambiguity |
+| Pricing (API) | GPT-4o: ~$5/M input tokens | Claude Sonnet: ~$3/M input tokens |
+| Context window | 128K tokens | 200K tokens |
 
 ## Generating Endpoint Documentation
 
@@ -87,7 +87,7 @@ Claude typically produces more structured output that aligns better with standar
 ## Handling Authentication Sections
 
 
-API authentication documentation requires precision. Both tools handle this well, but Claude often produces more security sections.
+API authentication documentation requires precision. Both tools handle this well, but Claude often produces more complete security sections.
 
 
 **Prompt for Both:**
@@ -100,6 +100,8 @@ token expiration, and error responses for invalid tokens.
 
 
 ChatGPT generates clean, readable content but sometimes omits edge cases. Claude tends to include more complete error scenarios and security considerations out of the box.
+
+A practical tip: when using ChatGPT for authentication sections, add "Include edge cases for expired tokens, revoked tokens, and malformed Authorization headers" to your prompt. This produces output comparable to Claude's default behavior without requiring a second generation pass.
 
 
 ## Creating Code Examples
@@ -151,6 +153,13 @@ async function getUser(userId, token) {
 The Claude example includes a reusable function with proper error handling—a pattern developers appreciate.
 
 
+### Multi-Language Generation
+
+When you need the same endpoint documented across Python, JavaScript, Go, and curl simultaneously, ChatGPT has a clear speed advantage. A single prompt like "Show me how to call this endpoint in Python, JavaScript, Go, and curl" produces usable output in all four languages within one response. Claude produces the same quality but may require slightly more explicit instruction about which languages to include.
+
+For teams documenting public APIs with broad language coverage, ChatGPT's speed on multi-language snippets reduces the total time spent on SDK documentation significantly.
+
+
 ## Managing Long-Form Documentation
 
 
@@ -176,6 +185,17 @@ Use consistent formatting throughout.
 Claude maintains consistent tone, formatting, and terminology across all sections. ChatGPT may occasionally shift tone or formatting between sections, requiring more editing passes.
 
 
+### Practical Approach for Long Documents
+
+For documentation projects exceeding 2,000 words, a hybrid approach works well in practice:
+
+1. Use ChatGPT to generate individual section drafts quickly
+2. Compile the sections into a single document
+3. Pass the full document to Claude with the instruction: "Review this API documentation for consistency in tone, terminology, and formatting. Rewrite any sections that drift from the established style."
+
+This workflow uses ChatGPT's speed for generation and Claude's consistency for polish. The result is faster than using Claude alone for drafting while avoiding the inconsistency of relying on ChatGPT for final output.
+
+
 ## Version-Specific Documentation
 
 
@@ -196,6 +216,19 @@ Include: summary of changes, migration steps, code before/after.
 Claude identifies the structural change accurately and provides clear migration guidance. It also anticipates follow-up questions developers might have. ChatGPT handles this well but may require more specific prompting to cover all necessary migration details.
 
 
+### Error Reference Documentation
+
+Error documentation is one area where the quality difference is most visible. Claude generates error tables with consistent structure across all error codes, including the likely cause and recommended action for each:
+
+| Code | Message | Cause | Action |
+|---|---|---|---|
+| 401 | Unauthorized | Missing or invalid Bearer token | Check token validity; re-authenticate if expired |
+| 403 | Forbidden | Token lacks required scopes | Request additional OAuth scopes from the user |
+| 429 | Too Many Requests | Rate limit exceeded | Implement exponential backoff; check Retry-After header |
+
+ChatGPT produces similar tables but the "Cause" and "Action" columns often require editing to be accurate for your specific API's behavior. Claude is more likely to ask "What are the specific conditions that trigger each error?" before generating, which produces more accurate output.
+
+
 ## Workflow Integration
 
 
@@ -206,6 +239,33 @@ ChatGPT works well for quick, single-section generation. Its speed makes it suit
 
 
 Claude excels in iterative documentation workflows. Use Claude Code for terminal-based work, or access it through the web interface. Its Artifacts feature is particularly useful for previewing formatted documentation before exporting.
+
+
+### Automating Documentation with the API
+
+Both tools expose APIs that let you automate documentation generation as part of a CI/CD pipeline. A simple approach: trigger documentation generation when OpenAPI specs change.
+
+```python
+import anthropic
+import json
+
+def generate_endpoint_docs(openapi_spec_path: str) -> str:
+    with open(openapi_spec_path) as f:
+        spec = json.load(f)
+
+    client = anthropic.Anthropic()
+    response = client.messages.create(
+        model="claude-opus-4-6",
+        max_tokens=4096,
+        messages=[{
+            "role": "user",
+            "content": f"Generate developer-friendly documentation for all endpoints in this OpenAPI spec. Use consistent formatting.\n\n{json.dumps(spec, indent=2)}"
+        }]
+    )
+    return response.content[0].text
+```
+
+This pattern works with either API. Claude's larger context window (200K tokens) means it can ingest larger specs in a single call — useful for APIs with hundreds of endpoints.
 
 
 ## Recommendations
@@ -228,7 +288,7 @@ Choose **Claude** when you need:
 
 - Complex technical explanations
 
-- error handling documentation
+- Error handling documentation
 
 - Long-form content that maintains quality throughout
 
