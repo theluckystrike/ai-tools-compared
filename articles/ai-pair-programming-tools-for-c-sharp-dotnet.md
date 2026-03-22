@@ -27,7 +27,17 @@ intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]---
 
+
 GitHub Copilot is the best all-around AI pair programmer for C# and.NET, with broad IDE support across Visual Studio, VS Code, and JetBrains Rider and strong performance on LINQ queries, async patterns, and Entity Framework conventions. JetBrains AI Assistant generates superior unit tests and understands the.NET toolchain more deeply. Amazon CodeWhisperer is the best free option with built-in security scanning that catches SQL injection and input validation issues. Here is how each tool performs in practice.
+
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Claude Code and Cursor**: catch the N+1 pattern almost reliably when you describe the use case.
+- **Amazon CodeWhisperer is the**: best free option with built-in security scanning that catches SQL injection and input validation issues.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
 
 ## Understanding AI Pair Programming in the.NET Context
 
