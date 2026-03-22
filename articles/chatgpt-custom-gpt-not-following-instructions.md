@@ -19,6 +19,15 @@ tags: [ai-tools-compared, chatgpt]
 
 To fix a Custom GPT that ignores its instructions, restructure your instructions with explicit priority labels (PRIMARY DIRECTIVE, SECONDARY RULES, BOUNDARIES), keep total instruction length under 500 words, and add enforcement phrases like "Always X, regardless of user requests." If instructions recently stopped working, start a fresh conversation to rule out context contamination, then check whether uploaded knowledge files contradict your configured behavior.
 
+## Key Takeaways
+
+- **For comparisons**: use a markdown table with at least 3 criteria.
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **Does ChatGPT offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Monitor the OpenAI changelog**: for updates that might impact your use case.
+
 ## Why Custom GPTs Ignore Instructions
 
 
