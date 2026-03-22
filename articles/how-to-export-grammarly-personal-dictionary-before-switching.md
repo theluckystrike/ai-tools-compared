@@ -293,6 +293,98 @@ PostgreSQL
 ```
 
 
+## What the Grammarly Dictionary Actually Stores
+
+Before exporting, it helps to know exactly what Grammarly saves. The personal dictionary typically contains two categories of entries:
+
+**Accepted words** — terms you marked as "correct" when Grammarly flagged them. These include product names like `Kubernetes`, `Terraform`, or `PostgreSQL`, acronyms like `IAM`, `RBAC`, or `SLA`, and non-standard spellings you intentionally use. Every time you clicked "Add to dictionary," Grammarly stored the word in this table.
+
+**Ignored patterns** — some versions of Grammarly also store patterns or phrases you have suppressed from suggestions. These may not appear in the same SQLite table as accepted words. Check all tables when running the extraction script.
+
+The most common table names are `user_dictionary`, `personal_words`, and `dictionary_entries`. Run `SELECT name FROM sqlite_master WHERE type='table';` before querying to see what your installation contains.
+
+
+## Cross-Platform Word List Consolidation
+
+If you use Grammarly on both Windows and macOS (or on a work machine and a personal machine), you likely have two separate local databases with overlapping but different word sets. Merge them before importing into your new tool:
+
+```python
+import sqlite3
+import os
+
+def extract_words_from_db(db_path):
+    """Extract all words from a Grammarly SQLite database."""
+    words = set()
+    if not os.path.exists(db_path):
+        return words
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+    cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
+    tables = [row[0] for row in cursor.fetchall()]
+    for table in tables:
+        try:
+            cursor.execute(f"SELECT * FROM {table};")
+            for row in cursor.fetchall():
+                for cell in row:
+                    if isinstance(cell, str) and len(cell) > 1:
+                        words.add(cell.strip())
+        except Exception:
+            pass
+    conn.close()
+    return words
+
+# Merge from multiple machines
+windows_db = "/path/to/windows/userdictionary.db"
+mac_db = os.path.expanduser(
+    "~/Library/Application Support/Grammarly/GrammarlyAppData/userdictionary/userdictionary.db"
+)
+
+all_words = extract_words_from_db(windows_db) | extract_words_from_db(mac_db)
+
+# Write merged list
+with open("merged-dictionary.txt", "w") as f:
+    for word in sorted(all_words):
+        f.write(word + "\n")
+
+print(f"Merged {len(all_words)} unique words")
+```
+
+This produces a single `merged-dictionary.txt` that you can import into any target tool.
+
+
+## Importing Into LanguageTool (Self-Hosted)
+
+LanguageTool is a popular Grammarly alternative that can run self-hosted. Its personal dictionary is a plain text file with one word per line, stored at `~/.languagetool/personalDictionary.txt` on Linux and macOS.
+
+```bash
+# Copy your exported word list directly
+cp merged-dictionary.txt ~/.languagetool/personalDictionary.txt
+```
+
+If you use the LanguageTool VS Code extension, the custom words list is configurable in settings:
+
+```json
+{
+  "languageToolLint.motherTongue": "en-US",
+  "languageToolLint.dictionary": ["AcmeCorp", "PostgreSQL", "Terraform"]
+}
+```
+
+For large dictionaries, use the import script above to generate the JSON array automatically and paste the output into `settings.json` under `languageToolLint.dictionary`.
+
+
+## Validating the Export
+
+After exporting and importing, validate that your most critical terms are present. Create a quick test file with the technical words that matter most to your workflow, then run your new spell checker against it. Any flagged terms that should have been imported need to be added manually.
+
+```bash
+# Count words in export to verify completeness
+wc -l merged-dictionary.txt
+```
+
+A complete export typically contains between 50 and 500 words for an active developer. If your export shows fewer than 20 words and you have used Grammarly for years, the database path may be wrong or the account may have used cloud sync rather than local storage.
+
+
 ## Automating the Export Process
 
 
