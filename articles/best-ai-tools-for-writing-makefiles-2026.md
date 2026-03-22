@@ -535,14 +535,13 @@ For CI, add a separate job that runs `make --dry-run` to catch syntax errors bef
 
 **Wildcard not expanding in rules** — `$(wildcard ...)` in a recipe doesn't expand at parse time. Move it to a variable at the top of the Makefile where it evaluates during the initial parsing pass.
 
-## Related Reading
+## Related Articles
 
-- [Best AI Tools for Writing Bazel BUILD Files](/ai-tools-compared/best-ai-tools-for-writing-bazel-build-files-2026/)
-- [AI-Powered CI/CD Pipeline Optimization](/ai-tools-compared/ai-powered-cicd-pipeline-optimization-2026/)
-- [How to Build AI-Powered CLI Tools](/ai-tools-compared/how-to-build-ai-powered-cli-tools-2026/)
-
----
-
+- [Best AI Tools for Writing Bazel BUILD Files 2026](/ai-tools-compared/best-ai-tools-for-writing-bazel-build-files-2026/)
+- [Best AI Tools for Writing Unit Test Mocks 2026](/ai-tools-compared/best-ai-tools-for-writing-unit-test-mocks-2026/)
+- [Copilot vs Claude Code for Writing Jest Test](/ai-tools-compared/copilot-vs-claude-code-for-writing--jest-test-s/)
+- [Best Free AI Tool for Writing Unit Tests Automatically](/ai-tools-compared/best-free-ai-tool-for-writing-unit-tests-automatically/)
+- [Best AI Tools for Writing Unit Tests Comparison 2026](/ai-tools-compared/best-ai-tools-for-writing-unit-tests-comparison-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

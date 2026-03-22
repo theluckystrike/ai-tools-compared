@@ -310,13 +310,13 @@ Use helm create conventions. Do not skip any file."
 
 Claude Code will create the full directory tree and populate each file, respecting Helm conventions throughout.
 
-## Related Reading
+## Related Articles
 
-- [AI Tools for Writing Kubernetes Helm Charts 2026](/ai-tools-for-writing-kubernetes-helm-charts-2026/)
-- [Best AI Tools for Writing Kubernetes Manifests and Helm Charts 2026](/best-ai-tools-for-writing-kubernetes-manifests-and-helm-charts-2026/)
-- [Claude vs ChatGPT for Writing Kubernetes Helm Chart Values Files](/claude-vs-chatgpt-for-writing-kubernetes-helm-chart-values-f/)
----
-
+- [AI Tools for Writing Kubernetes Helm Charts 2026](/ai-tools-compared/ai-tools-for-writing-kubernetes-helm-charts-2026/)
+- [Best AI Tools for Generating Kubernetes Helm Charts 2026](/ai-tools-compared/best-ai-tools-for-generating-kubernetes-helm-charts-2026/)
+- [Best AI Tools for Writing Kubernetes Manifests and Helm](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-manifests-and-helm-charts-2026/)
+- [Best AI Tools for Writing Kubernetes Custom Resource](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-custom-resource-definitions-2026/)
+- [Claude vs ChatGPT for Writing Kubernetes Helm Chart Values](/ai-tools-compared/claude-vs-chatgpt-for-writing-kubernetes-helm-chart-values-f/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 

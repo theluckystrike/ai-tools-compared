@@ -349,13 +349,13 @@ print(response.content[0].text)
 | Claude Vision | No | N/A | Yes | No | Per image |
 | Playwright + Claude | No | N/A | No | Yes | Per run |
 
-## Related Reading
+## Related Articles
 
-- [AI Tools for QA Engineers Creating Accessibility Testing Checklists](/ai-tools-for-qa-engineers-creating-accessibility-testing-che/)
-- [AI Tools for Video Accessibility Features](/ai-tools-for-video-accessibility-features/)
-- [AI Code Review Automation Tools Comparison](/ai-code-review-automation-tools-comparison/)
----
-
+- [AI Tools for Qa Engineers Creating Accessibility Testing](/ai-tools-compared/ai-tools-for-qa-engineers-creating-accessibility-testing-che/)
+- [AI Tools for Writing Playwright Tests That Verify Accessibil](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-accessibil/)
+- [AI Tools for Automated Load Testing Script Generation](/ai-tools-compared/ai-tools-for-automated-load-testing-script-generation-and-an/)
+- [AI Tools for Video Accessibility Features](/ai-tools-compared/ai-tools-for-video-accessibility-features/)
+- [AI Tools for Auditing Accessible Responsive Design](/ai-tools-compared/ai-tools-for-auditing-accessible-responsive-design-breakpoin/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

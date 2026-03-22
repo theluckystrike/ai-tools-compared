@@ -314,13 +314,12 @@ For simple projects, models like Llama 3.1 8B perform well for basic scaffolding
 
 Split generation into modules. Generate the data layer first, then the API layer, then the frontend. Each call stays within context limits and you accumulate the project incrementally. This also makes each segment easier to review and test in isolation.
 
-## Related Reading
+## Related Articles
 
-- [Cheapest AI Coding Subscription with Unlimited Requests 2026](/ai-tools-compared/cheapest-ai-coding-subscription-with-unlimited-requests-2026/)
-- [Does WindSurf AI Send Entire Project Context or Just Open](/ai-tools-compared/does-windsurf-ai-send-entire-project-context-or-just-open-fi/)
+- [Cheapest AI Tool for Generating an Entire Project](/ai-tools-compared/cheapest-ai-tool-for-generating-entire-project-from-description/)
+- [Best Practices for AI Tool Project Config When Switching](/ai-tools-compared/best-practices-for-ai-tool-project-config-when-switching-between-multiple-client-projects/)
 - [AI Tools for Generating dbt Project Structure from Existing](/ai-tools-compared/ai-tools-for-generating-dbt-project-structure-from-existing-/)
-- [Cheapest AI Coding Tool for Indie Game Developer 2026](/ai-tools-compared/cheapest-ai-coding-tool-for-indie-game-developer-2026/)
-- [Completely Free Alternatives to GitHub Copilot That Actually](/ai-tools-compared/completely-free-alternatives-to-github-copilot-that-actually/)
-
+- [Best AI Assistant for Creating Open Source Project Branding](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)
+- [Best AI Tools for Go Project Structure and Module](/ai-tools-compared/best-ai-tools-for-go-project-structure-and-module-organization/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

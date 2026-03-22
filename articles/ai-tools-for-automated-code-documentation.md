@@ -445,13 +445,12 @@ if issues:
 
 This keeps docstring debt from accumulating without requiring every developer to remember to write them. Pair it with a weekly CI job that uses Claude to auto-generate drafts for any remaining gaps.
 
-## Related Reading
+## Related Articles
 
-- [AI Tools for Automated Code Documentation Generation](/ai-tools-compared/ai-tools-for-automated-code-documentation-generation-2026/)
-- [Claude vs GPT-4 for Writing Documentation](/ai-tools-compared/claude-vs-gpt4-for-writing-documentation/)
-- [AI Tools for Automated PR Description Generation](/ai-tools-compared/ai-tools-for-automated-pr-description-generation/)
-
----
-
+- [AI Tools for Automated Code Documentation Generation in 2026](/ai-tools-compared/ai-tools-for-automated-code-documentation-generation-2026/)
+- [Best AI Tools for Code Documentation Generation 2026](/ai-tools-compared/best-ai-tools-for-code-documentation-generation-2026/)
+- [Best AI Tools for Generating API Documentation From Code](/ai-tools-compared/best-ai-tools-for-generating-api-documentation-from-code-2026/)
+- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)
+- [Best AI Tools for Automated Code Review 2026](/ai-tools-compared/best-ai-tools-for-automated-code-review-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -401,13 +401,13 @@ jobs:
 | Generate Page Object Model | Claude |
 | Fix flaky timing issues | Claude Code (runs and fixes) |
 
-## Related Reading
+## Related Articles
 
-- [AI Tools for Writing Selenium Cypress Test Migration 2026](/ai-tools-for-writing-selenium-cypress-test-migration-2026/)
-- [AI Tools for Automated Load Testing Script Generation and Analysis](/ai-tools-for-automated-load-testing-script-generation-and-an/)
-- [AI Code Review Automation Tools Comparison](/ai-code-review-automation-tools-comparison/)
----
-
+- [Which AI Is Better for Writing Playwright End-to-End Tests](/ai-tools-compared/which-ai-is-better-for-writing-playwright-end-to-end-tests-2/)
+- [Best AI Assistant for Creating Playwright Tests for Multi](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-multi-st/)
+- [Best AI Tools for Writing Playwright E2E Tests 2026](/ai-tools-compared/best-ai-tools-for-writing-playwright-e2e-tests-2026/)
+- [AI for Automated Regression Test Generation from Bug](/ai-tools-compared/ai-for-automated-regression-test-generation-from-bug-reports/)
+- [Best AI Assistant for Creating Playwright Tests for File](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-file-upl/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

@@ -263,12 +263,13 @@ def multimodal_coding_task(image_path, prompt, task_type):
         return claude_analyze(image_path, prompt)
 ```
 
-## Related Reading
+## Related Articles
 
-- [Best AI Tools for Generating CSS from Designs](/ai-tools-compared/best-ai-tools-for-css-from-designs/)
-- [Which AI Generates Better Swift UI Views from Design Specs](/ai-tools-compared/which-ai-generates-better-swift-ui-views-from-design-specs-2/)
-- [AI Coding Assistant Comparison for React Component Generation](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
-
+- [Gemini vs Claude for Generating Markdown Documentation](/ai-tools-compared/gemini-vs-claude-for-generating-markdown-documentation-from-/)
+- [Switching from Gemini Advanced to Claude Pro: What You](/ai-tools-compared/switching-from-gemini-advanced-to-claude-pro-what-you-lose/)
+- [Cheapest Way to Use Claude for Coding Projects 2026](/ai-tools-compared/cheapest-way-to-use-claude-for-coding-projects-2026/)
+- [Gemini vs Claude for Writing Apache Kafka Consumer Producer](/ai-tools-compared/gemini-vs-claude-for-writing-apache-kafka-consumer-producer-/)
+- [Claude vs Gemini for Converting Jupyter Notebooks](/ai-tools-compared/claude-vs-gemini-for-converting-jupyter-notebooks-to-product/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

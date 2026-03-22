@@ -271,14 +271,13 @@ Claude is better for:
 - API references from complex code
 - Explaining non-obvious design decisions
 
-## Related Reading
+## Related Articles
 
-- [Claude vs ChatGPT for Technical Writing](/ai-tools-compared/claude-vs-chatgpt-for-technical-writing-2026/)
 - [Claude Code Runbook Documentation Guide](/ai-tools-compared/claude-code-runbook-documentation-guide/)
-- [AI Tools for Automated Code Documentation Generation](/ai-tools-compared/ai-tools-for-automated-code-documentation-generation-2026/)
-
----
-
+- [Best AI Tools for Writing Swagger API Documentation 2026](/ai-tools-compared/best-ai-tools-for-writing-swagger-api-documentation-2026/)
+- [Gemini vs Claude for Generating Markdown Documentation](/ai-tools-compared/gemini-vs-claude-for-generating-markdown-documentation-from-/)
+- [Best AI Tools for Technical Documentation Writing in 2026](/ai-tools-compared/ai-tools-for-technical-writing-documentation-2026/)
+- [ChatGPT vs Claude for Writing API Documentation](/ai-tools-compared/chatgpt-vs-claude-for-writing-api-documentation/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 {% endraw %}

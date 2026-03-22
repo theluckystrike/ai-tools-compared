@@ -380,13 +380,12 @@ Run the command with `sudo` for system-level operations, or check that your user
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Related Reading
+## Related Articles
 
-- [How to Build AI-Powered Slack Bots](/ai-tools-compared/how-to-build-ai-powered-slack-bots/)
-- [How to Build a RAG Chatbot with Pinecone](/ai-tools-compared/how-to-build-rag-chatbot-with-pinecone/)
-- [How to Build Custom MCP Servers for Claude](/ai-tools-compared/how-to-build-custom-mcp-servers-for-claude/)
-
----
-
+- [How to Build AI Pipelines with Prefect](/ai-tools-compared/how-to-build-ai-pipelines-with-prefect)
+- [How to Build Custom MCP Servers for Claude](/ai-tools-compared/how-to-build-custom-mcp-servers-for-claude)
+- [How to Use the Claude API for Automated Code Review](/ai-tools-compared/how-to-use-claude-api-for-automated-code-review/)
+- [How to Use Claude API Cheaply for Small Coding Projects](/ai-tools-compared/how-to-use-claude-api-cheaply-for-small-coding-projects/)
+- [Claude API vs OpenAI API Pricing Breakdown 2026](/ai-tools-compared/claude-api-vs-openai-api-pricing-breakdown-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

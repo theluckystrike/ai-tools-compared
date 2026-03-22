@@ -442,14 +442,13 @@ When Claude generates Nix code, watch for:
 - Hardcoding paths like `/usr/bin/python` instead of using `${pkgs.python3}/bin/python`
 - Not using `$out` for install phase output paths
 
-## Related Reading
+## Related Articles
 
-- [Best AI Tools for Writing Bazel BUILD Files](/ai-tools-compared/best-ai-tools-for-writing-bazel-build-files-2026/)
-- [Best AI Tools for Writing Systemd Units](/ai-tools-compared/best-ai-tools-for-writing-systemd-units-2026/)
-- [Best AI Tools for Writing Makefiles](/ai-tools-compared/best-ai-tools-for-writing-makefiles-2026/)
-
----
-
+- [Claude Code Semantic Versioning Automation: A Complete Guide](/ai-tools-compared/claude-code-semantic-versioning-automation/)
+- [Best AI Tools for Writing Bazel BUILD Files 2026](/ai-tools-compared/best-ai-tools-for-writing-bazel-build-files-2026/)
+- [AI Tools for Automated SSL Certificate Management](/ai-tools-compared/ai-tools-for-automated-ssl-certificate-management-and-monito/)
+- [Effective Context Management Strategies for AI Coding](/ai-tools-compared/effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/)
+- [AI Policy Management Tools Enterprise Compliance](/ai-tools-compared/ai-policy-management-tools-enterprise-compliance-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}
