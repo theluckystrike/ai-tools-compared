@@ -26,6 +26,8 @@ This guide covers three common gateway targets:
 - **AWS API Gateway** (OpenAPI + CloudFormation)
 - **Nginx** (used as a simple API gateway)
 
+For each platform, the test is whether the AI can generate production-ready config — not just syntactically valid output, but output that handles edge cases like auth header forwarding, CORS preflight, and per-consumer rate limiting correctly.
+
 ## Kong Declarative Config
 
 **Prompt to Claude:**
@@ -76,6 +78,58 @@ services:
 ```
 
 This is correct deck v3 format. Claude gets the regex route syntax right (`~/orders/(?P<id>...)`), uses `limit_by: consumer` for per-consumer rate limiting, and sets `hide_credentials: true` on key-auth. GPT-4o often uses the older deck v1 format with a `services:` root that lacks `_transform`.
+
+### Kong Plugin Ordering and Global Plugins
+
+Plugin ordering matters in Kong: authentication plugins run before transformation plugins by default. If you need to enforce a specific ordering (for example, ensuring CORS runs before auth to handle preflight without credentials), you need explicit `ordering` blocks in Kong 3.x.
+
+**Prompt:**
+```text
+Add a CORS plugin to the orders-api service. CORS must run before key-auth so OPTIONS
+preflight requests return 200 without requiring an API key. Use Kong 3.x plugin ordering.
+```
+
+**Claude output:**
+
+```yaml
+    plugins:
+      - name: cors
+        config:
+          origins:
+            - "https://app.example.com"
+          methods:
+            - GET
+            - POST
+            - OPTIONS
+          headers:
+            - Authorization
+            - apikey
+            - Content-Type
+          max_age: 3600
+          credentials: false
+        ordering:
+          before:
+            access:
+              - key-auth
+
+      - name: key-auth
+        config:
+          key_names:
+            - apikey
+          hide_credentials: true
+```
+
+Claude uses the `ordering.before.access` array correctly. GPT-4o generated `priority: 1000` on the plugin config — which is not a valid field in deck YAML and is silently ignored.
+
+### Applying Deck Config
+
+To validate before deploying:
+
+```bash
+deck validate --state kong.yaml
+deck diff --state kong.yaml
+deck sync --state kong.yaml
+```
 
 ## AWS API Gateway with Lambda Integration
 
@@ -157,6 +211,53 @@ components:
 
 Claude handles the AWS-specific `x-amazon-apigateway-integration` extension correctly. The mock integration for the CORS preflight `OPTIONS` handler with `responseParameters` is accurate — this is a common pain point that GPT-4o frequently gets wrong, omitting the `responseParameters` or using incorrect response mapping syntax.
 
+### Deploying with CloudFormation
+
+Claude can wrap this spec in a CloudFormation template:
+
+**Prompt:**
+```text
+Wrap the above OpenAPI spec in a CloudFormation template that creates the REST API,
+deploys it to a "prod" stage, and grants Lambda invoke permission to the API Gateway.
+```
+
+```yaml
+AWSTemplateFormatVersion: "2010-09-09"
+Resources:
+  WebhookApi:
+    Type: AWS::ApiGateway::RestApi
+    Properties:
+      Name: WebhookAPI
+      Body: !Sub |
+        # (inline OpenAPI spec here)
+
+  ApiDeployment:
+    Type: AWS::ApiGateway::Deployment
+    Properties:
+      RestApiId: !Ref WebhookApi
+
+  ProdStage:
+    Type: AWS::ApiGateway::Stage
+    Properties:
+      RestApiId: !Ref WebhookApi
+      DeploymentId: !Ref ApiDeployment
+      StageName: prod
+
+  LambdaInvokePermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: WebhookHandler
+      Action: lambda:InvokeFunction
+      Principal: apigateway.amazonaws.com
+      SourceArn: !Sub "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${WebhookApi}/*/POST/webhook"
+```
+
+The `SourceArn` pattern is correct — it scopes the invoke permission to the specific method and path, not the entire API. GPT-4o tends to use a wildcard ARN here which is overly permissive.
+
+### VTL Response Mapping Templates
+
+One area where all AI tools struggle is AWS API Gateway VTL (Velocity Template Language) for non-proxy integrations. VTL is obscure, and models frequently hallucinate method syntax or access patterns. When you need VTL, treat AI output as a structural scaffold and verify every `$input.json()` expression against the AWS docs before deploying.
+
 ## Nginx as API Gateway
 
 **Prompt:**
@@ -236,14 +337,72 @@ server {
 
 This is solid production-level Nginx config. Claude correctly marks the auth location as `internal`, passes `Authorization` header to the auth service, sets `proxy_pass_request_body off` for the auth subrequest, and uses HTTP/1.1 with keepalive for upstream connections.
 
+### Adding mTLS with Nginx
+
+For services that require mutual TLS between the gateway and upstreams:
+
+**Prompt:**
+```text
+Add mTLS to the /api/orders upstream. The client cert is at /etc/nginx/certs/client.crt,
+key at /etc/nginx/certs/client.key. Verify the upstream server cert against /etc/nginx/certs/ca.crt.
+```
+
+```nginx
+upstream order_service {
+    server order-service:3002;
+    keepalive 32;
+}
+
+location /api/orders {
+    limit_req zone=api_limit burst=40 nodelay;
+    auth_request /auth/validate;
+
+    proxy_pass https://order_service;
+    proxy_ssl_certificate     /etc/nginx/certs/client.crt;
+    proxy_ssl_certificate_key /etc/nginx/certs/client.key;
+    proxy_ssl_trusted_certificate /etc/nginx/certs/ca.crt;
+    proxy_ssl_verify       on;
+    proxy_ssl_verify_depth 2;
+    proxy_ssl_session_reuse on;
+
+    proxy_set_header Host $host;
+    proxy_http_version 1.1;
+    proxy_set_header Connection "";
+}
+```
+
+Claude gets the directive names right (`proxy_ssl_certificate`, `proxy_ssl_trusted_certificate`, `proxy_ssl_verify`). This is one of the areas where GPT-4o occasionally confuses the `ssl_` directives for incoming connections with the `proxy_ssl_` directives for upstream connections.
+
+## Tool Comparison Summary
+
+| Feature | Claude | GPT-4o | Copilot |
+|---------|--------|--------|---------|
+| Kong deck v3 format | Correct | Often v1 | Incomplete |
+| AWS CORS OPTIONS handler | Complete | Missing responseParameters | Rarely attempted |
+| Nginx auth_request pattern | Correct | Usually correct | Partial |
+| CloudFormation integration | Strong | Moderate | Weak |
+| mTLS directives | Accurate | Directive confusion | Unsupported |
+| VTL templates | Scaffolds only | Hallucinates | Not attempted |
+
 ## Where AI Tools Fall Short
 
 All three tools have gaps:
 - **mTLS configuration** — models often suggest the right directives but get certificate path handling wrong
 - **Kong plugin ordering** — the order of plugins in a service/route matters; Claude sometimes ignores this
 - **AWS API Gateway response mapping templates** — the VTL syntax is obscure and models hallucinate it frequently
+- **Kong Enterprise plugins** — OPA, LDAP, and vault-auth plugins are less well-represented in training data
 
-For mTLS and VTL templates, treat AI output as a starting point and validate against the official docs.
+For mTLS and VTL templates, treat AI output as a starting point and validate against the official docs. For Kong Enterprise plugins, test against a local Kong Gateway instance with `deck validate` before pushing to any shared environment.
+
+## Workflow Recommendation
+
+The most effective workflow for AI-assisted gateway config:
+
+1. Start with a clear prompt that specifies the exact gateway version and config format
+2. Generate the base config with Claude
+3. Run `deck validate` or the equivalent lint step immediately — catch format errors before they reach the gateway
+4. Test auth and rate limiting in a staging environment with synthetic load
+5. For AWS, deploy to a non-default stage first and test all integration endpoints
 
 ## Related Reading
 
