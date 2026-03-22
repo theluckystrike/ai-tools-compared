@@ -31,6 +31,18 @@ tags: [ai-tools-compared, best-of, artificial-intelligence]---
 
 SQL query generation is one of the few AI tasks with objective evaluation criteria — the query either returns correct results or it doesn't. This makes it unusually easy to benchmark. This guide covers dedicated text-to-SQL tools, general LLMs, and IDE-integrated options, with accuracy benchmarks on real-world query patterns.
 
+## Key Takeaways
+
+- **Include only products with**: at least 5 orders.
+- **Without it**: they hallucinate reasonable-sounding but wrong column names about 30% of the time.
+- **Window function frame misspecification**: ORDER BY without frame clause causes incorrect rows
+2.
+- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
+- **For production query generation, the schema-in-prompt approach with Claude is most reliable**: especially for complex analytical queries where the accuracy gap between tools is widest.
+- **Date arithmetic across databases**: MySQL uses DATE_ADD, Postgres uses INTERVAL syntax
+
+Ask Claude explicitly: "Include NULL checks.
+
 ## Tools Compared
 
 - **SQLAI.ai** — Dedicated text-to-SQL with schema awareness
