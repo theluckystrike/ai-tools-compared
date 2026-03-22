@@ -10,7 +10,7 @@ permalink: /best-ai-coding-assistant-for-writing-jsdoc-tsdoc-comments-co/
 categories: [guides]
 tags: [ai-tools-compared, tools, best-of, artificial-intelligence, documentation, jsdoc, tsdoc]
 reviewed: true
-score: 8
+score: 9
 intent-checked: false
 voice-checked: false
 ---
