@@ -5,7 +5,7 @@ description: "A practical comparison of self-hosted AI models for converting nat
 date: 2026-03-21
 author: theluckystrike
 permalink: /best-self-hosted-ai-model-for-writing-sql-queries-from-natural-language/
-categories: [tutorials, ai-tools, sql, self-hosted]
+categories: [tutorials, guides]
 reviewed: true
 score: 8
 intent-checked: true
