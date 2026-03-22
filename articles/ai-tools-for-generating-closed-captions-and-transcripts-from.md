@@ -44,7 +44,7 @@ def transcribe_video(video_path, output_format="srt"):
     """Transcribe video using Whisper and generate subtitles."""
     model = whisper.load_model("large-v3")
     result = model.transcribe(video_path)
-    
+
     # Generate SRT format
     subtitles = []
     for i, segment in enumerate(result["segments"]):
@@ -52,11 +52,11 @@ def transcribe_video(video_path, output_format="srt"):
         end = format_timestamp(segment["end"])
         text = segment["text"].strip()
         subtitles.append(f"{i+1}\n{start} --> {end}\n{text}\n")
-    
+
     output_path = video_path.rsplit(".", 1)[0] + ".srt"
     with open(output_path, "w") as f:
         f.write("\n".join(subtitles))
-    
+
     return output_path
 
 def format_timestamp(seconds):
@@ -81,7 +81,46 @@ def format_timestamp(seconds):
 
 **Best for:** Organizations needing data privacy, high-volume processing, or offline capabilities.
 
-### 2. AssemblyAI
+### 2. faster-whisper and WhisperX
+
+For production Whisper deployments, the base library is slow. Two community projects address this substantially:
+
+**faster-whisper** reimplements Whisper using CTranslate2, achieving 4x faster inference with lower memory usage on the same hardware:
+
+```python
+from faster_whisper import WhisperModel
+
+model = WhisperModel("large-v3", device="cuda", compute_type="float16")
+segments, info = model.transcribe("video.mp4", beam_size=5, language="en")
+
+for segment in segments:
+    print(f"[{segment.start:.2f}s -> {segment.end:.2f}s] {segment.text}")
+```
+
+**WhisperX** adds word-level timestamps and speaker diarization on top of faster-whisper, which is critical for captioning workflows where you need accurate character-level timing:
+
+```python
+import whisperx
+
+device = "cuda"
+audio = whisperx.load_audio("video.mp4")
+model = whisperx.load_model("large-v2", device, compute_type="float16")
+
+result = model.transcribe(audio, batch_size=16)
+
+# Align word timestamps
+model_a, metadata = whisperx.load_align_model(
+    language_code=result["language"], device=device
+)
+result = whisperx.align(result["segments"], model_a, metadata, audio, device)
+
+# Add speaker diarization
+diarize_model = whisperx.DiarizationPipeline(use_auth_token="your_hf_token")
+diarize_segments = diarize_model(audio)
+result = whisperx.assign_word_speakers(diarize_segments, result)
+```
+
+### 3. AssemblyAI
 
 AssemblyAI provides a cloud-based API with strong accuracy and useful features like speaker diarization and content moderation.
 
@@ -97,7 +136,7 @@ def transcribe_with_assemblyai(audio_url, api_key):
         "authorization": api_key,
         "content-type": "application/json"
     }
-    
+
     # Configure transcription settings
     payload = {
         "audio_url": audio_url,
@@ -106,15 +145,15 @@ def transcribe_with_assemblyai(audio_url, api_key):
         "entity_detection": True,
         "language_code": "en"
     }
-    
+
     response = requests.post(
         "https://api.assemblyai.com/v2/transcript",
         headers=headers,
         json=payload
     )
-    
+
     transcript_id = response.json()["id"]
-    
+
     # Poll for completion
     while True:
         status_response = requests.get(
@@ -122,7 +161,7 @@ def transcribe_with_assemblyai(audio_url, api_key):
             headers=headers
         )
         status = status_response.json()
-        
+
         if status["status"] == "completed":
             return status
         elif status["status"] == "error":
@@ -142,7 +181,7 @@ def transcribe_with_assemblyai(audio_url, api_key):
 
 **Best for:** Developers needing quick integration with speaker identification and audio intelligence.
 
-### 3. Deepgram
+### 4. Deepgram
 
 Deepgram offers low-latency transcription with competitive pricing and excellent accuracy for specific domains.
 
@@ -154,7 +193,7 @@ import deepgram
 def transcribe_streaming(audio_file_path, api_key):
     """Stream audio to Deepgram for real-time transcription."""
     deepgram_client = deepgram.Deepgram(api_key)
-    
+
     with open(audio_file_path, "rb") as stream:
         response = deepgram_client.transcription.sync_prerecorded(
             stream,
@@ -165,7 +204,7 @@ def transcribe_streaming(audio_file_path, api_key):
                 "paragraphize": True
             }
         )
-    
+
     return response["results"]["channels"][0]["alternatives"][0]["transcript"]
 ```
 
@@ -181,7 +220,7 @@ def transcribe_streaming(audio_file_path, api_key):
 
 **Best for:** Cost-sensitive projects requiring high-volume transcription.
 
-### 4. Rev
+### 5. Rev
 
 Rev combines AI with human reviewers for guaranteed accuracy, suitable for professional content requiring 99%+ accuracy.
 
@@ -197,7 +236,7 @@ Rev combines AI with human reviewers for guaranteed accuracy, suitable for profe
 
 **Best for:** Professional video production requiring guaranteed accuracy.
 
-### 5. Sonix
+### 6. Sonix
 
 Sonix provides an all-in-one platform with in-browser editor and strong multi-language support.
 
@@ -218,6 +257,7 @@ Sonix provides an all-in-one platform with in-browser editor and strong multi-la
 | Tool | Accuracy | Latency | Pricing | Best For |
 |------|----------|---------|---------|----------|
 | Whisper (local) | High | Variable | Free* | Privacy, offline |
+| faster-whisper / WhisperX | High | Low (local) | Free* | High-volume local |
 | AssemblyAI | Very High | Low | Pay-per-use | Audio intelligence |
 | Deepgram | High | Very Low | Competitive | Real-time, cost-sensitive |
 | Rev | Highest | Medium | Premium | Professional accuracy |
@@ -227,7 +267,7 @@ Sonix provides an all-in-one platform with in-browser editor and strong multi-la
 
 ## Generating VTT and SRT Formats
 
-Most developers need multiple subtitle formats. Here's an utility function:
+Most developers need multiple subtitle formats. Here's a utility function:
 
 ```python
 def generate_subtitle_formats(transcript_data, output_base):
@@ -237,14 +277,14 @@ def generate_subtitle_formats(transcript_data, output_base):
         "vtt": generate_vtt,
         "json": generate_json
     }
-    
+
     results = {}
     for fmt, generator in formats.items():
         output_path = f"{output_base}.{fmt}"
         with open(output_path, "w") as f:
             f.write(generator(transcript_data))
         results[fmt] = output_path
-    
+
     return results
 
 def generate_vtt(segments):
@@ -267,6 +307,55 @@ def format_vtt_time(seconds):
     return f"{hours:02d}:{minutes:02d}:{secs:02d}.{millis:03d}"
 ```
 
+## Building a Batch Processing Pipeline
+
+For video libraries with hundreds or thousands of files, process transcriptions in parallel with a queue:
+
+```python
+import concurrent.futures
+import os
+from pathlib import Path
+
+def batch_transcribe(video_dir, output_dir, max_workers=4):
+    """Batch transcribe all videos in a directory."""
+    video_files = list(Path(video_dir).glob("*.mp4"))
+    output_path = Path(output_dir)
+    output_path.mkdir(parents=True, exist_ok=True)
+
+    def process_file(video_file):
+        output_base = output_path / video_file.stem
+        if output_base.with_suffix(".srt").exists():
+            return f"SKIP: {video_file.name}"  # Already processed
+
+        try:
+            result = transcribe_video(str(video_file))
+            return f"OK: {video_file.name}"
+        except Exception as e:
+            return f"ERROR: {video_file.name}: {e}"
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+        results = list(executor.map(process_file, video_files))
+
+    return results
+```
+
+For cloud-based APIs like AssemblyAI or Deepgram, use their async endpoints and webhooks rather than polling loops to avoid blocking your pipeline threads.
+
+## Pre-Processing Audio for Better Results
+
+Transcription accuracy drops significantly with poor audio quality. A pre-processing step with FFmpeg improves results before sending to any service:
+
+```bash
+# Normalize audio, reduce noise, convert to mono 16kHz
+ffmpeg -i input_video.mp4 \
+  -af "highpass=f=200,loudnorm=I=-16:LRA=11:TP=-1.5,aresample=16000" \
+  -ac 1 \
+  -ar 16000 \
+  processed_audio.wav
+```
+
+For content with heavy background noise (conferences, outdoor recordings), add FFmpeg's `anlmdn` or `afftdn` noise reduction filter before normalization. This single step can push Whisper's word error rate from 15% to under 8% on challenging audio.
+
 ## Best Practices for Implementation
 
 1. **Validate accuracy** — Always spot-check transcriptions, especially for technical content or proper nouns.
@@ -275,9 +364,11 @@ def format_vtt_time(seconds):
 
 3. **Consider latency requirements** — Real-time applications demand low-latency providers; batch processing allows flexibility.
 
-4. **Plan for languages** — If supporting multiple languages, test each language pair specifically.
+4. **Plan for languages** — If supporting multiple languages, test each language pair specifically. Whisper large-v3 handles European languages well, but certain Asian languages benefit from specialized models.
 
 5. **Implement fallbacks** — Build redundancy with multiple providers for critical applications.
+
+6. **Cache results** — Store transcripts alongside your video files keyed by content hash. Re-transcribing the same content is wasteful and adds unnecessary cost.
 
 
 ## Frequently Asked Questions
