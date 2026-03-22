@@ -35,6 +35,18 @@ Alert fatigue kills on-call effectiveness. The average engineering team has hund
 2. **Missing inhibition**: Cascade alerts where one root cause fires 10 alerts
 3. **Poor PromQL**: Expressions that fire on transient spikes instead of sustained issues
 
+## Why Prometheus Alert Quality Degrades Over Time
+
+Alerting rules rarely start broken. The first version of a production alert is usually written by someone who knows the service well, sets a reasonable threshold, and adds a useful runbook link. The rot sets in gradually.
+
+Services grow. What was a sensible threshold for a service handling 100 RPS becomes wildly noisy at 10,000 RPS. The team never revisits the alert because it is buried under 300 others and there is always a more urgent priority.
+
+Teams reorganize. The person who understood what an alert meant leaves. The remaining team treats the alert as an unexplained oracle: when it fires, investigate; when investigation finds nothing, acknowledge and move on. Nobody fixes the underlying expression because nobody is confident enough to modify a production alerting rule.
+
+Alerts proliferate without inhibition. Every new service adds a set of alerts. Nobody thinks about how they interact with existing alerts. A single network partition now fires 40 separate alerts from 12 different services, all simultaneously, for the same root cause.
+
+AI tools attack all three of these problems. They can audit hundreds of alert rules in minutes, suggest inhibition structures, and propose threshold changes backed by statistical reasoning — without requiring an SRE with deep Prometheus expertise to do all of that work manually.
+
 ## Approach 1: AI-Assisted Alert Review
 
 Feed your existing alerting rules to Claude for a quality review:
@@ -302,6 +314,72 @@ Use specific kubectl/aws/curl commands. Reference actual metric names."""
     )
     return response.content[0].text
 ```
+
+## Comparing AI Tools for PromQL Generation
+
+Not every AI tool handles Prometheus queries with equal accuracy. Here is how the major options perform on real alerting tasks.
+
+### Claude
+
+Claude's strength is understanding the intent behind an alert and generating correct multi-window burn rate expressions. For SLO-based alerting, it reliably produces the dual-window pattern (fast + slow burn) without needing to be prompted for it. It also adds meaningful annotations rather than placeholder text.
+
+Where Claude sometimes struggles: very domain-specific metrics with unusual naming conventions. If your metrics don't follow the `http_requests_total` naming standard, Claude may generate expressions that need manual label correction.
+
+### GPT-4
+
+GPT-4 is competitive with Claude on basic PromQL generation. The main difference appears on complex inhibition rule structures — GPT-4 tends to produce valid YAML that doesn't actually inhibit correctly because it misunderstands the label matching semantics of Alertmanager inhibition rules.
+
+For teams already using the OpenAI API, GPT-4 is a reasonable choice for single-alert generation but gets into trouble on complex multi-alert inhibition scenarios.
+
+### GitHub Copilot
+
+Copilot is useful for inline PromQL completion when you are already in a rules YAML file in your editor. It can suggest `for` durations, help with label selectors, and complete annotation templates. It is not suitable for bulk alert auditing or runbook generation — those tasks need a conversational interface with a larger context window.
+
+### Practical Tool Selection
+
+| Task | Best Tool |
+|---|---|
+| Audit 50+ existing alerts for issues | Claude via API |
+| Generate SLO burn rate alerts | Claude |
+| Complete PromQL in editor | GitHub Copilot |
+| Generate individual runbooks | Claude or GPT-4 |
+| Tune thresholds from metrics data | Claude |
+| Bulk alert export + analysis | Claude with script |
+
+## Alertmanager Inhibition Patterns AI Gets Right
+
+One of the most underused features of Prometheus is Alertmanager inhibition rules. They prevent alert storms by suppressing lower-priority alerts when a higher-priority alert for the same root cause is already firing. AI tools can generate these correctly if you give them enough context about your alert hierarchy.
+
+The correct inhibition pattern for a services dependency:
+
+```yaml
+# alertmanager.yml inhibition rules
+inhibit_rules:
+  # If the database is down, suppress application-level alerts
+  - source_matchers:
+      - alertname="DatabaseDown"
+      - severity="critical"
+    target_matchers:
+      - severity=~"warning|info"
+    # Only inhibit alerts for the same environment
+    equal: [namespace, cluster]
+
+  # If a node is down, suppress pod-level alerts on that node
+  - source_matchers:
+      - alertname="NodeDown"
+    target_matchers:
+      - alertname=~"PodCrashLooping|PodNotReady|ContainerOOMKilled"
+    equal: [node]
+
+  # Suppress ticket-level alerts when page-level fires for same service
+  - source_matchers:
+      - severity="page"
+    target_matchers:
+      - severity="ticket"
+    equal: [service, namespace]
+```
+
+When asked to generate inhibition rules for a service dependency graph, Claude produces correct `equal` label matching — the part that is most commonly wrong in hand-written inhibition rules.
 
 ## Related Reading
 
