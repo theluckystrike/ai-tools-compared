@@ -333,3 +333,11 @@ For fast iteration on marketing-focused docs (READMEs aimed at developers new to
 For Google-heavy stacks: Use Gemini for architecture guides and deployment docs.
 
 Never ship AI-generated documentation without human review. Documentation is the contract between your system and its users. Ensure it's accurate, tested against actual behavior, and matches reality.
+
+## Related Articles
+
+- [AI Coding Tools for Writing Chainguard Image Supply Chain Security Policies](/ai-coding-tools-for-writing-chainguard-image-supply-chain-se/)
+- [AI Tools for API Documentation from Code 2026](/ai-tools-for-api-documentation-from-code-2026/)
+- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-for-automated-api-documentation-from-code-comments/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

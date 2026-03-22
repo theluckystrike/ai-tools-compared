@@ -341,4 +341,11 @@ AI coding assistants have become valuable tools for generating platform-specific
 
 The key to success lies in providing clear context about your target platforms and reviewing AI-generated code before integration. With proper oversight, AI tools accelerate platform-specific implementation without sacrificing code quality.
 
+
+## Related Articles
+
+- [AI Code Completion for Kotlin Compose Multiplatform Shared UI Components](/ai-code-completion-for-kotlin-compose-multiplatform-shared-u/)
+- [AI Tools for Generating OpenAPI Specs from Code](/ai-tools-openapi-spec-generation/)
+- [AI Tools for Generating pandas GroupBy Aggregation Code](/ai-tools-for-generating-pandas-groupby-aggregation-code-from/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

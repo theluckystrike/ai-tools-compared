@@ -183,6 +183,99 @@ Watch for these issues in AI-generated listbox code:
 For the best results in 2026, use Claude Code or Cursor with explicit accessibility prompts. These tools produce more complete implementations and understand accessibility patterns better than simple autocomplete tools. Always test AI-generated accessible components with actual screen readers (NVDA, VoiceOver, JAWS) to verify proper functionality.
 
 The investment in proper accessibility implementation saves significant remediation cost and ensures your components work for all users regardless of ability.
+
+## Testing AI-Generated Listboxes with Screen Readers
+
+Once an AI assistant generates your multi-select listbox, validation with actual assistive technology is non-negotiable. The most widely used screen readers respond differently to ARIA patterns, so testing across multiple tools surfaces edge cases that manual code review misses.
+
+**NVDA (Windows)** is the most popular free screen reader. Use it with Firefox for the best ARIA support. Navigate into your listbox with Tab, move through options with Arrow keys, and listen for announcements. NVDA should announce the option label, its selected state, and the position within the list (e.g., "Apple, checked, 1 of 5"). If you hear only the label without state, your aria-selected implementation has an issue.
+
+**VoiceOver (macOS/iOS)** uses different interaction patterns. On macOS, VO+Shift+Down Arrow enters a widget. Inside the listbox, options should announce as "selected" or "unselected" as you navigate. iOS VoiceOver swipes between options and double-taps to toggle selection.
+
+**JAWS** is the most widely deployed enterprise screen reader. Its virtual cursor mode can interfere with custom listbox implementations. Ensure your component calls `event.preventDefault()` consistently so JAWS passes keystrokes to your handler rather than intercepting them.
+
+A quick automated pre-check can catch obvious issues before manual testing:
+
+```bash
+# Install axe-core CLI for quick accessibility audits
+npm install -g @axe-core/cli
+
+# Run against a local dev server serving your component
+axe http://localhost:3000/listbox-demo --tags wcag2aa
+
+# Output will flag missing ARIA attributes, role errors, or contrast failures
+```
+
+For CI integration, add axe to your Playwright or Cypress test suite so accessibility regressions surface in pull requests before they reach production.
+
+## Prompting Strategy That Gets Better Results
+
+The quality of AI-generated accessible code depends heavily on how you frame your request. Vague prompts produce vague results. After testing dozens of prompt variations, a structured approach consistently outperforms simple requests.
+
+**Include the ARIA pattern name**: Instead of "make a multi-select dropdown," say "implement the WAI-ARIA listbox pattern with aria-multiselectable." This single change causes most AI tools to reference the correct specification.
+
+**Specify the interaction model**: State explicitly which keyboard interactions you need—Arrow navigation, Space to toggle, Shift+Arrow for range selection, Ctrl+A to select all. Without this list, tools often omit Shift+Arrow range selection.
+
+**Request the live region**: Explicitly ask for an aria-live="polite" region that announces selection count changes. Most tools skip this unless prompted, even though it is critical for screen reader users.
+
+**Ask for test scenarios**: Append "and include 3 Jest/Vitest test cases covering keyboard navigation" to your prompt. This forces the AI to think through edge cases and often improves the implementation itself.
+
+Example prompt that reliably produces complete implementations:
+
+```
+Create a React multi-select listbox component using the WAI-ARIA listbox pattern.
+Requirements:
+- aria-multiselectable="true" on the listbox container
+- aria-activedescendant pointing to focused option
+- Keyboard: ArrowDown, ArrowUp, Space, Enter, Home, End, Shift+ArrowDown for range selection
+- aria-live="polite" region announcing "{N} options selected"
+- aria-selected on each option matching the selected array state
+- No nested interactive elements inside option elements
+Include TypeScript types and 3 RTL test cases covering keyboard interaction.
+```
+
+## Handling Edge Cases in AI-Generated Code
+
+Even the best AI-generated listbox implementations require review for several recurring edge cases that tools consistently miss or handle incorrectly.
+
+**Group support**: The WAI-ARIA listbox pattern supports groups via role="group" with an aria-label. When options are grouped (e.g., "Fruits" and "Vegetables" in a food picker), the AI must apply aria-setsize and aria-posinset manually since browsers do not compute these across groups automatically.
+
+```jsx
+// Correct group implementation with positional ARIA
+const GroupedListbox = ({ groups, selected }) => {
+  let globalIndex = 0;
+  const totalOptions = groups.reduce((sum, g) => sum + g.options.length, 0);
+
+  return (
+    <ul role="listbox" aria-multiselectable="true">
+      {groups.map(group => (
+        <li key={group.label}>
+          <ul role="group" aria-label={group.label}>
+            {group.options.map(option => {
+              const pos = ++globalIndex;
+              return (
+                <li
+                  key={option.value}
+                  role="option"
+                  aria-selected={selected.includes(option.value)}
+                  aria-setsize={totalOptions}
+                  aria-posinset={pos}
+                >
+                  {option.label}
+                </li>
+              );
+            })}
+          </ul>
+        </li>
+      ))}
+    </ul>
+  );
+};
+```
+
+**Virtual scrolling**: Large option lists (500+ items) require virtual rendering for performance. AI tools rarely combine the listbox ARIA pattern with virtualization correctly. When using libraries like react-window, you must maintain a full options array in state for aria-setsize and use aria-posinset to communicate true position even when only a slice renders in the DOM.
+
+**Disabled options**: Options can carry aria-disabled="true" rather than the native disabled attribute (which does not apply to li elements). Keyboard navigation should skip disabled options in most implementations—Arrow keys should jump past them rather than landing on an uninteractable item. Verify that AI-generated code implements this skip logic.
 {% endraw %}
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

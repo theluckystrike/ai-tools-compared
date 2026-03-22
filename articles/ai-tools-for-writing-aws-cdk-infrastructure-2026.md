@@ -470,3 +470,11 @@ Generate 30 CDK stack articles (5 simple, 15 intermediate, 10 advanced):
 - Time saved vs. manual CDK learning: ~150 hours (worth $7,500–$15,000 at contractor rates)
 
 **Conclusion:** Claude Opus 4.6 is the clear winner for CDK infrastructure content. Reliable, production-safe, and cost-efficient. Use ChatGPT 4o for secondary sources or educational framing. Avoid Copilot and Codeium for stack generation.
+
+## Related Articles
+
+- [Best AI Tools for Writing AWS CDK Infrastructure Code](/best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/)
+- [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)
+- [AI Tools for Writing pytest Tests with Moto Library for AWS](/ai-tools-for-writing-pytest-tests-with-moto-library-for-aws-/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

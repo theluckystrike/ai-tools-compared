@@ -155,4 +155,11 @@ When using AI to generate Knative autoscaler configurations, watch for these fre
 
 AI code generation tools significantly accelerate the process of configuring Knative Serving autoscaling for serverless workloads. By providing detailed context about your workload characteristics—traffic patterns, latency requirements, and resource needs—you can generate well-structured configurations that serve as excellent starting points. Remember to validate generated configs in staging, monitor key metrics, and iterate based on real-world behavior. The combination of AI assistance and operational feedback creates a powerful workflow for achieving optimal autoscaling performance.
 
+
+## Related Articles
+
+- [AI Code Completion for Flutter BLoC Pattern Event and State Class Generation](/ai-code-completion-for-flutter-bloc-pattern-event-and-state-/)
+- [AI Code Generation for Java Reactive Programming](/ai-code-generation-for-java-reactive-programming-with-projec/)
+- [AI Code Generation for Java Virtual Threads Project Loom](/ai-code-generation-for-java-virtual-threads-project-loom-pat/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
