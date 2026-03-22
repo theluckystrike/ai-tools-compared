@@ -230,18 +230,18 @@ Timezone handling varies by system:
 
    Workaround: use a wrapper script that sets TZ:
    ```bash
-   0 2 * * * TZ=America/New_York /usr/bin/backup.sh
+ 0 2 * * * TZ=America/New_York /usr/bin/backup.sh
    ```
 
 2. Kubernetes CronJob (1.25+):
    ```yaml
-   apiVersion: batch/v1
-   kind: CronJob
-   metadata:
-     name: backup
-   spec:
-     schedule: "0 2 * * *"
-     timeZone: "America/New_York"  # Native timezone support
+ apiVersion: batch/v1
+ kind: CronJob
+ metadata:
+ name: backup
+ spec:
+ schedule: "0 2 * * *"
+ timeZone: "America/New_York" # Native timezone support
    ```
 
 3. AWS EventBridge:
@@ -252,10 +252,10 @@ Timezone handling varies by system:
 
    For automatic DST handling, use EventBridge Scheduler (2022+):
    ```json
-   {
-     "ScheduleExpression": "at(2023-01-01T02:00:00)",
-     "Timezone": "America/New_York"
-   }
+ {
+ "ScheduleExpression": "at(2023-01-01T02:00:00)",
+ "Timezone": "America/New_York"
+ }
    ```
 
 DST Transition Examples:

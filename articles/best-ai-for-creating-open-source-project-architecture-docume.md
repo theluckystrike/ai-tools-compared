@@ -285,10 +285,10 @@ OrderFlow follows a layered architecture with clear separation of concerns:
 
 ```
 HTTP Request → API Layer → Domain Layer → Infra Adapters
-                 ↓              ↓              ↓
-            Validation      Validation    DB/Cache/Queue
-                 ↓              ↓              ↓
-            HTTP Response ← Business Result ← External Services
+ ↓ ↓ ↓
+ Validation Validation DB/Cache/Queue
+ ↓ ↓ ↓
+ HTTP Response ← Business Result ← External Services
 ```
 
 ### Dependency Direction

@@ -300,6 +300,7 @@ Claude avoids these:
 - [Best AI Tools for Generating API Documentation From Code](/best-ai-tools-for-generating-api-documentation-from-code-2026/)
 - [AI Tools for API Documentation from Code 2026](/ai-tools-for-api-documentation-from-code-2026/)
 - [AI Tools for Automated API Documentation from Code Comments](/ai-tools-for-automated-api-documentation-from-code-comments/)
+- [AI Tools for Generating OpenAPI Specs from Code](/ai-tools-compared/ai-tools-openapi-spec-generation/)
 
 ---
 

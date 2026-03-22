@@ -378,32 +378,32 @@ Show the full dependency chain.
 load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
 
 def service_library(name, srcs, deps = [], test_srcs = None, **kwargs):
-    """Macro for internal service libraries with enforced test coverage.
+ """Macro for internal service libraries with enforced test coverage.
 
-    Args:
-        name: Library name
-        srcs: Source files
-        deps: Dependencies
-        test_srcs: Test files (defaults to [name + "_test.go"])
-        **kwargs: Additional args passed to go_library
-    """
-    if test_srcs == None:
-        test_srcs = [name + "_test.go"]
+ Args:
+ name: Library name
+ srcs: Source files
+ deps: Dependencies
+ test_srcs: Test files (defaults to [name + "_test.go"])
+ **kwargs: Additional args passed to go_library
+ """
+ if test_srcs == None:
+ test_srcs = [name + "_test.go"]
 
-    go_library(
-        name = name,
-        srcs = srcs,
-        deps = deps,
-        visibility = ["//visibility:__subpackages__", "//services:__subpackages__"],
-        **kwargs
-    )
+ go_library(
+ name = name,
+ srcs = srcs,
+ deps = deps,
+ visibility = ["//visibility:__subpackages__", "//services:__subpackages__"],
+ **kwargs
+ )
 
-    go_test(
-        name = name + "_test",
-        srcs = test_srcs,
-        embed = [":" + name],
-        deps = deps,
-    )
+ go_test(
+ name = name + "_test",
+ srcs = test_srcs,
+ embed = [":" + name],
+ deps = deps,
+ )
 ```
 
 The macro pattern is useful for enforcing organizational conventions across hundreds of packages without duplicating the same boilerplate in every BUILD file.

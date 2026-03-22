@@ -157,15 +157,15 @@ Weaknesses:
 
 1. Start with Claude Opus ($3/month or API pay-as-you-go).
 2. Write a detailed prompt including:
-   - Expected QPS (queries per second)
-   - Window size (5s, 60s, etc.)
-   - Behavior when limit exceeded
-   - Cluster deployment requirements
+ - Expected QPS (queries per second)
+ - Window size (5s, 60s, etc.)
+ - Behavior when limit exceeded
+ - Cluster deployment requirements
 
 3. Ask Claude explicitly:
-   - "Will this work in a Redis cluster?"
-   - "What happens if the key expires during execution?"
-   - "How do I cache this with EVALSHA?"
+ - "Will this work in a Redis cluster?"
+ - "What happens if the key expires during execution?"
+ - "How do I cache this with EVALSHA?"
 
 4. Test using redis-cli SCRIPT LOAD and redis-benchmark:
 

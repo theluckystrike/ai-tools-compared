@@ -248,9 +248,9 @@ Claude's analysis:
 
 **Command Throughput:**
 - 500 ops/sec is moderate. For reference:
-  - Typical app: 100-1000 ops/sec
-  - High-traffic app: 5000-50000 ops/sec
-  - Redis can handle 100k+ ops/sec on modern hardware
+ - Typical app: 100-1000 ops/sec
+ - High-traffic app: 5000-50000 ops/sec
+ - Redis can handle 100k+ ops/sec on modern hardware
 
 **Replication Issue:**
 - 5 full syncs (resync with replica) suggests the primary and replica are losing sync or there's network latency
@@ -357,27 +357,27 @@ r = redis.Redis(decode_responses=True)
 
 # Create consumer group
 try:
-    r.xgroup_create('events', 'my-group', id='$', mkstream=True)
+ r.xgroup_create('events', 'my-group', id='$', mkstream=True)
 except redis.ResponseError:
-    pass  # Group already exists
+ pass # Group already exists
 
 # Read with 5-second timeout
 while True:
-    messages = r.xreadgroup(
-        'my-group',
-        'consumer-1',
-        {'events': '>'},  # '>' = new messages only
-        block=5000,
-        count=10  # batch 10 at a time
-    )
+ messages = r.xreadgroup(
+ 'my-group',
+ 'consumer-1',
+ {'events': '>'}, # '>' = new messages only
+ block=5000,
+ count=10 # batch 10 at a time
+ )
 
-    for stream, msg_list in messages or []:
-        for msg_id, data in msg_list:
-            # Process message
-            print(f"Processing {msg_id}: {data}")
+ for stream, msg_list in messages or []:
+ for msg_id, data in msg_list:
+ # Process message
+ print(f"Processing {msg_id}: {data}")
 
-            # Acknowledge after processing
-            r.xack('events', 'my-group', msg_id)
+ # Acknowledge after processing
+ r.xack('events', 'my-group', msg_id)
 ```
 
 This uses consumer groups so multiple readers can share the load without duplicate processing.

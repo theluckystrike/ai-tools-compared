@@ -347,6 +347,7 @@ AI is particularly useful for Vault audit log queries because the JSONL format a
 - [AI-Powered Feature Flag Management Tools](/ai-tools-compared/ai-powered-feature-flag-management-tools-2026/)
 - [AI-Powered Observability Configuration Tools](/ai-tools-compared/ai-powered-observability-configuration-tools-2026/)
 - [Best AI Tools for Writing Systemd Units](/ai-tools-compared/best-ai-tools-for-writing-systemd-units-2026/)
+- [AI for Automated Regression Test Generation from Bug](/ai-tools-compared/ai-for-automated-regression-test-generation-from-bug-reports/)
 
 ---
 
