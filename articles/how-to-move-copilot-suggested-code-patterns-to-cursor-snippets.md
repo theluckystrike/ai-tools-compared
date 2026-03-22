@@ -12,10 +12,35 @@ score: 8
 reviewed: true
 tags: [ai-tools-compared]
 ---
+---
+layout: default
+title: "How to Move Copilot Suggested Code Patterns to: Snippets"
+description: "A practical step-by-step guide to migrating your favorite GitHub Copilot code suggestions into Cursor's custom snippets for faster development"
+date: 2026-03-16
+author: "theluckystrike"
+permalink: /how-to-move-copilot-suggested-code-patterns-to-cursor-snippets/
+categories: [guides]
+intent-checked: true
+voice-checked: true
+score: 8
+reviewed: true
+tags: [ai-tools-compared]
+---
 
 {% raw %}
 
 Moving your favorite GitHub Copilot code patterns to Cursor snippets lets you recreate the same intelligent suggestions in your new editor. This guide walks you through extracting patterns from Copilot, converting them to Cursor's snippet format, and setting up your personal snippet library for instant access.
+
+## Key Takeaways
+
+- **A quick way to**: surface your most-used patterns: open a recent project in VS Code, scan your commit history, and identify structural repetition across files.
+- **When you insert the snippet**: Cursor highlights `$1` first, let you type, then moves to `$2` when you press Tab.
+- **Access it with `Cmd+Shift+P`**: (Mac) or `Ctrl+Shift+P` (Windows), then search for "Snippets: Configure User Snippets." ### Creating a New Snippet File 1.
+- **Open Command Palette and type "Snippets**: Configure User Snippets"
+
+2.
+- **On macOS that is**: typically `~/Library/Application Support/Cursor/User/snippets/`.
+- **On macOS**: VS Code stores them at `~/Library/Application Support/Code/User/snippets/`.
 
 ## Why Migrate Copilot Patterns to Cursor Snippets
 

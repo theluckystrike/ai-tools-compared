@@ -13,21 +13,37 @@ reviewed: true
 intent-checked: true
 tags: [ai-tools-compared]
 ---
+---
+layout: default
+title: "How to Move Midjourney Style References to Stable Diffusion"
+description: "A practical guide for developers and power users on transferring Midjourney style prompts to Stable Diffusion LoRA training pipelines"
+date: 2026-03-16
+last_modified_at: 2026-03-16
+author: theluckystrike
+permalink: /how-to-move-midjourney-style-references-to-stable-diffusion-/
+categories: [tutorials, guides]
+score: 9
+voice-checked: true
+reviewed: true
+intent-checked: true
+tags: [ai-tools-compared]
+---
 
 
 If you have developed a distinctive visual style in Midjourney and want to recreate it within Stable Diffusion, transferring those style references to LoRA training offers a powerful solution. This process allows you to preserve the aesthetic qualities you have cultivated—specific color grading, texture preferences, composition rules, and artistic influences—and apply them to generate new images using open-source models. This guide walks you through the technical steps for developers and power users who want to move their Midjourney expertise into the Stable Diffusion ecosystem.
 
-## Table of Contents
+## Key Takeaways
 
-- [Understanding the Challenge](#understanding-the-challenge)
-- [Choosing Your Base Model](#choosing-your-base-model)
-- [Step 1: Collect Reference Images](#step-1-collect-reference-images)
-- [Step 2: Generate Captions for Training](#step-2-generate-captions-for-training)
-- [Step 3: Configure the Training Pipeline](#step-3-configure-the-training-pipeline)
-- [Step 4: Prepare Dataset Structure](#step-4-prepare-dataset-structure)
-- [Step 5: Execute Training](#step-5-execute-training)
-- [Step 6: Test Your LoRA](#step-6-test-your-lora)
-- [Common Issues and Solutions](#common-issues-and-solutions)
+- **Use consistent prompting patterns**: ```
+/imagine prompt: [subject] --style [your-custom-parameters] --v 6 --s 250
+```
+
+Save these images in a dedicated folder.
+- **If you cannot collect**: at least 15 images that all clearly demonstrate the same style, your LoRA will likely produce inconsistent results.
+- **Avoid using grid images**: (the 2x2 output before upscaling) because the lower resolution hurts caption quality and training effectiveness.
+- **Use a rare or**: nonsense token like `sks` or `xyz123style` that does not appear in normal prompts.
+- **This guide walks you**: through the technical steps for developers and power users who want to move their Midjourney expertise into the Stable Diffusion ecosystem.
+- **This choice matters because**: your LoRA will be anchored to the model's existing style space.
 
 ## Understanding the Challenge
 
@@ -266,11 +282,10 @@ Yes. Tools like `kohya-ss` and `sd-scripts` include a `merge_lora.py` script for
 
 ## Related Articles
 
-- [How to Move Stable Diffusion Workflows to Midjourney](/ai-tools-compared/how-to-move-stable-diffusion-workflows-to-midjourney-equivalent-setup/)
 - [Move Stable Diffusion Workflows to Midjourney](/ai-tools-compared/how-to-move-stable-diffusion-workflows-to-midjourney-equivalent-setup/)
-- [Stable Diffusion vs Midjourney for Character](/ai-tools-compared/stable-diffusion-vs-midjourney-for-character-design/)
+- [Stable Diffusion vs Midjourney for Character Design](/ai-tools-compared/stable-diffusion-vs-midjourney-for-character-design/)
 - [DALL-E 3 vs Stable Diffusion for Illustrations](/ai-tools-compared/dall-e-3-vs-stable-diffusion-for-illustrations/)
 - [Stable Diffusion ComfyUI vs Automatic1111 Comparison](/ai-tools-compared/stable-diffusion-comfyui-vs-automatic1111-comparison/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-```
 ```

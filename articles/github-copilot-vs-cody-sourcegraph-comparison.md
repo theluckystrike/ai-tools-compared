@@ -13,28 +13,35 @@ intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, comparison]
 ---
+---
+layout: default
+title: "GitHub Copilot vs Cody Sourcegraph Comparison"
+description: "A detailed comparison of GitHub Copilot and Cody (by Sourcegraph) for developers. Learn the key differences in features, pricing, and use cases"
+date: 2026-03-15
+last_modified_at: 2026-03-15
+author: theluckystrike
+permalink: /github-copilot-vs-cody-sourcegraph-comparison/
+reviewed: true
+score: 9
+categories: [comparisons]
+intent-checked: true
+voice-checked: true
+tags: [ai-tools-compared, comparison]
+---
 
 {% raw %}
 
 Choose Cody by Sourcegraph if you work with large, complex codebases and need AI that understands your entire repository—Cody indexes all your code and generates suggestions matching your project's existing patterns and conventions. Choose GitHub Copilot if you want the most polished IDE integration, already use GitHub's ecosystem, and work primarily with popular frameworks where Copilot's training data advantage shines. Cody offers a more generous free tier; Copilot costs $10 per month with broader IDE support.
 
-## Table of Contents
+## Key Takeaways
 
-- [Core Architecture and Context Awareness](#core-architecture-and-context-awareness)
-- [Code Generation and Completion Quality](#code-generation-and-completion-quality)
-- [Feature Comparison Table](#feature-comparison-table)
-- [Codebase Awareness and Chat Features](#codebase-awareness-and-chat-features)
-- [Pricing and Accessibility](#pricing-and-accessibility)
-- [IDE Integration and Performance](#ide-integration-and-performance)
-- [Which Should You Choose?](#which-should-you-choose)
-- [Real-World Workflow Differences](#real-world-workflow-differences)
-- [Making the Decision](#making-the-decision)
-- [Performance Benchmarking: Latency and Accuracy](#performance-benchmarking-latency-and-accuracy)
-- [Implementation Guide: Setting Up Both Tools](#implementation-guide-setting-up-both-tools)
-- [Workflow Optimization: Using Both Tools](#workflow-optimization-using-both-tools)
-- [Cost Analysis: Which Provides Better Value](#cost-analysis-which-provides-better-value)
-- [Hybrid Setup: Recommendations](#hybrid-setup-recommendations)
-- [Migration Path: Switching Between Tools](#migration-path-switching-between-tools)
+- **Cody offers a more**: generous free tier; Copilot costs $10 per month with broader IDE support.
+- **Choose GitHub Copilot if**: you want the most polished IDE integration, already use GitHub's ecosystem, and work primarily with popular frameworks where Copilot's training data advantage shines.
+- **Cody's completions are slightly slower on average**: typically 200-400ms — because the retrieval step adds latency.
+- **The free and Pro**: tiers use Sourcegraph's cloud indexing service, which encrypts data in transit and at rest.
+- **Week 3**: Disable Copilot for new files, use only for complex edits
+3.
+- **It uses OpenAI's models**: (specifically GPT-4 and newer variants) to generate code suggestions based on your current file and surrounding context.
 
 ## Core Architecture and Context Awareness
 
@@ -42,7 +49,7 @@ GitHub Copilot integrates directly into Visual Studio Code, JetBrains IDEs, and 
 
 Cody, built by Sourcegraph, takes a fundamentally different approach. Cody indexes your entire codebase—including private repositories—and uses that context to provide more relevant suggestions. When you request code help, Cody understands your project's patterns, existing functions, and codebase-specific conventions.
 
-Cody uses embeddings-based retrieval over your repository: it converts code snippets into vector representations and retrieves semantically similar code when generating suggestions. This means it can surface a utility function written six months ago in a different module when it is relevant to your current task. Copilot's context is limited to open files and a sliding window of recent code, with some workspace-level context added in the Copilot Chat extension.
+Cody uses embeddings-based retrieval over your repository: it converts code snippets into vector representations and retrieves semantically similar code when generating suggestions. This means it can surface an utility function written six months ago in a different module when it is relevant to your current task. Copilot's context is limited to open files and a sliding window of recent code, with some workspace-level context added in the Copilot Chat extension.
 
 Here's a practical example of how context differs:
 

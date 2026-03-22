@@ -12,26 +12,32 @@ intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared]
 ---
+---
+layout: default
+title: "How to Build a Custom GitHub Copilot Extension"
+description: "Step-by-step guide to building a GitHub Copilot Extension using the Copilot Extensions API, with authentication, streaming responses, and real deployment"
+date: 2026-03-21
+author: theluckystrike
+permalink: /how-to-build-custom-copilot-extension/
+categories: [guides]
+reviewed: true
+score: 8
+intent-checked: true
+voice-checked: true
+tags: [ai-tools-compared]
+---
 
 {% raw %}
 
 GitHub Copilot Extensions let you build custom agents that appear as `@your-agent` in Copilot Chat. Users can invoke your extension directly from their editor or github.com, and you handle the conversation with your own backend. This guide covers the full build: registering the app, handling authentication, streaming responses, and deploying.
 
-## Table of Contents
+## Key Takeaways
 
-- [What Copilot Extensions Can Do](#what-copilot-extensions-can-do)
-- [Prerequisites](#prerequisites)
-- [Step 1: Register the GitHub App](#step-1-register-the-github-app)
-- [Step 2: Build the Agent Server](#step-2-build-the-agent-server)
-- [Step 3: Implement Response Logic](#step-3-implement-response-logic)
-- [Step 4: Handle Streaming Properly](#step-4-handle-streaming-properly)
-- [Step 5: Reference Files from the Editor](#step-5-reference-files-from-the-editor)
-- [Step 6: Local Development with ngrok](#step-6-local-development-with-ngrok)
-- [Step 7: Error Handling and Resilience](#step-7-error-handling-and-resilience)
-- [Testing the Extension](#testing-the-extension)
-- [Deployment Checklist](#deployment-checklist)
-- [Choosing the Right LLM Backend](#choosing-the-right-llm-backend)
-- [Publishing Your Extension](#publishing-your-extension)
+- **Users can invoke your**: extension directly from their editor or github.com, and you handle the conversation with your own backend.
+- **You choose the LLM**: the data sources, and the business logic.
+- **GitHub handles the user**: interface (Copilot Chat in VS Code, JetBrains, github.com) and passes messages to your endpoint.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
 
 ## What Copilot Extensions Can Do
 
@@ -416,9 +422,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [Best Practices for Writing GitHub Copilot Custom Instruction](/ai-tools-compared/best-practices-for-writing-github-copilot-custom-instruction/)
-- [Copilot Chat Not Responding in GitHub](/ai-tools-compared/copilot-chat-not-responding-in-github-fix/)
-- [How to Use Copilot for Writing CI CD Pipelines in GitHub](/ai-tools-compared/how-to-use-copilot-for-writing-ci-cd-pipelines-in-github-act/)
-- [GitHub Copilot vs Cody Sourcegraph Comparison](/ai-tools-compared/github-copilot-vs-cody-sourcegraph-comparison/)
-- [How to Maximize GitHub Copilot Free Tier for Open Source](/ai-tools-compared/how-to-maximize-github-copilot-free-tier-for-open-source/)
+- [Best AI Tools for Writing GitHub Actions Matrix Build Strate](/ai-tools-compared/best-ai-tools-for-writing-github-actions-matrix-build-strate/)
+- [How to Build Custom AI Coding Workflows with MCP Server](/ai-tools-compared/how-to-build-custom-ai-coding-workflows-with-mcp-server-inte/)
+- [Completely Free Alternatives to GitHub Copilot That Actually](/ai-tools-compared/completely-free-alternatives-to-github-copilot-that-actually/)
+- [Continue Dev vs GitHub Copilot: Open Source Comparison](/ai-tools-compared/continue-dev-vs-github-copilot-open-source-comparison/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

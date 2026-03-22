@@ -17,13 +17,22 @@ tags: [ai-tools-compared, comparison, artificial-intelligence]
 
 For ecommerce businesses scaling customer support operations, choosing the right AI-powered platform determines both agent productivity and customer satisfaction. Gorgias and Richpanel dominate this space, but their approaches to automation, integration, and developer experience differ significantly. This comparison examines both platforms from a technical standpoint, focusing on implementation details that matter to developers and power users.
 
+## Key Takeaways
+
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+- **This comparison examines both**: platforms from a technical standpoint, focusing on implementation details that matter to developers and power users.
+- **Authentication uses API keys**: with scoped permissions.
+- **Gorgias focuses on response suggestion**: the AI analyzes incoming messages and recommends replies from your knowledge base or previous tickets.
+- **Both platforms offer free**: trials for testing.
+
 ## Platform Architecture Overview
 
 
 Gorgias positions itself as a helpdesk that uses machine learning to automate responses. The platform connects directly to ecommerce stores through native integrations with Shopify, Magento, WooCommerce, and BigCommerce. Its automation engine routes tickets based on rules you define, then suggests or auto-sends responses using trained models.
 
 
-Richpanel takes a more modular approach, separating its ticket management from its AI capabilities. The platform emphasizes a unified inbox that aggregates support channels, with AI features that learn from your knowledge base rather than relying solely on pre-trained models.
+Richpanel takes a more modular approach, separating its ticket management from its AI capabilities. The platform emphasizes an unified inbox that aggregates support channels, with AI features that learn from your knowledge base rather than relying solely on pre-trained models.
 
 The architectural difference has downstream consequences for teams that want to customize behavior. Gorgias's tightly coupled approach means you get out-of-the-box automations faster but hit walls when your workflow doesn't match their opinionated templates. Richpanel's modular design requires more initial setup but gives teams more control over individual components.
 
