@@ -29,7 +29,9 @@ Midjourney and Ideogram take fundamentally different approaches to image generat
 Ideogram operates through a web interface and API, accepting natural language prompts without special parameter syntax. It handles aspect ratios and style through separate dropdown selections rather than prompt modifications. This means your Midjourney prompts require structural changes before Ideogram can produce comparable results.
 
 
-The most significant difference lies in text rendering. If your Midjourney prompts contain text elements for logos, signage, or typography-focused designs, Ideogram will likely produce superior results without additional prompting tricks. This alone makes prompt migration valuable for many use cases.
+The most significant difference lies in text rendering. If your Midjourney prompts contain text elements for logos, signage, or typography-focused designs, Ideogram will likely produce superior results without additional prompting tricks. Ideogram was specifically designed with text generation as a core capability, whereas Midjourney treats text as an afterthought. This alone makes prompt migration valuable for many use cases.
+
+Additionally, Ideogram supports a `magic_prompt` API parameter that automatically enhances your prompts with additional detail. Setting `magic_prompt: "ON"` acts similarly to Midjourney's higher `--stylize` values — it gives the model creative latitude to interpret your prompt rather than producing a literal rendering.
 
 
 ## Converting Midjourney Parameters to Ideogram Format
@@ -62,7 +64,7 @@ def convert_aspect_ratio(mj_param):
 ### Style Parameter Mapping
 
 
-Midjourney's `--stylize` parameter (0-1000) controls artistic interpretation. Ideogram handles this differently through prompt language. Higher stylize values in Midjourney mean more artistic freedom. For Ideogram, you express this through descriptive adjectives:
+Midjourney's `--stylize` parameter (0-1000) controls artistic interpretation. Ideogram handles this differently through prompt language. Higher stylize values in Midjourney mean more artistic freedom. For Ideogram, you express this through descriptive adjectives and through the `style_type` API parameter:
 
 
 ```python
@@ -74,6 +76,16 @@ def convert_stylize_to_prompt(stylize_value):
         return "artistic, creative interpretation"
     else:
         return "highly stylized, expressive, artistic freedom"
+
+def convert_stylize_to_ideogram_style(stylize_value):
+    """Map stylize values to Ideogram style_type API parameter."""
+    # Ideogram style_type options: GENERAL, REALISTIC, DESIGN, ANIME
+    if stylize_value < 200:
+        return "REALISTIC"
+    elif stylize_value < 600:
+        return "GENERAL"
+    else:
+        return "DESIGN"
 ```
 
 
@@ -292,17 +304,79 @@ print(f"Converted {count} prompts")
 ```
 
 
+## Using the Ideogram API After Conversion
+
+
+Once your prompts are converted, you can submit them programmatically using Ideogram's REST API:
+
+
+```python
+import requests
+
+def generate_ideogram_image(prompt, aspect_ratio="square", style_type="GENERAL"):
+    """Submit a converted prompt to the Ideogram API."""
+    headers = {
+        "Api-Key": "YOUR_IDEOGRAM_API_KEY",
+        "Content-Type": "application/json"
+    }
+
+    payload = {
+        "image_request": {
+            "prompt": prompt,
+            "aspect_ratio": aspect_ratio,
+            "model": "V_2_TURBO",
+            "style_type": style_type,
+            "magic_prompt_option": "AUTO"
+        }
+    }
+
+    response = requests.post(
+        "https://api.ideogram.ai/generate",
+        headers=headers,
+        json=payload
+    )
+
+    return response.json()
+
+# Example with a converted prompt
+result = generate_ideogram_image(
+    prompt="a futuristic cityscape at sunset, neon lights, cyberpunk aesthetic. Highly artistic, expressive style.",
+    aspect_ratio="landscape_16_9",
+    style_type="DESIGN"
+)
+print(result["data"][0]["url"])
+```
+
+
+Ideogram V_2_TURBO is the recommended model for batch processing due to its speed. Use V_2 for highest quality when processing curated prompts. API keys are available from ideogram.ai — pricing starts at $0.04 per image for Turbo and $0.08 for standard quality.
+
+
+## Style Type Mapping Reference
+
+
+Ideogram's `style_type` parameter has no direct Midjourney equivalent, but this mapping works well in practice:
+
+
+| Midjourney Use Case | Midjourney Params | Ideogram Style Type |
+|--------------------|--------------------|---------------------|
+| Photography | `--v 6 --s 0` | REALISTIC |
+| General illustration | `--v 6` | GENERAL |
+| Logos, branding | `--v 6 --s 1000` | DESIGN |
+| Anime/manga | `--niji 6` | ANIME |
+| 3D render | `--v 6 --style raw` | GENERAL + descriptive |
+
+
 ## Limitations and Manual Review
 
 
 Automated conversion handles approximately 80% of prompts effectively. However, certain Midjourney features require manual intervention:
 
 
-- Style references (--sref): These cannot be automatically converted
+- **Style references** (`--sref`): These cannot be automatically converted. Describe the referenced style in natural language instead.
 
-- Image prompts (--iw with URLs): Ideogram handles images differently
+- **Image prompts** (`--iw` with URLs): Ideogram handles image references through its image-to-image endpoint, which requires a separate workflow from text-to-image.
 
-- Complex weighted prompts: May need manual consolidation
+- **Complex weighted prompts**: May need manual consolidation. When Midjourney uses `subject1::2 background::0.5`, translate to priority-ordered natural language: "a [subject1] with [background] in the distance".
 
 
 After running your conversion, review prompts containing these elements manually to ensure the converted version maintains your intended output.
