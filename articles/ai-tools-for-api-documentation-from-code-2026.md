@@ -31,6 +31,30 @@ tags: [ai-tools-compared, artificial-intelligence, api]---
 
 API documentation generated from code comments tends to be incomplete — developers document the "what" but skip the "why", error cases, and usage examples. AI tools have moved the state of the art from "generate docstrings" to "generate complete API reference pages with examples, error tables, and usage patterns."
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **User-Facing Message**: What to show in UI
+4.
+- **Retry Strategy**: Is this retryable? Exponential backoff?
+
+Example:
+
+```markdown
+### Error: 402 Payment Required
+
+Code: `card_declined`
+
+Message (to show users): "Your card was declined.
+- **Common causes**: - Insufficient funds
+- Card expired
+- Card flagged for fraud
+- Processing limits exceeded
+
+Retry Strategy: Do NOT retry automatically.
+- **Scenario**: You rename an API endpoint from `/api/v1/users` to `/api/v2/users`.
+
 ## Tools Compared
 
 - **Mintlify Writer** — AI docstring and docs generation integrated into IDEs

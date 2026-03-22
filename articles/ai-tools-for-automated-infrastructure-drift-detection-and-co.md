@@ -32,6 +32,19 @@ Use AI tools to continuously monitor your infrastructure state against desired c
 
 This article examines practical implementations of AI tools for automated infrastructure drift detection and correction, targeting developers and power users managing infrastructure at scale.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **After 30 days of operation**: most teams report a 60–70% reduction in alert fatigue compared to rule-based detection.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Immutable Infrastructure**: Prefer replacement over modification when possible
+
+2.
+- **Rollback Capability**: Ensure quick recovery if corrections cause issues
+
+6.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+
 ## Understanding Infrastructure Drift
 
 When you deploy infrastructure using Terraform, Pulumi, or CloudFormation, you define a desired state. Over time, manual changes through cloud consoles, emergency patches, or failed deployments create gaps between your code-defined state and reality. This is drift.

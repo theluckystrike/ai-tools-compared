@@ -29,6 +29,18 @@ tags: [ai-tools-compared, artificial-intelligence]---
 
 Performance profiling traditionally requires expertise to interpret flame graphs, read allocation traces, and correlate CPU spikes with code paths. AI tools are changing this by reading profiler output and explaining what to fix in plain language. This guide covers the tools and workflows that actually save debugging time.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Hot functions (sorted by self CPU time)**: ${JSON.stringify(hotFunctions, null, 2)}
+
+Focus on:
+1.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Specific optimization recommendations with**: code examples 4.
+- **Are any hot functions**: in user application code (not node_modules)? 2.
+- **Estimated impact of fixing**: each bottleneck` }] }); return response.content[0].text; } ``` ## Database Query Analysis The most common performance issue in web apps is slow SQL.
+
 ## The Manual Profiling Problem
 
 A Node.js CPU flame graph is a wall of stack frames. Most developers know how to generate one but not how to interpret it. An N+1 query in a Python endpoint is obvious in a query count log but invisible in application code. AI tools bridge this gap.

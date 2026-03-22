@@ -26,7 +26,18 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true---
+
+
 Claude.md, CursorRules, and Copilot Instructions are three distinct approaches to AI customization: Claude.md uses repository-level markdown files for team-wide configuration, CursorRules operates within the Cursor IDE through JSON/YAML configuration, and Copilot Instructions work through GitHub-level settings. Each approach differs in scope, portability, and integration with your development environment. This guide breaks down the practical differences and helps you decide which approach — or combination — fits your workflow.
+
+## Key Takeaways
+
+- **A basic configuration used**: by everyone outperforms an advanced configuration only you understand.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **Use AI-generated tests as**: a starting point, then add cases that cover your unique requirements and failure modes.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+- **When Claude starts working**: in your project, it automatically reads this file to understand your coding standards, project structure, and preferred patterns.
+- **The instructions persist in**: version control, travel with the repo, and can be updated through the same code review process used for any other project file.
 
 ## What Is Claude.md?
 
