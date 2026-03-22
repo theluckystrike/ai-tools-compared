@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /ai-powered-database-query-optimization-tools/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]
