@@ -376,6 +376,86 @@ def embed_batch_with_retry(texts: list[str]) -> list[list[float]]:
     return embed_batch(texts)
 ```
 
+## Chunk Strategy by Document Type
+
+Not all documents chunk the same way. Using 512-token fixed-size chunks works fine for prose documentation but breaks poorly for structured content.
+
+**API reference docs**: Split by endpoint or method. A chunk should contain one complete endpoint description — mixing two endpoint descriptions into one chunk dilutes the embedding for both.
+
+**Markdown with headers**: Use `RecursiveCharacterTextSplitter` with `"\n## "` as a high-priority separator. This keeps H2 sections together, which typically represent coherent concepts.
+
+**Code-heavy docs**: Add a custom splitter that respects code fence boundaries. A chunk that cuts across a code block mid-function will embed poorly and retrieve inaccurately.
+
+```python
+CODE_AWARE_SEPARATORS = [
+    "\n```\n",   # code block end
+    "\n## ",     # H2 section break
+    "\n### ",    # H3 section break
+    "\n\n",      # paragraph break
+    "\n",
+    ". ",
+    " ",
+    ""
+]
+
+splitter = RecursiveCharacterTextSplitter(
+    chunk_size=400,
+    chunk_overlap=50,
+    separators=CODE_AWARE_SEPARATORS,
+    keep_separator=True
+)
+```
+
+## Multi-Tenant Isolation with Namespaces
+
+If you're serving multiple customers or projects from one Pinecone index, use namespace isolation rather than separate indexes. Namespaces are free and keep your index count manageable.
+
+```python
+def ingest_for_tenant(docs: list[dict], tenant_id: str):
+    index = get_or_create_index()
+    # ... chunk and embed as before ...
+    index.upsert(vectors=vectors, namespace=tenant_id)
+
+def retrieve_for_tenant(
+    query: str,
+    tenant_id: str,
+    top_k: int = 5
+) -> list[dict]:
+    index = pc.Index(os.environ["PINECONE_INDEX_NAME"])
+    query_embedding = embed_query(query)
+    results = index.query(
+        vector=query_embedding,
+        top_k=top_k,
+        include_metadata=True,
+        namespace=tenant_id  # isolates results to this tenant
+    )
+    return [m.metadata for m in results.matches if m.score >= 0.70]
+```
+
+This pattern lets you offer per-customer knowledge bases without provisioning separate indexes or worrying about data leakage between tenants.
+
+## Re-Ranking Retrieved Chunks
+
+Cosine similarity ranking is fast but imperfect. A cross-encoder re-ranker improves relevance by scoring each candidate chunk against the full query — computationally heavier, but worth it for precision-sensitive use cases.
+
+```python
+from sentence_transformers import CrossEncoder
+
+reranker = CrossEncoder("cross-encoder/ms-marco-MiniLM-L-6-v2")
+
+def rerank(query: str, candidates: list[dict]) -> list[dict]:
+    pairs = [(query, c["text"]) for c in candidates]
+    scores = reranker.predict(pairs)
+    ranked = sorted(
+        zip(candidates, scores),
+        key=lambda x: x[1],
+        reverse=True
+    )
+    return [item for item, _ in ranked]
+```
+
+Run the initial Pinecone search with `top_k=20`, then re-rank and pass only the top 5 to the LLM. This maintains Pinecone's speed advantage while improving the final answer quality significantly.
+
 ## Related Reading
 
 - [How to Build Custom MCP Servers for Claude](/ai-tools-compared/how-to-build-custom-mcp-servers-for-claude/)
