@@ -230,6 +230,69 @@ This prompt consistently improves GPT-4o's output by about 30% on the failure-mo
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
+## When to Choose Each Model
+
+Claude excels at:
+- Legacy code with implicit business logic (COBOL batch jobs, VB6)
+- Code with global state and side effects
+- Unsafe languages (C, C++) where memory issues matter
+- Explaining "why" code fails rather than "what" it does
+- Multi-file refactoring decisions
+- Identifying architectural debt
+
+GPT-4o excels at:
+- Modern frameworks and popular libraries
+- Generating documentation quickly
+- Explaining codebases with good structure
+- Adding feature enhancements to existing code
+- Code that's been through multiple iterations
+
+## Practical Workflow: Using Both Tools
+
+Most teams improve results by using both:
+
+```
+Workflow for explaining legacy code:
+1. Paste code to Claude
+2. Get explanation of business logic and risks
+3. Paste the same code to GPT-4o
+4. Get explanation of technical structure
+5. Compare: Are the failure modes the same? Did each catch different issues?
+6. Use insights from both for migration planning
+```
+
+Example: A complex SQL stored procedure
+- Claude identifies: implicit date assumptions, missing error handling, hardcoded thresholds
+- GPT-4o identifies: query performance issues, missing indexes, cursor usage patterns
+- Combined: You understand both the business assumptions AND the performance problems
+
+## Evaluation Metrics
+
+When testing models on your own codebase, score explanations:
+
+```markdown
+Scoring rubric (0-10):
+
+1. Identifies business logic (not just syntax)
+   - Poor: "Uses SELECT statement"
+   - Good: "Calculates month-end interest accrual per account"
+
+2. Explains failure modes under load
+   - Poor: "May have performance issues"
+   - Good: "O(n²) algorithm on accounts table will timeout with >10k records"
+
+3. Identifies hidden assumptions
+   - Poor: "Uses hardcoded values"
+   - Good: "Assumes all amounts fit in 32-bit integer; fails for enterprise accounts >$2B"
+
+4. Safe modification guidance
+   - Poor: "Can be refactored to use modern SQL"
+   - Good: "Refactoring requires updating 3 dependent jobs; audit trail validation added in 1997"
+
+5. Clarity and completeness
+   - Poor: One-line explanation
+   - Good: Multi-paragraph with examples
+```
 
 ## Frequently Asked Questions
 

@@ -299,6 +299,99 @@ npm run test:generate && npm test
 Many teams generate fixtures once and commit them to version control, regenerating only when schemas change. This approach ensures reproducible builds and simplifies CI/CD.
 
 
+## Advanced Configuration and Scaling
+
+For production environments, consider containerizing your fixture generator. This ensures consistent behavior across development, CI/CD, and team environments:
+
+```dockerfile
+FROM python:3.11-slim
+
+RUN pip install llamafill torch transformers
+
+WORKDIR /app
+COPY schema.json ./
+COPY generate.py ./
+
+ENTRYPOINT ["python", "generate.py"]
+```
+
+Running the container in your CI/CD pipeline:
+
+```bash
+docker build -t fixture-generator .
+docker run --rm -v $(pwd)/fixtures:/output fixture-generator \
+  --schema schema.json \
+  --count 1000 \
+  --output /output/fixtures.json
+```
+
+For teams using multiple databases, maintain separate schema definitions and run generation independently:
+
+```bash
+# Parallel generation for three databases
+parallel :::: \
+  <(echo "llamafill generate --schema user_schema.json --output users.json") \
+  <(echo "llamafill generate --schema product_schema.json --output products.json") \
+  <(echo "llamafill generate --schema order_schema.json --output orders.json")
+```
+
+## Real-World Implementation Patterns
+
+Teams successfully using self-hosted fixture generation follow these patterns. First, the commit-once approach: generate fixtures once with a specific seed, commit to version control, and regenerate only when the schema changes. This ensures reproducible test runs and makes version control history meaningful.
+
+```json
+{
+  "seed": 42,
+  "schema_version": "3.2.1",
+  "generated_at": "2026-03-22T10:30:00Z",
+  "count": 500,
+  "records": [...]
+}
+```
+
+Second, the layered approach: use FakerAI for rapid prototyping, switch to LlamaFill for integration tests, and run DataForge for full relational datasets in end-to-end tests. This balances speed with coverage:
+
+```python
+# test_unit.py - Fast, simple fixtures
+from faker_ai import FakerAI
+fake = FakerAI()
+user = fake.user()
+
+# test_integration.py - Schema-aware fixtures
+from llamafill import FixtureGenerator
+gen = FixtureGenerator(schema="./user.schema.json")
+users = gen.generate(count=100)
+
+# test_e2e.py - Full relational dataset
+from dataforge import DataForgeClient
+client = DataForgeClient()
+dataset = client.generate(tables=["users", "orders", "products"])
+```
+
+## Prompt Engineering for Better Outputs
+
+When using TestGPT Local or general-purpose LLMs for fixture generation, prompt structure matters significantly. Specific, detailed prompts produce better results:
+
+Poor prompt: "Generate users"
+Better prompt: "Generate 100 user records for a healthcare application. Include: patient_id (UUID v4), full_name (realistic names, mixed gender), date_of_birth (ages 18-95, realistic distribution), insurance_provider (one of: Medicare, Medicaid, BlueCross, Aetna, UnitedHealth), medical_record_number (8-digit numeric ID, no duplicates), emergency_contact (nested object with name and phone fields). Format as JSON array."
+
+The detailed prompt eliminates ambiguity and typically produces usable output on the first try.
+
+## Cost-Benefit Analysis
+
+When deciding between self-hosted and cloud-based solutions, consider these factors:
+
+| Factor | Self-Hosted | Cloud API |
+|--------|------------|-----------|
+| Initial setup time | 2-4 hours | 30 minutes |
+| Per-record cost (after setup) | ~$0.0001 | $0.002-$0.01 |
+| Data privacy | Maximum | Requires trust |
+| Customization | Unlimited | Tool-dependent |
+| Maintenance burden | Medium | None |
+| Scaling to 100k records | Fast | Expensive |
+
+For teams generating more than 50,000 fixture records monthly, self-hosted approaches typically cost 80-90% less than cloud APIs. For sporadic generation or very small datasets, cloud APIs may be more cost-effective.
+
 ## Related Articles
 
 - [AI Tools for Qa Engineers Generating Data Driven Test](/ai-tools-for-qa-engineers-generating-data-driven-test-scenar/)

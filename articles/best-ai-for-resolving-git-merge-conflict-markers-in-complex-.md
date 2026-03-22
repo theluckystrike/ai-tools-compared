@@ -175,6 +175,289 @@ However, AI tools can struggle with conflicts where:
 In these situations, AI serves best as a starting point or second pair of eyes, but human judgment remains essential.
 
 
+## Advanced Conflict Resolution Patterns
+
+
+Beyond basic conflict handling, developers working with complex rebases encounter specific patterns that require particular AI assistance strategies.
+
+
+### Dependency Chain Conflicts
+
+
+When multiple files have interconnected changes, conflicts cascade. A change in a model file might affect an API endpoint, which in turn affects the client. AI tools help by understanding the full dependency graph.
+
+
+```typescript
+// Database migration file - HEAD version
+const migration = {
+  up: async (db) => {
+    await db.schema.createTable('orders', (t) => {
+      t.increments('id');
+      t.string('customer_id').references('customers.id');
+      t.decimal('total', 10, 2);
+    });
+  }
+};
+
+// Conflict: incoming rebase adds quantity field
+// Proper resolution needs to also update:
+// - Order model calculations (price * quantity)
+// - API response schema validation
+// - Client state management for order items
+```
+
+
+When facing this scenario, feeding the AI the entire dependency tree—migration, model, API route, and client code—produces more coherent resolutions than handling each file in isolation. The AI can ensure consistency across layers.
+
+
+### Test File Conflicts in TypeScript
+
+
+Test file conflicts often reveal deeper architectural issues. When tests conflict, it frequently means the underlying functionality is genuinely ambiguous.
+
+
+```typescript
+// packages/utils/__tests__/calculateTotal.test.ts
+describe('calculateTotal', () => {
+  // HEAD version: test verifies base price calculation
+  it('should sum prices without tax', () => {
+    const items = [
+      { id: 1, price: 10.00 },
+      { id: 2, price: 20.00 }
+    ];
+    expect(calculateTotal(items)).toBe(30.00);
+  });
+
+  // Incoming rebase: test expects quantity multiplication
+  it('should multiply price by quantity', () => {
+    const items = [
+      { id: 1, price: 10.00, quantity: 3 },
+      { id: 2, price: 20.00, quantity: 1 }
+    ];
+    expect(calculateTotal(items)).toBe(50.00);
+  });
+});
+```
+
+
+Present both test versions to the AI with context about your product requirements. The AI can identify whether:
+- Both tests should coexist (different calculation paths)
+- One should be removed (intentional API change)
+- New implementation should satisfy both (requires refactoring)
+
+
+### Whitespace and Formatting Conflicts
+
+
+These are noise conflicts that clutter real decision-making. Many developers don't realize these can be programmatically handled:
+
+
+```bash
+# Resolve formatting conflicts without human intervention
+git merge --strategy-option=ours  # Uses local file as-is
+# Then manually apply formatting standards across the file
+prettier --write path/to/file.js
+```
+
+
+For TypeScript and modern linted projects, post-conflict cleanup with automated formatters often resolves whitespace conflicts:
+
+
+```bash
+# After resolving semantic conflicts, reformat all changed files
+eslint --fix $(git diff --name-only --diff-filter=U)
+prettier --write $(git diff --name-only --diff-filter=U)
+```
+
+
+### Configuration File Conflicts
+
+
+Configuration conflicts often follow predictable patterns—merging environment variables, feature flags, or build settings.
+
+
+```yaml
+# config.yml - typical conflict
+database:
+  host: localhost
+  port: 5432  # HEAD: unchanged
+  # Incoming: adds pool settings for scaling
+  pool:
+    min: 5
+    max: 20
+```
+
+
+For this type of conflict, provide the AI with your configuration schema or validation code. It can understand constraints that purely text-based merging cannot.
+
+
+## Prompt Engineering for Better Resolutions
+
+
+The quality of AI assistance depends heavily on how you frame the conflict. Several strategies improve outcomes:
+
+
+### Strategy: Include Project Architecture Documentation
+
+
+```
+I'm rebasing a feature branch for our SPA. Here's our architecture:
+- Frontend: React + TypeScript, state managed with Zustand
+- Backend: Node.js Express, REST API with validation middleware
+- Database: PostgreSQL with migrations in Knex
+
+Current conflict in src/hooks/useOrder.ts - the hook changed both in HEAD and incoming.
+HEAD refactored for better TypeScript types.
+Incoming added caching logic.
+
+Both changes are valuable. Help me merge them while maintaining type safety and respecting the caching abstraction.
+
+[Include the conflicting code]
+```
+
+
+### Strategy: Provide Test Expectations
+
+
+```
+We have these tests for the conflicted function:
+- Test A (HEAD): Validates fast path with cached results
+- Test B (Incoming): Validates correctness of first-time calculations
+
+Both tests should pass after resolution. Here's the conflict:
+
+[Include conflicted code and test code]
+
+Should I combine both approaches or pick one?
+```
+
+
+### Strategy: Ask for Explanation First
+
+
+Instead of immediately asking for code:
+
+
+```
+In this conflict:
+- HEAD changed how we validate API responses (stricter type checking)
+- Incoming changed how we fetch data (added deduplication)
+
+What are the interactions between these two changes? Could stricter validation break deduplication?
+
+[Include code]
+```
+
+
+The AI explores the semantic problem before proposing code, reducing incorrect suggestions.
+
+
+## Preventing Conflicts During Development
+
+
+While AI resolves conflicts well, preventing them saves time entirely. Several practices reduce conflict frequency:
+
+
+### Frequent Rebasing
+
+
+Rebasing frequently against main prevents large divergence:
+
+
+```bash
+# Rebase weekly to stay synced with main
+git rebase main
+# If conflicts occur, they're smaller and easier to reason about
+```
+
+
+### Structural Separation
+
+
+Organize code to minimize file overlap:
+
+
+```
+src/
+  models/
+    user.ts        # Only this person touches user business logic
+    order.ts       # Only that person touches order logic
+  services/
+    userService.ts
+    orderService.ts
+  components/
+    UserProfile/
+    OrderSummary/
+```
+
+
+When different features modify different files, conflicts become rare. When they occur, they're semantic rather than syntax conflicts.
+
+
+### Clear Commit Boundaries
+
+
+Small, focused commits make conflict resolution easier:
+
+
+```bash
+# Good: specific, reviewable commits
+git commit -m "Add quantity field to order model"
+git commit -m "Update order calculation to use quantity"
+git commit -m "Add migration for quantity column"
+
+# Avoid: monolithic commits mixing unrelated changes
+git commit -m "Update orders and fix everything"
+```
+
+
+## Production Workflows with AI
+
+
+Large teams can establish patterns that combine AI assistance with review processes:
+
+
+### Pattern: AI-Assisted Conflict Resolution with Team Review
+
+
+```bash
+# Developer encounters conflict
+git rebase main
+# Conflict occurs
+
+# Use AI to suggest resolution
+# (feed conflict to Claude or ChatGPT)
+
+# Apply AI suggestion
+# Then request team review before continuing
+git commit -m "Resolve conflict: [brief description]"
+# Create PR for team review of the conflict resolution
+
+git rebase --continue
+# Continue rebase after team approves the resolution
+```
+
+
+### Pattern: Conflict Analysis Before Rebase
+
+
+For large rebases affecting many files:
+
+
+```bash
+# Before starting rebase, analyze potential conflicts
+git diff HEAD...main -- src/ | wc -l
+# Shows line changes that might conflict
+
+# Discuss with AI beforehand
+# "We're rebasing X changes against main. Here's what changed in main.
+#  What conflicts should we prepare for?"
+
+# Then proceed with rebase
+git rebase main
+```
+
+
 ## Recommended Workflow for Complex Rebases
 
 
