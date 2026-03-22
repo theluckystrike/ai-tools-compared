@@ -9,7 +9,7 @@ permalink: /ai-tools-for-generating-closed-captions-and-transcripts-from/
 categories: [guides]
 tags: [ai-tools-compared, video, captions, transcripts, accessibility, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
