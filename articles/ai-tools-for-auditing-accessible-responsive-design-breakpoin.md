@@ -73,7 +73,28 @@ Key features include:
 - Integration with CI/CD pipelines
 - Exportable reports in multiple formats
 
-The tool excels at catching common issues like focusable elements that disappear at certain viewport widths or ARIA attributes that don't update when layouts change.
+The tool excels at catching common issues like focusable elements that disappear at certain viewport widths or ARIA attributes that don't update when layouts change. Axe DevTools Pro's guided testing mode is particularly useful for breakpoint audits: it walks testers through each viewport size systematically, capturing accessibility state at each breakpoint and comparing snapshots to flag regressions introduced when the layout reflows.
+
+One practical approach is to integrate axe-core directly into your Playwright test suite rather than using the standalone Pro tool, which gives you fine-grained control without the enterprise license cost:
+
+```javascript
+const { checkA11y } = require('axe-playwright');
+
+test('navigation accessible at all breakpoints', async ({ page }) => {
+  const viewports = [320, 768, 1024, 1440];
+
+  for (const width of viewports) {
+    await page.setViewportSize({ width, height: 800 });
+    await page.goto('https://your-app.example.com');
+    await checkA11y(page, null, {
+      detailedReport: true,
+      detailedReportOptions: { html: true }
+    });
+  }
+});
+```
+
+This runs the full axe ruleset at each viewport and fails the test if any new violations appear at that breakpoint, giving you breakpoint-specific failure attribution in your CI output.
 
 ### Lighthouse AI Breakpoint Audits
 
@@ -149,6 +170,26 @@ Regardless of which tool you choose, certain issues appear frequently in respons
 **Modal Positioning**: Dialogs that become inaccessible at certain widths because they're positioned off-screen or covered by other elements.
 
 **Touch Target Sizing**: Buttons that meet the 44×44 pixel touch target requirement at desktop but fail at mobile viewports due to zoom or scaling issues.
+
+**ARIA Role Mismatch on Layout Change**: Components that switch between disclosure widget and navigation landmark patterns depending on viewport size can create ARIA role inconsistencies. Screen readers cache role information, so dynamic role changes require explicit `aria-live` region updates to announce the change.
+
+**Reading Order Divergence**: CSS Grid and Flexbox reordering with `order` property or `flex-direction: row-reverse` can make visual reading order differ from DOM reading order at certain breakpoints. AI tools that analyze both visual layout and DOM structure can catch this class of bug automatically—pure code analysis cannot.
+
+## Setting Up a Breakpoint Audit Workflow
+
+A practical workflow for teams new to AI-assisted breakpoint auditing combines free tools with targeted automation:
+
+1. **Define your canonical breakpoints** in a shared config file consumed by both your CSS and your tests. This prevents test coverage from drifting as design evolves.
+
+2. **Run axe-core via Playwright** in your CI pipeline on every PR, covering at minimum 320px, 768px, and 1280px viewports.
+
+3. **Use Lighthouse for weekly scheduled audits** to catch performance-adjacent accessibility issues like slow loading at mobile breakpoints that cause incomplete DOM rendering.
+
+4. **Manually review AI-flagged issues** using browser DevTools with the accessibility panel open. AI tools excel at finding patterns but can generate false positives for dynamic components—always verify before filing bugs.
+
+5. **Track regressions over time** using a simple JSON report format that lets you compare results between releases and identify which breakpoint ranges accumulate the most violations.
+
+The combination of automated detection and human judgment consistently outperforms either approach alone. AI tools reduce the manual testing surface dramatically, but they work best when developers understand what each flagged issue means for real screen reader and keyboard users.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

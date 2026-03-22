@@ -249,16 +249,58 @@ Common integration approaches include:
 - API deployment: Wrap models in FastAPI or similar frameworks for programmatic access
 
 
+## Handling Class Imbalance in Churn Data
+
+
+Churn datasets are almost always imbalanced—typically only 2-10% of users churn in a given period. Training on imbalanced data without correction produces models that predict "no churn" for everyone and still achieve 95% accuracy, which is useless in practice.
+
+Three techniques address this reliably:
+
+**Class weighting** is the simplest fix and works well when imbalance is moderate (up to 10:1):
+
+```python
+model = XGBClassifier(
+    n_estimators=200,
+    max_depth=6,
+    scale_pos_weight=9,  # ratio of negatives to positives
+    random_state=42
+)
+```
+
+**SMOTE (Synthetic Minority Over-sampling Technique)** generates synthetic churn examples to balance the training set. Use the imbalanced-learn library:
+
+```python
+from imblearn.over_sampling import SMOTE
+
+smote = SMOTE(random_state=42, k_neighbors=5)
+X_train_resampled, y_train_resampled = smote.fit_resample(X_train, y_train)
+```
+
+**Threshold adjustment** changes the decision boundary from the default 0.5. For churn prediction, lowering the threshold to 0.3 catches more at-risk users at the cost of more false positives—a reasonable trade-off when the cost of missing a churner exceeds the cost of sending an unnecessary retention offer.
+
+
+## Tool Comparison: Managed ML Platforms for Churn Prediction
+
+
+| Platform | Strengths | Best For |
+|----------|-----------|----------|
+| AWS SageMaker | End-to-end MLOps, autopilot feature engineering | Teams already on AWS |
+| Google Vertex AI | AutoML for tabular data, BigQuery integration | Teams using GCP/BigQuery |
+| Azure ML | Microsoft ecosystem, responsible AI tooling | Microsoft-stack teams |
+| Databricks | Unified analytics + ML, Delta Lake integration | Large-scale data teams |
+| Weights & Biases | Experiment tracking, model registry | Research-heavy workflows |
+
+Managed platforms eliminate infrastructure concerns but add cost and vendor lock-in. Teams with fewer than 100,000 users often find that a self-managed model running on a scheduled job (AWS Lambda, Cloud Run, or a cron job) is sufficient and significantly cheaper than a full MLOps platform.
+
+
 ## Selecting the Right Tools
 
 
-For most teams starting with churn prediction, XGBoost or LightGBM provide excellent baseline performance with reasonable computational requirements. These gradient boosting frameworks handle typical tabular data well and require less tuning than deep learning approaches.
+For most teams starting with churn prediction, XGBoost or LightGBM provide excellent baseline performance with reasonable computational requirements. These gradient boosting frameworks handle typical tabular data well and require less tuning than deep learning approaches. LightGBM trains faster than XGBoost on large datasets and is the better choice when you are iterating quickly over feature engineering experiments.
 
+When incorporating text data, transformer-based models from Hugging Face add meaningful predictive power. The combination of behavioral features with sentiment analysis from support tickets or product reviews often yields the best results. For most teams, DistilBERT provides 97% of BERT's accuracy at 40% of the compute cost—a practical trade-off for production systems that score users daily.
 
-When incorporating text data, transformer-based models from Hugging Face add meaningful predictive power. The combination of behavioral features with sentiment analysis from support tickets or product reviews often yields the best results.
-
-
-For teams with limited ML infrastructure, managed services like AWS SageMaker, Google Vertex AI, or Azure ML reduce operational overhead significantly. These platforms handle model hosting, scaling, and monitoring while supporting custom model deployment.
+For teams with limited ML infrastructure, managed services like AWS SageMaker, Google Vertex AI, or Azure ML reduce operational overhead significantly. These platforms handle model hosting, scaling, and monitoring while supporting custom model deployment. SageMaker Autopilot in particular can build a competitive churn model from raw tabular data with minimal code, making it a good starting point before investing in custom feature engineering.
 
 
 ## Common Pitfalls to Avoid

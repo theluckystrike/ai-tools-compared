@@ -49,6 +49,18 @@ Your chosen assistant should cover the current OWASP Top 10 comprehensively:
 9. **Logging Failures** — insufficient logging and monitoring
 10. **SSRF** — server-side request forgery
 
+## Which AI Assistants Work Best for Security Learning
+
+Not all AI assistants are equally effective for security education. The key differentiator is whether the assistant will engage with security topics substantively rather than reflexively refusing to discuss vulnerability mechanics.
+
+**Claude** handles security education particularly well. It explains attack mechanics in educational contexts, generates vulnerable code samples for analysis, and provides detailed remediation guidance. The conversational format makes it natural to ask follow-up questions like "what if the attacker uses Unicode encoding to bypass that filter?"
+
+**GitHub Copilot Chat** integrates directly into the editor, which makes it useful for reviewing code you're actively writing. Ask it to review specific functions for security issues, and it flags problems inline. The context awareness is valuable—it sees your actual code rather than an abstract snippet.
+
+**ChatGPT with Code Interpreter** excels when you want to actually execute vulnerable code in a sandboxed environment and see attack payloads work in real time. Watching a SQL injection payload return unexpected data is more memorable than reading about it.
+
+**Local models via Ollama** (Mistral, Llama 3) offer full privacy—nothing you discuss leaves your machine. This matters when you're experimenting with actual code from your employer's systems. Quality varies but Mistral 7B handles OWASP coverage competently.
+
 ## Hands-On Practice: A Practical Example
 
 Consider learning about SQL injection. Instead of reading documentation, work through this progression with an AI assistant:
@@ -121,7 +133,11 @@ For each vulnerability, ask the assistant to show multiple mitigation layers. SQ
 
 **Reproduce Historical Breaches**
 
-Challenge yourself to recreate real CVEs with AI assistance. Understanding how attackers exploited known vulnerabilities builds intuitive threat modeling abilities. The assistant can provide vulnerable versions of affected software and guide your analysis.
+Challenge yourself to recreate real CVEs with AI assistance. Understanding how attackers exploited known vulnerabilities builds intuitive threat modeling abilities. The assistant can walk through CVEs like Log4Shell (CVE-2021-44228), the Heartbleed OpenSSL flaw, or the Apache Struts vulnerability that led to the Equifax breach. Dissecting real incidents reveals how simple input validation failures cascade into major data exposures.
+
+**Use Spaced Repetition**
+
+After working through a vulnerability category, revisit it one week later with fresh code samples. Ask the assistant to generate a variant you haven't seen before and try to identify the flaw without prompting. This retrieval practice strengthens pattern recognition faster than repeated reading.
 
 ## Limitations and Critical Thinking
 
