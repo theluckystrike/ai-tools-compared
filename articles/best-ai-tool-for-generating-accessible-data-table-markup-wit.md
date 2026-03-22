@@ -5,7 +5,7 @@ description: "A practical guide to AI-powered tools that generate accessible HTM
 date: 2026-03-21
 author: theluckystrike
 permalink: /best-ai-tool-for-generating-accessible-data-table-markup-wit/
-categories: [accessibility, ai-tools]
+categories: [guides]
 reviewed: true
 intent-checked: true
 voice-checked: true

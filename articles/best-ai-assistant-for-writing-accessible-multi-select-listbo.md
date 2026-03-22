@@ -9,7 +9,7 @@ author: "AI Tools Compared"
 permalink: /best-ai-assistant-for-writing-accessible-multi-select-listbo/
 reviewed: true
 score: 7
-categories: [comparison]
+categories: [comparisons]
 intent-checked: false
 voice-checked: false
 tags: [ai-tools-compared, comparison, accessibility, frontend, best-of, artificial-intelligence]
