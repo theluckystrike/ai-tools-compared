@@ -16,6 +16,14 @@ voice-checked: true---
 
 Choose ChatGPT's API if you need a working chatbot in hours with minimal infrastructure, your support queries are general-purpose, or your team lacks ML expertise. Choose a custom chatbot if you have strict data privacy requirements, need deep domain knowledge via RAG pipelines, or want long-term cost optimization at high query volumes. Most businesses start with ChatGPT for proof-of-concept and migrate to custom solutions as specific requirements emerge.
 
+## Key Takeaways
+
+- **Choose ChatGPT's API if**: you need a working chatbot in hours with minimal infrastructure, your support queries are general-purpose, or your team lacks ML expertise.
+- **How critical is latency?**: <500ms target → Custom gives you control.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+- **Choose a custom chatbot**: if you have strict data privacy requirements, need deep domain knowledge via RAG pipelines, or want long-term cost optimization at high query volumes.
+- **Most businesses start with**: ChatGPT for proof-of-concept and migrate to custom solutions as specific requirements emerge.
 
 ## Understanding the Options
 

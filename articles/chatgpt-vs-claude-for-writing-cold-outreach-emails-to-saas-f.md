@@ -27,7 +27,17 @@ score: 8
 intent-checked: true
 voice-checked: true---
 
+
 This guide compares the strengths and weaknesses of each tool for this specific task. Choose the tool that best matches your workflow, budget, and technical requirements.
+
+## Key Takeaways
+
+- **Choose the tool that**: best matches your workflow, budget, and technical requirements.
+- **Under 130 words.""" user_prompt**: = f"""Write to {founder_data['name']} at {founder_data['company']}.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+- **Claude tends toward directness**: and brevity, which often works better for cold outreach where you have seconds to capture attention.
+- **I wanted to reach**: out because we have helped companies like yours consolidate their analytics into one unified dashboard.
 
 ## How Each Model Approaches Cold Email Writing
 
