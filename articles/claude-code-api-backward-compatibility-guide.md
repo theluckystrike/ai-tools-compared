@@ -46,7 +46,17 @@ Backward compatibility ensures that existing clients continue to function when y
 
 Consider a mobile app that integrates with your API. When you release an API update, you cannot force millions of app users to update immediately. If your API remains backward compatible, the existing app continues working while you release a new app version that uses new features.
 
-## Semantic Versioning for APIs
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Semantic Versioning for APIs
 
 Semantic versioning provides a clear communication mechanism for API changes. The format follows MAJOR.MINOR.PATCH, where each component indicates the type of change.
 
@@ -62,7 +72,7 @@ URL versioning is more explicit and cache-friendly. Clients can easily see which
 
 For most APIs, URL versioning provides better discoverability and debugging. Clients can visually identify the version in logs and network inspectors.
 
-## Deprecation Strategies
+### Step 2: Deprecation Strategies
 
 When you must eventually remove functionality, a phased deprecation approach gives clients time to migrate.
 
@@ -87,7 +97,7 @@ When clients use deprecated endpoints, return appropriate status codes with help
 
 Claude Code can help generate deprecation notices and migration guides automatically based on your API changes.
 
-## Contract Testing for Compatibility
+### Step 3: Contract Testing for Compatibility
 
 Contract testing verifies that your API maintains expected behavior for existing clients. Unlike integration tests that verify end-to-end flow, contract tests focus on the interface between client and server.
 
@@ -122,7 +132,7 @@ Consumer-driven contracts let clients define their expectations. Clients publish
 
 This approach prevents the common problem where servers change APIs without understanding client usage. Clients communicate exactly what they need, and servers validate against these expectations.
 
-## Using Claude Code for Compatibility
+### Step 4: Use Claude Code for Compatibility
 
 Claude Code assists with backward compatibility through several mechanisms.
 
@@ -159,7 +169,7 @@ Ask Claude Code to generate test cases that verify backward compatibility:
 
 "Generate tests that verify the API response contains all previously required fields, even when optional fields are added."
 
-## Response Field Evolution
+### Step 5: Response Field Evolution
 
 Adding new fields to responses is generally safe. Clients ignore unknown fields in most implementations.
 
@@ -194,7 +204,7 @@ Mark fields as deprecated rather than removing them immediately. Include depreca
 }
 ```
 
-## Request Parameter Evolution
+### Step 6: Request Parameter Evolution
 
 Similar to response fields, request parameters require careful handling.
 
@@ -227,6 +237,21 @@ Maintain backward compatibility by following these principles:
 - Document changes: Maintain clear changelogs and migration guides
 
 By implementing these strategies with Claude Code's assistance, you can evolve your API while protecting existing client integrations.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

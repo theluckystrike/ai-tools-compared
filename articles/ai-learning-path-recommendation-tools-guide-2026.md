@@ -43,7 +43,17 @@ AI paths often recommend courses and books.
 - **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
 - **AI-powered learning path recommendation**: tools have transformed how developers and tech professionals approach continuous education.
 
-## How AI Learning Path Recommendations Work
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: How AI Learning Path Recommendations Work
 
 Modern AI learning path tools use several key mechanisms to generate personalized recommendations:
 
@@ -55,7 +65,7 @@ Modern AI learning path tools use several key mechanisms to generate personalize
 
 **Learning Style Optimization** - Some advanced tools factor in your preferred learning modalities—whether you learn best through video, interactive coding exercises, reading documentation, or hands-on projects—and prioritize content formats that match your style.
 
-## Top AI Learning Path Recommendation Tools
+### Step 2: Top AI Learning Path Recommendation Tools
 
 ### 1. Codecademy AI Path Builder
 
@@ -162,7 +172,7 @@ Educative uses AI to adapt learning paths based on your performance in interacti
 - Less career guidance aspect
 - Subscription required for most advanced paths
 
-## Comparing AI Learning Path Tools
+### Step 3: Comparing AI Learning Path Tools
 
 | Platform | AI Sophistication | Free Tier | Specialization | Best For |
 |----------|-------------------|-----------|----------------|----------|
@@ -174,7 +184,7 @@ Educative uses AI to adapt learning paths based on your performance in interacti
 | Kaggle | Low | Full access | ML/Data science | Hands-on ML learners |
 | Educative | Medium | Limited | System design | Interview preparation |
 
-## How to Choose the Right AI Learning Path Tool
+### Step 4: How to Choose the Right AI Learning Path Tool
 
 Selecting the best learning path recommendation tool depends on several factors specific to your situation:
 
@@ -194,7 +204,7 @@ Free options exist for most learning needs. The Odin Project and Kaggle offer cu
 
 Some platforms offer intensive bootcamp-style paths, while others provide flexible self-paced learning. Consider how much time you can dedicate weekly and choose a platform whose pacing matches your availability.
 
-## Deep Dive: Building Custom Learning Paths
+### Step 5: Deep Dive: Building Custom Learning Paths
 
 Generic learning paths work for common career goals. For specialized transitions, use AI to build custom paths:
 
@@ -241,7 +251,7 @@ Phase 4 (Months 10-12): Integration Project
 
 This type of detailed, specialized path is what AI excels at when given sufficient context.
 
-## Leveraging Multiple Platforms Simultaneously
+### Step 6: Leveraging Multiple Platforms Simultaneously
 
 Rather than choosing one platform, use them strategically:
 
@@ -254,7 +264,7 @@ Rather than choosing one platform, use them strategically:
 
 This "best tool for each skill" approach costs more ($50-100/month) but accelerates learning for serious professionals.
 
-## Measuring Learning Path Progress
+### Step 7: Measuring Learning Path Progress
 
 Track metrics beyond course completion:
 
@@ -274,7 +284,7 @@ Track metrics beyond course completion:
 
 Use these indicators to validate that your learning path is actually working—not just that you're consuming content.
 
-## Mistakes When Using AI Learning Path Tools
+### Step 8: Mistakes When Using AI Learning Path Tools
 
 **Mistake 1: Treating Recommendations as Destiny**
 AI suggests paths based on statistical patterns, not individual potential. A path marked "6-month timeline" might take you 3 months or 12 months. Adjust based on your actual pace.
@@ -298,7 +308,7 @@ Monthly reflection matters. Ask yourself:
 - Does this still align with my goals?
 - Should I accelerate or slow down?
 
-## Getting Maximum Value from AI Learning Paths
+### Step 9: Getting Maximum Value from AI Learning Paths
 
 To extract the most benefit from AI-powered learning recommendations:
 
@@ -338,6 +348,21 @@ def generate_custom_learning_path(engineer_data):
 ```
 
 This approach lets you customize recommendation logic for your organization's specific technologies and career paths.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

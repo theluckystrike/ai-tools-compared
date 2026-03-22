@@ -46,7 +46,17 @@ Traditional testing approaches often discover defects late in the development cy
 
 Claude Code enhances shift left testing by providing an AI-powered assistant that understands your codebase context. It can generate unit tests as you write code, identify potential issues before they become bugs, and help design testable architectures from the start. This makes it an invaluable tool for teams adopting shift left methodologies.
 
-## Setting Up Claude Code for Shift Left Testing
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Set Up Claude Code for Shift Left Testing
 
 Before implementing shift left testing, ensure Claude Code is properly configured in your development environment. Installation is straightforward through the official CLI tools. Once installed, you can invoke Claude Code directly in your terminal to get immediate assistance with testing tasks.
 
@@ -54,7 +64,7 @@ The key to effective shift left testing with Claude Code lies in providing suffi
 
 Claude Code works well with popular testing frameworks across multiple languages. For JavaScript and TypeScript projects, it integrates with Jest, Mocha, and Vitest. Python developers can use it with pytest and unittest. The CLI supports generating tests for Go, Rust, Java, and many other languages, making it versatile for polyglot environments.
 
-## Test Generation During Code Development
+### Step 2: Test Generation During Code Development
 
 One of the most powerful applications of Claude Code in shift left testing is generating tests concurrent with code development. Instead of writing all tests after completing implementation, you can use Claude Code to create tests alongside your code, ensuring each new function or module has corresponding test coverage from the moment it is written.
 
@@ -62,7 +72,7 @@ When working with Claude Code, describe both the function you are implementing a
 
 For example, when implementing an user authentication function, you might ask Claude Code to generate tests for valid credentials, invalid passwords, expired sessions, and edge cases like empty inputs. Having these tests ready as you implement the function helps ensure the code meets requirements from the start.
 
-## Claude Code Test Analysis and Review
+### Step 3: Claude Code Test Analysis and Review
 
 Beyond generating new tests, Claude Code excels at analyzing existing test suites and identifying gaps. You can paste your current test files and ask for coverage analysis, missing scenario identification, and suggestions for improving test quality. This continuous review process is essential for shift left testing, where maintaining coverage prevents defects from slipping through.
 
@@ -70,7 +80,7 @@ When reviewing tests, Claude Code can identify several common issues. It detects
 
 Claude Code also helps identify tests that are too broad or too narrow. Tests that cover too many concerns at once are brittle and can mask failures. Tests that are too narrow might miss important interaction scenarios. Claude Code's analysis helps balance test granularity for optimal defect detection.
 
-## Integrating Claude Code into CI/CD Pipeline
+### Step 4: Integrate Claude Code into CI/CD Pipeline
 
 Shift left testing achieves its full potential when integrated throughout your continuous integration and continuous deployment pipeline. While traditional testing focuses on the CI stage, shift left extends testing to local development, pull request review, and even pre-commit hooks. Claude Code can assist at each of these stages.
 
@@ -86,7 +96,7 @@ Start with higher-level integration tests that verify key user journeys, then us
 
 Maintain a living document of test patterns and anti-patterns specific to your project. Share successful test generation prompts with your team to improve consistency. Claude Code learns from context, so providing examples of good tests helps it generate better recommendations over time.
 
-## Measuring Shift Left Testing Success
+### Step 5: Measuring Shift Left Testing Success
 
 Track metrics to evaluate the effectiveness of your shift left testing strategy. Key indicators include the percentage of defects caught before integration, the ratio of unit tests to integration tests, and the average time from defect introduction to detection. Claude Code can help analyze these metrics by processing your test history and defect tracking data.
 
@@ -94,7 +104,7 @@ Monitor test coverage trends over time, but focus on meaningful coverage rather 
 
 Collect feedback from developers on Claude Code's test generation usefulness. Regular retrospectives help identify where the tool excels and where additional training or process improvements are needed. Shift left testing is a journey, and continuous refinement ensures you get maximum benefit from AI-assisted testing.
 
-## Practical Code Examples: Shift Left in Action
+### Step 6: Practical Code Examples: Shift Left in Action
 
 Here are realistic examples of Claude Code-assisted test generation:
 
@@ -243,7 +253,7 @@ SUGGESTED TESTS:
 
 Developer adds these tests, significantly improving coverage.
 
-## Prompting Strategies for Better Test Generation
+### Step 7: Prompting Strategies for Better Test Generation
 
 **Strategy 1: Provide Implementation Details**
 Include your code when requesting tests:
@@ -287,7 +297,7 @@ Generate tests for this new function using the same style and structure.
 
 Consistency improves as the model learns your preferences.
 
-## Real-World Metrics: Shift Left Impact
+### Step 8: Real-World Metrics: Shift Left Impact
 
 Teams implementing Claude Code-assisted shift left testing typically report:
 
@@ -312,7 +322,7 @@ Teams implementing Claude Code-assisted shift left testing typically report:
 - Code review cycle time: 30% reduction
 - Developer satisfaction with code quality: +25%
 
-## Common Challenges and Solutions
+### Step 9: Common Challenges and Solutions
 
 **Challenge: Generated Tests Are Too Simple**
 Tests focus on happy paths, missing edge cases.
@@ -330,7 +340,7 @@ Team members might not learn how to write good tests.
 As code changes, tests break.
 **Solution:** AI can help update tests quickly. Ask Claude Code to "Update these tests for this changed function signature" rather than manually updating each test.
 
-## Integrating Shift Left Testing into Your Team
+### Step 10: Integrate Shift Left Testing into Your Team
 
 **Phase 1: Individual Adoption (Week 1-2)**
 - Each developer tries Claude Code on one small feature
@@ -355,7 +365,7 @@ As code changes, tests break.
 - Expand to performance and security testing
 - Continuous refinement based on metrics
 
-## Measuring Success
+### Step 11: Measuring Success
 
 Track these metrics to evaluate your shift left testing implementation:
 
@@ -386,6 +396,21 @@ Track these metrics to evaluate your shift left testing implementation:
 5. **Maintain human judgment:** AI assists; you decide test strategy
 6. **Continuous refinement:** Adjust prompts based on results
 7. **Integrate systematically:** Embed shift left into workflows, not as optional add-on
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -39,13 +39,23 @@ When managing a TypeScript monorepo with Turborepo, choosing the right AI coding
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **Claude Code works directly**: in the terminal, which fits well with developers who prefer staying in their command-line environment while running Turborepo commands.
 
-## What TypeScript Monorepos with Turborepo Require
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: What TypeScript Monorepos with Turborepo Require
 
 TypeScript monorepos using Turborepo have distinct characteristics that affect AI assistant effectiveness. The directory structure typically includes a root `turbo.json`, multiple packages in `packages/` or `apps/`, shared TypeScript configurations, and workspace-aware package managers like pnpm or npm workspaces. An AI assistant must understand how changes in one package affect dependent packages, recognize which tasks can run in parallel, and work with TypeScript project references properly.
 
 Turborepo's task pipeline defined in `turbo.json` creates another layer of complexity. The assistant should understand task dependencies, caching behavior, and how to generate code that respects the monorepo boundaries. These requirements narrow down which AI tools provide genuine value in this specific setup.
 
-## Claude Code
+### Step 2: Claude Code
 
 Claude Code offers strong capabilities for TypeScript monorepos with Turborepo. Its ability to analyze entire repositories makes it effective at understanding cross-package dependencies. When you ask Claude Code to generate a new utility function, it can identify which existing packages might benefit from that function and suggest the appropriate exports.
 
@@ -65,7 +75,7 @@ export function formatDate(date: Date, locale = 'en-US'): string {
 
 Claude Code excels at explaining build errors that span multiple packages, a common occurrence in monorepos when TypeScript project references break. It can trace dependency chains to identify the root cause of compilation issues.
 
-## Cursor
+### Step 3: Cursor
 
 Cursor provides IDE-level integration with strong monorepo awareness. Its agent mode can navigate between packages, understand workspace structure, and perform multi-file edits across your entire repository. The context window handles large monorepos effectively, though you may need to be explicit about which packages to focus on.
 
@@ -73,7 +83,7 @@ For Turborepo specifically, Cursor can edit your `turbo.json` configuration and 
 
 Cursor's strength lies in its ability to maintain context across sessions. When working on a feature that touches several packages, Cursor remembers previous decisions and can continue where you left off. This becomes valuable in large monorepos where a single feature might require changes spread across multiple packages.
 
-## GitHub Copilot
+### Step 4: GitHub Copilot
 
 GitHub Copilot integrates well with popular IDEs like VS Code and provides inline suggestions as you type. For Turborepo monorepos, Copilot understands workspace dependencies and can suggest imports from other packages in your monorepo. However, its suggestions sometimes miss the broader context of your monorepo structure.
 
@@ -104,13 +114,13 @@ export function Button({ children, variant = 'primary', ...props }: ButtonProps)
 
 Copilot's advantage is its low barrier to entry—it's already integrated into editors many developers use daily. For teams already using GitHub, Copilot provides a familiar experience without additional tooling.
 
-## Zed
+### Step 5: Zed
 
 Zed offers fast editor performance with AI assistant capabilities. Written in Rust, it provides excellent speed for large TypeScript monorepos. The assistant can analyze code quickly and provide suggestions without significant latency. Zed's multi-cursor editing complements AI assistance when making repetitive changes across multiple files.
 
 For Turborepo workflows, Zed handles the editor-side well but lacks some of the deep IDE integrations that Cursor provides. The tool works best for developers who value editor speed and are comfortable working with multiple terminal windows for Turborepo commands.
 
-## Monorepo-Specific Test Case
+### Step 6: Monorepo-Specific Test Case
 
 To evaluate which assistant suits your team, try this practical test across all tools. Create a feature that involves:
 1. A shared utility package (`packages/shared`)
@@ -133,7 +143,7 @@ Claude Code and Cursor should generate code that:
 - Understands that changes to the utility may invalidate downstream build cache
 - Suggests appropriate TypeScript configurations for cross-package references
 
-## Real-World Workflow: Feature Implementation Across Packages
+### Step 7: Real-World Workflow: Feature Implementation Across Packages
 
 Here's a realistic scenario using a Turborepo monorepo:
 
@@ -173,7 +183,7 @@ With **Claude Code**: Similar capability but requires more explicit guidance abo
 
 With **GitHub Copilot**: Generates good code within individual files but may miss that changes to the shared utility require cache invalidation in dependent packages.
 
-## Making the Right Choice
+### Step 8: Making the Right Choice
 
 The best AI coding assistant depends on your workflow preferences and monorepo complexity:
 
@@ -200,7 +210,7 @@ Consider testing each option with the feature spanning packages test described a
 
 For Turborepo teams, Cursor provides the best value despite higher cost due to superior monorepo understanding. Claude Code is most cost-effective for terminal-focused developers.
 
-## CLI Setup for Turborepo Projects
+### Step 9: CLI Setup for Turborepo Projects
 
 Configure AI assistants for optimal monorepo performance:
 
@@ -235,7 +245,7 @@ claude "Analyze the packages in this monorepo and describe how they depend on ea
 claude "Add a caching utility to packages/shared and integrate it into packages/web's data fetching"
 ```
 
-## Monorepo-Specific Code Examples
+### Step 10: Monorepo-Specific Code Examples
 
 Here are patterns that demonstrate which assistants handle monorepo complexity well:
 
@@ -338,7 +348,7 @@ Claude Code, Cursor, and decent implementations should recognize:
 
 GitHub Copilot often generates correct code for individual files but misses the cross-package context.
 
-## Turborepo Task Understanding
+### Step 11: Turborepo Task Understanding
 
 Test which AI understands Turborepo's task pipeline:
 
@@ -371,7 +381,7 @@ When you ask: "What happens if I modify packages/shared and run `turbo run build
 **Poor answer (Copilot):**
 "It rebuilds packages/shared and then other packages" (lacks task graph understanding)
 
-## Workspace Configuration Patterns
+### Step 12: Workspace Configuration Patterns
 
 AI assistants should understand workspace-specific patterns:
 
@@ -392,7 +402,7 @@ AI assistants should understand workspace-specific patterns:
 
 When generating code for multiple packages, Claude and Cursor correctly use `@myorg/shared` imports, while Copilot might generate relative imports like `../shared/src/cache`.
 
-## Real-World Feature Implementation Test
+### Step 13: Real-World Feature Implementation Test
 
 Here's a test case for evaluating monorepo understanding:
 
@@ -411,7 +421,7 @@ Here's a test case for evaluating monorepo understanding:
 **What GitHub Copilot produces:** Items 1-4 only, with relative imports instead of path aliases
 **What Zed produces:** Items 1-4, partial path alias understanding
 
-## Monorepo Anti-Patterns to Watch
+### Step 14: Monorepo Anti-Patterns to Watch
 
 Good AI assistants catch these common monorepo mistakes:
 
@@ -447,6 +457,21 @@ claude "refactor this component to use hooks" --measure-impact
 turbo run build --summarize
 # Output shows: Cache hit rate improved from 45% to 78% after AI-assisted optimization
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

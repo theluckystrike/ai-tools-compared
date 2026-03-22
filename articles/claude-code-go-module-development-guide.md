@@ -39,7 +39,17 @@ Claude Code transforms Go module development by providing intelligent assistance
 - **Use Chi router and**: implement proper error handling.
 - **You can use Claude**: Code in GitHub Actions to validate code, run tests, and perform security scans automatically.
 
-## Setting Up Your Go Environment
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Set Up Your Go Environment
 
 Before examining Claude Code for Go development, ensure your environment is properly configured. You'll need Go installed (preferably version 1.21 or later), and Claude Code set up on your system. The combination of these tools creates a powerful development environment that understands both Go semantics and your specific codebase.
 
@@ -59,7 +69,7 @@ go mod init github.com/yourusername/my-go-project
 
 When working with Claude Code, you can initialize the project and have it guide you through the structure. Simply describe your intended functionality, and Claude Code will suggest appropriate package organization, import paths, and dependency management strategies.
 
-## Scaffolding Go Projects with Claude Code
+### Step 2: Scaffolding Go Projects with Claude Code
 
 One of Claude Code's strongest features is its ability to understand Go project structure and generate appropriate code. Rather than manually creating directories and files, you can describe your project requirements and let Claude Code scaffold everything.
 
@@ -91,7 +101,7 @@ my-go-api/
 
 This scaffolding follows Go best practices, separating concerns across packages and using the standard project layout conventions. Claude Code understands Go's visibility rules and will generate appropriate exports, unexported functions, and interface definitions.
 
-## Writing Idiomatic Go Code
+### Step 3: Writing Idiomatic Go Code
 
 Claude Code excels at helping you write Go code that follows established patterns and idioms. When you describe functionality, it generates code that adheres to Go conventions, including proper error handling, context propagation, and interface design.
 
@@ -151,7 +161,7 @@ func (r *postgresUserRepository) GetByID(ctx context.Context, id string) (*model
 
 Notice how Claude Code generates code with proper error wrapping using `fmt.Errorf` with the `%w` verb, uses interfaces for abstraction, and implements context propagation throughout.
 
-## Test Generation and Improvement
+### Step 4: Test Generation and Improvement
 
 Writing tests is crucial for Go projects, and Claude Code makes this significantly easier. It can generate test suites, suggest table-driven test patterns, and help you achieve good coverage.
 
@@ -267,7 +277,7 @@ func TestUserHandler_CreateUser_ValidationError(t *testing.T) {
 
 The generated tests use testify for assertions, implement table-driven testing patterns, and properly mock dependencies. You can extend these tests with additional cases and edge conditions specific to your application.
 
-## CI/CD Integration with Go Projects
+### Step 5: Configure CI/CD Integration with Go Projects
 
 Integrating Claude Code into your CI/CD pipeline ensures consistent code quality across your team. You can use Claude Code in GitHub Actions to validate code, run tests, and perform security scans automatically.
 
@@ -342,6 +352,21 @@ Use interfaces liberally in Go, and let Claude Code help you design them. Descri
 Take advantage of Go's context package for cancellation and timeouts. When describing async operations or long-running tasks to Claude Code, mention that you need context propagation, and it will include proper context handling throughout your code.
 
 Finally, use Go's built-in tooling. Claude Code understands `go fmt`, `go vet`, and `go mod` intimately. Use these tools consistently, and Claude Code will help you maintain a clean, secure, and well-organized codebase.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

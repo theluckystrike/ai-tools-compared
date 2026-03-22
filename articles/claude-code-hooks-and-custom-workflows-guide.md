@@ -26,7 +26,17 @@ This guide covers all four hook types with practical implementations.
 - **Practical guidance included**: Step-by-step setup and configuration instructions
 - **Use-case recommendations**: Specific guidance based on team size and requirements
 
-## Hook Types Overview
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Hook Types Overview
 
 | Hook | Fires When | Can Block? | Use Cases |
 |---|---|---|---|
@@ -37,7 +47,7 @@ This guide covers all four hook types with practical implementations.
 
 Hooks are configured in `~/.claude/settings.json` or `.claude/settings.json` (project-level).
 
-## Configuration Format
+### Step 2: Configuration Format
 
 ```json
 {
@@ -80,7 +90,7 @@ Hooks are configured in `~/.claude/settings.json` or `.claude/settings.json` (pr
 
 Hooks receive a JSON payload on stdin describing the tool call. For `PreToolUse`, exit code `2` blocks the tool and feeds your stdout back to Claude as a rejection message.
 
-## Hook 1: Pre-Bash Guard (Blocks Dangerous Commands)
+### Step 3: Hook 1: Pre-Bash Guard (Blocks Dangerous Commands)
 
 ```bash
 #!/bin/bash
@@ -136,7 +146,7 @@ done
 exit 0
 ```
 
-## Hook 2: Post-Edit Auto-Lint and Format
+### Step 4: Hook 2: Post-Edit Auto-Lint and Format
 
 ```python
 #!/usr/bin/env python3
@@ -223,7 +233,7 @@ if __name__ == "__main__":
     main()
 ```
 
-## Hook 3: Post-Edit Auto-Test Runner
+### Step 5: Hook 3: Post-Edit Auto-Test Runner
 
 ```python
 #!/usr/bin/env python3
@@ -315,7 +325,7 @@ if __name__ == "__main__":
     main()
 ```
 
-## Hook 4: Stop Hook — Auto-Commit on Completion
+### Step 6: Hook 4: Stop Hook — Auto-Commit on Completion
 
 ```bash
 #!/bin/bash
@@ -348,7 +358,7 @@ git commit -m "auto: ${TASK_SUMMARY}" \
 echo "[hook] Committed changes: ${TASK_SUMMARY}"
 ```
 
-## Hook 5: Notification Hook — Desktop and Slack Alerts
+### Step 7: Hook 5: Notification Hook — Desktop and Slack Alerts
 
 ```python
 #!/usr/bin/env python3
@@ -399,7 +409,7 @@ if __name__ == "__main__":
     main()
 ```
 
-## Complete .claude/settings.json
+### Step 8: Complete .claude/settings.json
 
 ```json
 {
@@ -432,6 +442,21 @@ if __name__ == "__main__":
   }
 }
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

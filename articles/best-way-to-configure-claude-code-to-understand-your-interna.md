@@ -55,14 +55,24 @@ Claude Code operates by analyzing your project's context. Without proper configu
 
 The configuration process involves three core elements: providing API specification files, setting up context directories, and defining custom instructions that guide Claude Code's understanding of your library's behavior.
 
-## Method 1: Using SPEC.md for API Documentation
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Method 1: Using SPEC.md for API Documentation
 
 The most straightforward approach involves creating a SPEC.md file in your project root. This file serves as a reference document that Claude Code automatically reads when analyzing your codebase.
 
 ```markdown
 # Internal API Specification
 
-## Authentication Service
+### Step 2: Authentication Service
 
 ### login(credentials: AuthCredentials): Promise<AuthToken>
 - **Parameters**:
@@ -76,7 +86,7 @@ The most straightforward approach involves creating a SPEC.md file in your proje
 - **Returns**: New AuthToken
 - **Errors**: TokenExpiredError, InvalidTokenError
 
-## User Service
+### Step 3: User Service
 
 ### getUserById(id: string): Promise<User>
 - **Parameters**: User UUID
@@ -86,7 +96,7 @@ The most straightforward approach involves creating a SPEC.md file in your proje
 
 Place this file in your project root and Claude Code will automatically incorporate it into its context for relevant queries. Update the specification whenever your internal APIs change to maintain accuracy.
 
-## Method 2: Configuring CLAUDE.md in Project Root
+### Step 4: Method 2: Configuring CLAUDE.md in Project Root
 
 For deeper integration, create a CLAUDE.md file that provides project-specific instructions. This file supports more complex configurations and can reference multiple specification files.
 
@@ -95,20 +105,20 @@ For deeper integration, create a CLAUDE.md file that provides project-specific i
 
 This project uses our internal @company/api-client library (v2.x) for all external communications.
 
-## Key API Modules
+### Step 5: Key API Modules
 
 - `AuthService`: Located at src/services/auth.ts, handles all authentication
 - `UserService`: Located at src/services/user.ts, manages user data operations
 - `PaymentGateway`: Located at src/services/payment.ts, processes transactions
 
-## API Client Configuration
+### Step 6: API Client Configuration
 
 The client initializes with environment variables:
 - API_BASE_URL: Defaults to https://api.dev.company.com
 - API_TIMEOUT: Default 30000ms
 - RETRY_ATTEMPTS: Default 3
 
-## Common Patterns
+### Step 7: Common Patterns
 
 All async API methods return Result<T> objects with .data and .error properties.
 Always check for .error before accessing .data in production code.
@@ -116,7 +126,7 @@ Always check for .error before accessing .data in production code.
 
 Claude Code reads CLAUDE.md at the start of each conversation, making this ideal for project-wide configuration that persists across sessions.
 
-## Method 3: Directory Context for Large Codebases
+### Step 8: Method 3: Directory Context for Large Codebases
 
 For monorepos or projects with multiple internal libraries, configure directory-level context using the CLAUDE.md convention within specific subdirectories.
 
@@ -133,7 +143,7 @@ For monorepos or projects with multiple internal libraries, configure directory-
 
 Each CLAUDE.md focuses on its directory's specific concerns. When you work within a directory, Claude Code automatically incorporates that directory's context along with any parent directories' configurations.
 
-## Method 4: Environment-Specific Configuration
+### Step 9: Method 4: Environment-Specific Configuration
 
 When your internal APIs behave differently across environments, create environment-specific configuration files that Claude Code can reference based on your current context.
 
@@ -163,14 +173,14 @@ export const apiConfig = {
 
 Document these environment differences in your CLAUDE.md so Claude Code understands which configurations apply in different contexts. This prevents suggestions that work in development but fail in production.
 
-## Method 5: Error Handling and Exception Documentation
+### Step 10: Method 5: Error Handling and Exception Documentation
 
 Your internal APIs likely have specific error patterns and exception types. Document these in your configuration so Claude Code can generate appropriate error handling code.
 
 ```markdown
 # Error Handling Guide
 
-## Common Error Types
+### Step 11: Common Error Types
 
 ### AuthenticationError
 - Status: 401
@@ -226,7 +236,7 @@ interface PaginatedResponse<T> extends ApiResponse<T> {
 
 Include error types in your specifications. Claude Code can then suggest appropriate error handling when you work with API calls that might fail in specific ways.
 
-## Integrating with Your IDE Settings
+### Step 12: Integrate with Your IDE Settings
 
 Beyond CLAUDE.md, configure your IDE to recognize and properly highlight your internal library code. This provides Claude Code with better context about type definitions and usage patterns.
 
@@ -271,7 +281,7 @@ Configure jsconfig or tsconfig to help Claude Code understand your project struc
 
 This helps Claude Code resolve internal imports correctly.
 
-## Creating Team-Specific Context Templates
+### Step 13: Create Team-Specific Context Templates
 
 For organizations using Claude Code across multiple teams, create standardized context templates that teams can customize:
 
@@ -281,21 +291,21 @@ For organizations using Claude Code across multiple teams, create standardized c
 ## Overview
 [Team] uses [list of internal libraries and tools].
 
-## Documentation Locations
+### Step 14: Documentation Locations
 - API specs: ./docs/api/
 - Error codes: ./docs/errors/
 - Team conventions: ./docs/conventions/
 
-## Key Modules
+### Step 15: Key Modules
 - [Service 1]: Location and purpose
 - [Service 2]: Location and purpose
 
-## Common Patterns
+### Step 16: Common Patterns
 - How errors are handled
 - How async operations work
 - Configuration patterns
 
-## Important Notes
+### Step 17: Important Notes
 - Any team-specific requirements
 - Integration points with other systems
 - Testing requirements
@@ -303,7 +313,7 @@ For organizations using Claude Code across multiple teams, create standardized c
 
 Distribute this template to all teams and ensure they maintain it as libraries evolve. Having consistent documentation across teams makes onboarding new developers much faster—they can immediately understand how to interact with internal libraries.
 
-## Common Configuration Pitfalls
+### Step 18: Common Configuration Pitfalls
 
 Avoid creating overly long specification files. Claude Code has context limits, and including excessive detail about rarely-used APIs dilutes the relevance of more important information. Focus on the APIs you use most frequently and reference detailed documentation for edge cases.
 
@@ -321,23 +331,38 @@ A typical project configuration combines multiple methods for coverage:
 ## Overview
 Backend service using @company/internal-lib v3.0 for all external integrations.
 
-## Documentation
+### Step 19: Documentation
 - API specs: ./docs/api-spec.md
 - Error codes: ./docs/errors.md
 - Environment config: ./src/config/environments.ts
 
-## Key Services
+### Step 20: Key Services
 - apiClient: ./src/lib/api-client.ts
 - auth: ./src/services/auth.ts
 - users: ./src/services/users.ts
 
-## Important Notes
+### Step 21: Important Notes
 - All endpoints require Bearer token authentication
 - Rate limit: 1000 requests per minute
 - Responses wrapped in Result<T> type
 ```
 
 This layered approach provides Claude Code with context while maintaining organized, maintainable documentation.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

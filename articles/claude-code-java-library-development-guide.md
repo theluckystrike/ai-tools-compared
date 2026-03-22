@@ -39,7 +39,17 @@ Claude Code is an AI-powered CLI that assists with every phase of Java library d
 - **It does NOT validate**: data types * - use {@link #parseAs(Class)} for typed parsing.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Setting Up Your Java Library Project
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Set Up Your Java Library Project
 
 Start by defining your library's scope and purpose. Before writing code, articulate what problem your library solves and who your target users are. This clarity guides every subsequent decision.
 
@@ -74,7 +84,7 @@ Create your `pom.xml` or `build.gradle` file with appropriate dependencies. For 
 </project>
 ```
 
-## Designing Your Library API
+### Step 2: Designing Your Library API
 
 Effective Java libraries balance functionality with usability. Claude Code excels at helping you design intuitive APIs that follow Java conventions and best practices.
 
@@ -170,7 +180,7 @@ public final class Money {
 }
 ```
 
-## Testing Your Library
+### Step 3: Test Your Library
 
 Testing ensures your library behaves correctly across different scenarios and Java versions.
 
@@ -217,7 +227,7 @@ void shouldHandleEmptyCollections() {
 }
 ```
 
-## Documentation Strategies
+### Step 4: Documentation Strategies
 
 Well-documented libraries gain adoption. Claude Code helps you create documentation that answers user questions proactively.
 
@@ -257,7 +267,7 @@ ObjectMapper customMapper = new ObjectMapper()
 JsonProcessor customProcessor = new JsonProcessor(customMapper);
 ```
 
-## Versioning and Release
+### Step 5: Versioning and Release
 
 Follow semantic versioning to communicate changes clearly:
 
@@ -269,7 +279,7 @@ Follow semantic versioning to communicate changes clearly:
 
 Document breaking changes in a CHANGELOG and provide migration guides for major version updates.
 
-## Using Claude Code for Iterative API Refinement
+### Step 6: Use Claude Code for Iterative API Refinement
 
 API design rarely comes out perfect on the first pass. Claude Code accelerates the iteration cycle by analyzing your existing API and suggesting improvements before you commit to a stable release.
 
@@ -279,7 +289,7 @@ For example, if your library has a method `JsonProcessor.parseString(csv)` but e
 
 Keep a dedicated `DESIGN_NOTES.md` file tracking API decisions and their rationale. When you revisit the API six months later, having this context prevents re-litigating decisions that were made deliberately.
 
-## Publishing to Maven Central
+### Step 7: Publish to Maven Central
 
 Getting your library onto Maven Central makes it accessible to the broader Java ecosystem without requiring users to add custom repositories.
 
@@ -314,7 +324,7 @@ Configure signing in your Maven build:
 
 Claude Code helps generate the full `pom.xml` with all required Central publishing metadata when you describe your library's purpose and provide your group ID.
 
-## Testing Compatibility Across Java Versions
+### Step 8: Test Compatibility Across Java Versions
 
 Java library authors support multiple JVM versions simultaneously. Configure your test matrix to catch version-specific issues early:
 
@@ -348,7 +358,7 @@ steps:
 
 Claude Code can audit your codebase for APIs deprecated in newer Java versions, helping you address compatibility issues proactively rather than discovering them after a user files a bug report.
 
-## Handling Optional Dependencies Gracefully
+### Step 9: Handling Optional Dependencies Gracefully
 
 Libraries that integrate with optional external tools — logging frameworks, serialization libraries, HTTP clients — should not force those dependencies on users who do not need them.
 
@@ -378,6 +388,21 @@ public class JsonSupport {
 This pattern lets users include Jackson if they want serialization support, but your library remains functional without it. Clearly document which optional dependencies unlock which features in your README and Javadoc.
 
 Claude Code can generate the full conditional loading pattern for any dependency, including the necessary null checks and fallback implementations that keep your core API stable regardless of what users have on their classpath.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

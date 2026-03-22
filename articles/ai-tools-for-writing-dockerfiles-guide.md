@@ -24,12 +24,22 @@ Dockerfile quality separates 2GB images from 150MB ones, root-running containers
 - **Topics covered**: the test: python fastapi application, claude's multi-stage build, copilot's output
 - **Practical guidance included**: Step-by-step setup and configuration instructions
 
-## The Test: Python FastAPI Application
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The Test: Python FastAPI Application
 
 All tools were given the same prompt:
 > "Write a production Dockerfile for a Python FastAPI application. Focus on security, image size, and build caching."
 
-## Claude's Multi-Stage Build
+### Step 2: Claude's Multi-Stage Build
 
 ```dockerfile
 # Build stage — install deps and compile
@@ -92,7 +102,7 @@ Key features:
 - `HEALTHCHECK` with reasonable timeouts
 - `exec` form CMD (not shell form) for proper signal handling
 
-## Copilot's Output
+### Step 3: Copilot's Output
 
 ```dockerfile
 FROM python:3.12
@@ -115,7 +125,7 @@ This is a valid Dockerfile but:
 - No health check
 - Uses full `python:3.12` (~1GB) instead of `python:3.12-slim` (~130MB)
 
-## Node.js Application
+### Step 4: Node.js Application
 
 ```dockerfile
 # Claude's Node.js multi-stage Dockerfile
@@ -166,7 +176,7 @@ HEALTHCHECK --interval=30s --timeout=3s \
 
 Claude's Node.js version uses `dumb-init` for proper PID 1 signal handling — a critical detail for graceful shutdown that almost no other AI tool includes.
 
-## Go Application: Scratch Image
+### Step 5: Go Application: Scratch Image
 
 ```dockerfile
 # Claude's Go Dockerfile — minimal final image
@@ -213,7 +223,7 @@ ENTRYPOINT ["/server"]
 
 The `scratch` final image is under 10MB and has zero attack surface — no shell, no package manager, no OS utilities. Claude knows to copy CA certs (needed for HTTPS calls) and use a numeric UID since there's no `/etc/passwd` in scratch.
 
-## Security Scanning Integration
+### Step 6: Security Scanning Integration
 
 ```dockerfile
 # .github/workflows/docker-security.yml
@@ -271,6 +281,21 @@ For each: affected package, severity, CVE, and specific fix (usually a package v
 | Health checks | Yes | No | Rarely |
 | Scratch images for Go | Yes with CA certs | Basic scratch | No |
 | Security hardening flags | `-w -s -extldflags` | Basic | Partial |
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

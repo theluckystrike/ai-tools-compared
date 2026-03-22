@@ -47,7 +47,17 @@ AI coding assistants have become integral to many development workflows. Without
 
 The average developer spends roughly 35% of their time writing new code. AI tools claim to accelerate this, but anecdotal evidence is not enough. Structured measurement reveals the truth: which tasks benefit most, where AI assistance falls short, and whether the learning curve is worth the eventual payoff.
 
-## Core Metrics for Tracking Time Savings
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Core Metrics for Tracking Time Savings
 
 ### Task Completion Time
 
@@ -103,7 +113,7 @@ Most AI coding tools surface an acceptance rate metric — the percentage of sug
 
 Track acceptance rate over time. It typically improves as you refine prompts, configure project context files, or the tool learns your style through repeated use.
 
-## Code Quality Metrics
+### Step 2: Code Quality Metrics
 
 ### Bug Density
 
@@ -146,7 +156,7 @@ def coverage_delta(before_pct, after_pct):
 coverage_delta(68.4, 74.1)  # Coverage change: +5.7%
 ```
 
-## Practical Tracking Framework
+### Step 3: Practical Tracking Framework
 
 ### Daily Log Template
 
@@ -199,7 +209,7 @@ def analyze_weekly_productivity(log_file):
 print(analyze_weekly_productivity('task_log.yaml'))
 ```
 
-## Setting Up Measurement in Your Workflow
+### Step 4: Set Up Measurement in Your Workflow
 
 ### Phase 1: Baseline (Week 1-2)
 
@@ -221,7 +231,7 @@ print(analyze_weekly_productivity('task_log.yaml'))
 
 Compare metrics across phases. Look for patterns in task types where AI performs best.
 
-## What to Track Beyond Time
+### Step 5: What to Track Beyond Time
 
 Consider these additional factors:
 
@@ -247,7 +257,7 @@ Not all AI coding assistants expose the same productivity metrics. Here is how t
 
 For tools without native analytics, combine external time tracking (Toggl, RescueTime) with commit-level analysis from your Git history.
 
-## Common Pitfalls
+### Step 6: Common Pitfalls
 
 Avoid these measurement errors:
 
@@ -261,7 +271,7 @@ Avoid these measurement errors:
 
 5. Cherry-picking data: Measure everything, including sessions where AI made things harder
 
-## Real-World Example
+### Step 7: Real-World Example
 
 A development team tracked their AI coding assistant usage over three months. Results showed:
 
@@ -274,6 +284,21 @@ A development team tracked their AI coding assistant usage over three months. Re
 - Initial 2-week learning curve included
 
 The team concluded that AI tools provided measurable value after the adjustment period.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

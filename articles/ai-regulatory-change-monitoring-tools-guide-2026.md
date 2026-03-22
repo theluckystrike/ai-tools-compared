@@ -56,7 +56,17 @@ Regulatory non-compliance can result in substantial fines, operational restricti
 
 Manual monitoring approaches—subscribing to newsletters, checking regulator websites, attending conferences—fail at scale. You need automated systems that track regulatory sources, extract relevant changes, and alert your team before compliance gaps emerge.
 
-## Core Capabilities of Regulatory Monitoring Tools
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Core Capabilities of Regulatory Monitoring Tools
 
 Effective AI regulatory change monitoring requires several capabilities:
 
@@ -66,7 +76,7 @@ Effective AI regulatory change monitoring requires several capabilities:
 - **Impact Assessment**: Evaluating how changes affect your specific AI use cases
 - **Alert Mechanisms**: Notifying appropriate team members through preferred channels
 
-## Tools for AI Regulatory Change Monitoring
+### Step 2: Tools for AI Regulatory Change Monitoring
 
 ### 1. Regology
 
@@ -221,7 +231,7 @@ for change in changes:
         print(f"URL: {change.html_url}")
 ```
 
-## Implementing Monitoring in Your AI Workflow
+### Step 3: Implementing Monitoring in Your AI Workflow
 
 Building regulatory monitoring into your development workflow requires several components:
 
@@ -280,7 +290,7 @@ def route_alert(update: RegulatoryUpdate, impact: str):
         add_to_digest(update)
 ```
 
-## Building Your Monitoring Strategy
+### Step 4: Build Your Monitoring Strategy
 
 When implementing regulatory change monitoring, consider these factors:
 
@@ -291,6 +301,21 @@ When implementing regulatory change monitoring, consider these factors:
 **Response Playbooks**: Establish clear processes for responding to different types of regulatory changes. Define who reviews updates, how impact is assessed, and what actions trigger engineering involvement.
 
 **Documentation**: Maintain records of regulatory monitoring activities for compliance evidence. Many frameworks require demonstrating systematic oversight processes.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

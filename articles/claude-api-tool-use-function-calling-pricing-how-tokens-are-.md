@@ -46,7 +46,17 @@ Total: 700 input tokens + 235 output tokens at Sonnet pricing = approximately $0
 
 3.
 
-## How Tool Use Works in Claude API
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: How Tool Use Works in Claude API
 
 Tool use (also called function calling) allows Claude to request that your application execute specific functions and return the results back to the model. This creates a powerful loop where the AI can gather real-time information, perform calculations, or manipulate external data.
 
@@ -101,7 +111,7 @@ for block in message.content:
         print(f"Input: {tool_input}")
 ```
 
-## Token Counting for Tool Use
+### Step 2: Token Counting for Tool Use
 
 Token counting with tool use follows the same principles as standard API calls, but there are specific considerations for each phase of the interaction. Understanding these details helps you estimate costs accurately.
 
@@ -139,7 +149,7 @@ def get_weather(location):
     }
 ```
 
-## Pricing Structure
+### Step 3: Pricing Structure
 
 Anthropic's API pricing follows a per-token model. As of 2026, the pricing tiers differ by model:
 
@@ -187,7 +197,7 @@ Implementing tool use efficiently requires thoughtful design. Here are practical
 
 **Truncate tool results strategically.** After executing a tool, you can truncate or summarize the results before returning them to the model if you don't need every detail. This reduces input tokens for subsequent requests.
 
-## Common Implementation Patterns
+### Step 4: Common Implementation Patterns
 
 For developers building production systems, certain patterns emerge as most effective:
 
@@ -210,7 +220,7 @@ def execute_tool(tool_name, tool_input):
         return {"error": str(e)}
 ```
 
-## Real-World Cost Calculations
+### Step 5: Real-World Cost Calculations
 
 **Scenario 1: Weather Assistant (Simple Tool Use)**
 
@@ -271,7 +281,7 @@ Cost on Sonnet: (950 × $0.003) + (360 × $0.015) = $2.85 + $5.40 = $8.25
 Monthly (200 such queries): ~$1,650
 ```
 
-## Comparing Tool Use to Direct API Calls
+### Step 6: Comparing Tool Use to Direct API Calls
 
 **Option 1: Tool Use Approach (with Claude)**
 - Claude decides which tools to use
@@ -291,7 +301,7 @@ Cost per query: $0.003 - $0.006
 
 **Recommendation:** Tool use becomes cost-effective when you need Claude to make intelligent decisions about which APIs to call. If you always call the same APIs in the same order, direct API calls are cheaper.
 
-## Optimization Strategies for Tool Use
+### Step 7: Optimization Strategies for Tool Use
 
 **Strategy 1: Cache Tool Definitions**
 Tool definitions can be cached using Claude's prompt caching feature, reducing repeated input costs:
@@ -373,7 +383,7 @@ response = client.messages.create(
 )
 ```
 
-## Monitoring Tool Use Costs
+### Step 8: Monitor Tool Use Costs
 
 Track your actual tool use spending:
 
@@ -402,7 +412,7 @@ response = client.messages.create(...)
 cost = track_tool_use_cost(response, "claude-sonnet-4-20250514")
 ```
 
-## Common Pitfalls That Increase Costs
+### Step 9: Common Pitfalls That Increase Costs
 
 **Pitfall 1: Oversized Tool Results**
 ```python
@@ -448,6 +458,21 @@ elif request_type == "inventory_check":
 ```
 
 Understanding these mechanics enables you to build applications that use Claude's tool use capabilities while managing costs effectively. The key is designing clean, focused tools that return only necessary data, and structuring your implementation to minimize unnecessary token accumulation across conversation turns.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

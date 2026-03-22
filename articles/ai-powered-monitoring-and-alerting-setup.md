@@ -25,7 +25,17 @@ Return only the JSON array, no other text.
 - **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Architecture Overview
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Architecture Overview
 
 ```
 [Services] → [Prometheus] → [AlertManager] → [Alert Webhook]
@@ -39,7 +49,7 @@ Return only the JSON array, no other text.
 
 The triage service intercepts AlertManager webhooks, fetches relevant metrics from Prometheus, and sends an enriched context bundle to Claude for analysis before paging the on-call engineer.
 
-## Prometheus Setup with Key Recording Rules
+### Step 2: Prometheus Setup with Key Recording Rules
 
 ```yaml
 # prometheus/recording-rules.yml
@@ -88,7 +98,7 @@ groups:
           description: "p95 latency is {{ $value | humanizeDuration }}"
 ```
 
-## AlertManager Webhook Configuration
+### Step 3: AlertManager Webhook Configuration
 
 ```yaml
 # alertmanager/config.yml
@@ -108,7 +118,7 @@ receivers:
           bearer_token: '${TRIAGE_SERVICE_TOKEN}'
 ```
 
-## The AI Triage Service
+### Step 4: The AI Triage Service
 
 ```python
 # triage_service.py
@@ -254,7 +264,7 @@ async def notify_slack(alert: dict, analysis: str):
         await http.post(slack_webhook, json=message)
 ```
 
-## Automated Runbook Generation
+### Step 5: Automated Runbook Generation
 
 Use Claude to generate runbooks from historical incidents:
 
@@ -289,12 +299,12 @@ Based on these historical incidents:
 
 Format the runbook as:
 ## Overview
-## When This Fires
-## Diagnostic Steps (numbered, with specific commands)
-## Common Root Causes
-## Resolution Steps by Root Cause
-## Escalation Path
-## Prevention
+### Step 6: When This Fires
+### Step 7: Diagnostic Steps (numbered, with specific commands)
+### Step 8: Common Root Causes
+### Step 9: Resolution Steps by Root Cause
+### Step 10: Escalation Path
+### Step 11: Prevention
 """
         }]
     )
@@ -322,7 +332,7 @@ runbook = generate_runbook("HighErrorRate", incidents)
 print(runbook)
 ```
 
-## Grafana Dashboard with AI Annotations
+### Step 12: Grafana Dashboard with AI Annotations
 
 ```python
 # scripts/annotate-dashboard.py
@@ -383,7 +393,7 @@ async def post_grafana_annotation(timestamp: str, text: str, dashboard_id: int):
         )
 ```
 
-## Deployment
+### Step 13: Deploy ment
 
 ```bash
 # docker-compose.yml excerpt
@@ -399,6 +409,21 @@ services:
     depends_on:
       - prometheus
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

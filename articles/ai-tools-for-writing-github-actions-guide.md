@@ -24,7 +24,17 @@ GitHub Actions YAML looks simple but has a long tail of security and reliability
 - **Use-case recommendations**: Specific guidance based on team size and requirements
 - **Trade-off analysis**: Strengths and limitations of each option discussed
 
-## The Security Gap
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The Security Gap
 
 This is where the tools diverge most. A 2026 GitHub security advisory found that script injection via `github.event` context is the #1 CI vulnerability. Only Claude consistently flags it without prompting.
 
@@ -46,7 +56,7 @@ Claude's correction:
   # Environment variables are sanitized — no injection risk
 ```
 
-## Task 1: Full CI Pipeline with Security
+### Step 2: Task 1: Full CI Pipeline with Security
 
 **Prompt:** "Write a CI pipeline for a Python project that runs tests, checks coverage, and builds a Docker image."
 
@@ -171,7 +181,7 @@ jobs:
 
 Claude added: `timeout-minutes`, `permissions` scoped to minimum required, `cache-from/to: type=gha` for Docker layer caching, and used `GITHUB_TOKEN` instead of a stored Docker password for GHCR.
 
-## Task 2: OIDC Authentication (Keyless AWS Access)
+### Step 3: Task 2: OIDC Authentication (Keyless AWS Access)
 
 **Prompt:** "Write a GitHub Action that deploys to AWS using OIDC (no stored credentials)."
 
@@ -235,7 +245,7 @@ The required IAM trust policy for the OIDC role (which Claude also generates on 
 }
 ```
 
-## Task 3: Composite Action (Reusable Steps)
+### Step 4: Task 3: Composite Action (Reusable Steps)
 
 **Prompt:** "Create a composite action for setting up Node.js with caching."
 
@@ -301,6 +311,21 @@ Copilot generated a similar composite action but omitted the `outputs` section a
 | Composite actions | Full with outputs | Missing outputs | Partial |
 | timeout-minutes | Always includes | Often missing | Sometimes includes |
 | Docker layer caching | `type=gha` | Basic or missing | Basic |
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

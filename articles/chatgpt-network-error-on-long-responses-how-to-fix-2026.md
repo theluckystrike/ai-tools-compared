@@ -49,7 +49,17 @@ Rate limiting also triggers errors when you request many long responses in quick
 
 Browser-side issues are often overlooked. Ad blockers, VPN extensions, and aggressive privacy plugins can interrupt the server-sent event stream that ChatGPT uses to deliver streaming responses. A single dropped packet during streaming can surface as a generic network error even when your internet connection is fine.
 
-## Quick Diagnosis: What Type of Error Are You Seeing?
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Quick Diagnosis: What Type of Error Are You Seeing?
 
 Before trying fixes, identify which category your error falls into:
 
@@ -63,7 +73,7 @@ Before trying fixes, identify which category your error falls into:
 
 Matching your symptom to the cause saves significant debugging time.
 
-## Fix 1: Break Long Requests into Chunks
+### Step 2: Fix 1: Break Long Requests into Chunks
 
 The most practical solution involves splitting your request into smaller pieces. Instead of asking for a complete 500-line code file in one prompt, request it in sections.
 
@@ -91,7 +101,7 @@ part_3 = generate_large_response("Finally, show the API routes")
 
 This chunking approach reduces the likelihood of network errors while giving you more control over the output. Each chunk processes faster and has a lower failure rate.
 
-## Fix 2: Adjust API Timeout Settings
+### Step 3: Fix 2: Adjust API Timeout Settings
 
 If you use the OpenAI API directly, default timeout settings may be too short for long responses. The Python library defaults to 60 seconds, which often fails for lengthy outputs.
 
@@ -124,7 +134,7 @@ def robust_completion(prompt, max_tokens=8000):
 
 Increasing the timeout gives the server adequate time to generate lengthy content. The retry logic with exponential backoff handles transient network issues gracefully.
 
-## Fix 3: Use Streaming for Better Control
+### Step 4: Fix 3: Use Streaming for Better Control
 
 Streaming responses prevents complete failures when network issues occur mid-generation. You receive chunks incrementally, so a connection drop only loses the remaining portion rather than the entire response.
 
@@ -161,7 +171,7 @@ def stream_long_response(prompt):
 
 Streaming provides real-time feedback and ensures you never lose everything if a network error occurs. The ChatGPT web interface already uses streaming — but when it fails, you lose everything. Using the API with streaming in your own code means you can save chunks to disk as they arrive, giving you a recovery option even on full network failure.
 
-## Fix 4: Clear Browser Extensions and Cache
+### Step 5: Fix 4: Clear Browser Extensions and Cache
 
 The ChatGPT web interface uses server-sent events (SSE) to stream responses. Several types of browser extensions break SSE connections:
 
@@ -178,7 +188,7 @@ To test whether extensions are the culprit:
 
 After identifying the extension, whitelist `chat.openai.com` and `api.openai.com` in its settings rather than disabling it entirely.
 
-## Fix 5: Optimize Your Prompts for Conciseness
+### Step 6: Fix 5: Optimize Your Prompts for Conciseness
 
 Verbose prompts often trigger longer responses, increasing error probability. Refine your prompts to request exactly what you need without unnecessary context.
 
@@ -203,7 +213,7 @@ Keep it minimal but functional.
 
 Concise prompts produce focused responses that generate faster and encounter fewer network issues.
 
-## Fix 6: Check Your Network and Proxy Settings
+### Step 7: Fix 6: Check Your Network and Proxy Settings
 
 Corporate networks and proxies often interfere with ChatGPT connections. Firewalls may terminate long-lived connections, and proxy servers might have their own timeout configurations.
 
@@ -230,7 +240,7 @@ client = OpenAI(
 )
 ```
 
-## Fix 7: Use the Right Model for Your Use Case
+### Step 8: Fix 7: Use the Right Model for Your Use Case
 
 Different models have different context windows and reliability characteristics. GPT-4o handles longer contexts than older models, but GPT-4o-mini offers faster responses with lower latency, which can reduce network error chances.
 
@@ -246,7 +256,7 @@ response = client.chat.completions.create(
 
 For tasks where you just need a quick, reliable response and not maximum output length, `gpt-4o-mini` is worth trying. It typically returns in under 10 seconds for medium-length responses, well below most connection timeout thresholds.
 
-## Fix 8: Monitor Your API Usage and Rate Limits
+### Step 9: Fix 8: Monitor Your API Usage and Rate Limits
 
 Keep track of your token usage to anticipate limit-related errors. The OpenAI dashboard provides usage metrics. When you approach your per-minute token limit, space out your requests:
 
@@ -282,6 +292,21 @@ def rate_limited_completion(prompts, tokens_per_minute=80000):
 ```
 
 Understanding your consumption patterns helps you schedule long-output tasks during low-traffic periods and avoid hitting rate limits.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

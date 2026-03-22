@@ -52,7 +52,17 @@ Code coverage metrics tell you how much of your codebase is exercised by your te
 
 Coverage data surfaces practical insights that code review alone misses. A function with zero coverage is a blind spot — you don't know if it works because nobody has tested it. A branch with 20% coverage tells you that most of the logic paths through a conditional block have never been executed in a test. These are exactly the kinds of signals that prevent production incidents.
 
-## Choosing Your Coverage Tools
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Choose Your Coverage Tools
 
 Different languages and frameworks require different coverage tools. Here's a quick overview:
 
@@ -70,7 +80,7 @@ Different languages and frameworks require different coverage tools. Here's a qu
 
 Claude Code can help you integrate the appropriate tool based on your project stack and generate configuration files automatically. When you describe your stack and testing framework, Claude Code will suggest the right tool and produce a working configuration — not just pseudocode, but actual config files you can paste directly into your project.
 
-## Setting Up Coverage with Claude Code
+### Step 2: Set Up Coverage with Claude Code
 
 Claude Code can assist in generating the necessary configuration files and scripts for your coverage setup. Here's how to get started:
 
@@ -175,7 +185,7 @@ fi
 echo "Coverage ${COVERAGE}% meets threshold"
 ```
 
-## Automating Coverage Reports
+### Step 3: Automate Coverage Reports
 
 Claude Code can help you create scripts that generate coverage reports and post them to various destinations. Here's an example GitHub Actions workflow:
 
@@ -227,7 +237,7 @@ jobs:
 
 Claude Code can extend this workflow to post coverage diffs on pull requests — showing not just absolute coverage, but whether a PR increased or decreased coverage compared to the base branch. This is more useful than raw coverage numbers for code review.
 
-## Setting Realistic Coverage Thresholds
+### Step 4: Setting Realistic Coverage Thresholds
 
 Establishing coverage thresholds requires balancing practicality with code quality goals. Here's a tiered approach:
 
@@ -242,7 +252,7 @@ Claude Code can help you adjust these thresholds based on your project's maturit
 
 A practical approach is to set thresholds at your current coverage level minus 2-3 percentage points. This creates a "no regression" gate without demanding improvement before you are ready. Then use Claude Code to help you write tests that fill gaps methodically — one module at a time.
 
-## Using Claude Code to Write Coverage-Filling Tests
+### Step 5: Use Claude Code to Write Coverage-Filling Tests
 
 One of the highest-value uses of Claude Code in a coverage workflow is generating tests for uncovered code paths. After running your coverage tool, you get a report showing exactly which lines and branches are untested. Feed that report directly to Claude Code:
 
@@ -261,7 +271,7 @@ path on line 89.
 
 This targeted approach is more efficient than asking Claude Code to write tests from scratch. You already know what's missing — you just need help filling it.
 
-## Integrating with Claude Code Prompts
+### Step 6: Integrate with Claude Code Prompts
 
 You can use Claude Code to generate coverage-focused prompts for your development workflow:
 
@@ -273,7 +283,7 @@ analysis and identify any uncovered branches.
 
 This approach lets Claude Code actively participate in improving your test coverage. For functions with complex conditional logic, asking Claude Code to enumerate all possible code paths first — then generate a test for each — often produces better coverage than asking for tests directly.
 
-## Coverage Reporting for Monorepos
+### Step 7: Coverage Reporting for Monorepos
 
 Monorepos require extra configuration to generate per-package and aggregate coverage reports. Claude Code can help set this up:
 
@@ -308,6 +318,21 @@ When you share your monorepo structure with Claude Code and ask for a coverage s
 6. Exclude generated code: Auto-generated files, migration files, and build artifacts should be excluded from coverage metrics — they inflate numbers without providing signal
 
 7. Treat branch coverage as primary: Line coverage is easy to game; branch coverage catches missed conditional paths that line coverage misses
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

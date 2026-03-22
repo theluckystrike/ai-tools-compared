@@ -51,7 +51,17 @@ TypeScript provides several advantages when working with Claude Code's API:
 
 - **Refactoring confidence** when making changes to your integration
 
-## Setting Up Your TypeScript Project
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Set Up Your TypeScript Project
 
 Begin by initializing a new TypeScript project with the necessary dependencies:
 
@@ -81,7 +91,7 @@ Create a `tsconfig.json` file with strict type checking enabled:
 }
 ```
 
-## Defining Type-Safe API Types
+### Step 2: Defining Type-Safe API Types
 
 Create a types file that defines all the request and response types for the Claude Code API:
 
@@ -127,7 +137,7 @@ export interface Usage {
 }
 ```
 
-## Building the API Client Class
+### Step 3: Build the API Client Class
 
 Create a reusable client class that handles authentication, request formatting, and error handling:
 
@@ -219,7 +229,7 @@ export class ClaudeCodeError extends Error {
 }
 ```
 
-## Using the Client in Your Application
+### Step 4: Use the Client in Your Application
 
 Here's how to integrate the client into your TypeScript application:
 
@@ -304,7 +314,7 @@ function logRequest(params: CompletionRequest): void {
 }
 ```
 
-## Publishing Your Client Library
+### Step 5: Publish Your Client Library
 
 When you're ready to share your client with other developers, configure your `package.json` for npm publishing:
 
@@ -327,7 +337,7 @@ When you're ready to share your client with other developers, configure your `pa
 }
 ```
 
-## Using TypeScript Generics for Flexible Response Handling
+### Step 6: Use TypeScript Generics for Flexible Response Handling
 
 The API client above uses a fixed response shape, but real-world applications often need to handle multiple response formats. TypeScript generics let you build a single method that infers the correct return type based on the request:
 
@@ -354,7 +364,7 @@ const embedding = await client.request<EmbeddingResponse>('embeddings', embeddin
 
 This pattern eliminates type assertions scattered throughout calling code and makes the client extensible without breaking existing consumers.
 
-## Validating Responses at Runtime with Zod
+### Step 7: Validating Responses at Runtime with Zod
 
 Compile-time types prevent mistakes in your code, but they cannot guard against API schema changes at runtime. Integrating Zod adds a runtime safety layer:
 
@@ -395,7 +405,7 @@ async createCompletion(request: CompletionRequest): Promise<CompletionResponse> 
 
 When the API returns an unexpected field or changes a type, Zod throws a descriptive error immediately rather than silently passing malformed data further into your application. This is especially important in production systems where bugs from malformed API responses are difficult to trace.
 
-## Error Handling Patterns Worth Adopting
+### Step 8: Error Handling Patterns Worth Adopting
 
 strong error handling distinguishes production-grade clients from prototype code. Beyond basic try/catch, consider these patterns:
 
@@ -442,6 +452,21 @@ throw new ClaudeCodeError(
 This small addition means every error in your logs links back to the exact model and request that failed, dramatically reducing diagnosis time.
 
 Building a type-safe TypeScript client for Claude Code ensures your integration handles edge cases gracefully while providing excellent developer experience through autocomplete and type hints.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

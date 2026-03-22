@@ -36,7 +36,17 @@ Database naming conventions vary widely across organizations. Some teams prefer 
 Configuring your AI tools to understand your conventions eliminates friction. The best approach involves a combination of prompt engineering, configuration files, and custom instructions that your AI assistant can reference across sessions.
 
 
-## Configuring GitHub Copilot
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Configure GitHub Copilot
 
 
 GitHub Copilot supports several methods for enforcing naming conventions. The most effective approach uses `.github/copilot-instructions.md` at the repository root.
@@ -48,13 +58,13 @@ Create a file called `.github/copilot-instructions.md` in your project root:
 ```markdown
 # Code Style Guidelines
 
-## Database Naming Conventions
+### Step 2: Database Naming Conventions
 - Use snake_case for all database tables and columns: `user_id`, `order_items`, `created_at`
 - Use snake_case for foreign key references: `customer_id`, `product_id`
 - Model class names should use PascalCase: `User`, `OrderItem`
 - Always pluralize table names: `users`, `orders`, `order_items`
 
-## ORM Conventions
+### Step 3: ORM Conventions
 - When generating SQL or ORM code, match the exact column names from the database schema
 - Do not convert snake_case to camelCase automatically
 - Include all timestamp fields: `created_at`, `updated_at` with TIMESTAMP type
@@ -73,7 +83,7 @@ class User:
 ```
 
 
-## Configuring Cursor
+### Step 4: Configure Cursor
 
 
 Cursor offers a dedicated `.cursorrules` file that provides project-specific instructions. This file supports more sophisticated configuration than Copilot's approach.
@@ -83,7 +93,7 @@ Create `.cursorrules` in your project root:
 
 
 ```
-## Database Naming Conventions
+### Step 5: Database Naming Conventions
 
 When writing code that interacts with databases:
 - Table names: snake_case, plural (users, order_items, inventory_counts)
@@ -92,7 +102,7 @@ When writing code that interacts with databases:
 - Foreign keys: {table_name}_id (user_id, order_id, product_id)
 - Boolean columns: prefix with `is_`, `has_`, or `can_` (is_active, has_permission)
 
-## Code Generation Rules
+### Step 6: Code Generation Rules
 
 For ORM models:
 - Use exact column names from database schema
@@ -105,7 +115,7 @@ For ORM models:
 Cursor applies these rules more consistently than other tools because it treats the `.cursorrules` file as a primary context source. You can verify the configuration is working by typing a comment like `# Create a query to fetch all active users` and observing whether the generated SQL uses `is_active` (snake_case) instead of `isActive`.
 
 
-## Configuring Zed
+### Step 7: Configure Zed
 
 
 Zed uses a similar approach with `.zed/rules.md` or inline configuration. The tool reads rules from this file and applies them across all AI interactions.
@@ -117,13 +127,13 @@ Create `.zed/rules.md`:
 ```markdown
 # Database Configuration
 
-## Naming Patterns
+### Step 8: Naming Patterns
 - Database tables: snake_case, plural
 - Database columns: snake_case
 - Primary keys: `id`
 - Foreign keys: `{singular_table_name}_id`
 
-## SQL Generation
+### Step 9: SQL Generation
 - Write all SQL in lowercase keywords
 - Use double quotes for identifiers: SELECT "user_id" FROM "users"
 - Avoid converting column names to camelCase
@@ -146,7 +156,7 @@ Zed also supports workspace-level configuration for team-wide enforcement. Edit 
 ```
 
 
-## Using EditorConfig for Additional Enforcement
+### Step 10: Use EditorConfig for Additional Enforcement
 
 
 Beyond AI-specific configuration, EditorConfig helps maintain consistency across all generated code. Add an `.editorconfig` file to your project root:
@@ -174,7 +184,7 @@ max_line_length = 100
 While EditorConfig doesn't directly control AI output, it establishes formatting expectations that AI tools increasingly recognize and respect.
 
 
-## Verification and Testing
+### Step 11: Verification and Testing
 
 
 After configuring your AI tools, verify the settings work correctly. Create a test file and ask your AI assistant to generate a simple database interaction:
@@ -204,7 +214,7 @@ Share your configuration files through version control so all team members benef
 Updating conventions requires coordination. When your team changes naming standards, update all configuration files simultaneously and communicate the change to every developer on the team.
 
 
-## Comparing AI Tool Configuration Capabilities
+### Step 12: Comparing AI Tool Configuration Capabilities
 
 
 Different AI tools support different configuration mechanisms. Understanding these differences helps you choose the right approach for your workflow:
@@ -223,19 +233,19 @@ GitHub Copilot's approach works well for teams already familiar with GitHub-spec
 Different database systems benefit from specialized configuration. Document these patterns explicitly:
 
 ```
-## PostgreSQL Conventions
+### Step 13: PostgreSQL Conventions
 - Use SERIAL or BIGSERIAL for auto-incrementing IDs
 - Use JSONB for semi-structured data (json_data JSONB)
 - Use ENUM types for fixed sets: CREATE TYPE status AS ENUM ('active', 'inactive')
 - Always include CHECK constraints for business rules
 
-## MySQL Conventions
+### Step 14: MySQL Conventions
 - Use UNSIGNED INT for non-negative IDs
 - Use CHAR(36) for UUID storage
 - Use ENUM columns for fixed sets: status ENUM('active','inactive')
 - Always include ON DELETE CASCADE/RESTRICT for referential integrity
 
-## MongoDB Conventions
+### Step 15: MongoDB Conventions
 - Use camelCase for all field names: userId, createdAt
 - Implement schema validation at the collection level
 - Include indexes for frequently queried fields
@@ -244,7 +254,7 @@ Different database systems benefit from specialized configuration. Document thes
 
 Providing database-specific guidance prevents tool confusion when working across multiple database systems.
 
-## Enforcing Configuration with Pre-commit Hooks
+### Step 16: Enforcing Configuration with Pre-commit Hooks
 
 Configuration files only work if developers actually use them. Implement automated checks to catch convention violations before code reaches version control:
 
@@ -271,7 +281,7 @@ done
 
 This prevents accidental commits of AI-generated code that violates your conventions.
 
-## Real-World Configuration Templates
+### Step 17: Real-World Configuration Templates
 
 Here's a complete template combining all approaches for a typical SaaS application:
 
@@ -306,6 +316,21 @@ orm_mappings:
 
 Store this alongside your configuration files so developers understand the conventions and AI tools can reference it.
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions

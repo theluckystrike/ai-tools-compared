@@ -40,13 +40,23 @@ To fix Claude giving outdated information, start a fresh conversation to clear c
 - **Ask Claude to update**: the example for current versions ### Scenario: Old Framework Recommendations Web frameworks update frequently.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Understanding Why Claude Provides Outdated Information
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Why Claude Provides Outdated Information
 
 Claude's training data has a knowledge cutoff date. This means the model does not have information about events, software releases, or technologies that emerged after that date. However, several factors can cause outdated responses even for information that should be within the knowledge window.
 
 The most common causes include: confusion from previous conversation context, outdated documentation in your project files, cached information interfering with current queries, and misaligned expectations about what Claude knows versus what it can look up.
 
-## Step-by-Step Fixes
+### Step 2: Step-by-Step Fixes
 
 ### Fix 1: Clear the Conversation Context
 
@@ -120,7 +130,7 @@ Try asking:
 
 This forces transparency about what Claude actually knows versus what it is speculating about.
 
-## Diagnostic Tips
+### Step 3: Diagnostic Tips
 
 ### Tip 1: Cross-Reference with Official Sources
 
@@ -146,7 +156,7 @@ If you suspect outdated responses, test with information you already know. Ask a
 
 Outdated information sometimes overlaps with hallucination. Watch for specific version numbers that do not match official sources, confident statements about recently released features, and references to APIs that have been deprecated. When in doubt, verify against official documentation.
 
-## Common Scenarios and Solutions
+### Step 4: Common Scenarios and Solutions
 
 ### Scenario: Outdated Code Examples
 
@@ -174,7 +184,7 @@ Web frameworks update frequently. A recommendation for React 18 might be outdate
 
 Security advice that was sound two years ago might now be dangerous. Treat security-related Claude responses with extra scrutiny. Verify against current OWASP guidelines and official security documentation.
 
-## Prevention Strategies
+### Step 5: Prevention Strategies
 
 ### Strategy 1: Keep Project Context Updated
 
@@ -219,6 +229,21 @@ For these cases, check:
 - Recent conference talks or blog posts
 
 Most outdated-information issues resolve by starting a fresh conversation, adding explicit timeframe markers to prompts, or updating stale local documentation that Claude reads as context. For real-time accuracy, enable web fetching and verify version numbers against official sources.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

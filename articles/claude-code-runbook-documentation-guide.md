@@ -47,7 +47,17 @@ When you use Claude Code for runbook documentation, you gain several powerful ad
 
 The terminal-first approach also means your runbook workflow integrates naturally with version control and CI/CD pipelines. You can generate operational documentation as part of your deployment process, ensuring that every service change produces accurate, up-to-date runbooks. This is particularly valuable for teams practicing GitOps or infrastructure-as-code, where documentation should evolve alongside your infrastructure definitions.
 
-## Structuring Your Runbook Repository
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Structuring Your Runbook Repository
 
 A well-organized runbook repository needs clear hierarchy and logical grouping. Start with a directory structure that separates different types of operational procedures:
 
@@ -96,7 +106,7 @@ Once you have this information, you can feed it to Claude Code along with your o
 Claude Code excels at generating runbooks from templates. Create a set of template patterns that it can adapt for different scenarios:
 
 ```
-## Service: {service_name}
+### Step 2: Service: {service_name}
 
 ### Overview
 {brief description of service purpose and criticality}
@@ -140,7 +150,7 @@ kubectl logs -l app={service_name} --since=1h | grep -i error
 
 When you need a new runbook, adapt this template by providing the specific service details. Claude Code will fill in the template with appropriate content based on your infrastructure and operational history.
 
-## Automating Runbook Creation
+### Step 3: Automate Runbook Creation
 
 One of Claude Code's most powerful capabilities is its ability to automate runbook creation through scripts and workflows. You can create reusable patterns that generate runbooks automatically when systems change or new services are deployed.
 
@@ -248,27 +258,42 @@ Establish a process for regular runbook reviews:
 ```markdown
 # Runbook Review Checklist
 
-## Currency Check
+### Step 4: Currency Check
 - [ ] All commands still work with current system versions
 - [ ] URLs and endpoints are still valid
 - [ ] Dependencies are still accurate
 
-## Completeness Check
+### Step 5: Completeness Check
 - [ ] All common failure scenarios covered
 - [ ] Escalation paths clearly documented
 - [ ] Recovery time objectives stated
 
-## Clarity Check
+### Step 6: Clarity Check
 - [ ] Steps in logical order
 - [ ] Commands clearly explained
 - [ ] Prerequisites listed
 
-## Tested Check
+### Step 7: Test ed Check
 - [ ] Executed successfully in last 90 days
 - [ ] Any failures documented and addressed
 ```
 
 Use Claude Code to generate review checklists and even help execute portions of the review process by analyzing runbook content against your current systems.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

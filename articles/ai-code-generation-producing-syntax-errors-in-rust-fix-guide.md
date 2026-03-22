@@ -45,7 +45,17 @@ Rust has a unique syntax that differs significantly from most mainstream program
 
 AI models often generate code that looks syntactically correct but fails to compile because they do not fully grasp Rust's lifetime system, trait bounds, or the precise rules around mutability. The compiler catches these issues immediately, but the error messages can be cryptic if you are new to Rust.
 
-## Common Syntax Errors and How to Fix Them
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Common Syntax Errors and How to Fix Them
 
 ### Missing Semicolons and Statement Endings
 
@@ -177,7 +187,7 @@ fn print_item<T: std::fmt::Display>(item: T) {
 
 When you need to use a type in specific ways, add trait bounds to your generic type parameter. The compiler error message will indicate which trait you need to bound.
 
-## Practical Debugging Workflow
+### Step 2: Practical Debugging Workflow
 
 When AI-generated code fails to compile, follow this systematic approach:
 
@@ -187,7 +197,7 @@ Second, identify the error category. Is it a missing semicolon, a type mismatch,
 
 Third, apply the fix incrementally. Change one thing at a time and rerun the compiler. This prevents accumulating multiple fixes that become hard to track.
 
-## Preventing AI Syntax Errors
+### Step 3: Preventing AI Syntax Errors
 
 You can reduce syntax errors in AI-generated Rust code by following these practices:
 
@@ -262,7 +272,7 @@ fn raw_pointer_example(data: &mut Vec<i32>) -> &mut i32 {
 
 Request that AI avoid unsafe code unless you specifically ask for it.
 
-## Specialized Rust Patterns AI Struggles With
+### Step 4: Specialized Rust Patterns AI Struggles With
 
 ### Builder Pattern Implementation
 
@@ -352,7 +362,7 @@ impl From<std::io::Error> for MyError {
 
 Always ask for Display and Error trait implementations.
 
-## Testing AI-Generated Rust Code
+### Step 5: Test AI-Generated Rust Code
 
 Create a validation script before using generated code:
 
@@ -433,6 +443,21 @@ The most reliable approach is to use AI for initial scaffolding and prototyping,
 6. **Benchmark**: Verify performance matches expectations
 
 For complex Rust features (FFI, proc macros, unsafe code), consider requesting multiple implementations and comparing approaches.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

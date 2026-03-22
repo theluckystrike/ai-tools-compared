@@ -39,7 +39,17 @@ ChatGPT API costs are calculated by multiplying your token usage by the per-toke
 - **Set output token limits**: Use the `max_tokens` parameter to cap response length and prevent runaway costs.
 - **This guide walks you**: through the full pricing structure, provides formulas for estimating monthly spend, and includes ready-to-use Python code for building your own token pricing calculator.
 
-## Understanding ChatGPT API Token Pricing
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand ChatGPT API Token Pricing
 
 OpenAI charges based on the number of tokens processed—both input tokens (your prompts) and output tokens (the model's responses). Each model has different pricing rates, and prices vary between the preview/older models and the latest GPT-4 variants.
 
@@ -65,7 +75,7 @@ The pricing follows a simple formula:
 
 **Cost = (Input Tokens × Input Rate) + (Output Tokens × Output Rate)**
 
-## Building a Token Pricing Calculator
+### Step 2: Build a Token Pricing Calculator
 
 Create a Python function that calculates costs based on your expected token usage:
 
@@ -121,7 +131,7 @@ result = calculate_chatgpt_cost(
 print(f"Cost: ${result['total_cost']}")
 ```
 
-## Estimating Monthly Usage
+### Step 3: Estimating Monthly Usage
 
 To estimate monthly costs, you need to project your usage patterns. Consider these factors:
 
@@ -228,7 +238,7 @@ Using GPT-4o-mini:
 
 - Annual cost: approximately $4,015
 
-## Cost Optimization Strategies
+### Step 4: Cost Optimization Strategies
 
 Once you have a calculator running, use it to identify optimization opportunities:
 
@@ -242,7 +252,7 @@ Once you have a calculator running, use it to identify optimization opportunitie
 
 5. Monitor with alerts: Set up budget alerts using OpenAI's usage dashboard or build custom monitoring that tracks daily spend.
 
-## Using the Calculator for Budget Planning
+### Step 5: Use the Calculator for Budget Planning
 
 Create a spreadsheet or dashboard that tracks:
 
@@ -259,6 +269,21 @@ Add a buffer of 20-30% for unexpected usage spikes. If your calculated monthly c
 Building a token pricing calculator into your application also helps with client-side cost estimation if you charge users based on their usage. You can pass through OpenAI costs with a margin while giving users transparent pricing.
 
 Start with conservative estimates, measure actual usage after deployment, and refine your calculator based on real-world data. This approach gives you predictable costs and the confidence to scale your AI-powered features.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

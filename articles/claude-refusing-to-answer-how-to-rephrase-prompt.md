@@ -55,7 +55,17 @@ The most common reasons for refusals include:
 
 Certain words or phrases automatically activate content filters, even when the request itself is harmless. Claude may also refuse when it cannot determine whether a request is safe, or when previous conversation context creates ambiguity. Multiple similar requests in quick succession can trigger rate limiting as well.
 
-## Fix 1: Remove Trigger Words and Phrases
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Fix 1: Remove Trigger Words and Phrases
 
 The fastest fix involves identifying and removing words that trigger refusal filters. Specific technical terms, when combined with certain modifiers, sometimes activate safety systems even when the actual request is harmless.
 
@@ -73,7 +83,7 @@ Explain common authentication patterns for my application
 
 The key principle is to describe what you want to accomplish rather than using words that describe prohibited actions. Focus on the legitimate goal—building, learning, debugging—rather than techniques that could be misused.
 
-## Fix 2: Provide Clear Context
+### Step 2: Fix 2: Provide Clear Context
 
 Claude may refuse requests that seem ambiguous or potentially harmful. Adding context helps Claude understand your legitimate intent and provide the assistance you need.
 
@@ -91,7 +101,7 @@ Show me a Python function that reads a JSON file and returns the parsed data. I'
 
 Including your purpose, the technology you're using, and what you're trying to accomplish transforms an ambiguous request into one Claude can confidently answer.
 
-## Fix 3: Explicitly State Your Intent
+### Step 3: Fix 3: Explicitly State Your Intent
 
 When working with sensitive topics that have legitimate use cases, explicitly stating your purpose removes ambiguity and helps Claude assess your request properly.
 
@@ -109,7 +119,7 @@ I'm building a user authentication system for a web application. What are best p
 
 The second version provides complete context: the technology (Node.js), the purpose (authentication system), and the specific question (password hashing best practices). Claude can now provide targeted, helpful information.
 
-## Fix 4: Break Down Complex Requests
+### Step 4: Fix 4: Break Down Complex Requests
 
 Complex multi-part requests sometimes trigger refusals because Claude cannot evaluate the safety of every component simultaneously. Breaking your request into smaller, focused parts often resolves this.
 
@@ -127,7 +137,7 @@ Write a Node.js script that makes HTTP requests and extracts structured data fro
 
 Start with the legitimate core of your request. Once that works, you can ask follow-up questions for additional features.
 
-## Fix 5: Use Educational Framing
+### Step 5: Fix 5: Use Educational Framing
 
 Questions framed as learning requests typically receive more answers. This approach works particularly well for topics that could have harmful applications but have legitimate educational value.
 
@@ -145,13 +155,13 @@ I'm learning about web application security. Can you explain what SQL injection 
 
 This transformation provides the same security knowledge while making Claude's educational purpose clear.
 
-## Diagnostic Tips
+### Step 6: Diagnostic Tips
 
 When rephrasing doesn't resolve the issue, these diagnostic steps help identify the root cause:
 
 Check for typos in keywords, since misspelled words sometimes create unexpected trigger patterns. Review recent conversation history—earlier requests may have created context that affects current responses. Test with a minimal prompt by removing everything except the core request to isolate the problem. Try synonyms when specific words trigger refusals, and check whether excessive requests in a short period may be causing temporary rate-limit refusals.
 
-## Common Scenarios and Solutions
+### Step 7: Common Scenarios and Solutions
 
 ### Scenario: Claude stops responding mid-conversation
 
@@ -165,7 +175,7 @@ You may be using terminology associated with harmful activities. Research altern
 
 Some code patterns can appear malicious. Provide more context about your project, the problem you're solving, and why you need that specific functionality.
 
-## API Limit and Rate Limit Handling
+### Step 8: API Limit and Rate Limit Handling
 
 When using Claude API for batch operations, be aware of rate limits that might trigger refusals:
 
@@ -284,7 +294,7 @@ prompt = structured_prompt_for_sensitive_topic(
 )
 ```
 
-## Common Trigger Keywords to Avoid
+### Step 9: Common Trigger Keywords to Avoid
 
 When Claude refuses, analyze which terms might be triggering the safety systems:
 
@@ -299,7 +309,7 @@ When Claude refuses, analyze which terms might be triggering the safety systems:
 | steal | extract | "extract data from database" |
 | malicious | unexpected | "handle unexpected behavior" |
 
-## Batch Refusal Handling
+### Step 10: Batch Refusal Handling
 
 For applications processing many prompts, implement fallback strategies:
 
@@ -367,6 +377,21 @@ def rephrase_prompt_for_compliance(original_prompt: str) -> str:
 
     return rephrased
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

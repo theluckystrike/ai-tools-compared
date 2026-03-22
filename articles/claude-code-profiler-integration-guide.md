@@ -38,7 +38,17 @@ Profiling is essential for understanding your application's performance characte
 - **Describe which bars are widest and which function names appear most prominently**: Claude Code can reason from that description even without directly reading the SVG structure.
 - **This guide covers understanding**: profiling fundamentals, setting up python profilers, using cprofile, with specific setup instructions
 
-## Understanding Profiling Fundamentals
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Profiling Fundamentals
 
 Before integrating profilers, understand the different types of profiling available:
 
@@ -49,7 +59,7 @@ Before integrating profilers, understand the different types of profiling availa
 
 Claude Code can help interpret profiler output, suggest optimizations based on the data, and implement changes iteratively.
 
-## Setting Up Python Profilers
+### Step 2: Set Up Python Profilers
 
 Python offers several profiling tools that integrate well with Claude Code workflows.
 
@@ -114,7 +124,7 @@ Run with memory tracking:
 python -m memory_profiler your_script.py
 ```
 
-## Integrating Profilers with Claude Code Workflow
+### Step 3: Integrate Profilers with Claude Code Workflow
 
 ### Automated Profile Analysis
 
@@ -181,7 +191,7 @@ def your_function():
     pass
 ```
 
-## JavaScript and TypeScript Profiling
+### Step 4: JavaScript and TypeScript Profiling
 
 ### Using Chrome DevTools Protocol
 
@@ -216,7 +226,7 @@ bun --profile your_script.ts
 
 This generates a Chrome-compatible profile that you can load in `chrome://inspect`.
 
-## Analyzing Profile Results with Claude Code
+### Step 5: Analyzing Profile Results with Claude Code
 
 When you have profiling data, share it with Claude Code using these strategies:
 
@@ -236,7 +246,7 @@ Upload flame graph SVGs and ask Claude Code to identify the hottest code paths.
 4. Re-profile to verify improvement
 5. Repeat until performance goals are met
 
-## How to Frame Profiler Output for Claude Code
+### Step 6: How to Frame Profiler Output for Claude Code
 
 The quality of Claude Code's optimization suggestions depends heavily on how you present your profiling data. Vague prompts produce vague advice.
 
@@ -258,7 +268,7 @@ For the best results, share three things with Claude Code:
 
 Claude Code can then reason about the relationship between the profile data and the code structure rather than guessing from statistics alone.
 
-## Working with Go and Rust Profilers
+### Step 7: Work with Go and Rust Profilers
 
 Claude Code handles profiling data from multiple languages, not just Python and JavaScript.
 
@@ -313,7 +323,7 @@ Share the generated `flamegraph.svg` with Claude Code by describing the visible 
 - **Use line-level profiling** for critical functions
 - **Profile memory separately** from CPU to get clear signals
 
-## Common Profiler Interpretations
+### Step 8: Common Profiler Interpretations
 
 Claude Code can help interpret common profiling patterns:
 
@@ -325,6 +335,21 @@ Claude Code can help interpret common profiling patterns:
 | High CPU in GC | Too many allocations | Reduce object creation |
 | Long tail latency | Lock contention | Profile concurrency separately |
 | Repeated DB calls in hot path | N+1 query problem | Add caching or batch queries |
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

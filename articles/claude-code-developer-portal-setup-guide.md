@@ -51,7 +51,17 @@ When you use Claude Code for portal setup, you gain several advantages. First, d
 
 The terminal-first approach also means your documentation workflow integrates naturally with version control and CI/CD pipelines. You can generate docs as part of your build process, ensuring that every commit produces accurate, up-to-date documentation.
 
-## Structuring Your Developer Portal
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Structuring Your Developer Portal
 
 A well-organized developer portal needs clear hierarchy and logical grouping. Start with a directory structure that separates different types of content:
 
@@ -89,7 +99,7 @@ claude-code analyze ./src/api \
   --output ./docs/api-reference
 ```
 
-## Integrating Interactive Documentation
+### Step 2: Integrate Interactive Documentation
 
 Static documentation serves readers well, but interactive elements help developers test APIs directly from the portal. Consider adding an API playground that connects to your actual endpoints during development:
 
@@ -110,7 +120,7 @@ async function testEndpoint(endpoint, params) {
 
 Claude Code helps you embed such interactive elements into your documentation pages. Simply describe what you want the component to do, and Claude Code generates the implementation.
 
-## Automating Documentation Updates
+### Step 3: Automate Documentation Updates
 
 The real power of using Claude Code for developer portals emerges when you automate documentation updates. Set up a CI pipeline that triggers documentation regeneration on every code change:
 
@@ -141,7 +151,7 @@ jobs:
 
 This workflow ensures your developer portal always reflects the current state of your codebase. Developers making API changes see their modifications documented automatically.
 
-## Building Tutorial Content
+### Step 4: Build Tutorial Content
 
 Beyond API references, developer portals need tutorials that guide users through common integration scenarios. Claude Code excels at generating these step-by-step guides because it understands your specific implementation details.
 
@@ -158,7 +168,7 @@ with our API. The tutorial should cover:
 
 Claude Code produces a detailed guide tailored to your actual API structure, including working code examples that developers can copy and adapt.
 
-## Maintaining Portal Quality
+### Step 5: Maintaining Portal Quality
 
 As your developer portal grows, maintaining consistency becomes challenging. Claude Code helps enforce standards across all documentation:
 
@@ -170,7 +180,7 @@ As your developer portal grows, maintaining consistency becomes challenging. Cla
 
 Run these quality checks as part of your CI pipeline to catch issues before they reach users.
 
-## Deployment Options
+### Step 6: Deploy ment Options
 
 Your Claude Code-generated portal can deploy to various platforms:
 
@@ -234,7 +244,7 @@ Netlify allows you to hook into build processes and set environment variables fo
 
 Netlify's split testing feature allows you to A/B test different documentation layouts or explore variations of API explanations without affecting production traffic.
 
-## Measuring Portal Effectiveness
+### Step 7: Measuring Portal Effectiveness
 
 Developer portal analytics reveal which docs users find helpful and where they struggle. Track these metrics to continuously improve:
 
@@ -305,7 +315,7 @@ claude-code analyze-docs \
 
 This creates a continuous improvement cycle where user feedback directly informs documentation updates.
 
-## Pricing and Cost Optimization
+### Step 8: Pricing and Cost Optimization
 
 Claude Code itself offers flexible pricing for documentation generation:
 
@@ -325,7 +335,7 @@ claude-code analytics --period last_month
 # Output shows: 45,230 API calls, $22.61 cost
 ```
 
-## Dynamic Content Generation at Scale
+### Step 9: Dynamic Content Generation at Scale
 
 For portals serving many products or APIs, consider dynamic generation strategies:
 
@@ -353,6 +363,21 @@ async function generateEndpointDocs(apiSpec) {
 ```
 
 This approach keeps documentation fresh as your API evolves without requiring manual rewrites.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

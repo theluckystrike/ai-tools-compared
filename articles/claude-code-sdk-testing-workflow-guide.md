@@ -43,7 +43,17 @@ This guide provides practical steps and best practices to help you accomplish th
 
 Testing is a critical aspect of SDK development, ensuring reliability, stability, and correct behavior across different use cases. This guide covers establishing testing workflows for Claude Code SDK implementations.
 
-## Setting Up Your Test Environment
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Set Up Your Test Environment
 
 Before writing tests, ensure your development environment is properly configured:
 
@@ -55,7 +65,7 @@ npm install --save-dev jest @testing-library/react vitest
 npm install @anthropic-ai/claude-code-sdk
 ```
 
-## Unit Testing Fundamentals
+### Step 2: Unit Testing Fundamentals
 
 Unit tests form the foundation of your testing strategy. Focus on testing individual functions and methods in isolation:
 
@@ -83,7 +93,7 @@ describe('ClaudeCodeClient', () => {
 });
 ```
 
-## Integration Testing
+### Step 3: Integration Testing
 
 Integration tests verify that your SDK works correctly with external services:
 
@@ -109,7 +119,7 @@ describe('Claude Code SDK Integration', () => {
 });
 ```
 
-## Mock Testing Strategies
+### Step 4: Mock Testing Strategies
 
 When testing without API access or to control responses, use mocking:
 
@@ -147,7 +157,7 @@ describe('Mocked SDK Tests', () => {
 });
 ```
 
-## End-to-End Testing
+### Step 5: End-to-End Testing
 
 E2E tests validate complete user workflows:
 
@@ -180,7 +190,7 @@ describe('Complete SDK Workflow', () => {
 });
 ```
 
-## Continuous Integration Setup
+### Step 6: Continuous Integration Setup
 
 Automate your tests in CI/CD pipelines:
 
@@ -248,7 +258,7 @@ describe('Performance Tests', () => {
 });
 ```
 
-## Structuring Your Test Suite for Long-Term Maintainability
+### Step 7: Structuring Your Test Suite for Long-Term Maintainability
 
 As your SDK usage grows, disorganized tests become a liability. A well-structured test suite reduces maintenance burden and makes it easier to onboard new developers.
 
@@ -271,7 +281,7 @@ rateLimitError.name = 'ClaudeRateLimitError';
 
 **Apply the test pyramid principle.** Aim for roughly 70% unit tests, 20% integration tests, and 10% E2E tests. Unit tests run in milliseconds; E2E tests against live APIs take seconds and cost tokens. Keeping this ratio ensures fast feedback loops without sacrificing confidence.
 
-## Handling Flaky Tests in SDK Workflows
+### Step 8: Handling Flaky Tests in SDK Workflows
 
 SDK tests that hit real APIs introduce flakiness from network timeouts, rate limits, and non-deterministic model outputs. Address each category explicitly.
 
@@ -305,7 +315,7 @@ it('should return valid TypeScript', async () => {
 
 **Network timeouts**: Set conservative timeouts per test and use mock servers for the bulk of your test runs. Reserve live API calls for a nightly integration suite that runs outside of PR checks.
 
-## Snapshot Testing for SDK Response Schemas
+### Step 9: Snapshot Testing for SDK Response Schemas
 
 When your application depends on specific shapes of API responses, snapshot tests catch regressions from schema changes automatically.
 
@@ -341,7 +351,7 @@ describe('Response schema snapshots', () => {
 
 Run `jest --updateSnapshot` when you intentionally update the response schema. Commit the updated snapshot file so reviewers can see exactly what changed. This pattern is especially useful when upgrading SDK versions — broken snapshots immediately surface breaking changes.
 
-## Testing Token Usage and Cost Controls
+### Step 10: Test Token Usage and Cost Controls
 
 Production SDK integrations need safeguards against runaway token consumption. Test your cost control logic as a first-class concern:
 
@@ -372,6 +382,21 @@ describe('Token usage controls', () => {
 ```
 
 Pair these tests with alerting in production to catch unexpected cost spikes early. A well-tested token management layer prevents the kind of billing surprises that turn small experiments into expensive incidents.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -39,7 +39,17 @@ Large codebase migrations are grueling. Your Python 2 legacy system has 50,000 l
 - **80% of changes are**: mechanical; plan 5-10% manual review time.
 - **Validate incrementally**: Apply migrations to 10% of codebase first, measure accuracy, adjust prompts.
 
-## Python 2 to Python 3 Migration with AI
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Python 2 to Python 3 Migration with AI
 
 Python 2 reached end-of-life in 2020. Migrating large codebases requires handling print statements, division operators, unicode/string differences, imports, and deprecated libraries.
 
@@ -98,7 +108,7 @@ cd python3_codebase && python -m pytest tests/
 
 Success metric: 94% of the codebase compiled without errors after first pass. The remaining 6% had implicit unicode dependencies that required domain knowledge.
 
-## Java 8 to Java 21 Migration
+### Step 2: Java 8 to Java 21 Migration
 
 Java 8 introduced streams and lambdas. Java 11+ added var keyword. Java 17+ introduced records and sealed classes. Java 21 added virtual threads and pattern matching.
 
@@ -164,7 +174,7 @@ Copilot-based tools handle stream migration at 94% accuracy but struggle with vi
 - Claude API: $0.003/token input, migration project ~$12.50
 - IntelliJ Premium: $199/year, no API costs but tool-specific
 
-## JavaScript CommonJS to ESM Migration
+### Step 3: JavaScript CommonJS to ESM Migration
 
 CommonJS was Node.js standard for 20+ years. ES Modules (ESM) are now standard, but migration breaks default exports, require patterns, and __dirname handling.
 
@@ -262,7 +272,7 @@ Tool costs for combined 130K-line migration:
 - Anthropic Claude API: ~$15 token-based
 - GPT-4 API: ~$35
 
-## Critical Edge Cases and Limitations
+### Step 4: Critical Edge Cases and Limitations
 
 No AI tool achieves 100% accuracy. Plan for these manual interventions:
 
@@ -281,7 +291,7 @@ No AI tool achieves 100% accuracy. Plan for these manual interventions:
 - Native C++ modules requiring build tool updates
 - Performance-critical lazy-loading patterns
 
-## Practical Implementation Strategy and Execution
+### Step 5: Practical Implementation Strategy and Execution
 
 Before running any migration, establish ground truth about your codebase and plan accordingly:
 
@@ -323,7 +333,7 @@ This tells you exactly what patterns to expect in your migration.
 
 5. **Document assumptions**: Record which patterns the AI struggled with for your codebase. This guides manual review and future migrations.
 
-## Recommended Tools by Scale
+### Step 6: Recommended Tools by Scale
 
 - **Under 20K lines**: Use Claude directly via API, best cost-performance ratio
 - **20K-100K lines**: GitHub Copilot with manual validation, cheapest subscription model
@@ -331,6 +341,21 @@ This tells you exactly what patterns to expect in your migration.
 - **Regulatory/financial code**: Expect 20-30% manual review rate regardless of tool
 
 Migration with AI tools is no longer optional for large legacy systems. The bottleneck shifts from raw conversion effort to testing and validation. Invest in test suites before migration starts.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

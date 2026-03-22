@@ -61,7 +61,17 @@ Understanding the root causes helps you address them effectively. ChatGPT predic
 The model prioritizes plausible-sounding output over factual accuracy. Recognizing this fundamental limitation is the first step toward mitigating it.
 
 
-## Hallucination Risk by Query Type
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Hallucination Risk by Query Type
 
 
 Not all requests carry the same hallucination risk. Understanding where errors cluster helps you apply verification effort where it matters most:
@@ -79,7 +89,7 @@ Not all requests carry the same hallucination risk. Understanding where errors c
 Use this table to prioritize your verification workflow. A conceptual explanation of how TCP handshakes work needs only a light review; a specific drug dosage or regulatory citation needs independent confirmation from an authoritative source.
 
 
-## Step-by-Step Fixes and Diagnostic Tips
+### Step 2: Step-by-Step Fixes and Diagnostic Tips
 
 
 ### 1. Structure Your Prompts for Accuracy
@@ -224,7 +234,7 @@ If unsure, explicitly state the limitation.
 System prompts provide persistent instructions that improve accuracy across the entire conversation.
 
 
-## Implementing RAG to Ground Responses in Verified Data
+### Step 3: Implementing RAG to Ground Responses in Verified Data
 
 
 Retrieval-augmented generation is the most reliable production-grade technique for eliminating hallucinations in domain-specific applications. Instead of relying on the model's parametric memory, RAG retrieves relevant documents at query time and provides them as context.
@@ -271,7 +281,7 @@ def rag_query(user_question: str, knowledge_base: list) -> str:
 The key constraint is the system prompt instruction to use only the provided context. When the model is told explicitly that inventing information outside the context is prohibited—and that admitting ignorance is acceptable—hallucination rates drop dramatically. The quality of your retrieval step determines the quality of your answers.
 
 
-## Diagnostic Checklist for Critical Outputs
+### Step 4: Diagnostic Checklist for Critical Outputs
 
 
 Before relying on AI-generated information for important decisions, run through this verification checklist:
@@ -291,7 +301,7 @@ Before relying on AI-generated information for important decisions, run through 
 If you answer "no" to multiple items, treat the output as unverified and seek additional confirmation.
 
 
-## When Hallucinations Persist
+### Step 5: When Hallucinations Persist
 
 
 Some topics have higher hallucination rates regardless of prompt engineering:
@@ -305,6 +315,21 @@ Some topics have higher hallucination rates regardless of prompt engineering:
 
 
 For these cases, consider supplementing AI with dedicated search tools or consulting primary sources directly.
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions
@@ -323,7 +348,7 @@ ChatGPT's built-in web browsing (where available) reduces hallucinations for cur
 Run the model's output through a second verification pass with a prompt like: "Review the following claims and identify any that you cannot confirm with high confidence. Flag each uncertain claim." For higher-stakes pipelines, cross-reference key claims against a search API or your RAG knowledge base using embedding similarity.
 
 
-## Building Reliable AI Workflows
+### Step 6: Build Reliable AI Workflows
 
 
 Reducing hallucinations requires combining prompt engineering with verification systems. For production applications:

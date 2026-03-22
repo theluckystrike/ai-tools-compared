@@ -38,7 +38,17 @@ Good fixtures share several characteristics: they represent real-world data patt
 The most common failure mode for fixture-heavy test suites is state leakage — one test's writes pollute the next test's reads. The strategies in this guide address that directly, with transaction rollback patterns that eliminate leakage without the performance cost of rebuilding the database from scratch on every test.
 
 
-## Comparing Fixture Approaches
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Comparing Fixture Approaches
 
 Before choosing a fixture strategy, understand the tradeoffs:
 
@@ -53,7 +63,7 @@ Before choosing a fixture strategy, understand the tradeoffs:
 For most Python projects using SQLAlchemy, the combination of Factory Boy factories with transaction rollback fixtures provides the best balance of speed, isolation, and realism. Claude Code generates this pattern reliably when given your SQLAlchemy model definitions.
 
 
-## Creating Fixture Factories with Claude Code
+### Step 2: Create Fixture Factories with Claude Code
 
 
 Fixture factories generate test data on-demand rather than relying on static SQL dumps. Claude Code excels at building these patterns for various ORMs and databases.
@@ -110,7 +120,7 @@ class OrderFactory(SQLAlchemyModelFactory):
 ```
 
 
-## Using Claude Code for Fixture Generation
+### Step 3: Use Claude Code for Fixture Generation
 
 Claude Code generates accurate fixture factories from model definitions. The most effective workflow is to open the models file in your Claude Code session and prompt directly:
 
@@ -126,7 +136,7 @@ Claude Code reads your actual field types and constraints, so it generates appro
 When your schema changes, re-run the prompt with the updated model file. Claude Code will update factory definitions to match, flagging any fields where it cannot infer an appropriate Faker provider.
 
 
-## Test Isolation Strategies
+### Step 4: Test Isolation Strategies
 
 
 Test isolation prevents data leakage between tests. Each test should see a clean database state and not depend on execution order.
@@ -201,7 +211,7 @@ def fresh_database():
 ```
 
 
-## Step-by-Step: Setting Up Fixtures with Claude Code
+### Step 5: Step-by-Step: Setting Up Fixtures with Claude Code
 
 Follow this workflow to build a complete fixture system for a new project:
 
@@ -254,7 +264,7 @@ For complex test scenarios, create named fixture sets: "Generate a pytest fixtur
 Run `pytest -v tests/test_fixtures.py` to confirm factories create records correctly and rollback works. Paste any failures back to Claude Code with the stack trace.
 
 
-## Data Seeding Strategies
+### Step 6: Data Seeding Strategies
 
 
 Effective seeding balances realism with practicality. Claude Code can help you generate seed data that mimics production patterns.
@@ -333,6 +343,21 @@ Yes. Claude Code generates `mongomock` fixtures for MongoDB testing, using the `
 
 
 *This article was written by theluckystrike for zovo.one*
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Articles
 

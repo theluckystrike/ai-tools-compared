@@ -40,7 +40,17 @@ AI-powered internal mobility tools have become essential infrastructure for orga
 - **- Fuel50**: Career pathing-first; integrates with LMS platforms like Cornerstone and Degreed for tightly coupled learning recommendations.
 - **Less sophisticated skill matching**: than Fuel50 but better learning management integration.
 
-## Understanding AI Internal Mobility Systems
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand AI Internal Mobility Systems
 
 Internal mobility encompasses job transitions, promotions, lateral moves, and skill development pathways within an organization. AI enhances these processes by analyzing employee skills, matching them to opportunities, predicting flight risks, and recommending personalized development paths.
 
@@ -53,7 +63,7 @@ The core components typically include:
 
 Modern internal mobility platforms analyze thousands of data points—from project histories and certifications to peer endorsements and self-assessments—to create employee profiles that go far beyond traditional resumes.
 
-## Technical Architecture
+### Step 2: Technical Architecture
 
 Most modern systems follow a microservices architecture. Here's a representative setup:
 
@@ -110,7 +120,7 @@ class MobilityMatcher:
 
 The matching algorithm typically combines multiple signals: exact skill matches carry significant weight, while semantic similarity using embedding models catches related competencies. Experience requirements act as hard filters in many systems, though some platforms offer tiered matching for roles where demonstrated expertise matters more than tenure.
 
-## Data Integration Patterns
+### Step 3: Data Integration Patterns
 
 Successful implementations require aggregating data from multiple sources. Common patterns include:
 
@@ -138,7 +148,7 @@ async def extract_skills_from_text(
 
 **Feedback Loop Systems**: Capture promotion outcomes, role changes, and employee satisfaction to continuously improve matching accuracy. Building this feedback loop early helps the system learn from real outcomes rather than relying solely on predicted scores.
 
-## Building Skill Graphs
+### Step 4: Build Skill Graphs
 
 A skill graph maps relationships between skills—prerequisites, related competencies, and career progressions. This enables sophisticated queries like "what skills should I develop to transition from frontend to backend development?"
 
@@ -179,7 +189,7 @@ class SkillGraph:
 
 Skill graphs also power the "skills before role" approach—identifying which competencies are transferable and which are role-specific, helping employees make informed decisions about their career direction.
 
-## Vendor Space in 2026
+### Step 5: Vendor Space in 2026
 
 Several mature platforms now offer AI internal mobility as a managed service, reducing the burden of building from scratch:
 
@@ -191,7 +201,7 @@ Several mature platforms now offer AI internal mobility as a managed service, re
 
 Choosing between building in-house and buying depends primarily on two factors: the uniqueness of your skill taxonomy (niche technical organizations often need custom ontologies), and your data privacy posture (regulated industries frequently require on-premise or private-cloud deployments that most SaaS vendors can't accommodate out of the box).
 
-## Measuring Success
+### Step 6: Measuring Success
 
 Track these metrics after deployment to evaluate your internal mobility program's effectiveness:
 
@@ -205,7 +215,7 @@ Track these metrics after deployment to evaluate your internal mobility program'
 
 A low match acceptance rate is usually a data problem: profiles are stale, or the skill taxonomy doesn't reflect how employees actually describe their work. Prompt employees quarterly to update skills and weight recent activity more heavily than older records.
 
-## Privacy and Ethics Considerations
+### Step 7: Privacy and Ethics Considerations
 
 When building these systems, data privacy and algorithmic fairness are critical:
 
@@ -240,7 +250,7 @@ def detect_bias(
 
 Beyond technical safeguards, involve legal and HR teams early to ensure compliance with employment laws and internal policies. Document your decision-making process for algorithmic choices—this helps during audits and builds trust with employees.
 
-## Practical Implementation Tips
+### Step 8: Practical Implementation Tips
 
 Start with a narrow use case—internal gig matching or project team formation—before expanding to full career pathing. Validate recommendations with hiring managers and allow feedback to improve the system over time.
 
@@ -356,7 +366,7 @@ Three major platforms dominate enterprise mobility:
 
 **Building in-house** (3-6 month dev project, $50-200K): Full control over skill taxonomy, matching algorithms, and data privacy. You can tune the system specifically for your organization's career progression patterns. Requires ongoing maintenance and skill graph updates. Best for: Tech companies (where internal talent is available) and organizations with unique career models (academia, consulting, government).
 
-## Measuring Success and ROI
+### Step 9: Measuring Success and ROI
 
 Internal mobility initiatives succeed or fail based on outcomes, not features. Track these metrics:
 
@@ -390,6 +400,21 @@ def calculate_roi(internal_hires, external_hire_cost, internal_ramp_savings):
         'payback_period_months': platform_cost / (internal_cost_savings / 12)
     }
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

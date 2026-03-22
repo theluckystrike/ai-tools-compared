@@ -24,7 +24,17 @@ Playwright tests fail in two ways: they don't test the right thing, or they fail
 - **Practical guidance included**: Step-by-step setup and configuration instructions
 - **Use-case recommendations**: Specific guidance based on team size and requirements
 
-## The Test Quality Spectrum
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The Test Quality Spectrum
 
 ```
 Level 1: Brittle — querySelector selectors, arbitrary sleeps
@@ -34,7 +44,7 @@ Level 3: Production — page object model, auth fixtures, network mocking
 
 Most AI tools default to Level 1-2. Claude Code with context consistently reaches Level 3.
 
-## Task 1: Login Flow with Auth State
+### Step 2: Task 1: Login Flow with Auth State
 
 **Prompt:** "Write a Playwright test for login. Email/password form, redirects to dashboard on success."
 
@@ -120,7 +130,7 @@ test.describe('Dashboard', () => {
 });
 ```
 
-## Task 2: Page Object Model
+### Step 3: Task 2: Page Object Model
 
 **Prompt:** "Create a Page Object for a shopping cart page."
 
@@ -209,7 +219,7 @@ test('removing last item shows empty state', async ({ page }) => {
 });
 ```
 
-## Task 3: Network Mocking
+### Step 4: Task 3: Network Mocking
 
 **Prompt:** "Write a test that mocks the payment API to test error handling."
 
@@ -274,7 +284,7 @@ test.describe('Checkout error handling', () => {
 });
 ```
 
-## Task 4: Visual Regression Testing
+### Step 5: Task 4: Visual Regression Testing
 
 ```typescript
 // Claude adds visual regression snapshots properly
@@ -303,6 +313,21 @@ test('checkout page layout matches baseline', async ({ page }) => {
 | Page Object Model | Full class with typed locators | Functions only | Basic class |
 | Network mocking | Route with delayed/error responses | Basic route.fulfill | Correct basics |
 | Visual regression | mask + maxDiffPixels | Basic screenshot | Basic screenshot |
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 
