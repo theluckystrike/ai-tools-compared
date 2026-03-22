@@ -103,6 +103,48 @@ resource "aws_db_instance" "this" {
 
 Claude correctly uses `null` for conditional `final_snapshot_identifier` and adds `merge()` for tags — patterns that Copilot frequently misses.
 
+### Claude's Variable Block Quality
+
+Claude also generates strongly-typed variable blocks with validation constraints:
+
+```hcl
+# variables.tf (Claude output)
+variable "instance_class" {
+  description = "The instance type of the RDS instance"
+  type        = string
+  default     = "db.t3.medium"
+
+  validation {
+    condition     = can(regex("^db\\.", var.instance_class))
+    error_message = "instance_class must start with 'db.' (e.g., db.t3.medium)."
+  }
+}
+
+variable "engine_version" {
+  description = "PostgreSQL engine version"
+  type        = string
+  default     = "16.2"
+
+  validation {
+    condition     = can(regex("^\\d+\\.\\d+$", var.engine_version))
+    error_message = "engine_version must be in major.minor format (e.g., 16.2)."
+  }
+}
+
+variable "allocated_storage" {
+  description = "Initial storage allocation in GiB"
+  type        = number
+  default     = 20
+
+  validation {
+    condition     = var.allocated_storage >= 20 && var.allocated_storage <= 65536
+    error_message = "allocated_storage must be between 20 and 65536 GiB."
+  }
+}
+```
+
+The regex-based validation for version format and the numeric range check are both patterns that Claude generates reliably. Copilot rarely includes these without explicit prompting.
+
 ## GitHub Copilot
 
 Copilot works inside your editor and generates module code inline. It performs best when you already have some file structure in place — it uses surrounding context heavily.
@@ -136,6 +178,7 @@ Copilot generates reasonable validation blocks when it sees existing similar pat
 | Correct output attributes | Excellent | Mixed (15% error rate) |
 | versions.tf constraints | Excellent | Misses minor versions |
 | locals for naming | Excellent | Rarely uses locals |
+| Sensitivity marking on secrets | Consistent | Inconsistent |
 
 ## Cursor
 
@@ -249,6 +292,49 @@ sort:
   enabled: true
   by: required
 ```
+
+## Linting and Static Analysis Integration
+
+Beyond validation, production-grade modules require static analysis. All three tools can generate pre-commit configuration for automated checks:
+
+```yaml
+# .pre-commit-config.yaml
+repos:
+  - repo: https://github.com/antonbabenko/pre-commit-terraform
+    rev: v1.92.0
+    hooks:
+      - id: terraform_fmt
+      - id: terraform_validate
+      - id: terraform_tflint
+        args:
+          - --args=--config=__GIT_WORKING_DIR__/.tflint.hcl
+      - id: terraform_docs
+        args:
+          - --hook-config=--path-to-file=README.md
+          - --hook-config=--add-to-existing-file=true
+          - --hook-config=--create-file-if-not-exist=true
+```
+
+A matching `.tflint.hcl` that Claude generates correctly:
+
+```hcl
+# .tflint.hcl
+plugin "aws" {
+  enabled = true
+  version = "0.32.0"
+  source  = "github.com/terraform-linters/tflint-ruleset-aws"
+}
+
+rule "aws_instance_invalid_type" {
+  enabled = true
+}
+
+rule "terraform_required_version" {
+  enabled = true
+}
+```
+
+Claude correctly identifies the tflint AWS ruleset version and plugin source path — details that Copilot often gets wrong because it lacks current version awareness.
 
 ## Verdict
 
