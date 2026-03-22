@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /how-to-set-up-custom-instructions-for-ai-tools-to-match-your/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]

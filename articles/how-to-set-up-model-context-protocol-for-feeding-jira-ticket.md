@@ -9,7 +9,7 @@ permalink: /how-to-set-up-model-context-protocol-for-feeding-jira-ticket/
 categories: [guides]
 tags: [ai-tools-compared, mcp, jira, ai]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

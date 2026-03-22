@@ -9,7 +9,7 @@ permalink: /how-to-manage-ai-coding-tool-rate-limits-across-team-of-developers/
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

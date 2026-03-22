@@ -9,7 +9,7 @@ permalink: /how-to-set-up-model-context-protocol-with-local-database-schema-info
 categories: [guides]
 tags: [ai-tools-compared, mcp, database, ai, tools]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
