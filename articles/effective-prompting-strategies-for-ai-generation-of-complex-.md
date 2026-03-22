@@ -37,21 +37,44 @@ This produces generic output that may not match your actual schema. Instead, pro
 
 
 > "Given these tables:
-
 >
-
 > - `orders(id, customer_id, region, total, created_at)`
-
-> - `customers(id, name, country, segment)`
-
-> - `order_items(order_id, product_id, quantity, unit_price)`
-
 >
-
+> - `customers(id, name, country, segment)`
+>
+> - `order_items(order_id, product_id, quantity, unit_price)`
+>
 > Write a query showing total sales by region for Q4 2025, including customer counts"
 
 
-This approach yields queries that use your actual column names and understand your data relationships.
+This approach yields queries that use your actual column names and understand your data relationships. Include data types for ambiguous columns — specifying `created_at TIMESTAMP WITH TIME ZONE` versus `created_at DATE` changes how the AI handles date filtering and timezone logic.
+
+
+## Specify the SQL Dialect and Version
+
+
+Different database engines have meaningfully different SQL dialects. Always specify which system you are targeting.
+
+
+For PostgreSQL-specific features:
+
+
+> "Write this query for PostgreSQL 15, using ARRAY_AGG to collect all order IDs per customer and jsonb_build_object for the result format"
+
+
+For MySQL vs PostgreSQL window functions:
+
+
+> "Write for MySQL 8.0. Use ROW_NUMBER() OVER (PARTITION BY ...) — MySQL 8+ supports window functions natively"
+
+
+For BigQuery:
+
+
+> "Write for Google BigQuery. Use TIMESTAMP_TRUNC instead of DATE_TRUNC, and APPROX_COUNT_DISTINCT for the user count column"
+
+
+Dialect-specific prompts prevent the AI from mixing syntax from different engines, which is a common failure mode.
 
 
 ## Specify the Output Format You Need
@@ -66,16 +89,16 @@ For window functions, be explicit:
 > "Write a query that calculates the running total of revenue per customer, ordered by transaction date, using a window function"
 
 
-For specific SQL dialects:
-
-
-> "Write this query for PostgreSQL, using ARRAY_AGG to collect all order IDs per customer"
-
-
 If you need Common Table Expressions (CTEs) for readability:
 
 
-> "Use CTEs to break down the logic: first calculate daily totals, then compute the 7-day moving average"
+> "Use CTEs to break down the logic: first calculate daily totals, then compute the 7-day moving average. Add inline comments explaining each CTE's purpose"
+
+
+For complex conditional aggregations:
+
+
+> "Use FILTER clauses (PostgreSQL syntax) rather than CASE WHEN inside aggregate functions for the category breakdowns"
 
 
 The AI adapts its output based on these specifications, producing code that fits your codebase conventions.
@@ -105,7 +128,7 @@ Step 3: Add time-based ranking
 > "Add a rank column ordering segments by revenue within each month"
 
 
-This iterative approach produces cleaner, more accurate SQL than dumping an entire analytical requirement in one prompt.
+This iterative approach produces cleaner, more accurate SQL than dumping an entire analytical requirement in one prompt. Each step can be verified independently before building on it.
 
 
 ## Include Sample Data and Expected Results
@@ -115,35 +138,29 @@ Providing example input-output pairs dramatically improves query accuracy. The A
 
 
 > "For input like:
-
 >
-
 > | user_id | activity_date | activity_type |
-
+>
 > |---------|---------------|---------------|
-
+>
 > | 1 | 2026-01-01 | login |
-
+>
 > | 1 | 2026-01-01 | purchase |
-
+>
 > | 1 | 2026-01-02 | login |
-
 >
-
 > Output should be:
-
 >
-
 > | user_id | date | login_count | purchase_count |
-
+>
 > |---------|------------|-------------|----------------|
-
+>
 > | 1 | 2026-01-01 | 1 | 1 |
-
+>
 > | 1 | 2026-01-02 | 1 | 0 "
 
 
-This technique works especially well for pivot queries, running totals, and gap-filling where the logic can be ambiguous.
+This technique works especially well for pivot queries, running totals, and gap-filling where the logic can be ambiguous without seeing the expected shape of results.
 
 
 ## Handle Edge Cases Explicitly
@@ -161,7 +178,10 @@ SQL queries often need to handle NULL values, empty results, or specific boundar
 > "Use COALESCE to replace NULL values in the revenue column with 0"
 
 
-Explicit edge case handling produces queries that don't break when fed real-world messy data.
+> "For the division calculating conversion rate, guard against division by zero when sessions count is 0"
+
+
+Explicit edge case handling produces queries that do not break when fed real-world messy data. This is particularly important for LEFT JOIN queries where nullable columns from the right table can propagate NULLs through calculations.
 
 
 ## Request Optimization Hints
@@ -173,7 +193,10 @@ Many AI tools can suggest indexes and query optimizations when prompted. Frame y
 > "Write an efficient query for finding the top 10 customers by total spend. Also suggest any indexes that would improve performance on the tables involved"
 
 
-This gives you both the query and the supporting infrastructure to run it efficiently.
+> "This query runs on a table with 500 million rows. Suggest whether a partial index, covering index, or table partitioning would help most for this access pattern"
+
+
+This gives you both the query and supporting infrastructure. For large tables, the AI can often identify when a query would benefit from materialized views or pre-aggregation rather than running on raw data.
 
 
 ## Use System Prompts for Consistent Results
@@ -189,10 +212,12 @@ You are a SQL expert. When generating queries:
 3. Add comments explaining complex logic
 4. Consider NULL handling in JOINs
 5. Suggest appropriate indexes when relevant
+6. Use CTEs for queries with more than two steps
+7. Always specify the target dialect (default: PostgreSQL 15)
 ```
 
 
-Setting this up once produces consistent query style across all interactions.
+Setting this up once produces consistent query style across all interactions. Tools like ChatGPT, Claude, and Gemini all support custom instructions or system prompts that persist across sessions.
 
 
 ## Validate Generated SQL
@@ -209,8 +234,23 @@ AI-generated SQL requires validation before production use. Apply these checks:
 
 - **Review edge cases** like empty tables or NULL values
 
+- **Compare row counts** against a manual calculation for aggregations
 
-AI makes mistakes, especially with complex joins or advanced window functions. Treat generated SQL as a first draft that needs review.
+
+AI makes mistakes, especially with complex joins or advanced window functions. Treat generated SQL as a first draft that needs review. Running `EXPLAIN (ANALYZE, BUFFERS)` in PostgreSQL gives you actual execution statistics including cache hit rates, which reveals whether the query is performing well in practice.
+
+
+## Tool-Specific Prompt Patterns
+
+
+Different AI tools have different strengths for SQL generation:
+
+- **ChatGPT (GPT-4o)**: Strong at complex multi-table joins and explaining query logic step by step
+- **Claude (Sonnet/Opus)**: Reliable at following schema constraints and dialect-specific syntax rules
+- **GitHub Copilot**: Most effective when your schema DDL is open in the editor as context
+- **Gemini Advanced**: Good at BigQuery-specific syntax and GCP-integrated data pipeline queries
+
+For Copilot specifically, having your schema file open in the editor gives it direct context without needing to paste table definitions into every prompt.
 
 
 ## Example: Building a Complex Report
@@ -220,32 +260,24 @@ Here's how these strategies combine in practice:
 
 
 **Initial prompt:**
-
 > "I need a report showing customer lifetime value by acquisition channel. We have:
-
 >
-
 > - `customers(id, channel, created_at)`
-
-> - `orders(id, customer_id, total, status, created_at)`
-
 >
-
+> - `orders(id, customer_id, total, status, created_at)`
+>
 > Calculate lifetime value per customer, group by channel, and show channel averages"
 
 
 **Follow-up:**
-
 > "Filter to only completed orders (status = 'completed')"
 
 
 **Follow-up:**
-
 > "Add year-over-year comparison - show 2025 vs 2024 growth per channel"
 
 
 **Final:**
-
 > "Add comments to explain each CTE and verify the year-over-year calculation handles new customers correctly"
 
 
