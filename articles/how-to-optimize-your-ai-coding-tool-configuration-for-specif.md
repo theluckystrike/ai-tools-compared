@@ -109,10 +109,35 @@ Configure your IDE to understand data science libraries:
 ```
 
 
-## Optimizing Cursor for Framework-Specific Development
+## Configuring Cursor with .cursorrules
 
 
-Cursor, built on VS Code, offers granular control through its `cursor/rules` directory and project-specific settings.
+Cursor, built on VS Code, offers a powerful `.cursorrules` file at the repository root that provides persistent project context to the underlying model. Unlike Copilot's `copilot-instructions.md`, `.cursorrules` content is included in every Cursor AI request, making it the highest-leverage configuration file for Cursor users.
+
+
+A well-structured `.cursorrules` file for a Django REST Framework project:
+
+
+```
+# Project: Django REST Framework API
+# Stack: Python 3.12, Django 5.x with DRF 3.15, PostgreSQL, Celery, pytest-django
+
+## Code Standards
+- All views must be class-based (APIView or ViewSet)
+- Never put business logic in views — use service layer classes in services/
+- All database queries go through the ORM; use select_related proactively
+
+## Testing Standards
+- Every endpoint needs a happy-path and an error-path test
+- Use pytest fixtures for database setup; factory_boy for model factories
+
+## Error Handling
+- Return RFC 7807 Problem Details format for all error responses
+- Log exceptions with logger.exception() at the view boundary
+```
+
+
+This kind of rich context causes Cursor to generate Django-idiomatic code by default, without you needing to specify preferences in every prompt.
 
 
 ### React and Next.js Projects
@@ -175,6 +200,38 @@ For Node.js or Python API development, configure Cursor to understand REST and G
 ```
 
 
+## Language-Specific Configuration for Go and Rust
+
+
+Go and Rust projects have strong idiom requirements that AI tools often miss without explicit configuration.
+
+
+**Go projects** benefit from rules that emphasize error handling conventions and interface-based design:
+
+
+```
+# .cursorrules for Go projects
+- Return errors as the last return value; never panic in library code
+- Prefer interfaces over concrete types in function signatures
+- Use context.Context as the first parameter in all functions that do I/O
+- Table-driven tests using t.Run() are the standard test pattern
+- fmt.Errorf with %w for wrapping errors; errors.Is/As for inspection
+```
+
+
+**Rust projects** need guidance around ownership patterns and the type system:
+
+
+```
+# .cursorrules for Rust projects
+- Prefer borrowing (&T) over cloning unless ownership transfer is required
+- Use Result<T, E> for all fallible operations; no unwrap() in library code
+- thiserror for library error types; anyhow for application error types
+- Avoid unsafe blocks; document any exception with a // SAFETY: comment
+- Use cargo clippy and cargo fmt as the authoritative style guides
+```
+
+
 ## Project Type-Specific Optimization Strategies
 
 
@@ -214,6 +271,24 @@ When working on migrating legacy code, provide explicit migration guidelines:
 ```
 
 
+## Comparing Configuration Approaches Across Tools
+
+
+Different AI coding tools expose different configuration mechanisms. Knowing which knob to turn for each tool saves significant setup time:
+
+
+| Tool | Config File | Scope | Context Window |
+|------|-------------|-------|----------------|
+| GitHub Copilot | `.github/copilot-instructions.md` | Repository | File-level |
+| Cursor | `.cursorrules` + `cursor/rules/*.mdc` | Repository + per-rule | Full project |
+| Codeium | Workspace settings in IDE | IDE-level | File-level |
+| Amazon Q Developer | `~/.aws/amazonq/` profiles | Account-level | File-level |
+| Tabnine | `.tabnine` config per project | Repository | File-level |
+
+
+Cursor's `.cursorrules` approach provides the deepest per-repository customization because rules are injected into every AI request context. Copilot's `copilot-instructions.md` is a close second. Codeium and Tabnine rely more on learned patterns from your existing code rather than explicit rules.
+
+
 ## Testing Your Configuration
 
 
@@ -225,6 +300,9 @@ After implementing project-specific settings, verify they work correctly:
 2. Review completion quality: Monitor whether suggestions match your coding standards
 
 3. Iterate based on results: Adjust rules when you notice consistent patterns that don't match your preferences
+
+
+A useful validation technique: ask the AI to explain your project constraints in plain English. If it accurately describes your stack, error handling approach, and test patterns, your configuration is working. Generic answers indicate your rules need more specificity.
 
 
 ## Common Configuration Pitfalls
@@ -240,6 +318,8 @@ Avoid these frequent mistakes when optimizing AI coding tool settings:
 - Ignoring updates: AI tools evolve, and configuration options change with updates
 
 - Project-specific amnesia: Remember that settings often need to be recreated per-project
+
+- Mixing abstraction levels: Keep rules focused on patterns and conventions, not line-by-line instructions
 
 
 
