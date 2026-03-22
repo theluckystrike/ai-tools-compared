@@ -209,6 +209,78 @@ response = openai.images.generate(
 The `quality` parameter accepts "standard" or "hd". Use "hd" for final outputs where detail matters, and "standard" for rapid prototyping.
 
 
+## Text Rendering: A Key DALL-E 3 Advantage
+
+
+One area where DALL-E 3 significantly outperforms Midjourney is rendering legible text within images. Midjourney frequently produces garbled or incorrect letters when asked to include signs, labels, or typography.
+
+
+DALL-E 3 handles short text strings reliably:
+
+
+```python
+response = openai.images.generate(
+    model="dall-e-3",
+    prompt='A vintage-style storefront sign that reads "OPEN" in bold red letters on a white background, rustic wood frame',
+    size="1024x1024",
+    quality="hd",
+    style="natural"
+)
+```
+
+
+For workflows involving product mockups, social media graphics, or any imagery requiring accurate text, DALL-E 3's text rendering makes migration worthwhile even if you sacrifice some artistic flexibility.
+
+
+## Building an Automated Pipeline
+
+
+The REST API architecture of DALL-E 3 enables automation that Midjourney's Discord-based workflow cannot match. Here is a complete pipeline pattern for batch generation:
+
+
+```python
+import openai
+import requests
+import os
+from pathlib import Path
+
+def generate_and_save(prompt: str, output_dir: str, filename: str, size: str = "1024x1024") -> str:
+    """Generate an image with DALL-E 3 and save it locally."""
+    client = openai.OpenAI()
+
+    response = client.images.generate(
+        model="dall-e-3",
+        prompt=prompt,
+        size=size,
+        quality="standard",
+        n=1
+    )
+
+    image_url = response.data[0].url
+    revised_prompt = response.data[0].revised_prompt
+
+    # Download and save
+    image_data = requests.get(image_url).content
+    output_path = Path(output_dir) / filename
+    output_path.write_bytes(image_data)
+
+    return str(output_path)
+
+# Batch generation from a prompt list
+prompts = [
+    ("A mountain landscape at dawn, dramatic clouds, golden hour lighting", "landscape_1.png"),
+    ("An underwater coral reef scene, tropical fish, vibrant colors, sunlight rays", "underwater_1.png"),
+]
+
+for prompt_text, fname in prompts:
+    saved = generate_and_save(prompt_text, "./output", fname, size="1792x1024")
+    print(f"Saved: {saved}")
+```
+
+
+This pattern is impossible to replicate with Midjourney without using unofficial bots or scraping Discord—both of which violate Midjourney's terms of service.
+
+
 ## Working Around Missing Features
 
 
@@ -257,6 +329,15 @@ def migrate_mj_prompt(mj_prompt, ar="1:1", quality="standard"):
     return response
 ```
 
+
+## Pricing Comparison
+
+
+Understanding the cost difference helps set expectations for migration. DALL-E 3 charges per image at rates that vary by size and quality: standard 1024x1024 images cost $0.040 each, while HD 1024x1024 images cost $0.080. Wider formats (1792x1024 or 1024x1792) cost $0.080 standard and $0.120 HD.
+
+Midjourney's subscription model ($10-$120/month) provides a fixed pool of fast GPU hours. Heavy iteration workflows often favor Midjourney's subscription economics. Selective, high-quality generation workflows—especially those integrated into automated pipelines—often favor DALL-E 3's pay-per-image pricing.
+
+For developers building applications that generate images for end users, DALL-E 3's API with predictable per-image costs makes financial modeling straightforward in a way Midjourney's subscription never could.
 
 
 ## Frequently Asked Questions
