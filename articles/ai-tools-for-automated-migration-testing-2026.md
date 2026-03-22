@@ -28,8 +28,6 @@ A complete migration test suite validates:
 4. **Constraint preservation**: foreign keys, indexes, and unique constraints are intact
 5. **No-downtime**: the migration doesn't hold locks that would block application queries
 
-Missing any of these leaves you with blind spots. The "no-downtime" check is the most commonly skipped — a migration that adds a column with a server default looks fine until you run it against a 50M-row table and discover it takes an exclusive lock for 8 minutes.
-
 ## Claude for Migration Test Generation
 
 Claude is the strongest tool for this domain. Give it the migration file and a description of the table, and it generates thorough test cases.
@@ -136,14 +134,11 @@ class TestUpgradeMigration:
             result = conn.execute(text(
                 "SELECT notification_enabled FROM users WHERE email = 'new@example.com'"
             ))
-            # server_default was removed after upgrade, so this tests nullable=False
-            # enforced by app layer; new insert explicitly sets it
             row = result.fetchone()
         assert row is not None
 
     def test_migration_uses_add_column_with_default_not_update(self, migrated_db):
         """Verify the migration doesn't do a separate UPDATE (which locks the table)."""
-        # Check migration source directly
         migration_file = open("alembic/versions/abc123def456_add_notification.py").read()
         assert "op.execute" not in migration_file or "UPDATE" not in migration_file
         assert "server_default='true'" in migration_file
@@ -170,66 +165,6 @@ class TestDowngradeMigration:
         assert result.scalar() >= 1
 ```
 
-## Testing Index Migrations
-
-Index migrations are high-risk on large tables. `CREATE INDEX` takes a full table lock; `CREATE INDEX CONCURRENTLY` does not but cannot run inside a transaction. Claude handles both cases:
-
-**Prompt:**
-```text
-Write a migration test for adding a concurrent index on users.email. The migration
-should use CREATE INDEX CONCURRENTLY. Test that the index exists after upgrade,
-verify the index is on the correct column, and test that downgrade removes it.
-Also test that the migration does NOT use a plain CREATE INDEX (which locks the table).
-```
-
-**Claude output:**
-
-```python
-class TestAddEmailIndexMigration:
-    def test_index_exists_after_upgrade(self, migrated_db):
-        with migrated_db.connect() as conn:
-            result = conn.execute(text("""
-                SELECT indexname, indexdef
-                FROM pg_indexes
-                WHERE tablename = 'users'
-                  AND indexname = 'ix_users_email'
-            """))
-            row = result.fetchone()
-        assert row is not None, "Index ix_users_email should exist after migration"
-
-    def test_index_is_on_email_column(self, migrated_db):
-        with migrated_db.connect() as conn:
-            result = conn.execute(text("""
-                SELECT indexdef FROM pg_indexes
-                WHERE tablename = 'users' AND indexname = 'ix_users_email'
-            """))
-            indexdef = result.scalar()
-        assert "email" in indexdef
-
-    def test_migration_uses_concurrent_index(self):
-        migration_source = open(
-            "alembic/versions/def456ghi789_add_email_index.py"
-        ).read()
-        assert "CONCURRENTLY" in migration_source
-        # Ensure it's not a plain CREATE INDEX
-        assert "CREATE INDEX CONCURRENTLY" in migration_source
-
-    def test_index_removed_after_downgrade(self, db_engine):
-        alembic_cfg = Config("alembic.ini")
-        alembic_cfg.set_main_option("sqlalchemy.url", str(db_engine.url))
-        command.upgrade(alembic_cfg, "def456ghi789")
-        command.downgrade(alembic_cfg, PREV_MIGRATION)
-
-        with db_engine.connect() as conn:
-            result = conn.execute(text("""
-                SELECT COUNT(*) FROM pg_indexes
-                WHERE tablename = 'users' AND indexname = 'ix_users_email'
-            """))
-        assert result.scalar() == 0
-```
-
-The `pg_indexes` query approach is more reliable than SQLAlchemy's `inspect().get_indexes()` for detecting concurrent indexes, since some ORM-level inspection skips index definitions.
-
 ## Copilot for Migration Tests
 
 Copilot generates migration tests when given the migration file as context, but it tends to write shallower assertions — checking column existence but skipping data integrity and rollback validation. It also rarely tests the "lock-free" property.
@@ -245,13 +180,9 @@ def test_migration():
     ...
 ```
 
-Even with coaching comments, Copilot typically generates one assertion per test instead of the fixture-scoped setup-and-teardown pattern needed for reliable migration testing. You end up with tests that work individually but fail when run in parallel because they share database state.
-
 ## ChatGPT for Migration Tests
 
 ChatGPT is competent but tends to use synchronous SQLAlchemy patterns even when you specify async, and it generates tests that depend on test execution order (no fixture-based setup/teardown). The output needs more refactoring than Claude's.
-
-ChatGPT also frequently generates `assert column.nullable == False` instead of `assert column["nullable"] is False` — a minor difference that works with some SQLAlchemy versions but fails with others since `inspect().get_columns()` returns dicts, not objects.
 
 ## Flyway / Liquibase Integration
 
@@ -285,17 +216,9 @@ class V5__AddNotificationEnabledTest {
 }
 ```
 
-Claude can extend this pattern to also verify foreign key constraints and check row counts after data migrations — just ask it to add specific assertions for those cases.
+## Running Migration Tests in CI
 
-## CI Integration
-
-Migration tests should run in CI against a fresh database, not against a shared staging database. Claude can generate the CI config:
-
-**Prompt:**
-```text
-Write a GitHub Actions job that runs Alembic migration tests. Use a PostgreSQL 16 service
-container. Run pytest tests/test_migrations/. Cache pip dependencies.
-```
+Integrate migration tests into your CI pipeline with a real PostgreSQL service container. Avoid mocking — schema behavior differs enough between databases that SQLite tests can pass while PostgreSQL migrations fail silently.
 
 ```yaml
 jobs:
@@ -355,41 +278,48 @@ jobs:
           POSTGRES_USER: test
           POSTGRES_PASSWORD: test
           POSTGRES_DB: test_migrations
+<<<<<<< HEAD
+=======
         ports:
           - 5432:5432
           POSTGRES_PASSWORD: test
+>>>>>>> a24466f3e1cda953329f278f66d432642b766ace
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
+        ports:
+          - 5432:5432
 
     steps:
       - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
-
-      - name: Cache pip
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('requirements*.txt') }}
-
-      - name: Install dependencies
-        run: pip install -r requirements-test.txt
-
+          python-version: '3.12'
+      - run: pip install -r requirements-test.txt
       - name: Run migration tests
         env:
           DATABASE_URL: postgresql://test:test@localhost:5432/test_migrations
         run: pytest tests/test_migrations/ -v --tb=short
 ```
 
-The health check options (`--health-cmd pg_isready`) ensure the Postgres container is accepting connections before pytest starts — a detail that GPT-4o frequently omits, causing flaky CI failures on slow container startup.
+Always test against the same database engine you run in production. A migration that works on SQLite can fail on PostgreSQL due to differences in constraint enforcement, column type handling, and transaction behavior.
 
 ## Tool Comparison Summary
 
+<<<<<<< HEAD
+| Capability | Claude | Copilot | ChatGPT |
+|------------|--------|---------|---------|
+| Forward migration tests | Comprehensive | Basic | Moderate |
+| Rollback tests | Yes | Rarely | Sometimes |
+| Data integrity checks | Yes | No | Rarely |
+| Lock-free validation | Yes | No | No |
+| Fixture-based isolation | Yes | Sometimes | No |
+| Java / Flyway support | Yes | Moderate | Yes |
+| CI YAML generation | Yes | Yes | Yes |
+=======
 | Feature | Claude | GPT-4o | Copilot |
 |---------|--------|--------|---------|
 | Fixture-scoped setup/teardown | Yes | Often missing | No |
@@ -442,6 +372,7 @@ This catches silent data loss where rows are deleted without errors during the m
 | Learning Curve | Moderate | Low | High |
 
 Claude generates best-in-class tests for all three, but Alembic benefits most because Claude understands Python well and can generate comprehensive pytest fixtures that properly manage database state.
+>>>>>>> a24466f3e1cda953329f278f66d432642b766ace
 
 ## Related Reading
 

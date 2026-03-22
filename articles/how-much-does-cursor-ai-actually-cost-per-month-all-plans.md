@@ -381,7 +381,7 @@ Set up a shared Pro account for intensive work weeks, falling back to Free tier 
 
 Almost always. The published "$60-100+" is a starting anchor. Volume discounts, multi-year commitments, and bundling with other tools frequently lower per-seat cost 30-50%. Contact sales directly rather than assuming the listed price is fixed.
 
-{% endraw %}
+
 
 ## Related Articles
 

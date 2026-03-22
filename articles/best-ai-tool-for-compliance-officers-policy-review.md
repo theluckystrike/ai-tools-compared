@@ -51,7 +51,7 @@ Organizations using Microsoft 365 benefit from Copilot's deep integration with W
 - **Example Prompt**: {% raw %}
 
 "Review this policy document for conflicts with GDPR Article 17 (right to erasure).
-- **Identify any language that**: may create compliance risk and suggest specific revisions." {% endraw %} ### 2.
+- **Identify any language that**: may create compliance risk and suggest specific revisions."  ### 2.
 - **COVERED REQUIREMENTS (list each**: requirement the policy addresses, with the exact policy clause that covers it) 2.
 - **AMBIGUOUS LANGUAGE (flag any**: clause that could be interpreted multiple ways and suggest clearer wording) 4.
 
@@ -92,7 +92,7 @@ A compliance team at a mid-sized bank used Claude to review their updated loan s
 
 **Example Prompt:**
 
-{% raw %}
+
 
 "Review this policy document for conflicts with GDPR Article 17 (right to erasure). Identify any language that may create compliance risk and suggest specific revisions."
 

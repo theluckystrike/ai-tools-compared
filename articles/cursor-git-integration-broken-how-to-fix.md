@@ -32,7 +32,7 @@ rm -f .git/index
 git reset
 ```
 
-{% endraw %}
+
 
 ### 5.
 - **Large Repository Performance Issues**: Extremely large repositories can cause Cursor's Git integration to become unresponsive or timeout.
@@ -79,7 +79,7 @@ Diagnosis: Attempt a push or pull from the terminal. If it prompts for credentia
 
 Solution: First, ensure your remote URL matches your authentication method. Check your remote configuration:
 
-{% raw %}
+
 
 ```bash
 git remote -v
