@@ -13,9 +13,8 @@ intent-checked: true
 voice-checked: true
 ---
 
-{% raw %}{% raw %}
-Writing OpenAPI specs by hand is tedious and error-prone. For a moderately complex API — 20 endpoints, nested schemas, security definitions — manually writing the YAML takes hours and still misses edge cases. AI tools have changed this significantly. Claude, GitHub Copilot, and specialized tools like Speakeasy can generate production-quality OpenAPI 3.1 specs from existing code or natural language descriptions. This guide compares them with real examples.
 {% raw %}
+Writing OpenAPI specs by hand is tedious and error-prone. For a moderately complex API — 20 endpoints, nested schemas, security definitions — manually writing the YAML takes hours and still misses edge cases. AI tools have changed this significantly. Claude, GitHub Copilot, and specialized tools like Speakeasy can generate production-quality OpenAPI 3.1 specs from existing code or natural language descriptions. This guide compares them with real examples.
 
 # Best AI Tools for Generating OpenAPI Specs
 
@@ -584,6 +583,4 @@ AI tools evolve rapidly. The comparison above reflects March 2026 capabilities. 
 - [AI Tools for Writing OpenAPI Specifications in 2026](/ai-tools-compared/articles/ai-tools-for-writing-openapi-specifications-2026/)
 - [Best AI Tools for Writing Swagger API Documentation 2026](/ai-tools-compared/best-ai-tools-for-writing-swagger-api-documentation-2026/)
 - [Claude vs Copilot for Generating FastAPI Endpoint Boilerplat](/ai-tools-compared/claude-vs-copilot-for-generating-fastapi-endpoint-boilerplat/)
-{% endraw %}
-
 {% endraw %}
