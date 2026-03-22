@@ -37,6 +37,15 @@ intent-checked: true---
 
 Making the switch from JetBrains AI to GitHub Copilot in IntelliJ IDEA doesn't have to be disruptive. This guide walks you through every step of the migration process, from installation to configuration, ensuring you maintain your productivity while using Copilot's strengths.
 
+## Key Takeaways
+
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **Return to IntelliJ -**: you should see "Signed in as [your username]" If you don't have a Copilot subscription yet, you'll be prompted to start a free trial or subscribe.
+- **Does Copilot offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Navigate to Settings/Preferences (Windows:**: `Ctrl + Alt + S`, Mac: `Cmd + ,`) 3.
+
 ## Why Consider Switching to Copilot?
 
 GitHub Copilot offers several advantages that make it an attractive alternative:

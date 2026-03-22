@@ -16,6 +16,25 @@ voice-checked: true---
 
 Choose the Perplexity Pro subscription ($20/month) if you want unlimited premium queries, budget certainty, and a web-based research workflow. Choose the Perplexity API if you need programmatic access, serve multiple end users, or process high volumes where per-token pricing (starting at $0.10/1M input tokens on Sonar) can undercut the subscription cost. The break-even point is roughly 200-300 substantive queries per month -- below that the Pro subscription is simpler and cheaper; above that the API offers more control and potentially lower costs at scale.
 
+## Key Takeaways
+
+- **Choose the Perplexity Pro**: subscription ($20/month) if you want unlimited premium queries, budget certainty, and a web-based research workflow.
+- **However**: with API overhead and more complex queries, you could easily spend $5-10/month.
+- **UI-integrated workflows**: When you prefer the web interface over API calls
+
+4.
+- **A typical search query**: with context might use anywhere from 500 to 5,000 tokens depending on the length of your prompt and the desired response length.
+- **Budget certainty**: You know exactly what you will pay each month
+
+
+## When the API Makes More Sense
+
+
+The API becomes the better choice when:
+
+
+1.
+- **Use Pro only when**: you need the extra reasoning capability.
 
 ## Understanding Perplexity's Two Offerings
 

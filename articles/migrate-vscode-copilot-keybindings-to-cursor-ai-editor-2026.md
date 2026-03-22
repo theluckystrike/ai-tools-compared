@@ -27,7 +27,18 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 Migrate your VSCode Copilot keybindings to Cursor by exporting your `keybindings.json` file from VSCode (`Cmd+K Cmd+S` to open it), then pasting the contents into Cursor's keybindings file at `~/.cursor-user-data/keybindings.json`. Most shortcuts transfer directly because Cursor is built on VSCode's foundation. Remap Copilot-specific commands like `github.copilot.generate` to Cursor's equivalents such as `cursorai.edit.generate`, then check for conflicts with Cursor's default AI shortcuts.
+
+## Key Takeaways
+
+- **Most VSCode Copilot keybindings**: function immediately because Cursor maintains compatibility with VSCode extensions.
+- **Most shortcuts transfer directly**: because Cursor is built on VSCode's foundation.
+- **Cursor stores keybindings in**: your user config directory, typically located at `~/.cursor-user-data/keybindings.json` on Linux/macOS or `%APPDATA%\Cursor\User\keybindings.json` on Windows.
+- **Run "Preferences**: Open Default Keybindings"
+3.
+- **Identify which extension causes**: conflict 2.
+- **Disable the extension if**: you rarely use it 3.
 
 ## Why Your Keybindings Matter After Switching to Cursor
 

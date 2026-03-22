@@ -30,6 +30,15 @@ If you use Neovim as your primary editor, you have likely explored ways to integ
 
 This article compares the leading open-source AI code completion tools for Neovim that run locally without cloud API dependencies. Each solution has distinct trade-offs in setup complexity, model quality, and resource requirements.
 
+## Key Takeaways
+
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **For daily driver use**: llm.nvim with streaming enabled provides the most responsive feel.
+- **Does Neovim offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **If you use Neovim**: as your primary editor, you have likely explored ways to integrate AI-powered code completion.
+
 ## Why Skip Cloud API Keys?
 
 Cloud-based AI code completion services send your code to external servers. This raises legitimate concerns around data privacy, especially when working with proprietary codebases. Additionally, reliance on external services means your completion workflow depends on internet connectivity and service availability.
