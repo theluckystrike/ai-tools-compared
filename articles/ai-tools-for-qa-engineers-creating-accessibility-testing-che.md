@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /ai-tools-for-qa-engineers-creating-accessibility-testing-che/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]---

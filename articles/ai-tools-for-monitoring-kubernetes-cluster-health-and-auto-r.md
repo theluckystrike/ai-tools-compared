@@ -9,7 +9,7 @@ permalink: /ai-tools-for-monitoring-kubernetes-cluster-health-and-auto-remediati
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 voice-checked: true---
 
