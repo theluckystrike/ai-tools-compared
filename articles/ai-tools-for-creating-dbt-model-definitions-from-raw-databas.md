@@ -9,7 +9,7 @@ permalink: /ai-tools-for-creating-dbt-model-definitions-from-raw-databas/
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
