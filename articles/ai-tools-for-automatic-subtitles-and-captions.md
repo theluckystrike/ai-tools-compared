@@ -126,6 +126,49 @@ def transcribe_s3(bucket, key):
 AWS Transcribe works with S3 for storage and Lambda for processing pipelines, enabling automated workflows for large-scale transcription projects.
 
 
+### AssemblyAI
+
+
+AssemblyAI deserves a spot in any serious comparison. Its Universal-2 speech model delivers strong accuracy on challenging audio — noisy environments, overlapping speech, and domain-specific vocabulary. It also provides native speaker diarization, content safety detection, and auto-chapters in a single API call.
+
+
+```python
+import assemblyai as aai
+
+aai.settings.api_key = "your-api-key"
+
+def transcribe_with_assemblyai(audio_url):
+    config = aai.TranscriptionConfig(
+        speaker_labels=True,
+        language_detection=True,
+        punctuate=True,
+        format_text=True
+    )
+    transcriber = aai.Transcriber(config=config)
+    transcript = transcriber.transcribe(audio_url)
+
+    # Convert to SRT
+    srt = transcript.export_subtitles_srt(chars_per_caption=32)
+    return srt
+```
+
+AssemblyAI's `chars_per_caption` parameter controls line length automatically, which is one less post-processing step compared to Whisper.
+
+
+## Tool Comparison at a Glance
+
+
+| Feature | Whisper API | Google STT | AWS Transcribe | AssemblyAI |
+|---|---|---|---|---|
+| Price per minute | $0.006 | $0.016–$0.048 | $0.024 | $0.012 |
+| Languages | 99+ | 125+ | 100+ | 99+ |
+| Speaker diarization | No (base) | Yes | Yes | Yes |
+| Real-time streaming | No | Yes | Yes | Yes |
+| SRT export | Direct | Manual | Manual | Direct |
+| Self-hosting | Yes (OSS) | No | No | No |
+| Custom vocabulary | Prompt-based | Yes | Yes | Yes |
+
+
 ## Handling Multiple Speakers and Timestamps
 
 
@@ -213,6 +256,33 @@ Profanity filtering: Depending on your platform, you may want to implement autom
 Timestamp adjustment: AI-generated timestamps sometimes drift, especially in longer recordings. A correction pass that aligns timestamps with actual speech patterns improves synchronization.
 
 
+### LLM Post-Processing for Caption Quality
+
+
+A practical pattern is to run transcribed text through an LLM for cleanup before generating the final subtitle file:
+
+
+```python
+from anthropic import Anthropic
+
+client = Anthropic()
+
+def clean_transcript_segment(raw_text):
+    """Fix punctuation, capitalization, and obvious misrecognitions."""
+    response = client.messages.create(
+        model="claude-haiku-4-20250514",
+        max_tokens=512,
+        system="""You are a subtitle editor. Fix punctuation, capitalization,
+        and obvious speech recognition errors in the provided text.
+        Do not change meaning or add content. Return only the corrected text.""",
+        messages=[{"role": "user", "content": raw_text}]
+    )
+    return response.content[0].text
+```
+
+Using claude-haiku keeps costs low for this high-volume post-processing step — typically less than $0.001 per minute of video.
+
+
 ## Integration Patterns for Developers
 
 
@@ -246,14 +316,11 @@ Select based on your specific requirements:
 
 
 - Budget-conscious projects: Whisper offers excellent price-to-performance ratio
-
 - Enterprise with existing cloud infrastructure: Google Cloud or AWS Transcribe integrate naturally
-
 - Real-time requirements: AWS Transcribe streaming or Google Cloud real-time API
-
 - Multi-language support: All major providers support numerous languages, though Whisper performs exceptionally well across languages
-
 - Self-hosting preference: OpenAI provides open-source Whisper models that can run locally, eliminating API costs entirely
+- Native diarization + direct SRT export: AssemblyAI handles both in one call, reducing pipeline complexity
 
 
 Test with your actual content before committing to a provider, as accuracy varies significantly based on audio quality, speaker accents, and domain-specific vocabulary. Many providers offer free tiers or trials that allow adequate testing before production deployment.

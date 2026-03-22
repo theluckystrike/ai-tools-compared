@@ -26,6 +26,8 @@ Traditional modernization approaches require extensive manual analysis. You need
 
 AI tools now excel at pattern recognition across large codebases. They can identify duplicated logic, suggest extraction opportunities for microservices, and generate migration scripts that preserve existing behavior. The key lies in knowing how to structure your prompts and validate the AI's output against your specific requirements.
 
+Tools like Claude Code, GitHub Copilot, and Cursor each bring distinct strengths to modernization work. Claude Code handles long-context analysis well, making it useful for summarizing entire modules. GitHub Copilot shines at inline suggestions when you are actively rewriting code. Cursor's multi-file context awareness helps when you need to trace dependencies across many files simultaneously.
+
 
 ## The Five-Phase AI Modernization Workflow
 
@@ -53,6 +55,8 @@ Focus on [your specific framework/language] code in this repository.
 
 The AI generates an analysis in minutes rather than days. Review the output critically—AI can miss context-specific nuances, but it provides an excellent starting point that human experts can refine.
 
+One effective technique is to split large codebases into domain chunks and analyze each separately. For a Java monolith with 200,000 lines, feed AI the order management package, then the inventory package, and so on. Asking for cross-cutting concern identification at the end produces a cleaner picture than dumping everything at once.
+
 
 ### Phase 2: Target Architecture Planning
 
@@ -60,7 +64,7 @@ The AI generates an analysis in minutes rather than days. Review the output crit
 With analysis complete, shift focus to designing your target architecture. AI assists here by generating options based on your modernization goals. Whether moving to microservices, adopting serverless patterns, or implementing event-driven architecture, ask AI to compare approaches.
 
 
-An useful prompt for architecture planning:
+A useful prompt for architecture planning:
 
 
 ```
@@ -78,6 +82,8 @@ For each option, include:
 
 
 This structured comparison helps stakeholders make informed decisions rather than relying on vague recommendations.
+
+For most teams moving away from a Rails or Django monolith, AI consistently recommends the modular monolith path as an intermediate step before full microservices. This two-stage approach reduces the risk of distributed system complexity landing on a team that has not yet established solid deployment and observability practices.
 
 
 ### Phase 3: Incremental Migration Strategy
@@ -130,7 +136,7 @@ class LegacySystemAdapter:
 ```
 
 
-The adapter allows you to route traffic incrementally, measuring performance differences between implementations.
+The adapter allows you to route traffic incrementally, measuring performance differences between implementations. Feature flag services like LaunchDarkly, Unleash, or Flagsmith pair well with this pattern—AI can generate the integration code for whichever you choose.
 
 
 **Database Migration Scripts**
@@ -189,6 +195,12 @@ function translateLegacyToModern(legacy: LegacyOrder): ModernOrder {
 ```
 
 
+**Generating OpenAPI Specs from Legacy Code**
+
+
+AI is particularly effective at reverse-engineering API documentation from undocumented legacy endpoints. Feed it your controller code and ask for an OpenAPI 3.0 spec. You can then use tools like Swagger Codegen or OpenAPI Generator to scaffold client SDKs for your new microservices, keeping contracts explicit from day one.
+
+
 ### Phase 5: Validation and Testing
 
 
@@ -211,6 +223,23 @@ def test_order_processing_parity(legacy_system, modern_system, test_cases):
         assert legacy_result.notifications == modern_result.notifications
 ```
 
+Supplement unit and integration tests with contract tests using tools like Pact. AI can generate Pact consumer and provider tests once you define your service interfaces, ensuring that independently deployed services stay compatible as they evolve.
+
+
+## Choosing the Right AI Tool at Each Phase
+
+Not all AI tools perform equally well across all five phases. Here is how to match tool to task:
+
+| Phase | Recommended Tool | Why |
+|-------|-----------------|-----|
+| Current State Analysis | Claude Code, Gemini 1.5 Pro | Long context windows handle large files |
+| Architecture Planning | ChatGPT o1, Claude | Strong reasoning for trade-off analysis |
+| Code Generation | GitHub Copilot, Cursor | Inline context awareness speeds writing |
+| Database Migrations | Claude Code | Produces consistent multi-step SQL safely |
+| Testing | Copilot, Cursor | Tight IDE integration for test file generation |
+
+Using specialized tools at each phase rather than one tool throughout produces noticeably better output quality.
+
 
 ## Common Pitfalls to Avoid
 
@@ -222,6 +251,8 @@ Skipping the Incremental Approach: Attempting complete rewrites creates enormous
 
 
 Ignoring Data Migration Complexity: Code changes are straightforward compared to data migrations. Plan for data validation and rollback scenarios explicitly.
+
+Treating AI Output as Final: AI generates a starting point, not a finished product. Budget time for senior developer review of every generated component before merging.
 
 
 ## Measuring Modernization Success
@@ -238,6 +269,9 @@ Track concrete metrics before and after modernization:
 
 - Infrastructure costs: Cloud-native patterns often reduce costs substantially
 
+- Test coverage: Modernization should increase coverage, not leave gaps
+
+Use DORA metrics as your north star. AI can help you write the observability instrumentation—Prometheus exporters, OpenTelemetry spans, structured logging—that makes these metrics visible.
 
 
 ## Frequently Asked Questions
