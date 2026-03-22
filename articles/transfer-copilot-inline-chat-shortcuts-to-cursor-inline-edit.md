@@ -251,6 +251,298 @@ Yes, the underlying concepts transfer to other stacks, though the specific imple
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
+## Advanced Keybinding Techniques
+
+### Conditional Keybindings by Language
+
+Use different shortcuts for different file types:
+
+```json
+[
+  {
+    "key": "cmd+i",
+    "command": "cursor.inlineChat.start",
+    "when": "editorTextFocus && editorLangId == 'typescript'"
+  },
+  {
+    "key": "cmd+i",
+    "command": "cursor.inlineChat.start",
+    "when": "editorTextFocus && editorLangId == 'javascript'"
+  },
+  {
+    "key": "cmd+i",
+    "command": "editor.action.commentLine",
+    "when": "editorTextFocus && editorLangId == 'python'"
+  }
+]
+```
+
+### Context-Aware Bindings
+
+Activate different commands based on selection:
+
+```json
+[
+  {
+    "key": "cmd+i",
+    "command": "cursor.inlineEdit.start",
+    "when": "editorTextFocus && editorHasSelection"
+  },
+  {
+    "key": "cmd+i",
+    "command": "cursor.inlineChat.start",
+    "when": "editorTextFocus && !editorHasSelection"
+  }
+]
+```
+
+### Mode-Specific Shortcuts
+
+Different shortcuts for editing vs. review modes:
+
+```json
+[
+  {
+    "key": "cmd+i",
+    "command": "cursor.inlineChat.start",
+    "when": "editorTextFocus && !reviewMode"
+  },
+  {
+    "key": "cmd+i",
+    "command": "cursorPreview.acceptSuggestion",
+    "when": "editorTextFocus && reviewMode"
+  }
+]
+```
+
+## Advanced Inline Chat Workflows
+
+### Multi-Step Refactoring with Shortcuts
+
+Chain multiple inline edits:
+
+```typescript
+// Start: original function
+function processUserData(users) {
+  const results = [];
+  for (let i = 0; i < users.length; i++) {
+    results.push({
+      name: users[i].name,
+      email: users[i].email
+    });
+  }
+  return results;
+}
+
+// Step 1: Press Cmd+I, ask "Convert to arrow function"
+const processUserData = (users) => {
+  const results = [];
+  for (let i = 0; i < users.length; i++) {
+    results.push({
+      name: users[i].name,
+      email: users[i].email
+    });
+  }
+  return results;
+}
+
+// Step 2: Press Cmd+I, ask "Use map instead of for loop"
+const processUserData = (users) =>
+  users.map(user => ({
+    name: user.name,
+    email: user.email
+  }));
+
+// Step 3: Press Cmd+I, ask "Use destructuring"
+const processUserData = (users) =>
+  users.map(({ name, email }) => ({ name, email }));
+```
+
+### Paired Shortcuts for Writer and Reviewer
+
+One developer writes, another reviews using different shortcuts:
+
+```json
+{
+  "dev_writing": [
+    {
+      "key": "cmd+i",
+      "command": "cursor.inlineChat.start",
+      "description": "Developer initiates inline chat"
+    }
+  ],
+  "dev_reviewing": [
+    {
+      "key": "cmd+shift+i",
+      "command": "cursor.inlineChat.reviewSuggestion",
+      "description": "Reviewer examines suggestion"
+    },
+    {
+      "key": "cmd+enter",
+      "command": "cursor.inlineChat.accept",
+      "description": "Reviewer approves suggestion"
+    }
+  ]
+}
+```
+
+## Migration Troubleshooting
+
+### Debugging Keybinding Issues
+
+Test your keybindings systematically:
+
+```bash
+#!/bin/bash
+# test-keybindings.sh
+
+# Test if keybinding works
+echo "Testing Cmd+I keybinding..."
+cursor --eval 'Cmd+I' > /tmp/keybinding-result.txt
+
+if grep -q "inlineChat" /tmp/keybinding-result.txt; then
+    echo "✓ Cmd+I is correctly bound to inline chat"
+else
+    echo "✗ Cmd+I binding failed"
+    cat /tmp/keybinding-result.txt
+fi
+
+# Test conflicting bindings
+cursor --list-keybindings | grep "cmd+i"
+```
+
+### Common Keybinding Conflicts
+
+Resolve conflicts by checking extension bindings:
+
+```json
+// Check if another extension owns the keybinding
+{
+  "command": "extension.id",
+  "key": "cmd+i",
+  "mac": "cmd+i"
+}
+
+// Solution: use different key
+{
+  "command": "cursor.inlineChat.start",
+  "key": "cmd+j",
+  "mac": "cmd+j"
+}
+```
+
+## Performance and Optimization
+
+### Keybinding Response Time
+
+Optimize for fast response:
+
+```json
+[
+  {
+    "key": "cmd+i",
+    "command": "cursor.inlineChat.start",
+    "when": "editorTextFocus && editorFocused"
+  }
+]
+```
+
+The `editorFocused` condition ensures the keybinding only activates when the editor is active, preventing lag from global shortcuts.
+
+### Batch Keybinding Organization
+
+Organize many keybindings efficiently:
+
+```json
+{
+  "description": "Inline chat bindings",
+  "bindings": [
+    {
+      "key": "cmd+i",
+      "command": "cursor.inlineChat.start",
+      "when": "editorTextFocus"
+    },
+    {
+      "key": "cmd+shift+i",
+      "command": "cursor.inlineChat.history",
+      "when": "editorTextFocus"
+    }
+  ]
+}
+```
+
+Grouping related shortcuts makes future maintenance easier.
+
+## Team Standardization
+
+### Sharing Keybindings Across Team
+
+Store keybindings in your dotfiles repo:
+
+```bash
+# in your dotfiles repo
+cursor-keybindings.json
+
+# Install for all team members
+ln -s ~/team-dotfiles/cursor-keybindings.json \
+  ~/Library/Application\ Support/Cursor/User/keybindings.json
+```
+
+### Documenting Team Shortcuts
+
+Create a reference guide:
+
+```markdown
+# Team Cursor Keybindings
+
+## Inline Chat
+- `Cmd+I` - Start inline chat (Copilot equivalent)
+- `Cmd+Shift+I` - Show inline chat history
+- `Cmd+Enter` - Accept suggestion
+- `Escape` - Dismiss suggestion
+
+## Code Generation
+- `Cmd+K` - Open Cursor composer
+- `Cmd+/` - Toggle line comment
+
+## Navigation
+- `Cmd+P` - Quick file open
+- `Cmd+Shift+P` - Command palette
+
+All team members should use these standardized shortcuts
+to maintain consistent muscle memory across projects.
+```
+
+## Frequently Asked Questions
+
+**How long does it take to transfer Copilot inline chat shortcuts?**
+
+For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
+
+**What are the most common mistakes to avoid?**
+
+The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
+
+**Do I need prior experience to follow this guide?**
+
+Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
+
+**Can I adapt this for a different tech stack?**
+
+Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
+
+**Where can I get help if I run into issues?**
+
+Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
+
+**Can I map Copilot shortcuts that don't have direct Cursor equivalents?**
+
+Some Copilot features don't have direct equivalents in Cursor. For these, map to the closest Cursor feature or create custom commands. Document the mapping for your team so everyone understands which Copilot features are preserved and which are approximated.
+
+**How do I handle muscle memory from Copilot shortcuts?**
+
+Give yourself 2-3 weeks to adjust to new shortcuts. During this time, keep a cheat sheet visible. Most developers successfully transition in 3-4 weeks of regular use. Consider pairing the transition period with pair programming sessions where muscle memory isn't as critical.
+
 ## Related Articles
 
 - [Copilot Inline Chat vs Cursor Inline Chat: Which Understands](/ai-tools-compared/copilot-inline-chat-vs-cursor-inline-chat-which-understands-/)

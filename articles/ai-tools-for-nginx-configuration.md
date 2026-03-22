@@ -311,6 +311,67 @@ server {
 }
 ```
 
+## Task 5: Geo-Blocking and Bot Mitigation
+
+One scenario where Copilot and Cursor both produced incomplete output was geo-blocking combined with bot mitigation. Claude generated a complete working block using the MaxMind GeoIP2 module:
+
+```nginx
+# Requires: ngx_http_geoip2_module and MaxMind GeoLite2-Country database
+geoip2 /usr/share/GeoIP/GeoLite2-Country.mmdb {
+    $geoip2_data_country_code country iso_code;
+}
+
+map $geoip2_data_country_code $allowed_country {
+    default         0;
+    US              1;
+    CA              1;
+    GB              1;
+    AU              1;
+    DE              1;
+}
+
+server {
+    listen 443 ssl http2;
+
+    # Drop non-allowed countries at the request level
+    if ($allowed_country = 0) {
+        return 403 "Service not available in your region";
+    }
+
+    # Additional bot fingerprinting — real browsers send Accept-Language
+    # Known scrapers often omit it
+    set $bot_score 0;
+    if ($http_user_agent = "") { set $bot_score 1; }
+    if ($http_accept_language = "") { set $bot_score "${bot_score}1"; }
+
+    if ($bot_score = "11") {
+        return 429 "Too Many Requests";
+    }
+
+    location / {
+        proxy_pass http://nodejs_app;
+    }
+}
+```
+
+This configuration demonstrates an important difference between tools: Claude explained that the `if` directive is safe here because it is used only to set variables and return responses — the two contexts where nginx documentation permits `if` at the server level. Copilot generated a syntactically similar block but omitted the explanation, leaving engineers unaware of the known footgun with `if` inside location blocks.
+
+## Why Security Context Matters More Than Syntax
+
+All three tools can write syntactically valid nginx config. The differentiator is whether the tool understands the security implications of each directive. A quick evaluation checklist:
+
+| Security Check | Claude | Copilot | Cursor |
+|---|---|---|---|
+| TLS 1.0/1.1 disabled by default | Yes | Sometimes | Rarely |
+| HSTS with preload flag | Yes | No | No |
+| OCSP stapling configured | Yes | No | No |
+| `server_tokens off` included | Yes | Inconsistent | Yes |
+| Proxy hides upstream headers | Yes | No | No |
+| Rate limiting with burst queue | Yes | Basic | No |
+| Explains `if` directive risks | Yes | No | No |
+
+The pattern is consistent: Claude tends to generate configs that would pass a Mozilla Observatory scan on the first attempt. The others require one or two review cycles to reach the same standard.
+
 ## Tool Comparison
 
 | Feature | Claude | Copilot | Cursor |
@@ -322,6 +383,17 @@ server {
 | WebSocket config | Correct Upgrade headers | Sometimes correct | Correct |
 | Caching | Full with bypass/purge | Basic | Basic |
 | Load balancing | Health checks, retries | Round-robin only | Partial |
+| Geo-blocking | Full GeoIP2 example | Incomplete | Not attempted |
+
+## Practical Advice for Using AI with Nginx
+
+Regardless of which tool you use, apply these steps before any AI-generated nginx config reaches production:
+
+1. Run `nginx -t` to catch syntax errors before reloading
+2. Test SSL with `testssl.sh` or the Qualys SSL Labs scanner
+3. Verify security headers with Mozilla Observatory
+4. Load test rate limiting with `wrk` or `vegeta` to confirm burst behaviour
+5. Check that `proxy_next_upstream` settings match your upstream's idempotency guarantees — retrying a POST on a payment endpoint is dangerous
 
 ## Related Reading
 
