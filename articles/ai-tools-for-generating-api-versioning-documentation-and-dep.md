@@ -1,17 +1,19 @@
 ---
+
 layout: default
 title: "AI Tools for Generating API Versioning Documentation and Deprecation Notices"
 description: "A practical comparison of AI tools for generating API versioning documentation and deprecation notices. Includes code examples, implementation patterns, and recommendations for developers."
 date: 2026-03-21
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /ai-tools-for-generating-api-versioning-documentation-and-dep/
 categories: [guides]
 tags: [ai-tools-compared, api, documentation, versioning, deprecation]
-reviewed: false
-score: 0
+reviewed: true
+score: 8
 intent-checked: false
 voice-checked: false
 ---
+
 
 
 {% raw %}
