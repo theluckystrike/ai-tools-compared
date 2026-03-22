@@ -224,6 +224,113 @@ plt.show()
 
 Copilot's visualization completions are fast and contextually relevant. Claude requires more prompt effort but generates more sophisticated plots with proper statistical annotations.
 
+## Task 4: Time Series Feature Engineering
+
+Time series work is where the gap between the two tools becomes clear. Claude can reason about lag features, rolling statistics, and seasonality; Copilot generates boilerplate without understanding the domain.
+
+**Prompt to Claude:** "I have a daily sales DataFrame with columns: date, sales, store_id. Create a feature engineering function that adds: 7-day rolling mean and std, lag features for 1, 7, and 30 days, day-of-week and month indicators, and a 'is_weekend' flag. Handle the NaN values from lagging correctly."
+
+**Claude:**
+
+```python
+import pandas as pd
+import numpy as np
+
+
+def engineer_time_features(
+    df: pd.DataFrame,
+    date_col: str = "date",
+    target_col: str = "sales",
+    group_col: str = "store_id",
+) -> pd.DataFrame:
+    """
+    Add time-series features to a daily sales DataFrame.
+    Applies lag and rolling features within each store group
+    to avoid data leakage across stores.
+    """
+    df = df.copy()
+    df[date_col] = pd.to_datetime(df[date_col])
+    df = df.sort_values([group_col, date_col]).reset_index(drop=True)
+
+    def add_features(group: pd.DataFrame) -> pd.DataFrame:
+        g = group.copy()
+
+        # Lag features — shift within the group
+        for lag in [1, 7, 30]:
+            g[f"{target_col}_lag_{lag}d"] = g[target_col].shift(lag)
+
+        # Rolling statistics (requires lag to avoid leakage)
+        g[f"{target_col}_roll7_mean"] = (
+            g[target_col].shift(1).rolling(7, min_periods=4).mean()
+        )
+        g[f"{target_col}_roll7_std"] = (
+            g[target_col].shift(1).rolling(7, min_periods=4).std()
+        )
+
+        return g
+
+    df = df.groupby(group_col, group_keys=False).apply(add_features)
+
+    # Calendar features (don't need grouping)
+    df["day_of_week"] = df[date_col].dt.dayofweek       # 0=Monday
+    df["month"] = df[date_col].dt.month
+    df["is_weekend"] = df["day_of_week"].isin([5, 6]).astype(int)
+    df["quarter"] = df[date_col].dt.quarter
+
+    return df
+
+
+# Usage
+featured_df = engineer_time_features(raw_df)
+
+# NaN summary — expected for early rows
+print(featured_df.isna().sum())
+
+# Drop rows where any lag feature is NaN before training
+train_df = featured_df.dropna(subset=[
+    "sales_lag_1d", "sales_lag_7d", "sales_lag_30d",
+    "sales_roll7_mean", "sales_roll7_std",
+])
+```
+
+The critical detail: using `.shift(1)` before `.rolling()` prevents data leakage. Copilot sometimes generates rolling features on the raw column, which means the rolling mean at time T includes the value at time T — leaking the target into the feature.
+
+**Winner: Claude** — understands data leakage risk, applies groupby correctly per store.
+
+## Task 5: Debugging pandas Errors
+
+Claude's conversational ability shines for debugging. Paste in a stack trace and Claude identifies root causes accurately.
+
+**Error to debug:**
+
+```
+ValueError: Cannot convert non-finite values (NA or inf) to integer
+```
+
+**Claude's diagnosis:** This error occurs when casting a float column containing NaN to int. Claude identifies the three root causes and gives the fix for each:
+
+```python
+# Root cause 1: Column has NaN, astype(int) fails
+df["col"].astype(int)           # Fails if any NaN
+
+# Fix 1: Fill NaN before casting
+df["col"].fillna(0).astype(int)
+
+# Fix 2: Use nullable integer type (pandas 1.0+)
+df["col"].astype("Int64")       # Capital I — supports pd.NA
+
+# Fix 3: Drop NaN rows first
+df.dropna(subset=["col"])["col"].astype(int)
+
+# Root cause 2: Column has inf values from division
+df["rate"] = df["a"] / df["b"]  # inf when b==0
+
+# Fix: Replace inf before casting
+df["rate"] = df["rate"].replace([np.inf, -np.inf], np.nan)
+```
+
+Copilot doesn't debug errors conversationally — you'd need to paste the error into a comment and hope it completes a fix, which works inconsistently.
+
 ## Tool Selection Guide
 
 | Task | Best Tool | Why |
@@ -235,6 +342,8 @@ Copilot's visualization completions are fast and contextually relevant. Claude r
 | Boilerplate sklearn pipelines | Copilot | Fast inline completion |
 | Debugging pandas errors | Claude | Full error + code context |
 | Feature engineering ideas | Claude | Conversational exploration |
+| Time series features | Claude | Understands leakage, groupby patterns |
+| Simple plot generation | Copilot | Faster with existing column context |
 
 ## Related Reading
 
