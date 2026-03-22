@@ -23,6 +23,8 @@ The best AI tools for data cleaning are Pandas with AI-assisted workflows for ma
 
 Effective AI data cleaning tools share several characteristics that matter most to developers. First, they must integrate with existing workflows—whether through CLI, API, or IDE plugin. Second, they should handle multiple data formats, including CSV, JSON, SQL exports, and common database systems. Third, customizable rules let you enforce domain-specific standards without manual intervention. Finally, the best tools provide audit trails, showing exactly what changes were made and allowing selective undo.
 
+Two additional criteria matter more than most tool comparisons acknowledge. **Explainability** — can you understand why the tool made a specific cleaning decision? — becomes critical in regulated industries where data transformations must be defensible. **Incremental processing** — can the tool handle new records without re-cleaning everything? — matters at scale when running batch pipelines on continuously arriving data.
+
 
 ## Comparing Leading AI Data Cleaning Tools
 
@@ -45,7 +47,9 @@ def clean_with_openrefine(project_id, operations):
 ```
 
 
-OpenRefine excels at text normalization, clustering similar values, and bulk transformations. Its clustering algorithm finds duplicate entries even with slight spelling variations.
+OpenRefine excels at text normalization, clustering similar values, and bulk transformations. Its clustering algorithm finds duplicate entries even with slight spelling variations. The **fingerprint** and **ngram-fingerprint** clustering methods are particularly effective for company names, addresses, and product descriptions where inconsistency is common.
+
+OpenRefine's limitation is scale: datasets beyond a few million rows strain its in-memory architecture. For larger datasets, export the clustering rules as a JSON operation history and apply them programmatically with the API call pattern above.
 
 
 ### Pandas with AI-Assisted Cleaning
@@ -85,6 +89,8 @@ def ai_clean_column(df, column_name):
 
 This approach lets you handle context-dependent cleaning decisions. For instance, cleaning company names requires understanding that "Acme Corp", "ACME CORPORATION", and "acme" all refer to the same entity.
 
+For production use, cache the AI-generated cleaning map to avoid repeated API calls on the same values. A simple dictionary stored as JSON serves this purpose well. Only re-query the AI for values not found in the cache, which reduces both cost and latency significantly.
+
 
 ### DataRobot
 
@@ -115,6 +121,8 @@ data_prep:
 
 
 The strength of DataRobot lies in its automated recommendations—you receive suggestions for cleaning steps rather than manually specifying each transformation.
+
+DataRobot's governance features include transformation lineage tracking, approval workflows for cleaning pipelines, and role-based access control. For regulated industries like financial services and healthcare, these features justify the platform's cost. Smaller teams often find the overhead excessive compared to a well-structured Pandas pipeline.
 
 
 ### Trino with Iceberg
@@ -155,6 +163,8 @@ WHERE is_deleted = false
 
 This approach keeps data cleaning within your data warehouse, avoiding the complexity of exporting data to external tools.
 
+Iceberg's time-travel feature pairs naturally with cleaning workflows. You can clean data in place and roll back to any previous snapshot if a cleaning step produces unexpected results. This is far safer than the traditional pattern of keeping raw and cleaned copies of every dataset.
+
 
 ### Great Expectations
 
@@ -191,6 +201,19 @@ results = validator.validate()
 
 
 Great Expectations pairs well with AI cleaning tools—use AI for initial cleaning, then Great Expectations to ensure consistency over time.
+
+The **Data Docs** feature automatically generates human-readable HTML documentation from your expectation suite. This documentation serves as a data contract that data producers and consumers can both reference, reducing the ambiguity that causes cleaning problems in the first place.
+
+
+## Tool Comparison at a Glance
+
+| Tool | Best Scale | AI-Native | Governance | Learning Curve |
+|------|-----------|-----------|------------|----------------|
+| OpenRefine | < 5M rows | No (API-augmented) | Basic | Low |
+| Pandas + AI | Any (with batching) | Via API | Custom | Medium |
+| DataRobot | Enterprise | Yes | High | High |
+| Trino + Iceberg | Petabyte scale | Via UDFs | Medium | High |
+| Great Expectations | Any | No | Medium | Medium |
 
 
 ## Practical Recommendations
@@ -268,6 +291,7 @@ def fuzzy_dedupe(df, key_col, threshold=90):
     return df.drop(df.index[list(to_remove)])
 ```
 
+For large datasets, this O(n²) comparison becomes slow. Use **Dedupe.io** or **splink** for scalable probabilistic record linkage. Both libraries use blocking strategies to reduce comparison space from quadratic to manageable, and both integrate well with Pandas DataFrames.
 
 
 ## Frequently Asked Questions
