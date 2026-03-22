@@ -13,6 +13,8 @@ score: 9
 intent-checked: true
 voice-checked: true---
 ---
+
+
 layout: default
 title: "How to Set Up Model Context Protocol Server Providing Live"
 description: "A practical guide for developers setting up a Model Context Protocol server to feed live database schema information to AI assistants for smarter code"
@@ -28,6 +30,13 @@ intent-checked: true
 voice-checked: true---
 
 {% raw %}
+
+## Key Takeaways
+
+- **They might reference columns**: that don't exist, use wrong data types, miss required NOT NULL columns, or ignore your foreign key relationships entirely.
+- **You'll also need access**: to a database—PostgreSQL, MySQL, SQLite, or any other database supported by SQLAlchemy.
+- **Use environment variables exclusively**: and ensure your logging configuration excludes environment variable values.
+- **AI assistants can use**: this to explain the full data model and suggest correct JOIN paths for complex multi-table queries.
 
 ## Introduction
 
