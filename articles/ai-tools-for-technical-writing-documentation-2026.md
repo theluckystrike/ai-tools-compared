@@ -7,6 +7,7 @@ reviewed: true
 score: 8
 voice-checked: true
 intent-checked: true
+permalink: /ai-tools-for-technical-writing-documentation-2026/
 ---
 
 Technical documentation is infrastructure debt. Bad docs waste engineering hours—onboarding takes longer, API integrations fail, and runbooks mislead on-call engineers. Most teams either skip documentation entirely or produce sprawling, outdated wikis that contradict the code.
