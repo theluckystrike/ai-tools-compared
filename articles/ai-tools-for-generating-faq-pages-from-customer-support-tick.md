@@ -309,6 +309,326 @@ def incremental_faq_update(existing_faqs, since_date):
 
 **PII Exposure**: Never include customer names, email addresses, order IDs, or any other personal data in published FAQs. Run a dedicated anonymization pass using a library like `presidio-analyzer` before any LLM call.
 
+## Building an End-to-End FAQ Pipeline
+
+Here's a complete Python pipeline for FAQ generation from real support data:
+
+```python
+import json
+from datetime import datetime, timedelta
+from collections import Counter
+import openai
+
+class FAQPipeline:
+    """Complete FAQ generation pipeline from support tickets"""
+
+    def __init__(self, api_key, min_ticket_frequency=5):
+        openai.api_key = api_key
+        self.min_ticket_frequency = min_ticket_frequency
+
+    def load_tickets(self, filepath, days_back=90):
+        """Load recent support tickets from JSON"""
+        cutoff_date = datetime.now() - timedelta(days=days_back)
+
+        with open(filepath) as f:
+            all_tickets = json.load(f)
+
+        recent = [
+            t for t in all_tickets
+            if datetime.fromisoformat(t['created_at']) > cutoff_date
+        ]
+
+        return recent
+
+    def cluster_tickets(self, tickets, n_clusters=25):
+        """Group tickets by topic using embeddings"""
+        from sentence_transformers import SentenceTransformer
+        from sklearn.cluster import KMeans
+
+        model = SentenceTransformer('all-MiniLM-L6-v2')
+
+        # Embed ticket summaries
+        summaries = [t['subject'] for t in tickets]
+        embeddings = model.encode(summaries)
+
+        # Cluster
+        kmeans = KMeans(n_clusters=min(n_clusters, len(tickets)), random_state=42)
+        clusters = kmeans.fit_predict(embeddings)
+
+        # Group tickets by cluster
+        grouped = {}
+        for ticket, cluster_id in zip(tickets, clusters):
+            if cluster_id not in grouped:
+                grouped[cluster_id] = []
+            grouped[cluster_id].append(ticket)
+
+        return grouped
+
+    def generate_faq_for_cluster(self, cluster_tickets, topic_name):
+        """Generate a single FAQ entry from clustered tickets"""
+        context = "\n".join([
+            f"- {t['subject']}: {t['body'][:300]}"
+            for t in cluster_tickets[:10]
+        ])
+
+        response = openai.ChatCompletion.create(
+            model="gpt-4",
+            messages=[{
+                "role": "system",
+                "content": "Generate a clear, concise FAQ question-answer pair."
+            }, {
+                "role": "user",
+                "content": f"""Topic: {topic_name}
+
+Tickets:
+{context}
+
+Generate:
+1. A natural question customers might ask
+2. A comprehensive answer (2-3 sentences max)
+3. A link label if external docs exist
+
+Format as JSON: {{"question": "...", "answer": "...", "link": "..."}}"""
+            }],
+            temperature=0.3,
+            max_tokens=200
+        )
+
+        return json.loads(response.choices[0].message.content)
+
+    def deduplicate_faqs(self, faqs):
+        """Remove duplicate or very similar FAQs"""
+        from sentence_transformers import util
+
+        model = SentenceTransformer('all-MiniLM-L6-v2')
+        embeddings = model.encode([f['question'] for f in faqs])
+
+        unique_faqs = []
+        seen_indices = set()
+
+        for i, faq in enumerate(faqs):
+            if i in seen_indices:
+                continue
+
+            # Find similar questions
+            similarities = util.pytorch_cos_sim(embeddings[i], embeddings)
+            similar_indices = (similarities[0] > 0.85).nonzero(as_tuple=True)[0]
+
+            # Keep highest frequency one
+            for idx in similar_indices:
+                seen_indices.add(int(idx))
+
+            unique_faqs.append(faq)
+
+        return unique_faqs
+
+    def rank_by_impact(self, faqs, tickets):
+        """Rank FAQs by frequency in tickets"""
+        for faq in faqs:
+            # Count ticket matches for this FAQ
+            matching_count = sum(
+                1 for t in tickets
+                if faq['question'].lower() in t['subject'].lower()
+            )
+            faq['impact_score'] = matching_count
+
+        return sorted(faqs, key=lambda f: f['impact_score'], reverse=True)
+
+    def run(self, tickets_file, output_file, n_faqs=15):
+        """Run complete pipeline"""
+        print("Loading tickets...")
+        tickets = self.load_tickets(tickets_file)
+
+        print(f"Clustering {len(tickets)} tickets...")
+        clusters = self.cluster_tickets(tickets)
+
+        print("Generating FAQ entries...")
+        faqs = []
+        for cluster_id, cluster_tickets in clusters.items():
+            if len(cluster_tickets) < self.min_ticket_frequency:
+                continue
+
+            topic = f"Topic {cluster_id}"
+            faq = self.generate_faq_for_cluster(cluster_tickets, topic)
+            faqs.append(faq)
+
+        print("Deduplicating...")
+        faqs = self.deduplicate_faqs(faqs)
+
+        print("Ranking by impact...")
+        faqs = self.rank_by_impact(faqs, tickets)
+
+        print(f"Writing {min(len(faqs), n_faqs)} FAQs...")
+        output = {
+            "generated_at": datetime.now().isoformat(),
+            "total_tickets_analyzed": len(tickets),
+            "faqs": faqs[:n_faqs]
+        }
+
+        with open(output_file, 'w') as f:
+            json.dump(output, f, indent=2)
+
+        return output
+
+# Usage
+pipeline = FAQPipeline(api_key="sk-...")
+result = pipeline.run(
+    "support_tickets.json",
+    "generated_faqs.json",
+    n_faqs=20
+)
+```
+
+## Integration with Documentation Systems
+
+### Publishing Generated FAQs to Jekyll/GitHub Pages
+
+```bash
+#!/bin/bash
+# publish-faqs.sh
+
+FAQS_FILE="generated_faqs.json"
+DOCS_DIR="_docs"
+
+# Convert JSON to markdown
+python3 << 'EOF'
+import json
+import os
+from datetime import datetime
+
+with open("generated_faqs.json") as f:
+    data = json.load(f)
+
+os.makedirs("_docs/faq", exist_ok=True)
+
+# Create index page
+index_content = f"""---
+layout: default
+title: FAQ
+---
+
+# Frequently Asked Questions
+
+Last updated: {data['generated_at']}
+
+{chr(10).join(f"- [{faq['question']}](#{i})" for i, faq in enumerate(data['faqs']))}
+
+"""
+
+for i, faq in enumerate(data['faqs']):
+    index_content += f"""
+## {faq['question']}
+
+{faq['answer']}
+
+"""
+
+with open("_docs/faq/index.md", "w") as f:
+    f.write(index_content)
+
+print("FAQ pages created")
+EOF
+
+# Push to git
+git add _docs/faq/
+git commit -m "Auto-generate FAQ from support tickets"
+git push origin main
+```
+
+### Updating Intercom or Zendesk Knowledge Base
+
+```python
+# sync-to-zendesk.py
+import requests
+import json
+
+ZENDESK_API_KEY = os.getenv('ZENDESK_API_KEY')
+ZENDESK_SECTION_ID = 123456
+
+def sync_faqs_to_zendesk(faqs_file):
+    """Publish generated FAQs to Zendesk"""
+    with open(faqs_file) as f:
+        faqs = json.load(f)['faqs']
+
+    for faq in faqs[:20]:  # Limit to 20 for API quota
+        article = {
+            "article": {
+                "title": faq['question'],
+                "body": faq['answer'],
+                "section_id": ZENDESK_SECTION_ID,
+                "draft": False,
+            }
+        }
+
+        response = requests.post(
+            f"https://your-subdomain.zendesk.com/api/v2/help_center/articles.json",
+            json=article,
+            headers={
+                "Authorization": f"Bearer {ZENDESK_API_KEY}",
+                "Content-Type": "application/json"
+            }
+        )
+
+        if response.status_code == 201:
+            print(f"Created: {faq['question']}")
+        else:
+            print(f"Failed: {response.status_code} - {response.text}")
+```
+
+## Measuring FAQ Effectiveness
+
+Track whether generated FAQs actually reduce support volume:
+
+```python
+def measure_faq_impact(before_tickets, after_tickets, faq_published_date):
+    """Compare support volume before and after FAQ publication"""
+    before = [t for t in before_tickets if t['created_at'] < faq_published_date]
+    after = [t for t in after_tickets if t['created_at'] >= faq_published_date]
+
+    reduction = (len(before) - len(after)) / len(before) * 100
+
+    print(f"Tickets before FAQ: {len(before)}")
+    print(f"Tickets after FAQ: {len(after)}")
+    print(f"Reduction: {reduction:.1f}%")
+
+    # Identify which FAQ topics have highest impact
+    common_before = Counter([t['category'] for t in before]).most_common(10)
+    common_after = Counter([t['category'] for t in after]).most_common(10)
+
+    print("\nMost reduced categories:")
+    for (category, before_count), (_, after_count) in zip(common_before, common_after):
+        reduction_pct = ((before_count - after_count) / before_count * 100)
+        print(f"  {category}: {reduction_pct:.0f}% reduction")
+```
+
+## Updating FAQs Over Time
+
+Regenerate FAQs monthly to capture new trends:
+
+```bash
+# cron-daily-faq-update.sh
+0 2 1 * * /path/to/faq-pipeline/update_faqs.sh
+
+# update_faqs.sh
+#!/bin/bash
+cd /path/to/faq-pipeline
+
+# Fetch latest tickets
+python fetch_tickets.py --days 90 --output recent_tickets.json
+
+# Regenerate FAQs
+python generate_faqs.py recent_tickets.json generated_faqs.json
+
+# Check for changes
+if git diff generated_faqs.json | grep -q "question"; then
+    # Publish updates
+    python sync_to_zendesk.py generated_faqs.json
+    git add generated_faqs.json
+    git commit -m "Auto-update FAQs from ticket trends"
+    git push origin main
+fi
+```
+
 ## Conclusion
 
 AI-powered FAQ generation from support tickets is mature enough for production use. The hybrid approach offers the best balance of quality and cost. Start with your highest-volume ticket categories, validate outputs manually at first, and iterate based on customer feedback.

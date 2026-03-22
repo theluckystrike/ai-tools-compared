@@ -250,6 +250,310 @@ Pick one tool from the options discussed and sign up for a free trial. Spend 30 
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Advanced Classification Workflows
+
+### Building Custom Classifiers
+
+Most catalog tools let you train classifiers on your own data patterns:
+
+```python
+from datahub.emitter.mce_file_emitter import MceFileEmitter
+from datahub.metadata.schema_classes import MetadataChangeEventClass as MCE
+
+def train_custom_classifier(training_data_path):
+    """Train a classifier for domain-specific column types"""
+    import pandas as pd
+    from sklearn.pipeline import Pipeline
+    from sklearn.feature_extraction.text import TfidfVectorizer
+    from sklearn.naive_bayes import MultinomialNB
+
+    # Load training data: column_name -> classification
+    training_df = pd.read_csv(training_data_path)
+
+    # Features: column name, column statistics, sample values
+    X = training_df['column_name'].values
+    y = training_df['classification'].values
+
+    # Train classifier
+    classifier = Pipeline([
+        ('tfidf', TfidfVectorizer(ngram_range=(1, 2))),
+        ('clf', MultinomialNB())
+    ])
+
+    classifier.fit(X, y)
+    return classifier
+
+def classify_columns(catalog_client, classifier):
+    """Apply trained classifier to all tables"""
+    for dataset in catalog_client.list_datasets():
+        for column in dataset.columns:
+            prediction = classifier.predict([column.name])[0]
+            confidence = max(classifier.predict_proba([column.name])[0])
+
+            # Emit classification metadata
+            metadata = {
+                'column': column.name,
+                'predicted_classification': prediction,
+                'confidence': confidence,
+                'created_at': datetime.now().isoformat()
+            }
+
+            catalog_client.update_metadata(dataset.id, column.id, metadata)
+```
+
+### Tagging Sensitive Data Automatically
+
+Identify and tag PII, financial data, and other sensitive information:
+
+```python
+def identify_sensitive_data(catalog_client):
+    """Scan for sensitive columns using pattern matching and ML"""
+    import re
+
+    patterns = {
+        'email': r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
+        'phone': r'^(\+1)?[-.\s]?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}$',
+        'ssn': r'^\d{3}-\d{2}-\d{4}$',
+        'credit_card': r'^\d{4}[\s-]?\d{4}[\s-]?\d{4}[\s-]?\d{4}$',
+        'zipcode': r'^\d{5}(-\d{4})?$'
+    }
+
+    for dataset in catalog_client.list_datasets():
+        for column in dataset.columns:
+            # Check name against known sensitive patterns
+            for sensitivity_type, pattern in patterns.items():
+                if re.search(sensitivity_type, column.name.lower()):
+                    catalog_client.tag_column(
+                        dataset.id, column.id,
+                        f"pii::{sensitivity_type}"
+                    )
+                    break
+
+            # Sample data and match patterns
+            sample_values = catalog_client.get_sample_values(
+                dataset.id, column.id, limit=100
+            )
+            for sensitivity_type, pattern in patterns.items():
+                matches = sum(1 for v in sample_values if re.search(pattern, str(v)))
+                if matches > len(sample_values) * 0.8:  # 80% match rate
+                    catalog_client.tag_column(
+                        dataset.id, column.id,
+                        f"pii::{sensitivity_type}"
+                    )
+                    break
+```
+
+## Integration with Data Pipelines
+
+### dbt Lineage Integration
+
+Automatically capture data lineage from dbt projects:
+
+```yaml
+# dbt_manifest_to_catalog.py
+import json
+from pathlib import Path
+
+def extract_lineage_from_dbt(manifest_path, catalog_api):
+    """Extract data lineage from dbt manifest"""
+    with open(manifest_path) as f:
+        manifest = json.load(f)
+
+    # Create relationships for each model
+    for node_id, node in manifest['nodes'].items():
+        if 'fqn' not in node:
+            continue
+
+        dataset_name = '.'.join(node['fqn'])
+
+        # Find upstream dependencies
+        dependencies = []
+        if 'depends_on' in node:
+            for dep in node['depends_on']['nodes']:
+                dep_name = manifest['nodes'][dep]['fqn']
+                dependencies.append('.'.join(dep_name))
+
+        # Register lineage in catalog
+        catalog_api.register_dataset(
+            name=dataset_name,
+            upstream=dependencies,
+            metadata={
+                'type': node.get('resource_type'),
+                'materialized': node.get('materialized'),
+                'description': node.get('description', ''),
+                'columns': node.get('columns', {})
+            }
+        )
+
+    print(f"Registered {len(manifest['nodes'])} datasets in catalog")
+```
+
+### Airflow DAG Integration
+
+Capture lineage from Airflow DAGs automatically:
+
+```python
+from airflow.models import Variable
+from airflow.hooks.postgres_hook import PostgresHook
+
+def airflow_dag_to_lineage(dag_id, catalog_api):
+    """Extract dataset lineage from Airflow DAG"""
+    from airflow.models import DagRun, TaskInstance
+
+    dag_runs = DagRun.objects.filter(dag_id=dag_id)
+
+    lineage_map = {}
+
+    for task_instance in TaskInstance.objects.filter(
+        dag_id=dag_id
+    ):
+        # Extract input/output datasets from task
+        task = task_instance.task
+
+        # Most Airflow tasks declare inputs/outputs in metadata
+        inputs = getattr(task, 'inlet', [])
+        outputs = getattr(task, 'outlet', [])
+
+        for output in outputs:
+            dataset_name = output.uri if hasattr(output, 'uri') else str(output)
+            lineage_map[dataset_name] = {
+                'upstream': [i.uri if hasattr(i, 'uri') else str(i) for i in inputs],
+                'task': task.task_id,
+                'dag': dag_id
+            }
+
+    # Register in catalog
+    for dataset_name, lineage in lineage_map.items():
+        catalog_api.register_dataset(
+            name=dataset_name,
+            upstream=lineage['upstream']
+        )
+```
+
+## Cost Optimization Strategies
+
+### Selective Scanning
+
+Don't catalog everything—focus on high-value datasets:
+
+```python
+def prioritize_datasets_for_cataloging(database_connection):
+    """Identify which datasets to catalog based on usage"""
+    # Query database for table statistics
+    query = """
+    SELECT
+        table_name,
+        table_size_mb,
+        last_accessed,
+        query_count_30d,
+        column_count
+    FROM table_stats
+    ORDER BY (query_count_30d * table_size_mb) DESC
+    LIMIT 100
+    """
+
+    high_value_tables = database_connection.execute(query)
+
+    # Catalog only top 100 tables by usage * size
+    for table in high_value_tables:
+        yield table['table_name']
+```
+
+### Incremental Scanning
+
+Update only changed tables instead of full rescans:
+
+```python
+def incremental_catalog_update(catalog_api, db_connection):
+    """Update catalog only for changed tables"""
+    # Get last scan timestamp
+    last_scan = catalog_api.get_last_scan_time()
+
+    # Find tables changed since last scan
+    changed_tables = db_connection.execute(f"""
+        SELECT table_name, modified_time
+        FROM information_schema.tables
+        WHERE modified_time > '{last_scan}'
+    """)
+
+    for table in changed_tables:
+        # Re-scan only this table
+        schema = db_connection.get_schema(table['table_name'])
+        catalog_api.update_table_metadata(table['table_name'], schema)
+
+    catalog_api.set_last_scan_time()
+```
+
+## Governance Implementation
+
+### Data Ownership and Stewardship
+
+Assign responsibility for data quality:
+
+```python
+def assign_data_stewards(catalog_api, org_structure):
+    """Assign stewards based on org structure"""
+    for dataset in catalog_api.list_datasets():
+        # Infer team from dataset name or location
+        team = infer_team_from_dataset(dataset)
+
+        # Get team lead email
+        steward_email = org_structure.get_team_lead_email(team)
+
+        # Register stewardship
+        catalog_api.set_steward(
+            dataset.id,
+            steward_email,
+            role='data_owner'
+        )
+
+        # Schedule quarterly review
+        catalog_api.add_review_schedule(
+            dataset.id,
+            frequency='quarterly',
+            assignee=steward_email
+        )
+```
+
+### Data Quality Metrics
+
+Track data quality alongside lineage:
+
+```python
+class DataQualityTracker:
+    def __init__(self, catalog_api, warehouse_connection):
+        self.catalog = catalog_api
+        self.warehouse = warehouse_connection
+
+    def compute_quality_metrics(self, dataset_id):
+        """Calculate data quality scores"""
+        metrics = {}
+
+        # Completeness: % non-null values
+        completeness = self.warehouse.execute(f"""
+            SELECT COUNT(*) - COUNT(NULL)
+            FROM {dataset_id}
+        """) / total_rows
+
+        # Timeliness: how recent is the data
+        freshness = (datetime.now() - last_update).days
+
+        # Accuracy: validate against business rules
+        accuracy = self.run_data_tests(dataset_id)
+
+        return {
+            'completeness': completeness,
+            'freshness_days': freshness,
+            'accuracy': accuracy,
+            'last_computed': datetime.now().isoformat()
+        }
+
+    def update_quality_in_catalog(self, dataset_id):
+        """Store quality metrics in catalog"""
+        metrics = self.compute_quality_metrics(dataset_id)
+        self.catalog.set_quality_metrics(dataset_id, metrics)
+```
+
 ## Related Articles
 
 - [AI Tools for Data Mesh Architecture: A Practical Guide](/ai-tools-compared/ai-tools-for-data-mesh-architecture/)
