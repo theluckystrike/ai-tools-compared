@@ -24,8 +24,24 @@ When working with AI coding assistants on API-driven projects, consistent versio
 
 Your API versioning strategy affects every endpoint, request, and response in your project. Without explicit instructions, AI assistants may generate inconsistent endpoint paths, ignore version headers, or fail to implement proper deprecation warnings. By documenting your versioning approach in CLAUDE.md, you establish a source of truth that guides every code generation decision.
 
-
 AI assistants excel at following explicit patterns. When you define your versioning strategy clearly, they generate versioned endpoints correctly from the start, implement proper deprecation cycles, and maintain consistent header handling across your codebase.
+
+The CLAUDE.md file sits at the root of your repository and is automatically read by Claude Code when you start a session. Cursor reads `.cursorrules` instead, but the documentation strategy is identical—clear, explicit rules about what version scheme your project uses, what the current stable version is, and how the AI should handle edge cases. Writing this once saves hundreds of correction prompts over the lifetime of a project.
+
+
+## Versioning Scheme Comparison
+
+
+Before writing your CLAUDE.md, decide which versioning scheme fits your project. Each has different implications for how the AI generates code:
+
+| Scheme | Example | AI Behavior Needed |
+|--------|---------|-------------------|
+| URL path | `/api/v2/users` | Prefix all new routes with `/api/v{N}/` |
+| Request header | `Accept: application/vnd.myapp.v2+json` | Add header handling to every controller |
+| Query parameter | `/api/users?version=2` | Validate and route on query param |
+| Subdomain | `v2.api.myapp.com` | Generate routes without version prefix |
+
+URL path versioning is the most common because it is explicit, cacheable by CDNs, and easy to document. If your project uses it, say so explicitly in CLAUDE.md—do not assume the AI will infer it from your existing code.
 
 
 ## Structuring Your API Versioning Documentation
@@ -242,22 +258,32 @@ describe('API v1 deprecation', () => {
 ```
 
 
+## Integrating CLAUDE.md With Your CI Pipeline
+
+
+A CLAUDE.md that lives only in your editor session helps individual developers but does not enforce team-wide consistency. Consider these integration patterns:
+
+**Linting CLAUDE.md in CI.** Write a simple script that checks your CLAUDE.md contains required sections: versioning scheme, current stable version, and sunset dates. Run it as a pre-commit hook to prevent stale documentation.
+
+**Version number as a CI variable.** Store the current API version in a single source—a `VERSION` file, an environment variable, or your `package.json`—then reference it in both your CLAUDE.md and your CI pipeline. When you bump the version, update CLAUDE.md in the same PR so AI-assisted developers always see the current stable version.
+
+**PR templates referencing CLAUDE.md.** Add a checkbox to your PR template: "Did you add or modify API endpoints? If yes, does CLAUDE.md still accurately describe the versioning behavior?" This lightweight check catches drift before it causes AI-generated code to be inconsistent.
+
+
 ## Common Pitfalls to Avoid
 
 
 When documenting your API versioning strategy, watch for these common mistakes that confuse AI assistants:
 
-
 **Avoid vague version descriptions.** Instead of "use appropriate versioning," specify exactly which versioning method your project uses.
-
 
 **Don't skip deprecation policies.** Without clear sunset dates and migration guides, AI-generated code won't include proper deprecation handling.
 
-
 **Include concrete examples.** Abstract descriptions fail; real code patterns work. Show exactly what a versioned endpoint should look like in your language and framework.
 
-
 **Specify response differences explicitly.** AI assistants need to know what fields exist in each version to generate correct code.
+
+**Keep the CLAUDE.md current.** An outdated CLAUDE.md that still lists v1 as the current stable version will cause the AI to generate v1 endpoints for new features. Schedule a quarterly review to align it with your actual API state.
 
 
 
