@@ -2,9 +2,12 @@
 layout: default
 title: "Self Hosted AI Coding Tools That Support Air Gapped Environments Compared 2026"
 description: "A practical comparison of self-hosted AI coding assistants that work in air-gapped, offline, and secure environments. Find the best tool for disconnected development."
-date: 2026-03-21
-author: theluckystrike
+date: 2026-03-16
+author: "AI Tools Compared"
 permalink: /self-hosted-ai-coding-tools-that-support-air-gapped-environm/
+reviewed: true
+score: 8
+categories: [guides]
 ---
 
 {% raw %}

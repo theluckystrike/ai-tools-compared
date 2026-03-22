@@ -2,14 +2,14 @@
 layout: default
 title: "Self-Hosted AI Assistant for Writing Docker Files Without Cloud API Compared 2026"
 description: "A practical comparison of self-hosted AI tools that generate Dockerfiles locally without sending data to external cloud APIs"
-date: 2026-03-21
+date: 2026-03-16
 last_modified_at: 2026-03-21
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /self-hosted-ai-assistant-for-writing-docker-files-without-cl/
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence, docker, self-hosted]
-reviewed: false
-score: 0
+reviewed: true
+score: 8
 intent-checked: false
 voice-checked: false
 ---

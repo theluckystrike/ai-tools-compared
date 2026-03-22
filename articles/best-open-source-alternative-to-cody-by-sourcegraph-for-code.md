@@ -2,14 +2,14 @@
 layout: default
 title: "Best Open Source Alternative to Cody by Sourcegraph for Code Search 2026"
 description: "A practical guide to the best open source alternatives to Cody by Sourcegraph for code search in 2026. Compare solutions, see code examples, and implement"
-date: 2026-03-21
+date: 2026-03-16
 last_modified_at: 2026-03-21
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /best-open-source-alternative-to-cody-by-sourcegraph-for-code/
 categories: [guides]
 tags: [ai-tools-compared, open-source, code-search, coding-assistant]
-reviewed: false
-score: 0
+reviewed: true
+score: 8
 intent-checked: false
 voice-checked: false
 ---
