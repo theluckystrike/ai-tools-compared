@@ -108,6 +108,10 @@ resilience4j:
 
 Claude generates the full solution including the `FallbackFactory` (which provides the Throwable cause, better than `Fallback`) and the corresponding `application.yml`. Copilot requires separate prompts for each piece.
 
+### Why FallbackFactory Matters
+
+The distinction between `fallback` and `fallbackFactory` is important: `fallback` gives you a static default response, while `fallbackFactory` exposes the actual cause of the failure. This matters for logging and for distinguishing between timeout failures and downstream service errors. Claude picks this up correctly when given a well-formed prompt; Copilot tends to default to the simpler `fallback` form unless you explicitly ask for it.
+
 ## Task 2: Spring WebFlux Reactive Service
 
 **Prompt to Claude:** "Write a reactive Spring WebFlux endpoint that fetches user data and their orders concurrently using Reactor, handles errors gracefully, and returns a combined DTO."
@@ -181,6 +185,12 @@ public class UserWebClient {
 ```
 
 Copilot generates basic `WebClient` calls but typically doesn't add `Mono.zip` for concurrent calls, fallback behavior on order fetch failure, or the retry configuration. It requires multiple prompts.
+
+### Reactive Patterns Claude Gets Right
+
+Claude consistently produces the concurrent fetch pattern (`Mono.zip`) rather than sequential blocking calls. It also applies `onErrorResume` with type-specific error handling — treating 404 as a hard failure (rethrow) versus an order service outage as a soft failure (empty list). Copilot in isolation often generates blocking `block()` calls or misses the distinction between service-unavailable and not-found errors.
+
+The `retryWhen(Retry.backoff(...))` configuration on the `UserWebClient` is also notable: Claude includes exponential backoff out of the box for network-level exceptions (`WebClientRequestException`) while filtering out 4xx client errors that shouldn't be retried. This is a subtle but critical distinction.
 
 ## Task 3: Docker Compose for Multi-Service Development
 
@@ -279,6 +289,82 @@ volumes:
 ```
 
 Claude uses `service_healthy` conditions for `depends_on` (requires healthchecks), separates the two schemas via Flyway configuration, and adds the Redis eviction policy. Copilot generates simpler Docker Compose but misses the health check conditions.
+
+### What Copilot Gets Wrong Here
+
+Copilot generates functional Docker Compose files, but there are three common gaps:
+
+1. **`depends_on` without conditions** — Copilot often uses `depends_on: [postgres]` which only waits for the container to start, not for PostgreSQL to be ready to accept connections. Claude's `condition: service_healthy` prevents race-condition startup failures.
+
+2. **Single Flyway schema for both services** — Copilot tends to generate identical database environment variables for both services. Claude correctly uses `SPRING_FLYWAY_SCHEMAS=users` and `SPRING_FLYWAY_SCHEMAS=orders` to isolate schema migrations per service within the shared database.
+
+3. **No Redis eviction policy** — For session caching and ephemeral data, Redis without `--maxmemory-policy allkeys-lru` will reject writes once it hits the memory cap. Claude adds this proactively; Copilot typically does not.
+
+## Task 4: Distributed Tracing with Micrometer
+
+**Prompt:** "Add distributed tracing with Micrometer and Zipkin to a Spring Boot 3 application. Ensure trace IDs propagate across Feign client calls."
+
+**Claude's configuration:**
+
+```xml
+<!-- pom.xml additions Claude recommends -->
+<dependency>
+    <groupId>io.micrometer</groupId>
+    <artifactId>micrometer-tracing-bridge-brave</artifactId>
+</dependency>
+<dependency>
+    <groupId>io.zipkin.reporter2</groupId>
+    <artifactId>zipkin-reporter-brave</artifactId>
+</dependency>
+<dependency>
+    <groupId>io.github.openfeign</groupId>
+    <artifactId>feign-micrometer</artifactId>
+</dependency>
+```
+
+```yaml
+# application.yml — tracing config
+management:
+  tracing:
+    sampling:
+      probability: 1.0  # 100% in dev, 0.1 in prod
+  zipkin:
+    tracing:
+      endpoint: http://zipkin:9411/api/v2/spans
+
+logging:
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
+```
+
+Claude also explains that `feign-micrometer` is required specifically to propagate `B3` trace headers across Feign client boundaries. Without it, each microservice starts a new trace rather than continuing the parent trace. Copilot often misses this dependency.
+
+## Capability Comparison
+
+| Task | Claude | Copilot |
+|---|---|---|
+| Feign client + circuit breaker | Full solution with FallbackFactory | Basic Feign client only |
+| Resilience4j config | YAML config included | Requires separate prompt |
+| Reactive Mono.zip patterns | Generated correctly | Often produces blocking calls |
+| WebClient retry with backoff | Included with error filtering | Typically omitted |
+| Docker Compose healthchecks | service_healthy conditions | depends_on without conditions |
+| Flyway schema isolation | Per-service schemas | Shared config for all services |
+| Distributed tracing setup | Full wiring including feign-micrometer | Missing feign propagation dep |
+
+## When to Use Each Tool
+
+**Use Copilot when:**
+- Writing routine CRUD endpoints, repository methods, and entity classes
+- You want fast in-editor completions for boilerplate
+- The task fits within a single file
+
+**Use Claude when:**
+- Designing cross-service communication patterns
+- Configuring resilience (circuit breakers, retries, timeouts)
+- Setting up infrastructure wiring (Docker Compose, CI pipelines)
+- Debugging complex reactive chains or distributed tracing issues
+
+The most effective workflow for Spring Boot microservices combines both: Copilot for in-editor boilerplate acceleration, Claude for architecture and cross-cutting concerns.
 
 ## Related Reading
 
