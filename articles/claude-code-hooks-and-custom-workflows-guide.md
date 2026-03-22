@@ -458,5 +458,6 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [Claude Code Tool Use Loop Not Terminating](/ai-tools-compared/claude-code-tool-use-loop-not-terminating-fix/)
 - [Claude Code Developer Portal Setup Guide](/ai-tools-compared/claude-code-developer-portal-setup-guide/)
 - [AI Pair Programming Tools Comparison 2026: Claude Code](/ai-tools-compared/ai-pair-programming-tools-comparison-2026/)
+- [Claude Code for Faker.js Test Data Workflow Guide](https://theluckystrike.github.io/remote-work-tools/claude-code-for-faker-js-test-data-workflow-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

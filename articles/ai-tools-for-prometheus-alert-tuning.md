@@ -387,6 +387,7 @@ When asked to generate inhibition rules for a service dependency graph, Claude p
 - [AI Tools for Generating Prometheus Alerting Rules](/ai-tools-compared/ai-tools-for-generating-prometheus-alerting-rules-2026/)
 - [How to Use AI for Log Anomaly Detection](/ai-tools-compared/how-to-use-ai-for-log-anomaly-detection/)
 - [How to Use AI for Chaos Engineering](/ai-tools-compared/how-to-use-ai-for-chaos-engineering/)
+- [AI-Powered Database Performance Tuning Tools](/ai-tools-compared/ai-powered-database-performance-tuning)
 
 ---
 

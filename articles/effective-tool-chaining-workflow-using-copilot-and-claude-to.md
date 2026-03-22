@@ -367,4 +367,5 @@ This ROI compounds as developers become more proficient with both tools.
 - [Claude vs Copilot for Generating FastAPI Endpoint Boilerplat](/ai-tools-compared/claude-vs-copilot-for-generating-fastapi-endpoint-boilerplat/)
 - [Copilot vs Claude Code for Writing Complex SQL Stored Proced](/ai-tools-compared/copilot-vs-claude-code-for-writing-complex-sql-stored-proced/)
 - [AI Pair Programming Tools Comparison 2026: Claude Code](/ai-tools-compared/ai-pair-programming-tools-comparison-2026/)
+- [Claude Code for Faker.js Test Data Workflow Guide](https://theluckystrike.github.io/remote-work-tools/claude-code-for-faker-js-test-data-workflow-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

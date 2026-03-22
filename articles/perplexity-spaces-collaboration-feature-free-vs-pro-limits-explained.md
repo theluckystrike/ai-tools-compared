@@ -392,5 +392,6 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Switching from ChatGPT Plus to Perplexity Pro Feature Compar](/ai-tools-compared/switching-from-chatgpt-plus-to-perplexity-pro-feature-compar/)
 - [Cursor AI Multi File Editing Feature How It Actually Works](/ai-tools-compared/cursor-ai-multi-file-editing-feature-how-it-actually-works-explained/)
 - [Best Free AI Tool for Generating Regex Patterns Explained](/ai-tools-compared/best-free-ai-tool-for-generating-regex-patterns-explained/)
+- [Best Open Source CRM for Remote Agency Self-Hosted Compared](https://theluckystrike.github.io/remote-work-tools/best-open-source-crm-for-remote-agency-self-hosted-compared-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

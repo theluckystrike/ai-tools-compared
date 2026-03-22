@@ -245,6 +245,7 @@ jobs:
 - [AI-Powered CI/CD Pipeline Optimization](/ai-powered-cicd-pipeline-optimization-2026/)
 - [Best AI Tools for Writing Makefiles](/best-ai-tools-for-writing-makefiles-2026/)
 - [AI Tools for Automated Migration Testing](/ai-tools-for-automated-migration-testing-2026/)
+- [AI Tools for Writing GitHub Actions Workflows (2026)](/ai-tools-compared/ai-tools/best-ai-tools-for-github-actions-workflows/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

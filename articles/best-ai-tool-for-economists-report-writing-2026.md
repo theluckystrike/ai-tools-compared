@@ -370,5 +370,6 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
 - [AI Autocomplete for Writing Tests: Comparison of Suggestion](/ai-tools-compared/ai-autocomplete-for-writing-tests-comparison-of-suggestion-q/)
 - [AI Code Completion for Writing Shell Commands Inside Scripts](/ai-tools-compared/ai-code-completion-for-writing-shell-commands-inside-scripts/)
+- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

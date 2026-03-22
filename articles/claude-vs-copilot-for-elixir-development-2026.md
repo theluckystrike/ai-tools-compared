@@ -298,6 +298,7 @@ For completing well-trodden Ecto/Phoenix patterns, Copilot's inline speed is use
 - [Claude vs Copilot for Swift Development](/ai-tools-compared/claude-vs-copilot-for-swift-development-2026/)
 - [How to Use AI to Interpret Elixir GenServer Crash Reports](/ai-tools-compared/how-to-use-ai-to-interpret-elixir-genserver-crash-reports-an/)
 - [Claude vs GPT-4 for Shell Scripting](/ai-tools-compared/claude-vs-gpt4-for-shell-scripting-2026/)
+- [Claude vs Copilot for Rust Development](/ai-tools-compared/claude-vs-copilot-for-rust-development)
 
 ---
 

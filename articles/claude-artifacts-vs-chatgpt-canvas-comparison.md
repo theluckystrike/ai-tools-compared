@@ -340,6 +340,7 @@ Start with Artifacts for visual feedback, export to your editor, then use Canvas
 - [How to Use Claude Artifacts for Rapid Prototyping React Components](/ai-tools-compared/how-to-use-claude-artifacts-for-rapid-prototyping-react-components/)
 - [Claude Artifacts Not Rendering Fix 2026](/ai-tools-compared/claude-artifacts-not-rendering-fix-2026/)
 - [ChatGPT Canvas Not Saving Changes Fix 2026](/ai-tools-compared/chatgpt-canvas-not-saving-changes-fix-2026/)
+- [Claude Artifacts vs ChatGPT Canvas Collaborative Coding](/ai-tools-compared/claude-artifacts-vs-chatgpt-canvas-collaborative-coding/)
 
 ## Related Articles
 

@@ -308,5 +308,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Grammarly Business vs ChatGPT Team for Enterprises](/ai-tools-compared/grammarly-business-vs-chatgpt-team-for-enterprises/)
 - [How to Move ChatGPT Team Workspace Data to Claude](/ai-tools-compared/how-to-move-chatgpt-team-workspace-data-to-claude-team/)
 - [Do ChatGPT Plus Memory and Custom GPTs Count Toward](/ai-tools-compared/chatgpt-plus-memory-and-custom-gpts-count-toward-usage-limit/)
+- [Find all GitHub repositories where user is admin](https://theluckystrike.github.io/remote-work-tools/best-practice-for-remote-team-offboarding-at-scale-ensuring-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

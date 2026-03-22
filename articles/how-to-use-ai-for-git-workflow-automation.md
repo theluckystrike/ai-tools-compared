@@ -425,6 +425,7 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [Copilot vs Cursor vs Windsurf Inline Diff Preview Comparison](/ai-tools-compared/copilot-vs-cursor-vs-windsurf-inline-diff-preview-comparison/)
 - [AI Coding Tools for Automating Changelog Generation from](/ai-tools-compared/ai-coding-tools-for-automating-changelog-generation-from-con/)
 - [How to Use the Claude API for Automated Code Review](/ai-tools-compared/how-to-use-claude-api-for-automated-code-review/)
+- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

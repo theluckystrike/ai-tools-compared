@@ -280,6 +280,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Effective Workflow for AI-Assisted Open Source Contribution](/ai-tools-compared/effective-workflow-for-ai-assisted-open-source-contribution-/)
 - [Effective Workflow for Using AI](/ai-tools-compared/effective-workflow-for-using-ai-to-debug-production-issues-from-logs/)
 - [Best AI Tools for Writing GitHub Actions Reusable Workflow](/ai-tools-compared/best-ai-tools-for-writing-github-actions-reusable-workflow-t/)
+- [How to Use AI Tools to Generate Remote Team Meeting](https://theluckystrike.github.io/remote-work-tools/how-to-use-ai-tool-to-generate-remote-team-meeting-agendas-f/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

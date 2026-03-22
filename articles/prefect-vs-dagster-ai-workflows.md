@@ -296,4 +296,5 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Snowflake vs Databricks AI Analytics](/ai-tools-compared/snowflake-vs-databricks-ai-analytics/)
 - [pandas AI vs Polars AI Data Processing Compared](/ai-tools-compared/pandas-ai-vs-polars-ai-data-processing/)
 - [Notion AI vs ClickUp AI: Task Writing Compared](/ai-tools-compared/notion-ai-vs-clickup-ai-task-writing-compared/)
+- [Reclaim AI vs Clockwise: Calendar Tools (2026)](https://theluckystrike.github.io/remote-work-tools/reclaim-ai-vs-clockwise-calendar-optimization/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

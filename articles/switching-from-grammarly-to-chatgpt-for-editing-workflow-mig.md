@@ -327,5 +327,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Grammarly vs ChatGPT for Non-Native English Writers](/ai-tools-compared/grammarly-vs-chatgpt-for-non-native-english-writers/)
 - [Export Perplexity Collections Before Switching to ChatGPT Se](/ai-tools-compared/export-perplexity-collections-before-switching-to-chatgpt-se/)
 - [Switching from ChatGPT Plus to Perplexity Pro Feature Compar](/ai-tools-compared/switching-from-chatgpt-plus-to-perplexity-pro-feature-compar/)
+- [Top 10 AI Tools for Developers in 2024](https://theluckystrike.github.io/remote-work-tools/top-10-ai-tools-for-developers-in-2024/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

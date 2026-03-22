@@ -381,5 +381,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Effective Workflow for Using AI](/ai-tools-compared/effective-workflow-for-using-ai-to-debug-production-issues-from-logs/)
 - [Effective Workflow for Using AI — Generate](/ai-tools-compared/effective-workflow-for-using-ai-to-generate-and-maintain-changelog-documentation/)
 - [Effective Context Management Strategies for AI Coding](/ai-tools-compared/effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/)
+- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

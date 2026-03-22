@@ -423,5 +423,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How to Use Claude API Cheaply for Small Coding Projects](/ai-tools-compared/how-to-use-claude-api-cheaply-for-small-coding-projects/)
 - [Writing CLAUDE MD Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
 - [AI Tools for API Documentation from Code 2026](/ai-tools-compared/ai-tools-for-api-documentation-from-code-2026/)
+- [Example: Trigger BambooHR onboarding workflow via API](https://theluckystrike.github.io/remote-work-tools/best-onboarding-platform-for-remote-companies-processing-mor/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

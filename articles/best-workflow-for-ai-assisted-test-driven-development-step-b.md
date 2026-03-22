@@ -323,5 +323,6 @@ Claude and ChatGPT understand table-driven test patterns well. GitHub Copilot ge
 - [AI Coding Assistants for Go Testing Table Driven Tests Gener](/ai-tools-compared/ai-coding-assistants-for-go-testing-table-driven-tests-gener/)
 - [How to Use AI to Help Product Managers Write Data-Driven Fea](/ai-tools-compared/how-to-use-ai-to-help-product-managers-write-data-driven-fea/)
 - [AI-Assisted API Load Testing Tools Comparison 2026](/ai-tools-compared/ai-assisted-api-load-testing-tools-comparison/)
+- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

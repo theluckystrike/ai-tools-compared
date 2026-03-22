@@ -308,4 +308,5 @@ Yes. Git commit timestamps, PR open/close times, and CI pass rates are all progr
 - [Is Paying for AI Coding Tool Worth It for Junior Developer?](/ai-tools-compared/is-paying-for-ai-coding-tool-worth-it-for-junior-developer/)
 - [How to Evaluate AI Coding Tool Encryption Standards](/ai-tools-compared/how-to-evaluate-ai-coding-tool-encryption-standards-for-data/)
 - [Best Free AI Coding Tool With No Message Limits in 2026](/ai-tools-compared/best-free-ai-coding-tool-with-no-message-limits-2026/)
+- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

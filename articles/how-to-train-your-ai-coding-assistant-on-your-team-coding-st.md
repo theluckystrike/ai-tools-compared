@@ -290,5 +290,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [AI Coding Assistant Accuracy for TypeScript Svelte Component](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-svelte-component/)
 - [AI Coding Assistant Comparison for React Component](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
 - [AI Coding Assistant Comparison for Typescript monorepo](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-monorepo-with-turborepo-setup/)
+- [How to Use AI Tools to Generate Remote Team Meeting](https://theluckystrike.github.io/remote-work-tools/how-to-use-ai-tool-to-generate-remote-team-meeting-agendas-f/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

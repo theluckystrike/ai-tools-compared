@@ -252,4 +252,6 @@ In the repo. Wiki pages drift out of sync because they are not part of the PR pr
 
 - [AI Assistants for Creating Security Architecture Review Documentation](/ai-assistants-for-creating-security-architecture-review-docu/)
 - [Best AI Assistant for Generating Open Source Release Announcements](/best-ai-assistant-for-generating-open-source-release-announcements/)
+- [Best AI Assistant for Creating Open Source Project Branding](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)
+- [AI Tools for Analyzing Which Open Source Issues Would Benefi](/ai-tools-compared/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
 

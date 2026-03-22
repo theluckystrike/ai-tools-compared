@@ -231,6 +231,7 @@ Experiment with different input types—some tools handle website URLs, document
 - [AI Tab Organizer Chrome Extension: Managing Browser Tabs](/ai-tools-compared/ai-tab-organizer-chrome-extension/)
 - [Chrome Extension Budget Tracker Shopping](/ai-tools-compared/chrome-extension-budget-tracker-shopping/)
 - [Screen Sharing Chrome Extension](/ai-tools-compared/screen-sharing-chrome-extension/)
+- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 
 ## Related Articles
 

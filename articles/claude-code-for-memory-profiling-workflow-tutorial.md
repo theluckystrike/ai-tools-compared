@@ -402,5 +402,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Configure Claude Code Project Memory for Persistent](/ai-tools-compared/how-to-configure-claude-code-project-memory-for-persistent-c/)
 - [Claude Code for Taint Analysis Workflow Tutorial Guide](/ai-tools-compared/claude-code-for-taint-analysis-workflow-tutorial-guide/)
 - [Best AI Tools for Reviewing Embedded C Code for Memory](/ai-tools-compared/best-ai-tools-for-reviewing-embedded-c-code-for-memory-leak-and-buffer-overflow/)
+- [Claude Code for Faker.js Test Data Workflow Guide](https://theluckystrike.github.io/remote-work-tools/claude-code-for-faker-js-test-data-workflow-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

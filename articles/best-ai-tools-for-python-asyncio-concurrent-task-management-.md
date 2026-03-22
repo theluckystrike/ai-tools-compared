@@ -375,4 +375,5 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [How to Use AI to Debug Race Conditions in Python Asyncio](/ai-tools-compared/how-to-use-ai-to-debug-race-conditions-in-python-asyncio-concurrent-tasks/)
 - [Best AI Tools for Code Migration Python 2](/ai-tools-compared/best-ai-tools-for-code-migration-python-2-to-3-java-8-to-21-guide/)
 - [Using Claude Code for Backend and Cursor for Frontend Same](/ai-tools-compared/using-claude-code-for-backend-and-cursor-for-frontend-same-p/)
+- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

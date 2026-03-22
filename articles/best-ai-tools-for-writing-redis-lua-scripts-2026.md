@@ -130,6 +130,7 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [AI Tools for Writing Database Migration Rollback Scripts](/ai-tools-for-writing-database-migration-rollback-scripts-2026/)
 - [AI Tools for Writing Redis Caching Strategies 2026](/ai-tools-for-writing-redis-caching-strategies-2026/)
 - [Best AI Tools for Writing Database Seed Scripts 2026](/best-ai-tools-for-writing-database-seed-scripts-2026/)
+- [AI Code Completion for Writing Shell Commands Inside](/ai-tools-compared/ai-code-completion-for-writing-shell-commands-inside-scripts/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ChatGPT performs poorly on rate limiting patterns. It generates scripts that work for single-instance Redis but fail on cluster deployments. It misses the `EVALSHA` vs `EVAL` distinction entirely.

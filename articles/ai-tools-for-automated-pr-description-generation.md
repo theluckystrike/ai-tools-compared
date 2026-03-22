@@ -400,6 +400,7 @@ Teams consistently report 20-40% reduction in reviewer question comments on PRs 
 - [Best AI Tools for Writing GitHub Actions Workflows](/ai-tools-compared/best-ai-tools-for-writing-github-actions-workflows-2026/)
 - [AI Tools for Automated Code Documentation Generation](/ai-tools-compared/ai-tools-for-automated-code-documentation-generation-2026/)
 - [Claude vs ChatGPT for Technical Writing](/ai-tools-compared/claude-vs-chatgpt-for-technical-writing-2026/)
+- [AI for Automated Regression Test Generation from Bug](/ai-tools-compared/ai-for-automated-regression-test-generation-from-bug-reports/)
 ---
 
 ## Related Articles

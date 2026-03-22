@@ -407,6 +407,7 @@ Trying to change everything at once. Pick one or two practices, implement them w
 - [Best AI Coding Tool for Golang Developers 2026](/ai-tools-compared/best-ai-coding-tool-for-golang-developers-2026/)
 - [Best Budget AI Coding Assistant for Freelance Developers 202](/ai-tools-compared/best-budget-ai-coding-assistant-for-freelance-developers-202/)
 - [How to Manage AI Coding Context When Switching Between Diffe](/ai-tools-compared/how-to-manage-ai-coding-context-when-switching-between-diffe/)
+- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```

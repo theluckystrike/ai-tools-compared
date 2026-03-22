@@ -358,5 +358,6 @@ Yes. The profiling flags (`--prof`, `--inspect`) and external tools (clinic.js, 
 - [Claude Code for Taint Analysis Workflow Tutorial Guide](/ai-tools-compared/claude-code-for-taint-analysis-workflow-tutorial-guide/)
 - [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
 - [Claude Code Runbook Documentation Guide](/ai-tools-compared/claude-code-runbook-documentation-guide/)
+- [Claude Code for Faker.js Test Data Workflow Guide](https://theluckystrike.github.io/remote-work-tools/claude-code-for-faker-js-test-data-workflow-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

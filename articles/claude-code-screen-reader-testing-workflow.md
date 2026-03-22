@@ -403,4 +403,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Claude Code Parallel Testing Configuration](/ai-tools-compared/claude-code-parallel-testing-configuration/)
 - [Writing Claude Md Files That Teach AI Your Project Testing](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-testing-conventions-and-patterns/)
 - [Claude Code API Snapshot Testing Guide](/ai-tools-compared/claude-code-api-snapshot-testing-guide/)
+- [Claude Code for Faker.js Test Data Workflow Guide](https://theluckystrike.github.io/remote-work-tools/claude-code-for-faker-js-test-data-workflow-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -383,6 +383,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [AI Code Generation Quality for Java Pattern Matching](/ai-code-generation-quality-for-java-pattern-matching-and-swi/)
 - [AI Code Completion for Java Jakarta EE Migration from Javax](/ai-code-completion-for-java-jakarta-ee-migration-from-javax-/)
 - [AI Code Completion for Java Record Classes and Sealed](/ai-code-completion-for-java-record-classes-and-sealed-interf/)
+- [AI Tools for Writing Flutter Integration Tests with Patrol](/ai-tools-compared/ai-tools-for-writing-flutter-integration-tests-with-patrol-f/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

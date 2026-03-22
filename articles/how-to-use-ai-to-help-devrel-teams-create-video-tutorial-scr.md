@@ -480,5 +480,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Use AI to Help Sre Teams Create on Call Handoff Docum](/ai-tools-compared/how-to-use-ai-to-help-sre-teams-create-on-call-handoff-docum/)
 - [AI Tools for Devrel Teams Creating Developer Onboarding Chec](/ai-tools-compared/ai-tools-for-devrel-teams-creating-developer-onboarding-chec/)
 - [How to Use AI to Help SRE Teams Draft Root Cause Analysis](/ai-tools-compared/how-to-use-ai-to-help-sre-teams-draft-root-cause-analysis-do/)
+- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

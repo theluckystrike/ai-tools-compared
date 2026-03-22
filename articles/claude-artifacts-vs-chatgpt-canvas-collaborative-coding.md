@@ -385,5 +385,6 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Claude Artifacts Not Rendering Fix 2026](/ai-tools-compared/claude-artifacts-not-rendering-fix-2026/)
 - [How to Use Claude Artifacts](/ai-tools-compared/how-to-use-claude-artifacts-for-rapid-prototyping-react-components/)
 - [ChatGPT Plus vs Claude Pro Monthly Cost for Daily Coding](/ai-tools-compared/chatgpt-plus-vs-claude-pro-monthly-cost-for-daily-coding/)
+- [Best Open Source CRM for Remote Agency Self-Hosted Compared](https://theluckystrike.github.io/remote-work-tools/best-open-source-crm-for-remote-agency-self-hosted-compared-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

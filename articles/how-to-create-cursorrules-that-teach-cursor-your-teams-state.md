@@ -344,5 +344,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Writing Effective CursorRules for React TypeScript Projects](/ai-tools-compared/writing-effective-cursorrules-for-react-typescript-projects-/)
 - [How to Create .cursorrules That Enforce Your Teams React](/ai-tools-compared/how-to-create-cursorrules-that-enforce-your-teams-react-comp/)
 - [How to Use AI for Writing Effective Terraform State Manageme](/ai-tools-compared/how-to-use-ai-for-writing-effective-terraform-state-manageme/)
+- [How to Create Remote Employee Exit Interview Process](https://theluckystrike.github.io/remote-work-tools/how-to-create-remote-employee-exit-interview-process-for-distributed-teams/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

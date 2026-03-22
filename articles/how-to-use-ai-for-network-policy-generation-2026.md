@@ -335,6 +335,7 @@ Claude uses security group references (not CIDR blocks) for inter-tier rules —
 - [AI-Powered Service Mesh Configuration](/ai-tools-compared/ai-powered-service-mesh-configuration-2026/)
 - [AI-Powered API Gateway Configuration Tools](/ai-tools-compared/ai-powered-api-gateway-configuration-tools-2026/)
 - [AI Tools for Automated Load Balancer Config](/ai-tools-compared/ai-tools-for-load-balancer-config-2026/)
+- [AI Tools for Automated Vault Policy Generation 2026](/ai-tools-compared/ai-tools-for-automated-vault-policy-generation-2026/)
 
 ---
 

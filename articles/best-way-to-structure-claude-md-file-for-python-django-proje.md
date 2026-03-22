@@ -459,5 +459,6 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [Best Way to Configure CursorRules for Python FastAPI Project](/ai-tools-compared/best-way-to-configure-cursorrules-for-python-fastapi-project/)
 - [Copilot vs Claude Code for Scaffolding New Django REST Frame](/ai-tools-compared/copilot-vs-claude-code-for-scaffolding-new-django-rest-frame/)
 - [Best Way to Configure Claude Code to Understand Your Interna](/ai-tools-compared/best-way-to-configure-claude-code-to-understand-your-interna/)
+- [Claude Code for Faker.js Test Data Workflow Guide](https://theluckystrike.github.io/remote-work-tools/claude-code-for-faker-js-test-data-workflow-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

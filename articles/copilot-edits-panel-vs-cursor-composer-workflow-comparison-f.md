@@ -335,5 +335,6 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Cursor Composer Stuck in Loop: How to Fix](/ai-tools-compared/cursor-composer-stuck-in-loop-how-to-fix/)
 - [How to Transfer Cursor Composer Prompt Library](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code-commands/)
 - [How to Transfer Your Cursor Composer Prompt Library](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code/)
+- [Best Open Source CRM for Remote Agency Self-Hosted Compared](https://theluckystrike.github.io/remote-work-tools/best-open-source-crm-for-remote-agency-self-hosted-compared-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

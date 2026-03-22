@@ -275,5 +275,6 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [Best AI Tool for Principals Administrative Reporting](/ai-tools-compared/best-ai-tool-for-principals-administrative-reporting/)
 - [Best AI Tools for Automated Compliance Reporting for Cloud](/ai-tools-compared/best-ai-tools-for-automated-compliance-reporting-for-cloud-i/)
 - [Claude Code Coverage Reporting Setup Guide](/ai-tools-compared/claude-code-coverage-reporting-setup-guide/)
+- [AI Tools for Automated Code Coverage Reporting](/ai-tools-compared/ai-tools-for-code-coverage-reporting)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

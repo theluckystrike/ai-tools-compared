@@ -492,5 +492,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [AI Pair Programming Tools for C# and .NET Development](/ai-tools-compared/ai-pair-programming-tools-for-c-sharp-dotnet/)
 - [Best AI Features for Generating API Client Code](/ai-tools-compared/best-ai-features-for-generating-api-client-code-from-openapi/)
 - [AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026](/ai-tools-compared/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
+- [Async Pair Programming Workflow Using Recorded Walkthroughs](https://theluckystrike.github.io/remote-work-tools/async-pair-programming-workflow-using-recorded-walkthroughs-and-github/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

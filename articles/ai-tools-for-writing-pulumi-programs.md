@@ -412,6 +412,7 @@ When writing Pulumi TypeScript:
 - [Best AI Assistants for Pulumi Infrastructure Code in TypeScript](/ai-tools-compared/best-ai-assistants-for-pulumi-infrastructure-code-in-typescr/)
 - [Claude vs GPT-4 Terraform Pulumi Infrastructure Code](/ai-tools-compared/claude-vs-gpt4-terraform-pulumi-infrastructure-code-2026/)
 - [Best AI Tools for Writing GitHub Actions Workflows](/ai-tools-compared/best-ai-tools-for-writing-github-actions-workflows-2026/)
+- [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-compared/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)
 
 ---
 

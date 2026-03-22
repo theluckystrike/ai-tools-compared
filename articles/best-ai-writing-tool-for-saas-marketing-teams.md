@@ -259,6 +259,7 @@ Build a versioned context document that tracks product changes by date. When run
 - [Best AI Tools for SaaS Customer Support](/ai-tools-compared/best-ai-tools-for-saas-customer-support/)
 - [Best AI Tool for Marketing Managers Campaign Briefs](/ai-tools-compared/best-ai-tool-for-marketing-managers-campaign-briefs/)
 - [Jasper AI vs Anyword: Performance Marketing Copy Compared](/ai-tools-compared/jasper-ai-vs-anyword-performance-marketing-copy/)
+- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 
 ## Related Articles
 

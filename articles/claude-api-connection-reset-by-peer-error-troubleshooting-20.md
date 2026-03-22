@@ -322,5 +322,6 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 - [Claude Code API Error Handling Standards](/claude-code-api-error-handling-standards/)
 - [ChatGPT vs Claude for Writing API Documentation](/chatgpt-vs-claude-for-writing-api-documentation/)
 - [ChatGPT vs Claude for Writing Effective Celery Task Error](/chatgpt-vs-claude-for-writing-effective-celery-task-error-ha/)
+- [Writing Claude Md Files That Teach AI Your Project Specific](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

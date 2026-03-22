@@ -429,6 +429,7 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [ChatGPT vs Custom Chatbot for Business: A Developer Guide](/ai-tools-compared/chatgpt-vs-custom-chatbot-for-business/)
 - [ChatGPT Canvas Feature Is It Included in Plus or Team Only](/ai-tools-compared/chatgpt-canvas-feature-is-it-included-in-plus-or-team-only/)
 - [ChatGPT Team Admin Seat Does Admin Count Toward Billing Seat](/ai-tools-compared/chatgpt-team-admin-seat-does-admin-count-toward-billing-seat/)
+- [Asana vs Linear for a 10-Person Dev Team Comparison](https://theluckystrike.github.io/remote-work-tools/asana-vs-linear-for-a-10-person-dev-team-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

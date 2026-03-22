@@ -379,5 +379,6 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 - [Cursor AI Making Too Many API Calls Fix: Troubleshooting](/cursor-ai-making-too-many-api-calls-fix/)
 - [Cursor AI Not Autocompleting TypeScript](/cursor-ai-not-autocompleting-typescript-fix/)
 - [Cursor AI Slow on Large monorepo Fix (2026)](/cursor-ai-slow-on-large-monorepo-fix-2026/)
+- [Cursor Extensions Conflicting with AI](/ai-tools-compared/cursor-extensions-conflicting-with-ai-fix/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

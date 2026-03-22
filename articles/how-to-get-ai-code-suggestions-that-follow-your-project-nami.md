@@ -395,5 +395,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How Context Window Size Affects AI Code Suggestions](/ai-tools-compared/how-context-window-size-affects-ai-code-suggestions-in-different-idess/)
 - [Configure Claude Code](/ai-tools-compared/how-to-configure-claude-code-to-follow-your-teams-feature-fl/)
 - [What Code Snippets Get Logged in AI Coding Tool Provider Aud](/ai-tools-compared/what-code-snippets-get-logged-in-ai-coding-tool-provider-aud/)
+- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

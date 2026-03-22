@@ -362,6 +362,7 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [How to Build an AI-Powered Code Linter](/ai-tools-compared/how-to-build-ai-powered-code-linter/)
 - [How to Build an AI Code Review Bot](/ai-tools-compared/how-to-build-ai-code-review-bot/)
 - [Prompt Engineering Patterns for Code Generation](/ai-tools-compared/prompt-engineering-patterns-for-code-generation/)
+- [How to Build Custom AI Coding Workflows with MCP Server](/ai-tools-compared/how-to-build-custom-ai-coding-workflows-with-mcp-server-inte/)
 
 ## Related Articles
 

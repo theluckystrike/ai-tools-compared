@@ -445,4 +445,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Claude Code Runbook Documentation Guide](/ai-tools-compared/claude-code-runbook-documentation-guide/)
 - [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
 - [Does Claude Code Send Terminal Output to Anthropic Servers](/ai-tools-compared/does-claude-code-send-terminal-output-to-anthropic-servers-p/)
+- [Best Practices for Async Pull Request Reviews on](https://theluckystrike.github.io/remote-work-tools/best-practices-for-async-pull-request-reviews-on-distributed/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

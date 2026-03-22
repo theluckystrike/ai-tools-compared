@@ -282,5 +282,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [AI Tools for Product Managers Drafting Release](/ai-tools-compared/ai-tools-for-product-managers-drafting-release-communication-emails-from-feature-lists/)
 - [How to Use AI to Help Product Managers Write Data-Driven](/ai-tools-compared/how-to-use-ai-to-help-product-managers-write-data-driven-fea/)
 - [AI Tools for Generating Dependency Update Pull Request](/ai-tools-compared/ai-tools-for-generating-dependency-update-pull-request-descr/)
+- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

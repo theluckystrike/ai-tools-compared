@@ -307,5 +307,6 @@ Yes, and it is worth doing. Rules like "never suggest storing secrets in environ
 - [Best Practices for AI Tool Customization Files When Onboardi](/ai-tools-compared/best-practices-for-ai-tool-customization-files-when-onboardi/)
 - [Best Way to Structure CursorRules for Microservices Project](/ai-tools-compared/best-way-to-structure-cursorrules-for-microservices-project-/)
 - [Create CursorRules That Teach Cursor Your Team's State](/ai-tools-compared/how-to-create-cursorrules-that-teach-cursor-your-teams-state/)
+- [Hybrid Team Social Events: Best Practices (2026)](https://theluckystrike.github.io/remote-work-tools/best-practice-for-hybrid-team-social-events-including-both-r/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -378,5 +378,6 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [Best AI IDE Features for Writing Configuration Files YAML](/ai-tools-compared/best-ai-ide-features-for-writing-configuration-files-yaml-json-toml/)
 - [Best Practices for AI Coding Tool Project Configuration](/ai-tools-compared/best-practices-for-ai-coding-tool-project-configuration-in-l/)
 - [Best Practices for Maintaining AI Tool Configuration Files](/ai-tools-compared/best-practices-for-maintaining-ai-tool-configuration-files-a/)
+- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

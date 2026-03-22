@@ -350,4 +350,5 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [How Accurate Are AI Tools at Generating Rust Crossbeam](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
 - [Best AI Powered Chatops Tools](/ai-tools-compared/best-ai-powered-chatops-tools-for-slack-and-devops-integration/)
 - [How Accurate Are AI Tools at Generating TypeScript Zod](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-typescript-zod-schem/)
+- [How to Use AI Tools to Generate Remote Team Meeting](https://theluckystrike.github.io/remote-work-tools/how-to-use-ai-tool-to-generate-remote-team-meeting-agendas-f/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -264,5 +264,6 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [How to Write an Enterprise Acceptable Use Policy for AI](/ai-tools-compared/how-to-write-enterprise-acceptable-use-policy-for-ai-coding-assistants/)
 - [AI Coding Tool GDPR Compliance Checklist for European Engine](/ai-tools-compared/ai-coding-tool-gdpr-compliance-checklist-for-european-engine/)
 - [AI Tools for Automating Cloud Security Compliance Scanning I](/ai-tools-compared/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
+- [Reclaim AI vs Clockwise: Calendar Tools (2026)](https://theluckystrike.github.io/remote-work-tools/reclaim-ai-vs-clockwise-calendar-optimization/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

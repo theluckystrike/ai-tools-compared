@@ -438,5 +438,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Cursor AI Slow on Large monorepo Fix (2026)](/cursor-ai-slow-on-large-monorepo-fix-2026/)
 - [AI Code Completion Latency Comparison](/ai-code-completion-latency-comparison-copilot-vs-cursor-vs-cody-2026/)
 - [AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026](/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
+- [Cursor AI Making Too Many API Calls Fix: Troubleshooting](/ai-tools-compared/cursor-ai-making-too-many-api-calls-fix/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

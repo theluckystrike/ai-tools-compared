@@ -226,6 +226,7 @@ The DIY Claude approach works well for one-time deep dives or building custom co
 - [Best AI Tools for Cloud Cost Optimization Across AWS, Azure, GCP](/ai-tools-compared/best-ai-tools-for-cloud-cost-optimization-across-aws-azure-g/)
 - [AI Assistants for Multi-Cloud Infrastructure Management](/ai-tools-compared/ai-assistants-for-multicloud-infrastructure-management-and-d/)
 - [AI Tools for Automated Rate Limiter Config](/ai-tools-compared/ai-tools-automated-rate-limiter-config/)
+- [AI-Powered Log Analysis Tools for Debugging](/ai-tools-compared/ai-log-analysis-tools-for-debugging/)
 
 ---
 

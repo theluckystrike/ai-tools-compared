@@ -433,6 +433,7 @@ When pasting code to AI, include the comment: `// This is in commonMain source s
 - [Claude vs ChatGPT for Refactoring Legacy Java Code to Kotlin](/ai-tools-compared/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
 - [Best AI for Fixing Android Gradle Sync Failed Errors in Large Projects](/ai-tools-compared/best-ai-for-fixing-android-gradle-sync-failed-errors-in-larg/)
 - [AI Code Generation Quality for Java Pattern Matching and Switch Expressions](/ai-tools-compared/ai-code-generation-quality-for-java-pattern-matching-and-swi/)
+- [AI Code Completion for Kotlin Compose Multiplatform Shared](/ai-tools-compared/ai-code-completion-for-kotlin-compose-multiplatform-shared-u/)
 
 ## Related Articles
 

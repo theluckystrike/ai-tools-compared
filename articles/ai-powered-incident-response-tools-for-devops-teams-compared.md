@@ -422,6 +422,7 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Best AI Tool for Cybersecurity Analysts Incident Reports](/ai-tools-compared/best-ai-tool-for-cybersecurity-analysts-incident-reports/)
 - [Best Practices for AI Assisted Code Review Response and Revi](/ai-tools-compared/best-practices-for-ai-assisted-code-review-response-and-revi/)
 - [ChatGPT Slow Response Fix 2026: Complete Troubleshooting](/ai-tools-compared/chatgpt-slow-response-fix-2026/)
+- [Remote Team Runbook Template for Database Failover](https://theluckystrike.github.io/remote-work-tools/remote-team-runbook-template-for-database-failover-procedure/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

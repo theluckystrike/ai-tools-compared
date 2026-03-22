@@ -411,5 +411,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Effective Workflow for AI-Assisted Open Source Contribution](/ai-tools-compared/effective-workflow-for-ai-assisted-open-source-contribution-/)
 - [Effective Workflow for Using AI — Generate](/ai-tools-compared/effective-workflow-for-using-ai-to-generate-and-maintain-changelog-documentation/)
 - [AI Powered Log Analysis Tools for Production Debugging](/ai-tools-compared/ai-powered-log-analysis-tools-for-production-debugging-compa/)
+- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

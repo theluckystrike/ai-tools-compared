@@ -222,6 +222,7 @@ AI tools can also generate this validation code, and Claude will correctly note 
 - [Best AI Tools for Writing Systemd Units](/ai-tools-compared/best-ai-tools-for-writing-systemd-units-2026/)
 - [AI-Powered CI/CD Pipeline Optimization](/ai-tools-compared/ai-powered-cicd-pipeline-optimization-2026/)
 - [Best AI Tools for Writing Makefiles](/ai-tools-compared/best-ai-tools-for-writing-makefiles-2026/)
+- [AI Assistants for Writing Correct AWS IAM Policies](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
 
 ---
 

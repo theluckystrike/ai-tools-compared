@@ -338,6 +338,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Claude API Batch Processing for Large Document Workflows](/ai-tools-compared/claude-api-batch-processing-for-large-document-workflows/)
 - [Migrating from ChatGPT Plugins to Claude MCP Tools for.](/ai-tools-compared/migrating-from-chatgpt-plugins-to-claude-mcp-tools-for-coding-workflows/)
 - [Cheapest Way to Use Claude for Coding Projects 2026](/ai-tools-compared/cheapest-way-to-use-claude-for-coding-projects-2026/)
+- [Claude Code for Faker.js Test Data Workflow Guide](https://theluckystrike.github.io/remote-work-tools/claude-code-for-faker-js-test-data-workflow-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

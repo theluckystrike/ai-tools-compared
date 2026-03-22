@@ -440,6 +440,7 @@ This gives engineering managers a concrete number to bring to sprint planning ra
 - [AI-Powered Code Coverage Improvement Tools](/ai-tools-compared/ai-powered-code-coverage-improvement/)
 - [Claude Code Coverage Reporting Setup Guide](/ai-tools-compared/claude-code-coverage-reporting-setup-guide/)
 - [AI Tools for Automated PR Description Generation](/ai-tools-compared/ai-tools-for-automated-pr-description-generation/)
+- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)
 
 ---
 

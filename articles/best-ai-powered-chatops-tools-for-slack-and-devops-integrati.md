@@ -292,5 +292,6 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [AI Powered Tools for Predicting CI/CD Pipeline Failures](/ai-tools-compared/ai-powered-tools-for-predicting-ci-cd-pipeline-failures-befo/)
 - [Best AI Tools for Generating Red Team Engagement Plans](/ai-tools-compared/best-ai-tools-for-generating-red-team-engagement-plans-from-/)
 - [AI Tools for Automatic Subtitles and Captions](/ai-tools-compared/ai-tools-for-automatic-subtitles-and-captions/)
+- [Reclaim AI vs Clockwise: Calendar Tools (2026)](https://theluckystrike.github.io/remote-work-tools/reclaim-ai-vs-clockwise-calendar-optimization/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

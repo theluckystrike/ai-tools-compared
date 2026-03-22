@@ -364,4 +364,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [AI Powered Incident Response Tools for DevOps Teams Compared](/ai-tools-compared/ai-powered-incident-response-tools-for-devops-teams-compared/)
 - [AI Debugging Assistants Compared 2026](/ai-tools-compared/ai-debugging-assistants-compared-2026/)
 - [How to Use AI to Help Sre Teams Create on Call Handoff](/ai-tools-compared/how-to-use-ai-to-help-sre-teams-create-on-call-handoff-docum/)
+- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

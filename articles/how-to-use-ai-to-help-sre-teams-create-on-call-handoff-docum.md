@@ -533,5 +533,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Use AI to Help Devrel Create Comparison Tables](/ai-tools-compared/how-to-use-ai-to-help-devrel-create-comparison-tables-for-competing-api-features/)
 - [How to Use AI to Help Devrel Create Interactive Coding](/ai-tools-compared/how-to-use-ai-to-help-devrel-create-interactive-coding-playgrounds/)
 - [How to Use AI to Help QA Engineers Create Test Environment](/ai-tools-compared/how-to-use-ai-to-help-qa-engineers-create-test-environment-p/)
+- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

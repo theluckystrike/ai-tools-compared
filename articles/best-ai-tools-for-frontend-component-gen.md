@@ -334,6 +334,7 @@ The components that benefit least (lowest quality / highest manual work):
 - [AI Coding Assistant Comparison for React Component Generation](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
 - [Best AI Tools for Generating CSS from Designs](/ai-tools-compared/best-ai-tools-for-css-from-designs/)
 - [AI Coding Assistant Comparison for TypeScript Tailwind CSS](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-tailwind-css-c/)
+- [Best Self-Hosted AI Model for JavaScript TypeScript Code](/ai-tools-compared/best-self-hosted-ai-model-for-javascript-typescript-code-gen/)
 
 ## Related Articles
 

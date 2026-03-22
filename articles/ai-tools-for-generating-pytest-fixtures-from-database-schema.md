@@ -346,6 +346,7 @@ Yes. Specify `pytest-asyncio` and `httpx.AsyncClient` in your prompt. Claude gen
 - [AI Tools for Writing pytest Tests for Alembic Database Migrations](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migra/)
 - [AI Tools for Writing pytest Tests for FastAPI Endpoints](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-fastapi-endpoints-with/)
 - [Best AI Assistant for Creating pytest Conftest Files with Re](/ai-tools-compared/best-ai-assistant-for-creating-pytest-conftest-files-with-re/)
+- [Self-Hosted AI Tools for Generating Test Data and Fixtures](/ai-tools-compared/self-hosted-ai-tools-for-generating-test-data-and-fixtures-l/)
 
 ## Related Articles
 

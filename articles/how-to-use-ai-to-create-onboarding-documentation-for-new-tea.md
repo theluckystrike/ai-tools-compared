@@ -232,6 +232,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Copilot vs Claude Code for Scaffolding New Django REST Frame](/ai-tools-compared/copilot-vs-claude-code-for-scaffolding-new-django-rest-frame/)
 - [Effective Strategies for Using AI](/ai-tools-compared/effective-strategies-for-using-ai-to-learn-new-programming-languages-faster/)
 - [AI Employee Onboarding Tools Comparison 2026](/ai-tools-compared/ai-employee-onboarding-tools-comparison-2026/)
+- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 
 ```
 

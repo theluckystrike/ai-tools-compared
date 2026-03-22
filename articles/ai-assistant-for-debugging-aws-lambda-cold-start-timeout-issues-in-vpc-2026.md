@@ -347,5 +347,6 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 - [AI Tools for Debugging Flaky Cypress Tests Caused by Timing](/ai-tools-for-debugging-flaky-cypress-tests-caused-by-timing-issues/)
 - [Best AI Assistant for Debugging CSS Custom Property](/best-ai-assistant-for-debugging-css-custom-property-inheritance-failures-in-shadow-dom/)
 - [Best AI Assistant for Debugging CSS Grid Layout Overflow](/best-ai-assistant-for-debugging-css-grid-layout-overflow-iss/)
+- [Best AI Assistant for Debugging CSS Z Index Stacking](/ai-tools-compared/best-ai-assistant-for-debugging-css-z-index-stacking-context/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

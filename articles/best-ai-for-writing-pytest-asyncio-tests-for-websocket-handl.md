@@ -309,6 +309,7 @@ Regardless of which tool you choose, follow these practices:
 - [AI Tools for Writing pytest Tests for FastAPI Endpoints](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-fastapi-endpoints-with/)
 - [AI Tools for Writing pytest Tests with Moto Library for AWS](/ai-tools-compared/ai-tools-for-writing-pytest-tests-with-moto-library-for-aws-/)
 - [Best AI for Writing pytest Asyncio Tests for WebSocket Handl](/ai-tools-compared/best-ai-for-writing-pytest-asyncio-tests-for-websocket-handl/)
+- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 
 ## Frequently Asked Questions
 

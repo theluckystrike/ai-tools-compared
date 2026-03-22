@@ -318,5 +318,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Reduce AI Coding Tool Costs Without Losing](/ai-tools-compared/how-to-reduce-ai-coding-tool-costs-without-losing-productivi/)
 - [How to Use AI Coding Tools Without Becoming Dependent on Aut](/ai-tools-compared/how-to-use-ai-coding-tools-without-becoming-dependent-on-aut/)
 - [Best AI Assistant for Product Managers Writing Sprint](/ai-tools-compared/best-ai-assistant-for-product-managers-writing-sprint-retrospective-summaries-from-notes-2026/)
+- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

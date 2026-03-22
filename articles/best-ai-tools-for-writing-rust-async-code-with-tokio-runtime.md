@@ -328,6 +328,7 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [Copilot vs Cursor for Writing Rust Error Handling with](/ai-tools-compared/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
 - [How Accurate Are AI Tools for Rust Unsafe Code Blocks](/ai-tools-compared/how-accurate-are-ai-tools-for-rust-unsafe-code-blocks-and-ff/)
 - [AI Coding Assistant for Rust Developers Compared](/ai-tools-compared/ai-coding-assistant-for-rust-developers-compared/)
+- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

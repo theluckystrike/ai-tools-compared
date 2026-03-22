@@ -530,6 +530,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [AI Code Suggestion Quality When Working With Environment Var](/ai-tools-compared/ai-code-suggestion-quality-when-working-with-environment-var/)
 - [Copilot Next Edit Suggestion Feature How It Predicts Your In](/ai-tools-compared/copilot-next-edit-suggestion-feature-how-it-predicts-your-in/)
 - [Cursor Tab Accepting Wrong Suggestion Fix](/ai-tools-compared/cursor-tab-accepting-wrong-suggestion-fix/)
+- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

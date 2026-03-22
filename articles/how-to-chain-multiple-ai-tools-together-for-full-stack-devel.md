@@ -299,6 +299,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Manage AI Coding Context Across Multiple Related Repo](/ai-tools-compared/how-to-manage-ai-coding-context-across-multiple-related-repo/)
 - [Windsurf AI Flows Feature How It Chains Multiple Editing Ste](/ai-tools-compared/windsurf-ai-flows-feature-how-it-chains-multiple-editing-ste/)
 - [AI Coding Assistants for TypeScript Express Middleware Chain](/ai-tools-compared/ai-coding-assistants-for-typescript-express-middleware-chain/)
+- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -457,5 +457,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [ChatGPT Canvas Feature Is It Included in Plus or Team Only](/ai-tools-compared/chatgpt-canvas-feature-is-it-included-in-plus-or-team-only/)
 - [ChatGPT Team Admin Seat Does Admin Count Toward Billing Seat](/ai-tools-compared/chatgpt-team-admin-seat-does-admin-count-toward-billing-seat/)
 - [Grammarly Business vs ChatGPT Team for Enterprises](/ai-tools-compared/grammarly-business-vs-chatgpt-team-for-enterprises/)
+- [Best Hot Desking Software for Hybrid Offices with Under 100](https://theluckystrike.github.io/remote-work-tools/best-hot-desking-software-for-hybrid-offices-with-under-100-employees-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

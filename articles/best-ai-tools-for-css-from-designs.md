@@ -320,6 +320,7 @@ For one-off component extraction: Figma Dev Mode CSS, pasted into Claude with "m
 - [AI Coding Assistant Comparison for React Component Generation](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
 - [AI Coding Assistant Comparison for TypeScript Tailwind CSS](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-tailwind-css-c/)
 - [Which AI Tool Generates Better Vue 3 Composition API Components](/ai-tools-compared/which-ai-tool-generates-better-vue-3-composition-api-components/)
+- [AI Tools for Converting Figma Designs to Code in 2026](/ai-tools-compared/articles/ai-tools-for-converting-figma-designs-to-code-2026/)
 
 ## Related Articles
 

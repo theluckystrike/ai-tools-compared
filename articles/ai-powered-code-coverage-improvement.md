@@ -401,6 +401,7 @@ This creates an auditable record of coverage health alongside your commit histor
 - [Claude Code Coverage Reporting Setup Guide](/ai-tools-compared/claude-code-coverage-reporting-setup-guide/)
 - [AI Tools for Automated PR Description Generation](/ai-tools-compared/ai-tools-for-automated-pr-description-generation/)
 - [Best AI Tools for Writing Playwright Tests](/ai-tools-compared/best-ai-tools-for-writing-playwright-tests-2026/)
+- [AI-Powered Code Translation Tools Compared](/ai-tools-compared/ai-powered-code-translation-tools-compared/)
 
 ---
 
