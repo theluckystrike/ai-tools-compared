@@ -27,7 +27,17 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 AI assistants have become valuable tools for developers writing Jest tests, particularly when it comes to testing React error boundary fallback rendering. Testing error boundaries presents unique challenges that require understanding component lifecycle, error propagation, and state management. This guide examines how different AI coding assistants approach generating Jest tests for error boundary scenarios and what to look for when choosing an AI tool for this specific use case.
+
+## Key Takeaways
+
+- **Hook Support**: For modern React applications using functional components with error boundary hooks, the assistant should generate tests that work with `useErrorBoundary` or similar patterns.
+- **It understands complex patterns**: like useAsyncError hooks and Suspense integration without explicit prompting.
+- **This guide examines how**: different AI coding assistants approach generating Jest tests for error boundary scenarios and what to look for when choosing an AI tool for this specific use case.
+- **The best assistants understand**: React component patterns, Jest testing utilities, and how to properly simulate error conditions without causing test framework issues.
+- **If your component throws**: errors asynchronously, the test may need to use `act()` or wait for the error to propagate before asserting on the fallback.
+- **Claude provides the most**: complete error boundary test suites.
 
 ## Understanding Error Boundary Test Requirements
 

@@ -30,6 +30,15 @@ voice-checked: true---
 
 Claude Code excels at generating Playwright tests for multi-step form wizards because it understands complex state preservation, conditional navigation, step-specific validation, and asynchronous wait strategies. When given your form structure, Claude produces maintainable tests with proper selectors, correct async handling, and meaningful assertions that account for wizard-specific patterns like progress indicators and data persistence across steps.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Validation rules apply differently**: at each step, and some fields may only validate after users reach specific stages.
+- **Teams already using VS**: Code may prefer Copilot's tight integration.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+
 ## Why Multi-Step Form Wizards Need Specialized Testing
 
 Multi-step form wizards differ from simple single-page forms in several critical ways. Each step typically maintains partial form state that must persist when users navigate forward or backward. Conditional fields may appear or disappear based on previous selections. Progress indicators track completion status. Validation rules apply differently at each step, and some fields may only validate after users reach specific stages.
