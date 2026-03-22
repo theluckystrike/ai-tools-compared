@@ -8,6 +8,7 @@ permalink: /best-self-hosted-ai-tool-for-writing-unit-tests-in-java-loca/
 reviewed: true
 score: 8
 categories: [best-of]
+voice-checked: true
 tags: [ai-tools-compared, best-of, artificial-intelligence]
 ---
 

@@ -10,6 +10,7 @@ permalink: /ai-tools-that-analyze-application-performance-bottlenecks-fr/
 reviewed: true
 score: 8
 categories: [guides]
+voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]
 ---
 

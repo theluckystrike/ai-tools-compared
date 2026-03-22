@@ -9,6 +9,7 @@ permalink: /ai-code-completion-for-kotlin-compose-multiplatform-shared-u/
 reviewed: true
 score: 8
 categories: [guides]
+voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]
 ---
 
