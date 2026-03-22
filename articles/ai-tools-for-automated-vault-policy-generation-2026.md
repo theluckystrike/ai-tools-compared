@@ -207,6 +207,149 @@ Claude's response:
 - `sys/*` is dangerous — `sys/` contains Vault's own configuration, audit logs, and health endpoints. Read access to `sys/` includes `sys/config/ui` and `sys/seal-status`
 - Recommend narrowing to specific paths: `secret/data/myapp/*` and removing `sys/*` entirely unless specific sys paths are required
 
+## Dynamic Secrets for Databases
+
+One of Vault's most powerful features is generating short-lived database credentials on demand. AI tools can generate both the Vault configuration and the application integration code.
+
+**Prompt:**
+```text
+Write Vault Terraform configuration to set up dynamic PostgreSQL credentials.
+Database: postgres.internal:5432, dbname: orders.
+Create a role called "orders-service-role" that generates credentials with
+SELECT, INSERT, UPDATE on all tables in the public schema.
+Credentials should expire after 1 hour.
+```
+
+```hcl
+resource "vault_database_secret_backend_connection" "postgres" {
+  backend       = "database"
+  name          = "orders-postgres"
+  allowed_roles = ["orders-service-role"]
+
+  postgresql {
+    connection_url = "postgresql://{{username}}:{{password}}@postgres.internal:5432/orders"
+    max_open_connections = 5
+    max_connection_lifetime = "300s"
+  }
+
+  root_rotation_statements = [
+    "ALTER USER '{{name}}' WITH PASSWORD '{{password}}';"
+  ]
+}
+
+resource "vault_database_secret_backend_role" "orders_service" {
+  backend = "database"
+  name    = "orders-service-role"
+  db_name = vault_database_secret_backend_connection.postgres.name
+
+  default_ttl = "3600"   # 1 hour
+  max_ttl     = "86400"  # 24 hours max renewal
+
+  creation_statements = [
+    "CREATE ROLE \"{{name}}\" WITH LOGIN PASSWORD '{{password}}' VALID UNTIL '{{expiration}}';",
+    "GRANT SELECT, INSERT, UPDATE ON ALL TABLES IN SCHEMA public TO \"{{name}}\";",
+    "ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT, INSERT, UPDATE ON TABLES TO \"{{name}}\";"
+  ]
+
+  revocation_statements = [
+    "REVOKE ALL PRIVILEGES ON ALL TABLES IN SCHEMA public FROM \"{{name}}\";",
+    "DROP ROLE IF EXISTS \"{{name}}\";"
+  ]
+}
+```
+
+The `ALTER DEFAULT PRIVILEGES` statement ensures the dynamic user can access tables created after the role was configured — a detail that Claude adds proactively. Without it, dynamic users lose access to new tables without a policy change.
+
+## Secret Versioning and Rollback
+
+KV v2 stores multiple versions of each secret, and AI can help generate the management scripts:
+
+**Prompt:**
+```text
+Write a bash script to:
+1. Write a new version of secret/data/orders-service/config
+2. Verify the write succeeded and show the version number
+3. Roll back to the previous version if the application health check fails
+4. Archive (soft-delete) old versions beyond the last 5
+```
+
+```bash
+#!/usr/bin/env bash
+set -euo pipefail
+
+SECRET_PATH="secret/data/orders-service/config"
+METADATA_PATH="secret/metadata/orders-service/config"
+HEALTH_URL="http://orders-service:8080/health"
+
+# Write new version
+echo "Writing new secret version..."
+NEW_VERSION=$(vault kv put -mount=secret orders-service/config \
+  DB_HOST="postgres.internal" \
+  DB_PORT="5432" \
+  FEATURE_FLAG="enabled" \
+  -format=json | jq -r '.data.version')
+
+echo "Wrote version: ${NEW_VERSION}"
+
+# Wait for application to pick up new secret
+sleep 5
+
+# Health check
+HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" "${HEALTH_URL}")
+if [ "${HTTP_CODE}" != "200" ]; then
+  echo "Health check failed (HTTP ${HTTP_CODE}). Rolling back to version $((NEW_VERSION - 1))..."
+  vault kv rollback -mount=secret -version=$((NEW_VERSION - 1)) orders-service/config
+  echo "Rollback complete."
+  exit 1
+fi
+
+echo "Health check passed. Deployment successful."
+
+# Clean up old versions — keep last 5
+CURRENT_VERSION=$(vault kv metadata get -mount=secret -format=json orders-service/config \
+  | jq -r '.data.current_version')
+
+if [ "${CURRENT_VERSION}" -gt 5 ]; then
+  VERSIONS_TO_DELETE=$(seq 1 $((CURRENT_VERSION - 5)) | tr '\n' ',' | sed 's/,$//')
+  echo "Archiving old versions: ${VERSIONS_TO_DELETE}"
+  vault kv delete -mount=secret -versions="${VERSIONS_TO_DELETE}" orders-service/config
+fi
+```
+
+Claude uses `vault kv rollback` (available in Vault 1.9+) rather than a manual version re-write, which is the correct approach — rollback promotes an existing version as the new HEAD without creating ambiguous state.
+
+## Audit Log Analysis
+
+**Prompt:**
+```text
+Write a jq command to analyze Vault audit logs and find the top 10 secrets
+being accessed most frequently, showing path and request count.
+```
+
+```bash
+# Vault audit log is JSONL — one JSON object per line
+cat /var/log/vault/audit.log | \
+  jq -r 'select(.type == "request") | .request.path' | \
+  sort | uniq -c | sort -rn | head -10
+
+# Filter to only successful reads in the last hour
+cat /var/log/vault/audit.log | \
+  jq -r --arg cutoff "$(date -u -d '1 hour ago' +%Y-%m-%dT%H:%M:%SZ)" \
+  'select(.type == "response" and .time >= $cutoff and .response.auth != null)
+   | .request.path' | \
+  sort | uniq -c | sort -rn | head -10
+```
+
+AI is particularly useful for Vault audit log queries because the JSONL format and nested structure make ad-hoc jq expressions tedious to write correctly. Claude handles the nested field selection and date filtering without needing multiple iterations.
+
+## Related Reading
+
+- [AI-Powered Feature Flag Management Tools](/ai-tools-compared/ai-powered-feature-flag-management-tools-2026/)
+- [AI-Powered Observability Configuration Tools](/ai-tools-compared/ai-powered-observability-configuration-tools-2026/)
+- [Best AI Tools for Writing Systemd Units](/ai-tools-compared/best-ai-tools-for-writing-systemd-units-2026/)
+
+---
+
 ## Related Articles
 
 - [AI Tools for Automated Secrets Rotation and Vault Management](/ai-tools-compared/ai-tools-for-automated-secrets-rotation-and-vault-management/)
@@ -214,6 +357,7 @@ Claude's response:
 - [AI Policy Management Tools Enterprise Compliance](/ai-tools-compared/ai-policy-management-tools-enterprise-compliance-2026/)
 - [How to Configure AI Coding Tools to Exclude Secrets and Env](/ai-tools-compared/how-to-configure-ai-coding-tools-to-exclude-secrets-and-env-/)
 - [AI Tools for Automated Changelog Generation 2026](/ai-tools-compared/ai-tools-for-automated-changelog-generation-2026/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}
