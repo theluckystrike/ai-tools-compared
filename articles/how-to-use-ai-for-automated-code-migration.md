@@ -18,24 +18,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Code migration is one of the most time-intensive engineering tasks — and one where AI provides the clearest ROI. Migrating 200 files from one pattern to another is mechanical work that takes weeks manually. With AI-assisted automation, the same migration takes hours. This guide covers practical approaches to three migration types: framework/library upgrades, language ports, and API breaking changes.
 
-## Key Takeaways
-
-- Replace useHistory() with useNavigate()
-2.
-- **Code migration is one of the most time-intensive engineering tasks**: and one where AI provides the clearest ROI.
-- **Apply ONLY these transformations**: 1.
-- **OLD API**: {old_signature}
-
-NEW API:
-{new_signature}
-
-MIGRATION NOTES:
-{changelog}
-
-Transform any code that calls the old API to use the new API.
-- **If the file doesn't use this API**: return it unchanged.
-- **Test files**: Often use the old API in mock setups with different patterns than production code.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

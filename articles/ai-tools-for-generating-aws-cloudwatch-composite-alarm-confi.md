@@ -17,15 +17,6 @@ intent-checked: true
 
 Managing AWS CloudWatch alarms at scale becomes complex when you need composite alarms that evaluate multiple metric conditions. Writing these configurations manually in Terraform is error-prone and time-consuming. AI coding assistants now offer practical solutions for generating CloudWatch composite alarm configurations directly in your infrastructure code.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **AI tools work better**: with well-structured existing code because they can learn from patterns in your repository.
-- **Does AWS offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Suppose you need an**: alarm that triggers when either database CPU exceeds 80% AND connection count exceeds 500, OR when the database becomes unreachable.
-
 ## Table of Contents
 
 - [Why Composite Alarms Matter](#why-composite-alarms-matter)

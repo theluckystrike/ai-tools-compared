@@ -18,13 +18,6 @@ voice-checked: true
 
 To find open source issues worth contributing to, filter for `good first issue` or `help wanted` labels, then check if a maintainer has commented recently — issues with maintainer engagement in the last 30 days have 3x higher merge rates for PRs. AI tools (Claude, GPT-4) speed up the analysis: paste an issue body and ask "what would a fix require technically?" to estimate effort before starting. For systematic triage across repos, use the GitHub CLI to query and score issues programmatically.
 
-## Key Takeaways
-
-- **For systematic triage across repos**: use the GitHub CLI to query and score issues programmatically.
-- **Could this problem be**: caused by a recent update? Yes, updates frequently introduce new bugs or change behavior.
-- **If no one else reports it**: your local environment configuration is likely the cause.
-- **Should I reinstall the**: tool to fix this? A clean reinstall sometimes resolves persistent issues caused by corrupted caches or configuration files.
-
 ## Table of Contents
 
 - [Why Issue Analysis Matters for Contributors](#why-issue-analysis-matters-for-contributors)

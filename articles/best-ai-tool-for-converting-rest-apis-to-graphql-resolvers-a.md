@@ -38,6 +38,138 @@ Post model (Prisma): id, userId, title, content, status, createdAt
 
 Generate a GraphQL resolver for the posts field on User type.
 Use Prisma as the data layer. TypeScript.
+{% raw %}
+
+# Best AI Tool for Converting REST APIs to GraphQL Resolvers
+
+Converting REST endpoints to GraphQL resolvers requires mapping HTTP routes, request/response shapes, and error handling into GraphQL query/mutation types. AI tools handle this well when you provide clear API specifications.
+
+## Simple REST to GraphQL Conversion
+
+**Prompt to Claude:**
+```text
+Convert this REST API to GraphQL resolvers:
+
+REST endpoints:
+- GET /api/v1/users/{id} → returns User
+- POST /api/v1/users → creates User, accepts { name, email }
+- GET /api/v1/users/{id}/posts → returns Post[]
+
+GraphQL schema:
+type User {
+ id: ID!
+ name: String!
+ email: String!
+ posts: [Post!]!
+}
+
+type Post {
+ id: ID!
+ title: String!
+ content: String!
+ userId: ID!
+}
+
+type Query {
+ user(id: ID!): User
+ users: [User!]!
+}
+
+type Mutation {
+ createUser(name: String!, email: String!): User!
+}
+
+Write Apollo Server (Node.js) resolvers.
+```
+
+**Claude output:**
+
+```javascript
+import axios from 'axios';
+
+const API_BASE = 'http://api.example.com/api/v1';
+
+const resolvers = {
+ Query: {
+ user: async (_, { id }) => {
+ const response = await axios.get(`${API_BASE}/users/${id}`);
+ return response.data;
+ },
+ users: async () => {
+ const response = await axios.get(`${API_BASE}/users`);
+ return response.data;
+ }
+ },
+
+ Mutation: {
+ createUser: async (_, { name, email }) => {
+ const response = await axios.post(
+ `${API_BASE}/users`,
+ { name, email },
+ { headers: { 'Content-Type': 'application/json' } }
+ );
+ return response.data;
+ }
+ },
+
+ User: {
+ posts: async (user) => {
+ const response = await axios.get(
+ `${API_BASE}/users/${user.id}/posts`
+ );
+ return response.data;
+ }
+ }
+};
+
+export default resolvers;
+```
+
+Claude correctly identifies that `/users/{id}/posts` becomes a field resolver on the User type, not a top-level Query. This reduces over-fetching since posts are only fetched when requested.
+
+## REST API Batching (N+1 Prevention)
+
+**Prompt:**
+```text
+The previous resolver has N+1 problem: requesting 10 users and their posts
+makes 11 API calls (1 for users, 10 for posts). Use DataLoader to batch
+requests to /api/v1/users/batch?ids=1,2,3...
+```
+
+**Claude output:**
+
+```javascript
+import DataLoader from 'dataloader';
+import axios from 'axios';
+
+const postsLoader = new DataLoader(async (userIds) => {
+ // Batch fetch posts for multiple users in a single request
+ const response = await axios.get(
+ `${API_BASE}/users/batch/posts`,
+ { params: { ids: userIds.join(',') } }
+ );
+
+ // Return results in the same order as requested IDs
+ return userIds.map(userId =>
+ response.data.filter(post => post.userId === userId)
+ );
+});
+
+const resolvers = {
+ User: {
+ posts: (user) => postsLoader.load(user.id)
+ }
+};
+```
+
+Claude adds DataLoader correctly, batching the requests and returning results in the same order as the input IDs.
+
+## TypeScript Resolvers with Type Safety
+
+**Prompt:**
+```text
+Write the same resolvers in TypeScript with full type safety.
+Use Apollo Server types and a client for the REST API.
 ```
 
 **Claude output:**
@@ -45,40 +177,40 @@ Use Prisma as the data layer. TypeScript.
 ```typescript
 // Schema addition
 const typeDefs = gql`
-  extend type User {
-    posts(limit: Int = 10, status: PostStatus): PostConnection!
-  }
+ extend type User {
+ posts(limit: Int = 10, status: PostStatus): PostConnection!
+ }
 
-  enum PostStatus {
-    PUBLISHED
-    DRAFT
-  }
+ enum PostStatus {
+ PUBLISHED
+ DRAFT
+ }
 
-  type PostConnection {
-    posts: [Post!]!
-    total: Int!
-  }
+ type PostConnection {
+ posts: [Post!]!
+ total: Int!
+ }
 `;
 
 // Resolver
 const resolvers = {
-  User: {
-    posts: async (parent: { id: string }, args: { limit?: number; status?: PostStatus }, context: Context) => {
-      const where: Prisma.PostWhereInput = { userId: parent.id };
-      if (args.status) where.status = args.status;
+ User: {
+ posts: async (parent: { id: string }, args: { limit?: number; status?: PostStatus }, context: Context) => {
+ const where: Prisma.PostWhereInput = { userId: parent.id };
+ if (args.status) where.status = args.status;
 
-      const [posts, total] = await Promise.all([
-        context.prisma.post.findMany({
-          where,
-          take: args.limit ?? 10,
-          orderBy: { createdAt: 'desc' },
-        }),
-        context.prisma.post.count({ where }),
-      ]);
+ const [posts, total] = await Promise.all([
+ context.prisma.post.findMany({
+ where,
+ take: args.limit ?? 10,
+ orderBy: { createdAt: 'desc' },
+ }),
+ context.prisma.post.count({ where }),
+ ]);
 
-      return { posts, total };
-    },
-  },
+ return { posts, total };
+ },
+ },
 };
 ```
 
@@ -96,11 +228,11 @@ If you are writing the schema first and need resolver stubs, Copilot autocomplet
 // Copilot suggests:
 
 const resolvers = {
-  Query: {
-    user: async (_: unknown, { id }: { id: string }, context: Context) => {
-      return context.db.users.findOne({ id }); // or context.prisma.user.findUnique
-    },
-  },
+ Query: {
+ user: async (_: unknown, { id }: { id: string }, context: Context) => {
+ return context.db.users.findOne({ id }); // or context.prisma.user.findUnique
+ },
+ },
 };
 ```
 
@@ -115,8 +247,8 @@ For automatic REST-to-GraphQL wrapping (not full resolver generation), StepZen a
 ```yaml
 # StepZen: define REST endpoint in SDL
 type Query {
-  user(id: ID!): User
-    @rest(endpoint: "https://api.example.com/users/$id")
+ user(id: ID!): User
+ @rest(endpoint: "https://api.example.com/users/$id")
 }
 ```
 
@@ -138,27 +270,27 @@ REST APIs typically pass authentication via headers (`Authorization: Bearer toke
 ```typescript
 // REST handler (Express):
 app.get('/profile', authenticate, (req, res) => {
-  res.json({ userId: req.user.id, email: req.user.email });
+ res.json({ userId: req.user.id, email: req.user.email });
 });
 
 // GraphQL resolver equivalent (Claude generates this correctly):
 const resolvers = {
-  Query: {
-    profile: async (_: unknown, __: unknown, context: Context) => {
-      if (!context.user) throw new AuthenticationError('Not authenticated');
-      return {
-        userId: context.user.id,
-        email: context.user.email,
-      };
-    },
-  },
+ Query: {
+ profile: async (_: unknown, __: unknown, context: Context) => {
+ if (!context.user) throw new AuthenticationError('Not authenticated');
+ return {
+ userId: context.user.id,
+ email: context.user.email,
+ };
+ },
+ },
 };
 
 // Context builder (needs to be set up separately):
 const context = ({ req }: { req: Request }): Context => {
-  const token = req.headers.authorization?.replace('Bearer ', '');
-  const user = token ? verifyToken(token) : null;
-  return { user, prisma };
+ const token = req.headers.authorization?.replace('Bearer ', '');
+ const user = token ? verifyToken(token) : null;
+ return { user, prisma };
 };
 ```
 
@@ -187,15 +319,15 @@ import DataLoader from 'dataloader';
 
 // In context setup:
 postsLoader: new DataLoader(async (userIds: readonly string[]) => {
-  const posts = await prisma.post.findMany({
-    where: { userId: { in: [...userIds] } },
-  });
-  return userIds.map(id => posts.filter(p => p.userId === id));
+ const posts = await prisma.post.findMany({
+ where: { userId: { in: [...userIds] } },
+ });
+ return userIds.map(id => posts.filter(p => p.userId === id));
 }),
 
 // In resolver:
 User: {
-  posts: (parent, args, context) => context.postsLoader.load(parent.id),
+ posts: (parent, args, context) => context.postsLoader.load(parent.id),
 }
 ```
 
@@ -213,6 +345,140 @@ AI-generated resolvers require validation before production use. The most reliab
 4. Run under load to verify N+1 issues are not present (use Apollo Studio's field latency tracing or similar).
 
 Claude's output is accurate for the happy path but sometimes misses edge cases like null handling on optional fields or error propagation from the data layer. Run the resolver with a null parent, a missing resource, and a database error to verify all three are handled correctly.
+import { GraphQLResolverMap } from 'apollo-server-core';
+import axios, { AxiosInstance } from 'axios';
+
+interface User {
+  id: string;
+  name: string;
+  email: string;
+}
+
+interface Post {
+  id: string;
+  title: string;
+  content: string;
+  userId: string;
+}
+
+interface ResolverContext {
+  apiClient: AxiosInstance;
+}
+
+export const resolvers: GraphQLResolverMap<ResolverContext> = {
+  Query: {
+    user: async (_, { id }, context) => {
+      const { data } = await context.apiClient.get<User>(
+        `/users/${id}`
+      );
+      return data;
+    },
+    users: async (_, __, context) => {
+      const { data } = await context.apiClient.get<User[]>('/users');
+      return data;
+    }
+  },
+
+  Mutation: {
+    createUser: async (_, { name, email }, context) => {
+      const { data } = await context.apiClient.post<User>(
+        '/users',
+        { name, email }
+      );
+      return data;
+    }
+  },
+
+  User: {
+    posts: async (user, _, context) => {
+      const { data } = await context.apiClient.get<Post[]>(
+        `/users/${user.id}/posts`
+      );
+      return data;
+    }
+  }
+};
+```
+
+## Error Handling
+
+**Prompt:**
+```text
+Add error handling to the resolvers. REST API returns:
+- 404 if user not found
+- 409 if email exists (conflict)
+- 401 if unauthorized
+Map these to GraphQL errors.
+```
+
+**Claude output:**
+
+```javascript
+const resolvers = {
+  Mutation: {
+    createUser: async (_, { name, email }, context) => {
+      try {
+        const response = await context.apiClient.post('/users', {
+          name,
+          email
+        });
+        return response.data;
+      } catch (error) {
+        if (error.response?.status === 409) {
+          throw new GraphQLError(
+            'Email already in use',
+            {
+              extensions: {
+                code: 'EMAIL_ALREADY_EXISTS',
+                originalStatus: 409
+              }
+            }
+          );
+        }
+        if (error.response?.status === 401) {
+          throw new GraphQLError('Unauthorized', {
+            extensions: { code: 'UNAUTHENTICATED' }
+          });
+        }
+        throw new GraphQLError('Internal server error');
+      }
+    }
+  }
+};
+```
+
+## Tool Comparison
+
+| Feature | Claude | ChatGPT |
+|---------|--------|---------|
+| Basic resolver generation | Excellent | Good |
+| REST URL mapping | Accurate | Sometimes wrong |
+| Nested resolvers (N+1) | Identifies problem, suggests DataLoader | Often misses N+1 |
+| Batching implementation | Correct grouping/ordering | Incomplete |
+| TypeScript types | Thorough | Minimal |
+| Error handling | Maps HTTP to GraphQL errors | Generic errors |
+| Query optimization | Suggests dataloader | Doesn't mention optimization |
+| Authorization context | Includes in context pattern | Omitted |
+
+## Common Pitfalls
+
+Claude avoids:
+- Writing top-level Query fields for nested resources
+- Forgetting DataLoader ordering — results must match request order
+- Not handling HTTP error codes (404, 401, 409)
+- Mixing REST client library versions
+- Ignoring pagination (REST uses limit/offset; GraphQL uses cursor)
+
+## Related Articles
+
+- [AI Tools for Writing Jest Tests for Graphql Resolvers](/ai-tools-for-writing-jest-tests-for-graphql-resolvers-with-dataloader-batching/)
+- [Best AI Tool for Converting MySQL Queries to Postgres](/best-ai-tool-for-converting-mysql-queries-to-postgres-compat/)
+- [Best AI Tools for Writing GraphQL Resolvers 2026](/best-ai-tools-for-writing-graphql-resolvers-2026/)
+- [AI Tools for Converting Raw JSON API Responses into Clean](/ai-tools-compared/ai-tools-for-converting-raw-json-api-responses-into-clean-pandas-dataframes/)
+
+---
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions
 
@@ -233,4 +499,5 @@ For a 30-endpoint REST API with a well-documented schema, expect 2-3 days with C
 - [AI Tools for Writing Jest Tests for GraphQL Resolvers](/ai-tools-for-writing-jest-tests-for-graphql-resolvers-with-dataloader-batching/)
 - [Best AI Tool for Converting MySQL Queries to Postgres](/best-ai-tool-for-converting-mysql-queries-to-postgres-compat/)
 - [Best AI Tools for Writing GraphQL Resolvers 2026](/best-ai-tools-for-writing-graphql-resolvers-2026/)
+- [AI Tools for Converting Raw JSON API Responses into Clean](/ai-tools-compared/ai-tools-for-converting-raw-json-api-responses-into-clean-pandas-dataframes/)
 

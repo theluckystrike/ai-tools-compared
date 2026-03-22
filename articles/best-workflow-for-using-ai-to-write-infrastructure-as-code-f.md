@@ -17,15 +17,6 @@ intent-checked: true
 
 Converting architecture diagrams into infrastructure as code (IaC) has traditionally been a time-consuming manual task. Developers draw the desired infrastructure, then manually write Terraform, CloudFormation, or Pulumi code to match. AI tools now offer a more efficient path—transforming visual diagrams directly into deployable infrastructure code. This guide shows you the most effective workflow for achieving this conversion reliably.
 
-## Key Takeaways
-
-- **Use AI as a**: productivity multiplier for the 80% of standard patterns, then handle edge cases manually.
-- **What's the cost of**: using AI to generate IaC? Minimal if using API-based tools like Claude (typically $0.01-0.10 per architecture).
-- **This guide shows you**: the most effective workflow for achieving this conversion reliably.
-- **The more context you provide upfront**: the better the initial output.
-- **For Cursor**: you can use its file context capabilities.
-- **Create a new Terraform**: file in your project, then use Cursor's chat to describe the diagram while referencing any existing infrastructure code in your workspace.
-
 ## Table of Contents
 
 - [Why Use AI for Diagram-to-Code Conversion](#why-use-ai-for-diagram-to-code-conversion)
@@ -400,5 +391,6 @@ Minimal if using API-based tools like Claude (typically $0.01-0.10 per architect
 - [Best AI Assistants for Pulumi Infrastructure Code](/ai-tools-compared/best-ai-assistants-for-pulumi-infrastructure-code-in-typescript-2026/)
 - [Best AI Tools for Writing AWS CDK Infrastructure Code](/ai-tools-compared/best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/)
 - [Claude vs Gpt4 Terraform Pulumi Infrastructure Code](/ai-tools-compared/claude-vs-gpt4-terraform-pulumi-infrastructure-code-2026/)
+- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

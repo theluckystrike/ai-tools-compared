@@ -19,23 +19,6 @@ voice-checked: true
 
 When your production system triggers an alert at 3 AM, you need your AI assistant to understand the full context immediately. The Model Context Protocol (MCP) enables you to connect monitoring tools directly to AI, creating a powerful feedback loop where your observability data becomes actionable intelligence. This guide walks you through setting up MCP to feed monitoring alerts into AI systems, helping you respond to incidents faster with better context.
 
-## Key Takeaways
-
-- **HighMemoryUsage on host-prod-03 -**: Memory usage at 94% for 5 minutes - Started: 2026-03-16T02:45:00Z - Labels: environment=production, service=database 2.
-- **This guide walks you**: through setting up MCP to feed monitoring alerts into AI systems, helping you respond to incidents faster with better context.
-- **This guide uses Prometheus**: and Alertmanager as examples, but the same principles apply to Datadog, Grafana, CloudWatch, or similar platforms.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **Consider a security review**: if your application handles sensitive user data.
-
-### Step 1: Understand MCP for Monitoring Integration
-
-
-Model Context Protocol provides a standardized way for AI systems to interact with external data sources and tools. Rather than manually copying error messages or switching between terminals and dashboards, MCP allows your AI assistant to directly query monitoring systems, retrieve alert details, and analyze trends in real time.
-
-
-The practical benefit is straightforward: when an alert fires, your AI can immediately access the relevant metrics, logs, and historical data without you typing commands or navigating interfaces. This creates a faster triage loop where AI helps you understand what's happening and suggests remediation steps based on actual system state.
-
-
 ## Prerequisites and Setup
 
 

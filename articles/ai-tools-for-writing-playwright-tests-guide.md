@@ -17,13 +17,6 @@ tags: [ai-tools-compared]
 
 Playwright tests fail in two ways: they don't test the right thing, or they fail on CI because of timing issues and environment differences. AI tools can write Playwright code quickly, but the quality gap shows up in locator strategy, wait handling, and test isolation. This guide covers the patterns that separate good Playwright AI output from bad.
 
-## Key Takeaways
-
-- **Playwright tests fail in two ways**: they don't test the right thing, or they fail on CI because of timing issues and environment differences.
-- **Topics covered**: the test quality spectrum, task 1: login flow with auth state, task 2: page object model
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-- **Use-case recommendations**: Specific guidance based on team size and requirements
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

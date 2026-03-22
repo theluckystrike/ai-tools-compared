@@ -276,19 +276,6 @@ SELECT
 
 Claude correctly uses `jsonb_array_elements_text` with `LATERAL` to unnest the product ID array — this is the PostgreSQL-idiomatic approach. GPT-4o sometimes uses `json_each` (for plain JSON) or misses the `LATERAL` keyword.
 
-## Summary
-
-| Query Type | Claude | GPT-4o |
-|-----------|--------|--------|
-| Window functions | Excellent | Good |
-| Recursive CTEs (cycle guards) | Correct | Often misses guard |
-| Interval arithmetic | Idiomatic | Fragile workarounds |
-| JSONB operations | Correct | Usually correct |
-| FILTER clause aggregation | Uses it | Uses CASE WHEN |
-| Query formatting/readability | Excellent | Good |
-
-For complex analytical SQL, Claude produces more idiomatic PostgreSQL with better handling of edge cases. GPT-4o is fine for straightforward CRUD queries but shows cracks on advanced features.
-
 ## Related Articles
 
 - [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)

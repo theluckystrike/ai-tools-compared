@@ -20,15 +20,6 @@ When you work with Claude Code or similar AI coding assistants, the quality of o
 
 This guide shows you how to write CLAUDE.md files that effectively teach AI assistants about your testing conventions and patterns.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Does Claude offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Step 3**: Write rules as commands, not suggestions. Use phrases like "always," "never," "use X instead of Y." Hedging with "prefer" or "consider" gives AI room to revert to defaults.
-- **Documenting aspirations**: not reality. If your codebase has 300 tests using getByTestId and your CLAUDE.md says to use getByRole, AI will produce inconsistent output.
-
 ## Table of Contents
 
 - [Why Testing Conventions Belong in CLAUDE.md](#why-testing-conventions-belong-in-claudemd)

@@ -18,15 +18,6 @@ tags: [ai-tools-compared, comparison]
 
 When evaluating AI-powered customer service platforms, developers need more than marketing claims—they need concrete technical details about APIs, automation capabilities, and integration patterns. This comparison examines HubSpot's AI features and Salesforce Service Cloud AI from a practical development perspective.
 
-## Key Takeaways
-
-- **Teams under 10 agents**: on Professional pay around $900/month total for the service suite.
-- **Salesforce Service Cloud Enterprise**: runs approximately $3,300/month before Einstein add-ons.
-- **The total cost of**: ownership gap widens further when you factor in Salesforce implementation consulting fees, which routinely run $50,000-$200,000 for complex deployments.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-- **The platform uses a**: service-oriented architecture where AI features like summarization, classification, and content generation plug into existing objects (tickets, conversations, contacts).
-
 ## Table of Contents
 
 - [Platform Architecture Overview](#platform-architecture-overview)

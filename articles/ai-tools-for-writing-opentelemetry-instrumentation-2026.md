@@ -17,15 +17,6 @@ intent-checked: true
 
 Use Claude 3.5 Sonnet for designing instrumentation strategies that span multiple services, GitHub Copilot for generating boilerplate span and metric code while you code, or ChatGPT 4o for quick debugging when span attributes are missing or traces don't correlate. This guide walks through how each tool handles OpenTelemetry context propagation, sampling decisions, and SDK configuration across Python, Go, and Node.js applications.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Let them use it for 2-3 weeks**: then gather their honest feedback.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **I need distributed traces**: that show the full request path from user browser to database.
-
 ## Table of Contents
 
 - [OpenTelemetry's Instrumentation Challenge](#opentelemetrys-instrumentation-challenge)

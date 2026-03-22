@@ -17,16 +17,6 @@ voice-checked: true
 
 AI assistants can generate HTML output, but without proper system prompts, the markup often lacks semantic structure, proper ARIA attributes, or keyboard accessibility. This guide shows you how to write system prompts that consistently produce accessible, standards-compliant HTML.
 
-## Key Takeaways
-
-- **Use a screen reader**: to experience the content as users would; NVDA (Windows, free), JAWS (Windows, paid), and VoiceOver (macOS/iOS, built-in) are the most widely used 4.
-- **Use ARIA attributes only**: when semantic HTML is insufficient 6.
-- **If the output lacks**: proper heading hierarchy, missing alt text on images, or no keyboard navigation support, you inherit accessibility violations that affect real users.
-- **WCAG 2.1 AA is**: the benchmark most organizations target.
-- **Use <nav> for navigation regions**: <main> for primary content, <footer> for footer
-5.
-- **Use the WAVE evaluator**: or axe DevTools to scan generated pages 2.
-
 ## Table of Contents
 
 - [Why Accessible HTML Matters for AI Output](#why-accessible-html-matters-for-ai-output)

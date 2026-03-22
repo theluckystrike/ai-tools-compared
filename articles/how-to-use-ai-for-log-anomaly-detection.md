@@ -19,15 +19,6 @@ Production logs contain the answer to most incidents, but finding anomalies in 1
 
 This guide builds a practical log anomaly detector using OpenAI embeddings for pattern clustering and Claude for root cause analysis.
 
-## Key Takeaways
-
-- **Production logs contain the**: answer to most incidents, but finding anomalies in 100k+ lines per minute is not a human-scale problem.
-- **LIKELY CAUSE**: What probably caused this anomaly (1-2 sentences)
-2.
-- **This guide builds a**: practical log anomaly detector using OpenAI embeddings for pattern clustering and Claude for root cause analysis.
-- **SEVERITY**: [P1-Critical / P2-High / P3-Medium / P4-Low]
-3.
-
 ## The Architecture
 
 ```

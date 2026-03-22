@@ -19,18 +19,6 @@ Write Prometheus alerts with AI by providing metric definitions, alert threshold
 
 Writing Prometheus alerting rules manually can be time-consuming and error-prone. AI assistance has evolved significantly, offering developers powerful ways to generate, validate, and optimize Prometheus alerting rules. This guide shows practical techniques for using AI effectively in your alerting workflow.
 
-## Key Takeaways
-
-- **Current value**: {{ $value | printf \"%.2f\" }}%"
-```
-
-You can adapt this template by changing the threshold, duration, and labels to match your requirements.
-- **Questions like "make this**: more sensitive" or "add a label for the team" yield better results than starting over.
-- **Too short causes noise;**: too long delays detection.
-- **Include**: alert tiers (warning/critical), expected alert volume,
-common false positive causes, and resolution workflows.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-
 ## Table of Contents
 
 - [Why Use AI for Prometheus Alerting Rules](#why-use-ai-for-prometheus-alerting-rules)
@@ -179,7 +167,7 @@ AI sometimes generates overly complex expressions when simpler ones would work. 
 
 - Overly broad label matchers that trigger on unintended metrics
 
-Always review the generated `for` duration—the time an condition must be true before the alert fires. Too short causes noise; too long delays detection.
+Always review the generated `for` duration—the time a condition must be true before the alert fires. Too short causes noise; too long delays detection.
 
 ## Advanced Use Cases: AI for Alert Optimization
 

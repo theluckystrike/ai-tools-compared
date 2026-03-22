@@ -17,15 +17,6 @@ voice-checked: true
 
 The best AI tools for conversational commerce are Claude and GPT-4 APIs for flexible, code-first implementations, paired with RAG systems for product catalog accuracy. For teams wanting faster deployment with less code, Voiceflow, Botpress, and Amazon Lex offer configuration-driven alternatives. This guide compares these approaches with practical code examples covering intent recognition, tool calling for inventory and orders, and multichannel deployment patterns.
 
-## Key Takeaways
-
-- **The best AI tools**: for conversational commerce are Claude and GPT-4 APIs for flexible, code-first implementations, paired with RAG systems for product catalog accuracy.
-- **Best fit**: Marketing or CX teams that need to ship a working assistant in days, with moderate integration requirements.
-- **Best fit**: Engineering teams that need self-hosted deployment or complex backend integrations without per-message API costs.
-- **Best fit**: Enterprises already on AWS with existing Lambda functions and a need for voice channel support.
-- **LLM-only**: use GPT or Claude directly for simple FAQ and product discovery.
-- **What is the typical**: latency for LLM-based commerce assistants? Claude and GPT-4o typically return first-token responses in 500–900ms under normal load.
-
 ## Table of Contents
 
 - [Understanding Conversational Commerce Requirements](#understanding-conversational-commerce-requirements)

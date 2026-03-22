@@ -17,25 +17,6 @@ voice-checked: true
 
 To migrate from Copilot for Neovim to Claude Code's terminal workflow, install Claude Code via `brew install anthropic-cli` or the direct installer, authenticate with `claude auth`, then run `claude` from your project root to start an AI session with full codebase context. Instead of accepting inline suggestions as you type, you describe what you need in the terminal and review the generated code before applying it. This shift from passive suggestion acceptance to explicit AI collaboration gives you deeper project analysis, multi-file refactoring capabilities, and more control over every line that enters your codebase.
 
-## Key Takeaways
-
-- **This extra step gives**: you more control and often results in better code because you're actively evaluating each suggestion rather than accepting by reflex.
-- **Instead of "fix this function**:" try "update the handleRequest function in api/users.js to return proper HTTP status codes."
-
-The more context you provide about your intent, the better the results.
-- **Most Neovim users find**: the transition easier than GUI editor users because they're already comfortable with terminal-based workflows.
-- **For debugging help**: paste error messages directly:
-
-```
-This error appears in production but not locally: "Connection refused" on line 42 of db.js.
-- **Time**: 1-2 minutes with better error handling
-
-Task 2: Understand a complex codebase section
-
-*Copilot for Neovim workflow:*
-1.
-- **Use vim's search-and-replace or**: manual editing 2.
-
 ## Table of Contents
 
 - [Why Consider the Terminal Workflow](#why-consider-the-terminal-workflow)

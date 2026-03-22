@@ -17,14 +17,6 @@ voice-checked: true
 
 AI tools debug nginx 502 Bad Gateway errors by analyzing your upstream configuration to identify missing headers, health check gaps, socket permission issues, or incorrect timeout values that break backend communication. Provide an AI assistant with your nginx.conf, error logs showing connection failures, and which upstream technology you're using (Node.js, Python, etc.), and it can generate corrected configurations with explained fixes—such as adding proxy headers, implementing max_fails settings, or adjusting timeout values for your specific backend.
 
-## Key Takeaways
-
-- **A 502 Bad Gateway**: error means nginx received an invalid response from at least one upstream server.
-- **Socket Configuration Problems Sometimes**: the upstream block uses Unix sockets instead of TCP ports.
-- **Use `nginx -T` to**: dump the entire configuration.
-- **It also recommends `proxy_buffering**: off` for streaming responses from Python backends.
-- **AI always recommends this**: sequence and warns against a full restart unless you changed the `worker_processes` or `listen` directives.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

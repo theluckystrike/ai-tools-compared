@@ -17,19 +17,6 @@ intent-checked: true
 
 Building custom Terraform provider plugins requires writing Go code that conforms to the Terraform Plugin Framework's provider schema, resource lifecycle methods, and validation patterns. AI coding assistants excel at this task because the framework follows consistent patterns, and quality AI tools understand schema definitions, state management, and test structure well enough to generate functional code that passes acceptance tests on first or second iteration.
 
-## Key Takeaways
-
-- **Run tests**: share error output, iterate
-
-Example cost: A complete 3-resource provider typically costs $0.15-0.30 in API usage.
-- **Use Copilot for method**: completion and test generation 3.
-- **Share test failures with AI**: iterate until tests pass
-
-Most providers reach production-ready status in 2-3 complete iterations per resource.
-- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
-- **This is where AI shines**: you describe your API's endpoints, authentication method, and resource structure, and the AI generates boilerplate-free code that actually works.
-- **It's particularly valuable for**: Terraform provider development because it understands your full codebase and can generate implementations that align with existing patterns.
-
 ## Table of Contents
 
 - [Why Terraform Providers Suit AI Assistance](#why-terraform-providers-suit-ai-assistance)

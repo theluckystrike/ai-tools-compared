@@ -18,14 +18,6 @@ layout: default
 
 This guide provides practical steps and best practices to help you accomplish this task effectively. Follow the recommendations to get the best results from your AI tools.
 
-## Key Takeaways
-
-- **Follow the recommendations to**: get the best results from your AI tools.
-- **This guide provides practical**: steps and best practices to help you accomplish this task effectively.
-- **Use a shared fixtures**: module to keep test data centralized.
-- **This pattern is especially useful when upgrading SDK versions**: broken snapshots immediately surface breaking changes.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -422,6 +414,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Claude Code Parallel Testing Configuration - Complete](/ai-tools-compared/claude-code-parallel-testing-configuration/)
 - [Claude Code Shift Left Testing Strategy Guide](/ai-tools-compared/claude-code-shift-left-testing-strategy-guide/)
 - [Claude Code for Memory Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-memory-profiling-workflow-tutorial/)
+- [Claude Code for Faker.js Test Data Workflow Guide](https://theluckystrike.github.io/remote-work-tools/claude-code-for-faker-js-test-data-workflow-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

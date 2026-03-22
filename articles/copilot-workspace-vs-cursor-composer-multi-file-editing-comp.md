@@ -18,16 +18,6 @@ voice-checked: true
 
 This guide provides an overview to help you understand and make informed decisions about this topic.
 
-## Key Takeaways
-
-- **Use Cmd+K or Tab**: to edit or generate code 3.
-- **Cmd+K**: "Update to use Auth0"
-3.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-- **For example**: suppose you want to add user authentication to a React application.
-- **Copilot Workspace typically takes**: a few seconds to generate multi-file plans, while Cursor's Tab completions appear almost instantly.
-
 ## Table of Contents
 
 - [Understanding the Two Approaches](#understanding-the-two-approaches)
@@ -381,6 +371,7 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Cursor Multi-File Edit Breaking Code Fix (2026)](/ai-tools-compared/cursor-multi-file-edit-breaking-code-fix-2026/)
 - [Migrate GitHub Copilot Workspace Setup to Cursor Background](/ai-tools-compared/migrate-github-copilot-workspace-setup-to-cursor-background-/)
 - [Copilot Edits Panel vs Cursor Composer Workflow Comparison](/ai-tools-compared/copilot-edits-panel-vs-cursor-composer-workflow-comparison-f/)
+- [Best Open Source CRM for Remote Agency Self-Hosted Compared](https://theluckystrike.github.io/remote-work-tools/best-open-source-crm-for-remote-agency-self-hosted-compared-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

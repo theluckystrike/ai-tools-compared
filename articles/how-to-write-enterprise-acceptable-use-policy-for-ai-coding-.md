@@ -17,19 +17,6 @@ voice-checked: true
 
 Enterprise adoption of AI coding assistants like GitHub Copilot, Cursor, and Claude Code requires more than installation—it demands a clear acceptable use policy. Without documented guidelines, organizations face risks ranging from intellectual property leaks to compliance violations. This guide walks through creating a practical policy that protects your organization while enabling developers to use these tools effectively.
 
-## Key Takeaways
-
-- **The simplest approach is**: categorizing your projects and determining which categories can use AI assistance and under what restrictions.
-- **Gather feedback on**: - Time lost to policy compliance procedures
-- Frequency of false-positive security alerts
-- Perceived restrictions on legitimate use cases
-
-Iterate based on this feedback.
-- **A 95% usable policy**: that developers follow beats a 100% secure policy they circumvent.
-- **Enterprise adoption of AI coding assistants like GitHub Copilot, Cursor, and Claude Code requires more than installation**: it demands a clear acceptable use policy.
-- **This guide walks through**: creating a practical policy that protects your organization while enabling developers to use these tools effectively.
-- **--- An effective acceptable**: use policy for AI coding assistants balances security requirements with developer productivity.
-
 ## Why Your Organization Needs an AI Coding Assistant Policy
 
 

@@ -17,15 +17,6 @@ voice-checked: true
 
 CloudFormation template authoring is tedious by design: every resource type has dozens of properties, dependency ordering matters, and IAM policies require precise action names. AI tools vary significantly in their CloudFormation accuracy — some generate templates with deprecated properties or incorrect dependency chains. This guide compares Claude, GitHub Copilot, and the cfn-lint-integrated workflow.
 
-## Key Takeaways
-
-- **Sometimes generates `!Sub` expressions**: with incorrect variable references (`${ClusterName}` when the resource is `ECSCluster`) 4.
-- **Uses deprecated `Cluster` property**: format instead of current syntax 2.
-- **IAM policies often use**: `ecs-tasks.amazonaws.com` without the correct assume role format for newer resource types 3.
-- **Three iterations of Claude**: + cfn-lint fix produces clean templates for 95%+ of scenarios.
-- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
-- **It handles dependency ordering**: IAM least-privilege, and auto-scaling resource IDs correctly.
-
 ## What Good CloudFormation Generation Looks Like
 
 Before comparing tools, establish what a good generated template requires:
@@ -339,7 +330,6 @@ jobs:
 - [Best AI Tools for Writing GitHub Actions Reusable Workflow](/ai-tools-compared/best-ai-tools-for-writing-github-actions-reusable-workflow-t/)
 - [Best AI Tools for Writing Unit Test Mocks 2026](/ai-tools-compared/best-ai-tools-for-writing-unit-test-mocks-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 
 
 | Tool | Template Generation | Resource Coverage | Drift Detection | Pricing |

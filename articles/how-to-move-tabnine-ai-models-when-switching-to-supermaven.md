@@ -17,21 +17,6 @@ voice-checked: true
 
 Tabnine AI models cannot be directly imported into Supermaven because the two platforms use different model architectures and training approaches. Instead, back up your Tabnine configuration from `~/.tabnine/user.config.json` and custom models from the `models/` subdirectory, then configure Supermaven's settings to match your preferences. Supermaven's adaptive learning will personalize suggestions to your coding style within a few hours of active use.
 
-## Key Takeaways
-
-- **This gives Supermaven the**: most useful signal about your actual coding style and the libraries you use regularly.
-- **Key preferences to note include**: - Preferred suggestion length
-- Auto-completion trigger characters
-- Context window behavior
-- Language-specific configurations
-
-### 3.
-- **Gradual transition**: Use both tools briefly in parallel (different projects) to compare suggestion quality
-3.
-- **Tabnine AI models cannot**: be directly imported into Supermaven because the two platforms use different model architectures and training approaches.
-- **Instead**: back up your Tabnine configuration from `~/.tabnine/user.config.json` and custom models from the `models/` subdirectory, then configure Supermaven's settings to match your preferences.
-- **Supermaven's adaptive learning will**: personalize suggestions to your coding style within a few hours of active use.
-
 ## Table of Contents
 
 - [Why Developers Switch from Tabnine to Supermaven](#why-developers-switch-from-tabnine-to-supermaven)

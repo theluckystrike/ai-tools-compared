@@ -18,16 +18,6 @@ intent-checked: true
 
 Claude's batch processing API enables you to queue hundreds or thousands of requests for off-peak processing, reducing costs by 50% compared to real-time API calls. This guide walks through implementing batch workflows for document analysis, content extraction, and data processing.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Adjust max_tokens**: Set token limits precisely for your use case—over-provisioning wastes quota
-3.
-- **Does Claude offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Claude's batch processing API**: enables you to queue hundreds or thousands of requests for off-peak processing, reducing costs by 50% compared to real-time API calls.
-
 ## Table of Contents
 
 - [Why Batch Processing Matters for Document Workflows](#why-batch-processing-matters-for-document-workflows)
@@ -433,5 +423,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How to Use Claude API Cheaply for Small Coding Projects](/ai-tools-compared/how-to-use-claude-api-cheaply-for-small-coding-projects/)
 - [Writing CLAUDE MD Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
 - [AI Tools for API Documentation from Code 2026](/ai-tools-compared/ai-tools-for-api-documentation-from-code-2026/)
+- [Example: Trigger BambooHR onboarding workflow via API](https://theluckystrike.github.io/remote-work-tools/best-onboarding-platform-for-remote-companies-processing-mor/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

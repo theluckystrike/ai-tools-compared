@@ -17,13 +17,6 @@ tags: [ai-tools-compared]
 
 Dockerfile quality separates 2GB images from 150MB ones, root-running containers from hardened ones, and builds that always pull the internet from builds that use the layer cache. AI tools generate working Dockerfiles quickly, but the difference between "works" and "production-ready" is large.
 
-## Key Takeaways
-
-- **Dockerfile quality separates 2GB**: images from 150MB ones, root-running containers from hardened ones, and builds that always pull the internet from builds that use the layer cache.
-- **Claude knows to copy**: CA certs (needed for HTTPS calls) and use a numeric UID since there's no `/etc/passwd` in scratch.
-- **Topics covered**: the test: python fastapi application, claude's multi-stage build, copilot's output
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

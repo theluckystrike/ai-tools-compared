@@ -17,15 +17,6 @@ voice-checked: true
 
 Install these extensions in order when switching from Copilot to Codeium: first the core "Codeium" extension for inline completions, then Codeium Chat for conversational AI assistance, followed by EditorConfig for consistent formatting that improves suggestion accuracy. Uninstall Copilot completely and restart your editor before installing Codeium to avoid completion engine conflicts. This guide covers the full setup including keyboard shortcut mapping, completion behavior configuration, and language-specific extension pairings.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Does Copilot offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Editor Config Support Codeium**: works best when your editor settings are properly configured.
-- **GitLens (Optional but Recommended)**: While not specific to Codeium, GitLens enhances your workflow by providing detailed git integration alongside AI assistance.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

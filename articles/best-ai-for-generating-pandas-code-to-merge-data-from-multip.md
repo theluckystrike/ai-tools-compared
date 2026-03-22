@@ -18,15 +18,6 @@ voice-checked: true
 
 When you need to combine data from multiple API endpoints into unified pandas DataFrames, AI coding assistants can significantly accelerate your workflow. This comparison evaluates which tools excel at generating pandas merge, join, and concat operations when working with data from diverse API sources.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Use `how='inner'` only when**: you require matches in both DataFrames.
-- **The right choice depends**: on your specific use case, but all four tools can significantly reduce the time spent writing pandas merge code for API data integration.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-
 ## Table of Contents
 
 - [The Challenge: Merging Data from Multiple APIs](#the-challenge-merging-data-from-multiple-apis)

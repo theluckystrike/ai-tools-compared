@@ -17,15 +17,6 @@ voice-checked: true
 
 Use Claude API cheaply by batching requests, using claude-3-5-haiku for simple tasks, and caching context across requests. This guide shows the cost optimization techniques that keep API bills under control for small projects.
 
-## Key Takeaways
-
-- **For ongoing small projects, the pay-as-you-go cost is low enough that a free tier is rarely necessary**: $5 in API credits goes a long way when using Haiku.
-- **How does Claude API**: pricing compare to OpenAI? Claude's Haiku is cheaper than GPT-3.5 Turbo for most use cases, while Claude Sonnet is competitive with GPT-4o.
-- **The pricing varies by model**: Haiku is the cheapest, Sonnet offers the best value for most use cases, and Opus is the most capable but expensive.
-- **It costs roughly $0.20**: per million input tokens.
-- **Priced around $3.00 per**: million input tokens.
-- **Use Claude API cheaply**: by batching requests, using claude-3-5-haiku for simple tasks, and caching context across requests.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

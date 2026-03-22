@@ -17,19 +17,6 @@ voice-checked: true
 
 Export your Grammarly personal dictionary by locating the local SQLite database on Windows (`%APPDATA%\Grammarly\GrammarlyAppData\userdictionary\`) or macOS (`~/Library/Application Support/Grammarly/`), then extracting the word list with a Python script or SQLite viewer. For browser extension users, pull dictionary data from Local Storage via Developer Tools. Once exported, you can import your custom words into Claude, VS Code, Neovim, or any other tool that supports custom dictionaries.
 
-## Key Takeaways
-
-- **Navigate to**: ```
-%APPDATA%\Grammarly\GrammarlyAppData\userdictionary\
-```
-
-You will find a file named something like `userdictionary.db`.
-- **The most common table**: names are `user_dictionary`, `personal_words`, and `dictionary_entries`.
-- **If your export shows**: fewer than 20 words and you have used Grammarly for years, the database path may be wrong or the account may have used cloud sync rather than local storage.
-- **For browser extension users**: pull dictionary data from Local Storage via Developer Tools.
-- **These include product names**: like `Kubernetes`, `Terraform`, or `PostgreSQL`, acronyms like `IAM`, `RBAC`, or `SLA`, and non-standard spellings you intentionally use.
-- **Create a quick test**: file with the technical words that matter most to your workflow, then run your new spell checker against it.
-
 ## Why Your Personal Dictionary Matters
 
 Your Grammarly personal dictionary contains words that the tool has learned to recognize as correct in your writing context. These might include:
@@ -62,7 +49,7 @@ The Grammarly desktop application for Windows and macOS stores your personal dic
 
 ### On Windows
 
-Your personal dictionary is stored in an SQLite database. Navigate to:
+Your personal dictionary is stored in a SQLite database. Navigate to:
 
 ```
 %APPDATA%\Grammarly\GrammarlyAppData\userdictionary\

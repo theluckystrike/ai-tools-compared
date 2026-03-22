@@ -17,15 +17,6 @@ voice-checked: true
 
 Choose AudioCraft for local, privacy-first generation; Soundraw for music creation; ElevenLabs for voice synthesis; and Respeecher for voice conversion. This guide compares the leading AI sound design tools with code examples, helping developers integrate generative audio APIs into applications without requiring traditional audio engineering expertise.
 
-## Key Takeaways
-
-- **A startup using 100**: audio generations monthly might spend $50-200 depending on tool selection.
-- **Each offers unique strengths**: depending on your use case, whether you need real-time synthesis, high-fidelity exports, or voice generation.
-- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
-- **Choose AudioCraft for local**: privacy-first generation; Soundraw for music creation; ElevenLabs for voice synthesis; and Respeecher for voice conversion.
-- **Soundraw works well for**: game backgrounds, app soundtracks, and video content where you need music that adapts to user actions or scene changes.
-- **Their API enables transforming one voice into another while preserving emotional expression**: useful for creating consistent character voices or localizing content.
-
 ## Table of Contents
 
 - [Why AI Tools Matter for Sound Design](#why-ai-tools-matter-for-sound-design)

@@ -18,15 +18,6 @@ voice-checked: true
 
 Gemini Code Assist Standard costs $19/user/month. The Enterprise tier is negotiated — expect $25-45/user/month depending on seat count and data residency requirements. For a 50-developer team on Standard, the annual cost is $11,400. For comparison: GitHub Copilot Business is $19/user/month, Cursor Business is $40/user/month. This breakdown covers what each tier includes, what enterprises actually get for the premium, and how to calculate total cost of ownership.
 
-## Key Takeaways
-
-- **Gemini Code Assist Standard**: costs $19/user/month.
-- **The Enterprise tier is negotiated**: expect $25-45/user/month depending on seat count and data residency requirements.
-- **For comparison**: GitHub Copilot Business is $19/user/month, Cursor Business is $40/user/month.
-- **If you have used**: the tool for at least 3 months and plan to continue, the annual discount usually makes sense.
-- **For a 50-developer team on Standard**: the annual cost is $11,400.
-- **While limited in scope**: the free tier includes access to Gemini's underlying AI models and basic IDE integrations.
-
 ## Table of Contents
 
 - [Understanding Gemini Code Assist Pricing Tiers](#understanding-gemini-code-assist-pricing-tiers)

@@ -17,15 +17,6 @@ voice-checked: true
 
 Choose Gemini for idiomatic Rust code that uses the ecosystem's best libraries and patterns. Choose ChatGPT if you need more explicit explanations and step-by-step guidance during translation. This comparison evaluates both on handling Rust's ownership model, error types, and the conceptual gap between Python and Rust approaches.
 
-## Key Takeaways
-
-- **Choose Gemini for idiomatic**: Rust code that uses the ecosystem's best libraries and patterns.
-- **When prompted with Python pipeline code**: Gemini typically generates Rust that uses the ecosystem's best libraries rather than attempting direct syntactic mapping.
-- **For maintainable pipelines**: Gemini's struct-focused approach generally produces better long-term results.
-- **A more idiomatic translation**: would use structs, which Gemini sometimes overlooks when given limited context.
-- **Provide explicit Rust crate**: preferences in your initial prompt 2.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-
 ## Table of Contents
 
 - [Why Translate Data Pipelines to Rust](#why-translate-data-pipelines-to-rust)

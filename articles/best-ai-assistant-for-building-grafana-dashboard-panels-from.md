@@ -17,16 +17,6 @@ voice-checked: true
 
 Building effective Grafana dashboards requires transforming raw Prometheus queries into meaningful visualizations. AI assistants have become valuable tools for developers looking to speed up this process, whether you are new to PromQL or need help optimizing complex queries for dashboard panels. This guide evaluates the best AI assistants for building Grafana dashboard panels from Prometheus queries in 2026.
 
-## Key Takeaways
-
-- **If you prefer terminal-based work**: Claude Code fits better.
-- **This guide evaluates the**: best AI assistants for building Grafana dashboard panels from Prometheus queries in 2026.
-- **Should I use AI to generate entire dashboard JSON from scratch?
-For simple dashboards (under 10 panels), yes**: AI-generated JSON is a practical starting point.
-- **You need to choose**: appropriate visualization types, set correct time ranges, configure thresholds, and ensure your queries return meaningful data.
-- **It handles complex PromQL**: patterns well and can explain what specific queries do, making it useful for learning while working.
-- **It understands YAML and**: JSON structures used in Grafana configurations.
-
 ## Table of Contents
 
 - [Why Use AI Assistants for Grafana Panel Creation](#why-use-ai-assistants-for-grafana-panel-creation)

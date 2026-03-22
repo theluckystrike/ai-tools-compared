@@ -17,15 +17,6 @@ voice-checked: true
 
 This guide compares the strengths and weaknesses of each tool for this specific task. Choose the tool that best matches your workflow, budget, and technical requirements.
 
-## Key Takeaways
-
-- **Choose the tool that**: best matches your workflow, budget, and technical requirements.
-- **If you want IDE-integrated**: autocomplete and prefer writing code while receiving suggestions, GitHub Copilot fits naturally into your existing editor.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-- **GitHub Copilot works best**: when you're actively coding and want suggestions without leaving your editor.
-- **It's ideal for developers**: who prefer staying in their IDE and want subtle assistance rather than a conversational partner.
-
 ## Table of Contents
 
 - [Understanding the Tools](#understanding-the-tools)

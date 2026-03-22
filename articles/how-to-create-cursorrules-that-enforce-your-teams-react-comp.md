@@ -18,15 +18,6 @@ voice-checked: true
 
 Cursorules are a powerful way to codify your team's React component composition patterns. When configured correctly, they ensure that AI coding assistants generate consistent, maintainable components that align with your architecture. This guide walks you through creating effective Cursorules specifically designed for enforcing React component composition patterns across your team.
 
-## Key Takeaways
-
-- **Use a parent component**: that manages state with React Context 2.
-- **Your Cursorules should specify**: how AI assistants should create and use hooks: ``` ## Custom Hooks Guidelines 1.
-- **Always prefix hook names**: with 'use' (useAuth, useFetch) 2.
-- **Document dependencies in comments**: when using useEffect 4.
-- **Cursorules solve this problem**: by providing AI assistants with explicit instructions about your team's preferred patterns.
-- **When developers on different**: squads build features in parallel, diverging patterns create merge conflicts, confuse new hires, and slow down refactoring efforts.
-
 ## Table of Contents
 
 - [Why Component Composition Patterns Matter](#why-component-composition-patterns-matter)
@@ -343,6 +334,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Writing Effective CursorRules for React TypeScript Projects](/ai-tools-compared/writing-effective-cursorrules-for-react-typescript-projects-/)
 - [How to Use AI to Help Devrel Teams Create Video Tutorial Scr](/ai-tools-compared/how-to-use-ai-to-help-devrel-teams-create-video-tutorial-scr/)
 - [How to Use AI to Help Sre Teams Create on Call Handoff Docum](/ai-tools-compared/how-to-use-ai-to-help-sre-teams-create-on-call-handoff-docum/)
+- [Best Tools for Remote React Native Teams Coordinating iOS](https://theluckystrike.github.io/remote-work-tools/best-tools-for-remote-react-native-teams-coordinating-ios-an/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -17,15 +17,6 @@ tags: [open-source, ai-assistant, codebase-analysis, private-code, local-llm, co
 
 Open source AI coding assistants have evolved significantly, now offering the ability to learn from your private codebase patterns. These tools can analyze your existing code to provide context-aware suggestions that understand your project's architecture, coding conventions, and unique patterns. This guide explores practical implementations for developers who want to keep their code private while leveraging AI assistance.
 
-## Key Takeaways
-
-- **Your proprietary code never**: leaves your infrastructure when you use local, open source solutions.
-- **Smaller models like `all-MiniLM-L6-v2`**: work well for most projects while requiring less memory.
-- **Open source AI coding**: assistants have evolved significantly, now offering the ability to learn from your private codebase patterns.
-- **Instead of generic recommendations, the AI understands your specific patterns**: how you name variables, structure your modules, handle errors, and organize imports.
-- **Subsequent queries use this**: index to provide context-aware responses.
-- **Use `.gitignore` patterns to**: exclude generated files, dependencies, and sensitive configuration from analysis.
-
 ## Table of Contents
 
 - [Why Local Codebase Analysis Matters](#why-local-codebase-analysis-matters)

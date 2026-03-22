@@ -18,15 +18,6 @@ voice-checked: true
 
 This guide compares the strengths and weaknesses of each tool for this specific task. Choose the tool that best matches your workflow, budget, and technical requirements.
 
-## Key Takeaways
-
-- **Choose the tool that**: best matches your workflow, budget, and technical requirements.
-- **This is useful early**: in a project or for common patterns, but it means suggestions are anchored in the broader open-source ecosystem rather than your codebase.
-- **Copilot costs $10/month for**: individuals and $19/month for businesses.
-- **If you are building**: with Zustand instead of Redux, or using React Query v5's new `useQuery` signature, Copilot may suggest outdated patterns from its training data.
-- **Codeium's integrations are more**: IDE-focused, with strong support for VS Code and JetBrains, plus an API for enterprise self-hosting.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-
 ## Table of Contents
 
 - [Understanding Framework-Specific Code Generation](#understanding-framework-specific-code-generation)

@@ -18,15 +18,6 @@ voice-checked: true
 
 AI coding assistants debug Yarn Berry PnP module resolution errors by analyzing workspace structures, generating correct `.yarnrc.yml` configurations, and identifying common patterns like workspace protocol mismatches or missing TypeScript PnP loaders. Tools like Cursor and Claude Code excel at PnP troubleshooting because they can read multiple monorepo files simultaneously, while ChatGPT helps explain error messages and suggest configuration fixes when you paste error details and your project structure.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **Understanding the root cause**: requires examining multiple configuration files simultaneously.
-
 ## Table of Contents
 
 - [Understanding Yarn Berry PnP Resolution Errors](#understanding-yarn-berry-pnp-resolution-errors)

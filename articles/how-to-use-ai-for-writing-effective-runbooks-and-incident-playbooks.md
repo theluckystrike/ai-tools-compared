@@ -20,20 +20,6 @@ Runbooks and incident playbooks form the backbone of reliable operations for any
 
 This guide explores how developers and power users can use AI to write runbooks and incident playbooks that actually work when you need them most.
 
-## Key Takeaways
-
-- **Check current connection count**: ```bash
- psql -h $DB_HOST -U $DB_USER -c "SELECT count(*) FROM pg_stat_activity;"
- ```
-2.
-- **This guide explores how**: developers and power users can use AI to write runbooks and incident playbooks that actually work when you need them most.
-- **Most teams start with**: good intentions but end up with documents that are either too generic to be useful or so detailed they become unreadable.
-- **Verify fix addresses root**: cause 3.
-- Document root cause
-3.
-- **Impact**: How many users affected?
-3.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

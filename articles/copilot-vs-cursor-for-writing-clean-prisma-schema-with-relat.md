@@ -17,15 +17,6 @@ voice-checked: true
 
 Choose Cursor if your Prisma schemas involve complex relationships, explicit junction tables, MongoDB-specific syntax, or index configurations that benefit from natural-language prompting. Choose GitHub Copilot if you need fast inline completions for simple, standard schema patterns you already understand. Cursor generates more complete models from descriptions, while Copilot works best as a typing accelerator for familiar Prisma conventions.
 
-## Key Takeaways
-
-- **The cost structure differs**: Copilot runs approximately $10 per month as a GitHub add-on, while Cursor's pro tier costs $20 monthly.
-- **Choose Cursor when your**: Prisma schemas involve complex relationships, specific performance requirements like index configurations, or databases with unique constraints like MongoDB.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-- **Use AI-generated tests as**: a starting point, then add cases that cover your unique requirements and failure modes.
-- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-- **Choose Cursor if your**: Prisma schemas involve complex relationships, explicit junction tables, MongoDB-specific syntax, or index configurations that benefit from natural-language prompting.
-
 ## Table of Contents
 
 - [Understanding Prisma Schema Requirements](#understanding-prisma-schema-requirements)

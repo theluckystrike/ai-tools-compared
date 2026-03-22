@@ -18,17 +18,6 @@ voice-checked: true
 
 When using AI-powered code editors like WindSurf, understanding what data gets transmitted to external servers becomes crucial—especially for developers working with proprietary code, sensitive business logic, or in regulated industries. The question "does WindSurf AI send entire project context or just open file to servers" gets to the heart of how modern AI coding assistants balance powerful context awareness with privacy considerations.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Many developers happily use**: AI assistants with their open source code since the benefit of AI assistance outweighs concerns about exposing code that will eventually be public anyway.
-- **Does Windsurf offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Close sensitive files when not in active use**: the AI can't send what isn't open
-
-2.
-- **Use exclude patterns to**: mark directories that should never be indexed 3.
-
 ## Table of Contents
 
 - [How WindSurf AI Handles Context](#how-windsurf-ai-handles-context)

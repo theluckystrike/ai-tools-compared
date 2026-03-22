@@ -17,13 +17,6 @@ tags: [ai-tools-compared]
 
 Voice AI apps require three components working in sequence: speech-to-text, language understanding and response, and text-to-speech. Claude handles the middle layer exceptionally well — reasoning, long context, and nuanced responses. This guide builds a complete voice assistant using Whisper for STT, Claude for reasoning, and ElevenLabs for TTS.
 
-## Key Takeaways
-
-- **Topics covered**: architecture, setup, backend: fastapi voice server
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-- **Use-case recommendations**: Specific guidance based on team size and requirements
-- **Trade-off analysis**: Strengths and limitations of each option discussed
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

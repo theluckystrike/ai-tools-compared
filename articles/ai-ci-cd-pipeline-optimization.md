@@ -19,15 +19,6 @@ intent-checked: true
 
 AI-powered CI/CD pipeline optimization transforms how development teams ship software. Instead of relying on static configurations, intelligent systems analyze historical data to make real-time decisions about test execution, resource allocation, and deployment strategies. This guide provides practical techniques for implementing AI-driven optimizations in your pipeline.
 
-## Key Takeaways
-
-- **Most CI pipelines spend**: 30-60 seconds fetching dependencies that rarely change.
-- **A reasonable target**: dependency fetch time under 15 seconds for most commits.
-- **For teams using GitHub Actions**: native caching and matrix strategies often provide 30-40% improvements without AI.
-- **Cache hit rate**: A cache hit rate below 70% suggests your cache key strategy needs work.
-- **Aim for 85%+ on**: dependency caches.
-- **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
-
 ## Intelligent Test Selection
 
 Running the full test suite on every commit wastes resources and delays feedback. AI-driven test selection analyzes code changes and predicts which tests are most likely to fail, dramatically reducing pipeline execution time.

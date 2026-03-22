@@ -17,17 +17,6 @@ voice-checked: true
 
 AWS bills are notoriously hard to analyze. The line items are cryptic, the pricing models vary by service, and the optimization opportunities require understanding your workload patterns. AI tools are useful here not because they understand AWS better than a specialized tool like Spot.io or CloudHealth, but because they can contextualize cost data against your actual infrastructure code and suggest specific changes.
 
-## Key Takeaways
-
-- **EC2 Rightsizing (Estimated savings**: $340/month, Low risk)
-   Your 4 x m5.xlarge at 40% average CPU are oversized.
-- **If you have used**: the tool for at least 3 months and plan to continue, the annual discount usually makes sense.
-- **Dev/Staging Schedules (Estimated savings:**: $520/month, Low effort) Dev/staging running 24/7 costs ~$780/month.
-- **RDS Reserved Instances (Estimated**: savings: $290/month, Low effort) Your db.r6g.large instances have run 90+ days without resizing.
-- **1-year reserved instances save**: ~$580/year vs on-demand.
-- **S3 Intelligent Tiering (Estimated savings: $45/month, Low effort)
-   Enable on buckets with >100GB**: objects move to infrequent access automatically.
-
 ## Step 1: Export Your Cost Data
 
 ```bash

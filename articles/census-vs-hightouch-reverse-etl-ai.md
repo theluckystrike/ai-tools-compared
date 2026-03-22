@@ -17,15 +17,6 @@ tags: [ai-tools-compared, comparison]
 
 Choose Census if your team relies on Salesforce integrations, SQL-based transformations, and Terraform workflows. Choose HighTouch if you need self-healing pipelines, real-time sync capabilities, and dbt-centric data activation. This comparison examines their AI features from a developer's perspective, with code examples and configuration details for both platforms.
 
-## Key Takeaways
-
-- **Choose Census if your**: team relies on Salesforce integrations, SQL-based transformations, and Terraform workflows.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-- **Choose HighTouch if you**: need self-healing pipelines, real-time sync capabilities, and dbt-centric data activation.
-- **Their AI features primarily address**: Census analyzes your data warehouse schema and suggests mappings to downstream tools automatically.
-- **HighTouch's AI analyzes engagement**: patterns and suggests audience segments most likely to convert.
-
 ## Table of Contents
 
 - [Understanding the AI Feature Set](#understanding-the-ai-feature-set)

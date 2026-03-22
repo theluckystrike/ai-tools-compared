@@ -17,13 +17,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Code documentation has two failure modes: missing entirely, or present but wrong. AI tools solve the first problem well and are getting better at the second. This guide covers practical workflows for generating docstrings, API references, and architecture documentation at scale.
 
-## Key Takeaways
-
-- **AI tools solve the**: first problem well and are getting better at the second.
-- **Topics covered**: approach 1: batch docstring generation, approach 2: architecture documentation from code, approach 3: api reference generation with mkdocs
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-- **Use-case recommendations**: Specific guidance based on team size and requirements
-
 ## Approach 1: Batch Docstring Generation
 
 The highest-ROI use case is adding docstrings to existing functions that have none. This script processes an entire module:

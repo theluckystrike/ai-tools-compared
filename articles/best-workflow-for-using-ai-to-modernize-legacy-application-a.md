@@ -17,15 +17,6 @@ intent-checked: true
 
 Modernizing legacy application architecture ranks among the most challenging tasks developers face. Years of accumulated technical debt, undocumented business logic, and tight coupling between components create a minefield of potential issues. AI tools have matured significantly, offering concrete assistance in analyzing, planning, and executing modernization work. This guide provides a proven workflow for using AI effectively throughout your legacy application transformation.
 
-## Key Takeaways
-
-- **For most teams moving**: away from a Rails or Django monolith, AI consistently recommends the modular monolith path as an intermediate step before full microservices.
-- **A useful prompt for**: architecture planning: ``` Given the current state analysis [paste from Phase 1], propose three target architectures: 1.
-- **Feature flag services like LaunchDarkly, Unleash, or Flagsmith pair well with this pattern**: AI can generate the integration code for whichever you choose.
-- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
-- **Modernizing legacy application architecture**: ranks among the most challenging tasks developers face.
-- **Claude Code handles long-context**: analysis well, making it useful for summarizing entire modules.
-
 ## Table of Contents
 
 - [Why AI Changes the Modernization Game](#why-ai-changes-the-modernization-game)
@@ -275,4 +266,5 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [Best AI Tools for Generating Unit Tests: Legacy](/ai-tools-compared/best-ai-tools-for-generating-unit-tests-from-legacy-code-without-tests/)
 - [Effective Workflow for Using AI](/ai-tools-compared/effective-workflow-for-using-ai-to-debug-production-issues-from-logs/)
 - [Best AI IDE Features for Understanding and Modifying Legacy](/ai-tools-compared/best-ai-ide-features-for-understanding-and-modifying-legacy-/)
+- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

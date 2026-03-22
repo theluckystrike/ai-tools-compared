@@ -17,15 +17,6 @@ intent-checked: true
 
 Continue.dev paired with Ollama is the top air-gapped solution for offline code completion, offering full local control without any data transmission to external servers. For developers in secure environments requiring FedRAMP compliance or working offline, air-gapped solutions like Continue.dev, Local Cody, and open-source alternatives provide private code completion by running AI models entirely on your machine. This guide examines the best options available in 2026 and how to set them up for offline development workflows.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Continue.dev with Ollama passes**: this test because both components are entirely local and open-source.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **This guide examines the**: best options available in 2026 and how to set them up for offline development workflows.
-- **CodeLlama 7B is the**: baseline for most developers.
-
 ## Table of Contents
 
 - [Why Air Gapped Code Completion Matters](#why-air-gapped-code-completion-matters)

@@ -19,31 +19,6 @@ tags: [ai-tools-compared, troubleshooting, chatgpt]
 
 Three changes reduce ChatGPT hallucinations immediately: set temperature to 0.0-0.2 for factual queries, add "If you are uncertain about any detail, state that rather than guessing" to your prompt, and break complex questions into smaller focused requests. For production applications, implement retrieval-augmented generation (RAG) to ground responses in verified documents. These techniques and more are detailed below.
 
-## Key Takeaways
-
-- **Instead of**: ```
-Explain machine learning from scratch
-```
-
-
-Use:
-
-```
-1.
-- **Answer the user's question**: using ONLY " "the provided context.
-- **GPT-4 shows roughly 40%**: fewer hallucinations on benchmarks like TruthfulQA compared to GPT-3.5 Turbo.
-- **Use retrieval-augmented generation (RAG)**: - Ground responses in verified documents 4.
-- **ChatGPT predicts the most**: probable next token based on its training data, not by accessing a verified knowledge base.
-- **Instead of**: ```
-Tell me about React hooks
-```
-
-
-Use:
-
-```
-Explain React hooks for state management in functional components.
-
 ## Why ChatGPT Hallucinates
 
 

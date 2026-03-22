@@ -22,15 +22,6 @@ Log format consistency matters more than most developers realize. When every tea
 
 This guide shows you how to configure custom instructions for GitHub Copilot, Cursor, and other AI tools to generate log statements that match your preferred format.
 
-## Key Takeaways
-
-- **Most modern AI coding**: assistants support this feature through configuration files, workspace settings, or dedicated instruction fields.
-- **A detailed instruction like**: "always use structured JSON logging with timestamp, level, message, and context fields" gives the AI clear boundaries to work within.
-- **Log format consistency matters**: more than most developers realize.
-- **When every team member**: follows the same pattern, debugging becomes faster, log aggregation tools work better, and incident response improves significantly.
-- **This guide shows you**: how to configure custom instructions for GitHub Copilot, Cursor, and other AI tools to generate log statements that match your preferred format.
-- **A vague instruction like**: "use good logging" produces inconsistent results.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

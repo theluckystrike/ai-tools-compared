@@ -18,21 +18,6 @@ tags: [ai-tools-compared, troubleshooting, claude-ai]
 
 To fix Claude Code not pushing to GitHub, first test your SSH connection with `ssh -T git@github.com` and verify your remote URL with `git remote -v`. Most push failures resolve by regenerating your SSH key or Personal Access Token and ensuring the remote URL matches your authentication method (SSH vs HTTPS). If you are behind a corporate firewall, configure SSH to use port 443 by setting `HostName ssh.github.com` and `Port 443` in `~/.ssh/config`.
 
-## Key Takeaways
-
-- **Add the key to the SSH agent**: ```bash
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_ed25519
-```
-
-4.
-- **If you are behind a corporate firewall**: configure SSH to use port 443 by setting `HostName ssh.github.com` and `Port 443` in `~/.ssh/config`.
-- **`remote**: error: GH007: Your push would publish a private email address.`
-GitHub's email privacy setting is blocking the push because your commit email is your real address.
-- **A token with only `read**: org` or `user` scopes cannot push code.
-- **Most push failures resolve**: by regenerating your SSH key or Personal Access Token and ensuring the remote URL matches your authentication method (SSH vs HTTPS).
-- **This happens frequently on**: machines used for multiple GitHub accounts.
-
 ## Table of Contents
 
 - [Understanding the Push Failure](#understanding-the-push-failure)

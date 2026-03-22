@@ -17,17 +17,6 @@ voice-checked: true
 
 Claude produces more maintainable Playwright tests with better selector strategies and error handling, while Cursor scaffolds test files faster. This guide compares both on test coverage, flakiness prevention, and maintainability.
 
-## Key Takeaways
-
-- **For startups/small teams**: Claude at $20/month delivers the best test quality and ROI.
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Claude slightly edges ahead**: with its consistent use of Playwright's modern locators and better understanding of async patterns.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **However**: the best approach combines AI with your expertise:
-
-1.
-- **Use AI to generate**: initial test scaffolding 2.
-
 ## Table of Contents
 
 - [Why AI-Assisted Playwright Test Writing Matters](#why-ai-assisted-playwright-test-writing-matters)

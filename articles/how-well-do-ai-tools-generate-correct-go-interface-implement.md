@@ -17,15 +17,6 @@ voice-checked: true
 
 AI tools generate correct Go interface implementations about 85% of the time for standard patterns but require verification for complex method signatures and embedded interfaces. This guide shows which interface patterns work reliably and which need manual review.
 
-## Key Takeaways
-
-- **Using all five of**: these in a single prompt brought every tool tested up to at least 90% correctness on the simple and context-aware interface patterns.
-- **Pointer vs Value Receiver Confusion**: The most common error, especially for methods that modify state or use sync primitives.
-- **AI tools generate correct**: Go interface implementations about 85% of the time for standard patterns but require verification for complex method signatures and embedded interfaces.
-- **Copilot, Gemini, and Codeium showed varying rates of context parameter misplacement**: putting it after other parameters in 15-25% of cases.
-- **- "Wrap errors with fmt.Errorf and %w"**: Ensures error chain compatibility with `errors.Is` and `errors.As`.
-- **The receiver must be**: a pointer receiver if the interface will be used polymorphically, and error types must match Go's conventions.
-
 ## Table of Contents
 
 - [The Challenge of Go Interface Generation](#the-challenge-of-go-interface-generation)

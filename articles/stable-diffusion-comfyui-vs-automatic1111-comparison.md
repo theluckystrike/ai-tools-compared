@@ -17,15 +17,6 @@ tags: [ai-tools-compared, comparison]
 
 For developers working with Stable Diffusion, choosing between ComfyUI and Automatic1111 significantly impacts workflow efficiency and customization potential. Both are open-source, self-hosted solutions, but their architectural approaches differ substantially. This comparison examines both platforms from a practical standpoint, focusing on API capabilities, workflow automation, and extensibility for power users.
 
-## Key Takeaways
-
-- **Choose ComfyUI if you**: need precise control over generation pipelines, want to build repeatable workflows programmatically, or work with limited GPU resources.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-- **Both are open-source**: self-hosted solutions, but their architectural approaches differ substantially.
-- **This comparison examines both**: platforms from a practical standpoint, focusing on API capabilities, workflow automation, and extensibility for power users.
-- **ComfyUI takes a fundamentally different approach**: it uses a node-based graph architecture where each operation is a discrete node that can be connected arbitrarily.
-
 ## Table of Contents
 
 - [Core Architecture Differences](#core-architecture-differences)

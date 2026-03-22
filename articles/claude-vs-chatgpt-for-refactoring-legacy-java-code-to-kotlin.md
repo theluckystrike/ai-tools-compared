@@ -18,15 +18,6 @@ voice-checked: true
 
 This guide compares the strengths and weaknesses of each tool for this specific task. Choose the tool that best matches your workflow, budget, and technical requirements.
 
-## Key Takeaways
-
-- **Choose the tool that**: best matches your workflow, budget, and technical requirements.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-- **It converts the verbose**: null check to `requireNotNull`, simplifies the active user collection to a single `filter` operation, and uses `val` appropriately.
-- **If you convert a `User` class first**: then ask about `UserService`, Claude remembers the relationships and can suggest appropriate conversions for dependent classes.
-- **If you converted `User.id`**: from `Long` to a value class `UserId` in an earlier message, Claude will use `UserId` in the `UserService` conversion without being told.
-
 ## Table of Contents
 
 - [Understanding the Migration Challenge](#understanding-the-migration-challenge)

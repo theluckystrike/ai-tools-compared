@@ -17,17 +17,6 @@ voice-checked: true
 
 Choose ChatGPT Enterprise if you need fast deployment, lack ML engineering resources, or want OpenAI to handle infrastructure and model updates. Choose a custom support bot if you require deep integration with internal systems, domain-specific knowledge via RAG, or full data sovereignty for compliance. ChatGPT Enterprise trades customization for speed, while a custom bot trades operational simplicity for complete control over every component.
 
-## Key Takeaways
-
-- **ChatGPT Enterprise pricing is**: not public, but enterprise agreements typically start at $30/user/month with minimum seat commitments.
-- **Model serving costs**: Running your own instance costs $3,000-5,000/month for inference
-3.
-- **Choose a custom support**: bot if you require deep integration with internal systems, domain-specific knowledge via RAG, or full data sovereignty for compliance.
-- **For small teams under 20 users**: a custom bot often costs less at equivalent conversation volume.
-- **Latency degradation**: During peak hours (business hours in major timezones), response latency can increase from 500ms to 2000ms+
-3.
-- **Choose ChatGPT Enterprise if**: you need fast deployment, lack ML engineering resources, or want OpenAI to handle infrastructure and model updates.
-
 ## Table of Contents
 
 - [What ChatGPT Enterprise Offers](#what-chatgpt-enterprise-offers)

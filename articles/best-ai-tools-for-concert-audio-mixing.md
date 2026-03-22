@@ -18,15 +18,6 @@ intent-checked: true
 
 For real-time feedback prevention during live performances, Cedera is the top pick. For post-concert multitrack cleanup, iZotope RX remains the industry standard. Sonarworks SoundID handles venue room correction, while eqCD provides free AI-driven EQ suggestions during sound checks. Each tool integrates through APIs or CLI workflows suitable for developers building automated concert audio pipelines.
 
-## Key Takeaways
-
-- **Real-time applications like feedback**: prevention must process with sub-10ms latency, which limits the complexity of neural networks you can deploy.
-- **Post-event processing has no such constraints**: you can use heavier models for better results.
-- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
-- **For real-time feedback prevention**: during live performances, Cedera is the top pick.
-- **Sonarworks SoundID handles venue**: room correction, while eqCD provides free AI-driven EQ suggestions during sound checks.
-- **It runs as a**: network application that can receive audio via OSC (Open Sound Control) from most digital mixing consoles.
-
 ## Table of Contents
 
 - [The Challenge of Concert Audio Mixing](#the-challenge-of-concert-audio-mixing)

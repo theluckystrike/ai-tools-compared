@@ -17,15 +17,6 @@ tags: [ai-tools-compared, comparison, kubernetes, network-policy]
 
 Kubernetes NetworkPolicies are notoriously tricky to write correctly. A single misconfigured policy can lock down your entire cluster or leave critical security gaps. The YAML syntax is verbose, the logic is counter-intuitive (deny-all-then-allow-needed is safer than allow-all-then-deny-bad), and the interaction between multiple policies compounds the complexity. AI tools can help draft policies quickly, but they often generate permissive defaults that weaken security. This comparison shows how Claude, GPT-4, and GitHub Copilot handle NetworkPolicy generation, including real-world policy examples.
 
-## Key Takeaways
-
-- **Kubernetes has several options**: Calico: Open-source, supports both standard NetworkPolicy and extended Calico-specific policies.
-- Most network plugins support this.
-- **This is crucial because**: AI-generated policies often make incorrect assumptions.
-- **This default-deny-within-selection behavior confuses**: many developers.
-- **A common mistake**: writing policies that are too permissive because the developer didn't realize that once ANY policy matches a pod, all unspecified traffic is denied.
-- Works well in most environments.
-
 ## Table of Contents
 
 - [Understanding Kubernetes NetworkPolicy Fundamentals](#understanding-kubernetes-networkpolicy-fundamentals)
@@ -228,7 +219,7 @@ GPT-4 generated a comparison table without prompting, which was helpful:
 | Egress | Database pods | TCP | 5432 | N/A |
 ```
 
-This table helped clarify what the policies allow. GPT-4's strength is generating comprehensive policies with supporting explanations, though you need to review for over-permissiveness.
+This table helped clarify what the policies allow. GPT-4's strength is generating policies with supporting explanations, though you need to review for over-permissiveness.
 
 ## Evaluating GitHub Copilot for NetworkPolicy Generation
 
@@ -297,7 +288,7 @@ The policies were layered and explicit. Claude also included a note: "Start with
 
 **GPT-4's Approach:**
 
-GPT-4 generated three comprehensive policies (frontend, api, database) with both ingress and egress. It included proper namespace selectors and was careful to specify exactly what traffic is allowed. However, it suggested using a separate "monitoring" namespace and provided Prometheus-specific port 9090 rules without being asked. This was thoughtful but added complexity.
+GPT-4 generated three policies (frontend, api, database) with both ingress and egress. It included proper namespace selectors and was careful to specify exactly what traffic is allowed. However, it suggested using a separate "monitoring" namespace and provided Prometheus-specific port 9090 rules without being asked. This was thoughtful but added complexity.
 
 **Copilot's Approach:**
 

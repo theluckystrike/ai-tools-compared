@@ -17,15 +17,6 @@ voice-checked: true
 
 This guide compares the strengths and weaknesses of each tool for this specific task. Choose the tool that best matches your workflow, budget, and technical requirements.
 
-## Key Takeaways
-
-- **Choose the tool that**: best matches your workflow, budget, and technical requirements.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-- **Copilot often generates basic**: templates that require manual enhancement for production use.
-- **You can ask about**: index recommendations or query plan improvements, and Claude Code will explain the reasoning.
-- **Claude Code requires switching**: to a terminal session, which some developers prefer for complex tasks that benefit from step-by-step discussion.
-
 ## Table of Contents
 
 - [Understanding the Challenge of SQL Stored Procedures](#understanding-the-challenge-of-sql-stored-procedures)
@@ -229,7 +220,7 @@ Both GitHub Copilot and Claude Code serve database developers well, but their st
 
 ## Advanced Techniques for Complex Procedures
 
-**Leverage multi-step debugging with Claude Code.** When a stored procedure fails in production, Claude Code's conversational interface shines. Describe the error, paste the procedure, and request analysis. The tool can identify issues ranging from transaction handling problems to index usage inefficiencies.
+**uses multi-step debugging with Claude Code.** When a stored procedure fails in production, Claude Code's conversational interface shines. Describe the error, paste the procedure, and request analysis. The tool can identify issues ranging from transaction handling problems to index usage inefficiencies.
 
 ```
 Human: "This procedure processes 10k records but times out after 2 minutes.

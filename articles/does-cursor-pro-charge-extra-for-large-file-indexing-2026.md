@@ -17,15 +17,6 @@ voice-checked: true
 
 No, Cursor Pro does not charge extra for large file indexing. Indexing is included in the Pro subscription with no per-file or per-MB fees -- you get full codebase indexing within the plan's size thresholds. If your project exceeds practical limits, you can manage scope with a `.cursorignore` file, selective workspace indexing, or upgrading to the Business tier for higher limits. This guide covers exactly how indexing works and strategies for keeping large codebases efficient.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Does Cursor offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Use the command palette**: (Cmd/Ctrl + Shift + P) and search for "Indexing Status" 3.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-
 ## Table of Contents
 
 - [Understanding Cursor's Indexing System](#understanding-cursors-indexing-system)

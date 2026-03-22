@@ -17,15 +17,6 @@ voice-checked: true
 
 Choose DALL-E 3 if you need a REST API for automated pipelines, consistent text rendering in images, and predictable per-image pricing. Choose Midjourney if you need fine-grained artistic control through parameters like `--stylize`, `--chaos`, and `--seed`, plus community style references. When adapting prompts, replace Midjourney's `--` flag syntax with DALL-E 3's API parameters, expand keyword-style prompts into explicit natural language descriptions, and map `--ar` ratios to DALL-E 3's three fixed `size` options.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **DALL-E 3 charges per**: image at rates that vary by size and quality: standard 1024x1024 images cost $0.040 each, while HD 1024x1024 images cost $0.080.
-- **Wider formats (1792x1024 or**: 1024x1792) cost $0.080 standard and $0.120 HD.
-- **Midjourney's subscription model ($10-$120/month)**: provides a fixed pool of fast GPU hours.
-- **Does Midjourney offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-
 ## Table of Contents
 
 - [Core Architecture Differences](#core-architecture-differences)

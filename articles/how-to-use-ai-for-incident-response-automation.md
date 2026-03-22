@@ -17,13 +17,6 @@ voice-checked: true
 
 Incident response automation with AI reduces mean time to resolution by handling the first 5-10 minutes of an incident automatically: triaging the alert, identifying affected services, running diagnostic commands, and posting a structured incident brief before the on-call engineer has opened their laptop. This guide covers a practical implementation using PagerDuty webhooks, Claude, and Slack.
 
-## Key Takeaways
-
-- **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **This guide covers architecture**: webhook handler, context gathering, with specific setup instructions
-- **Setup and configuration**: Step-by-step instructions included for each tool discussed
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
@@ -390,22 +383,6 @@ Resolution:
 {resolution}
 
 Format:
-## Summary
-### Step 7: Impact
-### Step 8: Root Cause
-### Step 9: Timeline
-### Step 10: What Went Well
-### Step 11: What Could Have Gone Better
-### Step 12: Action Items (specific, assigned, with deadlines)
-"""
-        }]
-    )
-    return response.content[0].text
-```
-
-### Step 13: Deploy ment
-
-```dockerfile
 # Dockerfile
 FROM python:3.12-slim
 WORKDIR /app

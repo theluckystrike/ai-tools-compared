@@ -17,16 +17,6 @@ voice-checked: true
 
 Custom system prompts give you control over how the ChatGPT API behaves in your applications. When you need consistent code output that follows your team's coding standards, a well-crafted system prompt becomes essential. This guide shows you how to create effective system prompts that enforce coding standards across your AI-generated code.
 
-## Key Takeaways
-
-- **- Exception**: If the user explicitly says "ignore standards for this request," you may comply
-  for that single request only.
-- **A practical target for**: most teams is 300–500 tokens for the system prompt.
-- **Unlike user messages that**: change with each request, the system prompt persists throughout the conversation and shapes the model's behavior globally.
-- **When your team requires**: consistent code formatting, specific naming conventions, or enforcement of best practices, the system prompt is where you define those requirements.
-- **A custom system prompt**: solves this by establishing clear expectations before any user code requests arrive.
-- **Start with your language preferences**: then specify formatting rules, and finally add any architectural constraints your team follows.
-
 ## Why System Prompts Matter for Code Generation
 
 The system prompt sets the foundation for every response the API produces. Unlike user messages that change with each request, the system prompt persists throughout the conversation and shapes the model's behavior globally. When your team requires consistent code formatting, specific naming conventions, or enforcement of best practices, the system prompt is where you define those requirements.

@@ -20,14 +20,6 @@ Testing Unicode and emoji handling is one of those development tasks that seems 
 
 This guide shows you how to use AI to generate Unicode and emoji edge case tests that catch real-world issues before they reach production.
 
-## Key Takeaways
-
-- **This guide shows you**: how to use AI to generate Unicode and emoji edge case tests that catch real-world issues before they reach production.
-- **Use the `grapheme` library**: or `regex` module's `\X` pattern for correct grapheme counting.
-- **Your test suite should**: verify these characters are either stripped or rendered in a sandboxed way in user-facing contexts.
-- **With proper test coverage, you'll catch Unicode-related bugs before they affect users**: or attackers find them first.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-
 ## Why Unicode Testing Matters
 
 Modern applications must handle text from dozens of writing systems, each with its own rules for encoding, rendering, and processing. Unicode standardizes these characters, but the complexity lies in the details. A string might appear identical visually while having different byte representations. Combining characters, zero-width joiners, right-to-left marks, and surrogate pairs all create opportunities for bugs.

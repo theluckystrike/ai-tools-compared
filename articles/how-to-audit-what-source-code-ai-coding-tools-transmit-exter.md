@@ -20,10 +20,6 @@ When you use AI coding tools like GitHub Copilot, Cursor, or Claude Code, your s
 
 This guide covers practical methods to audit and monitor network traffic from AI coding tools, giving you visibility into exactly what data gets transmitted.
 
-## Key Takeaways
-
-- **The free tier allows**: code to be used to improve the model.
-- **Here's how to use it**: ```bash
 # Install mitmproxy
 pip install mitmproxy
 
@@ -271,23 +267,23 @@ from mitmproxy import http
 import json, time
 
 AI_DOMAINS = [
-    "api.anthropic.com", "api.openai.com", "api.github.com",
-    "api.codeium.com", "copilot-proxy.githubusercontent.com",
+ "api.anthropic.com", "api.openai.com", "api.github.com",
+ "api.codeium.com", "copilot-proxy.githubusercontent.com",
 ]
 
 def request(flow: http.HTTPFlow) -> None:
-    host = flow.request.pretty_host
-    if any(domain in host for domain in AI_DOMAINS):
-        ts = time.strftime("%H:%M:%S")
-        print(f"[{ts}] {flow.request.method} {host} ({len(flow.request.content)}b)")
-        try:
-            body = json.loads(flow.request.content)
-            if "messages" in body:
-                for msg in body["messages"]:
-                    preview = str(msg.get("content", ""))[:150]
-                    print(f"  >> {preview}...")
-        except Exception:
-            pass
+ host = flow.request.pretty_host
+ if any(domain in host for domain in AI_DOMAINS):
+ ts = time.strftime("%H:%M:%S")
+ print(f"[{ts}] {flow.request.method} {host} ({len(flow.request.content)}b)")
+ try:
+ body = json.loads(flow.request.content)
+ if "messages" in body:
+ for msg in body["messages"]:
+ preview = str(msg.get("content", ""))[:150]
+ print(f" >> {preview}...")
+ except Exception:
+ pass
 ```
 
 Run with: `mitmproxy -s mitmproxy_ai_logger.py -p 8080`

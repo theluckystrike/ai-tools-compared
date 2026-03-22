@@ -19,15 +19,6 @@ Effective multi-tool workflows use each AI tool's strengths: Cursor for file sca
 
 Modern full stack development involves numerous repetitive tasks across frontend, backend, and infrastructure layers. Rather than switching between AI tools manually, chaining them together creates automated pipelines that handle entire feature development cycles. This approach transforms isolated AI interactions into cohesive development workflows.
 
-## Key Takeaways
-
-- **JSON**: YAML, or clearly formatted text work best for pipeline integration.
-- **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
-- **Effective multi-tool workflows use**: each AI tool's strengths: Cursor for file scaffolding, Claude for complex reasoning, GitHub Copilot for inline completion, and specialized tools for testing.
-- **This specialization produces higher**: quality output than attempting to use a single tool for everything.
-- **Building pipelines that respect**: these boundaries produces dramatically better output.
-- **Use embeddings-based retrieval to**: identify which files matter.
-
 ## Table of Contents
 
 - [Understanding AI Tool Chaining](#understanding-ai-tool-chaining)
@@ -308,6 +299,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Manage AI Coding Context Across Multiple Related Repo](/ai-tools-compared/how-to-manage-ai-coding-context-across-multiple-related-repo/)
 - [Windsurf AI Flows Feature How It Chains Multiple Editing Ste](/ai-tools-compared/windsurf-ai-flows-feature-how-it-chains-multiple-editing-ste/)
 - [AI Coding Assistants for TypeScript Express Middleware Chain](/ai-tools-compared/ai-coding-assistants-for-typescript-express-middleware-chain/)
+- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

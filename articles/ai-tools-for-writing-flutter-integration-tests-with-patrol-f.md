@@ -17,19 +17,6 @@ voice-checked: true
 
 Writing integration tests for Flutter applications has historically been time-consuming, especially when targeting native platform features. The Patrol framework addresses this by providing a powerful API for interacting with native UI elements across iOS and Android. In 2026, AI code generation tools have matured significantly, offering substantial assistance in creating strong Patrol tests faster. This guide explores how to use AI tools effectively for writing Flutter integration tests with Patrol.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **This guide explores how**: to use AI tools effectively for writing Flutter integration tests with Patrol.
-- **Include the screen name**: user actions, expected outcomes, and any native interactions:
-
-```
-Generate a Patrol test for the profile settings screen:
-1.
-- **Verify map loads with**: user location 4.
-
 ## Table of Contents
 
 - [Understanding Patrol Framework for Flutter Testing](#understanding-patrol-framework-for-flutter-testing)
@@ -479,6 +466,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [AI Tools for Writing Flutter Golden Image Snapshot Tests for Widget Regression](/ai-tools-for-writing-flutter-golden-image-snapshot-tests-for/)
 - [AI Tools for Writing Jest Tests for Graphql Resolvers](/ai-tools-for-writing-jest-tests-for-graphql-resolvers-with-dataloader-batching/)
 - [AI Tools for Writing Jest Tests for Web Worker and Service](/ai-tools-for-writing-jest-tests-for-web-worker-and-service-w/)
+- [AI Code Completion for Flutter BLoC Pattern Event and State](/ai-tools-compared/ai-code-completion-for-flutter-bloc-pattern-event-and-state-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```

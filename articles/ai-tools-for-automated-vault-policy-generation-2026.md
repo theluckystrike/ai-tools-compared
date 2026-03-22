@@ -207,13 +207,343 @@ Claude's response:
 - `sys/*` is dangerous — `sys/` contains Vault's own configuration, audit logs, and health endpoints. Read access to `sys/` includes `sys/config/ui` and `sys/seal-status`
 - Recommend narrowing to specific paths: `secret/data/myapp/*` and removing `sys/*` entirely unless specific sys paths are required
 
+## Dynamic Secrets for Databases
+
+One of Vault's most powerful features is generating short-lived database credentials on demand. AI tools can generate both the Vault configuration and the application integration code.
+
+**Prompt:**
+```text
+Write Vault Terraform configuration to set up dynamic PostgreSQL credentials.
+Database: postgres.internal:5432, dbname: orders.
+Create a role called "orders-service-role" that generates credentials with
+SELECT, INSERT, UPDATE on all tables in the public schema.
+Credentials should expire after 1 hour.
+```
+
+```hcl
+resource "vault_database_secret_backend_connection" "postgres" {
+  backend       = "database"
+  name          = "orders-postgres"
+  allowed_roles = ["orders-service-role"]
+
+  postgresql {
+    connection_url = "postgresql://{{username}}:{{password}}@postgres.internal:5432/orders"
+    max_open_connections = 5
+    max_connection_lifetime = "300s"
+  }
+
+  root_rotation_statements = [
+    "ALTER USER '{{name}}' WITH PASSWORD '{{password}}';"
+  ]
+}
+
+resource "vault_database_secret_backend_role" "orders_service" {
+  backend = "database"
+  name    = "orders-service-role"
+  db_name = vault_database_secret_backend_connection.postgres.name
+
+  default_ttl = "3600"   # 1 hour
+  max_ttl     = "86400"  # 24 hours max renewal
+
+  creation_statements = [
+    "CREATE ROLE \"{{name}}\" WITH LOGIN PASSWORD '{{password}}' VALID UNTIL '{{expiration}}';",
+    "GRANT SELECT, INSERT, UPDATE ON ALL TABLES IN SCHEMA public TO \"{{name}}\";",
+    "ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT, INSERT, UPDATE ON TABLES TO \"{{name}}\";"
+  ]
+
+  revocation_statements = [
+    "REVOKE ALL PRIVILEGES ON ALL TABLES IN SCHEMA public FROM \"{{name}}\";",
+    "DROP ROLE IF EXISTS \"{{name}}\";"
+  ]
+}
+```
+
+The `ALTER DEFAULT PRIVILEGES` statement ensures the dynamic user can access tables created after the role was configured — a detail that Claude adds proactively. Without it, dynamic users lose access to new tables without a policy change.
+
+## Secret Versioning and Rollback
+
+KV v2 stores multiple versions of each secret, and AI can help generate the management scripts:
+
+**Prompt:**
+```text
+Write a bash script to:
+1. Write a new version of secret/data/orders-service/config
+2. Verify the write succeeded and show the version number
+3. Roll back to the previous version if the application health check fails
+4. Archive (soft-delete) old versions beyond the last 5
+```
+
+```bash
+#!/usr/bin/env bash
+set -euo pipefail
+
+SECRET_PATH="secret/data/orders-service/config"
+METADATA_PATH="secret/metadata/orders-service/config"
+HEALTH_URL="http://orders-service:8080/health"
+
+# Write new version
+echo "Writing new secret version..."
+NEW_VERSION=$(vault kv put -mount=secret orders-service/config \
+  DB_HOST="postgres.internal" \
+  DB_PORT="5432" \
+  FEATURE_FLAG="enabled" \
+  -format=json | jq -r '.data.version')
+
+echo "Wrote version: ${NEW_VERSION}"
+
+# Wait for application to pick up new secret
+sleep 5
+
+# Health check
+HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" "${HEALTH_URL}")
+if [ "${HTTP_CODE}" != "200" ]; then
+  echo "Health check failed (HTTP ${HTTP_CODE}). Rolling back to version $((NEW_VERSION - 1))..."
+  vault kv rollback -mount=secret -version=$((NEW_VERSION - 1)) orders-service/config
+  echo "Rollback complete."
+  exit 1
+fi
+
+echo "Health check passed. Deployment successful."
+
+# Clean up old versions — keep last 5
+CURRENT_VERSION=$(vault kv metadata get -mount=secret -format=json orders-service/config \
+  | jq -r '.data.current_version')
+
+if [ "${CURRENT_VERSION}" -gt 5 ]; then
+  VERSIONS_TO_DELETE=$(seq 1 $((CURRENT_VERSION - 5)) | tr '\n' ',' | sed 's/,$//')
+  echo "Archiving old versions: ${VERSIONS_TO_DELETE}"
+  vault kv delete -mount=secret -versions="${VERSIONS_TO_DELETE}" orders-service/config
+fi
+```
+
+Claude uses `vault kv rollback` (available in Vault 1.9+) rather than a manual version re-write, which is the correct approach — rollback promotes an existing version as the new HEAD without creating ambiguous state.
+
+## Audit Log Analysis
+
+**Prompt:**
+```text
+Write a jq command to analyze Vault audit logs and find the top 10 secrets
+being accessed most frequently, showing path and request count.
+```
+
+```bash
+# Vault audit log is JSONL — one JSON object per line
+cat /var/log/vault/audit.log | \
+  jq -r 'select(.type == "request") | .request.path' | \
+  sort | uniq -c | sort -rn | head -10
+
+# Filter to only successful reads in the last hour
+cat /var/log/vault/audit.log | \
+  jq -r --arg cutoff "$(date -u -d '1 hour ago' +%Y-%m-%dT%H:%M:%SZ)" \
+  'select(.type == "response" and .time >= $cutoff and .response.auth != null)
+   | .request.path' | \
+  sort | uniq -c | sort -rn | head -10
+```
+
+AI is particularly useful for Vault audit log queries because the JSONL format and nested structure make ad-hoc jq expressions tedious to write correctly. Claude handles the nested field selection and date filtering without needing multiple iterations.
+
+## Related Reading
+
+- [AI-Powered Feature Flag Management Tools](/ai-tools-compared/ai-powered-feature-flag-management-tools-2026/)
+- [AI-Powered Observability Configuration Tools](/ai-tools-compared/ai-powered-observability-configuration-tools-2026/)
+- [Best AI Tools for Writing Systemd Units](/ai-tools-compared/best-ai-tools-for-writing-systemd-units-2026/)
+- [AI for Automated Regression Test Generation from Bug](/ai-tools-compared/ai-for-automated-regression-test-generation-from-bug-reports/)
+
+---
+
 ## Related Articles
+## Database Role Provisioning
+
+**Prompt:**
+```text
+Write Vault configuration for dynamic database credentials.
+- Postgres database at db.prod.internal:5432
+- Create read-only role: "orders-service-ro", grants SELECT
+- Create write role: "orders-service-rw", grants SELECT, INSERT, UPDATE, DELETE
+- Role TTL: 1 hour (credentials rotate hourly)
+- Max TTL: 24 hours
+Include the Terraform configuration and policy.
+```
+
+**Claude output:**
+
+```hcl
+# Enable database secrets engine
+resource "vault_mount" "database" {
+  path = "database"
+  type = "database"
+}
+
+# Configure Postgres connection
+resource "vault_database_connection" "postgres" {
+  backend       = vault_mount.database.path
+  name          = "postgres"
+  allowed_roles = ["orders-service-ro", "orders-service-rw"]
+
+  postgresql {
+    connection_url       = "postgresql://{{username}}:{{password}}@db.prod.internal:5432/orders"
+    username             = "vault_admin"
+    password             = var.postgres_admin_password
+    verify_connection    = true
+    disable_verify_connection = false
+  }
+}
+
+# Read-only role
+resource "vault_database_secret_backend_role" "orders_ro" {
+  backend             = vault_mount.database.path
+  name                = "orders-service-ro"
+  db_name             = vault_database_connection.postgres.name
+  creation_statements = [
+    "CREATE ROLE \"{{name}}\" WITH LOGIN PASSWORD '{{password}}' VALID UNTIL '{{expiration}}';",
+    "GRANT CONNECT ON DATABASE orders TO \"{{name}}\";",
+    "GRANT USAGE ON SCHEMA public TO \"{{name}}\";",
+    "GRANT SELECT ON ALL TABLES IN SCHEMA public TO \"{{name}}\";"
+  ]
+  default_ttl = 3600  # 1 hour
+  max_ttl     = 86400 # 24 hours
+}
+
+# Read-write role
+resource "vault_database_secret_backend_role" "orders_rw" {
+  backend             = vault_mount.database.path
+  name                = "orders-service-rw"
+  db_name             = vault_database_connection.postgres.name
+  creation_statements = [
+    "CREATE ROLE \"{{name}}\" WITH LOGIN PASSWORD '{{password}}' VALID UNTIL '{{expiration}}';",
+    "GRANT CONNECT ON DATABASE orders TO \"{{name}}\";",
+    "GRANT USAGE ON SCHEMA public TO \"{{name}}\";",
+    "GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO \"{{name}}\";"
+  ]
+  default_ttl = 3600
+  max_ttl     = 86400
+}
+```
+
+**Policy for services to use database credentials:**
+
+```hcl
+# Policy: orders-service-db-access
+path "database/creds/orders-service-ro" {
+  capabilities = ["read"]
+}
+
+path "database/creds/orders-service-rw" {
+  capabilities = ["read"]
+}
+
+path "auth/token/renew-self" {
+  capabilities = ["update"]
+}
+```
+
+Claude correctly uses `{{username}}`, `{{password}}`, and `{{expiration}}` placeholders — Vault substitutes these when creating roles.
+
+## SSH Certificate Signing (Host Access)
+
+**Prompt:**
+```text
+Generate Vault SSH CA configuration for signing user certificates.
+- SSH CA keypair stored in Vault
+- Sign certificates valid for 8 hours
+- Allow access to specific hosts via CIDR
+- Policy for developers to request signed certificates
+```
+
+**Claude output:**
+
+```hcl
+# Enable SSH secrets engine
+resource "vault_mount" "ssh" {
+  path = "ssh"
+  type = "ssh"
+}
+
+# Configure SSH CA
+resource "vault_ssh_secret_backend_ca" "ca" {
+  backend = vault_mount.ssh.path
+  # Vault generates the CA keypair; store pub key in authorized_keys on servers
+  generate_signing_key = true
+}
+
+# SSH role for user certificates (8-hour TTL)
+resource "vault_ssh_secret_backend_role" "user_cert" {
+  backend = vault_mount.ssh.path
+  name    = "user-cert"
+
+  ttl                      = 28800  # 8 hours
+  max_ttl                  = 28800
+  allowed_user_key_config  = "dictated"
+  allow_user_certificates  = true
+
+  # Signed certificates can access these principals
+  allowed_users = "ubuntu,ec2-user,ubuntu"
+
+  # Optional: restrict to specific hosts by CIDR or hostname pattern
+  allowed_domains = "prod-*.internal,staging-*.internal"
+}
+
+# Output CA public key to distribute to servers
+output "ssh_ca_public_key" {
+  value     = vault_ssh_secret_backend_ca.ca.public_key
+  sensitive = true
+}
+```
+
+**Policy for developers:**
+
+```hcl
+path "ssh/sign/user-cert" {
+  capabilities = ["create", "update"]
+}
+
+path "auth/token/lookup-self" {
+  capabilities = ["read"]
+}
+```
+
+**Usage:**
+
+```bash
+# 1. Request signed certificate from Vault
+vault write -field=signed_certificate ssh/sign/user-cert \
+  username=ubuntu \
+  public_key=@~/.ssh/id_rsa.pub > ~/.ssh/id_rsa-cert.pub
+
+# 2. SSH using certificate (no password)
+ssh -i ~/.ssh/id_rsa -i ~/.ssh/id_rsa-cert.pub ubuntu@prod-web-01.internal
+
+# 3. SSH servers validate certificate against CA public key
+# (installed in /etc/ssh/trusted-user-ca-keys.pub)
+```
+
+## Tool Comparison
+
+| Feature | Claude | ChatGPT |
+|---------|--------|---------|
+| KV v2 path prefixes | Always correct (data/, metadata/) | Often forgets data/ |
+| AppRole config | Includes CIDR binding, TTLs | Minimal, missing options |
+| Kubernetes auth | Includes Agent Injector templates | Omits Injector pattern |
+| Database dynamic roles | Correct placeholder syntax | Sometimes wrong |
+| SSH CA setup | Complete (CA key, roles, policy) | Missing steps |
+| Token renewal paths | Includes auth/token/* automatically | Omitted |
+| Policy review feedback | Identifies overly broad paths | Generic feedback |
+| Terraform + HCL | Both correct | HCL formatting issues |
+
+## Related Reading
+
+- [AI-Powered Feature Flag Management Tools](/ai-tools-compared/ai-powered-feature-flag-management-tools-2026/)
+- [AI-Powered Observability Configuration Tools](/ai-tools-compared/ai-powered-observability-configuration-tools-2026/)
+- [Best AI Tools for Writing Systemd Units](/ai-tools-compared/best-ai-tools-for-writing-systemd-units-2026/)
+
+---
 
 - [AI Tools for Automated Secrets Rotation and Vault Management](/ai-tools-compared/ai-tools-for-automated-secrets-rotation-and-vault-management/)
 - [AI Tools for Automated Test Data Generation 2026](/ai-tools-compared/ai-tools-for-automated-test-data-generation-2026/)
 - [AI Policy Management Tools Enterprise Compliance](/ai-tools-compared/ai-policy-management-tools-enterprise-compliance-2026/)
 - [How to Configure AI Coding Tools to Exclude Secrets and Env](/ai-tools-compared/how-to-configure-ai-coding-tools-to-exclude-secrets-and-env-/)
 - [AI Tools for Automated Changelog Generation 2026](/ai-tools-compared/ai-tools-for-automated-changelog-generation-2026/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

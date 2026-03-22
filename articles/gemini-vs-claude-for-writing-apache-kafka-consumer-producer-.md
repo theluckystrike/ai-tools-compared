@@ -17,15 +17,6 @@ tags: [ai-tools-compared, comparison, claude-ai]
 
 This comparison evaluates Gemini and Claude on Apache Kafka consumer and producer code in Java, focusing on code quality, API accuracy, and practical developer experience.
 
-## Key Takeaways
-
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-- **The producer implementations typically**: use the newer `KafkaProducer` with modern configuration approaches.
-- **Choose Claude when building**: production Kafka systems.
-- **The difference is most**: noticeable in error handling, configuration defaults, and lifecycle management.
-- **If you are building**: systems that need to run reliably in production, Claude is the better starting point.
-
 ## Table of Contents
 
 - [Setting Up the Comparison](#setting-up-the-comparison)

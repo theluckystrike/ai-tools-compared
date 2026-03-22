@@ -20,20 +20,6 @@ Use AI codebase search to find relevant code before generating, reducing halluci
 
 AI coding assistants have become remarkably capable at generating code, but their output quality depends heavily on the context you provide. One of the most effective strategies for improving AI-generated code involves searching your existing codebase for relevant examples before requesting new code. This approach, often called "retrieval-augmented generation" in professional contexts, dramatically improves accuracy and consistency.
 
-## Key Takeaways
-
-- **A prompt might look like**: ```
-Based on this existing cache implementation:
-
-[PASTE RELEVANT CODE HERE]
-
-Add a new caching layer for user session data with a 30-minute TTL.
-- **Use AI codebase search**: to find relevant code before generating, reducing hallucinations and ensuring consistency with existing patterns.
-- **One of the most**: effective strategies for improving AI-generated code involves searching your existing codebase for relevant examples before requesting new code.
-- **Use your IDE's search**: functionality or command-line tools to find relevant examples.
-- **Including relevant config patterns**: ensures generated code uses the right settings, logging levels, or feature flags.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-
 ## Why Search Before Generating Matters
 
 

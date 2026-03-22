@@ -29,14 +29,6 @@ voice-checked: false
 
 Good documentation is the difference between a codebase teammates actually use and one they stumble through. JSDoc and TSDoc comments are the standard for documenting JavaScript and TypeScript code, yet most developers write them reluctantly or skip them entirely because the process feels tedious. AI coding assistants have matured significantly, and several now generate accurate documentation comments that follow established conventions without requiring extensive manual correction.
 
-## Key Takeaways
-
-- **Open-source projects or developers**: preferring local-first solutions should evaluate Tabnine with its offline mode, though documentation generation lags behind the cloud-based alternatives.
-- **JSDoc and TSDoc comments**: are the standard for documenting JavaScript and TypeScript code, yet most developers write them reluctantly or skip them entirely because the process feels tedious.
-- **The best tools analyze imports**: exported interfaces, and usage patterns across your project to produce more accurate descriptions.
-- **The more explicit your TypeScript types**: the better Copilot's suggestions.
-- **If you already use**: GitHub Copilot through your organization, its inline suggestions may be sufficient for routine documentation.
-
 ## Table of Contents
 
 - [What Makes an AI Assistant Good at Documentation Comments](#what-makes-an-ai-assistant-good-at-documentation-comments)
@@ -84,7 +76,7 @@ Copilot excels when your code uses clear type annotations. The more explicit you
 
 ## Claude (via Cursor or Windsurf)
 
-Anthropic's Claude performs exceptionally well when accessed through Cursor or Windsurf. These IDE integrations use Claude's stronger reasoning capabilities to produce more comprehensive documentation.
+Anthropic's Claude performs exceptionally well when accessed through Cursor or Windsurf. These IDE integrations use Claude's stronger reasoning capabilities to produce more documentation.
 
 Claude consistently handles:
 - Complex generic types with proper `@template` tags
@@ -115,7 +107,7 @@ Claude's advantage is depth. It explains complex logic, includes examples when a
 
 ## Cursor
 
-Cursor has emerged as a top choice specifically for documentation-heavy projects. Its Compose feature lets you generate comprehensive documentation for entire functions or modules.
+Cursor has emerged as a top choice specifically for documentation-heavy projects. Its Compose feature lets you generate documentation for entire functions or modules.
 
 The `/doc` command generates complete documentation for selected code:
 
@@ -151,7 +143,7 @@ Cursor produces output like:
  */
 ```
 
-Cursor's strength is comprehensive, production-ready documentation that includes remarks, examples, and edge case handling.
+Cursor's strength is , production-ready documentation that includes remarks, examples, and edge case handling.
 
 ## Codeium
 
@@ -400,12 +392,6 @@ export function query<T>(
   // ...
 }
 ```
-
-## Conclusion
-
-The best AI assistant for JSDoc and TSDoc comments depends on your specific needs. **Cursor** offers the most comprehensive out-of-the-box experience with the `/doc` command and strong type inference. **Claude** excels for complex documentation scenarios and generates more nuanced explanations. **GitHub Copilot** is the practical choice if you're already in the GitHub ecosystem.
-
-Regardless of tool, remember that AI-assisted documentation works best when your code has explicit types and clear function purposes. Invest time in type clarity, and your AI assistant will generate documentation that actually helps your team.
 
 ## Related Articles
 

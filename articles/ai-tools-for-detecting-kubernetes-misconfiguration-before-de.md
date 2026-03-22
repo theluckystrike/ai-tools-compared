@@ -17,15 +17,6 @@ voice-checked: true
 
 AI tools like Claude Code, GitHub Copilot, and Cursor can identify Kubernetes misconfigurations including security violations (secrets in environment variables, privileged containers, insecure image tags), resource issues (missing requests/limits), and best practice violations before deployment. By analyzing YAML manifests against CIS Kubernetes benchmarks and your organization's policies, AI assistants catch contextual issues that traditional schema validators miss. Integrating AI analysis into CI/CD pipelines or IDE development workflows prevents problematic configurations from reaching production.
 
-## Key Takeaways
-
-- **What's the typical cost**: of analyzing manifests with Claude API? A typical 50-line Kubernetes manifest costs approximately $0.001-0.003 per analysis.
-- **Consider batch processing with**: discounted batch API ($0.0005-0.0015 per manifest) for overnight analysis.
-- **Best practice violations (missing**: labels, no pod disruption budgets) 4.
-- **It misses approximately 5-15%**: of context-specific problems that require deep domain knowledge.
-- **These nuanced problems require**: understanding both Kubernetes best practices and your specific application context.
-- **The most effective approach**: combines multiple methods.
-
 ## The Problem: Misconfigurations Slip Through Traditional Validation
 
 
@@ -242,7 +233,6 @@ Use AI analysis as one layer in your validation strategy. Combine it with:
 - Regular security scanning of running clusters
 
 
-
 ## Building Custom Kubernetes Analysis Rules
 
 Create organization-specific rules by extending the prompts you use with AI tools:
@@ -381,7 +371,7 @@ Prompt: "Review this Kubernetes manifest for:
 Provide severity levels and specific remediation."
 ```
 
-Claude returns a comprehensive audit with actionable recommendations.
+Claude returns an audit with actionable recommendations.
 
 ## Integration with GitOps Workflows
 

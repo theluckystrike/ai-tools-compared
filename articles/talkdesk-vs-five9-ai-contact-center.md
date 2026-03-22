@@ -28,15 +28,6 @@ Choose Talkdesk if you prefer strong low-code options with bundled AI capabiliti
 | Event System | Signed webhook payloads | Polling and push options |
 | Best For | Turnkey AI contact center | Custom-built contact center |
 
-## Key Takeaways
-
-- **Authentication uses OAuth 2.0**: and the API supports both synchronous and asynchronous operations for bulk operations.
-- **The best choice depends**: on your specific use case, existing infrastructure, and team expertise.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-- **Understanding their architectural differences**: helps you choose the right foundation for your implementation.
-- **Five9 takes a platform**: approach with its Five9 Intelligent Cloud Contact Center, offering extensive API coverage and a marketplace of partner integrations.
-
 ## Platform Architecture Overview
 
 

@@ -17,15 +17,6 @@ voice-checked: true
 
 Prevent over-engineered solutions by explicitly requesting simplicity in prompts, showing simpler examples in context, and asking AI to explain why it made certain choices. This guide shows the prompting techniques that reliably get straightforward solutions instead of gold-plated code.
 
-## Key Takeaways
-
-- **Just use regex and**: return true/false." ``` Tools that consistently generate 3-5 line solutions are better for simplicity-first workflows.
-- **Ask the AI to**: limit its solution to a specific number of lines, to avoid external dependencies, or to use only standard library features.
-- Use only the standard library.
-- **Some tools support custom**: instructions or system prompts where you can specify your preferences once and have them apply to all interactions.
-- **Document your team's preferred**: patterns for common tasks 2.
-- **Instead of open-ended requests**: like "write me a function to handle user authentication," provide constraints that push toward simplicity.
-
 ## Table of Contents
 
 - [Why AI Tools Over-Complexify Code](#why-ai-tools-over-complexify-code)

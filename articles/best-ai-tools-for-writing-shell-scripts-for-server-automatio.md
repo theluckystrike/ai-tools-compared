@@ -17,15 +17,6 @@ voice-checked: true
 
 Claude Code excels at complex multi-step server automation scripts with proper error handling, GitHub Copilot provides solid inline completion for common patterns, and Cursor handles multi-file infrastructure projects well. For terminal workflows, Aider integrates directly with the command line, while Codeium offers a free option with decent automation coverage. Choose based on your needs: full-stack automation (Claude Code), inline completion (Copilot), infrastructure projects (Cursor), or terminal-centric work (Aider).
 
-## Key Takeaways
-
-- **AI assistants can accelerate**: this process by suggesting appropriate command combinations, identifying potential bugs before execution, and recommending security best practices.
-- **Aider suits terminal-focused workflows**: and Codeium offers a capable free option for basic needs.
-- **Consider starting with a**: tool's free tier to evaluate its effectiveness for your particular use case before committing to a paid subscription.
-- **For terminal workflows**: Aider integrates directly with the command line, while Codeium offers a free option with decent automation coverage.
-- **The tool's integration with**: GitHub Actions also means it understands CI/CD pipeline scripts, making it useful for building automated deployment workflows.
-- **Its direct terminal integration**: appeals to system administrators who spend most of their time working on remote servers via SSH.
-
 ## Table of Contents
 
 - [Why AI-Assisted Shell Scripting Matters](#why-ai-assisted-shell-scripting-matters)

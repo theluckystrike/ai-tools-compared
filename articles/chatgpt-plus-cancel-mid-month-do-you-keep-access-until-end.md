@@ -17,17 +17,6 @@ voice-checked: true
 
 Yes, if you cancel ChatGPT Plus mid-month, you keep full access to all Plus features until the end of your current billing period. OpenAI does not immediately downgrade your account upon cancellation -- your GPT-4 access, rate limits, and other Plus benefits remain active through the date your next renewal would have occurred. This article walks through the exact timeline, practical scenarios, and code examples for managing the transition in your applications.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Scenario 3**: API integration dependencies
-
-Your application uses the ChatGPT API with a Plus subscription benefit (reduced API pricing or priority access).
-- **During high-traffic periods**: free users may experience slower response times or temporary unavailability.
-- **API pricing**: If you used the API with Plus subscription benefits, standard free-tier pricing applies.
-- **Does ChatGPT offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-
 ## Table of Contents
 
 - [How ChatGPT Plus Billing Works](#how-chatgpt-plus-billing-works)

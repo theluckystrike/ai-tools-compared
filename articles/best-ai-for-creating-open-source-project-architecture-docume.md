@@ -57,14 +57,14 @@ local filesystem.
 ## C4 Context Diagram
 ```mermaid
 C4Context
-  Person(user, "Developer", "Uses CLI to manage tasks")
-  System(cobraTask, "cobra-task", "Local CLI task manager")
-  SystemDb(sqlite, "SQLite Database", "~/.cobra-task/tasks.db")
-  System_Ext(plugins, "Plugins", "Local gRPC plugins")
+ Person(user, "Developer", "Uses CLI to manage tasks")
+ System(cobraTask, "cobra-task", "Local CLI task manager")
+ SystemDb(sqlite, "SQLite Database", "~/.cobra-task/tasks.db")
+ System_Ext(plugins, "Plugins", "Local gRPC plugins")
 
-  Rel(user, cobraTask, "Uses", "CLI")
-  Rel(cobraTask, sqlite, "Reads/writes")
-  Rel(cobraTask, plugins, "Calls", "gRPC")
+ Rel(user, cobraTask, "Uses", "CLI")
+ Rel(cobraTask, sqlite, "Reads/writes")
+ Rel(cobraTask, plugins, "Calls", "gRPC")
 ```
 ```
 
@@ -167,11 +167,11 @@ The most effective workflow for open source architecture documentation:
 ## Component Diagram
 ```mermaid
 graph TD
-  A[CLI Entry] --> B[Command Parser]
-  B --> C[Task Repository]
-  C --> D[SQLite Driver]
-  B --> E[Plugin Manager]
-  E --> F[gRPC Client]
+ A[CLI Entry] --> B[Command Parser]
+ B --> C[Task Repository]
+ C --> D[SQLite Driver]
+ B --> E[Plugin Manager]
+ E --> F[gRPC Client]
 ```
 
 ## Data Flow: Creating a Task
@@ -230,6 +230,257 @@ This does not auto-update the docs — that is fragile and produces low-quality 
 | Keeping docs in sync with code | Claude (re-run on PR) |
 | Architecture Decision Records | Claude |
 | Sequence diagrams for API flows | Eraser.io or Claude |
+{% raw %}
+
+# Best AI Tools for Creating Open Source Project Architecture Documentation
+
+Good architecture documentation explains system design, module boundaries, and dependency flows. It answers: "How does this project work?" and "Where do I add a new feature?" AI tools excel at generating this from README and code structure.
+
+## Architecture Overview Generation
+
+**Prompt to Claude:**
+```text
+Generate an architecture overview for an open source project:
+- Name: OrderFlow
+- Purpose: Microservice for e-commerce order processing
+- Tech: Python (FastAPI), PostgreSQL, Redis, Kafka
+- Key modules:
+  - api/ — FastAPI endpoints for order CRUD
+  - domain/ — business logic (Order, LineItem entities)
+  - infra/ — database, cache, message queue adapters
+  - workers/ — async job processing (shipping, invoicing)
+
+Create a README section explaining the architecture and a C4 diagram in Mermaid.
+```
+
+**Claude output (README section):**
+
+```markdown
+## Architecture
+
+OrderFlow follows a layered architecture with clear separation of concerns:
+
+### Layers
+
+1. **API Layer** (`api/`)
+   - FastAPI routes for order operations
+   - Input validation and error handling
+   - HTTP request/response transformation
+
+2. **Domain Layer** (`domain/`)
+   - Order and LineItem entities
+   - Business rules and workflows
+   - No external dependencies (database, HTTP, etc.)
+
+3. **Infrastructure Layer** (`infra/`)
+   - Database adapters (PostgreSQL)
+   - Cache operations (Redis)
+   - Message queue producers (Kafka)
+
+4. **Worker Layer** (`workers/`)
+   - Async job handlers (shipping, invoicing)
+   - Consumed from Kafka topics
+   - Updates domain entities via repository
+
+### Data Flow
+
+```
+HTTP Request → API Layer → Domain Layer → Infra Adapters
+ ↓ ↓ ↓
+ Validation Validation DB/Cache/Queue
+ ↓ ↓ ↓
+ HTTP Response ← Business Result ← External Services
+```
+
+### Dependency Direction
+
+Dependencies point inward. The Domain layer depends on nothing.
+The API layer depends on Domain and Infra, but Infra doesn't depend on API.
+```
+
+**C4 Diagram (Mermaid):**
+
+```
+graph TD
+    A["Client Apps"] -->|HTTP| B["API Layer<br/>FastAPI Routes"]
+    B -->|Call| C["Domain Layer<br/>Order, LineItem"]
+    C -->|Use| D["Infra Layer"]
+    D -->|Query| E["PostgreSQL"]
+    D -->|Cache| F["Redis"]
+    D -->|Publish| G["Kafka"]
+    H["Workers<br/>Shipping, Invoicing"] -->|Consume| G
+    H -->|Update| C
+```
+
+## Module Dependency Diagram
+
+**Prompt:**
+```text
+Show the dependency graph between modules in OrderFlow.
+Include: api, domain, infra, workers, tests.
+Which modules can depend on which?
+```
+
+**Claude output:**
+
+```
+domain/          (no external dependencies)
+  ↑
+  |
+infra/           (depends on domain)
+  ↑
+  |
+api/             (depends on domain, infra)
+  ↑
+  |
+workers/         (depends on domain, infra)
+  ↑
+  |
+tests/           (depends on all)
+
+Rules:
+- Domain: ❌ No dependencies (testable in isolation)
+- Infra: ✓ Depends on Domain only
+- API: ✓ Depends on Domain and Infra
+- Workers: ✓ Depends on Domain and Infra
+- Tests: ✓ Can depend on everything
+```
+
+Claude clearly shows the dependency directions and the reasoning (domain has no deps so it's testable independently).
+
+## Database Schema and Entity Relationships
+
+**Prompt:**
+```text
+Document the database schema for OrderFlow.
+Tables: users, orders, order_items, shipments, invoices.
+Show relationships and explain the design decisions.
+```
+
+**Claude output (SQLAlchemy models):**
+
+```python
+"""
+Database Schema Design
+
+Entities:
+- User: e-commerce customer
+- Order: customer purchase, contains LineItems
+- OrderItem: line in an order, references Product
+- Shipment: fulfillment record, references Order
+- Invoice: billing record, references Order
+
+Relationships:
+- User → Order (1:N)
+- Order → OrderItem (1:N)
+- OrderItem → Product (N:1)
+- Order → Shipment (1:1, but allows multiple for split shipments)
+- Order → Invoice (1:1, but allows adjustments)
+"""
+
+from sqlalchemy import Column, Integer, String, Float, DateTime, ForeignKey
+from sqlalchemy.orm import relationship
+from datetime import datetime
+
+class User(Base):
+    __tablename__ = 'users'
+
+    id = Column(Integer, primary_key=True)
+    email = Column(String(255), unique=True, nullable=False)
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+    orders = relationship('Order', back_populates='user')
+
+class Order(Base):
+    __tablename__ = 'orders'
+
+    id = Column(Integer, primary_key=True)
+    user_id = Column(Integer, ForeignKey('users.id'), nullable=False)
+    status = Column(String(50), default='pending')
+    total = Column(Float, nullable=False)
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+    user = relationship('User', back_populates='orders')
+    items = relationship('OrderItem', back_populates='order', cascade='all, delete-orphan')
+    shipments = relationship('Shipment', back_populates='order')
+    invoice = relationship('Invoice', back_populates='order', uselist=False)
+
+class OrderItem(Base):
+    __tablename__ = 'order_items'
+
+    id = Column(Integer, primary_key=True)
+    order_id = Column(Integer, ForeignKey('orders.id'), nullable=False)
+    product_id = Column(Integer, nullable=False)
+    quantity = Column(Integer, nullable=False)
+    unit_price = Column(Float, nullable=False)
+
+    order = relationship('Order', back_populates='items')
+```
+
+## Deployment Architecture
+
+**Prompt:**
+```text
+Document the deployment architecture: how OrderFlow is deployed to production.
+Include: Docker containers, Kubernetes manifests, environment configuration,
+load balancing, monitoring/logging.
+```
+
+Claude generates a section like:
+
+```markdown
+## Deployment
+
+OrderFlow is deployed as containerized microservices on Kubernetes.
+
+### Container Images
+
+- `orderflow-api:latest` — FastAPI application
+- `orderflow-worker:latest` — Async job processor
+
+### Kubernetes Resources
+
+- Deployment (api, worker)
+- Service (api exposed via LoadBalancer)
+- ConfigMap (non-sensitive config)
+- Secret (database credentials, API keys)
+- HPA (Horizontal Pod Autoscaling based on CPU/memory)
+
+### Environment Configuration
+
+Production, staging, and development configs use separate namespaces
+and ConfigMaps. Secrets are stored in a secrets manager (Vault, AWS Secrets Manager).
+
+### Monitoring
+
+- Prometheus metrics exposed at `/metrics`
+- Logs shipped to ELK stack
+- Alerts on error rate, latency, database connection pool exhaustion
+```
+
+## Tool Comparison
+
+| Feature | Claude | ChatGPT |
+|---------|--------|---------|
+| Architecture overview | Detailed, clear | Good but verbose |
+| C4 diagrams (Mermaid) | Generates correctly | Sometimes incorrect syntax |
+| Dependency graphs | Accurate, shows rules | Missing explanation |
+| Entity relationships | Shows with reasoning | Missing design rationale |
+| Deployment architecture | Complete (K8s, monitoring) | Partial |
+| Database schema docs | Clear with comments | Minimal |
+| Code examples | Accurate and runnable | Sometimes pseudo-code |
+
+## Related Articles
+
+- [Best AI Assistant for Creating Open Source Project Branding](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)
+- [AI Assistants for Creating Security Architecture Review](/ai-tools-compared/ai-assistants-for-creating-security-architecture-review-docu/)
+- [AI Tools for Analyzing Which Open Source Issues Would Benefit](/ai-tools-compared/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
+- [Best AI Assistant for Drafting Open Source Partnership](/ai-tools-compared/best-ai-assistant-for-drafting-open-source-partnership-and-integration-proposals-2026/)
+- [Best AI Assistant for Generating Open Source Release](/ai-tools-compared/best-ai-assistant-for-generating-open-source-release-announcements/)
+
+---
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions
 
@@ -253,4 +504,6 @@ In the repo. Wiki pages drift out of sync because they are not part of the PR pr
 
 - [AI Assistants for Creating Security Architecture Review Documentation](/ai-assistants-for-creating-security-architecture-review-docu/)
 - [Best AI Assistant for Generating Open Source Release Announcements](/best-ai-assistant-for-generating-open-source-release-announcements/)
+- [Best AI Assistant for Creating Open Source Project Branding](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)
+- [AI Tools for Analyzing Which Open Source Issues Would Benefi](/ai-tools-compared/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
 

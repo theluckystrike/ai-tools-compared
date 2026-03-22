@@ -161,7 +161,7 @@ WantedBy=timers.target
 
 Note that systemd timers use `Type=oneshot` for the service (not `Type=simple`) — Claude gets this right. ChatGPT sometimes generates `Type=simple` for timer services, which can cause issues with service tracking.
 
-The "service should not run if the previous run is still active" requirement is handled by `Type=oneshot` combined with no `Restart=` directive. If you add `Restart=on-failure` to a oneshot service, it only retries on non-zero exit — it does not overlap with a running instance.
+The "service should not run if the previous run is still active" requirement is handled by `Type=oneshot` combined with no `Restart=` directive. If you add `Restart=on-failure` to an oneshot service, it only retries on non-zero exit — it does not overlap with a running instance.
 
 ## Socket Activation
 
@@ -217,6 +217,17 @@ In the Python server, use `systemd.daemon.notify` and read from `sys.stdin` (fd 
 Write a systemd path unit that watches /var/spool/incoming/ for new files
 and triggers a processing service when files appear. The service should run
 /opt/scripts/process_incoming.sh.
+## Service Dependencies and Ordering
+
+**Prompt:**
+```text
+I have three services:
+- database.service (PostgreSQL)
+- cache.service (Redis)
+- api.service (Node.js app, depends on both)
+
+Write the systemd units with proper dependency ordering
+and ensure the app doesn't start before both are ready.
 ```
 
 **Claude output:**
@@ -229,6 +240,69 @@ Description=Watch /var/spool/incoming for new files
 [Path]
 PathChanged=/var/spool/incoming
 Unit=incoming-processor.service
+# /etc/systemd/system/database.service
+[Unit]
+Description=PostgreSQL Database
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=notify
+ExecStart=/usr/lib/postgresql/15/bin/postgres -D /var/lib/postgresql/15/main
+ExecReload=/bin/kill -HUP $MAINPID
+User=postgres
+Group=postgres
+Restart=on-failure
+RestartSec=10
+
+# Allow 60 seconds for startup (DB can be slow)
+TimeoutStartSec=60
+
+[Install]
+WantedBy=multi-user.target
+
+---
+
+# /etc/systemd/system/cache.service
+[Unit]
+Description=Redis Cache
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=notify
+ExecStart=/usr/bin/redis-server /etc/redis/redis.conf
+ExecReload=/bin/kill -HUP $MAINPID
+User=redis
+Group=redis
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+
+---
+
+# /etc/systemd/system/api.service
+[Unit]
+Description=API Server
+# After: this service starts after the listed services
+# Requires: if these services fail/stop, this service stops
+After=database.service cache.service
+Requires=database.service cache.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/node /opt/api/server.js
+User=api
+Group=api
+Environment=NODE_ENV=production
+Restart=on-failure
+RestartSec=10
+
+# Don't start this service if dependencies are not running
+PartOf=database.service cache.service
 
 [Install]
 WantedBy=multi-user.target
@@ -285,6 +359,85 @@ systemctl show nginx --property=MemoryMax
 ```
 
 Claude explains that drop-in files in `.service.d/` directories merge with the base unit — you only need to include the directives you're changing. ChatGPT sometimes suggests editing `/lib/systemd/system/nginx.service` directly, which is overwritten on package updates.
+The key distinction: `After` orders startup but allows independent operation. `Requires` makes the dependency mandatory — if the database crashes, the API service stops too. `PartOf` further ties the lifecycle — stopping the database stops the API.
+
+## Drop-in Overrides
+
+**Prompt:**
+```text
+I have a third-party service (nginx.service) that starts at boot.
+I want to override its ExecStart, add environment variables,
+and change the restart policy without modifying the original unit file.
+```
+
+**Claude output:**
+
+```bash
+# Create a drop-in directory
+mkdir -p /etc/systemd/system/nginx.service.d
+
+# Create override file
+cat > /etc/systemd/system/nginx.service.d/custom.conf <<'EOF'
+[Service]
+# Override ExecStart
+ExecStart=
+ExecStart=/usr/sbin/nginx -g "daemon off; worker_processes auto;"
+
+# Add environment variables
+Environment="NGINX_PORT=8080"
+Environment="NGINX_LOG_LEVEL=warn"
+
+# Change restart behavior
+Restart=always
+RestartSec=5
+
+# Add logging
+StandardOutput=journal
+StandardError=journal
+EOF
+
+# Reload systemd
+systemctl daemon-reload
+
+# Verify the override
+systemctl cat nginx.service
+
+# Restart with new config
+systemctl restart nginx
+```
+
+Note: `ExecStart=` (with no value) clears the original, then the next line sets the new one. Drop-in overrides are packaged better than editing the unit file directly since they survive package updates.
+
+## Runtime Service with systemd-run
+
+**Prompt:**
+```text
+I want to run a one-off background task (cleanup script) with systemd,
+tracking it like a service. Use systemd-run for temporary units.
+```
+
+**Claude output:**
+
+```bash
+# Create and start a background service at runtime
+systemd-run --unit=cleanup-task \
+ --working-directory=/opt/app \
+ --slice=user-tasks.slice \
+ --remain-after-exit \
+ /opt/scripts/cleanup.sh
+
+# Monitor it
+systemctl status cleanup-task
+
+# View output
+journalctl -u cleanup-task -f
+
+# Clean up when done
+systemctl stop cleanup-task
+systemctl reset-failed cleanup-task
+```
+
+This is useful for one-off tasks that you want tracked by systemd (logs, resource limits, automatic restarts) without writing a permanent unit file.
 
 ## Debugging Advice Claude Includes
 
@@ -326,12 +479,12 @@ and how to check its output.
 ```bash
 # Run a command as a transient service with resource limits
 systemd-run \
-  --unit=my-oneoff \
-  --property=MemoryMax=256M \
-  --property=CPUShares=100 \
-  --property=User=myapp \
-  --wait \
-  /opt/scripts/heavy-task.sh
+ --unit=my-oneoff \
+ --property=MemoryMax=256M \
+ --property=CPUShares=100 \
+ --property=User=myapp \
+ --wait \
+ /opt/scripts/heavy-task.sh
 
 # Check status
 systemctl status my-oneoff

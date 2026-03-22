@@ -19,15 +19,6 @@ Writing Dockerfiles manually can be tedious, especially when optimizing for laye
 
 This guide compares practical self-hosted AI options for generating Dockerfiles without relying on cloud APIs like OpenAI, Anthropic, or Google.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Does Docker offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **It provides a desktop**: application and local API server, with support for various open-source models.
-- **For CI/CD pipeline integration**: LocalAI or vLLM offer better API compatibility with existing infrastructure.
-
 ## Table of Contents
 
 - [Why Self-Hosted for Dockerfile Generation](#why-self-hosted-for-dockerfile-generation)
@@ -417,5 +408,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Best AI Tools for Writing Docker Compose Files 2026](/best-ai-tools-for-writing-docker-compose-files-2026/)
 - [Best Self-Hosted AI Model for JavaScript TypeScript Code](/best-self-hosted-ai-model-for-javascript-typescript-code-gen/)
 - [Best Self Hosted AI Tool for Writing Unit Tests in Java](/best-self-hosted-ai-tool-for-writing-unit-tests-in-java-loca/)
+- [AI Tools for Generating Docker Compose Files for Complex Mic](/ai-tools-compared/ai-tools-for-generating-docker-compose-files-for-complex-mic/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -18,17 +18,9 @@ voice-checked: true
 
 Docker build context permission denied errors rank among the most frustrating issues Linux developers face. These errors occur when the Docker daemon lacks permissions to access files in your build context, preventing image builds from completing. While traditional debugging requires manually tracing file permissions and ownership, AI coding assistants now offer faster paths to diagnosis and resolution.
 
-## Key Takeaways
-
-- **ARG USER_ID=1001 RUN useradd**: -u ${USER_ID} -m appuser ``` 4.
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Does Docker offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Use explicit permissions in Dockerfiles**: ```dockerfile
 # Set proper permissions during build
 RUN mkdir -p /app && \
-    chown -R node:node /app
+ chown -R node:node /app
 ```
 
 3.
@@ -124,7 +116,7 @@ ARG USER_ID=1000
 ARG GROUP_ID=1000
 
 RUN groupadd -g ${GROUP_ID} appgroup && \
-    useradd -u ${USER_ID} -g appgroup -s /bin/sh appuser
+ useradd -u ${USER_ID} -g appgroup -s /bin/sh appuser
 
 COPY --chown=appuser:appgroup . /app
 USER appuser
@@ -231,7 +223,7 @@ node_modules
 ```dockerfile
 # Set proper permissions during build
 RUN mkdir -p /app && \
-    chown -R node:node /app
+ chown -R node:node /app
 ```
 
 3. **Pin your base image and document user expectations:**
@@ -266,9 +258,9 @@ One underused approach is integrating AI-assisted permission audits into your CI
 # Pre-build permission check script (AI-generated pattern)
 echo "Checking for files that may cause permission issues..."
 find . -not -name '.dockerignore' \
-  -not -path './.git/*' \
-  -not -readable \
-  -print | head -20
+ -not -path './.git/*' \
+ -not -readable \
+ -print | head -20
 
 # Check for root-owned files that could cause issues
 find . -user root -not -path './.git/*' -print | head -10

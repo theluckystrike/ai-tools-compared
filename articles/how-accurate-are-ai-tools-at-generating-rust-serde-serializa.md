@@ -19,19 +19,6 @@ AI tools generate correct Serde schemas about 75% of the time for simple types b
 
 Serde remains the de facto standard for serialization in Rust, yet writing manual serialization implementations can be tedious. Developers increasingly turn to AI coding assistants to generate this boilerplate code automatically. But how accurate are these tools really? This article puts popular AI assistants to the test with practical Rust serde serialization scenarios.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Accuracy**: 85%
-
-GitHub Copilot completely skipped custom serialization and simply used `#[serde(skip)]`, missing the entire point of the request.
-- **Accuracy**: 100%
-
-Cursor suggested `#[serde(deny_unknown_fields)]` which does the opposite—it causes deserialization to fail if any unknown field appears.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **AI tools generate correct**: Serde schemas about 75% of the time for simple types but require substantial fixes for custom implementations, derive macros, and edge cases.
-
 ## Table of Contents
 
 - [The Test Methodology](#the-test-methodology)

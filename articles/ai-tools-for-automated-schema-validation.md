@@ -18,16 +18,6 @@ Schema drift silently breaks APIs, corrupts databases, and causes midnight pages
 
 This guide covers three approaches: AI-generated validation rules, LLM-assisted schema review in CI, and schema evolution analysis.
 
-## Key Takeaways
-
-- **Manual review catches maybe**: 60% of issues.
-- **Breaking changes (field removal**: type change, number reuse in Protobuf)
-          2.
-- **Missing required fields that**: could cause null pointer errors 4.
-- **Schema drift silently breaks APIs**: corrupts databases, and causes midnight pages.
-- Backward compatibility issues
-          3.
-
 ## The Problem With Manual Schema Review
 
 Consider this Protobuf change:
@@ -393,7 +383,7 @@ for issue in issues:
 | Spectral (OpenAPI) | OpenAPI/AsyncAPI | Native | Ruleset files | Free |
 | schemachange (SQL) | SQL only | Native | Limited | Free |
 
-For polyglot schemas (Protobuf + JSON + SQL in one repo), an AI-based approach is the only tool that handles all three in a unified pipeline.
+For polyglot schemas (Protobuf + JSON + SQL in one repo), an AI-based approach is the only tool that handles all three in an unified pipeline.
 
 ## Related Articles
 

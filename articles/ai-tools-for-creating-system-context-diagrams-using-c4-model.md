@@ -20,15 +20,6 @@ System context diagrams form the highest level of the C4 model, showing how your
 
 This guide evaluates the best AI tools for generating C4 model system context diagrams, focusing on PlantUML output quality, Mermaid compatibility, and practical workflow integration.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **This guide evaluates the**: best AI tools for generating C4 model system context diagrams, focusing on PlantUML output quality, Mermaid compatibility, and practical workflow integration.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **When you specify multiple user types**: various external integrations, and specific data flows, the tool generates PlantUML that renders correctly.
-- **The model understands C4**: notation conventions and can produce PlantUML, Mermaid, or Structurizr DSL depending on your preference.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-
 ## Table of Contents
 
 - [Understanding C4 Model System Context Diagrams](#understanding-c4-model-system-context-diagrams)

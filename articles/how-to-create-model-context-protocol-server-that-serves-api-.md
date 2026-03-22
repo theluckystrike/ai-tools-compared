@@ -16,13 +16,6 @@ voice-checked: true
 
 {% raw %}
 
-## Key Takeaways
-
-- **Topics covered**: introduction, prerequisites, setting up your project
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-- **Use-case recommendations**: Specific guidance based on team size and requirements
-- **Trade-off analysis**: Strengths and limitations of each option discussed
-
 ## Table of Contents
 
 - [Introduction](#introduction)

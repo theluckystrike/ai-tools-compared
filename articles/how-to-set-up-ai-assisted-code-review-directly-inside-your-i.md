@@ -19,16 +19,6 @@ Set up AI code review in your IDE by configuring extensions, creating review com
 
 Waiting for pull request reviews slows down development cycles. Setting up AI-assisted code review directly inside your IDE catches issues before you commit, reducing review iterations and improving code quality. This guide walks you through configuring real-time AI code review in Visual Studio Code, JetBrains IDEs, and modern AI-first editors.
 
-## Key Takeaways
-
-- **A review that takes**: 30 seconds per commit will be bypassed with `--no-verify` within days.
-- **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
-- **React best practices (hooks**: dependencies, memo usage) Always provide specific line numbers and suggest concrete fixes.
-- **// This can cause**: the effect to use stale values.
-- **// Fix**: Add [userId] to the dependency array, or use useCallback
-// if userId changes frequently.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-
 ## Table of Contents
 
 - [Why Review Code Inside Your IDE](#why-review-code-inside-your-ide)

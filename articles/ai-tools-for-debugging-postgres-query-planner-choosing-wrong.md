@@ -18,15 +18,6 @@ voice-checked: true
 
 When your PostgreSQL query planner selects a suboptimal index scan path, query performance can degrade dramatically. Developers often spend hours analyzing `EXPLAIN` output, statistics, and configuration settings to understand why the planner made the wrong choice. AI tools now offer practical solutions for diagnosing and resolving these index selection issues faster.
 
-## Key Takeaways
-
-- **Use AI tools to**: interpret the plan and suggest indexes 4.
-- **When these estimates are**: inaccurate or when multiple indexes exist, the planner may choose a scan path that performs poorly in practice.
-- **Alternatively**: the planner might choose an index on a highly selective column while ignoring a more efficient composite index that would reduce the scan further.
-- **Understanding why these mis-selections**: occur helps you provide better context to AI tools.
-- **The more information you**: can give about your schema, data distribution, and query patterns, the more accurate the AI's recommendations will be.
-- **Poor correlation estimates can**: cause the planner to avoid efficient index scans.
-
 ## Table of Contents
 
 - [Understanding PostgreSQL Index Scan Selection](#understanding-postgresql-index-scan-selection)
@@ -83,7 +74,7 @@ AND status = 'pending'
 AND created_at > '2025-01-01';
 ```
 
-The planner might choose a sequential scan or an suboptimal index because it underestimates the selectivity of the `status = 'pending'` condition.
+The planner might choose a sequential scan or a suboptimal index because it underestimates the selectivity of the `status = 'pending'` condition.
 
 ## Using AI Tools for Query Analysis
 

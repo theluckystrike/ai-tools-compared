@@ -19,19 +19,6 @@ Use inline chat to refactor functions by selecting the target function, describi
 
 AI inline chat in Visual Studio Code represents a significant shift in how developers approach code refactoring. Instead of switching between your editor and a separate AI chat interface, you can refactor functions directly where you write code. This guide walks you through using AI inline chat to refactor a single function, from understanding the feature to executing precise transformations.
 
-## Key Takeaways
-
-- **For our example, you might say**: ```
-Refactor this function to use reduce and modern JavaScript syntax
-```
-
-The more specific your instruction, the better the results.
-- **Instead of "make this better**:" specify exactly what you want: "use functional programming methods" or "reduce cognitive complexity." The AI interprets your intent based on your wording.
-- **JavaScript**: TypeScript, Python, and Java receive strong support because they have extensive training data.
-- **Use inline chat to**: refactor functions by selecting the target function, describing desired improvements in natural language, and reviewing changes step-by-step.
-- **This guide shows how**: inline chat keeps refactoring focused and verifiable.
-- **While functional**: it uses older JavaScript patterns that could benefit from modernization.
-
 ## Table of Contents
 
 - [What Is AI Inline Chat](#what-is-ai-inline-chat)
