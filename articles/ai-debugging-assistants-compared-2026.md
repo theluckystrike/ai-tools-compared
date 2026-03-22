@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, troubleshooting, comparison, artificial-intelligence]---
+tags: [ai-tools-compared, troubleshooting, comparison, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI Debugging Assistants Compared 2026"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, troubleshooting, comparison, artificial-intelligence]---
+tags: [ai-tools-compared, troubleshooting, comparison, artificial-intelligence]
+---
 
 {% raw %}
 

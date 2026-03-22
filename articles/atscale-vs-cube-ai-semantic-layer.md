@@ -11,7 +11,8 @@ categories: [comparisons]
 score: 9
 reviewed: true
 intent-checked: true
-tags: [ai-tools-compared, comparison, artificial-intelligence]---
+tags: [ai-tools-compared, comparison, artificial-intelligence]
+---
 ---
 layout: default
 title: "AtScale vs Cube AI Semantic Layer: A Developer Comparison"
@@ -25,7 +26,8 @@ categories: [comparisons]
 score: 9
 reviewed: true
 intent-checked: true
-tags: [ai-tools-compared, comparison, artificial-intelligence]---
+tags: [ai-tools-compared, comparison, artificial-intelligence]
+---
 
 
 When building AI-powered applications that need reliable data access, choosing the right semantic layer becomes critical. Both AtScale and Cube offer AI capabilities that sit between your data warehouse and your application, but they take different approaches. This comparison examines what each platform offers developers building AI-driven data applications.

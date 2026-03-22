@@ -11,7 +11,8 @@ intent-checked: true
 voice-checked: true
 score: 9
 reviewed: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI Tools for Customer Journey Analytics"
@@ -25,7 +26,8 @@ intent-checked: true
 voice-checked: true
 score: 9
 reviewed: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 
 Understanding how customers interact with your product across multiple touchpoints transforms raw data into practical recommendations. Customer journey analytics tracks users from first contact through conversion, retention, and beyond. AI-powered tools now make this analysis more sophisticated and accessible for development teams.

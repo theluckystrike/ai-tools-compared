@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, security, artificial-intelligence]---
+tags: [ai-tools-compared, security, artificial-intelligence]
+---
 ---
 
 
@@ -27,7 +28,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, security, artificial-intelligence]---
+tags: [ai-tools-compared, security, artificial-intelligence]
+---
 
 {% raw %}
 

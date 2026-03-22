@@ -11,7 +11,8 @@ intent-checked: true
 voice-checked: true
 score: 9
 reviewed: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI Tools for Customer Health Scoring"
@@ -25,7 +26,8 @@ intent-checked: true
 voice-checked: true
 score: 9
 reviewed: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 
 Customer health scoring provides a quantitative measure of how well your customers are succeeding with your product. Unlike simple activity metrics, health scores composite multiple signals into practical recommendations that drive proactive customer success interventions. Building effective health scoring systems requires selecting the right tools and implementing them thoughtfully.

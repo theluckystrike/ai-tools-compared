@@ -11,7 +11,8 @@ score: 9
 voice-checked: true
 reviewed: true
 intent-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI Tools for Generating Coding Kata Exercises Tailored"
@@ -25,7 +26,8 @@ score: 8
 voice-checked: true
 reviewed: true
 intent-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 
 Coding kata exercises have long been a staple of developer practice, but finding the right difficulty level and variety can be challenging. AI-powered tools now make it possible to generate customized coding exercises that match your exact skill level, helping you practice exactly what you need without spending time searching through generic repositories.

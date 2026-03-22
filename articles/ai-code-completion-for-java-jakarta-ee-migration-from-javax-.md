@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI Code Completion for Java Jakarta EE Migration from Javax"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 
 Migrating enterprise Java applications from the `javax` namespace to `jakarta` represents one of the most significant breaking changes in the Java ecosystem. This transition, required for Jakarta EE 9 and later, affects countless applications built on Spring, Jakarta EE, and other enterprise frameworks. Understanding how AI code completion tools assist with this migration can significantly reduce manual effort and prevent common errors.

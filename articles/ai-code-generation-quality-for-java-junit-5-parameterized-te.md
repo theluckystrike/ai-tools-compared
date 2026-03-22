@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI Code Generation Quality for Java JUnit 5 Parameterized"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 
 Java developers working with JUnit 5 parameterized tests frequently rely on AI coding assistants to generate test cases, data providers, and parameterized method implementations. The quality of AI-generated parameterized tests varies significantly across different tools, and understanding these differences helps developers choose the right assistant for their testing needs.

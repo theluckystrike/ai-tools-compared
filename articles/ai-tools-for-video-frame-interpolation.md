@@ -11,7 +11,8 @@ score: 9
 reviewed: true
 intent-checked: true
 tags: [ai-tools-compared, artificial-intelligence]
-categories: [guides]---
+categories: [guides]
+---
 ---
 layout: default
 title: "AI Tools for Video Frame Interpolation"
@@ -25,7 +26,8 @@ score: 9
 reviewed: true
 intent-checked: true
 tags: [ai-tools-compared, artificial-intelligence]
-categories: [guides]---
+categories: [guides]
+---
 
 
 Video frame interpolation transforms footage by generating intermediate frames between existing ones, effectively increasing the frame rate or creating smooth slow-motion effects. AI-powered tools have dramatically improved the quality of interpolated frames, moving beyond traditional optical flow methods to neural network approaches that produce more natural results.

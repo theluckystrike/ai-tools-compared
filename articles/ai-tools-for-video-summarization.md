@@ -11,7 +11,8 @@ score: 9
 reviewed: true
 intent-checked: true
 tags: [ai-tools-compared, artificial-intelligence]
-categories: [guides]---
+categories: [guides]
+---
 ---
 layout: default
 title: "AI Tools for Video Summarization"
@@ -25,7 +26,8 @@ score: 9
 reviewed: true
 intent-checked: true
 tags: [ai-tools-compared, artificial-intelligence]
-categories: [guides]---
+categories: [guides]
+---
 
 
 Video content dominates the internet, but processing and extracting value from hours of footage remains challenging. For developers building applications that handle video content, AI-powered summarization tools offer practical solutions.

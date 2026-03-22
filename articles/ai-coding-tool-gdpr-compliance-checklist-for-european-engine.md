@@ -11,7 +11,8 @@ score: 9
 categories: [enterprise]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI Coding Tool GDPR Compliance Checklist for European"
@@ -25,7 +26,8 @@ score: 9
 categories: [enterprise]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 
 European engineering teams face unique challenges when adopting AI coding assistants. The General Data Protection Regulation (GDPR) imposes strict requirements on how personal data is processed, stored, and transferred—and code that developers write may contain personal information that triggers these obligations. This checklist helps engineering teams ensure their AI coding tools comply with GDPR while maintaining developer productivity.

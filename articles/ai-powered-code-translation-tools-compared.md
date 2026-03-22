@@ -10,7 +10,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison, artificial-intelligence]---
+tags: [ai-tools-compared, comparison, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI-Powered Code Translation Tools Compared"
@@ -23,7 +24,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison, artificial-intelligence]---
+tags: [ai-tools-compared, comparison, artificial-intelligence]
+---
 
 {% raw %}
 

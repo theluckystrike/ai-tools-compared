@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence, productivity]---
+tags: [ai-tools-compared, artificial-intelligence, productivity]
+---
 ---
 layout: default
 title: "AI Coding Productivity Measurement How"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence, productivity]---
+tags: [ai-tools-compared, artificial-intelligence, productivity]
+---
 
 
 Measuring AI coding productivity requires more than just gut feelings. Developers need concrete metrics to understand whether AI-assisted tools actually save time and improve code quality. This guide provides practical methods for tracking tool effectiveness in real-world development scenarios.

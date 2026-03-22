@@ -11,7 +11,8 @@ score: 8
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 {% raw %}
 
 Writing ArgoCD application manifests manually can become repetitive and error-prone, especially when managing dozens of microservices across multiple environments. AI coding tools have matured enough to help generate correct YAML structures, suggest appropriate sync policies, and even create complete GitOps workflow templates. This guide evaluates how the leading AI assistants perform at writing ArgoCD manifests and maintaining GitOps pipelines.

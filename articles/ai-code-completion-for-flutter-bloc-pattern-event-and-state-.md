@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence, flutter, mobile-development]---
+tags: [ai-tools-compared, artificial-intelligence, flutter, mobile-development]
+---
 ---
 layout: default
 title: "AI Code Completion for Flutter BLoC Pattern Event and State"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence, flutter, mobile-development]---
+tags: [ai-tools-compared, artificial-intelligence, flutter, mobile-development]
+---
 
 {% raw %}
 

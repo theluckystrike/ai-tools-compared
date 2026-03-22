@@ -10,7 +10,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, security, artificial-intelligence, api]---
+tags: [ai-tools-compared, security, artificial-intelligence, api]
+---
 ---
 layout: default
 title: "AI Tools for API Security Testing"
@@ -23,7 +24,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, security, artificial-intelligence, api]---
+tags: [ai-tools-compared, security, artificial-intelligence, api]
+---
 
 {% raw %}
 

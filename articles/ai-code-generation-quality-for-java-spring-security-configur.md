@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, security, artificial-intelligence]---
+tags: [ai-tools-compared, security, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI Code Generation Quality for Java Spring Security"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, security, artificial-intelligence]---
+tags: [ai-tools-compared, security, artificial-intelligence]
+---
 
 
 Java Spring Security remains a critical component for securing enterprise applications, and developers increasingly rely on AI coding assistants to generate security configurations. The quality of AI-generated Spring Security code varies significantly across different tools, and understanding these differences helps developers implement secure configurations more efficiently.

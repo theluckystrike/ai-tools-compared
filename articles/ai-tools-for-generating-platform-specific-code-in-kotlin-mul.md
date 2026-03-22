@@ -9,7 +9,8 @@ categories: [guides, comparisons]
 reviewed: true
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence, kotlin, kotlin-multiplatform]---
+tags: [ai-tools-compared, artificial-intelligence, kotlin, kotlin-multiplatform]
+---
 ---
 layout: default
 title: "AI Tools for Generating Platform Specific Code in Kotlin"
@@ -21,7 +22,8 @@ categories: [guides, comparisons]
 reviewed: true
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence, kotlin, kotlin-multiplatform]---
+tags: [ai-tools-compared, artificial-intelligence, kotlin, kotlin-multiplatform]
+---
 
 
 Kotlin Multiplatform has become a standard approach for sharing code across Android, iOS, web, desktop, and server targets. However, generating platform-specific implementations remains one of the most time-consuming aspects of KMP development. This guide examines which AI tools effectively assist with generating expect/actual declarations, platform-specific implementations, and native API integrations.

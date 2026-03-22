@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison, security, artificial-intelligence]---
+tags: [ai-tools-compared, comparison, security, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI Tools for Automated Security Scanning Compared"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison, security, artificial-intelligence]---
+tags: [ai-tools-compared, comparison, security, artificial-intelligence]
+---
 
 {% raw %}
 

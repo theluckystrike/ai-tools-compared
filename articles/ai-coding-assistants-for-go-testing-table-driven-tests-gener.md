@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI Coding Assistants for Go Testing Table Driven Tests Gener"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 
 Go developers have embraced table-driven tests as the standard approach for writing concise, maintainable test cases. The quality of AI-generated table-driven tests varies significantly across different coding assistants, and understanding these differences helps developers choose the right tool for their testing workflows.

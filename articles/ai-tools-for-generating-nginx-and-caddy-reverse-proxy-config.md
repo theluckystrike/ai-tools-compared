@@ -11,7 +11,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI Tools for Generating Nginx and Caddy Reverse Proxy"
@@ -25,7 +26,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 
 AI tools have become remarkably capable at generating reverse proxy configurations for both Nginx and Caddy. Whether you need a quick development setup or a hardened production configuration, the right AI assistant can save hours of debugging and documentation reading. This guide evaluates the best options and provides practical examples you can use immediately.

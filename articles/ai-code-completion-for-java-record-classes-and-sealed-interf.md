@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI Code Completion for Java Record Classes and Sealed"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 
 Java 14 introduced record classes as a preview feature, and Java 17 made them a standard feature alongside sealed classes and interfaces. These language features fundamentally change how developers model data and define type hierarchies. In 2026, AI code completion tools have significantly improved their support for these modern Java constructs, but understanding their capabilities and limitations remains essential for developers working with advanced Java features.

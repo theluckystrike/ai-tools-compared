@@ -11,7 +11,8 @@ score: 9
 voice-checked: true
 intent-checked: true
 categories: [comparisons]
-tags: [ai-tools-compared, comparison, artificial-intelligence]---
+tags: [ai-tools-compared, comparison, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI Tools for Generating UI Mockups Compared in 2026"
@@ -25,7 +26,8 @@ score: 8
 voice-checked: true
 intent-checked: true
 categories: [comparisons]
-tags: [ai-tools-compared, comparison, artificial-intelligence]---
+tags: [ai-tools-compared, comparison, artificial-intelligence]
+---
 
 {% raw %}
 

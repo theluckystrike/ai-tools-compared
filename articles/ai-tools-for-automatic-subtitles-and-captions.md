@@ -11,7 +11,8 @@ intent-checked: true
 voice-checked: true
 score: 9
 reviewed: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI Tools for Automatic Subtitles and Captions"
@@ -25,7 +26,8 @@ intent-checked: true
 voice-checked: true
 score: 8
 reviewed: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 
 For developers building video applications, automatic subtitle generation has become significantly more accessible through modern AI APIs. This guide covers practical approaches to implementing subtitle generation in your projects, comparing the available tools and providing code examples for common workflows.

@@ -8,7 +8,8 @@ reviewed: true
 score: 9
 voice-checked: true
 intent-checked: true
-tags: [ai-tools-compared, artificial-intelligence, api]---
+tags: [ai-tools-compared, artificial-intelligence, api]
+---
 ---
 
 
@@ -21,7 +22,8 @@ reviewed: true
 score: 9
 voice-checked: true
 intent-checked: true
-tags: [ai-tools-compared, artificial-intelligence, api]---
+tags: [ai-tools-compared, artificial-intelligence, api]
+---
 {% raw %}
 
 ## Key Takeaways

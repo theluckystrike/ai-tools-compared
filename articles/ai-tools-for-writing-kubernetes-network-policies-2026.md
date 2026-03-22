@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison, kubernetes, network-policy]---
+tags: [ai-tools-compared, comparison, kubernetes, network-policy]
+---
 
 
 Kubernetes NetworkPolicies are notoriously tricky to write correctly. A single misconfigured policy can lock down your entire cluster or leave critical security gaps. The YAML syntax is verbose, the logic is counter-intuitive (deny-all-then-allow-needed is safer than allow-all-then-deny-bad), and the interaction between multiple policies compounds the complexity. AI tools can help draft policies quickly, but they often generate permissive defaults that weaken security. This comparison shows how Claude, GPT-4, and GitHub Copilot handle NetworkPolicy generation, including real-world policy examples.

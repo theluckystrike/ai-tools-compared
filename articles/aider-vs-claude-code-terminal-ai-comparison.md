@@ -11,7 +11,8 @@ score: 8
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison, artificial-intelligence, claude-ai]---
+tags: [ai-tools-compared, comparison, artificial-intelligence, claude-ai]
+---
 ---
 layout: default
 title: "aider vs Claude Code: Terminal AI Coding Assistants Compared"
@@ -25,7 +26,8 @@ score: 8
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison, artificial-intelligence, claude-ai]---
+tags: [ai-tools-compared, comparison, artificial-intelligence, claude-ai]
+---
 
 
 Choose Aider if you want automatic git integration, multi-file refactoring with import updates, and the flexibility to switch between Claude, GPT, and local models mid-session. Choose Claude Code if you want Anthropic's latest reasoning capabilities, explicit control over when file changes are applied, and a general-purpose terminal assistant that handles non-coding tasks too. Many developers use both—Aider for focused coding sessions with git tracking, Claude Code for exploration and broader questions.

@@ -11,7 +11,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 {% raw %}
 
 Use ChatGPT or Claude with custom prompts for full creative control and CI/CD integration, or choose a specialized ASO tool like AppTweak if you need built-in keyword optimization without prompt engineering. General-purpose LLMs produce stronger creative variations and let you automate description generation in your existing pipelines, while dedicated ASO platforms trade that flexibility for turnkey keyword research and direct App Store Connect export.

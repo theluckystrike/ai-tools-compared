@@ -11,7 +11,8 @@ score: 9
 voice-checked: true
 reviewed: true
 intent-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI Code Generation for Java Reactive Programming"
@@ -25,7 +26,8 @@ score: 9
 voice-checked: true
 reviewed: true
 intent-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 
 Java reactive programming has become essential for building responsive, resilient applications. Project Reactor, the reactive foundation for Spring WebFlux, provides a powerful approach for handling asynchronous data streams. This article examines how AI code generation tools assist developers working with Project Reactor, highlighting practical approaches and quality considerations.

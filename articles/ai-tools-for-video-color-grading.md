@@ -11,7 +11,8 @@ voice-checked: true
 score: 9
 reviewed: true
 intent-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI Tools for Video Color Grading"
@@ -25,7 +26,8 @@ voice-checked: true
 score: 9
 reviewed: true
 intent-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 {% raw %}
 

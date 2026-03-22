@@ -11,7 +11,8 @@ intent-checked: true
 voice-checked: true
 score: 9
 reviewed: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI Tools for Music Separation"
@@ -25,7 +26,8 @@ intent-checked: true
 voice-checked: true
 score: 9
 reviewed: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 
 Music source separation—the process of extracting individual instrument stems from a mixed audio track—has transformed from an academic challenge into a practical capability thanks to advances in deep learning. For developers building audio applications, music production tools, or remixing platforms, understanding these tools opens new creative possibilities. This guide covers the leading AI solutions for music separation, their implementation approaches, and practical considerations for integration.

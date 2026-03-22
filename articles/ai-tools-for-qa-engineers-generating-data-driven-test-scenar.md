@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI Tools for Qa Engineers Generating Data Driven Test"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 
 Data-driven testing remains one of the most effective approaches for validating software behavior across diverse input scenarios. QA engineers frequently work with CSV files containing test data, and AI tools now offer powerful capabilities for transforming this data into executable test scenarios. This guide explores how to use AI coding assistants to generate, maintainable data-driven tests from CSV samples.

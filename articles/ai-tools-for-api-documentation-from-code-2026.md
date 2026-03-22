@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence, api]---
+tags: [ai-tools-compared, artificial-intelligence, api]
+---
 ---
 layout: default
 title: "AI Tools for API Documentation from Code 2026"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence, api]---
+tags: [ai-tools-compared, artificial-intelligence, api]
+---
 
 {% raw %}
 

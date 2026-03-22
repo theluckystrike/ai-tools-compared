@@ -11,7 +11,8 @@ intent-checked: true
 voice-checked: true
 score: 8
 reviewed: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI Tools for Self Service Support Portals: Practical Guide"
@@ -25,7 +26,8 @@ intent-checked: true
 voice-checked: true
 score: 8
 reviewed: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 
 Self-service support portals have evolved beyond static FAQ pages. Modern implementations use AI to provide instant answers, automate ticket routing, and personalize user experiences. This guide covers practical implementations of AI tools for developers building or enhancing self-service support portals.

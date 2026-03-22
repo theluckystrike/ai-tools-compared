@@ -11,7 +11,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, troubleshooting, artificial-intelligence]---
+tags: [ai-tools-compared, troubleshooting, artificial-intelligence]
+---
 ---
 
 layout: default
@@ -25,7 +26,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, troubleshooting, artificial-intelligence]---
+tags: [ai-tools-compared, troubleshooting, artificial-intelligence]
+---
 
 
 AI coding assistants have become invaluable for Rust development, but they sometimes generate code with syntax errors that can be frustrating to debug. This guide covers the most common syntax issues AI tools produce when generating Rust code and provides practical solutions you can apply immediately.

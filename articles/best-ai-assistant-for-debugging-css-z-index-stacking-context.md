@@ -11,7 +11,8 @@ score: 9
 voice-checked: true
 reviewed: true
 intent-checked: true
-tags: [ai-tools-compared, troubleshooting, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, troubleshooting, best-of, artificial-intelligence]
+---
 ---
 layout: default
 title: "Best AI Assistant for Debugging CSS Z Index Stacking"
@@ -25,7 +26,8 @@ score: 9
 voice-checked: true
 reviewed: true
 intent-checked: true
-tags: [ai-tools-compared, troubleshooting, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, troubleshooting, best-of, artificial-intelligence]
+---
 
 {% raw %}
 
