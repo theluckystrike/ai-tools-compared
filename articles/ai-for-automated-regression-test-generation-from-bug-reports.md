@@ -9,7 +9,7 @@ permalink: /ai-for-automated-regression-test-generation-from-bug-reports/
 categories: [guides]
 tags: [ai-tools-compared, testing, ai-tools, automation, artificial-intelligence]
 reviewed: true
-score: 9
+score: 7
 voice-checked: true
 intent-checked: true---
 
