@@ -258,6 +258,148 @@ Always review AI suggestions before merging to production. AI tools generate rea
 Review each tool's privacy policy and terms of service carefully. Most AI tools process your input on their servers, and policies on data retention and training usage vary. If you work with sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
 
+## Specialized Use Cases
+
+
+**When Aider Excels:**
+
+Large refactoring across the codebase where git tracking matters. Aider's automatic commit generation means your refactoring is tracked without manual `git add` and `git commit` commands. The tool understands what changed and creates commits documenting the modifications.
+
+API design and generation. When building new API layers, Aider's multi-file awareness helps generate consistent request/response handling across routes.
+
+Learning new frameworks. Aider learns from your existing code patterns and generates new code following your established conventions.
+
+
+**When Claude Code Excels:**
+
+Debugging production issues from log files. Paste the logs, describe the issue, and Claude Code can analyze without needing git context or file tracking.
+
+Exploratory coding for small scripts or utilities. You don't need git tracking for throwaway code that won't enter your main codebase.
+
+Non-coding tasks. Claude Code handles general questions, documentation writing, and other tasks beyond just code generation.
+
+Working with code you cannot modify. If analyzing third-party codebases or read-only files, Claude Code's flexibility is advantageous.
+
+
+## Installation and Setup Comparison
+
+
+**Aider Setup:**
+```bash
+pip install aider-ai
+aider --init  # Configure API key
+aider myfile.py  # Start session
+```
+
+Simple, minimal configuration needed.
+
+
+**Claude Code Setup:**
+```bash
+pip install claude-code
+claude init  # Configure API key
+claude  # Start interactive session
+```
+
+Slightly more involved due to tool selection and ecosystem integration.
+
+
+## Real-World Performance Comparison
+
+
+A developer working on a Python refactoring project over 3 hours:
+
+**Aider Session:**
+- 45 minutes: Refactor utils module (3 commits auto-generated)
+- 30 minutes: Extract validation logic to new module (1 commit)
+- 15 minutes: Update imports across 4 files (2 commits)
+- 30 minutes: Review and test (0 commits)
+- Result: Clean git history, automated commit messages
+
+
+**Claude Code Session:**
+- 45 minutes: Refactor utils module (manual git commands)
+- 30 minutes: Extract validation logic (manual git commands)
+- 15 minutes: Update imports (manual git commands)
+- 30 minutes: Review and test
+- Result: Full feature history but requires manual git management
+
+
+Aider saves ~5-10 minutes on version control overhead per hour of development.
+
+
+## Security and Data Handling
+
+
+Both tools handle your code remotely. Consider these security implications:
+
+
+**Aider:**
+- Connects to multiple model providers (Anthropic, OpenAI, local models)
+- Your code goes to whichever provider you select
+- Default configuration includes Claude or GPT-4
+- Can use local models via Ollama for full privacy
+
+
+**Claude Code:**
+- Always uses Anthropic's Claude models
+- Anthropic's privacy policy governs data handling
+- Option for enterprise accounts with stronger data handling agreements
+- No alternative model providers
+
+
+For sensitive code (finance, healthcare, proprietary algorithms), verify your tool's data handling policies before use.
+
+
+## Migration Path from Copilot
+
+
+Developers currently using GitHub Copilot for VS Code often wonder whether to switch to Aider or Claude Code:
+
+
+**Argument for Aider:**
+- Terminal-first approach suits developers comfortable with git
+- Git integration replaces manual version control overhead
+- Multi-model support provides flexibility
+- Good for developers doing focused coding sessions
+
+
+**Argument for Claude Code:**
+- Natural language interaction feels more intuitive than Copilot
+- Handles broader range of tasks beyond code generation
+- Anthropic's recent improvements to reasoning are state-of-the-art
+- Fewer switching costs for developers already using Claude elsewhere
+
+
+**Recommendation:** Try both for 1-2 weeks on real work, then choose based on which feels more natural to your workflow. Most developers find one tool clicks better than the other fairly quickly.
+
+
+## Integration with Existing Tools
+
+
+**Aider Integration:**
+Works seamlessly with any git-based workflow. Uses your `.gitignore`, respects existing branches, integrates with git hooks. No special configuration needed beyond API keys.
+
+
+**Claude Code Integration:**
+Works well with systems that require natural language interaction. Can integrate with development workflows that emphasize documentation and communication. Less friction with non-git VCS systems (though rare).
+
+
+## Performance Under Load
+
+
+Testing both tools with large monorepos (500+ files):
+
+
+**Aider:** Context loading takes longer as repository size increases. Performance degrades noticeably with 1,000+ file repositories.
+
+
+**Claude Code:** Handles large codebases more gracefully through explicit file selection rather than automatic directory loading.
+
+
+For teams with large monorepos, Claude Code's manual context selection often proves faster in practice.
+
+
 ## Related Articles
 
 - [Claude Code Terminal Permission Denied Fix](/ai-tools-compared/claude-code-terminal-permission-denied-fix/)

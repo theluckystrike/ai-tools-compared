@@ -231,6 +231,241 @@ The goal is not to replace product judgment—it's to eliminate the time-consumi
 
 
 
+## Advanced Workflow: Batch Processing Large Feedback Sets
+
+For teams managing hundreds of customer feedback items quarterly, batch processing unlocks efficiency gains:
+
+**Preprocessing Phase**: Before feeding feedback to AI, clean and normalize it. Create a CSV with columns: `feedback_source` (support, survey, interview), `customer_segment` (enterprise, SMB, individual), `feature_area` (search, export, reporting), `raw_feedback`. This structure helps AI generate more relevant stories.
+
+```python
+import csv
+from datetime import datetime
+
+def preprocess_feedback(raw_csv_path):
+    """Normalize feedback for batch processing"""
+    normalized = []
+
+    with open(raw_csv_path, 'r') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            normalized.append({
+                'source': row['source'].lower().strip(),
+                'segment': row['customer_segment'].lower(),
+                'area': row['feature_area'].lower(),
+                'text': row['feedback'].strip(),
+                'date': datetime.fromisoformat(row['date']),
+                'priority_signal': len(row['feedback']) < 50  # Quick feedback = high signal
+            })
+
+    return sorted(normalized, key=lambda x: x['priority_signal'], reverse=True)
+
+def batch_by_theme(feedback_items, batch_size=10):
+    """Group feedback into themed batches for processing"""
+    themes = {}
+    for item in feedback_items:
+        theme = item['area']
+        if theme not in themes:
+            themes[theme] = []
+        themes[theme].append(item)
+
+    batches = []
+    for theme, items in themes.items():
+        for i in range(0, len(items), batch_size):
+            batches.append({
+                'theme': theme,
+                'items': items[i:i+batch_size],
+                'count': len(items[i:i+batch_size])
+            })
+
+    return batches
+```
+
+**Batch Processing**: Send 8-15 feedback items per AI request. This sweet spot balances context richness against token usage and latency. Larger batches (20+) produce lower-quality stories; smaller batches (3-4) waste context window.
+
+**Systematic Refinement**: After generating initial stories, run a second pass specifically for acceptance criteria refinement. Many AI models produce better stories when asked to iterate:
+
+```python
+def refine_acceptance_criteria(initial_story, feedback_context):
+    """Improve acceptance criteria specificity"""
+
+    refinement_prompt = f"""
+    Review this user story and its acceptance criteria.
+
+    Story: {initial_story['story']}
+    Current Criteria: {initial_story['criteria']}
+    Customer Context: {feedback_context}
+
+    Improve the acceptance criteria by:
+    1. Making each criterion measurable with specific numbers or thresholds
+    2. Adding edge cases the original missed
+    3. Including performance requirements if applicable
+    4. Specifying error handling conditions
+    5. Removing redundant criteria
+
+    Return ONLY the refined acceptance criteria as a numbered list.
+    """
+
+    return ai_client.refine(refinement_prompt)
+```
+
+## Template Library for Faster Generation
+
+Building a library of reusable prompt templates accelerates story generation:
+
+**Template 1: Feature Request to Story**
+```markdown
+Customer: [Segment]
+Request: [Raw feedback]
+Current approach: [Existing feature comparison]
+Constraints: [Technical or UX limits]
+
+Generate a focused user story with:
+- Single-sentence value proposition
+- 3-5 acceptance criteria (prioritized as Must/Should/Could)
+- Effort estimate range (days)
+```
+
+**Template 2: Pain Point Investigation**
+```markdown
+Problem statement: [Description of customer struggle]
+Frequency: [How often mentioned in feedback]
+Impact: [Business consequence]
+Partial solutions users mentioned: [List any workarounds they mentioned]
+
+Generate multiple user stories addressing this pain:
+1. [Minimal solution addressing core pain]
+2. [Enhanced solution with common features]
+3. [Premium solution with advanced features]
+
+For each story, estimate dependencies on other backlog items.
+```
+
+**Template 3: Comparative Feature Request**
+```markdown
+Competitor tool: [Tool name and feature]
+Our current behavior: [What we do now]
+Customer preference: [Why they want the change]
+Frequency: [How many customers mentioned this]
+
+Generate a user story that:
+- Clearly differentiates our approach from [Competitor]
+- Includes acceptance criteria for feature parity
+- Defines where we might exceed the competitor
+```
+
+Store these templates in your project wiki. Each template, tested on 10+ real feedback items, saves 5-10 minutes per story and improves consistency.
+
+## Integration with Existing Product Systems
+
+Connect AI-generated stories into your existing workflows without manual data entry:
+
+**GitHub Integration**: If your backlog lives in GitHub Issues, automate story creation:
+
+```python
+import anthropic
+import subprocess
+import json
+
+def create_gh_issue_from_story(story_text, repo_owner, repo_name):
+    """Parse AI-generated story and create GitHub Issue"""
+
+    # Extract story components
+    parts = parse_user_story(story_text)
+
+    # Create issue via GitHub CLI
+    result = subprocess.run([
+        'gh', 'issue', 'create',
+        '-R', f'{repo_owner}/{repo_name}',
+        '--title', parts['title'],
+        '--body', parts['full_body'],
+        '--label', f"priority-{parts['priority']}",
+        '--label', 'ai-generated'
+    ], capture_output=True, text=True)
+
+    return result.stdout.strip()
+```
+
+**Jira Integration**: For teams using Jira, connect through the API:
+
+```python
+from jira import JIRA
+
+def create_jira_story(story_dict, jira_project_key):
+    """Create Jira story from AI output"""
+
+    jira = JIRA('https://your-company.atlassian.net', auth=get_auth())
+
+    issue_dict = {
+        'project': {'key': jira_project_key},
+        'issuetype': {'name': 'Story'},
+        'summary': story_dict['title'],
+        'description': format_jira_description(story_dict),
+        'customfield_10001': story_dict['priority'],  # Custom priority field
+        'labels': ['ai-generated', story_dict['theme']]
+    }
+
+    new_issue = jira.create_issue(fields=issue_dict)
+    return new_issue.key
+```
+
+**Notion Integration**: For product teams using Notion:
+
+```python
+import requests
+
+def create_notion_story(story_dict, notion_database_id, notion_token):
+    """Create Notion database entry for story"""
+
+    headers = {
+        'Authorization': f'Bearer {notion_token}',
+        'Content-Type': 'application/json',
+        'Notion-Version': '2022-06-28'
+    }
+
+    payload = {
+        'parent': {'database_id': notion_database_id},
+        'properties': {
+            'Title': {
+                'title': [{'text': {'content': story_dict['title']}}]
+            },
+            'Story': {
+                'rich_text': [{'text': {'content': story_dict['user_story']}}]
+            },
+            'Criteria': {
+                'rich_text': [{'text': {'content': '\n'.join(story_dict['criteria'])}}]
+            },
+            'Priority': {
+                'select': {'name': story_dict['priority']}
+            },
+            'Theme': {
+                'multi_select': [{'name': story_dict['theme']}]
+            }
+        }
+    }
+
+    response = requests.post(
+        'https://api.notion.com/v1/pages',
+        headers=headers,
+        json=payload
+    )
+
+    return response.json()['id']
+```
+
+## Measuring Quality and Adjusting Your Process
+
+Not all AI-generated stories are equal. Track these metrics to improve over time:
+
+**Acceptance Rate**: What percentage of AI-generated stories make it to development without major revision? Track this weekly. If below 70%, your prompts need refinement. If above 90%, you might be missing edge cases.
+
+**Revision Overhead**: For stories that do move to development, how many comments or clarifications occur before developers start coding? More than 2 average comments per story suggests unclear acceptance criteria.
+
+**Actual Effort vs. Estimate**: Track how many stories come in under/over their estimated effort. Systematic overestimation suggests you're asking AI to scope too much. Underestimation suggests unclear requirements.
+
+**Developer Satisfaction**: In retros, ask developers: "Were story acceptance criteria clear before you started?" This qualitative signal catches issues metrics miss.
+
+Adjust your templates monthly based on these signals. If a particular template consistently produces unclear stories, retire it or redesign it.
+
 ## Frequently Asked Questions
 
 

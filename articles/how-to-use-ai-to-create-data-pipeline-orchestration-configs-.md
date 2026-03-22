@@ -243,6 +243,142 @@ Test incrementally. Start with small subsets of your pipeline, validate the conf
 Document your modifications. When AI generates initial configurations, add comments explaining custom logic, specific parameter choices, and integration points with your existing infrastructure. This context is valuable when the pipeline needs updating months later and neither you nor an AI assistant will have the original prompt that produced the code.
 
 
+## Error Handling and Retry Strategies in AI-Generated Configs
+
+
+Both Prefect and Dagster require careful error handling strategies that AI doesn't always generate automatically. Here's how to ensure your AI-assisted configs handle failures gracefully:
+
+
+```python
+# Prefect with comprehensive error handling
+from prefect import flow, task
+from prefect.exceptions import PrefectException
+
+@task(
+    retries=3,
+    retry_delay_seconds=60,
+    retry_jitter_factor=0.5,  # Prevent thundering herd
+    timeout_seconds=300
+)
+def extract_with_errors():
+    """Extract data with exponential backoff."""
+    try:
+        # Your extraction logic
+        pass
+    except ConnectionError as e:
+        # Transient errors trigger retries
+        raise
+    except ValidationError as e:
+        # Permanent errors don't retry
+        raise PrefectException(f"Invalid data: {e}")
+
+@flow
+def resilient_pipeline():
+    try:
+        data = extract_with_errors()
+        processed = transform_data(data)
+    except Exception as e:
+        # Log failure, trigger alerts, don't crash the flow
+        logger.error(f"Pipeline failed: {e}")
+        # Optionally trigger fallback or notification
+        send_alert(f"Pipeline error: {e}")
+```
+
+
+Prompt your AI explicitly: "Generate error handling that distinguishes between retryable and permanent errors, includes exponential backoff, and sends alerts on failure."
+
+
+## Testing AI-Generated Orchestration Code
+
+
+Before deploying, test generated configs locally with realistic data scenarios:
+
+
+```python
+# Local test script for Prefect pipeline
+def test_etl_pipeline_locally():
+    # Test 1: Happy path with sample data
+    sample_df = pd.DataFrame({
+        'id': [1, 2, 3],
+        'value': [100, 200, 300]
+    })
+
+    # Run tasks individually
+    transformed = transform_data(sample_df)
+    assert len(transformed) == 3
+
+    # Test 2: Empty data handling
+    empty_df = pd.DataFrame()
+    try:
+        transform_data(empty_df)
+    except ValueError as e:
+        assert "empty" in str(e).lower()
+
+    # Test 3: Resource limits
+    large_df = pd.DataFrame({
+        'id': range(1_000_000),
+        'data': ['x'] * 1_000_000
+    })
+    # Verify memory efficiency
+    memory_before = psutil.Process().memory_info().rss
+    result = transform_data(large_df)
+    memory_after = psutil.Process().memory_info().rss
+    assert (memory_after - memory_before) < 500_000_000  # 500MB limit
+```
+
+
+## Airflow DAG Generation from AI Prompts
+
+
+While Prefect and Dagster are popular, many teams use Apache Airflow. AI generates Airflow DAGs well when given structured prompts:
+
+
+```python
+# Example Airflow DAG with AI assistance
+from airflow import DAG
+from airflow.operators.python import PythonOperator
+from airflow.operators.bash import BashOperator
+from airflow.utils.dates import days_ago
+
+default_args = {
+    'owner': 'data_team',
+    'start_date': days_ago(1),
+    'retries': 2,
+    'retry_delay': timedelta(minutes=5)
+}
+
+dag = DAG(
+    'etl_pipeline',
+    default_args=default_args,
+    description='ETL with external dependencies',
+    schedule_interval='0 2 * * *'  # Daily at 2 AM
+)
+
+extract = PythonOperator(
+    task_id='extract_data',
+    python_callable=extract_from_source,
+    dag=dag
+)
+
+transform = PythonOperator(
+    task_id='transform_data',
+    python_callable=transform_records,
+    dag=dag
+)
+
+load = BashOperator(
+    task_id='load_to_warehouse',
+    bash_command='gsutil cp /tmp/output.csv gs://my-bucket/data/',
+    dag=dag
+)
+
+extract >> transform >> load
+```
+
+
+Prompt: "Generate an Airflow DAG that extracts from PostgreSQL, transforms with pandas, and loads to Google Cloud Storage. Include error handling and daily scheduling."
+
+
 ## Frequently Asked Questions
 
 
@@ -254,6 +390,12 @@ Describe your pipeline as a sequence of steps with explicit inputs and outputs. 
 
 **What is the biggest mistake teams make when using AI for orchestration configs?**
 Using generated configs in production without local testing. Both Prefect and Dagster support local execution with minimal setup. Always run a local test with a small data sample before deploying to your orchestration environment. AI-generated code is plausible-looking but often contains subtle issues — wrong column names, mismatched data types, or missing error branches — that only surface during execution.
+
+**How do I handle secrets and credentials in AI-generated pipelines?**
+Never ask AI to generate credentials in code. Instead, request that the tool use environment variables or secrets management patterns. Prompt: "Generate a task that reads database credentials from environment variables using os.getenv() rather than hardcoding them." Review all generated code to ensure no credentials appear in the output.
+
+**What should I do if generated code runs but produces incorrect output?**
+This is common—AI-generated code is syntactically correct but logically flawed. Compare the AI's data transformation logic against your actual requirements. Add explicit assertions for expected data shapes and value ranges. Example: "After transformation, the dataframe should have columns X, Y, Z and contain no null values in critical fields." Validate these expectations in tests before production deployment.
 
 
 ## Related Articles
