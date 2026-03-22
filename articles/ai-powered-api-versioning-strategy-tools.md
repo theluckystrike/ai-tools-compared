@@ -19,12 +19,19 @@ API versioning is one of those problems that looks simple until you have 50 cons
 
 ## Key Takeaways
 
-- **Update any address write**: operations to use nested object format 4.
-- **API characteristics: {json.dumps(api_description, indent=2)}**: Compare these strategies and recommend one: 1.
-- **Deadline**: Template for sunset date of old version
+- **Breaking change detection in CI** — running an AI diff against OpenAPI specs on every PR catches problems before merge, not after consumer complaints.
+- **Migration guides should be generated, not written** — Claude produces developer-ready migration docs from the spec diff in seconds; writing them manually takes hours.
+- **Versioning strategy depends on your consumer type** — public APIs with third-party consumers need URL versioning; internal APIs can use header versioning or date-based versioning.
+- **Consumer impact analysis prevents incidents** — knowing which consumers are affected before a release lets you reach out proactively rather than reactively.
+- **Practical guidance included**: Step-by-step setup and configuration instructions.
 
-Use real code examples in the language-agnostic HTTP format (curl or similar).
-- **Topics covered**: breaking change detection, migration guide generator, migration guide: api v2 to v3
+## Why API Versioning is Hard
+
+Every API change falls somewhere on a spectrum from "obviously safe" to "definitely breaks consumers." The problem is the middle: changes that seem safe but break specific client patterns.
+
+Adding a new optional field is non-breaking in theory. In practice, a consumer using a schema validator with `additionalProperties: false` will start rejecting responses. Changing a numeric field from `int` to `float` breaks clients that parse responses as integers and then format them with `%d`. AI tools that understand these failure modes catch problems before they ship.
+
+The other hard part is documentation lag. Engineering moves faster than docs. Migration guides get written days after the breaking change ships, by which point some consumers have already broken. Automating guide generation at the point of the spec change closes that gap entirely.
 
 ## Breaking Change Detection
 
@@ -257,6 +264,8 @@ api_info = {
 strategy = recommend_versioning_strategy(api_info)
 ```
 
+For a public API with third-party mobile clients, Claude consistently recommends URL versioning (`/v1/`, `/v2/`) with a minimum 12-month deprecation window. For internal APIs with a single consumer team, it usually recommends header versioning to keep URLs clean. The reasoning adapts to the client type, not just pattern-matching.
+
 ## Automated Version Bump Detection in CI
 
 ```yaml
@@ -305,6 +314,8 @@ jobs:
           fi
 ```
 
+This runs on every PR that touches OpenAPI specs. Engineers get an automated comment listing what breaks and what doesn't before the PR is reviewed, not after it merges.
+
 ## Consumer Impact Analysis
 
 ```python
@@ -332,6 +343,45 @@ AFFECTED: [YES/NO/MAYBE]
 IMPACTED_FEATURES: [what breaks for them]
 MIGRATION_EFFORT: [Low/Medium/High]
 CONTACT_PRIORITY: [Immediate/Soon/Low]"""
+        }]
+    )
+    return response.content[0].text
+```
+
+The consumer impact analysis is most useful when you track which endpoints each consumer calls. This data often lives in gateway logs. Export it as a JSON summary and pass it to this function — the output tells you exactly who to contact before the version ships.
+
+## Changelog Generation from Spec Diffs
+
+Beyond migration guides, AI can generate changelogs in developer-friendly format:
+
+```python
+def generate_changelog_entry(
+    version: str,
+    breaking_changes: list[str],
+    non_breaking_changes: list[str]
+) -> str:
+    """Generate a CHANGELOG.md entry for an API version."""
+    response = client.messages.create(
+        model="claude-opus-4-6",
+        max_tokens=800,
+        messages=[{
+            "role": "user",
+            "content": f"""Write a CHANGELOG.md entry for API version {version}.
+
+Breaking changes (require migration):
+{json.dumps(breaking_changes, indent=2)}
+
+Non-breaking changes (transparent to consumers):
+{json.dumps(non_breaking_changes, indent=2)}
+
+Format as standard CHANGELOG.md with:
+- ## [{version}] - YYYY-MM-DD header
+- ### Breaking Changes section (if any)
+- ### Added section (for new endpoints/fields)
+- ### Changed section (for non-breaking changes)
+- ### Deprecated section (if anything is sunsetted)
+
+Use bullet points. Be specific about field names and endpoints."""
         }]
     )
     return response.content[0].text

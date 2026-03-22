@@ -19,7 +19,7 @@ Documentation drift is one of the most frustrating problems in software developm
 
 ## The Problem: Documentation Rot
 
-Every developer has experienced it. You ship a feature, update the code, but forget to update the README, API docs, or inline comments. Over time, this creates a gap between what the code actually does and what the documentation claims. The cost isn't just confusion—it's bugs, wasted time, and broken integrations.
+Every developer has experienced it. You ship a feature, update the code, but forget to update the README, API docs, or inline comments. Over time, this creates a gap between what the code actually does and what the documentation claims. The cost isn't just confusion — it's bugs, wasted time, and broken integrations.
 
 Traditional solutions include manual review processes, documentation-as-code approaches, and static site generators with build-time validation. But these require discipline and still leave gaps. AI-powered tools now offer a new approach: automatic detection and correction of documentation drift.
 
@@ -38,7 +38,7 @@ AI tools for documentation sync generally fall into three categories:
 
 **Generation Tools** create or update documentation based on code analysis. They can write initial docs but may miss nuanced changes.
 
-**Synchronization Tools** do both—detect drift and generate fixes. These are the most valuable for ongoing maintenance.
+**Synchronization Tools** do both — detect drift and generate fixes. These are the most valuable for ongoing maintenance.
 
 ## Comparing Top Tools
 
@@ -85,12 +85,12 @@ documentation:
     # Auto-generate from code annotations
     source: ./src/api
     output: ./docs/api
-    
+
   detection:
     enabled: true
     # Check for drift on every PR
     onPullRequest: true
-    
+
   ai:
     # Use AI to suggest fixes
     autoFix: true
@@ -168,18 +168,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Run Mintlify detector
         uses: mintlify/drift-detector@v1
         with:
           api-key: ${{ secrets.MINTLIFY_API_KEY }}
-          
+
       - name: Run SourceGraph analysis
         uses: sourcegraph/cody-action@v1
         with:
           command: 'detect-doc-drift'
           api-key: ${{ secrets.SOURCEGRAPH_TOKEN }}
-          
+
       - name: Create review comments
         if: steps.detect-drift.outputs.hasDrift == 'true'
         uses: actions/github-script@v7
@@ -191,7 +191,7 @@ jobs:
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 pull_number: context.issue.number,
-                body: `📝 Documentation drift detected: ${issue.description}`,
+                body: `Documentation drift detected: ${issue.description}`,
                 commit_id: context.sha,
                 path: issue.file,
                 line: issue.line,
@@ -200,6 +200,131 @@ jobs:
 ```
 
 This workflow runs on every PR, detects drift automatically, and surfaces issues where developers can address them.
+
+## Building a Custom Drift Detector with Claude
+
+If you want fine-grained control over what counts as drift and how it gets reported, you can build a lightweight detector using the Claude API directly. This approach works well for teams with unusual documentation structures or strict formatting requirements.
+
+```python
+# drift_detector.py
+import subprocess
+from pathlib import Path
+from anthropic import Anthropic
+
+client = Anthropic()
+
+def get_changed_files(base_branch: str = "main") -> list[str]:
+    """Get list of source files changed in this PR."""
+    result = subprocess.run(
+        ["git", "diff", "--name-only", f"origin/{base_branch}...HEAD"],
+        capture_output=True,
+        text=True,
+        check=True
+    )
+    return [
+        f for f in result.stdout.strip().split("\n")
+        if f.endswith((".py", ".ts", ".js", ".go", ".rs"))
+        and f  # skip empty strings
+    ]
+
+def find_related_docs(source_file: str) -> list[str]:
+    """Find documentation files that might reference a source file."""
+    stem = Path(source_file).stem
+    doc_files = []
+
+    for doc in Path("docs").rglob("*.md"):
+        content = doc.read_text(errors="ignore")
+        if stem in content or source_file in content:
+            doc_files.append(str(doc))
+
+    # Always include README
+    if Path("README.md").exists():
+        doc_files.append("README.md")
+
+    return list(set(doc_files))
+
+def check_for_drift(source_file: str, doc_file: str) -> dict:
+    """Use Claude to check if a doc file is out of sync with source."""
+    source_content = Path(source_file).read_text(errors="ignore")[:4000]
+    doc_content = Path(doc_file).read_text(errors="ignore")[:4000]
+
+    response = client.messages.create(
+        model="claude-opus-4-6",
+        max_tokens=800,
+        messages=[{
+            "role": "user",
+            "content": f"""Review these files for documentation drift.
+
+Source file ({source_file}):
+```
+{source_content}
+```
+
+Documentation file ({doc_file}):
+```
+{doc_content}
+```
+
+Check for:
+1. Function/method names in docs that no longer exist in source
+2. Parameter names that have changed
+3. Return types or data shapes that have changed
+4. URLs, endpoints, or import paths that are stale
+5. Examples in docs that would no longer compile or run
+
+Respond in this format:
+DRIFT_DETECTED: yes/no
+ISSUES: (list each issue on its own line, or "none")
+SUGGESTED_UPDATE: (brief description of what to change, or "none")"""
+        }]
+    )
+
+    text = response.content[0].text
+    return {
+        "source": source_file,
+        "doc": doc_file,
+        "has_drift": "DRIFT_DETECTED: yes" in text,
+        "raw_analysis": text
+    }
+
+def run_drift_check(base_branch: str = "main") -> list[dict]:
+    """Run full drift check for all changed files."""
+    changed = get_changed_files(base_branch)
+    results = []
+
+    for source_file in changed:
+        related_docs = find_related_docs(source_file)
+        for doc_file in related_docs:
+            result = check_for_drift(source_file, doc_file)
+            if result["has_drift"]:
+                results.append(result)
+
+    return results
+
+if __name__ == "__main__":
+    issues = run_drift_check()
+    if issues:
+        print(f"Found {len(issues)} documentation drift issues:")
+        for issue in issues:
+            print(f"\n{issue['source']} -> {issue['doc']}")
+            print(issue["raw_analysis"])
+    else:
+        print("No documentation drift detected.")
+```
+
+This script is designed to run in CI and exit nonzero if drift is found, which blocks PRs until documentation is updated. You can soften this to a warning by checking only and posting a comment without blocking the merge.
+
+## Handling Drift at Scale: Strategies for Large Codebases
+
+Teams with hundreds of source files and extensive documentation need a different approach than the file-by-file analysis above. At scale, you need to:
+
+**Scope the analysis.** Do not check all documentation on every PR. Instead, build a dependency map — which docs reference which source files — and only check affected pairs. This cuts API cost by 80-90% on large repos.
+
+**Use embeddings for discovery.** Vector embeddings of both code and documentation allow you to find semantically related pairs even when there is no explicit filename reference. Libraries like `chromadb` or Pinecone make this feasible without building a search index from scratch.
+
+**Cache unchanged results.** If neither the source file nor the doc file changed since the last run, skip the analysis. Store a hash of both files alongside each result. This is especially valuable on weekly documentation health reports.
+
+**Prioritize by change frequency.** Files that change often but have documentation that rarely updates are the highest-drift-risk pairs. Weight your analysis toward these pairs first.
 
 ## Recommendations
 
@@ -211,7 +336,9 @@ For large monorepos or complex codebases, **SourceGraph** provides the necessary
 
 For teams already using **Docusaurus**, the plugin ecosystem provides flexibility to build custom solutions without switching platforms.
 
-The key is consistency. Any tool is better than no tool—the best documentation sync solution is the one that actually runs in your CI pipeline.
+For teams that want precise control over what counts as drift and how issues are surfaced, a **custom Claude-based detector** gives you the most flexibility with reasonable implementation effort.
+
+The key is consistency. Any tool is better than no tool — the best documentation sync solution is the one that actually runs in your CI pipeline and blocks merges when documentation is genuinely out of date.
 
 ## Advanced Drift Detection Techniques
 
