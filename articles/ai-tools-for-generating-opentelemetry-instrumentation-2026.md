@@ -333,6 +333,85 @@ All AI tools struggle with:
 - Database connection pool instrumentation
 - Distributed trace sampling decisions
 
+## Sampling Strategy: Instrument Everything, Export Selectively
+
+One mistake teams make when adopting OTel is exporting 100% of traces in production. At meaningful scale, this floods your backend with data and generates significant cost. AI tools are helpful for generating sampling configuration, but they rarely mention this context.
+
+A head-based sampler decides at trace start whether to export — cheap but loses visibility into slow tail requests. A tail-based sampler buffers spans and decides at trace end — more accurate but memory-intensive.
+
+```python
+from opentelemetry.sdk.trace.sampling import (
+    TraceIdRatioBased,
+    ParentBased,
+    ALWAYS_ON,
+    ALWAYS_OFF
+)
+
+# Export 10% of traces overall, but always export traces
+# where a parent span was sampled (preserves distributed trace integrity)
+sampler = ParentBased(
+    root=TraceIdRatioBased(0.10),
+    remote_parent_sampled=ALWAYS_ON,    # trust upstream sampling decision
+    remote_parent_not_sampled=ALWAYS_OFF
+)
+
+tp = TracerProvider(sampler=sampler)
+trace.set_tracer_provider(tp)
+```
+
+For Go services using the OTLP exporter, configure tail-based sampling at the OpenTelemetry Collector level rather than in-process — this lets you adjust sampling rates without redeploying application code:
+
+```yaml
+# otel-collector-config.yaml
+processors:
+  tail_sampling:
+    decision_wait: 10s
+    num_traces: 100
+    expected_new_traces_per_sec: 10
+    policies:
+      - name: error-policy
+        type: status_code
+        status_code: {status_codes: [ERROR]}
+      - name: slow-policy
+        type: latency
+        latency: {threshold_ms: 500}
+      - name: probabilistic
+        type: probabilistic
+        probabilistic: {sampling_percentage: 5}
+```
+
+This configuration always captures errors and slow requests (the ones you care about most) while sampling only 5% of fast, successful requests.
+
+## Propagating Business Context Through Spans
+
+Standard OTel attributes capture infrastructure metrics — HTTP status codes, database query strings, latency. But the most useful traces for debugging business issues also carry application context: which customer triggered the request, what feature flag was active, what the cart value was.
+
+```python
+from opentelemetry import baggage, context
+from opentelemetry.baggage.propagation import W3CBaggagePropagator
+
+def attach_business_context(user_id: str, tenant_id: str, feature_flag: str):
+    """Attach business identifiers that propagate across service boundaries."""
+    ctx = baggage.set_baggage("user.id", user_id)
+    ctx = baggage.set_baggage("tenant.id", tenant_id, context=ctx)
+    ctx = baggage.set_baggage("feature.flag", feature_flag, context=ctx)
+    return context.attach(ctx)
+
+# In your request handler:
+token = attach_business_context(
+    user_id=request.user.id,
+    tenant_id=request.tenant.id,
+    feature_flag=get_active_flag(request.user)
+)
+
+with tracer.start_as_current_span("process_order") as span:
+    # Baggage values automatically propagate to child spans and downstream services
+    span.set_attribute("order.value", order.total)
+    span.set_attribute("order.items_count", len(order.items))
+```
+
+When you ask Claude to generate instrumentation for a specific service, provide a sample request object so the model knows what business context is available. Without that context, it generates attribute names that don't match your actual data model.
+
 ## Related Articles
 
 - [OpenTelemetry SDK Configuration Guide](/articles/otel-sdk-configuration/)
