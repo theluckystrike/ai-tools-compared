@@ -10,20 +10,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
 ---
-layout: default
-title: "How to Build Custom AI Dev Tools with LangGraph"
-description: "Build stateful AI developer tools using LangGraph: code agents, multi-step debuggers, and review pipelines with real Python examples and graph architecture"
-date: 2026-03-21
-author: theluckystrike
-permalink: /how-to-build-ai-dev-tools-with-langgraph/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
 
 {% raw %}
 

@@ -11,21 +11,8 @@ score: 8
 categories: [troubleshooting]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, troubleshooting, artificial-intelligence]---
+tags: [ai-tools-compared, troubleshooting, artificial-intelligence]
 ---
-layout: default
-title: "Cursor Extensions Conflicting with AI"
-description: "Practical solutions for resolving conflicts between Cursor IDE extensions and AI features. Step-by-step diagnostics and fixes for developers"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /cursor-extensions-conflicting-with-ai-fix/
-reviewed: true
-score: 8
-categories: [troubleshooting]
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, troubleshooting, artificial-intelligence]---
 
 {% raw %}
 

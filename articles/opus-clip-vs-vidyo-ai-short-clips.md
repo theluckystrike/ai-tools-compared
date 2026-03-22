@@ -11,21 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison, artificial-intelligence]---
+tags: [ai-tools-compared, comparison, artificial-intelligence]
 ---
-layout: default
-title: "Opus Clip vs Vidyo AI Short"
-description: "A practical comparison of Opus Clip and Vidyo AI for creating short video clips, with API access, automation capabilities, and workflow integration"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /opus-clip-vs-vidyo-ai-short-clips/
-categories: [comparisons]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, comparison, artificial-intelligence]---
 
 {% raw %}
 

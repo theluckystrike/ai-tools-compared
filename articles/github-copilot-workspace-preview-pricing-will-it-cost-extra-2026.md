@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools]
 reviewed: true
 score: 8
 voice-checked: true
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "GitHub Copilot Workspace Preview Pricing Will It Cost Extra"
-description: "Everything you need to know about GitHub Copilot Workspace preview pricing, including whether it costs extra, feature availability, and what to expect"
-date: 2026-03-18
-last_modified_at: 2026-03-18
-author: theluckystrike
-permalink: /github-copilot-workspace-preview-pricing-will-it-cost-extra-2026/
-categories: [guides]
-tags: [ai-tools-compared, tools]
-reviewed: true
-score: 8
-voice-checked: true
-intent-checked: true---
 
 {% raw %}
 

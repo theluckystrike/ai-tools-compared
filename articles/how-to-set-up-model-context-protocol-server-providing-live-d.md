@@ -11,23 +11,8 @@ tags: [ai-tools-compared, tools, mcp, database, ai]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-
-
-layout: default
-title: "How to Set Up Model Context Protocol Server Providing Live"
-description: "A practical guide for developers setting up a Model Context Protocol server to feed live database schema information to AI assistants for smarter code"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-set-up-model-context-protocol-server-providing-live-d/
-categories: [guides]
-tags: [ai-tools-compared, tools, mcp, database, ai]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

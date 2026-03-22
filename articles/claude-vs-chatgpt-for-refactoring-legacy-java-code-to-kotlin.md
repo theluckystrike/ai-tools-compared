@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, comparison, claude-ai, chatgpt]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Claude vs ChatGPT for Refactoring Legacy Java Code"
-description: "A practical comparison of Claude and ChatGPT for converting legacy Java code to Kotlin. See real code examples and performance benchmarks"
-date: 2026-03-16
-last_modified_at: 2026-03-22
-author: theluckystrike
-permalink: /claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/
-categories: [guides]
-tags: [ai-tools-compared, tools, comparison, claude-ai, chatgpt]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

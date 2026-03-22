@@ -11,21 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison, artificial-intelligence]---
+tags: [ai-tools-compared, comparison, artificial-intelligence]
 ---
-layout: default
-title: "Starburst vs Trino AI Query"
-description: "A developer-focused comparison of Starburst and Trino for building AI-powered query engines, with code examples and real-world considerations"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /starburst-vs-trino-ai-query-engine/
-categories: [comparisons]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, comparison, artificial-intelligence]---
 
 
 Choose Trino if you have Kubernetes expertise, need zero licensing costs, and want full customization of your AI query engine. Choose Starburst if you need enterprise support, out-of-box query optimization, and integrated security with audit logging for production AI systems. Starburst is built on top of Trino with added enterprise features like adaptive caching, cost-based optimization, and high availability, while Trino remains fully open-source and free.

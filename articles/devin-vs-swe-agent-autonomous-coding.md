@@ -10,20 +10,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison]---
+tags: [ai-tools-compared, comparison]
 ---
-layout: default
-title: "Devin vs SWE-Agent for Autonomous Coding"
-description: "Compare Devin and SWE-Agent on real software engineering tasks: bug fixing, feature implementation, PR quality, and cost-effectiveness in 2026"
-date: 2026-03-21
-author: theluckystrike
-permalink: /devin-vs-swe-agent-autonomous-coding/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, comparison]---
 
 {% raw %}
 

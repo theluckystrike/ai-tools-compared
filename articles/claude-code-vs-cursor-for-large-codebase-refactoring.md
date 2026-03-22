@@ -11,21 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison, claude-ai]---
+tags: [ai-tools-compared, comparison, claude-ai]
 ---
-layout: default
-title: "Claude Code vs Cursor for Large Codebase Refactoring"
-description: "Real workflow comparison of Claude Code vs Cursor for large-scale refactoring. Context window strategies, multi-file edits, prompt techniques, and trade-offs"
-date: 2026-03-20
-last_modified_at: 2026-03-20
-author: theluckystrike
-permalink: /claude-code-vs-cursor-for-large-codebase-refactoring/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, comparison, claude-ai]---
 
 {% raw %}
 

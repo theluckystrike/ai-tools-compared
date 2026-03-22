@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, comparison, claude-ai, chatgpt]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Claude vs ChatGPT for Writing Datadog Dashboard Terraform"
-description: "A practical comparison of Claude and ChatGPT for creating Datadog dashboard Terraform configurations. Includes code examples and performance benchmarks"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /claude-vs-chatgpt-for-writing-datadog-dashboard-terraform-de/
-categories: [guides]
-tags: [ai-tools-compared, tools, comparison, claude-ai, chatgpt]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

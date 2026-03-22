@@ -11,21 +11,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
 ---
-layout: default
-title: "Effective Context Management Strategies for AI Coding"
-description: "Practical strategies and techniques for managing AI coding assistant context in large monorepo projects. Learn how to optimize prompts, reduce token"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/
-reviewed: true
-score: 9
-categories: [guides]
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
 
 {% raw %}
 

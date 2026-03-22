@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, chatgpt]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Export ChatGPT Shared Links Before Account Deletion"
-description: "A practical guide to exporting your ChatGPT shared links before deleting your account. Step-by-step instructions with Python scripts and API methods"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-export-chatgpt-shared-links-before-account-deletion-2026/
-categories: [guides]
-tags: [ai-tools-compared, tools, chatgpt]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 
 Export ChatGPT shared links by using Markdownify to convert HTML to readable text, or use third-party archive tools before deleting your account. This guide shows the most effective method for each content type: conversations, code snippets, and long-form responses.

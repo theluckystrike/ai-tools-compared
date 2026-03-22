@@ -10,20 +10,8 @@ tags: [ai-tools-compared, codellama, local-ai, code-completion]
 reviewed: true
 score: 0
 voice-checked: false
-intent-checked: false---
+intent-checked: false
 ---
-layout: default
-title: "How to Run CodeLlama Locally for Private Code Completion"
-description: "A practical guide to running Meta's CodeLlama locally for private, secure code completion. Step-by-step instructions for developers who need offline AI assistance."
-date: 2026-03-21
-author: theluckystrike
-permalink: /how-to-run-codellama-locally-for-private-code-completion-ste/
-categories: [guides]
-tags: [ai-tools-compared, codellama, local-ai, code-completion]
-reviewed: true
-score: 0
-voice-checked: false
-intent-checked: false---
 
 
 Running CodeLlama locally gives you powerful code completion capabilities while keeping all your code completely private. This guide walks through the complete setup process, from choosing your hardware to integrating the model with your development environment.

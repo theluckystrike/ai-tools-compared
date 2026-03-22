@@ -11,21 +11,8 @@ score: 8
 categories: [troubleshooting]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, troubleshooting, artificial-intelligence]---
+tags: [ai-tools-compared, troubleshooting, artificial-intelligence]
 ---
-layout: default
-title: "Cursor AI Not Autocompleting TypeScript"
-description: "To fix Cursor AI not autocompleting TypeScript, open the Command Palette (Cmd+Shift+P or Ctrl+Shift+P), run 'TypeScript: Restart TS server,' and verify that AI"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /cursor-ai-not-autocompleting-typescript-fix/
-reviewed: true
-score: 8
-categories: [troubleshooting]
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, troubleshooting, artificial-intelligence]---
 
 {% raw %}
 

@@ -11,21 +11,8 @@ score: 9
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison]---
+tags: [ai-tools-compared, comparison]
 ---
-layout: default
-title: "Stable Diffusion ComfyUI vs Automatic1111 Comparison"
-description: "A technical comparison of ComfyUI and Automatic1111 for Stable Diffusion, including workflow examples, API usage, and recommendations for developers"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /stable-diffusion-comfyui-vs-automatic1111-comparison/
-reviewed: true
-score: 9
-categories: [comparisons]
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, comparison]---
 
 
 For developers working with Stable Diffusion, choosing between ComfyUI and Automatic1111 significantly impacts workflow efficiency and customization potential. Both are open-source, self-hosted solutions, but their architectural approaches differ substantially. This comparison examines both platforms from a practical standpoint, focusing on API capabilities, workflow automation, and extensibility for power users.

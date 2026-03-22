@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Configure AI Context Includes and Excludes"
-description: "A practical guide to configuring AI coding assistants to focus on specific directories in monorepo setups, improving context accuracy and response quality"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-configure-ai-context-includes-and-excludes-for-monore/
-categories: [guides]
-tags: [ai-tools-compared, tools, artificial-intelligence]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 
 Monorepos require explicit context configuration to prevent AI from hallucinating about unrelated packages. This guide shows how to set up AI tools to include only relevant workspace paths, package dependencies, and type definitions while excluding irrelevant codebases.

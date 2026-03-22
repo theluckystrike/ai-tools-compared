@@ -11,21 +11,8 @@ tags: [ai-tools-compared, windsurf, eslint, ai-editor, configuration, artificial
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-
-layout: default
-title: "Windsurf AI Not Picking Up ESLint Config"
-description: "A practical troubleshooting guide for developers experiencing issues with Windsurf AI not detecting ESLint configuration files"
-date: 2026-03-20
-author: "AI Tools Compared"
-permalink: /windsurf-ai-not-picking-up-eslint-config-troubleshooting-gui/
-categories: [troubleshooting]
-tags: [ai-tools-compared, windsurf, eslint, ai-editor, configuration, artificial-intelligence]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 
 Windsurf AI offers intelligent code assistance that integrates with your project's linting tools, but sometimes it fails to recognize your ESLint configuration. This creates a frustrating experience where the AI suggests code that violates your project's style guidelines or ignores your custom rules. This guide walks through the most common causes and practical solutions to get Windsurf properly detecting your ESLint setup.

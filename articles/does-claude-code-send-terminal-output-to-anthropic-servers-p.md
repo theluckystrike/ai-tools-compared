@@ -11,21 +11,8 @@ score: 9
 voice-checked: true
 reviewed: true
 intent-checked: true
-tags: [ai-tools-compared, claude-ai]---
+tags: [ai-tools-compared, claude-ai]
 ---
-layout: default
-title: "Does Claude Code Send Terminal Output to Anthropic Servers"
-description: "A technical deep-dive into Claude Code's privacy architecture, examining what data is transmitted and how you can control it"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /does-claude-code-send-terminal-output-to-anthropic-servers-p/
-categories: [security, guides]
-score: 9
-voice-checked: true
-reviewed: true
-intent-checked: true
-tags: [ai-tools-compared, claude-ai]---
 
 
 Understanding what data Claude Code transmits to Anthropic's servers is crucial for developers working in sensitive environments or those with strict privacy requirements. This article examines the actual data flow between Claude Code and Anthropic's infrastructure, providing you with the technical details needed to make informed decisions about using this AI coding assistant.

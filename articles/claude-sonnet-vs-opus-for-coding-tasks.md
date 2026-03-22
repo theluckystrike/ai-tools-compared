@@ -10,7 +10,8 @@ tags: [ai-tools-compared]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
+---
 
 
 Picking between Sonnet and Opus matters when you're paying per token at scale. Opus 4.6 costs roughly 5x more than Sonnet 4.6 per token. For an agentic pipeline running 1,000 tasks per day, that difference is significant. This guide documents which tasks justify Opus and which work fine with Sonnet, based on measurable output quality differences.

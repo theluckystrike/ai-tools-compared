@@ -11,21 +11,8 @@ tags: [ai-tools-compared, claude-code, ai-assistants, error-handling, troublesho
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Writing Claude Md Files That Teach AI Your Project Specific"
-description: "A practical guide to creating effective CLAUDE.md files that communicate your project's error handling conventions to AI assistants. Includes code examples and"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/
-categories: [guides]
-tags: [ai-tools-compared, claude-code, ai-assistants, error-handling, troubleshooting, artificial-intelligence, claude-ai]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

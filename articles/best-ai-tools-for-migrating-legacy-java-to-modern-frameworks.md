@@ -11,7 +11,8 @@ tags: [ai-tools-compared, java, migration, ai-tools, best-of, artificial-intelli
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
+---
 
 {% raw %}
 

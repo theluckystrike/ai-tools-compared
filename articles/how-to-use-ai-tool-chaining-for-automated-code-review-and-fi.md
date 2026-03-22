@@ -11,7 +11,8 @@ tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
+---
 
 
 Chain AI tools for automated review by using static analysis for syntax, AI for design review, and linting for style—each tool excels at different aspects. This guide shows which tool to apply for which review dimension.

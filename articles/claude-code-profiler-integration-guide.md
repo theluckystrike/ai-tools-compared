@@ -11,21 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, integration, claude-ai]---
+tags: [ai-tools-compared, integration, claude-ai]
 ---
-layout: default
-title: "Claude Code Profiler Integration Guide"
-description: "Learn how to integrate performance profilers with Claude Code to identify bottlenecks, optimize code, and build faster applications"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /claude-code-profiler-integration-guide/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, integration, claude-ai]---
 
 {% raw %}
 

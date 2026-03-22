@@ -11,21 +11,8 @@ tags: [ai-tools-compared, video, captions, transcripts, accessibility, artificia
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "AI Tools for Generating Closed Captions and Transcripts"
-description: "A practical comparison of AI tools for generating closed captions and transcripts from video. Includes code examples, API integration patterns, and"
-date: 2026-03-21
-last_modified_at: 2026-03-21
-author: theluckystrike
-permalink: /ai-tools-for-generating-closed-captions-and-transcripts-from/
-categories: [guides]
-tags: [ai-tools-compared, video, captions, transcripts, accessibility, artificial-intelligence]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

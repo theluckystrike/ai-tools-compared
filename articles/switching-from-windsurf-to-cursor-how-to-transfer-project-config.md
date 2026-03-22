@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Switching from Windsurf to Cursor How to Transfer Project"
-description: "Migrating from Windsurf to Cursor involves more than just installing a new editor. Your project configurations, custom rules, snippets, and workflow settings"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /switching-from-windsurf-to-cursor-how-to-transfer-project-config/
-categories: [guides]
-tags: [ai-tools-compared, tools]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 
 Migrating from Windsurf to Cursor involves more than just installing a new editor. Your project configurations, custom rules, snippets, and workflow settings need to be transferred carefully to maintain productivity. This guide walks you through the complete process of moving your project config from Windsurf to Cursor.

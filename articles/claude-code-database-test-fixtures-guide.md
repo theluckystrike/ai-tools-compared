@@ -11,7 +11,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, troubleshooting, claude-ai]---
+tags: [ai-tools-compared, troubleshooting, claude-ai]
+---
 
 
 Claude Code excels at generating database test fixtures that are maintainable, realistic, and properly isolated. This guide covers how to use Claude Code effectively for creating fixture factories, seeding strategies, and ensuring test isolation across your test suite.

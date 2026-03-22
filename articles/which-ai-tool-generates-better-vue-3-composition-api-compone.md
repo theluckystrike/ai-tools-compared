@@ -11,21 +11,8 @@ intent-checked: true
 voice-checked: true
 score: 8
 reviewed: true
-tags: [ai-tools-compared, artificial-intelligence, api]---
+tags: [ai-tools-compared, artificial-intelligence, api]
 ---
-layout: default
-title: "Which AI Tool Generates Better Vue 3 Composition API"
-description: "A practical comparison of AI coding tools for generating Vue 3 Composition API components, with code examples and recommendations for developers"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /which-ai-tool-generates-better-vue-3-composition-api-components/
-categories: [comparisons]
-intent-checked: true
-voice-checked: true
-score: 8
-reviewed: true
-tags: [ai-tools-compared, artificial-intelligence, api]---
 
 {% raw %}
 

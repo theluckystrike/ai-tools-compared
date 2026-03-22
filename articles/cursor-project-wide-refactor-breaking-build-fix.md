@@ -11,21 +11,8 @@ score: 9
 categories: [troubleshooting]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, troubleshooting]---
+tags: [ai-tools-compared, troubleshooting]
 ---
-layout: default
-title: "Cursor Project-Wide Refactor Breaking Build"
-description: "Troubleshooting guide for fixing build errors after using Cursor's project-wide refactor feature. Step-by-step diagnostics and solutions for developers"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /cursor-project-wide-refactor-breaking-build-fix/
-reviewed: true
-score: 9
-categories: [troubleshooting]
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, troubleshooting]---
 
 {% raw %}
 

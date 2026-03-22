@@ -11,21 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, best-of, artificial-intelligence]
 ---
-layout: default
-title: "Best Practices for Maintaining AI Tool Configuration Files"
-description: "A practical guide to managing AI tool configuration files with your code documentation, including version control strategies, environment-specific"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /best-practices-for-maintaining-ai-tool-configuration-files-a/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, best-of, artificial-intelligence]---
 
 
 | Tool | Key Strength | Context Window | API Access | Pricing |

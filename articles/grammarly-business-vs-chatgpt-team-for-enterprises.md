@@ -11,7 +11,8 @@ score: 8
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison, chatgpt]---
+tags: [ai-tools-compared, comparison, chatgpt]
+---
 
 
 {% raw %}

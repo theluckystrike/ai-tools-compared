@@ -10,20 +10,8 @@ score: 9
 categories: [guides]
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence, api]
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "Open Source AI Code Completion for Neovim Without Cloud API"
-description: "A practical comparison of self-hosted AI code completion solutions for Neovim that work entirely offline without requiring cloud API keys."
-date: 2026-03-16
-author: "AI Tools Compared"
-permalink: /open-source-ai-code-completion-for-neovim-without-cloud-api-/
-reviewed: true
-score: 9
-categories: [guides]
-voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence, api]
-intent-checked: true---
 {% raw %}
 
 If you use Neovim as your primary editor, you have likely explored ways to integrate AI-powered code completion. Many developers turn to cloud-based solutions like GitHub Copilot, but these require API keys, subscriptions, and an internet connection. For privacy-conscious developers, teams working in secure environments, or anyone wanting to avoid recurring costs, self-hosted alternatives offer a compelling path forward.

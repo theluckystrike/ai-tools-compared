@@ -11,21 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, workflow, claude-ai]---
+tags: [ai-tools-compared, workflow, claude-ai]
 ---
-layout: default
-title: "Claude Code Screen Reader Testing Workflow"
-description: "Screen reader testing is a critical component of web accessibility validation. This guide covers how to use Claude Code to implement screen reader testing"
-date: 2026-03-17
-last_modified_at: 2026-03-17
-author: theluckystrike
-permalink: /claude-code-screen-reader-testing-workflow/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, workflow, claude-ai]---
 
 
 

@@ -10,7 +10,8 @@ tags: [ai-tools-compared, comparison, artificial-intelligence, api]
 reviewed: true
 score: 6
 intent-checked: true
-voice-checked: true---
+voice-checked: true
+---
 
 {% raw %}
 

@@ -11,7 +11,8 @@ tags: [ai-tools-compared, tools]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
+---
 
 
 Generate code with Copilot chat by describing requirements in natural language, iterating on implementation details, and asking for explanations. This guide shows the conversation flow that produces working code efficiently.

@@ -11,21 +11,8 @@ tags: [ai-tools-compared, mcp, documentation, ai-tools]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Set Up Model Context Protocol Server for Custom"
-description: "A practical guide to building an MCP server that serves your project documentation to AI coding tools. Step-by-step implementation with code examples"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-set-up-model-context-protocol-server-for-custom-proje/
-categories: [guides]
-tags: [ai-tools-compared, mcp, documentation, ai-tools]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

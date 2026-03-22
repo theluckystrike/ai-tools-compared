@@ -11,21 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, tools, comparison, artificial-intelligence]---
+tags: [ai-tools-compared, tools, comparison, artificial-intelligence]
 ---
-layout: default
-title: "Invideo AI vs Pictory AI Video Maker"
-description: "A technical comparison of InVideo AI and Pictory AI video creation tools, with API capabilities, automation workflows, and practical integration examples"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /invideo-ai-vs-pictory-ai-video-maker/
-categories: [comparisons]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, tools, comparison, artificial-intelligence]---
 
 {% raw %}
 

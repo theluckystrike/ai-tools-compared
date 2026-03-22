@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, aws, cdk, python, best-of, artificial-intellige
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Best AI Tools for Writing AWS CDK Infrastructure Code"
-description: "A practical comparison of AI coding tools for writing AWS CDK infrastructure code in Python, featuring code examples and recommendations for developers"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/
-categories: [guides]
-tags: [ai-tools-compared, tools, aws, cdk, python, best-of, artificial-intelligence]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

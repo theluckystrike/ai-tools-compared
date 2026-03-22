@@ -10,20 +10,8 @@ score: 9
 categories: [guides]
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "Self Hosted AI Coding Tools That Support Air Gapped"
-description: "A practical comparison of self-hosted AI coding assistants that work in air-gapped, offline, and secure environments. Find the best tool for disconnected"
-date: 2026-03-16
-author: "AI Tools Compared"
-permalink: /self-hosted-ai-coding-tools-that-support-air-gapped-environm/
-reviewed: true
-score: 9
-categories: [guides]
-voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]
-intent-checked: true---
 {% raw %}
 
 Air-gapped environments—systems physically isolated from public networks—are common in defense, finance, healthcare, and critical infrastructure. Developers working in these settings need AI coding assistants that run entirely offline while still offering solid code completion, generation, and refactoring capabilities. Here's a practical comparison of the best options for 2026.

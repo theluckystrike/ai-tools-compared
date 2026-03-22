@@ -11,21 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison, claude-ai]---
+tags: [ai-tools-compared, comparison, claude-ai]
 ---
-layout: default
-title: "Copilot vs Claude for Generating Java Spring Boot"
-description: "When building Java Spring Boot applications in 2026, developers need AI assistants that understand the framework's conventions, annotations, and dependency"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /copilot-vs-claude-for-generating-java-spring-boot-applicatio/
-categories: [guides, comparisons]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, comparison, claude-ai]---
 
 {% raw %}
 

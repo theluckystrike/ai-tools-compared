@@ -11,7 +11,8 @@ tags: [ai-tools-compared, tools, best-of, artificial-intelligence]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
+---
 
 
 Enable developer self-service by using AI to interpret infrastructure requests in plain language and generate Terraform or CloudFormation. Claude excels at understanding intent and generating policy-compliant IaC, while specialized platform tools like Humanitec integrate deeper with your deployment pipeline. This guide evaluates the best AI-powered tools for platform engineering that reduce ops friction and accelerate provisioning workflows.

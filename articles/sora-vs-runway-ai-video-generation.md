@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, comparison, artificial-intelligence]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Sora vs Runway AI Video Generation: A Technical"
-description: "A practical comparison of OpenAI Sora and Runway AI video generation APIs for developers building video applications"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /sora-vs-runway-ai-video-generation/
-categories: [guides]
-tags: [ai-tools-compared, tools, comparison, artificial-intelligence]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

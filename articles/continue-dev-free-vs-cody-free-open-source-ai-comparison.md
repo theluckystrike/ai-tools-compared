@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, comparison, artificial-intelligence]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Continue Dev Free vs Cody Free: Open Source AI Comparison"
-description: "A practical comparison of Continue Dev Free and Cody Free for open source AI coding assistance. Features, limitations, and code examples for developers"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /continue-dev-free-vs-cody-free-open-source-ai-comparison/
-categories: [guides]
-tags: [ai-tools-compared, tools, comparison, artificial-intelligence]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 
 Finding affordable AI tools requires understanding the true cost structure. This guide breaks down the cheapest options and explains what you get at each price point.

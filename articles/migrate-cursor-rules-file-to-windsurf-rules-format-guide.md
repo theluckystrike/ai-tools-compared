@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Migrate Cursor Rules File"
-description: "A practical guide for developers on migrating Cursor rules files to Windsurf's rules format, with code examples and step-by-step instructions"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /migrate-cursor-rules-file-to-windsurf-rules-format-guide/
-categories: [guides]
-tags: [ai-tools-compared, tools]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 
 If you have been using Cursor's custom rules configuration and want to switch to Windsurf, you need to understand how to translate your existing rules. Both tools use rule-based systems to customize AI behavior, but they have different file formats and structures. This guide walks you through the migration process with practical examples.

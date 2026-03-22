@@ -10,20 +10,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison, claude-ai]---
+tags: [ai-tools-compared, comparison, claude-ai]
 ---
-layout: default
-title: "Claude vs GPT-4 for Data Analysis Tasks"
-description: "Practical comparison of Claude and GPT-4 for data analysis: code quality, pandas workflows, statistical reasoning, and visualization generation with benchmarks"
-date: 2026-03-21
-author: theluckystrike
-permalink: /claude-vs-gpt4-for-data-analysis/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, comparison, claude-ai]---
 
 {% raw %}
 

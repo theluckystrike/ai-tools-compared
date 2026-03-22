@@ -10,7 +10,10 @@ tags: [ai-tools-compared]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
+---
+
+{% raw %}
 {% raw %}
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -11,21 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, troubleshooting, claude-ai, api]---
+tags: [ai-tools-compared, troubleshooting, claude-ai, api]
 ---
-layout: default
-title: "Claude Code API Error Handling Standards"
-description: "A guide to implementing API error handling standards with Claude Code, covering HTTP status codes, error response formats, and best practices"
-date: 2026-03-17
-last_modified_at: 2026-03-17
-author: theluckystrike
-permalink: /claude-code-api-error-handling-standards/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, troubleshooting, claude-ai, api]---
 
 {% raw %}
 

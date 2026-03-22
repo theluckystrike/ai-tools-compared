@@ -19,29 +19,8 @@ intent-checked: true
 voice-checked: true
 layout: default
 date: 2026-03-15
-last_modified_at: 2026-03-15---
+last_modified_at: 2026-03-15
 ---
-title: "Claude Code Semantic Versioning Automation: A Complete Guide"
-description: "Learn how to automate semantic versioning in your projects using Claude Code. Covers version bump detection, changelog generation, and automated"
-keywords: "Claude Code, semantic versioning, semver, automation, version bumps, release management, AI coding tools"
-author: theluckystrike
-category: "ai-tools"
-topic: ["claude-code", "versioning", "automation"]
-permalink: /claude-code-semantic-versioning-automation/
-categories: [guides]
-tags: [ai-tools-compared, tools, claude-ai, automation]
-reviewed: true
-score: 8
-robots: "index, follow"
-last_updated: "2026-03-18"
-structured_data:
- "@type": "HowTo"
- name: "Claude Code Semantic Versioning Automation"
-intent-checked: true
-voice-checked: true
-layout: default
-date: 2026-03-15
-last_modified_at: 2026-03-15---
 {% raw %}
 
 Automate semantic versioning with Claude Code by configuring version detection rules that identify version bumps from commit messages and code changes. Claude Code analyzes commits and pull request labels to determine whether changes warrant MAJOR, MINOR, or PATCH version increments according to semantic versioning standards, eliminating manual version bumps and ensuring consistent releases.

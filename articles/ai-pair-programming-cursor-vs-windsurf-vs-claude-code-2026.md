@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, pair-programming, development, comparison, arti
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026"
-description: "Deep comparison of AI coding assistants for pair programming including editor integration, code quality, and real-world workflow analysis"
-date: 2026-03-20
-last_modified_at: 2026-03-20
-author: theluckystrike
-permalink: /ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/
-categories: [guides]
-tags: [ai-tools-compared, tools, pair-programming, development, comparison, artificial-intelligence, claude-ai]
-reviewed: true
-score: 9
-voice-checked: true
-intent-checked: true---
 
 {% raw %}
 

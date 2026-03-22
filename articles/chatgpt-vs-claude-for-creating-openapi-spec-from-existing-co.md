@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, comparison, claude-ai, chatgpt, api]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "ChatGPT vs Claude for Creating OpenAPI Spec from Existing"
-description: "A practical comparison of ChatGPT and Claude for generating OpenAPI specifications from existing codebases. Includes code examples and developer insights"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /chatgpt-vs-claude-for-creating-openapi-spec-from-existing-co/
-categories: [guides]
-tags: [ai-tools-compared, tools, comparison, claude-ai, chatgpt, api]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

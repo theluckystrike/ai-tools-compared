@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, claude-ai]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Claude Code Coverage Reporting Setup Guide"
-description: "A guide to setting up automated code coverage reporting with Claude Code. Learn how to integrate coverage tools, generate reports, and track metrics"
-date: 2026-03-18
-last_modified_at: 2026-03-18
-author: theluckystrike
-permalink: /claude-code-coverage-reporting-setup-guide/
-categories: [guides]
-tags: [ai-tools-compared, tools, claude-ai]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

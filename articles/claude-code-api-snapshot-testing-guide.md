@@ -11,21 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, claude-ai, api]---
+tags: [ai-tools-compared, claude-ai, api]
 ---
-layout: default
-title: "Claude Code API Snapshot Testing Guide"
-description: "API snapshot testing captures the actual output of your API endpoints and stores them as reference files. Future test runs compare new responses against these"
-date: 2026-03-20
-last_modified_at: 2026-03-20
-author: theluckystrike
-permalink: /claude-code-api-snapshot-testing-guide/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, claude-ai, api]---
 
 {% raw %}
 

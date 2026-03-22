@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, comparison, artificial-intelligence]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Lightdash vs Preset AI Dashboards: A Practical"
-description: "Choose Lightdash if your team already uses dbt and wants AI-powered natural language queries with minimal infrastructure overhead. Choose Preset if you need"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /lightdash-vs-preset-ai-dashboards/
-categories: [guides]
-tags: [ai-tools-compared, tools, comparison, artificial-intelligence]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 
 Choose Lightdash if your team already uses dbt and wants AI-powered natural language queries with minimal infrastructure overhead. Choose Preset if you need custom ML model integration, Python-native visualizations, or work with data sources outside dbt. This comparison covers architecture, AI features, and code examples for both platforms.

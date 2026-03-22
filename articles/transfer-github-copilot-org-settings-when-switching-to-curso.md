@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Transfer GitHub Copilot Organization Settings"
-description: "A practical guide for developers moving from GitHub Copilot to Cursor Business. Learn what settings you can migrate, what requires manual"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /transfer-github-copilot-org-settings-when-switching-to-curso/
-categories: [guides]
-tags: [ai-tools-compared, tools]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

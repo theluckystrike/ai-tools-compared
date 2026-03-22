@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, claude-ai, api]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Claude API Batch Processing: How Much Cheaper Than Discount"
-description: "A practical guide to Claude API batch processing pricing. Learn how to save 50% on API costs and when to use batch vs real-time processing"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /claude-api-batch-processing-discount-how-much-cheaper-than-r/
-categories: [guides]
-tags: [ai-tools-compared, tools, claude-ai, api]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

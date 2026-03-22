@@ -10,20 +10,8 @@ score: 8
 categories: [troubleshooting]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, troubleshooting, claude-code, windows, terminal, claude-ai]---
+tags: [ai-tools-compared, troubleshooting, claude-code, windows, terminal, claude-ai]
 ---
-layout: default
-title: "Claude Code Terminal Output Garbled on Windows Fix 2026"
-description: "Fix garbled terminal output in Claude Code on Windows with practical solutions for encoding issues, terminal compatibility, and configuration tweaks."
-date: 2026-03-20
-author: theluckystrike
-permalink: /claude-code-terminal-output-garbled-on-windows-fix-2026/
-reviewed: true
-score: 8
-categories: [troubleshooting]
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, troubleshooting, claude-code, windows, terminal, claude-ai]---
 
 
 Windows users running Claude Code frequently encounter garbled output—characters that appear as boxes, question marks, or completely wrong symbols. This problem stems from encoding mismatches between Claude Code's output and Windows terminal expectations. In 2026, several reliable solutions exist to fix this issue and restore clean, readable terminal output.

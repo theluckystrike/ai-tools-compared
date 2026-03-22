@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "Perplexity Pro File Upload Limits and Storage Costs Explaine"
-description: "Perplexity Pro File Upload Limits and Storage Costs. — guide with practical tips, comparisons, and expert recommendations for developers"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /perplexity-pro-file-upload-limits-and-storage-costs-explaine/
-categories: [guides]
-tags: [ai-tools-compared, tools]
-reviewed: true
-score: 9
-voice-checked: true
-intent-checked: true---
 
 
 Perplexity Pro allows file uploads up to 25 MB per document and 100 files per month. Storage follows a tiered model: Pro Basic includes 10 GB (overage at $0.10/GB/day) and Pro Unlimited includes 50 GB (overage at $0.05/GB/day). Files uploaded for immediate analysis are automatically cleaned up after 7 days unless explicitly saved.

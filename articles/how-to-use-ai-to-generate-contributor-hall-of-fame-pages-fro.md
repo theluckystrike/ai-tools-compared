@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, artificial-intelligence]
 score: 8
 voice-checked: true
 reviewed: true
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "How to Use AI to Generate Contributor Hall of Fame Pages"
-description: "Recognizing contributors is essential for open source projects. A contributor hall of fame showcases the people who have invested time and effort into making"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-use-ai-to-generate-contributor-hall-of-fame-pages-fro/
-categories: [guides]
-tags: [ai-tools-compared, tools, artificial-intelligence]
-score: 8
-voice-checked: true
-reviewed: true
-intent-checked: true---
 
 {% raw %}
 

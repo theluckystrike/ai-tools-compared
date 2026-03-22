@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, best-of, artificial-intelligence]
 score: 8
 voice-checked: true
 reviewed: true
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "Best Practices for Sharing AI Tool Configuration Files"
-description: "A practical guide to sharing AI coding assistant configuration files across distributed engineering teams. Learn version control strategies"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /best-practices-for-sharing-ai-tool-configuration-files-acros/
-categories: [guides]
-tags: [ai-tools-compared, tools, best-of, artificial-intelligence]
-score: 8
-voice-checked: true
-reviewed: true
-intent-checked: true---
 
 {% raw %}
 

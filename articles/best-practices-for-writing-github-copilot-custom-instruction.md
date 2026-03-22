@@ -11,21 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, best-of]---
+tags: [ai-tools-compared, best-of]
 ---
-layout: default
-title: "Best Practices for Writing GitHub Copilot Custom Instruction"
-description: "A practical guide for developers on writing effective GitHub Copilot custom instructions in VSCode settings. Learn how to configure Copilot to match"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /best-practices-for-writing-github-copilot-custom-instruction/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, best-of]---
 
 
 | Tool | Key Strength | Context Window | API Access | Pricing |

@@ -10,22 +10,8 @@ score: 8
 categories: [guides]
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence, api]
-intent-checked: true---
+intent-checked: true
 ---
-
-
-layout: default
-title: "Self-Hosted AI Tool for Generating OpenAPI Specs from"
-description: "Learn how to run AI-powered OpenAPI spec generation entirely on your infrastructure. This guide covers local LLMs, self-hosted solutions, and practical"
-date: 2026-03-16
-author: "AI Tools Compared"
-permalink: /self-hosted-ai-tool-for-generating-openapi-specs-from-existi/
-reviewed: true
-score: 8
-categories: [guides]
-voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence, api]
-intent-checked: true---
 
 ## Key Takeaways
 
