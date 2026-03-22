@@ -27,7 +27,17 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 OpenAI's transition from plugins to Custom GPTs represents a significant shift in how developers extend ChatGPT's capabilities. If you built integrations using the plugins system, understanding this transition and the current pricing model helps you plan your development strategy for 2026.
+
+## Key Takeaways
+
+- **Creating Custom GPTs requires**: ChatGPT Plus ($20/month) or a Team/Enterprise plan.
+- **Model Selection**: Using GPT-4o-mini instead of GPT-4o reduces costs by approximately 94% for input and 98% for output tokens.
+- **Route simple queries to GPT-4o-mini**: which handles many standard use cases at a fraction of the cost.
+- **If your Custom GPT**: has a lengthy system instruction (over 1,024 tokens), repeated calls that share the same prefix receive a 50% discount on cached input tokens.
+- **Do Custom GPT interactions**: count against my API rate limits? Custom GPTs deployed through the ChatGPT interface use OpenAI's infrastructure and do not consume your API quota.
+- **Can I restrict who**: uses my Custom GPT? Yes.
 
 ## From Plugins to Custom GPTs
 

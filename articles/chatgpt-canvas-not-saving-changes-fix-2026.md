@@ -31,6 +31,17 @@ tags: [ai-tools-compared, troubleshooting, chatgpt]---
 
 To fix ChatGPT Canvas not saving changes, start by clearing your browser cache and cookies, then disable any browser extensions that may intercept network requests. If the problem persists, switch your network connection (disconnect VPN or try a mobile hotspot) and check the OpenAI status page at status.openai.com for active outages. These three steps resolve the vast majority of Canvas save failures.
 
+## Key Takeaways
+
+- **If there is an active incident**: wait for resolution (typically 1-24 hours)
+
+Service disruptions affect all users equally, and no local troubleshooting will resolve server-side outages.
+- **For persistent issues**: the Network and Console tabs in browser devtools provide the specific error details needed to identify root causes or communicate with OpenAI support.
+- **Start with the simplest**: potential causes before moving to more complex troubleshooting steps.
+- **Intermittent connectivity causes save**: requests to fail silently.
+- **Most Canvas save failures**: resolve after clearing browser cache, disabling extensions, or switching networks.
+- **Could this problem be**: caused by a recent update? Yes, updates frequently introduce new bugs or change behavior.
+
 ## Understanding the Problem
 
 When Canvas changes fail to persist, the cause is usually network connectivity, browser cache corruption, an expired authentication state, or a platform-side bug. Start with the simplest potential causes before moving to more complex troubleshooting steps.

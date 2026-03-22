@@ -31,6 +31,15 @@ voice-checked: true---
 
 Yes—ChatGPT Canvas is available to both ChatGPT Plus and ChatGPT Team subscribers. It is not included in the free tier. If you have an active ChatGPT Plus subscription ($20/month) or a ChatGPT Team workspace ($25/user/month), you can access Canvas alongside other premium features like GPT-4, advanced voice mode, and custom GPTs.
 
+## Key Takeaways
+
+- **Free users access GPT-4o**: mini through the standard chat interface but cannot open documents in Canvas view.
+- **ChatGPT Pro ($200/month) includes**: Canvas along with all Plus and Team features, plus extended limits and early access to new features.
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **Mobile support is limited**: you can view Canvas documents on mobile but the full editing interface requires a desktop browser for the best experience.
+- **Does ChatGPT offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+
 ## What Is ChatGPT Canvas?
 
 Canvas is OpenAI's interactive writing and coding interface that lets you work on documents alongside ChatGPT. Unlike the standard chat interface where responses appear in a single message, Canvas opens a split-view environment where you can:

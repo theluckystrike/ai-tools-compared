@@ -31,6 +31,15 @@ tags: [ai-tools-compared, troubleshooting, chatgpt]---
 
 To fix ChatGPT Code Interpreter not running Python, start a new conversation to reset the execution sandbox, verify your internet connection and ChatGPT Plus subscription status, and clear your browser cache. If those steps fail, validate your code for syntax errors, check for infinite loops or memory exhaustion, and try a different browser. Below are detailed fixes for each cause.
 
+## Key Takeaways
+
+- **Processing data in batches of 10**:000 to 50,000 rows is a practical upper bound for most Pandas operations.
+- **Below are detailed fixes**: for each cause.
+- **Syntax errors**: infinite loops, and memory-intensive operations cause immediate termination.
+- **Knowing these limits helps**: you work within them rather than fighting against them.
+- **Code that runs fine**: on a developer laptop with 32GB RAM may hit memory limits in the sandbox.
+- **Reduce the size of**: the data you're working with, delete large DataFrames you no longer need using `del df`, and call `gc.collect()` explicitly to free memory.
+
 ## Common Reasons Code Interpreter Fails to Run Python
 
 Understanding why the Code Interpreter stops working helps you diagnose the issue faster. The problems generally fall into several categories: session-related issues, syntax or runtime errors that cause immediate termination, resource limitations, and authentication or account status problems.

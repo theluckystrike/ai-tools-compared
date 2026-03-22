@@ -27,7 +27,17 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 The OpenAI Assistants API charges based on input tokens, output tokens, thread storage, and run execution, with costs varying dramatically by model. Using gpt-4o-mini, a typical run costs under a tenth of a cent ($0.15/1M input, $0.60/1M output), while the same run on gpt-4o costs roughly one cent ($2.50/1M input, $10.00/1M output). Thread storage adds a smaller but cumulative cost based on total tokens stored across all messages. This guide breaks down each cost component with practical examples to help you estimate and optimize your Assistants API spending.
+
+## Key Takeaways
+
+- **If you have used**: the tool for at least 3 months and plan to continue, the annual discount usually makes sense.
+- **Using gpt-4o-mini**: a typical run costs under a tenth of a cent ($0.15/1M input, $0.60/1M output), while the same run on gpt-4o costs roughly one cent ($2.50/1M input, $10.00/1M output).
+- **For a conversation-heavy application**: with 1,000 active threads averaging 3,000 tokens each, monthly storage costs would be approximately $0.75 per 1,000 threads when using gpt-4o-mini.
+- **For gpt-4o-mini**: input tokens cost $0.15 per 1M tokens and output tokens cost $0.60 per 1M tokens.
+- **Switching to gpt-4o for**: all runs would increase costs to approximately $9,000 per month.
+- **Is the annual plan**: worth it over monthly billing? Annual plans typically save 15-30% compared to monthly billing.
 
 ## Assistants API Pricing Model Overview
 
