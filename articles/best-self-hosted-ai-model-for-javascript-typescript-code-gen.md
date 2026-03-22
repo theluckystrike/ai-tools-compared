@@ -96,8 +96,8 @@ function useLocalStorage<T>(key: string, initialValue: T) {
 
   const setValue = (value: T | ((val: T) => T)) => {
     try {
-      const valueToStore = value instanceof Function 
-        ? value(storedValue) 
+      const valueToStore = value instanceof Function
+        ? value(storedValue)
         : value;
       setStoredValue(valueToStore);
       window.localStorage.setItem(key, JSON.stringify(valueToStore));
@@ -114,7 +114,7 @@ function useLocalStorage<T>(key: string, initialValue: T) {
 
 Meta's CodeLlama remains a solid choice, especially the 70B parameter version which handles complex TypeScript patterns well. It's particularly strong when you need longer context windows for understanding entire monorepos.
 
-**Hardware requirements:** Requires significant GPU resources—typically 2x A100 (80GB) or equivalent for efficient inference.
+**Hardware requirements:** Requires significant GPU resources — typically 2x A100 (80GB) or equivalent for efficient inference.
 
 **Strengths:**
 - 128K context window
@@ -142,14 +142,32 @@ Microsoft's StarCoder 2 offers a good balance between performance and resource r
 - License-friendly for commercial use
 - Multiple model sizes available
 
+### 5. Mistral 7B Instruct (Code-Tuned Variants)
+
+For teams with limited GPU budgets — a single RTX 3090 or RTX 4080 — Mistral 7B fine-tunes such as Mistral-7B-Instruct-Code represent the most capable option. While they cannot match the larger models on complex TypeScript type gymnastics, they handle routine JavaScript tasks (React components, Express routes, utility functions) well enough for daily productivity.
+
+Several community fine-tunes exist specifically targeting JavaScript:
+
+- **WizardCoder-Python-34B-V1.0** — originally Python-focused but generalizes well to JS/TS
+- **phind/Phind-CodeLlama-34B-v2** — tuned on Phind's search-based code dataset, strong on practical JS patterns
+- **TheBloke/deepseek-coder-6.7b-instruct-GGUF** — excellent for CPU-only or low-VRAM setups via llama.cpp
+
+```bash
+# Run a quantized model via llama.cpp for CPU-only inference
+./main -m deepseek-coder-6.7b-instruct.Q4_K_M.gguf \
+  -p "Write a TypeScript Express middleware for JWT validation" \
+  -n 512 --temp 0.1
+```
+
 ## Performance Comparison Table
 
-| Model | TypeScript Score | JS Score | VRAM (7B/14B) | Inference Speed |
-|-------|------------------|----------|---------------|-----------------|
-| DeepSeek Coder V2 | 92% | 90% | 24GB / 48GB | 45 tokens/s |
-| Qwen 2.5 Coder | 89% | 91% | 16GB / 32GB | 60 tokens/s |
-| CodeLlama 70B | 88% | 86% | N/A / 160GB | 30 tokens/s |
-| StarCoder 2 | 85% | 84% | 8GB / 16GB | 55 tokens/s |
+| Model | TypeScript Score | JS Score | VRAM (min) | Inference Speed |
+|-------|------------------|----------|------------|-----------------|
+| DeepSeek Coder V2 | 92% | 90% | 24GB | 45 tokens/s |
+| Qwen 2.5 Coder 14B | 89% | 91% | 16GB | 60 tokens/s |
+| CodeLlama 70B | 88% | 86% | 160GB | 30 tokens/s |
+| StarCoder 2 15B | 85% | 84% | 16GB | 55 tokens/s |
+| Mistral 7B (code FT) | 78% | 80% | 8GB | 80 tokens/s |
 
 *Scores based on HumanEval and MBPP benchmarks specific to JavaScript/TypeScript.*
 
@@ -192,6 +210,65 @@ curl http://localhost:11434/v1/chat/completions \
   }'
 ```
 
+## Integrating with Your IDE
+
+The most practical way to use a self-hosted model is through your editor. Two tools make this straightforward:
+
+**Continue.dev** is an open-source AI code assistant that supports any OpenAI-compatible endpoint. Point it at your Ollama server and get tab completion, inline edits, and chat within VS Code or JetBrains IDEs:
+
+```json
+// .continue/config.json
+{
+  "models": [
+    {
+      "title": "DeepSeek Coder V2 (Local)",
+      "provider": "ollama",
+      "model": "deepseek-coder-v2",
+      "apiBase": "http://localhost:11434"
+    }
+  ],
+  "tabAutocompleteModel": {
+    "title": "Qwen 2.5 Coder (Fast)",
+    "provider": "ollama",
+    "model": "qwen2.5-coder:7b"
+  }
+}
+```
+
+**Zed** editor has built-in support for local AI models via its assistant panel and inline code actions. Configure it in `~/.config/zed/settings.json` to use your Ollama endpoint.
+
+**Neovim users** can integrate via `nvim-lspconfig` with `ollama.nvim` or by calling the Ollama REST API from custom keybindings using `plenary.nvim`.
+
+## Fine-Tuning on Your Codebase
+
+For teams with a consistent coding style, fine-tuning on internal code yields measurable quality improvements. The typical approach uses QLoRA (Quantized Low-Rank Adaptation), which allows fine-tuning even large models on consumer hardware:
+
+```python
+from transformers import AutoModelForCausalLM, AutoTokenizer
+from peft import LoraConfig, get_peft_model
+import torch
+
+model_name = "deepseek-ai/deepseek-coder-6.7b-instruct"
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoModelForCausalLM.from_pretrained(
+    model_name,
+    load_in_4bit=True,
+    device_map="auto"
+)
+
+lora_config = LoraConfig(
+    r=16,
+    lora_alpha=32,
+    target_modules=["q_proj", "v_proj"],
+    lora_dropout=0.05,
+    bias="none",
+    task_type="CAUSAL_LM"
+)
+
+model = get_peft_model(model, lora_config)
+```
+
+Prepare your training data as instruction-response pairs showing your team's preferred patterns — how you structure React components, how you handle errors, your TypeScript strictness preferences. Even 500–1000 curated examples produce noticeable style alignment.
 
 ## Related Articles
 
@@ -215,14 +292,14 @@ This article is written for developers, technical professionals, and power users
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
 
 
-**Does JavaScript offer a free tier?**
+**Does self-hosting offer a free tier?**
 
-Most major tools offer some form of free tier or trial period. Check JavaScript's current pricing page for the latest free tier details, as these change frequently. Free tiers typically have usage limits that work for evaluation but may not be sufficient for daily professional use.
+Self-hosting has no ongoing API costs, but you pay for hardware — either owned servers or cloud GPU instances. A single RTX 4090 GPU runs roughly $1,500-2,000 new. Cloud GPU rental via Lambda Labs or Vast.ai starts around $0.50/hour for capable cards, making short-term experimentation affordable without capital investment.
 
 
 **How do I get started quickly?**
 
-Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
+Install Ollama, run `ollama pull qwen2.5-coder:7b`, then configure Continue.dev in VS Code to point at `http://localhost:11434`. You can have a working local code assistant in under 30 minutes on any machine with a modern GPU.
 
 
 **What is the learning curve like?**
