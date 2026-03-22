@@ -27,7 +27,17 @@ score: 9
 voice-checked: true
 intent-checked: true---
 
+
 Latency kills productivity. When your AI code completion tool takes 800ms to suggest the next line while you're in flow state, you either reject it and type manually, or you wait and lose momentum. This comparison measures real latency across GitHub Copilot ($10/month), Cursor ($20/month flat), and Codeium (free/paid), testing response times under different conditions: localhost files, remote repositories, cold starts, and warm cache. The fastest tool isn't always the best—local network latency, IDE communication overhead, and model complexity all contribute. Understanding where your time is spent helps you choose the right tool and optimize your setup.
+
+## Key Takeaways
+
+- **Research shows that delays above 200ms feel "laggy" to users**: they break flow state and create cognitive overhead.
+- **Measuring latency matters because**: - Below 100ms: Feels instant.
+- **A 5000-line file will**: show 50-100% higher latency than a 200-line file because the model needs to process more context tokens.
+- **- Choose Copilot if**: you're deeply integrated with GitHub and want the most contextually aware completions, even if it means slightly higher latency.
+- **Copilot uses larger models**: than Codeium's free tier, so inference takes longer.
+- **It's consistently fastest across**: scenarios and offers a free tier to test.
 
 ## How Latency Matters in Code Completion
 

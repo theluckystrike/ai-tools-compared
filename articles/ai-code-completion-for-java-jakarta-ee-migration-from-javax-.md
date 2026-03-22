@@ -27,7 +27,17 @@ intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]---
 
+
 Migrating enterprise Java applications from the `javax` namespace to `jakarta` represents one of the most significant breaking changes in the Java ecosystem. This transition, required for Jakarta EE 9 and later, affects countless applications built on Spring, Jakarta EE, and other enterprise frameworks. Understanding how AI code completion tools assist with this migration can significantly reduce manual effort and prevent common errors.
+
+## Key Takeaways
+
+- **Use Bulk Update Features**: Most AI tools support updating all instances in a project simultaneously rather than file-by-file, reducing the chance of missing references.
+- **Step 4**: Handle Spring XML configuration files. If your project uses Spring XML context files, search for `class="javax.` references manually.
+- **Only update `javax` imports in the current file**: do not touch files that already use jakarta." Without this instruction, Copilot and Cursor may apply changes inconsistently across file boundaries.
+- **Migrating enterprise Java applications**: from the `javax` namespace to `jakarta` represents one of the most significant breaking changes in the Java ecosystem.
+- **In VS Code with Cursor**: open the search panel and use regex mode.
+- **AI tools struggle with XML namespace migration because there is less training data for it**: treat these files as manual work.
 
 ## Understanding the Javax to Jakarta Transition
 

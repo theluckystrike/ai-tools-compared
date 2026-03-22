@@ -25,7 +25,17 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 Knative Serving has become the standard for running serverless containers on Kubernetes, but configuring its autoscaler correctly requires understanding multiple interconnected parameters. AI code generation tools can help you craft precise autoscaler configurations tailored to your specific workload characteristics, saving hours of trial-and-error and preventing misconfigurations that could impact application performance or cost.
+
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **For example, prompting an AI with**: > "Generate a Knative Serving autoscaler configuration for a Go HTTP API that handles 1000 requests/second with p99 latency under 50ms.
+- **For production services**: always set `minScale` to at least 1 or 2 to maintain availability during brief traffic dips.
+- **A lightweight JSON API**: might handle 50+ concurrent requests, while a database-heavy service might perform better at 5.
 
 ## Understanding Knative Serving Autoscaling Fundamentals
 
