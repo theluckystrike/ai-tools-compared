@@ -37,7 +37,7 @@ GitHub Copilot works identically in JetBrains IDEs and Visual Studio Code, inclu
 
 ## The Short Answer: Yes, Pricing Is Identical
 
-GitHub Copilot uses an unified pricing model regardless of which editor you use. The subscription tiers remain consistent across all supported IDEs, including JetBrains family members and Visual Studio Code. You do not pay extra for choosing JetBrains over VS Code.
+GitHub Copilot uses a unified pricing model regardless of which editor you use. The subscription tiers remain consistent across all supported IDEs, including JetBrains family members and Visual Studio Code. You do not pay extra for choosing JetBrains over VS Code.
 
 This matters for developers who work across multiple IDEs or prefer JetBrains tools for certain languages. Your Copilot subscription follows your GitHub account, not your editor choice. You can switch between editors without incurring additional charges.
 

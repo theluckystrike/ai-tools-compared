@@ -15,7 +15,7 @@ tags: [ai-tools-compared]
 ---
 {% raw %}
 
-Building internal tools that bridge AI assistants with your package registry documentation requires a solid integration strategy. The Model Context Protocol (MCP) provides a standardized way for AI models to interact with external services, making it an ideal choice for creating a documentation server that your AI coding assistants can query directly. This guide walks you through setting up an MCP server specifically designed for internal package registry documentation.
+Building internal tools that bridge AI assistants with your package registry documentation requires a solid integration strategy. The Model Context Protocol (MCP) provides a standardized way for AI models to interact with external services, making it an ideal choice for creating a documentation server that your AI coding assistants can query directly. This guide walks you through setting up a MCP server specifically designed for internal package registry documentation.
 
 ## Prerequisites and Initial Setup
 
@@ -29,7 +29,7 @@ npm init -y
 npm install @modelcontextprotocol/sdk typescript @types/node
 ```
 
-The SDK provides the core classes needed to implement an MCP server. TypeScript ensures type safety throughout your implementation.
+The SDK provides the core classes needed to implement a MCP server. TypeScript ensures type safety throughout your implementation.
 
 Configure your TypeScript compiler:
 
@@ -261,7 +261,7 @@ async function fetchPackageDoc(packageName: string): Promise<PackageDoc> {
 }
 ```
 
-This flexibility allows your MCP server to aggregate documentation from multiple sources, creating an unified interface for AI assistants.
+This flexibility allows your MCP server to aggregate documentation from multiple sources, creating a unified interface for AI assistants.
 
 ### Step 6: Test Your Implementation
 
@@ -311,7 +311,7 @@ CMD ["node", "dist/server.js"]
 
 Build and run with `docker build -t mcp-registry-docs .` followed by `docker run mcp-registry-docs`.
 
-For teams using HTTP transport instead of stdio (useful when multiple developer machines share one MCP server), the SDK supports an SSE transport:
+For teams using HTTP transport instead of stdio (useful when multiple developer machines share one MCP server), the SDK supports a SSE transport:
 
 ```typescript
 import { SSEServerTransport } from '@modelcontextprotocol/sdk/server/sse.js';

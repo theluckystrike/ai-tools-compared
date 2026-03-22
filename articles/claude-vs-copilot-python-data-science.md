@@ -498,12 +498,12 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 
 # SMOTE inside pipeline — applies only during fit
 pipeline = Pipeline([
-    ('smote', SMOTE(random_state=42)),
-    ('classifier', LogisticRegression(max_iter=1000))
+ ('smote', SMOTE(random_state=42)),
+ ('classifier', LogisticRegression(max_iter=1000))
 ])
 
 pipeline.fit(X_train, y_train)
-score = pipeline.score(X_test, y_test)  # Evaluated on original distribution
+score = pipeline.score(X_test, y_test) # Evaluated on original distribution
 """
 
 Also mention: if SMOTE hurts performance, try class_weight='balanced' instead.
@@ -542,7 +542,7 @@ y = df['target']
 
 # Step 3: Use Claude for strategy
 # "I have 50k samples, 30 features, binary classification.
-#  Training is slow. What features should I engineer?"
+# Training is slow. What features should I engineer?"
 # → Claude generates domain-specific feature ideas
 
 # Step 4: Back to Copilot for implementation

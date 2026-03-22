@@ -379,7 +379,7 @@ Use `minimal=True` and consider sampling first. A representative 5-10% sample us
 Yes. Generate the report as JSON using `profile.to_json()`, extract key metrics, and fail the pipeline if missing value percentages or duplicate rates exceed defined thresholds. This turns profiling into automated data quality gates.
 
 **Which AI tool works best for interpreting profiling output?**
-Any capable LLM works well. The key is structure: extract findings into a clean JSON or bullet-point summary before prompting. Cursor's chat, GitHub Copilot, or a direct API call to an LLM all produce useful preprocessing recommendations when given a clear dataset summary.
+Any capable LLM works well. The key is structure: extract findings into a clean JSON or bullet-point summary before prompting. Cursor's chat, GitHub Copilot, or a direct API call to a LLM all produce useful preprocessing recommendations when given a clear dataset summary.
 
 **How do I detect data drift in production without retraining?**
 Profile your production data on a schedule and compare key statistics — mean, standard deviation, and null rate — against a saved baseline. A shift greater than 10-15% in any feature is a trigger for investigation. The scheduled profiling script in this article implements exactly this pattern.

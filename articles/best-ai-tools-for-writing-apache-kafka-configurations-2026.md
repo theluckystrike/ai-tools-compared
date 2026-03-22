@@ -56,7 +56,7 @@ min.insync.replicas=2
 
 The output includes inline comments explaining why each value was chosen. Claude also generates accompanying producer and consumer configs that work together.
 
-**Best For:** Teams needing comprehensive, well-documented Kafka setups. Architecture review and mentoring.
+**Best For:** Teams needing, well-documented Kafka setups. Architecture review and mentoring.
 
 ---
 

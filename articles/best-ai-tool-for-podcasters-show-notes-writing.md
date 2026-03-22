@@ -218,7 +218,7 @@ The "best" tool depends on your production volume, technical comfort level, and 
 - Need batch processing? Use Sonix
 - Budget-tight? Try Otter.ai free
 
-For professional podcasters serious about their show notes quality, combining accurate transcription with AI-powered summarization delivers the best results. The time savings are substantial—you can produce polished show notes in fifteen minutes rather than spending an hour or more on manual creation. This efficiency allows for more consistent publishing schedules without sacrificing content quality.
+For professional podcasters serious about their show notes quality, combining accurate transcription with AI-powered summarization delivers the best results. The time savings are substantial—you can produce polished show notes in fifteen minutes rather than spending a hour or more on manual creation. This efficiency allows for more consistent publishing schedules without sacrificing content quality.
 
 The compound effect: spending 15 minutes on show notes instead of 60 minutes saves 3 hours per month for a 4-episode podcast. Over a year, that's 36 hours recovered for content creation, marketing, or interviewing better guests.
 

@@ -248,7 +248,7 @@ Consider these factors when selecting an alternative to Cody:
 
 2. **Team size**: Continue.dev works well for individual developers or small teams. Tabby's multi-user authentication makes it the better choice when 5+ developers need shared access. Sourcegraph's open core handles organization-scale deployments.
 
-3. **Infrastructure resources**: FauxPilot has the lowest resource requirements since it only handles completions. Tabby and Continue.dev need GPU resources for reasonable performance on 7B+ models—an RTX 3060 or better is the practical minimum for team use.
+3. **Infrastructure resources**: FauxPilot has the lowest resource requirements since it only handles completions. Tabby and Continue.dev need GPU resources for reasonable performance on 7B+ models—a RTX 3060 or better is the practical minimum for team use.
 
 4. **Editor integration**: All major options support VS Code. For JetBrains IDEs (IntelliJ, PyCharm, GoLand), Tabby and Continue.dev both have official plugins. FauxPilot relies on Copilot plugin compatibility, which varies by JetBrains product version.
 

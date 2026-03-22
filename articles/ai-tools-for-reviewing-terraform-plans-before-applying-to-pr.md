@@ -67,7 +67,7 @@ The output identifies specific security concerns, such as S3 buckets lacking enc
 
 ### LLM-Powered Plan Summarization
 
-Large language models excel at summarizing complex text. You can feed Terraform plan output to an LLM and receive a human-readable summary of changes. This approach works particularly well for understanding the intent behind infrastructure modifications.
+Large language models excel at summarizing complex text. You can feed Terraform plan output to a LLM and receive a human-readable summary of changes. This approach works particularly well for understanding the intent behind infrastructure modifications.
 
 ```bash
 # Generate plan and send to LLM for analysis

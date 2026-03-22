@@ -159,7 +159,7 @@ type Product {
   [Copilot generates here]
   """
   id: ID!
-  
+
   """
   [Copilot generates here]
   """
@@ -253,19 +253,19 @@ input ProductFilter {
   """
   minPrice: Int
   maxPrice: Int
-  
+
   """
   Filter by category slug. Case-insensitive exact match.
   Valid values: electronics, clothing, home, sports
   """
   category: String
-  
+
   """
   Only return products with this status.
   Values: ACTIVE (default), ARCHIVED, DRAFT
   """
   status: ProductStatus = ACTIVE
-  
+
   """
   Search across product name and description (fuzzy match).
   Minimum 3 characters. Performance: ~50ms for large catalogs.
@@ -276,19 +276,19 @@ input ProductFilter {
 type Query {
   """
   Search products with advanced filtering and sorting.
-  
+
   Arguments:
     filter: Optional ProductFilter object
     sortBy: Sort by PRICE_ASC, PRICE_DESC, CREATED_AT_DESC (default)
     first: Max results (default: 20, max: 100)
-  
+
   Performance: Indexed on category and status. Query time: <200ms typical.
-  
+
   Errors:
     - INVALID_FILTER: malformed filter object
     - QUERY_TOO_SHORT: search query < 3 chars
     - RATE_LIMITED: exceeded 100 requests/minute
-  
+
   Example:
     query {
       products(
@@ -320,12 +320,12 @@ type CreateUserPayload {
   False if validation errors occurred (see errors field).
   """
   success: Boolean!
-  
+
   """
   The created user (null if success is false).
   """
   user: User
-  
+
   """
   List of validation errors if creation failed.
   Example: [{ field: "email", message: "Already in use" }]
@@ -336,20 +336,20 @@ type CreateUserPayload {
 type Mutation {
   """
   Create a new user account. Email must be unique.
-  
+
   Arguments:
     email: Valid email address (will be normalized to lowercase)
     password: Minimum 8 characters, must include letter + number
-  
+
   On success: Creates user, returns CreateUserPayload with success=true
   On failure: Returns validation errors, does NOT create user
-  
+
   Errors:
     - EMAIL_EXISTS: Email already registered
     - INVALID_EMAIL: Email format invalid
     - WEAK_PASSWORD: Password doesn't meet security requirements
     - RATE_LIMITED: Max 5 signup attempts per IP per hour
-  
+
   Example:
     mutation {
       createUser(

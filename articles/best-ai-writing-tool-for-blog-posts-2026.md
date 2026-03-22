@@ -138,7 +138,7 @@ ollama run llama4 --system "You are a technical writer specializing in DevOps co
 ```
 
 
-Local processing means zero API costs after initial setup—a significant advantage for high-volume bloggers running automated content pipelines. On an M3 Max MacBook Pro, Llama 4 Scout produces reasonable draft quality at roughly 40-60 tokens per second, which is fast enough for interactive editing sessions.
+Local processing means zero API costs after initial setup—a significant advantage for high-volume bloggers running automated content pipelines. On a M3 Max MacBook Pro, Llama 4 Scout produces reasonable draft quality at roughly 40-60 tokens per second, which is fast enough for interactive editing sessions.
 
 
 ## Comparing the Tools

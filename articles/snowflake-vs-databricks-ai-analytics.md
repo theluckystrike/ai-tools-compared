@@ -113,7 +113,7 @@ The platform integrates with external ML tools through connectors, but the nativ
 
 ### Databricks ML Workspace
 
-Databricks provides an unified workspace for the full ML lifecycle: feature engineering, training, hyperparameter tuning, and deployment.
+Databricks provides a unified workspace for the full ML lifecycle: feature engineering, training, hyperparameter tuning, and deployment.
 
 ```python
 # Databricks: Distributed model training with MLflow

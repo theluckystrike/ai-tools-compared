@@ -31,7 +31,7 @@ For supplier intelligence and risk monitoring, use Onesumer. For synthesizing ve
 
 Vendor analysis extends beyond simple price comparisons. Procurement professionals must evaluate financial stability, compliance history, delivery performance, and strategic fit. The most useful AI tools for this purpose share several capabilities that directly address these requirements.
 
-AI vendor analysis tools should aggregate data from multiple sources—financial reports, public records, performance histories, and contract documents—into an unified view. They need to identify patterns that indicate risk, such as payment delays, regulatory violations, or ownership changes. The best tools provide practical recommendations rather than raw data, helping procurement managers make informed decisions quickly.
+AI vendor analysis tools should aggregate data from multiple sources—financial reports, public records, performance histories, and contract documents—into a unified view. They need to identify patterns that indicate risk, such as payment delays, regulatory violations, or ownership changes. The best tools provide practical recommendations rather than raw data, helping procurement managers make informed decisions quickly.
 
 Natural language processing capabilities matter significantly. Procurement teams often work with unstructured documents—RFPs, contracts, supplier questionnaires—that contain critical information. AI tools that can extract and organize this data save substantial manual effort.
 

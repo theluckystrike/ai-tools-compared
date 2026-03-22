@@ -42,7 +42,7 @@ Before creating commit message guidelines, understand your project's specific re
 
 Different types of projects benefit from different commit message approaches:
 
-- Libraries and APIs: Focus on describing what changed from an user perspective, emphasizing API changes, new features, and breaking changes
+- Libraries and APIs: Focus on describing what changed from a user perspective, emphasizing API changes, new features, and breaking changes
 
 - Applications: Prioritize user-facing changes, bug fixes, and feature implementations
 

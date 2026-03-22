@@ -164,7 +164,7 @@ Cursor's strengths for AWS certification:
 
 - Excellent for hands-on lab practice
 
-Cursor's composer mode is particularly useful for building practice applications that touch multiple AWS services. You can describe the architecture you want—say, an SQS-triggered Lambda that writes to DynamoDB with dead-letter queue handling—and Cursor will scaffold the full project across multiple files, including the CloudFormation template, the Lambda handler, and the IAM policy. Building these examples from scratch solidifies the service relationships that appear repeatedly on both the Associate and Professional exams.
+Cursor's composer mode is particularly useful for building practice applications that touch multiple AWS services. You can describe the architecture you want—say, a SQS-triggered Lambda that writes to DynamoDB with dead-letter queue handling—and Cursor will scaffold the full project across multiple files, including the CloudFormation template, the Lambda handler, and the IAM policy. Building these examples from scratch solidifies the service relationships that appear repeatedly on both the Associate and Professional exams.
 
 ## How to Use AI Effectively for AWS Certification Prep
 

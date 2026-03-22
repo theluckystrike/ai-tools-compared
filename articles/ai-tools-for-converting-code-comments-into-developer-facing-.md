@@ -138,7 +138,7 @@ Maintain consistency by establishing documentation standards in your codebase. S
 
 ## Example: From Scattered Comments to Complete Docs
 
-Consider an utility module with minimal documentation:
+Consider a utility module with minimal documentation:
 
 ```python
 # handles auth token refresh

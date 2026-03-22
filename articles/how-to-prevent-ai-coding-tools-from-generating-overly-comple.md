@@ -30,7 +30,7 @@ Understanding why AI coding assistants generate complex code helps you combat th
 
 The AI also lacks context about your specific project constraints. It does not know that your codebase has no existing dependency injection container, that your team prefers functional over object-oriented code, or that you need a quick prototype that you will replace later. This context gap leads the AI to err on the side of complexity, assuming you want production-ready, scalable solutions.
 
-A practical example demonstrates this. When you ask an AI to validate an user email, you might receive a full validator class with multiple methods, custom error types, and a builder pattern:
+A practical example demonstrates this. When you ask an AI to validate a user email, you might receive a full validator class with multiple methods, custom error types, and a builder pattern:
 
 ```python
 # What AI often generates (overly complex)

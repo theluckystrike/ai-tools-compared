@@ -120,9 +120,9 @@ After receiving initial definitions, validate them against these questions:
 
 - Do you have alerting in place before the SLO is breached?
 
-### Step 6: Example: Complete SLI/SLO Package for an User Service
+### Step 6: Example: Complete SLI/SLO Package for a User Service
 
-Here's a practical example showing how AI might generate a complete definition package for an user authentication service:
+Here's a practical example showing how AI might generate a complete definition package for a user authentication service:
 
 ```yaml
 service: user-auth-service
@@ -172,7 +172,7 @@ Document your definitions alongside code in version control. This practice ensur
 
 ### Step 8: Work with Error Budgets
 
-Error budgets provide a mathematical approach to balancing reliability with development velocity. When you set an SLO of 99.9% over 30 days, you allow approximately 43 minutes of allowed downtime. AI can help calculate these budgets and suggest appropriate policies.
+Error budgets provide a mathematical approach to balancing reliability with development velocity. When you set a SLO of 99.9% over 30 days, you allow approximately 43 minutes of allowed downtime. AI can help calculate these budgets and suggest appropriate policies.
 
 For a service targeting 99.9% availability:
 

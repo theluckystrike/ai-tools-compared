@@ -227,7 +227,7 @@ Monthly cost isn't the only variable. Factor in:
 
 **Tool Switching Cost**: Learning a new editor or tool costs time. Cursor and Windsurf require VS Code knowledge. Zed requires learning a new editor entirely.
 
-**Integration Time**: Setting up the tool in your workflow takes 1-4 hours. This is an one-time cost but real nonetheless.
+**Integration Time**: Setting up the tool in your workflow takes 1-4 hours. This is a one-time cost but real nonetheless.
 
 **Productivity Gain**: A tool that saves you 10 minutes per day is worth ~$200/month in time value (at $100/hour). Most AI tools return their cost within a week of regular use.
 

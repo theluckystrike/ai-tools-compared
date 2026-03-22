@@ -70,7 +70,7 @@ The strength of Copilot lies in its speed for single-file implementations and it
 
 Cursor takes a more interactive approach with its Chat and Compose features. You can describe what you want in natural language and Cursor generates code while explaining its decisions. This proves valuable for SSE because the implementation involves several moving parts that benefit from explicit coordination.
 
-When you ask Cursor to create an SSE endpoint, it often provides a more complete solution that includes:
+When you ask Cursor to create a SSE endpoint, it often provides a more complete solution that includes:
 
 ```java
 @Service

@@ -175,7 +175,7 @@ await canva.export({
 });
 ```
 
-This approach works well when you need to combine video with graphics, lower thirds, or design elements within an unified interface.
+This approach works well when you need to combine video with graphics, lower thirds, or design elements within a unified interface.
 
 ### CapCut Workflow
 

@@ -20,7 +20,7 @@ When building AWS infrastructure with the Cloud Development Kit (CDK) in Python,
 ## Setting Up a Basic CDK Stack
 
 
-Before comparing the AI tools, here is a simple CDK stack in Python that creates an S3 bucket with encryption:
+Before comparing the AI tools, here is a simple CDK stack in Python that creates a S3 bucket with encryption:
 
 
 ```python
@@ -53,7 +53,7 @@ This example demonstrates the fundamentals: importing CDK modules, extending the
 Claude excels at understanding context across your entire CDK project. When you provide Claude with your stack code, it comprehends the relationships between resources and suggests modifications that account for dependencies.
 
 
-For instance, if you ask Claude to add an S3 bucket policy to your existing bucket, it produces code like this:
+For instance, if you ask Claude to add a S3 bucket policy to your existing bucket, it produces code like this:
 
 
 ```python
@@ -211,9 +211,9 @@ ChatGPT would generate similar code but might not include the `cidr_mask` parame
 
 ## Advanced Scenario: Lambda with SQS Trigger and DLQ
 
-For teams building event-driven architectures, a common CDK pattern involves wiring a Lambda function to an SQS queue with a dead-letter queue. This tests how thoroughly each AI handles dependent resource relationships.
+For teams building event-driven architectures, a common CDK pattern involves wiring a Lambda function to a SQS queue with a dead-letter queue. This tests how thoroughly each AI handles dependent resource relationships.
 
-A prompt like "Create a CDK stack with an SQS queue, a Lambda that processes messages, and a DLQ for failed messages" reveals meaningful differences.
+A prompt like "Create a CDK stack with a SQS queue, a Lambda that processes messages, and a DLQ for failed messages" reveals meaningful differences.
 
 Claude produces code that correctly sets the `visibility_timeout` on the SQS queue to match the Lambda timeout — a subtle but important detail that prevents message duplication. It also wires the DLQ automatically using `aws_sqs.DeadLetterQueue` and sets `max_receive_count`:
 

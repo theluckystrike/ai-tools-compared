@@ -149,7 +149,7 @@ Beyond initial tagging, AI tools help enforce compliance over time. Resources ch
 
 A practical remediation approach tags resources during creation, validates compliance on a schedule, and automatically applies missing tags or notifies responsible teams. This three-step process—prevention, detection, remediation—creates a self-correcting tagging system that maintains compliance with minimal ongoing effort.
 
-The most effective implementations treat tagging as a continuous process rather than an one-time project. AI tools excel at this because they can adapt to organizational changes while maintaining consistent enforcement.
+The most effective implementations treat tagging as a continuous process rather than a one-time project. AI tools excel at this because they can adapt to organizational changes while maintaining consistent enforcement.
 
 ## Pricing and Service Comparison
 

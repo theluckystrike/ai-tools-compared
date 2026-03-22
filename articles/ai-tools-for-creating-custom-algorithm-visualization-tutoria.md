@@ -87,7 +87,7 @@ An AI visualization tool would generate a split-screen view showing the array on
 
 You have several paths to integrate AI-generated visualizations into your tutorials. The most straightforward uses existing platforms designed for this purpose. These platforms accept your code, process it through their AI pipeline, and return embeddable visualizations you can drop into any web page.
 
-For custom requirements, you can build your own visualization generator. This involves using an LLM API to analyze your code and generate visualization instructions in a format like Mermaid.js or D3.js. The AI translates code semantics into declarative visualization specifications that render programmatically.
+For custom requirements, you can build your own visualization generator. This involves using a LLM API to analyze your code and generate visualization instructions in a format like Mermaid.js or D3.js. The AI translates code semantics into declarative visualization specifications that render programmatically.
 
 Here's how you might structure a prompt for this approach:
 

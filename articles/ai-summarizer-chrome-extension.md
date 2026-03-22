@@ -15,7 +15,7 @@ voice-checked: true
 ---
 
 
-Build an AI summarizer extension that extracts article content using the Chrome DOM API, sends it to an LLM API (OpenAI, Claude, or Anthropic), and displays summaries in your browser. This approach accelerates content consumption by eliminating the need to read full articles—extensions can generate concise summaries in seconds, helping you prioritize what to read in detail.
+Build an AI summarizer extension that extracts article content using the Chrome DOM API, sends it to a LLM API (OpenAI, Claude, or Anthropic), and displays summaries in your browser. This approach accelerates content consumption by eliminating the need to read full articles—extensions can generate concise summaries in seconds, helping you prioritize what to read in detail.
 
 ## Table of Contents
 

@@ -87,7 +87,7 @@ Scroll through the service list and find "Gemini". If you do not see it explicit
 
 ### Step 3: Choose Export Format and Frequency
 
-Select your preferred delivery method. You can choose to receive a download link via email, add files to Google Drive, or send to cloud storage providers. Decide between an one-time export or scheduled exports if you want ongoing backups.
+Select your preferred delivery method. You can choose to receive a download link via email, add files to Google Drive, or send to cloud storage providers. Decide between a one-time export or scheduled exports if you want ongoing backups.
 
 ### Step 4: Download and Verify
 

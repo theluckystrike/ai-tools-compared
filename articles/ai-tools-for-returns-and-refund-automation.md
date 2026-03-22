@@ -25,7 +25,7 @@ Returns and refund processing represents one of the most resource-intensive oper
 - [Detecting Fraudulent Returns](#detecting-fraudulent-returns)
 - [Automating Refund Processing](#automating-refund-processing)
 - [Comparing AI Tools for Returns Automation](#comparing-ai-tools-for-returns-automation)
-- [Building an Unified Returns Pipeline](#building-an-unified-returns-pipeline)
+- [Building a Unified Returns Pipeline](#building-an-unified-returns-pipeline)
 - [Practical Implementation Considerations](#practical-implementation-considerations)
 
 ## Understanding Return Automation Requirements
@@ -259,9 +259,9 @@ Different AI tools suit different parts of the returns pipeline. Here is a pract
 | scikit-learn RandomForest | Fraud scoring, batch processing | Very low | Minimal |
 | LangChain + LLM | Orchestrating multi-step workflows | Variable | Depends on model |
 
-For most mid-size e-commerce operations, a hybrid approach works best: use a lightweight classification model (HuggingFace or a fine-tuned sentence transformer) for categorization, rule-based logic for clear policy decisions, and an LLM only for ambiguous edge cases that require nuanced judgment.
+For most mid-size e-commerce operations, a hybrid approach works best: use a lightweight classification model (HuggingFace or a fine-tuned sentence transformer) for categorization, rule-based logic for clear policy decisions, and a LLM only for ambiguous edge cases that require nuanced judgment.
 
-## Building an Unified Returns Pipeline
+## Building a Unified Returns Pipeline
 
 Connecting these components into a coherent pipeline requires an orchestration layer. The following pattern wires the classifier, verifier, fraud detector, and refund processor together with appropriate fallbacks.
 
@@ -328,7 +328,7 @@ Well-trained zero-shot classifiers typically achieve 80-90% accuracy on return r
 **How much can automation reduce returns processing costs?**
 Teams report 40-70% reductions in manual review hours after deploying AI-assisted routing, with the largest gains in fraud detection and policy verification. The exact savings depend on your current process and return volume.
 
-**When should I use an LLM vs. a traditional ML model?**
+**When should I use a LLM vs. a traditional ML model?**
 Use LLMs for ambiguous policy exceptions and cases requiring natural language reasoning. Use traditional ML (scikit-learn, XGBoost) for fraud scoring and classification tasks where you have labeled training data—they are faster, cheaper, and more predictable in production.
 
 **What data do I need to train a fraud detection model?**

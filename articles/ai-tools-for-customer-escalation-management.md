@@ -304,7 +304,7 @@ class EscalationMetrics:
 Start at 0.75 frustration score and adjust based on your false-positive audit. Teams with higher ticket volume typically raise this to 0.82 to reduce alert fatigue. Teams handling enterprise accounts often lower it to 0.70 because individual account risk is higher.
 
 **How do I handle multi-channel escalations (chat, email, phone)?**
-Assign an unified customer ID across channels and maintain a rolling contact-frequency counter per customer, not per channel. A customer who chatted yesterday and emailed today has two contacts — that should factor into your repeat-contact signal even if the channels are different.
+Assign a unified customer ID across channels and maintain a rolling contact-frequency counter per customer, not per channel. A customer who chatted yesterday and emailed today has two contacts — that should factor into your repeat-contact signal even if the channels are different.
 
 **Can I use this pipeline with Zendesk or Freshdesk without replacing their AI?**
 Yes. Run the classifier as a webhook listener on ticket-create events and write your signals back to the ticket as custom fields. This layers your logic on top of the platform's native AI rather than replacing it. The platform handles UI and workflow; your classifier handles signal aggregation.

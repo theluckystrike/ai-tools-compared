@@ -94,7 +94,7 @@ const narration = await elevenLabs.generate({
 WellSaid Labs focuses on creating natural-sounding AI voices specifically optimized for commercial content. Their voices are designed to work well with music and sound effects, making them suitable for the layered audio environment of game trailers.
 
 
-The platform provides a range of voice avatars, allowing you to select a tone that matches your game's genre—whether you need epic narration for an RPG or energetic commentary for a competitive shooter.
+The platform provides a range of voice avatars, allowing you to select a tone that matches your game's genre—whether you need epic narration for a RPG or energetic commentary for a competitive shooter.
 
 
 ## AI Visual Effects and Enhancement
@@ -166,7 +166,7 @@ The key to effective script generation is providing detailed context about your 
 Descript offers automated video editing with AI-powered features like filler word removal, silence trimming, and automatic transcription. For game trailers that include developer commentary or interviews, Descript significantly reduces post-production time.
 
 
-The platform's "Eye Contact" feature can even adjust your gaze to appear more natural during recorded segments—an useful touch for developer diary-style trailer content.
+The platform's "Eye Contact" feature can even adjust your gaze to appear more natural during recorded segments—a useful touch for developer diary-style trailer content.
 
 
 ### Opus Clip

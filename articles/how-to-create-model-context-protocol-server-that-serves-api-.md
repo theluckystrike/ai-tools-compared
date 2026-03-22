@@ -25,9 +25,9 @@ voice-checked: true
 
 ## Introduction
 
-As AI coding assistants become more sophisticated, they need better access to your API documentation to generate accurate code and provide intelligent responses. The Model Context Protocol (MCP) provides a standardized way for AI tools to interact with external services and data sources. By creating an MCP server that serves your API documentation, you enable AI assistants to understand your API's structure, endpoints, authentication requirements, and response formats without manual context injection.
+As AI coding assistants become more sophisticated, they need better access to your API documentation to generate accurate code and provide intelligent responses. The Model Context Protocol (MCP) provides a standardized way for AI tools to interact with external services and data sources. By creating a MCP server that serves your API documentation, you enable AI assistants to understand your API's structure, endpoints, authentication requirements, and response formats without manual context injection.
 
-This guide walks through building an MCP server in Python that exposes your API documentation to AI tools. You'll learn how to structure your server, parse documentation formats, and expose tools that AI assistants can query dynamically.
+This guide walks through building a MCP server in Python that exposes your API documentation to AI tools. You'll learn how to structure your server, parse documentation formats, and expose tools that AI assistants can query dynamically.
 
 ## Prerequisites
 
@@ -284,7 +284,7 @@ Start your MCP server:
 python main.py
 ```
 
-The server will start and listen for connections from AI tools. To test it, you can use an MCP-compatible client or manually invoke the tools:
+The server will start and listen for connections from AI tools. To test it, you can use a MCP-compatible client or manually invoke the tools:
 
 ```python
 import asyncio

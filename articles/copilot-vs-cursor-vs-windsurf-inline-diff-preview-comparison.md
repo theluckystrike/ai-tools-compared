@@ -105,7 +105,7 @@ Cursor also supports "Apply" at different granularities—you can accept an enti
 
 ## Windsurf: Cascade Diff Visualization
 
-Windsurf, developed by Codeium, provides diff preview through its Cascade agent. When Cascade proposes code changes across files, it displays an unified diff view in the sidebar.
+Windsurf, developed by Codeium, provides diff preview through its Cascade agent. When Cascade proposes code changes across files, it displays a unified diff view in the sidebar.
 
 ```python
 # Windsurf diff preview example

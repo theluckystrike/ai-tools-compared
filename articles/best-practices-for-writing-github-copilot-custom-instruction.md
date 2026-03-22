@@ -153,7 +153,7 @@ Custom instructions become powerful when they reflect your specific project stru
 
 ## Practical Examples
 
-Let us examine how these instructions work in practice. Consider a scenario where you need an utility function. Without custom instructions, Copilot might generate something basic. With properly configured instructions, it produces production-ready code.
+Let us examine how these instructions work in practice. Consider a scenario where you need a utility function. Without custom instructions, Copilot might generate something basic. With properly configured instructions, it produces production-ready code.
 
 **Before (generic output):**
 

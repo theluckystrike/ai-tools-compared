@@ -41,7 +41,7 @@ State files are JSON documents that Terraform uses to track resource identity, d
 
 Generating proper Terraform backend configuration is one of the most practical applications of AI. Instead of manually researching backend options, you can describe your requirements and get production-ready configuration.
 
-For example, when you need an S3 backend with state locking, prompt your AI assistant with specifics:
+For example, when you need a S3 backend with state locking, prompt your AI assistant with specifics:
 
 ```
 Create a Terraform backend configuration using AWS S3 with DynamoDB

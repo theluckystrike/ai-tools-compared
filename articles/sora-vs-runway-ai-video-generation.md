@@ -30,7 +30,7 @@ Choose Sora if you need physically coherent long-form video (60+ seconds) and in
 - [Error Handling and Retries](#error-handling-and-retries)
 - [Output Formats and Quality Settings](#output-formats-and-quality-settings)
 - [Security Best Practices](#security-best-practices)
-- [Building an Unified Abstraction Layer](#building-an-unified-abstraction-layer)
+- [Building a Unified Abstraction Layer](#building-an-unified-abstraction-layer)
 
 ## API Access and Authentication
 
@@ -306,7 +306,7 @@ RUNWAY_API_KEY = os.environ.get("RUNWAY_API_KEY")
 
 Additionally, implement content moderation on generated outputs before surfacing them to end users. Both platforms apply their own safety filters, but automated downstream moderation adds a second layer of protection against policy violations in user-facing applications.
 
-## Building an Unified Abstraction Layer
+## Building a Unified Abstraction Layer
 
 Teams that want the flexibility to switch between Sora and Runway without rewriting application code should build a thin abstraction layer over both APIs. This also makes A/B testing quality across the two platforms straightforward.
 

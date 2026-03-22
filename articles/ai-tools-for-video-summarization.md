@@ -261,7 +261,7 @@ def summarize_meeting_recording(s3_bucket: str, s3_key: str) -> dict:
     }
 ```
 
-This workflow processes a 60-minute meeting in roughly 4-6 minutes on an M2 Mac using the Whisper `medium` model, or about 90 seconds with GPU acceleration.
+This workflow processes a 60-minute meeting in roughly 4-6 minutes on a M2 Mac using the Whisper `medium` model, or about 90 seconds with GPU acceleration.
 
 ## Performance Benchmarks
 

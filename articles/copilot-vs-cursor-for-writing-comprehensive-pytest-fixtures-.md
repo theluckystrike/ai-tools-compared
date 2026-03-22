@@ -125,7 +125,7 @@ def user_factory():
 
 Copilot generates this pattern reasonably well when you provide the decorator and initial structure. It recognizes the factory pattern from common Python testing conventions. However, extending it with additional user types or complex validation logic requires iterative prompting.
 
-Cursor allows you to build this incrementally. You can start with "create an user factory fixture" and then add "add support for admin and premium user types with appropriate default fields" in a follow-up message. This conversational approach often produces more accurate results for complex specifications.
+Cursor allows you to build this incrementally. You can start with "create a user factory fixture" and then add "add support for admin and premium user types with appropriate default fields" in a follow-up message. This conversational approach often produces more accurate results for complex specifications.
 
 ## Conftest Organization Strategies
 

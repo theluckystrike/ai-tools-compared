@@ -41,7 +41,7 @@ Choose Cursor Tab if you want the fastest acceptance workflow—it uses your ent
 
 Cursor, built on VS Code, offers Tab as its primary completion mechanism. When Cursor suggests code, it appears as inline text with a subtle gray background. Pressing Tab accepts the entire suggestion instantly.
 
-The Tab key acts as an one-touch acceptance trigger. Cursor analyzes your recent edits, file context, and project patterns to predict what you're likely to write next. Suggestions range from single-line completions to entire function bodies.
+The Tab key acts as a one-touch acceptance trigger. Cursor analyzes your recent edits, file context, and project patterns to predict what you're likely to write next. Suggestions range from single-line completions to entire function bodies.
 
 ## What is Copilot Ghost Text?
 
@@ -135,7 +135,7 @@ Choose **Cursor Tab** if you:
 
 - Value tight integration between completion and chat features
 
-- Want an unified AI experience (completion + chat + agent)
+- Want a unified AI experience (completion + chat + agent)
 
 Choose **Copilot Ghost Text** if you:
 
@@ -178,7 +178,7 @@ For pure code completion in your preferred IDE, **Copilot is most economical** a
 
 ## Real-World Completion Examples
 
-**Example 1: Completing an utility function (TypeScript)**
+**Example 1: Completing a utility function (TypeScript)**
 
 You type:
 ```typescript

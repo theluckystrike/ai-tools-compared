@@ -161,7 +161,7 @@ def chunk_summary(filepath, chunk_size=10000):
     }
 ```
 
-Gemini's long context window also makes it practical to paste large Parquet schema definitions or multiple file schemas and ask it to generate an unified analysis pipeline that handles schema evolution across files — a common problem in production data lakes.
+Gemini's long context window also makes it practical to paste large Parquet schema definitions or multiple file schemas and ask it to generate a unified analysis pipeline that handles schema evolution across files — a common problem in production data lakes.
 
 ## Cursor for End-to-End Parquet Workflows
 

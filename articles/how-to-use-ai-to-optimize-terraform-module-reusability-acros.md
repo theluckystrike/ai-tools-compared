@@ -37,7 +37,7 @@ AI helps address these issues by analyzing existing modules, suggesting improvem
 
 Start by feeding your existing Terraform modules into an AI tool for analysis. The AI can identify patterns that reduce reusability, such as hardcoded values, missing variables, or overly specific resource configurations.
 
-For example, consider a basic module that provisions an S3 bucket:
+For example, consider a basic module that provisions a S3 bucket:
 
 ```hcl
 # Original module with limited reusability

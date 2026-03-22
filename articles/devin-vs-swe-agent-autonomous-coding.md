@@ -40,7 +40,7 @@ Autonomous coding agents — tools that read a GitHub issue, write code, run tes
 
 **Devin** is a commercial product from Cognition AI. You give it a task in natural language or a GitHub issue URL. It spins up a sandboxed environment, explores the codebase, writes code, runs tests, and reports back. It has a web UI and team features for tracking what Devin worked on.
 
-**SWE-Agent** is an open-source research tool from Princeton. It wraps an LLM (typically Claude or GPT-4) with a set of tools (bash, file editor, search) and a structured interaction protocol. You run it locally or on your own infrastructure.
+**SWE-Agent** is an open-source research tool from Princeton. It wraps a LLM (typically Claude or GPT-4) with a set of tools (bash, file editor, search) and a structured interaction protocol. You run it locally or on your own infrastructure.
 
 ## SWE-bench Performance
 

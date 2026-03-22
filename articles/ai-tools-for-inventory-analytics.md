@@ -74,7 +74,7 @@ This pattern works well for retail inventory with clear seasonal patterns. The o
 
 ## Integrating Large Language Models for Inventory Queries
 
-Beyond statistical forecasting, LLMs offer a powerful way to query inventory data conversationally. You can connect an LLM to your inventory database and ask questions in plain English.
+Beyond statistical forecasting, LLMs offer a powerful way to query inventory data conversationally. You can connect a LLM to your inventory database and ask questions in plain English.
 
 ```python
 import openai

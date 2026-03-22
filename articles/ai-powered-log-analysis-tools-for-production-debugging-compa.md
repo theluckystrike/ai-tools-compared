@@ -96,7 +96,7 @@ The AI correlation feature groups related logs across services, which proves inv
 
 ### Splunk AI
 
-Splunk's AI capabilities center on its Intelligence Store and machine learning toolkit. For production debugging, Splunk excels at correlating metrics and logs together, giving you an unified view of system behavior.
+Splunk's AI capabilities center on its Intelligence Store and machine learning toolkit. For production debugging, Splunk excels at correlating metrics and logs together, giving you a unified view of system behavior.
 
 ```splunk
 # SPL query using AI-assisted anomaly detection

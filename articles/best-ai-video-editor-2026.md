@@ -110,7 +110,7 @@ Runway excels for creative projects where AI generation adds value. The subscrip
 
 ### Descript for Text-Based Editing
 
-Descript takes an unique approach by treating video as editable text. You can transcribe footage automatically and then edit by modifying the transcript—the video edits automatically to match. This workflow suits podcasts, interviews, and tutorial content.
+Descript takes a unique approach by treating video as editable text. You can transcribe footage automatically and then edit by modifying the transcript—the video edits automatically to match. This workflow suits podcasts, interviews, and tutorial content.
 
 Developers can automate Descript workflows through its API:
 

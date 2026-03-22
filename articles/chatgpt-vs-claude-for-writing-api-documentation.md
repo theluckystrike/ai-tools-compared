@@ -49,7 +49,7 @@ Claude, developed by Anthropic, emphasizes clear communication and follows instr
 
 ## Generating Endpoint Documentation
 
-Both tools can document API endpoints, but their approaches differ. Consider a simple REST endpoint for an user management API:
+Both tools can document API endpoints, but their approaches differ. Consider a simple REST endpoint for a user management API:
 
 ```python
 # Example endpoint: GET /users/{id}

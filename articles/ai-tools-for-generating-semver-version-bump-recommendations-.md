@@ -137,7 +137,7 @@ def get_version_bump_recommendation(repo_path):
     return response.choices[0].message.content
 ```
 
-This example demonstrates how to feed commit data into an LLM for intelligent analysis.
+This example demonstrates how to feed commit data into a LLM for intelligent analysis.
 
 ## Integration with Release Workflows
 

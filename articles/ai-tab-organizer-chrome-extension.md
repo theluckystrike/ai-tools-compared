@@ -256,7 +256,7 @@ The tab organizer space continues evolving. Emerging trends include:
 
 **Q: Will my AI tab organizer extension stop working when Chrome removes MV2 support?**
 
-Possibly. Chrome's MV2 phase-out timeline has shifted multiple times, but Google has confirmed that most MV2 extensions will eventually stop being distributed through the Chrome Web Store. Extensions not updated to MV3 will eventually be disabled. Check whether your preferred extension has published an MV3 roadmap. Workona and TabLab have both indicated MV3 migration plans.
+Possibly. Chrome's MV2 phase-out timeline has shifted multiple times, but Google has confirmed that most MV2 extensions will eventually stop being distributed through the Chrome Web Store. Extensions not updated to MV3 will eventually be disabled. Check whether your preferred extension has published a MV3 roadmap. Workona and TabLab have both indicated MV3 migration plans.
 
 **Q: Can I build a tab organizer that uses a local LLM for classification?**
 

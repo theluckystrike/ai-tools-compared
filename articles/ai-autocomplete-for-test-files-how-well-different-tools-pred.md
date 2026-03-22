@@ -117,7 +117,7 @@ public class UserService {
 }
 ```
 
-The best AI tools predict that you'll need both positive assertions (valid inputs return an User) and negative assertions (invalid inputs throw exceptions). Claude Code and Cursor typically suggest using `assertThrows` for exception testing:
+The best AI tools predict that you'll need both positive assertions (valid inputs return a User) and negative assertions (invalid inputs throw exceptions). Claude Code and Cursor typically suggest using `assertThrows` for exception testing:
 
 ```java
 assertThrows(IllegalArgumentException.class,

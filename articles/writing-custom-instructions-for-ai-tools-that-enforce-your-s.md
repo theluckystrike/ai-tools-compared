@@ -335,7 +335,7 @@ Review each tool's privacy policy, data handling practices, and security certifi
 
 **What is the learning curve like?**
 
-Writing security header instructions is straightforward once you understand what each header does. The table in this article provides a starting point. Adapting the instructions for your specific framework and verifying output with curl or securityheaders.com takes less than an hour for most projects.
+Writing security header instructions is straightforward once you understand what each header does. The table in this article provides a starting point. Adapting the instructions for your specific framework and verifying output with curl or securityheaders.com takes less than a hour for most projects.
 
 ## Related Articles
 

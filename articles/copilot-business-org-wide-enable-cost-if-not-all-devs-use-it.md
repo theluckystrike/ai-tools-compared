@@ -22,7 +22,7 @@ Yes, you pay for every assigned Copilot Business seat whether developers use it 
 ## How Copilot Business Pricing Works
 
 
-GitHub Copilot Business costs $10 per user per month when billed annually, or $13 when billed monthly. The key detail: you pay for *seats*, not *active usage*. Once you assign a Copilot Business license to an user, that seat remains active and billed regardless of how often they use the tool.
+GitHub Copilot Business costs $10 per user per month when billed annually, or $13 when billed monthly. The key detail: you pay for *seats*, not *active usage*. Once you assign a Copilot Business license to a user, that seat remains active and billed regardless of how often they use the tool.
 
 
 This seat-based model creates a straightforward equation:

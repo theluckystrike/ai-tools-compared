@@ -277,7 +277,7 @@ Sonix provides an all-in-one platform with in-browser editor and strong multi-la
 
 ## Generating VTT and SRT Formats
 
-Most developers need multiple subtitle formats. Here's an utility function:
+Most developers need multiple subtitle formats. Here's a utility function:
 
 ```python
 def generate_subtitle_formats(transcript_data, output_base):

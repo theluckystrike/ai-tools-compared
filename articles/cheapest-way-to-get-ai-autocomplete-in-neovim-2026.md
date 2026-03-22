@@ -135,7 +135,7 @@ cmp.setup({
 
 You need a cmp source plugin for Ollama—several exist, including `David-Kunz/cmp-nvim-ollama`.
 
-**Performance considerations:** Local models require decent hardware. A 7B parameter model needs at least 8GB RAM and works best with an SSD. Response times range from 200ms to 2 seconds depending on your hardware.
+**Performance considerations:** Local models require decent hardware. A 7B parameter model needs at least 8GB RAM and works best with a SSD. Response times range from 200ms to 2 seconds depending on your hardware.
 
 ### 4. Continue Dev (Free)
 
@@ -244,7 +244,7 @@ cmp.setup({
 }
 ```
 
-**Use a faster inference backend.** If you have an Apple Silicon Mac or an NVIDIA GPU, Ollama automatically uses hardware acceleration. On CPU-only machines, consider llama.cpp directly, which offers better CPU optimization than the default Ollama backend for some models.
+**Use a faster inference backend.** If you have an Apple Silicon Mac or a NVIDIA GPU, Ollama automatically uses hardware acceleration. On CPU-only machines, consider llama.cpp directly, which offers better CPU optimization than the default Ollama backend for some models.
 
 ## Privacy Considerations by Solution
 

@@ -56,7 +56,7 @@ The process typically works like this: you provide an input specification (funct
 
 ## Practical Example: User Registration API
 
-Consider an user registration endpoint with these input specifications:
+Consider a user registration endpoint with these input specifications:
 
 ```typescript
 interface UserRegistration {

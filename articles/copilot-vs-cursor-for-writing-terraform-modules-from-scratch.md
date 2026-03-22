@@ -68,7 +68,7 @@ variable "tags" {
 
 Copilot will suggest the corresponding resource block, though you may need to refine the suggestions to match your exact requirements.
 
-Cursor's approach feels more collaborative from the start. You can open a chat window and describe what you need: "Create an S3 bucket module with versioning and lifecycle rules." Cursor can generate the entire module structure in one go, including variables, outputs, and the main resource configuration. Since Cursor indexes your project, it remembers what you've created and maintains consistency across files.
+Cursor's approach feels more collaborative from the start. You can open a chat window and describe what you need: "Create a S3 bucket module with versioning and lifecycle rules." Cursor can generate the entire module structure in one go, including variables, outputs, and the main resource configuration. Since Cursor indexes your project, it remembers what you've created and maintains consistency across files.
 
 ## Handling Variable and Output Definitions
 
@@ -122,7 +122,7 @@ Cursor can do more complex refactoring. If you decide to change your tagging str
 
 Terraform modules frequently depend on other modules or need to provision resources in a specific order. Both tools handle `depends_on` and `count`/`for_each` patterns, but Cursor's context awareness gives it an advantage.
 
-When you have a module that provisions an RDS instance and needs to pass the connection string to an application, Cursor understands the relationship:
+When you have a module that provisions a RDS instance and needs to pass the connection string to an application, Cursor understands the relationship:
 
 ```hcl
 output "rds_connection_string" {

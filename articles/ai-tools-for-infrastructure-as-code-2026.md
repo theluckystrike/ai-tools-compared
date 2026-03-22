@@ -50,7 +50,7 @@ Each tool was tested with 10 IaC tasks across Terraform (AWS), Pulumi (TypeScrip
 
 ### Claude Sonnet
 
-**Prompt:** "Create a Terraform module for an RDS PostgreSQL instance with: Multi-AZ, encryption at rest, automated backups (7 days), and the security group allowing access only from a specific CIDR."
+**Prompt:** "Create a Terraform module for a RDS PostgreSQL instance with: Multi-AZ, encryption at rest, automated backups (7 days), and the security group allowing access only from a specific CIDR."
 
 ```hcl
 # Claude output — security-conscious defaults

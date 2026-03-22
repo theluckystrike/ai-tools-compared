@@ -16,7 +16,7 @@ tags: [ai-tools-compared, chatgpt]
 
 {% raw %}
 
-Perplexity's collections feature lets you organize research, bookmarks, and saved searches into curated folders. If you're considering migrating to ChatGPT Search, you need to export your collections first—Perplexity doesn't provide an one-click migration tool, and once you stop using the platform, accessing your saved data becomes increasingly difficult. This guide covers practical methods for developers and power users to export Perplexity collections before switching, with code examples and automation strategies.
+Perplexity's collections feature lets you organize research, bookmarks, and saved searches into curated folders. If you're considering migrating to ChatGPT Search, you need to export your collections first—Perplexity doesn't provide a one-click migration tool, and once you stop using the platform, accessing your saved data becomes increasingly difficult. This guide covers practical methods for developers and power users to export Perplexity collections before switching, with code examples and automation strategies.
 
 ## Table of Contents
 

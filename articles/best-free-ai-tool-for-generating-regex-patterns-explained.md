@@ -158,7 +158,7 @@ Forgetting anchors leads to partial matches within larger strings. If you valida
 
 Free AI tools handle most common regex requirements effectively. The key is treating AI as a collaborator rather than a perfect translator. Your role involves three parts: framing clear requirements with both positive and negative examples, verifying output against real test cases, and iterating when the first result needs adjustment.
 
-The investment in crafting good prompts pays compound returns. Clear requirements produce working regex faster, reduce back-and-forth iterations, and often surface edge cases you hadn't considered. Your prompt becomes documentation for the pattern—an useful artifact when you return to this code months later.
+The investment in crafting good prompts pays compound returns. Clear requirements produce working regex faster, reduce back-and-forth iterations, and often surface edge cases you hadn't considered. Your prompt becomes documentation for the pattern—a useful artifact when you return to this code months later.
 
 For developers working with text processing, data validation, or log analysis, AI-powered regex generation represents a significant productivity improvement. The patterns in this guide demonstrate what becomes possible when you combine clear requirements with the pattern-matching capabilities of modern AI.
 

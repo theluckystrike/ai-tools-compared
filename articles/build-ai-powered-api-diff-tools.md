@@ -163,16 +163,16 @@ Generate a migration guide for API consumers."""
 
     response = message.content[0].text
     if "```json" in response:
-        response = response.split("```json")[1].split("```")[0]
+ response = response.split("```json")[1].split("```")[0]
 
-    data = json.loads(response.strip())
+ data = json.loads(response.strip())
 
-    return DiffResult(
-        breaking_changes=data['breaking_changes'],
-        non_breaking_changes=data['non_breaking_changes'],
-        migration_guide=data['migration_guide'],
-        severity=data['severity'],
-    )
+ return DiffResult(
+ breaking_changes=data['breaking_changes'],
+ non_breaking_changes=data['non_breaking_changes'],
+ migration_guide=data['migration_guide'],
+ severity=data['severity'],
+ )
 ```
 
 ## CLI Tool
@@ -192,61 +192,61 @@ from api_diff import load_spec, compute_structural_diff, analyze_diff_with_claud
 @click.option('--output', type=click.Choice(['text', 'json', 'markdown']), default='text')
 @click.option('--fail-on-breaking', is_flag=True, help='Exit 1 if breaking changes found')
 def diff(old_spec, new_spec, old_version, new_version, output, fail_on_breaking):
-    """Compare two OpenAPI specs and detect breaking changes."""
+ """Compare two OpenAPI specs and detect breaking changes."""
 
-    old = load_spec(old_spec)
-    new = load_spec(new_spec)
+ old = load_spec(old_spec)
+ new = load_spec(new_spec)
 
-    click.echo(f"Computing diff: {old_version} → {new_version}...")
-    structural = compute_structural_diff(old, new)
+ click.echo(f"Computing diff: {old_version} → {new_version}...")
+ structural = compute_structural_diff(old, new)
 
-    if not any([
-        structural['removed_endpoints'],
-        structural['modified_endpoints'],
-        structural['added_endpoints'],
-    ]):
-        click.echo("No API changes detected.")
-        return
+ if not any([
+ structural['removed_endpoints'],
+ structural['modified_endpoints'],
+ structural['added_endpoints'],
+ ]):
+ click.echo("No API changes detected.")
+ return
 
-    click.echo("Analyzing with Claude...")
-    result = analyze_diff_with_claude(structural, old_version, new_version)
+ click.echo("Analyzing with Claude...")
+ result = analyze_diff_with_claude(structural, old_version, new_version)
 
-    if output == 'json':
-        click.echo(json.dumps({
-            'severity': result.severity,
-            'breaking_changes': result.breaking_changes,
-            'non_breaking_changes': result.non_breaking_changes,
-        }, indent=2))
+ if output == 'json':
+ click.echo(json.dumps({
+ 'severity': result.severity,
+ 'breaking_changes': result.breaking_changes,
+ 'non_breaking_changes': result.non_breaking_changes,
+ }, indent=2))
 
-    elif output == 'markdown':
-        click.echo(f"# API Diff: {old_version} → {new_version}")
-        click.echo(f"\n**Severity:** {result.severity.upper()}")
-        click.echo(f"\n## Breaking Changes ({len(result.breaking_changes)})")
-        for change in result.breaking_changes:
-            click.echo(f"\n### `{change['endpoint']}`")
-            click.echo(f"- **Change:** {change['change']}")
-            click.echo(f"- **Impact:** {change['impact']}")
-            click.echo(f"- **Migration:** {change['migration']}")
-        click.echo(f"\n## Migration Guide\n\n{result.migration_guide}")
+ elif output == 'markdown':
+ click.echo(f"# API Diff: {old_version} → {new_version}")
+ click.echo(f"\n**Severity:** {result.severity.upper()}")
+ click.echo(f"\n## Breaking Changes ({len(result.breaking_changes)})")
+ for change in result.breaking_changes:
+ click.echo(f"\n### `{change['endpoint']}`")
+ click.echo(f"- **Change:** {change['change']}")
+ click.echo(f"- **Impact:** {change['impact']}")
+ click.echo(f"- **Migration:** {change['migration']}")
+ click.echo(f"\n## Migration Guide\n\n{result.migration_guide}")
 
-    else:  # text
-        click.echo(f"\nSeverity: {result.severity.upper()}")
-        click.echo(f"Breaking changes: {len(result.breaking_changes)}")
-        click.echo(f"Non-breaking changes: {len(result.non_breaking_changes)}")
+ else: # text
+ click.echo(f"\nSeverity: {result.severity.upper()}")
+ click.echo(f"Breaking changes: {len(result.breaking_changes)}")
+ click.echo(f"Non-breaking changes: {len(result.non_breaking_changes)}")
 
-        if result.breaking_changes:
-            click.echo("\nBREAKING CHANGES:")
-            for change in result.breaking_changes:
-                click.echo(f"  [{change['endpoint']}]: {change['change']}")
-                click.echo(f"    Impact: {change['impact']}")
-                click.echo(f"    Fix: {change['migration']}")
+ if result.breaking_changes:
+ click.echo("\nBREAKING CHANGES:")
+ for change in result.breaking_changes:
+ click.echo(f" [{change['endpoint']}]: {change['change']}")
+ click.echo(f" Impact: {change['impact']}")
+ click.echo(f" Fix: {change['migration']}")
 
-    if fail_on_breaking and result.breaking_changes:
-        raise SystemExit(1)
+ if fail_on_breaking and result.breaking_changes:
+ raise SystemExit(1)
 
 
 if __name__ == '__main__':
-    diff()
+ diff()
 ```
 
 ## Sample Output
@@ -259,17 +259,17 @@ Breaking changes: 3
 Non-breaking changes: 5
 
 BREAKING CHANGES:
-  [DELETE /api/v1/users/{id}]: Endpoint removed
-    Impact: Clients calling DELETE /users/:id will receive 404
-    Fix: Migrate to DELETE /api/v2/users/{id} — identical behavior
+ [DELETE /api/v1/users/{id}]: Endpoint removed
+ Impact: Clients calling DELETE /users/:id will receive 404
+ Fix: Migrate to DELETE /api/v2/users/{id} — identical behavior
 
-  [POST /api/v1/orders]: New required field 'shipping_address_id' added to request body
-    Impact: Clients not sending shipping_address_id will receive 422
-    Fix: Include shipping_address_id from the addresses endpoint before creating orders
+ [POST /api/v1/orders]: New required field 'shipping_address_id' added to request body
+ Impact: Clients not sending shipping_address_id will receive 422
+ Fix: Include shipping_address_id from the addresses endpoint before creating orders
 
-  [GET /api/v1/products]: Response field 'price' type changed from string to number
-    Impact: Clients parsing price as string will need to handle numeric type
-    Fix: Update price handling to expect number type (e.g., 29.99 instead of "29.99")
+ [GET /api/v1/products]: Response field 'price' type changed from string to number
+ Impact: Clients parsing price as string will need to handle numeric type
+ Fix: Update price handling to expect number type (e.g., 29.99 instead of "29.99")
 ```
 
 ## CI Integration
@@ -278,29 +278,29 @@ BREAKING CHANGES:
 # .github/workflows/api-diff.yml
 name: API Breaking Change Check
 on:
-  pull_request:
-    paths:
-      - 'openapi*.yaml'
-      - 'openapi*.json'
+ pull_request:
+ paths:
+ - 'openapi*.yaml'
+ - 'openapi*.json'
 
 jobs:
-  api-diff:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 2  # Need previous commit for comparison
-      - run: pip install anthropic pyyaml click
-      - name: Check for breaking changes
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: |
-          git show HEAD~1:openapi.yaml > /tmp/old-spec.yaml
-          python api_diff_cli.py /tmp/old-spec.yaml openapi.yaml \
-            --old-version "HEAD~1" \
-            --new-version "HEAD" \
-            --output markdown \
-            --fail-on-breaking
+ api-diff:
+ runs-on: ubuntu-latest
+ steps:
+ - uses: actions/checkout@v4
+ with:
+ fetch-depth: 2 # Need previous commit for comparison
+ - run: pip install anthropic pyyaml click
+ - name: Check for breaking changes
+ env:
+ ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+ run: |
+ git show HEAD~1:openapi.yaml > /tmp/old-spec.yaml
+ python api_diff_cli.py /tmp/old-spec.yaml openapi.yaml \
+ --old-version "HEAD~1" \
+ --new-version "HEAD" \
+ --output markdown \
+ --fail-on-breaking
 ```
 
 ## Related Reading

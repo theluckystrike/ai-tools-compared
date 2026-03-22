@@ -48,7 +48,7 @@ Hex distinguishes itself through its "magic" commands, real-time collaboration, 
 
 ### Mode Analytics SQL Approach
 
-Mode uses a SQL-first methodology where queries are first-class citizens. You build analyses by writing SQL that pulls data from connected warehouses, then visualize results or pass them to Python/R cells.
+Mode uses an SQL-first methodology where queries are first-class citizens. You build analyses by writing SQL that pulls data from connected warehouses, then visualize results or pass them to Python/R cells.
 
 ```sql
 -- Mode Analytics SQL Example

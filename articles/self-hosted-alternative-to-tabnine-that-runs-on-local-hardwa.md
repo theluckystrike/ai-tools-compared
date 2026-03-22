@@ -121,7 +121,7 @@ Configure your editor to connect to your local Fauxpilot server. This option pro
 
 ### 5. LocalCode with CodeGen
 
-LocalCode aggregates multiple local models under an unified interface. It supports various backends and provides a consistent API for code completion across different editors.
+LocalCode aggregates multiple local models under a unified interface. It supports various backends and provides a consistent API for code completion across different editors.
 
 ```yaml
 # localcode.yaml configuration

@@ -246,7 +246,7 @@ Cloud APIs beat self-hosted for small teams with minimal query volume. Self-host
 
 ## Advanced Prompt Engineering for SQL Generation
 
-Simply asking for "a SQL query" yields poor results. Provide context that drives accuracy:
+Simply asking for "an SQL query" yields poor results. Provide context that drives accuracy:
 
 ```python
 def build_sql_generation_prompt(nl_query, schema, dialect="postgresql", constraints=[]):

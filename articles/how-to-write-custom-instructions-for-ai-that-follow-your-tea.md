@@ -132,7 +132,7 @@ The second version gives the AI concrete behaviors to avoid or adopt.
 
 ### Step 7: Iterating on Your Instructions
 
-Custom instructions are not an one-time setup. Start with your top five code review concerns, implement instructions for those, and observe the results. Track what gets approved on first review versus what still needs fixes.
+Custom instructions are not a one-time setup. Start with your top five code review concerns, implement instructions for those, and observe the results. Track what gets approved on first review versus what still needs fixes.
 
 Most teams find that their instructions evolve over time. You might discover that a particular rule is too strict or not strict enough. The key is treating your custom instructions as a living document that improves through feedback from your actual code review process.
 

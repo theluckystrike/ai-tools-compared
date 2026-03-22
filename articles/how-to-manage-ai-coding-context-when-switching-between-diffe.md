@@ -40,7 +40,7 @@ Before you begin, make sure you have the following ready:
 
 AI coding assistants operate within a context window—the amount of code, conversation history, and instructions they can reference at once. When you switch features, the previous context remains in the conversation but becomes irrelevant or even counterproductive. The AI might continue suggesting code related to your previous task, mix imports from different modules, or reference variable names that no longer apply.
 
-For example, you might be working on an user authentication feature:
+For example, you might be working on a user authentication feature:
 
 ```python
 class AuthService:

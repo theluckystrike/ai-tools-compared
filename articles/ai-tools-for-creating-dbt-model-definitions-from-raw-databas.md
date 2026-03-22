@@ -37,7 +37,7 @@ Consider a typical e-commerce database with tables like `orders`, `order_items`,
 
 ## How AI Tools Generate dbt Models
 
-AI tools analyze your database schema and generate dbt-compatible files automatically. The process typically works like this: you provide the table definitions (either through a SQL `DESCRIBE` query, a schema export, or a connection to your data warehouse), and the AI outputs source YAML files, model SQL files, and sometimes tests and documentation.
+AI tools analyze your database schema and generate dbt-compatible files automatically. The process typically works like this: you provide the table definitions (either through an SQL `DESCRIBE` query, a schema export, or a connection to your data warehouse), and the AI outputs source YAML files, model SQL files, and sometimes tests and documentation.
 
 ### Input: Raw Table Schema
 

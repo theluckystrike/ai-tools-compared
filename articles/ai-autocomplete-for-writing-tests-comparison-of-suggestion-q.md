@@ -16,7 +16,7 @@ voice-checked: true
 
 {% raw %}
 
-Use Claude Code or Cursor if you need test autocomplete that understands expected behavior and suggests meaningful assertions. GitHub Copilot provides an useful baseline but tends to generate overly generic test code. The key difference in test autocomplete quality lies in contextual awareness—the best tools analyze function signatures, docstrings, and expected behavior to suggest assertions that validate correctness rather than just syntactic correctness.
+Use Claude Code or Cursor if you need test autocomplete that understands expected behavior and suggests meaningful assertions. GitHub Copilot provides a useful baseline but tends to generate overly generic test code. The key difference in test autocomplete quality lies in contextual awareness—the best tools analyze function signatures, docstrings, and expected behavior to suggest assertions that validate correctness rather than just syntactic correctness.
 
 ## Table of Contents
 
@@ -40,7 +40,7 @@ A critical distinction separates tools that suggest structurally valid tests fro
 
 ## GitHub Copilot: The Baseline
 
-GitHub Copilot provides an useful baseline for test autocomplete. It works reasonably well for simple functions and standard testing patterns.
+GitHub Copilot provides a useful baseline for test autocomplete. It works reasonably well for simple functions and standard testing patterns.
 
 Consider this Python function using pytest:
 
@@ -105,7 +105,7 @@ Cursor's advantage is its whole-file context model. When you open a test file al
 
 Claude Code (via Claude Dev) provides particularly thorough test suggestions. It excels at understanding complex functions and generating meaningful assertions.
 
-For a more complex scenario involving an user authentication function:
+For a more complex scenario involving a user authentication function:
 
 ```python
 class AuthService:

@@ -102,7 +102,7 @@ Gather all relevant documentation sources. This might include:
 
 - Architecture decision records (ADRs) explaining system design
 
-Export these to an unified format—markdown works well—using tools like `pandoc` for Confluence exports or direct API access for Notion pages.
+Export these to a unified format—markdown works well—using tools like `pandoc` for Confluence exports or direct API access for Notion pages.
 
 ### Phase 2: Processing
 
@@ -160,7 +160,7 @@ Several AI tools can assist with this workflow. Claude, ChatGPT, and similar ass
 
 - Document extraction: Use APIs or export features to pull wiki content
 
-- AI processing: Feed content through an LLM with specific output instructions
+- AI processing: Feed content through a LLM with specific output instructions
 
 - Version control: Store generated checklists in Git alongside your code
 

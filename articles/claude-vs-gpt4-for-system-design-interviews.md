@@ -194,7 +194,7 @@ Pick sliding window for accuracy. Redis INCR + EXPIRE per user key.
 Use Lua scripts for atomicity. Return 429 with Retry-After header.
 ```
 
-For quick review before an interview, GPT-4's brevity is an asset. You can drill 20 systems in an hour rather than 5.
+For quick review before an interview, GPT-4's brevity is an asset. You can drill 20 systems in a hour rather than 5.
 
 ## Practical Prep Strategy
 

@@ -68,7 +68,7 @@ Ollama runs inference locally and returns generated Dockerfile content. The resp
 
 ### LocalAI
 
-LocalAI offers an unified API compatible with OpenAI, making it drop-in replaceable for many existing tools. It supports multiple model backends including llama.cpp, gpt4all, and transformer models.
+LocalAI offers a unified API compatible with OpenAI, making it drop-in replaceable for many existing tools. It supports multiple model backends including llama.cpp, gpt4all, and transformer models.
 
 **Configuration example:**
 ```yaml

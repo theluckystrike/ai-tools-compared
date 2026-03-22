@@ -174,7 +174,7 @@ The limitation is that some enterprise features and longer-context analysis requ
 
 ## LM Studio: Desktop App for Local Models
 
-LM Studio provides an user-friendly desktop application for running various AI models locally. While primarily designed for general LLM use, it works well for coding assistance when paired with code-optimized models.
+LM Studio provides a user-friendly desktop application for running various AI models locally. While primarily designed for general LLM use, it works well for coding assistance when paired with code-optimized models.
 
 ### Using for Coding
 

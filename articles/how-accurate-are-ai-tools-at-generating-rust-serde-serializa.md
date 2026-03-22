@@ -43,7 +43,7 @@ The test cases covered basic struct serialization, nested data structures, custo
 
 The first test asked for a simple struct with common serde attributes:
 
-> "Generate a Rust struct for an user profile with fields: id (u64), username (String), email (String), created_at (DateTime<Utc>). Include proper serde derive macros and JSON serialization."
+> "Generate a Rust struct for a user profile with fields: id (u64), username (String), email (String), created_at (DateTime<Utc>). Include proper serde derive macros and JSON serialization."
 
 **Claude Code** produced:
 

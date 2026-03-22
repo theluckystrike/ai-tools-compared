@@ -71,7 +71,7 @@ SSH keys provide a more secure and convenient method for GitHub authentication.
 
 **Fix:**
 
-1. Check if you have an SSH key:
+1. Check if you have a SSH key:
 
 ```bash
 ls -la ~/.ssh

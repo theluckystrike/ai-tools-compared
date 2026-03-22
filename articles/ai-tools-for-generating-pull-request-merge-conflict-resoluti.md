@@ -271,7 +271,7 @@ def apply_discount(total, discount_rate=0.1):
     return total * (1 - discount_rate)
 ```
 
-AI can recognize that these changes are related and suggest an unified approach:
+AI can recognize that these changes are related and suggest a unified approach:
 
 ```python
 # src/models.py

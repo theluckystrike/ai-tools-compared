@@ -136,7 +136,7 @@ Here's a practical approach for incorporating these tools into your engagement p
 
 ### Step 1: Document Aggregation
 
-Gather your architecture documentation into an unified format. Consolidate:
+Gather your architecture documentation into a unified format. Consolidate:
 - API specifications (OpenAPI/Swagger)
 - Architecture decision records (ADRs)
 - Network diagrams and data flow documents

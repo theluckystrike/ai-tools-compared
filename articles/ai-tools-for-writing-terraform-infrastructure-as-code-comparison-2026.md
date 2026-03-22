@@ -29,7 +29,7 @@ Infrastructure-as-Code has become the standard for managing cloud resources, but
 
 ## Why AI Matters for Infrastructure-as-Code
 
-Terraform syntax is verbose and requires deep provider knowledge. Generating an RDS instance requires understanding resource dependencies, subnet groups, parameter groups, security groups, and backup strategies. A single mistake can cause deployment failures, security vulnerabilities, or unexpected costs.
+Terraform syntax is verbose and requires deep provider knowledge. Generating a RDS instance requires understanding resource dependencies, subnet groups, parameter groups, security groups, and backup strategies. A single mistake can cause deployment failures, security vulnerabilities, or unexpected costs.
 
 AI tools encode best practices directly into code generation. Instead of learning each provider's nuances, you describe your infrastructure needs and AI generates idiomatic, production-ready Terraform. This shifts effort from memorization to architecture design.
 

@@ -23,7 +23,7 @@ For ecommerce businesses scaling customer support operations, choosing the right
 Gorgias positions itself as a helpdesk that uses machine learning to automate responses. The platform connects directly to ecommerce stores through native integrations with Shopify, Magento, WooCommerce, and BigCommerce. Its automation engine routes tickets based on rules you define, then suggests or auto-sends responses using trained models.
 
 
-Richpanel takes a more modular approach, separating its ticket management from its AI capabilities. The platform emphasizes an unified inbox that aggregates support channels, with AI features that learn from your knowledge base rather than relying solely on pre-trained models.
+Richpanel takes a more modular approach, separating its ticket management from its AI capabilities. The platform emphasizes a unified inbox that aggregates support channels, with AI features that learn from your knowledge base rather than relying solely on pre-trained models.
 
 The architectural difference has downstream consequences for teams that want to customize behavior. Gorgias's tightly coupled approach means you get out-of-the-box automations faster but hit walls when your workflow doesn't match their opinionated templates. Richpanel's modular design requires more initial setup but gives teams more control over individual components.
 
