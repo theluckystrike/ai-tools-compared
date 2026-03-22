@@ -9,7 +9,7 @@ permalink: /best-ai-ide-features-for-pair-programming-with-remote-team-members/
 categories: [guides]
 tags: [ai-tools-compared, tools, best-of, remote-work, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

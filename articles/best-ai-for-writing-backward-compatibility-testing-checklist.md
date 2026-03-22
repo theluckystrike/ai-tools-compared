@@ -8,7 +8,7 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-for-writing-backward-compatibility-testing-checklist/
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, best-of, artificial-intelligence]
