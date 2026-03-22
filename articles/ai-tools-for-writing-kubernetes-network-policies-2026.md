@@ -11,8 +11,7 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison, kubernetes, network-policy]
----
+tags: [ai-tools-compared, comparison, kubernetes, network-policy]---
 
 Kubernetes NetworkPolicies are notoriously tricky to write correctly. A single misconfigured policy can lock down your entire cluster or leave critical security gaps. The YAML syntax is verbose, the logic is counter-intuitive (deny-all-then-allow-needed is safer than allow-all-then-deny-bad), and the interaction between multiple policies compounds the complexity. AI tools can help draft policies quickly, but they often generate permissive defaults that weaken security. This comparison shows how Claude, GPT-4, and GitHub Copilot handle NetworkPolicy generation, including real-world policy examples.
 
@@ -61,53 +60,52 @@ spec:
       ports:
         - protocol: TCP
           port: 8080
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+ name: database-ingress
+ namespace: production
+spec:
+ podSelector:
+ matchLabels:
+ app: database
+ policyTypes:
+ - Ingress
+ ingress:
+ - from:
+ - podSelector:
+ matchLabels:
+ app: api
+ ports:
+ - protocol: TCP
+ port: 5432
 
 ---
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: database-ingress
-  namespace: production
+ name: deny-all-egress
+ namespace: production
 spec:
-  podSelector:
-    matchLabels:
-      app: database
-  policyTypes:
-    - Ingress
-  ingress:
-    - from:
-        - podSelector:
-            matchLabels:
-              app: api
-      ports:
-        - protocol: TCP
-          port: 5432
-
----
-apiVersion: networking.k8s.io/v1
-kind: NetworkPolicy
-metadata:
-  name: deny-all-egress
-  namespace: production
-spec:
-  podSelector: {}
-  policyTypes:
-    - Egress
-  egress:
-    - to:
-        - podSelector:
-            matchLabels:
-              app: any
-      ports:
-        - protocol: TCP
-          port: 53  # DNS
-    - to:
-        - namespaceSelector:
-            matchLabels:
-              name: production
-      ports:
-        - protocol: TCP
-          port: 443
+ podSelector: {}
+ policyTypes:
+ - Egress
+ egress:
+ - to:
+ - podSelector:
+ matchLabels:
+ app: any
+ ports:
+ - protocol: TCP
+ port: 53 # DNS
+ - to:
+ - namespaceSelector:
+ matchLabels:
+ name: production
+ ports:
+ - protocol: TCP
+ port: 443
 ```
 
 Claude's output demonstrates understanding of the deny-by-default model. The policies explicitly allow only what's needed. Claude also included comments explaining the logic and mentioned the importance of DNS egress (port 53) which many developers forget.
@@ -120,26 +118,26 @@ Claude's generated a Cilium-specific policy example:
 apiVersion: cilium.io/v2
 kind: CiliumNetworkPolicy
 metadata:
-  name: api-http-policy
-  namespace: production
+ name: api-http-policy
+ namespace: production
 spec:
-  endpointSelector:
-    matchLabels:
-      app: api
-  ingress:
-    - fromEndpoints:
-        - matchLabels:
-            app: frontend
-      toPorts:
-        - ports:
-            - port: "8080"
-              protocol: TCP
-          rules:
-            http:
-              - method: "GET"
-                path: "/health"
-              - method: "POST"
-                path: "/api/.*"
+ endpointSelector:
+ matchLabels:
+ app: api
+ ingress:
+ - fromEndpoints:
+ - matchLabels:
+ app: frontend
+ toPorts:
+ - ports:
+ - port: "8080"
+ protocol: TCP
+ rules:
+ http:
+ - method: "GET"
+ path: "/health"
+ - method: "POST"
+ path: "/api/.*"
 ```
 
 Claude correctly noted that this Cilium policy restricts traffic at the HTTP level, not just TCP. It works on specific paths and methods, while standard NetworkPolicy can only restrict by port.
@@ -152,44 +150,44 @@ GPT-4 generates complete, syntactically correct policies but tends toward overly
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: microservices-network-policy
-  namespace: production
-  labels:
-    app: microservices
+ name: microservices-network-policy
+ namespace: production
+ labels:
+ app: microservices
 spec:
-  podSelector:
-    matchLabels:
-      tier: application
-  policyTypes:
-    - Ingress
-    - Egress
-  ingress:
-    - from:
-        - podSelector:
-            matchLabels:
-              tier: frontend
-      ports:
-        - protocol: TCP
-          port: 8080
-    - from:
-        - namespaceSelector: {}
-      ports:
-        - protocol: TCP
-          port: 8080
-  egress:
-    - to:
-        - podSelector:
-            matchLabels:
-              tier: database
-      ports:
-        - protocol: TCP
-          port: 5432
-    - to: []
-      ports:
-        - protocol: TCP
-          port: 53
-        - protocol: UDP
-          port: 53
+ podSelector:
+ matchLabels:
+ tier: application
+ policyTypes:
+ - Ingress
+ - Egress
+ ingress:
+ - from:
+ - podSelector:
+ matchLabels:
+ tier: frontend
+ ports:
+ - protocol: TCP
+ port: 8080
+ - from:
+ - namespaceSelector: {}
+ ports:
+ - protocol: TCP
+ port: 8080
+ egress:
+ - to:
+ - podSelector:
+ matchLabels:
+ tier: database
+ ports:
+ - protocol: TCP
+ port: 5432
+ - to: []
+ ports:
+ - protocol: TCP
+ port: 53
+ - protocol: UDP
+ port: 53
 ```
 
 GPT-4's policy is functional but has a critical issue: the `from` rule with empty `namespaceSelector: {}` allows traffic from ANY namespace. This is overly permissive and violates the principle of least privilege. The developer using this policy without review would weaken cluster security.
@@ -222,21 +220,21 @@ Copilot auto-completed:
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: frontend-api
+ name: frontend-api
 spec:
-  podSelector:
-    matchLabels:
-      app: api
-  policyTypes:
-    - Ingress
-  ingress:
-    - from:
-        - podSelector:
-            matchLabels:
-              app: frontend
-      ports:
-        - protocol: TCP
-          port: 8080
+ podSelector:
+ matchLabels:
+ app: api
+ policyTypes:
+ - Ingress
+ ingress:
+ - from:
+ - podSelector:
+ matchLabels:
+ app: frontend
+ ports:
+ - protocol: TCP
+ port: 8080
 ```
 
 This is correct syntax and logic, but it's incomplete. There's no egress policy, no DNS handling, and no deny-all baseline. Copilot generated the minimum viable policy that matches the comment but missed critical security considerations.
@@ -246,12 +244,12 @@ When given more context (a partial YAML file with multiple policies started), Co
 ```yaml
 # Allow all pods to query DNS
 - to:
-    - namespaceSelector:
-        matchLabels:
-          name: kube-system
-  ports:
-    - protocol: UDP
-      port: 53
+ - namespaceSelector:
+ matchLabels:
+ name: kube-system
+ ports:
+ - protocol: UDP
+ port: 53
 ```
 
 Copilot's issue: it works line-by-line without understanding the full policy intent. If you provide detailed YAML structure, it fills in correctly. Without structure, it generates incomplete policies.
@@ -336,14 +334,14 @@ Restrict traffic from specific IP ranges (CIDR). This is useful for allowing tra
 
 ```yaml
 ingress:
-  - from:
-      - ipBlock:
-          cidr: 203.0.113.0/24
-          except:
-            - 203.0.113.5/32  # Exclude a specific IP
-    ports:
-      - protocol: TCP
-        port: 443
+ - from:
+ - ipBlock:
+ cidr: 203.0.113.0/24
+ except:
+ - 203.0.113.5/32 # Exclude a specific IP
+ ports:
+ - protocol: TCP
+ port: 443
 ```
 
 **Claude:** Generates this correctly and explains the `except` clause.
@@ -428,7 +426,7 @@ Use this pattern to validate AI-generated policies before applying to production
 
 **Are NetworkPolicies enough for security?**
 
-NetworkPolicies are one layer of a defense-in-depth approach. They control network-level access, but you also need authentication, authorization (RBAC), pod security policies, and image scanning. Use NetworkPolicies as part of a comprehensive security strategy.
+NetworkPolicies are one layer of a defense-in-depth approach. They control network-level access, but you also need authentication, authorization (RBAC), pod security policies, and image scanning. Use NetworkPolicies as part of a security strategy.
 
 **How do I debug a policy that's blocking legitimate traffic?**
 

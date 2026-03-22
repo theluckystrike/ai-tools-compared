@@ -10,8 +10,20 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]
+tags: [ai-tools-compared, artificial-intelligence]---
 ---
+layout: default
+title: "How to Use AI for Technical Debt Management"
+description: "Practical workflows for using AI to identify, quantify, prioritize, and incrementally fix technical debt — with tools, prompts, and measurement strategies"
+date: 2026-03-21
+author: theluckystrike
+permalink: /ai-tools-for-technical-debt-management/
+categories: [guides]
+reviewed: true
+score: 8
+intent-checked: true
+voice-checked: true
+tags: [ai-tools-compared, artificial-intelligence]---
 
 {% raw %}
 
@@ -96,55 +108,49 @@ def audit_file(file_path: Path) -> dict:
     try:
         json_text = response.content[0].text
         if '```json' in json_text:
-            json_text = json_text.split('```json')[1].split('```')[0]
-        result = json.loads(json_text)
-        result['file'] = str(file_path)
-        return result
-    except json.JSONDecodeError:
-        return {'file': str(file_path), 'issues': [], 'debt_score': 0, 'parse_error': True}
+ json_text = json_text.split('```json')[1].split('```')[0]
+ result = json.loads(json_text)
+ result['file'] = str(file_path)
+ return result
+ except json.JSONDecodeError:
+ return {'file': str(file_path), 'issues': [], 'debt_score': 0, 'parse_error': True}
 
 def audit_directory(root: str, extensions: list[str] = ['.py', '.ts']):
-    results = []
-    files = [p for ext in extensions for p in Path(root).rglob(f'*{ext}')
-             if 'node_modules' not in str(p) and '.git' not in str(p)]
+ results = []
+ files = [p for ext in extensions for p in Path(root).rglob(f'*{ext}')
+ if 'node_modules' not in str(p) and '.git' not in str(p)]
 
-    print(f"Auditing {len(files)} files...")
-    for i, f in enumerate(files):
-        print(f"  [{i+1}/{len(files)}] {f}")
-        result = audit_file(f)
-        if result:
-            results.append(result)
+ print(f"Auditing {len(files)} files...")
+ for i, f in enumerate(files):
+ print(f" [{i+1}/{len(files)}] {f}")
+ result = audit_file(f)
+ if result:
+ results.append(result)
 
-    return results
+ return results
 
 def generate_report(results: list[dict]) -> str:
-    critical = sum(1 for r in results for i in r.get('issues', []) if i['category'] == 'CRITICAL')
-    important = sum(1 for r in results for i in r.get('issues', []) if i['category'] == 'IMPORTANT')
-    high_debt = sorted(results, key=lambda r: r.get('debt_score', 0), reverse=True)[:10]
+ critical = sum(1 for r in results for i in r.get('issues', []) if i['category'] == 'CRITICAL')
+ important = sum(1 for r in results for i in r.get('issues', []) if i['category'] == 'IMPORTANT')
+ high_debt = sorted(results, key=lambda r: r.get('debt_score', 0), reverse=True)[:10]
 
-    report = f"""# Technical Debt Audit — {datetime.now().strftime('%Y-%m-%d')}
-
-## Summary
-- Files scanned: {len(results)}
-- Critical issues: {critical}
-- Important issues: {important}
-- Average debt score: {sum(r.get('debt_score', 0) for r in results) / len(results):.1f}/10
+ report = f"""# Technical Debt Audit — {datetime.now().strftime('%Y-%m-%d')}
 
 ## Top 10 Most Indebted Files
 """
-    for r in high_debt:
-        report += f"\n### {r['file']} (Score: {r.get('debt_score', 0)}/10)\n"
-        for issue in r.get('issues', []):
-            report += f"- [{issue['category']}] {issue['description']} "
-            report += f"(Effort: {issue['fix_effort']}, Risk: {issue['fix_risk']})\n"
+ for r in high_debt:
+ report += f"\n### {r['file']} (Score: {r.get('debt_score', 0)}/10)\n"
+ for issue in r.get('issues', []):
+ report += f"- [{issue['category']}] {issue['description']} "
+ report += f"(Effort: {issue['fix_effort']}, Risk: {issue['fix_risk']})\n"
 
-    return report
+ return report
 
 if __name__ == '__main__':
-    results = audit_directory('./src')
-    report = generate_report(results)
-    Path('debt-audit.md').write_text(report)
-    print(f"\nReport written to debt-audit.md")
+ results = audit_directory('./src')
+ report = generate_report(results)
+ Path('debt-audit.md').write_text(report)
+ print(f"\nReport written to debt-audit.md")
 ```
 
 Run this on a 200-file codebase in about 10 minutes at ~$2-3 in API costs with Claude Haiku.
@@ -155,26 +161,26 @@ Raw debt lists are not actionable. Prioritize by combining impact and effort:
 
 ```python
 def prioritize_debt(audit_results: list[dict]) -> list[dict]:
-    """Score each issue by bang-for-buck: high impact, low effort, low risk."""
+ """Score each issue by bang-for-buck: high impact, low effort, low risk."""
 
-    impact_score = {'CRITICAL': 3, 'IMPORTANT': 2, 'MINOR': 1}
-    effort_cost = {'LOW': 1, 'MEDIUM': 2, 'HIGH': 4}
-    risk_penalty = {'LOW': 0, 'MEDIUM': 1, 'HIGH': 3}
+ impact_score = {'CRITICAL': 3, 'IMPORTANT': 2, 'MINOR': 1}
+ effort_cost = {'LOW': 1, 'MEDIUM': 2, 'HIGH': 4}
+ risk_penalty = {'LOW': 0, 'MEDIUM': 1, 'HIGH': 3}
 
-    prioritized = []
-    for result in audit_results:
-        for issue in result.get('issues', []):
-            score = (
-                impact_score.get(issue['category'], 0) /
-                (effort_cost.get(issue['fix_effort'], 2) + risk_penalty.get(issue['fix_risk'], 1))
-            )
-            prioritized.append({
-                **issue,
-                'file': result['file'],
-                'priority_score': round(score, 2)
-            })
+ prioritized = []
+ for result in audit_results:
+ for issue in result.get('issues', []):
+ score = (
+ impact_score.get(issue['category'], 0) /
+ (effort_cost.get(issue['fix_effort'], 2) + risk_penalty.get(issue['fix_risk'], 1))
+ )
+ prioritized.append({
+ **issue,
+ 'file': result['file'],
+ 'priority_score': round(score, 2)
+ })
 
-    return sorted(prioritized, key=lambda x: x['priority_score'], reverse=True)
+ return sorted(prioritized, key=lambda x: x['priority_score'], reverse=True)
 ```
 
 The prioritization formula rewards: high category issues that are easy to fix with low risk. A CRITICAL issue that takes 30 minutes and affects only one file scores higher than an IMPORTANT issue that touches 20 files.
@@ -185,14 +191,14 @@ For identified debt items, AI generates the refactored code:
 
 ```python
 def generate_fix(file_path: str, issue: dict) -> str:
-    content = Path(file_path).read_text()
+ content = Path(file_path).read_text()
 
-    response = client.messages.create(
-        model='claude-sonnet-4-5',  # Use better model for actual fixes
-        max_tokens=3000,
-        messages=[{
-            'role': 'user',
-            'content': f"""Fix this technical debt issue in the file below.
+ response = client.messages.create(
+ model='claude-sonnet-4-5', # Use better model for actual fixes
+ max_tokens=3000,
+ messages=[{
+ 'role': 'user',
+ 'content': f"""Fix this technical debt issue in the file below.
 
 Issue: {issue['description']}
 Location: {issue.get('function') or f'line {issue.get("line")}'}
@@ -210,10 +216,10 @@ File: {file_path}
 ```
 
 Return the complete updated file."""
-        }]
-    )
+ }]
+ )
 
-    return response.content[0].text
+ return response.content[0].text
 ```
 
 The "fix ONLY this specific issue" instruction prevents AI from over-refactoring, which introduces risk.
@@ -255,13 +261,13 @@ Track debt reduction over time:
 ```bash
 # Add to CI pipeline — fail if debt score exceeds threshold
 python scripts/debt_audit.py --output json | \
-  python -c "
+ python -c "
 import sys, json
 data = json.load(sys.stdin)
 critical = sum(1 for r in data for i in r.get('issues',[]) if i['category']=='CRITICAL')
 if critical > 0:
-    print(f'FAIL: {critical} critical debt issues found')
-    sys.exit(1)
+ print(f'FAIL: {critical} critical debt issues found')
+ sys.exit(1)
 print(f'OK: 0 critical issues')
 "
 ```
@@ -285,33 +291,26 @@ A developer who would previously fix 2 debt items in a sprint can address 6-8 wi
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
-
 ## Frequently Asked Questions
-
 
 **How long does it take to use ai for technical debt management?**
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-
 **What are the most common mistakes to avoid?**
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
-
 
 **Do I need prior experience to follow this guide?**
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-
 **Can I adapt this for a different tech stack?**
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-
 **Where can I get help if I run into issues?**
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
-
 
 {% endraw %}

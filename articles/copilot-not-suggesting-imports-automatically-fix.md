@@ -11,8 +11,7 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, troubleshooting]
----
+tags: [ai-tools-compared, troubleshooting]---
 
 
 {% raw %}
@@ -324,7 +323,6 @@ Monorepos require more explicit context. Add a comment near the top of your file
 
 Both modes can suggest imports, but inline suggestions are faster for this use case. In Copilot Chat, you can explicitly ask "what imports does this code need?" and get a reliable answer with explanations.
 
-
 ---
 
 
@@ -337,4 +335,4 @@ Both modes can suggest imports, but inline suggestions are faster for this use c
 - [Copilot Suggestions Wrong How to Fix](/ai-tools-compared/copilot-suggestions-wrong-how-to-fix/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+

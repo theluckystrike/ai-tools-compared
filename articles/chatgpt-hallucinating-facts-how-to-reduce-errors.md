@@ -11,8 +11,7 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, troubleshooting, chatgpt]
----
+tags: [ai-tools-compared, troubleshooting, chatgpt]---
 
 
 {% raw %}
@@ -318,7 +317,6 @@ Reducing hallucinations requires combining prompt engineering with verification 
 
 These practices transform AI from an unverified oracle into a reliable component of your workflow.
 
-
 ---
 
 
@@ -331,4 +329,4 @@ These practices transform AI from an unverified oracle into a reliable component
 - [AI Tools for Interpreting Terraform Plan Errors](/ai-tools-compared/ai-tools-for-interpreting-terraform-plan-errors-with-provider-version-conflicts/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+

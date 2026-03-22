@@ -11,8 +11,7 @@ score: 8
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]
----
+tags: [ai-tools-compared, artificial-intelligence]---
 {% raw %}
 
 
@@ -207,101 +206,80 @@ spec:
           image: myapp:latest
           command: ["./migrate.sh"]
       restartPolicy: Never
-
 ---
 # Application deployment — apply after migration completes
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp
-  annotations:
-    argocd.argoproj.io/sync-wave: "0"
+ name: myapp
+ annotations:
+ argocd.argoproj.io/sync-wave: "0"
 ```
-
 
 ### Adding Health Checks
 
-
 AI tools can generate custom health checks for ArgoCD to monitor application status:
-
 
 ```yaml
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: monitored-app
+ name: monitored-app
 spec:
-  ignoreDifferences:
-    - group: apps
-      kind: Deployment
-      jsonPointers:
-        - /spec/replicas
-  resourceHealthOverrides:
-    - group: apps
-      kind: Deployment
-      health.lua: |
-        if obj.status.readyReplicas == obj.spec.replicas then
-          return {status = "Healthy"}
-        end
-        return {status = "Progressing", message = "Waiting for rollout"}
+ ignoreDifferences:
+ - group: apps
+ kind: Deployment
+ jsonPointers:
+ - /spec/replicas
+ resourceHealthOverrides:
+ - group: apps
+ kind: Deployment
+ health.lua: |
+ if obj.status.readyReplicas == obj.spec.replicas then
+ return {status = "Healthy"}
+ end
+ return {status = "Progressing", message = "Waiting for rollout"}
 ```
-
 
 ## Best Practices for Using AI with ArgoCD
 
-
 Provide complete context when prompting AI tools. Include your ArgoCD version, Kubernetes version, and any specific sync requirements. Specify whether you need Application or ApplicationSet resources, and mention the source type (Helm, Kustomize, or raw YAML).
-
 
 Always review generated manifests before applying them to production clusters. AI tools occasionally miss cluster-specific configurations or generate policies that don't match your organization's standards.
 
-
 For ApplicationSets, verify that generator configurations produce the expected application names and that matrix combinations generate valid destinations.
-
 
 When working with Helm-sourced applications, explicitly tell the AI which Helm values files you use per environment. AI tools will otherwise default to a single `values.yaml`, missing the pattern of `values-production.yaml` overlays that most teams rely on.
 
-
 ## Recommendation
-
 
 For teams managing complex GitOps workflows with multiple environments and frequent deployments, Claude Code provides the most reliable assistance. It handles the full range of ArgoCD resources correctly and produces production-ready manifests with minimal editing.
 
-
 For developers who prefer working directly in VS Code with inline suggestions, Cursor offers the best editor integration despite slightly lower accuracy on complex configurations.
-
 
 Start with Claude Code if you're building new ArgoCD deployments from scratch, then use Cursor for day-to-day manifest adjustments within your editor workflow.
 
-
-
 ## Frequently Asked Questions
-
 
 **Who is this article written for?**
 
 This article is written for developers, technical professionals, and platform engineers who want practical guidance on using AI tools to accelerate ArgoCD and GitOps workflows. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-
 **How current is the information in this article?**
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
-
 
 **Do these tools support ArgoCD Notifications?**
 
 ArgoCD Notifications is a separate component. Most AI tools can help you write notification triggers and templates in the `argocd-notifications-cm` ConfigMap format, but their knowledge of specific trigger expressions varies. Provide an example trigger as context and ask the AI to adapt it for your use case.
 
-
 **How do I get started quickly?**
 
 Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
 
-
 **What is the learning curve like?**
 
 Most tools discussed here can be used productively within a few hours for basic manifest generation. Mastering ApplicationSet generators and sync wave orchestration takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-
 
 ## Related Articles
 
@@ -312,4 +290,4 @@ Most tools discussed here can be used productively within a few hours for basic 
 - [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+

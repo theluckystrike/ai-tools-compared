@@ -11,8 +11,7 @@ tags: [ai-tools-compared, tools, claude-ai, chatgpt]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true
----
+voice-checked: true---
 
 
 To move your ChatGPT Team workspace data to Claude Team, you'll need to export conversation history via the OpenAI platform, back up custom GPTs and workspace settings, then manually recreate projects and workflows in Claude. Since no direct migration tool exists, the process involves strategic data extraction and careful reconstruction of your team's knowledge base.
@@ -108,61 +107,48 @@ Copy important conversation threads into your new Claude Projects. While you can
 
 
 ```
-Previous ChatGPT Context:
----
+Previous ChatGPT Context:---
 User: Help me implement user authentication
 Assistant: Here's a JWT-based authentication flow...
 ---
 ```
 
-
 **Step 3: Set Custom Instructions**
-
 
 Recreate your custom GPT instructions as project-level system prompts in Claude. Navigate to each project's settings and add instructions that mirror your original GPT behavior.
 
-
 ## Handling Shared Links and Collaborations
-
 
 ChatGPT Team workspaces often contain shared links to specific conversations. These links do not transfer to Claude. Create new shared links in Claude for conversations you want to collaborate on with team members.
 
-
 For real-time collaboration, Claude Team supports multi-user workspaces where team members can participate in the same conversation thread, similar to ChatGPT's collaborative features.
-
 
 ## API Integration Considerations
 
-
 If your ChatGPT Team workspace uses the API for automated workflows, you'll need to update your integration code to use Claude's API. The SDK differences are minimal:
-
 
 ```python
 # ChatGPT API (OpenAI)
 response = client.chat.completions.create(
-    model="gpt-4",
-    messages=[{"role": "user", "content": "Write a function"}]
+ model="gpt-4",
+ messages=[{"role": "user", "content": "Write a function"}]
 )
 
 # Claude API (Anthropic)
 import anthropic
 client = anthropic.Anthropic(api_key="your-key")
 response = client.messages.create(
-    model="claude-sonnet-4-20250514",
-    max_tokens=1024,
-    messages=[{"role": "user", "content": "Write a function"}]
+ model="claude-sonnet-4-20250514",
+ max_tokens=1024,
+ messages=[{"role": "user", "content": "Write a function"}]
 )
 ```
 
-
 Update your environment variables, adjust API endpoint calls, and test your integrations with Claude's models before fully transitioning.
-
 
 ## Best Practices for a Smooth Transition
 
-
 Test the migration with a small team subset before rolling out to everyone. This lets you identify gaps in your documentation and refine the process. Maintain a transition period where both platforms are active, allowing team members to reference ChatGPT conversations while building up the Claude knowledge base.
-
 
 Document your migration process internally so future team members understand how the workspace was set up and what decisions shaped the migration.
 
@@ -218,110 +204,109 @@ from datetime import datetime
 import os
 
 class ChatGPTExporter:
-    def __init__(self, api_key):
-        self.client = openai.OpenAI(api_key=api_key)
-        self.conversations = []
+ def __init__(self, api_key):
+ self.client = openai.OpenAI(api_key=api_key)
+ self.conversations = []
 
-    def export_conversations(self, output_dir="chatgpt_export"):
-        """Export all conversations from ChatGPT Team workspace."""
-        os.makedirs(output_dir, exist_ok=True)
+ def export_conversations(self, output_dir="chatgpt_export"):
+ """Export all conversations from ChatGPT Team workspace."""
+ os.makedirs(output_dir, exist_ok=True)
 
-        # Get all threads (paginated)
-        offset = 0
-        limit = 100
-        total_exported = 0
+ # Get all threads (paginated)
+ offset = 0
+ limit = 100
+ total_exported = 0
 
-        try:
-            while True:
-                threads = self.client.beta.threads.list(limit=limit)
+ try:
+ while True:
+ threads = self.client.beta.threads.list(limit=limit)
 
-                if not threads.data:
-                    break
+ if not threads.data:
+ break
 
-                for thread in threads.data:
-                    thread_data = self._extract_thread(thread)
-                    if thread_data:
-                        self.conversations.append(thread_data)
-                        total_exported += 1
+ for thread in threads.data:
+ thread_data = self._extract_thread(thread)
+ if thread_data:
+ self.conversations.append(thread_data)
+ total_exported += 1
 
-                        # Save individual thread as JSON
-                        with open(
-                            f"{output_dir}/thread_{thread.id}.json", "w"
-                        ) as f:
-                            json.dump(thread_data, f, indent=2)
+ # Save individual thread as JSON
+ with open(
+ f"{output_dir}/thread_{thread.id}.json", "w"
+ ) as f:
+ json.dump(thread_data, f, indent=2)
 
-                offset += limit
+ offset += limit
 
-        except Exception as e:
-            print(f"Error exporting conversations: {e}")
+ except Exception as e:
+ print(f"Error exporting conversations: {e}")
 
-        # Save thorough export
-        with open(f"{output_dir}/all_conversations.json", "w") as f:
-            json.dump(
-                {
-                    "exported_at": datetime.utcnow().isoformat(),
-                    "total_conversations": total_exported,
-                    "conversations": self.conversations,
-                },
-                f,
-                indent=2,
-            )
+ # Save thorough export
+ with open(f"{output_dir}/all_conversations.json", "w") as f:
+ json.dump(
+ {
+ "exported_at": datetime.utcnow().isoformat(),
+ "total_conversations": total_exported,
+ "conversations": self.conversations,
+ },
+ f,
+ indent=2,
+ )
 
-        return total_exported
+ return total_exported
 
-    def _extract_thread(self, thread):
-        """Extract full conversation from a thread."""
-        try:
-            messages = self.client.beta.threads.messages.list(
-                thread_id=thread.id, limit=100
-            )
+ def _extract_thread(self, thread):
+ """Extract full conversation from a thread."""
+ try:
+ messages = self.client.beta.threads.messages.list(
+ thread_id=thread.id, limit=100
+ )
 
-            return {
-                "thread_id": thread.id,
-                "created_at": str(thread.created_at),
-                "title": getattr(thread, "title", "Untitled"),
-                "messages": [
-                    {
-                        "role": msg.role,
-                        "content": msg.content[0].text.value
-                        if msg.content
-                        else "",
-                        "created_at": str(msg.created_at),
-                    }
-                    for msg in messages.data
-                ],
-            }
-        except Exception as e:
-            print(f"Error extracting thread {thread.id}: {e}")
-            return None
+ return {
+ "thread_id": thread.id,
+ "created_at": str(thread.created_at),
+ "title": getattr(thread, "title", "Untitled"),
+ "messages": [
+ {
+ "role": msg.role,
+ "content": msg.content[0].text.value
+ if msg.content
+ else "",
+ "created_at": str(msg.created_at),
+ }
+ for msg in messages.data
+ ],
+ }
+ except Exception as e:
+ print(f"Error extracting thread {thread.id}: {e}")
+ return None
 
-    def export_custom_gpts(self, output_dir="chatgpt_export"):
-        """Export custom GPT definitions."""
-        try:
-            # List all custom GPTs
-            response = self.client.beta.assistants.list()
+ def export_custom_gpts(self, output_dir="chatgpt_export"):
+ """Export custom GPT definitions."""
+ try:
+ # List all custom GPTs
+ response = self.client.beta.assistants.list()
 
-            gpts = []
-            for assistant in response.data:
-                gpt_data = {
-                    "id": assistant.id,
-                    "name": assistant.name,
-                    "description": assistant.description,
-                    "instructions": assistant.instructions,
-                    "tools": [tool.type for tool in assistant.tools],
-                    "model": assistant.model,
-                    "file_ids": assistant.file_ids,
-                }
-                gpts.append(gpt_data)
+ gpts = []
+ for assistant in response.data:
+ gpt_data = {
+ "id": assistant.id,
+ "name": assistant.name,
+ "description": assistant.description,
+ "instructions": assistant.instructions,
+ "tools": [tool.type for tool in assistant.tools],
+ "model": assistant.model,
+ "file_ids": assistant.file_ids,
+ }
+ gpts.append(gpt_data)
 
-            with open(f"{output_dir}/custom_gpts.json", "w") as f:
-                json.dump(gpts, f, indent=2)
+ with open(f"{output_dir}/custom_gpts.json", "w") as f:
+ json.dump(gpts, f, indent=2)
 
-            return len(gpts)
-        except Exception as e:
-            print(f"Error exporting custom GPTs: {e}")
-            return 0
-
+ return len(gpts)
+ except Exception as e:
+ print(f"Error exporting custom GPTs: {e}")
+ return 0
 
 # Usage
 exporter = ChatGPTExporter(api_key="your-openai-api-key")
@@ -381,13 +366,13 @@ Verify the migration was successful:
 
 echo "Checking ChatGPT Team..."
 CHATGPT_USAGE=$(curl -s https://api.openai.com/dashboard/usage \
-  -H "Authorization: Bearer $OPENAI_KEY" \
-  | jq '.total_usage')
+ -H "Authorization: Bearer $OPENAI_KEY" \
+ | jq '.total_usage')
 
 echo "Checking Claude Team..."
 CLAUDE_USAGE=$(curl -s https://api.anthropic.com/v1/usage \
-  -H "x-api-key: $CLAUDE_KEY" \
-  | jq '.usage.total_messages')
+ -H "x-api-key: $CLAUDE_KEY" \
+ | jq '.usage.total_messages')
 
 echo "ChatGPT Team usage: $CHATGPT_USAGE"
 echo "Claude Team usage: $CLAUDE_USAGE"
@@ -397,49 +382,41 @@ echo ""
 echo "Validating conversation preservation..."
 EXPORTED_COUNT=$(jq '.total_conversations' chatgpt_export/all_conversations.json)
 CLAUDE_COUNT=$(curl -s https://api.anthropic.com/v1/projects \
-  -H "x-api-key: $CLAUDE_KEY" \
-  | jq '.projects | length')
+ -H "x-api-key: $CLAUDE_KEY" \
+ | jq '.projects | length')
 
 echo "Conversations exported from ChatGPT: $EXPORTED_COUNT"
 echo "Projects created in Claude: $CLAUDE_COUNT"
 
 if [ "$CHATGPT_USAGE" -gt 0 ] && [ "$CLAUDE_USAGE" -gt 0 ]; then
-    echo ""
-    echo "WARNING: Both systems still in use. Ensure deprecation plan is on track."
+ echo ""
+ echo "WARNING: Both systems still in use. Ensure deprecation plan is on track."
 fi
 ```
 
 ---
 
-
-
 ## Frequently Asked Questions
-
 
 **How long does it take to move chatgpt team workspace data to claude?**
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-
 **What are the most common mistakes to avoid?**
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
-
 
 **Do I need prior experience to follow this guide?**
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-
 **Can I adapt this for a different tech stack?**
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-
 **Where can I get help if I run into issues?**
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
-
 
 ## Related Articles
 

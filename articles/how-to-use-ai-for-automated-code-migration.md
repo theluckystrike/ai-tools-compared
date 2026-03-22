@@ -11,8 +11,21 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]
+tags: [ai-tools-compared, artificial-intelligence]---
 ---
+layout: default
+title: "How to Use AI for Automated Code Migration"
+description: "Practical guide to AI-assisted code migration: framework upgrades, language ports, and API breaking changes."
+date: 2026-03-21
+last_modified_at: 2026-03-21
+author: theluckystrike
+permalink: /how-to-use-ai-for-automated-code-migration/
+categories: [guides]
+reviewed: true
+score: 8
+intent-checked: true
+voice-checked: true
+tags: [ai-tools-compared, artificial-intelligence]---
 
 {% raw %}
 
@@ -130,9 +143,9 @@ for i, filepath in enumerate(python_files):
  "max_tokens": 8192,
  "messages": [
  {"role": "user", "content": f"{PYTHON_23_MIGRATION_PROMPT}\n\n```python\n{content}\n```"}
-            ],
-        }
-    })
+ ],
+ }
+ })
 
 batch = client.beta.messages.batches.create(requests=batch_requests)
 print(f"Batch submitted: {batch.id}")
@@ -145,7 +158,7 @@ When you rename a method or change a signature, every call site needs updating.
 
 ```python
 def build_api_migration_prompt(old_signature: str, new_signature: str, changelog: str) -> str:
-    return f"""You are updating call sites to use a new API.
+ return f"""You are updating call sites to use a new API.
 
 OLD API:
 {old_signature}
@@ -166,10 +179,10 @@ def send_notification(user_id: int, message: str, channel: str = "email") -> boo
 
 NEW_API = """
 async def notify_user(
-    message: str,
-    user_id: int,
-    channels: list[str] = ["email"],
-    priority: str = "normal"
+ message: str,
+ user_id: int,
+ channels: list[str] = ["email"],
+ priority: str = "normal"
 ) -> NotificationResult
 """
 
@@ -183,8 +196,8 @@ CHANGELOG = """
 
 import subprocess
 result = subprocess.run(
-    ["grep", "-rl", "send_notification", "./app"],
-    capture_output=True, text=True
+ ["grep", "-rl", "send_notification", "./app"],
+ capture_output=True, text=True
 )
 affected_files = result.stdout.strip().split("\n")
 ```
@@ -196,22 +209,22 @@ import ast
 import subprocess
 
 def validate_python_syntax(filepath: str) -> bool:
-    try:
-        with open(filepath) as f:
-            ast.parse(f.read())
-        return True
-    except SyntaxError as e:
-        print(f"Syntax error in {filepath}: {e}")
-        return False
+ try:
+ with open(filepath) as f:
+ ast.parse(f.read())
+ return True
+ except SyntaxError as e:
+ print(f"Syntax error in {filepath}: {e}")
+ return False
 
 def validate_typescript(directory: str) -> list[str]:
-    result = subprocess.run(
-        ["npx", "tsc", "--noEmit", "--project", f"{directory}/tsconfig.json"],
-        capture_output=True, text=True
-    )
-    if result.returncode != 0:
-        return result.stdout.split("\n")
-    return []
+ result = subprocess.run(
+ ["npx", "tsc", "--noEmit", "--project", f"{directory}/tsconfig.json"],
+ capture_output=True, text=True
+ )
+ if result.returncode != 0:
+ return result.stdout.split("\n")
+ return []
 ```
 
 The standard migration workflow:
@@ -246,22 +259,22 @@ The biggest risk with AI migration is silent correctness issues — code that pa
 import difflib
 
 def generate_migration_diff(original: str, migrated: str, filepath: str) -> str:
-    diff = difflib.unified_diff(
-        original.splitlines(keepends=True),
-        migrated.splitlines(keepends=True),
-        fromfile=f"a/{filepath}",
-        tofile=f"b/{filepath}",
-        n=3
-    )
-    return "".join(diff)
+ diff = difflib.unified_diff(
+ original.splitlines(keepends=True),
+ migrated.splitlines(keepends=True),
+ fromfile=f"a/{filepath}",
+ tofile=f"b/{filepath}",
+ n=3
+ )
+ return "".join(diff)
 
 # Write all diffs to a single review file
 with open("migration-review.diff", "w") as review:
-    for filepath in results["changed"]:
-        original = open(filepath).read()
-        migrated = open(f"migration-staging/{filepath}").read()
-        review.write(generate_migration_diff(original, migrated, filepath))
-        review.write("\n")
+ for filepath in results["changed"]:
+ original = open(filepath).read()
+ migrated = open(f"migration-staging/{filepath}").read()
+ review.write(generate_migration_diff(original, migrated, filepath))
+ review.write("\n")
 ```
 
 Run `git diff --stat migration-review.diff` or open it in a tool like `delta` to review all changes before applying. High-confidence mechanical changes (print statements, import renames) need less scrutiny. Low-confidence changes (async addition, parameter reordering) need a human read.
@@ -279,35 +292,27 @@ Rule of thumb for estimating AI migration effort:
 
 The time savings grow with scale. For fewer than 20 files, writing a migration prompt and validation script may take longer than just doing it manually.
 
-
-
 ## Frequently Asked Questions
-
 
 **How long does it take to use ai for automated code migration?**
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-
 **What are the most common mistakes to avoid?**
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
-
 
 **Do I need prior experience to follow this guide?**
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-
 **Can I adapt this for a different tech stack?**
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-
 **Where can I get help if I run into issues?**
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
-
 
 ## Related Articles
 

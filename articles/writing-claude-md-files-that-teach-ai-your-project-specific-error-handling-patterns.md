@@ -11,28 +11,34 @@ tags: [ai-tools-compared, claude-code, ai-assistants, error-handling, troublesho
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true
+voice-checked: true---
 ---
-
+layout: default
+title: "Writing Claude Md Files That Teach AI Your Project Specific"
+description: "A practical guide to creating effective CLAUDE.md files that communicate your project's error handling conventions to AI assistants. Includes code examples and"
+date: 2026-03-16
+last_modified_at: 2026-03-16
+author: theluckystrike
+permalink: /writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/
+categories: [guides]
+tags: [ai-tools-compared, claude-code, ai-assistants, error-handling, troubleshooting, artificial-intelligence, claude-ai]
+reviewed: true
+score: 9
+intent-checked: true
+voice-checked: true---
 
 {% raw %}
 When you work with AI coding assistants like Claude Code, the quality of output depends heavily on context. A well-crafted CLAUDE.md file transforms generic responses into project-aligned code. This guide focuses specifically on teaching AI assistants your error handling patterns—a critical aspect that often gets overlooked but dramatically affects code quality.
 
-
 ## Why Error Handling Deserves Special Attention
-
 
 Error handling varies significantly between projects and organizations. Some teams prefer exceptions, others use result types. Logging conventions, retry strategies, and user-facing error messages all follow project-specific conventions. Without explicit guidance, AI assistants default to their training patterns, which may not match your codebase.
 
-
 A dedicated section in your CLAUDE.md file ensures every AI-generated function follows your error handling standards from the start.
-
 
 ## Structuring Your Error Handling Section
 
-
 Organize your CLAUDE.md file with a clear error handling section. Place it prominently—ideally early in the file—since AI models pay special attention to the first substantial sections.
-
 
 ```markdown
 ## Error Handling Conventions
@@ -40,12 +46,9 @@ Organize your CLAUDE.md file with a clear error handling section. Place it promi
 This project follows specific error handling patterns described below.
 ```
 
-
 ### Define Your Primary Error Strategy
 
-
 Start by stating whether your project uses exceptions, result types, or a hybrid approach. Be explicit about when to use each.
-
 
 ```markdown
 ### Error Strategy
@@ -55,15 +58,11 @@ Start by stating whether your project uses exceptions, result types, or a hybrid
 - Always log errors with appropriate context before returning
 ```
 
-
 This single statement prevents the AI from wrapping everything in try-catch blocks when your codebase uses functional error handling.
-
 
 ## Documenting Error Naming Conventions
 
-
 Consistent error naming makes debugging significantly easier. Specify your conventions in the CLAUDE.md file.
-
 
 ```markdown
 ### Error Naming
@@ -73,15 +72,11 @@ Consistent error naming makes debugging significantly easier. Specify your conve
 - Wrap third-party errors with domain-specific errors to provide context
 ```
 
-
 When the AI encounters an unknown error type, these patterns ensure it creates appropriately named errors rather than generic "Error" types.
-
 
 ## Specifying Logging Requirements
 
-
 Error logging often follows team-specific standards. Document yours explicitly.
-
 
 ```markdown
 ### Logging
@@ -92,15 +87,11 @@ Error logging often follows team-specific standards. Document yours explicitly.
 - Never log sensitive data (passwords, tokens, PII)
 ```
 
-
 This prevents the AI from using `console.log` in production code when your team requires structured logging with specific fields.
-
 
 ## Defining Retry and Recovery Patterns
 
-
 Network failures and transient errors require consistent retry logic. Specify your approach in the CLAUDE.md file.
-
 
 ```markdown
 ### Retry Logic
@@ -111,15 +102,11 @@ Network failures and transient errors require consistent retry logic. Specify yo
 - Do not retry authentication failures—fail fast instead
 ```
 
-
 The AI will then implement appropriate retry mechanisms rather than infinite loops or no retry logic at all.
-
 
 ## User-Facing Error Messages
 
-
 How errors surface to users requires careful thought. Define your standards.
-
 
 ```markdown
 ### User Messages
@@ -130,15 +117,11 @@ How errors surface to users requires careful thought. Define your standards.
 - Maintain consistent tone across all error messages
 ```
 
-
 This ensures the AI generates user-safe error messages instead of exposing stack traces.
-
 
 ## Example: Complete Error Handling Section
 
-
 Here's an example you can adapt:
-
 
 ```markdown
 ## Error Handling Conventions
@@ -170,12 +153,9 @@ This project uses TypeScript with a focus on explicit error handling.
 - Verify logging is called with correct context
 ```
 
-
 ## Teaching the AI Your Result Type Pattern
 
-
 If your project uses a Result type instead of exceptions, show Claude Code exactly what the type looks like and how to use it. Generic descriptions produce generic code; concrete examples produce idiomatic code.
-
 
 ```markdown
 ### Result Type Usage
@@ -204,15 +184,11 @@ const user = result.value;
 Never throw inside functions that return Result. Catch all exceptions at service boundaries and convert them to err() values.
 ```
 
-
 This level of specificity—showing the actual import path, method names, and call site patterns—produces far better alignment than a paragraph description alone.
-
 
 ## Showing Before/After Examples Inline
 
-
 One of the most effective techniques is including explicit "do this / not that" examples in the CLAUDE.md file for error handling patterns that you see violated repeatedly.
-
 
 ```markdown
 ### Common Mistakes to Avoid
@@ -246,18 +222,13 @@ res.status(500).json({ error: { code: 'ERR_INTERNAL', message: 'Something went w
 ```
 ```
 
-
 Claude Code treats these examples as strong signals. When it sees the WRONG pattern in your existing codebase, it will flag it; when generating new code, it will follow the CORRECT pattern.
-
 
 ## Layering Error Handling for Different Architectural Tiers
 
-
 Most full-stack projects have distinct error handling needs at each tier: the API layer, the service layer, and the data layer. If your CLAUDE.md treats all three identically, the AI will apply an one-size-fits-all pattern that fits none of them well.
 
-
 Document each tier explicitly:
-
 
 ```markdown
 ### Error Handling by Layer
@@ -278,29 +249,21 @@ Document each tier explicitly:
 - Always return a structured JSON body, never a bare string
 ```
 
-
 With this structure, Claude Code knows to generate `return null` in a repository function but `return err(new UserNotFoundError(id))` in the service that calls it—matching the actual conventions in your codebase.
-
 
 ## Testing Your Error Handling Instructions
 
-
 After adding error handling guidance to your CLAUDE.md file, verify it works. Ask Claude Code to implement a simple function with error cases:
-
 
 ```
 Create a function that fetches user data from an API and handles network errors, validation errors, and authentication errors appropriately.
 ```
 
-
 Review the output against your documented patterns. If something doesn't match, refine your CLAUDE.md instructions.
-
 
 ## Common Mistakes to Avoid
 
-
 Several patterns reduce the effectiveness of error handling guidance:
-
 
 - Vague instructions: "Handle errors properly" means nothing to an AI. Be specific.
 
@@ -310,12 +273,9 @@ Several patterns reduce the effectiveness of error handling guidance:
 
 - Outdated examples: Review and update your error handling section as patterns evolve.
 
-
 ## Maintaining Your CLAUDE.md File
 
-
 Error handling patterns evolve with projects. Schedule periodic reviews of your CLAUDE.md error handling section:
-
 
 1. After major refactoring that changes error patterns
 
@@ -323,38 +283,29 @@ Error handling patterns evolve with projects. Schedule periodic reviews of your 
 
 3. When team members consistently need to correct AI-generated error handling
 
-
 Keep the error handling section focused and actionable. Remove outdated patterns and add new ones as your project matures.
 
-
-
 ## Frequently Asked Questions
-
 
 **Who is this article written for?**
 
 This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-
 **How current is the information in this article?**
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
-
 
 **Does Claude offer a free tier?**
 
 Most major tools offer some form of free tier or trial period. Check Claude's current pricing page for the latest free tier details, as these change frequently. Free tiers typically have usage limits that work for evaluation but may not be sufficient for daily professional use.
 
-
 **How do I get started quickly?**
 
 Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
 
-
 **What is the learning curve like?**
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-
 
 ## Related Articles
 

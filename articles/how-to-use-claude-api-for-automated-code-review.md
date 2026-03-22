@@ -11,8 +11,7 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, claude-ai, api]
----
+tags: [ai-tools-compared, claude-ai, api]---
 
 {% raw %}
 
@@ -189,8 +188,7 @@ def post_github_review(repo_name: str, pr_number: int, review: dict) -> None:
 {review['summary']}
 
 **Summary:** {critical_count} critical, {warning_count} warnings
-{comments_text}
----
+{comments_text}---
 *Reviewed by Claude claude-sonnet-4-6. This is automated analysis — use judgment.*"""
 
  # Map verdict to GitHub event type
@@ -280,14 +278,14 @@ def build_enhanced_review_prompt(pr_data: dict, repo_name: str, head_sha: str) -
  continue
  files_text += f"\n### {f['filename']} (diff)\n```diff\n{f['patch']}\n```\n"
 
-        # For Python/TypeScript files under 200 lines, include full content
-        if f["filename"].endswith((".py", ".ts", ".js")) and f["additions"] < 200:
-            full_content = get_file_content(repo_name, f["filename"], head_sha)
-            if full_content and len(full_content.split("\n")) < 200:
-                files_text += f"\n### {f['filename']} (full file after changes)\n"
-                files_text += f"```\n{full_content}\n```\n"
+ # For Python/TypeScript files under 200 lines, include full content
+ if f["filename"].endswith((".py", ".ts", ".js")) and f["additions"] < 200:
+ full_content = get_file_content(repo_name, f["filename"], head_sha)
+ if full_content and len(full_content.split("\n")) < 200:
+ files_text += f"\n### {f['filename']} (full file after changes)\n"
+ files_text += f"```\n{full_content}\n```\n"
 
-    return f"""PR: {pr_data['title']}
+ return f"""PR: {pr_data['title']}
 
 {files_text}
 
@@ -299,60 +297,52 @@ Review for bugs, security vulnerabilities, and critical issues only."""
 ```python
 import time
 
-MAX_DIFF_TOKENS = 50_000  # Roughly 200KB of diff text
+MAX_DIFF_TOKENS = 50_000 # Roughly 200KB of diff text
 
 def truncate_diff(pr_data: dict, max_chars: int = MAX_DIFF_TOKENS * 4) -> dict:
-    """Truncate very large diffs to stay within token budget."""
-    total_chars = sum(len(f["patch"]) for f in pr_data["files"])
+ """Truncate very large diffs to stay within token budget."""
+ total_chars = sum(len(f["patch"]) for f in pr_data["files"])
 
-    if total_chars <= max_chars:
-        return pr_data
+ if total_chars <= max_chars:
+ return pr_data
 
-    # Keep the largest changed files, truncate the rest
-    sorted_files = sorted(pr_data["files"], key=lambda f: len(f["patch"]), reverse=True)
-    truncated = []
-    chars_used = 0
+ # Keep the largest changed files, truncate the rest
+ sorted_files = sorted(pr_data["files"], key=lambda f: len(f["patch"]), reverse=True)
+ truncated = []
+ chars_used = 0
 
-    for f in sorted_files:
-        if chars_used + len(f["patch"]) > max_chars:
-            f = {**f, "patch": f["patch"][:max_chars - chars_used] + "\n... [truncated]"}
-        truncated.append(f)
-        chars_used += len(f["patch"])
-        if chars_used >= max_chars:
-            break
+ for f in sorted_files:
+ if chars_used + len(f["patch"]) > max_chars:
+ f = {**f, "patch": f["patch"][:max_chars - chars_used] + "\n... [truncated]"}
+ truncated.append(f)
+ chars_used += len(f["patch"])
+ if chars_used >= max_chars:
+ break
 
-    return {**pr_data, "files": truncated}
+ return {**pr_data, "files": truncated}
 ```
 
-
-
 ## Frequently Asked Questions
-
 
 **How long does it take to use the claude api for automated code review?**
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-
 **What are the most common mistakes to avoid?**
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
-
 
 **Do I need prior experience to follow this guide?**
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-
 **Is this approach secure enough for production?**
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-
 **Where can I get help if I run into issues?**
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
-
 
 ## Related Articles
 
@@ -363,4 +353,4 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Claude Code API Snapshot Testing Guide](/ai-tools-compared/claude-code-api-snapshot-testing-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+
