@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Configure Claude Code"
+title: "Configure Claude Code for Team Feature Flags"
 description: "A practical guide to configuring Claude Code to understand and follow your team's feature flag naming conventions with real-world examples and configuration"
 date: 2026-03-16
 last_modified_at: 2026-03-16

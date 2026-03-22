@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "AI Tools for Generating FAQ Pages from Customer Support Ticket Data Compared"
+title: "AI FAQ Generators from Support Tickets (2026)"
 description: "A practical comparison of AI tools for extracting and generating FAQ pages from customer support ticket data, with code examples for developers."
 date: 2026-03-21
 author: "AI Tools Compared"

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Generating Terraform Provider Configurations 2026"
+title: "AI Terraform Config Generators Compared (2026)"
 description: "Compare AI assistants for writing Terraform provider configs including AWS, GCP, Azure modules with state management and drift detection"
 date: 2026-03-22
 last_modified_at: 2026-03-22

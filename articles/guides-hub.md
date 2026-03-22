@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools Guides Hub"
+title: "AI Tools Compared: All Guides and Reviews"
 description: "Browse every AI tool comparison, review, and guide — coding assistants, LLMs, productivity tools, and developer integrations."
 date: 2026-03-22
 last_modified_at: 2026-03-22

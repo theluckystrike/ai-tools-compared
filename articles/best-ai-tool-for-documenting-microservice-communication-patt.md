@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Best AI Tool for Documenting Microservice Communication Patterns and Dependencies 2026"
+title: "Best AI Tool for Microservice Docs (2026)"
 description: "A practical comparison of AI tools for automatically generating and maintaining microservice architecture documentation, with code examples and implementation guidance."
 date: 2026-03-21
 author: "AI Tools Compared"

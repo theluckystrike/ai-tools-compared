@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Best AI Coding Assistant for Writing JSDoc TSDoc Comments Correctly"
+title: "Best AI Assistant for JSDoc and TSDoc (2026)"
 description: "Discover which AI coding assistants excel at generating accurate JSDoc and TSDoc comments. Compare accuracy, TypeScript support, and practical integration for your workflow."
 date: 2026-03-21
 last_modified_at: 2026-03-21
