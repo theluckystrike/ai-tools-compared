@@ -166,18 +166,53 @@ def check_chatgpt_plus_status(api_key):
         "Content-Type": "application/json"
     }
     response = requests.get(
-        "https://api.openai.com/v1/usage",
-        headers=headers,
-        params({"date": "2026-03-15"})
+        "https://api.openai.com/v1/models",
+        headers=headers
     )
-    return response.json()
-
-# Plus subscribers can access GPT-4 models
-# Non-Plus accounts only access GPT-3.5
+    models = response.json().get("data", [])
+    gpt4_models = [m["id"] for m in models if "gpt-4" in m["id"]]
+    return {
+        "has_gpt4_access": len(gpt4_models) > 0,
+        "available_gpt4_models": gpt4_models
+    }
 ```
 
 
-If API calls show Plus-level access but the web interface does not, the issue is likely cached interface state rather than actual subscription status.
+If API calls show GPT-4 model access but the web interface does not, the issue is likely cached interface state rather than actual subscription status. Try a hard refresh (Ctrl+Shift+R or Cmd+Shift+R) or switch browsers entirely.
+
+
+## Troubleshooting the ChatGPT Mobile App
+
+
+Activation problems on iOS and Android follow a slightly different diagnostic path than the browser experience.
+
+
+**iOS (iPhone and iPad):** ChatGPT Plus purchased through the OpenAI website and ChatGPT Plus purchased via Apple's in-app purchase system are separate subscriptions managed by different billing systems. If you subscribed on the web, your iOS app must be signed in to the same OpenAI account. Force-close the app, wait 30 seconds, and reopen it. If Plus still does not show, go to iOS Settings → [Your Name] → Subscriptions and confirm there is no duplicate or conflicting subscription entry.
+
+
+**Android:** Go to Google Play → Subscriptions to verify the purchase state. Android sometimes caches an "inactive" status for several minutes after a successful purchase. Clearing the ChatGPT app's cache from Android Settings → Apps → ChatGPT → Storage → Clear Cache forces a fresh check against OpenAI's activation servers.
+
+
+**Cross-platform sync delay:** OpenAI's activation propagation can take up to 15 minutes to reach all devices when the payment processes successfully. Log out from all devices, wait 10-15 minutes, then log back in on the device you use most.
+
+
+## Understanding Stripe's Role in Activation Failures
+
+
+OpenAI processes payments through Stripe. When Stripe declines or holds a payment, OpenAI's systems often show a successful-looking checkout screen before the decline signal arrives. Here is what each Stripe decline code typically means for ChatGPT Plus:
+
+
+| Stripe Decline Code | Likely Cause | Recommended Fix |
+|---------------------|--------------|-----------------|
+| `insufficient_funds` | Card balance too low | Use a different card |
+| `card_declined` | Bank blocked the charge | Call your bank, then retry |
+| `incorrect_cvc` | Wrong security code | Re-enter card details carefully |
+| `expired_card` | Card expired | Update card or use another |
+| `do_not_honor` | Generic bank refusal | Contact issuing bank directly |
+| `fraudulent` | Fraud flag triggered | Use a different card or PayPal |
+
+
+You can find the specific decline reason in Settings → Billing → Payment history. Each failed attempt shows a reason code if Stripe returned one. This detail saves significant time compared to guessing which fix to try first.
 
 
 ## Diagnostic Tips for Power Users
@@ -230,7 +265,7 @@ When self-service fixes fail, escalate support requests properly:
 4. Describe exact steps already attempted
 
 
-Support typically responds within 24-48 hours. Including detailed troubleshooting steps speeds resolution.
+Support typically responds within 24-48 hours. Including detailed troubleshooting steps speeds resolution. When submitting a ticket, use the subject line format: "ChatGPT Plus activation failure - [your account email]" — this routes to the billing team faster than a generic support inquiry.
 
 
 ## Prevention Strategies
