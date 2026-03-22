@@ -37,6 +37,9 @@ The key benefits include:
 - Type safety: MCP enforces structured inputs and outputs
 
 
+Before MCP, the typical approach was to copy-paste Jira ticket descriptions into a chat window. That breaks down at scale: you forget context, miss linked issues, and cannot include rich comment threads. MCP solves this by making Jira data a first-class resource that the AI can query on demand during a conversation.
+
+
 ## Prerequisites
 
 
@@ -73,6 +76,9 @@ cd servers/src/jira
 npm install
 npm run build
 ```
+
+
+For teams with strict dependency policies, the local clone approach is better: it pins the exact server version and lets you audit the source code before it runs with your Jira credentials. You can also vendor the build artifacts into your team's shared tooling repo.
 
 
 ## Step 2: Configure MCP for Your Jira Instance
@@ -167,6 +173,16 @@ Can you list my recent Jira tickets?
 If configured correctly, the AI will use the MCP server to fetch Jira data. The first request may take a few seconds while the connection establishes.
 
 
+You can also verify at the MCP server level by running the server directly and checking the output. A successful startup prints the available tools and resource schemas, which is a good sanity check before testing through the AI tool interface:
+
+
+```bash
+npx -y @modelcontextprotocol/server-jira
+# Expected output: MCP server started, listening on stdio
+# Available tools: get_issue, search_issues, get_project, list_projects
+```
+
+
 ## Step 4: Use Jira Context in AI Conversations
 
 
@@ -219,6 +235,19 @@ Summarize the discussion on PROJ-789 including all comments and activity
 
 
 The MCP server fetches the full conversation history.
+
+
+### Generate Commit Messages from Tickets
+
+
+One underused pattern is generating commit messages directly from ticket context:
+
+```
+Write a conventional commit message for the work described in PROJ-234.
+Include the ticket number in the footer.
+```
+
+The AI reads the ticket summary, acceptance criteria, and type, then produces a commit message that matches your team's format. This is faster and more consistent than writing messages manually, especially for bug fixes where the ticket already contains the root cause.
 
 
 ## Step 5: Customize for Your Workflow
@@ -300,6 +329,9 @@ Missing ticket data: Some custom fields require explicit permission. Contact you
 Rate limiting: Jira Cloud imposes API rate limits. If you hit them frequently, implement caching in your AI prompts or reduce query frequency.
 
 
+**MCP server not appearing in AI tool:** On Claude Desktop, the config file must be valid JSON — a trailing comma or missing brace will silently prevent the server from loading. Use `python3 -m json.tool < ~/Library/Application\ Support/Claude/claude_desktop_config.json` to validate the file before restarting the application.
+
+
 ## Extending the Integration
 
 
@@ -322,8 +354,10 @@ For more advanced workflows, consider combining Jira MCP with other MCP servers.
 ```
 
 
-This lets your AI assistant understand the full development context—code changes, ticket status, and review history—in one conversation.
+This lets your AI assistant understand the full development context—code changes, ticket status, and review history—in one conversation. A practical example: ask Claude "which open PRs have no linked Jira ticket?" and it can cross-reference both data sources to give you a concrete list.
 
+
+You can also combine Jira MCP with a Slack MCP server to pull in conversation context. When a ticket has been discussed in a Slack thread but the discussion never made it back into Jira comments, this multi-server setup lets the AI see the full picture.
 
 
 ## Frequently Asked Questions
