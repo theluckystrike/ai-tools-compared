@@ -8,9 +8,9 @@ author: "AI Tools Compared"
 permalink: /ai-tools-for-generating-faq-pages-from-customer-support-tick/
 categories: [tutorials]
 voice-checked: true
-tags: [ai-tools-compared, faq-generation, customer-support, nlp, automation]
+tags: [ai-tools-compared, faq-generation, customer-support, nlp, automation, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 ---
 {% raw %}
 
