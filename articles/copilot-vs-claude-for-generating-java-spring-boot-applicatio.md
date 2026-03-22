@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /copilot-vs-claude-for-generating-java-spring-boot-applicatio/
 categories: [guides, comparisons]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, comparison, claude-ai]
