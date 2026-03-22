@@ -27,7 +27,17 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 Use AI coding assistants to generate Virtual Thread implementations using `Executors.newVirtualThreadPerTaskExecutor()` instead of traditional thread pools, and to implement structured concurrency with scoped values for context propagation. Virtual Threads represent a major change from thread-per-request models, and AI tools help developers avoid common pitfalls by understanding the distinction between blocking and non-blocking operations in the Virtual Thread context.
+
+## Key Takeaways
+
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **Use `Executors.newVirtualThreadPerTaskExecutor()` for most**: use cases rather than custom configurations.
+- **Does Loom offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **In 2026, AI assistants are particularly helpful in generating code that uses scoped values**: another Loom feature that replaces ThreadLocal with a more efficient, cancelable alternative.
 
 ## Understanding Virtual Threads Fundamentals
 

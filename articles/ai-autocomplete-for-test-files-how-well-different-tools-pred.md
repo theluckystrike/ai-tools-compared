@@ -31,6 +31,15 @@ voice-checked: true---
 
 Claude Code and Cursor outperform GitHub Copilot at predicting test assertions, generating assertions that verify both success and failure cases while considering edge cases. While AI tools have evolved beyond generic assertions like `assertTrue()`, their effectiveness varies significantly depending on the tool and the complexity of the code under test, with the best results coming from tools that analyze function docstrings and type hints.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **GitHub Copilot tends to**: suggest generic assertions like `assertTrue(register_user("test@example.com", "password123"))` without checking the actual return value.
+- **Query("SELECT * FROM users**: WHERE id = ?", 1).
+- **Return(&User{ID**: 1, Name: "John"}, nil).
+- **For C#**: the best tools understand nullable reference types (introduced in C# 8).
+
 ## Understanding Assertion Prediction in AI Autocomplete
 
 AI autocomplete tools have evolved beyond simple syntax completion. Modern tools like GitHub Copilot, Cursor, Claude Code, and others attempt to understand context—your function signatures, variable types, and the logic flow—to suggest relevant assertions. The quality of these predictions varies significantly depending on the tool and the complexity of the code being tested.

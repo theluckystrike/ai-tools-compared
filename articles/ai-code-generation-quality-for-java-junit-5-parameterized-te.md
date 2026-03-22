@@ -27,7 +27,17 @@ intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]---
 
+
 Java developers working with JUnit 5 parameterized tests frequently rely on AI coding assistants to generate test cases, data providers, and parameterized method implementations. The quality of AI-generated parameterized tests varies significantly across different tools, and understanding these differences helps developers choose the right assistant for their testing needs.
+
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **AI-generated code sometimes places**: `@ParameterizedTest` on methods that JUnit 5 does not recognize as test methods, or confuses JUnit 4 `@Parameters` annotation with JUnit 5 equivalents.
+- **Verify that the JUnit**: 5 vintage engine is not mistakenly included, which would cause Jupiter annotations to be ignored.
+- **Cursor provides good context**: awareness for project-specific data structures but may generate outdated JUnit 4 syntax when the project uses JUnit 5.
 
 ## Understanding JUnit 5 Parameterized Tests
 

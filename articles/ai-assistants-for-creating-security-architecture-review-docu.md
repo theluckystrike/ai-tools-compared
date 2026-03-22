@@ -29,7 +29,17 @@ tags: [ai-tools-compared, security, artificial-intelligence]
 
 intent-checked: true---
 
+
 Security architecture reviews are a critical component of any strong software development lifecycle. Yet manually documenting the security posture of a codebase, identifying potential vulnerabilities, and outlining the architectural patterns that protect your application consumes significant developer time. AI assistants have emerged as powerful tools that can analyze code repositories and generate security architecture review documents automatically.
+
+## Key Takeaways
+
+- **Cost**: ~$3–15 per 1M input tokens via API.
+- **Cost**: ~$0.03–0.06 per 1K input tokens.
+- **Cost**: $10–20/month flat rate.
+- Best used alongside AI assistants.
+- **For occasional use**: consider whether a free alternative covers enough of your needs.
+- **GitHub Copilot**: Integrated into your IDE; useful for reviewing code patterns in real-time.
 
 ## How AI Assistants Analyze Code Repositories
 

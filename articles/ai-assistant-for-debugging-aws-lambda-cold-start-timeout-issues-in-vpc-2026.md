@@ -25,7 +25,23 @@ intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, aws-lambda, cold-start, vpc, debugging, serverless, ai-assistant, troubleshooting]---
 
+
 Use AI assistants like Claude, Cursor, or GitHub Copilot to quickly diagnose why your AWS Lambda functions in VPC environments are timing out during cold starts. These tools can analyze your function configuration, suggest optimization strategies, and generate code improvements to reduce initialization time.
+
+## Key Takeaways
+
+- **This ENI attachment is**: the primary cause of cold start delays, often adding 6-10 seconds or more to your function's first invocation.
+- **Recommend best practices for**: keeping the function warm ``` ### AI-Generated Optimization Strategies Based on your configuration, an AI assistant will typically recommend: 1.
+- **Cost is roughly $0.015/hour**: per proxy instance, which pays for itself in reduced cold starts within the first week.
+- **Current configuration**: - Runtime: Python 3.11
+- Memory: 256 MB
+- Timeout: 30 seconds
+- VPC: 2 subnets, 1 security group
+
+Please help me:
+1.
+- **Identify the likely causes**: of the cold start delay 2.
+- **DNS Resolution Time**: If your function does DNS lookups during initialization, that adds 100-500ms.
 
 ## Understanding Lambda Cold Start in VPC
 
