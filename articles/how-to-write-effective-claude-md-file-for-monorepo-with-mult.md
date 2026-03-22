@@ -9,7 +9,7 @@ permalink: /how-to-write-effective-claude-md-file-for-monorepo-with-mult/
 categories: [guides]
 tags: [ai-tools-compared, claude-code, monorepo, configuration, claude-ai]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

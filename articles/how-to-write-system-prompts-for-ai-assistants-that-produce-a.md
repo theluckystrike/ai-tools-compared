@@ -9,7 +9,7 @@ permalink: /how-to-write-system-prompts-for-ai-assistants-that-produce-a/
 categories: [guides]
 tags: [ai-tools-compared, prompts, accessibility, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

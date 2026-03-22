@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /ideogram-vs-midjourney-for-text-in-images-compared/
 categories: [comparisons]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 tags: [ai-tools-compared, comparison]
