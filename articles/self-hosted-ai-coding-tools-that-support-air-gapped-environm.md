@@ -19,9 +19,18 @@ Air-gapped environments—systems physically isolated from public networks—are
 
 ## What Makes an AI Coding Tool Work in Air-Gapped Environments
 
-For an AI coding assistant to function in a disconnected environment, it must operate without external API calls and run inference locally using your own GPU or CPU. Key requirements include no outbound network traffic during normal operation, support for local model files (GGUF, GPTQ formats), and reasonable performance on available hardware.
+For an AI coding assistant to function in a disconnected environment, it must operate without external API calls and run inference locally using your own GPU or CPU. Key requirements include no outbound network traffic during normal operation, support for local model files (GGUF, GPTQ, or safetensors formats), and reasonable performance on available hardware.
 
-The tools below fall into three categories: established commercial tools with offline modes, open-source projects built specifically for local deployment, and self-hosted server solutions you can run on your own infrastructure.
+Beyond the basic network requirement, air-gapped deployments introduce additional constraints that many tools do not address out of the box. All model weights must be transferred via approved media—USB drives, internal artifact repositories, or air-gapped package mirrors. The tool must not phone home for license validation, telemetry, or automatic model updates. The setup must also be reproducible: your security team needs to audit the software supply chain before anything enters the secure environment.
+
+A useful checklist before deploying any tool in an air-gapped environment:
+
+- Confirm there are no outbound network calls during normal inference (use `tcpdump` or a network monitoring tool to verify)
+- Check whether the tool has an auto-update mechanism and how to disable it
+- Verify the Docker image or binary can be downloaded, transferred, and installed without internet access at install time
+- Confirm the license model does not require periodic license server validation
+
+The tools below fall into three categories: open-source projects built specifically for local deployment, self-hosted server solutions you can run on your own infrastructure, and established tools with well-documented offline modes.
 
 ## 1. Codeium Community Edition
 
@@ -43,72 +52,108 @@ After starting the server, configure your editor to connect to `http://localhost
 
 ## 2. Continue.dev with Ollama
 
-Continue.dev is an open-source copilot that works with local models through Ollama. This combination runs entirely offline after downloading your chosen models.
+Continue.dev is an open-source AI coding assistant that integrates directly into VS Code and JetBrains IDEs. When paired with Ollama, it runs entirely offline after the initial download. There are no background API calls, no telemetry by default, and no license server dependency—making it a strong choice for regulated environments.
+
+A practical configuration uses two separate models: a larger one for chat and generation, and a smaller, faster model for tab autocomplete.
 
 **Setup Example:**
 
 ```bash
-# Install Ollama
+# Install Ollama (download binary, transfer via approved media)
 curl -fsSL https://ollama.com/install.sh | sh
 
-# Pull a coding model
-ollama pull codellama:7b
+# Pull coding models
+ollama pull codellama:13b-instruct
+ollama pull deepseek-coder:6.7b
 
-# Configure Continue.dev
+# Configure Continue.dev with separate models for chat and autocomplete
 cat >> ~/.continue/config.yaml << 'EOF'
 models:
   - provider: ollama
-    model: codellama:7b
+    model: codellama:13b-instruct
     api_base: "http://localhost:11434"
+    name: "CodeLlama 13B (local)"
+tabAutocompleteModel:
+  provider: ollama
+  model: deepseek-coder:6.7b
+  api_base: "http://localhost:11434"
 EOF
 ```
 
-**Pros:** Full control over model choice, runs locally, supports fine-tuning
-**Cons:** Requires managing two components, more configuration than turnkey solutions
+The 13B model handles complex queries while the 6.7B model delivers sub-second completions during typing. For air-gap transfer, download the Ollama binary and model GGUF files on a connected machine, then place model files in `~/.ollama/models/` following Ollama's directory structure.
+
+**Pros:** Full control over model choice, JetBrains and VS Code support, supports fine-tuning, active open-source community
+**Cons:** Requires managing two separate components, more configuration than turnkey solutions, no built-in multi-user support
 
 ## 3. Tabby
 
-Tabby is an open-source, self-hosted AI coding assistant built specifically for air-gapped environments. It provides a VS Code-compatible extension and a server component that runs entirely on your infrastructure without any cloud dependency.
+Tabby is an open-source, self-hosted AI coding assistant built specifically for teams running in secure or disconnected environments. It provides a VS Code-compatible extension, a JetBrains plugin, and a server component that runs entirely on your infrastructure without any cloud dependency.
 
 **Setup Example:**
 
 ```bash
-# Start Tabby server
+# Start Tabby server with GPU acceleration
 docker run -d -p 8080:8080 \
   -v tabby_data:/data \
   tabbyai/tabby:latest \
-  serve --model Qwen/CodeQwen-7B-Chat
+  serve --model Qwen/CodeQwen-7B-Chat --device cuda
+
+# CPU-only fallback for environments without GPU
+docker run -d -p 8080:8080 \
+  -v tabby_data:/data \
+  tabbyai/tabby:latest \
+  serve --model TabbyML/StarCoder-1B --device cpu
 
 # Configure VS Code extension to point to http://localhost:8080
 ```
 
-**Pros:** Built specifically for offline use, Docker deployment, no cloud dependency
-**Cons:** Performance depends on your hardware, requires server management
+**Offline model transfer:**
+
+```bash
+# Download model weights on a connected machine
+tabby download --model TabbyML/DeepSeek-Coder-6.7B
+
+# Transfer the model directory to the air-gapped host
+rsync -av ~/.tabby/models/ airgapped-host:/home/user/.tabby/models/
+```
+
+For team deployments, a single Tabby server on a dedicated GPU machine serves all developer workstations over the internal network. Tabby's multi-user mode includes authentication, per-user usage tracking, and a web dashboard showing completion counts and model latency metrics.
+
+**Pros:** Purpose-built for offline use, Docker deployment, no cloud dependency, multi-user dashboard
+**Cons:** Requires GPU for fast response times on models above 7B parameters, server management overhead
 
 ## 4. LocalAI
 
-LocalAI provides a drop-in replacement for the OpenAI API that runs locally. You can pair it with Continue.dev or any tool that supports OpenAI-compatible APIs for full offline functionality.
+LocalAI provides a drop-in replacement for the OpenAI API that runs entirely on your hardware. Any coding tool that supports OpenAI-compatible APIs can use LocalAI as its backend—including Continue.dev, custom scripts, and IDE extensions that allow a configurable endpoint.
 
 **Setup Example:**
 
 ```bash
 # Run LocalAI with GPU support
-docker run -d -p 8080:8080 -v models:/models \
+docker run -d -p 8080:8080 -v /path/to/models:/models \
   quay.io/go-skynet/local-ai:latest \
-  --models-path /models --context-size 2048
+  --models-path /models --context-size 4096 --threads 8
 
-# Download a coding model
-curl -L -o models/codellama-7b.gguf \
-  "https://huggingface.co/TheBloke/CodeLlama-7B-Instruct-GGUF/resolve/main/codellama-7b-instruct.Q5_K_M.gguf"
+# Place a pre-downloaded coding model in the models directory
+# Example: codellama-13b-instruct.Q5_K_M.gguf (approx 9GB, transferred via approved media)
 
-# Test the API
+# Test the local API
 curl http://localhost:8080/v1/completions \
   -H "Content-Type: application/json" \
-  -d '{"prompt": "def hello():", "model": "codellama-7b-instruct.Q5_K_M.gguf"}'
+  -d '{
+    "prompt": "def fibonacci(n):",
+    "model": "codellama-13b-instruct.Q5_K_M.gguf",
+    "max_tokens": 200,
+    "temperature": 0.2
+  }'
 ```
 
-**Pros:** OpenAI API compatible, works with many existing tools, flexible
-**Cons:** Configuration can be complex, requires understanding model formats
+The OpenAI API compatibility means you can configure any tool that accepts a custom base URL without modifying its source code. This makes LocalAI the most versatile option for organizations that have existing OpenAI-compatible integrations they want to migrate to a local backend.
+
+For quantization selection: GGUF files with Q5_K_M quantization offer a good balance between quality and file size. A 13B model at Q5_K_M is approximately 9GB and runs on a single 16GB GPU. A 7B model at Q4_K_M is roughly 4GB for environments with tighter storage or VRAM constraints.
+
+**Pros:** OpenAI API compatible, works with many existing tools without code changes, supports multimodal models, flexible backend (CUDA, Metal, CPU)
+**Cons:** More complex configuration than purpose-built tools, requires understanding GGUF quantization levels, no native IDE extension
 
 ## 5. Cody (Sourcegraph)
 
@@ -147,11 +192,23 @@ For teams that need enterprise-grade features without internet connectivity, Tab
 
 If you already run Sourcegraph for code intelligence in your organization, extending to Cody self-hosted makes natural sense. The integration between code search and AI assistance is valuable for large codebases.
 
-## GPU Requirements
+## GPU and Storage Requirements for Air-Gapped Deployments
 
-All these tools perform significantly better with a dedicated GPU. An NVIDIA RTX 3060 or better handles 7B parameter models reasonably for single-user scenarios. For larger models or multi-user setups, consider an RTX 4090 or server-class cards like the A100.
+All these tools perform significantly better with a dedicated GPU. An NVIDIA RTX 3060 (12GB VRAM) handles 7B parameter models comfortably for single-user scenarios. For 13B models, an RTX 4090 (24GB VRAM) or RTX 3090 provides enough headroom. For multi-user team deployments serving 10 or more developers simultaneously, consider server-class hardware: an A10G (24GB) handles concurrent 7B model requests well, and an A100 (40GB or 80GB) supports larger 34B models.
 
-Running on CPU alone works for smaller 3B-7B parameter models but expect noticeably slower response times—often several seconds per completion rather than milliseconds.
+Running on CPU alone is viable for smaller 1B–3B parameter models like TabbyML/StarCoder-1B, but expect 3–8 second completion latency rather than sub-second responses. For developers who need responsive inline completions, GPU access is effectively a requirement for models above 3B parameters.
+
+For storage planning: a 7B model at GGUF Q5_K_M is roughly 5GB; a 13B model is approximately 9GB; a 34B model is around 22GB. Budget additional space for model metadata and vector embeddings if using codebase indexing features. When transferring models via portable media, verify file integrity with SHA256 checksums before deployment.
+
+## Security Checklist for Air-Gapped Deployments
+
+Before going live, verify the following for each tool:
+
+- Run `tcpdump -i any port not 8080` during normal inference to confirm no unexpected outbound connections
+- Disable automatic update checks (`OLLAMA_UPDATE_CHECK=false` for Ollama; Tabby makes no update calls when serving pre-downloaded models)
+- Scan container images with Grype or Trivy using an offline vulnerability database downloaded before air-gapping
+- Pin all Docker image versions to specific digest hashes rather than `latest` tags
+- Store model files in an internal artifact repository (Nexus or Artifactory) rather than on individual developer machines
 
 
 ## Related Articles
