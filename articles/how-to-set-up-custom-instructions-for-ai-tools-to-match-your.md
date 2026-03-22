@@ -26,6 +26,20 @@ Your ESLint, Prettier, or Ruff configuration defines code standards that your te
 
 Consider a team that uses ESLint with the Airbnb configuration and a custom rule requiring specific import ordering. An AI assistant unaware of these requirements might generate imports in the wrong order, forcing developers to manually sort them before committing. By configuring your AI tool with these exact specifications, generated code arrives ready to merge without modification.
 
+## What to Include in Your Custom Instructions
+
+Effective AI instructions for coding style are specific, not abstract. The difference between "follow our coding standards" and listing the actual rule names is the difference between a 40% reduction in lint violations and a 95% reduction.
+
+The most impactful categories to document are:
+
+- **Import ordering rules** — these are almost always violated without explicit instruction
+- **Naming conventions** — camelCase vs snake_case, interface naming prefixes, enum casing
+- **Error handling patterns** — custom error classes, required logging, propagation rules
+- **Null/undefined handling** — whether optional chaining is preferred, how to handle nullable API fields
+- **Test structure** — file naming, describe/it conventions, mocking patterns
+- **Maximum line length and function length** — frequently ignored by AI without explicit limits
+
+Document these as concrete rules with examples, not general principles. AI assistants respond much better to "use named exports; never use default exports except for page components" than to "follow our export conventions."
 
 ## Setting Up Custom Instructions in Popular AI Tools
 
@@ -64,6 +78,7 @@ All imports must use named exports where available. Import ordering:
 - Interface over type for public APIs
 ```
 
+Claude Code will read `CLAUDE.md` automatically when you open a project directory. You can also add a `.claude/` subdirectory with multiple instruction files for different subsystems — for example, `.claude/api-conventions.md` and `.claude/test-patterns.md`.
 
 ### GitHub Copilot
 
@@ -81,6 +96,7 @@ Follow these linting rules for all generated code:
 - Maximum function length: 50 lines
 ```
 
+Copilot reads `copilot-instructions.md` automatically for any repository that has it. The file is shared across your entire team through version control, which means instruction updates roll out to every developer the next time they pull.
 
 ### Cursor
 
@@ -102,6 +118,7 @@ Cursor respects `.cursorrules` files and custom rules in settings. Create a `.cu
 - Testing: use given-when-then structure, one assertion per test
 ```
 
+Cursor also supports project-level rules in its Settings panel (Cmd+Shift+P → "Cursor Settings → Rules for AI"). The `.cursorrules` file takes precedence for project-specific overrides.
 
 ### JetBrains IDEs (IntelliJ, WebStorm)
 
@@ -126,6 +143,17 @@ max_line_length = 100
 indent_size = 2
 ```
 
+JetBrains AI Assistant also supports a "System Prompt" field under Settings → Tools → AI Assistant. Paste your linting rules there in addition to the `.editorconfig`, since the AI Assistant reads the system prompt but doesn't automatically parse ESLint config files.
+
+### Windsurf (Codeium)
+
+Windsurf reads instructions from `.windsurfrules` in your project root, following the same pattern as Cursor. For teams already using `.cursorrules`, create a symlink:
+
+```bash
+ln -s .cursorrules .windsurfrules
+```
+
+This keeps a single source of truth for AI instructions across both editors.
 
 ## Connecting AI Instructions to Your Actual Configuration
 
@@ -167,6 +195,7 @@ For Prettier, specify exact settings:
 }
 ```
 
+You can automate this: write a script that reads your actual `.eslintrc.json` and `.prettierrc` and generates the AI instruction text. Run it as part of your CI pipeline whenever linting config changes, then commit the updated instruction file. This keeps AI instructions in sync with the actual enforced rules without manual maintenance.
 
 ## Testing Your AI Configuration
 
@@ -192,6 +221,7 @@ npm run lint -- --fix src/test-component.tsx
 
 If fixes are applied automatically, your instructions need refinement. The goal is zero output changes when running lint with the `--fix` flag.
 
+Track your lint pass rate over two weeks. Most teams see it improve from 50–60% (AI output passing lint without changes) to 85–95% after one round of instruction refinement based on the patterns that keep failing.
 
 ## Centralizing Team Rules
 
@@ -226,7 +256,7 @@ detailed rules and examples.
 Review and update your AI instructions when you update your linting configuration. Treat AI instructions as version-controlled documentation that evolves with your project standards.
 
 
-Set a calendar reminder to audit AI-generated code monthly. Track which linting rules frequently appear as violations in AI output, then add explicit examples to your instructions. Over time, your instructions become enough that AI output requires zero manual corrections.
+Set a calendar reminder to audit AI-generated code monthly. Track which linting rules frequently appear as violations in AI output, then add explicit examples to your instructions. Over time, your instructions become precise enough that AI output requires zero manual corrections.
 
 
 
@@ -250,7 +280,7 @@ Basic familiarity with the relevant tools and command line is helpful but not st
 
 **Can I adapt this for a different tech stack?**
 
-Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
+Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes. For Python projects using Ruff, paste your `ruff.toml` rule selection directly into the instruction file — Ruff rule codes like `E501` (line too long) or `I001` (import sort) are self-explanatory to any capable LLM.
 
 
 **Where can I get help if I run into issues?**
