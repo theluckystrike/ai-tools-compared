@@ -2,8 +2,8 @@
 title: "AI Tools for Generating Prometheus Alerting Rules (2026)"
 description: "Compare AI tools for writing Prometheus alertmanager rules. Evaluate PromQL complexity, routing trees, inhibition patterns, and receiver configurations."
 author: "theluckystrike"
-date: "2026-03-22"
-updated: "2026-03-22"
+date: 2026-03-22
+updated: 2026-03-22
 reviewed: true
 score: 8
 voice-checked: true
