@@ -229,6 +229,139 @@ it('uploads a profile picture successfully', () => {
 
 Claude consistently uses `cy.selectFile()` (the current API). GPT-4 sometimes outputs the older `cy.fixture().then()` pattern — always verify which Cypress version you're targeting.
 
+## Testing Authenticated Routes with Session Management
+
+A common problem is needing to log in before every test. Claude generates session-based auth helpers correctly:
+
+```javascript
+// cypress/support/commands.js
+Cypress.Commands.add('loginAs', (email, password) => {
+  cy.session(
+    [email, password],
+    () => {
+      cy.request({
+        method: 'POST',
+        url: '/api/auth/login',
+        body: { email, password },
+      }).then((response) => {
+        window.localStorage.setItem('auth_token', response.body.token);
+      });
+    },
+    {
+      validate() {
+        cy.request('/api/auth/me').its('status').should('eq', 200);
+      },
+    }
+  );
+});
+
+// Usage in tests:
+describe('Admin Dashboard', () => {
+  beforeEach(() => {
+    cy.loginAs('admin@example.com', Cypress.env('ADMIN_PASSWORD'));
+    cy.visit('/admin');
+  });
+
+  it('shows the user management panel', () => {
+    cy.getByTestId('user-management-panel').should('be.visible');
+  });
+});
+```
+
+`cy.session()` caches the authenticated state across tests in the same spec, cutting login overhead from O(n) per test to O(1) per spec file. Copilot often skips session caching entirely and generates `cy.visit('/login')` + form filling in every `beforeEach`, which is functional but slow on large suites.
+
+## Testing Accessibility with AI-Generated Cypress Tests
+
+Claude can extend Cypress tests with basic accessibility checks using the `cypress-axe` plugin:
+
+**Prompt:** "Add axe-core accessibility checks to the login test. Run on page load and after the error state appears."
+
+```javascript
+// cypress/support/e2e.js — add once
+import 'cypress-axe';
+
+// cypress/e2e/login.cy.js — extended with a11y
+describe('Login Flow — Accessibility', () => {
+  beforeEach(() => {
+    cy.visit('/login');
+    cy.injectAxe();
+  });
+
+  it('has no accessibility violations on load', () => {
+    cy.checkA11y('[data-testid="login-form"]', {
+      runOnly: {
+        type: 'tag',
+        values: ['wcag2a', 'wcag2aa'],
+      },
+    });
+  });
+
+  it('error state meets accessibility standards', () => {
+    cy.intercept('POST', '/api/auth/login', {
+      statusCode: 401,
+      body: { message: 'Invalid email or password' },
+    }).as('loginFailed');
+
+    cy.getByTestId('email-input').type('user@example.com');
+    cy.getByTestId('password-input').type('wrong');
+    cy.getByTestId('login-btn').click();
+    cy.wait('@loginFailed');
+
+    cy.getByTestId('login-error').should('be.visible');
+    cy.checkA11y('[data-testid="login-form"]');
+  });
+});
+```
+
+Claude adds `cy.injectAxe()` in `beforeEach` (correct — must run after page load) and scopes `checkA11y` to the form element to avoid noise from unrelated components. GPT-4 often calls `checkA11y()` globally, generating violations from navigation or footer elements that aren't relevant to the feature under test.
+
+## Generating Fixtures with AI
+
+You can also use Claude to generate fixture files that match your API contract:
+
+**Prompt:** "Generate a Cypress fixture file for a list of 3 products. Each has id, name, price (number), category (string), and imageUrl (nullable string). Realistic values."
+
+```json
+// cypress/fixtures/products.json
+[
+  {
+    "id": 1,
+    "name": "Wireless Noise-Cancelling Headphones",
+    "price": 249.99,
+    "category": "Electronics",
+    "imageUrl": "https://cdn.example.com/products/headphones-xm5.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Ergonomic Office Chair",
+    "price": 489.00,
+    "category": "Furniture",
+    "imageUrl": "https://cdn.example.com/products/chair-mesh.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Artisan Coffee Blend 250g",
+    "price": 18.50,
+    "category": "Food & Drink",
+    "imageUrl": null
+  }
+]
+```
+
+This is a small but useful application of AI in the testing workflow. Realistic fixture data catches edge cases (nullable fields, price formatting, long strings) that placeholder data misses.
+
+## Prompting Tips for Better Cypress Output
+
+A few patterns that consistently improve AI-generated Cypress tests across all three tools:
+
+**Provide your Cypress version.** Behavior changed significantly between Cypress 9, 10, and 12+. Start your prompt with "Using Cypress 13 with the default configuration..." and the tool will avoid legacy APIs.
+
+**Include your custom commands.** Paste your `commands.js` file into the prompt. Both Claude and GPT-4 will use your existing commands (`cy.loginAs`, `cy.getByTestId`) rather than re-implementing them inline.
+
+**Specify your testing philosophy.** "Avoid `.then()` callbacks, use `.should()` for assertions, and always wait on aliased intercepts before asserting" produces cleaner output than a bare request for tests.
+
+**Reference existing test files as examples.** Pasting one well-written test file and saying "write more tests in this style for the checkout flow" gives more consistent results than generating from scratch. Copilot excels at this pattern in particular.
+
 ## Tool Comparison
 
 | Capability | Claude | GPT-4 | Copilot |
@@ -239,6 +372,8 @@ Claude consistently uses `cy.selectFile()` (the current API). GPT-4 sometimes ou
 | User story to test cases | Good | Excellent | No |
 | In-editor completion | N/A | N/A | Excellent |
 | Fixture file generation | Yes | Yes | No |
+| Session-based auth helpers | Correct | Correct | Basic |
+| Realistic fixture data | Good | Good | No |
 
 ## Related Articles
 
