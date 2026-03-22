@@ -27,6 +27,16 @@ score: 8
 intent-checked: true
 voice-checked: true---
 
+
+| Tool | API Doc Generation | OpenAPI Support | Code-to-Doc Accuracy | Pricing |
+|---|---|---|---|---|
+| Claude | Generates full API references from code | Creates OpenAPI 3.0 specs | Accurate parameter descriptions | API-based (per token) |
+| ChatGPT (GPT-4) | Complete endpoint documentation | Supports Swagger and OpenAPI | Good example generation | $20/month (Plus) |
+| GitHub Copilot | Inline JSDoc/docstring completion | Partial OpenAPI support | Context-aware from source | $10-39/user/month |
+| Mintlify | Dedicated API doc platform | Native OpenAPI rendering | Auto-generates from codebase | $150/month (Startup) |
+| Cursor | Project-aware doc generation | Reads existing API routes | Cross-file endpoint mapping | $20/month (Pro) |
+
+
 {% raw %}
 
 Keeping API documentation current is a persistent challenge for development teams. Manually writing and maintaining reference documentation consumes significant time, and outdated docs create confusion for API consumers. AI-powered documentation generators now offer a practical solution, converting existing JSDoc comments and Python docstrings into polished reference documentation with minimal effort. This guide evaluates the most effective tools for this specific use case in 2026.

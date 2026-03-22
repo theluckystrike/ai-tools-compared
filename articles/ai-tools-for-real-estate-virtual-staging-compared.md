@@ -7,7 +7,7 @@ last_modified_at: 2026-03-15
 author: "theluckystrike"
 permalink: /ai-tools-for-real-estate-virtual-staging-compared/
 reviewed: true
-score: 9
+score: 6
 categories: [best-of]
 intent-checked: true
 voice-checked: true

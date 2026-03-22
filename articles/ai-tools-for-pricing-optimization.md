@@ -11,7 +11,7 @@ tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 intent-checked: true
 voice-checked: true
-score: 8---
+score: 9
 ---
 layout: default
 title: "AI Tools for Pricing Optimization"

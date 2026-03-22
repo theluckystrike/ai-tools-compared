@@ -27,6 +27,16 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
+| Tool | Issue Triage | Label Assignment | Priority Scoring | Pricing |
+|---|---|---|---|---|
+| Claude | Natural language issue analysis | Suggests labels from description | Severity assessment from context | API-based (per token) |
+| ChatGPT (GPT-4) | Issue summarization | Category suggestions | Priority recommendations | $20/month (Plus) |
+| GitHub Copilot | Limited issue triage | In-IDE issue integration | No priority scoring | $10-39/user/month |
+| Linear AI | Built-in AI triage | Auto-labeling on creation | Priority estimation | $8/user/month |
+| Sweep AI | Automated issue-to-PR pipeline | Auto-categorization | Effort estimation | Free for open source |
+
+
 {% raw %}
 
 Managing GitHub issues efficiently becomes challenging as repositories grow. A well-organized issue queue with proper severity levels and categories helps development teams prioritize work, reduce response times, and maintain healthy backlog hygiene. Manual triage consumes significant time, especially for active open-source projects or enterprise codebases receiving hundreds of issues weekly. AI-powered triage tools automate this process by analyzing issue content, extracting relevant metadata, and applying classification logic automatically.

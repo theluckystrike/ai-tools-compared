@@ -28,6 +28,16 @@ voice-checked: true
 intent-checked: true---
 
 
+| Tool | Data Processing Code | DataFrame Operations | Performance Tips | Pricing |
+|---|---|---|---|---|
+| Claude | Full pandas pipelines with groupby and merge | Handles MultiIndex, pivot, melt | Suggests vectorized operations | API-based (per token) |
+| ChatGPT (GPT-4) | Complete data processing scripts | Good DataFrame manipulation | Memory optimization advice | $20/month (Plus) |
+| GitHub Copilot | Inline pandas code completion | Autocompletes method chains | Context-dependent suggestions | $10-39/user/month |
+| Cursor | Reads existing DataFrames from project | Project-aware transformations | Identifies slow patterns | $20/month (Pro) |
+| Codeium | Fast pandas method suggestions | Basic operation completions | Limited optimization help | Free tier available |
+
+
+
 AI assistants can generate strong pandas code for handling paginated APIs with nested JSON by using pd.json_normalize() effectively and implementing proper pagination loops with error handling. Claude excels at producing idiomatic code with type hints and exponential backoff retry logic. GitHub Copilot provides inline suggestions for synchronous requests, while Cursor offers iterative refinement. ChatGPT 4o breaks complex problems into manageable steps with detailed explanations of pandas functions.
 
 ## Key Takeaways

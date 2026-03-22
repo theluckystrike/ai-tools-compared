@@ -29,6 +29,16 @@ intent-checked: false
 voice-checked: false
 tags: [ai-tools-compared, comparison, accessibility, frontend, best-of, artificial-intelligence]---
 
+
+| Tool | Accessibility Knowledge | ARIA Support | WCAG Compliance | Pricing |
+|---|---|---|---|---|
+| Claude | Strong WCAG 2.1 AA/AAA understanding | Generates correct ARIA attributes | Identifies compliance gaps | API-based (per token) |
+| ChatGPT (GPT-4) | Good a11y pattern knowledge | Suggests ARIA roles and states | Explains success criteria | $20/month (Plus) |
+| GitHub Copilot | Inline ARIA attribute completion | Context-aware suggestions | Limited compliance checking | $10-39/user/month |
+| Cursor | Project-wide a11y analysis | Reads existing component patterns | Cross-file consistency checks | $20/month (Pro) |
+| axe DevTools | Dedicated a11y testing | Rule-based ARIA validation | Automated WCAG audits | Free browser extension |
+
+
 {% raw %}
 
 Building accessible multi-select listbox components requires careful attention to ARIA specifications, keyboard interactions, and screen reader compatibility. The right AI assistant can significantly speed up development while ensuring your component meets WCAG 2.1 AA standards. This guide evaluates how different AI coding tools handle the complexity of accessible listbox implementation.

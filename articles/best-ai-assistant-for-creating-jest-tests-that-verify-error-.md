@@ -28,6 +28,16 @@ intent-checked: true
 voice-checked: true---
 
 
+| Tool | Jest Test Generation | Edge Case Coverage | Framework Awareness | Pricing |
+|---|---|---|---|---|
+| Claude | Generates full test suites with assertions | Handles async, error, and boundary cases | Strong Jest/Vitest/Playwright knowledge | API-based (per token) |
+| ChatGPT (GPT-4) | Complete test files with mocks | Good error scenario coverage | Broad framework support | $20/month (Plus) |
+| GitHub Copilot | Inline test completion as you type | Suggests missing test branches | Context-aware from open files | $10-39/user/month |
+| Cursor | Project-aware test generation | Reads source to find edge cases | Understands project test patterns | $20/month (Pro) |
+| Codeium | Fast inline test suggestions | Basic happy-path coverage | Template-based patterns | Free tier available |
+
+
+
 AI assistants have become valuable tools for developers writing Jest tests, particularly when it comes to testing React error boundary fallback rendering. Testing error boundaries presents unique challenges that require understanding component lifecycle, error propagation, and state management. This guide examines how different AI coding assistants approach generating Jest tests for error boundary scenarios and what to look for when choosing an AI tool for this specific use case.
 
 ## Key Takeaways

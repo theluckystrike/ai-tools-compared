@@ -27,6 +27,16 @@ score: 8
 intent-checked: true
 voice-checked: true---
 
+
+| Tool | Rate Limiting Patterns | DDoS Protection | Integration | Pricing |
+|---|---|---|---|---|
+| Claude | Token bucket, sliding window algorithms | Abuse pattern detection logic | Generates middleware code | API-based (per token) |
+| ChatGPT (GPT-4) | Multiple algorithm implementations | Security analysis | Broad framework support | $20/month (Plus) |
+| GitHub Copilot | Inline rate limit code | Basic security patterns | Context-aware from project | $10-39/user/month |
+| Cloudflare WAF | Built-in rate limiting rules | Native DDoS protection | API and dashboard | Free tier available |
+| Kong Gateway | Rate limiting plugin | Bot detection | API gateway integration | Free (open source) |
+
+
 {% raw %}
 
 API rate limiting and abuse detection are critical security layers that protect your services from excessive usage, denial-of-service attacks, and malicious actors. Configuring these systems correctly requires testing across various scenarios, edge cases, and failure modes. AI tools have emerged as powerful assistants for generating test configurations, validating rules, and automating abuse detection testing workflows.

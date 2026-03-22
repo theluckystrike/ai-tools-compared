@@ -28,6 +28,16 @@ intent-checked: true
 voice-checked: true---
 
 
+| Tool | Key Strength | Context Window | API Access | Pricing |
+|---|---|---|---|---|
+| Claude | Deep reasoning and long context | 200K tokens | Full REST API | API-based (per token) |
+| ChatGPT (GPT-4) | Broad knowledge and plugins | 128K tokens | Full REST API | $20/month (Plus) |
+| GitHub Copilot | Real-time IDE integration | File-level context | Via IDE extension | $10-39/user/month |
+| Cursor | Full codebase awareness | Project-level context | Built into IDE | $20/month (Pro) |
+| Codeium | Fast completions, free tier | File-level context | IDE extensions | Free tier available |
+
+
+
 Claude's free tier (5 messages daily) offers the best code quality per message; Grok's free tier and GitHub Copilot's free open-source access provide unlimited usage at zero cost. Choose Claude free tier if you can work within the message limit; use Copilot if you contribute to open-source; use paid plans sparingly for high-value projects. This guide compares budget AI tools by actual freelancer ROI.
 
 ## Key Takeaways

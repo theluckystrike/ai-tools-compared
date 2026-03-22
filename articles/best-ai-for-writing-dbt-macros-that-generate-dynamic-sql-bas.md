@@ -27,6 +27,16 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
+| Tool | SQL Generation | Query Optimization | Schema Awareness | Pricing |
+|---|---|---|---|---|
+| Claude | Complex queries with CTEs and window functions | Suggests index strategies | Understands schema from DDL | API-based (per token) |
+| ChatGPT (GPT-4) | Full SQL with joins and subqueries | Performance analysis | Broad dialect support | $20/month (Plus) |
+| GitHub Copilot | Inline SQL completion in IDE | Basic optimization hints | Reads schema from project files | $10-39/user/month |
+| Cursor | Project-aware query generation | Analyzes existing queries | Cross-file schema understanding | $20/month (Pro) |
+| DataGrip AI | Native database IDE integration | Built-in query profiling | Live schema introspection | $9.90/month (Individual) |
+
+
 {% raw %}
 
 Writing dbt macros that generate dynamic SQL based on configuration requires understanding both Jinja2 templating and SQL generation patterns. The best AI coding assistants in 2026 can significantly speed up this process by understanding your dbt project's structure, generating reusable macro templates, and handling complex conditional logic. This guide compares the top AI tools for this specific use case.

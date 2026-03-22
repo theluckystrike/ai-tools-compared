@@ -27,6 +27,16 @@ score: 8
 voice-checked: true
 intent-checked: true---
 
+
+| Tool | Jest Test Generation | Edge Case Coverage | Framework Awareness | Pricing |
+|---|---|---|---|---|
+| Claude | Generates full test suites with assertions | Handles async, error, and boundary cases | Strong Jest/Vitest/Playwright knowledge | API-based (per token) |
+| ChatGPT (GPT-4) | Complete test files with mocks | Good error scenario coverage | Broad framework support | $20/month (Plus) |
+| GitHub Copilot | Inline test completion as you type | Suggests missing test branches | Context-aware from open files | $10-39/user/month |
+| Cursor | Project-aware test generation | Reads source to find edge cases | Understands project test patterns | $20/month (Pro) |
+| Codeium | Fast inline test suggestions | Basic happy-path coverage | Template-based patterns | Free tier available |
+
+
 {% raw %}
 
 Claude produces the most reliable Jest tests for React Suspense because it correctly implements `waitFor` and `findBy` queries for async behavior, properly handles error boundaries, and understands React's concurrent rendering model. Other AI tools like GitHub Copilot generate working basic tests but often miss edge cases around error handling and concurrent features, while Claude consistently generates tests that work on first use without manual refinement.

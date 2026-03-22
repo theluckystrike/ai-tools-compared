@@ -27,6 +27,16 @@ score: 8
 intent-checked: true
 voice-checked: true---
 
+
+| Tool | SQL Generation | Query Optimization | Schema Awareness | Pricing |
+|---|---|---|---|---|
+| Claude | Complex queries with CTEs and window functions | Suggests index strategies | Understands schema from DDL | API-based (per token) |
+| ChatGPT (GPT-4) | Full SQL with joins and subqueries | Performance analysis | Broad dialect support | $20/month (Plus) |
+| GitHub Copilot | Inline SQL completion in IDE | Basic optimization hints | Reads schema from project files | $10-39/user/month |
+| Cursor | Project-aware query generation | Analyzes existing queries | Cross-file schema understanding | $20/month (Pro) |
+| DataGrip AI | Native database IDE integration | Built-in query profiling | Live schema introspection | $9.90/month (Individual) |
+
+
 {% raw %}
 
 Slow query logs are one of the most valuable resources for identifying database performance bottlenecks. When queries exceed a configured execution time threshold, databases record them along with execution metrics, execution plans, and contextual information. AI tools have emerged as powerful assistants for analyzing these logs and generating actionable performance tuning recommendations. This guide explores the best approaches for using AI to transform slow query log data into optimized SQL and index improvements.

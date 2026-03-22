@@ -1,0 +1,337 @@
+---
+layout: default
+title: "How to Build AI-Powered Slack Bots"
+description: "Build a Slack bot powered by Claude or GPT-4 — slash commands, message events, context-aware threads, and production deployment with Python Bolt"
+date: 2026-03-22
+author: theluckystrike
+permalink: how-to-build-ai-powered-slack-bots
+categories: [guides]
+reviewed: true
+score: 8
+intent-checked: true
+voice-checked: true
+tags: [ai-tools-compared]
+---
+
+{% raw %}
+Slack bots backed by LLMs are the fastest path to getting AI into your team's workflow without forcing everyone to learn a new tool. This guide builds a production-ready bot with slash commands, thread-aware conversation history, and structured responses.
+
+## Architecture
+
+```
+Slack → Bolt App (FastAPI) → Claude/GPT-4 → Slack Response
+              ↓
+        Thread History (Redis)
+```
+
+The Slack Bolt SDK handles the OAuth, event routing, and response timing. Your bot focuses on the AI layer.
+
+## Setup
+
+```bash
+pip install slack-bolt anthropic redis fastapi uvicorn python-dotenv
+```
+
+Create a Slack app at api.slack.com:
+- Add scopes: `app_mentions:read`, `channels:history`, `chat:write`, `commands`
+- Enable Socket Mode for local development, or set a public Request URL for production
+- Add slash commands: `/ask`, `/summarize`
+
+```bash
+# .env
+SLACK_BOT_TOKEN=xoxb-...
+SLACK_APP_TOKEN=xapp-...  # For Socket Mode
+SLACK_SIGNING_SECRET=...
+ANTHROPIC_API_KEY=...
+REDIS_URL=redis://localhost:6379
+```
+
+## Core Bot Implementation
+
+```python
+# bot.py
+import os
+import json
+from dotenv import load_dotenv
+from slack_bolt import App
+from slack_bolt.adapter.socket_mode import SocketModeHandler
+import redis
+from anthropic import Anthropic
+
+load_dotenv()
+
+app = App(token=os.environ["SLACK_BOT_TOKEN"])
+claude = Anthropic()
+r = redis.from_url(os.environ.get("REDIS_URL", "redis://localhost:6379"))
+
+SYSTEM_PROMPT = """You are a helpful assistant in a Slack workspace.
+Rules:
+- Be concise. Slack messages should be scannable.
+- Use Slack markdown: *bold*, _italic_, `code`, ```code blocks```
+- Use bullet points (•) for lists, not hyphens
+- If asked about code, always put it in a code block
+- If unsure, say so rather than guessing"""
+
+def get_thread_history(channel_id: str, thread_ts: str, limit: int = 20) -> list[dict]:
+    """Load conversation history from Redis cache."""
+    key = f"thread:{channel_id}:{thread_ts}"
+    cached = r.get(key)
+    if cached:
+        history = json.loads(cached)
+        return history[-limit:]
+    return []
+
+def save_thread_history(
+    channel_id: str,
+    thread_ts: str,
+    history: list[dict],
+    ttl: int = 86400  # 24 hours
+):
+    key = f"thread:{channel_id}:{thread_ts}"
+    r.setex(key, ttl, json.dumps(history[-50:]))  # Cap at 50 messages
+
+def ask_claude(user_message: str, history: list[dict]) -> str:
+    messages = history + [{"role": "user", "content": user_message}]
+    response = claude.messages.create(
+        model="claude-opus-4-6",
+        max_tokens=1024,
+        system=SYSTEM_PROMPT,
+        messages=messages
+    )
+    return response.content[0].text
+
+# Handle @mentions in channels
+@app.event("app_mention")
+def handle_mention(event, say, client):
+    channel_id = event["channel"]
+    thread_ts = event.get("thread_ts", event["ts"])
+    user_id = event["user"]
+    text = event["text"]
+
+    # Remove the bot mention from the text
+    bot_id = client.auth_test()["user_id"]
+    user_message = text.replace(f"<@{bot_id}>", "").strip()
+
+    if not user_message:
+        say(text="What can I help you with?", thread_ts=thread_ts)
+        return
+
+    # Load thread history for context
+    history = get_thread_history(channel_id, thread_ts)
+
+    # Show typing indicator
+    client.chat_postEphemeral(
+        channel=channel_id,
+        user=user_id,
+        thread_ts=thread_ts,
+        text="Thinking..."
+    )
+
+    response_text = ask_claude(user_message, history)
+
+    # Update history
+    history.append({"role": "user", "content": user_message})
+    history.append({"role": "assistant", "content": response_text})
+    save_thread_history(channel_id, thread_ts, history)
+
+    say(text=response_text, thread_ts=thread_ts)
+
+# /ask slash command
+@app.command("/ask")
+def handle_ask(ack, command, respond):
+    ack()  # Must acknowledge within 3 seconds
+
+    question = command["text"].strip()
+    if not question:
+        respond(text="Usage: `/ask <your question>`")
+        return
+
+    response_text = ask_claude(question, [])
+
+    respond({
+        "response_type": "in_channel",  # Visible to everyone
+        "blocks": [
+            {
+                "type": "section",
+                "text": {"type": "mrkdwn", "text": f"*Question:* {question}"}
+            },
+            {"type": "divider"},
+            {
+                "type": "section",
+                "text": {"type": "mrkdwn", "text": response_text}
+            }
+        ]
+    })
+```
+
+## Slash Command: /summarize
+
+A more complex command that fetches channel history from Slack and summarizes it:
+
+```python
+@app.command("/summarize")
+def handle_summarize(ack, command, respond, client):
+    ack()
+
+    channel_id = command["channel_id"]
+    args = command["text"].strip()
+    message_count = 50  # Default
+
+    if args.isdigit():
+        message_count = min(int(args), 200)
+
+    # Fetch channel history
+    try:
+        result = client.conversations_history(
+            channel=channel_id,
+            limit=message_count
+        )
+    except Exception as e:
+        respond(text=f"Error fetching history: {e}")
+        return
+
+    messages = result.get("messages", [])
+    if not messages:
+        respond(text="No messages found in this channel.")
+        return
+
+    # Format messages for Claude
+    formatted = []
+    for msg in reversed(messages):  # Oldest first
+        user = msg.get("user", "bot")
+        text = msg.get("text", "")
+        if text and not text.startswith("<"):  # Skip automated messages
+            formatted.append(f"<@{user}>: {text}")
+
+    conversation = "\n".join(formatted)
+
+    summary_response = claude.messages.create(
+        model="claude-opus-4-6",
+        max_tokens=800,
+        messages=[{
+            "role": "user",
+            "content": f"""Summarize this Slack channel conversation.
+
+Format:
+• *Key topics discussed* (2-4 bullet points)
+• *Decisions made* (if any)
+• *Action items* (if any)
+• *Open questions* (if any)
+
+Keep it scannable. Skip small talk.
+
+Conversation:
+{conversation[:6000]}"""  # Token safety
+        }]
+    )
+
+    summary = summary_response.content[0].text
+
+    respond({
+        "response_type": "ephemeral",  # Only visible to requester
+        "blocks": [
+            {
+                "type": "header",
+                "text": {
+                    "type": "plain_text",
+                    "text": f"Summary of last {len(formatted)} messages"
+                }
+            },
+            {
+                "type": "section",
+                "text": {"type": "mrkdwn", "text": summary}
+            }
+        ]
+    })
+```
+
+## Handling Slash Command Timeouts
+
+Slack requires a response within 3 seconds. For slow AI calls, use the `respond` URL pattern:
+
+```python
+import threading
+
+@app.command("/analyze")
+def handle_analyze(ack, command, respond):
+    ack(text="Analyzing... I'll reply in a moment.")  # Immediate ack
+
+    # Do the slow work in a background thread
+    def do_analysis():
+        result = ask_claude(
+            f"Analyze this and provide detailed feedback: {command['text']}",
+            []
+        )
+        respond({
+            "replace_original": True,
+            "text": result
+        })
+
+    thread = threading.Thread(target=do_analysis)
+    thread.start()
+```
+
+## Running the Bot
+
+```python
+# main.py
+if __name__ == "__main__":
+    handler = SocketModeHandler(app, os.environ["SLACK_APP_TOKEN"])
+    handler.start()
+```
+
+For production, switch to HTTP mode:
+
+```python
+from slack_bolt.adapter.fastapi import SlackRequestHandler
+from fastapi import FastAPI, Request
+
+api = FastAPI()
+handler = SlackRequestHandler(app)
+
+@api.post("/slack/events")
+async def events(req: Request):
+    return await handler.handle(req)
+
+# uvicorn main:api --host 0.0.0.0 --port 8080
+```
+
+```dockerfile
+FROM python:3.12-slim
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+COPY . .
+EXPOSE 8080
+CMD ["uvicorn", "main:api", "--host", "0.0.0.0", "--port", "8080"]
+```
+
+## Rate Limiting and Cost Control
+
+```python
+RATE_LIMIT_REQUESTS = 10   # Per user per hour
+RATE_LIMIT_WINDOW = 3600   # Seconds
+
+def check_rate_limit(user_id: str) -> bool:
+    key = f"ratelimit:{user_id}"
+    count = r.incr(key)
+    if count == 1:
+        r.expire(key, RATE_LIMIT_WINDOW)
+    return count <= RATE_LIMIT_REQUESTS
+
+# In your handler:
+if not check_rate_limit(event["user"]):
+    say("You've hit the rate limit. Try again in an hour.", thread_ts=thread_ts)
+    return
+```
+
+## Related Reading
+
+- [How to Build a RAG Chatbot with Pinecone](/ai-tools-compared/how-to-build-rag-chatbot-with-pinecone/)
+- [How to Build Custom MCP Servers for Claude](/ai-tools-compared/how-to-build-custom-mcp-servers-for-claude/)
+- [How to Build Voice AI Apps with Claude](/ai-tools-compared/how-to-build-voice-ai-apps-with-claude/)
+
+---
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

@@ -27,6 +27,16 @@ score: 8
 intent-checked: true
 voice-checked: true---
 
+
+| Tool | TypeScript Support | Strict Mode Help | Type Inference | Pricing |
+|---|---|---|---|---|
+| Claude | Strong generic and conditional type support | Fixes strict null checks, noImplicitAny | Infers complex union/intersection types | API-based (per token) |
+| ChatGPT (GPT-4) | Good type generation | Handles most strict mode errors | Reasonable type narrowing | $20/month (Plus) |
+| GitHub Copilot | Inline type completions | Auto-suggests type guards | Context-aware from tsconfig | $10-39/user/month |
+| Cursor | Full project type analysis | Reads tsconfig.json settings | Cross-file type resolution | $20/month (Pro) |
+| Codeium | Basic type suggestions | Limited strict mode help | Template-based inference | Free tier available |
+
+
 {% raw %}
 
 TypeScript's strict mode transforms many runtime errors into compile-time failures, which catches bugs early but demands precise type annotations. Type narrowing—the process by which TypeScript narrows an union type to a specific type within conditional blocks—becomes especially critical when strict mode is enabled. Understanding which AI assistant handles these type narrowing compiler errors most effectively can dramatically improve your development velocity.

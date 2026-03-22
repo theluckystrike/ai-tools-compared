@@ -27,6 +27,16 @@ score: 8
 intent-checked: true
 voice-checked: true---
 
+
+| Tool | Jest Test Generation | Edge Case Coverage | Framework Awareness | Pricing |
+|---|---|---|---|---|
+| Claude | Generates full test suites with assertions | Handles async, error, and boundary cases | Strong Jest/Vitest/Playwright knowledge | API-based (per token) |
+| ChatGPT (GPT-4) | Complete test files with mocks | Good error scenario coverage | Broad framework support | $20/month (Plus) |
+| GitHub Copilot | Inline test completion as you type | Suggests missing test branches | Context-aware from open files | $10-39/user/month |
+| Cursor | Project-aware test generation | Reads source to find edge cases | Understands project test patterns | $20/month (Pro) |
+| Codeium | Fast inline test suggestions | Basic happy-path coverage | Template-based patterns | Free tier available |
+
+
 {% raw %}
 
 Testing React Context Providers requires a different approach than testing regular components. Your tests must verify that the provider correctly maintains state, exposes the right values to consumers, handles updates properly, and gracefully handles edge cases. AI coding assistants can significantly accelerate this process when you know how to prompt them effectively.

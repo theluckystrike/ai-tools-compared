@@ -28,6 +28,16 @@ voice-checked: true
 intent-checked: true---
 
 
+| Tool | Data Processing Code | DataFrame Operations | Performance Tips | Pricing |
+|---|---|---|---|---|
+| Claude | Full pandas pipelines with groupby and merge | Handles MultiIndex, pivot, melt | Suggests vectorized operations | API-based (per token) |
+| ChatGPT (GPT-4) | Complete data processing scripts | Good DataFrame manipulation | Memory optimization advice | $20/month (Plus) |
+| GitHub Copilot | Inline pandas code completion | Autocompletes method chains | Context-dependent suggestions | $10-39/user/month |
+| Cursor | Reads existing DataFrames from project | Project-aware transformations | Identifies slow patterns | $20/month (Pro) |
+| Codeium | Fast pandas method suggestions | Basic operation completions | Limited optimization help | Free tier available |
+
+
+
 AI tools like Claude and ChatGPT 4o can generate pandas code for Google Analytics data analysis, handling nested event parameters, datetime conversions, and cohort analysis. Claude excels at producing modular, readable code when you provide sample data structures. GitHub Copilot offers inline suggestions that adapt to your coding style, while Cursor enables iterative refactoring for complex pipelines. The key to accurate results is providing clear context about your GA export structure and desired analysis output.
 
 ## Key Takeaways

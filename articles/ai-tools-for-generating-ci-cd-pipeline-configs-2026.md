@@ -11,6 +11,7 @@ reviewed: true
 score: 9
 voice-checked: true
 intent-checked: true---
+tags: [ai-tools-compared, artificial-intelligence]
 ---
 layout: default
 title: "AI Tools for Generating CI CD Pipeline Configs 2026"

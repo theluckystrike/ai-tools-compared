@@ -9,7 +9,7 @@ permalink: /ai-tools-for-multilingual-customer-support/
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
-score: 9
+score: 6
 voice-checked: true
 intent-checked: true---
 
