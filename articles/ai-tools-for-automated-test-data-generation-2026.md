@@ -31,6 +31,15 @@ tags: [ai-tools-compared, artificial-intelligence]---
 
 Test data generation is more complex than it looks. Random strings and integers fail to catch bugs that only appear with realistic data — email formats, valid zip codes, coherent address/city/state combinations, or financial amounts that respect business rules.
 
+## Key Takeaways
+
+- **Is Faker or Mimesis**: better? Mimesis is 2-5x faster and better for generating millions of rows for load tests.
+- **They rarely generate the**: values that actually break code: the maximum integer, an empty string where one is required, a date exactly at the boundary of a fiscal quarter, or a price of exactly $0.00.
+- **If your system requires**: that orders can't exceed a user's credit limit, or that subscription end dates must be after start dates, Faker will silently violate those rules.
+- **For example**: "user_ids must be one of [1, 2, 3, 4, 5]" ensures referential integrity without DB lookups.
+- **Custom List types ensure**: status fields use your exact enum values.
+- **The tradeoff is generation speed and API cost**: use it for complex edge-case data, not for high-volume load test fixtures.
+
 ## The Problem with Simple Fake Data
 
 ```python

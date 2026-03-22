@@ -30,6 +30,15 @@ voice-checked: true---
 
 Claude and ChatGPT can generate realistic test data that maintains database referential integrity by analyzing your schema and understanding foreign key constraints. These AI tools synthesize data that respects relationships between tables, maintaining consistency across orders, users, and products while avoiding the privacy concerns of copying production data and the errors of manual script generation.
 
+## Key Takeaways
+
+- **GenerateData This open-source tool**: uses customizable templates to produce data matching your schema.
+- **Datributa handles large schemas**: best because it analyzes the full schema graph before generating any rows.
+- **Stale fixtures are one of the most common causes of false-positive test passes**: the test succeeds against old data structures while the application code assumes a new column exists.
+- **Generate 50 users**: 200 orders, and 500 order_items with valid foreign key relationships, realistic names, and US-format addresses" produces usable SQL output in seconds.
+- **An user table links to orders**: which connect to products and payment records.
+- **If your test dataset**: contains an order referencing a non-existent user, your tests will fail with integrity errors rather than revealing actual application bugs.
+
 ## Why Referential Integrity Matters in Test Data
 
 When your application relies on related database tables, test data must reflect real-world relationships. An user table links to orders, which connect to products and payment records. If your test dataset contains an order referencing a non-existent user, your tests will fail with integrity errors rather than revealing actual application bugs.
