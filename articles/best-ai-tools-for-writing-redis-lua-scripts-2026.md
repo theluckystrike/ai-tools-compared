@@ -2,8 +2,8 @@
 title: "Best AI Tools for Writing Redis Lua Scripts (2026)"
 description: "Compare AI tools for Redis Lua scripting. Evaluate Claude, ChatGPT, and specialized tools for atomic operations, rate limiting, caching, and pub/sub patterns."
 author: "theluckystrike"
-date: "2026-03-22"
-updated: "2026-03-22"
+date: 2026-03-22
+updated: 2026-03-22
 reviewed: true
 score: 8
 voice-checked: true
