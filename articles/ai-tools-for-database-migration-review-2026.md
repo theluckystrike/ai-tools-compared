@@ -352,6 +352,39 @@ async def main():
 asyncio.run(main())
 ```
 
+## Tool Comparison: AI Models for Migration Review
+
+Not every AI model performs equally well on migration analysis. Here is how the leading models behave on database schema work.
+
+| Model | Strength | Weakness |
+|---|---|---|
+| Claude Opus 4.6 | Deep reasoning about lock semantics, multi-step DDL patterns | Verbose explanations |
+| GPT-4o | Strong on common Alembic patterns, good JSON output | Misses PostgreSQL-specific lock behaviors |
+| Gemini 1.5 Pro | Fast review, good for Flyway XML | Less reliable on complex rollback chains |
+| Mistral Large | Low cost, fast | Higher miss rate on implicit transaction issues |
+
+For production pipelines, Claude Opus 4.6 is the current best choice: it understands the difference between `ALTER TABLE ... ADD COLUMN` (lock-free in PostgreSQL 11+) versus `ALTER TABLE ... ADD COLUMN NOT NULL DEFAULT expr` (full table rewrite in PostgreSQL 10 and below), and surfaces these distinctions correctly in its findings.
+
+## Extending the Review for Flyway and Liquibase
+
+The same review service works with Flyway SQL migrations and Liquibase XML changesets. Update the file pattern matching in `get_migration_files()` to include the relevant paths:
+
+```python
+if any(pat in filename for pat in [
+    "migrations/", "alembic/", "db/migrate/",
+    "flyway/", "V__", "R__",  # Flyway versioned and repeatable migrations
+    "liquibase/", "changelog/",  # Liquibase changesets
+]) and any(filename.endswith(ext) for ext in [".sql", ".py", ".xml", ".yaml"]):
+```
+
+For Liquibase YAML changesets, include the format in the review prompt so Claude knows to look for `runOnChange`, `failOnError`, and `preConditions` blocks, which carry their own risk surface.
+
+## Deployment Considerations
+
+Run the review service behind an internal load balancer, not on the public internet. Migration content often contains table names, column names, and business logic that should stay within your network perimeter. Use mTLS or a shared secret header for authentication between GitHub Actions and the review endpoint. Keep API keys for the Claude API in a secrets manager (AWS Secrets Manager or HashiCorp Vault), not in environment variables baked into Docker images.
+
+For teams running many PRs simultaneously, add a queue (Redis or SQS) in front of the review worker to avoid overwhelming the Anthropic API rate limits. The `claude-opus-4-6` model allows 5 requests per minute on the default tier; batch small migrations into a single prompt to stay within that limit during peak CI hours.
+
 ## Related Reading
 
 - [Best AI Tools for Writing Database Migrations](/best-ai-tools-for-writing-database-migrations/)
