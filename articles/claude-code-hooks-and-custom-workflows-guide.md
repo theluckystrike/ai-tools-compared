@@ -12,6 +12,8 @@ intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared]
 ---
+{% raw %}
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
 {% endraw %}

@@ -13,6 +13,7 @@ score: 8
 reviewed: true
 tags: [ai-tools-compared, artificial-intelligence]
 ---
+{% raw %}
 ---
 layout: default
 title: "How Much Does Cursor AI Actually Cost Per Month All"
@@ -377,3 +378,4 @@ Almost always. The published "$60-100+" is a starting anchor. Volume discounts, 
 - [Midjourney Basic Plan Image Limits Per Month: Real Numbers](/ai-tools-compared/midjourney-basic-plan-image-limits-per-month-real-numbers-20/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
