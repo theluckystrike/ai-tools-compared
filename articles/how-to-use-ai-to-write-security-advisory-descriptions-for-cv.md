@@ -11,7 +11,8 @@ tags: [ai-tools-compared, tools, security, artificial-intelligence]
 reviewed: true
 score: 8
 voice-checked: true
-intent-checked: true---
+intent-checked: true
+---
 
 
 Use AI tools to generate CVE advisory descriptions by providing the vulnerability technical details (CWE classification, affected versions, attack vector, impact) and requesting output that aligns with NVD formatting standards. AI accelerates the writing of sections covering technical impact, attack vectors, CVSS severity, and remediation steps while ensuring descriptions remain accurate and accessible to both technical and non-technical audiences.

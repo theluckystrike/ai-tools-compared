@@ -10,20 +10,8 @@ score: 9
 categories: [guides]
 voice-checked: true
 tags: [ai-tools-compared]
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "Self-Hosted Alternative to Tabnine That Runs on Local"
-description: "Discover the best self-hosted AI code completion tools that run locally. Compare features, performance, and setup requirements for local alternatives to"
-date: 2026-03-16
-author: "AI Tools Compared"
-permalink: /self-hosted-alternative-to-tabnine-that-runs-on-local-hardwa/
-reviewed: true
-score: 9
-categories: [guides]
-voice-checked: true
-tags: [ai-tools-compared]
-intent-checked: true---
 {% raw %}
 
 # Self-Hosted Alternative to Tabnine That Runs on Local Hardware Compared

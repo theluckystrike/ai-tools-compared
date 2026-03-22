@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, troubleshooting, artificial-intelligence]
 reviewed: true
 score: 8
 voice-checked: true
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "AI Tools for Writing dbt Seeds and Fixtures for Testing"
-description: "Discover how AI can help you generate dbt seeds and fixtures to test your model transformations efficiently"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /ai-tools-for-writing-dbt-seeds-and-fixtures-for-testing-mode/
-categories: [guides]
-tags: [ai-tools-compared, tools, troubleshooting, artificial-intelligence]
-reviewed: true
-score: 8
-voice-checked: true
-intent-checked: true---
 
 {% raw %}
 

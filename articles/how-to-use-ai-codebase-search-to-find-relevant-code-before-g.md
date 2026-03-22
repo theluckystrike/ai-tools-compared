@@ -11,7 +11,8 @@ tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
+---
 
 
 Use AI codebase search to find relevant code before generating, reducing hallucinations and ensuring consistency with existing patterns. This guide shows the search workflow that speeds up both finding references and generating code that matches your codebase style.

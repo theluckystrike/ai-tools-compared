@@ -11,21 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared]---
+tags: [ai-tools-compared]
 ---
-layout: default
-title: "Prompt Engineering Patterns for Code Generation"
-description: "Practical prompt patterns that improve AI code generation quality: role priming, context injection, constraint framing, chain-of-thought, and self-review loops."
-date: 2026-03-21
-last_modified_at: 2026-03-21
-author: theluckystrike
-permalink: /prompt-engineering-patterns-for-code-generation/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared]---
 
 {% raw %}
 

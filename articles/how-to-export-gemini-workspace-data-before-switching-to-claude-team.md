@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, claude-ai]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Export Gemini Workspace Data Before Switching"
-description: "A practical guide for developers and power users on exporting your Google Gemini workspace data before migrating to Claude Team. Includes code examples"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-export-gemini-workspace-data-before-switching-to-claude-team/
-categories: [guides]
-tags: [ai-tools-compared, tools, claude-ai]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 
 To export your Gemini workspace data before switching to Claude Team, use Google Takeout at takeout.google.com to download your conversation history, custom Gems, and settings as JSON files. Back up your configuration, parse the exported JSON programmatically if needed, and document your custom instructions and prompts so you can recreate them in Claude. The process takes minutes to set up, though Google may need hours to prepare large archives.

@@ -11,23 +11,8 @@ tags: [ai-tools-compared, tools, artificial-intelligence, workflow]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
 ---
-
-
-layout: default
-date: 2026-03-21
-last_modified_at: 2026-03-21
-author: theluckystrike
-title: "AI Tools for Writing GitHub Actions Workflows (2026)"
-description: "Compare AI tools for generating CI/CD workflows with GitHub Actions. Includes matrix strategies, caching optimization, and real workflow examples."
-permalink: /ai-tools/best-ai-tools-for-github-actions-workflows/
-categories: [guides]
-tags: [ai-tools-compared, tools, artificial-intelligence, workflow]
-reviewed: true
-score: 9
-voice-checked: true
-intent-checked: true---
 {% raw %}
 
 ## Key Takeaways

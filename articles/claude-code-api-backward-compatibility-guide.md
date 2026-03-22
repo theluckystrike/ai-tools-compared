@@ -11,21 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, claude-ai, api]---
+tags: [ai-tools-compared, claude-ai, api]
 ---
-layout: default
-title: "Claude Code API Backward Compatibility Guide"
-description: "A guide to maintaining API backward compatibility using Claude Code, covering version strategies, contract testing, and migration patterns"
-date: 2026-03-18
-last_modified_at: 2026-03-18
-author: theluckystrike
-permalink: /claude-code-api-backward-compatibility-guide/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, claude-ai, api]---
 
 {% raw %}
 

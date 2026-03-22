@@ -11,21 +11,8 @@ score: 8
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison, artificial-intelligence, chatgpt]---
+tags: [ai-tools-compared, comparison, artificial-intelligence, chatgpt]
 ---
-layout: default
-title: "Copy AI vs ChatGPT for Social Media Content"
-description: "Choose Copy.ai at $49 per month for quick template-based social media posts without prompt engineering—it works well for marketing teams and predictable"
-date: 2026-03-15
-last_modified_at: 2026-03-22
-author: theluckystrike
-permalink: /copy-ai-vs-chatgpt-for-social-media-content/
-reviewed: true
-score: 8
-categories: [comparisons]
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, comparison, artificial-intelligence, chatgpt]---
 
 {% raw %}
 

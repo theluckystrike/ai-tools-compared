@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, best-of, api]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Best Way to Configure CursorRules for Python FastAPI"
-description: "A practical guide to configuring CursorRules for Python FastAPI projects with Pydantic models, featuring code examples and recommendations for developers"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /best-way-to-configure-cursorrules-for-python-fastapi-project/
-categories: [guides]
-tags: [ai-tools-compared, tools, best-of, api]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

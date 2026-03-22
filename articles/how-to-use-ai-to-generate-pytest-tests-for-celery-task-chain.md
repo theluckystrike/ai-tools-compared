@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "How to Use AI to Generate pytest Tests for Celery Task"
-description: "Learn practical approaches for using AI tools to generate pytest tests for Celery task chains and workflows"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-use-ai-to-generate-pytest-tests-for-celery-task-chain/
-categories: [guides]
-tags: [ai-tools-compared, tools, artificial-intelligence]
-reviewed: true
-score: 9
-voice-checked: true
-intent-checked: true---
 
 {% raw %}
 

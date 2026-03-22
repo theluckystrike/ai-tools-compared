@@ -280,6 +280,168 @@ Claude generates overlay syntax correctly. The key distinction: use `final` for 
 - **NixOS module options types** — `types.attrs` is almost always wrong; ask Claude to use `types.attrsOf` with a submodule
 - **Cross-compilation** — `depsBuildBuild`, `depsBuildHost`, etc. are often mixed up
 
+## Packaging a Node.js Application
+
+**Prompt:**
+```text
+Write a Nix derivation for a Node.js application. Source is at github.com/example/myapp.
+The package.json is at the root. Build with npm ci && npm run build.
+Output goes to bin/myapp.js. Runtime deps: nodejs_20, systemd (for logging).
+Build deps: nodejs_20, git. Include a meta section.
+```
+
+Claude correctly generates:
+```nix
+{ lib, stdenv, fetchFromGitHub, nodejs_20, git, systemd }:
+
+stdenv.mkDerivation rec {
+  pname = "myapp";
+  version = "1.0.0";
+
+  src = fetchFromGitHub {
+    owner = "example";
+    repo = "myapp";
+    rev = version;
+    sha256 = "sha256-AAAA...";
+  };
+
+  nativeBuildInputs = [ git ];
+  buildInputs = [ nodejs_20 ];
+  propagatedBuildInputs = [ systemd ];
+
+  buildPhase = ''
+    npm ci
+    npm run build
+  '';
+
+  installPhase = ''
+    mkdir -p $out/bin
+    cp bin/myapp.js $out/bin/
+    chmod +x $out/bin/myapp.js
+  '';
+
+  meta = with lib; {
+    description = "My Node.js app";
+    license = licenses.mit;
+    platforms = platforms.unix;
+  };
+}
+```
+
+The key insight: `nativeBuildInputs` are tools used during build, `buildInputs` are runtime dependencies, and `propagatedBuildInputs` are propagated to packages that depend on this derivation.
+
+## Using nixpkgs-unstable vs Stable
+
+For production, ask Claude to help you lock nixpkgs:
+
+```text
+Write a flake.nix that uses nixpkgs-unstable but allows pinning
+to a specific commit for reproducibility. Include a way to update
+the lock file with nix flake update.
+```
+
+Claude produces:
+```nix
+{
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+  inputs.flake-utils.url = "github:numtide/flake-utils";
+
+  outputs = { self, nixpkgs, flake-utils }:
+    flake-utils.lib.eachDefaultSystem (system:
+      let
+        pkgs = nixpkgs.legacyPackages.${system};
+      in {
+        devShells.default = pkgs.mkShell {
+          buildInputs = with pkgs; [ nodejs_20 ];
+        };
+      }
+    );
+}
+```
+
+Run `nix flake lock` to create flake.lock, which pins exact commit hashes. This ensures reproducibility across team members.
+
+## Debugging Derivation Builds
+
+When a derivation fails, ask Claude for debugging strategies:
+
+```text
+My derivation is failing with "command not found: git" during build.
+How can I debug a Nix derivation? What does the build sandbox restrict?
+```
+
+Claude explains:
+- Nix builds in an isolated sandbox with limited `/nix/store` access
+- Tools must be explicitly added to `nativeBuildInputs` or `buildInputs`
+- Use `nix develop` to enter the devShell with the same environment as the build
+- Add `set -x` to buildPhase to see command execution
+- Use `builtins.trace` for debugging Nix expressions
+
+## NixOS Configuration Management
+
+For full system configuration, ask Claude to generate NixOS modules:
+
+```text
+Write a NixOS configuration module that sets up a PostgreSQL service
+with automatic backups, creates a database and user, and configures
+systemd to start postgres on boot. Allow overriding the backup directory.
+```
+
+Claude produces:
+```nix
+{ config, lib, pkgs, ... }:
+
+with lib;
+
+let
+  cfg = config.services.postgres-backup;
+in {
+  options.services.postgres-backup = {
+    enable = mkEnableOption "PostgreSQL with backups";
+    backupDir = mkOption {
+      type = types.path;
+      default = "/var/backups/postgres";
+      description = "Directory to store backups";
+    };
+  };
+
+  config = mkIf cfg.enable {
+    services.postgresql = {
+      enable = true;
+      ensureDatabases = [ "myapp" ];
+      ensureUsers = [{
+        name = "appuser";
+        ensureDBOwnership = true;
+      }];
+    };
+
+    systemd.timers.postgres-backup = {
+      wantedBy = [ "timers.target" ];
+      timerConfig.OnCalendar = "daily";
+      timerConfig.Persistent = true;
+    };
+
+    systemd.services.postgres-backup = {
+      script = ''
+        ${pkgs.postgresql}/bin/pg_dump -U postgres myapp > \
+          ${cfg.backupDir}/myapp-$(date +%Y%m%d).sql
+      '';
+    };
+  };
+}
+```
+
+This is a solid pattern for declarative system configuration.
+
+## Common Mistakes to Catch
+
+When Claude generates Nix code, watch for:
+- Using `types.attrs` instead of `types.attrsOf types.str`
+- Forgetting `mkIf cfg.enable` in module config blocks
+- Mixing `buildInputs` and `nativeBuildInputs` (wrong leads to cross-compilation failures)
+- Hardcoding paths like `/usr/bin/python` instead of using `${pkgs.python3}/bin/python`
+- Not using `$out` for install phase output paths
+
 ## Related Reading
 
 - [Best AI Tools for Writing Bazel BUILD Files](/ai-tools-compared/best-ai-tools-for-writing-bazel-build-files-2026/)

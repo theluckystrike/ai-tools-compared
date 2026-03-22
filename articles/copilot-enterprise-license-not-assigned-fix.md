@@ -11,21 +11,8 @@ score: 8
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, troubleshooting]---
+tags: [ai-tools-compared, troubleshooting]
 ---
-layout: default
-title: "Copilot Enterprise License Not Assigned"
-description: "When your organization has purchased GitHub Copilot Enterprise but you cannot access the features, the 'license not assigned' error blocks productivity. This"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /copilot-enterprise-license-not-assigned-fix/
-reviewed: true
-score: 8
-categories: [guides]
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, troubleshooting]---
 
 {% raw %}
 

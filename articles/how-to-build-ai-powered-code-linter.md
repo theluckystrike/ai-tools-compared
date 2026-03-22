@@ -10,20 +10,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
 ---
-layout: default
-title: "How to Build an AI-Powered Code Linter"
-description: "Step-by-step guide to building a custom AI code linter using Claude or GPT-4 API, ESLint plugin architecture, and CI integration with real code examples"
-date: 2026-03-21
-author: theluckystrike
-permalink: /how-to-build-ai-powered-code-linter/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
 
 {% raw %}
 

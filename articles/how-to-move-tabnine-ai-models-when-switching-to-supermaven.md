@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Move Tabnine AI Models When Switching to Supermaven"
-description: "A practical guide for developers transitioning from Tabnine to Supermaven, covering model migration, configuration, and best practices"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-move-tabnine-ai-models-when-switching-to-supermaven/
-categories: [guides]
-tags: [ai-tools-compared, tools, artificial-intelligence]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 
 Tabnine AI models cannot be directly imported into Supermaven because the two platforms use different model architectures and training approaches. Instead, back up your Tabnine configuration from `~/.tabnine/user.config.json` and custom models from the `models/` subdirectory, then configure Supermaven's settings to match your preferences. Supermaven's adaptive learning will personalize suggestions to your coding style within a few hours of active use.

@@ -10,20 +10,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [self-hosted-ai, sql-generation, llm, natural-language-to-sql, ai-tools-compared, open-source-ai, local-ai]---
+tags: [self-hosted-ai, sql-generation, llm, natural-language-to-sql, ai-tools-compared, open-source-ai, local-ai]
 ---
-layout: default
-title: "Best Self Hosted AI Model for Writing SQL Queries from"
-description: "A practical comparison of self-hosted AI models for converting natural language to SQL queries. Includes performance benchmarks, setup instructions, and"
-date: 2026-03-21
-author: theluckystrike
-permalink: /best-self-hosted-ai-model-for-writing-sql-queries-from-natural-language/
-categories: [tutorials, guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [self-hosted-ai, sql-generation, llm, natural-language-to-sql, ai-tools-compared, open-source-ai, local-ai]---
 
 {% raw %}
 

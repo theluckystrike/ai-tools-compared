@@ -11,7 +11,8 @@ tags: [ai-tools-compared, tools, aws, infrastructure, artificial-intelligence]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
+---
 
 
 AWS CDK (Cloud Development Kit) replaces CloudFormation YAML templates with object-oriented code, reducing boilerplate and enabling composition of reusable infrastructure components. However, CDK's learning curve is steep: L3 construct nuances, synth output validation, stack composition patterns, and cross-account exports require deep AWS expertise.

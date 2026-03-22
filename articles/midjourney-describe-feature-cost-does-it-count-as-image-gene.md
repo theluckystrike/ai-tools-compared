@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Midjourney Describe Feature Cost Does It Count as Image"
-description: "No, Midjourney's /describe command does not count toward your image generation quota. It performs image-to-text analysis rather than image generation, so it"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /midjourney-describe-feature-cost-does-it-count-as-image-gene/
-categories: [guides]
-tags: [ai-tools-compared, tools]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 
 No, Midjourney's `/describe` command does not count toward your image generation quota. It performs image-to-text analysis rather than image generation, so it consumes no GPU minutes from your subscription. However, if you click one of the four returned prompts to generate an image from it, that subsequent generation does count against your quota. This guide covers the technical details of how `/describe` billing works and strategies for using it efficiently in prompt engineering workflows.

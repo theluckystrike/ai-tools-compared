@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, privacy, artificial-intelligence]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Does Cursor AI Store Your Code on Their Servers Data"
-description: "A technical breakdown of how Cursor AI handles your code data. Learn about their privacy policy, data retention practices, and configuration options"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /does-cursor-ai-store-your-code-on-their-servers-data-privacy/
-categories: [guides]
-tags: [ai-tools-compared, tools, privacy, artificial-intelligence]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

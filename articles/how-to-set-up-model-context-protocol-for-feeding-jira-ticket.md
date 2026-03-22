@@ -11,21 +11,8 @@ tags: [ai-tools-compared, mcp, jira, ai]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Set Up Model Context Protocol for Feeding Jira"
-description: "A practical guide to setting up Model Context Protocol (MCP) for feeding Jira ticket context to AI tools in 2026. Code examples and configuration steps"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-set-up-model-context-protocol-for-feeding-jira-ticket/
-categories: [guides]
-tags: [ai-tools-compared, mcp, jira, ai]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

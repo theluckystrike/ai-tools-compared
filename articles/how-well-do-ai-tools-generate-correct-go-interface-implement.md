@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How Well Do AI Tools Generate Correct Go Interface Implement"
-description: "A practical evaluation of how accurately AI coding assistants generate Go interface implementations, with real code examples and testing results"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-well-do-ai-tools-generate-correct-go-interface-implement/
-categories: [guides]
-tags: [ai-tools-compared, tools, artificial-intelligence]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 
 AI tools generate correct Go interface implementations about 85% of the time for standard patterns but require verification for complex method signatures and embedded interfaces. This guide shows which interface patterns work reliably and which need manual review.

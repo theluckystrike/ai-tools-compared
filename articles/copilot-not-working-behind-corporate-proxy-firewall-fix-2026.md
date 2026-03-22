@@ -11,21 +11,8 @@ tags: [ai-tools-compared, github-copilot, proxy, firewall, troubleshooting, deve
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Copilot Not Working Behind Corporate Proxy Firewall Fix 2026"
-description: "A practical troubleshooting guide for developers experiencing GitHub Copilot issues behind corporate proxies and firewalls. Includes configuration"
-date: 2026-03-20
-last_modified_at: 2026-03-20
-author: theluckystrike
-permalink: /copilot-not-working-behind-corporate-proxy-firewall-fix-2026/
-categories: [guides]
-tags: [ai-tools-compared, github-copilot, proxy, firewall, troubleshooting, development-tools]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

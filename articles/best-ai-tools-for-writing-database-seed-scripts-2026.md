@@ -11,7 +11,8 @@ tags: [ai-tools-compared, tools, artificial-intelligence, best-of]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
+---
 
 ### 2. GitHub Copilot (IDE Autocomplete)
 

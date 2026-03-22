@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, comparison, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Landbot vs Typebot: AI Conversational Forms Compared"
-description: "A practical comparison of Landbot and Typebot for building AI-powered conversational forms, with integration examples and recommendations for developers"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /landbot-vs-typebot-ai-conversational-forms/
-categories: [guides]
-tags: [ai-tools-compared, tools, comparison, artificial-intelligence]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

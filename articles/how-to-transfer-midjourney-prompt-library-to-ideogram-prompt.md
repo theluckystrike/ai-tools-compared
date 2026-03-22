@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Transfer Midjourney Prompt Library to Ideogram"
-description: "A practical guide for developers and power users migrating their Midjourney prompt collections to Ideogram. Includes conversion scripts, syntax"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-transfer-midjourney-prompt-library-to-ideogram-prompt/
-categories: [guides]
-tags: [ai-tools-compared, tools]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

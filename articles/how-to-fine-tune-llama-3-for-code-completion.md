@@ -11,21 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared]---
+tags: [ai-tools-compared]
 ---
-layout: default
-title: "How to Fine-Tune Llama 3 for Code Completion"
-description: "Practical guide to fine-tuning Llama 3 on your codebase for code completion. Covers dataset prep, QLoRA training, evaluation, and serving the model locally."
-date: 2026-03-21
-last_modified_at: 2026-03-21
-author: theluckystrike
-permalink: /how-to-fine-tune-llama-3-for-code-completion/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared]---
 
 {% raw %}
 

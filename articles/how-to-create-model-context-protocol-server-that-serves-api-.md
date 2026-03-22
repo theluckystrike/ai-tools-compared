@@ -11,23 +11,8 @@ tags: [ai-tools-compared, tools, api]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-
-
-layout: default
-title: "How to Create Model Context Protocol Server That Serves API"
-description: "Learn to build a Model Context Protocol server that exposes your API documentation to AI assistants, enabling accurate code generation and intelligent"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-create-model-context-protocol-server-that-serves-api-/
-categories: [guides]
-tags: [ai-tools-compared, tools, api]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

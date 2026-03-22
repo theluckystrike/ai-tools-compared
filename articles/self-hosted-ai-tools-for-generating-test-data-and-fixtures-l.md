@@ -10,20 +10,8 @@ tags: [ai-tools-compared, testing, self-hosted, local-ai, fixtures, troubleshoot
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Self-Hosted AI Tools for Generating Test Data and Fixtures"
-description: "A practical comparison of self-hosted AI tools for generating test data and fixtures locally. Find the right solution for your development workflow."
-date: 2026-03-21
-author: theluckystrike
-permalink: /self-hosted-ai-tools-for-generating-test-data-and-fixtures-l/
-categories: [guides]
-tags: [ai-tools-compared, testing, self-hosted, local-ai, fixtures, troubleshooting, artificial-intelligence]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

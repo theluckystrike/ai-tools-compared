@@ -11,21 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison]---
+tags: [ai-tools-compared, comparison]
 ---
-layout: default
-title: "Cursor vs Copilot for Implementing Oauth2 Authentication"
-description: "Implementing OAuth2 authentication in an Express application involves multiple components: route setup, token handling, callback processing, and security"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /cursor-vs-copilot-for-implementing-oauth2-authentication-flo/
-categories: [comparisons]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, comparison]---
 
 {% raw %}
 

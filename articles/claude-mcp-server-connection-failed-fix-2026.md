@@ -11,21 +11,8 @@ score: 8
 categories: [troubleshooting]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, troubleshooting, claude-ai]---
+tags: [ai-tools-compared, troubleshooting, claude-ai]
 ---
-layout: default
-title: "Claude MCP Server Connection Failed Fix (2026)"
-description: "Troubleshooting guide for fixing Claude MCP server connection failures. Step-by-step solutions for developers and power users"
-date: 2026-03-15
-last_modified_at: 2026-03-22
-author: theluckystrike
-permalink: /claude-mcp-server-connection-failed-fix-2026/
-reviewed: true
-score: 8
-categories: [troubleshooting]
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, troubleshooting, claude-ai]---
 
 {% raw %}
 

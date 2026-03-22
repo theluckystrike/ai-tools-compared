@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Manage AI Coding Context Window to Avoid Hallucinated"
-description: "Learn practical techniques to manage AI coding assistant context windows and prevent hallucinated imports from breaking your codebase"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-manage-ai-coding-context-window-to-avoid-hallucinated/
-categories: [guides]
-tags: [ai-tools-compared, tools, artificial-intelligence]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 
 Prevent hallucinated imports by including only the files your feature needs in context, explicitly showing available imports in prompts, and asking AI to verify imports exist. This guide shows the context management technique that eliminates the frustration of AI suggesting non-existent modules.

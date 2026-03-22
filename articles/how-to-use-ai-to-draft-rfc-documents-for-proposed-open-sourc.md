@@ -11,21 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
 ---
-layout: default
-title: "How to Use AI to Draft RFC Documents for Proposed Open"
-description: "Artificial intelligence has become a valuable assistant for open source maintainers and contributors drafting Request for Comments (RFC) documents. When"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-use-ai-to-draft-rfc-documents-for-proposed-open-source-feature-changes/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
 
 {% raw %}
 

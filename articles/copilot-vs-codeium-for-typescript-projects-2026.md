@@ -11,21 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison]---
+tags: [ai-tools-compared, comparison]
 ---
-layout: default
-title: "Copilot vs Codeium for TypeScript Projects 2026"
-description: "Compare GitHub Copilot and Codeium for TypeScript development in 2026. Type inference, generic suggestions, decorator patterns, and cost-per-completion"
-date: 2026-03-21
-last_modified_at: 2026-03-21
-author: theluckystrike
-permalink: /copilot-vs-codeium-for-typescript-projects-2026/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, comparison]---
 
 {% raw %}
 

@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "How to Use AI to Generate Playwright Keyboard Navigation"
-description: "Learn how to use AI tools in 2026 to automatically generate Playwright keyboard navigation tests for your web applications"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-use-ai-to-generate-playwright-keyboard-navigation-tes/
-categories: [guides]
-tags: [ai-tools-compared, tools, artificial-intelligence]
-reviewed: true
-score: 9
-voice-checked: true
-intent-checked: true---
 
 {% raw %}
 

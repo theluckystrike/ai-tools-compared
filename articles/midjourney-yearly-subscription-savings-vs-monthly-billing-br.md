@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison]---
+tags: [ai-tools-compared, comparison]
+---
 
 
 {% raw %}

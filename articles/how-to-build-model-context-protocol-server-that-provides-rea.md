@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Build Model Context Protocol Server That Provides Rea"
-description: "A practical guide to building an MCP server that streams real-time test results. Includes Python implementation, code examples, and integration"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-build-model-context-protocol-server-that-provides-rea/
-categories: [guides]
-tags: [ai-tools-compared, tools]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

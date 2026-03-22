@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "AI Tools for Writing Infrastructure as Code Pulumi 2026"
-description: "Compare AI tools for writing Pulumi infrastructure as code. Covers Claude, Copilot, Cursor for TypeScript and Python Pulumi programs with real examples"
-date: 2026-03-21
-last_modified_at: 2026-03-21
-author: theluckystrike
-permalink: /ai-tools-for-writing-infrastructure-as-code-pulumi-2026/
-categories: [guides]
-tags: [ai-tools-compared, tools, artificial-intelligence]
-reviewed: true
-score: 9
-voice-checked: true
-intent-checked: true---
 
 
 Writing Pulumi infrastructure-as-code (IaC) requires understanding both cloud provider APIs and programmatic resource composition. AI assistants excel at this because Pulumi's code-first approach maps well to how LLMs reason about code generation. Claude, GitHub Copilot, and Cursor each have distinct strengths when generating TypeScript and Python Pulumi programs. The key difference lies in context window size, code understanding depth, and real-time completion accuracy.

@@ -11,21 +11,8 @@ score: 8
 voice-checked: true
 reviewed: true
 intent-checked: true
-tags: [ai-tools-compared]---
+tags: [ai-tools-compared]
 ---
-layout: default
-title: "How to Export Midjourney Images Before Downgrading Plan"
-description: "A practical developer guide for exporting Midjourney images before downgrading your subscription plan in 2026. Includes API methods, batch export"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-export-midjourney-images-before-downgrading-plan-2026/
-categories: [guides]
-score: 8
-voice-checked: true
-reviewed: true
-intent-checked: true
-tags: [ai-tools-compared]---
 
 
 Midjourney offers powerful AI image generation, but subscription costs add up quickly. If you're considering downgrading your plan—whether moving from Pro to Standard or Standard to Basic—you need to export your generated images first. Once you downgrade, you lose access to your previous generations stored on Midjourney's servers. This guide covers practical methods for developers and power users to export Midjourney images before downgrading, with code examples and automation strategies.

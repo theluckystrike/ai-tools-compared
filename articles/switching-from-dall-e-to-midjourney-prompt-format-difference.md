@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Switching from Dall E to Midjourney Prompt Format Difference"
-description: "A practical guide covering the key differences between DALL-E and Midjourney prompt syntax, parameters, and best practices for developers and power users"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /switching-from-dall-e-to-midjourney-prompt-format-difference/
-categories: [guides]
-tags: [ai-tools-compared, tools]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 
 Migrate DALL-E prompts to Midjourney by converting your descriptive prompts to style tokens, adjusting aspect ratios, and using Midjourney's parameter syntax. This guide shows the translation patterns for different image types.

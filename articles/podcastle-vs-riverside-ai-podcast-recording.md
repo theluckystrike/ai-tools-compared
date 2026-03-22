@@ -11,21 +11,8 @@ intent-checked: true
 voice-checked: true
 score: 8
 reviewed: true
-tags: [ai-tools-compared, comparison, artificial-intelligence]---
+tags: [ai-tools-compared, comparison, artificial-intelligence]
 ---
-layout: default
-title: "Podcastle vs Riverside: AI Podcast Recording Tools Compared"
-description: "A technical comparison of Castle and Riverside for AI-powered podcast recording, with API integrations, workflow examples, and implementation guidance"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /podcastle-vs-riverside-ai-podcast-recording/
-categories: [comparisons]
-intent-checked: true
-voice-checked: true
-score: 8
-reviewed: true
-tags: [ai-tools-compared, comparison, artificial-intelligence]---
 
 
 For developers building podcast production workflows, choosing the right AI-powered recording platform impacts both production quality and automation capabilities. This comparison examines Castle and Riverside from a technical perspective, focusing on API access, integration patterns, and practical use cases for programmatic podcast creation.

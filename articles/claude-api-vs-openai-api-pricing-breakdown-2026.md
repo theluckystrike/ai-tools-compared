@@ -11,21 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison, artificial-intelligence, claude-ai, api]---
+tags: [ai-tools-compared, comparison, artificial-intelligence, claude-ai, api]
 ---
-layout: default
-title: "Claude API vs OpenAI API Pricing Breakdown 2026"
-description: "Detailed cost comparison of Claude and OpenAI APIs in 2026. Token pricing, batch discounts, context window costs, and break-even analysis for real workloads."
-date: 2026-03-21
-last_modified_at: 2026-03-21
-author: theluckystrike
-permalink: /claude-api-vs-openai-api-pricing-breakdown-2026/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, comparison, artificial-intelligence, claude-ai, api]---
 
 {% raw %}
 

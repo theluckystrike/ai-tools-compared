@@ -11,21 +11,8 @@ tags: [ai-tools-compared, cursor, ai-tools]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Create CursorRules That Teach Cursor Your Team's State"
-description: "A practical guide to writing CursorRules that teach Cursor your team's state management patterns. Code examples and real-world patterns for React, Vue, and"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-create-cursorrules-that-teach-cursor-your-teams-state/
-categories: [guides]
-tags: [ai-tools-compared, cursor, ai-tools]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

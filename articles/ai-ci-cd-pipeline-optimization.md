@@ -11,7 +11,8 @@ tags: [ai-tools-compared, devops, automation, artificial-intelligence]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
+---
 
 
 {% raw %}

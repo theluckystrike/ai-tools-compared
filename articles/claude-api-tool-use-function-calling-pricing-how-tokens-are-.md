@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, claude-ai, api]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Claude API Tool Use Function Calling Pricing How Tokens Are"
-description: "Claude API tool use (function calling) is billed as standard API token usage with no separate pricing category -- tool definitions count as input tokens, tool"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /claude-api-tool-use-function-calling-pricing-how-tokens-are-/
-categories: [guides]
-tags: [ai-tools-compared, tools, claude-ai, api]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

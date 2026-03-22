@@ -10,20 +10,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared]---
+tags: [ai-tools-compared]
 ---
-layout: default
-title: "How to Build a Custom GitHub Copilot Extension"
-description: "Step-by-step guide to building a GitHub Copilot Extension using the Copilot Extensions API, with authentication, streaming responses, and real deployment"
-date: 2026-03-21
-author: theluckystrike
-permalink: /how-to-build-custom-copilot-extension/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared]---
 
 {% raw %}
 

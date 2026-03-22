@@ -11,21 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, claude-ai]---
+tags: [ai-tools-compared, claude-ai]
 ---
-layout: default
-title: "Claude Code Java Library Development Guide"
-description: "Claude Code is an AI-powered CLI that assists with every phase of Java library development, from project setup and API design to testing and documentation"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /claude-code-java-library-development-guide/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, claude-ai]---
 
 {% raw %}
 

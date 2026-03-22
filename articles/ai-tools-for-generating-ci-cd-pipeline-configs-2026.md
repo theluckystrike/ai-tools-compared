@@ -10,7 +10,8 @@ categories: [comparisons]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
+---
 tags: [ai-tools-compared, artificial-intelligence]
 ---
 layout: default

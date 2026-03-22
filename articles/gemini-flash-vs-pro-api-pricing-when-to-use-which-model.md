@@ -11,7 +11,8 @@ tags: [ai-tools-compared, tools, comparison, api]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
+---
 
 
 Choose Gemini Flash for high-volume, latency-sensitive tasks like classification, summarization, and real-time chat -- it costs 75-90% less than Pro per token. Choose Gemini Pro when you need complex multi-step reasoning, reliable code generation, or nuanced creative writing where output quality matters more than cost. Most production applications benefit from routing simple requests to Flash and reserving Pro for complex cases.

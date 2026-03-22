@@ -11,21 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
 ---
-layout: default
-title: "Configuring Cursor AI Notepads for Reusable Project Context"
-description: "A practical guide for developers on setting up Cursor AI notepads to maintain reusable project context across sessions. Learn how to use this feature"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /configuring-cursor-ai-notepads-for-reusable-project-context-/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
 
 {% raw %}
 

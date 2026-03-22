@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, workflow]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Move Stable Diffusion Workflows to Midjourney"
-description: "To move Stable Diffusion workflows to Midjourney, convert weighted prompt syntax to Midjourney's :: weight system, replace explicit sampler and CFG settings"
-date: 2026-03-16
-last_modified_at: 2026-03-22
-author: theluckystrike
-permalink: /how-to-move-stable-diffusion-workflows-to-midjourney-equivalent-setup/
-categories: [guides]
-tags: [ai-tools-compared, tools, workflow]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 
 To move Stable Diffusion workflows to Midjourney, convert weighted prompt syntax to Midjourney's `::` weight system, replace explicit sampler and CFG settings with `--stylize` and `--quality` flags, and swap ControlNet for `--cref` and `--sref` reference parameters. The core shift is from parameter-heavy configuration to descriptive, flag-based prompt construction. This guide provides the complete syntax mappings, parameter equivalents, and workflow adaptation patterns you need.

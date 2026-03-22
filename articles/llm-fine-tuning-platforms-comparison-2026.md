@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, best-of, artificial-intelligence, llm]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "LLM Fine-Tuning Platforms Comparison 2026"
-description: "Compare fine-tuning platforms: OpenAI, Together AI, Anyscale, Modal, Replicate. Includes pricing per token, supported models, CLI examples, and when to"
-date: 2026-03-20
-last_modified_at: 2026-03-20
-author: theluckystrike
-permalink: /llm-fine-tuning-platforms-comparison-2026/
-categories: [guides]
-tags: [ai-tools-compared, tools, best-of, artificial-intelligence, llm]
-reviewed: true
-score: 9
-voice-checked: true
-intent-checked: true---
 
 {% raw %}
 

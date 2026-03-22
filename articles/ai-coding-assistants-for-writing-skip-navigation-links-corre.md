@@ -10,7 +10,8 @@ reviewed: true
 score: 8
 categories: [guides]
 intent-checked: true
-voice-checked: true---
+voice-checked: true
+---
 
 
 Skip navigation links are a fundamental accessibility feature that allows keyboard users to bypass repetitive navigation menus and jump directly to main content. Despite their simplicity, implementing skip links correctly remains a common stumbling block for developers. In this guide, I compare how leading AI coding assistants handle skip navigation link generation and explore which tools deliver the most accurate, standards-compliant results.

@@ -11,7 +11,8 @@ tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
+---
 
 
 Nginx configuration is notoriously opaque. Directives feel arbitrary, syntax is unforgiving, and the mental model for upstream proxying, buffering, and connection handling doesn't map cleanly to HTTP verbs. This is where AI tooling shines—not by replacing your understanding, but by generating working baselines you can reason about and modify.

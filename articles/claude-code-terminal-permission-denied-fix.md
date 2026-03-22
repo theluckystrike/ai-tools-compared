@@ -11,21 +11,8 @@ score: 8
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, troubleshooting, claude-ai]---
+tags: [ai-tools-compared, troubleshooting, claude-ai]
 ---
-layout: default
-title: "Claude Code Terminal Permission Denied"
-description: "Claude Code Terminal Permission Denied Fix — guide with practical tips, comparisons, and expert recommendations for developers and teams"
-date: 2026-03-15
-last_modified_at: 2026-03-22
-author: theluckystrike
-permalink: /claude-code-terminal-permission-denied-fix/
-reviewed: true
-score: 8
-categories: [guides]
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, troubleshooting, claude-ai]---
 
 {% raw %}
 

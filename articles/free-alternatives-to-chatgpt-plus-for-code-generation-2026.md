@@ -11,21 +11,8 @@ score: 8
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, chatgpt]---
+tags: [ai-tools-compared, chatgpt]
 ---
-layout: default
-title: "Free Alternatives to ChatGPT Plus for Code Generation"
-description: "Discover the best free AI coding assistants that rival ChatGPT Plus. Compare features, capabilities, and find the perfect free tool for your coding needs"
-date: 2026-03-17
-last_modified_at: 2026-03-17
-author: theluckystrike
-permalink: /free-alternatives-to-chatgpt-plus-for-code-generation-2026/
-reviewed: true
-score: 8
-categories: [comparisons]
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, chatgpt]---
 
 {% raw %}
 

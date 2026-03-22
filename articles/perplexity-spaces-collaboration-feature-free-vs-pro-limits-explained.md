@@ -11,21 +11,8 @@ score: 9
 voice-checked: true
 reviewed: true
 intent-checked: true
-tags: [ai-tools-compared, comparison, collaboration]---
+tags: [ai-tools-compared, comparison, collaboration]
 ---
-layout: default
-title: "Perplexity Spaces Collaboration Feature Free vs Pro Limits"
-description: "A guide comparing Perplexity Spaces collaboration features across Free and Pro plans. Learn the limits, capabilities, and which plan best suits your team's"
-date: 2026-03-18
-last_modified_at: 2026-03-18
-author: theluckystrike
-permalink: /perplexity-spaces-collaboration-feature-free-vs-pro-limits-explained/
-categories: [guides]
-score: 9
-voice-checked: true
-reviewed: true
-intent-checked: true
-tags: [ai-tools-compared, comparison, collaboration]---
 
 
 Perplexity Spaces is a powerful feature that allows users to create shared research environments where teams can collaborate on searches, gather sources, and build knowledge bases together. Understanding the differences between Free and Pro plan limits is essential for choosing the right collaboration setup for your workflow.

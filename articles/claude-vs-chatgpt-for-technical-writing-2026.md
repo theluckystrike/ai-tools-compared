@@ -11,21 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison, claude-ai, chatgpt]---
+tags: [ai-tools-compared, comparison, claude-ai, chatgpt]
 ---
-layout: default
-title: "Claude vs ChatGPT for Technical Writing 2026"
-description: "Compare Claude and ChatGPT for technical writing tasks: API docs, runbooks, architecture decisions, and README files. Real examples and quality differences."
-date: 2026-03-21
-last_modified_at: 2026-03-21
-author: theluckystrike
-permalink: /claude-vs-chatgpt-for-technical-writing-2026/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, comparison, claude-ai, chatgpt]---
 
 {% raw %}
 

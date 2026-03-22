@@ -10,22 +10,8 @@ voice-checked: true
 intent-checked: true
 category: "AI Tools"
 tags: [ai-tools-compared, OpenTelemetry, Observability, Instrumentation, Tracing, AI, artificial-intelligence]
-permalink: /ai-tools-for-generating-opentelemetry-instrumentation-2026/---
+permalink: /ai-tools-for-generating-opentelemetry-instrumentation-2026/
 ---
-
-
-title: "AI Tools for Generating OpenTelemetry Instrumentation Code"
-description: "Compare Claude, GPT-4, and Copilot for generating OTel spans, metrics, and traces. Real Python, Go, and Java instrumentation code examples."
-author: "theluckystrike"
-date: "2026-03-22"
-updated: "2026-03-22"
-reviewed: true
-score: 8
-voice-checked: true
-intent-checked: true
-category: "AI Tools"
-tags: [ai-tools-compared, OpenTelemetry, Observability, Instrumentation, Tracing, AI, artificial-intelligence]
-permalink: /ai-tools-for-generating-opentelemetry-instrumentation-2026/---
 
 ## Key Takeaways
 

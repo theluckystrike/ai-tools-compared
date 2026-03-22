@@ -11,21 +11,8 @@ tags: [ai-tools-compared, chatgpt, canvas, plus, team, features]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "ChatGPT Canvas Feature Is It Included in Plus or Team Only"
-description: "A practical guide explaining whether ChatGPT Canvas is included in ChatGPT Plus or Team subscriptions, with feature availability details for each plan"
-date: 2026-03-19
-last_modified_at: 2026-03-19
-author: theluckystrike
-permalink: /chatgpt-canvas-feature-is-it-included-in-plus-or-team-only/
-categories: [guides]
-tags: [ai-tools-compared, chatgpt, canvas, plus, team, features]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

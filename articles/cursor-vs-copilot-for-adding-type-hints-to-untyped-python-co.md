@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, comparison]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Cursor vs Copilot for Adding Type Hints to Untyped Python"
-description: "A practical comparison of Cursor and GitHub Copilot for automatically adding type hints to legacy Python codebases. Which AI coding assistant handles"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /cursor-vs-copilot-for-adding-type-hints-to-untyped-python-co/
-categories: [guides]
-tags: [ai-tools-compared, tools, comparison]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

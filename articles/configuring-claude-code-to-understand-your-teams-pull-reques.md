@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, claude-ai]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Configuring Claude Code to Understand Your Teams Pull"
-description: "A practical guide for developers on configuring Claude Code to understand and enforce your team's pull request review checklist for consistent code quality"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /configuring-claude-code-to-understand-your-teams-pull-reques/
-categories: [guides]
-tags: [ai-tools-compared, tools, claude-ai]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 
 Claude Code can be configured to understand and respect your team's pull request review checklist, helping maintain consistent code quality across your codebase. By setting up the right configuration files and providing proper context, you can make Claude Code an effective partner in your code review process.

@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, best-of, artificial-intelligence]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Best AI for Writing Good First Issue Descriptions That"
-description: "Discover the best AI tools for writing effective first issue descriptions that attract new contributors to your open source projects. Includes"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /best-ai-for-writing-good-first-issue-descriptions-that-attract-new-contributors/
-categories: [guides]
-tags: [ai-tools-compared, tools, best-of, artificial-intelligence]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

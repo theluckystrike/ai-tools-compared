@@ -11,21 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-layout: default---
+layout: default
 ---
-title: "Claude Code SDK Testing Workflow Guide"
-description: "A guide to setting up and maintaining testing workflows for Claude Code SDK implementations"
-author: "theluckystrike"
-date: 2026-03-17
-last_modified_at: 2026-03-17
-permalink: /claude-code-sdk-testing-workflow-guide/
-categories: [guides]
-tags: [ai-tools-compared, tools, workflow, claude-ai, sdk]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-layout: default---
 
 {% raw %}
 

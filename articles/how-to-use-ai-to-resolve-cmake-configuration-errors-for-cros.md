@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, troubleshooting, artificial-intelligence]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Use AI to Resolve CMake Configuration Errors"
-description: "A practical guide for developers using AI assistants to diagnose and fix CMake configuration errors when building for Chrome OS (CrOS) devices"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-use-ai-to-resolve-cmake-configuration-errors-for-cros/
-categories: [guides]
-tags: [ai-tools-compared, tools, troubleshooting, artificial-intelligence]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

@@ -11,21 +11,8 @@ tags: [ai-tools-compared, configuration, workflow, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Configure AI Coding Tools"
-description: "A practical guide for developers on configuring AI coding assistants to follow your team's branch naming conventions. Code examples and configuration tips"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-configure-ai-coding-tools-to-respect-your-teams-branc/
-categories: [guides]
-tags: [ai-tools-compared, configuration, workflow, artificial-intelligence]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

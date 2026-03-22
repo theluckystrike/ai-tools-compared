@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "AI Research Assistant Chrome Extension"
-description: "Learn how to build and use AI research assistant Chrome extensions for enhanced productivity. Practical examples, code snippets, and implementation"
-date: 2026-03-15
-last_modified_at: 2026-03-22
-author: theluckystrike
-permalink: /ai-research-assistant-chrome-extension/
-categories: [guides]
-tags: [ai-tools-compared, tools, artificial-intelligence]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

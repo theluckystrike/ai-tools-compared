@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "AI Tools for Writing Playwright Tests That Verify Toast"
-description: "A practical guide to using AI coding assistants for creating Playwright tests that verify toast notification timing, auto-dismissal, and manual"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /ai-tools-for-writing-playwright-tests-that-verify-toast-noti/
-categories: [guides]
-tags: [ai-tools-compared, tools, artificial-intelligence]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, chatgpt, api]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "ChatGPT API Assistants API Pricing Threads and Runs Cost"
-description: "A practical developer guide to understanding OpenAI Assistants API pricing, including thread storage costs, run execution pricing, and real-world cost"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /chatgpt-api-assistants-api-pricing-threads-and-runs-cost-breakdown/
-categories: [guides]
-tags: [ai-tools-compared, tools, chatgpt, api]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 
 The OpenAI Assistants API charges based on input tokens, output tokens, thread storage, and run execution, with costs varying dramatically by model. Using gpt-4o-mini, a typical run costs under a tenth of a cent ($0.15/1M input, $0.60/1M output), while the same run on gpt-4o costs roughly one cent ($2.50/1M input, $10.00/1M output). Thread storage adds a smaller but cumulative cost based on total tokens stored across all messages. This guide breaks down each cost component with practical examples to help you estimate and optimize your Assistants API spending.

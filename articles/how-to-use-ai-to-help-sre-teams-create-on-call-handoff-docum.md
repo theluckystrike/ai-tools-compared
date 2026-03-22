@@ -11,7 +11,8 @@ tags: [ai-tools-compared, sre, devops, documentation, artificial-intelligence]
 score: 9
 voice-checked: true
 reviewed: true
-intent-checked: true---
+intent-checked: true
+---
 
 
 On-call rotations are a cornerstone of site reliability engineering, but the handoff process between shifts often becomes a time-consuming manual task. SRE teams frequently struggle to capture the right details, maintain consistency, and ensure the next engineer has everything needed to handle incoming incidents. AI tools offer practical ways to automate and improve on-call handoff documentation without adding cognitive burden to already-taxed teams.

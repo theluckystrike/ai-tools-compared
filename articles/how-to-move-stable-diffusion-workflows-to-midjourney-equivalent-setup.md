@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, workflow]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Move Stable Diffusion Workflows to Midjourney"
-description: "Move Stable Diffusion to Midjourney by translating your custom models to Midjourney's style tokens, converting your prompts to their format, and adjusting"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-move-stable-diffusion-workflows-to-midjourney-equivalent-setup/
-categories: [guides]
-tags: [ai-tools-compared, tools, workflow]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 
 Move Stable Diffusion to Midjourney by translating your custom models to Midjourney's style tokens, converting your prompts to their format, and adjusting sampling parameters. This guide shows the prompt transformation and configuration changes that achieve equivalent results.

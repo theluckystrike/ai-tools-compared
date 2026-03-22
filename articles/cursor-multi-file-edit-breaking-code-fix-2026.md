@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, troubleshooting]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Cursor Multi-File Edit Breaking Code Fix (2026)"
-description: "A practical troubleshooting guide for developers facing Cursor multi-file edit breaking code issues. Learn step-by-step fixes and diagnostic tips"
-date: 2026-03-15
-last_modified_at: 2026-03-22
-author: theluckystrike
-permalink: /cursor-multi-file-edit-breaking-code-fix-2026/
-categories: [guides]
-tags: [ai-tools-compared, tools, troubleshooting]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Manage AI Coding Context When Switching"
-description: "A practical guide for developers on managing AI coding context effectively when working across multiple features. Includes strategies, code examples"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-manage-ai-coding-context-when-switching-between-diffe/
-categories: [guides]
-tags: [ai-tools-compared, tools, artificial-intelligence]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 
 Switch between features without losing AI context by explicitly naming features in prompts, maintaining separate chat threads per feature, and periodically summarizing context. This guide shows the workflow that keeps AI focused on the right problem as you jump between different tasks.

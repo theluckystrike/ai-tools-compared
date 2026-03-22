@@ -11,7 +11,8 @@ tags: [ai-tools-compared, tools, claude-ai, chatgpt]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
+---
 
 
 To move your ChatGPT Team workspace data to Claude Team, you'll need to export conversation history via the OpenAI platform, back up custom GPTs and workspace settings, then manually recreate projects and workflows in Claude. Since no direct migration tool exists, the process involves strategic data extraction and careful reconstruction of your team's knowledge base.

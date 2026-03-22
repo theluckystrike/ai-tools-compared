@@ -11,21 +11,8 @@ tags: [ai-tools-compared, privacy, tools, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Does WindSurf AI Send Entire Project Context or Just Open"
-description: "A technical breakdown of how WindSurf AI handles context management, what gets sent to servers, and practical implications for developers concerned"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /does-windsurf-ai-send-entire-project-context-or-just-open-fi/
-categories: [guides]
-tags: [ai-tools-compared, privacy, tools, artificial-intelligence]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

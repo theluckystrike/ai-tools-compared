@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools]
 score: 8
 voice-checked: true
 reviewed: true
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "Create CursorRules That Enforce Your Team's Git"
-description: "Learn how to create CursorRules that automatically enforce consistent git commit message formats across your entire development team"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-create-cursorrules-that-enforce-your-teams-git-commit/
-categories: [guides]
-tags: [ai-tools-compared, tools]
-score: 8
-voice-checked: true
-reviewed: true
-intent-checked: true---
 
 {% raw %}
 

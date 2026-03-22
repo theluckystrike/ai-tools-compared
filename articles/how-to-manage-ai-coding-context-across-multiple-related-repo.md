@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Manage AI Coding Context Across Multiple Related"
-description: "Practical strategies and code examples for maintaining AI coding context when working across multiple related repositories in 2026"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-manage-ai-coding-context-across-multiple-related-repo/
-categories: [guides]
-tags: [ai-tools-compared, tools, artificial-intelligence]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 
 Manage context across multiple repos by symlinking shared packages, maintaining an unified context in your IDE settings, and being explicit about which repo each task targets. This guide shows the configuration patterns that prevent hallucinated imports and cross-repo inconsistencies.

@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How Accurate Are AI Tools at Generating TypeScript Zod"
-description: "A practical test of leading AI coding tools generating TypeScript Zod validation schemas, with real code examples and accuracy comparisons"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-accurate-are-ai-tools-at-generating-typescript-zod-schem/
-categories: [guides]
-tags: [ai-tools-compared, tools, artificial-intelligence]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 
 AI tools generate correct Zod schemas about 80% of the time for common validation patterns but frequently miss edge cases, custom validators, and complex nested structures. This guide evaluates each tool's accuracy and shows which schema types are reliable versus requiring manual review.

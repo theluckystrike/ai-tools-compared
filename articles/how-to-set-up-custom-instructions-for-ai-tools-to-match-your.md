@@ -11,21 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
 ---
-layout: default
-title: "How to Set Up Custom Instructions for AI Tools to Match"
-description: "A practical guide for developers on configuring AI coding assistants with custom instructions that enforce your team's linting rules, code style, and"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-set-up-custom-instructions-for-ai-tools-to-match-your/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
 
 
 When AI coding assistants generate code that violates your team's linting rules, you waste time manually fixing formatting issues, import order, or naming convention violations. Setting up custom instructions that align AI output with your linting configuration eliminates these repetitive corrections and keeps your codebase consistent across all contributions—whether written by humans or AI.

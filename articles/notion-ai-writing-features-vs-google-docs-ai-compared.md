@@ -11,7 +11,8 @@ tags: [ai-tools-compared, tools, comparison, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
+---
 {% raw %}
 
 Notion AI excels with workspace-aware context and embedded intelligence across pages and databases, while Google Docs AI (Gemini-powered) functions as a sidebar companion with focus on initial draft generation and direct editing. Notion AI integrates more deeply with project knowledge, but Google Docs AI offers broader integration with Google's ecosystem and simpler setup for teams already using Google Workspace.

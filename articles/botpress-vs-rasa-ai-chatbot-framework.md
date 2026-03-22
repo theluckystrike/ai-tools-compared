@@ -11,21 +11,8 @@ intent-checked: true
 voice-checked: true
 score: 8
 reviewed: true
-tags: [ai-tools-compared, comparison, artificial-intelligence]---
+tags: [ai-tools-compared, comparison, artificial-intelligence]
 ---
-layout: default
-title: "Botpress vs Rasa AI Chatbot Framework Compared"
-description: "Choosing between Botpress and Rasa requires understanding how each framework approaches chatbot development, customization, and deployment. Both are"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /botpress-vs-rasa-ai-chatbot-framework/
-categories: [comparisons]
-intent-checked: true
-voice-checked: true
-score: 8
-reviewed: true
-tags: [ai-tools-compared, comparison, artificial-intelligence]---
 
 
 Choosing between Botpress and Rasa requires understanding how each framework approaches chatbot development, customization, and deployment. Both are open-source platforms popular with developers building conversational AI, but they serve different needs and development philosophies.

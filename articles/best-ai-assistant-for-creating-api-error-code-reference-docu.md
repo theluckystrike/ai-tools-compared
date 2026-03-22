@@ -328,6 +328,162 @@ AI assistants streamline API error code reference documentation by generating in
 
 Start by documenting your most common errors — authentication, validation, and database errors — then expand to edge cases. Embed documentation generation into CI to keep the reference synchronized with code automatically.
 
+## Automated Error Documentation from OpenAPI Specs
+
+If your API has an OpenAPI specification, ask Claude to generate error documentation directly from it:
+
+```yaml
+# openapi.yaml excerpt
+paths:
+  /users/{id}:
+    get:
+      responses:
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: "AUTH_001"
+        '404':
+          description: Not Found
+```
+
+Prompt Claude:
+```
+Extract all error codes from this OpenAPI spec and generate
+comprehensive error documentation. For each error code, include:
+HTTP status, description, common causes, and resolution steps.
+```
+
+Claude produces error documentation that stays synchronized with your OpenAPI definition.
+
+## Error Code Hierarchy and Categorization
+
+For large APIs with 100+ error codes, ask Claude to organize them hierarchically:
+
+```text
+We have error codes in these categories:
+- 1xxx: Authentication errors
+- 2xxx: Authorization errors
+- 3xxx: Validation errors
+- 4xxx: Resource errors
+- 5xxx: Server errors
+
+Generate a hierarchical error reference that groups codes by category,
+shows inheritance where relevant, and provides decision trees for
+API consumers to find the right error handling code path.
+```
+
+Claude generates:
+
+```markdown
+## Authentication Errors (1xxx)
+
+### 1001: Invalid Token
+- HTTP Status: 401
+- Cause: Token is malformed or has expired
+- Resolution: Obtain a new token via the auth endpoint
+
+### 1002: Token Expired
+- HTTP Status: 401
+- Cause: Token has expired (check exp claim)
+- Resolution: Refresh using the refresh_token endpoint
+
+## Authorization Errors (2xxx)
+
+### 2001: Insufficient Scope
+- HTTP Status: 403
+- Cause: Token has correct auth but lacks required scope
+- Resolution: Request additional scopes during auth flow
+```
+
+This categorical approach helps API consumers quickly navigate to relevant error documentation.
+
+## Generating Client-Side Error Handlers
+
+Ask Claude to generate language-specific error handling code alongside documentation:
+
+```text
+Generate TypeScript error handler code that maps our error codes
+to user-friendly messages and actionable recovery steps.
+Include error code 1001, 1002, 3001, 3002, 4001, 5001.
+```
+
+Claude produces:
+
+```typescript
+const ERROR_HANDLERS: Record<string, ErrorHandler> = {
+  AUTH_001: {
+    message: 'Your session has expired. Please log in again.',
+    action: 'redirect_to_login',
+    retry: false,
+  },
+  VAL_001: {
+    message: 'Please check the validation errors below.',
+    action: 'show_form_errors',
+    retry: true,
+  },
+};
+
+function handleApiError(code: string, details: any) {
+  const handler = ERROR_HANDLERS[code] || DEFAULT_HANDLER;
+  // Execute handler logic
+}
+```
+
+This bridges your error documentation with actual application code, ensuring consistency.
+
+## Deprecation and Versioning in Error Documentation
+
+For APIs that evolve, ask Claude to document error code changes across versions:
+
+```text
+Document error code deprecations. We deprecated AUTH_OLD_001 in v2
+and replaced it with AUTH_NEW_001. Show a deprecation notice in
+the v1 error reference and cross-reference the v2 alternative.
+```
+
+Claude generates clear migration guides for API consumers when error codes change.
+
+## Monitoring and Alerting from Error Codes
+
+Ask Claude to generate monitoring rules based on error code patterns:
+
+```text
+Generate Prometheus/DataDog monitoring rules that alert when
+certain error codes spike above thresholds:
+- AUTH errors > 100/min = security incident
+- DB errors > 50/min = infrastructure issue
+- RATE_LIMIT errors > 1000/min = DDoS or surge in traffic
+```
+
+Claude produces alerting rules that tie error documentation directly to operational monitoring.
+
+## Best Practices Checklist
+
+Before publishing AI-generated error documentation:
+- Verify all HTTP status codes are correct (don't return 200 OK for errors)
+- Check that error codes are unique (no duplicates across versions)
+- Confirm resolution steps are actually correct for your API
+- Test that clients can parse error responses correctly
+- Ensure sensitive information isn't exposed in error messages
+- Include examples of actual error response payloads
+- Document all error fields (code, message, details, context)
+
+Claude often excels at this validation when asked explicitly:
+
+```text
+Review this error code documentation for:
+1. Consistent format across all entries
+2. Accurate HTTP status codes (201 for success, 400-599 for errors)
+3. Resolution steps that are actually actionable
+4. No sensitive data exposed in messages
+```
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}
