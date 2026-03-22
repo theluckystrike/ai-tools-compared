@@ -259,6 +259,134 @@ Return as JSON array."""
 
 This approach works for any business constraint that can be expressed in plain language. The tradeoff is generation speed and API cost — use it for complex edge-case data, not for high-volume load test fixtures.
 
+## Generating Edge Case and Boundary Data
+
+Standard libraries generate plausible mid-range data. They rarely generate the values that actually break code: the maximum integer, an empty string where one is required, a date exactly at the boundary of a fiscal quarter, or a price of exactly $0.00.
+
+Use Claude to generate systematic edge-case data for each field:
+
+```python
+def generate_edge_cases_for_field(field_name: str, field_type: str, constraints: str) -> list:
+    prompt = f"""Generate 15 edge case test values for the field '{field_name}'.
+Field type: {field_type}
+Business constraints: {constraints}
+
+Include:
+- Minimum valid value
+- Maximum valid value
+- Empty/null if allowed
+- Values at constraint boundaries (just inside and just outside)
+- Unusual but valid inputs (Unicode characters, very long strings, zero amounts)
+- Known problematic values (negative zero, ISO date edge cases, leap year dates)
+
+Return as a JSON array of objects with 'value' and 'test_description' keys."""
+
+    response = client.messages.create(
+        model="claude-haiku-3-5",
+        max_tokens=2048,
+        messages=[{"role": "user", "content": prompt}]
+    )
+    return json.loads(response.content[0].text)
+
+# Example usage
+price_edge_cases = generate_edge_cases_for_field(
+    field_name="order_amount",
+    field_type="decimal(10,2)",
+    constraints="must be >= 0.01 and <= 99999.99, two decimal places"
+)
+```
+
+Output example:
+```json
+[
+  {"value": 0.01, "test_description": "Minimum valid amount"},
+  {"value": 99999.99, "test_description": "Maximum valid amount"},
+  {"value": 0.00, "test_description": "Zero - should fail validation"},
+  {"value": 100000.00, "test_description": "Exceeds max - should fail"},
+  {"value": 1.999, "test_description": "Three decimal places - rounding test"},
+  {"value": -1.00, "test_description": "Negative - should fail"},
+  {"value": 50000.00, "test_description": "Mid-range valid value"}
+]
+```
+
+This approach systematically covers boundary conditions that catch real-world bugs, rather than hoping random generation happens to hit them.
+
+## Using Pytest Fixtures with Generated Data
+
+Generated test data integrates cleanly with pytest's fixture system. Generate once, cache to disk, and load in fixtures:
+
+```python
+import pytest
+import json
+from pathlib import Path
+from faker import Faker
+
+FIXTURE_DIR = Path(__file__).parent / "fixtures"
+
+@pytest.fixture(scope="session")
+def user_fixtures():
+    fixture_path = FIXTURE_DIR / "users.json"
+    if fixture_path.exists():
+        return json.loads(fixture_path.read_text())
+    # Only generate when fixture doesn't exist
+    fake = Faker()
+    Faker.seed(42)
+    users = [
+        {
+            "id": i,
+            "name": fake.name(),
+            "email": fake.email(),
+            "phone": fake.phone_number(),
+            "city": fake.city(),
+            "state": fake.state_abbr(),
+        }
+        for i in range(1, 201)
+    ]
+    fixture_path.parent.mkdir(parents=True, exist_ok=True)
+    fixture_path.write_text(json.dumps(users, indent=2))
+    return users
+
+@pytest.fixture
+def valid_user(user_fixtures):
+    """Returns a single valid user for tests that need one."""
+    return user_fixtures[0]
+
+@pytest.fixture
+def user_batch(user_fixtures):
+    """Returns 20 users for batch operation tests."""
+    return user_fixtures[:20]
+```
+
+Committing fixture files to version control ensures every developer runs tests with identical data. The seed-based approach means re-running the generator always produces the same output.
+
+## Parameterized Testing with Generated Datasets
+
+pytest's `@pytest.mark.parametrize` works well with generated test data for multiple input variations:
+
+```python
+from faker import Faker
+import pytest
+
+fake = Faker()
+Faker.seed(99)
+
+email_test_cases = [
+    (fake.email(), True),           # Valid email
+    ("not-an-email", False),        # Missing @ and domain
+    ("missing@domain", False),      # Incomplete domain
+    ("valid+tag@domain.com", True), # Plus-tagged email
+    ("", False),                    # Empty string
+    ("a" * 250 + "@b.com", False),  # Exceeds max length
+]
+
+@pytest.mark.parametrize("email,should_be_valid", email_test_cases)
+def test_email_validation(email, should_be_valid):
+    result = validate_email(email)
+    assert result == should_be_valid, f"Expected {should_be_valid} for email: {email!r}"
+```
+
+This pattern makes tested cases explicit and self-documenting, instead of hiding them inside a loop.
+
 ## Comparison Table
 
 | Scenario | Recommended Tool |
