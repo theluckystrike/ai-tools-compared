@@ -11,6 +11,7 @@ intent-checked: true
 slug: ai-tools-for-generating-prometheus-alerting-rules-2026
 tags: ["prometheus", "monitoring", "alerting", "observability", "devops"]
 ---
+{% raw %}
 
 ## The Prometheus Rules Problem
 
@@ -395,3 +396,4 @@ Invest time in getting alerts right early. Broken alerting wastes weeks debuggin
 - [AI Tools for Generating API Mock Servers 2026](/ai-tools-for-generating-api-mock-servers-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
