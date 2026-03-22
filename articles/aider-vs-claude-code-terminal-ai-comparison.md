@@ -7,7 +7,7 @@ last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /aider-vs-claude-code-terminal-ai-comparison/
 reviewed: true
-score: 8
+score: 9
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
