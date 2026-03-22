@@ -283,6 +283,110 @@ Rules:
 
 Pass this as the system prompt regardless of which model you use.
 
+## Handling Large Diffs
+
+The biggest practical problem with AI PR descriptions is diff size. Anything over 500 lines pushes against token limits and produces vague summaries. Two approaches work well.
+
+**Chunked summarization**: Split the diff by file, summarize each file independently, then combine the file summaries into a final description.
+
+```python
+def summarize_large_diff(diff: str, max_chunk_lines: int = 200) -> str:
+    lines = diff.split("\n")
+    file_chunks = []
+    current_chunk = []
+
+    for line in lines:
+        if line.startswith("diff --git") and current_chunk:
+            file_chunks.append("\n".join(current_chunk))
+            current_chunk = [line]
+        else:
+            current_chunk.append(line)
+
+    if current_chunk:
+        file_chunks.append("\n".join(current_chunk))
+
+    file_summaries = []
+    for chunk in file_chunks:
+        summary = client.messages.create(
+            model="claude-opus-4-6",
+            max_tokens=200,
+            messages=[{
+                "role": "user",
+                "content": f"Summarize this file diff in 2-3 bullets:\n\n{chunk[:3000]}"
+            }]
+        )
+        file_summaries.append(summary.content[0].text)
+
+    combined = "\n\n".join(file_summaries)
+    final = client.messages.create(
+        model="claude-opus-4-6",
+        max_tokens=400,
+        messages=[{
+            "role": "user",
+            "content": f"Write a cohesive PR description from these file summaries:\n\n{combined}"
+        }]
+    )
+    return final.content[0].text
+```
+
+**Semantic diff filtering**: For very large diffs, strip test files and auto-generated code before sending to the model. Test changes rarely add signal to the PR description, and generated files (migrations, protobuf output) are noise.
+
+```bash
+git diff origin/main...HEAD \
+  -- ':(exclude)tests/' \
+  -- ':(exclude)*_pb2.py' \
+  -- ':(exclude)migrations/' \
+  | head -600 > /tmp/filtered.diff
+```
+
+## Enforcing Team PR Templates
+
+Most teams have a PR template in `.github/PULL_REQUEST_TEMPLATE.md`. The AI should fill that template rather than invent its own structure. Pass the template content directly in the system prompt:
+
+```python
+import subprocess
+
+def get_pr_template() -> str:
+    try:
+        with open(".github/PULL_REQUEST_TEMPLATE.md") as f:
+            return f.read()
+    except FileNotFoundError:
+        return ""
+
+PR_TEMPLATE = get_pr_template()
+
+SYSTEM_PROMPT = f"""Fill in this PR template based on the diff provided.
+Keep all section headers exactly as written.
+If a section is not applicable, write 'N/A' — do not delete the section.
+
+Template:
+{PR_TEMPLATE}"""
+```
+
+This approach guarantees the AI output matches what reviewers expect to see, and makes the generated description easier to edit manually if needed.
+
+## Measuring Description Quality Over Time
+
+Track whether AI-generated descriptions correlate with faster reviews. Add a label to AI-generated PRs and then query GitHub's API after merge:
+
+```bash
+# Get average review time for AI-described vs manual PRs
+gh api graphql -f query='
+{
+  repository(owner: "org", name: "repo") {
+    pullRequests(last: 100, labels: ["ai-description"]) {
+      nodes {
+        createdAt
+        mergedAt
+        reviewDecision
+      }
+    }
+  }
+}'
+```
+
+Teams consistently report 20-40% reduction in reviewer question comments on PRs with AI-generated descriptions — the model surfaces context that authors forget to mention.
+
 ## Related Reading
 
 - [Best AI Tools for Writing GitHub Actions Workflows](/ai-tools-compared/best-ai-tools-for-writing-github-actions-workflows-2026/)
