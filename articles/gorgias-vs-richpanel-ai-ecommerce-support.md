@@ -27,6 +27,8 @@ Gorgias positions itself as a helpdesk that uses machine learning to automate re
 
 Richpanel takes a more modular approach, separating its ticket management from its AI capabilities. The platform emphasizes an unified inbox that aggregates support channels, with AI features that learn from your knowledge base rather than relying solely on pre-trained models.
 
+The architectural difference has downstream consequences for teams that want to customize behavior. Gorgias's tightly coupled approach means you get out-of-the-box automations faster but hit walls when your workflow doesn't match their opinionated templates. Richpanel's modular design requires more initial setup but gives teams more control over individual components.
+
 
 ## Integration and API Capabilities
 
@@ -238,6 +240,44 @@ Richpanel provides broader AI features including:
 
 Richpanel's AI appears more "baked in" to the ticket interface, displaying summaries and sentiment scores alongside the conversation without requiring agent action.
 
+From a practical standpoint, Gorgias's suggestion-first model works well for teams that want agents to remain in control—the AI assists rather than acts autonomously. Richpanel's inline sentiment and summarization lets supervisors triage queues faster without reading every thread, which scales better for high-volume operations where managers need queue visibility rather than per-ticket assistance.
+
+
+## Side-by-Side Feature Comparison
+
+| Feature | Gorgias | Richpanel |
+|---------|---------|-----------|
+| API style | REST | GraphQL |
+| Native Shopify integration | Deep (orders, refunds, tags) | Standard |
+| AI response suggestion | Yes | Yes |
+| Sentiment analysis | Limited | Built-in |
+| Ticket summarization | No | Yes |
+| Intent classification | Rule-based | AI-based |
+| Workflow branching | Linear rules | Conditional branches |
+| Knowledge base AI | External KB link | Trains on your KB |
+| Multi-brand support | Yes (add-on) | Yes (included) |
+| Self-serve portal | No | Yes |
+
+The table highlights the trade-off: Gorgias wins on Shopify depth and automation templates; Richpanel wins on built-in AI analytics and self-serve capabilities.
+
+
+## Knowledge Base and Self-Service
+
+One differentiator that often decides the choice for mid-sized merchants is how each platform handles self-service.
+
+Gorgias does not include a native self-service portal. Customers reach agents through standard channels (email, chat, social), and automations intercept repetitive queries before they require agent attention. Teams that want self-service on Gorgias typically integrate a third-party help center like Help Scout Docs or Zendesk Guide.
+
+Richpanel includes a built-in self-service portal where customers can track orders, initiate returns, and resolve common issues without contacting support. The portal is powered by your Richpanel knowledge base and connected to your ecommerce platform's order data. For merchants where order status and returns represent 40-60% of contact volume—a common figure in apparel and consumer goods—this self-service layer can significantly reduce ticket volume before a single automation fires.
+
+
+## Shopify-Specific Considerations
+
+For Shopify merchants specifically, Gorgias holds a meaningful advantage in native depth. Agents can view order details, apply discounts, issue refunds, duplicate orders, and update shipping addresses directly from within the Gorgias ticket view. No tab switching, no API call, no copy-paste.
+
+Richpanel connects to Shopify but exposes order data primarily for context rather than action. Agents see order history alongside tickets but initiate modifications back in the Shopify admin. This is workable for small teams but introduces friction at scale.
+
+If your support team spends most of its time on order-related actions rather than complex customer inquiries, the Gorgias Shopify integration is a meaningful productivity driver that Richpanel does not currently match.
+
 
 ## Pricing Considerations
 
@@ -246,6 +286,8 @@ Gorgias pricing starts around $29/month for smaller plans, with AI features typi
 
 
 Richpanel similarly structures pricing around usage, with AI features usually included in mid-tier plans. Both platforms offer free trials for testing.
+
+One pricing nuance worth evaluating: Gorgias charges per ticket on higher-volume plans, which can make costs unpredictable during promotional periods or seasonal spikes. Richpanel's pricing tends to be seat-based at the higher tiers, which is easier to budget for operations teams managing headcount rather than volume.
 
 
 ## Decision Factors for Developers
