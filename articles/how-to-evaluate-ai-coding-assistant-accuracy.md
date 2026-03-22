@@ -252,6 +252,92 @@ Based on running this framework on a Python/Django codebase:
 
 "Hard" tasks were refactoring requests with multiple interacting files. No model approaches 90% on those — iterative use is still necessary.
 
+## Step 5: Measuring Context Window Utilization
+
+A model's raw pass rate is only part of the picture. How well it uses the context you provide determines whether it can handle real codebase tasks, not just isolated function generation.
+
+Add a context utilization metric to your runner. After each response, check whether the generated code references patterns, class names, or function signatures from the reference files you supplied:
+
+```python
+def measure_context_utilization(task, generated_code):
+    """Check how many identifiers from reference files appear in the output."""
+    import ast
+    import re
+
+    reference_identifiers = set()
+    for ref_file in task.get("reference_files", []):
+        try:
+            source = Path(ref_file).read_text()
+            tree = ast.parse(source)
+            for node in ast.walk(tree):
+                if isinstance(node, (ast.FunctionDef, ast.ClassDef, ast.Name)):
+                    name = getattr(node, 'name', None) or getattr(node, 'id', None)
+                    if name and len(name) > 3:  # skip short names
+                        reference_identifiers.add(name)
+        except Exception:
+            # Fall back to regex extraction for non-Python files
+            reference_identifiers.update(re.findall(r'\b[a-zA-Z_][a-zA-Z0-9_]{3,}\b', source))
+
+    if not reference_identifiers:
+        return None
+
+    used = sum(1 for ident in reference_identifiers if ident in generated_code)
+    return {
+        "total_reference_identifiers": len(reference_identifiers),
+        "used_in_output": used,
+        "utilization_rate": used / len(reference_identifiers)
+    }
+```
+
+Models that score above 30% utilization on hard tasks are genuinely integrating with your codebase context. Models that score below 10% are essentially ignoring the reference files and generating from training data alone, which explains poor performance on domain-specific tasks.
+
+## Step 6: Cost-Adjusted Accuracy
+
+For teams evaluating models at scale, raw accuracy without cost context can mislead purchasing decisions. A model with 85% accuracy at $15 per million tokens costs more per correct output than one with 78% accuracy at $3 per million tokens.
+
+Calculate cost-per-correct-task for each model in your evaluation:
+
+```python
+def cost_adjusted_metrics(results, pricing_per_million_tokens):
+    """Compare models by cost per successfully completed task."""
+    total_tokens = sum(r.get("tokens_used", 0) for r in results)
+    total_cost = (total_tokens / 1_000_000) * pricing_per_million_tokens
+    correct_tasks = sum(1 for r in results if r["passed"])
+
+    return {
+        "total_cost_usd": round(total_cost, 4),
+        "correct_tasks": correct_tasks,
+        "cost_per_correct_task": round(total_cost / correct_tasks, 4) if correct_tasks else None,
+        "cost_per_task_attempted": round(total_cost / len(results), 4)
+    }
+```
+
+For medium-difficulty tasks where the gap between top models is 3-5 percentage points, cost-adjusted metrics often reverse the ranking. A cheaper model that requires one follow-up prompt can still cost less per solved task than the most accurate model used once.
+
+## Comparing Evaluation Approaches
+
+Different evaluation strategies suit different team situations:
+
+| Approach | Setup time | Accuracy of results | Best for |
+|----------|-----------|--------------------|---------|
+| Manual task list + human review | 2 hours | Moderate (reviewer bias) | Quick initial screening |
+| Automated test runner (this guide) | 4-8 hours | High (objective pass/fail) | Serious purchasing decisions |
+| Vendor benchmark review only | 30 minutes | Low (not your codebase) | Ruling out obvious poor fits |
+| Blind comparison survey | 3 hours | Moderate (style-focused) | UX and readability evaluation |
+| Production A/B test | 2-4 weeks | Very high (real work) | Post-purchase validation |
+
+For most teams, the automated test runner approach gives the best return on evaluation investment. The 4-8 hour setup is a one-time cost; the framework runs in minutes and can be re-used every quarter as models update.
+
+## Making the Decision
+
+After running your evaluation suite, you will have accuracy data by task category, difficulty, and cost. Use this to match models to task types rather than picking a single winner for everything:
+
+- Use the highest-accuracy model for hard refactoring and architecture tasks where a wrong answer wastes significant developer time
+- Use a mid-tier model for the majority of implementation and bug-fix tasks where cost matters at scale
+- Reserve the fastest, cheapest model for autocomplete and inline suggestions where speed beats accuracy
+
+This tiered approach gives better outcomes than a single model selection, and the evaluation framework you built makes it straightforward to re-run tests as model capabilities evolve every few months.
+
 ## Related Reading
 
 - [AI Coding Productivity Measurement: How to Track If Tools Save Time](/ai-tools-compared/ai-coding-productivity-measurement-how-to-track-if-tools-save-time/)
