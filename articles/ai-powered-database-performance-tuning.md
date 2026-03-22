@@ -19,11 +19,11 @@ Database performance tuning requires reading query plans, understanding statisti
 
 ## Key Takeaways
 
-- **This is historically expert-only territory**: but AI tools have gotten good enough to replace a lot of that expertise for the 80% case.
-- **ROOT_CAUSE**: The primary reason this query is slow (1 sentence)
-2.
-- **Topics covered**: the core workflow, extracting slow queries, ai query plan interpretation
-- **Practical guidance included**: Step-by-step setup and configuration instructions
+- **EXPLAIN ANALYZE is the foundation** — without query plan output, AI recommendations are guesses. Always capture it first.
+- **AI explains the "why"** — pganalyze and PgHero show problems; Claude explains what they mean to a developer without a DBA background.
+- **Index recommendations need context** — AI tools that see table size, cardinality stats, and existing indexes give better recommendations than those that only see the query.
+- **Batch analysis at scale** — the real productivity gain is analyzing 20 slow queries in parallel, not debugging one at a time.
+- **Practical guidance included**: Step-by-step setup and configuration instructions.
 
 ## The Core Workflow
 
@@ -35,6 +35,38 @@ Run EXPLAIN ANALYZE
 AI interpretation → Index recommendations → Query rewrite suggestions
           ↓
 Measure improvement (before/after latency)
+```
+
+This loop works for both reactive tuning (fix slow queries in production) and proactive tuning (review new queries before they ship). The AI component fits at the interpretation and recommendation step — not at the measurement step, which requires real query execution.
+
+## Prerequisites: Enabling Query Tracking
+
+Before you can identify slow queries, you need the data. For PostgreSQL:
+
+```sql
+-- Enable pg_stat_statements (requires superuser, restart not needed)
+CREATE EXTENSION IF NOT EXISTS pg_stat_statements;
+
+-- Add to postgresql.conf:
+-- shared_preload_libraries = 'pg_stat_statements'
+-- pg_stat_statements.track = all
+-- pg_stat_statements.max = 10000
+
+-- Verify it's collecting data
+SELECT count(*) FROM pg_stat_statements;
+```
+
+For MySQL, enable the slow query log:
+
+```sql
+SET GLOBAL slow_query_log = 'ON';
+SET GLOBAL long_query_time = 0.1;  -- Log queries over 100ms
+SET GLOBAL slow_query_log_file = '/var/log/mysql/slow.log';
+
+-- Or use Performance Schema (MySQL 5.7+)
+UPDATE performance_schema.setup_consumers
+SET ENABLED = 'YES'
+WHERE NAME = 'events_statements_history_long';
 ```
 
 ## Extracting Slow Queries
@@ -218,6 +250,23 @@ Based on column types and naming patterns (foreign keys, timestamps, status fiel
     return response.content[0].text
 ```
 
+## Reading EXPLAIN Output: What the AI Sees
+
+To understand why AI interpretation helps, here's what a typical slow query plan looks like:
+
+```
+Gather  (cost=1000.00..45231.43 rows=1 width=208) (actual time=18241.321..18241.323 rows=0 loops=1)
+  Workers Planned: 2
+  Workers Launched: 2
+  ->  Parallel Seq Scan on orders  (cost=0.00..44231.33 rows=1 width=208) (actual time=18238.471..18238.471 rows=0 loops=3)
+        Filter: ((status = 'pending'::text) AND (created_at > '2026-01-01'::date))
+        Rows Removed by Filter: 1483721
+```
+
+A developer without database experience sees numbers. Claude sees: "Sequential scan on 1.5 million rows removing almost all of them — this table needs a composite index on `(status, created_at)`. The parallel workers are compensating but the fundamental problem is that there's no index on `status`."
+
+The natural language output gets developers to the right fix without requiring them to memorize query plan node types.
+
 ## Query Rewrite Examples
 
 AI tools are particularly good at rewriting anti-patterns. Give Claude these and it consistently fixes them:
@@ -267,6 +316,8 @@ Rules:
     return response.content[0].text
 ```
 
+For the leading wildcard case, Claude typically recommends a full-text search index (`CREATE INDEX USING gin(to_tsvector('english', name))`) along with the rewritten query using `@@` instead of `LIKE`. This is a non-obvious fix that most developers need to look up — the AI surfaces it immediately.
+
 ## Automated Slow Query Report
 
 ```python
@@ -291,6 +342,16 @@ if __name__ == "__main__":
     generate_tuning_report(os.environ["DATABASE_URL"])
 ```
 
+Schedule this as a weekly cron job and route the report to a Slack channel. Teams that do this consistently find performance regressions during the week they're introduced rather than after they've affected enough users to appear in support tickets.
+
+## When AI Recommendations Fall Short
+
+AI tuning tools have two common failure modes worth knowing.
+
+**Write-heavy tables**: Index recommendations from AI tools optimize for read performance. On a table with 10,000 writes per second, adding an index on every filtered column will slow writes enough to create a different kind of incident. Always check `n_dead_tup` and `last_autovacuum` alongside index recommendations for high-write tables.
+
+**Optimizer statistics mismatch**: If `ANALYZE` hasn't run recently, the query planner is working from stale statistics. AI interpretation of the plan will be correct but the recommendations may not match production behavior. Run `ANALYZE table_name` before capturing EXPLAIN output for analysis.
+
 ## Tool Comparison
 
 | Tool | Query Analysis | Index Recs | Plan Interpretation | Cost |
@@ -301,7 +362,7 @@ if __name__ == "__main__":
 | pganalyze | Automated | Good | Limited | $149+/mo |
 | OtterTune | ML-based | Yes | No narrative | $400+/mo |
 
-Claude's advantage is explaining *why* a query is slow in plain language — useful for developers who aren't database experts.
+Claude's advantage is explaining *why* a query is slow in plain language — useful for developers who aren't database experts. pganalyze and OtterTune are better for automated monitoring at scale; Claude is better for understanding and teaching.
 
 ## Related Reading
 
