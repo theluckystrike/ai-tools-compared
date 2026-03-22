@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: ai-tools-for-automated-pr-description-generation
 categories: [guides]
 reviewed: true
-score: 6
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]
