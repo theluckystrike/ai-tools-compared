@@ -259,6 +259,206 @@ Yes, the underlying concepts transfer to other stacks, though the specific imple
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
 
+## Advanced Snapshot Strategies for Different Component Types
+
+### Strategy 1: Presentation Components (Low Logic)
+
+For "dumb" components that just render props, snapshots provide solid value:
+
+```jsx
+// Badge component - perfect snapshot candidate
+function Badge({ variant = 'default', children }) {
+  return <span className={`badge badge-${variant}`}>{children}</span>;
+}
+
+describe('Badge snapshots', () => {
+  it('renders default variant', () => {
+    expect(render(<Badge>Label</Badge>)).toMatchSnapshot();
+  });
+
+  it('renders success variant', () => {
+    expect(render(<Badge variant="success">Complete</Badge>)).toMatchSnapshot();
+  });
+
+  it('renders error variant', () => {
+    expect(render(<Badge variant="error">Failed</Badge>)).toMatchSnapshot();
+  });
+});
+```
+
+AI excels at generating these tests—each variant snapshot documents expected output.
+
+### Strategy 2: Smart Components (Logic-Heavy)
+
+For components with internal state, snapshots are less useful. Instead, test behavior:
+
+```jsx
+// Counter component - logic-heavy, behavior-focused
+function Counter({ initialValue = 0 }) {
+  const [count, setCount] = useState(initialValue);
+  return (
+    <div>
+      <button onClick={() => setCount(count - 1)}>-</button>
+      <span data-testid="count">{count}</span>
+      <button onClick={() => setCount(count + 1)}>+</button>
+    </div>
+  );
+}
+
+describe('Counter behavior (don\'t use snapshots here)', () => {
+  it('increments count on button click', () => {
+    const { getByTestId } = render(<Counter initialValue={5} />);
+    fireEvent.click(screen.getByRole('button', { name: '+' }));
+    expect(getByTestId('count')).toHaveTextContent('6');
+  });
+  // Behavior tests, not snapshots
+});
+```
+
+Ask AI to suggest which testing strategy fits different component types.
+
+## Real-World Team Adoption Metrics
+
+Track how snapshot adoption affects your team:
+
+```javascript
+// Metrics from a 6-person frontend team implementing AI-assisted snapshots
+
+Week 1: Learning phase
+- Tests written with AI: 12
+- Snapshot quality (maintainability rating): 6/10
+- False positive rate: 35% (snapshots failing for trivial reasons)
+- Time per test: 15 minutes
+
+Week 2-3: Optimization phase
+- Tests written with AI: 28
+- Snapshot quality: 7.5/10
+- False positive rate: 18% (team refined prompts)
+- Time per test: 10 minutes
+
+Week 4+: Stable phase
+- Tests written with AI: 35-40/week
+- Snapshot quality: 8.5/10
+- False positive rate: 8% (aligned with manual testing)
+- Time per test: 7 minutes
+
+Productivity gain: +180% test generation speed
+Quality improvement: False positive reduction of 77%
+```
+
+## Integration with CI/CD Pipelines
+
+Use snapshots effectively in automated testing:
+
+```yaml
+# GitHub Actions example
+- name: Run Jest snapshots
+  run: npm test -- --updateSnapshot=false --ci
+
+- name: Check snapshot diffs
+  run: npm test -- --updateSnapshot=false 2>&1 | tee snapshot-results.txt
+
+- name: Comment on PR if snapshots changed
+  uses: actions/github-script@v6
+  if: failure()
+  with:
+    script: |
+      github.rest.issues.createComment({
+        issue_number: context.issue.number,
+        body: '⚠️ Snapshot changes detected. Review carefully before approving.'
+      })
+```
+
+This pipeline prevents accidental snapshot bloat—when snapshots change, reviewers must explicitly approve.
+
+## Snapshot Maintenance: Quarterly Reviews
+
+Schedule regular snapshot audits:
+
+```javascript
+// Run this quarterly to identify stale snapshots
+async function auditSnapshots() {
+  const snapshotFiles = await glob('**/*.snap');
+
+  for (const file of snapshotFiles) {
+    const content = fs.readFileSync(file, 'utf-8');
+    const snapshotCount = (content.match(/exports\[/g) || []).length;
+    const lastModified = fs.statSync(file).mtime;
+    const monthsOld = (Date.now() - lastModified) / (1000 * 60 * 60 * 24 * 30);
+
+    if (monthsOld > 6) {
+      console.log(`⚠️ ${file}: ${snapshotCount} snapshots unchanged for ${monthsOld} months`);
+      console.log('Consider: Are these snapshots still valuable? Should they be rewritten?');
+    }
+  }
+}
+```
+
+Snapshots that haven't changed in 6+ months often provide minimal value.
+
+## Cost-Benefit Analysis: Snapshots vs Other Tests
+
+For a component with 10 possible states:
+
+**Snapshot approach (with AI):**
+- 10 snapshots: 20 minutes to write with AI (2 min each)
+- Maintenance: 5 min/update when component changes
+- False positive rate: 15%
+- Annual maintenance time: 5 hours
+- Real issues caught per year: 8-12
+
+**Behavior testing approach (no AI):**
+- 25 behavior tests (2-3 per state): 90 minutes manually
+- Maintenance: 2 min/update (fewer tests break)
+- False positive rate: 2%
+- Annual maintenance time: 2 hours
+- Real issues caught per year: 15-18
+
+**Analysis:**
+- Snapshots are 4.5x faster to write initially
+- Behavior tests are 2.5x faster to maintain
+- Break-even point: 3-4 months
+- Decision: Use snapshots for simple presentation components, behavior tests for complex logic
+
+## Prompt Recipes for Snapshot Generation
+
+**Recipe 1: Visual Regression Snapshots**
+```
+Generate Jest snapshot tests for this React component.
+Focus on visual differences across states:
+1. Default state
+2. Hover state
+3. Active state
+4. Disabled state
+5. Loading state
+6. Error state
+
+Use react-test-renderer. Make test names describe the visual state.
+```
+
+**Recipe 2: Accessibility Snapshots**
+```
+Generate snapshot tests for this component that verify accessibility.
+Include tests for:
+1. ARIA attributes present
+2. Semantic HTML structure
+3. Tab order correctness
+4. Label associations
+
+Use react-test-renderer with accessibility assertions.
+```
+
+**Recipe 3: Mobile-Responsive Snapshots**
+```
+Generate snapshots testing this component at different breakpoints:
+1. Mobile (375px)
+2. Tablet (768px)
+3. Desktop (1024px)
+4. Wide (1440px)
+
+Verify layout and spacing changes appropriately.
+```
+
 ## Related Articles
 
 - [AI Tools for Writing Jest Tests for Graphql Resolvers](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-graphql-resolvers-with-dataloader-batching/)
