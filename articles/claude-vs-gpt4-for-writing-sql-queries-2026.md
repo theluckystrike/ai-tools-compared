@@ -289,14 +289,13 @@ Claude correctly uses `jsonb_array_elements_text` with `LATERAL` to unnest the p
 
 For complex analytical SQL, Claude produces more idiomatic PostgreSQL with better handling of edge cases. GPT-4o is fine for straightforward CRUD queries but shows cracks on advanced features.
 
-## Related Reading
+## Related Articles
 
-- [Best AI Tools for SQL Query Generation](/ai-tools-compared/best-ai-tools-for-sql-query-generation-2026/)
-- [Best AI Self-Hosted Model for Writing SQL Queries](/ai-tools-compared/best-self-hosted-ai-model-for-writing-sql-queries-from-natur/)
-- [Best AI Tools for SQL Query Optimization](/ai-tools-compared/best-ai-tools-for-sql-query-optimization-2026/)
-
----
-
+- [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
+- [Best Self Hosted AI Model for Writing SQL Queries from](/ai-tools-compared/best-self-hosted-ai-model-for-writing-sql-queries-from-natural-language/)
+- [Best AI Assistant for Generating SQL Recursive Queries](/ai-tools-compared/best-ai-assistant-for-generating-sql-recursive-queries-for-hierarchical-org-chart-data/)
+- [Best AI for Writing dbt Macros That Generate Dynamic SQL](/ai-tools-compared/best-ai-for-writing-dbt-macros-that-generate-dynamic-sql-bas/)
+- [Best AI for Writing SQL Performance Tuning Recommendations](/ai-tools-compared/best-ai-for-writing-sql-performance-tuning-recommendations-f/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

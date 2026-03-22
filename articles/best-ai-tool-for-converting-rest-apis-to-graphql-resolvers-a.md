@@ -12,19 +12,17 @@ score: 8
 intent-checked: true
 voice-checked: true
 ---
-<<<<<<< HEAD
 
-{% raw %}{% raw %}
-=======
->>>>>>> c8931ba67e79f64c03d5b1c734452f30c0808152
-
+{% raw %}
 Converting REST endpoints to GraphQL resolvers involves more than mechanical translation. REST maps verbs and nouns to URLs; GraphQL maps fields to resolver functions, with a schema that defines exactly what data is available and how to fetch it. AI tools have made this conversion significantly faster, but the quality varies. This guide covers which tools work, how to use them, and what to verify after conversion.
 
 ## Why REST-to-GraphQL Conversion Is Non-Trivial
 
 A REST endpoint like `GET /users/{id}/posts?limit=10&status=published` becomes a GraphQL field on the `User` type with arguments. The resolver needs to call the right data source, handle the arguments, and return the shape matching the schema. Getting AI to do this correctly requires providing it with both the REST API contract and the existing data layer.
 
-A naive conversion produces resolvers that call `fetch()` against your own REST API — which works but defeats the purpose of GraphQL. Good conversion generates resolvers that access your data layer directly.
+A naive conversion produces resolvers that call `fetch()` against your own REST API — which works but defeats the purpose of GraphQL. Good conversion generates resolvers that access your data layer directly. This matters because direct data-layer access eliminates the double-hop latency and lets GraphQL optimize queries across multiple fields in a single request.
+
+There is also schema design work involved. GraphQL types do not map one-to-one to REST endpoints. A REST API might have `/users/:id`, `/users/:id/posts`, and `/users/:id/comments` as three separate endpoints. In GraphQL, these become fields on a single `User` type. The resolver for each field runs independently, which creates N+1 query risks if not designed carefully from the start.
 
 ## Claude: Best Overall for Resolver Generation
 
@@ -86,6 +84,8 @@ const resolvers = {
 
 Claude correctly uses the parent resolver pattern, adds the `where` clause for filtering, and uses `Promise.all` for parallel queries. This is production-quality output with minimal editing needed.
 
+For bulk conversions, Claude handles batch prompting well. Provide all the endpoint signatures in one prompt and ask for resolvers for each. For APIs with 30-50 endpoints, this is the most time-efficient approach. Break very large APIs into batches by domain (user-related endpoints, order-related endpoints, etc.) to keep context focused.
+
 ## GitHub Copilot: Good for Schema-First Development
 
 If you are writing the schema first and need resolver stubs, Copilot autocompletes them well in context. Open your resolvers file, define the type in a comment or adjacent schema file, and Copilot suggests implementations.
@@ -104,7 +104,9 @@ const resolvers = {
 };
 ```
 
-Copilot is less reliable when converting existing REST endpoints because it lacks the REST contract context. It tends to produce resolvers that call the REST API via HTTP rather than accessing the data layer directly.
+Copilot is less reliable when converting existing REST endpoints because it lacks the REST contract context. It tends to produce resolvers that call the REST API via HTTP rather than accessing the data layer directly. When Copilot does produce a resolver that calls `fetch('https://api.example.com/users')`, that is a signal it does not have enough context — add your ORM model files to the workspace or open them before triggering completion.
+
+Copilot works best as a resolver-writing assistant once you have already designed the schema. Use Claude for the initial conversion, then use Copilot for subsequent resolver additions as the codebase grows.
 
 ## StepZen and Hasura: Automated Conversion Tools
 
@@ -125,6 +127,43 @@ hasura api-limits create --rest-endpoint-url https://api.example.com
 
 These tools are useful when you cannot modify the data layer and need GraphQL as a wrapper. They are not useful when you want GraphQL to access the database directly, which eliminates the N+1 query problem and improves performance.
 
+The architectural distinction matters: StepZen and Hasura build a GraphQL API in front of your REST API, adding a layer. Claude generates resolvers that talk directly to your data store. For new projects or projects where you control the backend, the direct approach produces better performance. For third-party APIs where you only have HTTP access, the wrapping approach is the right choice.
+
+Hasura is particularly strong when your data source is PostgreSQL — it introspects your database schema and generates a complete GraphQL API automatically, including relationships, permissions, and subscriptions. This is faster than any AI-based approach for database-first GraphQL.
+
+## Converting Authentication-Protected Endpoints
+
+REST APIs typically pass authentication via headers (`Authorization: Bearer token`). GraphQL resolvers receive authentication through context. When converting, you need to translate the authentication pattern:
+
+```typescript
+// REST handler (Express):
+app.get('/profile', authenticate, (req, res) => {
+  res.json({ userId: req.user.id, email: req.user.email });
+});
+
+// GraphQL resolver equivalent (Claude generates this correctly):
+const resolvers = {
+  Query: {
+    profile: async (_: unknown, __: unknown, context: Context) => {
+      if (!context.user) throw new AuthenticationError('Not authenticated');
+      return {
+        userId: context.user.id,
+        email: context.user.email,
+      };
+    },
+  },
+};
+
+// Context builder (needs to be set up separately):
+const context = ({ req }: { req: Request }): Context => {
+  const token = req.headers.authorization?.replace('Bearer ', '');
+  const user = token ? verifyToken(token) : null;
+  return { user, prisma };
+};
+```
+
+Tell Claude the authentication middleware your REST routes use, and it will generate the context-based authentication pattern correctly. This is one area where Claude consistently outperforms Copilot for conversion — it understands the idiomatic differences between REST middleware and GraphQL context.
+
 ## Comparison: Which Tool for Which Use Case
 
 | Use Case | Best Tool |
@@ -134,6 +173,8 @@ These tools are useful when you cannot modify the data layer and need GraphQL as
 | Wrapping existing REST API in GraphQL | StepZen or Hasura |
 | Bulk conversion of 50+ endpoints | Claude (batch prompting) |
 | Adding DataLoader for N+1 prevention | Claude |
+| Database-first GraphQL from PostgreSQL | Hasura |
+| Ongoing resolver additions to existing schema | GitHub Copilot |
 
 ## Handling N+1 Queries After Conversion
 
@@ -158,6 +199,21 @@ User: {
 }
 ```
 
+DataLoader batches all `postsLoader.load()` calls that happen within a single event loop tick and issues a single database query. For a list of 100 users, this changes 100 database queries into 1. Always add DataLoader when converting list resolvers that reference related objects.
+
+When using Claude to add DataLoaders, provide the full resolver file and ask it to add DataLoader for every resolver that could be called in a list context. Claude identifies these correctly from the schema shape and generates the batch functions with the right return order (DataLoader requires results in the same order as the input keys).
+
+## Validating AI-Generated Resolvers
+
+AI-generated resolvers require validation before production use. The most reliable approach:
+
+1. Write a GraphQL query that exercises the resolver with known input.
+2. Compare the response against what the original REST endpoint returned for the same input.
+3. Check error handling — does the resolver throw the right error type when the resource does not exist?
+4. Run under load to verify N+1 issues are not present (use Apollo Studio's field latency tracing or similar).
+
+Claude's output is accurate for the happy path but sometimes misses edge cases like null handling on optional fields or error propagation from the data layer. Run the resolver with a null parent, a missing resource, and a database error to verify all three are handled correctly.
+
 ## Frequently Asked Questions
 
 **Are free AI tools good enough for REST-to-GraphQL conversion?**
@@ -167,6 +223,10 @@ Free Claude and Copilot tiers handle small conversions (under 20 endpoints) adeq
 **Should I switch to GraphQL from REST?**
 
 GraphQL solves over-fetching and under-fetching, reduces round trips, and makes API evolution easier. The tradeoff is complexity: caching, rate limiting, and security are harder than REST. Migrate when you have multiple clients with different data needs, not just because GraphQL exists.
+
+**How long does a full REST-to-GraphQL migration take with AI assistance?**
+
+For a 30-endpoint REST API with a well-documented schema, expect 2-3 days with Claude assistance: one day for schema design and initial resolver generation, one day for DataLoader setup and edge case handling, and one day for testing and performance validation. Without AI, the same migration typically takes 1-2 weeks.
 
 ## Related Articles
 

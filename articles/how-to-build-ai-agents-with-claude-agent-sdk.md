@@ -436,13 +436,13 @@ Run the command with `sudo` for system-level operations, or check that your user
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Related Reading
+## Related Articles
 
-- [Aider vs Claude Code: Terminal AI Comparison](/aider-vs-claude-code-terminal-ai-comparison/)
-- [AI Tool Customization: claude.md vs .cursorrules](/ai-tool-customization-comparison-claude-md-vs-cursorrules-vs/)
-- [Claude Sonnet vs Opus API Pricing: Is the Difference Worth It?](/claude-sonnet-vs-opus-api-pricing-difference-worth-it-2026/)
----
-
+- [How to Build Custom MCP Servers for Claude](/ai-tools-compared/how-to-build-custom-mcp-servers-for-claude)
+- [Claude Code SDK Testing Workflow Guide](/ai-tools-compared/claude-code-sdk-testing-workflow-guide/)
+- [Claude Code API Client TypeScript Guide: Build Type-Safe](/ai-tools-compared/claude-code-api-client-typescript-guide/)
+- [How to Use the Claude API for Automated Code Review](/ai-tools-compared/how-to-use-claude-api-for-automated-code-review/)
+- [Best AI Tools for Support Agent Assist](/ai-tools-compared/best-ai-tools-for-support-agent-assist/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

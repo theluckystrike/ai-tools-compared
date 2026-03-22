@@ -288,13 +288,12 @@ Yes. Use a separate prompt specifically for migration guides, providing the brea
 **What commit message format gives AI the best results?**
 Conventional commits format (`feat:`, `fix:`, `docs:`, `BREAKING CHANGE:`) gives AI the clearest signal because the category is explicit. The AI doesn't need to infer whether "Update authentication flow" is a feature or a breaking change -- if the commit is marked `BREAKING CHANGE: Update authentication flow`, the categorization is unambiguous.
 
-## Related Reading
+## Related Articles
 
+- [AI Tools for Creating Automated Release Changelog](/ai-tools-compared/ai-tools-for-creating-automated-release-changelog-from-conve/)
+- [AI Coding Tools for Automating Changelog Generation from](/ai-tools-compared/ai-coding-tools-for-automating-changelog-generation-from-con/)
+- [How to Use AI to Write Commit Message Guidelines](/ai-tools-compared/how-to-use-ai-to-write-commit-message-guidelines-for-open-source-projects/)
+- [Writing Custom Instructions That Make AI Follow Your Team's](/ai-tools-compared/writing-custom-instructions-that-make-ai-follow-your-teams-changelog-entry-format/)
 - [AI Tools for Automated Changelog Generation 2026](/ai-tools-compared/ai-tools-for-automated-changelog-generation-2026/)
-- [AI Tools for Creating Automated Release Changelog from Conve](/ai-tools-compared/ai-tools-for-creating-automated-release-changelog-from-conve/)
-- [Create CursorRules That Enforce Your Team's Git Commit](/ai-tools-compared/how-to-create-cursorrules-that-enforce-your-teams-git-commit/)
-- [How to Create .cursorrules That Enforce Your Teams React](/ai-tools-compared/how-to-create-cursorrules-that-enforce-your-teams-react-comp/)
-- [Create CursorRules That Teach Cursor Your Team's State](/ai-tools-compared/how-to-create-cursorrules-that-teach-cursor-your-teams-state/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -15,9 +15,7 @@ tags: [ai-tools-compared]
 
 {% raw %}
 
-# How to Build AI-Powered CLI Tools 2026
-
-AI-powered CLI tools are useful for developer workflows: generating code from specs, summarizing logs, reviewing diffs, or automating repetitive tasks. This guide covers building a production-quality AI CLI with Python, Click, and the Anthropic SDK.
+AI-powered CLI tools are useful for developer workflows: generating code from specs, summarizing logs, reviewing diffs, or automating repetitive tasks. This guide covers building a production-quality AI CLI with Python, Click, and the Anthropic SDK — including streaming output, tool use, conversation context management, and packaging.
 
 ## Project Structure
 
@@ -33,6 +31,8 @@ ai-cli/
 ├── pyproject.toml
 └── tests/
 ```
+
+The `src` layout (as opposed to a flat layout) avoids import path issues when running tests and makes packaging with `hatchling` or `setuptools` straightforward. Keep the Anthropic client isolated in `client.py` so commands in `cli.py` stay focused on user-facing logic.
 
 ## The Core Client
 
@@ -86,6 +86,8 @@ class AIClient:
         )
         return response.content[0].text
 ```
+
+Use `stream_response` for interactive commands where the user is watching output. Use `complete` for commands that pipe output to another tool or write to a file — streaming to a pipe is harmless but adds complexity without benefit.
 
 ## Streaming CLI Output
 
@@ -197,6 +199,16 @@ def generate(prompt: str, output: str | None, lang: str):
         console.print(Markdown(f"```{lang}\n{result}\n```"))
 ```
 
+The `--no-markdown` flag is important for commands used in shell pipelines. When the output is piped to `grep`, `jq`, or another tool, Rich markdown rendering adds ANSI escape codes that break downstream processing. Check `sys.stdout.isatty()` if you want to auto-detect pipes:
+
+```python
+# Auto-detect whether to render markdown
+if markdown and sys.stdout.isatty():
+    # render with Rich
+else:
+    # plain text output
+```
+
 ## Conversation Context Management
 
 For multi-turn conversations, you need to manage history without exceeding the context window:
@@ -271,6 +283,95 @@ def chat(session: str):
         console.print("\n[yellow]Bye[/yellow]")
 ```
 
+Saving history to a JSON file lets sessions persist across invocations. Store the file in a per-project location (`.aicli-session.json` in the current directory) so different projects have separate contexts, or in `~/.aicli/sessions/` with a project hash for global sessions.
+
+## Adding Tool Use (Function Calling)
+
+Tool use lets the CLI perform actions on behalf of the model — reading files, running shell commands, or querying APIs:
+
+```python
+# src/aicli/tools.py
+import subprocess
+from pathlib import Path
+
+TOOLS = [
+    {
+        "name": "read_file",
+        "description": "Read the contents of a file",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "path": {"type": "string", "description": "File path to read"}
+            },
+            "required": ["path"]
+        }
+    },
+    {
+        "name": "run_command",
+        "description": "Run a shell command and return stdout",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "command": {"type": "string", "description": "Shell command to run"}
+            },
+            "required": ["command"]
+        }
+    }
+]
+
+def execute_tool(name: str, input: dict) -> str:
+    if name == "read_file":
+        return Path(input["path"]).read_text()
+    elif name == "run_command":
+        result = subprocess.run(
+            input["command"], shell=True, capture_output=True, text=True, timeout=30
+        )
+        return result.stdout + result.stderr
+    return f"Unknown tool: {name}"
+```
+
+The tool loop in `client.py` handles tool use responses:
+
+```python
+def complete_with_tools(self, prompt: str, system: str = "") -> str:
+    messages = [{"role": "user", "content": prompt}]
+
+    while True:
+        response = self.client.messages.create(
+            model=self.model,
+            max_tokens=self.max_tokens,
+            system=system,
+            tools=TOOLS,
+            messages=messages,
+        )
+
+        if response.stop_reason == "end_turn":
+            # Extract text from response
+            for block in response.content:
+                if hasattr(block, "text"):
+                    return block.text
+            return ""
+
+        if response.stop_reason == "tool_use":
+            # Add assistant response to history
+            messages.append({"role": "assistant", "content": response.content})
+
+            # Execute each tool call
+            tool_results = []
+            for block in response.content:
+                if block.type == "tool_use":
+                    result = execute_tool(block.name, block.input)
+                    tool_results.append({
+                        "type": "tool_result",
+                        "tool_use_id": block.id,
+                        "content": result,
+                    })
+
+            messages.append({"role": "user", "content": tool_results})
+```
+
+Tool use is powerful but adds latency — each tool call requires a round trip to the API. Use it for commands where the model needs to reason about actual file contents or command output, not for commands where you can provide the context upfront.
+
 ## Packaging as a Binary
 
 ```toml
@@ -292,7 +393,16 @@ dependencies = [
 aicli = "aicli.cli:cli"
 ```
 
-Install globally with `pipx install .` for an isolated binary available as `aicli` in PATH. Use `pyinstaller` to build a self-contained binary with no Python dependency.
+Install globally with `pipx install .` for an isolated binary available as `aicli` in PATH. Use `pyinstaller` to build a self-contained binary with no Python dependency:
+
+```bash
+pip install pyinstaller
+pyinstaller --onefile --name aicli src/aicli/cli.py
+
+# Result: dist/aicli — a standalone executable, no Python required
+```
+
+PyInstaller binaries are larger (30-80MB for a Python CLI with dependencies) but require no setup on target machines. For internal tools, `pipx` is simpler. For distribution to non-Python users, PyInstaller is the right choice.
 
 ## Distribution via Homebrew
 
@@ -315,14 +425,63 @@ class Aicli < Formula
 end
 ```
 
+For a Homebrew tap, generate the resource hashes with `brew extract` or `poet` (a tool that generates Homebrew resource blocks from PyPI packages). Keep the formula in a `homebrew-tap` repository under your GitHub organization and users install with `brew install yourorg/tap/aicli`.
+
+## Testing AI CLI Commands
+
+Testing CLI tools that call the Anthropic API requires mocking the client:
+
+```python
+# tests/test_cli.py
+import pytest
+from click.testing import CliRunner
+from unittest.mock import patch, MagicMock
+from aicli.cli import cli
+
+@pytest.fixture
+def runner():
+    return CliRunner()
+
+def test_ask_command(runner):
+    mock_stream = MagicMock()
+    mock_stream.__enter__ = MagicMock(return_value=mock_stream)
+    mock_stream.__exit__ = MagicMock(return_value=False)
+    mock_stream.text_stream = iter(["Hello", ", ", "world!"])
+
+    with patch("aicli.client.anthropic.Anthropic") as mock_anthropic:
+        mock_anthropic.return_value.messages.stream.return_value = mock_stream
+        result = runner.invoke(cli, ["ask", "test prompt", "--no-markdown"])
+
+    assert result.exit_code == 0
+    assert "Hello, world!" in result.output
+
+def test_ask_with_file(runner, tmp_path):
+    test_file = tmp_path / "test.py"
+    test_file.write_text("def hello(): pass")
+
+    with patch("aicli.client.anthropic.Anthropic") as mock_anthropic:
+        mock_client = MagicMock()
+        mock_anthropic.return_value = mock_client
+        mock_client.messages.stream.return_value.__enter__ = MagicMock(
+            return_value=MagicMock(text_stream=iter(["response"]))
+        )
+        mock_client.messages.stream.return_value.__exit__ = MagicMock(return_value=False)
+
+        result = runner.invoke(cli, ["ask", "explain this", "-f", str(test_file), "--no-markdown"])
+
+    # Verify the file content was included in the prompt
+    call_args = mock_client.messages.stream.call_args
+    assert "hello" in str(call_args)
+```
+
+Keep tests focused on CLI behavior (argument parsing, output format, exit codes) rather than AI response quality. Mock the Anthropic client to avoid API costs in CI and ensure deterministic test results.
+
 ## Related Reading
 
 - [Best AI Tools for Go CLI Tool Development](/ai-tools-compared/best-ai-tools-for-go-cli-tool-development-with-cobra-viper-2/)
 - [How to Build AI-Powered Code Search](/ai-tools-compared/how-to-build-ai-powered-code-search-2026/)
 - [How to Build AI-Powered Error Classifiers](/ai-tools-compared/how-to-build-ai-powered-error-classifiers-2026/)
-
 - [How to Build an AI-Powered Code Linter](/ai-tools-compared/how-to-build-ai-powered-code-linter/)
----
 
 ## Related Articles
 

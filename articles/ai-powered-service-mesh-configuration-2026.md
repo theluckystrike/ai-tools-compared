@@ -19,6 +19,12 @@ tags: [ai-tools-compared]
 
 Service mesh configs are verbose and easy to misconfigure — a wrong label selector or missing DestinationRule can silently prevent traffic from flowing. AI tools handle the boilerplate well when you provide the service topology.
 
+## Why Service Mesh Configuration Is Hard
+
+Service mesh resources like Istio's VirtualService and DestinationRule have subtle interdependencies. A VirtualService that references subsets not defined in a DestinationRule produces no error — traffic simply stops flowing to the undefined subset. mTLS policies interact with sidecar injection state in ways that produce opaque 503 errors. Header-based routing requires exact match order because Istio VirtualService rules are first-match.
+
+AI tools reduce the gap between knowing what you want (canary deployment, header-based A/B test, circuit breaker) and getting working YAML. The key is giving them enough topology context — service names, namespace, label selectors, and traffic requirements.
+
 ## Istio Traffic Management
 
 **Prompt to Claude:**
@@ -138,6 +144,44 @@ spec:
 
 First match wins in Istio VirtualService HTTP rules — Claude correctly puts the header match before the weighted split.
 
+## Fault Injection for Chaos Testing
+
+**Prompt:**
+```text
+Add fault injection to the orders-svc VirtualService: inject a 200ms delay
+for 10% of requests, and return HTTP 503 for 1% of requests. This is for
+chaos testing in staging only.
+```
+
+**Claude output:**
+
+```yaml
+spec:
+  hosts:
+    - orders-svc
+  http:
+    - fault:
+        delay:
+          percentage:
+            value: 10
+          fixedDelay: 200ms
+        abort:
+          percentage:
+            value: 1
+          httpStatus: 503
+      route:
+        - destination:
+            host: orders-svc
+            subset: v1
+          weight: 90
+        - destination:
+            host: orders-svc
+            subset: v2
+          weight: 10
+```
+
+Claude includes a comment warning that fault injection applies to all traffic to the host, not just test traffic, and recommends scoping it with a `match` block based on a test header. ChatGPT generates the fault config but omits this warning — applying 1% 503 injection to production traffic is a significant operational risk.
+
 ## Linkerd ServiceProfile
 
 **Prompt:**
@@ -180,6 +224,8 @@ spec:
 
 Claude correctly sets `isRetryable: false` for POST — retrying a POST that created a resource would create duplicates. Idempotency is a common source of incorrect retry configs.
 
+Linkerd ServiceProfiles also enable per-route metrics in Prometheus. With the profile applied, `linkerd viz routes -n production svc/orders-svc` shows request rate, success rate, and latency broken down by route name. Claude mentions this benefit; ChatGPT typically does not.
+
 ## mTLS PeerAuthentication
 
 **Prompt:**
@@ -215,6 +261,24 @@ spec:
 ```
 
 More specific selectors take precedence over namespace-level policies in Istio — the per-pod policy overrides the namespace default.
+
+Claude also generates a DestinationRule to configure how the sidecar initiates mTLS when calling legacy-svc:
+
+```yaml
+# Tell Istio to use plaintext when calling legacy-svc
+apiVersion: networking.istio.io/v1beta1
+kind: DestinationRule
+metadata:
+  name: legacy-svc-disable-mtls
+  namespace: production
+spec:
+  host: legacy-svc
+  trafficPolicy:
+    tls:
+      mode: DISABLE
+```
+
+This pairing (PERMISSIVE PeerAuthentication + DISABLE DestinationRule) is the correct pattern for mixed mTLS environments. ChatGPT often generates only the PeerAuthentication half, which causes 503 errors when mesh-injected services call the legacy service because the sidecar still attempts mTLS.
 
 ## Cilium Network Policy with L7
 
@@ -253,6 +317,98 @@ spec:
 ```
 
 Layer 7 HTTP policies in Cilium restrict by HTTP method and path — much more granular than standard Kubernetes NetworkPolicy which only operates at L3/L4.
+
+## Egress Control with Istio ServiceEntry
+
+**Prompt:**
+```text
+Our services can only reach external hosts through an egress gateway.
+Write Istio config to allow the payment-svc to reach https://api.stripe.com
+on port 443, routed through the egress gateway.
+```
+
+**Claude output:**
+
+```yaml
+# Register the external service
+apiVersion: networking.istio.io/v1beta1
+kind: ServiceEntry
+metadata:
+  name: stripe-api
+  namespace: production
+spec:
+  hosts:
+    - api.stripe.com
+  ports:
+    - number: 443
+      name: https
+      protocol: HTTPS
+  resolution: DNS
+  location: MESH_EXTERNAL
+
+---
+# Route to egress gateway
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: stripe-api-egress
+  namespace: production
+spec:
+  hosts:
+    - api.stripe.com
+  gateways:
+    - mesh
+    - istio-system/egress-gateway
+  tls:
+    - match:
+        - gateways:
+            - mesh
+          port: 443
+          sniHosts:
+            - api.stripe.com
+      route:
+        - destination:
+            host: istio-egressgateway.istio-system.svc.cluster.local
+            port:
+              number: 443
+```
+
+The ServiceEntry + VirtualService pattern for egress control is one of the more complex Istio configurations to write correctly. Claude gets the `location: MESH_EXTERNAL`, the dual `gateways` (mesh + egress gateway), and the SNI-based routing right. ChatGPT typically requires multiple rounds of correction to produce a working egress configuration.
+
+## Debugging Service Mesh Issues
+
+Claude consistently includes debugging commands when generating mesh configs:
+
+```bash
+# Check VirtualService and DestinationRule are correctly applied
+istioctl analyze -n production
+
+# Check proxy config for a specific pod
+istioctl proxy-config routes deploy/orders-svc -n production
+
+# Check mTLS status between services
+istioctl authn tls-check orders-svc.production.svc.cluster.local
+
+# Dump Envoy config for debugging
+istioctl proxy-config all deploy/orders-svc -n production -o json
+
+# Linkerd route metrics
+linkerd viz routes -n production svc/orders-svc
+
+# Check Cilium policy enforcement
+cilium endpoint list
+cilium policy get
+```
+
+`istioctl analyze` is particularly useful — it catches common configuration errors like subset references that don't match DestinationRule definitions, which would otherwise cause silent traffic failures.
+
+## Tool Comparison
+
+**Claude** is strongest for complex multi-resource configurations where the resources must be consistent with each other (DestinationRule subsets matching VirtualService destinations, PeerAuthentication paired with DestinationRule TLS mode). It explains the interdependencies and flags common mistakes.
+
+**ChatGPT** is adequate for single-resource generation but misses cross-resource consistency checks. It uses older API versions (`v1alpha3`) by default and omits important nuances like `perTryTimeout` in retry configs.
+
+For both tools: always validate with `istioctl analyze` before applying to a cluster, and test traffic splitting with controlled load before moving a canary from 10% to higher percentages.
 
 ## Related Reading
 

@@ -364,13 +364,13 @@ tflint --recursive
 
 before treating the output as production-ready.
 
-## Related Reading
+## Related Articles
 
-- [AI Tools for Reviewing Terraform Plans Before Applying to Production](/ai-tools-for-reviewing-terraform-plans-before-applying-to-pr/)
-- [AI Tools for Writing Terraform Infrastructure as Code: Comparison 2026](/ai-tools-for-writing-terraform-infrastructure-as-code-comparison-2026/)
-- [AI Tools for Writing AWS CDK Infrastructure 2026](/ai-tools-for-writing-aws-cdk-infrastructure-2026/)
----
-
+- [Best AI Tools for Writing Terraform Modules in 2026](/ai-tools-compared/best-ai-tools-for-writing-terraform-modules-2026/)
+- [AI Terraform Config Generators Compared (2026)](/ai-tools-compared/ai-tools-for-generating-terraform-provider-configurations-2026/)
+- [Copilot vs Cursor for Writing Terraform Modules](/ai-tools-compared/copilot-vs-cursor-for-writing-terraform-modules-from-scratch/)
+- [Best AI Tools for Writing Terraform Provider Plugins 2026](/ai-tools-compared/best-ai-tools-for-writing-terraform-provider-plugins-2026/)
+- [How to Use AI to Optimize Terraform Module Reusability](/ai-tools-compared/how-to-use-ai-to-optimize-terraform-module-reusability-acros/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

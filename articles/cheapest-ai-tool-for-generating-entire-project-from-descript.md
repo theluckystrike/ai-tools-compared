@@ -266,12 +266,11 @@ Most tools train on data through a cutoff date and may not reflect the latest fr
 **What happens when a generated project exceeds the context window?**
 Large projects eventually exceed any tool's context window. Generate subsystems independently and integrate them manually. A concise architecture document that you paste at the start of each session helps the generator understand how new code fits into the existing structure.
 
-## Related Reading
+## Related Articles
 
-- [Does WindSurf AI Send Entire Project Context or Just Open](/ai-tools-compared/does-windsurf-ai-send-entire-project-context-or-just-open-fi/)
+- [Cheapest AI Tool for Generating Entire Project](/ai-tools-compared/cheapest-ai-tool-for-generating-entire-project-from-description/)
 - [AI Tools for Generating dbt Project Structure from Existing](/ai-tools-compared/ai-tools-for-generating-dbt-project-structure-from-existing-/)
-- [Cheapest AI Coding Subscription with Unlimited Requests 2026](/ai-tools-compared/cheapest-ai-coding-subscription-with-unlimited-requests-2026/)
-- [Cheapest AI Coding Tool for Indie Game Developer 2026](/ai-tools-compared/cheapest-ai-coding-tool-for-indie-game-developer-2026/)
-- [Best AI Tools for Code Review Automation](/ai-tools-compared/best-ai-tools-for-code-review-automation-2026/)
-
+- [Best Practices for AI Tool Project Config When Switching](/ai-tools-compared/best-practices-for-ai-tool-project-config-when-switching-between-multiple-client-projects/)
+- [Best Practices for AI Coding Tool Project Configuration](/ai-tools-compared/best-practices-for-ai-coding-tool-project-configuration-in-l/)
+- [Comparing AI Tools for Generating No-Code Membership](/ai-tools-compared/comparing-ai-tools-for-generating-no-code-membership-and-sub/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

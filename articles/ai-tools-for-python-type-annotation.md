@@ -404,13 +404,12 @@ For **large codebases**: Run pyright in watch mode for developers and mypy in CI
 | Literal types | Yes | Sometimes | No |
 | TypeGuard | Yes | Rarely | No |
 
-## Related Reading
+## Related Articles
 
-- [Best AI Tools for Writing Python Type Hints](/ai-tools-compared/best-ai-tools-for-writing-python-type-hints-2026/)
-- [Claude vs Copilot for Rust Development](/ai-tools-compared/claude-vs-copilot-for-rust-development/)
-- [AI-Powered Code Coverage Improvement](/ai-tools-compared/ai-powered-code-coverage-improvement/)
-
----
-
+- [Best AI Tools for Writing Python Type Hints 2026](/ai-tools-compared/best-ai-tools-for-writing-python-type-hints-2026/)
+- [Cursor vs Copilot for Adding Type Hints to Untyped Python](/ai-tools-compared/cursor-vs-copilot-for-adding-type-hints-to-untyped-python-co/)
+- [Best AI Tools for TypeScript Type Inference and Generic](/ai-tools-compared/best-ai-tools-for-typescript-type-inference-and-generic-type/)
+- [Best AI Assistant for Fixing TypeScript Strict Mode Type](/ai-tools-compared/best-ai-assistant-for-fixing-typescript-strict-mode-type-nar/)
+- [How Well Do AI Tools Handle Go Generics Type Parameter](/ai-tools-compared/how-well-do-ai-tools-handle-go-generics-type-parameter-const/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

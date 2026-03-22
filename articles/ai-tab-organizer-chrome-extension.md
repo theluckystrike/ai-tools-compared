@@ -281,10 +281,11 @@ Partially. Firefox supports WebExtensions, so basic tab management extensions li
 
 Most extensions support exclusion rules based on URL patterns. In Workona, you can pin specific tabs to workspaces manually to prevent automatic re-grouping. Custom extensions can implement a whitelist — tabs matching certain patterns (localhost, internal tools) are excluded from AI classification and left in their current position.
 
-## Related Reading
+## Related Articles
 
-- [AI Research Assistant Chrome Extension](/ai-tools-compared/ai-research-assistant-chrome-extension/)
 - [AI Summarizer Chrome Extension: A Developer Guide](/ai-tools-compared/ai-summarizer-chrome-extension/)
+- [AI Research Assistant Chrome Extension](/ai-tools-compared/ai-research-assistant-chrome-extension/)
 - [AI Presentation Maker Chrome Extension](/ai-tools-compared/ai-presentation-maker-chrome-extension/)
-
+- [Screen Sharing Chrome Extension](/ai-tools-compared/screen-sharing-chrome-extension/)
+- [Chrome Extension Budget Tracker Shopping](/ai-tools-compared/chrome-extension-budget-tracker-shopping/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

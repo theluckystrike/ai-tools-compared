@@ -337,7 +337,11 @@ Claude generates best-in-class tests for all three, but Alembic benefits most be
 - [How to Use AI for Kafka Configuration](/ai-tools-compared/how-to-use-ai-for-kafka-configuration-2026/)
 
 ---
-
+- [AI Tools for Database Migration Review 2026](/ai-tools-compared/ai-tools-for-database-migration-review-2026/)
+- [AI Tools for Database Schema Migration Review 2026](/ai-tools-compared/ai-tools-for-database-schema-migration-review-2026/)
+- [Best AI Tools for Database Schema Migration Review 2026](/ai-tools-compared/best-ai-tools-for-database-schema-migration-review-2026/)
+- [Best AI Tools for Writing Database Migrations](/ai-tools-compared/best-ai-tools-for-writing-database-migrations/)
+- [AI Tools for Writing pytest Tests for Alembic Database](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migra/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

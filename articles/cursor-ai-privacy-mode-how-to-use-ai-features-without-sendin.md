@@ -307,14 +307,13 @@ Restart Cursor AI after changing privacy settings for changes to take effect.
 
 Privacy mode in Cursor AI provides a practical solution for developers who need AI assistance without compromising code security. By understanding what features remain available and how to configure privacy settings appropriately, you can maintain productivity while keeping your code local. Evaluate your specific requirements, enable the appropriate privacy settings, and develop workflows that maximize the benefits of privacy-aware AI assistance.
 
-## Related Reading
+## Related Articles
 
 - [Cursor Pro Privacy Mode Does It Cost Extra](/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
-- [Does Cursor AI Store Your Code on Their Servers Data Privacy](/ai-tools-compared/does-cursor-ai-store-your-code-on-their-servers-data-privacy/)
+- [Does Cursor AI Store Your Code on Their Servers Data](/ai-tools-compared/does-cursor-ai-store-your-code-on-their-servers-data-privacy/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
+- [How to Use Copilot Agent Mode for Multi-Step Coding Tasks](/ai-tools-compared/how-to-use-copilot-agent-mode-for-multi-step-coding-tasks-20/)
 - [How to Switch from Cursor to Claude Code Without Losing](/ai-tools-compared/how-to-switch-from-cursor-to-claude-code-without-losing-settings/)
-- [Windsurf Pro vs Cursor Pro: Price and Features Compared 2026](/ai-tools-compared/windsurf-pro-vs-cursor-pro-price-and-features-compared-2026/)
-- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy Polici](/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

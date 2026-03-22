@@ -386,12 +386,13 @@ for source_file in source_dir.rglob(f"*{SOURCE_EXT}"):
 
 Neither tool produces code that compiles without any review. Plan for 15-30% of translated files needing fixes before tests pass.
 
-## Related Reading
+## Related Articles
 
-- [Best AI IDE Features for Refactoring Class Hierarchies](/ai-tools-compared/best-ai-ide-features-for-refactoring-class-hierarchies-and-i/)
-- [Claude vs ChatGPT for Refactoring Legacy Java to Kotlin](/ai-tools-compared/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
-- [How to Use AI Context Management for Large Refactoring](/ai-tools-compared/how-to-use-ai-context-management-to-work-on-large-refactorin/)
-
+- [Best AI Tools for Voice Translation: A Developer's Guide](/ai-tools-compared/best-ai-tools-for-voice-translation/)
+- [AI Code Review Automation Tools Comparison 2026](/ai-tools-compared/ai-code-review-automation-tools-comparison/)
+- [AI-Powered Dependency Update Tools Compared](/ai-tools-compared/ai-powered-dependency-update-tools-compared/)
+- [Best AI Tool for Software Engineers Code Review 2026](/ai-tools-compared/best-ai-tool-for-software-engineers-code-review-2026/)
+- [Best AI Tools for Generating Unit Tests: Legacy](/ai-tools-compared/best-ai-tools-for-generating-unit-tests-from-legacy-code-without-tests/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

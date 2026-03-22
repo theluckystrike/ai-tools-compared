@@ -387,14 +387,13 @@ Before shipping semantic search to production, verify:
 - [ ] Rate limit handling: exponential backoff on OpenAI 429 responses during bulk indexing
 - [ ] `SET LOCAL ivfflat.probes = 10;` in your search transaction to increase recall without a full `HNSW` migration
 
-## Related Reading
+## Related Articles
 
-- [How to Build AI-Powered Code Search](/ai-tools-compared/how-to-build-ai-powered-code-search-2026/)
-- [How to Build AI Documentation Chatbots](/ai-tools-compared/how-to-build-ai-documentation-chatbots-2026/)
-- [How to Build AI-Powered Error Classifiers](/ai-tools-compared/how-to-build-ai-powered-error-classifiers-2026/)
-
----
-
+- [Switching from ChatGPT Search to Perplexity Pro Search](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
+- [How to Build AI-Powered Code Search 2026](/ai-tools-compared/how-to-build-ai-powered-code-search-2026/)
+- [Switching from ChatGPT Search to Perplexity Pro: Explained](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
+- [How to Build a RAG Pipeline with LangChain 2026](/ai-tools-compared/how-to-build-a-rag-pipeline-with-langchain-2026/)
+- [How to Build a RAG Chatbot with Pinecone](/ai-tools-compared/how-to-build-rag-chatbot-with-pinecone)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

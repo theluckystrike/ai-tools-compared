@@ -364,13 +364,12 @@ Copilot produced a similar pattern but didn't implement `Drop` — meaning the p
 
 Claude Code is the stronger Rust assistant. Copilot is faster for autocomplete on standard patterns but generates plausible-looking code that fails to compile or has subtle runtime bugs on more complex Rust idioms.
 
-## Related Reading
+## Related Articles
 
-- [AI Tools for Rust Developers](/ai-tools-compared/ai-tools-for-rust-developers-2026/)
+- [Copilot vs Cursor for Writing Rust Error Handling](/ai-tools-compared/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
+- [Best AI Coding Tools for Rust Developers 2026](/ai-tools-compared/ai-tools-for-rust-developers-2026/)
+- [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
 - [AI Code Generation Producing Syntax Errors in Rust Fix Guide](/ai-tools-compared/ai-code-generation-producing-syntax-errors-in-rust-fix-guide/)
-- [Claude Code vs Cursor for Backend Development](/ai-tools-compared/claude-code-vs-cursor-for-backend-development/)
-
----
-
+- [Claude vs Copilot for Swift Development 2026](/ai-tools-compared/claude-vs-copilot-for-swift-development-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

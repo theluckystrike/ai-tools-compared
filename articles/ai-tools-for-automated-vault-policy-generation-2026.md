@@ -207,14 +207,13 @@ Claude's response:
 - `sys/*` is dangerous — `sys/` contains Vault's own configuration, audit logs, and health endpoints. Read access to `sys/` includes `sys/config/ui` and `sys/seal-status`
 - Recommend narrowing to specific paths: `secret/data/myapp/*` and removing `sys/*` entirely unless specific sys paths are required
 
-## Related Reading
+## Related Articles
 
-- [AI-Powered Feature Flag Management Tools](/ai-tools-compared/ai-powered-feature-flag-management-tools-2026/)
-- [AI-Powered Observability Configuration Tools](/ai-tools-compared/ai-powered-observability-configuration-tools-2026/)
-- [Best AI Tools for Writing Systemd Units](/ai-tools-compared/best-ai-tools-for-writing-systemd-units-2026/)
-
----
-
+- [AI Tools for Automated Secrets Rotation and Vault Management](/ai-tools-compared/ai-tools-for-automated-secrets-rotation-and-vault-management/)
+- [AI Tools for Automated Test Data Generation 2026](/ai-tools-compared/ai-tools-for-automated-test-data-generation-2026/)
+- [AI Policy Management Tools Enterprise Compliance](/ai-tools-compared/ai-policy-management-tools-enterprise-compliance-2026/)
+- [How to Configure AI Coding Tools to Exclude Secrets and Env](/ai-tools-compared/how-to-configure-ai-coding-tools-to-exclude-secrets-and-env-/)
+- [AI Tools for Automated Changelog Generation 2026](/ai-tools-compared/ai-tools-for-automated-changelog-generation-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

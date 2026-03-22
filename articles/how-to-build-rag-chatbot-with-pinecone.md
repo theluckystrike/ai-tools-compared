@@ -470,13 +470,12 @@ def rerank(query: str, candidates: list[dict]) -> list[dict]:
 
 Run the initial Pinecone search with `top_k=20`, then re-rank and pass only the top 5 to the LLM. This maintains Pinecone's speed advantage while improving the final answer quality significantly.
 
-## Related Reading
+## Related Articles
 
-- [How to Build Custom MCP Servers for Claude](/ai-tools-compared/how-to-build-custom-mcp-servers-for-claude/)
-- [Claude vs GPT-4 for Data Analysis](/ai-tools-compared/claude-vs-gpt4-for-data-analysis/)
-- [How to Build AI-Powered Slack Bots](/ai-tools-compared/how-to-build-ai-powered-slack-bots/)
-
----
-
+- [How to Build a RAG Pipeline with LangChain 2026](/ai-tools-compared/how-to-build-a-rag-pipeline-with-langchain-2026/)
+- [How to Build AI Pipelines with Prefect](/ai-tools-compared/how-to-build-ai-pipelines-with-prefect)
+- [How to Build Semantic Search with Embeddings](/ai-tools-compared/how-to-build-semantic-search-with-embeddings/)
+- [How to Build Voice AI Apps with Claude](/ai-tools-compared/how-to-build-voice-ai-apps-with-claude)
+- [ChatGPT vs Custom Chatbot for Business: A Developer Guide](/ai-tools-compared/chatgpt-vs-custom-chatbot-for-business/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

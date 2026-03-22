@@ -334,11 +334,12 @@ Kubernetes NetworkPolicy and Istio AuthorizationPolicy serve complementary roles
 **Q: How do I use AI to generate Istio configs from existing Helm values?**
 Paste your current `values.yaml` into the AI prompt and ask it to generate the equivalent raw Istio CRDs. This is useful for understanding what Helm is actually deploying or for migrating from Helm to a GitOps approach with plain manifests managed by ArgoCD.
 
-## Related Reading
+## Related Articles
 
-- [AI Tools for Writing Kubernetes Helm Charts 2026](/ai-tools-compared/ai-tools-for-writing-kubernetes-helm-charts-2026/)
-- [How to Use AI to Generate Kubernetes Network Policies Correctly](/ai-tools-compared/how-to-use-ai-to-generate-kubernetes-network-policies-correc/)
+- [AI-Powered Service Mesh Configuration 2026](/ai-tools-compared/ai-powered-service-mesh-configuration-2026/)
 - [Best AI Tools for Kubernetes Manifest Generation](/ai-tools-compared/best-ai-tools-for-kubernetes-manifest-generation/)
-
+- [Best AI Tools for Writing Kubernetes Custom Resource](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-custom-resource-definitions-2026/)
+- [AI Tools for Microservice Architecture](/ai-tools-compared/ai-tools-for-microservice-architecture-design/)
+- [AI Tools for Detecting Kubernetes Misconfiguration Before](/ai-tools-compared/ai-tools-for-detecting-kubernetes-misconfiguration-before-de/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

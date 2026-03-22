@@ -19,6 +19,17 @@ tags: [ai-tools-compared]
 
 Bazel has a steep learning curve — the BUILD language is Starlark (a Python subset), but the rules for each language vary significantly. AI tools help with the boilerplate, but you need to verify dependencies and visibility rules carefully.
 
+## Why Bazel BUILD Files Are Hard to Write
+
+BUILD files look simple: a handful of rule invocations with `name`, `srcs`, `deps`, and `visibility`. In practice, the complexity comes from several directions:
+
+- **Rule set differences**: `rules_go`, `rules_python`, `rules_java`, and `rules_proto` each have different conventions for dependency resolution, test setup, and external packages
+- **Gazelle conventions**: External Go deps use `@com_github_...` naming; Python uses `requirement()` calls — these are easy to get wrong
+- **Visibility scoping**: The difference between `//visibility:public`, `//services/orders:__pkg__`, and `//services/orders:__subpackages__` has real architectural consequences
+- **Test embedding**: Go tests use `embed` to include the library under test; Python tests use `deps` — mixing these up produces errors that aren't obvious
+
+AI tools can handle the boilerplate reliably, but you need to verify the dep names against your actual Gazelle-generated mapping and visibility rules against your intended architecture.
+
 ## Go BUILD Files
 
 **Prompt to Claude:**
@@ -60,6 +71,42 @@ go_test(
 Claude uses `embed` for the test target (which includes the library under test in the same package) and formats the external dependency using the `@com_github_...` Gazelle-generated name format. Standard library imports are not listed in `deps`.
 
 ChatGPT often adds `net/http` to `deps` (wrong — stdlib is implicit) and sometimes uses `go_binary` for a library target.
+
+## Go Binary with Multiple Packages
+
+**Prompt:**
+```text
+Write a BUILD file for a Go binary at //cmd/api-server.
+It imports: //services/orders/handler, //services/users/handler, //lib/config,
+and external github.com/spf13/cobra.
+```
+
+**Claude output:**
+
+```python
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "api-server_lib",
+    srcs = ["main.go"],
+    importpath = "github.com/example/myapp/cmd/api-server",
+    visibility = ["//visibility:private"],
+    deps = [
+        "//lib/config",
+        "//services/orders/handler",
+        "//services/users/handler",
+        "@com_github_spf13_cobra//:cobra",
+    ],
+)
+
+go_binary(
+    name = "api-server",
+    embed = [":api-server_lib"],
+    visibility = ["//visibility:public"],
+)
+```
+
+The `go_library` + `go_binary` pattern with embedding is idiomatic rules_go — it allows the binary to be tested and linked correctly. Claude generates this pattern automatically; ChatGPT often collapses it into a single `go_binary` target without the library, which prevents proper test setup.
 
 ## Python BUILD Files
 
@@ -113,6 +160,8 @@ py_test(
 ```
 
 The `requirement()` function call is the Gazelle/pip_install pattern for third-party packages. Claude uses it correctly. ChatGPT sometimes puts package names as strings in `deps` directly, which doesn't work.
+
+One nuance: you need a `load` statement for `requirement` from your pip_install repository. Claude adds a comment noting you need to load it from your specific pip install name (e.g., `load("@pip//:requirements.bzl", "requirement")`).
 
 ## Proto + gRPC BUILD Files
 
@@ -168,6 +217,53 @@ py_grpc_library(
 
 Claude separates proto, go_proto, py_proto, and py_grpc into distinct targets — this is the correct pattern that allows consumers to depend on only what they need. ChatGPT sometimes collapses these into a single target, which works but forces unnecessary rebuilds.
 
+## Java BUILD Files
+
+**Prompt:**
+```text
+Write a Bazel BUILD file for a Java service with Spring Boot.
+Sources: src/main/java/com/example/OrderService.java
+External deps: Spring Boot starter web, Spring Data JPA, Hibernate (from maven_install).
+Include a java_test for OrderServiceTest.java.
+```
+
+**Claude output:**
+
+```python
+load("@rules_java//java:defs.bzl", "java_binary", "java_library", "java_test")
+
+java_library(
+    name = "order_service_lib",
+    srcs = ["src/main/java/com/example/OrderService.java"],
+    deps = [
+        "@maven//:org_springframework_boot_spring_boot_starter_web",
+        "@maven//:org_springframework_boot_spring_boot_starter_data_jpa",
+        "@maven//:org_hibernate_hibernate_core",
+    ],
+    visibility = ["//visibility:private"],
+)
+
+java_binary(
+    name = "order_service",
+    main_class = "com.example.OrderService",
+    runtime_deps = [":order_service_lib"],
+    visibility = ["//visibility:public"],
+)
+
+java_test(
+    name = "order_service_test",
+    srcs = ["src/test/java/com/example/OrderServiceTest.java"],
+    test_class = "com.example.OrderServiceTest",
+    deps = [
+        ":order_service_lib",
+        "@maven//:junit_junit",
+        "@maven//:org_mockito_mockito_core",
+    ],
+)
+```
+
+Maven coordinates in rules_java follow the `@maven//:group_artifact_name` format where dots and hyphens become underscores. Claude handles this conversion correctly. ChatGPT sometimes uses the original Maven coordinate format (`org.springframework.boot:spring-boot-starter-web`) which doesn't work in Bazel.
+
 ## Visibility Rules
 
 **Prompt:**
@@ -202,6 +298,26 @@ py_library(
 
 Claude uses `__pkg__` (allows subpackages at that path) correctly. It knows the difference between `__pkg__`, `__subpackages__`, and explicit package lists. ChatGPT occasionally uses `//services/orders/...` which is a glob pattern not valid in visibility.
 
+For package groups spanning multiple packages, Claude correctly uses `package_group`:
+
+```python
+# Shared access group for internal services
+package_group(
+    name = "internal_services",
+    packages = [
+        "//services/...",
+        "//internal/...",
+    ],
+)
+
+# Use the group in visibility
+py_library(
+    name = "auth",
+    visibility = [":internal_services"],
+    ...
+)
+```
+
 ## Gazelle Integration
 
 Claude also explains when to use Gazelle vs manual BUILD files:
@@ -221,6 +337,65 @@ bazel run //:gazelle -- update-repos \
 ```
 
 For projects with hundreds of packages, let Gazelle generate the base BUILD files and use AI to add visibility, test targets, and custom rules.
+
+Claude also understands the Gazelle directive system for per-package configuration:
+
+```python
+# In a BUILD file, Gazelle directives control generation behavior
+# gazelle:go_naming_convention go_default_library
+# gazelle:proto_strip_import_prefix /proto
+# gazelle:resolve go github.com/example/myapp/lib/auth //lib/auth
+```
+
+These `# gazelle:` comments are read by Gazelle during generation and can override naming conventions or force specific resolution for ambiguous imports.
+
+## Custom Rules and Macros
+
+For teams with custom Starlark rules, Claude handles macro generation well:
+
+**Prompt:**
+```text
+Write a Starlark macro called service_library that wraps go_library and go_test,
+sets default visibility to internal_services, and enforces that every service
+has a corresponding test file.
+```
+
+**Claude output:**
+
+```python
+# //tools/macros/service.bzl
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+def service_library(name, srcs, deps = [], test_srcs = None, **kwargs):
+    """Macro for internal service libraries with enforced test coverage.
+
+    Args:
+        name: Library name
+        srcs: Source files
+        deps: Dependencies
+        test_srcs: Test files (defaults to [name + "_test.go"])
+        **kwargs: Additional args passed to go_library
+    """
+    if test_srcs == None:
+        test_srcs = [name + "_test.go"]
+
+    go_library(
+        name = name,
+        srcs = srcs,
+        deps = deps,
+        visibility = ["//visibility:__subpackages__", "//services:__subpackages__"],
+        **kwargs
+    )
+
+    go_test(
+        name = name + "_test",
+        srcs = test_srcs,
+        embed = [":" + name],
+        deps = deps,
+    )
+```
+
+The macro pattern is useful for enforcing organizational conventions across hundreds of packages without duplicating the same boilerplate in every BUILD file.
 
 ## Related Reading
 
