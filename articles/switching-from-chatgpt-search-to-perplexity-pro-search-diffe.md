@@ -9,7 +9,7 @@ permalink: /switching-from-chatgpt-search-to-perplexity-pro-search-differences-e
 categories: [guides]
 tags: [ai-tools-compared, tools, chatgpt]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

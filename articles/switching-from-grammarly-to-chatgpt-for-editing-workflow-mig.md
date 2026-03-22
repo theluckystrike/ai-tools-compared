@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /switching-from-grammarly-to-chatgpt-for-editing-workflow-mig/
 categories: [guides, productivity]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, workflow, chatgpt]
