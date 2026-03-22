@@ -246,6 +246,68 @@ Enter your password when prompted. If this fails, contact your system administra
 For Claude Code itself, avoid running with sudo unless absolutely necessary. Running as root can cause permission issues with files in your home directory.
 
 
+## Fix 7: npm and Node.js Global Package Permissions
+
+
+A frequently overlooked source of permission errors is npm's global package directory. If Claude Code uses Node.js tools installed globally via npm, and those tools were installed as root, you will see permission denied errors when Claude Code tries to invoke them as your regular user.
+
+
+Check where npm stores global packages:
+
+
+```bash
+npm config get prefix
+```
+
+
+If the output is `/usr/local` or `/usr`, global npm packages were likely installed as root. The cleanest fix is to redirect npm's global prefix to a user-owned directory:
+
+
+```bash
+mkdir -p ~/.npm-global
+npm config set prefix '~/.npm-global'
+```
+
+
+Then add to your shell profile:
+
+
+```bash
+export PATH=~/.npm-global/bin:$PATH
+```
+
+
+Reload your shell and reinstall any globally needed tools as your regular user (without sudo). Claude Code will then be able to invoke them without permission errors.
+
+
+## Fix 8: Python Virtual Environment and pip Issues
+
+
+Similar permission conflicts occur with Python tooling. If Claude Code invokes Python scripts or pip-installed CLI tools, and those tools live in a system Python installation, you may see permission denied when Claude Code tries to execute them.
+
+
+Diagnose which Python is being used:
+
+
+```bash
+which python3
+which pip3
+```
+
+
+If these point to `/usr/bin/python3` or similar system paths, create a virtual environment for your project and install dependencies there:
+
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install your-dependencies
+```
+
+
+Claude Code will inherit the activated virtual environment when you launch it from that shell session, eliminating permission conflicts with system-level Python packages.
+
+
 ## Diagnostic Tips
 
 
