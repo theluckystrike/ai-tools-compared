@@ -27,7 +27,17 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 Enforce resource tagging automatically by using AI to infer tag values from resource naming, configuration, and metadata. Use AWS Config rules combined with Claude prompts for cost allocation tags; use specialized tools like Densify for FinOps tagging. Choose infrastructure-aware solutions if you need compliance enforcement; use general-purpose AI if you're retrofitting tags to existing resources.
+
+## Key Takeaways
+
+- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
+- **Use AWS Config rules**: combined with Claude prompts for cost allocation tags; use specialized tools like Densify for FinOps tagging.
+- **Choose infrastructure-aware solutions if**: you need compliance enforcement; use general-purpose AI if you're retrofitting tags to existing resources.
+- **A typical enterprise might**: manage thousands of resources across AWS, Azure, and GCP, each requiring multiple tags for different use cases.
+- **A third category uses**: natural language processing to understand tagging policies expressed in plain text and convert them into enforceable rules.
+- **Choose based on your**: team's expertise.
 
 ## Why Tagging Compliance Matters
 
