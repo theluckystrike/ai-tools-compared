@@ -25,7 +25,17 @@ On-call rotations are a cornerstone of site reliability engineering, but the han
 - The rollback was delayed because...
 - **This automation works best**: when paired with clear team conventions.
 
-## The Problem with Manual Handoff Documents
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The Problem with Manual Handoff Documents
 
 
 When engineers manually write handoff notes, several issues emerge. Notes become inconsistent between shifts—some engineers detail every system interaction while others provide minimal context. Important details get omitted because the outgoing engineer assumes "everyone knows" certain systems or processes. Time pressure leads to rushed documentation that lacks the specificity needed for effective incident response.
@@ -34,7 +44,7 @@ When engineers manually write handoff notes, several issues emerge. Notes become
 A well-structured handoff document should answer key questions: What issues are currently open? Which systems require active monitoring? What recent changes might have introduced risk? What workarounds exist for known issues? Manually answering these questions every shift drains time that engineers could spend on proactive reliability work.
 
 
-## AI-Assisted Handoff Workflows
+### Step 2: AI-Assisted Handoff Workflows
 
 
 AI tools can assist at multiple stages of the handoff process. The most effective approach combines automated data gathering with intelligent summarization, then allows engineers to review and augment the output.
@@ -96,7 +106,7 @@ Style: Technical but accessible, bullet points preferred
 The AI generates a first draft that the outgoing engineer reviews and refines. This human-in-the-loop approach maintains accuracy while dramatically reducing documentation time.
 
 
-## Practical Templates and Examples
+### Step 3: Practical Templates and Examples
 
 
 Effective AI-assisted handoffs work best with structured templates. Define what information matters for your team, then use AI to populate those sections intelligently.
@@ -109,7 +119,7 @@ Instead of manually listing every open incident, provide the AI with incident ID
 
 
 ```markdown
-## Current Incidents
+### Step 4: Current Incidents
 
 ### INC-1234: Elevated latency in payment service
 - Status: Investigating
@@ -135,7 +145,7 @@ For the systems overview section, generate a quick health check from monitoring 
 
 
 ```markdown
-## Systems Status
+### Step 5: Systems Status
 
 | System | Status | Notes |
 |--------|--------|-------|
@@ -156,7 +166,7 @@ Clearly list tasks that need attention during the next shift:
 
 
 ```markdown
-## Action Items
+### Step 6: Action Items
 
 1. Monitor user-service memory usage - may need to scale if it continues trending up
 2. Follow up with security team on INC-1235 certificate renewal
@@ -166,7 +176,7 @@ Clearly list tasks that need attention during the next shift:
 ```
 
 
-## Automating the Workflow
+### Step 7: Automate the Workflow
 
 
 For teams ready to fully automate, integrate AI handoff generation into existing tooling. A CI/CD pipeline can run the context-gathering script, feed results to an AI model, and post the draft handoff document to your team's communication channel before each shift ends.
@@ -175,7 +185,7 @@ For teams ready to fully automate, integrate AI handoff generation into existing
 This automation works best when paired with clear team conventions. Define which data sources to include, establish the required sections, and create a review process. The AI handles the heavy lifting of aggregation and formatting while engineers provide the critical domain expertise that cannot be automated.
 
 
-## Tips for Effective AI-Assisted Handoffs
+### Step 8: Tips for Effective AI-Assisted Handoffs
 
 
 Start small. Use AI to assist with one section of your handoff document initially. Measure the time savings and refine your approach before expanding to other sections.
@@ -190,7 +200,7 @@ Maintain consistency. Use the same template every shift. This predictability hel
 Store historical handoffs. Having a searchable archive of past handoffs helps AI models improve their output over time and allows engineers to reference previous incidents.
 
 
-## Handoff Document Template with AI Placeholders
+### Step 9: Handoff Document Template with AI Placeholders
 
 ```markdown
 # On-Call Handoff Report
@@ -202,7 +212,7 @@ Store historical handoffs. Having a searchable archive of past handoffs helps AI
 ## Executive Summary
 [AI SECTION: 2-3 sentence summary of current state]
 
-## Critical Issues Requiring Attention
+### Step 10: Critical Issues Requiring Attention
 [AI: Extract from incident tracking system]
 
 ### INC-[ID]: [AI: Generated title]
@@ -211,38 +221,38 @@ Store historical handoffs. Having a searchable archive of past handoffs helps AI
 - **Timeline:** [AI: Structured timeline with timestamps]
 - **Next Steps:** [MANUAL: Specific actions needed]
 
-## System Health Dashboard
+### Step 11: System Health Dashboard
 [AI: Table generated from monitoring metrics]
 
 | System | Status | Trend | Alert Threshold |
 |--------|--------|-------|-----------------|
 | [AI: auto-populated] | [AI: auto-populated] | [AI: trend analysis] | [MANUAL: configured value] |
 
-## Recent Changes in Last 24 Hours
+### Step 12: Recent Changes in Last 24 Hours
 [AI: Pull from deployment logs]
 
 | Service | Change | Deployment Time | Status |
 |---------|--------|-----------------|--------|
 | [AI: service name] | [AI: brief change description] | [AI: timestamp] | [AI: success/pending] |
 
-## Known Workarounds and Limitations
+### Step 13: Known Workarounds and Limitations
 [AI: Extract from incident notes]
 
 1. **[MANUAL: Issue Title]** - [AI: Summary of workaround]
    - Implemented: [AI: timestamp]
    - Estimated resolution: [MANUAL: timeline]
 
-## Monitoring Alerts to Watch For
+### Step 14: Monitor Alerts to Watch For
 [AI: High-alert items from monitoring system]
 
 - Alert name: [AI: populated from alert rules]
 - Current level: [AI: current value]
 - Action if triggered: [MANUAL: response procedure]
 
-## Escalation Contacts
+### Step 15: Escalation Contacts
 [MANUAL: Team-specific contacts]
 
-## Action Items for This Shift
+### Step 16: Action Items for This Shift
 [AI: Priority-ordered list from tickets]
 
 1. [Task description] - Assigned to: [incoming engineer] - Deadline: [AI: calculated from urgency]
@@ -251,7 +261,7 @@ Store historical handoffs. Having a searchable archive of past handoffs helps AI
 *Generated with AI assistance at [timestamp] | Review time: [estimate minutes]*
 ```
 
-## Automation Scripts for Data Collection
+### Step 17: Automation Scripts for Data Collection
 
 For teams ready to fully automate, create scripts that feed AI with structured data:
 
@@ -365,7 +375,7 @@ if __name__ == "__main__":
  "'Generate concise handoff summary from this data'")
 ```
 
-## Integration with Slack for Automated Handoffs
+### Step 18: Integration with Slack for Automated Handoffs
 
 For teams using Slack, automate handoff document posting:
 
@@ -434,7 +444,7 @@ class HandoffSlackNotifier:
  print(f"Error posting to Slack: {e}")
 ```
 
-## Measuring Handoff Quality
+### Step 19: Measuring Handoff Quality
 
 Track whether handoffs effectively prevent information loss:
 
@@ -486,6 +496,21 @@ class HandoffQualityMetrics:
  ])
  return (completed / total * 100) if total > 0 else 0
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

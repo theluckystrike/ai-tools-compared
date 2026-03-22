@@ -49,7 +49,17 @@ Emoji adds another layer of complexity. What looks like a single character might
 
 Unicode-related bugs are also a common source of security vulnerabilities. Homoglyph attacks (using lookalike characters from different scripts), bidirectional text injection, and null byte injection all exploit gaps in Unicode handling. AI-assisted test generation helps surface these attack vectors during development rather than in a security audit.
 
-## Using AI to Generate Test Cases
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Use AI to Generate Test Cases
 
 AI language models excel at generating test suites because they understand character properties, Unicode categories, and common failure patterns. Here's how to prompt an AI effectively:
 
@@ -69,7 +79,7 @@ Generate a thorough list of Unicode and emoji test cases for a text processing a
 
 The AI will generate a structured list of test strings, but you'll want to transform these into executable test code. Claude and ChatGPT are both strong at this task—Claude tends to write more defensive, annotation-rich test code, while ChatGPT with Code Interpreter can execute the tests immediately to verify output.
 
-## Practical Test Generation in Python
+### Step 2: Practical Test Generation in Python
 
 Here's a practical approach using Python to generate Unicode test cases:
 
@@ -108,7 +118,7 @@ def generate_unicode_test_cases() -> List[dict]:
 
 This generates testable cases that verify your application handles these characters correctly. A practical next step is asking your AI tool to wrap these in pytest parametrize decorators so they run as individual test cases with clear failure messages.
 
-## Emoji Test Generation
+### Step 3: Emoji Test Generation
 
 Emoji testing requires understanding how sequences work. Here's how to generate emoji test cases:
 
@@ -140,7 +150,7 @@ def generate_emoji_test_cases() -> List[dict]:
 
 An important test to add for every emoji category: verify that `len()` in your language gives the grapheme cluster count, not the codepoint count. In Python, `len("👨‍👩‍👧‍👦")` returns 8 (one per codepoint), not 1 (one grapheme cluster). Use the `grapheme` library or `regex` module's `\X` pattern for correct grapheme counting.
 
-## Testing Normalization
+### Step 4: Test Normalization
 
 One common source of bugs is string normalization. The same visual text can have different Unicode representations:
 
@@ -160,7 +170,7 @@ def test_normalization_equivalence():
 
 Your tests should verify that your application handles all normalization forms consistently. Database lookups are a common failure point: if you store NFD text and query with NFC, the strings won't match even though they look identical on screen. Ask your AI tool to generate test cases specifically for normalization round-trips through your storage layer.
 
-## Handling Right-to-Left Text
+### Step 5: Handling Right-to-Left Text
 
 Applications that display user content must handle bidirectional text correctly:
 
@@ -180,7 +190,7 @@ def generate_bidi_test_cases() -> List[str]:
 
 The override and embedding characters (U+202E and U+202B) create security risks if not handled properly—they can be used to obscure displayed content by reversing the rendering direction. This is the "bidirectional text spoofing" attack. Your test suite should verify these characters are either stripped or rendered in a sandboxed way in user-facing contexts.
 
-## Automating Test Generation with AI
+### Step 6: Automate Test Generation with AI
 
 You can combine AI prompts with programmatic test generation for broad coverage:
 
@@ -202,7 +212,7 @@ def generate_with_ai(category: str, ai_client) -> List[dict]:
 
 This approach lets you generate tests for specific categories that AI identifies as high-risk. Good categories to request include: emoji in JSON payloads, Unicode in URL slugs, emoji in email subjects, and right-to-left text in form validation.
 
-## Common Pitfalls to Test For
+### Step 7: Common Pitfalls to Test For
 
 Your test suite should verify these common issues:
 
@@ -220,7 +230,7 @@ Your test suite should verify these common issues:
 
 - Search and indexing: Full-text search systems that don't normalize Unicode before indexing
 
-## Measuring Test Coverage
+### Step 8: Measuring Test Coverage
 
 Track your Unicode test coverage by measuring what Unicode blocks and categories you've tested:
 
@@ -245,11 +255,26 @@ def calculate_coverage(test_strings: List[str]) -> dict:
     }
 ```
 
-## Building Your Test Suite
+### Step 9: Build Your Test Suite
 
 Start with a foundation of common Unicode categories: letters, numbers, punctuation, and symbols. Then add specialized categories based on your application's requirements. Social applications need emoji support including all ZWJ sequences. International applications need script coverage across Latin, CJK, Arabic, Hebrew, Devanagari, and other writing systems. Security-critical applications need confusable character testing and bidirectional text handling.
 
 AI accelerates this process by generating test cases based on known patterns and identifying commonly overlooked edge cases. Give your AI tool access to the Unicode Character Database (UCD) categories and ask it to ensure your test suite covers all 30+ Unicode general categories. With proper test coverage, you'll catch Unicode-related bugs before they affect users—or attackers find them first.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

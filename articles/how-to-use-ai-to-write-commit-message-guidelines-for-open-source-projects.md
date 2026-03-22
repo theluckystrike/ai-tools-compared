@@ -46,7 +46,17 @@ Well-crafted commit message guidelines serve multiple critical purposes for open
 
 When your project has clear commit message conventions, contributors know exactly what's expected of them. This reduces the back-and-forth during pull requests and helps maintainers quickly assess whether changes align with project standards. Additionally, tools like `git log`, `git blame`, and automated changelog generators work much better when commits follow consistent formatting.
 
-## Analyzing Your Project's Needs
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Analyzing Your Project's Needs
 
 Before creating commit message guidelines, understand your project's specific requirements. AI can help you analyze your project type and determine what conventions will be most valuable.
 
@@ -72,7 +82,7 @@ Consider your project's contributor ecosystem when designing guidelines:
 
 - Projects with diverse contributors: Need explicit examples and clear explanations of each convention
 
-## Creating Your Commit Message Framework
+### Step 2: Create Your Commit Message Framework
 
 AI can help you design a commit message structure that balances comprehensiveness with ease of use. Here's a proven framework that works well for most open source projects:
 
@@ -130,7 +140,7 @@ Include:
 7. Examples of good vs bad commit messages
 ```
 
-## Developing Detailed Conventions
+### Step 3: Developing Detailed Conventions
 
 Once you have a basic framework, use AI to elaborate on specific aspects of your conventions.
 
@@ -194,7 +204,7 @@ fix: update dependencies (#100)
 Closes #100
 ```
 
-## Creating Documentation
+### Step 4: Create Documentation
 
 Once you've developed your commit message conventions, use AI to create documentation.
 
@@ -203,7 +213,7 @@ Once you've developed your commit message conventions, use AI to create document
 Provide multiple examples for each commit type to make the guidelines accessible:
 
 ```
-## Fix Commits
+### Step 5: Fix Commits
 
 fix: resolve null pointer in user authentication
 
@@ -241,7 +251,7 @@ Rules:
 - No period at end
 ```
 
-## Enforcing Conventions
+### Step 6: Enforcing Conventions
 
 Document how your project enforces commit message standards.
 
@@ -297,7 +307,7 @@ jobs:
           done
 ```
 
-## Adapting Conventions Over Time
+### Step 7: Adapting Conventions Over Time
 
 Your commit message guidelines should evolve with your project.
 
@@ -322,6 +332,21 @@ When you need to update conventions:
 3. Update documentation with clear migration guidance
 
 4. Announce changes in your project's communication channels
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

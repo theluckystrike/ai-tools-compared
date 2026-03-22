@@ -44,7 +44,17 @@ Large Docker images impact your infrastructure in several ways. A 1GB image take
 
 Traditional optimization requires deep knowledge of multi-stage builds, layer caching strategies, and distro-specific package management. AI changes this equation by analyzing your specific Dockerfiles and suggesting improvements based on patterns learned from optimized images across the industry.
 
-## Analyzing Your Current Docker Images
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Analyzing Your Current Docker Images
 
 Before optimizing, you need to understand what's bloating your images. Start by analyzing your current image size and identifying the largest layers.
 
@@ -75,7 +85,7 @@ CMD ["python3", "app.py"]
 
 This Dockerfile likely creates an image several hundred megabytes larger than necessary. Let's examine how AI can help identify and fix the issues.
 
-## AI-Powered Docker Optimization Strategies
+### Step 2: AI-Powered Docker Optimization Strategies
 
 ### Intelligent Base Image Selection
 
@@ -197,7 +207,7 @@ CMD ["node", "src/index.js"]
 
 The order matters because Docker caches each layer. When source code changes but dependencies don't, the expensive `npm ci` step uses cached results.
 
-## Using AI to Analyze and Optimize
+### Step 3: Use AI to Analyze and Optimize
 
 ### Automated Dockerfile Analysis
 
@@ -314,7 +324,7 @@ The optimized version:
 
 - Properly orders layers for caching
 
-## Verifying Your Optimizations
+### Step 4: Verify Your Optimizations
 
 After implementing AI suggestions, verify the size reduction:
 
@@ -338,6 +348,21 @@ When working with AI to optimize Docker images, provide complete context about y
 Test thoroughly after each optimization round. Some optimizations that reduce size might affect functionality, particularly around dynamic linking or shared libraries. Run integration tests against the optimized image to catch any issues before deploying.
 
 Document the optimizations you implement. This helps future maintainers understand why certain patterns were chosen and prevents well-intentioned changes from reintroducing bloat.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -27,7 +27,17 @@ Providing this context produces more reliable test code that passes on first run
 - **An effective prompt includes**: the iframe element's identifying attributes, the expected behavior of the content inside, and any state changes that should occur after user interactions.
 - **AI accelerates the initial**: code generation, while your domain knowledge ensures the tests cover the actual user interactions that matter.
 
-## Understanding Iframe Testing in Playwright
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Iframe Testing in Playwright
 
 
 Playwright provides methods for working with iframes. The key methods include `frameLocator()`, `frame()`, and the ability to wait for iframe elements to become ready. When dealing with cross-origin iframes, additional considerations apply because of browser security policies that prevent direct access to the iframe's content from the parent page.
@@ -36,7 +46,7 @@ Playwright provides methods for working with iframes. The key methods include `f
 The fundamental approach involves first locating the iframe, then performing operations within its context. For same-origin iframes, you can access the iframe content directly. For cross-origin iframes, you interact with them through the parent page, though with limited visibility into the iframe's internal state.
 
 
-## AI-Prompting Strategies for Iframe Tests
+### Step 2: AI-Prompting Strategies for Iframe Tests
 
 
 When asking an AI to generate Playwright tests for iframe scenarios, specificity matters. Provide the AI with the HTML structure showing the iframe element, the URL or source of the iframe content, and the actions you want to test. Include details about whether the iframe is same-origin or cross-origin, as this affects the available testing methods.
@@ -45,7 +55,7 @@ When asking an AI to generate Playwright tests for iframe scenarios, specificity
 An effective prompt includes the iframe element's identifying attributes, the expected behavior of the content inside, and any state changes that should occur after user interactions. For example, if clicking a button inside an iframe should update a counter on the parent page, specify this interaction pattern clearly.
 
 
-## Code Examples for Common Iframe Scenarios
+### Step 3: Code Examples for Common Iframe Scenarios
 
 
 ### Same-Origin Iframe Testing
@@ -130,7 +140,7 @@ test('wait for iframe content to load', async ({ page }) => {
 ```
 
 
-## Handling Dynamic Iframe Loading
+### Step 4: Handling Dynamic Iframe Loading
 
 
 Many modern applications load iframes dynamically, particularly for advertising, embedded content, and third-party widgets. Your AI-generated tests should account for these scenarios by including appropriate wait strategies.
@@ -161,7 +171,7 @@ test('dynamic iframe loading after interaction', async ({ page }) => {
 ```
 
 
-## Testing Iframe Communication
+### Step 5: Test Iframe Communication
 
 
 PostMessage communication between parent pages and iframes is common in modern web applications. Playwright can intercept and verify these messages:
@@ -289,7 +299,7 @@ This pattern prevents analytics iframe issues from breaking your tests.
 
 Claude Code and Cursor understand cross-origin iframe limitations better. GitHub Copilot excels at code completion for common same-origin scenarios.
 
-## Debugging Iframe Test Failures
+### Step 6: Debugging Iframe Test Failures
 
 When AI-generated iframe tests fail, use these debugging techniques:
 
@@ -348,7 +358,7 @@ When requesting iframe test generation from AI, include:
 
 Providing this context produces more reliable test code that passes on first run.
 
-## Common Iframe Test Antipatterns
+### Step 7: Common Iframe Test Antipatterns
 
 Avoid these patterns when reviewing AI-generated code:
 
@@ -378,6 +388,21 @@ await page.evaluate(() => {
 await page.frameLocator('iframe').getByRole('button').click();
 ```
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions

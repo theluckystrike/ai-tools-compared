@@ -41,7 +41,17 @@ Playwright's storage state feature solves this problem by capturing authenticate
 - **Provide the AI with**: clear context about your authentication mechanism, the page structure, and how you want to use stored state.
 - **A well-structured prompt includes**: your login URL, the selectors for login form elements, the expected post-login URL, and instructions to use storage state.
 
-## Understanding Playwright Storage State
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Playwright Storage State
 
 Playwright provides a mechanism to save and load authentication state through the `storageState` option. Instead of executing login steps in every test, you record the authenticated state once and reuse it. This approach reduces test execution time and eliminates dependencies between tests.
 
@@ -72,7 +82,7 @@ const { chromium } = require('playwright');
 
 Once you have the `auth-state.json` file, you can launch new contexts with the authenticated state pre-loaded.
 
-## Prompting AI for Authentication Flow Tests
+### Step 2: Prompting AI for Authentication Flow Tests
 
 When working with AI coding assistants to generate authentication tests, specificity matters. A vague prompt produces generic code that won't match your application's actual flow. Provide the AI with clear context about your authentication mechanism, the page structure, and how you want to use stored state.
 
@@ -92,7 +102,7 @@ Use these selectors: [data-testid="email"], [data-testid="password"], [data-test
 
 The AI will generate tests that incorporate the storage state option in the context creation, skipping the login steps for authenticated tests.
 
-## Generated Test Structure
+### Step 3: Generated Test Structure
 
 AI-generated authentication tests with stored state typically follow a consistent pattern. The tests separate concerns between unauthenticated and authenticated scenarios, using the storage state only where appropriate.
 
@@ -128,7 +138,7 @@ test.describe('Authentication Flow', () => {
 
 The key is ensuring the AI understands when to use storage state versus when to test unauthenticated behavior.
 
-## Managing Multiple User Types
+### Step 4: Manage Multiple User Types
 
 Real applications often have different user roles with varying permissions. AI can help generate tests for multiple authenticated states, but you need to specify each role in your prompts. Request separate storage state files for each user type.
 
@@ -162,7 +172,7 @@ module.exports = {
 
 Keep your storage state files up to date. If your authentication mechanism changes, regenerate the state files and verify that existing tests still pass.
 
-## Automating State Generation
+### Step 5: Automate State Generation
 
 You can also use AI to generate scripts that create storage state files automatically. This is useful in CI/CD pipelines where you need fresh authentication state before running tests.
 
@@ -214,7 +224,7 @@ module.exports = {
 };
 ```
 
-## Authentication Setup Script
+### Step 6: Authentication Setup Script
 
 AI can generate setup scripts that create multiple authentication states:
 
@@ -266,7 +276,7 @@ setup('authenticate as guest', async ({ page, context }) => {
 });
 ```
 
-## Handling OAuth and Social Login
+### Step 7: Handling OAuth and Social Login
 
 For applications using OAuth providers, AI can generate appropriate test patterns:
 
@@ -306,7 +316,7 @@ test('OAuth authentication workflow', async ({ browser }) => {
 });
 ```
 
-## Testing Session Expiration and Renewal
+### Step 8: Test Session Expiration and Renewal
 
 AI assists in generating tests for auth state lifecycle:
 
@@ -361,7 +371,7 @@ test('token refresh flow', async ({ page }) => {
 });
 ```
 
-## Parallel Test Execution with Different Auth States
+### Step 9: Parallel Test Execution with Different Auth States
 
 ```javascript
 test.describe('Parallel tests with different auth', () => {
@@ -385,7 +395,7 @@ test.describe('Parallel tests with different auth', () => {
 });
 ```
 
-## Debugging Storage State Issues
+### Step 10: Debugging Storage State Issues
 
 When storage state tests fail, use AI-assisted debugging:
 
@@ -406,6 +416,21 @@ test('debug storage state', async ({ page, context }) => {
   expect(storageData.localStorage['user_id']).toBeDefined();
 });
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

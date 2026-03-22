@@ -40,18 +40,28 @@ Root cause analysis (RCA) documents are critical for SRE teams, yet writing thor
 - **A typical post-mortem requires**: recounting the timeline, identifying contributing factors, determining the root cause, and outlining prevention measures.
 - **Specific prompts that include context**: desired structure, and tone guide the AI toward useful output.
 
-## The Time Problem with Incident Documentation
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The Time Problem with Incident Documentation
 
 After resolving a production incident, SRE teams face a common bottleneck: documenting what happened. A typical post-mortem requires recounting the timeline, identifying contributing factors, determining the root cause, and outlining prevention measures. This documentation work often gets deprioritized, leading to incomplete records that hurt future incident response.
 
 AI assistants can help at multiple stages—generating initial drafts from notes, suggesting standard section templates, and refining technical explanations. The goal is not to automate away human judgment but to reduce the friction of getting thoughts into a structured format.
 
-## Starting with Incident Notes
+### Step 2: Starting with Incident Notes
 
 The most effective approach begins with capturing incident details during response. Keep rough notes in a standardized format that AI tools can later process:
 
 ```
-## Incident: Payment Processing Outage
+### Step 3: Incident: Payment Processing Outage
 **Time**: 2026-03-15 14:32 UTC
 **Severity**: SEV-1
 **Duration**: 47 minutes
@@ -71,7 +81,7 @@ The most effective approach begins with capturing incident details during respon
 
 When you feed these notes to an AI assistant with an appropriate prompt, it can transform raw observations into a structured draft.
 
-## Prompt Engineering for Post-Mortems
+### Step 4: Prompt Engineering for Post-Mortems
 
 The quality of AI output depends heavily on your input. A vague prompt produces generic results. Specific prompts that include context, desired structure, and tone guide the AI toward useful output.
 
@@ -90,7 +100,7 @@ Use a blameless tone. Focus on system improvements rather than human error.
 
 The AI generates a first draft that you then refine with team-specific context. This reduces writing time while ensuring critical details get captured.
 
-## Structuring the RCA Document
+### Step 5: Structuring the RCA Document
 
 Effective RCA documents follow a consistent structure. AI can help enforce this consistency across your team's post-mortems. A solid template includes:
 
@@ -106,7 +116,7 @@ Action Items: Specific, measurable steps to prevent recurrence. Each item needs 
 
 AI excels at generating these sections from raw notes, though you'll always need human review to verify accuracy.
 
-## Code Examples for Common Scenarios
+### Step 6: Code Examples for Common Scenarios
 
 AI helpers can also generate specific technical content for your RCA. Here are practical examples:
 
@@ -130,7 +140,7 @@ Deployment-Related Incidents:
 
 AI can suggest standard mitigation patterns based on common incident types.
 
-## Refining the Draft
+### Step 7: Refining the Draft
 
 After generating an initial draft, review for accuracy and add team-specific context. AI can miss nuance in your specific systems. Check:
 
@@ -144,7 +154,7 @@ After generating an initial draft, review for accuracy and add team-specific con
 
 Use AI for subsequent revisions. Paste your draft back with requests like "shorten the executive summary" or "make the technical explanation more accessible to non-engineers."
 
-## Integrating with Your Workflow
+### Step 8: Integrate with Your Workflow
 
 Consider where AI fits into your existing incident process:
 
@@ -158,7 +168,7 @@ Consider where AI fits into your existing incident process:
 
 Some teams create Slack bots or GitHub Actions that generate RCA drafts from incident channels. This automation reduces the overhead of documentation.
 
-## Limitations to Recognize
+### Step 9: Limitations to Recognize
 
 AI assistants have boundaries you should understand. They cannot access your internal systems or monitoring data directly—you must provide this context. They may generate plausible-sounding but incorrect technical explanations, so technical accuracy always requires human verification. They also lack awareness of your team's specific processes and culture, which shapes how post-mortems should be written.
 
@@ -170,7 +180,7 @@ Begin with low-stakes incidents to build your prompt library. Track which inputs
 
 The key is treating AI as a drafting assistant, not a replacement for human analysis. Your team's expertise and judgment remain essential for identifying true root causes and meaningful improvements.
 
-## RCA Template for AI Assistance
+### Step 10: RCA Template for AI Assistance
 
 Standardize your RCA format so AI understands your structure:
 
@@ -180,34 +190,34 @@ Standardize your RCA format so AI understands your structure:
 ## Executive Summary
 [1-2 sentences: what happened, impact, resolution]
 
-## Timeline
+### Step 11: Timeline
 - [HH:MM UTC] Event 1
 - [HH:MM UTC] Event 2
 - [HH:MM UTC] Resolution
 
-## Technical Root Cause
+### Step 12: Technical Root Cause
 [Specific technical failure. Not a symptom, but the underlying cause]
 
-## Contributing Factors
+### Step 13: Contributing Factors
 [Conditions that enabled the root cause to cause impact]
 
-## Detection and Response
+### Step 14: Detection and Response
 [How was this caught? Response time? Process gaps?]
 
-## Impact
+### Step 15: Impact
 [Affected users: N. Duration: M minutes. Business impact: $X]
 
-## Action Items
+### Step 16: Action Items
 - [ ] Action 1 - Owner - Target Date
 - [ ] Action 2 - Owner - Target Date
 
-## Prevention
+### Step 17: Prevention
 [What architectural or process changes prevent recurrence?]
 ```
 
 Using this template consistently makes AI-generated sections more coherent and structured.
 
-## RCA Prompt Template
+### Step 18: RCA Prompt Template
 
 Use this prompt structure to get better AI drafts:
 
@@ -251,7 +261,7 @@ Use a blameless tone. Focus on system improvements.
 
 This prompt gives the AI enough context to produce an accurate, well-structured draft.
 
-## Measuring RCA Quality
+### Step 19: Measuring RCA Quality
 
 Evaluate whether your RCA drafting improves with AI assistance:
 
@@ -284,7 +294,7 @@ When reviewing AI-generated RCAs with your team:
 - Action items are vague ("improve monitoring") instead of specific
 - Impact calculation doesn't match incident reports
 
-## Integrating RCA Drafts into Incident Tools
+### Step 20: Integrate RCA Drafts into Incident Tools
 
 Connect your AI RCA workflow to incident management systems:
 
@@ -314,7 +324,7 @@ def generate_incident_rca(incident_id):
 
 This automation ensures every incident has a draft RCA ready for review within minutes.
 
-## Learning from Patterns
+### Step 21: Learning from Patterns
 
 As you generate RCAs, track patterns to improve incident prevention:
 
@@ -324,6 +334,21 @@ As you generate RCAs, track patterns to improve incident prevention:
 - Which types of incidents get missed by monitoring?
 
 Use AI to help analyze these patterns: "Analyze our last 10 RCAs for common themes in root causes." This meta-analysis identifies systemic problems.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -44,7 +44,17 @@ AI refines the timing and adds debounce logic to the specification.
 - **This guide shows developers**: and power users how to use AI tools to generate precise, developer-ready micro interaction specifications that reduce back-and-forth between design and engineering teams.
 - **This iterative approach works**: because AI can maintain context across multiple refinement requests, building increasingly detailed specifications.
 
-## What Goes Into a Micro Interaction Specification
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: What Goes Into a Micro Interaction Specification
 
 Before using AI effectively, understand the components that make a complete micro interaction spec. Each specification should document:
 
@@ -60,7 +70,7 @@ Feedback: What the user sees, hears, or feels during and after the interaction
 
 A well-written spec enables developers to implement interactions without guessing. The challenge is that designers often communicate these details informally, leaving engineers to interpret ambiguous instructions.
 
-## Using AI to Generate Initial Specification Drafts
+### Step 2: Use AI to Generate Initial Specification Drafts
 
 AI assistants excel at transforming rough descriptions into structured specifications. Provide an AI with your design intent, and it can generate a complete specification document that covers all necessary details.
 
@@ -76,7 +86,7 @@ The background overlay fades in to 50% black over 200ms.
 An AI assistant produces a structured specification:
 
 ```
-## Hamburger Menu Toggle Specification
+### Step 3: Hamburger Menu Toggle Specification
 
 ### Trigger
 - User taps hamburger button
@@ -111,7 +121,7 @@ An AI assistant produces a structured specification:
 
 This output provides developers with exact values rather than vague descriptions.
 
-## Refining Specifications for Complex Interactions
+### Step 4: Refining Specifications for Complex Interactions
 
 More complex interactions require iterative refinement with AI. When specifying a form field validation micro interaction, start with the basic intent and progressively add detail:
 
@@ -129,7 +139,7 @@ Third iteration: "Include shake animation on submit attempt if field is invalid"
 
 This iterative approach works because AI can maintain context across multiple refinement requests, building increasingly detailed specifications. Each refinement produces more precise values that developers can directly implement.
 
-## Translating Design Tool Outputs to Specifications
+### Step 5: Translating Design Tool Outputs to Specifications
 
 When working with designs from Figma, Sketch, or Adobe XD, AI can help translate visual specifications into code-ready documents. Take this scenario: a designer provides a button with multiple states visible in a design file, but without explicit timing or easing values.
 
@@ -149,7 +159,7 @@ easing curves, and implementation notes for CSS/React.
 
 The AI produces a complete specification with reasonable timing defaults (200ms for hover transitions, 100ms for active states) and appropriate easing curves, along with CSS and React implementation examples.
 
-## Code Implementation from Specifications
+### Step 6: Code Implementation from Specifications
 
 A practical workflow generates specifications first, then uses AI to produce implementation code. Given the hamburger menu specification above, request implementation code:
 
@@ -187,7 +197,7 @@ const lineVariants = {
 
 This approach creates a complete design-to-code pipeline: designers describe interactions, AI generates specifications, developers receive both the spec and implementation code.
 
-## Handling Edge Cases and Accessibility
+### Step 7: Handling Edge Cases and Accessibility
 
 Quality micro interaction specs address edge cases and accessibility requirements. AI excels at identifying scenarios designers might overlook.
 
@@ -219,7 +229,7 @@ Iterate rather than perfect: Generate a baseline spec quickly, then refine speci
 
 The goal is not to replace designer judgment but to accelerate the documentation process. AI handles the structural writing, while designers and developers provide context and validate the output against actual requirements.
 
-## Common AI Tools for Specification Generation
+### Step 8: Common AI Tools for Specification Generation
 
 Different AI assistants have distinct strengths when working with micro interaction specifications.
 
@@ -235,7 +245,7 @@ GPT-4 generates specifications quickly and handles quick pivots. Its strength li
 
 Some AI tools specifically target design-to-code workflows. Figma's built-in AI plugins can extract component specifications directly from design files. These specialized tools understand design tokens, component hierarchies, and constraint systems that general-purpose LLMs might miss.
 
-## Real-World Implementation Examples
+### Step 9: Real-World Implementation Examples
 
 ### Example: E-commerce Checkout Interaction
 
@@ -283,7 +293,7 @@ The AI identifies that strength indicators should animate smoothly, that the war
 - Shake animation keyframes
 - ARIA announcements for each state
 
-## Testing Specifications Against Real Implementations
+### Step 10: Test Specifications Against Real Implementations
 
 AI-generated specifications should be validated against actual implementations before finalizing. A practical workflow:
 
@@ -295,6 +305,21 @@ AI-generated specifications should be validated against actual implementations b
 6. Repeat until implementation matches intent
 
 This iteration catches specification gaps that only surface during actual coding.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -37,13 +37,23 @@ Optimize Terraform modules by asking AI to identify duplication across modules, 
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **This guide covers the**: reusability challenge, using ai to analyze module structure, generating standardized variable schemas, with specific setup instructions
 
-## The Reusability Challenge
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The Reusability Challenge
 
 Teams often struggle with Terraform modules that become too rigid or too complex. A module designed for one team's needs may not fit another's requirements. When multiple teams maintain separate copies of similar modules, you face duplication, inconsistent configurations, and increased maintenance burden.
 
 AI helps address these issues by analyzing existing modules, suggesting improvements, and generating standardized patterns that work across different contexts. The goal is creating modules that are flexible enough to handle variations while remaining simple to understand and use.
 
-## Using AI to Analyze Module Structure
+### Step 2: Use AI to Analyze Module Structure
 
 Start by feeding your existing Terraform modules into an AI tool for analysis. The AI can identify patterns that reduce reusability, such as hardcoded values, missing variables, or overly specific resource configurations.
 
@@ -93,7 +103,7 @@ resource "aws_s3_bucket" "this" {
 
 The AI identifies which values should become variables and suggests appropriate defaults. This transformation makes the module usable across multiple environments and projects.
 
-## Generating Standardized Variable Schemas
+### Step 3: Generate Standardized Variable Schemas
 
 Consistent variable naming and structure across modules makes them easier to adopt. AI can generate standardized variable definitions that follow your organization's conventions.
 
@@ -125,7 +135,7 @@ variable "tags" {
 
 These patterns ensure every module follows the same structure. Teams know what to expect when using any module in your registry.
 
-## Automating Module Documentation
+### Step 4: Automate Module Documentation
 
 Documentation often lags behind code changes. AI can generate and maintain documentation by analyzing your module's variables, outputs, and resources.
 
@@ -134,7 +144,7 @@ Given a module's code, AI produces documentation like:
 ```markdown
 # Module: AWS VPC
 
-## Usage
+### Step 5: Usage
 
 ```hcl
 module "vpc" {
@@ -157,7 +167,7 @@ Team = "Platform"
 
 ```
 
-## Variables
+### Step 6: Variables
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|----------|
@@ -167,7 +177,7 @@ Team = "Platform"
 | enable_nat_gateway | Enable NAT Gateway | bool | true | No |
 | tags | Additional tags | map(string) | {} | No |
 
-## Outputs
+### Step 7: Outputs
 
 | Name | Description |
 |------|-------------|
@@ -178,7 +188,7 @@ Team = "Platform"
 
 This documentation helps teams understand module usage without reading through implementation details.
 
-## Creating Module Tests and Examples
+### Step 8: Create Module Tests and Examples
 
 AI can generate test cases and usage examples that verify module behavior across different scenarios. This catches issues before teams adopt the module.
 
@@ -222,7 +232,7 @@ module "vpc_custom" {
 
 Running these tests validates that the module works correctly with both default and custom configurations.
 
-## Refactoring Legacy Modules
+### Step 9: Refactoring Legacy Modules
 
 For teams with existing Terraform configurations, AI assists in refactoring to improve reusability. The process involves:
 
@@ -238,7 +248,7 @@ For teams with existing Terraform configurations, AI assists in refactoring to i
 
 This approach transforms monolithic Terraform configurations into modular, reusable components without disrupting existing infrastructure.
 
-## Using AI to Detect Cross-Module Duplication
+### Step 10: Use AI to Detect Cross-Module Duplication
 
 One of the highest-value applications of AI in Terraform workflows is identifying duplication across modules that evolved independently. Pass your entire module directory to an AI assistant with a prompt like: "Identify resource patterns duplicated across these modules and suggest abstractions."
 
@@ -294,7 +304,7 @@ output "role_arn" {
 
 The three original modules now call this shared sub-module, eliminating duplication and centralizing IAM role logic in one maintainable location.
 
-## AI-Assisted Module Versioning Strategy
+### Step 11: AI-Assisted Module Versioning Strategy
 
 Reusability requires stable versioning. AI can help design a versioning strategy that balances backwards compatibility with the need to evolve modules. A typical AI-recommended approach uses semantic versioning with compatibility guarantees:
 
@@ -329,7 +339,7 @@ module "vpc" {
 
 Generating these migration guides automatically reduces friction when teams upgrade module versions across a large registry.
 
-## Integrating AI Module Analysis into Pull Request Workflows
+### Step 12: Integrate AI Module Analysis into Pull Request Workflows
 
 Embedding AI module analysis into your pull request process creates a continuous feedback loop that improves module quality over time. A lightweight GitHub Actions workflow can check for common reusability problems on every PR that modifies a module:
 
@@ -386,7 +396,7 @@ jobs:
 
 This automated check catches hardcoded values and undocumented variables before human code review, letting reviewers focus on higher-level design decisions rather than mechanical quality issues.
 
-## Comparing AI Tools for Terraform Refactoring
+### Step 13: Comparing AI Tools for Terraform Refactoring
 
 Different AI assistants offer varying levels of Terraform-specific support:
 
@@ -406,6 +416,21 @@ When using AI to improve Terraform module reusability, maintain human oversight 
 Validate AI suggestions against your organization's standards. Check that generated variables, outputs, and documentation align with existing conventions. Run `terraform validate` and `terraform plan` to verify changes work as expected before committing.
 
 Iterate on module design with AI assistance. Initial versions rarely achieve perfect reusability. Use AI to generate variations, test different approaches, and refine based on feedback from teams using the modules.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

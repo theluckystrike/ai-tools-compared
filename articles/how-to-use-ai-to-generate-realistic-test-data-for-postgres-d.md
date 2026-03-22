@@ -45,7 +45,17 @@ Production-like test data reveals issues that synthetic or random data often mis
 
 Randomly generated data frequently fails to capture these nuances. You might create email addresses without valid formats, generate future dates that should be past dates, or produce orphaned records that violate database constraints.
 
-## Using AI to Generate Seed Data
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Use AI to Generate Seed Data
 
 AI coding assistants excel at understanding your schema and generating appropriate seed data. The process involves three core steps:
 
@@ -223,7 +233,7 @@ ALTER TABLE orders ADD CONSTRAINT valid_total CHECK (total > 0);
 ALTER TABLE users ADD CONSTRAINT valid_role CHECK (role IN ('user', 'moderator', 'admin'));
 ```
 
-## Automating Seed Generation
+### Step 2: Automate Seed Generation
 
 Integrate AI-generated seeds into your workflow by saving prompts as reusable scripts:
 
@@ -239,6 +249,21 @@ EOF
 Commit generated seed files alongside your application code. This creates self-contained, reproducible test environments that any team member can rebuild instantly.
 
 Realistic test data transforms your development and testing process. AI makes generating this data efficient while maintaining the quality and variety your applications encounter in production.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 
