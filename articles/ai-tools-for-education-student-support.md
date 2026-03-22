@@ -93,6 +93,38 @@ async function explainCode(codeSnippet, language) {
 ```
 
 
+### Socratic Tutoring with Multi-Turn Conversations
+
+
+The most effective AI tutoring doesn't just give answers — it guides students toward understanding. A Socratic tutoring loop keeps students engaged and builds genuine comprehension:
+
+
+```python
+def socratic_tutor(student_history, new_question):
+    """
+    Maintains conversation history to guide students with questions
+    rather than direct answers.
+    """
+    messages = student_history + [{"role": "user", "content": new_question}]
+
+    response = client.messages.create(
+        model="claude-sonnet-4-20250514",
+        max_tokens=512,
+        system="""You are a Socratic tutor. Never give direct answers.
+        Instead, ask probing questions that help students discover answers
+        themselves. When a student is stuck, break the problem into smaller steps.""",
+        messages=messages
+    )
+
+    assistant_reply = response.content[0].text
+    student_history.append({"role": "user", "content": new_question})
+    student_history.append({"role": "assistant", "content": assistant_reply})
+    return assistant_reply, student_history
+```
+
+This approach is particularly effective for mathematics and logic-based subjects where students benefit from working through reasoning rather than receiving answers directly.
+
+
 ## Intelligent Content Recommendation
 
 
@@ -135,6 +167,21 @@ def recommend_content(student_profile, content_library):
 
 
 This approach scales well and integrates with most learning management systems. You can enhance it by adding weights for factors like difficulty progression and learning pace.
+
+
+### Tool Comparison: Adaptive Learning Platforms
+
+
+Several platforms expose APIs for integrating adaptive content delivery into custom applications:
+
+| Platform | API Access | Adaptive Algorithm | LMS Integration | Pricing |
+|---|---|---|---|---|
+| Khan Academy Khanmigo | Partner API | Mastery-based | Limited | Enterprise |
+| Coursera for Campus | REST API | Collaborative filtering | LTI 1.3 | Per-seat |
+| Duolingo for Schools | OAuth API | Spaced repetition | Webhook | Free + paid |
+| Carnegie Learning | SOAP/REST | Cognitive Tutor | SCORM, xAPI | Enterprise |
+
+For most custom applications, building your own recommendation layer using embeddings gives the most flexibility, while platform APIs work better when you want to embed existing curriculum directly.
 
 
 ## Chatbot Systems for Administrative Support
@@ -187,7 +234,7 @@ def answer_student_query(query):
 ```
 
 
-This architecture ensures responses align with current institutional policies while maintaining conversational capability.
+This architecture ensures responses align with current institutional policies while maintaining conversational capability. Popular vector databases for this use case include Pinecone, Weaviate, and pgvector (Postgres extension). For most university deployments, pgvector eliminates an external dependency since Postgres is already in the stack.
 
 
 ## Mental Health and Wellbeing Support
@@ -233,7 +280,7 @@ def assess_student_wellbeing(message_text):
 ```
 
 
-Always integrate human escalation paths for elevated risk levels. Your system should make it easy for students to connect with human counselors when needed.
+Always integrate human escalation paths for elevated risk levels. Your system should make it easy for students to connect with human counselors when needed. Platforms like Uwill and TimelyCare offer API integrations specifically designed for campus mental health, providing licensed counselors on-demand when your AI detects elevated risk.
 
 
 ## Accessibility and Inclusive Learning
@@ -263,7 +310,29 @@ def transcribe_lecture(audio_file_path):
 ```
 
 
-The Whisper model provides accurate transcription for dozens of languages, making it suitable for multilingual educational environments.
+The Whisper model provides accurate transcription for dozens of languages, making it suitable for multilingual educational environments. For real-time captioning during live lectures, the streaming version of the Whisper API or AWS Transcribe Streaming provides sub-second latency suitable for live display.
+
+
+### Text Simplification for Accessibility
+
+
+Students with reading difficulties benefit from content that adapts to their reading level. A simple API call can transform dense academic text:
+
+
+```python
+def simplify_for_reading_level(text, grade_level=8):
+    response = client.messages.create(
+        model="claude-sonnet-4-20250514",
+        max_tokens=1024,
+        system=f"""Rewrite the following academic text at a grade {grade_level} reading level.
+        Preserve all factual content and technical terms (with brief definitions).
+        Use shorter sentences and active voice.""",
+        messages=[{"role": "user", "content": text}]
+    )
+    return response.content[0].text
+```
+
+This approach complements screen readers and other assistive technology without requiring separate content authoring pipelines.
 
 
 ## Implementation Recommendations
@@ -272,7 +341,7 @@ The Whisper model provides accurate transcription for dozens of languages, makin
 When selecting AI tools for student support, prioritize these factors:
 
 
-Educational platforms must comply with FERPA and similar regulations. Ensure AI providers offer appropriate data handling guarantees and never store sensitive student data unnecessarily.
+Educational platforms must comply with FERPA and similar regulations. Ensure AI providers offer appropriate data handling guarantees and never store sensitive student data unnecessarily. Both Anthropic and OpenAI offer FERPA-compliant BAA agreements for enterprise accounts, and both maintain SOC 2 Type II certification.
 
 
 Students should understand when they're interacting with AI versus humans. Clear disclosure builds trust and sets appropriate expectations.

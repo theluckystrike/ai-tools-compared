@@ -181,6 +181,55 @@ After recreating your GPT as a Claude Project, thorough testing reveals gaps bet
 - Capability mapping: If your GPT used DALL-E image generation, note that Claude uses different image capabilities. Check Claude's current feature set for equivalent functionality.
 
 
+## Translating GPT Capabilities to Claude Equivalents
+
+ChatGPT Custom GPTs support specific capabilities that have direct (or approximate) equivalents in Claude:
+
+| ChatGPT Capability | Claude Equivalent | Notes |
+|-------------------|-------------------|-------|
+| Web browsing | Claude.ai web search | Available in claude.ai; not in API by default |
+| DALL-E image generation | No direct equivalent | Claude can describe images; use separate image API |
+| Code interpreter / data analysis | Claude code execution (beta) | Available via API tool_use |
+| Knowledge base files | Project files (claude.ai) or local files (Claude Code) | Max file sizes differ |
+| Custom actions (API calls) | Tool use / function calling | Requires more explicit schema definition |
+| Conversation starters | Saved prompt templates | Manual recreation required |
+
+When your GPT relied heavily on DALL-E for image generation, plan to either keep that workflow in ChatGPT or integrate a separate image generation service (Flux, Midjourney API) alongside Claude.
+
+## Adapting System Prompts for Claude
+
+Claude interprets system prompts differently from ChatGPT. Prompts that worked in ChatGPT often need three types of adjustments:
+
+**Remove ChatGPT-specific language.** Phrases like "As a GPT" or "your GPT tools" can confuse Claude. Replace them with direct behavioral descriptions.
+
+**Be explicit about refusals.** GPTs often have fine-tuned behavior for specific refusal patterns. With Claude, state your rules as positive instructions: "Only answer questions about Python development" rather than relying on implicit training.
+
+**Restructure with XML tags for long prompts.** Claude handles structured prompts well:
+
+```xml
+<system_context>
+You are a specialized code review assistant focused on Python best practices.
+</system_context>
+
+<capabilities>
+- Review Python code for PEP 8 compliance
+- Identify security vulnerabilities in web frameworks
+- Suggest performance improvements for database queries
+</capabilities>
+
+<constraints>
+- Do not generate complete rewrites; provide targeted feedback only
+- Always explain the "why" behind each suggestion
+- Flag critical security issues with [CRITICAL] prefix
+</constraints>
+
+<output_format>
+Structure responses as: Issue | Severity | Recommendation | Example Fix
+</output_format>
+```
+
+This structure tends to produce more consistent behavior in Claude than the free-form instruction style common in ChatGPT GPTs.
+
 ## Automating the Process for Multiple GPTs
 
 
@@ -233,7 +282,18 @@ create_claude_project(
 ```
 
 
-This script automates the folder creation and file copying, letting you focus on refining the instructions.
+This script automates the folder creation and file copying, letting you focus on refining the instructions rather than repetitive setup tasks.
+
+## Evaluating Behavior Parity After Migration
+
+Once your Claude Project is running, use a systematic test to compare its behavior against the original GPT. Create a test matrix of 10–20 representative prompts covering:
+
+- Core use case queries (the primary reason you built the GPT)
+- Edge case inputs that the GPT handled well
+- Inputs the GPT correctly declined or redirected
+- Prompts that test knowledge file recall
+
+Score each on a 1–3 scale (1 = wrong/off, 2 = close, 3 = equivalent or better). A score of 2.5+ indicates a successful migration. Items scoring 1 usually point to missing instructions or knowledge context that needs to be re-added.
 
 
 
