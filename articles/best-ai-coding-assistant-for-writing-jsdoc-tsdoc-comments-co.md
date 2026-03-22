@@ -1,18 +1,20 @@
 ---
+
 layout: default
 title: "Best AI Coding Assistant for Writing JSDoc TSDoc Comments Correctly"
 description: "Discover which AI coding assistants excel at generating accurate JSDoc and TSDoc comments. Compare accuracy, TypeScript support, and practical integration for your workflow."
 date: 2026-03-21
 last_modified_at: 2026-03-21
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /best-ai-coding-assistant-for-writing-jsdoc-tsdoc-comments-co/
 categories: [guides]
 tags: [ai-tools-compared, tools, best-of, artificial-intelligence, documentation, jsdoc, tsdoc]
-reviewed: false
-score: 0
+reviewed: true
+score: 8
 intent-checked: false
 voice-checked: false
 ---
+
 
 | Tool | JSDoc Accuracy | TSDoc Accuracy | Type Inference | Command Generation | Pricing |
 |---|---|---|---|---|---|
@@ -60,7 +62,7 @@ Copilot excels when your code uses clear type annotations. The more explicit you
 
 ## Claude (via Cursor or Windsurf)
 
-Anthropic's Claude performs exceptionally well when accessed through Cursor or Windsurf. These IDE integrations leverage Claude's stronger reasoning capabilities to produce more comprehensive documentation.
+Anthropic's Claude performs exceptionally well when accessed through Cursor or Windsurf. These IDE integrations use Claude's stronger reasoning capabilities to produce more comprehensive documentation.
 
 Claude consistently handles:
 - Complex generic types with proper `@template` tags
@@ -164,3 +166,4 @@ The key to good results regardless of tool remains writing code with clear types
 ---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
