@@ -30,11 +30,11 @@ This guide shows you how to use AI tools effectively to generate Kubernetes netw
 Before asking AI for help, you need a clear mental model of your application's communication patterns. Network policies in Kubernetes operate at the pod level using label selectors. The three main components are:
 
 
-- podSelector: Selects pods to which the policy applies
+- `podSelector`: Selects the pods to which the policy applies
+- `policyTypes`: Specifies ingress, egress, or both
+- `ingress`/`egress` rules: Define allowed traffic sources and destinations
 
-- policyTypes: Specifies ingress, egress, or both
-
-- ingress/egress rules: Define allowed traffic sources and destinations
+One critical prerequisite: **network policies only work if your CNI (Container Network Interface) plugin supports them**. Flannel does not enforce network policies by default. Calico, Cilium, and Weave Net do. A NetworkPolicy applied to a Flannel cluster is silently ignored. Check your CNI with `kubectl get pods -n kube-system` before generating policies.
 
 
 A simple policy that restricts incoming traffic to pods with label `app: frontend` looks like this:
@@ -250,43 +250,82 @@ The AI will generate a complete policy set that you can review and adjust based 
 ## Validating AI-Generated Policies
 
 
-Always validate policies before deploying to production:
+Always validate policies before deploying to production. A policy that passes syntax checks can still block critical traffic or leave security gaps that only emerge under specific conditions.
 
 
-1. Syntax check: Use `kubectl apply --dry-run=client` to verify YAML syntax
-
-2. Policy validation: Use tools like kubeval or OPA Gatekeeper
-
-3. Test in staging: Deploy to a non-production namespace first
-
-4. Monitor logs: Check network policy logs to ensure expected traffic is allowed
-
+**Step 1: Syntax and schema validation**
 
 ```bash
-# Dry-run validation
+# Dry-run validation — catches YAML errors and Kubernetes schema issues
 kubectl apply -f policy.yaml --dry-run=client
 
+# Use kubeconform for offline schema validation (faster in CI)
+kubeconform -kubernetes-version 1.29 policy.yaml
+
+# View existing policies in the namespace
+kubectl get networkpolicy -n production -o wide
+```
+
+**Step 2: Connectivity testing with a debug pod**
+
+```bash
+# Deploy a test pod to verify traffic is allowed/denied as expected
+kubectl run nettest --image=busybox --rm -it --restart=Never -n production \
+  -- wget -qO- --timeout=2 http://api-service:3000/health
+
+# If the command times out, the policy is blocking the connection
+# If it returns output, the policy allows the connection
+```
+
+**Step 3: Use Hubble (Cilium) for flow-based policy generation**
+
+If your cluster runs Cilium, Hubble observes actual traffic and can generate policy suggestions from real behavior rather than from your architectural assumptions:
+
+```bash
+cilium hubble enable
+hubble observe --namespace production --output json | cilium policy generate
+```
+
+**Step 4: Staged rollout**
+
+Apply policies in audit mode first if your CNI supports it (Calico's GlobalNetworkPolicy supports the `audit` action). This logs policy matches without enforcing denials, letting you verify correctness before enabling enforcement.
+
+```bash
 # View existing policies
 kubectl get networkpolicy -n production
 ```
 
 
+## Which AI Tools Generate the Best Network Policies
+
+Not all AI coding assistants produce equally reliable network policy YAML. Based on testing in 2026, here is how the common options compare:
+
+**Claude (Anthropic)** handles complex multi-service architectures well. When given a detailed architecture description, it consistently includes DNS egress rules and generates separate policies per tier without being prompted. It also explains the generated policy clearly, which helps with security review.
+
+**ChatGPT (GPT-4o)** produces correct policies for standard patterns but sometimes omits DNS egress rules and occasionally generates overly permissive `namespaceSelector` blocks. Prompting it to "include all required egress rules for service discovery" fixes most issues.
+
+**GitHub Copilot** (inline) is best for single-policy generation when you start typing the YAML structure. It struggles with multi-policy sets that need to reference each other unless you scaffold each policy individually.
+
+**Cursor with Claude backend** combines inline completion with the ability to paste your full deployment manifests as context, producing the most accurate label selectors since it reads your actual pod labels rather than inventing them.
+
+The most reliable workflow for production: describe your architecture to Claude or GPT-4o in detail, generate a draft, then refine it in Cursor against your actual manifest files.
+
 ## Advanced Considerations
 
 
-For complex environments, consider additional factors:
+For complex environments, consider these additional patterns when prompting AI:
 
 
-- Cluster-wide policies: Some policies may need to span multiple namespaces
+- **Cluster-wide policies**: Use Cilium `ClusterwidePolicyNetworkPolicy` or Calico `GlobalNetworkPolicy` when rules need to span multiple namespaces. Standard `NetworkPolicy` is namespace-scoped only.
 
-- CIDR-based egress: Restrict external API calls to specific IP ranges
+- **CIDR-based egress**: Restrict external API calls to specific IP ranges. Ask the AI for the CIDR block of the external service and specify it in the `ipBlock` field of the egress rule.
 
-- Port ranges: Use named ports or port ranges for easier maintenance
+- **Named ports**: Reference service ports by name rather than number for easier maintenance when port assignments change.
 
-- Policy ordering: Default deny policies must exist before allow policies
+- **Policy ordering**: In CNIs that support ordered policies (Calico, Cilium), lower-order policies take precedence. Always apply the default-deny policy first with the lowest order number.
 
 
-AI tools can generate these advanced configurations, but you must provide detailed requirements about your network topology and security boundaries.
+AI tools can generate all of these configurations, but you must provide detailed requirements about your network topology and security boundaries. The more specific your prompt—including CIDR ranges, exact port numbers, and namespace label values—the less manual correction the output will require.
 
 
 
