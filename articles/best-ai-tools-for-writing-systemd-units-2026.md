@@ -17,7 +17,13 @@ tags: [ai-tools-compared]
 
 # Best AI Tools for Writing Systemd Units 2026
 
-Systemd units look simple but have hundreds of options — many of which interact in non-obvious ways. AI tools vary significantly in how well they handle security hardening, resource limits, and dependency ordering.
+Systemd units look simple but have hundreds of options — many of which interact in non-obvious ways. AI tools vary significantly in how well they handle security hardening, resource limits, and dependency ordering. This guide covers real prompts and outputs for service units, timer units, socket activation, and path units, with a direct comparison between Claude and ChatGPT.
+
+## Why AI Tools Matter for Systemd
+
+Writing a minimal systemd service unit is easy. Writing one that correctly handles security sandboxing, restart policies, resource limits, dependency ordering, and logging takes significantly more knowledge. The systemd man pages are thorough but dense — `systemd.exec(5)` alone covers hundreds of directives.
+
+AI tools collapse that research time. The key question is whether they apply the right directives by default, understand the interactions between them, and flag common mistakes before you discover them in production.
 
 ## Service Unit: Production Web App
 
@@ -99,6 +105,8 @@ ChatGPT produces syntactically correct units but tends to use weaker hardening d
 - Omits `ProtectKernelModules`, `RestrictNamespaces`, and `SystemCallFilter`
 - Sets `Restart=always` instead of `Restart=on-failure`, which restarts even on clean exit
 
+For teams that use `systemd-analyze security` to audit units, ChatGPT's output typically scores "UNSAFE" or "EXPOSED" without additional prompting. Claude's output usually lands at "MEDIUM" out of the box.
+
 ## Timer Unit (Scheduled Task)
 
 **Prompt:**
@@ -153,6 +161,8 @@ WantedBy=timers.target
 
 Note that systemd timers use `Type=oneshot` for the service (not `Type=simple`) — Claude gets this right. ChatGPT sometimes generates `Type=simple` for timer services, which can cause issues with service tracking.
 
+The "service should not run if the previous run is still active" requirement is handled by `Type=oneshot` combined with no `Restart=` directive. If you add `Restart=on-failure` to a oneshot service, it only retries on non-zero exit — it does not overlap with a running instance.
+
 ## Socket Activation
 
 **Prompt:**
@@ -198,6 +208,84 @@ ProtectSystem=strict
 
 In the Python server, use `systemd.daemon.notify` and read from `sys.stdin` (fd 0) when socket-activated, or use `socket.fromfd(3, ...)` to get the pre-bound socket.
 
+`Accept=false` means systemd passes the listening socket to one service instance (not a new instance per connection). For most servers this is the right choice — the application handles accept() itself.
+
+## Path Unit (File Watcher)
+
+**Prompt:**
+```text
+Write a systemd path unit that watches /var/spool/incoming/ for new files
+and triggers a processing service when files appear. The service should run
+/opt/scripts/process_incoming.sh.
+```
+
+**Claude output:**
+
+```ini
+# /etc/systemd/system/incoming-watcher.path
+[Unit]
+Description=Watch /var/spool/incoming for new files
+
+[Path]
+PathChanged=/var/spool/incoming
+Unit=incoming-processor.service
+
+[Install]
+WantedBy=multi-user.target
+```
+
+```ini
+# /etc/systemd/system/incoming-processor.service
+[Unit]
+Description=Process incoming files
+After=local-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=/opt/scripts/process_incoming.sh
+User=processor
+Group=processor
+
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ReadWritePaths=/var/spool/incoming /var/spool/processed
+
+StandardOutput=journal
+StandardError=journal
+```
+
+`PathChanged` triggers when a file in the directory is modified or created. Use `PathExistsGlob` if you want to trigger on a specific file pattern. Claude explains the difference between `PathExists`, `PathChanged`, and `PathModified` in its response — a useful detail that ChatGPT omits.
+
+## Drop-In Override Files
+
+One area where Claude demonstrates deeper systemd knowledge is override files. When you ask about modifying a vendor-provided unit without editing the original:
+
+**Prompt:**
+```text
+I want to add MemoryMax=1G to the nginx.service unit that came from the distro package,
+without editing the original file so package updates don't overwrite my changes.
+```
+
+**Claude output:**
+```bash
+# Create override directory and file
+sudo mkdir -p /etc/systemd/system/nginx.service.d/
+sudo tee /etc/systemd/system/nginx.service.d/memory-limit.conf << 'EOF'
+[Service]
+MemoryMax=1G
+EOF
+
+# Reload systemd and restart nginx
+sudo systemctl daemon-reload
+sudo systemctl restart nginx
+
+# Verify the override is applied
+systemctl show nginx --property=MemoryMax
+```
+
+Claude explains that drop-in files in `.service.d/` directories merge with the base unit — you only need to include the directives you're changing. ChatGPT sometimes suggests editing `/lib/systemd/system/nginx.service` directly, which is overwritten on package updates.
+
 ## Debugging Advice Claude Includes
 
 Claude consistently adds debugging commands in its explanations:
@@ -214,9 +302,56 @@ journalctl -u myapp -f
 
 # Test resource limits
 systemctl show myapp --property=MemoryMax,CPUShares,TasksMax
+
+# Show full unit after merging drop-ins
+systemctl cat myapp.service
+
+# Check timer next run time
+systemctl list-timers daily-backup.timer
 ```
 
-The `systemd-analyze security` command scores your hardening — Claude mentions this tool and suggests aiming for "MEDIUM" exposure level or better.
+The `systemd-analyze security` command scores your hardening — Claude mentions this tool and suggests aiming for "MEDIUM" exposure level or better. Scores range from "OK" (best) through "MEDIUM", "EXPOSED", and "UNSAFE". Most default service units from distro packages score "UNSAFE" — adding the hardening directives Claude generates by default typically brings a custom service to "MEDIUM" without additional effort.
+
+## Transient Units and systemd-run
+
+For one-off tasks and testing, Claude also generates `systemd-run` commands that create transient units without writing files:
+
+**Prompt:**
+```text
+Show me how to run a one-off command using systemd-run with memory and CPU limits,
+and how to check its output.
+```
+
+**Claude output:**
+```bash
+# Run a command as a transient service with resource limits
+systemd-run \
+  --unit=my-oneoff \
+  --property=MemoryMax=256M \
+  --property=CPUShares=100 \
+  --property=User=myapp \
+  --wait \
+  /opt/scripts/heavy-task.sh
+
+# Check status
+systemctl status my-oneoff
+
+# View logs
+journalctl -u my-oneoff
+
+# Run interactively (stays in foreground)
+systemd-run --pty --property=MemoryMax=256M /bin/bash
+```
+
+`systemd-run` is useful for testing resource limits before encoding them in a unit file — run the command, watch `systemctl status`, confirm memory doesn't exceed the limit, then copy those values into the permanent unit. Claude explains this workflow; ChatGPT typically presents `systemd-run` as a standalone command without the testing workflow context.
+
+## When to Use Each Tool
+
+Use **Claude** when you need production-quality units with complete hardening. The additional directives it includes by default (SystemCallFilter, ProtectKernelModules, RestrictNamespaces) require systemd 232+ but are supported on any modern Linux distribution. Claude also provides better explanations of what each directive does and why — useful when you're learning systemd.
+
+Use **ChatGPT** for quick scaffolding when you know you'll review the hardening separately. Its units are syntactically correct and follow the basic structure, but plan to add hardening directives yourself before deploying to production.
+
+For either tool: always run `systemd-analyze verify` before deploying, and `systemd-analyze security` if the service runs with elevated privileges or handles sensitive data.
 
 ## Related Reading
 
