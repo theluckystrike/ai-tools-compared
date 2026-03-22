@@ -31,6 +31,15 @@ voice-checked: true---
 
 This guide provides practical steps and best practices to help you accomplish this task effectively. Follow the recommendations to get the best results from your AI tools.
 
+## Key Takeaways
+
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **Follow the recommendations to**: get the best results from your AI tools.
+- **Most developers use git**: status to verify Apply operations before proceeding.
+- **Does Cursor offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+
 ## Understanding Cursor's Apply Model
 
 When you ask Cursor AI to generate code or make modifications, the Apply model doesn't just spit out a complete file replacement. Instead, it analyzes your existing codebase, understands the context, and generates precise changes that integrate with what you already have.

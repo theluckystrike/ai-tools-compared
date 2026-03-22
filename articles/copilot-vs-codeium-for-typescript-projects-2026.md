@@ -31,6 +31,15 @@ tags: [ai-tools-compared, comparison]---
 
 TypeScript-specific AI completion is a distinct skill from general code completion. The model needs to handle generics, utility types, decorators, declaration merging, and the TypeScript-specific patterns that engineers rely on daily. This comparison tests Copilot and Codeium on TypeScript-specific scenarios.
 
+## Key Takeaways
+
+- **For teams where the**: advanced TypeScript features matter, Copilot Individual at $10/month beats Codeium's free tier.
+- **Choose Codeium when**: Your TypeScript is mostly standard patterns and cost is a factor.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **Use AI-generated tests as**: a starting point, then add cases that cover your unique requirements and failure modes.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+- **Codeium**: Completed with a generic validation approach that didn't use reflect-metadata.
+
 ## Testing Methodology
 
 Both tools were tested in VS Code on a TypeScript 5.x project with strict mode enabled. Each scenario was tested 5 times to account for suggestion variability. Acceptance rate = how often the first suggestion was correct without editing.

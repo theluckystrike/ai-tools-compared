@@ -16,9 +16,16 @@ voice-checked: true---
 
 {% raw %}
 
-
 GitHub Copilot pricing is the same for both public and private repositories: $10/month for individuals, $19/user/month for Business, and $39/user/month for Enterprise. The subscription is all-you-can-eat access regardless of repository visibility, so you cannot save money by working primarily in public repositories. Copilot features and quality remain identical across all repository types.
 
+## Key Takeaways
+
+- **GitHub Copilot pricing is**: the same for both public and private repositories: $10/month for individuals, $19/user/month for Business, and $39/user/month for Enterprise.
+- **The free tier has**: been discontinued for most users.
+- **This carries premium pricing**: above base $39/user/month.
+- **Concurrent Usage Limits**: Higher tiers provide better concurrency—no degradation when multiple team members use Copilot simultaneously.
+- **If you have used**: the tool for at least 3 months and plan to continue, the annual discount usually makes sense.
+- **Annual vs monthly billing**: (annual saves ~17%) 5.
 
 ## Understanding GitHub Copilot Pricing Model
 

@@ -31,6 +31,16 @@ voice-checked: true---
 
 This guide provides an overview to help you understand and make informed decisions about this topic.
 
+## Key Takeaways
+
+- **Use Cmd+K or Tab**: to edit or generate code 3.
+- **Cmd+K**: "Update to use Auth0"
+3.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+- **For example**: suppose you want to add user authentication to a React application.
+- **Copilot Workspace typically takes**: a few seconds to generate multi-file plans, while Cursor's Tab completions appear almost instantly.
+
 ## Understanding the Two Approaches
 
 GitHub Copilot Workspace, released as an evolution of Copilot Chat, takes a session-based approach to multi-file changes. You describe what you want to accomplish, and Copilot generates a plan that spans multiple files. The system maintains context throughout your coding session and allows you to apply changes across your entire project.

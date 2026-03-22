@@ -31,6 +31,15 @@ voice-checked: true---
 
 This guide compares the strengths and weaknesses of each tool for this specific task. Choose the tool that best matches your workflow, budget, and technical requirements.
 
+## Key Takeaways
+
+- **GitHub Actions uses `${{**: secrets.SECRET_NAME }}` syntax inside workflow files.
+- **Choose the tool that**: best matches your workflow, budget, and technical requirements.
+- **Claude Code requires switching**: between your editor and the CLI, though you can use the VS Code extension for tighter integration.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+- **Start typing a workflow file**: and suggestions appear almost instantly.
+
 ## Understanding the Workflow Development Challenge
 
 GitHub Actions workflows have unique requirements that set them apart from general coding tasks. You need to understand YAML syntax, GitHub's marketplace actions, environment-specific configuration, secrets management, and the interplay between jobs, steps, and runners. An effective AI assistant should grasp these concepts and provide suggestions that actually work in production environments.
