@@ -27,7 +27,25 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 Shift your mindset from writing code to directing code generation by articulating requirements clearly, reviewing generated output carefully, and using AI for architectural decisions rather than just syntax. Senior developers amplify productivity by mastering prompt engineering, using AI for fast prototyping and refactoring, and applying their experience to validate and improve AI-generated code—not by replacing their expertise with blind automation.
+
+## Key Takeaways
+
+- **Do these recommendations work**: for small teams? Yes, most practices scale down well.
+- **Missing tests
+
+Diff**: $(cat $DIFF_FILE)
+EOF
+```
+
+This captures objective findings quickly.
+- **Vague requests produce mediocre results**: while specific, contextual prompts generate useful code.
+- **Establish Clear Context Boundaries**: AI assistants work best when you define their scope explicitly.
+- **Use AI for Repetitive Patterns**: Not Novel Solutions
+
+AI excels at generating boilerplate, converting between patterns, and implementing well-documented algorithms.
+- **class PaymentService(Protocol)**: def setup_account(self, user_id: str) -> bool: ...
 
 ## Understanding the Mental Model Shift
 

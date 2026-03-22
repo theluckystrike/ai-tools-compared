@@ -31,6 +31,24 @@ voice-checked: true---
 
 Conventional commits have become the standard for writing meaningful Git commit messages. The format (`feat:`, `fix:`, `docs:`, `chore:`, etc.) provides structure that tools can parse to automatically generate changelogs, version bumps, and release notes. However, manually crafting these commit messages and then aggregating them into a readable changelog remains time-consuming. This is where AI coding tools step in to automate the entire workflow.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **git-ai-commit # Outputs AI-generated**: commit message git commit -m "$(git-ai-commit)" ``` ### 3.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Diff**: \n$DIFF',
+  stream: false
+}")
+MESSAGE=$(echo $RESPONSE | jq -r '.response')
+echo "$MESSAGE"
+```
+
+Run it with staged changes:
+```bash
+git add .
+- **Codellama 13B handles conventional commit generation accurately for most common change types**: new files, modified functions, dependency updates.
+
 ## The Conventional Commit Workflow
 
 Before looking at AI tools, let's establish the conventional commit foundation. The specification uses this format:

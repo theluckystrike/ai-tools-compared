@@ -31,6 +31,15 @@ intent-checked: true---
 
 European companies face increasingly strict data sovereignty requirements when adopting AI coding assistants. The EU's regulatory framework, primarily GDPR and the upcoming NIS2 directive, creates specific obligations for how code, prompts, and contextual data are processed, stored, and transferred. Understanding these requirements helps developers and technical leadership make informed decisions about which AI tools to adopt and how to configure them for compliance.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Train developers on data**: handling best practices 6.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+
 ## Understanding Data Sovereignty in the AI Context
 
 Data sovereignty means that data remains under the legal jurisdiction of a specific region or country. For AI coding assistants, this applies to several categories of information:

@@ -27,7 +27,17 @@ score: 8
 intent-checked: true
 voice-checked: true---
 
+
 Understanding how AI coding assistants handle your data throughout the entire session lifecycle helps you make informed decisions about which tools to use and how to configure them for your privacy requirements. This guide walks through each stage of the data journey.
+
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Session data gets automatically**: deleted after 90 days for free tier users, with longer retention possible for enterprise agreements.
+- **GitHub Copilot**: Claude, and most enterprise-focused tools maintain SOC 2 Type II certification.
+- **Most enterprise-focused tools allow**: customers to specify data residency requirements, ensuring storage in specific regions.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **This typically ranges from**: 30 days for free tiers to 90 days or longer for paid plans.
 
 ## What Is Session Data in AI Coding Assistants
 
