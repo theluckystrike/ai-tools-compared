@@ -100,4 +100,93 @@ AI coding assistants accelerate development but should not replace understanding
 
 As AI tools continue evolving, expect better proactive accessibility suggestions—tools that flag missing skip links before you even ask. For now, using these assistants as a starting point while maintaining accessibility knowledge delivers the most reliable results.
 
+## Multiple Skip Links for Complex Page Structures
+
+Single-page applications and pages with multiple distinct content areas often benefit from more than one skip link. A page with a navigation bar, a sidebar filter panel, and a main content area should offer skip links to each. Screen reader users navigating a search results page with filters find a "Skip to results" link more useful than one generic "Skip to main content" link.
+
+Generate multiple skip links when your page has these structural patterns:
+
+```html
+<body>
+  <!-- Multiple skip links for complex pages -->
+  <nav class="skip-links" aria-label="Skip navigation">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#search-filters" class="skip-link">Skip to search filters</a>
+    <a href="#site-footer" class="skip-link">Skip to footer</a>
+  </nav>
+
+  <header>
+    <nav id="primary-nav" aria-label="Primary navigation">
+      <!-- navigation -->
+    </nav>
+  </header>
+
+  <aside id="search-filters" tabindex="-1">
+    <!-- filter sidebar -->
+  </aside>
+
+  <main id="main-content" tabindex="-1">
+    <!-- main content -->
+  </main>
+
+  <footer id="site-footer" tabindex="-1">
+    <!-- footer -->
+  </footer>
+</body>
+```
+
+The `tabindex="-1"` on target elements is important: it makes non-interactive elements like `<main>` programmatically focusable so that when the skip link is activated, focus moves to the target and keyboard navigation continues from that point rather than from the top of the page.
+
+When prompting AI assistants for multiple skip links, provide explicit context about your page structure. Claude Code and Cursor perform best when you describe the page sections you want to skip to. A prompt like "add skip navigation links to a page with a primary nav, sidebar filters, and main content" produces better results than "add accessibility links."
+
+## Testing Skip Links with Real Assistive Technology
+
+AI-generated skip links pass automated accessibility checkers but can still fail in real-world assistive technology use. Automated tools verify that the link exists and points to a valid target, but they cannot verify that the focus behavior is correct for every screen reader and browser combination.
+
+Test manually with at least two scenarios:
+
+**Keyboard-only navigation**: Tab to the skip link (it should be the first Tab stop), press Enter, and confirm that keyboard focus has moved to the target. Press Tab again—the next focused element should be within or after the target area, not back in the navigation.
+
+**Screen reader testing**: Use NVDA with Firefox on Windows and VoiceOver with Safari on macOS. With a screen reader active, navigate to the page. The screen reader should announce the skip link immediately. Activate it and confirm the screen reader announces the target heading or landmark. Then verify that subsequent keyboard navigation moves through the main content, not the navigation.
+
+A common failure mode in AI-generated implementations is a skip link that moves visual focus correctly but does not update the screen reader's reading position. This happens when the target element lacks a `tabindex` attribute or when JavaScript focus management interferes with native browser behavior.
+
+For automated regression testing, add a quick Playwright check to your CI pipeline:
+
+```javascript
+// playwright/tests/accessibility/skip-links.spec.js
+const { test, expect } = require("@playwright/test");
+const { checkA11y } = require("axe-playwright");
+
+test("skip navigation link reaches main content", async ({ page }) => {
+  await page.goto("/");
+
+  // Tab once — should focus the skip link
+  await page.keyboard.press("Tab");
+  const focusedText = await page.evaluate(
+    () => document.activeElement?.textContent?.trim()
+  );
+  expect(focusedText).toMatch(/skip/i);
+
+  // Activate skip link
+  await page.keyboard.press("Enter");
+
+  // Next Tab should be within main content, not navigation
+  await page.keyboard.press("Tab");
+  const nextFocused = await page.evaluate(() => {
+    const el = document.activeElement;
+    return {
+      tagName: el?.tagName,
+      closestMain: !!el?.closest("main"),
+      closestNav: !!el?.closest("nav")
+    };
+  });
+
+  expect(nextFocused.closestMain).toBe(true);
+  expect(nextFocused.closestNav).toBe(false);
+});
+```
+
+This test catches regressions where a code change breaks skip link functionality. Run it as part of your accessibility test suite alongside automated WCAG scanning.
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
