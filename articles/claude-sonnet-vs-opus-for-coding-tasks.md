@@ -122,7 +122,7 @@ Both models immediately flag the SQL injection vulnerability. Both suggest param
 Opus additionally flags:
 - `fields` is user-controlled and enables column enumeration attacks (even with parameterized queries, column names can't be parameterized)
 - The function returns `None` when no user is found, which callers likely don't handle
-- `user_id` is typed as `str` but treated as a UUID — should validate format before querying
+- `user_id` is typed as `str` but treated as an UUID — should validate format before querying
 
 For security-sensitive review, Opus's second-order thinking matters.
 

@@ -46,7 +46,7 @@ Most AI assistants can work with analytics data in several formats:
 
 - **Funnel analysis data** showing drop-off points
 
-The quality of output depends heavily on how you frame your request. Simply asking "create an user journey map" produces generic results. Providing specific data with clear questions about particular user segments or conversion paths yields practical recommendations.
+The quality of output depends heavily on how you frame your request. Simply asking "create a user journey map" produces generic results. Providing specific data with clear questions about particular user segments or conversion paths yields practical recommendations.
 
 ## Practical Example: Analyzing Checkout Abandonment
 

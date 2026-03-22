@@ -26,7 +26,7 @@ voice-checked: true
 
 {% raw %}
 
-TypeScript's strict mode transforms many runtime errors into compile-time failures, which catches bugs early but demands precise type annotations. Type narrowing—the process by which TypeScript narrows an union type to a specific type within conditional blocks—becomes especially critical when strict mode is enabled. Understanding which AI assistant handles these type narrowing compiler errors most effectively can dramatically improve your development velocity.
+TypeScript's strict mode transforms many runtime errors into compile-time failures, which catches bugs early but demands precise type annotations. Type narrowing—the process by which TypeScript narrows a union type to a specific type within conditional blocks—becomes especially critical when strict mode is enabled. Understanding which AI assistant handles these type narrowing compiler errors most effectively can dramatically improve your development velocity.
 
 ## Table of Contents
 

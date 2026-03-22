@@ -32,7 +32,7 @@ The combination of AI and TDD addresses the two biggest complaints developers ha
 Before involving AI, you must clearly articulate what you want the code to do. Write a brief description of the function or feature in plain English. Include input expectations, expected outputs, and any error conditions that should be handled. This description becomes the prompt you feed to the AI, and the quality of your description directly affects the quality of the tests generated.
 
 
-For example, instead of asking an AI to "write tests for an user authentication function," specify: "Write unit tests for a login function that accepts email and password, returns a JWT token on success, returns an error for invalid credentials, and throttles failed attempts after five tries within one minute."
+For example, instead of asking an AI to "write tests for a user authentication function," specify: "Write unit tests for a login function that accepts email and password, returns a JWT token on success, returns an error for invalid credentials, and throttles failed attempts after five tries within one minute."
 
 
 ### Step 2: Generate Tests with AI Assistance

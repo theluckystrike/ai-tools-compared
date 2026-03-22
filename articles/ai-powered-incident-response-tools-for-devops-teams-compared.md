@@ -59,7 +59,7 @@ index=production sourcetype=app_logs error
 
 ### 2. Datadog AI — Cloud-Native Observability
 
-Datadog's AI capabilities focus on automated root cause analysis and intelligent alerting. Its infrastructure monitoring combined with AI-powered anomaly detection helps teams identify issues before they impact users. The platform excels at correlating metrics, logs, and traces in an unified view.
+Datadog's AI capabilities focus on automated root cause analysis and intelligent alerting. Its infrastructure monitoring combined with AI-powered anomaly detection helps teams identify issues before they impact users. The platform excels at correlating metrics, logs, and traces in a unified view.
 
 The recent additions to Datadog's AI toolkit include automated remediation suggestions based on similar past incidents. Teams can configure the platform to suggest runbook steps directly within incident notifications.
 

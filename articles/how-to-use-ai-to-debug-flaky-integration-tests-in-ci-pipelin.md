@@ -129,7 +129,7 @@ def test_user_data_persistence(self):
 
 **AI Analysis Prompt:**
 
-> "Analyze this Python pytest integration test. It creates an user via REST API then immediately retrieves it. The test fails roughly 20% of the time with 404 errors. Suggest root causes and debugging steps."
+> "Analyze this Python pytest integration test. It creates a user via REST API then immediately retrieves it. The test fails roughly 20% of the time with 404 errors. Suggest root causes and debugging steps."
 
 **Typical AI Response:**
 

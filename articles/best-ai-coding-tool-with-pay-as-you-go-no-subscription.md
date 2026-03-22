@@ -84,11 +84,11 @@ import anthropic
 client = anthropic.Anthropic(api_key="your-api-key")
 
 response = client.messages.create(
-    model="claude-sonnet-4-20250514",
-    max_tokens=1024,
-    messages=[
-        {"role": "user", "content": "Write a Python decorator that logs function execution time"}
-    ]
+ model="claude-sonnet-4-20250514",
+ max_tokens=1024,
+ messages=[
+ {"role": "user", "content": "Write a Python decorator that logs function execution time"}
+ ]
 )
 
 print(response.content[0].text)
@@ -113,22 +113,22 @@ const { OpenAI } = require('openai');
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 async function explainCode(code) {
-  const response = await openai.chat.completions.create({
-    model: 'gpt-4',
-    messages: [
-      {
-        role: 'system',
-        content: 'You are a code explainer. Provide clear, concise explanations.'
-      },
-      {
-        role: 'user',
-        content: `Explain what this code does:\n${code}`
-      }
-    ],
-    max_tokens: 500
-  });
+ const response = await openai.chat.completions.create({
+ model: 'gpt-4',
+ messages: [
+ {
+ role: 'system',
+ content: 'You are a code explainer. Provide clear, concise explanations.'
+ },
+ {
+ role: 'user',
+ content: `Explain what this code does:\n${code}`
+ }
+ ],
+ max_tokens: 500
+ });
 
-  return response.choices[0].message.content;
+ return response.choices[0].message.content;
 }
 ```
 

@@ -34,9 +34,9 @@ Data manipulation in pandas frequently requires combining multiple DataFrames ba
 
 ## Understanding Table Relationships for Pandas Operations
 
-Table relationship diagrams typically display connections between tables using notation that indicates cardinality: one-to-one, one-to-many, or many-to-many relationships. When you have an users table connected to an orders table through an user_id field, the diagram makes the join strategy obvious. However, translating that visual representation into correct pandas syntax requires understanding merge parameters, indicator flags, and validation options.
+Table relationship diagrams typically display connections between tables using notation that indicates cardinality: one-to-one, one-to-many, or many-to-many relationships. When you have an users table connected to an orders table through a user_id field, the diagram makes the join strategy obvious. However, translating that visual representation into correct pandas syntax requires understanding merge parameters, indicator flags, and validation options.
 
-Modern AI tools can parse descriptions of these relationships and generate appropriate pandas code. For instance, when you describe a relationship between a customers table and an orders table where each customer can have multiple orders, AI assistants recognize this as an one-to-many relationship and suggest the appropriate merge strategy.
+Modern AI tools can parse descriptions of these relationships and generate appropriate pandas code. For instance, when you describe a relationship between a customers table and an orders table where each customer can have multiple orders, AI assistants recognize this as a one-to-many relationship and suggest the appropriate merge strategy.
 
 ## Practical Examples of AI-Generated Merge Operations
 

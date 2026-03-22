@@ -38,7 +38,7 @@ Claude works differently through conversational interaction. You describe what y
 
 ## Controller Generation Comparison
 
-Let us examine how each tool handles creating a REST controller for a simple user management feature. The controller should expose CRUD endpoints for an User entity.
+Let us examine how each tool handles creating a REST controller for a simple user management feature. The controller should expose CRUD endpoints for a User entity.
 
 With Copilot, you typically start typing the class declaration and let it suggest completions:
 
@@ -59,7 +59,7 @@ Copilot might suggest the CRUD methods based on method names you begin typing. F
 
 Claude handles this differently. You provide a description:
 
-> "Create an UserController with CRUD endpoints for an User entity, using constructor injection for UserService, and proper @ResponseStatus annotations"
+> "Create an UserController with CRUD endpoints for a User entity, using constructor injection for UserService, and proper @ResponseStatus annotations"
 
 Claude generates the complete controller:
 

@@ -125,7 +125,7 @@ However, the effective context window still varies by plugin. Some limit analysi
 ### Zed
 
 
-Zed takes an unique approach with its native AI integration. By building AI directly into the editor, Zed can maintain context across sessions and use efficient token processing. Users report that Zed's AI feels faster because it doesn't require the overhead of external API calls for every suggestion.
+Zed takes a unique approach with its native AI integration. By building AI directly into the editor, Zed can maintain context across sessions and use efficient token processing. Users report that Zed's AI feels faster because it doesn't require the overhead of external API calls for every suggestion.
 
 
 ### Neovim

@@ -30,7 +30,7 @@ Choose ChatGPT if you want fast, structured code walkthroughs of TensorFlow mode
 - [Performance Comparison: Real Benchmark Results](#performance-comparison-real-benchmark-results)
 - [Model-Specific Teaching Styles](#model-specific-teaching-styles)
 - [Practical Learning Path](#practical-learning-path)
-- [Real-World Example: Building an LSTM](#real-world-example-building-an-lstm)
+- [Real-World Example: Building a LSTM](#real-world-example-building-an-lstm)
 - [Comparing Advanced Concepts](#comparing-advanced-concepts)
 - [Integration with IDEs](#integration-with-ides)
 
@@ -231,7 +231,7 @@ Week 4: Troubleshooting (ChatGPT)
 - Use ChatGPT's code debugging strength
 ```
 
-## Real-World Example: Building an LSTM
+## Real-World Example: Building a LSTM
 
 Here's how each model helps with a complete project:
 

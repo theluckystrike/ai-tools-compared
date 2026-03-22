@@ -46,7 +46,7 @@ The benefit of AI-generated tests compounds as serializers grow in complexity. A
 
 Before using AI to generate tests, ensure your serializer code is clean and accessible. The AI needs to understand your validation logic to produce relevant tests.
 
-Consider this example serializer for an user registration endpoint:
+Consider this example serializer for a user registration endpoint:
 
 ```python
 from rest_framework import serializers

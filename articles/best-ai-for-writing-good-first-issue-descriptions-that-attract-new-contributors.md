@@ -41,7 +41,7 @@ Writing a good first issue description is one of the most impactful things you c
 
 ## What Makes a Good First Issue Description
 
-Before evaluating AI tools, it helps to understand what separates an useful first issue from one that scares away potential contributors. A strong first issue includes:
+Before evaluating AI tools, it helps to understand what separates a useful first issue from one that scares away potential contributors. A strong first issue includes:
 
 - Clear context: Why does this issue matter? What problem does it solve?
 
@@ -93,7 +93,7 @@ The limitation is that ChatGPT sometimes generates generic descriptions that lac
 
 ## Cursor: Good for IDE Integration
 
-Cursor offers an unique approach by integrating AI assistance directly into your development environment. For issue writing, this means you can reference your actual codebase while generating descriptions.
+Cursor offers a unique approach by integrating AI assistance directly into your development environment. For issue writing, this means you can reference your actual codebase while generating descriptions.
 
 ### Why Consider Cursor
 

@@ -84,7 +84,7 @@ The quality of generated code improves significantly when you provide adequate c
 ### Example: Contextual Prompt
 
 
-A simple prompt like "create an user service" produces generic code. A more effective prompt includes specifics:
+A simple prompt like "create a user service" produces generic code. A more effective prompt includes specifics:
 
 
 ```

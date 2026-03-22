@@ -93,7 +93,7 @@ Claude Code handles the CDK v2 import patterns correctly and produces syntax-val
 
 GitHub Copilot integrates directly into popular IDEs like VS Code and PyCharm, providing inline suggestions as you type. For CDK development, it works well for iterative construct modifications and completing partially written infrastructure definitions.
 
-Copilot excels at context-aware completions. When you start defining an S3 bucket construct, it suggests common configurations like versioning, encryption, and lifecycle rules:
+Copilot excels at context-aware completions. When you start defining a S3 bucket construct, it suggests common configurations like versioning, encryption, and lifecycle rules:
 
 ```python
 from aws_cdk import (

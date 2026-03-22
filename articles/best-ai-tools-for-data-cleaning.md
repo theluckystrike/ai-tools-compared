@@ -119,7 +119,7 @@ DataRobot's governance features include transformation lineage tracking, approva
 
 ### Trino with Iceberg
 
-For data engineers working with large-scale data, Trino (formerly PrestoSQL) combined with Apache Iceberg provides a SQL-based approach to cleaning data at scale. While not a traditional AI tool, Trino's integration with machine learning functions enables intelligent data cleaning within your query layer.
+For data engineers working with large-scale data, Trino (formerly PrestoSQL) combined with Apache Iceberg provides an SQL-based approach to cleaning data at scale. While not a traditional AI tool, Trino's integration with machine learning functions enables intelligent data cleaning within your query layer.
 
 ```sql
 -- Trino: AI-powered data cleaning at scale

@@ -101,7 +101,7 @@ ChatGPT's broad training makes it effective for general market research summariz
 
 The plugin ecosystem adds value for traders. Plugins that connect to news sources or financial data providers allow ChatGPT to pull current information and summarize it within the same conversation. This reduces the friction of switching between research and summarization.
 
-Traders appreciate ChatGPT's ability to adjust summary length and focus. You can request an one-paragraph overview or a detailed breakdown of specific sections—useful when analyzing lengthy SEC filings where only certain segments matter for your positions.
+Traders appreciate ChatGPT's ability to adjust summary length and focus. You can request a one-paragraph overview or a detailed breakdown of specific sections—useful when analyzing lengthy SEC filings where only certain segments matter for your positions.
 
 ### Gemini (Google)
 
@@ -113,7 +113,7 @@ Integration with Google Workspace offers convenience for traders already using G
 
 ### Perplexity
 
-Perplexity takes a different approach by combining search with summarization. When you ask about a company or sector, it searches across multiple sources, synthesizes findings, and presents an unified answer.
+Perplexity takes a different approach by combining search with summarization. When you ask about a company or sector, it searches across multiple sources, synthesizes findings, and presents a unified answer.
 
 For traders conducting initial research on unfamiliar industries, this capability saves time. Instead of opening dozens of tabs, you get a consolidated view drawn from news, analyst reports, and academic sources.
 

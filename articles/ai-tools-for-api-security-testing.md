@@ -39,7 +39,7 @@ AI tools add value by reading your API specification or code and generating test
 
 ## Approach 1: OpenAPI Spec Analysis
 
-Feed your OpenAPI spec to an LLM for security review:
+Feed your OpenAPI spec to a LLM for security review:
 
 ```python
 import anthropic

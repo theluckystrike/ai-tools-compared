@@ -26,7 +26,7 @@ If you have been using Grammarly for writing assistance and want to explore Chat
 - [Comparing Results](#comparing-results)
 - [Handling Different Content Types](#handling-different-content-types)
 - [Best Practices for Migration](#best-practices-for-migration)
-- [Building an Unified Editing Workflow](#building-an-unified-editing-workflow)
+- [Building a Unified Editing Workflow](#building-an-unified-editing-workflow)
 - [Cost Comparison](#cost-comparison)
 - [Advanced: Automating Editorial Workflows](#advanced-automating-editorial-workflows)
 - [Handling Edge Cases](#handling-edge-cases)
@@ -170,7 +170,7 @@ Keep your API usage in mind if you use ChatGPT extensively. Setting usage limits
 
 Pay attention to how ChatGPT handles sensitive information. Avoid pasting confidential data into public ChatGPT interfaces. Consider using API-based solutions or the desktop application for sensitive work.
 
-## Building an Unified Editing Workflow
+## Building a Unified Editing Workflow
 
 Rather than replacing Grammarly entirely, experienced users combine multiple tools. Here's a practical hybrid approach:
 

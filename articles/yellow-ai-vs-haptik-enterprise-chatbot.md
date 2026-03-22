@@ -207,7 +207,7 @@ trainer.train_intent_model(
 ## Channel Support and Omnichannel Deployment
 
 
-Enterprise chatbots rarely live on a single channel. Yellow AI supports WhatsApp Business, Facebook Messenger, Slack, Microsoft Teams, and custom web deployments through an unified API surface. Its channel abstraction layer lets you define conversation logic once and deploy across channels without rewriting flows.
+Enterprise chatbots rarely live on a single channel. Yellow AI supports WhatsApp Business, Facebook Messenger, Slack, Microsoft Teams, and custom web deployments through a unified API surface. Its channel abstraction layer lets you define conversation logic once and deploy across channels without rewriting flows.
 
 Haptik focuses heavily on WhatsApp and in-app deployment, with strong integration into Jio's platform ecosystem in India. For global enterprise deployments requiring deep Microsoft Teams or Slack integration, Yellow AI's pre-built connectors reduce development effort considerably.
 
@@ -294,7 +294,7 @@ Yellow AI supports a broader language set out of the box, with automatic languag
 There is no direct migration path. Conversation flows, intents, and entities need to be rebuilt in the target platform's format. If migration is a concern, invest time in exporting and documenting your intent library before committing to either platform — that structured data is portable even when the flow configurations are not.
 
 **How do both platforms handle human handoff?**
-Both support agent handoff, but the implementation differs. Yellow AI's Inbox product provides an unified agent console with conversation context transfer. Haptik integrates with third-party agent platforms and provides API hooks for custom handoff logic. Teams running existing contact center infrastructure typically find Haptik's API approach more compatible with complex routing requirements.
+Both support agent handoff, but the implementation differs. Yellow AI's Inbox product provides a unified agent console with conversation context transfer. Haptik integrates with third-party agent platforms and provides API hooks for custom handoff logic. Teams running existing contact center infrastructure typically find Haptik's API approach more compatible with complex routing requirements.
 
 ---
 

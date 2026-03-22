@@ -148,7 +148,7 @@ AI tools can accelerate the debugging process by analyzing error messages and su
 
 ### Analyzing Error Patterns
 
-When you encounter an SSL verification error, capture the full error object:
+When you encounter a SSL verification error, capture the full error object:
 
 ```javascript
 const https = require('https');

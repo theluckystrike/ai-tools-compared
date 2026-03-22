@@ -45,7 +45,7 @@ The challenge grows with project size. A medium-sized project might contain thou
 
 AI coding assistants can generate appropriate license headers when you provide context about your project. The key is giving the AI enough information about your license choice, project name, and copyright holder.
 
-For example, when working with an MIT license for a Python project, you might ask your AI assistant:
+For example, when working with a MIT license for a Python project, you might ask your AI assistant:
 
 ```
 Generate a license header for my Python project called 'my-project'.

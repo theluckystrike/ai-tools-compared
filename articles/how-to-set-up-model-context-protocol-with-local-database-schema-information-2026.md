@@ -31,7 +31,7 @@ This guide walks you through configuring MCP to work with local database schema 
 
 ## Prerequisites and Initial Setup
 
-Before configuring MCP, ensure you have a recent version of an MCP-compatible AI client installed. Most modern AI coding assistants support MCP through a standardized interface. You will also need database connection details and appropriate access credentials.
+Before configuring MCP, ensure you have a recent version of a MCP-compatible AI client installed. Most modern AI coding assistants support MCP through a standardized interface. You will also need database connection details and appropriate access credentials.
 
 Install the MCP database server using your preferred package manager:
 

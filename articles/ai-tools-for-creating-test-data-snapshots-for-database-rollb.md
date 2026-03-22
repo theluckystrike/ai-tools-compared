@@ -30,7 +30,7 @@ Automated testing requires consistent, predictable database states. When tests m
 
 ## The Core Problem
 
-Consider a typical test scenario: your test suite creates an user record, processes an order, and verifies the result. The next test expects a clean database but finds the previous test's data. Without proper isolation, tests depend on execution order, making CI/CD pipelines unreliable.
+Consider a typical test scenario: your test suite creates a user record, processes an order, and verifies the result. The next test expects a clean database but finds the previous test's data. Without proper isolation, tests depend on execution order, making CI/CD pipelines unreliable.
 
 Traditional approaches like transaction rollback or database truncation work but require manual setup and maintenance. AI tools now automate this process, learning from your schema and test patterns to optimize snapshot creation and restoration.
 

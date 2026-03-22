@@ -103,31 +103,31 @@ Return valid dbt YAML schema format only."""
     # Parse and validate the YAML
     yaml_text = response.content[0].text
     if yaml_text.startswith("```"):
-        yaml_text = "\n".join(yaml_text.split("\n")[1:-1])
+ yaml_text = "\n".join(yaml_text.split("\n")[1:-1])
 
-    return yaml.safe_load(yaml_text)
+ return yaml.safe_load(yaml_text)
 
 # Example usage
 model_sql = """
 SELECT
-    order_id,
-    user_id,
-    status,
-    total_amount,
-    currency,
-    created_at,
-    shipped_at
+ order_id,
+ user_id,
+ status,
+ total_amount,
+ currency,
+ created_at,
+ shipped_at
 FROM {{ source('ecommerce', 'orders') }}
 WHERE created_at >= '2024-01-01'
 """
 
 sample_data = [
-    {"order_id": "ord_001", "user_id": "usr_123", "status": "shipped",
-     "total_amount": 4999, "currency": "USD", "created_at": "2026-01-15",
-     "shipped_at": "2026-01-17"},
-    {"order_id": "ord_002", "user_id": "usr_456", "status": "pending",
-     "total_amount": 1299, "currency": "USD", "created_at": "2026-01-16",
-     "shipped_at": None},
+ {"order_id": "ord_001", "user_id": "usr_123", "status": "shipped",
+ "total_amount": 4999, "currency": "USD", "created_at": "2026-01-15",
+ "shipped_at": "2026-01-17"},
+ {"order_id": "ord_002", "user_id": "usr_456", "status": "pending",
+ "total_amount": 1299, "currency": "USD", "created_at": "2026-01-16",
+ "shipped_at": None},
 ]
 
 tests = generate_dbt_tests(model_sql, "orders", sample_data)
@@ -140,56 +140,56 @@ print(yaml.dump(tests, default_flow_style=False))
 version: 2
 
 models:
-  - name: orders
-    columns:
-      - name: order_id
-        tests:
-          - not_null
-          - unique
+ - name: orders
+ columns:
+ - name: order_id
+ tests:
+ - not_null
+ - unique
 
-      - name: user_id
-        tests:
-          - not_null
-          - relationships:
-              to: ref('users')
-              field: user_id
+ - name: user_id
+ tests:
+ - not_null
+ - relationships:
+ to: ref('users')
+ field: user_id
 
-      - name: status
-        tests:
-          - not_null
-          - accepted_values:
-              values: ['pending', 'processing', 'shipped', 'delivered', 'cancelled', 'refunded']
+ - name: status
+ tests:
+ - not_null
+ - accepted_values:
+ values: ['pending', 'processing', 'shipped', 'delivered', 'cancelled', 'refunded']
 
-      - name: total_amount
-        tests:
-          - not_null
-          - dbt_utils.expression_is_true:
-              expression: ">= 0"
+ - name: total_amount
+ tests:
+ - not_null
+ - dbt_utils.expression_is_true:
+ expression: ">= 0"
 
-      - name: currency
-        tests:
-          - not_null
-          - accepted_values:
-              values: ['USD', 'EUR', 'GBP']
+ - name: currency
+ tests:
+ - not_null
+ - accepted_values:
+ values: ['USD', 'EUR', 'GBP']
 
-      - name: created_at
-        tests:
-          - not_null
+ - name: created_at
+ tests:
+ - not_null
 
-    tests:
-      # Business rule: shipped orders must have a shipped_at date
-      - dbt_utils.expression_is_true:
-          expression: "status != 'shipped' OR shipped_at IS NOT NULL"
-          name: shipped_orders_have_shipped_at
+ tests:
+ # Business rule: shipped orders must have a shipped_at date
+ - dbt_utils.expression_is_true:
+ expression: "status != 'shipped' OR shipped_at IS NOT NULL"
+ name: shipped_orders_have_shipped_at
 
-      # Business rule: shipped_at cannot be before created_at
-      - dbt_utils.expression_is_true:
-          expression: "shipped_at IS NULL OR shipped_at >= created_at"
-          name: shipped_at_not_before_created_at
+ # Business rule: shipped_at cannot be before created_at
+ - dbt_utils.expression_is_true:
+ expression: "shipped_at IS NULL OR shipped_at >= created_at"
+ name: shipped_at_not_before_created_at
 
-    freshness:
-      warn_after: {count: 6, period: hour}
-      error_after: {count: 24, period: hour}
+ freshness:
+ warn_after: {count: 6, period: hour}
+ error_after: {count: 24, period: hour}
 ```
 
 The two custom SQL tests at the bottom are the valuable ones. `not_null` and `unique` are boilerplate — the business rule tests are what actually catch data quality problems in production.
@@ -207,42 +207,42 @@ from anthropic import Anthropic
 client = Anthropic()
 
 def profile_dataframe(df: pd.DataFrame) -> dict:
-    """Generate a statistical profile for AI to analyze."""
-    profile = {}
-    for col in df.columns:
-        col_profile = {
-            "dtype": str(df[col].dtype),
-            "null_count": int(df[col].isna().sum()),
-            "null_pct": round(df[col].isna().mean() * 100, 1),
-            "unique_count": int(df[col].nunique()),
-        }
+ """Generate a statistical profile for AI to analyze."""
+ profile = {}
+ for col in df.columns:
+ col_profile = {
+ "dtype": str(df[col].dtype),
+ "null_count": int(df[col].isna().sum()),
+ "null_pct": round(df[col].isna().mean() * 100, 1),
+ "unique_count": int(df[col].nunique()),
+ }
 
-        if df[col].dtype in ["int64", "float64"]:
-            col_profile.update({
-                "min": float(df[col].min()),
-                "max": float(df[col].max()),
-                "mean": round(float(df[col].mean()), 2),
-                "p5": float(df[col].quantile(0.05)),
-                "p95": float(df[col].quantile(0.95)),
-            })
-        elif df[col].dtype == "object":
-            col_profile["sample_values"] = df[col].dropna().unique()[:10].tolist()
+ if df[col].dtype in ["int64", "float64"]:
+ col_profile.update({
+ "min": float(df[col].min()),
+ "max": float(df[col].max()),
+ "mean": round(float(df[col].mean()), 2),
+ "p5": float(df[col].quantile(0.05)),
+ "p95": float(df[col].quantile(0.95)),
+ })
+ elif df[col].dtype == "object":
+ col_profile["sample_values"] = df[col].dropna().unique()[:10].tolist()
 
-        profile[col] = col_profile
+ profile[col] = col_profile
 
-    return profile
+ return profile
 
 def generate_ge_expectations(df: pd.DataFrame, dataset_name: str) -> list[dict]:
-    """Generate Great Expectations expectations for a DataFrame."""
-    profile = profile_dataframe(df)
-    row_count = len(df)
+ """Generate Great Expectations expectations for a DataFrame."""
+ profile = profile_dataframe(df)
+ row_count = len(df)
 
-    response = client.messages.create(
-        model="claude-opus-4-6",
-        max_tokens=2500,
-        messages=[{
-            "role": "user",
-            "content": f"""Generate Great Expectations expectations for this dataset.
+ response = client.messages.create(
+ model="claude-opus-4-6",
+ max_tokens=2500,
+ messages=[{
+ "role": "user",
+ "content": f"""Generate Great Expectations expectations for this dataset.
 
 Dataset: {dataset_name}
 Row count: {row_count}
@@ -258,11 +258,11 @@ Include:
 - expect_table_row_count_to_be_between (50% to 200% of current count)
 
 Return only valid JSON, no explanation."""
-        }]
-    )
+ }]
+ )
 
-    text = response.content[0].text
-    if text.startswith("```"):
+ text = response.content[0].text
+ if text.startswith("```"):
         text = "\n".join(text.split("\n")[1:-1])
 
     return json.loads(text)

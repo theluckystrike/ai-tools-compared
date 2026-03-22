@@ -74,7 +74,7 @@ def check_certificate(hostname, port=443):
 # - Risk scoring based on certificate attributes
 ```
 
-AI-powered discovery goes beyond simple scanning. These tools analyze certificate chains, identify misconfigurations, detect duplicate or conflicting certificates, and categorize assets by risk level. Some solutions integrate directly with cloud provider APIs to track certificates across AWS Certificate Manager, Azure Key Vault, and Google Cloud Certificate Manager in an unified view.
+AI-powered discovery goes beyond simple scanning. These tools analyze certificate chains, identify misconfigurations, detect duplicate or conflicting certificates, and categorize assets by risk level. Some solutions integrate directly with cloud provider APIs to track certificates across AWS Certificate Manager, Azure Key Vault, and Google Cloud Certificate Manager in a unified view.
 
 ## Automated Renewal Workflows
 

@@ -55,7 +55,7 @@ One of the most powerful applications of Claude Code in shift left testing is ge
 
 When working with Claude Code, describe both the function you are implementing and its expected behavior. Request test generation simultaneously by specifying what inputs the function should handle and what outputs you expect. This collaborative approach produces code that is designed with testability in mind from the beginning.
 
-For example, when implementing an user authentication function, you might ask Claude Code to generate tests for valid credentials, invalid passwords, expired sessions, and edge cases like empty inputs. Having these tests ready as you implement the function helps ensure the code meets requirements from the start.
+For example, when implementing a user authentication function, you might ask Claude Code to generate tests for valid credentials, invalid passwords, expired sessions, and edge cases like empty inputs. Having these tests ready as you implement the function helps ensure the code meets requirements from the start.
 
 ### Step 3: Claude Code Test Analysis and Review
 

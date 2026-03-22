@@ -42,7 +42,7 @@ Notion stores data in a block-based system with databases as collections of page
 
 Coda combines documents and spreadsheets into a single platform called "docs." Coda tables function like spreadsheets but connect to other tables through relational patterns. Coda AI integrates directly into the formula language through AI columns and the `AI` formula, giving you programmatic control over AI-generated content.
 
-The key distinction: Notion AI operates mostly as an user-initiated action, while Coda AI allows you to embed AI responses directly into table columns using formulas.
+The key distinction: Notion AI operates mostly as a user-initiated action, while Coda AI allows you to embed AI responses directly into table columns using formulas.
 
 ## Platform Comparison: Notion AI vs Coda AI for Automations
 

@@ -33,7 +33,7 @@ When you fine-tune a ChatGPT model, you incur costs in two main phases: training
 
 ### Training Costs
 
-OpenAI charges for fine-tuning based on the number of tokens in your training dataset. The training cost is an one-time expense per fine-tuned model. As of 2026, the training pricing varies depending on the base model you choose:
+OpenAI charges for fine-tuning based on the number of tokens in your training dataset. The training cost is a one-time expense per fine-tuned model. As of 2026, the training pricing varies depending on the base model you choose:
 
 - GPT-4o Mini Fine-tuning: $1.00 per 1M training tokens
 

@@ -68,7 +68,7 @@ Prophet excels when your demand data shows clear seasonal patterns—retail sale
 
 ### StatsForecast
 
-StatsForecast offers a collection of statistical forecasting models optimized for speed. It uses an unified interface for multiple algorithms including AutoARIMA, ETS, and Theta. This tool is excellent when you need to compare many models quickly:
+StatsForecast offers a collection of statistical forecasting models optimized for speed. It uses a unified interface for multiple algorithms including AutoARIMA, ETS, and Theta. This tool is excellent when you need to compare many models quickly:
 
 ```python
 from statsforecast import StatsForecast

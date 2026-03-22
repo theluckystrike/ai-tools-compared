@@ -39,7 +39,7 @@ ChatGPT Plus costs $20 monthly and includes access to DALL-E 3 within the chat i
 
 With ChatGPT Plus, you receive approximately 80 DALL-E image generations per three-hour rolling window. This limitation means you cannot generate unlimited images within a single billing period. The actual cost per image depends heavily on how many images you generate monthly.
 
-For an user who maximizes the 80-image limit across a typical month, the effective cost breaks down mathematically:
+For a user who maximizes the 80-image limit across a typical month, the effective cost breaks down mathematically:
 
 ```
 Monthly images (assuming max usage): 80 images × ~30 days = 2,400 images
@@ -164,7 +164,7 @@ A hybrid approach also works well: use ChatGPT Plus for experimentation and quic
 
 Beyond the base price, factor in these additional costs:
 
-API Data Transfer: Hosting generated images on your servers incurs bandwidth and storage costs. The API returns URLs that expire after an hour, so you must download and store images immediately.
+API Data Transfer: Hosting generated images on your servers incurs bandwidth and storage costs. The API returns URLs that expire after a hour, so you must download and store images immediately.
 
 Retry Logic: Failed generations still count against your quota. Implement proper error handling to avoid wasted credits:
 

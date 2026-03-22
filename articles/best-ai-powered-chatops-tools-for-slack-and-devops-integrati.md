@@ -216,7 +216,7 @@ Beyond picking a tool, the configuration of alert routing determines how much no
 
 1. Route by service ownership, not by alert source. Alerts from your database monitoring tool that affect the payments service should go to the payments team channel, not a generic database channel.
 2. Deduplicate by fingerprint before routing. Most AI ChatOps tools support fingerprint-based deduplication. Configure fingerprints on the fields that uniquely identify a problem type—error code plus service name is usually enough.
-3. Escalate on recurrence, not just severity. An alert that fires three times in an hour is more urgent than a single critical alert that fires and immediately resolves. Configure AI escalation policies to weight recurrence heavily.
+3. Escalate on recurrence, not just severity. An alert that fires three times in a hour is more urgent than a single critical alert that fires and immediately resolves. Configure AI escalation policies to weight recurrence heavily.
 
 Here is an example of a PagerDuty event rules configuration that implements this pattern:
 

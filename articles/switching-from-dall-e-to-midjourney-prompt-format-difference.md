@@ -252,7 +252,7 @@ The `--cw` (character weight) parameter controls how closely the model adheres t
 
 ## Building API Wrappers for Multi-Model Image Generation
 
-If your application needs to support both DALL-E and Midjourney simultaneously, building an unified wrapper simplifies prompt handling:
+If your application needs to support both DALL-E and Midjourney simultaneously, building a unified wrapper simplifies prompt handling:
 
 ```python
 class ImageGenerator:

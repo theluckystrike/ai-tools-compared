@@ -139,7 +139,7 @@ AI tools can generate the complete panel configurations when you describe the la
 
 Many organizations track SLOs at multiple granularity levels—per service, per endpoint, or per customer tier. AI tools can generate queries that aggregate appropriately across these dimensions.
 
-For example, when creating an SLO dashboard that tracks burn rates across multiple services:
+For example, when creating a SLO dashboard that tracks burn rates across multiple services:
 
 ```promql
 -- Burn rate by service with group concatenation

@@ -39,7 +39,7 @@ Getting accurate, production-ready code from AI assistants requires more than ju
 
 AI coding tools are fundamentally pattern-completion engines trained on vast amounts of code. When you provide a vague prompt, the model fills in the missing context with its best guess—which may be a pattern from a completely different codebase or use case. A specific, well-structured prompt narrows the solution space dramatically and produces code that fits your actual requirements.
 
-The difference in output quality between a weak and a strong prompt can easily be the difference between code you can deploy and code you spend an hour debugging.
+The difference in output quality between a weak and a strong prompt can easily be the difference between code you can deploy and code you spend a hour debugging.
 
 ## Provide Context Before Asking for Code
 

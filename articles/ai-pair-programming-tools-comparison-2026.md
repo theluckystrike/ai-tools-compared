@@ -181,7 +181,7 @@ Continue is an open-source extension for VS Code and JetBrains. It supports loca
 - Cost matters ($10/mo is lowest)
 
 **Choose Cursor if:**
-- You want an unified AI-native development environment
+- You want a unified AI-native development environment
 - Multi-file refactors happen daily
 - You value responsive UI and don't mind a $20/mo subscription
 - You're comfortable forking VS Code

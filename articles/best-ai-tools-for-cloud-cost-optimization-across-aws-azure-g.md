@@ -120,7 +120,7 @@ The AI analyzes your VM utilization and recommends:
 
 ### 4. Google Cloud Recommender
 
-GCP's Recommender API provides real-time, AI-generated recommendations through an unified API:
+GCP's Recommender API provides real-time, AI-generated recommendations through a unified API:
 
 ```python
 from google.cloud import recommender_v1

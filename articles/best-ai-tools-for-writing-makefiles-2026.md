@@ -436,16 +436,6 @@ Check the output to ensure:
 3. Pattern rules generate correct paths
 4. No circular dependencies
 
-## Summary Table Expanded
-
-| Tool | Pattern Rules | .PHONY | Order-Only Deps | Platform Conditionals | Dependency Tracking |
-|------|--------------|--------|-----------------|----------------------|---------------------|
-| Claude | Excellent | Complete | Yes | Good | Partial* |
-| Copilot | Partial | Usually | No | Weak | Poor |
-| ChatGPT | Good | Often missing | Rarely | Weak | Poor |
-
-*Claude generates dependency rules on request but doesn't always optimize for incremental builds without explicit prompting.
-
 ## Advanced Patterns: Dependency Tracking and Incremental Builds
 
 The real test of a production Makefile is whether it tracks dependencies correctly for incremental builds. A Makefile that always recompiles everything is no better than a shell script.

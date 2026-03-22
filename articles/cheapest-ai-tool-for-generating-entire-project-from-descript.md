@@ -212,7 +212,7 @@ The quality of output depends directly on prompt quality. Vague descriptions pro
 
 ## Step-by-Step Workflow for Maximum Value
 
-Treat generation as an iterative process rather than an one-shot operation. This approach works across all platforms and keeps cost low.
+Treat generation as an iterative process rather than a one-shot operation. This approach works across all platforms and keeps cost low.
 
 **Step 1: Generate the project skeleton.** Use your chosen tool to create the directory structure, package configuration, and core entry points. Verify that the generated files install dependencies and start without errors before proceeding. Fix any blocking issues with a targeted follow-up prompt.
 

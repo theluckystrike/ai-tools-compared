@@ -43,7 +43,7 @@ Before starting, identify which GPTs you want to transfer and their purpose. Not
 
 ## Step 1: Export Your Custom GPT Configuration
 
-ChatGPT does not provide an one-click export for Custom GPTs, so you need to manually extract the configuration. Open your Custom GPT in the ChatGPT interface and note the following details:
+ChatGPT does not provide a one-click export for Custom GPTs, so you need to manually extract the configuration. Open your Custom GPT in the ChatGPT interface and note the following details:
 
 System Instructions: This is the core prompt defining your GPT's behavior. Copy this text exactly as written. Look for the "Instructions" or "Configure" section in the GPT editor.
 

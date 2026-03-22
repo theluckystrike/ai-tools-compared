@@ -329,7 +329,7 @@ This cluster approach routinely uncovers latent bugs adjacent to the reported on
 
 Distributed systems produce bugs at service boundaries — a mismatch between the payload shape one service sends and what the receiving service expects. These bugs are the hardest to reproduce manually because they require coordinating multiple services simultaneously.
 
-AI tools with large context windows handle this scenario well when you provide multiple service contracts in a single prompt. Instead of generating an unit test for one function, you get an integration test that stubs the upstream service and validates the contract downstream:
+AI tools with large context windows handle this scenario well when you provide multiple service contracts in a single prompt. Instead of generating a unit test for one function, you get an integration test that stubs the upstream service and validates the contract downstream:
 
 ```typescript
 // Prompt Claude with both service definitions:

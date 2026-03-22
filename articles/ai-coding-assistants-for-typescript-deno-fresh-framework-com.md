@@ -106,7 +106,7 @@ Copilot works within GitHub's ecosystem, making it convenient if your project us
 
 ## Zed
 
-Zed provides an unique approach with its Rust-based architecture. For Fresh development, Zed offers fast inline completions that feel responsive. The assistant understands Deno TypeScript types but occasionally suggests code that needs minor adjustments for Fresh-specific patterns.
+Zed provides a unique approach with its Rust-based architecture. For Fresh development, Zed offers fast inline completions that feel responsive. The assistant understands Deno TypeScript types but occasionally suggests code that needs minor adjustments for Fresh-specific patterns.
 
 Zed's strength lies in its performance. The editor loads Fresh projects quickly, and AI suggestions appear with minimal latency. For developers working on larger Fresh applications with multiple routes and islands, this responsiveness improves the development experience.
 

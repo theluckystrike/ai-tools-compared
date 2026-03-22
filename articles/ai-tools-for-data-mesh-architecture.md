@@ -270,7 +270,7 @@ Modern tools like DataHub use embedding models trained on public schemas, SQL pa
 Amundsen, DataHub, Apache Atlas, OpenLineage, and Great Expectations all offer self-hosted deployment. Microsoft Purview and Databricks Lakehouse IQ require cloud infrastructure. For regulated industries with strict data residency requirements, the open-source stack is the practical path.
 
 **What is the biggest implementation mistake teams make?**
-Treating the catalog as an one-time setup task. Metadata goes stale as schemas evolve. AI tools help maintain freshness through automated rescanning, but teams still need to allocate time for reviewing and correcting suggestions on a regular cadence.
+Treating the catalog as a one-time setup task. Metadata goes stale as schemas evolve. AI tools help maintain freshness through automated rescanning, but teams still need to allocate time for reviewing and correcting suggestions on a regular cadence.
 
 ## Related Articles
 

@@ -269,15 +269,15 @@ Ask Claude to generate migration test scripts that integrate with GitHub Actions
 name: Test Migrations
 on: [pull_request]
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    services:
-      postgres:
-        image: postgres:16
-        env:
-          POSTGRES_USER: test
-          POSTGRES_PASSWORD: test
-          POSTGRES_DB: test_migrations
+ test:
+ runs-on: ubuntu-latest
+ services:
+ postgres:
+ image: postgres:16
+ env:
+ POSTGRES_USER: test
+ POSTGRES_PASSWORD: test
+ POSTGRES_DB: test_migrations
 | Feature | Claude | GPT-4o | Copilot |
 |---------|--------|--------|---------|
 | Fixture-scoped setup/teardown | Yes | Often missing | No |
@@ -286,12 +286,12 @@ jobs:
 | Lock-free migration checks | Yes | Skipped | Not attempted |
 | Java/Flyway support | Yes | Yes | Partial |
 | CI config generation | Accurate | Minor gaps | Basic |
-    steps:
-      - uses: actions/checkout@v3
-      - run: |
-          alembic upgrade head  # Run migrations
-          pytest tests/test_migrations.py  # Test them
-          alembic downgrade -1  # Test rollback
+ steps:
+ - uses: actions/checkout@v3
+ - run: |
+ alembic upgrade head # Run migrations
+ pytest tests/test_migrations.py # Test them
+ alembic downgrade -1 # Test rollback
 ```
 
 Claude correctly includes the postgres service definition with health checks and the proper sequence of upgrade → test → downgrade. This catches migrations that fail in CI before they reach production.
@@ -302,20 +302,20 @@ For critical tables, ask Claude to generate checksum validation tests:
 
 ```python
 def test_data_integrity_after_migration(migrated_db):
-    """Verify data hasn't been corrupted by the migration."""
-    # Compute checksum before
-    before_query = text("""
-        SELECT COUNT(*), SUM(id), MIN(created_at), MAX(created_at)
-        FROM users
-    """)
+ """Verify data hasn't been corrupted by the migration."""
+ # Compute checksum before
+ before_query = text("""
+ SELECT COUNT(*), SUM(id), MIN(created_at), MAX(created_at)
+ FROM users
+ """)
 
-    # Verify counts match after migration
-    with migrated_db.connect() as conn:
-        result = conn.execute(before_query)
-        count, id_sum, min_date, max_date = result.fetchone()
+ # Verify counts match after migration
+ with migrated_db.connect() as conn:
+ result = conn.execute(before_query)
+ count, id_sum, min_date, max_date = result.fetchone()
 
-    assert count == 2  # Our seeded rows
-    assert id_sum is not None
+ assert count == 2 # Our seeded rows
+ assert id_sum is not None
 ```
 
 This catches silent data loss where rows are deleted without errors during the migration process.

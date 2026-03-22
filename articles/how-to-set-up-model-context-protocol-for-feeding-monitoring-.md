@@ -25,7 +25,7 @@ When your production system triggers an alert at 3 AM, you need your AI assistan
 Before configuring MCP for monitoring, ensure you have the following components in place:
 
 
-First, an MCP-compatible AI client. Claude Desktop, Cursor, and other modern AI assistants support MCP connections. Verify your client has MCP enabled in its settings.
+First, a MCP-compatible AI client. Claude Desktop, Cursor, and other modern AI assistants support MCP connections. Verify your client has MCP enabled in its settings.
 
 
 Second, access to your monitoring system. This guide uses Prometheus and Alertmanager as examples, but the same principles apply to Datadog, Grafana, CloudWatch, or similar platforms.

@@ -60,7 +60,7 @@ Consider this scenario: you need to create an AWS Lambda function with API Gatew
 
 **Prompt:**
 
-"Create a CloudFormation template for a Python 3.11 Lambda function that reads from an S3 bucket, processes JSON files, and writes results to DynamoDB. Include API Gateway for HTTP triggers, VPC interface endpoint for private access, and least-privilege IAM execution role."
+"Create a CloudFormation template for a Python 3.11 Lambda function that reads from a S3 bucket, processes JSON files, and writes results to DynamoDB. Include API Gateway for HTTP triggers, VPC interface endpoint for private access, and least-privilege IAM execution role."
 
 A well-tuned AI assistant produces a template like this:
 
@@ -180,7 +180,7 @@ For validation tasks specifically, Claude and ChatGPT outperform Copilot due to 
 
 Getting high-quality CloudFormation output requires specific prompting techniques:
 
-Provide the AWS service and resource type explicitly. Instead of "create an S3 bucket," specify "create an S3 bucket with versioning enabled, server-side encryption, and a lifecycle policy that transitions objects to Glacier after 90 days."
+Provide the AWS service and resource type explicitly. Instead of "create a S3 bucket," specify "create a S3 bucket with versioning enabled, server-side encryption, and a lifecycle policy that transitions objects to Glacier after 90 days."
 
 Include deployment context. Mention whether this is a new stack or an update to existing infrastructure. Specify region, account ID patterns, and any existing resource names to reference.
 

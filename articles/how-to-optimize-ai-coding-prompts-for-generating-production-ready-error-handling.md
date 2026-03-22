@@ -228,7 +228,7 @@ Fix: Specify log structure including timestamps, request IDs, and error hierarch
 
 Problem: Inconsistent error formats across endpoints
 
-Fix: Request an unified error response schema and global error handler
+Fix: Request a unified error response schema and global error handler
 
 ## Troubleshooting
 

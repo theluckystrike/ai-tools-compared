@@ -255,7 +255,7 @@ Track how long it takes to write function signatures before and after adopting A
 
 The real productivity gain comes from staying in your flow state. Instead of pausing to think through every parameter, you review AI suggestions and make minor adjustments. This keeps your momentum going and reduces cognitive load.
 
-Over a typical 8-hour engineering day, developers write or modify 20-50 function signatures. Saving even 20 seconds per signature adds up to 7-17 minutes reclaimed per day—roughly an hour per week—without compromising code quality.
+Over a typical 8-hour engineering day, developers write or modify 20-50 function signatures. Saving even 20 seconds per signature adds up to 7-17 minutes reclaimed per day—roughly a hour per week—without compromising code quality.
 
 ## Troubleshooting
 

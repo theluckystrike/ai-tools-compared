@@ -46,7 +46,7 @@ Teams reorganize. The person who understood what an alert meant leaves. The rema
 
 Alerts proliferate without inhibition. Every new service adds a set of alerts. Nobody thinks about how they interact with existing alerts. A single network partition now fires 40 separate alerts from 12 different services, all simultaneously, for the same root cause.
 
-AI tools attack all three of these problems. They can audit hundreds of alert rules in minutes, suggest inhibition structures, and propose threshold changes backed by statistical reasoning — without requiring an SRE with deep Prometheus expertise to do all of that work manually.
+AI tools attack all three of these problems. They can audit hundreds of alert rules in minutes, suggest inhibition structures, and propose threshold changes backed by statistical reasoning — without requiring a SRE with deep Prometheus expertise to do all of that work manually.
 
 ## Approach 1: AI-Assisted Alert Review
 

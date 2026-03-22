@@ -114,7 +114,7 @@ The open-source ecosystem offers cost-effective options. Jaeger provides trace s
 
 ### SigNoz
 
-SigNoz is an open-source APM that includes anomaly detection and service dependency mapping. It uses OpenTelemetry for instrumentation and provides an unified interface for traces, metrics, and logs. The machine learning features are more basic than commercial offerings but improving rapidly.
+SigNoz is an open-source APM that includes anomaly detection and service dependency mapping. It uses OpenTelemetry for instrumentation and provides a unified interface for traces, metrics, and logs. The machine learning features are more basic than commercial offerings but improving rapidly.
 
 ## Practical Trace Analysis Workflow
 

@@ -185,7 +185,7 @@ The AI learns from your approval patterns to improve recommendation accuracy ove
 
 ### 6. NestCloud with Intelligent Orchestration
 
-NestCloud combines Kubernetes with higher-level abstractions and AI-driven automation. It provides an unified interface for deploying across multiple cloud providers while optimizing costs automatically.
+NestCloud combines Kubernetes with higher-level abstractions and AI-driven automation. It provides a unified interface for deploying across multiple cloud providers while optimizing costs automatically.
 
 **NestCloud configuration:**
 

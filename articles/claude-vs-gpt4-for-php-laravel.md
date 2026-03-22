@@ -259,7 +259,7 @@ class SendOrderConfirmationEmail implements ShouldQueue, ShouldBeUnique
 }
 ```
 
-The `uniqueFor` property ensures the lock expires after an hour even if the job fails without releasing it. GPT-4 generates the `uniqueId()` method but regularly omits `uniqueFor`, which can cause jobs to stay locked indefinitely on worker crash.
+The `uniqueFor` property ensures the lock expires after a hour even if the job fails without releasing it. GPT-4 generates the `uniqueId()` method but regularly omits `uniqueFor`, which can cause jobs to stay locked indefinitely on worker crash.
 
 ## Task 4: API Resource Transformation
 

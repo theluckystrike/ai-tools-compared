@@ -64,7 +64,7 @@ Perplexity Pro Search displays sources more prominently, showing a sidebar or se
 
 ### Interface Design
 
-ChatGPT Search maintains the familiar ChatGPT interface, with the chat conversation as the primary element. Search results appear within the conversation, preserving context from previous messages. This works well for users who prefer an unified experience and want to maintain ongoing conversations about research topics.
+ChatGPT Search maintains the familiar ChatGPT interface, with the chat conversation as the primary element. Search results appear within the conversation, preserving context from previous messages. This works well for users who prefer a unified experience and want to maintain ongoing conversations about research topics.
 
 Perplexity Pro Search presents a more search-centric interface, with clear separation between the query input and results. The platform emphasizes clarity and scannability, showing follow-up suggestions and related questions that help refine searches. Users transitioning from traditional search engines may find this layout more intuitive.
 
@@ -126,7 +126,7 @@ Both platforms continue evolving rapidly, but here are the key distinctions as o
 
 ## When to Choose Each Platform
 
-Choose ChatGPT Search when you need deep integration with other OpenAI tools, prefer conversational research that builds over multiple sessions, or want an unified interface for both search and general AI assistance. It's particularly strong for developers already using the OpenAI ecosystem.
+Choose ChatGPT Search when you need deep integration with other OpenAI tools, prefer conversational research that builds over multiple sessions, or want a unified interface for both search and general AI assistance. It's particularly strong for developers already using the OpenAI ecosystem.
 
 Choose Perplexity Pro Search when source verification is critical, you prefer a search-engine-like interface, need more granular control over search parameters, or want the most responsive search experience. Academic researchers, journalists, and fact-checkers often prefer Perplexity's citation clarity.
 

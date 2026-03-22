@@ -131,7 +131,7 @@ Now make it async and add a check against a blocklist API.
 ```
 
 **2. Fast Prototyping (Sub-5-Minute Iterations)**
-Canvas is 40-50% faster for simple code changes. If you're sketching an utility function or shell script, Canvas's speed wins.
+Canvas is 40-50% faster for simple code changes. If you're sketching a utility function or shell script, Canvas's speed wins.
 
 **3. Learning New Syntax**
 You want to learn Rust or Go. Canvas's code-focused approach keeps syntax highlighted and editable. You can modify examples yourself.

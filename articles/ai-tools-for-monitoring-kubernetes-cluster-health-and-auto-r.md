@@ -70,7 +70,7 @@ Pixie works well for teams wanting deep visibility without costly commercial lic
 ### 2. Dynatrace — Enterprise AI Operations
 
 
-Dynatrace applies its Davis AI engine to Kubernetes environments, providing automatic detection of anomalies and causal analysis of performance issues. The platform ingests metrics, logs, and distributed traces, creating an unified view of cluster health.
+Dynatrace applies its Davis AI engine to Kubernetes environments, providing automatic detection of anomalies and causal analysis of performance issues. The platform ingests metrics, logs, and distributed traces, creating a unified view of cluster health.
 
 
 For auto remediation, Dynatrace offers Davis Automation that can execute runbooks based on detected problems. Integration with Kubernetes horizontal pod autoscaling provides intelligent scaling decisions beyond simple CPU thresholds.

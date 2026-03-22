@@ -120,7 +120,7 @@ For API documentation, README files, and technical specs, Haiku's precision with
 
 **GPT-4o Mini** offers a 128K context window—still generous for most drafting tasks but notably smaller.
 
-If you're building a drafting assistant that needs to absorb an entire document before generating sections based on that content, Haiku's larger window provides more flexibility. For example, feeding a 40,000-word technical manual and asking for a summary, a FAQ, and executive brief all in one session is comfortably within Haiku's window but pushes GPT-4o Mini's limits depending on output length.
+If you're building a drafting assistant that needs to absorb an entire document before generating sections based on that content, Haiku's larger window provides more flexibility. For example, feeding a 40,000-word technical manual and asking for a summary, an FAQ, and executive brief all in one session is comfortably within Haiku's window but pushes GPT-4o Mini's limits depending on output length.
 
 ## Pricing Structure
 

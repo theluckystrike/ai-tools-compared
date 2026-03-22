@@ -141,7 +141,7 @@ Octoparse offers a free tier with limitations, then subscription plans based on 
 
 Selecting an AI web scraping tool depends on your specific requirements. Consider these factors when evaluating options.
 
-For quick prototyping and small-scale extraction, Firecrawl and ScrapingBee offer the fastest path to results. Both provide APIs that accept an URL and return structured data with minimal configuration.
+For quick prototyping and small-scale extraction, Firecrawl and ScrapingBee offer the fastest path to results. Both provide APIs that accept a URL and return structured data with minimal configuration.
 
 For large-scale projects requiring reliability, Bright Data provides the most reliable infrastructure but at enterprise pricing. Their proxy network and unlocker technology handle sites with strong anti-bot measures.
 

@@ -31,7 +31,7 @@ When building or modernizing a contact center, choosing between Genesys and NICE
 
 **Genesys Cloud** is a cloud-native platform built on a microservices architecture. It provides the Genesys Cloud API (GCAPI) for programmatic access to nearly all platform functions. The architecture emphasizes scalability through automatic provisioning and supports webhook-based event-driven integrations.
 
-**NICE CXone** (formerly NICE inContact) offers an unified platform with strong emphasis on omnichannel routing and workforce optimization. Its developer platform includes the NICE CXone API and the Nexidia interaction analytics engine, which provides AI-powered speech and text analytics.
+**NICE CXone** (formerly NICE inContact) offers a unified platform with strong emphasis on omnichannel routing and workforce optimization. Its developer platform includes the NICE CXone API and the Nexidia interaction analytics engine, which provides AI-powered speech and text analytics.
 
 At the infrastructure level, Genesys runs entirely on AWS and exposes its microservices boundaries through its API surface. This means regional routing, data residency, and failover are handled by AWS infrastructure — beneficial for teams already invested in AWS tooling. NICE CXone uses a multi-cloud approach with its own global points of presence, giving it more flexibility in data residency but requiring more platform-specific operational knowledge.
 

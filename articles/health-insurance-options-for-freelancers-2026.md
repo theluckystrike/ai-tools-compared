@@ -293,7 +293,7 @@ Don't ignore dental and vision: These often require separate policies or add-ons
 
 The right health insurance depends on your specific situation—your age, health status, income, and risk tolerance. Use the comparison tools above to model different scenarios, and remember that the cheapest premium rarely equals the lowest total cost.
 
-For freelancers with predictable medical needs, a higher-premium, lower-deductible plan often saves money. For those in good health, a high-deductible plan with an HSA provides tax advantages and lower monthly costs.
+For freelancers with predictable medical needs, a higher-premium, lower-deductible plan often saves money. For those in good health, a high-deductible plan with a HSA provides tax advantages and lower monthly costs.
 
 ## Frequently Asked Questions
 

@@ -139,7 +139,7 @@ This function sends code context to your local Ollama instance and returns the c
 
 Running code completion locally requires understanding how to optimize inference for your specific hardware. The primary considerations are memory availability, response latency, and suggestion quality.
 
-For GPU acceleration, ensure CUDA is available if you're using an NVIDIA card:
+For GPU acceleration, ensure CUDA is available if you're using a NVIDIA card:
 
 ```bash
 export CUDA_VISIBLE_DEVICES=0

@@ -12,7 +12,6 @@ reviewed: true
 score: 8
 voice-checked: true
 intent-checked: true
-tags: [ai-tools-compared, devops, docker, optimization, best-of, artificial-intelligence]
 ---
 
 ## Why Dockerfile Optimization Matters

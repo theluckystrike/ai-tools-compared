@@ -27,7 +27,7 @@ iOS AutoLayout constraint conflicts remain one of the most frustrating issues de
 
 ## Understanding Constraint Conflict Warnings
 
-AutoLayout constraint conflicts occur when multiple constraints contradict each other, making it mathematically impossible for the system to determine an unique layout. In storyboards, these manifest in several ways: red lines indicating broken constraints, yellow warning triangles showing ambiguous layouts, and runtime crashes when the system cannot resolve conflicting requirements.
+AutoLayout constraint conflicts occur when multiple constraints contradict each other, making it mathematically impossible for the system to determine a unique layout. In storyboards, these manifest in several ways: red lines indicating broken constraints, yellow warning triangles showing ambiguous layouts, and runtime crashes when the system cannot resolve conflicting requirements.
 
 Common scenarios include missing constraints for all edges (leading, trailing, top, bottom), conflicting priorities between constraints attempting to control the same attribute, and translate autoresizing mask into constraints creating unexpected conflicts with your explicit constraints. Understanding these patterns helps you communicate effectively with AI tools when seeking solutions.
 

@@ -120,7 +120,7 @@ These tools excel at generating complete code snippets and explaining implementa
 
 ## Building a Cross-Platform Event Tracking System
 
-Rather than generating individual events one by one, consider creating an unified event tracking system. Here's a practical example using a factory pattern:
+Rather than generating individual events one by one, consider creating a unified event tracking system. Here's a practical example using a factory pattern:
 
 ```typescript
 // events/EventTracker.ts - Shared interface

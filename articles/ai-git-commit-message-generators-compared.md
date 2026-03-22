@@ -69,7 +69,7 @@ Elements: type prefix (feat/fix/chore/refactor), scope, subject under 72 chars, 
 
 ## aicommits
 
-aicommits is the most popular standalone CLI tool. It reads your staged diff and calls an LLM to generate a message.
+aicommits is the most popular standalone CLI tool. It reads your staged diff and calls a LLM to generate a message.
 
 ```bash
 npm install -g aicommits

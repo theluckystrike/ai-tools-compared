@@ -15,7 +15,7 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 {% raw %}
 
-Static linters catch syntax errors and style violations. AI linters catch logic errors, security anti-patterns, and architectural problems that rules-based systems miss. This guide walks through building a working AI code linter: a Node.js CLI tool that calls an LLM API to analyze code and output structured lint results.
+Static linters catch syntax errors and style violations. AI linters catch logic errors, security anti-patterns, and architectural problems that rules-based systems miss. This guide walks through building a working AI code linter: a Node.js CLI tool that calls a LLM API to analyze code and output structured lint results.
 
 ## Table of Contents
 
@@ -36,7 +36,7 @@ Before you begin, make sure you have the following ready:
 
 ### Step 1: The Architecture
 
-An AI linter differs from ESLint or Pylint in one key way: instead of matching patterns against an AST, it sends code to an LLM with a structured prompt and parses the JSON response. The tradeoff is latency and cost vs. catching nuanced issues.
+An AI linter differs from ESLint or Pylint in one key way: instead of matching patterns against an AST, it sends code to a LLM with a structured prompt and parses the JSON response. The tradeoff is latency and cost vs. catching nuanced issues.
 
 The tool we'll build:
 1. Accepts file paths or stdin

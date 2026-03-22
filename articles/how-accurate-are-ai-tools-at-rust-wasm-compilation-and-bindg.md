@@ -82,7 +82,7 @@ Identical to Claude Code's output. **Accuracy: 95%**
 
 ## Test Case 2: String Handling Across the WASM Boundary
 
-String handling is where WASM interoperability gets tricky. Rust strings and JavaScript strings represent data differently, requiring explicit conversion. I tested this with a function that greets an user:
+String handling is where WASM interoperability gets tricky. Rust strings and JavaScript strings represent data differently, requiring explicit conversion. I tested this with a function that greets a user:
 
 > "Create a WASM function that takes a name (String) and returns a greeting message."
 
@@ -174,7 +174,7 @@ This compiles correctly. Using `into_iter()` instead of `iter()` is slightly les
 
 Exporting Rust structs to JavaScript requires careful attribute usage:
 
-> "Create a Rust struct representing an User with id, name, and email fields. Export it to JavaScript with wasm-bindgen."
+> "Create a Rust struct representing a User with id, name, and email fields. Export it to JavaScript with wasm-bindgen."
 
 **Claude Code** generated:
 
