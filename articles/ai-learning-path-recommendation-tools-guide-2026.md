@@ -1,18 +1,20 @@
 ---
 
+
 layout: default
 title: "AI Learning Path Recommendation Tools: Best Platforms for Personalized Tech Education in 2026"
 description: "Compare the best AI-powered learning path recommendation tools that help developers and tech professionals create personalized education plans. Find the right platform for your career goals."
 date: 2026-03-22
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /ai-learning-path-recommendation-tools-guide-2026/
 categories: [guides]
 tags: [tools]
-reviewed: false
-score: 0
+reviewed: true
+score: 8
 intent-checked: false
 voice-checked: false
 ---
+
 
 {% raw %}
 AI-powered learning path recommendation tools have revolutionized how developers and tech professionals approach continuous education. These platforms analyze your current skills, career goals, and learning preferences to generate personalized curriculum recommendations that adapt as you progress. Whether you're transitioning into a new technology domain, upskilling in your current role, or preparing for certification exams, the right AI learning path tool can save hours of research and ensure you're focusing on the most relevant skills.

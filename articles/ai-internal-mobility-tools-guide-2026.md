@@ -1,11 +1,16 @@
 ---
+
 layout: default
 title: "AI Internal Mobility Tools Guide 2026: A Practical Introduction for Developers"
 description: "Learn how AI-powered internal mobility tools are transforming employee growth, skill matching, and career development in 2026."
 date: 2026-03-20
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /ai-internal-mobility-tools-guide-2026/
+reviewed: true
+score: 8
+categories: [guides]
 ---
+
 
 {% raw %}
 AI-powered internal mobility tools have become essential infrastructure for organizations looking to retain talent and optimize workforce planning. This guide covers the technical foundations, implementation approaches, and practical considerations for developers building or integrating these systems in 2026.
