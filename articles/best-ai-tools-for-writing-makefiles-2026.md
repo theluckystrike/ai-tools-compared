@@ -345,16 +345,6 @@ print-vars:
 
 This pattern is something Claude generates without being asked when you include "production Makefile" in the prompt, while GPT-4o and Copilot rarely include it unprompted.
 
-## Summary
-
-| Tool | Pattern Rules | .PHONY | Order-Only Deps | Multi-lang | Recursive | Auto-deps |
-|------|--------------|--------|-----------------|------------|-----------|-----------|
-| Claude | Excellent | Complete | Yes | Strong | Good | Correct |
-| Copilot | Partial | Usually | No | Weak | Weak | No |
-| ChatGPT | Good | Often missing | Rarely | Moderate | Moderate | Partial |
-
-Claude is the strongest for production Makefiles. Give it explicit constraints — variable naming, tab indentation, `.PHONY` requirements — and it rarely needs correction. For error diagnosis, paste the full `make` output and Claude will identify the specific issue faster than any other tool.
-
 ## Conditional Compilation and Platform-Specific Rules
 
 AI tools often struggle with platform-specific build logic. Here's a prompt that works:

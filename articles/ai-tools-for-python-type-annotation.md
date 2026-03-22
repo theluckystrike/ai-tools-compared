@@ -17,15 +17,6 @@ tags: [ai-tools-compared]
 
 Python type annotations have a long tail of complexity: `TypeVar` bounds, `Protocol` for structural typing, `ParamSpec` for decorator type safety, and `TypeGuard` for narrowing. AI tools that only know `str | None` annotations will annotate simple code correctly but fail on anything generic. This guide tests Claude Code, Copilot, and MonkeyType against four real-world annotation scenarios.
 
-## Key Takeaways
-
-- **Use Literal for string enums** — Copilot often reaches for `str` where `Literal["a", "b"]` gives exact type narrowing.
-- **ParamSpec is the hardest pattern** — only Claude consistently produces correct decorator annotations that preserve wrapped function signatures.
-- **Protocol beats ABC for duck typing** — structural typing with `Protocol` avoids inheritance hierarchies while keeping full type checker support.
-- **MonkeyType is a good starting point** — runtime type collection paired with AI review produces better annotations than either approach alone.
-- **Practical guidance included**: Step-by-step setup and configuration instructions.
-- **Use-case recommendations**: Specific guidance based on team size and requirements.
-
 ## Table of Contents
 
 - [The Annotation Quality Spectrum](#the-annotation-quality-spectrum)

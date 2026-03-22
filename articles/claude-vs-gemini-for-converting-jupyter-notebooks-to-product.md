@@ -17,15 +17,6 @@ voice-checked: true
 
 Choose Claude if you need production-grade scripts with modular functions, structured error handling, logging, and type hints straight from the conversion. Choose Gemini if you need a fast, concise translation of linear notebook logic for prototyping or one-off scripts. Claude consistently produces more deployable code, while Gemini prioritizes speed and simplicity at the cost of production readiness.
 
-## Key Takeaways
-
-- **Use this workflow**: 1.
-- **Above 500 lines**: Claude maintains better context coherence across the full file.
-- **Choose Claude if you**: need production-grade scripts with modular functions, structured error handling, logging, and type hints straight from the conversion.
-- **Choose Gemini if you need a fast**: concise translation of linear notebook logic for prototyping or one-off scripts.
-- **Magic commands**: Claude replaces `%time` with Python's `time` module and wraps measured blocks.
-- **For notebooks relying on**: `%%capture` or `%%writefile`, Claude will suggest replacements; Gemini silently removes them.
-
 ## Table of Contents
 
 - [The Conversion Challenge](#the-conversion-challenge)

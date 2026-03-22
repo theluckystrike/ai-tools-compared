@@ -20,17 +20,6 @@ Data quality is the backbone of reliable analytics. When you run dbt tests, you 
 
 This guide shows you how to use AI to create data quality scorecards from dbt test results. You'll learn practical approaches for parsing test outputs, generating insights, and building automated reporting systems that go well beyond what dbt's native reporting offers.
 
-## Key Takeaways
-
-- Root cause patterns
-    2.
-- Priority recommendations
-    3.
-- **Aim for 95%+ in**: production environments.
-- **This guide shows you**: how to use AI to create data quality scorecards from dbt test results.
-- **When `not_null` tests fail**: on three downstream models simultaneously, AI can recognize that all three depend on the same upstream source model and surface that root cause immediately.
-- **- Model-Level Scores**: Identify which models need the most attention.
-
 ## Table of Contents
 
 - [Understanding dbt Test Results](#understanding-dbt-test-results)

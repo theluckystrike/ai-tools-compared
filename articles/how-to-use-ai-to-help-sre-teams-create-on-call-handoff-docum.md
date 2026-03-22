@@ -17,15 +17,6 @@ intent-checked: true
 
 On-call rotations are a cornerstone of site reliability engineering, but the handoff process between shifts often becomes a time-consuming manual task. SRE teams frequently struggle to capture the right details, maintain consistency, and ensure the next engineer has everything needed to handle incoming incidents. AI tools offer practical ways to automate and improve on-call handoff documentation without adding cognitive burden to already-taxed teams.
 
-## Key Takeaways
-
-- **Monitor user-service memory usage**: - may need to scale if it continues trending up 2.
-- **Important details get omitted**: because the outgoing engineer assumes "everyone knows" certain systems or processes.
-- **The most effective approach**: combines automated data gathering with intelligent summarization, then allows engineers to review and augment the output.
-- **Define what information matters**: for your team, then use AI to populate those sections intelligently.
-- The rollback was delayed because...
-- **This automation works best**: when paired with clear team conventions.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

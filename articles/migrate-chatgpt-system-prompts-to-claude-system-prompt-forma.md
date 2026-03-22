@@ -17,15 +17,6 @@ voice-checked: true
 
 To migrate ChatGPT system prompts to Claude's format, restructure your instructions into explicit numbered steps, provide concrete output templates instead of general formatting requests, and add detailed behavioral guidelines for each role or task. Claude performs best when system prompts break down complex instructions into stages, define edge case handling, and specify exact output structures. You can also layer instructions using Claude's developer message type for session-specific overrides on top of your base system prompt.
 
-## Key Takeaways
-
-- **Claude performs best when**: system prompts break down complex instructions into stages, define edge case handling, and specify exact output structures.
-- **Claude uses a more**: structured approach with its System Prompt functionality, where you can provide context through both the system prompt and through specific instructions in the conversation.
-- **The most significant practical**: difference is that Claude's system prompt typically benefits from being more explicit about constraints, reasoning steps, and output format expectations.
-- **Claude also has an**: useful feature called the `developer` message type, which allows you to provide additional instructions that take precedence over the main system prompt.
-- **Analyze code for bugs**: performance issues, and best practice violations.
-- Help users design scalable systems.
-
 ## Table of Contents
 
 - [Key Differences Between ChatGPT and Claude System Prompts](#key-differences-between-chatgpt-and-claude-system-prompts)

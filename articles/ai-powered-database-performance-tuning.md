@@ -17,14 +17,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Database performance tuning requires reading query plans, understanding statistics, and knowing which indexes help and which hurt. This is historically expert-only territory — but AI tools have gotten good enough to replace a lot of that expertise for the 80% case. This guide covers practical AI-assisted tuning for PostgreSQL and MySQL.
 
-## Key Takeaways
-
-- **EXPLAIN ANALYZE is the foundation** — without query plan output, AI recommendations are guesses. Always capture it first.
-- **AI explains the "why"** — pganalyze and PgHero show problems; Claude explains what they mean to a developer without a DBA background.
-- **Index recommendations need context** — AI tools that see table size, cardinality stats, and existing indexes give better recommendations than those that only see the query.
-- **Batch analysis at scale** — the real productivity gain is analyzing 20 slow queries in parallel, not debugging one at a time.
-- **Practical guidance included**: Step-by-step setup and configuration instructions.
-
 ## Table of Contents
 
 - [The Core Workflow](#the-core-workflow)

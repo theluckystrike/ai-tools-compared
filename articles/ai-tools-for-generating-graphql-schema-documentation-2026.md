@@ -30,7 +30,7 @@ GraphQL schemas are self-documenting in theory but inadequate in practice. A wel
 
 ## Claude 3.5 Sonnet: Best Overall Documentation
 
-Claude excels at understanding GraphQL semantics. Paste a schema and request comprehensive documentation—it generates field descriptions, resolver logic explanations, and usage examples.
+Claude excels at understanding GraphQL semantics. Paste a schema and request documentation—it generates field descriptions, resolver logic explanations, and usage examples.
 
 **Example Prompt:**
 ```

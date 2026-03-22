@@ -19,15 +19,6 @@ intent-checked: true
 
 Migrating from ChatGPT Plugins to Claude MCP tools represents a significant shift in how you integrate AI capabilities into your development workflow. While ChatGPT Plugins relied on OpenAPI specifications and a manifest-based approach, Model Context Protocol (MCP) provides a more standardized, bidirectional communication channel between Claude and your tools. This guide walks through the migration process with practical examples.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Does ChatGPT offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-
 ## Table of Contents
 
 - [Architectural Differences](#architectural-differences)

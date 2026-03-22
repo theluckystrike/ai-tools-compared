@@ -19,15 +19,6 @@ Move Stable Diffusion to Midjourney by translating your custom models to Midjour
 
 Moving your AI image generation workflows from Stable Diffusion to Midjourney requires understanding the fundamental differences between these two platforms. While Stable Diffusion runs locally with extensive customization options, Midjourney operates through Discord with its own prompt syntax and generation pipeline. This guide walks you through converting your existing workflows step by step.
 
-## Key Takeaways
-
-- **Document style preferences -**: Note which LoRAs and embeddings you used 5.
-- **Build reference library -**: Use the tracker to maintain consistency 8.
-- **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
-- **Midjourney uses a different**: syntax for specifying weights and parameters.
-- **MJ doesn't have direct inpainting**: use describe/blend instead.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

@@ -17,15 +17,6 @@ voice-checked: true
 
 Cursor AI, the AI-powered code editor built on Visual Studio Code, provides powerful code completion and generation capabilities. However, corporate environments with VPNs and authenticated proxy servers often block or interfere with Cursor's network requests. This guide walks through the configuration steps to get Cursor working in restricted network environments.
 
-## Key Takeaways
-
-- **Most corporate proxies use**: HTTP or SOCKS5 protocols with authentication credentials.
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Does Cursor offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Configure Cursor to use**: the local endpoint in settings 3.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-
 ## Table of Contents
 
 - [Understanding the Network Requirements](#understanding-the-network-requirements)

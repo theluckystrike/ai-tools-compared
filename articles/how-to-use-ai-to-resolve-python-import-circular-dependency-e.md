@@ -18,17 +18,6 @@ intent-checked: true
 
 Circular import errors are among the most frustrating issues Python developers encounter. When module An imports module B, and module B imports module A, Python's import system can fail in confusing ways—often with cryptic messages about partially initialized modules. Understanding how to resolve these errors is crucial for maintaining clean, working codebases. AI tools can accelerate the debugging process significantly, helping you identify the root cause and apply the right fix faster.
 
-## Key Takeaways
-
-- **AI tools can accelerate**: the debugging process significantly, helping you identify the root cause and apply the right fix faster.
-- **If B then tries to import A**: Python finds that An is only partially loaded (because it's still in the middle of executing), leading to errors.
-- **Here are the most common approaches**: ### Fix 1: Move Imports Inside Functions
-
-The simplest fix is to move imports from the module level to inside functions.
-- **Circular import errors are**: among the most frustrating issues Python developers encounter.
-- **The `pydeps` package generates**: visual dependency graphs, while `pylint` and `flake8-bugbear` include circular import checkers that integrate into CI pipelines.
-- **These patterns consistently yield**: actionable results: Include the full traceback. AI assistants reason better with the complete error message, not just the last line.
-
 ## Table of Contents
 
 - [Understanding Circular Import Errors](#understanding-circular-import-errors)

@@ -17,14 +17,6 @@ intent-checked: true
 
 AI tools can automatically generate consistent component naming conventions from your design system tokens by analyzing token structure, understanding semantic meaning, and applying your existing patterns. Using prompt strategies that provide token examples and naming constraints, you can use coding assistants to create scalable naming schemes that work across your entire component library—reducing manual decisions and ensuring naming consistency from the start.
 
-## Key Takeaways
-
-- **Style Dictionary format is even better**: it includes metadata like `description` and `category` fields that give AI more semantic signal to work with.
-- **GitHub Copilot works inside**: Figma plugins and VS Code simultaneously, which makes it the fastest option for designers who live between the two tools.
-- **Q**: What casing convention should I request?
-PascalCase works best for React component names.
-- **This guide covers the**: naming convention problem, which ai tools work best for naming convention generation, preparing your token data, with specific setup instructions
-
 ## Table of Contents
 
 - [The Naming Convention Problem](#the-naming-convention-problem)

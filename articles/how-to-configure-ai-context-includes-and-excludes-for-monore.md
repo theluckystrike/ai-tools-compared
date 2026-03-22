@@ -19,15 +19,6 @@ Monorepos require explicit context configuration to prevent AI from hallucinatin
 
 When working with large monorepo projects, AI coding assistants often struggle to provide relevant suggestions because they attempt to process the entire repository. Configuring context includes and excludes allows you to direct the AI's attention to the specific packages and directories that matter for your current task. This results in more accurate completions, better-informed responses, and faster interactions.
 
-## Key Takeaways
-
-- **The most direct method**: uses the `.cursorrules` file in your project root.
-- **When working with large**: monorepo projects, AI coding assistants often struggle to provide relevant suggestions because they attempt to process the entire repository.
-- **This results in more**: accurate completions, better-informed responses, and faster interactions.
-- **Third**: the AI may suggest solutions using the wrong package or framework because it doesn't know which part of the monorepo you're actually working in.
-- **Consider including focused test**: files rather than excluding all tests.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-
 ## Table of Contents
 
 - [Why Monorepos Challenge AI Context](#why-monorepos-challenge-ai-context)
@@ -676,16 +667,16 @@ Lock files are huge and add no value to AI context.
 Track these metrics:
 
 1. **Completion Accuracy**: % of AI suggestions that compile without changes
-   - Target: >80%
-   - If lower, broaden includes or narrow excludes
+ - Target: >80%
+ - If lower, broaden includes or narrow excludes
 
 2. **Response Time**: Seconds until AI responds
-   - Target: <5 seconds for chat
-   - If slower, reduce context size with more excludes
+ - Target: <5 seconds for chat
+ - If slower, reduce context size with more excludes
 
 3. **Relevance**: % of suggestions actually usable for your current task
-   - Target: >70%
-   - If lower, make includes more specific
+ - Target: >70%
+ - If lower, make includes more specific
 
 Example measurement:
 

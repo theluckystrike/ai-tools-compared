@@ -19,22 +19,6 @@ Code migration between programming languages ranks among the most tedious refact
 
 Without AI assistance, language migration projects consume 200–800 developer hours. AI tools now reduce this to 20–50 hours by automating syntax conversion, idiom translation, and library mapping. This guide compares the best AI approaches for migrating production code between languages.
 
-## Key Takeaways
-
-- **status**: ${response.status}`);
-    }
-    return response.json();
-}
-```
-
-Result: 100% type-safe, catches entire classes of bugs.
-- **Migrating Entire Project at**: Once Always use modular approach: - Convert one module - Test thoroughly - Move to next module - Reduces integration pain by 70% 3.
-- **Manual migration**: $50,000–500,000 in labor.
-- **AI-assisted**: $1,000–5,000 (primarily for review and testing).
-- **Use idiomatic Rust patterns (Result**: Option, Iterator)
-3.
-- **Remaining 10–20% is performance**: tuning and error handling refinement.
-
 ## Table of Contents
 
 - [Why Language Migration Matters](#why-language-migration-matters)

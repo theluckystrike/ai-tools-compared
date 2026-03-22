@@ -15,16 +15,9 @@ tags: [ai-tools-compared]
 
 {% raw %}
 
-Rust's borrow checker, lifetime annotations, and trait system create a uniquely high AI assistance ceiling — and floor. An AI that understands ownership deeply can cut hours from your development cycle. One that doesn't will generate code that looks plausible but won't compile.
+Rust's borrow checker, lifetime annotations, and trait system create an uniquely high AI assistance ceiling — and floor. An AI that understands ownership deeply can cut hours from your development cycle. One that doesn't will generate code that looks plausible but won't compile.
 
 This comparison tests Claude Code and GitHub Copilot on four Rust tasks that require real language understanding.
-
-## Key Takeaways
-
-- **Topics covered**: task 1: fixing borrow checker errors, task 2: async error handling with `?`, task 3: trait implementation with generics
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-- **Use-case recommendations**: Specific guidance based on team size and requirements
-- **Trade-off analysis**: Strengths and limitations of each option discussed
 
 ## Task 1: Fixing Borrow Checker Errors
 
@@ -350,19 +343,6 @@ impl Drop for WorkerPool {
 ```
 
 Copilot produced a similar pattern but didn't implement `Drop` — meaning the pool would exit before workers finished processing. A subtle but critical bug for real workloads.
-
-## Summary
-
-| Task | Claude Code | Copilot |
-|---|---|---|
-| Borrow checker diagnosis | Root cause + multiple fixes | Surface fix, no explanation |
-| Error handling | Typed errors with `thiserror` | `Box<dyn Error>` |
-| Generic trait design | Proper bounds, idiomatic | Non-generic or overly restrictive |
-| Concurrency patterns | Correct Drop impl | Missing graceful shutdown |
-| Compilation rate | ~90% first try | ~70% first try |
-| Lifetime explanations | Clear | Missing |
-
-Claude Code is the stronger Rust assistant. Copilot is faster for autocomplete on standard patterns but generates plausible-looking code that fails to compile or has subtle runtime bugs on more complex Rust idioms.
 
 ## Related Articles
 

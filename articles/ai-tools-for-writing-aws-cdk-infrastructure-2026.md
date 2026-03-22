@@ -19,15 +19,6 @@ AWS CDK (Cloud Development Kit) replaces CloudFormation YAML templates with obje
 
 AI assistants vary dramatically in CDK capability. Some understand construct libraries and proper property initialization; others generate code that synthesizes but fails on deployment. This guide evaluates tools on real scenarios: VPC + subnet setup, RDS instance provisioning, Lambda function deployment with IAM, and multi-stack applications.
 
-## Key Takeaways
-
-- **--- ## Cursor (Claude**: Backbone; Strong but Limited Scope) Pricing: $20/month Pro, free tier available.
-- **--- ## GitHub Copilot**: (Context-Dependent; IDE-Bound) Pricing: $10/month, $21/user/month enterprise.
-- **- Pricing**: $20/month for individual use; prohibitive for large teams.
-- **--- ## Codeium (Fast**: Completions; Weak CDK Knowledge) Pricing: Free, $12/month Pro.
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Cost/Article Ratio**: ~$0.40–$0.60 per complex stack article (VPC + RDS + Lambda + monitoring).
-
 ## Claude Opus 4.6 (Best CDK Depth)
 
 **Pricing:** $3/MTok input, $15/MTok output via API; Claude.ai subscriptions $20/month.

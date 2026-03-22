@@ -18,15 +18,6 @@ voice-checked: true
 
 Identifying frustrated users early in your issue triage process helps prioritize critical problems and improves customer retention. When users report issues, their emotional state often correlates with problem severity and business impact. AI-powered sentiment analysis applied to issue comments provides a systematic way to surface frustrated users and escalate their concerns appropriately.
 
-## Key Takeaways
-
-- **Machine learning models balance**: accuracy and cost for most production use cases.
-- **Return frustration score 0-10**: and priority recommendation.
-- **Identifying frustrated users early**: in your issue triage process helps prioritize critical problems and improves customer retention.
-- **When users report issues**: their emotional state often correlates with problem severity and business impact.
-- **AI-powered sentiment analysis applied**: to issue comments provides a systematic way to surface frustrated users and escalate their concerns appropriately.
-- **This approach works particularly**: well for open-source projects and SaaS products handling high issue volumes.
-
 ## Table of Contents
 
 - [Why Sentiment Analysis Matters for Issue Tracking](#why-sentiment-analysis-matters-for-issue-tracking)

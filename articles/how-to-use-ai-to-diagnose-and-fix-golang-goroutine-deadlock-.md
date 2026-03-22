@@ -17,15 +17,6 @@ intent-checked: true
 
 AI tools can decode Go's cryptic deadlock panic messages—"fatal error: all goroutines are asleep - deadlock!"—by recognizing common patterns like unbuffered channels without receivers, WaitGroup misuse, and improper synchronization in worker pools. When you paste your deadlock panic message and relevant code into Claude or ChatGPT, it immediately identifies which goroutine is blocked and why, then suggests fixes like buffering channels, restructuring WaitGroup calls, or using context cancellation with timeouts. AI can also interpret race detector output from `go run -race` commands and help design goroutine synchronization that prevents deadlocks from occurring, saving hours of manual stack trace analysis and trial-and-error debugging.
 
-## Key Takeaways
-
-- **GitHub Copilot is most**: useful in-editor for proactive suggestions while writing concurrent code.
-- **ChatGPT (GPT-4o) handles common**: patterns well and is useful for straightforward unbuffered-channel or WaitGroup misuse cases.
-- **"fatal error**: all goroutines are asleep - deadlock!" — This occurs when the runtime detects that no goroutine can make progress because all of them are blocked on channel operations or mutexes.
-- **"panic**: sync: negative WaitGroup counter" — This indicates incorrect use of WaitGroup, often from calling Done() before Add().
-- **This is the fastest**: iteration loop for live debugging.
-- **For serious goroutine deadlocks**: Claude via Claude Code or the claude.ai interface is the recommended starting point.
-
 ## Table of Contents
 
 - [Understanding Go Deadlock Panic Messages](#understanding-go-deadlock-panic-messages)

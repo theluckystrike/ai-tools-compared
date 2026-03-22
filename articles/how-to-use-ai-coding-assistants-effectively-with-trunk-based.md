@@ -19,12 +19,6 @@ Use AI with trunk-based development by managing short-lived branches, maintainin
 
 Trunk-based development emphasizes short-lived feature branches and frequent integration with the main branch. When combined with AI coding assistants, this workflow creates unique opportunities—and challenges. This guide shows you how to use AI tools effectively while maintaining the fast feedback loops that trunk-based development requires.
 
-## Key Takeaways
-
-- **Long gaps between integration**: cause painful conflicts.
-- **Push and create PR**: while CI runs ```bash # Quick cycle example git checkout -b feature/user-search # 1.
-- **Write test in tests/test_user_search.py**: # 2.
-- **Ask AI**: "Implement search_users function to pass this test"
 # 3.
 - **Pull from main frequently**: (at least daily) 2.
 - **Use AI with trunk-based**: development by managing short-lived branches, maintaining proper context across small commits, and using AI to generate safe, incremental changes.

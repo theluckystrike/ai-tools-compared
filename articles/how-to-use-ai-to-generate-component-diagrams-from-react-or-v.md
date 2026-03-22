@@ -18,15 +18,6 @@ voice-checked: true
 
 Component diagrams serve as visual documentation that helps teams understand application architecture at a glance. Manually creating these diagrams takes significant time, especially as projects grow and evolve. AI tools now offer practical solutions for generating component diagrams directly from your React or Vue codebase, saving hours of manual documentation work while keeping diagrams synchronized with actual code.
 
-## Key Takeaways
-
-- **This method works well**: because you can edit the generated diagram code directly and integrate it into documentation systems that support these formats.
-- **Tool ecosystem support in**: our organization ``` Most teams find Mermaid sufficient for documentation, with PlantUML reserved for complex architectural presentations.
-- **Ask your AI to**: help integrate generated diagrams: > "I use [Docusaurus/Next.js/Jekyll].
-- **Specify whether you use atomic design**: feature-based organization, or other structural approaches.
-- **For large projects**: generate multiple focused diagrams rather than attempting to visualize everything in one view.
-- **Separate diagrams for routing**: state management, feature modules, and shared components often prove more useful than a single overwhelming diagram.
-
 ## Table of Contents
 
 - [Why AI-Generated Component Diagrams Matter](#why-ai-generated-component-diagrams-matter)

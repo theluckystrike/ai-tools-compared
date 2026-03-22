@@ -18,16 +18,6 @@ intent-checked: true
 
 Claude's batch processing API enables you to queue hundreds or thousands of requests for off-peak processing, reducing costs by 50% compared to real-time API calls. This guide walks through implementing batch workflows for document analysis, content extraction, and data processing.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Adjust max_tokens**: Set token limits precisely for your use case—over-provisioning wastes quota
-3.
-- **Does Claude offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Claude's batch processing API**: enables you to queue hundreds or thousands of requests for off-peak processing, reducing costs by 50% compared to real-time API calls.
-
 ## Table of Contents
 
 - [Why Batch Processing Matters for Document Workflows](#why-batch-processing-matters-for-document-workflows)

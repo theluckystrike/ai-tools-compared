@@ -14,18 +14,6 @@ voice-checked: true
 intent-checked: true
 ---
 
-## Key Takeaways
-
-- **Architecture phase**: Use Claude for Page Object design
-2.
-- **Implementation phase**: Use Cursor/Copilot for inline suggestions
-3.
-- **Refinement phase**: Use Claude for assertion improvements
-4.
-- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
-- **A week-long trial with**: actual work gives better signal than feature comparison charts.
-- **How quickly do AI**: tool recommendations go out of date? AI tools evolve rapidly, with major updates every few months.
-
 ## Table of Contents
 
 - [Overview](#overview)

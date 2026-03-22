@@ -14,15 +14,6 @@ permalink: /ai-tools-for-generating-prometheus-alerting-rules-2026/
 ---
 {% raw %}
 
-## Key Takeaways
-
-- **We check if the**: projection 24 hours ahead leaves less than 10% free space.
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **It clarifies why `rate()`**: is necessary (smooths out metric spikes), why averaging across CPUs makes sense, and what `humanizePercentage` does (renders `0.85` as `85%`).
-- **Without access to your**: actual metrics and baselines, it suggests generic values (80% CPU, 1000ms latency).
-
 ## Table of Contents
 
 - [The Prometheus Rules Problem](#the-prometheus-rules-problem)

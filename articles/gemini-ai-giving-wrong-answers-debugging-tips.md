@@ -17,19 +17,6 @@ tags: [ai-tools-compared, troubleshooting, artificial-intelligence]
 
 To fix Gemini AI giving wrong answers, lower the temperature to 0.1-0.3 for factual queries, rewrite your prompt with explicit output format and domain context, and add "Show your reasoning step by step" to force more accurate logic. If answers remain incorrect, start a fresh conversation to clear accumulated context, specify exact software versions in your prompt, and cross-verify any factual claims against official documentation before acting on them.
 
-## Key Takeaways
-
-- **Context window limitations mean**: that lengthy conversations cause the model to lose track of earlier details, leading to contradictions or errors in later responses.
-- **Use the 5-whys technique**: When Gemini gives a suspect answer, probe deeper by asking "Why?" repeatedly.
-- **If Gemini produces output**: 70% correct and a human fixes the remaining 30% in five minutes, you've saved net time versus writing it from scratch.
-- **Use a factual question**: with a definite answer: ``` What is the capital of France? ``` If Gemini answers correctly, your environment functions properly.
-- **- Request step-by-step reasoning**: Adding "Show your reasoning step by step" often produces more accurate results because it forces the model to articulate its logic.
-- **For example**: ```
-"Provide a concise summary" combined with "Include all relevant details"
-```
-
-These contradictory requirements confuse the model and lead to suboptimal output.
-
 ## Table of Contents
 
 - [Understanding Why Gemini Produces Wrong Answers](#understanding-why-gemini-produces-wrong-answers)

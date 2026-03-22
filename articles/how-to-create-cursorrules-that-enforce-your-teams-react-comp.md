@@ -18,15 +18,6 @@ voice-checked: true
 
 Cursorules are a powerful way to codify your team's React component composition patterns. When configured correctly, they ensure that AI coding assistants generate consistent, maintainable components that align with your architecture. This guide walks you through creating effective Cursorules specifically designed for enforcing React component composition patterns across your team.
 
-## Key Takeaways
-
-- **Use a parent component**: that manages state with React Context 2.
-- **Your Cursorules should specify**: how AI assistants should create and use hooks: ``` ## Custom Hooks Guidelines 1.
-- **Always prefix hook names**: with 'use' (useAuth, useFetch) 2.
-- **Document dependencies in comments**: when using useEffect 4.
-- **Cursorules solve this problem**: by providing AI assistants with explicit instructions about your team's preferred patterns.
-- **When developers on different**: squads build features in parallel, diverging patterns create merge conflicts, confuse new hires, and slow down refactoring efforts.
-
 ## Table of Contents
 
 - [Why Component Composition Patterns Matter](#why-component-composition-patterns-matter)

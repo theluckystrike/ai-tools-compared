@@ -18,15 +18,6 @@ voice-checked: true
 
 Claude Code demonstrates superior accuracy for Svelte 5 components by correctly applying `$state` runes, `$derived` for computed values, and proper TypeScript prop typing. Svelte's compile-time reactivity system and recent runes (introduced in Svelte 5) require AI tools trained on recent language features—most general-purpose assistants struggle with Svelte-specific syntax, making tool selection critical for productive Svelte development.
 
-## Key Takeaways
-
-- **TypeScript integration in Svelte also has specific requirements**: props must be properly typed, and the `$state` and `$derived` runes (introduced in Svelte 5) need correct implementation.
-- **Best used with existing**: Svelte 5 files open for context.
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Claude Code demonstrates superior**: accuracy for Svelte 5 components by correctly applying `$state` runes, `$derived` for computed values, and proper TypeScript prop typing.
-- **One common failure mode**: is an assistant generating Svelte 4 reactive syntax (`$:` declarations) when the project targets Svelte 5.
-- **Svelte 5 syntax mixing.** Look for `$**: ` declarations alongside `$state` usage—this indicates the model mixed patterns.
-
 ## Table of Contents
 
 - [What Affects Accuracy in Svelte Component Generation](#what-affects-accuracy-in-svelte-component-generation)

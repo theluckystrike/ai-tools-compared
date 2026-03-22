@@ -19,16 +19,6 @@ The Claude Agent SDK gives you a structured way to build agents that call tools,
 
 This guide walks through installation, a basic single-agent setup, tool definitions, multi-turn loops, and a realistic deployment pattern using sub-agents.
 
-## Key Takeaways
-
-- **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
-- **"
-            "Use for file operations**: git commands, and inspecting system state.
-- **Tool granularity**: Prefer fewer, broader tools over many narrow ones.
-- **Long prompts dilute attention**: and slow the model's tool-use decisions.
-- **Put task-specific context in**: the user message instead.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

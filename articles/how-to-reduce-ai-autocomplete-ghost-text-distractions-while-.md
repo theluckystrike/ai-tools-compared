@@ -21,15 +21,6 @@ AI autocomplete has transformed how developers write code. Tools like GitHub Cop
 
 If you find yourself constantly fighting unwanted suggestions or losing focus because of aggressive autocomplete, these practical techniques will help you regain control of your coding environment.
 
-## Key Takeaways
-
-- **A low acceptance rate (below 20%) suggests suggestions don't match your needs**: consider reducing trigger frequency or switching to on-demand mode.
-- **Research on autocomplete shows**: that developers who see suggestions spend 15-20% longer on tasks, not from acceptance but from the evaluation time.
-- **This is why increasing**: suggestion delay (to 200-300ms) often improves perceived productivity even though the actual time to acceptance increases slightly.
-- **If suggestions are 90% relevant**: you accept them quickly without evaluation.
-- **If they're 30% relevant**: you spend time rejecting.
-- **If you find yourself**: constantly fighting unwanted suggestions or losing focus because of aggressive autocomplete, these practical techniques will help you regain control of your coding environment.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

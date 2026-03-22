@@ -19,15 +19,6 @@ Cursor AI slow response times can transform a powerful coding assistant into a f
 
 The most effective solutions involve adjusting model selection, optimizing context settings, managing network conditions, and fine-tuning Cursor's configuration files. Each approach targets specific performance bottlenecks that developers encounter in 2026.
 
-## Key Takeaways
-
-- **For routine autocomplete and**: simple queries, this model delivers responses in under 500ms on typical hardware.
-- **The most effective solutions**: involve adjusting model selection, optimizing context settings, managing network conditions, and fine-tuning Cursor's configuration files.
-- **The default configuration may**: not be optimal for your specific use case.
-- **This works well for**: most coding tasks where you need accurate suggestions without waiting for deep analysis.
-- **Reserve the most capable**: models for complex debugging tasks or when you need thorough code review.
-- **Cursor automatically picks up**: this configuration on the next session.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

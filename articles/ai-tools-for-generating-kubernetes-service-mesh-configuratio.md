@@ -19,17 +19,6 @@ voice-checked: true
 
 Managing service mesh configurations manually becomes increasingly complex as microservices architectures grow. Kubernetes service mesh layers—particularly Istio and Envoy—offer powerful traffic management, security, and observability features, but their configuration syntax demands precision. AI-powered tools now help developers generate, validate, and optimize these configurations efficiently.
 
-## Key Takeaways
-
-- **k8sgpt is unique**: it connects directly to your cluster, reads actual Kubernetes events and pod statuses, and generates configurations that fix live problems rather than hypothetical ones.
-- **AI tools correctly identify mismatched subsets between VirtualService and DestinationRule**: the most common cause of this error—and generate corrected YAML.
-- **When you include traffic**: metrics in the prompt ("service handles 500 req/s with p99 latency of 200ms"), Claude suggests more precisely calibrated thresholds than defaults.
-- **Increment by 5% every**: 10 minutes if error rate stays below 1%.
-- **Roll back automatically if p99 latency exceeds 500ms."
-
-Step 2**: Generate the base manifests with AI. Prompt Claude or ChatGPT with your goal and existing DestinationRule.
-- **Step 3**: Generate the progressive delivery configuration. Use Argo Rollouts or Flagger for automated canary progression.
-
 ## Table of Contents
 
 - [Why AI Assistance Matters for Service Mesh Configs](#why-ai-assistance-matters-for-service-mesh-configs)

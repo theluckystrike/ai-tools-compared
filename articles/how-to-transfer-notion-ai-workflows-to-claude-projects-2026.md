@@ -19,13 +19,6 @@ voice-checked: true
 
 Transfer your Notion AI workflows to Claude Projects by exporting Notion databases as Markdown or CSV, converting them to JSON data files, then replacing AI blocks and database triggers with explicit prompt templates and Python scripts. Map Notion database properties to JSON structures, convert implicit AI block prompts to standalone prompt files, and use file watchers or cron scheduling in place of Notion's webhook triggers. Claude Projects gives you native code execution, multi-file context, and custom tool creation that Notion's block-based system cannot match.
 
-## Key Takeaways
-
-- **Map Notion database properties**: to JSON structures, convert implicit AI block prompts to standalone prompt files, and use file watchers or cron scheduling in place of Notion's webhook triggers.
-- **Iterate based on your**: actual needs Most teams find that after migration, they build additional automation they could not implement in Notion.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **This guide covers understanding**: the core differences, mapping notion concepts to claude projects, from database properties to data structures, with specific setup instructions
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

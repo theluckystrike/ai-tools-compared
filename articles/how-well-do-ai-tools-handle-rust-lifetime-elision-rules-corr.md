@@ -17,15 +17,6 @@ voice-checked: true
 
 AI tools understand Rust lifetime elision rules about 70% of the time but often miss edge cases in generic functions and trait definitions. This guide shows which lifetime scenarios AI handles correctly and which require human expertise.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Does Rust offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **AI tools understand Rust**: lifetime elision rules about 70% of the time but often miss edge cases in generic functions and trait definitions.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-
 ## Table of Contents
 
 - [Understanding Lifetime Elision Rules](#understanding-lifetime-elision-rules)

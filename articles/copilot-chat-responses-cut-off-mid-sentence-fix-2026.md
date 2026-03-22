@@ -17,12 +17,6 @@ tags: [ai-tools-compared, troubleshooting]
 
 GitHub Copilot Chat has become an essential tool for developers seeking AI-assisted coding help directly within their IDE. However, encountering responses that cut off mid-sentence can be frustrating, especially when you're in the middle of understanding a complex code explanation or debugging a tricky issue. This guide provides practical solutions to diagnose and fix this problem.
 
-## Key Takeaways
-
-- **Understanding the root causes**: helps you apply the right fix.
-- **Each cause requires a**: different approach to resolve.
-- **Break complex requests into smaller**: focused questions.
-- **Check for updates in VS Code**: ```bash
 # In VS Code, press Ctrl+Shift+P and run "Check for Updates"
 ```
 
@@ -67,14 +61,14 @@ curl -w "@curl-format.txt" -o /dev/null -s https://api.github.com
 
 Create `curl-format.txt` for detailed timing analysis:
 ```
-    time_namelookup:  %{time_namelookup}\n
-       time_connect:  %{time_connect}\n
-    time_appconnect:  %{time_appconnect}\n
-   time_pretransfer:  %{time_pretransfer}\n
-      time_redirect:  %{time_redirect}\n
- time_starttransfer:  %{time_starttransfer}\n
-                    ----------\n
-         time_total:  %{time_total}\n
+ time_namelookup: %{time_namelookup}\n
+ time_connect: %{time_connect}\n
+ time_appconnect: %{time_appconnect}\n
+ time_pretransfer: %{time_pretransfer}\n
+ time_redirect: %{time_redirect}\n
+ time_starttransfer: %{time_starttransfer}\n
+ ----------\n
+ time_total: %{time_total}\n
 ```
 
 High latency above 200ms or any packet loss indicates network issues that could affect Copilot. If you are behind a corporate firewall or VPN, try disconnecting temporarily to see if the issue resolves. Some organizations route Copilot traffic through proxies that may interfere with the streaming response, causing unexpected terminations.
@@ -115,9 +109,9 @@ Open your VS Code settings and verify these configurations:
 
 ```json
 {
-  "github.copilot.chat.responseRender": "markdown",
-  "github.copilot.enableChatLengthHint": true,
-  "editor.maxTokenizationLineLength": 10000
+ "github.copilot.chat.responseRender": "markdown",
+ "github.copilot.enableChatLengthHint": true,
+ "editor.maxTokenizationLineLength": 10000
 }
 ```
 
@@ -205,12 +199,12 @@ Add these settings to your VS Code `settings.json`:
 
 ```json
 {
-  "http.proxy": "http://your-proxy-server:port",
-  "http.proxyStrictSSL": true,
-  "github-copilot.advanced": {
-    "proxy": "http://your-proxy-server:port",
-    "proxyAuth": "username:password"
-  }
+ "http.proxy": "http://your-proxy-server:port",
+ "http.proxyStrictSSL": true,
+ "github-copilot.advanced": {
+ "proxy": "http://your-proxy-server:port",
+ "proxyAuth": "username:password"
+ }
 }
 ```
 
@@ -237,8 +231,8 @@ Understanding token limits helps prevent truncation before it happens:
 ```javascript
 // VS Code extension to estimate token count
 const tokenEstimate = (text) => {
-  // Rough estimate: 1 token ≈ 4 characters for English text
-  return Math.ceil(text.length / 4);
+ // Rough estimate: 1 token ≈ 4 characters for English text
+ return Math.ceil(text.length / 4);
 };
 
 const prompt = "Explain how to implement recursive algorithms...";
@@ -246,7 +240,7 @@ const estimatedTokens = tokenEstimate(prompt);
 
 console.log(`Estimated tokens: ${estimatedTokens}`);
 if (estimatedTokens > 3000) {
-  console.warn("Prompt may trigger truncation. Consider breaking into smaller queries.");
+ console.warn("Prompt may trigger truncation. Consider breaking into smaller queries.");
 }
 ```
 
@@ -280,30 +274,30 @@ import datetime
 from pathlib import Path
 
 class TruncationLogger:
-    def __init__(self, log_file: str = "copilot_truncations.jsonl"):
-        self.log_file = Path(log_file)
+ def __init__(self, log_file: str = "copilot_truncations.jsonl"):
+ self.log_file = Path(log_file)
 
-    def log_truncation(self, prompt: str, response: str,
-                      copilot_version: str, ide: str):
-        """Log truncation incident with metadata"""
-        entry = {
-            "timestamp": datetime.datetime.now().isoformat(),
-            "prompt_length": len(prompt),
-            "response_length": len(response),
-            "response_ended_abruptly": self._check_abrupt_ending(response),
-            "copilot_version": copilot_version,
-            "ide": ide,
-            "prompt_sample": prompt[:200]
-        }
+ def log_truncation(self, prompt: str, response: str,
+ copilot_version: str, ide: str):
+ """Log truncation incident with metadata"""
+ entry = {
+ "timestamp": datetime.datetime.now().isoformat(),
+ "prompt_length": len(prompt),
+ "response_length": len(response),
+ "response_ended_abruptly": self._check_abrupt_ending(response),
+ "copilot_version": copilot_version,
+ "ide": ide,
+ "prompt_sample": prompt[:200]
+ }
 
-        with open(self.log_file, 'a') as f:
-            f.write(json.dumps(entry) + '\n')
+ with open(self.log_file, 'a') as f:
+ f.write(json.dumps(entry) + '\n')
 
-    def _check_abrupt_ending(self, text: str) -> bool:
-        """Detect incomplete sentences or code blocks"""
-        incomplete_markers = [
-            text.endswith('...'),
-            text.endswith('```'),
+ def _check_abrupt_ending(self, text: str) -> bool:
+ """Detect incomplete sentences or code blocks"""
+ incomplete_markers = [
+ text.endswith('...'),
+ text.endswith('```'),
  not text.endswith(('.', ')', ']', '}', '\n')),
  len([c for c in text if c == '(' ]) != len([c for c in text if c == ')'])
  ]

@@ -19,15 +19,6 @@ Indie game development demands tools that deliver real value without draining li
 
 This guide evaluates the cheapest AI coding tools for indie game developers in 2026, focusing on actual cost, game development capabilities, and practical value.
 
-## Key Takeaways
-
-- **The cheapest options fall**: into three categories: completely free tools, freemium models with generous free tiers, and paid tools that cost under $10 monthly.
-- **The $10 monthly cost is reasonable**: but indie developers should verify if they qualify for the free student tier.
-- **If IDE integration matters**: more than reasoning depth, GitHub Copilot at $10 monthly integrates with Visual Studio Code.
-- **For game jam developers**: who value iteration speed over reasoning depth, this tradeoff often favors Copilot despite the $10/month cost.
-- **Claude Code is free**: for individual use via the CLI.
-- **You pay only if**: you use it through the Anthropic API directly (which gives you programmatic access).
-
 ## Table of Contents
 
 - [Understanding Your Options](#understanding-your-options)

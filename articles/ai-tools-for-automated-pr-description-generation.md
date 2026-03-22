@@ -18,15 +18,6 @@ A good PR description saves your team hours of archaeology. A bad one — "fixed
 
 This guide covers the main options: a Claude-powered GitHub Action, GPT-4 via the API, and the built-in GitHub Copilot PR description feature.
 
-## Key Takeaways
-
-- **Claude via GitHub Actions**: Produces the most context-aware descriptions, picking up latency motivations from code comments, at ~$0.01/PR
-- **GPT-4 via API**: Accurate but more generic output; handles larger diffs (up to ~1,500 lines) than Claude's 500-line limit
-- **GitHub Copilot built-in**: Zero setup but no format control and often too verbose (500+ words)
-- **PR Agent (open source)**: Best for teams needing custom templates, multi-model support, and ticket linking (Jira/Linear)
-- **Large diff handling**: Chunk diffs by file and summarize independently, then combine; strip test files and generated code before sending to the model
-- **Measurable impact**: Teams report 20-40% fewer reviewer question comments on PRs with AI-generated descriptions
-
 ## Table of Contents
 
 - [The Test Diff](#the-test-diff)
@@ -206,23 +197,6 @@ if __name__ == "__main__":
 **GPT-4's output for the same diff:**
 
 ```markdown
-## Summary
-
-This PR introduces Redis-based caching for the products endpoint to improve
-read performance.
-
-**Changes:**
-- New `CacheManager` class with configurable TTL and namespace support
-- Cache-aside pattern on `GET /products/{id}`
-- Invalidation on product updates
-
-**Testing:**
-- Unit tests added for cache hit/miss scenarios
-- Integration test requires local Redis instance
-```
-
-GPT-4's output is accurate but more generic. It doesn't surface the latency numbers or pick up on the motivation. Still useful — better than no description.
-
 ## Option 3: GitHub Copilot Built-In
 
 Copilot's PR description feature (available in GitHub.com UI) requires no setup. Click "Copilot" button in the PR description field.
@@ -325,52 +299,52 @@ The biggest practical problem with AI PR descriptions is diff size. Anything ove
 
 ```python
 def summarize_large_diff(diff: str, max_chunk_lines: int = 200) -> str:
-    lines = diff.split("\n")
-    file_chunks = []
-    current_chunk = []
+ lines = diff.split("\n")
+ file_chunks = []
+ current_chunk = []
 
-    for line in lines:
-        if line.startswith("diff --git") and current_chunk:
-            file_chunks.append("\n".join(current_chunk))
-            current_chunk = [line]
-        else:
-            current_chunk.append(line)
+ for line in lines:
+ if line.startswith("diff --git") and current_chunk:
+ file_chunks.append("\n".join(current_chunk))
+ current_chunk = [line]
+ else:
+ current_chunk.append(line)
 
-    if current_chunk:
-        file_chunks.append("\n".join(current_chunk))
+ if current_chunk:
+ file_chunks.append("\n".join(current_chunk))
 
-    file_summaries = []
-    for chunk in file_chunks:
-        summary = client.messages.create(
-            model="claude-opus-4-6",
-            max_tokens=200,
-            messages=[{
-                "role": "user",
-                "content": f"Summarize this file diff in 2-3 bullets:\n\n{chunk[:3000]}"
-            }]
-        )
-        file_summaries.append(summary.content[0].text)
+ file_summaries = []
+ for chunk in file_chunks:
+ summary = client.messages.create(
+ model="claude-opus-4-6",
+ max_tokens=200,
+ messages=[{
+ "role": "user",
+ "content": f"Summarize this file diff in 2-3 bullets:\n\n{chunk[:3000]}"
+ }]
+ )
+ file_summaries.append(summary.content[0].text)
 
-    combined = "\n\n".join(file_summaries)
-    final = client.messages.create(
-        model="claude-opus-4-6",
-        max_tokens=400,
-        messages=[{
-            "role": "user",
-            "content": f"Write a cohesive PR description from these file summaries:\n\n{combined}"
-        }]
-    )
-    return final.content[0].text
+ combined = "\n\n".join(file_summaries)
+ final = client.messages.create(
+ model="claude-opus-4-6",
+ max_tokens=400,
+ messages=[{
+ "role": "user",
+ "content": f"Write a cohesive PR description from these file summaries:\n\n{combined}"
+ }]
+ )
+ return final.content[0].text
 ```
 
 **Semantic diff filtering**: For very large diffs, strip test files and auto-generated code before sending to the model. Test changes rarely add signal to the PR description, and generated files (migrations, protobuf output) are noise.
 
 ```bash
 git diff origin/main...HEAD \
-  -- ':(exclude)tests/' \
-  -- ':(exclude)*_pb2.py' \
-  -- ':(exclude)migrations/' \
-  | head -600 > /tmp/filtered.diff
+ -- ':(exclude)tests/' \
+ -- ':(exclude)*_pb2.py' \
+ -- ':(exclude)migrations/' \
+ | head -600 > /tmp/filtered.diff
 ```
 
 ## Enforcing Team PR Templates
@@ -381,11 +355,11 @@ Most teams have a PR template in `.github/PULL_REQUEST_TEMPLATE.md`. The AI shou
 import subprocess
 
 def get_pr_template() -> str:
-    try:
-        with open(".github/PULL_REQUEST_TEMPLATE.md") as f:
-            return f.read()
-    except FileNotFoundError:
-        return ""
+ try:
+ with open(".github/PULL_REQUEST_TEMPLATE.md") as f:
+ return f.read()
+ except FileNotFoundError:
+ return ""
 
 PR_TEMPLATE = get_pr_template()
 
@@ -407,15 +381,15 @@ Track whether AI-generated descriptions correlate with faster reviews. Add a lab
 # Get average review time for AI-described vs manual PRs
 gh api graphql -f query='
 {
-  repository(owner: "org", name: "repo") {
-    pullRequests(last: 100, labels: ["ai-description"]) {
-      nodes {
-        createdAt
-        mergedAt
-        reviewDecision
-      }
-    }
-  }
+ repository(owner: "org", name: "repo") {
+ pullRequests(last: 100, labels: ["ai-description"]) {
+ nodes {
+ createdAt
+ mergedAt
+ reviewDecision
+ }
+ }
+ }
 }'
 ```
 

@@ -14,13 +14,6 @@ intent-checked: true
 voice-checked: true
 ---
 
-## Key Takeaways
-
-- **Second**: use environment variables to toggle mocks on and off, ensuring you can switch between mocked and real APIs easily.
-- **Finally**: use MSW's request matching capabilities to create dynamic responses based on query parameters, headers, or request body content.
-- **Topics covered**: introduction, setting up msw in your project, creating mock handlers
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-
 ## Table of Contents
 
 - [Introduction](#introduction)

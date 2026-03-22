@@ -17,20 +17,6 @@ tags: [ai-tools-compared]
 
 Slack bots backed by LLMs are the fastest path to getting AI into your team's workflow without forcing everyone to learn a new tool. This guide builds a production-ready bot with slash commands, thread-aware conversation history, and structured responses.
 
-## Key Takeaways
-
-- **Slack bots backed by**: LLMs are the fastest path to getting AI into your team's workflow without forcing everyone to learn a new tool.
-- **For slow AI calls**: use the `respond` URL pattern:
-
-```python
-import threading
-
-@app.command("/analyze")
-def handle_analyze(ack, command, respond):
-    ack(text="Analyzing...
-- **Topics covered**: architecture, setup, core bot implementation
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

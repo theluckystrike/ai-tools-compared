@@ -20,15 +20,6 @@ Larger context windows (8K+ tokens) produce better code suggestions by providing
 
 AI code completion tools have become essential for modern software development, but not all tools deliver the same quality of suggestions. The size of the context window—the amount of surrounding code an AI model can analyze at once—directly influences how accurate, relevant, and useful its code suggestions become. Understanding this relationship helps you choose the right IDE and AI assistant for your workflow.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Better refactoring assistance**: When modifying a function used across multiple files, a larger context lets the AI understand all usage patterns and suggest appropriate changes.
-- **Consider breaking large files**: into smaller, focused modules to help AI tools provide better suggestions.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Larger context windows (8K+**: tokens) produce better code suggestions by providing more codebase context, but diminishing returns appear after 16K tokens.
-- **Each implements context differently**: GitHub Copilot uses a sliding window approach, typically analyzing 1-3K tokens of surrounding code.
-
 ## What Is Context Window Size
 
 

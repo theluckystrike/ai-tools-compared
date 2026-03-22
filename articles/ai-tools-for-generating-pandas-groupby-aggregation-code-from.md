@@ -18,16 +18,6 @@ voice-checked: true
 
 When working with data analysis in Python, pandas aggregation operations rank among the most frequently used but also most complex transformations. Writing groupby code correctly requires remembering method names, understanding the difference between agg() and aggregate(), and knowing how to chain multiple transformations together. AI tools now offer a practical solution: they can translate plain English descriptions into working pandas groupby code, saving time and reducing errors.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **When working with data**: analysis in Python, pandas aggregation operations rank among the most frequently used but also most complex transformations.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Ask for explanations**: "Why did you use sort=False in groupby?"
-5.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-
 ## Table of Contents
 
 - [The Challenge with Pandas GroupBy Operations](#the-challenge-with-pandas-groupby-operations)

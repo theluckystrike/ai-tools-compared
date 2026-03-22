@@ -18,20 +18,6 @@ intent-checked: true
 
 Claude Code is an AI-powered CLI tool that can dramatically simplify taint analysis implementation for your projects. This tutorial guide walks you through setting up taint analysis workflows, identifying security vulnerabilities from untrusted input, and integrating automated checking into your development pipeline.
 
-## Key Takeaways
-
-- **Here's a practical workflow**: ### Step 1: Analyze Your Data Flow
-
-Ask Claude Code to review your input handling:
-
-```
-Review the user input handling in this codebase.
-- **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
-- **For example**: if user input flows directly into an SQL query without parameterization, taint analysis flags this as a potential SQL injection vulnerability.
-- **For this guide**: we'll use a JavaScript/TypeScript project, but the workflow applies similarly to other languages.
-- **Focus on cases where**: route parameters are used in raw database queries.
-- **Educate your team**: Use Claude Code's explanations to help developers understand security concepts and remediation strategies.
-
 ## Table of Contents
 
 - [What is Taint Analysis?](#what-is-taint-analysis)

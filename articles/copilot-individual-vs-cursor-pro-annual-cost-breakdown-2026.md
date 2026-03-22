@@ -17,15 +17,6 @@ voice-checked: true
 
 Finding affordable AI tools requires understanding the true cost structure. This guide breaks down the cheapest options and explains what you get at each price point.
 
-## Key Takeaways
-
-- **This translates to roughly**: $8.33 per month when paid annually, representing a 17% savings compared to monthly billing.
-- **The annual payment of**: $100 upfront is the most cost-effective way to access Copilot Individual.
-- **GitHub Copilot Individual at**: $100/year provides solid AI assistance for most developers.
-- **If you already know**: you need advanced multi-file editing, extensive codebase awareness, or prefer Cursor's interface, the $192 annual investment makes sense.
-- **The Pro plan costs**: $20/month when billed monthly, or $192/year when billed annually.
-- **This brings the effective**: monthly cost down to $16, which is exactly double the effective monthly cost of GitHub Copilot Individual.
-
 ## Table of Contents
 
 - [Pricing Structure Comparison](#pricing-structure-comparison)

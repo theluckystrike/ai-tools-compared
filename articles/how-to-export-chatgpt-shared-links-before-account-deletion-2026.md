@@ -17,16 +17,6 @@ voice-checked: true
 
 Export ChatGPT shared links by using Markdownify to convert HTML to readable text, or use third-party archive tools before deleting your account. This guide shows the most effective method for each content type: conversations, code snippets, and long-form responses.
 
-## Key Takeaways
-
-- **Export ChatGPT shared links**: by using Markdownify to convert HTML to readable text, or use third-party archive tools before deleting your account.
-- **This guide shows the**: most effective method for each content type: conversations, code snippets, and long-form responses.
-- **This approach requires some**: technical setup but gives you the best results.
-- **Revoke API keys if you have any in the developer dashboard**: deleted accounts do not automatically invalidate keys in all third-party integrations
-6.
-- **Check connected apps under**: Settings → Security → Connected Applications and disconnect any OAuth integrations 7.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-
 ## Table of Contents
 
 - [Why Export Your Shared Links First](#why-export-your-shared-links-first)

@@ -15,15 +15,6 @@ intent-checked: true
 ---
 {% raw %}
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **This guide compares the**: best AI tools for generating and optimizing GitHub Actions workflows.
-- **A single misconfigured matrix**: missing cache key, or incorrect checkout depth can double build times or cause silent test failures.
-
 ## Table of Contents
 
 - [AI Tools for Writing GitHub Actions Workflows (2026)](#ai-tools-for-writing-github-actions-workflows-2026)

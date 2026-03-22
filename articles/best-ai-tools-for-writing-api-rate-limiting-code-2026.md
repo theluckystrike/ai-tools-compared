@@ -18,7 +18,6 @@ intent-checked: true
 Claude 3.5 Sonnet produces production-grade rate limiting implementations with explicit handling of distributed systems edge cases. ChatGPT-4 excels at explaining rate limiting algorithms but generates code requiring refinement for high-concurrency scenarios. Copilot provides IDE-integrated suggestions that work but lack the distributed system considerations needed for multi-server deployments. For API middleware implementing SLA guarantees, Claude's reasoning about consistency vs. performance creates safer implementations than alternatives.
 
 
-
 | Tool | Rate Limit Patterns | Language Support | Redis Integration | Pricing |
 |---|---|---|---|---|
 | Claude | Token bucket, sliding window, leaky bucket | Python, Go, Node.js, Java | Generates Redis Lua scripts | API-based (per token) |
@@ -26,15 +25,6 @@ Claude 3.5 Sonnet produces production-grade rate limiting implementations with e
 | GitHub Copilot | Inline pattern completion | Context-dependent | Autocompletes Redis commands | $10-39/user/month |
 | Cursor | Full file generation | Reads existing middleware | Understands existing Redis setup | $20/month (Pro) |
 | Codeium | Basic pattern suggestions | Common languages | Template-based | Free tier available |
-
-## Key Takeaways
-
-- **Can I use these**: tools with a distributed team across time zones? Most modern tools support asynchronous workflows that work well across time zones.
-- **Rather than fixed periods (0-60 seconds**: 60-120 seconds), sliding window records individual request timestamps and counts how many fall within the last 60 seconds.
-- **Each server maintains separate**: token state, so identical users can exceed the global limit if routed to different servers.
-- **Use ChatGPT-4 when you**: need algorithm explanations or quick reference material.
-- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
-- **Claude 3.5 Sonnet produces**: production-grade rate limiting implementations with explicit handling of distributed systems edge cases.
 
 ## Table of Contents
 

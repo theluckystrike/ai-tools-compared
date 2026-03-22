@@ -17,15 +17,6 @@ voice-checked: true
 
 Traditional monitoring generates alerts; AI-augmented monitoring explains them. The difference matters at 3 AM when an engineer needs to know not just that p95 latency spiked but why, which services are affected downstream, and what the recovery steps are. This guide walks through a practical setup using Prometheus, Grafana, and Claude for alert triage and runbook automation.
 
-## Key Takeaways
-
-- **For each, return JSON**: {{"timestamp": "ISO8601", "explanation": "brief cause hypothesis"}}
-Return only the JSON array, no other text.
-- LIKELY CAUSE (1-2 sentences)
-2.
-- **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

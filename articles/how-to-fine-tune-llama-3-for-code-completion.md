@@ -18,15 +18,6 @@ tags: [ai-tools-compared]
 
 Fine-tuning Llama 3 on your own codebase produces a model that knows your internal libraries, naming conventions, and common patterns. The result is better autocomplete suggestions than a general-purpose model — without sending your code to an external API.
 
-## Key Takeaways
-
-- **Only the LoRA adapter**: weights (about 0.5% of total parameters) are trained at full precision.
-- **Stop early and use the checkpoint with the lowest eval loss**: `load_best_model_at_end=True` handles this automatically.
-- **If you have under 500 examples**: a 10% test split is only 50 samples and produces unreliable metrics.
-- **2**:000-5,000 typically produces noticeably better results.
-- **Filter aggressively**: require docstrings of at least 50 characters and exclude test functions, which often lack meaningful descriptions of intent.
-- **A 20-30% improvement in**: passing tests over the base model indicates successful domain adaptation.
-
 ## Table of Contents
 
 - [Why Fine-Tune vs Use a General Model](#why-fine-tune-vs-use-a-general-model)

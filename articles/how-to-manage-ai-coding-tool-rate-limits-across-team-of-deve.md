@@ -17,15 +17,6 @@ voice-checked: true
 
 Manage team rate limits by tracking per-developer usage, routing heavy tasks through higher-quota APIs, and negotiating enterprise agreements for teams >5 developers. This guide shows the monitoring and allocation strategy that prevents rate limit outages when scaling AI usage.
 
-## Key Takeaways
-
-- **If you are spending more than $5**:000/month, contact their sales team for committed-use discounts.
-- **IDE-integrated tools like Cursor and GitHub Copilot enforce limits through subscription tiers**: free plans often provide 200-500 completions per month, while pro plans offer thousands.
-- **When negotiating**: - GitHub Copilot Enterprise ($39/seat/month) unlocks organization-wide policy controls, PR summaries, and Bing web search integration.
-- **Track who uses the tool most**: when peak usage occurs, and which features consume the most quota.
-- **Use selective file inclusion**: features to limit context to only necessary files.
-- **- Cursor Business ($40/seat/month)**: includes SOC 2 compliance, centralized billing, and admin controls.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)

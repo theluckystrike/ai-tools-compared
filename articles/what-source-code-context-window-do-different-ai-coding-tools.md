@@ -18,15 +18,6 @@ voice-checked: true
 
 When developers use AI coding assistants, understanding what happens behind the scenes matters. Each tool processes different amounts of your code locally and sends varying amounts to external servers for analysis. This article breaks down the context windows of major AI coding tools so you can make informed decisions about privacy and performance.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Their privacy policy indicates**: that code is processed in memory and not retained after the session ends for free users.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Amazon designed the tool**: with enterprise use cases in mind, implementing AWS-integrated security features.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-
 ## Table of Contents
 
 - [What Is Context Window in AI Coding Tools](#what-is-context-window-in-ai-coding-tools)

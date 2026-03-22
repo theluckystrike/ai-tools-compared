@@ -18,15 +18,6 @@ voice-checked: true
 
 This guide provides an overview to help you understand and make informed decisions about this topic.
 
-## Key Takeaways
-
-- **They work best when**: your entire design workflow uses their platform, providing stronger design-to-code integration than generic AI assistants.
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Does Copilot offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **When testing the feature**: across different image types, simple component screenshots (buttons, forms, cards) generate accurate code 85-90% of the time.
-- **Complex full-page layouts see**: success rates drop to 60-70%, requiring more iteration and refinement.
-
 ## Table of Contents
 
 - [How Copilot Vision Works in Your Editor](#how-copilot-vision-works-in-your-editor)

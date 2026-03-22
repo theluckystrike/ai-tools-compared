@@ -18,7 +18,6 @@ voice-checked: true
 The best AI tools for support agent assist are Claude for complex inquiry analysis and personalized responses, GPT-4 with fine-tuning for company-specific voice, Zendesk AI for teams already on that platform, and Intercom Fin for automated deflection of common questions. For maximum flexibility, build a custom solution using Claude or GPT-4 APIs with a retrieval-augmented knowledge base. This guide provides integration code for each tool and an architecture for building custom agent assist systems, including RAG pipelines, latency optimization, and feedback loops.
 
 
-
 | Tool | Agent Assist Feature | Knowledge Source | Real-Time | Pricing |
 |---|---|---|---|---|
 | Guru | AI-suggested knowledge cards | Internal wiki, docs | Yes | $10/user/month |
@@ -26,15 +25,6 @@ The best AI tools for support agent assist are Claude for complex inquiry analys
 | Forethought | SupportGPT for agents | Past resolutions | Yes | Custom pricing |
 | Coveo | AI search and recommendations | Multi-source indexing | Yes | Custom pricing |
 | Capacity | AI helpdesk with agent copilot | Knowledge base, CRM | Yes | $49/user/month |
-
-## Key Takeaways
-
-- **Teams that implement AI**: assist consistently report 20-40% reductions in average handle time and measurable improvements in first-contact resolution.
-- **The most effective AI**: support tools share several characteristics.
-- **Below that**: few-shot prompting with good examples in the system message usually outperforms fine-tuning because the base model's general knowledge compensates for limited domain data.
-- **Agents lose trust in**: AI tools that take more than 2-3 seconds to surface a suggestion.
-- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
-- **Knowledge Base Integration -**: Retrieves relevant documentation and FAQs 3.
 
 ## Table of Contents
 

@@ -18,17 +18,6 @@ voice-checked: true
 
 Claude produces the cleanest, most idiomatic client code from OpenAPI specs with proper error handling and type definitions, while ChatGPT excels at generating SDKs with built-in retry logic and rate limiting. Choose Claude for simple, maintainable clients; choose ChatGPT for feature-rich SDKs with complex orchestration. This guide compares AI tools based on their ability to generate production-ready API client code directly from OpenAPI specifications.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Language support**: does it output the languages your team needs?
-
-The best results come from combining AI generation with manual review.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-
 ## Table of Contents
 
 - [Type-Safe Client Generation](#type-safe-client-generation)

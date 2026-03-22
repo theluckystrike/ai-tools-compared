@@ -14,15 +14,6 @@ intent-checked: true
 voice-checked: true
 ---
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **Step 2**: Feed to AI Tool — Use a capable LLM with your entire source material as context.
-- **Modernize code examples to**: use our current deployment CLI (v3.2+) 5.
-- **Multilingual Portal Support**: Consolidate documentation in English, then use AI to translate and localize for other languages while preserving technical terminology.
-
 ## Table of Contents
 
 - [Overview](#overview)

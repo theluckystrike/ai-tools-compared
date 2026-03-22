@@ -19,15 +19,6 @@ GitHub Copilot free tier has several hidden limits: 2,000 completions per month,
 
 GitHub Copilot has become an essential tool for developers, offering AI-powered code suggestions that can significantly speed up development workflows. While the free tier appears generous at first glance, several hidden limitations can catch you off guard mid-project. Understanding these constraints helps you plan your workflow and avoid frustrating interruptions when you need Copilot the most.
 
-## Key Takeaways
-
-- **Free users receive approximately**: 50 chat messages per month with full context awareness.
-- **The context window for**: free tier users is also more limited compared to paid plans, meaning Copilot may lose track of earlier parts of your conversation.
-- **Prioritize context-heavy tasks**: Use Copilot where it adds most value—complex algorithms, error handling, integration logic.
-- **JetBrains IDEs particularly require**: frequent plugin updates to maintain compatibility, and free tier users sometimes get reduced priority for plugin bug fixes.
-- **If you have used**: the tool for at least 3 months and plan to continue, the annual discount usually makes sense.
-- **GitHub Copilot free tier**: has several hidden limits: 2,000 completions per month, no chat interface, limited context window, and blocking on enterprise firewalls.
-
 ## Table of Contents
 
 - [Monthly Code Completion Limits](#monthly-code-completion-limits)

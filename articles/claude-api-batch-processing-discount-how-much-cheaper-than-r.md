@@ -18,15 +18,6 @@ voice-checked: true
 
 Choose Claude API batch processing to cut your API costs by exactly 50% compared to real-time pricing. For example, Claude Sonnet 4.6 costs $3 input/$15 output per million tokens in real-time, but only $1.50/$7.50 with batch processing. This makes batch processing ideal for high-volume tasks like document processing, bulk content generation, and dataset annotation where immediate responses are not required.
 
-## Key Takeaways
-
-- **Choose Claude API batch**: processing to cut your API costs by exactly 50% compared to real-time pricing.
-- **For example**: Claude Sonnet 4.6 costs $3 input/$15 output per million tokens in real-time, but only $1.50/$7.50 with batch processing.
-- **If you have used**: the tool for at least 3 months and plan to continue, the annual discount usually makes sense.
-- **A team processing 100M**: tokens monthly could save $500K+ annually by switching to batch processing for appropriate workloads.
-- **For classification, extraction, or simple formatting tasks, Haiku delivers excellent accuracy at a fraction of the price**: $0.50 input / $2.50 output per million tokens in batch mode.
-- **Anthropic processes batch requests**: within 24 hours, though in practice most complete within a few hours depending on load.
-
 ## Table of Contents
 
 - [Current Claude API Pricing (2026)](#current-claude-api-pricing-2026)

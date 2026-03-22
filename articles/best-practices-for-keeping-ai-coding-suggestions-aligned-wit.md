@@ -18,18 +18,6 @@ voice-checked: true
 
 Provide pattern examples in your prompts: "Follow the service-repository pattern in [example file]" or "Use dependency injection like in UserController.ts". Include architecture decision records (ADRs) in context. Review AI suggestions against your design patterns before accepting them. Create team guidelines documenting approved patterns. This guide covers strategies for keeping AI coding suggestions aligned with your project's design patterns.
 
-## Key Takeaways
-
-- **We use SQLAlchemy 2.0**: with async sessions.
-- **Use async/await for all**: database operations 4.
-- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
-- **Provide pattern examples in**: your prompts: "Follow the service-repository pattern in [example file]" or "Use dependency injection like in UserController.ts".
-- **Before requesting implementations**: share your architectural decisions:
-
-```markdown
-Our project uses the repository pattern with dependency injection.
-- **A week-long trial with**: actual work gives better signal than feature comparison charts.
-
 ## Table of Contents
 
 - [Understanding the Challenge](#understanding-the-challenge)

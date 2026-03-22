@@ -17,15 +17,6 @@ voice-checked: true
 
 Enable developer self-service by using AI to interpret infrastructure requests in plain language and generate Terraform or CloudFormation. Claude excels at understanding intent and generating policy-compliant IaC, while specialized platform tools like Humanitec integrate deeper with your deployment pipeline. This guide evaluates the best AI-powered tools for platform engineering that reduce ops friction and accelerate provisioning workflows.
 
-## Key Takeaways
-
-- **The best tools integrate with your existing infrastructure**: Terraform state, Kubernetes clusters, cloud provider APIs — rather than requiring wholesale replacement.
-- **Open Policy Agent (OPA)**: and HashiCorp Sentinel are the two dominant policy-as-code frameworks; ensure your chosen AI tool integrates with whichever your organization uses.
-- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
-- **This guide evaluates the**: best AI-powered tools for platform engineering that reduce ops friction and accelerate provisioning workflows.
-- **The best AI-powered platform**: engineering tools handle several core functions.
-- **These platforms use machine**: learning to understand service relationships, suggest appropriate resources, and automate compliance checks.
-
 ## Why AI Matters in Platform Engineering
 
 

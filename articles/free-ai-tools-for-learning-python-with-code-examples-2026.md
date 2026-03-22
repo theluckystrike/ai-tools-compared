@@ -16,15 +16,6 @@ voice-checked: true
 
 The best free AI tools for learning Python are Claude (via free tier or API credits), GitHub Copilot free, and specialized sites like Cursor. This guide compares them by learning style: interactive explanations, code examples, error debugging, and project-based learning.
 
-## Key Takeaways
-
-- **Is it safe to**: paste my work code into free AI tools? Most free tiers of cloud AI tools use submitted conversations for model improvement unless you opt out.
-- **The best free AI**: tools for learning Python are Claude (via free tier or API credits), GitHub Copilot free, and specialized sites like Cursor.
-- **Can I use Copilot**: free without a GitHub Student account? Yes.
-- **GitHub announced a free**: tier for Copilot in late 2024 that includes a limited number of completions per month (2,000 completions and 50 chat messages).
-- **Local setups via Aider**: or Continue are best for developers who work with proprietary code and cannot send it to cloud services.
-- **The free tiers of**: both Claude and ChatGPT handle this level of depth without rate-limiting issues for typical learning sessions.
-
 ## Table of Contents
 
 - [Why AI-Assisted Python Learning Matters](#why-ai-assisted-python-learning-matters)

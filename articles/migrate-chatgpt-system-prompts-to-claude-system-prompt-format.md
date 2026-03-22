@@ -5,15 +5,15 @@ author: theluckystrike
 date: 2026-03-16
 last_modified_at: 2026-03-22
 tags:
-  - ai assistants
-  - chatgpt
-  - claude
-  - prompt engineering
-  - system prompts
-  - migration
-  - ai tools
+ - ai assistants
+ - chatgpt
+ - claude
+ - prompt engineering
+ - system prompts
+ - migration
+ - ai tools
 categories:
-  - AI Tools Compared
+ - AI Tools Compared
 permalink: /migrate-chatgpt-system-prompts-to-claude-system-prompt-format/
 score: 9
 voice-checked: true
@@ -25,15 +25,6 @@ layout: default
 {% raw %}
 
 Migrating your ChatGPT system prompts to Claude's format can significantly improve your AI assistant's performance. While both platforms use system prompts to define assistant behavior, there are key differences in how each interprets and applies these instructions.
-
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Does ChatGPT offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Asking the same queries**: you used with ChatGPT 2.
-- **Comparing response quality across**: multiple dimensions: - Clarity of explanation - Usefulness of examples - Appropriate boundaries - Overall helpfulness 3.
 
 ## Table of Contents
 

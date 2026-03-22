@@ -18,15 +18,6 @@ intent-checked: true
 
 Automated code review tools augment human reviewers by catching common mistakes—null pointer exceptions, security vulnerabilities, performance antipatterns, and style violations—before team members spend time in code review. This guide compares leading AI-powered code review solutions and shows how to integrate them into your workflow.
 
-## Key Takeaways
-
-- **Limitations**: Premium pricing for open source, setup requires configuration file, slower on large repos.
-- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
-- **Limitations**: GitHub-only (though GitLab has similar), setup requires Actions workflow, slower analysis time.
-- **Free**: easy to set up, catches real issues.
-- **Automated code review works**: best as one layer in a quality strategy.
-- **A week-long trial with**: actual work gives better signal than feature comparison charts.
-
 ## Table of Contents
 
 - [The Case for Automated Code Review](#the-case-for-automated-code-review)

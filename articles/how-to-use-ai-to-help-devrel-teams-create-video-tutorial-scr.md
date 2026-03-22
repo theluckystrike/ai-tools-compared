@@ -17,18 +17,6 @@ voice-checked: true
 
 Use AI to accelerate DevRel video creation by generating tutorial scripts, optimizing titles for discoverability, and using AI-enhanced recording tools for noise cancellation and cursor highlighting. AI video editing software automatically removes dead air, trims filler words, generates accurate captions, and applies color correction—transforming hours of post-production work into clicks.
 
-## Key Takeaways
-
-- **Most platforms now offer**: accurate automatic caption generation, which not only improves accessibility but also helps viewers who prefer reading to listening.
-- **Use ChatGPT or Claude**: to generate a script outline: "Create a script for a 7-minute tutorial on implementing rate limiting in [API].
-- **A concrete prompt that**: produces useful output: ``` Write a 5-minute video tutorial script for beginner developers showing how to authenticate with OAuth2 using our API.
-- **Use recording software with**: AI features (Descript, Riverside.fm, or ScreenFlow for macOS) 2.
-- **Allow for natural speech**: don't worry about filler words, pauses, or minor stumbles
-
-Phase 3 - Auto-Editing (30-45 minutes)
-1.
-- **Review the AI's suggested**: edits for naturalness (removing "um/uh" but preserving intentional pauses) 4.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)

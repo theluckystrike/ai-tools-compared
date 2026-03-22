@@ -23,17 +23,7 @@ intent-checked: true
 | Codeium | Fast inline test suggestions | Basic happy-path coverage | Template-based patterns | Free tier available |
 
 
-
 Running AI coding assistants locally has become essential for developers who need to generate Java unit tests without exposing proprietary code to external services. Self-hosted solutions give you complete control over your codebase while taking advantage of powerful language models to automate test creation.
-
-## Key Takeaways
-
-- **It offers a graphical**: interface for managing different models and supports the GGUF format used by many quantized models.
-- **For acceptable performance with**: code generation tasks, you'll want at least 16GB of RAM, though 32GB provides a smoother experience.
-- **Continue Dev suits VS**: Code users preferring integrated workflows.
-- **Line coverage (80%+) means**: nothing if the tests don't exercise conditional branches.
-- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
-- **It supports various models**: that work well with Java code, including Llama 3 and Mistral variants.
 
 ## Table of Contents
 

@@ -19,15 +19,6 @@ Claude Artifacts and ChatGPT Canvas both enable live, interactive coding with AI
 
 This guide compares both tools across six critical dimensions: rendering speed, state management, debugging workflow, team collaboration, offline capability, and cost-effectiveness. By the end, you'll know which to reach for in any coding scenario.
 
-## Key Takeaways
-
-- **Review requires reading code**: without seeing it run Artifacts are better for live collaboration because both engineers see the same interactive output in real-time.
-- **If your time is worth $100/hour**: that's ~$17 saved per session.
-- **Fast Prototyping (Sub-5-Minute Iterations)****: Canvas is 40-50% faster for simple code changes.
-- **Use Canvas for incremental**: changes (faster iteration on final code) ``` // Workflow: 1.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-
 ## Architecture: How They Work Differently
 
 ### Claude Artifacts

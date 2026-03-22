@@ -17,16 +17,6 @@ voice-checked: true
 
 Use AI to generate boilerplate (models, API stubs, test scaffolding) quickly; focus manual review on business logic, security, and error handling. Review AI code for unhandled edge cases, SQL injection risks, and architectural consistency. Allocate 30% of effort to generation, 70% to review and refinement. This guide covers effective workflows for combining AI generation with manual code review.
 
-## Key Takeaways
-
-- **Allocate 30% of effort to generation**: 70% to review and refinement.
-- Use Pydantic v2
-for validation.
-- **The 30% generation /**: 70% review guideline in this article is a starting point for teams new to the workflow.
-- **Use AI to generate boilerplate (models**: API stubs, test scaffolding) quickly; focus manual review on business logic, security, and error handling.
-- **The most effective approach**: assigns clear responsibilities: let AI handle the mechanical work while you focus on logic validation, security review, and architectural consistency.
-- **Follow our existing patterns**: in models/user.py.
-
 ## Table of Contents
 
 - [The Role Division: What AI Does Well](#the-role-division-what-ai-does-well)

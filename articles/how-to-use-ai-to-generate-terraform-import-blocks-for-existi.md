@@ -20,15 +20,6 @@ When managing infrastructure at scale, you often encounter a common challenge: e
 
 This guide shows you how to use AI tools to generate Terraform import blocks for existing resources, reducing hours of manual work to minutes.
 
-## Key Takeaways
-
-- **Use separate import files**: per resource type or environment for organization 3.
-- **Add meaningful tags to**: imported resources for better management 4.
-- **This guide shows you**: how to use AI tools to generate Terraform import blocks for existing resources, reducing hours of manual work to minutes.
-- **- GitHub Copilot**: Useful inline as you type import blocks in your editor; suggests resource types based on open files.
-- **For bulk Terraform import generation**: Claude and Amazon Q tend to produce the fewest errors because they have deeper infrastructure-specific training.
-- **Use the current Terraform**: AWS provider syntax.
-
 ## Table of Contents
 
 - [Why Import Blocks Matter in Terraform](#why-import-blocks-matter-in-terraform)

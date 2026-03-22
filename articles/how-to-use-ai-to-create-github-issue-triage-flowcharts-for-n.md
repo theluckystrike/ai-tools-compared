@@ -18,13 +18,6 @@ voice-checked: true
 
 GitHub issue triage is often the first point of contact between maintainers and potential contributors. For new maintainers taking over a project or those managing growing open source repositories, establishing a clear triage workflow prevents bottlenecks, reduces contributor frustration, and ensures bugs receive appropriate attention. AI tools can accelerate the creation of these flowcharts significantly, transforming what might be hours of diagramming into a structured conversation that produces actionable results.
 
-## Key Takeaways
-
-- **Generate an initial flowchart**: - Use the prompt templates above with your specific project details 3.
-- **Here's a practical example**: of how to frame your prompt: Effective prompt template: > "Create a Mermaid.js flowchart for GitHub issue triage in an open source JavaScript project.
-- **Integrate into documentation -**: Place the flowchart in CONTRIBUTING.md or a dedicated TRIAGE.md file 5.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-
 ## Table of Contents
 
 - [Understanding the Triage Workflow Requirements](#understanding-the-triage-workflow-requirements)

@@ -19,15 +19,6 @@ Kubernetes operators are complex. They combine CRD design, controller reconcilia
 
 This guide tests how well current AI tools handle operator development and when they fail.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **For most teams**: Use Operator SDK to scaffold, ask Claude to explain Kubernetes patterns you don't understand, write reconciliation logic with Copilot suggestions, and manually build tests.
-- **Does Kubernetes offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **This cuts development time**: by 40% compared to writing from scratch while maintaining code quality.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-
 ## Table of Contents
 
 - [Why Operators Are Hard for AI](#why-operators-are-hard-for-ai)

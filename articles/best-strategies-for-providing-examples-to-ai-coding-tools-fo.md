@@ -28,15 +28,6 @@ voice-checked: true
 
 Provide 2-3 concrete working examples showing your preferred style and patterns; include edge cases you want handled; show error handling patterns from your codebase. Use real code snippets rather than descriptions. Highlight the specific parts you want the AI to emulate. Examples significantly improve code quality and alignment with your project standards. This guide covers effective example strategies for AI coding tools.
 
-## Key Takeaways
-
-- **Provide 2-3 concrete working**: examples showing your preferred style and patterns; include edge cases you want handled; show error handling patterns from your codebase.
-- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
-- **Use real code snippets**: rather than descriptions.
-- **Include examples that show**: your error handling approach: ``` Write a function to fetch user data from our API.
-- **Three to five relevant**: examples usually work better.
-- **Using outdated examples**: Make sure your reference code reflects current library versions and best practices.
-
 ## Table of Contents
 
 - [Why Examples Matter for AI Code Generation](#why-examples-matter-for-ai-code-generation)

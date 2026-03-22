@@ -17,13 +17,6 @@ tags: [ai-tools-compared]
 
 Nginx configuration has a deceptively simple syntax but a long tail of security and performance pitfalls: misconfigured SSL ciphers, missing security headers, rate limiting that blocks legitimate traffic, and proxy settings that leak internal server details. AI tools that generate nginx configs without understanding the security implications can introduce vulnerabilities.
 
-## Key Takeaways
-
-- **Topics covered**: the security baseline test, task 2: caching layer configuration, task 3: load balancing configuration
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-- **Use-case recommendations**: Specific guidance based on team size and requirements
-- **Trade-off analysis**: Strengths and limitations of each option discussed
-
 ## Table of Contents
 
 - [The Security Baseline Test](#the-security-baseline-test)
@@ -39,7 +32,7 @@ Nginx configuration has a deceptively simple syntax but a long tail of security 
 ## The Security Baseline Test
 
 Every AI tool was given this prompt:
-> "Write an nginx configuration for a Node.js app running on port 3000, with HTTPS, Let's Encrypt SSL, and production security settings."
+> "Write a nginx configuration for a Node.js app running on port 3000, with HTTPS, Let's Encrypt SSL, and production security settings."
 
 **Copilot's output (selected security issues):**
 

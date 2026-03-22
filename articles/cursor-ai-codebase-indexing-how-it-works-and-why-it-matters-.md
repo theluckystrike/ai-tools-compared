@@ -17,16 +17,6 @@ voice-checked: true
 
 Cursor's codebase indexing analyzes your entire project to build an internal representation of code structure, cross-references, and relationships, enabling accurate context-aware suggestions across your entire codebase. The indexer parses syntax trees, identifies function definitions and imports, and maintains incremental updates as you code. This approach gives Cursor a fundamental advantage over tools analyzing single files—it understands your entire architecture and can suggest code that properly fits into your project structure.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Codebase indexing is currently**: one of the most impactful techniques, and understanding how it works helps you use it effectively in your development workflow.
-- **Does Cursor offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **You typically only experience the full indexing delay once**: subsequent openings use the cached index.
-- **Exclude tests from core indexing**: Use separate test indexes
-4.
-
 ## Table of Contents
 
 - [What Is Codebase Indexing](#what-is-codebase-indexing)

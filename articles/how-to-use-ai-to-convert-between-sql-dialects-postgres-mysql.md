@@ -17,15 +17,6 @@ intent-checked: true
 
 AI tools can translate SQL queries between PostgreSQL, MySQL, BigQuery, and Snowflake by recognizing syntax differences and function-specific implementations. Providing clear context about source and target database systems enables accurate translation of window functions, string aggregation, date operations, and recursive CTEs. While AI handles bulk translation work correctly, developers should verify outputs and account for vendor-specific features like PostgreSQL's RETURNING clause or BigQuery's nested records.
 
-## Key Takeaways
-
-- **These three prompt patterns**: produce consistently better results: Pattern 1: Specify both systems and the migration context ``` Convert this PostgreSQL 14 query to MySQL 8.0.
-- **The target database uses**: utf8mb4 charset.
-- **Use those translated examples**: as few-shot examples in subsequent prompts for harder queries 5.
-- **For stored procedures**: plan on AI handling 60-70% of the translation with manual review of control flow, exception handling, and variable declarations.
-- **While AI handles bulk**: translation work correctly, developers should verify outputs and account for vendor-specific features like PostgreSQL's RETURNING clause or BigQuery's nested records.
-- **PostgreSQL uses `COALESCE`**: while MySQL prefers `IFNULL`.
-
 ## Table of Contents
 
 - [Why SQL Dialects Differ](#why-sql-dialects-differ)

@@ -17,15 +17,6 @@ tags: [ai-tools-compared, comparison, chatgpt]
 
 When you need to write complex BigQuery SQL window functions, the difference between Gemini and ChatGPT can significantly impact your productivity. Both AI assistants can generate SQL, but their accuracy and approach to window functions varies in ways that matter for developers and data analysts.
 
-## Key Takeaways
-
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-- **Use AI-generated tests as**: a starting point, then add cases that cover your unique requirements and failure modes.
-- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-- **A single misplaced clause**: or incorrect frame specification can produce silently wrong results that look correct at first glance.
-- **Additionally**: when dealing with complex partitioning across multiple columns, Gemini occasionally produces syntax that works but isn't the most efficient approach.
-- **For example**: BigQuery uses `RANGE BETWEEN` differently than other databases, and ChatGPT doesn't always capture these subtle differences.
-
 ## Table of Contents
 
 - [The Challenge with Window Functions](#the-challenge-with-window-functions)

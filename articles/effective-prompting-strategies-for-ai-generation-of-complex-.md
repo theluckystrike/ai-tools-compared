@@ -20,21 +20,6 @@ Writing SQL queries with AI requires prompting strategies that specify your data
 
 AI tools have become capable of generating sophisticated SQL queries, but getting them to produce exactly what you need requires knowing how to ask. The difference between a generic response and a production-ready query often comes down to how you structure your prompt. This guide covers practical strategies for eliciting complex SQL from AI systems in 2026.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Use ROW_NUMBER() OVER (PARTITION BY ...)**: MySQL 8+ supports window functions natively"
-
-For BigQuery:
-
-> "Write for Google BigQuery.
-- **Handle cases where a**: customer has no orders by returning NULL for all order fields" > "Include only products that have at least one sale in the last 30 days.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Suggest whether a partial index**: covering index, or table partitioning would help most for this access pattern"
-
-This gives you both the query and supporting infrastructure.
-
 ## Table of Contents
 
 - [Provide Your Schema Up Front](#provide-your-schema-up-front)

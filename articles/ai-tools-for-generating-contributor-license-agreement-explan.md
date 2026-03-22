@@ -17,16 +17,6 @@ intent-checked: true
 
 AI tools like Claude, ChatGPT, and specialized legal summarization platforms can instantly translate dense CLA documents into clear, developer-friendly explanations that reduce contributor friction. By providing plain language summaries covering key rights, obligations, and clauses, AI eliminates the legal barrier that prevents contributors from confidently signing CLAs.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Summarizing key rights and**: obligations - Extract the most important points contributors need to know 2.
-- **Explaining specific clauses -**: Break down individual sections that cause confusion 3.
-- **Comparing different CLAs -**: Help maintainers choose between different agreement templates 4.
-- What this clause means
-        2.
-
 ## Table of Contents
 
 - [Why Plain Language CLA Explanations Matter](#why-plain-language-cla-explanations-matter)

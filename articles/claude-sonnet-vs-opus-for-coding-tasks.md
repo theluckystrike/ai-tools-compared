@@ -16,15 +16,6 @@ voice-checked: true
 
 Picking between Sonnet and Opus matters when you're paying per token at scale. Opus 4.6 costs roughly 5x more than Sonnet 4.6 per token. For an agentic pipeline running 1,000 tasks per day, that difference is significant. This guide documents which tasks justify Opus and which work fine with Sonnet, based on measurable output quality differences.
 
-## Key Takeaways
-
-- **Sonnet does it in ~2s vs Opus at ~4s**: and at 20% of the cost.
-- **Opus's output**: Designs the deduplication key as `sha256(user_id + notification_type + content_hash + 5min_window_bucket)`.
-- **Opus catches 95% of**: these patterns on first pass.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-- **Use AI-generated tests as**: a starting point, then add cases that cover your unique requirements and failure modes.
-- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-
 ## The Core Tradeoff
 
 Sonnet is faster and cheaper. Opus is more accurate on tasks requiring deep reasoning, multi-step planning, and recognizing subtle constraints. The gap narrows when:
@@ -284,7 +275,7 @@ response = client.messages.create(
 | Bug fixes (simple) | Yes | Localized change | 92% |
 | Feature implementation | Maybe | Depends on complexity | 85% |
 | Architecture design | No | Needs deep reasoning | 70% with Sonnet, 95% with Opus |
-| Security review | No | Needs comprehensive analysis | 60% with Sonnet, 95% with Opus |
+| Security review | No | Needs analysis | 60% with Sonnet, 95% with Opus |
 | Large refactoring | No | Multi-system impact | 75% with Sonnet, 95% with Opus |
 
 **Quality definition: "The output is production-ready with no modifications"**

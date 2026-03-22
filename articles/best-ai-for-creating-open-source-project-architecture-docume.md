@@ -56,14 +56,14 @@ local filesystem.
 ## C4 Context Diagram
 ```mermaid
 C4Context
-  Person(user, "Developer", "Uses CLI to manage tasks")
-  System(cobraTask, "cobra-task", "Local CLI task manager")
-  SystemDb(sqlite, "SQLite Database", "~/.cobra-task/tasks.db")
-  System_Ext(plugins, "Plugins", "Local gRPC plugins")
+ Person(user, "Developer", "Uses CLI to manage tasks")
+ System(cobraTask, "cobra-task", "Local CLI task manager")
+ SystemDb(sqlite, "SQLite Database", "~/.cobra-task/tasks.db")
+ System_Ext(plugins, "Plugins", "Local gRPC plugins")
 
-  Rel(user, cobraTask, "Uses", "CLI")
-  Rel(cobraTask, sqlite, "Reads/writes")
-  Rel(cobraTask, plugins, "Calls", "gRPC")
+ Rel(user, cobraTask, "Uses", "CLI")
+ Rel(cobraTask, sqlite, "Reads/writes")
+ Rel(cobraTask, plugins, "Calls", "gRPC")
 ```
 ```
 
@@ -166,11 +166,11 @@ The most effective workflow for open source architecture documentation:
 ## Component Diagram
 ```mermaid
 graph TD
-  A[CLI Entry] --> B[Command Parser]
-  B --> C[Task Repository]
-  C --> D[SQLite Driver]
-  B --> E[Plugin Manager]
-  E --> F[gRPC Client]
+ A[CLI Entry] --> B[Command Parser]
+ B --> C[Task Repository]
+ C --> D[SQLite Driver]
+ B --> E[Plugin Manager]
+ E --> F[gRPC Client]
 ```
 
 ## Data Flow: Creating a Task

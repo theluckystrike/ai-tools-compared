@@ -17,19 +17,6 @@ tags: [ai-tools-compared, claude-ai]
 
 Claude Code transforms how teams build and maintain developer portals. Instead of manually writing documentation or wrestling with static site generators, you can use Claude Code's AI capabilities to generate, organize, and keep your portal current. This guide walks through setting up a developer portal from scratch using Claude Code, with practical examples and automation strategies.
 
-## Key Takeaways
-
-- **A team of 5**: generating documentation daily would spend $150/month for AI-powered portal generation.
-- **When requesting a tutorial**: provide context about your API's purpose and common use cases:
-
-```
-Generate a tutorial for implementing authentication using OAuth 2.0
-with our API.
-- **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
-- **Instead of manually writing**: documentation or wrestling with static site generators, you can use Claude Code's AI capabilities to generate, organize, and keep your portal current.
-- **When you use Claude**: Code for portal setup, you gain several advantages.
-- **First**: documentation stays synchronized with your actual code because Claude Code reads your implementation directly.
-
 ## Why Use Claude Code for Developer Portals
 
 Developer portals serve as the central hub for API documentation, SDKs, code examples, and integration guides. Traditional approaches require significant maintenance effort—every API change triggers manual updates across multiple documentation files. Claude Code changes this workflow by understanding your codebase and generating relevant documentation automatically.

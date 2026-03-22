@@ -19,17 +19,6 @@ AI tools improve foundation membership applications by drafting initial sections
 
 This guide shows developers and power users how to use AI to draft effective membership application documents for foundations like the Apache Software Foundation, Linux Foundation, OpenJS Foundation, and similar organizations.
 
-## Key Takeaways
-
-- **My JMX monitoring enhancements**: have reduced operational overhead by approximately 30% for teams managing Kafka clusters.
-- **Most foundations want concrete**: examples rather than general statements.
-- **The Linux Foundation focuses**: on corporate sponsorship and project contribution.
-- **Most notably**: I identified and
-resolved a critical replication bug that was causing production failures
-for organizations running large-scale deployments.
-- **My presentations at ApacheCon**: have shared operational best practices with the broader Apache community.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-
 ## Table of Contents
 
 - [Why Use AI for Membership Applications](#why-use-ai-for-membership-applications)

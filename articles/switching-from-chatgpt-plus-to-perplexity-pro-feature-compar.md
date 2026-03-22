@@ -17,15 +17,6 @@ voice-checked: true
 
 Switch to Perplexity Pro for stronger web search integration and real-time information, but lose ChatGPT's deeper reasoning and vision capabilities. This guide compares features side-by-side to help you decide if switching makes sense.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Does ChatGPT offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Ask "Is this still**: current best practice?" 4.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-
 ## Table of Contents
 
 - [Core Architecture and Search Integration](#core-architecture-and-search-integration)

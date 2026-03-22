@@ -22,17 +22,7 @@ voice-checked: true
 | axe DevTools | Dedicated a11y testing | Rule-based ARIA validation | Automated WCAG audits | Free browser extension |
 
 
-
 Accessible stepper and wizard components guide users through multi-step processes while maintaining clear orientation in the overall flow. These components present unique accessibility challenges because they combine navigation patterns, state management, and progressive disclosure—all of which require proper semantic markup and ARIA attributes to work correctly with assistive technologies.
-
-## Key Takeaways
-
-- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
-- **Accessible stepper and wizard**: components guide users through multi-step processes while maintaining clear orientation in the overall flow.
-- **A stepper typically uses**: the `navigation` role or contains elements with `list` and `listitem` roles to communicate structure to assistive technologies.
-- **Users with visual impairments**: need to know which step they're on, which step comes next, and whether they can navigate backward.
-- **Users should be able**: to navigate forward and backward using Tab, Arrow keys, and Enter/Space for activation.
-- **The best results come**: from explicit specification of accessibility requirements in your prompts.
 
 ## Table of Contents
 

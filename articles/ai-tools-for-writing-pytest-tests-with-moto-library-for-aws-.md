@@ -17,15 +17,6 @@ voice-checked: true
 
 AI tools can generate pytest test cases that use the moto library for mocking AWS services, significantly reducing the boilerplate code needed to write unit tests. By describing your Lambda functions, S3 operations, or DynamoDB interactions to an AI assistant, you receive ready-to-run test code that sets up mocked AWS environments, configures service responses, and validates expected behavior without connecting to actual AWS resources.
 
-## Key Takeaways
-
-- **Best approach**: Start with Claude for fixture architecture, use ChatGPT-4 for specific test methods, refine in Copilot.
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Does AWS offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Effective prompts to AI**: tools should include your function signatures, the boto3 clients you use, the specific operations you call, and the expected outcomes.
-
 ## Table of Contents
 
 - [Why Use Moto for AWS Testing](#why-use-moto-for-aws-testing)

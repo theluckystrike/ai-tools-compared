@@ -20,15 +20,6 @@ Train your AI assistant on team standards by including your coding guidelines in
 
 This guide covers practical methods for teaching AI coding assistants understand and respect your team's unique conventions.
 
-## Key Takeaways
-
-- **Most modern assistants support**: project-level or global configuration that shapes their responses.
-- **All async functions must**: use try-catch blocks 2.
-- **Custom instructions and preferences**: let you define behavior explicitly.
-- **A practical approach uses**: Markdown with clear sections.
-- **Most assistants check for**: this file automatically or can be configured to reference it.
-- **For GitHub Copilot**: use a `copilot-inputs.txt` or similar configuration.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

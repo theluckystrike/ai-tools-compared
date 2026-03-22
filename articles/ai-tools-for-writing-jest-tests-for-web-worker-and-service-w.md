@@ -17,15 +17,6 @@ voice-checked: true
 
 Claude and GitHub Copilot effectively generate Jest tests for web and service workers by understanding the postMessage API and worker lifecycle. These AI tools create test scaffolding that establishes message channels, verifies communication patterns, and handles the asynchronous nature of worker interactions—reducing the complexity of testing code running in isolated contexts.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **Code completion tools like**: Copilot work best for incremental test additions as you develop.
-
 ## Table of Contents
 
 - [Understanding the Testing Challenge](#understanding-the-testing-challenge)

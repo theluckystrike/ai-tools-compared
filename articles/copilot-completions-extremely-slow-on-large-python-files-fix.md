@@ -16,15 +16,6 @@ intent-checked: true
 
 GitHub Copilot transforms how you write code, but working with large Python files can feel like wading through molasses. What should be instant suggestions take seconds, breaking your flow and defeating the purpose of AI-assisted coding. This guide covers why Copilot slows down on large Python files and practical fixes you can apply immediately.
 
-## Key Takeaways
-
-- **Use Local Extensions for**: Better Performance Install the Copilot Chat extension alongside Copilot.
-- **Adjust the values based on your file sizes**: 4096 tokens works well for most large files.
-- **Use the `#` Prefix**: for Faster Suggestions Starting a line with `#` tells Copilot to generate a comment-based suggestion without analyzing surrounding code deeply.
-- **Handles user creation**: authentication, and profile management.
-- **Test them with your**: specific codebase to see if they handle large files better.
-- **Use Copilot Labs -**: Microsoft's experimental features sometimes include performance improvements.
-
 ## Table of Contents
 
 - [Why Copilot Struggles with Large Python Files](#why-copilot-struggles-with-large-python-files)

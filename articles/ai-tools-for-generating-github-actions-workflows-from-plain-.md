@@ -18,15 +18,6 @@ voice-checked: true
 
 GitHub Actions has become the backbone of modern CI/CD pipelines, but writing workflow YAML files from scratch remains a friction point for many developers. The syntax is powerful but verbose, and translating your deployment intentions into correctly structured workflow files takes time. This is where AI tools step in, offering to translate plain English descriptions into working GitHub Actions configurations.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **For templated workflows in**: specific domains (Kubernetes deployments, npm publishing, security scanning), specialized tools provide curated templates that follow best practices for those use cases.
-- **Does GitHub offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-
 ## Table of Contents
 
 - [The Problem with Manual Workflow Creation](#the-problem-with-manual-workflow-creation)

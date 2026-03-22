@@ -17,19 +17,6 @@ tags: [ai-tools-compared, comparison, collaboration]
 
 Perplexity Spaces is a powerful feature that allows users to create shared research environments where teams can collaborate on searches, gather sources, and build knowledge bases together. Understanding the differences between Free and Pro plan limits is essential for choosing the right collaboration setup for your workflow.
 
-## Key Takeaways
-
-- **Free users can only**: share within their organization if the organization uses Perplexity's team features, but the functionality is limited compared to Pro.
-- **Search and Query Limits**: Free users face stricter rate limits on searches, which impacts collaborative research.
-- **Storage and History**: Free plan Spaces retain conversation history for only 7 days, limiting the ability to build long-term collaborative knowledge bases.
-- **Higher Query Limits**: Pro users receive approximately 300 searches per day, enabling intensive collaborative research without hitting rate limits.
-- **Member Limit Conflicts
-Problem**: New team members can't access Space
-Solution: Remove least-active member or upgrade
-
-### 3.
-- **Understanding the differences between**: Free and Pro plan limits is essential for choosing the right collaboration setup for your workflow.
-
 ## Table of Contents
 
 - [What Are Perplexity Spaces?](#what-are-perplexity-spaces)

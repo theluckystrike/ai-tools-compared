@@ -17,15 +17,6 @@ voice-checked: true
 
 This guide compares the strengths and weaknesses of each tool for this specific task. Choose the tool that best matches your workflow, budget, and technical requirements.
 
-## Key Takeaways
-
-- **Choose the tool that**: best matches your workflow, budget, and technical requirements.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-- **Use AI-generated tests as**: a starting point, then add cases that cover your unique requirements and failure modes.
-- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-- **Cursor excels here because**: you can have an ongoing conversation about your module's interface.
-- **Copilot and Cursor serve**: different strengths, so combining them can cover more use cases than relying on either one alone.
-
 ## Table of Contents
 
 - [Understanding the Core Differences](#understanding-the-core-differences)

@@ -20,20 +20,6 @@ Chain AI tools for automated review by using static analysis for syntax, AI for 
 
 Automated code review has evolved beyond simple linting rules. By chaining multiple AI tools together, you can create powerful pipelines that catch bugs, suggest improvements, and even apply fixes automatically. This guide shows you how to build an effective AI-powered code review and correction workflow.
 
-## Key Takeaways
-
-- **Automated Fixes**: Apply AI-suggested corrections for common issues automatically
-
-
-This separation keeps each tool focused on what it does best.
-- **AI Review**: Use an AI agent to analyze code logic, security concerns, and architectural issues
-
-3.
-- **Use the composer to**: run a review across selected files 3.
-- **A rate above 20%**: signals that prompts or tool configuration needs tuning.
-- **A pipeline that takes**: 15 minutes to run on a small PR will erode developer confidence faster than one that takes 3 minutes and catches 80% of the same issues.
-- **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

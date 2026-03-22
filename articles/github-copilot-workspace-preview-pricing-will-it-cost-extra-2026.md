@@ -18,19 +18,6 @@ intent-checked: true
 
 GitHub Copilot Workspace is currently available as a technical preview, and during this phase, it's free for eligible developers. However, once it exits preview and becomes generally available, Microsoft will likely introduce paid tiers. Based on GitHub's pricing patterns and industry speculation, here's what you need to know about Copilot Workspace pricing and whether it will cost extra in 2026.
 
-## Key Takeaways
-
-- **This would likely cost**: $19-30/month for individual developers, with organization pricing at $20-39/user/month.
-- **Use the Preview Now**: Test Workspace extensively while it's free
-
-2.
-- **If you have used**: the tool for at least 3 months and plan to continue, the annual discount usually makes sense.
-- **switching to Cursor) -**: Justifies $20/month subscription (vs.
-- **Provide Feedback**: GitHub uses preview feedback to shape pricing
-
-3.
-- **Is the annual plan**: worth it over monthly billing? Annual plans typically save 15-30% compared to monthly billing.
-
 ## Table of Contents
 
 - [What is GitHub Copilot Workspace?](#what-is-github-copilot-workspace)

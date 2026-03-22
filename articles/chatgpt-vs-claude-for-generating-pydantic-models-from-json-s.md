@@ -18,15 +18,6 @@ voice-checked: true
 
 Choose Claude if you need production-ready Pydantic models with field validators, docstrings, and Field configurations out of the box. Choose ChatGPT if you want quick, straightforward conversions for simple schemas or prototyping. Both handle basic JSON-to-Pydantic translation well, but Claude produces more code with fewer follow-up edits needed for complex schemas involving `$ref`, `allOf`, or nested objects.
 
-## Key Takeaways
-
-- **Choose Claude when you**: need production-ready code with thorough validation, better documentation, and fewer edge cases.
-- **Both handle basic JSON-to-Pydantic**: translation well, but Claude produces more code with fewer follow-up edits needed for complex schemas involving `$ref`, `allOf`, or nested objects.
-- **Claude handles `$ref` resolution**: more reliably and often generates cleaner inheritance patterns or composition.
-- **Choose Claude if you**: need production-ready Pydantic models with field validators, docstrings, and Field configurations out of the box.
-- **Choose ChatGPT if you want quick**: straightforward conversions for simple schemas or prototyping.
-- **It often anticipates additional**: validation needs and includes better docstrings and field descriptions.
-
 ## Table of Contents
 
 - [The Basic Task](#the-basic-task)

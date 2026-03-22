@@ -19,13 +19,6 @@ Claude Code hooks let you intercept and react to agent actions at runtime — be
 
 This guide covers all four hook types with practical implementations.
 
-## Key Takeaways
-
-- **For `PreToolUse`**: exit code `2` blocks the tool and feeds your stdout back to Claude as a rejection message.
-- **Topics covered**: hook types overview, configuration format, hook 1: pre-bash guard (blocks dangerous commands)
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-- **Use-case recommendations**: Specific guidance based on team size and requirements
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

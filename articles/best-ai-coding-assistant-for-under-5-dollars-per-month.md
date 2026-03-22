@@ -17,17 +17,6 @@ voice-checked: true
 
 Finding a capable AI coding assistant on a tight budget is entirely possible. Several tools offer solid functionality at $5 per month or less, with some providing generous free tiers that work well for individual developers. This guide evaluates practical options based on code generation quality, ease of use, IDE integration, and overall value for money.
 
-## Key Takeaways
-
-- **Several tools offer solid**: functionality at $5 per month or less, with some providing generous free tiers that work well for individual developers.
-- **A paid plan under**: $5 unlocks more requests, better context understanding, and advanced features like multi-file editing or enhanced debugging.
-- **Cursor Free Tier ($0)
-
-Cursor, built on VS Code, offers 2000 AI credits monthly on its free plan**: sufficient for moderate coding sessions.
-- **While the paid plans exceed $5**: the free tier provides meaningful functionality.
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **The $5 monthly budget**: opens up quality options without financial strain.
-
 ## Table of Contents
 
 - [Why Pay for AI Coding Assistants?](#why-pay-for-ai-coding-assistants)

@@ -17,21 +17,6 @@ intent-checked: true
 
 GraphQL resolver generation presents a specific challenge for AI tools: resolvers must balance correctness with performance, manage data loading patterns, and handle schema constraints. Unlike simple CRUD operations, resolvers require understanding of database queries, caching strategies, and N+1 problem prevention. Claude and Copilot handle these concerns differently, with Claude excelling at complex data patterns and Copilot providing faster inline completions for standard resolvers.
 
-## Key Takeaways
-
-- **Can I use these**: tools with a distributed team across time zones? Most modern tools support asynchronous workflows that work well across time zones.
-- **For a 30KB GraphQL schema analysis**: ~$0.10.
-- **N+1 Queries**: Generated resolvers fetch individually without DataLoader
- - Fix: Explicitly mention "Use DataLoader batching" in prompt
-
-2.
-- **Hardcoded Database Queries**: No ORM abstraction
- - Fix: Specify "Use Prisma" explicitly in prompt
-
-4.
-- **With a 10ms database latency**: that's 700ms vs 40ms response time.
-- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
-
 ## Table of Contents
 
 - [Why GraphQL Resolver Generation Differs From REST Endpoints](#why-graphql-resolver-generation-differs-from-rest-endpoints)

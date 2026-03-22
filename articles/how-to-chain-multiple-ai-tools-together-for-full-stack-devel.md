@@ -19,15 +19,6 @@ Effective multi-tool workflows use each AI tool's strengths: Cursor for file sca
 
 Modern full stack development involves numerous repetitive tasks across frontend, backend, and infrastructure layers. Rather than switching between AI tools manually, chaining them together creates automated pipelines that handle entire feature development cycles. This approach transforms isolated AI interactions into cohesive development workflows.
 
-## Key Takeaways
-
-- **JSON**: YAML, or clearly formatted text work best for pipeline integration.
-- **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
-- **Effective multi-tool workflows use**: each AI tool's strengths: Cursor for file scaffolding, Claude for complex reasoning, GitHub Copilot for inline completion, and specialized tools for testing.
-- **This specialization produces higher**: quality output than attempting to use a single tool for everything.
-- **Building pipelines that respect**: these boundaries produces dramatically better output.
-- **Use embeddings-based retrieval to**: identify which files matter.
-
 ## Table of Contents
 
 - [Understanding AI Tool Chaining](#understanding-ai-tool-chaining)

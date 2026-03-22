@@ -19,13 +19,6 @@ Pulumi's strength over Terraform is using real programming languages — but tha
 
 This guide tests Claude Code, GitHub Copilot, and Cursor on real Pulumi tasks in TypeScript.
 
-## Key Takeaways
-
-- **Most AI tools know**: AWS CDK better than Pulumi, which causes subtle errors: wrong import paths, missing `Output` type handling, and incorrect ComponentResource patterns.
-- **A common mistake because**: AWS CDK patterns dominate training data.
-- **Topics covered**: task 1: eks cluster with node groups, task 2: componentresource pattern, task 3: output handling
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-
 ## Table of Contents
 
 - [Task 1: EKS Cluster with Node Groups](#task-1-eks-cluster-with-node-groups)

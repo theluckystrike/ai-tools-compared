@@ -28,15 +28,6 @@ voice-checked: true
 
 Configuring AI coding tools effectively in large enterprise codebases requires strategic planning and ongoing optimization. When your project spans thousands of files across multiple languages and repositories, proper configuration directly impacts code suggestion quality, response times, and developer productivity. This guide covers practical approaches to get the most from your AI coding assistant.
 
-## Key Takeaways
-
-- **Strategies to work within**: context limits: Keep files focused. Files under 300 lines provide complete context to nearly every tool.
-- **Can I use these**: tools with a distributed team across time zones? Most modern tools support asynchronous workflows that work well across time zones.
-- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
-- **This guide covers practical**: approaches to get the most from your AI coding assistant.
-- **The solution involves helping**: your AI tool focus on what matters most.
-- **Use these strategically to**: improve suggestion quality: ```python # ai:context:api-handlers # This file handles all REST API endpoints for the payment service.
-
 ## Table of Contents
 
 - [Understanding Large Codebase Challenges](#understanding-large-codebase-challenges)

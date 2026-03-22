@@ -19,15 +19,6 @@ voice-checked: true
 
 Finding affordable AI tools requires understanding the true cost structure. This guide breaks down the pricing, feature differences, and hidden costs of GitHub Copilot Business versus Cursor Business so you can make an informed decision for your team.
 
-## Key Takeaways
-
-- **The full Business tier**: at $40/month adds enterprise compliance and admin controls that most teams with fewer than 50 developers do not need.
-- **If Cursor produces a 20% larger saving**: the $10/month premium ($120/year) is justified many times over.
-- **At $20/user/month**: Cursor Pro costs twice as much for comparable core features.
-- **The gap widens further**: when comparing Copilot Business to Cursor Business at $40/user/month.
-- **Copilot's organization-level controls are**: simpler and integrate directly into GitHub's existing admin interface, which most teams already use.
-- **For a 50-person engineering team, that gap represents $6,000 to $18,000 per year in additional spend for Cursor**: budget that could fund other tooling or headcount.
-
 ## Understanding the Pricing Models
 
 

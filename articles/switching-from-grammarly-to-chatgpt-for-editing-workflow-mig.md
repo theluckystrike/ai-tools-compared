@@ -17,15 +17,6 @@ tags: [ai-tools-compared, workflow, chatgpt]
 
 If you have been using Grammarly for writing assistance and want to explore ChatGPT as an alternative editing tool, this guide will help you migrate your workflow effectively. Both tools serve similar purposes but operate differently, and understanding these differences will help you transition smoothly.
 
-## Key Takeaways
-
-- **The free tier through**: chat.openai.com works for occasional editing but becomes limiting for heavy users.
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Does ChatGPT offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Use Grammarly for real-time**: feedback while drafting in your IDE or email client 2.
-- **Use ChatGPT for bulk**: editing of finished sections or entire documents 3.
-
 ## Table of Contents
 
 - [Why Consider ChatGPT for Editing](#why-consider-chatgpt-for-editing)

@@ -21,15 +21,6 @@ Kubernetes network policies control how pods communicate with each other and ext
 
 This guide shows you how to use AI tools effectively to generate Kubernetes network policies that actually work in production environments.
 
-## Key Takeaways
-
-- **user-service with label app=user-service,**: port 8080, communicates with database 4.
-- **order-service with label app=order-service,**: port 8080, communicates with user-service 5.
-- **The most reliable workflow**: for production: describe your architecture to Claude or GPT-4o in detail, generate a draft, then refine it in Cursor against your actual manifest files.
-- **This guide shows you**: how to use AI tools effectively to generate Kubernetes network policies that actually work in production environments.
-- **Prompting it to "include**: all required egress rules for service discovery" fixes most issues.
-- **GitHub Copilot (inline) is**: best for single-policy generation when you start typing the YAML structure.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)

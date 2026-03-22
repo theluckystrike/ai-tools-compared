@@ -17,13 +17,6 @@ tags: [ai-tools-compared]
 
 Retrieval-augmented generation solves the context window problem: instead of cramming your entire knowledge base into a prompt, you fetch only the relevant chunks at query time. Pinecone makes this fast at scale. This guide builds a working RAG chatbot from scratch — document ingestion, vector search, and a streaming FastAPI endpoint.
 
-## Key Takeaways
-
-- **Hallucination despite good retrieval**: The system prompt's "answer only from context" instruction works ~90% of the time.
-- **Prefer bullet points for**: lists of steps.
-- **This guide covers architecture overview**: prerequisites, step 1: document ingestion, with specific setup instructions
-- **Setup and configuration**: Step-by-step instructions included for each tool discussed
-
 ## Table of Contents
 
 - [Architecture Overview](#architecture-overview)

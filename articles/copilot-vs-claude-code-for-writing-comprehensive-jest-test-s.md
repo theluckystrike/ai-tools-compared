@@ -17,15 +17,6 @@ voice-checked: true
 
 Choose GitHub Copilot if you need fast inline test scaffolding for straightforward React components and prefer IDE-integrated suggestions. Choose Claude Code if you are writing test suites for complex applications, need help with advanced patterns like testing-library and MSW, or prefer iterative conversation-based test design. Copilot excels at speed for simple cases, while Claude Code produces more accurate tests for components with complex state, async flows, and context dependencies.
 
-## Key Takeaways
-
-- **For teams prioritizing test**: quality over speed, Claude's $20/month subscription often delivers better ROI despite higher pricing, since fewer manual fixes are needed on complex test suites.
-- **Measure actual time savings**: after 4-6 weeks of use The best tool for your team depends on your specific code patterns, testing philosophy, and available time for learning curve vs.
-- **Claude Code (via Claude**: API or Claude.ai Pro at $20/month) offers different pricing tiers.
-- **Choose GitHub Copilot if**: you need fast inline test scaffolding for straightforward React components and prefer IDE-integrated suggestions.
-- **Claude-generated tests typically show**: 30-40% fewer flaky failures.
-- **Create a "test template"**: showing your preferred patterns 4.
-
 ## Table of Contents
 
 - [Understanding the Test Writing Challenge](#understanding-the-test-writing-challenge)

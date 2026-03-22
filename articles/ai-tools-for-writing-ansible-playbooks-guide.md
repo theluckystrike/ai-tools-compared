@@ -17,13 +17,6 @@ tags: [ai-tools-compared]
 
 Ansible is one of the domains where AI tools diverge most sharply from each other. Writing correct Ansible means understanding idempotency, knowing which modules handle their own idempotency vs which need `when` guards, and generating Jinja2 templates that don't silently fail. This guide tests Claude Code, GitHub Copilot, and Cursor on real playbook tasks.
 
-## Key Takeaways
-
-- **Writing correct Ansible means**: understanding idempotency, knowing which modules handle their own idempotency vs which need `when` guards, and generating Jinja2 templates that don't silently fail.
-- **Topics covered**: task 1: deploy a web app with nginx and systemd, task 2: jinja2 templates, task 3: vault-encrypted secrets
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-- **Use-case recommendations**: Specific guidance based on team size and requirements
-
 ## Task 1: Deploy a Web App with Nginx and Systemd
 
 **Prompt:** "Write an Ansible role that deploys a Python FastAPI app with nginx as a reverse proxy and systemd as the process manager. Should be idempotent."
