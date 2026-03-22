@@ -26,6 +26,8 @@ A Copilot Extension is a GitHub App that receives conversation messages and retu
 - `@runbook` — Execute runbooks or check system status
 - `@review` — Apply custom code review rules beyond what Copilot knows
 
+The key architectural point: your extension runs your own backend code. You choose the LLM, the data sources, and the business logic. GitHub handles the user interface (Copilot Chat in VS Code, JetBrains, github.com) and passes messages to your endpoint.
+
 ## Prerequisites
 
 - GitHub account with Copilot access (Individual, Business, or Enterprise)
@@ -218,6 +220,54 @@ ngrok http 3000
 # Update your GitHub App's Agent URL to https://abc123.ngrok.io/agent
 ```
 
+## Step 7: Error Handling and Resilience
+
+Production extensions need to handle failures gracefully. The critical rule: never close the SSE connection with an HTTP error code after you've started streaming. Once you send headers and the acknowledgment event, return errors as text events instead:
+
+```javascript
+app.post('/agent', async (req, res) => {
+  const { isValidRequest, payload } = await verifyAndParseRequest(
+    req.body,
+    req.headers['github-public-key-identifier'],
+    req.headers['github-public-key-signature'],
+    { token: req.headers['x-github-token'] }
+  );
+
+  if (!isValidRequest) {
+    res.status(401).send('Unauthorized');
+    return;
+  }
+
+  res.setHeader('Content-Type', 'text/event-stream');
+  res.setHeader('Cache-Control', 'no-cache');
+  res.write(createAckEvent());
+
+  try {
+    await streamResponse(res, payload.messages);
+  } catch (err) {
+    // Report the error as a message rather than dropping the connection
+    console.error('Extension error:', err);
+    res.write(createTextEvent(`\n\nError: ${err.message}. Please try again.`));
+    res.write(createDoneEvent());
+    res.end();
+  }
+});
+```
+
+Add a timeout wrapper around your LLM calls. Copilot has its own timeout, but if your backend hangs, users see a spinner indefinitely:
+
+```javascript
+async function withTimeout(promise, ms = 25000) {
+  const timeout = new Promise((_, reject) =>
+    setTimeout(() => reject(new Error('Request timed out')), ms)
+  );
+  return Promise.race([promise, timeout]);
+}
+
+// Usage:
+const responseText = await withTimeout(generateResponse(lastMessage, messages));
+```
+
 ## Testing the Extension
 
 Once deployed and installed, invoke your extension in VS Code Copilot Chat:
@@ -228,6 +278,43 @@ Once deployed and installed, invoke your extension in VS Code Copilot Chat:
 ```
 
 The `@workspace` reference passes your current open files as context.
+
+### Testing Locally Before Deployment
+
+Use a test script to simulate Copilot's request format without needing ngrok:
+
+```javascript
+// test-extension.js
+import { createHmac } from 'crypto';
+
+async function testExtension(message) {
+  const body = JSON.stringify({
+    messages: [{ role: 'user', content: message }],
+    copilot_thread_id: 'test-thread-123'
+  });
+
+  // For local testing, bypass signature verification or use a test secret
+  const response = await fetch('http://localhost:3000/agent', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-github-token': process.env.TEST_GITHUB_TOKEN
+    },
+    body
+  });
+
+  // Read SSE stream
+  const reader = response.body.getReader();
+  const decoder = new TextDecoder();
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    process.stdout.write(decoder.decode(value));
+  }
+}
+
+testExtension('What are the deployment steps?');
+```
 
 ## Deployment Checklist
 
@@ -252,6 +339,42 @@ const limiter = rateLimit({
 app.use('/agent', limiter);
 ```
 
+
+## Choosing the Right LLM Backend
+
+Your extension isn't locked to any single model. The choice of backend LLM affects cost, latency, and quality in ways that matter at production scale.
+
+| Backend | Strengths | Latency | Cost (approx) |
+|---|---|---|---|
+| Claude Haiku | Fast, cheap, good for short answers | ~300ms TTFT | Low |
+| Claude Sonnet | Balanced quality and speed | ~600ms TTFT | Medium |
+| GPT-4o | Strong at code generation | ~500ms TTFT | Medium |
+| Local (Ollama) | No data leaves your network | ~1-2s TTFT | Infrastructure cost only |
+
+For most internal tooling extensions (docs bots, runbook executors), Claude Haiku provides sufficient quality at low latency. Reserve Sonnet or GPT-4o for extensions that need to reason through complex problems or generate production code.
+
+If your organization has data residency requirements, route requests to a self-hosted model via Ollama or a private model deployment. The streaming interface your extension exposes to GitHub remains identical regardless of your backend:
+
+```javascript
+// Swap backends without changing the streaming interface
+async function generateResponse(messages, backend = 'claude-haiku') {
+  if (backend === 'local') {
+    return streamFromOllama(messages);
+  }
+  return streamFromAnthropic(messages);
+}
+```
+
+## Publishing Your Extension
+
+Once your extension works locally and passes testing, you can publish it to the GitHub Marketplace so other organizations can install it. The publication process requires:
+
+1. Your extension must pass GitHub's review process (typically 1-2 weeks)
+2. You need a verified GitHub organization account
+3. Provide a privacy policy URL covering how you handle conversation data
+4. Set a pricing model (free, paid per seat, or usage-based)
+
+For internal tools, skip marketplace publication entirely — install the GitHub App directly on your organization and distribute it via your internal developer portal.
 
 ## Related Articles
 
