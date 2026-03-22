@@ -31,6 +31,15 @@ voice-checked: true---
 
 Claude generates clean, idiomatic Go error handling with proper error wrapping using `errors.Is()` and `errors.As()`, while ChatGPT sometimes suggests older patterns. Choose Claude for Go error wrapping; it understands Go 1.13+ error handling semantics consistently. This guide compares AI assistants' ability to generate production-ready error handling patterns in Go.
 
+## Key Takeaways
+
+- **It recognizes when to**: use sentinel errors versus custom error types, and it applies the `%w` verb correctly for wrapping errors with additional context.
+- **It understands the nuances**: of Go's error wrapping verbs (`%w` versus `%v`), correctly implements the `Unwrap()` methods, and generates idiomatic error handling that follows Go best practices.
+- **Choose Claude for Go**: error wrapping; it understands Go 1.13+ error handling semantics consistently.
+- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
+- **For error handling**: the chat mode works well when you need to discuss error strategy or get recommendations on structuring your error types.
+- **Using %v instead of %w**: AI sometimes suggests `fmt.Errorf("error: %v", err)` instead of `%w`.
+
 ## Why Error Handling Patterns Matter in Go
 
 Go's `error` interface is minimal—just a single method returning a string. Yet this simplicity enables powerful patterns when combined with the language's built-in wrapping capabilities. Sentinel errors (predefined error values for comparison) and error wrapping (preserving context through the call stack) are essential for building maintainable Go applications.

@@ -13,9 +13,20 @@ score: 9
 voice-checked: true
 intent-checked: true---
 
+
 Memory leaks are invisible killers: your app runs fine for hours, then crashes at 4 AM when heap exhaustion finally triggers an OOM. Traditional debugging (reading memory graphs, profiler output, heap dump analysis) requires both expertise and patience. AI tools can accelerate this massively, but only if you give them the right input and know which tools excel at which languages.
 
 We tested Claude 3.5 Sonnet, GitHub Copilot, and Cursor on real memory leak scenarios across Node.js, Python, and Java. We used actual heap snapshots, profiler output, and stack traces—not synthetic examples.
+
+## Key Takeaways
+
+- **Truncate to the most**: relevant references (use a profiler UI first to identify hotspots).
+- **Python**: Circular reference in a long-running asyncio service (memory grows 2% per request)
+3.
+- **Tool input**: We took a Chrome DevTools heap snapshot (7MB JSON), truncated to the most relevant section (object growth), and pasted it into each tool.
+- **Each listener is a**: closure capturing scope; once you have 1,000, GC can't compact aggressively." Copilot provided generic advice: "Use heap profilers.
+- **Historical patterns**: Tools are weak at "this process has been running 30 days and memory never stabilized, what's the typical culprit?" Better to keep a runbook.
+- **Document**: Add test case to your CI that detects this leak in future (e.g., heap shouldn't grow >10% over 1 hour of sustained traffic).
 
 ## Test Setup
 
