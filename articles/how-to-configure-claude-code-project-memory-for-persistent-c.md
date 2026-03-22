@@ -27,6 +27,9 @@ Claude Code project memory works through several mechanisms that persist context
 Project memory serves three main purposes. First, it stores coding conventions your team follows, such as naming patterns, file organization rules, and testing requirements. Second, it documents project-specific configurations, including build processes, dependency management, and deployment procedures. Third, it captures architectural decisions and rationale that new team members or future sessions need to understand.
 
 
+Claude Code also supports a global `~/.claude/CLAUDE.md` file for preferences that apply across every project — things like your preferred code style, default language, or personal shortcuts you always want available. Project-level `CLAUDE.md` files take precedence over the global one when both exist.
+
+
 ## Creating Your CLAUDE.md File
 
 
@@ -73,6 +76,19 @@ Add coding conventions that should persist across all sessions:
 - Use @testing-library/react for component tests
 - Minimum 80% coverage for business logic
 ```
+
+
+## What to Include for Maximum Usefulness
+
+
+The most effective CLAUDE.md files go beyond naming conventions. Include context that Claude Code cannot infer from the code alone:
+
+- **Why decisions were made**: "We use Zustand instead of Redux because the team found Redux DevTools overhead slowed down hot reload in development."
+- **What to avoid**: "Do not add `console.log` statements — our CI pipeline fails on them. Use the `logger` utility instead."
+- **Common gotchas**: "The `useAuth` hook must be called inside an `<AuthProvider>` — missing this causes a silent null reference."
+- **Shortcuts Claude should know**: "Run `npm run dev:mock` to start the server with mock API responses. Use this when the backend is unavailable."
+
+This type of contextual information prevents Claude Code from making technically correct but project-inappropriate suggestions.
 
 
 ## Configuring Multiple Memory Files
@@ -141,6 +157,9 @@ Reference these checks in your CLAUDE.md:
 ```
 
 
+When Claude Code generates commit messages, it will follow this format because it is documented in project memory. This creates consistency between AI-assisted and human-written commits without extra prompting.
+
+
 ## Team-Wide Project Memory
 
 
@@ -207,6 +226,17 @@ Create a new service for handling notifications following our testing convention
 ```
 
 
+## Keeping CLAUDE.md Maintainable Over Time
+
+
+A CLAUDE.md file that grows without structure becomes harder for Claude Code to use effectively. Follow these practices to keep it useful:
+
+- **Date significant decisions**: Add `<!-- Added 2026-01 -->` comments on architectural decisions so the team knows how old they are.
+- **Remove obsolete sections**: When you migrate away from a tool or pattern, delete its section. Stale instructions confuse Claude Code just as they confuse new developers.
+- **Use headers consistently**: Claude Code parses the document top-to-bottom; clear H2 headers let it find relevant sections quickly.
+- **Keep it under 500 lines**: Very long CLAUDE.md files dilute the signal. If yours exceeds 500 lines, move deep-dive docs to referenced files and summarize in CLAUDE.md.
+
+
 ## Troubleshooting Project Memory
 
 
@@ -219,6 +249,9 @@ For persistent issues, explicitly reference the memory file in your prompt:
 ```
 Using the conventions in CLAUDE.md, create a new component
 ```
+
+
+You can also ask Claude Code directly: "What does CLAUDE.md say about our naming conventions?" This confirms whether the file is being read correctly before you invest time debugging a phantom issue.
 
 
 ## Advanced: Dynamic Project Memory
