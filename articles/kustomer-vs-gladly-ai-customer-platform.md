@@ -27,7 +27,17 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 Choose Kustomer if you need fine-grained API control over conversation workflows, ticket-based metrics and reporting, or custom AI response flows built on explicit conversation lifecycle events. Choose Gladly if you prefer a people-centric model with continuous conversation threads, want minimal integration development effort, or need strong voice channel support. Kustomer thinks in tickets with an unified timeline, while Gladly organizes everything around the person rather than individual interactions.
+
+## Key Takeaways
+
+- **Choose Gladly if you**: prefer a people-centric model with continuous conversation threads, want minimal integration development effort, or need strong voice channel support.
+- **Gladly suits teams where**: continuous conversation threads match their service model, voice channel integration is a priority, and the team prefers configuration over custom code.
+- **Gladly ships with native**: PSTN voice support, meaning agents handle phone calls directly inside the same workspace they use for chat and email.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+- **Choose Kustomer if you**: need fine-grained API control over conversation workflows, ticket-based metrics and reporting, or custom AI response flows built on explicit conversation lifecycle events.
 
 ## Platform Architecture Overview
 
