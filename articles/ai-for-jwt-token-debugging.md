@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /ai-for-jwt-token-debugging/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, troubleshooting, artificial-intelligence]
@@ -221,6 +221,60 @@ This is a production API. Users are getting 401s after a deploy. What happened a
 ```
 
 Claude will identify this as a key rotation without cache invalidation and provide the mitigation: extend JWKS cache TTL but add an explicit re-fetch on `kid` mismatch, then force re-auth for affected sessions.
+
+## Debugging Clock Skew and Expiry Issues
+
+Clock skew between services causes intermittent `jwt expired` and `jwt not active` errors that are hard to reproduce. Claude generates a diagnostic script:
+
+```python
+# check_jwt_timing.py — analyze exp/iat/nbf claims against current time
+import base64
+import json
+import sys
+import time
+from datetime import datetime, timezone
+
+def analyze_jwt_timing(token: str) -> None:
+    parts = token.split('.')
+    padding = 4 - len(parts[1]) % 4
+    if padding != 4:
+        parts[1] += '=' * padding
+
+    payload = json.loads(base64.urlsafe_b64decode(parts[1]))
+    now = time.time()
+
+    print(f"Current server time: {datetime.fromtimestamp(now, tz=timezone.utc).isoformat()}")
+    print(f"Current unix ts:     {now:.0f}")
+    print()
+
+    for claim in ['iat', 'exp', 'nbf']:
+        if claim in payload:
+            ts = payload[claim]
+            dt = datetime.fromtimestamp(ts, tz=timezone.utc).isoformat()
+            delta = ts - now
+            status = ""
+            if claim == 'exp':
+                status = "EXPIRED" if delta < 0 else f"expires in {delta:.0f}s"
+            elif claim == 'nbf':
+                status = "NOT YET VALID" if delta > 0 else "valid"
+            elif claim == 'iat':
+                status = f"issued {abs(delta):.0f}s {'ago' if delta < 0 else 'in the future (clock skew!)'}"
+            print(f"{claim}: {ts} ({dt}) — {status}")
+
+if __name__ == "__main__":
+    token = sys.argv[1] if len(sys.argv) > 1 else input("Paste token: ").strip()
+    analyze_jwt_timing(token)
+```
+
+When `iat` is in the future by more than a second or two, that indicates the issuing server's clock is ahead of the validating server. The fix is NTP sync, but the short-term workaround is adding a `clockTolerance` option:
+
+```javascript
+// jsonwebtoken: allow up to 30 seconds of clock skew
+jwt.verify(token, secret, {
+  algorithms: ['RS256'],
+  clockTolerance: 30,  // seconds
+});
+```
 
 ## Claim Validation Errors Reference
 

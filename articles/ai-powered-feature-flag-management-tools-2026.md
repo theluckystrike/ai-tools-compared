@@ -287,6 +287,107 @@ export function isKillSwitchActive(
 
 Usage: set `KILL_CHECKOUT_V2=true` in ECS/K8s environment without redeploying to instantly disable the `checkout-v2` flag for all users.
 
+## Flag Configuration File Format
+
+A JSON flags file pairs with the Go provider above. Claude generates realistic example config:
+
+```json
+{
+  "checkout-v2": {
+    "enabled": true,
+    "defaultValue": false,
+    "rules": [
+      {
+        "type": "userId",
+        "values": ["user_001", "user_002", "user_003"],
+        "returnValue": true
+      },
+      {
+        "type": "percentageRollout",
+        "percentage": 20.0,
+        "returnValue": true
+      }
+    ]
+  },
+  "new-dashboard": {
+    "enabled": true,
+    "defaultValue": false,
+    "rules": [
+      {
+        "type": "userSegment",
+        "values": ["beta", "internal"],
+        "returnValue": true
+      },
+      {
+        "type": "always",
+        "returnValue": false
+      }
+    ]
+  },
+  "dark-mode": {
+    "enabled": true,
+    "defaultValue": true,
+    "rules": []
+  }
+}
+```
+
+This format is small, portable, and easy to diff in pull requests. For larger teams, store it in a database and expose a config endpoint — the file provider above can be swapped for an HTTP provider with the same interface.
+
+## Hot-Reload Without Restart
+
+The file provider above re-reads on every call (with a lock). A better production pattern watches the file using `fsnotify`:
+
+```go
+// flagprovider/hot_reload.go
+package flagprovider
+
+import (
+    "log"
+
+    "github.com/fsnotify/fsnotify"
+)
+
+func (p *FileProvider) WatchAndReload() error {
+    watcher, err := fsnotify.NewWatcher()
+    if err != nil {
+        return err
+    }
+
+    if err := watcher.Add(p.path); err != nil {
+        return err
+    }
+
+    go func() {
+        defer watcher.Close()
+        for {
+            select {
+            case event, ok := <-watcher.Events:
+                if !ok {
+                    return
+                }
+                if event.Has(fsnotify.Write) || event.Has(fsnotify.Create) {
+                    if err := p.reload(); err != nil {
+                        log.Printf("flag reload error: %v", err)
+                    } else {
+                        log.Printf("flags reloaded from %s", p.path)
+                    }
+                }
+            case err, ok := <-watcher.Errors:
+                if !ok {
+                    return
+                }
+                log.Printf("watcher error: %v", err)
+            }
+        }
+    }()
+
+    return nil
+}
+```
+
+Call `p.WatchAndReload()` once at startup and the provider will pick up flag changes within milliseconds of the file being written — useful for pushing flag changes via ConfigMap updates in Kubernetes without restarting pods.
+
 ## Flag Audit Log Schema
 
 Claude also generates useful schema for tracking flag changes:
@@ -306,6 +407,62 @@ CREATE TABLE feature_flag_events (
 CREATE INDEX ON feature_flag_events (flag_key, created_at DESC);
 CREATE INDEX ON feature_flag_events (changed_by, created_at DESC);
 ```
+
+## Testing Flag Logic
+
+AI tools also help write tests for flag evaluation edge cases. Claude generates table-driven tests in Go:
+
+```go
+// flagprovider/file_provider_test.go
+package flagprovider
+
+import (
+    "encoding/json"
+    "os"
+    "testing"
+)
+
+func TestPercentageRollout(t *testing.T) {
+    cases := []struct {
+        userID  string
+        wantIn  bool // should this user be in the 20% rollout?
+    }{
+        {"user_stable_001", true},   // pre-verified: falls in < 20%
+        {"user_stable_999", false},  // pre-verified: falls in >= 20%
+    }
+
+    flags := map[string]FlagDefinition{
+        "test-flag": {
+            Enabled:      true,
+            DefaultValue: false,
+            Rules: []EvaluationRule{
+                {Type: "percentageRollout", Percentage: 20.0, ReturnValue: true},
+            },
+        },
+    }
+
+    f, _ := os.CreateTemp("", "flags-*.json")
+    json.NewEncoder(f).Encode(flags)
+    f.Close()
+
+    provider, _ := NewFileProvider(f.Name())
+
+    for _, tc := range cases {
+        got := percentageHash(tc.userID) < 20.0
+        if got != tc.wantIn {
+            t.Errorf("userID %q: expected in=%v got in=%v", tc.userID, tc.wantIn, got)
+        }
+    }
+}
+```
+
+Testing deterministic hash behavior is critical — if the hash function ever changes, rollout assignments shift for all users, potentially exposing half your user base to a feature simultaneously.
+
+## Which AI Tool Performs Best
+
+For flag management tasks, Claude outperforms GPT-4o on three dimensions. First, it generates type-safe schemas without being prompted for strictness — the discriminated union `TargetingRule` type appeared unprompted. Second, Claude handles concurrency correctly in Go: it uses `sync.RWMutex` instead of a plain `sync.Mutex`, which matters under high read load. Third, when asked about kill switch design, Claude's first instinct is the env-var-wins pattern rather than a database check — correctly prioritizing zero-latency reads over consistency for emergency shutoff.
+
+GPT-4o tends to reach for third-party SDKs (LaunchDarkly, Unleash) rather than showing the underlying mechanics. That's practical for production but unhelpful when you need to understand the evaluation logic or build a custom provider.
 
 ## Related Reading
 

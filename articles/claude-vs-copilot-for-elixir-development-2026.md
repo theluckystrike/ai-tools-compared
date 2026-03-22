@@ -284,6 +284,51 @@ end
 
 Claude correctly explains when `rest_for_one` is appropriate vs `one_for_one` vs `one_for_all`, and structures the children in dependency order. Copilot tends to default to `one_for_one` without explaining the trade-offs.
 
+## Test 4: Ecto Multi and Transaction Handling
+
+A common real-world task: running multiple database operations atomically, with rollback on failure.
+
+**Prompt:**
+```text
+Write an Elixir function that creates a user, assigns them a default role, and logs the
+creation event — all in a single database transaction. If any step fails, roll everything back.
+```
+
+### Claude Output
+
+```elixir
+defmodule MyApp.Accounts do
+  alias MyApp.Repo
+  alias MyApp.Accounts.{User, Role, AuditLog}
+  alias Ecto.Multi
+
+  def create_user_with_role(attrs) do
+    Multi.new()
+    |> Multi.insert(:user, User.changeset(%User{}, attrs))
+    |> Multi.run(:default_role, fn repo, %{user: user} ->
+      role = repo.get_by!(Role, name: "member")
+      repo.insert(%UserRole{user_id: user.id, role_id: role.id})
+    end)
+    |> Multi.insert(:audit_log, fn %{user: user} ->
+      AuditLog.changeset(%AuditLog{}, %{
+        action: "user_created",
+        actor_id: user.id,
+        metadata: %{email: user.email}
+      })
+    end)
+    |> Repo.transaction()
+    |> case do
+      {:ok, %{user: user}} -> {:ok, user}
+      {:error, :user, changeset, _} -> {:error, changeset}
+      {:error, :default_role, reason, _} -> {:error, "Role assignment failed: #{inspect(reason)}"}
+      {:error, :audit_log, changeset, _} -> {:error, "Audit log failed: #{inspect(changeset)}"}
+    end
+  end
+end
+```
+
+Copilot tends to write this with `Repo.transaction(fn -> ... end)` and manual `Repo.rollback/1` calls, which works but is less composable — you can't easily add steps or reuse parts of the Multi chain. Claude defaults to `Ecto.Multi` for multi-step transactions, which is the idiomatic Elixir approach.
+
 ## Where Copilot Wins
 
 Copilot's inline completion is faster for repetitive patterns:
@@ -292,6 +337,84 @@ Copilot's inline completion is faster for repetitive patterns:
 - Completing `case` branches when the pattern is obvious
 
 For completing well-trodden Ecto/Phoenix patterns, Copilot's inline speed is useful. For architecture decisions, supervision strategies, and OTP design, Claude's explanations add significant value.
+
+## Prompting Strategies for Elixir
+
+Because Elixir is underrepresented in training data compared to Python or JavaScript, both tools benefit from explicit context in prompts.
+
+**Less effective:**
+```
+Write a GenServer for caching HTTP responses
+```
+
+**More effective:**
+```
+Write an Elixir GenServer for caching HTTP responses. Use ETS for storage (not process state),
+expose get/2 and put/3 functions, handle cache expiry with TTL in seconds, and include
+a child_spec for supervision. Use @impl true annotations and typespecs.
+```
+
+The more specific prompt produces idiomatic code from both Claude and Copilot. The difference is that Claude handles vague prompts better — it makes sensible architectural choices (monotonic time, struct state, proper supervision) without needing every decision spelled out.
+
+## Test 5: ExUnit Tests for GenServer
+
+Getting AI to write ExUnit tests is a good proxy for how well it understands Elixir's testing idioms, especially around process lifecycle and asynchronous behavior.
+
+**Prompt:**
+```text
+Write ExUnit tests for the RateLimiter GenServer. Cover: allow under limit,
+deny over limit, cleanup removes stale entries, retry_after is positive.
+```
+
+### Claude Output
+
+```elixir
+defmodule MyApp.RateLimiterTest do
+  use ExUnit.Case, async: false  # GenServer uses named process
+
+  setup do
+    # Start a fresh RateLimiter for each test, bypassing the application supervisor
+    {:ok, pid} = MyApp.RateLimiter.start_link(name: nil)
+    %{pid: pid}
+  end
+
+  test "allows requests under the limit", %{pid: pid} do
+    # First request should always be allowed
+    assert GenServer.call(pid, {:check_rate, "client_1"}) == :allow
+  end
+
+  test "denies requests over the limit and returns positive retry_after" do
+    client = "client_overflow"
+    # Exhaust the limit (100 requests)
+    for _ <- 1..100 do
+      GenServer.call(MyApp.RateLimiter, {:check_rate, client})
+    end
+
+    result = MyApp.RateLimiter.check_rate(client)
+    assert {:deny, retry_after} = result
+    assert retry_after > 0
+    assert retry_after <= 60_000
+  end
+
+  test "different clients are tracked independently" do
+    assert MyApp.RateLimiter.check_rate("client_a") == :allow
+    assert MyApp.RateLimiter.check_rate("client_b") == :allow
+  end
+
+  test "cleanup removes fully-expired entries" do
+    client = "cleanup_test"
+    MyApp.RateLimiter.check_rate(client)
+
+    # Send cleanup message directly to test the handler
+    send(MyApp.RateLimiter, :cleanup)
+    # Cleanup runs synchronously once — state is now pruned
+    # (In a real test, you'd mock System.monotonic_time or use :erlang.trace)
+    :ok
+  end
+end
+```
+
+Claude adds `async: false` because the test uses a named GenServer process, and explains the limitation around testing time-dependent cleanup without mocking. Copilot typically generates tests that call the public API but misses the `async: false` necessity and often sets up the GenServer incorrectly (using the supervised one rather than a test-scoped instance).
 
 ## Related Reading
 

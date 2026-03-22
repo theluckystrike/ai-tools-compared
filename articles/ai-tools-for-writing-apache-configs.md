@@ -216,6 +216,101 @@ RewriteRule ^ index.html [L]
 
 Claude notes that the CSP nonce requires server-side generation and suggests a PHP snippet or Apache module for dynamic nonce injection.
 
+## Task 5: Rate Limiting and IP-Based Access Control
+
+A common need for APIs and admin panels: rate limiting by IP using `mod_ratelimit` and `mod_evasive`, plus granular IP-based access control.
+
+**Prompt:** "Configure Apache to rate limit the /api/ endpoint to 100 req/s per IP, block known bad IPs, and allow the /admin/ path only from a specific subnet."
+
+**Claude:**
+
+```apache
+# Rate limiting — requires: a2enmod ratelimit
+
+<Location /api/>
+    # Limit response rate to 100KB/s per connection (mod_ratelimit)
+    SetOutputFilter RATE_LIMIT
+    SetEnv rate-limit 100
+
+    # mod_evasive settings (if installed)
+    DOSHashTableSize    3097
+    DOSPageCount        10
+    DOSSiteCount        100
+    DOSPageInterval     1
+    DOSSiteInterval     1
+    DOSBlockingPeriod   60
+</Location>
+
+# IP allowlist for admin panel — only internal subnet + VPN
+<Location /admin/>
+    Require ip 10.0.0.0/8
+    Require ip 192.168.1.0/24
+    Require ip 203.0.113.42    # ops workstation static IP
+</Location>
+
+# Blocklist specific IPs (load from file for large lists)
+<RequireAll>
+    Require all granted
+    Require not ip 198.51.100.1
+    Require not ip 198.51.100.2
+</RequireAll>
+```
+
+For large blocklists (thousands of IPs), Claude recommends using `mod_authz_host` with an external file or switching to fail2ban integration rather than inline Apache config, which would become unmanageable.
+
+GPT-4 produces similar rate limiting config but sometimes uses the deprecated `mod_bandwidth` or forgets to mention the `a2enmod` commands needed to activate modules.
+
+## Task 6: .htaccess for WordPress Multisite
+
+WordPress Multisite has specific rewrite requirements that differ from single-site WordPress. This is a common source of AI config errors.
+
+**Prompt:** "Write .htaccess rules for WordPress Multisite in subdirectory mode."
+
+**Claude's output:**
+
+```apache
+# WordPress Multisite — subdirectory mode
+# /var/www/wordpress/.htaccess
+
+# Protect wp-config.php
+<Files wp-config.php>
+    Require all denied
+</Files>
+
+# Protect .htaccess itself
+<Files .htaccess>
+    Require all denied
+</Files>
+
+Options -Indexes
+
+# BEGIN WordPress Multisite
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+
+# Uploaded files — must come before the main WP rules
+RewriteRule ^([_0-9a-zA-Z-]+/)?files/(.+) wp-includes/ms-files.php?file=$2 [L]
+
+# Add trailing slash to /wp-admin
+RewriteRule ^([_0-9a-zA-Z-]+/)?wp-admin$ $1wp-admin/ [R=301,L]
+
+# Don't rewrite real files or directories
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Rewrite network subsites
+RewriteRule ^([_0-9a-zA-Z-]+/)?(wp-(content|admin|includes).*) $2 [L]
+RewriteRule ^([_0-9a-zA-Z-]+/)?(.*\.php)$ $2 [L]
+
+# Route everything else through index.php
+RewriteRule . index.php [L]
+# END WordPress Multisite
+```
+
+GPT-4 often generates the single-site WordPress rules and misses the `ms-files.php` upload handling rule, which breaks media uploads on subsites.
+
 ## Tool Comparison
 
 | Task | Claude | GPT-4 | Copilot |
@@ -224,8 +319,29 @@ Claude notes that the CSP nonce requires server-side generation and suggests a P
 | mod_rewrite for SPA | Correct (no leading slash bug) | Sometimes buggy | No |
 | Load balancer config | Excellent — leastconn, health checks | Good | No |
 | Security headers | Excellent — COEP/COOP included | Good | No |
+| Rate limiting config | Strong — recommends fail2ban for scale | Good | No |
+| WordPress Multisite | Includes ms-files.php rule | Misses multisite rules | No |
 | .htaccess password protection | Strong | Strong | Moderate |
 | mod_wsgi for Python | Strong | Strong | No |
+
+## Module Activation Cheat Sheet
+
+One consistently useful pattern: Claude always includes the `a2enmod` commands needed to activate referenced modules. Both GPT-4 and Copilot sometimes skip this, leaving you with configs that silently do nothing because the module isn't loaded.
+
+```bash
+# Enable all modules referenced in this guide
+sudo a2enmod rewrite ssl headers proxy proxy_http proxy_balancer \
+             lbmethod_byleastconn ratelimit
+
+# Verify modules are loaded
+apache2ctl -M | sort
+
+# Test config before reloading
+apache2ctl configtest
+
+# Reload without dropping connections
+sudo systemctl reload apache2
+```
 
 ## Related Reading
 
