@@ -31,14 +31,24 @@ Three AI-specific reasons:
 - **Partial completion**: Prefect tasks cache results, so a failed pipeline resumes from where it stopped
 - **Concurrency control**: Limit parallel LLM calls without writing a semaphore
 
-## Setup
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Set Up
 
 ```bash
 pip install prefect anthropic openai pinecone-client
 prefect server start  # Local server, or use Prefect Cloud
 ```
 
-## Pipeline 1: Document Ingestion for RAG
+### Step 2: Pipeline 1: Document Ingestion for RAG
 
 ```python
 # ingestion_pipeline.py
@@ -201,7 +211,7 @@ def ingest_documents(
     return total_upserted
 ```
 
-## Pipeline 2: LLM Batch Processing with Evaluation
+### Step 3: Pipeline 2: LLM Batch Processing with Evaluation
 
 ```python
 # evaluation_pipeline.py
@@ -271,7 +281,7 @@ def generate_report(evaluations: list[dict]) -> str:
 - Total output tokens: {total_output:,}
 - Estimated cost: ${(total_input * 0.000003 + total_output * 0.000015):.4f}
 
-## Results
+### Step 4: Results
 
 | ID | Score | Reason |
 |---|---|---|
@@ -312,7 +322,7 @@ def evaluate_batch(
     return evaluations
 ```
 
-## Scheduled Daily Pipeline
+### Step 5: Scheduled Daily Pipeline
 
 ```python
 # schedule_pipeline.py
@@ -337,7 +347,7 @@ if __name__ == "__main__":
     print("Deployment created. Run: prefect worker start --pool default")
 ```
 
-## Concurrency Limits (Rate Limit Management)
+### Step 6: Concurrency Limits (Rate Limit Management)
 
 ```python
 # prefect_concurrency_limits.py
@@ -359,6 +369,21 @@ def rate_limited_claude_call(prompt: str) -> str:
         )
     return response.content[0].text
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

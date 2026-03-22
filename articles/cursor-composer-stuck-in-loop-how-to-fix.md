@@ -41,13 +41,23 @@ To fix Cursor Composer stuck in a loop, clear the Cursor cache (Cmd+Shift+P > "C
 The most productive approach treats Composer issues as software debugging problems.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
-## Understanding the Problem
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Problem
 
 When Cursor Composer gets stuck in a loop, you might notice it repeatedly suggesting the same changes, cycling through code generations, or failing to complete a task that should be straightforward. The issue typically stems from a few common causes: context window overflow, conflicting project configurations, corrupted cache files, or unexpected API responses.
 
 Before attempting any fixes, save your current work. Close any open files in Cursor that you have not saved, because some troubleshooting steps may require a complete restart of the application.
 
-## Step-by-Step Fixes
+### Step 2: Step-by-Step Fixes
 
 ### Fix 1: Clear Cursor Cache
 
@@ -129,7 +139,7 @@ If all other fixes fail, a clean reinstall may be necessary. This ensures all ap
 
 Before reinstalling, make sure to export your settings if you have custom configurations you want to preserve.
 
-## Diagnostic Tips
+### Step 3: Diagnostic Tips
 
 Beyond the fixes above, here are some diagnostic practices to help you identify the root cause of Composer issues.
 
@@ -149,7 +159,7 @@ Cursor Composer relies on API calls to generate suggestions. Unstable or blocked
 
 For advanced users, Cursor console logs can provide valuable insight into what is happening when Composer gets stuck. Access logs through the Cursor developer tools and look for repeated error messages or API timeouts.
 
-## Prevention Strategies
+### Step 4: Prevention Strategies
 
 Once you have resolved the issue, adopt practices to minimize the likelihood of recurrence.
 
@@ -177,7 +187,7 @@ grep -i "error\|timeout\|crash" ~/Library/Logs/Cursor/default.log | tail -20
 
 Look for patterns like repeated API timeouts, out-of-memory errors, or specific file parsing failures. These logs reveal whether the issue is environmental (network, disk space) or Cursor-specific (bug in a particular feature).
 
-## Context Window Overflow Issues
+### Step 5: Context Window Overflow Issues
 
 Modern AI systems maintain conversation context in memory. When Composer processes very large codebases, the accumulated context can exceed available memory, causing the tool to enter loops trying to recover. This particularly affects:
 
@@ -196,7 +206,7 @@ find . -name "*.ts" -o -name "*.js" | xargs wc -l | sort -n | tail -10
 # Reopen only what you need for the current task
 ```
 
-## Extension Conflict Resolution
+### Step 6: Extension Conflict Resolution
 
 When multiple extensions cause Composer conflicts, a systematic approach identifies the culprit. Rather than disabling all extensions at once, disable extensions in groups:
 
@@ -222,7 +232,7 @@ Common conflict sources:
 - Multiple AI coding assistants (Copilot + Codeium + others)
 - Outdated extensions from 2-3 versions ago
 
-## Memory and Resource Limits
+### Step 7: Memory and Resource Limits
 
 For developers with limited system resources, explicitly configure Cursor's resource constraints:
 
@@ -245,7 +255,7 @@ chmod +x ~/bin/cursor-limited.sh
 
 Limiting memory forces Cursor to be more conservative about caching, often preventing loops caused by unbounded memory growth.
 
-## Network and API Issues
+### Step 8: Network and API Issues
 
 Cursor Composer relies on API connectivity. Network issues cause incomplete responses that trigger retries, potentially creating loop-like behavior. Diagnose network problems:
 
@@ -304,6 +314,21 @@ Provide Cursor support with:
 6. Recent git history if relevant
 
 Clear information dramatically speeds up support resolution.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

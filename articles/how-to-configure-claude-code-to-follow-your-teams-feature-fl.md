@@ -48,7 +48,17 @@ Beyond avoiding conflicts, well-structured feature flag names improve code revie
 
 The compounding effect matters. A single inconsistently named flag is easy to fix. Fifty inconsistently named flags across three services require a coordinated migration, updated monitoring dashboards, and a communication campaign to every team that reads those flags in their own code. Claude Code working without convention guidance will naturally produce whatever naming feels locally reasonable to the model — which often conflicts with your established patterns in subtle ways.
 
-## Creating a Feature Flag Reference in CLAUDE.md
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Create a Feature Flag Reference in CLAUDE.md
 
 The first step in configuring Claude Code for feature flag consistency is creating a reference in your project's `CLAUDE.md` file. This file provides persistent context across all Claude Code sessions and should document your naming patterns, approved prefixes, and examples of existing flags.
 
@@ -59,23 +69,23 @@ Your `CLAUDE.md` should include a dedicated section for feature flags:
 
 Our team uses the following naming pattern for feature flags:
 
-## Format
+### Step 2: Format
 {environment}/{component}/{feature_name}/{state}
 
-## Prefixes
+### Step 3: Prefixes
 - `feat_` - New features
 - `exp_` - Experimental features
 - `fix_` - Bug fix toggles
 - `perf_` - Performance-related flags
 - `ui_` - User interface variations
 
-## Examples
+### Step 4: Examples
 - `feat_auth_social_login` - Social login feature
 - `exp_ml_recommendations` - ML-powered recommendations
 - `fix_checkout_validation` - Checkout validation fix
 - `perf_image_loading` - Optimized image loading
 
-## Important Notes
+### Step 5: Important Notes
 - Use snake_case for all flag names
 - Include the component name for organizational flags
 - Never use generic names like "test" or "enabled"
@@ -85,7 +95,7 @@ Place this file in your project root to ensure Claude Code always has access to 
 
 The `CLAUDE.md` file persists across sessions. Unlike prompts you type inline, it is read at the start of every Claude Code session in that project directory. This makes it the right place for stable conventions that should always apply, regardless of what you are working on in a given session. Think of it as your team's standing order to the AI.
 
-## Defining Feature Flag Patterns in Custom Instructions
+### Step 6: Defining Feature Flag Patterns in Custom Instructions
 
 Beyond the basic reference in `CLAUDE.md`, you can provide more explicit guidance through custom instructions. When starting a Claude Code session, use the `--context` flag or include detailed instructions in your initial prompt:
 
@@ -113,7 +123,7 @@ For more permanent configuration, create a `.claude/settings.json` file in your 
 
 This configuration tells Claude Code the exact patterns to follow when generating or modifying feature flags.
 
-## Working with Popular Feature Flag Systems
+### Step 7: Work with Popular Feature Flag Systems
 
 Claude Code's effectiveness increases when you provide context about your specific feature flag provider. Each system has its own API and management patterns that Claude Code should understand.
 
@@ -189,7 +199,7 @@ When you provide clear context about your conventions, Claude Code follows them 
 
 A useful practice is to include three or four existing flags as examples in your `CLAUDE.md`, not just the pattern description. Claude Code reasons by analogy: seeing `feat_auth_sso_login` and `feat_billing_invoice_export` alongside your pattern description helps it generate `feat_notifications_digest_email` correctly on the first try, rather than producing `notifications_email_digest_enabled` or `feature_notification_digest`.
 
-## Validating Flag Names During Code Reviews
+### Step 8: Validating Flag Names During Code Reviews
 
 To ensure ongoing compliance, consider adding validation to your code review process. A pre-commit hook can validate feature flag names:
 
@@ -216,7 +226,7 @@ This validation catches inconsistencies before they reach your main branch, comp
 
 For stronger enforcement, extend the pre-commit hook to scan your source files for newly added flag strings. Any flag string that does not match the pattern should block the commit with a descriptive error message pointing the developer to the `CLAUDE.md` convention reference. This creates a tight feedback loop: Claude Code generates convention-compliant flags, and the hook catches any manual exceptions before they merge.
 
-## Auditing Existing Flags with Claude Code
+### Step 9: Audit Existing Flags with Claude Code
 
 If your codebase already contains inconsistently named flags, Claude Code can help audit and propose migrations. Start a session with a prompt like:
 
@@ -228,13 +238,28 @@ For each non-compliant flag, suggest a compliant replacement name.
 
 Claude Code will scan the file, apply your documented convention, and produce a list of migrations. You can then prioritize the migrations by flag usage frequency — high-traffic flags warrant careful migration plans, while flags only used in one place can be renamed in a single PR.
 
-## Maintaining Conventions Over Time
+### Step 10: Maintaining Conventions Over Time
 
 As your project evolves, so should your feature flag configuration. Schedule periodic reviews of your `CLAUDE.md` to ensure it reflects current practices. When introducing new flag types or changing patterns, update the documentation and inform team members.
 
 Claude Code works best when it has complete context. If you notice generated flags deviating from your standards, add explicit examples to your configuration. The more specific your guidance, the more consistently Claude Code will follow your conventions.
 
 Treat the `CLAUDE.md` feature flag section as a living document with an owner. Assign a team member to review it quarterly, check whether new flag types have emerged organically, and update the allowed prefixes list accordingly. When the document stays current, Claude Code's output stays consistent — and the pre-commit hook catches the rare exceptions automatically.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

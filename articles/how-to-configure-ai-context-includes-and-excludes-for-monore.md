@@ -49,7 +49,17 @@ First, irrelevant files dilute the context. If you're working on a React compone
 
 Configuring includes and excludes solves these issues by telling the AI exactly which parts of the repository to consider.
 
-## Configuring Cursor for Monorepo Context
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Configure Cursor for Monorepo Context
 
 Cursor, an AI-powered code editor based on VS Code, provides several ways to control context scope. The most direct method uses the `.cursorrules` file in your project root.
 
@@ -72,7 +82,7 @@ The `@` symbol tells Cursor to include these paths in context. The `!` prefix ex
 
 For more granular control, Cursor supports workspace-specific settings. Create a `.cursor` folder with context configuration files for different parts of your monorepo. Each file can specify which directories to include when working within that workspace context.
 
-## Configuring Claude Code (Claude CLI) Context
+### Step 2: Configure Claude Code (Claude CLI) Context
 
 Claude Code, Anthropic's CLI tool for AI-assisted development, uses `.claude` directory for project settings. Create a `settings.local.yml` file to configure context behavior.
 
@@ -103,7 +113,7 @@ You can also use the `--context` flag when starting a Claude Code session to tem
 claude --context "packages/api/**" "Review the auth middleware"
 ```
 
-## Configuring GitHub Copilot Context
+### Step 3: Configure GitHub Copilot Context
 
 GitHub Copilot integrates directly into GitHub's ecosystem and offers context configuration through `.github/copilot-includes.md` and `.github/copilot-excludes.md` files in your repository root.
 
@@ -132,7 +142,7 @@ Create `copilot-excludes.md` for files to ignore:
 
 Copilot processes files listed in the includes file first, then considers other relevant files while respecting the excludes list. This ranking system ensures your primary focus areas get priority in context building.
 
-## Configuring Windshow's Windsurf
+### Step 4: Configure Windshow's Windsurf
 
 Windsurf, another AI code editor, uses a `.windsurfrules` file for context configuration. The syntax combines includes and excludes in a single file:
 
@@ -154,7 +164,7 @@ Windsurf, another AI code editor, uses a `.windsurfrules` file for context confi
 
 Windsurf also supports workspace-specific rules. Create a `.windsurf` directory with separate rule files for different projects within your monorepo. This allows context switching based on which workspace you're currently editing.
 
-## Pattern Matching for Monorepo Structures
+### Step 5: Pattern Matching for Monorepo Structures
 
 Understanding glob patterns helps you create precise configurations. Here are practical patterns for common monorepo structures.
 
@@ -198,7 +208,7 @@ For pnpm workspaces with scattered packages:
 !**/*.pb.ts
 ```
 
-## Optimizing Context for Better Results
+### Step 6: Optimizing Context for Better Results
 
 After configuring includes and excludes, verify that your settings produce the desired behavior. Test by asking your AI assistant to explain or modify code in different parts of your monorepo. The responses should focus on the relevant directories without pulling in unrelated code.
 
@@ -217,6 +227,21 @@ Forgetting to exclude generated files is another common oversight. Files in `dis
 Finally, configuration files left at the root may not apply to nested projects. If your monorepo has independent sub-projects, consider adding localized configuration files to those directories for more precise control.
 
 Properly configured context includes and excludes transform AI assistance from a generic tool into a focused collaborator that understands exactly which part of your monorepo you're working in and provides relevant, accurate guidance accordingly.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 
@@ -248,7 +273,7 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Best Way to Configure CursorRules for Python FastAPI Project](/ai-tools-compared/best-way-to-configure-cursorrules-for-python-fastapi-project/)
 - [How to Configure AI Coding Tools to Exclude Secrets and](/ai-tools-compared/how-to-configure-ai-coding-tools-to-exclude-secrets-and-env-/)
 
-## Tool-Specific Configuration Deep Dives
+### Step 7: Tool-Specific Configuration Deep Dives
 
 ### Cursor: Complete Monorepo Configuration
 
@@ -395,7 +420,7 @@ Create workspace-specific overrides:
 !apps/api/**
 ```
 
-## Monorepo Architecture Patterns and Context Config
+### Step 8: Monorepo Architecture Patterns and Context Config
 
 **Pattern 1: npm/pnpm Workspaces**
 
@@ -491,7 +516,7 @@ Configuration:
 !**/.yarn
 ```
 
-## Testing Your Configuration
+### Step 9: Test Your Configuration
 
 **Test 1: Verify includes work**
 
@@ -532,7 +557,7 @@ Aim for total context <6,000 tokens to leave room for response.
 # If it explains the import path correctly, it understands monorepo structure
 ```
 
-## Common Configuration Mistakes
+### Step 10: Common Configuration Mistakes
 
 **Mistake 1: Too Broad Includes**
 
@@ -603,7 +628,7 @@ Generated files add noise without value.
 
 Lock files are huge and add no value to AI context.
 
-## Context Configuration Cheat Sheet
+### Step 11: Context Configuration Cheat Sheet
 
 **Quick start for React + Node monorepo:**
 
@@ -652,7 +677,7 @@ Lock files are huge and add no value to AI context.
 !coverage
 ```
 
-## Measuring Configuration Effectiveness
+### Step 12: Measuring Configuration Effectiveness
 
 Track these metrics:
 

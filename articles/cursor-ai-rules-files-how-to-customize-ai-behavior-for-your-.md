@@ -45,25 +45,35 @@ Rules files are configuration documents that instruct Cursor AI how to behave wi
 
 Cursor supports several types of rules files, including `.cursorrules` files at the project root and workspace-level configurations. The rules are written in a specific syntax that Cursor understands and applies during each session.
 
-## Setting Up Rules Files
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Set Up Rules Files
 
 To create a rules file for your project, place a `.cursorrules` file in your project's root directory. This file should contain your custom rules in a structured format. Here's an example showing how to define basic rules:
 
 ```markdown
 # Project Rules for My Application
 
-## Code Style
+### Step 2: Code Style
 - Use 2 spaces for indentation
 - Always use semicolons in JavaScript
 - Prefer const over let, avoid var
 - Use meaningful variable names (minimum 3 characters)
 
-## Documentation
+### Step 3: Documentation
 - Add JSDoc comments for all exported functions
 - Include parameter types in function signatures
 - Document async functions with @returns promise
 
-## Testing
+### Step 4: Test
 - Write unit tests for all utility functions
 - Use descriptive test names following should-when-then pattern
 - Maintain minimum 80% code coverage for business logic
@@ -80,25 +90,25 @@ Consider a React project with TypeScript:
 ```markdown
 # React TypeScript Project Rules
 
-## Component Structure
+### Step 5: Component Structure
 - Use functional components exclusively
 - Implement components as named exports
 - Place props interfaces in same file as component
 - Use React.FC type for component typing
 
-## State Management
+### Step 6: State Management
 - Use useState for component-level state
 - Prefer useReducer for complex state logic
 - Access global state via useContext or custom hooks
 - Avoid direct Redux dispatch in components
 
-## Naming Conventions
+### Step 7: Naming Conventions
 - Components: PascalCase (UserProfile.tsx)
 - Hooks: camelCase with use prefix (useUserData.ts)
 - Types/Interfaces: PascalCase (UserProfileProps)
 - Constants: SCREAMING_SNAKE_CASE
 
-## File Organization
+### Step 8: File Organization
 - Group related files by feature
 - Keep components in /components directory
 - Place hooks in /hooks directory
@@ -107,7 +117,7 @@ Consider a React project with TypeScript:
 
 These rules help Cursor understand your project's architecture and generate code that fits into your existing structure.
 
-## Contextual Rules for Different File Types
+### Step 9: Contextual Rules for Different File Types
 
 You can create rules that apply specifically to certain file types or directories. This allows for fine-grained control over AI behavior based on what you're working on. Cursor evaluates rules based on the current context, applying relevant guidelines automatically.
 
@@ -116,32 +126,32 @@ For a Node.js backend project:
 ```markdown
 # Backend API Rules
 
-## API Endpoints
+### Step 10: API Endpoints
 - Use RESTful naming conventions
 - Implement proper HTTP method usage (GET, POST, PUT, DELETE)
 - Return appropriate status codes
 - Include error handling for all routes
 
-## Database Operations
+### Step 11: Database Operations
 - Use parameterized queries to prevent SQL injection
 - Implement connection pooling
 - Close database connections in finally blocks
 - Use transactions for multi-step operations
 
-## Security
+### Step 12: Security
 - Validate all input data
 - Implement rate limiting on public endpoints
 - Use environment variables for sensitive configuration
 - Hash passwords with bcrypt before storage
 
-## Error Handling
+### Step 13: Error Handling
 - Use try-catch blocks around async operations
 - Log errors with appropriate context
 - Return user-friendly error messages
 - Include error codes for debugging
 ```
 
-## Version Control and Rules Sharing
+### Step 14: Version Control and Rules Sharing
 
 Storing your rules file in version control ensures all team members benefit from consistent AI behavior. When someone clones the repository, Cursor automatically picks up the rules. This creates alignment across your team without requiring individual configuration.
 
@@ -171,34 +181,34 @@ If Cursor doesn't seem to follow your rules, check a few common issues. Ensure t
 
 Sometimes Cursor may override rules in specific contexts. For example, when explicitly editing code or following your explicit instructions, the AI may prioritize your direct input over rules. This behavior is intentional and usually desirable.
 
-## Real-World Rules File Examples
+### Step 15: Real-World Rules File Examples
 
 **Example 1: React TypeScript E-commerce App**
 
 ```markdown
 # E-commerce Platform AI Rules
 
-## Architecture
+### Step 16: Architecture
 - Client: React 18 + TypeScript + React Router v6
 - State: Zustand for global state (not Redux)
 - API: React Query for server state
 - Testing: Vitest + React Testing Library
 - Styling: Tailwind CSS
 
-## Component Rules
+### Step 17: Component Rules
 - All components in `/src/components/[feature]/`
 - Use named exports, no default exports
 - Props interface always in same file, named `[ComponentName]Props`
 - Use `React.FC<Props>` for typing
 
-## Naming Conventions
+### Step 18: Naming Conventions
 - Components: PascalCase (`ProductCard.tsx`)
 - Hooks: camelCase with `use` prefix (`useProductFilter.ts`)
 - Utils: camelCase (`formatPrice.ts`)
 - Constants: SCREAMING_SNAKE_CASE (`MAX_PRICE_FILTER = 1000`)
 - Types: PascalCase, prefixed with type declaration (`type UserProfile = {...}`)
 
-## State Management (Zustand)
+### Step 19: State Management (Zustand)
 ```typescript
 // Use this pattern for all stores
 export const useProductStore = create<ProductState>((set) => ({
@@ -207,13 +217,13 @@ export const useProductStore = create<ProductState>((set) => ({
 }));
 ```
 
-## Testing
+### Step 20: Test
 - Test files colocate with components (`ProductCard.test.tsx`)
 - Use `describe` blocks matching component structure
 - Test user interactions, not implementation details
 - Coverage target: 80% for business logic
 
-## API Integration
+### Step 21: API Integration
 - All API calls through React Query hooks
 - Place hooks in `/src/hooks/queries/`
 - Cache invalidation strategy defined in hook
@@ -225,14 +235,14 @@ export const useProductStore = create<ProductState>((set) => ({
 ```markdown
 # Backend API Rules
 
-## Stack
+### Step 22: Stack
 - Node.js 20+ with TypeScript
 - Express.js for HTTP server
 - PostgreSQL with Prisma ORM
 - Jest for testing
 - Logging: Winston
 
-## Folder Structure
+### Step 23: Folder Structure
 ```
 src/
 ├── routes/ # Express route handlers
@@ -243,13 +253,13 @@ src/
 └── tests/ # Test files
 ```
 
-## Naming Rules
+### Step 24: Naming Rules
 - Route files: `[resource].routes.ts`
 - Service files: `[resource].service.ts`
 - Controller methods: `list`, `get`, `create`, `update`, `delete`
 - Database models: Singular, PascalCase (`User`, `Product`)
 
-## API Response Format
+### Step 25: API Response Format
 ```typescript
 // Always return consistent format
 {
@@ -260,19 +270,19 @@ src/
 }
 ```
 
-## Error Handling
+### Step 26: Error Handling
 - Use custom AppError class for all errors
 - Include error code and HTTP status
 - Log errors with context (userId, requestId, etc.)
 - Never expose internal implementation details
 
-## Database
+### Step 27: Database
 - Always use transactions for multi-step operations
 - Include soft delete (deleted_at timestamp) where appropriate
 - Foreign keys with cascade delete/update explicit
 - Indexes on frequently queried columns
 
-## Testing
+### Step 28: Test
 - Unit tests for services: 80% coverage required
 - Integration tests for routes with test database
 - Use factories for test data
@@ -292,7 +302,7 @@ For large projects, organize rules across files:
 
 Cursor evaluates all applicable files, combining their rules.
 
-## Rule Verification Workflow
+### Step 29: Rule Verification Workflow
 
 After creating rules, verify Cursor follows them:
 
@@ -337,7 +347,7 @@ Most projects need 2-3 iterations to get rules perfect.
 - Create rules for one-off situations
 - Write rules that are already Cursor defaults
 
-## Integration with Team Workflow
+### Step 30: Integration with Team Workflow
 
 **Commit rules to version control:**
 ```bash
@@ -353,7 +363,7 @@ When reviewing AI-generated code, reference rule files:
 **Update rules as patterns evolve:**
 Review rules quarterly. Remove what's no longer relevant. Add new patterns as the codebase matures.
 
-## Measuring Rule Effectiveness
+### Step 31: Measuring Rule Effectiveness
 
 Track these indicators:
 
@@ -371,17 +381,17 @@ For projects with multiple contexts, structure rules conditionally:
 ```markdown
 # Mobile App Rules (React Native)
 
-## For iOS-specific code
+### Step 32: For iOS-specific code
 - Use Swift naming conventions
 - Follow Apple Human Interface Guidelines
 - Include accessibility features per WCAG 2.1
 
-## For Android-specific code
+### Step 33: For Android-specific code
 - Use Java naming conventions
 - Follow Material Design 3
 - Test on both Kotlin and Java versions
 
-## Shared Rules
+### Step 34: Shared Rules
 - Component structure same as Web
 - State management identical across platforms
 ```

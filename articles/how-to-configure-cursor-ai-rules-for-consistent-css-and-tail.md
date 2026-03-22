@@ -58,7 +58,17 @@ Consider these two equivalent class strings:
 
 The second example follows a clear pattern: layout, sizing, visual, typography, interactive states. This consistency makes your codebase more maintainable.
 
-## Setting Up Cursor AI Rules
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Set Up Cursor AI Rules
 
 Cursor AI uses a `.cursorrules` file in your project root to define custom behavior. You can also configure rules through the Cursor Settings under AI Rules.
 
@@ -70,7 +80,7 @@ Create a `.cursorrules` file in your project root with the following structure:
 # Project: Your Project Name
 # Purpose: Define CSS and Tailwind class ordering standards
 
-## Tailwind CSS Class Ordering
+### Step 2: Tailwind CSS Class Ordering
 When writing Tailwind CSS classes, always order them in the following sequence:
 1. Layout (flex, grid, block, inline, etc.)
 2. Positioning (relative, absolute, fixed, sticky)
@@ -81,7 +91,7 @@ When writing Tailwind CSS classes, always order them in the following sequence:
 7. Interactive (hover:, focus:, active:, disabled:)
 8. Responsive prefixes (sm:, md:, lg:, etc.)
 
-## CSS Property Ordering
+### Step 3: CSS Property Ordering
 When writing plain CSS, follow the box-model order:
 1. Display and layout (display, position, float, clear)
 2. Box model (width, height, margin, padding, box-sizing)
@@ -90,7 +100,7 @@ When writing plain CSS, follow the box-model order:
 5. Animation and transition (animation, transition, transform)
 6. States (:hover, :focus, :active, :disabled)
 
-## Formatting Guidelines
+### Step 4: Formatting Guidelines
 - Always use kebab-case for class names
 - Keep related classes grouped together
 - Break long class strings onto multiple lines for readability
@@ -197,7 +207,7 @@ The classes flow logically: positioning → layout → spacing → typography �
 />
 ```
 
-## Automating Class Sorting
+### Step 5: Automate Class Sorting
 
 While Cursor AI rules help the AI generate consistent classes, you might also want to use automated sorting tools:
 
@@ -246,7 +256,7 @@ Create a script in your `package.json`:
 }
 ```
 
-## Testing Your Configuration
+### Step 6: Test Your Configuration
 
 After setting up Cursor AI rules, test them by:
 
@@ -288,7 +298,7 @@ Group responsive prefixes together and keep them in ascending order (sm before m
 ">
 ```
 
-## Team Collaboration with Shared Rules
+### Step 7: Team Collaboration with Shared Rules
 
 Committing `.cursorrules` to your repository is the most effective way to enforce consistency across a team. Every developer who opens the project in Cursor automatically inherits the same AI behavior without manual setup.
 
@@ -316,7 +326,7 @@ Add a comment block at the top of `.cursorrules` that explains the ownership and
 
 This prevents the common issue of a developer adding personal rules locally that conflict with team standards and generating inconsistent code without realizing it.
 
-## .cursorrules vs Cursor Settings: When to Use Each
+### Step 8: .cursorrules vs Cursor Settings: When to Use Each
 
 Both approaches configure AI behavior, but they serve different scopes:
 
@@ -330,7 +340,7 @@ Both approaches configure AI behavior, but they serve different scopes:
 
 Use `.cursorrules` for project-specific rules like your Tailwind ordering convention. Use Cursor Settings for personal preferences like preferred code style or response verbosity that you want across all projects.
 
-## Comparing Cursor, Windsurf, and Copilot for CSS Rule Enforcement
+### Step 9: Comparing Cursor, Windsurf, and Copilot for CSS Rule Enforcement
 
 Other AI coding tools offer similar configuration mechanisms with different tradeoffs:
 
@@ -342,7 +352,7 @@ Other AI coding tools offer similar configuration mechanisms with different trad
 
 For teams standardizing on Tailwind class ordering, Cursor with a committed `.cursorrules` file remains the most effective tool as of 2026 because it applies rules in both autocomplete and chat, and `.cursorrules` is version-controlled alongside the code it governs.
 
-## Measuring Consistency Before and After
+### Step 10: Measuring Consistency Before and After
 
 To verify that your rules are working, you can measure class ordering consistency programmatically. Install `eslint-plugin-tailwindcss`:
 
@@ -362,6 +372,21 @@ Add it to your ESLint config:
 ```
 
 Run it before and after enabling your Cursor rules to count how many ordering violations exist. A healthy codebase should see warnings drop to near zero in AI-generated code once rules are active and developers are consistently using Cursor's chat and autocomplete rather than typing classes manually.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

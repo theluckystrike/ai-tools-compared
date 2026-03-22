@@ -45,7 +45,17 @@ Design systems often suffer from discoverability problems. Components live in re
 
 The MCP protocol handles the heavy lifting: request routing, response formatting, and tool discovery. Your server focuses on one thing—translating component metadata into useful AI-readable responses.
 
-## Project Setup and Dependencies
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Project Setup and Dependencies
 
 Create a new Python project for your MCP server. You'll need the FastMCP library, which simplifies server implementation:
 
@@ -66,7 +76,7 @@ design-system-mcp/
 └── requirements.txt
 ```
 
-## Building the Component Registry
+### Step 2: Build the Component Registry
 
 First, establish how your server will access component metadata. For most design systems, a JSON registry works well. Create a `components/registry.json` that describes your components:
 
@@ -135,7 +145,7 @@ First, establish how your server will access component metadata. For most design
 
 This registry structure mirrors what TypeScript interfaces would expose, making it easy for AI models to understand component contracts.
 
-## Implementing the MCP Server
+### Step 3: Implementing the MCP Server
 
 Now create `app.py` with your server implementation:
 
@@ -182,10 +192,10 @@ def get_component(name: str) -> str:
 
 {component.get('description', 'No description')}
 
-## Props
+### Step 4: Props
 {chr(10).join(props_list) if props_list else '  No props defined'}
 
-## Usage Examples
+### Step 5: Usage Examples
 {usage_text}
 """
 
@@ -219,7 +229,7 @@ if __name__ == "__main__":
     mcp.run()
 ```
 
-## Connecting to Claude Code
+### Step 6: Connecting to Claude Code
 
 With your server running, configure Claude Code to connect. The server runs as a subprocess that Claude communicates with via stdin/stdout:
 
@@ -243,7 +253,7 @@ In your Claude Code configuration (typically `~/.claude/settings.json` or projec
 
 After restarting Claude Code, your AI assistant gains three new tools: `get_component` for detailed component info, `list_components` for enumerating available components, and `search_components` for finding components by keyword.
 
-## Practical Usage Examples
+### Step 7: Practical Usage Examples
 
 Once connected, developers can have natural conversations about your design system:
 
@@ -265,7 +275,7 @@ Once connected, developers can have natural conversations about your design syst
 
 > → Calls `list_components()` → Returns all components with descriptions
 
-## Extending the Server
+### Step 8: Extending the Server
 
 Several enhancements make your MCP server more powerful:
 
@@ -282,6 +292,21 @@ Several enhancements make your MCP server more powerful:
 For enterprise deployments, add authentication to prevent unauthorized access to internal component information. The MCP protocol supports custom headers and authentication tokens that you can validate in each tool call.
 
 Consider running the server as a local service that multiple team members can connect to, or deploy it internally with appropriate network controls. Rate limiting protects against abuse, and logging helps track which components developers query most frequently—valuable signal for documentation priorities.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

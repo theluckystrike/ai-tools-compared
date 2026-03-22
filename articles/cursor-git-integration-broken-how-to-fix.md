@@ -50,11 +50,21 @@ git reset
 ### 5.
 - **Large Repository Performance Issues**: Extremely large repositories can cause Cursor's Git integration to become unresponsive or timeout.
 
-## Recognizing Git Integration Failure
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Recognizing Git Integration Failure
 
 Several symptoms indicate your Cursor Git integration has failed. The Source Control panel may stop showing changed files, show a persistent loading state, or display error messages. You might notice the Git status indicators (colored dots or badges) disappear from the file explorer. Commands that should work through the command palette fail silently or throw errors. Understanding which symptom you are seeing helps narrow down the root cause.
 
-## Common Causes and Solutions
+### Step 2: Common Causes and Solutions
 
 ### 1. Missing Git Installation or Path Issues
 
@@ -163,7 +173,7 @@ Diagnosis: Git works in other projects but fails in a specific workspace.
 
 Solution: Delete the `.cursor` or `.vscode` folder within your project to reset workspace-specific settings. You can also check for conflicting settings in `.cursor-workspace` or `.vscode/settings.json` files.
 
-## Diagnostic Checklist
+### Step 3: Diagnostic Checklist
 
 When facing Git integration issues in Cursor, work through this checklist:
 
@@ -183,7 +193,7 @@ When facing Git integration issues in Cursor, work through this checklist:
 
 Maintain healthy Git integration by keeping Git updated to the latest version. Restart Cursor periodically, especially after system updates or network changes. Keep your workspace folder organized with clear project boundaries. Use SSH keys for authentication to avoid credential prompts and token expiration issues.
 
-## GitHub Copilot vs Cursor: Real-World Benchmark
+### Step 4: GitHub Copilot vs Cursor: Real-World Benchmark
 
 Comparing AI coding assistants on real tasks reveals meaningful differences in suggestion quality and workflow integration.
 
@@ -236,7 +246,7 @@ class BST:
 
 Cursor's Composer mode generates the entire file at once with tests; Copilot fills in line-by-line as you type. Cursor wins for greenfield code generation; Copilot wins for incremental completion in existing files.
 
-## Configuring Copilot for Private Repositories
+### Step 5: Configure Copilot for Private Repositories
 
 Copilot's default settings may send code snippets to GitHub for model training. Configure these settings for sensitive repositories.
 
@@ -270,6 +280,21 @@ credentials*
 ```
 
 Enterprise plans include stronger data isolation guarantees — code is processed in isolated compute and not used for training. Evaluate enterprise pricing if working with proprietary algorithms or regulated data.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

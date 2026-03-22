@@ -46,13 +46,23 @@ Simple LLM calls work for one-shot tasks. Multi-step developer workflows need:
 - **Loops with exit conditions**: retry until tests pass or after N attempts
 - **Tool calling with tracking**: know which tools were called and what they returned
 
-## Installation
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Install ation
 
 ```bash
 pip install langgraph langchain-anthropic langchain-core
 ```
 
-## Example: Test-Driven Code Agent
+### Step 2: Example: Test-Driven Code Agent
 
 This agent writes code to pass a test suite, runs the tests, reads failures, and iterates:
 
@@ -171,7 +181,7 @@ result = graph.invoke({
 print(f"Status: {result['status']}, Iterations: {result['iterations']}")
 ```
 
-## Example: Multi-Stage Code Review Pipeline
+### Step 3: Example: Multi-Stage Code Review Pipeline
 
 Route code through different reviewers in parallel:
 
@@ -233,7 +243,7 @@ builder.add_edge('performance', 'verdict')
 builder.add_edge('verdict', END)
 ```
 
-## Persisting State Between Runs
+### Step 4: Persisting State Between Runs
 
 LangGraph supports checkpointing to resume long-running agent tasks:
 
@@ -256,7 +266,7 @@ This is useful for long-running tasks like refactoring an entire repository — 
 
 Use LangGraph when your workflow has more than 2 sequential LLM calls, conditional branching, retry loops, or multiple specialized agents. Use simple LLM calls for one-shot tasks or when latency is critical (graph overhead adds ~50ms).
 
-## Error Handling and Observability
+### Step 5: Error Handling and Observability
 
 Production LangGraph workflows need proper error handling and logging:
 
@@ -301,7 +311,7 @@ Choose LangGraph when your workflow needs state persistence, conditional branchi
 4. **Monitor token usage per node.** Track which nodes consume the most tokens and optimize their prompts.
 5. **Test with deterministic mocks.** Replace LLM calls with recorded responses during unit testing.
 
-## Example: Automated Documentation Generator
+### Step 6: Example: Automated Documentation Generator
 
 Build a graph that reads source code, generates documentation, validates it against the code, and iterates:
 
@@ -342,6 +352,21 @@ def should_retry(state: DocGenState) -> str:
 ```
 
 This pattern works for any task where AI output needs verification against a ground truth.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

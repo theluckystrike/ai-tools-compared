@@ -24,7 +24,17 @@ Voice AI apps require three components working in sequence: speech-to-text, lang
 - **Use-case recommendations**: Specific guidance based on team size and requirements
 - **Trade-off analysis**: Strengths and limitations of each option discussed
 
-## Architecture
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Architecture
 
 ```
 Microphone → Web Audio API → WebSocket
@@ -36,7 +46,7 @@ Microphone → Web Audio API → WebSocket
 
 The WebSocket approach gives you streaming responses — audio starts playing before the full response is generated.
 
-## Setup
+### Step 2: Set Up
 
 ```bash
 pip install fastapi uvicorn websockets anthropic openai elevenlabs \
@@ -51,7 +61,7 @@ ELEVENLABS_API_KEY=...
 ELEVENLABS_VOICE_ID=...      # Get from ElevenLabs dashboard
 ```
 
-## Backend: FastAPI Voice Server
+### Step 3: Backend: FastAPI Voice Server
 
 ```python
 # voice_server.py
@@ -209,7 +219,7 @@ async def voice_websocket(websocket: WebSocket, session_id: str):
         await websocket.send_json({"type": "error", "message": str(e)})
 ```
 
-## Frontend: Browser Voice Client
+### Step 4: Frontend: Browser Voice Client
 
 ```html
 <!-- index.html -->
@@ -318,7 +328,7 @@ async def voice_websocket(websocket: WebSocket, session_id: str):
 </html>
 ```
 
-## Streaming TTS for Lower Latency
+### Step 5: Streaming TTS for Lower Latency
 
 The above sends the full response as one audio blob. For longer responses, stream sentence by sentence:
 
@@ -346,7 +356,7 @@ async def stream_response_as_audio(
 
 This cuts perceived latency from ~3 seconds to ~800ms for the first audio chunk.
 
-## Cost Estimate
+### Step 6: Cost Estimate
 
 Per 1-minute conversation (roughly 10 exchanges):
 - Whisper: 10 * 5-second clips = 50 seconds at $0.006/min = $0.005
@@ -354,6 +364,21 @@ Per 1-minute conversation (roughly 10 exchanges):
 - ElevenLabs: ~150 words per exchange * 10 = 1,500 words = ~$0.03
 
 Total: ~$0.055 per 1-minute conversation
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

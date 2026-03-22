@@ -35,7 +35,17 @@ AI coding assistants analyze your code to provide relevant suggestions. When the
 Most AI coding platforms have policies against using customer code for training, but configuration errors or overly broad context settings can still lead to unintended exposure. The simplest solution is ensuring your sensitive files are explicitly excluded from AI tool access.
 
 
-## The Risk in Concrete Terms
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The Risk in Concrete Terms
 
 
 Before exploring configuration, it helps to understand exactly what exposure looks like. AI coding tools typically index your workspace in one of three ways:
@@ -47,7 +57,7 @@ Before exploring configuration, it helps to understand exactly what exposure loo
 The most common real-world incident is a developer asking an AI assistant to "help me debug this API call" while the `.env` file is open, resulting in the API key appearing verbatim in a code suggestion that then gets committed to version control.
 
 
-## Configuring GitHub Copilot
+### Step 2: Configure GitHub Copilot
 
 
 GitHub Copilot respects your repository's `.gitignore` file by default, but additional configuration provides stronger guarantees.
@@ -106,7 +116,7 @@ These files tell Copilot exactly which files to consider or ignore, independent 
 GitHub Enterprise customers can enforce Copilot exclusions at the organization level through the GitHub admin console. Navigate to **Organization Settings > Copilot > Content exclusion** and add patterns that apply to all repositories under the organization. This approach enforces baseline security across all developer machines without relying on per-repository configuration.
 
 
-## Configuring Cursor AI
+### Step 3: Configure Cursor AI
 
 
 Cursor, built on VS Code, offers workspace-specific settings that control which files the AI can access.
@@ -163,7 +173,7 @@ This prevents Cursor's AI from reading excluded files while maintaining normal f
 
 Cursor's codebase indexing feature scans your entire project to enable semantic search. To exclude directories from the index, open **Cursor Settings > Features > Codebase Indexing** and add ignore patterns. Any directory matching these patterns will not be indexed, providing an additional layer of protection independent of the rules file.
 
-## Configuring Claude Code (Anthropic)
+### Step 4: Configure Claude Code (Anthropic)
 
 Claude Code provides explicit controls for file access through its configuration system.
 
@@ -174,7 +184,7 @@ Create a `CLAUDE.md` file in your project root to instruct Claude about file exc
 ```markdown
 # Project Guidelines
 
-## Excluded Files
+### Step 5: Excluded Files
 Do not read or analyze the following files:
 - .env* files
 - **/secrets/** directory
@@ -182,7 +192,7 @@ Do not read or analyze the following files:
 - *.pem, *.key files
 - config/secrets.*
 
-## Context Rules
+### Step 6: Context Rules
 - Never include environment variables in code suggestions
 - Avoid suggesting patterns that require hardcoded secrets
 - Recommend environment variable patterns instead of hardcoded values
@@ -199,7 +209,7 @@ claude config set --global excludePatterns "[\"**/.env*\", \"**/secrets/**\", \"
 
 This ensures all projects using Claude Code automatically exclude sensitive patterns.
 
-## Configuring Windsurf and Codeium
+### Step 7: Configure Windsurf and Codeium
 
 Windsurf (formerly Codeium) offers workspace-level context controls through its settings panel. Open **Windsurf Settings > AI Context** and configure the ignore list:
 
@@ -261,7 +271,7 @@ api_key = get_secret("production-api-key")
 
 Tools like AWS Secrets Manager, HashiCorp Vault, or Doppler provide APIs that your code uses at runtime, eliminating the need for env files in your codebase entirely.
 
-## Pre-Commit Hooks as a Safety Net
+### Step 8: Pre-Commit Hooks as a Safety Net
 
 Even with AI tools properly configured, a pre-commit hook provides a final line of defense before secrets reach version control. Tools like `git-secrets` and `detect-secrets` can catch accidental commits:
 
@@ -289,7 +299,7 @@ detect-secrets scan > .secrets.baseline
 
 These tools run before every commit and reject pushes that contain strings matching secret patterns. They complement AI tool exclusions rather than replacing them — the AI configuration prevents inadvertent context exposure, while the pre-commit hooks catch any residual secrets that end up in code.
 
-## Verification and Testing
+### Step 9: Verification and Testing
 
 After configuring your AI tools, verify the exclusions work correctly.
 
@@ -330,6 +340,21 @@ gitleaks detect --source . --log-opts="--all"
 ```
 
 Rotate any secrets discovered in history immediately, then remove them using BFG Repo-Cleaner or `git filter-repo` before the next push.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

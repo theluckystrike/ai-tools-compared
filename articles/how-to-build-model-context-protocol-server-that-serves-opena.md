@@ -50,7 +50,17 @@ The combination is powerful: your API documentation becomes executable. AI tools
 
 Before MCP, integrating an AI assistant with a new API required hardcoding endpoint knowledge into the model's context or building custom tool definitions by hand. With an OpenAPI-aware MCP server, you write the integration once — the server reads the spec and exposes the right tools automatically. As the spec changes, the AI's understanding of the API updates without code changes.
 
-## Understanding the MCP Transport Layer
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the MCP Transport Layer
 
 MCP supports two primary transport mechanisms: stdio (standard input/output) and SSE (Server-Sent Events over HTTP). For local development and desktop AI tools, stdio is the standard choice. For server-deployed MCP servers accessible over a network, SSE provides the right transport.
 
@@ -68,7 +78,7 @@ MCP Client (Claude Desktop, Cursor, etc.)
 
 The server you'll build uses stdio transport, which means it runs as a subprocess of the AI tool. This keeps things simple for development and avoids authentication complexity at the transport layer.
 
-## Building Your MCP Server
+### Step 2: Build Your MCP Server
 
 Here's a practical implementation using Python and FastMCP, a popular framework for building MCP servers.
 
@@ -159,7 +169,7 @@ Run the server:
 uv run python mcp_openapi_server.py
 ```
 
-## Adding API Execution Capabilities
+### Step 3: Adding API Execution Capabilities
 
 The listing and detail tools let an AI understand your API, but the real power comes from adding an execution tool that the AI can call to make actual requests.
 
@@ -204,7 +214,7 @@ async def call_api_endpoint(
 
 With this tool in place, your AI assistant can go from reading the OpenAPI spec to making real API calls in a single conversation — discovering the right endpoint, constructing the correct request, and interpreting the response.
 
-## Connecting AI Tools to Your MCP Server
+### Step 4: Connecting AI Tools to Your MCP Server
 
 Most AI tools in 2026 support MCP through a standardized configuration. Here's how to connect:
 
@@ -255,7 +265,7 @@ Once connected, your AI assistant can:
 
 The AI doesn't need hardcoded knowledge of your API — it learns about it from the spec served through MCP.
 
-## Practical Use Cases
+### Step 5: Practical Use Cases
 
 ### Internal API Management
 
@@ -338,6 +348,21 @@ When building MCP servers for OpenAPI specs, consider these recommendations:
 **Document custom endpoints** that extend beyond standard REST operations. MCP tool descriptions are the primary documentation layer for AI assistants — make them precise and complete.
 
 **Handle errors gracefully.** Return structured error responses rather than raising exceptions. AI assistants handle error dicts much better than stack traces when deciding how to respond to users.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

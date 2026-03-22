@@ -39,7 +39,17 @@ When your DALL-E image generation request fails, it can halt your entire workflo
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
-## Common DALL-E Failure Modes
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Common DALL-E Failure Modes
 
 DALL-E API requests fail for several predictable reasons. Recognizing the error type is the first step toward resolving it.
 
@@ -53,7 +63,7 @@ Timeout errors occur when the generation takes longer than the allowed window. T
 
 Invalid request errors stem from malformed prompts, incorrect parameter values, or exceeding size limits. These 400-level errors often include specific details about what went wrong.
 
-## Step-by-Step Retry Strategies
+### Step 2: Step-by-Step Retry Strategies
 
 ### 1. Implement Exponential Backoff
 
@@ -166,7 +176,7 @@ class CircuitBreaker:
             raise e
 ```
 
-## Diagnostic Checklist
+### Step 3: Diagnostic Checklist
 
 When DALL-E failures persist, work through this checklist:
 
@@ -182,7 +192,7 @@ When DALL-E failures persist, work through this checklist:
 
 6. Check OpenAI status page — service disruptions affect all users
 
-## Reducing Failure Frequency
+### Step 4: Reducing Failure Frequency
 
 Preventive measures minimize retry scenarios. Consider these practices:
 
@@ -194,7 +204,7 @@ Monitoring and alerting catch patterns in your failures. Track failure rates and
 
 Graceful degradation prepares for total outages. Cache successful generations and have fallback content ready for when the API is unavailable.
 
-## Complete Production-Ready Retry Implementation
+### Step 5: Complete Production-Ready Retry Implementation
 
 For production systems, build a retry manager that handles all failure modes:
 
@@ -318,7 +328,7 @@ result = manager.generate_with_retry(
 )
 ```
 
-## When All Else Fails
+### Step 6: When All Else Fails
 
 If you continue experiencing failures after implementing these strategies, consider these options:
 
@@ -332,7 +342,7 @@ If you continue experiencing failures after implementing these strategies, consi
 
 - Implement caching for successful generations to reduce repeated requests
 
-## Monitoring and Alerting
+### Step 7: Monitor and Alerting
 
 Track failure patterns to identify systemic issues:
 
@@ -372,6 +382,21 @@ if monitor.should_alert():
 ```
 
 DALL-E failures don't have to break your workflow. With proper error handling, retry logic, diagnostic procedures, and monitoring, you can build resilient systems that recover gracefully from transient failures and provide visibility into systemic issues.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

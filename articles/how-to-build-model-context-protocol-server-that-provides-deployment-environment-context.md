@@ -23,7 +23,17 @@ Build an MCP server that exposes your deployment environment details to AI codin
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## Understanding MCP Servers and Deployment Context
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand MCP Servers and Deployment Context
 
 
 MCP servers act as bridges between AI models and external systems. A deployment environment context server provides information about your infrastructure—cloud provider, region, container orchestration platform, environment variables, secrets management, and networking configuration. With this context, your AI assistant can generate Terraform configurations that match your AWS setup, Kubernetes manifests that respect your existing namespace conventions, or GitHub Actions workflows that deploy to your specific infrastructure.
@@ -32,7 +42,7 @@ MCP servers act as bridges between AI models and external systems. A deployment 
 The protocol follows a request-response pattern where the AI sends a request to your server, and your server returns structured data. Building this server gives you control over exactly what environment information your AI can access.
 
 
-## Setting Up Your MCP Server Project
+### Step 2: Set Up Your MCP Server Project
 
 
 Start by creating a new Node.js project for your MCP server:
@@ -146,7 +156,7 @@ await server.connect(transport);
 ```
 
 
-## Connecting to Your Actual Infrastructure
+### Step 3: Connecting to Your Actual Infrastructure
 
 
 For production use, replace the hardcoded values with real infrastructure queries. The following examples show how to fetch actual deployment context from different sources.
@@ -216,7 +226,7 @@ async function getStorageClass(api: k8s.CoreV1Api) {
 ```
 
 
-## Registering Your Server with Claude Code
+### Step 4: Registering Your Server with Claude Code
 
 
 After building your server, register it with your AI assistant. For Claude Code, add it to your configuration:
@@ -296,7 +306,7 @@ spec:
 
 The manifest now includes your production namespace, appropriate resource limits, and secret references matching your actual Kubernetes configuration.
 
-## Extending Your Server
+### Step 5: Extending Your Server
 
 Beyond basic context, consider adding these capabilities:
 
@@ -314,7 +324,7 @@ When building your deployment context server, follow these practices:
 
 Never expose actual secrets or credentials through your MCP server. Return only metadata and configuration patterns. Implement authentication if your server will be used by multiple team members. Consider rate limiting to prevent abuse, and audit logging to track which tools accessed what information.
 
-## Testing Your Implementation
+### Step 6: Test Your Implementation
 
 Verify your server works correctly before using it with your AI assistant:
 
@@ -324,6 +334,21 @@ echo '{"jsonrpc": "2.0", "id": 1, "method": "tools/list"}' | node server.js
 ```
 
 You should receive a list of available tools. Then test each tool individually to confirm it returns the expected data structure.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

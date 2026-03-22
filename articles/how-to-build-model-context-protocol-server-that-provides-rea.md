@@ -38,13 +38,23 @@ Model Context Protocol (MCP) enables AI assistants to interact with external too
 - **This guide covers understanding**: mcp server architecture, setting up your project, implementing the mcp server, with specific setup instructions
 - **Setup and configuration**: Step-by-step instructions included for each tool discussed
 
-## Understanding MCP Server Architecture
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand MCP Server Architecture
 
 An MCP server exposes capabilities through well-defined tools and resources. For test result streaming, you need three core components: a test runner integration layer, an event emission system, and MCP protocol handlers. The server runs as a standalone process that AI clients connect to when they need test information.
 
 The MCP protocol uses JSON-RPC 2.0 for communication. Clients discover available tools through the `tools/list` method, then invoke specific tools with `tools/call`. For real-time updates, MCP supports server-side notifications that push data without client requests.
 
-## Setting Up Your Project
+### Step 2: Set Up Your Project
 
 Create a new Python project with the required dependencies:
 
@@ -57,7 +67,7 @@ uv pip install mcp pytest pytest-asyncio aiofiles
 
 The MCP SDK provides the core server functionality. pytest runs your tests, and asyncio enables the non-blocking operations needed for real-time streaming.
 
-## Implementing the MCP Server
+### Step 3: Implementing the MCP Server
 
 Create `server.py` with the following structure:
 
@@ -176,7 +186,7 @@ if __name__ == "__main__":
 
 This server exposes two tools: `run_tests` executes your test suite and returns structured results, while `get_test_status` provides visibility into the current execution state.
 
-## Adding Real-Time Streaming
+### Step 4: Adding Real-Time Streaming
 
 The implementation above returns results after completion. For true real-time streaming, modify the server to emit progress notifications:
 
@@ -207,7 +217,7 @@ async def run_tests_streaming(self, test_path: str, framework: str):
 
 Clients receive these notifications automatically without polling, enabling live test result dashboards.
 
-## Integrating with AI Assistants
+### Step 5: Integrate with AI Assistants
 
 Once your MCP server runs, connect it to your AI assistant. In Claude Desktop or another MCP-compatible client, add the server configuration:
 
@@ -238,7 +248,7 @@ RUN uv pip install --system -r requirements.txt
 CMD ["python", "server.py"]
 ```
 
-## Handling Multiple Test Frameworks
+### Step 6: Handling Multiple Test Frameworks
 
 Production codebases often use more than one test framework — a Python backend tested with pytest, a JavaScript frontend tested with Jest. Extend the command builder to route correctly:
 
@@ -256,7 +266,7 @@ def _build_command(self, framework: str, test_path: str) -> list[str]:
 
 Using `--json-report` for pytest (via `pytest-json-report`) and `--json` for Jest produces structured output that's far easier to parse than terminal text. The AI client receives clean JSON it can summarize, display as a table, or correlate with source code rather than raw console output.
 
-## Persisting Test History with SQLite
+### Step 7: Persisting Test History with SQLite
 
 Trend analysis — detecting when a test suite starts flaking, tracking coverage over time — requires storing results. SQLite is the right choice for an MCP server: zero configuration, embeddable, and queryable via SQL.
 
@@ -316,7 +326,7 @@ async def list_tools() -> list[Tool]:
     ]
 ```
 
-## Securing the MCP Server
+### Step 8: Secure the MCP Server
 
 An MCP server that can execute test commands on your system is a meaningful attack surface. Before exposing it outside localhost, add authentication.
 
@@ -353,6 +363,21 @@ def safe_test_path(user_path: str) -> pathlib.Path:
 ```
 
 These two controls — token authentication and path restriction — prevent the most common misuse scenarios when running an MCP server in a shared or CI environment.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -24,7 +24,7 @@ Side-by-side comparisons and in-depth reviews of AI tools for developers and tea
 - **This guide covers guides**: best of, comparisons, with specific setup instructions
 - **Pricing starts at $10**: with options for different team sizes
 
-## Guides
+### Step 1: Guides
 
 - [AI Assistants for Creating Security Architecture Review](/ai-assistants-for-creating-security-architecture-review-docu/)
 - [AI Assistants for Multicloud Infrastructure Management](/ai-assistants-for-multicloud-infrastructure-management-and-d/)
@@ -1009,7 +1009,7 @@ Side-by-side comparisons and in-depth reviews of AI tools for developers and tea
 - [Writing Effective CursorRules for React TypeScript Projects](/writing-effective-cursorrules-for-react-typescript-projects-/)
 - [Writing Effective System Prompts for AI Coding Assistants](/writing-effective-system-prompts-for-ai-coding-assistants-th/)
 
-## Best Of
+### Step 2: Best Of
 
 - [AI Tools for Generating Coloring Book Pages Compared](/ai-tools-for-generating-coloring-book-pages-compared/)
 - [AI Tools for Real Estate Virtual Staging Compared](/ai-tools-for-real-estate-virtual-staging-compared/)
@@ -1133,11 +1133,11 @@ Side-by-side comparisons and in-depth reviews of AI tools for developers and tea
 
 - [AI Coding Tool GDPR Compliance Checklist for European](/ai-coding-tool-gdpr-compliance-checklist-for-european-engine/)
 
-## Productivity
+### Step 3: Productivity
 
 - [Best AI Tool for Economists Report Writing 2026](/best-ai-tool-for-economists-report-writing-2026/)
 
-## Security
+### Step 4: Security
 
 - [AI Tools for Automating Cloud Security Compliance Scanning](/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
 - [Does Claude Code Send Terminal Output to Anthropic Servers](/does-claude-code-send-terminal-output-to-anthropic-servers-p/)
@@ -1177,7 +1177,7 @@ Side-by-side comparisons and in-depth reviews of AI tools for developers and tea
 - [Notion AI Not Working as Expected Fix (2026)](/notion-ai-not-working-as-expected-fix-2026/)
 - [Windsurf AI Not Picking Up ESLint Config](/windsurf-ai-not-picking-up-eslint-config-troubleshooting-gui/)
 
-## Tutorials
+### Step 5: Tutorials
 
 - [How to Move Midjourney Style References to Stable Diffusion](/how-to-move-midjourney-style-references-to-stable-diffusion-/)
 - [How to Optimize Your AI Coding Tool Configuration](/how-to-optimize-your-ai-coding-tool-configuration-for-specif/)

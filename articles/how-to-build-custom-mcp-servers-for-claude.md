@@ -26,7 +26,17 @@ This guide builds three real MCP servers: a database query tool, a REST API wrap
 - **Use-case recommendations**: Specific guidance based on team size and requirements
 - **Trade-off analysis**: Strengths and limitations of each option discussed
 
-## How MCP Works
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: How MCP Works
 
 Claude communicates with MCP servers over stdio or HTTP. The server advertises its capabilities (tools, resources, prompts) and Claude decides when to call them based on context.
 
@@ -40,7 +50,7 @@ Three primitive types:
 - **Resources**: Read-only data Claude can access (files, DB records, API responses)
 - **Prompts**: Reusable prompt templates with arguments
 
-## Setup
+### Step 2: Set Up
 
 ```bash
 # Python SDK
@@ -66,7 +76,7 @@ Configure Claude Desktop to load your server in `~/Library/Application Support/C
 }
 ```
 
-## Server 1: Database Query Tool (Python)
+### Step 3: Server 1: Database Query Tool (Python)
 
 ```python
 # db_server.py
@@ -210,7 +220,7 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-## Server 2: REST API Wrapper (Node.js)
+### Step 4: Server 2: REST API Wrapper (Node.js)
 
 ```typescript
 // api_server.ts
@@ -317,7 +327,7 @@ const transport = new StdioServerTransport();
 await server.connect(transport);
 ```
 
-## Server 3: File Watcher Resource
+### Step 5: Server 3: File Watcher Resource
 
 Resources expose live data Claude can read. This one exposes log files:
 
@@ -370,7 +380,7 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-## Registering Multiple Servers
+### Step 6: Registering Multiple Servers
 
 ```json
 {
@@ -399,13 +409,28 @@ if __name__ == "__main__":
 
 Once registered, Claude can use all three servers in a single conversation: query the database, call the internal API, and read log files as needed.
 
-## Security Checklist
+### Step 7: Security Checklist
 
 - Restrict SQL to SELECT only; use a read-only DB user
 - Validate all file paths against an allowed base directory
 - Rotate API keys referenced in environment variables
 - Log all tool calls with timestamps and arguments
 - Set `ALLOWED_SCHEMAS` or equivalent for DB servers to limit data exposure
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

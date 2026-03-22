@@ -28,7 +28,17 @@ This guide walks through installation, a basic single-agent setup, tool definiti
 - **Put task-specific context in**: the user message instead.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Installation and Project Setup
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Install ation and Project Setup
 
 ```bash
 pip install anthropic
@@ -52,7 +62,7 @@ Set your API key in `.env`:
 ANTHROPIC_API_KEY=sk-ant-...
 ```
 
-## Defining Tools
+### Step 2: Defining Tools
 
 The SDK uses JSON Schema to describe tools. Each tool needs a `name`, `description`, and `input_schema`. Precise descriptions matter more than you might expect — the model reads them to decide when to call the tool.
 
@@ -131,7 +141,7 @@ def dispatch_tool(name: str, inputs: dict) -> str:
         return f"ERROR: unknown tool {name}"
 ```
 
-## The Agentic Loop
+### Step 3: The Agentic Loop
 
 The core pattern is a while loop that sends messages, checks for tool calls in the response, executes them, appends results, and repeats until the model returns a final text response with no pending tool calls.
 
@@ -188,7 +198,7 @@ def run_agent(task: str, max_turns: int = 20) -> str:
     return f"Agent stopped after {max_turns} turns without completing."
 ```
 
-## Running the Agent
+### Step 4: Run the Agent
 
 ```python
 # main.py
@@ -214,7 +224,7 @@ Run it:
 python main.py
 ```
 
-## Adding a Sub-Agent Pattern
+### Step 5: Adding a Sub-Agent Pattern
 
 For complex tasks, split work across specialized sub-agents. A coordinator agent decomposes the goal and spawns sub-agents with narrower scopes.
 
@@ -300,7 +310,7 @@ def coordinate(goal: str) -> str:
     return synthesis.content[0].text
 ```
 
-## Streaming Responses
+### Step 6: Streaming Responses
 
 For user-facing agents, stream output so users see progress in real time:
 
@@ -325,7 +335,7 @@ def run_agent_streaming(task: str):
     return final
 ```
 
-## Error Handling and Retries
+### Step 7: Error Handling and Retries
 
 Production agents need retry logic around API calls and tool failures:
 
@@ -351,7 +361,7 @@ def safe_api_call(fn, retries=3, backoff=2.0):
 
 Wrap your `client.messages.create(...)` calls inside `safe_api_call(lambda: ...)`.
 
-## Token Budget Management
+### Step 8: Token Budget Management
 
 Long agentic loops accumulate tokens fast. Track usage and bail out before hitting limits:
 
@@ -366,7 +376,7 @@ if total_input > MAX_INPUT_TOKENS:
     return "Agent terminated: approaching context limit. Partial result: ..."
 ```
 
-## Deploying as a FastAPI Service
+### Step 9: Deploy as a FastAPI Service
 
 ```python
 # server.py
@@ -400,7 +410,7 @@ curl -X POST http://localhost:8080/run \
   -d '{"task": "List the 5 largest files in /tmp"}'
 ```
 
-## Key Decisions When Building Agents
+### Step 10: Key Decisions When Building Agents
 
 **Model selection**: Use Opus for planning and final synthesis; use Sonnet for sub-task execution. This cuts costs by 4-5x on long pipelines without meaningful quality loss on well-scoped tasks.
 
@@ -409,6 +419,21 @@ curl -X POST http://localhost:8080/run \
 **System prompt length**: Keep system prompts under 500 words. Long prompts dilute attention and slow the model's tool-use decisions. Put task-specific context in the user message instead.
 
 **Max turns**: Set it low in development (5-8) to catch infinite loops early. Raise it only after validating the agent completes typical tasks within budget.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

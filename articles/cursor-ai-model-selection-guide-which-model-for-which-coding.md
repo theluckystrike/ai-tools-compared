@@ -40,13 +40,23 @@ This guide provides practical steps and best practices to help you accomplish th
 - **This guide provides practical**: steps and best practices to help you accomplish this task effectively.
 - **The model you choose**: affects how well Cursor understands your codebase, generates accurate code, explains existing implementations, and handles complex refactoring tasks.
 
-## Understanding Cursor's Model Options
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Cursor's Model Options
 
 Cursor provides several AI models accessible through its chat and autocomplete features. The primary models include Claude 3.5 Sonnet, GPT-4o, and Claude 3 Opus, with variations available depending on your subscription tier. Each model brings distinct strengths regarding speed, context understanding, code generation accuracy, and reasoning capabilities.
 
 The model you choose affects how well Cursor understands your codebase, generates accurate code, explains existing implementations, and handles complex refactoring tasks. Making informed decisions about model selection prevents frustration and accelerates development.
 
-## Small and Fast Tasks: Use Lightweight Models
+### Step 2: Small and Fast Tasks: Use Lightweight Models
 
 For simple, repetitive tasks, lightweight models deliver quick results without consuming excessive tokens or waiting for responses. These tasks include generating boilerplate code, writing unit test skeletons, and creating simple utility functions.
 
@@ -72,7 +82,7 @@ const formatCurrency = (amount: number): string => {
 
 This straightforward request doesn't require deep codebase understanding or complex reasoning. A fast model generates accurate results in seconds.
 
-## Medium Complexity: Balancing Speed and Quality
+### Step 3: Medium Complexity: Balancing Speed and Quality
 
 Tasks involving moderate complexity benefit from models with stronger reasoning capabilities. These include implementing feature modules, debugging errors with context, and writing integration tests.
 
@@ -121,7 +131,7 @@ export const authenticateUser = async (
 
 Claude 3.5 Sonnet understands TypeScript patterns, Express conventions, and proper error handling without extensive prompting. It generates idiomatic code that fits existing project patterns.
 
-## Complex Reasoning: Use Advanced Models
+### Step 4: Complex Reasoning: Use Advanced Models
 
 Complex tasks requiring deep understanding, multi-step reasoning, or architectural decisions need the most capable models available. These include architectural refactoring, debugging subtle issues, and generating test suites.
 
@@ -169,7 +179,7 @@ class UserProfileCache:
 
 An advanced model identifies the race condition, explains why it occurs, and implements the double-check locking pattern correctly.
 
-## Code Review and Explanation Tasks
+### Step 5: Code Review and Explanation Tasks
 
 Reviewing code and explaining implementations require models that excel at understanding context and articulating reasoning. Claude models typically outperform others for these tasks due to their strong communication capabilities.
 
@@ -222,7 +232,7 @@ const UserList = React.memo(({ users, onSelect }) => {
 
 Advanced models explain not just what to fix, but why each optimization matters and how it affects rendering performance.
 
-## Large File Analysis and Generation
+### Step 6: Large File Analysis and Generation
 
 Working with large files or generating substantial code blocks requires models with large context windows. Claude 3 Opus and GPT-4o handle these tasks better than smaller models.
 
@@ -234,7 +244,7 @@ Working with large files or generating substantial code blocks requires models w
 
 When generating an entire module or service, these models maintain consistency across many files and functions, reducing the need for repeated corrections.
 
-## Practical Model Selection Matrix
+### Step 7: Practical Model Selection Matrix
 
 | Task Type | Recommended Model | Reason |
 
@@ -254,11 +264,26 @@ When generating an entire module or service, these models maintain consistency a
 
 | Documentation | Claude models | Strong communication |
 
-## Subscription Considerations
+### Step 8: Subscription Considerations
 
 Your Cursor subscription tier determines available models. Free users access basic models with limited context. Plus subscribers unlock Claude 3.5 Sonnet and extended context. Pro users access all models including Claude 3 Opus and can set default models for different contexts.
 
 If you're hitting limits with your current tier, prioritize using advanced models only for tasks that genuinely require them. Reserve Claude 3 Opus for complex debugging and architecture work while using faster models for straightforward generation tasks.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

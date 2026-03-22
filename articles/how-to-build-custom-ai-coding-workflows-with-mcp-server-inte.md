@@ -40,7 +40,17 @@ Build custom AI coding workflows by creating MCP servers that expose your propri
 - **Use environment variables or**: secrets management systems, and rotate credentials regularly.
 - **MCP tools are portable across Claude**: GPT-4o, and any other MCP-compatible client without code changes.
 
-## Understanding MCP Server Architecture
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand MCP Server Architecture
 
 MCP servers act as bridges between your AI assistant and external systems. Each server exposes specific capabilities through a well-defined interface, allowing AI models to interact with databases, file systems, APIs, and development tools. The protocol handles authentication, request formatting, and response parsing, letting you focus on workflow logic rather than plumbing.
 
@@ -48,7 +58,7 @@ The architecture follows a client-server model where your AI assistant (the clie
 
 MCP differs from traditional API integrations in a critical way: the AI model itself decides when and how to invoke your tools based on the user's intent. You define the tool schema (name, description, input parameters), and the model handles orchestration. This inverts the traditional programming model — instead of writing `if user_asks_about_db then query_db`, you describe what your tool does and let the model figure out when to use it.
 
-## Comparing MCP Server Approaches
+### Step 2: Comparing MCP Server Approaches
 
 Before writing your own MCP server, evaluate whether an existing server meets your needs:
 
@@ -62,7 +72,7 @@ Before writing your own MCP server, evaluate whether an existing server meets yo
 
 For most teams, the fastest ROI comes from wrapping existing internal tools (bash scripts, internal CLIs, REST APIs) as MCP tools rather than building greenfield servers.
 
-## Setting Up Your First MCP Server Connection
+### Step 3: Set Up Your First MCP Server Connection
 
 Before building workflows, you need to establish basic server connectivity. Most MCP server implementations use JSON-RPC 2.0 for communication. Here's a minimal configuration example using a typical MCP server setup:
 
@@ -88,7 +98,7 @@ client = Client(config)
 
 This configuration defines two servers: one for filesystem operations and another for database interactions. Replace the connection string with your actual database credentials.
 
-## Step-by-Step: Building a Custom MCP Server in Python
+### Step 4: Step-by-Step: Building a Custom MCP Server in Python
 
 This walkthrough creates a custom MCP server that wraps your internal deployment API, making it accessible to Claude Code or any MCP-compatible client.
 
@@ -191,7 +201,7 @@ Add to your `~/.claude/config.json`:
 
 Claude Code will automatically discover the tools on next startup.
 
-## Building a Code Review Workflow
+### Step 5: Build a Code Review Workflow
 
 A practical use case involves automating code reviews. This workflow triggers analysis whenever you push changes to a repository:
 
@@ -225,7 +235,7 @@ async def code_review_workflow(commit_sha: str):
 
 This workflow demonstrates chaining multiple MCP server calls. The output from each server feeds into the next step, creating a pipeline that processes code changes automatically.
 
-## Creating a Database Migration Assistant
+### Step 6: Create a Database Migration Assistant
 
 Another valuable workflow helps manage database migrations. This assistant can generate migration scripts based on schema changes:
 
@@ -284,7 +294,7 @@ async def call_with_retry(tool_name: str, params: dict, max_retries=3):
 
 **Tool descriptions drive quality.** The model selects tools based on your description strings. Vague descriptions ("do stuff with files") produce unreliable invocations. Precise descriptions ("read a file from the workspace directory, returns file contents as UTF-8 string") produce reliable behavior. Treat tool descriptions as a type of prompt engineering.
 
-## Scaling Your Workflows
+### Step 7: Scaling Your Workflows
 
 As your workflows grow more complex, consider organizing them into reusable components. Create a library of standard operations that combine frequently-used server calls:
 
@@ -317,6 +327,21 @@ Keep servers focused. A server with 3-7 related tools performs better than a mon
 **Q: My MCP server works in Claude Code but not in the Claude API directly. Why?**
 
 The Claude API (`anthropic.messages.create`) does not automatically connect to MCP servers — that integration lives in Claude Code (the CLI) and Claude Desktop. To use MCP tools in the API, you either use the Claude Code SDK's `query()` method (which handles MCP), or manually convert your MCP tool schemas into Anthropic tool definitions and call your tool logic yourself.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Articles
 

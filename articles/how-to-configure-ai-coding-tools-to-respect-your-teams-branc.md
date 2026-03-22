@@ -51,7 +51,17 @@ When AI tools ignore these conventions, you spend time renaming branches or expl
 
 Branch naming consistency also pays dividends in audit trails. Many compliance frameworks require that code changes map clearly to tickets or requirements. When every branch follows a pattern like `feature/JIRA-4512-payment-retry-logic`, you get automatic traceability from Git history back to the original requirement without any extra tooling.
 
-## Common Branch Naming Patterns
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Common Branch Naming Patterns
 
 Before configuring your AI tools, it helps to document exactly which convention your team uses. The most widely adopted patterns are:
 
@@ -64,14 +74,14 @@ Before configuring your AI tools, it helps to document exactly which convention 
 
 Agreeing on the pattern before configuring your tools prevents conflicting instructions later. If some developers configure their AI to include ticket numbers while others don't, you end up with inconsistent branches even with configuration in place.
 
-## Configuring Cursor with Branch Rules
+### Step 2: Configure Cursor with Branch Rules
 
 Cursor uses a `.cursorrules` file to define project-specific behaviors. Add branch naming guidelines to this file to ensure generated branches follow your conventions.
 
 Create or update your `.cursorrules` file in the project root:
 
 ```
-## Branch Naming Conventions
+### Step 3: Branch Naming Conventions
 
 Our team uses the following branch prefixes:
 - `feature/` for new features (e.g., feature/add-payment-gateway)
@@ -92,7 +102,7 @@ Cursor reads this configuration and applies it when generating branch names. The
 
 For Cursor's newer `.cursor/rules` directory format (used in Cursor 0.42+), you can also create a dedicated `branch-conventions.mdc` rule file with `alwaysApply: true` to ensure the rules load for every conversation regardless of which files are open.
 
-## Claude Code Configuration
+### Step 4: Claude Code Configuration
 
 Claude Code respects instructions in `CLAUDE.md` files within your project. Add branch naming requirements to this file for team-wide consistency.
 
@@ -101,7 +111,7 @@ Create a `CLAUDE.md` file with these guidelines:
 ```
 # Project Conventions
 
-## Git Branch Naming
+### Step 5: Git Branch Naming
 
 Our team follows these branch naming rules:
 
@@ -126,7 +136,7 @@ Place this file in your repository root. Claude Code checks for `CLAUDE.md` on e
 
 You can also place a `CLAUDE.md` in your home directory (`~/.claude/CLAUDE.md`) for global instructions that apply across all projects. This is useful if you want a baseline set of naming rules that every project inherits, with project-level files overriding specifics.
 
-## GitHub Copilot Custom Instructions
+### Step 6: GitHub Copilot Custom Instructions
 
 GitHub Copilot supports workspace-specific custom instructions through VS Code settings. Configure branch naming behavior in your workspace settings.
 
@@ -156,7 +166,7 @@ Copilot uses these settings when suggesting branch names through Git commands or
 For repositories using the `.github/copilot-instructions.md` format, add a dedicated section there as well:
 
 ```markdown
-## Branch Naming
+### Step 7: Branch Naming
 
 Always suggest branch names using this format: `<type>/<description>`
 
@@ -170,7 +180,7 @@ Rules:
 
 Copilot Chat reads this file and uses it when you ask it to suggest a branch name, write a PR description, or draft commit messages that reference branch context.
 
-## Windsurf Rules Configuration
+### Step 8: Windsurf Rules Configuration
 
 Windsurf uses a `rules.md` file for project-specific instructions. Update your rules to include branch naming requirements.
 
@@ -179,7 +189,7 @@ Add a `rules.md` file to your project root:
 ```
 # Windsurf Project Rules
 
-## Branch Naming Standard
+### Step 9: Branch Naming Standard
 
 Format: `<type>/<short-description>`
 
@@ -226,7 +236,7 @@ The consistent prefix helps your team quickly identify branch purpose during sta
 
 A well-configured AI will also handle edge cases correctly. Ask "what branch should I use for a production emergency fixing the checkout crash?" and a configured tool responds with `hotfix/checkout-crash` rather than a vague `emergency-fix` or an incorrectly typed `fix/checkout-crash` when your team's convention distinguishes hotfixes from regular fixes.
 
-## Testing Your Configuration
+### Step 10: Test Your Configuration
 
 After setting up branch naming rules, verify they work by requesting a branch name:
 
@@ -242,7 +252,7 @@ If the response doesn't match your conventions, add more explicit examples to yo
 
 Run through a short test matrix covering each branch type: features, fixes, hotfixes, refactors, and documentation. This catches cases where the AI handles common types correctly but reverts to generic names for less-frequent branch types. Document any failures and add them as explicit examples to your configuration.
 
-## Team-Wide Enforcement
+### Step 11: Team-Wide Enforcement
 
 To ensure consistency across your entire team:
 
@@ -272,7 +282,7 @@ This catches misnamed branches before they're pushed, complementing your AI conf
 
 For teams using GitHub or GitLab, add branch protection rules that restrict what patterns can be merged. GitHub's branch protection API lets you enforce naming patterns at the server level, so even branches created outside your AI tools must conform. This creates a two-layer defense: AI configuration prevents most misnamed branches from being created, and protection rules prevent any that slip through from being merged.
 
-## Keeping Configuration Files Maintained
+### Step 12: Keeping Configuration Files Maintained
 
 Configuration files drift out of date when teams iterate on conventions. Build a simple check into your quarterly engineering reviews: compare a sample of recent branch names against your documented convention to see whether the AI is complying.
 
@@ -285,6 +295,21 @@ When your team updates its convention—adding a new branch type, changing the s
 - Pre-commit hook regex — update the pattern to match new types
 
 Treating these files as living documentation, checked into version control alongside your code, ensures every developer and every AI assistant on the team works from the same playbook.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

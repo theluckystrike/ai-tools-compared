@@ -31,7 +31,17 @@ Enable Privacy Mode in Cursor AI by navigating to Settings, clicking the Privacy
 - **16 GB of RAM**: is recommended for comfortable use.
 - **Focus on the patterns**: you reach for most often: API call wrappers, test scaffolding, component templates for your design system, and error handling boilerplate.
 
-## Understanding Cursor AI's Privacy Mode
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Cursor AI's Privacy Mode
 
 
 When you use Cursor AI in its default configuration, code context is sent to AI servers to generate suggestions, chat responses, and autocomplete features. Privacy mode changes this behavior by processing AI requests locally or limiting what data leaves your machine.
@@ -47,7 +57,7 @@ Privacy mode in Cursor AI is designed for developers who need AI assistance but 
 Understanding the distinction between what privacy mode prevents and what it still allows is essential for setting accurate expectations with compliance teams. Privacy mode is not equivalent to a fully air-gapped environment—Cursor itself still needs network access for authentication and updates—but it stops your source code from being included in AI inference requests sent to third-party providers.
 
 
-## Enabling Privacy Mode in Cursor AI
+### Step 2: Enable Privacy Mode in Cursor AI
 
 
 To enable privacy mode, follow these steps:
@@ -75,7 +85,7 @@ Settings → Privacy →
 Always restart Cursor after toggling privacy mode. Settings changes apply to new sessions, not the currently running editor process.
 
 
-## Practical Configuration Examples
+### Step 3: Practical Configuration Examples
 
 
 ### Basic Privacy Configuration
@@ -144,7 +154,7 @@ For organizations where individual developer settings cannot be trusted, Cursor 
 Setting `allowOverride` to false prevents individual developers from disabling privacy mode through the settings UI, which is critical for regulated environments.
 
 
-## What Works in Privacy Mode
+### Step 4: What Works in Privacy Mode
 
 
 When privacy mode is enabled, certain features remain functional:
@@ -158,7 +168,7 @@ When privacy mode is enabled, certain features remain functional:
 - **Linting and diagnostics**: ESLint, TypeScript errors, and other language server features are unaffected
 
 
-## What Changes in Privacy Mode
+### Step 5: What Changes in Privacy Mode
 
 
 Some AI features may be limited or unavailable:
@@ -174,7 +184,7 @@ Some AI features may be limited or unavailable:
 It is worth auditing your team's most-used Cursor features before switching to privacy mode. If your workflow depends heavily on the chat interface for code generation, you may need to evaluate whether a self-hosted model integration satisfies both your productivity and compliance needs.
 
 
-## Using Cursor AI Features Without Sending Code
+### Step 6: Use Cursor AI Features Without Sending Code
 
 
 Even with privacy mode enabled, you can use many AI features effectively:
@@ -233,7 +243,7 @@ To maximize productivity in privacy mode:
 5. **Invest in language server tooling**: TypeScript's own language server provides intelligent rename, find-references, and go-to-definition that don't require AI
 
 
-## Verifying Your Privacy Settings
+### Step 7: Verify Your Privacy Settings
 
 
 To confirm privacy mode is working correctly:

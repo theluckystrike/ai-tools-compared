@@ -62,7 +62,17 @@ Developers frequently work with proprietary algorithms, internal APIs, trade sec
 
 Beyond compliance, auditing helps you understand the behavior of AI tools. Different tools handle context windows, code uploads, and telemetry differently. By monitoring traffic, you can choose tools that align with your privacy requirements.
 
-## Method 1: Network Traffic Monitoring with HTTP Debugging Tools
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Method 1: Network Traffic Monitoring with HTTP Debugging Tools
 
 The most direct approach is intercepting HTTP/HTTPS traffic from your IDE or terminal. Tools like mitmproxy, Charles Proxy, or Wireshark let you inspect requests in real time.
 
@@ -104,7 +114,7 @@ Start mitmproxy, then launch your AI coding tool. Watch for requests to domains 
 
 Each request body typically contains snippets of your code, file paths, and context. You'll see exactly what gets sent alongside prompts.
 
-## Method 2: Using strace for System Call Monitoring
+### Step 2: Method 2: Using strace for System Call Monitoring
 
 On Linux, `strace` traces system calls made by a process. This works even for encrypted traffic, showing you when and where connections are made.
 
@@ -124,7 +134,7 @@ strace -e trace=network -f -o /tmp/cursor-trace.txt cursor
 
 Look for connect calls to external IP addresses. This reveals all network destinations, even if the traffic is encrypted.
 
-## Method 3: Local DNS Logging
+### Step 3: Method 3: Local DNS Logging
 
 Every external connection starts with a DNS query. Logging DNS requests shows which domains your AI tools contact without inspecting encrypted traffic.
 
@@ -149,7 +159,7 @@ sudo tcpdump -i any -n port 53 -c 100
 
 Run this while using your AI coding tool. You'll see every domain being resolved, giving you a list of external services.
 
-## Method 4: Inspecting Claude Code and Similar Tools
+### Step 4: Method 4: Inspecting Claude Code and Similar Tools
 
 Claude Code and similar agents often run as CLI tools or desktop applications. They typically have configuration files or verbose modes that reveal behavior.
 
@@ -181,7 +191,7 @@ cat ~/.config/claude/settings.json | grep -i telemetry
 
 Look for options to disable telemetry or limit data transmission.
 
-## Method 5: Firewall-Based Blocking and Monitoring
+### Step 5: Method 5: Firewall-Based Blocking and Monitoring
 
 Create explicit firewall rules to monitor or block specific connections.
 
@@ -205,7 +215,7 @@ Review logs with:
 sudo journalctl -f | grep "COPILOT"
 ```
 
-## Practical Audit Workflow
+### Step 6: Practical Audit Workflow
 
 Combine these methods for visibility:
 
@@ -219,7 +229,7 @@ Combine these methods for visibility:
 
 5. **Create firewall rules** to block or alert on specific connections
 
-## What to Look For
+### Step 7: What to Look For
 
 When auditing, pay attention to:
 
@@ -233,7 +243,7 @@ When auditing, pay attention to:
 
 - Third-party services: Check for requests to analytics or logging services
 
-## What Each Major Tool Actually Transmits
+### Step 8: What Each Major Tool Actually Transmits
 
 Understanding the documented behavior of popular tools helps set expectations before you audit:
 
@@ -247,7 +257,7 @@ Understanding the documented behavior of popular tools helps set expectations be
 
 **Tabnine** on its free tier runs the basic model locally — no code leaves your machine. The cloud-enhanced tier sends snippets for server-side inference, making Tabnine's free tier uniquely private among completion tools.
 
-## Tool-Specific Audit Commands
+### Step 9: Tool-Specific Audit Commands
 
 Each tool exposes different hooks for monitoring:
 
@@ -295,7 +305,7 @@ def request(flow: http.HTTPFlow) -> None:
 
 Run with: `mitmproxy -s mitmproxy_ai_logger.py -p 8080`
 
-## Creating a Data Transmission Baseline
+### Step 10: Create a Data Transmission Baseline
 
 Before you can detect anomalies, establish a baseline. Spend 30 minutes coding normally while capturing all traffic, then analyze what was sent:
 
@@ -310,7 +320,7 @@ wc -l code-fragments.txt
 
 Compare the fragment count against the number of completions triggered. A ratio above 3:1 suggests the tool is sending substantial context beyond each immediate request.
 
-## Reducing Transmitted Data
+### Step 11: Reducing Transmitted Data
 
 After auditing, consider these mitigation strategies:
 
@@ -323,6 +333,21 @@ After auditing, consider these mitigation strategies:
 - Use network isolation for sensitive repositories — create a firewall rule that blocks AI tool domains for specific project directories
 
 - Review and rotate API keys quarterly if using direct integrations
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

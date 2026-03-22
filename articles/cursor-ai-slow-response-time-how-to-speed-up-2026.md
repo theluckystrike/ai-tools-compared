@@ -41,7 +41,17 @@ The most effective solutions involve adjusting model selection, optimizing conte
 - **Reserve the most capable**: models for complex debugging tasks or when you need thorough code review.
 - **Cursor automatically picks up**: this configuration on the next session.
 
-## Select the Right Model for Your Task
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Select the Right Model for Your Task
 
 Cursor offers multiple AI models with different speed profiles. The default configuration may not be optimal for your specific use case. Navigate to **Cursor Settings > Models** and evaluate which option balances speed and capability for your workflow.
 
@@ -60,7 +70,7 @@ The **Balanced** model provides a middle ground—faster than the most option bu
 
 Reserve the most capable models for complex debugging tasks or when you need thorough code review. When you only need a quick autocomplete, manually switching to a faster model prevents unnecessary latency.
 
-## Optimize Context Chunk Size and File Limits
+### Step 2: Optimize Context Chunk Size and File Limits
 
 Context management directly impacts response speed. When Cursor processes too much context, it wastes tokens on irrelevant information and slows down inference.
 
@@ -81,7 +91,7 @@ The **Max Context Files** setting controls how many files Cursor considers for e
 
 For projects with clear module boundaries, open only the relevant subdirectory as your workspace. Instead of opening a massive monorepo root, work within the specific package you are actively modifying.
 
-## Configure .cursorrules for Faster Responses
+### Step 3: Configure .cursorrules for Faster Responses
 
 The `.cursorrules` file influences how Cursor processes your codebase. An optimized configuration reduces unnecessary indexing and processing:
 
@@ -114,7 +124,7 @@ This configuration restricts indexing to source files only, excludes build artif
 
 Create or update your `.cursorrules` file in your project root. Cursor automatically picks up this configuration on the next session.
 
-## Address Network and Proxy Issues
+### Step 4: Address Network and Proxy Issues
 
 Cursor AI relies on cloud-based inference for most operations. Network conditions significantly affect response times. If you work behind a corporate firewall or VPN, latency from proxy traversal can add seconds to every response.
 
@@ -143,7 +153,7 @@ Latency above 200ms indicates network-related slowdowns. Solutions include:
 
 **Switch to Offline Models**: For sensitive projects or high-latency environments, configure Cursor to use local inference when available. This feature requires additional setup but eliminates network dependency entirely.
 
-## Manage Extension Conflicts
+### Step 5: Manage Extension Conflicts
 
 Extensions installed in Cursor can interfere with AI functionality and cause response delays. A problematic extension might be making conflicting API calls or consuming resources needed for AI operations.
 
@@ -155,7 +165,7 @@ To diagnose extension conflicts:
 
 Common offenders include conflicting AI extensions, outdated language servers, and heavy UI customization tools. After identifying problematic extensions, either update them or find alternatives that do not conflict with Cursor's AI features.
 
-## Adjust Editor and Hardware Settings
+### Step 6: Adjust Editor and Hardware Settings
 
 Local hardware and editor configuration affect how quickly Cursor renders suggestions. These optimizations often get overlooked but provide measurable improvements.
 
@@ -175,7 +185,7 @@ Local hardware and editor configuration affect how quickly Cursor renders sugges
 
 **Use SSD Storage**: Cursor indexes and caches data on local storage. Slow hard drives create bottlenecks during initial indexing and cache retrieval. Migrating your projects to SSD storage noticeably improves load times.
 
-## Monitor and Debug Performance Issues
+### Step 7: Monitor and Debug Performance Issues
 
 Cursor includes diagnostic tools for identifying persistent performance problems. Access developer tools to view detailed timing information:
 
@@ -251,7 +261,7 @@ Performance impact per hardware upgrade:
 - Switching to faster CPU: 20-30% faster inference
 - Improved network: 10-20% faster chat responses
 
-## Implementing Your Optimization Strategy
+### Step 8: Implementing Your Optimization Strategy
 
 Start with the highest-impact changes first. Model selection and context limits typically provide immediate improvements. Progress through the remaining fixes based on your specific symptoms:
 
@@ -265,7 +275,7 @@ Start with the highest-impact changes first. Model selection and context limits 
 
 After implementing changes, test response times using the same queries to establish a before-and-after comparison. Document your optimal configuration so you can replicate it across projects.
 
-## Benchmarking Before and After
+### Step 9: Benchmarking Before and After
 
 Create a standardized test to measure improvements:
 
@@ -336,7 +346,7 @@ for key in before:
     print(f"{key}: {improvement:+.1f}%")
 ```
 
-## Configuration Template for Different Project Types
+### Step 10: Configuration Template for Different Project Types
 
 ### React/TypeScript Project
 ```json
@@ -379,7 +389,7 @@ for key in before:
 }
 ```
 
-## Maintenance: Keeping Cursor Fast Long-term
+### Step 11: Perform Maintenance : Keeping Cursor Fast Long-term
 
 Schedule regular optimization:
 
@@ -407,6 +417,21 @@ echo "Cursor maintenance complete. Restart Cursor for full effect."
 ```
 
 Run weekly on monorepos, monthly on regular projects.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

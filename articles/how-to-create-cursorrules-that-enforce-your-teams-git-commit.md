@@ -44,7 +44,17 @@ Consistent commit messages are the backbone of a maintainable codebase. When eve
 
 CursorRules are configuration files that define how Cursor (an AI-powered code editor) behaves when working with specific projects. These rules can validate code, suggest improvements, and enforce coding standards. What makes CursorRules powerful is their ability to intercept actions and provide feedback in real-time. You can extend this capability to validate git commit messages before they're finalized.
 
-## Setting Up Your Commit Message Convention
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Set Up Your Commit Message Convention
 
 Before creating the CursorRule, establish your commit message convention. Most teams adopt either Conventional Commits or a custom format that suits their workflow.
 
@@ -68,7 +78,7 @@ fix(api): resolve null pointer exception in user endpoint
 docs(readme): update installation instructions
 ```
 
-## Creating the CursorRule for Commit Validation
+### Step 2: Create the CursorRule for Commit Validation
 
 Create a `.cursorrules` file in your project root. This file will contain the validation logic that Cursor applies when you attempt to commit. Here's a practical implementation:
 
@@ -95,7 +105,7 @@ commit_validation:
 
 This configuration establishes the baseline rules. The `enabled` flag turns validation on, `convention` identifies your chosen format, and the remaining fields specify exact requirements.
 
-## Implementing Validation Logic
+### Step 3: Implementing Validation Logic
 
 The `.cursorrules` file above provides configuration, but you need actual validation behavior. Create a validation script that Cursor can reference:
 
@@ -214,7 +224,7 @@ commit_validation:
 
 This configuration requires scopes for features and fixes, mandates body text for significant changes, and enforces a footer pattern for linking issues or PRs.
 
-## Using Husky to Share Hooks Across the Team
+### Step 4: Use Husky to Share Hooks Across the Team
 
 A common problem with git hooks is that `.git/hooks/` is not tracked by version control, so new team members miss the validation entirely. Husky solves this by storing hooks in a committed directory and installing them automatically via `npm install`.
 
@@ -235,7 +245,7 @@ node scripts/validate-commit.js "$(cat $1)"
 
 Commit `.husky/` to your repository. Every developer who runs `npm install` gets the hooks installed automatically. Combined with your `.cursorrules` file—which is also committed—the full enforcement stack travels with the repository.
 
-## Generating Changelogs from Validated Commits
+### Step 5: Generate Changelogs from Validated Commits
 
 One of the largest payoffs from enforcing Conventional Commits is automated changelog generation. Once every commit follows the format, tools like `conventional-changelog` or `release-please` can parse your git history and produce structured changelogs automatically.
 
@@ -251,13 +261,13 @@ Add the generator to your package scripts:
 
 Run it before each release to produce a changelog that groups commits by type—features, fixes, performance improvements, and breaking changes—without any manual editing. The discipline enforced by your CursorRule and Husky hook pays dividends here: messy commit messages produce messy changelogs.
 
-## Distributing Rules Across Your Team
+### Step 6: Distributing Rules Across Your Team
 
 Once you've created and tested your CursorRules, distribute them consistently. The simplest approach is committing the `.cursorrules` file to your repository. Team members clone the repo and Cursor automatically picks up the rules.
 
 For organization-wide rules, consider a shared configuration repository that teams can include as a git submodule. This approach ensures every project uses the same baseline rules while allowing project-specific overrides.
 
-## Handling Edge Cases and Exemptions
+### Step 7: Handling Edge Cases and Exemptions
 
 Real teams hit edge cases that pure regex validation struggles with. A few patterns appear repeatedly.
 
@@ -301,7 +311,7 @@ const pattern = /^(\w+)(?:\(([^)]+)\))?(!)?:\ (.+)$/;
 
 Documenting these edge cases in your `.cursorrules` file or an adjacent `CONTRIBUTING.md` prevents the inevitable "why did my commit get rejected?" question from new team members.
 
-## Testing Your Implementation
+### Step 8: Test Your Implementation
 
 Before rolling out to your team, validate the rules work correctly. Create test commit messages covering various scenarios:
 
@@ -319,11 +329,26 @@ git commit -m "update stuff"
 
 Run each test and confirm the validation behaves as expected. Adjust your rules based on feedback from team members—strictness must balance with practicality.
 
-## Maintaining Your Rules Over Time
+### Step 9: Maintaining Your Rules Over Time
 
 As your project evolves, your commit conventions will too. Review your CursorRules during quarterly planning or when taking on new project types. Keep the documentation current so new team members understand the reasoning behind each rule.
 
 A well-maintained commit message convention, enforced through CursorRules, eliminates guesswork and keeps your git history clean. Your future self—and your teammates—will thank you when browsing through months of commits to find that specific change.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

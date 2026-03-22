@@ -44,7 +44,17 @@ Understanding the root causes helps you apply the right fix:
 - **Configuration issues** — Wrong IDE settings or extensions interfere with suggestions
 
 
-## Step-by-Step Fixes
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Step-by-Step Fixes
 
 
 ### Fix 1: Provide Better Context
@@ -241,7 +251,7 @@ When Copilot consistently underperforms, consider alternatives:
 Test these to find what works best for your specific use case.
 
 
-## Diagnostic Tips
+### Step 2: Diagnostic Tips
 
 
 ### Analyze Suggestion Patterns
@@ -329,7 +339,7 @@ def process_data(items: list[str]) -> dict[str, int]:
 ```
 
 
-## Prevention Strategies
+### Step 3: Prevention Strategies
 
 
 ### Maintain Clean Codebase
@@ -406,6 +416,21 @@ If standard fixes don't resolve the issue:
 Copilot suggestions wrong how to fix is a common challenge, but with the right approach, you can significantly improve the quality of AI-generated code in your workflow.
 
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions

@@ -38,7 +38,17 @@ Static linters catch syntax errors and style violations. AI linters catch logic 
 - **Update the rules file**: as your codebase conventions evolve and commit it alongside your code so everyone uses the same standards.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## The Architecture
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The Architecture
 
 An AI linter differs from ESLint or Pylint in one key way: instead of matching patterns against an AST, it sends code to an LLM with a structured prompt and parses the JSON response. The tradeoff is latency and cost vs. catching nuanced issues.
 
@@ -48,7 +58,7 @@ The tool we'll build:
 3. Returns structured JSON with issue location, severity, and description
 4. Exits with code 1 if errors are found (CI-compatible)
 
-## Setting Up the Project
+### Step 2: Set Up the Project
 
 ```bash
 mkdir ai-linter && cd ai-linter
@@ -56,7 +66,7 @@ npm init -y
 npm install @anthropic-ai/sdk commander glob
 ```
 
-## Core Linter Implementation
+### Step 3: Core Linter Implementation
 
 ```javascript
 // src/linter.js
@@ -112,7 +122,7 @@ export async function lintFile(filePath) {
 }
 ```
 
-## CLI Entry Point
+### Step 4: CLI Entry Point
 
 ```javascript
 // src/cli.js
@@ -172,7 +182,7 @@ program
 program.parse();
 ```
 
-## CI Integration
+### Step 5: CI Integration
 
 ```yaml
 # .github/workflows/ai-lint.yml
@@ -201,7 +211,7 @@ jobs:
 
 Running only on changed files keeps CI costs under control. A typical PR with 10 changed files costs under $0.01 with Claude Haiku.
 
-## Adding File-Level Caching
+### Step 6: Adding File-Level Caching
 
 ```javascript
 import { createHash } from 'crypto';
@@ -236,7 +246,7 @@ export async function lintFileWithCache(filePath) {
 
 With caching, subsequent runs on unchanged files are instant and free.
 
-## Cost and Performance
+### Step 7: Cost and Performance
 
 On a 500-line TypeScript file with Claude Haiku:
 - Latency: 1.2-2.5 seconds
@@ -278,7 +288,7 @@ async function runCombinedLint(files) {
 
 This pipeline ensures you don't waste API calls on files with syntax errors.
 
-## Custom Rule Definitions
+### Step 8: Custom Rule Definitions
 
 Define project-specific rules in a configuration file:
 
@@ -302,6 +312,21 @@ Define project-specific rules in a configuration file:
 ```
 
 Pass these rules to the AI linter's system prompt for consistent enforcement across your team. Update the rules file as your codebase conventions evolve and commit it alongside your code so everyone uses the same standards.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

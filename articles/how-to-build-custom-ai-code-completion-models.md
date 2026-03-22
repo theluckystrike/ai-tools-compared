@@ -24,7 +24,17 @@ Off-the-shelf code completion models don't know your internal APIs, naming conve
 - **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## When Custom Models Make Sense
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: When Custom Models Make Sense
 
 Fine-tuning is worth the investment when:
 
@@ -35,7 +45,7 @@ Fine-tuning is worth the investment when:
 
 For general programming tasks, Claude or Copilot still win. For your internal `PaymentProcessor.process_with_retry()` calls, a fine-tuned model is more accurate.
 
-## Model Selection: CodeLlama vs StarCoder2
+### Step 2: Model Selection: CodeLlama vs StarCoder2
 
 Before writing a single line of training code, choose the right base model. The decision affects GPU requirements, licensing, and accuracy on specific languages.
 
@@ -49,7 +59,7 @@ Before writing a single line of training code, choose the right base model. The 
 
 For most internal codebases, **StarCoder2-7B** is the best starting point. It supports Fill-in-the-Middle (FIM) natively, which is the right training objective for autocomplete — the model learns to predict the middle of a function given its prefix and suffix. CodeLlama also supports FIM; DeepSeek-Coder uses a slightly different format.
 
-## Training Data Preparation
+### Step 3: Training Data Preparation
 
 Quality training data is more important than model size. A well-curated 10,000-example dataset beats a scraped 1M-example dataset for domain-specific tasks.
 
@@ -142,7 +152,7 @@ with open("training_data.jsonl", "w") as f:
 
 A codebase of 200,000 lines typically yields 8,000–15,000 usable FIM examples after filtering. Aim for at least 5,000 examples before fine-tuning; below that, the model memorizes rather than generalizes.
 
-## Fine-Tuning with QLoRA
+### Step 4: Fine-Tuning with QLoRA
 
 QLoRA lets you fine-tune a 7B parameter model on a single A100 (40GB) or two A10G GPUs. For a 3B model (Starcoder2-3b), you can use a single A10G.
 
@@ -221,7 +231,7 @@ tokenizer.save_pretrained("./fine-tuned-model")
 
 Training 10,000 examples for 3 epochs on a single A100 takes roughly 45–90 minutes. Monitor your TensorBoard loss curve: if training loss drops below 0.8 but validation loss stops improving, you're starting to overfit. Reduce epochs or increase dropout.
 
-## Merging LoRA Weights
+### Step 5: Merging LoRA Weights
 
 After training, merge the LoRA adapter into the base model for faster inference:
 
@@ -247,7 +257,7 @@ tokenizer.save_pretrained("./merged-model")
 print("Merged model saved.")
 ```
 
-## Evaluation
+### Step 6: Evaluation
 
 Before deploying, evaluate on a held-out test set:
 
@@ -313,7 +323,7 @@ print(f"Average token overlap: {avg_overlap:.1%}")
 
 A well-tuned model on an internal codebase typically reaches 20–35% exact match on single-function completions and 60–75% token overlap. The exact match number sounds low, but in practice it means the model produces functionally equivalent code even when the whitespace or variable name differs slightly. Run the suggested completions through your unit tests as a more meaningful quality signal.
 
-## Deploying with Ollama
+### Step 7: Deploy with Ollama
 
 Convert the merged model to GGUF format and serve with Ollama:
 
@@ -346,7 +356,7 @@ ollama run custom-coder "def process_payment(amount: float, currency: str) ->"
 
 The Q4_K_M quantization reduces a 7B model to roughly 4.5 GB. On a MacBook Pro M3, this runs at 25–40 tokens per second — fast enough for real-time autocomplete. For a team deployment, run Ollama on a shared Linux machine with a GPU and point all developer clients at `http://your-server:11434`.
 
-## VS Code Integration
+### Step 8: VS Code Integration
 
 ```json
 // .vscode/settings.json — use with Continue.dev extension
@@ -373,6 +383,21 @@ The Q4_K_M quantization reduces a 7B model to roughly 4.5 GB. On a MacBook Pro M
 ```
 
 Continue.dev is the recommended VS Code extension for connecting local Ollama models to the editor. It supports FIM-mode autocomplete natively and works without any data leaving your network.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

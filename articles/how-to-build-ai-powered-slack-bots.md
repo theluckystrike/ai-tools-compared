@@ -31,7 +31,17 @@ def handle_analyze(ack, command, respond):
 - **Topics covered**: architecture, setup, core bot implementation
 - **Practical guidance included**: Step-by-step setup and configuration instructions
 
-## Architecture
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Architecture
 
 ```
 Slack → Bolt App (FastAPI) → Claude/GPT-4 → Slack Response
@@ -41,7 +51,7 @@ Slack → Bolt App (FastAPI) → Claude/GPT-4 → Slack Response
 
 The Slack Bolt SDK handles the OAuth, event routing, and response timing. Your bot focuses on the AI layer.
 
-## Setup
+### Step 2: Set Up
 
 ```bash
 pip install slack-bolt anthropic redis fastapi uvicorn python-dotenv
@@ -61,7 +71,7 @@ ANTHROPIC_API_KEY=...
 REDIS_URL=redis://localhost:6379
 ```
 
-## Core Bot Implementation
+### Step 3: Core Bot Implementation
 
 ```python
 # bot.py
@@ -179,7 +189,7 @@ def handle_ask(ack, command, respond):
     })
 ```
 
-## Slash Command: /summarize
+### Step 4: Slash Command: /summarize
 
 A more complex command that fetches channel history from Slack and summarizes it:
 
@@ -260,7 +270,7 @@ Conversation:
     })
 ```
 
-## Handling Slash Command Timeouts
+### Step 5: Handling Slash Command Timeouts
 
 Slack requires a response within 3 seconds. For slow AI calls, use the `respond` URL pattern:
 
@@ -286,7 +296,7 @@ def handle_analyze(ack, command, respond):
     thread.start()
 ```
 
-## Running the Bot
+### Step 6: Run the Bot
 
 ```python
 # main.py
@@ -321,7 +331,7 @@ EXPOSE 8080
 CMD ["uvicorn", "main:api", "--host", "0.0.0.0", "--port", "8080"]
 ```
 
-## Rate Limiting and Cost Control
+### Step 7: Rate Limiting and Cost Control
 
 ```python
 RATE_LIMIT_REQUESTS = 10   # Per user per hour
@@ -339,6 +349,21 @@ if not check_rate_limit(event["user"]):
     say("You've hit the rate limit. Try again in an hour.", thread_ts=thread_ts)
     return
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 
