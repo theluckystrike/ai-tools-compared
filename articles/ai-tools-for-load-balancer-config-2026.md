@@ -257,6 +257,151 @@ resource "aws_lb_listener" "https" {
 
 Both Claude and ChatGPT produce correct ALB Terraform. Claude selects the TLS 1.3 security policy by default; ChatGPT often uses an older policy.
 
+## Rate Limiting and DDoS Protection
+
+Load balancers are the first line of defense against traffic abuse. AI can generate the connection limiting and rate limiting configuration that's often omitted from basic examples.
+
+**Prompt:**
+```text
+Add rate limiting to the Nginx config: max 20 requests/second per IP for the API,
+max 100 connections per IP globally. Return 429 with Retry-After header when limited.
+Also add bot protection that blocks known bad user agents.
+```
+
+```nginx
+# Rate limiting zones (defined in http {} block)
+limit_req_zone $binary_remote_addr zone=api_rate:10m rate=20r/s;
+limit_conn_zone $binary_remote_addr zone=conn_limit:10m;
+
+# Bot protection — map to a $bad_bot variable
+map $http_user_agent $bad_bot {
+    default         0;
+    "~*scrapy"      1;
+    "~*wget"        1;
+    "~*python-requests" 1;
+    "~*curl"        0;  # Allow curl for legitimate API testing
+    ""              1;  # Block empty user agents
+}
+
+server {
+    # ... ssl config omitted for brevity ...
+
+    # Global connection limit
+    limit_conn conn_limit 100;
+
+    # Block bad bots
+    if ($bad_bot = 1) {
+        return 403 "Forbidden\n";
+    }
+
+    location /api/ {
+        limit_req zone=api_rate burst=40 nodelay;
+        limit_req_status 429;
+
+        # Add Retry-After header when rate limited
+        add_header Retry-After 1 always;
+
+        proxy_pass http://app_backend;
+        proxy_http_version 1.1;
+        proxy_set_header Connection "";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+```
+
+The `burst=40` allows short spikes up to 40 requests before rate limiting kicks in — useful for legitimate clients that occasionally batch API calls. `nodelay` processes burst requests immediately rather than queueing them, which reduces latency for normal traffic. Claude explains this trade-off explicitly when you ask.
+
+## Cloudflare Workers for Edge Load Balancing
+
+Modern traffic management extends beyond traditional load balancers. AI tools can generate Cloudflare Workers scripts for edge-level routing.
+
+**Prompt:**
+```text
+Write a Cloudflare Worker that implements canary routing:
+- 5% of traffic goes to the canary origin (v2.api.example.com)
+- 95% goes to the stable origin (api.example.com)
+- Sticky canary assignment using a cookie (so the same user always hits canary)
+- Log canary vs stable requests to a KV namespace
+```
+
+```javascript
+const CANARY_PERCENTAGE = 5;
+const STABLE_ORIGIN = "https://api.example.com";
+const CANARY_ORIGIN = "https://v2.api.example.com";
+const COOKIE_NAME = "canary_group";
+
+export default {
+  async fetch(request, env) {
+    const url = new URL(request.url);
+    const cookies = parseCookies(request.headers.get("Cookie") || "");
+
+    let isCanary;
+
+    // Check existing sticky assignment
+    if (cookies[COOKIE_NAME] === "1") {
+      isCanary = true;
+    } else if (cookies[COOKIE_NAME] === "0") {
+      isCanary = false;
+    } else {
+      // New visitor — assign randomly
+      isCanary = Math.random() * 100 < CANARY_PERCENTAGE;
+    }
+
+    const origin = isCanary ? CANARY_ORIGIN : STABLE_ORIGIN;
+    const targetUrl = new URL(url.pathname + url.search, origin);
+
+    const response = await fetch(targetUrl.toString(), {
+      method: request.method,
+      headers: request.headers,
+      body: request.body,
+    });
+
+    // Log to KV
+    await env.ROUTING_LOG.put(
+      `${Date.now()}-${crypto.randomUUID()}`,
+      JSON.stringify({
+        path: url.pathname,
+        canary: isCanary,
+        status: response.status,
+        timestamp: new Date().toISOString(),
+      }),
+      { expirationTtl: 86400 }
+    );
+
+    // Clone response and set sticky cookie
+    const newResponse = new Response(response.body, response);
+    newResponse.headers.append(
+      "Set-Cookie",
+      `${COOKIE_NAME}=${isCanary ? "1" : "0"}; Max-Age=86400; Path=/; SameSite=Lax; Secure`
+    );
+    return newResponse;
+  },
+};
+
+function parseCookies(cookieHeader) {
+  return Object.fromEntries(
+    cookieHeader.split(";").map((c) => c.trim().split("=").map(decodeURIComponent))
+  );
+}
+```
+
+Claude correctly implements stickiness by checking the cookie before random assignment, which prevents users from flipping between groups on subsequent requests. The KV write uses `expirationTtl` to avoid unbounded log growth.
+
+## Comparing AI Tools for Load Balancer Config
+
+For traditional load balancer configs (HAProxy, Nginx), Claude and GPT-4 both perform at a high level. The differences emerge in:
+
+**HAProxy**: Claude consistently generates correct ACL syntax and uses the `http-check` directive for active health checks. GPT-4 occasionally uses deprecated `option httpchk` syntax without the `http-check expect` companion.
+
+**Nginx upstream**: Both tools handle basic upstream config. Claude proactively adds `proxy_next_upstream` retry logic; GPT-4 often omits it unless explicitly requested.
+
+**Terraform (AWS ALB)**: Claude defaults to current TLS policies and includes `enable_deletion_protection = true`. GPT-4 leaves deletion protection unset (defaults to false), which is a production risk.
+
+**Edge routing (Cloudflare Workers, Lambda@Edge)**: Claude performs better on JavaScript-based edge routing — particularly around cookie parsing, response cloning, and handling streaming response bodies correctly.
+
+For complex routing scenarios (weighted canary, A/B testing, geo-routing), provide explicit percentage values and specify the stickiness mechanism in your prompt. Both tools produce incorrect output when the routing logic is ambiguous.
+
 ## Related Reading
 
 - [AI-Powered API Gateway Configuration Tools](/ai-tools-compared/ai-powered-api-gateway-configuration-tools-2026/)
