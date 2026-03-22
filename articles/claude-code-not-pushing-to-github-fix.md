@@ -338,6 +338,83 @@ The URL should be either:
 - HTTPS: `https://github.com/username/repo.git`
 
 
+## Reading Git Push Error Messages
+
+Git push errors are usually actionable if you read them carefully. Here are the most common messages and what they mean:
+
+**`remote: Permission to user/repo.git denied to other-user.`**
+Your SSH key or token is authenticated as a different GitHub account than the one with access to the repo. This happens frequently on machines used for multiple GitHub accounts. Fix: check `ssh -T git@github.com` to see which account is active, and update your SSH config to use an account-specific host alias:
+
+```
+# ~/.ssh/config
+Host github-work
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_ed25519_work
+
+Host github-personal
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_ed25519_personal
+```
+
+Then update your remote URL: `git remote set-url origin git@github-work:yourorg/repo.git`
+
+**`error: failed to push some refs to 'origin'`**
+The remote has commits your local branch doesn't have. Run `git pull --rebase origin main` to incorporate upstream changes, then retry the push.
+
+**`remote: error: GH007: Your push would publish a private email address.`**
+GitHub's email privacy setting is blocking the push because your commit email is your real address. Either disable email privacy in GitHub settings, or configure a GitHub no-reply email:
+
+```bash
+git config --global user.email "12345678+username@users.noreply.github.com"
+```
+
+**`[rejected] main -> main (non-fast-forward)`**
+Same as the "failed to push some refs" error — upstream has diverged. Rebase or merge before pushing.
+
+## Personal Access Token Scope Errors
+
+When using HTTPS with a PAT and you see `remote: Repository not found` or `403 Forbidden`, the token likely lacks the required scopes. GitHub Fine-grained tokens require these permissions for push access:
+
+| Permission | Required Level |
+|---|---|
+| Contents | Read and write |
+| Metadata | Read-only (automatic) |
+| Pull requests | Read and write (if pushing triggers PR workflows) |
+
+Classic PATs need the `repo` scope for private repositories and `public_repo` for public ones. A token with only `read:org` or `user` scopes cannot push code.
+
+To verify token permissions without revoking it, check via the API:
+
+```bash
+curl -H "Authorization: Bearer YOUR_TOKEN" \
+  https://api.github.com/repos/USERNAME/REPO \
+  | python3 -m json.tool | grep permissions -A 10
+```
+
+If `push` is `false` in the permissions block, the token lacks write access to that specific repository.
+
+## Git Credential Cache and Keychain Issues
+
+On macOS, credential failures often come from stale keychain entries. Git may be silently using an old expired PAT stored in the system keychain:
+
+```bash
+# List stored GitHub credentials
+git credential-osxkeychain get <<EOF
+protocol=https
+host=github.com
+EOF
+
+# Remove a stale credential
+git credential-osxkeychain erase <<EOF
+protocol=https
+host=github.com
+EOF
+```
+
+After erasing, the next `git push` will prompt for credentials. Enter your username and new PAT. On Linux, check `~/.git-credentials` or your configured credential helper (`git config --global credential.helper`) for stale entries.
+
 ## Claude Code Specific Issues
 
 
