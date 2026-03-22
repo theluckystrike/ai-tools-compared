@@ -27,6 +27,15 @@ Release descriptions serve multiple important purposes for your project. Users r
 
 Many developers struggle with writing release notes because they are close to the code and assume users know the context. AI tools help bridge this gap by generating descriptions from changelogs, commit messages, and version diffs, translating technical details into user-friendly language.
 
+Release descriptions also serve as a permanent record. When something breaks after an upgrade, teams return to release notes to understand what changed. AI-generated descriptions that include context—not just what changed but why—become genuinely useful historical documentation.
+
+
+## Choosing the Right AI Tool for Release Notes
+
+Different AI tools handle release note generation with varying effectiveness. Claude Code and ChatGPT both produce high-quality prose and handle structured formatting well. GitHub Copilot Chat, accessed directly in your IDE, is convenient when you want to generate release notes without leaving your editor. For automated pipelines, the Anthropic API and OpenAI API let you embed generation into CI workflows.
+
+If your project uses GitHub's native release tooling, the **Generate release notes** button uses GitHub's own AI to summarize merged pull requests since the last release. This is a solid starting point that you can then refine with a more capable model for polish and additional context.
+
 
 ## Providing the Right Context to AI
 
@@ -82,6 +91,8 @@ Download assets:
 
 Write in a clear, user-friendly style suitable for developers.
 ```
+
+For even better output, feed AI the raw `git log` output between two tags and ask it to categorize and summarize the commits. The command `git log v2.0.0..v2.1.0 --pretty=format:"- %s"` produces a clean list that AI handles well.
 
 
 ## Creating Download Instructions
@@ -219,6 +230,29 @@ jobs:
 ```
 
 
+### Using the GitHub CLI with AI Refinement
+
+A practical approach for many teams is to use the GitHub CLI to draft the release, then pass the draft to an AI for refinement:
+
+```bash
+# Draft release notes from merged PRs
+gh release create v2.1.0 --generate-notes --draft
+
+# Export the draft body
+gh release view v2.1.0 --json body -q .body > draft_notes.txt
+
+# Refine with AI (using Claude CLI as an example)
+claude "Polish these release notes for a developer audience.
+Add context to each change. Remove internal ticket references.
+Ensure the breaking changes section is prominent." < draft_notes.txt > final_notes.txt
+
+# Update the release with refined notes
+gh release edit v2.1.0 --notes-file final_notes.txt --draft=false
+```
+
+This hybrid approach preserves the automatic PR linkage from GitHub's tooling while improving readability through AI refinement.
+
+
 ### Manual AI-Assisted Approach
 
 
@@ -234,6 +268,13 @@ For more control, generate descriptions manually but use AI for refinement:
 4. Add any project-specific details
 
 5. Post the final release description
+
+
+## Maintaining Consistency Across Releases
+
+One underrated benefit of AI-assisted release notes is consistency. Define a system prompt or template that specifies your project's preferred tone, what sections to include, and how to handle specific scenarios like CVEs or deprecations. Store this template in your repository so every team member and CI pipeline uses the same starting point.
+
+A `.github/release-template.md` file containing your prompt template and example output gives new contributors immediate guidance on your release note standards.
 
 
 ## Best Practices for Release Descriptions

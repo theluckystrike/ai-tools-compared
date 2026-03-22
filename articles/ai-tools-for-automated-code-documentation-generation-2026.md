@@ -1,6 +1,6 @@
 ---
-title: AI Tools for Automated Code Documentation Generation in 2026
-description: Compare Claude, GitHub Copilot, and Mintlify for generating JSDoc, docstrings, and README files. Real output examples from each tool.
+title: "AI Tools for Automated Code Documentation Generation in 2026"
+description: "Compare Claude, GitHub Copilot, and Mintlify for generating JSDoc, docstrings, and README files. Real output examples from each tool."
 author: theluckystrike
 date: 2026-03-22
 reviewed: true
@@ -8,6 +8,7 @@ score: 8
 voice-checked: true
 intent-checked: true
 tags: [ai-tools-compared, artificial-intelligence]
+permalink: /ai-tools-for-automated-code-documentation-generation-2026/
 ---
 
 # AI Tools for Automated Code Documentation Generation in 2026

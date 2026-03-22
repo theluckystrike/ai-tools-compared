@@ -10,6 +10,7 @@ voice-checked: true
 intent-checked: true
 category: "AI Tools"
 tags: [ai-tools-compared, OpenTelemetry, Observability, Instrumentation, Tracing, AI, artificial-intelligence]
+permalink: /ai-tools-for-generating-opentelemetry-instrumentation-2026/
 ---
 
 ## AI Tools for OpenTelemetry Instrumentation Generation

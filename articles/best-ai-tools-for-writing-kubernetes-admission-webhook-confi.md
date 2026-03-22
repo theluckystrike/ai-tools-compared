@@ -26,6 +26,8 @@ Admission webhooks intercept API requests before they reach etcd, making them po
 
 AI tools assist by generating boilerplate code, suggesting best practices, debugging existing configurations, and explaining complex admission controller concepts. The best tools understand Kubernetes API patterns and can produce working configurations faster than manual documentation lookup.
 
+Admission webhooks have two varieties: validating webhooks reject non-conforming resources before they persist, while mutating webhooks modify resources on the way in. Both require the same infrastructure setup—a TLS-secured webhook server, a service, and a registration resource. AI tools that understand this full stack save significant time versus piecing together documentation from multiple sources.
+
 
 ## Claude Code: Best Overall for Webhook Development
 
@@ -111,7 +113,7 @@ webhooks:
 ```
 
 
-Claude Code also suggests testing strategies and helps you write unit tests for your webhook logic.
+Claude Code also suggests testing strategies and helps you write unit tests for your webhook logic. When you ask follow-up questions like "how do I generate the TLS certificate for this webhook server?", it walks through cert-manager configuration or manual openssl steps depending on your environment.
 
 
 ## GitHub Copilot: Good for Inline Webhook Development
@@ -127,6 +129,8 @@ func handleAdmissionReview(w http.ResponseWriter, r *http.Request) {
 
 
 Copilot suggests the full handler with admission review parsing. However, Copilot lacks deep Kubernetes context awareness. It may suggest outdated API versions or missing RBAC configurations.
+
+Copilot works best as a velocity tool during active coding sessions. Pair it with Claude Code for the initial design and configuration generation, then switch to Copilot for filling in implementation details as you write the actual webhook logic.
 
 
 ## Amazon Q Developer: Enterprise Webhook Workflows
@@ -145,6 +149,8 @@ the namespace they deploy to.
 
 The tool understands AWS IAM roles for service accounts and can generate the complete IAM policy, webhook code, and Kubernetes manifests in one flow.
 
+Amazon Q also integrates with AWS Certificate Manager Private CA, which simplifies TLS certificate management for webhook servers on EKS. For teams already using ACM-PCA, this integration eliminates one of the more friction-prone steps in webhook setup.
+
 
 ## Cursor: Best for Webhook Refactoring
 
@@ -160,6 +166,37 @@ Cursor excels when you need to refactor existing webhook code or migrate between
 
 
 This is valuable as Kubernetes moves toward native CEL-based admission, which doesn't require separate webhook servers.
+
+Cursor's codebase indexing feature lets it understand your entire webhook project before suggesting changes. When refactoring a webhook that spans multiple files—server code, tests, Helm chart, and CI pipeline—Cursor can propose consistent changes across all files simultaneously, which Claude Code and Copilot handle less elegantly without explicit multi-file context.
+
+
+## CEL-Based Admission: The Emerging Alternative
+
+
+Kubernetes 1.30 introduced ValidatingAdmissionPolicy using Common Expression Language (CEL) as a stable feature. CEL policies run natively in the API server without an external webhook server, eliminating TLS management, server deployment, and latency concerns.
+
+
+```yaml
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingAdmissionPolicy
+metadata:
+  name: deployment-label-policy
+spec:
+  failurePolicy: Fail
+  matchConstraints:
+    resourceRules:
+      - apiGroups: ["apps"]
+        apiVersions: ["v1"]
+        operations: ["CREATE", "UPDATE"]
+        resources: ["deployments"]
+  validations:
+    - expression: >
+        object.metadata.labels.exists(k, k == 'environment') &&
+        object.metadata.labels['environment'] in ['production', 'staging', 'development']
+      message: "Deployment must have label 'environment' set to production, staging, or development"
+```
+
+All four AI tools can generate CEL policies, but Claude Code handles the expression language syntax most reliably. Ask it to convert an existing Go webhook to a CEL policy and it produces working output with correct type coercion and null safety patterns.
 
 
 ## Prompt Strategies for Better Webhook Generation
@@ -209,17 +246,12 @@ Add integration test cases that verify:
 ## Comparing Tool Capabilities
 
 
-| Tool | Strength | Best For |
-
-|------|----------|----------|
-
-| Claude Code | Full-stack webhook development | Complete webhook projects |
-
-| GitHub Copilot | Inline code completion | Adding to existing webhooks |
-
-| Amazon Q | AWS/EKS integration | Enterprise EKS environments |
-
-| Cursor | Code refactoring | Migrating webhook patterns |
+| Tool | Strength | Best For | CEL Support |
+|------|----------|----------|-------------|
+| Claude Code | Full-stack webhook development | Complete webhook projects | Excellent |
+| GitHub Copilot | Inline code completion | Adding to existing webhooks | Good |
+| Amazon Q | AWS/EKS integration | Enterprise EKS environments | Good |
+| Cursor | Code refactoring | Migrating webhook patterns | Good |
 
 
 ## Recommendations
