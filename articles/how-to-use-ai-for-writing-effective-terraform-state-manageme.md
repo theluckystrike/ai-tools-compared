@@ -27,9 +27,21 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 Manage Terraform state safely by asking AI for backend configurations, remote state strategies, and state file locking approaches. This guide shows which Terraform state patterns AI handles well and which require manual expertise.
 
 This guide covers practical methods for using AI to improve your Terraform state management workflow.
+
+## Key Takeaways
+
+- **Learning**: Ask why certain state patterns are recommended
+
+Over time, you'll develop patterns for the types of queries that produce the most useful results for your infrastructure.
+- **It consistently recommends against**: using workspaces as the only isolation mechanism for production, preferring separate state files and separate IAM roles per environment.
+- **For most teams under 20 engineers**: a managed backend like Terraform Cloud reduces operational burden significantly.
+- **AI can help you**: generate the correct backend configurations and state management patterns for your specific use case.
+- **State files are JSON**: documents that Terraform uses to track resource identity, dependency ordering, and metadata.
+- **AI can generate migration**: scripts and catch potential issues before they cause problems.
 
 ## Understanding Terraform State Fundamentals
 

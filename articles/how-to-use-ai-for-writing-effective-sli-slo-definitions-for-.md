@@ -27,7 +27,17 @@ intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]---
 
+
 Service Level Indicators (SLIs) and Service Level Objectives (SLOs) form the foundation of reliable software systems. Yet crafting precise, measurable definitions often trips up even experienced developers. AI tools can transform this process, helping you articulate clear metrics that genuinely reflect user experience.
+
+## Key Takeaways
+
+- **The more context you provide**: the better the AI can tailor recommendations.
+- **An SLO of 99.999%**: availability sounds impressive but requires massive operational investment.
+- **When you set an**: SLO of 99.9% over 30 days, you allow approximately 43 minutes of allowed downtime.
+- **AI tools can transform this process**: helping you articulate clear metrics that genuinely reflect user experience.
+- **When prompting an AI tool**: provide context about your service architecture, user expectations, and existing infrastructure.
+- **The service uses Redis**: for caching and PostgreSQL for persistent storage.
 
 ## What Makes SLI and SLO Definitions Effective
 
