@@ -399,6 +399,58 @@ runs:
 
 The `shell: bash` is required in composite actions — Claude includes it; many AI tools omit it, causing failures on Windows runners.
 
+### Reusable Workflows vs Composite Actions
+
+A common point of confusion is when to use reusable workflows (`workflow_call`) vs composite actions. Claude explains the distinction correctly when asked:
+
+- **Composite actions** run within a job's context — they can't define their own jobs, services, or runners. Use them for shared steps.
+- **Reusable workflows** are full workflows called from another workflow — they can define their own jobs, strategy matrices, and runners. Use them for shared CI pipelines.
+
+```yaml
+# Reusable workflow — called with workflow_call
+# .github/workflows/reusable-test.yml
+on:
+  workflow_call:
+    inputs:
+      node-version:
+        required: false
+        type: string
+        default: '20'
+    secrets:
+      CODECOV_TOKEN:
+        required: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ inputs.node-version }}
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+```
+
+And the caller:
+
+```yaml
+# .github/workflows/ci.yml
+jobs:
+  run-tests:
+    uses: ./.github/workflows/reusable-test.yml
+    with:
+      node-version: '22'
+    secrets:
+      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+```
+
+Claude generates both sides of this pattern correctly. Copilot generates only the reusable workflow definition and omits the `secrets` pass-through in the caller, causing the called workflow to fail because secrets don't inherit automatically.
+
 ## Security Hardening Patterns
 
 For production workflows, add these hardening steps that Claude applies correctly when prompted:
@@ -421,6 +473,28 @@ permissions:
 ```
 
 The script injection pattern — interpolating `${{ github.event.pull_request.title }}` directly into a `run` block — is a common vulnerability that Copilot frequently generates. Claude warns about this and uses environment variable indirection instead.
+
+### Token Permission Scoping
+
+Claude's default permission scoping is minimal — `contents: read` at the workflow level with explicit per-job escalation:
+
+```yaml
+# Global minimum
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    permissions:
+      contents: read
+      id-token: write      # OIDC only — scoped to this job
+      deployments: write   # Deployment status only — scoped to this job
+    runs-on: ubuntu-latest
+    steps:
+      # ...
+```
+
+Copilot frequently generates `permissions: write-all` or omits permissions entirely, leaving the default `write` access on `contents` — which allows any step in the workflow to modify repository contents.
 
 ## Advanced: Dynamic Matrix Generation
 
@@ -449,6 +523,63 @@ jobs:
  - name: Build ${{ matrix.service }}
  run: docker build services/${{ matrix.service }}
 ```
+
+### Handling Empty Dynamic Matrices
+
+The `if` condition on `build-services` guards against an empty matrix — a case that causes a confusing workflow failure without it. Claude includes this guard automatically. The condition checks whether the `service` array is empty after the `generate-matrix` job runs.
+
+One edge case Claude handles correctly: when `git diff HEAD~1 HEAD` runs on the initial commit (no `HEAD~1`), it errors out. Claude adds `|| true` or fetches with `--depth=2` to handle shallow clones:
+
+```yaml
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2  # Required for git diff HEAD~1
+
+      - id: set-matrix
+        run: |
+          SERVICES=$(git diff --name-only HEAD~1 HEAD 2>/dev/null | grep '^services/' | cut -d/ -f2 | sort -u | jq -R . | jq -sc .)
+          SERVICES=${SERVICES:-'[]'}
+          echo "matrix={\"service\":$SERVICES}" >> $GITHUB_OUTPUT
+```
+
+## Caching Strategies
+
+Claude differentiates between caching approaches based on package manager and monorepo structure:
+
+```yaml
+# Single-package npm project — use setup-node built-in cache
+- uses: actions/setup-node@v4
+  with:
+    node-version: '20'
+    cache: npm
+
+# Monorepo with multiple package.json files — use actions/cache with glob
+- uses: actions/cache@v4
+  with:
+    path: |
+      ~/.npm
+      **/node_modules
+    key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+    restore-keys: |
+      ${{ runner.os }}-node-
+
+# pnpm — requires separate cache setup
+- uses: pnpm/action-setup@v3
+  with:
+    version: 9
+
+- name: Get pnpm store directory
+  id: pnpm-cache
+  run: echo "dir=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+- uses: actions/cache@v4
+  with:
+    path: ${{ steps.pnpm-cache.outputs.dir }}
+    key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+    restore-keys: ${{ runner.os }}-pnpm-
+```
+
+Copilot defaults to the npm built-in cache even when the project uses pnpm or yarn, requiring a manual correction.
 
 ## Related Articles
 
