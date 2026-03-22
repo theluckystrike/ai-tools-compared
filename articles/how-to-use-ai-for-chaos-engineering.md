@@ -322,6 +322,47 @@ spec:
             host: api.stripe.com
 ```
 
+## Step 5: Generating AWS FIS Experiment Templates
+
+AWS Fault Injection Service is the right tool for infrastructure-level experiments that affect EC2 instances, ECS tasks, or RDS failovers. Claude can generate FIS templates directly:
+
+```python
+def generate_fis_template(experiment_spec: dict) -> str:
+    """Generate an AWS FIS experiment template JSON."""
+    response = client.messages.create(
+        model="claude-opus-4-6",
+        max_tokens=1500,
+        messages=[{
+            "role": "user",
+            "content": f"""Generate an AWS FIS experiment template JSON for this experiment.
+
+Include:
+- Correct action IDs (aws:rds:failover-db-cluster, aws:ec2:stop-instances, etc.)
+- Stop conditions using CloudWatch alarms
+- IAM role reference
+- Target resource filters
+
+Experiment:
+{yaml.dump(experiment_spec, default_flow_style=False)}
+
+Return only valid FIS template JSON."""
+        }]
+    )
+    return response.content[0].text
+
+rds_failover = {
+    "name": "rds-failover-test",
+    "description": "Trigger RDS Multi-AZ failover and measure recovery time",
+    "target": "production RDS cluster",
+    "db_cluster_id": "my-prod-cluster",
+    "stop_condition_alarm": "HighErrorRate5xx",
+    "expected_recovery_time_seconds": 30
+}
+
+fis_template = generate_fis_template(rds_failover)
+print(fis_template)
+```
+
 ## Running a Safe Chaos Workflow
 
 ```bash
@@ -355,6 +396,20 @@ kubectl get chaosresult -n $NAMESPACE
 echo "=== Cleanup ==="
 kubectl delete -f $EXPERIMENT
 ```
+
+## AI Tool Comparison for Chaos Engineering
+
+| Task | Claude | GPT-4 | Manual |
+|---|---|---|---|
+| Experiment backlog from architecture | Detailed, prioritized | Good but less structured | Hours of expert time |
+| Litmus YAML generation | Valid on first try | Requires 1-2 corrections | Reference docs needed |
+| Blast radius analysis | Thorough with cascading risks | Misses some downstream effects | Manual risk assessment |
+| AWS FIS templates | Correct action IDs | Occasional wrong action IDs | AWS docs required |
+| Istio fault injection | Correct passthrough rule | Sometimes missing passthrough | Istio docs required |
+
+Claude's advantage in chaos engineering comes from its ability to reason about system-level dependencies. When you describe an architecture, it builds a mental model of which services depend on which, and applies that to predict blast radius rather than just describing the direct target of an experiment.
+
+GPT-4 is roughly equivalent for experiment design but produces slightly more YAML syntax errors in Litmus configs, requiring an extra validation step.
 
 ## Related Reading
 

@@ -301,6 +301,112 @@ if __name__ == "__main__":
         print(f"    Pass rate: {stats['pass_rate']:.0%} ({stats['failures']}/{stats['runs']} failures)")
 ```
 
+## AI-Assisted Cache Key Design
+
+Poor cache keys are one of the most common causes of slow CI. Either the cache never hits (key too specific) or it serves stale dependencies (key too broad). Claude is good at reasoning about cache invalidation when you give it the full dependency graph.
+
+**Prompt:**
+```text
+My GitHub Actions workflow caches pip dependencies using the requirements.txt hash.
+But we have three requirements files: requirements.txt, requirements-dev.txt, requirements-test.txt.
+The cache should bust if any of them change. Show me the correct hashFiles expression.
+```
+
+**Claude output:**
+
+```yaml
+- uses: actions/setup-python@v5
+  with:
+    python-version: '3.12'
+    cache: 'pip'
+    cache-dependency-path: |
+      requirements.txt
+      requirements-dev.txt
+      requirements-test.txt
+```
+
+Or if you need a manual cache step with a composite key:
+
+```yaml
+- name: Cache pip dependencies
+  uses: actions/cache@v4
+  with:
+    path: ~/.cache/pip
+    key: ${{ runner.os }}-pip-${{ hashFiles('requirements*.txt') }}
+    restore-keys: |
+      ${{ runner.os }}-pip-
+```
+
+The `hashFiles('requirements*.txt')` glob hashes all matching files together — if any change, the key changes and the cache busts.
+
+## Dependency Installation Speed
+
+Beyond caching, the actual install command matters. Claude will suggest faster alternatives based on your stack:
+
+**Node.js:**
+```yaml
+# Slow: npm install (resolves lockfile each time)
+- run: npm install
+
+# Fast: npm ci (reads lockfile directly, skips resolution)
+- run: npm ci --prefer-offline
+```
+
+**Python with uv:**
+```yaml
+- name: Install uv
+  uses: astral-sh/setup-uv@v4
+
+- name: Install dependencies
+  run: uv sync --frozen
+```
+
+`uv` is a Rust-based pip replacement that installs dependencies 10–100x faster than pip. For a typical Python project with 50 dependencies, it cuts install time from 90 seconds to under 5 seconds.
+
+**Go modules:**
+```yaml
+- uses: actions/setup-go@v5
+  with:
+    go-version: '1.22'
+    cache: true  # caches $GOPATH/pkg/mod automatically
+```
+
+## Pipeline Analytics with AI
+
+Once you have baseline metrics, Claude can help interpret them. Paste your GitHub Actions timing breakdown or GitLab pipeline analytics and ask:
+
+```text
+Here are my CI job durations over the last 30 runs (average ± stddev):
+- setup: 45s ± 3s
+- install: 3m12s ± 45s
+- lint: 48s ± 5s
+- unit-test: 7m30s ± 2m10s
+- integration-test: 11m ± 3m
+- build: 4m20s ± 30s
+
+What's the critical path? What should I parallelize first to reduce total pipeline time?
+```
+
+Claude will identify that `integration-test` (11m) is the bottleneck on the critical path and suggest running it in parallel with `build` using DAG, which would save approximately 4 minutes from the total wall-clock time.
+
+The high stddev on `unit-test` (±2m10s) is a signal of flaky tests — a consistent test suite has low variance. That is a separate problem worth investigating with the flaky test script above.
+
+## Enforcing Pipeline Quality with AI Review
+
+Before merging pipeline changes, have Claude review them as part of your PR process:
+
+```text
+Review this GitHub Actions workflow change for:
+1. Security issues (secrets exposure, token permissions)
+2. Cache correctness (will the cache bust when dependencies change?)
+3. Unnecessary sequential steps that could run in parallel
+4. Missing timeout-minutes that could cause runaway jobs
+
+[paste diff]
+```
+
+Claude reliably catches common mistakes: missing `permissions:` blocks that expose the GITHUB_TOKEN to third-party actions, `actions/cache` restore-keys that are too broad, and jobs missing `timeout-minutes` that could run for hours on a stuck test.
+
 ## Related Reading
 
 - [Best AI Tools for Writing Makefiles](/ai-tools-compared/best-ai-tools-for-writing-makefiles-2026/)
