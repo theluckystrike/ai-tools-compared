@@ -278,12 +278,6 @@ jobs:
           POSTGRES_USER: test
           POSTGRES_PASSWORD: test
           POSTGRES_DB: test_migrations
-<<<<<<< HEAD
-=======
-        ports:
-          - 5432:5432
-          POSTGRES_PASSWORD: test
->>>>>>> a24466f3e1cda953329f278f66d432642b766ace
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -309,7 +303,6 @@ Always test against the same database engine you run in production. A migration 
 
 ## Tool Comparison Summary
 
-<<<<<<< HEAD
 | Capability | Claude | Copilot | ChatGPT |
 |------------|--------|---------|---------|
 | Forward migration tests | Comprehensive | Basic | Moderate |
@@ -319,60 +312,6 @@ Always test against the same database engine you run in production. A migration 
 | Fixture-based isolation | Yes | Sometimes | No |
 | Java / Flyway support | Yes | Moderate | Yes |
 | CI YAML generation | Yes | Yes | Yes |
-=======
-| Feature | Claude | GPT-4o | Copilot |
-|---------|--------|--------|---------|
-| Fixture-scoped setup/teardown | Yes | Often missing | No |
-| Rollback validation | Complete | Partial | Skipped |
-| Data integrity assertions | Yes | Sometimes | Rarely |
-| Lock-free migration checks | Yes | Skipped | Not attempted |
-| Java/Flyway support | Yes | Yes | Partial |
-| CI config generation | Accurate | Minor gaps | Basic |
-    steps:
-      - uses: actions/checkout@v3
-      - run: |
-          alembic upgrade head  # Run migrations
-          pytest tests/test_migrations.py  # Test them
-          alembic downgrade -1  # Test rollback
-```
-
-Claude correctly includes the postgres service definition with health checks and the proper sequence of upgrade → test → downgrade. This catches migrations that fail in CI before they reach production.
-
-## Data Integrity Verification with Checksums
-
-For critical tables, ask Claude to generate checksum validation tests:
-
-```python
-def test_data_integrity_after_migration(migrated_db):
-    """Verify data hasn't been corrupted by the migration."""
-    # Compute checksum before
-    before_query = text("""
-        SELECT COUNT(*), SUM(id), MIN(created_at), MAX(created_at)
-        FROM users
-    """)
-
-    # Verify counts match after migration
-    with migrated_db.connect() as conn:
-        result = conn.execute(before_query)
-        count, id_sum, min_date, max_date = result.fetchone()
-
-    assert count == 2  # Our seeded rows
-    assert id_sum is not None
-```
-
-This catches silent data loss where rows are deleted without errors during the migration process.
-
-## Comparing Migration Tools
-
-| Aspect | Alembic | Flyway | Liquibase |
-|--------|---------|--------|-----------|
-| AI Test Generation | Excellent (Python) | Good (Java) | Good (Java/XML) |
-| Schema Tracking | SQL-based | SQL-based | XML/YAML-based |
-| Rollback Support | Full | Limited | Full |
-| Learning Curve | Moderate | Low | High |
-
-Claude generates best-in-class tests for all three, but Alembic benefits most because Claude understands Python well and can generate comprehensive pytest fixtures that properly manage database state.
->>>>>>> a24466f3e1cda953329f278f66d432642b766ace
 
 ## Related Reading
 

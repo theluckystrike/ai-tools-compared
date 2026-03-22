@@ -13,12 +13,6 @@ score: 8
 voice-checked: true
 intent-checked: true
 ---
-<<<<<<< HEAD
-=======
-
-{% raw %}
->>>>>>> a24466f3e1cda953329f278f66d432642b766ace
-{% raw %}
 
 Good architecture documentation makes the difference between a project contributors can ramp up on in a day versus one that takes a week of reading source code. AI tools have made generating this documentation faster, but the quality depends on what you provide as input and which tool you use. This guide focuses on creating C4 diagrams, component overviews, and API architecture docs for open source projects.
 
