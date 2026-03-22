@@ -48,7 +48,7 @@ When you describe a Lambda function that reads from a specific S3 bucket, a comp
 
 ## Practical Examples
 
-Consider a Python Lambda function that processes files from an S3 bucket. Here's how you might work with an AI assistant to generate the appropriate policy:
+Consider a Python Lambda function that processes files from a S3 bucket. Here's how you might work with an AI assistant to generate the appropriate policy:
 
 ```
 I need an IAM policy for a Lambda function that:

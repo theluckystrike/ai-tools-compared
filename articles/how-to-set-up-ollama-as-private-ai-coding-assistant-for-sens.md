@@ -327,7 +327,7 @@ Yes. Install the **AI Assistant** plugin (it supports custom endpoints) or use t
 
 **Q: What happens to model performance when running on CPU only?**
 
-Inference on CPU is 10-30x slower than GPU. A 7B model generating a 200-token response takes about 2-3 minutes on a modern laptop CPU versus 5-10 seconds on an M2 Pro or NVIDIA RTX 3080. For interactive autocomplete, CPU-only inference is too slow to be practical. Consider cloud-hosted private inference (Replicate, Modal, or AWS Bedrock with private VPC endpoints) if GPU hardware is unavailable.
+Inference on CPU is 10-30x slower than GPU. A 7B model generating a 200-token response takes about 2-3 minutes on a modern laptop CPU versus 5-10 seconds on a M2 Pro or NVIDIA RTX 3080. For interactive autocomplete, CPU-only inference is too slow to be practical. Consider cloud-hosted private inference (Replicate, Modal, or AWS Bedrock with private VPC endpoints) if GPU hardware is unavailable.
 
 **Q: Is there a way to prevent Ollama from phoning home for model metadata?**
 

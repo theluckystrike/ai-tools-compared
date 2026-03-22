@@ -21,12 +21,12 @@ This guide walks through creating a production-ready MCP server that exposes you
 
 ## Table of Contents
 
-- [Why Your Design System Needs an MCP Server](#why-your-design-system-needs-an-mcp-server)
+- [Why Your Design System Needs a MCP Server](#why-your-design-system-needs-an-mcp-server)
 - [Prerequisites](#prerequisites)
 - [Production Considerations](#production-considerations)
 - [Troubleshooting](#troubleshooting)
 
-## Why Your Design System Needs an MCP Server
+## Why Your Design System Needs a MCP Server
 
 Design systems often suffer from discoverability problems. Components live in repositories, documentation gets stale, and developers spend valuable time hunting down prop definitions or usage examples. An MCP server solves this by providing a standardized interface where AI assistants can ask questions like "What props does the Button component accept?" or "Show me how to use the Modal component with custom footer actions."
 

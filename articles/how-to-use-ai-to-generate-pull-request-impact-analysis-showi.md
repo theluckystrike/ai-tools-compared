@@ -53,7 +53,7 @@ Third, request transitive dependency analysis. A change might not directly affec
 
 ## Practical Example: Analyzing a Shared Library Change
 
-Consider a scenario where you've modified an utility package that multiple services depend on. Here's how you might structure your prompt to an AI assistant:
+Consider a scenario where you've modified a utility package that multiple services depend on. Here's how you might structure your prompt to an AI assistant:
 
 ```
 I'm changing a function signature in our shared utils package at packages/common/utils.

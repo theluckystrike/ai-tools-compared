@@ -179,24 +179,24 @@ def generate(prompt: str, output: str | None, lang: str):
 
     # Extract code from markdown code block if present
     if "```" in result:
-        lines = result.split("\n")
-        in_block = False
-        code_lines = []
-        for line in lines:
-            if line.startswith("```") and not in_block:
+ lines = result.split("\n")
+ in_block = False
+ code_lines = []
+ for line in lines:
+ if line.startswith("```") and not in_block:
                 in_block = True
                 continue
             elif line.startswith("```") and in_block:
-                break
-            elif in_block:
-                code_lines.append(line)
-        result = "\n".join(code_lines)
+ break
+ elif in_block:
+ code_lines.append(line)
+ result = "\n".join(code_lines)
 
-    if output:
-        Path(output).write_text(result)
-        console.print(f"[green]Written to {output}[/green]")
-    else:
-        console.print(Markdown(f"```{lang}\n{result}\n```"))
+ if output:
+ Path(output).write_text(result)
+ console.print(f"[green]Written to {output}[/green]")
+ else:
+ console.print(Markdown(f"```{lang}\n{result}\n```"))
 ```
 
 The `--no-markdown` flag is important for commands used in shell pipelines. When the output is piped to `grep`, `jq`, or another tool, Rich markdown rendering adds ANSI escape codes that break downstream processing. Check `sys.stdout.isatty()` if you want to auto-detect pipes:
@@ -204,9 +204,9 @@ The `--no-markdown` flag is important for commands used in shell pipelines. When
 ```python
 # Auto-detect whether to render markdown
 if markdown and sys.stdout.isatty():
-    # render with Rich
+ # render with Rich
 else:
-    # plain text output
+ # plain text output
 ```
 
 ## Conversation Context Management
@@ -221,66 +221,66 @@ from dataclasses import dataclass, asdict, field
 
 @dataclass
 class ConversationContext:
-    history: list[dict] = field(default_factory=list)
-    max_turns: int = 20
+ history: list[dict] = field(default_factory=list)
+ max_turns: int = 20
 
-    def add_turn(self, role: str, content: str):
-        self.history.append({"role": role, "content": content})
-        # Keep last N turns to avoid token overflow
-        if len(self.history) > self.max_turns * 2:
-            # Always keep system context if present; trim oldest turns
-            self.history = self.history[-(self.max_turns * 2):]
+ def add_turn(self, role: str, content: str):
+ self.history.append({"role": role, "content": content})
+ # Keep last N turns to avoid token overflow
+ if len(self.history) > self.max_turns * 2:
+ # Always keep system context if present; trim oldest turns
+ self.history = self.history[-(self.max_turns * 2):]
 
-    def save(self, path: Path):
-        path.write_text(json.dumps(self.history, indent=2))
+ def save(self, path: Path):
+ path.write_text(json.dumps(self.history, indent=2))
 
-    @classmethod
-    def load(cls, path: Path) -> "ConversationContext":
-        if not path.exists():
-            return cls()
-        data = json.loads(path.read_text())
-        return cls(history=data)
+ @classmethod
+ def load(cls, path: Path) -> "ConversationContext":
+ if not path.exists():
+ return cls()
+ data = json.loads(path.read_text())
+ return cls(history=data)
 
-    def clear(self):
-        self.history.clear()
+ def clear(self):
+ self.history.clear()
 
 
 @cli.command()
 @click.option("--session", "-s", default=".aicli-session.json",
-              help="Session file for conversation history")
+ help="Session file for conversation history")
 def chat(session: str):
-    """Interactive multi-turn chat with history."""
-    session_path = Path(session)
-    ctx = ConversationContext.load(session_path)
+ """Interactive multi-turn chat with history."""
+ session_path = Path(session)
+ ctx = ConversationContext.load(session_path)
 
-    console.print("[bold blue]AI Chat[/bold blue] (Ctrl+C to exit, /clear to reset)\n")
+ console.print("[bold blue]AI Chat[/bold blue] (Ctrl+C to exit, /clear to reset)\n")
 
-    system = "You are a helpful developer assistant. Be concise and practical."
+ system = "You are a helpful developer assistant. Be concise and practical."
 
-    try:
-        while True:
-            prompt = console.input("[bold green]You:[/bold green] ").strip()
-            if not prompt:
-                continue
-            if prompt == "/clear":
-                ctx.clear()
-                console.print("[yellow]Context cleared[/yellow]")
-                continue
+ try:
+ while True:
+ prompt = console.input("[bold green]You:[/bold green] ").strip()
+ if not prompt:
+ continue
+ if prompt == "/clear":
+ ctx.clear()
+ console.print("[yellow]Context cleared[/yellow]")
+ continue
 
-            console.print("[bold blue]AI:[/bold blue] ", end="")
-            accumulated = ""
-            for chunk in client.stream_response(prompt, system=system,
-                                                history=ctx.history):
-                print(chunk, end="", flush=True)
-                accumulated += chunk
+ console.print("[bold blue]AI:[/bold blue] ", end="")
+ accumulated = ""
+ for chunk in client.stream_response(prompt, system=system,
+ history=ctx.history):
+ print(chunk, end="", flush=True)
+ accumulated += chunk
 
-            print()
-            ctx.add_turn("user", prompt)
-            ctx.add_turn("assistant", accumulated)
-            ctx.save(session_path)
+ print()
+ ctx.add_turn("user", prompt)
+ ctx.add_turn("assistant", accumulated)
+ ctx.save(session_path)
 
-    except KeyboardInterrupt:
-        console.print("\n[yellow]Bye[/yellow]")
+ except KeyboardInterrupt:
+ console.print("\n[yellow]Bye[/yellow]")
 ```
 
 Saving history to a JSON file lets sessions persist across invocations. Store the file in a per-project location (`.aicli-session.json` in the current directory) so different projects have separate contexts, or in `~/.aicli/sessions/` with a project hash for global sessions.
@@ -295,79 +295,79 @@ import subprocess
 from pathlib import Path
 
 TOOLS = [
-    {
-        "name": "read_file",
-        "description": "Read the contents of a file",
-        "input_schema": {
-            "type": "object",
-            "properties": {
-                "path": {"type": "string", "description": "File path to read"}
-            },
-            "required": ["path"]
-        }
-    },
-    {
-        "name": "run_command",
-        "description": "Run a shell command and return stdout",
-        "input_schema": {
-            "type": "object",
-            "properties": {
-                "command": {"type": "string", "description": "Shell command to run"}
-            },
-            "required": ["command"]
-        }
-    }
+ {
+ "name": "read_file",
+ "description": "Read the contents of a file",
+ "input_schema": {
+ "type": "object",
+ "properties": {
+ "path": {"type": "string", "description": "File path to read"}
+ },
+ "required": ["path"]
+ }
+ },
+ {
+ "name": "run_command",
+ "description": "Run a shell command and return stdout",
+ "input_schema": {
+ "type": "object",
+ "properties": {
+ "command": {"type": "string", "description": "Shell command to run"}
+ },
+ "required": ["command"]
+ }
+ }
 ]
 
 def execute_tool(name: str, input: dict) -> str:
-    if name == "read_file":
-        return Path(input["path"]).read_text()
-    elif name == "run_command":
-        result = subprocess.run(
-            input["command"], shell=True, capture_output=True, text=True, timeout=30
-        )
-        return result.stdout + result.stderr
-    return f"Unknown tool: {name}"
+ if name == "read_file":
+ return Path(input["path"]).read_text()
+ elif name == "run_command":
+ result = subprocess.run(
+ input["command"], shell=True, capture_output=True, text=True, timeout=30
+ )
+ return result.stdout + result.stderr
+ return f"Unknown tool: {name}"
 ```
 
 The tool loop in `client.py` handles tool use responses:
 
 ```python
 def complete_with_tools(self, prompt: str, system: str = "") -> str:
-    messages = [{"role": "user", "content": prompt}]
+ messages = [{"role": "user", "content": prompt}]
 
-    while True:
-        response = self.client.messages.create(
-            model=self.model,
-            max_tokens=self.max_tokens,
-            system=system,
-            tools=TOOLS,
-            messages=messages,
-        )
+ while True:
+ response = self.client.messages.create(
+ model=self.model,
+ max_tokens=self.max_tokens,
+ system=system,
+ tools=TOOLS,
+ messages=messages,
+ )
 
-        if response.stop_reason == "end_turn":
-            # Extract text from response
-            for block in response.content:
-                if hasattr(block, "text"):
-                    return block.text
-            return ""
+ if response.stop_reason == "end_turn":
+ # Extract text from response
+ for block in response.content:
+ if hasattr(block, "text"):
+ return block.text
+ return ""
 
-        if response.stop_reason == "tool_use":
-            # Add assistant response to history
-            messages.append({"role": "assistant", "content": response.content})
+ if response.stop_reason == "tool_use":
+ # Add assistant response to history
+ messages.append({"role": "assistant", "content": response.content})
 
-            # Execute each tool call
-            tool_results = []
-            for block in response.content:
-                if block.type == "tool_use":
-                    result = execute_tool(block.name, block.input)
-                    tool_results.append({
-                        "type": "tool_result",
-                        "tool_use_id": block.id,
-                        "content": result,
-                    })
+ # Execute each tool call
+ tool_results = []
+ for block in response.content:
+ if block.type == "tool_use":
+ result = execute_tool(block.name, block.input)
+ tool_results.append({
+ "type": "tool_result",
+ "tool_use_id": block.id,
+ "content": result,
+ })
 
-            messages.append({"role": "user", "content": tool_results})
+ messages.append({"role": "user", "content": tool_results})
 ```
 
 Tool use is powerful but adds latency — each tool call requires a round trip to the API. Use it for commands where the model needs to reason about actual file contents or command output, not for commands where you can provide the context upfront.
@@ -384,9 +384,9 @@ build-backend = "hatchling.build"
 name = "aicli"
 version = "0.1.0"
 dependencies = [
-    "anthropic>=0.40.0",
-    "click>=8.1",
-    "rich>=13.0",
+ "anthropic>=0.40.0",
+ "click>=8.1",
+ "rich>=13.0",
 ]
 
 [project.scripts]
@@ -409,19 +409,19 @@ PyInstaller binaries are larger (30-80MB for a Python CLI with dependencies) but
 ```ruby
 # Formula/aicli.rb
 class Aicli < Formula
-  include Language::Python::Virtualenv
+ include Language::Python::Virtualenv
 
-  desc "AI-powered developer CLI"
-  homepage "https://github.com/example/aicli"
-  url "https://github.com/example/aicli/archive/v0.1.0.tar.gz"
+ desc "AI-powered developer CLI"
+ homepage "https://github.com/example/aicli"
+ url "https://github.com/example/aicli/archive/v0.1.0.tar.gz"
 
-  resource "anthropic" do
-    url "https://files.pythonhosted.org/packages/anthropic-0.40.0.tar.gz"
-  end
+ resource "anthropic" do
+ url "https://files.pythonhosted.org/packages/anthropic-0.40.0.tar.gz"
+ end
 
-  def install
-    virtualenv_install_with_resources
-  end
+ def install
+ virtualenv_install_with_resources
+ end
 end
 ```
 
@@ -440,38 +440,38 @@ from aicli.cli import cli
 
 @pytest.fixture
 def runner():
-    return CliRunner()
+ return CliRunner()
 
 def test_ask_command(runner):
-    mock_stream = MagicMock()
-    mock_stream.__enter__ = MagicMock(return_value=mock_stream)
-    mock_stream.__exit__ = MagicMock(return_value=False)
-    mock_stream.text_stream = iter(["Hello", ", ", "world!"])
+ mock_stream = MagicMock()
+ mock_stream.__enter__ = MagicMock(return_value=mock_stream)
+ mock_stream.__exit__ = MagicMock(return_value=False)
+ mock_stream.text_stream = iter(["Hello", ", ", "world!"])
 
-    with patch("aicli.client.anthropic.Anthropic") as mock_anthropic:
-        mock_anthropic.return_value.messages.stream.return_value = mock_stream
-        result = runner.invoke(cli, ["ask", "test prompt", "--no-markdown"])
+ with patch("aicli.client.anthropic.Anthropic") as mock_anthropic:
+ mock_anthropic.return_value.messages.stream.return_value = mock_stream
+ result = runner.invoke(cli, ["ask", "test prompt", "--no-markdown"])
 
-    assert result.exit_code == 0
-    assert "Hello, world!" in result.output
+ assert result.exit_code == 0
+ assert "Hello, world!" in result.output
 
 def test_ask_with_file(runner, tmp_path):
-    test_file = tmp_path / "test.py"
-    test_file.write_text("def hello(): pass")
+ test_file = tmp_path / "test.py"
+ test_file.write_text("def hello(): pass")
 
-    with patch("aicli.client.anthropic.Anthropic") as mock_anthropic:
-        mock_client = MagicMock()
-        mock_anthropic.return_value = mock_client
-        mock_client.messages.stream.return_value.__enter__ = MagicMock(
-            return_value=MagicMock(text_stream=iter(["response"]))
-        )
-        mock_client.messages.stream.return_value.__exit__ = MagicMock(return_value=False)
+ with patch("aicli.client.anthropic.Anthropic") as mock_anthropic:
+ mock_client = MagicMock()
+ mock_anthropic.return_value = mock_client
+ mock_client.messages.stream.return_value.__enter__ = MagicMock(
+ return_value=MagicMock(text_stream=iter(["response"]))
+ )
+ mock_client.messages.stream.return_value.__exit__ = MagicMock(return_value=False)
 
-        result = runner.invoke(cli, ["ask", "explain this", "-f", str(test_file), "--no-markdown"])
+ result = runner.invoke(cli, ["ask", "explain this", "-f", str(test_file), "--no-markdown"])
 
-    # Verify the file content was included in the prompt
-    call_args = mock_client.messages.stream.call_args
-    assert "hello" in str(call_args)
+ # Verify the file content was included in the prompt
+ call_args = mock_client.messages.stream.call_args
+ assert "hello" in str(call_args)
 ```
 
 Keep tests focused on CLI behavior (argument parsing, output format, exit codes) rather than AI response quality. Mock the Anthropic client to avoid API costs in CI and ensure deterministic test results.

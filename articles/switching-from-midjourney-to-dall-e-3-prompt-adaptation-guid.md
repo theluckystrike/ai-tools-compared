@@ -33,7 +33,7 @@ Choose DALL-E 3 if you need a REST API for automated pipelines, consistent text 
 
 ## Core Architecture Differences
 
-Midjourney operates through Discord, using an unique command-based interface with parameters like `--ar` for aspect ratio, `--stylize` for artistic strength, and `--chaos` for variation. Each generation creates four image variations, and you upscaling individual selections.
+Midjourney operates through Discord, using a unique command-based interface with parameters like `--ar` for aspect ratio, `--stylize` for artistic strength, and `--chaos` for variation. Each generation creates four image variations, and you upscaling individual selections.
 
 DALL-E 3 functions as a REST API service through OpenAI. You send JSON-formatted requests and receive image URLs or base64-encoded data. The model handles aspect ratios and style internally through the `size` and `quality` parameters rather than external flags.
 

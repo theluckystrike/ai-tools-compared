@@ -437,20 +437,6 @@ final class FetchUsersTests: XCTestCase {
 
 This test pattern — `async throws` on the test function, no `XCTestExpectation` — is how modern Swift tests work. Copilot often still generates `XCTestExpectation` + `fulfill()` patterns, which work but are verbose and can mask timeout failures.
 
-## Summary Scorecard
-
-| Feature | Claude | Copilot |
-|---|---|---|
-| async/await error separation | Excellent | Good |
-| Swift 5.9+ `@Observable` | Correct | Often uses `@StateObject` |
-| Actor vs NSLock | Actor (idiomatic) | Sometimes NSLock |
-| Combine pipelines | Strong | Good |
-| XCTest async patterns | Modern | Often uses expectations |
-| SPM Package.swift | Correct | Correct |
-| SwiftUI navigation API | `navigationDestination` | Often deprecated |
-
-Claude outperforms Copilot on API currency — knowing which Swift 5.9 and iOS 17 APIs to use by default. Copilot is strong for autocomplete within established patterns but generates older patterns for types it hasn't seen updated training examples of. If your codebase is targeting Swift 5.9+ and iOS 16/17, Claude saves significant cleanup time.
-
 ## Related Reading
 
 - [Claude vs Copilot for Elixir Development](/ai-tools-compared/claude-vs-copilot-for-elixir-development-2026/)

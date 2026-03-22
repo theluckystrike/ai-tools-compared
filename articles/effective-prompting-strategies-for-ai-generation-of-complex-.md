@@ -40,7 +40,7 @@ The foundation of any SQL generation prompt is providing complete schema informa
 
 A weak prompt might look like:
 
-> "Write a SQL query to get sales by region"
+> "Write an SQL query to get sales by region"
 
 This produces generic output that may not match your actual schema. Instead, provide the relevant table definitions:
 

@@ -90,7 +90,7 @@ JetBrains IDEs also maintain stronger project-level context. The IDE understands
 
 Neovim users access AI autocomplete through plugins like Copilot.lua, Codeium, or the native integration with tools like Claude Code. The behavior here differs fundamentally because of Neovim's modal nature and the plugin architecture.
 
-Most Neovim AI plugins integrate through the LSP (Language Server Protocol) and nvim-cmp completion framework. This creates an unified completion menu that includes both traditional LSP completions and AI suggestions.
+Most Neovim AI plugins integrate through the LSP (Language Server Protocol) and nvim-cmp completion framework. This creates a unified completion menu that includes both traditional LSP completions and AI suggestions.
 
 ```lua
 -- Neovim configuration with Copilot.lua
@@ -269,7 +269,7 @@ Modern IDEs rely on Language Servers (LSP) for intelligent code understanding. A
 
 **JetBrains**: LSP integration is native and deep. AI suggestions incorporate LSP-provided information about types, imports, and dependencies.
 
-**Neovim**: LSP integration is native and tight. Tools like nvim-cmp combine LSP suggestions with AI suggestions in an unified menu.
+**Neovim**: LSP integration is native and tight. Tools like nvim-cmp combine LSP suggestions with AI suggestions in a unified menu.
 
 This integration difference is subtle but impacts suggestion quality significantly for larger projects.
 

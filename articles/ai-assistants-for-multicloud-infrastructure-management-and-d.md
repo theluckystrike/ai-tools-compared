@@ -15,7 +15,7 @@ voice-checked: true
 ---
 
 
-To manage infrastructure across AWS, Azure, and GCP efficiently, use AI assistants that translate high-level intent into provider-specific commands, generate infrastructure code, and provide unified querying across cloud platforms. Instead of manually juggling multiple cloud consoles and writing provider-specific configurations, AI tools act as an unified interface that automates repetitive tasks and intelligently recommends solutions tailored to your multicloud architecture.
+To manage infrastructure across AWS, Azure, and GCP efficiently, use AI assistants that translate high-level intent into provider-specific commands, generate infrastructure code, and provide unified querying across cloud platforms. Instead of manually juggling multiple cloud consoles and writing provider-specific configurations, AI tools act as a unified interface that automates repetitive tasks and intelligently recommends solutions tailored to your multicloud architecture.
 
 ## Table of Contents
 
@@ -34,7 +34,7 @@ To manage infrastructure across AWS, Azure, and GCP efficiently, use AI assistan
 
 Managing infrastructure across multiple cloud providers introduces complexity. Each provider has its own CLI tools, SDKs, and terminology. A Kubernetes cluster on AWS looks different from one on Azure, even though the underlying technology is similar. Developers often spend significant time switching between contexts, writing provider-specific Terraform modules, and debugging cross-cloud networking issues.
 
-AI assistants address these challenges by acting as an unified interface. They translate high-level intent into provider-specific commands, generate infrastructure code, and help troubleshoot issues across your entire multicloud environment.
+AI assistants address these challenges by acting as a unified interface. They translate high-level intent into provider-specific commands, generate infrastructure code, and help troubleshoot issues across your entire multicloud environment.
 
 ## Practical Example: Infrastructure Querying
 
@@ -46,7 +46,7 @@ in the production environment with their IP addresses and
 operating systems.
 ```
 
-The AI assistant understands your cloud inventory, queries the appropriate APIs, and presents an unified view. This eliminates the need to manually run `aws ec2 describe-instances` and `gcloud compute instances list` separately.
+The AI assistant understands your cloud inventory, queries the appropriate APIs, and presents a unified view. This eliminates the need to manually run `aws ec2 describe-instances` and `gcloud compute instances list` separately.
 
 ## Generating Infrastructure as Code
 

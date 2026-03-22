@@ -194,7 +194,7 @@ For pipelines generating both long-form explainers and social clips, using both 
 
 ## Building a Combined Pipeline
 
-When your use case spans both long-form and short-form content, an unified pipeline that routes to the right platform saves both time and cost:
+When your use case spans both long-form and short-form content, a unified pipeline that routes to the right platform saves both time and cost:
 
 ```python
 def route_video_request(script, target_platform, duration_seconds):

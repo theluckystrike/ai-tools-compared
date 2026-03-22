@@ -39,7 +39,7 @@ Before converting your prompts, understand the fundamental differences between h
 
 ChatGPT treats system prompts as a single continuous context that sets the overall behavior. Claude uses a more structured approach with its System Prompt functionality, where you can provide context through both the system prompt and through specific instructions in the conversation.
 
-The most significant practical difference is that Claude's system prompt typically benefits from being more explicit about constraints, reasoning steps, and output format expectations. Claude also has an useful feature called the `developer` message type, which allows you to provide additional instructions that take precedence over the main system prompt.
+The most significant practical difference is that Claude's system prompt typically benefits from being more explicit about constraints, reasoning steps, and output format expectations. Claude also has a useful feature called the `developer` message type, which allows you to provide additional instructions that take precedence over the main system prompt.
 
 ## Converting Basic System Prompts
 

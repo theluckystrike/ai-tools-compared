@@ -34,7 +34,7 @@ Runway inpainting and Adobe Firefly Generative Fill both use generative AI to mo
 
 ## Core Technology and Approach
 
-Runway inpainting operates through its Gen-2 and Gen-3 models, offering an unified platform for video and image manipulation. The inpainting feature allows you to select specific regions of an image and replace them with AI-generated content that matches the surrounding context. Runway uses a diffusion-based approach that excels at maintaining visual consistency between edited and original areas.
+Runway inpainting operates through its Gen-2 and Gen-3 models, offering a unified platform for video and image manipulation. The inpainting feature allows you to select specific regions of an image and replace them with AI-generated content that matches the surrounding context. Runway uses a diffusion-based approach that excels at maintaining visual consistency between edited and original areas.
 
 Adobe Firefly Generative Fill, integrated into Photoshop and Adobe Express, takes a more traditional editing-tool approach. It uses Adobe's Firefly AI model specifically trained on licensed Adobe Stock content, which addresses some copyright concerns that affect other generative AI tools. The Generative Fill feature works within existing Photoshop selection workflows, making it familiar to users already comfortable with Adobe's ecosystem.
 

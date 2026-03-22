@@ -62,7 +62,7 @@ Not all AI assistants are equally effective for security education. The key diff
 
 **GitHub Copilot Chat** integrates directly into the editor, which makes it useful for reviewing code you're actively writing. Ask it to review specific functions for security issues, and it flags problems inline. The context awareness is valuable—it sees your actual code rather than an abstract snippet.
 
-**ChatGPT with Code Interpreter** excels when you want to actually execute vulnerable code in a sandboxed environment and see attack payloads work in real time. Watching a SQL injection payload return unexpected data is more memorable than reading about it.
+**ChatGPT with Code Interpreter** excels when you want to actually execute vulnerable code in a sandboxed environment and see attack payloads work in real time. Watching an SQL injection payload return unexpected data is more memorable than reading about it.
 
 **Local models via Ollama** (Mistral, Llama 3) offer full privacy—nothing you discuss leaves your machine. This matters when you're experimenting with actual code from your employer's systems. Quality varies but Mistral 7B handles OWASP coverage competently.
 

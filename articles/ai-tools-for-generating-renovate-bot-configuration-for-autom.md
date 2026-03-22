@@ -241,7 +241,7 @@ Common configuration bugs that AI assistants catch reliably:
 }
 ```
 
-**Log analysis**: Renovate produces verbose logs when run with `LOG_LEVEL=debug`. Paste a relevant excerpt to an LLM and ask it to identify why a specific package rule is not applying. Models trained on large open-source codebases have encountered thousands of Renovate configurations and can spot non-obvious issues quickly.
+**Log analysis**: Renovate produces verbose logs when run with `LOG_LEVEL=debug`. Paste a relevant excerpt to a LLM and ask it to identify why a specific package rule is not applying. Models trained on large open-source codebases have encountered thousands of Renovate configurations and can spot non-obvious issues quickly.
 
 ## Validating Renovate Configurations Before Committing
 
@@ -343,7 +343,7 @@ except:
 done
 ```
 
-Paste the output to an LLM and ask it to classify each override as intentional (project-specific requirements) or accidental drift that should be consolidated into the shared preset. This review process takes minutes with AI assistance versus hours of manual inspection across dozens of repositories.
+Paste the output to a LLM and ask it to classify each override as intentional (project-specific requirements) or accidental drift that should be consolidated into the shared preset. This review process takes minutes with AI assistance versus hours of manual inspection across dozens of repositories.
 
 ## Frequently Asked Questions
 

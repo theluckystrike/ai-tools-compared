@@ -146,7 +146,7 @@ Best for: Teams with existing Figma designs
 
 Uizard targets non-designers and developers who need rapid prototyping. Its AI interprets rough sketches and converts them into polished mockups.
 
-The platform offers an unique "screenshot to design" feature that transforms existing interfaces into editable Uizard projects. This proves valuable for redesigning legacy systems where only screenshots exist.
+The platform offers a unique "screenshot to design" feature that transforms existing interfaces into editable Uizard projects. This proves valuable for redesigning legacy systems where only screenshots exist.
 
 Strengths: Sketch-to-design, screenshot conversion
 

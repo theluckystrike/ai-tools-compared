@@ -214,7 +214,7 @@ Format your response as JSON with keys: safety_assessment, migration_sql, rollba
     # Parse JSON response
     try:
         # Claude sometimes wraps in ```json
-        if "```json" in response_text:
+ if "```json" in response_text:
             json_str = response_text.split("```json")[1].split("```")[0]
         else:
             json_str = response_text

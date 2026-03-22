@@ -231,7 +231,7 @@ Timestamp adjustment: AI-generated timestamps sometimes drift, especially in lon
 
 ### LLM Post-Processing for Caption Quality
 
-A practical pattern is to run transcribed text through an LLM for cleanup before generating the final subtitle file:
+A practical pattern is to run transcribed text through a LLM for cleanup before generating the final subtitle file:
 
 ```python
 from anthropic import Anthropic

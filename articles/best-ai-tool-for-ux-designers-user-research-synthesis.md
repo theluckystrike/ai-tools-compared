@@ -21,7 +21,7 @@ AI tools designed for user research synthesis have emerged to address this chall
 
 ## Table of Contents
 
-- [What to Look for in an User Research Synthesis Tool](#what-to-look-for-in-an-user-research-synthesis-tool)
+- [What to Look for in a User Research Synthesis Tool](#what-to-look-for-in-an-user-research-synthesis-tool)
 - [Practical Use Cases for AI-Powered Synthesis](#practical-use-cases-for-ai-powered-synthesis)
 - [Evaluating Your Options](#evaluating-your-options)
 - [Making the Transition Work](#making-the-transition-work)
@@ -35,7 +35,7 @@ AI tools designed for user research synthesis have emerged to address this chall
 - [Best Practices for AI-Assisted Synthesis](#best-practices-for-ai-assisted-synthesis)
 - [Moving Forward](#moving-forward)
 
-## What to Look for in an User Research Synthesis Tool
+## What to Look for in a User Research Synthesis Tool
 
 Not all AI tools are created equal when it comes to UX research. The most effective tools share several key characteristics that make them practical for real-world design workflows.
 

@@ -192,20 +192,6 @@ int write_record(const char *data, size_t len) {
 
 **GPT-4o** described the buffering mechanism accurately but missed the partial write retention bug and did not flag the missing close function.
 
-## Summary Comparison
-
-| Scenario | Claude | GPT-4o |
-|---|---|---|
-| COBOL COMP-3 encoding risk | Flagged | Missed |
-| Silent skip behavior | Flagged | Missed |
-| Java connection leak | Flagged | Missed |
-| EJB RemoteException risk | Flagged | Missed |
-| C partial write bug | Flagged | Missed |
-| C missing close | Flagged | Missed |
-| Basic flow description | Accurate | Accurate |
-
-Claude consistently goes deeper on operational risk. GPT-4o produces accurate syntactic explanations but misses the failure modes that matter most when deciding whether code is safe to modify.
-
 ## Prompt Strategy for Better Explanations
 
 For both models, specificity helps:

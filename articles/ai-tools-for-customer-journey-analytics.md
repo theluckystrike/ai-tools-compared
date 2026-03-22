@@ -513,7 +513,7 @@ Track separate journeys per product. Advanced models can identify cross-product 
 Even 1,000 users provides statistical significance if you have 3+ months of data. Smaller cohorts require longer observation periods.
 
 **Should I hire a data scientist to implement this?**
-No. SaaS tools like Amplitude need no data science. For custom Python models, hire an ML engineer when approaching scale ($100k+/month revenue).
+No. SaaS tools like Amplitude need no data science. For custom Python models, hire a ML engineer when approaching scale ($100k+/month revenue).
 
 ## Related Reading
 

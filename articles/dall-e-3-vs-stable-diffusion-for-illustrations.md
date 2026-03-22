@@ -69,7 +69,7 @@ response = client.images.generate(
 print(response.data[0].url)
 ```
 
-The response includes an URL to your generated image. For production applications, you implement image downloading and storage. The API handles prompt enhancement internally—DALL-E 3 automatically refines vague prompts for better results.
+The response includes a URL to your generated image. For production applications, you implement image downloading and storage. The API handles prompt enhancement internally—DALL-E 3 automatically refines vague prompts for better results.
 
 ### Stable Diffusion API
 

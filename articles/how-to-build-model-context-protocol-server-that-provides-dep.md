@@ -16,7 +16,7 @@ voice-checked: true
 
 {% raw %}
 
-The Model Context Protocol (MCP) enables AI systems to connect with external tools and data sources through a standardized interface. When building AI-powered development workflows, providing accurate deployment environment context becomes essential for generating relevant code, configuration, and infrastructure suggestions. This guide walks you through creating an MCP server that exposes deployment environment information to AI agents.
+The Model Context Protocol (MCP) enables AI systems to connect with external tools and data sources through a standardized interface. When building AI-powered development workflows, providing accurate deployment environment context becomes essential for generating relevant code, configuration, and infrastructure suggestions. This guide walks you through creating a MCP server that exposes deployment environment information to AI agents.
 
 ## Prerequisites
 
@@ -338,7 +338,7 @@ Once registered, your AI assistant can query deployment context during conversat
 
 For infrastructure-as-code generation, the AI can reference actual environment names, regions, and configuration values when writing Terraform or CloudFormation templates. This produces more accurate initial output and reduces manual correction cycles.
 
-When onboarding new engineers, an MCP server exposing your deployment topology means the AI assistant can answer questions like "which regions does staging run in?" or "what are the feature flags enabled in production?" without the new hire needing to locate that documentation themselves.
+When onboarding new engineers, a MCP server exposing your deployment topology means the AI assistant can answer questions like "which regions does staging run in?" or "what are the feature flags enabled in production?" without the new hire needing to locate that documentation themselves.
 
 ### Step 9: MCP Tool Design Principles
 

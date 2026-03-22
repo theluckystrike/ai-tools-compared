@@ -232,7 +232,7 @@ Claude Code treats these examples as strong signals. When it sees the WRONG patt
 
 ## Layering Error Handling for Different Architectural Tiers
 
-Most full-stack projects have distinct error handling needs at each tier: the API layer, the service layer, and the data layer. If your CLAUDE.md treats all three identically, the AI will apply an one-size-fits-all pattern that fits none of them well.
+Most full-stack projects have distinct error handling needs at each tier: the API layer, the service layer, and the data layer. If your CLAUDE.md treats all three identically, the AI will apply a one-size-fits-all pattern that fits none of them well.
 
 Document each tier explicitly:
 

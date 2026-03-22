@@ -205,7 +205,7 @@ Shipment Service → Order Service: GetShippingAddress (when creating shipment)
 Identify: coupling problems, single points of failure, and which calls should be async.
 ```
 
-Claude identified: "The `Notification Service` call is synchronous but it's a fire-and-forget operation — order creation is blocking on email sending. Make this async via an event. The `Catalog Service` calls for each line item are an N+1 problem — batch fetch all product IDs in one request. The `Payment Service → Order Service` reverse call creates a circular dependency and should be eliminated by including order data in the payment request."
+Claude identified: "The `Notification Service` call is synchronous but it's a fire-and-forget operation — order creation is blocking on email sending. Make this async via an event. The `Catalog Service` calls for each line item are a N+1 problem — batch fetch all product IDs in one request. The `Payment Service → Order Service` reverse call creates a circular dependency and should be eliminated by including order data in the payment request."
 
 ## Stage 5: Service Mesh Configuration
 

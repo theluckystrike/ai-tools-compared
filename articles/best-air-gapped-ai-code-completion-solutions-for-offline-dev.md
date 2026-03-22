@@ -149,7 +149,7 @@ GPT4All works well for generating longer code blocks and explanations, though th
 
 ### 6. Supermaven
 
-Supermaven offers an unique approach with its Babble feature, providing fast local completion through a subscription service. While not completely free, their pricing is competitive and they offer offline capabilities.
+Supermaven offers a unique approach with its Babble feature, providing fast local completion through a subscription service. While not completely free, their pricing is competitive and they offer offline capabilities.
 
 The tool excels at predicting code patterns and offering contextually relevant completions. Setup involves installing their IDE extension and configuring the local processing preferences.
 

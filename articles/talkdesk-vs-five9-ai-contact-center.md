@@ -198,7 +198,7 @@ Five9 offers more granular control through their speech analytics API, allowing 
 For real-time integrations, both platforms support webhook-based architectures. Here's a comparison of event handling approaches:
 
 
-**Talkdesk** uses an unified webhook system with signed payloads for security:
+**Talkdesk** uses a unified webhook system with signed payloads for security:
 
 
 ```javascript

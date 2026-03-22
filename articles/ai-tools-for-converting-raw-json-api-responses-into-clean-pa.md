@@ -50,7 +50,7 @@ The resulting structure might contain nested objects like `user.profile.settings
 
 ### 1. GPT-Based Data Extraction
 
-Large language models excel at understanding JSON structures and generating transformation code. You can feed raw JSON into an LLM with a prompt like:
+Large language models excel at understanding JSON structures and generating transformation code. You can feed raw JSON into a LLM with a prompt like:
 
 ```
 Convert this nested JSON into a flat pandas DataFrame.
@@ -395,9 +395,9 @@ class TestAPITransformation(unittest.TestCase):
 
 ## Choosing the Right Approach
 
-For occasional transformations, prompt an LLM with your JSON sample and desired output. For recurring API calls, build reusable transformation functions with AI assistance, then version-control and test them. For complex nested responses, consider a two-step approach: use AI to understand the structure, then implement targeted extraction logic.
+For occasional transformations, prompt a LLM with your JSON sample and desired output. For recurring API calls, build reusable transformation functions with AI assistance, then version-control and test them. For complex nested responses, consider a two-step approach: use AI to understand the structure, then implement targeted extraction logic.
 
-The key advantage of AI-assisted transformation is speed. What might take an hour of manual parsing and debugging can often be accomplished in minutes with the right AI tool generating initial code that you then refine and maintain.
+The key advantage of AI-assisted transformation is speed. What might take a hour of manual parsing and debugging can often be accomplished in minutes with the right AI tool generating initial code that you then refine and maintain.
 
 ## Production Deployment Checklist
 

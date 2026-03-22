@@ -78,7 +78,7 @@ Audio quality often matters more than video for viewer retention. AI audio tools
 ### Krisp
 
 
-Krisp provides real-time noise cancellation that works with any application using your microphone. The desktop app runs in the background and creates a virtual audio device that your streaming software accesses. For developers, Krisp offers an SDK if you need to build noise cancellation directly into custom software.
+Krisp provides real-time noise cancellation that works with any application using your microphone. The desktop app runs in the background and creates a virtual audio device that your streaming software accesses. For developers, Krisp offers a SDK if you need to build noise cancellation directly into custom software.
 
 
 ### Adobe Podcast (Enhance Speech)

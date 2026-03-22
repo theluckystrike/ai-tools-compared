@@ -168,7 +168,7 @@ EventBridge cron uses UTC and has 6 fields (no seconds): minutes hours day month
    Note: EventBridge supports # syntax unlike standard cron.
 ```
 
-Claude flags the EST vs EDT distinction — a common mistake that causes schedules to shift by an hour twice a year. It recommends EventBridge Scheduler for timezone-aware scheduling.
+Claude flags the EST vs EDT distinction — a common mistake that causes schedules to shift by a hour twice a year. It recommends EventBridge Scheduler for timezone-aware scheduling.
 
 ## Python: Validating and Describing Cron Expressions
 

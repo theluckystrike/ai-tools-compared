@@ -87,7 +87,7 @@ This test creates a mocked S3 environment, calls your function, and verifies bot
 
 ### Testing DynamoDB Operations
 
-For DynamoDB interactions, moto provides similar mocking capabilities. Suppose you have a function that retrieves an user from a DynamoDB table:
+For DynamoDB interactions, moto provides similar mocking capabilities. Suppose you have a function that retrieves a user from a DynamoDB table:
 
 ```python
 import pytest

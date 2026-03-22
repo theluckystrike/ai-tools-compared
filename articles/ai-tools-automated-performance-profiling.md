@@ -34,7 +34,7 @@ A Node.js CPU flame graph is a wall of stack frames. Most developers know how to
 
 ## Pyroscope + AI Analysis
 
-Pyroscope is an open-source continuous profiling tool. It collects profiles and exposes them via API. You can pipe Pyroscope data to an LLM for analysis:
+Pyroscope is an open-source continuous profiling tool. It collects profiles and exposes them via API. You can pipe Pyroscope data to a LLM for analysis:
 
 ```python
 import httpx

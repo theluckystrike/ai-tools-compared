@@ -460,7 +460,7 @@ Usage in production debugging:
 
 ## Testing JWT Integration with AI
 
-Prompt Claude to generate comprehensive test cases:
+Prompt Claude to generate test cases:
 
 ```
 Generate Jest/Mocha test cases for verifying JWTs. Include:

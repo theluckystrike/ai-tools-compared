@@ -26,9 +26,9 @@ voice-checked: true
 
 ## Introduction
 
-When you're building applications that interact with databases, AI coding assistants often struggle to generate accurate code because they lack visibility into your actual database structure. The Model Context Protocol (MCP) solves this problem by enabling your AI tools to query live database schema information directly. This guide walks you through setting up an MCP server that exposes your database schema to AI assistants like Claude, Cursor, or other MCP-compatible tools.
+When you're building applications that interact with databases, AI coding assistants often struggle to generate accurate code because they lack visibility into your actual database structure. The Model Context Protocol (MCP) solves this problem by enabling your AI tools to query live database schema information directly. This guide walks you through setting up a MCP server that exposes your database schema to AI assistants like Claude, Cursor, or other MCP-compatible tools.
 
-The Model Context Protocol is an open standard that allows AI systems to connect to external data sources and tools. By running an MCP server for your database, you give AI assistants the ability to ask questions about your tables, columns, relationships, and indexes in real-time.
+The Model Context Protocol is an open standard that allows AI systems to connect to external data sources and tools. By running a MCP server for your database, you give AI assistants the ability to ask questions about your tables, columns, relationships, and indexes in real-time.
 
 ## Prerequisites
 
@@ -52,7 +52,7 @@ uv init
 
 Without live schema context, AI assistants generate code based on guesses about your database structure. They might reference columns that don't exist, use wrong data types, miss required NOT NULL columns, or ignore your foreign key relationships entirely.
 
-With an MCP server providing schema context, the same assistant can:
+With a MCP server providing schema context, the same assistant can:
 
 - Write accurate JOIN queries using actual column names
 - Respect nullable constraints when generating INSERT statements
@@ -192,7 +192,7 @@ The AI uses the `get_table_schema` tool to retrieve foreign key constraints and 
 
 **Generating accurate queries:**
 
-> "Write a SQL query to find all orders placed by users who signed up in the last 30 days."
+> "Write an SQL query to find all orders placed by users who signed up in the last 30 days."
 
 The AI now understands both the `users` and `orders` table structures, enabling it to write accurate JOIN queries with correct column references.
 

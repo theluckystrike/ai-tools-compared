@@ -34,7 +34,7 @@ Chainguard images provide hardened, minimal container images designed for securi
 
 ## Understanding Chainguard Image Supply Chain Security
 
-Chainguard enforces supply chain security through multiple layers. The images are built using Tekton pipelines that produce SLSA Level 3 provenance, meaning you can verify every step of the build process. Each image includes an SBOM (Software Bill of Materials) in SPDX format, listing all included packages and their versions.
+Chainguard enforces supply chain security through multiple layers. The images are built using Tekton pipelines that produce SLSA Level 3 provenance, meaning you can verify every step of the build process. Each image includes a SBOM (Software Bill of Materials) in SPDX format, listing all included packages and their versions.
 
 When you adopt Chainguard images, your security policies should address three key areas: image verification at deployment time, ongoing vulnerability monitoring, and runtime controls. The policies you write will typically integrate with admission controllers, CI/CD pipelines, and container runtime security tools.
 

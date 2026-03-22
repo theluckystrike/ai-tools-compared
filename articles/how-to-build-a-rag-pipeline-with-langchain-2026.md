@@ -41,7 +41,7 @@ A RAG pipeline has three stages:
 
 1. **Indexing** — Load documents, split into chunks, embed them, store in a vector database.
 2. **Retrieval** — Given a user query, embed it and find the most semantically similar chunks.
-3. **Generation** — Pass the retrieved chunks as context to an LLM and return its response.
+3. **Generation** — Pass the retrieved chunks as context to a LLM and return its response.
 
 The bottleneck in most broken RAG systems is retrieval quality, not the LLM. If the wrong chunks come back, no amount of prompt tuning fixes the answer.
 

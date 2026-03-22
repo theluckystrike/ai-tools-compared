@@ -1,27 +1,6 @@
 ---
 
 
-
-
-
-
-
-
-
-
-
-
-
-<<<<<<< HEAD
-
-
-
-
-
-<<<<<<< HEAD
-=======
-
-
 <<<<<<< HEAD
 =======
 
@@ -723,10 +702,11 @@
 
 
 =======
->>>>>>> ddb6d6e644e01dcd75e942a13db5882370b2a9ed
 >>>>>>> 2d1c47c16fb62f06950641ed41edf031fb823a41
 =======
 >>>>>>> b93271893b438c3df505c29266db66015efc386b
+=======
+>>>>>>> 6eb5d55154c938aa369fb1c81bf40f52a92c1df0
 layout: default
 title: "Cursor Free Tier Limitations: What Stops Working After Trial"
 description: "What breaks when Cursor's free trial ends: feature lockouts, model downgrades, completion limits, and whether the free tier is still usable."
@@ -773,9 +753,6 @@ tags: [ai-tools-compared]
 
 
 <<<<<<< HEAD
-=======
-=======
->>>>>>> b93271893b438c3df505c29266db66015efc386b
 
 
 
@@ -887,6 +864,8 @@ last_modified_at: 2026-03-22
 tags: [ai-tools-compared]
 ---
 
+=======
+>>>>>>> 6eb5d55154c938aa369fb1c81bf40f52a92c1df0
 # Cursor Free Tier Limitations: What Stops Working After Trial
 
 Cursor AI offers a free tier that allows developers to experience the power of AI-assisted coding before committing to a paid plan. However, once the initial trial period or free credits are exhausted, several key features become limited or unavailable. Understanding these limitations helps you decide whether to upgrade to a paid plan or adjust your workflow accordingly.
@@ -1163,3 +1142,4 @@ Policies vary widely. Some tools let you access your data for a grace period aft
 - [Cursor Hobby Plan Limitations vs Paying for Pro Worth It](/ai-tools-compared/cursor-hobby-plan-limitations-vs-paying-for-pro-worth-it/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+

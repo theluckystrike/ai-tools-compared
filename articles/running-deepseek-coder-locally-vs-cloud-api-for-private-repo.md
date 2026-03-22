@@ -32,7 +32,7 @@ For developers handling proprietary code, trade secrets, or client work under ND
 ### Hardware Requirements
 
 
-Local execution requires capable hardware. DeepSeek Coder comes in multiple sizes, with the smaller 7B parameter model running reasonably well on consumer GPUs like the RTX 3060 with 12GB VRAM. The 33B model demands more substantial hardware—ideally an RTX 4090 or A100 with 24GB+ VRAM for responsive generation.
+Local execution requires capable hardware. DeepSeek Coder comes in multiple sizes, with the smaller 7B parameter model running reasonably well on consumer GPUs like the RTX 3060 with 12GB VRAM. The 33B model demands more substantial hardware—ideally a RTX 4090 or A100 with 24GB+ VRAM for responsive generation.
 
 
 If you lack discrete GPU hardware, the CPU-only option works but produces results much more slowly. A modern multi-core CPU can still handle the 7B model for basic code completion tasks, though you'll experience noticeable latency.

@@ -196,7 +196,7 @@ npx @changesets/cli init
 npx changeset add  # Creates a changeset file
 ```
 
-While not AI-native, you can pipe its output through an LLM for human-readable summaries:
+While not AI-native, you can pipe its output through a LLM for human-readable summaries:
 
 ```bash
 npx changeset version 2>&1 | \

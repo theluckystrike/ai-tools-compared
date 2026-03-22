@@ -27,7 +27,7 @@ To move Copilot suggested code patterns to Cursor snippets, manually capture you
 
 ## Why Move Copilot Patterns to Cursor Snippets?
 
-Copilot excels at contextual code generation, but it relies on AI inference each time you type. If you frequently use a specific pattern—a particular error-handling wrapper, an utility function, or a React component structure—waiting for Copilot to generate it can introduce unnecessary latency.
+Copilot excels at contextual code generation, but it relies on AI inference each time you type. If you frequently use a specific pattern—a particular error-handling wrapper, a utility function, or a React component structure—waiting for Copilot to generate it can introduce unnecessary latency.
 
 Cursor snippets give you instant, deterministic code insertion. Once you save a pattern as a snippet, Cursor triggers it with a simple prefix, eliminating the variability of AI-generated suggestions.
 

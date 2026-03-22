@@ -106,7 +106,7 @@ Copilot works within GitHub's ecosystem, making it convenient if your project us
 
 ## Zed
 
-Zed provides an unique approach with its Rust-based architecture. For Express middleware generation, Zed offers fast inline completions that feel responsive. The assistant understands TypeScript Express types but occasionally suggests code that needs minor type adjustments.
+Zed provides a unique approach with its Rust-based architecture. For Express middleware generation, Zed offers fast inline completions that feel responsive. The assistant understands TypeScript Express types but occasionally suggests code that needs minor type adjustments.
 
 Zed's strength lies in its performance. The editor loads large TypeScript projects quickly, and AI suggestions appear with minimal latency. For developers working on sizable Express applications with extensive middleware chains, this responsiveness matters.
 

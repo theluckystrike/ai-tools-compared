@@ -43,7 +43,7 @@ The most effective approach treats validation rules as a specification that the 
 
 ### Working with Constraint Specifications
 
-When prompting AI tools for test data, clarity about your constraints produces better results. Consider an user registration validation example:
+When prompting AI tools for test data, clarity about your constraints produces better results. Consider a user registration validation example:
 
 ```python
 # Validation rules to communicate to AI

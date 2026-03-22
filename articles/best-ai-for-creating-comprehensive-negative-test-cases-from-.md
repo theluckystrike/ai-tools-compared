@@ -212,7 +212,7 @@ swagger-cli convert -o openapi.json openapi.yaml
 
 ### 2. Choose Your AI Tool
 
-For maximum speed with minimal setup, use an LLM with a detailed prompt. For automated regression testing in CI, use Schemathesis. The two approaches complement each other: use LLM generation to build your initial test suite fast, then add Schemathesis to your CI pipeline to catch regressions continuously.
+For maximum speed with minimal setup, use a LLM with a detailed prompt. For automated regression testing in CI, use Schemathesis. The two approaches complement each other: use LLM generation to build your initial test suite fast, then add Schemathesis to your CI pipeline to catch regressions continuously.
 
 ### 3. Validate Generated Tests
 

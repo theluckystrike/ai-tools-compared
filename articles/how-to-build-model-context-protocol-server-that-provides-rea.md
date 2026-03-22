@@ -16,7 +16,7 @@ voice-checked: true
 
 {% raw %}
 
-Model Context Protocol (MCP) enables AI assistants to interact with external tools and data sources through a standardized interface. When your AI assistant needs access to test execution results, building a dedicated MCP server provides a clean, maintainable solution. This guide walks through creating an MCP server that streams real-time test results from your test suite to any connected AI client.
+Model Context Protocol (MCP) enables AI assistants to interact with external tools and data sources through a standardized interface. When your AI assistant needs access to test execution results, building a dedicated MCP server provides a clean, maintainable solution. This guide walks through creating a MCP server that streams real-time test results from your test suite to any connected AI client.
 
 ## Prerequisites
 
@@ -248,7 +248,7 @@ Using `--json-report` for pytest (via `pytest-json-report`) and `--json` for Jes
 
 ### Step 7: Persisting Test History with SQLite
 
-Trend analysis — detecting when a test suite starts flaking, tracking coverage over time — requires storing results. SQLite is the right choice for an MCP server: zero configuration, embeddable, and queryable via SQL.
+Trend analysis — detecting when a test suite starts flaking, tracking coverage over time — requires storing results. SQLite is the right choice for a MCP server: zero configuration, embeddable, and queryable via SQL.
 
 ```python
 import sqlite3
@@ -342,7 +342,7 @@ def safe_test_path(user_path: str) -> pathlib.Path:
     return resolved
 ```
 
-These two controls — token authentication and path restriction — prevent the most common misuse scenarios when running an MCP server in a shared or CI environment.
+These two controls — token authentication and path restriction — prevent the most common misuse scenarios when running a MCP server in a shared or CI environment.
 
 ## Troubleshooting
 

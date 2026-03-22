@@ -115,7 +115,7 @@ Cursor's advantage is that it observes what you actually build, not just what yo
 
 ## How to Use These Tools Effectively
 
-### Step 1: Create an Honest Skills Inventory
+### Step 1: Create a Honest Skills Inventory
 
 Before using any AI tool, document your current abilities accurately. Include:
 

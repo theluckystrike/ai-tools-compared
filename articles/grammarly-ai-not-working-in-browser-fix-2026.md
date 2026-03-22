@@ -97,7 +97,7 @@ Access to XMLHttpRequest at 'https://api.grammarly.io/...' blocked by CORS polic
 WebSocket connection to 'wss://editor.grammarly.io/...' failed
 ```
 
-For WebSocket failures, check if your VPN blocks `wss://` connections. Add `*.grammarly.io` as an SSL inspection bypass in your proxy.
+For WebSocket failures, check if your VPN blocks `wss://` connections. Add `*.grammarly.io` as a SSL inspection bypass in your proxy.
 
 To list installed extensions in Chrome DevTools console:
 

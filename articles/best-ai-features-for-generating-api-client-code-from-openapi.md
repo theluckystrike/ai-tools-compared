@@ -38,7 +38,7 @@ Claude produces the cleanest, most idiomatic client code from OpenAPI specs with
 
 The most valuable AI feature for OpenAPI-to-client workflows is intelligent type inference. Modern AI tools can analyze OpenAPI schemas and generate strongly-typed client libraries that capture request parameters, response structures, and error types.
 
-Consider this OpenAPI fragment for an user endpoint:
+Consider this OpenAPI fragment for a user endpoint:
 
 ```yaml
 /users/{userId}:

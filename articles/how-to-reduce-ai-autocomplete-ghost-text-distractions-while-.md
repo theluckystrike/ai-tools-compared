@@ -103,7 +103,7 @@ def calculate_weighted_average(values, weights):
 
 The AI receives the comment as context, producing more relevant suggestions. Similarly, using meaningful variable names instead of short abbreviations helps tools predict accurately.
 
-For multi-file projects, keep related logic in files the AI can analyze. If you're working on an utility function that spans multiple modules, having clear imports and type hints improves suggestion quality significantly.
+For multi-file projects, keep related logic in files the AI can analyze. If you're working on a utility function that spans multiple modules, having clear imports and type hints improves suggestion quality significantly.
 
 ### Step 5: Dedicated Editor Modes
 

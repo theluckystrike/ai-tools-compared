@@ -40,11 +40,11 @@ When refactoring code, the workflow you choose directly impacts productivity and
 
 GitHub Copilot's Edits Panel represents a significant evolution from its original inline-only approach. Accessible through the Copilot Chat interface, the Edits Panel provides a dedicated space for multi-file modifications. The workflow centers around describing changes in natural language, then reviewing AI-generated edits before accepting them.
 
-The Edits Panel excels at scope-limited refactoring. When you need to rename a function across a single file or extract a small code block into a helper function, the panel provides clear before-and-after diff views. You enter a prompt like "extract this validation logic into a separate function" and Copilot displays the proposed changes in an unified interface.
+The Edits Panel excels at scope-limited refactoring. When you need to rename a function across a single file or extract a small code block into a helper function, the panel provides clear before-and-after diff views. You enter a prompt like "extract this validation logic into a separate function" and Copilot displays the proposed changes in a unified interface.
 
 The key strength lies in its tight integration with VS Code. The panel appears as a chat-like interface where you can iterate on prompts. If the first suggestion misses the mark, you can refine your request without losing context. This makes it particularly effective for developers who prefer staying within their editor while working on incremental improvements.
 
-However, Copilot's Edits Panel has limitations for larger refactoring tasks. Multi-file refactoring requires you to explicitly specify each file and repeat the context. The panel doesn't maintain an unified view of changes across files, which can make tracking complex refactoring operations challenging.
+However, Copilot's Edits Panel has limitations for larger refactoring tasks. Multi-file refactoring requires you to explicitly specify each file and repeat the context. The panel doesn't maintain a unified view of changes across files, which can make tracking complex refactoring operations challenging.
 
 ## Understanding Cursor Composer
 

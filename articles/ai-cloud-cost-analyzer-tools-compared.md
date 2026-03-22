@@ -29,7 +29,7 @@ Each has a different cost/control tradeoff.
 
 ## Vantage
 
-Vantage is a multi-cloud cost management platform with a natural language query interface powered by an LLM backend.
+Vantage is a multi-cloud cost management platform with a natural language query interface powered by a LLM backend.
 
 **What the AI layer does:**
 - Natural language cost queries: "Show me which EC2 instances drove the 40% cost increase in March"

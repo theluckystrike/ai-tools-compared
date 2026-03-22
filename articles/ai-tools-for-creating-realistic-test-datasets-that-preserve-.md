@@ -86,7 +86,7 @@ This tool specializes in maintaining referential integrity across complex schema
 
 ### 4. Using Claude or ChatGPT Directly
 
-For teams that prefer prompting an LLM rather than configuring a dedicated tool, Claude and ChatGPT can generate insert scripts when you paste your schema definition. A well-structured prompt like "Here is my PostgreSQL schema. Generate 50 users, 200 orders, and 500 order_items with valid foreign key relationships, realistic names, and US-format addresses" produces usable SQL output in seconds. The AI infers cardinality, respects NOT NULL constraints, and keeps timestamps logically ordered across related records.
+For teams that prefer prompting a LLM rather than configuring a dedicated tool, Claude and ChatGPT can generate insert scripts when you paste your schema definition. A well-structured prompt like "Here is my PostgreSQL schema. Generate 50 users, 200 orders, and 500 order_items with valid foreign key relationships, realistic names, and US-format addresses" produces usable SQL output in seconds. The AI infers cardinality, respects NOT NULL constraints, and keeps timestamps logically ordered across related records.
 
 ## Implementing AI-Generated Test Data in Your Workflow
 

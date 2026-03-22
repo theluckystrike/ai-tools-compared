@@ -76,7 +76,7 @@ Please write a clear issue description that:
 ```
 
 
-This prompt structure gives the AI exactly what it needs to produce an useful result.
+This prompt structure gives the AI exactly what it needs to produce a useful result.
 
 
 ### GitHub Copilot

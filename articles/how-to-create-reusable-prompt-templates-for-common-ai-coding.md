@@ -85,7 +85,7 @@ Requirements:
 Output the complete test file.
 ```
 
-When you fill in the placeholders—Python for language, pytest for framework, snake_case for naming—you get tests tailored to your project. The template ensures consistency whether you're testing an utility function or a complex service.
+When you fill in the placeholders—Python for language, pytest for framework, snake_case for naming—you get tests tailored to your project. The template ensures consistency whether you're testing a utility function or a complex service.
 
 ### API Documentation Template
 

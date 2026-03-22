@@ -264,9 +264,9 @@ Choosing a codec without considering your delivery environment is the most commo
 
 **Live streaming or real-time encoding**: H.264 with GPU acceleration (NVENC/VAAPI). Every major CDN and player supports it, and encoding latency stays under 500ms at typical resolutions.
 
-**Video-on-demand with long shelf life**: AV1 via SVT-AV1 at preset 5-6. The extra encoding time is an one-time cost per video, and the 30-50% size reduction compounds over millions of views.
+**Video-on-demand with long shelf life**: AV1 via SVT-AV1 at preset 5-6. The extra encoding time is a one-time cost per video, and the 30-50% size reduction compounds over millions of views.
 
-**Mobile-first delivery with adaptive bitrate**: H.265 in an HLS ladder with four to six quality tiers. iOS hardware decodes H.265 efficiently, and file sizes are 25-35% smaller than equivalent H.264 streams.
+**Mobile-first delivery with adaptive bitrate**: H.265 in a HLS ladder with four to six quality tiers. iOS hardware decodes H.265 efficiently, and file sizes are 25-35% smaller than equivalent H.264 streams.
 
 **Archive and archival quality**: Lossless H.264 (`-crf 0`) or FFV1. These are not compression wins for delivery but preserve pixel-perfect quality for post-production workflows.
 

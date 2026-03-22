@@ -221,7 +221,7 @@ This approach combines multiple data sources including code analysis, tracing sy
 
 ## Using LLMs to Narrate Architecture Diagrams
 
-Raw dependency graphs show edges and nodes, but they do not explain business intent. You can feed a parsed dependency map to an LLM and ask it to write a plain-English narrative that engineers can paste into a runbook:
+Raw dependency graphs show edges and nodes, but they do not explain business intent. You can feed a parsed dependency map to a LLM and ask it to write a plain-English narrative that engineers can paste into a runbook:
 
 ```python
 import json

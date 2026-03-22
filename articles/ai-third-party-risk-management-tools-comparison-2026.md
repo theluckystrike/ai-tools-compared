@@ -164,7 +164,7 @@ if rating and rating["grade"] in ["A", "B"]:
 
 ### Continuous Monitoring Setup
 
-For teams using multiple tools, consider establishing an unified monitoring pipeline that aggregates data sources. A typical configuration might include:
+For teams using multiple tools, consider establishing a unified monitoring pipeline that aggregates data sources. A typical configuration might include:
 
 ```yaml
 # Example monitoring configuration

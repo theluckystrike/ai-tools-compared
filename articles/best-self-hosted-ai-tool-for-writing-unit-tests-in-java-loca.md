@@ -231,7 +231,7 @@ AI can scaffold these integration test structures, though you provide the actual
 
 ## Hardware Considerations
 
-Running AI models locally requires adequate hardware. For acceptable performance with code generation tasks, you'll want at least 16GB of RAM, though 32GB provides a smoother experience. GPU acceleration significantly speeds up inference, so an NVIDIA GPU with CUDA support is beneficial if your budget allows.
+Running AI models locally requires adequate hardware. For acceptable performance with code generation tasks, you'll want at least 16GB of RAM, though 32GB provides a smoother experience. GPU acceleration significantly speeds up inference, so a NVIDIA GPU with CUDA support is beneficial if your budget allows.
 
 CPU-only inference works for smaller models but expect slower response times. The codellama 7B model runs reasonably on modern CPUs, while larger models benefit substantially from GPU acceleration. Start with a smaller model if your hardware is limited, then scale up as you measure actual performance needs.
 

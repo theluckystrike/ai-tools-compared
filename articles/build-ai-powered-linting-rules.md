@@ -197,52 +197,52 @@ def run_ai_lint(file_path: str, existing_lint_output: str = "") -> list[dict]:
 
     response = message.content[0].text
     if "```json" in response:
-        response = response.split("```json")[1].split("```")[0]
+ response = response.split("```json")[1].split("```")[0]
 
-    try:
-        return json.loads(response.strip())
-    except json.JSONDecodeError:
-        return []
+ try:
+ return json.loads(response.strip())
+ except json.JSONDecodeError:
+ return []
 
 
 def format_findings(findings: list[dict], file_path: str) -> str:
-    if not findings:
-        return ""
+ if not findings:
+ return ""
 
-    lines = [f"\nAI Lint: {file_path}"]
-    for f in findings:
-        severity = f.get("severity", "warning").upper()
-        line = f.get("line", "?")
-        rule = f.get("rule", "unknown")
-        desc = f.get("description", "")
-        lines.append(f"  {severity} line {line} [{rule}]: {desc}")
-        if fix := f.get("fix"):
-            lines.append(f"    Fix: {fix}")
-    return "\n".join(lines)
+ lines = [f"\nAI Lint: {file_path}"]
+ for f in findings:
+ severity = f.get("severity", "warning").upper()
+ line = f.get("line", "?")
+ rule = f.get("rule", "unknown")
+ desc = f.get("description", "")
+ lines.append(f" {severity} line {line} [{rule}]: {desc}")
+ if fix := f.get("fix"):
+ lines.append(f" Fix: {fix}")
+ return "\n".join(lines)
 
 
 if __name__ == "__main__":
-    files = sys.argv[1:]
-    total_issues = 0
-    for f in files:
-        findings = run_ai_lint(f)
-        if findings:
-            print(format_findings(findings, f))
-            total_issues += len([x for x in findings if x.get("severity") == "error"])
+ files = sys.argv[1:]
+ total_issues = 0
+ for f in files:
+ findings = run_ai_lint(f)
+ if findings:
+ print(format_findings(findings, f))
+ total_issues += len([x for x in findings if x.get("severity") == "error"])
 
-    sys.exit(1 if total_issues > 0 else 0)
+ sys.exit(1 if total_issues > 0 else 0)
 ```
 
 **Example AI linting output:**
 
 ```
 AI Lint: src/api/users.js
-  ERROR line 34 [sql_injection_risk]: String interpolation in SQL query via user input
-    Fix: Use parameterized query: db.query('SELECT * FROM users WHERE id = $1', [userId])
-  WARNING line 67 [unhandled_rejection]: Promise-returning function called without await or .catch()
-    Fix: Add await or .catch((err) => logger.error(err)) to sendEmail() call
-  WARNING line 89 [n_plus_one_query]: Loop contains a database query — fetches N queries for N items
-    Fix: Fetch all items in one query using WHERE id IN (...) before the loop
+ ERROR line 34 [sql_injection_risk]: String interpolation in SQL query via user input
+ Fix: Use parameterized query: db.query('SELECT * FROM users WHERE id = $1', [userId])
+ WARNING line 67 [unhandled_rejection]: Promise-returning function called without await or .catch()
+ Fix: Add await or .catch((err) => logger.error(err)) to sendEmail() call
+ WARNING line 89 [n_plus_one_query]: Loop contains a database query — fetches N queries for N items
+ Fix: Fetch all items in one query using WHERE id IN (...) before the loop
 ```
 
 ## GPT-4 for Rule Generation
@@ -259,20 +259,20 @@ name: AI Lint Check
 on: [pull_request]
 
 jobs:
-  ai-lint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: pip install anthropic
-      - name: Run AI linter on changed files
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: |
-          # Get changed files
-          git diff --name-only origin/main...HEAD | grep -E '\.(js|ts|py)$' > changed_files.txt
-          if [ -s changed_files.txt ]; then
-            python ai_linter.py $(cat changed_files.txt)
-          fi
+ ai-lint:
+ runs-on: ubuntu-latest
+ steps:
+ - uses: actions/checkout@v4
+ - run: pip install anthropic
+ - name: Run AI linter on changed files
+ env:
+ ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+ run: |
+ # Get changed files
+ git diff --name-only origin/main...HEAD | grep -E '\.(js|ts|py)$' > changed_files.txt
+ if [ -s changed_files.txt ]; then
+ python ai_linter.py $(cat changed_files.txt)
+ fi
 ```
 
 ## Related Reading

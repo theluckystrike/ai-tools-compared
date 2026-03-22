@@ -226,7 +226,7 @@ Deployment model: Agentless tools like Wiz and Orca are faster to deploy and hav
 
 **How current are the compliance framework mappings?** This varies by tool. Open-source tools like Prowler rely on community contributions, which can lag new framework versions by weeks. Commercial platforms like Prisma Cloud typically update their control libraries within days of a new framework release.
 
-**Do AI compliance tools work for multi-account AWS organizations?** Yes. Wiz, Orca, and Prisma Cloud are specifically designed for large AWS Organizations with dozens or hundreds of accounts. They aggregate findings across accounts and present an unified compliance posture view.
+**Do AI compliance tools work for multi-account AWS organizations?** Yes. Wiz, Orca, and Prisma Cloud are specifically designed for large AWS Organizations with dozens or hundreds of accounts. They aggregate findings across accounts and present a unified compliance posture view.
 
 **What is the difference between CSPM and compliance reporting?** Cloud Security Posture Management (CSPM) is the broader category covering misconfiguration detection. Compliance reporting is a specific output of CSPM that maps findings to audit frameworks. Most enterprise CSPM tools include compliance reporting as a core feature.
 

@@ -209,7 +209,7 @@ trainer.train()
 trainer.save_model("./llama3-code-finetuned/final")
 ```
 
-Training 2,000 examples for 3 epochs on an RTX 4090 takes approximately 45-90 minutes. Watch the eval loss: if it starts increasing while train loss continues dropping, you're overfitting. Stop early and use the checkpoint with the lowest eval loss — `load_best_model_at_end=True` handles this automatically.
+Training 2,000 examples for 3 epochs on a RTX 4090 takes approximately 45-90 minutes. Watch the eval loss: if it starts increasing while train loss continues dropping, you're overfitting. Stop early and use the checkpoint with the lowest eval loss — `load_best_model_at_end=True` handles this automatically.
 
 ## Step 4: Merge and Export for Ollama
 

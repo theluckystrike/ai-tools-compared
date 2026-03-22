@@ -280,19 +280,6 @@ volumes:
 
 Claude uses `service_healthy` conditions for `depends_on` (requires healthchecks), separates the two schemas via Flyway configuration, and adds the Redis eviction policy. Copilot generates simpler Docker Compose but misses the health check conditions.
 
-## Summary
-
-| Task | Claude | Copilot |
-|---|---|---|
-| Feign client + circuit breaker | Full solution + config | Basic client only |
-| FallbackFactory (with Throwable) | Yes | No |
-| Reactive Mono.zip concurrent calls | Correct | Requires prompting |
-| WebClient retry configuration | Yes | Sometimes |
-| Docker Compose with health checks | depends_on service_healthy | Basic depends_on |
-| application.yml for Resilience4j | Generated automatically | No |
-
-Copilot is faster for single-service boilerplate. Claude is better for cross-service architecture where correctness matters.
-
 ## Related Reading
 
 - [Copilot vs Claude for Generating Java Spring Boot](/ai-tools-compared/copilot-vs-claude-for-generating-java-spring-boot-applicatio/)

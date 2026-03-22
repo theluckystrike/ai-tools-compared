@@ -395,21 +395,21 @@ Not all documents chunk the same way. Using 512-token fixed-size chunks works fi
 
 ```python
 CODE_AWARE_SEPARATORS = [
-    "\n```\n",   # code block end
-    "\n## ",     # H2 section break
-    "\n### ",    # H3 section break
-    "\n\n",      # paragraph break
-    "\n",
-    ". ",
-    " ",
-    ""
+    "\n```\n", # code block end
+ "\n## ", # H2 section break
+ "\n### ", # H3 section break
+ "\n\n", # paragraph break
+ "\n",
+ ". ",
+ " ",
+ ""
 ]
 
 splitter = RecursiveCharacterTextSplitter(
-    chunk_size=400,
-    chunk_overlap=50,
-    separators=CODE_AWARE_SEPARATORS,
-    keep_separator=True
+ chunk_size=400,
+ chunk_overlap=50,
+ separators=CODE_AWARE_SEPARATORS,
+ keep_separator=True
 )
 ```
 
@@ -419,24 +419,24 @@ If you're serving multiple customers or projects from one Pinecone index, use na
 
 ```python
 def ingest_for_tenant(docs: list[dict], tenant_id: str):
-    index = get_or_create_index()
-    # ... chunk and embed as before ...
-    index.upsert(vectors=vectors, namespace=tenant_id)
+ index = get_or_create_index()
+ # ... chunk and embed as before ...
+ index.upsert(vectors=vectors, namespace=tenant_id)
 
 def retrieve_for_tenant(
-    query: str,
-    tenant_id: str,
-    top_k: int = 5
+ query: str,
+ tenant_id: str,
+ top_k: int = 5
 ) -> list[dict]:
-    index = pc.Index(os.environ["PINECONE_INDEX_NAME"])
-    query_embedding = embed_query(query)
-    results = index.query(
-        vector=query_embedding,
-        top_k=top_k,
-        include_metadata=True,
-        namespace=tenant_id  # isolates results to this tenant
-    )
-    return [m.metadata for m in results.matches if m.score >= 0.70]
+ index = pc.Index(os.environ["PINECONE_INDEX_NAME"])
+ query_embedding = embed_query(query)
+ results = index.query(
+ vector=query_embedding,
+ top_k=top_k,
+ include_metadata=True,
+ namespace=tenant_id # isolates results to this tenant
+ )
+ return [m.metadata for m in results.matches if m.score >= 0.70]
 ```
 
 This pattern lets you offer per-customer knowledge bases without provisioning separate indexes or worrying about data leakage between tenants.
@@ -451,14 +451,14 @@ from sentence_transformers import CrossEncoder
 reranker = CrossEncoder("cross-encoder/ms-marco-MiniLM-L-6-v2")
 
 def rerank(query: str, candidates: list[dict]) -> list[dict]:
-    pairs = [(query, c["text"]) for c in candidates]
-    scores = reranker.predict(pairs)
-    ranked = sorted(
-        zip(candidates, scores),
-        key=lambda x: x[1],
-        reverse=True
-    )
-    return [item for item, _ in ranked]
+ pairs = [(query, c["text"]) for c in candidates]
+ scores = reranker.predict(pairs)
+ ranked = sorted(
+ zip(candidates, scores),
+ key=lambda x: x[1],
+ reverse=True
+ )
+ return [item for item, _ in ranked]
 ```
 
 Run the initial Pinecone search with `top_k=20`, then re-rank and pass only the top 5 to the LLM. This maintains Pinecone's speed advantage while improving the final answer quality significantly.

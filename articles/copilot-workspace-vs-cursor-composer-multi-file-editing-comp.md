@@ -77,7 +77,7 @@ Copilot Workspace will then generate a plan that includes:
 
 - An `authService.js` API module
 
-Each file change appears in an unified diff view, allowing you to review all modifications before applying them. The context window maintains awareness of your existing file structure, reducing the chance of conflicts or redundant code.
+Each file change appears in a unified diff view, allowing you to review all modifications before applying them. The context window maintains awareness of your existing file structure, reducing the chance of conflicts or redundant code.
 
 ## Multi-File Editing in Cursor Composer
 

@@ -143,7 +143,7 @@ Claude correctly:
 
 Pulumi's `ComponentResource` is the equivalent of a CDK Construct — a reusable infrastructure building block. Most AI tools don't know the pattern.
 
-**Prompt:** "Write a Pulumi ComponentResource for an S3 bucket with encryption, versioning, and lifecycle rules."
+**Prompt:** "Write a Pulumi ComponentResource for a S3 bucket with encryption, versioning, and lifecycle rules."
 
 **Cursor's output:**
 
@@ -276,7 +276,7 @@ Copilot and Cursor both generate `${}` string interpolation mistakes on `Output<
 
 A test that separates strong Pulumi knowledge from surface-level familiarity is the `StackReference` pattern. Teams that run multiple stacks — network, cluster, application — need to pass outputs from one stack to another without hardcoding values.
 
-**Prompt:** "Our networking stack exports a VPC ID and subnet IDs. Write a Pulumi TypeScript stack that consumes those outputs and creates an RDS instance in the private subnets."
+**Prompt:** "Our networking stack exports a VPC ID and subnet IDs. Write a Pulumi TypeScript stack that consumes those outputs and creates a RDS instance in the private subnets."
 
 **Copilot's output:**
 

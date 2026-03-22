@@ -213,7 +213,7 @@ If you already run Sourcegraph for code intelligence in your organization, exten
 
 ## GPU and Storage Requirements for Air-Gapped Deployments
 
-All these tools perform significantly better with a dedicated GPU. An NVIDIA RTX 3060 (12GB VRAM) handles 7B parameter models comfortably for single-user scenarios. For 13B models, an RTX 4090 (24GB VRAM) or RTX 3090 provides enough headroom. For multi-user team deployments serving 10 or more developers simultaneously, consider server-class hardware: an A10G (24GB) handles concurrent 7B model requests well, and an A100 (40GB or 80GB) supports larger 34B models.
+All these tools perform significantly better with a dedicated GPU. An NVIDIA RTX 3060 (12GB VRAM) handles 7B parameter models comfortably for single-user scenarios. For 13B models, a RTX 4090 (24GB VRAM) or RTX 3090 provides enough headroom. For multi-user team deployments serving 10 or more developers simultaneously, consider server-class hardware: an A10G (24GB) handles concurrent 7B model requests well, and an A100 (40GB or 80GB) supports larger 34B models.
 
 Running on CPU alone is viable for smaller 1B–3B parameter models like TabbyML/StarCoder-1B, but expect 3–8 second completion latency rather than sub-second responses. For developers who need responsive inline completions, GPU access is effectively a requirement for models above 3B parameters.
 

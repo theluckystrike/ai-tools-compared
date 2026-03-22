@@ -15,7 +15,7 @@ voice-checked: true
 ---
 
 
-Choose Kustomer if you need fine-grained API control over conversation workflows, ticket-based metrics and reporting, or custom AI response flows built on explicit conversation lifecycle events. Choose Gladly if you prefer a people-centric model with continuous conversation threads, want minimal integration development effort, or need strong voice channel support. Kustomer thinks in tickets with an unified timeline, while Gladly organizes everything around the person rather than individual interactions.
+Choose Kustomer if you need fine-grained API control over conversation workflows, ticket-based metrics and reporting, or custom AI response flows built on explicit conversation lifecycle events. Choose Gladly if you prefer a people-centric model with continuous conversation threads, want minimal integration development effort, or need strong voice channel support. Kustomer thinks in tickets with a unified timeline, while Gladly organizes everything around the person rather than individual interactions.
 
 ## Table of Contents
 
@@ -30,7 +30,7 @@ Choose Kustomer if you need fine-grained API control over conversation workflows
 
 ## Platform Architecture Overview
 
-**Kustomer** is a customer service platform acquired by Meta in 2020 (and now independent again) that emphasizes an unified customer timeline. It stores all customer interactions in a chronological feed, making it straightforward to query and display conversation history. Kustomer's data model treats conversations as first-class objects with relationships to customers, agents, and workflows.
+**Kustomer** is a customer service platform acquired by Meta in 2020 (and now independent again) that emphasizes a unified customer timeline. It stores all customer interactions in a chronological feed, making it straightforward to query and display conversation history. Kustomer's data model treats conversations as first-class objects with relationships to customers, agents, and workflows.
 
 **Gladly** takes a different approach, positioning itself as a "people-centric" platform that ties every interaction to a person rather than a ticket. Gladly's architecture focuses on continuous conversation threads across channels, avoiding the traditional ticket metaphor entirely.
 

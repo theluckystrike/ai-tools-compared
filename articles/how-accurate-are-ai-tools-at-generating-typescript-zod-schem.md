@@ -30,7 +30,7 @@ I tested three leading AI coding tools—Claude Code, Cursor, and GitHub Copilot
 
 ### Test Case 1: Basic User Object
 
-The first test used a straightforward TypeScript interface representing an user:
+The first test used a straightforward TypeScript interface representing a user:
 
 ```typescript
 interface User {
@@ -138,7 +138,7 @@ export const ProfileSchema = z.object({
 });
 ```
 
-This schema correctly marks `bio` and `theme` as optional while enforcing the union type for theme. The username validation with length constraints is an useful addition.
+This schema correctly marks `bio` and `theme` as optional while enforcing the union type for theme. The username validation with length constraints is a useful addition.
 
 Cursor showed inconsistency here—it sometimes used the `?:` syntax from TypeScript instead of Zod's `.optional()`, which does not work in runtime validation. GitHub Copilot consistently missed optional field handling, generating schemas where optional fields were required.
 

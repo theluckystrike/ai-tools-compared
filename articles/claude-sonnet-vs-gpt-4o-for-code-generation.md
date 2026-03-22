@@ -222,7 +222,7 @@ Analysis: Both outputs are functional and type-safe. Claude includes better Type
 
 Testing a Python FastAPI endpoint with database operations:
 
-Prompt: Create a FastAPI endpoint that accepts an user registration request, validates the input, hashes the password, and stores the user in a PostgreSQL database using SQLAlchemy.
+Prompt: Create a FastAPI endpoint that accepts a user registration request, validates the input, hashes the password, and stores the user in a PostgreSQL database using SQLAlchemy.
 
 Claude Sonnet focused on security best practices and error handling:
 

@@ -222,7 +222,7 @@ This configuration includes IAM permissions, environment variables, HTTP API rou
 
 Getting consistently good configurations from AI requires an iterative approach rather than a single large prompt:
 
-**Step 1 — Define your service boundary.** Before prompting AI, write an one-paragraph description of what the service does, which cloud provider it targets, and the primary event sources. This clarity translates directly into better prompts.
+**Step 1 — Define your service boundary.** Before prompting AI, write a one-paragraph description of what the service does, which cloud provider it targets, and the primary event sources. This clarity translates directly into better prompts.
 
 **Step 2 — Generate a base configuration.** Start with the provider block and one or two functions. Ask AI for the minimal working configuration first. Validate it deploys to a dev environment before building out additional functions.
 

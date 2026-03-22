@@ -44,7 +44,7 @@ Modern AI coding kata tools use large language models trained on thousands of pr
 
 - Preferred pattern (functional, object-oriented, procedural)
 
-The AI then generates an unique exercise that meets your criteria. Unlike static kata libraries, AI-created exercises can vary infinitely, ensuring you never run out of fresh challenges.
+The AI then generates a unique exercise that meets your criteria. Unlike static kata libraries, AI-created exercises can vary infinitely, ensuring you never run out of fresh challenges.
 
 ### Example: Generating a Python List Comprehension Kata
 

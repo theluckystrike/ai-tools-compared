@@ -142,7 +142,7 @@ Response time also matters for user experience. If you want to provide immediate
 
 Automating duplicate detection is just one part of maintaining a healthy issue tracker. Even with AI assistance, clearly labeling duplicate issues and linking them to the original helps future users find solutions. A good practice is to close duplicates with a comment that references the canonical issue, explaining why they are related.
 
-Over time, the data from detected duplicates can reveal patterns. If certain types of issues frequently get duplicated, consider whether the original issue could be more clearly written, or whether a FAQ document would help users find existing solutions before filing new reports.
+Over time, the data from detected duplicates can reveal patterns. If certain types of issues frequently get duplicated, consider whether the original issue could be more clearly written, or whether an FAQ document would help users find existing solutions before filing new reports.
 
 AI-powered duplicate detection reduces manual effort while improving the experience for both contributors and maintainers. By automatically surfacing similar issues when new reports come in, you help users discover relevant discussions faster and keep your project's issue tracker organized.
 

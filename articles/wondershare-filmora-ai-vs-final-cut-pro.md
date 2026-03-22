@@ -90,13 +90,13 @@ done
 
 ## Performance and Rendering
 
-When rendering complex timelines with AI effects, performance characteristics diverge significantly. Final Cut Pro's unified memory architecture on Apple Silicon allows the CPU, GPU, and Neural Engine to share memory, reducing data transfer overhead. In testing, rendering a 10-minute timeline with Smart Conform and Voice Isolation completes approximately 30% faster on an M3 Max MacBook Pro compared to equivalent operations in Filmora.
+When rendering complex timelines with AI effects, performance characteristics diverge significantly. Final Cut Pro's unified memory architecture on Apple Silicon allows the CPU, GPU, and Neural Engine to share memory, reducing data transfer overhead. In testing, rendering a 10-minute timeline with Smart Conform and Voice Isolation completes approximately 30% faster on a M3 Max MacBook Pro compared to equivalent operations in Filmora.
 
 Filmora's rendering times depend heavily on the specific AI feature. Basic AI denoise processes in near-real-time, while generative AI features requiring cloud processing depend on network bandwidth and server load. The ability to queue multiple exports helps, but the overall render pipeline feels less optimized for complex multi-effect compositions.
 
 ## Pricing and Licensing Considerations
 
-Final Cut Pro uses an one-time purchase model at $299.99, which includes all current features and regular updates. This predictable cost suits teams budgeting for video production tools. The lack of subscription fees means total cost of ownership is lower over multi-year periods.
+Final Cut Pro uses a one-time purchase model at $299.99, which includes all current features and regular updates. This predictable cost suits teams budgeting for video production tools. The lack of subscription fees means total cost of ownership is lower over multi-year periods.
 
 Filmora operates on a subscription tier ($89.99/year for the Pro plan) with optional perpetual licenses available. The subscription includes access to cloud features and continuous AI updates. For teams requiring deployment across many machines, the subscription cost compounds quickly, though volume licensing discounts are available.
 

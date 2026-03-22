@@ -50,7 +50,7 @@ Modern test data factories go beyond simple random generation. They understand d
 
 Claude Code has emerged as a strong choice for generating test data factories. Its large context window allows it to understand your existing data models, schemas, and business rules, enabling it to create more sophisticated and contextually appropriate test data generators.
 
-When working with Claude Code, you can describe your data requirements in natural language and receive production-ready factory code. For example, describing an user factory with realistic data constraints:
+When working with Claude Code, you can describe your data requirements in natural language and receive production-ready factory code. For example, describing a user factory with realistic data constraints:
 
 ```python
 # UserFactory generated with Claude Code
