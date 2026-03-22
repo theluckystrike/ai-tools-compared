@@ -28,7 +28,19 @@ intent-checked: true
 voice-checked: true---
 
 {% raw %}
+
 Testing web applications with dynamic loading and lazy-loaded elements requires specific strategies. This guide evaluates which AI tools excel at generating Playwright tests that handle these common but tricky scenarios.
+
+## Key Takeaways
+
+- **Step 1**: Describe the loading pattern clearly. AI tools perform best when you explain the mechanism: "The page uses an IntersectionObserver to load product cards as the user scrolls.
+- **The best tools share**: several characteristics: 1.
+- **Context awareness of Playwright's waiting API**: They know when to use `waitForSelector`, `waitForLoadState`, or custom condition functions
+
+2.
+- **No cleanup after test data creation**: If your test creates database records, forgetting to delete them causes contamination.
+- **CI timeout mismatches**: Tests that pass locally on a fast machine fail in CI because timeouts are too short.
+- **- Use role-based locators**: Ask AI tools to prefer `page.getByRole()` and `page.getByText()` over CSS selectors.
 
 ## The Challenge with Dynamic Loading in Playwright
 

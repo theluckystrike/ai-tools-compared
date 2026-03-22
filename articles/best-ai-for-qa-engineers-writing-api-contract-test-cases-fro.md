@@ -28,7 +28,19 @@ intent-checked: true
 voice-checked: true---
 
 {% raw %}
+
 Claude and GPT-4 are the strongest AI tools for QA engineers writing API contract tests, with Claude excelling at generating Pact consumer-driven contract tests and GPT-4 performing well on OpenAPI schema validation test generation. Both produce accurate Dredd hook files and can generate provider verification tests from existing Pact contracts. For teams needing offline capabilities, CodeLlama via Ollama handles basic contract test scaffolding but struggles with complex interaction states and provider state management.
+
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- Multi-version API compatibility testing
+
+4.
 
 ## Understanding API Contract Testing
 
