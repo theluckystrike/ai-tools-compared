@@ -4,10 +4,11 @@ description: "Compare Claude, GPT-4, and GitHub Copilot for generating productio
 author: theluckystrike
 date: 2026-03-22
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 permalink: /best-ai-tools-for-writing-terraform-modules-2026/
+tags: [ai-tools-compared, best-of, artificial-intelligence]
 ---
 
 
