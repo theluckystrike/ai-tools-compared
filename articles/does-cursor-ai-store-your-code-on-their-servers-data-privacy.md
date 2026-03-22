@@ -28,9 +28,19 @@ intent-checked: true
 voice-checked: true---
 
 {% raw %}
+
 If you're a developer evaluating AI code assistants, data privacy ranks among the top concerns. Cursor AI, built on top of VS Code, has gained significant traction for its AI-powered coding capabilities. However, understanding exactly how it handles your code data requires examining their architecture, privacy policy, and available configuration options.
 
 This breakdown addresses the core question: does Cursor AI store your code on their servers? We'll examine the technical details, practical configurations, and steps you can take to minimize data exposure.
+
+## Key Takeaways
+
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **Does Cursor offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Consider network segmentation****: For highly sensitive projects, consider using a VPN or restricting which networks you use Cursor from.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
 ## How Cursor AI Processes Your Code
 

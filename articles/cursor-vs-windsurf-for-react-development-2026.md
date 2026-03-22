@@ -31,6 +31,15 @@ tags: [ai-tools-compared, comparison]---
 
 Cursor and Windsurf both offer AI-powered coding in a VS Code fork, but their behavior differs enough to matter for React development. This comparison focuses on the specific workflows React engineers care about: component generation, custom hook creation, refactoring JSX, multi-file state management changes, and TypeScript type inference.
 
+## Key Takeaways
+
+- **Modified each component to**: use useQuery 5.
+- **- Windsurf**: Updated all 9 functions correctly, better at tracking optional vs required fields.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **Use AI-generated tests as**: a starting point, then add cases that cover your unique requirements and failure modes.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+- **Cursor setup**: Install Cursor, create `.cursorrules` in project root, use `Cmd+K` for inline edits, `Cmd+L` for chat.
+
 ## Editor Setup
 
 Both editors require minimal configuration for a React/TypeScript project.
