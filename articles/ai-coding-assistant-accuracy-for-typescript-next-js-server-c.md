@@ -9,7 +9,7 @@ permalink: /ai-coding-assistant-accuracy-for-typescript-next-js-server-c/
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
-score: 8
+score: 9
 reviewed: true
 tags: [ai-tools-compared, artificial-intelligence]
 ---

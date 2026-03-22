@@ -9,7 +9,7 @@ permalink: /ai-coding-tools-for-writing-chainguard-image-supply-chain-se/
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence, security, chainguard]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
