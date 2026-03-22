@@ -11,6 +11,7 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true---
+{% raw %}
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
@@ -35,4 +36,5 @@ The core concepts apply across most CI/CD platforms, though specific syntax and 
 **Where can I get help if I run into issues?**
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
+{% endraw %}
 {% endraw %}

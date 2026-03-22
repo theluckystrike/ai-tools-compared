@@ -13,6 +13,7 @@ score: 9
 reviewed: true
 tags: [ai-tools-compared, artificial-intelligence]
 ---
+{% raw %}
 | Feature | GitHub Copilot | CodeRabbit | ReviewNB | Sourcery |
 |---------|-----------------|-----------|----------|----------|
 | Install method | IDE extension | GitHub App | GitHub App | GitHub App |
@@ -209,4 +210,5 @@ Support quality varies by plan tier. Free and basic plans typically get communit
 **Can I migrate away from GitHub if I decide to switch?**
 
 Check the export options before committing. Most tools let you export your data, but the format and completeness of exports vary. Test the export process early so you are not locked in if your needs change later.
+{% endraw %}
 {% endraw %}
