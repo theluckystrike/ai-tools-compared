@@ -279,6 +279,213 @@ async def request_id_middleware(request: Request, call_next):
     return response
 ```
 
+## Distributed Tracing Instrumentation
+
+Auto-instrumentation covers the basics, but explicit span creation gives you visibility into business-level operations that HTTP frameworks don't capture. AI handles the boilerplate effectively.
+
+**Prompt:**
+```text
+Write Python OpenTelemetry instrumentation for a FastAPI service that:
+1. Creates spans for database queries with the query as an attribute
+2. Propagates trace context to downstream HTTP calls using requests
+3. Records span status on exceptions
+4. Exports to an OTLP endpoint at http://otel-collector:4317
+```
+
+```python
+from opentelemetry import trace
+from opentelemetry.sdk.trace import TracerProvider
+from opentelemetry.sdk.trace.export import BatchSpanProcessor
+from opentelemetry.exporter.otlp.proto.grpc.trace_exporter import OTLPSpanExporter
+from opentelemetry.sdk.resources import Resource
+from opentelemetry.instrumentation.fastapi import FastAPIInstrumentor
+from opentelemetry.instrumentation.requests import RequestsInstrumentor
+from opentelemetry.propagate import inject
+from opentelemetry.trace import Status, StatusCode
+import requests as http_client
+
+def configure_tracing(service_name: str, version: str):
+    resource = Resource.create({
+        "service.name": service_name,
+        "service.version": version,
+        "deployment.environment": os.getenv("ENVIRONMENT", "development"),
+    })
+
+    exporter = OTLPSpanExporter(
+        endpoint="http://otel-collector:4317",
+        insecure=True,
+    )
+
+    provider = TracerProvider(resource=resource)
+    provider.add_span_processor(BatchSpanProcessor(exporter))
+    trace.set_tracer_provider(provider)
+
+    # Auto-instrument FastAPI and requests library
+    FastAPIInstrumentor.instrument()
+    RequestsInstrumentor.instrument()
+
+tracer = trace.get_tracer(__name__)
+
+# Manual span for database queries
+async def fetch_order(order_id: str, db):
+    query = "SELECT * FROM orders WHERE id = $1"
+    with tracer.start_as_current_span("db.query.fetch_order") as span:
+        span.set_attribute("db.system", "postgresql")
+        span.set_attribute("db.statement", query)
+        span.set_attribute("db.params.order_id", order_id)
+        try:
+            result = await db.fetchrow(query, order_id)
+            span.set_attribute("db.rows_returned", 1 if result else 0)
+            return result
+        except Exception as e:
+            span.set_status(Status(StatusCode.ERROR, str(e)))
+            span.record_exception(e)
+            raise
+
+# Downstream HTTP call with trace propagation
+def call_inventory_service(product_id: str) -> dict:
+    headers = {}
+    inject(headers)  # Injects traceparent / tracestate headers
+    with tracer.start_as_current_span("http.client.inventory") as span:
+        span.set_attribute("http.url", f"http://inventory-service/products/{product_id}")
+        response = http_client.get(
+            f"http://inventory-service/products/{product_id}",
+            headers=headers,
+            timeout=5,
+        )
+        span.set_attribute("http.status_code", response.status_code)
+        if response.status_code >= 400:
+            span.set_status(Status(StatusCode.ERROR, f"HTTP {response.status_code}"))
+        return response.json()
+```
+
+`RequestsInstrumentor.instrument()` handles trace context propagation automatically for most HTTP calls, but explicit `inject(headers)` is needed when you construct headers manually or use non-standard HTTP clients.
+
+## Grafana Dashboard as Code
+
+AI can generate Grafana dashboard JSON that you check into version control alongside your application code.
+
+**Prompt:**
+```text
+Write a Grafana dashboard JSON for a web service with 4 panels:
+1. Request rate (requests/s by status code)
+2. p50/p95/p99 latency over time
+3. Error rate percentage
+4. Active pods count
+Use templating variable for the service name. Prometheus datasource.
+```
+
+Claude generates a complete dashboard definition. A representative panel for the request rate:
+
+```json
+{
+  "title": "Request Rate",
+  "type": "timeseries",
+  "datasource": {"type": "prometheus", "uid": "${datasource}"},
+  "targets": [
+    {
+      "expr": "sum(rate(http_requests_total{service=\"$service\"}[5m])) by (status_code)",
+      "legendFormat": "{{status_code}}",
+      "refId": "A"
+    }
+  ],
+  "fieldConfig": {
+    "defaults": {
+      "unit": "reqps",
+      "custom": {"lineWidth": 2}
+    },
+    "overrides": [
+      {"matcher": {"id": "byRegexp", "options": "5.*"}, "properties": [{"id": "color", "value": {"mode": "fixed", "fixedColor": "red"}}]},
+      {"matcher": {"id": "byRegexp", "options": "2.*"}, "properties": [{"id": "color", "value": {"mode": "fixed", "fixedColor": "green"}}]}
+    ]
+  }
+}
+```
+
+Claude correctly uses `byRegexp` matchers for color-coding status codes rather than hardcoding specific codes. It also adds the `$datasource` template variable automatically so dashboards can be moved between Grafana instances without editing JSON.
+
+## Alertmanager Routing
+
+**Prompt:**
+```text
+Write an Alertmanager routing config that:
+- Sends critical alerts to PagerDuty
+- Sends warning alerts to Slack #alerts channel
+- Groups alerts by alertname and service, 30s group wait
+- Silences alerts between 11pm-7am UTC on weekends for non-critical
+```
+
+```yaml
+global:
+  resolve_timeout: 5m
+  pagerduty_url: "https://events.pagerduty.com/v2/enqueue"
+
+route:
+  group_by: ["alertname", "service"]
+  group_wait: 30s
+  group_interval: 5m
+  repeat_interval: 4h
+  receiver: slack-warnings
+
+  routes:
+    - match:
+        severity: critical
+      receiver: pagerduty-critical
+      continue: false
+
+    - match:
+        severity: warning
+      receiver: slack-warnings
+      mute_time_intervals:
+        - weekend-nights
+
+receivers:
+  - name: pagerduty-critical
+    pagerduty_configs:
+      - routing_key: "${PAGERDUTY_INTEGRATION_KEY}"
+        severity: critical
+        description: "{{ .GroupLabels.alertname }}: {{ .CommonAnnotations.summary }}"
+
+  - name: slack-warnings
+    slack_configs:
+      - api_url: "${SLACK_WEBHOOK_URL}"
+        channel: "#alerts"
+        title: "[{{ .Status | toUpper }}] {{ .GroupLabels.alertname }}"
+        text: "{{ range .Alerts }}{{ .Annotations.description }}\n{{ end }}"
+        send_resolved: true
+
+mute_time_intervals:
+  - name: weekend-nights
+    time_intervals:
+      - weekdays: ["saturday", "sunday"]
+        times:
+          - start_time: "23:00"
+            end_time: "07:00"
+```
+
+Claude correctly uses `mute_time_intervals` (the modern Alertmanager approach) rather than the deprecated `time_intervals` with inhibition rules. Environment variable references for secrets avoid hardcoding credentials in the config file.
+
+One gap to watch: Claude's weekend-nights interval covers Saturday and Sunday 23:00-07:00, but this crosses midnight. Alertmanager time intervals within a single entry are evaluated as ranges within a calendar day — to mute from 23:00 Saturday to 07:00 Sunday, you need two separate entries: one for Saturday 23:00-24:00 and one for Sunday 00:00-07:00. Always test mute intervals with `amtool` before relying on them in production:
+
+```bash
+# Test if an alert would be muted at a specific time
+amtool --alertmanager.url=http://alertmanager:9093 \
+  silence query alertname="HighErrorRateWarning"
+
+# Validate config before applying
+amtool config check /etc/alertmanager/alertmanager.yml
+```
+
+## Choosing the Right AI Tool for Observability Config
+
+For YAML-heavy configuration (OTel collector, Prometheus rules, Alertmanager), Claude and GPT-4 both perform well. The differentiators show up in edge cases:
+
+- **Processor ordering** — Claude consistently puts `memory_limiter` before `batch` in OTel pipelines. GPT-4 occasionally reverses this, causing OOM under load.
+- **PromQL correctness** — Both tools handle simple rate expressions. For complex multi-label aggregations or recording rules, Claude tends to produce more syntactically correct PromQL on the first attempt.
+- **Config validation awareness** — Claude proactively mentions tools like `promtool check rules` and `otelcol validate` for verifying generated configs. This matters because invalid YAML silently fails in some environments.
+
+For instrumentation code (OpenTelemetry SDK setup, span creation), Claude produces more idiomatic output that follows current OpenTelemetry specification conventions — particularly around resource attributes and semantic conventions for database and HTTP spans.
+
 ## Related Reading
 
 - [AI-Powered CI/CD Pipeline Optimization](/ai-tools-compared/ai-powered-cicd-pipeline-optimization-2026/)
