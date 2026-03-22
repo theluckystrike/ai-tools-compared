@@ -172,6 +172,122 @@ When assessing AI-generated markup, verify these accessibility checkpoints:
 
 Automated testing with axe-core and Lighthouse catches many issues, but manual testing with actual assistive technologies remains essential.
 
+## AI Tool Comparison for Accessible Markup Generation
+
+Here is how the leading tools perform specifically on accessible search results markup generation as of 2026:
+
+| Tool | Accessibility Quality | Framework Support | WCAG Validation | Best For |
+|---|---|---|---|---|
+| Claude Opus 4.6 | Excellent — generates ARIA live regions, landmarks, heading hierarchy unprompted | React, Vue, plain HTML, Angular | No built-in validator | Complex accessible UI with business logic |
+| GitHub Copilot | Good with explicit prompts | All frameworks | No | Developer-workflow integration |
+| Cursor (GPT-4o backend) | Good — misses live regions unless prompted | React, Vue, HTML | No | Rapid prototyping |
+| AccessiJS AI Module | Excellent — purpose-built | HTML, JSX, Vue | Yes (WCAG 2.1 AA) | Teams requiring validated output |
+| Locofy (Figma-to-HTML) | Moderate — misses dynamic state patterns | React, HTML | No | Design-to-code handoff |
+
+Claude Opus 4.6 produces the most complete accessible markup without extra prompting. When asked to "generate a search results component," it includes `aria-live="polite"` regions for dynamic result updates, `role="status"` for result count announcements, and proper focus management for keyboard users—patterns that other models only include when explicitly requested.
+
+## Dynamic Search Results: The Live Region Problem
+
+The hardest accessibility challenge in search results pages is dynamic content. When a user types in a search box and results update without a page reload, screen reader users receive no feedback unless an ARIA live region announces the change.
+
+Here is the complete accessible pattern for dynamic search results:
+
+```jsx
+function SearchPage() {
+  const [query, setQuery] = React.useState("");
+  const [results, setResults] = React.useState([]);
+  const [loading, setLoading] = React.useState(false);
+
+  return (
+    <main>
+      {/* Search input with associated label */}
+      <label htmlFor="search-input">Search products</label>
+      <input
+        id="search-input"
+        type="search"
+        value={query}
+        onChange={e => setQuery(e.target.value)}
+        aria-controls="search-results"
+        aria-autocomplete="list"
+      />
+
+      {/* Status region: announces result count changes to screen readers */}
+      <div
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+        className="sr-only"
+      >
+        {loading
+          ? "Searching..."
+          : results.length > 0
+            ? `${results.length} results found for ${query}`
+            : query
+              ? "No results found"
+              : ""}
+      </div>
+
+      {/* Results list */}
+      <ul
+        id="search-results"
+        role="list"
+        aria-label={`Search results for ${query}`}
+      >
+        {results.map(result => (
+          <li key={result.id}>
+            <article>
+              <h3><a href={result.url}>{result.title}</a></h3>
+              <p>{result.description}</p>
+            </article>
+          </li>
+        ))}
+      </ul>
+    </main>
+  );
+}
+```
+
+The `role="status"` with `aria-live="polite"` is the critical piece. Without it, NVDA and VoiceOver users receive no indication that results have changed. Most AI tools omit this unless you explicitly include it in your prompt.
+
+**Prompt addition to request live regions:**
+
+```
+Include an ARIA live region with role="status" that announces the result count
+after each search. The announcement should be polite (not assertive) and atomic
+so the full count is read rather than partial updates.
+```
+
+## Testing AI-Generated Accessible Markup
+
+Generated markup should pass three levels of testing before shipping:
+
+**Automated testing with axe-core:**
+
+```javascript
+// In your test suite (Jest + @axe-core/react)
+import { axe, toHaveNoViolations } from 'jest-axe';
+expect.extend(toHaveNoViolations);
+
+test('SearchResults has no accessibility violations', async () => {
+  const { container } = render(<SearchResults results={mockResults} />);
+  const results = await axe(container);
+  expect(results).toHaveNoViolations();
+});
+```
+
+**Keyboard navigation checklist:**
+- Tab moves through result links in order
+- Enter activates the focused link
+- Shift+Tab moves backwards
+- No keyboard trap exists anywhere in the results list
+
+**Screen reader testing matrix:**
+- NVDA + Firefox on Windows (most common screen reader combination)
+- VoiceOver + Safari on macOS/iOS
+- TalkBack + Chrome on Android
+
+Automated tools catch approximately 30-40% of real accessibility issues. The remaining issues — like unclear link context, confusing reading order, or unhelpful live region announcements — require manual testing with actual screen readers.
+
 ## Recommendations
 
 For developers building search interfaces in 2026:
