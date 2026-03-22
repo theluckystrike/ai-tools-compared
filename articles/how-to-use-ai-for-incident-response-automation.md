@@ -179,6 +179,92 @@ Timeline:
 
 ---
 
+## Integrating with Datadog and CloudWatch
+
+PagerDuty is one trigger source, but many teams use Datadog or CloudWatch directly. The same pattern applies — receive the alert webhook, enrich it with AI triage, post to Slack.
+
+**Datadog webhook handler:**
+
+```python
+# datadog_webhook.py
+from flask import Flask, request, jsonify
+import hashlib, hmac, os
+from triage import analyze_incident
+
+app = Flask(__name__)
+DD_SECRET = os.environ.get("DD_WEBHOOK_SECRET", "")
+
+@app.route("/webhook/datadog", methods=["POST"])
+def datadog_webhook():
+    # Verify Datadog webhook signature
+    sig = request.headers.get("X-Datadog-Signature", "")
+    expected = hmac.new(DD_SECRET.encode(), request.data, hashlib.sha256).hexdigest()
+    if DD_SECRET and not hmac.compare_digest(sig, expected):
+        return jsonify({"error": "invalid signature"}), 401
+
+    payload = request.json
+    # Datadog alert structure differs from PagerDuty
+    incident = {
+        "title": payload.get("title", "Datadog Alert"),
+        "description": payload.get("body", ""),
+        "alert_type": payload.get("alert_type", ""),  # error, warning, info
+        "tags": payload.get("tags", []),
+        "hostname": payload.get("hostname", ""),
+        "metrics": payload.get("metric", ""),
+        "threshold": payload.get("alert_threshold", ""),
+        "current_value": payload.get("current_avg", ""),
+    }
+    analyze_incident(incident)
+    return jsonify({"status": "ok"}), 200
+```
+
+**CloudWatch SNS → Lambda → Slack:**
+
+```python
+# lambda_function.py (AWS Lambda)
+import json, boto3, os
+import anthropic
+
+def handler(event, context):
+    # SNS wraps the CloudWatch alarm in an SNS message
+    sns_message = json.loads(event["Records"][0]["Sns"]["Message"])
+
+    client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+    response = client.messages.create(
+        model="claude-sonnet-4-6",
+        max_tokens=512,
+        messages=[{
+            "role": "user",
+            "content": f"""CloudWatch alarm fired. Provide a 3-sentence summary for on-call engineers:
+what likely caused this, what to check first, and whether it needs immediate human response.
+
+Alarm: {sns_message.get('AlarmName')}
+Description: {sns_message.get('AlarmDescription')}
+State: {sns_message.get('NewStateValue')} (was {sns_message.get('OldStateValue')})
+Reason: {sns_message.get('NewStateReason')}
+"""
+        }]
+    )
+
+    # Post to Slack
+    import urllib.request
+    message = response.content[0].text
+    slack_payload = json.dumps({
+        "text": f":bell: *CloudWatch Alert: {sns_message.get('AlarmName')}*\n\n{message}"
+    }).encode()
+    req = urllib.request.Request(
+        os.environ["SLACK_WEBHOOK_URL"],
+        data=slack_payload,
+        headers={"Content-Type": "application/json"}
+    )
+    urllib.request.urlopen(req)
+    return {"statusCode": 200}
+```
+
+This Lambda runs in under a second, costs fractions of a cent per invocation, and delivers AI-enriched alerts to Slack before a human even looks at the PagerDuty notification.
+
+---
+
 ## Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions
