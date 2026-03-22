@@ -234,32 +234,167 @@ The best approach combines AI assistance with solid fundamentals. Use your prefe
 
 
 
+## Advanced Grid Debugging: Container Queries and Subgrid
+
+Modern CSS Grid features require advanced analysis. When using container queries or CSS subgrid, AI tools excel at identifying dimensional cascades that cause overflow:
+
+```css
+/* Container query context - tricky for traditional debugging */
+@container (max-width: 600px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Subgrid inheritance - overflow often cascades up from child grids */
+.card-content {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1 / -1;
+}
+
+/* Issue: Subgrid inherits parent's column count but content exceeds */
+.card-item {
+  overflow: hidden; /* Solution: Force containment */
+  text-overflow: ellipsis;
+}
+```
+
+Claude can trace these complex interactions and identify where overflow originates in the cascade. It understands that subgrid issues often require fixes at multiple hierarchy levels.
+
+## Visual Debugging Example: Before and After
+
+When describing a CSS Grid overflow problem to AI, providing a visual comparison helps:
+
+```markdown
+# Current Behavior (Broken)
+[Mobile screenshot showing text overflowing card]
+- Cards are stretched to 3 columns on mobile
+- Text runs outside container boundaries
+- Horizontal scroll appears
+
+# Desired Behavior (Fixed)
+[Desktop screenshot]
+- 3 columns on desktop, 1 column on mobile
+- All content fits within viewport
+- No horizontal scrolling
+
+# CSS Currently Applied
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+```
+
+Describe the problem this way to AI tools, and they'll generate solutions that specifically address your actual use case rather than generic examples.
+
+## CSS Grid Overflow Decision Matrix
+
+Choose your debugging approach based on the specific grid issue:
+
+| Issue | Best Tool | Why |
+|-------|---|---|
+| Simple layout breaking on mobile | GitHub Copilot | Pattern recognition for responsive design |
+| Complex nested grids with interaction | Claude | Can trace multi-level cascades |
+| Framework-specific (React/Vue) | Cursor | Understands component boundaries |
+| Understanding WHY overflow occurs | Claude | Detailed explanations of grid behavior |
+| Quick fixes and alternatives | GitHub Copilot | Fast iteration and suggestions |
+| Layout performance optimization | Cursor | Can profile and suggest alternatives |
+
+## Performance Considerations for Grid Layouts
+
+Large grids can cause layout recalculations (reflow) that impact performance. AI tools can identify performance anti-patterns:
+
+```css
+/* Anti-pattern: Forces full reflow on scroll */
+.grid-item {
+  position: relative;
+  top: 0;
+  left: 0;
+  /* Animating transform-based layout forces recalculation */
+  transform: translateX(0);
+}
+
+.grid-item:hover {
+  transform: translateX(10px); /* Layout thrashing */
+}
+
+/* Better approach: Use will-change hint for GPU acceleration */
+.grid-item {
+  will-change: transform;
+  transform: translateX(0);
+}
+
+.grid-item:hover {
+  transform: translateX(10px); /* Doesn't trigger reflow */
+}
+```
+
+When you ask Claude or Copilot to "optimize Grid performance," they often catch these reflow-triggering patterns and suggest GPU-accelerated alternatives.
+
+## Mobile-First Grid Strategy
+
+Structure your analysis prompts to guide AI toward mobile-first thinking:
+
+```markdown
+Prompt: "I'm building a responsive dashboard using CSS Grid.
+Mobile-first approach: start with single column on mobile,
+then expand. Here's my mobile CSS:
+
+.dashboard { grid-template-columns: 1fr; }
+
+How should I expand this for tablet (min-width: 768px)
+and desktop (min-width: 1200px) without overflow issues?"
+```
+
+This framing ensures AI generates responsive solutions rather than suggesting desktop-first approaches that require additional media queries to fix.
+
+## Tool Recommendation Summary
+
+**For teams using modern frameworks:**
+- React/Vue/Angular: **Cursor** provides component-aware context
+- Vanilla JS/CSS: **Claude** or **Copilot** equally effective
+
+**For learning and understanding:**
+- **Claude** provides detailed explanations of Grid concepts
+- **Copilot** shows pattern-based solutions
+
+**For speed:**
+- **GitHub Copilot** in VS Code integrates seamlessly
+- **Cursor** requires file modification workflows
+
+**For complex multi-component layouts:**
+- **Cursor** can view entire project context
+- **Claude** requires manual context copying
+
 ## Frequently Asked Questions
 
 
 **What if the fix described here does not work?**
 
-If the primary solution does not resolve your issue, check whether you are running the latest version of the software involved. Clear any caches, restart the application, and try again. If it still fails, search for the exact error message in the tool's GitHub Issues or support forum.
+If Grid suggestions don't fix overflow, verify your markup structure first. Invalid HTML or missing containers often cause unexpected layout behavior. Check that grid items are direct children of the grid container. Use browser DevTools to inspect computed grid properties—mismatches between expected and actual often reveal the issue AI missed.
 
 
 **Could this problem be caused by a recent update?**
 
-Yes, updates frequently introduce new bugs or change behavior. Check the tool's release notes and changelog for recent changes. If the issue started right after an update, consider rolling back to the previous version while waiting for a patch.
+CSS Grid itself hasn't changed significantly since 2017. Browser updates rarely break Grid. Overflow issues usually stem from content changes, viewport resizing, or introduction of third-party CSS (Bootstrap, Tailwind) that conflicts with your Grid definitions.
 
 
 **How can I prevent this issue from happening again?**
 
-Pin your dependency versions to avoid unexpected breaking changes. Set up monitoring or alerts that catch errors early. Keep a troubleshooting log so you can quickly reference solutions when similar problems recur.
+Test layouts at actual breakpoints using device emulation or real devices. Don't rely solely on DevTools—actual phones often behave differently. Set up automated visual regression testing for critical layouts. Use CSS Grid's native capabilities (auto-fit, minmax) rather than hardcoded media queries when possible.
 
 
 **Is this a known bug or specific to my setup?**
 
-Check the tool's GitHub Issues page or community forum to see if others report the same problem. If you find matching reports, you will often find workarounds in the comments. If no one else reports it, your local environment configuration is likely the cause.
+CSS Grid bugs are rare in modern browsers. If a specific browser exhibits Grid overflow while others don't, check your user-agent CSS. Some CSS frameworks apply Grid resets or overrides. Isolate your CSS—create a minimal test with only Grid properties to verify your browser supports your approach.
 
 
-**Should I reinstall the tool to fix this?**
+**Should I switch to Flexbox instead of Grid?**
 
-A clean reinstall sometimes resolves persistent issues caused by corrupted caches or configuration files. Before reinstalling, back up your settings and project files. Try clearing the cache first, since that fixes the majority of cases without a full reinstall.
+Not necessarily. Grid excels at two-dimensional layouts; Flexbox at one-dimensional. The choice depends on your layout intent. For card layouts, both work. For sidebar+content, Grid is cleaner. For component lists, Flexbox is simpler. AI tools can help you decide based on your specific structure.
 
 
 ## Related Articles

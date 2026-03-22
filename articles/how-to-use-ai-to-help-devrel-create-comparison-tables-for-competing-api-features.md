@@ -232,32 +232,133 @@ Long cells can contain line breaks, but keep rows consistent for readability.
 
 
 
+## Advanced Table Formatting and Presentation
+
+As your comparison tables grow more sophisticated, consider these formatting strategies to improve clarity:
+
+**Nested Feature Categories**
+
+For complex API families (like payment processors with different feature tiers), organize features hierarchically:
+
+```markdown
+| Category | Stripe | Square | Paypal |
+|----------|--------|--------|--------|
+| **Authentication** | | | |
+| API Key | Yes | Yes | Yes |
+| OAuth 2.0 | Yes | Limited | Yes |
+| Webhook Signing | Ed25519, HMAC-SHA256 | HMAC-SHA256 | RSA-SHA256 |
+| **Payment Methods** | | | |
+| Credit Cards | Yes | Yes | Yes |
+| ACH Transfer | Yes | Paid tier | Yes |
+| Digital Wallets | Apple Pay, Google Pay | Square Cash | PayPal digital wallet |
+```
+
+**Color-coded Risk/Recommendation Columns**
+
+While Jekyll markdown doesn't support built-in styling, you can add HTML comments to guide your CSS framework:
+
+```markdown
+| Feature | Recommendation | Notes |
+|---------|---|---|
+| SDK Maturity | **Mature** | Used in production by 50k+ developers |
+| Community Support | **High** | 10k+ Stack Overflow questions, active GitHub |
+| Enterprise SLA | **Limited** | Only for annual contracts >$50k |
+```
+
+## Automation: Generating Tables Programmatically
+
+For teams managing multiple API comparison tables, consider automating table generation:
+
+```python
+import csv
+import json
+
+class APIComparisonGenerator:
+    def __init__(self, vendors):
+        self.vendors = vendors
+
+    def generate_markdown_table(self, features):
+        """Convert feature matrix to markdown table."""
+        # Build header
+        header = "| Feature | " + " | ".join(self.vendors) + " |"
+        separator = "|" + "|".join(["---"] * (len(self.vendors) + 1)) + "|"
+
+        rows = []
+        for feature, details in features.items():
+            row_data = [feature]
+            for vendor in self.vendors:
+                row_data.append(details.get(vendor, "No"))
+            rows.append("| " + " | ".join(row_data) + " |")
+
+        return "\n".join([header, separator] + rows)
+
+    def verify_against_docs(self, feature, vendor_docs_url):
+        """Flag features that need verification against official docs."""
+        # Placeholder for documentation verification logic
+        pass
+
+# Example usage
+generators = APIComparisonGenerator(["API A", "API B", "API C"])
+features = {
+    "GraphQL Support": {"API A": "Yes", "API B": "Yes", "API C": "No"},
+    "Rate Limiting": {"API A": "10k/hour", "API B": "5k/hour", "API C": "Unlimited"},
+}
+print(generators.generate_markdown_table(features))
+```
+
+## Real-World Comparison Example: CDN Services
+
+Let's walk through a complete comparison table for Content Delivery Networks:
+
+```markdown
+| Feature | Cloudflare | AWS CloudFront | Akamai |
+|---------|---|---|---|
+| **Pricing Model** | | | |
+| Per-GB egress | $0.20 (first 10TB) | $0.085 (first 10TB) | $0.10–$0.35 (custom) |
+| Per-request | Included | $0.0075/10k | Included |
+| Setup cost | None | None | Varies |
+| **Performance** | | | |
+| Global edge locations | 300+ | 600+ | 350+ |
+| Typical latency (US) | <50ms | <40ms | <45ms |
+| Origin shield layer | Yes (paid) | Yes (paid) | Included |
+| **Security Features** | | | |
+| DDoS protection | 26Tbps mitigation | Included | Included |
+| WAF rules | 80+ free | Custom only | Included |
+| Rate limiting | Yes | Via WAF | Yes |
+| **API & Automation** | | | |
+| REST API | Full | Full | Full |
+| Terraform support | Yes | Yes | Limited |
+| CLI tool | wrangler | aws-cli | Via console |
+```
+
+This table helps DevRel teams guide customers toward the right CDN based on their priorities—cost sensitivity, performance requirements, or security posture.
+
 ## Frequently Asked Questions
 
 
-**Can I use the first tool and the second tool together?**
+**How do I handle APIs that sunset or deprecate features?**
 
-Yes, many users run both tools simultaneously. the first tool and the second tool serve different strengths, so combining them can cover more use cases than relying on either one alone. Start with whichever matches your most frequent task, then add the other when you hit its limits.
-
-
-**Which is better for beginners, the first tool or the second tool?**
-
-It depends on your background. the first tool tends to work well if you prefer a guided experience, while the second tool gives more control for users comfortable with configuration. Try the free tier or trial of each before committing to a paid plan.
+Mark deprecated features with clear notation like `(Deprecated)` or create a separate "Sunset Timeline" column. Always document the deprecation date so your comparison doesn't become instantly outdated. Automated refreshes help catch these changes before your documentation misleads readers.
 
 
-**Is the first tool or the second tool more expensive?**
+**Should comparison tables include pricing information?**
 
-Pricing varies by tier and usage patterns. Both offer free or trial options to start. Check their current pricing pages for the latest plans, since AI tool pricing changes frequently. Factor in your actual usage volume when comparing costs.
-
-
-**How often do the first tool and the second tool update their features?**
-
-Both tools release updates regularly, often monthly or more frequently. Feature sets and capabilities change fast in this space. Check each tool's changelog or blog for the latest additions before making a decision based on any specific feature.
+Yes, but note that pricing changes frequently. Include a "Last updated" date prominently and link directly to vendor pricing pages. For enterprise pricing with custom quotes, indicate this rather than guessing. Your credibility depends on accuracy.
 
 
-**What happens to my data when using the first tool or the second tool?**
+**How do I handle subjective features like "ease of use"?**
 
-Review each tool's privacy policy and terms of service carefully. Most AI tools process your input on their servers, and policies on data retention and training usage vary. If you work with sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+Avoid subjective categories unless you can ground them in measurable criteria. Instead of "Ease of use: Easy vs Hard," use "Learning curve: 2 hours to first API call" or "Documentation: 50 examples provided." Measurable comparison is more valuable to developers.
+
+
+**Can I use AI to maintain tables automatically?**
+
+Partially. Use AI to generate initial table structures and identify feature gaps, but manually verify critical information against documentation. Set up quarterly reviews to catch changes rather than relying entirely on automated checking.
+
+
+**What's the minimum table size before comparison becomes useful?**
+
+A comparison of fewer than 3 options provides limited value—it becomes obvious why users should choose the one that fits best. Aim for 3-5 options. More than 7 becomes difficult to parse in a single table; consider splitting into subcategories.
 
 
 ## Related Articles

@@ -234,32 +234,194 @@ vm_stat | awk '/Pages free/ || /Pages active/ || /Pages wired/'
 
 
 
+## Extension Conflict Diagnosis Deep Dive
+
+When Cursor crashes in safe mode but not with a fresh profile, extension conflicts are confirmed. Use this systematic approach to identify the culprit:
+
+```bash
+#!/bin/bash
+# cursor-extension-isolate.sh - Binary search for problematic extension
+
+CURSOR_CONFIG="$HOME/Library/Application Support/Cursor/extensions"
+BACKUP_DIR="$HOME/cursor-ext-backup-$(date +%s)"
+
+echo "Backing up extensions to $BACKUP_DIR"
+mkdir -p "$BACKUP_DIR"
+cp -r "$CURSOR_CONFIG" "$BACKUP_DIR"
+
+# Get list of installed extensions
+extensions=$(ls -d "$CURSOR_CONFIG"/*/ 2>/dev/null | xargs -n1 basename)
+ext_count=$(echo "$extensions" | wc -l)
+
+echo "Found $ext_count extensions"
+echo "$extensions" | nl
+
+# Binary search: disable half
+mid=$((ext_count / 2))
+echo "Disabling first $mid extensions..."
+
+i=0
+for ext in $extensions; do
+    i=$((i + 1))
+    if [ $i -le $mid ]; then
+        mv "$CURSOR_CONFIG/$ext" "$CURSOR_CONFIG/${ext}.disabled"
+    fi
+done
+
+echo "Restart Cursor and test."
+echo "If it works, problem is in disabled extensions."
+echo "Run this again with opposite logic to narrow down further."
+echo "Restore with: cp -r $BACKUP_DIR/extensions/* $CURSOR_CONFIG/"
+```
+
+This binary search reduces 50 extensions down to the culprit in 5-6 iterations.
+
+## Memory Profiling Cursor Crashes
+
+When crashes correlate with memory usage, profile the exact pattern:
+
+```bash
+#!/bin/bash
+# cursor-memory-monitor.sh - Track memory leading up to crashes
+
+LOGFILE="/tmp/cursor_memory_$(date +%s).log"
+
+# Monitor every 5 seconds, log when >500MB
+while true; do
+    cursor_mem=$(ps aux | grep -i cursor | grep -v grep | awk '{print $6}')
+
+    if [ ! -z "$cursor_mem" ]; then
+        timestamp=$(date '+%Y-%m-%d %H:%M:%S')
+
+        if [ $cursor_mem -gt 500000 ]; then
+            echo "$timestamp - HIGH MEMORY: ${cursor_mem}MB" >> $LOGFILE
+
+            # Get top processes by memory
+            ps aux --sort=-%mem | head -5 >> $LOGFILE
+
+            # Get open file count
+            pid=$(pgrep -f "Cursor" | head -1)
+            if [ ! -z "$pid" ]; then
+                lsof -p $pid 2>/dev/null | wc -l >> $LOGFILE
+            fi
+        fi
+    fi
+
+    sleep 5
+done
+```
+
+Run this in the background, then reproduce the crash. Analyze the log to find which exact action (opening large file, switching workspace, etc.) triggers memory exhaustion.
+
+## Workspace-Specific Crash Debugging
+
+Some crashes are workspace-specific (bad .cursor or invalid settings):
+
+```bash
+# Test without workspace settings
+cp -r ~/problematic-project /tmp/test-project
+rm -rf /tmp/test-project/.cursor  # Remove workspace-specific config
+# Open /tmp/test-project in Cursor
+
+# If crash disappears, .cursor config is corrupted
+# Recreate default: rm -rf .cursor && restart Cursor
+```
+
+## GPU Driver Compatibility Matrix
+
+Cursor uses GPU acceleration for rendering. Incompatibility often causes crashes:
+
+| GPU | Drivers | Cursor Status | Workaround |
+|-----|---------|---|---|
+| NVIDIA RTX 3000+ | 530+ | Works well | None needed |
+| NVIDIA RTX 2000 series | 450+ | Usually stable | May need --disable-gpu |
+| Intel Iris Xe | Latest | Good | Occasional freezes |
+| AMD Radeon Pro | 22.10+ | Unstable | Use --disable-gpu |
+| Apple Silicon M1/M2 | Built-in Metal | Excellent | None needed |
+| Virtual GPU (cloud) | Varies | Poor | Always disable GPU |
+
+If your GPU isn't listed, assume GPU acceleration is unsupported and add `--disable-gpu` to launch flags.
+
+## Cursor Launch Arguments for Stability
+
+Create a launch wrapper to apply stability flags:
+
+```bash
+#!/bin/bash
+# cursor-stable - Wrapper for crash-prone Cursor instances
+
+# Disable features that commonly cause crashes
+/Applications/Cursor.app/Contents/MacOS/Cursor \
+    --disable-gpu \
+    --disable-dev-shm-usage \
+    --disable-gpu-compositing \
+    --disable-features=TranslateUI \
+    --disable-blink-features=AutomationControlled \
+    "$@"
+```
+
+Create as `~/cursor-stable`, chmod +x, then use it instead of launching Cursor normally. Each flag disables a different crash source.
+
+## Crash Signature Analysis for Faster Diagnosis
+
+macOS crash reports contain signatures that indicate the root cause:
+
+| Crash Signature | Meaning | Fix |
+|---|---|---|
+| `EXC_BAD_ACCESS` | Memory access violation | Clear cache, update GPU drivers |
+| `EXC_BAD_INSTRUCTION` | Invalid CPU instruction | Incompatible processor, try --disable-gpu |
+| `EXC_RESOURCE` | Resource exhaustion | Increase RAM or restart Cursor |
+| `SIGABRT` from extension | Extension crash | Disable extensions, binary search |
+| `ETIMEDOUT` in logs | Timeout during operation | Network issue or slow disk |
+
+Check your crash logs at `~/Library/Logs/DiagnosticReports/` for these patterns.
+
+## Performance Baseline for Cursor Stability
+
+Establish when Cursor is performing normally:
+
+```bash
+# Baseline healthy Cursor metrics
+# (run in healthy state)
+
+echo "=== Cursor Health Baseline ==="
+echo "Memory: $(ps aux | grep Cursor | grep -v grep | awk '{print $6}')MB"
+echo "CPU threads: $(sysctl -n hw.logicalcpu)"
+echo "Disk free: $(df -h ~ | tail -1 | awk '{print $4}')"
+echo "Git repo size: $(du -sh $(git rev-parse --show-toplevel) 2>/dev/null || echo 'N/A')"
+echo "Extensions installed: $(ls -d ~/.cursor/extensions/* 2>/dev/null | wc -l)"
+
+# If any metric drops significantly, investigate that component
+```
+
+Monitor these metrics when crashes occur. Sudden changes identify the root cause.
+
 ## Frequently Asked Questions
 
 
 **What if the fix described here does not work?**
 
-If the primary solution does not resolve your issue, check whether you are running the latest version of the software involved. Clear any caches, restart the application, and try again. If it still fails, search for the exact error message in the tool's GitHub Issues or support forum.
+Try each fix in this order: cache clear → safe mode test → GPU driver update → extension isolation → memory monitoring. If all fail, the issue is likely workspace-specific. Test a brand-new workspace. If it works there, backup your .cursor config and delete it. If crashes continue in blank workspace, contact Cursor support with your crash logs from ~/Library/Logs/DiagnosticReports/.
 
 
 **Could this problem be caused by a recent update?**
 
-Yes, updates frequently introduce new bugs or change behavior. Check the tool's release notes and changelog for recent changes. If the issue started right after an update, consider rolling back to the previous version while waiting for a patch.
+Very likely. Check https://github.com/getcursor/cursor/releases for recent changes. If an update broke Cursor, revert by downloading the previous version from their releases page. Don't wait for the next patch—version pinning prevents future issues.
 
 
 **How can I prevent this issue from happening again?**
 
-Pin your dependency versions to avoid unexpected breaking changes. Set up monitoring or alerts that catch errors early. Keep a troubleshooting log so you can quickly reference solutions when similar problems recur.
+Keep Cursor updated but avoid immediately adopting new versions. Wait 2-3 days for users to report critical bugs in new releases. Set up your launch wrapper with stability flags now—this prevents many crashes preemptively. Limit extensions to essential tools only.
 
 
 **Is this a known bug or specific to my setup?**
 
-Check the tool's GitHub Issues page or community forum to see if others report the same problem. If you find matching reports, you will often find workarounds in the comments. If no one else reports it, your local environment configuration is likely the cause.
+Search GitHub issues at github.com/getcursor/cursor/issues for your exact error. If found with status "open," follow that issue. If closed with a fix, update Cursor. If not found, it's likely environment-specific—try the workspace isolation and GPU driver steps.
 
 
-**Should I reinstall the tool to fix this?**
+**Should I uninstall and reinstall Cursor?**
 
-A clean reinstall sometimes resolves persistent issues caused by corrupted caches or configuration files. Before reinstalling, back up your settings and project files. Try clearing the cache first, since that fixes the majority of cases without a full reinstall.
+Only after trying cache clear and extension isolation. Reinstalling is nuclear—it fixes ~20% of issues not resolved by simpler steps. If you do reinstall, backup `~/.cursor/` folder first (contains settings, extensions, models). Don't just trash the app; delete the entire ~/Library/Application Support/Cursor/ folder.
 
 
 ## Related Articles

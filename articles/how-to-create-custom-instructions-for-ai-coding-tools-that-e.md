@@ -176,6 +176,65 @@ Review the output carefully. If you find violations, refine your instructions to
 - File names are inconsistent—add a reminder at the end of your instructions
 
 
+### Building a Comprehensive Test Suite
+
+
+Create a structured test suite that exercises all aspects of your naming rules. This gives you confidence that the AI will follow conventions across different scenarios:
+
+
+```python
+# Test file: test_naming_conventions.py
+# AI should generate code following your custom instructions
+
+class UserAuthenticationService:
+    """Tests class naming (PascalCase)."""
+
+    def __init__(self):
+        self.is_authenticated = False
+        self.user_session_timeout = 3600
+        self.MAXIMUM_RETRY_ATTEMPTS = 3
+
+    def validate_credentials(self, username: str, password: str) -> bool:
+        """Function naming (snake_case with verb)."""
+        is_valid_username = len(username) > 0
+        is_valid_password = len(password) > 6
+        return is_valid_username and is_valid_password
+
+    def get_session_token(self) -> str:
+        """Returns session token in snake_case."""
+        return "token_12345"
+
+
+# After AI generates this, check:
+# - Class name uses PascalCase ✓
+# - Method names use snake_case with verbs ✓
+# - Boolean variables prefixed with is_ ✓
+# - Constants use SCREAMING_SNAKE_CASE ✓
+```
+
+
+Run this test through your AI tool and verify every convention. If violations occur, ask the AI to regenerate with specific feedback. Over multiple iterations, the AI learns your project's exact preferences.
+
+
+### Using Linters to Validate Output
+
+
+Pair your custom instructions with automated linting to catch violations immediately:
+
+
+```bash
+# Install linting tools
+pip install pylint flake8
+
+# Run against AI-generated code
+pylint test_naming_conventions.py
+flake8 --select=E501,W503 test_naming_conventions.py
+```
+
+
+If the linter catches violations, don't just fix them manually—feed the linter output back to the AI: "The linter reports camelCase in line X. Please regenerate using snake_case." This creates a feedback loop that dramatically improves AI compliance over time.
+
+
 ## Advanced Techniques
 
 
@@ -192,6 +251,50 @@ For test files, use descriptive names with _test suffix:
 
 For configuration files, use all caps for environment variables:
 DATABASE_URL, API_KEY, MAX_CONNECTIONS
+```
+
+
+### Handling Context-Aware Naming
+
+
+Some codebases require different rules based on context. You might use snake_case for utility functions but PascalCase for factory classes. Document these exceptions explicitly:
+
+
+```markdown
+## Context-Specific Rules
+
+### Data Layer
+- Entity classes: PascalCase (User, Order, Product)
+- Repository interfaces: I{EntityName}Repository (IUserRepository)
+- Database field names: snake_case (user_id, created_at)
+
+### API Layer
+- Route handlers: {action}{Resource} PascalCase (GetUser, CreateOrder)
+- Request DTOs: {Entity}Request (UserRequest, OrderRequest)
+- Response DTOs: {Entity}Response (UserResponse, OrderResponse)
+
+### Utility Functions
+- Helper functions: snake_case (format_date, validate_email)
+- Type guards: is_{type} (is_string, is_valid_date)
+- Converters: to_{format} (to_json, to_xml)
+```
+
+
+When you have context-specific rules, include them in your custom instructions file so the AI understands when to apply each pattern. For tools like Claude Code that accept longer instructions, you can even include file path patterns:
+
+
+```markdown
+# Python Project Conventions
+
+## Files in /src/models/
+- Use PascalCase for class names: UserModel, OrderModel
+
+## Files in /src/utils/
+- Use snake_case for function names: format_timestamp, parse_config
+
+## Files in /tests/
+- Use test_{module_name}.py pattern
+- Use test_{function_name} for test functions
 ```
 
 
@@ -233,6 +336,109 @@ Naming conventions evolve as projects grow. Schedule periodic reviews of your cu
 
 Share your instructions with team members so everyone benefits from consistent AI-generated code. When developers understand why certain conventions exist, they are more likely to follow them manually and provide feedback on the instructions themselves.
 
+
+
+## Measuring Compliance and Iterating
+
+
+After implementing custom instructions, track how consistently the AI follows them over time. Create a simple compliance score by counting violations in generated code:
+
+
+```python
+# Track naming convention compliance
+violations = {
+    'camelCase_in_snake_case_position': 0,
+    'missing_boolean_prefix': 0,
+    'incorrect_constant_format': 0,
+}
+
+# Generate 10 code samples with the same AI tool
+for i in range(10):
+    # Prompt AI to generate code
+    generated_code = ai_tool.generate(prompt)
+
+    # Count violations
+    if 'userId' in generated_code:
+        violations['camelCase_in_snake_case_position'] += 1
+    if 'active = True' in generated_code:
+        violations['missing_boolean_prefix'] += 1
+
+# If compliance < 90%, refine instructions
+compliance_rate = (10 - sum(violations.values())) / 10 * 100
+if compliance_rate < 90:
+    print("Refine instructions—compliance is too low")
+    # Iterate on instructions
+```
+
+
+Track this over weeks. A well-written instruction set should reach 95%+ compliance within a few iterations. If you're still seeing low compliance after multiple refinements, your instructions may be conflicting with the AI's training data, and you should simplify them to focus on the most critical rules.
+
+
+## Integration with Development Workflows
+
+
+### Adding to CI/CD Pipelines
+
+
+Integrate naming convention checks into your continuous integration pipeline to catch violations before merging:
+
+
+```yaml
+# .github/workflows/naming-conventions.yml
+name: Check Naming Conventions
+on: [pull_request]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install pylint
+        run: pip install pylint
+      - name: Check naming conventions
+        run: |
+          pylint --disable=all --enable=invalid-name src/
+          if [ $? -ne 0 ]; then
+            echo "Naming convention violations found"
+            exit 1
+          fi
+```
+
+
+This automated check prevents AI-generated code with poor naming from entering your codebase. Team members see the failure immediately and can ask the AI to regenerate with correct conventions.
+
+
+### Documentation for Team Onboarding
+
+
+New team members need clear guidance on your naming conventions. Package your custom instructions into onboarding materials:
+
+
+1. Create a `NAMING_CONVENTIONS.md` file in your repository root
+2. Include examples for each rule
+3. Explain the rationale behind each convention
+4. Link to your AI tool's custom instructions file
+
+
+This prevents knowledge silos where only experienced developers understand why certain conventions exist. When new team members ask "why is it this way?", you have documented answers.
+
+
+### Using Instructions Across Teams
+
+
+If multiple teams use the same AI tool, establish a shared instruction set library:
+
+
+```
+conventions/
+├── python_backend.md
+├── typescript_frontend.md
+├── go_microservices.md
+└── shared_patterns.md
+```
+
+
+Each file contains the complete instruction set for that tech stack. Store this in a shared wiki or documentation site. When team members discover improvements, they submit PRs to update the instructions.
 
 
 ## Frequently Asked Questions
