@@ -6,7 +6,7 @@ date: 2026-03-22
 author: theluckystrike
 permalink: /how-to-use-ai-for-incident-response-automation/
 categories: [guides]
-tags: [ai-tools-compared]
+tags: [ai-tools-compared, artificial-intelligence, automation]
 reviewed: true
 score: 8
 intent-checked: true
