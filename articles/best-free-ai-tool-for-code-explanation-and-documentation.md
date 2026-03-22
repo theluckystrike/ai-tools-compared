@@ -31,6 +31,15 @@ tags: [ai-tools-compared, best-of, artificial-intelligence]---
 
 When you inherit a messy codebase or need to understand a complex algorithm quickly, having the right AI tool can save hours of frustration. For code explanation and documentation generation, a few free options stand out from the crowd. This guide compares the best free AI tools for breaking down code and generating useful documentation without spending a dime.
 
+## Key Takeaways
+
+- **The free version uses GPT-3.5**: which handles most explanation tasks well.
+- **This guide compares the**: best free AI tools for breaking down code and generating useful documentation without spending a dime.
+- **GitHub Copilot (Free for**: Individual Users) GitHub Copilot's free tier now includes code explanation features directly in supported IDEs.
+- **The free plan includes**: substantial usage limits that work well for individual developers.
+- **Right-click and select "Explain**: Selection" or use the keyboard shortcut 3.
+- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
+
 ## What to Look for in a Code Explanation Tool
 
 Before exploring specific tools, understand what matters most for code explanation tasks:

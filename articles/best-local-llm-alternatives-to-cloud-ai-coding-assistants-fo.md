@@ -31,6 +31,24 @@ tags: [ai-tools-compared, best-of, artificial-intelligence, llm]---
 
 Developers working in secure environments often face a frustrating limitation: cloud-based AI coding assistants like GitHub Copilot, Cursor, and Claude Code require internet connectivity to function. For those in air-gapped networks—whether in government, healthcare, finance, or defense sectors—this creates a significant productivity gap. Fortunately, several alternatives let you run AI-powered code assistance entirely offline.
 
+## Key Takeaways
+
+- **If you have GPU resources**: 13B-34B models offer meaningfully better results.
+- **For everyday tasks**: completing functions, generating tests, explaining code—DeepSeek-Coder-33B handles roughly 80% of requests with quality comparable to GPT-4o.
+- **The remaining 20% (complex**: architecture discussions, long multi-file reasoning) still benefits from cloud models when security permits a hybrid approach.
+- **Q**: Which local model works best for non-Python languages like Go, Rust, or Java?
+DeepSeek-Coder and Qwen2.5-Coder both trained on diverse language datasets.
+- **Set it to 0 for CPU-only inference**: or match it to your VRAM capacity.
+- **They struggle with**: - Complex architectural advice spanning multiple files
+
+- frameworks without training data
+
+- Multi-step reasoning through large codebases
+
+Mitigate these by:
+
+1.
+
 ## Why Local LLMs Matter for Air-Gapped Development
 
 Cloud AI tools send your code to external servers for processing. This violates security policies in many organizations. Local LLMs run entirely within your infrastructure, ensuring sensitive code never leaves your network. Beyond compliance, local models offer predictable latency, unlimited usage without subscription costs, and full control over model selection.

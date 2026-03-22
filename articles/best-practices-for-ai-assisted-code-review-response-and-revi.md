@@ -27,7 +27,17 @@ reviewed: true
 intent-checked: true
 tags: [ai-tools-compared, best-of, artificial-intelligence]---
 
+
 AI-powered code review tools have transformed how developers receive feedback on their code. These tools analyze pull requests, flag potential issues, and suggest improvements faster than any human reviewer. However, the real challenge lies not in receiving this feedback, but in responding to it effectively and managing the revision workflow that follows. This guide covers practical strategies for developers working with AI code review assistants.
+
+## Key Takeaways
+
+- **Can I use these**: tools with a distributed team across time zones? Most modern tools support asynchronous workflows that work well across time zones.
+- **False Positive Rate -**: AI flags / Total flags - Target: < 20% 2.
+- **Coverage Rate - AI-caught**: issues / Total issues found - Target: > 80% for security/type issues 3.
+- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
+- **Warnings indicate code that**: works but could cause problems under certain conditions.
+- **Suggestions are stylistic preferences**: or optimizations that improve code quality without affecting functionality.
 
 ## Understanding AI Code Review Feedback
 

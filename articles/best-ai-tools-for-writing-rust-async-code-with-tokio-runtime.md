@@ -31,6 +31,21 @@ tags: [ai-tools-compared, best-of, artificial-intelligence]---
 
 Rust async programming with Tokio has become the standard for building high-performance network services, web servers, and real-time applications. Choosing the right AI assistant can dramatically speed up development while helping you avoid common pitfalls in concurrent Rust code. This guide evaluates the top AI tools specifically for Tokio-based async development.
 
+## Key Takeaways
+
+- **Claude Code**: Best for Complex Async Architectures
+
+Claude Code stands out for Tokio development because it understands Rust's ownership model and async lifetimes deeply.
+- **Claude Code consistently uses `tokio**: :sync::Mutex` in async contexts and `std::sync::Mutex` only in sync-compatible scopes.
+- **Cursor**: Best Editor Experience for Async Projects
+
+Cursor provides the smoothest IDE integration for Tokio development.
+- **Codeium**: Free Option with Solid Async Support
+
+Codeium offers a generous free tier with decent Rust async support.
+- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
+- **For example**: it should know that holding a std::sync::MutexGuard across an `.await` point is a compile error (because MutexGuard is not Send), and proactively suggest tokio::sync::Mutex instead.
+
 ## What Tokio Development Needs from AI Tools
 
 Tokio runtime requires specific knowledge that general-purpose code generators often lack. Your AI tool must understand the difference between async and sync function signatures, recognize when to use tokio::spawn versus tokio::task::spawn_blocking, and handle Send + Sync trait bounds correctly.
