@@ -16,9 +16,17 @@ tags: [ai-tools-compared, troubleshooting, claude-ai]---
 
 {% raw %}
 
-
 To fix Claude Pro not reflecting after upgrade, sign out and sign back in with `claude auth logout` followed by `claude auth login`. This forces a fresh authentication cycle that pulls your current Pro status. If that does not work, clear your local cache at `~/.config/claude/` and re-authenticate. The issue is typically caused by stale cached tokens, multiple accounts, or organization billing overrides.
 
+## Key Takeaways
+
+- **Confirm the payment shows**: as "Active" or "Paid" If the payment shows completed but tier still reads "Free," contact support with your payment receipt.
+- **API usage**: If you access Claude through the API and see rate limits consistent with the Free tier, check that you are using the API key associated with your Pro account.
+- **If you are still**: seeing Free tier after 30 minutes, start with Fix 1 (sign out and back in).
+- **Only escalate to support**: if it has been more than 24 hours.
+- **If you use Claude**: Code in offline mode with local-only conversation history, back up that directory first.
+- **Can I be charged for Pro while still seeing Free-tier limits?
+Yes, this can happen during a sync delay**: your payment succeeds but the tier hasn't propagated yet.
 
 ## Common Reasons Your Claude Pro Upgrade Isn't Reflecting
 

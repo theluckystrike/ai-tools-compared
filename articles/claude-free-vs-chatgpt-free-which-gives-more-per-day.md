@@ -27,7 +27,17 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 Finding affordable AI tools requires understanding the true cost structure. This guide breaks down the cheapest options and explains what you get at each price point.
+
+## Key Takeaways
+
+- **The free tier uses**: GPT-4o mini for most requests, which is OpenAI's faster, more cost-effective model.
+- **Claude Free works better**: when you consolidate your review into one question covering all files and concerns.
+- **Free users frequently notice**: slower response times compared to Plus subscribers, especially during peak hours.
+- **Many developers use both**: ChatGPT Free for quick questions and iterations, Claude Free for complex problems that require deeper analysis.
+- **Use ChatGPT Free for**: iteration. "Refine this" conversations fit ChatGPT's strengths.
+- **Use Claude Free for**: architecture. "Design a system" questions benefit from Claude's reasoning.
 
 ## Understanding Free Tier Limits
 
