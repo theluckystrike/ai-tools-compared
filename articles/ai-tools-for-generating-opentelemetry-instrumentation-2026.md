@@ -5,7 +5,7 @@ author: "theluckystrike"
 date: "2026-03-22"
 updated: "2026-03-22"
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 category: "AI Tools"
