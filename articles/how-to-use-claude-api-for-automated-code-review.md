@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /how-to-use-claude-api-for-automated-code-review/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, claude-ai, api]
