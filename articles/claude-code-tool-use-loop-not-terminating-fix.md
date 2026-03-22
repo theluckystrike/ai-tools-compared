@@ -213,6 +213,79 @@ claude --update
 ```
 
 
+## Root Cause Analysis: Why Loops Form
+
+
+Understanding the underlying mechanism helps you prevent loops before they start. Claude Code evaluates tool results against the goal state on each iteration. A loop forms when one of three conditions persists:
+
+
+**Ambiguous success criteria.** The model cannot determine whether the task is complete because the original prompt doesn't define "done." A prompt like "make the tests pass" leaves Claude to interpret success — if test output is ambiguous or if new test failures appear after fixing old ones, the loop continues. Explicit criteria like "run `pytest test_auth.py` and stop when all 14 tests pass" remove ambiguity.
+
+
+**Tool output diverges from expectation.** When a tool returns output that doesn't match what the model predicted, it retries with adjusted parameters. If the underlying cause (wrong file path, missing dependency, encoding mismatch) isn't addressed, each retry produces the same unexpected output, and the cycle repeats.
+
+
+**Context window saturation.** Long sessions accumulate tool call history. As the context fills, the model loses visibility into earlier state and may re-attempt steps it already completed. This is why starting a fresh session with `--new-session` resolves loops that interrupting alone does not.
+
+
+## Writing Loop-Resistant Prompts
+
+
+Prompt structure significantly affects loop risk. These patterns reduce loop occurrence:
+
+
+**Define scope boundaries explicitly.** Tell Claude Code which files are in scope and which are off-limits:
+
+```
+Refactor only the functions in src/auth/validators.py. Do not modify any other files. Stop after the refactor is complete and run the linter.
+```
+
+
+**Specify the verification step.** Include how Claude should verify success at the end:
+
+```
+Add error handling to the three database functions in db/queries.py. Verify by running: python -m pytest tests/test_db.py -v. Stop after all tests pass or after 2 failed attempts — whichever comes first.
+```
+
+
+**Use numbered task lists for multi-step work.** Sequential numbered tasks give Claude a clear completion state for each step:
+
+```
+Complete these tasks in order:
+1. Add input validation to register() in auth.py
+2. Add the corresponding unit test to test_auth.py
+3. Run pytest and confirm the new test passes
+4. Stop and summarize changes made
+```
+
+
+**Set an explicit stopping condition for exploratory tasks.** When the scope is genuinely open-ended, bound the exploration:
+
+```
+Search the codebase for uses of the deprecated fetch_user_v1 function. List all files that contain it. Stop after listing — do not make any changes.
+```
+
+
+## CLAUDE.md Configuration for Loop Prevention
+
+
+Project-level configuration through `CLAUDE.md` lets you set persistent constraints that apply to every session in a repository. Add a section specifically for loop prevention:
+
+
+```markdown
+## Task Boundaries
+
+- Always stop and report after completing a task — do not start the next task automatically
+- Maximum 10 tool calls per task unless I explicitly request continuation
+- If a command fails twice with the same error, stop and report the error rather than retrying
+- Never modify files outside the explicitly listed scope
+- Confirm before running any destructive command (rm, git reset, DROP TABLE)
+```
+
+
+This configuration acts as standing instructions that reduce loop risk without requiring you to repeat constraints in every prompt.
+
+
 ## Diagnostic Tips
 
 
@@ -291,6 +364,35 @@ Then start a new session with a fresh perspective and clearer task definition.
 
 
 ---
+
+
+
+## Frequently Asked Questions
+
+
+**Who is this article written for?**
+
+This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
+
+
+**How current is the information in this article?**
+
+We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
+
+
+**Does Claude offer a free tier?**
+
+Most major tools offer some form of free tier or trial period. Check Claude's current pricing page for the latest free tier details, as these change frequently. Free tiers typically have usage limits that work for evaluation but may not be sufficient for daily professional use.
+
+
+**How do I get started quickly?**
+
+Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
+
+
+**What is the learning curve like?**
+
+Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
 
 ## Related Articles
