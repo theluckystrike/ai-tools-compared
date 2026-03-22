@@ -143,4 +143,3 @@ Run a practical test: take a real endpoint from your codebase and ask each tool 
 
 AI tools evolve rapidly. The comparison above reflects March 2026 capabilities. Claude and Copilot have both improved significantly on code understanding in the past year. Verify current features before committing to a paid plan.
 
-{% endraw %}
