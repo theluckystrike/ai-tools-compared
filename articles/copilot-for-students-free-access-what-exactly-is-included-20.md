@@ -27,7 +27,17 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 GitHub Copilot for Students includes unlimited code completions, chat-based assistance, test generation, and refactoring across VS Code, JetBrains, Neovim, and Visual Studio, all at no cost. You qualify by verifying student status through a.edu email, ISIC card, or manual enrollment confirmation at github.com/education. This guide covers exactly what the free plan includes, how to activate it, and practical ways to use Copilot for coursework and side projects.
+
+## Key Takeaways
+
+- **If you have used**: the tool for at least 3 months and plan to continue, the annual discount usually makes sense.
+- **This guide covers exactly**: what the free plan includes, how to activate it, and practical ways to use Copilot for coursework and side projects.
+- **The free student plan**: includes unlimited code completions and suggestions across all supported languages.
+- **Go to Settings >**: Copilot and select "Get Copilot for free." ## Practical Ways to Use Copilot as a Student Developer Understanding what Copilot can do helps you use it effectively.
+- **These are minor limitations**: for most student workflows.
+- **Is the annual plan**: worth it over monthly billing? Annual plans typically save 15-30% compared to monthly billing.
 
 ## What GitHub Copilot for Students Actually Includes
 

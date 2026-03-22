@@ -27,7 +27,17 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 GitHub Copilot works identically in JetBrains IDEs and Visual Studio Code, including the pricing structure. Whether you use IntelliJ IDEA, PyCharm, WebStorm, or VS Code, you pay the same subscription rates. This article breaks down the exact costs, explains what you get, and shows how to set up Copilot in your JetBrains environment.
+
+## Key Takeaways
+
+- **Copilot Business runs $19**: per user per month with additional security features, policy controls, and organization-wide visibility into usage.
+- **Copilot Enterprise costs $39**: per user per month and adds custom AI models, enhanced security, and full governance controls.
+- **Copilot Pro costs $10**: per month and includes unlimited code completions, unlimited chat messages, access to Claude and GPT models, and priority access to new features.
+- **Start with Copilot Free**: tier for 2 weeks - Evaluate fit for your team - Test across your most common IDEs - Measure impact on development speed 2.
+- **Upgrade to Copilot Pro**: individually if satisfied - No additional cost beyond $10/month - Works across all IDEs simultaneously - Try for 1 month full-time before team rollout 3.
+- **Copilot works with free**: IDEs like Community Edition IntelliJ IDEA.
 
 ## The Short Answer: Yes, Pricing Is Identical
 

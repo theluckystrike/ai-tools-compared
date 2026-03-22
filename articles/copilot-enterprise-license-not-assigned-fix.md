@@ -31,6 +31,15 @@ tags: [ai-tools-compared, troubleshooting]---
 
 When your organization has purchased GitHub Copilot Enterprise but you cannot access the features, the "license not assigned" error blocks productivity. This issue typically occurs during initial setup, user onboarding, or after organizational changes. This guide walks you through the most effective solutions.
 
+## Key Takeaways
+
+- **Use Copilot Business ($21/user/month) as the team tier instead**: it's cheaper than Enterprise and covers most team needs.
+- **Most administrators encounter this**: issue when migrating from Copilot Business to Enterprise, during bulk user imports, or when setting up Copilot for the first time in a new organization.
+- **Consider recycling unused seats.")**: ``` Run this monthly to identify licenses wasted on inactive users, freeing capacity for new team members.
+- **Search for the affected**: user's username 3.
+- **Click on Assign seats**: or Add users 4.
+- **Search for the affected**: user by username or email 5.
+
 ## Understanding the License Assignment Problem
 
 GitHub Copilot Enterprise requires two separate configuration steps. Your organization must purchase the license through GitHub, and then an administrator must assign that license to individual users. Missing either step results in access denial. The error message usually appears as "Copilot Enterprise license not assigned" or "You do not have access to Copilot Enterprise" when attempting to use the features.

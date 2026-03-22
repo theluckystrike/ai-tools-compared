@@ -27,7 +27,17 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 When refactoring code, the workflow you choose directly impacts productivity and code quality. GitHub Copilot and Cursor offer distinct approaches to AI-assisted refactoring through their respective editing interfaces. This comparison examines how each tool handles common refactoring tasks, helping developers choose the right approach for their workflow.
+
+## Key Takeaways
+
+- **It's particularly effective for smaller**: targeted improvements where you understand the codebase well and prefer using GitHub's native integration.
+- **Use "Edit" mode for**: refactoring suggestions 5.
+- **Use Cmd+K for inline**: edits 4.
+- **Use Cmd+Shift+R for REFACTOR**: mode on selections 5.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
 ## Understanding Copilot Edits Panel
 

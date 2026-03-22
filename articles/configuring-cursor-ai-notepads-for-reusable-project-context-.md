@@ -31,6 +31,15 @@ tags: [ai-tools-compared, artificial-intelligence]---
 
 Cursor AI notepads provide a powerful mechanism for preserving project context between coding sessions. Instead of repeatedly explaining your project structure, coding standards, or architectural decisions every time you open the editor, you can configure notepads that automatically load relevant information. This guide walks through setting up and using notepads effectively.
 
+## Key Takeaways
+
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **Does Cursor offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Document any new patterns**: used # When completing a feature 1.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+
 ## Understanding Cursor AI Notepads
 
 Notepads in Cursor AI function as persistent memory containers for your project. They store information that you want the AI to remember across sessions, reducing the need to reexplain context each time you start working. Unlike chat history that disappears or becomes unwieldy, notepads give you structured control over what context persists.

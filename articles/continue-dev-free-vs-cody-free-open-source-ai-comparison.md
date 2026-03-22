@@ -27,7 +27,18 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 Finding affordable AI tools requires understanding the true cost structure. This guide breaks down the cheapest options and explains what you get at each price point.
+
+## Key Takeaways
+
+- **Choose Cody Free if**: you work with large codebases and want automatic context understanding without manual selection.
+- **Cody Pro includes unlimited**: messages and costs a flat $19/month regardless of usage volume.
+- **If using Claude API**: expect $5-20/month for moderate usage.
+- **One notable difference**: Cody Free limits the number of messages per month on the free tier.
+- **Ask**: "Show me all usages of UserService"
+4.
+- **Set up your preferred LLM (Claude**: GPT-4, or Mistral) in the configuration.
 
 ## Understanding the Two Tools
 
