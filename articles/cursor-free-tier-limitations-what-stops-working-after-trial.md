@@ -522,15 +522,12 @@
 
 
 
-<<<<<<< HEAD
 
 
 
 
 
 
-=======
->>>>>>> c1a75bbb85963cf9159029d76482b1b5b01d5d1e
 layout: default
 title: "Cursor Free Tier Limitations: What Stops Working After Trial"
 description: "A guide to understanding what features become limited or unavailable when Cursor's free trial ends in 2026"
@@ -564,7 +561,6 @@ tags: [ai-tools-compared]
 
 
 
-<<<<<<< HEAD
 
 
 
@@ -1090,8 +1086,6 @@ tags: [ai-tools-compared]
 # Cursor Free Tier Limitations: What Stops Working After Trial
 
 
-=======
->>>>>>> c1a75bbb85963cf9159029d76482b1b5b01d5d1e
 Cursor AI offers a free tier that allows developers to experience the power of AI-assisted coding before committing to a paid plan. However, once the initial trial period or free credits are exhausted, several key features become limited or unavailable. Understanding these limitations helps you decide whether to upgrade to a paid plan or adjust your workflow accordingly.
 
 
