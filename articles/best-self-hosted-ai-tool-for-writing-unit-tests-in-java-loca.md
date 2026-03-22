@@ -125,7 +125,7 @@ static Stream<Arguments> provideLargeOrders() {
 }
 ```
 
-This approach generates comprehensive coverage with minimal code duplication.
+This approach generates complete coverage with minimal code duplication.
 
 ## Testing Exception Cases
 
@@ -235,7 +235,7 @@ All three options handle Java test generation effectively. The models they run u
 
 ## Advanced Test Generation Scenarios
 
-Once you're comfortable with basic test generation, leverage AI for more complex scenarios. Abstract classes, interfaces, and final classes require different test strategies. When feeding these to an AI tool, explicitly specify testing patterns.
+Once you're comfortable with basic test generation, take advantage of AI for more complex scenarios. Abstract classes, interfaces, and final classes require different test strategies. When feeding these to an AI tool, explicitly specify testing patterns.
 
 ```java
 // Abstract class example
@@ -312,7 +312,7 @@ Your CI system runs tests at every commit, providing feedback on whether generat
 
 As you generate more tests, suite execution time increases. Local AI tools can help you implement test sharding strategies, running different test classes in parallel. Additionally, request that AI generate only necessary tests—not redundant ones that test identical code paths.
 
-Use AI to identify which test cases provide maximum value. Ask it to analyze coverage gaps and prioritize tests for the most critical paths. This iterative refinement produces lean test suites that execute quickly while maintaining comprehensive coverage.
+Use AI to identify which test cases provide maximum value. Ask it to analyze coverage gaps and prioritize tests for the most critical paths. This iterative refinement produces lean test suites that execute quickly while maintaining thorough coverage.
 
 ## Building Your Testing Pipeline
 

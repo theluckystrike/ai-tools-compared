@@ -339,7 +339,7 @@ Different requirements call for different solutions:
 - **Research or algorithm comparison:** MMTracking. framework with unified API across tracking patterns.
 - **Edge deployment:** Quantized YOLO with TensorRT or ONNX runtime. Reduces memory footprint and inference latency substantially.
 
-The ecosystem continues evolving rapidly. OC-SORT improves robustness on non-linear motion, while MOTR and TrackFormer explore end-to-end transformer-based tracking without separate detection and association stages. Developers should evaluate against their specific requirements: real-time constraints, object types, occlusion frequency, and deployment platform all influence the optimal choice.
+The ecosystem continues evolving rapidly. OC-SORT improves durability on non-linear motion, while MOTR and TrackFormer explore end-to-end transformer-based tracking without separate detection and association stages. Developers should evaluate against their specific requirements: real-time constraints, object types, occlusion frequency, and deployment platform all influence the optimal choice.
 
 
 ## Related Reading

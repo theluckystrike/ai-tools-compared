@@ -93,7 +93,7 @@ The Cursor workflow often completes this transformation in fewer steps because i
 Consider a larger refactoring task: migrating from a class-based component pattern to functional components with hooks in a React application. This typically involves updating the component file, extracting lifecycle methods into useEffect hooks, and potentially creating custom hook files.
 
 
-Cursor Composer handles this comprehensively. A single prompt like "convert this class component to functional with hooks" can generate the new component file, create a custom hook if appropriate, and identify files that need import updates. The agent maintains awareness of your entire project structure.
+Cursor Composer handles this completely. A single prompt like "convert this class component to functional with hooks" can generate the new component file, create a custom hook if appropriate, and identify files that need import updates. The agent maintains awareness of your entire project structure.
 
 
 Copilot Edits Panel handles this differently. You would work through each file sequentially, explicitly referencing files in your prompts. While this provides more granular control, it requires more manual coordination. The panel is better suited for breaking large refactoring into smaller, manageable chunks.

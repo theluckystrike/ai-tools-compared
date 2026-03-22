@@ -254,7 +254,7 @@ Composite alarm expressions have a maximum length that varies by AWS region. Ver
 
 ## Advanced Composite Alarm Patterns
 
-As your alerting maturity increases, leverage more sophisticated patterns. Nested composite alarms—composites that reference other composites—let you build hierarchical alerting systems that reflect your infrastructure topology.
+As your alerting maturity increases, build on more sophisticated patterns. Nested composite alarms—composites that reference other composites—let you build hierarchical alerting systems that reflect your infrastructure topology.
 
 ```hcl
 resource "aws_cloudwatch_composite_alarm" "database_health" {

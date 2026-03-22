@@ -164,7 +164,7 @@ http.get('https://api.example.com/slow-endpoint', async () => {
 ```
 
 
-These patterns allow you to verify that your application handles various API conditions gracefully, improving overall robustness.
+These patterns allow you to verify that your application handles various API conditions gracefully, improving overall reliability.
 
 
 ## Organizing Mock Files

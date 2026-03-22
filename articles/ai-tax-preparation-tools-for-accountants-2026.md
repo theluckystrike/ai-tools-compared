@@ -204,7 +204,7 @@ Natural language interfaces allow users to ask questions about their taxes in co
 
 Predictive analytics can forecast tax liabilities throughout the year, helping clients with quarterly estimated payments and tax planning.
 
-Multi-jurisdiction support has improved significantly, with APIs now handling state, local, and international tax rules more comprehensively.
+Multi-jurisdiction support has improved significantly, with APIs now handling state, local, and international tax rules more fully.
 
 ## Comparing Leading Tax AI Platforms
 

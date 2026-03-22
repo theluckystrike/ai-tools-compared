@@ -36,7 +36,7 @@ After identifying vulnerabilities, the assistant should guide you through fixing
 
 **OWASP Top 10 Coverage**
 
-Your chosen assistant should cover the current OWASP Top 10 comprehensively:
+Your chosen assistant should cover the current OWASP Top 10 completely:
 
 1. **Broken Access Control** — vertical and horizontal privilege escalation
 2. **Cryptographic Failures** — improper encryption and key management

@@ -18,7 +18,7 @@ voice-checked: true
 Use AI for onboarding by asking it to explain architecture, map dependencies, identify key files, and describe data flow based on your codebase. This guide shows the questions and prompts that help new developers understand codebases 10x faster than reading docs.
 
 
-When you join a new team or inherit a legacy codebase, the initial learning curve can feel overwhelming. Understanding thousands of lines of code across multiple files, frameworks, and architectural patterns takes weeks or months. AI assistants have changed this equation, offering powerful ways to accelerate codebase understanding and developer onboarding. This guide shows you practical techniques for using AI assistants to comprehensively understand any codebase.
+When you join a new team or inherit a legacy codebase, the initial learning curve can feel overwhelming. Understanding thousands of lines of code across multiple files, frameworks, and architectural patterns takes weeks or months. AI assistants have changed this equation, offering powerful ways to accelerate codebase understanding and developer onboarding. This guide shows you practical techniques for using AI assistants to fully understand any codebase.
 
 
 ## Why AI Assistants Transform Codebase Understanding

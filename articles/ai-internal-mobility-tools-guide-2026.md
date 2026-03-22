@@ -155,7 +155,7 @@ class SkillGraph:
 
 Skill graphs also power the "skills before role" approach—identifying which competencies are transferable and which are role-specific, helping employees make informed decisions about their career direction.
 
-## Vendor Landscape in 2026
+## Vendor Space in 2026
 
 Several mature platforms now offer AI internal mobility as a managed service, reducing the burden of building from scratch:
 
