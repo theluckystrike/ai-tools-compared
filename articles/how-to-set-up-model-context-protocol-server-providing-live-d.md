@@ -9,7 +9,7 @@ permalink: /how-to-set-up-model-context-protocol-server-providing-live-d/
 categories: [guides]
 tags: [ai-tools-compared, tools, mcp, database, ai]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

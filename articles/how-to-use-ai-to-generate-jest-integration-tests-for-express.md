@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Generate Jest Integration Tests for Express"
+title: "How to Use AI to Generate Jest Integration Tests"
 description: "Learn how to use AI tools to automatically generate Jest integration tests for Express.js API route handlers, with practical examples and code"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -9,7 +9,7 @@ permalink: /how-to-use-ai-to-generate-jest-integration-tests-for-express/
 categories: [guides]
 tags: [ai-tools-compared, tools, integration, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

@@ -30,6 +30,18 @@ Databricks provides a lakehouse architecture that combines data lake flexibility
 For ML workloads, this distinction matters. Databricks gives you granular control over the entire ML lifecycle—from data preparation to model serving. BigQuery ML offers faster time-to-value for standard problems but limits customization.
 
 
+
+## Quick Comparison
+
+| Feature | Databricks | Bigquery |
+|---|---|---|
+| AI Model | See specs | See specs |
+| IDE Support | Multiple IDEs | Multiple IDEs |
+| Pricing | See current pricing | See current pricing |
+| Language Support | Multi-language | Multi-language |
+| Terminal Integration | Available | Available |
+| Privacy | Privacy-focused | Privacy-focused |
+
 ## Data Processing and Feature Engineering
 
 

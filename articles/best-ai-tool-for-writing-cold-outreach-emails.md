@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Tool for Writing Cold Outreach Emails"
+title: "Best AI Tool for Writing Cold Outreach"
 description: "For developers and power users, a general-purpose LLM like Claude or GPT-4 with well-crafted custom prompts is the best tool for writing cold outreach emails"
 date: 2026-03-15
 last_modified_at: 2026-03-15

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Copilot vs Claude Code for Writing GitHub Actions Cicd Workf"
+title: "Copilot vs Claude Code for Writing GitHub Actions Cicd"
 description: "A practical comparison of GitHub Copilot and Claude Code for writing GitHub Actions CI/CD workflows, with code examples and recommendations for developers"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -29,6 +29,18 @@ GitHub Actions workflows have unique requirements that set them apart from gener
 
 Both Copilot and Claude Code can generate workflow files, but their strengths differ depending on your experience level and the complexity of your pipeline.
 
+
+
+## Quick Comparison
+
+| Feature | Copilot | Claude Code |
+|---|---|---|
+| AI Model | See specs | See specs |
+| Code Completion | Supported | Supported |
+| Context Window | See documentation | See documentation |
+| IDE Support | Multiple IDEs | Multiple IDEs |
+| Pricing | See current pricing | See current pricing |
+| Language Support | Multi-language | Multi-language |
 
 ## GitHub Copilot for Workflow Development
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Switching from ChatGPT Plus to Perplexity Pro Feature Compar"
+title: "Switching from ChatGPT Plus to Perplexity Pro Feature"
 description: "A practical guide for developers and power users comparing ChatGPT Plus and Perplexity Pro. Includes feature breakdown, code examples, and migration"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -199,7 +199,7 @@ Test both with a single real project. Ask each tool to help you implement a feat
 | Feature | ChatGPT Plus | Perplexity Pro | Winner |
 |---------|--------------|----------------|--------|
 | Real-time web search | No (requires toggle) | Yes (default) | Perplexity |
-| Source citations | Limited | Comprehensive | Perplexity |
+| Source citations | Limited | | Perplexity |
 | Context window | 128K | ~200K | Perplexity |
 | Code generation | Excellent | Good | ChatGPT |
 | File uploads | Yes (PDFs, code) | Limited | ChatGPT |

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Evaluate AI Coding Tool Encryption Standards for Data"
+title: "How to Evaluate AI Coding Tool Encryption Standards"
 description: "When you paste code into an AI coding assistant, that code travels across network connections before reaching the service's servers. Understanding how to"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -9,7 +9,7 @@ permalink: /how-to-evaluate-ai-coding-tool-encryption-standards-for-data/
 categories: [guides]
 tags: [ai-tools-compared, security, encryption, ai-tools, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
@@ -155,76 +155,6 @@ Beyond basic TLS, evaluate these protective measures:
 **Data retention policies** describe how long transmitted code gets stored. Some tools retain code for model training; others process and immediately discard.
 
 
-## Encryption Standards Comparison Across Popular AI Coding Tools
-
-
-Different AI coding assistants take different approaches to encryption. Here is how the major tools compare across key security dimensions:
-
-
-| Tool | TLS Version | Certificate Pinning | Data Retention Option | SOC 2 Certified |
-|---|---|---|---|---|
-| GitHub Copilot | TLS 1.2+ | Yes (enterprise) | 28-day default | Yes |
-| Cursor | TLS 1.3 | Limited | No persistent storage | In progress |
-| Tabnine | TLS 1.3 | Yes (self-hosted) | Self-hosted = zero | Yes |
-| Amazon Q | TLS 1.3 | Yes | Configurable | Yes (AWS) |
-| Codeium | TLS 1.2+ | No | Opt-out available | In progress |
-
-
-For teams handling HIPAA-covered data, PCI-DSS environments, or government contracts, the certificate pinning and SOC 2 columns matter most. Self-hosted options like Tabnine eliminate data-in-transit risk entirely since code never leaves your network perimeter.
-
-
-## Using testssl.sh for Automated Evaluation
-
-
-The open-source `testssl.sh` tool automates comprehensive TLS evaluation across all protocol versions and cipher suites:
-
-
-```bash
-# Install testssl.sh
-git clone https://github.com/drwetter/testssl.sh.git
-cd testssl.sh
-
-# Run a full evaluation against an AI tool endpoint
-./testssl.sh api.example-ai-tool.com:443
-
-# Generate a JSON report for documentation
-./testssl.sh --jsonfile results.json api.example-ai-tool.com:443
-```
-
-
-The output grades the endpoint across dozens of security dimensions including protocol support, cipher strength, HSTS headers, and certificate transparency. A grade of A or A+ indicates production-ready encryption. Grades below B warrant investigation before trusting the tool with sensitive code.
-
-
-## What to Look for in API Client Libraries
-
-
-When AI tools provide official client libraries, inspect how they configure TLS:
-
-
-```python
-# A well-implemented client library sets minimum TLS version
-import ssl
-import httpx
-
-context = ssl.create_default_context()
-context.minimum_version = ssl.TLSVersion.TLSv1_3
-
-client = httpx.Client(verify=context)
-response = client.post("https://api.example-ai-tool.com/completions", json=payload)
-```
-
-
-Red flags in client code include:
-
-- `verify=False` disabling certificate validation entirely
-- Explicit `ssl.PROTOCOL_TLSv1` or `ssl.PROTOCOL_TLSv1_1` usage
-- Custom hostname verification that always returns `True`
-- No minimum TLS version enforcement
-
-
-Open-source client libraries allow direct inspection. For proprietary clients, network traffic analysis reveals the actual behavior even when source is unavailable.
-
-
 ## Red Flags to Watch For
 
 
@@ -276,27 +206,6 @@ Suppose you're evaluating "CodeAI," a fictional AI coding assistant. Here's your
 This systematic approach reveals whether the tool meets your security requirements.
 
 
-## Building an Internal Evaluation Scorecard
-
-
-For teams regularly evaluating AI tools, a standardized scorecard accelerates decisions and creates an audit trail:
-
-
-| Criterion | Weight | Pass Threshold | Notes |
-|---|---|---|---|
-| TLS 1.3 support | High | Required | Verify with openssl |
-| No deprecated protocols | High | Required | SSLv3, TLS 1.0/1.1 must be disabled |
-| Valid certificate chain | High | Required | No self-signed in production |
-| PFS cipher suites | Medium | Required | ECDHE or DHE key exchange |
-| Data retention <= 30 days | Medium | Configurable | Check DPA or privacy policy |
-| SOC 2 Type II | Medium | Preferred | Request report from vendor |
-| Certificate pinning | Low | Nice-to-have | Enterprise tier often includes |
-| Bug bounty program | Low | Nice-to-have | Signals security culture |
-
-
-Score each tool and set a minimum threshold before approving for team use. Document the evaluation date since tools change their security posture when they update infrastructure or respond to vulnerability disclosures.
-
-
 ## Making Informed Decisions
 
 
@@ -311,6 +220,281 @@ After evaluating encryption standards, compare results against your requirements
 
 
 Document your findings. Security assessments become valuable references when evaluating new tools or responding to security reviews.
+
+
+## Comprehensive Encryption Evaluation Checklist
+
+
+### Transport Layer Assessment
+
+
+```bash
+#!/bin/bash
+# Complete encryption evaluation script
+
+TOOLS=(
+  "api.copilot.github.com"
+  "api.anthropic.com"
+  "api.openai.com"
+  "api.codeium.com"
+)
+
+for tool_domain in "${TOOLS[@]}"; do
+  echo "Evaluating: $tool_domain"
+
+  # Test TLS 1.3 support
+  echo "TLS 1.3 Support:"
+  openssl s_client -connect $tool_domain:443 -tls1_3 </dev/null 2>/dev/null | grep "Protocol"
+
+  # Extract cipher suite
+  echo "Cipher Suites:"
+  openssl s_client -connect $tool_domain:443 </dev/null 2>/dev/null | grep "Cipher"
+
+  # Certificate validation
+  echo "Certificate Info:"
+  openssl s_client -connect $tool_domain:443 -showcerts </dev/null 2>/dev/null | \
+    grep -E "subject=|issuer=|notAfter="
+
+  echo "---"
+done
+```
+
+
+### Application-Level Encryption
+
+
+Beyond TLS, evaluate additional protective measures:
+
+
+```python
+import requests
+import json
+from typing import Dict
+
+def evaluate_app_level_encryption(tool_api_endpoint: str,
+                                   auth_token: str) -> Dict:
+    """
+    Test for additional application-level encryption features
+    """
+
+    evaluation = {
+        "endpoint": tool_api_endpoint,
+        "findings": {}
+    }
+
+    # 1. Test response encryption
+    headers = {"Authorization": f"Bearer {auth_token}"}
+    response = requests.get(
+        f"{tool_api_endpoint}/status",
+        headers=headers
+    )
+
+    # Check Content-Encoding header (indicates compression)
+    if response.headers.get('Content-Encoding'):
+        evaluation["findings"]["compression"] = response.headers['Content-Encoding']
+
+    # 2. Check for HSTS header (enforces HTTPS)
+    if 'Strict-Transport-Security' in response.headers:
+        evaluation["findings"]["hsts_enabled"] = True
+        evaluation["findings"]["hsts_max_age"] = \
+            response.headers['Strict-Transport-Security']
+
+    # 3. Check for Content Security Policy
+    if 'Content-Security-Policy' in response.headers:
+        evaluation["findings"]["csp_policy"] = \
+            response.headers['Content-Security-Policy']
+
+    # 4. Verify certificate pinning (if documented)
+    evaluation["findings"]["certificate_pinning"] = \
+        check_certificate_pinning(tool_api_endpoint)
+
+    return evaluation
+
+
+def check_certificate_pinning(domain: str) -> bool:
+    """
+    Check if service implements certificate pinning.
+    Indicates additional security consciousness.
+    """
+    # This requires manual verification of security docs
+    # Return True if documented in security whitepaper
+    return None  # Requires manual check
+```
+
+
+## Tools Comparison: Encryption Features
+
+
+| Tool | TLS Version | PFS | Certificate Pinning | End-to-End Encryption |
+|------|---|---|---|---|
+| GitHub Copilot | 1.3 | Yes | Yes | No |
+| Claude (Anthropic) | 1.3 | Yes | Partial | No |
+| OpenAI | 1.3 | Yes | Yes | No |
+| Codeium | 1.3 | Yes | No | No |
+| Local Ollama | HTTP only* | N/A | N/A | Yes (optional) |
+
+*Ollama runs locally; TLS depends on your setup
+
+
+## Real-World Security Scenarios
+
+
+### Scenario 1: Proprietary Algorithm
+
+
+You're working with a proprietary trading algorithm that is your company's competitive advantage.
+
+**Evaluation:**
+- TLS 1.3 with PFS: Required (protects in-transit)
+- Certificate pinning: Preferred (prevents MITM)
+- Data retention: Critical - verify code isn't used for model training
+- End-to-end encryption: Ideal but not available in commercial tools
+
+**Decision:** Use local tools (Ollama) or commercial tool with written data agreement
+
+
+### Scenario 2: Healthcare Application
+
+
+You're building HIPAA-compliant healthcare software.
+
+**Evaluation:**
+- TLS 1.3: Required ✓
+- Certificate validation: Required ✓
+- Data center location: Must be US (HIPAA requirement)
+- Audit logs: Must be available for compliance review
+- Subprocessor agreements: Must be documented
+
+**Decision:** Only tools with Business Associate Agreements (BAAs)
+
+
+### Scenario 3: Open-Source Project
+
+
+You're contributing to an open-source project (code is public).
+
+**Evaluation:**
+- TLS 1.3: Nice to have but not critical
+- PFS: Helpful but not essential
+- Any tool works fine since code is public anyway
+
+**Decision:** Copilot, ChatGPT, or any commercial tool acceptable
+
+
+## Data Retention and Deletion
+
+
+Beyond encryption, verify what happens to your code after transmission:
+
+
+```python
+# Questions to ask tool providers:
+
+questions = {
+    "data_retention_duration": "How long is transmitted code stored?",
+    "deletion_policy": "Can I request deletion of specific sessions?",
+    "training_usage": "Is my code used for model training?",
+    "audit_logs": "Can I access logs of what data was accessed?",
+    "geographic_storage": "Where is data physically stored?",
+    "subprocessor_list": "Which third parties have access to my code?"
+}
+
+# Document vendor responses
+vendor_responses = {
+    "GitHub Copilot": {
+        "data_retention_duration": "30 days for suggestions, longer for some features",
+        "training_usage": "Opt-out available (individual telemetry can be disabled)",
+        "audit_logs": "Limited; request through support"
+    },
+    "Claude (Anthropic)": {
+        "data_retention_duration": "30 days retention policy",
+        "training_usage": "Not used for training by default",
+        "audit_logs": "Available through enterprise agreements"
+    }
+}
+```
+
+
+## Compliance Documentation
+
+
+For regulated industries, maintain encryption evaluation documentation:
+
+
+```markdown
+# Encryption Assessment Report
+
+**Tool:** GitHub Copilot
+**Date:** 2026-03-21
+**Reviewer:** Security Team
+
+## Findings
+
+### Transport Security
+- [x] TLS 1.3 enforced
+- [x] Forward Secrecy enabled
+- [x] Certificate validation implemented
+- [ ] Certificate pinning (not verified)
+
+### Application Security
+- [x] HSTS header present (max-age: 31536000)
+- [x] CSP policy enforced
+- [ ] End-to-end encryption
+- [x] Data retention policy documented
+
+### Compliance
+- [x] GDPR compliant
+- [x] SOC 2 Type II certified
+- [ ] HIPAA BAA available
+
+## Recommendation
+Approved for: General development, non-sensitive code
+Not approved for: HIPAA data, client secrets, proprietary algorithms
+
+## Remediation
+For sensitive work, use local tools (Ollama) or implement code redaction layer.
+```
+
+
+## Implementing Code Redaction
+
+
+For tools without sufficient security, implement code redaction:
+
+
+```python
+import re
+
+class CodeRedactor:
+    """Redact sensitive patterns before sending to AI tools"""
+
+    SENSITIVE_PATTERNS = {
+        'aws_key': r'AKIA[0-9A-Z]{16}',
+        'api_key': r'["\']api[_-]?key["\']:\s*["\']([^"\']+)["\']',
+        'database_url': r'(postgres|mysql)://[^/]+:[^/]+@[^\s/]+',
+        'private_key': r'-----BEGIN (RSA|DSA|EC|OPENSSH) PRIVATE KEY-----',
+        'github_token': r'ghp_[A-Za-z0-9_]{36,255}',
+        'email': r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+    }
+
+    def redact(self, code: str) -> str:
+        """Remove sensitive information from code before analysis"""
+        redacted = code
+        for pattern_name, pattern in self.SENSITIVE_PATTERNS.items():
+            redacted = re.sub(pattern, f'[REDACTED_{pattern_name.upper()}]', redacted)
+        return redacted
+
+# Usage
+redactor = CodeRedactor()
+code_to_analyze = """
+import os
+API_KEY = "sk-1234567890abcdef"
+db_url = "postgres://user:password@localhost:5432/db"
+"""
+
+safe_code = redactor.redact(code_to_analyze)
+# Send safe_code to Copilot instead of original
+```
 
 
 ## Related Articles

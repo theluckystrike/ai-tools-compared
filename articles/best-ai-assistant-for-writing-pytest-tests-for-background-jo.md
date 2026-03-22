@@ -390,7 +390,7 @@ def test_job_handles_api_rate_limiting(self):
 ```
 
 
-These comprehensive tests ensure background jobs are reliable, observable, and handle real-world failure modes correctly.
+These tests ensure background jobs are reliable, observable, and handle real-world failure modes correctly.
 
 
 ## Related Articles

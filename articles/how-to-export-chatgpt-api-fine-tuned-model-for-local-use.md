@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Export ChatGPT API Fine-Tuned Model for Local Use"
+title: "How to Export ChatGPT API Fine-Tuned Model for Local"
 description: "A practical guide for developers on exporting fine-tuned models from OpenAI's API for local deployment and inference"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -9,7 +9,7 @@ permalink: /how-to-export-chatgpt-api-fine-tuned-model-for-local-use/
 categories: [guides]
 tags: [ai-tools-compared, tools, chatgpt, api]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

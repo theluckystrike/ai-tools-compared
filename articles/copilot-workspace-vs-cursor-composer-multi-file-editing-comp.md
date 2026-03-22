@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Copilot Workspace vs Cursor Composer Multi File Editing Comp"
+title: "Copilot Workspace vs Cursor Composer Multi File Editing"
 description: "This guide provides an overview to help you understand and make informed decisions about this topic"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -28,6 +28,18 @@ GitHub Copilot Workspace, released as an evolution of Copilot Chat, takes a sess
 
 Cursor Composer, the AI assistant built into the Cursor editor, approaches multi-file editing differently. It provides real-time editing across files with Tab completion and Cmd+K commands that can reference multiple files simultaneously. The composer mode allows you to edit, generate, or understand code across your entire codebase in a single interaction.
 
+
+
+## Quick Comparison
+
+| Feature | Copilot Workspace | Cursor Composer |
+|---|---|---|
+| AI Model | See specs | See specs |
+| Code Completion | Supported | Supported |
+| Context Window | 200K tokens | 200K tokens |
+| IDE Support | Multiple IDEs | Multiple IDEs |
+| Pricing | $20/month | $20/month |
+| Multi-File Editing | Supported | Supported |
 
 ## Multi-File Editing in Copilot Workspace
 

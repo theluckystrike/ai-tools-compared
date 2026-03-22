@@ -417,9 +417,9 @@ Partially true. Business tier adds policies and visibility but not dedicated sup
 - [How to Transfer Cursor Editor Theme and Layout](/ai-tools-compared/transfer-cursor-editor-theme-and-layout-to-vscode-with-copil/)
 
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best AI Coding Assistants Compared](/ai-tools-compared/)
+- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/)
+- [AI Tools Guides Hub](/ai-tools-compared/)
 - [Midjourney Describe Feature Cost: Does It Count as Image.](/ai-tools-compared/midjourney-describe-feature-cost-does-it-count-as-image-gene/)
 - [Cursor Pro Privacy Mode: Does It Cost Extra for Zero.](/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
 - [Free AI Alternatives to Copilot for JetBrains IDE Users 2026](/ai-tools-compared/free-ai-alternatives-to-copilot-for-jetbrains-ide-users-2026/)

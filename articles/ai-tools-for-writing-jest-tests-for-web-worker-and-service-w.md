@@ -270,7 +270,7 @@ This pattern prevents hanging tests and ensures proper resource cleanup.
 
 ## Testing Worker Error Handling
 
-Most test suites only cover happy paths. Ask AI to generate comprehensive error scenarios:
+Most test suites only cover happy paths. Ask AI to generate error scenarios:
 
 > "Generate Jest tests for a worker that handles these error cases:
 > 1. Invalid input data

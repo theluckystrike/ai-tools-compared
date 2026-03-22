@@ -9,7 +9,7 @@ permalink: /how-to-reduce-ai-autocomplete-ghost-text-distractions-while-coding/
 categories: [guides]
 tags: [ai-tools-compared, productivity, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

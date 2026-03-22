@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Tools for Generating CSS from Designs"
+title: "Best AI Tools for Generating CSS"
 description: "Compare AI tools that convert design mockups to CSS: Figma AI, Locofy, Builder.io, and GPT-4V workflows with code quality and accuracy benchmarks"
 date: 2026-03-21
 author: theluckystrike
@@ -302,7 +302,7 @@ For one-off component extraction: Figma Dev Mode CSS, pasted into Claude with "m
 
 - [AI Coding Assistant Comparison for React Component Generation](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
 - [AI Coding Assistant Comparison for TypeScript Tailwind CSS](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-tailwind-css-c/)
-- [Which AI Tool Generates Better Vue 3 Composition API Components](/ai-tools-compared/which-ai-tool-generates-better-vue-3-composition-api-compone/)
+- [Which AI Tool Generates Better Vue 3 Composition API Components](/ai-tools-compared/which-ai-tool-generates-better-vue-3-composition-api-components/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Generating Contributor License Agreement Explan"
+title: "AI Tools for Generating Contributor License Agreement"
 description: "AI tools like Claude, ChatGPT, and specialized legal summarization platforms can instantly translate dense CLA documents into clear, developer-friendly"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -9,7 +9,7 @@ permalink: /ai-tools-for-generating-contributor-license-agreement-explan/
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---

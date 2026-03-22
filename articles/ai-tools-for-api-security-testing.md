@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for API Security Testing"
-description: "Compare AI-assisted API security testing tools: automated vulnerability scanning, prompt injection detection, and generating security test cases with code examples"
+description: "Compare AI-assisted API security testing tools: automated vulnerability scanning, prompt injection detection, and generating security test cases with code"
 date: 2026-03-21
 author: theluckystrike
 permalink: /ai-tools-for-api-security-testing/
@@ -10,7 +10,7 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared]
+tags: [ai-tools-compared, security, artificial-intelligence, api]
 ---
 
 {% raw %}
@@ -298,7 +298,7 @@ for result in fuzz_results:
 ## Related Reading
 
 - [AI Coding Tool Penetration Test Findings](/ai-tools-compared/ai-coding-tool-penetration-test-findings-common-vulnerabilit/)
-- [AI Tools for API Load Testing Comparison](/ai-tools-compared/ai-tools-for-api-load-testing-comparison/)
+- [AI Tools for API Load Testing Comparison](/ai-tools-compared/ai-assisted-api-load-testing-tools-comparison/)
 - [How to Build an AI Code Review Bot](/ai-tools-compared/how-to-build-ai-code-review-bot/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

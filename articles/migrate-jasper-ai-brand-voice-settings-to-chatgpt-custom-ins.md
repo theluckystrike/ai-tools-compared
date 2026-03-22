@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Migrate Jasper AI Brand Voice Settings to ChatGPT Custom Ins"
+title: "Migrate Jasper AI Brand Voice Settings to ChatGPT Custom"
 description: "A practical guide for developers and power users moving brand voice configurations from Jasper AI to ChatGPT custom instructions with code examples"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -9,7 +9,7 @@ permalink: /migrate-jasper-ai-brand-voice-settings-to-chatgpt-custom-ins/
 categories: [guides]
 intent-checked: true
 voice-checked: true
-score: 8
+score: 9
 reviewed: true
 tags: [ai-tools-compared, artificial-intelligence, chatgpt]
 ---

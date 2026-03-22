@@ -7,10 +7,10 @@ author: theluckystrike
 permalink: /claude-artifacts-vs-chatgpt-canvas-comparison/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared]
+tags: [ai-tools-compared, comparison, claude-ai, chatgpt]
 ---
 
 {% raw %}

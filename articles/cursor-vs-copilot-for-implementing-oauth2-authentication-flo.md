@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Cursor vs Copilot for Implementing Oauth2 Authentication Flo"
+title: "Cursor vs Copilot for Implementing Oauth2 Authentication"
 description: "Implementing OAuth2 authentication in an Express application involves multiple components: route setup, token handling, callback processing, and security"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -56,6 +56,18 @@ const config = {
 
 This baseline demonstrates the kind of code both tools will interact with throughout the implementation.
 
+
+
+## Quick Comparison
+
+| Feature | Cursor | Copilot |
+|---|---|---|
+| Code Completion | Supported | Supported |
+| Context Window | See documentation | See documentation |
+| IDE Support | Multiple IDEs | Multiple IDEs |
+| Pricing | See current pricing | See current pricing |
+| Language Support | Multi-language | Multi-language |
+| Inline Chat | Available | Available |
 
 ## Copilot's Approach to OAuth2 Implementation
 

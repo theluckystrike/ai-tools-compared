@@ -9,7 +9,7 @@ permalink: /ai-tools-for-customer-escalation-management/
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---
@@ -227,7 +227,7 @@ This automator handles the mechanics of escalation: determining where tickets go
 ## Configuring Keyword Weight Dictionaries
 
 
-The keyword_weights dictionary is one of the highest-leverage configuration points in a custom pipeline. Weights should reflect both legal risk and customer impact. A well-tuned dictionary looks like this:
+The keyword_weights dictionary is one of the highest-use configuration points in a custom pipeline. Weights should reflect both legal risk and customer impact. A well-tuned dictionary looks like this:
 
 ```python
 KEYWORD_WEIGHTS = {

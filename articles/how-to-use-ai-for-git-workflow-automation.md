@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI for Git Workflow Automation"
-description: "Automate git workflows with AI: commit message generation, branch naming, PR descriptions, merge conflict resolution, and git hook integration with real examples"
+description: "Automate git workflows with AI: commit message generation, branch naming, PR descriptions, merge conflict resolution, and git hook integration with real"
 date: 2026-03-21
 author: theluckystrike
 permalink: /how-to-use-ai-for-git-workflow-automation/
@@ -10,7 +10,7 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared]
+tags: [ai-tools-compared, workflow, artificial-intelligence, automation]
 ---
 
 {% raw %}
@@ -398,6 +398,8 @@ PYTHON
 - [AI Git Commit Message Generators Compared](/ai-tools-compared/ai-git-commit-message-generators-compared/)
 - [AI Tools for Automated Changelog Generation 2026](/ai-tools-compared/ai-tools-for-automated-changelog-generation-2026/)
 - [How to Build an AI Code Review Bot](/ai-tools-compared/how-to-build-ai-code-review-bot/)
+- [Example: GitHub Actions workflow for assessment tracking](https://theluckystrike.github.io/remote-work-tools/how-to-set-up-remote-hiring-pipeline-with-async-interviews-f/)
+- [Remote Content Team Collaboration Workflow for Distributed](https://theluckystrike.github.io/remote-work-tools/remote-content-team-collaboration-workflow-for-distributed-seo-writers-2026-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

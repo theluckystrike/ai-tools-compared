@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Switching from Grammarly to ChatGPT for Editing Workflow Mig"
+title: "Switching from Grammarly to ChatGPT for Editing Workflow"
 description: "A practical guide for developers and power users migrating their writing editing workflow from Grammarly to ChatGPT, with code examples and automation"
 date: 2026-03-16
 last_modified_at: 2026-03-16

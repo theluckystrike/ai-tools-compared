@@ -47,6 +47,18 @@ export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 ```
 
 
+
+## Quick Comparison
+
+| Feature | Cursor | Copilot |
+|---|---|---|
+| Code Completion | Supported | Supported |
+| Context Window | See documentation | See documentation |
+| IDE Support | Multiple IDEs | Multiple IDEs |
+| Pricing | See current pricing | See current pricing |
+| Multi-File Editing | Supported | Supported |
+| Language Support | Multi-language | Multi-language |
+
 ## Creating Checkout Sessions
 
 

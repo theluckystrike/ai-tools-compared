@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI for Capacity Planning and Resource Right Sizin"
+title: "How to Use AI for Capacity Planning and Resource Right"
 description: "A practical guide for developers and power users on using AI to optimize infrastructure capacity planning and resource allocation across cloud"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /how-to-use-ai-for-capacity-planning-and-resource-right-sizin/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]

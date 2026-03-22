@@ -1,8 +1,11 @@
 ---
 layout: default
-title: "AI Security & Privacy Tools — Audits, Compliance & Data Protection"
-description: "AI security tools for code audits, GDPR compliance, penetration testing, data sovereignty, and enterprise policy management. Privacy-focused AI tool comparisons."
+title: "AI Security & Privacy Tools"
+description: "AI security tools for code audits, GDPR compliance, penetration testing, data sovereignty, and enterprise policy management. Privacy-focused AI tool"
 permalink: /topics/ai-security-privacy/
+intent-checked: true
+voice-checked: true
+date: 2026-03-21
 ---
 
 # AI Security & Privacy Tools — Audits, Compliance & Data Protection

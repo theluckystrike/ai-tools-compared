@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Copilot vs Cursor for Writing Terraform Modules from Scratch"
+title: "Copilot vs Cursor for Writing Terraform Modules"
 description: "A practical comparison of GitHub Copilot and Cursor for building Terraform modules from scratch, with real code examples and recommendations"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -26,6 +26,18 @@ GitHub Copilot functions as an intelligent code completion engine that suggests 
 
 Cursor takes a different approach by embedding AI capabilities directly into a fork of VS Code. It provides more context awareness through features like "Codebase Indexing" and "Chat," allowing you to reference your entire project when asking for assistance. Cursor's agent mode can execute multi-step code modifications across files.
 
+
+
+## Quick Comparison
+
+| Feature | Copilot | Cursor |
+|---|---|---|
+| AI Model | See specs | See specs |
+| Code Completion | Supported | Supported |
+| Context Window | See documentation | See documentation |
+| IDE Support | Multiple IDEs | Multiple IDEs |
+| Pricing | $10/month | $10/month |
+| Inline Chat | Available | Available |
 
 ## Starting a Terraform Module from Scratch
 

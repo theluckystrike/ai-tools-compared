@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Gemini vs Claude for Summarizing Quarterly Earnings Call Tra"
+title: "Gemini vs Claude for Summarizing Quarterly Earnings Call"
 description: "A practical comparison of Gemini and Claude for summarizing quarterly earnings call transcripts, with code examples and API integration patterns"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -9,7 +9,7 @@ permalink: /gemini-vs-claude-for-summarizing-quarterly-earnings-call-tra/
 categories: [guides]
 tags: [ai-tools-compared, tools, comparison, claude-ai]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
@@ -281,7 +281,7 @@ def hybrid_summarize(transcript: str, budget_mode: bool = False):
 
 This lets you route high-stakes analysis to Claude while using Gemini for preliminary screening or high-volume processing.
 
-A more sophisticated routing strategy uses Gemini for initial extraction of structured metrics (revenue, EPS, guidance numbers) and Claude for the qualitative interpretation layer—tone analysis, risk identification, and narrative summary. This hybrid approach captures the cost efficiency of Gemini for structured extraction while leveraging Claude's stronger natural language capabilities for the high-value analysis that investors actually read.
+A more sophisticated routing strategy uses Gemini for initial extraction of structured metrics (revenue, EPS, guidance numbers) and Claude for the qualitative interpretation layer—tone analysis, risk identification, and narrative summary. This hybrid approach captures the cost efficiency of Gemini for structured extraction while using Claude's stronger natural language capabilities for the high-value analysis that investors actually read.
 
 Both models handle earnings call transcripts effectively. Your choice ultimately depends on your existing infrastructure, volume requirements, and whether you prioritize output consistency or cost efficiency.
 

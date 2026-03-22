@@ -9,7 +9,7 @@ permalink: /ai-summarizer-chrome-extension/
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
@@ -219,6 +219,193 @@ Effective extensions adapt their extraction strategy based on content type. News
 
 A content classifier might examine URL patterns, HTML structure, and text characteristics to determine the best extraction approach. Video content requires transcript extraction rather than DOM parsing, often using YouTube's caption API or speech-to-text services.
 
+
+## Error Handling and Resilience
+
+Production extensions require robust error handling. Network timeouts, API rate limits, and extraction failures happen regularly. Implement graceful fallbacks:
+
+```javascript
+async function summarizeWithFallback(text, apiKey) {
+  try {
+    // Primary summarization attempt
+    const summary = await summarizeWithOpenAI(text, apiKey);
+    return { success: true, summary, provider: 'openai' };
+  } catch (error) {
+    if (error.code === 'rate_limit') {
+      // Show user the rate limit message
+      return { success: false, error: 'Rate limited. Try again in a few minutes.' };
+    }
+
+    if (error.code === 'context_length_exceeded') {
+      // Truncate and retry with shorter content
+      const truncated = text.substring(0, Math.floor(text.length / 2));
+      return await summarizeWithFallback(truncated, apiKey);
+    }
+
+    // Generic fallback: extract first paragraph and key sentences
+    const fallback = extractKeyParagraphs(text);
+    return { success: true, summary: fallback, provider: 'fallback', warning: 'Using fallback extraction' };
+  }
+}
+
+function extractKeyParagraphs(text) {
+  const paragraphs = text.split('\n\n').filter(p => p.length > 100);
+  return paragraphs.slice(0, 3).join('\n\n');
+}
+```
+
+This pattern ensures your extension never leaves users with a blank screen, even when API services are down.
+
+## User Experience Patterns
+
+Effective extensions provide clear feedback throughout the summarization process. Users need to know what's happening—whether the extension is extracting content, calling APIs, or waiting for results.
+
+Implement a visible status indicator:
+
+```javascript
+// popup.js - manage UI state during summarization
+function updateStatus(message, type = 'info') {
+  const statusEl = document.getElementById('status');
+  statusEl.textContent = message;
+  statusEl.className = `status status-${type}`;
+
+  if (type === 'success') {
+    setTimeout(() => statusEl.textContent = '', 3000);
+  }
+}
+
+async function handleSummarizeClick() {
+  updateStatus('Extracting article content...', 'processing');
+
+  try {
+    const content = await getExtractedContent();
+    updateStatus('Sending to AI...', 'processing');
+
+    const summary = await summarize(content);
+    updateStatus('Summary ready', 'success');
+    displaySummary(summary);
+  } catch (error) {
+    updateStatus(`Error: ${error.message}`, 'error');
+  }
+}
+```
+
+Display estimated wait times for long articles. A 50,000-word document takes 10-15 seconds—communicating this prevents users from clicking repeatedly.
+
+## Storage and Sync Strategies
+
+Caching summaries locally reduces API costs and improves performance for repeated visits. Chrome's Storage API handles this:
+
+```javascript
+async function getCachedSummary(url) {
+  return new Promise((resolve) => {
+    chrome.storage.local.get([url], (result) => {
+      if (result[url]) {
+        resolve(result[url]);
+      } else {
+        resolve(null);
+      }
+    });
+  });
+}
+
+async function cacheSummary(url, summary) {
+  const maxAge = 7 * 24 * 60 * 60 * 1000; // 7 days
+  const cacheEntry = {
+    summary,
+    timestamp: Date.now(),
+    expiry: Date.now() + maxAge
+  };
+
+  chrome.storage.local.set({ [url]: cacheEntry });
+}
+
+async function summarizeWithCache(text, url, apiKey) {
+  const cached = await getCachedSummary(url);
+
+  if (cached && cached.expiry > Date.now()) {
+    return cached.summary;
+  }
+
+  const freshSummary = await summarizeWithOpenAI(text, apiKey);
+  await cacheSummary(url, freshSummary);
+  return freshSummary;
+}
+```
+
+For sync across devices, store summary history in cloud storage. Chrome Sync API automatically replicates data to logged-in Chrome accounts.
+
+## Customization Options for Power Users
+
+Extensions that only offer one summary style limit user control. Provide multiple summary formats:
+
+```javascript
+const summaryStyles = {
+  executive: {
+    prompt: 'Provide a 1-2 sentence executive summary focusing on business impact.',
+    maxTokens: 150
+  },
+  technical: {
+    prompt: 'Summarize focusing on technical details, algorithms, and implementation approaches.',
+    maxTokens: 400
+  },
+  narrative: {
+    prompt: 'Create a 3-5 paragraph summary in narrative style, preserving key details.',
+    maxTokens: 600
+  },
+  bullets: {
+    prompt: 'Provide 5-7 bullet points capturing the main ideas.',
+    maxTokens: 300
+  }
+};
+
+async function getSummaryInStyle(text, apiKey, style = 'executive') {
+  const config = summaryStyles[style] || summaryStyles.executive;
+
+  const response = await fetch('https://api.openai.com/v1/chat/completions', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${apiKey}`
+    },
+    body: JSON.stringify({
+      model: 'gpt-4o-mini',
+      messages: [{ role: 'system', content: config.prompt }, { role: 'user', content: text }],
+      max_tokens: config.maxTokens
+    })
+  });
+
+  const data = await response.json();
+  return data.choices[0].message.content;
+}
+```
+
+This pattern lets users choose the summary format that fits their needs without forcing one-size-fits-all approaches.
+
+## Testing Your Extension
+
+Before publishing, test content extraction across diverse website structures. Common testing targets include:
+
+- Medium and Dev.to (clean article structure)
+- News sites like TechCrunch (variable article wrappers)
+- Academic papers (PDFs with embedded content)
+- GitHub READMEs (code-heavy documentation)
+
+Create a test suite that validates extraction:
+
+```javascript
+async function testExtraction(url, expectedMinLength = 1000) {
+  const tab = await chrome.tabs.create({ url });
+  const content = await extractContent();
+
+  if (content.length < expectedMinLength) {
+    console.error(`Extraction failed for ${url}: only got ${content.length} chars`);
+    return false;
+  }
+
+  return true;
+}
+```
 
 ## Related Articles
 

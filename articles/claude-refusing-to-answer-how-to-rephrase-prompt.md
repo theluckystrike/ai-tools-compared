@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Claude Refusing to Answer: How to Rephrase Your Prompt"
+title: "Claude Refusing to Answer: How to Rephrase Your"
 description: "A troubleshooting guide for developers and power users experiencing Claude refusing to answer. Learn how to rephrase prompts effectively and bypass"
 date: 2026-03-15
 last_modified_at: 2026-03-15

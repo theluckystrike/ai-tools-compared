@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Transfer Claude Project Knowledge to ChatGPT Custom (2)"
+title: "How to Transfer Claude Project Knowledge to ChatGPT"
 description: "A practical guide to migrating your Claude project knowledge bases, instructions, and settings to ChatGPT Custom GPTs with step-by-step instructions"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /how-to-transfer-claude-project-knowledge-to-chatgpt-custom-gpt/
 categories: [tutorials, guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, claude-ai, chatgpt]
@@ -335,7 +335,7 @@ Knowledge Base Structure (for Custom GPT):
 
 **Upload strategy:** ChatGPT Custom GPTs accept up to 20 files (at time of writing). For larger knowledge bases:
 
-1. Combine related documents into single comprehensive files
+1. Combine related documents into single files
 2. Prioritize high-value documents (architecture, API reference)
 3. Keep testing and development docs in code repo instead of GPT
 4. Update GPT knowledge files quarterly

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Tools for Podcast Show Notes"
+title: "Best AI Tools for Podcast Show"
 description: "A practical comparison of AI tools for creating podcast show notes, with code examples and workflows for developers and power users"
 date: 2026-03-15
 last_modified_at: 2026-03-15
@@ -9,7 +9,7 @@ permalink: /best-ai-tools-for-podcast-show-notes/
 categories: [guides]
 tags: [ai-tools-compared, tools, best-of, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Help Designers Write Micro Interaction Spec"
+title: "How to Use AI to Help Designers Write Micro Interaction"
 description: "A practical guide for developers and power users using AI to create precise micro interaction specifications that bridge design and development"
 date: 2026-03-16
 last_modified_at: 2026-03-16

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI-Powered Log Analysis Tools for Debugging"
-description: "Compare AI log analysis tools for production debugging: Datadog AI, Honeycomb, custom LLM pipelines, and open-source options with real error investigation workflows"
+description: "Compare AI log analysis tools for production debugging: Datadog AI, Honeycomb, custom LLM pipelines, and open-source options with real error investigation"
 date: 2026-03-21
 author: theluckystrike
 permalink: /ai-log-analysis-tools-for-debugging/
@@ -10,7 +10,7 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared]
+tags: [ai-tools-compared, troubleshooting, artificial-intelligence]
 ---
 
 {% raw %}

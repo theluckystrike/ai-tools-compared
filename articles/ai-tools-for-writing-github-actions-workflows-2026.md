@@ -263,7 +263,7 @@ Tabnine offers local models that don't send your GitHub Actions code to external
 
 Request: "Create a GitHub Actions workflow for a Node.js monorepo with frontend and backend testing, Docker build, and deployment to production on main branch."
 
-### Claude's Output (Most Comprehensive)
+### Claude's Output (Most )
 ```yaml
 name: Build and Deploy
 
@@ -565,18 +565,6 @@ Over one year:
 ### Secrets Exposure in Logs
 **Problem**: Running command that prints `${{ secrets.API_KEY }}`
 **Solution**: Claude consistently masks secrets; Copilot learns from context.
-
-## Conclusion
-
-For GitHub Actions workflows:
-
-- **Maximum quality**: Claude + ChatGPT for design, Copilot for quick iteration
-- **Speed**: GitHub Copilot or Tabnine for IDE suggestions
-- **Learning**: ChatGPT for explanations, Cursor for interactive debugging
-- **Privacy**: Tabnine with local models
-
-Always validate workflows with `act` (local testing) before merging to main branch. The cost of a broken deployment far exceeds the time spent reviewing AI-generated workflows.
-
 
 ## Related Articles
 

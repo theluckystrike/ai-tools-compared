@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /how-to-use-ai-to-help-qa-engineers-create-test-environment-p/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]
@@ -88,7 +88,7 @@ Not all AI tools handle technical environment documentation equally well. Differ
 | Tool | Best For | Limitations |
 |------|----------|-------------|
 | GitHub Copilot | Generating inline scripts and shell commands | Limited long-form document generation |
-| ChatGPT / GPT-4 | Comprehensive checklist generation with explanations | No codebase awareness |
+| ChatGPT / GPT-4 | checklist generation with explanations | No codebase awareness |
 | Cursor AI | Checklist tied directly to your existing repo structure | Requires opened project context |
 | Claude | Structured YAML/JSON output from prose descriptions | May hallucinate specific CLI flags |
 | Gemini | Multi-modal inputs (diagrams, architecture screenshots) | Less precise on obscure infra tools |

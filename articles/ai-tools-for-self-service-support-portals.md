@@ -30,18 +30,6 @@ Traditional support portals rely on users searching through documentation or sub
 For developers, the challenge lies in selecting and integrating the right AI components. This article examines practical approaches using conversational AI, semantic search, and automated classification.
 
 
-Before selecting tools, it helps to understand where AI delivers the most impact in a support portal context:
-
-
-| Use Case | AI Approach | Typical Deflection Rate |
-|---|---|---|
-| FAQ and how-to queries | RAG chatbot | 40-60% |
-| Ticket classification | Zero-shot or fine-tuned classifiers | 85-95% |
-| Knowledge base search | Semantic/hybrid search | Improves CSAT 15-25% |
-| Escalation detection | Sentiment + rule engine | Reduces escalation time 30% |
-| Proactive suggestions | Recommendation engine | 20-35% ticket deflection |
-
-
 ## Implementing Conversational AI
 
 
@@ -172,44 +160,7 @@ class SemanticSearch:
 ```
 
 
-For production systems, consider dense embeddings from models like sentence-transformers for better semantic understanding, combined with traditional keyword search in a hybrid approach. A hybrid retriever applies BM25 for exact keyword matching and dense vector search for semantic similarity, then merges results using Reciprocal Rank Fusion before passing context to the LLM:
-
-
-```python
-from rank_bm25 import BM25Okapi
-from sentence_transformers import SentenceTransformer
-import numpy as np
-
-class HybridRetriever:
-    def __init__(self, articles):
-        self.articles = articles
-        self.model = SentenceTransformer("all-MiniLM-L6-v2")
-
-        # BM25 index
-        tokenized = [a["content"].split() for a in articles]
-        self.bm25 = BM25Okapi(tokenized)
-
-        # Dense index
-        self.embeddings = self.model.encode(
-            [a["content"] for a in articles],
-            normalize_embeddings=True
-        )
-
-    def retrieve(self, query, top_k=5, alpha=0.5):
-        # BM25 scores
-        bm25_scores = self.bm25.get_scores(query.split())
-
-        # Dense scores
-        query_emb = self.model.encode([query], normalize_embeddings=True)
-        dense_scores = (query_emb @ self.embeddings.T)[0]
-
-        # Combine
-        combined = alpha * dense_scores + (1 - alpha) * (
-            bm25_scores / (bm25_scores.max() + 1e-8)
-        )
-        top_idx = np.argsort(combined)[-top_k:][::-1]
-        return [self.articles[i] for i in top_idx]
-```
+For production systems, consider dense embeddings from models like sentence-transformers for better semantic understanding, combined with traditional keyword search in a hybrid approach.
 
 
 ## Automated Ticket Classification
@@ -335,27 +286,6 @@ def should_escalate(self, conversation_history, user_feedback):
 ```
 
 
-When escalating, pass the full conversation context to the human agent so they don't start from scratch. Attach the session ID, conversation history, the AI's last attempted resolution, and any detected frustration signals so the agent can pick up immediately with full context.
-
-
-## Choosing the Right AI Stack
-
-
-The choice of underlying tools depends on your team's existing infrastructure, latency requirements, and data sensitivity constraints. Here is a comparison of common options for each layer:
-
-
-| Layer | Open Source Options | Managed SaaS Options | Trade-offs |
-|---|---|---|---|
-| LLM | Llama 3, Mistral | OpenAI GPT-4o, Anthropic Claude | Cost vs. control |
-| Vector DB | Qdrant, Weaviate, pgvector | Pinecone, Weaviate Cloud | Ops burden vs. scale |
-| Embedding model | sentence-transformers | OpenAI text-embedding-3 | Latency vs. quality |
-| Classification | Hugging Face BART | Azure Cognitive Services | Privacy vs. ease |
-| Orchestration | LangChain, LlamaIndex | Flowise, Langflow | Flexibility vs. speed |
-
-
-For organizations with strict data privacy requirements, running all components on-premises using open-source models avoids sending customer support data to external APIs. The performance gap between self-hosted open models and frontier models has narrowed significantly in 2025, making this approach viable for most support use cases.
-
-
 ## Practical Considerations
 
 
@@ -368,10 +298,10 @@ Several factors affect AI implementation success in support portals:
 **Latency impacts user experience.** Aim for response times under two seconds. Cache frequent queries and pre-compute embeddings for common searches to improve performance.
 
 
-**Monitoring is essential.** Track resolution rates, escalation frequency, and user satisfaction scores. These metrics reveal whether AI tools are actually improving support. Set up dashboards that show the percentage of queries resolved without human intervention, the average number of turns per session, and the frequency of negative feedback signals like "that's not helpful."
+**Monitoring is essential.** Track resolution rates, escalation frequency, and user satisfaction scores. These metrics reveal whether AI tools are actually improving support.
 
 
-**Transparency builds trust.** When AI provides answers, users should understand they are interacting with an automated system. Clearly indicate when information comes from AI versus human-verified documentation. A simple badge or footer note is enough—users appreciate honesty about automation and tend to rate AI-assisted answers more favorably when they know what they are interacting with.
+**Transparency builds trust.** When AI provides answers, users should understand they are interacting with an automated system. Clearly indicate when information comes from AI versus human-verified documentation.
 
 
 ## Related Articles

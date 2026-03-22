@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Automated Infrastructure Drift Detection and"
+title: "AI Tools for Automated Infrastructure Drift Detection"
 description: "Implement AI drift detection by continuously comparing actual resource state against desired state defined in IaC, then use machine learning to distinguish"
 date: 2026-03-16
 last_modified_at: 2026-03-16

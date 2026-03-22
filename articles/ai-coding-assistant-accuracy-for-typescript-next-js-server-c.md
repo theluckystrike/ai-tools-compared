@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Coding Assistant Accuracy for Typescript Next Js Server C"
+title: "AI Coding Assistant Accuracy for Typescript Next Js Server"
 description: "A practical evaluation of AI coding assistants for TypeScript Next.js Server Components, with accuracy benchmarks and code examples for developers in 2026"
 date: 2026-03-16
 last_modified_at: 2026-03-16

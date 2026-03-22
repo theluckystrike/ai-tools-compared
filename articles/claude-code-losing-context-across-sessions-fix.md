@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "Claude Code Losing Context Across Sessions Fix"
+title: "Claude Code Losing Context Across Sessions"
 description: "Troubleshooting guide for Claude Code losing context between sessions. Step-by-step fixes for developers and power users"
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /claude-code-losing-context-across-sessions-fix/
 reviewed: true
-score: 8
+score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
@@ -328,7 +328,7 @@ claude --context .claude/context.md "Read the context file and confirm you under
 ```
 
 
-This workflow takes under two minutes and eliminates virtually all context loss pain.
+This workflow takes under two minutes and eliminates nearly all context loss pain.
 
 
 ## Preventing Future Context Loss

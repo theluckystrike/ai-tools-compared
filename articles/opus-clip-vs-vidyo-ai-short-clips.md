@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Opus Clip vs Vidyo AI Short Clips"
+title: "Opus Clip vs Vidyo AI Short"
 description: "A practical comparison of Opus Clip and Vidyo AI for creating short video clips, with API access, automation capabilities, and workflow integration"
 date: 2026-03-15
 last_modified_at: 2026-03-15
@@ -298,9 +298,9 @@ Both tools continue evolving as the short-form video market grows. The choice ul
 
 ## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Comparisons Hub](/ai-tools-compared/comparisons-hub/)
+- [Best AI Coding Assistants Compared](/ai-tools-compared/)
+- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/)
+- [AI Tools Comparisons Hub](/ai-tools-compared/)
 - [Canva AI Video Editor vs CapCut AI Compared 2026](/ai-tools-compared/canva-ai-video-editor-vs-capcut-ai-compared-2026/)
 - [Podcastle vs Riverside: AI Podcast Recording Tools Compared](/ai-tools-compared/podcastle-vs-riverside-ai-podcast-recording/)
 - [Wondershare Filmora AI vs Final Cut Pro: A Technical Comparison for Power Users](/ai-tools-compared/wondershare-filmora-ai-vs-final-cut-pro/)

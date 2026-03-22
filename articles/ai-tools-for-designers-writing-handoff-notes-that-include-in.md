@@ -207,22 +207,100 @@ Complex interactions require careful AI prompting. When describing conditional s
 This level of detail comes from explicitly prompting for transition conditions and edge case handling.
 
 
-## Measuring Documentation Quality
+## Complete Component Documentation Example
 
+Here's how AI tools expand minimal design specs into comprehensive documentation:
+
+**Initial Design Note:**
+```
+Login form: email & password inputs, submit button, error message
+```
+
+**AI-Expanded Documentation:**
+```markdown
+# Login Form Component
+
+## States & Specifications
+
+### Default State
+- Container: White background, 8px border radius, shadow (0 2px 8px rgba(0,0,0,0.1))
+- Email input: 16px placeholder "Email address", 48px height
+- Password input: 16px placeholder "Password", 48px height
+- Submit button: Full width, blue-600 background, white text, 48px height
+- Error container: Hidden, 12px top margin, red-500 text
+
+### Focus State
+- Input border: 2px solid blue-600
+- Label text: Fades in above (12px, blue-600)
+- Transition: 150ms ease-out
+
+### Invalid Email State
+- Input border: 2px solid red-500
+- Error message: "Please enter a valid email"
+- Error color: red-500
+- Background: red-50 tint
+- Icon: Exclamation mark (16x16px, right side)
+
+### Disabled State (Submitting)
+- All inputs: opacity 60%, pointer-events none
+- Submit button: Spinner icon, text "Signing in..."
+- Background: Gray-100
+
+### Error State (Server Response)
+- Banner: Red-100 background, red-800 text
+- Error message: "Email or password incorrect"
+- Submit button: Returns to default
+- Animation: Slide down 200ms
+
+### Success State
+- Form fades out (200ms)
+- Checkmark in submit button
+- Fade to next screen (400ms)
+```
+
+## Advanced Template System
+
+Create reusable documentation patterns:
+
+```yaml
+# Component Specification Format (.component.yaml)
+name: "Form Input"
+category: "Forms"
+status: "stable"
+
+design_brief: "Text input field with validation support"
+
+required_states:
+  - default
+  - focus
+  - filled
+  - error
+  - disabled
+  - loading
+
+accessibility_requirements:
+  - WCAG 2.1 AA compliant
+  - Label association via htmlFor
+  - Error messages via aria-describedby
+  - Focus indicators 2px minimum
+
+ai_prompt: |
+  Generate comprehensive interaction state documentation.
+  Include: default, focus, hover, disabled, error, success states.
+  Add accessibility requirements for screen readers.
+  Format as developer-ready markdown.
+```
+
+## Measuring Documentation Quality
 
 Effective handoff notes reduce developer questions. Track these metrics to gauge improvement:
 
+- **Developer clarification requests** — Target: < 1 per component
+- **Implementation revision cycles** — Target: 1-2 (vs 3-4 without docs)
+- **Time to developer sign-off** — Target: < 2 hours
+- **Undocumented behavior bugs** — Target: 0
 
-- Developer clarification requests per component
-
-- Implementation revision cycles
-
-- Time from handoff to developer sign-off
-
-- Bug reports related to undocumented behaviors
-
-
-AI-assisted documentation should demonstrably reduce these friction points over time.
+AI-assisted documentation should demonstrably reduce these friction points over time. Run a pilot with 5 components to measure improvement before and after AI assistance.
 
 
 ## Related Articles

@@ -7,7 +7,7 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-tools-for-python-asyncio-concurrent-task-management-/
 reviewed: true
-score: 8
+score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
@@ -224,6 +224,149 @@ async def main():
 
 This pattern demonstrates proper queue-based concurrency that AI tools can help scaffold but require developer understanding to implement correctly.
 
+## Advanced Pattern: Task Groups with Error Aggregation
+
+Python 3.11+ TaskGroup provides structured concurrency with proper exception handling:
+
+```python
+import asyncio
+
+async def fetch_url(url: str, timeout: float = 5.0) -> str:
+    """Fetch URL with timeout"""
+    async def _fetch():
+        await asyncio.sleep(1)  # Simulate HTTP request
+        return f"Content from {url}"
+
+    try:
+        return await asyncio.wait_for(_fetch(), timeout=timeout)
+    except asyncio.TimeoutError:
+        raise TimeoutError(f"Failed to fetch {url}")
+
+async def process_urls(urls: list[str]) -> list[str]:
+    """Process multiple URLs with TaskGroup"""
+    results = []
+
+    try:
+        async with asyncio.TaskGroup() as tg:
+            tasks = [tg.create_task(fetch_url(url)) for url in urls]
+        results = [task.result() for task in tasks]
+
+    except ExceptionGroup as eg:
+        for exc in eg.exceptions:
+            if isinstance(exc, TimeoutError):
+                print(f"Timeout: {exc}")
+        # Partial results
+        results = [
+            task.result() for task in tasks
+            if task.done() and not task.cancelled()
+        ]
+
+    return results
+```
+
+## Common Asyncio Pitfalls and AI-Assisted Solutions
+
+**Pitfall 1: Blocking the Event Loop**
+
+```python
+# Bad (blocks event loop)
+async def bad_async_function():
+    result = time.sleep(1)  # BLOCKS!
+    return result
+
+# Good (async-aware)
+async def good_async_function():
+    await asyncio.sleep(1)  # Non-blocking
+    return "done"
+```
+
+Claude Code consistently avoids this pattern; Copilot sometimes suggests it without warning.
+
+**Pitfall 2: Race Conditions on Shared State**
+
+```python
+# Bad (race condition)
+counter = 0
+async def increment_bad():
+    global counter
+    temp = counter
+    await asyncio.sleep(0.001)  # Context switch opportunity
+    counter = temp + 1
+
+# Good (thread-safe)
+counter_lock = asyncio.Lock()
+async def increment_good():
+    async with counter_lock:
+        global counter
+        counter += 1  # Atomic within lock
+```
+
+When prompting about shared state, mention "race condition safe" explicitly. Claude Code proactively identifies these risks.
+
+## Real-World Example: Resilient API Client
+
+```python
+import asyncio
+import aiohttp
+from typing import Optional, List
+
+class ResilientAPIClient:
+    def __init__(self, base_url: str, max_retries: int = 3):
+        self.base_url = base_url
+        self.max_retries = max_retries
+        self.session: Optional[aiohttp.ClientSession] = None
+
+    async def __aenter__(self):
+        self.session = aiohttp.ClientSession()
+        return self
+
+    async def __aexit__(self, exc_type, exc_val, exc_tb):
+        if self.session:
+            await self.session.close()
+
+    async def fetch_with_retry(self, endpoint: str) -> Optional[str]:
+        """Fetch with exponential backoff"""
+        for attempt in range(self.max_retries):
+            try:
+                async with self.session.get(
+                    f"{self.base_url}/{endpoint}",
+                    timeout=aiohttp.ClientTimeout(total=10)
+                ) as response:
+                    if response.status == 200:
+                        return await response.text()
+                    elif response.status == 429:  # Rate limited
+                        wait_time = 2 ** attempt
+                        await asyncio.sleep(wait_time)
+                    else:
+                        raise Exception(f"HTTP {response.status}")
+            except asyncio.TimeoutError:
+                if attempt == self.max_retries - 1:
+                    raise
+                await asyncio.sleep(2 ** attempt)
+
+        return None
+
+    async def fetch_multiple(self, endpoints: List[str]) -> List[Optional[str]]:
+        """Fetch multiple endpoints concurrently"""
+        async with asyncio.TaskGroup() as tg:
+            tasks = [
+                tg.create_task(self.fetch_with_retry(ep))
+                for ep in endpoints
+            ]
+        return [task.result() for task in tasks]
+
+# Usage
+async def main():
+    async with ResilientAPIClient("https://api.example.com") as client:
+        results = await client.fetch_multiple([
+            "users/123",
+            "posts/456",
+            "comments/789"
+        ])
+        print(results)
+```
+
+Claude Code generates this pattern unprompted with proper error handling and TaskGroup usage. Cursor produces similar code that works but might use less idiomatic patterns without additional prompting.
 
 ## Related Articles
 

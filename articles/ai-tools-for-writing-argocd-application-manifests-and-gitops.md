@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Writing ArgoCD Application Manifests and Gitops"
+title: "AI Tools for Writing ArgoCD Application Manifests"
 description: "Explore how AI coding assistants help developers write ArgoCD application manifests, manage GitOps workflows, and automate Kubernetes deployments"
 date: 2026-03-16
 last_modified_at: 2026-03-16

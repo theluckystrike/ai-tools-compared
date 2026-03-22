@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Creating Automated Release Changelog from Conve"
+title: "AI Tools for Creating Automated Release Changelog"
 description: "Discover how AI tools transform conventional commit messages into polished release changelogs. Practical examples and implementation guide for developers"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -259,76 +259,6 @@ An AI tool transforms this into user-friendly release notes:
 The AI enhancement groups related changes, adds appropriate emojis, creates human-readable descriptions, and organizes information logically—all automatically.
 
 
-## Comparing Changelog Generation Approaches
-
-
-Different approaches offer different tradeoffs. Understanding the options helps you pick the right tool for your project size and team workflow.
-
-
-| Approach | Setup Effort | Output Quality | AI Capability | Cost |
-|----------|-------------|----------------|---------------|------|
-| Semantic Release (default) | Low | Good | None | Free |
-| Semantic Release + AI plugin | Medium | Excellent | Moderate | API costs |
-| Custom GitHub Action + LLM | High | Excellent | High | API costs |
-| Release Drafter | Low | Good | None | Free |
-| Changesets | Medium | Good | None | Free |
-| Copilot Workspace | Low | Excellent | High | Subscription |
-
-
-For open-source projects with public repos, Release Drafter paired with good commit discipline produces solid results without AI costs. For commercial projects where release communication directly affects customer perception, investing in an LLM-powered pipeline pays off through higher-quality notes.
-
-
-## Writing Commit Messages That Improve AI Output
-
-
-AI changelog tools produce better output when commit messages contain richer context. The difference between useful and poor AI output often starts at commit time.
-
-
-Poor commit: `fix: resolve crash`
-
-Good commit: `fix(checkout): resolve null pointer crash when cart is empty during payment`
-
-The good version tells the AI the affected component (`checkout`), the symptom (`null pointer crash`), and the condition (`empty cart during payment`). The resulting changelog entry becomes: "Fixed a crash that occurred when users attempted to check out with an empty cart" — something your users can actually understand.
-
-
-For breaking changes, use the `BREAKING CHANGE:` footer convention. AI tools recognize this and consistently surface breaking changes prominently in the generated changelog, regardless of where they appear in the commit list.
-
-
-```
-feat(api): change authentication endpoint
-
-BREAKING CHANGE: The /auth/login endpoint now requires a JSON body
-instead of form-encoded data. Update all API clients accordingly.
-```
-
-
-AI tools convert this into a prominently placed breaking change notice at the top of the release notes, not buried in the features section.
-
-
-## Handling Multi-Repository Projects
-
-
-Monorepos and multi-package repositories present unique changelog challenges. A single release may span dozens of packages with different version histories. AI tools add value here by understanding package boundaries and generating package-specific changelogs from a unified commit history.
-
-
-Changesets is the standard tool for this workflow. When combined with AI summarization, each package gets a tailored changelog that only includes relevant commits:
-
-
-```bash
-# Generate changesets for modified packages
-npx changeset
-
-# Version and changelog generation
-npx changeset version
-
-# AI enhancement step - post-process each package's CHANGELOG.md
-python scripts/enhance_changelogs.py --packages-dir packages/
-```
-
-
-The AI enhancement script reads each generated `CHANGELOG.md`, groups related changes, rewrites technical commit summaries into user-facing language, and outputs polished release notes per package.
-
-
 ## Best Practices for Quality Output
 
 
@@ -342,9 +272,6 @@ Review generated changelogs before publishing. AI tools produce high-quality out
 
 
 Maintain a changelog category strategy. Decide whether you want detailed technical changelogs for developers or simplified user-facing release notes, and configure your AI prompts accordingly.
-
-
-Store your AI prompt as a file in version control, not as an inline string in your workflow. Iterating on the prompt is the primary way to improve output quality, and version-controlling it lets you track what changed when output quality shifts.
 
 
 ## Related Articles

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How Accurate Are AI Tools at Generating TypeScript Zod Schem"
+title: "How Accurate Are AI Tools at Generating TypeScript Zod"
 description: "A practical test of leading AI coding tools generating TypeScript Zod validation schemas, with real code examples and accuracy comparisons"
 date: 2026-03-16
 last_modified_at: 2026-03-16

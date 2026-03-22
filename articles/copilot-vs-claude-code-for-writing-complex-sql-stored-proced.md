@@ -27,6 +27,18 @@ Stored procedures differ from regular SQL queries in several ways. They incorpor
 The best AI assistant for this task understands database-specific syntax, knows how to structure procedural SQL, and can generate efficient queries that avoid common pitfalls like N+1 problems or unnecessary table scans.
 
 
+
+## Quick Comparison
+
+| Feature | Copilot | Claude Code |
+|---|---|---|
+| AI Model | See specs | See specs |
+| Code Completion | Supported | Supported |
+| Context Window | See documentation | See documentation |
+| IDE Support | Multiple IDEs | Multiple IDEs |
+| Pricing | See current pricing | See current pricing |
+| Language Support | Multi-language | Multi-language |
+
 ## GitHub Copilot for Stored Procedure Development
 
 

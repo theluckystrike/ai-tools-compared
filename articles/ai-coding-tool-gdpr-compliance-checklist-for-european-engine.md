@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "AI Coding Tool GDPR Compliance Checklist for European Engine"
+title: "AI Coding Tool GDPR Compliance Checklist for European"
 description: "European engineering teams face unique challenges when adopting AI coding assistants. The General Data Protection Regulation (GDPR) imposes strict requirements"
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /ai-coding-tool-gdpr-compliance-checklist-for-european-engine/
 reviewed: true
-score: 8
+score: 9
 categories: [enterprise]
 intent-checked: true
 voice-checked: true

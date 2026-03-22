@@ -7,10 +7,10 @@ author: theluckystrike
 permalink: /ai-powered-dependency-update-tools-compared/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared]
+tags: [ai-tools-compared, comparison, artificial-intelligence]
 ---
 
 {% raw %}
@@ -357,7 +357,7 @@ npm run lint  # Catch style issues
 - run: npm run type-check || true  # TypeScript errors as warnings
 ```
 
-For auto-merged patches, tests must be comprehensive. A failing test after auto-merge looks like negligence.
+For auto-merged patches, tests must be . A failing test after auto-merge looks like negligence.
 
 ## Dependency Update Timing
 

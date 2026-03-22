@@ -326,7 +326,3 @@ OTEL_TRACES_SAMPLER_ARG=0.1
 # development: 100% sampling to catch all issues
 OTEL_TRACES_SAMPLER=always_on
 ```
-
-## Conclusion
-
-**Use Claude** for designing your observability strategy and generating context propagation patterns across multiple services. **Use Copilot** for routine span and metric completion while actively coding. **Use ChatGPT** when traces break and you need to debug context propagation issues. The combination gives you architectural rigor upfront, fast development during implementation, and effective debugging when things go wrong.

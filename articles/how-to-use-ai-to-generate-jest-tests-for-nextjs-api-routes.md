@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Generate Jest Tests for Next.js API Routes"
+title: "How to Use AI to Generate Jest Tests for Next.js API"
 description: "A practical guide for developers on using AI tools to automatically generate Jest tests for Next.js API routes, with code examples and best practices"
 date: 2026-03-16
 last_modified_at: 2026-03-16

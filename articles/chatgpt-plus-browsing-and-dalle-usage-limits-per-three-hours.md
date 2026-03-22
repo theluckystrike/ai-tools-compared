@@ -9,7 +9,7 @@ permalink: /chatgpt-plus-browsing-and-dalle-usage-limits-per-three-hours/
 categories: [guides]
 tags: [ai-tools-compared, tools, chatgpt]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
@@ -297,7 +297,7 @@ Understanding these limits prevents workflow disruptions during critical develop
 
 **Can I check how many images I have remaining?** ChatGPT displays an approximate remaining count near the image generation interface, but the number is not always updated in real time. Treat it as a rough indicator rather than a precise counter.
 
-**Does browsing one page versus ten pages in a single request use the same limit?** Multi-page browsing in a single turn generally uses fewer limit units than ten separate browsing requests. Batch your research into fewer, more comprehensive queries where possible.
+**Does browsing one page versus ten pages in a single request use the same limit?** Multi-page browsing in a single turn generally uses fewer limit units than ten separate browsing requests. Batch your research into fewer, more queries where possible.
 
 **What happens if I hit the limit mid-project?** The feature grays out and shows a countdown to reset. Your conversation history remains intact; only the ability to invoke browsing or DALL-E is paused until the window refreshes.
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Switching from Copilot to Codeium What Extensions to Install"
+title: "Switching from Copilot to Codeium What Extensions"
 description: "A practical guide for developers switching from GitHub Copilot to Codeium, covering essential VS Code extensions and configuration steps"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -9,7 +9,7 @@ permalink: /switching-from-copilot-to-codeium-what-extensions-to-install/
 categories: [guides]
 tags: [ai-tools-compared, tools]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

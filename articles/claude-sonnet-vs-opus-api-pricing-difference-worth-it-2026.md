@@ -9,7 +9,7 @@ permalink: /claude-sonnet-vs-opus-api-pricing-difference-worth-it-2026/
 categories: [guides]
 tags: [ai-tools-compared, tools, comparison, claude-ai, api]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

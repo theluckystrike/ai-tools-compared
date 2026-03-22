@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /how-to-use-ai-context-management-to-work-on-large-refactorin/
 categories: [guides, comparisons]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]

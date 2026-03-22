@@ -3,6 +3,9 @@ layout: default
 title: "AI Code Review Tools — Comparisons & Guides"
 description: "Compare the best AI-powered code review tools including CodeRabbit, Sourcery, PR-Agent, and Codacy. Detailed setup guides, accuracy benchmarks, and pricing."
 permalink: /topics/ai-code-review-tools/
+intent-checked: true
+voice-checked: true
+date: 2026-03-21
 ---
 
 # AI Code Review Tools — Comparisons & Guides

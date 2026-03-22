@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Autocomplete Accuracy for Boilerplate Code vs Complex Log"
+title: "AI Autocomplete Accuracy for Boilerplate Code vs Complex"
 description: "A practical comparison of AI autocomplete accuracy for boilerplate code versus complex logic. Real code examples and insights for developers"
 date: 2026-03-16
 last_modified_at: 2026-03-16

@@ -30,6 +30,18 @@ Adobe Firefly integrates with Adobe's broader Creative Cloud suite, positioning 
 For developers building design automation pipelines, both platforms offer REST APIs, but the integration patterns differ. Canva's API emphasizes quick-start templates and automated content generation, while Adobe's API provides deeper access to professional-grade manipulation functions.
 
 
+
+## Quick Comparison
+
+| Feature | Canva Ai | Adobe Firefly |
+|---|---|---|
+| Code Completion | Supported | Supported |
+| IDE Support | Multiple IDEs | Multiple IDEs |
+| Pricing | $13/month | $13/month |
+| Language Support | Multi-language | Multi-language |
+| Terminal Integration | Available | Available |
+| Privacy | Privacy-focused | Privacy-focused |
+
 ## API Capabilities and Code Integration
 
 

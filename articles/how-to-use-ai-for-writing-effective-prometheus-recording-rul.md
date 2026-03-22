@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI for Writing Effective Prometheus Recording Rul"
+title: "How to Use AI for Writing Effective Prometheus Recording"
 description: "A practical guide for developers on using AI tools to create efficient Prometheus recording rules that improve query performance and monitoring"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -9,7 +9,7 @@ permalink: /how-to-use-ai-for-writing-effective-prometheus-recording-rul/
 categories: [guides]
 tags: [ai-tools-compared, prometheus, monitoring, ai, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
@@ -248,7 +248,7 @@ This ensures all developers use consistent, readable rule names that communicate
 
 ## Testing Recording Rules in Staging
 
-Before deploying to production, test recording rules in a staging Prometheus instance. AI can help you construct comprehensive test cases:
+Before deploying to production, test recording rules in a staging Prometheus instance. AI can help you construct test cases:
 
 > "Help me create a test plan for these recording rules. Suggest test queries that verify:
 > 1. Results match the source metric calculations

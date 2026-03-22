@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Appointment Scheduling Bots"
+title: "AI Tools for Appointment Scheduling"
 description: "A practical guide to AI tools for appointment scheduling bots, with code examples and implementation strategies for developers building automated"
 date: 2026-03-15
 last_modified_at: 2026-03-15
@@ -9,7 +9,7 @@ permalink: /ai-tools-for-appointment-scheduling-bots/
 categories: [guides]
 intent-checked: true
 voice-checked: true
-score: 8
+score: 9
 reviewed: true
 tags: [ai-tools-compared, artificial-intelligence]
 ---

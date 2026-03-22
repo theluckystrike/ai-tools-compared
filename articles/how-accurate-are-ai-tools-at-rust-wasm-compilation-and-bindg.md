@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How Accurate Are AI Tools at Rust WASM Compilation and Bindg"
+title: "How Accurate Are AI Tools at Rust WASM Compilation"
 description: "A practical analysis of how well AI coding assistants handle Rust WASM compilation and bindgen code generation, with real examples and accuracy"
 date: 2026-03-16
 last_modified_at: 2026-03-16

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Assistant for Designers Generating Accessibility Aud"
+title: "Best AI Assistant for Designers Generating Accessibility"
 description: "A technical guide for developers and power users comparing AI tools that analyze design screenshots and generate accessibility audit reports"
 date: 2026-03-16
 last_modified_at: 2026-03-16

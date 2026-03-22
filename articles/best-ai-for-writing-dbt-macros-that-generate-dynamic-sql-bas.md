@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI for Writing dbt Macros That Generate Dynamic SQL Bas"
+title: "Best AI for Writing dbt Macros That Generate Dynamic SQL"
 description: "Writing dbt macros that generate dynamic SQL based on configuration requires understanding both Jinja2 templating and SQL generation patterns. The best AI"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -9,7 +9,7 @@ permalink: /best-ai-for-writing-dbt-macros-that-generate-dynamic-sql-bas/
 categories: [guides]
 tags: [ai-tools-compared, tools, best-of, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

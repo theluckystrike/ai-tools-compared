@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Build an AI Code Review Bot"
+title: "How to Build an AI Code Review"
 description: "Build a GitHub Actions bot that runs AI code review on pull requests using Claude or GPT-4, posts inline comments, and enforces custom review rules"
 date: 2026-03-21
 author: theluckystrike
@@ -10,7 +10,7 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared]
+tags: [ai-tools-compared, artificial-intelligence]
 ---
 
 {% raw %}
@@ -220,11 +220,84 @@ With Claude Haiku:
 
 Upgrade to Sonnet for security-critical repositories where false negatives are expensive.
 
+## Handling Large PRs
+
+Large PRs overwhelm AI models and produce low-quality reviews. Split them into manageable chunks:
+
+```javascript
+function splitDiffBySize(files, maxTokens = 4000) {
+  const batches = [];
+  let currentBatch = [];
+  let currentTokens = 0;
+  for (const file of files) {
+    const tokens = file.diff.length / 4;
+    if (currentTokens + tokens > maxTokens && currentBatch.length > 0) {
+      batches.push(currentBatch);
+      currentBatch = [];
+      currentTokens = 0;
+    }
+    currentBatch.push(file);
+    currentTokens += tokens;
+  }
+  if (currentBatch.length > 0) batches.push(currentBatch);
+  return batches;
+}
+```
+
+For PRs exceeding 2000 lines, consider reviewing only the most critical files (auth, payment, database) and skipping generated code.
+
+## Security-Focused Review Rules
+
+For repositories handling sensitive data, add security-specific rules:
+
+```javascript
+const SECURITY_RULES = `Additional security checks:
+- Flag any use of eval(), new Function(), or innerHTML with user input
+- Flag SQL queries built with string concatenation
+- Flag API keys, tokens, or passwords in code (not .env files)
+- Flag missing CSRF protection on state-changing endpoints
+- Flag missing rate limiting on authentication endpoints
+- Flag use of Math.random() for security-sensitive operations
+- Flag missing input validation on file upload endpoints`;
+```
+
+## Measuring Review Quality
+
+Track how often developers accept AI suggestions to improve your review rules:
+
+| Metric | Target | How to Measure |
+|--------|--------|---------------|
+| True positive rate | >80% | Comments that led to code changes |
+| False positive rate | <15% | Comments dismissed without changes |
+| Coverage | >90% | Files with issues that AI caught |
+| Latency | <60s | Time from PR open to review posted |
+| Developer satisfaction | >7/10 | Quarterly survey |
+
+Log every review outcome and periodically retune your prompts based on which comments get accepted versus dismissed.
+
+## Pros and Cons of AI Code Review Bots
+
+**Advantages:**
+- Reviews every PR consistently, no reviewer fatigue
+- Catches security patterns human reviewers often miss
+- Available instantly, no waiting for reviewer availability
+- Cost per review is negligible ($0.002 with Haiku)
+
+**Limitations:**
+- Cannot understand business context or product requirements
+- May flag intentional patterns as issues
+- Cannot review architectural decisions or system design
+- Requires periodic prompt tuning as your codebase evolves
+
+The best approach combines AI review for mechanical checks (security, error handling, performance) with human review for architecture, readability, and business logic.
+
 ## Related Reading
 
 - [AI Code Review Automation Tools Comparison](/ai-tools-compared/ai-code-review-automation-tools-comparison/)
 - [How to Build an AI-Powered Code Linter](/ai-tools-compared/how-to-build-ai-powered-code-linter/)
 - [AI Tools for Automated Changelog Generation 2026](/ai-tools-compared/ai-tools-for-automated-changelog-generation-2026/)
+- [Remote Developer Code Review Workflow Tools for Teams](https://theluckystrike.github.io/remote-work-tools/remote-developer-code-review-workflow-tools-for-teams-without-synchronous-overlap/)
+- [Async Code Review Process Without Zoom Calls Step by Step](https://theluckystrike.github.io/remote-work-tools/async-code-review-process-without-zoom-calls-step-by-step/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

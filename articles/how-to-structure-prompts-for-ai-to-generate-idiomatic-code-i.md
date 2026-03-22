@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /how-to-structure-prompts-for-ai-to-generate-idiomatic-code-i/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]
@@ -182,7 +182,7 @@ func readFile(path string) (string, error) {
 ### TypeScript
 
 
-TypeScript idioms emphasize strict typing, discriminated unions, and leveraging the type system for correctness rather than bolting types onto JavaScript patterns.
+TypeScript idioms emphasize strict typing, discriminated unions, and using the type system for correctness rather than bolting types onto JavaScript patterns.
 
 
 **Weak prompt:**
@@ -379,7 +379,7 @@ Review generated code for language-specific patterns:
 
 - Go: Are errors handled explicitly with meaningful messages?
 
-- TypeScript: Does the code leverage the type system rather than using `any` as an escape hatch?
+- TypeScript: Does the code use the type system rather than using `any` as an escape hatch?
 
 
 If the code feels foreign to the language, refine your prompt with more specific constraints. Keep a personal library of prompts that reliably produce idiomatic output for the languages you use most—this prompt library becomes a force multiplier over time, letting you generate high-quality code faster than writing it manually.

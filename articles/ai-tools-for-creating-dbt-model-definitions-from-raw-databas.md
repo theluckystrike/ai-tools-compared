@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Creating dbt Model Definitions from Raw Databas"
+title: "AI Tools for Creating dbt Model Definitions from Raw"
 description: "Learn how AI tools can automatically generate dbt model definitions from existing database table schemas, accelerating your data transformation pipeline"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -215,13 +215,113 @@ Integrate AI generation into your development process:
 This workflow reduces model creation time significantly while maintaining quality through human review.
 
 
-## Limitations to Consider
+## Advanced dbt Generation Patterns
 
+### Generating Incremental Models with AI
+
+Incremental models require careful implementation. Provide explicit guidance to AI tools:
+
+```jinja
+-- Prompt: Generate incremental model with merge strategy
+-- Source: raw_events, Key: event_id, Lookback: 7 days
+
+{{ config(
+    materialized='incremental',
+    unique_key='event_id',
+    on_schema_change='ignore',
+    incremental_strategy='merge'
+) }}
+
+SELECT
+    event_id,
+    event_timestamp,
+    event_type,
+    user_id,
+    CURRENT_TIMESTAMP as dbt_load_date
+FROM {{ source('raw_data', 'raw_events') }}
+WHERE 1=1
+    {% if execute %}
+        {% if run_started_at %}
+            AND event_timestamp >= DATEADD(day, -7, '{{ run_started_at }}')
+        {% endif %}
+    {% endif %}
+    {% if is_incremental() %}
+        AND event_timestamp > (select max(event_timestamp) from {{ this }})
+    {% endif %}
+```
+
+### AI Tool Comparison for dbt Generation
+
+| Aspect | Claude 3.7 | Copilot | Cursor | Gemini |
+|--------|-----------|---------|--------|--------|
+| Source YAML generation | Excellent | Good | Good | Fair |
+| Model SQL quality | Excellent | Good | Good | Fair |
+| Test generation | Excellent | Fair | Good | Fair |
+| Materialization choice | Excellent | Fair | Fair | Fair |
+| Incremental logic | Very Good | Basic | Good | Basic |
+| Documentation | Excellent | Fair | Good | Fair |
+
+### Multi-Table Relationships
+
+For schemas with complex relationships, guide AI generation with explicit structure:
+
+```yaml
+version: 2
+
+models:
+  - name: fct_orders
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_customers')
+              field: customer_id
+      - name: product_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_products')
+              field: product_id
+```
+
+## Real-World Workflow Integration
+
+Combine AI generation with validation:
+
+```bash
+#!/bin/bash
+# Step 1: Export schema
+snowsql -c prod << EOF > /tmp/schema.sql
+SELECT table_name, column_name, data_type
+FROM information_schema.columns
+WHERE table_schema = 'RAW'
+ORDER BY table_name, ordinal_position;
+EOF
+
+# Step 2: Feed to AI tool with prompt
+# Generate dbt models for these tables
+
+# Step 3: Review generated files
+# - Check materialization choices
+# - Verify test coverage
+# - Validate business logic
+
+# Step 4: Test and commit
+dbt run --select path:models/
+dbt test
+git add models/ && git commit -m "Add dbt models [Generated + reviewed]"
+```
+
+## Limitations to Consider
 
 AI tools have constraints. They generate generic transformations and may miss warehouse-specific optimizations. They assume correct data types and won't catch logical errors in your business rules. They also struggle with complex joins, incremental models, and advanced dbt features without explicit guidance.
 
-
-For simple staging models, AI generation works well. For complex business logic, use AI as a starting point and build manually from there.
+For simple staging models, AI generation works well. For complex business logic, use AI as a starting point and build manually from there. The most effective approach combines AI scaffolding with human domain expertise for transformations that drive business value.
 
 
 ## Related Articles

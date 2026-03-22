@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use Copilot for Writing CI CD Pipelines in GitHub Act"
+title: "How to Use Copilot for Writing CI CD Pipelines in GitHub"
 description: "A practical guide for developers on using GitHub Copilot to write and optimize CI CD pipelines in GitHub Actions with real examples and code snippets"
 date: 2026-03-16
 last_modified_at: 2026-03-16

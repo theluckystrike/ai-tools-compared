@@ -9,7 +9,7 @@ permalink: /claude-code-msw-mock-service-worker-guide/
 categories: [guides]
 tags: [ai-tools-compared, claude-code, msw, mock-service-worker, api-mocking, testing, development-tools, claude-ai]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

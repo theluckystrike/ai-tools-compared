@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Switching from Copilot Enterprise to Cursor Business Migrati"
+title: "Switching from Copilot Enterprise to Cursor Business"
 description: "Moving your development team from GitHub Copilot Enterprise to Cursor Business requires more than just installing a new extension. This checklist covers the"
 date: 2026-03-16
 last_modified_at: 2026-03-16

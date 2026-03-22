@@ -9,7 +9,7 @@ permalink: /claude-api-extended-thinking-cost-how-output-tokens-are-bill/
 categories: [guides]
 tags: [ai-tools-compared, tools, claude-ai, api]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Diagnose Kubernetes Pod Crashloopbackoff Fr"
+title: "How to Use AI to Diagnose Kubernetes Pod Crashloopbackoff"
 description: "Learn practical techniques for using AI tools to analyze container logs and identify the root causes of Kubernetes pod CrashLoopBackOff errors"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -252,6 +252,50 @@ Validate suggestions against your specific environment. AI recommendations are b
 
 Document solutions. Build an internal knowledge base of CrashLoopBackOff resolutions to accelerate future debugging.
 
+## Comparing AI Tools for Kubernetes Debugging
+
+| Tool | Context Window | K8s Knowledge | Cost per Analysis |
+|------|---------------|---------------|-------------------|
+| Claude Sonnet | 200K tokens | Strong | ~$0.01 |
+| GPT-4o | 128K tokens | Strong | ~$0.01 |
+| Claude Haiku | 200K tokens | Good | ~$0.001 |
+| Gemini 1.5 Pro | 2M tokens | Good | ~$0.005 |
+
+For large log files, Gemini or Claude offer the largest context windows. For quick analysis, Claude Haiku provides the best cost-to-quality ratio.
+
+## Building a Kubectl Plugin for AI Analysis
+
+Create a kubectl plugin that pipes pod diagnostics directly to an AI:
+
+```bash
+#!/bin/bash
+# kubectl-ai-debug
+POD=$1
+NAMESPACE=${2:-default}
+
+echo "Collecting diagnostics for $POD in namespace $NAMESPACE..."
+
+DIAGNOSTICS=$(cat <<DIAG
+=== Pod Description ===
+$(kubectl describe pod $POD -n $NAMESPACE)
+
+=== Current Logs ===
+$(kubectl logs $POD -n $NAMESPACE --tail=100 2>/dev/null)
+
+=== Previous Container Logs ===
+$(kubectl logs $POD -n $NAMESPACE --previous --tail=100 2>/dev/null)
+
+=== Pod Events ===
+$(kubectl get events -n $NAMESPACE --field-selector involvedObject.name=$POD --sort-by=.lastTimestamp)
+DIAG
+)
+
+echo "$DIAGNOSTICS" | pbcopy 2>/dev/null || echo "$DIAGNOSTICS" | xclip -selection clipboard 2>/dev/null
+echo "Diagnostics copied to clipboard. Paste into your AI assistant."
+echo "Total size: $(echo "$DIAGNOSTICS" | wc -c) bytes"
+```
+
+Usage: `kubectl ai-debug my-failing-pod production`
 
 ## Related Articles
 

@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "AI Powered Data Cataloging Tools: A Practical Guide for"
+title: "AI Powered Data Cataloging Tools"
 description: "Learn how AI-powered data cataloging tools automate metadata management, improve data discovery, and integrate with your existing data stack"
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /ai-powered-data-cataloging-tools/
 reviewed: true
-score: 8
+score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true

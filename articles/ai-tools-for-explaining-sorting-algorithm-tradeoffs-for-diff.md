@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Explaining Sorting Algorithm Tradeoffs for Diff"
+title: "AI Tools for Explaining Sorting Algorithm Tradeoffs"
 description: "A practical guide to using AI tools that help developers understand sorting algorithm tradeoffs based on data characteristics like size, distribution"
 date: 2026-03-16
 last_modified_at: 2026-03-16

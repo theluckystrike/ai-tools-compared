@@ -9,7 +9,7 @@ permalink: /ai-tools-for-converting-code-comments-into-developer-facing-/
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
@@ -458,7 +458,7 @@ def check_doc_quality(markdown_file: str) -> dict:
 ## Related Articles
 
 - [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)
-- [AI Tools for Converting Figma Designs to Code 2026](/ai-tools-compared/ai-tools-for-converting-figma-designs-to-code-2026/)
+- [AI Tools for Converting Figma Designs to Code 2026](/ai-tools-compared/articles/ai-tools-for-converting-figma-designs-to-code-2026/)
 - [How to Use AI to Write GitHub Actions Bot Comments for First](/ai-tools-compared/how-to-use-ai-to-write-github-actions-bot-comments-for-first/)
 - [Claude Code Developer Portal Setup Guide](/ai-tools-compared/claude-code-developer-portal-setup-guide/)
 - [Gemini Code Assist Enterprise Pricing Per Developer](/ai-tools-compared/gemini-code-assist-enterprise-pricing-per-developer-breakdown-2026/)

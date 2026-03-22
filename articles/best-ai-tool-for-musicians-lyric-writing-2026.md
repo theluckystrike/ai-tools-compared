@@ -224,6 +224,168 @@ Write in second person and use concrete imagery over abstract statements.
 Avoid cliches like "heart on fire" or "tears in rain."
 ```
 
+## Real-World Lyric Generation Examples
+
+**Example 1: Pop Song About Regret**
+
+Prompt to Sudowrite:
+```
+Genre: Synth-pop
+Mood: Melancholic but hopeful
+Tempo: Driving 4/4, 120 BPM
+Theme: Regret over a past decision, wanting to go back and change it
+Reference artists: The 1975, Tove Lo
+Structure: Verse (8 lines) → Pre-Chorus (4) → Chorus (6) → Verse (8)
+Rhyme: AABB for verses, tight chorus rhymes
+```
+
+Generated output (excerpt):
+```
+Verse:
+I could trace it back to Tuesday night
+When everything still felt right
+You asked me what I really wanted
+But I was too scared to answer
+
+Pre-Chorus:
+If I could just rewind
+Leave the fear behind
+
+Chorus:
+I'd tell you the truth you deserve
+Every word that I never had nerve
+'Cause time doesn't care about intentions
+Only the moments we mention
+```
+
+**Example 2: Hip-Hop Verse with Storytelling**
+
+Prompt to Claude:
+```
+Genre: Hip-hop/trap
+Mood: Introspective storytelling
+Theme: Coming from struggle, navigating success
+Rhyme scheme: Multi-syllabic internal rhymes
+Flow: Fast-paced, conversational
+Structure: 16-bar verse with natural rhythm breaks
+
+Include:
+- Specific sensory details from struggle (sounds, sights)
+- Metaphors comparing past to present
+- Honest vulnerability mixed with confidence
+- Natural conversational flow over beat cadence
+```
+
+Generated output:
+```
+Started from the basement, now I'm racing through the pavement
+Made it out the matrix, now I'm breaking all the statements
+Every scar's a statement, every choice a consecration
+Every loss a lesson that I'm teaching to the nation
+Mama always told me that the struggle builds the soul
+Now I'm in control, no more playing from a hole
+Can't forget the faces of the ones who doubted me
+Now they see the crown and wanna know the recipe
+```
+
+## Genre-Specific Writing Techniques
+
+**Country Music AI Prompts:**
+Focus on:
+- Storytelling narrative (who, what, where, when, why)
+- Conversational, relatable language
+- Specific place names and details
+- Traditional rhyme schemes (AABB or ABCB)
+- Twang-friendly word choices
+
+AI recommendation: Provide reference songs like "Dirt Road Anthem" or "Tennesse Whiskey" so AI understands the genre's specifics beyond lyrics alone.
+
+**R&B/Soul AI Prompts:**
+Focus on:
+- Emotional vulnerability and intimacy
+- Smooth phrasing suited to melismatic singing
+- Sensuality without explicitness
+- Layered rhyme schemes with internal rhymes
+- Conversational, late-night vibe
+
+AI recommendation: Emphasize tone and emotional nuance. Ask AI to prioritize feeling over technical rhyme perfection.
+
+**Electronic/Synth-pop AI Prompts:**
+Focus on:
+- Repetitive, hook-heavy choruses
+- Atmospheric, imaginative imagery
+- Future/present/past tense mixing
+- Shorter, punchier lines (suits the driving beat)
+- Slightly abstract or surreal language
+
+AI recommendation: Show AI examples of repetitive chorus structures (like Weeknd's "Blinding Lights"). Ask for memorable, singable hooks.
+
+## Workflow: AI + Manual Refinement
+
+Effective lyric creation combines AI generation with human artistry:
+
+**Phase 1: AI Generation (30 minutes)**
+- Feed detailed prompt to AI tool
+- Generate 3-5 complete verse options
+- Select strongest components from each
+
+**Phase 2: Manual Refinement (45 minutes)**
+- Adjust syllable count for melodic fit
+- Replace generic lines with specific imagery
+- Ensure emotional consistency
+- Test flow against actual melody
+
+**Phase 3: Collaboration (30 minutes)**
+- Share refined draft with collaborator/producer
+- Get feedback on emotional impact
+- Make final tweaks for sing-ability
+- Record demo and adjust as needed
+
+**Example Refinement:**
+
+AI Generated:
+```
+I'm walking down the street at night
+Thinking about what we were
+The city lights are shining bright
+But nothing feels like it was worth it
+```
+
+Manual Refinement:
+```
+I'm walking down 5th Avenue in the rain
+Thinking about what you said to me
+The skyline glowing through the haze
+But the reflection isn't what I need
+```
+
+Changes:
+- Added specific location ("5th Avenue")
+- Changed generic "city lights" to "skyline glowing through the haze"
+- Replaced passive "what we were" with action "what you said to me"
+- Made final line more specific (reflection metaphor related to sight/clarity)
+
+## Overcoming Creative Block with AI
+
+Musicians often use AI to overcome these specific blocks:
+
+**Block Type 1: Rhyme Stagnation**
+When you keep using same rhymes (night/light, day/way):
+- Use AI to suggest alternate rhyme words
+- Ask AI to generate verses using uncommon rhymes
+- Incorporate AI alternatives while keeping your melody
+
+**Block Type 2: Lyrical Cliches**
+When you write predictable lines:
+- Feed AI the cliche: "my heart is on fire for you"
+- Ask for 5 alternative ways to express the same emotion
+- Blend AI suggestions with your voice
+
+**Block Type 3: Structural Stagnation**
+When your songs feel formulaic:
+- Ask AI to suggest non-traditional song structures
+- Generate lyrics for verse without chorus
+- Experiment with AI-generated bridge ideas before committing
 
 ## Related Articles
 

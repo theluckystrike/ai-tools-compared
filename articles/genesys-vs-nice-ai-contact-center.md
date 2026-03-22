@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /genesys-vs-nice-ai-contact-center/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, comparison, artificial-intelligence]
@@ -308,7 +308,7 @@ Genesys's webhook event taxonomy is more granular than NICE's. A single Genesys 
 | Bot builder | Visual (Architect) | Visual + code-based |
 | Workforce management | Built-in WFM module | Advanced WFM module |
 | Data residency options | AWS regions | Multi-cloud POPs |
-| Developer documentation | Comprehensive, community active | Good, less community content |
+| Developer documentation | , community active | Good, less community content |
 
 
 ## Pricing Considerations

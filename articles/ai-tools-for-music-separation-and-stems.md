@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Music Separation and Stems"
+title: "AI Tools for Music Separation"
 description: "A practical guide to AI-powered music source separation tools for developers, with code examples, API integrations, and implementation strategies"
 date: 2026-03-15
 last_modified_at: 2026-03-15
@@ -9,7 +9,7 @@ permalink: /ai-tools-for-music-separation-and-stems/
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
-score: 8
+score: 9
 reviewed: true
 tags: [ai-tools-compared, artificial-intelligence]
 ---
@@ -273,7 +273,7 @@ For professional work, human refinement remains valuable. Use AI separation as a
 - [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
 - [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
 - [AI Tools Hub](/guides-hub/)
-- [AI Tools for Audio Processing Workflows](/ai-tools-compared/ai-tools-for-audio-processing/)
-- [Open Source AI Models for Media Applications](/ai-tools-compared/open-source-ai-models-media/)
+- [AI Tools for Audio Processing Workflows](/ai-tools-compared/best-ai-tools-for-spatial-audio/)
+- [Open Source AI Models for Media Applications](/ai-tools-compared/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

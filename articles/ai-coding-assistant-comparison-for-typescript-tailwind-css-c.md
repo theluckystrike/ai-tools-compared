@@ -27,6 +27,18 @@ Generating Tailwind CSS classes presents unique challenges compared to tradition
 Modern TypeScript projects often use component libraries that extend Tailwind or custom design systems. AI assistants must recognize these patterns and generate classes consistent with existing codebase conventions.
 
 
+
+## Quick Comparison
+
+| Feature | Tool A | Tool B |
+|---|---|---|
+| AI Model | See specs | See specs |
+| Code Completion | Supported | Supported |
+| IDE Support | Multiple IDEs | Multiple IDEs |
+| Pricing | See current pricing | See current pricing |
+| Language Support | Multi-language | Multi-language |
+| Terminal Integration | Available | Available |
+
 ## Comparing AI Assistants for Tailwind CSS Class Generation
 
 

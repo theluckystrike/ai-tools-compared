@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Write pytest Parametrize Test Cases"
+title: "How to Use AI to Write pytest Parametrize Test Cases: Edge"
 description: "A practical guide for developers on using AI tools to generate pytest parametrize test cases that cover edge conditions in Python code"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -9,7 +9,7 @@ permalink: /how-to-use-ai-to-write-pytest-parametrize-test-cases-for-edge-condit
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

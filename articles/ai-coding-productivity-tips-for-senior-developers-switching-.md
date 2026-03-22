@@ -364,7 +364,7 @@ This captures objective findings quickly. Use your human judgment for architectu
 | Task | Claude Code | Cursor | Copilot | Windsurf |
 |------|---|---|---|---|
 | Refactoring large codebases | Excellent | Very Good | Good | Very Good |
-| Generating comprehensive tests | Excellent | Very Good | Good | Very Good |
+| Generating tests | Excellent | Very Good | Good | Very Good |
 | Architecture decision support | Very Good | Very Good | Fair | Good |
 | Technical debt analysis | Excellent | Very Good | Good | Very Good |
 | Code review automation | Excellent | Good | Fair | Good |

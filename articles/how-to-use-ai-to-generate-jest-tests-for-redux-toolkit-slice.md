@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Generate Jest Tests for Redux Toolkit Slice"
+title: "How to Use AI to Generate Jest Tests for Redux Toolkit"
 description: "A practical guide for developers looking to automate Jest test generation for Redux Toolkit slices using AI tools"
 date: 2026-03-16
 last_modified_at: 2026-03-16

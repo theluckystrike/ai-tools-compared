@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "Stable Diffusion vs Midjourney for Character Design"
+title: "Stable Diffusion vs Midjourney for Character"
 description: "A practical comparison of Stable Diffusion and Midjourney for character design. Includes prompt examples, workflow recommendations, and tool selection"
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /stable-diffusion-vs-midjourney-for-character-design/
 reviewed: true
-score: 8
+score: 9
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
@@ -310,7 +310,7 @@ Both tools have real hardware costs:
 - AND: Team can share GPU hardware, making per-person cost negligible
 
 *Game development team (100+ hours/month):*
-- Stable Diffusion: Buy 2 GPUs ($1200), share cost = $600/person for hardware, $50/month shared = essentially free after amortization
+- Stable Diffusion: Buy 2 GPUs ($1200), share cost = $600/person for hardware, $50/month shared = free after amortization
 - Midjourney: $60 × team size = $60-600+/month depending on team size
 - Winner: Stable Diffusion by far
 

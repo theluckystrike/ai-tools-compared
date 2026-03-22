@@ -1,8 +1,11 @@
 ---
 layout: default
-title: "AI IDE & Editor Extensions — VS Code, JetBrains, Vim & Neovim"
+title: "AI IDE & Editor Extensions"
 description: "Compare AI extensions for VS Code, JetBrains, Vim, and Neovim. Setup guides, keybinding migration, and feature comparisons across AI-powered editor tools."
 permalink: /topics/ai-ide-editor-tools/
+intent-checked: true
+voice-checked: true
+date: 2026-03-21
 ---
 
 # AI IDE & Editor Extensions — VS Code, JetBrains, Vim & Neovim

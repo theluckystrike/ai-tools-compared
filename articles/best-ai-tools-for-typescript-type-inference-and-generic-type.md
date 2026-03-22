@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Tools for TypeScript Type Inference and Generic Type"
+title: "Best AI Tools for TypeScript Type Inference and Generic"
 description: "Several AI tools excel at this task. This guide recommends the best options based on specific use cases and shows you which tool to choose for your situation"
 date: 2026-03-16
 last_modified_at: 2026-03-16

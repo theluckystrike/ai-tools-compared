@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Build Model Context Protocol Server for Internal Desi"
+title: "How to Build Model Context Protocol Server for Internal"
 description: "A practical guide for developers on building an MCP server to serve design system component documentation to AI coding assistants. Includes code"
 date: 2026-03-16
 last_modified_at: 2026-03-16

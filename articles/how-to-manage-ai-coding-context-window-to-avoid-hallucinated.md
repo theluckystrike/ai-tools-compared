@@ -9,7 +9,7 @@ permalink: /how-to-manage-ai-coding-context-window-to-avoid-hallucinated/
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
@@ -210,7 +210,7 @@ Different AI tools maintain different context window sizes, affecting how much i
 | Cursor | 50K tokens (default) | Variable | IDE-integrated |
 | GitHub Copilot | 8K-16K | Subscription | Inline suggestions |
 
-Practical implication: If your repository is 500K tokens, Claude 3.5 Sonnet can ingest 40% of it. GPT-4o can handle only 25%. Cursor and Copilot can see essentially nothing at full codebase scale.
+Practical implication: If your repository is 500K tokens, Claude 3.5 Sonnet can ingest 40% of it. GPT-4o can handle only 25%. Cursor and Copilot can see nothing at full codebase scale.
 
 ## Tokenization Awareness
 

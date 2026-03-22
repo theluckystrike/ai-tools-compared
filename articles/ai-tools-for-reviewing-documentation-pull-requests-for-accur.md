@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Reviewing Documentation Pull Requests for Accur"
+title: "AI Tools for Reviewing Documentation Pull Requests"
 description: "Discover how AI tools can help developers and technical writers review documentation pull requests for accuracy, completeness, and consistency"
 date: 2026-03-16
 last_modified_at: 2026-03-16

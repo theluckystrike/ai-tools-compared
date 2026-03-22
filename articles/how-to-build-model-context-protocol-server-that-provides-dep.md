@@ -9,7 +9,7 @@ permalink: /how-to-build-model-context-protocol-server-that-provides-deployment-
 categories: [guides]
 tags: [ai-tools-compared, mcp, protocol, development]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
@@ -319,7 +319,7 @@ For Claude Desktop, this configuration goes in `~/Library/Application Support/Cl
 ## Adding Error Handling and Structured Responses
 
 
-Production MCP servers need robust error handling. When an orchestrator query fails, return a structured error response rather than throwing an unhandled exception:
+Production MCP servers need strong error handling. When an orchestrator query fails, return a structured error response rather than throwing an unhandled exception:
 
 
 ```typescript

@@ -9,7 +9,7 @@ permalink: /chatgpt-vs-claude-for-writing-nginx-reverse-proxy-configurat/
 categories: [guides]
 tags: [ai-tools-compared, tools, comparison, claude-ai, chatgpt]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
@@ -46,6 +46,18 @@ server {
 
 This configuration establishes the foundation for forwarding requests while preserving client information through headers.
 
+
+
+## Quick Comparison
+
+| Feature | Chatgpt | Claude |
+|---|---|---|
+| AI Model | See specs | See specs |
+| Code Completion | Supported | Supported |
+| IDE Support | Multiple IDEs | Multiple IDEs |
+| Pricing | See current pricing | See current pricing |
+| Inline Chat | Available | Available |
+| Terminal Integration | Available | Available |
 
 ## How ChatGPT Approaches Nginx Configurations
 

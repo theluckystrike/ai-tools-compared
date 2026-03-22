@@ -10,7 +10,7 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared]
+tags: [ai-tools-compared, artificial-intelligence]
 ---
 
 {% raw %}
@@ -223,6 +223,64 @@ On a 500-line TypeScript file with Claude Haiku:
 - Issue detection: high for logic bugs, medium for security issues
 
 For most teams linting a 50-file PR, total cost is under $0.05. The latency is the bigger concern — running 50 files in parallel takes 3-5 seconds total with the concurrency approach above.
+
+## Combining AI and Traditional Linters
+
+The best approach uses both traditional linters for fast, deterministic checks and AI linters for nuanced issues:
+
+```javascript
+import { execSync } from 'child_process';
+import { lintFile } from './linter.js';
+
+async function runCombinedLint(files) {
+  // Step 1: Traditional lint (fast, free)
+  try {
+    execSync(`npx eslint ${files.join(' ')} --format json`, {
+      encoding: 'utf-8'
+    });
+  } catch (err) {
+    console.log('ESLint found issues -- fix these first');
+    process.exit(1);
+  }
+
+  // Step 2: AI lint (slower, costs money, catches deeper issues)
+  const results = await Promise.all(files.map(lintFile));
+  const issues = results.flatMap(r => r.issues);
+  if (issues.length > 0) {
+    console.log(`AI linter found ${issues.length} additional issue(s)`);
+    for (const issue of issues) {
+      console.log(`  ${issue.severity}: ${issue.message} (${issue.rule})`);
+    }
+  }
+}
+```
+
+This pipeline ensures you don't waste API calls on files with syntax errors.
+
+## Custom Rule Definitions
+
+Define project-specific rules in a configuration file:
+
+```json
+{
+  "rules": {
+    "no-raw-sql": {
+      "severity": "error",
+      "description": "All database queries must use parameterized statements"
+    },
+    "require-error-boundary": {
+      "severity": "warning",
+      "description": "React components fetching data must have error boundaries"
+    },
+    "no-floating-promises": {
+      "severity": "error",
+      "description": "All promises must be awaited or have a .catch() handler"
+    }
+  }
+}
+```
+
+Pass these rules to the AI linter's system prompt for consistent enforcement across your team. Update the rules file as your codebase conventions evolve and commit it alongside your code so everyone uses the same standards.
 
 ## Related Reading
 

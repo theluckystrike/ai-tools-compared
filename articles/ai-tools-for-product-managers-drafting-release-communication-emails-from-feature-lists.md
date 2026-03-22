@@ -9,7 +9,7 @@ permalink: /ai-tools-for-product-managers-drafting-release-communication-emails-
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
@@ -315,7 +315,7 @@ Most teams report 60-80% time savings after implementing these tools, with the r
 ## Building a Prompt Library
 
 
-One of the highest-leverage investments for product teams adopting AI for release communication is building a reusable prompt library. Rather than crafting prompts from scratch each release, maintain a version-controlled set of prompt templates covering your most common scenarios.
+One of the highest-use investments for product teams adopting AI for release communication is building a reusable prompt library. Rather than crafting prompts from scratch each release, maintain a version-controlled set of prompt templates covering your most common scenarios.
 
 A minimal prompt library covers three cases: standard customer-facing releases, internal engineering announcements, and executive summaries for quarterly updates. For each, store the system prompt (brand voice and formatting rules) separately from the user prompt (the feature data input). This separation lets you update your style guide in one place without touching individual prompt templates.
 

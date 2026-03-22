@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "Claude vs ChatGPT for Creating AWS CDK Infrastructure Stacks"
+title: "Claude vs ChatGPT for Creating AWS CDK Infrastructure"
 description: "A practical comparison of Claude and ChatGPT for building AWS CDK infrastructure stacks in Python, with code examples and recommendations"
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /claude-vs-chatgpt-for-creating-aws-cdk-infrastructure-stacks/
 categories: [comparisons]
-score: 8
+score: 9
 voice-checked: true
 reviewed: true
 intent-checked: true

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Export Perplexity Collections Before Switching to ChatGPT Se"
+title: "Export Perplexity Collections Before Switching to ChatGPT"
 description: "A practical developer guide for exporting Perplexity collections before switching to ChatGPT Search in 2026. Includes API methods, automation scripts"
 date: 2026-03-16
 last_modified_at: 2026-03-16

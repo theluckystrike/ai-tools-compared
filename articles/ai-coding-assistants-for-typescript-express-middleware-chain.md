@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Coding Assistants for TypeScript Express Middleware Chain"
+title: "AI Coding Assistants for TypeScript Express Middleware"
 description: "A practical comparison of AI coding assistants for TypeScript Express middleware chain generation, with code examples and recommendations for developers"
 date: 2026-03-16
 last_modified_at: 2026-03-16

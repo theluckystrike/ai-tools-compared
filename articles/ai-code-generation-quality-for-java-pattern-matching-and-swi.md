@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Code Generation Quality for Java Pattern Matching and Swi"
+title: "AI Code Generation Quality for Java Pattern Matching"
 description: "A practical evaluation of how well AI coding tools handle Java 17+ pattern matching and switch expressions, with real code examples and quality"
 date: 2026-03-16
 last_modified_at: 2026-03-16

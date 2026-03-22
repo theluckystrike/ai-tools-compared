@@ -9,7 +9,7 @@ permalink: /migrate-copilot-chat-history-and-context-to-cursor-ai-guide/
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
@@ -295,7 +295,7 @@ Use version control: Commit your context documents to Git so teammates benefit f
 Test before abandoning: Keep Copilot accessible for a week while you adjust to Cursor. Both tools can coexist during the transition.
 
 
-Invest in your `.cursorrules` file: This is the highest-leverage configuration step in the migration. A well-written rules file prevents Cursor from making suggestions that contradict your project conventions, reducing the cognitive load of reviewing AI output during the adjustment period.
+Invest in your `.cursorrules` file: This is the highest-use configuration step in the migration. A well-written rules file prevents Cursor from making suggestions that contradict your project conventions, reducing the cognitive load of reviewing AI output during the adjustment period.
 
 
 ## Validating the Migration

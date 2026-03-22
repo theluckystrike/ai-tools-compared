@@ -30,6 +30,18 @@ Aider is an AI-powered pair programmer that works directly in your terminal. It 
 The tool runs as an interactive session in your terminal. You describe what you want to accomplish, and Aider modifies your code accordingly. It tracks changes, shows diffs before applying them, and commits work automatically when requested.
 
 
+
+## Quick Comparison
+
+| Feature | Aider | Claude Code |
+|---|---|---|
+| AI Model | See specs | See specs |
+| Code Completion | Supported | Supported |
+| Context Window | See documentation | See documentation |
+| IDE Support | Multiple IDEs | Multiple IDEs |
+| Multi-File Editing | Supported | Supported |
+| Language Support | Multi-language | Multi-language |
+
 ## What is Claude Code?
 
 

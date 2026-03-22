@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Multilingual Customer Support"
+title: "AI Tools for Multilingual Customer"
 description: "A practical guide to AI-powered multilingual customer support tools for developers and power users, with code examples and implementation strategies"
 date: 2026-03-15
 last_modified_at: 2026-03-15
@@ -9,7 +9,7 @@ permalink: /ai-tools-for-multilingual-customer-support/
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---

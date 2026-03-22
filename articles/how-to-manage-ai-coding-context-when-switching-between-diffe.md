@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Manage AI Coding Context When Switching Between Diffe"
+title: "How to Manage AI Coding Context When Switching"
 description: "A practical guide for developers on managing AI coding context effectively when working across multiple features. Includes strategies, code examples"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -208,18 +208,144 @@ A few practices undermine context management efforts:
 4. Ignoring module boundaries: Asking AI to work across unrelated modules without explicit context
 
 
-## Practical Application
+## Advanced Context Management Workflows
 
+For complex multi-feature development, implement a structured workflow system:
+
+```python
+# context_manager.py
+import json
+from dataclasses import dataclass, field
+from datetime import datetime
+from typing import Dict, List, Optional
+
+@dataclass
+class FeatureContext:
+    name: str
+    description: str
+    active_files: List[str] = field(default_factory=list)
+    dependencies: List[str] = field(default_factory=list)
+    last_modified: str = ""
+    key_abstractions: Dict[str, str] = field(default_factory=dict)
+    recent_decisions: List[str] = field(default_factory=list)
+
+class ContextManager:
+    def __init__(self, project_root: str):
+        self.project_root = project_root
+        self.features: Dict[str, FeatureContext] = {}
+        self.current_feature: Optional[str] = None
+
+    def create_feature_context(
+        self,
+        name: str,
+        description: str,
+        files: List[str],
+        dependencies: List[str] = None
+    ) -> FeatureContext:
+        context = FeatureContext(
+            name=name,
+            description=description,
+            active_files=files,
+            dependencies=dependencies or [],
+            last_modified=datetime.now().isoformat()
+        )
+        self.features[name] = context
+        return context
+
+    def switch_feature(self, feature_name: str) -> str:
+        if feature_name not in self.features:
+            raise ValueError(f"Feature {feature_name} not found")
+
+        self.current_feature = feature_name
+        context = self.features[feature_name]
+
+        # Generate AI prompt preamble
+        prompt = f"""
+=== CONTEXT SWITCH: {feature_name} ===
+
+Feature: {context.name}
+Description: {context.description}
+Last Modified: {context.last_modified}
+
+Active Files:
+{chr(10).join(f'  - {f}' for f in context.active_files)}
+
+Dependencies:
+{chr(10).join(f'  - {d}' for d in context.dependencies) if context.dependencies else '  None'}
+
+Key Abstractions:
+{chr(10).join(f'  - {k}: {v}' for k, v in context.key_abstractions.items()) if context.key_abstractions else '  None'}
+
+Recent Decisions:
+{chr(10).join(f'  - {d}' for d in context.recent_decisions) if context.recent_decisions else '  None'}
+
+Previous context is no longer relevant.
+Focus exclusively on the {feature_name} implementation.
+===
+"""
+        return prompt
+```
+
+## Real-World Context Transition Examples
+
+When switching from authentication to payments feature, use this conversation pattern:
+
+```
+User to AI:
+"I'm switching to the payments module. Here's the context:
+
+=== FEATURE SWITCH: Payments ===
+Focus: Implement Stripe webhook handler
+Key files: payments/webhooks.py, payments/models.py
+Previous work complete: Basic charge flow (PR #142)
+
+Forget about: Auth tokens, user sessions, database connection pooling
+
+The payment flow: checkout → Stripe API → webhook confirmation
+Must handle duplicate webhooks with idempotency key.
+==="
+```
+
+## Context File Format Standards
+
+Use consistent formatting for context files so AI tools can parse them reliably:
+
+```markdown
+# Feature: User Authentication v2
+
+## Status
+- Stage: Implementation
+- Completion: 60%
+- Next milestone: Add refresh token rotation
+
+## Architecture
+- Service: AuthService handles token lifecycle
+- Database: users table with password_hash column
+- External: AWS Cognito for enterprise customers
+
+## Implementation Status
+- [x] Basic login flow
+- [x] JWT token generation
+- [ ] Refresh token rotation
+- [ ] Social OAuth providers
+
+## Constraints
+- All passwords use bcrypt cost 12
+- Tokens expire in 24 hours
+- Refresh tokens valid for 30 days
+```
+
+## Practical Application
 
 Apply these strategies based on your workflow complexity:
 
+- **Simple projects** (1-2 features): Use explicit reset statements and context snippets before each switch.
 
-- For simple projects with one or two features: Strategy 1 (explicit reset) and Strategy 5 (context snippets) suffice
+- **Medium projects** (3-5 features): Combine structured context files with separate conversation threads per feature.
 
-- For medium projects with three to five features: Combine Strategy 2 (context files) with Strategy 4 (conversation branching)
+- **Large projects** (many concurrent features): Use context automation plus dedicated context files per feature, stored in version control.
 
-- For large projects with many concurrent features: Use all strategies in combination, with particular emphasis on modular organization and dedicated context files
-
+- **Team environments**: Maintain context files documenting feature state for handoff between developers.
 
 The key principle remains consistent: make context transitions explicit rather than assumed. Your AI coding assistant performs best when you clearly define what context matters for the current task.
 

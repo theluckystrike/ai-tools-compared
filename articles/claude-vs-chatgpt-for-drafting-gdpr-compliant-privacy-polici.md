@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Claude vs ChatGPT for Drafting Gdpr Compliant Privacy Polici"
+title: "Claude vs ChatGPT for Drafting Gdpr Compliant Privacy"
 description: "A practical comparison of Claude and ChatGPT for drafting GDPR-compliant privacy policies, with prompt examples and code snippets for developers"
 date: 2026-03-16
 last_modified_at: 2026-03-16

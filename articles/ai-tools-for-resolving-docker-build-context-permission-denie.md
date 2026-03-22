@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Resolving Docker Build Context Permission Denie"
+title: "AI Tools for Resolving Docker Build Context Permission"
 description: "A practical guide to using AI assistants to diagnose and fix Docker build context permission denied errors on Linux systems. Real solutions for developers"
 date: 2026-03-16
 last_modified_at: 2026-03-16

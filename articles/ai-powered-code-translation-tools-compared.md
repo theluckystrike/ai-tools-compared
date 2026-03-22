@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI-Powered Code Translation Tools Compared"
-description: "Compare AI tools for translating code between languages: Python to Go, JavaScript to TypeScript, Java to Kotlin — with output quality tests and practical workflows"
+description: "Compare AI tools for translating code between languages: Python to Go, JavaScript to TypeScript, Java to Kotlin — with output quality tests and practical"
 date: 2026-03-21
 author: theluckystrike
 permalink: /ai-powered-code-translation-tools-compared/
@@ -10,7 +10,7 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared]
+tags: [ai-tools-compared, comparison, artificial-intelligence]
 ---
 
 {% raw %}

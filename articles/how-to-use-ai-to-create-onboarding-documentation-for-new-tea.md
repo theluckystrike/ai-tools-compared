@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Create Onboarding Documentation for New Tea"
+title: "How to Use AI to Create Onboarding Documentation for New"
 description: "A practical guide for developers and power users using AI to build onboarding documentation that accelerates new team member"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -288,3 +288,4 @@ Track documentation effectiveness by monitoring how quickly new team members bec
 - [AI Employee Onboarding Tools Comparison 2026](/ai-tools-compared/ai-employee-onboarding-tools-comparison-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+```

@@ -13,8 +13,10 @@ author: "Michael Lip"
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-feed
 defaults:
   - scope:
       path: "articles"
     values:
       layout: default
+      image: /ai-tools-compared/assets/og-default.svg

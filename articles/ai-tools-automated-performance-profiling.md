@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Automated Performance Profiling"
-description: "Compare AI-assisted performance profiling tools for Node.js, Python, and Go: flame graph analysis, query optimization, and bottleneck detection with real examples"
+description: "Compare AI-assisted performance profiling tools for Node.js, Python, and Go: flame graph analysis, query optimization, and bottleneck detection with real"
 date: 2026-03-21
 author: theluckystrike
 permalink: /ai-tools-automated-performance-profiling/
@@ -10,7 +10,7 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared]
+tags: [ai-tools-compared, artificial-intelligence]
 ---
 
 {% raw %}

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Creating Boundary Value Test Case"
+title: "AI Tools for Creating Boundary Value Test"
 description: "A practical guide to using AI tools that generate boundary value test cases from input specifications. Real examples and code snippets"
 date: 2026-03-16
 last_modified_at: 2026-03-16

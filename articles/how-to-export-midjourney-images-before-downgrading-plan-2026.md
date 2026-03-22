@@ -224,6 +224,221 @@ Third, test your export method before the downgrade. Run a small batch of downlo
 
 Fourth, consider redundant storage. Save exports to multiple locations—local drive, cloud storage (Google Drive, Dropbox, AWS S3), or external backup. This protects against local hardware failures.
 
+## Automated Batch Export with Python
+
+For developers managing large Midjourney archives, Python automation provides efficient bulk export:
+
+```python
+import asyncio
+import aiohttp
+import os
+from datetime import datetime
+
+class MidjourneyExporter:
+    def __init__(self, message_ids, output_dir="./exports"):
+        self.message_ids = message_ids
+        self.output_dir = output_dir
+        self.session = None
+
+    async def setup(self):
+        """Initialize async session."""
+        self.session = aiohttp.ClientSession()
+        os.makedirs(self.output_dir, exist_ok=True)
+
+    async def download_image(self, image_url, filename):
+        """Download single image with retry logic."""
+        max_retries = 3
+        for attempt in range(max_retries):
+            try:
+                async with self.session.get(image_url, timeout=30) as resp:
+                    if resp.status == 200:
+                        content = await resp.read()
+                        filepath = os.path.join(self.output_dir, filename)
+                        with open(filepath, 'wb') as f:
+                            f.write(content)
+                        print(f"Downloaded: {filename}")
+                        return True
+            except asyncio.TimeoutError:
+                if attempt < max_retries - 1:
+                    await asyncio.sleep(2 ** attempt)  # Exponential backoff
+                continue
+        print(f"Failed to download: {filename}")
+        return False
+
+    async def export_all(self):
+        """Download all images concurrently."""
+        tasks = []
+        for idx, image_url in enumerate(self.message_ids):
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            filename = f"midjourney_{timestamp}_{idx}.png"
+            task = self.download_image(image_url, filename)
+            tasks.append(task)
+
+        results = await asyncio.gather(*tasks)
+        return sum(results)
+
+    async def cleanup(self):
+        """Close session."""
+        await self.session.close()
+
+# Usage
+async def main():
+    image_urls = [
+        "https://cdn.midjourney.com/image1.png",
+        "https://cdn.midjourney.com/image2.png"
+    ]
+    exporter = MidjourneyExporter(image_urls)
+    await exporter.setup()
+    downloaded = await exporter.export_all()
+    await exporter.cleanup()
+    print(f"Exported {downloaded} images successfully")
+
+asyncio.run(main())
+```
+
+## Metadata Management
+
+Preserve context alongside your images to make future retrieval easier:
+
+```python
+import json
+from datetime import datetime
+
+class ImageMetadata:
+    def __init__(self, output_dir="./exports"):
+        self.output_dir = output_dir
+        self.metadata_file = os.path.join(output_dir, "metadata.json")
+        self.catalog = []
+
+    def add_image(self, filename, prompt, parameters=None, generation_time=None):
+        """Add image metadata to catalog."""
+        entry = {
+            "filename": filename,
+            "prompt": prompt,
+            "created_at": generation_time or datetime.now().isoformat(),
+            "parameters": parameters or {},
+            "exported_at": datetime.now().isoformat()
+        }
+        self.catalog.append(entry)
+
+    def save(self):
+        """Write metadata to JSON file."""
+        with open(self.metadata_file, 'w') as f:
+            json.dump(self.catalog, f, indent=2)
+
+# Usage
+metadata = ImageMetadata("./exports")
+metadata.add_image(
+    "midjourney_001.png",
+    "A cyberpunk city at night with neon signs reflecting on wet streets",
+    {"model": "midjourney v5.2", "aspect_ratio": "16:9"}
+)
+metadata.save()
+```
+
+## Organizing Exported Images
+
+Create a structured directory layout for easy navigation:
+
+```
+exports/
+├── 2026_march/
+│   ├── landscapes/
+│   │   ├── mountain_range_001.png
+│   │   ├── sunset_ocean_002.png
+│   └── character_designs/
+│   │   ├── hero_concept_001.png
+│   │   ├── villain_sketches_001.png
+├── 2026_february/
+└── metadata.json
+```
+
+Script to organize by category:
+
+```python
+import shutil
+import os
+from pathlib import Path
+
+def organize_exports(base_dir, category_mapping):
+    """
+    Organize images into categories based on filename patterns.
+    category_mapping: dict mapping pattern to folder name
+    Example: {"landscape": "landscapes", "character": "characters"}
+    """
+    for filename in os.listdir(base_dir):
+        if not filename.endswith(('.png', '.jpg', '.jpeg')):
+            continue
+
+        target_folder = "other"
+        for pattern, folder_name in category_mapping.items():
+            if pattern.lower() in filename.lower():
+                target_folder = folder_name
+                break
+
+        target_path = os.path.join(base_dir, target_folder)
+        os.makedirs(target_path, exist_ok=True)
+
+        src = os.path.join(base_dir, filename)
+        dst = os.path.join(target_path, filename)
+        shutil.move(src, dst)
+        print(f"Moved {filename} to {target_folder}/")
+
+# Usage
+organize_exports(
+    "./exports",
+    {
+        "landscape": "landscapes",
+        "character": "characters",
+        "architecture": "architecture",
+        "texture": "textures"
+    }
+)
+```
+
+## Downgrade Timeline Checklist
+
+**Two Weeks Before Downgrade:**
+- Review your generation history
+- Identify images worth preserving
+- Test export method on small sample (10-20 images)
+
+**One Week Before:**
+- Begin export process for high-value images
+- Verify exports are complete and accessible
+- Back up exported images to cloud storage
+
+**Three Days Before:**
+- Export remaining images
+- Test compressed archives (if using ZIP)
+- Confirm cloud backups are complete
+
+**Day Before Downgrade:**
+- Final verification that all important images are locally available
+- Test cloud backup access from different device
+- Make note of any images still in progress
+
+**After Downgrade:**
+- Attempt to access images through Midjourney web interface (confirm they're gone)
+- Verify local and cloud backups are intact
+- Delete temporary export files from device if storage is tight
+
+## Storage Calculation
+
+Before exporting, estimate storage needs:
+
+- **Single image:** 2-4 MB (PNG), 1-2 MB (JPG)
+- **100 images:** 200-400 MB
+- **1,000 images:** 2-4 GB
+- **Pro plan user (2000+ hours):** Approximately 20,000-50,000 images = 40-200 GB
+
+For reference:
+- USB 3.0 drive: $20-50 for 256 GB
+- External hard drive: $50-100 for 1-2 TB
+- Google One plan (2TB): $9.99/month
+- AWS S3 storage: $0.023/GB/month (1TB = ~$24/month)
+
+Choose storage method based on your collection size and access patterns.
 
 ## Related Articles
 

@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "How to Use AI Coding Tools Without Becoming Dependent on Aut"
+title: "How to Use AI Coding Tools Without Becoming Dependent on"
 description: "A practical guide for developers on using AI coding assistants effectively while maintaining core programming skills and avoiding autocomplete dependency"
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-coding-tools-without-becoming-dependent-on-aut/
 categories: [guides]
-score: 8
+score: 9
 voice-checked: true
 reviewed: true
 intent-checked: true

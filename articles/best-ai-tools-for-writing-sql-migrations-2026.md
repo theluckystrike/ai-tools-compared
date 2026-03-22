@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Writing SQL Migrations in 2026"
-description: Compare top AI tools and code assistants for generating, testing, and optimizing SQL migration scripts using Flyway, Alembic, and Prisma frameworks.
+description: "Compare top AI tools and code assistants for generating, testing, and optimizing SQL migration scripts using Flyway, Alembic, and Prisma frameworks."
 date: 2026-03-21
 last_modified_at: 2026-03-21
 author: theluckystrike
@@ -244,7 +244,7 @@ DataGrip's built-in AI assistant (via JetBrains AI Gateway) suggests schema chan
 Claude excels at complex SQL reasoning. For teams processing hundreds of migrations, Claude API can:
 - Validate migration syntax before execution
 - Suggest index strategies based on table size
-- Generate comprehensive test cases
+- Generate test cases
 - Create documentation from schema changes
 
 **Example: Migration Batch Processing**

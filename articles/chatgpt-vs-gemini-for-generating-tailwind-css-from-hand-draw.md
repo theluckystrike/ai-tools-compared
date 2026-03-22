@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "ChatGPT vs Gemini for Generating Tailwind CSS from Hand Draw"
+title: "ChatGPT vs Gemini for Generating Tailwind CSS from Hand"
 description: "A practical comparison of ChatGPT and Gemini for converting hand-drawn wireframes into Tailwind CSS code, with real examples and performance benchmarks"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -325,7 +325,7 @@ Include Tailwind states:
 - Active states: active:scale-95 for buttons
 ```
 
-ChatGPT sometimes includes basic transitions; Gemini typically includes more comprehensive interaction states without prompting.
+ChatGPT sometimes includes basic transitions; Gemini typically includes more interaction states without prompting.
 
 
 ## Dark Mode Support

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Using Claude Code for Backend and Cursor for Frontend Same P"
+title: "Using Claude Code for Backend and Cursor for Frontend Same"
 description: "A practical guide to running Claude Code for backend development while using Cursor for frontend work in a single codebase. Includes setup tips"
 date: 2026-03-16
 last_modified_at: 2026-03-16

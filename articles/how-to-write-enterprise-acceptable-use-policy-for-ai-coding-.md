@@ -267,7 +267,7 @@ LOG_FILE="/var/log/ai_coding_usage.log"
 tcpdump -i en0 -A 'tcp port 443 and (host api.openai.com or host api.anthropic.com or host github.com)' >> $LOG_FILE
 ```
 
-This prevents developers from accidentally using prohibited tools while allowing approved platforms through. Pair this with endpoint management solutions (Jamf, Intune, Okta) for comprehensive monitoring.
+This prevents developers from accidentally using prohibited tools while allowing approved platforms through. Pair this with endpoint management solutions (Jamf, Intune, Okta) for monitoring.
 
 ## Balancing Security and Developer Experience
 

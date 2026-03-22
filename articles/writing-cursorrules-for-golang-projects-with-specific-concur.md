@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Writing CursorRules for Golang Projects with Specific Concur"
+title: "Writing CursorRules for Golang Projects with Specific"
 description: "Write CursorRules for Go projects by explicitly defining goroutine lifecycle management, channel usage patterns, and error propagation strategies. These rules"
 date: 2026-03-16
 last_modified_at: 2026-03-16

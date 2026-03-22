@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Writing OpenAPI Specifications in 2026"
-description: Compare AI-powered tools for generating and documenting OpenAPI and Swagger specifications with real code examples and pricing comparisons.
+description: "Compare AI-powered tools for generating and documenting OpenAPI and Swagger specifications with real code examples and pricing comparisons."
 date: 2026-03-21
 last_modified_at: 2026-03-21
 author: theluckystrike
@@ -196,7 +196,7 @@ components:
 **Pricing:** $20/month (Plus), $200/month (Team), $4/1M input tokens (API)
 **Best For:** Complete API specification design, architectural decisions
 
-ChatGPT-4 handles full API design conversations. Paste your entire codebase or describe your API requirements, and it generates comprehensive OpenAPI specs with proper structure, security definitions, and error handling.
+ChatGPT-4 handles full API design conversations. Paste your entire codebase or describe your API requirements, and it generates OpenAPI specs with proper structure, security definitions, and error handling.
 
 **Use Case: API Design Review**
 
@@ -605,7 +605,7 @@ print(message.content[0].text)
 
 **Strengths:**
 - Handles complex frameworks (Django, Rails, Spring)
-- Generates comprehensive specs with explanations
+- Generates specs with explanations
 - Integrates with CI/CD pipelines
 - Supports batch processing
 

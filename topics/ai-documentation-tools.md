@@ -1,8 +1,11 @@
 ---
 layout: default
-title: "AI Documentation Tools — Changelog, API Docs & README Generation"
+title: "AI Documentation Tools"
 description: "Compare AI tools for automated documentation: API docs from code, changelog generation, commit messages, release notes, and README writing assistance."
 permalink: /topics/ai-documentation-tools/
+intent-checked: true
+voice-checked: true
+date: 2026-03-21
 ---
 
 # AI Documentation Tools — Changelog, API Docs & README Generation

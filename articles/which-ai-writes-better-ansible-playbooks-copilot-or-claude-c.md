@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Which AI Writes Better Ansible Playbooks Copilot or Claude C"
+title: "Which AI Writes Better Ansible Playbooks Copilot or Claude"
 description: "A practical comparison of GitHub Copilot vs Claude Code for writing Ansible playbooks, with real code examples and performance benchmarks for DevOps"
 date: 2026-03-16
 last_modified_at: 2026-03-16

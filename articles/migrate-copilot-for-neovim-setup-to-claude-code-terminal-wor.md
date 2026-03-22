@@ -9,7 +9,7 @@ permalink: /migrate-copilot-for-neovim-setup-to-claude-code-terminal-wor/
 categories: [guides]
 tags: [ai-tools-compared, tools, claude-ai]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
@@ -229,7 +229,7 @@ Let's compare how the same tasks play out with each tool:
 1. Run: `claude "Explain the authentication flow in this codebase, focusing on token validation"`
 2. Get a detailed explanation with file references
 3. Ask follow-up: "What happens when a token expires?"
-4. Time: 5-10 minutes with comprehensive understanding
+4. Time: 5-10 minutes with understanding
 
 **Task 3: Refactor across multiple files**
 
@@ -249,7 +249,7 @@ The pattern is clear: Claude Code scales better for multi-file work that Neovim 
 
 ## Advanced Claude Code Configuration for Neovim Veterans
 
-Neovim users are often comfortable with configuration files. Leverage this:
+Neovim users are often comfortable with configuration files. use this:
 
 Create `.claude/config.json` in your project root:
 

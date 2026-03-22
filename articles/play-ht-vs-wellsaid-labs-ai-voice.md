@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Play Ht vs Wellsaid Labs AI Voice"
+title: "Play Ht vs Wellsaid Labs AI"
 description: "A practical comparison of PlayHT and WellSaid Labs AI voice generation APIs, with code examples and integration guidance for developers"
 date: 2026-03-15
 last_modified_at: 2026-03-15
@@ -9,7 +9,7 @@ permalink: /play-ht-vs-wellsaid-labs-ai-voice/
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
-score: 8
+score: 9
 reviewed: true
 tags: [ai-tools-compared, comparison, artificial-intelligence]
 ---

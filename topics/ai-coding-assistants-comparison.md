@@ -1,8 +1,11 @@
 ---
 layout: default
 title: "AI Coding Assistants Compared — Copilot vs Cursor vs Claude"
-description: "Head-to-head comparisons of AI coding assistants: GitHub Copilot, Cursor, Claude Code, Windsurf, Codeium, and Tabnine. Features, pricing, and real-world benchmarks."
+description: "Head-to-head comparisons of AI coding assistants: GitHub Copilot, Cursor, Claude Code, Windsurf, Codeium, and Tabnine. Features, pricing, and real-world"
 permalink: /topics/ai-coding-assistants-comparison/
+intent-checked: true
+voice-checked: true
+date: 2026-03-21
 ---
 
 # AI Coding Assistants Compared — Copilot vs Cursor vs Claude

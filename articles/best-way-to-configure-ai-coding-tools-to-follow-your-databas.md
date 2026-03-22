@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best Way to Configure AI Coding Tools to Follow Your Databas"
+title: "Best Way to Configure AI Coding Tools to Follow Your"
 description: "Learn how to configure AI coding assistants like GitHub Copilot, Cursor, and Zed to respect your database naming conventions. Practical configuration"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -208,7 +208,7 @@ Different AI tools support different configuration mechanisms. Understanding the
 | Zed | `.zed/rules.md` + `settings.json` | Dual approach | High | Shared settings |
 | Claude Code | Session context | Prompt injection | Dynamic | Conversation-based |
 
-GitHub Copilot's approach works well for teams already familiar with GitHub-specific patterns. Cursor offers the most explicit field-level control through its comprehensive `.cursorrules` format. Zed's dual approach combines markdown documentation with JSON configuration for fine-grained control. Claude Code requires conversation-based context management, which suits interactive workflows but demands explicit instruction passing.
+GitHub Copilot's approach works well for teams already familiar with GitHub-specific patterns. Cursor offers the most explicit field-level control through its `.cursorrules` format. Zed's dual approach combines markdown documentation with JSON configuration for fine-grained control. Claude Code requires conversation-based context management, which suits interactive workflows but demands explicit instruction passing.
 
 ## Advanced Configuration: Database-Specific Patterns
 

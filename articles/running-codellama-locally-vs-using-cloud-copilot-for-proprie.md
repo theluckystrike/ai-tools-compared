@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Running CodeLlama Locally vs Using Cloud Copilot for Proprie"
+title: "Running CodeLlama Locally vs Using Cloud Copilot"
 description: "For proprietary code, running CodeLlama locally is the better choice if data security is your priority, while GitHub Copilot is better if you prefer"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -9,7 +9,7 @@ permalink: /running-codellama-locally-vs-using-cloud-copilot-for-proprie/
 categories: [guides]
 tags: [ai-tools-compared, tools, comparison]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Assistant for Debugging Swift Compiler Errors in Xco"
+title: "Best AI Assistant for Debugging Swift Compiler Errors"
 description: "Discover which AI assistants excel at debugging Swift compiler errors in Xcode. Practical examples, code snippets, and recommendations for developers"
 date: 2026-03-16
 last_modified_at: 2026-03-16

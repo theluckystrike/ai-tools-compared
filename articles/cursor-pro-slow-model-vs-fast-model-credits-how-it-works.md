@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Cursor Pro Slow Model vs Fast Model Credits How It Works"
+title: "Cursor Pro Slow Model vs Fast Model Credits How It"
 description: "Cursor Pro Slow Model vs Fast Model: Credits System. — guide with practical tips, comparisons, and expert recommendations for developers"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -26,6 +26,18 @@ Cursor Pro operates on a credit-based system where every AI request consumes a s
 
 Credits renew monthly depending on your subscription tier. The Pro plan includes a fixed credit allocation, while higher tiers offer increased limits. Understanding how credits map to model performance helps you make informed decisions during daily coding sessions.
 
+
+
+## Quick Comparison
+
+| Feature | Cursor Pro Slow Model | Fast Model |
+|---|---|---|
+| AI Model | See specs | See specs |
+| Code Completion | Supported | Supported |
+| Context Window | See documentation | See documentation |
+| IDE Support | Multiple IDEs | Multiple IDEs |
+| Pricing | Free tier available | See current pricing |
+| Multi-File Editing | Supported | Supported |
 
 ## The Fast Model: Speed Over Depth
 

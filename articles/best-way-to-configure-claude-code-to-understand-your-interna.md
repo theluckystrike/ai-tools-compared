@@ -1,7 +1,7 @@
 ---
 categories: [guides]
 layout: default
-title: "Best Way to Configure Claude Code to Understand Your Interna"
+title: "Best Way to Configure Claude Code to Understand Your"
 description: "A practical guide for developers on configuring Claude Code to understand and work with internal library APIs, with configuration examples and best"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -148,6 +148,41 @@ export const apiConfig = {
 
 Document these environment differences in your CLAUDE.md so Claude Code understands which configurations apply in different contexts. This prevents suggestions that work in development but fail in production.
 
+## Method 5: Error Handling and Exception Documentation
+
+Your internal APIs likely have specific error patterns and exception types. Document these in your configuration so Claude Code can generate appropriate error handling code.
+
+```markdown
+# Error Handling Guide
+
+## Common Error Types
+
+### AuthenticationError
+- Status: 401
+- When: Invalid or expired credentials
+- Recovery: Request fresh credentials, retry once
+- Example: `throw new AuthenticationError('Token expired')`
+
+### ValidationError
+- Status: 400
+- When: Request payload fails validation
+- Recovery: Log error details, return to user for correction
+- Example: `throw new ValidationError('Email required')`
+
+### RateLimitError
+- Status: 429
+- When: Rate limit exceeded (1000 req/min)
+- Recovery: Exponential backoff, retry after delay
+- Example: `throw new RateLimitError('Retry-After: 60')`
+
+### InternalServerError
+- Status: 500
+- When: Server-side issue
+- Recovery: Retry with exponential backoff (max 3 attempts)
+```
+
+With this documentation, Claude Code can generate error handling that matches your actual API behavior rather than generic HTTP error patterns.
+
 
 ## Best Practices for Maintaining Accuracy
 
@@ -183,13 +218,91 @@ interface PaginatedResponse<T> extends ApiResponse<T> {
 Include error types in your specifications. Claude Code can then suggest appropriate error handling when you work with API calls that might fail in specific ways.
 
 
+## Integrating with Your IDE Settings
+
+Beyond CLAUDE.md, configure your IDE to recognize and properly highlight your internal library code. This provides Claude Code with better context about type definitions and usage patterns.
+
+For VS Code, include library-specific settings:
+
+```json
+// .vscode/settings.json
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/.git": true
+  },
+  "files.exclude": {
+    "dist": true,
+    "build": true
+  },
+  "typescript.enablePromptUseWorkspaceTsdk": true
+}
+```
+
+Configure jsconfig or tsconfig to help Claude Code understand your project structure and module paths:
+
+```json
+// tsconfig.json
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@company/*": ["src/*"],
+      "@services/*": ["src/services/*"],
+      "@utils/*": ["src/utils/*"]
+    },
+    "typeRoots": ["./node_modules/@types", "./types"]
+  }
+}
+```
+
+This helps Claude Code resolve internal imports correctly.
+
+## Creating Team-Specific Context Templates
+
+For organizations using Claude Code across multiple teams, create standardized context templates that teams can customize:
+
+```markdown
+# CLAUDE.md Template for [Team Name]
+
+## Overview
+[Team] uses [list of internal libraries and tools].
+
+## Documentation Locations
+- API specs: ./docs/api/
+- Error codes: ./docs/errors/
+- Team conventions: ./docs/conventions/
+
+## Key Modules
+- [Service 1]: Location and purpose
+- [Service 2]: Location and purpose
+
+## Common Patterns
+- How errors are handled
+- How async operations work
+- Configuration patterns
+
+## Important Notes
+- Any team-specific requirements
+- Integration points with other systems
+- Testing requirements
+```
+
+Distribute this template to all teams and ensure they maintain it as libraries evolve. Having consistent documentation across teams makes onboarding new developers much faster—they can immediately understand how to interact with internal libraries.
+
 ## Common Configuration Pitfalls
 
 
 Avoid creating overly long specification files. Claude Code has context limits, and including excessive detail about rarely-used APIs dilutes the relevance of more important information. Focus on the APIs you use most frequently and reference detailed documentation for edge cases.
 
-
 Do not assume Claude Code knows your internal library's internal implementation details. Only document the public API surface that other developers should interact with. Implementation specifics rarely help and can sometimes confuse the context.
+
+Avoid outdated configuration files. Update CLAUDE.md and SPEC.md whenever your APIs change significantly. Stale configuration leads to incorrect suggestions that waste time debugging.
 
 
 ## Practical Example: Complete Setup

@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /how-to-build-model-context-protocol-server-that-serves-opena/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared]
@@ -290,7 +290,7 @@ During development, use the MCP server to explore your API. Ask your AI assistan
 ### Contract Validation
 
 
-Before publishing an API, use the MCP server with an AI assistant to validate that your implementation matches your spec. The AI can systematically call each endpoint, compare responses against the defined schemas, and flag discrepancies. This is faster than writing comprehensive test suites for contract validation.
+Before publishing an API, use the MCP server with an AI assistant to validate that your implementation matches your spec. The AI can systematically call each endpoint, compare responses against the defined schemas, and flag discrepancies. This is faster than writing test suites for contract validation.
 
 
 ## Advanced Patterns

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Inventory Analytics: A Practical Guide for"
+title: "AI Tools for Inventory Analytics"
 description: "Explore AI tools for inventory analytics with code examples, API integrations, and practical implementations for developers and power users"
 date: 2026-03-15
 last_modified_at: 2026-03-15

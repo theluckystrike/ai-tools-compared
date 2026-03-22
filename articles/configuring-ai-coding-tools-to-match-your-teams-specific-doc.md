@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Configuring AI Coding Tools to Match Your Teams Specific Doc"
+title: "Configuring AI Coding Tools to Match Your Teams Specific"
 description: "A practical guide to configuring AI coding assistants like GitHub Copilot, Codeium, and Cursor to understand your team's specific Dockerfile layer ordering"
 date: 2026-03-16
 last_modified_at: 2026-03-16

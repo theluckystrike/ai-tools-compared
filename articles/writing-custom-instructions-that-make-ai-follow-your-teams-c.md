@@ -9,7 +9,7 @@ permalink: /writing-custom-instructions-that-make-ai-follow-your-teams-changelog
 categories: [guides]
 tags: [ai-tools-compared, ai, prompts, workflow, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

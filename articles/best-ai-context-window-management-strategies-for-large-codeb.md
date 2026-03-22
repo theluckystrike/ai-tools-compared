@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Context Window Management Strategies for Large Codeb"
+title: "Best AI Context Window Management Strategies for Large"
 description: "Master AI context window management for large codebases. Practical strategies, code patterns, and techniques to maximize AI coding assistant performance"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -9,7 +9,7 @@ permalink: /best-ai-context-window-management-strategies-for-large-codeb/
 categories: [guides]
 tags: [ai-tools-compared, tools, best-of, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
@@ -345,7 +345,7 @@ claude chat --include "src/services/*.ts" \
 
 ### Cursor AI
 
-Leverage project indexing:
+use project indexing:
 
 ```
 # Use @symbols for smart context
