@@ -53,6 +53,19 @@ import {
 For each resource you need to import, you must know the resource type, the target resource address, and the unique identifier from your cloud provider. When managing hundreds of resources across multiple accounts, this becomes overwhelming quickly.
 
 
+## Which AI Tools Work Best for Terraform Import Blocks
+
+
+Several AI coding assistants handle Terraform generation well, each with different strengths:
+
+- **Claude (claude-opus-4 / claude-sonnet-4)**: Excels at understanding complex HCL relationships and generating accurate resource configurations. Strong at multi-resource dependency chains.
+- **GitHub Copilot**: Useful inline as you type import blocks in your editor; suggests resource types based on open files.
+- **ChatGPT GPT-4o**: Good for interactive iteration where you refine requirements across multiple turns.
+- **Amazon Q Developer**: Purpose-built for AWS resources, with native knowledge of AWS resource identifiers and provider quirks.
+
+For bulk Terraform import generation, Claude and Amazon Q tend to produce the fewest errors because they have deeper infrastructure-specific training. For quick one-off imports while already in VS Code, Copilot's in-editor context wins on convenience.
+
+
 ## Using AI to Generate Import Blocks
 
 
@@ -80,6 +93,16 @@ For AWS, you might run:
 ```bash
 aws ec2 describe-instances --query 'Reservations[*].Instances[*].InstanceId' --output text
 aws s3api list-buckets --query 'Buckets[].Name' --output text
+aws rds describe-db-instances --query 'DBInstances[*].DBInstanceIdentifier' --output text
+```
+
+
+For GCP resources, use:
+
+
+```bash
+gcloud compute instances list --format="value(name,selfLink)"
+gcloud sql instances list --format="value(name)"
 ```
 
 
@@ -216,6 +239,74 @@ import {
 Cross-reference documentation: When AI generates import blocks for unfamiliar resource types, ask it to include comments referencing the official Terraform provider documentation.
 
 
+## Automating Resource Discovery Before Prompting
+
+
+Instead of manually running CLI commands, automate resource discovery with a script that feeds directly into your AI prompt:
+
+
+```python
+import subprocess
+import json
+
+def gather_aws_resources():
+    """Collect AWS resource IDs to feed into an AI import prompt."""
+    resources = {}
+
+    # EC2 instances
+    result = subprocess.run(
+        ["aws", "ec2", "describe-instances",
+         "--query", "Reservations[*].Instances[*].{id:InstanceId,name:Tags[?Key=='Name']|[0].Value}",
+         "--output", "json"],
+        capture_output=True, text=True
+    )
+    instances = json.loads(result.stdout)
+    resources["ec2_instances"] = [i for sublist in instances for i in sublist]
+
+    # S3 buckets
+    result = subprocess.run(
+        ["aws", "s3api", "list-buckets", "--query", "Buckets[].Name", "--output", "json"],
+        capture_output=True, text=True
+    )
+    resources["s3_buckets"] = json.loads(result.stdout)
+
+    return resources
+
+resources = gather_aws_resources()
+print(json.dumps(resources, indent=2))
+```
+
+
+Feed this output directly into your AI prompt. With resource names already in JSON format, Claude or ChatGPT can generate properly named Terraform resources with meaningful identifiers rather than generic `example` labels.
+
+
+## Validating AI Output with terraform plan
+
+
+Never apply AI-generated import blocks without running `terraform plan -generate-config-out=generated.tf` first. This Terraform 1.5+ feature generates resource configurations automatically based on what the provider discovers:
+
+
+```bash
+# Write the import block to a file
+cat > imports.tf << 'EOF'
+import {
+  to = aws_vpc.main
+  id = "vpc-0a1b2c3d4e5f6g7h8"
+}
+EOF
+
+# Let Terraform generate the matching resource config
+terraform plan -generate-config-out=generated.tf
+
+# Review the generated file before applying
+cat generated.tf
+terraform apply
+```
+
+
+This approach combines AI-generated import blocks with Terraform's native config generation, giving you a double-verification pass. The AI handles the import block structure; Terraform fills in the exact resource attributes from your live infrastructure.
+
+
 ## Limitations to Understand
 
 
@@ -230,6 +321,8 @@ AI tools have boundaries you should recognize:
 
 - Drift detection: AI generates import blocks based on current state, but won't detect configuration drift between actual resource state and desired configuration
 
+- Provider version mismatches: AI trained before a provider major version bump may generate outdated resource argument names
+
 
 ## Best Practices for AI-Assisted Imports
 
@@ -243,6 +336,8 @@ AI tools have boundaries you should recognize:
 4. **Version your provider** explicitly to avoid unexpected behavior changes
 
 5. **Backup your state** before running imports on production resources
+
+6. **Iterate with the AI** — if the first output has errors, paste the error message back and ask for a correction
 
 
 
