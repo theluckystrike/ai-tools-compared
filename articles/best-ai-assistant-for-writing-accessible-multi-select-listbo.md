@@ -8,7 +8,7 @@ last_modified_at: 2026-03-21
 author: "AI Tools Compared"
 permalink: /best-ai-assistant-for-writing-accessible-multi-select-listbo/
 reviewed: true
-score: 7
+score: 9
 categories: [comparisons]
 intent-checked: false
 voice-checked: false
