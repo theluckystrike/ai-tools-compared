@@ -9,7 +9,7 @@ permalink: /ai-postmortem-generation/
 categories: [guides]
 tags: [ai-tools-compared, ai, devops, incident-management, artificial-intelligence]
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 voice-checked: true---
 
