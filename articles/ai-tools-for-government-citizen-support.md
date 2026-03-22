@@ -9,7 +9,7 @@ permalink: /ai-tools-for-government-citizen-support/
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
-score: 9
+score: 7
 voice-checked: true
 intent-checked: true---
 
