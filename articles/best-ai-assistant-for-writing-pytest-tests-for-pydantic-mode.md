@@ -261,6 +261,107 @@ class TestStrictUser:
 ```
 
 
+## Using pytest.mark.parametrize for Boundary Testing
+
+
+One of the most powerful patterns AI assistants generate for Pydantic testing is parametrized boundary tests. Instead of writing separate test functions for each invalid value, `pytest.mark.parametrize` lets you sweep across a range of inputs in one concise block:
+
+
+```python
+import pytest
+from pydantic import ValidationError
+from your_app.models import UserProfile
+
+@pytest.mark.parametrize("age,should_pass", [
+    (-1, False),
+    (0, True),
+    (1, True),
+    (149, True),
+    (150, True),
+    (151, False),
+    (200, False),
+])
+def test_age_boundary_values(age, should_pass):
+    if should_pass:
+        user = UserProfile(username="testuser", age=age, email="a@b.com")
+        assert user.age == age
+    else:
+        with pytest.raises(ValidationError):
+            UserProfile(username="testuser", age=age, email="a@b.com")
+```
+
+
+This approach is especially effective when prompting Claude, Cursor, or Copilot: ask explicitly for "parametrized boundary tests including off-by-one values" and the assistant will generate a comprehensive sweep rather than a handful of spot checks.
+
+
+## Testing model_validator for Cross-Field Logic
+
+
+Pydantic v2's `@model_validator` decorator runs after all field validations complete, making it ideal for cross-field business rules. AI assistants can generate tests for these scenarios once you provide the model definition:
+
+
+```python
+from pydantic import BaseModel, model_validator
+from datetime import date
+
+class DateRange(BaseModel):
+    start_date: date
+    end_date: date
+
+    @model_validator(mode='after')
+    def validate_date_order(self):
+        if self.end_date <= self.start_date:
+            raise ValueError('end_date must be after start_date')
+        return self
+```
+
+
+```python
+import pytest
+from pydantic import ValidationError
+from datetime import date
+from your_app.models import DateRange
+
+class TestDateRange:
+    def test_valid_range(self):
+        r = DateRange(start_date=date(2026, 1, 1), end_date=date(2026, 12, 31))
+        assert r.end_date > r.start_date
+
+    def test_same_day_invalid(self):
+        with pytest.raises(ValidationError) as exc_info:
+            DateRange(start_date=date(2026, 6, 1), end_date=date(2026, 6, 1))
+        assert "end_date must be after start_date" in str(exc_info.value)
+
+    def test_reversed_dates_invalid(self):
+        with pytest.raises(ValidationError) as exc_info:
+            DateRange(start_date=date(2026, 12, 31), end_date=date(2026, 1, 1))
+        assert "end_date must be after start_date" in str(exc_info.value)
+```
+
+
+## Comparing AI Assistants for Pydantic Test Generation
+
+
+Not all AI tools produce equally useful Pydantic test output. Here is how the major options compare based on real-world usage:
+
+
+| Tool | Pydantic v2 Awareness | Parametrize Usage | model_validator Support | Context Window |
+|------|----------------------|------------------|------------------------|----------------|
+| Claude (Sonnet/Opus) | Excellent | Proactive | Strong | 200k tokens |
+| Cursor (with claude-3.7) | Excellent | On request | Strong | Full repo context |
+| GitHub Copilot | Good | Occasional | Moderate | File-level |
+| ChatGPT (GPT-4o) | Good | On request | Moderate | 128k tokens |
+| Codeium | Moderate | Rare | Limited | File-level |
+
+
+Claude and Cursor tend to produce the most complete test suites out of the box because they understand Pydantic v2's departure from the v1 `@validator` pattern. Copilot is reliable for simpler constraint tests but sometimes generates v1-style syntax unless you specify v2 explicitly in your prompt.
+
+
+**Recommended prompt template for any AI assistant:**
+
+> "Generate a complete pytest test class for this Pydantic v2 model. Include parametrized boundary tests for all numeric and string length constraints, test `@field_validator` and `@model_validator` logic, test the happy path, and test missing required fields. Use `pytest.raises(ValidationError)` and assert on error message content."
+
+
 ## Evaluating AI Assistants for Pydantic Testing
 
 
