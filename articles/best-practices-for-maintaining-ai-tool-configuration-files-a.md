@@ -93,6 +93,47 @@ File organization:
 ```
 
 
+### Example: Continue (Open Source) Configuration
+
+For teams using Continue, the open-source AI coding assistant, configuration lives in `.continue/config.json`:
+
+```json
+{
+  "models": [
+    {
+      "title": "Claude Sonnet",
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-5",
+      "apiKey": "$ANTHROPIC_API_KEY"
+    }
+  ],
+  "contextProviders": [
+    {
+      "name": "codebase",
+      "params": {
+        "nRetrieve": 25,
+        "nFinal": 5,
+        "useReranking": true
+      }
+    },
+    {
+      "name": "docs",
+      "params": {}
+    }
+  ],
+  "slashCommands": [
+    {
+      "name": "review",
+      "description": "Review the current file for bugs and improvements",
+      "prompt": "Review this code for: 1) bugs, 2) security issues, 3) performance problems. Be specific and reference line numbers."
+    }
+  ]
+}
+```
+
+Committing this file ensures every team member uses the same model, context retrieval settings, and custom commands. Without it, developers on the same project may be using different models or prompt strategies, producing inconsistent output quality.
+
+
 ## Document Configuration Changes
 
 
@@ -100,11 +141,8 @@ Create a `docs/ai-setup.md` file that explains your AI tool configuration to hum
 
 
 - Required extensions and their versions
-
 - Configuration files the project uses
-
 - Environment variables needed for AI tools
-
 - Any custom prompts or instructions provided to AI assistants
 
 
@@ -235,6 +273,15 @@ Add your actual secrets to `.env.local` and ensure it's in your `.gitignore`:
 ```
 
 
+## Handling Configuration Drift
+
+One of the most common problems teams face is configuration drift: the `.cursorrules` or `copilot-instructions.md` file gets updated on one developer's branch but never merged, while another developer updates a different section, and eventually the version-controlled file no longer reflects what anyone is actually using locally.
+
+Prevent drift with two practices. First, treat configuration changes like feature changes: they go through pull requests with at least one reviewer. A reviewer who tests the new configuration before approving catches instructions that are ambiguous or counterproductive. Second, add a configuration review to your sprint retrospective. Every two weeks, ask: "Did our AI tool configurations cause problems or produce worse results this sprint?" If the answer is yes, update the configuration before starting the next sprint.
+
+For teams using multiple AI tools simultaneously, maintain a single `docs/ai-tools.md` that cross-references which configuration file belongs to which tool. When a developer joins the team, this document should be the first thing they read about AI tooling—before they install any extensions.
+
+
 ## Test Your Configuration
 
 
@@ -264,6 +311,11 @@ jobs:
             echo "Missing .env.example"
             exit 1
           fi
+      - name: Check cursorrules if Cursor is used
+        run: |
+          if grep -r "cursor" .github/copilot-instructions.md 2>/dev/null; then
+            [ -f .cursorrules ] || { echo "Missing .cursorrules"; exit 1; }
+          fi
 ```
 
 
@@ -276,12 +328,10 @@ Review and update your AI tool configurations during regular maintenance cycles.
 Set quarterly reminders to:
 
 1. Check if configuration files still match project structure
-
 2. Update context for new patterns or conventions
-
 3. Remove outdated instructions that no longer apply
-
 4. Verify all team members can access required API keys
+5. Review whether the current model selection is still the best option for your use case
 
 
 
