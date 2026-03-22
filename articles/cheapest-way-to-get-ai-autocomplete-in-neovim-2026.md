@@ -27,7 +27,17 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 Finding affordable AI tools requires understanding the true cost structure. This guide breaks down the cheapest options and explains what you get at each price point.
+
+## Key Takeaways
+
+- **If you have used**: the tool for at least 3 months and plan to continue, the annual discount usually makes sense.
+- **For full AI completions**: you'd need their paid plans starting at $12/month.
+- **The plugin handles authentication with your AWS account**: free to set up, and the free tier has no monthly usage limits for individual developers.
+- **Limitations**: The free tier limits cloud-enhanced suggestions.
+- **A 7B parameter model**: needs at least 8GB RAM and works best with an SSD.
+- **Response times range from**: 200ms to 2 seconds depending on your hardware.
 
 ## Understanding Your Options
 

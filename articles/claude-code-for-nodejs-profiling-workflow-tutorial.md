@@ -31,6 +31,15 @@ intent-checked: true---
 
 Claude Code is an AI-powered CLI tool that can significantly accelerate your Node.js profiling workflow. This tutorial walks you through using Claude Code to identify performance bottlenecks, analyze CPU and memory profiles, and optimize your applications effectively.
 
+## Key Takeaways
+
+- **For example**: "clinic doctor flagged that my event loop delay is consistently above 30ms during the `/api/search` endpoint.
+- **A practical starting point**: is p99 response time under 200ms for API endpoints and heap growth under 50MB per hour under normal load.
+- **The key to useful**: analysis is providing both the profile output and the relevant source code in the same Claude Code session.
+- **Claude Code is particularly**: useful here because the pattern is easy to miss during code review but shows up clearly in profiling data.
+- **Create performance benchmarks**: Use frameworks like benchmark.js to measure the impact of optimizations.
+- **Use Claude Code for code review**: Have Claude Code review performance-critical code changes before merging.
+
 ## Why Use Claude Code for Node.js Profiling?
 
 Traditional Node.js profiling requires manual investigation of flame graphs, heap snapshots, and performance metrics. While powerful, these tools can be overwhelming, especially when you're new to performance optimization. Claude Code acts as an intelligent assistant that helps you interpret profiling data, suggests targeted optimizations, and guides you through the entire profiling workflow.

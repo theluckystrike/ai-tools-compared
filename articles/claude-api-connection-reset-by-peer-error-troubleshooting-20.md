@@ -16,6 +16,16 @@ tags: [ai-tools-compared, troubleshooting, claude-ai, api]---
 
 The "connection reset by peer" error is one of the most frustrating issues developers encounter when working with the Claude API. This error indicates that the remote server terminated the connection unexpectedly, disrupting your API calls and potentially causing data loss or incomplete requests. Understanding the root causes and implementing proper error handling can save hours of debugging and ensure your applications run reliably.
 
+## Key Takeaways
+
+- **Set the idle timeout**: to at least 300 seconds in your ALB listener settings.
+- **Nginx proxy timeout settings**: If your application runs behind Nginx, the default `proxy_read_timeout` of 60 seconds will cut long Claude responses.
+- **Use connection pooling**: Maintain persistent connections to reduce handshake overhead
+2.
+- **The "connection reset by**: peer" error is one of the most frustrating issues developers encounter when working with the Claude API.
+- **Understanding the root causes**: and implementing proper error handling can save hours of debugging and ensure your applications run reliably.
+- **For streaming responses where**: Claude may not emit tokens continuously, this causes mid-response resets.
+
 ## Understanding the Error
 
 When you receive a "connection reset by peer" error, it means the server (in this case, Anthropic's Claude API servers) closed the connection before your client finished sending or receiving data. This is different from a timeout error, which occurs when no response is received within a specified period. The connection reset specifically indicates the server actively terminated the existing connection.
