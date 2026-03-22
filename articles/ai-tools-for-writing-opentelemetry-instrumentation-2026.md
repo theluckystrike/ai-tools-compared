@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, observability, artificial-intelligence]
 reviewed: true
 score: 8
 voice-checked: true
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "AI Tools for Writing OpenTelemetry Instrumentation 2026"
-description: "How AI coding assistants handle distributed tracing, metrics collection, and log correlation with OpenTelemetry SDK integration"
-date: 2026-03-21
-last_modified_at: 2026-03-21
-author: theluckystrike
-permalink: /ai-tools-for-writing-opentelemetry-instrumentation-2026/
-categories: [guides]
-tags: [ai-tools-compared, tools, observability, artificial-intelligence]
-reviewed: true
-score: 8
-voice-checked: true
-intent-checked: true---
 
 
 Use Claude 3.5 Sonnet for designing instrumentation strategies that span multiple services, GitHub Copilot for generating boilerplate span and metric code while you code, or ChatGPT 4o for quick debugging when span attributes are missing or traces don't correlate. This guide walks through how each tool handles OpenTelemetry context propagation, sampling decisions, and SDK configuration across Python, Go, and Node.js applications.

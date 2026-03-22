@@ -11,21 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared]---
+tags: [ai-tools-compared]
 ---
-layout: default
-title: "Windsurf Premium Model Access Which Models Cost Extra"
-description: "A guide to Windsurf Premium model access, including which AI models require extra credits, pricing breakdown, and recommendations for 2026"
-date: 2026-03-18
-last_modified_at: 2026-03-18
-author: theluckystrike
-permalink: /windsurf-premium-model-access-which-models-cost-extra-credits-2026/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared]---
 
 
 Windsurf Premium offers access to multiple AI models, but not all are created equal when it comes to credit consumption. Understanding which models cost extra credits helps you optimize your usage and avoid unexpected charges. This guide breaks down everything you need know about Windsurf Premium model access in 2026.

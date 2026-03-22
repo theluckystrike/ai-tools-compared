@@ -10,20 +10,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison, claude-ai]---
+tags: [ai-tools-compared, comparison, claude-ai]
 ---
-layout: default
-title: "Gemini vs Claude for Multimodal Coding"
-description: "Compare Gemini 1.5 Pro and Claude Opus on multimodal coding tasks: reading diagrams, analyzing screenshots, converting wireframes to code, and processing PDFs"
-date: 2026-03-21
-author: theluckystrike
-permalink: /gemini-vs-claude-multimodal-coding-tasks/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, comparison, claude-ai]---
 
 {% raw %}
 

@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, best-of, artificial-intelligence]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Best AI Assistant for Designers Generating Accessibility"
-description: "A technical guide for developers and power users comparing AI tools that analyze design screenshots and generate accessibility audit reports"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /best-ai-assistant-for-designers-generating-accessibility-aud/
-categories: [guides]
-tags: [ai-tools-compared, tools, best-of, artificial-intelligence]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

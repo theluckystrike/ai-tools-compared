@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Use AI Inline Chat to Refactor Single Function"
-description: "A practical guide for developers on using VS Code AI inline chat to refactor individual functions with real code examples and step-by-step instructions"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-use-ai-inline-chat-to-refactor-single-function-step-by-step/
-categories: [guides]
-tags: [ai-tools-compared, tools, artificial-intelligence]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 
 Use inline chat to refactor functions by selecting the target function, describing desired improvements in natural language, and reviewing changes step-by-step. This guide shows how inline chat keeps refactoring focused and verifiable.

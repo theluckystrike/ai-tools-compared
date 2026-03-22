@@ -11,21 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison]---
+tags: [ai-tools-compared, comparison]
 ---
-layout: default
-title: "Cursor vs Windsurf for React Development 2026"
-description: "Practical comparison of Cursor and Windsurf for React projects in 2026. Component generation, hook suggestions, refactoring, and multi-file editing quality."
-date: 2026-03-21
-last_modified_at: 2026-03-21
-author: theluckystrike
-permalink: /cursor-vs-windsurf-for-react-development-2026/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, comparison]---
 
 {% raw %}
 

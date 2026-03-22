@@ -11,21 +11,8 @@ intent-checked: true
 voice-checked: true
 score: 8
 reviewed: true
-tags: [ai-tools-compared]---
+tags: [ai-tools-compared]
 ---
-layout: default
-title: "Switching from Copilot Enterprise to Cursor Business"
-description: "Moving your development team from GitHub Copilot Enterprise to Cursor Business requires more than just installing a new extension. This checklist covers the"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /switching-from-copilot-enterprise-to-cursor-business-migrati/
-categories: [guides]
-intent-checked: true
-voice-checked: true
-score: 8
-reviewed: true
-tags: [ai-tools-compared]---
 
 
 Moving your development team from GitHub Copilot Enterprise to Cursor Business requires more than just installing a new extension. This checklist covers the technical configuration, workflow adjustments, and organizational changes needed for a smooth transition.

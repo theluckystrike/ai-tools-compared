@@ -9,19 +9,8 @@ categories: [guides]
 tags: [ai-tools-compared, accessibility, ai-tools, react, components, wcag, aria, best-of]
 reviewed: true
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Best AI Tool for Generating Accessible Stepper and Wizard"
-description: "A practical guide to AI-powered tools that generate accessible stepper and wizard components with proper ARIA attributes, keyboard navigation, and screen"
-date: 2026-03-21
-author: theluckystrike
-permalink: /best-ai-tool-for-generating-accessible-stepper-and-wizard-co/
-categories: [guides]
-tags: [ai-tools-compared, accessibility, ai-tools, react, components, wcag, aria, best-of]
-reviewed: true
-intent-checked: true
-voice-checked: true---
 
 
 | Tool | Accessibility Knowledge | ARIA Support | WCAG Compliance | Pricing |

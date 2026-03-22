@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 
 AI coding tools have become integral to modern development workflows, offering intelligent code suggestions, autocomplete, and even full-file generation. However, these tools need access to your codebase to function effectively, and that access can inadvertently expose sensitive information. Configuring your AI assistant to exclude secrets and environment files is essential for maintaining security while enjoying the productivity benefits of AI-powered development.

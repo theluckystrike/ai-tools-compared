@@ -11,7 +11,8 @@ score: 8
 voice-checked: true
 categories: [guides]
 tags: [ai-tools-compared, security, artificial-intelligence]
-intent-checked: true---
+intent-checked: true
+---
 {% raw %}
 
 AI container security scanning has become an essential part of modern DevSecOps workflows. As organizations deploy more containerized applications, the attack surface expands significantly. Traditional scanning tools rely on static vulnerability databases, but AI-powered solutions bring intelligent analysis that adapts to emerging threats and context-specific risks.

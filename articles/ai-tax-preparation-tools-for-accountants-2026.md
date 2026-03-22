@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "AI Tax Preparation Tools for Accountants"
-description: "A practical guide to AI tax preparation tools for accountants in 2026. Explore APIs, code examples, and integration strategies for developers building"
-date: 2026-03-20
-last_modified_at: 2026-03-20
-author: theluckystrike
-permalink: /ai-tax-preparation-tools-for-accountants-2026/
-categories: [guides]
-tags: [ai-tools-compared, tools, artificial-intelligence]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

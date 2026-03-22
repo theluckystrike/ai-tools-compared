@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 8
 voice-checked: true
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "AI Coding Assistant Data Sovereignty Requirements"
-description: "Understand GDPR, NIS2, and EU data sovereignty requirements when selecting AI coding assistants. Practical guidance for developers and technical teams"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /ai-coding-assistant-data-sovereignty-requirements-for-companies-operating-in-eu-2026/
-categories: [guides]
-tags: [ai-tools-compared, tools, artificial-intelligence]
-reviewed: true
-score: 8
-voice-checked: true
-intent-checked: true---
 
 {% raw %}
 

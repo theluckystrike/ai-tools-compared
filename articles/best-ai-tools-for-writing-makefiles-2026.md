@@ -355,6 +355,107 @@ This pattern is something Claude generates without being asked when you include 
 
 Claude is the strongest for production Makefiles. Give it explicit constraints — variable naming, tab indentation, `.PHONY` requirements — and it rarely needs correction. For error diagnosis, paste the full `make` output and Claude will identify the specific issue faster than any other tool.
 
+## Conditional Compilation and Platform-Specific Rules
+
+AI tools often struggle with platform-specific build logic. Here's a prompt that works:
+
+```text
+Write a Makefile that builds on Linux and macOS.
+On macOS: use clang and add -fPIC. On Linux: use gcc and add -fstack-protector.
+Add a detect-os target and conditional flags.
+```
+
+**Claude output:**
+
+```makefile
+UNAME := $(shell uname)
+
+ifeq ($(UNAME),Darwin)
+    CC := clang
+    CFLAGS += -fPIC
+    LDFLAGS += -lm
+else ifeq ($(UNAME),Linux)
+    CC := gcc
+    CFLAGS += -fstack-protector
+    LDFLAGS += -ldl -lm
+else
+    $(error Unsupported platform: $(UNAME))
+endif
+
+.PHONY: detect-os
+detect-os:
+	@echo "Platform: $(UNAME), Compiler: $(CC)"
+
+all: detect-os binary
+
+binary: $(OBJS)
+	$(CC) $(LDFLAGS) $^ -o $@
+```
+
+Claude correctly uses `$(shell uname)` for platform detection and conditional assignment. One limitation: it doesn't always handle cross-compilation toolchains (e.g., building ARM from x86).
+
+## Common Makefile Mistakes AI Tools Make
+
+Understanding what Claude and competitors get wrong helps you validate output:
+
+- **Missing dependencies on headers** — AI generates compile rules that recompile everything when a header changes, slowing iteration
+- **Hardcoded paths** — Uses `/usr/bin/gcc` instead of `$(CC)`
+- **No incremental builds** — Runs full clean rebuild instead of tracking object file dependencies
+- **Ignoring `.SECONDARY` and `.PRECIOUS`** — Deletes intermediate object files needed for incremental builds
+
+Always review the dependency tracking. A correct Makefile for a 200-file C project should touch only the object files for changed sources, not recompile everything.
+
+## Advanced: Generating Dependencies with gcc -MM
+
+For C/C++ projects, ask Claude to add automated header dependency generation:
+
+```text
+Add a target that generates .d dependency files using gcc -MM.
+Each source file src/foo.c should generate obj/foo.d with all headers it depends on.
+Include these .d files so make rebuilds when headers change.
+```
+
+Claude will produce something like:
+
+```makefile
+DEPS := $(OBJS:.o=.d)
+
+obj/%.d: src/%.c
+	@mkdir -p $(dir $@)
+	$(CC) -MM $(CFLAGS) $< > $@
+
+include $(DEPS)
+
+obj/%.o: src/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
+```
+
+This ensures that editing a header automatically triggers recompilation of all dependent source files — a feature many developers don't realize they need.
+
+## Testing Makefiles with Dry-Run
+
+When Claude generates a complex Makefile, validate it with `make -n` before running for real:
+
+```bash
+make -n all  # Print commands without executing
+```
+
+Check the output to ensure:
+1. Correct compilation order
+2. Variables expand properly
+3. Pattern rules generate correct paths
+4. No circular dependencies
+
+## Summary Table Expanded
+
+| Tool | Pattern Rules | .PHONY | Order-Only Deps | Platform Conditionals | Dependency Tracking |
+|------|--------------|--------|-----------------|----------------------|---------------------|
+| Claude | Excellent | Complete | Yes | Good | Partial* |
+| Copilot | Partial | Usually | No | Weak | Poor |
+| ChatGPT | Good | Often missing | Rarely | Weak | Poor |
+
+*Claude generates dependency rules on request but doesn't always optimize for incremental builds without explicit prompting.
+
 ## Related Reading
 
 - [Best AI Tools for Writing Bazel BUILD Files](/ai-tools-compared/best-ai-tools-for-writing-bazel-build-files-2026/)

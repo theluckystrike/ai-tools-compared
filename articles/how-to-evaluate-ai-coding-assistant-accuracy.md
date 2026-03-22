@@ -10,20 +10,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
 ---
-layout: default
-title: "How to Evaluate AI Coding Assistant Accuracy"
-description: "A practical framework for measuring AI coding assistant accuracy: test suites, benchmarks, blind comparisons, and metrics that reflect real developer value"
-date: 2026-03-21
-author: theluckystrike
-permalink: /how-to-evaluate-ai-coding-assistant-accuracy/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
 
 {% raw %}
 

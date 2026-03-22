@@ -11,7 +11,8 @@ tags: [ai-tools-compared, tools, comparison]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
+---
 {% raw %}
 
 Converting a design mockup into a fully functional Next.js application requires the right AI-powered coding assistant. This guide compares Cursor and Windsurf—the two leading AI editors—focusing on their ability to transform design files into production-ready React code.

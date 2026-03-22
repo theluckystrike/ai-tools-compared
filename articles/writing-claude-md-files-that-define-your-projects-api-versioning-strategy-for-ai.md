@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, claude-ai, api]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Writing CLAUDE MD Files That Define Your Project's API"
-description: "Learn how to create effective CLAUDE MD files that define API versioning strategies for AI-powered development workflows in 2026"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/
-categories: [guides]
-tags: [ai-tools-compared, tools, claude-ai, api]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 
 Write CLAUDE MD files that define API versioning strategy by specifying current active versions, deprecated versions with sunset dates, versioning method (URL-based or header-based), and clear version schemas. These files communicate to AI assistants which API versions to use, which ones to avoid, and how breaking changes are managed—preventing AI from generating code using deprecated endpoints.

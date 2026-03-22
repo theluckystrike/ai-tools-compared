@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, best-of, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Best Practices for Combining AI Code Generation"
-description: "A practical guide for developers on integrating AI code generation with manual code review. Learn workflows, patterns, and strategies to maximize code"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /best-practices-for-combining-ai-code-generation-with-manual-code-review/
-categories: [guides]
-tags: [ai-tools-compared, tools, best-of, artificial-intelligence]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 
 Use AI to generate boilerplate (models, API stubs, test scaffolding) quickly; focus manual review on business logic, security, and error handling. Review AI code for unhandled edge cases, SQL injection risks, and architectural consistency. Allocate 30% of effort to generation, 70% to review and refinement. This guide covers effective workflows for combining AI generation with manual code review.

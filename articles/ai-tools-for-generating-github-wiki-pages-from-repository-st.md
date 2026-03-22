@@ -11,21 +11,8 @@ tags: [ai-tools-compared, github, documentation, wiki, developer-tools, artifici
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "AI Tools for Generating GitHub Wiki Pages from Repository"
-description: "A practical comparison of AI tools that automatically generate GitHub wiki pages from your repository structure. Find the best solution for your project"
-date: 2026-03-21
-last_modified_at: 2026-03-21
-author: theluckystrike
-permalink: /ai-tools-for-generating-github-wiki-pages-from-repository-st/
-categories: [guides]
-tags: [ai-tools-compared, github, documentation, wiki, developer-tools, artificial-intelligence]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

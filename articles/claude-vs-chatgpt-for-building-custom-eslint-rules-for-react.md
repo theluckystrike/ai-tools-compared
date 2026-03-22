@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, comparison, claude-ai, chatgpt]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Claude vs ChatGPT for Building Custom ESLint Rules"
-description: "A practical comparison of Claude and ChatGPT for creating custom ESLint rules in React projects, with code examples and real-world recommendations"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /claude-vs-chatgpt-for-building-custom-eslint-rules-for-react/
-categories: [guides]
-tags: [ai-tools-compared, tools, comparison, claude-ai, chatgpt]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

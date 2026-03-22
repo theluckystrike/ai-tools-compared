@@ -11,21 +11,8 @@ voice-checked: true
 score: 9
 reviewed: true
 intent-checked: true
-tags: [ai-tools-compared, comparison, claude-ai]---
+tags: [ai-tools-compared, comparison, claude-ai]
 ---
-layout: default
-title: "Gemini vs Claude for Writing Apache Kafka Consumer Producer"
-description: "A practical comparison of Gemini and Claude for writing Apache Kafka consumer and producer code in Java, with real code examples and recommendations"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /gemini-vs-claude-for-writing-apache-kafka-consumer-producer-/
-categories: [comparisons]
-voice-checked: true
-score: 9
-reviewed: true
-intent-checked: true
-tags: [ai-tools-compared, comparison, claude-ai]---
 
 
 This comparison evaluates Gemini and Claude on Apache Kafka consumer and producer code in Java, focusing on code quality, API accuracy, and practical developer experience.

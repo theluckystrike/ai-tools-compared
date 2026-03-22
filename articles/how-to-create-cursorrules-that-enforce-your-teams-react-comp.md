@@ -11,21 +11,8 @@ tags: [ai-tools-compared, react, cursorrules, ai-tools]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Create .cursorrules That Enforce Your Teams React"
-description: "Learn how to write Cursorules that enforce consistent React component composition patterns across your team. Practical examples and code snippets included"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-create-cursorrules-that-enforce-your-teams-react-comp/
-categories: [guides]
-tags: [ai-tools-compared, react, cursorrules, ai-tools]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

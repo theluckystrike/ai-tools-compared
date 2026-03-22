@@ -1,51 +1,44 @@
 ---
 layout: default
 title: "Best AI Tools for Writing Dockerfile Optimization 2026"
-description: "Compare AI tools for optimizing Dockerfiles. Learn multi-stage build patterns, layer caching strategies, security scanning integration, and real size"
-date: 2026-03-21
+description: "Compare AI coding assistants for optimizing Dockerfiles including multi-stage builds, layer caching, security hardening, and image size reduction"
+date: 2026-03-22
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /best-ai-tools-for-writing-dockerfile-optimization-2026/
-categories: [guides, comparisons]
+categories: [guides]
+tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
-score: 9
+score: 8
 voice-checked: true
 intent-checked: true
 tags: [ai-tools-compared, devops, docker, optimization, best-of, artificial-intelligence]
 ---
 
+## Why Dockerfile Optimization Matters
 
-Dockerfile optimization is tedious and error-prone. Most developers write working Dockerfiles, not efficient ones—discovering bloat only in production when images hit 2GB. AI tools now handle multi-stage builds, layer caching strategy, and security hardening automatically, cutting image sizes by 60-80% while reducing attack surface.
+Docker image size directly impacts deployment speed, storage costs, and cold start times. A 2GB unoptimized image costs 3-4x more in ECR storage and takes minutes to pull in CI/CD pipelines. Modern AI tools understand multi-stage builds, layer caching strategies, and security best practices—automating optimizations that typically require deep Docker knowledge.
 
-This guide compares the practical approaches AI tools take to Dockerfile optimization and shows which tools produce production-ready improvements.
+## Quick Comparison Table
 
-## Key Takeaways
+| Tool | Multi-Stage Support | Security Scanning | Layer Cache Tips | Price | Best For |
+|------|-------------------|------------------|-----------------|-------|----------|
+| Claude 3.5 Sonnet | Excellent | Yes, detects root/vulnerabilities | Explains caching logic | $3/MTok | Complex refactors |
+| GitHub Copilot | Good | Via Snyk integration | Generates variants | $10/mo | Quick suggestions |
+| ChatGPT-4 | Good | Basic detection | Adequate | $20/mo | Learning patterns |
+| Amazon CodeWhisperer | Good | AWS-native | Limited | Free/Enterprise | AWS-heavy stacks |
+| Cursor IDE | Excellent | Via extension | Real-time feedback | $20/mo | Inline editing |
 
-- **Most developers write working Dockerfiles, not efficient ones**: discovering bloat only in production when images hit 2GB.
-- **AI tools now handle multi-stage builds**: layer caching strategy, and security hardening automatically, cutting image sizes by 60-80% while reducing attack surface.
-- **Layer 3 (npm install)**: 285MB → 120MB
-   Suggestion: Use npm ci --omit=dev instead of npm install
-   Impact: Layer unchanged on dependency updates; 165MB saved
+## Claude 3.5 Sonnet: Best Overall
 
-2.
-- **The optimization took 10**: minutes with Claude and delivered a 93% size reduction.
-- **Pattern 2**: Use alpine or distroless base images
-- `alpine` variants: 5-50MB vs.
-- **For native Docker integration**: and scanning: Use Docker's AI assistant if you're pushing to Docker Hub.
+Claude excels at understanding the *why* behind Dockerfile optimizations. Feed it a bloated Dockerfile and ask for multi-stage refactoring—it returns commented explanations.
 
-## The Dockerfile Optimization Problem
+**Example Prompt:**
+```
+Optimize this Node.js Dockerfile for production. Use multi-stage builds,
+explain layer caching, and identify security issues.
 
-Standard Dockerfiles have consistent inefficiencies:
-- Building dependencies into layers that change on every code update
-- Using `node:latest` or `python:3.12` instead of slim variants
-- Running package managers without cleanup, leaving 200MB+ of cache
-- Installing unnecessary development tools in production images
-- Missing security scanning before pushing to registry
-
-A typical Node.js Dockerfile shipped by developers:
-
-```dockerfile
-FROM node:18
-WORKDIR /app
+FROM node:18-alpine
 COPY . .
 RUN npm install
 RUN npm run build
@@ -53,337 +46,286 @@ EXPOSE 3000
 CMD ["npm", "start"]
 ```
 
-This approach:
-- Re-installs all dependencies on every code change (slow)
-- Ships build tools, TypeScript compiler, and dev dependencies to production (bloated)
-- Runs as root (security risk)
-- Has no health checks or signal handling
-
-The fix requires understanding Docker layer caching and multi-stage builds. AI tools either understand these patterns or produce marginally better code that still misses critical optimizations.
-
-## Claude (via Claude Code) - Complete Refactor with Explanations
-
-Claude excels at understanding context and refactoring the entire Dockerfile strategy, not just tweaking syntax.
-
-**Approach:** Given a Dockerfile and the repository structure, Claude suggests a complete multi-stage build with dependency caching, security hardening, and size optimization. It explains each decision rather than producing mysterious magic.
-
-**Example:** Submitting a Node.js Dockerfile to Claude:
-
-```
-I have a Node.js app (Next.js) with these dependencies:
-- Build-time: typescript, webpack, sass-loader
-- Runtime: express, postgres driver, redis client
-- Size concern: Currently 1.2GB
-
-Optimize the Dockerfile for production.
-```
-
-Claude produces:
-
+**Claude's Response (Typical Output):**
 ```dockerfile
-# Stage 1: Dependencies (changes only with package-lock.json)
-FROM node:18-alpine AS deps
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci --omit=dev
-
-# Stage 2: Builder (everything needed to build)
+# Stage 1: Build dependencies and application
 FROM node:18-alpine AS builder
 WORKDIR /app
+
+# Copy package files first—this layer caches until dependencies change
 COPY package*.json ./
-RUN npm ci
+RUN npm ci --only=production && npm cache clean --force
+
+# Copy source and build
 COPY . .
 RUN npm run build
 
-# Stage 3: Runtime (only what's needed to run)
-FROM node:18-alpine AS runtime
-WORKDIR /app
-RUN addgroup -g 1001 -S nodejs && adduser -S nextjs -u 1001
-COPY --from=deps /app/node_modules ./node_modules
-COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/public ./public
-COPY package.json ./
-USER nextjs
-EXPOSE 3000
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-  CMD node -e "require('http').get('http://localhost:3000/health', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})"
-CMD ["npm", "start"]
-```
-
-This approach:
-- Caches the `deps` layer (rebuilds only when `package-lock.json` changes)
-- Separates build tools from runtime (reduces image to 180MB from 1.2GB)
-- Runs as non-root user
-- Includes health checks for orchestration
-- Alpine base saves 200MB vs `node:18-slim`
-
-**Cost:** Free with Claude Code, or $20/month Claude Pro.
-
-**Limitations:** Requires a single back-and-forth interaction. For batch optimization of 20 Dockerfiles, you'd need to optimize each one individually.
-
-## GitHub Copilot - Fast Inline Suggestions with Cache Control
-
-Copilot shines when working in your editor, suggesting caching optimizations as you type. It understands common patterns and applies them contextually to your specific code.
-
-**Approach:** Open your Dockerfile in VS Code with Copilot enabled, and it suggests multi-stage refactoring, alpine variants, and cache busting strategies mid-edit.
-
-**Example:** Start typing a Dockerfile:
-
-```dockerfile
-FROM python:3.12
-WORKDIR /app
-COPY requirements.txt .
-```
-
-Copilot suggests completing with proper caching:
-
-```dockerfile
-FROM python:3.12-slim AS builder
-WORKDIR /app
-COPY requirements.txt .
-RUN python -m venv /opt/venv && \
-    /opt/venv/bin/pip install --no-cache-dir -r requirements.txt
-
-FROM python:3.12-slim
-WORKDIR /app
-COPY --from=builder /opt/venv /opt/venv
-COPY app.py .
-ENV PATH="/opt/venv/bin:$PATH"
-CMD ["python", "app.py"]
-```
-
-The suggestions generally include:
-- Slim base images (saves ~100MB)
-- Virtual environment isolation for Python
-- Layer caching structure
-- Clean separation of concerns
-
-**Cost:** $10/month or free for students/open source maintainers.
-
-**Strengths:** Instant, inline, integrated into your workflow. Quick Dockerfile reviews during development.
-
-**Limitations:** Suggestions are pattern-matching, not context-aware. For complex applications with unusual requirements, Copilot's suggestions can be generic. No explanations of *why* a change improves things.
-
-## Cody (Sourcegraph) - Repository-Aware Optimization
-
-Cody understands your entire repository structure, which enables smarter recommendations about what actually needs to be in production images.
-
-**Approach:** Tell Cody to optimize a Dockerfile, and it analyzes your repo structure to understand dependencies, build artifacts, and runtime requirements. This context allows it to make decisions that generic tools cannot.
-
-**Example:** If your repo has:
-```
-├── src/
-├── scripts/
-├── tests/
-├── Dockerfile
-└── package.json
-```
-
-Cody can infer what needs to ship in the production image vs. what's only for development:
-
-```dockerfile
-FROM node:18-alpine AS build
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci
-COPY src ./src
-COPY tsconfig.json babel.config.js ./
-RUN npm run build
-
+# Stage 2: Runtime—only production artifacts
 FROM node:18-alpine
 WORKDIR /app
-RUN npm install -g dumb-init
-COPY --from=build /app/dist ./dist
-COPY --from=build /app/node_modules ./node_modules
-COPY package.json ./
-USER 1001
-ENTRYPOINT ["dumb-init", "--"]
+
+# Don't run as root
+RUN addgroup -g 1001 -S nodejs && adduser -S nodejs -u 1001
+USER nodejs
+
+# Copy only built artifacts from builder stage
+COPY --from=builder --chown=nodejs:nodejs /app/node_modules ./node_modules
+COPY --from=builder --chown=nodejs:nodejs /app/dist ./dist
+COPY --from=builder --chown=nodejs:nodejs /app/package*.json ./
+
+EXPOSE 3000
+HEALTHCHECK --interval=30s --timeout=3s --start-period=40s CMD node -e "require('http').get('http://localhost:3000', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})"
+
 CMD ["node", "dist/index.js"]
 ```
 
-The repository context allows Cody to identify:
-- Only `/dist` needs to ship (not `/src`, `/tests`, `/scripts`)
-- Exact npm dependencies needed, not entire package.json
-- Build tools not needed at runtime
+**Why This Works:**
+- Multi-stage cuts image size ~70% (builder layer discarded)
+- `package*.json` layer caches dependency installs
+- Non-root user prevents privilege escalation
+- Healthcheck catches hung processes
+- Claude adds comments explaining each decision
 
-**Cost:** $20/month or self-hosted (open source).
+**Claude's Cost:** $3 per million tokens. A Dockerfile optimization session: ~10K tokens ($0.03).
 
-**Strengths:** Repository-aware optimizations. Understands actual project structure rather than generic patterns.
+## GitHub Copilot: Fastest Integration
 
-**Limitations:** Requires VS Code + Sourcegraph setup. Integration friction higher than Copilot.
+Copilot works inside your IDE. Start typing `FROM` and it suggests complete Dockerfile optimizations in seconds.
 
-## Docker's AI Assistant (Native Docker Hub Integration)
-
-Docker themselves offer AI-powered image optimization suggestions through Docker Build Cloud. This is vendor-native, meaning it understands Docker's architecture deeply.
-
-**Approach:** Push images to Docker Build Cloud and receive optimization recommendations based on actual layer analysis, CVE scanning, and build performance data.
-
-**Example:** Push a build, and Docker AI analyzes the build log:
-
+**Workflow:**
 ```
-Optimization opportunities found:
-1. Layer 3 (npm install): 285MB → 120MB
-   Suggestion: Use npm ci --omit=dev instead of npm install
-   Impact: Layer unchanged on dependency updates; 165MB saved
-
-2. Base image: node:18-bullseye → node:18-alpine
-   Impact: 910MB → 180MB, reduces CVE surface
-
-3. Missing health check for orchestration
-   Recommendation: Add HEALTHCHECK instruction
-
-Build time: 45s → 18s with optimized caching
+1. Open Dockerfile in VS Code
+2. Type: # multi-stage dockerfile
+3. Copilot generates complete optimized version
+4. Accept with Tab, iterate
+5. No context switching
 ```
 
-The native integration means it understands:
-- Docker BuildKit layer caching specifics
-- Multi-platform build implications
-- Registry push performance
-
-**Cost:** Free tier limited; $7/month for optimization features.
-
-**Strengths:** Native Docker understanding. Understands registry and buildkit specifics that external tools miss.
-
-**Limitations:** Limited to Docker Hub ecosystem. Doesn't understand your specific app requirements as well as repository-aware tools.
-
-## Practical Comparison: Size Reduction Results
-
-Using the same starting Dockerfile across tools, here are typical size improvements:
-
-| Tool | Approach | Image Size | Build Time | Security Scan |
-|------|----------|------------|-----------|---------------|
-| Original (bad) | Single stage, latest images | 1.2GB | 120s | 15 CVEs |
-| Claude | Multi-stage, alpine, distroless | 85MB | 45s | 2 CVEs |
-| Copilot | Multi-stage, alpine | 180MB | 48s | 5 CVEs |
-| Cody | Repository-aware multi-stage | 92MB | 42s | 2 CVEs |
-| Docker AI | Cloud-native optimization | 110MB | 35s | 3 CVEs |
-
-Real-world example: A Flask microservice starting at 950MB (using `python:3.12-full`) was reduced to 65MB (using `python:3.12-slim` with multi-stage builds and pip caching). The optimization took 10 minutes with Claude and delivered a 93% size reduction.
-
-## Multi-Stage Build Patterns That AI Tools Consistently Apply
-
-All mature AI tools apply these patterns:
-
-**Pattern 1: Separate dependency layer from code**
+**Sample Suggestion (Copilot):**
 ```dockerfile
-FROM node:18-alpine AS dependencies
-COPY package*.json ./
-RUN npm ci --omit=dev
+# Python FastAPI example
+FROM python:3.11-slim as builder
+WORKDIR /build
+COPY requirements.txt .
+RUN pip install --user --no-cache-dir -r requirements.txt
 
-FROM node:18-alpine AS app
-COPY --from=dependencies /app/node_modules ./node_modules
+FROM python:3.11-slim
+WORKDIR /app
+COPY --from=builder /root/.local /root/.local
+ENV PATH=/root/.local/bin:$PATH
 COPY . .
-CMD ["npm", "start"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0"]
 ```
 
-Benefit: Rebuild app changes without reinstalling dependencies (huge time savings).
+**Limitations:** Less contextual explanation than Claude. Better for "show me the code" than "why this works."
 
-**Pattern 2: Use alpine or distroless base images**
-- `alpine` variants: 5-50MB vs. full images at 900MB+
-- `distroless` (Google): No shell, no package manager, minimal attack surface
+**Copilot's Cost:** $10/month or $100/year (includes Copilot Chat).
 
-**Pattern 3: Layer caching strategy**
-```dockerfile
-# Least likely to change → Most likely to change
-COPY package.json .      # Changes rarely
-RUN npm ci               # Cached until package.json changes
-COPY . .                 # Changes frequently
-RUN npm run build        # Rebuilds on every code change
+## ChatGPT-4: Learning & Prototyping
+
+GPT-4 excels at explaining Docker concepts. Use it to understand multi-stage strategies before implementing.
+
+**Effective Prompt:**
+```
+Explain Docker layer caching. Why does copying package.json before source
+improve build times? Show a Node.js example where caching breaks.
 ```
 
-**Pattern 4: Non-root users**
+**Response Type:** Detailed explanation + practical example showing cache misses.
+
+**When to Use:** Learning sessions, architecture discussions, explaining why a Dockerfile design is suboptimal. Less suitable for real-time IDE integration.
+
+**ChatGPT-4's Cost:** $20/month (ChatGPT Plus) or $60/month (Teams).
+
+## Cursor IDE: Editor-Native Optimization
+
+Cursor pairs AI (Claude backend) with a code editor. Refactor Dockerfiles with inline suggestions and real-time validation.
+
+**Workflow:**
+```bash
+# In Cursor:
+cmd+K                    # Open command palette
+"Optimize this Dockerfile"
+# Cursor rewrites with multi-stage + layer optimization
+```
+
+**Key Advantage:** Sees your file structure. Can optimize Dockerfile *and* related configs (docker-compose.yml, .dockerignore) in one session.
+
+**Cursor's Cost:** $20/month.
+
+---
+
+## Real-World Optimization Patterns
+
+### Pattern 1: Minimize Layer Count
 ```dockerfile
+# Bad: 5 layers, each adds to image
+RUN apt-get update
+RUN apt-get install -y git
+RUN apt-get install -y curl
+RUN apt-get clean
+
+# Good: 1 layer, cached until base image changes
+RUN apt-get update && apt-get install -y git curl && apt-get clean && rm -rf /var/lib/apt/lists/*
+```
+
+### Pattern 2: Order by Change Frequency
+```dockerfile
+# Cache busts on every code change—bad
+COPY . .
+COPY package.json .
+RUN npm install
+
+# Stable dependencies cache—good
+COPY package.json package-lock.json .
+RUN npm install
+COPY . .
+```
+
+### Pattern 3: Leverage BuildKit
+```bash
+# Enable BuildKit (faster, parallel builds)
+export DOCKER_BUILDKIT=1
+docker build -t myapp .
+
+# With secrets (don't leak private keys)
+docker build --secret npm_token=~/.npmrc -t myapp .
+```
+
+BuildKit Dockerfile:
+```dockerfile
+# syntax=docker/dockerfile:1
+FROM node:18-alpine
+
+# Mount secrets without leaking to image layers
+RUN --mount=type=secret,id=npm_token \
+    npm config set //registry.npmjs.org/:_authToken=$(cat /run/secrets/npm_token) && \
+    npm install
+
+# Secret is never in final image
+```
+
+### Pattern 4: Security Hardening
+```dockerfile
+FROM ubuntu:22.04 AS base
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+FROM base AS app
 RUN groupadd -r appuser && useradd -r -g appuser appuser
+COPY --chown=appuser:appuser . .
 USER appuser
 ```
 
-Security improvement: Container breakout doesn't give root access to host.
+AI Prompt: "Add security hardening to this Dockerfile: non-root user, minimal base image, removed unnecessary packages, health checks."
 
-## Integrating AI Optimization into Your Pipeline
-
-The most effective approach: Use Claude for initial refactoring, then Copilot for iterative improvements during development.
-
-**Workflow:**
-1. Write a basic working Dockerfile (doesn't need to be optimized)
-2. Paste it into Claude with your requirements (production-ready, security-hardened, minimal size)
-3. Claude produces a multi-stage build
-4. Commit the optimized Dockerfile
-5. During development, Copilot suggests further cache optimization and layer structure improvements
-6. Run through Docker's security scanner (Grype, Trivy) in CI/CD
-7. Track image size across releases; AI optimization typically saves 70-90% initially, then 5-10% on subsequent refactors
-
-For teams shipping dozens of services, even small automation (Copilot's inline suggestions) compounds. A 50MB reduction across 25 services saves 1.25GB of registry storage and improves deployment speed cluster-wide.
-
-## Security Scanning Integration with AI Optimization
-
-The best Dockerfile isn't just small—it's also secure. AI tools now integrate vulnerability scanning:
-
-```dockerfile
-# Trivy scanning as part of build
-FROM alpine:3.18
-RUN apk add --no-cache curl
-RUN curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b /usr/local/bin
-COPY --from=builder /app/dist .
-RUN trivy fs --exit-code 0 --severity MEDIUM . || true
-CMD ["./app"]
-```
-
-Claude will add scanning steps; Copilot will suggest them in comments. The integration is not yet simple, but AI tools push you toward security by default.
-
-## Common AI Mistakes to Watch For
-
-Despite improvements, AI tools occasionally make errors:
-
-1. **Assuming distroless works for your app** — Distroless is great for statically-compiled Go/Rust but fails for Python/Node apps that need runtime dependency resolution. Claude usually gets this right; simpler tools sometimes recommend distroless incorrectly.
-
-2. **Forgetting symlinks in multi-stage** — When copying from build stages, tools occasionally miss that symlinks need target resolution. Always test the produced Dockerfile with your actual code.
-
-3. **Omitting required dev dependencies** — Tools sometimes remove packages you actually need at runtime. For example, `libpq-dev` is a build dependency for the psycopg2 Python package, but you still need `libpq` at runtime.
-
-Test the AI-optimized Dockerfile with actual data and workload before shipping to production.
-
-## Recommendation: Start with Claude
-
-For a single Dockerfile optimization: Use Claude. It understands the full context, explains decisions, and produces production-grade multi-stage builds in one interaction.
-
-For iterative development with Dockerfiles: Use Copilot in VS Code. The inline suggestions are fast and integrated into your workflow.
-
-For repository-aware optimization (understanding your specific project structure): Use Cody if you're already in Sourcegraph's ecosystem.
-
-For native Docker integration and scanning: Use Docker's AI assistant if you're pushing to Docker Hub.
-
-The floor for Dockerfile quality has risen significantly. Even generic AI suggestions will beat hand-written Dockerfiles from most teams. Apply one of these tools to your largest/most-critical Dockerfile and measure the improvement in image size, security scan results, and build time. The ROI is immediate.
 ---
 
+## AI Tool Decision Framework
 
-## Frequently Asked Questions
+**Choose Claude 3.5 if:**
+- You need detailed explanations of optimization choices
+- Working with complex multi-service setups
+- Budget is flexible, quality is priority
+- You want consistent voice across documentation
 
-**Are free AI tools good enough for ai tools for writing dockerfile optimization?**
+**Choose GitHub Copilot if:**
+- You want suggestions without leaving your IDE
+- Team already uses VS Code + GitHub
+- Speed matters more than detailed reasoning
 
-Free tiers work for basic tasks and evaluation, but paid plans typically offer higher rate limits, better models, and features needed for professional work. Start with free options to find what works for your workflow, then upgrade when you hit limitations.
+**Choose ChatGPT-4 if:**
+- You're learning Docker optimization concepts
+- Preparing architecture reviews or team training
+- Writing documentation on why patterns matter
 
-**How do I evaluate which tool fits my workflow?**
+**Choose Cursor if:**
+- Building entire projects (Dockerfile + related configs)
+- Want real-time inline feedback
+- Prefer editor-native workflows
 
-Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
+---
 
-**Do these tools work offline?**
+## Common Pitfalls & AI-Assisted Fixes
 
-Most AI-powered tools require an internet connection since they run models on remote servers. A few offer local model options with reduced capability. If offline access matters to you, check each tool's documentation for local or self-hosted options.
+| Problem | Tell AI | Expected Output |
+|---------|---------|-----------------|
+| "My Docker image is 2.8GB" | "Why is this Dockerfile so large? Use multi-stage and distroless." | Refactored with size estimates |
+| "Builds take 5min each" | "Optimize layer caching. Show cache keys." | Reordered commands with cache explanation |
+| "Image runs as root" | "Add non-root user. Fix permissions." | Hardened with USER directive |
+| "Secrets leak in logs" | "Hide Docker build secrets" | BuildKit with --mount=type=secret |
 
-**How quickly do AI tool recommendations go out of date?**
+---
 
-AI tools evolve rapidly, with major updates every few months. Feature comparisons from 6 months ago may already be outdated. Check the publication date on any review and verify current features directly on each tool's website before purchasing.
+## Code Example: Full Production Dockerfile (AI-Generated)
 
-**Should I switch tools if something better comes out?**
+```dockerfile
+# syntax=docker/dockerfile:1.4
+FROM golang:1.21-alpine AS builder
 
-Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific pain point you experience regularly. Marginal improvements rarely justify the transition overhead.
+WORKDIR /build
+
+# Install build dependencies
+RUN apk add --no-cache git make
+
+# Copy go mod files—stable layer
+COPY go.mod go.sum ./
+RUN go mod download
+
+# Copy source and build
+COPY . .
+RUN CGO_ENABLED=0 GOOS=linux go build -o /build/app .
+
+# Runtime: distroless (no shell, package manager)
+FROM gcr.io/distroless/base-debian12
+
+COPY --from=builder /build/app /app
+
+# User already non-root in distroless
+EXPOSE 8080
+ENTRYPOINT ["/app"]
+```
+
+**AI Explanation Prompt:**
+```
+Explain each stage of this Dockerfile. Why distroless? Why split stages?
+What size reduction vs. alpine?
+```
+
+**Result:** ~8-15MB final image (vs. ~300MB with traditional Node.js approach).
+
+---
+
+## FAQ
+
+**Q: Should I always use multi-stage builds?**
+A: Yes, for any image that doesn't require build tools in production. Only exception: single-layer scripting images under 50MB.
+
+**Q: How much image size reduction is typical?**
+A: Multi-stage + layer caching: 50-80% smaller. Non-root + minimal base: additional 10-20% savings.
+
+**Q: Can AI tools catch security vulnerabilities in Dockerfiles?**
+A: Partially. Claude detects obvious issues (running as root, old base images). Use Snyk/Trivy for comprehensive vulnerability scanning.
+
+**Q: Which AI tool is cheapest for bulk optimization?**
+A: Claude at $3/MTok. Average Dockerfile: 2K tokens ($0.006). 1,000 Dockerfiles: ~$6.
+
+**Q: Do I need BuildKit for optimization?**
+A: Not required, but it enables parallelization and secrets mounting. Worth enabling for production builds.
+
+**Q: How do I validate AI-generated Dockerfiles?**
+A: Build locally, run security scans (Trivy), test with expected workloads, check final size vs. baseline.
+
+---
 
 ## Related Articles
 
-- [AI Tools for Generating Docker Compose Files for Complex Microservices](/ai-tools-compared/ai-tools-for-generating-docker-compose-files-for-complex-mic/)
-- [AI Container Security Scanning](/ai-tools-compared/ai-container-security-scanning/)
-- [AI Tools for Kubernetes Troubleshooting 2026](/ai-tools-compared/ai-tools-for-kubernetes-troubleshooting-2026/)
-- [AI Tools for Detecting Kubernetes Misconfiguration Before Deployment](/ai-tools-compared/ai-tools-for-detecting-kubernetes-misconfiguration-before-de/)
-- [Best AI Tools for DevOps Automation 2026](/ai-tools-compared/best-ai-tools-for-devops-automation-2026/)
+- [AI Tools for Writing Kubernetes YAML Configuration 2026](/ai-tools-for-writing-kubernetes-yaml-configuration-2026/)
+- [How to Use Claude for System Architecture Design 2026](/how-to-use-claude-for-system-architecture-design-2026/)
+- [Best AI Tools for Database Schema Design 2026](/best-ai-tools-for-database-schema-design-2026/)
+- [Compare AI Assistants for Infrastructure as Code 2026](/compare-ai-assistants-for-infrastructure-as-code-2026/)
+
+---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

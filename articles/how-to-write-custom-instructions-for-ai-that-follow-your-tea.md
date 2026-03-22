@@ -11,21 +11,8 @@ tags: [ai-tools-compared, ai, prompts, development, artificial-intelligence]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Write Custom Instructions for AI That Follow Your"
-description: "A practical guide for developers on creating AI custom instructions that align with team code review standards, with concrete examples and code snippets"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-write-custom-instructions-for-ai-that-follow-your-teams-code-review-standards/
-categories: [guides]
-tags: [ai-tools-compared, ai, prompts, development, artificial-intelligence]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 
 AI coding assistants have become integral to modern development workflows, but their default behaviors often miss the mark when it comes to your team's specific code review standards. Rather than fighting against AI-generated code that fails pull request reviews, you can write custom instructions that guide the AI to produce code matching your team's conventions from the start.

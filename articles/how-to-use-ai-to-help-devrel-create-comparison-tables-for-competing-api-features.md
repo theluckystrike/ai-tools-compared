@@ -11,21 +11,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 8
-tags: [ai-tools-compared, artificial-intelligence, api]---
+tags: [ai-tools-compared, artificial-intelligence, api]
 ---
-layout: default
-title: "How to Use AI to Help Devrel Create Comparison Tables"
-description: "A practical guide for developers and DevRel professionals on using AI to create accurate, detailed comparison tables for competing API features"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-use-ai-to-help-devrel-create-comparison-tables-for-competing-api-features/
-categories: [comparisons]
-reviewed: true
-intent-checked: true
-voice-checked: true
-score: 8
-tags: [ai-tools-compared, artificial-intelligence, api]---
 {% raw %}
 
 Creating accurate comparison tables for competing API products is a core responsibility for Developer Relations (DevRel) teams. These tables help developers make informed decisions, support sales conversations, and serve as reference material across documentation. However, gathering feature data across multiple APIs, verifying accuracy, and structuring the information into an usable format takes significant time. AI tools can accelerate this workflow substantially.

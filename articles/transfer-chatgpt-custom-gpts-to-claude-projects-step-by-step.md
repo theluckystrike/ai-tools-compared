@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, claude-ai, chatgpt]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Transfer ChatGPT Custom GPTs to Claude Projects"
-description: "A practical guide for developers and power users to migrate Custom GPTs from ChatGPT to Claude Projects, with code examples and migration strategies"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/
-categories: [guides]
-tags: [ai-tools-compared, tools, claude-ai, chatgpt]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 
 To transfer Custom GPTs to Claude Projects, export your GPT's system prompt, knowledge files, and conversation starters, then recreate them as Claude Project resources in Claude.ai or as a CLAUDE.md file for Claude Code. The process has five steps: export the GPT configuration, organize your files locally, rebuild in Claude Projects, recreate conversation starters as prompt templates, and test for behavior parity. There is no direct migration tool, so each component must be extracted and reconstructed manually.

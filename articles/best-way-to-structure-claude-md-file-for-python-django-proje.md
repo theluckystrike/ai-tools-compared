@@ -11,21 +11,8 @@ tags: [ai-tools-compared, django, claude, python, workflow, best-of, claude-ai]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Best Way to Structure Claude MD File for Python Django"
-description: "A guide to structuring Claude.md files for Python Django projects, with practical examples and code snippets for developers"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /best-way-to-structure-claude-md-file-for-python-django-proje/
-categories: [guides]
-tags: [ai-tools-compared, django, claude, python, workflow, best-of, claude-ai]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 
 | Tool | Key Strength | Context Window | API Access | Pricing |

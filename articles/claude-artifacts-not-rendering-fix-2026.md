@@ -11,21 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, troubleshooting, claude-ai]---
+tags: [ai-tools-compared, troubleshooting, claude-ai]
 ---
-layout: default
-title: "Claude Artifacts Not Rendering Fix 2026"
-description: "A troubleshooting guide for developers and power users experiencing Claude artifacts not rendering. Step-by-step fixes and diagnostic tips"
-date: 2026-03-15
-last_modified_at: 2026-03-22
-author: theluckystrike
-permalink: /claude-artifacts-not-rendering-fix-2026/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, troubleshooting, claude-ai]---
 
 {% raw %}
 

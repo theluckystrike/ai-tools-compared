@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, claude-ai]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Transfer Cursor Composer Prompt Library"
-description: "A practical guide for developers moving their prompt libraries from Cursor to Claude Code, with code examples and migration strategies"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /transfer-cursor-composer-prompt-library-to-claude-code-commands/
-categories: [guides]
-tags: [ai-tools-compared, tools, claude-ai]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 {% raw %}
 
 Transfer your Cursor Composer prompts to Claude Code by converting reusable prompts into skill files in `~/.claude/skills/`, migrating `.cursorrules` into a `.claude.md` project file, and using the `-p` flag for one-off prompts. The key adaptation is shifting from Cursor's conversational prompt style to Claude Code's imperative, declarative instruction format stored as Markdown skill definitions.

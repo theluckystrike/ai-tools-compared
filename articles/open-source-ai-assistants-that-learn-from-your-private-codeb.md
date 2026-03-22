@@ -10,20 +10,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [open-source, ai-assistant, codebase-analysis, private-code, local-llm, coding-assistant]---
+tags: [open-source, ai-assistant, codebase-analysis, private-code, local-llm, coding-assistant]
 ---
-layout: default
-title: "Open Source AI Assistants That Learn From Your Private"
-description: "A practical guide to open source AI coding assistants that analyze your private codebase to provide context-aware suggestions, with setup examples and"
-date: 2026-03-21
-author: theluckystrike
-permalink: /open-source-ai-assistants-that-learn-from-your-private-codeb/
-categories: [tutorials]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [open-source, ai-assistant, codebase-analysis, private-code, local-llm, coding-assistant]---
 
 {% raw %}
 

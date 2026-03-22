@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Migrate GitHub Copilot Workspace Setup to Cursor Background"
-description: "A practical guide for developers moving from GitHub Copilot workspace configurations to Cursor's background agent workflow"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /migrate-github-copilot-workspace-setup-to-cursor-background-/
-categories: [guides]
-tags: [ai-tools-compared, tools]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 
 Migrate Copilot workspace setup to Cursor by exporting settings, recreating project structure in Cursor, and testing equivalent workflows. This guide shows the step-by-step migration that preserves your workspace optimization.

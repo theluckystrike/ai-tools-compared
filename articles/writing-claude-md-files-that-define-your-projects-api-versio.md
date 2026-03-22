@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, claude-ai, api]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Writing CLAUDE.md Files That Define Your Project's API"
-description: "When working with AI coding assistants on API-driven projects, consistent versioning behavior becomes critical. A well-crafted CLAUDE.md file ensures your AI"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /writing-claude-md-files-that-define-your-projects-api-versioning-strategy/
-categories: [guides]
-tags: [ai-tools-compared, tools, claude-ai, api]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

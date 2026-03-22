@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, best-of, artificial-intelligence, workflow]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "AI Tools for Generating GitHub Actions Workflows (2)"
-description: "Compare Claude Code, GitHub Copilot, and Cursor for CI/CD workflow generation. Includes real workflow examples, debugging tips, and pricing comparison"
-date: 2026-03-20
-last_modified_at: 2026-03-20
-author: theluckystrike
-permalink: /ai-tools-github-actions-workflows/
-categories: [guides]
-tags: [ai-tools-compared, tools, best-of, artificial-intelligence, workflow]
-reviewed: true
-score: 9
-voice-checked: true
-intent-checked: true---
 
 {% raw %}
 

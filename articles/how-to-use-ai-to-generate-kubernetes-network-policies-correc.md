@@ -11,21 +11,8 @@ tags: [ai-tools-compared, kubernetes, security, networking, artificial-intellige
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Use AI to Generate Kubernetes Network Policies"
-description: "A practical guide for developers on using AI tools to generate Kubernetes network policies with code examples and best practices"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-use-ai-to-generate-kubernetes-network-policies-correc/
-categories: [guides]
-tags: [ai-tools-compared, kubernetes, security, networking, artificial-intelligence]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 
 Generate Kubernetes network policies with AI by specifying namespace structure, ingress/egress rules, and service dependencies. This guide shows which policy patterns AI generates reliably and which require security review.

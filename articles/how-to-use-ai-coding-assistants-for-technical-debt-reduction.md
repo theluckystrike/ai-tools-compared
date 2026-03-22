@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Use AI Coding Assistants for Technical Debt Reduction"
-description: "A practical guide for developers on using AI coding assistants to systematically reduce technical debt. Learn frameworks, code examples, and workflows"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-use-ai-coding-assistants-for-technical-debt-reduction/
-categories: [guides]
-tags: [ai-tools-compared, tools, artificial-intelligence]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 
 Use AI to tackle technical debt by identifying debt patterns, generating targeted refactorings, and using AI to write supporting tests. This guide shows the systematic workflow that pays down debt without breaking features.

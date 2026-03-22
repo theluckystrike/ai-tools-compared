@@ -11,21 +11,8 @@ tags: [ai-tools-compared, prompts, accessibility, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Write System Prompts for AI Assistants That Produce"
-description: "A practical guide for developers on crafting system prompts that generate semantic, accessible HTML markup"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-write-system-prompts-for-ai-assistants-that-produce-a/
-categories: [guides]
-tags: [ai-tools-compared, prompts, accessibility, artificial-intelligence]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 
 AI assistants can generate HTML output, but without proper system prompts, the markup often lacks semantic structure, proper ARIA attributes, or keyboard accessibility. This guide shows you how to write system prompts that consistently produce accessible, standards-compliant HTML.

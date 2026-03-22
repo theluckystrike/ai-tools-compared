@@ -11,7 +11,8 @@ tags: [ai-tools-compared, tools, best-of, artificial-intelligence]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
+---
 
 
 Database migrations at scale are expensive. Wrong schema changes cost downtime, lost data, and rollback nightmares. AI-powered migration tools reduce this friction by auto-generating safe migrations, detecting conflicts, and suggesting optimal rollback paths.

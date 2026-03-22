@@ -14,6 +14,7 @@ tags: [ai-tools-compared]
 ---
 
 {% raw %}
+{% raw %}
 
 GitHub Actions YAML looks simple but has a long tail of security and reliability pitfalls: script injection via `${{ github.event.pull_request.title }}`, overly broad permissions, missing timeout settings, and cache invalidation issues. AI tools vary significantly in how well they handle these production-grade concerns.
 

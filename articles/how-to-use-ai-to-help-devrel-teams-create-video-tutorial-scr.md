@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, tutorial, artificial-intelligence]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Use AI to Help Devrel Teams Create Video Tutorial"
-description: "A practical guide for developer relations teams on using AI tools to write tutorial scripts, generate captions, and automate post-production for screen"
-date: 2026-03-18
-last_modified_at: 2026-03-18
-author: theluckystrike
-permalink: /how-to-use-ai-to-help-devrel-teams-create-video-tutorial-scr/
-categories: [guides]
-tags: [ai-tools-compared, tools, tutorial, artificial-intelligence]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 
 Use AI to accelerate DevRel video creation by generating tutorial scripts, optimizing titles for discoverability, and using AI-enhanced recording tools for noise cancellation and cursor highlighting. AI video editing software automatically removes dead air, trims filler words, generates accurate captions, and applies color correction—transforming hours of post-production work into clicks.

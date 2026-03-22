@@ -7,17 +7,8 @@ reviewed: true
 score: 8
 voice-checked: true
 intent-checked: true
-permalink: /best-ai-tools-for-writing-terraform-modules-2026/---
+permalink: /best-ai-tools-for-writing-terraform-modules-2026/
 ---
-title: "Best AI Tools for Writing Terraform Modules in 2026"
-description: "Compare Claude, GPT-4, and GitHub Copilot for generating production-ready Terraform modules. Includes real HCL examples and variable validation patterns."
-author: theluckystrike
-date: 2026-03-22
-reviewed: true
-score: 8
-voice-checked: true
-intent-checked: true
-permalink: /best-ai-tools-for-writing-terraform-modules-2026/---
 
 
 # Best AI Tools for Writing Terraform Modules in 2026

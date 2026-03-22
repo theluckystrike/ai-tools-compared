@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, best-of, artificial-intelligence]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Best AI IDE Features for Refactoring Class Hierarchies"
-description: "A practical guide to the most useful AI-powered IDE features for safely refactoring class hierarchies, inheritance patterns, and object-oriented code"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /best-ai-ide-features-for-refactoring-class-hierarchies-and-i/
-categories: [guides]
-tags: [ai-tools-compared, tools, best-of, artificial-intelligence]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

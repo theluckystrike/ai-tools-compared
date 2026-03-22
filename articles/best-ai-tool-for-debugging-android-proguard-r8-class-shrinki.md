@@ -10,20 +10,8 @@ tags: [android, proguard, r8, debugging, ai-tools-compared, troubleshooting, bes
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Best AI Tool for Debugging Android ProGuard R8 Class"
-description: "A practical guide to using AI tools for debugging ProGuard R8 class shrinking errors in Android apps. Learn which tools work best and how to resolve"
-date: 2026-03-21
-author: theluckystrike
-permalink: /best-ai-tool-for-debugging-android-proguard-r8-class-shrinki/
-categories: [guides]
-tags: [android, proguard, r8, debugging, ai-tools-compared, troubleshooting, best-of, artificial-intelligence]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

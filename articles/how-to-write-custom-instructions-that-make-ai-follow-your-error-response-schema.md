@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, troubleshooting, artificial-intelligence]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Write Custom Instructions That Make AI Follow Your"
-description: "Learn how to write effective custom instructions for AI coding assistants to generate consistent, structured error responses that match your project's API"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-write-custom-instructions-that-make-ai-follow-your-error-response-schema/
-categories: [guides]
-tags: [ai-tools-compared, tools, troubleshooting, artificial-intelligence]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 
 Write custom instructions for AI coding tools by defining your error response schema (success flag, nested error object with code/message/details, timestamp, requestId) and requiring the AI to implement exactly this structure in all generated error handling code. Custom instructions ensure consistent API error responses across generated code without requiring repeated schema specification in each prompt.

@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How Accurate Are AI Tools"
-description: "A practical analysis of how well AI coding assistants generate Rust serde serialization code, with real examples and accuracy assessments for developers"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-accurate-are-ai-tools-at-generating-rust-serde-serialization-code/
-categories: [guides]
-tags: [ai-tools-compared, tools, artificial-intelligence]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 
 AI tools generate correct Serde schemas about 75% of the time for simple types but require substantial fixes for custom implementations, derive macros, and edge cases. This guide shows exactly which serialization patterns work reliably, which generate broken code, and how to verify correctness.

@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Structure Project Files So AI Coding Tools Understand"
-description: "Learn practical strategies for organizing your project files to help AI coding assistants like Cursor, GitHub Copilot, and Claude understand your"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-structure-project-files-so-ai-coding-tools-understand/
-categories: [guides]
-tags: [ai-tools-compared, tools, artificial-intelligence]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 
 Structure projects for AI by using clear naming conventions, organizing related files together, maintaining consistent package structures, and avoiding deeply nested directories. This guide shows the file organization principles that help AI understand your codebase architecture.

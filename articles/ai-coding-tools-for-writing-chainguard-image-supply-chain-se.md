@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, artificial-intelligence, security, chainguard]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "AI Coding Tools for Writing Chainguard Image Supply Chain"
-description: "A practical guide for developers using AI assistants to write Chainguard image supply chain security policies, with examples and best practices"
-date: 2026-03-21
-last_modified_at: 2026-03-21
-author: theluckystrike
-permalink: /ai-coding-tools-for-writing-chainguard-image-supply-chain-se/
-categories: [guides]
-tags: [ai-tools-compared, tools, artificial-intelligence, security, chainguard]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 {% raw %}
 
 Chainguard images provide hardened, minimal container images designed for security and supply chain integrity. Writing effective security policies for these images requires understanding SLSA provenance, SBOM generation, and image verification workflows. AI coding tools can accelerate policy creation by translating your security requirements into policy-as-code formats while ensuring you cover the essential supply chain security controls.

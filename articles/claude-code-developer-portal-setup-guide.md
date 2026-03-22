@@ -11,21 +11,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, claude-ai]---
+tags: [ai-tools-compared, claude-ai]
 ---
-layout: default
-title: "Claude Code Developer Portal Setup Guide"
-description: "A practical guide to setting up a developer portal using Claude Code. Learn how to structure your documentation, integrate APIs, and automate portal"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: "theluckystrike"
-permalink: /claude-code-developer-portal-setup-guide/
-reviewed: true
-score: 9
-categories: [guides]
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, claude-ai]---
 
 
 Claude Code transforms how teams build and maintain developer portals. Instead of manually writing documentation or wrestling with static site generators, you can use Claude Code's AI capabilities to generate, organize, and keep your portal current. This guide walks through setting up a developer portal from scratch using Claude Code, with practical examples and automation strategies.

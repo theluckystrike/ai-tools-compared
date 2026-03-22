@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, best-of, artificial-intelligence]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Best AI Tool for Triaging GitHub Issues by Severity and Cate"
-description: "Discover the best AI tools for automatically triaging GitHub issues by severity and category in 2026. Compare features, pricing, and integration"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: "theluckystrike"
-permalink: /best-ai-tool-for-triaging-github-issues-by-severity-and-cate/
-categories: [guides]
-tags: [ai-tools-compared, tools, best-of, artificial-intelligence]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 
 | Tool | Issue Triage | Label Assignment | Priority Scoring | Pricing |

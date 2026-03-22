@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Windsurf AI Flows Feature How It Chains Multiple Editing"
-description: "A practical guide to Windsurf AI Flows, explaining how to chain multiple editing steps for automated code workflows"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /windsurf-ai-flows-feature-how-it-chains-multiple-editing-ste/
-categories: [guides]
-tags: [ai-tools-compared, tools, artificial-intelligence]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

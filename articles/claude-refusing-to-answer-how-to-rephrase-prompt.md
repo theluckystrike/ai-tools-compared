@@ -11,21 +11,8 @@ score: 9
 categories: [troubleshooting, guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, claude-ai]---
+tags: [ai-tools-compared, claude-ai]
 ---
-layout: default
-title: "Claude Refusing to Answer: How to Rephrase Your"
-description: "A troubleshooting guide for developers and power users experiencing Claude refusing to answer. Learn how to rephrase prompts effectively and bypass"
-date: 2026-03-15
-last_modified_at: 2026-03-22
-author: theluckystrike
-permalink: /claude-refusing-to-answer-how-to-rephrase-prompt/
-reviewed: true
-score: 9
-categories: [troubleshooting, guides]
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, claude-ai]---
 
 {% raw %}
 

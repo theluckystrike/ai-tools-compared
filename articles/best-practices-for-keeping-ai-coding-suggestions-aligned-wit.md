@@ -11,21 +11,8 @@ tags: [ai-tools-compared, ai, coding, design-patterns, best-of, artificial-intel
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Best Practices for Keeping AI Coding Suggestions Aligned"
-description: "A practical guide for developers on maintaining design pattern consistency when using AI coding assistants, with real-world examples and actionable"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /best-practices-for-keeping-ai-coding-suggestions-aligned-with-design-patterns/
-categories: [guides]
-tags: [ai-tools-compared, ai, coding, design-patterns, best-of, artificial-intelligence]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

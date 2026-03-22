@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Set Up AI Assisted Code Review Directly Inside Your"
-description: "Set up AI code review in your IDE by configuring extensions, creating review comment templates, and running AI analysis as a pre-commit hook. This guide shows"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-set-up-ai-assisted-code-review-directly-inside-your-ide/
-categories: [guides]
-tags: [ai-tools-compared, tools, artificial-intelligence]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 
 Set up AI code review in your IDE by configuring extensions, creating review comment templates, and running AI analysis as a pre-commit hook. This guide shows the setup that integrates AI review into your workflow without slowing down your commit process.

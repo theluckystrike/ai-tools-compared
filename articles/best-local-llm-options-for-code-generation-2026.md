@@ -11,21 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, best-of, llm]---
+tags: [ai-tools-compared, best-of, llm]
 ---
-layout: default
-title: "Best Local LLM Options for Code Generation 2026"
-description: "Compare local LLMs for code generation in 2026: DeepSeek Coder V3, Qwen2.5-Coder, CodeLlama, and Starcoder2."
-date: 2026-03-21
-last_modified_at: 2026-03-21
-author: theluckystrike
-permalink: /best-local-llm-options-for-code-generation-2026/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, best-of, llm]---
 
 {% raw %}
 

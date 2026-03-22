@@ -11,21 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
 ---
-layout: default
-title: "How to Use AI Context Management to Work on Large Refactorin"
-description: "A practical guide for developers on managing AI context during large-scale code refactoring projects. Learn techniques to maintain context window"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-use-ai-context-management-to-work-on-large-refactorin/
-categories: [guides, comparisons]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
 
 
 Refactoring large codebases presents unique challenges for AI coding assistants. The context window limits that constrain all AI tools mean you cannot simply dump an entire legacy codebase into a single prompt and expect coherent results. Understanding how to manage context effectively determines whether your AI-assisted refactoring succeeds or becomes a debugging nightmare.

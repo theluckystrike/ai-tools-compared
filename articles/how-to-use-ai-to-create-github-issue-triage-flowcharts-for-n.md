@@ -11,21 +11,8 @@ tags: [ai-tools-compared, open-source, github, workflow, artificial-intelligence
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Use AI to Create GitHub Issue Triage Flowcharts"
-description: "A practical guide for open source maintainers on using AI tools to create efficient GitHub issue triage flowcharts that help new contributors navigate"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-use-ai-to-create-github-issue-triage-flowcharts-for-n/
-categories: [guides]
-tags: [ai-tools-compared, open-source, github, workflow, artificial-intelligence]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

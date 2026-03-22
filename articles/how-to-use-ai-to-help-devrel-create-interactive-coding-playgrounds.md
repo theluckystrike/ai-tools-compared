@@ -11,21 +11,8 @@ tags: [ai-tools-compared, devrel, tools, artificial-intelligence]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "How to Use AI to Help Devrel Create Interactive Coding"
-description: "A practical guide for developer relations teams on using AI tools to build interactive coding playgrounds that engage developers and showcase product"
-date: 2026-03-18
-last_modified_at: 2026-03-18
-author: theluckystrike
-permalink: /how-to-use-ai-to-help-devrel-create-interactive-coding-playgrounds/
-categories: [guides]
-tags: [ai-tools-compared, devrel, tools, artificial-intelligence]
-reviewed: true
-score: 9
-voice-checked: true
-intent-checked: true---
 
 {% raw %}
 

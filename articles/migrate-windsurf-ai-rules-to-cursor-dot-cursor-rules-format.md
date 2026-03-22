@@ -11,7 +11,8 @@ intent-checked: true
 voice-checked: true
 score: 9
 reviewed: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 
 If you have been using WindSurf's AI rules configuration and want to switch to Cursor, or if you need to use both editors in your workflow, migrating your custom AI rules is essential for maintaining consistent coding assistance. This guide walks you through the complete migration process, explains the key differences between the two formats, and provides practical code examples to help you adapt your rules quickly.

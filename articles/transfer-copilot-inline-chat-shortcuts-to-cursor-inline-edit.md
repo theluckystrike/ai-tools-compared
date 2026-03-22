@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Transfer Copilot Inline Chat Shortcuts"
-description: "A practical guide for developers moving from GitHub Copilot to Cursor. Learn how to map inline chat keybindings to Cursor's inline edit for a workflow"
-date: 2026-03-16
-last_modified_at: 2026-03-22
-author: theluckystrike
-permalink: /transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/
-categories: [guides]
-tags: [ai-tools-compared, tools]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 
 Remap Copilot's `Cmd+I` inline chat shortcut to Cursor's `Cmd+K` inline edit by adding custom entries to Cursor's `keybindings.json` — map `Cmd+I` to `cursor.inlineChat.start`, `Cmd+Shift+I` to `cursor.inlineChat.history`, and `Cmd+Shift+Space` to `editor.action.inlineSuggest.trigger`. Open Cursor's Command Palette, navigate to "Open Keyboard Shortcuts," and paste the JSON keybinding definitions. This preserves your Copilot muscle memory while giving you access to Cursor's inline edit capabilities.

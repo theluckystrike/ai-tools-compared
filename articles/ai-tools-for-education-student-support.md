@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "AI Tools for Education Student"
-description: "A practical guide to AI-powered student support tools for developers building educational platforms, with implementation examples and technical"
-date: 2026-03-15
-last_modified_at: 2026-03-22
-author: "theluckystrike"
-permalink: /ai-tools-for-education-student-support/
-categories: [guides]
-tags: [ai-tools-compared, tools, artificial-intelligence]
-reviewed: true
-score: 9
-voice-checked: true
-intent-checked: true---
 
 {% raw %}
 

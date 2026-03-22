@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, claude-ai, api]---
+tags: [ai-tools-compared, claude-ai, api]
+---
 
 {% raw %}
 

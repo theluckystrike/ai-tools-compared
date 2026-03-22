@@ -11,7 +11,8 @@ intent-checked: true
 voice-checked: true
 score: 9
 reviewed: true
-tags: [ai-tools-compared]---
+tags: [ai-tools-compared]
+---
 
 
 Making the transition from GitHub Copilot's ghost text to Cursor's tab autocomplete represents a meaningful shift in how you interact with AI code completion. This guide walks you through the practical differences, configuration adjustments, and workflow changes you'll encounter when switching.

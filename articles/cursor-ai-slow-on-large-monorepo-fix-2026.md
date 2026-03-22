@@ -11,21 +11,8 @@ score: 9
 categories: [troubleshooting]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, troubleshooting, artificial-intelligence]---
+tags: [ai-tools-compared, troubleshooting, artificial-intelligence]
 ---
-layout: default
-title: "Cursor AI Slow on Large monorepo Fix (2026)"
-description: "Troubleshooting guide for fixing Cursor AI performance issues on large monorepos. Step-by-step solutions and diagnostic tips for developers"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /cursor-ai-slow-on-large-monorepo-fix-2026/
-reviewed: true
-score: 9
-categories: [troubleshooting]
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, troubleshooting, artificial-intelligence]---
 
 
 To fix Cursor AI running slow on a large monorepo, create a `.cursorignore` file to exclude `node_modules/`, `dist/`, and build output directories from indexing, reduce the Context Chunk Size to 1000 tokens in settings, and limit Max Context Files to 10-15. For the biggest speed gain, open individual packages as separate workspaces instead of the entire repository. These fixes restore fast autocomplete and chat responses even on codebases with thousands of files.

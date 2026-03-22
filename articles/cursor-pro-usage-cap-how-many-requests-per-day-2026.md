@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Cursor Pro Usage Cap: How Many Requests Per Day in 2026"
-description: "Cursor Pro provides 2,000 monthly requests for individual plans (approximately 65-70 requests per day) and 5,000+ for business plans. Requests are consumed by"
-date: 2026-03-18
-last_modified_at: 2026-03-18
-author: theluckystrike
-permalink: /cursor-pro-usage-cap-how-many-requests-per-day-2026/
-categories: [guides]
-tags: [ai-tools-compared, tools]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

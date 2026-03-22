@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Create Reusable Prompt Templates for Common AI Coding"
-description: "Create reusable prompt templates that capture your coding standards, error handling patterns, and preferred libraries—this transforms sporadic AI sessions into"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-create-reusable-prompt-templates-for-common-ai-coding/
-categories: [guides]
-tags: [ai-tools-compared, tools, artificial-intelligence]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 {% raw %}
 
 Create reusable prompt templates that capture your coding standards, error handling patterns, and preferred libraries—this transforms sporadic AI sessions into systematic, consistent workflows. This guide shows the template structure that actually works and how to maintain them.

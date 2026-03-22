@@ -11,7 +11,8 @@ tags: [ai-tools-compared, tools, comparison, claude-ai, chatgpt]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
+---
 
 
 This guide compares the strengths and weaknesses of each tool for this specific task. Choose the tool that best matches your workflow, budget, and technical requirements.

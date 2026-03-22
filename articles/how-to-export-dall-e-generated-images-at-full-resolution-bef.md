@@ -11,7 +11,8 @@ score: 9
 voice-checked: true
 reviewed: true
 intent-checked: true
-tags: [ai-tools-compared]---
+tags: [ai-tools-compared]
+---
 
 
 Dall-E, OpenAI's image generation model, produces high-quality images that you can use commercially. However, when you decide to leave ChatGPT Plus or your subscription expires, you may lose access to your generated images stored on OpenAI's servers. This guide provides practical methods for developers and power users to export Dall-E images at full resolution before leaving, with code examples and automation strategies.

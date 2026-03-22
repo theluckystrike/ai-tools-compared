@@ -11,7 +11,8 @@ score: 9
 categories: [troubleshooting]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, troubleshooting, claude-ai]---
+tags: [ai-tools-compared, troubleshooting, claude-ai]
+---
 
 
 {% raw %}

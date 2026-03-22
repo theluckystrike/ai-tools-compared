@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Effective Prompting for AI Generation of Accessible Frontend"
-description: "A practical guide to writing prompts that generate WCAG-compliant, accessible frontend components using AI coding assistants"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /effective-prompting-for-ai-generation-of-accessible-frontend/
-categories: [guides]
-tags: [ai-tools-compared, tools, artificial-intelligence]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 
 To generate truly accessible frontend components with AI, you need specific prompting strategies that explicitly require semantic HTML, ARIA attributes, and keyboard navigation. Generic prompts produce visually functional but inaccessible code—this guide shows you exactly which phrases, constraints, and examples to include in your prompts to consistently get WCAG-compliant output.
