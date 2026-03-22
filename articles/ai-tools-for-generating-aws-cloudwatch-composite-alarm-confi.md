@@ -119,11 +119,140 @@ Review the generated alarm rules carefully. The logical expression syntax requir
 
 Consider organizing your alarms using consistent naming conventions and Terraform modules. AI tools work better with well-structured existing code because they can learn from patterns in your repository.
 
+## Structuring Prompts for Better Alarm Configurations
+
+The quality of AI-generated Terraform depends heavily on how you frame the request. Vague prompts produce generic configurations that require significant reworking. Specific prompts produce deployment-ready code.
+
+A weak prompt: "Create a CloudWatch alarm for my database."
+
+A strong prompt: "Generate Terraform for an `aws_cloudwatch_composite_alarm` that triggers when BOTH `rds-prod-cpu-alarm` AND `rds-prod-connection-alarm` are in ALARM state. Include the underlying metric alarm resources for RDS instance `prod-db-01` in region `us-east-1`. Use SNS topic ARN `arn:aws:sns:us-east-1:123456789:ops-alerts` for notifications. Tag everything with `Environment=production` and `Team=platform`."
+
+The detailed prompt gives the AI everything it needs to produce a complete, correct module rather than a placeholder. Provide actual alarm names, resource identifiers, and ARNs where possible. The AI fills in the structural Terraform logic; you supply the AWS-specific values.
+
+## Modular Terraform Patterns for Reusable Alarms
+
+When AI tools generate alarm configurations, they often produce flat resource blocks. For production infrastructure, a module pattern scales better. Ask your AI tool to generate a reusable module rather than inline resources:
+
+```hcl
+# modules/cloudwatch-rds-alarms/main.tf
+
+variable "db_instance_id" {
+  description = "RDS DB instance identifier"
+  type        = string
+}
+
+variable "sns_topic_arn" {
+  description = "SNS topic ARN for alarm notifications"
+  type        = string
+}
+
+variable "cpu_threshold" {
+  description = "CPU utilization threshold percentage"
+  type        = number
+  default     = 80
+}
+
+variable "connection_threshold" {
+  description = "Maximum database connection count"
+  type        = number
+  default     = 500
+}
+
+variable "tags" {
+  description = "Tags to apply to all resources"
+  type        = map(string)
+  default     = {}
+}
+
+resource "aws_cloudwatch_metric_alarm" "cpu_high" {
+  alarm_name          = "${var.db_instance_id}-cpu-above-${var.cpu_threshold}"
+  comparison_operator = "GreaterThanThreshold"
+  evaluation_periods  = 2
+  metric_name         = "CPUUtilization"
+  namespace           = "AWS/RDS"
+  period              = 300
+  statistic           = "Average"
+  threshold           = var.cpu_threshold
+  tags                = var.tags
+
+  dimensions = {
+    DBInstanceIdentifier = var.db_instance_id
+  }
+}
+
+resource "aws_cloudwatch_metric_alarm" "connections_high" {
+  alarm_name          = "${var.db_instance_id}-connections-above-${var.connection_threshold}"
+  comparison_operator = "GreaterThanThreshold"
+  evaluation_periods  = 2
+  metric_name         = "DatabaseConnections"
+  namespace           = "AWS/RDS"
+  period              = 300
+  statistic           = "Maximum"
+  threshold           = var.connection_threshold
+  tags                = var.tags
+
+  dimensions = {
+    DBInstanceIdentifier = var.db_instance_id
+  }
+}
+
+resource "aws_cloudwatch_composite_alarm" "rds_high_load" {
+  alarm_name    = "${var.db_instance_id}-high-load"
+  alarm_actions = [var.sns_topic_arn]
+  tags          = var.tags
+
+  alarm_rule = "ALARM(${aws_cloudwatch_metric_alarm.cpu_high.alarm_name}) AND ALARM(${aws_cloudwatch_metric_alarm.connections_high.alarm_name})"
+}
+```
+
+Calling the module becomes simple and repeatable across all your RDS instances:
+
+```hcl
+module "rds_alarms_prod" {
+  source = "./modules/cloudwatch-rds-alarms"
+
+  db_instance_id       = "prod-db-01"
+  sns_topic_arn        = aws_sns_topic.ops_alerts.arn
+  cpu_threshold        = 85
+  connection_threshold = 400
+
+  tags = {
+    Environment = "production"
+    Team        = "platform"
+  }
+}
+```
+
+AI assistants like Claude and Amazon Q Developer generate this module pattern when you explicitly ask for a reusable Terraform module rather than standalone resources. This is a key prompt engineering insight: specify the architectural pattern you want, not just the functional requirement.
+
+## Validating AI-Generated Alarm Configurations
+
+Before applying AI-generated alarm configurations, run a validation sequence to catch the most common errors:
+
+```bash
+# Initialize and validate Terraform
+terraform init
+terraform validate
+
+# Check the plan without applying
+terraform plan -out=alarm-plan.tfplan
+
+# Review the plan output for:
+# 1. Correct alarm_name references in composite alarm_rule
+# 2. Proper namespace and metric_name for your AWS service
+# 3. Evaluation period and threshold values matching your requirements
+terraform show alarm-plan.tfplan
+```
+
+A common error in AI-generated composite alarms is mismatched alarm name references. The `alarm_rule` field must reference the exact `alarm_name` value of each metric alarm, including any variable interpolations. If the metric alarm uses a dynamic name like `${var.db_instance_id}-cpu-above-80`, the composite alarm rule must reference that exact computed value, which Terraform handles through resource references (`aws_cloudwatch_metric_alarm.cpu_high.alarm_name`) rather than string literals.
+
 ## Limitations to Consider
 
-AI-generated alarm configurations require AWS service knowledge verification. The tools may suggest metrics that don't exist for your specific service or recommend evaluation periods that don't align with your alerting requirements. Always cross-reference generated configurations with AWS documentation before deploying to production.
+AI-generated alarm configurations require AWS service knowledge verification. The tools may suggest metrics that do not exist for your specific service or recommend evaluation periods that do not align with your alerting requirements. Always cross-reference generated configurations with AWS documentation before deploying to production.
 
 Composite alarm expressions have a maximum length that varies by AWS region. Very complex logical expressions may fail to create. Break extremely complex conditions into multiple composite alarms that feed into a final aggregation alarm if needed.
+
+Amazon Q Developer handles AWS-specific constraints better than general-purpose tools because it is trained on current AWS documentation. It is more likely to suggest correct metric namespaces (`AWS/RDS` versus `RDS`) and valid statistic types for each metric. For CloudWatch-specific work, this context advantage is meaningful and reduces the back-and-forth needed to correct namespace errors.
 
 
 ## Frequently Asked Questions
