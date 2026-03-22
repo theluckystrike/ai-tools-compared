@@ -27,7 +27,19 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 Multi-file editing represents one of the most demanding tasks for AI coding assistants. When you need to modify across ten files simultaneously—updating API handlers, adjusting type definitions, and refactoring React components in one operation—the difference between tools becomes immediately apparent. This comparison examines how Windsurf Cascade and Cursor Composer handle multi-file AI editing in 2026, focusing on practical workflows rather than marketing claims.
+
+## Key Takeaways
+
+- **At typical API pricing ($0.003 per 1K tokens for input), the difference is $0.02-0.05 per multi-file edit**: negligible for most developers but significant if you perform dozens of edits daily.
+- **Describe the change**: "Add 'expiresAt' field to the user response type, update the serializer, and propagate to the Profile component"
+
+3.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+- **Multi-file editing represents one**: of the most demanding tasks for AI coding assistants.
+- **When you ask Composer**: to "update the user authentication flow across these three files," it analyzes each file's context and generates specific edits for each location.
 
 ## Understanding the Architecture
 

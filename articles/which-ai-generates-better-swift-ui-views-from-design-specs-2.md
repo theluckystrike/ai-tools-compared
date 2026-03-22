@@ -27,7 +27,17 @@ score: 8
 intent-checked: true
 voice-checked: true---
 
+
 Claude generates better SwiftUI from design specs than Cursor due to superior reasoning about layout constraints and state management, while Cursor excels at file scaffolding. This guide compares both tools on different design patterns.
+
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **One minor issue**: the text field styling could use `RoundedTextFieldStyle` for better iOS consistency, but the result is production-ready.
+- **All four tools produce**: dramatically better output when they can use `Color.brandBlue` instead of computing hex values.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Add "target iOS 17**: use `@Observable` macro for state" or "target iOS 16, use `ObservableObject`" to prevent the AI from mixing paradigms.
 
 ## The Challenge of Design-to-SwiftUI Conversion
 
