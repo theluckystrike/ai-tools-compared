@@ -31,6 +31,18 @@ voice-checked: true---
 
 Writing CI/CD pipeline configurations requires understanding orchestration syntax, dependency management, caching strategies, and deployment workflows. This article evaluates how different AI coding assistants handle CircleCI and GitLab CI configuration files, helping you choose the right tool for your DevOps workflow.
 
+## Key Takeaways
+
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **Does GitLab offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **A `.gitlab-ci.yml` or `config.yml` for CircleCI has unique constructs**: workflows, jobs, steps, orbs, and runners—that most general-purpose code completion tools struggle to understand.
+- **rules**: - if: '$CI_COMMIT_BRANCH == "main"'
+```
+
+AI tools handle GitLab CI syntax differently.
+
 ## Why AI Assistance Matters for CI/CD Configs
 
 CI/CD configuration files use domain-specific syntax that differs from general-purpose code. A `.gitlab-ci.yml` or `config.yml` for CircleCI has unique constructs—workflows, jobs, steps, orbs, and runners—that most general-purpose code completion tools struggle to understand. The right AI assistant recognizes these patterns and suggests appropriate configurations based on your project's needs.

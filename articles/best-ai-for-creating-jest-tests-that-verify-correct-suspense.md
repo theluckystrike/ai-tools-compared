@@ -31,6 +31,21 @@ intent-checked: true---
 
 Claude produces the most reliable Jest tests for React Suspense because it correctly implements `waitFor` and `findBy` queries for async behavior, properly handles error boundaries, and understands React's concurrent rendering model. Other AI tools like GitHub Copilot generate working basic tests but often miss edge cases around error handling and concurrent features, while Claude consistently generates tests that work on first use without manual refinement.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Always verify async behavior**: AI-generated tests should use `waitFor` or `findBy` queries
+
+2.
+- **Mock appropriately**: Use proper mocks for lazy-loaded dependencies
+
+6.
+- **Suppress expected console errors**: Use `jest.spyOn(console, 'error')` to keep output readable when testing error boundary behavior
+
+7.
+
 ## Understanding Suspense and Lazy Loading Test Requirements
 
 React Suspense lets components pause rendering while waiting for async operations. Testing these patterns involves verifying:
