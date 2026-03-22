@@ -11,21 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared]---
+tags: [ai-tools-compared]
 ---
-layout: default
-title: "How to Build a RAG Pipeline with LangChain 2026"
-description: "Step-by-step guide to building a production RAG pipeline with LangChain, including chunking strategies, vector stores, retrieval tuning, and evaluation methods"
-date: 2026-03-21
-last_modified_at: 2026-03-21
-author: theluckystrike
-permalink: /how-to-build-a-rag-pipeline-with-langchain-2026/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared]---
 
 {% raw %}
 

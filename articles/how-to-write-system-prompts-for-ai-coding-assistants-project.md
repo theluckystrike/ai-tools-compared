@@ -11,21 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
 ---
-layout: default
-title: "How to Write System Prompts for AI Coding Assistants"
-description: "A practical guide for developers learning to write effective system prompts that make AI coding assistants understand your project's unique requirements"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-write-system-prompts-for-ai-coding-assistants-project/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
 
 
 Writing effective system prompts for AI coding assistants requires understanding how these tools interpret instructions and what information they need to generate contextually appropriate code. When you work on a project with specific conventions, testing requirements, or architectural patterns, conveying those details through well-crafted system prompts significantly improves the quality of AI-generated code.

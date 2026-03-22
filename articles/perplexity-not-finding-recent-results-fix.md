@@ -11,21 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, troubleshooting]---
+tags: [ai-tools-compared, troubleshooting]
 ---
-layout: default
-title: "Perplexity Not Finding Recent Results"
-description: "A practical troubleshooting guide for developers and power users experiencing issues with Perplexity not returning recent search results. Learn"
-date: 2026-03-15
-last_modified_at: 2026-03-22
-author: theluckystrike
-permalink: /perplexity-not-finding-recent-results-fix/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, troubleshooting]---
 
 {% raw %}
 

@@ -10,20 +10,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, workflow, artificial-intelligence, automation]---
+tags: [ai-tools-compared, workflow, artificial-intelligence, automation]
 ---
-layout: default
-title: "How to Use AI for Git Workflow Automation"
-description: "Automate git workflows with AI: commit message generation, branch naming, PR descriptions, merge conflict resolution, and git hook integration with real"
-date: 2026-03-21
-author: theluckystrike
-permalink: /how-to-use-ai-for-git-workflow-automation/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, workflow, artificial-intelligence, automation]---
 
 {% raw %}
 

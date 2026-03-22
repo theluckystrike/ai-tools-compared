@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, comparison]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Copilot Workspace vs Cursor Composer Multi File Editing"
-description: "This guide provides an overview to help you understand and make informed decisions about this topic"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /copilot-workspace-vs-cursor-composer-multi-file-editing-comp/
-categories: [guides]
-tags: [ai-tools-compared, tools, comparison]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

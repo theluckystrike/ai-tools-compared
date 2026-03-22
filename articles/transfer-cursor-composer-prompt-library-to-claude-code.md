@@ -11,7 +11,8 @@ tags: [ai-tools-compared, tools, claude-ai]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
+---
 
 
 Transfer your Cursor Composer prompts to Claude Code by exporting prompts, adapting them to Claude's format, and organizing them in Claude's library. This guide shows the conversion process that preserves your prompt investments.

@@ -11,21 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, claude-ai, chatgpt]---
+tags: [ai-tools-compared, claude-ai, chatgpt]
 ---
-layout: default
-title: "How to Transfer Claude Project Knowledge to ChatGPT"
-description: "A practical guide to migrating your Claude project knowledge bases, instructions, and settings to ChatGPT Custom GPTs with step-by-step instructions"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-transfer-claude-project-knowledge-to-chatgpt-custom-gpt/
-categories: [tutorials, guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, claude-ai, chatgpt]---
 
 
 Transferring your Claude project knowledge to ChatGPT Custom GPTs requires understanding the different architectures of both platforms. While Claude uses project instructions and knowledge files, ChatGPT employs Custom GPTs with specific configuration options. This guide walks you through the complete migration process.

@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Does Cursor Pro Charge Extra for Large File Indexing in 2026"
-description: "No, Cursor Pro does not charge extra for large file indexing. Indexing is included in the Pro subscription with no per-file or per-MB fees -- you get full"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /does-cursor-pro-charge-extra-for-large-file-indexing-2026/
-categories: [guides]
-tags: [ai-tools-compared, tools]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 
 No, Cursor Pro does not charge extra for large file indexing. Indexing is included in the Pro subscription with no per-file or per-MB fees -- you get full codebase indexing within the plan's size thresholds. If your project exceeds practical limits, you can manage scope with a `.cursorignore` file, selective workspace indexing, or upgrading to the Business tier for higher limits. This guide covers exactly how indexing works and strategies for keeping large codebases efficient.

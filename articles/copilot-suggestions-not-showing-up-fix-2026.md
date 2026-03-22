@@ -11,21 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, troubleshooting]---
+tags: [ai-tools-compared, troubleshooting]
 ---
-layout: default
-title: "Copilot Suggestions Not Showing Up Fix 2026"
-description: "A practical troubleshooting guide for developers and power users experiencing GitHub Copilot suggestion issues. Learn step-by-step fixes and diagnostic"
-date: 2026-03-15
-last_modified_at: 2026-03-22
-author: theluckystrike
-permalink: /copilot-suggestions-not-showing-up-fix-2026/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, troubleshooting]---
 
 {% raw %}
 

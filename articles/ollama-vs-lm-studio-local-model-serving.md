@@ -10,20 +10,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison]---
+tags: [ai-tools-compared, comparison]
 ---
-layout: default
-title: "Ollama vs LM Studio for Local Model Serving"
-description: "Side-by-side comparison of Ollama and LM Studio for running LLMs locally, covering setup, performance, API compatibility, and developer workflows"
-date: 2026-03-21
-author: theluckystrike
-permalink: /ollama-vs-lm-studio-local-model-serving/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, comparison]---
 
 {% raw %}
 

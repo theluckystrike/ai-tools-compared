@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Configure Cursor AI Rules for Consistent CSS"
-description: "A practical guide to setting up Cursor AI rules that enforce consistent CSS and Tailwind class ordering across your codebase"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-configure-cursor-ai-rules-for-consistent-css-and-tail/
-categories: [guides]
-tags: [ai-tools-compared, tools, artificial-intelligence]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 
 Configure Cursor AI rules using a.cursorrules file that enforces consistent Tailwind class ordering following a logical pattern: layout properties first, then sizing, typography, colors, and interactive states. This consistency improves code readability, simplifies code review diffs, and enables Cursor AI to generate CSS with proper class organization matching your team's established conventions.

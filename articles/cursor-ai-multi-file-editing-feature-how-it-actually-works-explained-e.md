@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Cursor AI Multi File Editing Feature How It Actually Works"
-description: "A guide for developers on how Cursor AI's multi-file editing feature works. Learn the mechanics, practical examples, and best practices for editing multiple"
-date: 2026-03-16
-last_modified_at: 2026-03-22
-author: theluckystrike
-permalink: /cursor-ai-multi-file-editing-feature-how-it-actually-works-explained/
-categories: [guides]
-tags: [ai-tools-compared, tools, artificial-intelligence]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

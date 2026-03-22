@@ -11,21 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, troubleshooting]---
+tags: [ai-tools-compared, troubleshooting]
 ---
-layout: default
-title: "Copilot Chat Not Responding in GitHub"
-description: "A practical troubleshooting guide for developers experiencing GitHub Copilot Chat not responding. Learn step-by-step fixes and diagnostic tips"
-date: 2026-03-15
-last_modified_at: 2026-03-22
-author: theluckystrike
-permalink: /copilot-chat-not-responding-in-github-fix/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, troubleshooting]---
 
 {% raw %}
 

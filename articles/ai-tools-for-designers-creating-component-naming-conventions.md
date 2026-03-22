@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "AI Tools for Designers Creating Component Naming Conventions"
-description: "AI tools can automatically generate consistent component naming conventions from your design system tokens by analyzing token structure, understanding semantic"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /ai-tools-for-designers-creating-component-naming-conventions/
-categories: [guides]
-tags: [ai-tools-compared, tools, artificial-intelligence]
-reviewed: true
-score: 9
-voice-checked: true
-intent-checked: true---
 
 
 AI tools can automatically generate consistent component naming conventions from your design system tokens by analyzing token structure, understanding semantic meaning, and applying your existing patterns. Using prompt strategies that provide token examples and naming constraints, you can use coding assistants to create scalable naming schemes that work across your entire component library—reducing manual decisions and ensuring naming consistency from the start.

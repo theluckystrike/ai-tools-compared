@@ -11,21 +11,8 @@ tags: [ai-tools-compared, claude-code, monorepo, configuration, claude-ai]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Write Effective CLAUDE MD File for monorepo"
-description: "A practical guide to creating CLAUDE.md files that help AI understand your monorepo architecture, service boundaries, and shared dependencies"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-write-effective-claude-md-file-for-monorepo-with-mult/
-categories: [guides]
-tags: [ai-tools-compared, claude-code, monorepo, configuration, claude-ai]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

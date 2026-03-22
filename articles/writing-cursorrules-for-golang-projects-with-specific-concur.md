@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Writing CursorRules for Golang Projects with Specific"
-description: "Write CursorRules for Go projects by explicitly defining goroutine lifecycle management, channel usage patterns, and error propagation strategies. These rules"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /writing-cursorrules-for-golang-projects-with-specific-concur/
-categories: [guides]
-tags: [ai-tools-compared, tools]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 {% raw %}
 
 Write CursorRules for Go projects by explicitly defining goroutine lifecycle management, channel usage patterns, and error propagation strategies. These rules ensure AI generates code following Go's idiomatic concurrency model rather than generic async patterns—specifying exact requirements for sync.WaitGroup usage, error channels, worker pool patterns, and proper cleanup to prevent subtle concurrency bugs.

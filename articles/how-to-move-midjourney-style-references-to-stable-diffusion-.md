@@ -11,21 +11,8 @@ score: 9
 voice-checked: true
 reviewed: true
 intent-checked: true
-tags: [ai-tools-compared]---
+tags: [ai-tools-compared]
 ---
-layout: default
-title: "How to Move Midjourney Style References to Stable Diffusion"
-description: "A practical guide for developers and power users on transferring Midjourney style prompts to Stable Diffusion LoRA training pipelines"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-move-midjourney-style-references-to-stable-diffusion-/
-categories: [tutorials, guides]
-score: 9
-voice-checked: true
-reviewed: true
-intent-checked: true
-tags: [ai-tools-compared]---
 
 
 If you have developed a distinctive visual style in Midjourney and want to recreate it within Stable Diffusion, transferring those style references to LoRA training offers a powerful solution. This process allows you to preserve the aesthetic qualities you have cultivated—specific color grading, texture preferences, composition rules, and artistic influences—and apply them to generate new images using open-source models. This guide walks you through the technical steps for developers and power users who want to move their Midjourney expertise into the Stable Diffusion ecosystem.

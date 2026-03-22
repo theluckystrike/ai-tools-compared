@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, best-of, claude-ai]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Best Practices for Claude Md File Organization in Polyglot"
-description: "Practical strategies for organizing Markdown documentation in multi-language projects using Claude. Code examples and folder structures for Python, JS"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /best-practices-for-claude-md-file-organization-in-polyglot-c/
-categories: [guides]
-tags: [ai-tools-compared, tools, best-of, claude-ai]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

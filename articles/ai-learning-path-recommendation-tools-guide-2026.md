@@ -12,21 +12,8 @@ tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 9
 intent-checked: false
-voice-checked: false---
+voice-checked: false
 ---
-
-layout: default
-title: "AI Learning Path Recommendation Tools: Best Platforms for"
-description: "Compare the best AI-powered learning path recommendation tools that help developers and tech professionals create personalized education plans. Find the"
-date: 2026-03-22
-author: "AI Tools Compared"
-permalink: /ai-learning-path-recommendation-tools-guide-2026/
-categories: [guides]
-tags: [ai-tools-compared, tools, artificial-intelligence]
-reviewed: true
-score: 9
-intent-checked: false
-voice-checked: false---
 
 {% raw %}
 

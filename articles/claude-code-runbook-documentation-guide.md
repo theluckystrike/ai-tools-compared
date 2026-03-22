@@ -11,21 +11,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, claude-ai]---
+tags: [ai-tools-compared, claude-ai]
 ---
-layout: default
-title: "Claude Code Runbook Documentation Guide"
-description: "A guide to creating and maintaining operational runbooks using Claude Code. Learn how to document procedures, automate runbook creation"
-date: 2026-03-18
-last_modified_at: 2026-03-18
-author: "theluckystrike"
-permalink: /claude-code-runbook-documentation-guide/
-reviewed: true
-score: 9
-categories: [guides]
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, claude-ai]---
 
 
 Claude Code transforms how teams create and maintain operational runbooks. Instead of struggling with outdated documentation or spending hours manually writing step-by-step procedures, you can use Claude Code's AI capabilities to generate runbooks from your existing code, conversations, and operational knowledge. This guide walks you through creating effective runbook documentation using Claude Code, with practical examples and automation strategies.

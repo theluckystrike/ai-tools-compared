@@ -11,23 +11,8 @@ tags: [ai-tools-compared, claude-code, msw, mock-service-worker, api-mocking, te
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-
-
-layout: default
-title: "Claude Code MSW Mock Service Worker Guide"
-description: "A guide to using MSW (Mock Service Worker) with Claude Code for API mocking in development workflows. Learn setup, configuration, and best practices"
-date: 2026-03-18
-last_modified_at: 2026-03-18
-author: theluckystrike
-permalink: /claude-code-msw-mock-service-worker-guide/
-categories: [guides]
-tags: [ai-tools-compared, claude-code, msw, mock-service-worker, api-mocking, testing, development-tools, claude-ai]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 ## Key Takeaways
 

@@ -11,7 +11,8 @@ tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 6
 voice-checked: true
-intent-checked: true---
+intent-checked: true
+---
 
 
 {% raw %}

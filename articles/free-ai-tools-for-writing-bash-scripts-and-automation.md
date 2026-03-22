@@ -11,21 +11,8 @@ score: 9
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence, automation]---
+tags: [ai-tools-compared, artificial-intelligence, automation]
 ---
-layout: default
-title: "Free AI Tools for Writing Bash Scripts and Automation"
-description: "A practical comparison of free AI tools that help with writing bash scripts and automating shell tasks, with examples and recommendations"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /free-ai-tools-for-writing-bash-scripts-and-automation/
-reviewed: true
-score: 9
-categories: [comparisons]
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence, automation]---
 
 {% raw %}
 

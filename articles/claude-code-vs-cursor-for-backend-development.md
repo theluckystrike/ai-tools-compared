@@ -11,21 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison, claude-ai]---
+tags: [ai-tools-compared, comparison, claude-ai]
 ---
-layout: default
-title: "Claude Code vs Cursor for Backend Development"
-description: "Compare Claude Code and Cursor for backend development in 2026. Multi-file refactors, database schema changes, API design, and terminal vs IDE workflow"
-date: 2026-03-21
-last_modified_at: 2026-03-21
-author: theluckystrike
-permalink: /claude-code-vs-cursor-for-backend-development/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, comparison, claude-ai]---
 
 {% raw %}
 

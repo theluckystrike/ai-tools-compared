@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, workflow, artificial-intelligence]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Build Custom AI Coding Workflows with MCP Server"
-description: "Learn how to create powerful AI-powered coding workflows using MCP server integrations. Practical examples and code snippets for developers"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-build-custom-ai-coding-workflows-with-mcp-server-inte/
-categories: [guides]
-tags: [ai-tools-compared, tools, workflow, artificial-intelligence]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

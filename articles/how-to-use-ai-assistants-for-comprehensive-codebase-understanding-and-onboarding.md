@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Use AI Assistants for Codebase"
-description: "A practical guide for developers on using AI assistants to understand large codebases quickly, with real examples and proven techniques for effective"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-use-ai-assistants-for--codebase-understanding-and-onboarding/
-categories: [guides]
-tags: [ai-tools-compared, tools, artificial-intelligence]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 
 Use AI for onboarding by asking it to explain architecture, map dependencies, identify key files, and describe data flow based on your codebase. This guide shows the questions and prompts that help new developers understand codebases 10x faster than reading docs.

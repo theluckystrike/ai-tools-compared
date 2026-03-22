@@ -11,7 +11,8 @@ tags: [ai-tools-compared, kubernetes, helm, ai-tools, devops, yaml, best-of, art
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
+---
 
 {% raw %}
 

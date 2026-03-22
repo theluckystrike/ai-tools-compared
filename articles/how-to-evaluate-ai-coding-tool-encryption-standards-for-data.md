@@ -11,21 +11,8 @@ tags: [ai-tools-compared, security, encryption, ai-tools, artificial-intelligenc
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Evaluate AI Coding Tool Encryption Standards"
-description: "When you paste code into an AI coding assistant, that code travels across network connections before reaching the service's servers. Understanding how to"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-evaluate-ai-coding-tool-encryption-standards-for-data/
-categories: [guides]
-tags: [ai-tools-compared, security, encryption, ai-tools, artificial-intelligence]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

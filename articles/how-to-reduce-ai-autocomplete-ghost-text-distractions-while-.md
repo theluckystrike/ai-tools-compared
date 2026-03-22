@@ -11,21 +11,8 @@ tags: [ai-tools-compared, productivity, artificial-intelligence]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Reduce AI Autocomplete Ghost Text Distractions While"
-description: "Practical strategies to minimize AI autocomplete ghost text distractions in your IDE. Learn configuration options, keyboard shortcuts, and workflows"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-reduce-ai-autocomplete-ghost-text-distractions-while-coding/
-categories: [guides]
-tags: [ai-tools-compared, productivity, artificial-intelligence]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 
 Reduce ghost-text distractions by disabling autocomplete for specific file types, setting longer completion delays, or switching to chat-only mode during deep focus work. This guide shows which IDE settings actually reduce distraction versus just hiding the visual display.

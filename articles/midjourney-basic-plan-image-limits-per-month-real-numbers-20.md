@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared]---
+tags: [ai-tools-compared]
+---
 
 
 The Midjourney Basic Plan remains the entry point for developers and hobbyists who want to explore AI image generation without committing to expensive subscriptions. Understanding the actual image limits requires examining how Midjourney measures usage—specifically through "fast mode" GPU hours rather than raw image counts.

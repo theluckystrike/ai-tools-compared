@@ -11,21 +11,8 @@ intent-checked: true
 voice-checked: true
 score: 8
 reviewed: true
-tags: [ai-tools-compared]---
+tags: [ai-tools-compared]
 ---
-layout: default
-title: "How to Set Up Model Context Protocol Server for Internal"
-description: "A practical guide to setting up a Model Context Protocol server for internal package registry documentation, with code examples and configuration tips"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-set-up-model-context-protocol-server-for-internal-pac/
-categories: [guides]
-intent-checked: true
-voice-checked: true
-score: 8
-reviewed: true
-tags: [ai-tools-compared]---
 {% raw %}
 
 Building internal tools that bridge AI assistants with your package registry documentation requires a solid integration strategy. The Model Context Protocol (MCP) provides a standardized way for AI models to interact with external services, making it an ideal choice for creating a documentation server that your AI coding assistants can query directly. This guide walks you through setting up an MCP server specifically designed for internal package registry documentation.

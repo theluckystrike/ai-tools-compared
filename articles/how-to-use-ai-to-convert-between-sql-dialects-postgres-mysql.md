@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "How to Use AI to Convert Between SQL Dialects Postgres"
-description: "AI tools can translate SQL queries between PostgreSQL, MySQL, BigQuery, and Snowflake by recognizing syntax differences and function-specific implementations"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-use-ai-to-convert-between-sql-dialects-postgres-mysql/
-categories: [guides]
-tags: [ai-tools-compared, tools, artificial-intelligence]
-reviewed: true
-score: 9
-voice-checked: true
-intent-checked: true---
 
 
 AI tools can translate SQL queries between PostgreSQL, MySQL, BigQuery, and Snowflake by recognizing syntax differences and function-specific implementations. Providing clear context about source and target database systems enables accurate translation of window functions, string aggregation, date operations, and recursive CTEs. While AI handles bulk translation work correctly, developers should verify outputs and account for vendor-specific features like PostgreSQL's RETURNING clause or BigQuery's nested records.

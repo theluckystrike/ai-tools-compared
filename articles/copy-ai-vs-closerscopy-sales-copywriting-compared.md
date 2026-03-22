@@ -11,21 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison, artificial-intelligence]---
+tags: [ai-tools-compared, comparison, artificial-intelligence]
 ---
-layout: default
-title: "Copy.ai vs ClosersCopy: Sales Copywriting Compared"
-description: "Choose Copy.ai if you need a versatile GPT-4-powered tool that handles sales copy alongside other marketing content, with a straightforward REST API for custom"
-date: 2026-03-15
-last_modified_at: 2026-03-22
-author: theluckystrike
-permalink: /copy-ai-vs-closerscopy-sales-copywriting-compared/
-categories: [comparisons]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, comparison, artificial-intelligence]---
 
 {% raw %}
 

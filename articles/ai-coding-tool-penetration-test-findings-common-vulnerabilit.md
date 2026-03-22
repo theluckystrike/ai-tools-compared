@@ -11,21 +11,8 @@ tags: [ai-tools-compared, ai-tools, penetration-testing, artificial-intelligence
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "AI Coding Tool Penetration Test Findings Common Vulnerabilit"
-description: "Security researchers have increasingly focused on AI coding tools and their IDE integrations, discovering significant vulnerabilities that affect millions of"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /ai-coding-tool-penetration-test-findings-common-vulnerabilit/
-categories: [guides]
-tags: [ai-tools-compared, ai-tools, penetration-testing, artificial-intelligence]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

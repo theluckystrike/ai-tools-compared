@@ -11,21 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared]---
+tags: [ai-tools-compared]
 ---
-layout: default
-title: "How to Build a Model Context Protocol Server That Serves"
-description: "A practical guide to building an MCP server that serves OpenAPI specifications to AI tools, with code examples and implementation patterns for 2026"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-build-model-context-protocol-server-that-serves-opena/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared]---
 
 {% raw %}
 

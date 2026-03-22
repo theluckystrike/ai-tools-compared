@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, mcp, design-systems]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Build Model Context Protocol Server for Internal"
-description: "A practical guide for developers on building an MCP server to serve design system component documentation to AI coding assistants. Includes code"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-build-model-context-protocol-server-for-internal-desi/
-categories: [guides]
-tags: [ai-tools-compared, tools, mcp, design-systems]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 
 Building a Model Context Protocol (MCP) server specifically for your internal design system component documentation transforms how AI coding assistants interact with your UI libraries. Instead of relying on vague descriptions or searching through outdated wikis, developers can query your design system directly through structured tools that return accurate, up-to-date component information.

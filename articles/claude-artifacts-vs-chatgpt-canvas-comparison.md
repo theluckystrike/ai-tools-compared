@@ -10,20 +10,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison, claude-ai, chatgpt]---
+tags: [ai-tools-compared, comparison, claude-ai, chatgpt]
 ---
-layout: default
-title: "Claude Artifacts vs ChatGPT Canvas Comparison"
-description: "Side-by-side comparison of Claude Artifacts and ChatGPT Canvas for interactive coding, document editing, and iterative development workflows in 2026"
-date: 2026-03-21
-author: theluckystrike
-permalink: /claude-artifacts-vs-chatgpt-canvas-comparison/
-categories: [guides]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, comparison, claude-ai, chatgpt]---
 
 {% raw %}
 

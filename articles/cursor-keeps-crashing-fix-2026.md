@@ -11,21 +11,8 @@ score: 8
 categories: [troubleshooting]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, troubleshooting]---
+tags: [ai-tools-compared, troubleshooting]
 ---
-layout: default
-title: "Cursor Keeps Crashing Fix 2026: Complete Troubleshooting"
-description: "troubleshooting guide to fix Cursor IDE crashes in 2026. Step-by-step solutions for developers and power users experiencing stability issues"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /cursor-keeps-crashing-fix-2026/
-reviewed: true
-score: 8
-categories: [troubleshooting]
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, troubleshooting]---
 
 {% raw %}
 

@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "AI Coding Assistant Accuracy for TypeScript Svelte Component"
-description: "Claude Code demonstrates superior accuracy for Svelte 5 components by correctly applying $state runes, $derived for computed values, and proper TypeScript prop"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /ai-coding-assistant-accuracy-for-typescript-svelte-component/
-categories: [guides]
-tags: [ai-tools-compared, tools, artificial-intelligence]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

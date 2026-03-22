@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, productivity, artificial-intelligence]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Get AI Code Suggestions That Follow Your Project"
-description: "Learn practical methods to make AI code completion tools respect your project's naming conventions. Configuration tips, code examples, and strategies for"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-get-ai-code-suggestions-that-follow-your-project-naming-conventions/
-categories: [guides]
-tags: [ai-tools-compared, tools, productivity, artificial-intelligence]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 
 AI tools follow your naming conventions when you include examples in your codebase context and explicitly mention conventions in prompts. This guide shows which tool configurations, context inclusions, and prompt phrasings actually enforce your naming standards versus producing generic names.

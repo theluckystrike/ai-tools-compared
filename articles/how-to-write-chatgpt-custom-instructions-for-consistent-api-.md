@@ -11,21 +11,8 @@ tags: [ai-tools-compared, chatgpt, api-design, prompts, api]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Write ChatGPT Custom Instructions"
-description: "A practical guide for developers on crafting effective ChatGPT custom instructions that produce consistent, high-quality API design recommendations"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-write-chatgpt-custom-instructions-for-consistent-api-design-suggestions/
-categories: [guides]
-tags: [ai-tools-compared, chatgpt, api-design, prompts, api]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

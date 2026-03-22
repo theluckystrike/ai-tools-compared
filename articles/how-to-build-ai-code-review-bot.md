@@ -10,20 +10,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
 ---
-layout: default
-title: "How to Build an AI Code Review"
-description: "Build a GitHub Actions bot that runs AI code review on pull requests using Claude or GPT-4, posts inline comments, and enforces custom review rules"
-date: 2026-03-21
-author: theluckystrike
-permalink: /how-to-build-ai-code-review-bot/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
 
 {% raw %}
 

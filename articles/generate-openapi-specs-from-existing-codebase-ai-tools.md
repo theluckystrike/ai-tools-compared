@@ -11,21 +11,8 @@ tags: [ai-tools-compared, ai, api, openapi, documentation, artificial-intelligen
 reviewed: true
 score: 8
 voice-checked: true
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "Generate Openapi Specs from Existing Codebase AI Tools"
-description: "Step-by-step guide to using AI tools to extract and generate complete OpenAPI/Swagger specifications from your existing API code"
-date: 2026-03-20
-last_modified_at: 2026-03-20
-author: theluckystrike
-permalink: /generate-openapi-specs-from-existing-codebase-ai-tools/
-categories: [guides]
-tags: [ai-tools-compared, ai, api, openapi, documentation, artificial-intelligence]
-reviewed: true
-score: 8
-voice-checked: true
-intent-checked: true---
 
 
 Most legacy APIs lack OpenAPI specifications, making it impossible to generate SDKs, documentation, or proper contract testing. Manually writing OpenAPI specs is tedious and error-prone. Modern AI tools can analyze your existing API code and generate complete, accurate OpenAPI 3.0 specifications in minutes. This guide shows exactly how to use Claude, ChatGPT, and specialized tools to turn any API into a properly documented specification.

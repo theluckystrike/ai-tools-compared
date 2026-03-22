@@ -11,21 +11,8 @@ score: 9
 reviewed: true
 intent-checked: true
 categories: [guides]
-tags: [ai-tools-compared, comparison]---
+tags: [ai-tools-compared, comparison]
 ---
-layout: default
-title: "HubSpot vs Salesforce Service Cloud"
-description: "A practical technical comparison of HubSpot and Salesforce Service Cloud AI capabilities, with API examples and integration insights for developers"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /hubspot-vs-salesforce-service-cloud-ai/
-voice-checked: true
-score: 9
-reviewed: true
-intent-checked: true
-categories: [guides]
-tags: [ai-tools-compared, comparison]---
 
 {% raw %}
 

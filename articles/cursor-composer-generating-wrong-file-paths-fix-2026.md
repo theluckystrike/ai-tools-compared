@@ -10,20 +10,8 @@ tags: [ai-tools-compared, cursor, ai-editor, cursor-composer, file-paths, bug-fi
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Cursor Composer Generating Wrong File Paths Fix 2026"
-description: "A practical guide to fixing Cursor Composer file path generation issues. Learn causes, solutions, and code examples for developers."
-date: 2026-03-20
-author: theluckystrike
-permalink: /cursor-composer-generating-wrong-file-paths-fix-2026/
-categories: [guides]
-tags: [ai-tools-compared, cursor, ai-editor, cursor-composer, file-paths, bug-fix, troubleshooting]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

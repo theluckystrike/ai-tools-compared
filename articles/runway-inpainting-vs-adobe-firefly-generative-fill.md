@@ -11,21 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison]---
+tags: [ai-tools-compared, comparison]
 ---
-layout: default
-title: "Runway Inpainting vs Adobe Firefly Generative"
-description: "A technical comparison of Runway inpainting and Adobe Firefly Generative Fill for developers and power users working with AI-powered image editing"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /runway-inpainting-vs-adobe-firefly-generative-fill/
-categories: [comparisons]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, comparison]---
 
 
 Runway inpainting and Adobe Firefly Generative Fill both use generative AI to modify images, but they approach the problem differently and serve distinct use cases.

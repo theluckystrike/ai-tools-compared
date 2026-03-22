@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, workflow, artificial-intelligence]---
+tags: [ai-tools-compared, workflow, artificial-intelligence]
+---
 
 
 Building features from product requirements documents (PRDs) remains one of the most challenging aspects of software development. The gap between written requirements and working code often leads to miscommunication, rework, and missed deadlines. An effective AI coding workflow can bridge this gap by systematically transforming PRD content into functional implementations. This guide presents a practical approach for developers and power users looking to use AI tools throughout the feature development lifecycle.

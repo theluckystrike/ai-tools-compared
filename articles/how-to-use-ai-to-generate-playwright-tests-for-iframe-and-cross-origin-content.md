@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 
 Testing iframes and cross-origin content presents unique challenges in automated browser testing. Playwright handles these scenarios well, but writing tests manually takes time. AI coding assistants can accelerate this process significantly by generating the boilerplate code and handling the nuanced differences between same-origin and cross-origin iframe interactions.

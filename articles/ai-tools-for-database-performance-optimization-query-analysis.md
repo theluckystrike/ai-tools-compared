@@ -11,21 +11,8 @@ tags: [ai-tools-compared, ai, database, performance, optimization, artificial-in
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "AI Tools for Database Performance Optimization Query"
-description: "guide to using AI assistants for identifying slow queries, optimizing indexes, and improving database performance"
-date: 2026-03-20
-last_modified_at: 2026-03-20
-author: theluckystrike
-permalink: /ai-tools-for-database-performance-optimization-query-analysis/
-categories: [guides]
-tags: [ai-tools-compared, ai, database, performance, optimization, artificial-intelligence]
-reviewed: true
-score: 9
-voice-checked: true
-intent-checked: true---
 
 
 Database performance bottlenecks are invisible until they become critical. Modern AI coding assistants can analyze query execution plans, suggest index improvements, and refactor slow queries in seconds. This guide shows exactly which AI tools excel at database optimization and how to use them effectively with your PostgreSQL, MySQL, and MongoDB databases.

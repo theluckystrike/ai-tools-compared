@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, troubleshooting, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Optimize AI Coding Prompts for Generating Production"
-description: "Generate production-ready error handling by explicitly requesting typed errors, specific exception cases, logging statements, and retry logic in prompts. This"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-optimize-ai-coding-prompts-for-generating-production-ready-error-handling/
-categories: [guides]
-tags: [ai-tools-compared, tools, troubleshooting, artificial-intelligence]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 
 Generate production-ready error handling by explicitly requesting typed errors, specific exception cases, logging statements, and retry logic in prompts. This guide shows exactly which error-handling patterns to request in prompts that consistently produce strong, maintainable error handling.

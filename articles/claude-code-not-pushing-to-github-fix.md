@@ -11,21 +11,8 @@ score: 8
 categories: [troubleshooting]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, troubleshooting, claude-ai]---
+tags: [ai-tools-compared, troubleshooting, claude-ai]
 ---
-layout: default
-title: "Claude Code Not Pushing to GitHub Fix: Troubleshooting Guide"
-description: "A guide to fixing Claude Code push failures to GitHub. Learn to diagnose and resolve authentication, SSH, and configuration issues"
-date: 2026-03-15
-last_modified_at: 2026-03-22
-author: theluckystrike
-permalink: /claude-code-not-pushing-to-github-fix/
-reviewed: true
-score: 8
-categories: [troubleshooting]
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, troubleshooting, claude-ai]---
 
 {% raw %}
 

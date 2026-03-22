@@ -10,20 +10,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, claude-ai]---
+tags: [ai-tools-compared, claude-ai]
 ---
-layout: default
-title: "How to Use Claude for Database Schema"
-description: "Practical guide to using Claude for relational database schema design: normalization decisions, index strategy, constraint modeling, and schema evolution"
-date: 2026-03-21
-author: theluckystrike
-permalink: /how-to-use-claude-for-database-schema-design/
-categories: [guides]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, claude-ai]---
 
 {% raw %}
 

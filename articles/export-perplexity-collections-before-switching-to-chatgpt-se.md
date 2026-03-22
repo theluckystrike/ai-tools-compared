@@ -11,21 +11,8 @@ score: 8
 voice-checked: true
 reviewed: true
 intent-checked: true
-tags: [ai-tools-compared, chatgpt]---
+tags: [ai-tools-compared, chatgpt]
 ---
-layout: default
-title: "Export Perplexity Collections Before Switching to ChatGPT"
-description: "A practical developer guide for exporting Perplexity collections before switching to ChatGPT Search in 2026. Includes API methods, automation scripts"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /export-perplexity-collections-before-switching-to-chatgpt-se/
-categories: [guides]
-score: 8
-voice-checked: true
-reviewed: true
-intent-checked: true
-tags: [ai-tools-compared, chatgpt]---
 
 {% raw %}
 

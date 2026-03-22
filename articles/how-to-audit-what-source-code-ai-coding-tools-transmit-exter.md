@@ -11,21 +11,8 @@ tags: [ai-tools-compared, privacy, security, tools, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Audit What Source Code AI Coding Tools Transmit"
-description: "When you use AI coding tools like GitHub Copilot, Cursor, or Claude Code, your source code often gets transmitted to external servers for processing"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-audit-what-source-code-ai-coding-tools-transmit-externally/
-categories: [guides]
-tags: [ai-tools-compared, privacy, security, tools, artificial-intelligence]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

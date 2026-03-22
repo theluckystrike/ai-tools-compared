@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, api]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Generate Mermaid Sequence Diagrams from API Endpoint"
-description: "A practical guide for developers to automatically create Mermaid sequence diagrams from API endpoint descriptions using AI tools, with code examples"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-generate-mermaid-sequence-diagrams-from-api-endpoint-descriptions-using-ai/
-categories: [guides]
-tags: [ai-tools-compared, tools, api]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

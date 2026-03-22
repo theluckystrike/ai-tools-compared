@@ -11,21 +11,8 @@ tags: [ai-tools-compared, dbt, data-quality, ai, artificial-intelligence]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Use AI to Create Data Quality Scorecards from dbt"
-description: "Learn how to use AI to transform dbt test results into actionable data quality scorecards. Practical examples and code snippets for developers"
-date: 2026-03-16
-last_modified_at: 2026-03-22
-author: theluckystrike
-permalink: /how-to-use-ai-to-create-data-quality-scorecards-from-dbt-tes/
-categories: [guides]
-tags: [ai-tools-compared, dbt, data-quality, ai, artificial-intelligence]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

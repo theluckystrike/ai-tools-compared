@@ -11,21 +11,8 @@ score: 8
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison, claude-ai, chatgpt]---
+tags: [ai-tools-compared, comparison, claude-ai, chatgpt]
 ---
-layout: default
-title: "ChatGPT vs Claude for Creating Database Migration Scripts"
-description: "A practical comparison of ChatGPT and Claude for generating PostgreSQL migration scripts, with code examples and recommendations for database developers"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: "theluckystrike"
-permalink: /chatgpt-vs-claude-for-creating-database-migration-scripts-po/
-reviewed: true
-score: 8
-categories: [comparisons]
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, comparison, claude-ai, chatgpt]---
 
 {% raw %}
 

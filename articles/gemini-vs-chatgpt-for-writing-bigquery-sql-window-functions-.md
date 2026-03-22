@@ -11,21 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison, chatgpt]---
+tags: [ai-tools-compared, comparison, chatgpt]
 ---
-layout: default
-title: "Gemini vs ChatGPT for Writing BigQuery SQL Window Functions"
-description: "A practical comparison of Gemini and ChatGPT for writing BigQuery SQL window functions. Learn which AI tool handles complex SQL patterns better"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /gemini-vs-chatgpt-for-writing-bigquery-sql-window-functions-/
-categories: [comparisons]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true
-tags: [ai-tools-compared, comparison, chatgpt]---
 
 
 When you need to write complex BigQuery SQL window functions, the difference between Gemini and ChatGPT can significantly impact your productivity. Both AI assistants can generate SQL, but their accuracy and approach to window functions varies in ways that matter for developers and data analysts.

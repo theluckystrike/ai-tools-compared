@@ -11,21 +11,8 @@ tags: [ai-tools-compared, ai, development, models, fine-tuning]
 reviewed: true
 score: 8
 voice-checked: true
-intent-checked: true---
+intent-checked: true
 ---
-layout: default
-title: "Fine Tune Open Source Code Models for Your Codebase"
-description: "Guide to adapting open source AI models to your specific codebase using LoRA, QLoRA, and supervised fine-tuning"
-date: 2026-03-20
-last_modified_at: 2026-03-20
-author: theluckystrike
-permalink: /fine-tune-open-source-code-models-for-your-codebase-2026/
-categories: [guides]
-tags: [ai-tools-compared, ai, development, models, fine-tuning]
-reviewed: true
-score: 8
-voice-checked: true
-intent-checked: true---
 
 
 Fine-tuning open source code models like Code Llama, Deepseek Coder, and Mistral's Codestral on your proprietary codebase significantly improves suggestion accuracy and reduces hallucinations. Instead of generic suggestions, your AI assistant understands your team's conventions, naming patterns, and architecture. This guide shows exactly how to adapt modern models to your specific code repository.

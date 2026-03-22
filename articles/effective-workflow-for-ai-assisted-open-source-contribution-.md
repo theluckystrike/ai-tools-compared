@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, workflow, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Effective Workflow for AI-Assisted Open Source Contribution"
-description: "A practical guide to using AI tools for contributing to open source projects, from finding issues to preparing polished pull requests"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /effective-workflow-for-ai-assisted-open-source-contribution-/
-categories: [guides]
-tags: [ai-tools-compared, tools, workflow, artificial-intelligence]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 
 Contributing to open source with AI assistants requires mapping the codebase first, then using AI to understand conventions, write compatible code, and prepare pull requests. This guide walks through the specific workflow that balances AI acceleration with the project maintainer expectations.

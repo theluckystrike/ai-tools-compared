@@ -11,7 +11,8 @@ tags: [ai-tools-compared, tools, best-of, artificial-intelligence, api]
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true---
+intent-checked: true
+---
 
 ## Why Auto-Generating OpenAPI Specs Matters
 

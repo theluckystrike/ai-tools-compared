@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, claude-ai]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "How to Configure Claude Code Project Memory for Persistent"
-description: "Configure Claude Code project memory by creating a CLAUDE.md file in your project root that persists across sessions and documents coding conventions"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /how-to-configure-claude-code-project-memory-for-persistent-c/
-categories: [guides]
-tags: [ai-tools-compared, tools, claude-ai]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 {% raw %}
 
 Configure Claude Code project memory by creating a CLAUDE.md file in your project root that persists across sessions and documents coding conventions, project-specific configurations, and architectural decisions. Claude Code automatically reads this file and applies stored context about your tech stack, naming patterns, testing requirements, and architectural approaches—enabling consistent AI assistance across all team members.

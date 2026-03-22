@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, comparison, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Domo vs Sisense AI Dashboards: A Practical Comparison"
-description: "A technical comparison of Domo and Sisense AI dashboard capabilities with code examples, API integration patterns, and recommendations for power users"
-date: 2026-03-15
-last_modified_at: 2026-03-15
-author: theluckystrike
-permalink: /domo-vs-sisense-ai-dashboards/
-categories: [guides]
-tags: [ai-tools-compared, tools, comparison, artificial-intelligence]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 

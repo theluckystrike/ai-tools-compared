@@ -11,21 +11,8 @@ tags: [ai-tools-compared, tools, claude-ai, api]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true---
+voice-checked: true
 ---
-layout: default
-title: "Claude API Extended Thinking: How Output Tokens Are Billed"
-description: "A practical guide to understanding Claude API extended thinking feature, how output tokens are billed, and cost optimization strategies for developers"
-date: 2026-03-16
-last_modified_at: 2026-03-16
-author: theluckystrike
-permalink: /claude-api-extended-thinking-cost-how-output-tokens-are-bill/
-categories: [guides]
-tags: [ai-tools-compared, tools, claude-ai, api]
-reviewed: true
-score: 9
-intent-checked: true
-voice-checked: true---
 
 {% raw %}
 
