@@ -118,6 +118,46 @@ Keep the router thin.
 
 Cursor's output is higher quality for a single file because it has full file context and generates clean diffs. The tradeoff: you repeat this for every router file.
 
+## Refactoring Task 3: Breaking Up God Classes
+
+One common refactoring challenge is a "god class" — a module that has grown to handle too many concerns. Both tools approach this differently.
+
+**Claude Code prompt for god class decomposition:**
+
+```
+UserService in services/user_service.py has grown to 1,400 lines and handles:
+- Authentication (login, token refresh, password reset)
+- Profile management (update, avatar upload, preferences)
+- Subscription billing (plan changes, invoice retrieval)
+- Notification settings
+
+Split it into focused service classes:
+- AuthService (auth concerns only)
+- ProfileService (profile management)
+- BillingService (subscription + invoices)
+- NotificationService (notification preferences)
+
+Rules:
+- Preserve all existing method signatures (callers must not change)
+- Create a thin UserService facade that delegates to the new services
+- Each new file gets its own test file mirroring tests/test_user_service.py structure
+- Run tests after each class is extracted
+```
+
+Claude Code is particularly good at this because it can scan all callers of the original class to ensure nothing breaks during extraction.
+
+**Cursor for the same task:**
+
+```
+@services/user_service.py @tests/test_user_service.py
+
+Extract the authentication methods (login, refresh_token, reset_password)
+from UserService into a new AuthService class in services/auth_service.py.
+Keep UserService delegating to AuthService for backward compatibility.
+```
+
+Cursor produces a cleaner extraction for that one concern. You then repeat the process for each group of methods.
+
 ## Verification Strategy
 
 Verification is where both tools need explicit guidance.
@@ -177,6 +217,36 @@ Now update routers/ to use async services and add await where needed."
 
 Breaking the refactor into discrete commits also gives you safe rollback points.
 
+## Prompt Engineering Patterns That Work
+
+Both tools benefit from well-structured refactoring prompts. These patterns consistently produce better results:
+
+**The "constraint-first" pattern** — state what must NOT change before what should change:
+
+```
+Do not change any public method signatures.
+Do not modify files outside of services/ and tests/.
+Now: extract the billing logic from UserService into BillingService.
+```
+
+**The "breadcrumb" pattern** — explicitly tell Claude what has already been done in prior sessions:
+
+```
+Context: We have already migrated db/ and repositories/ to async.
+The following files are complete: [list]
+The following files still need migration: [list]
+Start with services/order_service.py.
+```
+
+**The "rollback checkpoint" pattern** — commit before each risky change:
+
+```
+Before changing routers/payments.py, commit current state:
+git add -A && git commit -m "chore: checkpoint before payments router refactor"
+Then proceed with the refactor.
+If tests fail, we can git reset --hard HEAD to recover.
+```
+
 ## Cursor's Strength: Targeted Edits
 
 Where Cursor beats Claude Code: when you know exactly what needs changing and want high-quality targeted diffs.
@@ -231,6 +301,22 @@ claude "Run the full test suite, mypy, and ruff. Fix any remaining issues."
 | Context for 50k+ line repos | Handles via tool calls | Context window limits |
 | IDE integration | Terminal only | Full IDE |
 | Speed for single-file edits | Moderate | Fast |
+| God class decomposition | Strong (scans all callers) | Good for one class at a time |
+| Prompt-driven planning | Excellent | Limited |
+
+## When to Use Which Tool
+
+Use **Claude Code** when:
+- The refactor touches more than 10 files
+- You need automated test-run-and-fix loops
+- You don't know exactly which files are affected
+- The migration is mechanical (rename, add await, change import paths)
+
+Use **Cursor Composer** when:
+- You have 1-5 files with clear, bounded changes
+- You want inline diff review before applying changes
+- The edit is quality-sensitive (new API design, complex logic restructuring)
+- You're already in the IDE and want minimal context switching
 
 ## Related Reading
 
