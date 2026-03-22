@@ -27,11 +27,21 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 Use Copilot agent mode for multi-step tasks by describing the goal, letting the agent decompose steps, and verifying each step. This guide shows when agent mode is faster than manual prompting and when it adds unnecessary overhead.
 
 GitHub Copilot agent mode transforms how developers handle complex coding workflows. Instead of generating single-line completions, agent mode orchestrates multi-step tasks across your entire codebase. If you have ever wanted an AI assistant that can refactor multiple files, implement features end-to-end, or debug issues across a project, agent mode provides that capability.
 
 This guide covers practical approaches for using Copilot agent mode in your development workflow.
+
+## Key Takeaways
+
+- **For a $20 Copilot monthly subscription**: agent mode requests count against your usage quota.
+- **Use Copilot agent mode**: for multi-step tasks by describing the goal, letting the agent decompose steps, and verifying each step.
+- **Agent mode works best**: when you have a clear objective but the implementation requires changes in multiple files.
+- **Agent mode can analyze**: error messages and trace through your codebase to identify root causes.
+- **The more information Copilot**: has about your project structure, coding conventions, and specific requirements, the better the results.
+- **Include relevant file paths**: describe your architecture, and mention any constraints or preferences.
 
 ## Understanding Agent Mode vs. Traditional Completions
 

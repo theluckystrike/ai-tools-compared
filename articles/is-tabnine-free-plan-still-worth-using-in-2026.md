@@ -18,6 +18,14 @@ voice-checked: true---
 
 Tabnine has been a fixture in the AI code completion space for years, but 2026 has brought significant changes to the market. New competitors have emerged, existing tools have improved dramatically, and the question becomes: is Tabnine Free still worth your time in 2026? After extensive testing across multiple projects and languages, here's my honest assessment.
 
+## Key Takeaways
+
+- **If you have used**: the tool for at least 3 months and plan to continue, the annual discount usually makes sense.
+- **Claude Code and Cursor**: For developers willing to work in a terminal or use a dedicated AI-first editor, Claude Code and Cursor offer substantially more capable free experiences.
+- **The pattern across all three projects**: Tabnine Free works best when you're writing conventional code that follows common patterns.
+- **Beginner Developers**: For those learning to code, Tabnine Free provides helpful suggestions that teach common patterns and best practices.
+- **Specialized Domains**: If you're working in niche languages or frameworks with limited community code, Tabnine Free's model has less training data to draw from.
+- **The question isn't really**: whether Tabnine Free works; it's whether the alternatives work better for your specific needs.
 
 ## The Current State of Tabnine Free
 

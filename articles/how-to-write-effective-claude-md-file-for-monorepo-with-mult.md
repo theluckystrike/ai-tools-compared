@@ -28,7 +28,16 @@ intent-checked: true
 voice-checked: true---
 
 {% raw %}
+
 Monorepos with multiple services present unique challenges for AI coding assistants. When your project spans dozens of services, shared packages, and interconnected dependencies, a well-crafted CLAUDE.md file becomes essential for getting useful responses from AI tools. This guide shows you how to structure your CLAUDE.md file so AI understands your monorepo's architecture and provides accurate, context-aware assistance.
+
+## Key Takeaways
+
+- **An outdated CLAUDE.md file**: is worse than no file at all because it gives AI false confidence in its understanding of your project.
+- **What shared resources can**: I use? (Shared packages) 4.
+- **When your project spans**: dozens of services, shared packages, and interconnected dependencies, a well-crafted CLAUDE.md file becomes essential for getting useful responses from AI tools.
+- **Document what lives in**: shared packages and when to use them versus when to create service-specific code.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
 ## Why Monorepos Need Special CLAUDE.md Treatment
 

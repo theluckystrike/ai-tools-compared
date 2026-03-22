@@ -27,7 +27,15 @@ score: 9
 voice-checked: true
 intent-checked: true---
 
+
 Writing a good git commit message is often overlooked until your team needs to debug a production issue weeks later. Instead of manually crafting commit messages from memory, you can feed your code diff into an AI model and receive a well-structured message that explains the "why" behind the code change, lists all modified functions, and includes relevant context. This approach eliminates vague messages like "fix bug" or "update code" while saving developers 5-10 minutes per commit on message composition.
+
+## Key Takeaways
+
+- **Most developers skip detailed**: messages because they're tedious to write.
+- **Maintain consistent scope definitions.**: If your team uses `feat(auth)`, `fix(database)`, and `docs(api)`, train the AI on these patterns by providing examples in your hook system.
+- **This keeps your commit**: history focused on substantive changes.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
 ## Why AI-Generated Commit Messages Matter
 

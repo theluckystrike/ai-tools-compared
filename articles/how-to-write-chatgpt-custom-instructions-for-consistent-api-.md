@@ -31,6 +31,15 @@ voice-checked: true---
 
 ChatGPT's custom instructions feature lets you define persistent context that shapes every conversation. For developers working on API design, well-crafted custom instructions mean you get consistent, high-quality suggestions without repeating the same context across sessions. This guide shows you how to write custom instructions that deliver reliable API design recommendations tailored to your project requirements and coding standards.
 
+## Key Takeaways
+
+- **My team follows PEP**: 8 style guidelines and uses Pydantic v2 for request/response validation.
+- **Error responses use problem**: details format (RFC 7807).
+- **Ask for a CRUD**: endpoint for a resource like "users" or "products" 2.
+- **- Use code comments**: only for non-obvious logic.
+- **Copy code directly into**: your project or IDE ### API Design Assistant Strategy Use ChatGPT for exploratory design: ``` Session Flow: 1.
+- **What endpoints should I**: include?" (Uses your custom instructions for tech stack) 2.
+
 ## Understanding Custom Instructions in ChatGPT
 
 Custom instructions live in your ChatGPT settings and apply to every new conversation. They consist of two fields: "What would you like ChatGPT to know about you?" and "How would you like ChatGPT to respond?" Both fields work together to establish the context and behavioral patterns you want the model to follow.

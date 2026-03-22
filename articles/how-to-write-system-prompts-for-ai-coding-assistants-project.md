@@ -27,7 +27,23 @@ intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]---
 
+
 Writing effective system prompts for AI coding assistants requires understanding how these tools interpret instructions and what information they need to generate contextually appropriate code. When you work on a project with specific conventions, testing requirements, or architectural patterns, conveying those details through well-crafted system prompts significantly improves the quality of AI-generated code.
+
+## Key Takeaways
+
+- **The practical approach is to start with a core prompt covering your three or four most critical conventions**: the ones where deviation causes the most rework.
+- **Language and framework specifics**: Version requirements, preferred patterns
+
+4.
+- **Project-specific conventions**: Custom patterns unique to your codebase
+
+### Use Concrete Examples
+
+Include actual code examples from your project to illustrate expected patterns.
+- **The project uses SQLAlchemy**: 2.0 async sessions with PostgreSQL.
+- **Consider a scenario where**: your project uses a specific error-handling pattern across all API endpoints.
+- **Include preferences for file**: organization and import patterns.
 
 ## Why Project-Specific Rules Matter
 
