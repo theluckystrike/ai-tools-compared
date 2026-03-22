@@ -457,3 +457,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [AI Code Completion for Java Jakarta EE Migration from Javax](/ai-tools-compared/ai-code-completion-for-java-jakarta-ee-migration-from-javax-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+## Related Reading
+
+- [AI Code Generation Quality for Java Spring Security](/ai-code-generation-quality-for-java-spring-security-configur/)
+- [AI Code Generation Quality for Java Pattern Matching](/ai-code-generation-quality-for-java-pattern-matching-and-swi/)
+- [AI Code Generation Quality for Java JUnit 5 Parameterized](/ai-code-generation-quality-for-java-junit-5-parameterized-te/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

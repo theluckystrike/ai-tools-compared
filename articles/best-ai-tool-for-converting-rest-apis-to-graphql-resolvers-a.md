@@ -13,6 +13,176 @@ intent-checked: true
 voice-checked: true---
 {% raw %}
 
+## The Conversion Problem
+
+REST and GraphQL have fundamentally different shapes. A REST endpoint returns a fixed data structure; a GraphQL resolver returns only what the client asks for. Converting one to the other is not mechanical — you need to decide how to map REST resources to GraphQL types, handle nested objects, and restructure error responses.
+
+AI tools are most useful for the schema translation step and the resolver boilerplate. The business logic still requires a human.
+
+---
+
+## Using Claude to Convert a REST Endpoint to a GraphQL Resolver
+
+The most effective approach: give Claude your REST endpoint documentation or code plus your existing GraphQL schema context, and ask it to produce both the type definitions and the resolver.
+
+**Example — converting a REST user endpoint:**
+
+REST endpoint:
+```
+GET /api/users/{id}
+Response: { id, email, name, role, created_at, settings: { theme, notifications } }
+```
+
+Prompt:
+```
+Convert this REST endpoint to GraphQL. Generate:
+1. The GraphQL type definition for User (including Settings as a nested type)
+2. A resolver function for Query.user(id: ID!) that calls the REST endpoint
+3. A DataLoader setup to batch multiple user lookups
+```
+
+Claude output:
+
+```graphql
+# schema.graphql
+type UserSettings {
+  theme: String!
+  notifications: Boolean!
+}
+
+type User {
+  id: ID!
+  email: String!
+  name: String!
+  role: String!
+  createdAt: String!
+  settings: UserSettings!
+}
+
+type Query {
+  user(id: ID!): User
+  users(ids: [ID!]!): [User]!
+}
+```
+
+```javascript
+// resolvers.js
+const DataLoader = require('dataloader');
+
+const userLoader = new DataLoader(async (ids) => {
+  // Batch REST calls - replace with your actual API
+  const responses = await Promise.all(
+    ids.map(id =>
+      fetch(`https://api.example.com/users/${id}`, {
+        headers: { Authorization: `Bearer ${process.env.API_TOKEN}` }
+      }).then(r => r.json())
+    )
+  );
+  return responses;
+});
+
+const resolvers = {
+  Query: {
+    user: (_, { id }) => userLoader.load(id),
+    users: (_, { ids }) => userLoader.loadMany(ids),
+  },
+  User: {
+    createdAt: (parent) => parent.created_at, // snake_case → camelCase
+  },
+};
+```
+
+---
+
+## Mapping REST Pagination to GraphQL Connections
+
+REST APIs typically use offset/limit or cursor pagination. GraphQL best practice is the Relay Connection spec. AI tools can generate the connection boilerplate:
+
+```graphql
+type UserConnection {
+  edges: [UserEdge!]!
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+type UserEdge {
+  node: User!
+  cursor: String!
+}
+
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+  endCursor: String
+}
+
+type Query {
+  users(first: Int, after: String, last: Int, before: String): UserConnection!
+}
+```
+
+```javascript
+// Resolver that wraps a REST paginated endpoint
+Query: {
+  users: async (_, { first = 10, after }) => {
+    const offset = after ? parseInt(Buffer.from(after, 'base64').toString()) : 0;
+    const response = await fetch(
+      `https://api.example.com/users?limit=${first}&offset=${offset}`
+    );
+    const { data, total } = await response.json();
+
+    return {
+      edges: data.map((user, i) => ({
+        node: user,
+        cursor: Buffer.from(String(offset + i)).toString('base64'),
+      })),
+      pageInfo: {
+        hasNextPage: offset + first < total,
+        hasPreviousPage: offset > 0,
+        startCursor: data.length ? Buffer.from(String(offset)).toString('base64') : null,
+        endCursor: data.length ? Buffer.from(String(offset + data.length - 1)).toString('base64') : null,
+      },
+      totalCount: total,
+    };
+  }
+}
+```
+
+---
+
+## Handling REST Error Responses in GraphQL
+
+REST uses HTTP status codes to signal errors; GraphQL always returns 200 with errors in the response body. Claude handles this translation well when given explicit instructions:
+
+```javascript
+// Error-handling resolver pattern
+Query: {
+  user: async (_, { id }) => {
+    const response = await fetch(`https://api.example.com/users/${id}`);
+
+    if (response.status === 404) {
+      return null; // GraphQL nullable field — client checks for null
+    }
+
+    if (response.status === 403) {
+      throw new GraphQLError('Not authorized', {
+        extensions: { code: 'FORBIDDEN' }
+      });
+    }
+
+    if (!response.ok) {
+      throw new GraphQLError('Upstream API error', {
+        extensions: { code: 'INTERNAL_SERVER_ERROR', status: response.status }
+      });
+    }
+
+    return response.json();
+  }
+}
+```
+
+---
 
 ## Frequently Asked Questions
 

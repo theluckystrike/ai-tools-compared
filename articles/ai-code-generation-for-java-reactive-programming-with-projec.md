@@ -326,3 +326,10 @@ Use `flatMap` for concurrent execution where order doesn't matter. Use `concatMa
 - [AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026](/ai-tools-compared/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+## Related Reading
+
+- [How to Write Better Prompts for AI Code Generation](/how-to-write-better-prompts-for-ai-code-generation-with-examples/)
+- [Best Practices for Combining AI Code Generation](/best-practices-for-combining-ai-code-generation-with-manual-code-review/)
+- [AI Code Generation Quality for Java Spring Security](/ai-code-generation-quality-for-java-spring-security-configur/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -359,3 +359,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [AI Code Generation for Java Virtual Threads Project Loom Pat](/ai-tools-compared/ai-code-generation-for-java-virtual-threads-project-loom-pat/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+## Related Reading
+
+- [AI Code Generation Quality for Java Spring Security](/ai-code-generation-quality-for-java-spring-security-configur/)
+- [AI Code Generation Quality for Java Pattern Matching](/ai-code-generation-quality-for-java-pattern-matching-and-swi/)
+- [AI Code Generation Quality for JavaScript Async Await Patter](/ai-code-generation-quality-for-javascript-async-await-patter/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

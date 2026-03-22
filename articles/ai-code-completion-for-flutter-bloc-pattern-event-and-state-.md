@@ -394,4 +394,13 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [AI Code Completion for Java Record Classes and Sealed](/ai-code-completion-for-java-record-classes-and-sealed-interf/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
+## Related Reading
+
+- [AI Code Generation Quality for Java Pattern Matching](/ai-code-generation-quality-for-java-pattern-matching-and-swi/)
+- [AI Code Completion for Java Record Classes and Sealed](/ai-code-completion-for-java-record-classes-and-sealed-interf/)
+- [Open Source AI Code Completion for Neovim Without Cloud API](/open-source-ai-code-completion-for-neovim-without-cloud-api-/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
 {% endraw %}

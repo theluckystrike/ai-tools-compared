@@ -277,4 +277,13 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [AI Tools for Writing Selenium to Cypress Test Migration 2026](/ai-tools-compared/ai-tools-for-writing-selenium-cypress-test-migration-2026/)
 - [AI Tools for Creating Test Data Generators That Respect](/ai-tools-compared/ai-tools-for-creating-test-data-generators-that-respect-busi/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
+## Related Reading
+
+- [Self-Hosted AI Tools for Generating Test Data and Fixtures](/self-hosted-ai-tools-for-generating-test-data-and-fixtures-l/)
+- [How Well Do AI Tools Handle Rust Lifetime Elision Rules](/how-well-do-ai-tools-handle-rust-lifetime-elision-rules-corr/)
+- [How Well Do AI Tools Handle Go Generics Type Parameter](/how-well-do-ai-tools-handle-go-generics-type-parameter-const/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
 {% endraw %}

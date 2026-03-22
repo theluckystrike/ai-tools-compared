@@ -490,3 +490,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [AI Code Generation for Java Virtual Threads Project Loom](/ai-code-generation-for-java-virtual-threads-project-loom-pat/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+## Related Reading
+
+- [What Code Snippets Get Logged in AI Coding Tool Provider](/what-code-snippets-get-logged-in-ai-coding-tool-provider-aud/)
+- [Open Source AI Code Linting Tools With Automatic Fix](/open-source-ai-code-linting-tools-with-automatic-fix-suggest/)
+- [How to Write Better Prompts for AI Code Generation](/how-to-write-better-prompts-for-ai-code-generation-with-examples/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

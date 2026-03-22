@@ -370,4 +370,10 @@ spec:
         initialDelaySeconds: 2
         periodSeconds: 5
 ```
+## Related Reading
 
+- [How to Write Better Prompts for AI Code Generation](/how-to-write-better-prompts-for-ai-code-generation-with-examples/)
+- [Best Practices for Combining AI Code Generation](/best-practices-for-combining-ai-code-generation-with-manual-code-review/)
+- [Best AI Tools for Python Celery Task Queue Code Generation](/best-ai-tools-for-python-celery-task-queue-code-generation-2/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

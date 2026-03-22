@@ -350,4 +350,13 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Use AI to Build Data Pipeline Retry and Dead Letter](/ai-tools-compared/how-to-use-ai-to-build-data-pipeline-retry-and-dead-letter-2/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
+## Related Reading
+
+- [AI Tools for Writing CI CD Pipeline Configurations 2026](/ai-tools-for-writing-ci-cd-pipeline-configurations-2026/)
+- [AI Tools for Generating CI/CD Pipeline Configs 2026](/ai-tools-for-generating-ci-cd-pipeline-configs-2026/)
+- [AI Powered Tools for Predicting CI/CD Pipeline Failures](/ai-powered-tools-for-predicting-ci-cd-pipeline-failures-befo/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
 {% endraw %}

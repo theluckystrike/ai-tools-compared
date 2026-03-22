@@ -342,3 +342,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Running Starcoder2 Locally for Code Completion](/ai-tools-compared/running-starcoder2-locally-for-code-completion-without-sendi/)
 - [AI Code Completion for Java Record Classes and Sealed](/ai-tools-compared/ai-code-completion-for-java-record-classes-and-sealed-interf/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+## Related Reading
+
+- [Best AI for Writing Correct Kotlin Multiplatform Shared](/best-ai-for-writing-correct-kotlin-multiplatform-shared-code/)
+- [Open Source AI Code Completion for Neovim Without Cloud API](/open-source-ai-code-completion-for-neovim-without-cloud-api-/)
+- [Best Air Gapped AI Code Completion Solutions for Offline](/best-air-gapped-ai-code-completion-solutions-for-offline-dev/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

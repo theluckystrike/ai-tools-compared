@@ -13,7 +13,173 @@ intent-checked: true
 voice-checked: true---
 {% raw %}
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+## The Incident Response Automation Stack
+
+A practical AI-assisted incident response setup connects four things: a monitoring source (PagerDuty, Datadog, or CloudWatch), a webhook receiver, an AI model to triage and propose actions, and a communication channel (Slack or Teams) for human review.
+
+The goal is not full automation of resolution — it's reducing the time from "alert fired" to "engineer understands what's broken and what to try first."
+
+---
+
+## Step 1: Receive PagerDuty Webhooks
+
+Set up a lightweight receiver that forwards incident payloads to your triage function:
+
+```python
+# triage_server.py — Flask webhook receiver
+from flask import Flask, request, jsonify
+import hmac, hashlib, os
+from triage import analyze_incident
+
+app = Flask(__name__)
+PD_SIGNATURE_SECRET = os.environ["PD_SIGNATURE_SECRET"]
+
+def verify_pagerduty_signature(payload: bytes, signature: str) -> bool:
+    expected = hmac.new(
+        PD_SIGNATURE_SECRET.encode(),
+        payload,
+        hashlib.sha256
+    ).hexdigest()
+    return hmac.compare_digest(f"v1={expected}", signature)
+
+@app.route("/webhook/pagerduty", methods=["POST"])
+def pagerduty_webhook():
+    sig = request.headers.get("X-PagerDuty-Signature", "")
+    if not verify_pagerduty_signature(request.data, sig):
+        return jsonify({"error": "invalid signature"}), 401
+
+    for event in request.json.get("messages", []):
+        if event["event"] == "incident.trigger":
+            analyze_incident(event["incident"])
+
+    return jsonify({"status": "ok"}), 200
+```
+
+---
+
+## Step 2: AI Triage with Claude
+
+The triage function sends incident details to Claude and returns a structured response with severity assessment, likely root cause hypotheses, and suggested runbook steps:
+
+```python
+# triage.py
+import anthropic
+import json
+
+client = anthropic.Anthropic()
+
+TRIAGE_PROMPT = """You are an on-call incident responder. Analyze this incident and return JSON with:
+- severity: critical/high/medium/low
+- likely_causes: list of 3 probable root causes in order of likelihood
+- immediate_steps: list of 3-5 runbook actions to investigate first
+- escalation_needed: boolean
+- summary: one-sentence plain-English description for the Slack message
+
+Incident data:
+{incident_json}
+"""
+
+def analyze_incident(incident: dict) -> dict:
+    response = client.messages.create(
+        model="claude-sonnet-4-6",
+        max_tokens=1024,
+        messages=[{
+            "role": "user",
+            "content": TRIAGE_PROMPT.format(
+                incident_json=json.dumps(incident, indent=2)
+            )
+        }]
+    )
+    # Claude returns JSON inside a code block — parse it
+    content = response.content[0].text
+    return json.loads(content.strip("```json\n").strip("```"))
+```
+
+---
+
+## Step 3: Post Triage to Slack
+
+Send the AI triage result as a formatted Slack message with action buttons for acknowledgment:
+
+```python
+# slack_notify.py
+import os
+from slack_sdk import WebClient
+
+slack = WebClient(token=os.environ["SLACK_BOT_TOKEN"])
+
+def post_triage_result(incident: dict, triage: dict):
+    severity_emoji = {
+        "critical": ":rotating_light:",
+        "high": ":warning:",
+        "medium": ":large_yellow_circle:",
+        "low": ":large_green_circle:"
+    }.get(triage["severity"], ":white_circle:")
+
+    steps_text = "\n".join(
+        f"{i+1}. {step}" for i, step in enumerate(triage["immediate_steps"])
+    )
+    causes_text = "\n".join(
+        f"• {cause}" for cause in triage["likely_causes"]
+    )
+
+    slack.chat_postMessage(
+        channel="#incidents",
+        blocks=[
+            {
+                "type": "header",
+                "text": {
+                    "type": "plain_text",
+                    "text": f"{severity_emoji} Incident: {incident['title']}"
+                }
+            },
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": f"*AI Summary:* {triage['summary']}\n\n"
+                            f"*Severity:* {triage['severity'].upper()}\n\n"
+                            f"*Likely Causes:*\n{causes_text}\n\n"
+                            f"*Immediate Steps:*\n{steps_text}"
+                }
+            }
+        ]
+    )
+```
+
+---
+
+## Step 4: Automated Post-Mortem Drafts
+
+After an incident is resolved, Claude can draft the post-mortem from the incident timeline:
+
+```python
+def draft_postmortem(incident: dict, timeline: list[dict]) -> str:
+    timeline_text = "\n".join(
+        f"- {e['timestamp']}: {e['description']}" for e in timeline
+    )
+
+    response = client.messages.create(
+        model="claude-sonnet-4-6",
+        max_tokens=2048,
+        messages=[{
+            "role": "user",
+            "content": f"""Draft a blameless post-mortem for this incident.
+Include: Summary, Timeline, Root Cause, Contributing Factors, Impact, and Action Items.
+
+Incident: {incident['title']}
+Duration: {incident['duration_minutes']} minutes
+Timeline:
+{timeline_text}
+"""
+        }]
+    )
+    return response.content[0].text
+```
+
+---
+
+## Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions
 

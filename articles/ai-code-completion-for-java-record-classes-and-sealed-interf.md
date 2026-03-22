@@ -375,3 +375,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Best Air Gapped AI Code Completion Solutions for Offline Dev](/ai-tools-compared/best-air-gapped-ai-code-completion-solutions-for-offline-dev/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+## Related Reading
+
+- [AI Code Generation Quality for Java Pattern Matching](/ai-code-generation-quality-for-java-pattern-matching-and-swi/)
+- [AI Code Completion for Java Jakarta EE Migration from Javax](/ai-code-completion-for-java-jakarta-ee-migration-from-javax-/)
+- [AI Code Completion for Flutter BLoC Pattern Event and State](/ai-code-completion-for-flutter-bloc-pattern-event-and-state-/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
