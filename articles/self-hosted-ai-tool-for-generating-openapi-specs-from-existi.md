@@ -8,6 +8,7 @@ permalink: /self-hosted-ai-tool-for-generating-openapi-specs-from-existi/
 reviewed: true
 score: 8
 categories: [guides]
+tags: [ai-tools-compared, artificial-intelligence, api]
 ---
 
 ## Why Self-Hosted OpenAPI Generation Matters

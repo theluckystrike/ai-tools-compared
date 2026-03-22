@@ -8,6 +8,7 @@ permalink: /self-hosted-alternative-to-tabnine-that-runs-on-local-hardwa/
 reviewed: true
 score: 8
 categories: [guides]
+tags: [ai-tools-compared]
 ---
 
 {% raw %}
