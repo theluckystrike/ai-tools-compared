@@ -8,10 +8,10 @@ author: theluckystrike
 permalink: /ai-tools-for-writing-kubernetes-network-policies-2026/
 categories: [comparisons]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison, kubernetes, network-policy]
+tags: [ai-tools-compared, comparison, kubernetes, network-policy, artificial-intelligence]
 ---
 
 
