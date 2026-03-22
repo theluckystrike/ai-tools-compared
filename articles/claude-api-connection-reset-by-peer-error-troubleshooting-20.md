@@ -28,6 +28,7 @@ Common scenarios where this error appears include:
 - TLS/SSL handshake failures
 - Server-side maintenance or capacity issues
 - Invalid request formatting causing server rejection
+- Long-running streaming requests hitting intermediate proxy timeouts
 
 ## Diagnosing the Root Cause
 
@@ -219,6 +220,57 @@ result = client.create_message("What is machine learning?")
 if result:
     print(result["content"])
 ```
+
+## Proxy and Load Balancer Considerations
+
+A frequently overlooked source of connection resets is the network layer between your application and Anthropic's servers. Corporate proxies, cloud load balancers, and API gateways all impose their own timeout and connection limits.
+
+**Nginx proxy timeout settings** — If your application runs behind Nginx, the default `proxy_read_timeout` of 60 seconds will cut long Claude responses. Increase it for routes that proxy to Claude:
+
+```nginx
+location /api/claude/ {
+    proxy_pass http://claude-backend;
+    proxy_read_timeout 300s;
+    proxy_connect_timeout 10s;
+    proxy_send_timeout 120s;
+    keepalive_timeout 75s;
+}
+```
+
+**AWS ALB idle timeout** — Application Load Balancers have a default 60-second idle timeout. For streaming responses where Claude may not emit tokens continuously, this causes mid-response resets. Set the idle timeout to at least 300 seconds in your ALB listener settings.
+
+**Connection pool exhaustion** — If you are using a connection pool (common in async frameworks like aiohttp or httpx), a pool that is too small under load forces new connections that may be slower to establish and more prone to resets. Start with a pool size of 10–20 connections and scale based on observed concurrency.
+
+## Streaming Responses and Reset Errors
+
+Streaming long-form Claude responses increases exposure to mid-stream resets. Use the official SDK's streaming context manager to handle these cleanly:
+
+```python
+import anthropic
+
+client = anthropic.Anthropic(api_key="your-api-key")
+
+def stream_with_recovery(prompt: str) -> str:
+    """Stream a Claude response with basic reset recovery."""
+    collected = []
+    try:
+        with client.messages.stream(
+            model="claude-sonnet-4-20250514",
+            max_tokens=4096,
+            messages=[{"role": "user", "content": prompt}]
+        ) as stream:
+            for text in stream.text_stream:
+                collected.append(text)
+                print(text, end="", flush=True)
+    except anthropic.APIConnectionError as e:
+        if collected:
+            print(f"\n[Stream interrupted after {len(collected)} chunks: {e}]")
+        else:
+            raise
+    return "".join(collected)
+```
+
+A streaming connection reset after receiving partial data is often recoverable — the text collected so far may be complete enough to use, or you can resume from a subsequent turn with the partial context.
 
 ## Preventative Measures
 
