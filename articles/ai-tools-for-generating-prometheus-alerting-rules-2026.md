@@ -10,6 +10,7 @@ voice-checked: true
 intent-checked: true
 slug: ai-tools-for-generating-prometheus-alerting-rules-2026
 tags: ["prometheus", "monitoring", "alerting", "observability", "devops"]
+permalink: /ai-tools-for-generating-prometheus-alerting-rules-2026/
 ---
 {% raw %}
 

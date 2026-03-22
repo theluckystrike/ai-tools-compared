@@ -10,6 +10,7 @@ voice-checked: true
 intent-checked: true
 slug: best-ai-tools-for-writing-redis-lua-scripts-2026
 tags: ["redis", "lua", "ai-tools", "backend", "databases"]
+permalink: /best-ai-tools-for-writing-redis-lua-scripts-2026/
 ---
 
 ## Why Redis Lua Scripts Matter
