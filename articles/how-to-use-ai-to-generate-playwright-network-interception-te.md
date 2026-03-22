@@ -31,6 +31,15 @@ intent-checked: true---
 
 Testing your application's behavior when network connectivity fails is critical for delivering reliable user experiences. Users frequently encounter offline scenarios—whether they're in airplane mode, experiencing spotty connections, or navigating areas with no service. Playwright's network interception capabilities combined with AI-assisted test generation make this testing approach accessible and efficient. This guide covers everything from the basics of route interception through advanced patterns like request throttling, conditional mocking, and service worker interactions.
 
+## Key Takeaways
+
+- **Without automated tests covering**: these scenarios, developers often discover issues only through manual testing or, worse, from user reports.
+- **Sharing your OpenAPI spec or a curl session log in the prompt gives the AI enough signal to choose realistic HTTP status codes and response bodies**: not just generic 500s.
+- **Testing your application's behavior**: when network connectivity fails is critical for delivering reliable user experiences.
+- **Users frequently encounter offline scenarios**: whether they're in airplane mode, experiencing spotty connections, or navigating areas with no service.
+- **Consider a user filling out a long form who loses connection mid-session**: the application should save their progress locally and provide clear feedback.
+- **A document editor that**: shows a cryptic error instead of "Saved locally, will sync when reconnected" loses user confidence permanently.
+
 ## Understanding Network Interception in Playwright
 
 Playwright provides powerful APIs to intercept, modify, and mock network requests. The `page.route()` method allows you to intercept requests before they reach the network, while `page.on('request')` and `page.on('response')` listeners enable monitoring of all HTTP traffic. For offline testing specifically, you can block specific domains, abort requests, or serve cached responses.

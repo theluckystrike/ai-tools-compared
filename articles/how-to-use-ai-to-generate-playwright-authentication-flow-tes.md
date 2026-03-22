@@ -32,6 +32,15 @@ Use AI to generate Playwright authentication tests using the storageState featur
 
 Playwright's storage state feature solves this problem by capturing authenticated session data once and reusing it across tests. When you combine this capability with AI-generated test code, you get fast, maintainable authentication tests that don't require repeated login overhead.
 
+## Key Takeaways
+
+- **Verify that a user**: with valid credentials can log in successfully 2.
+- **Verify that logged-in users**: can access protected routes 3.
+- **Use AI to generate**: Playwright authentication tests using the storageState feature to capture authenticated sessions once, then reuse them across tests.
+- **Instead of executing login**: steps in every test, you record the authenticated state once and reuse it.
+- **Provide the AI with**: clear context about your authentication mechanism, the page structure, and how you want to use stored state.
+- **A well-structured prompt includes**: your login URL, the selectors for login form elements, the expected post-login URL, and instructions to use storage state.
+
 ## Understanding Playwright Storage State
 
 Playwright provides a mechanism to save and load authentication state through the `storageState` option. Instead of executing login steps in every test, you record the authenticated state once and reuse it. This approach reduces test execution time and eliminates dependencies between tests.
