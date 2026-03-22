@@ -42,6 +42,21 @@ For terminal-focused Rust developers, Claude Code is the strongest choice—it h
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 - **Use AI-generated tests as**: a starting point, then add cases that cover your unique requirements and failure modes.
 
+## Table of Contents
+
+- [What Makes an AI Assistant Effective for Rust](#what-makes-an-ai-assistant-effective-for-rust)
+- [Comparing Leading AI Coding Assistants](#comparing-leading-ai-coding-assistants)
+- [Practical Recommendations](#practical-recommendations)
+- [Common Use Cases](#common-use-cases)
+- [Tool Comparison Matrix](#tool-comparison-matrix)
+- [Advanced Rust Patterns with AI Assistance](#advanced-rust-patterns-with-ai-assistance)
+- [CLI Commands for Rust Development with AI](#cli-commands-for-rust-development-with-ai)
+- [Troubleshooting Common Rust Issues with AI Help](#troubleshooting-common-rust-issues-with-ai-help)
+- [Performance Testing with AI Assistance](#performance-testing-with-ai-assistance)
+- [Error Handling Patterns](#error-handling-patterns)
+- [Best Practices When Using AI for Rust](#best-practices-when-using-ai-for-rust)
+- [Learning Resources to Share with AI](#learning-resources-to-share-with-ai)
+
 ## What Makes an AI Assistant Effective for Rust
 
 Rust's unique characteristics demand specific features from an AI coding assistant. The most useful tools for Rust development share several capabilities:
@@ -453,10 +468,9 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Best Budget AI Coding Assistant for Freelance Developers 202](/ai-tools-compared/best-budget-ai-coding-assistant-for-freelance-developers-202/)
-- [AI Coding Productivity Tips for Senior Developers Switching](/ai-tools-compared/ai-coding-productivity-tips-for-senior-developers-switching-/)
-- [Best AI Coding Tool for Golang Developers 2026](/ai-tools-compared/best-ai-coding-tool-for-golang-developers-2026/)
-- [AI Coding Assistant Accuracy for Typescript Next Js Server C](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
-- [AI Coding Assistant Accuracy for TypeScript Svelte Component](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-svelte-component/)
-
+- [Best AI Coding Tools for Rust Developers 2026](/ai-tools-compared/ai-tools-for-rust-developers-2026/)
+- [AI Code Generation Producing Syntax Errors in Rust Fix Guide](/ai-tools-compared/ai-code-generation-producing-syntax-errors-in-rust-fix-guide/)
+- [AI Coding Assistant Comparison for TypeScript monorepo](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-monorepo-with-turborepo-setup/)
+- [Best Budget AI Coding Assistant for Freelance Developers](/ai-tools-compared/best-budget-ai-coding-assistant-for-freelance-developers-202/)
+- [Best AI Tools for Writing Rust Async Code with Tokio](/ai-tools-compared/best-ai-tools-for-writing-rust-async-code-with-tokio-runtime/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

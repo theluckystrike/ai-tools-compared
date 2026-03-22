@@ -39,6 +39,19 @@ Claude generates proper Protobuf definitions with correct oneof fields, well-des
 - **Use Cursor or Copilot**: for inline completion and incremental additions 3.
 - **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
 
+## Table of Contents
+
+- [What Makes an AI Tool Good for gRPC Development](#what-makes-an-ai-tool-good-for-grpc-development)
+- [Top AI Tools for Go gRPC Development](#top-ai-tools-for-go-grpc-development)
+- [Practical Workflow](#practical-workflow)
+- [Streaming and Advanced gRPC Patterns](#streaming-and-advanced-grpc-patterns)
+- [Interceptors and Middleware](#interceptors-and-middleware)
+- [Testing gRPC Services](#testing-grpc-services)
+- [Code Generation and Build Pipeline](#code-generation-and-build-pipeline)
+- [Performance Considerations](#performance-considerations)
+- [Real-World Tool Comparison](#real-world-tool-comparison)
+- [Pricing and Decision Framework](#pricing-and-decision-framework)
+
 ## What Makes an AI Tool Good for gRPC Development
 
 gRPC development in Go involves several distinct components: writing `.proto` files, generating Go code, and implementing the service handlers. The best AI tools handle all three aspects while following Go conventions and idiomatic patterns.

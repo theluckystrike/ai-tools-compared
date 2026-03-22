@@ -39,6 +39,25 @@ Autonomous coding agents — tools that read a GitHub issue, write code, run tes
 - **Pick 5 issues spanning**: 1 bug fix, 1 refactor, 1 feature, 1 dependency, 1 test-fix
 2.
 
+## Table of Contents
+
+- [What These Tools Do](#what-these-tools-do)
+- [SWE-bench Performance](#swe-bench-performance)
+- [Setting Up SWE-Agent](#setting-up-swe-agent)
+- [Configuration for Your Codebase](#configuration-for-your-codebase)
+- [Real Task Comparison](#real-task-comparison)
+- [Cost Comparison](#cost-comparison)
+- [Where Each Excels](#where-each-excels)
+- [Integrating SWE-Agent into CI](#integrating-swe-agent-into-ci)
+- [What Makes a Good Autonomous Coding Task](#what-makes-a-good-autonomous-coding-task)
+- [Human-in-the-Loop Best Practices](#human-in-the-loop-best-practices)
+- [Learning From Agent Failures](#learning-from-agent-failures)
+- [Scaling Agent Usage](#scaling-agent-usage)
+- [Evaluating Against Your Specific Codebase](#evaluating-against-your-specific-codebase)
+- [Integration Patterns](#integration-patterns)
+- [Handling Edge Cases](#handling-edge-cases)
+- [Related Reading](#related-reading)
+
 ## What These Tools Do
 
 **Devin** is a commercial product from Cognition AI. You give it a task in natural language or a GitHub issue URL. It spins up a sandboxed environment, explores the codebase, writes code, runs tests, and reports back. It has a web UI and team features for tracking what Devin worked on.

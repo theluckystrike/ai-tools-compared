@@ -40,6 +40,21 @@ To fix Cursor crashing, clear the cache folder at `~/Library/Application Support
 - **Wait 2-3 days for**: users to report critical bugs in new releases.
 - **Reinstalling is nuclear**: it fixes ~20% of issues not resolved by simpler steps.
 
+## Table of Contents
+
+- [Common Reasons Why Cursor Crashes](#common-reasons-why-cursor-crashes)
+- [Step-by-Step Fixes for Cursor Crashes](#step-by-step-fixes-for-cursor-crashes)
+- [Diagnostic Tools and Techniques](#diagnostic-tools-and-techniques)
+- [Preventing Future Crashes](#preventing-future-crashes)
+- [Collecting Cursor Crash Logs on macOS](#collecting-cursor-crash-logs-on-macos)
+- [Extension Conflict Diagnosis Deep Dive](#extension-conflict-diagnosis-deep-dive)
+- [Memory Profiling Cursor Crashes](#memory-profiling-cursor-crashes)
+- [Workspace-Specific Crash Debugging](#workspace-specific-crash-debugging)
+- [GPU Driver Compatibility Matrix](#gpu-driver-compatibility-matrix)
+- [Cursor Launch Arguments for Stability](#cursor-launch-arguments-for-stability)
+- [Crash Signature Analysis for Faster Diagnosis](#crash-signature-analysis-for-faster-diagnosis)
+- [Performance Baseline for Cursor Stability](#performance-baseline-for-cursor-stability)
+
 ## Common Reasons Why Cursor Crashes
 
 Several factors can contribute to instability, ranging from extension conflicts to system resource limitations.

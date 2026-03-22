@@ -41,6 +41,19 @@ Python data science workflows rely heavily on pandas for data manipulation, anal
 - **Keeping track of the most efficient approach for data transformation tasks**: such as merging datasets, handling missing values, or performing groupby operations—requires significant expertise.
 - **Aider's multi-file editing capability**: is particularly useful for data science projects where the same transformation pattern appears across several pipeline scripts.
 
+## Table of Contents
+
+- [Why AI Assistants Matter for Pandas Work](#why-ai-assistants-matter-for-pandas-work)
+- [Claude Code for Pandas Development](#claude-code-for-pandas-development)
+- [GitHub Copilot for Data Science](#github-copilot-for-data-science)
+- [Cursor AI for Jupyter Environments](#cursor-ai-for-jupyter-environments)
+- [Aider for Terminal-Based Data Science](#aider-for-terminal-based-data-science)
+- [Codeium for Quick Pandas Snippets](#codeium-for-quick-pandas-snippets)
+- [Tool Comparison for Specific Pandas Tasks](#tool-comparison-for-specific-pandas-tasks)
+- [Selecting the Right Tool for Your Workflow](#selecting-the-right-tool-for-your-workflow)
+- [Performance Considerations](#performance-considerations)
+- [Working with Large Datasets](#working-with-large-datasets)
+
 ## Why AI Assistants Matter for Pandas Work
 
 Pandas offers over 500 functions and methods, with new features added regularly. Keeping track of the most efficient approach for data transformation tasks—such as merging datasets, handling missing values, or performing groupby operations—requires significant expertise. AI coding assistants help by suggesting appropriate pandas methods, generating boilerplate code, and identifying performance bottlenecks in data processing pipelines.
@@ -308,9 +321,8 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 ## Related Articles
 
 - [Best AI Code Completion for Python Data Science 2026](/ai-tools-compared/ai-code-completion-python-data-science-2026/)
-- [Best AI for Generating pandas Code to Merge Data from Multip](/ai-tools-compared/best-ai-for-generating-pandas-code-to-merge-data-from-multip/)
-- [pandas AI vs Polars AI Data Processing Compared](/ai-tools-compared/pandas-ai-vs-polars-ai-data-processing/)
-- [Free AI Coding Tools That Work Offline Without Internet](/ai-tools-compared/free-ai-coding-tools-that-work-offline-without-internet/)
-- [Gemini vs ChatGPT for Translating Python Data Pipelines](/ai-tools-compared/gemini-vs-chatgpt-for-translating-python-data-pipelines-to-rust/)
-
+- [Best AI for Generating pandas Code to Merge Data](/ai-tools-compared/best-ai-for-generating-pandas-code-to-merge-data-from-multip/)
+- [AI Coding Assistant Session Data Lifecycle](/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Best AI Tools for Data Cleaning](/ai-tools-compared/best-ai-tools-for-data-cleaning/)
+- [AI Coding Assistant Data Sovereignty Requirements](/ai-tools-compared/ai-coding-assistant-data-sovereignty-requirements-for-companies-operating-in-eu-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

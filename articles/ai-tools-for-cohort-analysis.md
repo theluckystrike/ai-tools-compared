@@ -41,6 +41,17 @@ Cohort analysis breaks down user behavior by grouping customers based on shared 
 - **Python with Pandas and**: AI Integration The most flexible approach combines Pandas with AI language models.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Why AI Enhances Cohort Analysis](#why-ai-enhances-cohort-analysis)
+- [Top AI Tools for Cohort Analysis](#top-ai-tools-for-cohort-analysis)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+- [Implementation Tips](#implementation-tips)
+- [Pricing Comparison Table](#pricing-comparison-table)
+- [Advanced Cohort Analysis Patterns](#advanced-cohort-analysis-patterns)
+- [Integration with Your Data Stack](#integration-with-your-data-stack)
+- [Automating Insight Generation](#automating-insight-generation)
+
 ## Why AI Enhances Cohort Analysis
 
 Traditional cohort analysis relies on predefined groupings (sign-up date, first purchase month, or acquisition source). AI extends this by identifying natural segments in your data, predicting which cohorts will churn, and recommending interventions. The key advantage is speed: AI can process thousands of variables to find meaningful patterns that would take hours to discover manually.

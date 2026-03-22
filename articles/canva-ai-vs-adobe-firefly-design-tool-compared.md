@@ -39,6 +39,15 @@ Choose Canva AI if you need rapid prototyping, simple API integration, and templ
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
+## Table of Contents
+
+- [Platform Architecture and AI Integration](#platform-architecture-and-ai-integration)
+- [Quick Comparison](#quick-comparison)
+- [API Capabilities and Code Integration](#api-capabilities-and-code-integration)
+- [Feature Comparison for Power Users](#feature-comparison-for-power-users)
+- [Practical Use Cases](#practical-use-cases)
+- [Which Tool Should You Choose](#which-tool-should-you-choose)
+
 ## Platform Architecture and AI Integration
 
 Canva AI operates within the Canva ecosystem, using the platform's existing design infrastructure. The AI features are accessible through the Canva API and Apps SDK, allowing developers to embed AI-powered design capabilities into custom applications. Canva's approach centers on its "Magic" features—Magic Write, Magic Design, and Magic Expand—which use AI to generate content and modify designs based on user prompts.
@@ -255,10 +264,9 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Runway Inpainting vs Adobe Firefly Generative Fill](/ai-tools-compared/runway-inpainting-vs-adobe-firefly-generative-fill/)
 - [Adobe Photoshop AI vs Canva Magic Eraser Compared](/ai-tools-compared/adobe-photoshop-ai-vs-canva-magic-eraser-compared/)
+- [Runway Inpainting vs Adobe Firefly Generative](/ai-tools-compared/runway-inpainting-vs-adobe-firefly-generative-fill/)
 - [Canva AI Video Editor vs CapCut AI Compared 2026](/ai-tools-compared/canva-ai-video-editor-vs-capcut-ai-compared-2026/)
-- [AI Tools for Interior Design Visualization Compared](/ai-tools-compared/ai-tools-for-interior-design-visualization-compared/)
-- [Best AI Tool for Game Developers Design Docs Writing](/ai-tools-compared/best-ai-tool-for-game-developers-design-docs-writing/)
-
+- [AI Tools for Generating UI Mockups Compared in 2026](/ai-tools-compared/ai-tools-for-generating-ui-mockups-compared-2026/)
+- [Best AI Image Generation APIs Compared 2026](/ai-tools-compared/best-ai-image-generation-apis-compared-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

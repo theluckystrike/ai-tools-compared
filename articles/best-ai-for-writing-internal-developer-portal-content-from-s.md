@@ -38,6 +38,21 @@ voice-checked: true---
 - **Modernize code examples to**: use our current deployment CLI (v3.2+) 5.
 - **Multilingual Portal Support**: Consolidate documentation in English, then use AI to translate and localize for other languages while preserving technical terminology.
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Prerequisites](#prerequisites)
+- [Implementation](#implementation)
+- [Common Issues](#common-issues)
+- [Choosing the Right AI Tool](#choosing-the-right-ai-tool)
+- [Effective Prompting Strategies](#effective-prompting-strategies)
+- [Advanced Content Transformation Techniques](#advanced-content-transformation-techniques)
+- [Real-World Implementation Results](#real-world-implementation-results)
+- [Implementation Workflow](#implementation-workflow)
+- [AI Tools Comparison for Portal Content](#ai-tools-comparison-for-portal-content)
+- [Practical Portal Consolidation Workflow](#practical-portal-consolidation-workflow)
+- [Maintaining Quality](#maintaining-quality)
+
 ## Overview
 
 When scattered wiki documentation exists across Confluence, Notion, scattered markdown files, and email threads, consolidating it into a cohesive internal developer portal becomes essential. A well-structured portal serves as the single source of truth for your engineering organization, reducing onboarding time, support tickets, and knowledge silos.
@@ -320,11 +335,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [Claude Code Developer Portal Setup Guide](/ai-tools-compared/claude-code-developer-portal-setup-guide/)
+- [Best AI Tools for Help Center Content](/ai-tools-compared/best-ai-tools-for-help-center-content/)
 - [AI Writing Tools for Healthcare Content Compared 2026](/ai-tools-compared/ai-writing-tools-for-healthcare-content-compared-2026/)
-- [How to Build Model Context Protocol Server for Internal Desi](/ai-tools-compared/how-to-build-model-context-protocol-server-for-internal-desi/)
-- [How to Set Up Model Context Protocol Server for Internal Pac](/ai-tools-compared/how-to-set-up-model-context-protocol-server-for-internal-pac/)
-- [Best AI Tool for Repurposing Blog Content 2026](/ai-tools-compared/best-ai-tool-for-repurposing-blog-content-2026/)
-
+- [AI Tools for Converting Code Comments into Developer Facing](/ai-tools-compared/ai-tools-for-converting-code-comments-into-developer-facing-/)
+- [AI Tools for Designers Writing Handoff Notes That Include](/ai-tools-compared/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
 ```
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

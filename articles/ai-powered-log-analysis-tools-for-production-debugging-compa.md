@@ -45,6 +45,18 @@ AI response: "98% of failures correlate with database connection timeouts.
 - **Production debugging remains one**: of the most challenging aspects of software development.
 - **However**: parsing through millions of log entries to find the root cause of an issue can feel like searching for a needle in a haystack.
 
+## Table of Contents
+
+- [What Makes AI Log Analysis Different](#what-makes-ai-log-analysis-different)
+- [Tool Comparison](#tool-comparison)
+- [Practical Example: Debugging a 500 Error](#practical-example-debugging-a-500-error)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+- [Implementation Tips](#implementation-tips)
+- [Tool-Specific Deep Dives](#tool-specific-deep-dives)
+- [Comparison Table: All Tools 2026](#comparison-table-all-tools-2026)
+- [Real-World Incident Case Studies](#real-world-incident-case-studies)
+- [Implementing AI-Assisted Log Analysis](#implementing-ai-assisted-log-analysis)
+
 ## What Makes AI Log Analysis Different
 
 Traditional log analysis relies on pattern matching and manual queries. You know what error you're looking for, so you write a grep command or a Kibana query to find it. AI-powered tools take a different approach—they learn from your log patterns, understand context, and can identify anomalies without you explicitly telling them what to find.

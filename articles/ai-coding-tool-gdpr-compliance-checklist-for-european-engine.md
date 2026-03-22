@@ -41,6 +41,16 @@ European engineering teams face unique challenges when adopting AI coding assist
 - **Developers respond better to concrete examples**: "do not paste this type of code into the AI chat" with a real-looking but synthetic example—than to abstract policy statements.
 - **User-level settings can be**: overridden or forgotten when team members rotate.
 
+## Table of Contents
+
+- [Understanding GDPR Requirements for AI Coding Tools](#understanding-gdpr-requirements-for-ai-coding-tools)
+- [GDPR Compliance Checklist for AI Coding Tools](#gdpr-compliance-checklist-for-ai-coding-tools)
+- [AI Tool Usage Guidelines](#ai-tool-usage-guidelines)
+- [Practical Implementation Examples](#practical-implementation-examples)
+- [Constraints](#constraints)
+- [Excluded Patterns](#excluded-patterns)
+- [Common Pitfalls to Avoid](#common-pitfalls-to-avoid)
+
 ## Understanding GDPR Requirements for AI Coding Tools
 
 GDPR applies when processing personal data of EU residents. AI coding tools typically process code, and this code may inadvertently contain personal data—email addresses in comments, API keys tied to individuals, or customer data structures. Teams must assess whether their tooling creates data processing obligations.

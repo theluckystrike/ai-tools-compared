@@ -43,6 +43,13 @@ Measuring AI coding productivity requires more than just gut feelings. Developer
 - **Structured measurement reveals the**: truth: which tasks benefit most, where AI assistance falls short, and whether the learning curve is worth the eventual payoff.
 - **It typically improves as**: you refine prompts, configure project context files, or the tool learns your style through repeated use.
 
+## Table of Contents
+
+- [Why Measurement Matters](#why-measurement-matters)
+- [Prerequisites](#prerequisites)
+- [Tool-by-Tool Comparison for Measurement Support](#tool-by-tool-comparison-for-measurement-support)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Measurement Matters
 
 AI coding assistants have become integral to many development workflows. Without proper measurement, teams cannot make informed decisions about tool adoption, training investments, or workflow optimizations. Quantitative data helps justify tool costs and identifies areas for improvement.
@@ -323,9 +330,8 @@ Yes. Git commit timestamps, PR open/close times, and CI pass rates are all progr
 ## Related Articles
 
 - [AI Coding Productivity Tips for Senior Developers Switching](/ai-tools-compared/ai-coding-productivity-tips-for-senior-developers-switching-/)
-- [AI Coding Assistant Accuracy for Typescript Next Js Server C](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
-- [AI Coding Assistant Accuracy for TypeScript Svelte Component](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-svelte-component/)
-- [AI Coding Assistant Comparison for React Component](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
-- [AI Coding Assistant Comparison for Typescript monorepo](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-monorepo-with-turborepo-setup/)
-
+- [How to Measure and Improve AI Coding Tool Suggestion](/ai-tools-compared/how-to-measure-and-improve-ai-coding-tool-suggestion-acceptance-rate-2026/)
+- [Is Paying for AI Coding Tool Worth It for Junior Developer?](/ai-tools-compared/is-paying-for-ai-coding-tool-worth-it-for-junior-developer/)
+- [How to Evaluate AI Coding Tool Encryption Standards](/ai-tools-compared/how-to-evaluate-ai-coding-tool-encryption-standards-for-data/)
+- [Best Free AI Coding Tool With No Message Limits in 2026](/ai-tools-compared/best-free-ai-coding-tool-with-no-message-limits-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

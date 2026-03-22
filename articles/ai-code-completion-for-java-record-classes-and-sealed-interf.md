@@ -41,6 +41,21 @@ Java 14 introduced record classes as a preview feature, and Java 17 made them a 
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Many AI code completion**: providers update their Java support based on user feedback and evolving language features.
 
+## Table of Contents
+
+- [Why Record Classes and Sealed Interfaces Matter](#why-record-classes-and-sealed-interfaces-matter)
+- [Code Completion for Record Classes](#code-completion-for-record-classes)
+- [Sealed Interface Completion Challenges](#sealed-interface-completion-challenges)
+- [Evaluating AI Tools for Modern Java](#evaluating-ai-tools-for-modern-java)
+- [Practical Recommendations](#practical-recommendations)
+- [Tool Comparison Matrix](#tool-comparison-matrix)
+- [Testing Record Classes with AI Assistance](#testing-record-classes-with-ai-assistance)
+- [Sealed Interface Verification Strategies](#sealed-interface-verification-strategies)
+- [AI Tool Evaluation Checklist](#ai-tool-evaluation-checklist)
+- [Common Generation Mistakes](#common-generation-mistakes)
+- [Building a Record/Sealed Type Strategy](#building-a-recordsealed-type-strategy)
+- [Looking Forward](#looking-forward)
+
 ## Why Record Classes and Sealed Interfaces Matter
 
 Record classes provide a compact syntax for declaring data-carrying classes. They automatically generate constructors, getters, equals(), hashCode(), and toString() methods based on the declared components. This reduces boilerplate code and makes immutable data objects more accessible to developers.

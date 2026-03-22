@@ -41,6 +41,21 @@ Writing Kubernetes Custom Resource Definitions (CRDs) requires precise YAML synt
 - **Version carefully**: Follow Kubernetes versioning conventions—start with v1 for stable resources, use v1alpha1 for experimental features with clear upgrade paths.
 - **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
 
+## Table of Contents
+
+- [Why AI Tools Matter for CRD Development](#why-ai-tools-matter-for-crd-development)
+- [Top AI Tools for Kubernetes CRD Development](#top-ai-tools-for-kubernetes-crd-development)
+- [Practical CRD Validation Strategies](#practical-crd-validation-strategies)
+- [Comparing Tool Performance](#comparing-tool-performance)
+- [Best Practices for AI-Assisted CRD Development](#best-practices-for-ai-assisted-crd-development)
+- [Advanced CRD Patterns](#advanced-crd-patterns)
+- [CLI Commands for CRD Development](#cli-commands-for-crd-development)
+- [Real-World Example: Database CRD](#real-world-example-database-crd)
+- [Validation Rule Examples (CEL Expressions)](#validation-rule-examples-cel-expressions)
+- [Tool Comparison for CRD Generation](#tool-comparison-for-crd-generation)
+- [Testing CRDs](#testing-crds)
+- [Troubleshooting CRD Issues](#troubleshooting-crd-issues)
+
 ## Why AI Tools Matter for CRD Development
 
 Custom Resource Definitions extend the Kubernetes API with custom types. Writing them involves defining the CRD specification, including schema validation, subresources, conversion webhooks, and defaulting logic. The complexity increases when you need proper validation using CEL expressions, webhook admission, or advanced printer columns.

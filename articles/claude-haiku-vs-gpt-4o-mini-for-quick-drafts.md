@@ -52,6 +52,17 @@ Choose **Claude Haiku** if you need the fastest response times, a larger 200K co
 - **In testing**: Haiku typically returns 300-500 word drafts in under 1.5 seconds on standard API calls.
 - **Average response times hover**: around 1.8-2.2 seconds for comparable output lengths.
 
+## Table of Contents
+
+- [Speed and Latency](#speed-and-latency)
+- [Output Quality for Drafts](#output-quality-for-drafts)
+- [Context Window and Conversation Handling](#context-window-and-conversation-handling)
+- [Pricing Structure](#pricing-structure)
+- [Developer Integration](#developer-integration)
+- [Which Should You Choose?](#which-should-you-choose)
+- [Hybrid Approach](#hybrid-approach)
+- [Related Reading](#related-reading)
+
 ## Speed and Latency
 
 Speed is the primary selling point for both models, and this is where the differences become noticeable.
@@ -273,5 +284,13 @@ Both handle long documents well. Claude Haiku's 200K window gives it more headro
 - [Cursor AI Switching Between Claude and GPT Models Extra Cost](/ai-tools-compared/cursor-ai-switching-between-claude-and-gpt-models-extra-cost/)
 - [Cursor AI with Claude vs GPT Models: Which Gives Better Code](/ai-tools-compared/cursor-ai-with-claude-vs-gpt-models-which-gives-better-code-/)
 - [How to Transfer Claude Project Knowledge to ChatGPT Custom (2)](/ai-tools-compared/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-gpt/)
+
+## Related Articles
+
+- [Claude Sonnet vs GPT-4o for Code Review Accuracy Comparison](/ai-tools-compared/claude-sonnet-vs-gpt-4o-for-code-review-accuracy-comparison-2026/)
+- [How to Use Claude API Cheaply for Small Coding Projects](/ai-tools-compared/how-to-use-claude-api-cheaply-for-small-coding-projects/)
+- [Claude API Extended Thinking: How Output Tokens Are Billed](/ai-tools-compared/claude-api-extended-thinking-cost-how-output-tokens-are-bill/)
+- [Claude Sonnet vs GPT-4o for Code Generation: Practical](/ai-tools-compared/claude-sonnet-vs-gpt-4o-for-code-generation/)
+- [Claude Max Context Window Exceeded: What](/ai-tools-compared/claude-max-context-window-exceeded-what-to-do/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

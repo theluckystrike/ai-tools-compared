@@ -39,6 +39,13 @@ Cloud migration projects frequently stall or fail due to one overlooked problem:
 - **AI tools help surface**: these before they cause outages: - Assuming cloud DNS behaves identically to on-premise. TTL differences and split-horizon DNS configurations catch teams off guard.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Why Dependency Mapping Matters](#why-dependency-mapping-matters)
+- [Prerequisites](#prerequisites)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## Why Dependency Mapping Matters
 
 Migration planning requires understanding how your applications interact with databases, message queues, external services, and shared resources. Manual documentation rarely stays current. Teams inherit systems without knowing which components depend on them, leading to:

@@ -42,6 +42,17 @@ This guide shows you how to use AI tools to generate Terraform import blocks for
 - **For bulk Terraform import generation**: Claude and Amazon Q tend to produce the fewest errors because they have deeper infrastructure-specific training.
 - **Use the current Terraform**: AWS provider syntax.
 
+## Table of Contents
+
+- [Why Import Blocks Matter in Terraform](#why-import-blocks-matter-in-terraform)
+- [Which AI Tools Work Best for Terraform Import Blocks](#which-ai-tools-work-best-for-terraform-import-blocks)
+- [Using AI to Generate Import Blocks](#using-ai-to-generate-import-blocks)
+- [Advanced AI Strategies for Bulk Imports](#advanced-ai-strategies-for-bulk-imports)
+- [Automating Resource Discovery Before Prompting](#automating-resource-discovery-before-prompting)
+- [Validating AI Output with terraform plan](#validating-ai-output-with-terraform-plan)
+- [Limitations to Understand](#limitations-to-understand)
+- [Best Practices for AI-Assisted Imports](#best-practices-for-ai-assisted-imports)
+
 ## Why Import Blocks Matter in Terraform
 
 Terraform import blocks allow you to bring existing infrastructure under Terraform's control without destroying and recreating resources. This is essential for:

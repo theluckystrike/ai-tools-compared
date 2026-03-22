@@ -54,6 +54,18 @@ tags: [ai-tools-compared, best-of, artificial-intelligence]
 2.
 - **The most successful YouTubers**: treat AI as a collaborative tool rather than a replacement for their unique voice.
 
+## Table of Contents
+
+- [Why YouTubers Need Specialized Script Writing Tools](#why-youtubers-need-specialized-script-writing-tools)
+- [Top AI Tools for YouTube Script Writing](#top-ai-tools-for-youtube-script-writing)
+- [Comparing Performance](#comparing-performance)
+- [Practical Implementation Strategy](#practical-implementation-strategy)
+- [Advanced Workflow: Batch Script Generation](#advanced-workflow-batch-script-generation)
+- [Script Variation Testing](#script-variation-testing)
+- [Integration with Video Production Workflow](#integration-with-video-production-workflow)
+- [Making Your Decision](#making-your-decision)
+- [YouTube Script Prompt Template](#youtube-script-prompt-template)
+
 ## Why YouTubers Need Specialized Script Writing Tools
 
 Traditional AI writing assistants generate generic content suitable for blog posts or emails. YouTube scripts require a different approach—they must sound natural when spoken aloud, maintain viewer engagement through strategic pacing, and include elements that don't translate well to written text.

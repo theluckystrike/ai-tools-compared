@@ -42,6 +42,15 @@ tags: [ai-tools-compared, best-of, artificial-intelligence]
 - **Lesson**: AI accelerates screening and due diligence, but professional investors verify on deals larger than $500K or with complex structures.
 - **For sub-$300K deals**: AI ROI is borderline.
 
+## Table of Contents
+
+- [What Real Estate Investors Need from Deal Analysis Tools](#what-real-estate-investors-need-from-deal-analysis-tools)
+- [Practical Tools for Real Estate Deal Analysis](#practical-tools-for-real-estate-deal-analysis)
+- [Comparing the Options](#comparing-the-options)
+- [How to Integrate AI Into Your Workflow](#how-to-integrate-ai-into-your-workflow)
+- [Limitations to Recognize](#limitations-to-recognize)
+- [Rental Deal Analysis with Claude API](#rental-deal-analysis-with-claude-api)
+
 ## What Real Estate Investors Need from Deal Analysis Tools
 
 Deal analysis starts with inputs: purchase price, renovation costs, rental income, operating expenses, and financing terms. From these, you calculate cash-on-cash return, internal rate of return, and debt service coverage ratios. The challenge is not the math—it is managing sensitivity across dozens of assumptions and comparing multiple properties side by side.

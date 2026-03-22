@@ -40,6 +40,16 @@ API security testing traditionally requires a security engineer with specific ex
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [What AI Adds to API Security Testing](#what-ai-adds-to-api-security-testing)
+- [Approach 1: OpenAPI Spec Analysis](#approach-1-openapi-spec-analysis)
+- [Approach 2: Generating Security Test Cases](#approach-2-generating-security-test-cases)
+- [Approach 3: Automated Fuzzing with AI](#approach-3-automated-fuzzing-with-ai)
+- [OWASP API Top 10 Coverage](#owasp-api-top-10-coverage)
+- [Tooling Comparison](#tooling-comparison)
+- [Related Reading](#related-reading)
+
 ## What AI Adds to API Security Testing
 
 Traditional tools like OWASP ZAP and Burp Suite scan known vulnerability patterns. They miss:

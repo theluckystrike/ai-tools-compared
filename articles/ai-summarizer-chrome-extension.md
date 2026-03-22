@@ -39,6 +39,21 @@ Build an AI summarizer extension that extracts article content using the Chrome 
 - **Use Chrome's storage API**: with encryption for sensitive credentials.
 - **A content classifier might**: examine URL patterns, HTML structure, and text characteristics to determine the best extraction approach.
 
+## Table of Contents
+
+- [How AI Summarizer Extensions Work](#how-ai-summarizer-extensions-work)
+- [Building Your Own Summarizer Extension](#building-your-own-summarizer-extension)
+- [Choosing an Existing Extension](#choosing-an-existing-extension)
+- [Performance Considerations](#performance-considerations)
+- [Limitations and Workarounds](#limitations-and-workarounds)
+- [Extension Security Practices](#extension-security-practices)
+- [Advanced Techniques for Better Summaries](#advanced-techniques-for-better-summaries)
+- [Error Handling and Resilience](#error-handling-and-resilience)
+- [User Experience Patterns](#user-experience-patterns)
+- [Storage and Sync Strategies](#storage-and-sync-strategies)
+- [Customization Options for Power Users](#customization-options-for-power-users)
+- [Testing Your Extension](#testing-your-extension)
+
 ## How AI Summarizer Extensions Work
 
 At their core, AI summarizer Chrome extensions consist of three main components: content extraction, API communication, and UI rendering. The extension extracts the main content from a webpage, sends it to an AI service for processing, then displays the summary in an accessible location.

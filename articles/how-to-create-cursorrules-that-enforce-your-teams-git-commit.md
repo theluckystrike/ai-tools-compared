@@ -40,6 +40,13 @@ Consistent commit messages are the backbone of a maintainable codebase. When eve
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [What Are CursorRules?](#what-are-cursorrules)
+- [Prerequisites](#prerequisites)
+- [Advanced CursorRule Configuration](#advanced-cursorrule-configuration)
+- [Troubleshooting](#troubleshooting)
+
 ## What Are CursorRules?
 
 CursorRules are configuration files that define how Cursor (an AI-powered code editor) behaves when working with specific projects. These rules can validate code, suggest improvements, and enforce coding standards. What makes CursorRules powerful is their ability to intercept actions and provide feedback in real-time. You can extend this capability to validate git commit messages before they're finalized.

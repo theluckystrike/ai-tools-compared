@@ -43,6 +43,25 @@ The best AI tools for game design documentation generate structured first drafts
 - **The document should also**: maintain consistent terminology, formatting, and depth throughout, since inconsistencies confuse readers and undermine the document's authority.
 - **A week-long trial with**: actual work gives better signal than feature comparison charts.
 
+## Table of Contents
+
+- [Why Game Developers Need Specialized Documentation Tools](#why-game-developers-need-specialized-documentation-tools)
+- [Key Capabilities to Evaluate](#key-capabilities-to-evaluate)
+- [Practical Applications in Game Development](#practical-applications-in-game-development)
+- [Workflow Integration Considerations](#workflow-integration-considerations)
+- [Measuring Documentation Quality](#measuring-documentation-quality)
+- [Getting Started with AI-Assisted Documentation](#getting-started-with-ai-assisted-documentation)
+- [Practical Documentation Generation Examples](#practical-documentation-generation-examples)
+- [AI Tool Recommendations for Game Dev](#ai-tool-recommendations-for-game-dev)
+- [Template: Game Mechanics Documentation](#template-game-mechanics-documentation)
+- [Overview](#overview)
+- [Core Mechanics](#core-mechanics)
+- [Data Structure](#data-structure)
+- [UI Flow](#ui-flow)
+- [Balance Parameters](#balance-parameters)
+- [Known Edge Cases](#known-edge-cases)
+- [Workflow Integration Best Practices](#workflow-integration-best-practices)
+
 ## Why Game Developers Need Specialized Documentation Tools
 
 Game design documentation differs from typical technical writing in several important ways. A Game Design Document (GDD) must capture not just what a game does, but how it feels to play, the emotional journey it creates, and the systems that support both. Technical design documents need to translate creative intent into implementable specifications while accounting for platform constraints, performance requirements, and player experience considerations.

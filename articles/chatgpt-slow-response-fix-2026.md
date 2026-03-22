@@ -40,6 +40,15 @@ To fix slow ChatGPT responses, first check OpenAI's status page for server-side 
 - **Set TTL values based on how frequently your content changes**: FAQ answers might cache for 24 hours while news summaries should cache for 15 minutes at most.
 - **Understanding the root cause**: prevents wasted effort on irrelevant solutions.
 
+## Table of Contents
+
+- [Diagnosing the Problem](#diagnosing-the-problem)
+- [Fixing Network-Related Slowdowns](#fixing-network-related-slowdowns)
+- [Resolving Rate Limit Constraints](#resolving-rate-limit-constraints)
+- [Optimizing Web Interface Performance](#optimizing-web-interface-performance)
+- [API Configuration for Production Systems](#api-configuration-for-production-systems)
+- [Monitoring and Maintenance](#monitoring-and-maintenance)
+
 ## Diagnosing the Problem
 
 Before applying fixes, identify where the latency originates. Response delays can stem from several sources: OpenAI server congestion, network bottlenecks, rate limiting, or client-side configuration issues. Understanding the root cause prevents wasted effort on irrelevant solutions.
@@ -316,11 +325,10 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 
 ## Related Articles
 
-- [Cursor Keeps Crashing Fix 2026: Complete Troubleshooting](/ai-tools-compared/cursor-keeps-crashing-fix-2026/)
+- [ChatGPT Canvas Not Saving Changes Fix (2026)](/ai-tools-compared/chatgpt-canvas-not-saving-changes-fix-2026/)
+- [ChatGPT API 429 Too Many Requests](/ai-tools-compared/chatgpt-api-429-too-many-requests-fix/)
+- [ChatGPT Network Error on Long Responses: How to Fix in 2026](/ai-tools-compared/chatgpt-network-error-on-long-responses-how-to-fix-2026/)
+- [ChatGPT Memory Not Updating Correctly Fix (2026)](/ai-tools-compared/chatgpt-memory-not-updating-correctly-fix-2026/)
 - [Cursor AI Slow on Large monorepo Fix (2026)](/ai-tools-compared/cursor-ai-slow-on-large-monorepo-fix-2026/)
-- [Claude Code Not Pushing to GitHub Fix: Troubleshooting Guide](/ai-tools-compared/claude-code-not-pushing-to-github-fix/)
-- [Cursor AI Making Too Many API Calls Fix: Troubleshooting](/ai-tools-compared/cursor-ai-making-too-many-api-calls-fix/)
-- [ChatGPT API 429 Too Many Requests Fix](/ai-tools-compared/chatgpt-api-429-too-many-requests-fix/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

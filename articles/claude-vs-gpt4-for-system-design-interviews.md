@@ -292,6 +292,15 @@ Claude adjusts the feedback relevance well at this prompt. GPT-4 tends to give F
 
 ## Deep Dive: Interview-Specific Metrics
 
+## Table of Contents
+
+- [Deep Dive: Interview-Specific Metrics](#deep-dive-interview-specific-metrics)
+- [Scoring Breakdown by Interview Phase](#scoring-breakdown-by-interview-phase)
+- [Which Model for Which Interview Type](#which-model-for-which-interview-type)
+- [Preparation Schedule Using Both Models](#preparation-schedule-using-both-models)
+- [Verdict: Why Claude Wins for Interview Prep](#verdict-why-claude-wins-for-interview-prep)
+- [Related Comparisons](#related-comparisons)
+
 Running both models on the same system design problems reveals measurable differences:
 
 **Database Partitioning Problem**

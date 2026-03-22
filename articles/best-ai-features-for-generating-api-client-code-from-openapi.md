@@ -42,6 +42,22 @@ The best results come from combining AI generation with manual review.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Type-Safe Client Generation](#type-safe-client-generation)
+- [Custom Authentication Handling](#custom-authentication-handling)
+- [Request/Response Transformation](#requestresponse-transformation)
+- [Error Handling and Retry Logic](#error-handling-and-retry-logic)
+- [Multi-Language Support](#multi-language-support)
+- [Mock Server Generation](#mock-server-generation)
+- [Testing Infrastructure](#testing-infrastructure)
+- [Configuration and Extensibility](#configuration-and-extensibility)
+- [AI Tool Comparison for OpenAPI Client Generation](#ai-tool-comparison-for-openapi-client-generation)
+- [Prompt Engineering for Better Results](#prompt-engineering-for-better-results)
+- [Handling Complex OpenAPI Features](#handling-complex-openapi-features)
+- [Regeneration Without Losing Customizations](#regeneration-without-losing-customizations)
+- [Choosing the Right AI Approach](#choosing-the-right-ai-approach)
+
 ## Type-Safe Client Generation
 
 The most valuable AI feature for OpenAPI-to-client workflows is intelligent type inference. Modern AI tools can analyze OpenAPI schemas and generate strongly-typed client libraries that capture request parameters, response structures, and error types.
@@ -346,11 +362,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Generating API Client SDKs 2026](/ai-tools-compared/ai-tools-for-generating-api-client-sdks-2026/)
+- [AI Tools for Generating API Client SDKs 2026](/ai-tools-compared/ai-tools-for-generating-api-client-sdks-2026/---)
+- [AI Tools for Generating Platform Specific Code in Kotlin](/ai-tools-compared/ai-tools-for-generating-platform-specific-code-in-kotlin-mul/)
+- [AI Tools for API Documentation from Code 2026](/ai-tools-compared/ai-tools-for-api-documentation-from-code-2026/)
+- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)
 - [Claude Code API Client TypeScript Guide: Build Type-Safe](/ai-tools-compared/claude-code-api-client-typescript-guide/)
-- [AI Tools for Generating OpenAPI Specs from Code](/ai-tools-compared/ai-tools-openapi-spec-generation/)
-- [Best AI Tools for Generating API Documentation From Code](/ai-tools-compared/best-ai-tools-for-generating-api-documentation-from-code-2026/)
-- [How to Use AI to Help Devrel Create Comparison Tables](/ai-tools-compared/how-to-use-ai-to-help-devrel-create-comparison-tables-for-competing-api-features/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

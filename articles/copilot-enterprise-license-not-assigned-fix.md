@@ -40,6 +40,20 @@ When your organization has purchased GitHub Copilot Enterprise but you cannot ac
 - **Click on Assign seats**: or Add users 4.
 - **Search for the affected**: user by username or email 5.
 
+## Table of Contents
+
+- [Understanding the License Assignment Problem](#understanding-the-license-assignment-problem)
+- [Step-by-Step Fixes](#step-by-step-fixes)
+- [Diagnostic Tips](#diagnostic-tips)
+- [Prevention Strategies](#prevention-strategies)
+- [List Copilot-Licensed Users via Microsoft Graph API](#list-copilot-licensed-users-via-microsoft-graph-api)
+- [Copilot Licensing Architecture: Understanding the Hierarchy](#copilot-licensing-architecture-understanding-the-hierarchy)
+- [Bulk License Assignment via GraphQL](#bulk-license-assignment-via-graphql)
+- [Automated License Synchronization Script](#automated-license-synchronization-script)
+- [Troubleshooting Cost vs. Access Issues](#troubleshooting-cost-vs-access-issues)
+- [Monitoring Copilot License Utilization](#monitoring-copilot-license-utilization)
+- [Copilot Pricing vs. Alternative AI Coding Tools](#copilot-pricing-vs-alternative-ai-coding-tools)
+
 ## Understanding the License Assignment Problem
 
 GitHub Copilot Enterprise requires two separate configuration steps. Your organization must purchase the license through GitHub, and then an administrator must assign that license to individual users. Missing either step results in access denial. The error message usually appears as "Copilot Enterprise license not assigned" or "You do not have access to Copilot Enterprise" when attempting to use the features.
@@ -404,11 +418,10 @@ No. EMU is an enterprise-level feature. If you need EMU's centralized control bu
 
 ## Related Articles
 
-- [Switching from Copilot Enterprise to Cursor Business Migrati](/ai-tools-compared/switching-from-copilot-enterprise-to-cursor-business-migrati/)
-- [Copilot Chat Not Responding in GitHub Fix](/ai-tools-compared/copilot-chat-not-responding-in-github-fix/)
-- [Copilot Not Suggesting Imports Automatically Fix](/ai-tools-compared/copilot-not-suggesting-imports-automatically-fix/)
+- [Switching from Copilot Enterprise to Cursor Business](/ai-tools-compared/switching-from-copilot-enterprise-to-cursor-business-migrati/)
+- [Copilot for JetBrains: Does It Cost Same as VS Code Version](/ai-tools-compared/copilot-for-jetbrains-does-it-cost-same-as-vscode-version/)
+- [Copilot Suggestions in Private Repos Do They Cost More Than](/ai-tools-compared/copilot-suggestions-in-private-repos-do-they-cost-more-than-public/)
 - [Copilot Suggestions Not Showing Up Fix 2026](/ai-tools-compared/copilot-suggestions-not-showing-up-fix-2026/)
-- [Copilot Suggestions Wrong How to Fix](/ai-tools-compared/copilot-suggestions-wrong-how-to-fix/)
-
+- [Copilot Business Org-Wide Enable: Cost If Not All Devs Use](/ai-tools-compared/copilot-business-org-wide-enable-cost-if-not-all-devs-use-it/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

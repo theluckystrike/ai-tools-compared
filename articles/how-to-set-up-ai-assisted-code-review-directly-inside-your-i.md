@@ -42,6 +42,13 @@ Waiting for pull request reviews slows down development cycles. Setting up AI-as
 // if userId changes frequently.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Why Review Code Inside Your IDE](#why-review-code-inside-your-ide)
+- [Prerequisites](#prerequisites)
+- [Best Practices for IDE-Based AI Review](#best-practices-for-ide-based-ai-review)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Review Code Inside Your IDE
 
 Traditional code review happens after you push changes. By then, you've already invested time in implementation. AI review in your IDE works differently—it analyzes your code as you write, catching bugs, security issues, and style violations immediately.

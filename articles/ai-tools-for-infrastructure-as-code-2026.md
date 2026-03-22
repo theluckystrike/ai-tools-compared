@@ -41,6 +41,17 @@ Infrastructure as Code is one of the highest-risk areas for AI hallucinations. A
 - **It fills in `resource**: "aws_db_instance"` attribute names correctly but doesn't apply security best practices to the defaults it suggests.
 - **This is the opposite**: of what many public examples do (attach `AWSLambdaFullAccess` or worse).
 
+## Table of Contents
+
+- [Why IaC Is Harder for AI](#why-iac-is-harder-for-ai)
+- [Testing Approach](#testing-approach)
+- [Terraform Generation](#terraform-generation)
+- [Pulumi TypeScript](#pulumi-typescript)
+- [Ansible Playbooks](#ansible-playbooks)
+- [Security Scanning Integration](#security-scanning-integration)
+- [Recommended Approach](#recommended-approach)
+- [Related Reading](#related-reading)
+
 ## Why IaC Is Harder for AI
 
 Language models are trained on public Terraform registry data, AWS/Azure documentation, and GitHub examples. But:

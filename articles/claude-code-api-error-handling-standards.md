@@ -40,6 +40,18 @@ Claude Code helps developers implement consistent, user-friendly error handling 
 - **Please try again later."**: ) ``` ### Provide Actionable Messages Error messages should tell users what they can do to resolve the issue.
 - **Define a shared error**: contract and use Claude Code to generate language-specific implementations that conform to it.
 
+## Table of Contents
+
+- [Why API Error Handling Matters](#why-api-error-handling-matters)
+- [HTTP Status Code Standards](#http-status-code-standards)
+- [Error Response Format](#error-response-format)
+- [Implementing Error Handling with Claude Code](#implementing-error-handling-with-claude-code)
+- [Error Handling Best Practices](#error-handling-best-practices)
+- [Testing Error Handling](#testing-error-handling)
+- [Generating Error Handling Code with Claude Code](#generating-error-handling-code-with-claude-code)
+- [Consistent Error Handling Across Microservices](#consistent-error-handling-across-microservices)
+- [Handling Upstream Errors and Error Translation](#handling-upstream-errors-and-error-translation)
+
 ## Why API Error Handling Matters
 
 Effective error handling serves three critical purposes. First, it helps clients understand what went wrong and how to recover, reducing support burden. Second, it provides debugging information for developers during development and production. Third, it maintains API reliability by preventing cascading failures and providing clear status signals.

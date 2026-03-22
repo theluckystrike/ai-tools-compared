@@ -40,6 +40,22 @@ Yes, both ChatGPT Plus Memory and Custom GPTs count toward your usage limits. Me
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **These limits exist to**: distribute capacity across all paying users during peak times.
 
+## Table of Contents
+
+- [How ChatGPT Plus Usage Limits Work](#how-chatgpt-plus-usage-limits-work)
+- [Memory and Usage Limits](#memory-and-usage-limits)
+- [Custom GPTs and Rate Limits](#custom-gpts-and-rate-limits)
+- [Practical Impact for Developers](#practical-impact-for-developers)
+- [Power User Recommendations](#power-user-recommendations)
+- [What Does Not Count Toward Limits](#what-does-not-count-toward-limits)
+- [Real-World Example](#real-world-example)
+- [Token Consumption Deep Dive](#token-consumption-deep-dive)
+- [Custom GPT Configuration Impact Analysis](#custom-gpt-configuration-impact-analysis)
+- [Optimization Strategies with Quantified Impact](#optimization-strategies-with-quantified-impact)
+- [Rate Limit Calculation Worksheet](#rate-limit-calculation-worksheet)
+- [Pricing Impact Calculator](#pricing-impact-calculator)
+- [Migration Path for Heavy Users](#migration-path-for-heavy-users)
+
 ## How ChatGPT Plus Usage Limits Work
 
 ChatGPT Plus subscribers receive a certain number of messages per hour on GPT-4o. When demand is high, OpenAI imposes rate limits that temporarily restrict access until the quota resets. These limits exist to distribute capacity across all paying users during peak times.

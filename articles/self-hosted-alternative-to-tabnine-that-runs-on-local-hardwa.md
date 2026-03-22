@@ -39,6 +39,24 @@ Code completion has become an essential part of modern software development. Tab
 - **If your machine has 32GB RAM**: you can comfortably run larger models for better suggestions.
 - **Many developers find that**: a fast 7B model responding in under a second feels better in practice than a higher-quality 13B model with 3-second latency.
 
+## Table of Contents
+
+- [Why Consider Self-Hosted Code Completion?](#why-consider-self-hosted-code-completion)
+- [Top Self-Hosted Alternatives to Tabnine](#top-self-hosted-alternatives-to-tabnine)
+- [Model Selection: Which Model Works Best](#model-selection-which-model-works-best)
+- [Comparing Self-Hosted Directly to Tabnine](#comparing-self-hosted-directly-to-tabnine)
+- [Performance Comparison](#performance-comparison)
+- [Hardware Requirements](#hardware-requirements)
+- [Choosing the Right Solution](#choosing-the-right-solution)
+- [Setup Recommendations](#setup-recommendations)
+- [Performance Optimization and Tuning](#performance-optimization-and-tuning)
+- [Advanced Setup: Multi-Model Configuration](#advanced-setup-multi-model-configuration)
+- [Integration with Development Workflows](#integration-with-development-workflows)
+- [Cost Analysis: Self-Hosted vs. Cloud](#cost-analysis-self-hosted-vs-cloud)
+- [Common Issues and Solutions](#common-issues-and-solutions)
+- [Security Considerations](#security-considerations)
+- [Future Direction: Local Models in 2026](#future-direction-local-models-in-2026)
+
 ## Why Consider Self-Hosted Code Completion?
 
 Running AI code completion locally offers three significant advantages. First, **data privacy** ensures your proprietary code never leaves your machine—critical for enterprise developers working on sensitive projects. Second, **cost control** eliminates subscription fees while taking advantage of open-source models you can run indefinitely. Third, **offline capability** means your coding assistant works without internet connectivity, whether you're on a flight or working in secure environments.

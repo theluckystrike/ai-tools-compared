@@ -15,6 +15,13 @@ intent-checked: true---
 
 ### 2. GitHub Copilot (IDE Autocomplete)
 
+## Table of Contents
+
+- [Tool Comparison Table](#tool-comparison-table)
+- [Practical Patterns](#practical-patterns)
+- [Edge Cases & Solutions](#edge-cases-solutions)
+- [Integration Checklist](#integration-checklist)
+
 **Overview**: Copilot completes seed scripts as you type in VS Code or JetBrains. Fast feedback loop but requires you to define structure.
 
 **Cost**: $10-20/month.

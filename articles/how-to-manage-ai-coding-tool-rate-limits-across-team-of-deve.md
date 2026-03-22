@@ -39,6 +39,13 @@ Manage team rate limits by tracking per-developer usage, routing heavy tasks thr
 - **Use selective file inclusion**: features to limit context to only necessary files.
 - **- Cursor Business ($40/seat/month)**: includes SOC 2 compliance, centralized billing, and admin controls.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Negotiating Enterprise Agreements](#negotiating-enterprise-agreements)
+- [Best Practices Summary](#best-practices-summary)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

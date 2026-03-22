@@ -40,6 +40,22 @@ Choose ChatGPT if you want fast, structured code walkthroughs of TensorFlow mode
 - **It frequently suggests common**: patterns and best practices, which helps beginners avoid basic mistakes.
 - **Start with Claude for**: conceptual understanding, then use ChatGPT for implementation details and quick reference.
 
+## Table of Contents
+
+- [Understanding the Task: Explaining Model Architecture](#understanding-the-task-explaining-model-architecture)
+- [ChatGPT: Direct and Structured Explanations](#chatgpt-direct-and-structured-explanations)
+- [Claude: Conceptual Depth and Context](#claude-conceptual-depth-and-context)
+- [Practical Comparison: Code Debugging](#practical-comparison-code-debugging)
+- [Which Assistant Works Better for Learning?](#which-assistant-works-better-for-learning)
+- [Real-World Scenario: Building Your First CNN](#real-world-scenario-building-your-first-cnn)
+- [Combining Both for Optimal Learning](#combining-both-for-optimal-learning)
+- [Performance Comparison: Real Benchmark Results](#performance-comparison-real-benchmark-results)
+- [Model-Specific Teaching Styles](#model-specific-teaching-styles)
+- [Practical Learning Path](#practical-learning-path)
+- [Real-World Example: Building an LSTM](#real-world-example-building-an-lstm)
+- [Comparing Advanced Concepts](#comparing-advanced-concepts)
+- [Integration with IDEs](#integration-with-ides)
+
 ## Understanding the Task: Explaining Model Architecture
 
 TensorFlow model architecture involves layers, tensors, activation functions, and data flow. Beginners often struggle with visualizing how data transforms through a neural network. Both AI assistants can explain these concepts, but their approaches differ in clarity, depth, and pedagogical style.

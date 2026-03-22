@@ -39,6 +39,21 @@ Claude and GitHub Copilot effectively generate Jest tests for web and service wo
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Code completion tools like**: Copilot work best for incremental test additions as you develop.
 
+## Table of Contents
+
+- [Understanding the Testing Challenge](#understanding-the-testing-challenge)
+- [AI-Powered Approaches for Test Generation](#ai-powered-approaches-for-test-generation)
+- [Service Worker Testing Specifics](#service-worker-testing-specifics)
+- [Practical AI Tool Integration](#practical-ai-tool-integration)
+- [Best Practices for AI-Generated Tests](#best-practices-for-ai-generated-tests)
+- [Common Pitfalls in AI-Generated Worker Tests](#common-pitfalls-in-ai-generated-worker-tests)
+- [Handling Worker Lifecycle in Tests](#handling-worker-lifecycle-in-tests)
+- [Testing Worker Error Handling](#testing-worker-error-handling)
+- [Mocking External Dependencies in Workers](#mocking-external-dependencies-in-workers)
+- [Performance Testing with Workers](#performance-testing-with-workers)
+- [Integration Testing with Service Workers](#integration-testing-with-service-workers)
+- [Performance Testing Considerations](#performance-testing-considerations)
+
 ## Understanding the Testing Challenge
 
 Web workers and service workers communicate with the main thread through the `postMessage` API. This asynchronous message-passing architecture creates complexity that traditional synchronous testing patterns cannot easily handle. Developers must account for message serialization, timing issues, and the isolated scope of worker environments.

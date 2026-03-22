@@ -52,6 +52,20 @@ Pro subscription: $20/month
 
 Winner: API by a massive margin.
 
+## Table of Contents
+
+- [Understanding Claude API Pricing](#understanding-claude-api-pricing)
+- [Understanding Claude Pro Subscription](#understanding-claude-pro-subscription)
+- [Cost Comparison: Real-World Scenarios](#cost-comparison-real-world-scenarios)
+- [Calculating Your Break-Even Point](#calculating-your-break-even-point)
+- [When to Choose Each Option](#when-to-choose-each-option)
+- [Practical Code Example: Token Cost Calculator](#practical-code-example-token-cost-calculator)
+- [Side-by-Side Summary Table](#side-by-side-summary-table)
+- [Real-World Cost Scenarios: Which Option Actually Wins?](#real-world-cost-scenarios-which-option-actually-wins)
+- [Detailed Pricing Comparison Matrix](#detailed-pricing-comparison-matrix)
+- [Advanced Cost Optimization Strategies](#advanced-cost-optimization-strategies)
+- [Making the Decision](#making-the-decision)
+
 ## Understanding Claude API Pricing
 
 The Claude API uses a token-based pricing model. You're charged for both input tokens (what you send) and output tokens (what Claude generates). Pricing varies by model:
@@ -363,10 +377,9 @@ A practical approach for anyone unsure: start with Pro for the first month. The 
 
 ## Related Articles
 
-- [Perplexity API Pricing vs Using Pro Subscription Which Is Ch](/ai-tools-compared/perplexity-api-pricing-vs-using-pro-subscription-which-is-ch/)
-- [Claude API Batch Processing: How Much Cheaper Than Discount](/ai-tools-compared/claude-api-batch-processing-discount-how-much-cheaper-than-r/)
-- [Best AI Coding Tool with Pay As You Go No Subscription](/ai-tools-compared/best-ai-coding-tool-with-pay-as-you-go-no-subscription/)
-- [ChatGPT API Token Pricing Calculator How to Estimate Monthly](/ai-tools-compared/chatgpt-api-token-pricing-calculator-how-to-estimate-monthly/)
-- [Codeium Pro vs Copilot Individual Features Per Dollar Compar](/ai-tools-compared/codeium-pro-vs-copilot-individual-features-per-dollar-compar/)
-
+- [Perplexity API Pricing vs Using Pro Subscription Which Is](/ai-tools-compared/perplexity-api-pricing-vs-using-pro-subscription-which-is-ch/)
+- [How to Use Claude API Cheaply for Small Coding Projects](/ai-tools-compared/how-to-use-claude-api-cheaply-for-small-coding-projects/)
+- [Claude API vs OpenAI API Pricing Breakdown 2026](/ai-tools-compared/claude-api-vs-openai-api-pricing-breakdown-2026/)
+- [Claude Max vs Claude Pro Actual Difference](/ai-tools-compared/claude-max-vs-claude-pro-actual-difference-in-daily-message-limits/)
+- [Claude Pro Upgrade Not Reflecting? Here's the Fix (2026)](/ai-tools-compared/claude-pro-upgrade-not-reflecting-fix-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

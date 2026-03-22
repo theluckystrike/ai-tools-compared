@@ -40,6 +40,14 @@ AI assistants can generate HTML output, but without proper system prompts, the m
 5.
 - **Use the WAVE evaluator**: or axe DevTools to scan generated pages 2.
 
+## Table of Contents
+
+- [Why Accessible HTML Matters for AI Output](#why-accessible-html-matters-for-ai-output)
+- [Prerequisites](#prerequisites)
+- [Combining Prompts with Output Validation](#combining-prompts-with-output-validation)
+- [Troubleshooting](#troubleshooting)
+- [Advanced Prompt Techniques for Production Systems](#advanced-prompt-techniques-for-production-systems)
+
 ## Why Accessible HTML Matters for AI Output
 
 When an AI assistant generates HTML fragments for your application, that code becomes part of your user interface. If the output lacks proper heading hierarchy, missing alt text on images, or no keyboard navigation support, you inherit accessibility violations that affect real users. Rather than fixing generated code manually, you can embed accessibility requirements directly into your system prompts.
@@ -494,10 +502,9 @@ Use this data to justify refinement investments and identify where the prompt ne
 
 ## Related Articles
 
-- [How to Write System Prompts for AI Coding Assistants Project](/ai-tools-compared/how-to-write-system-prompts-for-ai-coding-assistants-project/)
+- [How to Write System Prompts for AI Coding Assistants](/ai-tools-compared/how-to-write-system-prompts-for-ai-coding-assistants-project/)
 - [Writing Effective System Prompts for AI Coding Assistants](/ai-tools-compared/writing-effective-system-prompts-for-ai-coding-assistants-th/)
-- [How to Create Custom System Prompts for AI That Match Your](/ai-tools-compared/how-to-create-custom-system-prompts-for-ai-that-match-your-d/)
 - [How to Migrate ChatGPT System Prompts](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-forma/)
+- [How to Create Custom System Prompts for AI That Match Your](/ai-tools-compared/how-to-create-custom-system-prompts-for-ai-that-match-your-d/)
 - [Migrate ChatGPT System Prompts](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-format/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

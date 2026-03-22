@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "AI Tools for Generating FAQ Pages from Customer Support Ticket Data Compared"
+title: "AI FAQ Generators from Support Tickets (2026)"
 description: "A practical comparison of AI tools for extracting and generating FAQ pages from customer support ticket data, with code examples for developers."
 date: 2026-03-21
 author: "AI Tools Compared"
@@ -23,6 +23,22 @@ Building an FAQ page from your customer support ticket history can reduce repeat
 - **LLM-based tools** handle both question identification and answer generation
 - **Accuracy varies** based on ticket quality and tool configuration
 - **Custom pipelines** give you control over output format and tone
+
+## Table of Contents
+
+- [Why Generate FAQs from Support Tickets](#why-generate-faqs-from-support-tickets)
+- [Approaches to FAQ Generation](#approaches-to-faq-generation)
+- [Pulling Tickets from Common Helpdesk Platforms](#pulling-tickets-from-common-helpdesk-platforms)
+- [Tool Comparison](#tool-comparison)
+- [Practical Implementation Tips](#practical-implementation-tips)
+- [Keeping FAQs Fresh](#keeping-faqs-fresh)
+- [Common Challenges](#common-challenges)
+- [Building an End-to-End FAQ Pipeline](#building-an-end-to-end-faq-pipeline)
+- [Integration with Documentation Systems](#integration-with-documentation-systems)
+- [{faq['question']}](#faqquestion)
+- [Measuring FAQ Effectiveness](#measuring-faq-effectiveness)
+- [Updating FAQs Over Time](#updating-faqs-over-time)
+- [Conclusion](#conclusion)
 
 ## Why Generate FAQs from Support Tickets
 

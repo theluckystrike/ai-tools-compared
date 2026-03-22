@@ -42,6 +42,18 @@ This guide examines approaches for using AI to draft release emails from feature
 - **This guide examines approaches**: for using AI to draft release emails from feature lists, targeting developers and power users who want to build custom solutions or integrate AI into existing workflows.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [The Problem: From Feature List to Release Email](#the-problem-from-feature-list-to-release-email)
+- [Approaches for AI-Powered Release Communication](#approaches-for-ai-powered-release-communication)
+- [Practical Implementation Considerations](#practical-implementation-considerations)
+- [Comparing AI Tools for This Task](#comparing-ai-tools-for-this-task)
+- [Integration Points](#integration-points)
+- [End-to-End Automation Example](#end-to-end-automation-example)
+- [Measuring Effectiveness](#measuring-effectiveness)
+- [Building a Prompt Library](#building-a-prompt-library)
+- [Getting Started](#getting-started)
+
 ## The Problem: From Feature List to Release Email
 
 When a product team completes a sprint or release cycle, someone must compile feature descriptions into communication emails. This involves:

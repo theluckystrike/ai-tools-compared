@@ -39,6 +39,19 @@ Writing Playwright end-to-end tests requires understanding both test semantics (
 - **GitHub Copilot generates working**: tests quickly but sometimes bypasses best practices (hardcoded waits instead of proper locator strategies).
 - **Good tests use role-based**: locators that survive CSS/class refactors.
 
+## Table of Contents
+
+- [Why Playwright Benefits from AI Assistance](#why-playwright-benefits-from-ai-assistance)
+- [Locator Strategies: Generating Reliable Selectors](#locator-strategies-generating-reliable-selectors)
+- [Page Object Models: Organizing Tests at Scale](#page-object-models-organizing-tests-at-scale)
+- [Fixtures: Proper Test State Management](#fixtures-proper-test-state-management)
+- [Visual Regression Testing](#visual-regression-testing)
+- [Playwright Inspector and Recording](#playwright-inspector-and-recording)
+- [Playwright Reporters for CI Integration](#playwright-reporters-for-ci-integration)
+- [Tool Comparison: Advanced Metrics](#tool-comparison-advanced-metrics)
+- [Practical Workflow: Building a Complete Test Suite](#practical-workflow-building-a-complete-test-suite)
+- [Common Test Pitfalls and AI Solutions](#common-test-pitfalls-and-ai-solutions)
+
 ## Why Playwright Benefits from AI Assistance
 
 Playwright tests involve three parallel concerns: the test logic (what business flow are we verifying), the Playwright API (which methods accomplish that), and the DOM selectors (which elements we're targeting). Writing tests manually means constantly referencing Playwright docs for the correct assertion syntax or selector strategy.

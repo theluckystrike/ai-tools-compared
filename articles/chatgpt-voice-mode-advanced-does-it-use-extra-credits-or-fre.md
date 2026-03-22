@@ -40,6 +40,21 @@ Developers and power users integrating ChatGPT into their workflows often ask wh
 - **Does ChatGPT offer a**: free tier? Most major tools offer some form of free tier or trial period.
 - **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 
+## Table of Contents
+
+- [Understanding ChatGPT Voice Mode Tiers](#understanding-chatgpt-voice-mode-tiers)
+- [Credit Usage and Subscription Tiers](#credit-usage-and-subscription-tiers)
+- [Practical Usage Limits in Practice](#practical-usage-limits-in-practice)
+- [API Considerations for Voice Applications](#api-considerations-for-voice-applications)
+- [Maximizing Your Voice Mode Experience](#maximizing-your-voice-mode-experience)
+- [When to Consider API Integration](#when-to-consider-api-integration)
+- [Subscription Tier Comparison](#subscription-tier-comparison)
+- [Real-World Usage Limits](#real-world-usage-limits)
+- [Building a Fallback Voice Strategy](#building-a-fallback-voice-strategy)
+- [Cost Comparison: Web Interface vs API](#cost-comparison-web-interface-vs-api)
+- [Usage Optimization Tips](#usage-optimization-tips)
+- [When to Switch to API-Only Approach](#when-to-switch-to-api-only-approach)
+
 ## Understanding ChatGPT Voice Mode Tiers
 
 ChatGPT offers two distinct voice interaction modes: **Standard Voice Mode** and **Advanced Voice Mode**. Each operates under different access and credit policies that directly impact how you can incorporate voice interactions into your development workflow.

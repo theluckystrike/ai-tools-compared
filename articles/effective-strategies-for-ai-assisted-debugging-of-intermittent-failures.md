@@ -55,6 +55,19 @@ Prompt to AI with correlation logs:
 Here are all logs for correlation ID abc-123-def between 2024-01-15 14:32:00
 and 14:32:15.
 
+## Table of Contents
+
+- [Why Intermittent Failures Defeat Traditional Debugging](#why-intermittent-failures-defeat-traditional-debugging)
+- [Strategy 1: Pattern Recognition Across Distributed Logs](#strategy-1-pattern-recognition-across-distributed-logs)
+- [Strategy 2: Generating Targeted Test Cases](#strategy-2-generating-targeted-test-cases)
+- [Strategy 3: Systematic Hypothesis Testing with AI](#strategy-3-systematic-hypothesis-testing-with-ai)
+- [Strategy 4: Instrumentation and Observability Enhancement](#strategy-4-instrumentation-and-observability-enhancement)
+- [Strategy 5: Automated Flaky Test Detection](#strategy-5-automated-flaky-test-detection)
+- [Building a Sustainable Debugging Workflow](#building-a-sustainable-debugging-workflow)
+- [Advanced Debugging Techniques](#advanced-debugging-techniques)
+- [Debugging Workflow Automation](#debugging-workflow-automation)
+- [Prevention: Better Observability from the Start](#prevention-better-observability-from-the-start)
+
 ## Why Intermittent Failures Defeat Traditional Debugging
 
 Conventional debugging relies on reproducing the exact conditions that trigger a bug. Intermittent failures resist this approach because they depend on timing, resource contention, environmental variables, or race conditions that rarely align during local testing. A race condition in a payment processing system might occur once in every thousand transactions, making it nearly impossible to reproduce on demand.
@@ -516,11 +529,10 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 
 ## Related Articles
 
-- [Effective Strategies for AI-Assisted Refactoring Without Bre](/ai-tools-compared/effective-strategies-for-ai-assisted-refactoring-without-bre/)
-- [Effective Workflow for AI-Assisted Open Source Contribution](/ai-tools-compared/effective-workflow-for-ai-assisted-open-source-contribution-/)
-- [Effective Context Loading Strategies for AI Tools in](/ai-tools-compared/effective-context-loading-strategies-for-ai-tools-in-polyglo/)
-- [Effective Context Management Strategies for AI Coding](/ai-tools-compared/effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/)
-- [Effective Prompting Strategies for AI Generation of Complex](/ai-tools-compared/effective-prompting-strategies-for-ai-generation-of-complex-/)
-
+- [Effective Workflow for Using AI](/ai-tools-compared/effective-workflow-for-using-ai-to-debug-production-issues-from-logs/)
+- [Effective Strategies for Using AI](/ai-tools-compared/effective-strategies-for-using-ai-to-learn-new-programming-languages-faster/)
+- [Best AI Tools for Debugging Production Incidents](/ai-tools-compared/best-ai-tools-for-debugging-production-incidents-with-log-analysis/)
+- [AI Powered Log Analysis Tools for Production Debugging](/ai-tools-compared/ai-powered-log-analysis-tools-for-production-debugging-compa/)
+- [Effective Strategies for AI-Assisted Refactoring](/ai-tools-compared/effective-strategies-for-ai-assisted-refactoring-without-bre/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -39,6 +39,26 @@ To fix Cursor Tab accepting the wrong suggestion, immediately press Ctrl+Z (Cmd+
 - **Increasing this delay from**: the default (often 0ms) to 100-200ms can significantly reduce accidental acceptances without eliminating the feature entirely.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Understanding the Problem](#understanding-the-problem)
+- [Immediate Fixes When Wrong Code Gets Accepted](#immediate-fixes-when-wrong-code-gets-accepted)
+- [Preventing Wrong Acceptances](#preventing-wrong-acceptances)
+- [Fine-Tuning Cursor's AI Behavior](#fine-tuning-cursors-ai-behavior)
+- [Diagnostic Steps for Persistent Issues](#diagnostic-steps-for-persistent-issues)
+- [Alternative Workflow Strategies](#alternative-workflow-strategies)
+- [When to Seek Further Help](#when-to-seek-further-help)
+- [Advanced Configuration for Suggestion Safety](#advanced-configuration-for-suggestion-safety)
+- [Building a Suggestion Validation Layer](#building-a-suggestion-validation-layer)
+- [Monitoring and Logging Suggestions](#monitoring-and-logging-suggestions)
+- [Workspace-Specific Suggestion Rules](#workspace-specific-suggestion-rules)
+- [Team Guidelines for Suggestion Safety](#team-guidelines-for-suggestion-safety)
+- [When to Accept Suggestions](#when-to-accept-suggestions)
+- [When to Review Carefully](#when-to-review-carefully)
+- [When to Reject](#when-to-reject)
+- [Review Checklist](#review-checklist)
+- [Reporting Bad Suggestions](#reporting-bad-suggestions)
+
 ## Understanding the Problem
 
 Cursor uses machine learning models to predict what you're about to write. The system analyzes your current file, open tabs, project structure, and coding patterns to generate suggestions. Occasionally, the AI misinterprets your intent and proposes code that looks plausible but is functionally wrong—incorrect variable names, mismatched types, missing parameters, or logically flawed implementations.

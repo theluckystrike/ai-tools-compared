@@ -42,6 +42,20 @@ Testing web applications with dynamic loading and lazy-loaded elements requires 
 - **CI timeout mismatches**: Tests that pass locally on a fast machine fail in CI because timeouts are too short.
 - **- Use role-based locators**: Ask AI tools to prefer `page.getByRole()` and `page.getByText()` over CSS selectors.
 
+## Table of Contents
+
+- [The Challenge with Dynamic Loading in Playwright](#the-challenge-with-dynamic-loading-in-playwright)
+- [What Makes AI Good at This Specific Task](#what-makes-ai-good-at-this-specific-task)
+- [Top AI Tools for This Use Case](#top-ai-tools-for-this-use-case)
+- [AI Tool Comparison at a Glance](#ai-tool-comparison-at-a-glance)
+- [Practical Testing Patterns](#practical-testing-patterns)
+- [Step-by-Step Workflow: Using AI to Write a Dynamic Loading Test](#step-by-step-workflow-using-ai-to-write-a-dynamic-loading-test)
+- [Handling Intersection Observer-Based Lazy Loading](#handling-intersection-observer-based-lazy-loading)
+- [Common Pitfalls and How AI Tools Help Avoid Them](#common-pitfalls-and-how-ai-tools-help-avoid-them)
+- [Pro Tips for Getting Better AI Output](#pro-tips-for-getting-better-ai-output)
+- [Recommendations by Use Case](#recommendations-by-use-case)
+- [Limitations to Consider](#limitations-to-consider)
+
 ## The Challenge with Dynamic Loading in Playwright
 
 Modern web applications frequently use lazy loading to improve initial page load times. Images load as they enter the viewport, content populates via infinite scroll, and components render only when needed. These patterns create challenges for automated testing:
@@ -320,11 +334,10 @@ Always review generated tests and adjust timeouts based on your actual applicati
 
 ## Related Articles
 
+- [Best AI Tools for Writing Playwright Tests 2026](/ai-tools-compared/best-ai-tools-for-writing-playwright-tests-2026/)
+- [Best AI Tools for Writing Playwright E2E Tests 2026](/ai-tools-compared/best-ai-tools-for-writing-playwright-e2e-tests-2026/)
+- [Which AI Is Better for Writing Playwright End-to-End Tests](/ai-tools-compared/which-ai-is-better-for-writing-playwright-end-to-end-tests-2/)
 - [AI Tools for Writing Playwright Tests That Verify Accessibil](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-accessibil/)
 - [AI Tools for Writing Playwright Tests That Verify Responsive](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-responsive/)
-- [AI Tools for Writing Playwright Tests That Verify Toast Noti](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-toast-noti/)
-- [Best AI Assistant for Writing Playwright Tests](/ai-tools-compared/best-ai-assistant-for-writing-playwright-tests-for-drag-and-drop-interactions-2026/)
-- [Best AI Tools for Writing Playwright E2E Tests 2026](/ai-tools-compared/best-ai-tools-for-writing-playwright-e2e-tests-2026/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

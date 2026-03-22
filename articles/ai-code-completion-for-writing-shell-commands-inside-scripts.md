@@ -40,6 +40,22 @@ Use Cursor or Claude Code for superior pipe chain generation and context-aware c
 - **If you need free**: access with broad editor support, Codeium provides solid shell autocomplete without monthly costs, making it ideal for hobbyists and sysadmins writing automation scripts.
 - **AI autocomplete continues to**: improve rapidly, with tools adding better command recognition, flag suggestions, and integration with system utilities.
 
+## Table of Contents
+
+- [What Makes Shell Script Autocomplete Effective](#what-makes-shell-script-autocomplete-effective)
+- [Comparing Top AI Autocomplete Tools for Shell Scripts](#comparing-top-ai-autocomplete-tools-for-shell-scripts)
+- [Practical Examples](#practical-examples)
+- [Which Tool Should You Choose](#which-tool-should-you-choose)
+- [Maximizing Your Shell Script Autocomplete](#maximizing-your-shell-script-autocomplete)
+- [Advanced Shell Script Generation](#advanced-shell-script-generation)
+- [Performance Comparison Table](#performance-comparison-table)
+- [Error Prevention in AI-Generated Scripts](#error-prevention-in-ai-generated-scripts)
+- [Integration with DevOps Tools](#integration-with-devops-tools)
+- [Testing AI-Generated Scripts Before Production](#testing-ai-generated-scripts-before-production)
+- [Cost and Maintenance Analysis](#cost-and-maintenance-analysis)
+- [Common Mistakes to Avoid](#common-mistakes-to-avoid)
+- [Building Your Own Shell Command Generator](#building-your-own-shell-command-generator)
+
 ## What Makes Shell Script Autocomplete Effective
 
 Effective AI autocomplete for shell scripts must understand multiple components: the shell dialect being used (bash, zsh, fish), the available commands on the system, common flag combinations, and how to chain commands with pipes and redirections. The best tools recognize context from your script's purpose and suggest commands that match your operating system and installed utilities.
@@ -576,10 +592,9 @@ Traditional autocomplete suggests the next word. AI understands intent and gener
 ## Related Articles
 
 - [Best AI Tools for Writing Shell Scripts](/ai-tools-compared/best-ai-tools-for-writing-shell-scripts-for-server-automation/)
-- [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
-- [How to Set Up AI Assisted Code Review Directly Inside Your](/ai-tools-compared/how-to-set-up-ai-assisted-code-review-directly-inside-your-ide/)
-- [Best AI Tools for Writing Database Seed Scripts 2026](/ai-tools-compared/best-ai-tools-for-writing-database-seed-scripts-2026/)
+- [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-compared/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)
 - [Free AI Tools for Writing Bash Scripts and Automation](/ai-tools-compared/free-ai-tools-for-writing-bash-scripts-and-automation/)
-
+- [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
+- [Copilot vs Claude Code for Writing GitHub Actions Cicd](/ai-tools-compared/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

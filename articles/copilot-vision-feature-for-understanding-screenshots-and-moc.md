@@ -40,6 +40,23 @@ This guide provides an overview to help you understand and make informed decisio
 - **When testing the feature**: across different image types, simple component screenshots (buttons, forms, cards) generate accurate code 85-90% of the time.
 - **Complex full-page layouts see**: success rates drop to 60-70%, requiring more iteration and refinement.
 
+## Table of Contents
+
+- [How Copilot Vision Works in Your Editor](#how-copilot-vision-works-in-your-editor)
+- [Practical Use Cases for Developers](#practical-use-cases-for-developers)
+- [Technical Considerations and Limitations](#technical-considerations-and-limitations)
+- [Comparison with Alternative Approaches](#comparison-with-alternative-approaches)
+- [Getting Started Today](#getting-started-today)
+- [Subscription Plans and Pricing](#subscription-plans-and-pricing)
+- [Image Quality and Best Practices](#image-quality-and-best-practices)
+- [Advanced Use Cases](#advanced-use-cases)
+- [Advanced Capabilities and Performance Trade-offs](#advanced-capabilities-and-performance-trade-offs)
+- [Tool Comparison Matrix](#tool-comparison-matrix)
+- [Pricing and Subscription Tiers](#pricing-and-subscription-tiers)
+- [Alternative Approaches Worth Considering](#alternative-approaches-worth-considering)
+- [Practical Prompt Templates](#practical-prompt-templates)
+- [Optimization Tips for Better Results](#optimization-tips-for-better-results)
+
 ## How Copilot Vision Works in Your Editor
 
 The vision feature integrates directly into Copilot Chat within supported editors like Visual Studio Code and JetBrains IDEs. When you paste an image or screenshot, Copilot analyzes the visual elements and generates corresponding code based on your natural language requests.

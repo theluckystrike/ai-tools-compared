@@ -40,6 +40,14 @@ If you're looking for powerful AI code generation without the $20/month ChatGPT 
 - **Tabnine (Free Tier) Tabnine**: offers a free tier focused on code completion with local execution options for privacy.
 - **Several free alternatives deliver comparable**: or even superior—coding capabilities in 2026.
 
+## Table of Contents
+
+- [Top Free Alternatives](#top-free-alternatives)
+- [Feature Comparison Table](#feature-comparison-table)
+- [Detailed Analysis](#detailed-analysis)
+- [Making Your Choice](#making-your-choice)
+- [Setting Up Continue.dev with a Local Ollama Model](#setting-up-continuedev-with-a-local-ollama-model)
+
 ## Top Free Alternatives
 
 ### 1. Claude Code (Free Tier)

@@ -42,6 +42,19 @@ The best AI assistant for SQL query optimization does four things: recommends mi
 - **AI assistants can also**: recognize anti-patterns instantly across your entire codebase, flagging N+1 query problems, unnecessary subqueries, and Cartesian products before they cause issues.
 - **Specific index recommendations with**: DDL 3.
 
+## Table of Contents
+
+- [What to Look for in an AI SQL Assistant](#what-to-look-for-in-an-ai-sql-assistant)
+- [Practical Examples of AI SQL Optimization](#practical-examples-of-ai-sql-optimization)
+- [Detecting Common Performance Anti-Patterns](#detecting-common-performance-anti-patterns)
+- [Integrating AI Optimization into Your Workflow](#integrating-ai-optimization-into-your-workflow)
+- [Tool Comparison for SQL Optimization](#tool-comparison-for-sql-optimization)
+- [Real-World Optimization Workflow](#real-world-optimization-workflow)
+- [CLI Integration with Database Tools](#cli-integration-with-database-tools)
+- [Anti-Pattern Detection in Real Codebases](#anti-pattern-detection-in-real-codebases)
+- [EXPLAIN Plan Interpretation](#explain-plan-interpretation)
+- [Limitations and Best Practices](#limitations-and-best-practices)
+
 ## What to Look for in an AI SQL Assistant
 
 Not all AI assistants handle SQL optimization equally. The best ones share several characteristics that make them genuinely useful for developers:

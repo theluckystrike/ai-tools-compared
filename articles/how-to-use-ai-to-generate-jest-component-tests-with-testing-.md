@@ -40,6 +40,16 @@ AI tools can generate Jest test suites using Testing Library and user-event that
 - **Instead of testing internal**: component state or methods, you test what users see and do.
 - **The `user-event` library extends this by providing realistic user interaction simulations**: typing, clicking, selecting—exactly how users interact with your app.
 
+## Table of Contents
+
+- [Why Testing Library and User Events Matter](#why-testing-library-and-user-events-matter)
+- [Generating Tests with AI: Getting Started](#generating-tests-with-ai-getting-started)
+- [Practical Example: Testing a Form Component](#practical-example-testing-a-form-component)
+- [Prerequisites](#prerequisites)
+- [Best Practices for AI-Assisted Test Generation](#best-practices-for-ai-assisted-test-generation)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## Why Testing Library and User Events Matter
 
 Testing Library encourages tests that simulate real user interactions. Instead of testing internal component state or methods, you test what users see and do. The `user-event` library extends this by providing realistic user interaction simulations—typing, clicking, selecting—exactly how users interact with your app.
@@ -299,6 +309,14 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [How to Use AI to Generate Jest Tests for Next.js API Routes](/ai-tools-compared/how-to-use-ai-to-generate-jest-tests-for-nextjs-api-routes/)
 - [How to Use AI to Generate Jest Tests for Redux Toolkit Slice](/ai-tools-compared/how-to-use-ai-to-generate-jest-tests-for-redux-toolkit-slice/)
 - [How to Use AI to Generate Component Diagrams from React](/ai-tools-compared/how-to-use-ai-to-generate-component-diagrams-from-react-or-v/)
+
+## Related Articles
+
+- [How to Use AI to Generate Jest Tests for Internationalizatio](/ai-tools-compared/how-to-use-ai-to-generate-jest-tests-for-internationalizatio/)
+- [How to Use AI to Generate Jest Integration Tests](/ai-tools-compared/how-to-use-ai-to-generate-jest-integration-tests-for-express/)
+- [Best AI for Creating Jest Tests That Verify Correct React](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-react-co/)
+- [Best AI for Writing Jest Tests for React Custom Hooks](/ai-tools-compared/best-ai-for-writing-jest-tests-for-react-custom-hooks-with-c/)
+- [How to Use AI to Generate Jest Tests for Next.js API](/ai-tools-compared/how-to-use-ai-to-generate-jest-tests-for-nextjs-api-routes/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

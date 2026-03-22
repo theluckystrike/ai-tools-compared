@@ -39,6 +39,19 @@ Writing Playwright tests for drag and drop interactions presents unique challeng
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Understanding Drag and Drop Testing Requirements](#understanding-drag-and-drop-testing-requirements)
+- [What Makes an AI Assistant Effective for This Niche](#what-makes-an-ai-assistant-effective-for-this-niche)
+- [Real-World Drag and Drop Scenarios](#real-world-drag-and-drop-scenarios)
+- [Practical Examples](#practical-examples)
+- [Evaluating AI Assistants for This Use Case](#evaluating-ai-assistants-for-this-use-case)
+- [Code Quality Factors](#code-quality-factors)
+- [Common Pitfalls to Avoid](#common-pitfalls-to-avoid)
+- [Best Practices Recommended by Top AI Assistants](#best-practices-recommended-by-top-ai-assistants)
+- [AI Assistant Performance Comparison](#ai-assistant-performance-comparison)
+- [Recommendations](#recommendations)
+
 ## Understanding Drag and Drop Testing Requirements
 
 Drag and drop tests must simulate multiple mouse events in the correct sequence. Unlike simple click tests, drag operations require coordinating mousedown, mousemove, and mouseup events while maintaining proper element positioning. The complexity increases when testing across different browsers, as each handles drag operations slightly differently.

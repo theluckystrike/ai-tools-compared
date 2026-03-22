@@ -43,6 +43,19 @@ To fix Gemini AI giving wrong answers, lower the temperature to 0.1-0.3 for fact
 
 These contradictory requirements confuse the model and lead to suboptimal output.
 
+## Table of Contents
+
+- [Understanding Why Gemini Produces Wrong Answers](#understanding-why-gemini-produces-wrong-answers)
+- [Step-by-Step Diagnostic Process](#step-by-step-diagnostic-process)
+- [Common Scenarios and Fixes](#common-scenarios-and-fixes)
+- [Advanced Diagnostic Techniques](#advanced-diagnostic-techniques)
+- [Preventive Measures](#preventive-measures)
+- [Building Reliability Into Your Workflow](#building-reliability-into-your-workflow)
+- [When to Seek Alternative Solutions](#when-to-seek-alternative-solutions)
+- [Specific Debugging Patterns for Common Domains](#specific-debugging-patterns-for-common-domains)
+- [Long-Form Interaction Patterns](#long-form-interaction-patterns)
+- [Practical Debugging Workflow](#practical-debugging-workflow)
+
 ## Understanding Why Gemini Produces Wrong Answers
 
 Gemini generates responses based on patterns learned during training, predicting the most likely continuation based on your input. Several factors can cause the model to veer into incorrect territory:

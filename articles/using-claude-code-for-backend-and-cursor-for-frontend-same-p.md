@@ -39,6 +39,17 @@ Running two AI coding assistants simultaneously in the same project sounds chaot
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Why Split Your Stack Between Two AI Tools](#why-split-your-stack-between-two-ai-tools)
+- [Setting Up Your Project Structure](#setting-up-your-project-structure)
+- [Running Claude Code for Backend Development](#running-claude-code-for-backend-development)
+- [Using Cursor for Frontend Work](#using-cursor-for-frontend-work)
+- [Practical Workflow: Building a Feature End-to-End](#practical-workflow-building-a-feature-end-to-end)
+- [Managing Shared Types](#managing-shared-types)
+- [Tips for Smooth Dual-Tool Workflow](#tips-for-smooth-dual-tool-workflow)
+- [When This Approach Works Best](#when-this-approach-works-best)
+
 ## Why Split Your Stack Between Two AI Tools
 
 Claude Code operates as a CLI-first assistant optimized for terminal workflows, file manipulation, and reasoning through complex architectures. It handles boilerplate generation, refactoring, and debugging with strong contextual awareness across your entire codebase. Cursor, built on VS Code, provides inline editing, chat-based assistance, and visual code generation that feels natural when you're working with React components or styling.

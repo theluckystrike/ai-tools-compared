@@ -44,6 +44,18 @@ Finding affordable AI tools requires understanding the true cost structure. This
 - **Discounts of 25-50% are**: common for qualifying organizations.
 - **This is important because**: some competing AI coding tools charge extra for enhanced privacy features.
 
+## Table of Contents
+
+- [Understanding Cursor Pro's Privacy Features](#understanding-cursor-pros-privacy-features)
+- [Does Privacy Mode Cost Extra in Cursor Pro?](#does-privacy-mode-cost-extra-in-cursor-pro)
+- [How Zero Retention Works in Cursor Pro](#how-zero-retention-works-in-cursor-pro)
+- [Enabling Privacy Mode in Cursor Pro](#enabling-privacy-mode-in-cursor-pro)
+- [Comparing Privacy Features Across Plans](#comparing-privacy-features-across-plans)
+- [Who Should Use Privacy Mode?](#who-should-use-privacy-mode)
+- [Common Misconceptions About Privacy Mode Cost](#common-misconceptions-about-privacy-mode-cost)
+- [Best Practices for Maximum Privacy](#best-practices-for-maximum-privacy)
+- [Verifying Cursor Network Connections](#verifying-cursor-network-connections)
+
 ## Understanding Cursor Pro's Privacy Features
 
 Cursor Pro offers several privacy features designed to address developer concerns about data security. These features are particularly relevant for developers working with sensitive codebases, proprietary algorithms, or in industries with strict data handling requirements.
@@ -267,11 +279,10 @@ Policies vary widely. Some tools let you access your data for a grace period aft
 
 ## Related Articles
 
-- [Midjourney Standard vs Pro Plan: Is Stealth Mode Worth](/ai-tools-compared/midjourney-standard-vs-pro-plan-stealth-mode-worth-extra-cost/)
-- [Cursor AI Privacy Mode How to Use AI Features Without Sendin](/ai-tools-compared/cursor-ai-privacy-mode-how-to-use-ai-features-without-sendin/)
-- [Cursor AI Switching Between Claude and GPT Models Extra Cost](/ai-tools-compared/cursor-ai-switching-between-claude-and-gpt-models-extra-cost/)
-- [Does Cursor Pro Charge Extra for Large File Indexing in 2026](/ai-tools-compared/does-cursor-pro-charge-extra-for-large-file-indexing-2026/)
+- [Cursor AI Privacy Mode How to Use AI Features](/ai-tools-compared/cursor-ai-privacy-mode-how-to-use-ai-features-without-sendin/)
 - [Copilot Individual vs Cursor Pro Annual Cost Breakdown 2026](/ai-tools-compared/copilot-individual-vs-cursor-pro-annual-cost-breakdown-2026/)
-
+- [How Much Does Cursor AI Actually Cost Per Month All](/ai-tools-compared/how-much-does-cursor-ai-actually-cost-per-month-all-plans/)
+- [Windsurf Pro vs Cursor Pro: Price and Features Compared 2026](/ai-tools-compared/windsurf-pro-vs-cursor-pro-price-and-features-compared-2026/)
+- [Does Cursor Pro Charge Extra for Large File Indexing in 2026](/ai-tools-compared/does-cursor-pro-charge-extra-for-large-file-indexing-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

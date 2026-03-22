@@ -43,6 +43,26 @@ The `@Serializable` annotation and `Json {}` configuration block are well unders
 - **This guide evaluates which**: tools best help developers produce correct Kotlin Multiplatform implementations.
 - **Mismatched signatures cause compilation**: failures that are sometimes difficult to diagnose.
 
+## Table of Contents
+
+- [Understanding Kotlin Multiplatform Correctness Challenges](#understanding-kotlin-multiplatform-correctness-challenges)
+- [Key Capabilities for Kotlin Multiplatform AI Tools](#key-capabilities-for-kotlin-multiplatform-ai-tools)
+- [Code Example: Expect/Actual Pattern](#code-example-expectactual-pattern)
+- [Tool Comparison: AI Assistants for Kotlin Multiplatform](#tool-comparison-ai-assistants-for-kotlin-multiplatform)
+- [Code Example: Platform-Specific API Handling](#code-example-platform-specific-api-handling)
+- [Real-World Workflow: Setting Up a KMP Shared Module](#real-world-workflow-setting-up-a-kmp-shared-module)
+- [Specific Use Cases and Limitations](#specific-use-cases-and-limitations)
+- [Best Practices for Working with AI on Kotlin Multiplatform](#best-practices-for-working-with-ai-on-kotlin-multiplatform)
+- [Advanced: Custom AI Instructions for KMP Projects](#advanced-custom-ai-instructions-for-kmp-projects)
+- [Key Rules](#key-rules)
+- [Gradle Structure to Understand](#gradle-structure-to-understand)
+- [Example Patterns](#example-patterns)
+- [CLI Workflow for Validating KMP Builds](#cli-workflow-for-validating-kmp-builds)
+- [Decision Framework for Platform-Specific Code](#decision-framework-for-platform-specific-code)
+- [Testing Kotlin Multiplatform Code with AI Assistance](#testing-kotlin-multiplatform-code-with-ai-assistance)
+- [Troubleshooting Common AI Mistakes on KMP](#troubleshooting-common-ai-mistakes-on-kmp)
+- [Related Reading](#related-reading)
+
 ## Understanding Kotlin Multiplatform Correctness Challenges
 
 Writing Kotlin Multiplatform shared code involves more than writing cross-platform Kotlin. Developers must navigate several correctness pitfalls that AI tools can help identify and prevent.
@@ -443,10 +463,9 @@ When pasting code to AI, include the comment: `// This is in commonMain source s
 
 ## Related Articles
 
-- [Claude vs ChatGPT for Refactoring Legacy Java Code to Kotlin](/ai-tools-compared/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
+- [AI Code Completion for Kotlin Compose Multiplatform Shared](/ai-tools-compared/ai-code-completion-for-kotlin-compose-multiplatform-shared-u/)
+- [AI Tools for Generating Platform Specific Code in Kotlin](/ai-tools-compared/ai-tools-for-generating-platform-specific-code-in-kotlin-mul/)
 - [AI Assistants for Writing Correct AWS IAM Policies](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
-- [How to Export ChatGPT Shared Links Before Account Deletion](/ai-tools-compared/how-to-export-chatgpt-shared-links-before-account-deletion-2026/)
-- [Best AI for Creating Jest Tests That Verify Correct React](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-react-co/)
-- [Best AI for Creating Jest Tests That Verify Correct Suspense](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-suspense/)
-
+- [Best AI Tools for Writing AWS CDK Infrastructure Code](/ai-tools-compared/best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/)
+- [How Well Do AI Tools Generate Correct Go Interface Implement](/ai-tools-compared/how-well-do-ai-tools-generate-correct-go-interface-implement/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

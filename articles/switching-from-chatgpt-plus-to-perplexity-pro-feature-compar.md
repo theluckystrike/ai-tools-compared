@@ -39,6 +39,20 @@ Switch to Perplexity Pro for stronger web search integration and real-time infor
 - **Ask "Is this still**: current best practice?" 4.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Core Architecture and Search Integration](#core-architecture-and-search-integration)
+- [Code Generation and Technical Tasks](#code-generation-and-technical-tasks)
+- [Context Windows and File Handling](#context-windows-and-file-handling)
+- [API Access and Integrations](#api-access-and-integrations)
+- [Pricing Comparison](#pricing-comparison)
+- [Which Tool Fits Your Workflow](#which-tool-fits-your-workflow)
+- [Real-World Feature Comparison Table](#real-world-feature-comparison-table)
+- [Practical Decision Framework](#practical-decision-framework)
+- [Example Workflow Comparison](#example-workflow-comparison)
+- [Migration Considerations](#migration-considerations)
+- [Cost-Benefit Analysis for Teams](#cost-benefit-analysis-for-teams)
+
 ## Core Architecture and Search Integration
 
 ChatGPT Plus runs on OpenAI's GPT-4o model with a conversational interface. It generates responses based on its training data up to its cutoff date, with browsing available as a separate mode. The system processes your prompts and returns generated text without citing specific sources from the web.

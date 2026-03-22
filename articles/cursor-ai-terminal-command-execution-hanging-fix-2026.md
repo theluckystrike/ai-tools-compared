@@ -39,6 +39,18 @@ Cursor AI provides powerful terminal integration, but users occasionally encount
 - **This guide covers practical**: solutions for resolving terminal command hangs in Cursor AI, targeting developers and power users who need reliable AI-assisted development workflows.
 - **Understanding these causes helps**: you apply the right fix quickly.
 
+## Table of Contents
+
+- [Common Causes of Terminal Hanging](#common-causes-of-terminal-hanging)
+- [Diagnosing Whether It Is a Hang or a Slow Command](#diagnosing-whether-it-is-a-hang-or-a-slow-command)
+- [Fix 1: Kill Stuck Terminal Processes](#fix-1-kill-stuck-terminal-processes)
+- [Fix 2: Configure Terminal Shell Settings](#fix-2-configure-terminal-shell-settings)
+- [Fix 3: Manage Subprocesses Correctly](#fix-3-manage-subprocesses-correctly)
+- [Fix 4: Clear Terminal State and Cache](#fix-4-clear-terminal-state-and-cache)
+- [Fix 5: Update and Reinstall Cursor](#fix-5-update-and-reinstall-cursor)
+- [Fix 6: Adjust Cursor's AI Terminal Timeout Settings](#fix-6-adjust-cursors-ai-terminal-timeout-settings)
+- [Prevention Strategies](#prevention-strategies)
+
 ## Common Causes of Terminal Hanging
 
 Terminal command execution hangs in Cursor AI typically stem from several root causes. Understanding these causes helps you apply the right fix quickly.

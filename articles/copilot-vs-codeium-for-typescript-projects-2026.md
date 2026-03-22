@@ -40,6 +40,28 @@ TypeScript-specific AI completion is a distinct skill from general code completi
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **Codeium**: Completed with a generic validation approach that didn't use reflect-metadata.
 
+## Table of Contents
+
+- [Testing Methodology](#testing-methodology)
+- [Scenario 1: Generic Utility Type Completion](#scenario-1-generic-utility-type-completion)
+- [Scenario 2: Class Decorator with TypeScript Metadata](#scenario-2-class-decorator-with-typescript-metadata)
+- [Scenario 3: Discriminated Union Exhaustiveness](#scenario-3-discriminated-union-exhaustiveness)
+- [Scenario 4: Complex Generic Constraints](#scenario-4-complex-generic-constraints)
+- [Acceptance Rate Summary (TypeScript-Specific Patterns)](#acceptance-rate-summary-typescript-specific-patterns)
+- [General Completion Quality](#general-completion-quality)
+- [Chat Features: Generating Types from JSON](#chat-features-generating-types-from-json)
+- [Scenario 5: Async Error Handling with Type Narrowing](#scenario-5-async-error-handling-with-type-narrowing)
+- [Scenario 6: React Component Typing with Generics](#scenario-6-react-component-typing-with-generics)
+- [Advanced Pattern: Namespace Merging](#advanced-pattern-namespace-merging)
+- [IDE Integration and Autocomplete Speed](#ide-integration-and-autocomplete-speed)
+- [Configuration for TypeScript Projects](#configuration-for-typescript-projects)
+- [Real Project Integration](#real-project-integration)
+- [Fine-Tuning on Your Codebase](#fine-tuning-on-your-codebase)
+- [Long-Context TypeScript Files](#long-context-typescript-files)
+- [Tradeoffs Summary](#tradeoffs-summary)
+- [Cost Comparison (March 2026)](#cost-comparison-march-2026)
+- [Which to Choose](#which-to-choose)
+
 ## Testing Methodology
 
 Both tools were tested in VS Code on a TypeScript 5.x project with strict mode enabled. Each scenario was tested 5 times to account for suggestion variability. Acceptance rate = how often the first suggestion was correct without editing.

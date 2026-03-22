@@ -40,6 +40,17 @@ Enterprise security teams face unique challenges when developers adopt AI coding
 - **Aim for a false**: positive rate below 2% before deploying any new pattern to production.
 - **Build a regression test**: suite that covers your top 50 most common code patterns.
 
+## Table of Contents
+
+- [Understanding the Threat Model](#understanding-the-threat-model)
+- [Core DLP Rule Categories](#core-dlp-rule-categories)
+- [Implementation Strategies](#implementation-strategies)
+- [Policy Enforcement Workflows](#policy-enforcement-workflows)
+- [Aligning DLP Rules with Vendor Data Policies](#aligning-dlp-rules-with-vendor-data-policies)
+- [Enforcing Tool Approval at the Network Layer](#enforcing-tool-approval-at-the-network-layer)
+- [Testing Your DLP Rules](#testing-your-dlp-rules)
+- [Audit Logging and Incident Response](#audit-logging-and-incident-response)
+
 ## Understanding the Threat Model
 
 AI coding assistant browser extensions operate differently from traditional software. They process code locally, send context to cloud APIs, and store conversation history. The primary risks include:
@@ -423,11 +434,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Enterprise AI Coding Tool Network Security Requirements.](/ai-tools-compared/enterprise-ai-coding-tool-network-security-requirements-and-/)
-- [How to Write an Enterprise Acceptable Use Policy for AI](/ai-tools-compared/how-to-write-enterprise-acceptable-use-policy-for-ai-coding-assistants/)
+- [Enterprise AI Coding Tool Network Security Requirements](/ai-tools-compared/enterprise-ai-coding-tool-network-security-requirements-and-/)
 - [AI Coding Assistant Data Sovereignty Requirements](/ai-tools-compared/ai-coding-assistant-data-sovereignty-requirements-for-companies-operating-in-eu-2026/)
 - [AI Coding Assistant Session Data Lifecycle](/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-- [Best AI Coding Tools for Python Data Science and pandas Work](/ai-tools-compared/best-ai-coding-tools-for-python-data-science-and-pandas-work/)
-
+- [How to Evaluate AI Coding Tool Data Processing Agreements](/ai-tools-compared/how-to-evaluate-ai-coding-tool-data-processing-agreements-be/)
+- [Best AI Coding Tools for Python Data Science and pandas](/ai-tools-compared/best-ai-coding-tools-for-python-data-science-and-pandas-work/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

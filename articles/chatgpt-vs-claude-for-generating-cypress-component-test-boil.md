@@ -39,6 +39,21 @@ Choose ChatGPT if you have simple React components and want quick, minimal test 
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **Choose ChatGPT if you**: have simple React components and want quick, minimal test boilerplate you can extend yourself.
 
+## Table of Contents
+
+- [Why Cypress Component Testing Matters for React](#why-cypress-component-testing-matters-for-react)
+- [ChatGPT for Cypress Component Test Generation](#chatgpt-for-cypress-component-test-generation)
+- [Claude for Cypress Component Test Generation](#claude-for-cypress-component-test-generation)
+- [Practical Recommendations](#practical-recommendations)
+- [Verifying Generated Tests](#verifying-generated-tests)
+- [Tool Pricing and Availability](#tool-pricing-and-availability)
+- [Real Component Test Example](#real-component-test-example)
+- [Testing Patterns AI Can Help Generate](#testing-patterns-ai-can-help-generate)
+- [Deciding Between Tools: Decision Matrix](#deciding-between-tools-decision-matrix)
+- [Troubleshooting Generated Tests](#troubleshooting-generated-tests)
+- [Test Maintenance and Updates](#test-maintenance-and-updates)
+- [Workflow Optimization](#workflow-optimization)
+
 ## Why Cypress Component Testing Matters for React
 
 Cypress component testing allows you to test individual React components in isolation, verifying that they render correctly, respond to user interactions, and maintain proper state. Unlike end-to-end tests that navigate through your entire application, component tests focus on the component's behavior with different props and user actions.

@@ -41,6 +41,17 @@ For developers building video applications, automatic subtitle generation has be
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Leading services now achieve**: 95%+ accuracy on clear audio with proper language models, though accuracy drops with background noise, multiple speakers, or accented speech.
 
+## Table of Contents
+
+- [Why AI-Powered Subtitle Generation Matters](#why-ai-powered-subtitle-generation-matters)
+- [Comparing Leading AI Subtitle Tools](#comparing-leading-ai-subtitle-tools)
+- [Tool Comparison at a Glance](#tool-comparison-at-a-glance)
+- [Handling Multiple Speakers and Timestamps](#handling-multiple-speakers-and-timestamps)
+- [Post-Processing Considerations](#post-processing-considerations)
+- [Integration Patterns for Developers](#integration-patterns-for-developers)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+- [Related Reading](#related-reading)
+
 ## Why AI-Powered Subtitle Generation Matters
 
 Manual subtitle creation is time-consuming and expensive, costing around $1-3 per minute of video for human transcription. AI-powered alternatives can process the same content in seconds, reducing costs by 90% or more while maintaining acceptable accuracy for many use cases. For content creators, accessibility requirements, or global applications serving multiple languages, automated subtitle generation provides a scalable solution.

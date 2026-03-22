@@ -41,6 +41,16 @@ Missing `existing: true` on S3 event triggers when the bucket already exists.
 - **This keeps AI context**: focused and prevents it from losing track of IAM requirements or environment variable consistency as the file grows.
 - **Suggest least-privilege alternatives." AI**: catches obvious over-permissioning when asked directly.
 
+## Table of Contents
+
+- [Why Use AI for Serverless Configuration](#why-use-ai-for-serverless-configuration)
+- [AI Tool Comparison for Serverless Configuration](#ai-tool-comparison-for-serverless-configuration)
+- [Prerequisites](#prerequisites)
+- [Advanced Patterns AI Can Generate](#advanced-patterns-ai-can-generate)
+- [Troubleshooting](#troubleshooting)
+- [Best Practices for AI Configuration Generation](#best-practices-for-ai-configuration-generation)
+- [Related Reading](#related-reading)
+
 ## Why Use AI for Serverless Configuration
 
 Manually writing serverless.yml files involves remembering provider-specific settings, function memory allocations, timeout values, and layer configurations. AI tools understand these patterns and can generate configurations based on your requirements. You describe your function needs in natural language, and AI produces the corresponding YAML structure.

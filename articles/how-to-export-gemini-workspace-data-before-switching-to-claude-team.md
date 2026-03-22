@@ -38,6 +38,22 @@ To export your Gemini workspace data before switching to Claude Team, use Google
 - **Claude can read documents**: you upload directly, or you can use copy-paste workflows.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Why Export Your Gemini Workspace Data](#why-export-your-gemini-workspace-data)
+- [What Data You Can Export](#what-data-you-can-export)
+- [Step-by-Step Export Process](#step-by-step-export-process)
+- [Extracting Conversations Programmatically](#extracting-conversations-programmatically)
+- [Exporting Custom Gems and Instructions](#exporting-custom-gems-and-instructions)
+- [Recreating Gems as Claude Projects](#recreating-gems-as-claude-projects)
+- [Searching and Indexing Your Exported History](#searching-and-indexing-your-exported-history)
+- [Preserving Context for Claude Migration](#preserving-context-for-claude-migration)
+- [Projects Worked On](#projects-worked-on)
+- [Useful Custom Instructions](#useful-custom-instructions)
+- [Recurring Patterns](#recurring-patterns)
+- [What Cannot Be Exported](#what-cannot-be-exported)
+- [Best Practices Before Switching](#best-practices-before-switching)
+
 ## Why Export Your Gemini Workspace Data
 
 Your Gemini workspace contains more than just chat logs. Depending on your subscription level, you have accumulated conversation threads, custom instructions, project-specific contexts, and possibly integrated code or documents. Before you cancel your subscription or reduce access, retrieving this data ensures continuity in your work.

@@ -39,6 +39,14 @@ Manage context across multiple repos by symlinking shared packages, maintaining 
 - **Use submodules for shared**: code that you actively develop.
 - **shared-lib changes must be**: merged first (1 day buffer for integration) 2.
 
+## Table of Contents
+
+- [Why Context Management Matters Across Repositories](#why-context-management-matters-across-repositories)
+- [Prerequisites](#prerequisites)
+- [Advanced Context Snapshot Patterns](#advanced-context-snapshot-patterns)
+- [Documentation Requirements for Multi-Repo Features](#documentation-requirements-for-multi-repo-features)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Context Management Matters Across Repositories
 
 When you work with multiple repositories that share code, libraries, or domain logic, AI assistants need to understand the relationships between them. A typical scenario involves a shared library repository used by several service repositories, or a monorepo split into separate Git repositories over time. Without proper context management, AI tools generate code that conflicts with existing patterns or duplicate functionality that already exists elsewhere.
@@ -421,10 +429,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Manage AI Coding Tool Rate Limits Across Team of](/ai-tools-compared/how-to-manage-ai-coding-tool-rate-limits-across-team-of-developers/)
-- [How to Manage AI Coding Context When Switching Between Diffe](/ai-tools-compared/how-to-manage-ai-coding-context-when-switching-between-diffe/)
+- [How to Manage AI Coding Context When Switching](/ai-tools-compared/how-to-manage-ai-coding-context-when-switching-between-diffe/)
 - [How to Manage AI Coding Context Window to Avoid Hallucinated](/ai-tools-compared/how-to-manage-ai-coding-context-window-to-avoid-hallucinated/)
-- [Claude Code Losing Context Across Sessions Fix](/ai-tools-compared/claude-code-losing-context-across-sessions-fix/)
 - [Effective Context Management Strategies for AI Coding](/ai-tools-compared/effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/)
-
+- [What Source Code Context Window Do Different AI Coding Tools](/ai-tools-compared/what-source-code-context-window-do-different-ai-coding-tools/)
+- [Best Practices for AI Coding Tool Project Configuration](/ai-tools-compared/best-practices-for-ai-coding-tool-project-configuration-in-l/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

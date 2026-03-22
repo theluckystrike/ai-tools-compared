@@ -42,6 +42,23 @@ Flaky Cypress tests—those that pass and fail intermittently—are often caused
 - **Cursor's IDE integration benefits**: developers who spend most time in code.
 - **Flaky Cypress tests**: those that pass and fail intermittently—are often caused by timing issues where tests attempt to interact with elements before they're ready.
 
+## Table of Contents
+
+- [Understanding Timing-Related Flakiness in Cypress](#understanding-timing-related-flakiness-in-cypress)
+- [Claude Code: Context-Aware Timing Analysis](#claude-code-context-aware-timing-analysis)
+- [Cursor: Real-Time Fix Suggestions](#cursor-real-time-fix-suggestions)
+- [GitHub Copilot: Pattern-Based Suggestions](#github-copilot-pattern-based-suggestions)
+- [Codeium: Fast Completions with Context](#codeium-fast-completions-with-context)
+- [Comparing Tool Effectiveness](#comparing-tool-effectiveness)
+- [Best Practices for AI-Assisted Timing Fixes](#best-practices-for-ai-assisted-timing-fixes)
+- [Common Timing Fixes AI Tools Suggest](#common-timing-fixes-ai-tools-suggest)
+- [Advanced Timing Patterns and AI Solutions](#advanced-timing-patterns-and-ai-solutions)
+- [Intercepting Network Requests for Stability](#intercepting-network-requests-for-stability)
+- [Context-Specific Solutions by Framework](#context-specific-solutions-by-framework)
+- [Decision Framework for Timing Fixes](#decision-framework-for-timing-fixes)
+- [Testing the Tests with AI Guidance](#testing-the-tests-with-ai-guidance)
+- [Pricing and Availability](#pricing-and-availability)
+
 ## Understanding Timing-Related Flakiness in Cypress
 
 Cypress runs tests in a Node.js environment against a real browser, but the async nature of DOM updates, network requests, and animations creates numerous opportunities for timing-related failures. Common timing issues include:
@@ -314,11 +331,10 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 
 ## Related Articles
 
-- [How to Use AI to Debug Flaky Integration Tests in CI Pipelin](/ai-tools-compared/how-to-use-ai-to-debug-flaky-integration-tests-in-ci-pipelin/)
-- [Best AI for Debugging CSS Flexbox Alignment Issues Across](/ai-tools-compared/best-ai-for-debugging-css-flexbox-alignment-issues-across-di/)
-- [ChatGPT vs Claude for Generating Cypress Component Test Boil](/ai-tools-compared/chatgpt-vs-claude-for-generating-cypress-component-test-boil/)
-- [Cursor Background Agent Timing Out Fix (2026)](/ai-tools-compared/cursor-background-agent-timing-out-fix-2026/)
-- [AI Tools for Analyzing Which Open Source Issues Would Benefi](/ai-tools-compared/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
-
+- [How to Use AI to Debug Flaky Integration Tests in CI](/ai-tools-compared/how-to-use-ai-to-debug-flaky-integration-tests-in-ci-pipelin/)
+- [Best AI Tools for Generating Unit Tests 2026](/ai-tools-compared/ai-tools-for-generating-unit-tests-2026/)
+- [Best AI Tools for Generating Unit Tests: Legacy](/ai-tools-compared/best-ai-tools-for-generating-unit-tests-from-legacy-code-without-tests/)
+- [Best AI Tools for Writing Playwright Tests 2026](/ai-tools-compared/best-ai-tools-for-writing-playwright-tests-2026/)
+- [Best AI Tools for Generating Unit Tests](/ai-tools-compared/best-ai-tools-for-generating-unit-tests-from-legacy-code-comparison/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

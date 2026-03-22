@@ -39,6 +39,14 @@ Configure Claude Code project memory by creating a CLAUDE.md file in your projec
 - **Stale instructions confuse Claude**: Code just as they confuse new developers.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Security Requirements](#security-requirements)
+- [Performance Guidelines](#performance-guidelines)
+- [Troubleshooting Project Memory](#troubleshooting-project-memory)
+- [Advanced: Dynamic Project Memory](#advanced-dynamic-project-memory)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

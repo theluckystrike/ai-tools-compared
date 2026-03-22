@@ -39,6 +39,17 @@ Kubernetes troubleshooting requires interpreting cryptic error messages, analyzi
 - **Total cost**: ~$5-10/month in API usage.
 - **Growing team (5-25 people)**: Add GitHub Copilot ($10/month) for shared manifest editing, plus k8sgpt for cluster analysis.
 
+## Table of Contents
+
+- [Understanding Kubernetes Debugging Challenges](#understanding-kubernetes-debugging-challenges)
+- [k8sgpt: Kubernetes-Specialized Tool](#k8sgpt-kubernetes-specialized-tool)
+- [Claude Code: General-Purpose Debugging](#claude-code-general-purpose-debugging)
+- [GitHub Copilot: IDE-Integrated Approach](#github-copilot-ide-integrated-approach)
+- [Robusta: AI-Powered Incident Response](#robusta-ai-powered-incident-response)
+- [Comparison Matrix](#comparison-matrix)
+- [Practical Troubleshooting Workflow](#practical-troubleshooting-workflow)
+- [Recommendations by Team Size](#recommendations-by-team-size)
+
 ## Understanding Kubernetes Debugging Challenges
 
 Troubleshooting Kubernetes involves several distinct tasks:
@@ -314,10 +325,9 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 
 ## Related Articles
 
-- [ChatGPT Slow Response Fix 2026: Complete Troubleshooting](/ai-tools-compared/chatgpt-slow-response-fix-2026/)
-- [Claude Code Not Pushing to GitHub Fix: Troubleshooting Guide](/ai-tools-compared/claude-code-not-pushing-to-github-fix/)
-- [Cursor AI Making Too Many API Calls Fix: Troubleshooting](/ai-tools-compared/cursor-ai-making-too-many-api-calls-fix/)
-- [Cursor Keeps Crashing Fix 2026: Complete Troubleshooting](/ai-tools-compared/cursor-keeps-crashing-fix-2026/)
 - [AI Tools for Detecting Kubernetes Misconfiguration Before](/ai-tools-compared/ai-tools-for-detecting-kubernetes-misconfiguration-before-de/)
-
+- [Best AI Tools for Writing Kubernetes Custom Resource](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-custom-resource-definitions-2026/)
+- [Best AI Tools for Writing Kubernetes Operator Code](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-operator-code-from-scratch/)
+- [Best AI Tools for Kubernetes Manifest Generation](/ai-tools-compared/best-ai-tools-for-kubernetes-manifest-generation/)
+- [AI Tools for Writing Kubernetes Operators 2026](/ai-tools-compared/ai-tools-for-writing-kubernetes-operators-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -39,6 +39,16 @@ Claude Sonnet is the better choice for code generation if you want faster respon
 - **Claude and GPT-4 serve**: different strengths, so combining them can cover more use cases than relying on either one alone.
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 
+## Table of Contents
+
+- [Model Overview](#model-overview)
+- [Code Generation Quality](#code-generation-quality)
+- [API Backend Task](#api-backend-task)
+- [Performance and Response Time](#performance-and-response-time)
+- [Context Handling](#context-handling)
+- [When to Choose Each Model](#when-to-choose-each-model)
+- [Cost Considerations](#cost-considerations)
+
 ## Model Overview
 
 **Claude Sonnet 4** is Anthropic's mid-tier model, positioned between the faster Haiku and the more capable Opus. It emphasizes clear reasoning and produces well-structured code with thoughtful comments.

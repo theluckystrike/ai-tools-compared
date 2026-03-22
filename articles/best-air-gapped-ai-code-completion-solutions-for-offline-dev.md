@@ -39,6 +39,18 @@ Continue.dev paired with Ollama is the top air-gapped solution for offline code 
 - **This guide examines the**: best options available in 2026 and how to set them up for offline development workflows.
 - **CodeLlama 7B is the**: baseline for most developers.
 
+## Table of Contents
+
+- [Why Air Gapped Code Completion Matters](#why-air-gapped-code-completion-matters)
+- [Top Air Gapped AI Code Completion Solutions](#top-air-gapped-ai-code-completion-solutions)
+- [Comparing Air-Gapped Solutions](#comparing-air-gapped-solutions)
+- [Selecting the Right Model for Offline Completion](#selecting-the-right-model-for-offline-completion)
+- [Performance Considerations](#performance-considerations)
+- [Setting Up a Fully Offline Environment](#setting-up-a-fully-offline-environment)
+- [Compliance Considerations for Air-Gapped Environments](#compliance-considerations-for-air-gapped-environments)
+- [Best Practices for Offline AI Code Completion](#best-practices-for-offline-ai-code-completion)
+- [Related Reading](#related-reading)
+
 ## Why Air Gapped Code Completion Matters
 
 Security-sensitive industries including finance, healthcare, and government sectors frequently prohibit cloud-based AI tools due to compliance requirements. Additionally, developers working in areas with unreliable internet connectivity or those who simply value maximum privacy benefit from local-only solutions. The trade-off typically involves slightly less sophisticated suggestions compared to cloud-powered alternatives, but the privacy and reliability gains often outweigh this compromise.
@@ -276,5 +288,13 @@ Pick one tool from the options discussed and sign up for a free trial. Spend 30 
 **What is the learning curve like?**
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+
+## Related Articles
+
+- [Running Starcoder2 Locally for Code Completion](/ai-tools-compared/running-starcoder2-locally-for-code-completion-without-sendi/)
+- [Self Hosted AI Coding Tools That Support Air Gapped](/ai-tools-compared/self-hosted-ai-coding-tools-that-support-air-gapped-environm/)
+- [Cheapest Way to Get AI Code Completion in Vim 2026](/ai-tools-compared/cheapest-way-to-get-ai-code-completion-in-vim-2026/)
+- [Open Source AI Code Completion for Neovim Without Cloud API](/ai-tools-compared/open-source-ai-code-completion-for-neovim-without-cloud-api-/)
+- [AI Code Completion for Java Record Classes and Sealed](/ai-tools-compared/ai-code-completion-for-java-record-classes-and-sealed-interf/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

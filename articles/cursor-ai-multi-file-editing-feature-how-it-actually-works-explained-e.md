@@ -40,6 +40,21 @@ Cursor AI has transformed how developers work with code by introducing intellige
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [The Core Architecture of Multi-File Editing](#the-core-architecture-of-multi-file-editing)
+- [How Cursor Processes Multi-File Edit Requests](#how-cursor-processes-multi-file-edit-requests)
+- [Practical Techniques for Effective Multi-File Editing](#practical-techniques-for-effective-multi-file-editing)
+- [Common Limitations and How to Work Around Them](#common-limitations-and-how-to-work-around-them)
+- [Advanced Strategies for Power Users](#advanced-strategies-for-power-users)
+- [Best Practices Summary](#best-practices-summary)
+- [Debugging Multi-File Edit Failures](#debugging-multi-file-edit-failures)
+- [Performance Optimization for Large Codebases](#performance-optimization-for-large-codebases)
+- [Comparison with Manual Refactoring](#comparison-with-manual-refactoring)
+- [Real-World Refactoring Examples](#real-world-refactoring-examples)
+- [Context Window Management](#context-window-management)
+- [Testing Multi-File Changes](#testing-multi-file-changes)
+
 ## The Core Architecture of Multi-File Editing
 
 Cursor's multi-file editing operates through a sophisticated pipeline that combines static code analysis with large language model capabilities. When you request changes that span multiple files, Cursor first analyzes your codebase to build a dependency graph. This graph maps relationships between functions, classes, imports, and shared variables across your project.
@@ -371,11 +386,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Copilot Workspace vs Cursor Composer Multi File Editing Comp](/ai-tools-compared/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)
+- [Copilot Workspace vs Cursor Composer Multi File Editing](/ai-tools-compared/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)
 - [Windsurf Cascade vs Cursor Composer: Multi-File AI Editing](/ai-tools-compared/windsurf-cascade-vs-cursor-composer-multi-file-ai-editing-co/)
+- [Windsurf AI Flows Feature How It Chains Multiple Editing](/ai-tools-compared/windsurf-ai-flows-feature-how-it-chains-multiple-editing-ste/)
+- [Cursor AI Background Agent Feature for Autonomous Multi](/ai-tools-compared/cursor-ai-background-agent-feature-for-autonomous-multi-step/)
 - [Cursor Multi-File Edit Breaking Code Fix (2026)](/ai-tools-compared/cursor-multi-file-edit-breaking-code-fix-2026/)
-- [Cursor AI Background Agent Feature for Autonomous Multi Step](/ai-tools-compared/cursor-ai-background-agent-feature-for-autonomous-multi-step/)
-- [Perplexity Spaces Collaboration Feature Free vs Pro Limits](/ai-tools-compared/perplexity-spaces-collaboration-feature-free-vs-pro-limits-explained/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

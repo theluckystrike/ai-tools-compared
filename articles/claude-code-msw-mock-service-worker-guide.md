@@ -36,6 +36,16 @@ voice-checked: true---
 - **Topics covered**: introduction, setting up msw in your project, creating mock handlers
 - **Practical guidance included**: Step-by-step setup and configuration instructions
 
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Prerequisites](#prerequisites)
+- [Advanced Handler Patterns](#advanced-handler-patterns)
+- [Performance Considerations](#performance-considerations)
+- [Best Practices](#best-practices)
+- [Comparison with Alternatives](#comparison-with-alternatives)
+- [Troubleshooting](#troubleshooting)
+
 ## Introduction
 
 Mock Service Worker (MSW) is a powerful API mocking library that intercepts network requests at the service worker level. When combined with Claude Code, it creates a development environment where you can simulate API responses without relying on external servers. This guide walks you through setting up MSW with Claude Code and using it effectively in your development workflow.
@@ -381,10 +391,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [AI Tools for Writing Jest Tests for Web Worker and Service](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-web-worker-and-service-w/)
-- [AI Tools for Generating API Mock Servers 2026](/ai-tools-compared/ai-tools-for-generating-api-mock-servers-2026/)
-- [AI Tools for Generating Jest Mock Implementations for Comple](/ai-tools-compared/ai-tools-for-generating-jest-mock-implementations-for-comple/)
-- [Cursor vs Windsurf for Building Next Js App from Design Mock](/ai-tools-compared/cursor-vs-windsurf-for-building-next-js-app-from-design-mock/)
-- [AI Tools for Generating Kubernetes Service Mesh](/ai-tools-compared/ai-tools-for-generating-kubernetes-service-mesh-configuratio/)
-
+- [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
+- [Claude Code Runbook Documentation Guide](/ai-tools-compared/claude-code-runbook-documentation-guide/)
+- [Claude Code Java Library Development Guide](/ai-tools-compared/claude-code-java-library-development-guide/)
+- [Claude Code for Node.js Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-nodejs-profiling-workflow-tutorial/)
+- [Claude Code vs Cursor for Backend Development](/ai-tools-compared/claude-code-vs-cursor-for-backend-development/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

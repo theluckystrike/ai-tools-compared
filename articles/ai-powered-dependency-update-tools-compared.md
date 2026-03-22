@@ -43,6 +43,23 @@ Analyze this update:
 - **Use AI-generated tests as**: a starting point, then add cases that cover your unique requirements and failure modes.
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
+## Table of Contents
+
+- [The Baseline: Dependabot](#the-baseline-dependabot)
+- [Renovate with Smart Configuration](#renovate-with-smart-configuration)
+- [AI-Enhanced: Custom Update Analyzer](#ai-enhanced-custom-update-analyzer)
+- [Codemod.com for Major Upgrades](#codemodcom-for-major-upgrades)
+- [Tool Comparison](#tool-comparison)
+- [Recommended Stack](#recommended-stack)
+- [Real-World Failure Scenarios](#real-world-failure-scenarios)
+- [Building Your Own AI Analyzer](#building-your-own-ai-analyzer)
+- [Security Scanning Deep Dive](#security-scanning-deep-dive)
+- [Testing Dependency Updates](#testing-dependency-updates)
+- [Dependency Update Timing](#dependency-update-timing)
+- [Handling Monorepos](#handling-monorepos)
+- [Cost Analysis](#cost-analysis)
+- [Related Reading](#related-reading)
+
 ## The Baseline: Dependabot
 
 Dependabot (GitHub-native) and Renovate (configurable, self-hostable) detect outdated packages and open PRs. That's it.
@@ -457,6 +474,14 @@ For most teams: Renovate free tier is optimal. Add Socket.dev if you're security
 - [AI Tools for Automated Infrastructure Drift Detection](/ai-tools-compared/ai-tools-for-automated-infrastructure-drift-detection-and-co/)
 - [AI Tools for Automated Changelog Generation 2026](/ai-tools-compared/ai-tools-for-automated-changelog-generation-2026/)
 - [AI-Powered Database Migration Tools Comparison](/ai-tools-compared/ai-powered-database-migration-tools-comparison/)
+
+## Related Articles
+
+- [AI Tools for Generating Dependency Update Pull Request](/ai-tools-compared/ai-tools-for-generating-dependency-update-pull-request-descr/)
+- [AI-Powered Code Translation Tools Compared](/ai-tools-compared/ai-powered-code-translation-tools-compared/)
+- [AI Tools for Automated Security Scanning Compared](/ai-tools-compared/ai-tools-for-automated-security-scanning-compared/)
+- [AI Tools for Generating Renovate Bot Configuration for](/ai-tools-compared/ai-tools-for-generating-renovate-bot-configuration-for-autom/)
+- [Configuring AI Coding Tools to Follow Your Teams Dependency](/ai-tools-compared/configuring-ai-coding-tools-to-follow-your-teams-dependency-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

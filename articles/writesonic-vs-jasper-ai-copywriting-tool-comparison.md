@@ -39,6 +39,18 @@ Choose Writesonic for SEO-optimized content generation with flexible pay-as-you-
 - **Choose Jasper AI when brand voice consistency matters across your team**: it offers custom model training for enterprise customers, strong browser extensions, and stronger collaboration features.
 - **Writesonic focuses on prompt**: engineering and provides pre-built templates optimized for specific content types.
 
+## Table of Contents
+
+- [Platform Overview](#platform-overview)
+- [API Capabilities and Developer Experience](#api-capabilities-and-developer-experience)
+- [Integration with Development Workflows](#integration-with-development-workflows)
+- [Content Quality and Customization](#content-quality-and-customization)
+- [Pricing for Developers](#pricing-for-developers)
+- [Practical Use Cases for Developers](#practical-use-cases-for-developers)
+- [When to Choose Writesonic](#when-to-choose-writesonic)
+- [When to Choose Jasper AI](#when-to-choose-jasper-ai)
+- [Recommendations](#recommendations)
+
 ## Platform Overview
 
 Writesonic positions itself as an AI writing platform with a strong emphasis on marketing content, blog posts, and SEO-optimized articles. The platform offers both a web interface and API access, making it suitable for developers building automated content workflows.

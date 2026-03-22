@@ -40,6 +40,17 @@ AI assistants debug Chrome DevTools heap snapshot memory leaks by interpreting r
 - **Common React memory leaks**: include stale closures in useEffect, uncleaned-up subscriptions, forgotten timers or intervals, and context providers that hold large data.
 - **Use it for vanilla**: JavaScript problems where retention paths are simpler.
 
+## Table of Contents
+
+- [What to Look for in an AI Memory Leak Debugging Assistant](#what-to-look-for-in-an-ai-memory-leak-debugging-assistant)
+- [Practical Examples of AI-Assisted Heap Snapshot Analysis](#practical-examples-of-ai-assisted-heap-snapshot-analysis)
+- [Understanding Heap Snapshot Retention Paths](#understanding-heap-snapshot-retention-paths)
+- [How to Get the Best Results from AI Assistants](#how-to-get-the-best-results-from-ai-assistants)
+- [Automating Heap Snapshot Analysis with AI](#automating-heap-snapshot-analysis-with-ai)
+- [Memory Leak Pattern Recognition](#memory-leak-pattern-recognition)
+- [Best AI Tools for Memory Debugging](#best-ai-tools-for-memory-debugging)
+- [Preventing Leaks Before They Happen](#preventing-leaks-before-they-happen)
+
 ## What to Look for in an AI Memory Leak Debugging Assistant
 
 Not all AI assistants handle heap snapshot analysis equally. The best ones share several characteristics that make them genuinely useful for developers working with Chrome DevTools:

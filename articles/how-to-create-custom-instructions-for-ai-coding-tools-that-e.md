@@ -39,6 +39,24 @@ Create custom instructions for AI coding tools by documenting your specific nami
 - **Here is an example**: instruction set for enforcing naming conventions: ``` Always use snake_case for variable names and function names.
 - **Always use PascalCase for**: class names.
 
+## Table of Contents
+
+- [Why Custom Instructions Matter for Naming Conventions](#why-custom-instructions-matter-for-naming-conventions)
+- [Creating Effective Custom Instructions](#creating-effective-custom-instructions)
+- [Practical Examples Across Different Tools](#practical-examples-across-different-tools)
+- [Naming Conventions](#naming-conventions)
+- [Code Style](#code-style)
+- [Naming Conventions](#naming-conventions)
+- [Testing Your Instructions](#testing-your-instructions)
+- [Advanced Techniques](#advanced-techniques)
+- [Context-Specific Rules](#context-specific-rules)
+- [Files in /src/models/](#files-in-srcmodels)
+- [Files in /src/utils/](#files-in-srcutils)
+- [Files in /tests/](#files-in-tests)
+- [Maintaining Your Instructions](#maintaining-your-instructions)
+- [Measuring Compliance and Iterating](#measuring-compliance-and-iterating)
+- [Integration with Development Workflows](#integration-with-development-workflows)
+
 ## Why Custom Instructions Matter for Naming Conventions
 
 Naming conventions are the backbone of maintainable codebases. They make code readable, help developers predict naming patterns, and enable tooling like autocomplete and refactoring to work effectively. When an AI coding tool ignores your conventions, you spend time manually correcting names or, worse, leave inconsistencies that confuse future developers.

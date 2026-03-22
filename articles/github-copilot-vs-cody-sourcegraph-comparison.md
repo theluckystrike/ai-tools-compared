@@ -41,6 +41,24 @@ Choose Cody by Sourcegraph if you work with large, complex codebases and need AI
 3.
 - **It uses OpenAI's models**: (specifically GPT-4 and newer variants) to generate code suggestions based on your current file and surrounding context.
 
+## Table of Contents
+
+- [Core Architecture and Context Awareness](#core-architecture-and-context-awareness)
+- [Code Generation and Completion Quality](#code-generation-and-completion-quality)
+- [Feature Comparison Table](#feature-comparison-table)
+- [Codebase Awareness and Chat Features](#codebase-awareness-and-chat-features)
+- [Pricing and Accessibility](#pricing-and-accessibility)
+- [IDE Integration and Performance](#ide-integration-and-performance)
+- [Which Should You Choose?](#which-should-you-choose)
+- [Real-World Workflow Differences](#real-world-workflow-differences)
+- [Making the Decision](#making-the-decision)
+- [Performance Benchmarking: Latency and Accuracy](#performance-benchmarking-latency-and-accuracy)
+- [Implementation Guide: Setting Up Both Tools](#implementation-guide-setting-up-both-tools)
+- [Workflow Optimization: Using Both Tools](#workflow-optimization-using-both-tools)
+- [Cost Analysis: Which Provides Better Value](#cost-analysis-which-provides-better-value)
+- [Hybrid Setup: Recommendations](#hybrid-setup-recommendations)
+- [Migration Path: Switching Between Tools](#migration-path-switching-between-tools)
+
 ## Core Architecture and Context Awareness
 
 GitHub Copilot integrates directly into Visual Studio Code, JetBrains IDEs, and other editors through the GitHub Copilot extension. It uses OpenAI's models (specifically GPT-4 and newer variants) to generate code suggestions based on your current file and surrounding context.

@@ -41,6 +41,19 @@ This guide walks through a practical AI-assisted workflow for open source contri
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Finding and Understanding Issues](#finding-and-understanding-issues)
+- [Setting Up the Development Environment](#setting-up-the-development-environment)
+- [Understanding the Codebase](#understanding-the-codebase)
+- [Implementing the Fix](#implementing-the-fix)
+- [Writing Tests](#writing-tests)
+- [Preparing the Pull Request](#preparing-the-pull-request)
+- [Changes](#changes)
+- [Testing](#testing)
+- [Handling Feedback](#handling-feedback)
+- [Final Checklist](#final-checklist)
+
 ## Finding and Understanding Issues
 
 Start with GitHub's issue tracker or your project's preferred platform. Use search filters to find "good first issue" labels, but do not stop there. More valuable contributions often come from issues tagged as bugs or feature requests that match your expertise.
@@ -264,10 +277,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best Workflow for AI-Assisted Test Driven Development Step](/ai-tools-compared/best-workflow-for-ai-assisted-test-driven-development-step-b/)
-- [Effective Strategies for AI Assisted Debugging of](/ai-tools-compared/effective-strategies-for-ai-assisted-debugging-of-intermittent-failures/)
-- [Effective Strategies for AI-Assisted Refactoring Without Bre](/ai-tools-compared/effective-strategies-for-ai-assisted-refactoring-without-bre/)
-- [AI Tools for Analyzing Which Open Source Issues Would Benefi](/ai-tools-compared/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
-- [Best AI Assistant for Creating Open Source Project Branding](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)
-
+- [Effective Workflow for Using AI: Generate](/ai-tools-compared/effective-workflow-for-using-ai-to-generate-and-maintain-changelog-documentation/)
+- [Effective Workflow for Using AI](/ai-tools-compared/effective-workflow-for-using-ai-to-debug-production-issues-from-logs/)
+- [Effective Strategies for AI-Assisted Refactoring](/ai-tools-compared/effective-strategies-for-ai-assisted-refactoring-without-bre/)
+- [Effective AI Coding Workflow for Building Features](/ai-tools-compared/effective-ai-coding-workflow-for-building-features-from-prod/)
+- [Effective Strategies for Using AI](/ai-tools-compared/effective-strategies-for-using-ai-to-learn-new-programming-languages-faster/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

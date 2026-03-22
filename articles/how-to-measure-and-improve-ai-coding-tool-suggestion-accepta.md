@@ -40,6 +40,14 @@ AI coding tools have evolved significantly, but their value depends heavily on h
 - **Tracked acceptance metrics per**: endpoint type Their acceptance rate increased to 58% within three weeks.
 - **Type hints on all**: functions (→ +15% acceptance) 2.
 
+## Table of Contents
+
+- [What Is Suggestion Acceptance Rate](#what-is-suggestion-acceptance-rate)
+- [Prerequisites](#prerequisites)
+- [When to Adjust Expectations](#when-to-adjust-expectations)
+- [Advanced Acceptance Rate Analysis](#advanced-acceptance-rate-analysis)
+- [Troubleshooting](#troubleshooting)
+
 ## What Is Suggestion Acceptance Rate
 
 Suggestion acceptance rate measures the percentage of AI-generated code suggestions that developers accept without modification. Most modern AI coding assistants track this metric internally, but you can also build custom tracking to gain deeper insights.

@@ -43,6 +43,26 @@ Provide pattern examples in your prompts: "Follow the service-repository pattern
 Our project uses the repository pattern with dependency injection.
 - **A week-long trial with**: actual work gives better signal than feature comparison charts.
 
+## Table of Contents
+
+- [Understanding the Challenge](#understanding-the-challenge)
+- [Strategy 1: Provide Explicit Context About Your Architecture](#strategy-1-provide-explicit-context-about-your-architecture)
+- [Strategy 2: Define Pattern-Specific Prompts](#strategy-2-define-pattern-specific-prompts)
+- [Factory Pattern Requirements](#factory-pattern-requirements)
+- [Strategy 3: Implement Code Review Checklists for AI-Generated Code](#strategy-3-implement-code-review-checklists-for-ai-generated-code)
+- [Strategy 4: Use Type Hints as Pattern Enforcement](#strategy-4-use-type-hints-as-pattern-enforcement)
+- [Strategy 5: Validate Generated Code Against Architectural Tests](#strategy-5-validate-generated-code-against-architectural-tests)
+- [Strategy 6: Establish Pattern Documentation in Your Codebase](#strategy-6-establish-pattern-documentation-in-your-codebase)
+- [Repository Pattern Implementation](#repository-pattern-implementation)
+- [Strategy 7: Use Architecture Decision Records as AI Context](#strategy-7-use-architecture-decision-records-as-ai-context)
+- [Status](#status)
+- [Context](#context)
+- [Decision](#decision)
+- [Consequences](#consequences)
+- [Strategy 8: Enforce Patterns Through Linting Rules](#strategy-8-enforce-patterns-through-linting-rules)
+- [Comparing AI Assistants for Pattern Compliance](#comparing-ai-assistants-for-pattern-compliance)
+- [Measuring Success](#measuring-success)
+
 ## Understanding the Challenge
 
 Design patterns represent battle-tested solutions to recurring architectural problems. They provide shared vocabulary, enforce consistency, and guide maintainability. When AI coding assistants suggest implementations, they often prioritize immediate correctness over long-term architectural coherence.
@@ -332,12 +352,11 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Best Practices for AI Coding Tool Project Configuration](/ai-tools-compared/best-practices-for-ai-coding-tool-project-configuration-in-l/)
+- [How to Write System Prompts for AI Coding Assistants](/ai-tools-compared/how-to-write-system-prompts-for-ai-coding-assistants-project/)
 - [Best Practices for AI Coding Tools](/ai-tools-compared/best-practices-for-ai-coding-tools-in-sox-compliant-financial-environments/)
-- [Best Practices for Breaking Down Complex Coding Tasks](/ai-tools-compared/best-practices-for-breaking-down-complex-coding-tasks-for-ai/)
-- [Best Practices for Using AI Coding Tools in HIPAA Regulated](/ai-tools-compared/best-practices-for-using-ai-coding-tools-in-hipaa-regulated-/)
-- [Copilot Suggestions in Private Repos Do They Cost More Than](/ai-tools-compared/copilot-suggestions-in-private-repos-do-they-cost-more-than-public/)
-
+- [Best Practices for AI Coding Tool Project Configuration](/ai-tools-compared/best-practices-for-ai-coding-tool-project-configuration-in-l/)
+- [How to Train Your AI Coding Assistant on Your Team Coding](/ai-tools-compared/how-to-train-your-ai-coding-assistant-on-your-team-coding-st/)
+- [Configuring AI Coding Tools to Follow Your Teams Dependency](/ai-tools-compared/configuring-ai-coding-tools-to-follow-your-teams-dependency-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 {% endraw %}

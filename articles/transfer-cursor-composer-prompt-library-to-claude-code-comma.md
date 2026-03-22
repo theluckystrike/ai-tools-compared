@@ -42,6 +42,32 @@ claude -p "Here is my project structure: $(find .
 - **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
 - **Claude Code skills work**: best when they capture the complete workflow in a single definition.
 
+## Table of Contents
+
+- [Understanding the Fundamental Differences](#understanding-the-fundamental-differences)
+- [Mapping Cursor Prompts to Claude Code Skills](#mapping-cursor-prompts-to-claude-code-skills)
+- [Description](#description)
+- [Instructions](#instructions)
+- [Examples](#examples)
+- [Converting Multi-Step Prompts to Skills](#converting-multi-step-prompts-to-skills)
+- [Migrating Cursor Rules to Claude-md Files](#migrating-cursor-rules-to-claude-md-files)
+- [Using Command-Line Arguments for One-Off Prompts](#using-command-line-arguments-for-one-off-prompts)
+- [Building a Prompt Library Structure](#building-a-prompt-library-structure)
+- [Adapting Prompt Language for Command Execution](#adapting-prompt-language-for-command-execution)
+- [Testing Your Migrated Prompts](#testing-your-migrated-prompts)
+- [Advanced Migration Patterns](#advanced-migration-patterns)
+- [Description](#description)
+- [Parameters](#parameters)
+- [Instructions](#instructions)
+- [Code Generation Workflow](#code-generation-workflow)
+- [Skill Performance Comparison](#skill-performance-comparison)
+- [Execution Environment Variables](#execution-environment-variables)
+- [Description](#description)
+- [Instructions](#instructions)
+- [Migration Checklist](#migration-checklist)
+- [Performance Considerations](#performance-considerations)
+- [Integration with CI/CD](#integration-with-cicd)
+
 ## Understanding the Fundamental Differences
 
 Cursor uses a chat-based interface with Composer where you compose prompts in conversation threads. Claude Code operates through a terminal using commands and a skill system. The key distinction is that Cursor prompts are conversational while Claude Code prompts become declarative instructions stored as skills or passed directly through command-line arguments.
@@ -348,11 +374,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [How to Transfer Your Cursor Composer Prompt Library](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code/)
-- [How to Transfer Midjourney Prompt Library to Ideogram Prompt](/ai-tools-compared/how-to-transfer-midjourney-prompt-library-to-ideogram-prompt/)
 - [Claude Code vs Cursor Composer](/ai-tools-compared/claude-code-vs-cursor-composer-for-full-stack-development-comparison/)
-- [Claude Code Java Library Development Guide](/ai-tools-compared/claude-code-java-library-development-guide/)
-- [How to Transfer Copilot Code Review Settings](/ai-tools-compared/transfer-copilot-code-review-settings-to-cursor-ai-review-co/)
-
+- [Claude Code vs Cursor for Large Codebase Refactoring](/ai-tools-compared/claude-code-vs-cursor-for-large-codebase-refactoring/)
+- [How to Switch from Cursor to Claude Code Without Losing](/ai-tools-compared/how-to-switch-from-cursor-to-claude-code-without-losing-settings/)
+- [Using Claude Code for Backend and Cursor for Frontend Same](/ai-tools-compared/using-claude-code-for-backend-and-cursor-for-frontend-same-p/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 {% endraw %}

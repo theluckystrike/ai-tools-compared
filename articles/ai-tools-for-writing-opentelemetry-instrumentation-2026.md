@@ -39,6 +39,17 @@ Use Claude 3.5 Sonnet for designing instrumentation strategies that span multipl
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **I need distributed traces**: that show the full request path from user browser to database.
 
+## Table of Contents
+
+- [OpenTelemetry's Instrumentation Challenge](#opentelemetrys-instrumentation-challenge)
+- [Claude 3.5 Sonnet: Designing Observable Services](#claude-35-sonnet-designing-observable-services)
+- [GitHub Copilot: Routine Instrumentation While Coding](#github-copilot-routine-instrumentation-while-coding)
+- [ChatGPT 4o: Debugging Broken Traces](#chatgpt-4o-debugging-broken-traces)
+- [Tool Comparison Table](#tool-comparison-table)
+- [Instrumentation Patterns by Tool](#instrumentation-patterns-by-tool)
+- [Sampling Strategies](#sampling-strategies)
+- [Configuration Across Environments](#configuration-across-environments)
+
 ## OpenTelemetry's Instrumentation Challenge
 
 Effective observability requires consistent span naming, proper trace context propagation between services, and meaningful attributes on every span. Most teams struggle with:
@@ -374,8 +385,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Coding Tools for Writing Chainguard Image Supply Chain Security Policies](/ai-coding-tools-for-writing-chainguard-image-supply-chain-se/)
-- [AI Tools for Designers Writing Handoff Notes That Include](/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
-- [Best AI Tools for Technical Documentation Writing in 2026](/ai-tools-for-technical-writing-documentation-2026/)
-
+- [AI Tools for Generating OpenTelemetry Instrumentation Code](/ai-tools-compared/ai-tools-for-generating-opentelemetry-instrumentation-2026/---)
+- [AI Tools for Writing CI CD Pipeline Configurations 2026](/ai-tools-compared/ai-tools-for-writing-ci-cd-pipeline-configurations-2026/)
+- [AI Tools for Writing GitHub Actions Workflows (2026)](/ai-tools-compared/ai-tools/best-ai-tools-for-github-actions-workflows/)
+- [AI Tools for Designers Writing Handoff Notes That Include](/ai-tools-compared/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
+- [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-compared/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -40,6 +40,18 @@ Choose Steve AI if you need varied video styles (animated, whiteboard, live-acti
 - **At 100 thirty-second clips per month**: costs run $10-25.
 - **Choose Steve AI if**: you need varied video styles (animated, whiteboard, live-action), extensive branding controls, and multi-language support for long-form content.
 
+## Table of Contents
+
+- [Platform Overview](#platform-overview)
+- [API Capabilities and Developer Features](#api-capabilities-and-developer-features)
+- [Feature Comparison](#feature-comparison)
+- [Side-by-Side Comparison Table](#side-by-side-comparison-table)
+- [Pricing and Cost Modeling](#pricing-and-cost-modeling)
+- [Building a Combined Pipeline](#building-a-combined-pipeline)
+- [Integration Considerations](#integration-considerations)
+- [Decision Framework](#decision-framework)
+- [Error Handling and Webhook Integration](#error-handling-and-webhook-integration)
+
 ## Platform Overview
 
 **Steve AI** positions itself as a versatile AI video creation tool that supports multiple video styles, including animated, live-action, and whiteboard formats. It offers a cloud-based editor alongside AI generation capabilities, with a focus on accessibility for both technical and non-technical users.
@@ -326,11 +338,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [AI Tools for Converting Raw JSON API Responses into Clean](/ai-tools-compared/ai-tools-for-converting-raw-json-api-responses-into-clean-pandas-dataframes/)
-- [AI Tools for Creating dbt Model Definitions from Raw Databas](/ai-tools-compared/ai-tools-for-creating-dbt-model-definitions-from-raw-databas/)
-- [Best AI Tool for Dietitians Meal Plan Creation 2026](/ai-tools-compared/best-ai-tool-for-dietitians-meal-plan-creation-2026/)
-- [Best AI Tool for Graphic Designers Brief Creation](/ai-tools-compared/best-ai-tool-for-graphic-designers-brief-creation/)
-- [Notion AI vs ChatGPT for Content Creation Compared](/ai-tools-compared/notion-ai-vs-chatgpt-for-content-creation-compared/)
-
+- [Kling AI vs Gen 3 Video Generation: Developer Comparison](/ai-tools-compared/kling-ai-vs-gen-3-video-generation/)
+- [Sora vs Runway AI Video Generation: A Technical](/ai-tools-compared/sora-vs-runway-ai-video-generation/)
+- [Runway ML vs Pika Labs: AI Video Generation Comparison 2026](/ai-tools-compared/runway-ml-vs-pika-labs-ai-video-comparison-2026/)
+- [Runway ML vs Pika AI: Video Generation Tools Compared](/ai-tools-compared/runway-ml-vs-pika-ai-video-generation/)
+- [AI Tools for Video Thumbnail Generation](/ai-tools-compared/ai-tools-for-video-thumbnail-generation/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

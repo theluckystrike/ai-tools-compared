@@ -40,6 +40,23 @@ AI tools have transformed how developers create educational content around algor
 - **Request Interactivity**: Specify pause/resume/step-back functionality
 5.
 
+## Table of Contents
+
+- [The Workflow: From Code to Visualization](#the-workflow-from-code-to-visualization)
+- [Tools That Generate Visualizations from Code](#tools-that-generate-visualizations-from-code)
+- [Creating Interactive Step-by-Step Guides](#creating-interactive-step-by-step-guides)
+- [Practical Implementation Approaches](#practical-implementation-approaches)
+- [Handling Complex Algorithms](#handling-complex-algorithms)
+- [Optimizing Visualizations for Learning](#optimizing-visualizations-for-learning)
+- [Future Directions](#future-directions)
+- [End-to-End Implementation Example](#end-to-end-implementation-example)
+- [Advanced Visualization Techniques](#advanced-visualization-techniques)
+- [Tool Comparison for Visualization Generation](#tool-comparison-for-visualization-generation)
+- [Building a Reusable Visualization Framework](#building-a-reusable-visualization-framework)
+- [Optimization Tips for Visualization Generation](#optimization-tips-for-visualization-generation)
+- [Performance Benchmarks: Visualization Tools](#performance-benchmarks-visualization-tools)
+- [Real-World Usage Metrics](#real-world-usage-metrics)
+
 ## The Workflow: From Code to Visualization
 
 The core workflow involves feeding a code snippet into an AI tool that understands both the programming language and how to represent algorithm execution visually. The AI analyzes the code structure, identifies key operations, and generates a step-by-step visualization that shows how data flows through the algorithm.
@@ -413,10 +430,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Explaining Sorting Algorithm Tradeoffs for Diff](/ai-tools-compared/ai-tools-for-explaining-sorting-algorithm-tradeoffs-for-diff/)
-- [AI Tools for Interior Design Visualization Compared](/ai-tools-compared/ai-tools-for-interior-design-visualization-compared/)
-- [Best AI Assistant for Debugging CSS Custom Property](/ai-tools-compared/best-ai-assistant-for-debugging-css-custom-property-inheritance-failures-in-shadow-dom/)
-- [Best AI for Writing Jest Tests for React Custom Hooks](/ai-tools-compared/best-ai-for-writing-jest-tests-for-react-custom-hooks-with-c/)
-- [Best AI Tools for Writing Kubernetes Custom Resource](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-custom-resource-definitions-2026/)
-
+- [AI Tools for Explaining Sorting Algorithm Tradeoffs](/ai-tools-compared/ai-tools-for-explaining-sorting-algorithm-tradeoffs-for-diff/)
+- [How Accurate Are AI Tools](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-serde-serialization-code/)
+- [AI Tools for Devrel Teams Creating Developer Onboarding](/ai-tools-compared/ai-tools-for-devrel-teams-creating-developer-onboarding-chec/)
+- [How Accurate Are AI Tools at Generating TypeScript Zod](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-typescript-zod-schem/)
+- [AI Tools for Creating Property-Based Test Cases](/ai-tools-compared/ai-tools-for-creating-property-based-test-cases-using-hypoth/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

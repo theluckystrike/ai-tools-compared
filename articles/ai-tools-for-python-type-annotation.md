@@ -26,6 +26,21 @@ Python type annotations have a long tail of complexity: `TypeVar` bounds, `Proto
 - **Practical guidance included**: Step-by-step setup and configuration instructions.
 - **Use-case recommendations**: Specific guidance based on team size and requirements.
 
+## Table of Contents
+
+- [The Annotation Quality Spectrum](#the-annotation-quality-spectrum)
+- [Why Type Annotations Pay Off](#why-type-annotations-pay-off)
+- [Setting Up Your Annotation Workflow](#setting-up-your-annotation-workflow)
+- [Task 1: Generic Functions](#task-1-generic-functions)
+- [Task 2: Decorator Type Safety with ParamSpec](#task-2-decorator-type-safety-with-paramspec)
+- [Task 3: Protocol for Structural Typing](#task-3-protocol-for-structural-typing)
+- [Task 4: TypedDict and Overload](#task-4-typeddict-and-overload)
+- [Task 5: TypeGuard for Narrowing Functions](#task-5-typeguard-for-narrowing-functions)
+- [Automated Annotation with MonkeyType + AI Review](#automated-annotation-with-monkeytype-ai-review)
+- [Choosing the Right Tool by Team Size](#choosing-the-right-tool-by-team-size)
+- [Tool Comparison](#tool-comparison)
+- [Related Reading](#related-reading)
+
 ## The Annotation Quality Spectrum
 
 Most AI tools handle these well:

@@ -39,6 +39,23 @@ AI autocomplete behaves differently across VSCode, JetBrains, and Neovim due to 
 - **VSCode generally performs better**: with large files (3000+ lines).
 - Typical latency 100-300ms.
 
+## Table of Contents
+
+- [How VSCode Handles AI Autocomplete](#how-vscode-handles-ai-autocomplete)
+- [JetBrains IDEs: Integrated Intelligence](#jetbrains-ides-integrated-intelligence)
+- [Neovim Plugins: The Modular Approach](#neovim-plugins-the-modular-approach)
+- [Latency and Network Behavior](#latency-and-network-behavior)
+- [Context Window Differences](#context-window-differences)
+- [Practical Recommendations](#practical-recommendations)
+- [Configuration and Customization](#configuration-and-customization)
+- [Suggestion Quality Factors](#suggestion-quality-factors)
+- [Network and Latency Considerations](#network-and-latency-considerations)
+- [Privacy and Data Handling](#privacy-and-data-handling)
+- [Integration with Language Servers](#integration-with-language-servers)
+- [Real-World Performance Comparison](#real-world-performance-comparison)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Choosing Based on Your Workflow](#choosing-based-on-your-workflow)
+
 ## How VSCode Handles AI Autocomplete
 
 VSCode's AI autocomplete ecosystem centers around extensions, with GitHub Copilot being the most widely used. The behavior is characterized by rapid, inline suggestions that appear with minimal latency.
@@ -339,10 +356,9 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Cursor AI Rules Files How to Customize AI Behavior](/ai-tools-compared/cursor-ai-rules-files-how-to-customize-ai-behavior-for-your-project/)
-- [Switching from ChatGPT Search to Perplexity Pro Search](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
-- [Best AI Inline Chat Features in VSCode Compared to Jetbrains](/ai-tools-compared/best-ai-inline-chat-features-in-vscode-compared-to-jetbrains/)
-- [Copilot for JetBrains: Does It Cost Same as VSCode Version](/ai-tools-compared/copilot-for-jetbrains-does-it-cost-same-as-vscode-version/)
-- [How to Migrate VSCode Copilot Keybindings](/ai-tools-compared/migrate-vscode-copilot-keybindings-to-cursor-ai-editor-2026/)
-
+- [Cheapest Way to Get AI Autocomplete in Neovim 2026](/ai-tools-compared/cheapest-way-to-get-ai-autocomplete-in-neovim-2026/)
+- [How to Get Better AI Autocomplete Suggestions by Structuring](/ai-tools-compared/how-to-get-better-ai-autocomplete-suggestions-by-structuring/)
+- [AI Autocomplete Accuracy for Boilerplate Code vs Complex](/ai-tools-compared/ai-autocomplete-accuracy-for-boilerplate-code-vs-complex-log/)
+- [AI Autocomplete for Writing Tests: Comparison of Suggestion](/ai-tools-compared/ai-autocomplete-for-writing-tests-comparison-of-suggestion-q/)
+- [AI Code Completion Latency Comparison](/ai-tools-compared/ai-code-completion-latency-comparison-copilot-vs-cursor-vs-cody-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -40,6 +40,18 @@ Three major AI coding assistants dominate 2026: GitHub Copilot at $10-39/user, C
 - **Use Windsurf's free tier**: to test Flow mode 4.
 - **This guide breaks down**: every pricing tier, usage limits, team pricing structures, and cost-per-developer metrics to help you choose the lowest true cost option.
 
+## Table of Contents
+
+- [GitHub Copilot: Pricing and Hidden Costs](#github-copilot-pricing-and-hidden-costs)
+- [Cursor: Pro vs Business Tiers](#cursor-pro-vs-business-tiers)
+- [Windsurf: New Entrant with Competitive Pricing](#windsurf-new-entrant-with-competitive-pricing)
+- [Detailed Comparison Table](#detailed-comparison-table)
+- [Real-World Cost Scenarios](#real-world-cost-scenarios)
+- [True Cost Per Developer Per Year](#true-cost-per-developer-per-year)
+- [When Each Option Makes Financial Sense](#when-each-option-makes-financial-sense)
+- [Hidden Efficiency Gains and Productivity ROI](#hidden-efficiency-gains-and-productivity-roi)
+- [Implementation Recommendation](#implementation-recommendation)
+
 ## GitHub Copilot: Pricing and Hidden Costs
 
 **Individual Plan: $10/month**
@@ -318,10 +330,9 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 ## Related Articles
 
 - [Copilot Individual vs Cursor Pro Annual Cost Breakdown 2026](/ai-tools-compared/copilot-individual-vs-cursor-pro-annual-cost-breakdown-2026/)
-- [Windsurf Pro Annual vs Monthly Pricing Actual Savings](/ai-tools-compared/windsurf-pro-annual-vs-monthly-pricing-actual-savings-calculated/)
-- [Copilot vs Cursor vs Windsurf Inline Diff Preview Comparison](/ai-tools-compared/copilot-vs-cursor-vs-windsurf-inline-diff-preview-comparison/)
-- [ChatGPT Plus vs Claude Pro Monthly Cost for Daily Coding](/ai-tools-compared/chatgpt-plus-vs-claude-pro-monthly-cost-for-daily-coding/)
 - [Copilot Business vs Cursor Business Per Developer Cost](/ai-tools-compared/copilot-business-vs-cursor-business-per-developer-cost-comparison/)
-
+- [How Much Does Cursor AI Actually Cost Per Month All](/ai-tools-compared/how-much-does-cursor-ai-actually-cost-per-month-all-plans/)
+- [Switching from Copilot Enterprise to Cursor Business](/ai-tools-compared/switching-from-copilot-enterprise-to-cursor-business-migrati/)
+- [GitHub Copilot Workspace Preview Pricing Will It Cost Extra](/ai-tools-compared/github-copilot-workspace-preview-pricing-will-it-cost-extra-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

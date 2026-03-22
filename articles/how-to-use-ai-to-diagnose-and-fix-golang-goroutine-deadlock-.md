@@ -39,6 +39,16 @@ AI tools can decode Go's cryptic deadlock panic messages—"fatal error: all gor
 - **This is the fastest**: iteration loop for live debugging.
 - **For serious goroutine deadlocks**: Claude via Claude Code or the claude.ai interface is the recommended starting point.
 
+## Table of Contents
+
+- [Understanding Go Deadlock Panic Messages](#understanding-go-deadlock-panic-messages)
+- [Which AI Tools Work Best for Goroutine Debugging](#which-ai-tools-work-best-for-goroutine-debugging)
+- [How AI Tools Help Decode Deadlock Scenarios](#how-ai-tools-help-decode-deadlock-scenarios)
+- [Practical Example: Fixing a Worker Pool Deadlock](#practical-example-fixing-a-worker-pool-deadlock)
+- [Mutex Deadlocks and Lock Ordering](#mutex-deadlocks-and-lock-ordering)
+- [Proactive Deadlock Prevention](#proactive-deadlock-prevention)
+- [Debugging Live Systems](#debugging-live-systems)
+
 ## Understanding Go Deadlock Panic Messages
 
 When Go detects a deadlock, it typically throws one of two panic messages:
@@ -368,9 +378,8 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [Which AI Generates Better Go Goroutine Patterns for Concurre](/ai-tools-compared/which-ai-generates-better-go-goroutine-patterns-for-concurre/)
+- [Writing CursorRules for Golang Projects with Specific](/ai-tools-compared/writing-cursorrules-for-golang-projects-with-specific-concur/)
 - [Best AI Coding Tool for Golang Developers 2026](/ai-tools-compared/best-ai-coding-tool-for-golang-developers-2026/)
-- [How to Use AI to Diagnose Kubernetes Pod Crashloopbackoff Fr](/ai-tools-compared/how-to-use-ai-to-diagnose-kubernetes-pod-crashloopbackoff-fr/)
-- [How to Use AI to Diagnose Spring Boot Application Context](/ai-tools-compared/how-to-use-ai-to-diagnose-spring-boot-application-context-st/)
-- [Writing CursorRules for Golang Projects with Specific Concur](/ai-tools-compared/writing-cursorrules-for-golang-projects-with-specific-concur/)
-
+- [How to Use AI to Interpret and Fix Java OutOfMemory Heap](/ai-tools-compared/how-to-use-ai-to-interpret-and-fix-java-outofmemory-heap-spa/)
+- [ChatGPT Slow Response Fix 2026: Complete Troubleshooting](/ai-tools-compared/chatgpt-slow-response-fix-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

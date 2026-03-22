@@ -39,6 +39,18 @@ Most legacy APIs lack OpenAPI specifications, making it impossible to generate S
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Most legacy APIs lack**: OpenAPI specifications, making it impossible to generate SDKs, documentation, or proper contract testing.
 
+## Table of Contents
+
+- [Why Generate OpenAPI from Code?](#why-generate-openapi-from-code)
+- [Tool Comparison for OpenAPI Generation](#tool-comparison-for-openapi-generation)
+- [Step 1: Extract Your API Code](#step-1-extract-your-api-code)
+- [Step 2: Generate with Claude](#step-2-generate-with-claude)
+- [Step 3: Generate Client SDKs](#step-3-generate-client-sdks)
+- [Step 4: Advanced OpenAPI Features](#step-4-advanced-openapi-features)
+- [Step 5: Keep OpenAPI In Sync](#step-5-keep-openapi-in-sync)
+- [Real-World Example: Convert Legacy REST API](#real-world-example-convert-legacy-rest-api)
+- [Validation Checklist](#validation-checklist)
+
 ## Why Generate OpenAPI from Code?
 
 OpenAPI specs enable:

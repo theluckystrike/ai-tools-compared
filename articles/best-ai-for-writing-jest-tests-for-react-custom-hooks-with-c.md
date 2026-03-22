@@ -39,6 +39,18 @@ Claude and GitHub Copilot both excel at testing React custom hooks, but Claude d
 - **Specify the testing library version**: `@testing-library/react` v13+ uses `renderHook` directly.
 - **Aim for 90%+ branch**: coverage on custom hooks before marking them production-ready.
 
+## Table of Contents
+
+- [Why Testing Custom Hooks Demands Special Attention](#why-testing-custom-hooks-demands-special-attention)
+- [AI Tools That Excel at Hook Testing](#ai-tools-that-excel-at-hook-testing)
+- [Tool Comparison for Hook Testing](#tool-comparison-for-hook-testing)
+- [What Makes AI-Generated Tests High Quality](#what-makes-ai-generated-tests-high-quality)
+- [Testing Hooks with Timers and Debounce](#testing-hooks-with-timers-and-debounce)
+- [Testing Hooks that Manage AbortControllers](#testing-hooks-that-manage-abortcontrollers)
+- [Step-by-Step Workflow: Getting the Best AI Output](#step-by-step-workflow-getting-the-best-ai-output)
+- [Pro Tips for Prompt Engineering](#pro-tips-for-prompt-engineering)
+- [Practical Recommendations](#practical-recommendations)
+
 ## Why Testing Custom Hooks Demands Special Attention
 
 Custom hooks encapsulate logic that components share. When that logic includes complex state—such as form handlers, data fetching with caching, or multi-step workflows—tests must verify correct state transitions, handle error conditions, and ensure cleanup runs properly.

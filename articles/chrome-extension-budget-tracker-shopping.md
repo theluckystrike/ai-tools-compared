@@ -40,6 +40,23 @@ Shopping smartly in 2026 requires more than just finding good deals—it require
 - **Many users find that a combination approach**: coupon extension plus spending tracker—provides the most complete picture of their shopping habits.
 - **Seeing "$450 saved this**: month through coupons and cashback" provides motivation to continue.
 
+## Table of Contents
+
+- [What Makes a Great Budget Tracker Shopping Extension](#what-makes-a-great-budget-tracker-shopping-extension)
+- [Top Chrome Extensions for Budget Tracking While Shopping](#top-chrome-extensions-for-budget-tracking-while-shopping)
+- [Comparing Key Features](#comparing-key-features)
+- [Real-World Usage Scenarios](#real-world-usage-scenarios)
+- [Getting Started with Budget Tracking Extensions](#getting-started-with-budget-tracking-extensions)
+- [Limitations and Considerations](#limitations-and-considerations)
+- [Price Detection Content Script (Manifest V3)](#price-detection-content-script-manifest-v3)
+- [Advanced Budget Tracking Strategies](#advanced-budget-tracking-strategies)
+- [Privacy Considerations Deep Dive](#privacy-considerations-deep-dive)
+- [Real Monthly Savings Math](#real-monthly-savings-math)
+- [Browser Extension Privacy Manifest V3 Implications](#browser-extension-privacy-manifest-v3-implications)
+- [Automation: Let Extensions Save You Without Effort](#automation-let-extensions-save-you-without-effort)
+- [Common Mistakes That Cost You Money](#common-mistakes-that-cost-you-money)
+- [Integrating Budget Tracking Into Your Financial System](#integrating-budget-tracking-into-your-financial-system)
+
 ## What Makes a Great Budget Tracker Shopping Extension
 
 Not all budget tracking extensions work the same way. The most effective ones share several characteristics that genuinely help consumers manage their spending:
@@ -369,11 +386,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Presentation Maker Chrome Extension](/ai-tools-compared/ai-presentation-maker-chrome-extension/)
 - [AI Research Assistant Chrome Extension](/ai-tools-compared/ai-research-assistant-chrome-extension/)
+- [AI Presentation Maker Chrome Extension](/ai-tools-compared/ai-presentation-maker-chrome-extension/)
 - [AI Summarizer Chrome Extension: A Developer Guide](/ai-tools-compared/ai-summarizer-chrome-extension/)
-- [AI Tab Organizer Chrome Extension: Managing Browser Tabs](/ai-tools-compared/ai-tab-organizer-chrome-extension/)
 - [Screen Sharing Chrome Extension](/ai-tools-compared/screen-sharing-chrome-extension/)
-
+- [AI Tab Organizer Chrome Extension: Managing Browser Tabs](/ai-tools-compared/ai-tab-organizer-chrome-extension/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

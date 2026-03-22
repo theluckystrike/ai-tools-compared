@@ -39,6 +39,17 @@ Write CursorRules for Go projects by explicitly defining goroutine lifecycle man
 - **Whether you use a**: simple channel-based approach or a library like errgroup for parallel operation coordination, the AI needs explicit instructions to match your implementation.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Why CursorRules Matter for Go Projects](#why-cursorrules-matter-for-go-projects)
+- [Configuring Concurrency Patterns in CursorRules](#configuring-concurrency-patterns-in-cursorrules)
+- [Enforcing Error Handling Conventions](#enforcing-error-handling-conventions)
+- [Structuring Context Propagation](#structuring-context-propagation)
+- [Channel Patterns and Buffering](#channel-patterns-and-buffering)
+- [Integrating with Existing Code](#integrating-with-existing-code)
+- [Testing Considerations](#testing-considerations)
+- [Final Configuration Tips](#final-configuration-tips)
+
 ## Why CursorRules Matter for Go Projects
 
 Golang's concurrency model and error handling differ significantly from other languages. The language's approach to concurrency through goroutines and channels, combined with explicit error returns instead of exceptions, requires AI assistants to understand these idiomatic patterns. Without proper guidance, AI tools often generate code that either fails to compile or violates Go conventions.

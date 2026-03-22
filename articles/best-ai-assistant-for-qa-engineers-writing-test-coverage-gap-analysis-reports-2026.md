@@ -42,6 +42,15 @@ This guide examines the best AI assistants for QA engineers writing test coverag
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **A module might show**: 90% line coverage yet have zero branch coverage on critical error-handling paths.
 
+## Table of Contents
+
+- [Understanding Test Coverage Gap Analysis](#understanding-test-coverage-gap-analysis)
+- [How AI Assistants Help](#how-ai-assistants-help)
+- [Top AI Assistants for Gap Analysis Reports](#top-ai-assistants-for-gap-analysis-reports)
+- [Practical Example: Generating a Gap Analysis Report](#practical-example-generating-a-gap-analysis-report)
+- [Best Practices for AI-Assisted Gap Analysis](#best-practices-for-ai-assisted-gap-analysis)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+
 ## Understanding Test Coverage Gap Analysis
 
 Test coverage gap analysis involves comparing your existing test suite against your codebase to identify areas lacking adequate testing. This includes:
@@ -278,11 +287,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI for QA Engineers Writing API Contract Testing Cases](/ai-tools-compared/best-ai-for-qa-engineers-writing-api-contract-test-cases-fro/)
-- [AI for Automated Regression Test Generation from Bug Reports](/ai-tools-compared/ai-for-automated-regression-test-generation-from-bug-reports/)
-- [AI Tools for Qa Engineers Generating Data Driven Test Scenar](/ai-tools-compared/ai-tools-for-qa-engineers-generating-data-driven-test-scenar/)
-- [How to Use AI to Help QA Engineers Create Test Environment](/ai-tools-compared/how-to-use-ai-to-help-qa-engineers-create-test-environment-p/)
-- [Best AI Tool for Network Engineers: Runbook Writing Guide](/ai-tools-compared/best-ai-tool-for-network-engineers-runbook-writing/)
-
+- [AI Tools for Automated Code Coverage Reporting](/ai-tools-compared/ai-tools-for-code-coverage-reporting)
+- [Claude Code Coverage Reporting Setup Guide](/ai-tools-compared/claude-code-coverage-reporting-setup-guide/)
+- [AI-Powered Code Coverage Improvement Tools](/ai-tools-compared/ai-powered-code-coverage-improvement)
+- [Best AI Assistant for Creating Test Data Factories with Real](/ai-tools-compared/best-ai-assistant-for-creating-test-data-factories-with-real/)
+- [Best AI Assistant for Writing pytest Tests for Background](/ai-tools-compared/best-ai-assistant-for-writing-pytest-tests-for-background-job-retry-failure-scenarios/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

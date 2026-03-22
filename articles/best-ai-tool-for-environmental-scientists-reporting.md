@@ -41,6 +41,20 @@ The most effective approach to AI-assisted environmental reporting uses separate
 - **A marine environmental consultant**: preparing an impact assessment can use AI to generate an initial methodology section based on project parameters.
 - **This reduces the risk**: of application delays caused by missing documentation or outdated citations.
 
+## Table of Contents
+
+- [Understanding the Reporting Workflow](#understanding-the-reporting-workflow)
+- [Key Capabilities for Environmental Reporting](#key-capabilities-for-environmental-reporting)
+- [Practical Implementation Approaches](#practical-implementation-approaches)
+- [Environmental Reporting Tool Comparison](#environmental-reporting-tool-comparison)
+- [Sample AI-Generated Environmental Report Section](#sample-ai-generated-environmental-report-section)
+- [Methodology](#methodology)
+- [Real-World Environmental Reporting Scenarios](#real-world-environmental-reporting-scenarios)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+- [Practical Prompt Templates](#practical-prompt-templates)
+- [Real-World Applications](#real-world-applications)
+- [Moving Forward](#moving-forward)
+
 ## Understanding the Reporting Workflow
 
 Environmental reporting encompasses several distinct stages. Field data collection feeds into analysis, which then becomes the foundation for technical reports, permit applications, compliance documents, and stakeholder communications. Each stage presents opportunities for AI assistance, though the nature of that assistance varies significantly.

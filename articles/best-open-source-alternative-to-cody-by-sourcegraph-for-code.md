@@ -42,6 +42,14 @@ This guide covers the best open source alternatives to Cody for code search, wit
 - **Tabby**: Continue.dev, and Sourcegraph open core all work with any Ollama-compatible or OpenAI API-compatible model, giving you freedom to upgrade as better coding models are released.
 - **It runs entirely on**: your infrastructure and supports various open source LLMs including DeepSeek Coder, Qwen2.5-Coder, StarCoder2, and CodeLlama.
 
+## Table of Contents
+
+- [Why Look for an Open Source Alternative to Cody?](#why-look-for-an-open-source-alternative-to-cody)
+- [Top Open Source Alternatives for Code Search](#top-open-source-alternatives-for-code-search)
+- [Comparing Features](#comparing-features)
+- [Practical Implementation: Building a Local Code Search Stack](#practical-implementation-building-a-local-code-search-stack)
+- [Choosing the Right Alternative](#choosing-the-right-alternative)
+
 ## Why Look for an Open Source Alternative to Cody?
 
 Cody combines Sourcegraph's code intelligence with large language models to answer coding questions, explain code, and assist with writing new code. While powerful, it requires a Sourcegraph subscription for full features, and in the enterprise tier this cost adds up quickly for larger teams.

@@ -39,6 +39,19 @@ This guide compares the strengths and weaknesses of each tool for this specific 
 - **Cursor excels here because**: you can have an ongoing conversation about your module's interface.
 - **Copilot and Cursor serve**: different strengths, so combining them can cover more use cases than relying on either one alone.
 
+## Table of Contents
+
+- [Understanding the Core Differences](#understanding-the-core-differences)
+- [Quick Comparison](#quick-comparison)
+- [Starting a Terraform Module from Scratch](#starting-a-terraform-module-from-scratch)
+- [Handling Variable and Output Definitions](#handling-variable-and-output-definitions)
+- [Resource Configuration and Best Practices](#resource-configuration-and-best-practices)
+- [Working with Module Dependencies](#working-with-module-dependencies)
+- [Test and Validation Workflows](#test-and-validation-workflows)
+- [Complete Module Example: DynamoDB Table with Backups](#complete-module-example-dynamodb-table-with-backups)
+- [Cost Comparison and Pricing (2026)](#cost-comparison-and-pricing-2026)
+- [Which Tool Should You Choose](#which-tool-should-you-choose)
+
 ## Understanding the Core Differences
 
 GitHub Copilot functions as an intelligent code completion engine that suggests code as you type. It integrates with popular IDEs like VS Code and JetBrains through extensions, offering inline suggestions based on your current file and surrounding context. The model has been trained on public repositories, including substantial Terraform infrastructure code.

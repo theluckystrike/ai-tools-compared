@@ -40,6 +40,27 @@ AI tools can automate the tedious process of writing dependency update pull requ
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [The Problem with Manual Dependency Updates](#the-problem-with-manual-dependency-updates)
+- [How AI Tools Generate PR Descriptions](#how-ai-tools-generate-pr-descriptions)
+- [Practical Implementation Patterns](#practical-implementation-patterns)
+- [Limitations and Best Practices](#limitations-and-best-practices)
+- [Tool Comparison for Dependency Updates](#tool-comparison-for-dependency-updates)
+- [Practical Prompt Templates for Dependency Updates](#practical-prompt-templates-for-dependency-updates)
+- [Instructions](#instructions)
+- [Package Changes](#package-changes)
+- [Project Context](#project-context)
+- [Output Format](#output-format)
+- [Automating Changelog Extraction](#automating-changelog-extraction)
+- [Integration with Package Managers](#integration-with-package-managers)
+- [Security Vulnerability Integration](#security-vulnerability-integration)
+- [Enforcing PR Description Standards](#enforcing-pr-description-standards)
+- [Dependency Update](#dependency-update)
+- [Testing Updated Dependencies](#testing-updated-dependencies)
+- [Cost Analysis for Dependency Management](#cost-analysis-for-dependency-management)
+- [Measuring PR Description Quality](#measuring-pr-description-quality)
+
 ## The Problem with Manual Dependency Updates
 
 Keeping dependencies updated is critical for security and functionality, but the process quickly becomes overwhelming in larger projects. A Node.js application might depend on hundreds of packages, each with its own release cadence, breaking changes, and security advisories. When a developer runs `npm update` or `bundle update`, they face the task of investigating what changed, whether those changes introduce vulnerabilities, and how the update might affect their codebase.

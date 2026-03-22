@@ -40,6 +40,16 @@ GitHub Actions has become the backbone of modern CI/CD pipelines, but writing wo
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [The Problem with Manual Workflow Creation](#the-problem-with-manual-workflow-creation)
+- [GitHub Copilot for Workflow Generation](#github-copilot-for-workflow-generation)
+- [Claude and GPT-4 for Complex Workflows](#claude-and-gpt-4-for-complex-workflows)
+- [Specialized Workflow Generation Tools](#specialized-workflow-generation-tools)
+- [Practical Example: From Description to Working Workflow](#practical-example-from-description-to-working-workflow)
+- [Best Practices for AI-Generated Workflows](#best-practices-for-ai-generated-workflows)
+- [Selecting the Right Tool](#selecting-the-right-tool)
+
 ## The Problem with Manual Workflow Creation
 
 Creating a GitHub Actions workflow involves understanding triggers, jobs, steps, runners, and environment variables. A typical deployment workflow might require thirty or more lines of YAML, with proper indentation, correct action versions, and appropriate permissions. One missing comma or incorrect indent can cause the entire workflow to fail silently or behave unexpectedly.

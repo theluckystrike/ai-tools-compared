@@ -39,6 +39,25 @@ When choosing between Cursor and Windsurf for AI-assisted coding, the free tier 
 - **The "Edit" and "Generate"**: functions are rate-limited on the free tier, meaning you'll hit walls when attempting autonomous code modifications.
 - **The daily reset means**: you get roughly 15,000 AI actions monthly if you use the tool consistently.
 
+## Table of Contents
+
+- [Understanding the Free Tier Structure](#understanding-the-free-tier-structure)
+- [Feature Comparison for Free Users](#feature-comparison-for-free-users)
+- [Real-World Usage Scenarios](#real-world-usage-scenarios)
+- [Which Free Plan Gives More?](#which-free-plan-gives-more)
+- [Limitations Beyond AI Quotas](#limitations-beyond-ai-quotas)
+- [Making Your Decision](#making-your-decision)
+- [Deep Dive: Exact Quota Mechanics](#deep-dive-exact-quota-mechanics)
+- [Real-World Budget Analysis](#real-world-budget-analysis)
+- [Feature Parity Analysis](#feature-parity-analysis)
+- [Benchmarking Against Paid Tiers](#benchmarking-against-paid-tiers)
+- [Migration Between Tools](#migration-between-tools)
+- [Hidden Limitations Beyond Quotas](#hidden-limitations-beyond-quotas)
+- [Testing Period Recommendation](#testing-period-recommendation)
+- [Seasonal Usage Patterns](#seasonal-usage-patterns)
+- [Team Considerations](#team-considerations)
+- [Final Decision Framework](#final-decision-framework)
+
 ## Understanding the Free Tier Structure
 
 Cursor and Windsurf take different approaches to their free plans. Cursor, built on VS Code, provides a generous starter allocation that resets monthly. Windsurf, also based on VS Code, offers a free tier with daily usage limits that encourage regular engagement.

@@ -43,6 +43,21 @@ Most providers reach production-ready status in 2-3 complete iterations per reso
 - **This is where AI shines**: you describe your API's endpoints, authentication method, and resource structure, and the AI generates boilerplate-free code that actually works.
 - **It's particularly valuable for**: Terraform provider development because it understands your full codebase and can generate implementations that align with existing patterns.
 
+## Table of Contents
+
+- [Why Terraform Providers Suit AI Assistance](#why-terraform-providers-suit-ai-assistance)
+- [AI-Assisted Provider Development Workflow](#ai-assisted-provider-development-workflow)
+- [Practical Example: Custom API Provider](#practical-example-custom-api-provider)
+- [Comparing AI Tools for Terraform Providers](#comparing-ai-tools-for-terraform-providers)
+- [Claude for Terraform Providers](#claude-for-terraform-providers)
+- [GPT-4 for Provider Scaffolding](#gpt-4-for-provider-scaffolding)
+- [GitHub Copilot for IDE Integration](#github-copilot-for-ide-integration)
+- [Cursor for Full-Project Workflows](#cursor-for-full-project-workflows)
+- [Practical Implementation Guide](#practical-implementation-guide)
+- [Common Pitfalls and Solutions](#common-pitfalls-and-solutions)
+- [Iterative Refinement Process](#iterative-refinement-process)
+- [Performance Considerations](#performance-considerations)
+
 ## Why Terraform Providers Suit AI Assistance
 
 Terraform provider development involves repetitive, pattern-based code. Each resource requires a schema definition, Create, Read, Update, Delete (CRUD) handlers, and acceptance tests. These patterns are predictable enough that AI assistants trained on Go and the Terraform Plugin Framework can generate accurate implementations. The challenge isn't complexity—it's providing the AI with enough context about your custom system's API structure and behavioral requirements.

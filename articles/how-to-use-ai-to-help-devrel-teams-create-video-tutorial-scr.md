@@ -42,6 +42,15 @@ Phase 3 - Auto-Editing (30-45 minutes)
 1.
 - **Review the AI's suggested**: edits for naturalness (removing "um/uh" but preserving intentional pauses) 4.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Best Practices for AI-Assisted Tutorial Creation](#best-practices-for-ai-assisted-tutorial-creation)
+- [Best Practices for AI-Assisted Tutorial Creation](#best-practices-for-ai-assisted-tutorial-creation)
+- [Advanced Prompt Engineering for Video Scripts](#advanced-prompt-engineering-for-video-scripts)
+- [Performance Metrics Framework](#performance-metrics-framework)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

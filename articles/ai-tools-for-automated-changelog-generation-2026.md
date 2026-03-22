@@ -26,6 +26,22 @@ Choose conventional-changelog for projects already using Conventional Commits (e
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [The Changelog Problem at Scale](#the-changelog-problem-at-scale)
+- [Conventional Changelog: The Gold Standard](#conventional-changelog-the-gold-standard)
+- [Semantic Release: Fully Automated Release Pipeline](#semantic-release-fully-automated-release-pipeline)
+- [Cliff: System Software and Rust Projects](#cliff-system-software-and-rust-projects)
+- [[{{ version }}] - {{ timestamp | date(format="%Y-%m-%d") }}](#version-timestamp-dateformaty-m-d)
+- [[Unreleased]](#unreleased)
+- [Claude: Legacy Codebases and Manual Interpretation](#claude-legacy-codebases-and-manual-interpretation)
+- [[Unreleased]](#unreleased)
+- [[Unreleased]](#unreleased)
+- [[Unreleased]](#unreleased)
+- [Comparison Matrix](#comparison-matrix)
+- [Implementation Strategy](#implementation-strategy)
+- [Validation and Testing](#validation-and-testing)
+
 ## The Changelog Problem at Scale
 
 Manual changelogs accumulate technical debt. Developers forget to update them, merge conflicts arise, and changelog contents diverge from actual code changes. Automated solutions parse git history, detect breaking changes from commit messages, group related changes, and generate structured documentation.
@@ -645,10 +661,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Git Workflow Best Practices for Large Teams 2026](/ai-tools-compared/git-workflow-best-practices-large-teams-2026/)
-- [Automated Semantic Versioning in CI/CD Pipelines](/ai-tools-compared/automated-semantic-versioning-cicd-pipelines/)
-- [Release Management Automation for Monorepos](/ai-tools-compared/release-management-automation-monorepos/)
-
+- [AI Tools for Creating Automated Release Changelog](/ai-tools-compared/ai-tools-for-creating-automated-release-changelog-from-conve/)
+- [AI Coding Tools for Automating Changelog Generation from](/ai-tools-compared/ai-coding-tools-for-automating-changelog-generation-from-con/)
+- [AI Tools for Automated Load Testing Script Generation](/ai-tools-compared/ai-tools-for-automated-load-testing-script-generation-and-an/)
+- [AI Tools for Automated API Documentation Generation in 2026](/ai-tools-compared/ai-tools-for-automated-api-documentation-generation-2026/)
+- [AI Tools for Video Thumbnail Generation](/ai-tools-compared/ai-tools-for-video-thumbnail-generation/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ```

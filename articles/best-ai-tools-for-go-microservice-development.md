@@ -26,6 +26,15 @@ This guide tests Claude Code, Copilot, and Cursor on four real Go microservice t
 - **Use-case recommendations**: Specific guidance based on team size and requirements
 - **Trade-off analysis**: Strengths and limitations of each option discussed
 
+## Table of Contents
+
+- [Task 1: gRPC Service with Interceptors](#task-1-grpc-service-with-interceptors)
+- [Task 2: HTTP Middleware Chain](#task-2-http-middleware-chain)
+- [Task 3: Error Wrapping and Handling](#task-3-error-wrapping-and-handling)
+- [Task 4: Table-Driven Tests](#task-4-table-driven-tests)
+- [Summary](#summary)
+- [Related Reading](#related-reading)
+
 ## Task 1: gRPC Service with Interceptors
 
 ```protobuf

@@ -40,6 +40,16 @@ Automated captioning and transcription tools have become essential for video con
 - **This single step can**: push Whisper's word error rate from 15% to under 8% on challenging audio.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Understanding Your Requirements](#understanding-your-requirements)
+- [Leading AI Transcription and Captioning Tools](#leading-ai-transcription-and-captioning-tools)
+- [Comparison Summary](#comparison-summary)
+- [Generating VTT and SRT Formats](#generating-vtt-and-srt-formats)
+- [Building a Batch Processing Pipeline](#building-a-batch-processing-pipeline)
+- [Pre-Processing Audio for Better Results](#pre-processing-audio-for-better-results)
+- [Best Practices for Implementation](#best-practices-for-implementation)
+
 ## Understanding Your Requirements
 
 Before selecting a tool, clarify your specific needs. Different use cases demand different capabilities:

@@ -24,6 +24,18 @@ Nginx configuration has a deceptively simple syntax but a long tail of security 
 - **Use-case recommendations**: Specific guidance based on team size and requirements
 - **Trade-off analysis**: Strengths and limitations of each option discussed
 
+## Table of Contents
+
+- [The Security Baseline Test](#the-security-baseline-test)
+- [Task 2: Caching Layer Configuration](#task-2-caching-layer-configuration)
+- [Task 3: Load Balancing Configuration](#task-3-load-balancing-configuration)
+- [Task 4: Security-Hardened API Gateway](#task-4-security-hardened-api-gateway)
+- [Task 5: Geo-Blocking and Bot Mitigation](#task-5-geo-blocking-and-bot-mitigation)
+- [Why Security Context Matters More Than Syntax](#why-security-context-matters-more-than-syntax)
+- [Tool Comparison](#tool-comparison)
+- [Practical Advice for Using AI with Nginx](#practical-advice-for-using-ai-with-nginx)
+- [Related Reading](#related-reading)
+
 ## The Security Baseline Test
 
 Every AI tool was given this prompt:
@@ -402,6 +414,14 @@ Regardless of which tool you use, apply these steps before any AI-generated ngin
 - [Best AI Tools for Writing GitHub Actions](/ai-tools-compared/ai-tools-for-writing-github-actions-guide/)
 
 ---
+
+## Related Articles
+
+- [AI Tools for Generating Nginx Configuration Files 2026](/ai-tools-compared/ai-tools-for-generating-nginx-configuration-files-2026/)
+- [Best AI Tools for Writing Nginx Configs in 2026](/ai-tools-compared/best-ai-tools-for-writing-nginx-configs-2026/---)
+- [AI Tools for Writing Nginx Configurations 2026](/ai-tools-compared/ai-tools-for-writing-nginx-configurations-2026/)
+- [AI Tools for API Security Testing](/ai-tools-compared/ai-tools-for-api-security-testing/)
+- [Writing Custom Instructions for AI Tools That Enforce Your](/ai-tools-compared/writing-custom-instructions-for-ai-tools-that-enforce-your-security-header-standards/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

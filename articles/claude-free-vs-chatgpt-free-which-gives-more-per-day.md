@@ -39,6 +39,21 @@ Finding affordable AI tools requires understanding the true cost structure. This
 - **Use ChatGPT Free for**: iteration. "Refine this" conversations fit ChatGPT's strengths.
 - **Use Claude Free for**: architecture. "Design a system" questions benefit from Claude's reasoning.
 
+## Table of Contents
+
+- [Understanding Free Tier Limits](#understanding-free-tier-limits)
+- [Comparing Daily Usage for Development Tasks](#comparing-daily-usage-for-development-tasks)
+- [Speed and Responsiveness Differences](#speed-and-responsiveness-differences)
+- [Practical Strategies for Maximizing Free Tier Usage](#practical-strategies-for-maximizing-free-tier-usage)
+- [Which Free Tier Gives More Per Day?](#which-free-tier-gives-more-per-day)
+- [Calculating True Value Per Dollar](#calculating-true-value-per-dollar)
+- [Upgrade Paths](#upgrade-paths)
+- [Offline and Local Alternatives](#offline-and-local-alternatives)
+- [Real-World Usage Patterns](#real-world-usage-patterns)
+- [Hybrid Strategy: Maximizing Free Tiers](#hybrid-strategy-maximizing-free-tiers)
+- [API Cost Comparison: GPT-4 vs Alternatives](#api-cost-comparison-gpt-4-vs-alternatives)
+- [Structured Output Extraction Comparison](#structured-output-extraction-comparison)
+
 ## Understanding Free Tier Limits
 
 ### ChatGPT Free Daily Quota
@@ -379,10 +394,9 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Cursor Pro Usage Cap: How Many Requests Per Day in 2026](/ai-tools-compared/cursor-pro-usage-cap-how-many-requests-per-day-2026/)
-- [Cursor Free Plan vs Windsurf Free Plan Which Gives More](/ai-tools-compared/cursor-free-plan-vs-windsurf-free-plan-which-gives-more/)
-- [ChatGPT Team vs Claude Team Cost Per Seat Comparison 2026](/ai-tools-compared/chatgpt-team-vs-claude-team-cost-per-seat-comparison-2026/)
-- [Cursor AI with Claude vs GPT Models: Which Gives Better Code](/ai-tools-compared/cursor-ai-with-claude-vs-gpt-models-which-gives-better-code-/)
-- [ChatGPT Edu Pricing Per Student: How Schools Get Volume](/ai-tools-compared/chatgpt-edu-pricing-per-student-how-schools-get-volume-disco/)
-
+- [ChatGPT vs Claude for Creative Storytelling Compared](/ai-tools-compared/chatgpt-vs-claude-for-creative-storytelling-compared/)
+- [Cheapest Way to Use Claude for Coding Projects 2026](/ai-tools-compared/cheapest-way-to-use-claude-for-coding-projects-2026/)
+- [ChatGPT Plus vs Claude Pro Monthly Cost for Daily Coding](/ai-tools-compared/chatgpt-plus-vs-claude-pro-monthly-cost-for-daily-coding/)
+- [ChatGPT vs Claude for Writing API Documentation](/ai-tools-compared/chatgpt-vs-claude-for-writing-api-documentation/)
+- [ChatGPT vs Claude for Explaining TensorFlow Model](/ai-tools-compared/chatgpt-vs-claude-for-explaining-tensorflow-model-architectu/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

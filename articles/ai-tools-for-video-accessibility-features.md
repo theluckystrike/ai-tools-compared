@@ -41,6 +41,17 @@ Video accessibility is a critical requirement for reaching broader audiences and
 - **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 
+## Table of Contents
+
+- [Why Video Accessibility Matters](#why-video-accessibility-matters)
+- [AI-Powered Captioning and Transcription](#ai-powered-captioning-and-transcription)
+- [Audio Description Generation](#audio-description-generation)
+- [Sign Language Generation](#sign-language-generation)
+- [Accessibility Testing Tools](#accessibility-testing-tools)
+- [Implementation Strategy](#implementation-strategy)
+- [Caption Quality and Post-Processing](#caption-quality-and-post-processing)
+- [Choosing the Right Tools](#choosing-the-right-tools)
+
 ## Why Video Accessibility Matters
 
 Web Content Accessibility Guidelines (WCAG) 2.1 requires captions for pre-recorded audio content and sign language alternatives where practical. Beyond compliance, accessible video reaches approximately 15% of the global population with some form of hearing or visual impairment. AI automation reduces the cost barrier, enabling even small teams to provide accessible content.

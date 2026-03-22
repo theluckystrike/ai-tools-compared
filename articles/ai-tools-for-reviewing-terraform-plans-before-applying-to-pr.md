@@ -42,6 +42,20 @@ Deploying infrastructure changes without proper review leads to costly mistakes,
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Why AI-Assisted Plan Review Matters](#why-ai-assisted-plan-review-matters)
+- [Categories of AI Tools for Terraform Review](#categories-of-ai-tools-for-terraform-review)
+- [Practical Integration Approaches](#practical-integration-approaches)
+- [Evaluating AI Tools for Your Workflow](#evaluating-ai-tools-for-your-workflow)
+- [Recommendations for Implementation](#recommendations-for-implementation)
+- [Comprehensive Tool Comparison Matrix](#comprehensive-tool-comparison-matrix)
+- [Production Implementation Guide](#production-implementation-guide)
+- [Cost Analysis: Infrastructure Changes](#cost-analysis-infrastructure-changes)
+- [Handling False Positives](#handling-false-positives)
+- [Multi-Stage Approval Workflow](#multi-stage-approval-workflow)
+- [Integration with Slack Notifications](#integration-with-slack-notifications)
+
 ## Why AI-Assisted Plan Review Matters
 
 Terraform plans contain complex information about resource creation, modification, and destruction. A typical plan might show dozens of resources changing, each with attribute-level detail. Reviewing this manually requires deep Terraform expertise and careful attention to detail. Teams working with large infrastructures face even greater challenges—one small misconfiguration can cascade into major incidents.

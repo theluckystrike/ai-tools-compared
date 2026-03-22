@@ -39,6 +39,23 @@ Choose Cursor if you want on-demand AI assistance with strong project-wide conte
 - **How do Cursor and**: Windsurf handle these patterns? ## Cursor Approach to React DnD Cursor uses a combination of inline AI suggestions and a dedicated chat interface.
 - **You may need to**: provide additional context about your specific use case for optimal results.
 
+## Table of Contents
+
+- [Understanding React DnD Basics](#understanding-react-dnd-basics)
+- [Cursor Approach to React DnD](#cursor-approach-to-react-dnd)
+- [Windsurf Approach to React DnD](#windsurf-approach-to-react-dnd)
+- [Side-by-Side Comparison](#side-by-side-comparison)
+- [Practical Recommendations](#practical-recommendations)
+- [Advanced Drag-and-Drop Patterns](#advanced-drag-and-drop-patterns)
+- [Touch Support and Mobile](#touch-support-and-mobile)
+- [Visual Feedback During Drag](#visual-feedback-during-drag)
+- [State Management Integration](#state-management-integration)
+- [Keyboard Navigation Fallback](#keyboard-navigation-fallback)
+- [Persistence and Undo/Redo](#persistence-and-undoredo)
+- [Performance Optimization](#performance-optimization)
+- [Real-World Example: Kanban Board](#real-world-example-kanban-board)
+- [Debugging Common Drag-and-Drop Issues](#debugging-common-drag-and-drop-issues)
+
 ## Understanding React DnD Basics
 
 React DnD is a powerful library for building drag-and-drop interfaces. Before comparing the tools, let us look at a typical React DnD setup:

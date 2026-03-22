@@ -35,6 +35,30 @@ Code without documentation becomes technical debt. Maintaining accurate docstrin
 - **""" return principal ***: (1 + rate / (100 * compounds_per_year)) ** (compounds_per_year * time) ``` Best For: Individual developers, teams prioritizing real-time workflow integration.
 - **Claude achieves 95%+ accuracy**: on these metrics; Copilot averages 85%; Mintlify excels at API specs (98%); Tabnine averages 82% but wins on privacy.
 
+## Table of Contents
+
+- [Why Automated Documentation Matters](#why-automated-documentation-matters)
+- [Claude (Opus 4.6) — Best for Context-Aware Documentation](#claude-opus-46-best-for-context-aware-documentation)
+- [GitHub Copilot — Best for Real-Time IDE Integration](#github-copilot-best-for-real-time-ide-integration)
+- [Mintlify — Best for API Documentation](#mintlify-best-for-api-documentation)
+- [Language-Specific Performance Comparison](#language-specific-performance-comparison)
+- [Real-World README Generation](#real-world-readme-generation)
+- [Features](#features)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Usage](#usage)
+- [API Endpoints](#api-endpoints)
+- [Development](#development)
+- [Architecture](#architecture)
+- [Tabnine — Best for Privacy-Conscious Teams](#tabnine-best-for-privacy-conscious-teams)
+- [Docstring Quality: What to Look For](#docstring-quality-what-to-look-for)
+- [Batch Documentation Generation Workflow](#batch-documentation-generation-workflow)
+- [Keeping Docs in Sync with Code Changes](#keeping-docs-in-sync-with-code-changes)
+- [Quality Metrics](#quality-metrics)
+- [Cost Comparison for 1000+ Functions](#cost-comparison-for-1000-functions)
+- [Integration with CI/CD](#integration-with-cicd)
+- [Recommendations](#recommendations)
+
 ## Why Automated Documentation Matters
 
 Manual documentation lags behind code changes. AI-driven tools stay synchronized with actual implementations, reducing the gap between what code does and what developers expect. Quality documentation from AI saves teams thousands of hours annually.

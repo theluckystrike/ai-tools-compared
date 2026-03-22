@@ -39,6 +39,24 @@ To transfer Custom GPTs to Claude Projects, export your GPT's system prompt, kno
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Understanding What You Are Migrating](#understanding-what-you-are-migrating)
+- [Step 1: Export Your Custom GPT Configuration](#step-1-export-your-custom-gpt-configuration)
+- [Step 2: Organize Your Resources](#step-2-organize-your-resources)
+- [Step 3: Recreate in Claude Projects](#step-3-recreate-in-claude-projects)
+- [Instructions](#instructions)
+- [Capabilities](#capabilities)
+- [Knowledge](#knowledge)
+- [Step 4: Preserve Conversation Starters](#step-4-preserve-conversation-starters)
+- [Step 5: Test and Iterate](#step-5-test-and-iterate)
+- [Translating GPT Capabilities to Claude Equivalents](#translating-gpt-capabilities-to-claude-equivalents)
+- [Adapting System Prompts for Claude](#adapting-system-prompts-for-claude)
+- [Automating the Process for Multiple GPTs](#automating-the-process-for-multiple-gpts)
+- [Instructions](#instructions)
+- [Knowledge](#knowledge)
+- [Evaluating Behavior Parity After Migration](#evaluating-behavior-parity-after-migration)
+
 ## Understanding What You Are Migrating
 
 ChatGPT Custom GPTs store several components: the system prompt, user instructions, conversation starters, and optional uploaded files (knowledge base). Claude Projects work differently—instead of a packaged "GPT," you create project contexts by adding instructions, files, and specifications directly in Claude.ai or through Claude Code projects. The migration involves extracting each component from your GPT and recreating it as a project resource.

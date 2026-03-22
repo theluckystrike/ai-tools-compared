@@ -41,6 +41,21 @@ Pydantic V2 transformed Python data validation by introducing a ground-up rewrit
 - **use `@field_validator` for single-field**: logic 4.
 - **Use `@model_validator` with `mode='after'`**: for multi-field validation 5.
 
+## Table of Contents
+
+- [Why Pydantic V2 Demands Specialized AI Tools](#why-pydantic-v2-demands-specialized-ai-tools)
+- [Top AI Tools for Pydantic V2 Code Generation](#top-ai-tools-for-pydantic-v2-code-generation)
+- [Feature Comparison](#feature-comparison)
+- [Practical Recommendations](#practical-recommendations)
+- [Advanced Validation Patterns](#advanced-validation-patterns)
+- [CLI Commands for Pydantic Development](#cli-commands-for-pydantic-development)
+- [Performance Optimization](#performance-optimization)
+- [API Integration Examples](#api-integration-examples)
+- [Migration from Pydantic V1 to V2](#migration-from-pydantic-v1-to-v2)
+- [Troubleshooting Common Pydantic V2 Issues](#troubleshooting-common-pydantic-v2-issues)
+- [Tool Evaluation Matrix](#tool-evaluation-matrix)
+- [Best Practices Summary](#best-practices-summary)
+
 ## Why Pydantic V2 Demands Specialized AI Tools
 
 Pydantic V2 introduced several breaking changes from V1 that affect how you write validation code. The library now uses Rust-based validators under the hood, providing 50x faster parsing in many scenarios. However, this performance gain comes with new syntax requirements and deprecated patterns that trip up developers using AI assistants trained on older code.
@@ -477,10 +492,9 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [AI Code Generation for Python FastAPI Endpoints](/ai-tools-compared/ai-code-generation-for-python-fastapi-endpoints-with-pydantic-models-compared/)
-- [Best AI Code Completion for Python Data Science 2026](/ai-tools-compared/ai-code-completion-python-data-science-2026/)
+- [Best AI Assistant for Writing pytest Tests for Pydantic](/ai-tools-compared/best-ai-assistant-for-writing-pytest-tests-for-pydantic-mode/)
+- [Free AI Tools for Learning Python with Code Examples 2026](/ai-tools-compared/free-ai-tools-for-learning-python-with-code-examples-2026/)
 - [Best AI Tools for Code Migration Python 2](/ai-tools-compared/best-ai-tools-for-code-migration-python-2-to-3-java-8-to-21-guide/)
-- [Best AI Tools for Python Celery Task Queue Code Generation](/ai-tools-compared/best-ai-tools-for-python-celery-task-queue-code-generation-2/)
-- [Best AI Tools for Python NumPy and Scientific Computing Code](/ai-tools-compared/best-ai-tools-for-python-numpy-and-scientific-computing-code/)
-
+- [Best AI Tools for Code Review Automation 2026](/ai-tools-compared/best-ai-tools-for-code-review-automation-2026/---)
+- [AI Code Generation for Python FastAPI Endpoints](/ai-tools-compared/ai-code-generation-for-python-fastapi-endpoints-with-pydantic-models-compared/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

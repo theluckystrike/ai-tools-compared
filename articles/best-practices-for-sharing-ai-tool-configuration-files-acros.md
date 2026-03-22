@@ -40,6 +40,21 @@ Managing AI coding assistant configurations across distributed engineering teams
 - **This guide covers practical**: approaches to share configuration files effectively while maintaining flexibility for individual preferences.
 - **When everyone uses similar**: AI tool settings, code reviews focus on logic and architecture rather than formatting differences that AI should handle consistently.
 
+## Table of Contents
+
+- [Why Configuration Sharing Matters](#why-configuration-sharing-matters)
+- [Version Control Strategies for AI Configurations](#version-control-strategies-for-ai-configurations)
+- [Configuration Inheritance Patterns](#configuration-inheritance-patterns)
+- [Synchronization Methods](#synchronization-methods)
+- [Editor-Specific Configuration Distribution](#editor-specific-configuration-distribution)
+- [Comparing Configuration Sharing Approaches](#comparing-configuration-sharing-approaches)
+- [Handling Sensitive Configuration Values](#handling-sensitive-configuration-values)
+- [Documentation and Onboarding](#documentation-and-onboarding)
+- [Setup Instructions](#setup-instructions)
+- [Adding New Rules](#adding-new-rules)
+- [Support](#support)
+- [Testing Configuration Changes](#testing-configuration-changes)
+
 ## Why Configuration Sharing Matters
 
 AI coding assistants like GitHub Copilot, Claude Code, and Cursor rely on configuration files that control behavior, prompt templates, and context handling. Inconsistent configurations lead to several problems: code style diverges across the codebase, AI suggestions become unpredictable between team members, and onboarding new developers takes longer because they must discover optimal settings independently.

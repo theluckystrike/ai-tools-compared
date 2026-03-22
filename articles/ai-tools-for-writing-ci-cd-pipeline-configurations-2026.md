@@ -39,6 +39,17 @@ AI tools excel at generating CI/CD pipeline configurations because YAML syntax i
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Why AI Helps with CI/CD Configuration](#why-ai-helps-with-cicd-configuration)
+- [GitHub Actions: Claude vs Copilot vs Cursor](#github-actions-claude-vs-copilot-vs-cursor)
+- [GitLab CI: Static Configs vs Dynamic Pipelines](#gitlab-ci-static-configs-vs-dynamic-pipelines)
+- [CircleCI: Orbs and Reusable Commands](#circleci-orbs-and-reusable-commands)
+- [Tool Comparison Matrix](#tool-comparison-matrix)
+- [Practical Workflow: Using Claude to Build Complex Pipelines](#practical-workflow-using-claude-to-build-complex-pipelines)
+- [Common Pitfalls and How AI Tools Handle Them](#common-pitfalls-and-how-ai-tools-handle-them)
+- [Choosing Your Tool](#choosing-your-tool)
+
 ## Why AI Helps with CI/CD Configuration
 
 Writing CI/CD pipelines requires understanding three distinct domains: your project's build/test/deploy process, the specific platform's syntax and capabilities, and how to orchestrate services correctly. Manual writing means cross-referencing docs constantly—mixing GitHub Actions syntax with CircleCI syntax, remembering the exact Docker image names, and handling secrets properly.

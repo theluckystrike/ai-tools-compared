@@ -40,6 +40,14 @@ AI can improve data pipeline reliability by learning from historical failure pat
 - **For extremely latency-sensitive pipelines,**: consider pre-computing recommendations or using lightweight models that can make decisions quickly.
 - **The investment in AI-powered**: retry and dead letter handling pays dividends through reduced manual intervention, faster recovery from failures, and better utilization of computing resources.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Exponential Backoff vs. AI-Driven Timing: A Comparison](#exponential-backoff-vs-ai-driven-timing-a-comparison)
+- [Best Practices for AI-Enhanced Pipelines](#best-practices-for-ai-enhanced-pipelines)
+- [Production Considerations](#production-considerations)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
@@ -333,11 +341,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Build a RAG Pipeline with LangChain 2026](/ai-tools-compared/how-to-build-a-rag-pipeline-with-langchain-2026/)
 - [Best AI Tools for Data Pipeline Debugging 2026](/ai-tools-compared/best-ai-tools-for-data-pipeline-debugging-2026/)
+- [AI Powered Data Cataloging Tools](/ai-tools-compared/ai-powered-data-cataloging-tools/)
+- [AI Powered Tools for Predicting CI/CD Pipeline Failures](/ai-tools-compared/ai-powered-tools-for-predicting-ci-cd-pipeline-failures-befo/)
 - [How to Use AI to Create Data Pipeline Orchestration Configs](/ai-tools-compared/how-to-use-ai-to-create-data-pipeline-orchestration-configs-/)
-- [DALL-E Image Generation Failed: How to Retry](/ai-tools-compared/dalle-image-generation-failed-how-to-retry/)
-- [AI CI/CD Pipeline Optimization: A Developer Guide](/ai-tools-compared/ai-ci-cd-pipeline-optimization/)
-
+- [AI Tools for Data Mesh Architecture: A Practical Guide](/ai-tools-compared/ai-tools-for-data-mesh-architecture/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -40,6 +40,16 @@ Choose Landbot if you need a polished no-code solution with enterprise features 
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **Choose Landbot if you**: need a polished no-code solution with enterprise features like team collaboration, role-based access, and built-in AI agents requiring minimal setup.
 
+## Table of Contents
+
+- [Platform Overview](#platform-overview)
+- [Visual Builder Experience](#visual-builder-experience)
+- [AI Integration Capabilities](#ai-integration-capabilities)
+- [Customization and Developer Features](#customization-and-developer-features)
+- [API and Integrations](#api-and-integrations)
+- [Which Platform Should You Choose?](#which-platform-should-you-choose)
+- [Related Reading](#related-reading)
+
 ## Platform Overview
 
 **Landbot** positions itself as a "conversational SaaS platform" with a focus on no-code visual building. Its recent AI additions include an AI Agent builder and natural language processing capabilities. Landbot emphasizes enterprise features, team collaboration, and integrations with marketing tools.
@@ -248,6 +258,14 @@ Both platforms continue evolving their AI capabilities, so evaluating current ne
 - [Kommunicate vs Crisp AI Chat Widgets: A Developer Comparison](/ai-tools-compared/kommunicate-vs-crisp-ai-chat-widgets/)
 - [Cognigy vs Boost AI Virtual Agents: A Developer Comparison](/ai-tools-compared/cognigy-vs-boost-ai-virtual-agents/)
 - [Kustomer vs Gladly AI Customer Platform: A Developer.](/ai-tools-compared/kustomer-vs-gladly-ai-customer-platform/)
+
+## Related Articles
+
+- [Writesonic vs Jasper AI: Copywriting Tools Compared](/ai-tools-compared/writesonic-vs-jasper-ai-copywriting-tool-comparison/)
+- [AI Tools for Generating UI Mockups Compared in 2026](/ai-tools-compared/ai-tools-for-generating-ui-mockups-compared-2026/)
+- [Best AI Tools for Conversational Commerce](/ai-tools-compared/best-ai-tools-for-conversational-commerce/)
+- [AI Writing Tools for Healthcare Content Compared 2026](/ai-tools-compared/ai-writing-tools-for-healthcare-content-compared-2026/)
+- [AI Tools for Generating Website Hero Images Compared](/ai-tools-compared/ai-tools-for-generating-website-hero-images-compared/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

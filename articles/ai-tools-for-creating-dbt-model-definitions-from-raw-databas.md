@@ -44,6 +44,17 @@ When working with dbt (data build tool), defining models from existing database 
 
 3.
 
+## Table of Contents
+
+- [The Problem with Manual dbt Model Creation](#the-problem-with-manual-dbt-model-creation)
+- [How AI Tools Generate dbt Models](#how-ai-tools-generate-dbt-models)
+- [Practical AI Tools for This Task](#practical-ai-tools-for-this-task)
+- [Best Practices When Using AI-Generated Models](#best-practices-when-using-ai-generated-models)
+- [Workflow Integration](#workflow-integration)
+- [Advanced dbt Generation Patterns](#advanced-dbt-generation-patterns)
+- [Real-World Workflow Integration](#real-world-workflow-integration)
+- [Limitations to Consider](#limitations-to-consider)
+
 ## The Problem with Manual dbt Model Creation
 
 Building dbt models from scratch involves several steps: reading source table definitions, creating YAML configurations for sources and models, writing SQL transformation queries, adding tests for data quality, and documenting columns with descriptions. For a database with dozens or hundreds of tables, this becomes a significant undertaking.
@@ -335,10 +346,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [AI Tools for Creating Dbt Documentation Blocks](/ai-tools-compared/ai-tools-for-creating-dbt-documentation-blocks-from-column-level-lineage-analysis/)
-- [AI Tools for Creating System Context Diagrams Using C4 Model](/ai-tools-compared/ai-tools-for-creating-system-context-diagrams-using-c4-model/)
-- [Best Way to Configure AI Coding Tools to Follow Your Databas](/ai-tools-compared/best-way-to-configure-ai-coding-tools-to-follow-your-databas/)
-- [AI Tools for Converting Raw JSON API Responses into Clean](/ai-tools-compared/ai-tools-for-converting-raw-json-api-responses-into-clean-pandas-dataframes/)
-- [Steve AI vs Raw Shorts: AI Video Creation Comparison for](/ai-tools-compared/steve-ai-vs-raw-shorts-ai-video/)
-
+- [AI Tools for Writing dbt Seeds and Fixtures for Testing](/ai-tools-compared/ai-tools-for-writing-dbt-seeds-and-fixtures-for-testing-mode/)
+- [AI Tools for Generating dbt Project Structure from Existing](/ai-tools-compared/ai-tools-for-generating-dbt-project-structure-from-existing-/)
+- [AI Tools for Creating Property-Based Test Cases](/ai-tools-compared/ai-tools-for-creating-property-based-test-cases-using-hypoth/)
+- [AI Tools for Creating System Context Diagrams Using C4](/ai-tools-compared/ai-tools-for-creating-system-context-diagrams-using-c4-model/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -39,6 +39,21 @@ If you have been using Grammarly for writing assistance and want to explore Chat
 - **Use Grammarly for real-time**: feedback while drafting in your IDE or email client 2.
 - **Use ChatGPT for bulk**: editing of finished sections or entire documents 3.
 
+## Table of Contents
+
+- [Why Consider ChatGPT for Editing](#why-consider-chatgpt-for-editing)
+- [Setting Up Your Editing Prompts](#setting-up-your-editing-prompts)
+- [Automating Your Workflow](#automating-your-workflow)
+- [Creating a VS Code Extension Workflow](#creating-a-vs-code-extension-workflow)
+- [Comparing Results](#comparing-results)
+- [Handling Different Content Types](#handling-different-content-types)
+- [Best Practices for Migration](#best-practices-for-migration)
+- [Building an Unified Editing Workflow](#building-an-unified-editing-workflow)
+- [Cost Comparison](#cost-comparison)
+- [Advanced: Automating Editorial Workflows](#advanced-automating-editorial-workflows)
+- [Handling Edge Cases](#handling-edge-cases)
+- [Measuring Editing Quality](#measuring-editing-quality)
+
 ## Why Consider ChatGPT for Editing
 
 Grammarly provides real-time suggestions as you type, while ChatGPT offers more flexibility through conversational editing. For developers and power users, ChatGPT provides several advantages: you can paste entire documents for bulk review, request specific types of edits, and even create custom editing prompts that match your preferences.

@@ -777,6 +777,15 @@ Cursor AI offers a free tier that allows developers to experience the power of A
 - **Composer Feature Restrictions Cursor's**: Composer is one of its most powerful features, enabling multi-file code generation and complex refactoring tasks.
 - **Windsurf Free Tier -**: Competitive free tier offerings - Good autocomplete capabilities - Alternative to Cursor ### 3.
 
+## Table of Contents
+
+- [Understanding Cursor's Free Tier Structure](#understanding-cursors-free-tier-structure)
+- [Features That Stop Working After Trial](#features-that-stop-working-after-trial)
+- [What Remains Available on Free Tier](#what-remains-available-on-free-tier)
+- [Comparing Free vs Pro: Is Upgrade Worth It?](#comparing-free-vs-pro-is-upgrade-worth-it)
+- [Alternatives If You Can't Afford Pro](#alternatives-if-you-cant-afford-pro)
+- [Tips for Maximizing Free Tier](#tips-for-maximizing-free-tier)
+
 ## Understanding Cursor's Free Tier Structure
 
 Cursor provides two main pathways for free usage: an initial free trial with full Pro features, and a permanent free tier with significant limitations after the trial ends.

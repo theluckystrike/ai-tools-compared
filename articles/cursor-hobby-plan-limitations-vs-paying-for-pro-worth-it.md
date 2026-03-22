@@ -42,6 +42,25 @@ This guide compares the strengths and weaknesses of each tool for this specific 
 - **Proposal**: "Cursor Pro costs $20/month but saves $180+/month in productivity"
 4.
 
+## Table of Contents
+
+- [What the Cursor Hobby Plan Actually Includes](#what-the-cursor-hobby-plan-actually-includes)
+- [What You Get with Cursor Pro](#what-you-get-with-cursor-pro)
+- [Practical Impact: A Developer's Workflow](#practical-impact-a-developers-workflow)
+- [When the Hobby Plan Works Fine](#when-the-hobby-plan-works-fine)
+- [When Pro Becomes Worth It](#when-pro-becomes-worth-it)
+- [Comparing the Value Proposition](#comparing-the-value-proposition)
+- [Making Your Decision](#making-your-decision)
+- [Bottom Line](#bottom-line)
+- [Detailed Usage Estimates](#detailed-usage-estimates)
+- [Cost-Benefit Analysis by Role](#cost-benefit-analysis-by-role)
+- [Upgrade Decision Framework](#upgrade-decision-framework)
+- [Real Usage Patterns: Case Studies](#real-usage-patterns-case-studies)
+- [Comparing to Other Tools](#comparing-to-other-tools)
+- [Hidden Costs of Hobby Plan](#hidden-costs-of-hobby-plan)
+- [Companies Reimbursing Developer Tools](#companies-reimbursing-developer-tools)
+- [Final Recommendation Matrix](#final-recommendation-matrix)
+
 ## What the Cursor Hobby Plan Actually Includes
 
 The Hobby plan is free and designed to give developers a taste of Cursor's AI capabilities. However, it comes with concrete restrictions that affect your daily workflow:
@@ -408,10 +427,9 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Midjourney Standard vs Pro Plan: Is Stealth Mode Worth](/ai-tools-compared/midjourney-standard-vs-pro-plan-stealth-mode-worth-extra-cost/)
-- [Is Paying for AI Coding Tool Worth It for Junior Developer?](/ai-tools-compared/is-paying-for-ai-coding-tool-worth-it-for-junior-developer/)
-- [Is Tabnine Free Plan Still Worth Using in 2026?](/ai-tools-compared/is-tabnine-free-plan-still-worth-using-in-2026/)
+- [Cursor Free Plan vs Windsurf Free Plan Which Gives](/ai-tools-compared/cursor-free-plan-vs-windsurf-free-plan-which-gives-more/)
+- [How Much Does Cursor AI Actually Cost Per Month All](/ai-tools-compared/how-much-does-cursor-ai-actually-cost-per-month-all-plans/)
 - [Cursor Free Tier Limitations: What Stops Working After Trial](/ai-tools-compared/cursor-free-tier-limitations-what-stops-working-after-trial/)
-- [Cursor Free Plan vs Windsurf Free Plan Which Gives More](/ai-tools-compared/cursor-free-plan-vs-windsurf-free-plan-which-gives-more/)
-
+- [Windsurf Pro vs Cursor Pro: Price and Features Compared 2026](/ai-tools-compared/windsurf-pro-vs-cursor-pro-price-and-features-compared-2026/)
+- [Midjourney Standard vs Pro Plan: Is Stealth Mode Worth](/ai-tools-compared/midjourney-standard-vs-pro-plan-stealth-mode-worth-extra-cost/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

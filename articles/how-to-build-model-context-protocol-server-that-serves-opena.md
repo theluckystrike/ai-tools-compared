@@ -40,6 +40,14 @@ The Model Context Protocol (MCP) has become the standard way for AI tools to int
 - **This is especially useful**: during rapid iteration when endpoints are being added or modified frequently.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [What Is MCP and Why It Matters for OpenAPI](#what-is-mcp-and-why-it-matters-for-openapi)
+- [Prerequisites](#prerequisites)
+- [Advanced Patterns](#advanced-patterns)
+- [Best Practices](#best-practices)
+- [Troubleshooting](#troubleshooting)
+
 ## What Is MCP and Why It Matters for OpenAPI
 
 MCP defines a standardized protocol for communication between AI models and external systems. It provides a structured way to expose tools, resources, and prompts to AI assistants. When your AI tool connects to an MCP server, it can automatically discover available capabilities without manual configuration.

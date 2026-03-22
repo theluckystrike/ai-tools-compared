@@ -39,6 +39,21 @@ Cross-platform deep linking remains one of the most tedious parts of mobile deve
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Cross-platform deep linking remains**: one of the most tedious parts of mobile development.
 
+## Table of Contents
+
+- [The Deep Linking Configuration Problem](#the-deep-linking-configuration-problem)
+- [Tools Tested](#tools-tested)
+- [Test Results](#test-results)
+- [Practical Recommendations](#practical-recommendations)
+- [Configuration Security Considerations](#configuration-security-considerations)
+- [Debugging Deep Linking Issues](#debugging-deep-linking-issues)
+- [Automated Deep Link Testing](#automated-deep-link-testing)
+- [Multi-Environment Configuration](#multi-environment-configuration)
+- [React Native Deep Link Handling](#react-native-deep-link-handling)
+- [Monitoring Deep Link Performance](#monitoring-deep-link-performance)
+- [Common Deep Linking Mistakes to Avoid](#common-deep-linking-mistakes-to-avoid)
+- [Practical Recommendations](#practical-recommendations)
+
 ## The Deep Linking Configuration Problem
 
 Before comparing tools, understanding what needs to be generated helps evaluate outputs. A typical cross-platform deep linking setup requires:

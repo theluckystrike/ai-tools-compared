@@ -40,6 +40,14 @@ Testing your application's behavior when network connectivity fails is critical 
 - **Consider a user filling out a long form who loses connection mid-session**: the application should save their progress locally and provide clear feedback.
 - **A document editor that**: shows a cryptic error instead of "Saved locally, will sync when reconnected" loses user confidence permanently.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Why Offline Testing Deserves Attention](#why-offline-testing-deserves-attention)
+- [Practical Example: E-Commerce Cart Offline Handling](#practical-example-e-commerce-cart-offline-handling)
+- [Best Practices for AI-Generated Network Tests](#best-practices-for-ai-generated-network-tests)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
@@ -309,11 +317,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Use AI to Generate Kubernetes Network Policies Correc](/ai-tools-compared/how-to-use-ai-to-generate-kubernetes-network-policies-correc/)
-- [How to Use AI to Generate Playwright Authentication Flow Tes](/ai-tools-compared/how-to-use-ai-to-generate-playwright-authentication-flow-tes/)
-- [How to Use AI to Generate Playwright Keyboard Navigation Tes](/ai-tools-compared/how-to-use-ai-to-generate-playwright-keyboard-navigation-tes/)
-- [How to Use AI to Generate Playwright Tests for Iframe and](/ai-tools-compared/how-to-use-ai-to-generate-playwright-tests-for-iframe-and-cross-origin-content/)
-- [Best AI Tool for Network Engineers: Runbook Writing Guide](/ai-tools-compared/best-ai-tool-for-network-engineers-runbook-writing/)
-
+- [How to Use AI to Generate Kubernetes Network Policies](/ai-tools-compared/how-to-use-ai-to-generate-kubernetes-network-policies-correc/)
+- [How to Use AI to Generate Playwright Authentication Flow](/ai-tools-compared/how-to-use-ai-to-generate-playwright-authentication-flow-tes/)
+- [How to Use AI to Generate Playwright Keyboard Navigation](/ai-tools-compared/how-to-use-ai-to-generate-playwright-keyboard-navigation-tes/)
+- [AI Coding Assistant for Network Traffic Analysis: What](/ai-tools-compared/ai-coding-assistant-network-traffic-analysis-what-connection/)
+- [Best AI Tools for Writing Playwright Tests 2026](/ai-tools-compared/best-ai-tools-for-writing-playwright-tests-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

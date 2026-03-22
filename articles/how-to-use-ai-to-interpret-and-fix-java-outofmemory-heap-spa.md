@@ -43,6 +43,27 @@ AI can parse these logs to identify patterns.
 - **Caching layer misconfigured -**: Users cached without eviction policy 3.
 - **Investigate if user list**: should be paginated instead of loaded all at once." Result: You implement pagination instead of loading all users, resolving the issue.
 
+## Table of Contents
+
+- [Understanding the OutOfMemory Error](#understanding-the-outofmemory-error)
+- [How AI Tools Transform Error Analysis](#how-ai-tools-transform-error-analysis)
+- [Practical Examples of AI-Guided Diagnosis](#practical-examples-of-ai-guided-diagnosis)
+- [Interpreting GC Logs with AI Assistance](#interpreting-gc-logs-with-ai-assistance)
+- [When AI Points to Configuration Issues](#when-ai-points-to-configuration-issues)
+- [Verifying the Fix](#verifying-the-fix)
+- [Heap Problem Diagnosis Checklist](#heap-problem-diagnosis-checklist)
+- [Advanced Memory Analysis Techniques](#advanced-memory-analysis-techniques)
+- [Real-World AI-Assisted Diagnosis Example](#real-world-ai-assisted-diagnosis-example)
+- [Prompt Template for AI-Assisted Memory Debugging](#prompt-template-for-ai-assisted-memory-debugging)
+- [Environment](#environment)
+- [Error Details](#error-details)
+- [Application Context](#application-context)
+- [Observations](#observations)
+- [Code Snippet](#code-snippet)
+- [GC Log Excerpt](#gc-log-excerpt)
+- [Tool Comparison for Memory Analysis](#tool-comparison-for-memory-analysis)
+- [Prevention Strategies After Diagnosis](#prevention-strategies-after-diagnosis)
+
 ## Understanding the OutOfMemory Error
 
 When the JVM throws `java.lang.OutOfMemoryError: Java heap space`, it signals that the garbage collector cannot reclaim enough memory to satisfy a new allocation request. This differs from other memory errors like `Metaspace` or `GC overhead limit exceeded`. The heap space error typically stems from three scenarios: memory leaks where objects accumulate unintentionally, legitimate high memory consumption from data processing, or insufficient heap size configuration.
@@ -407,11 +428,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Best AI Assistant for Debugging Memory Leaks Shown](/ai-tools-compared/best-ai-assistant-for-debugging-memory-leaks-shown-in-chrome-devtools-heap-snapshot/)
-- [How to Use AI to Interpret Elixir GenServer Crash Reports](/ai-tools-compared/how-to-use-ai-to-interpret-elixir-genserver-crash-reports-an/)
-- [AI Code Completion for Java Jakarta EE Migration from Javax](/ai-tools-compared/ai-code-completion-for-java-jakarta-ee-migration-from-javax-/)
-- [AI Code Completion for Java Record Classes and Sealed Interf](/ai-tools-compared/ai-code-completion-for-java-record-classes-and-sealed-interf/)
-- [AI Code Generation for Java Reactive Programming with Projec](/ai-tools-compared/ai-code-generation-for-java-reactive-programming-with-projec/)
-
+- [AI Code Completion for Java Record Classes and Sealed](/ai-tools-compared/ai-code-completion-for-java-record-classes-and-sealed-interf/)
+- [AI Code Generation Quality for Java Pattern Matching](/ai-tools-compared/ai-code-generation-quality-for-java-pattern-matching-and-swi/)
+- [Claude Code Java Library Development Guide](/ai-tools-compared/claude-code-java-library-development-guide/)
+- [AI Code Generation for Java Reactive Programming](/ai-tools-compared/ai-code-generation-for-java-reactive-programming-with-projec/)
+- [Best AI Tools for Debugging Memory Leaks 2026](/ai-tools-compared/best-ai-tools-for-debugging-memory-leaks-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```

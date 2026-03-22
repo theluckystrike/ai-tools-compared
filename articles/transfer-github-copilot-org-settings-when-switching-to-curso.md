@@ -39,6 +39,24 @@ There is no automated export-import path from GitHub Copilot to Cursor Business 
 - **Verify that all your**: developers' preferred IDEs have Cursor extensions with feature parity before fully committing to the switch.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [What Actually Transfers Between Platforms](#what-actually-transfers-between-platforms)
+- [Settings You Can Recreate in Cursor Business](#settings-you-can-recreate-in-cursor-business)
+- [Settings That Require New Approaches](#settings-that-require-new-approaches)
+- [Practical Migration Steps](#practical-migration-steps)
+- [Detailed Settings Migration Checklist](#detailed-settings-migration-checklist)
+- [Pricing Comparison: GitHub Copilot vs Cursor Business](#pricing-comparison-github-copilot-vs-cursor-business)
+- [Creating Organization-Wide `.cursorrules`](#creating-organization-wide-cursorrules)
+- [Testing Configuration Changes](#testing-configuration-changes)
+- [Handling Special Cases: Code Review Integration](#handling-special-cases-code-review-integration)
+- [Team Enablement During Migration](#team-enablement-during-migration)
+- [What's Different?](#whats-different)
+- [Quick Start](#quick-start)
+- [Common Issues](#common-issues)
+- [Monitoring Post-Migration Success](#monitoring-post-migration-success)
+- [Fallback and Rollback Plan](#fallback-and-rollback-plan)
+
 ## What Actually Transfers Between Platforms
 
 The first thing to understand is that GitHub Copilot and Cursor Business store their configurations in fundamentally different ways. GitHub Copilot relies heavily on GitHub's organization-level settings, managed through the GitHub Admin portal. Cursor Business, by contrast, uses a combination of organization-level dashboards and local `.cursorrules` files that live within your repositories.
@@ -432,10 +450,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [How to Transfer Copilot Code Review Settings](/ai-tools-compared/transfer-copilot-code-review-settings-to-cursor-ai-review-co/)
-- [Copilot Business Org-Wide Enable: Cost If Not All Devs Use](/ai-tools-compared/copilot-business-org-wide-enable-cost-if-not-all-devs-use-it/)
-- [Switching from Windsurf to Cursor How to Transfer Project](/ai-tools-compared/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
-- [How to Transfer Copilot Inline Chat Shortcuts](/ai-tools-compared/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)
+- [Migrate GitHub Copilot Workspace Setup to Cursor Background](/ai-tools-compared/migrate-github-copilot-workspace-setup-to-cursor-background-/)
+- [Copilot Suggestions Not Showing Up Fix 2026](/ai-tools-compared/copilot-suggestions-not-showing-up-fix-2026/)
 - [How to Transfer Cursor Editor Theme and Layout](/ai-tools-compared/transfer-cursor-editor-theme-and-layout-to-vscode-with-copil/)
-
+- [GitHub Copilot Billing Error Troubleshoot 2026: Complete](/ai-tools-compared/github-copilot-billing-error-troubleshoot-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

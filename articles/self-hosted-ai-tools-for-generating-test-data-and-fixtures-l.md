@@ -43,6 +43,22 @@ Better prompt: "Generate 100 user records for a healthcare application.
 - **Whether you need fake user profiles**: order histories, or complex nested structures for integration tests, manually creating this data wastes time.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Why Self-Hosted for Test Data Generation](#why-self-hosted-for-test-data-generation)
+- [Tool Comparison Overview](#tool-comparison-overview)
+- [Detailed Tool Analysis](#detailed-tool-analysis)
+- [Using Ollama as a Backend for Any Tool](#using-ollama-as-a-backend-for-any-tool)
+- [Generating Edge Cases and Boundary Data](#generating-edge-cases-and-boundary-data)
+- [Seeding Deterministic Test Fixtures](#seeding-deterministic-test-fixtures)
+- [Performance Considerations](#performance-considerations)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+- [Integration Tips](#integration-tips)
+- [Advanced Configuration and Scaling](#advanced-configuration-and-scaling)
+- [Real-World Implementation Patterns](#real-world-implementation-patterns)
+- [Prompt Engineering for Better Outputs](#prompt-engineering-for-better-outputs)
+- [Cost-Benefit Analysis](#cost-benefit-analysis)
+
 ## Why Self-Hosted for Test Data Generation
 
 Running AI locally provides several advantages for test data generation. First, data privacy is guaranteed since no customer data or proprietary schemas leave your machine. Second, latency disappears—generating thousands of fixture records takes seconds rather than minutes. Third, cost control becomes absolute: no per-token fees or API rate limits.
@@ -413,10 +429,11 @@ For teams generating more than 50,000 fixture records monthly, self-hosted appro
 
 ## Related Articles
 
-- [AI Tools for Qa Engineers Generating Data Driven Test](/ai-tools-for-qa-engineers-generating-data-driven-test-scenar/)
-- [Self-Hosted AI Tool for Generating OpenAPI Specs from](/self-hosted-ai-tool-for-generating-openapi-specs-from-existi/)
-- [AI Tools for Automated Test Data Generation 2026](/ai-tools-for-automated-test-data-generation-2026/)
-
+- [AI Tools for Creating Test Data Generators That Respect](/ai-tools-compared/ai-tools-for-creating-test-data-generators-that-respect-busi/)
+- [AI Tools for Qa Engineers Generating Data Driven Test](/ai-tools-compared/ai-tools-for-qa-engineers-generating-data-driven-test-scenar/)
+- [AI Tools for Creating Realistic Test Datasets That Preserve](/ai-tools-compared/ai-tools-for-creating-realistic-test-datasets-that-preserve-/)
+- [AI Tools for Automated Test Data Generation 2026](/ai-tools-compared/ai-tools-for-automated-test-data-generation-2026/)
+- [AI Tools for Creating Test Data That Covers Timezone](/ai-tools-compared/ai-tools-for-creating-test-data-that-covers-timezone-dayligh/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

@@ -40,6 +40,18 @@ Documentation pull requests often slip through review cycles without thorough sc
 - **Author self-review - Use**: AI to check your own changes before creating the PR 2.
 - **Peer review - Human**: reviewer focuses on clarity and accuracy 4.
 
+## Table of Contents
+
+- [How AI Tools Assist Documentation Review](#how-ai-tools-assist-documentation-review)
+- [Practical Approaches for Documentation Review](#practical-approaches-for-documentation-review)
+- [Integrating AI Review into Your CI Pipeline](#integrating-ai-review-into-your-ci-pipeline)
+- [Comparing AI Tools for Documentation Review](#comparing-ai-tools-for-documentation-review)
+- [What AI Tools Do Well](#what-ai-tools-do-well)
+- [Limitations to Consider](#limitations-to-consider)
+- [Building a Documentation Review Checklist](#building-a-documentation-review-checklist)
+- [Recommended Workflow](#recommended-workflow)
+- [Example Prompts for Documentation Review](#example-prompts-for-documentation-review)
+
 ## How AI Tools Assist Documentation Review
 
 AI coding assistants and chat interfaces can analyze documentation PRs in several ways:
@@ -306,11 +318,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Reviewing Terraform Plans Before Applying](/ai-tools-compared/ai-tools-for-reviewing-terraform-plans-before-applying-to-pr/)
-- [Best AI Tools for Reviewing Embedded C Code for Memory.](/ai-tools-compared/best-ai-tools-for-reviewing-embedded-c-code-for-memory-leak-and-buffer-overflow/)
-- [ChatGPT API 429 Too Many Requests Fix](/ai-tools-compared/chatgpt-api-429-too-many-requests-fix/)
-- [Cheapest AI Coding Subscription with Unlimited Requests 2026](/ai-tools-compared/cheapest-ai-coding-subscription-with-unlimited-requests-2026/)
-- [Cursor Pro Usage Cap: How Many Requests Per Day in 2026](/ai-tools-compared/cursor-pro-usage-cap-how-many-requests-per-day-2026/)
-
+- [AI Tools for Creating Dbt Documentation Blocks](/ai-tools-compared/ai-tools-for-creating-dbt-documentation-blocks-from-column-level-lineage-analysis/)
+- [Best AI Tools for Code Documentation Generation 2026](/ai-tools-compared/best-ai-tools-for-code-documentation-generation-2026/)
+- [AI Tools for Keeping Documentation in Sync with Codebase Changes Compared 2026](/ai-tools-compared/ai-tools-for-keeping-documentation-in-sync-with-codebase-cha/)
+- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)
+- [Best AI Tools for Technical Documentation Writing in 2026](/ai-tools-compared/ai-tools-for-technical-writing-documentation-2026/---)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

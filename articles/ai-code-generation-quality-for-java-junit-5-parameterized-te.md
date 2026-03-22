@@ -41,6 +41,21 @@ Java developers working with JUnit 5 parameterized tests frequently rely on AI c
 - **Verify that the JUnit**: 5 vintage engine is not mistakenly included, which would cause Jupiter annotations to be ignored.
 - **Cursor provides good context**: awareness for project-specific data structures but may generate outdated JUnit 4 syntax when the project uses JUnit 5.
 
+## Table of Contents
+
+- [Understanding JUnit 5 Parameterized Tests](#understanding-junit-5-parameterized-tests)
+- [Common AI Generation Issues](#common-ai-generation-issues)
+- [Practical Examples](#practical-examples)
+- [Quality Assessment Criteria](#quality-assessment-criteria)
+- [Tool-Specific Observations](#tool-specific-observations)
+- [Recommendations for Developers](#recommendations-for-developers)
+- [Tool-Specific Quality Assessment](#tool-specific-quality-assessment)
+- [Advanced Parameterized Test Examples](#advanced-parameterized-test-examples)
+- [Common Quality Issues and Fixes](#common-quality-issues-and-fixes)
+- [Testing the Generated Code](#testing-the-generated-code)
+- [Prompting Strategy for Better Results](#prompting-strategy-for-better-results)
+- [Integration with Test Frameworks](#integration-with-test-frameworks)
+
 ## Understanding JUnit 5 Parameterized Tests
 
 Parameterized tests in JUnit 5 allow developers to run the same test logic with multiple sets of input data. This approach reduces code duplication and improves test coverage visibility. JUnit 5 provides several annotation-based approaches for creating parameterized tests, each with specific syntax requirements that AI assistants must handle correctly.

@@ -37,6 +37,20 @@ Generating Zod validation schemas requires understanding TypeScript types, Zod's
 - **Use Cursor's chat for**: complex schemas with multiple conditions 3.
 - **Always use .strict() to**: catch unexpected fields (suggested by Copilot usually) 5.
 
+## Table of Contents
+
+- [Why Zod Schema Generation Matters](#why-zod-schema-generation-matters)
+- [Zod Schema Complexity](#zod-schema-complexity)
+- [Claude Code](#claude-code)
+- [GitHub Copilot](#github-copilot)
+- [Cursor](#cursor)
+- [Codeium](#codeium)
+- [Comparison: Zod Schema Tools](#comparison-zod-schema-tools)
+- [Practical Schema Generation Scenarios](#practical-schema-generation-scenarios)
+- [Recommended Workflow](#recommended-workflow)
+- [Common Schema Generation Mistakes](#common-schema-generation-mistakes)
+- [Related Reading](#related-reading)
+
 ## Why Zod Schema Generation Matters
 
 Zod provides runtime validation for TypeScript, enabling safe handling of external data. Writing schemas manually introduces opportunities for mistakes: field omissions, incorrect type narrowing, missing custom validations, and inconsistent error messages. A typical application with 20 API endpoints requires 40-60 Zod schemas (request and response pairs).
@@ -579,5 +593,13 @@ Pick one tool from the options discussed and sign up for a free trial. Spend 30 
 **What is the learning curve like?**
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+
+## Related Articles
+
+- [How Accurate Are AI Tools at Generating TypeScript Zod](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-typescript-zod-schem/)
+- [Best AI Tools for Writing Prisma Schemas in 2026](/ai-tools-compared/articles/best-ai-tools-for-writing-prisma-schemas-2026/)
+- [Best AI Tools for Writing GraphQL Schemas 2026](/ai-tools-compared/best-ai-tools-for-writing-graphql-schemas-2026/)
+- [Best AI Tools for GraphQL Schema Generation](/ai-tools-compared/ai-tools-for-graphql-schema-generation/)
+- [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-compared/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

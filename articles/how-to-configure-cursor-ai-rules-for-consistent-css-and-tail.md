@@ -38,6 +38,14 @@ Configure Cursor AI rules using a.cursorrules file that enforces consistent Tail
 - **Copilot also lacks the**: inline edit mode that makes Cursor particularly useful for refactoring class ordering across an existing codebase.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Why Class Ordering Matters](#why-class-ordering-matters)
+- [Prerequisites](#prerequisites)
+- [Practical Examples](#practical-examples)
+- [Common Issues and Solutions](#common-issues-and-solutions)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Class Ordering Matters
 
 When working with Tailwind CSS, class consistency becomes crucial as projects grow. A well-organized class attribute follows a logical pattern—structure first, then sizing, then typography, then colors, then interactive states. Without enforced ordering, developers end up with inconsistent class strings that make code harder to read and diffs harder to review.
@@ -412,10 +420,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Cursor AI Rules Files How to Customize AI Behavior](/ai-tools-compared/cursor-ai-rules-files-how-to-customize-ai-behavior-for-your-project/)
 - [How to Migrate Cursor Rules File](/ai-tools-compared/migrate-cursor-rules-file-to-windsurf-rules-format-guide/)
-- [Migrate Windsurf AI Rules to Cursor Dot Cursor Rules Format](/ai-tools-compared/migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/)
-- [Migrating Copilot Custom Instructions to Cursor Rules.](/ai-tools-compared/migrating-copilot-custom-instructions-to-cursor-rules-file-f/)
-- [How to Use AI Coding Tools to Enforce Consistent API](/ai-tools-compared/how-to-use-ai-coding-tools-to-enforce-consistent-api-response-formats/)
-
+- [Migrate Windsurf AI Rules to Cursor Dot Cursor Rules](/ai-tools-compared/migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/)
+- [Cursor AI Rules Files How to Customize AI Behavior](/ai-tools-compared/cursor-ai-rules-files-how-to-customize-ai-behavior-for-your-project/)
+- [Migrating Copilot Custom Instructions to Cursor Rules](/ai-tools-compared/migrating-copilot-custom-instructions-to-cursor-rules-file-f/)
+- [How to Transfer Copilot Code Review Settings](/ai-tools-compared/transfer-copilot-code-review-settings-to-cursor-ai-review-co/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

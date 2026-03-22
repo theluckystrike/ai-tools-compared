@@ -40,6 +40,20 @@ This guide compares the strengths and weaknesses of each tool for this specific 
 - **If you convert a `User` class first**: then ask about `UserService`, Claude remembers the relationships and can suggest appropriate conversions for dependent classes.
 - **If you converted `User.id`**: from `Long` to a value class `UserId` in an earlier message, Claude will use `UserId` in the `UserService` conversion without being told.
 
+## Table of Contents
+
+- [Understanding the Migration Challenge](#understanding-the-migration-challenge)
+- [Quick Comparison](#quick-comparison)
+- [Code Quality and Accuracy](#code-quality-and-accuracy)
+- [Handling Complex Patterns](#handling-complex-patterns)
+- [Handling Enums and Sealed Classes](#handling-enums-and-sealed-classes)
+- [Context Awareness and Project Integration](#context-awareness-and-project-integration)
+- [Handling Data Classes and Value Objects](#handling-data-classes-and-value-objects)
+- [Converting Java Concurrency to Coroutines](#converting-java-concurrency-to-coroutines)
+- [Limitations and Gotchas](#limitations-and-gotchas)
+- [Performance and Response Speed](#performance-and-response-speed)
+- [Recommendation](#recommendation)
+
 ## Understanding the Migration Challenge
 
 Legacy Java applications often contain verbose patterns, outdated idioms, and years of accumulated technical debt. Kotlin offers null safety, extension functions, data classes, and coroutines that can dramatically reduce boilerplate. However, manually converting large Java codebases is time-consuming and error-prone. Both Claude and ChatGPT can help automate portions of this migration, though their approaches differ.
@@ -348,11 +362,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
+- [Claude Code vs ChatGPT Code Interpreter Comparison](/ai-tools-compared/claude-code-vs-chatgpt-code-interpreter-comparison/)
 - [Claude Code vs Cursor for Large Codebase Refactoring](/ai-tools-compared/claude-code-vs-cursor-for-large-codebase-refactoring/)
-- [Best AI Tools for Migrating Legacy Java to Modern Frameworks](/ai-tools-compared/best-ai-tools-for-migrating-legacy-java-to-modern-frameworks/)
+- [ChatGPT vs Claude for Writing API Documentation](/ai-tools-compared/chatgpt-vs-claude-for-writing-api-documentation/)
+- [ChatGPT vs Claude for Creating OpenAPI Spec from Existing](/ai-tools-compared/chatgpt-vs-claude-for-creating-openapi-spec-from-existing-co/)
 - [Claude Code Java Library Development Guide](/ai-tools-compared/claude-code-java-library-development-guide/)
-- [Best AI for Writing Correct Kotlin Multiplatform Shared](/ai-tools-compared/best-ai-for-writing-correct-kotlin-multiplatform-shared-code/)
-- [Free AI Tools for Code Refactoring That Actually Improve Qua](/ai-tools-compared/free-ai-tools-for-code-refactoring-that-actually-improve-qua/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

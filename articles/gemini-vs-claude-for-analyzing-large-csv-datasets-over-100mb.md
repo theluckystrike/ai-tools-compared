@@ -39,6 +39,15 @@ When your CSV files grow beyond 100MB, traditional spreadsheet tools start to st
 - **The AI assistant that**: helps you most depends on what questions you're asking and what structure your data has.
 - **When you need to**: process large CSVs quickly, Gemini's strength lies in generating efficient pandas or PySpark code that uses chunked reading strategies.
 
+## Table of Contents
+
+- [The Core Challenge with Large CSV Files](#the-core-challenge-with-large-csv-files)
+- [Gemini: Speed and Google Ecosystem Integration](#gemini-speed-and-google-ecosystem-integration)
+- [Claude: Deep Analysis and Pattern Recognition](#claude-deep-analysis-and-pattern-recognition)
+- [Head-to-Head Comparison](#head-to-head-comparison)
+- [Real-World Scenarios](#real-world-scenarios)
+- [Recommendations](#recommendations)
+
 ## The Core Challenge with Large CSV Files
 
 Large CSV files present unique challenges that differ from smaller datasets. Memory constraints become real—loading a 200MB file into pandas can consume 2-3GB of RAM. Opening such files in GUI tools becomes impractical. You need command-line tools, chunked processing, or AI assistance to make progress efficiently.

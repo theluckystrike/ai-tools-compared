@@ -39,6 +39,17 @@ Claude 3.5 Sonnet excels at generating production-grade Redis caching patterns w
 - **Does Redis offer a**: free tier? Most major tools offer some form of free tier or trial period.
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 
+## Table of Contents
+
+- [Understanding Redis Caching Strategies](#understanding-redis-caching-strategies)
+- [Claude 3.5 Sonnet: Production-Grade Patterns](#claude-35-sonnet-production-grade-patterns)
+- [ChatGPT-4: Solid Foundation with Iteration](#chatgpt-4-solid-foundation-with-iteration)
+- [Cursor (Claude-Based): Codebase-Aware Caching](#cursor-claude-based-codebase-aware-caching)
+- [Specialized Tools for Cache Monitoring](#specialized-tools-for-cache-monitoring)
+- [Practical Caching Checklist](#practical-caching-checklist)
+- [Common AI Tool Mistakes](#common-ai-tool-mistakes)
+- [Picking Your Tool](#picking-your-tool)
+
 ## Understanding Redis Caching Strategies
 
 Redis serves as an in-memory data store that dramatically accelerates application performance by reducing database queries. However, implementing effective caching requires careful strategy design. Cache invalidation presents the hardest problem in computer science—deciding when cached data becomes stale and requires refresh.

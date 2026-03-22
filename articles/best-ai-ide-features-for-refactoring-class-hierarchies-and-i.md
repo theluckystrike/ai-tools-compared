@@ -41,6 +41,21 @@ Use JetBrains IDEs with AI-powered visual hierarchy analysis to extract methods,
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Intelligent Hierarchy Visualization](#intelligent-hierarchy-visualization)
+- [Automated Detection of Inheritance Problems](#automated-detection-of-inheritance-problems)
+- [Safe Extract Superclass and Push Down Methods](#safe-extract-superclass-and-push-down-methods)
+- [AI-Assisted Interface Extraction](#ai-assisted-interface-extraction)
+- [Predicting Refactoring Impact](#predicting-refactoring-impact)
+- [Intelligent Method Pull-Up and Push-Down](#intelligent-method-pull-up-and-push-down)
+- [Composition Over Inheritance Recommendations](#composition-over-inheritance-recommendations)
+- [Practical Workflow for Hierarchy Refactoring](#practical-workflow-for-hierarchy-refactoring)
+- [IDE-Specific Refactoring Features](#ide-specific-refactoring-features)
+- [Real-World Refactoring Example: E-Commerce Product Hierarchy](#real-world-refactoring-example-e-commerce-product-hierarchy)
+- [Testing During Refactoring](#testing-during-refactoring)
+- [Measuring Refactoring Success](#measuring-refactoring-success)
+
 ## Intelligent Hierarchy Visualization
 
 Modern AI IDEs provide visual representations of class hierarchies that go beyond simple inheritance diagrams. These tools analyze the entire inheritance chain, including abstract base classes, interfaces, and mixins, presenting a view of how classes relate to each other.

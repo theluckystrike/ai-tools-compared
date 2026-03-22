@@ -26,6 +26,18 @@ Coverage percentage numbers are nearly useless. 85% coverage could mean all your
 3.
 - **Topics covered**: what coverage tools don't tell you, build an intelligent coverage reporter, github action integration
 
+## Table of Contents
+
+- [What Coverage Tools Don't Tell You](#what-coverage-tools-dont-tell-you)
+- [Why Most Coverage Reports Fail Teams](#why-most-coverage-reports-fail-teams)
+- [Build an Intelligent Coverage Reporter](#build-an-intelligent-coverage-reporter)
+- [GitHub Action Integration](#github-action-integration)
+- [Coverage Trend Analysis](#coverage-trend-analysis)
+- [Integrating with pytest-cov and coverage.py](#integrating-with-pytest-cov-and-coveragepy)
+- [Choosing Between AI Tools for Coverage Analysis](#choosing-between-ai-tools-for-coverage-analysis)
+- [Coverage Debt Estimation](#coverage-debt-estimation)
+- [Related Reading](#related-reading)
+
 ## What Coverage Tools Don't Tell You
 
 Standard coverage tools give you:
@@ -439,6 +451,14 @@ This gives engineering managers a concrete number to bring to sprint planning ra
 - [AI Tools for Automated PR Description Generation](/ai-tools-compared/ai-tools-for-automated-pr-description-generation/)
 
 ---
+
+## Related Articles
+
+- [Claude Code Coverage Reporting Setup Guide](/ai-tools-compared/claude-code-coverage-reporting-setup-guide/)
+- [AI-Powered Code Coverage Improvement Tools](/ai-tools-compared/ai-powered-code-coverage-improvement)
+- [Best AI Assistant for QA Engineers Writing Test Coverage](/ai-tools-compared/best-ai-assistant-for-qa-engineers-writing-test-coverage-gap/)
+- [Best AI Tools for Generating Unit Tests](/ai-tools-compared/best-ai-tools-for-generating-unit-tests-from-legacy-code-comparison/)
+- [Best AI Tools for Automated Code Review 2026](/ai-tools-compared/best-ai-tools-for-automated-code-review-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -39,6 +39,17 @@ Choose Kustomer if you need fine-grained API control over conversation workflows
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **Choose Kustomer if you**: need fine-grained API control over conversation workflows, ticket-based metrics and reporting, or custom AI response flows built on explicit conversation lifecycle events.
 
+## Table of Contents
+
+- [Platform Architecture Overview](#platform-architecture-overview)
+- [API Capabilities and REST Patterns](#api-capabilities-and-rest-patterns)
+- [AI Feature Comparison](#ai-feature-comparison)
+- [Integration Complexity](#integration-complexity)
+- [Real-World Performance and Rate Limits](#real-world-performance-and-rate-limits)
+- [Developer Experience Considerations](#developer-experience-considerations)
+- [Practical Migration Considerations](#practical-migration-considerations)
+- [Common Pitfalls](#common-pitfalls)
+
 ## Platform Architecture Overview
 
 **Kustomer** is a customer service platform acquired by Meta in 2020 (and now independent again) that emphasizes an unified customer timeline. It stores all customer interactions in a chronological feed, making it straightforward to query and display conversation history. Kustomer's data model treats conversations as first-class objects with relationships to customers, agents, and workflows.
@@ -323,10 +334,9 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Best AI-Powered Platform Engineering Tools for Developer Sel](/ai-tools-compared/best-ai-powered-platform-engineering-tools-for-developer-sel/)
-- [Best AI Tools for Customer Onboarding: A Developer Guide](/ai-tools-compared/best-ai-tools-for-customer-onboarding/)
 - [Custify vs Gainsight AI Customer Success: A Developer Guide](/ai-tools-compared/custify-vs-gainsight-ai-customer-success/)
 - [Verloop vs Engati AI Chatbot Platform Compared](/ai-tools-compared/verloop-vs-engati-ai-chatbot-platform/)
-- [AI Tools for Customer Escalation Management](/ai-tools-compared/ai-tools-for-customer-escalation-management/)
-
+- [Tidio vs Intercom AI Chatbot: A Developer Comparison](/ai-tools-compared/tidio-vs-intercom-ai-chatbot/)
+- [Best AI Tools for Customer Onboarding: A Developer Guide](/ai-tools-compared/best-ai-tools-for-customer-onboarding/)
+- [Best AI Voice Bot for Call Centers: A Developer Guide](/ai-tools-compared/best-ai-voice-bot-for-call-centers/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

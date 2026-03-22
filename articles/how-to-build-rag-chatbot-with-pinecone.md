@@ -24,6 +24,20 @@ Retrieval-augmented generation solves the context window problem: instead of cra
 - **This guide covers architecture overview**: prerequisites, step 1: document ingestion, with specific setup instructions
 - **Setup and configuration**: Step-by-step instructions included for each tool discussed
 
+## Table of Contents
+
+- [Architecture Overview](#architecture-overview)
+- [Prerequisites](#prerequisites)
+- [Step 1: Document Ingestion](#step-1-document-ingestion)
+- [Step 2: Retrieval](#step-2-retrieval)
+- [Step 3: Generation with Claude](#step-3-generation-with-claude)
+- [Step 4: FastAPI Endpoint](#step-4-fastapi-endpoint)
+- [Common Failure Modes](#common-failure-modes)
+- [Chunk Strategy by Document Type](#chunk-strategy-by-document-type)
+- [Multi-Tenant Isolation with Namespaces](#multi-tenant-isolation-with-namespaces)
+- [Re-Ranking Retrieved Chunks](#re-ranking-retrieved-chunks)
+- [Related Reading](#related-reading)
+
 ## Architecture Overview
 
 ```

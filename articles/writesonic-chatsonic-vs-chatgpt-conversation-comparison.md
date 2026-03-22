@@ -38,6 +38,18 @@ tags: [ai-tools-compared, comparison, chatgpt]---
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **Chatsonic's credits system is less transparent for production use**: credit consumption per request varies, making cost projections harder.
 
+## Table of Contents
+
+- [Platform Architecture](#platform-architecture)
+- [API Integration Patterns](#api-integration-patterns)
+- [Conversation Context Handling](#conversation-context-handling)
+- [Real-Time Information Access](#real-time-information-access)
+- [Head-to-Head Comparison Table](#head-to-head-comparison-table)
+- [Output Quality for Different Task Types](#output-quality-for-different-task-types)
+- [Use Case Suitability](#use-case-suitability)
+- [Pricing Considerations](#pricing-considerations)
+- [Development Recommendations](#development-recommendations)
+
 ## Platform Architecture
 
 Chatsonic (by Writesonic) is built as an AI-powered conversational assistant that integrates with Google's knowledge graph. It offers both a web interface and API access, positioning itself as a real-time information retrieval tool with conversation capabilities.

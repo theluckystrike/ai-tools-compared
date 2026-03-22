@@ -39,6 +39,17 @@ Choose Jasper AI Brand Voice if your team lacks prompt engineering experience an
 - **You upload sample content**: blog posts, emails, product descriptions—and Jasper extracts tone, vocabulary patterns, and structural preferences into a reusable profile.
 - **The system processes these**: files and creates a voice profile you can name and reuse across projects.
 
+## Table of Contents
+
+- [Understanding the Two Approaches](#understanding-the-two-approaches)
+- [Jasper AI Brand Voice: Structured Consistency](#jasper-ai-brand-voice-structured-consistency)
+- [Claude Style Matching: Prompt-Driven Control](#claude-style-matching-prompt-driven-control)
+- [Side-by-Side Feature Comparison](#side-by-side-feature-comparison)
+- [Practical Use Cases](#practical-use-cases)
+- [Integration Considerations](#integration-considerations)
+- [Cost and Scaling Considerations](#cost-and-scaling-considerations)
+- [Which Should You Choose?](#which-should-you-choose)
+
 ## Understanding the Two Approaches
 
 Jasper AI packages brand consistency as a dedicated feature called Brand Voice. You upload sample content—blog posts, emails, product descriptions—and Jasper extracts tone, vocabulary patterns, and structural preferences into a reusable profile. The system then generates new content that adheres to these extracted patterns.

@@ -43,6 +43,16 @@ Input Prompt:
 "I have a users table with 2M rows.
 - **Suggest a migration strategy**: to denormalize order_count into the users table with a rollout plan." ChatGPT-4 Response: 1.
 
+## Table of Contents
+
+- [Why AI-Assisted SQL Migrations Matter](#why-ai-assisted-sql-migrations-matter)
+- [Top AI Tools for SQL Migrations](#top-ai-tools-for-sql-migrations)
+- [Comparison Table: AI Tools for SQL Migrations](#comparison-table-ai-tools-for-sql-migrations)
+- [Real-World Migration Example](#real-world-migration-example)
+- [Best Practices for AI-Generated Migrations](#best-practices-for-ai-generated-migrations)
+- [Cost Comparison for Teams](#cost-comparison-for-teams)
+- [Choosing Your AI Migration Tool](#choosing-your-ai-migration-tool)
+
 ## Why AI-Assisted SQL Migrations Matter
 
 Database schema changes affect production reliability, performance, and data integrity. AI tools reduce manual errors by generating:

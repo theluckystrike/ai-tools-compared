@@ -40,6 +40,18 @@ Choosing between Canva AI Video Editor and CapCut AI in 2026 requires understand
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
+## Table of Contents
+
+- [Platform Architecture Overview](#platform-architecture-overview)
+- [Feature Comparison at a Glance](#feature-comparison-at-a-glance)
+- [API Access and Developer Integration](#api-access-and-developer-integration)
+- [AI Features Comparison](#ai-features-comparison)
+- [Workflow Integration Patterns](#workflow-integration-patterns)
+- [Pricing Comparison 2026](#pricing-comparison-2026)
+- [Content Creation Workflow: Step-by-Step](#content-creation-workflow-step-by-step)
+- [Practical Recommendations](#practical-recommendations)
+- [The Bottom Line](#the-bottom-line)
+
 ## Platform Architecture Overview
 
 Canva operates primarily as a web-based design platform with video capabilities layered on top. Its AI video features—including auto-transcription, smart trimming, and magic resize—work within the Canva ecosystem. The platform offers a REST API for content management, but programmatic video generation remains limited compared to dedicated video tools.

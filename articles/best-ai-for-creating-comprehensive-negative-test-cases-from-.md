@@ -48,6 +48,14 @@ Schemathesis is the most capable open-source tool for automated negative testing
 - **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 
+## Table of Contents
+
+- [Why Negative Testing Matters for APIs](#why-negative-testing-matters-for-apis)
+- [How AI Tools Generate Negative Tests from Swagger](#how-ai-tools-generate-negative-tests-from-swagger)
+- [Specific AI Tools and Approaches](#specific-ai-tools-and-approaches)
+- [Practical Implementation Strategy](#practical-implementation-strategy)
+- [What to Look for in AI Test Generation](#what-to-look-for-in-ai-test-generation)
+
 ## Why Negative Testing Matters for APIs
 
 APIs receive unpredictable input from clients. Users submit malformed JSON, send requests with missing required fields, pass data types that don't match your schema, and attempt operations outside authorized boundaries. Without negative test coverage, these scenarios cause crashes, security vulnerabilities, or silent data corruption.
@@ -309,11 +317,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [AI Tools for Creating Property-Based Test Cases](/ai-tools-compared/ai-tools-for-creating-property-based-test-cases-using-hypoth/)
-- [AI Tools for Creating Boundary Value Test Case](/ai-tools-compared/ai-tools-for-creating--boundary-value-test-case/)
-- [Best AI for QA Engineers Writing API Contract Testing Cases](/ai-tools-compared/best-ai-for-qa-engineers-writing-api-contract-test-cases-fro/)
+- [AI Tools for Creating Boundary Value Test](/ai-tools-compared/ai-tools-for-creating--boundary-value-test-case/)
 - [Best AI Tool for Generating Jest Test Cases from React](/ai-tools-compared/best-ai-tool-for-generating-jest-test-cases-from-react-compo/)
-- [How to Use AI to Write pytest Parametrize Test Cases for Edg](/ai-tools-compared/how-to-use-ai-to-write-pytest-parametrize-test-cases-for-edg/)
-
+- [Best AI for QA Engineers Writing API Contract Testing Cases](/ai-tools-compared/best-ai-for-qa-engineers-writing-api-contract-test-cases-fro/)
+- [AI Tools for Creating Test Data That Covers Timezone](/ai-tools-compared/ai-tools-for-creating-test-data-that-covers-timezone-dayligh/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 {% endraw %}

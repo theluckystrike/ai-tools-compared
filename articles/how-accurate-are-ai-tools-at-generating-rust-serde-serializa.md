@@ -45,6 +45,20 @@ Cursor suggested `#[serde(deny_unknown_fields)]` which does the opposite—it ca
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **AI tools generate correct**: Serde schemas about 75% of the time for simple types but require substantial fixes for custom implementations, derive macros, and edge cases.
 
+## Table of Contents
+
+- [The Test Methodology](#the-test-methodology)
+- [Test Case 1: Basic Struct with Common Derives](#test-case-1-basic-struct-with-common-derives)
+- [Test Case 2: Nested Structs with Renamed Fields](#test-case-2-nested-structs-with-renamed-fields)
+- [Test Case 3: Custom Serialization Logic](#test-case-3-custom-serialization-logic)
+- [Test Case 4: Enum with Data](#test-case-4-enum-with-data)
+- [Test Case 5: Real-World API Integration](#test-case-5-real-world-api-integration)
+- [Test Case 6: Deserialization with Default Values](#test-case-6-deserialization-with-default-values)
+- [Test Case 7: Handling Unknown Fields](#test-case-7-handling-unknown-fields)
+- [Accuracy Summary Table](#accuracy-summary-table)
+- [Cargo.toml Requirements](#cargotoml-requirements)
+- [Practical Recommendations](#practical-recommendations)
+
 ## The Test Methodology
 
 I evaluated three leading AI coding assistants—Claude Code, GitHub Copilot, and Cursor—across several common serialization patterns. Each tool received identical prompts describing the required serde code. I then assessed the output for correctness, adherence to best practices, and compilation success.
@@ -365,10 +379,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How Accurate Are AI Tools at Generating Rust Crossbeam](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
-- [How Accurate Are AI Tools at Rust WASM Compilation and Bindg](/ai-tools-compared/how-accurate-are-ai-tools-at-rust-wasm-compilation-and-bindg/)
 - [How Accurate Are AI Tools for Rust Unsafe Code Blocks](/ai-tools-compared/how-accurate-are-ai-tools-for-rust-unsafe-code-blocks-and-ff/)
-- [How Accurate Are AI Tools at Generating TypeScript Zod Schem](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-typescript-zod-schem/)
-- [Best Prompting Strategies for Getting Accurate Code from](/ai-tools-compared/best-prompting-strategies-for-getting-accurate-code-from-ai-/)
-
+- [How Accurate Are AI Tools at Generating Rust Crossbeam](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
+- [How Accurate Are AI Tools at Generating TypeScript Zod](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-typescript-zod-schem/)
+- [Configure AI Coding Tools](/ai-tools-compared/how-to-configure-ai-coding-tools-to-respect-your-teams-branc/)
+- [How Well Do AI Tools Generate Rust Macro Definitions and Pro](/ai-tools-compared/how-well-do-ai-tools-generate-rust-macro-definitions-and-pro/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

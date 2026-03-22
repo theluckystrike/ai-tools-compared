@@ -44,6 +44,20 @@ Three categories of AI tools exist in this space: end-to-end neural codecs, AI-e
 - **Quality values between 24-28**: typically balance size and visual fidelity for most streaming applications.
 - **For most streaming applications**: target 85-93 depending on content type.
 
+## Table of Contents
+
+- [Tool Comparison: AI Video Compression Options](#tool-comparison-ai-video-compression-options)
+- [FFmpeg with AI-Enhanced Filters](#ffmpeg-with-ai-enhanced-filters)
+- [HandBrake with Neural Presets](#handbrake-with-neural-presets)
+- [SVT-AV1: AI-Optimized AV1 Encoding](#svt-av1-ai-optimized-av1-encoding)
+- [Video Compression APIs for Cloud Integration](#video-compression-apis-for-cloud-integration)
+- [Building a Compression Pipeline](#building-a-compression-pipeline)
+- [Measuring Compression Effectiveness](#measuring-compression-effectiveness)
+- [Codec Selection by Use Case](#codec-selection-by-use-case)
+- [Pro Tips for AI Compression Pipelines](#pro-tips-for-ai-compression-pipelines)
+- [Practical Recommendations](#practical-recommendations)
+- [Related Reading](#related-reading)
+
 ## Tool Comparison: AI Video Compression Options
 
 Choosing the right tool depends on your delivery targets, available compute, and decoder support requirements:
@@ -316,6 +330,14 @@ Preprocess with AI filters, select the codec for your delivery requirements, and
 - [AI Tools for Video Accessibility Features](/ai-tools-compared/ai-tools-for-video-accessibility-features/)
 - [AI Tools for Video Color Grading](/ai-tools-compared/ai-tools-for-video-color-grading/)
 - [AI Tools for Video Frame Interpolation](/ai-tools-compared/ai-tools-for-video-frame-interpolation/)
+
+## Related Articles
+
+- [Best AI Tools for Video Transcription: A Developer's Guide](/ai-tools-compared/best-ai-tools-for-video-transcription/)
+- [AI Tools for Video Summarization](/ai-tools-compared/ai-tools-for-video-summarization/)
+- [AI Tools for Video Accessibility Features](/ai-tools-compared/ai-tools-for-video-accessibility-features/)
+- [AI Tools for Video Thumbnail Generation](/ai-tools-compared/ai-tools-for-video-thumbnail-generation/)
+- [AI Tools for Video Color Grading](/ai-tools-compared/ai-tools-for-video-color-grading/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

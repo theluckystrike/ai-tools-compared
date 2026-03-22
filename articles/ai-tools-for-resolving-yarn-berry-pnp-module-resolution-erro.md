@@ -40,6 +40,15 @@ AI coding assistants debug Yarn Berry PnP module resolution errors by analyzing 
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Understanding the root cause**: requires examining multiple configuration files simultaneously.
 
+## Table of Contents
+
+- [Understanding Yarn Berry PnP Resolution Errors](#understanding-yarn-berry-pnp-resolution-errors)
+- [How AI Tools Approach PnP Debugging](#how-ai-tools-approach-pnp-debugging)
+- [Practical Examples of AI-Assisted PnP Resolution](#practical-examples-of-ai-assisted-pnp-resolution)
+- [Best Practices for AI-Assisted PnP Debugging](#best-practices-for-ai-assisted-pnp-debugging)
+- [Limitations and When to Manual Fix](#limitations-and-when-to-manual-fix)
+- [Comparing AI Tools for PnP Debugging](#comparing-ai-tools-for-pnp-debugging)
+
 ## Understanding Yarn Berry PnP Resolution Errors
 
 Yarn Berry replaces the traditional node_modules directory with a single `.pnp.cjs` file that maps every package to its location on disk. This approach eliminates the need for node_modules but requires tools like VS Code, ESLint, and TypeScript to understand the PnP mapping. In monorepos with multiple workspaces, these errors often arise from:
@@ -271,11 +280,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How to Export Dall E Generated Images at Full Resolution](/ai-tools-compared/how-to-export-dall-e-generated-images-at-full-resolution-before-leaving/)
-- [AI Tools for Resolving Docker Build Context Permission Denie](/ai-tools-compared/ai-tools-for-resolving-docker-build-context-permission-denie/)
-- [AI Tools for Resolving SSL Certificate Chain Verification](/ai-tools-compared/ai-tools-for-resolving-ssl-certificate-chain-verification-er/)
-- [Best AI for Resolving Git Merge Conflict Markers in Complex](/ai-tools-compared/best-ai-for-resolving-git-merge-conflict-markers-in-complex-/)
 - [Best AI Tools for Go Project Structure and Module](/ai-tools-compared/best-ai-tools-for-go-project-structure-and-module-organization/)
-
+- [AI Tools for Generating Pull Request Merge Conflict](/ai-tools-compared/ai-tools-for-generating-pull-request-merge-conflict-resoluti/)
+- [Configure AI Coding Tools](/ai-tools-compared/how-to-configure-ai-coding-tools-to-respect-your-teams-branc/)
+- [AI Tools for Creating Property-Based Test Cases](/ai-tools-compared/ai-tools-for-creating-property-based-test-cases-using-hypoth/)
+- [How Accurate Are AI Tools](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-serde-serialization-code/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -40,6 +40,19 @@ Cursor AI offers a tiered pricing model designed to accommodate individual devel
 - **Is the annual plan**: worth it over monthly billing? Annual plans typically save 15-30% compared to monthly billing.
 - **Discounts of 25-50% are**: common for qualifying organizations.
 
+## Table of Contents
+
+- [Cursor AI Plan Overview](#cursor-ai-plan-overview)
+- [Comparing Plan Value](#comparing-plan-value)
+- [Hidden Costs and Considerations](#hidden-costs-and-considerations)
+- [Practical Usage Examples](#practical-usage-examples)
+- [Which Plan Should You Choose?](#which-plan-should-you-choose)
+- [Cost Comparison with Alternatives](#cost-comparison-with-alternatives)
+- [Calculating Your Real Cost Per Line of Code](#calculating-your-real-cost-per-line-of-code)
+- [Understanding Credit Systems vs Unlimited Models](#understanding-credit-systems-vs-unlimited-models)
+- [Real Usage Tracking and Optimization](#real-usage-tracking-and-optimization)
+- [Comparative True Cost Analysis](#comparative-true-cost-analysis)
+
 ## Cursor AI Plan Overview
 
 Cursor currently provides four distinct pricing tiers: Free, Pro, Business, and Enterprise. Each plan targets different user profiles, from hobbyists building side projects to large engineering organizations requiring advanced security and administration features.

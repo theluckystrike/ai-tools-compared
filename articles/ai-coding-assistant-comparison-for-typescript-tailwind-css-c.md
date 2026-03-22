@@ -43,6 +43,14 @@ Use Claude Code to generate Tailwind CSS classes that follow composition pattern
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
+## Table of Contents
+
+- [Understanding Tailwind CSS Class Generation Challenges](#understanding-tailwind-css-class-generation-challenges)
+- [Quick Comparison](#quick-comparison)
+- [Comparing AI Assistants for Tailwind CSS Class Generation](#comparing-ai-assistants-for-tailwind-css-class-generation)
+- [Key Evaluation Criteria](#key-evaluation-criteria)
+- [Recommendations](#recommendations)
+
 ## Understanding Tailwind CSS Class Generation Challenges
 
 Generating Tailwind CSS classes presents unique challenges compared to traditional styling tasks. Developers need more than correct syntax—they need classes that follow composition patterns, remain readable in JSX, and adapt to responsive design requirements. The best AI assistants understand Tailwind's constraint-based system and generate classes that use its utility composition capabilities rather than fighting against them.
@@ -311,10 +319,9 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [ChatGPT vs Gemini for Generating Tailwind CSS from Hand Draw](/ai-tools-compared/chatgpt-vs-gemini-for-generating-tailwind-css-from-hand-draw/)
 - [How to Use AI to Debug Tailwind CSS Classes Not Applying](/ai-tools-compared/how-to-use-ai-to-debug-tailwind-css-classes-not-applying-in-/)
-- [AI Coding Assistant Accuracy for Typescript Next Js Server C](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
-- [AI Coding Assistant Accuracy for TypeScript Svelte Component](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-svelte-component/)
-- [AI Coding Assistant Comparison for Typescript monorepo](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-monorepo-with-turborepo-setup/)
-
+- [AI Coding Assistant Comparison for TypeScript monorepo](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-monorepo-with-turborepo-setup/)
+- [ChatGPT vs Gemini for Generating Tailwind CSS from Hand](/ai-tools-compared/chatgpt-vs-gemini-for-generating-tailwind-css-from-hand-draw/)
+- [AI Coding Assistant Comparison for React Component](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
+- [AI Coding Assistant Accuracy for TypeScript Next Js Server](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

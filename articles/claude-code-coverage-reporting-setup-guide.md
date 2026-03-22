@@ -46,6 +46,14 @@ Setting up automated code coverage reporting is essential for maintaining code q
 
 4.
 
+## Table of Contents
+
+- [Why Coverage Reporting Matters](#why-coverage-reporting-matters)
+- [Prerequisites](#prerequisites)
+- [Coverage Report](#coverage-report)
+- [Best Practices](#best-practices)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Coverage Reporting Matters
 
 Code coverage metrics tell you how much of your codebase is exercised by your test suite. While 100% coverage isn't always necessary or practical, maintaining adequate coverage helps identify untested code paths, reduces bugs, and improves overall code reliability. Claude Code can assist in setting up coverage tools tailored to your project's language and testing framework.

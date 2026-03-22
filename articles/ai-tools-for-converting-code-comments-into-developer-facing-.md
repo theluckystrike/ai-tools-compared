@@ -40,6 +40,22 @@ Maintaining accurate developer documentation consumes significant time. Many tea
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Used for scaling metrics**: before visualization.
 
+## Table of Contents
+
+- [How AI Documentation Converters Work](#how-ai-documentation-converters-work)
+- [Practical Tools and Approaches](#practical-tools-and-approaches)
+- [Automating the Workflow](#automating-the-workflow)
+- [Best Practices for AI-Generated Documentation](#best-practices-for-ai-generated-documentation)
+- [Example: From Scattered Comments to Complete Docs](#example-from-scattered-comments-to-complete-docs)
+- [Output Formats and Integration](#output-formats-and-integration)
+- [Automation Scripts for Documentation Generation](#automation-scripts-for-documentation-generation)
+- [Comparison: AI Tools for Documentation](#comparison-ai-tools-for-documentation)
+- [Best Practices for Comment Quality](#best-practices-for-comment-quality)
+- [Handling Legacy Code with Minimal Comments](#handling-legacy-code-with-minimal-comments)
+- [Generating Multiple Documentation Formats](#generating-multiple-documentation-formats)
+- [Documentation Maintenance Strategy](#documentation-maintenance-strategy)
+- [Monitoring Documentation Quality](#monitoring-documentation-quality)
+
 ## How AI Documentation Converters Work
 
 These tools analyze your codebase, extract meaningful comments and docstrings, and generate structured documentation in various formats. The process typically involves parsing code to identify comment blocks, sending that content to an AI model, and formatting the output as API docs, README files, or reference guides.

@@ -39,6 +39,13 @@ GitHub Copilot offers unlimited code suggestions with free tier access for open-
 - **Cursor (Free Tier) Cursor**: has become a favorite among developers who want an IDE-integrated experience.
 - **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
 
+## Table of Contents
+
+- [Why Message Limits Matter for Developers](#why-message-limits-matter-for-developers)
+- [The Best Free AI Coding Tools With Unlimited Messages](#the-best-free-ai-coding-tools-with-unlimited-messages)
+- [Choosing the Right Tool for Your Workflow](#choosing-the-right-tool-for-your-workflow)
+- [Getting Started](#getting-started)
+
 ## Why Message Limits Matter for Developers
 
 When you're deep in a debugging session or architecting a new system, interruptions break your flow. Traditional AI coding tools often limit you to 50-100 messages per month on free tiers—enough for a quick question, but nowhere near sufficient for serious development work. Some tools reset limits weekly, others monthly, but the pattern is the same: you hit a wall right when you're making progress.

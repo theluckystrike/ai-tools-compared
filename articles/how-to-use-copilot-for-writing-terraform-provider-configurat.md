@@ -39,6 +39,14 @@ GitHub Copilot accelerates Terraform provider configuration by suggesting provid
 - **What file should I**: keep open to give Copilot the best context? Keep `variables.tf`, `locals.tf`, and any existing `providers.tf` open in separate editor tabs.
 - **Copilot uses open files as context**: so having your variable definitions visible dramatically improves the relevance of provider suggestions.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Copilot vs. Cursor for Terraform: Quick Comparison](#copilot-vs-cursor-for-terraform-quick-comparison)
+- [Generating Provider Configuration from Requirements](#generating-provider-configuration-from-requirements)
+- [Best Practices for Copilot-Assisted Terraform Writing](#best-practices-for-copilot-assisted-terraform-writing)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

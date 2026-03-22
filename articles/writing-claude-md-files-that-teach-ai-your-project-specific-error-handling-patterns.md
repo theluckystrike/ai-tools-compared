@@ -40,6 +40,24 @@ When you work with AI coding assistants like Claude Code, the quality of output 
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Why Error Handling Deserves Special Attention](#why-error-handling-deserves-special-attention)
+- [Structuring Your Error Handling Section](#structuring-your-error-handling-section)
+- [Error Handling Conventions](#error-handling-conventions)
+- [Documenting Error Naming Conventions](#documenting-error-naming-conventions)
+- [Specifying Logging Requirements](#specifying-logging-requirements)
+- [Defining Retry and Recovery Patterns](#defining-retry-and-recovery-patterns)
+- [User-Facing Error Messages](#user-facing-error-messages)
+- [Example: Complete Error Handling Section](#example-complete-error-handling-section)
+- [Error Handling Conventions](#error-handling-conventions)
+- [Teaching the AI Your Result Type Pattern](#teaching-the-ai-your-result-type-pattern)
+- [Showing Before/After Examples Inline](#showing-beforeafter-examples-inline)
+- [Layering Error Handling for Different Architectural Tiers](#layering-error-handling-for-different-architectural-tiers)
+- [Testing Your Error Handling Instructions](#testing-your-error-handling-instructions)
+- [Common Mistakes to Avoid](#common-mistakes-to-avoid)
+- [Maintaining Your CLAUDE.md File](#maintaining-your-claudemd-file)
+
 ## Why Error Handling Deserves Special Attention
 
 Error handling varies significantly between projects and organizations. Some teams prefer exceptions, others use result types. Logging conventions, retry strategies, and user-facing error messages all follow project-specific conventions. Without explicit guidance, AI assistants default to their training patterns, which may not match your codebase.

@@ -55,6 +55,24 @@ Semantic versioning (SemVer) has become the standard for version numbering in mo
 - **This guide covers understanding**: semantic versioning basics, setting up claude code for version management, version file location, with specific setup instructions
 - **Pricing starts at $1**: with options for different team sizes
 
+## Table of Contents
+
+- [Understanding Semantic Versioning Basics](#understanding-semantic-versioning-basics)
+- [Setting Up Claude Code for Version Management](#setting-up-claude-code-for-version-management)
+- [Version File Location](#version-file-location)
+- [Version Bump Rules](#version-bump-rules)
+- [Changelog Requirements](#changelog-requirements)
+- [Automated Version Detection Patterns](#automated-version-detection-patterns)
+- [Creating a Claude Code Command for Version Bumps](#creating-a-claude-code-command-for-version-bumps)
+- [Integrating with Release Workflows](#integrating-with-release-workflows)
+- [Best Practices for Version Automation](#best-practices-for-version-automation)
+- [Using Claude Code to Enforce Versioning Rules](#using-claude-code-to-enforce-versioning-rules)
+- [Versioning Enforcement Rules](#versioning-enforcement-rules)
+- [Before Submitting PR](#before-submitting-pr)
+- [Multi-Language Version File Synchronization](#multi-language-version-file-synchronization)
+- [Pre-Commit Hooks for Conventional Commits Enforcement](#pre-commit-hooks-for-conventional-commits-enforcement)
+- [Dry-Run Mode Before Publishing](#dry-run-mode-before-publishing)
+
 ## Understanding Semantic Versioning Basics
 
 Semantic versioning follows the format `MAJOR.MINOR.PATCH`:

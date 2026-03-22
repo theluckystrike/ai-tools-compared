@@ -41,6 +41,19 @@ Claude produces more maintainable Playwright tests with better selector strategi
 1.
 - **Use AI to generate**: initial test scaffolding 2.
 
+## Table of Contents
+
+- [Why AI-Assisted Playwright Test Writing Matters](#why-ai-assisted-playwright-test-writing-matters)
+- [Comparing AI Tools for Playwright Test Generation](#comparing-ai-tools-for-playwright-test-generation)
+- [What Matters Most in AI-Generated Playwright Tests](#what-matters-most-in-ai-generated-playwright-tests)
+- [Pricing and Tool Availability](#pricing-and-tool-availability)
+- [Selector Strategy Comparison](#selector-strategy-comparison)
+- [Real-World Test Generation Example](#real-world-test-generation-example)
+- [Flakiness Prevention Strategies](#flakiness-prevention-strategies)
+- [Practical Recommendations](#practical-recommendations)
+- [Troubleshooting Generated Tests](#troubleshooting-generated-tests)
+- [Team Adoption Checklist](#team-adoption-checklist)
+
 ## Why AI-Assisted Playwright Test Writing Matters
 
 Writing Playwright tests manually takes time. You need to locate elements, handle async operations, manage test data, and structure your test suites. AI assistants can accelerate this process significantly. However, not all AI tools understand Playwright equally well. Some generate code that works immediately, while others produce tests that require substantial debugging.

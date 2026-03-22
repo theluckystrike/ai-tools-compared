@@ -32,6 +32,15 @@ Aider integrates directly into terminal-based workflows, making it suitable for 
 
 Cursor provides the smoothest experience when editing ArgoCD manifests directly in VS Code.
 
+## Table of Contents
+
+- [What ArgoCD Manifest Generation Requires](#what-argocd-manifest-generation-requires)
+- [Top AI Tools for ArgoCD Manifests](#top-ai-tools-for-argocd-manifests)
+- [Comparing Tool Performance](#comparing-tool-performance)
+- [Practical Examples](#practical-examples)
+- [Best Practices for Using AI with ArgoCD](#best-practices-for-using-ai-with-argocd)
+- [Recommendation](#recommendation)
+
 ## What ArgoCD Manifest Generation Requires
 
 

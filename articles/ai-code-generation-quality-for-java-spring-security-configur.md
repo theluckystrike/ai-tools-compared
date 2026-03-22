@@ -41,6 +41,15 @@ Java Spring Security remains a critical component for securing enterprise applic
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **The configuration involves multiple**: components: security filter chains, authentication managers, user detail services, and authorization rules.
 
+## Table of Contents
+
+- [Understanding Spring Security Configuration](#understanding-spring-security-configuration)
+- [Common AI Generation Issues](#common-ai-generation-issues)
+- [Practical Examples](#practical-examples)
+- [Quality Assessment Criteria](#quality-assessment-criteria)
+- [Tool-Specific Observations](#tool-specific-observations)
+- [Recommendations for Developers](#recommendations-for-developers)
+
 ## Understanding Spring Security Configuration
 
 Spring Security provides an authentication and authorization framework for Java applications. The configuration involves multiple components: security filter chains, authentication managers, user detail services, and authorization rules. Each component has specific requirements that AI assistants must handle correctly to produce working code.

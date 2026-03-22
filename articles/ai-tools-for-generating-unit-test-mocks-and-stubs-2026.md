@@ -23,6 +23,19 @@ Writing mocks and stubs is tedious but necessary for unit testing. AI tools can 
 - **Limitations**: Requires running separate service, not ideal for unit tests (too slow), better for integration tests.
 - **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 
+## Table of Contents
+
+- [Why Mocks Matter](#why-mocks-matter)
+- [1. Claude API (Best Overall, Framework-Agnostic)](#1-claude-api-best-overall-framework-agnostic)
+- [2. GitHub Copilot (Best for IDE Integration)](#2-github-copilot-best-for-ide-integration)
+- [3. Mockoon (Specialized for API Mocking)](#3-mockoon-specialized-for-api-mocking)
+- [4. Teleprompter (Kotlin/Java Specific)](#4-teleprompter-kotlinjava-specific)
+- [5. Testcontainers (Specialized for Container-Based Services)](#5-testcontainers-specialized-for-container-based-services)
+- [Language-Specific Comparison](#language-specific-comparison)
+- [Recommended Workflow](#recommended-workflow)
+- [Cost-Benefit Analysis](#cost-benefit-analysis)
+- [Practical Example: Full Test Suite](#practical-example-full-test-suite)
+
 ## Why Mocks Matter
 
 A typical service depends on:
@@ -510,8 +523,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI Tools for Writing Unit Test Mocks 2026](/best-ai-tools-for-writing-unit-test-mocks-2026/)
-- [Best AI Tools for Generating Unit Tests 2026](/ai-tools-for-generating-unit-tests-2026/)
-- [AI Tools for Qa Engineers Generating Data Driven Test](/ai-tools-for-qa-engineers-generating-data-driven-test-scenar/)
-
+- [Best AI Tools for Writing Unit Test Mocks 2026](/ai-tools-compared/best-ai-tools-for-writing-unit-test-mocks-2026/)
+- [Best AI Tools for Generating Unit Tests 2026](/ai-tools-compared/ai-tools-for-generating-unit-tests-2026/)
+- [Best AI Tools for Writing Unit Tests Comparison 2026](/ai-tools-compared/best-ai-tools-for-writing-unit-tests-comparison-2026/)
+- [Best Free AI Tool for Writing Unit Tests Automatically](/ai-tools-compared/best-free-ai-tool-for-writing-unit-tests-automatically/)
+- [Best AI Tools for Generating Unit Tests: Legacy](/ai-tools-compared/best-ai-tools-for-generating-unit-tests-from-legacy-code-without-tests/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

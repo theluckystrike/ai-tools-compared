@@ -40,6 +40,13 @@ Vue 3's Composition API has become the standard for building scalable Vue applic
 - **It excels at understanding**: component composition patterns and generates components that follow Vue 3 best practices.
 - **Editor integration preference points**: to Zed AI for developers who want real-time assistance within a dedicated coding environment.
 
+## Table of Contents
+
+- [What Makes AI-Generated Vue 3 Components Effective](#what-makes-ai-generated-vue-3-components-effective)
+- [Comparing AI Tools for Vue 3 Composition API](#comparing-ai-tools-for-vue-3-composition-api)
+- [Practical Recommendations](#practical-recommendations)
+- [Common Vue 3 Patterns to Verify](#common-vue-3-patterns-to-verify)
+
 ## What Makes AI-Generated Vue 3 Components Effective
 
 AI tools generating Vue 3 Composition API components need to understand several key aspects. The best outputs demonstrate proper `<script setup>` syntax, correct reactive primitive usage, and appropriate composable patterns. They should also handle TypeScript typing, emit definitions, and prop validation correctly.
@@ -308,11 +315,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Which AI Generates Better Go Goroutine Patterns for Concurre](/ai-tools-compared/which-ai-generates-better-go-goroutine-patterns-for-concurre/)
-- [Which AI Generates Better SwiftUI Views From Design Swift UI](/ai-tools-compared/which-ai-generates-better-swift-ui-views-from-design-specs-2/)
-- [Cursor AI with Claude vs GPT Models: Which Gives Better Code](/ai-tools-compared/cursor-ai-with-claude-vs-gpt-models-which-gives-better-code-/)
-- [How to Get Better AI Autocomplete Suggestions by Structuring](/ai-tools-compared/how-to-get-better-ai-autocomplete-suggestions-by-structuring/)
-- [How to Write Better Prompts for AI Code Generation with](/ai-tools-compared/how-to-write-better-prompts-for-ai-code-generation-with-examples/)
-
+- [AI Tools for API Documentation from Code 2026](/ai-tools-compared/ai-tools-for-api-documentation-from-code-2026/)
+- [How to Use AI Coding Tools to Enforce Consistent API](/ai-tools-compared/how-to-use-ai-coding-tools-to-enforce-consistent-api-response-formats/)
+- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)
+- [AI Tools for API Security Testing](/ai-tools-compared/ai-tools-for-api-security-testing/)
+- [Best AI Tools for Generating API Documentation From Code](/ai-tools-compared/best-ai-tools-for-generating-api-documentation-from-code-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

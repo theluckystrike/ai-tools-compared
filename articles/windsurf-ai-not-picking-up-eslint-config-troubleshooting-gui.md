@@ -39,6 +39,22 @@ Windsurf AI offers intelligent code assistance that integrates with your project
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **If you don't see**: errors after 2-3 seconds, your config isn't loading.
 
+## Table of Contents
+
+- [Why Windsurf Fails to Detect ESLint Config](#why-windsurf-fails-to-detect-eslint-config)
+- [Diagnostic Steps](#diagnostic-steps)
+- [Solutions for Common Scenarios](#solutions-for-common-scenarios)
+- [Verification](#verification)
+- [Quick Reference Checklist](#quick-reference-checklist)
+- [Advanced Configuration: Workspace Settings Deep Dive](#advanced-configuration-workspace-settings-deep-dive)
+- [ESLint Configuration Examples](#eslint-configuration-examples)
+- [Debugging ESLint Detection with CLI Commands](#debugging-eslint-detection-with-cli-commands)
+- [Windsurf-Specific Troubleshooting](#windsurf-specific-troubleshooting)
+- [Performance Tuning for Windsurf ESLint Integration](#performance-tuning-for-windsurf-eslint-integration)
+- [Testing Your Config with Sample Files](#testing-your-config-with-sample-files)
+- [Integration with CI/CD Pipelines](#integration-with-cicd-pipelines)
+- [Quick Reference Checklist](#quick-reference-checklist)
+
 ## Why Windsurf Fails to Detect ESLint Config
 
 Several factors can prevent Windsurf from picking up your ESLint configuration. Understanding these root causes helps you diagnose the specific issue in your project.
@@ -497,8 +513,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026](/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
-- [AI Tools for Debugging CSS Media Query Breakpoints Not](/ai-tools-for-debugging-css-media-query-breakpoints-not-match/)
-- [AI Tools for Generating Nginx and Caddy Reverse Proxy](/ai-tools-for-generating-nginx-and-caddy-reverse-proxy-config/)
-
+- [Does WindSurf AI Send Entire Project Context or Just Open](/ai-tools-compared/does-windsurf-ai-send-entire-project-context-or-just-open-fi/)
+- [Windsurf AI Flows Feature How It Chains Multiple Editing](/ai-tools-compared/windsurf-ai-flows-feature-how-it-chains-multiple-editing-ste/)
+- [Switching from Windsurf to Cursor How to Transfer Project](/ai-tools-compared/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
+- [Cursor Free Plan vs Windsurf Free Plan Which Gives](/ai-tools-compared/cursor-free-plan-vs-windsurf-free-plan-which-gives-more/)
+- [Switching from Windsurf Free to Cursor Free What Is](/ai-tools-compared/switching-from-windsurf-free-to-cursor-free-what-is-different/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

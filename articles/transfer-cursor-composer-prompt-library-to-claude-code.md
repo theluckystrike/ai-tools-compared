@@ -98,6 +98,14 @@ context: Include file paths and line numbers
 ---
 ```
 
+## Table of Contents
+
+- [Importing Prompts into Claude Code](#importing-prompts-into-claude-code)
+- [/review](#review)
+- [/explain](#explain)
+- [Best Practices for Prompt Migration](#best-practices-for-prompt-migration)
+- [Automating the Migration](#automating-the-migration)
+
 **Converted Claude Code Format:**
 
 ```markdown

@@ -42,6 +42,21 @@ AI tools for social media analytics let developers build pipelines that collect 
 - **Latent Dirichlet Allocation (LDA)**: is the classic approach, but BERTopic produces substantially better topic coherence on short social media texts.
 - **BERTopic uses sentence transformers**: to embed documents into a semantic space before clustering, which means it handles the fragmented, abbreviated style of tweets more gracefully than LDA.
 
+## Table of Contents
+
+- [Understanding the Analytics Stack](#understanding-the-analytics-stack)
+- [Collecting Data with Python](#collecting-data-with-python)
+- [Sentiment Analysis with Hugging Face](#sentiment-analysis-with-hugging-face)
+- [Named Entity Recognition for Topic Extraction](#named-entity-recognition-for-topic-extraction)
+- [Building Analytics Dashboards](#building-analytics-dashboards)
+- [Comparing Managed vs. Self-Built Analytics Tools](#comparing-managed-vs-self-built-analytics-tools)
+- [Tracking Trends Over Time with Time-Series Storage](#tracking-trends-over-time-with-time-series-storage)
+- [Topic Modeling for Uncovering Conversation Themes](#topic-modeling-for-uncovering-conversation-themes)
+- [Using AI Writing Assistants to Summarize Analytics Findings](#using-ai-writing-assistants-to-summarize-analytics-findings)
+- [Practical Considerations for Production Systems](#practical-considerations-for-production-systems)
+- [Alternative Approaches](#alternative-approaches)
+- [Getting Started](#getting-started)
+
 ## Understanding the Analytics Stack
 
 The core components of a social media analytics system include data collection, natural language processing, sentiment analysis, and visualization. Each component can use different AI tools depending on your specific needs.

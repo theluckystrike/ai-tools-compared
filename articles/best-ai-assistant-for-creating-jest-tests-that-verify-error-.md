@@ -49,6 +49,21 @@ AI assistants have become valuable tools for developers writing Jest tests, part
 - **If your component throws**: errors asynchronously, the test may need to use `act()` or wait for the error to propagate before asserting on the fallback.
 - **Claude provides the most**: complete error boundary test suites.
 
+## Table of Contents
+
+- [Understanding Error Boundary Test Requirements](#understanding-error-boundary-test-requirements)
+- [How AI Assistants Generate Error Boundary Tests](#how-ai-assistants-generate-error-boundary-tests)
+- [Practical Example: Generating Error Boundary Tests](#practical-example-generating-error-boundary-tests)
+- [Evaluating AI Assistant Performance](#evaluating-ai-assistant-performance)
+- [Common Pitfalls in Error Boundary Testing](#common-pitfalls-in-error-boundary-testing)
+- [Best Practices for Working with AI Assistants](#best-practices-for-working-with-ai-assistants)
+- [Advanced Error Boundary Patterns AI Tools Should Handle](#advanced-error-boundary-patterns-ai-tools-should-handle)
+- [Async Error Handling in Error Boundaries](#async-error-handling-in-error-boundaries)
+- [Testing Error Boundary Integration with Suspense](#testing-error-boundary-integration-with-suspense)
+- [Comparing AI Tools on Error Boundary Testing](#comparing-ai-tools-on-error-boundary-testing)
+- [Performance Metrics for Test Generation](#performance-metrics-for-test-generation)
+- [Best Practice for Generating Error Boundary Tests](#best-practice-for-generating-error-boundary-tests)
+
 ## Understanding Error Boundary Test Requirements
 
 Error boundaries in React are components that catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI instead of crashing the entire application. Testing these boundaries requires verifying several key behaviors: the fallback renders when an error occurs, the error is properly logged, the error state persists correctly, and the component can recover when the error is resolved.

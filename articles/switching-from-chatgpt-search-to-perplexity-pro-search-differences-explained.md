@@ -40,6 +40,28 @@ Making the switch from ChatGPT Search to Perplexity Pro Search represents a sign
 - **Does ChatGPT offer a**: free tier? Most major tools offer some form of free tier or trial period.
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 
+## Table of Contents
+
+- [Understanding the Platforms](#understanding-the-platforms)
+- [Key Technical Differences](#key-technical-differences)
+- [User Experience Comparison](#user-experience-comparison)
+- [Pricing and Subscription Tiers](#pricing-and-subscription-tiers)
+- [Data Privacy and Security](#data-privacy-and-security)
+- [Migration Strategies](#migration-strategies)
+- [Feature Comparison](#feature-comparison)
+- [When to Choose Each Platform](#when-to-choose-each-platform)
+- [Real-World Search Comparison Examples](#real-world-search-comparison-examples)
+- [Performance Metrics Comparison](#performance-metrics-comparison)
+- [Advanced Search Techniques](#advanced-search-techniques)
+- [Integration Possibilities](#integration-possibilities)
+- [Workflow Examples by Use Case](#workflow-examples-by-use-case)
+- [Pricing Deep Dive](#pricing-deep-dive)
+- [Data Privacy Details](#data-privacy-details)
+- [Mobile Experience Comparison](#mobile-experience-comparison)
+- [Hybrid Workflow Strategy](#hybrid-workflow-strategy)
+- [Transition Costs and Learning Curve](#transition-costs-and-learning-curve)
+- [Making the Decision](#making-the-decision)
+
 ## Understanding the Platforms
 
 ChatGPT Search, developed by OpenAI, integrates web search capabilities directly into the ChatGPT interface. It combines the conversational strengths of GPT models with real-time web browsing, allowing users to ask questions and receive cited responses that draw from current information across the internet. The system was designed to bridge the gap between ChatGPT's knowledge cutoff limitations and the need for up-to-date information.

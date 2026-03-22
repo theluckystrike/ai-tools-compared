@@ -36,6 +36,21 @@ permalink: /ai-tools-for-generating-opentelemetry-instrumentation-2026/---
 - **Manual spans**: Use AI to generate business-logic spans for critical paths
 4.
 
+## Table of Contents
+
+- [AI Tools for OpenTelemetry Instrumentation Generation](#ai-tools-for-opentelemetry-instrumentation-generation)
+- [Claude (Anthropic)](#claude-anthropic)
+- [GPT-4 (OpenAI)](#gpt-4-openai)
+- [GitHub Copilot (Microsoft)](#github-copilot-microsoft)
+- [Comparison Table](#comparison-table)
+- [Real-World Instrumentation Workflow](#real-world-instrumentation-workflow)
+- [Common Instrumentation Patterns](#common-instrumentation-patterns)
+- [Key Instrumentation Metrics to Capture](#key-instrumentation-metrics-to-capture)
+- [Exporter Configuration Comparison](#exporter-configuration-comparison)
+- [Challenges and Limitations](#challenges-and-limitations)
+- [Sampling Strategy: Instrument Everything, Export Selectively](#sampling-strategy-instrument-everything-export-selectively)
+- [Propagating Business Context Through Spans](#propagating-business-context-through-spans)
+
 ## AI Tools for OpenTelemetry Instrumentation Generation
 
 OpenTelemetry provides standardized observability for applications across distributed systems. Writing instrumentation code—spans, metrics, traces—is repetitive and error-prone. AI tools can generate correct boilerplate instrumentation code while reducing manual work. This guide compares Claude, GPT-4, and Copilot for OTel code generation.
@@ -425,10 +440,9 @@ When you ask Claude to generate instrumentation for a specific service, provide 
 
 ## Related Articles
 
-- [OpenTelemetry SDK Configuration Guide](/articles/otel-sdk-configuration/)
-- [Distributed Tracing Best Practices](/articles/distributed-tracing-best-practices/)
-- [Observability Metrics for Microservices](/articles/microservices-metrics/)
-- [Jaeger vs. Zipkin: Tracing Platform Comparison](/articles/jaeger-vs-zipkin/)
-- [Instrumentation Performance Tuning](/articles/instrumentation-performance/)
-
+- [AI Tools for Writing OpenTelemetry Instrumentation 2026](/ai-tools-compared/ai-tools-for-writing-opentelemetry-instrumentation-2026/)
+- [AI Code Review Automation Tools Comparison 2026](/ai-tools-compared/ai-code-review-automation-tools-comparison/)
+- [AI Tools for Generating Platform Specific Code in Kotlin](/ai-tools-compared/ai-tools-for-generating-platform-specific-code-in-kotlin-mul/)
+- [Best AI Tools for Automated Code Review 2026](/ai-tools-compared/best-ai-tools-for-automated-code-review-2026/)
+- [How to Prevent AI Coding Tools from Generating Overly](/ai-tools-compared/how-to-prevent-ai-coding-tools-from-generating-overly-complex-solutions/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -42,6 +42,23 @@ When using AI-powered code editors like WindSurf, understanding what data gets t
 2.
 - **Use exclude patterns to**: mark directories that should never be indexed 3.
 
+## Table of Contents
+
+- [How WindSurf AI Handles Context](#how-windsurf-ai-handles-context)
+- [The Cascade Agent Context Behavior](#the-cascade-agent-context-behavior)
+- [Privacy Implications for Developers](#privacy-implications-for-developers)
+- [Comparing WindSurf to Other AI Editors](#comparing-windsurf-to-other-ai-editors)
+- [Practical Recommendations](#practical-recommendations)
+- [Analyzing WindSurf Network Traffic](#analyzing-windsurf-network-traffic)
+- [Local-Only Alternatives](#local-only-alternatives)
+- [Hybrid Approaches](#hybrid-approaches)
+- [Configuration Best Practices for Privacy](#configuration-best-practices-for-privacy)
+- [Understanding Codeium's Privacy Model](#understanding-codeiums-privacy-model)
+- [Comparing Data Handling Across AI Editors](#comparing-data-handling-across-ai-editors)
+- [Industry-Specific Considerations](#industry-specific-considerations)
+- [Setting Up Security Monitoring](#setting-up-security-monitoring)
+- [Audit and Compliance Records](#audit-and-compliance-records)
+
 ## How WindSurf AI Handles Context
 
 WindSurf AI, built by Codeium, employs a selective context transmission model. Unlike some AI coding assistants that send your entire codebase to cloud servers for processing, WindSurf takes a more nuanced approach to what it shares externally.
@@ -336,11 +353,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Cheapest AI Tool for Generating an Entire Project](/ai-tools-compared/cheapest-ai-tool-for-generating-entire-project-from-description/)
-- [Cheapest AI Tool for Generating Entire Project](/ai-tools-compared/cheapest-ai-tool-for-generating-entire-project-from-description/)
-- [Best AI Assistant for Creating Open Source Project Branding](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)
-- [Best AI for Creating Open Source Project Architecture Docume](/ai-tools-compared/best-ai-for-creating-open-source-project-architecture-docume/)
+- [What Source Code Context Window Do Different AI Coding Tools](/ai-tools-compared/what-source-code-context-window-do-different-ai-coding-tools/)
+- [Windsurf AI Not Picking Up ESLint Config](/ai-tools-compared/windsurf-ai-not-picking-up-eslint-config-troubleshooting-gui/)
+- [Configuring Cursor AI Notepads for Reusable Project Context](/ai-tools-compared/configuring-cursor-ai-notepads-for-reusable-project-context-/)
+- [How to Use AI Context Management to Work on Large Refactorin](/ai-tools-compared/how-to-use-ai-context-management-to-work-on-large-refactorin/)
 - [Switching from Windsurf to Cursor How to Transfer Project](/ai-tools-compared/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

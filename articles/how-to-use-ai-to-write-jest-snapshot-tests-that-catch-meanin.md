@@ -41,6 +41,20 @@ This is where AI assistance transforms the snapshot testing experience. By under
 - **The key is capturing**: states that represent different user experiences, not every permutation.
 - **it('renders correctly') // Use**: specific, descriptive names...
 
+## Table of Contents
+
+- [The Snapshot Testing Problem](#the-snapshot-testing-problem)
+- [Using AI to Write Smarter Snapshots](#using-ai-to-write-smarter-snapshots)
+- [Making Snapshots Actionable](#making-snapshots-actionable)
+- [Combining Snapshots with Other Testing Strategies](#combining-snapshots-with-other-testing-strategies)
+- [Maintaining Snapshots Over Time](#maintaining-snapshots-over-time)
+- [Advanced Snapshot Strategies for Different Component Types](#advanced-snapshot-strategies-for-different-component-types)
+- [Real-World Team Adoption Metrics](#real-world-team-adoption-metrics)
+- [Integration with CI/CD Pipelines](#integration-with-cicd-pipelines)
+- [Snapshot Maintenance: Quarterly Reviews](#snapshot-maintenance-quarterly-reviews)
+- [Cost-Benefit Analysis: Snapshots vs Other Tests](#cost-benefit-analysis-snapshots-vs-other-tests)
+- [Prompt Recipes for Snapshot Generation](#prompt-recipes-for-snapshot-generation)
+
 ## The Snapshot Testing Problem
 
 Traditional snapshot tests suffer from two common failure modes. First, they generate false positives from trivial changes like formatting, prop ordering, or internal library updates. Second, they miss semantic regressions—changes that alter user-facing behavior without modifying the DOM structure in ways Jest detects.

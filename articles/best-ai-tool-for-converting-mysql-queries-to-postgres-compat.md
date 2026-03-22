@@ -42,6 +42,15 @@ GitHub Copilot handles straightforward query conversions well when used with a c
 - **Migrating from MySQL to**: PostgreSQL is a common scenario for development teams seeking better features, JSON support, or stricter SQL compliance.
 - **In PostgreSQL 10+**: the preferred modern form is `GENERATED ALWAYS AS IDENTITY`, which is SQL standard and avoids some edge cases with sequence ownership.
 
+## Table of Contents
+
+- [Understanding the MySQL to PostgreSQL Syntax Gap](#understanding-the-mysql-to-postgresql-syntax-gap)
+- [Top AI Tools for MySQL to PostgreSQL Conversion](#top-ai-tools-for-mysql-to-postgresql-conversion)
+- [Practical Conversion Examples](#practical-conversion-examples)
+- [AI Tool Comparison for MySQL-to-PostgreSQL Conversion](#ai-tool-comparison-for-mysql-to-postgresql-conversion)
+- [Choosing the Right Tool for Your Needs](#choosing-the-right-tool-for-your-needs)
+- [A Recommended Approach](#a-recommended-approach)
+
 ## Understanding the MySQL to PostgreSQL Syntax Gap
 
 MySQL and PostgreSQL share much of the same SQL foundation, but they diverge in several critical areas that cause migration headaches:

@@ -39,6 +39,15 @@ If you have been building content in WriteSonic and now need to use Jasper AI's 
 - **Jasper then analyzes this**: content to understand your tone, vocabulary, and formatting preferences.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Why Transfer Content to Jasper AI Brand Voice](#why-transfer-content-to-jasper-ai-brand-voice)
+- [Step 1: Export Your WriteSonic Content](#step-1-export-your-writesonic-content)
+- [Step 2: Analyze Content for Style Characteristics](#step-2-analyze-content-for-style-characteristics)
+- [Step 3: Configure Jasper AI Brand Voice](#step-3-configure-jasper-ai-brand-voice)
+- [Step 4: Validate the Migration](#step-4-validate-the-migration)
+- [Handling Content Differences](#handling-content-differences)
+
 ## Why Transfer Content to Jasper AI Brand Voice
 
 WriteSonic excels at generating SEO-optimized marketing copy with its AI-powered tools. However, Jasper AI offers a more structured approach to brand consistency through its Brand Voice feature. When you need multiple team members producing content that matches your established tone, vocabulary, and style, Jasper AI's Brand Voice provides that consistency at scale.
@@ -350,10 +359,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [Jasper AI Brand Voice vs Claude Style Matching](/ai-tools-compared/jasper-ai-brand-voice-vs-claude-style-matching/)
-- [Migrate Jasper AI Brand Voice Settings to ChatGPT Custom Ins](/ai-tools-compared/migrate-jasper-ai-brand-voice-settings-to-chatgpt-custom-ins/)
 - [Writesonic vs Jasper AI: Copywriting Tools Compared](/ai-tools-compared/writesonic-vs-jasper-ai-copywriting-tool-comparison/)
-- [Writesonic Chatsonic vs ChatGPT: Conversation Comparison](/ai-tools-compared/writesonic-chatsonic-vs-chatgpt-conversation-comparison/)
-- [AI Writing Tools for Healthcare Content Compared 2026](/ai-tools-compared/ai-writing-tools-for-healthcare-content-compared-2026/)
-
+- [Migrate Jasper AI Brand Voice Settings to ChatGPT Custom](/ai-tools-compared/migrate-jasper-ai-brand-voice-settings-to-chatgpt-custom-ins/)
+- [Jasper AI vs Copy AI: Which Is Better for Marketing in 2026](/ai-tools-compared/jasper-ai-vs-copy-ai-which-is-better-for-marketing/)
+- [Jasper AI vs Writer.com for Enterprise Writing](/ai-tools-compared/jasper-ai-vs-writer-com-enterprise-writing-compared/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

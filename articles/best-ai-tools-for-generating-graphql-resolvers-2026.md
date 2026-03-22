@@ -48,6 +48,17 @@ type User {
   id: ID!
 - **Copilot follows your existing patterns**: if your codebase uses loaders, Copilot will too.
 
+## Table of Contents
+
+- [Why GraphQL Resolver Generation Matters](#why-graphql-resolver-generation-matters)
+- [Claude (Opus 4.6) — Best for Production Complexity](#claude-opus-46-best-for-production-complexity)
+- [GPT-4 — Strong Type Coverage](#gpt-4-strong-type-coverage)
+- [GitHub Copilot — Best for Incremental Development](#github-copilot-best-for-incremental-development)
+- [Preventing N+1 Query Problems](#preventing-n1-query-problems)
+- [Real-World Performance Metrics](#real-world-performance-metrics)
+- [Resolver Caching Strategies](#resolver-caching-strategies)
+- [Integration Timing](#integration-timing)
+
 ## Why GraphQL Resolver Generation Matters
 
 GraphQL resolvers are the bridge between your schema and data sources. Writing them manually introduces risk: N+1 query problems, missing error boundaries, inconsistent typing, and performance bottlenecks. AI assistants can generate complete resolver implementations with:

@@ -40,6 +40,17 @@ Finding affordable AI tools requires understanding the true cost structure. This
 - **Developers who regularly use**: AI completions hit the 2,000 completion ceiling within a few days of active coding.
 - **It offers unlimited code completions**: chat assistance, and supports over 70 programming languages.
 
+## Table of Contents
+
+- [Why Look Beyond GitHub Copilot](#why-look-beyond-github-copilot)
+- [How Free Alternatives Compare to Copilot](#how-free-alternatives-compare-to-copilot)
+- [Codeium: The Strongest Free Option](#codeium-the-strongest-free-option)
+- [Tabnine: Established Free Tier](#tabnine-established-free-tier)
+- [Local Solutions: Full Privacy and No Limits](#local-solutions-full-privacy-and-no-limits)
+- [Practical Examples Across Languages](#practical-examples-across-languages)
+- [Making the Switch](#making-the-switch)
+- [Final Recommendation](#final-recommendation)
+
 ## Why Look Beyond GitHub Copilot
 
 GitHub Copilot costs $10 per month for individuals or $100 per year, and the free tier is limited. While Copilot performs well in many scenarios, developers increasingly seek alternatives for reasons including cost savings, privacy concerns, offline capabilities, and curiosity about competing tools. The good news is that several free options now match or approach Copilot's core functionality.
@@ -260,11 +271,10 @@ Policies vary widely. Some tools let you access your data for a grace period aft
 
 ## Related Articles
 
-- [Free AI Alternatives to Copilot for JetBrains IDE Users 2026](/ai-tools-compared/free-ai-alternatives-to-copilot-for-jetbrains-ide-users-2026/)
+- [Copilot Chat Not Responding in GitHub](/ai-tools-compared/copilot-chat-not-responding-in-github-fix/)
 - [GitHub Copilot Free Tier Hidden Limits You Should Know 2026](/ai-tools-compared/github-copilot-free-tier-hidden-limits-you-should-know-2026/)
 - [How to Maximize GitHub Copilot Free Tier for Open Source](/ai-tools-compared/how-to-maximize-github-copilot-free-tier-for-open-source/)
-- [Free AI Tools for Code Refactoring That Actually Improve Qua](/ai-tools-compared/free-ai-tools-for-code-refactoring-that-actually-improve-qua/)
-- [Free Alternatives to ChatGPT Plus for Code Generation](/ai-tools-compared/free-alternatives-to-chatgpt-plus-for-code-generation-2026/)
-
+- [Free AI Alternatives to Copilot for JetBrains IDE Users 2026](/ai-tools-compared/free-ai-alternatives-to-copilot-for-jetbrains-ide-users-2026/)
+- [GitHub Copilot vs Cody Sourcegraph Comparison](/ai-tools-compared/github-copilot-vs-cody-sourcegraph-comparison/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

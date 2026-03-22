@@ -39,6 +39,21 @@ This guide compares the strengths and weaknesses of each tool for this specific 
 - **GitHub Copilot works best**: when you're actively coding and want suggestions without leaving your editor.
 - **It's ideal for developers**: who prefer staying in their IDE and want subtle assistance rather than a conversational partner.
 
+## Table of Contents
+
+- [Understanding the Tools](#understanding-the-tools)
+- [Setting Up a New DRF Project](#setting-up-a-new-drf-project)
+- [Workflow Differences in Practice](#workflow-differences-in-practice)
+- [When to Use Each Tool](#when-to-use-each-tool)
+- [Making Your Choice](#making-your-choice)
+- [Pricing and Subscription Costs](#pricing-and-subscription-costs)
+- [Integration with Django DevOps](#integration-with-django-devops)
+- [Database Configuration Examples](#database-configuration-examples)
+- [Practical Scaffolding Workflow Comparison](#practical-scaffolding-workflow-comparison)
+- [Version Management and Dependency Handling](#version-management-and-dependency-handling)
+- [Team Collaboration Considerations](#team-collaboration-considerations)
+- [Common Pitfalls Avoided with AI Scaffolding](#common-pitfalls-avoided-with-ai-scaffolding)
+
 ## Understanding the Tools
 
 GitHub Copilot functions primarily as an inline autocomplete assistant integrated into your IDE. It suggests code as you type, drawing on context from your current file and project. Copilot works well for incremental additions—adding a field to a model, creating a serializer method, or generating a viewset. However, it requires you to be actively editing files and typically generates one suggestion at a time.
@@ -367,10 +382,9 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [How to Use AI to Generate pytest Tests for Django REST Frame](/ai-tools-compared/how-to-use-ai-to-generate-pytest-tests-for-django-rest-frame/)
-- [Claude vs ChatGPT for Converting REST API Documentation](/ai-tools-compared/claude-vs-chatgpt-for-converting-rest-api-documentation-to-g/)
-- [Best Way to Structure Claude MD File for Python Django Proje](/ai-tools-compared/best-way-to-structure-claude-md-file-for-python-django-proje/)
+- [Copilot vs Claude Code for Writing GitHub Actions Cicd](/ai-tools-compared/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
 - [Copilot vs Claude Code for Writing Complex SQL Stored Proced](/ai-tools-compared/copilot-vs-claude-code-for-writing-complex-sql-stored-proced/)
+- [Effective Tool Chaining Workflow Using Copilot and Claude](/ai-tools-compared/effective-tool-chaining-workflow-using-copilot-and-claude-together-for-coding/)
 - [Copilot vs Claude Code for Writing Jest Test](/ai-tools-compared/copilot-vs-claude-code-for-writing--jest-test-s/)
-
+- [Copilot vs Codeium for JavaScript Framework-Specific Code](/ai-tools-compared/copilot-vs-codeium-for-javascript-framework-specific-code-ge/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -39,6 +39,25 @@ Writing GraphQL schemas by hand is tedious. Type definitions, resolver signature
 - **Use Cody Pro for**: maintaining consistency across your codebase Most productive teams use Claude for schema architecture + Copilot for inline scaffolding.
 - **For teams**: Copilot's $19/month per developer is unbeatable for daily work, with Claude reserved for architectural decisions.
 
+## Table of Contents
+
+- [What We Tested](#what-we-tested)
+- [Claude 3.5 Sonnet](#claude-35-sonnet)
+- [GitHub Copilot](#github-copilot)
+- [ChatGPT Plus (GPT-4o)](#chatgpt-plus-gpt-4o)
+- [Cody (Sourcegraph)](#cody-sourcegraph)
+- [Gemini Advanced (Google)](#gemini-advanced-google)
+- [Comparison Table](#comparison-table)
+- [Practical Recommendations](#practical-recommendations)
+- [Working with AI-Generated Schemas](#working-with-ai-generated-schemas)
+- [Cost Analysis](#cost-analysis)
+- [Testing AI-Generated Schemas](#testing-ai-generated-schemas)
+- [Advanced Recommendations by Use Case](#advanced-recommendations-by-use-case)
+- [Performance Comparison: Schema Generation Speed](#performance-comparison-schema-generation-speed)
+- [Building a Custom Schema Generator Powered by AI](#building-a-custom-schema-generator-powered-by-ai)
+- [Cost-Benefit Analysis: AI Schema Generation ROI](#cost-benefit-analysis-ai-schema-generation-roi)
+- [Final Verdict](#final-verdict)
+
 ## What We Tested
 
 We evaluated five AI assistants on:
@@ -407,8 +426,9 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [AI Tools for Writing Jest Tests for Graphql Resolvers](/ai-tools-for-writing-jest-tests-for-graphql-resolvers-with-dataloader-batching/)
-- [AI Tools for Writing TypeScript Zod Schemas 2026](/ai-tools-for-writing-typescript-zod-schemas-2026/)
-- [Best AI Tools for Writing GraphQL Resolvers 2026](/best-ai-tools-for-writing-graphql-resolvers-2026/)
-
+- [Best AI Tools for Writing GraphQL Resolvers 2026](/ai-tools-compared/best-ai-tools-for-writing-graphql-resolvers-2026/)
+- [AI Tools for Writing TypeScript Zod Schemas 2026](/ai-tools-compared/ai-tools-for-writing-typescript-zod-schemas-2026/)
+- [Best AI Tools for Generating GraphQL Resolvers in 2026](/ai-tools-compared/best-ai-tools-for-generating-graphql-resolvers-2026/)
+- [AI Tools for Writing Terraform Infrastructure-as-Code](/ai-tools-compared/ai-tools-for-writing-terraform-infrastructure-as-code-comparison-2026/)
+- [AI Coding Assistants for TypeScript Graphql Resolver](/ai-tools-compared/ai-coding-assistants-for-typescript-graphql-resolver-and-schema-generation-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

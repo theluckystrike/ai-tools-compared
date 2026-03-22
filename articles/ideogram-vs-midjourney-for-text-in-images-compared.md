@@ -42,6 +42,15 @@ Choose **Ideogram** if text accuracy is your primary requirement--it was built w
 
 It depends on your background.
 
+## Table of Contents
+
+- [The Text Rendering Problem](#the-text-rendering-problem)
+- [Ideogram: Built for Text](#ideogram-built-for-text)
+- [Midjourney: Evolution of Text Capabilities](#midjourney-evolution-of-text-capabilities)
+- [Side-by-Side Comparison](#side-by-side-comparison)
+- [Practical Use Cases](#practical-use-cases)
+- [Recommendations for Developers](#recommendations-for-developers)
+
 ## The Text Rendering Problem
 
 AI image generators struggle with text because they fundamentally work with pixels, not semantic concepts. When you prompt an AI to render "Hello World" in an image, it paints patterns that resemble letters rather than actual text. This leads to garbled characters, spelling errors, and illegible output.
@@ -275,11 +284,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [How to Transfer Midjourney Prompt Library to Ideogram Prompt](/ai-tools-compared/how-to-transfer-midjourney-prompt-library-to-ideogram-prompt/)
+- [How to Transfer Midjourney Prompt Library to Ideogram](/ai-tools-compared/how-to-transfer-midjourney-prompt-library-to-ideogram-prompt/)
+- [Switching from Midjourney to Dall E 3 Prompt Adaptation](/ai-tools-compared/switching-from-midjourney-to-dall-e-3-prompt-adaptation-guid/)
 - [How to Export Midjourney Images Before Downgrading Plan](/ai-tools-compared/how-to-export-midjourney-images-before-downgrading-plan-2026/)
-- [Cursor Tab vs Copilot Ghost Text Comparison](/ai-tools-compared/cursor-tab-vs-copilot-ghost-text-comparison/)
-- [How to Reduce AI Autocomplete Ghost Text Distractions While](/ai-tools-compared/how-to-reduce-ai-autocomplete-ghost-text-distractions-while-coding/)
-- [Switching from Copilot Ghost Text to Cursor Tab Autocomplete](/ai-tools-compared/switching-from-copilot-ghost-text-to-cursor-tab-autocomplete/)
-
+- [AI Tools for Generating Website Hero Images Compared](/ai-tools-compared/ai-tools-for-generating-website-hero-images-compared/)
+- [How to Build AI-Powered Error Classifiers 2026](/ai-tools-compared/how-to-build-ai-powered-error-classifiers-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

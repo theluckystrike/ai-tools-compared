@@ -39,6 +39,19 @@ Generating unit tests for legacy code is notoriously difficult because the origi
 - **Many teams defer testing**: indefinitely because the effort seems disproportionate to perceived value.
 - **This happens because AI**: forces you to explicitly verify behavior through assertions.
 
+## Table of Contents
+
+- [The Legacy Code Testing Problem](#the-legacy-code-testing-problem)
+- [Why AI Tools Excel at Legacy Code Testing](#why-ai-tools-excel-at-legacy-code-testing)
+- [Tool Comparison: Features and Capabilities](#tool-comparison-features-and-capabilities)
+- [Practical Comparison Table](#practical-comparison-table)
+- [Real-World Example: Testing Legacy E-Commerce Code](#real-world-example-testing-legacy-e-commerce-code)
+- [Test Generation Workflow Patterns](#test-generation-workflow-patterns)
+- [Coverage Metrics: What Do Generated Tests Actually Catch?](#coverage-metrics-what-do-generated-tests-actually-catch)
+- [Limitations All Tools Share](#limitations-all-tools-share)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+- [Getting Started Checklist](#getting-started-checklist)
+
 ## The Legacy Code Testing Problem
 
 Legacy systems often lack unit tests because they were built in eras when test-driven development wasn't standard practice. Adding tests retroactively is expensive and risky: you must understand the existing behavior without specifications, write tests that validate that behavior (rather than what you think it should do), and avoid introducing false positives that break on refactoring. Many teams defer testing indefinitely because the effort seems disproportionate to perceived value.
@@ -459,10 +472,9 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Best AI Tools for Generating Unit Tests — From](/ai-tools-compared/best-ai-tools-for-generating-unit-tests-from-legacy-code-without-tests/)
+- [Best AI Tools for Generating Unit Tests: Legacy](/ai-tools-compared/best-ai-tools-for-generating-unit-tests-from-legacy-code-without-tests/)
 - [Best AI Tools for Generating Unit Tests 2026](/ai-tools-compared/ai-tools-for-generating-unit-tests-2026/)
-- [Best AI Tools for Writing Unit Tests Comparison 2026.](/ai-tools-compared/best-ai-tools-for-writing-unit-tests-comparison-2026/)
 - [Best Free AI Tool for Writing Unit Tests Automatically](/ai-tools-compared/best-free-ai-tool-for-writing-unit-tests-automatically/)
-- [Claude vs ChatGPT for Refactoring Legacy Java Code to Kotlin](/ai-tools-compared/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
-
+- [Best AI Tools for Writing Unit Tests Comparison 2026](/ai-tools-compared/best-ai-tools-for-writing-unit-tests-comparison-2026/)
+- [Best AI Tools for Writing Playwright Tests 2026](/ai-tools-compared/best-ai-tools-for-writing-playwright-tests-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

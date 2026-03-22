@@ -40,6 +40,24 @@ Choose Claude Code if you want AI that understands your entire project, modifies
 - **After initial setup with**: a `CLAUDE.md` file or by pointing it at your codebase, it understands your coding conventions, testing preferences, and project architecture.
 - **The Code Interpreter feature**: is included but tied to your subscription rather than pay-per-use.
 
+## Table of Contents
+
+- [Execution Model](#execution-model)
+- [Quick Comparison](#quick-comparison)
+- [Context and Project Awareness](#context-and-project-awareness)
+- [CLAUDE.md: The Project Context File](#claudemd-the-project-context-file)
+- [Tech Stack](#tech-stack)
+- [Conventions](#conventions)
+- [Do Not](#do-not)
+- [Tool Integration and Automation](#tool-integration-and-automation)
+- [Where ChatGPT Code Interpreter Actually Wins](#where-chatgpt-code-interpreter-actually-wins)
+- [Cost Structure](#cost-structure)
+- [Data Privacy Considerations](#data-privacy-considerations)
+- [When to Choose Each Tool](#when-to-choose-each-tool)
+- [Practical Example: Building a REST API](#practical-example-building-a-rest-api)
+- [Debugging Workflows: A Realistic Comparison](#debugging-workflows-a-realistic-comparison)
+- [Performance in Large Codebases](#performance-in-large-codebases)
+
 ## Execution Model
 
 Claude Code runs as a local CLI tool, executing code directly on your machine with access to your filesystem, git, and installed tools. It operates as a persistent agent that maintains context across sessions and can make direct file modifications.
@@ -286,11 +304,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [ChatGPT Code Interpreter Not Running Python: Fixes and Fix](/ai-tools-compared/chatgpt-code-interpreter-not-running-python-fix/)
-- [Claude vs ChatGPT for Refactoring Legacy Java Code to Kotlin](/ai-tools-compared/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
-- [ChatGPT Plus vs Claude Pro Monthly Cost for Daily Coding](/ai-tools-compared/chatgpt-plus-vs-claude-pro-monthly-cost-for-daily-coding/)
-- [ChatGPT Team vs Claude Team Cost Per Seat Comparison 2026](/ai-tools-compared/chatgpt-team-vs-claude-team-cost-per-seat-comparison-2026/)
-- [ChatGPT vs Claude for Creating Database Migration Scripts](/ai-tools-compared/chatgpt-vs-claude-for-creating-database-migration-scripts-po/)
-
+- [ChatGPT Code Interpreter Not Running Python: Fixes](/ai-tools-compared/chatgpt-code-interpreter-not-running-python-fix/)
+- [Claude vs ChatGPT for Refactoring Legacy Java Code](/ai-tools-compared/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
+- [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
+- [Free Alternatives to ChatGPT Plus for Code Generation](/ai-tools-compared/free-alternatives-to-chatgpt-plus-for-code-generation-2026/)
+- [Claude Code for Node.js Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-nodejs-profiling-workflow-tutorial/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -80,6 +80,16 @@ This code fails to compile.
 - **Does Rust offer a**: free tier? Most major tools offer some form of free tier or trial period.
 - **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 
+## Table of Contents
+
+- [The Test Methodology](#the-test-methodology)
+- [Test Case 1: Basic WASM Library Structure](#test-case-1-basic-wasm-library-structure)
+- [Test Case 2: String Handling Across the WASM Boundary](#test-case-2-string-handling-across-the-wasm-boundary)
+- [Test Case 3: Passing Arrays Between Rust and JavaScript](#test-case-3-passing-arrays-between-rust-and-javascript)
+- [Test Case 4: Complex Structs with wasm-bindgen](#test-case-4-complex-structs-with-wasm-bindgen)
+- [Test Case 5: Async WASM Functions](#test-case-5-async-wasm-functions)
+- [Key Findings](#key-findings)
+
 ## The Test Methodology
 
 I tested three major AI coding assistants—Claude Code, GitHub Copilot, and Cursor—across common WASM and bindgen scenarios. Each tool received identical prompts describing the required Rust-to-JavaScript interoperability code. I then assessed the output for compilation success, correct attribute usage, and adherence to best practices.
@@ -395,10 +405,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How Accurate Are AI Tools at Generating Rust Crossbeam](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
-- [How Accurate Are AI Tools](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-serde-serialization-code/)
 - [How Accurate Are AI Tools for Rust Unsafe Code Blocks](/ai-tools-compared/how-accurate-are-ai-tools-for-rust-unsafe-code-blocks-and-ff/)
-- [How to Use AI to Resolve Cmake Configuration Errors](/ai-tools-compared/how-to-use-ai-to-resolve-cmake-configuration-errors-for-cross-compilation/)
-- [Best Prompting Strategies for Getting Accurate Code from](/ai-tools-compared/best-prompting-strategies-for-getting-accurate-code-from-ai-/)
-
+- [How Accurate Are AI Tools at Generating Rust Crossbeam](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
+- [Best AI Coding Tools for Rust Developers 2026](/ai-tools-compared/ai-tools-for-rust-developers-2026/)
+- [How Accurate Are AI Tools](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-serde-serialization-code/)
+- [AI Code Generation Producing Syntax Errors in Rust Fix Guide](/ai-tools-compared/ai-code-generation-producing-syntax-errors-in-rust-fix-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

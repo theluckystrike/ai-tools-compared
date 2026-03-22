@@ -40,6 +40,20 @@ Choose Sora if you need physically coherent long-form video (60+ seconds) and in
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **Choose Runway if you**: need stylized artistic transformations, strong image-to-video capabilities, and a more mature generation pipeline.
 
+## Table of Contents
+
+- [API Access and Authentication](#api-access-and-authentication)
+- [Generation Capabilities](#generation-capabilities)
+- [Feature Comparison at a Glance](#feature-comparison-at-a-glance)
+- [Use Case Suitability](#use-case-suitability)
+- [Rate Limits and Pricing](#rate-limits-and-pricing)
+- [Integration Patterns](#integration-patterns)
+- [Performance Considerations](#performance-considerations)
+- [Error Handling and Retries](#error-handling-and-retries)
+- [Output Formats and Quality Settings](#output-formats-and-quality-settings)
+- [Security Best Practices](#security-best-practices)
+- [Building an Unified Abstraction Layer](#building-an-unified-abstraction-layer)
+
 ## API Access and Authentication
 
 Both platforms provide REST API access, but their authentication mechanisms and rate limits vary.
@@ -409,9 +423,8 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 - [Runway ML vs Pika AI: Video Generation Tools Compared](/ai-tools-compared/runway-ml-vs-pika-ai-video-generation/)
 - [Runway ML vs Pika Labs: AI Video Generation Comparison 2026](/ai-tools-compared/runway-ml-vs-pika-labs-ai-video-comparison-2026/)
-- [AI Tools for Video Thumbnail Generation](/ai-tools-compared/ai-tools-for-video-thumbnail-generation/)
 - [Kling AI vs Gen 3 Video Generation: Developer Comparison](/ai-tools-compared/kling-ai-vs-gen-3-video-generation/)
-- [Claude vs ChatGPT for Technical Writing 2026](/ai-tools-compared/claude-vs-chatgpt-for-technical-writing-2026/)
-
+- [AI Tools for Video Thumbnail Generation](/ai-tools-compared/ai-tools-for-video-thumbnail-generation/)
+- [Best AI Tools for Video Game Trailers](/ai-tools-compared/best-ai-tools-for-video-game-trailers/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

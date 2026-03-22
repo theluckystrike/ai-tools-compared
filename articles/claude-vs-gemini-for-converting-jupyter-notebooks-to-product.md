@@ -39,6 +39,19 @@ Choose Claude if you need production-grade scripts with modular functions, struc
 - **Magic commands**: Claude replaces `%time` with Python's `time` module and wraps measured blocks.
 - **For notebooks relying on**: `%%capture` or `%%writefile`, Claude will suggest replacements; Gemini silently removes them.
 
+## Table of Contents
+
+- [The Conversion Challenge](#the-conversion-challenge)
+- [Test Methodology](#test-methodology)
+- [Claude's Approach](#claudes-approach)
+- [Gemini's Approach](#geminis-approach)
+- [Comparative Analysis](#comparative-analysis)
+- [Feature Comparison Table](#feature-comparison-table)
+- [Handling Notebook-Specific Patterns](#handling-notebook-specific-patterns)
+- [When to Choose Each Tool](#when-to-choose-each-tool)
+- [Step-by-Step Conversion Workflow with Claude](#step-by-step-conversion-workflow-with-claude)
+- [Hybrid Workflow](#hybrid-workflow)
+
 ## The Conversion Challenge
 
 Jupyter notebooks encourage iterative exploration with inline visualizations, cell-by-cell execution, and explanatory markdown. Production code requires different patterns: proper module structure, error handling, logging, and maintainable function hierarchies. The conversion process involves more than stripping out cell magic commands—it requires restructuring logic into deployable, testable code.
@@ -336,10 +349,9 @@ Both tools perform well on notebooks under 300 lines. Above 500 lines, Claude ma
 
 ## Related Articles
 
-- [AI Tools for Product Managers Converting Customer](/ai-tools-compared/ai-tools-for-product-managers-converting-customer-interview-/)
-- [Claude vs ChatGPT for Converting REST API Documentation](/ai-tools-compared/claude-vs-chatgpt-for-converting-rest-api-documentation-to-g/)
-- [Gemini vs Claude for Analyzing Large CSV Datasets Over 100MB](/ai-tools-compared/gemini-vs-claude-for-analyzing-large-csv-datasets-over-100mb/)
-- [Gemini vs Claude for Generating Markdown Documentation](/ai-tools-compared/gemini-vs-claude-for-generating-markdown-documentation-from-/)
-- [Gemini vs Claude for Summarizing Quarterly Earnings Call Tra](/ai-tools-compared/gemini-vs-claude-for-summarizing-quarterly-earnings-call-tra/)
-
+- [Gemini vs Claude for Summarizing Quarterly Earnings Call](/ai-tools-compared/gemini-vs-claude-for-summarizing-quarterly-earnings-call-tra/)
+- [Switching from Gemini Advanced to Claude Pro: What You](/ai-tools-compared/switching-from-gemini-advanced-to-claude-pro-what-you-lose/)
+- [Gemini vs Claude for Writing Apache Kafka Consumer Producer](/ai-tools-compared/gemini-vs-claude-for-writing-apache-kafka-consumer-producer-/)
+- [Gemini vs Claude for Multimodal Coding](/ai-tools-compared/gemini-vs-claude-multimodal-coding-tasks/)
+- [Gemini vs Claude for Analyzing Large CSV Datasets Over](/ai-tools-compared/gemini-vs-claude-for-analyzing-large-csv-datasets-over-100mb/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

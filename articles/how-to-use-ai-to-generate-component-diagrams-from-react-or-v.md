@@ -40,6 +40,14 @@ Component diagrams serve as visual documentation that helps teams understand app
 - **For large projects**: generate multiple focused diagrams rather than attempting to visualize everything in one view.
 - **Separate diagrams for routing**: state management, feature modules, and shared components often prove more useful than a single overwhelming diagram.
 
+## Table of Contents
+
+- [Why AI-Generated Component Diagrams Matter](#why-ai-generated-component-diagrams-matter)
+- [Prerequisites](#prerequisites)
+- [Practical Examples](#practical-examples)
+- [Best Practices](#best-practices)
+- [Troubleshooting](#troubleshooting)
+
 ## Why AI-Generated Component Diagrams Matter
 
 Large React and Vue applications often contain hundreds of components with complex relationships. Understanding parent-child connections, prop drilling patterns, and state management flows becomes increasingly difficult without visual aids. Traditional approaches require developers to manually map out components using tools like draw.io or Lucidchart, a tedious process that quickly becomes outdated as code changes.
@@ -310,11 +318,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [AI Coding Assistant Comparison for React Component](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
-- [How to Generate Mermaid Sequence Diagrams from API Endpoint](/ai-tools-compared/how-to-generate-mermaid-sequence-diagrams-from-api-endpoint-descriptions-using-ai/)
 - [How to Use AI to Generate Activity Diagrams from User](/ai-tools-compared/how-to-use-ai-to-generate-activity-diagrams-from-user-acceptance-criteria/)
+- [How to Generate Mermaid Sequence Diagrams from API Endpoint](/ai-tools-compared/how-to-generate-mermaid-sequence-diagrams-from-api-endpoint-descriptions-using-ai/)
+- [AI Coding Assistant Comparison for React Component](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
+- [AI Tools for Creating System Context Diagrams Using C4](/ai-tools-compared/ai-tools-for-creating-system-context-diagrams-using-c4-model/)
 - [How to Use AI to Generate Jest Component Tests with Testing](/ai-tools-compared/how-to-use-ai-to-generate-jest-component-tests-with-testing-/)
-- [AI Tools for Creating System Context Diagrams Using C4 Model](/ai-tools-compared/ai-tools-for-creating-system-context-diagrams-using-c4-model/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

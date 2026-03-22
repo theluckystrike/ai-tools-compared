@@ -39,6 +39,20 @@ Use Claude Code for Fresh development if you need assistants that understand Den
 - **The best assistants also**: recognize Fresh-specific patterns like handler functions, middleware using the Fresh middleware interface, and state management through the context object.
 - **When generating Fresh route handlers**: it correctly uses URL-based imports and understands the Handlers type from Fresh's server module.
 
+## Table of Contents
+
+- [What Developers Need for Deno Fresh Projects](#what-developers-need-for-deno-fresh-projects)
+- [Claude Code](#claude-code)
+- [Cursor](#cursor)
+- [GitHub Copilot](#github-copilot)
+- [Zed](#zed)
+- [Recommendations by Use Case](#recommendations-by-use-case)
+- [Benchmarking AI Suggestions Across Tools](#benchmarking-ai-suggestions-across-tools)
+- [Real Code Example: Multi-File Fresh Project](#real-code-example-multi-file-fresh-project)
+- [Performance Metrics for Large Fresh Projects](#performance-metrics-for-large-fresh-projects)
+- [Comparison by Specific Fresh Features](#comparison-by-specific-fresh-features)
+- [Workflow Recommendations by Team Size](#workflow-recommendations-by-team-size)
+
 ## What Developers Need for Deno Fresh Projects
 
 Developing with Fresh has distinct requirements that differ from Node.js frameworks. Your AI assistant should understand Deno's import statements using URLs, handle Fresh's island and island component patterns correctly, generate code that follows the framework's conventions, and work with TypeScript in a Deno context. The best assistants also recognize Fresh-specific patterns like handler functions, middleware using the Fresh middleware interface, and state management through the context object.

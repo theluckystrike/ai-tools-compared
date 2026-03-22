@@ -40,6 +40,16 @@ Perplexity's collections feature lets you organize research, bookmarks, and save
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Why Export Collections Before Switching](#why-export-collections-before-switching)
+- [Method 1: Manual Browser Export](#method-1-manual-browser-export)
+- [Method 2: Perplexity API for Programmatic Export](#method-2-perplexity-api-for-programmatic-export)
+- [Method 3: Browser Automation with Playwright](#method-3-browser-automation-with-playwright)
+- [Converting Exported Data for ChatGPT Search](#converting-exported-data-for-chatgpt-search)
+- [Automating Ongoing Sync](#automating-ongoing-sync)
+- [Best Practices for Data Migration](#best-practices-for-data-migration)
+
 ## Why Export Collections Before Switching
 
 Perplexity stores your collections on their servers as long as you maintain an active subscription. Collections include saved URLs, research threads, generated summaries, and your search history organized into custom folders. When you transition away from Perplexity, whether to ChatGPT Search or another AI-powered search tool, you lose access to this organized knowledge base unless you've explicitly exported it.
@@ -285,11 +295,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Switching from ChatGPT Plus to Perplexity Pro Feature Compar](/ai-tools-compared/switching-from-chatgpt-plus-to-perplexity-pro-feature-compar/)
+- [Switching from ChatGPT Plus to Perplexity Pro Feature](/ai-tools-compared/switching-from-chatgpt-plus-to-perplexity-pro-feature-compar/)
+- [Switching from ChatGPT Search to Perplexity Pro: Explained](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
 - [Switching from ChatGPT Search to Perplexity Pro Search](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
-- [Switching from ChatGPT Search to Perplexity Pro Search](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
-- [How to Export Gemini Workspace Data Before Switching to](/ai-tools-compared/how-to-export-gemini-workspace-data-before-switching-to-claude-team/)
-- [How to Export Grammarly Personal Dictionary Before Switching](/ai-tools-compared/how-to-export-grammarly-personal-dictionary-before-switching/)
-
+- [Perplexity Not Finding Recent Results](/ai-tools-compared/perplexity-not-finding-recent-results-fix/)
+- [ChatGPT vs Perplexity for Researching Competitor Pricing](/ai-tools-compared/chatgpt-vs-perplexity-for-researching-competitor-pricing-str/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

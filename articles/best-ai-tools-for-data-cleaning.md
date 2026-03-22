@@ -41,6 +41,14 @@ The best AI tools for data cleaning are Pandas with AI-assisted workflows for ma
 - **This guide compares each**: option with code examples and practical recommendations based on your team size, data volume, and workflow requirements.
 - **Finally**: the best tools provide audit trails, showing exactly what changes were made and allowing selective undo.
 
+## Table of Contents
+
+- [What to Look for in a Data Cleaning Tool](#what-to-look-for-in-a-data-cleaning-tool)
+- [Comparing Leading AI Data Cleaning Tools](#comparing-leading-ai-data-cleaning-tools)
+- [Tool Comparison at a Glance](#tool-comparison-at-a-glance)
+- [Practical Recommendations](#practical-recommendations)
+- [Common Data Cleaning Scenarios](#common-data-cleaning-scenarios)
+
 ## What to Look for in a Data Cleaning Tool
 
 Effective AI data cleaning tools share several characteristics that matter most to developers. First, they must integrate with existing workflows—whether through CLI, API, or IDE plugin. Second, they should handle multiple data formats, including CSV, JSON, SQL exports, and common database systems. Third, customizable rules let you enforce domain-specific standards without manual intervention. Finally, the best tools provide audit trails, showing exactly what changes were made and allowing selective undo.

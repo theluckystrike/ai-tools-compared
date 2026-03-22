@@ -45,6 +45,13 @@ Include actual code examples from your project to illustrate expected patterns.
 - **Consider a scenario where**: your project uses a specific error-handling pattern across all API endpoints.
 - **Include preferences for file**: organization and import patterns.
 
+## Table of Contents
+
+- [Why Project-Specific Rules Matter](#why-project-specific-rules-matter)
+- [Prerequisites](#prerequisites)
+- [Practical Examples](#practical-examples)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Project-Specific Rules Matter
 
 AI coding assistants train on vast codebases representing many different coding styles, frameworks, and organizational patterns. Without project-specific guidance, these tools default to generic approaches that may conflict with your team's standards or fail to integrate with your existing codebase.
@@ -290,10 +297,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Write System Prompts for AI Assistants That Produce](/ai-tools-compared/how-to-write-system-prompts-for-ai-assistants-that-produce-a/)
 - [Writing Effective System Prompts for AI Coding Assistants](/ai-tools-compared/writing-effective-system-prompts-for-ai-coding-assistants-th/)
+- [How to Write System Prompts for AI Assistants That Produce](/ai-tools-compared/how-to-write-system-prompts-for-ai-assistants-that-produce-a/)
+- [How to Write Better Prompts for AI Code Generation](/ai-tools-compared/how-to-write-better-prompts-for-ai-code-generation-with-examples/)
 - [How to Create Custom System Prompts for AI That Match Your](/ai-tools-compared/how-to-create-custom-system-prompts-for-ai-that-match-your-d/)
-- [How to Migrate ChatGPT System Prompts](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-forma/)
-- [Migrate ChatGPT System Prompts](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-format/)
-
+- [How to Train Your AI Coding Assistant on Your Team Coding](/ai-tools-compared/how-to-train-your-ai-coding-assistant-on-your-team-coding-st/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

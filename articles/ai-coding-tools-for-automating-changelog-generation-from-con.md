@@ -49,6 +49,16 @@ Run it with staged changes:
 git add .
 - **Codellama 13B handles conventional commit generation accurately for most common change types**: new files, modified functions, dependency updates.
 
+## Table of Contents
+
+- [The Conventional Commit Workflow](#the-conventional-commit-workflow)
+- [AI-Powered Solutions for Commit Message Generation](#ai-powered-solutions-for-commit-message-generation)
+- [Automating Changelog Generation](#automating-changelog-generation)
+- [Tool Comparison: AI Commit and Changelog Tools](#tool-comparison-ai-commit-and-changelog-tools)
+- [Integrating git-cliff for Rule-Based Changelog Generation](#integrating-git-cliff-for-rule-based-changelog-generation)
+- [{{ group | upper_first }}\n](#group-upperfirst-n)
+- [Best Practices for AI-Assisted Changelog Workflow](#best-practices-for-ai-assisted-changelog-workflow)
+
 ## The Conventional Commit Workflow
 
 Before looking at AI tools, let's establish the conventional commit foundation. The specification uses this format:

@@ -41,6 +41,25 @@ Data analysis requires models that write correct code on the first attempt, hand
 It depends on your background.
 - **Claude tends to work**: well if you prefer a guided experience, while GPT-4 gives more control for users comfortable with configuration.
 
+## Table of Contents
+
+- [Test Setup](#test-setup)
+- [Pandas Data Cleaning](#pandas-data-cleaning)
+- [Statistical Analysis](#statistical-analysis)
+- [Visualization Code](#visualization-code)
+- [When Each Model Excels](#when-each-model-excels)
+- [Practical Recommendation](#practical-recommendation)
+- [Long-Form Data Analysis](#long-form-data-analysis)
+- [API Integration and Batch Processing](#api-integration-and-batch-processing)
+- [Handling Missing Data](#handling-missing-data)
+- [Real-Time vs. Batch Analysis Trade-offs](#real-time-vs-batch-analysis-trade-offs)
+- [Database Query Generation](#database-query-generation)
+- [Cost per Analysis Type](#cost-per-analysis-type)
+- [Handling Categorical Data](#handling-categorical-data)
+- [Visualization Code Quality](#visualization-code-quality)
+- [When to Use Each for Data Analysis](#when-to-use-each-for-data-analysis)
+- [Related Reading](#related-reading)
+
 ## Test Setup
 
 All comparisons use:

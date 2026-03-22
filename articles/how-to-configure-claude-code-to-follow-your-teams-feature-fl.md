@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Configure Claude Code"
+title: "Configure Claude Code for Team Feature Flags"
 description: "A practical guide to configuring Claude Code to understand and follow your team's feature flag naming conventions with real-world examples and configuration"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -39,6 +39,13 @@ Feature flags have become essential for modern software development, enabling te
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **You can then prioritize the migrations by flag usage frequency**: high-traffic flags warrant careful migration plans, while flags only used in one place can be renamed in a single PR.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
+
+## Table of Contents
+
+- [Why Feature Flag Naming Conventions Matter](#why-feature-flag-naming-conventions-matter)
+- [Prerequisites](#prerequisites)
+- [Practical Examples of Flag Creation](#practical-examples-of-flag-creation)
+- [Troubleshooting](#troubleshooting)
 
 ## Why Feature Flag Naming Conventions Matter
 

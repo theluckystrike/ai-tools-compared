@@ -86,6 +86,22 @@ context:
 
 # Project Rules
 
+## Table of Contents
+
+- [Code Style](#code-style)
+- [Context Guidelines](#context-guidelines)
+- [Handling WindSurf Action Rules](#handling-windsurf-action-rules)
+- [Auto-Documentation](#auto-documentation)
+- [Pre-Save Actions](#pre-save-actions)
+- [Import Organization](#import-organization)
+- [Migrating WindSurf Context Rules](#migrating-windsurf-context-rules)
+- [Always Include](#always-include)
+- [Exclude Patterns](#exclude-patterns)
+- [Priority Files](#priority-files)
+- [Step-by-Step Migration Process](#step-by-step-migration-process)
+- [Testing Your Migrated Rules](#testing-your-migrated-rules)
+- [Common Pitfalls to Avoid](#common-pitfalls-to-avoid)
+
 ## Code Style
 - Use 2 spaces for indentation
 - Use single quotes for strings

@@ -39,6 +39,22 @@ No, Cursor Pro does not charge extra for large file indexing. Indexing is includ
 - **Use the command palette**: (Cmd/Ctrl + Shift + P) and search for "Indexing Status" 3.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Understanding Cursor's Indexing System](#understanding-cursors-indexing-system)
+- [Cursor Pro Pricing and Indexing Limits](#cursor-pro-pricing-and-indexing-limits)
+- [How to Check Your Project's Indexing Status](#how-to-check-your-projects-indexing-status)
+- [Strategies for Managing Large Codebases](#strategies-for-managing-large-codebases)
+- [Common Questions About Cursor Indexing](#common-questions-about-cursor-indexing)
+- [Performance Tips for Large Projects](#performance-tips-for-large-projects)
+- [Real-World Indexing Scenarios](#real-world-indexing-scenarios)
+- [Comparison: Cursor vs Competing Tools on Large Projects](#comparison-cursor-vs-competing-tools-on-large-projects)
+- [Indexing Strategy by Project Type](#indexing-strategy-by-project-type)
+- [When Indexing Performance Matters](#when-indexing-performance-matters)
+- [Code Examples: Optimized .cursorignore Patterns](#code-examples-optimized-cursorignore-patterns)
+- [Practical Limits You Might Hit](#practical-limits-you-might-hit)
+- [FAQ: Cursor Indexing](#faq-cursor-indexing)
+
 ## Understanding Cursor's Indexing System
 
 Cursor uses an indexing system to analyze your codebase and build a knowledge graph of your project. This index enables several core features:

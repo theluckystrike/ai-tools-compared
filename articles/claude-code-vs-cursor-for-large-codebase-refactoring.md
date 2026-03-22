@@ -51,6 +51,22 @@ claude "Create a migration plan for renaming user_id to userId.
 # After each Claude Code refactor phase
 git add .
 
+## Table of Contents
+
+- [Context Window Handling](#context-window-handling)
+- [Multi-File Refactoring: Real Workflow](#multi-file-refactoring-real-workflow)
+- [Prompt Engineering for Large Refactors](#prompt-engineering-for-large-refactors)
+- [Handling Large Files](#handling-large-files)
+- [When Each Tool Falls Short](#when-each-tool-falls-short)
+- [Combined Workflow: Best of Both](#combined-workflow-best-of-both)
+- [Cost Comparison for Large Refactors](#cost-comparison-for-large-refactors)
+- [Real CLI Examples for Large Refactors](#real-cli-examples-for-large-refactors)
+- [Real-World Refactoring Scenario: Express to Fastify Migration](#real-world-refactoring-scenario-express-to-fastify-migration)
+- [Table: Tool Strengths by Scenario](#table-tool-strengths-by-scenario)
+- [Practical Tips for Large Refactors with Claude Code](#practical-tips-for-large-refactors-with-claude-code)
+- [Practical Tips for Large Refactors with Cursor](#practical-tips-for-large-refactors-with-cursor)
+- [Red Flags and When to Stop](#red-flags-and-when-to-stop)
+
 ## Context Window Handling
 
 Claude Code (Sonnet 4.6 and Opus 4.6) ships with a 200k token context window. For a large codebase, this matters directly:
@@ -423,11 +439,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Claude vs ChatGPT for Refactoring Legacy Java Code to Kotlin](/ai-tools-compared/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
-- [Cursor AI Codebase Indexing: How It Works and Why It Matters](/ai-tools-compared/cursor-ai-codebase-indexing-how-it-works-and-why-it-matters-/)
-- [Cursor AI Slow on Large monorepo Fix (2026)](/ai-tools-compared/cursor-ai-slow-on-large-monorepo-fix-2026/)
-- [Does Cursor Pro Charge Extra for Large File Indexing in 2026](/ai-tools-compared/does-cursor-pro-charge-extra-for-large-file-indexing-2026/)
-- [Free AI Tools for Code Refactoring That Actually Improve Qua](/ai-tools-compared/free-ai-tools-for-code-refactoring-that-actually-improve-qua/)
-
+- [Claude vs Cursor: Refactoring Strategy Comparison](/ai-tools-compared/claude-vs-cursor-refactoring-strategies-compared/)
+- [Claude Code vs Cursor Composer](/ai-tools-compared/claude-code-vs-cursor-composer-for-full-stack-development-comparison/)
+- [Claude Code vs Cursor for Backend Development](/ai-tools-compared/claude-code-vs-cursor-for-backend-development/)
+- [How to Switch from Cursor to Claude Code Without Losing](/ai-tools-compared/how-to-switch-from-cursor-to-claude-code-without-losing-settings/)
+- [Free AI Tools for Code Refactoring That Actually Improve](/ai-tools-compared/free-ai-tools-for-code-refactoring-that-actually-improve-qua/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

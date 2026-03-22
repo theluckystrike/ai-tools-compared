@@ -43,6 +43,20 @@ Estimated annual value: $1,500-$3,000 in saved context-switching time.
 - **Below is a full breakdown of plan tiers**: practical use cases for developers, and a decision framework for choosing the right plan.
 - **If you are using**: the free version of Claude, you will need to upgrade to Pro or higher to access Projects functionality.
 
+## Table of Contents
+
+- [What Is Claude Projects?](#what-is-claude-projects)
+- [Which Plan Tier Includes Projects?](#which-plan-tier-includes-projects)
+- [How Projects Differ from Standard Conversations](#how-projects-differ-from-standard-conversations)
+- [Practical Examples for Developers](#practical-examples-for-developers)
+- [Setting Up Your First Project: Step-by-Step](#setting-up-your-first-project-step-by-step)
+- [Projects vs Claude API: Which to Use for Development?](#projects-vs-claude-api-which-to-use-for-development)
+- [Decision Framework: Is Pro Worth It for Projects?](#decision-framework-is-pro-worth-it-for-projects)
+- [Advanced Projects Workflow: Multi-File Development](#advanced-projects-workflow-multi-file-development)
+- [Real-World Cost Analysis: Free vs Pro vs Team](#real-world-cost-analysis-free-vs-pro-vs-team)
+- [Competitor Comparison: Claude Projects vs Alternatives](#competitor-comparison-claude-projects-vs-alternatives)
+- [Scaling Strategies: From Solo Dev to Enterprise](#scaling-strategies-from-solo-dev-to-enterprise)
+
 ## What Is Claude Projects?
 
 Claude Projects is a feature that allows you to organize related conversations, files, and context into dedicated workspaces. Instead of managing isolated chats, Projects lets you maintain persistent context across multiple interactions within a specific domain or project.
@@ -360,10 +374,9 @@ Expected organizational ROI: $50,000-$150,000+ annually depending on team size a
 
 ## Related Articles
 
+- [Transfer ChatGPT Custom GPTs to Claude Projects](/ai-tools-compared/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
 - [Cheapest Way to Use Claude for Coding Projects 2026](/ai-tools-compared/cheapest-way-to-use-claude-for-coding-projects-2026/)
-- [How to Transfer Notion AI Workflows to Claude Projects 2026](/ai-tools-compared/how-to-transfer-notion-ai-workflows-to-claude-projects-2026/)
+- [Claude Max vs Claude Pro Actual Difference](/ai-tools-compared/claude-max-vs-claude-pro-actual-difference-in-daily-message-limits/)
 - [How to Use Claude API Cheaply for Small Coding Projects](/ai-tools-compared/how-to-use-claude-api-cheaply-for-small-coding-projects/)
-- [Transfer ChatGPT Custom GPTs to Claude Projects Step by Step](/ai-tools-compared/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
-- [Writing CLAUDE.md Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy/)
-
+- [Midjourney Standard vs Pro Plan: Is Stealth Mode Worth](/ai-tools-compared/midjourney-standard-vs-pro-plan-stealth-mode-worth-extra-cost/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -39,6 +39,27 @@ Check your Google account's registered country in the Google Payments center—G
 - **Does Gemini offer a**: free tier? Most major tools offer some form of free tier or trial period.
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 
+## Table of Contents
+
+- [Currently Supported Regions (2026)](#currently-supported-regions-2026)
+- [Understanding the Geographic Restrictions](#understanding-the-geographic-restrictions)
+- [Diagnostic Steps Before Applying Fixes](#diagnostic-steps-before-applying-fixes)
+- [Method 1: Adjust Your Google Account Country](#method-1-adjust-your-google-account-country)
+- [Method 2: Use a Google Workspace Account](#method-2-use-a-google-workspace-account)
+- [Method 3: Access Through Google AI Studio](#method-3-access-through-google-ai-studio)
+- [Method 4: VPN-Based Access Considerations](#method-4-vpn-based-access-considerations)
+- [Method 5: API Access Through Google Cloud](#method-5-api-access-through-google-cloud)
+- [Troubleshooting Persistent Issues](#troubleshooting-persistent-issues)
+- [Alternative AI Assistant Options](#alternative-ai-assistant-options)
+- [Alternative AI Services Comparison](#alternative-ai-services-comparison)
+- [Regional Availability Deep Dive](#regional-availability-deep-dive)
+- [Testing Gemini Access Across Methods](#testing-gemini-access-across-methods)
+- [Cost Comparison for Different Usage Patterns](#cost-comparison-for-different-usage-patterns)
+- [Workplace and Educational Alternatives](#workplace-and-educational-alternatives)
+- [Setting Up Google Cloud for Reliable Access](#setting-up-google-cloud-for-reliable-access)
+- [Browser-based Workarounds](#browser-based-workarounds)
+- [Decision Framework for Alternative Selection](#decision-framework-for-alternative-selection)
+
 ## Currently Supported Regions (2026)
 
 Gemini Advanced is now available in 180+ countries and territories:

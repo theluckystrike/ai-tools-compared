@@ -40,6 +40,13 @@ Cursorules are a powerful way to codify your team's React component composition 
 - **Cursorules solve this problem**: by providing AI assistants with explicit instructions about your team's preferred patterns.
 - **When developers on different**: squads build features in parallel, diverging patterns create merge conflicts, confuse new hires, and slow down refactoring efforts.
 
+## Table of Contents
+
+- [Why Component Composition Patterns Matter](#why-component-composition-patterns-matter)
+- [Prerequisites](#prerequisites)
+- [Overview](#overview)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Component Composition Patterns Matter
 
 React's composition model gives developers flexibility in how they structure components. However, this flexibility can lead to inconsistency when multiple team members work on the same codebase. Without clear guidelines, you might encounter prop drilling, inconsistent component hierarchies, or mixed patterns for handling shared state.

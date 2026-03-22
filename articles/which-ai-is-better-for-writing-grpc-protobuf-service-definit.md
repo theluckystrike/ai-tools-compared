@@ -41,6 +41,20 @@ Claude generates more semantically correct gRPC services while Cursor provides f
 
 # 3.
 
+## Table of Contents
+
+- [Why gRPC Service Definition Requires Special Attention](#why-grpc-service-definition-requires-special-attention)
+- [Comparing AI Tools for Protobuf and gRPC](#comparing-ai-tools-for-protobuf-and-grpc)
+- [Advanced Protobuf Patterns: Tool Comparison](#advanced-protobuf-patterns-tool-comparison)
+- [Real-World gRPC Service Patterns](#real-world-grpc-service-patterns)
+- [Common Protobuf Mistakes AI Tools Should Catch](#common-protobuf-mistakes-ai-tools-should-catch)
+- [Protobuf Code Generation Pipeline](#protobuf-code-generation-pipeline)
+- [Best Workflow: Using Claude Code + Cursor Together](#best-workflow-using-claude-code-cursor-together)
+- [Practical Recommendations](#practical-recommendations)
+- [Integration with Development Workflows](#integration-with-development-workflows)
+- [Proto File Performance Considerations](#proto-file-performance-considerations)
+- [Production-Grade Proto Patterns](#production-grade-proto-patterns)
+
 ## Why gRPC Service Definition Requires Special Attention
 
 gRPC and Protocol Buffers have unique syntax and conventions that differ from typical programming languages. Writing efficient `.proto` files requires understanding of service rpc methods, message types, streaming options, and proper package organization. An AI tool that understands these specifics will generate more accurate definitions with fewer errors.
@@ -526,9 +540,8 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [AI Tools for Writing gRPC Protobuf Definitions 2026](/ai-tools-compared/ai-tools-for-writing-grpc-protobuf-definitions-2026/)
-- [Best AI Tools for Writing Go gRPC Service Definitions and](/ai-tools-compared/best-ai-tools-for-writing-go-grpc-service-definitions-and-implementations/)
-- [Best AI Tools for Writing Kubernetes Custom Resource](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-custom-resource-definitions-2026/)
+- [Best AI Tools for Writing Go GRPC Service Definitions](/ai-tools-compared/best-ai-tools-for-writing-go-grpc-service-definitions-and-implementations/)
+- [Best AI Tools for Writing gRPC Protobuf Definitions 2026](/ai-tools-compared/best-ai-tools-for-writing-grpc-protobuf-definitions-2026/)
 - [AI Tools for Writing Jest Tests for Web Worker and Service](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-web-worker-and-service-w/)
-- [Which AI Is Better for Writing Playwright End-to-End Tests](/ai-tools-compared/which-ai-is-better-for-writing-playwright-end-to-end-tests-2/)
-
+- [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-compared/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

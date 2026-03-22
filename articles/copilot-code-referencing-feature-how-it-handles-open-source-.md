@@ -40,6 +40,26 @@ This guide provides practical steps and best practices to help you accomplish th
 - **Does Copilot offer a**: free tier? Most major tools offer some form of free tier or trial period.
 - **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 
+## Table of Contents
+
+- [What Is the Code Referencing Feature](#what-is-the-code-referencing-feature)
+- [How License Detection Works](#how-license-detection-works)
+- [Practical Implications for Developers](#practical-implications-for-developers)
+- [Configuring Reference Settings](#configuring-reference-settings)
+- [Limitations and Best Practices](#limitations-and-best-practices)
+- [The Developer Responsibility](#the-developer-responsibility)
+- [Real-World Code Reference Scenarios](#real-world-code-reference-scenarios)
+- [Building a License Audit Workflow](#building-a-license-audit-workflow)
+- [License Reference Configuration for Teams](#license-reference-configuration-for-teams)
+- [Comparing Copilot's Approach to Other Tools](#comparing-copilots-approach-to-other-tools)
+- [Practical License Evaluation Matrix](#practical-license-evaluation-matrix)
+- [Advanced Reference Checking](#advanced-reference-checking)
+- [Documenting Code References](#documenting-code-references)
+- [Date: 2026-03-20](#date-2026-03-20)
+- [Flagged by Copilot: Yes](#flagged-by-copilot-yes)
+- [Copilot Reference Detection in 2026](#copilot-reference-detection-in-2026)
+- [The Bottom Line](#the-bottom-line)
+
 ## What Is the Code Referencing Feature
 
 GitHub Copilot's code referencing feature is designed to identify when suggested code matches or closely resembles existing public code found in GitHub repositories. Microsoft implemented this feature to address concerns about code license compliance and to provide transparency about potential copyright issues in AI-generated suggestions.

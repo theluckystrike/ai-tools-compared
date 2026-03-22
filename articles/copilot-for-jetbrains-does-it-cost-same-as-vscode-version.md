@@ -39,6 +39,24 @@ GitHub Copilot works identically in JetBrains IDEs and Visual Studio Code, inclu
 - **Upgrade to Copilot Pro**: individually if satisfied - No additional cost beyond $10/month - Works across all IDEs simultaneously - Try for 1 month full-time before team rollout 3.
 - **Copilot works with free**: IDEs like Community Edition IntelliJ IDEA.
 
+## Table of Contents
+
+- [The Short Answer: Yes, Pricing Is Identical](#the-short-answer-yes-pricing-is-identical)
+- [GitHub Copilot Pricing Tiers Explained](#github-copilot-pricing-tiers-explained)
+- [Setting Up Copilot in JetBrains IDEs](#setting-up-copilot-in-jetbrains-ides)
+- [How Copilot Suggestions Appear in JetBrains](#how-copilot-suggestions-appear-in-jetbrains)
+- [Feature Parity Between Editors](#feature-parity-between-editors)
+- [When JetBrains Makes More Sense Than VS Code](#when-jetbrains-makes-more-sense-than-vs-code)
+- [Managing Copilot Across Multiple IDEs](#managing-copilot-across-multiple-ides)
+- [Common JetBrains Copilot Issues and Fixes](#common-jetbrains-copilot-issues-and-fixes)
+- [Detailed Pricing Breakdown](#detailed-pricing-breakdown)
+- [Alternative AI Tools for JetBrains IDEs](#alternative-ai-tools-for-jetbrains-ides)
+- [JetBrains-Specific Features](#jetbrains-specific-features)
+- [CLI Commands for JetBrains + Copilot](#cli-commands-for-jetbrains-copilot)
+- [ROI Calculation for Teams](#roi-calculation-for-teams)
+- [Setup and Configuration Best Practices](#setup-and-configuration-best-practices)
+- [Common Misconceptions](#common-misconceptions)
+
 ## The Short Answer: Yes, Pricing Is Identical
 
 GitHub Copilot uses an unified pricing model regardless of which editor you use. The subscription tiers remain consistent across all supported IDEs, including JetBrains family members and Visual Studio Code. You do not pay extra for choosing JetBrains over VS Code.
@@ -412,17 +430,9 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Best AI Inline Chat Features in VSCode Compared to Jetbrains](/ai-tools-compared/best-ai-inline-chat-features-in-vscode-compared-to-jetbrains/)
+- [Migrating from JetBrains AI to Copilot in IntelliJ](/ai-tools-compared/migrating-jetbrains-ai-to-copilot-intellij-step-by-step-guide/)
 - [Free AI Alternatives to Copilot for JetBrains IDE Users 2026](/ai-tools-compared/free-ai-alternatives-to-copilot-for-jetbrains-ide-users-2026/)
-- [Migrating from JetBrains AI to Copilot in IntelliJ -.](/ai-tools-compared/migrating-jetbrains-ai-to-copilot-intellij-step-by-step-guide/)
-- [How to Migrate VSCode Copilot Keybindings](/ai-tools-compared/migrate-vscode-copilot-keybindings-to-cursor-ai-editor-2026/)
-- [How to Transfer Cursor Editor Theme and Layout](/ai-tools-compared/transfer-cursor-editor-theme-and-layout-to-vscode-with-copil/)
-
-- [Best AI Coding Assistants Compared](/ai-tools-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/)
-- [AI Tools Guides Hub](/ai-tools-compared/)
-- [Midjourney Describe Feature Cost: Does It Count as Image.](/ai-tools-compared/midjourney-describe-feature-cost-does-it-count-as-image-gene/)
-- [Cursor Pro Privacy Mode: Does It Cost Extra for Zero.](/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
-- [Free AI Alternatives to Copilot for JetBrains IDE Users 2026](/ai-tools-compared/free-ai-alternatives-to-copilot-for-jetbrains-ide-users-2026/)
-
+- [Copilot Suggestions in Private Repos Do They Cost More Than](/ai-tools-compared/copilot-suggestions-in-private-repos-do-they-cost-more-than-public/)
+- [How to Transfer Copilot Code Review Settings](/ai-tools-compared/transfer-copilot-code-review-settings-to-cursor-ai-review-co/)
+- [How to Use Copilot Chat to Generate Code from Natural](/ai-tools-compared/how-to-use-copilot-chat-to-generate-code-from-natural-langua/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -39,6 +39,17 @@ Configure parallel testing with Claude Code using Jest's maxWorkers option at 50
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Why Parallel Testing Matters with AI Development](#why-parallel-testing-matters-with-ai-development)
+- [Configuring Jest for Parallel Execution](#configuring-jest-for-parallel-execution)
+- [Pytest Configuration for Parallel Execution](#pytest-configuration-for-parallel-execution)
+- [Playwright Parallel Test Configuration](#playwright-parallel-test-configuration)
+- [CI/CD Pipeline Integration](#cicd-pipeline-integration)
+- [Best Practices for Parallel Testing with Claude Code](#best-practices-for-parallel-testing-with-claude-code)
+- [Measuring and Optimizing Parallel Performance](#measuring-and-optimizing-parallel-performance)
+- [Troubleshooting Common Parallel Testing Issues](#troubleshooting-common-parallel-testing-issues)
+
 ## Why Parallel Testing Matters with AI Development
 
 When you're working with Claude Code to generate and modify code, you'll run tests frequently to validate the AI's suggestions. Sequential test execution can become a bottleneck, especially with large test suites. Parallel testing transforms this workflow by running multiple test files or test cases simultaneously, using all available CPU cores.
@@ -408,11 +419,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Claude Code Semantic Versioning Automation: A Complete Guide](/ai-tools-compared/claude-code-semantic-versioning-automation/)
-- [Claude Code API Snapshot Testing Guide](/ai-tools-compared/claude-code-api-snapshot-testing-guide/)
+- [Claude Code Shift Left Testing Strategy Guide](/ai-tools-compared/claude-code-shift-left-testing-strategy-guide/)
+- [Configure Claude Code](/ai-tools-compared/how-to-configure-claude-code-to-follow-your-teams-feature-fl/)
 - [Claude Code Screen Reader Testing Workflow](/ai-tools-compared/claude-code-screen-reader-testing-workflow/)
 - [Claude Code SDK Testing Workflow Guide](/ai-tools-compared/claude-code-sdk-testing-workflow-guide/)
-- [Claude Code Shift Left Testing Strategy Guide](/ai-tools-compared/claude-code-shift-left-testing-strategy-guide/)
-
+- [Configuring Claude Code to Understand Your Teams Pull](/ai-tools-compared/configuring-claude-code-to-understand-your-teams-pull-reques/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

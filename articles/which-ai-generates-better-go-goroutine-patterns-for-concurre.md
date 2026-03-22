@@ -39,6 +39,17 @@ Choose Claude for production-ready Go goroutine patterns -- it consistently gene
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Testing Methodology](#testing-methodology)
+- [Scenario 1: Worker Pool with Result Aggregation](#scenario-1-worker-pool-with-result-aggregation)
+- [Scenario 2: Context-Aware Cancellation](#scenario-2-context-aware-cancellation)
+- [Scenario 3: Error Propagation Across Goroutines](#scenario-3-error-propagation-across-goroutines)
+- [Scenario 4: Bounded Concurrency with Semaphore](#scenario-4-bounded-concurrency-with-semaphore)
+- [Key Findings Summary](#key-findings-summary)
+- [Common Goroutine Mistakes AI Tools Make](#common-goroutine-mistakes-ai-tools-make)
+- [Recommendations](#recommendations)
+
 ## Testing Methodology
 
 I evaluated four major AI coding assistants—Claude (Anthropic), ChatGPT (OpenAI), Gemini (Google), and GitHub Copilot—across three realistic concurrent API scenarios: a worker pool pattern, context-aware cancellation, and error propagation across goroutines. Each test examined correctness, Go idioms, resource management, and documentation clarity.

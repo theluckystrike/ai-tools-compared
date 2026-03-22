@@ -43,6 +43,26 @@ Casetext has emerged as one of the most influential AI-powered legal research pl
 - **Against $100**:000 annual cost, the ROI is 7.5x.
 - **If only 2-3 attorneys use it**: the per-user cost becomes challenging.
 
+## Table of Contents
+
+- [What is Casetext?](#what-is-casetext)
+- [CoCounsel: The Flagship AI Assistant](#cocounsel-the-flagship-ai-assistant)
+- [Pricing and Subscription Tiers](#pricing-and-subscription-tiers)
+- [Integration and API Capabilities](#integration-and-api-capabilities)
+- [Strengths and Advantages](#strengths-and-advantages)
+- [Limitations and Considerations](#limitations-and-considerations)
+- [Comparison with Competitors](#comparison-with-competitors)
+- [Advanced CoCounsel Features for Legal Workflows](#advanced-cocounsel-features-for-legal-workflows)
+- [Integration with Legal Workflows: Real Examples](#integration-with-legal-workflows-real-examples)
+- [Practical Pricing Considerations](#practical-pricing-considerations)
+- [CoCounsel Limitations and Appropriate Use Cases](#cocounsel-limitations-and-appropriate-use-cases)
+- [Building Effective CoCounsel Workflows](#building-effective-cocounsel-workflows)
+- [2026 Competitive Market](#2026-competitive-market)
+- [Hands-On Casetext Workflow Examples](#hands-on-casetext-workflow-examples)
+- [Advanced Tips for Maximizing Casetext Value](#advanced-tips-for-maximizing-casetext-value)
+- [Cost-Benefit Analysis for Different Practice Types](#cost-benefit-analysis-for-different-practice-types)
+- [Implementation Considerations](#implementation-considerations)
+
 ## What is Casetext?
 
 Casetext is a legal technology company that combines a case law database with AI-powered research assistance. The platform's distinguishing feature is CoCounsel, an AI legal assistant that can understand natural language queries, analyze legal documents, and provide contextual research recommendations. Founded with the mission of making legal research more efficient and accessible, Casetext has grown to serve thousands of law firms, corporate legal departments, and solo practitioners.

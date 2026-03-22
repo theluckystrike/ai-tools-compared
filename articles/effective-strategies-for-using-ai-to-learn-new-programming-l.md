@@ -41,6 +41,25 @@ AI tools can accelerate language learning by generating runnable examples, expla
 - **Show me a comparison**: of the 10 most common syntax patterns 2.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Use AI as a Translation Layer Between Languages](#use-ai-as-a-translation-layer-between-languages)
+- [Use AI for Comparative Concept Explanations](#use-ai-for-comparative-concept-explanations)
+- [Build Real Projects with AI Guidance](#build-real-projects-with-ai-guidance)
+- [Use AI to Generate Practice Exercises](#use-ai-to-generate-practice-exercises)
+- [Use AI for Reading Existing Codebases](#use-ai-for-reading-existing-codebases)
+- [Create a Personal Language Reference](#create-a-personal-language-reference)
+- [Avoid Over-Reliance: Verify AI Output](#avoid-over-reliance-verify-ai-output)
+- [Combine AI with Language-Specific Learning Resources](#combine-ai-with-language-specific-learning-resources)
+- [Practical Workflow Example](#practical-workflow-example)
+- [Using AI for Language-Specific Idiom Learning](#using-ai-for-language-specific-idiom-learning)
+- [Creating a Language Learning Dashboard](#creating-a-language-learning-dashboard)
+- [Debugging Language-Specific Errors with AI](#debugging-language-specific-errors-with-ai)
+- [Building Portfolio Projects for Learning](#building-portfolio-projects-for-learning)
+- [Language-Specific Tool Ecosystems](#language-specific-tool-ecosystems)
+- [Handling Language Syntax Anxiety](#handling-language-syntax-anxiety)
+- [Measuring Language Proficiency Growth](#measuring-language-proficiency-growth)
+
 ## Use AI as a Translation Layer Between Languages
 
 One of the most powerful strategies involves using AI to translate code you already understand in your primary language into the new language you're learning. This creates direct mental mappings between concepts.
@@ -314,10 +333,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Effective Context Loading Strategies for AI Tools in](/ai-tools-compared/effective-context-loading-strategies-for-ai-tools-in-polyglo/)
-- [Effective Context Management Strategies for AI Coding](/ai-tools-compared/effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/)
+- [Effective Context Loading Strategies for AI Tools](/ai-tools-compared/effective-context-loading-strategies-for-ai-tools-in-polyglo/)
 - [Effective Prompting Strategies for AI Generation of Complex](/ai-tools-compared/effective-prompting-strategies-for-ai-generation-of-complex-/)
-- [Effective Strategies for AI Assisted Debugging of](/ai-tools-compared/effective-strategies-for-ai-assisted-debugging-of-intermittent-failures/)
-- [Effective Strategies for AI-Assisted Refactoring Without Bre](/ai-tools-compared/effective-strategies-for-ai-assisted-refactoring-without-bre/)
-
+- [Effective Strategies for Using AI to Write](/ai-tools-compared/effective-strategies-for-using-ai-to-write--api/)
+- [Effective Strategies for AI-Assisted Refactoring](/ai-tools-compared/effective-strategies-for-ai-assisted-refactoring-without-bre/)
+- [Effective Context Management Strategies for AI Coding](/ai-tools-compared/effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

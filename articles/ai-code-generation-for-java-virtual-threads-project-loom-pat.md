@@ -39,6 +39,24 @@ Use AI coding assistants to generate Virtual Thread implementations using `Execu
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **In 2026, AI assistants are particularly helpful in generating code that uses scoped values**: another Loom feature that replaces ThreadLocal with a more efficient, cancelable alternative.
 
+## Table of Contents
+
+- [Understanding Virtual Threads Fundamentals](#understanding-virtual-threads-fundamentals)
+- [Structured Concurrency with Scoped Values](#structured-concurrency-with-scoped-values)
+- [Channel-Based Communication](#channel-based-communication)
+- [Common Pitfalls AI Helps Avoid](#common-pitfalls-ai-helps-avoid)
+- [Best Practices for AI-Assisted Virtual Thread Development](#best-practices-for-ai-assisted-virtual-thread-development)
+- [Future Outlook](#future-outlook)
+- [Real-World Performance Comparison: Virtual Threads vs Thread Pools](#real-world-performance-comparison-virtual-threads-vs-thread-pools)
+- [Pinning and Blocking Detection](#pinning-and-blocking-detection)
+- [Structured Concurrency: Nursery Pattern](#structured-concurrency-nursery-pattern)
+- [Scoped Values in Depth](#scoped-values-in-depth)
+- [Virtual Thread Pool Sizing](#virtual-thread-pool-sizing)
+- [Testing Virtual Thread Code](#testing-virtual-thread-code)
+- [Migration Path: From Thread Pools to Virtual Threads](#migration-path-from-thread-pools-to-virtual-threads)
+- [Production Deployment Considerations](#production-deployment-considerations)
+- [Tool Recommendations by Use Case](#tool-recommendations-by-use-case)
+
 ## Understanding Virtual Threads Fundamentals
 
 Virtual Threads represent a major change from the thread-per-request model that has dominated Java web applications for years. A traditional servlet container might allocate a thread pool of 200 threads to handle requests, but with Virtual Threads, you can spawn millions of virtual threads because they are much lighter than platform threads.

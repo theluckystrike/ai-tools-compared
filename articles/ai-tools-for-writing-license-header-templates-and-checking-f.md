@@ -39,6 +39,24 @@ AI tools can significantly speed up the process of creating license headers and 
 - **Different subprojects might use different licenses**: the core library uses MIT while client applications use Apache 2.0.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Why License Header Management Matters](#why-license-header-management-matters)
+- [Using AI Assistants to Generate License Headers](#using-ai-assistants-to-generate-license-headers)
+- [Language-Specific Header Formats](#language-specific-header-formats)
+- [Automating Header Insertion with AI Guidance](#automating-header-insertion-with-ai-guidance)
+- [Managing License Compliance Across Monorepos](#managing-license-compliance-across-monorepos)
+- [Automating License Compliance on Pull Requests](#automating-license-compliance-on-pull-requests)
+- [Documenting License Decisions](#documenting-license-decisions)
+- [Project License](#project-license)
+- [Third-Party Dependencies](#third-party-dependencies)
+- [License Headers](#license-headers)
+- [Contributing](#contributing)
+- [Checking Compliance Across Your Codebase](#checking-compliance-across-your-codebase)
+- [Integrating Compliance Checks into CI/CD](#integrating-compliance-checks-into-cicd)
+- [Handling License Updates and Migrations](#handling-license-updates-and-migrations)
+- [Best Practices for AI-Assisted License Management](#best-practices-for-ai-assisted-license-management)
+
 ## Why License Header Management Matters
 
 Many open source projects and enterprise codebases require consistent license headers across all source files. These headers typically include the copyright notice, license name, and sometimes SPDX identifiers. While this seems like a minor administrative task, failing to maintain proper headers can create legal complications, cause license violations, or fail compliance audits.
@@ -369,11 +387,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Generating Contributor License Agreement Explan](/ai-tools-compared/ai-tools-for-generating-contributor-license-agreement-explan/)
-- [Copilot Enterprise License Not Assigned Fix](/ai-tools-compared/copilot-enterprise-license-not-assigned-fix/)
-- [AI Tools for Generating Grafana Dashboard JSON Templates Fro](/ai-tools-compared/ai-tools-for-generating-grafana-dashboard-json-templates-fro/)
-- [How to Create Reusable Prompt Templates for Common AI Coding](/ai-tools-compared/how-to-create-reusable-prompt-templates-for-common-ai-coding/)
-- [How to Migrate Cursor AI Snippets and Templates](/ai-tools-compared/migrate-cursor-ai-snippets-and-templates-to-windsurf-editor/)
-
+- [AI Tools for Generating Contributor License Agreement](/ai-tools-compared/ai-tools-for-generating-contributor-license-agreement-explan/)
+- [AI Tools for Designers Writing Handoff Notes That Include](/ai-tools-compared/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
+- [How Accurate Are AI Tools](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-serde-serialization-code/)
+- [AI Tools for Writing CI CD Pipeline Configurations 2026](/ai-tools-compared/ai-tools-for-writing-ci-cd-pipeline-configurations-2026/)
+- [AI Tools for Writing OpenAPI Specifications in 2026](/ai-tools-compared/articles/ai-tools-for-writing-openapi-specifications-2026/---)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

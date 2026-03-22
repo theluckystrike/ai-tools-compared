@@ -42,6 +42,21 @@ This project uses Python 3.11 with strict type hints.
 - **Here is how to**: handle the most common ones across client projects: ### Cursor Cursor reads `.cursorrules` from the project root.
 - **Always use the internal**: logging library at `internal/logger`.
 
+## Table of Contents
+
+- [Use Environment-Specific Configuration Files](#use-environment-specific-configuration-files)
+- [Implement a Project Switcher Script](#implement-a-project-switcher-script)
+- [Use Configuration Management Tools](#use-configuration-management-tools)
+- [Template Your Project Scaffolding](#template-your-project-scaffolding)
+- [Isolate API Keys and Credentials](#isolate-api-keys-and-credentials)
+- [Use Version Control Safely](#use-version-control-safely)
+- [Automate Context Switching in Your AI Tools](#automate-context-switching-in-your-ai-tools)
+- [Tool-Specific Configuration Patterns](#tool-specific-configuration-patterns)
+- [Project Context](#project-context)
+- [Coding Standards](#coding-standards)
+- [Multi-Tool Configuration Matrix](#multi-tool-configuration-matrix)
+- [Document Your Workflow](#document-your-workflow)
+
 ## Use Environment-Specific Configuration Files
 
 The foundation of multi-client project management is separating configuration from code. Never hardcode API keys, endpoints, or client-specific settings directly in your scripts. Instead, use environment-specific files that load based on the active project context.
@@ -279,10 +294,9 @@ Yes. Combine your switcher script with direnv and a post-switch hook that opens 
 
 ## Related Articles
 
-- [Switching from Windsurf to Cursor How to Transfer Project](/ai-tools-compared/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
 - [Best Practices for AI Coding Tool Project Configuration](/ai-tools-compared/best-practices-for-ai-coding-tool-project-configuration-in-l/)
-- [AI Tools for Generating Nginx and Caddy Reverse Proxy Config](/ai-tools-compared/ai-tools-for-generating-nginx-and-caddy-reverse-proxy-config/)
-- [Which AI Tool Is Better for Writing CircleCI Config YAML Fil](/ai-tools-compared/which-ai-tool-is-better-for-writing-circleci-config-yaml-fil/)
-- [Best Practices for AI Assisted Code Review Response and Revi](/ai-tools-compared/best-practices-for-ai-assisted-code-review-response-and-revi/)
-
+- [Cheapest AI Tool for Generating Entire Project](/ai-tools-compared/cheapest-ai-tool-for-generating-entire-project-from-description/)
+- [Best Practices for Maintaining AI Tool Configuration Files](/ai-tools-compared/best-practices-for-maintaining-ai-tool-configuration-files-a/)
+- [Best Practices for Sharing AI Tool Configuration Files](/ai-tools-compared/best-practices-for-sharing-ai-tool-configuration-files-acros/)
+- [Best Practices for AI Tool Customization Files When Onboardi](/ai-tools-compared/best-practices-for-ai-tool-customization-files-when-onboardi/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

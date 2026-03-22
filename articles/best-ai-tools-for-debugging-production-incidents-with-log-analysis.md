@@ -40,6 +40,18 @@ Production incidents demand speed. When your system is down, manual log analysis
 - **Identify root cause**: affected components, and immediate remediation steps." Claude identifies the cascade: cold-start Lambda → slow DB query → exhausted connection pool → retry storms.
 - **Use it to compare**: baseline metrics with incident metrics.
 
+## Table of Contents
+
+- [AI Log Analysis Workflow](#ai-log-analysis-workflow)
+- [Log Aggregation + AI Workflow](#log-aggregation-ai-workflow)
+- [Tool Comparison Table](#tool-comparison-table)
+- [Configuration Examples](#configuration-examples)
+- [Incident Response Best Practices](#incident-response-best-practices)
+- [Limitations and Gotchas](#limitations-and-gotchas)
+- [Setting Up Log Analysis with External Tools](#setting-up-log-analysis-with-external-tools)
+- [Preventing Future Incidents: Monitoring Strategy](#preventing-future-incidents-monitoring-strategy)
+- [Cost Optimization for Log Analysis at Scale](#cost-optimization-for-log-analysis-at-scale)
+
 ## AI Log Analysis Workflow
 
 Production debugging follows a pattern: aggregate logs, identify anomalies, trace causality, and apply fixes. AI excels at each step by processing thousands of lines simultaneously, detecting patterns humans miss, and generating remediation steps automatically.
@@ -422,9 +434,8 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 ## Related Articles
 
 - [AI Powered Log Analysis Tools for Production Debugging](/ai-tools-compared/ai-powered-log-analysis-tools-for-production-debugging-compa/)
-- [AI Autocomplete Accuracy for Boilerplate Code vs Complex Log](/ai-tools-compared/ai-autocomplete-accuracy-for-boilerplate-code-vs-complex-log/)
-- [Best AI Video Editor 2026 to Intelligent Video Production](/ai-tools-compared/best-ai-video-editor-2026/)
+- [AI-Powered Log Analysis Tools for Debugging](/ai-tools-compared/ai-log-analysis-tools-for-debugging/)
 - [Effective Workflow for Using AI](/ai-tools-compared/effective-workflow-for-using-ai-to-debug-production-issues-from-logs/)
-- [How to Optimize AI Coding Prompts for Generating Production](/ai-tools-compared/how-to-optimize-ai-coding-prompts-for-generating-production-ready-error-handling/)
-
+- [AI Powered Incident Response Tools for DevOps Teams Compared](/ai-tools-compared/ai-powered-incident-response-tools-for-devops-teams-compared/)
+- [Best AI Powered Chatops Tools](/ai-tools-compared/best-ai-powered-chatops-tools-for-slack-and-devops-integration/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

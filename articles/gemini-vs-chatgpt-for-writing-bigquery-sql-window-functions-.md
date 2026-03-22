@@ -39,6 +39,21 @@ When you need to write complex BigQuery SQL window functions, the difference bet
 - **Additionally**: when dealing with complex partitioning across multiple columns, Gemini occasionally produces syntax that works but isn't the most efficient approach.
 - **For example**: BigQuery uses `RANGE BETWEEN` differently than other databases, and ChatGPT doesn't always capture these subtle differences.
 
+## Table of Contents
+
+- [The Challenge with Window Functions](#the-challenge-with-window-functions)
+- [Gemini's Approach to BigQuery Window Functions](#geminis-approach-to-bigquery-window-functions)
+- [ChatGPT's Approach to BigQuery Window Functions](#chatgpts-approach-to-bigquery-window-functions)
+- [Head-to-Head Comparison](#head-to-head-comparison)
+- [Practical Recommendations](#practical-recommendations)
+- [Which Tool Wins?](#which-tool-wins)
+- [Practical Window Function Test Cases](#practical-window-function-test-cases)
+- [Comparing Generated SQL Quality](#comparing-generated-sql-quality)
+- [Cost Implications of Different Approaches](#cost-implications-of-different-approaches)
+- [Handling BigQuery-Specific Features](#handling-bigquery-specific-features)
+- [Testing with Real BigQuery Data](#testing-with-real-bigquery-data)
+- [Decision Framework for Your Use Case](#decision-framework-for-your-use-case)
+
 ## The Challenge with Window Functions
 
 BigQuery window functions operate across rows related to the current row without collapsing results. They power analytical queries for ranking, running totals, moving averages, and lead/lag analysis. A single misplaced clause or incorrect frame specification can produce silently wrong results that look correct at first glance.
@@ -412,9 +427,8 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 ## Related Articles
 
 - [Gemini vs ChatGPT for Writing Google Cloud Function Deployme](/ai-tools-compared/gemini-vs-chatgpt-for-writing-google-cloud-function-deployme/)
-- [ChatGPT vs Gemini for Generating Tailwind CSS from Hand Draw](/ai-tools-compared/chatgpt-vs-gemini-for-generating-tailwind-css-from-hand-draw/)
-- [Gemini Advanced vs ChatGPT Plus Price Per Feature Comparison](/ai-tools-compared/gemini-advanced-vs-chatgpt-plus-price-per-feature-comparison-2026/)
+- [ChatGPT vs Gemini for Generating Tailwind CSS from Hand](/ai-tools-compared/chatgpt-vs-gemini-for-generating-tailwind-css-from-hand-draw/)
 - [Gemini vs ChatGPT for Translating Python Data Pipelines](/ai-tools-compared/gemini-vs-chatgpt-for-translating-python-data-pipelines-to-rust/)
-- [Switching from ChatGPT Voice to Gemini Live Conversation](/ai-tools-compared/switching-from-chatgpt-voice-to-gemini-live-conversation-differences/)
-
+- [ChatGPT vs Claude for Writing API Documentation](/ai-tools-compared/chatgpt-vs-claude-for-writing-api-documentation/)
+- [Claude vs ChatGPT for Technical Writing 2026](/ai-tools-compared/claude-vs-chatgpt-for-technical-writing-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -40,6 +40,14 @@ Create reusable prompt templates that capture your coding standards, error handl
 - **When you frequently use**: a specific testing framework, set it as the default in your template rather than specifying it every time.
 - **Treat your template library**: as a living system that improves through use and observation.
 
+## Table of Contents
+
+- [Why Reusable Templates Matter](#why-reusable-templates-matter)
+- [Prerequisites](#prerequisites)
+- [Advanced Template Techniques](#advanced-template-techniques)
+- [Advanced Template Composition](#advanced-template-composition)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Reusable Templates Matter
 
 When you rely on one-off prompts, each interaction starts from scratch. You mentally reconstruct what worked previously, adjust wording, and hope the AI interprets your intent correctly. Templates solve this by encoding your preferred patterns, constraints, and expectations into reusable structures. Developers who adopt this method report faster iteration cycles and more predictable outputs, especially for repetitive tasks like generating boilerplate code, writing tests, or documenting APIs.
@@ -500,11 +508,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Create Custom System Prompt for ChatGPT API That Enfo](/ai-tools-compared/how-to-create-custom-system-prompt-for-chatgpt-api-that-enfo/)
-- [AI Coding Tool Penetration Test Findings Common Vulnerabilit](/ai-tools-compared/ai-coding-tool-penetration-test-findings-common-vulnerabilit/)
-- [How to Create Custom Instructions for AI Coding Tools That E](/ai-tools-compared/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
+- [How to Create Custom System Prompt for ChatGPT API That](/ai-tools-compared/how-to-create-custom-system-prompt-for-chatgpt-api-that-enfo/)
+- [How to Create Custom System Prompts for AI That Match Your](/ai-tools-compared/how-to-create-custom-system-prompts-for-ai-that-match-your-d/)
 - [How to Use AI to Help Devrel Create Interactive Coding](/ai-tools-compared/how-to-use-ai-to-help-devrel-create-interactive-coding-playgrounds/)
-- [Best AI Tools for Writing GitHub Actions Reusable Workflow](/ai-tools-compared/best-ai-tools-for-writing-github-actions-reusable-workflow-t/)
-
+- [How to Write System Prompts for AI Coding Assistants](/ai-tools-compared/how-to-write-system-prompts-for-ai-coding-assistants-project/)
+- [How to Create Custom Instructions for AI Coding Tools That](/ai-tools-compared/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

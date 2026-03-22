@@ -48,6 +48,15 @@ Pricing: Free tier available, $15/month for Pro, $75/month for Max.
 - **Budget**: GitHub Copilot offers the best free tier for individual developers.
 - **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 
+## Table of Contents
+
+- [Understanding the Superset Dashboard Workflow](#understanding-the-superset-dashboard-workflow)
+- [Chart Type to SQL Structure Mapping](#chart-type-to-sql-structure-mapping)
+- [Top AI Assistants for Superset Dashboard Development](#top-ai-assistants-for-superset-dashboard-development)
+- [Comparison Summary](#comparison-summary)
+- [Choosing the Right AI Assistant](#choosing-the-right-ai-assistant)
+- [Practical Workflow Integration](#practical-workflow-integration)
+
 ## Understanding the Superset Dashboard Workflow
 
 The typical Superset dashboard development workflow involves writing SQL queries in the SQL Lab, exploring results in the Explore interface, creating charts, and arranging them on dashboards. Each step presents opportunities for AI assistance.
@@ -327,10 +336,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [Best AI Assistant for Building Grafana Dashboard Panels](/ai-tools-compared/best-ai-assistant-for-building-grafana-dashboard-panels-from-prometheus-queries/)
-- [AI Tools for Generating Grafana Dashboard JSON Templates Fro](/ai-tools-compared/ai-tools-for-generating-grafana-dashboard-json-templates-fro/)
-- [AI Tools for Writing Kubernetes Helm Charts 2026](/ai-tools-compared/ai-tools-for-writing-kubernetes-helm-charts-2026/)
-- [Best AI Tools for Writing Kubernetes Manifests and Helm](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-manifests-and-helm-charts-2026/)
-- [AI Tools for Creating Grafana SLO Dashboard Panels with Burn](/ai-tools-compared/ai-tools-for-creating-grafana-slo-dashboard-panels-with-burn/)
-
+- [Best AI Assistant for SQL Query Optimization](/ai-tools-compared/best-ai-assistant-for-sql-query-optimization/)
+- [Best AI Assistant for Generating SQL Recursive Queries](/ai-tools-compared/best-ai-assistant-for-generating-sql-recursive-queries-for-hierarchical-org-chart-data/)
+- [Best AI for Writing dbt Macros That Generate Dynamic SQL](/ai-tools-compared/best-ai-for-writing-dbt-macros-that-generate-dynamic-sql-bas/)
+- [Best AI Coding Assistant for Under $5 Per](/ai-tools-compared/best-ai-coding-assistant-for-under-5-dollars-per-month/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

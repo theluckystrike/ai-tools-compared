@@ -50,6 +50,29 @@ Managing AI tool configuration files alongside your code documentation ensures c
 - **Use environment variables and**: provide example templates instead.
 - **First**: treat configuration changes like feature changes: they go through pull requests with at least one reviewer.
 
+## Table of Contents
+
+- [Why Configuration Management Matters for AI Tools](#why-configuration-management-matters-for-ai-tools)
+- [Store Configurations in Version Control](#store-configurations-in-version-control)
+- [Project Type](#project-type)
+- [Code Style](#code-style)
+- [Testing](#testing)
+- [Dependencies](#dependencies)
+- [Document Configuration Changes](#document-configuration-changes)
+- [Prerequisites](#prerequisites)
+- [Environment Variables](#environment-variables)
+- [VS Code Extensions](#vs-code-extensions)
+- [First-Time Setup](#first-time-setup)
+- [Use Environment-Specific Configurations](#use-environment-specific-configurations)
+- [Endpoints](#endpoints)
+- [Authentication](#authentication)
+- [Database](#database)
+- [Common Tasks](#common-tasks)
+- [Separate Sensitive Information](#separate-sensitive-information)
+- [Handling Configuration Drift](#handling-configuration-drift)
+- [Test Your Configuration](#test-your-configuration)
+- [Maintain Configuration Over Time](#maintain-configuration-over-time)
+
 ## Why Configuration Management Matters for AI Tools
 
 AI coding assistants and LLM configurations directly influence how tools generate code, interpret your intent, and maintain context across sessions. Poorly maintained configurations lead to inconsistent suggestions, broken context windows, and frustrated team members who cannot reproduce each other's results.

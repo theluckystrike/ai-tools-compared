@@ -40,6 +40,18 @@ Boundary value testing remains one of the most effective test design techniques,
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Understanding Boundary Value Analysis](#understanding-boundary-value-analysis)
+- [How AI Tools Generate Test Cases](#how-ai-tools-generate-test-cases)
+- [Practical Example: User Registration API](#practical-example-user-registration-api)
+- [Tools and Approaches](#tools-and-approaches)
+- [Best Practices for AI-Generated Boundary Tests](#best-practices-for-ai-generated-boundary-tests)
+- [Advanced Boundary Test Generation Techniques](#advanced-boundary-test-generation-techniques)
+- [Testing Framework Integration](#testing-framework-integration)
+- [Real-World Boundary Testing Scenarios](#real-world-boundary-testing-scenarios)
+- [Limitations and Considerations](#limitations-and-considerations)
+
 ## Understanding Boundary Value Analysis
 
 Boundary value analysis focuses on testing at the edges of input domains. Every input field has valid boundaries—minimum and maximum values, empty states, and transition points between different categories. These boundaries are where most bugs hide. A function accepting ages from 0 to 120 should be tested at -1, 0, 1, 119, 120, and 121, not just at middle values like 50 or 75.

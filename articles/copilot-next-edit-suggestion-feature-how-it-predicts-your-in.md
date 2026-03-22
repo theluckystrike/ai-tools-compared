@@ -39,6 +39,22 @@ GitHub Copilot's Next Edit Suggestion (NES) feature represents a significant adv
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Open VS Code settings**: (Code > Preferences > Settings) 2.
 
+## Table of Contents
+
+- [What Is Next Edit Suggestion](#what-is-next-edit-suggestion)
+- [How Copilot Predicts Your Intent](#how-copilot-predicts-your-intent)
+- [Practical Applications](#practical-applications)
+- [Enabling and Using Next Edit Suggestion](#enabling-and-using-next-edit-suggestion)
+- [Limitations and Considerations](#limitations-and-considerations)
+- [Performance Impact](#performance-impact)
+- [Practical Workflows Where NES Shines](#practical-workflows-where-nes-shines)
+- [Comparison with Similar Features](#comparison-with-similar-features)
+- [Real-World Performance Metrics](#real-world-performance-metrics)
+- [Keyboard Shortcuts and Workflows](#keyboard-shortcuts-and-workflows)
+- [Limitations and When NES Doesn't Help](#limitations-and-when-nes-doesnt-help)
+- [Advanced Configuration](#advanced-configuration)
+- [Training NES with Your Code Style](#training-nes-with-your-code-style)
+
 ## What Is Next Edit Suggestion
 
 Next Edit Suggestion extends Copilot's context awareness beyond single-line predictions. When you make an edit in one location, Copilot analyzes the surrounding code structure and predicts similar edits you will likely need elsewhere. This works particularly well with repetitive patterns, boilerplate code, and systematic changes across multiple functions or files.

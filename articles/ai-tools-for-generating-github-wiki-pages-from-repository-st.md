@@ -40,6 +40,21 @@ Maintaining up-to-date documentation is one of the most challenging aspects of s
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Why Generate Wiki Pages from Repository Structure](#why-generate-wiki-pages-from-repository-structure)
+- [Leading AI Tools for Wiki Generation](#leading-ai-tools-for-wiki-generation)
+- [Comparison Matrix](#comparison-matrix)
+- [Practical Implementation Example](#practical-implementation-example)
+- [Automating Wiki Updates with GitHub Actions](#automating-wiki-updates-with-github-actions)
+- [Tool-Specific Integration Notes](#tool-specific-integration-notes)
+- [Best Practices for AI-Generated Documentation](#best-practices-for-ai-generated-documentation)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+- [Advanced: Automating Wiki Generation in CI/CD](#advanced-automating-wiki-generation-in-cicd)
+- [Script for Repository Analysis](#script-for-repository-analysis)
+- [Decision Framework for Wiki Generation Tools](#decision-framework-for-wiki-generation-tools)
+- [Real-World Examples](#real-world-examples)
+
 ## Why Generate Wiki Pages from Repository Structure
 
 GitHub Wiki pages work well for project documentation because they live alongside your code, support Markdown, and integrate with GitHub's permission system. However, manually creating and maintaining wiki content requires significant effort. AI tools that generate documentation from repository structure address this problem by:

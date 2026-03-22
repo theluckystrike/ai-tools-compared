@@ -42,6 +42,19 @@ Ask the AI to use `factory.Sequence` or `uuid4()` for all unique fields.
 - **Cursor matches Claude for**: fixture quality when you use `@models.py` to provide context.
 - **The in-editor workflow is**: faster because you see generated code immediately, making corrections easy.
 
+## Table of Contents
+
+- [Understanding the Problem](#understanding-the-problem)
+- [Which AI Tools Perform Best for Fixture Generation](#which-ai-tools-perform-best-for-fixture-generation)
+- [How AI Tools Approach Fixture Generation](#how-ai-tools-approach-fixture-generation)
+- [Generating Fixtures from Plain SQL Definitions](#generating-fixtures-from-plain-sql-definitions)
+- [Handling Complex Scenarios](#handling-complex-scenarios)
+- [Step-by-Step Workflow for Generating Fixtures with AI](#step-by-step-workflow-for-generating-fixtures-with-ai)
+- [Best Practices for Optimal Results](#best-practices-for-optimal-results)
+- [Limitations to Consider](#limitations-to-consider)
+- [Integration with Test Workflows](#integration-with-test-workflows)
+- [Related Reading](#related-reading)
+
 ## Understanding the Problem
 
 Database-driven applications require test data that reflects your actual schema. A typical fixture generation workflow involves:
@@ -358,5 +371,13 @@ Yes. Specify `pytest-asyncio` and `httpx.AsyncClient` in your prompt. Claude gen
 - [AI Tools for Writing pytest Tests for Alembic Database Migrations](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migra/)
 - [AI Tools for Writing pytest Tests for FastAPI Endpoints](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-fastapi-endpoints-with/)
 - [Best AI Assistant for Creating pytest Conftest Files with Re](/ai-tools-compared/best-ai-assistant-for-creating-pytest-conftest-files-with-re/)
+
+## Related Articles
+
+- [Self-Hosted AI Tools for Generating Test Data and Fixtures](/ai-tools-compared/self-hosted-ai-tools-for-generating-test-data-and-fixtures-l/)
+- [AI Tools for Writing pytest Tests for Alembic Database](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migra/)
+- [AI Tools for Writing pytest Tests for Alembic Database Paths](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
+- [Copilot vs Cursor for Writing pytest Fixtures](/ai-tools-compared/copilot-vs-cursor-for-writing--pytest-fixtures-/)
+- [AI Tools for Writing dbt Seeds and Fixtures for Testing](/ai-tools-compared/ai-tools-for-writing-dbt-seeds-and-fixtures-for-testing-mode/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

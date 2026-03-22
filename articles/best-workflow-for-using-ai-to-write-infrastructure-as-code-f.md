@@ -39,6 +39,20 @@ Converting architecture diagrams into infrastructure as code (IaC) has tradition
 - **For Cursor**: you can use its file context capabilities.
 - **Create a new Terraform**: file in your project, then use Cursor's chat to describe the diagram while referencing any existing infrastructure code in your workspace.
 
+## Table of Contents
+
+- [Why Use AI for Diagram-to-Code Conversion](#why-use-ai-for-diagram-to-code-conversion)
+- [The Recommended Workflow](#the-recommended-workflow)
+- [Practical Example: VPC with Public and Private Subnets](#practical-example-vpc-with-public-and-private-subnets)
+- [Common Pitfalls to Avoid](#common-pitfalls-to-avoid)
+- [When AI Falls Short](#when-ai-falls-short)
+- [Final Recommendations](#final-recommendations)
+- [IaC Framework Comparison: Terraform vs CloudFormation vs Pulumi](#iac-framework-comparison-terraform-vs-cloudformation-vs-pulumi)
+- [Advanced Workflow: Multi-Cloud IaC Generation](#advanced-workflow-multi-cloud-iac-generation)
+- [Safety Checks: AI-Generated IaC Validation](#safety-checks-ai-generated-iac-validation)
+- [Practical Example: Converting Existing Architecture to IaC](#practical-example-converting-existing-architecture-to-iac)
+- [Working with AI on IaC Iterations](#working-with-ai-on-iac-iterations)
+
 ## Why Use AI for Diagram-to-Code Conversion
 
 Manual IaC creation from diagrams introduces several pain points. You must translate each component—VPCs, subnets, load balancers, compute instances—into the correct provider syntax. Minor mistakes lead to deployment failures or security misconfigurations. AI accelerates this process by understanding both the visual representation and the corresponding code patterns.

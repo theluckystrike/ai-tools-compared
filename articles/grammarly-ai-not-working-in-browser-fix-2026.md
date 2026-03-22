@@ -39,6 +39,19 @@ To fix Grammarly AI not working in your browser, verify the extension has "Acces
 - Grammarly should use 50-150MB.
 - **If Grammarly consistently uses**: excessive memory, try: 1.
 
+## Table of Contents
+
+- [Common Causes of Grammarly AI Failures](#common-causes-of-grammarly-ai-failures)
+- [Step-by-Step Fixes](#step-by-step-fixes)
+- [Prevention Tips](#prevention-tips)
+- [Advanced Troubleshooting for Power Users](#advanced-troubleshooting-for-power-users)
+- [Alternative Tools When Grammarly Fails](#alternative-tools-when-grammarly-fails)
+- [Contact Grammarly Support Effectively](#contact-grammarly-support-effectively)
+- [Enterprise Deployment: Grammarly for Teams](#enterprise-deployment-grammarly-for-teams)
+- [Automated Diagnostic Script](#automated-diagnostic-script)
+- [Performance Optimization for Power Users](#performance-optimization-for-power-users)
+- [Comparison: Grammarly vs. Alternatives When It Fails](#comparison-grammarly-vs-alternatives-when-it-fails)
+
 ## Common Causes of Grammarly AI Failures
 
 Understanding the root causes helps you apply the right solution faster. Grammarly AI features typically fail due to browser extension conflicts, permission issues, cache corruption, outdated application versions, or network restrictions. Each cause requires a different approach, so work through these solutions systematically.

@@ -38,6 +38,13 @@ voice-checked: true---
 - **Use-case recommendations**: Specific guidance based on team size and requirements
 - **Trade-off analysis**: Strengths and limitations of each option discussed
 
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Prerequisites](#prerequisites)
+- [Advanced Features](#advanced-features)
+- [Troubleshooting](#troubleshooting)
+
 ## Introduction
 
 As AI coding assistants become more sophisticated, they need better access to your API documentation to generate accurate code and provide intelligent responses. The Model Context Protocol (MCP) provides a standardized way for AI tools to interact with external services and data sources. By creating an MCP server that serves your API documentation, you enable AI assistants to understand your API's structure, endpoints, authentication requirements, and response formats without manual context injection.

@@ -42,6 +42,21 @@ Migrating from ChatGPT Plugins to Claude MCP tools represents a significant shif
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Architectural Differences](#architectural-differences)
+- [Setting Up Your First MCP Server](#setting-up-your-first-mcp-server)
+- [Converting Plugin Manifests to MCP Resources](#converting-plugin-manifests-to-mcp-resources)
+- [Authentication Patterns](#authentication-patterns)
+- [Migrating Your Workflow Patterns](#migrating-your-workflow-patterns)
+- [Testing Your Migration](#testing-your-migration)
+- [Common Migration Pitfalls](#common-migration-pitfalls)
+- [Advanced MCP Patterns for Development Workflows](#advanced-mcp-patterns-for-development-workflows)
+- [Organizing Complex Tool Ecosystems](#organizing-complex-tool-ecosystems)
+- [Error Handling and Resilience](#error-handling-and-resilience)
+- [Performance Optimization for MCP](#performance-optimization-for-mcp)
+- [Testing and Rollout](#testing-and-rollout)
+
 ## Architectural Differences
 
 ChatGPT Plugins operated through a request-response model where the plugin exposed endpoints via an OpenAPI manifest. The AI would parse your spec and make HTTP calls to your configured endpoints. This approach worked but had limitations around state management and complex multi-step operations.
@@ -411,11 +426,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How to Build Custom AI Coding Workflows with MCP Server](/ai-tools-compared/how-to-build-custom-ai-coding-workflows-with-mcp-server-inte/)
-- [ChatGPT Plugins Replacement Custom Gpts Pricing](/ai-tools-compared/chatgpt-plugins-replacement-custom-gpts-pricing-for-developers/)
-- [How to Migrate ChatGPT Plugins](/ai-tools-compared/migrate-chatgpt-plugins-to-custom-gpts-step-by-step-2026/)
-- [Claude MCP Server Connection Failed Fix (2026)](/ai-tools-compared/claude-mcp-server-connection-failed-fix-2026/)
-- [ChatGPT Plus vs Claude Pro Monthly Cost for Daily Coding](/ai-tools-compared/chatgpt-plus-vs-claude-pro-monthly-cost-for-daily-coding/)
-
+- [How to Build Custom MCP Servers for Claude](/ai-tools-compared/how-to-build-custom-mcp-servers-for-claude)
+- [Transfer ChatGPT Custom GPTs to Claude Projects](/ai-tools-compared/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
+- [Claude Free vs ChatGPT Free Which Gives More Per](/ai-tools-compared/claude-free-vs-chatgpt-free-which-gives-more-per-day/)
+- [Migrate ChatGPT System Prompts](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-format/)
+- [ChatGPT vs Claude for Explaining TensorFlow Model](/ai-tools-compared/chatgpt-vs-claude-for-explaining-tensorflow-model-architectu/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

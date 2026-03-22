@@ -38,6 +38,14 @@ GitHub issue triage is often the first point of contact between maintainers and 
 - **Integrate into documentation -**: Place the flowchart in CONTRIBUTING.md or a dedicated TRIAGE.md file 5.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Understanding the Triage Workflow Requirements](#understanding-the-triage-workflow-requirements)
+- [Prerequisites](#prerequisites)
+- [Troubleshooting](#troubleshooting)
+- [Advanced Automation with GitHub Actions](#advanced-automation-with-github-actions)
+- [Comparison: Manual vs AI-Assisted Triage](#comparison-manual-vs-ai-assisted-triage)
+
 ## Understanding the Triage Workflow Requirements
 
 Before generating any flowchart, you need to articulate the decision points that govern your triage process. A typical GitHub issue triage workflow involves several key stages: initial categorization, severity assessment, priority determination, and routing to the appropriate channel or maintainer.
@@ -589,11 +597,10 @@ Limit to 10-15 core labels. Revisit quarterly and consolidate overlapping labels
 
 ## Related Articles
 
-- [AI Tools for Analyzing Issue Comment Sentiment to Identify F](/ai-tools-compared/ai-tools-for-analyzing-issue-comment-sentiment-to-identify-f/)
-- [Best AI for Writing Good First Issue Descriptions That](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attra/)
-- [Best AI for Writing Good First Issue Descriptions That — Attract](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attract-new-contributors/)
-- [Create CursorRules That Enforce Your Team's Git Commit](/ai-tools-compared/how-to-create-cursorrules-that-enforce-your-teams-git-commit/)
-- [How to Create .cursorrules That Enforce Your Teams React](/ai-tools-compared/how-to-create-cursorrules-that-enforce-your-teams-react-comp/)
-
+- [Best AI Tool for Triaging GitHub Issues by Severity and Cate](/ai-tools-compared/best-ai-tool-for-triaging-github-issues-by-severity-and-cate/)
+- [AI Tools for Generating GitHub Actions Workflows (2)](/ai-tools-compared/ai-tools-github-actions-workflows/)
+- [Best AI for Writing Good First Issue Descriptions That](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attract-new-contributors/)
+- [AI Tools for Generating GitHub Actions Workflows](/ai-tools-compared/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
+- [How to Use AI to Optimize GitHub Actions Workflow Run Times](/ai-tools-compared/how-to-use-ai-to-optimize-github-actions-workflow-run-times-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

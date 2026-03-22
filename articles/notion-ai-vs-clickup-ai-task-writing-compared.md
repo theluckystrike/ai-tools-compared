@@ -41,6 +41,24 @@ Choose Notion AI if your team writes tasks alongside documentation, wikis, and p
 - **The Prompt**: ```
 Create a task for implementing user authentication.
 
+## Table of Contents
+
+- [How Each Platform Handles Task Writing](#how-each-platform-handles-task-writing)
+- [Prompt Comparison: Creating the Same Task](#prompt-comparison-creating-the-same-task)
+- [Context Awareness and Workspace Knowledge](#context-awareness-and-workspace-knowledge)
+- [Automation and Recurring Task Writing](#automation-and-recurring-task-writing)
+- [API and Developer Integration](#api-and-developer-integration)
+- [When Notion AI Excels for Task Writing](#when-notion-ai-excels-for-task-writing)
+- [When ClickUp AI Excels for Task Writing](#when-clickup-ai-excels-for-task-writing)
+- [Pricing Considerations](#pricing-considerations)
+- [Advanced API Integrations and Custom Workflows](#advanced-api-integrations-and-custom-workflows)
+- [Performance Comparison: Speed and Reliability](#performance-comparison-speed-and-reliability)
+- [Hybrid Workflow: Combining Both Tools](#hybrid-workflow-combining-both-tools)
+- [Cost-Benefit Analysis by Team Size](#cost-benefit-analysis-by-team-size)
+- [Real-World Implementation Examples](#real-world-implementation-examples)
+- [Rules of Thumb for Choosing](#rules-of-thumb-for-choosing)
+- [Migration Path: From Notion to ClickUp](#migration-path-from-notion-to-clickup)
+
 ## How Each Platform Handles Task Writing
 
 Notion AI operates within a block-based editor where every piece of content is a block. Tasks in Notion are typically checkboxes or database entries, not standalone objects. When you ask Notion AI to "create a task," it generates content that you must manually convert into actionable items.
@@ -391,11 +409,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [ChatGPT vs Claude for Writing Effective Celery Task Error](/ai-tools-compared/chatgpt-vs-claude-for-writing-effective-celery-task-error-ha/)
+- [How to Use AI to Generate pytest Tests for Celery Task](/ai-tools-compared/how-to-use-ai-to-generate-pytest-tests-for-celery-task-chain/)
+- [Notion AI vs ChatGPT for Content Creation Compared](/ai-tools-compared/notion-ai-vs-chatgpt-for-content-creation-compared/)
 - [Notion AI vs Google Docs AI: Complete Writing Features](/ai-tools-compared/notion-ai-writing-features-vs-google-docs-ai-compared/)
-- [Best AI Tools for Python asyncio Concurrent Task Management](/ai-tools-compared/best-ai-tools-for-python-asyncio-concurrent-task-management-/)
-- [Best AI Tools for Python Celery Task Queue Code Generation](/ai-tools-compared/best-ai-tools-for-python-celery-task-queue-code-generation-2/)
-- [How to Use AI to Generate pytest Tests for Celery Task Chain](/ai-tools-compared/how-to-use-ai-to-generate-pytest-tests-for-celery-task-chain/)
-
+- [Claude vs ChatGPT for Technical Writing 2026](/ai-tools-compared/claude-vs-chatgpt-for-technical-writing-2026/)
+- [Notion AI Not Working as Expected Fix (2026)](/ai-tools-compared/notion-ai-not-working-as-expected-fix-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

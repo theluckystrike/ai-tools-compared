@@ -40,6 +40,14 @@ Migrate Copilot workspace setup to Cursor by exporting settings, recreating proj
 - **With Copilot**: you would use find-and-replace or a script.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Migrating Your Workflow Patterns](#migrating-your-workflow-patterns)
+- [Configuration Comparison](#configuration-comparison)
+- [Performance Considerations](#performance-considerations)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

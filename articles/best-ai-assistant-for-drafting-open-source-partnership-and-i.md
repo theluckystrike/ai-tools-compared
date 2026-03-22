@@ -39,6 +39,22 @@ Drafting open source partnership proposals and integration documentation require
 - **List incompatible clauses and**: suggested resolutions." 4.
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 
+## Table of Contents
+
+- [Why AI Assistants Matter for Partnership Proposals](#why-ai-assistants-matter-for-partnership-proposals)
+- [Key Features to Evaluate](#key-features-to-evaluate)
+- [AI Tool Comparison for Partnership Proposals](#ai-tool-comparison-for-partnership-proposals)
+- [Practical Example: Drafting a Partnership Proposal](#practical-example-drafting-a-partnership-proposal)
+- [Partnership Proposal: OpenTelemetry Integration](#partnership-proposal-opentelemetry-integration)
+- [Code Snippet: Contribution Agreement Generator](#code-snippet-contribution-agreement-generator)
+- [Contributor License Agreement](#contributor-license-agreement)
+- [Integration Documentation Generation](#integration-documentation-generation)
+- [Partner Registration API](#partner-registration-api)
+- [License Compatibility Quick Reference](#license-compatibility-quick-reference)
+- [Step-by-Step Workflow: Drafting a Proposal with AI](#step-by-step-workflow-drafting-a-proposal-with-ai)
+- [Evaluating AI Assistants for This Use Case](#evaluating-ai-assistants-for-this-use-case)
+- [Workflow Integration Tips](#workflow-integration-tips)
+
 ## Why AI Assistants Matter for Partnership Proposals
 
 Open source partnership proposals differ from typical business documents. They must address license compatibility, contribution guidelines, IP considerations, and technical integration details. An AI assistant that understands these nuances can accelerate your workflow significantly.

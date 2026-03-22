@@ -41,6 +41,17 @@ Parquet files have become the standard for columnar data storage in data enginee
 - **Above 5GB, use DuckDB or Spark**: and ask your AI assistant specifically for patterns targeting that scale.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Why Parquet Files Require Specialized Analysis](#why-parquet-files-require-specialized-analysis)
+- [Claude Code for Parquet Analysis](#claude-code-for-parquet-analysis)
+- [ChatGPT for Parquet Data Exploration](#chatgpt-for-parquet-data-exploration)
+- [Gemini for Large Parquet Datasets](#gemini-for-large-parquet-datasets)
+- [Cursor for End-to-End Parquet Workflows](#cursor-for-end-to-end-parquet-workflows)
+- [Using DuckDB with AI Assistance](#using-duckdb-with-ai-assistance)
+- [Comparing AI Tools for Parquet Analysis](#comparing-ai-tools-for-parquet-analysis)
+- [Practical Recommendations](#practical-recommendations)
+
 ## Why Parquet Files Require Specialized Analysis
 
 Parquet stores data in columnar format, which means reading a single column is significantly faster than reading entire rows. This design choice affects how you approach data analysis — you can work with subsets of columns without loading the full dataset into memory. When working with Parquet files, understanding the underlying schema becomes crucial because Parquet supports complex nested types, dictionary encoding, and run-length encoding.
@@ -300,10 +311,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
+- [Best AI Assistant for Creating pytest conftest Files](/ai-tools-compared/best-ai-assistant-for-creating-pytest-conftest-files-with-re/)
+- [Best AI for Generating pandas Code to Merge Data](/ai-tools-compared/best-ai-for-generating-pandas-code-to-merge-data-from-multip/)
 - [AI Tools for Generating Docker Compose Files for Complex Mic](/ai-tools-compared/ai-tools-for-generating-docker-compose-files-for-complex-mic/)
-- [AI Tools for Analyzing Issue Comment Sentiment to Identify F](/ai-tools-compared/ai-tools-for-analyzing-issue-comment-sentiment-to-identify-f/)
-- [AI Tools for Analyzing Which Open Source Issues Would Benefi](/ai-tools-compared/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
-- [Best AI for Analyzing Google Analytics Data Exports with Pan](/ai-tools-compared/best-ai-for-analyzing-google-analytics-data-exports-with-pan/)
-- [Gemini vs Claude for Analyzing Large CSV Datasets Over 100MB](/ai-tools-compared/gemini-vs-claude-for-analyzing-large-csv-datasets-over-100mb/)
-
+- [AI Tools for Qa Engineers Generating Data Driven Test](/ai-tools-compared/ai-tools-for-qa-engineers-generating-data-driven-test-scenar/)
+- [Best Practices for AI Tool Customization Files When Onboardi](/ai-tools-compared/best-practices-for-ai-tool-customization-files-when-onboardi/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -27,6 +27,18 @@ Tabnine has been a fixture in the AI code completion space for years, but 2026 h
 - **Specialized Domains**: If you're working in niche languages or frameworks with limited community code, Tabnine Free's model has less training data to draw from.
 - **The question isn't really**: whether Tabnine Free works; it's whether the alternatives work better for your specific needs.
 
+## Table of Contents
+
+- [The Current State of Tabnine Free](#the-current-state-of-tabnine-free)
+- [What Has Changed Since 2025](#what-has-changed-since-2025)
+- [How Tabnine Free Compares to Alternatives in 2026](#how-tabnine-free-compares-to-alternatives-in-2026)
+- [Real-World Testing Results](#real-world-testing-results)
+- [Who Should Still Use Tabnine Free in 2026](#who-should-still-use-tabnine-free-in-2026)
+- [When You Should Consider Upgrading or Switching](#when-you-should-consider-upgrading-or-switching)
+- [The Verdict](#the-verdict)
+- [Claude API Tool Use Patterns](#claude-api-tool-use-patterns)
+- [Context Window Management for Long Documents](#context-window-management-for-long-documents)
+
 ## The Current State of Tabnine Free
 
 

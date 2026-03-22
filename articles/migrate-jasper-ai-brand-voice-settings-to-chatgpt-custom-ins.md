@@ -40,6 +40,18 @@ If you have been using Jasper AI's Brand Voice feature to maintain consistent to
 - **Most teams reach this**: threshold after 2-3 refinement iterations.
 - **Expect 80-90% stylistic alignment**: with well-written Custom Instructions; the remaining gap closes through iterative refinement.
 
+## Table of Contents
+
+- [What You Are Moving](#what-you-are-moving)
+- [Step 1: Extract Your Jasper Brand Voice Configuration](#step-1-extract-your-jasper-brand-voice-configuration)
+- [Step 2: Convert Jasper Settings to ChatGPT Custom Instructions](#step-2-convert-jasper-settings-to-chatgpt-custom-instructions)
+- [Jasper to ChatGPT Settings Mapping Table](#jasper-to-chatgpt-settings-mapping-table)
+- [Practical Code Snippets](#practical-code-snippets)
+- [Managing Multiple Brand Voices](#managing-multiple-brand-voices)
+- [Testing Your Migrated Settings](#testing-your-migrated-settings)
+- [Validating Brand Voice Consistency](#validating-brand-voice-consistency)
+- [Limitations and Workarounds](#limitations-and-workarounds)
+
 ## What You Are Moving
 
 Jasper AI Brand Voice works by analyzing your uploaded content samples to extract:

@@ -39,6 +39,20 @@ CSS media query breakpoints failing to match expected viewport sizes ranks among
 - **Understand how viewport calculations**: work, use AI to automate detection and generate diagnostic code, then apply your judgment to interpret findings and implement solutions.
 - **Could this problem be**: caused by a recent update? Yes, updates frequently introduce new bugs or change behavior.
 
+## Table of Contents
+
+- [Why Media Query Breakpoints Misbehave](#why-media-query-breakpoints-misbehave)
+- [How AI Tools Accelerate Media Query Debugging](#how-ai-tools-accelerate-media-query-debugging)
+- [Practical Debugging Workflow with AI](#practical-debugging-workflow-with-ai)
+- [Preventing Breakpoint Problems](#preventing-breakpoint-problems)
+- [When AI Falls Short](#when-ai-falls-short)
+- [Testing Breakpoints Across Device Classes](#testing-breakpoints-across-device-classes)
+- [Common Viewport Calculation Errors](#common-viewport-calculation-errors)
+- [Debugging with Chrome DevTools Integration](#debugging-with-chrome-devtools-integration)
+- [Preventing Breakpoint Regressions](#preventing-breakpoint-regressions)
+- [Handling Browser-Specific Quirks](#handling-browser-specific-quirks)
+- [Transition and Animation Breakpoint Timing](#transition-and-animation-breakpoint-timing)
+
 ## Why Media Query Breakpoints Misbehave
 
 Before examining AI-assisted solutions, recognizing the common culprits behind breakpoint mismatches helps you debug more effectively.

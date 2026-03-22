@@ -39,6 +39,17 @@ Choose Lightdash if your team already uses dbt and wants AI-powered natural lang
 - **Choose Preset if you**: need custom ML model integration, your data doesn't use dbt, you want full programmatic control, or Python-based visualizations are essential.
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 
+## Table of Contents
+
+- [Architecture Overview](#architecture-overview)
+- [AI Features Comparison](#ai-features-comparison)
+- [Data Integration Patterns](#data-integration-patterns)
+- [Building AI Dashboards: Code Examples](#building-ai-dashboards-code-examples)
+- [Performance Considerations](#performance-considerations)
+- [Pricing and Team Size Fit](#pricing-and-team-size-fit)
+- [When to Choose Each Platform](#when-to-choose-each-platform)
+- [Recommendation](#recommendation)
+
 ## Architecture Overview
 
 **Lightdash** transforms your dbt project into a full BI platform. It reads your dbt models directly and generates explorable dashboards without separate configuration. The architecture relies heavily on dbt for data transformation, meaning your semantic layer lives in your dbt project.

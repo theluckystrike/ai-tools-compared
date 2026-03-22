@@ -38,6 +38,23 @@ intent-checked: true---
 - **Choose your deployment model**: Local laptop for individual use, server for team sharing
 3.
 
+## Table of Contents
+
+- [Why Self-Hosted OpenAPI Generation Matters](#why-self-hosted-openapi-generation-matters)
+- [The Self-Hosted ecosystem in 2026](#the-self-hosted-ecosystem-in-2026)
+- [Setting Up Ollama for OpenAPI Generation](#setting-up-ollama-for-openapi-generation)
+- [Practical Example: Python FastAPI to OpenAPI](#practical-example-python-fastapi-to-openapi)
+- [Alternative: Using LocalAI with Custom Endpoints](#alternative-using-localai-with-custom-endpoints)
+- [Comparing Self-Hosted Performance](#comparing-self-hosted-performance)
+- [Best Practices for Accurate Spec Generation](#best-practices-for-accurate-spec-generation)
+- [When Self-Hosted Makes Sense](#when-self-hosted-makes-sense)
+- [Implementation Checklist](#implementation-checklist)
+- [Advanced: Running GPU-Accelerated Inference](#advanced-running-gpu-accelerated-inference)
+- [Workflow Integration with LLM Tools](#workflow-integration-with-llm-tools)
+- [Comparison: Self-Hosted vs Cloud for OpenAPI Generation](#comparison-self-hosted-vs-cloud-for-openapi-generation)
+- [Validating Generated Specs](#validating-generated-specs)
+- [Multi-Model Strategy](#multi-model-strategy)
+
 ## Why Self-Hosted OpenAPI Generation Matters
 
 When you're building APIs in regulated industries, handling proprietary code, or working under strict data governance policies, sending your codebase to cloud AI services simply isn't an option. Your intellectual property, internal business logic, and unpublished API designs need to stay within your network perimeter.

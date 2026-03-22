@@ -42,6 +42,15 @@ Both tools use AI to accelerate development, but they approach coding assistance
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **Choose GitHub Copilot if**: you prefer incremental inline suggestions for existing code and want faster single-file completions.
 
+## Table of Contents
+
+- [Setting Up the Stripe SDK](#setting-up-the-stripe-sdk)
+- [Quick Comparison](#quick-comparison)
+- [Creating Checkout Sessions](#creating-checkout-sessions)
+- [Building the Frontend Payment Component](#building-the-frontend-payment-component)
+- [Handling Webhooks Securely](#handling-webhooks-securely)
+- [Which Tool Fits Your Workflow](#which-tool-fits-your-workflow)
+
 ## Setting Up the Stripe SDK
 
 Starting a new Next.js project with Stripe requires installing the official SDK and configuring environment variables. The process involves creating API keys, setting up the Stripe instance, and establishing the basic structure for payment flows.

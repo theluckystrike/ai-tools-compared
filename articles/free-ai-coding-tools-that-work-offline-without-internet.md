@@ -41,6 +41,18 @@ This guide covers the best free AI coding tools that operate entirely offline, h
 - **Use the chat interface**: for coding assistance ``` You can also configure the local server option to connect IDE extensions to LM Studio's endpoint (typically `http://localhost:1234/v1`).
 - **Is the annual plan**: worth it over monthly billing? Annual plans typically save 15-30% compared to monthly billing.
 
+## Table of Contents
+
+- [Why Use Offline AI Coding Tools](#why-use-offline-ai-coding-tools)
+- [Ollama: Run Local LLMs for Coding](#ollama-run-local-llms-for-coding)
+- [Tabnine: Free Offline Autocomplete](#tabnine-free-offline-autocomplete)
+- [Continue: Open Source IDE Extension](#continue-open-source-ide-extension)
+- [Codeium: Free Tier with Offline Support](#codeium-free-tier-with-offline-support)
+- [LM Studio: Desktop App for Local Models](#lm-studio-desktop-app-for-local-models)
+- [Comparing Offline Capabilities](#comparing-offline-capabilities)
+- [Practical Use Cases](#practical-use-cases)
+- [Performance Considerations](#performance-considerations)
+
 ## Why Use Offline AI Coding Tools
 
 Offline AI coding tools provide several advantages beyond just working without internet. Your code never leaves your machine, which is critical for proprietary or sensitive projects. You avoid API costs since local models run on your own hardware. Response times can be faster since there's no network latency involved.

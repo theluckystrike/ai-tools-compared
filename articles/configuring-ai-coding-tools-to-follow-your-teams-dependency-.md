@@ -40,6 +40,26 @@ When your team adopts dependency injection (DI), you expect consistent usage acr
 - **Does Teams offer a**: free tier? Most major tools offer some form of free tier or trial period.
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 
+## Table of Contents
+
+- [Why AI Tools Need DI Pattern Configuration](#why-ai-tools-need-di-pattern-configuration)
+- [Understanding DI Pattern Variants Before You Configure](#understanding-di-pattern-variants-before-you-configure)
+- [Configuring GitHub Copilot for Team DI Patterns](#configuring-github-copilot-for-team-di-patterns)
+- [Constructor Injection Required](#constructor-injection-required)
+- [Container Usage](#container-usage)
+- [Example Correct Pattern](#example-correct-pattern)
+- [Configuring Codeium for DI Consistency](#configuring-codeium-for-di-consistency)
+- [Configuring Tabnine to Respect DI Patterns](#configuring-tabnine-to-respect-di-patterns)
+- [Adding Context Through Code Comments](#adding-context-through-code-comments)
+- [Documenting the Container Registration Layer](#documenting-the-container-registration-layer)
+- [Service Lifetimes](#service-lifetimes)
+- [Registration Location](#registration-location)
+- [Example](#example)
+- [Best Practices for Team Implementation](#best-practices-for-team-implementation)
+- [Handling Framework-Specific DI Systems](#handling-framework-specific-di-systems)
+- [DI Pattern — NestJS](#di-pattern-nestjs)
+- [Common Pitfalls to Avoid](#common-pitfalls-to-avoid)
+
 ## Why AI Tools Need DI Pattern Configuration
 
 AI coding assistants trained on millions of public repositories recognize popular DI frameworks, but they don't automatically prioritize your team's specific implementation. An AI might suggest creating instances directly with `new ServiceName()` when your architecture requires constructor injection through your container. This happens because public codebases frequently use simpler patterns that the AI replicates by default.

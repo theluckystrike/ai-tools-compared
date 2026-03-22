@@ -40,6 +40,20 @@ Claude Code and Cursor outperform GitHub Copilot at predicting test assertions, 
 - **Return(&User{ID**: 1, Name: "John"}, nil).
 - **For C#**: the best tools understand nullable reference types (introduced in C# 8).
 
+## Table of Contents
+
+- [Understanding Assertion Prediction in AI Autocomplete](#understanding-assertion-prediction-in-ai-autocomplete)
+- [Python: pytest and unittest Scenarios](#python-pytest-and-unittest-scenarios)
+- [JavaScript and TypeScript: Jest and Vitest](#javascript-and-typescript-jest-and-vitest)
+- [Java: JUnit 5 and Assertion Libraries](#java-junit-5-and-assertion-libraries)
+- [Factors That Improve Assertion Prediction](#factors-that-improve-assertion-prediction)
+- [Practical Recommendations](#practical-recommendations)
+- [Tool Comparison Matrix](#tool-comparison-matrix)
+- [Advanced Testing Patterns](#advanced-testing-patterns)
+- [Language-Specific Performance](#language-specific-performance)
+- [Evaluating Assertion Quality](#evaluating-assertion-quality)
+- [Iterative Improvement Workflow](#iterative-improvement-workflow)
+
 ## Understanding Assertion Prediction in AI Autocomplete
 
 AI autocomplete tools have evolved beyond simple syntax completion. Modern tools like GitHub Copilot, Cursor, Claude Code, and others attempt to understand context—your function signatures, variable types, and the logic flow—to suggest relevant assertions. The quality of these predictions varies significantly depending on the tool and the complexity of the code being tested.
@@ -279,11 +293,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [What Source Code Context Window Do Different AI Coding Tools](/ai-tools-compared/what-source-code-context-window-do-different-ai-coding-tools/)
-- [How Well Do AI Tools Generate Correct Go Interface Implement](/ai-tools-compared/how-well-do-ai-tools-generate-correct-go-interface-implement/)
-- [How Well Do AI Tools Generate Rust Macro Definitions and Pro](/ai-tools-compared/how-well-do-ai-tools-generate-rust-macro-definitions-and-pro/)
-- [How Well Do AI Tools Handle Go Generics Type Parameter Const](/ai-tools-compared/how-well-do-ai-tools-handle-go-generics-type-parameter-const/)
-- [How Well Do AI Tools Handle Rust Lifetime Elision Rules Corr](/ai-tools-compared/how-well-do-ai-tools-handle-rust-lifetime-elision-rules-corr/)
-
+- [AI Tools for Creating Boundary Value Test](/ai-tools-compared/ai-tools-for-creating--boundary-value-test-case/)
+- [Best AI Tools for Writing Unit Test Mocks 2026](/ai-tools-compared/best-ai-tools-for-writing-unit-test-mocks-2026/)
+- [AI Tools for Creating Property-Based Test Cases](/ai-tools-compared/ai-tools-for-creating-property-based-test-cases-using-hypoth/)
+- [AI Tools for Writing Selenium to Cypress Test Migration 2026](/ai-tools-compared/ai-tools-for-writing-selenium-cypress-test-migration-2026/)
+- [AI Tools for Creating Test Data Generators That Respect](/ai-tools-compared/ai-tools-for-creating-test-data-generators-that-respect-busi/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

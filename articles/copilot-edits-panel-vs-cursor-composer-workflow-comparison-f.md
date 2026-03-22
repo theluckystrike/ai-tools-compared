@@ -39,6 +39,25 @@ When refactoring code, the workflow you choose directly impacts productivity and
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
+## Table of Contents
+
+- [Understanding Copilot Edits Panel](#understanding-copilot-edits-panel)
+- [Understanding Cursor Composer](#understanding-cursor-composer)
+- [Workflow Comparison for Refactoring](#workflow-comparison-for-refactoring)
+- [Multi-File Refactoring Scenarios](#multi-file-refactoring-scenarios)
+- [Context and Iteration](#context-and-iteration)
+- [Real Refactoring Workflow Comparison](#real-refactoring-workflow-comparison)
+- [Workflow Efficiency Metrics](#workflow-efficiency-metrics)
+- [Common Refactoring Scenarios](#common-refactoring-scenarios)
+- [Integration with Your Current Tools](#integration-with-your-current-tools)
+- [Practical Recommendation by Scenario](#practical-recommendation-by-scenario)
+- [Choosing Your Refactoring Workflow](#choosing-your-refactoring-workflow)
+- [Advanced Workflow Patterns](#advanced-workflow-patterns)
+- [Setting Up Your Workflow](#setting-up-your-workflow)
+- [Real-World Performance Metrics](#real-world-performance-metrics)
+- [Handling Edge Cases](#handling-edge-cases)
+- [Implementation Checklist](#implementation-checklist)
+
 ## Understanding Copilot Edits Panel
 
 GitHub Copilot's Edits Panel represents a significant evolution from its original inline-only approach. Accessible through the Copilot Chat interface, the Edits Panel provides a dedicated space for multi-file modifications. The workflow centers around describing changes in natural language, then reviewing AI-generated edits before accepting them.

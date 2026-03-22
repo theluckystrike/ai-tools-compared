@@ -39,6 +39,21 @@ AI-generated code requires specific review patterns that catch hallucinations, m
 - **AI-generated code frequently has**: unused imports and shadowed variables that create maintenance debt.
 - Use mocks for external dependencies.
 
+## Table of Contents
+
+- [Start with Understanding the Generated Code](#start-with-understanding-the-generated-code)
+- [AI Code Review Tool Comparison](#ai-code-review-tool-comparison)
+- [Verify Security Implications](#verify-security-implications)
+- [Run the Code Locally First](#run-the-code-locally-first)
+- [Compare Against Existing Codebase Patterns](#compare-against-existing-codebase-patterns)
+- [Check for Missing Edge Cases](#check-for-missing-edge-cases)
+- [Use Linters and Type Checkers](#use-linters-and-type-checkers)
+- [Write Tests for AI-Generated Functions](#write-tests-for-ai-generated-functions)
+- [Step-by-Step Review Workflow](#step-by-step-review-workflow)
+- [Document Your Review Process](#document-your-review-process)
+- [Gradually Build Trust Through Experience](#gradually-build-trust-through-experience)
+- [Related Reading](#related-reading)
+
 ## Start with Understanding the Generated Code
 
 AI tools can produce code that looks correct but follows unexpected patterns or makes questionable assumptions. Always read through the code line-by-line before evaluating its functionality. Pay special attention to variable names, function purposes, and the overall logic flow.

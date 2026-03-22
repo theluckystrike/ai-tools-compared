@@ -40,6 +40,18 @@ Choose a lakehouse if your AI workloads involve unstructured or semi-structured 
 - **The fundamental difference affects**: AI workflows: warehouses expect clean input, while lakehouses let you work with raw data and handle schema evolution.
 - **A query that takes**: 2 seconds in Snowflake might take 45 seconds in Spark due to JVM initialization and job planning.
 
+## Table of Contents
+
+- [Architectural Differences at a Glance](#architectural-differences-at-a-glance)
+- [Data Preparation for Machine Learning](#data-preparation-for-machine-learning)
+- [Query Performance for AI Pipelines](#query-performance-for-ai-pipelines)
+- [Real-Time AI Inference](#real-time-ai-inference)
+- [Model Training at Scale](#model-training-at-scale)
+- [Cost Considerations at Scale](#cost-considerations-at-scale)
+- [When to Choose Each Approach](#when-to-choose-each-approach)
+- [Hybrid Approaches Work](#hybrid-approaches-work)
+- [Making the Decision](#making-the-decision)
+
 ## Architectural Differences at a Glance
 
 A data warehouse stores structured data in a columnar format optimized for SQL analytics. Data arrives cleaned and transformed, ready for reporting. Popular options include Snowflake, BigQuery, and Redshift.
@@ -268,11 +280,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [AI Coding Assistant Data Sovereignty Requirements](/ai-tools-compared/ai-coding-assistant-data-sovereignty-requirements-for-companies-operating-in-eu-2026/)
-- [AI Coding Assistant Session Data Lifecycle](/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Streamlit vs Gradio for AI Data Apps: A Practical Comparison](/ai-tools-compared/streamlit-vs-gradio-ai-data-apps/)
+- [Best AI Tools for Data Cleaning](/ai-tools-compared/best-ai-tools-for-data-cleaning/)
+- [AI Powered Data Cataloging Tools](/ai-tools-compared/ai-powered-data-cataloging-tools/)
 - [AI Data Labeling Tools Comparison: A Developer Guide](/ai-tools-compared/ai-data-labeling-tools-comparison/)
-- [AI Powered Data Cataloging Tools: A Practical Guide for](/ai-tools-compared/ai-powered-data-cataloging-tools/)
-- [AI Tools for Automated Test Data Generation 2026](/ai-tools-compared/ai-tools-for-automated-test-data-generation-2026/)
-
+- [AI Tools for Data Mesh Architecture: A Practical Guide](/ai-tools-compared/ai-tools-for-data-mesh-architecture/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -71,6 +71,17 @@ Atlas generates reversible migrations by default. Rollback is atomic per migrati
 
 ## Flyway + AI Assistants
 
+## Table of Contents
+
+- [Flyway + AI Assistants](#flyway-ai-assistants)
+- [Prisma Migrate](#prisma-migrate)
+- [Hasura](#hasura)
+- [SchemaHero](#schemahero)
+- [Feature Comparison Table](#feature-comparison-table)
+- [Comparison: Rollback Strategy](#comparison-rollback-strategy)
+- [Comparison: Large Table Migrations](#comparison-large-table-migrations)
+- [Recommendation by Use Case](#recommendation-by-use-case)
+
 Flyway is the industry standard for database version control. Teams augment Flyway with Claude, ChatGPT, or Copilot to generate migrations from natural language descriptions.
 
 **Pricing:**

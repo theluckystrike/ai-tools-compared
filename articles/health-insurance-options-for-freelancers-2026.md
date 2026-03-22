@@ -39,6 +39,16 @@ As a freelancer, navigating health insurance options can feel overwhelming. With
 - **Discounts of 25-50% are**: common for qualifying organizations.
 - **As a freelancer**: navigating health insurance options can feel overwhelming.
 
+## Table of Contents
+
+- [Understanding Your Coverage Options](#understanding-your-coverage-options)
+- [Building an Insurance Comparison Tool](#building-an-insurance-comparison-tool)
+- [Tracking Healthcare Spending](#tracking-healthcare-spending)
+- [Estimating ACA Subsidies](#estimating-aca-subsidies)
+- [HSA vs FSA Considerations](#hsa-vs-fsa-considerations)
+- [Practical Tips for Freelancers](#practical-tips-for-freelancers)
+- [Making Your Decision](#making-your-decision)
+
 ## Understanding Your Coverage Options
 
 Freelancers in the United States typically have several routes to health insurance coverage:
@@ -332,9 +342,8 @@ Policies vary widely. Some tools let you access your data for a grace period aft
 ## Related Articles
 
 - [AI Tools for Customer Health Scoring](/ai-tools-compared/ai-tools-for-customer-health-scoring/)
-- [AI Tools for Monitoring Kubernetes Cluster Health and Auto](/ai-tools-compared/ai-tools-for-monitoring-kubernetes-cluster-health-and-auto-remediation/)
-- [Best Local LLM Options for Code Generation 2026](/ai-tools-compared/best-local-llm-options-for-code-generation-2026/)
 - [Legal Research AI Tools: Best Options for Attorneys in 2026](/ai-tools-compared/legal-research-ai-tools-best-options-for-attorneys-2026/)
-- [Async Interview Process for Hiring Remote Developers No Live](https://theluckystrike.github.io/remote-work-tools/async-interview-process-for-hiring-remote-developers-no-live/)
-
+- [Cheapest Way to Get AI Autocomplete in Neovim 2026](/ai-tools-compared/cheapest-way-to-get-ai-autocomplete-in-neovim-2026/)
+- [Best Local LLM Options for Code Generation 2026](/ai-tools-compared/best-local-llm-options-for-code-generation-2026/)
+- [Claude Code Coverage Reporting Setup Guide](/ai-tools-compared/claude-code-coverage-reporting-setup-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

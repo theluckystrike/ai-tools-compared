@@ -41,6 +41,25 @@ Choose Aider if you want automatic git integration, multi-file refactoring with 
 - **Claude Code uses Anthropic's**: models exclusively.
 - **Many developers end up using both tools for different purposes**: Aider for focused coding sessions with git integration, Claude Code for broader questions and exploration.
 
+## Table of Contents
+
+- [What is Aider?](#what-is-aider)
+- [Quick Comparison](#quick-comparison)
+- [What is Claude Code?](#what-is-claude-code)
+- [Core Differences in Architecture](#core-differences-in-architecture)
+- [Practical Examples](#practical-examples)
+- [Performance Considerations](#performance-considerations)
+- [When to Choose Aider](#when-to-choose-aider)
+- [When to Choose Claude Code](#when-to-choose-claude-code)
+- [Recommendations](#recommendations)
+- [Specialized Use Cases](#specialized-use-cases)
+- [Installation and Setup Comparison](#installation-and-setup-comparison)
+- [Real-World Performance Comparison](#real-world-performance-comparison)
+- [Security and Data Handling](#security-and-data-handling)
+- [Migration Path from Copilot](#migration-path-from-copilot)
+- [Integration with Existing Tools](#integration-with-existing-tools)
+- [Performance Under Load](#performance-under-load)
+
 ## What is Aider?
 
 Aider is an AI-powered pair programmer that works directly in your terminal. It connects to git repositories, understands your codebase, and makes edits to files while maintaining git commit history. Aider supports multiple large language models including Anthropic's Claude, OpenAI's GPT models, and local models through Ollama.
@@ -338,10 +357,9 @@ For teams with large monorepos, Claude Code's manual context selection often pro
 
 ## Related Articles
 
-- [Claude Code Terminal Permission Denied Fix](/ai-tools-compared/claude-code-terminal-permission-denied-fix/)
-- [Does Claude Code Send Terminal Output to Anthropic Servers P](/ai-tools-compared/does-claude-code-send-terminal-output-to-anthropic-servers-p/)
-- [How to Migrate From Copilot for Neovim](/ai-tools-compared/migrate-copilot-for-neovim-setup-to-claude-code-terminal-wor/)
-- [AI Coding Assistants for Go Testing Table Driven Tests Gener](/ai-tools-compared/ai-coding-assistants-for-go-testing-table-driven-tests-gener/)
-- [AI Coding Assistants for Typescript Deno Fresh Framework Com](/ai-tools-compared/ai-coding-assistants-for-typescript-deno-fresh-framework-com/)
-
+- [Does Claude Code Send Terminal Output to Anthropic Servers](/ai-tools-compared/does-claude-code-send-terminal-output-to-anthropic-servers-p/)
+- [How to Switch from Cursor to Claude Code Without Losing](/ai-tools-compared/how-to-switch-from-cursor-to-claude-code-without-losing-settings/)
+- [Claude Code Runbook Documentation Guide](/ai-tools-compared/claude-code-runbook-documentation-guide/)
+- [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
+- [Cheapest Way to Use Claude for Coding Projects 2026](/ai-tools-compared/cheapest-way-to-use-claude-for-coding-projects-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

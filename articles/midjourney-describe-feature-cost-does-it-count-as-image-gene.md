@@ -40,6 +40,21 @@ No, Midjourney's `/describe` command does not count toward your image generation
 - **Repeat until you find**: the right direction Total cost: $2-4 per final design, with 5-8 iterations New approach (describe-first): 1.
 - **Generate 4 variations based**: on those prompts ($0.32 in credits) 5.
 
+## Table of Contents
+
+- [What Midjourney /describe Actually Does](#what-midjourney-describe-actually-does)
+- [The Cost Question: Does It Count as Image Generation?](#the-cost-question-does-it-count-as-image-generation)
+- [Practical Implications for Developers](#practical-implications-for-developers)
+- [When Describe Costs Might Matter](#when-describe-costs-might-matter)
+- [Technical Details: How Describe Works](#technical-details-how-describe-works)
+- [Practical Example: Using Describe for Prompt Engineering](#practical-example-using-describe-for-prompt-engineering)
+- [Advanced Describe Strategies for Developers](#advanced-describe-strategies-for-developers)
+- [Cost Optimization Comparison](#cost-optimization-comparison)
+- [Real Example: Product Design Workflow](#real-example-product-design-workflow)
+- [API Integration Considerations](#api-integration-considerations)
+- [Billing Edge Cases](#billing-edge-cases)
+- [Practical Quota Management](#practical-quota-management)
+
 ## What Midjourney /describe Actually Does
 
 The `/describe` command analyzes an uploaded image and generates four text prompts that Midjourney's model believes would produce something similar. Unlike image generation, this feature performs image-to-text conversion—the AI examines visual elements like composition, color palette, subject matter, and style, then outputs natural language descriptions.
@@ -310,10 +325,9 @@ Policies vary widely. Some tools let you access your data for a grace period aft
 
 ## Related Articles
 
+- [Best AI Image Generation APIs Compared 2026](/ai-tools-compared/best-ai-image-generation-apis-compared-2026/)
+- [DALL-E 3 Credit Cost Per Image: ChatGPT Plus vs](/ai-tools-compared/dall-e-3-credit-cost-per-image-chatgpt-plus-vs-api/)
+- [How to Export Midjourney Images Before Downgrading Plan](/ai-tools-compared/how-to-export-midjourney-images-before-downgrading-plan-2026/)
 - [Midjourney Basic Plan Image Limits Per Month: Real Numbers](/ai-tools-compared/midjourney-basic-plan-image-limits-per-month-real-numbers-20/)
-- [DALL-E 3 Credit Cost Per Image: ChatGPT Plus vs API](/ai-tools-compared/dall-e-3-credit-cost-per-image-chatgpt-plus-vs-api/)
-- [Midjourney Standard vs Pro Plan: Is Stealth Mode Worth](/ai-tools-compared/midjourney-standard-vs-pro-plan-stealth-mode-worth-extra-cost/)
-- [Do ChatGPT Plus Memory and Custom GPTs Count Toward](/ai-tools-compared/chatgpt-plus-memory-and-custom-gpts-count-toward-usage-limit/)
-- [ChatGPT Team Admin Seat Does Admin Count Toward Billing Seat](/ai-tools-compared/chatgpt-team-admin-seat-does-admin-count-toward-billing-seat/)
-
+- [DALL-E Image Generation Failed: How](/ai-tools-compared/dalle-image-generation-failed-how-to-retry/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

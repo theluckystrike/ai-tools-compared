@@ -40,6 +40,20 @@ AI systems increasingly require audit trails and evidence collection mechanisms 
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Why Audit Trails Matter for AI Systems](#why-audit-trails-matter-for-ai-systems)
+- [Leading Tools for AI Audit Trail and Evidence Collection](#leading-tools-for-ai-audit-trail-and-evidence-collection)
+- [Implementation Example: Python Audit Logger](#implementation-example-python-audit-logger)
+- [Integration with LangChain](#integration-with-langchain)
+- [Key Considerations When Choosing a Tool](#key-considerations-when-choosing-a-tool)
+- [Audit Tool Comparison Matrix](#audit-tool-comparison-matrix)
+- [Real-World Implementation: Custom Audit Logger with Retention](#real-world-implementation-custom-audit-logger-with-retention)
+- [Integration with LangChain and OpenTelemetry](#integration-with-langchain-and-opentelemetry)
+- [Compliance Framework Mapping](#compliance-framework-mapping)
+- [Migration Strategies](#migration-strategies)
+- [Related Reading](#related-reading)
+
 ## Why Audit Trails Matter for AI Systems
 
 Regulatory frameworks like the EU AI Act and industry standards such as SOC 2 require organizations to maintain records of AI-driven decisions. Beyond compliance, audit trails help you debug model behavior, reproduce bugs, and demonstrate due diligence when issues arise. For developers, this means implementing structured logging that captures the complete context of AI interactions.

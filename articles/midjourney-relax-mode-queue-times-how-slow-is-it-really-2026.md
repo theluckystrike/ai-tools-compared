@@ -41,6 +41,21 @@ In these cases, Fast mode's $30-60/month cost is a business necessity, not a lux
 - **If your hourly rate exceeds $2-3/hour**: Fast mode is economically justified.
 - **Does Midjourney offer a**: free tier? Most major tools offer some form of free tier or trial period.
 
+## Table of Contents
+
+- [Understanding Midjourney's Three Generation Modes](#understanding-midjourneys-three-generation-modes)
+- [What Determines Relax Mode Queue Times?](#what-determines-relax-mode-queue-times)
+- [Real-World Relax Mode Wait Times in 2026](#real-world-relax-mode-wait-times-in-2026)
+- [Relax Mode Monthly Allowances](#relax-mode-monthly-allowances)
+- [Tips for Minimizing Relax Mode Wait Times](#tips-for-minimizing-relax-mode-wait-times)
+- [When to Use Fast Mode Instead](#when-to-use-fast-mode-instead)
+- [Estimating Midjourney Queue Activity via Discord API](#estimating-midjourney-queue-activity-via-discord-api)
+- [2026 Pricing and Subscription Economics](#2026-pricing-and-subscription-economics)
+- [Advanced Queue Timing Strategies](#advanced-queue-timing-strategies)
+- [Quality and Consistency Factors](#quality-and-consistency-factors)
+- [Monitoring and Automation](#monitoring-and-automation)
+- [When to Abandon Relax Mode](#when-to-abandon-relax-mode)
+
 ## Understanding Midjourney's Three Generation Modes
 
 Midjourney offers three distinct modes for image generation, each with different characteristics and pricing structures:

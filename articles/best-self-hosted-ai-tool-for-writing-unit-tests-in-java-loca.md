@@ -47,6 +47,24 @@ Running AI coding assistants locally has become essential for developers who nee
 - **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
 - **It supports various models**: that work well with Java code, including Llama 3 and Mistral variants.
 
+## Table of Contents
+
+- [Why Local AI for Java Unit Testing](#why-local-ai-for-java-unit-testing)
+- [Top Self-Hosted Options for Java Test Generation](#top-self-hosted-options-for-java-test-generation)
+- [Practical Test Generation Workflow](#practical-test-generation-workflow)
+- [Working With Parametrized Tests](#working-with-parametrized-tests)
+- [Testing Exception Cases](#testing-exception-cases)
+- [Integration Testing with AI Assistance](#integration-testing-with-ai-assistance)
+- [Hardware Considerations](#hardware-considerations)
+- [Integration with Build Systems](#integration-with-build-systems)
+- [Choosing the Right Solution](#choosing-the-right-solution)
+- [Advanced Test Generation Scenarios](#advanced-test-generation-scenarios)
+- [Test Generation for Enterprise Patterns](#test-generation-for-enterprise-patterns)
+- [Validating Generated Test Quality](#validating-generated-test-quality)
+- [Continuous Integration Integration](#continuous-integration-integration)
+- [Performance Considerations for Large Test Suites](#performance-considerations-for-large-test-suites)
+- [Building Your Testing Pipeline](#building-your-testing-pipeline)
+
 ## Why Local AI for Java Unit Testing
 
 Enterprise developers often face strict data privacy requirements that prevent them from using cloud-based AI tools. When you're working with legacy Java applications or proprietary business logic, sending code externally creates compliance risks. Local AI tools solve this problem by running entirely within your infrastructure.

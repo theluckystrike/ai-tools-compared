@@ -42,6 +42,23 @@ Choose **v0** if you need clean React components with Tailwind CSS and API acces
 - **Use Bolt.new for rapid**: prototyping during ideation 2.
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 
+## Table of Contents
+
+- [Understanding AI UI Generation Capabilities](#understanding-ai-ui-generation-capabilities)
+- [Quick Comparison](#quick-comparison)
+- [Comparing Leading Tools](#comparing-leading-tools)
+- [Integration Considerations](#integration-considerations)
+- [Practical Workflow Example](#practical-workflow-example)
+- [Cost and Accessibility](#cost-and-accessibility)
+- [Making Your Decision](#making-your-decision)
+- [Detailed Tool Comparison Table](#detailed-tool-comparison-table)
+- [Real-World Implementation Examples](#real-world-implementation-examples)
+- [Decision Flowchart](#decision-flowchart)
+- [Cost Analysis Over 12 Months](#cost-analysis-over-12-months)
+- [Evaluating Output Quality](#evaluating-output-quality)
+- [Common Pitfalls and How to Avoid Them](#common-pitfalls-and-how-to-avoid-them)
+- [When to Combine Tools](#when-to-combine-tools)
+
 ## Understanding AI UI Generation Capabilities
 
 Modern AI UI tools fall into three primary categories: text-to-mockup generators, image-to-code converters, and design-system-aware platforms. Each serves different use cases depending on your workflow.

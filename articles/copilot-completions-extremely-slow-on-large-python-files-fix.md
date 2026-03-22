@@ -37,6 +37,20 @@ GitHub Copilot transforms how you write code, but working with large Python file
 - **Test them with your**: specific codebase to see if they handle large files better.
 - **Use Copilot Labs -**: Microsoft's experimental features sometimes include performance improvements.
 
+## Table of Contents
+
+- [Why Copilot Struggles with Large Python Files](#why-copilot-struggles-with-large-python-files)
+- [Immediate Fixes You Can Apply Today](#immediate-fixes-you-can-apply-today)
+- [Optimizing Your Python Codebase for Copilot](#optimizing-your-python-codebase-for-copilot)
+- [When All Else Fails](#when-all-else-fails)
+- [Measuring Your Improvements](#measuring-your-improvements)
+- [Settings Optimization Guide](#settings-optimization-guide)
+- [Benchmarking Your Improvements](#benchmarking-your-improvements)
+- [Deep-Dive: Python Analysis Complexity](#deep-dive-python-analysis-complexity)
+- [Alternative Tools Comparison](#alternative-tools-comparison)
+- [Debugging Network Issues](#debugging-network-issues)
+- [The Bottom Line](#the-bottom-line)
+
 ## Why Copilot Struggles with Large Python Files
 
 Copilot's latency on large files stems from how it processes context. When you open a 2000-line Python file, Copilot analyzes the entire file to understand imports, class hierarchies, function definitions, and variable scopes. The more code it must process, the longer suggestions take.
@@ -477,8 +491,9 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 
 ## Related Articles
 
-- [Cursor AI Slow on Large monorepo Fix (2026)](/cursor-ai-slow-on-large-monorepo-fix-2026/)
-- [ChatGPT Code Interpreter Not Running Python: Fixes](/chatgpt-code-interpreter-not-running-python-fix/)
-- [ChatGPT Slow Response Fix 2026: Complete Troubleshooting](/chatgpt-slow-response-fix-2026/)
-
+- [Copilot Suggestions Not Showing Up Fix 2026](/ai-tools-compared/copilot-suggestions-not-showing-up-fix-2026/)
+- [Copilot Not Suggesting Imports Automatically](/ai-tools-compared/copilot-not-suggesting-imports-automatically-fix/)
+- [Copilot Suggestions Wrong How](/ai-tools-compared/copilot-suggestions-wrong-how-to-fix/)
+- [Copilot for JetBrains: Does It Cost Same as VS Code Version](/ai-tools-compared/copilot-for-jetbrains-does-it-cost-same-as-vscode-version/)
+- [How to Use Copilot for Writing Terraform Provider Configurat](/ai-tools-compared/how-to-use-copilot-for-writing-terraform-provider-configurat/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

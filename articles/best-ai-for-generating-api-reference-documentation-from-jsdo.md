@@ -52,6 +52,15 @@ Keeping API documentation current is a persistent challenge for development team
 
 3.
 
+## Table of Contents
+
+- [How AI Documentation Generators Work](#how-ai-documentation-generators-work)
+- [Tools for JSDoc Documentation](#tools-for-jsdoc-documentation)
+- [Tools for Python Docstrings](#tools-for-python-docstrings)
+- [Cross-Language Solutions](#cross-language-solutions)
+- [Practical Recommendations](#practical-recommendations)
+- [Integration Tips](#integration-tips)
+
 ## How AI Documentation Generators Work
 
 AI documentation tools analyze your source code's type hints, parameter definitions, return values, and existing docstring content to generate API reference pages. Unlike static generators that simply format your existing comments, AI-powered tools can:

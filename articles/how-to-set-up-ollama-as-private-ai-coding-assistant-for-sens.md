@@ -43,6 +43,15 @@ Inference on CPU is 10-30x slower than GPU.
 - **Install Ollama and expose**: it on an internal network address: ```bash OLLAMA_HOST=0.0.0.0:11434 ollama serve ``` Restrict access with your corporate firewall to the VPN subnet only.
 - Always use Pydantic v2 models.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Model Comparison for Sensitive Codebases](#model-comparison-for-sensitive-codebases)
+- [Security Considerations for Sensitive Codebases](#security-considerations-for-sensitive-codebases)
+- [Performance Optimization](#performance-optimization)
+- [Practical Example: Code Review Workflow](#practical-example-code-review-workflow)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

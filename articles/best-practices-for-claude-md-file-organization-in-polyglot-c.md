@@ -44,6 +44,38 @@ This makes stale files visible during code review.
 - **Document these explicitly so**: Claude understands dependencies: ```markdown # API Contract Between Services ## Python Backend → TypeScript Frontend The API uses JSON serialization.
 - **Monorepo**: Use a root CLAUDE.md that describes the overall system, then per-service CLAUDE.md files at each service directory.
 
+## Table of Contents
+
+- [The Core Principle: Language-Aware Directory Structure](#the-core-principle-language-aware-directory-structure)
+- [CLAUDE.md Placement Strategies](#claudemd-placement-strategies)
+- [Current Priority](#current-priority)
+- [Language-Specific Notes](#language-specific-notes)
+- [What to Put in Each CLAUDE.md](#what-to-put-in-each-claudemd)
+- [Environment](#environment)
+- [Architecture Rules](#architecture-rules)
+- [Current Focus](#current-focus)
+- [Style](#style)
+- [Commands](#commands)
+- [Documentation Naming Conventions That Help Claude](#documentation-naming-conventions-that-help-claude)
+- [Cross-Reference Documentation Effectively](#cross-reference-documentation-effectively)
+- [Python Backend → TypeScript Frontend](#python-backend-typescript-frontend)
+- [Go CLI → Python Backend](#go-cli-python-backend)
+- [Environment Variables](#environment-variables)
+- [Language-Specific Documentation Templates](#language-specific-documentation-templates)
+- [Purpose](#purpose)
+- [Dependencies](#dependencies)
+- [Key Classes/Functions](#key-classesfunctions)
+- [Testing](#testing)
+- [Props Interface](#props-interface)
+- [Usage Example](#usage-example)
+- [State Management](#state-management)
+- [Managing Shared Documentation](#managing-shared-documentation)
+- [Version Alignment Documentation](#version-alignment-documentation)
+- [Keeping CLAUDE.md Files Fresh](#keeping-claudemd-files-fresh)
+- [Handling Monorepo vs Multi-Repo Layouts](#handling-monorepo-vs-multi-repo-layouts)
+- [Testing Your CLAUDE.md Organization](#testing-your-claudemd-organization)
+- [Practical Tips for Daily Use](#practical-tips-for-daily-use)
+
 ## The Core Principle: Language-Aware Directory Structure
 
 Claude interprets your project through its file organization. Instead of dumping all documentation in a single `docs` folder, mirror your language boundaries in your documentation structure. This allows Claude to understand context faster and provide more relevant suggestions.

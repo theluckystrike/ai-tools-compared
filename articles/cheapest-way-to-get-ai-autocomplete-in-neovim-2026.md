@@ -39,6 +39,17 @@ Finding affordable AI tools requires understanding the true cost structure. This
 - **A 7B parameter model**: needs at least 8GB RAM and works best with an SSD.
 - **Response times range from**: 200ms to 2 seconds depending on your hardware.
 
+## Table of Contents
+
+- [Understanding Your Options](#understanding-your-options)
+- [Top Free Solutions for Neovim](#top-free-solutions-for-neovim)
+- [Comparing the Options](#comparing-the-options)
+- [Choosing the Right Local Model for Ollama](#choosing-the-right-local-model-for-ollama)
+- [Fine-Tuning Your Neovim Integration for Speed](#fine-tuning-your-neovim-integration-for-speed)
+- [Privacy Considerations by Solution](#privacy-considerations-by-solution)
+- [Combining Solutions for Maximum Value](#combining-solutions-for-maximum-value)
+- [Recommendation](#recommendation)
+
 ## Understanding Your Options
 
 The cheapest path to AI autocomplete in Neovim depends on your priorities. Some solutions offer full AI reasoning but require more setup. Others provide simpler autocomplete with zero configuration. Here's what matters most:
@@ -307,10 +318,9 @@ Policies vary widely. Some tools let you access your data for a grace period aft
 
 ## Related Articles
 
+- [AI Autocomplete Behavior Differences Between VS Code](/ai-tools-compared/ai-autocomplete-behavior-differences-between-vscode-jetbrain/)
 - [Cheapest Way to Get AI Code Completion in Vim 2026](/ai-tools-compared/cheapest-way-to-get-ai-code-completion-in-vim-2026/)
+- [Open Source AI Code Completion for Neovim Without Cloud API](/ai-tools-compared/open-source-ai-code-completion-for-neovim-without-cloud-api-/)
 - [Cheapest Way to Use Claude for Coding Projects 2026](/ai-tools-compared/cheapest-way-to-use-claude-for-coding-projects-2026/)
-- [How to Get Better AI Autocomplete Suggestions by Structuring](/ai-tools-compared/how-to-get-better-ai-autocomplete-suggestions-by-structuring/)
-- [How to Migrate From Copilot for Neovim](/ai-tools-compared/migrate-copilot-for-neovim-setup-to-claude-code-terminal-wor/)
-- [ChatGPT Edu Pricing Per Student: How Schools Get Volume](/ai-tools-compared/chatgpt-edu-pricing-per-student-how-schools-get-volume-disco/)
-
+- [Cheapest AI Tool for Generating an Entire Project](/ai-tools-compared/cheapest-ai-tool-for-generating-entire-project-from-description/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

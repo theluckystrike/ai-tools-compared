@@ -40,6 +40,22 @@ Several AI tools excel at this task. This guide recommends the best options base
 - **It works best for**: straightforward type inference scenarios.
 - **A week-long trial with**: actual work gives better signal than feature comparison charts.
 
+## Table of Contents
+
+- [Why Type Inference and Generics Matter](#why-type-inference-and-generics-matter)
+- [Key Capabilities to Evaluate](#key-capabilities-to-evaluate)
+- [Claude Code](#claude-code)
+- [GitHub Copilot](#github-copilot)
+- [Cursor](#cursor)
+- [Zed AI](#zed-ai)
+- [Practical Comparison](#practical-comparison)
+- [Recommendations](#recommendations)
+- [Advanced Generic Patterns for Type Safety](#advanced-generic-patterns-for-type-safety)
+- [Performance Considerations in Generic Inference](#performance-considerations-in-generic-inference)
+- [Testing Generic Types](#testing-generic-types)
+- [Tool Pricing and Feature Comparison](#tool-pricing-and-feature-comparison)
+- [Common Type Inference Mistakes](#common-type-inference-mistakes)
+
 ## Why Type Inference and Generics Matter
 
 Type inference allows TypeScript to automatically deduce types from code context, reducing explicit type annotations while maintaining type safety. Generic types provide reusable type definitions that work with multiple data types while preserving type information. Together, these features form the foundation of TypeScript applications.
@@ -309,11 +325,10 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Best AI Assistant for Fixing TypeScript Strict Mode Type Nar](/ai-tools-compared/best-ai-assistant-for-fixing-typescript-strict-mode-type-nar/)
-- [Claude Code API Client TypeScript Guide: Build Type-Safe](/ai-tools-compared/claude-code-api-client-typescript-guide/)
-- [ChatGPT API Fine Tuning Costs Training Plus Inference Total](/ai-tools-compared/chatgpt-api-fine-tuning-costs-training-plus-inference-total-estimate/)
+- [Best AI Tools for Writing Python Type Hints 2026](/ai-tools-compared/best-ai-tools-for-writing-python-type-hints-2026/)
+- [Best AI Assistant for Fixing TypeScript Strict Mode Type](/ai-tools-compared/best-ai-assistant-for-fixing-typescript-strict-mode-type-nar/)
+- [How Well Do AI Tools Handle Go Generics Type Parameter](/ai-tools-compared/how-well-do-ai-tools-handle-go-generics-type-parameter-const/)
 - [Cursor vs Copilot for Adding Type Hints to Untyped Python](/ai-tools-compared/cursor-vs-copilot-for-adding-type-hints-to-untyped-python-co/)
-- [How Well Do AI Tools Handle Go Generics Type Parameter Const](/ai-tools-compared/how-well-do-ai-tools-handle-go-generics-type-parameter-const/)
-
+- [AI Tools for Writing TypeScript Zod Schemas 2026](/ai-tools-compared/ai-tools-for-writing-typescript-zod-schemas-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -39,6 +39,26 @@ Split large files into focused modules before sharing with AI to stay within con
 - **Learn the specific syntax for your tool**: Cursor uses `@Files`, GitHub Copilot supports `/references`, and similar patterns exist across platforms.
 - **A 150-line complete class**: is better than two 75-line file fragments.
 
+## Table of Contents
+
+- [Understanding Context Window Constraints](#understanding-context-window-constraints)
+- [Strategy One: Targeted File Selection](#strategy-one-targeted-file-selection)
+- [Strategy Two: Directory-Based Context Grouping](#strategy-two-directory-based-context-grouping)
+- [Strategy Three: Context Compression Through Comments](#strategy-three-context-compression-through-comments)
+- [Strategy Four: Chunked Analysis for Complex Tasks](#strategy-four-chunked-analysis-for-complex-tasks)
+- [Strategy Five: Use Project Knowledge Features](#strategy-five-use-project-knowledge-features)
+- [Practical Application: Real-World Example](#practical-application-real-world-example)
+- [Measuring and Optimizing Your Approach](#measuring-and-optimizing-your-approach)
+- [Semantic Chunking Techniques](#semantic-chunking-techniques)
+- [Context Window Size Comparison (2026)](#context-window-size-comparison-2026)
+- [Practical Context Allocation](#practical-context-allocation)
+- [File Selection Decision Tree](#file-selection-decision-tree)
+- [Context Compression Patterns](#context-compression-patterns)
+- [Tool-Specific Context Management](#tool-specific-context-management)
+- [Batch Processing for Large Projects](#batch-processing-for-large-projects)
+- [Avoiding Context Waste](#avoiding-context-waste)
+- [Testing Context Window Performance](#testing-context-window-performance)
+
 ## Understanding Context Window Constraints
 
 Modern AI coding assistants offer varying context window sizes, from around 32,000 tokens to over 200,000 tokens in premium tiers. While these numbers sound large, a typical medium-sized project can quickly consume this capacity. A single React application with components, utilities, styles, and tests might already push against these limits.
@@ -406,10 +426,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How to Use AI Context Management to Work on Large Refactorin](/ai-tools-compared/how-to-use-ai-context-management-to-work-on-large-refactorin/)
 - [Effective Context Management Strategies for AI Coding](/ai-tools-compared/effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/)
-- [Claude Max Context Window Exceeded: What To Do](/ai-tools-compared/claude-max-context-window-exceeded-what-to-do/)
-- [How Context Window Size Affects AI Code Suggestions](/ai-tools-compared/how-context-window-size-affects-ai-code-suggestions-in-different-idess/)
+- [What Source Code Context Window Do Different AI Coding Tools](/ai-tools-compared/what-source-code-context-window-do-different-ai-coding-tools/)
+- [Effective Context Loading Strategies for AI Tools](/ai-tools-compared/effective-context-loading-strategies-for-ai-tools-in-polyglo/)
+- [How to Use AI Context Management to Work on Large Refactorin](/ai-tools-compared/how-to-use-ai-context-management-to-work-on-large-refactorin/)
 - [How to Manage AI Coding Context Window to Avoid Hallucinated](/ai-tools-compared/how-to-manage-ai-coding-context-window-to-avoid-hallucinated/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

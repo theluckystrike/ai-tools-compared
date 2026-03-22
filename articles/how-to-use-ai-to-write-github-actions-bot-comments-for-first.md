@@ -40,6 +40,14 @@ This guide shows you how to set up AI-generated bot comments in GitHub Actions t
 - **If your community is**: casual and uses first names, include that instruction.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Why Automated Welcome Messages Matter](#why-automated-welcome-messages-matter)
+- [Prerequisites](#prerequisites)
+- [Best Practices for AI-Generated Bot Comments](#best-practices-for-ai-generated-bot-comments)
+- [Advanced: Personalizing Beyond the PR Itself](#advanced-personalizing-beyond-the-pr-itself)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Automated Welcome Messages Matter
 
 First-time contributors often feel uncertain about the contribution process. They may wonder whether their PR follows the correct format, if tests will pass, or how long they should wait for feedback. A well-crafted automated comment addresses these concerns immediately, reducing friction and encouraging continued participation.

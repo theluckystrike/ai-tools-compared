@@ -42,6 +42,14 @@ This guide evaluates the best AI assistants for writing open source roadmap docu
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Why AI Assistants Transform Roadmap Documentation](#why-ai-assistants-transform-roadmap-documentation)
+- [Top AI Assistants for Roadmap Generation](#top-ai-assistants-for-roadmap-generation)
+- [Q2 2026 Roadmap](#q2-2026-roadmap)
+- [Practical Workflow: Automated Roadmap Generation](#practical-workflow-automated-roadmap-generation)
+- [Choosing the Right AI Assistant](#choosing-the-right-ai-assistant)
+
 ## Why AI Assistants Transform Roadmap Documentation
 
 Writing roadmap documents manually requires reviewing dozens or hundreds of issues, identifying themes, prioritizing features, and crafting clear explanations. This process becomes repetitive, especially for active projects with frequent contributions.
@@ -344,10 +352,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [Best AI Assistant for Writing Open Source Plugin Development](/ai-tools-compared/best-ai-assistant-for-writing-open-source-plugin-development/)
-- [Best AI Assistant for Creating Open Source Project Branding](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)
-- [Best AI Assistant for Drafting Open Source Partnership and](/ai-tools-compared/best-ai-assistant-for-drafting-open-source-partnership-and-integration-proposals-2026/)
-- [Best AI Assistant for Generating Open Source Release](/ai-tools-compared/best-ai-assistant-for-generating-open-source-release-announcements/)
 - [Best AI for Writing: Open Source Maintainer Burnout](/ai-tools-compared/best-ai-for-writing-open-source-maintainer-burnout-preventio/)
-
+- [Effective Workflow for AI-Assisted Open Source Contribution](/ai-tools-compared/effective-workflow-for-ai-assisted-open-source-contribution-/)
+- [Best AI for Writing Good First Issue Descriptions That](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attract-new-contributors/)
+- [Best AI Assistant for Drafting Open Source Partnership](/ai-tools-compared/best-ai-assistant-for-drafting-open-source-partnership-and-integration-proposals-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

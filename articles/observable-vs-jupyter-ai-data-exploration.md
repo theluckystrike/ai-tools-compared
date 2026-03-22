@@ -39,6 +39,21 @@ Choose Jupyter if you need Python's full ML ecosystem (TensorFlow, PyTorch, scik
 - **Jupyter uses sequential cell**: execution with full Python ecosystem access, while Observable uses a reactive model where cells auto-recompute when dependencies change.
 - **Observable shines when the**: data processing is done upstream and you're focused on visualization and interaction.
 
+## Table of Contents
+
+- [The Fundamental Architecture Difference](#the-fundamental-architecture-difference)
+- [Feature Comparison at a Glance](#feature-comparison-at-a-glance)
+- [Setting Up AI-Powered Notebooks](#setting-up-ai-powered-notebooks)
+- [Data Transformation and Exploration](#data-transformation-and-exploration)
+- [Visualization Capabilities](#visualization-capabilities)
+- [Workflow Comparison: Iterative AI Prompt Refinement](#workflow-comparison-iterative-ai-prompt-refinement)
+- [Performance and Scalability Considerations](#performance-and-scalability-considerations)
+- [When to Choose Each Platform](#when-to-choose-each-platform)
+- [Integrating LLM-Powered Anomaly Detection](#integrating-llm-powered-anomaly-detection)
+- [Common Pitfalls and How to Avoid Them](#common-pitfalls-and-how-to-avoid-them)
+- [Hybrid Approaches](#hybrid-approaches)
+- [Related Reading](#related-reading)
+
 ## The Fundamental Architecture Difference
 
 Jupyter follows the traditional REPL (Read-Eval-Print Loop) model where code cells execute sequentially, maintaining state between cells. You write Python, R, or Julia code with full control over the execution environment. The notebook is a JSON file containing both code and outputs.

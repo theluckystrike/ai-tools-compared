@@ -41,6 +41,21 @@ CSS specificity conflicts rank among the most frustrating challenges when integr
 - **Ant Design**: Ant Design uses `:where()` in v5+, making overrides much simpler than earlier versions.
 - **Your styles simply do**: not apply because the library's selectors carry more weight.
 
+## Table of Contents
+
+- [The Core Problem](#the-core-problem)
+- [How CSS Specificity Actually Works](#how-css-specificity-actually-works)
+- [AI Tools That Actually Help](#ai-tools-that-actually-help)
+- [AI Tool Comparison for CSS Specificity Work](#ai-tool-comparison-for-css-specificity-work)
+- [Practical Strategies](#practical-strategies)
+- [Real-World Workflow](#real-world-workflow)
+- [Framework-Specific Patterns](#framework-specific-patterns)
+- [Which Tool Should You Choose?](#which-tool-should-you-choose)
+- [Advanced Override Techniques](#advanced-override-techniques)
+- [Debugging Workflow with AI](#debugging-workflow-with-ai)
+- [Tool-Specific Workflows](#tool-specific-workflows)
+- [Prompt Templates for AI Tools](#prompt-templates-for-ai-tools)
+
 ## The Core Problem
 
 Third-party component libraries ship with pre-defined CSS that uses specific selectors, often with high specificity. When you try to override these styles in your own stylesheets, you encounter the classic specificity battle. Your styles simply do not apply because the library's selectors carry more weight.
@@ -496,10 +511,9 @@ CSS cascade layers (`@layer`) are the modern, clean solution for third-party lib
 
 ## Related Articles
 
-- [AI Tools for Interpreting Terraform Plan Errors](/ai-tools-compared/ai-tools-for-interpreting-terraform-plan-errors-with-provider-version-conflicts/)
-- [Best AI Assistant for Fixing TypeScript Strict Mode Type Nar](/ai-tools-compared/best-ai-assistant-for-fixing-typescript-strict-mode-type-nar/)
-- [Best AI for Fixing Android Gradle Sync Failed Errors in Larg](/ai-tools-compared/best-ai-for-fixing-android-gradle-sync-failed-errors-in-larg/)
-- [Best AI for Fixing Ruby on Rails ActiveRecord Migration Roll](/ai-tools-compared/best-ai-for-fixing-ruby-on-rails-activerecord-migration-roll/)
+- [Best AI Tools for Generating CSS](/ai-tools-compared/best-ai-tools-for-css-from-designs/)
+- [How to Use AI to Debug Tailwind CSS Classes Not Applying](/ai-tools-compared/how-to-use-ai-to-debug-tailwind-css-classes-not-applying-in-/)
 - [AI Coding Assistant Comparison for TypeScript Tailwind CSS](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-tailwind-css-c/)
-
+- [Best AI Assistant for Debugging CSS Custom Property](/ai-tools-compared/best-ai-assistant-for-debugging-css-custom-property-inheritance-failures-in-shadow-dom/)
+- [Best AI Assistant for Debugging CSS Grid Layout Overflow](/ai-tools-compared/best-ai-assistant-for-debugging-css-grid-layout-overflow-iss/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

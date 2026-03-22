@@ -39,6 +39,26 @@ Choose Cursor Tab if you want the fastest acceptance workflow—it uses your ent
 - **Both respond in under**: 200ms for simple completions.
 - **Complex multi-line predictions may**: take 300-500ms with either tool.
 
+## Table of Contents
+
+- [What is Cursor Tab?](#what-is-cursor-tab)
+- [What is Copilot Ghost Text?](#what-is-copilot-ghost-text)
+- [Acceptance Mechanism Differences](#acceptance-mechanism-differences)
+- [Latency and Prediction Speed](#latency-and-prediction-speed)
+- [Context Awareness](#context-awareness)
+- [Customization and Control](#customization-and-control)
+- [Which Should You Choose?](#which-should-you-choose)
+- [Practical Workflow Tips](#practical-workflow-tips)
+- [Pricing Comparison](#pricing-comparison)
+- [Real-World Completion Examples](#real-world-completion-examples)
+- [Acceptance Workflow Optimization](#acceptance-workflow-optimization)
+- [Performance Under Different Conditions](#performance-under-different-conditions)
+- [Context Quality Comparison](#context-quality-comparison)
+- [Switching Between Tools](#switching-between-tools)
+- [Measuring Which Tool Fits Your Workflow](#measuring-which-tool-fits-your-workflow)
+- [Keyboard Configuration Tips](#keyboard-configuration-tips)
+- [Long-Term Value Comparison](#long-term-value-comparison)
+
 ## What is Cursor Tab?
 
 Cursor, built on VS Code, offers Tab as its primary completion mechanism. When Cursor suggests code, it appears as inline text with a subtle gray background. Pressing Tab accepts the entire suggestion instantly.
@@ -424,9 +444,8 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 ## Related Articles
 
 - [Switching from Copilot Ghost Text to Cursor Tab Autocomplete](/ai-tools-compared/switching-from-copilot-ghost-text-to-cursor-tab-autocomplete/)
-- [How to Reduce AI Autocomplete Ghost Text Distractions While](/ai-tools-compared/how-to-reduce-ai-autocomplete-ghost-text-distractions-while-coding/)
-- [Cursor Tab Accepting Wrong Suggestion Fix](/ai-tools-compared/cursor-tab-accepting-wrong-suggestion-fix/)
-- [AI Tab Organizer Chrome Extension: Managing Browser Tabs](/ai-tools-compared/ai-tab-organizer-chrome-extension/)
-- [Ideogram vs Midjourney for Text in Images Compared](/ai-tools-compared/ideogram-vs-midjourney-for-text-in-images-compared/)
-
+- [Switching from Copilot Enterprise to Cursor Business](/ai-tools-compared/switching-from-copilot-enterprise-to-cursor-business-migrati/)
+- [Copilot Edits Panel vs Cursor Composer Workflow Comparison](/ai-tools-compared/copilot-edits-panel-vs-cursor-composer-workflow-comparison-f/)
+- [How to Transfer Copilot Code Review Settings](/ai-tools-compared/transfer-copilot-code-review-settings-to-cursor-ai-review-co/)
+- [Migrate GitHub Copilot Workspace Setup to Cursor Background](/ai-tools-compared/migrate-github-copilot-workspace-setup-to-cursor-background-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

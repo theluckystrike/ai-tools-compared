@@ -39,6 +39,17 @@ Moving your development team from GitHub Copilot Enterprise to Cursor Business r
 - **Cursor maintains compatibility with**: most VS Code extensions, so your current setup largely carries over.
 - **Where Copilot uses Tab**: to accept suggestions, Cursor also supports Cmd+Enter for inline edits that modify multiple locations simultaneously.
 
+## Table of Contents
+
+- [Why Teams Are Switching in 2026](#why-teams-are-switching-in-2026)
+- [Pre-Migration Preparation](#pre-migration-preparation)
+- [Feature Parity Mapping](#feature-parity-mapping)
+- [Installing and Configuring Cursor](#installing-and-configuring-cursor)
+- [Transferring Custom Configurations](#transferring-custom-configurations)
+- [Adapting Your Workflows](#adapting-your-workflows)
+- [Team Deployment Strategy](#team-deployment-strategy)
+- [Post-Migration Verification](#post-migration-verification)
+
 ## Why Teams Are Switching in 2026
 
 GitHub Copilot Enterprise costs $39 per seat per month and Cursor Business costs $40. At comparable prices, the decision comes down to features and fit. Teams report switching primarily because of Cursor's multi-file editing (Composer), its ability to reference entire codebases via `@codebase`, and the flexibility to switch models mid-session between Claude Sonnet, GPT-4o, and others.

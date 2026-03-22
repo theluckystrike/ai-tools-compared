@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Documentation Tools"
+title: "Best AI Documentation Tools Compared (2026)"
 description: "Compare AI tools for automated documentation: API docs from code, changelog generation, commit messages, release notes, and README writing assistance."
 permalink: /topics/ai-documentation-tools/
 intent-checked: true

@@ -50,6 +50,18 @@ AI assistants can generate correct recursive SQL queries for organizational hier
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [The Hierarchical Query Problem](#the-hierarchical-query-problem)
+- [What Makes an AI Assistant Effective for Recursive Queries](#what-makes-an-ai-assistant-effective-for-recursive-queries)
+- [Practical Examples: AI-Generated Recursive Queries](#practical-examples-ai-generated-recursive-queries)
+- [Common Pitfalls AI Assistants Should Avoid](#common-pitfalls-ai-assistants-should-avoid)
+- [Evaluating AI Assistant Performance](#evaluating-ai-assistant-performance)
+- [Performance Optimization for Large Hierarchies](#performance-optimization-for-large-hierarchies)
+- [Testing Recursive Queries](#testing-recursive-queries)
+- [Common Real-World Variations](#common-real-world-variations)
+- [Debugging Broken Hierarchies](#debugging-broken-hierarchies)
+
 ## The Hierarchical Query Problem
 
 Organizational data typically uses an **adjacency list model** where each employee record contains a `manager_id` pointing to their supervisor:
@@ -389,11 +401,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
-- [Comparing AI Tools for Generating Retool Resource.](/ai-tools-compared/comparing-ai-tools-for-generating-retool-resource-queries-fr/)
+- [Best AI for Writing SQL Performance Tuning Recommendations](/ai-tools-compared/best-ai-for-writing-sql-performance-tuning-recommendations-f/)
+- [Best AI for Writing dbt Macros That Generate Dynamic SQL](/ai-tools-compared/best-ai-for-writing-dbt-macros-that-generate-dynamic-sql-bas/)
 - [Best AI Assistant for SQL Query Optimization](/ai-tools-compared/best-ai-assistant-for-sql-query-optimization/)
-- [AI Coding Assistant Data Sovereignty Requirements](/ai-tools-compared/ai-coding-assistant-data-sovereignty-requirements-for-companies-operating-in-eu-2026/)
-- [AI Coding Assistant Session Data Lifecycle](/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-
+- [Best AI IDE Features for Database Query Writing and](/ai-tools-compared/best-ai-ide-features-for-database-query-writing-and-optimization/)
+- [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

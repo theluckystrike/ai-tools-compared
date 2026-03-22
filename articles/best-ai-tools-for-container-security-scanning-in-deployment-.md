@@ -39,6 +39,15 @@ Integrate Snyk or Trivy into your CI/CD pipeline for AI-powered vulnerability sc
 - **Use both if you**: need coverage.
 - **The severity scoring helps**: teams focus on the most critical issues first.
 
+## Table of Contents
+
+- [Why AI-Powered Container Security Scanning Matters](#why-ai-powered-container-security-scanning-matters)
+- [Tool Comparison at a Glance](#tool-comparison-at-a-glance)
+- [Top AI Tools for Container Security Scanning](#top-ai-tools-for-container-security-scanning)
+- [Implementation Strategy](#implementation-strategy)
+- [Reducing Alert Fatigue](#reducing-alert-fatigue)
+- [Best Practices for 2026](#best-practices-for-2026)
+
 ## Why AI-Powered Container Security Scanning Matters
 
 Traditional vulnerability scanners rely on database lookups and pattern matching. While effective for known CVEs, they struggle with zero-day threats, misconfigurations, and contextual security decisions. AI-enhanced tools bring several advantages:

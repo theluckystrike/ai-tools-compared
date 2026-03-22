@@ -128,6 +128,19 @@ Pushes to production docs site automatically on merge to main.
 
 ## Swimm: Enterprise Knowledge Graphs
 
+## Table of Contents
+
+- [Swimm: Enterprise Knowledge Graphs](#swimm-enterprise-knowledge-graphs)
+- [Endpoint: POST /api/v1/payments](#endpoint-post-apiv1payments)
+- [Claude Code: Pay-Per-Use Inline Docstrings](#claude-code-pay-per-use-inline-docstrings)
+- [GitHub Copilot: IDE-Native, Lightweight](#github-copilot-ide-native-lightweight)
+- [ReadMe AI: API-First Documentation](#readme-ai-api-first-documentation)
+- [Get Invoice](#get-invoice)
+- [Pricing & ROI Matrix](#pricing-roi-matrix)
+- [Integration Setup: Side-by-Side](#integration-setup-side-by-side)
+- [Decision Tree](#decision-tree)
+- [Practical Implementation: Quick Start](#practical-implementation-quick-start)
+
 Swimm takes a different approach: it builds a persistent knowledge base of your codebase architecture, not just docstrings.
 
 **Pricing:** Custom quotes starting $1,500/month. Free tier for open source.

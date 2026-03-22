@@ -40,6 +40,24 @@ AI coding assistants have become essential for developer productivity, but they 
 - **Set non-root user for**: runtime 7.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Why Dockerfile Layer Ordering Matters to Your Team](#why-dockerfile-layer-ordering-matters-to-your-team)
+- [Configuring GitHub Copilot for Team Dockerfiles](#configuring-github-copilot-for-team-dockerfiles)
+- [Customizing Codeium for Dockerfile Conventions](#customizing-codeium-for-dockerfile-conventions)
+- [Using Cursor for Team-Specific Dockerfiles](#using-cursor-for-team-specific-dockerfiles)
+- [Dockerfile Conventions](#dockerfile-conventions)
+- [Practical Workflow Integration](#practical-workflow-integration)
+- [Testing Your Configuration](#testing-your-configuration)
+- [Real-World Configuration Examples](#real-world-configuration-examples)
+- [Go Dockerfile Conventions](#go-dockerfile-conventions)
+- [Configuration Tool Comparison](#configuration-tool-comparison)
+- [Advanced Configuration: Team-Wide Standards](#advanced-configuration-team-wide-standards)
+- [Validation and Monitoring](#validation-and-monitoring)
+- [Measuring Configuration Effectiveness](#measuring-configuration-effectiveness)
+- [Troubleshooting Configuration Issues](#troubleshooting-configuration-issues)
+- [Framework Exceptions](#framework-exceptions)
+
 ## Why Dockerfile Layer Ordering Matters to Your Team
 
 Your team's Dockerfile layer ordering probably emerged from hard-won experience. Perhaps you discovered that installing dependencies before copying source code created proper cache invalidation. Maybe security requirements mandate placing vulnerability scanning steps at specific positions. Whatever your reasons, consistency across your codebase matters.

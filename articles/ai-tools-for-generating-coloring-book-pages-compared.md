@@ -42,6 +42,19 @@ For most developers, running Stable Diffusion locally with a specialized line ar
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
+## Table of Contents
+
+- [Understanding Coloring Book Page Requirements](#understanding-coloring-book-page-requirements)
+- [Top Approaches for Generating Coloring Book Pages](#top-approaches-for-generating-coloring-book-pages)
+- [Comparison Matrix](#comparison-matrix)
+- [Practical Implementation Strategy](#practical-implementation-strategy)
+- [Recommendations by Use Case](#recommendations-by-use-case)
+- [Key Considerations](#key-considerations)
+- [End-to-End Batch Processing Pipeline](#end-to-end-batch-processing-pipeline)
+- [Quality Metrics and Validation](#quality-metrics-and-validation)
+- [Cost Analysis for Different Approaches](#cost-analysis-for-different-approaches)
+- [Advanced Prompt Optimization](#advanced-prompt-optimization)
+
 ## Understanding Coloring Book Page Requirements
 
 Not all AI-generated images work as coloring book pages. A good coloring page needs:

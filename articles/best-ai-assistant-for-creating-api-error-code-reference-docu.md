@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Best AI Assistant for Creating API Error Code Reference Documentation 2026"
+title: "Best AI Tool for API Error Code Docs (2026)"
 description: "A practical guide for developers and power users comparing AI tools for generating comprehensive API error code reference documentation"
 date: 2026-03-21
 last_modified_at: 2026-03-21

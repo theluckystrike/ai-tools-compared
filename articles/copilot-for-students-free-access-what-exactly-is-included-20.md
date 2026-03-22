@@ -39,6 +39,21 @@ GitHub Copilot for Students includes unlimited code completions, chat-based assi
 - **These are minor limitations**: for most student workflows.
 - **Is the annual plan**: worth it over monthly billing? Annual plans typically save 15-30% compared to monthly billing.
 
+## Table of Contents
+
+- [What GitHub Copilot for Students Actually Includes](#what-github-copilot-for-students-actually-includes)
+- [How to Get Free Copilot Access as a Student](#how-to-get-free-copilot-access-as-a-student)
+- [Practical Ways to Use Copilot as a Student Developer](#practical-ways-to-use-copilot-as-a-student-developer)
+- [Limitations to Understand](#limitations-to-understand)
+- [Maximizing Copilot as a Student](#maximizing-copilot-as-a-student)
+- [Comparison: Free Student Tools](#comparison-free-student-tools)
+- [Setting Up Copilot Across Your IDEs](#setting-up-copilot-across-your-ides)
+- [Real Student Projects Where Copilot Excels](#real-student-projects-where-copilot-excels)
+- [Academic Integrity Guidelines](#academic-integrity-guidelines)
+- [Building Your GitHub Profile with Copilot](#building-your-github-profile-with-copilot)
+- [Staying Within Free Tier Limits](#staying-within-free-tier-limits)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+
 ## What GitHub Copilot for Students Actually Includes
 
 When you verify your student status through GitHub's education program, you receive access to GitHub Copilot with no monthly fees. This is not a limited trial—it includes the core features that make Copilot valuable for developers.

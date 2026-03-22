@@ -39,6 +39,20 @@ SDK generation from API specifications has evolved from simple code templates to
 - **This reduced data-fetching bugs**: by 60% and improved developer velocity by 45% (developers spent less time guessing response shapes).
 - **The compiler-generated protobuf code**: was 40% smaller than hand-written REST clients.
 
+## Table of Contents
+
+- [Speakeasy](#speakeasy)
+- [Swagger Codegen](#swagger-codegen)
+- [Amazon Ion Code Generator](#amazon-ion-code-generator)
+- [GraphQL Code Generator](#graphql-code-generator)
+- [Protobuf Code Generation](#protobuf-code-generation)
+- [Stainless (API Client Generator)](#stainless-api-client-generator)
+- [Comparison Table](#comparison-table)
+- [Implementation Guide](#implementation-guide)
+- [Performance Benchmarks](#performance-benchmarks)
+- [Selection Criteria](#selection-criteria)
+- [Common Issues and Solutions](#common-issues-and-solutions)
+
 ## Speakeasy
 
 Speakeasy is a purpose-built SDK generator that treats your OpenAPI specification as a source of truth. The platform uses machine learning to understand API semantics and generates type-safe, idiomatic code for each target language.
@@ -413,10 +427,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI Features for Generating API Client Code from](/ai-tools-compared/best-ai-features-for-generating-api-client-code-from-openapi/)
-- [Claude Code API Client TypeScript Guide: Build Type-Safe](/ai-tools-compared/claude-code-api-client-typescript-guide/)
-- [AI Tools for Generating API Mock Servers 2026](/ai-tools-compared/ai-tools-for-generating-api-mock-servers-2026/)
-- [Best AI for Generating API Reference Documentation from Jsdo](/ai-tools-compared/best-ai-for-generating-api-reference-documentation-from-jsdo/)
+- [Best AI Features for Generating API Client Code](/ai-tools-compared/best-ai-features-for-generating-api-client-code-from-openapi/)
+- [AI Tools for API Documentation from Code 2026](/ai-tools-compared/ai-tools-for-api-documentation-from-code-2026/)
 - [Best AI Tools for Generating API Documentation From Code](/ai-tools-compared/best-ai-tools-for-generating-api-documentation-from-code-2026/)
-
+- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)
+- [AI Tools for Generating Platform Specific Code in Kotlin](/ai-tools-compared/ai-tools-for-generating-platform-specific-code-in-kotlin-mul/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

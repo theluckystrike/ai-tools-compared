@@ -54,6 +54,18 @@ GitHub Copilot and Claude excel at generating Jest tests for race conditions by 
 - **Always use randomization**: Deterministic timing hides race conditions
 2.
 
+## Table of Contents
+
+- [Why Race Conditions Are Hard to Test](#why-race-conditions-are-hard-to-test)
+- [Top AI Tools for Jest Race Condition Testing](#top-ai-tools-for-jest-race-condition-testing)
+- [Best Practices for AI-Assisted Race Condition Testing](#best-practices-for-ai-assisted-race-condition-testing)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+- [Advanced Race Condition Scenarios](#advanced-race-condition-scenarios)
+- [Stress Testing vs Unit Testing](#stress-testing-vs-unit-testing)
+- [Tool-Specific Strengths for Race Condition Testing](#tool-specific-strengths-for-race-condition-testing)
+- [Real-World Bug: Race Condition That Escaped to Production](#real-world-bug-race-condition-that-escaped-to-production)
+- [Testing Best Practices Summary](#testing-best-practices-summary)
+
 ## Why Race Conditions Are Hard to Test
 
 Race conditions occur when the behavior of code depends on the timing of uncontrollable external events. In JavaScript applications, this often manifests when multiple asynchronous operations execute in unpredictable orders. Traditional unit tests assume deterministic execution, but race conditions break this assumption.
@@ -507,10 +519,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How to Use AI to Debug Race Conditions in Python Asyncio](/ai-tools-compared/how-to-use-ai-to-debug-race-conditions-in-python-asyncio-concurrent-tasks/)
+- [Best AI for Creating Jest Tests That Verify Correct Suspense](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-suspense/)
 - [Best AI Assistant for Creating Jest Tests That Verify Error](/ai-tools-compared/best-ai-assistant-for-creating-jest-tests-that-verify-error-/)
 - [Best AI for Creating Jest Tests That Verify Correct React](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-react-co/)
-- [Best AI for Creating Jest Tests That Verify Correct Suspense](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-suspense/)
-- [Best AI for Creating Test Matrices That Cover All Input Comb](/ai-tools-compared/best-ai-for-creating-test-matrices-that-cover-all-input-comb/)
-
+- [Best AI Tool for Generating Jest Test Cases from React](/ai-tools-compared/best-ai-tool-for-generating-jest-test-cases-from-react-compo/)
+- [Best AI Assistant for Creating Playwright Tests for Multi](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-multi-st/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

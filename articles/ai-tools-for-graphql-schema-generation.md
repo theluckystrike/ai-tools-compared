@@ -47,6 +47,19 @@ type Query {
   user(id: ID!): User
   users(first: Int, after: String, role: UserRole): UserConnection!
 
+## Table of Contents
+
+- [What Makes a Good AI-Generated Schema](#what-makes-a-good-ai-generated-schema)
+- [Approach 1: TypeScript Types to GraphQL Schema](#approach-1-typescript-types-to-graphql-schema)
+- [Approach 2: Database Schema to GraphQL](#approach-2-database-schema-to-graphql)
+- [Automating Schema Generation](#automating-schema-generation)
+- [Tooling Comparison](#tooling-comparison)
+- [Approach 3: REST API Specification to GraphQL](#approach-3-rest-api-specification-to-graphql)
+- [Handling Edge Cases in AI-Generated Schemas](#handling-edge-cases-in-ai-generated-schemas)
+- [Pros and Cons of AI Schema Generation](#pros-and-cons-of-ai-schema-generation)
+- [Best Practices for Production Use](#best-practices-for-production-use)
+- [Related Reading](#related-reading)
+
 ## What Makes a Good AI-Generated Schema
 
 A well-generated GraphQL schema should:

@@ -40,6 +40,15 @@ Use AI tools to analyze your build history and identify patterns that correlate 
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Use AI tools to**: analyze your build history and identify patterns that correlate with pipeline failures, then implement predictive alerts before risky code changes trigger actual failures.
 
+## Table of Contents
+
+- [How AI Prediction Works for CI/CD](#how-ai-prediction-works-for-cicd)
+- [Key Indicators AI Tools Monitor](#key-indicators-ai-tools-monitor)
+- [Practical Approaches to Prediction](#practical-approaches-to-prediction)
+- [Tools Implementing These Approaches](#tools-implementing-these-approaches)
+- [Implementing Prediction in Your Pipeline](#implementing-prediction-in-your-pipeline)
+- [Measuring Prediction Effectiveness](#measuring-prediction-effectiveness)
+
 ## How AI Prediction Works for CI/CD
 
 AI tools for pipeline prediction use historical data from your repository, previous builds, and code changes to identify patterns that typically lead to failures. These systems analyze multiple data points: commit history, test results, code complexity metrics, dependency changes, and timing patterns.

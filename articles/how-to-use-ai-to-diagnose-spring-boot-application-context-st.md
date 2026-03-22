@@ -40,6 +40,13 @@ Spring Boot application context startup failures are among the most frustrating 
 - **The stack traces are lengthy**: the root cause is often buried deep in the trace, and the error messages sometimes point you in the wrong direction.
 - **Each requires a different**: debugging approach, and AI tools excel at analyzing the specific error patterns to identify the root cause quickly.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced Diagnostic Patterns](#advanced-diagnostic-patterns)
+- [Performance and Debugging Best Practices](#performance-and-debugging-best-practices)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

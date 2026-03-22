@@ -46,6 +46,18 @@ For simple REST APIs or static sites, Haiku is sufficient.
 
 2.
 
+## Table of Contents
+
+- [Why Generate Projects from Description?](#why-generate-projects-from-description)
+- [Top Cheap Options for Project Generation](#top-cheap-options-for-project-generation)
+- [Cost Comparison Table](#cost-comparison-table)
+- [Practical Example: $0 Project Generation](#practical-example-0-project-generation)
+- [Step-by-Step: Setting Up Cost-Effective Project Generation](#step-by-step-setting-up-cost-effective-project-generation)
+- [Pro Tips for Maximizing Output Quality](#pro-tips-for-maximizing-output-quality)
+- [Which Tool Should You Choose?](#which-tool-should-you-choose)
+- [Tips for Reducing Costs Further](#tips-for-reducing-costs-further)
+- [Related Reading](#related-reading)
+
 ## Why Generate Projects from Description?
 
 Describing what you want and letting AI build the skeleton saves hours of setup time. Instead of manually creating folder structures, configuration files, and boilerplate code, you get a functional starting point in minutes. This is especially valuable for:

@@ -43,6 +43,19 @@ Self-hosting AI models for code generation gives you data privacy, no API rate l
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **This guide compares the**: top self-hosted models for code generation in 2026, with practical implementation examples to help you choose the right one.
 
+## Table of Contents
+
+- [Why Self-Host Your Code Generation Model?](#why-self-host-your-code-generation-model)
+- [Top Self-Hosted Models for JavaScript and TypeScript](#top-self-hosted-models-for-javascript-and-typescript)
+- [Performance Comparison Table](#performance-comparison-table)
+- [Choosing the Right Model](#choosing-the-right-model)
+- [Setting Up Your Environment](#setting-up-your-environment)
+- [Advanced: Fine-Tuning Models on Your Codebase](#advanced-fine-tuning-models-on-your-codebase)
+- [IDE Integration Examples](#ide-integration-examples)
+- [Performance Tuning for Production](#performance-tuning-for-production)
+- [Measuring Success Metrics](#measuring-success-metrics)
+- [Security Considerations for Team Deployment](#security-considerations-for-team-deployment)
+
 ## Why Self-Host Your Code Generation Model?
 
 Running AI models locally or on your own servers eliminates several concerns that come with cloud-based alternatives. Your codebase never leaves your infrastructure, which matters for proprietary projects and client work under NDA. You avoid per-token costs and instead pay for compute resources once. Response times drop significantly since you eliminate network latency to third-party API endpoints. Many teams also appreciate the ability to fine-tune models on their specific codebase patterns.
@@ -423,10 +436,11 @@ Self-hosting code generation at scale introduces security concerns:
 
 ## Related Articles
 
-- [Self-Hosted AI Assistant for Writing Docker Files Without](/self-hosted-ai-assistant-for-writing-docker-files-without-cl/)
-- [Self-Hosted AI Tool for Generating OpenAPI Specs from](/self-hosted-ai-tool-for-generating-openapi-specs-from-existi/)
-- [Self-Hosted AI Tools for Generating Test Data and Fixtures](/self-hosted-ai-tools-for-generating-test-data-and-fixtures-l/)
-
+- [Best Local LLM Options for Code Generation 2026](/ai-tools-compared/best-local-llm-options-for-code-generation-2026/)
+- [Claude Code API Client TypeScript Guide: Build Type-Safe](/ai-tools-compared/claude-code-api-client-typescript-guide/)
+- [AI Code Generation Quality for JavaScript Async Await Patter](/ai-tools-compared/ai-code-generation-quality-for-javascript-async-await-patter/)
+- [Copilot vs Codeium for JavaScript Framework-Specific Code](/ai-tools-compared/copilot-vs-codeium-for-javascript-framework-specific-code-ge/)
+- [Best Practices for Combining AI Code Generation](/ai-tools-compared/best-practices-for-combining-ai-code-generation-with-manual-code-review/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

@@ -44,6 +44,19 @@ This bypasses the filter, returning all users.
 - **More dangerous**: " OR 1=1; DROP TABLE users; --
 Could execute arbitrary SQL.
 
+## Table of Contents
+
+- [Why AI Code Review Matters](#why-ai-code-review-matters)
+- [Key Differences in Approach](#key-differences-in-approach)
+- [Real Code Examples: What Each Model Catches](#real-code-examples-what-each-model-catches)
+- [Performance Metrics: Real Testing Results](#performance-metrics-real-testing-results)
+- [Practical Comparison Table](#practical-comparison-table)
+- [Optimal Use Strategy](#optimal-use-strategy)
+- [Pricing Comparison](#pricing-comparison)
+- [Integration into CI/CD](#integration-into-cicd)
+- [Common Questions](#common-questions)
+- [Getting Started](#getting-started)
+
 ## Why AI Code Review Matters
 
 Traditional code review relies on human reviewers—skilled, expensive, and subject to fatigue. A reviewer might catch an obvious null pointer exception but miss a race condition hiding in async code. They might enforce style consistency but overlook a subtle logic error that only manifests under specific data conditions. AI code review complements human review by catching classes of issues systematically.
@@ -552,11 +565,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
+- [Switching from GPT-4o to Claude Sonnet for Code Review](/ai-tools-compared/switching-from-gpt-4o-to-claude-sonnet-for-code-review-which/)
 - [Claude Sonnet vs GPT-4o for Code Generation: Practical](/ai-tools-compared/claude-sonnet-vs-gpt-4o-for-code-generation/)
-- [Switching from GPT-4o to Claude Sonnet for Code Review.](/ai-tools-compared/switching-from-gpt-4o-to-claude-sonnet-for-code-review-which/)
-- [Cursor AI with Claude vs GPT Models: Which Gives Better Code](/ai-tools-compared/cursor-ai-with-claude-vs-gpt-models-which-gives-better-code-/)
-- [Claude Sonnet vs Opus API Pricing Difference Worth It](/ai-tools-compared/claude-sonnet-vs-opus-api-pricing-difference-worth-it-2026/)
-- [AI Autocomplete Accuracy for Boilerplate Code vs Complex Log](/ai-tools-compared/ai-autocomplete-accuracy-for-boilerplate-code-vs-complex-log/)
-
+- [AI Pair Programming Tools Comparison 2026: Claude Code](/ai-tools-compared/ai-pair-programming-tools-comparison-2026/)
+- [Claude Code Runbook Documentation Guide](/ai-tools-compared/claude-code-runbook-documentation-guide/)
+- [Claude Code vs ChatGPT Code Interpreter Comparison](/ai-tools-compared/claude-code-vs-chatgpt-code-interpreter-comparison/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

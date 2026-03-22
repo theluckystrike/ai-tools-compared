@@ -39,6 +39,27 @@ This guide provides an overview to help you understand and make informed decisio
 - **Choose Windsurf if you want a middle ground**: detailed diffs available on demand without cluttering the editing experience for simple suggestions.
 - **Verdict**: For complex multi-file changes, Cascade (Windsurf) is most efficient.
 
+## Table of Contents
+
+- [Understanding Inline Diff Preview](#understanding-inline-diff-preview)
+- [GitHub Copilot: Subtle Ghost Text](#github-copilot-subtle-ghost-text)
+- [Cursor: Composer Diff Preview](#cursor-composer-diff-preview)
+- [Windsurf: Cascade Diff Visualization](#windsurf-cascade-diff-visualization)
+- [Practical Comparison by Use Case](#practical-comparison-by-use-case)
+- [Performance Considerations](#performance-considerations)
+- [Which Tool Provides the Best Inline Diff Preview?](#which-tool-provides-the-best-inline-diff-preview)
+- [GitHub Copilot vs Cursor: Real-World Benchmark](#github-copilot-vs-cursor-real-world-benchmark)
+- [Configuring Copilot for Private Repositories](#configuring-copilot-for-private-repositories)
+- [Detailed Comparison Table](#detailed-comparison-table)
+- [Practical Workflow Comparison](#practical-workflow-comparison)
+- [Real-World Performance Testing](#real-world-performance-testing)
+- [Keyboard Shortcuts Comparison](#keyboard-shortcuts-comparison)
+- [Detailed Cost Analysis](#detailed-cost-analysis)
+- [Integration Examples: Adding to Your Workflow](#integration-examples-adding-to-your-workflow)
+- [When Each Tool Excels](#when-each-tool-excels)
+- [Transitioning Between Tools](#transitioning-between-tools)
+- [Benchmark: 1-Hour Coding Session](#benchmark-1-hour-coding-session)
+
 ## Understanding Inline Diff Preview
 
 Inline diff preview shows you the exact differences between your current code and the AI-generated suggestion before any changes are applied. Rather than accepting suggestions blindly, developers can review additions, deletions, and modifications in context. This becomes particularly valuable when working with unfamiliar codebases or when suggestions affect multiple files.

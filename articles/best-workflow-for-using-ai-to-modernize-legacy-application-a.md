@@ -39,6 +39,14 @@ Modernizing legacy application architecture ranks among the most challenging tas
 - **Modernizing legacy application architecture**: ranks among the most challenging tasks developers face.
 - **Claude Code handles long-context**: analysis well, making it useful for summarizing entire modules.
 
+## Table of Contents
+
+- [Why AI Changes the Modernization Game](#why-ai-changes-the-modernization-game)
+- [The Five-Phase AI Modernization Workflow](#the-five-phase-ai-modernization-workflow)
+- [Choosing the Right AI Tool at Each Phase](#choosing-the-right-ai-tool-at-each-phase)
+- [Common Pitfalls to Avoid](#common-pitfalls-to-avoid)
+- [Measuring Modernization Success](#measuring-modernization-success)
+
 ## Why AI Changes the Modernization Game
 
 Traditional modernization approaches require extensive manual analysis. You need to understand what the existing code does before you can safely refactor it. This discovery phase consumes weeks or months of developer time, and the knowledge often walks out the door when team members leave.
@@ -275,10 +283,9 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [AI Tools for Writing ArgoCD Application Manifests and Gitops](/ai-tools-compared/ai-tools-for-writing-argocd-application-manifests-and-gitops/)
-- [How to Use AI to Diagnose Spring Boot Application Context](/ai-tools-compared/how-to-use-ai-to-diagnose-spring-boot-application-context-st/)
+- [Best Workflow for Using AI to Write Infrastructure as Code](/ai-tools-compared/best-workflow-for-using-ai-to-write-infrastructure-as-code-f/)
+- [Effective Workflow for Using AI: Generate](/ai-tools-compared/effective-workflow-for-using-ai-to-generate-and-maintain-changelog-documentation/)
+- [Best AI Tools for Generating Unit Tests: Legacy](/ai-tools-compared/best-ai-tools-for-generating-unit-tests-from-legacy-code-without-tests/)
+- [Effective Workflow for Using AI](/ai-tools-compared/effective-workflow-for-using-ai-to-debug-production-issues-from-logs/)
 - [Best AI IDE Features for Understanding and Modifying Legacy](/ai-tools-compared/best-ai-ide-features-for-understanding-and-modifying-legacy-/)
-- [Best AI Tools for Generating Unit Tests](/ai-tools-compared/best-ai-tools-for-generating-unit-tests-from-legacy-code-comparison/)
-- [Best AI Tools for Generating Unit Tests — From](/ai-tools-compared/best-ai-tools-for-generating-unit-tests-from-legacy-code-without-tests/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

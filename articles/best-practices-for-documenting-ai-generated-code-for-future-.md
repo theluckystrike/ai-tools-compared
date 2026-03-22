@@ -51,6 +51,20 @@ Add comments explaining design decisions and tradeoffs for every AI-generated fu
 - **Does NOT validate email format**: that validation happens in the
  * downstream user-registration service.
 
+## Table of Contents
+
+- [Why AI-Generated Code Needs Extra Documentation](#why-ai-generated-code-needs-extra-documentation)
+- [Strategy 1: Add AI Origin Comments](#strategy-1-add-ai-origin-comments)
+- [Strategy 2: Document Generated Code Behavior](#strategy-2-document-generated-code-behavior)
+- [Strategy 3: Create AI Context Files](#strategy-3-create-ai-context-files)
+- [Generation Details](#generation-details)
+- [Known Limitations (from testing)](#known-limitations-from-testing)
+- [Testing Coverage](#testing-coverage)
+- [Strategy 4: Use Type Hints and Schema Documentation](#strategy-4-use-type-hints-and-schema-documentation)
+- [Strategy 5: Establish Code Review Checklists](#strategy-5-establish-code-review-checklists)
+- [Strategy 6: Version AI Context Alongside Code](#strategy-6-version-ai-context-alongside-code)
+- [Strategy 7: Separate AI Patterns from Business Logic](#strategy-7-separate-ai-patterns-from-business-logic)
+
 ## Why AI-Generated Code Needs Extra Documentation
 
 When developers write code manually, they typically include comments explaining their reasoning—why a particular algorithm was chosen, what edge cases were considered, or what assumptions were made. AI models, however, optimize for generating syntactically correct code that matches patterns from their training data, often without explaining the logic behind those patterns.
@@ -267,11 +281,10 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Cursor AI Apply Model How It Merges Generated Code into Exis](/ai-tools-compared/cursor-ai-apply-model-how-it-merges-generated-code-into-exis/)
-- [Effective Strategies for Reviewing AI Generated Code Before](/ai-tools-compared/effective-strategies-for-reviewing-ai-generated-code-before-committing-to-repo/)
-- [Best Practices for AI Assisted Code Review Response and Revi](/ai-tools-compared/best-practices-for-ai-assisted-code-review-response-and-revi/)
-- [Best Practices for Combining AI Code Generation](/ai-tools-compared/best-practices-for-combining-ai-code-generation-with-manual-code-review/)
-- [How to Export Dall E Generated Images at Full Resolution](/ai-tools-compared/how-to-export-dall-e-generated-images-at-full-resolution-before-leaving/)
-
+- [Best Way to Configure Claude Code to Understand Your](/ai-tools-compared/best-way-to-configure-claude-code-to-understand-your-interna/)
+- [Best Practices for AI Tool Customization Files When Onboardi](/ai-tools-compared/best-practices-for-ai-tool-customization-files-when-onboardi/)
+- [Best Practices for AI Coding Tool Project Configuration](/ai-tools-compared/best-practices-for-ai-coding-tool-project-configuration-in-l/)
+- [Best AI Tools for Writing Kubernetes Operator Code](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-operator-code-from-scratch/)
+- [Best AI Tools for Python Celery Task Queue Code Generation](/ai-tools-compared/best-ai-tools-for-python-celery-task-queue-code-generation-2/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

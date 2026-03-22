@@ -41,6 +41,16 @@ Java reactive programming has become essential for building responsive, resilien
 - **AI tools frequently confuse the two**: validate which behavior your use case requires before accepting generated code.
 - **Copilot is fastest for**: routine patterns when working inside an IDE.
 
+## Table of Contents
+
+- [Understanding Project Reactor Fundamentals](#understanding-project-reactor-fundamentals)
+- [Practical Code Generation Examples](#practical-code-generation-examples)
+- [AI Tool Comparison for Reactor Code Generation](#ai-tool-comparison-for-reactor-code-generation)
+- [AI Generation Quality Factors](#ai-generation-quality-factors)
+- [Best Practices for Working with AI Assistants](#best-practices-for-working-with-ai-assistants)
+- [Advanced Patterns Worth Knowing](#advanced-patterns-worth-knowing)
+- [Common Pitfalls in AI-Generated Reactive Code](#common-pitfalls-in-ai-generated-reactive-code)
+
 ## Understanding Project Reactor Fundamentals
 
 Project Reactor introduces two core reactive types: `Mono` for single-value emissions and `Flux` for multi-value streams. These types implement the Reactive Streams specification and provide rich operator libraries for transformation, filtering, and error handling. Developers new to reactive programming often struggle with thinking reactively, and AI assistants can help bridge this gap by generating idiomatic code patterns.

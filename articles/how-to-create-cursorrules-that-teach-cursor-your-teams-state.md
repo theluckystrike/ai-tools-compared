@@ -42,6 +42,15 @@ CursorRules offer a powerful way to communicate your team's state management pat
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Why State Management Patterns Matter in CursorRules](#why-state-management-patterns-matter-in-cursorrules)
+- [Prerequisites](#prerequisites)
+- [Common Mistakes to Avoid](#common-mistakes-to-avoid)
+- [Advanced State Patterns: Persistence and Sync](#advanced-state-patterns-persistence-and-sync)
+- [When to Lift State](#when-to-lift-state)
+- [Troubleshooting](#troubleshooting)
+
 ## Why State Management Patterns Matter in CursorRules
 
 Every team develops unique approaches to handling application state. Some prefer centralized stores with Redux Toolkit, others favor distributed patterns with React hooks, and some use Zustand for its simplicity. When Cursor generates new components or modifies existing code, it needs to understand these patterns to produce consistent results.
@@ -354,11 +363,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Create CursorRules That Enforce Your Team's Git Commit](/ai-tools-compared/how-to-create-cursorrules-that-enforce-your-teams-git-commit/)
+- [Create CursorRules That Enforce Your Team's Git](/ai-tools-compared/how-to-create-cursorrules-that-enforce-your-teams-git-commit/)
+- [Writing CursorRules for Golang Projects with Specific](/ai-tools-compared/writing-cursorrules-for-golang-projects-with-specific-concur/)
+- [Writing Effective CursorRules for React TypeScript Projects](/ai-tools-compared/writing-effective-cursorrules-for-react-typescript-projects-/)
 - [How to Create .cursorrules That Enforce Your Teams React](/ai-tools-compared/how-to-create-cursorrules-that-enforce-your-teams-react-comp/)
-- [Best Practices for Versioning CursorRules Files Across Team](/ai-tools-compared/best-practices-for-versioning-cursorrules-files-across-team-/)
-- [Writing Custom Instructions That Make AI Follow Your Team's](/ai-tools-compared/writing-custom-instructions-that-make-ai-follow-your-teams-changelog-entry-format/)
-- [How to Use AI to Help Devrel Teams Create Video Tutorial Scr](/ai-tools-compared/how-to-use-ai-to-help-devrel-teams-create-video-tutorial-scr/)
-
+- [How to Use AI for Writing Effective Terraform State Manageme](/ai-tools-compared/how-to-use-ai-for-writing-effective-terraform-state-manageme/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

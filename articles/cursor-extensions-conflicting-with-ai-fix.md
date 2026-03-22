@@ -49,6 +49,16 @@ If you need different extension sets for different projects:
 
 1.
 
+## Table of Contents
+
+- [Understanding the Conflict](#understanding-the-conflict)
+- [Diagnostic Steps](#diagnostic-steps)
+- [Step-by-Step Fixes](#step-by-step-fixes)
+- [Preventing Future Conflicts](#preventing-future-conflicts)
+- [Advanced Troubleshooting](#advanced-troubleshooting)
+- [Common Scenarios and Solutions](#common-scenarios-and-solutions)
+- [When to Seek Further Help](#when-to-seek-further-help)
+
 ## Understanding the Conflict
 
 Cursor's AI capabilities—including autocomplete, chat, and agent mode—operate through tight integration with the editor's core. When extensions modify keybindings, language servers, or editor state, they can interfere with these AI features. The result ranges from broken autocomplete to complete AI feature failure.
@@ -326,12 +336,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Cursor AI Making Too Many API Calls Fix: Troubleshooting](/ai-tools-compared/cursor-ai-making-too-many-api-calls-fix/)
-- [Cursor AI Not Autocompleting TypeScript Fix](/ai-tools-compared/cursor-ai-not-autocompleting-typescript-fix/)
-- [Cursor AI Slow on Large monorepo Fix (2026)](/ai-tools-compared/cursor-ai-slow-on-large-monorepo-fix-2026/)
-- [Cursor Background Agent Timing Out Fix (2026)](/ai-tools-compared/cursor-background-agent-timing-out-fix-2026/)
-- [Cursor Composer Stuck in Loop: How to Fix](/ai-tools-compared/cursor-composer-stuck-in-loop-how-to-fix/)
-
+- [Cursor Keeps Crashing Fix 2026: Complete Troubleshooting](/ai-tools-compared/cursor-keeps-crashing-fix-2026/)
+- [Cursor Tab Accepting Wrong Suggestion](/ai-tools-compared/cursor-tab-accepting-wrong-suggestion-fix/)
+- [Cursor Composer Stuck in Loop: How](/ai-tools-compared/cursor-composer-stuck-in-loop-how-to-fix/)
+- [Cursor AI Not Autocompleting TypeScript](/ai-tools-compared/cursor-ai-not-autocompleting-typescript-fix/)
+- [Cursor Free Tier Limitations: What Stops Working After Trial](/ai-tools-compared/cursor-free-tier-limitations-what-stops-working-after-trial/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 {% endraw %}

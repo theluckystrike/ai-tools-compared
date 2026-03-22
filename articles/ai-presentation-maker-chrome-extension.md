@@ -42,6 +42,24 @@ AI presentation maker Chrome extensions have emerged as powerful tools for profe
 - **Use the extension while**: researching. The browser integration enables a powerful workflow: research a topic in one tab, highlight key sections, and send them directly to the presentation extension.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Understanding AI Presentation Maker Extensions](#understanding-ai-presentation-maker-extensions)
+- [Key Features to Look For](#key-features-to-look-for)
+- [Comparing Top AI Presentation Maker Extensions](#comparing-top-ai-presentation-maker-extensions)
+- [Feature Comparison Table](#feature-comparison-table)
+- [Practical Use Cases](#practical-use-cases)
+- [Workflow Best Practices](#workflow-best-practices)
+- [Limitations and Considerations](#limitations-and-considerations)
+- [Getting Started](#getting-started)
+- [Related Reading](#related-reading)
+- [Advanced Generation Techniques](#advanced-generation-techniques)
+- [Exporting and Integration](#exporting-and-integration)
+- [Real-World Use Cases and Examples](#real-world-use-cases-and-examples)
+- [Quality Assurance and Editing](#quality-assurance-and-editing)
+- [API Integration for Automation](#api-integration-for-automation)
+- [Limitations and Best Practices](#limitations-and-best-practices)
+
 ## Understanding AI Presentation Maker Extensions
 
 Chrome extensions for presentation creation work by integrating with your browser and using AI models to generate slide content, suggest designs, and automate the formatting process. Unlike traditional presentation software that requires manual formatting, these AI-powered tools handle the heavy lifting while you focus on the message.
@@ -237,6 +255,14 @@ Experiment with different input types—some tools handle website URLs, document
 - [AI Tab Organizer Chrome Extension: Managing Browser Tabs](/ai-tools-compared/ai-tab-organizer-chrome-extension/)
 - [Chrome Extension Budget Tracker Shopping](/ai-tools-compared/chrome-extension-budget-tracker-shopping/)
 - [Screen Sharing Chrome Extension](/ai-tools-compared/screen-sharing-chrome-extension/)
+
+## Related Articles
+
+- [AI Research Assistant Chrome Extension](/ai-tools-compared/ai-research-assistant-chrome-extension/)
+- [AI Summarizer Chrome Extension: A Developer Guide](/ai-tools-compared/ai-summarizer-chrome-extension/)
+- [Chrome Extension Budget Tracker Shopping](/ai-tools-compared/chrome-extension-budget-tracker-shopping/)
+- [Screen Sharing Chrome Extension](/ai-tools-compared/screen-sharing-chrome-extension/)
+- [AI Tab Organizer Chrome Extension: Managing Browser Tabs](/ai-tools-compared/ai-tab-organizer-chrome-extension/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

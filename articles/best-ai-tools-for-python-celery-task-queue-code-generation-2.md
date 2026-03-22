@@ -49,6 +49,17 @@ Several AI tools excel at this task. This guide recommends the best options base
 - **""" return asyncio.run(fetch_user_data(user_id)) @app.task**: def batch_process_users(user_ids: list[int]) -> list[dict]: """ Process multiple users concurrently.
 - **Using `asyncio.run()` within tasks**: is the current recommended approach.
 
+## Table of Contents
+
+- [Why Celery Code Generation Matters](#why-celery-code-generation-matters)
+- [Test Methodology](#test-methodology)
+- [Basic Task Generation](#basic-task-generation)
+- [Async Task Implementation](#async-task-implementation)
+- [Task Chains and Groups](#task-chains-and-groups)
+- [Error Handling and Retries](#error-handling-and-retries)
+- [Periodic Task Scheduling](#periodic-task-scheduling)
+- [Recommendations](#recommendations)
+
 ## Why Celery Code Generation Matters
 
 Celery's architecture involves brokers, backends, workers, and tasks—each requiring specific configuration and patterns. Poorly generated code can cause task serialization issues, missing result handling, improper retry logic, or worker configuration problems that lead to missed jobs.

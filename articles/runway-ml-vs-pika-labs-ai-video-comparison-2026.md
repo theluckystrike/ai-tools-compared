@@ -39,6 +39,19 @@ Choose Runway ML if you need advanced video editing capabilities, longer clips u
 - **Developers can integrate Runway's**: Gen-2 and Gen-3 models into custom applications.
 - **Pika Labs focuses on**: text-to-video and image-to-video generation with an API-first approach.
 
+## Table of Contents
+
+- [Platform Overview](#platform-overview)
+- [Feature Comparison at a Glance](#feature-comparison-at-a-glance)
+- [API Integration Patterns](#api-integration-patterns)
+- [Performance Characteristics](#performance-characteristics)
+- [Use Case Recommendations](#use-case-recommendations)
+- [Pricing Considerations](#pricing-considerations)
+- [Developer Experience](#developer-experience)
+- [Technical Limitations](#technical-limitations)
+- [Handling Asynchronous Generation in Production](#handling-asynchronous-generation-in-production)
+- [Prompt Engineering for Better Results](#prompt-engineering-for-better-results)
+
 ## Platform Overview
 
 Runway ML provides a full creative suite with API access through its SDK. The platform offers video generation, editing, and manipulation tools accessible via programmatic interfaces. Developers can integrate Runway's Gen-2 and Gen-3 models into custom applications.

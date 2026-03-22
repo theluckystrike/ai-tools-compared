@@ -43,6 +43,22 @@ Integration Testing**: For testing operators end-to-end, Claude suggests Ginkgo 
 - **For Kubebuilder development**: it provides inline suggestions as you type, making it useful for repetitive patterns in controller files.
 - **It works best for**: well-documented patterns from the Kubebuilder book.
 
+## Table of Contents
+
+- [Why AI Tools Matter for Kubebuilder Projects](#why-ai-tools-matter-for-kubebuilder-projects)
+- [Claude Code](#claude-code)
+- [GitHub Copilot](#github-copilot)
+- [Cursor](#cursor)
+- [Amazon CodeWhisperer](#amazon-codewhisperer)
+- [Recommendations by Use Case](#recommendations-by-use-case)
+- [Practical Tips for Using AI with Kubebuilder](#practical-tips-for-using-ai-with-kubebuilder)
+- [Deep Dive: Reconciliation Logic Patterns](#deep-dive-reconciliation-logic-patterns)
+- [Testing Operator Code](#testing-operator-code)
+- [Webhook Implementations](#webhook-implementations)
+- [Common Operator Patterns](#common-operator-patterns)
+- [Operator Framework Maturity](#operator-framework-maturity)
+- [Choosing Between Tools for Your Team](#choosing-between-tools-for-your-team)
+
 ## Why AI Tools Matter for Kubebuilder Projects
 
 Kubernetes operators built with Kubebuilder involve several complex components: API definitions with custom resource definitions (CRDs), reconcile loops with error handling, webhook implementations, and status management. Each component requires specific patterns and idiomatic Go code.
@@ -383,11 +399,10 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 ## Related Articles
 
 - [Best AI Tools for Writing Kubernetes Operator Code](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-operator-code-from-scratch/)
-- [AI Pair Programming Tools for C# and .NET Development](/ai-tools-compared/ai-pair-programming-tools-for-c-sharp-dotnet/)
-- [AI Tools for Detecting Kubernetes Misconfiguration Before](/ai-tools-compared/ai-tools-for-detecting-kubernetes-misconfiguration-before-de/)
-- [AI Tools for Generating Kubernetes Service Mesh](/ai-tools-compared/ai-tools-for-generating-kubernetes-service-mesh-configuratio/)
+- [AI Tools for Writing Kubernetes Operators 2026](/ai-tools-compared/ai-tools-for-writing-kubernetes-operators-2026/)
+- [Best AI Tools for Writing Kubernetes Custom Resource](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-custom-resource-definitions-2026/)
 - [AI Tools for Kubernetes Troubleshooting 2026](/ai-tools-compared/ai-tools-for-kubernetes-troubleshooting-2026/)
-
+- [Best AI Tools for Kubernetes Manifest Generation](/ai-tools-compared/best-ai-tools-for-kubernetes-manifest-generation/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 {% endraw %}

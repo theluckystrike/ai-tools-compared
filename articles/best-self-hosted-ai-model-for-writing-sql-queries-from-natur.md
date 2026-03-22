@@ -42,6 +42,24 @@ Building a self-hosted solution for converting natural language to SQL queries g
 ### 4.
 - **Starcoder2 (15B Parameters) For**: organizations with limited GPU resources, Starcoder2 offers a lighter alternative.
 
+## Table of Contents
+
+- [Why Self-Hosted for SQL Generation?](#why-self-hosted-for-sql-generation)
+- [Top Models for Natural Language to SQL](#top-models-for-natural-language-to-sql)
+- [Production Implementation Patterns](#production-implementation-patterns)
+- [Handling Edge Cases](#handling-edge-cases)
+- [Performance Optimization](#performance-optimization)
+- [Recommendations by Use Case](#recommendations-by-use-case)
+- [Fine-Tuning Models on Your Schema](#fine-tuning-models-on-your-schema)
+- [Cost Analysis and Total Cost of Ownership](#cost-analysis-and-total-cost-of-ownership)
+- [Advanced Prompt Engineering for SQL Generation](#advanced-prompt-engineering-for-sql-generation)
+- [Integration with Existing ORMs](#integration-with-existing-orms)
+- [Batch Processing and Performance Tuning](#batch-processing-and-performance-tuning)
+- [Monitoring and Reliability](#monitoring-and-reliability)
+- [Multi-Model Ensemble Approach](#multi-model-ensemble-approach)
+- [Conclusion](#conclusion)
+- [Evaluating Output Quality in Production](#evaluating-output-quality-in-production)
+
 ## Why Self-Hosted for SQL Generation?
 
 Running your own AI model for SQL generation makes sense when you handle sensitive data. Financial records, customer information, and proprietary business data should never leave your infrastructure. Cloud APIs introduce latency that impacts user experience in real-time applications. Additionally, self-hosted solutions eliminate per-query costs once you invest in hardware.
@@ -683,6 +701,14 @@ class SQLGenerationTracker:
 
 Track success rate over time. A success rate below 85% signals the model needs retraining on new schema patterns. A sudden drop in success rate usually indicates a schema migration that introduced new table or column names the model has not seen.
 Start with a quantized version of DeepSeek Coder or CodeLlama to test accuracy with your specific schemas before committing to full deployment. The initial setup effort pays dividends in data privacy and cost savings for production workloads. Monitor generation quality monthly and iterate on prompt templates based on failure patterns.
+
+## Related Articles
+
+- [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
+- [Best AI Assistant for Generating SQL Recursive Queries](/ai-tools-compared/best-ai-assistant-for-generating-sql-recursive-queries-for-hierarchical-org-chart-data/)
+- [Best AI for Writing SQL Performance Tuning Recommendations](/ai-tools-compared/best-ai-for-writing-sql-performance-tuning-recommendations-f/)
+- [Best AI for Writing dbt Macros That Generate Dynamic SQL](/ai-tools-compared/best-ai-for-writing-dbt-macros-that-generate-dynamic-sql-bas/)
+- [Best AI Tools for Writing SQL Migrations in 2026](/ai-tools-compared/articles/best-ai-tools-for-writing-sql-migrations-2026/---)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

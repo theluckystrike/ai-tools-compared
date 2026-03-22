@@ -39,6 +39,18 @@ Legal research has undergone a significant transformation with the integration o
 - **Recommend case law to**: review 4.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Why Legal Research AI Matters in 2026](#why-legal-research-ai-matters-in-2026)
+- [Top Legal Research AI Tools](#top-legal-research-ai-tools)
+- [Practical Considerations for Implementation](#practical-considerations-for-implementation)
+- [Making the Right Choice](#making-the-right-choice)
+- [Pricing and Deployment Models](#pricing-and-deployment-models)
+- [Real-World Legal Research CLI Workflow](#real-world-legal-research-cli-workflow)
+- [Building a Custom Legal Research Assistant](#building-a-custom-legal-research-assistant)
+- [Integration with Document Management](#integration-with-document-management)
+- [Multi-Jurisdiction Compliance](#multi-jurisdiction-compliance)
+
 ## Why Legal Research AI Matters in 2026
 
 The legal industry generates enormous volumes of documents daily. Court filings, precedents, statutes, and regulatory updates create a complex information ecosystem that traditional search methods struggle to navigate efficiently. AI-powered legal research tools address this challenge by using natural language processing to understand legal concepts rather than just matching keywords.

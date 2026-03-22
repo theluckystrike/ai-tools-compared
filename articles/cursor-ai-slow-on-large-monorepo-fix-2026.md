@@ -39,6 +39,21 @@ To fix Cursor AI running slow on a large monorepo, create a `.cursorignore` file
 - **Navigate to your user**: data directory (typically `~/Library/Application Support/Cursor` on macOS) 3.
 - **This forces Cursor to**: load only the most relevant code sections rather than attempting to process entire files.
 
+## Table of Contents
+
+- [Understanding the Performance Bottlenecks](#understanding-the-performance-bottlenecks)
+- [Step-by-Step Fixes](#step-by-step-fixes)
+- [Real Performance Benchmarks](#real-performance-benchmarks)
+- [Diagnostic Tips](#diagnostic-tips)
+- [Advanced Solutions](#advanced-solutions)
+- [Prevention Strategies](#prevention-strategies)
+- [Measuring and Monitoring Performance Improvements](#measuring-and-monitoring-performance-improvements)
+- [Benchmarking Before and After](#benchmarking-before-and-after)
+- [Enterprise-Scale Monorepo Considerations](#enterprise-scale-monorepo-considerations)
+- [Performance Monitoring Tools](#performance-monitoring-tools)
+- [Testing Your Configuration Changes](#testing-your-configuration-changes)
+- [Scaling Beyond Monorepo Optimization](#scaling-beyond-monorepo-optimization)
+
 ## Understanding the Performance Bottlenecks
 
 Large monorepos create specific challenges for AI-powered coding tools. Cursor AI builds an index of your entire codebase to provide context-aware suggestions and chat responses. When this index grows too large or becomes fragmented across multiple package managers, the tool struggles to retrieve relevant information quickly. Network latency can also play a role if you rely on cloud-based inference for complex queries.
@@ -282,10 +297,9 @@ These structural changes take more effort than configuration, but they provide t
 
 ## Related Articles
 
-- [ChatGPT Slow Response Fix 2026: Complete Troubleshooting](/ai-tools-compared/chatgpt-slow-response-fix-2026/)
-- [Cursor Pro Slow Model vs Fast Model Credits How It Works](/ai-tools-compared/cursor-pro-slow-model-vs-fast-model-credits-how-it-works/)
-- [Claude Code vs Cursor for Large Codebase Refactoring](/ai-tools-compared/claude-code-vs-cursor-for-large-codebase-refactoring/)
-- [Does Cursor Pro Charge Extra for Large File Indexing in 2026](/ai-tools-compared/does-cursor-pro-charge-extra-for-large-file-indexing-2026/)
+- [Cursor AI Slow Response Time How to Speed Up (2026)](/ai-tools-compared/cursor-ai-slow-response-time-how-to-speed-up-2026/)
+- [Cursor Keeps Crashing Fix 2026: Complete Troubleshooting](/ai-tools-compared/cursor-keeps-crashing-fix-2026/)
 - [Cursor AI Making Too Many API Calls Fix: Troubleshooting](/ai-tools-compared/cursor-ai-making-too-many-api-calls-fix/)
-
+- [Cursor Multi-File Edit Breaking Code Fix (2026)](/ai-tools-compared/cursor-multi-file-edit-breaking-code-fix-2026/)
+- [Cursor Extensions Conflicting with AI](/ai-tools-compared/cursor-extensions-conflicting-with-ai-fix/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

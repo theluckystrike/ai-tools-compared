@@ -40,6 +40,19 @@ Yes—ChatGPT Canvas is available to both ChatGPT Plus and ChatGPT Team subscrib
 - **Does ChatGPT offer a**: free tier? Most major tools offer some form of free tier or trial period.
 - **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 
+## Table of Contents
+
+- [What Is ChatGPT Canvas?](#what-is-chatgpt-canvas)
+- [Subscription Tiers and Canvas Access](#subscription-tiers-and-canvas-access)
+- [Plan Comparison Table](#plan-comparison-table)
+- [How to Access Canvas](#how-to-access-canvas)
+- [What You Can Do in Canvas](#what-you-can-do-in-canvas)
+- [Common Questions](#common-questions)
+- [Practical Example: Writing a Blog Post in Canvas](#practical-example-writing-a-blog-post-in-canvas)
+- [Canvas Code Review Workflow](#canvas-code-review-workflow)
+- [Canvas SEO Optimization Workflow](#canvas-seo-optimization-workflow)
+- [Pro Tips for Power Users](#pro-tips-for-power-users)
+
 ## What Is ChatGPT Canvas?
 
 Canvas is OpenAI's interactive writing and coding interface that lets you work on documents alongside ChatGPT. Unlike the standard chat interface where responses appear in a single message, Canvas opens a split-view environment where you can:
@@ -264,11 +277,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Gemini Advanced vs ChatGPT Plus Price Per Feature Comparison](/ai-tools-compared/gemini-advanced-vs-chatgpt-plus-price-per-feature-comparison-2026/)
-- [Switching from ChatGPT Plus to Perplexity Pro Feature Compar](/ai-tools-compared/switching-from-chatgpt-plus-to-perplexity-pro-feature-compar/)
+- [ChatGPT Plus Cancel Mid Month: Do You Keep Access Until End?](/ai-tools-compared/chatgpt-plus-cancel-mid-month-do-you-keep-access-until-end/)
+- [Switching from ChatGPT Plus to Perplexity Pro Feature](/ai-tools-compared/switching-from-chatgpt-plus-to-perplexity-pro-feature-compar/)
+- [ChatGPT Plus Subscription Not Activating](/ai-tools-compared/chatgpt-plus-subscription-not-activating-fix/)
+- [Claude Artifacts vs ChatGPT Canvas Comparison](/ai-tools-compared/claude-artifacts-vs-chatgpt-canvas-comparison/)
 - [ChatGPT Canvas Not Saving Changes Fix (2026)](/ai-tools-compared/chatgpt-canvas-not-saving-changes-fix-2026/)
-- [Claude Artifacts vs ChatGPT Canvas Collaborative Coding](/ai-tools-compared/claude-artifacts-vs-chatgpt-canvas-collaborative-coding/)
-- [ChatGPT API Fine Tuning Costs Training Plus Inference Total](/ai-tools-compared/chatgpt-api-fine-tuning-costs-training-plus-inference-total-estimate/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -40,6 +40,16 @@ When multiple developers work on the same codebase, merge conflicts become inevi
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Understanding the Merge Conflict Challenge](#understanding-the-merge-conflict-challenge)
+- [How AI Tools Generate Conflict Resolution Suggestions](#how-ai-tools-generate-conflict-resolution-suggestions)
+- [Practical Workflow for AI-Assisted Conflict Resolution](#practical-workflow-for-ai-assisted-conflict-resolution)
+- [Tools That Excel at Conflict Resolution](#tools-that-excel-at-conflict-resolution)
+- [Automating Conflict Detection in CI](#automating-conflict-detection-in-ci)
+- [Best Practices for AI-Assisted Conflict Resolution](#best-practices-for-ai-assisted-conflict-resolution)
+- [Example: Resolving a Multi-File Conflict](#example-resolving-a-multi-file-conflict)
+
 ## Understanding the Merge Conflict Challenge
 
 Pull request merge conflicts occur when Git cannot automatically reconcile changes between two branches. These conflicts typically appear as conflict markers in affected files:
@@ -326,11 +336,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Generating Dependency Update Pull Request Descr](/ai-tools-compared/ai-tools-for-generating-dependency-update-pull-request-descr/)
+- [AI Tools for Generating Dependency Update Pull Request](/ai-tools-compared/ai-tools-for-generating-dependency-update-pull-request-descr/)
+- [AI Tools for Generating pandas Merge and Join Operations](/ai-tools-compared/ai-tools-for-generating-pandas-merge-and-join-operations-fro/)
 - [Best AI for Resolving Git Merge Conflict Markers in Complex](/ai-tools-compared/best-ai-for-resolving-git-merge-conflict-markers-in-complex-/)
-- [How to Use AI to Generate Pull Request Impact Analysis](/ai-tools-compared/how-to-use-ai-to-generate-pull-request-impact-analysis-showi/)
-- [AI Tools for Generating pandas Merge and Join Operations Fro](/ai-tools-compared/ai-tools-for-generating-pandas-merge-and-join-operations-fro/)
-- [Best AI for Generating pandas Code to Merge Data from Multip](/ai-tools-compared/best-ai-for-generating-pandas-code-to-merge-data-from-multip/)
-
+- [Best AI for Generating pandas Code to Merge Data](/ai-tools-compared/best-ai-for-generating-pandas-code-to-merge-data-from-multip/)
+- [AI Tools for Reviewing Documentation Pull Requests](/ai-tools-compared/ai-tools-for-reviewing-documentation-pull-requests-for-accur/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

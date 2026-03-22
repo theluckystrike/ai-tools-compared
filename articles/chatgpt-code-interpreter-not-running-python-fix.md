@@ -40,6 +40,15 @@ To fix ChatGPT Code Interpreter not running Python, start a new conversation to 
 - **Code that runs fine**: on a developer laptop with 32GB RAM may hit memory limits in the sandbox.
 - **Reduce the size of**: the data you're working with, delete large DataFrames you no longer need using `del df`, and call `gc.collect()` explicitly to free memory.
 
+## Table of Contents
+
+- [Common Reasons Code Interpreter Fails to Run Python](#common-reasons-code-interpreter-fails-to-run-python)
+- [Diagnostic Steps When Code Still Won't Run](#diagnostic-steps-when-code-still-wont-run)
+- [Understanding Code Interpreter's Sandbox Constraints](#understanding-code-interpreters-sandbox-constraints)
+- [Common Error Patterns and Their Root Causes](#common-error-patterns-and-their-root-causes)
+- [Preventing Future Issues](#preventing-future-issues)
+- [Related Reading](#related-reading)
+
 ## Common Reasons Code Interpreter Fails to Run Python
 
 Understanding why the Code Interpreter stops working helps you diagnose the issue faster. The problems generally fall into several categories: session-related issues, syntax or runtime errors that cause immediate termination, resource limitations, and authentication or account status problems.
@@ -262,6 +271,14 @@ No. Each conversation starts with a fresh sandbox. Code, variables, and uploaded
 - [Running Starcoder2 Locally for Code Completion Without](/ai-tools-compared/running-starcoder2-locally-for-code-completion-without-sendi/)
 - [Gemini vs ChatGPT for Translating Python Data Pipelines](/ai-tools-compared/gemini-vs-chatgpt-for-translating-python-data-pipelines-to-rust/)
 - [AI Code Generation for Python FastAPI Endpoints](/ai-tools-compared/ai-code-generation-for-python-fastapi-endpoints-with-pydantic-models-compared/)
+
+## Related Articles
+
+- [Claude Code vs ChatGPT Code Interpreter Comparison](/ai-tools-compared/claude-code-vs-chatgpt-code-interpreter-comparison/)
+- [Free Alternatives to ChatGPT Plus for Code Generation](/ai-tools-compared/free-alternatives-to-chatgpt-plus-for-code-generation-2026/)
+- [Claude vs ChatGPT for Refactoring Legacy Java Code](/ai-tools-compared/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
+- [Running Starcoder2 Locally for Code Completion](/ai-tools-compared/running-starcoder2-locally-for-code-completion-without-sendi/)
+- [Free AI Tools for Learning Python with Code Examples 2026](/ai-tools-compared/free-ai-tools-for-learning-python-with-code-examples-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

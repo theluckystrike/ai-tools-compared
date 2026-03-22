@@ -39,6 +39,21 @@ For developers building audio applications, extracting individual stems from mix
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **The service uses proprietary**: neural network models trained on diverse audio datasets.
 
+## Table of Contents
+
+- [Understanding Audio Source Separation](#understanding-audio-source-separation)
+- [LALAL.AI: Cloud API Approach](#lalalai-cloud-api-approach)
+- [iZotope RX: Desktop Workstation Approach](#izotope-rx-desktop-workstation-approach)
+- [Comparing for Developer Use Cases](#comparing-for-developer-use-cases)
+- [Hybrid Approaches](#hybrid-approaches)
+- [Recommendations](#recommendations)
+- [Alternative Tools Worth Considering](#alternative-tools-worth-considering)
+- [Practical Integration Examples](#practical-integration-examples)
+- [Performance Metrics Comparison](#performance-metrics-comparison)
+- [Quality Comparison Tests](#quality-comparison-tests)
+- [Cost-Benefit Analysis](#cost-benefit-analysis)
+- [Hybrid Workflow Example](#hybrid-workflow-example)
+
 ## Understanding Audio Source Separation
 
 Audio source separation (also called stem extraction) splits a mixed audio track into its component parts—vocals, drums, bass, and other instruments. This technology powers applications ranging from karaoke creation to remixing, sample extraction, and audio restoration. The two leading solutions take different approaches: LALAL.AI offers a cloud-first API model, while iZotope RX provides a desktop-first workstation with local processing.

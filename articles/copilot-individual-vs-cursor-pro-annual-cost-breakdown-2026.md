@@ -39,6 +39,22 @@ Finding affordable AI tools requires understanding the true cost structure. This
 - **The Pro plan costs**: $20/month when billed monthly, or $192/year when billed annually.
 - **This brings the effective**: monthly cost down to $16, which is exactly double the effective monthly cost of GitHub Copilot Individual.
 
+## Table of Contents
+
+- [Pricing Structure Comparison](#pricing-structure-comparison)
+- [What You Actually Get for Your Money](#what-you-actually-get-for-your-money)
+- [Usage Patterns and Hidden Costs](#usage-patterns-and-hidden-costs)
+- [Feature Comparison for Common Workflows](#feature-comparison-for-common-workflows)
+- [Annual Cost Scenarios](#annual-cost-scenarios)
+- [Making the Financial Decision](#making-the-financial-decision)
+- [Beyond Cost: Feature Depth Comparison](#beyond-cost-feature-depth-comparison)
+- [Quick Decision Tree](#quick-decision-tree)
+- [Extended Real-World Comparisons: Across Different Job Roles](#extended-real-world-comparisons-across-different-job-roles)
+- [Annual ROI Calculation by Employment Type](#annual-roi-calculation-by-employment-type)
+- [Switching Costs and Productivity Dips](#switching-costs-and-productivity-dips)
+- [Tax and Expense Treatment (US Context)](#tax-and-expense-treatment-us-context)
+- [Budget Planning for Teams](#budget-planning-for-teams)
+
 ## Pricing Structure Comparison
 
 GitHub Copilot Individual offers two payment options: a monthly plan at $10/month or an annual plan at $100/year. This translates to roughly $8.33 per month when paid annually, representing a 17% savings compared to monthly billing. The annual payment of $100 upfront is the most cost-effective way to access Copilot Individual.

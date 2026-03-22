@@ -41,6 +41,13 @@ Cursor, built on VS Code, offers 2000 AI credits monthly on its free plan**: suf
 - **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
 - **The $5 monthly budget**: opens up quality options without financial strain.
 
+## Table of Contents
+
+- [Why Pay for AI Coding Assistants?](#why-pay-for-ai-coding-assistants)
+- [Top Picks: AI Coding Tools Under $5/Month](#top-picks-ai-coding-tools-under-5month)
+- [Comparative Summary](#comparative-summary)
+- [Making the Right Choice](#making-the-right-choice)
+
 ## Why Pay for AI Coding Assistants?
 
 Free tools have limitations—usage caps, restricted features, or basic functionality. A paid plan under $5 unlocks more requests, better context understanding, and advanced features like multi-file editing or enhanced debugging. For developers who code daily, the time saved outweighs the small cost.
@@ -306,10 +313,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI Coding Tool Under $20 Per Month (2026)](/ai-tools-compared/best-ai-coding-tool-under-20-dollars-per-month-2026/)
 - [AI Coding Tools Under $10 Per Month Ranked](/ai-tools-compared/ai-coding-tools-under-10-dollars-per-month-ranked/)
-- [How Much Does Cursor AI Actually Cost Per Month All Plans](/ai-tools-compared/how-much-does-cursor-ai-actually-cost-per-month-all-plans/)
-- [Midjourney Basic Plan Image Limits Per Month: Real Numbers](/ai-tools-compared/midjourney-basic-plan-image-limits-per-month-real-numbers-20/)
-- [AI Coding Assistant Accuracy for Typescript Next Js Server C](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
-
+- [Best AI Coding Tool Under $20 Per Month (2026)](/ai-tools-compared/best-ai-coding-tool-under-20-dollars-per-month-2026/)
+- [Best Budget AI Coding Assistant for Freelance Developers](/ai-tools-compared/best-budget-ai-coding-assistant-for-freelance-developers-202/)
+- [How to Evaluate AI Coding Assistant Accuracy](/ai-tools-compared/how-to-evaluate-ai-coding-assistant-accuracy/)
+- [Best AI Coding Tool with Pay As You Go No Subscription](/ai-tools-compared/best-ai-coding-tool-with-pay-as-you-go-no-subscription/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

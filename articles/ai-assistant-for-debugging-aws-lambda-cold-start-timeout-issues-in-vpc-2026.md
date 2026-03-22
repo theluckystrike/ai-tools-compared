@@ -45,6 +45,19 @@ Please help me:
 - **Identify the likely causes**: of the cold start delay 2.
 - **DNS Resolution Time**: If your function does DNS lookups during initialization, that adds 100-500ms.
 
+## Table of Contents
+
+- [Understanding Lambda Cold Start in VPC](#understanding-lambda-cold-start-in-vpc)
+- [How AI Assistants Diagnose Cold Start Issues](#how-ai-assistants-diagnose-cold-start-issues)
+- [Prompting AI for VPC Lambda Optimization](#prompting-ai-for-vpc-lambda-optimization)
+- [Implementing VPC Endpoints for Faster Starts](#implementing-vpc-endpoints-for-faster-starts)
+- [Best Practices for AI-Assisted Lambda Debugging](#best-practices-for-ai-assisted-lambda-debugging)
+- [Comparing AI Tools for Lambda Debugging](#comparing-ai-tools-for-lambda-debugging)
+- [Advanced Optimization with RDS Proxy](#advanced-optimization-with-rds-proxy)
+- [Lambda Memory and Execution Speed Trade-offs](#lambda-memory-and-execution-speed-trade-offs)
+- [VPC Lambda Cold Start Troubleshooting Checklist](#vpc-lambda-cold-start-troubleshooting-checklist)
+- [Measuring and Monitoring Cold Start Performance](#measuring-and-monitoring-cold-start-performance)
+
 ## Understanding Lambda Cold Start in VPC
 
 When AWS Lambda functions run inside a VPC, they need to create an Elastic Network Interface (ENI) to access VPC resources. This ENI attachment is the primary cause of cold start delays, often adding 6-10 seconds or more to your function's first invocation. The timeout issues become particularly problematic when your function needs to connect to RDS databases, ElastiCache clusters, or other VPC-only services.

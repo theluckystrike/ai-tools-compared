@@ -42,6 +42,19 @@ The simplest fix is to move imports from the module level to inside functions.
 - **The `pydeps` package generates**: visual dependency graphs, while `pylint` and `flake8-bugbear` include circular import checkers that integrate into CI pipelines.
 - **These patterns consistently yield**: actionable results: Include the full traceback. AI assistants reason better with the complete error message, not just the last line.
 
+## Table of Contents
+
+- [Understanding Circular Import Errors](#understanding-circular-import-errors)
+- [Step 1: Identify the Import Chain](#step-1-identify-the-import-chain)
+- [Step 2: Locate the Specific Import Statements](#step-2-locate-the-specific-import-statements)
+- [Step 3: Apply the Appropriate Fix](#step-3-apply-the-appropriate-fix)
+- [Step 4: Verify the Fix](#step-4-verify-the-fix)
+- [Step 5: Prevent Future Issues](#step-5-prevent-future-issues)
+- [Real-World Example](#real-world-example)
+- [Using AI Tools to Detect Circular Imports Proactively](#using-ai-tools-to-detect-circular-imports-proactively)
+- [AI Tool Comparison for Debugging Circular Imports](#ai-tool-comparison-for-debugging-circular-imports)
+- [Prompting Strategies That Work](#prompting-strategies-that-work)
+
 ## Understanding Circular Import Errors
 
 Python imports modules by executing the entire file from top to bottom. When module An imports module B, Python loads A, then encounters the import statement for B, and loads B. If B then tries to import A, Python finds that An is only partially loaded (because it's still in the middle of executing), leading to errors.
@@ -308,11 +321,10 @@ For packages, relative imports (e.g., `from . import utils`) make the dependency
 
 ## Related Articles
 
-- [How to Use AI to Resolve NPM Peer Dependency Conflict Errors](/ai-tools-compared/how-to-use-ai-to-resolve-npm-peer-dependency-conflict-errors/)
-- [How to Use AI to Generate Terraform Import Blocks for](/ai-tools-compared/how-to-use-ai-to-generate-terraform-import-blocks-for-existi/)
-- [AI Tools for Generating Dependency Update Pull Request Descr](/ai-tools-compared/ai-tools-for-generating-dependency-update-pull-request-descr/)
-- [Configuring AI Coding Tools to Follow Your Teams Dependency](/ai-tools-compared/configuring-ai-coding-tools-to-follow-your-teams-dependency-/)
-- [How to Use AI for Cloud Migration Planning and Dependency](/ai-tools-compared/how-to-use-ai-for-cloud-migration-planning-and-dependency-ma/)
-
+- [Best AI Tools for Code Migration Python 2](/ai-tools-compared/best-ai-tools-for-code-migration-python-2-to-3-java-8-to-21-guide/)
+- [How to Use AI to Resolve NPM Peer Dependency Conflict](/ai-tools-compared/how-to-use-ai-to-resolve-npm-peer-dependency-conflict-errors/)
+- [AI Tools for Automated Dependency Analysis](/ai-tools-compared/ai-tools-for-automated-dependency-analysis)
+- [How to Use AI to Generate Terraform Import Blocks](/ai-tools-compared/how-to-use-ai-to-generate-terraform-import-blocks-for-existi/)
+- [Free AI Tools for Learning Python with Code Examples 2026](/ai-tools-compared/free-ai-tools-for-learning-python-with-code-examples-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

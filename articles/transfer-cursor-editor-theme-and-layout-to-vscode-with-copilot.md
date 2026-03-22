@@ -39,6 +39,17 @@ Copy your Cursor `settings.json`, `keybindings.json`, and theme files directly i
 - **Recreate your preferred arrangement**: in VSCode.
 - **Save a workspace file**: (`.code-workspace`) to persist your preferred arrangement across restarts.
 
+## Table of Contents
+
+- [Understanding the Shared Foundation](#understanding-the-shared-foundation)
+- [Exporting Your Cursor Settings](#exporting-your-cursor-settings)
+- [Setting Up VSCode with Copilot](#setting-up-vscode-with-copilot)
+- [Migrating Editor Settings](#migrating-editor-settings)
+- [Recreating Your Layout](#recreating-your-layout)
+- [Transferring Keyboard Shortcuts](#transferring-keyboard-shortcuts)
+- [Migrating Extensions](#migrating-extensions)
+- [Using Copilot Effectively](#using-copilot-effectively)
+
 ## Understanding the Shared Foundation
 
 Cursor and Visual Studio Code are built on the same underlying technology. Cursor is a fork of VSCode with additional AI features built on top. This means your theme files, keyboard shortcuts, and many configuration settings work in both editors without modification.
@@ -371,10 +382,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Migrate VSCode Copilot Keybindings](/ai-tools-compared/migrate-vscode-copilot-keybindings-to-cursor-ai-editor-2026/)
 - [How to Transfer Copilot Code Review Settings](/ai-tools-compared/transfer-copilot-code-review-settings-to-cursor-ai-review-co/)
-- [How to Transfer Copilot Inline Chat Shortcuts](/ai-tools-compared/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)
-- [Copilot for JetBrains: Does It Cost Same as VSCode Version](/ai-tools-compared/copilot-for-jetbrains-does-it-cost-same-as-vscode-version/)
-- [How to Migrate Cursor AI Snippets and Templates](/ai-tools-compared/migrate-cursor-ai-snippets-and-templates-to-windsurf-editor/)
-
+- [How to Transfer GitHub Copilot Organization Settings](/ai-tools-compared/transfer-github-copilot-org-settings-when-switching-to-curso/)
+- [How to Migrate VS Code Copilot Keybindings](/ai-tools-compared/migrate-vscode-copilot-keybindings-to-cursor-ai-editor-2026/)
+- [Switching from Windsurf to Cursor How to Transfer Project](/ai-tools-compared/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
+- [How to Transfer Cursor Composer Prompt Library](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code-commands/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

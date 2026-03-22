@@ -43,6 +43,14 @@ Cursor Pro unlocks unlimited AI credits and access to the strongest underlying m
 - **If you need unlimited**: Copilot usage across a team with centralized policy management, Copilot Business at $19/user/month removes usage caps and adds audit logs.
 - **Cursor ($0-19/month) Cursor offers**: a compelling free tier that includes 2000 AI credits per month, enough for regular coding tasks.
 
+## Table of Contents
+
+- [Ranking: Best AI Coding Tools Under $10/Month](#ranking-best-ai-coding-tools-under-10month)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+- [Stack Comparison: Real-World Workflow Scenarios](#stack-comparison-real-world-workflow-scenarios)
+- [How to Evaluate Any AI Coding Tool Before Committing](#how-to-evaluate-any-ai-coding-tool-before-committing)
+- [When to Upgrade Beyond $10/Month](#when-to-upgrade-beyond-10month)
+
 ## Ranking: Best AI Coding Tools Under $10/Month
 
 ### 1. Claude Code (Free / Contact for Commercial Pricing)
@@ -298,9 +306,8 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [Best AI Coding Tool Under $20 Per Month (2026)](/ai-tools-compared/best-ai-coding-tool-under-20-dollars-per-month-2026/)
-- [Best AI Coding Assistant for Under $5 Per Month](/ai-tools-compared/best-ai-coding-assistant-for-under-5-dollars-per-month/)
-- [How Much Does Cursor AI Actually Cost Per Month All Plans](/ai-tools-compared/how-much-does-cursor-ai-actually-cost-per-month-all-plans/)
-- [Midjourney Basic Plan Image Limits Per Month: Real Numbers](/ai-tools-compared/midjourney-basic-plan-image-limits-per-month-real-numbers-20/)
-- [ChatGPT Plus Cancel Mid Month: Do You Keep Access Until End?](/ai-tools-compared/chatgpt-plus-cancel-mid-month-do-you-keep-access-until-end/)
-
+- [Best AI Coding Assistant for Under $5 Per](/ai-tools-compared/best-ai-coding-assistant-for-under-5-dollars-per-month/)
+- [Best Budget AI Coding Assistant for Freelance Developers](/ai-tools-compared/best-budget-ai-coding-assistant-for-freelance-developers-202/)
+- [Cursor Pro vs Copilot Individual Price Per Feature](/ai-tools-compared/cursor-pro-vs-copilot-individual-price-per-feature-compariso/)
+- [Best AI Coding Tools With Generous Free Tier for Hobbyists](/ai-tools-compared/best-ai-coding-tools-with-generous-free-tier-for-hobbyists/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
