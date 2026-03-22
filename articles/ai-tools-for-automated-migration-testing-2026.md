@@ -278,48 +278,6 @@ jobs:
           POSTGRES_USER: test
           POSTGRES_PASSWORD: test
           POSTGRES_DB: test_migrations
-<<<<<<< HEAD
-=======
-        ports:
-          - 5432:5432
-          POSTGRES_PASSWORD: test
->>>>>>> a24466f3e1cda953329f278f66d432642b766ace
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-        ports:
-          - 5432:5432
-
-    steps:
-      - uses: actions/checkout@v4
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - run: pip install -r requirements-test.txt
-      - name: Run migration tests
-        env:
-          DATABASE_URL: postgresql://test:test@localhost:5432/test_migrations
-        run: pytest tests/test_migrations/ -v --tb=short
-```
-
-Always test against the same database engine you run in production. A migration that works on SQLite can fail on PostgreSQL due to differences in constraint enforcement, column type handling, and transaction behavior.
-
-## Tool Comparison Summary
-
-<<<<<<< HEAD
-| Capability | Claude | Copilot | ChatGPT |
-|------------|--------|---------|---------|
-| Forward migration tests | Comprehensive | Basic | Moderate |
-| Rollback tests | Yes | Rarely | Sometimes |
-| Data integrity checks | Yes | No | Rarely |
-| Lock-free validation | Yes | No | No |
-| Fixture-based isolation | Yes | Sometimes | No |
-| Java / Flyway support | Yes | Moderate | Yes |
-| CI YAML generation | Yes | Yes | Yes |
-=======
 | Feature | Claude | GPT-4o | Copilot |
 |---------|--------|--------|---------|
 | Fixture-scoped setup/teardown | Yes | Often missing | No |
@@ -372,7 +330,6 @@ This catches silent data loss where rows are deleted without errors during the m
 | Learning Curve | Moderate | Low | High |
 
 Claude generates best-in-class tests for all three, but Alembic benefits most because Claude understands Python well and can generate comprehensive pytest fixtures that properly manage database state.
->>>>>>> a24466f3e1cda953329f278f66d432642b766ace
 
 ## Related Reading
 
