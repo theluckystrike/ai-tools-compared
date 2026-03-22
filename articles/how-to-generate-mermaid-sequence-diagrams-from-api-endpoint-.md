@@ -9,7 +9,7 @@ permalink: /how-to-generate-mermaid-sequence-diagrams-from-api-endpoint-descript
 categories: [guides]
 tags: [ai-tools-compared, tools, api]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

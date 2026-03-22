@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /how-to-create-cursorrules-that-enforce-your-teams-git-commit/
 categories: [guides]
 tags: [ai-tools-compared, tools]
-score: 8
+score: 9
 voice-checked: true
 reviewed: true
 intent-checked: true

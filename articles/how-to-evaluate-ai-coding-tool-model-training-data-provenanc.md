@@ -9,7 +9,7 @@ permalink: /how-to-evaluate-ai-coding-tool-model-training-data-provenanc/
 categories: [guides]
 tags: [ai-tools-compared, legal-risk, data-provenance, ai-tools, copyright, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
