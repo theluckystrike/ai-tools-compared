@@ -6,9 +6,9 @@ date: 2026-03-21
 author: theluckystrike
 permalink: /best-self-hosted-ai-model-for-javascript-typescript-code-gen/
 categories: [guides]
-tags: [ai-tools-compared, code-generation, javascript, typescript, self-hosted]
+tags: [ai-tools-compared, code-generation, javascript, typescript, self-hosted, best-of, artificial-intelligence]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 ---

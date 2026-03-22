@@ -7,7 +7,7 @@ last_modified_at: 2026-03-21
 author: "AI Tools Compared"
 permalink: /best-open-source-alternative-to-cody-by-sourcegraph-for-code/
 categories: [guides]
-tags: [ai-tools-compared, open-source, code-search, coding-assistant]
+tags: [ai-tools-compared, open-source, code-search, coding-assistant, best-of]
 reviewed: true
 score: 8
 intent-checked: false
