@@ -332,12 +332,12 @@ Use **Cursor Composer** when:
 - The edit is quality-sensitive (new API design, complex logic restructuring)
 - You're already in the IDE and want minimal context switching
 
-## Related Reading
+## Related Articles
 
-- [Claude Code vs Cursor for Large Codebase Refactoring](/claude-code-vs-cursor-for-large-codebase-refactoring/)
-- [AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026](/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
-- [How to Build AI Agents with Claude Agent SDK](/how-to-build-ai-agents-with-claude-agent-sdk/)
----
-
+- [Claude Code vs Cursor for Large Codebase Refactoring](/ai-tools-compared/claude-code-vs-cursor-for-large-codebase-refactoring/)
+- [Claude Code vs Cursor Composer](/ai-tools-compared/claude-code-vs-cursor-composer-for-full-stack-development-comparison/)
+- [Claude Code Losing Context Across Sessions](/ai-tools-compared/claude-code-losing-context-across-sessions-fix/)
+- [Claude Code vs Cursor for Backend Development](/ai-tools-compared/claude-code-vs-cursor-for-backend-development/)
+- [AI Pair Programming Tools Comparison 2026: Claude Code](/ai-tools-compared/ai-pair-programming-tools-comparison-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -325,13 +325,13 @@ Claude generates the endpoint Terraform and also flags which services support Ga
 | Orphaned resources cleanup | $50-300/month (varies) | Low |
 | EBS volume rightsizing | 10-20% of EBS spend | Low |
 
-## Related Reading
+## Related Articles
 
-- [AI Assistants for Writing Correct AWS IAM Policies](/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
-- [AI Tools for Writing AWS CDK Infrastructure 2026](/ai-tools-for-writing-aws-cdk-infrastructure-2026/)
-- [Best AI Tools for Cloud Cost Optimization Across AWS, Azure, GCP](/best-ai-tools-for-cloud-cost-optimization-across-aws-azure-g/)
----
-
+- [Best AI Tools for Cloud Cost Optimization Across AWS Azure](/ai-tools-compared/best-ai-tools-for-cloud-cost-optimization-across-aws-azure-g/)
+- [Best AI Assistants for AWS CloudFormation Template](/ai-tools-compared/best-ai-assistants-for-aws-cloudformation-template-generatio/)
+- [How Much Does Cursor AI Actually Cost Per Month All](/ai-tools-compared/how-much-does-cursor-ai-actually-cost-per-month-all-plans/)
+- [GitHub Copilot vs Amazon Codewhisperer for AWS Development](/ai-tools-compared/github-copilot-vs-amazon-codewhisperer-for-aws-development-2026/)
+- [AI Tools for Writing AWS CDK Infrastructure 2026](/ai-tools-compared/ai-tools-for-writing-aws-cdk-infrastructure-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

@@ -284,13 +284,13 @@ would be premature optimization?"
 
 Claude adjusts the feedback relevance well at this prompt. GPT-4 tends to give FAANG-optimized answers regardless of the stated context — useful for stretch prep, but it can create anxiety about problems that won't actually come up in the interview you're taking.
 
-## Related Reading
+## Related Articles
 
-- [Claude vs GPT-4 for Data Analysis](/ai-tools-compared/claude-vs-gpt4-for-data-analysis/)
-- [Claude vs ChatGPT for Technical Writing](/ai-tools-compared/claude-vs-chatgpt-for-technical-writing-2026/)
-- [AI Pair Programming: Cursor vs Windsurf vs Claude Code](/ai-tools-compared/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
----
-
+- [Claude vs GPT-4 for Data Analysis Tasks](/ai-tools-compared/claude-vs-gpt4-for-data-analysis/)
+- [How to Migrate ChatGPT System Prompts](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-forma/)
+- [Claude vs GPT-4 for Writing Documentation](/ai-tools-compared/claude-vs-gpt4-for-writing-documentation)
+- [Claude vs Gpt4 Terraform Pulumi Infrastructure Code](/ai-tools-compared/claude-vs-gpt4-terraform-pulumi-infrastructure-code-2026/)
+- [Claude Free vs ChatGPT Free Which Gives More Per](/ai-tools-compared/claude-free-vs-chatgpt-free-which-gives-more-per-day/)
 ## Deep Dive: Interview-Specific Metrics
 
 ## Table of Contents

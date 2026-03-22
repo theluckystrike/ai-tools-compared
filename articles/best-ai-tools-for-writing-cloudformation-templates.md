@@ -331,13 +331,13 @@ jobs:
 
 **cfn-lint loop** is essential regardless of which tool generates the template. Three iterations of Claude + cfn-lint fix produces clean templates for 95%+ of scenarios.
 
-## Related Reading
+## Related Articles
 
-- [Best AI Assistants for AWS CloudFormation Template Generation](/best-ai-assistants-for-aws-cloudformation-template-generatio/)
-- [AI Tools for Writing Terraform Infrastructure as Code](/ai-tools-for-writing-terraform-infrastructure-as-code-comparison-2026/)
-- [AI Assistants for Writing Correct AWS IAM Policies](/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
----
-
+- [Best AI Tools for Writing Helm Charts](/ai-tools-compared/best-ai-tools-for-writing-helm-charts/)
+- [Best AI Tools for Writing Kubernetes Custom Resource](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-custom-resource-definitions-2026/)
+- [Best AI Assistants for AWS CloudFormation Template](/ai-tools-compared/best-ai-assistants-for-aws-cloudformation-template-generatio/)
+- [Best AI Tools for Writing GitHub Actions Reusable Workflow](/ai-tools-compared/best-ai-tools-for-writing-github-actions-reusable-workflow-t/)
+- [Best AI Tools for Writing Unit Test Mocks 2026](/ai-tools-compared/best-ai-tools-for-writing-unit-test-mocks-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 

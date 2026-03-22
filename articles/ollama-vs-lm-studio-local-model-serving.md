@@ -391,12 +391,13 @@ Use both: Ollama for production, LM Studio for development exploration.
 
 This gives you the best of both tools.
 
-## Related Reading
+## Related Articles
 
-- [How to Set Up Ollama as a Private AI Coding Assistant](/ai-tools-compared/how-to-set-up-ollama-as-private-ai-coding-assistant-for-sensitive-codebases/)
-- [Running CodeLlama Locally vs Using Cloud Copilot](/ai-tools-compared/running-codellama-locally-vs-using-cloud-copilot-for-proprie/)
-- [Running DeepSeek Coder Locally vs Cloud API](/ai-tools-compared/running-deepseek-coder-locally-vs-cloud-api-for-private-repo/)
-
+- [How to Export ChatGPT API Fine-Tuned Model for Local](/ai-tools-compared/how-to-export-chatgpt-api-fine-tuned-model-for-local-use/)
+- [How to Set Up Ollama as Private AI Coding Assistant](/ai-tools-compared/how-to-set-up-ollama-as-private-ai-coding-assistant-for-sensitive-codebases/)
+- [Running DeepSeek Coder Locally vs Cloud API for Private](/ai-tools-compared/running-deepseek-coder-locally-vs-cloud-api-for-private-repo/)
+- [Cursor AI Model Selection Guide Which Model for Which Coding](/ai-tools-compared/cursor-ai-model-selection-guide-which-model-for-which-coding/)
+- [Cursor Pro Slow Model vs Fast Model Credits How It](/ai-tools-compared/cursor-pro-slow-model-vs-fast-model-credits-how-it-works/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

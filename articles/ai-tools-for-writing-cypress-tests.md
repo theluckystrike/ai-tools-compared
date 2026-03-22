@@ -240,14 +240,13 @@ Claude consistently uses `cy.selectFile()` (the current API). GPT-4 sometimes ou
 | In-editor completion | N/A | N/A | Excellent |
 | Fixture file generation | Yes | Yes | No |
 
-## Related Reading
+## Related Articles
 
-- [AI Tools for Debugging Flaky Cypress Tests Caused by Timing Issues](/ai-tools-compared/ai-tools-for-debugging-flaky-cypress-tests-caused-by-timing-issues/)
-- [AI Tools for Writing Selenium/Cypress Test Migration](/ai-tools-compared/ai-tools-for-writing-selenium-cypress-test-migration-2026/)
-- [AI Autocomplete for Test Files: How Well Different Tools Predict](/ai-tools-compared/ai-autocomplete-for-test-files-how-well-different-tools-pred/)
-
----
-
+- [Best AI Tools for Writing Playwright Tests](/ai-tools-compared/ai-tools-for-writing-playwright-tests-guide)
+- [AI Tools for Writing Selenium to Cypress Test Migration 2026](/ai-tools-compared/ai-tools-for-writing-selenium-cypress-test-migration-2026/)
+- [ChatGPT vs Claude for Generating Cypress Component Test](/ai-tools-compared/chatgpt-vs-claude-for-generating-cypress-component-test-boil/)
+- [AI Tools for Debugging Flaky Cypress Tests Caused by Timing](/ai-tools-compared/ai-tools-for-debugging-flaky-cypress-tests-caused-by-timing-issues/)
+- [Best AI Tools for Writing Unit Tests Comparison 2026](/ai-tools-compared/best-ai-tools-for-writing-unit-tests-comparison-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}
