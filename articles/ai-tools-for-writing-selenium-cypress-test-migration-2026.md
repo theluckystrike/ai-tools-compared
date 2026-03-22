@@ -241,4 +241,10 @@ For teams with 100+ tests, the cost savings and time savings justify the Claude 
 
 Strategy: Use Claude for the heavy lifting (batch conversion, custom commands), then validate and refine with human QA. This approach gets a 500-test suite converted in 1-2 weeks instead of 3-4 months.
 
+## Related Articles
+
+- [AI Tools for Writing Database Migration Rollback Scripts](/ai-tools-for-writing-database-migration-rollback-scripts-2026/)
+- [AI Tools for Writing pytest Tests for Alembic Database Paths](/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
+- [Best AI Tools for Writing Unit Test Mocks 2026](/best-ai-tools-for-writing-unit-test-mocks-2026/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
