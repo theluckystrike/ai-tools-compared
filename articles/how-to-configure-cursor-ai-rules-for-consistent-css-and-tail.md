@@ -317,6 +317,81 @@ Group responsive prefixes together and keep them in ascending order (sm before m
 ```
 
 
+## Team Collaboration with Shared Rules
+
+Committing `.cursorrules` to your repository is the most effective way to enforce consistency across a team. Every developer who opens the project in Cursor automatically inherits the same AI behavior without manual setup.
+
+A recommended repository structure:
+
+```
+your-project/
+├── .cursorrules          # Shared AI rules — committed to git
+├── .prettierrc           # Prettier config including tailwindcss plugin
+├── tailwind.config.js
+└── src/
+```
+
+Add a comment block at the top of `.cursorrules` that explains the ownership and update process:
+
+```
+# .cursorrules
+# Owner: frontend-team
+# Last updated: 2026-03
+# To update: open a PR with the proposed rule change and request review from #frontend-team
+#
+# These rules configure Cursor AI behavior for this project.
+# Do not edit locally without syncing — local changes override team rules silently.
+```
+
+This prevents the common issue of a developer adding personal rules locally that conflict with team standards and generating inconsistent code without realizing it.
+
+## .cursorrules vs Cursor Settings: When to Use Each
+
+Both approaches configure AI behavior, but they serve different scopes:
+
+| Aspect | .cursorrules file | Cursor Settings (AI Rules) |
+|---|---|---|
+| Scope | Per-project | Per-user, all projects |
+| Version controlled | Yes | No |
+| Team sharing | Automatic via git | Manual (export/import) |
+| Override behavior | Settings override file | File is project-specific |
+| Best for | Project CSS standards | Personal workflow preferences |
+
+Use `.cursorrules` for project-specific rules like your Tailwind ordering convention. Use Cursor Settings for personal preferences like preferred code style or response verbosity that you want across all projects.
+
+## Comparing Cursor, Windsurf, and Copilot for CSS Rule Enforcement
+
+Other AI coding tools offer similar configuration mechanisms with different tradeoffs:
+
+**Windsurf (Codeium)** uses `.windsurfrules` files with the same plain-text format as `.cursorrules`. The ordering conventions you write for Cursor translate directly to Windsurf with a file rename. Windsurf's autocomplete is faster on large Tailwind class lists but its chat interface applies rules less consistently than Cursor's.
+
+**GitHub Copilot** uses `.github/copilot-instructions.md` for repository-level instructions (available in Copilot for Business and Enterprise). Plain markdown formatting means less precise rule specification compared to structured `.cursorrules` files. Copilot also lacks the inline edit mode that makes Cursor particularly useful for refactoring class ordering across an existing codebase.
+
+**Claude Code** (this tool) does not have a persistent rules file but can be given ordering instructions in the session prompt. For one-off refactoring of a large codebase to consistent class ordering, Claude Code combined with a shell script is faster than manually prompting Cursor on each file.
+
+For teams standardizing on Tailwind class ordering, Cursor with a committed `.cursorrules` file remains the most effective tool as of 2026 because it applies rules in both autocomplete and chat, and `.cursorrules` is version-controlled alongside the code it governs.
+
+## Measuring Consistency Before and After
+
+To verify that your rules are working, you can measure class ordering consistency programmatically. Install `eslint-plugin-tailwindcss`:
+
+```bash
+npm install -D eslint-plugin-tailwindcss
+```
+
+Add it to your ESLint config:
+
+```json
+{
+  "plugins": ["tailwindcss"],
+  "rules": {
+    "tailwindcss/classnames-order": "warn"
+  }
+}
+```
+
+Run it before and after enabling your Cursor rules to count how many ordering violations exist. A healthy codebase should see warnings drop to near zero in AI-generated code once rules are active and developers are consistently using Cursor's chat and autocomplete rather than typing classes manually.
+
 
 ## Frequently Asked Questions
 
