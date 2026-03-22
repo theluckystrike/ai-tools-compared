@@ -92,9 +92,72 @@ Confirm keyboard handling. The component should respond to standard keyboard int
 
 Test with actual screen readers. AI-generated accessibility markup is a starting point—manual testing with VoiceOver, NVDA, or JAWS reveals issues that static analysis cannot catch.
 
+## State Management in Multi-Step Forms
+
+Steppers that collect data across multiple steps require proper state management. Request that AI generate state management code alongside the UI:
+
+```jsx
+import { useReducer } from 'react';
+
+const initialState = {
+  currentStep: 0,
+  formData: {
+    personalInfo: { name: '', email: '', phone: '' },
+    shippingAddress: { street: '', city: '', zip: '' },
+    paymentInfo: { cardNumber: '', expiry: '', cvv: '' }
+  },
+  completedSteps: new Set()
+};
+
+function formReducer(state, action) {
+  switch (action.type) {
+    case 'UPDATE_FIELD':
+      return {
+        ...state,
+        formData: {
+          ...state.formData,
+          [action.stepKey]: {
+            ...state.formData[action.stepKey],
+            [action.fieldName]: action.value
+          }
+        }
+      };
+    case 'NEXT_STEP':
+      return {
+        ...state,
+        currentStep: state.currentStep + 1,
+        completedSteps: new Set([...state.completedSteps, state.currentStep])
+      };
+    case 'PREV_STEP':
+      return { ...state, currentStep: Math.max(0, state.currentStep - 1) };
+    default:
+      return state;
+  }
+}
+
+function MultiStepForm() {
+  const [state, dispatch] = useReducer(formReducer, initialState);
+
+  return (
+    <Stepper
+      steps={steps}
+      currentStep={state.currentStep}
+      completedSteps={state.completedSteps}
+      onStepClick={index => {
+        if (state.completedSteps.has(state.currentStep)) {
+          dispatch({ type: 'SET_STEP', step: index });
+        }
+      }}
+    >
+      {/* Step content rendered based on currentStep */}
+    </Stepper>
+  );
+}
+```
+
 ## Framework-Specific Considerations
 
-React developers have access to libraries like Radix UI and React Aria that provide accessible primitives. AI tools can help integrate these libraries with proper configuration:
+React developers have access to libraries like Radix UI and React Aria that provide accessible primitives. AI tools can help integrate these libraries with proper configuration. When working with AI tools, specify your framework choice:
 
 ```jsx
 import { useStepper } from '@react-aria/stepsigner';
@@ -103,19 +166,140 @@ import { Stepper } from 'your-design-system';
 function CheckoutStepper() {
   const { stepperProps } = useStepper({
     items: [
-      { key: 'cart', title: 'Cart' },
-      { key: 'shipping', title: 'Shipping' },
-      { key: 'payment', title: 'Payment' },
-      { key: 'review', title: 'Review' },
+      { key: 'cart', title: 'Cart', description: 'Review your items' },
+      { key: 'shipping', title: 'Shipping', description: 'Where to send it' },
+      { key: 'payment', title: 'Payment', description: 'How to pay' },
+      { key: 'review', title: 'Review', description: 'Confirm your order' },
     ],
     defaultStep: 'cart',
   });
 
-  return <Stepper {...stepperProps} />;
+  return (
+    <section aria-label="Checkout steps">
+      <Stepper {...stepperProps} />
+    </section>
+  );
 }
 ```
 
 Vue developers can use similar patterns with Headless UI or Vuetify's accessible components. The key principle remains the same: use established accessibility libraries when possible, and use AI to adapt them to your specific requirements.
+
+For Angular applications, Material Design components provide accessible steppers. Request that AI generate wrappers that expose accessibility properties correctly.
+
+## Testing Accessible Steppers with Assistive Technologies
+
+AI-generated accessibility code requires actual testing. Use screen reader software to verify your stepper announcements:
+
+```javascript
+// Test helper for accessibility validation
+describe('Stepper Accessibility', () => {
+  it('should announce step changes to screen readers', async () => {
+    const { getByRole, getByLabelText } = render(<Stepper steps={mockSteps} />);
+
+    // Verify aria-current is set
+    const step2Button = getByLabelText(/Shipping.*current/);
+    expect(step2Button).toHaveAttribute('aria-current', 'step');
+
+    // Verify previous steps have completed status
+    const step1Button = getByLabelText(/Shipping.*completed/);
+    expect(step1Button).not.toHaveAttribute('aria-current');
+  });
+
+  it('should support keyboard navigation with arrow keys', async () => {
+    const { getByRole } = render(<Stepper steps={mockSteps} />);
+    const stepper = getByRole('navigation');
+
+    // Simulate arrow key navigation
+    fireEvent.keyDown(stepper, { key: 'ArrowRight' });
+    expect(onStepClick).toHaveBeenCalledWith(1);
+  });
+});
+```
+
+Real assistive technology testing (with NVDA, JAWS, or VoiceOver) should supplement automated tests. The human experience matters more than perfect ARIA markup.
+
+## Advanced Wizard Patterns
+
+Beyond steppers, wizards need additional patterns. AI tools can generate conditional step sequences where earlier choices determine which steps appear:
+
+```jsx
+function ConditionalWizard({ steps, onComplete }) {
+  const [currentStep, setCurrentStep] = useState(0);
+  const [choices, setChoices] = useState({});
+
+  // Filter steps based on previous choices
+  const availableSteps = steps.filter(step => {
+    if (!step.condition) return true;
+    return step.condition(choices);
+  });
+
+  return (
+    <nav aria-label="Multi-step form">
+      <ol role="list">
+        {availableSteps.map((step, index) => (
+          <li key={step.id}>
+            <button
+              aria-current={index === currentStep ? 'step' : undefined}
+              aria-label={`${step.title}${index < currentStep ? ' (completed)' : ''}`}
+              disabled={index > currentStep}
+              onClick={() => setCurrentStep(index)}
+            >
+              {step.title}
+            </button>
+          </li>
+        ))}
+      </ol>
+
+      {/* Step content and navigation */}
+      <div role="region" aria-live="polite">
+        {React.createElement(availableSteps[currentStep].component, {
+          onNext: () => setCurrentStep(currentStep + 1),
+          onBack: () => setCurrentStep(currentStep - 1),
+          onChoice: (key, value) => setChoices({...choices, [key]: value})
+        })}
+      </div>
+    </nav>
+  );
+}
+```
+
+## Progressive Disclosure in Wizards
+
+Wizards typically show one step at a time while hiding others. When using AI to generate this pattern, ensure focus management is correct—focus should move to the new step content, and users should be announced that content changed via `aria-live` regions.
+
+AI tools should generate this pattern consistently:
+
+```jsx
+<div
+  role="region"
+  aria-live="polite"
+  aria-label={`Step ${currentStep + 1}: ${steps[currentStep].title}`}
+>
+  {/* Step content appears here */}
+  {/* Focus should automatically move to first interactive element */}
+</div>
+```
+
+## Multi-Form State Management
+
+Complex wizards span multiple forms across steps. AI-generated code should maintain form state across step navigation, allowing users to step backward without losing previous entries:
+
+```jsx
+const [formState, setFormState] = useState({
+  personalInfo: { name: '', email: '' },
+  shippingAddress: { street: '', city: '' },
+  paymentMethod: { type: 'card', cardNumber: '' }
+});
+
+function updateStep(stepKey, data) {
+  setFormState(prev => ({
+    ...prev,
+    [stepKey]: { ...prev[stepKey], ...data }
+  }));
+}
+```
+
+AI should generate the infrastructure for this state management along with the UI components.
 
 ## Best Practices for AI-Assisted Development
 
@@ -123,7 +307,13 @@ Get better results from AI tools by providing context. Include your project's co
 
 Iterate on AI output rather than accepting the first generation. AI-generated components often require refinement—adding error handling, improving keyboard navigation, or adjusting ARIA labels for better screen reader experience.
 
-Document accessibility decisions alongside the generated code. Future maintainers need to understand why certain ARIA attributes were chosen or how keyboard interactions work.
+Document accessibility decisions alongside the generated code. Future maintainers need to understand why certain ARIA attributes were chosen or how keyboard interactions work. Include comments explaining which WCAG criteria each pattern addresses.
+
+## Common Pitfalls to Avoid
+
+Many AI-generated stepper components miss critical details. Ensure disabled future steps can't be activated through keyboard shortcuts or click events. Verify that step labels clearly communicate completion status beyond just visual indicators. Test that focus management works correctly when stepping backward—the browser's default focus behavior might not align with your expectations.
+
+Always verify generated ARIA attributes match current WAI-ARIA specification versions. Standards evolve, and AI training data might reference outdated patterns.
 
 
 

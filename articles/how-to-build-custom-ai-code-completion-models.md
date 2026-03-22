@@ -1,0 +1,385 @@
+---
+layout: default
+title: "How to Build Custom AI Code Completion Models"
+description: "Fine-tune CodeLlama or Starcoder2 on your internal codebase for domain-specific code completion, with training setup, evaluation, and deployment on Ollama"
+date: 2026-03-22
+author: theluckystrike
+permalink: /how-to-build-custom-ai-code-completion-models/
+categories: [guides]
+tags: [ai-tools-compared]
+reviewed: true
+score: 8
+intent-checked: true
+voice-checked: true
+---
+
+{% raw %}
+
+Off-the-shelf code completion models don't know your internal APIs, naming conventions, or domain-specific patterns. A custom fine-tuned model that completes your internal SDK calls or company-specific patterns can save significant developer time. This guide covers training data preparation, fine-tuning with QLoRA, evaluation, and deploying with Ollama or vLLM.
+
+## When Custom Models Make Sense
+
+Fine-tuning is worth the investment when:
+
+- You have proprietary internal frameworks or SDKs with 50+ public methods
+- Your codebase uses domain-specific patterns not well-represented in training data
+- You process code on-premises and can't send it to external APIs
+- You need sub-50ms completion latency (fine-tuned 7B models beat API latency)
+
+For general programming tasks, Claude or Copilot still win. For your internal `PaymentProcessor.process_with_retry()` calls, a fine-tuned model is more accurate.
+
+## Training Data Preparation
+
+Quality training data is more important than model size. A well-curated 10,000-example dataset beats a scraped 1M-example dataset for domain-specific tasks.
+
+```python
+# scripts/prepare_training_data.py
+import ast
+import json
+from pathlib import Path
+from typing import Generator
+
+def extract_fill_in_middle_examples(
+    code: str,
+    min_prefix: int = 50,
+    min_suffix: int = 20,
+    max_middle: int = 200
+) -> list[dict]:
+    """
+    Extract FIM (Fill-in-the-Middle) training examples from source files.
+    Randomly masks function bodies, docstrings, and variable assignments.
+    """
+    lines = code.split("\n")
+    examples = []
+
+    # Find function definitions to mask their bodies
+    try:
+        tree = ast.parse(code)
+    except SyntaxError:
+        return []
+
+    for node in ast.walk(tree):
+        if not isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
+            continue
+
+        body_start = node.body[0].lineno - 1
+        body_end = node.end_lineno
+
+        prefix_lines = lines[:body_start]
+        middle_lines = lines[body_start:body_end]
+        suffix_lines = lines[body_end:]
+
+        prefix = "\n".join(prefix_lines)
+        middle = "\n".join(middle_lines)
+        suffix = "\n".join(suffix_lines)
+
+        if (len(prefix) >= min_prefix and
+            len(suffix) >= min_suffix and
+            len(middle) <= max_middle):
+
+            examples.append({
+                "prefix": prefix,
+                "suffix": suffix,
+                "middle": middle,
+                # FIM format for StarCoder2
+                "text": f"<fim_prefix>{prefix}<fim_suffix>{suffix}<fim_middle>{middle}<|endoftext|>"
+            })
+
+    return examples
+
+def process_repo(repo_path: str, extensions: list = [".py", ".ts", ".go"]) -> list[dict]:
+    """Process all source files in a repository."""
+    all_examples = []
+    repo = Path(repo_path)
+
+    for ext in extensions:
+        for file_path in repo.rglob(f"*{ext}"):
+            # Skip tests, generated files, and vendor directories
+            if any(part in file_path.parts for part in ["test", "vendor", "node_modules", "__pycache__"]):
+                continue
+            if "generated" in file_path.name or "pb2" in file_path.name:
+                continue
+
+            try:
+                code = file_path.read_text(encoding="utf-8", errors="ignore")
+                examples = extract_fill_in_middle_examples(code)
+                all_examples.extend(examples)
+            except Exception:
+                continue
+
+    return all_examples
+
+# Run on your codebase
+examples = process_repo("/path/to/your/codebase")
+print(f"Extracted {len(examples)} training examples")
+
+# Save as JSONL
+with open("training_data.jsonl", "w") as f:
+    for ex in examples:
+        f.write(json.dumps(ex) + "\n")
+```
+
+## Fine-Tuning with QLoRA
+
+QLoRA lets you fine-tune a 7B parameter model on a single A100 (40GB) or two A10G GPUs. For a 3B model (Starcoder2-3b), you can use a single A10G.
+
+```python
+# train.py
+from transformers import AutoModelForCausalLM, AutoTokenizer, TrainingArguments
+from peft import LoraConfig, get_peft_model, TaskType
+from trl import SFTTrainer
+from datasets import load_dataset
+import torch
+
+MODEL_ID = "bigcode/starcoder2-7b"  # or "codellama/CodeLlama-7b-hf"
+
+# Load model with 4-bit quantization (QLoRA)
+from transformers import BitsAndBytesConfig
+
+bnb_config = BitsAndBytesConfig(
+    load_in_4bit=True,
+    bnb_4bit_quant_type="nf4",
+    bnb_4bit_compute_dtype=torch.bfloat16,
+    bnb_4bit_use_double_quant=True,
+)
+
+model = AutoModelForCausalLM.from_pretrained(
+    MODEL_ID,
+    quantization_config=bnb_config,
+    device_map="auto",
+    trust_remote_code=True,
+)
+tokenizer = AutoTokenizer.from_pretrained(MODEL_ID, trust_remote_code=True)
+tokenizer.pad_token = tokenizer.eos_token
+
+# LoRA config — target attention layers
+lora_config = LoraConfig(
+    r=16,           # rank — higher = more parameters, more capacity
+    lora_alpha=32,  # scaling factor
+    target_modules=["q_proj", "v_proj", "k_proj", "o_proj"],
+    lora_dropout=0.05,
+    bias="none",
+    task_type=TaskType.CAUSAL_LM,
+)
+
+model = get_peft_model(model, lora_config)
+model.print_trainable_parameters()
+# Typical output: trainable params: 40M || all params: 7.1B (0.56%)
+
+# Load dataset
+dataset = load_dataset("json", data_files="training_data.jsonl", split="train")
+
+training_args = TrainingArguments(
+    output_dir="./checkpoints",
+    num_train_epochs=3,
+    per_device_train_batch_size=4,
+    gradient_accumulation_steps=4,  # effective batch size = 16
+    learning_rate=2e-4,
+    warmup_steps=100,
+    logging_steps=50,
+    save_steps=500,
+    bf16=True,
+    report_to="tensorboard",
+    optim="paged_adamw_32bit",
+)
+
+trainer = SFTTrainer(
+    model=model,
+    args=training_args,
+    train_dataset=dataset,
+    dataset_text_field="text",
+    max_seq_length=2048,
+)
+
+trainer.train()
+trainer.model.save_pretrained("./fine-tuned-model")
+tokenizer.save_pretrained("./fine-tuned-model")
+```
+
+## Merging LoRA Weights
+
+After training, merge the LoRA adapter into the base model for faster inference:
+
+```python
+# merge_model.py
+from peft import PeftModel
+from transformers import AutoModelForCausalLM, AutoTokenizer
+
+base_model = AutoModelForCausalLM.from_pretrained(
+    "bigcode/starcoder2-7b",
+    torch_dtype="auto",
+    device_map="cpu",  # Load to CPU for merging
+)
+tokenizer = AutoTokenizer.from_pretrained("bigcode/starcoder2-7b")
+
+# Load and merge LoRA
+model = PeftModel.from_pretrained(base_model, "./fine-tuned-model")
+model = model.merge_and_unload()
+
+# Save merged model
+model.save_pretrained("./merged-model", safe_serialization=True)
+tokenizer.save_pretrained("./merged-model")
+print("Merged model saved.")
+```
+
+## Evaluation
+
+Before deploying, evaluate on a held-out test set:
+
+```python
+# evaluate.py
+from transformers import pipeline
+import json
+
+pipe = pipeline(
+    "text-generation",
+    model="./merged-model",
+    torch_dtype="auto",
+    device_map="auto",
+)
+
+def eval_completion(prefix: str, expected_middle: str, suffix: str) -> dict:
+    """Evaluate FIM completion accuracy."""
+    prompt = f"<fim_prefix>{prefix}<fim_suffix>{suffix}<fim_middle>"
+
+    output = pipe(
+        prompt,
+        max_new_tokens=min(len(expected_middle) * 2, 200),
+        temperature=0.2,
+        do_sample=True,
+        pad_token_id=pipe.tokenizer.eos_token_id,
+    )
+
+    generated = output[0]["generated_text"][len(prompt):]
+    # Stop at end-of-text token
+    if "<|endoftext|>" in generated:
+        generated = generated[:generated.index("<|endoftext|>")]
+
+    # Exact match
+    exact = generated.strip() == expected_middle.strip()
+
+    # Token-level accuracy
+    gen_tokens = set(generated.split())
+    exp_tokens = set(expected_middle.split())
+    token_overlap = len(gen_tokens & exp_tokens) / max(len(exp_tokens), 1)
+
+    return {
+        "exact_match": exact,
+        "token_overlap": token_overlap,
+        "generated": generated[:200],
+        "expected": expected_middle[:200],
+    }
+
+# Load test set
+with open("test_data.jsonl") as f:
+    test_examples = [json.loads(line) for line in f][:100]
+
+results = [
+    eval_completion(ex["prefix"], ex["middle"], ex["suffix"])
+    for ex in test_examples
+]
+
+exact_matches = sum(r["exact_match"] for r in results)
+avg_overlap = sum(r["token_overlap"] for r in results) / len(results)
+
+print(f"Exact match: {exact_matches}/{len(results)} ({exact_matches/len(results):.1%})")
+print(f"Average token overlap: {avg_overlap:.1%}")
+```
+
+## Deploying with Ollama
+
+Convert the merged model to GGUF format and serve with Ollama:
+
+```bash
+# Install llama.cpp for conversion
+brew install llama.cpp
+
+# Convert to GGUF (Q4_K_M quantization for 4-bit)
+llama-quantize ./merged-model/model.safetensors \
+  ./custom-coder-q4.gguf Q4_K_M
+
+# Create Ollama modelfile
+cat > Modelfile << 'EOF'
+FROM ./custom-coder-q4.gguf
+
+PARAMETER temperature 0.2
+PARAMETER top_p 0.95
+PARAMETER num_predict 200
+PARAMETER stop "<|endoftext|>"
+
+SYSTEM "You are a code completion model trained on internal company code."
+EOF
+
+# Create Ollama model
+ollama create custom-coder -f Modelfile
+
+# Test it
+ollama run custom-coder "def process_payment(amount: float, currency: str) ->"
+```
+
+## VS Code Integration
+
+```json
+// .vscode/settings.json — use with Continue.dev extension
+{
+  "continue.models": [
+    {
+      "title": "Custom Internal Coder",
+      "provider": "ollama",
+      "model": "custom-coder",
+      "apiBase": "http://localhost:11434",
+      "contextLength": 4096,
+      "completionOptions": {
+        "temperature": 0.2,
+        "maxTokens": 200
+      }
+    }
+  ],
+  "continue.tabAutocompleteModel": {
+    "title": "Custom Internal Coder",
+    "provider": "ollama",
+    "model": "custom-coder"
+  }
+}
+```
+
+## Related Reading
+
+- [AI Autocomplete Accuracy Comparison: Copilot vs Codeium vs Tabnine](/ai-autocomplete-accuracy-comparison-copilot-vs-codeium-vs-ta/)
+- [AI Code Completion Latency Comparison: Copilot vs Cursor vs Cody 2026](/ai-code-completion-latency-comparison-copilot-vs-cursor-vs-cody-2026/)
+- [How to Build AI Agents with Claude Agent SDK](/how-to-build-ai-agents-with-claude-agent-sdk/)
+
+---
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
+
+## Frequently Asked Questions
+
+
+**How long does it take to build custom ai code completion models?**
+
+For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
+
+
+**What are the most common mistakes to avoid?**
+
+The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
+
+
+**Do I need prior experience to follow this guide?**
+
+Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
+
+
+**Will this work with my existing CI/CD pipeline?**
+
+The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ. You may need to adapt file paths, environment variable names, and trigger conditions to match your pipeline tool. The underlying workflow logic stays the same.
+
+
+**Where can I get help if I run into issues?**
+
+Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
+
+
+{% endraw %}

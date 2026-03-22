@@ -185,5 +185,187 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [AI Code Completion for Flutter BLoC Pattern Event and State Class Generation](/ai-code-completion-for-flutter-bloc-pattern-event-and-state-/)
 - [AI Code Generation for Java Reactive Programming](/ai-code-generation-for-java-reactive-programming-with-projec/)
 - [AI Code Generation for Java Virtual Threads Project Loom](/ai-code-generation-for-java-virtual-threads-project-loom-pat/)
+## Advanced Scaling with Multiple Metrics
+
+While Knative defaults to request-based scaling, you can extend configurations with custom metrics. AI tools can help generate configurations that respond to custom Prometheus metrics:
+
+```yaml
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: ml-inference-service
+spec:
+  template:
+    metadata:
+      annotations:
+        # Custom metric-based scaling
+        autoscaling.knative.dev/class: "hpa.autoscaling.knative.dev"
+        autoscaling.knative.dev/metric: "rps"  # Requests per second
+        autoscaling.knative.dev/target: "100"
+
+        # Stable window for metric aggregation
+        autoscaling.knative.dev/window: "60s"
+        # Panic window for rapid scale-up
+        autoscaling.knative.dev/panicWindow: "6s"
+        autoscaling.knative.dev/panicThreshold: "2"
+    spec:
+      containers:
+      - image: my-ml-inference:latest
+        resources:
+          requests:
+            memory: "2Gi"
+            cpu: "1000m"
+          limits:
+            nvidia.com/gpu: "1"
+```
+
+## Integrating with Kubernetes Metrics Server
+
+For workloads where request-based scaling doesn't fit, configure Knative to work with Kubernetes' metrics-server, enabling memory or CPU-based scaling:
+
+```yaml
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: knative-custom-metrics
+spec:
+  scaleTargetRef:
+    apiVersion: serving.knative.dev/v1
+    kind: Service
+    name: compute-intensive-service
+  minReplicas: 1
+  maxReplicas: 20
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 70
+  - type: Resource
+    resource:
+      name: memory
+      target:
+        type: Utilization
+        averageUtilization: 80
+```
+
+This approach works when your workload's computational cost matters more than request volume.
+
+## Cold Start Optimization Strategies
+
+Cold starts—delays when Knative scales from zero to the first pod—impact user experience. Generate configurations that minimize cold start impact:
+
+```yaml
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: user-facing-api
+spec:
+  template:
+    metadata:
+      annotations:
+        # Prevent scaling to zero for user-facing services
+        autoscaling.knative.dev/minScale: "1"
+        # Use container image layers efficiently
+        autoscaling.knative.dev/enableScaleToZero: "false"
+    spec:
+      # Lightweight init containers reduce startup time
+      initContainers:
+      - name: cache-warmer
+        image: my-cache-warmer:latest
+        command: ["/bin/sh", "-c", "prefetch-common-data.sh"]
+
+      containers:
+      - name: api
+        image: my-api:latest
+        # Fast startup: minimal initialization
+        env:
+        - name: STARTUP_TIMEOUT
+          value: "5s"
+```
+
+Pair with strategies like container image optimization, efficient initialization code, and pre-warmed connection pools.
+
+## Monitoring and Adjusting Generated Configurations
+
+After deploying AI-generated configurations, monitor these key metrics:
+
+```bash
+# Check actual vs desired replica counts
+kubectl get knativeservices -w
+
+# Monitor scaling events
+kubectl logs -l serving.knative.dev/service=your-service \
+  -c autoscaler -f --tail=100
+
+# Metrics to track
+# - Replica count over time (smoothness indicates good target values)
+# - Pod creation rate (high rate = thrashing)
+# - Request latency during scale events
+# - Resource utilization per replica
+```
+
+Use these metrics to refine your configuration. If replica count oscillates wildly, increase `window` or adjust `target`. If latency spikes during scaling, your `minScale` might be too low.
+
+## Production Best Practices
+
+For production Knative services, AI-generated configurations should include:
+
+```yaml
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: production-service
+spec:
+  template:
+    metadata:
+      annotations:
+        # Conservative scaling prevents resource exhaustion
+        autoscaling.knative.dev/maxScale: "50"
+        autoscaling.knative.dev/minScale: "2"
+        autoscaling.knative.dev/target: "10"
+
+        # Longer stable window reduces thrashing
+        autoscaling.knative.dev/window: "120s"
+
+        # Pod disruption budgets maintain availability
+        policy.k8s.io/disruption-budget: "1"
+    spec:
+      # Resource requests prevent scheduling issues
+      containers:
+      - image: production-image:vX.Y.Z
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "256Mi"
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+
+      # Graceful shutdown
+      terminationGracePeriodSeconds: 30
+
+      # Health checks ensure traffic only routes to ready pods
+      livenessProbe:
+        httpGet:
+          path: /health/live
+          port: 8080
+        initialDelaySeconds: 5
+        periodSeconds: 10
+
+      readinessProbe:
+        httpGet:
+          path: /health/ready
+          port: 8080
+        initialDelaySeconds: 2
+        periodSeconds: 5
+```
+
+## Conclusion
+
+AI code generation tools significantly accelerate the process of configuring Knative Serving autoscaling for serverless workloads. By providing detailed context about your workload characteristics—traffic patterns, latency requirements, and resource needs—you can generate well-structured configurations that serve as excellent starting points.
+
+Remember to validate generated configs in staging, monitor key metrics, and iterate based on real-world behavior. The combination of AI assistance and operational feedback creates a powerful workflow for achieving optimal autoscaling performance. Start conservative with your settings, measure actual behavior, then optimize based on data.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
