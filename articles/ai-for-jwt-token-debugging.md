@@ -222,6 +222,60 @@ This is a production API. Users are getting 401s after a deploy. What happened a
 
 Claude will identify this as a key rotation without cache invalidation and provide the mitigation: extend JWKS cache TTL but add an explicit re-fetch on `kid` mismatch, then force re-auth for affected sessions.
 
+## Debugging Clock Skew and Expiry Issues
+
+Clock skew between services causes intermittent `jwt expired` and `jwt not active` errors that are hard to reproduce. Claude generates a diagnostic script:
+
+```python
+# check_jwt_timing.py — analyze exp/iat/nbf claims against current time
+import base64
+import json
+import sys
+import time
+from datetime import datetime, timezone
+
+def analyze_jwt_timing(token: str) -> None:
+    parts = token.split('.')
+    padding = 4 - len(parts[1]) % 4
+    if padding != 4:
+        parts[1] += '=' * padding
+
+    payload = json.loads(base64.urlsafe_b64decode(parts[1]))
+    now = time.time()
+
+    print(f"Current server time: {datetime.fromtimestamp(now, tz=timezone.utc).isoformat()}")
+    print(f"Current unix ts:     {now:.0f}")
+    print()
+
+    for claim in ['iat', 'exp', 'nbf']:
+        if claim in payload:
+            ts = payload[claim]
+            dt = datetime.fromtimestamp(ts, tz=timezone.utc).isoformat()
+            delta = ts - now
+            status = ""
+            if claim == 'exp':
+                status = "EXPIRED" if delta < 0 else f"expires in {delta:.0f}s"
+            elif claim == 'nbf':
+                status = "NOT YET VALID" if delta > 0 else "valid"
+            elif claim == 'iat':
+                status = f"issued {abs(delta):.0f}s {'ago' if delta < 0 else 'in the future (clock skew!)'}"
+            print(f"{claim}: {ts} ({dt}) — {status}")
+
+if __name__ == "__main__":
+    token = sys.argv[1] if len(sys.argv) > 1 else input("Paste token: ").strip()
+    analyze_jwt_timing(token)
+```
+
+When `iat` is in the future by more than a second or two, that indicates the issuing server's clock is ahead of the validating server. The fix is NTP sync, but the short-term workaround is adding a `clockTolerance` option:
+
+```javascript
+// jsonwebtoken: allow up to 30 seconds of clock skew
+jwt.verify(token, secret, {
+  algorithms: ['RS256'],
+  clockTolerance: 30,  // seconds
+});
+```
+
 ## Claim Validation Errors Reference
 
 Claude can generate a debugging checklist when you describe validation error patterns:
@@ -234,6 +288,64 @@ Claude can generate a debugging checklist when you describe validation error pat
 | `invalid issuer` | `iss` mismatch | Check env var for issuer URL (trailing slash matters) |
 | `invalid signature` | Wrong secret/key | Verify you're using correct key type for alg |
 | `jwt malformed` | Bad base64 encoding | Check for URL encoding of `.` or `+` in token |
+
+## Writing JWT Middleware Tests
+
+Claude generates parameterized test cases that cover the full error surface:
+
+```typescript
+// jwt.middleware.test.ts
+import jwt from 'jsonwebtoken';
+import { verifyTokenSecurely } from './jwt-middleware';
+
+const RSA_PRIVATE = `-----BEGIN RSA PRIVATE KEY-----
+... (test key, not production) ...
+-----END RSA PRIVATE KEY-----`;
+
+const RSA_PUBLIC = `-----BEGIN PUBLIC KEY-----
+... (test key, not production) ...
+-----END PUBLIC KEY-----`;
+
+describe('JWT middleware', () => {
+  it('rejects tokens with unexpected algorithm', () => {
+    // Sign with HS256 using the public key bytes (confusion attack simulation)
+    const maliciousToken = jwt.sign({ sub: 'attacker' }, RSA_PUBLIC, {
+      algorithm: 'HS256',
+    });
+    expect(() => verifyTokenSecurely(maliciousToken, RSA_PUBLIC)).toThrow(
+      'Rejected: unexpected algorithm HS256'
+    );
+  });
+
+  it('rejects expired tokens', () => {
+    const expiredToken = jwt.sign({ sub: 'user_123' }, RSA_PRIVATE, {
+      algorithm: 'RS256',
+      expiresIn: '-1s',  // already expired
+    });
+    expect(() => verifyTokenSecurely(expiredToken, RSA_PUBLIC)).toThrow('jwt expired');
+  });
+
+  it('rejects tokens with wrong issuer', () => {
+    const wrongIssuerToken = jwt.sign({ sub: 'user_123', iss: 'https://evil.com' }, RSA_PRIVATE, {
+      algorithm: 'RS256',
+    });
+    expect(() => verifyTokenSecurely(wrongIssuerToken, RSA_PUBLIC)).toThrow('invalid issuer');
+  });
+
+  it('accepts valid tokens', () => {
+    const validToken = jwt.sign({ sub: 'user_123' }, RSA_PRIVATE, {
+      algorithm: 'RS256',
+      expiresIn: '1h',
+      issuer: process.env.JWT_ISSUER,
+      audience: process.env.JWT_AUDIENCE,
+    });
+    const decoded = verifyTokenSecurely(validToken, RSA_PUBLIC);
+    expect(decoded.sub).toBe('user_123');
+  });
+});
+```
+
+AI tools excel at generating these edge case tests because algorithm confusion and clock skew issues are well-documented attack patterns in security literature. Claude consistently includes the algorithm confusion test; GPT-4o sometimes omits it.
 
 ## Related Reading
 
