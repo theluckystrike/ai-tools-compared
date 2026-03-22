@@ -19,20 +19,6 @@ tags: [ai-tools-compared]
 
 Claude handles Svelte well because it understands the compiler-first model, the reactivity system, and the shift from Svelte 4 to Svelte 5 runes. This guide covers practical workflows for component authoring, state management, and debugging.
 
-## Key Takeaways
-
-- **Do not use Svelte**: 4 patterns like reactive statements ($ labels) or export let.
-- **When you see `on:click` instead of `onclick`, remind it: "Use Svelte 5 event syntax**: onclick not on:click."
-
-It also sometimes writes `$effect` where `$derived` is correct.
-- **Use runes syntax ($state**: $derived, $effect, $props).
-- **That means AI tools**: need to understand what `$state`, `$derived`, and `$effect` actually compile into, not just pattern-match on React or Vue syntax.
-- **It defaults to runes**: syntax when you ask for "modern Svelte", knows the difference between `$props()` and the old `export let`, and understands that `$effect` is not `useEffect`.
-- **Here's the component**: [paste code]
-```
-
-Claude will spot missing `$derived` wrappers, incorrect `$effect` dependencies, or cases where you're mutating a `$state` array instead of reassigning it.
-
 ## Why Svelte + Claude Works
 
 Svelte is unusual among frontend frameworks — reactivity is a compile-time transform, not a runtime. That means AI tools need to understand what `$state`, `$derived`, and `$effect` actually compile into, not just pattern-match on React or Vue syntax.
@@ -126,6 +112,43 @@ Use Tailwind for styling.
 
 This is correct Svelte 5 — `$props()`, `$state`, `$derived`. The `createEventDispatcher` usage is still valid in Svelte 5 alongside the new callback props pattern.
 
+### Using Callback Props Instead of Events
+
+Svelte 5 introduced a cleaner alternative to `createEventDispatcher` — callback props. Claude produces both patterns correctly when you specify which you want:
+
+**Prompt:**
+```text
+Rewrite the pagination component to use callback props instead of createEventDispatcher.
+onPageChange should be an optional prop.
+```
+
+**Claude output:**
+
+```svelte
+<script lang="ts">
+  const {
+    totalItems,
+    pageSize = 20,
+    onPageChange,
+  }: {
+    totalItems: number;
+    pageSize?: number;
+    onPageChange?: (page: number) => void;
+  } = $props();
+
+  let currentPage = $state(1);
+  const totalPages = $derived(Math.ceil(totalItems / pageSize));
+
+  function goTo(page: number) {
+    if (page < 1 || page > totalPages) return;
+    currentPage = page;
+    onPageChange?.(page);
+  }
+</script>
+```
+
+Callback props are the idiomatic Svelte 5 pattern for components that need to communicate upward. They compose better with TypeScript and do not require the dispatcher import.
+
 ## SvelteKit Data Loading
 
 Claude handles SvelteKit `load` functions cleanly when you give it the full context.
@@ -181,6 +204,18 @@ interface Post {
 }
 ```
 
+### Combining Server and Client Load Functions
+
+For pages that need both server-side data and client-side reactivity, use `+page.server.ts` alongside `+page.ts`. Claude handles this split correctly:
+
+**Prompt:**
+```text
+I have a +page.server.ts that returns posts. I need a +page.ts that adds client-side
+filtering by category. The category filter should come from a URL param and be reactive.
+```
+
+Claude will produce a `+page.ts` that reads from `$page.url.searchParams` and returns a derived `filteredPosts` array — keeping server data cached while re-filtering on the client as the URL changes.
+
 ## Debugging with Claude
 
 For reactive bugs, paste the component and describe the symptom:
@@ -198,6 +233,25 @@ Common patterns Claude catches:
 - Using `$effect` for derived values instead of `$derived`
 - Forgetting `.svelte.ts` extension for runes in non-component files
 
+### Debugging Reactive Loops
+
+Reactive cycles (`$effect` writing to a variable it also reads) are subtle and produce cryptic warnings. Claude identifies them well:
+
+**Prompt:**
+```text
+My component logs "maximum update depth exceeded" in the browser console.
+Here is the offending $effect:
+
+$effect(() => {
+  if (items.length > 0) {
+    selectedIndex = 0;
+    items = items.filter(item => item.active);
+  }
+});
+```
+
+Claude will immediately identify that `items` is both read and written inside the same `$effect`, creating a cycle. The fix is to derive `activeItems` with `$derived` and use a separate effect only for the side effect of updating `selectedIndex`.
+
 ## Store Alternatives with Runes
 
 Claude can help you replace `writable` stores with rune-based modules:
@@ -211,6 +265,60 @@ export const count = writable(0);
 
 Claude produces a `count.svelte.ts` module using `$state` and exported getter/setter functions — the idiomatic Svelte 5 approach.
 
+### Shared Application State
+
+For more complex shared state (a shopping cart, auth session, or form wizard), Claude generates a full runes-based state module:
+
+**Prompt:**
+```text
+Create a cart.svelte.ts module that manages a shopping cart.
+Needs: addItem, removeItem, clearCart functions and a derived totalPrice.
+Items have id, name, price, quantity.
+```
+
+**Claude output:**
+
+```typescript
+// src/lib/cart.svelte.ts
+interface CartItem {
+  id: string;
+  name: string;
+  price: number;
+  quantity: number;
+}
+
+let items = $state<CartItem[]>([]);
+
+export const totalPrice = $derived(
+  items.reduce((sum, item) => sum + item.price * item.quantity, 0)
+);
+
+export function addItem(item: Omit<CartItem, 'quantity'>) {
+  const existing = items.find(i => i.id === item.id);
+  if (existing) {
+    items = items.map(i =>
+      i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i
+    );
+  } else {
+    items = [...items, { ...item, quantity: 1 }];
+  }
+}
+
+export function removeItem(id: string) {
+  items = items.filter(i => i.id !== id);
+}
+
+export function clearCart() {
+  items = [];
+}
+
+export function getItems() {
+  return items;
+}
+```
+
+Import `getItems`, `addItem`, `totalPrice` directly into any component. Because the module uses `.svelte.ts` extension and top-level `$state`, the reactive graph works across all component boundaries.
+
 ## Limits to Know
 
 Claude occasionally reverts to Svelte 4 syntax mid-conversation, especially for `{#each}` keyed blocks and event directives. When you see `on:click` instead of `onclick`, remind it: "Use Svelte 5 event syntax — onclick not on:click."
@@ -218,6 +326,17 @@ Claude occasionally reverts to Svelte 4 syntax mid-conversation, especially for 
 It also sometimes writes `$effect` where `$derived` is correct. If a value is purely computed from other state, it should be `$derived`, not `$effect` with a local variable.
 
 For complex animation and transition code (`fly`, `fade`, nested transitions), Claude is less reliable — test those outputs carefully.
+
+### Prompt Corrections That Work
+
+Keep these one-liners ready for mid-session corrections:
+
+- **Wrong event syntax**: "Use Svelte 5 event syntax — `onclick` not `on:click`"
+- **Wrong reactivity primitive**: "That value is computed, use `$derived` not `$effect` with a local variable"
+- **Old prop syntax**: "Use `$props()` destructuring, not `export let`"
+- **Store instead of runes**: "This is a Svelte 5 project — use a `.svelte.ts` module with `$state`, not a writable store"
+
+Pasting these corrections directly into the chat is faster than re-explaining the Svelte 5 migration context, and Claude applies the correction cleanly without needing a full restart.
 
 ## Related Reading
 
@@ -228,5 +347,5 @@ For complex animation and transition code (`fly`, `fade`, nested transitions), C
 ---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-```
+
 {% endraw %}
