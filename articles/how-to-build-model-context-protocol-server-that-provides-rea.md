@@ -28,7 +28,15 @@ intent-checked: true
 voice-checked: true---
 
 {% raw %}
+
 Model Context Protocol (MCP) enables AI assistants to interact with external tools and data sources through a standardized interface. When your AI assistant needs access to test execution results, building a dedicated MCP server provides a clean, maintainable solution. This guide walks through creating an MCP server that streams real-time test results from your test suite to any connected AI client.
+
+## Key Takeaways
+
+- **The MCP protocol uses**: JSON-RPC 2.0 for communication.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **This guide covers understanding**: mcp server architecture, setting up your project, implementing the mcp server, with specific setup instructions
+- **Setup and configuration**: Step-by-step instructions included for each tool discussed
 
 ## Understanding MCP Server Architecture
 

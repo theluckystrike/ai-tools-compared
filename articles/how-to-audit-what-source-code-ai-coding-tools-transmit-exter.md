@@ -28,9 +28,33 @@ intent-checked: true
 voice-checked: true---
 
 {% raw %}
+
 When you use AI coding tools like GitHub Copilot, Cursor, or Claude Code, your source code often gets transmitted to external servers for processing. Understanding what leaves your machine is essential for protecting proprietary code, meeting compliance requirements, and making informed decisions about your development environment.
 
 This guide covers practical methods to audit and monitor network traffic from AI coding tools, giving you visibility into exactly what data gets transmitted.
+
+## Key Takeaways
+
+- **The free tier allows**: code to be used to improve the model.
+- **Here's how to use it**: ```bash
+# Install mitmproxy
+pip install mitmproxy
+
+# Start the proxy on port 8080
+mitmproxy -p 8080
+```
+
+Configure your system or IDE to use `127.0.0.1:8080` as the HTTP proxy.
+- **For a simpler approach**: use the mitmweb interface:
+
+```bash
+mitmweb -p 8080
+```
+
+This opens a web interface at `http://127.0.0.1:8081` where you can browse captured requests.
+- **Use mitmproxy to inspect**: specific request payloads 3.
+- **The cloud-enhanced tier sends**: snippets for server-side inference, making Tabnine's free tier uniquely private among completion tools.
+- **When you use AI**: coding tools like GitHub Copilot, Cursor, or Claude Code, your source code often gets transmitted to external servers for processing.
 
 ## Why Auditing AI Coding Tool Traffic Matters
 
