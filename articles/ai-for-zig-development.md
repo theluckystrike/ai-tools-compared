@@ -102,6 +102,18 @@ pub fn main() !void {
 
 Claude correctly uses an `ArenaAllocator` for parsing (all intermediate allocations freed at once), then copies only the final values to the caller's allocator. This is the idiomatic Zig pattern. GPT-4 sometimes passes the caller's allocator directly for both parsing and result, which leaks the intermediate parsed memory.
 
+### Choosing the Right Allocator
+
+AI tools are most useful when you explain your use case, not just ask for code. Ask Claude to recommend an allocator:
+
+```
+My Zig HTTP server handles requests concurrently. Each request parses headers,
+processes a body, writes a response, then is done. I don't need to keep any
+allocation after the response is sent. Which allocator should I use per request?
+```
+
+Claude will recommend `ArenaAllocator` per request, initialized from a `GeneralPurposeAllocator`, and explain that this gives you O(1) bulk deallocation when the request completes. It will also warn against `FixedBufferAllocator` unless you can bound the maximum allocation size statically.
+
 ## Comptime Generics
 
 Zig's `comptime` replaces traditional generics. AI tools handle common patterns but struggle with complex comptime type manipulation.
@@ -170,6 +182,65 @@ test "Stack(i32) operations" {
     try std.testing.expectEqual(@as(usize, 2), stack.len());
 }
 ```
+
+### Comptime Type Constraints
+
+Where AI tools add particular value is generating comptime constraints — Zig's equivalent of trait bounds. Ask Claude to add a constraint that `T` must be comparable:
+
+```zig
+pub fn SortedSet(comptime T: type) type {
+    // Comptime check: T must implement lessThan
+    comptime {
+        if (!@hasDecl(T, "lessThan")) {
+            @compileError("SortedSet requires T to implement `pub fn lessThan(T, T) bool`");
+        }
+    }
+    return struct {
+        // ... implementation
+    };
+}
+```
+
+This kind of constraint is verbose to write from memory but easy to prompt for. Claude understands `@compileError` and `@hasDecl` usage well.
+
+## Error Union Handling
+
+Zig's error unions (`!T`) require explicit handling. AI tools are good at generating boilerplate for converting between error sets and creating ergonomic wrappers.
+
+**Prompt:** "I have multiple functions that each return their own error set. Write a function that calls all three and merges errors into a unified error type."
+
+```zig
+const std = @import("std");
+
+const DbError = error{ ConnectionFailed, QueryFailed };
+const NetworkError = error{ Timeout, Refused };
+const ParseError = error{ InvalidFormat, TooLarge };
+
+// Merged error set — Zig infers this automatically from the return type
+pub fn fetchAndProcess(url: []const u8) (DbError || NetworkError || ParseError)![]u8 {
+    const raw = try fetchFromNetwork(url);    // NetworkError![]u8
+    const validated = try validateSize(raw);  // ParseError![]u8
+    return try storeResult(validated);        // DbError![]u8
+}
+
+// Wrapping errors with context using a tagged union
+pub const AppError = union(enum) {
+    db: DbError,
+    network: NetworkError,
+    parse: ParseError,
+
+    pub fn format(self: AppError, comptime fmt: []const u8, options: std.fmt.FormatOptions, writer: anytype) !void {
+        _ = fmt; _ = options;
+        switch (self) {
+            .db => |e| try writer.print("Database error: {s}", .{@errorName(e)}),
+            .network => |e| try writer.print("Network error: {s}", .{@errorName(e)}),
+            .parse => |e| try writer.print("Parse error: {s}", .{@errorName(e)}),
+        }
+    }
+};
+```
+
+Claude generates correct error set union syntax (`||`) and understands the distinction between `anyerror` and specific error sets — a nuance that trips up many developers new to Zig.
 
 ## build.zig Configuration
 
@@ -252,6 +323,38 @@ fn logDebug(msg: []const u8) void {
 }
 ```
 
+### Adding Zig Package Dependencies
+
+Since Zig 0.12, the build system has native package support. Ask Claude to add a dependency:
+
+```zig
+// In build.zig — add a package from the Zig package index
+const zhttp = b.dependency("zhttp", .{
+    .target = target,
+    .optimize = optimize,
+});
+exe.root_module.addImport("zhttp", zhttp.module("zhttp"));
+```
+
+Paired with a `build.zig.zon` file:
+
+```zig
+// build.zig.zon
+.{
+    .name = "myapp",
+    .version = "0.1.0",
+    .dependencies = .{
+        .zhttp = .{
+            .url = "https://github.com/example/zhttp/archive/v0.3.0.tar.gz",
+            .hash = "122045abc...",  // Run `zig fetch` to get the hash
+        },
+    },
+    .paths = .{""},
+}
+```
+
+Claude knows to remind you to run `zig fetch --save <url>` to populate the hash, which is a common stumbling block.
+
 ## C Interop
 
 ```zig
@@ -291,6 +394,18 @@ pub const Database = struct {
 
 Claude correctly uses `[:0]const u8` (null-terminated slice) for C string parameters, which is the proper Zig idiom. GPT-4 sometimes uses `[*:0]const u8` (pointer to null-terminated string) which is also valid but less idiomatic.
 
+### Translating C Headers Automatically
+
+Zig's `zig translate-c` command converts C headers to Zig. When the output is confusing, paste it to Claude:
+
+```
+Prompt: "This is the Zig translation of a C library header. The original function signature
+is `int foo_init(foo_ctx_t **ctx, const foo_opts_t *opts)`. Explain what the Zig types mean
+and write a safe Zig wrapper for it."
+```
+
+Claude will explain that `**ctx` becomes `[*c][*c]c.foo_ctx_t` in the C translation (a pointer to a pointer), explain the null safety implications, and write a wrapper that converts the return code to a Zig error.
+
 ## AI Tool Accuracy for Zig
 
 Both Claude and GPT-4 handle Zig 0.13+ syntax reasonably well, but Zig changes frequently between versions. Always specify your Zig version in the prompt:
@@ -299,6 +414,24 @@ Both Claude and GPT-4 handle Zig 0.13+ syntax reasonably well, but Zig changes f
 - GPT-4 sometimes uses deprecated API (e.g., old `std.fs.File.readAll` vs `readToEndAlloc`)
 - Both tools occasionally hallucinate library names — verify with `zig fetch` before use
 - Copilot has limited Zig training data and is not recommended for Zig
+
+## Frequently Asked Questions
+
+**Q: Claude gives me code that doesn't compile on my Zig version. What should I do?**
+
+Always include your exact Zig version in the prompt: "I'm using Zig 0.13.0." Zig's standard library API changes significantly between releases. If you get a compile error, paste the full error message back into Claude — it almost always corrects the code.
+
+**Q: Which AI is best for Zig?**
+
+Claude outperforms GPT-4 for Zig-specific patterns, especially allocators and comptime. This is likely because Zig's documentation and community code uses distinctive patterns that Claude represents better in its training. Copilot is a distant third — limited Zig training data means frequent hallucinations for less-common APIs.
+
+**Q: Can AI help me migrate code from one Zig version to another?**
+
+Yes. Paste the old code, the compile errors from the new version, and ask Claude to migrate it. This works well for API surface changes (like the `std.Build` API that changed in 0.12). For semantic changes (like allocator interface updates), also provide the new API documentation.
+
+**Q: Should I use AI-generated Zig code without review?**
+
+No. Zig is strict about memory ownership and the AI can miss subtle issues — a `defer` in the wrong scope, a missing `.?` on an optional, or an incorrect error propagation. Always review generated code against the Zig documentation, particularly for allocator ownership and error handling paths.
 
 ## Related Reading
 
