@@ -7,10 +7,10 @@ author: theluckystrike
 permalink: ai-tools-for-automated-pr-description-generation
 categories: [guides]
 reviewed: true
-score: 8
+score: 6
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared]---
+tags: [ai-tools-compared, artificial-intelligence]
 
 {% raw %}
 A good PR description saves your team hours of archaeology. A bad one — "fixed stuff" — forces reviewers to read every line. AI tools can auto-generate descriptions from diffs, but the quality varies wildly depending on how the tool processes context.
