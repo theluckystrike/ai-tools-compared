@@ -239,6 +239,181 @@ Add explicit instructions in your system prompt or comment context: "This file i
 
 Partially. Compose Multiplatform has stabilized on desktop and is in beta on iOS. AI tools have reasonable coverage of standard composables but may suggest Android-specific Compose APIs (like `LocalContext.current`) in multiplatform contexts where they fail on iOS.
 
+## Advanced: Custom AI Instructions for KMP Projects
+
+Set up system prompts that teach AI tools your project's KMP conventions. Include this in your IDE settings or commit to the repository:
+
+```markdown
+# KMP Development Context
+
+You are assisting with Kotlin Multiplatform Mobile development.
+
+## Key Rules
+1. Common module code must NOT reference platform-specific packages (java.*, android.*, UIKit)
+2. Use kotlinx libraries as first choice: kotlinx.coroutines, kotlinx.datetime, kotlinx.serialization
+3. Always verify expect/actual pairs have matching signatures
+4. State the target platforms: Android, iOS, Web, Desktop, JVM
+5. For I/O operations, use Ktor client (engine per platform via expect/actual)
+6. For date/time, use kotlinx.datetime.Clock (never System.currentTimeMillis in common code)
+
+## Gradle Structure to Understand
+- commonMain: Shared code (NO platform-specific imports)
+- androidMain: Android-specific implementations
+- iosMain/iosX64/iosArm64: iOS targets (each is a separate target, not just variants)
+- desktopMain/jsMain/jvmMain: Other platforms
+
+## Example Patterns
+- Expect/actual for platform APIs
+- Sealed classes for platform-specific behavior
+- Extension functions for common operations
+- Coroutines for async work across all platforms
+```
+
+Adding this context to your Claude/Copilot system prompt reduces errors significantly.
+
+## CLI Workflow for Validating KMP Builds
+
+Automate validation of KMP correctness across all platforms. This bash script catches type mismatches and missing implementations:
+
+```bash
+#!/bin/bash
+# Validate KMP builds across all targets
+
+set -e
+
+echo "Building commonMain..."
+./gradlew compileCommonMainKotlinMetadata
+
+echo "Building Android..."
+./gradlew assembleDebug
+
+echo "Building iOS..."
+./gradlew iosX64MainKlibrary
+
+echo "Building JVM..."
+./gradlew jvmMainKlibrary
+
+echo "Building JavaScript..."
+./gradlew jsMainKlibrary
+
+echo "All platforms compiled successfully!"
+```
+
+Use this in your pre-push hook to catch platform-specific errors before pushing:
+
+```bash
+# .git/hooks/pre-push
+#!/bin/bash
+./scripts/validate-kmp.sh || exit 1
+```
+
+## Decision Framework for Platform-Specific Code
+
+When facing a choice between common code, expect/actual, and platform-specific modules, follow this flowchart:
+
+```
+Does the code need platform-specific APIs?
+├─ No → Keep in commonMain
+└─ Yes → Use expect/actual?
+    ├─ If multiple implementations → expect/actual in commonMain
+    ├─ If single platform → Platform-specific sourceSet
+    └─ If complex logic → Sealed class in commonMain with platform subclasses
+```
+
+Practical examples:
+
+```kotlin
+// Option 1: Expect/actual (best for simple cases)
+// commonMain
+expect fun getSystemLanguage(): String
+
+// androidMain
+actual fun getSystemLanguage(): String = Locale.getDefault().language
+
+// iosMain
+actual fun getSystemLanguage(): String = NSLocale.currentLocale.languageCode
+
+// Option 2: Sealed class (best for complex platform logic)
+// commonMain
+sealed class PlatformConfig {
+    abstract fun getCacheDir(): String
+}
+
+expect fun getPlatformConfig(): PlatformConfig
+
+// androidMain
+actual fun getPlatformConfig(): PlatformConfig = object : PlatformConfig() {
+    override fun getCacheDir(): String = context.cacheDir.absolutePath
+}
+```
+
+## Testing Kotlin Multiplatform Code with AI Assistance
+
+When asking AI to generate KMP tests, be specific about platform targets:
+
+```kotlin
+// Prompt to AI:
+// "Generate unit tests for this function that work across all KMP targets: Android, iOS, and JVM.
+// Use common test assertions that don't require platform-specific testing libraries.
+// Test cases: normal input, empty string, null pointer where applicable."
+
+@Test
+fun testProcessUserEmpty() {
+    val result = processUser("")
+    assertEquals("", result)
+}
+
+@Test
+fun testProcessUserNormal() {
+    val result = processUser("john-doe")
+    assertTrue(result.isNotEmpty())
+}
+```
+
+For expect/actual testing, generate platform-specific test implementations:
+
+```kotlin
+// commonTest
+expect fun createTestHttpClient(): HttpClient
+
+// androidTest
+actual fun createTestHttpClient(): HttpClient = HttpClient(Mock) {
+    engine {
+        addHandler { request ->
+            respond("test-response", HttpStatusCode.OK)
+        }
+    }
+}
+
+// iosTest
+actual fun createTestHttpClient(): HttpClient = HttpClient(Mock) {
+    engine {
+        addHandler { request ->
+            respond("test-response", HttpStatusCode.OK)
+        }
+    }
+}
+```
+
+## Troubleshooting Common AI Mistakes on KMP
+
+Watch for these patterns where AI tools commonly stumble:
+
+1. **Missing `actual` modifier** — AI suggests implementation without `actual` keyword
+2. **Platform-specific imports in common code** — AI forgets `android.*` isn't available everywhere
+3. **Outdated KMM APIs** — AI suggests deprecated KMM patterns instead of new KMP
+4. **Generic type erasure issues** — AI generates code that won't work with Swift interop
+5. **Incorrect Gradle syntax** — AI suggests old `android()` target instead of `androidTarget()`
+
+When pasting code to AI, include the comment: `// This is in commonMain source set` to trigger better suggestions.
+
+## Related Reading
+
+- [Claude vs ChatGPT for Refactoring Legacy Java Code to Kotlin](/ai-tools-compared/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
+- [Best AI for Fixing Android Gradle Sync Failed Errors in Large Projects](/ai-tools-compared/best-ai-for-fixing-android-gradle-sync-failed-errors-in-larg/)
+- [AI Code Generation Quality for Java Pattern Matching and Switch Expressions](/ai-tools-compared/ai-code-generation-quality-for-java-pattern-matching-and-swi/)
+
+
 ## Related Articles
 
 - [Claude vs ChatGPT for Refactoring Legacy Java Code to Kotlin](/ai-tools-compared/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)

@@ -6,9 +6,9 @@ date: 2026-03-22
 author: theluckystrike
 permalink: /using-ai-for-aws-cost-optimization/
 categories: [guides]
-tags: [ai-tools-compared]
+tags: [ai-tools-compared, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

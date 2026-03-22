@@ -254,6 +254,182 @@ Break the schema into domain clusters — for example, user management, product 
 Refresh whenever your schema changes through migrations. Stale fixtures are one of the most common causes of false-positive test passes — the test succeeds against old data structures while the application code assumes a new column exists. Automating refresh as part of your migration workflow, as shown in the CI/CD section above, eliminates this class of error entirely.
 
 
+## Database-Specific Generation Patterns
+
+Different databases have different constraints. Here's how to generate data respecting these:
+
+### PostgreSQL with Referential Integrity
+
+```sql
+-- Generate users first
+INSERT INTO users (id, email, name, created_at)
+SELECT
+    gen_random_uuid() as id,
+    'user' || row_number() OVER () || '@example.com' as email,
+    'User ' || row_number() OVER () as name,
+    now() - (random() * interval '365 days') as created_at
+FROM generate_series(1, 1000);
+
+-- Generate orders referencing users
+INSERT INTO orders (id, user_id, total, status, created_at)
+SELECT
+    gen_random_uuid() as id,
+    (ARRAY(SELECT id FROM users))[ceil(random() * (SELECT count(*) FROM users))] as user_id,
+    (random() * 1000)::numeric(10,2) as total,
+    (ARRAY['pending', 'completed', 'cancelled'])[ceil(random() * 3)] as status,
+    now() - (random() * interval '30 days') as created_at
+FROM generate_series(1, 5000);
+```
+
+### MySQL with Foreign Key Preservation
+
+```sql
+-- Populate dimension tables first
+INSERT INTO customers (id, name, email, country_id)
+SELECT id, CONCAT('Customer_', id), CONCAT('cust', id, '@test.local'), FLOOR(1 + RAND()*50)
+FROM (
+    SELECT @row:=@row+1 as id
+    FROM information_schema.tables t1, information_schema.tables t2, (SELECT @row:=0) init
+    LIMIT 1000
+) numbered
+WHERE id <= 1000;
+
+-- Populate fact tables with foreign keys
+INSERT INTO transactions (id, customer_id, amount, transaction_date)
+SELECT UUID(), c.id, ROUND(RAND() * 10000, 2), DATE_SUB(NOW(), INTERVAL FLOOR(RAND() * 365) DAY)
+FROM customers c
+CROSS JOIN (SELECT @i:=@i+1 FROM (SELECT @i:=0) init LIMIT 5000) seq;
+```
+
+### MongoDB (Document-Oriented)
+
+```javascript
+db.users.insertMany([
+  {
+    _id: ObjectId(),
+    email: `user${i}@example.com`,
+    orders: [
+      {
+        orderId: ObjectId(),
+        amount: Math.random() * 1000,
+        date: new Date()
+      }
+    ]
+  }
+  for (let i = 1; i <= 1000; i++)
+]);
+```
+
+## Advanced: Temporal Data and Distributions
+
+For realistic data, match real-world distributions:
+
+```python
+import numpy as np
+from datetime import datetime, timedelta
+
+def generate_realistic_order_distribution(n_users, n_orders):
+    """Generate orders with realistic user behavior patterns."""
+
+    # Most users place few orders, some place many (power law)
+    orders_per_user = np.random.pareto(1.5, n_users) + 1
+    orders_per_user = orders_per_user.astype(int)
+
+    # Scale to exact order count needed
+    scale_factor = n_orders / orders_per_user.sum()
+    orders_per_user = (orders_per_user * scale_factor).astype(int)
+
+    data = []
+    order_id = 1
+
+    for user_id, count in enumerate(orders_per_user, 1):
+        # Orders spread across random date range
+        base_date = datetime.now() - timedelta(days=365)
+
+        for _ in range(count):
+            days_offset = np.random.exponential(30)  # Exponential: recent orders more common
+            order_date = base_date + timedelta(days=days_offset)
+
+            data.append({
+                'order_id': order_id,
+                'user_id': user_id,
+                'total': np.random.lognormal(4, 1.5),  # Log-normal for realistic prices
+                'date': order_date
+            })
+            order_id += 1
+
+    return data
+```
+
+## Performance Tuning for Large Datasets
+
+When generating millions of records, optimize for speed:
+
+```sql
+-- Disable indexes during insertion
+ALTER TABLE orders DISABLE KEYS;
+
+-- Use multi-row INSERT for speed
+INSERT INTO orders (user_id, total, created_at) VALUES
+(1, 99.99, NOW()),
+(2, 149.50, NOW()),
+(3, 75.00, NOW()),
+... (10,000 rows per INSERT)
+
+-- Re-enable and rebuild indexes
+ALTER TABLE orders ENABLE KEYS;
+ANALYZE TABLE orders;
+```
+
+For programmatic generation:
+
+```python
+# Batch commits for speed
+batch_size = 5000
+
+for i in range(0, total_records, batch_size):
+    batch_data = generate_batch(i, min(i + batch_size, total_records))
+
+    with transaction():
+        for record in batch_data:
+            db.session.add(record)
+
+    db.session.commit()
+    print(f"Inserted {i + batch_size} records")
+```
+
+## Testing Against Generated Data
+
+Verify your generated data meets requirements:
+
+```python
+def validate_test_data(connection):
+    """Validate referential integrity and data quality."""
+
+    cursor = connection.cursor()
+
+    # Check for orphaned records
+    cursor.execute("""
+        SELECT COUNT(*) FROM orders o
+        WHERE NOT EXISTS (SELECT 1 FROM users u WHERE u.id = o.user_id)
+    """)
+    orphans = cursor.fetchone()[0]
+    assert orphans == 0, f"Found {orphans} orphaned order records"
+
+    # Check data distribution
+    cursor.execute("SELECT COUNT(*) FROM users")
+    user_count = cursor.fetchone()[0]
+
+    cursor.execute("SELECT COUNT(*) FROM orders")
+    order_count = cursor.fetchone()[0]
+
+    # Verify ratios are reasonable
+    assert order_count / user_count >= 3, "Insufficient orders per user"
+    assert order_count / user_count <= 20, "Too many orders per user"
+
+    print(f"✓ Data validation passed: {user_count} users, {order_count} orders")
+```
+
 ## Related Articles
 
 - [How to Use AI to Generate Realistic Test Data for Postgres](/ai-tools-compared/how-to-use-ai-to-generate-realistic-test-data-for-postgres-d/)

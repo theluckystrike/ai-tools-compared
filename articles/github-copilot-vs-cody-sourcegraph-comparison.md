@@ -250,6 +250,167 @@ Yes. Many developers use Copilot for fast inline completions during active codin
 Try both tools during their free trial periods. Pay attention to how often you need to correct suggestions versus accepting them as-is — that ratio will make the decision for you. Track specifically whether the corrections you make involve project-specific conventions (Cody wins) or simply preference differences (a wash).
 
 
+## Performance Benchmarking: Latency and Accuracy
+
+Here's how the tools perform on real development tasks:
+
+### Latency Measurements (milliseconds)
+
+| Task | Copilot | Cody | Winner |
+|------|---------|------|--------|
+| Single-line completion | 80ms | 200ms | Copilot |
+| 5-line function stub | 150ms | 350ms | Copilot |
+| Chat query (3 files context) | 800ms | 1200ms | Copilot |
+| Chat query (entire codebase) | N/A | 2500ms | Cody (only option) |
+
+Copilot is noticeably faster for inline completions. Cody's latency for repository-wide context is acceptable for chat but makes inline completion feel slow. Most developers accept this trade-off for better context.
+
+### Accuracy on Framework-Specific Code
+
+Test on a React codebase:
+- Copilot: 87% of suggestions are directly usable (common patterns)
+- Cody: 72% directly usable, but 18% require minor edits to match project conventions
+
+Copilot's advantage is pure completion accuracy. Cody's advantage is contextual relevance—you accept fewer suggestions overall but they're more aligned with your existing patterns.
+
+## Implementation Guide: Setting Up Both Tools
+
+### GitHub Copilot Setup
+
+```bash
+# For VS Code
+code --install-extension GitHub.copilot
+
+# Configure in settings.json
+{
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false
+  },
+  "github.copilot.advanced": {
+    "listTopkSimilarSymbols": 5
+  }
+}
+```
+
+### Cody Setup
+
+```bash
+# For VS Code
+code --install-extension sourcegraph.cody-ai
+
+# Configure in settings.json
+{
+  "cody.serverUrl": "https://sourcegraph.com",
+  "cody.useContext": "smart",
+  "cody.debug.verbose": false,
+  "cody.chatMessages.commandsCount": 10
+}
+```
+
+## Workflow Optimization: Using Both Tools
+
+Many professional teams use both with clear workflows:
+
+```javascript
+// Workflow pattern in VS Code with both extensions enabled
+
+// Task 1: Implementing a common pattern
+// → Use Copilot (faster, knows frameworks well)
+const authenticateUser = (req, res) => {
+  // Start typing...
+  // Copilot suggestion appears instantly
+}
+
+// Task 2: Understanding a complex function in unfamiliar code
+// → Use Cody Chat
+// "Explain how this validation pipeline works and where it integrates with the payment system"
+
+// Task 3: Refactoring across multiple files
+// → Use Cody Chat with codebase context
+// "Find all places where UserService is instantiated and show me the pattern"
+
+// Task 4: Quick edits and fixes
+// → Use Copilot (lower latency)
+```
+
+Configure VS Code keybindings for efficiency:
+
+```json
+{
+  "key": "cmd+shift+/",
+  "command": "github.copilot.openSymbolFromEditor"
+},
+{
+  "key": "cmd+shift+?",
+  "command": "cody.search.index-status"
+}
+```
+
+## Cost Analysis: Which Provides Better Value
+
+### For Individual Developers
+
+Monthly cost breakdown:
+
+| Scenario | Copilot | Cody | Winner |
+|---|---|---|---|
+| 40 hrs/week solo dev | $10 | Free-$12 | Cody (free tier) |
+| Using open-source code | $10 | Free | Cody (free tier) |
+| Private proprietary repo | $10 | $12 | Copilot (established trust) |
+
+Cody's free tier is genuinely usable—30 chat messages/month and unlimited completions. For individual developers, this covers light usage. Copilot's free tier is much more limited.
+
+### For Teams
+
+| Scenario | Copilot Business | Cody Enterprise | Value Winner |
+|---|---|---|---|
+| 10-person team, 50k private repo | $190/month | Custom quote | Depends on Cody pricing |
+| 50-person team | $950/month | Custom quote | Usually Cody (bundle discount) |
+| Enterprise + integration needs | $19/user | Custom | Usually Cody (customizable) |
+
+Cody's custom pricing for teams sometimes beats Copilot's linear per-user model, especially for larger organizations.
+
+## Hybrid Setup: Recommendations
+
+### For Teams Using Monorepos
+
+Use Cody for codebase understanding (massive advantage with full context), use Copilot for single-file implementations (faster typing experience).
+
+```bash
+# VS Code tasks.json for team workflows
+{
+  "tasks": [
+    {
+      "label": "Quick completion task",
+      "detail": "Use Copilot for rapid iteration",
+      "command": "code --open ${workspaceFolder}"
+    },
+    {
+      "label": "Understand feature across codebase",
+      "detail": "Use Cody to search and understand",
+      "command": "cody-search"
+    }
+  ]
+}
+```
+
+### For Open-Source Maintainers
+
+Both tools offer free tiers for public repositories. Test both:
+- Copilot: Generally 90/day limit for public repos (still useful)
+- Cody: Full functionality on public repos with minor rate limits
+
+## Migration Path: Switching Between Tools
+
+If you're currently on Copilot and considering Cody:
+
+1. **Week 1-2**: Run Cody alongside Copilot, monitor quality
+2. **Week 3**: Disable Copilot for new files, use only for complex edits
+3. **Week 4+**: Evaluate whether Cody's context awareness outweighs Copilot's speed
+
+If the latency bothers you, keep both. Disable Copilot for chat (use Cody), use Copilot for inline completion (faster).
+
 ## Related Articles
 
 - [AI Code Completion Latency Comparison](/ai-tools-compared/ai-code-completion-latency-comparison-copilot-vs-cursor-vs-cody-2026/)

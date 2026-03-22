@@ -317,6 +317,190 @@ Review each tool's privacy policy, data handling practices, and security certifi
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
 
+## Advanced: Automating Wiki Generation in CI/CD
+
+Set up continuous wiki generation triggered by documentation changes:
+
+```yaml
+# .github/workflows/wiki-sync.yml
+name: Auto-Generate Wiki
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'docs/source/**'
+      - '.github/workflows/wiki-sync.yml'
+
+jobs:
+  wiki-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install documentation tools
+        run: |
+          pip install mintlify sphinx docusaurus
+
+      - name: Generate Wiki Content
+        run: |
+          python scripts/generate_wiki.py \
+            --repo-path . \
+            --output-dir wiki_content \
+            --exclude-dirs node_modules,build,dist
+
+      - name: Clone Wiki Repository
+        run: |
+          git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.wiki.git
+
+      - name: Sync Generated Content
+        run: |
+          cp -r wiki_content/* ${{ github.repository }}.wiki/
+          cd ${{ github.repository }}.wiki
+          git config user.email "bot@github.com"
+          git config user.name "Documentation Bot"
+          git add -A
+
+          if git diff --staged --quiet; then
+            echo "No changes to wiki"
+          else
+            git commit -m "Auto-sync wiki from main branch"
+            git push
+          fi
+```
+
+This workflow ensures your wiki stays synchronized with your repository structure automatically.
+
+## Script for Repository Analysis
+
+Create a Python script that analyzes your repository and generates wiki structure:
+
+```python
+#!/usr/bin/env python3
+import os
+import json
+from pathlib import Path
+from typing import Dict, List
+
+def analyze_repository(repo_path: str) -> Dict:
+    """Analyze repository structure for wiki generation."""
+
+    structure = {
+        "name": Path(repo_path).name,
+        "directories": [],
+        "readme_files": [],
+        "package_files": []
+    }
+
+    # Find README files
+    for readme in Path(repo_path).rglob("README*"):
+        if not any(part.startswith('.') for part in readme.parts):
+            structure["readme_files"].append(str(readme.relative_to(repo_path)))
+
+    # Find package/configuration files
+    config_files = ["package.json", "setup.py", "build.gradle", "Cargo.toml", "go.mod"]
+    for config in config_files:
+        config_path = Path(repo_path) / config
+        if config_path.exists():
+            structure["package_files"].append(config)
+
+    # Analyze main directories
+    for item in Path(repo_path).iterdir():
+        if item.is_dir() and not item.name.startswith('.'):
+            doc_count = len(list(item.rglob("*.md")))
+            code_count = len(list(item.rglob("*.py"))) + len(list(item.rglob("*.ts"))) + len(list(item.rglob("*.go")))
+
+            structure["directories"].append({
+                "name": item.name,
+                "docs": doc_count,
+                "code_files": code_count,
+                "type": classify_directory(item)
+            })
+
+    return structure
+
+def classify_directory(path: Path) -> str:
+    """Classify directory by content."""
+    name = path.name.lower()
+
+    if name in ("src", "lib", "source"):
+        return "source"
+    elif name in ("tests", "test", "__tests__"):
+        return "tests"
+    elif name in ("docs", "doc", "documentation"):
+        return "documentation"
+    elif name in ("examples", "demo", "samples"):
+        return "examples"
+    else:
+        return "other"
+
+if __name__ == "__main__":
+    import sys
+    repo_path = sys.argv[1] if len(sys.argv) > 1 else "."
+
+    analysis = analyze_repository(repo_path)
+    print(json.dumps(analysis, indent=2))
+```
+
+Run this before generating to understand your repository's structure:
+
+```bash
+python analyze_repo.py . | jq '.directories | sort_by(.code_files) | reverse'
+```
+
+## Decision Framework for Wiki Generation Tools
+
+```
+Is your repository primarily API-focused?
+├─ Yes → Use Mintlify (optimized for API docs)
+└─ No → Has repository structure you want documented?
+    ├─ Yes → Use Docugen (structure-aware)
+    └─ No → Is size under 10,000 lines?
+        ├─ Yes → Use GitHub Copilot (fast, simple)
+        └─ No → Use Docusaurus with AI plugins (scalable)
+```
+
+Practical decision criteria:
+
+| Your Situation | Recommended Tool | Reason |
+|---|---|---|
+| Monorepo with 20+ services | Docugen | Handles complex structures |
+| Single API service | Mintlify | API-first design |
+| Large documentation needs | Docusaurus | Extensible, powerful |
+| Quick MVP prototype | GitHub Copilot | Fastest to start |
+| Open source project | Docugen + free tier | Community-friendly |
+
+## Real-World Examples
+
+Example 1: Node.js library with multiple modules
+```bash
+# Generate docs for each module separately
+for module in src/*/; do
+  mintlify generate --path "$module" --output "wiki/$module"
+done
+```
+
+Example 2: Python monorepo
+```bash
+# Generate using Sphinx with AI enhancement
+sphinx-quickstart -q -p "Project Docs" .
+python scripts/enhance_sphinx_with_ai.py
+make html
+```
+
+Example 3: Go microservices
+```bash
+# Generate from each service's README
+for service in services/*/; do
+  service_name=$(basename "$service")
+  cp "$service/README.md" "wiki/$service_name.md"
+
+  # Use GitHub Copilot to enhance
+  gh copilot suggest "Enhance this README with architecture diagram, setup instructions, and API examples" \
+    < "wiki/$service_name.md" >> "wiki/$service_name.md"
+done
+```
+
 ## Related Articles
 
 - [AI Tools for Generating dbt Project Structure from Existing](/ai-tools-for-generating-dbt-project-structure-from-existing-/)

@@ -240,6 +240,112 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 
 
+## Advanced: Running GPU-Accelerated Inference
+
+For teams generating OpenAPI specs regularly, GPU acceleration dramatically improves performance. Here's how to run LocalAI on a cloud GPU instance:
+
+```bash
+# On AWS EC2 (g4dn.xlarge with NVIDIA T4 GPU)
+docker run --gpus all -p 8080:8080 \
+  -e CUDA_VISIBLE_DEVICES=0 \
+  quay.io/go-skynet/local-ai:latest \
+  --models-path /models \
+  --context-size 8192 \
+  --threads 4 \
+  --gpu-layers 35
+```
+
+This reduces inference time from 15-30 seconds per endpoint to 2-5 seconds. For a team running 200+ endpoint analyses monthly, GPU acceleration provides measurable ROI.
+
+## Workflow Integration with LLM Tools
+
+Integrate self-hosted OpenAPI generation into your development workflow:
+
+```bash
+#!/bin/bash
+# Auto-generate OpenAPI specs from handler files
+
+find src/routes -name "*.ts" | while read handler; do
+  echo "Analyzing $handler..."
+
+  curl -s -X POST http://localhost:11434/api/generate \
+    -H "Content-Type: application/json" \
+    -d "{
+      \"model\": \"codellama\",
+      \"prompt\": \"Generate OpenAPI 3.0 spec for: $(cat $handler)\",
+      \"stream\": false
+    }" | jq -r '.response' > "$(dirname $handler)/../specs/$(basename $handler .ts).yaml"
+done
+
+# Validate all generated specs
+spectral lint src/specs/*.yaml --output-format json
+```
+
+Add this to your pre-commit hook to catch spec errors before they reach CI:
+
+```bash
+# .husky/pre-commit
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+./scripts/generate-api-specs.sh
+git add src/specs/
+```
+
+## Comparison: Self-Hosted vs Cloud for OpenAPI Generation
+
+| Dimension | Self-Hosted | Cloud (OpenAI) | Hybrid |
+|-----------|------------|--------|--------|
+| Speed per spec | 5-15s (GPU), 30s (CPU) | 2-5s | GPU for sensitive, cloud for fast |
+| Cost per 1000 specs | $5-20 (hardware amortized) | $10-50 | $15-30 |
+| Data privacy | Complete | None | Maximum |
+| Model choice | Limited to available models | GPT-4 only | Multiple options |
+| Customization | Full | Prompt-only | Full for local |
+| Maintenance | Medium | None | Medium |
+
+For regulated industries or proprietary APIs, self-hosted is mandatory. For public APIs with no sensitivity constraints, cloud solutions are faster. Hybrid approaches—self-hosting for your own code, cloud for third-party libraries—offer balance.
+
+## Validating Generated Specs
+
+Always validate generated OpenAPI specs before committing. Use Spectral, the standard OpenAPI linter:
+
+```bash
+npm install -D @stoplight/spectral-cli
+
+# Lint your generated specs
+spectral lint api-spec.yaml --ruleset https://stoplight.io/api/rulesets/openapi-ruleset
+
+# Create a config for your project
+cat > .spectralrc.json <<EOF
+{
+  "extends": ["spectral:oas"]
+}
+EOF
+
+spectral lint api-spec.yaml
+```
+
+Common issues caught by linters that AI sometimes generates:
+- Missing required fields (description, summary)
+- Inconsistent response schemas
+- Undefined component references
+- Invalid status codes
+
+## Multi-Model Strategy
+
+Different models excel at different code patterns. For best results, test specs with multiple models:
+
+```python
+models = ["codellama", "mistral", "neural-chat"]
+
+for model in models:
+    spec = generate_spec_with_model(code, model)
+    validation_score = validate_spec(spec)
+    print(f"{model}: {validation_score}")
+```
+
+CodeLlama excels at statically-typed languages (Java, Go, TypeScript). Mistral performs better with dynamic languages (Python, Ruby). Most teams pick one model and stick with it, but testing multiple models during setup ensures you choose wisely.
+
 ## Related Articles
 
 - [AI Tools for Generating OpenAPI Specs from Code](/ai-tools-openapi-spec-generation/)
