@@ -13,6 +13,8 @@ score: 9
 intent-checked: true
 voice-checked: true---
 ---
+
+
 layout: default
 title: "Claude Code MSW Mock Service Worker Guide"
 description: "A guide to using MSW (Mock Service Worker) with Claude Code for API mocking in development workflows. Learn setup, configuration, and best practices"
@@ -26,6 +28,13 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true---
+
+## Key Takeaways
+
+- **Second**: use environment variables to toggle mocks on and off, ensuring you can switch between mocked and real APIs easily.
+- **Finally**: use MSW's request matching capabilities to create dynamic responses based on query parameters, headers, or request body content.
+- **Topics covered**: introduction, setting up msw in your project, creating mock handlers
+- **Practical guidance included**: Step-by-step setup and configuration instructions
 
 ## Introduction
 

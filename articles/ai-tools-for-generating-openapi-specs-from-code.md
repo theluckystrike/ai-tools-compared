@@ -15,9 +15,23 @@ intent-checked: true---
 
 ## Why Auto-Generating OpenAPI Specs Matters
 
+
 Maintaining API documentation alongside code is friction. Specs drift. Endpoints get deprecated. Request/response shapes change. And manual OpenAPI YAML gets stale within weeks.
 
 AI-powered spec generation flips this problem: feed your code, get a machine-readable spec. This saves 8-15 hours of manual YAML writing per API and keeps docs in sync with reality.
+
+
+## Key Takeaways
+
+- **Use Cursor ($20/mo for**: unlimited usage) 2.
+- **Setup: ```bash # Download**: Cursor from cursor.sh # Free tier available; Pro plan $20/month # Works exactly like VS Code ``` Workflow: 1.
+- **Setup: ```bash # GitHub**: Copilot extension in VS Code # $10/month or included in Copilot Pro ($20/month) # Requires GitHub account with Enterprise or Pro license ``` Workflow: 1.
+- **Setup: ```bash # No**: setup needed - just use Claude Code web interface or CLI # Point Claude at your codebase directory ``` Workflow: 1.
+- **Manual updates as needed**: For New API (Use Annotations): 1.
+- **Cost**: $20/mo for entire team
+
+For Enterprise (High-Volume APIs):
+1.
 
 ## The Two Approaches
 
