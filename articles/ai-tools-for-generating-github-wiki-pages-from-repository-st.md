@@ -198,6 +198,71 @@ git commit -m "Auto-generate documentation"
 git push
 ```
 
+## Automating Wiki Updates with GitHub Actions
+
+Rather than manually running a documentation generator, wire it into GitHub Actions so the wiki updates automatically on every push to the main branch:
+
+```yaml
+# .github/workflows/update-wiki.yml
+name: Update Wiki
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'README.md'
+      - 'docs/**'
+
+jobs:
+  update-wiki:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install anthropic requests
+
+      - name: Generate wiki content
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/generate_wiki.py
+
+      - name: Push to Wiki
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          repository: ${{ github.repository }}.wiki
+          branch: master
+          commit_message: "Auto-update wiki from ${{ github.sha }}"
+          file_pattern: '*.md'
+```
+
+The `generate_wiki.py` script reads your repository structure, calls the AI API to produce structured Markdown, and writes files into the cloned wiki directory. Using `paths` filtering ensures the action only triggers when source files change, not on wiki-only updates.
+
+**Handling the wiki repository access**: GitHub wiki repos live at `https://github.com/user/repo.wiki.git`. To push from Actions, your workflow needs a Personal Access Token with repo scope stored as a secret, not the default `GITHUB_TOKEN`, which lacks wiki write permissions.
+
+## Tool-Specific Integration Notes
+
+**Mintlify + GitHub Sync**: Mintlify's GitHub integration uses a webhook that triggers on push events. When set up, it automatically re-generates docs and publishes them to your configured destination. For teams already using Mintlify for public API docs, extending it to internal wiki generation is straightforward.
+
+**Docugen CLI**: Docugen runs as a CLI command and integrates naturally with any CI system. A typical invocation:
+
+```bash
+docugen analyze ./src --output ./wiki-output --format github-wiki --include-private false
+```
+
+The `--format github-wiki` flag produces a `Home.md` plus individual pages per module, matching GitHub's expected wiki structure exactly.
+
+**GitBook GitHub Sync**: GitBook's two-way sync treats your GitHub repository as the source of truth. Changes pushed to the `docs/` directory automatically appear in GitBook, and GitBook edits create commits back to the repo. For teams that want non-engineers to edit documentation through a visual interface while keeping everything in Git, this bidirectional sync is the strongest feature.
+
 ## Best Practices for AI-Generated Documentation
 
 1. **Review AI Output**: AI tools generate accurate but sometimes generic documentation. Always review and enhance the output with project-specific context.
