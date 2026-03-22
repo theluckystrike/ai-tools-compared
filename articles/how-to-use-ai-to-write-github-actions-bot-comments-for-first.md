@@ -46,7 +46,17 @@ First-time contributors often feel uncertain about the contribution process. The
 
 GitHub Actions provides the infrastructure to detect first-time contributors and trigger appropriate responses. By combining this with AI-generated content, you can personalize messages based on the specific changes in each pull request.
 
-## Setting Up the GitHub Actions Workflow
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Set Up the GitHub Actions Workflow
 
 Create a workflow file that runs on pull request events and identifies first-time contributors. Here's a practical implementation:
 
@@ -120,7 +130,7 @@ jobs:
             });
 ```
 
-## Creating Context-Aware Messages
+### Step 2: Create Context-Aware Messages
 
 The basic welcome message works well, but you can enhance it with AI that analyzes the pull request changes. This provides more specific guidance based on what the contributor actually submitted:
 
@@ -148,7 +158,7 @@ async function generateContextAwareMessage(prDetails, aiClient) {
 }
 ```
 
-## Handling Different Contribution Types
+### Step 3: Handling Different Contribution Types
 
 AI helps you customize messages based on what the contributor submitted. A documentation fix deserves different guidance than a new feature implementation:
 
@@ -209,7 +219,7 @@ Pull the repository's CONTRIBUTING.md or contribution guidelines and include a s
 
 You can also check whether the contributor has already opened issues or commented on discussions. A first-time PR author who has been active in the community deserves a different tone than someone contributing without prior engagement. AI handles these nuances well when given the relevant context as part of the prompt.
 
-## Practical Step-by-Step Setup Guide
+### Step 4: Practical Step-by-Step Setup Guide
 
 Getting AI-generated bot comments working from scratch takes about 30 minutes. Here is the complete sequence.
 
@@ -225,7 +235,7 @@ Getting AI-generated bot comments working from scratch takes about 30 minutes. H
 
 **Step 6: Monitor real interactions.** Once the workflow is active on real PRs, read the first ten generated comments. Look for patterns where the message is confusing, too long, or mentions things contributors have already done. Each pattern is a prompt improvement opportunity.
 
-## Common Pitfalls to Avoid
+### Step 5: Common Pitfalls to Avoid
 
 **Using the same message for every contributor.** A static AI-generated template provides no advantage over a manually written template. The value comes from adapting the message to each PR's actual content. At minimum, vary the message based on contribution type.
 
@@ -234,6 +244,21 @@ Getting AI-generated bot comments working from scratch takes about 30 minutes. H
 **Posting before CI runs.** If your project has CI checks that commonly fail for new contributors (linting, failing tests from common mistakes), consider triggering the welcome message after CI completes so you can include context about any failures. This turns a generic welcome into actionable guidance.
 
 **Not handling the workflow failure case.** If your AI API call fails, the workflow should still complete without error. Catch API failures and fall back to a static default message rather than leaving new contributors with no response at all.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

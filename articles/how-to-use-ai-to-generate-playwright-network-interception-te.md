@@ -40,7 +40,17 @@ Testing your application's behavior when network connectivity fails is critical 
 - **Consider a user filling out a long form who loses connection mid-session**: the application should save their progress locally and provide clear feedback.
 - **A document editor that**: shows a cryptic error instead of "Saved locally, will sync when reconnected" loses user confidence permanently.
 
-## Understanding Network Interception in Playwright
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Network Interception in Playwright
 
 Playwright provides powerful APIs to intercept, modify, and mock network requests. The `page.route()` method allows you to intercept requests before they reach the network, while `page.on('request')` and `page.on('response')` listeners enable monitoring of all HTTP traffic. For offline testing specifically, you can block specific domains, abort requests, or serve cached responses.
 
@@ -56,7 +66,7 @@ The economic cost of poor offline handling is concrete. A shopping cart that sil
 
 Without automated tests covering these scenarios, developers often discover issues only through manual testing or, worse, from user reports. Network interception tests automate this validation, ensuring consistent behavior across code changes.
 
-## Generating Tests with AI Assistance
+### Step 2: Generate Tests with AI Assistance
 
 AI coding assistants can accelerate network interception test creation by understanding your application's structure and generating appropriate test cases. The process involves providing context about your application's network dependencies and specifying the offline scenarios you want to test.
 
@@ -109,7 +119,7 @@ test('handles API failure gracefully', async ({ page }) => {
 
 This approach tests how your application handles specific API failures while maintaining normal functionality for other requests. Keeping unrelated requests live—analytics, CDN assets, third-party widgets—means your test environment stays closer to production and catches integration edge cases that full blocking would hide.
 
-## Handling Different Failure Types
+### Step 3: Handling Different Failure Types
 
 Network interception supports various failure scenarios beyond simple aborts. You can simulate timeouts, serve stale cached data, or return custom error responses. Each failure type exercises a different code path in your application, so covering all of them meaningfully expands your test surface.
 
@@ -250,7 +260,7 @@ test('recovers gracefully when network returns', async ({ page }) => {
 
 Keep route handlers stateless where possible. If a test needs to allow the first request through and block subsequent ones, track the count with a closure variable rather than mutating shared state between tests—Playwright tests run in isolation but route handlers can leak if registered on the browser context rather than the page.
 
-## Common Pitfalls to Avoid
+### Step 4: Common Pitfalls to Avoid
 
 Overly broad interception can mask real issues. Rather than blocking all requests, target specific endpoints that your application actually depends on. This provides more realistic test coverage and avoids accidentally preventing the page from loading its own JavaScript bundles, which turns a network resilience test into a blank-page test.
 
@@ -259,6 +269,21 @@ Failing to test the recovery path leaves a gap in your test suite. Users don't s
 Ignoring timeout scenarios misses important UX considerations. A request that hangs indefinitely creates frustration; proper timeout handling improves perceived performance. Add explicit `waitFor` timeouts in assertions when testing timeout recovery so the test fails with a clear message rather than a generic timeout error from Playwright's default deadline.
 
 Forgetting service workers is a common gap in offline test suites. If your app registers a service worker, network interception at the page level may not exercise service worker fetch handlers. Use `context.route()` to intercept at the browser context level, which runs before the service worker, or inject a fetch mock inside the service worker's scope using `page.addInitScript()`.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

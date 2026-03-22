@@ -61,7 +61,17 @@ Different AI tools have varying strengths when generating infrastructure-as-code
 
 For AWS-heavy workloads, Amazon Q Developer has the advantage of being trained on AWS documentation directly. For multi-cloud or nuanced configurations, Claude and GPT-4o handle complex constraints better.
 
-## Generating Basic Function Configurations
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Generate Basic Function Configurations
 
 Start with a simple prompt describing your serverless function. A well-crafted prompt includes the function name, runtime, handler path, and trigger event.
 
@@ -103,7 +113,7 @@ functions:
 
 This configuration defines a complete function with S3 trigger. You can extend it with environment variables, VPC settings, or custom IAM roles as needed.
 
-## Creating Multi-Function Configurations
+### Step 2: Create Multi-Function Configurations
 
 For applications with multiple functions, describe each function and its purpose clearly. AI excels at organizing related functions into a cohesive configuration.
 
@@ -221,7 +231,7 @@ resources:
 
 This configuration includes IAM permissions, environment variables, HTTP API routes, SQS triggers, and DynamoDB table definitions.
 
-## Step-by-Step Workflow for AI-Generated Configs
+### Step 3: Step-by-Step Workflow for AI-Generated Configs
 
 Getting consistently good configurations from AI requires an iterative approach rather than a single large prompt:
 
@@ -237,7 +247,7 @@ Getting consistently good configurations from AI requires an iterative approach 
 
 **Step 6 — Validate and deploy to staging.** Run `serverless deploy --stage staging` and verify each function triggers correctly. Check CloudWatch logs for runtime errors that YAML validation wouldn't surface.
 
-## Optimizing AI-Generated Configurations
+### Step 4: Optimizing AI-Generated Configurations
 
 AI produces functional configurations, but you should review and optimize them for production use. Check these critical areas:
 
@@ -275,7 +285,7 @@ Add failure destinations to SQS-triggered function to capture
 failed messages in a dead-letter queue.
 ```
 
-## Pro Tips for Better Results
+### Step 5: Pro Tips for Better Results
 
 **Include version constraints explicitly.** Specify `frameworkVersion: '3'` and the exact runtime (e.g., `python3.11` not `python3`) to prevent AI from using deprecated syntax.
 
@@ -284,6 +294,21 @@ failed messages in a dead-letter queue.
 **Request a cost estimate section.** Prompting AI to "add a comment block estimating monthly AWS cost at 1M invocations" surfaces memory and timeout choices that may be unnecessarily expensive.
 
 **Use AI to diff configurations.** Paste two versions of a serverless.yml and ask "What changed between these configurations and what is the likely impact of each change?" This is particularly useful for reviewing AI-generated updates to existing files.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

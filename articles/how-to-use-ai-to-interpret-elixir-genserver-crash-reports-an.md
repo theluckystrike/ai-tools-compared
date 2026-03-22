@@ -44,7 +44,17 @@ This guide shows how to use AI assistance effectively when debugging GenServer c
 - **Understanding each helps you**: provide better context to AI tools.
 - **badarg typically means you**: passed an argument of the wrong type to a function, often in a pattern match or guard clause.
 
-## Understanding GenServer Crash Reports
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand GenServer Crash Reports
 
 When a GenServer process terminates unexpectedly, the BEAM generates an error report containing the exit reason, the last known state, and the stack trace. The exit reason can be a simple atom like `:normal`, `:shutdown`, or `{:shutdown, reason}`, or it can be a tuple containing error details like `{:bad_return_value, val}` or `{:EXIT, from, reason}`.
 
@@ -57,7 +67,7 @@ A typical GenServer crash report might look like this:
 
 When you paste this into an AI tool, ask it to explain the exit reason in the context of GenServer lifecycle. A good prompt would be: "Explain this GenServer crash report and identify what went wrong based on the exit reason and stack trace." The AI will break down the error tuple, explain what `bad_return_value` means in the GenServer context, and point to the specific line in your code where the issue occurred.
 
-## Common GenServer Exit Reasons
+### Step 2: Common GenServer Exit Reasons
 
 Several exit reasons appear frequently in GenServer crash reports. Understanding each helps you provide better context to AI tools.
 
@@ -71,7 +81,7 @@ Several exit reasons appear frequently in GenServer crash reports. Understanding
 
 When sharing crash reports with AI, include the full error tuple, the stack trace, and relevant portions of your GenServer code. This gives the AI enough context to provide accurate diagnoses.
 
-## Analyzing Supervisor Restart Reports
+### Step 3: Analyzing Supervisor Restart Reports
 
 Supervisors manage process lifecycles and define restart strategies. When a supervised process crashes repeatedly, the supervisor may give up and terminate itself. The resulting log contains information about restart attempts and the final shutdown decision.
 
@@ -87,7 +97,7 @@ A supervisor restart report typically includes the restart frequency, the child 
 
 AI tools can help interpret these restart patterns. Ask: "What does this supervisor restart sequence indicate? Is it a configuration issue, a resource problem, or a code bug?" The AI can distinguish between one-time failures that might succeed on retry versus persistent failures that indicate a code-level problem.
 
-## Using AI for Root Cause Analysis
+### Step 4: Use AI for Root Cause Analysis
 
 When debugging GenServer crashes, providing the right context to AI dramatically improves the quality of assistance. Include the crash report, relevant code snippets, and any recent changes to your application.
 
@@ -128,7 +138,7 @@ The AI identifies that the first clause uses `=%{state::pending}` in the pattern
 
 This type of subtle pattern matching error is common in GenServer callbacks and AI tools excel at spotting them quickly.
 
-## Optimizing Supervisor Restart Strategies
+### Step 5: Optimizing Supervisor Restart Strategies
 
 AI can also help you choose appropriate supervisor restart strategies for different process types. Temporary workers that should never restart differ from permanent workers that must always restart. One-For-One strategies suit independent workers while One-For-All suits processes that depend on each other.
 
@@ -141,7 +151,7 @@ Provide complete context rather than just the error message. Include the relevan
 **Effective crash report documentation:**
 
 ```
-## GenServer Crash: UserManager
+### Step 6: GenServer Crash: UserManager
 
 Application: myapp
 Version: 1.2.3
@@ -224,6 +234,21 @@ Instead of just applying AI's fix, ask follow-up questions:
 - "What OTP principle does this violation?"
 
 These conversations build your expertise with OTP supervision trees and GenServer patterns.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

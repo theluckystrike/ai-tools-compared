@@ -45,13 +45,23 @@ Rate limiting exists to prevent abuse, protect backend services, and ensure fair
 
 Manual test creation for these scenarios requires understanding HTTP status codes, parsing rate limit headers, simulating various throttle conditions, and verifying retry behavior. This is where AI assistance becomes valuable—it can generate boilerplate test code that you then customize for your specific use case.
 
-## Providing Clear Context to AI
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Providing Clear Context to AI
 
 The quality of AI-generated tests depends heavily on how you describe your requirements. Instead of asking generically for "pytest tests for rate limiting," provide specific details about your API endpoint, the rate limiting mechanism, and what behavior you expect to validate.
 
 Describe the rate limit headers your API uses (like `X-RateLimit-Limit` and `X-RateLimit-Remaining`), the specific endpoint being tested, whether you're implementing client-side throttling or testing server responses, and what assertions matter for your use case.
 
-## Example AI Prompt for Rate Limit Tests
+### Step 2: Example AI Prompt for Rate Limit Tests
 
 Use a structured prompt that gives the AI your endpoint URL, rate limit parameters, header names, and retry strategy:
 
@@ -163,7 +173,7 @@ Format code for a Python project using requests library.
 
 This level of specificity produces superior results compared to generic requests like "create rate limit tests."
 
-## Generated Test Structure with Real Code Example
+### Step 3: Generated Test Structure with Real Code Example
 
 The AI will likely produce a test file containing fixtures for API clients, helper functions for making repeated requests, and test cases that verify specific rate limiting behaviors. Here's what a typical structure looks like:
 
@@ -275,7 +285,7 @@ def test_exponential_backoff_retry_logic():
 
 This test structure provides rate limit coverage while remaining maintainable and extensible.
 
-## Customizing Generated Tests
+### Step 4: Customizing Generated Tests
 
 AI-generated tests serve as a foundation that you refine based on your specific requirements. You may need to adjust header parsing to match your API's response format, modify assertion logic to align with your application's error handling, add authentication setup that the AI couldn't anticipate, and integrate with your existing test infrastructure.
 
@@ -300,13 +310,13 @@ async def test_async_rate_limit_handling():
     assert resp.status_code in (200, 429)
 ```
 
-## Testing Different Throttling Scenarios
+### Step 5: Test Different Throttling Scenarios
 
  rate limit testing covers multiple scenarios beyond simple request counting. Consider testing burst handling—when your application sends multiple requests simultaneously, does the API correctly apply rate limits? Test header consistency across successful and throttled responses. Verify that your application correctly interprets different rate limit windows (per second, per minute, per hour).
 
 You should also test edge cases like what happens when rate limit headers are missing, how your code behaves when the server returns inconsistent limit values, and whether your application handles rate limit resets correctly after the window expires.
 
-## Integrating with CI/CD
+### Step 6: Integrate with CI/CD
 
 Automated rate limit tests work well in continuous integration pipelines, though you should consider their execution time. Testing rate limiting often requires making many requests or waiting for time windows to pass, which can slow down your test suite. Mark rate limit tests so they can run separately or be skipped in quick CI runs:
 
@@ -327,6 +337,21 @@ def pytest_configure(config):
 ```
 
 Keep integration tests idempotent by using unique request IDs or test-specific API keys so parallel CI runs do not share rate limit counters.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

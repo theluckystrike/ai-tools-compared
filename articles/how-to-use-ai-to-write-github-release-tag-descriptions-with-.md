@@ -47,13 +47,23 @@ Many developers struggle with writing release notes because they are close to th
 
 Release descriptions also serve as a permanent record. When something breaks after an upgrade, teams return to release notes to understand what changed. AI-generated descriptions that include context—not just what changed but why—become genuinely useful historical documentation.
 
-## Choosing the Right AI Tool for Release Notes
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Choose the Right AI Tool for Release Notes
 
 Different AI tools handle release note generation with varying effectiveness. Claude Code and ChatGPT both produce high-quality prose and handle structured formatting well. GitHub Copilot Chat, accessed directly in your IDE, is convenient when you want to generate release notes without leaving your editor. For automated pipelines, the Anthropic API and OpenAI API let you embed generation into CI workflows.
 
 If your project uses GitHub's native release tooling, the **Generate release notes** button uses GitHub's own AI to summarize merged pull requests since the last release. This is a solid starting point that you can then refine with a more capable model for polish and additional context.
 
-## Providing the Right Context to AI
+### Step 2: Providing the Right Context to AI
 
 The quality of AI-generated release descriptions depends heavily on the context you provide. Instead of simply asking "write a release description," supply specific information about your release.
 
@@ -103,7 +113,7 @@ Write in a clear, user-friendly style suitable for developers.
 
 For even better output, feed AI the raw `git log` output between two tags and ask it to categorize and summarize the commits. The command `git log v2.0.0..v2.1.0 --pretty=format:"- %s"` produces a clean list that AI handles well.
 
-## Creating Download Instructions
+### Step 3: Create Download Instructions
 
 Clear download instructions are essential for helping users get your software. AI can help you generate consistent, complete download sections for every release.
 
@@ -112,7 +122,7 @@ Clear download instructions are essential for helping users get your software. A
 Include these elements in your download instructions:
 
 ```
-## Downloads
+### Step 4: Downloads
 
 ### Direct Downloads
 - [Source code (ZIP)](link)
@@ -144,7 +154,7 @@ choco install your-package
 ```
 ```
 
-## Handling Different Release Types
+### Step 5: Handling Different Release Types
 
 AI adapts its output based on the type of release. Here's how to guide it effectively:
 
@@ -184,7 +194,7 @@ Include:
 3. Any hotfixes users should apply immediately
 ```
 
-## Automating Release Descriptions
+### Step 6: Automate Release Descriptions
 
 You can integrate AI into your release workflow for consistent, automated descriptions.
 
@@ -253,7 +263,7 @@ For more control, generate descriptions manually but use AI for refinement:
 
 5. Post the final release description
 
-## Maintaining Consistency Across Releases
+### Step 7: Maintaining Consistency Across Releases
 
 One underrated benefit of AI-assisted release notes is consistency. Define a system prompt or template that specifies your project's preferred tone, what sections to include, and how to handle specific scenarios like CVEs or deprecations. Store this template in your repository so every team member and CI pipeline uses the same starting point.
 
@@ -275,12 +285,12 @@ Follow these practices to maximize the value of your release descriptions:
 
 - Keep it scannable: Use formatting, bullet points, and code blocks for easy reading
 
-## Example Release Description
+### Step 8: Example Release Description
 
 Here's a complete example combining all the elements:
 
 ```
-## What's New in v2.1.0
+### Step 9: What's New in v2.1.0
 
 This release introduces major performance improvements and adds support for custom themes.
 
@@ -315,6 +325,21 @@ npm install -g myapp
 
 ```
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

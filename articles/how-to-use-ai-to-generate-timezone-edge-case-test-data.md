@@ -54,7 +54,17 @@ Your application must handle several categories of edge cases that appear regula
 
 **Offset calculations vary by context.** An UTC offset of -5 could mean EST, CST during standard time, or other timezones in different regions. Using fixed offsets instead of proper timezone identifiers leads to incorrect calculations in many scenarios.
 
-## Using AI to Generate Targeted Test Data
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Use AI to Generate Targeted Test Data
 
 AI coding assistants excel at generating test data when you provide clear specifications about your requirements. The key lies in asking for exactly what you need, including the specific timezones, date ranges, and edge cases your application must handle.
 
@@ -164,7 +174,7 @@ testTimestamps.forEach(({ utc, expected }) => {
 });
 ```
 
-## Strategies for Coverage
+### Step 2: Strategies for Coverage
 
 Beyond generating basic test data, use AI to create edge case scenarios that are easy to miss:
 
@@ -176,7 +186,7 @@ Beyond generating basic test data, use AI to create edge case scenarios that are
 
 **Timezone abbreviations versus identifiers.** Request test data that uses ambiguous abbreviations like "CST" (which could mean China Standard Time, Central Standard Time, or Cuba Standard Time) to ensure your application uses proper timezone identifiers instead.
 
-## Validating Generated Test Data
+### Step 3: Validating Generated Test Data
 
 AI-generated test data requires validation before use. Verify that the generated data correctly identifies transition moments by checking against known DST dates. Run the test data against your application to ensure it handles the scenarios as expected. Look for gaps in coverage where edge cases might slip through.
 
@@ -184,7 +194,7 @@ Review the specific timezone rules the AI references. Library documentation and 
 
 Building timezone test data with AI takes initial effort but pays dividends in production reliability. Your application handles global users correctly, reports stay accurate across DST transitions, and customers in different regions see the right times.
 
-## Automation and Regression Prevention
+### Step 4: Automation and Regression Prevention
 
 Once you have timezone test data, commit it to your test suite and automate validation:
 
@@ -227,7 +237,7 @@ def test_all_timezone_cases(timezone_test_cases):
 
 This ensures timezone bugs never resurface after being fixed once.
 
-## Region-Specific Test Data Generation
+### Step 5: Region-Specific Test Data Generation
 
 Different regions have vastly different timezone behavior:
 
@@ -249,7 +259,7 @@ The AI generates edge cases like:
 
 These test cases prevent timezone assumptions that work in the US but fail globally.
 
-## Timezone Library Testing
+### Step 6: Timezone Library Testing
 
 Your application's timezone library matters. Generate test data specific to your library:
 
@@ -290,12 +300,12 @@ assert.Equal(t, "EDT", zone)  // Should be EDT post-DST
 
 Generate test data that exercises each library's specific behavior.
 
-## Documentation and Maintenance
+### Step 7: Documentation and Maintenance
 
 Document why specific test data matters:
 
 ```markdown
-## Critical Timezone Test Cases
+### Step 8: Critical Timezone Test Cases
 
 ### Spring Forward (2025-03-09 US/Eastern)
 **Why it matters:** Applications that calculate time differences across this transition often get it wrong.
@@ -313,6 +323,21 @@ Test both `datetime.timedelta(minutes=61)` additions and manual hour/minute calc
 ```
 
 This documentation prevents future developers from accidentally removing "unnecessary" test cases.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

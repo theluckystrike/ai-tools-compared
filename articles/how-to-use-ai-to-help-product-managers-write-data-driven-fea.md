@@ -42,7 +42,17 @@ Use AI only to generate the table structure and column headers.
 - **A marketing-focused team responds**: to user engagement stories, while engineering teams want technical feasibility discussions.
 - **Ask for a six-section outline**: problem statement, user impact, business case, technical feasibility, risks, and success metrics.
 
-## The Challenge with Traditional Feature Proposals
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The Challenge with Traditional Feature Proposals
 
 Product managers often struggle to translate data into actionable proposals. A typical scenario involves gathering analytics, user feedback, and business metrics—then spending hours structuring this information into a coherent pitch. The challenge compounds when you need to:
 
@@ -70,7 +80,7 @@ Not all AI tools perform equally well for proposal writing tasks. Here's how the
 
 For most PMs, a two-tool workflow works best: use Claude or GPT-4o for prose and narrative, then use Copilot or a code interpreter to build the underlying data models.
 
-## Practical Techniques for AI-Assisted Proposal Writing
+### Step 2: Practical Techniques for AI-Assisted Proposal Writing
 
 ### 1. Generate Structured Outlines from Raw Data
 
@@ -227,7 +237,7 @@ def suggest_visualization(data_points, message):
     return recommendations
 ```
 
-## Step-by-Step Workflow: From Raw Data to Final Proposal
+### Step 3: Step-by-Step Workflow: From Raw Data to Final Proposal
 
 Here is a repeatable process for using AI across the entire proposal lifecycle:
 
@@ -253,6 +263,21 @@ Here is a repeatable process for using AI across the entire proposal lifecycle:
 
 **Document your methodology.** When AI helps calculate projections, document the assumptions so others can evaluate and update them.
 
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
+
 ## Frequently Asked Questions
 
 **Q: Will executives trust proposals that were written with AI?**
@@ -267,7 +292,7 @@ Use AI only to generate the table structure and column headers. Fill in competit
 **Q: Can I use AI for quarterly business review presentations?**
 Yes. The same audience-segmentation prompts work well for QBR narratives. Focus the prompt on outcomes vs. outputs and ask AI to connect metrics back to business goals.
 
-## Measuring Proposal Success
+### Step 4: Measuring Proposal Success
 
 Track your AI-assisted proposals against traditional metrics:
 

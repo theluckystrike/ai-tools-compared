@@ -57,7 +57,17 @@ def test_double(input_value, expected):
 
 This pattern becomes powerful when you need to cover not just happy paths but also boundary conditions, invalid inputs, and extreme values. The decorator generates individual test items for each parameter set, giving you clear failure messages that identify exactly which input combination broke.
 
-## How AI Helps Identify Edge Cases
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: How AI Helps Identify Edge Cases
 
 When you ask an AI assistant to generate parametrize test cases, provide context about your function's purpose, input types, and any business rules. The AI can then suggest test values you might otherwise miss:
 
@@ -135,7 +145,7 @@ def test_validate_email(email, expected):
 
 This coverage would take significant time to compile manually. The AI identified boundary conditions like empty strings, missing components, and malformed addresses without you needing to think of each one. Notice it also caught the newline character case—a common injection vector that developers frequently overlook.
 
-## Crafting Effective AI Prompts for Test Generation
+### Step 2: Crafting Effective AI Prompts for Test Generation
 
 The quality of AI-generated parametrize cases depends heavily on what you tell the AI. Vague prompts produce generic tests; detailed prompts produce targeted edge case coverage.
 
@@ -153,7 +163,7 @@ Including the following in your prompt consistently improves output quality:
 - Any related functions or dependencies
 - Expected return types and error behavior
 
-## Refining AI-Generated Tests
+### Step 3: Refining AI-Generated Tests
 
 AI generates a solid foundation, but you should always review and refine the output:
 
@@ -169,7 +179,7 @@ AI generates a solid foundation, but you should always review and refine the out
 
 A common trap: AI sometimes generates plausible-looking expected values that are subtly wrong. For example, if your function returns `None` for invalid inputs rather than `False`, the AI might still generate `False` as the expected value. Always run generated tests and fix mismatches before merging.
 
-## Using AI for Regression Testing
+### Step 4: Use AI for Regression Testing
 
 After fixing bugs, add the failing input as a new parametrize case. Ask AI to suggest similar values that might reveal related issues:
 
@@ -273,7 +283,7 @@ def test_unicode_email(email, expected):
     assert validate_email(email) == expected
 ```
 
-## Common Pitfalls to Avoid
+### Step 5: Common Pitfalls to Avoid
 
 When using AI-generated parametrize tests, watch for these common issues:
 
@@ -289,7 +299,7 @@ When using AI-generated parametrize tests, watch for these common issues:
 
 **Ignoring type edge cases** — If your function accepts `Union[str, int]`, ask AI to generate inputs for both types, including type coercion scenarios.
 
-## Real-World Workflow
+### Step 6: Real-World Workflow
 
 Here's a practical workflow for integrating AI into your testing process:
 
@@ -308,6 +318,21 @@ Here's a practical workflow for integrating AI into your testing process:
 7. **Iterate** — Add more cases as you discover edge conditions in production
 
 This approach saves hours of manual test writing while ensuring better coverage than writing tests after the fact. Teams that adopt this workflow consistently report catching classes of bugs in code review that would previously have reached production.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

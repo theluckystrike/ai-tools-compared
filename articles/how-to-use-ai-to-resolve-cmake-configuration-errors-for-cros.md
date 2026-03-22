@@ -46,7 +46,17 @@ Chrome OS uses a modified Gentoo Linux foundation with its own package manager (
 
 The CrOS SDK provides a toolchain file and sysroot that differs from typical embedded Linux distributions. Developers often encounter errors related to missing libraries, incorrect sysroot paths, incompatible compiler flags, and Portage-specific library locations. Understanding these differences helps you provide better context to AI assistants, leading to faster solutions.
 
-## Common CMake Configuration Errors in CrOS Cross-Compilation
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Common CMake Configuration Errors in CrOS Cross-Compilation
 
 Several error patterns appear frequently when building for Chrome OS:
 
@@ -58,7 +68,7 @@ Several error patterns appear frequently when building for Chrome OS:
 
 **Portage library paths** create confusion because libraries installed through the CrOS package manager reside in paths that CMake's find_module and find_package functions do not search by default.
 
-## Using AI to Diagnose CrOS CMake Errors
+### Step 2: Use AI to Diagnose CrOS CMake Errors
 
 When you encounter a CMake configuration failure for CrOS, provide your AI assistant with specific context to receive accurate solutions:
 
@@ -147,7 +157,7 @@ find_package_handle_standard_args(Brillo
         LIBBRILLO_INCLUDE_DIR)
 ```
 
-## Optimizing Your AI Prompts for CrOS CMake Issues
+### Step 3: Optimizing Your AI Prompts for CrOS CMake Issues
 
 Getting useful answers from AI requires asking the right questions. Structure your prompts to include:
 
@@ -165,7 +175,7 @@ A well-structured prompt looks like:
 
 > I am cross-compiling for Chrome OS using the CrOS SDK on an Ubuntu 22.04 host, targeting the amd64-generic board. When running cmake, I receive this error: [paste error]. Here is my toolchain file: [paste content]. I have verified the sysroot path exists. What CMake configuration changes are needed to resolve this?
 
-## Preventing CrOS CMake Errors Before They Occur
+### Step 4: Preventing CrOS CMake Errors Before They Occur
 
 AI can also help you set up correct configurations from the start, reducing debugging time:
 
@@ -186,7 +196,7 @@ cmake -DCMAKE_TOOLCHAIN_FILE=toolchain.cmake -P check_toolchain.cmake
 
 This proactive approach catches misconfigurations before they produce cascading errors throughout your build.
 
-## Common Error Patterns and AI Solutions
+### Step 5: Common Error Patterns and AI Solutions
 
 When you encounter these specific error patterns, knowing what to ask AI saves significant debugging time:
 
@@ -227,7 +237,7 @@ Ask AI: "My toolchain specifies a compiler path [path]. CMake says
 AI suggests: verify with `ls` and check CMAKE_FIND_ROOT_PATH settings.
 ```
 
-## Debugging Strategy with AI Assistance
+### Step 6: Debugging Strategy with AI Assistance
 
 Structure your debugging sessions for maximum AI effectiveness:
 
@@ -268,7 +278,7 @@ cmake -B build --verbose 2>&1 | grep -E "CMAKE_SYSROOT|find_package|Compiler"
 # If still failing, provide the new error output back to AI
 ```
 
-## SDK Verification Checklist
+### Step 7: SDK Verification Checklist
 
 Before blaming your CMake configuration, verify your SDK is valid:
 
@@ -309,7 +319,7 @@ done
 
 Run this before debugging, then share the output with AI to get more targeted help.
 
-## Minimal CMakeLists.txt for Testing
+### Step 8: Minimal CMakeLists.txt for Testing
 
 When debugging toolchain issues, start with the simplest possible build:
 
@@ -361,7 +371,7 @@ Build failures usually stem from:
 
 AI can diagnose these quickly with concrete error messages and paths.
 
-## Documentation Resources to Combine with AI
+### Step 9: Documentation Resources to Combine with AI
 
 For best results, provide AI with supplementary context:
 
@@ -382,7 +392,7 @@ Bookmark these resources to reference in AI conversations:
 
 AI combined with official documentation provides superior results to either alone.
 
-## Preventing Configuration Issues During Project Setup
+### Step 10: Preventing Configuration Issues During Project Setup
 
 Rather than debugging after problems emerge, prevent them:
 
@@ -421,6 +431,21 @@ set(CMAKE_CXX_FLAGS_RELEASE "-O3 -g0")
 ```
 
 Ask AI: "How can I optimize CrOS cross-compilation builds for faster iteration during development?"
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

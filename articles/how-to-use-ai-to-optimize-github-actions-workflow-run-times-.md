@@ -45,7 +45,17 @@ Every minute your CI/CD pipeline runs costs money in compute time and delays fee
 
 Traditional optimization requires deep knowledge of GitHub Actions internals, caching strategies, and workflow design patterns. AI changes this equation by analyzing your specific workflows and suggesting targeted improvements based on patterns learned from thousands of successful pipelines.
 
-## Analyzing Your Current Workflows
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Analyzing Your Current Workflows
 
 Before optimizing, you need visibility into where time goes. The GitHub Actions workflow run history provides basic timing data, but AI tools can dig deeper. Start by examining your most frequent workflows and identify the longest-running jobs.
 
@@ -80,7 +90,7 @@ jobs:
 
 This basic workflow likely runs longer than necessary. Let's examine how AI can help identify and fix the issues.
 
-## AI-Powered Optimization Strategies
+### Step 2: AI-Powered Optimization Strategies
 
 ### Intelligent Caching
 
@@ -162,7 +172,7 @@ jobs:
 
 AI can also recommend when to use `fail-fast: false` to get complete matrix results even when one combination fails, helping you understand compatibility across your entire supported environment.
 
-## Using AI to Generate Optimized Workflows
+### Step 3: Use AI to Generate Optimized Workflows
 
 Modern AI coding assistants can generate optimized GitHub Actions workflows from scratch. When prompting an AI, provide context about your project:
 
@@ -236,7 +246,7 @@ jobs:
           cache-to: type=gha,mode=max
 ```
 
-## Identifying Bottlenecks with AI Analysis
+### Step 4: Identifying Bottlenecks with AI Analysis
 
 When your workflows still feel slow, AI can analyze execution patterns to find hidden bottlenecks. Common issues include:
 
@@ -296,7 +306,7 @@ jobs:
 
 AI tools also flag when a workflow would benefit from a larger or self-hosted runner. GitHub's standard `ubuntu-latest` runner provides 2 vCPUs and 7 GB of RAM. For compute-heavy builds, switching to a 4-core or 8-core runner can cut runtimes in half. Ask AI to compare your current resource usage against available runner tiers and recommend a cost-effective upgrade path.
 
-## Comparing AI Tools for Workflow Optimization
+### Step 5: Comparing AI Tools for Workflow Optimization
 
 Different AI coding tools have distinct strengths when it comes to GitHub Actions optimization. The table below summarizes how the most popular options stack up:
 
@@ -310,7 +320,7 @@ Different AI coding tools have distinct strengths when it comes to GitHub Action
 
 For teams running workflows that exceed 20 minutes, starting with a log-analysis session in Claude or ChatGPT typically surfaces the highest-impact wins. Copilot is the better choice for day-to-day editing and incremental improvements.
 
-## Workflow Design Patterns AI Recommends Most Often
+### Step 6: Workflow Design Patterns AI Recommends Most Often
 
 After analyzing hundreds of developer workflows, AI tools consistently surface the same set of architectural improvements:
 
@@ -322,7 +332,7 @@ After analyzing hundreds of developer workflows, AI tools consistently surface t
 
 **Pin action versions with SHA hashes.** AI security tools increasingly flag workflows that use `@v4` floating tags because maintainers can push breaking changes at any time. Pinning to a commit SHA prevents unexpected failures.
 
-## Measuring Success
+### Step 7: Measuring Success
 
 Track your optimization efforts with GitHub's built-in metrics:
 
@@ -335,6 +345,21 @@ Track your optimization efforts with GitHub's built-in metrics:
 Compare these metrics before and after AI-driven optimizations. Most teams see 30-50% reductions in workflow runtime after implementing AI-suggested changes. Track improvements over four to six weeks to separate genuine gains from noise caused by varying test suites or infrastructure fluctuations.
 
 Set a baseline by exporting the average run time for your three most-used workflows over the previous 30 days. After each round of AI-suggested changes, compare the new 30-day average. Document which suggestions produced the largest gains so you can apply similar patterns to other repositories.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

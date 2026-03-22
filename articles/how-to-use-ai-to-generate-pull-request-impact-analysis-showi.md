@@ -41,13 +41,23 @@ AI coding assistants can help you analyze pull request changes and identify affe
 - **Here are recommendations based**: on practical experience: Define your service boundaries explicitly.
 - Use consistent naming conventions.
 
-## The Challenge of Impact Analysis in Monorepos
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The Challenge of Impact Analysis in Monorepos
 
 Modern software architectures often involve multiple projects, services, or packages that depend on each other. When you modify a shared library, core service, or common component, you need to understand which downstream consumers might be affected. Doing this manually is error-prone and time-consuming, especially in large monorepos with complex dependency chains.
 
 The traditional approach involves manually tracing imports, checking package.json or requirements.txt files, and relying on tribal knowledge about which teams own which components. This breaks down as teams grow and the codebase evolves.
 
-## How AI Tools Approach Impact Analysis
+### Step 2: How AI Tools Approach Impact Analysis
 
 AI assistants can accelerate impact analysis by reading your PR diff and cross-referencing it with dependency configuration files, module definitions, and service boundaries. The process involves several key steps that you can guide the AI to perform effectively.
 
@@ -79,7 +89,7 @@ The AI will examine your codebase and produce a list similar to:
 
 - Risk assessment: High impact—formatDate is used across 8 different services
 
-## Using AI with Dependency Graph Tools
+### Step 3: Use AI with Dependency Graph Tools
 
 For more analysis, combine AI assistance with dedicated dependency graph tools. GitHub's dependency graph, Renovate Bot, and tools like depcruise can export dependency relationships that you feed to the AI for interpretation.
 
@@ -108,7 +118,7 @@ about this change, including their Slack channels or email aliases if available
 in our team documentation.
 ```
 
-## Analyzing Impact in Polyglot Environments
+### Step 4: Analyzing Impact in Polyglot Environments
 
 Many organizations use multiple programming languages, which complicates impact analysis. AI assistants can help bridge this gap by understanding how different language ecosystems represent dependencies.
 
@@ -125,7 +135,7 @@ Look for:
 
 The AI can trace these cross-language relationships by looking at naming conventions, documentation comments, and actual usage patterns in the code.
 
-## Automating Impact Analysis with CI Integration
+### Step 5: Automate Impact Analysis with CI Integration
 
 You can set up automated impact analysis in your CI pipeline using AI-assisted scripts. Here's an example GitHub Actions workflow that runs impact analysis on PRs:
 
@@ -187,7 +197,7 @@ Getting accurate impact analysis from AI requires providing the right context. H
 
 **Iterate on the analysis**. AI might miss edge cases on the first pass. Ask follow-up questions like "Are there any test files that would also need updating?" or "What about configuration files that reference these values?"
 
-## Common Limitations to Watch For
+### Step 6: Common Limitations to Watch For
 
 While AI tools excel at pattern matching and code analysis, they have limitations you should account for:
 
@@ -197,7 +207,7 @@ Transitive dependencies can be tricky. If package A depends on B depends on C, a
 
 Configuration drift—where production differs from code—can cause AI to miss real-world impacts. Always verify critical dependencies against actual deployment configurations.
 
-## Automated Impact Analysis via GitHub Actions
+### Step 7: Automated Impact Analysis via GitHub Actions
 
 Implement impact analysis as part of your CI pipeline. This comment appears automatically on every PR:
 
@@ -273,12 +283,12 @@ jobs:
 
 This automation sends impact reports to reviewers instantly without manual effort.
 
-## Impact Analysis Template and Checklist
+### Step 8: Impact Analysis Template and Checklist
 
 Structure your impact analysis requests with a consistent template. This improves consistency and helps AI tools understand what information you need:
 
 ```markdown
-## Impact Analysis Template
+### Step 9: Impact Analysis Template
 
 ### Files Changed
 - [list of files]
@@ -308,7 +318,7 @@ Structure your impact analysis requests with a consistent template. This improve
 
 Pass this template to your AI tool alongside the PR diff for structured output.
 
-## Command-Line Tool for Local Analysis
+### Step 10: Command-Line Tool for Local Analysis
 
 Run impact analysis locally before pushing:
 
@@ -344,7 +354,7 @@ Usage:
 ./ai-impact-analysis.sh feature/new-api-endpoint main
 ```
 
-## Real-World Impact Analysis Example
+### Step 11: Real-World Impact Analysis Example
 
 Given a PR that modifies a user authentication module, the AI analysis reveals:
 
@@ -353,7 +363,7 @@ Given a PR that modifies a user authentication module, the AI analysis reveals:
 **Output from Claude:**
 
 ```
-## Impact Analysis: Authentication Module Changes
+### Step 12: Impact Analysis: Authentication Module Changes
 
 ### Direct Consumers (5 services)
 1. User Service (auth/token.ts import)
@@ -388,7 +398,7 @@ Given a PR that modifies a user authentication module, the AI analysis reveals:
 
 The AI analysis takes 30 seconds vs. 30+ minutes of manual investigation.
 
-## Measuring Impact Analysis Effectiveness
+### Step 13: Measuring Impact Analysis Effectiveness
 
 Track these metrics to ensure your impact analysis process drives value:
 
@@ -398,6 +408,21 @@ Track these metrics to ensure your impact analysis process drives value:
 | PRs with missed impacts | 2-3 per sprint | <0.5 per sprint | 80% fewer |
 | Cross-team notifications sent | 60% | 98% | 63% improvement |
 | Production incidents from surprise impacts | 2-3 per quarter | <0.5 per quarter | 75% reduction |
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 
