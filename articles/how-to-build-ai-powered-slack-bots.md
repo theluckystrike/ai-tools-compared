@@ -350,6 +350,76 @@ if not check_rate_limit(event["user"]):
     return
 ```
 
+## Choosing Between Claude and GPT-4 for Slack Bots
+
+Both Claude and GPT-4 work well as Slack bot backends, but they have different strengths that matter in practice.
+
+**Claude (Anthropic)** follows instructions with high fidelity. When you give it formatting rules — "use Slack markdown, keep responses scannable, don't use hyphens for lists" — it tends to follow them consistently across long conversations. Claude also handles ambiguous multi-part questions gracefully without hallucinating confidence.
+
+**GPT-4 (OpenAI)** is faster on short queries and has a larger ecosystem of function-calling examples. If your bot needs to trigger external actions (create Jira ticket, look up a user in your database) via structured function calls, GPT-4's JSON mode can be slightly more predictable.
+
+**Practical recommendation**: Use Claude for Q&A bots, knowledge-base assistants, and writing-heavy tasks. Use GPT-4 with function calling for action-oriented bots that orchestrate API calls.
+
+## Slack Block Kit for Richer Responses
+
+Plain text responses work, but Block Kit lets you build interactive messages with buttons, dropdowns, and input modals. Here is a pattern for responses that include an action button:
+
+```python
+def respond_with_actions(respond, answer: str, question: str):
+    respond({
+        "response_type": "in_channel",
+        "blocks": [
+            {
+                "type": "section",
+                "text": {"type": "mrkdwn", "text": answer}
+            },
+            {
+                "type": "actions",
+                "elements": [
+                    {
+                        "type": "button",
+                        "text": {"type": "plain_text", "text": "Thumbs Up"},
+                        "action_id": "feedback_positive",
+                        "value": question[:200]
+                    },
+                    {
+                        "type": "button",
+                        "text": {"type": "plain_text", "text": "Thumbs Down"},
+                        "action_id": "feedback_negative",
+                        "style": "danger",
+                        "value": question[:200]
+                    }
+                ]
+            }
+        ]
+    })
+
+@app.action("feedback_positive")
+def handle_positive_feedback(ack, body):
+    ack()
+    # Log to your analytics system
+    print(f"Positive feedback for: {body['actions'][0]['value']}")
+
+@app.action("feedback_negative")
+def handle_negative_feedback(ack, body, respond):
+    ack()
+    respond({"text": "Thanks for the feedback. What was missing or wrong?"})
+```
+
+Collecting feedback this way is the fastest route to improving your bot's system prompt. Negative feedback clusters will show you exactly which question types the AI is handling poorly.
+
+## Deployment Options Compared
+
+| Option | Cost | Complexity | Best for |
+|---|---|---|---|
+| Socket Mode + local | Free | Low | Development only |
+| Render / Railway | $5-10/mo | Low | Small teams |
+| AWS Lambda + API Gateway | Pay-per-use | Medium | Sporadic traffic |
+| Kubernetes (EKS/GKE) | $50+/mo | High | Enterprise scale |
+| Fly.io | $3-15/mo | Low | Global latency |
+
+For most teams, Fly.io or Railway offers the best developer experience for production bots. Both support persistent WebSocket connections for Socket Mode and can scale to zero when idle.
+
 ## Troubleshooting
 
 **Configuration changes not taking effect**
@@ -364,6 +434,13 @@ Run the command with `sudo` for system-level operations, or check that your user
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
+**Bot not responding to mentions**
+
+Verify that `app_mentions:read` is in your bot's OAuth scopes and that Event Subscriptions are enabled in your Slack app settings. In Socket Mode, the `SLACK_APP_TOKEN` must start with `xapp-`, not `xoxb-`.
+
+**Redis connection errors in production**
+
+Use `redis://` for unencrypted connections and `rediss://` for TLS. Most managed Redis providers (Redis Cloud, Upstash) require TLS. Upstash's free tier works well for bots with under 10,000 commands per day.
 
 ## Related Reading
 
