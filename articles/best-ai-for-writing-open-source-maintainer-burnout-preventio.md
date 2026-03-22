@@ -9,7 +9,7 @@ permalink: /best-ai-for-writing-open-source-maintainer-burnout-preventio/
 categories: [guides]
 tags: [ai-tools-compared, productivity, best-of, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

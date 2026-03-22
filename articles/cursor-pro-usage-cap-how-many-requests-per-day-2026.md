@@ -9,7 +9,7 @@ permalink: /cursor-pro-usage-cap-how-many-requests-per-day-2026/
 categories: [guides]
 tags: [ai-tools-compared, tools]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

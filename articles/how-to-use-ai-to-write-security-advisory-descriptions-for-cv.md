@@ -9,7 +9,7 @@ permalink: /how-to-use-ai-to-write-security-advisory-descriptions-for-cv/
 categories: [guides]
 tags: [ai-tools-compared, tools, security, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---

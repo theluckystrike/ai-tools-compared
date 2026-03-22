@@ -9,7 +9,7 @@ permalink: /copilot-vs-claude-code-for-writing-github-actions-cicd-workf/
 categories: [guides]
 tags: [ai-tools-compared, tools, comparison, claude-ai]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

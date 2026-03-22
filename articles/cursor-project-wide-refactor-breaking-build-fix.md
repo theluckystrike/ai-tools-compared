@@ -13,18 +13,34 @@ intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, troubleshooting]
 ---
+---
+layout: default
+title: "Cursor Project-Wide Refactor Breaking Build"
+description: "Troubleshooting guide for fixing build errors after using Cursor's project-wide refactor feature. Step-by-step diagnostics and solutions for developers"
+date: 2026-03-15
+last_modified_at: 2026-03-15
+author: theluckystrike
+permalink: /cursor-project-wide-refactor-breaking-build-fix/
+reviewed: true
+score: 9
+categories: [troubleshooting]
+intent-checked: true
+voice-checked: true
+tags: [ai-tools-compared, troubleshooting]
+---
 
 {% raw %}
 
 To fix a broken build after a Cursor project-wide refactor, start by running `git diff --stat` to identify all modified files, then clean and rebuild with `rm -rf node_modules package-lock.json && npm install`. The most common causes are broken import paths, out-of-sync TypeScript type definitions, and stale build caches. This guide provides a systematic five-step recovery process covering import fixes, type consistency, configuration files, and dependency resolution.
 
-## Table of Contents
+## Key Takeaways
 
-- [Understanding What Happens During Project-Wide Refactor](#understanding-what-happens-during-project-wide-refactor)
-- [Common Build Errors After Project-Wide Refactor](#common-build-errors-after-project-wide-refactor)
-- [Step-by-Step Fix Guide](#step-by-step-fix-guide)
-- [Diagnostic Tips for Complex Cases](#diagnostic-tips-for-complex-cases)
-- [Prevention](#prevention)
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **The most common causes**: are broken import paths, out-of-sync TypeScript type definitions, and stale build caches.
+- **Use type-safe refactoring with**: TypeScript's rename feature instead of AI-only changes 3.
+- **Does Cursor offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Use `git diff HEAD~1**: -- src/` to see exactly what changed in the last commit, then selectively restore files that are hard to fix.
 
 ## Understanding What Happens During Project-Wide Refactor
 
@@ -254,7 +270,7 @@ npm install -D circular-dependency-plugin
 node -e "require('module')._load('./src/index.js', {}, true)"
 ```
 
-Cursor's refactor can introduce circular dependencies when it moves a utility function from a low-level module to a higher-level one that imports from the first. The build fails with confusing errors because the circular reference is detected late in the module graph resolution.
+Cursor's refactor can introduce circular dependencies when it moves an utility function from a low-level module to a higher-level one that imports from the first. The build fails with confusing errors because the circular reference is detected late in the module graph resolution.
 
 ### Version Conflict Resolution
 

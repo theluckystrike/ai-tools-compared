@@ -9,7 +9,7 @@ permalink: /fine-tune-open-source-code-models-for-your-codebase-2026/
 categories: [guides]
 tags: [ai-tools-compared, ai, development, models, fine-tuning]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---

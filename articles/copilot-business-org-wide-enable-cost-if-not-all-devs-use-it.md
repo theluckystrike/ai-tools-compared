@@ -9,7 +9,7 @@ permalink: /copilot-business-org-wide-enable-cost-if-not-all-devs-use-it/
 categories: [guides]
 tags: [ai-tools-compared, tools, comparison]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---

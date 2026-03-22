@@ -7,6 +7,21 @@ last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /claude-code-not-pushing-to-github-fix/
 reviewed: true
+score: 9
+categories: [troubleshooting]
+intent-checked: true
+voice-checked: true
+tags: [ai-tools-compared, troubleshooting, claude-ai]
+---
+---
+layout: default
+title: "Claude Code Not Pushing to GitHub Fix: Troubleshooting Guide"
+description: "A guide to fixing Claude Code push failures to GitHub. Learn to diagnose and resolve authentication, SSH, and configuration issues"
+date: 2026-03-15
+last_modified_at: 2026-03-22
+author: theluckystrike
+permalink: /claude-code-not-pushing-to-github-fix/
+reviewed: true
 score: 8
 categories: [troubleshooting]
 intent-checked: true
@@ -18,20 +33,20 @@ tags: [ai-tools-compared, troubleshooting, claude-ai]
 
 To fix Claude Code not pushing to GitHub, first test your SSH connection with `ssh -T git@github.com` and verify your remote URL with `git remote -v`. Most push failures resolve by regenerating your SSH key or Personal Access Token and ensuring the remote URL matches your authentication method (SSH vs HTTPS). If you are behind a corporate firewall, configure SSH to use port 443 by setting `HostName ssh.github.com` and `Port 443` in `~/.ssh/config`.
 
-## Table of Contents
+## Key Takeaways
 
-- [Understanding the Push Failure](#understanding-the-push-failure)
-- [Authentication Issues](#authentication-issues)
-- [SSH Configuration Problems](#ssh-configuration-problems)
-- [Repository and Permission Issues](#repository-and-permission-issues)
-- [Network and Connection Issues](#network-and-connection-issues)
-- [Git Configuration Problems](#git-configuration-problems)
-- [Reading Git Push Error Messages](#reading-git-push-error-messages)
-- [Personal Access Token Scope Errors](#personal-access-token-scope-errors)
-- [Git Credential Cache and Keychain Issues](#git-credential-cache-and-keychain-issues)
-- [Claude Code Specific Issues](#claude-code-specific-issues)
-- [Diagnostic Checklist](#diagnostic-checklist)
-- [Preventive Measures](#preventive-measures)
+- **Add the key to the SSH agent**: ```bash
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+```
+
+4.
+- **If you are behind a corporate firewall**: configure SSH to use port 443 by setting `HostName ssh.github.com` and `Port 443` in `~/.ssh/config`.
+- **`remote**: error: GH007: Your push would publish a private email address.`
+GitHub's email privacy setting is blocking the push because your commit email is your real address.
+- **A token with only `read**: org` or `user` scopes cannot push code.
+- **Most push failures resolve**: by regenerating your SSH key or Personal Access Token and ensuring the remote URL matches your authentication method (SSH vs HTTPS).
+- **This happens frequently on**: machines used for multiple GitHub accounts.
 
 ## Understanding the Push Failure
 
@@ -71,7 +86,7 @@ SSH keys provide a more secure and convenient method for GitHub authentication.
 
 **Fix:**
 
-1. Check if you have a SSH key:
+1. Check if you have an SSH key:
 
 ```bash
 ls -la ~/.ssh
@@ -428,12 +443,12 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Claude Code Terminal Permission Denied](/ai-tools-compared/claude-code-terminal-permission-denied-fix/)
-- [Copilot vs Claude Code for Writing GitHub Actions Cicd](/ai-tools-compared/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
-- [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
-- [Claude Code Runbook Documentation Guide](/ai-tools-compared/claude-code-runbook-documentation-guide/)
-- [Configure Claude Code](/ai-tools-compared/how-to-configure-claude-code-to-follow-your-teams-feature-fl/)
+- [ChatGPT Slow Response Fix 2026: Complete Troubleshooting](/ai-tools-compared/chatgpt-slow-response-fix-2026/)
+- [Cursor AI Making Too Many API Calls Fix: Troubleshooting](/ai-tools-compared/cursor-ai-making-too-many-api-calls-fix/)
+- [Cursor Keeps Crashing Fix 2026: Complete Troubleshooting](/ai-tools-compared/cursor-keeps-crashing-fix-2026/)
+- [Copilot vs Claude Code for Writing GitHub Actions Cicd Workf](/ai-tools-compared/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
+- [Claude Code Losing Context Across Sessions Fix](/ai-tools-compared/claude-code-losing-context-across-sessions-fix/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-```
 ```
 {% endraw %}

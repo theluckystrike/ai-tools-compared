@@ -9,7 +9,7 @@ permalink: /how-to-use-ai-to-generate-terraform-import-blocks-for-existi/
 categories: [guides]
 tags: [ai-tools-compared, terraform, infrastructure-as-code, ai-tools, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

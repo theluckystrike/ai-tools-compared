@@ -9,7 +9,7 @@ permalink: /best-practices-for-ai-tool-project-config-when-switching-between-mul
 categories: [guides]
 tags: [ai-tools-compared, tools, best-of, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

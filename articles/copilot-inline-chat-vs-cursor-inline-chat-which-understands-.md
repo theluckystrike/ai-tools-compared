@@ -9,7 +9,7 @@ permalink: /copilot-inline-chat-vs-cursor-inline-chat-which-understands-/
 categories: [guides]
 tags: [ai-tools-compared, tools, comparison]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

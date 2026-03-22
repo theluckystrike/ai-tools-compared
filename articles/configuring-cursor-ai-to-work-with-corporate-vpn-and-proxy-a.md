@@ -9,7 +9,7 @@ permalink: /configuring-cursor-ai-to-work-with-corporate-vpn-and-proxy-a/
 categories: [guides]
 tags: [ai-tools-compared, cursor, vpn, proxy, network, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

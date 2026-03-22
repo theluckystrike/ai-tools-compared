@@ -9,7 +9,7 @@ permalink: /cursor-ai-model-selection-guide-which-model-for-which-coding/
 categories: [guides]
 tags: [ai-tools-compared, cursor, ai, coding, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

@@ -10,7 +10,7 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, kubernetes, operators, crd, documentation, devops, infrastructure]
+tags: [ai-tools-compared, kubernetes, operators, crd, documentation, devops, infrastructure, best-of]
 ---
 
 {% raw %}

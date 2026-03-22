@@ -9,7 +9,7 @@ permalink: /how-to-use-ai-to-build-data-pipeline-retry-and-dead-letter-2/
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---

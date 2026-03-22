@@ -9,7 +9,7 @@ author: theluckystrike
 permalink: /best-way-to-configure-claude-code-to-understand-your-interna/
 tags: [ai-tools-compared, tools, best-of, claude-ai]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

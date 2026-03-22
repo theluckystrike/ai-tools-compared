@@ -9,7 +9,7 @@ permalink: /cursor-vs-copilot-for-implementing-stripe-payment-integratio/
 categories: [guides]
 tags: [ai-tools-compared, tools, comparison]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

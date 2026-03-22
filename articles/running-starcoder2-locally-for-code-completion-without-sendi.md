@@ -9,7 +9,7 @@ permalink: /running-starcoder2-locally-for-code-completion-without-sendi/
 categories: [guides]
 tags: [ai-tools-compared, tools]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---

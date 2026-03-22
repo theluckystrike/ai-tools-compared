@@ -4,10 +4,11 @@ description: "Compare AI code assistants for nginx configuration. Which tools ha
 author: "theluckystrike"
 date: 2026-03-21
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 permalink: /best-ai-tools-for-writing-nginx-configs-2026/
+tags: [ai-tools-compared, best-of, artificial-intelligence]
 ---
 
 

@@ -8,7 +8,7 @@ permalink: /ai-tools-for-automated-e2e-test-generation/
 categories: [guides]
 tags: [ai-tools-compared, artificial-intelligence]
 reviewed: true
-score: 6
+score: 9
 intent-checked: true
 voice-checked: true
 ---

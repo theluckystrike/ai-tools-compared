@@ -13,9 +13,37 @@ intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, claude-ai]
 ---
+---
+layout: default
+title: "Claude Code Developer Portal Setup Guide"
+description: "A practical guide to setting up a developer portal using Claude Code. Learn how to structure your documentation, integrate APIs, and automate portal"
+date: 2026-03-16
+last_modified_at: 2026-03-16
+author: "theluckystrike"
+permalink: /claude-code-developer-portal-setup-guide/
+reviewed: true
+score: 9
+categories: [guides]
+intent-checked: true
+voice-checked: true
+tags: [ai-tools-compared, claude-ai]
+---
 
 
 Claude Code transforms how teams build and maintain developer portals. Instead of manually writing documentation or wrestling with static site generators, you can use Claude Code's AI capabilities to generate, organize, and keep your portal current. This guide walks through setting up a developer portal from scratch using Claude Code, with practical examples and automation strategies.
+
+## Key Takeaways
+
+- **A team of 5**: generating documentation daily would spend $150/month for AI-powered portal generation.
+- **When requesting a tutorial**: provide context about your API's purpose and common use cases:
+
+```
+Generate a tutorial for implementing authentication using OAuth 2.0
+with our API.
+- **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
+- **Instead of manually writing**: documentation or wrestling with static site generators, you can use Claude Code's AI capabilities to generate, organize, and keep your portal current.
+- **When you use Claude**: Code for portal setup, you gain several advantages.
+- **First**: documentation stays synchronized with your actual code because Claude Code reads your implementation directly.
 
 ## Why Use Claude Code for Developer Portals
 
@@ -384,5 +412,4 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Gemini Code Assist Enterprise Pricing Per Developer](/ai-tools-compared/gemini-code-assist-enterprise-pricing-per-developer-breakdown-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-```
 ```

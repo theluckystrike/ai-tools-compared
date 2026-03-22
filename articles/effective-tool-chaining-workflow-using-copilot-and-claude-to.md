@@ -9,7 +9,7 @@ permalink: /effective-tool-chaining-workflow-using-copilot-and-claude-together-f
 categories: [guides]
 tags: [ai-tools-compared, tools, workflow, claude-ai]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

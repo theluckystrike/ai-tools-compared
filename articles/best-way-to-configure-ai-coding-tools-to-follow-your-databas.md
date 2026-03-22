@@ -9,7 +9,7 @@ permalink: /best-way-to-configure-ai-coding-tools-to-follow-your-databas/
 categories: [guides]
 tags: [ai-tools-compared, tools, ai, configuration, best-of, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

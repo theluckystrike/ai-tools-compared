@@ -8,6 +8,21 @@ author: theluckystrike
 permalink: /claude-code-profiler-integration-guide/
 categories: [guides]
 reviewed: true
+score: 9
+intent-checked: true
+voice-checked: true
+tags: [ai-tools-compared, integration, claude-ai]
+---
+---
+layout: default
+title: "Claude Code Profiler Integration Guide"
+description: "Learn how to integrate performance profilers with Claude Code to identify bottlenecks, optimize code, and build faster applications"
+date: 2026-03-16
+last_modified_at: 2026-03-16
+author: theluckystrike
+permalink: /claude-code-profiler-integration-guide/
+categories: [guides]
+reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
@@ -17,6 +32,13 @@ tags: [ai-tools-compared, integration, claude-ai]
 {% raw %}
 
 Profiling is essential for understanding your application's performance characteristics and identifying bottlenecks. Integrating profilers with Claude Code creates a powerful workflow for analyzing performance data and implementing optimizations. This guide covers how to set up and use various profiling tools alongside Claude Code for performance analysis.
+
+## Key Takeaways
+
+- **The function `process_image` appears**: at the top with 4.2 seconds cumulative time out of 5 seconds total.
+- **This guide covers how**: to set up and use various profiling tools alongside Claude Code for performance analysis.
+- **Describe which bars are widest and which function names appear most prominently**: Claude Code can reason from that description even without directly reading the SVG structure.
+- **This guide covers understanding**: profiling fundamentals, setting up python profilers, using cprofile, with specific setup instructions
 
 ## Prerequisites
 

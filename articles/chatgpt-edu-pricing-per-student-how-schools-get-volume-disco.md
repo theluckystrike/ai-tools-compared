@@ -9,7 +9,7 @@ permalink: /chatgpt-edu-pricing-per-student-how-schools-get-volume-disco/
 categories: [guides]
 tags: [ai-tools-compared, tools, chatgpt]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

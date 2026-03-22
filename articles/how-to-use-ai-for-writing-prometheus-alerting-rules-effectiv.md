@@ -9,7 +9,7 @@ permalink: /how-to-use-ai-for-writing-prometheus-alerting-rules-effectively/
 categories: [guides]
 tags: [ai-tools-compared, monitoring, prometheus, devops, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

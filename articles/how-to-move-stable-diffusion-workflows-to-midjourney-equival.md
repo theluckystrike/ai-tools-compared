@@ -9,7 +9,7 @@ permalink: /how-to-move-stable-diffusion-workflows-to-midjourney-equivalent-setu
 categories: [guides]
 tags: [ai-tools-compared, tools, workflow]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

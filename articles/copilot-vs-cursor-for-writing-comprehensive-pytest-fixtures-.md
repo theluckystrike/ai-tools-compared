@@ -9,7 +9,7 @@ permalink: /copilot-vs-cursor-for-writing--pytest-fixtures-/
 categories: [guides]
 tags: [ai-tools-compared, tools, troubleshooting, comparison]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

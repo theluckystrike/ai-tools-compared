@@ -13,24 +13,34 @@ intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]
 ---
+---
+layout: default
+title: "How to Migrate Cursor AI Snippets and Templates"
+description: "A practical guide for developers moving their custom snippets and templates from Cursor AI to WindSurf. Includes code examples and step-by-step"
+date: 2026-03-16
+last_modified_at: 2026-03-22
+author: theluckystrike
+permalink: /migrate-cursor-ai-snippets-and-templates-to-windsurf-editor/
+reviewed: true
+score: 9
+categories: [guides]
+intent-checked: true
+voice-checked: true
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 {% raw %}
 
 Developers who have invested time building custom snippets and templates in Cursor AI often face a challenge when trying to move to WindSurf. While both editors share roots in Visual Studio Code, their approaches to custom AI-assisted content differ in ways that affect how you transfer your workflows. This guide walks through the practical steps of migrating your Cursor snippets and templates to WindSurf, with working code examples you can apply immediately.
 
-## Table of Contents
+## Key Takeaways
 
-- [Understanding the Difference Between Cursor and WindSurf](#understanding-the-difference-between-cursor-and-windsurf)
-- [Exporting Your Cursor Snippets](#exporting-your-cursor-snippets)
-- [Converting to WindSurf Format](#converting-to-windsurf-format)
-- [Migrating AI Prompt Templates](#migrating-ai-prompt-templates)
-- [Handling Tab Completion Differences](#handling-tab-completion-differences)
-- [Batch Migration Script](#batch-migration-script)
-- [Feature Comparison: Cursor vs WindSurf Snippets](#feature-comparison-cursor-vs-windsurf-snippets)
-- [Migrating Workspace-Level Snippets](#migrating-workspace-level-snippets)
-- [Translating Cursor Composer Prompts to WindSurf Cascade](#translating-cursor-composer-prompts-to-windsurf-cascade)
-- [Verifying Your Migration](#verifying-your-migration)
-- [Maintaining Both Editors](#maintaining-both-editors)
+- **On Windows**: check `%APPDATA%\Cursor\User\snippets\`.
+- **On macOS**: they're typically stored in `~/Library/Application Support/Cursor/User/snippets/` or `~/.cursor/extensions/`.
+- **On macOS**: this is `~/Library/Application Support/WindSurf/User/snippets/`.
+- **WindSurf, developed by Codeium, takes a different approach**: it uses a combination of VS Code's native snippet system and its own AI context files.
+- **WindSurf uses the `scope`**: field to define where the snippet applies, and the JSON format requires careful attention to commas between properties.
+- **WindSurf uses a different**: mechanism called `windrules` for project-specific AI behavior.
 
 ## Understanding the Difference Between Cursor and WindSurf
 
@@ -313,10 +323,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Move Copilot Suggested Code Patterns to: Snippets](/ai-tools-compared/how-to-move-copilot-suggested-code-patterns-to-cursor-snippets/)
-- [Switching from Windsurf to Cursor How to Transfer Project](/ai-tools-compared/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
-- [Switching from Windsurf Free to Cursor Free What Is](/ai-tools-compared/switching-from-windsurf-free-to-cursor-free-what-is-different/)
-- [Cursor vs Windsurf for Implementing Drag and Drop Interfaces](/ai-tools-compared/cursor-vs-windsurf-for-implementing-drag-and-drop-interfaces/)
-- [Migrate Windsurf AI Rules to Cursor Dot Cursor Rules](/ai-tools-compared/migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/)
+- [How to Migrate VSCode Copilot Keybindings](/ai-tools-compared/migrate-vscode-copilot-keybindings-to-cursor-ai-editor-2026/)
+- [How to Migrate Cursor Rules File](/ai-tools-compared/migrate-cursor-rules-file-to-windsurf-rules-format-guide/)
+- [Migrate Windsurf AI Rules to Cursor Dot Cursor Rules Format](/ai-tools-compared/migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/)
+- [How to Move Copilot Suggested Code Patterns to Cursor](/ai-tools-compared/how-to-move-copilot-suggested-code-patterns-to-cursor-snippets/)
+- [How to Transfer Cursor Editor Theme and Layout](/ai-tools-compared/transfer-cursor-editor-theme-and-layout-to-vscode-with-copil/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

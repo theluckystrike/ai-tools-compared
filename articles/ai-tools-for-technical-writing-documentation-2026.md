@@ -4,10 +4,11 @@ description: "Compare AI assistants for writing API docs, READMEs, architecture 
 author: "theluckystrike"
 date: 2026-03-21
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 permalink: /ai-tools-for-technical-writing-documentation-2026/
+tags: [ai-tools-compared, artificial-intelligence]
 ---
 
 

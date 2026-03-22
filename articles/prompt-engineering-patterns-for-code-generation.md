@@ -13,27 +13,34 @@ intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared]
 ---
+---
+layout: default
+title: "Prompt Engineering Patterns for Code Generation"
+description: "Practical prompt patterns that improve AI code generation quality: role priming, context injection, constraint framing, chain-of-thought, and self-review loops."
+date: 2026-03-21
+last_modified_at: 2026-03-21
+author: theluckystrike
+permalink: /prompt-engineering-patterns-for-code-generation/
+categories: [guides]
+reviewed: true
+score: 9
+intent-checked: true
+voice-checked: true
+tags: [ai-tools-compared]
+---
 
 {% raw %}
 
 The difference between a prompt that produces working code and one that produces plausible-looking garbage is usually structure, not length. These patterns work across Claude, GPT-4o, and Gemini. Each includes a before/after example showing the actual output difference.
 
-## Table of Contents
+## Key Takeaways
 
-- [Pattern 1: Role + Stack + Constraint Priming](#pattern-1-role-stack-constraint-priming)
-- [Pattern 2: Show the Interface, Ask for the Implementation](#pattern-2-show-the-interface-ask-for-the-implementation)
-- [Pattern 3: Provide the Failing Test](#pattern-3-provide-the-failing-test)
-- [Pattern 4: Chain-of-Thought for Algorithmic Code](#pattern-4-chain-of-thought-for-algorithmic-code)
-- [Pattern 5: Negative Constraints](#pattern-5-negative-constraints)
-- [Pattern 6: Incremental Build Pattern](#pattern-6-incremental-build-pattern)
-- [Pattern 7: Self-Review Loop](#pattern-7-self-review-loop)
-- [Combining Patterns](#combining-patterns)
-- [Testing Prompt Quality](#testing-prompt-quality)
-- [Real Workflow: Building an Event Router](#real-workflow-building-an-event-router)
-- [Effectiveness by Language](#effectiveness-by-language)
-- [Measuring Pattern Impact](#measuring-pattern-impact)
-- [Common Mistakes to Avoid](#common-mistakes-to-avoid)
-- [CLI Tool: Prompt Quality Linter](#cli-tool-prompt-quality-linter)
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **The role + stack**: + constraint triple removes the three most common sources of useless AI code: wrong library choice, wrong async approach, and missing configurability.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **What data structure best**: represents this problem and why 2.
+- **Without "do not use regex for splitting**:" every model defaults to `line.split(",")` which breaks on `"Smith, John",30,NYC`.
 
 ## Pattern 1: Role + Stack + Constraint Priming
 

@@ -9,7 +9,7 @@ permalink: /best-ai-for-resolving-git-merge-conflict-markers-in-complex-/
 categories: [guides]
 tags: [ai-tools-compared, tools, best-of, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---

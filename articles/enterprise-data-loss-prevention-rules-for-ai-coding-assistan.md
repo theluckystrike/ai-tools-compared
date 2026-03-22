@@ -9,7 +9,7 @@ permalink: /enterprise-data-loss-prevention-rules-for-ai-coding-assistan/
 categories: [guides]
 tags: [ai-tools-compared, security, enterprise, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

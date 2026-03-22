@@ -9,7 +9,7 @@ permalink: /how-to-build-model-context-protocol-server-for-internal-desi/
 categories: [guides]
 tags: [ai-tools-compared, tools, mcp, design-systems]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

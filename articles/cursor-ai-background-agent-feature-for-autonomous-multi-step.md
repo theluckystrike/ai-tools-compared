@@ -9,7 +9,7 @@ permalink: /cursor-ai-background-agent-feature-for-autonomous-multi-step/
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

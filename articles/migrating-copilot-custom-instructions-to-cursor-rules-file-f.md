@@ -18,20 +18,14 @@ tags: [ai-tools-compared, guides]
 
 If you have been using GitHub Copilot with custom instructions and want to switch to Cursor, you need to understand how to migrate your configuration. Both tools use configuration files to customize AI behavior, but the formats differ significantly. This guide walks you through converting Copilot custom instructions into Cursor rules files, with practical examples and common conversion patterns.
 
-## Table of Contents
+## Key Takeaways
 
-- [Key Differences Between Copilot and Cursor Configuration](#key-differences-between-copilot-and-cursor-configuration)
-- [Finding Your Copilot Custom Instructions](#finding-your-copilot-custom-instructions)
-- [Converting Basic Guidelines](#converting-basic-guidelines)
-- [Handling Project-Specific Rules](#handling-project-specific-rules)
-- [Migrating Code Style Preferences](#migrating-code-style-preferences)
-- [Including Example Code](#including-example-code)
-- [Defining File Ignore Patterns](#defining-file-ignore-patterns)
-- [Creating Multiple Rule Files](#creating-multiple-rule-files)
-- [Testing Your Migrated Rules](#testing-your-migrated-rules)
-- [Common Conversion Mistakes to Avoid](#common-conversion-mistakes-to-avoid)
-- [Advanced Cursor Rules Configuration](#advanced-cursor-rules-configuration)
-- [Integrating Rules Across Your Team](#integrating-rules-across-your-team)
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **Does Copilot offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Cursor**: on the other hand, uses `.cursorrules` files that support structured YAML-like syntax with distinct sections for different types of instructions.
+- **Only use let when**: the variable must be reassigned later.
 
 ## Key Differences Between Copilot and Cursor Configuration
 
@@ -426,10 +420,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Migrate Windsurf AI Rules to Cursor Dot Cursor Rules](/ai-tools-compared/migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/)
 - [How to Migrate Cursor Rules File](/ai-tools-compared/migrate-cursor-rules-file-to-windsurf-rules-format-guide/)
-- [Cursor AI Rules Files How to Customize AI Behavior](/ai-tools-compared/cursor-ai-rules-files-how-to-customize-ai-behavior-for-your-project/)
-- [How to Transfer Copilot Code Review Settings](/ai-tools-compared/transfer-copilot-code-review-settings-to-cursor-ai-review-co/)
-- [Switching from Copilot Enterprise to Cursor Business](/ai-tools-compared/switching-from-copilot-enterprise-to-cursor-business-migrati/)
+- [Copilot Workspace vs Cursor Composer Multi File Editing Comp](/ai-tools-compared/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)
+- [Claude vs ChatGPT for Building Custom ESLint Rules for React](/ai-tools-compared/claude-vs-chatgpt-for-building-custom-eslint-rules-for-react/)
+- [ChatGPT Custom GPT Not Following Instructions](/ai-tools-compared/chatgpt-custom-gpt-not-following-instructions/)
+- [How to Create Custom Instructions for AI Coding Tools That E](/ai-tools-compared/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

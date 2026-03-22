@@ -9,7 +9,7 @@ permalink: /using-claude-code-for-backend-and-cursor-for-frontend-same-p/
 categories: [guides]
 tags: [ai-tools-compared, tools, claude-ai]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

@@ -9,7 +9,7 @@ permalink: /cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/
 categories: [guides]
 tags: [ai-tools-compared, tools, privacy]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

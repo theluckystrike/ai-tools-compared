@@ -9,7 +9,7 @@ permalink: /how-to-configure-claude-code-project-memory-for-persistent-c/
 categories: [guides]
 tags: [ai-tools-compared, tools, claude-ai]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

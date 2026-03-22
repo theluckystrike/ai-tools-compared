@@ -7,10 +7,11 @@ date: 2026-03-21
 author: "AI Tools Compared"
 permalink: /best-ai-tool-for-creating-developer-career-roadmap-from-curr/
 reviewed: true
-score: 8
+score: 9
 categories: [best-of]
 intent-checked: true
 voice-checked: true
+tags: [ai-tools-compared, best-of, artificial-intelligence]
 ---
 
 

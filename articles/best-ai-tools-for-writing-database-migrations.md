@@ -6,9 +6,9 @@ date: 2026-03-22
 author: theluckystrike
 permalink: /best-ai-tools-for-writing-database-migrations/
 categories: [guides]
-tags: [ai-tools-compared]
+tags: [ai-tools-compared, best-of, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

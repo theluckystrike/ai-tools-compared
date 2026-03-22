@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /best-workflow-for-using-ai-to-write-infrastructure-as-code-f/
 categories: [guides]
 tags: [ai-tools-compared, tools, best-of, workflow, artificial-intelligence]
-score: 8
+score: 9
 voice-checked: true
 reviewed: true
 intent-checked: true

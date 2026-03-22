@@ -9,7 +9,7 @@ permalink: /best-practices-for-writing-cursorrules-file-that-improves-co/
 categories: [guides]
 tags: [ai-tools-compared, tools, best-of]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

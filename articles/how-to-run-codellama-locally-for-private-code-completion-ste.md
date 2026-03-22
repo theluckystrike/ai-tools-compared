@@ -8,7 +8,7 @@ permalink: /how-to-run-codellama-locally-for-private-code-completion-ste/
 categories: [guides]
 tags: [ai-tools-compared, codellama, local-ai, code-completion]
 reviewed: true
-score: 0
+score: 8
 voice-checked: false
 intent-checked: false
 ---

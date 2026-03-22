@@ -9,7 +9,7 @@ permalink: /chatgpt-team-admin-seat-does-admin-count-toward-billing-seat/
 categories: [guides]
 tags: [ai-tools-compared, chatgpt, billing, team, admin]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

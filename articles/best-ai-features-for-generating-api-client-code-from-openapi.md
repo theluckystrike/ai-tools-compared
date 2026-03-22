@@ -9,7 +9,7 @@ permalink: /best-ai-features-for-generating-api-client-code-from-openapi/
 categories: [guides]
 tags: [ai-tools-compared, tools, best-of, artificial-intelligence, api]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

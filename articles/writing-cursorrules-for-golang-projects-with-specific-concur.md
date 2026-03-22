@@ -9,7 +9,7 @@ permalink: /writing-cursorrules-for-golang-projects-with-specific-concur/
 categories: [guides]
 tags: [ai-tools-compared, tools]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 ---

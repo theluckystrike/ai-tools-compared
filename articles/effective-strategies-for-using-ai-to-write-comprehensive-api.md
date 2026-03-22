@@ -9,7 +9,7 @@ permalink: /effective-strategies-for-using-ai-to-write--api/
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence, api]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

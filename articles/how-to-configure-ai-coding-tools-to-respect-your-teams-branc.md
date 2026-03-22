@@ -9,7 +9,7 @@ permalink: /how-to-configure-ai-coding-tools-to-respect-your-teams-branc/
 categories: [guides]
 tags: [ai-tools-compared, configuration, workflow, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

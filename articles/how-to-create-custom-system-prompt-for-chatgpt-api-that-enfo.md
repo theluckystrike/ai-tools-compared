@@ -9,7 +9,7 @@ permalink: /how-to-create-custom-system-prompt-for-chatgpt-api-that-enfo/
 categories: [guides]
 tags: [ai-tools-compared, chatgpt, api, coding-standards]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
