@@ -45,7 +45,17 @@ Cursor AI builds on VS Code with integrated AI capabilities that differ from Cop
 
 The migration involves three main areas: exporting your Copilot conversation history, transferring project-specific context, and configuring Cursor to match your workflow preferences.
 
-## Understanding What You Are Actually Migrating
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand What You Are Actually Migrating
 
 Before exploring the mechanics, it helps to be clear about what "migrating Copilot history" actually means in practice. There are three distinct categories of value stored in Copilot's history:
 
@@ -55,7 +65,7 @@ Before exploring the mechanics, it helps to be clear about what "migrating Copil
 
 Only the second and third categories are worth migrating in a structured way. Conversation transcripts are useful as a reference archive, but trying to inject raw chat history into Cursor's context window just creates noise. Focus the migration effort on extracting the durable knowledge.
 
-## Exporting Copilot Chat History
+### Step 2: Exporting Copilot Chat History
 
 GitHub Copilot stores chat conversations locally on your machine. The exact location depends on your operating system and Copilot version. Here's how to locate and export your data.
 
@@ -97,7 +107,7 @@ curl -H "Authorization: token YOUR_GITHUB_TOKEN" \
 
 This provides usage statistics but not individual chat messages. For complete conversation history, the local files remain your primary source.
 
-## Reading and Parsing Copilot Conversations
+### Step 3: Reading and Parsing Copilot Conversations
 
 Copilot stores conversations as JSON files. Here's a Node.js script to extract and format your chat history:
 
@@ -142,7 +152,7 @@ Run this script to create a portable file containing your conversation history:
 node parse-copilot-history.js
 ```
 
-## Importing Context into Cursor
+### Step 4: Importing Context into Cursor
 
 Cursor handles context differently than Copilot. Instead of storing conversation history as standalone files, Cursor integrates context directly into your project workspace. Here's how to transfer your valuable project knowledge.
 
@@ -178,7 +188,7 @@ Cursor provides several ways to provide context:
 
 For each significant Copilot conversation, manually recreate the context in Cursor by referencing the relevant files and explaining the project-specific requirements.
 
-## Configuring Cursor for Your Workflow
+### Step 5: Configure Cursor for Your Workflow
 
 After transferring history, configure Cursor to match your preferences.
 
@@ -260,7 +270,7 @@ Test before abandoning: Keep Copilot accessible for a week while you adjust to C
 
 Invest in your `.cursorrules` file: This is the highest-use configuration step in the migration. A well-written rules file prevents Cursor from making suggestions that contradict your project conventions, reducing the cognitive load of reviewing AI output during the adjustment period.
 
-## Validating the Migration
+### Step 6: Validating the Migration
 
 After completing the migration steps, run a structured validation to confirm Cursor is providing equivalent or better assistance compared to your Copilot setup.
 
@@ -272,6 +282,21 @@ A practical validation checklist:
 - Test escalating complexity: start with single-function completion, then a new feature request, then an architectural question. Each tier should benefit from the codebase index.
 
 Track your time-to-first-useful-suggestion during the first week. Most developers find Cursor's first-day performance roughly equivalent to Copilot's, with quality improving noticeably by day 3–5 as the codebase index refines and you learn how to frame prompts for Cursor's model selection. The transition cost is real but short-lived — typically under a week before Cursor's codebase awareness begins paying dividends on complex tasks where Copilot's limited context window was previously a bottleneck.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -101,7 +101,17 @@ Consider adding specific requirements such as:
 - Maintain awareness of which data the assistant can access during a session
 
 
-## Implementing Technical Controls
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Implementing Technical Controls
 
 
 Policies are only effective when backed by technical enforcement. Work with your IT and security teams to implement controls that align with your guidelines.
@@ -137,7 +147,7 @@ Many enterprise tools support configuration files or admin dashboards that contr
 - Whether code can be sent to external servers for processing
 
 
-## Code Review and Human Oversight
+### Step 2: Code Review and Human Oversight
 
 
 AI-generated code requires the same—or greater—scrutiny as code written by humans. Your policy should specify that all AI-assisted code changes go through standard review processes without exception.
@@ -159,7 +169,7 @@ AI_ASSISTED_CODE_REVIEW_CHECKLIST = [
 Some organizations implement additional review layers for AI-generated code, particularly in security-sensitive areas. This might include mandatory security team approval for changes to authentication logic, payment processing, or data handling routines.
 
 
-## Handling Policy Violations
+### Step 3: Handling Policy Violations
 
 
 Define clear consequences for policy violations, but frame them proportionally. First offenses might warrant education and clarification, while repeated violations or intentional data exposure could trigger disciplinary action.
@@ -168,7 +178,7 @@ Define clear consequences for policy violations, but frame them proportionally. 
 Create a process for reporting potential violations confidentially. Developers should feel comfortable reporting accidental data exposure without fear of punitive action—this encourages transparency and faster remediation.
 
 
-## Regular Policy Review
+### Step 4: Regular Policy Review
 
 
 AI coding assistant capabilities and the threat space evolve rapidly. Schedule quarterly reviews of your policy to incorporate new tools, updated security research, and lessons learned from your own usage.
@@ -187,7 +197,7 @@ Key review topics include:
 - Regulatory updates affecting data processing
 
 
-## Building a Culture of Responsible AI Use
+### Step 5: Build a Culture of Responsible AI Use
 
 
 The best policies succeed when developers understand their purpose. Rather than framing restrictions as distrust, position them as protections that enable safe innovation. Provide training during onboarding and make resources easily accessible.
@@ -196,7 +206,7 @@ The best policies succeed when developers understand their purpose. Rather than 
 When developers understand why certain restrictions exist, they're more likely to follow the spirit of the policy rather than seeking workarounds. Regular communication about security incidents—both within your organization and industry-wide—keeps awareness fresh without creating alarm.
 
 
-## Tool Pricing and License Implications
+### Step 6: Tool Pricing and License Implications
 
 Understanding pricing models helps shape policy decisions:
 
@@ -209,14 +219,14 @@ Understanding pricing models helps shape policy decisions:
 
 Claude Code and GitHub Copilot offer the clearest enterprise data processing agreements. Cursor emphasizes local processing capability, which aligns with air-gapped requirements. Factor licensing costs into your total cost of ownership calculations.
 
-## Sample Policy Template
+### Step 7: Sample Policy Template
 
 Here's a concrete policy template your organization can adapt:
 
 ```markdown
 # AI Coding Assistant Acceptable Use Policy (Draft)
 
-## 1. Approved Tools and Versions
+### Step 8: 1. Approved Tools and Versions
 - GitHub Copilot Enterprise (Version 1.2+)
 - Claude Code Pro/Enterprise
 - Cursor (Version 0.40+)
@@ -224,7 +234,7 @@ Here's a concrete policy template your organization can adapt:
 
 Unapproved tools detected via network monitoring trigger automated notifications.
 
-## 2. Prohibited Actions
+### Step 9: 2. Prohibited Actions
 - Pasting customer data, API keys, or credentials
 - Processing payment card information
 - Sharing patient health records or PII
@@ -237,24 +247,24 @@ Unapproved tools detected via network monitoring trigger automated notifications
 - Context indexing limited to approved repositories
 - Proxy routing through corporate firewall
 
-## 4. Code Review Obligations
+### Step 10: 4. Code Review Obligations
 All AI-generated code requires:
 - Manual review by non-generating developer
 - Security scan before merge
 - Documentation of AI source in commit message
 
-## 5. Training and Onboarding
+### Step 11: 5. Training and Onboarding
 - 30-minute training for all developers (annually)
 - Policy review during code review process
 - Incident post-mortems for violations
 
-## 6. Incident Reporting
+### Step 12: 6. Incident Reporting
 - Developers report potential breaches within 2 hours
 - No punitive action for good-faith reports
 - Data breach timeline follows ISO 27035
 ```
 
-## Monitoring and Enforcement Mechanisms
+### Step 13: Monitor and Enforcement Mechanisms
 
 Effective policies require monitoring. Here's a practical implementation approach:
 
@@ -280,7 +290,7 @@ tcpdump -i en0 -A 'tcp port 443 and (host api.openai.com or host api.anthropic.c
 
 This prevents developers from accidentally using prohibited tools while allowing approved platforms through. Pair this with endpoint management solutions (Jamf, Intune, Okta) for monitoring.
 
-## Balancing Security and Developer Experience
+### Step 14: Balancing Security and Developer Experience
 
 The worst policies create friction that drives developers to unauthorized workarounds. Test your policy with a pilot group before organizational rollout. Gather feedback on:
 
@@ -292,6 +302,21 @@ Iterate based on this feedback. A 95% usable policy that developers follow beats
 ---
 
 An effective acceptable use policy for AI coding assistants balances security requirements with developer productivity. By clearly defining approved tools, data handling rules, and enforcement mechanisms, your organization can confidently adopt AI-assisted development while maintaining compliance and protecting intellectual property.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

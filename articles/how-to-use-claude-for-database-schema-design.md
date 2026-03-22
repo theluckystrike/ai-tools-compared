@@ -117,7 +117,17 @@ CREATE TABLE subscription_audit_log (
 
 Claude explains the immutable plans decision: "Plans are immutable once created. If you change a price, create a new plan and update the subscription to point to it. This preserves the historical price on each subscription and makes invoices auditable."
 
-## Asking for Index Strategy
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Asking for Index Strategy
 
 After generating the schema, ask specifically about indexes:
 
@@ -163,7 +173,7 @@ CREATE INDEX idx_audit_log_subscription
 
 The partial index on subscriptions (only for `status = 'active'`) is an optimization most developers wouldn't reach for without prompting — it's smaller, faster to update, and more cache-friendly.
 
-## Modeling Complex Constraints
+### Step 2: Modeling Complex Constraints
 
 Describe business rules in plain language, let Claude translate them to SQL constraints:
 
@@ -232,7 +242,7 @@ END;
 $$ LANGUAGE plpgsql;
 ```
 
-## Schema Evolution Planning
+### Step 3: Schema Evolution Planning
 
 Ask Claude to plan migration paths before you commit to a design:
 
@@ -251,7 +261,7 @@ Claude's response typically identifies:
 - Use a `customer_type` discriminator column rather than a separate `organizations` table, to avoid a large data migration when adding orgs
 - Structure line items with a `unit_price_cents` and `quantity` rather than just `amount_cents`, to support usage-based billing
 
-## Verifying Schema Quality
+### Step 4: Verify Schema Quality
 
 After generating a schema, ask Claude to critique it:
 
@@ -262,6 +272,21 @@ Be specific about each problem and suggest the fix.
 ```
 
 This "adversarial review" catches issues the initial generation missed. Running the generated schema through this critique loop produces better output than a single large prompt.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

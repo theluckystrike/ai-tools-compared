@@ -33,7 +33,17 @@ This separation keeps each tool focused on what it does best.
 - **A pipeline that takes**: 15 minutes to run on a small PR will erode developer confidence faster than one that takes 3 minutes and catches 80% of the same issues.
 - **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
 
-## Understanding AI Tool Chaining
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand AI Tool Chaining
 
 
 Tool chaining involves connecting several AI services or agents in sequence, where each tool handles a specific aspect of code review. Instead of relying on a single AI to do everything, you distribute responsibilities across specialized tools. This approach improves accuracy and provides clearer feedback loops.
@@ -42,7 +52,7 @@ Tool chaining involves connecting several AI services or agents in sequence, whe
 A typical chain might include a linter for style violations, a static analyzer for potential bugs, an AI code review agent for logic issues, and finally an automated fixer that applies safe corrections.
 
 
-## Building Your Review Pipeline
+### Step 2: Build Your Review Pipeline
 
 
 The first step is identifying what each tool in your chain should do. Here is a practical three-stage pipeline:
@@ -58,7 +68,7 @@ The first step is identifying what each tool in your chain should do. Here is a 
 This separation keeps each tool focused on what it does best.
 
 
-## Practical Implementation
+### Step 3: Practical Implementation
 
 
 Here is how you might implement this chain using common tools:
@@ -86,7 +96,7 @@ fix-agent --apply --safe ai-review.md
 The script above demonstrates the concept. In production, you would likely use GitHub Actions or a similar CI system to trigger this pipeline on every pull request.
 
 
-## Connecting Claude Code with GitHub Actions
+### Step 4: Connecting Claude Code with GitHub Actions
 
 
 Claude Code integrates well with CI/CD systems. You can set up a workflow that runs on pull requests:
@@ -125,7 +135,7 @@ jobs:
 This workflow runs on every pull request and posts AI-generated feedback as a comment.
 
 
-## Handling Automatic Fixes
+### Step 5: Handling Automatic Fixes
 
 
 Not all fixes should be applied automatically. You need a strategy for determining what gets fixed without human approval:
@@ -175,7 +185,7 @@ def apply_fixes(review_results, safety_level="high"):
 ```
 
 
-## Using Cursor for Inline Reviews
+### Step 6: Use Cursor for Inline Reviews
 
 
 Cursor provides an alternative approach by integrating AI directly into your editor. You can set up automated review sessions:
@@ -191,7 +201,7 @@ Cursor provides an alternative approach by integrating AI directly into your edi
 Cursor's advantage is immediate feedback during development rather than waiting for CI to run.
 
 
-## Comparing AI Tools for Code Review Chaining
+### Step 7: Comparing AI Tools for Code Review Chaining
 
 Different tools in a chain contribute different strengths. The table below maps common review concerns to the tool best positioned to handle each one:
 
@@ -207,7 +217,7 @@ Different tools in a chain contribute different strengths. The table below maps 
 Using the right tool for each concern means your AI review agent spends its token budget on logic and design—the areas where language models genuinely outperform rules-based tools—rather than formatting issues that a linter handles for free.
 
 
-## Structuring Prompts for Maximum Accuracy
+### Step 8: Structuring Prompts for Maximum Accuracy
 
 The quality of an AI code review depends heavily on what context you provide. Weak prompts produce generic feedback; well-structured prompts produce actionable, file-specific observations.
 
@@ -263,7 +273,7 @@ When building your pipeline, keep these principles in mind:
 **Review the reviewer.** Regularly check your AI's feedback against known issues. If it consistently misses problems or produces false positives, adjust your prompts.
 
 
-## Common Challenges
+### Step 9: Common Challenges
 
 
 Tool chaining introduces complexity that single-tool setups avoid:
@@ -278,7 +288,7 @@ Tool chaining introduces complexity that single-tool setups avoid:
 **Prompt drift.** As you tweak prompts for different stages, they may conflict. Keep prompts documented and version-controlled.
 
 
-## Integrating with Pull Request Workflows
+### Step 10: Integrate with Pull Request Workflows
 
 The most effective chains activate automatically at pull request creation and update. Beyond posting a comment, you can configure the pipeline to block merges when the AI review flags critical issues.
 
@@ -305,7 +315,7 @@ sys.exit(0)
 Add this as a step after your AI review runs. Developers see a failed check directly in the GitHub PR interface and can click through to the AI comment for details. This tight integration ensures the pipeline is not advisory—it actively enforces review quality gates.
 
 
-## Measuring Pipeline Effectiveness
+### Step 11: Measuring Pipeline Effectiveness
 
 Track these metrics to determine whether your chained review pipeline is paying off:
 
@@ -317,7 +327,7 @@ Track these metrics to determine whether your chained review pipeline is paying 
 Review these numbers monthly. If defect escape rate drops but false positive rate climbs, tighten the AI's focus by narrowing the prompt scope. If auto-fix acceptance drops, tighten the categories you allow the fixer to touch automatically.
 
 
-## Extending Your Pipeline
+### Step 12: Extending Your Pipeline
 
 
 Once you have a working three-stage chain, consider adding:
@@ -339,6 +349,21 @@ Each addition makes your pipeline more detailed but increases runtime and comple
 {% raw %}
 
 AI tool chaining transforms code review from a manual, time-consuming process into an automated pipeline that catches issues early and consistently. Start with a simple chain, measure its effectiveness, and expand as your workflow matures.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

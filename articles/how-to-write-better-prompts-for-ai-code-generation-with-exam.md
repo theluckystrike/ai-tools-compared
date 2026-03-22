@@ -46,7 +46,17 @@ Write a function to process user data.
 Build a complete user authentication system with registration, login, password reset, and JWT token management.
 - **Use the reqwest and**: serde crates.
 
-## The Foundation: Clear Context and Intent
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The Foundation: Clear Context and Intent
 
 Before writing any prompt, establish the context. AI models work best when they understand your background situation, including the programming language, framework, and the specific problem you are solving.
 
@@ -64,7 +74,7 @@ Write a Python function using FastAPI and Pydantic v2 that validates incoming us
 
 The second version specifies the language, framework, validation requirements, and expected behavior. This specificity eliminates guesswork and produces immediately usable code.
 
-## Specify Input and Output Formats
+### Step 2: Specify Input and Output Formats
 
 One of the most effective prompt improvements involves clearly defining what the code should accept as input and what it should produce as output. This reduces iterations and rework.
 
@@ -93,7 +103,7 @@ Write a TypeScript function using the Express framework that handles file upload
 
 This approach produces production-ready code that aligns with your requirements from the start.
 
-## Provide Examples of Expected Behavior
+### Step 3: Provide Examples of Expected Behavior
 
 When possible, include concrete examples of expected input and output. This technique, often called few-shot prompting, significantly improves accuracy for complex transformations or calculations.
 
@@ -115,7 +125,7 @@ Generate a TypeScript function that performs this transformation with proper err
 
 The example clarifies naming conventions (camelCase), data types, and error handling expectations that would otherwise require clarification.
 
-## Break Complex Tasks into Steps
+### Step 4: Break Complex Tasks into Steps
 
 For complex functionality, consider decomposing your request into logical steps. This improves both the quality of individual components and their integration.
 
@@ -147,7 +157,7 @@ Finally, write middleware to authenticate JWT tokens from request headers.
 
 This structured approach produces modular, maintainable code with clear separation of concerns.
 
-## Specify Code Style and Conventions
+### Step 5: Specify Code Style and Conventions
 
 AI models generate code in various styles unless you specify your preferences. Include requirements for naming conventions, documentation patterns, and architectural approaches.
 
@@ -164,7 +174,7 @@ Write a Rust function to fetch and parse JSON from a REST API endpoint. Use the 
 
 This produces code that matches your codebase conventions without post-generation refactoring.
 
-## Request Test Coverage
+### Step 6: Request Test Coverage
 
 Including test requirements in your prompts ensures the generated code comes with verification. This practice catches edge cases and prevents regressions.
 
@@ -182,7 +192,7 @@ Create a Python function to calculate compound interest with parameters for prin
 
 The resulting code arrives with built-in test coverage, immediately ready for integration.
 
-## Iterate and Refine
+### Step 7: Iterate and Refine
 
 Even well-crafted prompts may require refinement. Treat prompt writing as an iterative process. When the output misses the mark, analyze what information was missing or ambiguous, then update your prompt accordingly.
 
@@ -288,7 +298,7 @@ Only show the modified functions, not the entire file.
 
 Including context dramatically improves output relevance.
 
-## Prompt Template Library
+### Step 8: Prompt Template Library
 
 ### API Endpoint Template
 
@@ -377,7 +387,7 @@ Include:
 - Accessibility features (ARIA, keyboard nav)
 ```
 
-## Measuring Prompt Effectiveness
+### Step 9: Measuring Prompt Effectiveness
 
 Track which prompts work best:
 
@@ -441,7 +451,7 @@ class PromptEffectiveness:
         }
 ```
 
-## Common Pitfalls in Prompt Writing
+### Step 10: Common Pitfalls in Prompt Writing
 
 ### Too Vague
 ❌ "Create a function"
@@ -503,6 +513,21 @@ Here's similar code in my project:
 ```
 
 This structure makes it trivial for AI to understand and respond appropriately.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

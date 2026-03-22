@@ -51,7 +51,17 @@ AI coding assistants train on vast codebases representing many different coding 
 
 Consider a scenario where your project uses a specific error-handling pattern across all API endpoints. An AI assistant without this context might generate inconsistent error responses. By explicitly defining your project's conventions in the system prompt, you ensure every generated piece of code aligns with your established patterns.
 
-## Core Components of Effective System Prompts
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Core Components of Effective System Prompts
 
 ### Project Context and Technology Stack
 
@@ -149,7 +159,7 @@ Use expect assertions with toBeTruthy, toEqual, and toHaveBeenCalled
 for verifying mock interactions.
 ```
 
-## Structuring System Prompts for Maximum Effectiveness
+### Step 2: Structuring System Prompts for Maximum Effectiveness
 
 ### Layer Your Instructions
 
@@ -188,7 +198,7 @@ Do not commit console.log statements—use the logger service instead.
 Do not bypass TypeScript strict mode or add // @ts-ignore comments.
 ```
 
-## Maintaining and Evolving System Prompts
+### Step 3: Maintaining and Evolving System Prompts
 
 System prompts require ongoing refinement. As your project evolves, update prompts to reflect new conventions or changed requirements. Keep a living document of your project conventions that you can reference when crafting or updating system prompts.
 
@@ -196,7 +206,7 @@ Track which prompts produce consistently good results and which need adjustment.
 
 Remember that system prompts work best when they're specific without being overly verbose. Include enough detail to guide the AI effectively, but avoid overwhelming it with information it doesn't need for the task at hand.
 
-## Writing System Prompts for Specific Domains
+### Step 4: Writing System Prompts for Specific Domains
 
 The structure of a good system prompt shifts depending on what kind of code the AI will generate. A prompt optimized for backend API work differs substantially from one tuned for frontend component development or data pipeline scripts.
 
@@ -217,7 +227,7 @@ appropriate status codes for validation and authorization errors. Use
 async/await throughout; never write synchronous database calls.
 ```
 
-## Prompt Length and Specificity Trade-offs
+### Step 5: Prompt Length and Specificity Trade-offs
 
 Longer system prompts are not automatically better. Each additional rule the AI must hold in mind competes for attention with the actual coding task. A prompt covering 20 conventions produces code that follows 15 of them inconsistently. A prompt covering 8 conventions with concrete examples produces code that follows all 8 reliably.
 
@@ -225,7 +235,7 @@ The practical approach is to start with a core prompt covering your three or fou
 
 Split your prompt into sections with clear headers when it grows beyond 300 words. The AI handles structured text better than a wall of prose, and you can quickly locate and update individual sections as conventions evolve.
 
-## Storing and Versioning System Prompts
+### Step 6: Store and Versioning System Prompts
 
 System prompts are project artifacts that should live in version control alongside your code. A common pattern is to store them in a `prompts/` directory at the repository root:
 
@@ -240,6 +250,21 @@ prompts/
 Team members can load the appropriate prompt into their AI assistant at the start of a session. When conventions change — a new linting rule, a library upgrade, a shift in error-handling strategy — updating the prompt file and committing it keeps everyone's AI assistant aligned.
 
 Include a changelog section at the bottom of each prompt file so team members can see what changed and why. A prompt that silently changes behavior is harder to debug than one where changes are documented.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

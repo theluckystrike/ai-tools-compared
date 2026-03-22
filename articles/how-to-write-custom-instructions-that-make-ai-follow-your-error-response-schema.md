@@ -41,7 +41,17 @@ Error codes must use UPPERCASE_WITH_UNDERSCORES format.
 - **Provide examples for each**: language you use.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Understanding Error Response Schemas
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Error Response Schemas
 
 Before writing custom instructions, you need a clearly defined error response schema. Most modern APIs use a standardized format like this:
 
@@ -71,7 +81,7 @@ AI coding assistants learn from millions of codebases and naturally produce the 
 
 The result is drift: the first endpoint your AI generates returns `{ success, error: { code, message } }`, the second returns `{ status: "error", message: "..." }`, and the third returns `{ errors: [...] }`. Consumers of your API now need branching logic to handle every variant. Custom instructions lock the AI into a single canonical structure before it writes a single line.
 
-## Writing Effective Custom Instructions
+### Step 2: Writing Effective Custom Instructions
 
 ### Specify the Exact Schema Structure
 
@@ -153,14 +163,14 @@ Map error codes to HTTP status codes:
 
 This ensures AI generates both the correct response body and the appropriate status code.
 
-## Practical Implementation
+### Step 3: Practical Implementation
 
 ### For Cursor and Cline Users
 
 Add custom instructions to your `.cursorrules` or project-specific rules file:
 
 ```
-## Error Handling
+### Step 4: Error Handling
 
 All error responses must follow our API error schema defined in docs/error-schema.md.
 
@@ -262,7 +272,7 @@ interface ApiResponse<T> {
 
 With these type definitions in your custom instructions, the AI will generate code that satisfies the type checker automatically—no runtime surprises.
 
-## Testing Your Custom Instructions
+### Step 5: Test Your Custom Instructions
 
 After adding custom instructions, verify they work by asking AI to generate error handling code. Check for:
 
@@ -278,7 +288,7 @@ A useful verification workflow is to ask the AI to generate error handling for t
 
 If the AI deviates from your schema, refine your instructions with more specific examples or constraints.
 
-## Common Pitfalls to Avoid
+### Step 6: Common Pitfalls to Avoid
 
 Being too vague: Instructions like "use good error handling" leave too much room for interpretation. Be specific about every field and format.
 
@@ -291,6 +301,21 @@ Ignoring language differences: Error handling patterns differ between languages.
 Omitting the "why": AI models follow instructions more reliably when the instructions include brief rationale. Adding "so that API consumers can parse errors without branching logic" after your schema definition improves adherence—the model treats the instruction as a meaningful constraint rather than an arbitrary rule.
 
 Not versioning your instructions: Store your `.cursorrules`, `CLAUDE.md`, and related files in version control. When your schema evolves, update the instructions at the same time. Drift between your actual schema and your AI instructions is a common source of inconsistent code in growing codebases.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

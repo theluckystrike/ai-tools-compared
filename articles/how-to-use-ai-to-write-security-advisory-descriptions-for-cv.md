@@ -50,7 +50,17 @@ Before using AI, you need to understand what makes a good CVE advisory descripti
 The National Vulnerability Database (NVD) and MITRE provide guidelines for CVE description formatting. Your AI-generated content must align with these standards while remaining readable.
 
 
-## Prompt Engineering for CVE Descriptions
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Prompt Engineering for CVE Descriptions
 
 
 The quality of AI-generated CVE descriptions depends heavily on your prompts. A well-structured prompt provides the necessary context, constraints, and examples.
@@ -148,7 +158,7 @@ Note: This issue affects both the 1.x and 2.x branches. Users of versions 2.0-2.
 ```
 
 
-## AI Configuration for Security Writing
+### Step 2: AI Configuration for Security Writing
 
 
 When using AI for security content, configure your tool appropriately:
@@ -185,7 +195,7 @@ Always validate AI output against:
 - Technical feasibility of described attacks
 
 
-## Workflow Integration
+### Step 3: Workflow Integration
 
 
 For teams processing multiple CVEs, integrate AI into your workflow:
@@ -242,7 +252,7 @@ Generate these from the core description:
 ```
 
 
-## Common Pitfalls to Avoid
+### Step 4: Common Pitfalls to Avoid
 
 
 Over-reliance on AI without validation: Always have security experts review technical accuracy. AI can generate plausible but incorrect technical details.
@@ -257,7 +267,7 @@ Inconsistent severity: CVSS scores should come from official sources, not AI gen
 Generic language: Security advisories need specificity. Train your prompts to avoid vague terms like "potential security issue" in favor of concrete descriptions.
 
 
-## Tools and Approaches
+### Step 5: Tools and Approaches
 
 
 General-purpose LLMs with strong instruction-following capabilities work well for CVE description generation. Claude, GPT-4, and similar models can produce accurate descriptions when given proper context and constraints. The key is providing detailed input data and clear formatting requirements.
@@ -266,6 +276,21 @@ General-purpose LLMs with strong instruction-following capabilities work well fo
 For teams with specific style guides or vendor templates, create custom prompt libraries that enforce your organization's standards. Store effective prompts and iterate based on review feedback.
 
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions

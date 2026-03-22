@@ -43,7 +43,17 @@ A commit message serves multiple purposes. It provides immediate context for cod
 
 Most developers skip detailed messages because they're tedious to write. An AI model can extract the essence of a diff—which functions changed, what breaking changes were introduced, which edge cases were handled—and present this in a standardized format. This standardization helps with automated tooling, changelog generation, and compliance requirements.
 
-## AI Tools for Commit Message Generation
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: AI Tools for Commit Message Generation
 
 ### Copilot CLI with Git Integration
 
@@ -150,7 +160,7 @@ def calculate_price(items, tax_rate=0.0, currency='USD'):
 | Setup complexity | Low | Medium | Low | Medium |
 | Multi-language support | Excellent | Excellent | Good | Good |
 
-## Building a Custom Solution
+### Step 2: Build a Custom Solution
 
 For teams with specific commit message requirements, building a simple Python script provides maximum control:
 
@@ -235,7 +245,7 @@ These trailers are parsed by GitHub, GitLab, and other platforms to link commits
 
 **Configure AI system prompts for your code style.** Every team's conventions differ. Invest time in crafting system prompts that reflect your organization's commit message philosophy, whether that's detailed technical descriptions or concise action items.
 
-## Integration with Development Workflows
+### Step 3: Integration with Development Workflows
 
 AI commit messages integrate into modern git workflows:
 
@@ -249,7 +259,7 @@ AI commit messages integrate into modern git workflows:
 
 Example: A team using Conventional Commits with AI generation can fully automate their release process from commit to deployment.
 
-## Real-World Example: Refactoring Scenario
+### Step 4: Real-World Example: Refactoring Scenario
 
 Imagine refactoring authentication logic. Without AI:
 
@@ -282,9 +292,24 @@ This message immediately tells reviewers:
 
 Future developers debugging authentication issues can read this message and understand exactly where password logic lives and why it was restructured.
 
-## Footer
+### Step 5: Footer
 
 AI commit message generation works best as part of a broader development workflow that emphasizes code quality and team communication. Pair this with pre-commit linters and code review processes for maximum effectiveness. Consider your team's naming conventions and commit history before deploying automation—the goal is to amplify good practices, not enforce arbitrary standards.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -39,7 +39,17 @@ GitHub Copilot accelerates Terraform provider configuration by suggesting provid
 - **What file should I**: keep open to give Copilot the best context? Keep `variables.tf`, `locals.tf`, and any existing `providers.tf` open in separate editor tabs.
 - **Copilot uses open files as context**: so having your variable definitions visible dramatically improves the relevance of provider suggestions.
 
-## Setting Up Copilot for Terraform
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Set Up Copilot for Terraform
 
 Before looking at specific techniques, ensure Copilot is configured in your environment. In VS Code, install the GitHub Copilot extension and enable it for HCL files. Copilot works best when it has context about your project, so open your existing Terraform files alongside new configurations.
 
@@ -62,7 +72,7 @@ Both AI coding tools assist with Terraform, but they approach it differently:
 
 For Terraform specifically, Cursor's multi-file context is a meaningful advantage when you need to generate a resource block that references variables defined in a separate `variables.tf`. Copilot works best when relevant files are open in the same editor session.
 
-## Writing Your First Provider Block with Copilot
+### Step 2: Writing Your First Provider Block with Copilot
 
 When you start typing a provider block, Copilot suggests completions based on the provider type. Begin typing `provider "aws"` and watch Copilot predict the standard structure:
 
@@ -86,7 +96,7 @@ provider "aws" {
 
 Accept the suggestion by pressing Tab, then customize the values. This pattern works across providers. Type `provider "azurerm"` and Copilot suggests the Azure provider structure with subscription ID, tenant ID, and feature blocks.
 
-## Using Context Variables for Provider Aliases
+### Step 3: Use Context Variables for Provider Aliases
 
 Infrastructure projects often require multiple provider instances. Copilot helps you create aliased providers when you provide context about your requirements.
 
@@ -185,7 +195,7 @@ provider "google-beta" {
 
 Copilot typically suggests the `google-beta` block when you have beta resources referenced elsewhere in your project, saving you the lookup of whether a resource requires the beta provider.
 
-## Handling Provider Version Constraints
+### Step 4: Handling Provider Version Constraints
 
 Specifying provider versions prevents unexpected changes during `terraform init`. Copilot assists with version constraint syntax:
 
@@ -213,7 +223,7 @@ When you type the version constraint, Copilot typically suggests the appropriate
 
 Copilot often suggests slightly older stable versions. After accepting a suggestion, check the registry for the current stable release and pin to that. Use `terraform providers lock` after confirming your versions to generate a `.terraform.lock.hcl` file that the whole team shares through source control.
 
-## Module-Level Provider Configuration
+### Step 5: Module-Level Provider Configuration
 
 Modules often need to pass providers from the root configuration. Copilot helps generate the boilerplate for provider passthrough:
 
@@ -273,6 +283,21 @@ Review generated configurations carefully. Copilot suggestions reflect common pa
 Use descriptive variable names in your project. When Copilot sees consistently named variables like `var.aws_region`, `var.azure_subscription_id`, or `var.gcp_project`, it incorporates them into suggestions more accurately.
 
 Store provider configurations in a dedicated `providers.tf` file or organize them logically. Copilot performs better with consistent file organization because it has clearer context about your infrastructure setup.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

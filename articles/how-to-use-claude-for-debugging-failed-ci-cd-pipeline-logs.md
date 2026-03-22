@@ -25,7 +25,17 @@ When your CI/CD pipeline fails at 2 AM, the log output can feel overwhelming. Th
 - **Here are the most**: frequent ones it helps debug.
 - **These are particularly tricky**: because the error message sometimes appears far from the actual problem.
 
-## Paste the Right Context
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Paste the Right Context
 
 
 The key to getting useful help from Claude is providing the right context. Do not just dump the entire log file into the conversation. Instead, focus on the specific failure section.
@@ -48,7 +58,7 @@ Error output:
 This gives Claude enough context to work with without overwhelming it with thousands of lines of noise.
 
 
-## Common Pipeline Failure Patterns
+### Step 2: Common Pipeline Failure Patterns
 
 
 Claude recognizes several common patterns in CI/CD failures. Here are the most frequent ones it helps debug.
@@ -109,7 +119,7 @@ These appear as "permission denied", "access denied", or "unauthorized" messages
 When you see these errors, include the relevant step from your CI configuration. Claude can verify that your secrets are correctly configured and that the IAM permissions or SSH keys are properly set up for the CI environment.
 
 
-## Writing Effective Prompts for Log Analysis
+### Step 3: Writing Effective Prompts for Log Analysis
 
 
 The way you phrase your prompt affects how quickly Claude finds the solution. Here are patterns that work well.
@@ -178,7 +188,7 @@ Multiple things seem to be failing in this pipeline run. Can you analyze the log
 This works well when you see many error messages but are unsure which one is the actual root cause versus symptoms.
 
 
-## Handling Specific CI Platforms
+### Step 4: Handling Specific CI Platforms
 
 
 Claude handles logs from all major CI platforms. Here are some tips for each.
@@ -208,7 +218,7 @@ Jenkins logs can be verbose. Focus on the failed stage output rather than the en
 CircleCI shows parallel jobs and containers. Include the failed job name and the step output. The "slice" information helps Claude understand parallel execution context.
 
 
-## Automating Log Analysis with Claude Code
+### Step 5: Automate Log Analysis with Claude Code
 
 
 If you find yourself debugging pipeline failures often, you can use Claude Code to automate some of this analysis. Create a simple script that captures the last run's logs and pipes them to Claude.
@@ -244,7 +254,7 @@ Third, include configuration files when relevant. For dependency issues, share y
 Fourth, iterate on your prompts. If Claude's first response does not hit the mark, provide more context or rephrase the question. The more Claude knows about your stack and setup, the better its suggestions.
 
 
-## Example Debugging Session
+### Step 6: Example Debugging Session
 
 
 Here is a real example of how this works in practice.
@@ -270,6 +280,21 @@ Claude identified that the build step was missing in the workflow—the TypeScri
 This is a common pattern: the error message points to a symptom (missing module) while the real issue is a missing build step in CI.
 
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions
