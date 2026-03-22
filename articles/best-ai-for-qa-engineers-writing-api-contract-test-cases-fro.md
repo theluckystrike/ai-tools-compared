@@ -349,7 +349,7 @@ components:
 
 | GraphQL contracts | Claude Sonnet | Handles complex schemas well |
 
-
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

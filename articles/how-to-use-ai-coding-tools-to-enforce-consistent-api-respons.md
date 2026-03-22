@@ -292,6 +292,7 @@ This practice ensures your standards remain current and helps identify areas nee
 
 AI coding tools transform API consistency from a manual enforcement task into an automated process. By defining clear standards, creating utility functions, and directing AI generation toward your preferred patterns, you maintain consistent API responses with minimal friction.
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

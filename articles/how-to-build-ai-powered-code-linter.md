@@ -289,5 +289,4 @@ Pass these rules to the AI linter's system prompt for consistent enforcement acr
 - [AI Debugging Assistants Compared 2026](/ai-tools-compared/ai-debugging-assistants-compared-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

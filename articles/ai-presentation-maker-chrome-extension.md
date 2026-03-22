@@ -256,5 +256,4 @@ Experiment with different input types—some tools handle website URLs, document
 - [Screen Sharing Chrome Extension](/ai-tools-compared/screen-sharing-chrome-extension/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -316,6 +316,7 @@ Both platforms have found their niches. Canva remains the go-to for design-integ
 
 For a team already invested in Canva's design ecosystem, the video capabilities provide adequate functionality without requiring additional tools. For organizations needing programmatic control or processing video at scale, CapCut's more open architecture delivers practical advantages that translate to real workflow efficiency.
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

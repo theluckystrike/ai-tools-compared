@@ -325,7 +325,7 @@ Most teams starting from scratch use Claude Opus for initial generation (accurat
 
 ## Recommendation
 
-For comprehensive technical documentation requiring accuracy and depth: Start with Claude Opus. Feed it code samples, architecture diagrams (text), or specification documents. Review the output for completeness, accuracy, and audience appropriateness. Trim verbose sections.
+For technical documentation requiring accuracy and depth: Start with Claude Opus. Feed it code samples, architecture diagrams (text), or specification documents. Review the output for completeness, accuracy, and audience appropriateness. Trim verbose sections.
 
 For inline code documentation (docstrings, function comments): Use Cursor with Claude backend for real-time generation.
 

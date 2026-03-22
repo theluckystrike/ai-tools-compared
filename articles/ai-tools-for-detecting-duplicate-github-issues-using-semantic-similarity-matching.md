@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Detecting Duplicate Github Issues Using"
+title: "AI Tools for Detecting Duplicate GitHub Issues Using"
 description: "A practical guide for developers using AI-powered semantic similarity tools to identify and merge duplicate GitHub issues automatically"
 date: 2026-03-16
 last_modified_at: 2026-03-16

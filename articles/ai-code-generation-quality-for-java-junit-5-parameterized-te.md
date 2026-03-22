@@ -155,7 +155,7 @@ Generated code should follow Java conventions, use clear naming, and include app
 Different AI coding assistants demonstrate distinct strengths when generating parameterized tests. Claude Code handles complex custom argument providers well, producing clean implementations that extend `ArgumentsProvider`. GitHub Copilot excels at generating `@ValueSource` arrays for simple numeric and string inputs, though it sometimes struggles with custom object types. Cursor provides good context awareness for project-specific data structures but may generate outdated JUnit 4 syntax when the project uses JUnit 5.
 
 
- Zed AI generates reliable `@CsvSource` implementations with correct escaping, but occasionally produces minor syntax issues with method references. Aider performs well for batch generation of similar parameterized tests across multiple test classes, though it requires explicit JUnit version context to avoid vintage engine conflicts.
+Zed AI generates reliable `@CsvSource` implementations with correct escaping, but occasionally produces minor syntax issues with method references. Aider performs well for batch generation of similar parameterized tests across multiple test classes, though it requires explicit JUnit version context to avoid vintage engine conflicts.
 
 
 ## Recommendations for Developers

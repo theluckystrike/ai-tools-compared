@@ -278,5 +278,4 @@ before treating the output as production-ready.
 ---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

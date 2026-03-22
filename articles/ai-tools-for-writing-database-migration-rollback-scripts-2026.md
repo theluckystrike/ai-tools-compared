@@ -455,3 +455,5 @@ All tools struggle with:
 - Transaction isolation levels
 
 **Solution:** Always specify database type and version in prompts.
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -352,5 +352,4 @@ Claude Code billing is usage-based through the Max subscription. Heavy users can
 - [Cursor vs Windsurf for React Development 2026](/ai-tools-compared/cursor-vs-windsurf-for-react-development-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

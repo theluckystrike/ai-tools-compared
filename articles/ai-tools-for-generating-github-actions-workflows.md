@@ -445,7 +445,7 @@ All three support `schedule:` trigger. Claude Code properly explains cron syntax
 
 - **Enable debug logging**: Add `ACTIONS_STEP_DEBUG=true` as secret to see all environment variables.
 - **Test locally**: Use `act` (GitHub Actions locally):
-  ```bash
+ ```bash
   act -j build -s GITHUB_TOKEN=$(gh auth token)
   ```
 - **Incremental refinement**: Ask AI to add one step at a time, run, then iterate.
@@ -461,5 +461,4 @@ All three support `schedule:` trigger. Claude Code properly explains cron syntax
 - [Copilot vs Claude Code for Writing GitHub Actions Cicd Workf](/ai-tools-compared/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

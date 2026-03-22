@@ -416,3 +416,5 @@ Production test quality depends on:
 | Maintainability Score | 9/10 | 6/10 | 7/10 | 5/10 |
 
 Flakiness primarily stems from weak selectors and missing wait conditions—areas where Claude excels.
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

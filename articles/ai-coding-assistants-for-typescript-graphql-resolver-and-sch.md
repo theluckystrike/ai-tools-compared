@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Coding Assistants for Typescript Graphql Resolver"
+title: "AI Coding Assistants for TypeScript Graphql Resolver"
 description: "Use Claude Code to generate TypeScript GraphQL resolvers that match your schema definitions with proper type safety. The most effective assistants recognize"
 date: 2026-03-16
 last_modified_at: 2026-03-16

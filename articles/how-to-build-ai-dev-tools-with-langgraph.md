@@ -69,7 +69,7 @@ Return only the implementation code, no tests, no explanation.""")
 
     code = response.content
     if '```python' in code:
-        code = code.split('```python')[1].split('```')[0].strip()
+ code = code.split('```python')[1].split('```')[0].strip()
 
     with open(state['code_file'], 'w') as f:
         f.write(code)
@@ -104,7 +104,7 @@ Return only the corrected implementation code.""")
 
     code = response.content
     if '```python' in code:
-        code = code.split('```python')[1].split('```')[0].strip()
+ code = code.split('```python')[1].split('```')[0].strip()
 
     with open(state['code_file'], 'w') as f:
         f.write(code)
@@ -329,5 +329,4 @@ This pattern works for any task where AI output needs verification against a gro
 - [Prompt Engineering Patterns for Code Generation](/ai-tools-compared/prompt-engineering-patterns-for-code-generation/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

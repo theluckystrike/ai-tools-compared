@@ -138,9 +138,9 @@ Regardless of tool, follow these rules:
 1. **Always test schema composition.** Federation schemas must pass Apollo's composition validation. Run `rover supergraph compose` before deploying.
 
 2. **Validate resolver implementations.** Even clean-looking resolver code can have race conditions or missing error handling. Review for:
-   - Missing null checks
-   - Unhandled promise rejections
-   - DataLoader usage for N+1 prevention
+ - Missing null checks
+ - Unhandled promise rejections
+ - DataLoader usage for N+1 prevention
 
 3. **Use directives for intent, not decoration.** AI often over-applies directives. Keep only directives that enforce schema rules or affect resolver behavior.
 
@@ -168,7 +168,7 @@ For enterprises: Sourcegraph Cody Pro at $20/month in IDE is strong if you need 
 
 ## Testing AI-Generated Schemas
 
-Before committing any AI-generated schema, run comprehensive tests:
+Before committing any AI-generated schema, run tests:
 
 ```bash
 # Validate schema syntax
@@ -241,7 +241,7 @@ query ProductRecommendations {
 ```
 
 ### For Real-time Applications (Chat, Notifications)
-Use **ChatGPT Plus** for subscription resolver patterns. GPT-4o generates robust PubSub implementations:
+Use **ChatGPT Plus** for subscription resolver patterns. GPT-4o generates strong PubSub implementations:
 
 ```graphql
 type Subscription {
@@ -359,3 +359,5 @@ For solo developers: Claude's pay-per-use model beats any monthly subscription.
 For teams: Copilot's $19/month per developer is unbeatable for daily work, with Claude reserved for architectural decisions.
 
 For enterprises: Sourcegraph Cody Pro ($20/month in IDE) if you need codebase consistency, otherwise Claude API with enterprise support.
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

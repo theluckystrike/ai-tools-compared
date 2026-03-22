@@ -305,9 +305,9 @@ If Copilot's free tier limitations frustrate you but Pro costs concern you:
 1. **Combine with free tools**: Use Copilot for inline completions, switch to free ChatGPT or Claude for larger refactoring conversations.
 
 2. **Open source alternatives**:
-   - Tabnine Community (free but less capable)
-   - OpenUI (free for frontend components)
-   - CodeBERT-based tools (self-hosted, free)
+ - Tabnine Community (free but less capable)
+ - OpenUI (free for frontend components)
+ - CodeBERT-based tools (self-hosted, free)
 
 3. **Strategic upgrade timing**: Purchase annual Pro ($100) once per year rather than monthly ($10 × 12 = $120) to save $20.
 

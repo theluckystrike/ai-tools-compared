@@ -225,7 +225,7 @@ When evaluating AI assistants for scientific computing, always verify that gener
 
 ## Advanced Testing Patterns for AI-Generated Code
 
-Comprehensive test suites validate AI-generated scientific code across edge cases:
+ test suites validate AI-generated scientific code across edge cases:
 
 ```python
 import numpy as np

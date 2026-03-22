@@ -246,7 +246,7 @@ deal = {
 print(analyze_rental_deal(deal))
 ```
 
-
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

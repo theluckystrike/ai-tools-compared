@@ -300,5 +300,4 @@ The best approach combines AI review for mechanical checks (security, error hand
 - [Async Code Review Process Without Zoom Calls Step by Step](https://theluckystrike.github.io/remote-work-tools/async-code-review-process-without-zoom-calls-step-by-step/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

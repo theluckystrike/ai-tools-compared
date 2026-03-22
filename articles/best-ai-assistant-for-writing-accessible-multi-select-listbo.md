@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Best AI Assistant for Writing Accessible Multi Select Listbox Components 2026"
+title: "Best AI Assistant for Writing Accessible Multi Select"
 description: "A practical comparison of AI coding assistants for building WCAG-compliant multi-select listbox components with ARIA attributes and keyboard navigation"
 date: 2026-03-21
 last_modified_at: 2026-03-21
@@ -276,6 +276,8 @@ const GroupedListbox = ({ groups, selected }) => {
 **Virtual scrolling**: Large option lists (500+ items) require virtual rendering for performance. AI tools rarely combine the listbox ARIA pattern with virtualization correctly. When using libraries like react-window, you must maintain a full options array in state for aria-setsize and use aria-posinset to communicate true position even when only a slice renders in the DOM.
 
 **Disabled options**: Options can carry aria-disabled="true" rather than the native disabled attribute (which does not apply to li elements). Keyboard navigation should skip disabled options in most implementations—Arrow keys should jump past them rather than landing on an uninteractable item. Verify that AI-generated code implements this skip logic.
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

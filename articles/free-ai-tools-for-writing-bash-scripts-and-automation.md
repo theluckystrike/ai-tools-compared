@@ -379,6 +379,7 @@ wait
 
 For serious bash automation work, paying for one tool ($10-20/month) provides unlimited usage and better reliability than managing multiple free tiers.
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

@@ -58,6 +58,7 @@ A compliance team at a mid-sized bank used Claude to review their updated loan s
 
 "Review this policy document for conflicts with GDPR Article 17 (right to erasure). Identify any language that may create compliance risk and suggest specific revisions."
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

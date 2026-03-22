@@ -262,7 +262,7 @@ Midjourney queue patterns vary significantly by geographic region and time:
 - 11 PM - 2 AM: SHOULDER (20-60 seconds)
 - 2 AM - 6 PM: OFF-PEAK to SHOULDER (5-45 seconds)
 
-For maximum productivity, coordinate your Relax mode batching across time zones. A distributed team can leverage off-peak hours in each region.
+For maximum productivity, coordinate your Relax mode batching across time zones. A distributed team can use off-peak hours in each region.
 
 ### Computing Your Breakeven Point
 
@@ -277,8 +277,8 @@ Option 1: Relax mode (assuming 120-second average wait)
 Option 2: Fast mode (assuming instant generation)
 - Total time: 3,000 seconds (50 minutes)
 - Cost: 10 GPU minutes
-  - Pro user: $0.12 per image = $1.20 total
-  - Standard user: $0.15 per image = $1.50 total
+ - Pro user: $0.12 per image = $1.20 total
+ - Standard user: $0.15 per image = $1.50 total
 
 **Verdict**: Fast mode saves ~38 minutes but costs $1.20-1.50. If your hourly rate exceeds $2-3/hour, Fast mode is economically justified.
 

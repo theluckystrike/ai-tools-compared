@@ -330,5 +330,4 @@ Follow the "yes" path majority voting. If Perplexity wins most questions, start 
 - [Export Perplexity Collections Before Switching to ChatGPT Se](/ai-tools-compared/export-perplexity-collections-before-switching-to-chatgpt-se/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

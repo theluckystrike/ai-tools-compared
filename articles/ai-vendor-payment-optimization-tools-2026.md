@@ -346,5 +346,4 @@ Start small — extract invoice data from one vendor, then layer in discount opt
 - [AI-Powered Database Query Optimization Tools 2026](/ai-tools-compared/ai-powered-database-query-optimization-tools/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

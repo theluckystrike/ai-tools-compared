@@ -28,7 +28,7 @@ GitHub Copilot integrates directly into Visual Studio Code, JetBrains IDEs, and 
 
 Cody, built by Sourcegraph, takes a fundamentally different approach. Cody indexes your entire codebase—including private repositories—and uses that context to provide more relevant suggestions. When you request code help, Cody understands your project's patterns, existing functions, and codebase-specific conventions.
 
-Cody uses embeddings-based retrieval over your repository: it converts code snippets into vector representations and retrieves semantically similar code when generating suggestions. This means it can surface a utility function written six months ago in a different module when it is relevant to your current task. Copilot's context is limited to open files and a sliding window of recent code, with some workspace-level context added in the Copilot Chat extension.
+Cody uses embeddings-based retrieval over your repository: it converts code snippets into vector representations and retrieves semantically similar code when generating suggestions. This means it can surface an utility function written six months ago in a different module when it is relevant to your current task. Copilot's context is limited to open files and a sliding window of recent code, with some workspace-level context added in the Copilot Chat extension.
 
 Here's a practical example of how context differs:
 

@@ -209,7 +209,7 @@ This level of detail comes from explicitly prompting for transition conditions a
 
 ## Complete Component Documentation Example
 
-Here's how AI tools expand minimal design specs into comprehensive documentation:
+Here's how AI tools expand minimal design specs into documentation:
 
 **Initial Design Note:**
 ```

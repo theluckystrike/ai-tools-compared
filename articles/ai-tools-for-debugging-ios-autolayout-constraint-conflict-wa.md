@@ -164,11 +164,11 @@ Providing the right context dramatically improves AI assistance quality. Include
 **Best practices for sharing constraint issues with AI:**
 
 1. **Include the complete error message**
-   - Copy the full console output, including all constraint descriptions
-   - AI looks for specific error patterns: "Unable to simultaneously satisfy", "Ambiguous layout", "Misplaced views"
+ - Copy the full console output, including all constraint descriptions
+ - AI looks for specific error patterns: "Unable to simultaneously satisfy", "Ambiguous layout", "Misplaced views"
 
 2. **Describe view hierarchy clearly**
-   ```
+ ```
    Root: UIViewController
    └─ UIView (containerView) - bg: white
       ├─ UIStackView (vertical, spacing: 8)
@@ -178,7 +178,7 @@ Providing the right context dramatically improves AI assistance quality. Include
    ```
 
 3. **List constraints explicitly**
-   ```
+ ```
    Constraints currently applied:
    - containerView: leading=20, trailing=20, top=safeArea+10, bottom=safeArea-10
    - UILabel: height=44
@@ -215,7 +215,7 @@ Experienced AI assistants quickly identify recurring anti-patterns. The most com
 **Pattern recognition checklist that AI uses:**
 
 1. **Multiple constraints on same attribute**
-   ```swift
+ ```swift
    // Pattern: Two equal-priority width constraints
    view.widthAnchor.constraint(equalToConstant: 100)     // Priority 1000
    view.widthAnchor.constraint(equalToConstant: 120)     // Priority 1000
@@ -223,14 +223,14 @@ Experienced AI assistants quickly identify recurring anti-patterns. The most com
    ```
 
 2. **Autoresizing mask conflicts**
-   ```swift
+ ```swift
    // Pattern: translatesAutoresizingMaskIntoConstraints = true (default)
    // PLUS manual constraints added
    // AI detects: "This view uses autoresizing mask AND manual constraints"
    ```
 
 3. **Missing edge constraints**
-   ```swift
+ ```swift
    // Pattern: Only top and left constraints, missing width/height
    button.topAnchor.constraint(equalTo: view.topAnchor)
    button.leftAnchor.constraint(equalTo: view.leftAnchor)
@@ -238,7 +238,7 @@ Experienced AI assistants quickly identify recurring anti-patterns. The most com
    ```
 
 4. **Safe area mixing**
-   ```swift
+ ```swift
    // Pattern: Some constraints to safeArea, others to superview edges
    view.topAnchor.constraint(equalTo: safeArea.topAnchor)
    view.leadingAnchor.constraint(equalTo: view.superview!.leadingAnchor)
@@ -246,7 +246,7 @@ Experienced AI assistants quickly identify recurring anti-patterns. The most com
    ```
 
 5. **Intrinsic content size issues**
-   ```swift
+ ```swift
    // Pattern: Controls clipped text without priority adjustment
    label.widthAnchor.constraint(equalToConstant: 50)     // Too narrow
    label.numberOfLines = 0                                // Wants to expand

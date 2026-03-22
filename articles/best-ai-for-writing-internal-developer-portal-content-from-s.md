@@ -75,18 +75,18 @@ For instance, transforming a legacy Node.js callback pattern:
 ```javascript
 // Before (legacy)
 db.query('SELECT * FROM users', function(err, rows) {
-  if (err) throw err;
-  console.log(rows);
+ if (err) throw err;
+ console.log(rows);
 });
 
 // After (modern async/await)
 async function getUsers() {
-  try {
-    const rows = await db.query('SELECT * FROM users');
-    console.log(rows);
-  } catch (err) {
-    console.error('Database error:', err);
-  }
+ try {
+ const rows = await db.query('SELECT * FROM users');
+ console.log(rows);
+ } catch (err) {
+ console.error('Database error:', err);
+ }
 }
 ```
 
@@ -175,15 +175,15 @@ Beyond simple consolidation, AI can transform documentation quality in specific 
 ```yaml
 # Input: API Schema
 /api/users/{id}/profile:
-  GET:
-    parameters:
-      - name: id
-        type: integer
-      - name: include_metadata
-        type: boolean
-    responses:
-      - 200: Profile object
-      - 404: User not found
+GET:
+ parameters:
+ - name: id
+ type: integer
+ - name: include_metadata
+ type: boolean
+ responses:
+ - 200: Profile object
+ - 404: User not found
 
 # AI generates complete markdown documentation with examples, error codes, and auth requirements
 ```
@@ -300,5 +300,7 @@ AI assists with initial content creation, but human review remains essential. Es
 - [How to Set Up Model Context Protocol Server for Internal Pac](/ai-tools-compared/how-to-set-up-model-context-protocol-server-for-internal-pac/)
 - [Best AI Tool for Repurposing Blog Content 2026](/ai-tools-compared/best-ai-tool-for-repurposing-blog-content-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
 ```
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

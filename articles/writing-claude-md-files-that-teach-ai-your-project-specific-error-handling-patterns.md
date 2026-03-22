@@ -187,16 +187,16 @@ import { Result, ok, err } from '@/lib/result';
 
 // Return ok() for success
 async function fetchUser(id: string): Promise<Result<User, UserError>> {
-  const row = await db.users.findById(id);
-  if (!row) return err(new UserError('ERR_USER_NOT_FOUND', id));
-  return ok(mapRowToUser(row));
+ const row = await db.users.findById(id);
+ if (!row) return err(new UserError('ERR_USER_NOT_FOUND', id));
+ return ok(mapRowToUser(row));
 }
 
 // Callers use .match() or early return with isErr()
 const result = await fetchUser(userId);
 if (result.isErr()) {
-  logger.warn('user lookup failed', { error: result.error });
-  return res.status(404).json({ error: result.error.toResponse() });
+ logger.warn('user lookup failed', { error: result.error });
+ return res.status(404).json({ error: result.error.toResponse() });
 }
 const user = result.value;
 ```
@@ -221,17 +221,17 @@ One of the most effective techniques is including explicit "do this / not that" 
 ```typescript
 // WRONG
 try {
-  await sendEmail(user.email, template);
+ await sendEmail(user.email, template);
 } catch (e) {
-  // do nothing
+ // do nothing
 }
 
 // CORRECT
 try {
-  await sendEmail(user.email, template);
+ await sendEmail(user.email, template);
 } catch (e) {
-  logger.error('email send failed', { userId: user.id, error: e });
-  throw new NotificationError('ERR_EMAIL_SEND_FAILED', { cause: e });
+ logger.error('email send failed', { userId: user.id, error: e });
+ throw new NotificationError('ERR_EMAIL_SEND_FAILED', { cause: e });
 }
 ```
 
@@ -253,7 +253,7 @@ Claude Code treats these examples as strong signals. When it sees the WRONG patt
 ## Layering Error Handling for Different Architectural Tiers
 
 
-Most full-stack projects have distinct error handling needs at each tier: the API layer, the service layer, and the data layer. If your CLAUDE.md treats all three identically, the AI will apply a one-size-fits-all pattern that fits none of them well.
+Most full-stack projects have distinct error handling needs at each tier: the API layer, the service layer, and the data layer. If your CLAUDE.md treats all three identically, the AI will apply an one-size-fits-all pattern that fits none of them well.
 
 
 Document each tier explicitly:

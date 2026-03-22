@@ -347,5 +347,4 @@ For these, AI-generated boilerplate + manual refinement is faster than pure gene
 - [AI Tools for Database Performance Optimization Query](/ai-tools-compared/ai-tools-for-database-performance-optimization-query-analysis/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

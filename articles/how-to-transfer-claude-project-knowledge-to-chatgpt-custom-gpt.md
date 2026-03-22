@@ -239,9 +239,9 @@ You are an expert Node.js backend engineer specializing in e-commerce platforms.
 Always return JSON in this format:
 ```
 {
-  "success": true,
-  "data": {...},
-  "timestamp": "2026-03-21T10:30:00Z"
+ "success": true,
+ "data": {...},
+ "timestamp": "2026-03-21T10:30:00Z"
 }
 ```
 

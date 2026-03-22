@@ -245,3 +245,5 @@ async def fetch_user_profile(user_id: int, include_social: bool = False) -> dict
 AI documentation generation saves time on routine docstrings and speeds up API documentation creation. Claude handles complex architectures best. Copilot works for quick in-editor generation. Neither replaces a human who understands your domain.
 
 Most teams benefit from hybrid approach: AI generates the skeleton, humans fill in context, examples, and warnings. Budget 15-30 minutes per 100 functions for cleanup, not the 2-3 hours writing docs from scratch requires.
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

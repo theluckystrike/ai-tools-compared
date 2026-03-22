@@ -215,16 +215,16 @@ buf breaking --against 'proto/v1/*'
 ## Common Mistakes AI Makes (and How to Catch Them)
 
 1. **Field number collisions**: AI sometimes reuses numbers in message additions
-   - *Fix*: Use `reserved` declarations; ask AI to show your field history first
+ - *Fix*: Use `reserved` declarations; ask AI to show your field history first
 
 2. **Wrong streaming semantics**: Confusing unary, server-streaming, and client-streaming
-   - *Fix*: Explicitly say "server streams multiple responses" or "client sends multiple requests"
+ - *Fix*: Explicitly say "server streams multiple responses" or "client sends multiple requests"
 
 3. **Message nesting depth**: Overly nested message structures that complicate code generation
-   - *Fix*: Ask Claude to flatten deeply nested definitions
+ - *Fix*: Ask Claude to flatten deeply nested definitions
 
 4. **Enum field naming**: Using numbers instead of string constants for status fields
-   - *Fix*: Request proto enums for status fields; avoid plain integers
+ - *Fix*: Request proto enums for status fields; avoid plain integers
 
 ## Complete Proto3 Best Practices Guide
 
@@ -586,4 +586,6 @@ server.bindAsync('0.0.0.0:50051', grpc.ServerCredentials.createInsecure(), () =>
 2. **Development phase (Copilot/Codeium)**: Inline suggestions while editing .proto files
 3. **Validation phase (Manual)**: Use `protolint` and `buf` to catch errors AI might miss
 4. **Implementation phase (Claude or GitHub Copilot)**: Generate language-specific stubs
-5. **Testing phase (Claude)**: Generate comprehensive test cases for proto definitions
+5. **Testing phase (Claude)**: Generate test cases for proto definitions
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

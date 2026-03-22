@@ -323,6 +323,7 @@ Security testing requires separate attention. Boundary value testing checks func
 - CSRF tokens
 - Authentication validation
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

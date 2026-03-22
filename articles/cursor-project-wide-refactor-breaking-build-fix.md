@@ -304,7 +304,7 @@ node -e "require('module')._load('./src/index.js', {}, true)"
 ```
 
 
-Cursor's refactor can introduce circular dependencies when it moves a utility function from a low-level module to a higher-level one that imports from the first. The build fails with confusing errors because the circular reference is detected late in the module graph resolution.
+Cursor's refactor can introduce circular dependencies when it moves an utility function from a low-level module to a higher-level one that imports from the first. The build fails with confusing errors because the circular reference is detected late in the module graph resolution.
 
 
 ### Version Conflict Resolution
@@ -365,7 +365,7 @@ Avoid future build breaks with these practices:
 
 6. Run `npx tsc --noEmit` before committing after a Cursor refactor to catch type issues before they enter the build pipeline
 
-
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

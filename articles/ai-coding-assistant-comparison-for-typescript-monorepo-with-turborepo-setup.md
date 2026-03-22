@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Coding Assistant Comparison for Typescript monorepo"
+title: "AI Coding Assistant Comparison for TypeScript monorepo"
 description: "A practical comparison of AI coding assistants for TypeScript monorepos using Turborepo, with code examples and recommendations for developers"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -459,5 +459,4 @@ turbo run build --summarize
 - [AI Coding Assistants for Typescript Deno Fresh Framework Com](/ai-tools-compared/ai-coding-assistants-for-typescript-deno-fresh-framework-com/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

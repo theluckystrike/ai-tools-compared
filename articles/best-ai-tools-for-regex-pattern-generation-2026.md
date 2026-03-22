@@ -334,5 +334,4 @@ Use [regex101.com](https://regex101.com) with the tool's explanation feature to 
 - [AI Code Generation for Java Virtual Threads Project Loom Pat](/ai-tools-compared/ai-code-generation-for-java-virtual-threads-project-loom-pat/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

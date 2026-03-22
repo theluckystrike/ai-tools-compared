@@ -408,7 +408,7 @@ def test_create_product_missing_fields():
 ## Integration with CI/CD
 
 
-AI-generated tests work seamlessly with your existing CI/CD pipeline:
+AI-generated tests work with your existing CI/CD pipeline:
 
 
 ```yaml

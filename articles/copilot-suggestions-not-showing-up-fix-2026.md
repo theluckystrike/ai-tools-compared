@@ -336,6 +336,7 @@ To keep Copilot working smoothly:
 
 Most Copilot issues stem from misconfiguration, network problems, or competing extensions rather than fundamental tool failure. Methodical troubleshooting as outlined here resolves the vast majority of cases.
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

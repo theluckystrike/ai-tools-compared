@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Writing Dockerfile Optimization 2026"
-description: "Compare AI tools for optimizing Dockerfiles. Learn multi-stage build patterns, layer caching strategies, security scanning integration, and real size reduction examples."
+description: "Compare AI tools for optimizing Dockerfiles. Learn multi-stage build patterns, layer caching strategies, security scanning integration, and real size"
 date: 2026-03-21
 author: theluckystrike
 permalink: /best-ai-tools-for-writing-dockerfile-optimization-2026/

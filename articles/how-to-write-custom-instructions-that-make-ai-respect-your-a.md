@@ -218,6 +218,72 @@ class MultiAPICoordinator:
 ```
 
 
+## Writing Instructions for Specific AI Tools
+
+
+Custom instruction placement varies by tool. Knowing where and how to register them ensures they take effect consistently.
+
+
+**ChatGPT (Custom Instructions):** Navigate to Settings > Personalization > Custom Instructions. Add rate limit context in the "What would you like ChatGPT to know about you?" field. Use concrete limits and preferred patterns:
+
+```
+I work with APIs that have strict rate limits. Always implement exponential
+backoff for 429 errors, prefer batch calls over loops, and add token estimation
+before making LLM calls. My typical limits: OpenAI 500 RPM, GitHub 5000/hour.
+```
+
+
+**Claude (System Prompts via API):** Pass your constraints as a system prompt when calling the API. System prompts are ideal for persistent technical requirements that should apply across all interactions in a session:
+
+```
+You are a code assistant. The application uses the following rate limits:
+- Primary LLM API: 1000 RPM, 100K TPM
+- Database API: 200 RPS with connection pool of 20
+Always generate code that tracks request counts, implements backoff, and avoids
+unbounded loops over paginated API results.
+```
+
+
+**Cursor (Rules for AI):** Add rate limit rules to `.cursorrules` in your project root. These apply automatically to all AI interactions within the project:
+
+```
+Rate limit rules:
+- Never generate for-loops that call external APIs without throttling
+- Always wrap API clients in a rate-limiting decorator or class
+- Default to async patterns with semaphores for concurrent API calls
+- Include retry logic with jitter in all API integration code
+```
+
+
+**GitHub Copilot:** Use workspace-level comments at the top of key files, or add a `AGENTS.md` / `COPILOT.md` in the repo with guidelines. Copilot reads surrounding context, so comments near function definitions also influence suggestions.
+
+
+## Structuring Instructions for Reliability
+
+
+The way you structure instructions affects how consistently AI follows them. These patterns produce the most reliable results:
+
+
+**Numbered constraints beat prose.** Instead of describing behavior in paragraphs, enumerate each constraint as a numbered or bulleted item. AI tools parse lists more reliably than embedded requirements.
+
+
+**Include the "why" for critical limits.** Explaining the reason behind a constraint improves adherence: "Maximum 10 concurrent calls — our API plan enforces this and violations result in 24-hour suspensions." The context signals importance.
+
+
+**Specify the anti-pattern explicitly.** Tell the AI what not to do alongside what to do. "Never call the API inside a forEach or map without a throttle wrapper" is more actionable than "use throttling."
+
+
+**Request error code awareness.** Different status codes require different handling. Specify each:
+
+```
+Handle these error codes specifically:
+- 429: Exponential backoff, max 3 retries
+- 503: Retry after 30 seconds, then fail
+- 401: Refresh credentials, retry once
+- 400: Log and skip — do not retry
+```
+
+
 ## Testing Your Custom Instructions
 
 
@@ -225,6 +291,36 @@ After writing custom instructions, verify they work as intended. Create test sce
 
 
 Run tests that simulate rate limit responses. Check whether exponential backoff activates properly. Verify that batching reduces the number of requests. Monitor your actual API usage to confirm the generated code respects your defined constraints.
+
+
+A simple test harness for verifying generated rate limit code:
+
+```python
+import unittest
+from unittest.mock import AsyncMock, patch
+import asyncio
+
+class TestRateLimitCompliance(unittest.IsolatedAsyncioTestCase):
+    async def test_respects_concurrent_limit(self):
+        coordinator = MultiAPICoordinator({
+            'test_api': APILimit(requests_per_minute=60, concurrent_max=5)
+        })
+        active = []
+        peak = [0]
+
+        async def mock_call():
+            active.append(1)
+            peak[0] = max(peak[0], len(active))
+            await asyncio.sleep(0.01)
+            active.pop()
+
+        tasks = [
+            coordinator.call_api('test_api', mock_call)
+            for _ in range(20)
+        ]
+        await asyncio.gather(*tasks)
+        self.assertLessEqual(peak[0], 5)
+```
 
 
 ## Refining Your Instructions

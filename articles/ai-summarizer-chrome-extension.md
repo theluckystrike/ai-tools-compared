@@ -222,7 +222,7 @@ A content classifier might examine URL patterns, HTML structure, and text charac
 
 ## Error Handling and Resilience
 
-Production extensions require robust error handling. Network timeouts, API rate limits, and extraction failures happen regularly. Implement graceful fallbacks:
+Production extensions require strong error handling. Network timeouts, API rate limits, and extraction failures happen regularly. Implement graceful fallbacks:
 
 ```javascript
 async function summarizeWithFallback(text, apiKey) {

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Coding Tools for Writing Chainguard Image Supply Chain Security Policies"
+title: "AI Coding Tools for Writing Chainguard Image Supply Chain"
 description: "A practical guide for developers using AI assistants to write Chainguard image supply chain security policies, with examples and best practices"
 date: 2026-03-21
 last_modified_at: 2026-03-21
@@ -99,7 +99,7 @@ This policy enforces multiple security controls simultaneously. The first rule v
 
 For organizations with stricter requirements, AI tools can help generate policies that address dependency verification and automatic updates. Chainguard images are rebuilt frequently to patch vulnerabilities, so your policies should account for the update cadence while maintaining verification rigor.
 
-A more comprehensive policy might include continuous vulnerability scanning integration. You can generate OPA Gatekeeper constraints that query your vulnerability scanner's API to reject images with CVEs above your threshold:
+A more policy might include continuous vulnerability scanning integration. You can generate OPA Gatekeeper constraints that query your vulnerability scanner's API to reject images with CVEs above your threshold:
 
 ```rego
 package chainguard
@@ -155,7 +155,7 @@ When using AI tools to generate Chainguard supply chain policies, verify the gen
 
 Maintain version control for your policies alongside your application code. This practice enables audit trails and simplifies policy updates when requirements change. Document any custom modifications you make to AI-generated policies, as future AI assistants can reference this context for improvements.
 
-The combination of Chainguard's hardened images and well-designed AI-assisted policies creates a robust defense-in-depth strategy for container supply chain security.
+The combination of Chainguard's hardened images and well-designed AI-assisted policies creates a strong defense-in-depth strategy for container supply chain security.
 
 
 ## Related Articles

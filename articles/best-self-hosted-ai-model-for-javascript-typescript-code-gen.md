@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Best Self-Hosted AI Model for JavaScript TypeScript Code Generation Compared 2026"
-description: "A practical comparison of the best self-hosted AI models for JavaScript and TypeScript code generation in 2026. Find the right model for your development workflow."
+title: "Best Self-Hosted AI Model for JavaScript TypeScript Code"
+description: "A practical comparison of the best self-hosted AI models for JavaScript and TypeScript code generation in 2026. Find the right model for your development"
 date: 2026-03-21
 author: theluckystrike
 permalink: /best-self-hosted-ai-model-for-javascript-typescript-code-gen/
@@ -192,12 +192,5 @@ curl http://localhost:11434/v1/chat/completions \
   }'
 ```
 
-## Conclusion
-
-For JavaScript and TypeScript code generation in 2026, DeepSeek Coder V2 offers the best overall balance of accuracy and accessibility. Qwen 2.5 Coder is the choice when inference speed matters most. CodeLlama 70B excels when you have the hardware and need maximum capability. StarCoder 2 works well for lighter use cases or when hardware is limited.
-
-Start with Ollama and the smaller model variants to test your specific workflows before investing in larger hardware deployments. The open-source nature of these models means you can switch as the landscape continues evolving.
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

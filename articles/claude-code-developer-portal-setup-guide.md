@@ -328,7 +328,7 @@ Claude Code itself offers flexible pricing for documentation generation:
 | Pro | $20 | 100,000 | Individual developers, small teams |
 | Team | $30/seat | Unlimited | Enterprise teams, production portals |
 
-For teams generating large volumes of documentation, the Team plan provides unlimited API calls. A team of 5 generating documentation daily would spend $150/month for comprehensive AI-powered portal generation.
+For teams generating large volumes of documentation, the Team plan provides unlimited API calls. A team of 5 generating documentation daily would spend $150/month for AI-powered portal generation.
 
 Calculate your actual costs by tracking API usage:
 

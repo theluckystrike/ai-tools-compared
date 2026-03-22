@@ -443,7 +443,7 @@ TestSuite: test deployment
 4/4 tests passed
 ```
 
-AI tools understand this test format and generate comprehensive test suites that validate manifests at different value configurations.
+AI tools understand this test format and generate test suites that validate manifests at different value configurations.
 
 ## Real-World Chart: Multi-Tier E-Commerce App
 
@@ -572,37 +572,33 @@ Most teams use ChatGPT or Claude for initial generation, then refine with Copilo
 Always test before deploying:
 
 1. **Syntax check:**
-   ```bash
+ ```bash
    helm lint mychart/
    ```
 
 2. **Dry run:**
-   ```bash
+ ```bash
    helm install --dry-run --debug ecommerce mychart/
    ```
 
-   This renders templates without installing; review the output.
+This renders templates without installing; review the output.
 
 3. **Unit tests:**
-   ```bash
+ ```bash
    helm unittest mychart/
    ```
 
 4. **Install in dev environment:**
-   ```bash
+ ```bash
    helm install ecommerce mychart/ --values dev-values.yaml
    kubectl get pods  # verify pods are running
    ```
 
 5. **Test connectivity:**
-   ```bash
+ ```bash
    kubectl port-forward svc/ecommerce-backend 8000:8000
    curl http://localhost:8000/health
    ```
 
-## Conclusion
-
-AI tools make Helm chart development accessible. ChatGPT and Claude generate production-ready charts with correct dependency management, health checks, security policies, and test suites. Copilot and Codeium excel at iterative refinement. Start with AI-generated chart, test it thoroughly in a dev cluster, then iterate. Never deploy a chart without running `helm lint`, a dry-run, and unit tests—even AI-generated charts need validation before production use.
-
-The combination of AI generation and `helm-unittest` testing creates robust charts that scale across environments and clusters.
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
