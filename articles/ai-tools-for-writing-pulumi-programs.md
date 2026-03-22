@@ -265,6 +265,74 @@ const connectionString = pulumi.all([dbHost, dbPort, dbName]).apply(
 
 Copilot and Cursor both generate `${}` string interpolation mistakes on `Output<T>` values in roughly 40% of cases.
 
+## Task 4: Stack References and Cross-Stack Dependencies
+
+A test that separates strong Pulumi knowledge from surface-level familiarity is the `StackReference` pattern. Teams that run multiple stacks — network, cluster, application — need to pass outputs from one stack to another without hardcoding values.
+
+**Prompt:** "Our networking stack exports a VPC ID and subnet IDs. Write a Pulumi TypeScript stack that consumes those outputs and creates an RDS instance in the private subnets."
+
+**Copilot's output:**
+
+```typescript
+// Copilot — uses config instead of StackReference
+const config = new pulumi.Config();
+const vpcId = config.require("vpcId");  // Wrong: this requires manual config, not stack wiring
+```
+
+**Claude's output:**
+
+```typescript
+import * as pulumi from "@pulumi/pulumi";
+import * as aws from "@pulumi/aws";
+
+const config = new pulumi.Config();
+const env = config.require("environment");  // e.g., "production"
+
+// Reference the networking stack's outputs
+const networkStack = new pulumi.StackReference(`myorg/networking/${env}`);
+const vpcId = networkStack.getOutput("vpcId");
+const privateSubnetIds = networkStack.getOutput("privateSubnetIds") as pulumi.Output<string[]>;
+
+// RDS subnet group using referenced subnets
+const dbSubnetGroup = new aws.rds.SubnetGroup("db-subnet-group", {
+    subnetIds: privateSubnetIds,
+    tags: { Environment: env }
+});
+
+// Security group allowing access from within the VPC
+const dbSecurityGroup = new aws.ec2.SecurityGroup("db-sg", {
+    vpcId: vpcId,
+    ingress: [{
+        protocol: "tcp",
+        fromPort: 5432,
+        toPort: 5432,
+        cidrBlocks: ["10.0.0.0/8"]  // VPC CIDR range
+    }],
+    tags: { Environment: env }
+});
+
+const db = new aws.rds.Instance("app-db", {
+    engine: "postgres",
+    engineVersion: "16.1",
+    instanceClass: "db.t3.medium",
+    allocatedStorage: 100,
+    storageType: "gp3",
+    storageEncrypted: true,
+    dbSubnetGroupName: dbSubnetGroup.name,
+    vpcSecurityGroupIds: [dbSecurityGroup.id],
+    skipFinalSnapshot: false,
+    finalSnapshotIdentifier: `app-db-${env}-final`,
+    deletionProtection: true,
+    backupRetentionPeriod: 7,
+    tags: { Environment: env }
+});
+
+export const dbEndpoint = db.endpoint;
+export const dbPort = db.port;
+```
+
+This is correct Pulumi idiom. The `StackReference` class is the right way to consume cross-stack outputs, and it produces a proper dependency in the Pulumi graph — meaning that if the networking stack changes its VPC ID, Pulumi knows this stack may need to update.
+
 ## Tool Comparison
 
 | Task | Claude Code | Copilot | Cursor |
@@ -275,6 +343,62 @@ Copilot and Cursor both generate `${}` string interpolation mistakes on `Output<
 | Provider-specific knowledge | Accurate | Good | Good |
 | Config and secrets | Uses `pulumi.Config` | Sometimes hardcodes | Usually correct |
 | Stack references | Correct | Often missing | Sometimes correct |
+
+## Configuring AI Tools for Better Pulumi Output
+
+Each tool has settings or prompting strategies that improve Pulumi output quality.
+
+### For Claude Code
+
+Adding a `CLAUDE.md` file to your Pulumi project root gives Claude persistent context about your stack conventions:
+
+```markdown
+# Pulumi Project Context
+
+## Stack Organization
+- networking/ — VPC, subnets, NAT gateways
+- platform/ — EKS cluster, IAM roles
+- application/ — Services, RDS, ElastiCache
+
+## Stack Reference Pattern
+Use `new pulumi.StackReference(`myorg/{stack}/{env}`)` to consume outputs.
+Our org name is "myorg".
+
+## Naming Convention
+Resources: `{component}-{env}` (e.g., "api-db-production")
+Tags: always include Environment, Team, ManagedBy=pulumi
+
+## Secrets
+Use `pulumi.Config.requireSecret()` for all sensitive values.
+Never use plain `config.require()` for passwords or API keys.
+```
+
+With this context file, Claude will follow your team's patterns without needing to be reminded in every prompt.
+
+### For GitHub Copilot
+
+Copilot benefits from inline comments that declare intent before the code:
+
+```typescript
+// Create a Pulumi ComponentResource (not a standalone resource) for a Redis cluster
+// Must extend pulumi.ComponentResource and call registerOutputs
+export class RedisCluster extends pulumi.ComponentResource {
+```
+
+These comments prime Copilot's completion toward the correct pattern.
+
+### For Cursor
+
+Cursor's `.cursorrules` file can enforce Pulumi-specific requirements:
+
+```
+When writing Pulumi TypeScript:
+- Always import from @pulumi/* packages, never @aws-cdk/*
+- Use pulumi.interpolate for string templates containing Output<T> values
+- ComponentResource classes must call this.registerOutputs() in the constructor
+- Use pulumi.Config for all configuration values
+- Export all important resource outputs from the stack
+```
 
 ## Related Reading
 
