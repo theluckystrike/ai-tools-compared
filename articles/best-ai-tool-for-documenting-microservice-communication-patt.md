@@ -329,6 +329,189 @@ Regardless of which tool you choose, follow these practices for successful docum
 
 5. **Use version control**: Keep documentation in Git alongside your code to track changes and enable rollback.
 
+## Advanced Configuration Examples
+
+### Kubernetes Service Mesh Documentation
+
+For teams running Istio or Linkerd, here's how to configure comprehensive service documentation:
+
+```yaml
+# service-documentation-config.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: doc-generator-config
+data:
+  config: |
+    services:
+      - name: user-service
+        namespace: default
+        ports: [8080, 8081]
+        protocols: [http, grpc]
+        dependencies:
+          - postgres:5432
+          - redis:6379
+
+      - name: order-service
+        namespace: default
+        ports: [8082]
+        dependencies:
+          - user-service:8080
+          - payment-service:8083
+          - kafka:9092
+
+    observability:
+      jaeger:
+        endpoint: http://jaeger-collector:14268/api/traces
+      prometheus:
+        endpoint: http://prometheus:9090
+
+    documentation:
+      format: markdown
+      includes:
+        - api_contracts
+        - sla_definitions
+        - error_codes
+        - retry_policies
+      output_path: ./docs/architecture
+```
+
+This configuration allows the tool to automatically generate docs including SLA definitions, error handling patterns, and retry logic for each service.
+
+### gRPC Protocol Buffer Documentation
+
+For microservices using Protocol Buffers, AI tools can extract and document RPC definitions automatically:
+
+```protobuf
+// user_service.proto
+service UserService {
+  rpc GetUser (GetUserRequest) returns (User) {}
+  rpc CreateUser (CreateUserRequest) returns (User) {}
+  rpc UpdateUser (UpdateUserRequest) returns (User) {}
+}
+```
+
+The AI tool parses this and generates:
+- Method signatures and parameter documentation
+- Response types and error conditions
+- Rate limits and timeout guidance
+- Example requests and responses in multiple languages
+
+## Real-World Integration Scenarios
+
+### Scenario 1: Event-Driven Architecture
+
+In systems using message brokers like RabbitMQ or Kafka:
+
+```python
+# kafka-doc-extraction.py
+def extract_event_documentation(kafka_cluster, consumer_group):
+    """Extract documentation from Kafka topics and consumers"""
+    topics = kafka_cluster.list_topics()
+
+    documentation = {
+        "events": [],
+        "consumers": [],
+        "dead_letters": []
+    }
+
+    for topic in topics:
+        # Analyze schema registry for this topic
+        schema = get_schema_for_topic(topic)
+
+        # Trace which services consume this topic
+        consumers = find_consumers(topic)
+
+        documentation["events"].append({
+            "name": topic,
+            "schema": schema,
+            "producers": identify_producers(topic),
+            "consumers": consumers,
+            "retention_policy": get_retention_policy(topic),
+            "example_message": get_latest_message(topic)
+        })
+
+    return documentation
+```
+
+### Scenario 2: REST API Gateway Dependencies
+
+When services expose REST APIs behind an API gateway:
+
+```bash
+#!/bin/bash
+# extract-openapi-docs.sh
+for service in $(list_services); do
+  # Extract OpenAPI spec from each service
+  curl -s "http://${service}:8080/openapi.json" > "docs/${service}-openapi.json"
+
+  # Parse and document dependencies
+  jq '.paths[].servers[].url' "docs/${service}-openapi.json" \
+    | grep -oE 'http://[a-z-]+' | sort -u >> service-dependencies.txt
+done
+
+# Generate dependency graph
+python generate-dependency-graph.py service-dependencies.txt
+```
+
+## Troubleshooting Common Documentation Issues
+
+**Problem: Documentation shows dead services**
+Solution: The tool should only include services that actively communicate. Configure it to ignore services with zero traffic over a 7-day window, or manually mark deprecated services as archived.
+
+**Problem: Circular dependencies not clearly documented**
+Solution: Use visualization tools that highlight circular dependencies in red. Document fallback behaviors when services in a cycle fail.
+
+**Problem: Documentation lag during rapid deployments**
+Solution: Configure the tool to run on deployment events, not just on schedules. Use webhooks to trigger documentation updates within seconds of service changes.
+
+## CLI Tools for Documentation Generation
+
+Popular open-source and commercial tools include:
+
+```bash
+# AsyncAPI for event-driven systems
+npm install -g @asyncapi/cli
+
+# Documenting Kafka topics
+asyncapi-cli generate html docs/kafka-events.yaml
+
+# GraphQL Schema documentation
+npm install -g graphdoc
+graphdoc -s schema.graphql -o ./docs
+
+# Docker Compose service documentation
+docker-compose-viz -m image -f docker-compose.yml > architecture.png
+```
+
+## Validation and Quality Assurance
+
+Ensure documentation accuracy with automated validation:
+
+```python
+def validate_documentation(docs, actual_traffic_logs):
+    """Verify documented dependencies match actual traffic"""
+    discrepancies = []
+
+    for service in docs.get("services", []):
+        documented_deps = set(service.get("dependencies", []))
+        actual_deps = extract_dependencies_from_logs(
+            actual_traffic_logs,
+            service["name"]
+        )
+
+        if documented_deps != actual_deps:
+            discrepancies.append({
+                "service": service["name"],
+                "documented": documented_deps,
+                "actual": actual_deps,
+                "missing_in_docs": actual_deps - documented_deps,
+                "stale_in_docs": documented_deps - actual_deps
+            })
+
+    return discrepancies
+```
+
 ## Conclusion
 
 AI tools for documenting microservice communication patterns have matured significantly, offering practical solutions for teams struggling to maintain accurate architecture documentation. The best choice depends on your specific infrastructure, team capabilities, and documentation requirements. Start with a tool that matches your current setup, then expand as your documentation needs grow.

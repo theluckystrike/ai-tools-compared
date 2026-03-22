@@ -171,7 +171,227 @@ Open-source projects or developers preferring local-first solutions should evalu
 
 The key to good results regardless of tool remains writing code with clear types first. AI assistants infer documentation from your types, parameters, and function names. Vague types produce vague documentation.
 
----
+## Advanced Patterns for Complex Documentation
+
+### Generic Type Documentation
+
+AI tools often struggle with complex generics. Help them by using explicit type hints:
+
+```typescript
+// Poor type hints — Copilot generates vague docs
+function transform(data, processor) { }
+
+// Explicit types — Copilot generates comprehensive docs
+/**
+ * Transforms input data using a stateful processor function.
+ * @template T - The input data type
+ * @template U - The output data type
+ * @template S - The processor state type
+ * @param data - Array of items to transform
+ * @param processor - Function with internal state managing the transformation
+ * @returns Promise resolving to transformed data array
+ * @example
+ * const result = await transform(
+ *   [1, 2, 3],
+ *   createProcessor({ batchSize: 10 })
+ * );
+ */
+function transform<T, U, S>(
+  data: T[],
+  processor: StatefulProcessor<T, U, S>
+): Promise<U[]> { }
+```
+
+### Async/Await and Promise Documentation
+
+Different tools handle async function documentation differently:
+
+```typescript
+// Cursor generates the most complete async documentation
+/**
+ * Fetches user data asynchronously with automatic retry on failure.
+ * Implements exponential backoff for transient errors.
+ *
+ * @param userId - The numeric ID of the user to fetch
+ * @param maxRetries - Maximum number of retry attempts (default: 3)
+ * @returns Promise that resolves to user object or rejects with FetchError
+ * @throws {FetchError} When all retries are exhausted
+ * @throws {ValidationError} When userId is invalid
+ * @remarks
+ * - Timeouts after 5 seconds per request
+ * - Does not retry on 4xx client errors
+ * - Logs retry attempts to stderr
+ */
+async function fetchUserWithRetry(
+  userId: number,
+  maxRetries: number = 3
+): Promise<User> { }
+```
+
+### Callback and Event Handler Documentation
+
+Tools vary in their handling of callback patterns:
+
+```typescript
+// Claude handles callback documentation best
+/**
+ * Registers an event listener with automatic cleanup and type narrowing.
+ * @template T - The event data structure type
+ * @param eventName - Name of the event to listen for
+ * @param handler - Function invoked when event fires, receives event data
+ * @param options - Configuration including priority and one-time-only flag
+ * @returns Unsubscribe function to remove this specific listener
+ * @example
+ * const unsubscribe = onEvent('user:updated', (data) => {
+ *   console.log('User updated:', data.userId);
+ * }, { once: true });
+ *
+ * // Later: unsubscribe();
+ */
+function onEvent<T>(
+  eventName: string,
+  handler: (data: T) => void,
+  options?: { once?: boolean; priority?: number }
+): () => void { }
+```
+
+## Workflow Integration Strategies
+
+### Using AI to Batch-Document Functions
+
+Rather than documenting functions one at a time, use this workflow:
+
+```bash
+# Identify undocumented functions
+grep -n "^function\|^async function\|^const.*=.*=>.*=>" src/**/*.ts \
+  | grep -v "/**" > undocumented.txt
+
+# Feed to Cursor's batch documentation feature
+cat undocumented.txt | xargs -I {} cursor --batch-document "{}"
+```
+
+### CI/CD Integration for Documentation Linting
+
+Enforce documentation standards automatically:
+
+```javascript
+// eslint-plugin-jsdoc with Cursor's suggestions
+module.exports = {
+  rules: {
+    'jsdoc/require-description': 'error',
+    'jsdoc/require-param-type': 'error',
+    'jsdoc/require-param-description': 'error',
+    'jsdoc/require-returns': 'error',
+    'jsdoc/require-returns-type': 'error',
+    'jsdoc/require-returns-description': 'error',
+  },
+};
+```
+
+Then have Cursor auto-fix these issues:
+
+```bash
+# Use Cursor's batch fix capability
+eslint src/**/*.ts --fix
+# Cursor detects missing JSDoc and suggests completions
+```
+
+## Comparing Documentation Quality Across Models
+
+Different AI models produce different quality levels. Run tests on your codebase:
+
+```typescript
+// Test file to evaluate documentation quality
+const MODELS = {
+  copilot: 'GitHub Copilot',
+  claude: 'Claude via Cursor',
+  gpt4: 'ChatGPT-4',
+  codeium: 'Codeium'
+};
+
+const TEST_FUNCTIONS = [
+  { name: 'calculateDistance', complexity: 'simple' },
+  { name: 'asyncPipelineProcessor', complexity: 'complex' },
+  { name: 'reduceWithSideEffects', complexity: 'medium' },
+];
+
+// Scoring rubric
+const SCORE_CRITERIA = {
+  'mentions_parameters': 10,
+  'explains_return_type': 10,
+  'documents_errors': 10,
+  'includes_example': 10,
+  'explains_side_effects': 10,
+};
+```
+
+Run this test suite monthly to track which tool generates the best documentation for your codebase's patterns.
+
+## TypeScript-Specific Best Practices
+
+### Discriminated Unions Documentation
+
+AI tools handle union types best when you guide them:
+
+```typescript
+/**
+ * Handles different response types from the API.
+ * Use type guards to narrow the response before accessing type-specific fields.
+ *
+ * @example
+ * const response = await fetchData();
+ * if (response.type === 'success') {
+ *   console.log(response.data); // Safe to access data
+ * } else {
+ *   console.error(response.error); // Safe to access error
+ * }
+ */
+type ApiResponse<T> =
+  | { type: 'success'; data: T }
+  | { type: 'error'; error: string };
+```
+
+### Overloaded Function Documentation
+
+Document each overload separately:
+
+```typescript
+/**
+ * Overload 1: Query with object filter.
+ * @param table - Table name to query
+ * @param filter - Object with field-value pairs for filtering
+ * @returns Matching records
+ */
+export function query<T>(
+  table: string,
+  filter: Record<string, unknown>
+): T[];
+
+/**
+ * Overload 2: Query with SQL predicate.
+ * @param table - Table name to query
+ * @param predicate - SQL WHERE clause as string
+ * @returns Matching records
+ */
+export function query<T>(
+  table: string,
+  predicate: string
+): T[];
+
+// Implementation (no doc comment needed)
+export function query<T>(
+  table: string,
+  filterOrPredicate: string | Record<string, unknown>
+): T[] {
+  // ...
+}
+```
+
+## Conclusion
+
+The best AI assistant for JSDoc and TSDoc comments depends on your specific needs. **Cursor** offers the most comprehensive out-of-the-box experience with the `/doc` command and strong type inference. **Claude** excels for complex documentation scenarios and generates more nuanced explanations. **GitHub Copilot** is the practical choice if you're already in the GitHub ecosystem.
+
+Regardless of tool, remember that AI-assisted documentation works best when your code has explicit types and clear function purposes. Invest time in type clarity, and your AI assistant will generate documentation that actually helps your team.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

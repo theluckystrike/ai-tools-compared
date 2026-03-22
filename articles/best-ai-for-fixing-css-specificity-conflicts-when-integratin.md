@@ -251,6 +251,247 @@ Choose ChatGPT for speed when you recognize a common pattern and need a quick so
 
 Choose GitHub Copilot when you want inline suggestions while coding. It understands your project's context and suggests solutions that match your existing patterns — particularly valuable when your team has established a specific override convention.
 
+## Advanced Override Techniques
+
+### CSS Cascade Layers for Dependency Management
+
+Modern CSS cascade layers solve specificity problems at their root:
+
+```css
+/* library.css - wrapped in @layer */
+@layer components {
+  .button {
+    color: blue;
+    padding: 8px 16px;
+  }
+
+  .button.primary {
+    background: blue;
+  }
+}
+
+/* your-app.css - at global level */
+.button {
+  color: red;
+}
+/* This wins because it's outside any @layer */
+```
+
+Ask Claude to explain cascade layers for your specific library, as it's a relatively new technique.
+
+### CSS Variables with Library-Provided Slots
+
+Many modern libraries expose CSS custom properties specifically for overriding:
+
+```css
+/* Library provides these variables */
+:root {
+  --btn-primary-bg: #007bff;
+  --btn-primary-text: white;
+  --btn-border-radius: 0.25rem;
+}
+
+/* Your override */
+:root {
+  --btn-primary-bg: red;
+  --btn-primary-text: white;
+}
+```
+
+Prompt Claude with: "What CSS custom properties does [LIBRARY] expose for theming?" It will identify all available override points.
+
+### BEM with Utility Classes
+
+For complex component integration, use Block Element Modifier with utility overrides:
+
+```scss
+// components/button.module.scss
+.button {
+  display: inline-block;
+  padding: var(--btn-padding, 8px 16px);
+  background: var(--btn-bg, blue);
+
+  &--large {
+    padding: var(--btn-lg-padding, 12px 24px);
+  }
+
+  &--danger {
+    background: var(--btn-danger-bg, red);
+  }
+}
+
+// App usage
+import buttonStyles from './button.module.scss';
+
+<Button className={`${buttonStyles.button} ${buttonStyles['button--large']}`}>
+  Click me
+</Button>
+```
+
+## Debugging Workflow with AI
+
+### Using Browser DevTools with AI Assistance
+
+1. **Inspect the element** in DevTools to see which styles apply
+2. **Ask Claude**: "The selector `.library-class` sets color: blue with (0,0,2) specificity. I want to override it with my class `.my-override`. What's the minimum specificity I need?"
+3. **Claude responds** with the specificity requirement and suggests solutions
+
+```text
+Your .my-override needs specificity (0,0,1) to win, which it has.
+The issue is likely source order — a later stylesheet is overriding you.
+
+Solutions:
+1. Move your CSS after the library import
+2. Use two class selectors: .wrapper .my-override (0,0,2)
+3. Use CSS variables if the library exposes them
+4. Use !important only if absolutely necessary
+```
+
+### Specificity Calculation Helper
+
+Ask Claude to calculate specificity for complex selectors:
+
+```text
+What's the specificity of these selectors?
+
+1. .MuiButton-root .MuiButton-label
+2. .container > div.button
+3. #app .navbar .btn-primary
+4. div.card section.content h3.title
+```
+
+Claude breaks down each:
+```
+1. (0,0,2) — two class selectors
+2. (0,0,2) — two class selectors
+3. (1,1,1) — one ID, one class, one element
+4. (0,0,4) — four class selectors and three elements (class selectors win)
+```
+
+## Tool-Specific Workflows
+
+### Tailwind CSS Specific Issues
+
+Tailwind's approach differs from traditional CSS. When integrating Tailwind with other libraries:
+
+```html
+<!-- Problem: Tailwind class loses to library styles -->
+<button class="text-red-600">Save</button>
+<!-- Library's .btn { color: blue } wins -->
+
+<!-- Solution 1: Increase specificity -->
+<button class="text-red-600 text-red-600">Save</button>
+<!-- Doesn't work — Tailwind deduplicates -->
+
+<!-- Solution 2: Use !important modifier -->
+<button class="!text-red-600">Save</button>
+
+<!-- Solution 3: Use @layer in your CSS -->
+@layer components {
+  .btn { @apply px-4 py-2 text-red-600; }
+}
+```
+
+Ask ChatGPT: "I have a Tailwind button conflicting with Bootstrap styles. Which approach works best?" It will guide you toward `@layer` for Tailwind.
+
+### Vue/React Component Styling
+
+For component frameworks, scoped styles solve many conflicts:
+
+```vue
+<!-- Vue SFC with scoped styles -->
+<template>
+  <button class="btn">Click me</button>
+</template>
+
+<style scoped>
+/* This CSS is scoped to this component -->
+.btn {
+  color: red;
+}
+</style>
+```
+
+```jsx
+// React with CSS Modules
+import styles from './button.module.css';
+
+export function Button() {
+  return <button className={styles.btn}>Click me</button>;
+}
+
+/* button.module.css — automatically scoped */
+.btn {
+  color: red;
+}
+```
+
+Claude and Copilot both recognize scoped style patterns and suggest appropriate solutions.
+
+## Prompt Templates for AI Tools
+
+### For Claude (Most Comprehensive)
+
+```text
+I'm integrating [LIBRARY] into a [FRAMEWORK] project and need to override
+the styling of [COMPONENT].
+
+Current situation:
+- Library selector: [SELECTOR] with these styles: [CSS]
+- My attempt: [YOUR SELECTOR] with [YOUR CSS]
+- Result: Library's style wins
+
+Explain:
+1. Why my style loses (specificity math)
+2. The best 3 solutions ranked by maintainability
+3. Trade-offs for each solution
+
+I prefer [PREFERENCE: maintainable/minimal-changes/semantic] code.
+```
+
+### For ChatGPT (Quick Solutions)
+
+```text
+CSS override template needed for [LIBRARY] [COMPONENT]
+
+Library CSS:
+[PASTE THE CONFLICT CSS]
+
+Goal: [DESCRIBE WHAT YOU WANT TO CHANGE]
+
+Show me the exact code to add to fix this.
+```
+
+### For GitHub Copilot (IDE Integration)
+
+```typescript
+// In your component file, start typing:
+// TODO: override [library-component] styling to...
+// Copilot will suggest the pattern used elsewhere in your project
+```
+
+## Frequently Asked Questions
+
+**When should I use !important to override third-party styles?**
+
+Use it only when you have no other option — typically when a library injects inline styles rather than stylesheet classes, since inline styles score (1,0,0) and cannot be overridden without `!important`. Both Claude and ChatGPT will tell you this when you ask explicitly.
+
+**Can AI help me find which library file is causing the conflict?**
+
+Yes. Describe the selector shown in DevTools and ask Claude or ChatGPT to identify which part of the library it comes from. This often saves the time of searching through minified CSS manually.
+
+**Does Copilot work well for Tailwind specificity issues?**
+
+Copilot is effective for Tailwind because it sees your existing class usage and suggests `@layer` or `!` modifier patterns that match your project's existing conventions.
+
+**Should I use CSS Layers (@layer) to manage third-party library specificity?**
+
+CSS cascade layers (`@layer`) are the modern, clean solution for third-party library conflicts. You wrap the library import in a layer with lower priority than your own styles. Claude explains this pattern particularly well and can generate the correct `@layer` setup for your specific library.
+
+**What's the difference between using :where() vs :is()?**
+
+`:where()` has zero specificity (everything inside is ignored for specificity calculation), while `:is()` takes the specificity of its most specific selector. Use `:where()` when wrapping library styles you want to easily override. Claude can explain the subtle differences based on your specific use case.
+
 ## Related Articles
 
 - [AI Tools for Interpreting Terraform Plan Errors](/ai-tools-compared/ai-tools-for-interpreting-terraform-plan-errors-with-provider-version-conflicts/)

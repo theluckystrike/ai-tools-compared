@@ -340,5 +340,308 @@ For teams that want precise control over what counts as drift and how issues are
 
 The key is consistency. Any tool is better than no tool — the best documentation sync solution is the one that actually runs in your CI pipeline and blocks merges when documentation is genuinely out of date.
 
+## Advanced Drift Detection Techniques
+
+### AST-Based Signature Comparison
+
+Parse source code into abstract syntax trees and compare against documentation:
+
+```python
+import ast
+import json
+from typing import Dict, List
+
+class FunctionSignatureAnalyzer:
+    """Extract and validate function signatures against docs"""
+
+    def extract_signatures(self, python_file: str) -> Dict:
+        """Parse Python file and extract all function signatures"""
+        with open(python_file) as f:
+            tree = ast.parse(f.read())
+
+        signatures = {}
+        for node in ast.walk(tree):
+            if isinstance(node, ast.FunctionDef):
+                signatures[node.name] = {
+                    "params": [arg.arg for arg in node.args.args],
+                    "returns": ast.get_source_segment(f.read(), node),
+                    "docstring": ast.get_docstring(node) or "",
+                    "line": node.lineno
+                }
+
+        return signatures
+
+    def compare_with_docs(self, signatures: Dict, docs_json: str):
+        """Find discrepancies between code and documentation"""
+        with open(docs_json) as f:
+            documented = json.load(f)
+
+        discrepancies = []
+
+        for func_name, sig in signatures.items():
+            if func_name not in documented:
+                discrepancies.append({
+                    "type": "missing_docs",
+                    "function": func_name,
+                    "line": sig["line"]
+                })
+                continue
+
+            doc_params = set(documented[func_name].get("params", []))
+            actual_params = set(sig["params"])
+
+            if doc_params != actual_params:
+                discrepancies.append({
+                    "type": "param_mismatch",
+                    "function": func_name,
+                    "documented": list(doc_params),
+                    "actual": list(actual_params),
+                    "missing": list(actual_params - doc_params),
+                    "extra": list(doc_params - actual_params)
+                })
+
+        return discrepancies
+```
+
+### OpenAPI Spec Validation
+
+For REST APIs, validate documentation against actual endpoints:
+
+```bash
+#!/bin/bash
+# validate-openapi.sh
+
+# Extract actual endpoints from code
+echo "Extracting endpoints from source..."
+grep -r "@app.route\|@router\|@endpoint" src/ \
+  | sed 's/.*@\(.*\)(\(.*\)).*/\2/' \
+  | sort -u > actual_endpoints.txt
+
+# Extract endpoints from OpenAPI spec
+echo "Extracting endpoints from OpenAPI spec..."
+jq '.paths | keys[]' docs/openapi.json \
+  | tr -d '"' \
+  | sort -u > documented_endpoints.txt
+
+# Compare
+echo "Comparing..."
+diff actual_endpoints.txt documented_endpoints.txt > endpoint_drift.txt
+
+if [ -s endpoint_drift.txt ]; then
+  echo "ERROR: Documentation drift detected!"
+  cat endpoint_drift.txt
+  exit 1
+fi
+
+echo "OK: Documentation matches code"
+```
+
+## Real-Time Drift Detection
+
+### GitHub Actions Scheduled Checks
+
+Run validation on a schedule to catch drift early:
+
+```yaml
+# .github/workflows/daily-doc-sync-check.yml
+name: Daily Documentation Sync Check
+on:
+  schedule:
+    - cron: '0 2 * * *'  # 2 AM daily
+
+jobs:
+  check-drift:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Extract code signatures
+        run: |
+          python3 << 'EOF'
+          import ast
+          import json
+
+          # Parse all Python files
+          signatures = {}
+          for root, dirs, files in os.walk('src'):
+            for file in files:
+              if file.endswith('.py'):
+                with open(os.path.join(root, file)) as f:
+                  # ... extraction logic
+                  pass
+
+          with open('code_signatures.json', 'w') as f:
+            json.dump(signatures, f)
+          EOF
+
+      - name: Compare with documentation
+        run: |
+          python3 validate_docs.py code_signatures.json docs/ \
+            --output drift_report.json
+
+      - name: Create PR comment if drift found
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const drift = JSON.parse(fs.readFileSync('drift_report.json'));
+
+            let comment = '## Documentation Drift Detected\n\n';
+            comment += drift.discrepancies.map(d =>
+              `- ${d.type}: ${d.function} (line ${d.line})`
+            ).join('\n');
+
+            github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: comment
+            });
+```
+
+## Documentation Generation from Type Definitions
+
+### TypeScript Declaration Files
+
+Generate markdown API docs from `.d.ts` files:
+
+```typescript
+// extract-api-from-types.ts
+import ts from 'typescript';
+import fs from 'fs';
+
+function extractDocumentation(filePath: string): string {
+  const sourceFile = ts.createSourceFile(
+    filePath,
+    fs.readFileSync(filePath, 'utf-8'),
+    ts.ScriptTarget.Latest
+  );
+
+  let markdown = '';
+
+  const visit = (node: ts.Node) => {
+    if (ts.isFunctionDeclaration(node)) {
+      const name = node.name?.text;
+      const jsDoc = ts.getJSDocCommentsAndTags(node);
+      markdown += `## ${name}\n\n${jsDoc[0]?.comment || ''}\n\n`;
+    }
+    ts.forEachChild(node, visit);
+  };
+
+  visit(sourceFile);
+  return markdown;
+}
+
+// Usage
+const docs = extractDocumentation('src/index.d.ts');
+fs.writeFileSync('docs/api.md', docs);
+```
+
+## Handling Breaking Changes
+
+Automatically flag when documentation needs updates after breaking changes:
+
+```python
+class BreakingChangeDetector:
+    """Identify API changes that require documentation updates"""
+
+    def detect_breaking_changes(self, previous_version: str, current_version: str):
+        """Compare two versions for breaking changes"""
+        breaking = []
+
+        # Check for removed functions
+        prev_funcs = self.get_public_functions(previous_version)
+        curr_funcs = self.get_public_functions(current_version)
+
+        removed = set(prev_funcs) - set(curr_funcs)
+        if removed:
+            breaking.append({
+                "type": "removed_functions",
+                "items": list(removed)
+            })
+
+        # Check for changed signatures
+        for func in prev_funcs & curr_funcs:
+            prev_sig = self.get_signature(previous_version, func)
+            curr_sig = self.get_signature(current_version, func)
+
+            if prev_sig != curr_sig:
+                breaking.append({
+                    "type": "signature_change",
+                    "function": func,
+                    "previous": prev_sig,
+                    "current": curr_sig
+                })
+
+        return breaking
+
+    def generate_migration_guide(self, breaking_changes):
+        """Create migration documentation for breaking changes"""
+        guide = "# Migration Guide\n\n"
+
+        for change in breaking_changes:
+            if change["type"] == "removed_functions":
+                guide += f"## Removed Functions\n\n"
+                for func in change["items"]:
+                    guide += f"- `{func}`\n"
+                guide += "\n"
+
+            elif change["type"] == "signature_change":
+                guide += f"## Changed: {change['function']}\n\n"
+                guide += f"Before: `{change['previous']}`\n\n"
+                guide += f"After: `{change['current']}`\n\n"
+
+        return guide
+```
+
+## Testing Documentation Accuracy
+
+Treat documentation like code and test it:
+
+```python
+# test_documentation_accuracy.py
+import subprocess
+import re
+
+def test_readme_code_examples():
+    """Execute code examples from README to verify accuracy"""
+    readme = open('README.md').read()
+
+    # Extract code blocks
+    code_blocks = re.findall(r'```python\n(.*?)\n```', readme, re.DOTALL)
+
+    for i, code in enumerate(code_blocks):
+        try:
+            exec(code)
+            print(f"✓ Code example {i+1} works")
+        except Exception as e:
+            raise AssertionError(f"Code example {i+1} failed: {e}")
+
+def test_api_docs_endpoints():
+    """Verify documented API endpoints are actually accessible"""
+    api_docs = json.load(open('docs/api.json'))
+
+    for endpoint in api_docs['endpoints']:
+        response = requests.head(f"http://localhost:8000{endpoint['path']}")
+        assert response.status_code < 500, \
+            f"Endpoint {endpoint['path']} not found"
+
+if __name__ == '__main__':
+    test_readme_code_examples()
+    test_api_docs_endpoints()
+    print("All documentation tests passed!")
+```
+
+## Recommendations
+
+For small to medium projects with straightforward documentation needs, **GitHub Copilot** provides the lowest friction. Enable inline documentation suggestions and train your team to accept them.
+
+For API-focused projects, **Mintlify** offers the best out-of-the-box experience. Its detection and generation features work together effectively.
+
+For large monorepos or complex codebases, **SourceGraph** provides the necessary context awareness to handle cross-file and cross-repository documentation dependencies.
+
+For teams already using **Docusaurus**, the plugin ecosystem provides flexibility to build custom solutions without switching platforms.
+
 {% endraw %}
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

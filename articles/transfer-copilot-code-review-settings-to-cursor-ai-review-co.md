@@ -251,6 +251,281 @@ GitHub stores Copilot settings tied to your account or organization. They persis
 
 Not formally. Cursor reads the file as plain text and interprets it using the AI model. There's no strict schema, which is both flexible and slightly unpredictable. If a rule isn't being followed, try making it more explicit — "always add JSDoc comments" rather than "prefer JSDoc comments."
 
+## Advanced Rule Configuration Patterns
+
+### Language-Specific Review Rules
+
+Different languages need different review priorities:
+
+```markdown
+# .cursorrules for TypeScript projects
+
+## Type Safety
+- Always use explicit return types on public functions
+- Avoid 'any' types; use 'unknown' if truly needed
+- Use discriminated unions instead of optional properties
+
+## Testing
+- Require unit tests for all public functions
+- Flag missing error boundary tests in React
+- Check for proper test coverage on utils
+
+## Performance
+- Flag expensive operations in loops
+- Require memoization for frequently-rendered components
+- Check for unnecessary re-renders in useEffect
+
+## Code Quality
+- Require JSDoc comments for functions > 10 lines
+- Flag deeply nested conditionals (max 3 levels)
+- Check for proper error handling in async functions
+```
+
+### Review Rules Based on Change Type
+
+Different changes need different review criteria:
+
+```markdown
+# .cursorrules - adaptive based on diff type
+
+## For database migrations
+- Require backward compatibility checks
+- Check for rollback strategy
+- Verify data type conversions won't lose precision
+
+## For API changes
+- Flag breaking changes with migration notes
+- Check for deprecation warnings on old endpoints
+- Require API version updates
+
+## For dependency updates
+- Check changelog for breaking changes
+- Flag security vulnerabilities
+- Verify compatibility with current codebase
+
+## For refactoring
+- Ensure behavior is unchanged
+- Check test coverage before/after
+- Flag performance implications
+```
+
+## Automating Rule Application
+
+### CI/CD Integration with ESLint and Prettier
+
+Configure Cursor rules to match your linting setup:
+
+```bash
+#!/bin/bash
+# sync-eslint-to-cursorrules.sh
+
+# Extract ESLint rules
+eslint --print-config src/index.ts | jq '.rules' > eslint-config.json
+
+# Convert to .cursorrules format
+python3 << 'EOF'
+import json
+
+with open('eslint-config.json') as f:
+    eslint_rules = json.load(f)
+
+cursorrules_content = "# Generated from ESLint config\n\n"
+
+for rule, config in eslint_rules.items():
+    if isinstance(config, list) and config[0] in ['error', 'warn']:
+        rule_name = rule.replace('/', ': ')
+        cursorrules_content += f"- {rule_name} (severity: {config[0]})\n"
+
+with open('.cursorrules', 'w') as f:
+    f.write(cursorrules_content)
+EOF
+```
+
+### Pre-commit Hook with Cursor Review
+
+Run Cursor review before allowing commits:
+
+```bash
+#!/bin/bash
+# .git/hooks/pre-commit
+
+# Run Cursor AI review on staged changes
+cursor --review-staged-changes --format json > review-output.json
+
+# Check for critical issues
+if grep -q '"severity": "error"' review-output.json; then
+    echo "❌ Critical code review issues found:"
+    jq '.[] | select(.severity == "error")' review-output.json
+    exit 1
+fi
+
+# Warn about warnings but allow commit
+if grep -q '"severity": "warn"' review-output.json; then
+    echo "⚠️  Code review warnings:"
+    jq '.[] | select(.severity == "warn")' review-output.json
+fi
+
+exit 0
+```
+
+## Team-Level Review Policies
+
+### Org-Wide Rule Enforcement
+
+Define rules at the organization level:
+
+```bash
+# shared .cursorrules committed to org-wide dotfiles repo
+# Distributed via: `ln -s ~/dotfiles/.cursorrules ~/.cursor/rules/team-standards.cursorrules`
+
+# Team Coding Standards
+- Use Prettier for formatting (non-negotiable)
+- Use TypeScript strict mode
+- Require unit tests before code review
+- Maximum function length: 50 lines
+- Maximum cyclomatic complexity: 5
+
+# Security Standards
+- Never hardcode credentials
+- Check for SQL injection vulnerabilities in DB queries
+- Validate all user input
+- Use HTTPS for external API calls
+
+# Performance Standards
+- Flag N+1 query patterns
+- Require pagination for large datasets
+- Check bundle size impact of new dependencies
+```
+
+### Custom Scoring System
+
+Rate reviews based on severity:
+
+```typescript
+interface ReviewScore {
+  critical: number;  // Must fix before merge
+  major: number;     // Should fix before merge
+  minor: number;     // Nice to fix
+  info: number;      // FYI only
+}
+
+function calculateMergeReadiness(review: CodeReview): boolean {
+  const score: ReviewScore = {
+    critical: 0,
+    major: 0,
+    minor: 0,
+    info: 0
+  };
+
+  for (const issue of review.issues) {
+    score[issue.severity]++;
+  }
+
+  // Only allow merge if no critical issues
+  return score.critical === 0;
+}
+```
+
+## Handling Review False Positives
+
+### Suppressing Specific Rules
+
+Exclude specific checks for legitimate cases:
+
+```typescript
+// Suppress specific Cursor rule for this function
+// cursor:suppress=no-hardcoded-config
+function getDefaultConfig() {
+  return {
+    apiUrl: 'https://api.example.com',
+    timeout: 5000
+  };
+}
+
+// Or in comments
+function deprecatedFunction() {
+  // cursor:ignore=function-length
+  // This function is long but will be refactored in v2
+  // ... 200 lines of legacy code ...
+}
+```
+
+### Rule Tuning for False Positives
+
+Adjust rule sensitivity in .cursorrules:
+
+```markdown
+# .cursorrules - tuned for your codebase
+
+## Reduce false positives
+- Ignore "too many parameters" for data transfer objects (DTOs)
+- Skip "magic number" for well-known constants (HTTP status codes)
+- Skip unused variable warnings for intentional placeholders (_)
+
+## Enforce strict checking on critical code
+- Require error handling in payment processing code
+- Check authentication in all API endpoints
+- Verify input validation for all public APIs
+```
+
+## Migration Monitoring
+
+### Tracking Review Rule Coverage
+
+Monitor how many PRs comply with your rules:
+
+```python
+def analyze_rule_adoption(owner, repo, days=30):
+    """Track how many PRs pass all review rules"""
+    from github import Github
+
+    g = Github(os.getenv('GITHUB_TOKEN'))
+    repo = g.get_repo(f"{owner}/{repo}")
+
+    prs_reviewed = 0
+    prs_passed = 0
+
+    for pr in repo.get_pulls(state='closed', sort='updated', direction='desc'):
+        if (datetime.now(timezone.utc) - pr.updated_at).days > days:
+            break
+
+        # Check if PR has Cursor review comments
+        if any('cursor' in comment.body.lower() for comment in pr.get_comments()):
+            prs_reviewed += 1
+
+            # Check if all issues were resolved
+            if not any('unresolved' in comment.body.lower() for comment in pr.get_comments()):
+                prs_passed += 1
+
+    adoption_rate = (prs_reviewed / (prs_reviewed or 1)) * 100
+    compliance_rate = (prs_passed / (prs_reviewed or 1)) * 100
+
+    print(f"Review adoption: {adoption_rate:.0f}%")
+    print(f"Rule compliance: {compliance_rate:.0f}%")
+```
+
+## Frequently Asked Questions
+
+**Can I run Copilot and Cursor side by side during migration?**
+
+Yes. Copilot and Cursor can coexist in VS Code, though you may see conflicting suggestions. A clean approach is to disable Copilot in one project at a time as you validate your Cursor rules are working correctly, then uninstall Copilot once you're confident.
+
+**Do `.cursorrules` files affect all AI models in Cursor?**
+
+Yes. Rules apply regardless of which model you select (GPT-4, Claude, or Cursor's own). This makes your configuration model-agnostic, which matters as Cursor adds new model options.
+
+**What happens to my Copilot configuration if I stop paying?**
+
+GitHub stores Copilot settings tied to your account or organization. They persist even if your subscription lapses, but you won't be able to use them until you resubscribe. There's no export mechanism from GitHub's side, so documenting your Copilot rules before migrating is the only reliable backup strategy.
+
+**Is `.cursorrules` format standardized?**
+
+Not formally. Cursor reads the file as plain text and interprets it using the AI model. There's no strict schema, which is both flexible and slightly unpredictable. If a rule isn't being followed, try making it more explicit — "always add JSDoc comments" rather than "prefer JSDoc comments."
+
+**How do I test my Cursor rules are working?**
+
+Create a test PR with intentional violations of your rules. Cursor should flag them in review. If not, refine the rule wording to be more explicit or specific to your codebase.
+
 ## Related Articles
 
 - [How to Transfer GitHub Copilot Organization Settings](/ai-tools-compared/transfer-github-copilot-org-settings-when-switching-to-curso/)

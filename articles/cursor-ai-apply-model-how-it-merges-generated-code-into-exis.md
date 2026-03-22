@@ -251,6 +251,110 @@ Review each tool's privacy policy, data handling practices, and security certifi
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Real-World Apply Patterns and Gotchas
+
+The Apply model works best when you understand its quirks. Here are patterns that actually succeed and common failure modes to avoid:
+
+### When Apply Works Well
+
+**Pattern: Consistent indentation.** If your file uses 2-space indentation throughout, the Apply model will respect that. Mixed indentation causes failures. Before asking Apply to touch a file, normalize its whitespace.
+
+**Pattern: Clear function boundaries.** Apply struggles when asked to modify code that spans multiple interrelated functions. Instead, ask Apply to refactor one function completely, then verify it still integrates with callers.
+
+**Pattern: Commented regions for context.** Adding a comment above the section you want modified dramatically improves Apply accuracy:
+
+```python
+# TODO: Refactor to use async/await pattern
+def fetch_data(query):
+    response = requests.get(f'/api/search?q={query}')
+    return response.json()
+```
+
+This comment signals to the model exactly what transformation you want, reducing off-target suggestions.
+
+### When Apply Often Fails
+
+**Failure: Modifying code that depends on later definitions.** If you ask Apply to modify function A but function A calls function B defined later in the file, Apply might generate code that references B before it exists.
+
+**Failure: Adding complex conditional logic to existing structure.** When existing code uses if/else chains and you ask Apply to add another branch, it often places the new logic in the wrong branch or duplicates conditions.
+
+**Failure: Changing variable names across multiple functions.** Apply can't rename variables consistently across files. It will rename them in the file you point at but miss references elsewhere.
+
+**Pattern to use instead:** Ask Apply to extract the first function to a new module, then update all references in the original file.
+
+## Token Accounting for Apply Operations
+
+Apply operations cost tokens for context reading plus tokens for the generated diff. Understanding these costs helps budget API usage:
+
+```
+Context tokens = lines of context × avg tokens per line (~0.4)
+Generation tokens = diff lines × 1.5 (diffs are less compressed)
+Total = context + generation
+
+Example:
+- Reading 500-line file: ~200 context tokens
+- Generating 20-line diff: ~30 generation tokens
+- Total cost: ~230 tokens
+```
+
+Compare this to a full-file rewrite approach which regenerates all 500 lines:
+
+```
+Full rewrite tokens: 500 lines × 1.5 × 2 (for input + output) = 1,500 tokens
+Diff-based approach: 230 tokens
+Savings: ~85% reduction
+```
+
+For developers tracking monthly costs, Apply operations typically cost 10-20x less than equivalent chat-based refactoring. This makes it economical to use Apply for small changes that would otherwise require manual editing.
+
+## Advanced: Chaining Apply Requests
+
+For large refactoring projects, strategically chaining Apply requests yields exponentially better results than monolithic changes:
+
+```
+Approach 1: "Refactor 400 lines of legacy code to use async/await"
+Result: ~60% of Apply suggestion is correct, requires heavy manual cleanup
+
+Approach 2: Apply in sequence
+1. "Extract helper functions from this async block"
+2. "Update the main function signature to async"
+3. "Replace callback chains with await syntax"
+4. "Update error handling for async context"
+Result: Each step ~95% correct, final result is production-ready
+```
+
+The key insight is that each Apply operation has a limited context window. Breaking large changes into 5-10 smaller Apply operations that build on each other works far better than trying to do it all at once. Each operation should be achievable in under 30 seconds of manual work, making it easy to accept or reject the change.
+
+## When to Avoid Apply Entirely
+
+Some changes should never go through Apply because the risk exceeds the benefit:
+
+- **Security-critical code**: Password validation, authentication flows, cryptographic functions. Apply is good enough for 95% of code but that last 5% matters for security.
+- **Performance-sensitive loops**: Apply may not understand algorithmic complexity and could suggest inefficient approaches.
+- **Public API signatures**: Breaking changes that affect users downstream. Use Apply for internals only.
+- **Large architectural changes**: If modifying a component requires updating 15+ dependent files, the coordination is beyond Apply's scope.
+
+For these, apply-free approaches (pairing with another developer, architecture review, manual implementation) cost more time upfront but provide better confidence in correctness.
+
+## Integrating Apply with Your Development Workflow
+
+Most productive developers treat Apply like a code generation tool in a build pipeline. They set up workflows where Apply generates candidates that then go through review:
+
+```bash
+# Workflow: Generate candidates, review together
+git checkout -b apply-candidate
+cursor apply "Add error handling to all API calls"
+git diff
+# Review carefully, potentially make manual edits
+git commit -m "Add error handling via Apply + manual refinement"
+git push --force-with-lease origin apply-candidate
+# Open PR for team review
+```
+
+This prevents the "black box" problem where AI-generated code enters production without understanding. The diff review and manual refinement steps maintain code quality even if Apply isn't 100% correct.
+
+{% endraw %}
+
 ## Related Articles
 
 - [Best Practices for Documenting AI-Generated Code for Future](/ai-tools-compared/best-practices-for-documenting-ai-generated-code-for-future-/)
