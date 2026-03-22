@@ -22,14 +22,17 @@ This guide covers the best open source alternatives to Cody for code search, wit
 
 ## Why Look for an Open Source Alternative to Cody?
 
-Cody combines Sourcegraph's code intelligence with large language models to answer coding questions, explain code, and assist with writing new code. While powerful, it requires a Sourcegraph subscription for full features. Open source alternatives provide several advantages:
+Cody combines Sourcegraph's code intelligence with large language models to answer coding questions, explain code, and assist with writing new code. While powerful, it requires a Sourcegraph subscription for full features, and in the enterprise tier this cost adds up quickly for larger teams.
 
-- **Full data control**: Keep your code searches and queries on-premises
-- **Customizable models**: Swap in different LLMs or fine-tune on your codebase
-- **No subscription costs**: Run entirely on your own infrastructure
-- **Community-driven features**: Contribute improvements or build custom integrations
+Open source alternatives provide several advantages:
 
-If your team has specific privacy requirements, budget constraints, or prefers full control over the AI stack, these alternatives deserve consideration.
+- **Full data control**: Keep your code searches and queries on-premises—no code leaves your network
+- **Customizable models**: Swap in different LLMs or fine-tune on your codebase to improve domain-specific accuracy
+- **No subscription costs**: Run entirely on your own infrastructure with your existing GPU hardware
+- **Community-driven features**: Contribute improvements or build custom integrations for your toolchain
+- **Auditability**: Review the full source code of what is running on your infrastructure
+
+If your team has specific privacy requirements (regulated industries, proprietary algorithms), budget constraints, or prefers full control over the AI stack, these alternatives deserve serious consideration. The quality gap between open source and commercial tools has narrowed significantly in 2026 as models like DeepSeek Coder V2, Qwen2.5-Coder, and CodeLlama have matured.
 
 ## Top Open Source Alternatives for Code Search
 
@@ -47,25 +50,29 @@ Sourcegraph itself started as an open source code search engine, and the core se
 
 ### 2. Tabby
 
-Tabby is a self-hosted AI coding assistant that provides code completion, chat-based assistance, and code explanation. It runs entirely on your infrastructure and supports various open source LLMs.
+Tabby is a self-hosted AI coding assistant that provides code completion, chat-based assistance, and code explanation. It runs entirely on your infrastructure and supports various open source LLMs including DeepSeek Coder, Qwen2.5-Coder, StarCoder2, and CodeLlama.
 
 **Strengths:**
 - Fully self-hosted with no external API dependencies
-- Supports llama.cpp, vllm, and other inference engines
-- Visual Studio Code and JetBrains extensions
-- Active community and regular updates
+- Supports llama.cpp, vllm, and Ollama inference engines
+- Visual Studio Code and JetBrains extensions with auto-install
+- Multi-user authentication with GitHub, Google, or LDAP
+- Repository context indexing for codebase-aware completions
 
 **Installation:**
 
 ```bash
-# Docker deployment
+# Docker deployment with GPU
 docker run -d \
   --name tabby \
   -p 8080:8080 \
   -v ~/.tabby:/data \
   --gpus all \
   tabbyml/tabby:latest \
-  serve --model TabbyML/StarCoder-1B
+  serve --model TabbyML/DeepSeek-Coder-6.7B
+
+# Enable repository indexing for codebase context
+docker exec tabby tabby scheduler --now
 ```
 
 **Configuration for VS Code:**
@@ -76,6 +83,8 @@ docker run -d \
   "tabby.activation": true
 }
 ```
+
+Tabby's repository indexing feature is the closest functional equivalent to Cody's codebase-aware mode. Point Tabby at your Git repositories and it builds a local vector index that enables completions and chat responses that reference your actual code. This requires configuring repository access in the Tabby admin panel, but the setup is straightforward compared to full Sourcegraph deployment.
 
 ### 3. OpenCode
 
@@ -133,7 +142,38 @@ docker run -d \
 }
 ```
 
-### 5. Greptile
+### 5. Continue.dev with Codebase Indexing
+
+Continue.dev is a fully open-source IDE extension for VS Code and JetBrains that supports codebase-wide context through its `@codebase` command. When configured with a local embedding model and vector store, it provides answers that reference your actual project code—the primary capability that makes Cody valuable.
+
+**Setup:**
+
+```bash
+# Install Ollama for the LLM backend
+ollama pull qwen2.5-coder:7b
+
+# Configure Continue.dev for codebase context
+cat >> ~/.continue/config.yaml << 'EOF'
+models:
+  - provider: ollama
+    model: qwen2.5-coder:7b
+    api_base: "http://localhost:11434"
+embeddingsProvider:
+  provider: ollama
+  model: nomic-embed-text
+  api_base: "http://localhost:11434"
+EOF
+```
+
+With this configuration, typing `@codebase` in the Continue chat panel triggers semantic search across your indexed files before sending the prompt to the LLM. This gives context-aware answers similar to Cody's experience, fully offline.
+
+**Strengths:**
+- Completely open source, MIT licensed
+- Codebase indexing with local embeddings—no data leaves your machine
+- Supports dozens of LLM providers (Ollama, LM Studio, LocalAI, Anthropic, OpenAI)
+- Active development with frequent feature releases
+
+### 6. Greptile
 
 Greptile provides API-based code search and intelligence with a focus on answering questions about your codebase. While not fully open source, it offers a free tier and self-hosted options.
 
@@ -145,13 +185,16 @@ Greptile provides API-based code search and intelligence with a focus on answeri
 
 ## Comparing Features
 
-| Feature | Tabby | OpenCode | Fauxpilot | Sourcegraph |
-|---------|-------|----------|-----------|-------------|
+| Feature | Tabby | Continue.dev | FauxPilot | Sourcegraph (open core) |
+|---------|-------|-------------|-----------|-------------------------|
 | Code Completion | Yes | Yes | Yes | Limited |
-| Chat Assistance | Yes | Yes | No | Via Cody |
+| Chat Assistance | Yes | Yes | No | Via Cody (paid) |
+| Codebase Context | Yes (indexed) | Yes (embeddings) | No | Advanced |
 | Self-Hosted | Yes | Yes | Yes | Yes |
-| Code Search | Basic | Basic | No | Advanced |
-| Open Source | Yes | Yes | Yes | Core is |
+| Code Search | Basic | Via embeddings | No | Advanced |
+| Open Source | Yes | Yes | Yes | Core only |
+| Multi-user Auth | Yes | No | No | Yes |
+| JetBrains Support | Yes | Yes | No | Yes |
 
 ## Practical Implementation: Building a Local Code Search Stack
 
@@ -193,13 +236,17 @@ This stack gives you Sourcegraph's code search capabilities alongside Tabby's AI
 
 Consider these factors when selecting an alternative to Cody:
 
-1. **Primary use case**: If code search is your priority, Sourcegraph's open core excels. For AI-assisted coding, Tabby or OpenCode deliver better experiences.
+1. **Primary use case**: If code search across many repositories is your priority, Sourcegraph's open core is the only option that matches Cody's scope. For AI-assisted coding with codebase context, Tabby or Continue.dev deliver the closest experience.
 
-2. **Infrastructure resources**: Fauxpilot has the lowest requirements. Tabby and OpenCode need GPU resources for acceptable performance.
+2. **Team size**: Continue.dev works well for individual developers or small teams. Tabby's multi-user authentication makes it the better choice when 5+ developers need shared access. Sourcegraph's open core handles organization-scale deployments.
 
-3. **Editor integration**: Verify your preferred IDE supports the tool. All options listed work with VS Code, but JetBrains support varies.
+3. **Infrastructure resources**: FauxPilot has the lowest resource requirements since it only handles completions. Tabby and Continue.dev need GPU resources for reasonable performance on 7B+ models—an RTX 3060 or better is the practical minimum for team use.
 
-4. **Model preferences**: Some tools lock you to specific models, while others offer flexibility to run any compatible LLM.
+4. **Editor integration**: All major options support VS Code. For JetBrains IDEs (IntelliJ, PyCharm, GoLand), Tabby and Continue.dev both have official plugins. FauxPilot relies on Copilot plugin compatibility, which varies by JetBrains product version.
+
+5. **Model flexibility**: FauxPilot is more restrictive in model support. Tabby, Continue.dev, and Sourcegraph open core all work with any Ollama-compatible or OpenAI API-compatible model, giving you freedom to upgrade as better coding models are released.
+
+For most teams replacing Cody, the recommended starting point is **Tabby** for a turnkey multi-user experience, or **Continue.dev** for a solo developer or small team that wants maximum flexibility in model and configuration choice. Both deliver the core Cody value proposition—AI assistance that understands your codebase—without the subscription cost.
 
 
 ## Related Articles
