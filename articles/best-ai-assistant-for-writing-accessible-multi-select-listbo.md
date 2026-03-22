@@ -8,11 +8,11 @@ last_modified_at: 2026-03-21
 author: "AI Tools Compared"
 permalink: /best-ai-assistant-for-writing-accessible-multi-select-listbo/
 reviewed: true
-score: 8
+score: 7
 categories: [comparison]
 intent-checked: false
 voice-checked: false
-tags: [ai-tools-compared, comparison, accessibility, frontend]
+tags: [ai-tools-compared, comparison, accessibility, frontend, best-of, artificial-intelligence]
 ---
 
 
