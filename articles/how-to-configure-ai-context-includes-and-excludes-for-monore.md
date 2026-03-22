@@ -27,9 +27,19 @@ score: 8
 intent-checked: true
 voice-checked: true---
 
+
 Monorepos require explicit context configuration to prevent AI from hallucinating about unrelated packages. This guide shows how to set up AI tools to include only relevant workspace paths, package dependencies, and type definitions while excluding irrelevant codebases.
 
 When working with large monorepo projects, AI coding assistants often struggle to provide relevant suggestions because they attempt to process the entire repository. Configuring context includes and excludes allows you to direct the AI's attention to the specific packages and directories that matter for your current task. This results in more accurate completions, better-informed responses, and faster interactions.
+
+## Key Takeaways
+
+- **The most direct method**: uses the `.cursorrules` file in your project root.
+- **When working with large**: monorepo projects, AI coding assistants often struggle to provide relevant suggestions because they attempt to process the entire repository.
+- **This results in more**: accurate completions, better-informed responses, and faster interactions.
+- **Third**: the AI may suggest solutions using the wrong package or framework because it doesn't know which part of the monorepo you're actually working in.
+- **Consider including focused test**: files rather than excluding all tests.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
 ## Why Monorepos Challenge AI Context
 

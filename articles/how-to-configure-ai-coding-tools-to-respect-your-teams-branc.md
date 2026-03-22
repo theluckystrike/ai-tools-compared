@@ -33,6 +33,16 @@ When AI coding assistants generate code, commit messages, or pull requests, they
 
 This guide covers practical methods for teaching AI coding tools—including GitHub Copilot, Cursor, Claude Code, and Windsurf—to generate branch names that match your team's standards.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Use lowercase letters**: numbers, and hyphens only
+2.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Include a ticket number**: if applicable (e.g., feature/PROJ-123-user-dashboard) Example: When implementing user profile editing, create `feature/user-profile-edit` not `new-user-profile功能`.
+- **Check that it uses**: the correct prefix (`feature/`) 3.
+
 ## Why Branch Naming Conventions Matter
 
 Most teams establish branch naming conventions for good reason. A consistent pattern like `feature/user-authentication` or `fix/payment-processing-error` makes it easy to identify what a branch contains without examining its commits. Convention-aware branches integrate with CI/CD pipelines, GitHub Actions workflows, and project management tools that parse branch names automatically.
