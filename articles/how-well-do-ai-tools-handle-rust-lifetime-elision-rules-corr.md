@@ -9,7 +9,7 @@ permalink: /how-well-do-ai-tools-handle-rust-lifetime-elision-rules-corr/
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
