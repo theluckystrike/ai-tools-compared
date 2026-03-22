@@ -41,7 +41,17 @@ special character.
 - **User must click link**: within 24 hours to activate account.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Understanding the Input: Product Requirement Documents
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Input: Product Requirement Documents
 
 Product requirement documents (PRDs) come in various formats—Google Docs, Confluence pages, Notion files, or plain text. Most contain a mix of user stories, feature descriptions, business rules, and technical constraints. The challenge is extracting unambiguous, testable conditions from these documents.
 
@@ -58,7 +68,7 @@ User Authentication Feature
 
 From this brief description, you need to generate specific acceptance criteria that QA can test and developers can implement.
 
-## Prompting AI to Extract Acceptance Criteria
+### Step 2: Prompting AI to Extract Acceptance Criteria
 
 The key to getting useful output is providing clear context. Here's a structured approach:
 
@@ -108,7 +118,7 @@ AI-generated acceptance criteria:
 
 | AC-9 | Account inactive until verified | Attempt login before verification |
 
-## Automating with CLI Tools
+### Step 3: Automate with CLI Tools
 
 For teams processing multiple requirements, you can build a simple CLI tool using the OpenAI API or Claude API:
 
@@ -154,7 +164,7 @@ Run it with:
 python ac_generator.py "Your PRD text here" "your-api-key"
 ```
 
-## Handling Complex Business Rules
+### Step 4: Handling Complex Business Rules
 
 Real-world requirements often contain nested logic. Here's how to handle them:
 
@@ -193,7 +203,7 @@ This produces testable scenarios like:
 
 | $100 order, member | 15% discount | 10%+5%, capped |
 
-## Integration with Test Management
+### Step 5: Integration with Test Management
 
 For automated test generation, output criteria in a format your framework understands:
 
@@ -246,7 +256,7 @@ def generate_tests():
 
 **Maintain a criteria library.** Store successful AI-generated criteria as reference material. This improves future outputs and creates documentation.
 
-## Common Pitfalls to Avoid
+### Step 6: Common Pitfalls to Avoid
 
 Generated criteria sometimes miss implicit requirements. Always verify:
 
@@ -261,6 +271,21 @@ Generated criteria sometimes miss implicit requirements. Always verify:
 - Accessibility requirements
 
 AI excels at extracting explicit requirements but may miss unstated assumptions. Manual review remains essential.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

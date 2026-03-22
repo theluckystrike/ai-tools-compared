@@ -46,7 +46,17 @@ Large React and Vue applications often contain hundreds of components with compl
 
 AI-powered diagram generation addresses this problem by analyzing your source code and producing accurate representations automatically. This approach provides several advantages: diagrams reflect current code, generation takes seconds rather than hours, and you can regenerate diagrams whenever the architecture changes.
 
-## Approaches for Generating Component Diagrams with AI
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Approaches for Generating Component Diagrams with AI
 
 Several strategies exist for using AI to create component diagrams from your frontend projects. Each approach offers different tradeoffs in terms of accuracy, customization, and integration into your workflow.
 
@@ -161,7 +171,7 @@ graph TD
 
 Vue's composables and props system create explicit relationships that AI can accurately map, making the generated diagrams particularly reliable.
 
-## Tools and Integrations
+### Step 2: Tools and Integrations
 
 Multiple tools can enhance your AI-generated diagram workflow. VS Code extensions like Mermaid Markdown Preview allow you to preview diagrams directly in your editor. For documentation sites, Docusaurus and other static site generators support Mermaid diagrams natively.
 
@@ -175,7 +185,7 @@ For large projects, generate multiple focused diagrams rather than attempting to
 
 Regenerate diagrams regularly, especially after significant refactoring. AI makes this process fast enough to include in your workflow whenever architecture changes occur.
 
-## Extracting Dependency Data for AI Processing
+### Step 3: Extracting Dependency Data for AI Processing
 
 To generate accurate diagrams, start by gathering your component dependency information. AI can parse this data and convert it to visual format automatically.
 
@@ -190,7 +200,7 @@ Feed this output to an AI with a prompt like:
 
 The AI structures this raw data into a coherent visual representation without manual organization.
 
-## Comparing Tool Outputs: PlantUML vs Mermaid
+### Step 4: Comparing Tool Outputs: PlantUML vs Mermaid
 
 Different diagram formats serve different purposes. AI can generate both and help you choose:
 
@@ -209,7 +219,7 @@ Compare the outputs for:
 
 Most teams find Mermaid sufficient for documentation, with PlantUML reserved for complex architectural presentations.
 
-## Handling Dynamic Component Generation
+### Step 5: Handling Dynamic Component Generation
 
 Projects with dynamically loaded components or lazy-loaded routes present challenges for static diagram generation. AI can help annotate dynamic patterns:
 
@@ -225,7 +235,7 @@ graph TD
 
 The dashed lines and annotations clarify which components load dynamically, making the diagram more informative than a simple static hierarchy.
 
-## Auto-Updating Diagrams from Code
+### Step 6: Auto-Updating Diagrams from Code
 
 Some teams integrate AI diagram generation into their CI/CD pipeline. Ask an AI to suggest the approach:
 
@@ -233,7 +243,7 @@ Some teams integrate AI diagram generation into their CI/CD pipeline. Ask an AI 
 
 This ensures documentation stays synchronized with actual code without manual effort.
 
-## Documenting Prop Drilling and State Flow
+### Step 7: Documenting Prop Drilling and State Flow
 
 Component diagrams benefit from annotations showing data flow. AI can enhance basic diagrams with flow information:
 
@@ -253,13 +263,28 @@ graph TD
 
 Color coding and prop annotations transform diagrams from visual toys into useful technical documentation.
 
-## Integrating Diagrams into Your Documentation Site
+### Step 8: Integrate Diagrams into Your Documentation Site
 
 Most documentation sites support Mermaid or PlantUML. Ask your AI to help integrate generated diagrams:
 
 > "I use [Docusaurus/Next.js/Jekyll]. Show me how to embed these Mermaid diagrams directly in my markdown documentation with version control integration."
 
 AI provides platform-specific guidance for smooth integration with your existing doc infrastructure.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

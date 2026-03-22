@@ -42,7 +42,17 @@ Currency decimal precision remains one of the most common sources of financial s
 - **Currency decimal precision remains**: one of the most common sources of financial software bugs.
 - **Floating-point arithmetic**: rounding inconsistencies, and currency-specific decimal requirements can cause incorrect calculations that are difficult to detect until they reach production.
 
-## The Challenge of Currency Decimal Precision
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The Challenge of Currency Decimal Precision
 
 Financial applications must handle currency with exact precision. Unlike general-purpose arithmetic, currency calculations have strict requirements:
 
@@ -58,7 +68,7 @@ Financial applications must handle currency with exact precision. Unlike general
 
 Java's `BigDecimal`, Python's `Decimal`, and JavaScript's libraries like `decimal.js` provide the necessary precision, but the test coverage for edge cases often falls short. This is where AI-generated test cases become valuable.
 
-## Using AI to Generate Edge Case Tests
+### Step 2: Use AI to Generate Edge Case Tests
 
 AI tools can analyze your currency handling code and suggest edge cases you might have missed. Here's how to effectively prompt an AI for test generation:
 
@@ -196,7 +206,7 @@ describe('Currency Calculation Edge Cases', () => {
 });
 ```
 
-## Common Edge Cases AI Can Identify
+### Step 3: Common Edge Cases AI Can Identify
 
 Beyond basic tests, AI tools excel at identifying less obvious edge cases:
 
@@ -229,7 +239,7 @@ Different AI tools handle financial edge case generation with varying depth. Her
 
 For complex rounding scenarios — such as banker's rounding (HALF_EVEN) applied across multi-currency pipelines — Claude consistently produces the most accurate test expectations. Copilot is faster for simple CRUD-adjacent money handling.
 
-## Handling Multi-Currency Test Scenarios
+### Step 4: Handling Multi-Currency Test Scenarios
 
 When your application processes multiple currencies simultaneously, the test matrix expands significantly. AI tools can generate test fixtures that cover the full currency matrix:
 
@@ -260,7 +270,7 @@ def test_rounding_respects_currency_decimals(currency, decimals):
 
 This parameterized approach — which AI tools generate readily when asked for "currency-aware" tests — catches bugs where a single hardcoded `setScale(2)` silently truncates JPY amounts or loses KWD precision.
 
-## Prompting AI for Maximum Coverage
+### Step 5: Prompting AI for Maximum Coverage
 
 The quality of AI-generated tests depends heavily on prompt construction. These prompt patterns consistently produce thorough edge case suites:
 
@@ -304,6 +314,21 @@ When using AI to generate currency tests, follow these guidelines:
 - **Seed AI with known-failing cases** — Concrete bugs produce better test coverage than abstract requests
 
 - **Run AI-generated tests against a reference implementation** — Catch AI hallucinations early by cross-validating against a trusted calculator
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

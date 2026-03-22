@@ -49,7 +49,17 @@ Membership applications for open source foundations typically require several co
 
 AI assists by generating initial drafts, suggesting improvements to unclear passages, helping structure complex ideas, and ensuring your documentation follows foundation-specific conventions. The technology handles the mechanical aspects of writing, allowing you to focus on the substantive content that only you can provide.
 
-## Setting Up Your AI Workflow
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Set Up Your AI Workflow
 
 Before drafting, gather your contribution data. Most foundations want concrete examples rather than general statements. Prepare a list including:
 
@@ -67,7 +77,7 @@ Before drafting, gather your contribution data. Most foundations want concrete e
 
 With this information ready, you can prompt AI tools effectively. The quality of AI-generated content depends significantly on the context you provide.
 
-## Drafting the Personal Statement
+### Step 2: Drafting the Personal Statement
 
 The personal statement introduces you and explains your interest in the foundation. AI excels at transforming rough ideas into coherent paragraphs.
 
@@ -84,14 +94,14 @@ and mentor new contributors.
 
 The AI generates a draft that you then refine with your specific details and voice. This approach saves time while ensuring your authentic story comes through.
 
-## Documenting Contributions Systematically
+### Step 3: Documenting Contributions Systematically
 
 Foundations want quantifiable evidence of your contributions. AI helps structure this information into professional documentation.
 
 **Template for contribution section:**
 
 ```markdown
-## Technical Contributions
+### Step 4: Technical Contributions
 
 ### Apache Kafka Contributions
 - **Pull Requests Submitted:** 15
@@ -109,7 +119,7 @@ Foundations want quantifiable evidence of your contributions. AI helps structure
 
 AI can generate this structure from your raw contribution data, formatting it according to foundation expectations. You supply the numbers; AI handles the presentation.
 
-## Addressing Governance and Commitment Questions
+### Step 5: Addressing Governance and Commitment Questions
 
 Most foundations ask about your intended involvement and understanding of project governance. These questions require thoughtful responses that demonstrate genuine interest in community health beyond code contributions.
 
@@ -129,7 +139,7 @@ Regarding conflict resolution, I believe in:
 In my Kafka contributions, I have demonstrated this approach by...
 ```
 
-## Review and Refinement
+### Step 6: Review and Refinement
 
 AI generates first drafts, but your review is essential. Verify all technical details, ensure accuracy of contribution numbers, and add specific examples that only you possess. Foundations have review committees who evaluate applications for authenticity—your voice and specific experiences must come through clearly.
 
@@ -143,7 +153,7 @@ Common refinements include:
 
 - Ensuring consistent tone throughout the document
 
-## Automating Repetitive Sections
+### Step 7: Automate Repetitive Sections
 
 If you apply to multiple foundations, AI helps adapt core content for each organization's specific requirements. The Apache Software Foundation emphasizes individual merit and community involvement. The Linux Foundation focuses on corporate sponsorship and project contribution. OpenJS Foundation values JavaScript ecosystem engagement.
 
@@ -156,7 +166,7 @@ and cross-project collaboration:
 [insert your contribution summary]
 ```
 
-## Practical Tips for Better Results
+### Step 8: Practical Tips for Better Results
 
 Provide AI with specific context rather than generic requests. Instead of "Write about my Kafka contributions," specify the exact repositories, contribution types, and impact areas you want to highlight.
 
@@ -164,7 +174,7 @@ Iterate on drafts. AI-generated content improves with feedback. Request revision
 
 Maintain accuracy throughout. AI sometimes generates plausible-sounding but incorrect information. Verify all dates, numbers, and technical claims independently.
 
-## Real-World Application Examples
+### Step 9: Real-World Application Examples
 
 ### Apache Software Foundation Application
 
@@ -228,7 +238,7 @@ impact. I've contributed to Node.js core, created 12 popular npm packages
 (10M monthly downloads), and maintain ecosystem health through standards work.
 ```
 
-## Multi-Foundation Application Template
+### Step 10: Multi-Foundation Application Template
 
 For applying to multiple foundations, create a master document then adapt:
 
@@ -241,7 +251,7 @@ For applying to multiple foundations, create a master document then adapt:
 - Pull requests merged: 47
 - Issues resolved: 23
 
-## Foundation-Specific Adaptations
+### Step 11: Foundation-Specific Adaptations
 
 ### For Apache Software Foundation
 **Emphasis:** Community contribution, individual merit, collaborative spirit
@@ -259,7 +269,7 @@ For applying to multiple foundations, create a master document then adapt:
 - Tone: Technical, ecosystem-focused
 ```
 
-## Converting Git Data to Application Content
+### Step 12: Converting Git Data to Application Content
 
 Extract and format your actual contribution data:
 
@@ -395,7 +405,7 @@ Research exact requirements before drafting:
 | OpenJS | 750-1000 | Statement + Projects + Vision | 4-6 weeks | Ecosystem, tooling |
 | CNCF | 800-1200 | Statement + Technical Background | 6-8 weeks | Cloud native impact |
 
-## Application Checklist
+### Step 13: Application Checklist
 
 Before submitting AI-drafted applications:
 
@@ -408,6 +418,21 @@ Before submitting AI-drafted applications:
 - [ ] Formatting matches foundation requirements
 - [ ] References/recommendations obtained
 - [ ] Submission deadline confirmed
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

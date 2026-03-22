@@ -38,13 +38,13 @@ AI tools can generate onboarding documentation covering development environment 
 - **Use this feedback to**: iterate on the documentation, improving clarity and completeness.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## The Documentation Challenge
+### Step 1: The Documentation Challenge
 
 Development teams often struggle with onboarding documentation that either doesn't exist, is severely outdated, or provides inconsistent information across different sources. When developers write documentation manually, they tend to skip details they consider obvious, use inconsistent formatting, and fail to update guides when processes change. The result is new team members who spend weeks instead of days getting up to speed, asking repetitive questions, and potentially making mistakes due to missing or unclear instructions.
 
 AI assistants solve several of these problems by generating initial drafts quickly, suggesting appropriate structure based on common patterns, and helping maintain consistency across multiple documents. However, using AI effectively requires understanding how to provide context, review output critically, and iterate toward documentation that actually serves new team members.
 
-## Starting with Context
+### Step 2: Starting with Context
 
 The quality of AI-generated documentation depends heavily on the context you provide. A simple prompt like "write onboarding docs for our team" produces generic output that won't help anyone. Instead, describe your team structure, technology stack, development workflows, and specific requirements that new members need.
 
@@ -52,7 +52,7 @@ Start by gathering key information before engaging AI tools. Document your tech 
 
 When you provide this context to an AI assistant, the generated documentation becomes specific rather than generic. For example, instead of asking for "setup instructions," specify "setup instructions for a React frontend developer joining a team using TypeScript, Next.js, Vercel for deployment, and Jest for testing."
 
-## Generating Structured Documentation
+### Step 3: Generate Structured Documentation
 
 Break your onboarding documentation into logical sections that new team members can follow sequentially. Common sections include development environment setup, project architecture overview, coding standards and conventions, testing requirements, deployment processes, and team communication channels.
 
@@ -72,7 +72,7 @@ Include requirements for installing dependencies, setting up environment variabl
 
 The AI generates a draft that covers these requirements. Review it carefully—verify that any command examples match your actual setup, confirm that required tools and versions are accurate, and ensure nothing critical is missing.
 
-## Using AI for Code Examples
+### Step 4: Use AI for Code Examples
 
 One of the most valuable applications of AI in onboarding documentation is generating code examples that demonstrate team conventions. Rather than writing these examples manually, describe what the code should accomplish and the patterns your team uses.
 
@@ -89,7 +89,7 @@ Write a Python function that connects to PostgreSQL using psycopg2, following th
 
 This produces code that matches your team's style rather than generic examples. New developers can study these examples to understand expected patterns before writing their own code.
 
-## Iterative Documentation Improvement
+### Step 5: Iterative Documentation Improvement
 
 Initial AI-generated documentation requires refinement. Review each section for accuracy—AI can produce plausible but incorrect information, especially about specific tools or processes. Verify that any URLs, command syntax, and configuration examples work in your actual environment.
 
@@ -97,14 +97,14 @@ After initial review, have team members test the documentation by attempting to 
 
 Consider maintaining documentation as code alongside your project code. Store onboarding guides in a docs or handbook directory within your repository. This approach enables version control for documentation changes, allows team members to contribute improvements through pull requests, and keeps documentation close to the code it describes.
 
-## Documentation Generation Template
+### Step 6: Documentation Generation Template
 
 Create a master context document that you reuse for all AI-generated onboarding materials:
 
 ```markdown
 # Team Onboarding Context Template
 
-## Technology Stack
+### Step 7: Technology Stack
 - Language: [Node.js 18, Python 3.11, etc]
 - Framework: [React 19, Django 4.2, etc]
 - Database: [PostgreSQL 15, MongoDB, etc]
@@ -113,20 +113,20 @@ Create a master context document that you reuse for all AI-generated onboarding 
 - CI/CD: [GitHub Actions, CircleCI, Jenkins]
 - Monitoring: [Datadog, New Relic, Sentry, etc]
 
-## Development Setup
+### Step 8: Development Setup
 - Package manager: [npm/yarn/pnpm]
 - Node version: [via nvm/n]
 - Environment variables: [.env.local template location]
 - Database init: [migration command]
 - Local development server: [command + expected port]
 
-## Key Workflows
+### Step 9: Key Workflows
 - Code review process: [Pair? PR required? Auto-merge?]
 - Testing requirement: [Coverage %? Required tests?]
 - Deployment: [How often? Manual approval?]
 - On-call: [Rotation? Pages? Where documented?]
 
-## Critical Tools
+### Step 10: Critical Tools
 - Project management: [Jira/Linear/GitHub Issues]
 - Documentation: [Confluence/Wiki/Docs folder]
 - Communication: [Slack channels? Teams?]
@@ -141,7 +141,7 @@ Include step-by-step commands, expected output at each step,
 and troubleshooting for common failures.
 ```
 
-## Documentation Sections Generated by AI
+### Step 11: Documentation Sections Generated by AI
 
 **Example: Full Environment Setup Guide (Generated by AI)**
 
@@ -164,14 +164,14 @@ git --version
 
 If any of these fail, follow [Installation Guide].
 
-## Clone Repository
+### Step 12: Clone Repository
 
 ```bash
 git clone git@github.com:yourorg/backend.git
 cd backend
 ```
 
-## Install Dependencies
+### Step 13: Install Dependencies
 
 ```bash
 npm ci  # Note: npm ci instead of npm install for exact versions
@@ -179,7 +179,7 @@ npm ci  # Note: npm ci instead of npm install for exact versions
 
 Expected output: No warnings, installation completes in <2 min
 
-## Environment Configuration
+### Step 14: Environment Configuration
 
 1. Copy template:
 ```bash
@@ -198,7 +198,7 @@ npm run validate:env
 
 Expected output: "Environment validation successful"
 
-## Database Setup
+### Step 15: Database Setup
 
 ```bash
 npm run db:migrate
@@ -212,7 +212,7 @@ Expected output:
 ✓ Seeding completed: 50 sample users
 ```
 
-## Start Development Server
+### Step 16: Start Development Server
 
 ```bash
 npm run dev
@@ -225,7 +225,7 @@ Database: Connected
 Cache: Connected
 ```
 
-## Verify Everything Works
+### Step 17: Verify Everything Works
 
 ```bash
 curl http://localhost:3000/health
@@ -239,7 +239,7 @@ Expected response: `{"status":"healthy"}`
 - Schedule pairing session with team lead
 ```
 
-## Automating Documentation Updates
+### Step 18: Automate Documentation Updates
 
 AI becomes particularly valuable when processes change frequently. Rather than manually updating multiple documentation pages whenever you switch continuous integration systems, add a new deployment stage, or modify your code review workflow, use AI to regenerate affected sections.
 
@@ -267,11 +267,26 @@ Maintain a prompt template that includes your core context—team structure, tec
 
 Some teams create documentation runbooks that combine AI generation with templates. Define the structure once, then populate templates with specific details when needed. This hybrid approach balances AI efficiency with human-controlled consistency.
 
-## Maintaining Documentation Quality
+### Step 19: Maintaining Documentation Quality
 
 AI accelerates documentation creation but doesn't eliminate the need for human oversight. Establish review processes that ensure accuracy before new team members encounter the documentation. Consider designating documentation owners responsible for reviewing AI-generated content before publication.
 
 Track documentation effectiveness by monitoring how quickly new team members become productive and what questions they still ask despite the documentation existing. These signals indicate areas requiring improvement.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -37,13 +37,23 @@ AI tools can significantly accelerate the creation of data pipeline orchestratio
 - **Instead**: request that the tool use environment variables or secrets management patterns.
 - **This guide covers understanding**: prefect and dagster configuration patterns, generating prefect flow configurations, creating dagster asset definitions, with specific setup instructions
 
-## Understanding Prefect and Dagster Configuration Patterns
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Prefect and Dagster Configuration Patterns
 
 Prefect and Dagster both use Python-based approaches to define pipelines, but they differ in their configuration philosophies. Prefect emphasizes flow-based definitions with explicit task dependencies, while Dagster uses a graph-based model with solid definitions for operations.
 
 When working with AI assistants, you need to describe your pipeline structure, dependencies, and resource requirements clearly. The more context you provide about data sources, transformations, and execution environment, the better the generated configuration will be.
 
-## Generating Prefect Flow Configurations
+### Step 2: Generate Prefect Flow Configurations
 
 Prefect flows are defined using the `@flow` and `@task` decorators. An AI assistant can generate boilerplate code when you describe your pipeline logic. Here's a practical example of what you might request:
 
@@ -91,7 +101,7 @@ if __name__ == "__main__":
 
 This example shows how AI can generate a complete flow with appropriate decorators, task dependencies, and error handling. The key is specifying the exact operations, dependencies, and resource needs in your prompt.
 
-## Creating Dagster Asset Definitions
+### Step 3: Create Dagster Asset Definitions
 
 Dagster uses a different model centered around assets and ops. When generating Dagster configurations, you describe your data assets and their dependencies:
 
@@ -140,7 +150,7 @@ def storage_data(partitioned_data: DataFrame):
 
 Dagster's asset-based approach works well when you want built-in lineage tracking and automatic materialization management.
 
-## Optimizing AI Outputs for Production
+### Step 4: Optimizing AI Outputs for Production
 
 Raw AI output requires refinement before production use. Here are key areas to focus on:
 
@@ -195,7 +205,7 @@ scheduled_etl.serve(
 )
 ```
 
-## Prefect vs Dagster: Which Config Style Works Better with AI
+### Step 5: Prefect vs Dagster: Which Config Style Works Better with AI
 
 When using AI to generate configs, the choice of framework affects how productive the generation step is.
 
@@ -210,7 +220,7 @@ When using AI to generate configs, the choice of framework affects how productiv
 
 For simple ETL pipelines, Prefect's decorator model produces more immediately usable AI output. For data-centric workflows where lineage and recomputation matter, Dagster's asset model pays off even with the slightly more complex prompt patterns required.
 
-## Iterating with AI on Pipeline Failures
+### Step 6: Iterating with AI on Pipeline Failures
 
 AI tools are also useful after the initial generation step. When a pipeline fails, paste the error traceback and the relevant task code into your AI assistant along with a description of the pipeline's expected behavior. The AI can diagnose common issues like:
 
@@ -231,7 +241,7 @@ Test incrementally. Start with small subsets of your pipeline, validate the conf
 
 Document your modifications. When AI generates initial configurations, add comments explaining custom logic, specific parameter choices, and integration points with your existing infrastructure. This context is valuable when the pipeline needs updating months later and neither you nor an AI assistant will have the original prompt that produced the code.
 
-## Error Handling and Retry Strategies in AI-Generated Configs
+### Step 7: Error Handling and Retry Strategies in AI-Generated Configs
 
 Both Prefect and Dagster require careful error handling strategies that AI doesn't always generate automatically. Here's how to ensure your AI-assisted configs handle failures gracefully:
 
@@ -272,7 +282,7 @@ def resilient_pipeline():
 
 Prompt your AI explicitly: "Generate error handling that distinguishes between retryable and permanent errors, includes exponential backoff, and sends alerts on failure."
 
-## Testing AI-Generated Orchestration Code
+### Step 8: Test AI-Generated Orchestration Code
 
 Before deploying, test generated configs locally with realistic data scenarios:
 
@@ -308,7 +318,7 @@ def test_etl_pipeline_locally():
     assert (memory_after - memory_before) < 500_000_000  # 500MB limit
 ```
 
-## Airflow DAG Generation from AI Prompts
+### Step 9: Airflow DAG Generation from AI Prompts
 
 While Prefect and Dagster are popular, many teams use Apache Airflow. AI generates Airflow DAGs well when given structured prompts:
 
@@ -355,6 +365,21 @@ extract >> transform >> load
 ```
 
 Prompt: "Generate an Airflow DAG that extracts from PostgreSQL, transforms with pandas, and loads to Google Cloud Storage. Include error handling and daily scheduling."
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

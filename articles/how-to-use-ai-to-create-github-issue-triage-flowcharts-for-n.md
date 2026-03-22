@@ -56,7 +56,17 @@ Consider the questions your team asks when a new issue arrives:
 
 These questions form the nodes and branches of your flowchart. AI tools excel at translating these decision trees into visual diagrams, especially when you provide clear prompts describing your existing process.
 
-## Generating Flowcharts with AI
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Generate Flowcharts with AI
 
 Modern AI coding assistants and chat tools can generate flowchart definitions in formats like Mermaid.js, which GitHub renders natively in Markdown files. This makes Mermaid an ideal output format since it integrates directly into your repository's documentation.
 
@@ -103,7 +113,7 @@ flowchart TD
     P4 --> Backlog[Add to Backlog]
 ```
 
-## Customizing for Your Project Size
+### Step 2: Customizing for Your Project Size
 
 Small projects with a handful of contributors need simpler workflows than large enterprise open source projects. Adjust your AI prompts based on your actual operational needs.
 
@@ -135,7 +145,7 @@ Small projects with a handful of contributors need simpler workflows than large 
 
 Your AI prompt should explicitly state your project scale so the generated flowchart matches your operational reality.
 
-## Integrating Labels and Automation
+### Step 3: Integrate Labels and Automation
 
 Effective triage flowcharts should reference GitHub Labels and automation tools. Include these details in your AI prompts for more actionable outputs:
 
@@ -190,7 +200,7 @@ jobs:
             }
 ```
 
-## Maintaining and Evolving Your Flowchart
+### Step 4: Maintaining and Evolving Your Flowchart
 
 Your triage flowchart is a living document. Set up a process to review and update it quarterly or whenever your contribution patterns change significantly. AI tools can help with this too—paste your existing Mermaid diagram and ask for modifications rather than starting from scratch.
 
@@ -204,7 +214,7 @@ Common evolution triggers include:
 
 - Feedback from new contributors about unclear processes
 
-## Practical Implementation Steps
+### Step 5: Practical Implementation Steps
 
 1. **Document your current informal process** - Write down the decisions you currently make when triaging issues, even if they're not written anywhere
 
@@ -217,6 +227,21 @@ Common evolution triggers include:
 5. **Link labels and automation** - Ensure every branch point has corresponding GitHub labels
 
 6. **Test and iterate** - Use the flowchart for a month, then refine based on actual issues encountered
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 
@@ -315,7 +340,7 @@ Return as JSON with these exact keys: type, severity, priority, labels, assignee
 
 This bot can automatically label and assign issues in GitHub Actions workflows.
 
-## Triage Performance Metrics
+### Step 6: Triage Performance Metrics
 
 Measure the effectiveness of your AI-enhanced triage workflow:
 
@@ -375,7 +400,7 @@ class TriageAnalytics:
 
 Track these metrics monthly to continuously improve triage quality.
 
-## Multi-Repository Triage Orchestration
+### Step 7: Multi-Repository Triage Orchestration
 
 Manage triage across multiple related repositories:
 
@@ -435,7 +460,7 @@ Real data from open-source projects:
 
 AI-assisted triage cuts issue processing time by 60% while improving consistency.
 
-## Scaling Triage for 1000+ Issues Per Month
+### Step 8: Scaling Triage for 1000+ Issues Per Month
 
 Production-grade implementation for high-volume projects:
 
@@ -500,7 +525,7 @@ class ScalableTriageSystem:
 
 This scales to 1000s of issues/month by batching and parallelizing API calls.
 
-## Custom Label Taxonomy Design
+### Step 9: Custom Label Taxonomy Design
 
 Different projects benefit from different label structures:
 

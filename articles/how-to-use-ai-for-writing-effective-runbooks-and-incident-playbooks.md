@@ -47,7 +47,17 @@ This guide explores how developers and power users can use AI to write runbooks 
 - **Impact**: How many users affected?
 3.
 
-## The Challenge with Manual Runbook Creation
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The Challenge with Manual Runbook Creation
 
 Effective runbooks share common characteristics: they are specific, step-by-step, and account for edge cases. Achieving this level of detail requires significant time investment. Most teams start with good intentions but end up with documents that are either too generic to be useful or so detailed they become unreadable.
 
@@ -63,7 +73,7 @@ Common pain points include:
 
 AI tools address these challenges by generating initial drafts, suggesting improvements, and helping maintain consistency across documents.
 
-## Using AI to Generate Runbook Structure
+### Step 2: Use AI to Generate Runbook Structure
 
 The first hurdle in runbook creation is often simply starting. AI excels at generating structure based on system architecture and operational patterns. When provided with context about your systems, AI can produce a foundational document that human experts then refine.
 
@@ -87,7 +97,7 @@ Here's an example prompt you can adapt:
 
 The AI response provides a template you then customize with your specific infrastructure details, commands, and verification steps.
 
-## Creating Incident Playbooks with AI Assistance
+### Step 3: Create Incident Playbooks with AI Assistance
 
 Incident playbooks differ from runbooks in their focus on response procedures rather than routine operations. They guide teams through diagnosing and resolving specific failure scenarios. AI proves particularly valuable here by suggesting common failure patterns and remediation steps based on your system architecture.
 
@@ -96,7 +106,7 @@ Incident playbooks differ from runbooks in their focus on response procedures ra
 Consider an incident playbook for database connection pool exhaustion. An AI-assisted approach produces:
 
 ```markdown
-## Incident: Database Connection Pool Exhaustion
+### Step 4: Incident: Database Connection Pool Exhaustion
 
 ### Detection
 - Alert: `high_connection_count` exceeds 80% of max pool size
@@ -129,7 +139,7 @@ SELECT pg_terminate_backend($PID);
 
 This template provides immediate value while allowing your team to add organization-specific details like exact threshold values, notification channels, and escalation paths.
 
-## Practical AI Prompts for Operations Documentation
+### Step 5: Practical AI Prompts for Operations Documentation
 
 The quality of AI-generated documentation depends significantly on your prompts. Here are proven approaches for different documentation needs:
 
@@ -159,7 +169,7 @@ Design a post-incident review template. Include sections for timeline, root caus
 
 Iterate on your prompts based on output quality. The best results come from providing context about your specific tools, systems, and team structure.
 
-## Maintaining Documentation Quality
+### Step 6: Maintaining Documentation Quality
 
 AI accelerates initial creation but requires human oversight for accuracy. Establish a review process where subject matter experts validate technical details before publication. Consider these best practices:
 
@@ -181,44 +191,44 @@ AI can also help with maintenance by analyzing your existing documentation and f
 
 - Unclear instructions that could cause confusion
 
-## Building Incident Response Templates
+### Step 7: Build Incident Response Templates
 
 Create reusable incident response templates that your team standardizes on:
 
 ```markdown
 # Incident Response Template
 
-## Severity Levels
+### Step 8: Severity Levels
 - P1 (Critical): Service completely unavailable, revenue impact
 - P2 (High): Degraded performance, partial user impact
 - P3 (Medium): Minor service issue, limited user impact
 - P4 (Low): Non-critical issue, documentation or cleanup
 
-## Initial Response (First 5 minutes)
+### Step 9: Initial Response (First 5 minutes)
 1. Declare incident in #incidents Slack channel
 2. Assign incident commander
 3. Start incident call: [conference line]
 4. Begin triage: "Is this P1/P2/P3/P4?"
 
-## Triage Phase (5-15 minutes)
+### Step 10: Triage Phase (5-15 minutes)
 1. Identify affected service
 2. Check recent deployments (git log --oneline -10)
 3. Review recent alerts and metrics
 4. Gather logs: [monitoring dashboard link]
 
-## Mitigation Phase (15-60 minutes)
+### Step 11: Mitigation Phase (15-60 minutes)
 1. Implement immediate fix or rollback
 2. Verify fix addresses root cause
 3. Monitor for regression
 4. Update incident thread with status
 
-## Resolution Phase
+### Step 12: Resolution Phase
 1. Confirm service stability (15+ minutes post-fix)
 2. Document root cause
 3. Schedule post-incident review
 4. Close incident ticket
 
-## Post-Incident Review (within 24 hours)
+### Step 13: Post-Incident Review (within 24 hours)
 1. Timeline: What happened?
 2. Impact: How many users affected?
 3. Root cause: Why did this happen?
@@ -228,7 +238,7 @@ Create reusable incident response templates that your team standardizes on:
 
 AI can generate these templates quickly; human expertise fills in the details.
 
-## Service-Specific Runbook Generation
+### Step 14: Service-Specific Runbook Generation
 
 Generate runbooks tailored to each service in your architecture:
 
@@ -244,7 +254,7 @@ Each should include prerequisites, step-by-step procedures, verification, and ro
 
 This approach produces service-specific documentation rather than generic guides.
 
-## Automating Runbook Testing
+### Step 15: Automate Runbook Testing
 
 Create tests that verify your runbook procedures actually work:
 
@@ -299,7 +309,7 @@ Is the service down?
 
 AI can generate these tree structures; you refine based on your actual incident patterns.
 
-## Integration with Monitoring Tools
+### Step 16: Integration with Monitoring Tools
 
 Link runbooks directly from your monitoring alerts:
 
@@ -325,7 +335,7 @@ Dashboard: {dashboard_url}
 
 This ensures engineers immediately see the relevant runbook when an alert fires.
 
-## Version Control for Runbooks
+### Step 17: Version Control for Runbooks
 
 Treat runbooks as code, storing them in Git with version history:
 
@@ -357,7 +367,7 @@ runbooks/
 
 Track changes, get code reviews on runbook updates, and maintain history.
 
-## Measuring Runbook Effectiveness
+### Step 18: Measuring Runbook Effectiveness
 
 Track metrics that indicate how well your runbooks work:
 
@@ -378,7 +388,7 @@ Track metrics that indicate how well your runbooks work:
 - Track before/after runbook publication
 - Target: All engineers can handle P3/P4 incidents solo
 
-## Continuous Improvement Cycle
+### Step 19: Continuous Improvement Cycle
 
 Build runbook improvement into your incident workflow:
 
@@ -393,6 +403,21 @@ Build runbook improvement into your incident workflow:
 ```
 
 This creates a continuous feedback loop that improves runbooks with each incident.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

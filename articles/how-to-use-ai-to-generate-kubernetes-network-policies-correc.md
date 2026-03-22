@@ -43,7 +43,17 @@ This guide shows you how to use AI tools effectively to generate Kubernetes netw
 - **Prompting it to "include**: all required egress rules for service discovery" fixes most issues.
 - **GitHub Copilot (inline) is**: best for single-policy generation when you start typing the YAML structure.
 
-## Understanding Network Policy Basics
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Network Policy Basics
 
 Before asking AI for help, you need a clear mental model of your application's communication patterns. Network policies in Kubernetes operate at the pod level using label selectors. The three main components are:
 
@@ -77,7 +87,7 @@ spec:
           port: 8080
 ```
 
-## How to Prompt AI for Network Policies
+### Step 2: How to Prompt AI for Network Policies
 
 The quality of AI-generated network policies depends heavily on how you describe your requirements. Vague prompts produce incomplete or insecure policies.
 
@@ -148,7 +158,7 @@ spec:
           port: 53
 ```
 
-## Common Mistakes and How to Avoid Them
+### Step 3: Common Mistakes and How to Avoid Them
 
 AI-generated policies often have issues that require manual correction.
 
@@ -231,7 +241,7 @@ Requirements:
 
 The AI will generate a complete policy set that you can review and adjust based on actual traffic patterns.
 
-## Validating AI-Generated Policies
+### Step 4: Validating AI-Generated Policies
 
 Always validate policies before deploying to production. A policy that passes syntax checks can still block critical traffic or leave security gaps that only emerge under specific conditions.
 
@@ -277,7 +287,7 @@ Apply policies in audit mode first if your CNI supports it (Calico's GlobalNetwo
 kubectl get networkpolicy -n production
 ```
 
-## Which AI Tools Generate the Best Network Policies
+### Step 5: Which AI Tools Generate the Best Network Policies
 
 Not all AI coding assistants produce equally reliable network policy YAML. Based on testing in 2026, here is how the common options compare:
 
@@ -304,6 +314,21 @@ For complex environments, consider these additional patterns when prompting AI:
 - **Policy ordering**: In CNIs that support ordered policies (Calico, Cilium), lower-order policies take precedence. Always apply the default-deny policy first with the lowest order number.
 
 AI tools can generate all of these configurations, but you must provide detailed requirements about your network topology and security boundaries. The more specific your prompt—including CIDR ranges, exact port numbers, and namespace label values—the less manual correction the output will require.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

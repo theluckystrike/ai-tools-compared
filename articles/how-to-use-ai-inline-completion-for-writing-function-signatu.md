@@ -43,7 +43,17 @@ This guide shows you practical techniques to write function signatures faster us
 - **This workflow reduces signature**: writing from 30-60 seconds of active typing to 5-10 seconds of review and Tab presses.
 - **Saving even 20 seconds per signature adds up to 7-17 minutes reclaimed per day**: roughly an hour per week—without compromising code quality.
 
-## Understanding Inline Completion for Function Signatures
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Inline Completion for Function Signatures
 
 Inline completion works by analyzing the code you've already written and predicting what comes next. For function signatures, this means the AI examines your function name, any preceding comments or docstrings, and the surrounding code context to suggest the complete signature.
 
@@ -51,7 +61,7 @@ Modern AI completion tools like GitHub Copilot, Cursor, and others offer this fu
 
 The key to getting accurate suggestions is providing clear context. A function named `calculateUserMetrics` will generate better suggestions than one named `processData`.
 
-## How Inline Completion Differs Across Tools
+### Step 2: How Inline Completion Differs Across Tools
 
 Before exploring techniques, it helps to understand how the major tools approach inline completion differently:
 
@@ -65,7 +75,7 @@ Before exploring techniques, it helps to understand how the major tools approach
 
 Cursor's codebase indexing gives it an edge when your codebase has consistent naming conventions—it learns your patterns from similar functions and applies them to new signatures.
 
-## Practical Techniques
+### Step 3: Practical Techniques
 
 ### 1. Use Descriptive Function Names
 
@@ -129,7 +139,7 @@ def create_user_profile(
     pass
 ```
 
-## Language-Specific Examples
+### Step 4: Language-Specific Examples
 
 ### Python
 
@@ -216,7 +226,7 @@ pub fn parse_config(
 
 For Rust specifically, starting with a `#[doc]` comment substantially improves suggestion quality because the compiler documentation conventions constrain what the function should do.
 
-## Optimizing Your Workflow
+### Step 5: Optimizing Your Workflow
 
 ### Position Your Cursor Strategically
 
@@ -239,7 +249,7 @@ Many IDEs support code snippets alongside AI completion. Create your own snippet
 
 AI suggestions are predictions, not certainties. Always review the suggested signature before accepting it—verify that parameter types and names match your intent.
 
-## Step-by-Step Workflow for Maximum Speed
+### Step 6: Step-by-Step Workflow for Maximum Speed
 
 Here is the keystroke-efficient workflow that experienced developers use:
 
@@ -251,7 +261,7 @@ Here is the keystroke-efficient workflow that experienced developers use:
 
 This workflow reduces signature writing from 30-60 seconds of active typing to 5-10 seconds of review and Tab presses.
 
-## Common Pitfalls to Avoid
+### Step 7: Common Pitfalls to Avoid
 
 **Avoid accepting suggestions blindly.** AI might suggest parameters that don't match your actual needs. Check each parameter before accepting.
 
@@ -261,13 +271,28 @@ This workflow reduces signature writing from 30-60 seconds of active typing to 5
 
 **Avoid vague return types.** If you let the AI infer return types from a function name alone, it may default to `any` in TypeScript or `object` in Python. Always specify the return type if you know it—this creates a contract the AI respects.
 
-## Measuring Your Productivity Gain
+### Step 8: Measuring Your Productivity Gain
 
 Track how long it takes to write function signatures before and after adopting AI completion. Most developers report 30-50% time savings on signature writing, which adds up significantly across large codebases.
 
 The real productivity gain comes from staying in your flow state. Instead of pausing to think through every parameter, you review AI suggestions and make minor adjustments. This keeps your momentum going and reduces cognitive load.
 
 Over a typical 8-hour engineering day, developers write or modify 20-50 function signatures. Saving even 20 seconds per signature adds up to 7-17 minutes reclaimed per day—roughly an hour per week—without compromising code quality.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

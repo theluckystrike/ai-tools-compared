@@ -33,7 +33,17 @@ AI tools can significantly accelerate this process, but getting high-quality res
 
 3.
 
-## The Problem with Manual Changelog Creation
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The Problem with Manual Changelog Creation
 
 
 Writing changelogs manually involves reviewing every commit, pull request, and diff to identify what changed, categorize the changes, and write clear descriptions. This becomes increasingly time-consuming as projects grow. Teams often either skip detailed changelogs entirely or spend hours piecing them together at release time.
@@ -50,14 +60,14 @@ The challenge is particularly acute when you need to distinguish between:
 - **Performance improvements** that affect internal behavior but not external interfaces
 
 
-## What a High-Quality AI-Generated Changelog Looks Like
+### Step 2: What a High-Quality AI-Generated Changelog Looks Like
 
 
 Before examining the how, it helps to know what you are aiming for. A well-structured changelog entry produced with AI assistance should look like this:
 
 
 ```
-## v2.4.0 — 2026-03-20
+### Step 3: v2.4.0 — 2026-03-20
 
 ### Breaking Changes
 
@@ -83,7 +93,7 @@ Before examining the how, it helps to know what you are aiming for. A well-struc
 This structure gives users exactly what they need: a clear signal about what requires action before upgrading, followed by what they gain, followed by what got fixed.
 
 
-## Using AI to Analyze Git History
+### Step 4: Use AI to Analyze Git History
 
 
 The most effective approach starts with feeding your AI tool the right context. Begin by generating a clean summary of changes using Git commands:
@@ -116,7 +126,7 @@ Use clear, concise language suitable for developer documentation.
 ```
 
 
-## Prompt Templates for Different Scenarios
+### Step 5: Prompt Templates for Different Scenarios
 
 
 ### Template 1: From Commit Messages
@@ -158,7 +168,7 @@ For breaking changes, include a migration note.
 {{DIFF_OUTPUT}}
 ```
 
-## Handling Breaking Changes Specifically
+### Step 6: Handling Breaking Changes Specifically
 
 Breaking changes require special attention because they directly impact users upgrading from previous versions. When prompting AI for breaking changes, be explicit about what you need:
 
@@ -178,7 +188,7 @@ For each breaking change found, provide:
 
 AI models are generally good at identifying obvious API signature changes but can miss subtle behavioral changes -- for example, a function that still accepts the same arguments but now validates them more strictly. Always have a human review the breaking changes section before publishing.
 
-## Automating the Workflow
+### Step 7: Automate the Workflow
 
 For teams releasing frequently, consider setting up a semi-automated workflow:
 
@@ -213,7 +223,7 @@ curl -s https://api.openai.com/v1/chat/completions \
  }' | jq -r '.choices[0].message.content'
 ```
 
-## Integrating AI Changelog Generation into CI/CD
+### Step 8: Integrate AI Changelog Generation into CI/CD
 
 The most scalable approach runs changelog generation automatically as part of your release pipeline. A Python script can pull commits between two tags, send them to an AI API with a structured prompt, and output a draft changelog. Invoke this script from a GitHub Actions workflow on tag push, with the output committed back to your CHANGELOG.md or posted as a GitHub Release draft for human review before publishing. The key is to keep human review mandatory for the breaking changes section -- automation handles the tedious extraction work, humans verify accuracy before the release goes public.
 
@@ -231,7 +241,7 @@ Regardless of how you generate the content, follow these principles:
 
 **Keep entries concise** -- For each item, aim for one to two sentences. Links to detailed documentation or migration guides can provide additional context without bloating the changelog itself.
 
-## Common Pitfalls to Avoid
+### Step 9: Common Pitfalls to Avoid
 
 When using AI for changelog generation, watch for these issues:
 
@@ -244,6 +254,21 @@ When using AI for changelog generation, watch for these issues:
 - **False positives in breaking detection** -- AI may flag internal refactoring as breaking changes if your commit messages are not descriptive. Improve commit message quality to get better AI outputs: use conventional commits format (`feat:`, `fix:`, `BREAKING CHANGE:`) to give the AI clear signals.
 
 - **Hallucinated details** -- AI occasionally invents specific details like function names or parameter values that were not actually changed. Cross-reference every specific claim against the actual diff before publishing.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

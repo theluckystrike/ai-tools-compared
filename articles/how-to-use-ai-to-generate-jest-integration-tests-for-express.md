@@ -40,7 +40,17 @@ AI tools can generate complete Jest integration test files for Express routes wi
 - **Assert both status codes**: and response body shapes." The strong prompt tells the AI exactly which scenarios to cover and which testing patterns to use.
 - **In the example**: `userService` is mocked so tests run fast and don't require an actual database connection.
 
-## Setting Up Jest for Express Integration Testing
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Set Up Jest for Express Integration Testing
 
 Before generating tests, ensure your project has the necessary dependencies installed. You'll need Jest, supertest (for HTTP assertions), and any testing utilities for your database or authentication setup.
 
@@ -75,7 +85,7 @@ module.exports = {
 };
 ```
 
-## Using AI to Generate Test Boilerplate
+### Step 2: Use AI to Generate Test Boilerplate
 
 When prompting an AI coding assistant to generate Jest integration tests for Express routes, provide context about your route handler, including the Express app setup, any middleware dependencies, and the expected request/response behavior. The more specific you are about input parameters, authentication requirements, and expected outcomes, the more accurate the generated tests will be.
 
@@ -125,7 +135,7 @@ The quality of AI-generated tests depends heavily on prompt specificity. Here ar
 
 The strong prompt tells the AI exactly which scenarios to cover and which testing patterns to use.
 
-## Generated Integration Tests
+### Step 3: Generated Integration Tests
 
 The AI can generate integration tests that cover various scenarios. Here's what properly generated tests look like:
 
@@ -217,7 +227,7 @@ describe('POST /users', () => {
 });
 ```
 
-## Adding Authentication Middleware Tests
+### Step 4: Adding Authentication Middleware Tests
 
 Real-world Express routes often use authentication middleware. Here's how to test routes that require a valid JWT:
 
@@ -261,7 +271,7 @@ describe('Protected routes', () => {
 });
 ```
 
-## Key Elements of Good Integration Tests
+### Step 5: Key Elements of Good Integration Tests
 
 The generated tests above demonstrate several important patterns for Express API testing.
 
@@ -283,7 +293,7 @@ Third, assertions should verify both the response status and the response body. 
 
 Claude tends to produce the most complete test coverage, including edge cases that other tools miss. ChatGPT-4 performs similarly but sometimes generates tests that don't compile without correction. Copilot excels at autocompleting individual tests but requires more manual effort to build a complete test file.
 
-## Testing Routes with Query Parameters and Headers
+### Step 6: Test Routes with Query Parameters and Headers
 
 A commonly overlooked area in AI-generated tests is query parameter handling and custom header validation. Prompt explicitly for these:
 
@@ -316,7 +326,7 @@ describe('GET /users with filters', () => {
 
 When prompting for these tests, include: "Also generate tests for query parameter filtering and custom header validation."
 
-## Refining AI-Generated Tests
+### Step 7: Refining AI-Generated Tests
 
 AI-generated tests provide a solid foundation, but you'll often need to refine them. Consider adding tests for authentication requirements, rate limiting behavior, and request validation for malformed JSON. If your routes use middleware for things like session management or CSRF protection, ensure those dependencies are properly mocked or included in your test app setup.
 
@@ -324,7 +334,7 @@ You might also want to add test cases for query parameters, headers, and content
 
 **Pro tip:** After generating tests with an AI tool, ask it to review the generated tests for coverage gaps. Prompt: "Review these Jest tests and identify any error scenarios, edge cases, or middleware interactions I haven't covered." This second-pass review often surfaces missing cases.
 
-## Running the Tests
+### Step 8: Run the Tests
 
 Execute your tests with the standard Jest command:
 
@@ -345,6 +355,21 @@ npx jest --coverage --testPathPattern=users.test.js
 ```
 
 Coverage reports help you identify which route handlers need additional test cases and where your AI-generated tests may have missed branches.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

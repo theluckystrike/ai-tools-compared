@@ -48,7 +48,17 @@ common false positive causes, and resolution workflows.
 
 Prometheus alerting rules require precise syntax, understanding of PromQL, and knowledge of your specific metrics. AI models trained on vast amounts of monitoring code can accelerate rule creation while helping you avoid common pitfalls. The key lies in providing the right context and understanding how to interpret AI suggestions.
 
-## Techniques for Effective AI-Assisted Rule Writing
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Techniques for Effective AI-Assisted Rule Writing
 
 ### 1. Provide Clear Metric Context
 
@@ -162,7 +172,7 @@ promtool rules check rules.yaml
 
 This catches syntax errors before they reach production.
 
-## Common Pitfalls to Avoid
+### Step 2: Common Pitfalls to Avoid
 
 AI sometimes generates overly complex expressions when simpler ones would work. Watch for:
 
@@ -191,7 +201,7 @@ Once you've established basic alerts, AI can help optimize your alerting strateg
 
 Ask AI: "Review this alert. Is the fragmentation threshold appropriate? Should we alert earlier? What would be early warning signs?" The AI can suggest progressive alert thresholds (e.g., warning at 1.3, critical at 1.5) that let you address issues before they reach critical severity.
 
-## AI-Generated Alert Runbooks
+### Step 3: AI-Generated Alert Runbooks
 
 For every alert you create, pair it with a runbook describing the remediation steps. AI accelerates runbook creation:
 
@@ -204,7 +214,7 @@ and prevention measures. Make it actionable for an on-call engineer."
 
 The AI produces a structured runbook that guides your team through diagnosis and resolution without requiring manual documentation effort.
 
-## Testing AI-Generated Rules
+### Step 4: Test AI-Generated Rules
 
 Before deploying AI-generated rules to production, validate them thoroughly. Create a test harness using historical metrics data:
 
@@ -218,7 +228,7 @@ promtool check config prometheus.yml
 
 Run your rules against a full week of production metrics data to verify alert behavior before activation. This prevents alert fatigue from poorly-tuned thresholds.
 
-## Scaling Alerting Across Multiple Services
+### Step 5: Scaling Alerting Across Multiple Services
 
 As your infrastructure grows, maintaining consistent alerting becomes challenging. AI helps scale your alerting approach by generating variations of core alerts for different services:
 
@@ -257,7 +267,7 @@ AI can help design recording rules that improve Prometheus performance. Recordin
 
 Ask AI to suggest recording rules for your most common queries. This improves alert evaluation speed and dashboard responsiveness.
 
-## Documentation and Team Communication
+### Step 6: Documentation and Team Communication
 
 Generate documentation for your alerts automatically. AI creates operator guides that explain your alerting strategy:
 
@@ -269,7 +279,7 @@ common false positive causes, and resolution workflows.
 
 This documentation helps onboard new team members and ensures everyone understands why specific alerts exist.
 
-## Integration with Incident Management
+### Step 7: Integration with Incident Management
 
 Connect your Prometheus alerts to incident management systems. AI can help design alert payloads that automatically create incidents:
 
@@ -287,6 +297,21 @@ def alert_to_incident(alert):
 ```
 
 The AI-generated descriptions provide engineers with immediate context about the alert, reducing mean time to resolution.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

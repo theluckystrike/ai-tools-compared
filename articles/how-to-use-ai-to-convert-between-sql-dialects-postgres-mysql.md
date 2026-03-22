@@ -43,7 +43,17 @@ AI tools can translate SQL queries between PostgreSQL, MySQL, BigQuery, and Snow
 
 Database systems evolved independently, resulting in incompatible syntax for many operations. PostgreSQL uses `COALESCE`, while MySQL prefers `IFNULL`. BigQuery requires specific date functions like `DATE_ADD`, different from PostgreSQL's `INTERVAL` syntax. Snowflake has its own window function variations and array handling. These differences multiply across complex queries, making manual conversion time-consuming and error-prone.
 
-## Using AI for SQL Translation
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Use AI for SQL Translation
 
 Modern AI language models understand database systems and can translate between dialects when given proper context. The key lies in providing clear prompts that specify both the source and target database systems.
 
@@ -158,7 +168,7 @@ Test the output thoroughly. AI generates correct translations most of the time, 
 
 Handle vendor-specific features carefully. PostgreSQL's `RETURNING` clause, MySQL's specific JOIN optimizations, BigQuery's nested records, and Snowflake's staging tables all require special attention. Describe these features in your prompt so AI accounts for them.
 
-## Effective Prompting Strategies
+### Step 2: Effective Prompting Strategies
 
 The way you frame the translation request determines how thorough the output is. These three prompt patterns produce consistently better results:
 
@@ -189,7 +199,7 @@ that might affect the query plan.
 
 Annotated translations are especially useful during migrations — the comments serve as documentation for the team reviewing the converted code.
 
-## Common Translation Scenarios
+### Step 3: Common Translation Scenarios
 
 ### Date Operations
 
@@ -277,7 +287,7 @@ WHERE JSON_VALUE(data, '$.type') = 'signup';
 
 AI tools handle these JSON conversions accurately when you specify the JSON column type explicitly in your prompt. Without that context, they sometimes omit the CAST or JSON_UNQUOTE that the target database requires.
 
-## Handling Bulk Migration with AI
+### Step 4: Handling Bulk Migration with AI
 
 For large schema migrations involving dozens or hundreds of queries, a structured batch approach works better than translating one query at a time. Group queries by function type: aggregations together, joins together, subqueries together. This lets the model build consistent translation patterns within each group.
 
@@ -291,7 +301,7 @@ A practical workflow for bulk translation:
 
 This staged approach catches systematic errors — such as AI consistently missing the CAST requirement on a specific column type — before they reach production.
 
-## Migration Validation Framework
+### Step 5: Migration Validation Framework
 
 After AI generates translated queries, validate them programmatically rather than by hand. The following approach runs the same logical operation against both the source and target databases and compares output:
 
@@ -350,7 +360,7 @@ print(msg)
 
 This validation script catches numeric precision differences, row ordering edge cases, and silently dropped rows — all failure modes that AI-translated queries can introduce without obvious syntax errors.
 
-## Schema-Level Differences That Affect Query Translation
+### Step 6: Schema-Level Differences That Affect Query Translation
 
 Query translation rarely lives in isolation. Schema differences between databases create translation failures that are not obvious at the query level:
 
@@ -373,6 +383,21 @@ AI works best with standard SQL patterns. Vendor-specific extensions may require
 Performance tuning does not translate well. Index hints, query plans, and optimization strategies differ between systems. AI translates syntax correctly, but query performance requires database-specific expertise.
 
 Certain features exist in one system but not others. PostgreSQL's full-text search, MySQL's specific JSON functions, BigQuery's ML capabilities, and Snowflake's time-travel features need case-by-case evaluation.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

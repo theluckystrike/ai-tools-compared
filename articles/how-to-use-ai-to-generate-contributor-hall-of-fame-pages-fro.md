@@ -42,7 +42,17 @@ This guide walks you through extracting contributor data from git and using AI t
 - **Git provides several commands**: that extract commit authorship information useful for building a contributor database.
 - **Pull request reviews. The**: GitHub API exposes review activity per user.
 
-## Extracting Contributor Data from Git
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Extracting Contributor Data from Git
 
 The first step involves gathering raw contributor statistics from your repository. Git provides several commands that extract commit authorship information useful for building a contributor database.
 
@@ -72,7 +82,7 @@ git log --all --pretty=format:'{"author":"%an","email":"%ae","date":"%ad","messa
 
 This produces a JSON array containing every commit in your repository. Save this output to a file for AI analysis.
 
-## Using AI to Analyze and Structure Contributor Data
+### Step 2: Use AI to Analyze and Structure Contributor Data
 
 With your git data exported, the next step involves using AI to process and enrich this information. You can prompt AI tools to transform raw commit data into meaningful contributor profiles.
 
@@ -126,7 +136,7 @@ print(json.dumps(contributor_stats, indent=2))
 
 This preprocessing reduces the amount of data AI needs to process and produces more consistent results.
 
-## Generating the Hall of Fame Page
+### Step 3: Generate the Hall of Fame Page
 
 Once AI has processed your contributor data, you can generate the actual hall of fame page. The approach depends on your static site generator or web framework.
 
@@ -187,7 +197,7 @@ Focus on:
 
 Integrate these AI-generated descriptions into your contributor cards for a more personal touch.
 
-## Automating Updates
+### Step 4: Automate Updates
 
 To keep your hall of fame current without manual intervention, set up automated data refreshes. A GitHub Actions workflow can regenerate contributor data on a schedule:
 
@@ -221,7 +231,7 @@ jobs:
 
 This automation ensures your hall of fame reflects current contributor activity without manual maintenance.
 
-## Choosing the Right AI Tool for Each Stage
+### Step 5: Choose the Right AI Tool for Each Stage
 
 Different stages of the hall of fame generation process benefit from different AI tools:
 
@@ -235,7 +245,7 @@ Different stages of the hall of fame generation process benefit from different A
 
 Claude performs particularly well at the bio-writing stage because it can infer contribution themes from commit message patterns without requiring file-level diff data. A prompt that includes 10-20 commit messages per contributor gives it enough signal to produce varied, accurate descriptions.
 
-## Enriching Contributor Data Beyond Commit Counts
+### Step 6: Enriching Contributor Data Beyond Commit Counts
 
 Raw commit counts can misrepresent actual impact. A contributor who opened 50 detailed bug reports and reviewed 30 pull requests may have more influence than someone with 200 small formatting commits. AI can help identify non-commit contributions if you feed it additional data sources:
 
@@ -275,6 +285,21 @@ When using AI to generate hall of fame content, keep these considerations in min
 **Include context** - Raw commit counts don't tell the whole story. Use AI to identify non-code contributions like documentation, issue triage, and community support.
 
 **Request consent for bios** - If AI generates personalized descriptions, consider sending each contributor a preview before publishing. Most contributors appreciate the recognition and will correct inaccuracies, improving the overall quality of the page.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

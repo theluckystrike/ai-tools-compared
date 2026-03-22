@@ -40,13 +40,23 @@ Spring Boot application context startup failures are among the most frustrating 
 - **The stack traces are lengthy**: the root cause is often buried deep in the trace, and the error messages sometimes point you in the wrong direction.
 - **Each requires a different**: debugging approach, and AI tools excel at analyzing the specific error patterns to identify the root cause quickly.
 
-## Understanding Application Context Failures
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Application Context Failures
 
 When a Spring Boot application fails to start, it typically happens during the initialization phase. The Spring container attempts to create and wire all beans defined in your application. If any bean fails to initialize—whether due to missing dependencies, circular references, or configuration problems—the entire context fails to start.
 
 Common failure types include bean creation exceptions, property binding errors, circular dependency issues, and component scanning problems. Each requires a different debugging approach, and AI tools excel at analyzing the specific error patterns to identify the root cause quickly.
 
-## Capturing the Right Error Information
+### Step 2: Capturing the Right Error Information
 
 Before using AI for diagnosis, gather the complete error output. Run your application and capture the full stack trace. Include any relevant configuration files that might relate to the failure—your application.yml, properties files, or any custom bean configurations.
 
@@ -65,7 +75,7 @@ BindingException: Binding validation errors on spring.datasource
 	Field error in object 'spring.datasource' on field 'password': rejected value [null]
 ```
 
-## Prompting AI for Effective Diagnosis
+### Step 3: Prompting AI for Effective Diagnosis
 
 The quality of your AI diagnosis depends heavily on how you present the problem. Structure your prompts to include the complete error message, your current Spring Boot version, relevant configuration snippets, and what you've already attempted.
 
@@ -86,7 +96,7 @@ spring:
 What could cause this binding validation error and how do I fix it?
 ```
 
-## Common Error Patterns and AI Solutions
+### Step 4: Common Error Patterns and AI Solutions
 
 ### Bean Creation Failures
 
@@ -156,7 +166,7 @@ spring:
 
 The solution is straightforward—remove the quotes to make it an integer, or ensure proper YAML formatting.
 
-## Using AI for Configuration Validation
+### Step 5: Use AI for Configuration Validation
 
 AI tools can proactively validate your configuration before you run the application. Paste your application.yml or application.properties content along with your dependencies, and AI will identify potential conflicts.
 
@@ -174,7 +184,7 @@ spring:
 
 AI suggests adding the missing properties or switching to a more appropriate configuration approach.
 
-## Automating Debugging Workflows
+### Step 6: Automate Debugging Workflows
 
 You can improve your debugging workflow by creating reusable AI prompts for common scenarios. Store prompts that work well for different error types—component scanning failures, transaction management issues, security configuration problems.
 
@@ -195,7 +205,7 @@ Relevant configuration:
 What's the root cause and how do I fix this?
 ```
 
-## Preventing Future Context Failures
+### Step 7: Preventing Future Context Failures
 
 AI helps not just with fixing current errors but also with preventing future ones. After resolving an issue, ask AI to review your configuration and suggest improvements that prevent similar problems.
 
@@ -313,7 +323,7 @@ java -Dspring.jmx.enabled=true -jar application.jar
 
 AI recognizes bottlenecks. For example, if database initialization takes 1.7 seconds, the AI might suggest lazy initialization or async bean creation. If Spring is spending 3.5 seconds loading beans, it might recommend reviewing your component scanning configuration.
 
-## Testing Context Startup in CI
+### Step 8: Test Context Startup in CI
 
 Create a dedicated test that verifies your application context starts without errors:
 
@@ -335,6 +345,21 @@ public class ApplicationContextTest {
 ```
 
 When this test fails in CI, paste the output to AI. The AI connects the test failure to your configuration changes and explains which bean is causing the problem.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

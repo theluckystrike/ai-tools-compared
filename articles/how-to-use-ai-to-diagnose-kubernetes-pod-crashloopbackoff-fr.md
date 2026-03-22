@@ -41,7 +41,17 @@ This guide shows you how to use AI to diagnose Kubernetes pod CrashLoopBackOff i
 - **AI performs better with**: more information.
 - **AI recommendations are based**: on patterns, not your exact configuration.
 
-## Understanding CrashLoopBackOff
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand CrashLoopBackOff
 
 CrashLoopBackOff occurs when a container starts, exits unexpectedly, and Kubernetes automatically restarts it. After repeated failures, Kubernetes backs off the restart interval, resulting in the CrashLoopBackOff status. Common triggers include:
 
@@ -59,7 +69,7 @@ CrashLoopBackOff occurs when a container starts, exits unexpectedly, and Kuberne
 
 AI tools can accelerate the debugging process by analyzing log patterns, correlating errors, and suggesting likely causes based on accumulated knowledge.
 
-## Collecting Container Logs
+### Step 2: Collecting Container Logs
 
 Before AI can help, you need access to the container logs. Use kubectl to retrieve logs from the problematic pod:
 
@@ -90,7 +100,7 @@ kubectl logs deployment/app_name --previous > all_crash_logs.txt
 kubectl describe pod pod_name >> all_crash_logs.txt
 ```
 
-## Using AI to Analyze Logs
+### Step 3: Use AI to Analyze Logs
 
 Pass the collected logs to an AI assistant with a targeted prompt. The key is providing sufficient context while asking specific questions.
 
@@ -178,7 +188,7 @@ The AI immediately identifies that `express` is missing. It might ask:
 
 This accelerates debugging from potentially hours of guesswork to minutes of targeted fixes.
 
-## Automating Log Analysis
+### Step 4: Automate Log Analysis
 
 For teams running multiple clusters, consider integrating AI analysis into your debugging workflow using scripts:
 
@@ -199,7 +209,7 @@ echo "Analyze the attached logs to identify the root cause of CrashLoopBackOff."
 
 Use this script to gather context, then paste the output to your AI assistant for analysis.
 
-## Preventing Future Crashes
+### Step 5: Preventing Future Crashes
 
 AI analysis should inform your preventive measures:
 
@@ -225,7 +235,7 @@ Validate suggestions against your specific environment. AI recommendations are b
 
 Document solutions. Build an internal knowledge base of CrashLoopBackOff resolutions to accelerate future debugging.
 
-## Comparing AI Tools for Kubernetes Debugging
+### Step 6: Comparing AI Tools for Kubernetes Debugging
 
 | Tool | Context Window | K8s Knowledge | Cost per Analysis |
 |------|---------------|---------------|-------------------|
@@ -236,7 +246,7 @@ Document solutions. Build an internal knowledge base of CrashLoopBackOff resolut
 
 For large log files, Gemini or Claude offer the largest context windows. For quick analysis, Claude Haiku provides the best cost-to-quality ratio.
 
-## Building a Kubectl Plugin for AI Analysis
+### Step 7: Build a Kubectl Plugin for AI Analysis
 
 Create a kubectl plugin that pipes pod diagnostics directly to an AI:
 
@@ -269,6 +279,21 @@ echo "Total size: $(echo "$DIAGNOSTICS" | wc -c) bytes"
 ```
 
 Usage: `kubectl ai-debug my-failing-pod production`
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

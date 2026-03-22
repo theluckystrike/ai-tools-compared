@@ -40,13 +40,23 @@ Artificial intelligence has become a valuable assistant for open source maintain
 - **When proposing new features**: to open source projects, a well-structured RFC helps reviewers understand your proposal, its rationale, and implementation details.
 - **To get the best results**: provide the AI with context about the project, its existing RFC process, and specific details about your proposed feature.
 
-## Understanding RFC Documents in Open Source Projects
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand RFC Documents in Open Source Projects
 
 RFC documents serve as formal proposals for changes to open source projects. Most large open source projects—including Kubernetes, Rust, and Django—have established RFC processes that require contributors to document their proposed changes before implementation begins.
 
 A typical RFC includes several key sections: a summary of the proposed change, motivation for the change, detailed design, alternatives considered, and potential drawbacks. Writing these sections from scratch takes time, especially when you need to match the project's specific RFC template and conventions.
 
-## Using AI to Structure Your RFC
+### Step 2: Use AI to Structure Your RFC
 
 AI tools excel at generating structured content based on your requirements. To get the best results, provide the AI with context about the project, its existing RFC process, and specific details about your proposed feature.
 
@@ -68,7 +78,7 @@ Please draft the RFC document following this template, focusing on a feature tha
 
 The AI will generate a structured draft that you can then refine with specific implementation details.
 
-## Drafting the Motivation Section
+### Step 3: Drafting the Motivation Section
 
 The motivation section explains why the proposed change matters. This is where AI can help you articulate the problem your feature solves.
 
@@ -86,7 +96,7 @@ Help me write a compelling motivation section that explains these problems with 
 
 AI can transform bullet points into flowing prose that clearly communicates the problem to reviewers.
 
-## Generating Technical Design Details
+### Step 4: Generate Technical Design Details
 
 The detailed design section requires precise technical explanation. Here, AI serves as a collaborative partner rather than a complete solution generator. You provide the technical constraints and requirements, and AI helps structure the explanation.
 
@@ -108,7 +118,7 @@ Please help me structure the detailed design section with these components:
 
 This approach uses AI's strength in organizing technical information while you provide the domain-specific constraints.
 
-## Creating Code Examples
+### Step 5: Create Code Examples
 
 Including working code examples strengthens any RFC. AI can generate example implementations, API signatures, or CLI output that demonstrates your proposed feature.
 
@@ -125,7 +135,7 @@ Generate example CLI output showing how a developer would use the new reversible
 
 AI can produce realistic CLI output that helps reviewers visualize the feature in action.
 
-## Documenting Alternatives and Drawbacks
+### Step 6: Documenting Alternatives and Drawbacks
 
 Strong RFCs acknowledge alternatives and drawbacks. This demonstrates you've thought through the design thoroughly. AI can help brainstorm alternatives you might not have considered.
 
@@ -152,7 +162,7 @@ Consider:
 - Breaking changes where no meaningful rollback is possible
 ```
 
-## Refining the RFC for Your Project
+### Step 7: Refining the RFC for Your Project
 
 Every open source project has specific conventions for RFCs. Review existing merged RFCs in your project to understand the expected format and tone. AI can adapt its output to match these conventions once you provide examples.
 
@@ -166,13 +176,13 @@ Here are three example RFCs from our project that were accepted. Notice the styl
 
 This ensures your AI-generated draft matches project expectations.
 
-## Real RFC Examples and Patterns
+### Step 8: Real RFC Examples and Patterns
 
 Study existing RFCs from major projects to understand tone and structure:
 
 ```markdown
 # RFC Example: Rust RFC 2019-12
-## Title: Stabilize the Async/Await Syntax
+### Step 9: Title: Stabilize the Async/Await Syntax
 
 ### Motivation
 Current closure-based approach requires understanding advanced type system
@@ -197,14 +207,14 @@ features. Async/await syntax makes asynchronous code feel natural.
 
 When you provide AI tools with 2-3 examples of accepted RFCs, the quality of generated output improves dramatically.
 
-## RFC Template for Common Patterns
+### Step 10: RFC Template for Common Patterns
 
 Create project-specific templates that AI tools can use:
 
 ```markdown
 # RFC Template for {PROJECT_NAME}
 
-## Motivation
+### Step 11: Motivation
 Why do we need this change? What problems does it solve? Include specific
 use cases that motivate the change. Quantify impact where possible.
 
@@ -217,20 +227,20 @@ The core of the RFC. Include:
 
 Include code examples showing before/after.
 
-## Alternatives Considered
+### Step 12: Alternatives Considered
 List other approaches and explain why they're insufficient compared to
 the proposed design. Demonstrate that the proposed approach is optimal.
 
-## Drawbacks and Limitations
+### Step 13: Drawbacks and Limitations
 Be honest about trade-offs. What functionality might this remove?
 What performance implications exist? What future constraints does this
 introduce?
 
-## Unresolved Questions
+### Step 14: Unresolved Questions
 What aspects remain unclear? What aspects might need further discussion
 during implementation?
 
-## Implementation Timeline
+### Step 15: Implementation Timeline
 Estimate effort and timeline. Break into phases if complex.
 - Phase 1: Core implementation (~2 weeks)
 - Phase 2: Documentation (~1 week)
@@ -239,7 +249,7 @@ Estimate effort and timeline. Break into phases if complex.
 
 Using a consistent template across all RFCs accelerates both writing and review.
 
-## AI Tool Recommendations for RFC Writing
+### Step 16: AI Tool Recommendations for RFC Writing
 
 **Claude Code:** Best for complete RFC generation from requirements. Excels at writing motivation sections that articulate problems clearly.
 
@@ -249,7 +259,7 @@ Using a consistent template across all RFCs accelerates both writing and review.
 
 **GPT-4:** Good at alternative analysis. Provide your main proposal, and ask GPT-4 to generate compelling alternatives you may not have considered.
 
-## Converting RFC Feedback to Implementation
+### Step 17: Converting RFC Feedback to Implementation
 
 Once your RFC is accepted, AI tools help convert feedback into refined specifications:
 
@@ -282,6 +292,21 @@ Review critically. AI generates plausible content that may contain inaccuracies,
 Iterate incrementally. Generate sections one at a time rather than asking for a complete RFC in a single prompt. This allows you to refine each section before moving to the next.
 
 Maintain your voice. Use AI to structure and draft, but add your own analysis and insights. The best RFCs reflect the author's deep understanding of the problem space.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

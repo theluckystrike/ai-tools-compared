@@ -43,7 +43,17 @@ This guide shows you how to use AI tools effectively with multi-file context to 
 - **Use strategic file selection.**: Instead of dumping all models, provide the specific models relevant to the endpoint you're generating.
 - **For product endpoints**: show user models as a pattern reference, not every model in your project.
 
-## Understanding Multi-File Context in AI Coding Tools
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Multi-File Context in AI Coding Tools
 
 Multi-file context refers to an AI assistant's ability to read and understand multiple source files simultaneously before generating code. Rather than pasting snippets into a chat window, you provide the AI with access to your existing project files. The assistant analyzes your patterns, naming conventions, data models, and error handling approaches, then generates new code that aligns with what already exists.
 
@@ -59,7 +69,7 @@ Modern AI coding tools offer several ways to provide multi-file context:
 
 Each approach has tradeoffs in setup complexity and the depth of context the AI can access.
 
-## Preparing Your Project for Context-Aware Generation
+### Step 2: Preparing Your Project for Context-Aware Generation
 
 Before generating API endpoints with AI assistance, ensure your project provides clear signals about your conventions. Structure matters because the AI uses existing patterns as templates.
 
@@ -106,7 +116,7 @@ class UserResponse(UserBase):
 
 When the AI sees this pattern, it generates new models following the same structure.
 
-## Generating Endpoints with Full Context Awareness
+### Step 3: Generate Endpoints with Full Context Awareness
 
 With proper project structure in place, you can now generate endpoints that match your existing code. The key is providing the AI with enough context to understand your patterns.
 
@@ -164,7 +174,7 @@ def list_products(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)
 
 Notice how the generated code mirrors the user endpoint patterns: consistent error handling, similar response models, proper HTTP status codes, and matching parameter conventions.
 
-## Managing Context Window Limitations
+### Step 4: Manage Context Window Limitations
 
 Large projects exceed what any AI can process in a single context window. When working with extensive codebases, you need strategies to maximize relevant context without hitting limits.
 
@@ -185,7 +195,7 @@ context_files = [
 ]
 ```
 
-## Validating Generated Endpoint Consistency
+### Step 5: Validating Generated Endpoint Consistency
 
 After generation, verify consistency across several dimensions:
 
@@ -222,7 +232,7 @@ For more complex projects, additional techniques improve generation quality.
 
 **Document override conventions.** Sometimes generated code needs modification. Establish clear patterns for where and how developers should extend AI-generated code, preventing inconsistent manual additions.
 
-## Practical Workflow for Teams
+### Step 6: Practical Workflow for Teams
 
 Teams benefit from establishing conventions that AI tools can reliably follow:
 
@@ -237,6 +247,21 @@ Teams benefit from establishing conventions that AI tools can reliably follow:
 5. Document team-specific conventions in a CONTRIBUTING file
 
 This approach scales well because the AI becomes a force for consistency rather than a source of variation.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

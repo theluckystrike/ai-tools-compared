@@ -43,7 +43,17 @@ Exploratory data analysis demands understanding your dataset's structure, distri
 - **A shift greater than**: 10-15% in any feature is a trigger for investigation.
 - **Use dataprep when you**: want to clean and profile in one pass.
 
-## Understanding DataFrame Profiling
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand DataFrame Profiling
 
 DataFrame profiling generates reports that cover multiple dimensions of your dataset. A complete profile typically includes descriptive statistics, data type information, missing value counts, correlation matrices, and distribution visualizations. This automated approach replaces hundreds of lines of exploratory code with a single function call.
 
@@ -62,7 +72,7 @@ Three libraries dominate the Python profiling space, each with distinct strength
 
 For most workflows, ydata-profiling is the right starting point. Switch to sweetviz when you need to compare datasets side by side. Use dataprep when you want to clean and profile in one pass.
 
-## Setting Up Your Profiling Environment
+### Step 2: Set Up Your Profiling Environment
 
 Install the required libraries using pip:
 
@@ -72,7 +82,7 @@ pip install pandas ydata-profiling sweetviz autoviz
 
 The `ydata-profiling` library (formerly pandas-profiling) remains the most open-source option. `sweetviz` and `autoviz` provide alternative approaches with different visualization styles and comparison capabilities.
 
-## Generating Your First Profile Report
+### Step 3: Generate Your First Profile Report
 
 Create a simple profiling report using ydata-profiling:
 
@@ -104,7 +114,7 @@ profile = ProfileReport(
 )
 ```
 
-## AI-Enhanced Profiling Techniques
+### Step 4: AI-Enhanced Profiling Techniques
 
 Beyond basic automated reports, AI tools can interpret your profiling results and suggest next steps. Large language models excel at analyzing summary statistics and identifying potential issues or opportunities in your data.
 
@@ -183,7 +193,7 @@ df['anomaly_flag'] = anomalies
 print(f"Detected {sum(anomalies == -1)} potential anomalies")
 ```
 
-## Comparing Datasets with Profiling
+### Step 5: Comparing Datasets with Profiling
 
 When validating data pipeline outputs or comparing training and test sets, profiling comparisons reveal structural differences:
 
@@ -200,7 +210,7 @@ comparison_report.show_html("data_comparison.html")
 
 Sweetviz highlights differences in feature distributions, missing value patterns, and value frequencies between datasets. This proves invaluable for catching data leakage or identifying distribution shift that degrades model performance.
 
-## Using dataprep for Combined Cleaning and Profiling
+### Step 6: Use dataprep for Combined Cleaning and Profiling
 
 The `dataprep` library takes an integrated approach: it profiles and cleans in one pass, which avoids the common pitfall of profiling a dirty dataset and then profiling again after cleaning without tracking what changed.
 
@@ -219,7 +229,7 @@ clean_report.save("cleaned_profile.html")
 
 The side-by-side comparison of raw and cleaned profiles gives you a precise record of every transformation applied — useful for reproducibility audits and for explaining data preprocessing decisions to non-technical stakeholders.
 
-## Practical Workflows for Common Scenarios
+### Step 7: Practical Workflows for Common Scenarios
 
 ### Quick Initial Exploration
 
@@ -312,7 +322,7 @@ if flags:
 
 This pattern integrates naturally with Airflow, Prefect, or any scheduled job system.
 
-## Integration with Data Pipelines
+### Step 8: Integration with Data Pipelines
 
 Embed profiling into automated workflows for continuous data quality monitoring:
 
@@ -360,6 +370,21 @@ Keep your profiling efficient and actionable:
 5. **Sample large datasets** — a 5-10% stratified sample gives equivalent distributional insights at a fraction of the compute cost for datasets above 5 million rows
 
 6. **Version your baselines** — store profile JSON summaries in git alongside your model artifacts so you can always trace what the training data looked like
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -155,7 +155,17 @@ describe('LoginForm', () => {
 
 Notice how the tests use `userEvent.setup()` and `await` for async interactions. This is essential for realistic simulation of user behavior.
 
-## Refining AI-Generated Tests
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Refining AI-Generated Tests
 
 AI-generated tests provide a solid foundation, but you should review and enhance them. Consider adding:
 
@@ -180,7 +190,7 @@ it('displays error message for invalid email format', async () => {
 });
 ```
 
-## Testing Async Components and API Calls
+### Step 2: Test Async Components and API Calls
 
 Many real-world components fetch data or call APIs. AI tools handle these cases well when you provide the right context, but the generated tests require a mocking strategy. The most reliable approach uses `jest.mock` at the module level and `waitFor` or `findBy` queries to handle async rendering:
 
@@ -216,7 +226,7 @@ describe('UserProfile', () => {
 
 When prompting AI for tests involving async data, explicitly state: "mock the API module with jest.mock, use findBy queries for async elements, and test both success and error states." This prevents AI from generating tests that assume synchronous rendering.
 
-## Prompt Patterns That Produce the Best Results
+### Step 3: Prompt Patterns That Produce the Best Results
 
 The quality of AI-generated tests depends heavily on prompt structure. These patterns consistently produce well-structured output:
 
@@ -242,7 +252,7 @@ Review generated assertions: Verify that the assertions match your component's a
 
 Test user flows, not implementation: Focus on what users can do with your component, not internal state changes.
 
-## Common Pitfalls in AI-Generated Tests
+### Step 4: Common Pitfalls in AI-Generated Tests
 
 Even with good prompts, AI tools produce predictable failure patterns. Knowing these in advance saves debugging time.
 
@@ -254,7 +264,7 @@ Even with good prompts, AI tools produce predictable failure patterns. Knowing t
 
 **Asserting on `toBeVisible()` when `toBeInTheDocument()` is intended.** These are different: a hidden element (`display: none`) is in the document but not visible. AI sometimes conflates the two. Review assertions carefully when testing conditional rendering to ensure the correct matcher is applied.
 
-## Automating Test Generation Workflow
+### Step 5: Automate Test Generation Workflow
 
 You can integrate AI test generation into your development workflow with a consistent process:
 
@@ -266,6 +276,21 @@ You can integrate AI test generation into your development workflow with a consi
 6. Commit the tests alongside your component
 
 This workflow accelerates test coverage without sacrificing quality. Teams that apply it consistently report reaching 80%+ coverage on new components within the same sprint they are written, compared to the common pattern of test coverage lagging weeks or months behind feature development.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 
