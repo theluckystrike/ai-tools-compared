@@ -28,6 +28,22 @@ Burnout in open source manifests through several recognizable patterns. Maintain
 AI writing assistants address these challenges by handling time-consuming communication tasks, generating documentation from code, and helping maintainers craft clear, concise responses. The goal is not to replace human connection but to amplify maintainer productivity.
 
 
+## AI Tools Compared for Maintainer Workflows
+
+
+Not every AI writing tool fits maintainer needs equally. Here is how the leading options compare for open source communication tasks:
+
+| Tool | Best for | Key strength | Limitation |
+|------|----------|-------------|------------|
+| Claude (Anthropic) | Long-form responses, policy docs | Nuanced tone, long context window | No GitHub integration by default |
+| ChatGPT (GPT-4o) | Interactive drafting, quick replies | Wide user familiarity | Shorter context on free tier |
+| GitHub Copilot | In-editor code review comments | Inline, IDE-native | Limited for prose-heavy tasks |
+| Grammarly | Polishing tone in public replies | Grammar, clarity | No code understanding |
+| Codeium | Docs from code comments | Fast docstring generation | Less strong on prose |
+
+For most maintainers, Claude handles the highest-value tasks: drafting CONTRIBUTING guides, writing clear rejection notes for out-of-scope PRs, and generating comprehensive changelogs. ChatGPT is a strong alternative for maintainers who prefer a conversational back-and-forth style when refining templates.
+
+
 ## AI Tools for Issue Response Automation
 
 
@@ -117,6 +133,21 @@ The AI analyzes the function signature, comments, and surrounding context to pro
 - README file generation
 
 
+### Generating Changelogs from Git History
+
+
+One of the most time-consuming documentation tasks is writing release changelogs. AI can analyze your git log and produce a readable changelog in seconds:
+
+
+```bash
+# Feed git log to Claude for changelog generation
+git log v1.2.0..HEAD --oneline | claude "Convert this git log into a user-friendly changelog. Group changes into: Breaking Changes, New Features, Bug Fixes, and Internal. Write for end users, not contributors."
+```
+
+
+This approach turns raw commit messages like `fix: handle null pointer in auth middleware` into human-readable entries like "Fixed a crash that occurred when users with incomplete profiles attempted to authenticate."
+
+
 ## Pull Request Review Assistance
 
 
@@ -140,6 +171,22 @@ AI can suggest review feedback that is specific and actionable:
 
 This workflow lets AI draft initial feedback while maintainers add project-specific context and tone adjustments.
 ```
+
+
+### Drafting Polite Rejection Messages
+
+
+Rejecting contributions is emotionally difficult and risks discouraging future contributors. AI helps maintainers write rejections that are honest, appreciative, and clear about next steps:
+
+
+```
+Prompt: "Write a PR rejection message for a contribution that adds a feature we won't maintain long-term.
+The contributor worked hard. Be grateful, explain the scope decision, and encourage them to maintain
+a fork if they need this feature."
+```
+
+
+A well-drafted AI rejection preserves the contributor relationship even when the code cannot be merged.
 
 
 ## Establishing Sustainable Communication Processes
@@ -233,7 +280,7 @@ Clear communication about response times prevents burnout:
 ```markdown
 ## Response Time Guidelines
 
-**Issue Response Sriage:** 48 hours
+**Issue Response Triage:** 48 hours
 - All issues receive initial acknowledgment
 - Bugs and features are labeled and prioritized
 
@@ -248,8 +295,7 @@ Clear communication about response times prevents burnout:
 ```
 
 
-AI can help maintainers craft these guidelines in a way that is firm but welcoming.
-
+AI can help maintainers craft these guidelines in a way that is firm but welcoming. Use a prompt like: "Write a response policy section for our README that sets realistic expectations without discouraging contributors." The resulting text is typically warmer and clearer than what most maintainers write under time pressure.
 
 
 ## Frequently Asked Questions
