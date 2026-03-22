@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Automated Vault Policy Generation 2026"
-description: "Use Claude and ChatGPT to generate HashiCorp Vault HCL policies — path permissions, token roles, AppRole auth, and Kubernetes auth integration with real examples"
+description: "Use Claude and ChatGPT to generate HashiCorp Vault HCL policies — path permissions, token roles, AppRole auth, and Kubernetes auth integration with real."
 date: 2026-03-22
 author: theluckystrike
 permalink: /ai-tools-for-automated-vault-policy-generation-2026/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Doc-Sync Tools for Codebases Compared (2026)"
-description: "Compare the best AI tools for automatically updating documentation when your codebase changes. Practical benchmarks, code examples, and recommendations for developers."
+description: "Compare the best AI tools for automatically updating documentation when your codebase changes. Practical benchmarks, code examples, and recommendations."
 date: 2026-03-21
 last_modified_at: 2026-03-21
 author: theluckystrike

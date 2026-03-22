@@ -192,6 +192,85 @@ The `$(MAKE) -C $@` pattern and `MAKECMDGOALS` forwarding are correct. One gotch
 
 Claude is the strongest for production Makefiles. Give it explicit constraints — variable naming, tab indentation, `.PHONY` requirements — and it rarely needs correction.
 
+## Advanced Patterns: Dependency Tracking and Incremental Builds
+
+The real test of a production Makefile is whether it tracks dependencies correctly for incremental builds. A Makefile that always recompiles everything is no better than a shell script.
+
+For C projects, Claude generates proper dependency tracking using compiler-generated `.d` files:
+
+```makefile
+CC      := gcc
+CFLAGS  := -Wall -Wextra -O2
+DEPFLAGS = -MT $@ -MMD -MP -MF $(DEP_DIR)/$*.d
+
+SRC_DIR := src
+OBJ_DIR := obj
+DEP_DIR := .deps
+
+SRCS := $(wildcard $(SRC_DIR)/*.c)
+OBJS := $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRCS))
+DEPS := $(patsubst $(SRC_DIR)/%.c,$(DEP_DIR)/%.d,$(SRCS))
+
+.PHONY: all clean
+
+all: myapp
+
+myapp: $(OBJS)
+	$(CC) $^ -o $@
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(DEP_DIR)/%.d | $(OBJ_DIR) $(DEP_DIR)
+	$(CC) $(DEPFLAGS) $(CFLAGS) -c $< -o $@
+
+$(OBJ_DIR) $(DEP_DIR):
+	mkdir -p $@
+
+$(DEPS):
+
+# Include generated dependency files
+include $(wildcard $(DEPS))
+
+clean:
+	rm -rf $(OBJ_DIR) $(DEP_DIR) myapp
+```
+
+The `-MMD -MP -MF` flags instruct GCC to write dependency files alongside compilation. The `include $(wildcard $(DEPS))` directive pulls them in, so changing a header automatically triggers recompilation of all files that include it. Claude generates this correctly; ChatGPT rarely does without explicit prompting.
+
+## Makefile Testing and Validation
+
+Before committing a Makefile to CI, validate it with these checks Claude can help generate:
+
+```makefile
+.PHONY: check-makefile
+
+check-makefile:
+	# Verify clean build works
+	$(MAKE) clean
+	$(MAKE) all
+	# Verify incremental build is a no-op (nothing rebuilt)
+	$(MAKE) all 2>&1 | grep -c "Nothing to be done" | grep -q 1
+	# Verify clean removes all artifacts
+	$(MAKE) clean
+	test ! -d $(OBJ_DIR)
+	@echo "Makefile validation passed"
+```
+
+For CI, add a separate job that runs `make --dry-run` to catch syntax errors before spending time on a full build:
+
+```yaml
+- name: Validate Makefile
+  run: make --dry-run all 2>&1 | head -20
+```
+
+## Troubleshooting Common AI-Generated Makefile Issues
+
+**Tab vs space errors** — Make requires tab characters for recipe lines, not spaces. Most AI tools get this right in the output, but copy-pasting can introduce space indentation. Run `cat -A Makefile | grep -n '^\s[^I]'` to find offending lines.
+
+**Missing order-only prerequisites** — If compilation fails because the `obj/` directory doesn't exist, the fix is `$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)`. The pipe separates normal prerequisites from order-only ones. Without it, touching the directory would trigger recompilation of all objects.
+
+**`=` vs `:=` variable assignment** — `=` performs recursive expansion (evaluated on each use), `:=` performs simple expansion (evaluated once at definition). Using `=` for variables that invoke `$(shell ...)` causes the shell command to re-run every time the variable is referenced, which is almost always wrong.
+
+**Wildcard not expanding in rules** — `$(wildcard ...)` in a recipe doesn't expand at parse time. Move it to a variable at the top of the Makefile where it evaluates during the initial parsing pass.
+
 ## Related Reading
 
 - [Best AI Tools for Writing Bazel BUILD Files](/ai-tools-compared/best-ai-tools-for-writing-bazel-build-files-2026/)

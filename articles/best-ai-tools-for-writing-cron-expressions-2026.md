@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Writing Cron Expressions 2026"
-description: "Compare Claude and ChatGPT for generating cron expressions — five-field, six-field, Quartz, and human-readable descriptions with validation and timezone handling"
+description: "Compare Claude and ChatGPT for generating cron expressions — five-field, six-field, Quartz, and human-readable descriptions with validation and timezone."
 date: 2026-03-22
 author: theluckystrike
 permalink: /best-ai-tools-for-writing-cron-expressions-2026/

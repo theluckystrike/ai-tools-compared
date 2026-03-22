@@ -370,7 +370,7 @@ git push --force-with-lease origin apply-candidate
 
 This prevents the "black box" problem where AI-generated code enters production without understanding. The diff review and manual refinement steps maintain code quality even if Apply isn't 100% correct.
 
-{% endraw %}
+
 
 ## Related Articles
 
