@@ -9,7 +9,7 @@ permalink: /ai-tools-for-generating-github-wiki-pages-from-repository-st/
 categories: [guides]
 tags: [ai-tools-compared, github, documentation, wiki, developer-tools, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
