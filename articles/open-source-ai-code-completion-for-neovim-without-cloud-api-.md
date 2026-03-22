@@ -6,7 +6,7 @@ date: 2026-03-16
 author: "AI Tools Compared"
 permalink: /open-source-ai-code-completion-for-neovim-without-cloud-api-/
 reviewed: true
-score: 8
+score: 9
 categories: [guides]
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence, api]

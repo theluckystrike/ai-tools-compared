@@ -9,7 +9,7 @@ permalink: /self-hosted-ai-assistant-for-writing-docker-files-without-cl/
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence, docker, self-hosted]
 reviewed: true
-score: 8
+score: 9
 intent-checked: false
 voice-checked: false
 ---
