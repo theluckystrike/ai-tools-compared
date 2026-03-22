@@ -17,15 +17,6 @@ intent-checked: true
 
 To use AI coding tools in HIPAA-regulated environments, deploy self-hosted models (Ollama, CodeLlama) that keep PHI-containing code on-premises, or use cloud AI tools with signed Business Associate Agreements (BAAs) and strict input sanitization that strips patient data before sending code for completion. Never paste raw database queries, test fixtures, or configuration files containing PHI into cloud-based AI assistants. For teams that must use cloud tools, implement pre-send filters that detect and redact potential PHI patterns before code leaves your environment.
 
-## Key Takeaways
-
-- **Use Copilot freely for infrastructure**: test scaffolding, and non-PHI business logic.
-- **What Claude and ChatGPT get right**: they know to use AES-256 and will generate key management scaffolding when prompted.
-- **For strict HIPAA compliance**: use Cursor in "local mode" with Ollama as the backend, or use it only for non-PHI code sections with the awareness that code context is sent to Cursor's servers.
-- **For teams that must use cloud tools**: implement pre-send filters that detect and redact potential PHI patterns before code leaves your environment.
-- **Use Local or Self-Hosted**: Models for PHI-Adjacent Code For code modules that directly handle PHI data structures, consider running local AI models.
-- **Never use real patient**: data as test data.
-
 ## Table of Contents
 
 - [Understanding the Risk Model](#understanding-the-risk-model)

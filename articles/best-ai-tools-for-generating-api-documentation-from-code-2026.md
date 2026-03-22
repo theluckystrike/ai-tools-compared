@@ -17,16 +17,6 @@ intent-checked: true
 
 Manual API documentation is outdated the moment you ship code changes. AI-generated documentation stays synchronized with your source code, reducing the documentation lag that plagues most projects. This comparison evaluates Mintlify ($0-500/month), Cursor ($20/month), GitHub Copilot ($10/month), and readme.com AI ($50-500/month) across output quality, setup complexity, customization, and real-world accuracy. Each tool handles different aspects of API documentation generation—method signatures, parameter descriptions, return types, and usage examples—with varying quality. Understanding their strengths and limitations helps you choose the right tool for your API's complexity and team size.
 
-## Key Takeaways
-
-- **Choose Copilot if you**: already have it ($10/month) and need occasional documentation generation.
-- **The best approach**: use AI for generating reference documentation structure and initial descriptions, then augment with human-written practical examples.
-- **This comparison focuses on**: reference generation quality, the most time-consuming and repetitive part of API documentation.
-- **Args**: user_id: The unique identifier of the user (e.g., "user_123abc").
-- **- amount (integer, required)**: The invoice amount in cents (e.g., 2999 for $29.99).
-- **Example**: 4999 for $49.99
-- reason (string): The reason for the refund.
-
 ## Table of Contents
 
 - [The API Documentation Problem](#the-api-documentation-problem)

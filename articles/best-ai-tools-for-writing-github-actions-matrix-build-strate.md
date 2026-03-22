@@ -18,17 +18,6 @@ voice-checked: true
 
 Use Claude to design optimized matrix builds with proper exclude/include syntax and conditional skipping logic; use ChatGPT for basic matrix definitions. Claude understands GitHub Actions context better and avoids redundant job runs. This guide compares AI tools for creating efficient GitHub Actions matrix build strategies.
 
-## Key Takeaways
-
-- **Exclude Node 18 on**: Windows because our Windows CI environment does not support it.
-- **Use `fail-fast**: false` and limit parallelism to 4 jobs."
-
-Ask for explanation alongside code. Requesting that the AI explain each section of the matrix forces the model to verify its own logic.
-- **Start with one tool**: and experiment with different prompting approaches to find what works best for your specific use case.
-- **A 50-job matrix on**: a free account will queue heavily.
-- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
-- **Use Claude to design**: optimized matrix builds with proper exclude/include syntax and conditional skipping logic; use ChatGPT for basic matrix definitions.
-
 ## Table of Contents
 
 - [Why Matrix Build Strategies Matter](#why-matrix-build-strategies-matter)

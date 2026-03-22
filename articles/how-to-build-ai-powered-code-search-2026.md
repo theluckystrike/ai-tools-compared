@@ -345,6 +345,7 @@ CREATE INDEX ON code_units (language);
 - [How to Build Semantic Search with Embeddings](/ai-tools-compared/how-to-build-semantic-search-with-embeddings/)
 - [How to Build AI Documentation Chatbots](/ai-tools-compared/how-to-build-ai-documentation-chatbots-2026/)
 - [How to Build AI-Powered CLI Tools](/ai-tools-compared/how-to-build-ai-powered-cli-tools-2026/)
+- [How to Build AI-Powered Code Formatters](/ai-tools-compared/build-ai-powered-code-formatters/)
 
 ---
 

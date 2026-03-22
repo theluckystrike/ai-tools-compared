@@ -17,15 +17,6 @@ tags: [ai-tools-compared, ansible, infrastructure-as-code, automation]
 
 Claude outperforms competing AI tools for Ansible playbook generation due to superior understanding of YAML syntax, idempotency requirements, and role structure. GPT-4 produces functional playbooks but often includes unnecessary complexity. GitHub Copilot works best as an inline code assistant within editors rather than for entire playbook generation. For production use, combine AI assistance with human review of variables, handlers, and security practices—never deploy AI-generated infrastructure code without testing in staging first.
 
-## Key Takeaways
-
-- **Claude costs $20/month for**: Claude Pro or operates on token-based pricing with the API ($3 per million input tokens, $15 per million output tokens).
-- **For a small team**: generating 5-10 playbooks weekly, API costs stay under $50/month.
-- **GPT-4 costs $20/month for**: Plus subscribers or $0.03 per 1K input tokens, $0.06 per 1K output tokens via API.
-- **Copilot costs $10/month for**: individuals or $19/month per user for business accounts.
-- **Use GPT-4 if cost**: is critical but accept slower execution times from overcomplex tasks.
-- **Wait for Ansible Lightspeed**: if you heavily use Red Hat Ansible Tower—the native integration may justify the premium once pricing clarifies.
-
 ## Table of Contents
 
 - [Why Ansible Playbooks Are Uniquely Challenging for AI](#why-ansible-playbooks-are-uniquely-challenging-for-ai)
@@ -399,7 +390,7 @@ ansible-playbook deploy.yml -i inventory/production
 
 Use Claude for generating production playbooks from complex requirements and for creating entire role structures. Use GPT-4 if cost is critical but accept slower execution times from overcomplex tasks. Use Copilot for inline autocomplete within your editor when patterns are already established. Wait for Ansible Lightspeed if you heavily use Red Hat Ansible Tower—the native integration may justify the premium once pricing clarifies.
 
-For most infrastructure teams, Claude's superior accuracy for Ansible-specific requirements outweighs the $20/month cost, especially when that accuracy prevents a single deployment mistake worth hours in debugging. Invest in AI tool quality and comprehensive testing over trying to save on subscription cost while risking production incidents.
+For most infrastructure teams, Claude's superior accuracy for Ansible-specific requirements outweighs the $20/month cost, especially when that accuracy prevents a single deployment mistake worth hours in debugging. Invest in AI tool quality and testing over trying to save on subscription cost while risking production incidents.
 
 ## Related Articles
 

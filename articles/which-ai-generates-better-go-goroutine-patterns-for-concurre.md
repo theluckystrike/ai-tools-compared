@@ -17,15 +17,6 @@ voice-checked: true
 
 Choose Claude for production-ready Go goroutine patterns -- it consistently generates the safest concurrency code with proper context propagation, buffered channels, and idiomatic error aggregation. Choose ChatGPT for quick scaffolding that you plan to review and refine. GitHub Copilot and Gemini lag behind on goroutine safety, context handling, and race condition prevention across all tested scenarios.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **This tests each tool's**: ability to generate idiomatic Go from a specification, which is the most common real-world use case.
-- **Does Go offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-
 ## Table of Contents
 
 - [Testing Methodology](#testing-methodology)

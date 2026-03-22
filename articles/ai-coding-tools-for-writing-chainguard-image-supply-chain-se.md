@@ -17,15 +17,6 @@ voice-checked: true
 
 Chainguard images provide hardened, minimal container images designed for security and supply chain integrity. Writing effective security policies for these images requires understanding SLSA provenance, SBOM generation, and image verification workflows. AI coding tools can accelerate policy creation by translating your security requirements into policy-as-code formats while ensuring you cover the essential supply chain security controls.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **Here's how you might**: work with an AI assistant to generate the necessary policies: ``` I need Kubernetes admission controller policies that: 1.
-- **Only allow container images**: from us.gcr.io/distroless namespace 2.
-
 ## Table of Contents
 
 - [Understanding Chainguard Image Supply Chain Security](#understanding-chainguard-image-supply-chain-security)

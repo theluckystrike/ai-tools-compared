@@ -18,15 +18,6 @@ voice-checked: true
 
 When working with AI coding assistants on API-driven projects, consistent versioning behavior becomes critical. A well-crafted CLAUDE.md file ensures your AI assistant understands and respects your API versioning strategy, preventing breaking changes, maintaining backward compatibility, and following your team's conventions. This guide shows you how to document API versioning strategies in CLAUDE.md files for optimal AI-assisted development.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Does Claude offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Keep the CLAUDE.md current.**: An outdated CLAUDE.md that still lists v1 as the current stable version will cause the AI to generate v1 endpoints for new features.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-
 ## Table of Contents
 
 - [Why API Versioning Belongs in CLAUDE.md](#why-api-versioning-belongs-in-claudemd)

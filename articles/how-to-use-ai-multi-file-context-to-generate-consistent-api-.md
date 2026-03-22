@@ -21,15 +21,6 @@ Generating consistent API endpoints across a large codebase presents real challe
 
 This guide shows you how to use AI tools effectively with multi-file context to produce consistent API endpoints.
 
-## Key Takeaways
-
-- **Use this as the**: primary context for generating subsequent resources 3.
-- **Use multi-file context to**: generate consistent APIs by including multiple endpoint examples and data models, ensuring AI understands your patterns.
-- **This guide shows you**: how to use AI tools effectively with multi-file context to produce consistent API endpoints.
-- **Structure matters because the**: AI uses existing patterns as templates.
-- **Use strategic file selection.**: Instead of dumping all models, provide the specific models relevant to the endpoint you're generating.
-- **For product endpoints**: show user models as a pattern reference, not every model in your project.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

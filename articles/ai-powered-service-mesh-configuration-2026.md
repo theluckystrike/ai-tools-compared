@@ -415,6 +415,7 @@ For both tools: always validate with `istioctl analyze` before applying to a clu
 - [AI Tools for Generating Kubernetes Service Mesh Configuration](/ai-tools-compared/ai-tools-for-generating-kubernetes-service-mesh-configuratio/)
 - [AI-Powered API Gateway Configuration Tools](/ai-tools-compared/ai-powered-api-gateway-configuration-tools-2026/)
 - [How to Use AI for Network Policy Generation](/ai-tools-compared/how-to-use-ai-for-network-policy-generation-2026/)
+- [AI-Powered Observability Configuration Tools 2026](/ai-tools-compared/ai-powered-observability-configuration-tools-2026/)
 
 ---
 

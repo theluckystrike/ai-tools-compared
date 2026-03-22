@@ -16,14 +16,6 @@ tags: [ai-tools-compared, comparison, database, seed-data, testing, fixtures, de
 
 Claude 3 Opus generates realistic seed data with proper constraints, relationships, and edge cases. GPT-4 produces more varied datasets but sometimes violates schema constraints. Mistral balances speed and quality but requires more specification detail. For production testing with 1000+ rows across linked tables, Claude's understanding of relational integrity is essential. GPT-4 works well for rapid prototyping. Mistral suits smaller datasets and quick iterations. All three beat manual seed data creation by hours.
 
-## Key Takeaways
-
-- **Claude** generates seed data respecting foreign key constraints, uniqueness rules, and logical relationships. Handles 10,000+ rows per session.
-- **GPT-4** produces diverse, realistic datasets but occasionally violates constraints. Better for prototyping than production.
-- **Mistral** generates functional seed data quickly with 40% faster API response time. Best for testing pipelines where perfect constraints are negotiable.
-- **Cost**: Claude ($20/month subscription), GPT-4 (API ~$0.04 per 50K rows), Mistral (API ~$0.014 per 50K rows).
-- **Production choice**: Claude for integrity-critical systems. Mistral for rapid development. GPT-4 for high diversity.
-
 ## Table of Contents
 
 - [The Seed Data Generation Problem](#the-seed-data-generation-problem)

@@ -20,15 +20,6 @@ AI pair programming tools fundamentally change how developers write code. Rather
 
 This guide compares the three leading AI pair programming assistants: Cursor (IDE-native), Windsurf (focused on reasoning), and Claude Code (terminal/CLI-based), evaluating them on context awareness, code quality, integration, and real-world developer experience.
 
-## Key Takeaways
-
-- **Accept and apply $**: claude code apply # 4.
-- **Run your tests $**: npm test # 5.
-- **The best AI pair**: programming tool depends on your editor preferences and workflow style.
-- **The best tools understand**: your codebase context and produce code that integrates with existing patterns.
-- **No editor integration**: but powerful for developers who prefer terminal workflows and need maximum transparency.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-
 ## Table of Contents
 
 - [Understanding the Three Approaches](#understanding-the-three-approaches)

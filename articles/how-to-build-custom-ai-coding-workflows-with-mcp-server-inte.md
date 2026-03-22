@@ -18,15 +18,6 @@ voice-checked: true
 
 Build custom AI coding workflows by creating MCP servers that expose your proprietary tools, database queries, or domain knowledge to Claude, then integrate into your IDE. This guide shows step-by-step how to create a basic MCP server and wire it into your coding assistant.
 
-## Key Takeaways
-
-- **Most MCP server implementations**: use JSON-RPC 2.0 for communication.
-- **MCP differs from traditional**: API integrations in a critical way: the AI model itself decides when and how to invoke your tools based on the user's intent.
-- **A server with 3-7**: related tools performs better than a monolithic server with 30 tools.
-- **This inverts the traditional programming model**: instead of writing `if user_asks_about_db then query_db`, you describe what your tool does and let the model figure out when to use it.
-- **Use environment variables or**: secrets management systems, and rotate credentials regularly.
-- **MCP tools are portable across Claude**: GPT-4o, and any other MCP-compatible client without code changes.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
@@ -337,6 +328,7 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [How to Build Model Context Protocol Server for Internal Desi](/ai-tools-compared/how-to-build-model-context-protocol-server-for-internal-desi/)
 - [How to Build Model Context Protocol Server That Provides](/ai-tools-compared/how-to-build-model-context-protocol-server-that-provides-deployment-environment-context/)
 - [How to Build a Model Context Protocol Server That](/ai-tools-compared/how-to-build-model-context-protocol-server-that-provides-deployment-environment-context/)
+- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

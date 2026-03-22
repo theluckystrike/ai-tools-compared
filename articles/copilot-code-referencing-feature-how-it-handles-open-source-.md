@@ -18,15 +18,6 @@ voice-checked: true
 
 This guide provides practical steps and best practices to help you accomplish this task effectively. Follow the recommendations to get the best results from your AI tools.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Follow the recommendations to**: get the best results from your AI tools.
-- **When Copilot flags a GPL match**: you need to decide whether to use the suggestion and potentially open source your own code, or find an alternative approach.
-- **Document your dependencies**: Maintain a software bill of materials (SBOM) that tracks all open source components used in your projects.
-- **Does Copilot offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-
 ## Table of Contents
 
 - [What Is the Code Referencing Feature](#what-is-the-code-referencing-feature)

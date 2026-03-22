@@ -18,18 +18,6 @@ voice-checked: true
 
 Claude excels at Kubebuilder scaffolding and reconciliation loop logic with proper finalizers and status updates, while ChatGPT generates working code but requires more manual debugging. Choose Claude for new operator projects; use ChatGPT for filling in helper functions. This guide compares AI assistance for building production-ready Kubernetes operators with Kubebuilder.
 
-## Key Takeaways
-
-- **Can I use these**: tools with a distributed team across time zones? Most modern tools support asynchronous workflows that work well across time zones.
-- **}
-```
-
-Integration Testing**: For testing operators end-to-end, Claude suggests Ginkgo test patterns commonly used in Kubernetes projects.
-- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
-- **Choose Claude for new**: operator projects; use ChatGPT for filling in helper functions.
-- **For Kubebuilder development**: it provides inline suggestions as you type, making it useful for repetitive patterns in controller files.
-- **It works best for**: well-documented patterns from the Kubebuilder book.
-
 ## Table of Contents
 
 - [Why AI Tools Matter for Kubebuilder Projects](#why-ai-tools-matter-for-kubebuilder-projects)

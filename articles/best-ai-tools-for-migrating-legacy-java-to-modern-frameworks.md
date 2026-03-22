@@ -20,15 +20,6 @@ Legacy Java applications cost 2-3x more to maintain than their modern counterpar
 
 AI tools now accelerate Java modernization by 70-80% through automated refactoring, dependency resolution, and test generation. This guide compares tools by migration complexity and shows you how to migrate an actual legacy codebase systematically.
 
-## Key Takeaways
-
-- **Handle property placeholders with**: @Value("${{property}}") 4.
-- **AI tools now accelerate**: Java modernization by 70-80% through automated refactoring, dependency resolution, and test generation.
-- **Use @Configuration and @Bean**: annotations 2.
-- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
-- **Testing gaps**: Limited unit tests, integration tests tightly coupled to the database, and no CI/CD pipeline.
-- **Spring 4.3 → Spring**: 5.3 (2 weeks) - Reactive stubs for non-blocking services - WebClient migration from RestTemplate - Servlet 4.0 compatibility 4.
-
 ## The Java Migration Problem
 
 Legacy Java systems typically suffer from:

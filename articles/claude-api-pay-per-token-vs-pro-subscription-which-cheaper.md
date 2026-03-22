@@ -17,28 +17,6 @@ voice-checked: true
 
 This guide provides a detailed cost comparison to help you choose between Claude's API pay-per-token pricing and the Claude Pro subscription, with real-world usage scenarios and a break-even calculator.
 
-## Key Takeaways
-
-- **If the convenience and**: persistent context are worth $16.40/month, Pro may still be preferable despite higher cost.
-- **At Sonnet pricing**: that costs about $0.019 per exchange.
-- **Monthly API cost**: 50 messages × 30 days × 2,000 tokens × $0.003/1,000 tokens = $9/month
-
-Pro subscription: $20/month
-
-Winner: API is cheaper at $9/month versus $20 for Pro.
-- **Monthly API cost**: 150 × 30 × 4,000 × $0.003 = $54/month
-
-Pro subscription: $20/month
-
-Winner: Pro subscription saves $34 per month in this scenario.
-- **For document-heavy workflows**: Pro is the better user experience at equivalent cost.
-- **Monthly tokens**: 10 × 4 × 30,000 = 1.2M input tokens
-Monthly cost via API: 1.2M × $3 / 1,000,000 = $3.60
-
-Pro subscription: $20/month
-
-Winner: API by a massive margin.
-
 ## Table of Contents
 
 - [Understanding Claude API Pricing](#understanding-claude-api-pricing)

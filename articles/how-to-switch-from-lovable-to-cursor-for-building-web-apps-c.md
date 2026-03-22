@@ -17,16 +17,6 @@ intent-checked: true
 
 If you have been building web applications with Lovable and are considering switching to Cursor, you are not alone. Many developers are exploring this transition to use different AI-assisted development workflows. This guide walks you through the key differences, migration strategies, and practical steps to move your workflow from Lovable to Cursor effectively.
 
-## Key Takeaways
-
-- **Choose a small project**: an admin dashboard, a personal tool, or a simple SaaS feature
-2.
-- **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
-- **Many developers are exploring**: this transition to use different AI-assisted development workflows.
-- **It uses a chat-based**: interface where you describe what you want to build, and the AI generates the code for you.
-- **Open Cursor settings and**: navigate to the Models section to select your preferred AI model.
-- **The default model works**: well for most tasks, but you can experiment with different options based on your needs.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)

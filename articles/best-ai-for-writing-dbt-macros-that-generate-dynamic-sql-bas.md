@@ -28,15 +28,6 @@ voice-checked: true
 
 Writing dbt macros that generate dynamic SQL based on configuration requires understanding both Jinja2 templating and SQL generation patterns. The best AI coding assistants in 2026 can significantly speed up this process by understanding your dbt project's structure, generating reusable macro templates, and handling complex conditional logic. This guide compares the top AI tools for this specific use case.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **This guide compares the**: top AI tools for this specific use case.
-
 ## Table of Contents
 
 - [What Makes dbt Macro Generation Effective](#what-makes-dbt-macro-generation-effective)

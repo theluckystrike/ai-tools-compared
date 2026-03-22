@@ -19,15 +19,6 @@ tags: [ai-tools-compared, troubleshooting]
 
 GitHub Copilot provides AI-powered code suggestions that can dramatically accelerate your development workflow. However, there are times when the suggestions it generates are incorrect, outdated, or simply don't match what you're trying to accomplish. This guide walks you through practical solutions to fix when Copilot suggestions go wrong.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Does Copilot offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Use descriptive variable and**: function names 3.
-- **Specify libraries or frameworks**: you prefer 3.
-
 ## Why Copilot Suggestions Become Incorrect
 
 

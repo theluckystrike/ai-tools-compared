@@ -17,15 +17,6 @@ voice-checked: true
 
 Automated documentation generation has become essential for maintaining healthy codebases. When choosing between Gemini and Claude for this task, developers need concrete performance data and practical examples. This comparison evaluates both AI assistants on their ability to parse source code and produce accurate markdown documentation.
 
-## Key Takeaways
-
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-- **Use AI-generated tests as**: a starting point, then add cases that cover your unique requirements and failure modes.
-- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-- **However**: Claude shows slightly better interpretation of complex type annotations, especially those involving generics or Union types.
-- **Where they diverge is in how they handle intersection types and conditional types**: Claude tends to explain the intent behind these constructs, while Gemini focuses on their syntactic structure.
-- **Requests like "use JSDoc**: format" or "include usage examples for each function" produce accurate, consistent results.
-
 ## Understanding the Documentation Challenge
 
 

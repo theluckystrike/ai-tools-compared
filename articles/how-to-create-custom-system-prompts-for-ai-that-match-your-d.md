@@ -17,15 +17,6 @@ voice-checked: true
 
 Custom system prompts let you shape AI behavior to match your team's documentation conventions, coding standards, and output preferences. Rather than repeatedly explaining formatting rules or style requirements in every conversation, you embed these expectations directly into the AI's foundational instructions. This approach saves time, reduces friction, and ensures consistent results across all your AI-assisted work.
 
-## Key Takeaways
-
-- **Poor prompt**: "Generate a test for our API." Better: "Generate a Jest test for our REST API endpoint POST /api/users that creates a new user with required fields: email, password, name.
-- **Use the OpenAPI 3.0**: specification format for all endpoint descriptions 2.
-- **Add error response tables**: showing status codes, messages, and potential causes 4.
-- **Use present tense for**: operation descriptions (e.g., "Creates a user" not "This will create a user") 5.
-- **We use JWT tokens**: with 24-hour expiration.
-- **Identify which instructions matter**: most 5.
-
 ## Table of Contents
 
 - [Why Custom System Prompts Matter](#why-custom-system-prompts-matter)

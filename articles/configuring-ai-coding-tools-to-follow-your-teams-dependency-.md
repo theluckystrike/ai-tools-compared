@@ -18,15 +18,6 @@ voice-checked: true
 
 When your team adopts dependency injection (DI), you expect consistent usage across all code. Yet AI coding assistants often suggest implementations that bypass your carefully designed patterns, creating inconsistencies and technical debt. Configuring AI tools to respect your DI framework saves time during code reviews and maintains architectural integrity throughout your codebase.
 
-## Key Takeaways
-
-- **The underlying problem is statistical**: public open-source code is dominated by simple, direct instantiation patterns because most tutorials and sample projects skip DI for clarity.
-- **Focus your configuration on**: the three or four patterns your team uses in 90% of new code and handle rare exceptions with inline comments at the point of use.
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **This pattern confuses AI**: tools most frequently because the factory call site looks like direct instantiation.
-- **Does Teams offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-
 ## Table of Contents
 
 - [Why AI Tools Need DI Pattern Configuration](#why-ai-tools-need-di-pattern-configuration)
@@ -363,6 +354,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Configure Claude Code](/ai-tools-compared/how-to-configure-claude-code-to-follow-your-teams-feature-fl/)
 - [Writing Custom Instructions That Make AI Follow Your Team's](/ai-tools-compared/writing-custom-instructions-that-make-ai-follow-your-teams-changelog-entry-format/)
 - [Best Way to Configure AI Coding Tools to Follow Your Databas](/ai-tools-compared/best-way-to-configure-ai-coding-tools-to-follow-your-databas/)
+- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

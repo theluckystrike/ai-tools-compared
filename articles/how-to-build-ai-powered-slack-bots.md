@@ -17,20 +17,6 @@ tags: [ai-tools-compared]
 
 Slack bots backed by LLMs are the fastest path to getting AI into your team's workflow without forcing everyone to learn a new tool. This guide builds a production-ready bot with slash commands, thread-aware conversation history, and structured responses.
 
-## Key Takeaways
-
-- **Slack bots backed by**: LLMs are the fastest path to getting AI into your team's workflow without forcing everyone to learn a new tool.
-- **For slow AI calls**: use the `respond` URL pattern:
-
-```python
-import threading
-
-@app.command("/analyze")
-def handle_analyze(ack, command, respond):
-    ack(text="Analyzing...
-- **Topics covered**: architecture, setup, core bot implementation
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
@@ -449,6 +435,7 @@ Use `redis://` for unencrypted connections and `rediss://` for TLS. Most managed
 - [How to Build AI Pipelines with Prefect](/ai-tools-compared/how-to-build-ai-pipelines-with-prefect)
 - [How to Build AI-Powered CLI Tools 2026](/ai-tools-compared/how-to-build-ai-powered-cli-tools-2026/)
 - [How to Build AI Agents with Claude Agent SDK](/ai-tools-compared/how-to-build-ai-agents-with-claude-agent-sdk/)
+- [Best Onboarding Automation Workflow for Remote Companies](https://theluckystrike.github.io/remote-work-tools/best-onboarding-automation-workflow-for-remote-companies-using-slack-bots-and-notion-templates/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 {% endraw %}

@@ -18,15 +18,6 @@ intent-checked: true
 
 Automated accessibility testing has become essential for building inclusive web applications. Playwright's testing framework combined with AI-assisted code generation makes it practical to implement WCAG compliance checks without writing every test from scratch. This guide explores how AI tools can help you create Playwright accessibility tests that verify WCAG standards automatically.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **AI tools generate better**: tests when you specify criteria by number (e.g., "WCAG 2.4.3 Focus Order") rather than general descriptions.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-
 ## Table of Contents
 
 - [Understanding the Accessibility Testing Space](#understanding-the-accessibility-testing-space)

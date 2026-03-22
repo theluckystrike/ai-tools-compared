@@ -28,15 +28,6 @@ intent-checked: true
 
 AI assistants can generate correct recursive SQL queries for organizational hierarchies by understanding CTE syntax, proper termination conditions, and path building logic. The best AI tools produce anchor and recursive query parts separately, include safeguards against infinite loops, and explain why each component matters. They also recognize when recursion is unnecessary and offer variations for different use cases like finding descendants, entire subtrees, or reporting chains.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **The best AI assistants also recognize when recursive queries are unnecessary**: for instance, when only a single level of reporting needs to be retrieved.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-
 ## Table of Contents
 
 - [The Hierarchical Query Problem](#the-hierarchical-query-problem)

@@ -18,15 +18,6 @@ tags: [ai-tools-compared, claude-ai, api]
 
 Maintaining backward compatibility is crucial for API stability and user trust. When clients integrate with your API, they expect those integrations to continue working even as you evolve your service. Claude Code can help developers implement strategies that preserve compatibility while allowing API evolution.
 
-## Key Takeaways
-
-- **Maintaining backward compatibility is**: crucial for API stability and user trust.
-- **If your API remains backward compatible**: the existing app continues working while you release a new app version that uses new features.
-- **URL versioning places the**: version in the path, like `/api/v1/users` or `/api/v2/users`.
-- **Header versioning uses an**: HTTP header like `Accept: application/vnd.api.v2+json`.
-- **When you release an API update**: you cannot force millions of app users to update immediately.
-- **For most APIs**: URL versioning provides better discoverability and debugging.
-
 ## Table of Contents
 
 - [Why Backward Compatibility Matters](#why-backward-compatibility-matters)

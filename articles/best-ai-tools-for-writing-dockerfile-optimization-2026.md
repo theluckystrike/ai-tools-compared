@@ -182,7 +182,7 @@ RUN npm install
 COPY . .
 ```
 
-### Pattern 3: Leverage BuildKit
+### Pattern 3: uses BuildKit
 ```bash
 # Enable BuildKit (faster, parallel builds)
 export DOCKER_BUILDKIT=1
@@ -306,7 +306,7 @@ A: Yes, for any image that doesn't require build tools in production. Only excep
 A: Multi-stage + layer caching: 50-80% smaller. Non-root + minimal base: additional 10-20% savings.
 
 **Q: Can AI tools catch security vulnerabilities in Dockerfiles?**
-A: Partially. Claude detects obvious issues (running as root, old base images). Use Snyk/Trivy for comprehensive vulnerability scanning.
+A: Partially. Claude detects obvious issues (running as root, old base images). Use Snyk/Trivy for vulnerability scanning.
 
 **Q: Which AI tool is cheapest for bulk optimization?**
 A: Claude at $3/MTok. Average Dockerfile: 2K tokens ($0.006). 1,000 Dockerfiles: ~$6.

@@ -17,14 +17,6 @@ tags: [ai-tools-compared]
 
 Chaos engineering is the practice of deliberately injecting failures to find weaknesses before production does. The bottleneck isn't running experiments — it's designing them well. Choosing the right failure modes, estimating blast radius, and writing the experiment config all take expertise. AI tools can compress this from days to hours.
 
-## Key Takeaways
-
-- Use litmus experiments from hub.litmuschaos.io.
-- **SAFE_TO_RUN**: [YES / REQUIRES_APPROVAL / NO] with justification
-6.
-- **Topics covered**: what ai does well in chaos engineering, step 1: architecture-driven experiment design, step 2: generate litmus experiment configs
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-
 ## What AI Does Well in Chaos Engineering
 
 Three things:

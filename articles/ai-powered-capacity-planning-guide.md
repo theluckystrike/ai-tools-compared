@@ -17,15 +17,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Capacity planning is the art of having enough resources before you need them without paying for idle infrastructure. The old approach — overprovision by 2x and hope — is expensive. AI-assisted planning uses historical metrics, growth models, and anomaly detection to make data-driven forecasts.
 
-## Key Takeaways
-
-- **RECOMMENDED_CHANGES**: Specific infrastructure changes (instance sizes, counts, autoscaling rules)
-4.
-- **COST_ESTIMATE**: Estimated monthly cost impact of recommended changes
-6.
-- **Topics covered**: what ai adds to capacity planning, step 1: collect and prepare metrics, step 2: generate forecasts with prophet
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-
 ## Table of Contents
 
 - [What AI Adds to Capacity Planning](#what-ai-adds-to-capacity-planning)

@@ -19,19 +19,6 @@ voice-checked: true
 
 Enable Privacy Mode in Cursor AI by navigating to Settings, clicking the Privacy tab, and toggling "Enable Privacy Mode" on. This prevents your code from being sent to external AI servers while preserving local autocomplete and editor functionality. For enterprise teams, combine privacy mode with a `.cursor-settings.json` workspace file to enforce consistent privacy policies across the entire development team.
 
-## Key Takeaways
-
-- **Build personal snippet libraries**: Create reusable code patterns for your most common tasks
-2.
-- **Use keyboard shortcuts**: Master Cmd/Ctrl shortcuts for efficiency
-3.
-- **Use multi-cursor editing**: Use Alt+Click for bulk edits across similar code blocks
-4.
-- **Use workspace symbols**: Cmd/Ctrl+Shift+O for quick navigation across files
-5.
-- **16 GB of RAM**: is recommended for comfortable use.
-- **Focus on the patterns**: you reach for most often: API call wrappers, test scaffolding, component templates for your design system, and error handling boilerplate.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

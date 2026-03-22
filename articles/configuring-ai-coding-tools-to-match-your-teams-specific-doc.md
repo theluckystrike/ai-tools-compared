@@ -17,16 +17,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 AI coding assistants have become essential for developer productivity, but they often generate Dockerfiles that clash with your team's established patterns. When your team follows specific layer ordering conventions—whether prioritizing dependency caching, security scanning, or multi-stage build optimization—generic AI suggestions can undermine your build pipeline efficiency. Configuring AI tools to match your team's Dockerfile layer ordering requires understanding how these tools interpret context and learning to guide them toward your conventions.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Does Teams offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Use golang**: 1.21-alpine as build stage
-2.
-- **Set non-root user for**: runtime 7.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-
 ## Table of Contents
 
 - [Why Dockerfile Layer Ordering Matters to Your Team](#why-dockerfile-layer-ordering-matters-to-your-team)
@@ -422,5 +412,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Configure AI Coding Tools](/ai-tools-compared/how-to-configure-ai-coding-tools-to-respect-your-teams-branc/)
 - [AI Tools for Debugging CSS Media Query Breakpoints Not Match](/ai-tools-compared/ai-tools-for-debugging-css-media-query-breakpoints-not-match/)
 - [How to Create Custom System Prompts for AI That Match Your](/ai-tools-compared/how-to-create-custom-system-prompts-for-ai-that-match-your-d/)
+- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -17,15 +17,6 @@ voice-checked: true
 
 Optimize your environment by configuring IDE settings for context inclusion, setting up proper project structure, enabling linting, and maintaining clean git history. This guide shows which environment configurations actually improve AI suggestion quality versus negligible improvements.
 
-## Key Takeaways
-
-- **A flat directory with**: hundreds of files confuses context awareness.
-- **Without it**: AI-generated code might use different indentation or formatting, requiring manual cleanup.
-- **Set up your environment**: to use this capability.
-- **The best setup evolves**: with your project and workflow.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-- **Consider a security review**: if your application handles sensitive user data.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

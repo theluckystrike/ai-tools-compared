@@ -18,17 +18,6 @@ voice-checked: true
 
 Yes—admin seats in ChatGPT Team count toward your billing seat count exactly the same as member seats. Every user you invite to your ChatGPT Team workspace, regardless of their role (admin or member), consumes one seat from your subscription. There is no distinction between role types when it comes to billing.
 
-## Key Takeaways
-
-- **List pricing remains $25/month**: but enterprise agreements often include 10-20% discounts for 100+ seats, plus priority support and administration tools.
-- **As of 2026**: the cost is approximately $25 per user per month when billed annually, or $30 when billed monthly.
-- **Use member seats for most users**: Reserve admin for those managing settings
-
-4.
-- **Microsoft Copilot Pro ($20/month)**: Individual-only subscription without team features.
-- **Most teams stick with**: annual billing to save ~13%.
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-
 ## Table of Contents
 
 - [How ChatGPT Team Billing Works](#how-chatgpt-team-billing-works)
@@ -319,5 +308,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Grammarly Business vs ChatGPT Team for Enterprises](/ai-tools-compared/grammarly-business-vs-chatgpt-team-for-enterprises/)
 - [How to Move ChatGPT Team Workspace Data to Claude](/ai-tools-compared/how-to-move-chatgpt-team-workspace-data-to-claude-team/)
 - [Do ChatGPT Plus Memory and Custom GPTs Count Toward](/ai-tools-compared/chatgpt-plus-memory-and-custom-gpts-count-toward-usage-limit/)
+- [Find all GitHub repositories where user is admin](https://theluckystrike.github.io/remote-work-tools/best-practice-for-remote-team-offboarding-at-scale-ensuring-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

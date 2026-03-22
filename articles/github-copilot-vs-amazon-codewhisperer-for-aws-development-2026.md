@@ -17,15 +17,6 @@ intent-checked: true
 
 AWS development demands precision. A misconfigured IAM policy opens security holes. A broken Lambda function crashes your data pipeline. CloudFormation templates with typos fail deployments. GitHub Copilot and Amazon CodeWhisperer both claim AWS expertise, but one consistently generates correct Lambda functions while the other struggles with IAM permissions. This benchmark covers real projects: Lambda handlers, CDK infrastructure, IAM policies, and CloudFormation templates, with accuracy metrics and cost comparison.
 
-## Key Takeaways
-
-- **For enterprise with multiple developers**: CodeWhisperer Free tier (if sufficient) or CodeWhisperer Individual ($0.34/hour).
-- **Budget 10-15% code review**: time regardless of choice.
-- **The time savings (70-80%**: faster development) dwarf tool costs.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-- **Missing ListBucket if code**: uses list operations, but the prompt didn't require it.
-
 ## Table of Contents
 
 - [AWS Lambda Function Generation](#aws-lambda-function-generation)

@@ -19,14 +19,6 @@ Data pipeline failures are quiet — you don't get a stack trace, you get wrong 
 
 This guide covers three approaches: AI-generated dbt tests, Great Expectations suite generation, and LLM-based anomaly checks on pipeline outputs.
 
-## Key Takeaways
-
-- **dbt tests from SQL + sample data** — Claude generates column-level tests, relationship tests, and custom business rule SQL from a model definition and 10 sample rows.
-- **Great Expectations suites from DataFrames** — profiling a DataFrame and sending the statistics to Claude produces a complete expectation suite without manual configuration.
-- **LLM anomaly detection catches distribution shifts** — comparing run summaries in natural language finds problems that fixed thresholds miss.
-- **CI integration closes the gap** — auto-generating tests on PR for new models means every new model ships with a test suite, not an empty YAML file.
-- **Practical guidance included**: Step-by-step setup and configuration instructions.
-
 ## Table of Contents
 
 - [Why Pipeline Testing Is Underinvested](#why-pipeline-testing-is-underinvested)

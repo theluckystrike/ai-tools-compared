@@ -17,15 +17,6 @@ intent-checked: true
 
 Large codebase migrations are grueling. Your Python 2 legacy system has 50,000 lines across 200 files. Java 8 codebases need modern stream APIs and records. JavaScript CommonJS modules need conversion to ESM. AI tools now handle these migrations with remarkable accuracy, cutting months of manual work into weeks. This guide compares real AI tools with concrete metrics on accuracy, handling of edge cases, and actual costs.
 
-## Key Takeaways
-
-- **Cost optimization**: For under 50K lines, use Claude API ($20-40 total).
-- **For 50K-200K**: use Copilot subscription ($20/month) with focused prompts.
-- **Run tests cd python3_codebase**: && python -m pytest tests/ ``` Success metric: 94% of the codebase compiled without errors after first pass.
-- **The remaining 6% had**: implicit unicode dependencies that required domain knowledge.
-- **80% of changes are**: mechanical; plan 5-10% manual review time.
-- **Validate incrementally**: Apply migrations to 10% of codebase first, measure accuracy, adjust prompts.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

@@ -18,15 +18,6 @@ Database migrations are the highest-risk deployments in most systems. A schema c
 
 This guide evaluates which AI tools provide actionable migration review and which produce false confidence.
 
-## Key Takeaways
-
-- **others) - Models the**: actual blocking time accurately - Suggests a zero-downtime approach with chunking - Provides a testable sequence Cost: Free with Claude Code, or $20/month Claude Pro.
-- **Cost**: $20/month or self-hosted.
-- **The most costly production**: incidents are often caused by migrations that looked safe in review.
-- **For occasional use**: consider whether a free alternative covers enough of your needs.
-- **Backfill in chunks in**: background job (doesn't lock table): UPDATE orders SET status = 'pending' WHERE status IS NULL AND id % 100 = 0 AND id < 2500000; Repeat for each modulo slice 4.
-- **Free and basic plans**: typically get community forum support and documentation.
-
 ## Table of Contents
 
 - [Why Database Migration Review is Hard](#why-database-migration-review-is-hard)

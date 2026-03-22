@@ -17,16 +17,6 @@ voice-checked: true
 
 JetBrains IDEs with AI refactoring provide semantic code search that understands intent, call graph analysis, and safe rename operations across legacy code. VS Code with AI plugins works well for navigation but requires more manual verification. Use JetBrains when making large-scale legacy changes; use VS Code for exploration and smaller modifications. This guide covers the top AI IDE features for modernizing legacy codebases safely.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **AI suggests**: "This can use the new UserService.update()"
-// 3.
-- **Use hover documentation to**: understand data types 5.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-
 ## Table of Contents
 
 - [Context-Aware Code Navigation](#context-aware-code-navigation)

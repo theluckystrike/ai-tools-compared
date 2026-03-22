@@ -18,15 +18,6 @@ voice-checked: true
 
 Choose Landbot if you need a polished no-code solution with enterprise features like team collaboration, role-based access, and built-in AI agents requiring minimal setup. Choose Typebot if you want full control over AI integration with any LLM provider, prefer a self-hosted open-source option, or need Git-compatible version control for your bot definitions. For AI-powered conversational forms specifically, Typebot's approach of letting you choose and configure your own LLM provider delivers more flexibility, while Landbot gets non-technical teams to production faster.
 
-## Key Takeaways
-
-- **Choose Typebot if you**: want full control over AI integration with any LLM provider, prefer a self-hosted open-source option, or need Git-compatible version control for your bot definitions.
-- **Choose Typebot if you**: are a developer or technical team that wants full control over AI integration, prefers self-hosted options, or needs to version-control your bot definitions.
-- **The open-source nature and**: flexible API make it suitable for complex workflows where you want to integrate custom machine learning models or build sophisticated AI assistants.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-- **Choose Landbot if you**: need a polished no-code solution with enterprise features like team collaboration, role-based access, and built-in AI agents requiring minimal setup.
-
 ## Table of Contents
 
 - [Platform Overview](#platform-overview)

@@ -20,16 +20,6 @@ When AI coding assistants generate code, commit messages, or pull requests, they
 
 This guide covers practical methods for teaching AI coding tools—including GitHub Copilot, Cursor, Claude Code, and Windsurf—to generate branch names that match your team's standards.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Use lowercase letters**: numbers, and hyphens only
-2.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Include a ticket number**: if applicable (e.g., feature/PROJ-123-user-dashboard) Example: When implementing user profile editing, create `feature/user-profile-edit` not `new-user-profile功能`.
-- **Check that it uses**: the correct prefix (`feature/`) 3.
-
 ## Table of Contents
 
 - [Why Branch Naming Conventions Matter](#why-branch-naming-conventions-matter)
@@ -334,5 +324,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Configuring AI Coding Tools to Match Your Teams Specific](/ai-tools-compared/configuring-ai-coding-tools-to-match-your-teams-specific-doc/)
 - [What Source Code Context Window Do Different AI Coding Tools](/ai-tools-compared/what-source-code-context-window-do-different-ai-coding-tools/)
 - [How to Audit What Source Code AI Coding Tools Transmit](/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
+- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

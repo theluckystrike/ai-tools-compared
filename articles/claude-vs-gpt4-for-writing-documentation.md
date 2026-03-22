@@ -17,13 +17,6 @@ tags: [ai-tools-compared]
 
 Technical documentation has a quality ceiling that most AI tools don't reach: accurate code examples, the right level of detail for the audience, and explanations that don't talk down to experienced engineers. This guide compares Claude and GPT-4 across four documentation types that actually get written in engineering teams.
 
-## Key Takeaways
-
-- **Payment intents are the**: recommended way to handle complex payment flows, including 3D Secure authentication.
-- **GPT-4's runbook: ```markdown ##**: Payment Service High Latency If P95 latency > 2 seconds: 1.
-- **Claude's runbook:
-
-```markdown
 ## PYM-001**: Payment Service P95 Latency > 2s
 
 Severity: P2 — escalate to P1 if >5s or error rate >1%
@@ -110,11 +103,11 @@ from payments import create_payment_intent
 
 # Charge $29.99 USD, safe to retry
 intent = create_payment_intent(
-    amount=2999,          # $29.99 in cents
-    currency="usd",
-    customer_id="cus_abc123",
-    metadata={"order_id": "ord_xyz"},
-    idempotency_key=str(uuid.uuid4())
+ amount=2999, # $29.99 in cents
+ currency="usd",
+ customer_id="cus_abc123",
+ metadata={"order_id": "ord_xyz"},
+ idempotency_key=str(uuid.uuid4())
 )
 print(f"Intent created: {intent.id}, status: {intent.status}")
 ```
@@ -162,11 +155,11 @@ Generic enough to apply to any service. No specific commands, no metrics to chec
 ```bash
 # Current P95 across all instances
 kubectl exec -n payments deploy/payment-svc -- \
-  curl -s localhost:9090/metrics | grep http_request_duration_p95
+ curl -s localhost:9090/metrics | grep http_request_duration_p95
 
 # Error rate trend
 kubectl logs -n payments -l app=payment-svc --since=10m | \
-  grep '"level":"error"' | wc -l
+ grep '"level":"error"' | wc -l
 ```
 
 Check: [Payments Latency Dashboard](https://grafana.internal/d/payments-latency)
@@ -176,14 +169,14 @@ Check: [Payments Latency Dashboard](https://grafana.internal/d/payments-latency)
 **Database latency?**
 ```bash
 kubectl exec -n payments deploy/payment-svc -- \
-  curl -s localhost:9090/metrics | grep db_query_duration_p95
+ curl -s localhost:9090/metrics | grep db_query_duration_p95
 ```
 If db_query_duration_p95 > 1.5s → go to [DB Runbook PYM-DB-001]
 
 **External API (Stripe) latency?**
 ```bash
 kubectl exec -n payments deploy/payment-svc -- \
-  curl -s localhost:9090/metrics | grep stripe_api_duration_p95
+ curl -s localhost:9090/metrics | grep stripe_api_duration_p95
 ```
 If stripe_api_duration_p95 > 500ms → check [Stripe Status Page](https://status.stripe.com)
 

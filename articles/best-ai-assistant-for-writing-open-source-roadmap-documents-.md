@@ -20,15 +20,6 @@ Open source maintainers often face the challenge of communicating project direct
 
 This guide evaluates the best AI assistants for writing open source roadmap documents from issue and milestone data in 2026, with practical workflows you can implement immediately.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **This guide evaluates the**: best AI assistants for writing open source roadmap documents from issue and milestone data in 2026, with practical workflows you can implement immediately.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-
 ## Table of Contents
 
 - [Why AI Assistants Transform Roadmap Documentation](#why-ai-assistants-transform-roadmap-documentation)

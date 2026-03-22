@@ -17,15 +17,6 @@ intent-checked: true
 
 Perplexity Pro allows file uploads up to 25 MB per document and 100 files per month. Storage follows a tiered model: Pro Basic includes 10 GB (overage at $0.10/GB/day) and Pro Unlimited includes 50 GB (overage at $0.05/GB/day). Files uploaded for immediate analysis are automatically cleaned up after 7 days unless explicitly saved.
 
-## Key Takeaways
-
-- **Storage follows a tiered model**: Pro Basic includes 10 GB (overage at $0.10/GB/day) and Pro Unlimited includes 50 GB (overage at $0.05/GB/day).
-- **If you have used**: the tool for at least 3 months and plan to continue, the annual discount usually makes sense.
-- **A developer who leaves 50 GB of documents sitting in a Basic workspace for a month would pay $150 in overage charges**: more than the annual cost difference between the two plans.
-- **This division of labor**: keeps monthly upload counts manageable and ensures each tool is used where it performs best.
-- **Use Concurrent Analysis Perplexity**: Pro supports batch processing.
-- **Is the annual plan**: worth it over monthly billing? Annual plans typically save 15-30% compared to monthly billing.
-
 ## Table of Contents
 
 - [File Upload Limits on Perplexity Pro](#file-upload-limits-on-perplexity-pro)

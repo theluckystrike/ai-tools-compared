@@ -20,13 +20,6 @@ CursorRules files (`.cursorrules`) have become essential for customizing Cursor 
 
 This guide covers practical strategies for managing CursorRules files in Git, from basic setup to advanced workflows that keep your team synchronized.
 
-## Key Takeaways
-
-- **These files define how**: the AI assistant interacts with your codebase, including coding conventions, file preferences, and context handling.
-- **Most teams find the**: committed approach simpler to maintain.
-- **Can we use .cursorrules**: to enforce security rules? Yes, and it is worth doing.
-- **Rules like "never suggest**: storing secrets in environment variable comments" or "always recommend parameterized queries for database calls" add a lightweight AI-level guardrail.
-
 ## Table of Contents
 
 - [Understanding.cursorrules File Structure](#understandingcursorrules-file-structure)
@@ -314,5 +307,6 @@ Yes, and it is worth doing. Rules like "never suggest storing secrets in environ
 - [Best Practices for AI Tool Customization Files When Onboardi](/ai-tools-compared/best-practices-for-ai-tool-customization-files-when-onboardi/)
 - [Best Way to Structure CursorRules for Microservices Project](/ai-tools-compared/best-way-to-structure-cursorrules-for-microservices-project-/)
 - [Create CursorRules That Teach Cursor Your Team's State](/ai-tools-compared/how-to-create-cursorrules-that-teach-cursor-your-teams-state/)
+- [Hybrid Team Social Events: Best Practices (2026)](https://theluckystrike.github.io/remote-work-tools/best-practice-for-hybrid-team-social-events-including-both-r/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

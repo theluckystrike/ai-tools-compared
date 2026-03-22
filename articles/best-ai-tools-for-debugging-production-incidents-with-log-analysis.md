@@ -17,16 +17,6 @@ intent-checked: true
 
 Production incidents demand speed. When your system is down, manual log analysis wastes critical minutes. Modern AI tools can ingest logs, identify patterns, correlate events across services, and suggest root causes—accelerating incident response from hours to minutes.
 
-## Key Takeaways
-
-- **Generate hypothesis**: AI identifies root cause with 70-85% accuracy
-5.
-- **Root cause (what failed**: first) 2.
-- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
-- **Modern AI tools can ingest logs, identify patterns, correlate events across services, and suggest root causes**: accelerating incident response from hours to minutes.
-- **Identify root cause**: affected components, and immediate remediation steps." Claude identifies the cascade: cold-start Lambda → slow DB query → exhausted connection pool → retry storms.
-- **Use it to compare**: baseline metrics with incident metrics.
-
 ## Table of Contents
 
 - [AI Log Analysis Workflow](#ai-log-analysis-workflow)

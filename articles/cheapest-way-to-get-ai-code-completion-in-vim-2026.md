@@ -17,19 +17,6 @@ voice-checked: true
 
 Finding affordable AI tools requires understanding the true cost structure. This guide breaks down the cheapest options and explains what you get at each price point.
 
-## Key Takeaways
-
-- **The free tier provides 2**:000 completions per month, which is enough for most casual use or testing purposes.
-- **Codeium's free tier includes**: unlimited code completion with a generous monthly token limit, making it one of the best free options available in 2026.
-- **Installation**: ```vim
-Plug 'codota/tabnine-vim'
-```
-
-The free version uses a smaller model and has limited context awareness, but it serves as a viable starting point for users on a tight budget.
-- **If you need more**: the paid plan starts at $10/month.
-- **It launched with a**: free tier that includes unlimited completions and supports Vim through its plugin.
-- **If you are on**: Vim 8 or 9 without Lua support, Codeium remains the more reliable free option.
-
 ## Table of Contents
 
 - [Why AI Code Completion in Vim Matters](#why-ai-code-completion-in-vim-matters)

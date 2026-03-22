@@ -249,19 +249,6 @@ public function toArray(Request $request): array
 
 `whenLoaded()` prevents N+1 issues in resource responses. Claude includes this by default. GPT-4 includes it when reminded.
 
-## Summary
-
-| Task | Claude | GPT-4 |
-|---|---|---|
-| Eloquent relationships | Idiomatic, typed, constrained eager loading | Works, less idiomatic |
-| Form Request validation | Correct nested array rules | Occasional gaps |
-| Queue jobs | Modern backoff(), readonly | Sometimes legacy pattern |
-| API Resources | whenLoaded() by default | Needs prompting |
-| Service Provider registration | Strong | Strong |
-| Artisan command generation | Strong | Strong |
-
-Both tools are usable for Laravel. Claude produces more idiomatic Laravel 11 code with less cleanup. GPT-4 requires more explicit prompting to avoid legacy patterns.
-
 ## Related Articles
 
 - [Claude vs Copilot for Swift Development 2026](/ai-tools-compared/claude-vs-copilot-for-swift-development-2026/)

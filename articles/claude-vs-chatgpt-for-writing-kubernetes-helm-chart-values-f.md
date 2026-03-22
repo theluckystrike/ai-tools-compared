@@ -22,17 +22,6 @@ This guide compares the strengths and weaknesses of each tool for this specific 
 
 I tested both Claude and ChatGPT with real-world Helm scenarios to find out.
 
-## Key Takeaways
-
-- **Is there a free**: way to use Claude for Helm work? The free tier of Claude provides limited daily messages but does support the same model quality.
-- **Choose the tool that**: best matches your workflow, budget, and technical requirements.
-- **Pasting this into your**: prompt constrains the AI to only generate keys your chart actually supports, eliminating the most common failure mode.
-- **Step 3**: Use diff to review AI edits
-
-When asking an AI to modify an existing values file, paste the current file and ask for a diff output rather than a full rewrite.
-- **The results revealed clear**: differences in how each handles Kubernetes-specific syntax and best practices.
-- **Claude also demonstrated better**: awareness of Helm's templating system.
-
 ## The Test Setup
 
 

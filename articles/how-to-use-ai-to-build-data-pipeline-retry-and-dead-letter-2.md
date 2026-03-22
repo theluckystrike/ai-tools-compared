@@ -18,15 +18,6 @@ intent-checked: true
 
 AI can improve data pipeline reliability by learning from historical failure patterns to predict optimal retry timing and classify failures as transient, correctable, or permanent. Machine learning models distinguish between network glitches and service outages, then route messages to appropriate handlers or suggest automatic fixes. This approach reduces manual intervention, enables faster recovery, and improves dead letter queue management by analyzing error messages and predicting resolution times.
 
-## Key Takeaways
-
-- **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
-- **Traditional retry approaches use fixed backoff strategies**: waiting a predetermined time before attempting again.
-- **The model learns from**: historical data which retry delays work best for different failure scenarios.
-- **Add AI classification once**: you have at least several weeks of failure history to train on.
-- **For extremely latency-sensitive pipelines,**: consider pre-computing recommendations or using lightweight models that can make decisions quickly.
-- **The investment in AI-powered**: retry and dead letter handling pays dividends through reduced manual intervention, faster recovery from failures, and better utilization of computing resources.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)

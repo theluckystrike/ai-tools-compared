@@ -16,21 +16,6 @@ voice-checked: true
 
 Self-hosting AI models for code generation gives you data privacy, no API rate limits, and full control over your infrastructure. For JavaScript and TypeScript development specifically, certain models outperform others due to their training data and architecture. This guide compares the top self-hosted models for code generation in 2026, with practical implementation examples to help you choose the right one.
 
-## Key Takeaways
-
-- **Strengths**: - Fill-in-the-middle training improves code completion
-- Good for IDE integrations
-- License-friendly for commercial use
-- Multiple model sizes available
-
-### 5.
-- **GPU infrastructure**: NVIDIA GPUs with CUDA support, preferably 24GB+ VRAM
-2.
-- **A single RTX 4090 GPU runs roughly $1**:500-2,000 new.
-- **Cloud GPU rental via**: Lambda Labs or Vast.ai starts around $0.50/hour for capable cards, making short-term experimentation affordable without capital investment.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **This guide compares the**: top self-hosted models for code generation in 2026, with practical implementation examples to help you choose the right one.
-
 ## Table of Contents
 
 - [Why Self-Host Your Code Generation Model?](#why-self-host-your-code-generation-model)

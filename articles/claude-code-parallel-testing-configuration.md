@@ -17,15 +17,6 @@ voice-checked: true
 
 Configure parallel testing with Claude Code using Jest's maxWorkers option at 50% to use all CPU cores, enabling test suites to complete in one-third the original time. This acceleration matters significantly when working with AI code generation because you run tests frequently to validate suggestions, and parallel configuration transforms a 10-minute suite into a 3-minute cycle for faster iteration.
 
-## Key Takeaways
-
-- **Configure parallel testing with**: Claude Code using Jest's maxWorkers option at 50% to use all CPU cores, enabling test suites to complete in one-third the original time.
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Does Claude offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-
 ## Table of Contents
 
 - [Why Parallel Testing Matters with AI Development](#why-parallel-testing-matters-with-ai-development)

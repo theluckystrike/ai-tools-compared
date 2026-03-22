@@ -17,19 +17,6 @@ tags: [self-hosted-ai, sql-generation, llm, natural-language-to-sql, ai-tools-co
 
 Building a self-hosted solution for converting natural language to SQL queries gives you data privacy, cost control, and customization that cloud-based APIs cannot match. In this guide, I compare the best open-source models available in 2026 for this specific use case, with practical setup instructions and performance benchmarks.
 
-## Key Takeaways
-
-- **In this guide**: I compare the best open-source models available in 2026 for this specific use case, with practical setup instructions and performance benchmarks.
-- **A success rate below**: 85% signals the model needs retraining on new schema patterns.
-- **Cloud APIs introduce latency**: that impacts user experience in real-time applications.
-- **CodeLlama (34B Parameters) CodeLlama**: from Meta provides solid SQL generation capabilities with the advantage of being well-maintained and widely supported.
-- **Strengths**: - Excellent dialect awareness
-- Good at optimization suggestions
-- Supports more programming languages
-
-### 4.
-- **Starcoder2 (15B Parameters) For**: organizations with limited GPU resources, Starcoder2 offers a lighter alternative.
-
 ## Table of Contents
 
 - [Why Self-Hosted for SQL Generation?](#why-self-hosted-for-sql-generation)
@@ -555,45 +542,6 @@ class EnsembleGenerator:
 
 Ensemble approaches reduce outlier failures while maintaining speed.
 
-## Conclusion
-
-Out-of-the-box models generate accurate SQL for generic schemas but improve significantly when fine-tuned on your specific tables, column names, and business domain terminology. A model that has seen "customer_lifetime_value," "churn_risk_score," and your specific JOIN patterns will outperform a general-purpose model even if the general model has higher benchmark scores.
-
-Fine-tuning requires generating a training dataset of natural language / SQL pairs from your actual query history. Most databases log slow queries and all queries when query logging is enabled. Extract the last 6 months of queries and pair them with natural language descriptions:
-
-```python
-import json
-from pathlib import Path
-
-def create_training_dataset(query_log_path: str, output_path: str):
-    """
-    Convert query log into fine-tuning training data.
-    Assumes query log format: timestamp | query | execution_time
-    """
-    training_pairs = []
-    with open(query_log_path) as f:
-        for line in f:
-            parts = line.strip().split("|")
-            if len(parts) < 2: continue
-            sql = parts[1].strip()
-            # Skip trivial queries
-            if len(sql) < 50: continue
-            if sql.upper().startswith("SHOW") or sql.upper().startswith("SET"):
-                continue
-            training_pairs.append({
-                "instruction": "Write a SQL query to accomplish this task",
-                "input": f"[Schema context here] Natural language: [describe what this query does]",
-                "output": sql
-            })
-    Path(output_path).write_text(
-        json.dumps(training_pairs, indent=2)
-    )
-    print(f"Generated {len(training_pairs)} training pairs")
-```
-
-For fine-tuning with LoRA (Low-Rank Adaptation), which requires far less GPU memory than full fine-tuning:
-
-```bash
 # Install training dependencies
 pip install transformers peft trl datasets accelerate
 
@@ -611,21 +559,21 @@ model = AutoModelForCausalLM.from_pretrained(model_id, load_in_4bit=True)
 tokenizer = AutoTokenizer.from_pretrained(model_id)
 
 lora_config = LoraConfig(
-    r=16, lora_alpha=32, target_modules=["q_proj", "v_proj"],
-    lora_dropout=0.05, task_type="CAUSAL_LM"
+ r=16, lora_alpha=32, target_modules=["q_proj", "v_proj"],
+ lora_dropout=0.05, task_type="CAUSAL_LM"
 )
 model = get_peft_model(model, lora_config)
 
 trainer = SFTTrainer(
-    model=model,
-    train_dataset=dataset,
-    args=TrainingArguments(
-        output_dir="./sql-codellama-lora",
-        num_train_epochs=3,
-        per_device_train_batch_size=4,
-        learning_rate=2e-4,
-    ),
-    dataset_text_field="output"
+ model=model,
+ train_dataset=dataset,
+ args=TrainingArguments(
+ output_dir="./sql-codellama-lora",
+ num_train_epochs=3,
+ per_device_train_batch_size=4,
+ learning_rate=2e-4,
+ ),
+ dataset_text_field="output"
 )
 trainer.train()
 model.save_pretrained("./sql-codellama-lora")
@@ -646,45 +594,45 @@ import hashlib
 from datetime import datetime
 
 class SQLGenerationTracker:
-    def __init__(self, db_path: str = "generation_quality.db"):
-        self.conn = sqlite3.connect(db_path)
-        self._init_db()
+ def __init__(self, db_path: str = "generation_quality.db"):
+ self.conn = sqlite3.connect(db_path)
+ self._init_db()
 
-    def _init_db(self):
-        self.conn.execute("""
-            CREATE TABLE IF NOT EXISTS generations (
-                id INTEGER PRIMARY KEY,
-                query_hash TEXT,
-                natural_language TEXT,
-                generated_sql TEXT,
-                execution_success BOOLEAN,
-                result_count INTEGER,
-                execution_ms INTEGER,
-                user_rating INTEGER,
-                created_at TEXT
-            )
-        """)
-        self.conn.commit()
+ def _init_db(self):
+ self.conn.execute("""
+ CREATE TABLE IF NOT EXISTS generations (
+ id INTEGER PRIMARY KEY,
+ query_hash TEXT,
+ natural_language TEXT,
+ generated_sql TEXT,
+ execution_success BOOLEAN,
+ result_count INTEGER,
+ execution_ms INTEGER,
+ user_rating INTEGER,
+ created_at TEXT
+ )
+ """)
+ self.conn.commit()
 
-    def log_generation(self, nl_query: str, sql: str,
-                       success: bool, result_count: int, exec_ms: int):
-        q_hash = hashlib.md5(nl_query.encode()).hexdigest()
-        self.conn.execute("""
-            INSERT INTO generations
-            (query_hash, natural_language, generated_sql,
-             execution_success, result_count, execution_ms, created_at)
-            VALUES (?, ?, ?, ?, ?, ?, ?)
-        """, (q_hash, nl_query, sql, success, result_count, exec_ms,
-              datetime.now().isoformat()))
-        self.conn.commit()
+ def log_generation(self, nl_query: str, sql: str,
+ success: bool, result_count: int, exec_ms: int):
+ q_hash = hashlib.md5(nl_query.encode()).hexdigest()
+ self.conn.execute("""
+ INSERT INTO generations
+ (query_hash, natural_language, generated_sql,
+ execution_success, result_count, execution_ms, created_at)
+ VALUES (?, ?, ?, ?, ?, ?, ?)
+ """, (q_hash, nl_query, sql, success, result_count, exec_ms,
+ datetime.now().isoformat()))
+ self.conn.commit()
 
-    def get_success_rate(self, days: int = 7) -> float:
-        result = self.conn.execute("""
-            SELECT AVG(CAST(execution_success AS FLOAT))
-            FROM generations
-            WHERE created_at > datetime('now', ?)
-        """, (f"-{days} days",)).fetchone()
-        return result[0] or 0.0
+ def get_success_rate(self, days: int = 7) -> float:
+ result = self.conn.execute("""
+ SELECT AVG(CAST(execution_success AS FLOAT))
+ FROM generations
+ WHERE created_at > datetime('now', ?)
+ """, (f"-{days} days",)).fetchone()
+ return result[0] or 0.0
 ```
 
 Track success rate over time. A success rate below 85% signals the model needs retraining on new schema patterns. A sudden drop in success rate usually indicates a schema migration that introduced new table or column names the model has not seen.

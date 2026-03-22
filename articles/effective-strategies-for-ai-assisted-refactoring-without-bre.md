@@ -19,15 +19,6 @@ AI coding assistants can make legacy code refactoring significantly safer by gen
 
 This guide covers practical strategies for AI-assisted refactoring that keep your test suite intact.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Step 3**: Gradually update the controller to use the new service.
-- **Commit with clear message**: git commit -m "Refactor: [what changed] - all tests green, coverage +2%" ``` This ensures you're not just refactoring blindly but actively improving code quality metrics.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-
 ## Table of Contents
 
 - [The Core Principle: Small, Verifiable Changes](#the-core-principle-small-verifiable-changes)

@@ -18,19 +18,6 @@ voice-checked: true
 
 When working with dbt (data build tool), defining models from existing database tables can feel repetitive. You examine each source table, determine the appropriate transformation logic, and write SQL files with columns, tests, and documentation. AI tools now automate this process, taking raw database table schemas and generating ready-to-use dbt model definitions.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **These often integrate with**: your warehouse to read schemas directly, generating configurations without manual schema copying.
-- **Export schema**: Run `DESCRIBE TABLE` or export schema from your data warehouse
-
-2.
-- **Generate models**: Use your AI tool to create initial files
-
-3.
-
 ## Table of Contents
 
 - [The Problem with Manual dbt Model Creation](#the-problem-with-manual-dbt-model-creation)

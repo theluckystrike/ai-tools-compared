@@ -20,16 +20,6 @@ intent-checked: true
 Pair programming with AI has shifted from novelty to workflow standard. The tool you pick affects edit speed, context accuracy, and cost per session. This comparison covers the five most-used AI pair programming platforms: Claude Code, GitHub Copilot Chat, Cursor Composer, Aider, and Continue.dev.
 
 
-## Key Takeaways
-
-- **For tight budgets**: Copilot Chat ($10/mo) covers 80% of use cases for teams that don't need complex multi-file reasoning.
-- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-- **The tool you pick affects edit speed**: context accuracy, and cost per session.
-- **It supports local LLMs**: Claude, GPT-4, and custom backends.
-- **Copilot → Claude Code**: Learn CLI integration; expect faster multi-file workflows
-2.
-- **For compliance/privacy**: Continue.dev (free, local models) or self-hosted Aider.
-
 ## Claude Code (Anthropic)
 
 Claude Code is the native IDE integration for Claude Opus and Sonnet. It ships with Claude's web interface but also works as a CLI tool for deep editor integration.

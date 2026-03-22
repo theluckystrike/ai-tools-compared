@@ -17,15 +17,6 @@ intent-checked: true
 
 AI tools excel at generating CI/CD pipeline configurations because YAML syntax is repetitive and well-documented in training data. The challenge isn't syntax—it's capturing your specific workflow requirements, orchestration logic, and service-specific details. Claude 3.5 Sonnet handles complex multi-stage pipelines and conditional logic better than GitHub Copilot, while Cursor's embedded editor integrates smoothly with local YAML editing. For GitHub Actions, all three tools produce working starter configs. For CircleCI's more complex orb system and GitLab CI's dynamic pipeline generation, Claude edges ahead due to superior reasoning about configuration semantics.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Claude 3.5 Sonnet handles**: complex multi-stage pipelines and conditional logic better than GitHub Copilot, while Cursor's embedded editor integrates smoothly with local YAML editing.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-
 ## Table of Contents
 
 - [Why AI Helps with CI/CD Configuration](#why-ai-helps-with-cicd-configuration)

@@ -29,15 +29,6 @@ Fiction writers seeking AI assistance face a crowded market, but two platforms c
 | Image Generation | No | Yes (Opus tier) |
 | Best For | Guided drafting and revision | Controlled long-form fiction |
 
-## Key Takeaways
-
-- **This comparison breaks down**: the technical capabilities, customization options, and integration possibilities that matter to developers and power users.
-- **For casual writers (1 novel/month)**: NovelAI's Basic tier is most economical.
-- **Sudowrite uses a fine-tuned**: version of GPT (older generation, pre-GPT-4).
-- **Use "Story Engine" to**: generate opening scene 3.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-
 ## Table of Contents
 
 - [What is Sudowrite?](#what-is-sudowrite)

@@ -17,24 +17,9 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Dependency analysis is one of the highest-ROI applications for AI in engineering. A dependency graph can tell you what depends on what — but understanding *why*, predicting the blast radius of an upgrade, and prioritizing which vulnerabilities to fix first requires reasoning that pure graph analysis can't do. AI bridges that gap.
 
-## Key Takeaways
-
-- **AFFECTED_DEPENDENTS**: Which dependents are most likely to need code changes?
-3.
-- **Circular dependency explanation**: Not just "A→B→A exists" but "this cycle forms because auth imports config which imports auth for logging"
-2.
-- **Upgrade impact analysis**: "If I upgrade lodash from 4.17.15 to 4.17.21, which of my 47 dependencies actually use it?"
-3.
-- **ROOT_CAUSE**: Why does this cycle likely exist? (1-2 sentences)
-2.
-- **BREAK_STRATEGY**: Most practical way to break the cycle
-3.
-- **CODE_CHANGE**: Describe the specific refactoring needed
-4.
-
 ## Three Problems AI Solves Well
 
-1. **Circular dependency explanation**: Not just "A→B→A exists" but "this cycle forms because auth imports config which imports auth for logging"
+1. **Circular dependency explanation**: Not just "A→B→An exists" but "this cycle forms because auth imports config which imports auth for logging"
 2. **Upgrade impact analysis**: "If I upgrade lodash from 4.17.15 to 4.17.21, which of my 47 dependencies actually use it?"
 3. **Vulnerability prioritization**: "Of these 12 CVEs, which are exploitable given my actual call graph?"
 

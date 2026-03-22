@@ -17,20 +17,6 @@ voice-checked: true
 
 Use the fast model (1 credit per request) for quick completions, boilerplate, and simple refactoring; use the slow model (5-10 credits per request) for deep debugging, architectural analysis, and multi-file reasoning. Credits renew monthly, and consumption scales with context window size and response length. Most developers find that roughly 80% of tasks work well with the fast model, reserving slow model credits for the 20% that need deeper analysis.
 
-## Key Takeaways
-
-- **Most developers find that**: roughly 80% of tasks work well with the fast model, reserving slow model credits for the 20% that need deeper analysis.
-- **This system replaces the**: traditional unlimited query model found in the free tier, providing more control over AI usage while enabling access to more powerful models.
-- **Fast model approach (1 credit)**: ```
-User: "Fix the auth error in login.js"
-Fast model: "Add null check before accessing user.token"
-```
-Quick fix, might work, but lacks context.
-- **Slow model approach (8 credits)**: ```
-User: "Fix the auth error in login.js.
-- **We use JWT with**: refresh tokens stored in httpOnly cookies.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-
 ## Table of Contents
 
 - [What Are Cursor Pro Credits?](#what-are-cursor-pro-credits)

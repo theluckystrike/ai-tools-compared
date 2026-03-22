@@ -17,15 +17,6 @@ voice-checked: true
 
 This guide compares the strengths and weaknesses of each tool for this specific task. Choose the tool that best matches your workflow, budget, and technical requirements.
 
-## Key Takeaways
-
-- **Choose the tool that**: best matches your workflow, budget, and technical requirements.
-- **You can explain that**: your application uses SQLAlchemy 2.0 syntax or requires specific metadata binding, and Cursor adjusts its output accordingly.
-- **You can start with**: "create an user factory fixture" and then add "add support for admin and premium user types with appropriate default fields" in a follow-up message.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-- **Use AI-generated tests as**: a starting point, then add cases that cover your unique requirements and failure modes.
-- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-
 ## Table of Contents
 
 - [Understanding the Core Differences](#understanding-the-core-differences)

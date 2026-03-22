@@ -290,6 +290,7 @@ A: GitHub's UI is good for simple flows; AI tools are 10x faster for complex mul
 - [Best CI/CD Tools Comparison 2026](/ai-tools-compared)
 - [GitHub Actions Caching Best Practices](/ai-tools-compared)
 - [Secrets Management in GitHub Actions](/ai-tools-compared)
+- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 
 ---
 

@@ -17,15 +17,6 @@ voice-checked: true
 
 AI assistants debug CSS custom property inheritance failures in Shadow DOM by immediately recognizing that custom properties cannot cross shadow boundaries without explicit exposure, and recommending the `--inherit` CSS property as the solution. The best AI assistants explain why variables fail to propagate (shadow encapsulation blocks them), suggest adding `--theme-color: var(--theme-color)` paired with `--inherit` to host styles, and help identify variable shadowing conflicts or incorrect `:host` selector usage.
 
-## Key Takeaways
-
-- **However**: it will fall back to gray (`#ccc`) because `--theme-color` does not automatically penetrate the shadow boundary.
-- **Mention the browser and**: version - Some inheritance behaviors vary across browsers The best AI assistants respond with diagnosis that considers multiple failure modes.
-- **The all-property shortcut**: CSS properties passed through shadow boundaries must be individually listed unless you use a CSS-wide keyword.
-- **The best assistants recognize**: Shadow DOM terminology, understand the difference between open and closed modes, and can explain the cascade behavior within encapsulated contexts.
-- **AI tools sometimes recommend**: patterns that work in Chrome but fail elsewhere.
-- **Recommends using CSS-in-JS instead**: - Wrong.
-
 ## Table of Contents
 
 - [Understanding Shadow DOM and Custom Property Inheritance](#understanding-shadow-dom-and-custom-property-inheritance)

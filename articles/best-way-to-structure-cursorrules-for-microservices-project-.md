@@ -18,15 +18,6 @@ voice-checked: true
 
 CursorRules offer a powerful way to customize AI behavior for specific project types, but structuring them effectively for microservices architectures with shared protobuf definitions requires careful planning. This guide provides practical patterns for organizing your CursorRules files to maximize AI assistance across complex distributed systems.
 
-## Key Takeaways
-
-- **Test backward compatibility warnings**: ## FAQ Q: Can I use CursorRules with Buf Schema Registry instead of local proto files? Yes.
-- **When your team uses**: protobuf for defining these contracts, the AI needs to understand the relationship between generated code and the underlying proto definitions.
-- **Group them into shared**: (used by two or more services) and service-local categories.
-- **Use `protoc --descriptor_set_out=descriptor.pb` to**: produce machine-readable schema references the AI can parse.
-- ****Q**: Our services use different languages (Go, Java, TypeScript).
-- **The root-level `code_generation` block can hold all three plugin configs simultaneously**: Cursor picks the right one based on the file extension it is editing.
-
 ## Table of Contents
 
 - [Understanding the Microservices Challenge](#understanding-the-microservices-challenge)

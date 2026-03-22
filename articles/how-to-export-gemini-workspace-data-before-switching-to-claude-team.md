@@ -17,14 +17,6 @@ voice-checked: true
 
 To export your Gemini workspace data before switching to Claude Team, use Google Takeout at takeout.google.com to download your conversation history, custom Gems, and settings as JSON files. Back up your configuration, parse the exported JSON programmatically if needed, and document your custom instructions and prompts so you can recreate them in Claude. The process takes minutes to set up, though Google may need hours to prepare large archives.
 
-## Key Takeaways
-
-- **Export separately - Use**: both Takeout and manual copy-paste for critical data 4.
-- **To export your Gemini**: workspace data before switching to Claude Team, use Google Takeout at takeout.google.com to download your conversation history, custom Gems, and settings as JSON files.
-- **You can choose to**: receive a download link via email, add files to Google Drive, or send to cloud storage providers.
-- **Claude can read documents**: you upload directly, or you can use copy-paste workflows.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-
 ## Table of Contents
 
 - [Why Export Your Gemini Workspace Data](#why-export-your-gemini-workspace-data)
@@ -345,5 +337,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Export Perplexity Collections Before Switching to ChatGPT Se](/ai-tools-compared/export-perplexity-collections-before-switching-to-chatgpt-se/)
 - [How to Export Grammarly Personal Dictionary Before Switching](/ai-tools-compared/how-to-export-grammarly-personal-dictionary-before-switching/)
 - [Switching from ChatGPT Voice to Gemini Live Conversation](/ai-tools-compared/switching-from-chatgpt-voice-to-gemini-live-conversation-differences/)
+- [Best Hot Desking Software for Hybrid Offices with Under 100](https://theluckystrike.github.io/remote-work-tools/best-hot-desking-software-for-hybrid-offices-with-under-100-employees-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

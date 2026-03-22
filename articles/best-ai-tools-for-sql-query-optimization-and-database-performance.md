@@ -17,25 +17,6 @@ intent-checked: true
 
 SQL optimization requires understanding execution plans, index strategies, and data distribution—tasks where AI excels. Claude, Copilot, and ChatGPT analyze EXPLAIN output differently: Claude understands complex execution plan context and recommends structural changes; Copilot suggests quick fixes in your code editor; ChatGPT excels at explaining why a query is slow. This comparison shows real query examples, actual EXPLAIN output analysis, and which tool solves which bottleneck.
 
-## Key Takeaways
-
-- **Can I use these**: tools with a distributed team across time zones? Most modern tools support asynchronous workflows that work well across time zones.
-- Missing index on orders.user_id
-2.
-- **Table scan on users**: because of the WHERE clause 3.
-- **Full users table scan**: Every user loaded before filtering
-3.
-- **Hash aggregation doing DISTINCT**: Expensive operation at query end
-
-Claude recommends:
-```sql
--- 1.
-- **Add index on activities(created_at**: user_id)
-CREATE INDEX idx_activities_created_user
-  ON activities(created_at DESC, user_id);
-
--- 2.
-
 ## Table of Contents
 
 - [The Challenge: Why SQL Optimization Needs AI](#the-challenge-why-sql-optimization-needs-ai)

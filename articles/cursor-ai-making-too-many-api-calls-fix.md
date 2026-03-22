@@ -18,15 +18,6 @@ tags: [ai-tools-compared, troubleshooting, artificial-intelligence, api]
 
 To fix Cursor AI making too many API calls, reduce the context window size to 4096-8192 tokens in Cursor settings, clear long-running chat threads, and disable AI features you do not actively use (autocomplete, real-time analysis, tab completion). Also exclude large directories like `node_modules` and `dist` from indexing by adding them to your `.cursorrules` file's `indexExclusions` list. These changes dramatically cut background API consumption.
 
-## Key Takeaways
-
-- **Set a lower value**: (4096 or 8192 tokens works for most projects) 5.
-- **Disable "AI Autocomplete" if**: you prefer manual coding 4.
-- **Track which features consume**: the most API calls 4.
-- **Understanding these causes helps**: you target the right solution.
-- **Disable those you do**: not actively use.
-- **Configure automatic model switching**: based on task type Smaller models use significantly fewer tokens while maintaining adequate performance for routine coding assistance.
-
 ## Table of Contents
 
 - [Understanding Cursor AI's API Usage](#understanding-cursor-ais-api-usage)

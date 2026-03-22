@@ -18,16 +18,6 @@ intent-checked: true
 
 For HRTF personalization and binaural rendering code, Claude and GPT-4 are the strongest AI assistants, producing working implementations for Web Audio API, FMOD, and Unity out of the box. For ambisonics decoding and object-based audio scene management, Claude's larger context window handles complex spatial audio codebases more effectively. This guide covers practical workflows for using AI tools to build spatial audio pipelines across VR, gaming, and interactive media.
 
-## Key Takeaways
-
-- **Different platforms use incompatible**: spatial audio formats, so verify that code suggestions match your deployment targets.
-- **Start with reference implementations**: Use AI to generate working code, then study and customize
-2.
-- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
-- **The best AI assistants**: for spatial audio work should also understand acoustic modeling concepts, including room impulse responses, reflection simulation, and distance attenuation models.
-- **Game developers use these**: tools to implement adaptive audio that responds to gameplay events, player location, and environmental changes.
-- **Research teams working on**: acoustic simulation use AI assistants to implement ray-tracing algorithms and create synthetic training data.
-
 ## Table of Contents
 
 - [What to Look for in AI Tools for Spatial Audio](#what-to-look-for-in-ai-tools-for-spatial-audio)

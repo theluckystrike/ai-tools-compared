@@ -20,19 +20,6 @@ When you paste code into an AI coding assistant, that code travels across networ
 
 This guide provides practical methods to assess the encryption protecting your code as it moves between your machine and AI service endpoints.
 
-## Key Takeaways
-
-- **Check Documentation for Protocol**: Support Most AI coding tool documentation specifies which TLS versions they support.
-- **For example**: a well-documented tool might state:
-
-```
-Transport Security: All API communications use TLS 1.3 with
-certificate pinning.
-- **When you use AI coding tools**: code snippets get transmitted to external services for processing.
-- **On macOS**: you can use Charles Proxy or similar tools.
-- **Traffic capture**: Use a local proxy to verify all traffic uses HTTPS.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-
 ## Table of Contents
 
 - [Why Data-in-Transit Encryption Matters](#why-data-in-transit-encryption-matters)

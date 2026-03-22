@@ -18,27 +18,6 @@ voice-checked: true
 
 Swift compiler errors can be notoriously cryptic, especially when they surface during Xcode build phases. From type mismatches to complex generic constraints, the compiler's error messages often point to the symptom rather than the root cause. Finding the right AI assistant to help diagnose and fix these errors can save hours of frustration and accelerate your iOS or macOS development workflow.
 
-## Key Takeaways
-
-- **The best choice depends**: on your specific needs, workflow preferences, and budget.
-- **AI assistants should explain**: why `$` (the binding operator) only works in instance properties and view bodies, not static properties.
-- **Generic constraints**: Where `where` clauses and associated types apply
-
-5.
-- **Here's my code**: ```swift
-struct User {
-    let email: String?
-}
-
-func validateUser(_ user: User) -> Int {
-    return user.email.count
-}
-```
-
-I'm using Swift 5.9 on iOS 17.
-- **From type mismatches to**: complex generic constraints, the compiler's error messages often point to the symptom rather than the root cause.
-- **For Swift compiler errors**: Copilot often suggests fixes based on patterns it has learned from millions of open-source Swift repositories.
-
 ## Table of Contents
 
 - [Understanding Swift Compiler Errors in Xcode Build Phases](#understanding-swift-compiler-errors-in-xcode-build-phases)
@@ -390,7 +369,7 @@ xcode-select --print-path
 
 ### Cursor Setup
 
-Cursor is not officially an Xcode editor. Use it alongside:
+Cursor is not officially a Xcode editor. Use it alongside:
 
 ```bash
 # Open project in Cursor

@@ -18,15 +18,6 @@ voice-checked: true
 
 Mocking complex third-party libraries in Jest remains one of the most time-consuming aspects of writing effective unit tests. Libraries like AWS SDK, Stripe, Firebase, or complex HTTP clients have intricate APIs with nested methods, asynchronous operations, and configuration options that make manual mocking error-prone and tedious. AI coding assistants have become valuable tools for generating accurate Jest mock implementations that save developers hours of debugging time.
 
-## Key Takeaways
-
-- **The most effective prompts**: follow a specific pattern: show the AI your actual application code that uses the library, then ask it to generate the mock.
-- **Instead**: focus on mocking only the methods your code uses.
-- **Mocking complex third-party libraries**: in Jest remains one of the most time-consuming aspects of writing effective unit tests.
-- **Incorrect mock shapes cause type errors, but TypeScript's type system can also guide you toward correct implementations**: if you know how to use it.
-- **By providing context about**: the specific methods your code uses, you can receive accurate mock setups that match your actual usage patterns.
-- **Use `jest.clearAllMocks()` in a**: global `beforeEach` or `afterEach` rather than manually resetting individual mocks.
-
 ## Table of Contents
 
 - [The Challenge of Mocking Complex Libraries](#the-challenge-of-mocking-complex-libraries)

@@ -17,15 +17,6 @@ voice-checked: true
 
 The best approach combines Whisper for transcription with Claude or GPT-4 for processing—this stack handles technical terminology well, produces accurate timestamps, and outputs publication-ready show notes. For maximum privacy, use Whisper + Ollama locally; for managed infrastructure, pair AssemblyAI's speaker diarization with Claude's long-context understanding. This guide compares the most effective options and provides code examples for each combination.
 
-## Key Takeaways
-
-- **For longer episodes**: the `large-v3` model provides the best transcription accuracy at the cost of higher GPU memory and processing time.
-- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
-- **For maximum privacy**: use Whisper + Ollama locally; for managed infrastructure, pair AssemblyAI's speaker diarization with Claude's long-context understanding.
-- **This guide compares the**: most effective options and provides code examples for each combination.
-- **The best approach combines**: transcription services with language models.
-- **For podcast use**: the `--verbose True` flag provides more detailed segment timing.
-
 ## Why AI for Show Notes
 
 

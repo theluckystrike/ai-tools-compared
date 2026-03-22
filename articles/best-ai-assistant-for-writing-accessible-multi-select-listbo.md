@@ -14,22 +14,6 @@ intent-checked: false
 voice-checked: false
 tags: [ai-tools-compared, comparison, accessibility, frontend, best-of, artificial-intelligence]
 ---
----
-
-layout: default
-title: "Best AI Assistant for Writing Accessible Multi Select"
-description: "A practical comparison of AI coding assistants for building WCAG-compliant multi-select listbox components with ARIA attributes and keyboard navigation"
-date: 2026-03-21
-last_modified_at: 2026-03-21
-author: "AI Tools Compared"
-permalink: /best-ai-assistant-for-writing-accessible-multi-select-listbo/
-reviewed: true
-score: 7
-categories: [comparisons]
-intent-checked: false
-voice-checked: false
-tags: [ai-tools-compared, comparison, accessibility, frontend, best-of, artificial-intelligence]
----
 
 
 | Tool | Accessibility Knowledge | ARIA Support | WCAG Compliance | Pricing |
@@ -41,18 +25,7 @@ tags: [ai-tools-compared, comparison, accessibility, frontend, best-of, artifici
 | axe DevTools | Dedicated a11y testing | Rule-based ARIA validation | Automated WCAG audits | Free browser extension |
 
 
-
-
 Building accessible multi-select listbox components requires careful attention to ARIA specifications, keyboard interactions, and screen reader compatibility. The right AI assistant can significantly speed up development while ensuring your component meets WCAG 2.1 AA standards. This guide evaluates how different AI coding tools handle the complexity of accessible listbox implementation.
-
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Use it with Firefox**: for the best ARIA support.
-- **The most widely used**: screen readers respond differently to ARIA patterns, so testing across multiple tools surfaces edge cases that manual code review misses.
-- **NVDA (Windows) is the**: most popular free screen reader.
-- **Most tools skip this unless prompted**: even though it is critical for screen reader users.
-- ** ##**: Frequently Asked Questions Who is this article written for? This article is written for developers, technical professionals, and power users who want practical guidance.
 
 ## Table of Contents
 
@@ -322,7 +295,6 @@ const GroupedListbox = ({ groups, selected }) => {
 **Virtual scrolling**: Large option lists (500+ items) require virtual rendering for performance. AI tools rarely combine the listbox ARIA pattern with virtualization correctly. When using libraries like react-window, you must maintain a full options array in state for aria-setsize and use aria-posinset to communicate true position even when only a slice renders in the DOM.
 
 **Disabled options**: Options can carry aria-disabled="true" rather than the native disabled attribute (which does not apply to li elements). Keyboard navigation should skip disabled options in most implementations—Arrow keys should jump past them rather than landing on an uninteractable item. Verify that AI-generated code implements this skip logic.
-
 
 
 ## Frequently Asked Questions

@@ -18,15 +18,6 @@ voice-checked: true
 
 Finding affordable AI tools requires understanding the true cost structure. This guide breaks down the cheapest options and explains what you get at each price point.
 
-## Key Takeaways
-
-- **Most developers find that**: one of these free alternatives meets 80-90% of their Copilot needs.
-- **If you have used**: the tool for at least 3 months and plan to continue, the annual discount usually makes sense.
-- **Once that happens, Codeium free is the closest equivalent experience**: unlimited completions, similar IDE integration, and a chat feature Tabnine free lacks entirely.
-- **The "best" free alternative**: depends entirely on your particular needs and constraints.
-- **Developers who regularly use**: AI completions hit the 2,000 completion ceiling within a few days of active coding.
-- **It offers unlimited code completions**: chat assistance, and supports over 70 programming languages.
-
 ## Table of Contents
 
 - [Why Look Beyond GitHub Copilot](#why-look-beyond-github-copilot)

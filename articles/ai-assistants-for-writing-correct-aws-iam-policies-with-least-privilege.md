@@ -17,18 +17,6 @@ voice-checked: true
 
 AI assistants can help you write AWS IAM policies that follow the principle of least privilege by suggesting specific actions, resources, and conditions based on your workload requirements. The key is providing clear context about what your application actually needs to do, rather than requesting broad permissions. By using AI to analyze your CloudTrail logs or architecture and iterating on the suggestions, you can create policies that are both secure and minimal.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Uses the AWS SDK**: for Python (boto3) The function only processes files that start with "raw-" prefix.
-- **A complex policy with**: full context might cost $0.05-0.10 - GPT-4 (API): $0.03 per 1K input, $0.06 per 1K output.
-- **Does AWS offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Query RDS PostgreSQL database (host**: prod-db.*.rds.amazonaws.com)
-   - Tables: users, orders, products
-   - Operations: SELECT, INSERT, UPDATE (not DELETE or DDL)
-4.
-
 ## Table of Contents
 
 - [The Challenge of Least Privilege in IAM](#the-challenge-of-least-privilege-in-iam)

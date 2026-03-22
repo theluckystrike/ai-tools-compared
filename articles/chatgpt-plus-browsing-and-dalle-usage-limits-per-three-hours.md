@@ -17,21 +17,6 @@ voice-checked: true
 
 ChatGPT Plus ($20/month) limits DALL-E image generation to approximately 50 images per three-hour window and web browsing to around 80 queries per three hours, though OpenAI adjusts these caps without public announcement. When you hit the limit, the feature grays out and shows an approximate reset time. For higher volume, use the DALL-E API directly (billed per image at $0.04-$0.12 depending on resolution) to bypass subscription caps entirely.
 
-## Key Takeaways
-
-- **For higher volume**: use the DALL-E API directly (billed per image at $0.04-$0.12 depending on resolution) to bypass subscription caps entirely.
-- **Users commonly report seeing**: between 40 and 60 images available per three-hour period under normal conditions.
-- **At $0.04 per standard image, 500 images costs $20**: the same as a full month of Plus.
-- **Switch to free tier**: Limited but functional for basic queries
-
-3.
-- **Use precise descriptions**: Detailed prompts reduce the need for regenerations
-
-3.
-- **Save successful prompts**: Document prompts that produce good results for future use
-
-4.
-
 ## Table of Contents
 
 - [ChatGPT Plus: Current Feature Set](#chatgpt-plus-current-feature-set)

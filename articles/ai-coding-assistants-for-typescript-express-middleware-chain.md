@@ -17,15 +17,6 @@ voice-checked: true
 
 Use Claude Code to generate type-safe Express middleware chains that handle authentication, validation, and error propagation correctly. TypeScript Express middleware requires proper typing and understanding of async middleware patterns—the best AI assistants recognize these requirements and generate middleware that maintains type safety across the entire chain.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Claude Code works best through its CLI**: making it ideal for developers who prefer terminal-based workflows.
-- **Does Express offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Copilot works within GitHub's ecosystem**: making it convenient if your project uses GitHub Actions for CI/CD or GitHub Packages for distribution.
-
 ## Table of Contents
 
 - [What Developers Need for Express Middleware](#what-developers-need-for-express-middleware)

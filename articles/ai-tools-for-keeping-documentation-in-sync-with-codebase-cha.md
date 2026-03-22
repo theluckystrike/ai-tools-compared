@@ -23,13 +23,6 @@ Every developer has experienced it. You ship a feature, update the code, but for
 
 Traditional solutions include manual review processes, documentation-as-code approaches, and static site generators with build-time validation. But these require discipline and still leave gaps. AI-powered tools now offer a new approach: automatic detection and correction of documentation drift.
 
-## Key Takeaways
-
-- **Documentation drift costs teams hours**: every week spent reconciling outdated docs is time not spent on features.
-- **AI tools can reduce manual doc updates by 70%**: by automatically detecting changes and proposing updates.
-- **The best approach combines detection + generation**: tools that both identify drift and suggest fixes outperform those that only flag issues.
-- **Integration with CI/CD matters**: the most effective tools work as part of your existing workflow, not as separate processes.
-
 ## Table of Contents
 
 - [The Problem: Documentation Rot](#the-problem-documentation-rot)

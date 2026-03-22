@@ -17,15 +17,6 @@ voice-checked: true
 
 Claude Code can be configured to understand and respect your team's pull request review checklist, helping maintain consistent code quality across your codebase. By setting up the right configuration files and providing proper context, you can make Claude Code an effective partner in your code review process.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Does Claude offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **The most effective approach**: involves creating a CLAUDE.md file that documents your team's review requirements.
-
 ## Table of Contents
 
 - [Understanding Pull Request Checklist Context](#understanding-pull-request-checklist-context)
@@ -454,4 +445,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Claude Code Runbook Documentation Guide](/ai-tools-compared/claude-code-runbook-documentation-guide/)
 - [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
 - [Does Claude Code Send Terminal Output to Anthropic Servers](/ai-tools-compared/does-claude-code-send-terminal-output-to-anthropic-servers-p/)
+- [Best Practices for Async Pull Request Reviews on](https://theluckystrike.github.io/remote-work-tools/best-practices-for-async-pull-request-reviews-on-distributed/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

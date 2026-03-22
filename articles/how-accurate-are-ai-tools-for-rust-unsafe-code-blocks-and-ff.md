@@ -17,19 +17,6 @@ voice-checked: true
 
 AI tools generate incorrect unsafe code about 30% of the time due to missing proper synchronization, memory layout assumptions, and FFI safety violations. This guide shows which unsafe patterns are safe to generate with AI and which absolutely require expert manual review.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Similarly, AI tools sometimes use Rust's `usize` where `libc::size_t` is required**: these are the same size on most platforms, but the distinction matters for explicit ABI guarantees.
-- **AI tools are most**: useful for writing the safe wrapper layer around `bindgen`-generated raw bindings, not for hand-crafting the raw bindings themselves.
-- **Lifetime violations**: ```rust
-// BAD - References outlive source
-let ptr = data.as_ptr();
-drop(data);
-let value = *ptr;  // Use-after-free!
-- **Does Rust offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-
 ## Table of Contents
 
 - [Understanding the Challenge](#understanding-the-challenge)

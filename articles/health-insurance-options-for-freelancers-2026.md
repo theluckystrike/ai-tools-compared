@@ -17,15 +17,6 @@ tags: [ai-tools-compared]
 
 As a freelancer, navigating health insurance options can feel overwhelming. Without an employer providing coverage, you shoulder the entire premium yourself while also dealing with a bewildering array of plan types, deductible structures, and coverage options. This guide walks through the main paths to coverage available in 2026, along with practical tools and code examples to help you manage your insurance decisions.
 
-## Key Takeaways
-
-- **If you have used**: the tool for at least 3 months and plan to continue, the annual discount usually makes sense.
-- **In 2026**: subsidies are available for incomes up to 400% of FPL.
-- **Consider catastrophic coverage if**: young and healthy: For freelancers under 30, catastrophic plans have lower premiums but high deductibles.
-- **Is the annual plan**: worth it over monthly billing? Annual plans typically save 15-30% compared to monthly billing.
-- **Discounts of 25-50% are**: common for qualifying organizations.
-- **As a freelancer**: navigating health insurance options can feel overwhelming.
-
 ## Table of Contents
 
 - [Understanding Your Coverage Options](#understanding-your-coverage-options)

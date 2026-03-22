@@ -17,15 +17,6 @@ intent-checked: true
 
 No, Gemini Advanced AI processing does not count against your Google One storage quota. Conversations, generated text responses, and AI-powered features in Gmail, Docs, and Sheets run on Google's servers without creating persistent files in your Drive. What does consume storage is any content you explicitly save -- exported chats, downloaded AI-generated images, and documents you choose to keep in Drive.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Gemini Advanced**: formerly known as Gemini Ultra, is included with the Google One AI Premium plan, which costs $19.99 per month in the United States.
-- **Does Gemini offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Delete from Drive to**: free storage 4.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-
 ## Table of Contents
 
 - [Understanding the Google One and Gemini Advanced Relationship](#understanding-the-google-one-and-gemini-advanced-relationship)

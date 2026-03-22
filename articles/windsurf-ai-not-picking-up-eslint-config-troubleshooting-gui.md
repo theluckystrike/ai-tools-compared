@@ -17,15 +17,6 @@ voice-checked: true
 
 Windsurf AI offers intelligent code assistance that integrates with your project's linting tools, but sometimes it fails to recognize your ESLint configuration. This creates a frustrating experience where the AI suggests code that violates your project's style guidelines or ignores your custom rules. This guide walks through the most common causes and practical solutions to get Windsurf properly detecting your ESLint setup.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **This guide walks through**: the most common causes and practical solutions to get Windsurf properly detecting your ESLint setup.
-- **Does Windsurf offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **If you don't see**: errors after 2-3 seconds, your config isn't loading.
-
 ## Table of Contents
 
 - [Why Windsurf Fails to Detect ESLint Config](#why-windsurf-fails-to-detect-eslint-config)

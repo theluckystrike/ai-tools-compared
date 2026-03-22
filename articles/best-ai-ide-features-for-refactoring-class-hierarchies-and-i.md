@@ -18,16 +18,6 @@ voice-checked: true
 
 Use JetBrains IDEs with AI-powered visual hierarchy analysis to extract methods, promote classes, and reorganize inheritance safely with automated refactoring. VS Code with AI extensions requires more manual verification but works well for smaller class trees. This guide covers proven techniques for using AI IDE features to safely refactor class hierarchies without introducing runtime errors.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Unused interface implementation**: `get_tax_rate` returns 0 for most subclasses
-3.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Update all call sites**: to use the new pattern 6.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-
 ## Table of Contents
 
 - [Intelligent Hierarchy Visualization](#intelligent-hierarchy-visualization)

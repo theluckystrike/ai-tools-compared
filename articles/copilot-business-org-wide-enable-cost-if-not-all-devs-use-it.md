@@ -19,17 +19,6 @@ intent-checked: true
 
 Yes, you pay for every assigned Copilot Business seat whether developers use it or not -- $10/user/month billed annually, or $13 monthly. If you assign 50 seats but only 30 developers actively use Copilot, your effective cost rises to $16.67 per active user and you waste $200/month on idle seats. The strategies below help you maximize ROI through phased rollouts, usage monitoring, and team-based licensing.
 
-## Key Takeaways
-
-- **If you assign 50**: seats but only 30 developers actively use Copilot, your effective cost rises to $16.67 per active user and you waste $200/month on idle seats.
-- **Yes**: you pay for every assigned Copilot Business seat whether developers use it or not -- $10/user/month billed annually, or $13 monthly.
-- **For most teams this**: is 15-30 minutes per week, or $50-150/month in loaded labor cost at typical engineering salary rates.
-- **- Idle seat cost**: (Total seats − Active users) × $10
-
-- Break-even point: Org-wide enablement pays off when license management savings exceed idle seat cost.
-- **If the effective cost**: per active user ($16.67 in our example) still delivers value through time saved and improved code quality, org-wide enablement remains justified.
-- **If you have used**: the tool for at least 3 months and plan to continue, the annual discount usually makes sense.
-
 ## How Copilot Business Pricing Works
 
 

@@ -18,15 +18,6 @@ intent-checked: true
 
 Responsive design testing remains one of the most tedious aspects of web development. Manually resizing browser windows, checking each breakpoint, and verifying layout changes across devices consumes significant time. Playwright provides powerful APIs for automating these checks, and AI coding assistants can help generate these tests faster. This guide compares how different AI tools handle writing Playwright tests for responsive layout breakpoint verification.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **Responsive design testing remains**: one of the most tedious aspects of web development.
-
 ## Table of Contents
 
 - [Why Responsive Breakpoint Testing Matters](#why-responsive-breakpoint-testing-matters)

@@ -17,15 +17,6 @@ voice-checked: true
 
 To generate truly accessible frontend components with AI, you need specific prompting strategies that explicitly require semantic HTML, ARIA attributes, and keyboard navigation. Generic prompts produce visually functional but inaccessible code—this guide shows you exactly which phrases, constraints, and examples to include in your prompts to consistently get WCAG-compliant output.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **This happens because the**: base training data includes countless inaccessible examples, and the AI optimizes for common patterns rather than best practices.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **The AI generates visually**: functional code without considering screen reader compatibility, keyboard users, or color contrast requirements.
-- **Use automated tools**: screen readers, and keyboard-only navigation.
-
 ## Table of Contents
 
 - [Why Standard Prompts Fall Short](#why-standard-prompts-fall-short)

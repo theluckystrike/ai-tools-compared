@@ -17,17 +17,6 @@ voice-checked: true
 
 Migrating from Windsurf to Cursor involves more than just installing a new editor. Your project configurations, custom rules, snippets, and workflow settings need to be transferred carefully to maintain productivity. This guide walks you through the complete process of moving your project config from Windsurf to Cursor.
 
-## Key Takeaways
-
-- **Windsurf uses its own**: "rules" system and Cascade workflows, while Cursor employs "Cursor Rules" and project-specific settings.
-- **Cursor**: on the other hand, uses a `.cursor` directory with a different configuration structure.
-- **The rules file defines**: how Windsurf's AI behaves in your project, including custom instructions, file patterns, and interaction preferences.
-- **Cursor uses a similar**: but distinct configuration system that requires some manual translation.
-- **The legacy approach uses**: a `.cursorrules` file in the project root.
-- **However, review the following**: ### Git Hooks
-
-If you use Husky, lefthook, or similar tools for Git hooks, these work in Cursor without modification.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)

@@ -18,15 +18,6 @@ intent-checked: true
 
 Writing Kubernetes manifests and Helm charts involves precise YAML syntax, resource interdependencies, and security considerations. AI tools accelerate this process by generating boilerplate structures, suggesting resource limits, and catching common configuration errors—but each tool excels in different scenarios. This guide compares Copilot, Cursor, Claude, and k8sgpt with real examples, covering YAML generation, security scanning, and Helm templating workflows.
 
-## Key Takeaways
-
-- **Running cluster issues**: Use k8sgpt to diagnose failing deployments and misconfigurations.
-- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
-- **Best for**: Teams with existing Kubernetes knowledge who want faster manifest scaffolding.
-- **It's significantly better at**: complex conditional logic and values references than Copilot.
-- **Best for**: Teams building multiple Helm charts who benefit from understanding project structure and existing patterns.
-- **Use Claude when you**: have partially-written configs that need scrutiny or when you want explanations of why certain patterns matter.
-
 ## Why AI-Assisted Kubernetes Configuration Matters
 
 Kubernetes manifests demand precision. A single typo in a PersistentVolumeClaim name breaks pod startup. Resource limits set incorrectly trigger out-of-memory kills. RBAC permissions set too broadly become security vulnerabilities. Traditional documentation lookup is slow; AI code assistants accelerate manifest creation while reducing common mistakes. The tradeoff is that AI-generated configs still require review—especially for security-sensitive settings like network policies and storage access.

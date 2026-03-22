@@ -18,15 +18,6 @@ intent-checked: true
 
 AI-powered code review tools have become essential for catching bugs, enforcing style standards, and reducing security vulnerabilities before code reaches production. Unlike traditional linters that check syntax, AI reviewers understand code semantics, design patterns, and architectural implications. This guide compares the leading AI code review automation tools with practical setup examples and accuracy benchmarks.
 
-## Key Takeaways
-
-- Most tools offer free trials.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-- **It supports 40+ languages**: and provides organization-wide dashboards for code quality metrics.
-- **You can self-host it**: or use the managed cloud version.
-- **the first tool and**: the second tool serve different strengths, so combining them can cover more use cases than relying on either one alone.
-
 ## Table of Contents
 
 - [Why AI Code Review Matters](#why-ai-code-review-matters)

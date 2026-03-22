@@ -18,19 +18,6 @@ voice-checked: true
 
 Writing a good first issue description is one of the most impactful things you can do for an open source project. It lowers the barrier for new contributors, increases the likelihood of someone actually working on the issue, and helps maintainers avoid repeated questions. AI tools have become remarkably capable at helping craft these descriptions, and choosing the right one can save time while improving quality.
 
-## Key Takeaways
-
-- **Writing a good first**: issue description is one of the most impactful things you can do for an open source project.
-- **Use Cursor's chat to ask**: "Write a good first issue for improving this function's error handling"
-
-4.
-- **Our project uses Node.js**: and currently takes 10 minutes per build.
-- **Post and monitor (1 min)**: Add to GitHub, respond to clarifying comments
-
-Most of the time is step 4—editing.
-- **Copy the generated description**: to GitHub Cursor works best when you have specific code to reference.
-- **For vaguer feature requests**: you might get less useful output.
-
 ## Table of Contents
 
 - [What Makes a Good First Issue Description](#what-makes-a-good-first-issue-description)

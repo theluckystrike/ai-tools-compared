@@ -18,15 +18,6 @@ intent-checked: true
 
 Claude Code is an AI-powered CLI tool that can significantly accelerate your Node.js profiling workflow. This tutorial walks you through using Claude Code to identify performance bottlenecks, analyze CPU and memory profiles, and optimize your applications effectively.
 
-## Key Takeaways
-
-- **For example**: "clinic doctor flagged that my event loop delay is consistently above 30ms during the `/api/search` endpoint.
-- **A practical starting point**: is p99 response time under 200ms for API endpoints and heap growth under 50MB per hour under normal load.
-- **The key to useful**: analysis is providing both the profile output and the relevant source code in the same Claude Code session.
-- **Claude Code is particularly**: useful here because the pattern is easy to miss during code review but shows up clearly in profiling data.
-- **Create performance benchmarks**: Use frameworks like benchmark.js to measure the impact of optimizations.
-- **Use Claude Code for code review**: Have Claude Code review performance-critical code changes before merging.
-
 ## Table of Contents
 
 - [Why Use Claude Code for Node.js Profiling?](#why-use-claude-code-for-nodejs-profiling)
@@ -367,5 +358,6 @@ Yes. The profiling flags (`--prof`, `--inspect`) and external tools (clinic.js, 
 - [Claude Code for Taint Analysis Workflow Tutorial Guide](/ai-tools-compared/claude-code-for-taint-analysis-workflow-tutorial-guide/)
 - [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
 - [Claude Code Runbook Documentation Guide](/ai-tools-compared/claude-code-runbook-documentation-guide/)
+- [Claude Code for Faker.js Test Data Workflow Guide](https://theluckystrike.github.io/remote-work-tools/claude-code-for-faker-js-test-data-workflow-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

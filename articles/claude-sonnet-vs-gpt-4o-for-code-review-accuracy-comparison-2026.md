@@ -18,19 +18,6 @@ intent-checked: true
 
 Claude Sonnet and GPT-4o represent the frontier of AI code review capabilities, but they excel in different domains. Claude Sonnet catches more subtle logic errors and architectural issues through its reasoning approach, while GPT-4o excels at identifying common security vulnerabilities and style violations. The choice depends on your primary concern: GPT-4o for security and compliance, Claude for complex refactoring decisions and architectural improvements. Direct testing shows Claude finds ~15% more logic errors while GPT-4o finds ~20% more security issues.
 
-## Key Takeaways
-
-- **Human code review (final**: decision-making) ``` Cost per review: ~$0.03-0.05 (Claude + GPT-4o) Time per review: ~15-20 seconds (both models) vs.
-- **An attacker
-can inject SQL**: Input: " OR '1'='1
-Resulting query: SELECT * FROM users WHERE name LIKE '% OR '1'='1%'
-This bypasses the filter, returning all users.
-- **The best approach uses**: AI as a first-pass filter: let the AI flag potential issues, then humans review the AI's findings and make final decisions.
-- **Direct testing shows Claude**: finds ~15% more logic errors while GPT-4o finds ~20% more security issues.
-- **In production**: the race condition causes duplicate charges (revenue loss), while GPT-4o's issues cause operational problems and audit trail issues.
-- **More dangerous**: " OR 1=1; DROP TABLE users; --
-Could execute arbitrary SQL.
-
 ## Table of Contents
 
 - [Why AI Code Review Matters](#why-ai-code-review-matters)

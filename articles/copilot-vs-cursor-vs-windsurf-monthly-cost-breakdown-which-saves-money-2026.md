@@ -18,15 +18,6 @@ intent-checked: true
 
 Three major AI coding assistants dominate 2026: GitHub Copilot at $10-39/user, Cursor at $20 Pro or $40 Business, and Windsurf at $15-30/user. On surface, Copilot appears cheaper, but hidden costs—team licensing, API usage, compute—shift the ROI calculation. This guide breaks down every pricing tier, usage limits, team pricing structures, and cost-per-developer metrics to help you choose the lowest true cost option.
 
-## Key Takeaways
-
-- **Three major AI coding**: assistants dominate 2026: GitHub Copilot at $10-39/user, Cursor at $20 Pro or $40 Business, and Windsurf at $15-30/user.
-- **For solopreneurs and micro-teams**: Windsurf Team at $30/user offers competitive pricing with strong features.
-- **Use Cursor's free trial**: for 1 week (limited free tier) 3.
-- **Use Copilot's free 2-month**: trial for baseline 2.
-- **Use Windsurf's free tier**: to test Flow mode 4.
-- **This guide breaks down**: every pricing tier, usage limits, team pricing structures, and cost-per-developer metrics to help you choose the lowest true cost option.
-
 ## Table of Contents
 
 - [GitHub Copilot: Pricing and Hidden Costs](#github-copilot-pricing-and-hidden-costs)

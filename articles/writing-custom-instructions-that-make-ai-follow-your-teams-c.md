@@ -19,15 +19,6 @@ voice-checked: true
 
 When AI coding assistants generate release notes, version updates, or changelog entries, they often produce inconsistent formatting that doesn't match your team's established conventions. Without explicit instructions, AI tools default to generic formats that may not align with your project's documentation standards. Custom instructions solve this problem by teaching AI exactly how your team structures changelog entries.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **Use imperative mood ("Added"**: not "Adding") 2.
-- **Use Keep a Changelog**: format 2.
-- **Use imperative mood for**: all entries 4.
-
 ## Why Changelog Format Consistency Matters
 
 
@@ -350,6 +341,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How to Write Custom Instructions for AI That Follow Your](/ai-tools-compared/how-to-write-custom-instructions-for-ai-that-follow-your-teams-code-review-standards/)
 - [Writing Custom Instructions for AI Tools That Enforce Your](/ai-tools-compared/writing-custom-instructions-for-ai-tools-that-enforce-your-security-header-standards/)
 - [Configuring AI Coding Tools to Follow Your Teams Dependency](/ai-tools-compared/configuring-ai-coding-tools-to-follow-your-teams-dependency-/)
+- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

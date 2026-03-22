@@ -18,15 +18,6 @@ intent-checked: true
 
 AI-powered tools can automatically convert messy JSON API responses into clean pandas DataFrames, reducing hours of manual data wrangling to minutes. Using LLMs, specialized libraries, and AI coding assistants, you can generate transformation code that handles nested structures, inconsistent naming, and complex data types. This guide covers practical approaches including GPT-based extraction, libraries like pandas-normalize and jsontopandas, and schema inference tools that work reliably in production environments.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **For complex nested responses**: consider a two-step approach: use AI to understand the structure, then implement targeted extraction logic.
-
 ## Table of Contents
 
 - [The Common Problem](#the-common-problem)

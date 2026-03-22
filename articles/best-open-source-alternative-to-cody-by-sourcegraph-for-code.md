@@ -20,15 +20,6 @@ Cody by Sourcegraph brings AI-powered code search and assistance to developers, 
 
 This guide covers the best open source alternatives to Cody for code search, with practical implementation examples to help you choose and deploy the right solution for your workflow.
 
-## Key Takeaways
-
-- **This guide covers the**: best open source alternatives to Cody for code search, with practical implementation examples to help you choose and deploy the right solution for your workflow.
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Tabby's multi-user authentication makes**: it the better choice when 5+ developers need shared access.
-- **Tabby and Continue.dev need GPU resources for reasonable performance on 7B+ models**: an RTX 3060 or better is the practical minimum for team use.
-- **Tabby**: Continue.dev, and Sourcegraph open core all work with any Ollama-compatible or OpenAI API-compatible model, giving you freedom to upgrade as better coding models are released.
-- **It runs entirely on**: your infrastructure and supports various open source LLMs including DeepSeek Coder, Qwen2.5-Coder, StarCoder2, and CodeLlama.
-
 ## Table of Contents
 
 - [Why Look for an Open Source Alternative to Cody?](#why-look-for-an-open-source-alternative-to-cody)
@@ -270,6 +261,7 @@ For most teams replacing Cody, the recommended starting point is **Tabby** for a
 - [Continue Dev Free vs Cody Free: Open Source AI Comparison](/continue-dev-free-vs-cody-free-open-source-ai-comparison/)
 - [Copilot Code Referencing Feature: How It Handles Open Source](/copilot-code-referencing-feature-how-it-handles-open-source-/)
 - [Fine Tune Open Source Code Models for Your Codebase](/fine-tune-open-source-code-models-for-your-codebase-2026/)
+- [Best AI Assistant for Creating Open Source Project Branding](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

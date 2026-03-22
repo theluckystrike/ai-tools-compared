@@ -15,15 +15,6 @@ Nginx configuration syntax is strict, context-sensitive, and unforgiving. One wr
 
 AI code assistants now generate production-grade nginx configs from natural language descriptions. This article compares five tools head-to-head on real reverse proxy, load balancing, SSL termination, rate limiting, location block, and upstream configuration tasks.
 
-## Key Takeaways
-
-- **Correctly implements upstream block**: variables like `$upstream_response_time` and `$upstream_status`.
-- **Best for**: Basic reverse proxy setups for small teams that don't need complex load balancing or rate limiting.
-- **Best for**: Engineers working in constrained environments (minimal latency required) who only need basic reverse proxy syntax.
-- **Good at generating common**: patterns like location ~* \.(jpg|jpeg|png|gif)$ blocks.
-- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
-- **Most engineers would need**: 30+ minutes to write this correctly; Claude generates it in seconds.
-
 ## Table of Contents
 
 - [Claude Opus 4.6](#claude-opus-46)
@@ -235,6 +226,7 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [AI Tools for Writing Nginx Configurations 2026](/ai-tools-for-writing-nginx-configurations-2026/)
 - [AI Coding Tools for Writing Chainguard Image Supply Chain](/ai-coding-tools-for-writing-chainguard-image-supply-chain-se/)
 - [AI Tools for Designers Writing Handoff Notes That Include](/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
+- [Best AI Tools for Writing Nginx Configurations](/ai-tools-compared/ai-tools-for-nginx-configuration)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ## Testing AI-Generated Nginx Configs Safely

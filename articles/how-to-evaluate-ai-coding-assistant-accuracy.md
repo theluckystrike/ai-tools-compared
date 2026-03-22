@@ -17,15 +17,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Marketing claims for AI coding tools are unreliable. "10x productivity" and "generates correct code" mean nothing without a reproducible evaluation framework. This guide shows how to run your own accuracy tests on the tools you're considering, using your actual codebase and task types.
 
-## Key Takeaways
-
-- **A model with 85%**: accuracy at $15 per million tokens costs more per correct output than one with 78% accuracy at $3 per million tokens.
-- **No model approaches 90% on those**: iterative use is still necessary.
-- **A cheaper model that**: requires one follow-up prompt can still cost less per solved task than the most accurate model used once.
-- **Tier can be 'bronze' (5%)**: 'silver' (10%), 'gold' (15%), 'platinum' (25%).
-- **Models that score below**: 10% are essentially ignoring the reference files and generating from training data alone, which explains poor performance on domain-specific tasks.
-- **The 4-8 hour setup**: is a one-time cost; the framework runs in minutes and can be re-used every quarter as models update.
-
 ## Table of Contents
 
 - [Why Vendor Benchmarks Don't Transfer](#why-vendor-benchmarks-dont-transfer)
@@ -312,7 +303,7 @@ def measure_context_utilization(task, generated_code):
  }
 ```
 
-Models that score above 30% utilization on hard tasks are genuinely integrating with your codebase context. Models that score below 10% are essentially ignoring the reference files and generating from training data alone, which explains poor performance on domain-specific tasks.
+Models that score above 30% utilization on hard tasks are genuinely integrating with your codebase context. Models that score below 10% are ignoring the reference files and generating from training data alone, which explains poor performance on domain-specific tasks.
 
 ## Step 6: Cost-Adjusted Accuracy
 

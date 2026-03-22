@@ -17,15 +17,6 @@ voice-checked: true
 
 AI-generated code requires specific review patterns that catch hallucinations, missing error handling, and subtle bugs before they reach production. This guide covers the checklist, code patterns, and questions that reveal whether AI output is actually production-ready or requires substantial rework.
 
-## Key Takeaways
-
-- **Use this knowledge to**: focus your review efforts on the areas where each tool needs the most oversight.
-- **Step 5**: Edge case testing. Manually test at least three edge cases beyond the happy path: empty input, maximum input size, and one invalid input type.
-- **Aim for 80% branch**: coverage on AI-generated functions.
-- **AI models sometimes produce**: code that works but ignores security best practices.
-- **AI-generated code frequently has**: unused imports and shadowed variables that create maintenance debt.
-- Use mocks for external dependencies.
-
 ## Table of Contents
 
 - [Start with Understanding the Generated Code](#start-with-understanding-the-generated-code)
