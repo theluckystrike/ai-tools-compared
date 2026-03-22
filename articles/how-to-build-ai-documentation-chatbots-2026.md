@@ -34,7 +34,32 @@ This guide uses:
 - **Server-Sent Events** for streaming
 - **Anthropic Claude** as an alternative LLM
 
-## Step 1: Ingest Documentation
+## Step 1: Database Setup
+
+Before ingesting, you need the pgvector extension and a table for doc sections:
+
+```sql
+-- Run once in your PostgreSQL database
+CREATE EXTENSION IF NOT EXISTS vector;
+
+CREATE TABLE doc_sections (
+    id BIGSERIAL PRIMARY KEY,
+    title TEXT NOT NULL,
+    content TEXT NOT NULL,
+    source TEXT NOT NULL,
+    embedding VECTOR(1536),           -- dimension matches text-embedding-3-small
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    UNIQUE (source, title)
+);
+
+-- HNSW index for approximate nearest-neighbor search (faster than IVFFlat for < 1M rows)
+CREATE INDEX ON doc_sections USING hnsw (embedding vector_cosine_ops)
+    WITH (m = 16, ef_construction = 64);
+```
+
+The HNSW index gives sub-millisecond query times for collections up to a few hundred thousand sections. IVFFlat is better for millions of rows but requires tuning `lists` based on row count.
+
+## Step 2: Ingest Documentation
 
 ```python
 # ingest.py
@@ -121,7 +146,7 @@ async def ingest_docs(docs_dir: str):
         print("Ingestion complete")
 ```
 
-## Step 2: Chat API with Streaming
+## Step 3: Chat API with Streaming
 
 ```python
 # api/chat.py
@@ -223,7 +248,7 @@ async def chat(req: ChatRequest):
     )
 ```
 
-## Step 3: Simple Frontend
+## Step 4: Simple Frontend
 
 ```javascript
 // chat.js
@@ -268,6 +293,101 @@ function renderSources(sources) {
 }
 ```
 
+## Step 5: Conversation History Management
+
+Multi-turn conversations need history pruning to avoid overflowing the context window. A practical approach:
+
+```python
+# utils/history.py
+import tiktoken
+
+ENCODER = tiktoken.get_encoding("cl100k_base")
+MAX_HISTORY_TOKENS = 2000
+
+def count_tokens(text: str) -> int:
+    return len(ENCODER.encode(text))
+
+def prune_history(history: list[dict], max_tokens: int = MAX_HISTORY_TOKENS) -> list[dict]:
+    """
+    Trim history from the oldest end until it fits within max_tokens.
+    Always preserves the most recent exchange.
+    """
+    total = sum(count_tokens(m["content"]) for m in history)
+    if total <= max_tokens:
+        return history
+
+    pruned = list(history)
+    while pruned and sum(count_tokens(m["content"]) for m in pruned) > max_tokens:
+        pruned.pop(0)  # Remove oldest message
+
+    return pruned
+```
+
+Call `prune_history(req.history)` before passing history to the LLM. This prevents `400 context_length_exceeded` errors in long sessions while keeping the conversation coherent.
+
+## Step 6: Caching Embeddings with Redis
+
+Re-embedding the same question repeatedly wastes money and adds latency. Cache embedding vectors:
+
+```python
+import hashlib
+import json
+import redis.asyncio as redis
+
+redis_client = redis.from_url(os.environ["REDIS_URL"])
+EMBED_CACHE_TTL = 3600  # 1 hour
+
+async def get_or_create_embedding(text: str) -> list[float]:
+    cache_key = f"embed:{hashlib.sha256(text.encode()).hexdigest()}"
+
+    cached = await redis_client.get(cache_key)
+    if cached:
+        return json.loads(cached)
+
+    response = await client.embeddings.create(
+        model="text-embedding-3-small",
+        input=text,
+    )
+    embedding = response.data[0].embedding
+    await redis_client.setex(cache_key, EMBED_CACHE_TTL, json.dumps(embedding))
+    return embedding
+```
+
+For a docs site with typical question patterns, this cache achieves 60-80% hit rates, dropping average response latency by 100-200ms.
+
+## Step 7: Webhook-Based Re-ingestion
+
+Trigger re-ingestion automatically when docs change rather than on a fixed schedule. Here is a minimal FastAPI webhook endpoint that queues re-ingestion via a background task:
+
+```python
+# api/webhook.py
+import hmac
+import hashlib
+from fastapi import APIRouter, Request, HTTPException, BackgroundTasks
+
+router = APIRouter()
+WEBHOOK_SECRET = os.environ["DOCS_WEBHOOK_SECRET"]
+
+def verify_signature(payload: bytes, signature: str) -> bool:
+    expected = "sha256=" + hmac.new(
+        WEBHOOK_SECRET.encode(), payload, hashlib.sha256
+    ).hexdigest()
+    return hmac.compare_digest(expected, signature)
+
+@router.post("/webhooks/docs-updated")
+async def docs_updated(request: Request, background_tasks: BackgroundTasks):
+    body = await request.body()
+    sig = request.headers.get("X-Hub-Signature-256", "")
+
+    if not verify_signature(body, sig):
+        raise HTTPException(status_code=401, detail="Invalid signature")
+
+    background_tasks.add_task(ingest_docs, os.environ["DOCS_DIR"])
+    return {"status": "ingestion queued"}
+```
+
+Point your GitHub or GitLab webhook at `/webhooks/docs-updated` with a shared secret. Every merged PR to the docs repo triggers a fresh ingestion within seconds.
+
 ## Deployment Checklist
 
 - Set `X-Accel-Buffering: no` on Nginx to prevent SSE buffering
@@ -275,6 +395,9 @@ function renderSources(sources) {
 - Rate-limit the `/chat` endpoint (10 req/min per IP is reasonable)
 - Cache embeddings for repeated questions using Redis with a 1-hour TTL
 - Run `ingest.py` as a cron job or webhook trigger when docs change
+- Monitor embedding cost: `text-embedding-3-small` is $0.02/1M tokens — ingesting 10,000 sections of 500 tokens each costs about $0.10
+- Set a similarity threshold (0.65 in the example) to avoid surfacing irrelevant context
+- Log unanswered questions (empty context returns) to identify gaps in your docs
 
 ## Related Reading
 
