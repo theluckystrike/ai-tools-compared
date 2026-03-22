@@ -33,6 +33,15 @@ intent-checked: true---
 
 Enterprise deployments of AI coding assistants require careful network configuration. These tools communicate with external services, process code locally, and often integrate with existing development infrastructure. Understanding the network security requirements prevents data leaks while maintaining developer productivity.
 
+## Key Takeaways
+
+- **Most commercial AI coding**: tools use standard HTTPS on port 443, but some require WebSocket support on port 443 or 80.
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Many enterprises use layer**: 7 filtering to inspect SNI (Server Name Indication) in TLS handshakes, enabling domain-specific filtering even when traffic uses HTTPS.
+- **Maintain logs for at**: least 90 days to meet most regulatory standards.
+- **Let them use it for 2-3 weeks**: then gather their honest feedback.
+
 ## Understanding AI Coding Tool Traffic Patterns
 
 AI coding tools operate in three primary communication modes. First, they send code context to external API endpoints for processing. Second, they receive generated suggestions and completions from cloud-based models. Third, they may sync with enterprise authentication systems like SAML or OAuth providers.

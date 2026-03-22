@@ -31,6 +31,15 @@ tags: [ai-tools-compared, chatgpt]---
 
 Perplexity's collections feature lets you organize research, bookmarks, and saved searches into curated folders. If you're considering migrating to ChatGPT Search, you need to export your collections first—Perplexity doesn't provide an one-click migration tool, and once you stop using the platform, accessing your saved data becomes increasingly difficult. This guide covers practical methods for developers and power users to export Perplexity collections before switching, with code examples and automation strategies.
 
+## Key Takeaways
+
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **Does ChatGPT offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+
 ## Why Export Collections Before Switching
 
 Perplexity stores your collections on their servers as long as you maintain an active subscription. Collections include saved URLs, research threads, generated summaries, and your search history organized into custom folders. When you transition away from Perplexity, whether to ChatGPT Search or another AI-powered search tool, you lose access to this organized knowledge base unless you've explicitly exported it.

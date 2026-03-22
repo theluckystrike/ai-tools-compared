@@ -27,9 +27,19 @@ score: 8
 intent-checked: true
 voice-checked: true---
 
+
 Contributing to open source with AI assistants requires mapping the codebase first, then using AI to understand conventions, write compatible code, and prepare pull requests. This guide walks through the specific workflow that balances AI acceleration with the project maintainer expectations.
 
 This guide walks through a practical AI-assisted workflow for open source contribution. The strategies here work with any AI coding assistant, though specific command syntax varies by tool.
+
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Contributing to open source**: with AI assistants requires mapping the codebase first, then using AI to understand conventions, write compatible code, and prepare pull requests.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
 ## Finding and Understanding Issues
 

@@ -31,6 +31,30 @@ tags: [ai-tools-compared, troubleshooting, artificial-intelligence]---
 
 Intermittent failures remain among the most frustrating issues developers face. Unlike reproducible bugs, these failures appear sporadically, evade standard testing, and often surface only under specific production conditions. AI-assisted debugging transforms this traditionally manual process into a systematic workflow, helping developers identify patterns, generate hypotheses, and validate solutions faster than conventional approaches.
 
+## Key Takeaways
+
+- **Initial hypothesis generation**: "What are the five most likely causes of intermittent 500 errors in a Python Flask API that only occur under load?"
+
+2.
+- Most likely root cause
+    4.
+- **Narrow focusing**: "Given that our errors correlate with database connection pool exhaustion, what specific query patterns in our codebase might cause connection leaks?"
+
+3.
+- **Use AI to analyze test output**: ```bash
+# Prompt: Analyze these 50 test run logs from the past week.
+- **Iterate with hypothesis testing**: Use AI to generate and validate hypotheses systematically
+
+5.
+- **Infof("Processing order %s"**: orderID)
+```
+
+Prompt to AI with correlation logs:
+
+```
+Here are all logs for correlation ID abc-123-def between 2024-01-15 14:32:00
+and 14:32:15.
+
 ## Why Intermittent Failures Defeat Traditional Debugging
 
 Conventional debugging relies on reproducing the exact conditions that trigger a bug. Intermittent failures resist this approach because they depend on timing, resource contention, environmental variables, or race conditions that rarely align during local testing. A race condition in a payment processing system might occur once in every thousand transactions, making it nearly impossible to reproduce on demand.
