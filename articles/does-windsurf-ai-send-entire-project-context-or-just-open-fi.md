@@ -9,7 +9,7 @@ permalink: /does-windsurf-ai-send-entire-project-context-or-just-open-fi/
 categories: [guides]
 tags: [ai-tools-compared, privacy, tools, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

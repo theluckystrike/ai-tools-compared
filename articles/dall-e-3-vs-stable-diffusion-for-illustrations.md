@@ -7,7 +7,7 @@ last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /dall-e-3-vs-stable-diffusion-for-illustrations/
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 categories: [comparisons]

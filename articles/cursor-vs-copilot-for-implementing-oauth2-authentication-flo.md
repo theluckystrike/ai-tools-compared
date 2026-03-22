@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /cursor-vs-copilot-for-implementing-oauth2-authentication-flo/
 categories: [comparisons]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, comparison]

@@ -9,7 +9,7 @@ permalink: /databricks-vs-bigquery-ai-ml-features/
 categories: [guides]
 tags: [ai-tools-compared, tools, comparison, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
