@@ -273,7 +273,7 @@ def test_user_registration_snapshot(client, snapshot):
     assert "user_id" in response.json()
     assert response.json()["verified"] is False
 
-    # Snapshot for comprehensive structure validation
+    # Snapshot for complete structure validation
     snapshot.assert_match(response.json(), "new_user_registration.json")
 ```
 

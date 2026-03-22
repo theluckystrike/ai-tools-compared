@@ -131,7 +131,7 @@ Start with clear goals for what you want to achieve with AI-assisted documentati
 Feed this to Claude or GPT-4 for a complete GDD outline:
 
 ```
-Generate a comprehensive Game Design Document structure
+Generate a full Game Design Document structure
 for a [GAME_CONCEPT] game.
 
 Include sections for:

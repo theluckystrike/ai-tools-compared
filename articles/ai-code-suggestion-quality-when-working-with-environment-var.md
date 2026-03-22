@@ -185,7 +185,7 @@ Separating configuration from code remains essential regardless of whether you u
 Moving beyond basic patterns, production systems require validation:
 
 ```python
-"""Comprehensive environment variable configuration handler."""
+"""Detailed environment variable configuration handler."""
 
 import os
 from typing import Any, Dict, Optional, Type, TypeVar

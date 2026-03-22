@@ -270,7 +270,7 @@ As you grow comfortable with free tools, tackle more complex refactoring pattern
 Choose your refactoring tool based on the scope and type of changes:
 
 
-**Single-file refactoring (< 50 lines):** Use GitHub Copilot. Its IDE integration makes quick fixes seamless.
+**Single-file refactoring (< 50 lines):** Use GitHub Copilot. Its IDE integration makes quick fixes easy.
 
 **Complex function extraction (100-300 lines):** Use Claude Code. Its explanations help you understand the reasoning behind suggested changes.
 

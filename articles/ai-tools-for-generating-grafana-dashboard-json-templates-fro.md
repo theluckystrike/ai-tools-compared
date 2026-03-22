@@ -176,7 +176,7 @@ If the output requires adjustments, provide specific feedback to the AI tool. Ra
 
 ## CLI Commands for Dashboard Management
 
-Managing dashboards through the API streamlines the workflow:
+Managing dashboards through the API simplifies the workflow:
 
 ```bash
 # Export existing dashboard to JSON

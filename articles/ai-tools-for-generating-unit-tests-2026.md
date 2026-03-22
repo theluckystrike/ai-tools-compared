@@ -175,7 +175,7 @@ For legacy Java codebases with no tests: Diffblue is the specialized tool.
 The most cost-efficient approach for most teams: use Claude with a structured prompt. It matches CodiumAI quality when prompted correctly.
 
 ```
-# Template prompt for comprehensive test generation:
+# Template prompt for full test generation:
 Generate {framework} tests for the function below.
 Include: happy path, boundary conditions for all numeric parameters,
 all documented exceptions, state variations (mocked dependencies in error states),

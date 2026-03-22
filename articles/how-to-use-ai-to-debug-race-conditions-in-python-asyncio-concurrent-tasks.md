@@ -24,7 +24,7 @@ AI tools excel at recognizing race condition patterns in asyncio code by identif
 ## Understanding Race Conditions in Asyncio
 
 
-Before diving into debugging strategies, let's establish what we're dealing with. A race condition occurs when the behavior of your program depends on the relative timing of concurrent operations. In asyncio, this typically happens when multiple coroutines access shared state without proper synchronization.
+Before exploring debugging strategies, let's establish what we're dealing with. A race condition occurs when the behavior of your program depends on the relative timing of concurrent operations. In asyncio, this typically happens when multiple coroutines access shared state without proper synchronization.
 
 
 Here's a classic example that demonstrates the problem:

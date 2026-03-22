@@ -3,7 +3,7 @@ layout: default
 title: "AI Coding Tools for Scala Functional Programming"
 description: "Claude models produce the most functionally pure Scala code by default, generating solutions using map, flatMap, and fold operations rather than mutable"
 date: 2026-03-15
-last_modified_at: 2026-03-15
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /ai-coding-tools-for-scala-functional-programming/
 reviewed: true
@@ -13,9 +13,6 @@ intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]
 ---
-
-
-# AI Coding Tools for Scala Functional Programming: Practical Guide
 
 
 Claude models produce the most functionally pure Scala code by default, generating solutions using map, flatMap, and fold operations rather than mutable variables. GPT models handle complex specifications well but sometimes need explicit instructions to avoid imperative-style Scala. Both work effectively with libraries like Cats, ZIO, and Akka Streams when you provide version and library context in your prompts. This guide covers practical techniques and code examples for getting the best Scala output from AI coding tools.

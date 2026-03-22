@@ -3,7 +3,7 @@ layout: default
 title: "Copilot Not Suggesting Imports Automatically"
 description: "Troubleshooting guide for GitHub Copilot not suggesting imports automatically. Step-by-step fixes for developers"
 date: 2026-03-15
-last_modified_at: 2026-03-15
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /copilot-not-suggesting-imports-automatically-fix/
 reviewed: true
@@ -16,8 +16,6 @@ tags: [ai-tools-compared, troubleshooting]
 
 
 {% raw %}
-
-# Copilot Not Suggesting Imports Automatically Fix
 
 
 To fix Copilot not suggesting imports, first verify that `editor.inlineSuggest.enabled` is set to `true` in your VS Code `settings.json` and that your programming language is not disabled under Copilot's Language Visibility settings. If those are correct, clear the Copilot cache by deleting the `github-copilot` folder in your editor's global storage directory and re-authenticate. This guide covers all ten common fixes, from simple setting checks to extension conflict resolution.

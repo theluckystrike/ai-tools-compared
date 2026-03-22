@@ -178,7 +178,7 @@ Different AI tools handle dependency analysis differently:
 For teams using Claude or ChatGPT, these prompt templates improve output quality:
 
 ```markdown
-You are a code review assistant. Generate a comprehensive pull request description
+You are a code review assistant. Generate a thorough pull request description
 for the following dependency updates.
 
 ## Instructions

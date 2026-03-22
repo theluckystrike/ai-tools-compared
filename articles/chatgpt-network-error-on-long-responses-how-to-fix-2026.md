@@ -149,7 +149,7 @@ Verbose prompts often trigger longer responses, increasing error probability. Re
 ```python
 # Instead of:
 bad_prompt = """
-I need you to write a comprehensive, detailed, fully-featured
+I need you to write a detailed, detailed, fully-featured
 Python application that includes authentication, database models,
 API endpoints, error handling, logging, testing, documentation,
 deployment configuration, and more. Please include extensive comments

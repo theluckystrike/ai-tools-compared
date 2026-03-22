@@ -27,7 +27,7 @@ Midjourney currently offers several plans, but the two most popular options for 
 ## What Both Plans Share
 
 
-Before diving into the differenceswhat you get with both plans:
+Before exploring the differenceswhat you get with both plans:
 
 
 - Access to the Midjourney image generator
@@ -249,7 +249,7 @@ Pricing: $20/month (ChatGPT Plus)
 Fast generations: Unlimited
 Speed: Standard
 Privacy: Private by default
-Strengths: Seamless ChatGPT integration, good photorealism
+Strengths: Easy ChatGPT integration, good photorealism
 Limitations: Less creative fine-tuning, lower generation quality
 ```
 

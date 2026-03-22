@@ -303,7 +303,7 @@ CMD ["python3", "app.py"]
 
 
 ```dockerfile
-# After AI optimization - streamlined
+# After AI optimization - simplified
 FROM python:3.11-slim
 
 WORKDIR /app

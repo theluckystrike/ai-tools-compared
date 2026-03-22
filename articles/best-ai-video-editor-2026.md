@@ -146,7 +146,7 @@ def create_descript_project(api_key, video_url):
 ```
 
 
-Descript's text-based paradigm reduces editing time significantly for suitable content types. However, it works best for talking-head videos and may feel restrictive for cinematic editing.
+Descript's text-based pattern reduces editing time significantly for suitable content types. However, it works best for talking-head videos and may feel restrictive for cinematic editing.
 
 
 ### CapCut API for Social Media Content

@@ -3,7 +3,7 @@ layout: default
 title: "AI Tools for Education Student"
 description: "A practical guide to AI-powered student support tools for developers building educational platforms, with implementation examples and technical"
 date: 2026-03-15
-last_modified_at: 2026-03-15
+last_modified_at: 2026-03-22
 author: "theluckystrike"
 permalink: /ai-tools-for-education-student-support/
 categories: [guides]
@@ -16,9 +16,6 @@ intent-checked: true
 
 
 {% raw %}
-
-
-# AI Tools for Education Student Support
 
 
 AI tools for education student support use large language models, recommendation engines, and sentiment analysis to deliver tutoring, administrative help, accessibility services, and mental health screening within learning platforms. Developers can integrate these capabilities through Python SDKs and REST APIs from providers like Anthropic, OpenAI, and Whisper. This guide covers practical implementations with code examples for each major student support use case.
@@ -88,7 +85,7 @@ async function explainCode(codeSnippet, language) {
     body: JSON.stringify({
       code: codeSnippet,
       language: language,
-      detail_level: 'comprehensive'
+      detail_level: 'complete'
     })
   });
   return response.json();

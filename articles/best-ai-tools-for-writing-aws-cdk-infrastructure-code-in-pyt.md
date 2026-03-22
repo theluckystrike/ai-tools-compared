@@ -247,7 +247,7 @@ Choosing the right AI tool depends on your workflow and project requirements:
 
 All tools require review before production deployment. Generated IAM policies particularly need scrutiny for least-privilege compliance, and CDK constructs should match your organization's tagging and naming conventions. Run `cdk diff` against your existing stacks before applying AI-generated changes, even for seemingly minor modifications.
 
-The AI landscape evolves rapidly, and tool capabilities improve continuously. Testing current versions against your specific use cases provides the most accurate basis for selection.
+The AI market evolves rapidly, and tool capabilities improve continuously. Testing current versions against your specific use cases provides the most accurate basis for selection.
 
 
 ## Prompting Tips for Better CDK Output

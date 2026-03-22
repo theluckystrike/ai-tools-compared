@@ -385,7 +385,7 @@ Build a regression test suite that covers your top 50 most common code patterns.
 
 ## Audit Logging and Incident Response
 
-DLP enforcement is only half the equation. Comprehensive audit logging enables incident response when a violation is detected or suspected.
+DLP enforcement is only half the equation. Detailed audit logging enables incident response when a violation is detected or suspected.
 
 Configure your extension to forward violation events to your SIEM:
 

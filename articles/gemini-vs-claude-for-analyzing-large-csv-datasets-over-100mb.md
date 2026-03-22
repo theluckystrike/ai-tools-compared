@@ -85,7 +85,7 @@ Anthropic Claude takes a more thorough analytical approach. While it may generat
 ### Practical Claude Approach
 
 
-Claude recommends starting with data profiling to understand what you're working with before diving into analysis. It often suggests loading a sample first to explore structure.
+Claude recommends starting with data profiling to understand what you're working with before exploring analysis. It often suggests loading a sample first to explore structure.
 
 
 ```python

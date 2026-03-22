@@ -42,7 +42,7 @@ This scenario plays out daily in frontend development. The solution requires und
 
 ## How CSS Specificity Actually Works
 
-Before diving into AI tools, understanding why conflicts happen helps you ask better questions. CSS specificity is calculated as a three-part score: inline styles score (1,0,0), IDs score (0,1,0), and classes, pseudo-classes, and attributes each score (0,0,1). Elements and pseudo-elements score lowest.
+Before examining AI tools, understanding why conflicts happen helps you ask better questions. CSS specificity is calculated as a three-part score: inline styles score (1,0,0), IDs score (0,1,0), and classes, pseudo-classes, and attributes each score (0,0,1). Elements and pseudo-elements score lowest.
 
 The selector `.MuiButton-root .MuiButton-label` uses two class selectors, giving it a score of (0,0,2). Your `.my-button` selector scores only (0,0,1), so it loses every time regardless of source order.
 

@@ -207,7 +207,7 @@ For existing codebases requiring error migration: Cursor's refactoring capabilit
 
 For rapid prototyping with standard errors: GitHub Copilot provides the fastest path to working error handling using standard library error types.
 
-For terminal-focused developers wanting git integration: Aider provides the most seamless terminal experience with version control baked in.
+For terminal-focused developers wanting git integration: Aider provides the most smooth terminal experience with version control baked in.
 
 
 ## Practical Tips for Better Results

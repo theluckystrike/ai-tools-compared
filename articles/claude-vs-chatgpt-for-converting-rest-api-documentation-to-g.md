@@ -3,7 +3,7 @@ layout: default
 title: "Claude vs ChatGPT for Converting REST API Documentation"
 description: "When you need to migrate a REST API to GraphQL, the initial schema generation can feel tedious. Both Claude and ChatGPT can read your REST API documentation"
 date: 2026-03-16
-last_modified_at: 2026-03-16
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /claude-vs-chatgpt-for-converting-rest-api-documentation-to-g/
 reviewed: true
@@ -13,9 +13,6 @@ intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, comparison, claude-ai, chatgpt, api]
 ---
-
-
-# Claude vs ChatGPT for Converting REST API Documentation to GraphQL Schema
 
 
 When you need to migrate a REST API to GraphQL, the initial schema generation can feel tedious. Both Claude and ChatGPT can read your REST API documentation and produce a GraphQL schema, but they approach the task differently. This comparison helps you choose the right tool for your conversion workflow.
@@ -28,7 +25,6 @@ Converting REST endpoints to a GraphQL schema requires more than syntax translat
 
 
 Claude tends to excel at understanding the structural relationships in your API documentation and producing a coherent schema that follows GraphQL best practices. ChatGPT generates schemas quickly and handles large volumes of endpoints efficiently, though the output may require more manual refinement.
-
 
 
 ## Quick Comparison

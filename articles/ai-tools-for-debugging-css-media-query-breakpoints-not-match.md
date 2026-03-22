@@ -21,7 +21,7 @@ CSS media query breakpoints failing to match expected viewport sizes ranks among
 ## Why Media Query Breakpoints Misbehave
 
 
-Before diving into AI-assisted solutions, recognizing the common culprits behind breakpoint mismatches helps you debug more effectively.
+Before examining AI-assisted solutions, recognizing the common culprits behind breakpoint mismatches helps you debug more effectively.
 
 
 **Scrollbar width consumption** affects viewport calculations. When browser scrollbars occupy space, the viewport width differs from the document width. On systems with visible scrollbars, a "1000px" viewport might actually provide only 984px of usable space.
@@ -193,7 +193,7 @@ The most effective approach combines AI efficiency with solid fundamentals. Unde
 Different device classes have different characteristics that affect breakpoint behavior:
 
 ```javascript
-// Comprehensive device testing grid
+// Full device testing grid
 const deviceProfiles = [
   // Mobile phones
   { name: 'iPhone 12', width: 390, height: 844, dpr: 3 },

@@ -102,7 +102,7 @@ The platform's AI Engine automatically prioritizes findings based on exploitabil
 
 Orca supports automatic report generation for SOC 2, ISO 27001, HIPAA, PCI-DSS, and custom frameworks. The reports include remediation workflows that developers can implement directly.
 
-Orca's attack path analysis is particularly useful for compliance narratives. Rather than presenting a flat list of misconfigurations, it shows how individual findings chain together into exploitable paths. Auditors respond well to this format because it demonstrates that your team understands the actual risk landscape rather than just checking boxes.
+Orca's attack path analysis is particularly useful for compliance narratives. Rather than presenting a flat list of misconfigurations, it shows how individual findings chain together into exploitable paths. Auditors respond well to this format because it demonstrates that your team understands the actual risk market rather than just checking boxes.
 
 
 ### 4. Prisma Cloud by Palo Alto Networks

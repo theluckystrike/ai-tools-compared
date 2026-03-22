@@ -14,7 +14,7 @@ voice-checked: true
 intent-checked: true
 ---
 
-Migrating Selenium test suites to Cypress is a real problem. You have 500+ test files in Java, Python, or JavaScript. Rewriting them manually takes months. AI coding assistants are getting better at test conversions—some handle page object patterns correctly, others trip on Cypress's async paradigm. This benchmark evaluates tools on actual Selenium-to-Cypress translation.
+Migrating Selenium test suites to Cypress is a real problem. You have 500+ test files in Java, Python, or JavaScript. Rewriting them manually takes months. AI coding assistants are getting better at test conversions—some handle page object patterns correctly, others trip on Cypress's async approach. This benchmark evaluates tools on actual Selenium-to-Cypress translation.
 
 ## Migration Complexity
 
@@ -93,7 +93,7 @@ Claude understood the Page Object pattern, correctly mapped `WebDriverWait` to C
 
 On more complex scenarios (multi-window tests, file downloads), Claude suggested proper Cypress alternatives. For a test that opened a new window and checked a PDF, it recommended using cy.request() directly instead of trying to control a separate window.
 
-**Verdict:** Claude is the clear choice for Selenium-to-Cypress migration. It understands both paradigms and generates working code with minimal fixes.
+**Verdict:** Claude is the clear choice for Selenium-to-Cypress migration. It understands both patterns and generates working code with minimal fixes.
 
 ## ChatGPT Plus (GPT-4o)
 

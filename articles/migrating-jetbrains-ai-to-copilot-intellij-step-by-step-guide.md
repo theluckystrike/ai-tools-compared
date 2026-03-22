@@ -10,7 +10,7 @@ reviewed: true
 score: 8
 author: "AI Tools Compared"
 date: 2026-03-16
-last_modified_at: 2026-03-16
+last_modified_at: 2026-03-22
 categories: [guides]
 tags: [ai-tools-compared, artificial-intelligence]
 
@@ -19,7 +19,6 @@ intent-checked: true
 
 {% raw %}
 
-# Migrating from JetBrains AI to Copilot in IntelliJ - Step by Step Guide
 
 Making the switch from JetBrains AI to GitHub Copilot in IntelliJ IDEA doesn't have to be disruptive. This guide walks you through every step of the migration process, from installation to configuration, ensuring you maintain your productivity while using Copilot's strengths.
 

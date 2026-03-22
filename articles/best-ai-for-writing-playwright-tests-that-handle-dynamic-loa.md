@@ -101,7 +101,7 @@ Claude Code handles complex test scenarios with strong reasoning about timing is
 
 
 ```javascript
-// Claude might suggest this comprehensive approach:
+// Claude might suggest this full approach:
 await page.goto('/dashboard');
 
 // Wait for skeleton to disappear (loading complete)

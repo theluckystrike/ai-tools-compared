@@ -331,7 +331,7 @@ Solution: Create terminal aliases for common Claude Code prompts:
 
 ```bash
 # Add to .zshrc or .bashrc
-alias claude-test="claude 'Write comprehensive unit tests covering edge cases for the last changed file'"
+alias claude-test="claude 'Write detailed unit tests covering edge cases for the last changed file'"
 alias claude-doc="claude 'Generate JSDoc comments for all exported functions'"
 alias claude-fix="claude 'Fix any linting errors and formatting issues'"
 ```

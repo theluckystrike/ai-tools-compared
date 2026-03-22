@@ -13,7 +13,6 @@ voice-checked: true
 tags: [ai-tools-compared]
 ---
 
-# AI Tools Guides Hub
 
 Side-by-side comparisons and in-depth reviews of AI tools for developers and teams. Find the right tool for your workflow.
 

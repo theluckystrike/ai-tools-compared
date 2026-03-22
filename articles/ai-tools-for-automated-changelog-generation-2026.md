@@ -3,7 +3,7 @@ layout: default
 title: "AI Tools for Automated Changelog Generation 2026"
 description: "Compare tools for generating changelogs from git history. Include conventional commits, semantic versioning, CI/CD integration, monorepo support."
 date: 2026-03-21
-last_modified_at: 2026-03-21
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /ai-tools-for-automated-changelog-generation-2026/
 categories: [comparisons]
@@ -652,3 +652,4 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
+```

@@ -28,7 +28,7 @@ Modern free AI tools for learning Python go beyond simple autocomplete. They und
 
 ## Comparing Free AI Tools at a Glance
 
-Before diving into each tool individually, here is how the major free options compare on the dimensions that matter most for learning Python:
+Before examining each tool individually, here is how the major free options compare on the dimensions that matter most for learning Python:
 
 | Tool | Explanation Quality | Code Generation | Debugging Help | Offline Support | Best For |
 |------|--------------------|-----------------|--------------|-----------------|----|

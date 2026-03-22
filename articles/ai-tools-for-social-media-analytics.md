@@ -275,7 +275,7 @@ For production workloads processing millions of records, InfluxDB or TimescaleDB
 ## Topic Modeling for Uncovering Conversation Themes
 
 
-Sentiment tells you how people feel; topic modeling tells you what they are talking about. Combining both produces a more complete picture of the conversation landscape around your brand or subject area.
+Sentiment tells you how people feel; topic modeling tells you what they are talking about. Combining both produces a more complete picture of the conversation field around your brand or subject area.
 
 Latent Dirichlet Allocation (LDA) is the classic approach, but BERTopic produces substantially better topic coherence on short social media texts. BERTopic uses sentence transformers to embed documents into a semantic space before clustering, which means it handles the fragmented, abbreviated style of tweets more gracefully than LDA.
 

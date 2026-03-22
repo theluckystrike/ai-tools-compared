@@ -245,7 +245,7 @@ The explicit requirements produce better results across all AI tools.
 
 ## Command-Line Workflow for Audit Report Generation
 
-Streamline the report generation process with shell scripts:
+Simplify the report generation process with shell scripts:
 
 ```bash
 #!/bin/bash
@@ -272,7 +272,7 @@ import requests
 with open('grouped_findings.json', 'r') as f:
     findings = json.load(f)
 
-# Build comprehensive prompt
+# Build full prompt
 prompt = f"""You are a professional auditor. Generate a management letter for our {audit_type} audit.
 
 Findings grouped by category:

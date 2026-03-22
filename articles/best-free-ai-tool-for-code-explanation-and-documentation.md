@@ -24,7 +24,7 @@ When you inherit a messy codebase or need to understand a complex algorithm quic
 ## What to Look for in a Code Explanation Tool
 
 
-Before diving into specific tools, understand what matters most for code explanation tasks:
+Before exploring specific tools, understand what matters most for code explanation tasks:
 
 
 - Accuracy: The tool must correctly interpret the code's logic and intent

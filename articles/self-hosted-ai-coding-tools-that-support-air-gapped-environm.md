@@ -14,7 +14,6 @@ intent-checked: true
 ---
 {% raw %}
 
-# Self Hosted AI Coding Tools That Support Air Gapped Environments Compared 2026
 
 Air-gapped environments—systems physically isolated from public networks—are common in defense, finance, healthcare, and critical infrastructure. Developers working in these settings need AI coding assistants that run entirely offline while still offering solid code completion, generation, and refactoring capabilities. Here's a practical comparison of the best options for 2026.
 

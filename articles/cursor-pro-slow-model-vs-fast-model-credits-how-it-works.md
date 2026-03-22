@@ -105,7 +105,7 @@ The slow model typically costs 5-10 credits per request, depending on the comple
 # - routes/api.py
 # - config/settings.py
 # - database/models.py
-# Then provides a comprehensive explanation of the auth pipeline
+# Then provides a complete explanation of the auth pipeline
 ```
 
 

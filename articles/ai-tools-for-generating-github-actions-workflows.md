@@ -365,7 +365,7 @@ This reasoning saves iteration time.
 
 ### Copilot Debugging
 
-Copilot suggests basic fixes (add step, check spelling) but doesn't deep-dive into auth flow or AWS-specific issues. Requires more manual debugging.
+Copilot suggests basic fixes (add step, check spelling) but doesn't deep-explore auth flow or AWS-specific issues. Requires more manual debugging.
 
 ### Cursor Debugging
 

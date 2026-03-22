@@ -193,7 +193,7 @@ Windsurf Team: 200 × $30 + $10K (overages) = $16K/month ($80/dev)
 ## When Each Option Makes Financial Sense
 
 **Choose Copilot if:**
-- You're already on GitHub Enterprise (licensing synergy)
+- You're already on GitHub Enterprise (licensing combination)
 - You need industry-leading audit logs for compliance (healthcare, finance, government)
 - Your team's API usage is already covered by existing GitHub contracts
 - You want direct integration with GitHub PRs and Copilot for Business features

@@ -42,7 +42,7 @@ The challenge is particularly acute when you need to distinguish between:
 ## What a High-Quality AI-Generated Changelog Looks Like
 
 
-Before diving into the how, it helps to know what you are aiming for. A well-structured changelog entry produced with AI assistance should look like this:
+Before examining the how, it helps to know what you are aiming for. A well-structured changelog entry produced with AI assistance should look like this:
 
 
 ```

@@ -209,7 +209,7 @@ Cursor can help you write tests for your migrated code. When you paste a compone
 
 ```typescript
 // Ask Cursor to generate test suite
-// "Write comprehensive tests for this UserProfile component including loading states, error cases, and missing data scenarios"
+// "Write full tests for this UserProfile component including loading states, error cases, and missing data scenarios"
 
 import { render, screen, waitFor } from '@testing-library/react';
 import { UserProfile } from './UserProfile';

@@ -3,7 +3,7 @@ layout: default
 title: "Migrate Jasper AI Brand Voice Settings to ChatGPT Custom"
 description: "A practical guide for developers and power users moving brand voice configurations from Jasper AI to ChatGPT custom instructions with code examples"
 date: 2026-03-16
-last_modified_at: 2026-03-16
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /migrate-jasper-ai-brand-voice-settings-to-chatgpt-custom-ins/
 categories: [guides]
@@ -16,8 +16,6 @@ tags: [ai-tools-compared, artificial-intelligence, chatgpt]
 
 
 {% raw %}
-
-# How to Migrate Jasper AI Brand Voice Settings to ChatGPT Custom Instructions
 
 
 If you have been using Jasper AI's Brand Voice feature to maintain consistent tone and style across your content, you might be looking for ways to replicate that functionality in ChatGPT. While Jasper AI provides a structured UI for uploading sample content and extracting style preferences, ChatGPT achieves similar results through Custom Instructions. This guide shows you how to migrate your Jasper Brand Voice settings to ChatGPT, with practical examples and code snippets.
@@ -90,7 +88,7 @@ For vocabulary preferences, use the second Custom Instructions field:
 In the "What would you like ChatGPT to know about you?" field:
 
 Our brand uses these terms: "optimize" (not "optimise"), "use"
-(only as a verb), "seamless" (for integration topics). Avoid: "cutting
+(only as a verb), "simple" (for integration topics). Avoid: "cutting
 edge" (overused), "notable" (too hyperbolic). Preferred phrases:
 "our platform enables," "customers achieve," "built for."
 ```

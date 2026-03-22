@@ -21,7 +21,7 @@ Yes, you can get a refund from Cursor Pro if you request it within the 30-day re
 ## Understanding Cursor Pro Subscription Tiers
 
 
-Cursor Pro offers several subscription tiers, each with different features and pricing. Before diving into the refund policy, let's briefly review the typical structure:
+Cursor Pro offers several subscription tiers, each with different features and pricing. Before examining the refund policy, let's briefly review the typical structure:
 
 
 | Tier | Monthly Price | Annual Price | Key Features |

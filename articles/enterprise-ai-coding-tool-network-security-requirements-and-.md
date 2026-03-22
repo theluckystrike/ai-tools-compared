@@ -3,7 +3,7 @@ layout: default
 title: "Enterprise AI Coding Tool Network Security Requirements"
 description: "A practical guide to securing AI coding tools in enterprise environments with firewall configuration examples"
 date: 2026-03-20
-last_modified_at: 2026-03-20
+last_modified_at: 2026-03-22
 author: "AI Tools Compared"
 permalink: /enterprise-ai-coding-tool-network-security-requirements-and-/
 reviewed: true
@@ -17,7 +17,6 @@ intent-checked: true
 
 
 {% raw %}
-# Enterprise AI Coding Tool Network Security Requirements and Firewall Rules Guide
 
 Enterprise deployments of AI coding assistants require careful network configuration. These tools communicate with external services, process code locally, and often integrate with existing development infrastructure. Understanding the network security requirements prevents data leaks while maintaining developer productivity.
 

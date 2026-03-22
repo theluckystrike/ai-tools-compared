@@ -165,7 +165,7 @@ Data-driven proposals require financial justification. AI can help generate ROI 
 
 ```python
 def generate_roi_framework(feature_metrics):
-    """Generate a comprehensive ROI calculation framework."""
+    """Generate a thorough ROI calculation framework."""
 
     framework = {
         "revenue_impact": {

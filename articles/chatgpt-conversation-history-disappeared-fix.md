@@ -3,7 +3,7 @@ layout: default
 title: "ChatGPT Conversation History Disappeared"
 description: "A practical troubleshooting guide for developers and power users facing the issue of ChatGPT conversation history disappearing. Learn step-by-step"
 date: 2026-03-15
-last_modified_at: 2026-03-15
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /chatgpt-conversation-history-disappeared-fix/
 categories: [guides]
@@ -16,9 +16,6 @@ tags: [ai-tools-compared, troubleshooting, chatgpt]
 
 
 {% raw %}
-
-
-# ChatGPT Conversation History Disappeared Fix
 
 
 Hard refresh your browser (Cmd+Shift+R on Mac, Ctrl+Shift+R on Windows). If conversations do not reappear, clear your browser cache and cookies for chat.openai.com, then log back in. If that does not work, verify you are logged into the correct account—multiple accounts or browser profiles are the most common cause of seemingly missing history. Check the OpenAI status page for server-side issues if none of these steps help. Full details for each fix are below.

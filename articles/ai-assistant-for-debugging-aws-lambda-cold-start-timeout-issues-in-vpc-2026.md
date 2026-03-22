@@ -35,7 +35,7 @@ This process introduces significant latency, especially if your Lambda is config
 
 ## How AI Assistants Diagnose Cold Start Issues
 
-Modern AI coding tools can analyze your Lambda configuration and identify the root causes of cold start timeouts. Here's how to leverage these tools effectively:
+Modern AI coding tools can analyze your Lambda configuration and identify the root causes of cold start timeouts. Here's how to take advantage of these tools effectively:
 
 
 ### Analyzing Lambda Configuration with AI
@@ -221,7 +221,7 @@ def handler(event, context):
     return result
 ```
 
-AI assistants can help you create comprehensive logging that distinguishes between cold starts and warm invocations, making it easier to verify your optimization efforts.
+AI assistants can help you create detailed logging that distinguishes between cold starts and warm invocations, making it easier to verify your optimization efforts.
 
 
 ## Conclusion

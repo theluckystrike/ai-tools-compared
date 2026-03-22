@@ -21,7 +21,7 @@ GitHub Copilot accelerates Terraform provider configuration by suggesting provid
 ## Setting Up Copilot for Terraform
 
 
-Before diving into specific techniques, ensure Copilot is configured in your environment. In VS Code, install the GitHub Copilot extension and enable it for HCL files. Copilot works best when it has context about your project, so open your existing Terraform files alongside new configurations.
+Before looking at specific techniques, ensure Copilot is configured in your environment. In VS Code, install the GitHub Copilot extension and enable it for HCL files. Copilot works best when it has context about your project, so open your existing Terraform files alongside new configurations.
 
 
 Copilot analyzes your project's structure, existing provider blocks, and variable definitions to make relevant suggestions. A project with established AWS configurations will receive more accurate suggestions for additional AWS resources than starting from a blank file.

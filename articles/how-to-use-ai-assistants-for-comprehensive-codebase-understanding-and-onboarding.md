@@ -126,7 +126,7 @@ Start with broad questions that establish context:
 - "What framework and language is this built with?"
 
 
-This establishes baseline understanding before diving into specifics.
+This establishes baseline understanding before looking at specifics.
 
 
 ### Week 1: Focus on Your First Task
@@ -207,7 +207,7 @@ When working with large codebases, context windows become critical. Modern AI as
 
 2. **Create summary documents** - Ask for summaries of complex modules
 
-3. **Build mental models progressively** - Start with high-level architecture before diving into implementation details
+3. **Build mental models progressively** - Start with high-level architecture before examining implementation details
 
 
 ```

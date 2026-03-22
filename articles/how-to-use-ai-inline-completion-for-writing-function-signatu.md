@@ -38,7 +38,7 @@ The key to getting accurate suggestions is providing clear context. A function n
 
 ## How Inline Completion Differs Across Tools
 
-Before diving into techniques, it helps to understand how the major tools approach inline completion differently:
+Before exploring techniques, it helps to understand how the major tools approach inline completion differently:
 
 | Tool | Trigger mechanism | Context window | Multi-line suggestions |
 |---|---|---|---|
@@ -183,7 +183,7 @@ interface FilterOptions {
   maxAmount?: number;
 }
 
-// Now AI suggests the full signature leveraging FilterOptions
+// Now AI suggests the full signature applying FilterOptions
 function filterTransactions(
   transactions: Transaction[],
   filters: FilterOptions,

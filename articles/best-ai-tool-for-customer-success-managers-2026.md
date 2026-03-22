@@ -277,7 +277,7 @@ def analyze_customer_health(customer_data: dict) -> dict:
 
 def parse_health_analysis(response_text: str) -> dict:
     """Parse Claude's response into structured data."""
-    # In production, use more robust parsing
+    # In production, use more durable parsing
     return {
         "analysis": response_text,
         "timestamp": datetime.now().isoformat(),

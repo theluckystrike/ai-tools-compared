@@ -228,7 +228,7 @@ When evaluating AI assistants for TypeScript Svelte component generation, consid
 Even with the best AI tools, certain Svelte-specific patterns trip up code generation. Watch for these issues in any AI-generated component:
 
 
-**Svelte 4 vs. Svelte 5 syntax mixing.** Look for `$:` declarations alongside `$state` usage—this indicates the model mixed paradigms. Valid Svelte 5 code should use runes consistently throughout the component.
+**Svelte 4 vs. Svelte 5 syntax mixing.** Look for `$:` declarations alongside `$state` usage—this indicates the model mixed patterns. Valid Svelte 5 code should use runes consistently throughout the component.
 
 
 **Missing `lang="ts"` on the script tag.** Without this attribute, TypeScript is inactive and type errors go unreported. Always confirm the opening tag reads `<script lang="ts">`.
