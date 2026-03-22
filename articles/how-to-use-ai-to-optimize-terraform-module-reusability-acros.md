@@ -249,6 +249,179 @@ For teams with existing Terraform configurations, AI assists in refactoring to i
 This approach transforms monolithic Terraform configurations into modular, reusable components without disrupting existing infrastructure.
 
 
+## Using AI to Detect Cross-Module Duplication
+
+
+One of the highest-value applications of AI in Terraform workflows is identifying duplication across modules that evolved independently. Pass your entire module directory to an AI assistant with a prompt like: "Identify resource patterns duplicated across these modules and suggest abstractions."
+
+
+For example, if three modules all define similar IAM role configurations independently, AI can extract a shared `iam-role` sub-module:
+
+
+```hcl
+# modules/iam-role/main.tf
+# AI-extracted common pattern
+
+variable "role_name" {
+  description = "Name for the IAM role"
+  type        = string
+}
+
+variable "trusted_services" {
+  description = "AWS services allowed to assume this role"
+  type        = list(string)
+  default     = ["lambda.amazonaws.com"]
+}
+
+variable "managed_policy_arns" {
+  description = "ARNs of managed policies to attach"
+  type        = list(string)
+  default     = []
+}
+
+data "aws_iam_policy_document" "assume_role" {
+  statement {
+    actions = ["sts:AssumeRole"]
+    principals {
+      type        = "Service"
+      identifiers = var.trusted_services
+    }
+  }
+}
+
+resource "aws_iam_role" "this" {
+  name               = var.role_name
+  assume_role_policy = data.aws_iam_policy_document.assume_role.json
+}
+
+resource "aws_iam_role_policy_attachment" "managed" {
+  for_each = toset(var.managed_policy_arns)
+
+  role       = aws_iam_role.this.name
+  policy_arn = each.value
+}
+
+output "role_arn" {
+  value = aws_iam_role.this.arn
+}
+```
+
+The three original modules now call this shared sub-module, eliminating duplication and centralizing IAM role logic in one maintainable location.
+
+
+## AI-Assisted Module Versioning Strategy
+
+
+Reusability requires stable versioning. AI can help design a versioning strategy that balances backwards compatibility with the need to evolve modules. A typical AI-recommended approach uses semantic versioning with compatibility guarantees:
+
+| Version Bump | When to Use | Backwards Compatible |
+|-------------|-------------|---------------------|
+| Patch (1.0.x) | Bug fixes, documentation updates | Yes |
+| Minor (1.x.0) | New optional variables, new outputs | Yes |
+| Major (x.0.0) | Removed variables, renamed outputs, resource replacements | No |
+
+When breaking changes are unavoidable, AI can generate migration guides automatically by diffing the old and new variable schemas:
+
+
+```hcl
+# AI-generated migration guide comment block
+# Upgrading from v1.x to v2.0
+
+# Before (v1.x)
+module "vpc" {
+  source  = "org/vpc/aws"
+  version = "~> 1.0"
+
+  vpc_cidr = "10.0.0.0/16"  # old variable name
+}
+
+# After (v2.0) — variable renamed for cross-module consistency
+module "vpc" {
+  source  = "org/vpc/aws"
+  version = "~> 2.0"
+
+  cidr_block = "10.0.0.0/16"
+}
+```
+
+Generating these migration guides automatically reduces friction when teams upgrade module versions across a large registry.
+
+
+## Integrating AI Module Analysis into Pull Request Workflows
+
+
+Embedding AI module analysis into your pull request process creates a continuous feedback loop that improves module quality over time. A lightweight GitHub Actions workflow can check for common reusability problems on every PR that modifies a module:
+
+
+```yaml
+# .github/workflows/terraform-module-check.yml
+name: Terraform Module Quality Check
+on:
+  pull_request:
+    paths:
+      - 'modules/**'
+
+jobs:
+  quality-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Check for hardcoded values
+        run: |
+          # Flag hardcoded AWS account IDs or regions
+          if grep -rn '[0-9]\{12\}' modules/; then
+            echo "WARNING: Possible hardcoded AWS account ID detected"
+            exit 1
+          fi
+          if grep -rn '"us-east-1"' modules/; then
+            echo "WARNING: Hardcoded region — use var.region instead"
+            exit 1
+          fi
+
+      - name: Validate all variables have descriptions
+        run: |
+          python3 - <<'EOF'
+          import re, sys, pathlib
+
+          missing = []
+          for tf_file in pathlib.Path('modules').rglob('variables.tf'):
+              content = tf_file.read_text()
+              blocks = re.findall(r'variable\s+"[^"]+"\s+\{([^}]+)\}', content)
+              for block in blocks:
+                  if 'description' not in block:
+                      missing.append(str(tf_file))
+
+          if missing:
+              print(f"Variables missing descriptions in: {missing}")
+              sys.exit(1)
+          print("All variables have descriptions")
+          EOF
+
+      - name: Run terraform validate
+        run: |
+          terraform -chdir=modules/vpc init -backend=false
+          terraform -chdir=modules/vpc validate
+```
+
+This automated check catches hardcoded values and undocumented variables before human code review, letting reviewers focus on higher-level design decisions rather than mechanical quality issues.
+
+
+## Comparing AI Tools for Terraform Refactoring
+
+
+Different AI assistants offer varying levels of Terraform-specific support:
+
+| Tool | Terraform Awareness | Context Limit | Module Registry Integration | Best Use Case |
+|------|--------------------|--------------|-----------------------------|---------------|
+| Claude Code | High (HCL parsing) | 200K tokens | Manual paste | Large module refactors |
+| GitHub Copilot | Medium (pattern matching) | File-level | None | Inline variable additions |
+| Cursor | High (project-wide) | Project-wide | None | Cross-module analysis |
+| Amazon Q Developer | High (AWS-optimized) | File-level | Terraform Registry API | AWS-specific modules |
+
+For large-scale refactoring across dozens of modules, Claude Code and Cursor offer the largest context windows — essential when you need to analyze patterns across an entire module library simultaneously.
+
+
 ## Best Practices for AI-Assisted Module Development
 
 
