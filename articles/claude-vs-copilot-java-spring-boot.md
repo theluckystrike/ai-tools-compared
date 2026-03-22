@@ -280,6 +280,162 @@ volumes:
 
 Claude uses `service_healthy` conditions for `depends_on` (requires healthchecks), separates the two schemas via Flyway configuration, and adds the Redis eviction policy. Copilot generates simpler Docker Compose but misses the health check conditions.
 
+## Task 4: Distributed Tracing with Micrometer and Zipkin
+
+Adding distributed tracing to a multi-service Spring Boot project requires consistent configuration across every service. Copilot can generate individual Micrometer observations, but generating a consistent cross-service setup with correct sampling and context propagation benefits from Claude's ability to reason about the full stack simultaneously.
+
+**Prompt to Claude:** "Set up Micrometer Tracing with Zipkin for three Spring Boot services. Show the shared dependencies, application.yml config, a custom span in a service method, and how to propagate trace IDs in Feign calls."
+
+**Claude's response covers all four components:**
+
+```xml
+<!-- pom.xml — same for all three services -->
+<dependency>
+    <groupId>io.micrometer</groupId>
+    <artifactId>micrometer-tracing-bridge-brave</artifactId>
+</dependency>
+<dependency>
+    <groupId>io.zipkin.reporter2</groupId>
+    <artifactId>zipkin-reporter-brave</artifactId>
+</dependency>
+<dependency>
+    <groupId>io.github.openfeign</groupId>
+    <artifactId>feign-micrometer</artifactId>
+</dependency>
+```
+
+```yaml
+# application.yml — per service (change service name)
+management:
+  tracing:
+    sampling:
+      probability: 1.0    # 100% in dev; 0.1 in prod
+  zipkin:
+    tracing:
+      endpoint: http://zipkin:9411/api/v2/spans
+
+spring:
+  application:
+    name: order-service  # Identifies service in Zipkin UI
+```
+
+```java
+// Custom span in a business method
+@Service
+@RequiredArgsConstructor
+public class OrderService {
+
+    private final Tracer tracer;
+    private final UserServiceClient userServiceClient;
+
+    public OrderDto processOrder(CreateOrderRequest request) {
+        // Start a custom span for the business operation
+        Span span = tracer.nextSpan()
+            .name("order.process")
+            .tag("order.user_id", String.valueOf(request.getUserId()))
+            .start();
+
+        try (Tracer.SpanInScope ws = tracer.withSpan(span)) {
+            // Verify user — trace context propagates through Feign automatically
+            UserDto user = userServiceClient.getUserById(request.getUserId());
+            span.tag("order.user_status", user.getStatus().name());
+
+            OrderEntity order = createOrderEntity(request, user);
+            return orderRepository.save(order).toDto();
+
+        } catch (Exception e) {
+            span.error(e);
+            throw e;
+        } finally {
+            span.end();
+        }
+    }
+}
+```
+
+Trace IDs propagate automatically through Feign clients when `feign-micrometer` is on the classpath — no manual header injection needed. Copilot typically generates the Zipkin dependency and basic config, but misses the `feign-micrometer` dependency that closes the propagation loop.
+
+## Task 5: Kubernetes Deployment vs Docker Compose
+
+**Prompt:** "Generate Kubernetes manifests for the User Service: Deployment with health checks, HPA, ConfigMap for app config, and a Secret for DB credentials."
+
+**Claude generates the full manifest set:**
+
+```yaml
+# user-service-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-service
+  labels:
+    app: user-service
+    version: v1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: user-service
+  template:
+    metadata:
+      labels:
+        app: user-service
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: /actuator/prometheus
+        prometheus.io/port: "8081"
+    spec:
+      containers:
+        - name: user-service
+          image: yourorg/user-service:latest
+          ports:
+            - containerPort: 8081
+          envFrom:
+            - configMapRef:
+                name: user-service-config
+            - secretRef:
+                name: user-service-secrets
+          readinessProbe:
+            httpGet:
+              path: /actuator/health/readiness
+              port: 8081
+            initialDelaySeconds: 20
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: 8081
+            initialDelaySeconds: 40
+            periodSeconds: 30
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: user-service-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: user-service
+  minReplicas: 2
+  maxReplicas: 10
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 70
+```
+
+Copilot generates a basic Deployment but typically omits the separate readiness and liveness probes (Spring Boot 2.3+ exposes them separately via `health/readiness` and `health/liveness`), the HPA, and the Prometheus scrape annotations in a single prompt. Claude handles the full multi-file manifest set from one request.
+
 ## Related Reading
 
 - [Copilot vs Claude for Generating Java Spring Boot](/ai-tools-compared/copilot-vs-claude-for-generating-java-spring-boot-applicatio/)
