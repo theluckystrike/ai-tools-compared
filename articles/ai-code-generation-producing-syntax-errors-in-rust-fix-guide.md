@@ -412,4 +412,11 @@ The most reliable approach is to use AI for initial scaffolding and prototyping,
 
 For complex Rust features (FFI, proc macros, unsafe code), consider requesting multiple implementations and comparing approaches.
 
+
+## Related Articles
+
+- [AI Code Completion for Flutter BLoC Pattern Event and State Class Generation](/ai-code-completion-for-flutter-bloc-pattern-event-and-state-/)
+- [AI Code Generation for Java Reactive Programming](/ai-code-generation-for-java-reactive-programming-with-projec/)
+- [AI Code Generation for Java Virtual Threads Project Loom](/ai-code-generation-for-java-virtual-threads-project-loom-pat/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

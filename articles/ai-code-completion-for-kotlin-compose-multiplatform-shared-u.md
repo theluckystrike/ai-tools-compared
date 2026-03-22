@@ -300,4 +300,11 @@ AI code completion for Kotlin Compose Multiplatform shared UI components require
 
 The key is treating AI tools as collaborative partners that need clear guidance about your multiplatform constraints. With proper setup, these tools can significantly accelerate your KMP development workflow while reducing boilerplate code in your shared modules.
 
+
+## Related Articles
+
+- [Best AI for Writing Correct Kotlin Multiplatform Shared](/best-ai-for-writing-correct-kotlin-multiplatform-shared-code/)
+- [AI Tools for Generating Platform Specific Code in Kotlin Multiplatform Projects](/ai-tools-for-generating-platform-specific-code-in-kotlin-mul/)
+- [AI Code Completion for Flutter BLoC Pattern Event and State Class Generation](/ai-code-completion-for-flutter-bloc-pattern-event-and-state-/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -208,6 +208,13 @@ AI tools significantly reduce the time required to configure Renovate bot effect
 
 The combination of Renovate's powerful configuration options and AI's ability to generate context-appropriate settings creates a efficient workflow for maintaining up-to-date dependencies across your projects.
 
+
+## Related Articles
+
+- [AI Tools for Generating Dependency Update Pull Request](/ai-tools-for-generating-dependency-update-pull-request-descr/)
+- [AI Tools for Generating Mobile App Deep Linking Configuration](/ai-tools-for-generating-mobile-app-deep-linking-configuratio/)
+- [Best AI Tools for Automated DNS Configuration Management](/best-ai-tools-for-automated-dns-configuration-management-acr/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}
