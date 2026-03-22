@@ -221,7 +221,7 @@ Here is a repeatable workflow for getting quality dynamic-load tests from any AI
 **Step 4 — Ask for error handling.** Prompt the AI to add a timeout guard: "Add a maximum of 10 scroll attempts so the test fails cleanly if content never loads."
 
 
-**Step 5 — Request a helper function.** For reusable scroll logic, ask the AI to extract the waiting into a utility function your whole test suite can import.
+**Step 5 — Request a helper function.** For reusable scroll logic, ask the AI to extract the waiting into an utility function your whole test suite can import.
 
 
 A complete prompt to Claude Code might look like this:

@@ -150,7 +150,7 @@ module "vpc" {
 
  tags = {
 
- Team = "Platform"
+Team = "Platform"
 
  }
 

@@ -476,5 +476,4 @@ claude code packages/shared/types/**/*.ts packages/your-service/src/**/*.ts \
 - [Effective Strategies for AI-Assisted Refactoring Without Bre](/ai-tools-compared/effective-strategies-for-ai-assisted-refactoring-without-bre/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

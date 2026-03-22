@@ -308,6 +308,7 @@ The calculation is identical for public and private repositories—the value com
 
 The value proposition is straightforward: unlimited Copilot access across all your work, regardless of whether the code is visible to the world or locked behind organization permissions. Repository visibility is irrelevant to pricing.
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

@@ -382,5 +382,4 @@ AI-generated schemas often create relationships that trigger N+1 queries. Use Da
 - [Prompt Engineering Patterns for Code Generation](/ai-tools-compared/prompt-engineering-patterns-for-code-generation/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

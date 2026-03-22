@@ -228,6 +228,56 @@ npx eslint src/
 This approach catches issues during your normal development workflow—before you even commit.
 
 
+## Comparing AI Review Tools by Use Case
+
+Different tools suit different team structures and workflows. Here is how the main options compare across the factors that matter most:
+
+| Tool | IDE Integration | Git Integration | Offline Mode | Best For |
+|------|----------------|-----------------|--------------|----------|
+| GitHub Copilot | VS Code, JetBrains | GitHub PRs | No | Teams already on GitHub |
+| Cursor | Built-in (VS Code base) | Manual | No | Solo developers and small teams |
+| Claude Code | Terminal / CLI | git diff aware | No | Script-driven pipelines |
+| Aider | Terminal | Native | No | Commit-level reviews |
+| ESLint + AI plugins | Any editor | Pre-commit hooks | Yes (cached) | Enforcing style rules at scale |
+
+For teams that want coverage at every stage, running Copilot during development plus a Claude Code pre-commit hook gives the best overlap between interactive and automated review.
+
+
+## Building a Pre-Commit Hook That Does Not Slow You Down
+
+The main objection to AI review in commit hooks is latency. A review that takes 30 seconds per commit will be bypassed with `--no-verify` within days. Avoid this by scoping the review tightly.
+
+Create a pre-commit hook that only reviews staged changes, not the entire file:
+
+```bash
+#!/bin/bash
+# .git/hooks/pre-commit
+
+STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep -E '\.(ts|tsx|js|jsx|py)$')
+
+if [ -z "$STAGED_FILES" ]; then
+  exit 0
+fi
+
+echo "Running AI review on staged files..."
+
+for FILE in $STAGED_FILES; do
+  # Only review the diff, not the entire file
+  git diff --cached "$FILE" | claude-code review --stdin --format=compact
+  EXIT_CODE=$?
+  if [ $EXIT_CODE -ne 0 ]; then
+    echo "AI review flagged issues in $FILE. Fix and re-stage, or use --no-verify to bypass."
+    exit 1
+  fi
+done
+
+echo "AI review passed."
+exit 0
+```
+
+The `--stdin` flag passes only the diff context, keeping requests short and latency under five seconds for typical commits.
+
+
 ## Building a Custom Review Pipeline
 
 
@@ -263,6 +313,15 @@ chmod +x ai-review.sh
 ```
 
 
+## Integrating AI Review into JetBrains IDEs
+
+VS Code-based tools dominate the AI review space, but JetBrains users are not without options. The GitHub Copilot plugin for IntelliJ, WebStorm, and PyCharm provides the same chat-based review through the Copilot Chat panel. Open any file, select code, and press `Alt+Enter` to access the Copilot context menu with review options.
+
+For more structured reviews in JetBrains, install the HTTP Client plugin and create a scratch file that posts to the Anthropic or OpenAI API with your file content. While less seamless than a dedicated extension, it keeps your review prompts version-controlled and reusable across the team.
+
+Teams using JetBrains Gateway for remote development can pipe review requests through their gateway connection, centralizing AI calls on the server side rather than each developer's machine. This approach also makes it easier to enforce DLP policies by controlling outbound API traffic at a single point.
+
+
 ## Best Practices for IDE-Based AI Review
 
 
@@ -277,6 +336,8 @@ claude-code review --staged
 
 
 Keep your AI tools updated—vendors regularly improve their analysis capabilities. Combine AI review with traditional tools like linters and formatters for coverage. Finally, train your team on interpreting AI feedback to avoid blindly accepting suggestions.
+
+One discipline that pays off quickly: when AI review flags something you disagree with, annotate the code with a comment explaining why the pattern is intentional. This creates a living record of architectural decisions and prevents the same false positive from being raised in future reviews.
 
 
 ## Related Articles

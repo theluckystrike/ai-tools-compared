@@ -185,7 +185,7 @@ class UserManager:
     pass
 ```
 
-### Leverage Virtual Environments
+### Use Virtual Environments
 
 Copilot behaves better when working in projects with clean virtual environments. Ensure your `.venv` or `venv` folder is active:
 

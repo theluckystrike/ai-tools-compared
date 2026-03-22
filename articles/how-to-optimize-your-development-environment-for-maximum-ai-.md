@@ -67,6 +67,34 @@ insert_final_newline = true
 This configuration helps AI tools parse your code correctly and generates suggestions that match your project's style. Without it, AI-generated code might use different indentation or formatting, requiring manual cleanup.
 
 
+### TypeScript and JSConfig for Stronger Context
+
+
+For JavaScript and TypeScript projects, a well-configured `tsconfig.json` or `jsconfig.json` dramatically improves AI suggestion accuracy. These files tell AI tools about your module paths, compiler targets, and strict mode settings:
+
+
+```json
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@utils/*": ["src/utils/*"]
+    },
+    "strict": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
+```
+
+
+With path aliases configured, AI tools understand that `@components/Button` resolves to `src/components/Button`. This eliminates a common category of suggestion errors where the AI generates correct logic but wrong import paths.
+
+
 ## Optimizing Context Windows and Token Limits
 
 
@@ -116,6 +144,24 @@ When working on large features, decompose requests into smaller, focused interac
 This approach produces more accurate results and makes review easier.
 
 
+### What Actually Improves AI Suggestion Quality vs. What Doesn't
+
+
+Not all environment changes provide equal benefit. Here's an honest breakdown:
+
+| Configuration | Impact on AI Quality | Worth the Effort? |
+|---|---|---|
+| Conventional project structure | High — models learned on OSS repos | Yes, always |
+| `.editorconfig` / formatting | Medium — reduces cleanup passes | Yes, low effort |
+| TypeScript strict mode | High — eliminates type ambiguity | Yes for TS projects |
+| JSDoc comments | High — gives AI function intent | Yes, especially on utilities |
+| Detailed README | Low — rarely included in context | Marginal |
+| Clean git history | Low — not in real-time context | Marginal for PR review tools |
+| `.aiignore` exclusions | Medium — keeps context focused | Yes for large repos |
+
+The highest-use configurations are project structure, type annotations, and in-file comments. The AI reads what's in your open files and nearby modules — invest there first.
+
+
 ## Using AI-Powered Search and Navigation
 
 
@@ -153,6 +199,18 @@ Some AI tools maintain a knowledge graph of your codebase. Enable this feature t
 - Identification of potential breaking changes before they happen
 
 - Smart rename operations that understand context
+
+
+### Using AI-Assisted Documentation Lookups
+
+
+Configure your AI tool to pull from external documentation sources. Cursor, for example, supports custom documentation indexes through its `@Docs` feature. You can add your internal API docs, third-party library references, or framework documentation:
+
+1. Open Cursor settings and navigate to the Docs section
+2. Add URLs for your documentation sources (Swagger endpoints, Storybook, etc.)
+3. Reference them in chat with `@Docs` to give the AI accurate, current context
+
+This is especially valuable when working with internal libraries that pre-date the model's training cutoff.
 
 
 ## Automating Repetitive Workflows
@@ -194,6 +252,32 @@ npx ai-lint --staged
 
 
 This catches issues before they reach code review, though you should always validate AI suggestions personally.
+
+
+### Linting Integration That Helps AI Generate Correct Code
+
+
+ESLint and Prettier are not just code quality tools — they signal your project's conventions to AI assistants. When your linter config is present and consistent, AI-generated code tends to pass lint on the first try rather than requiring repeated correction loops.
+
+A well-configured `.eslintrc.json` communicates your rules explicitly:
+
+```json
+{
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "rules": {
+    "no-unused-vars": "error",
+    "prefer-const": "error",
+    "no-console": "warn"
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2022": true
+  }
+}
+```
+
+After generating code with an AI tool, run `eslint --fix` to auto-correct style issues. Over time, you'll notice the AI learns your project's patterns from the surrounding code and reduces lint errors in subsequent suggestions.
 
 
 ## Managing API Keys and Authentication

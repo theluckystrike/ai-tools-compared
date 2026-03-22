@@ -250,5 +250,4 @@ def multimodal_coding_task(image_path, prompt, task_type):
 - [AI Coding Assistant Comparison for React Component Generation](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

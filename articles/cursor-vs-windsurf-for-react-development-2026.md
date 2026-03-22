@@ -85,7 +85,7 @@ Cursor's first-pass output required zero follow-up prompts.
 
 ## Custom Hook Generation
 
-Test prompt: "Write a useIntersectionObserver hook that accepts a callback and options, cleans up on unmount, and handles SSR"
+Test prompt: "Write an useIntersectionObserver hook that accepts a callback and options, cleans up on unmount, and handles SSR"
 
 ```tsx
 // Cursor output — all concerns addressed in one pass
@@ -300,5 +300,4 @@ Both tools beat a standard Copilot + VS Code setup for React development.
 - [Copilot vs Cursor vs Windsurf Inline Diff Preview Comparison](/ai-tools-compared/copilot-vs-cursor-vs-windsurf-inline-diff-preview-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

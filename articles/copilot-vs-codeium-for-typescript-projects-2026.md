@@ -289,5 +289,4 @@ Codeium's free tier is genuinely unlimited for completions. For teams where the 
 - [Switching from Copilot to Codeium What Extensions to Install](/ai-tools-compared/switching-from-copilot-to-codeium-what-extensions-to-install/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

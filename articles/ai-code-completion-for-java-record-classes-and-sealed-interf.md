@@ -273,22 +273,22 @@ public static String describeShape(NumericShape shape) {
 When testing an AI code completion tool with records and sealed interfaces:
 
 1. **Record Recognition Test**
-   - Type `record User` and verify the tool suggests complete syntax
-   - Check if it generates canonical constructors automatically
-   - Verify handling of defensive copies for mutable fields
+ - Type `record User` and verify the tool suggests complete syntax
+ - Check if it generates canonical constructors automatically
+ - Verify handling of defensive copies for mutable fields
 
 2. **Sealed Type Test**
-   - Create a sealed interface with 3-4 permitted types
-   - Verify the tool suggests all permitted implementations
-   - Check that incomplete switch statements get flagged
+ - Create a sealed interface with 3-4 permitted types
+ - Verify the tool suggests all permitted implementations
+ - Check that incomplete switch statements get flagged
 
 3. **Pattern Matching Test**
-   - Write a switch expression on a sealed type with some cases missing
-   - Verify the tool suggests completing the pattern match
-   - Confirm it knows when a case is unreachable
+ - Write a switch expression on a sealed type with some cases missing
+ - Verify the tool suggests completing the pattern match
+ - Confirm it knows when a case is unreachable
 
 4. **Compilation Verification**
-   ```bash
+ ```bash
    # Test that generated code compiles without warnings
    javac -Xlint:all -Werror RecordTest.java
    ```
@@ -335,19 +335,19 @@ public final class Circle implements Shape {
 Teams using modern Java should establish patterns for AI-assisted development:
 
 1. **Document your record conventions**
-   - Whether you use records for DTOs, value objects, or domain models
-   - Validation expectations (defensive copies, null checks, etc.)
-   - Share examples with your AI tool context
+ - Whether you use records for DTOs, value objects, or domain models
+ - Validation expectations (defensive copies, null checks, etc.)
+ - Share examples with your AI tool context
 
 2. **Use sealed types consistently**
-   - Define sealed hierarchies for domain models where all subtypes are known
-   - Use unsealed classes only when necessary
-   - use pattern matching exclusively for sealed types
+ - Define sealed hierarchies for domain models where all subtypes are known
+ - Use unsealed classes only when necessary
+ - use pattern matching exclusively for sealed types
 
 3. **Validate AI-generated code**
-   - Compile with `-Xlint:all -Werror` to catch subtle issues
-   - Run tests verifying immutability and equality semantics
-   - Code review focus: validation logic in compact constructors
+ - Compile with `-Xlint:all -Werror` to catch subtle issues
+ - Run tests verifying immutability and equality semantics
+ - Code review focus: validation logic in compact constructors
 
 ## Looking Forward
 

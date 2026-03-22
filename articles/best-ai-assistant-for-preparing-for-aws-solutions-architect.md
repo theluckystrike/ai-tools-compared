@@ -293,7 +293,7 @@ For AWS Solutions Architect preparation, combining multiple AI tools works best:
 
 **Pitfall 3: Relying on a single AI tool.** Each model has knowledge gaps in different areas. If Claude gives you an uncertain answer about a specific pricing model, verify it with ChatGPT using the browsing tool. Treat AI answers as a starting point for investigation, not a final authority.
 
-
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

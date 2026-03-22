@@ -287,7 +287,7 @@ Some clients require that data never leave a specific cloud region. Check whethe
 
 Yes. Combine your switcher script with direnv and a post-switch hook that opens the right project directory in your editor. A single `switch-client.sh client-alpha` command can load env vars, open VS Code/Cursor, and set terminal title in one step.
 
-
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

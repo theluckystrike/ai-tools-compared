@@ -165,22 +165,22 @@ AI-generated journey maps require validation. The assistant might misinterpret a
 **Validation checklist for AI-generated journeys:**
 
 1. **Statistical validity**
-   - [ ] Does the journey path appear in actual data (check frequency)
-   - [ ] Are drop-off percentages accurate (spot-check 3-5 events)
-   - [ ] Do user segment sizes match analytics (within 5%)
-   - [ ] Are time durations realistic (not conflating steps)
+ - [ ] Does the journey path appear in actual data (check frequency)
+ - [ ] Are drop-off percentages accurate (spot-check 3-5 events)
+ - [ ] Do user segment sizes match analytics (within 5%)
+ - [ ] Are time durations realistic (not conflating steps)
 
 2. **Logical coherence**
-   - [ ] Does the sequence make sense for your product?
-   - [ ] Are stated pain points actual friction points?
-   - [ ] Do hypothesized reasons align with product design?
-   - [ ] Are alternatives realistic paths users would take?
+ - [ ] Does the sequence make sense for your product?
+ - [ ] Are stated pain points actual friction points?
+ - [ ] Do hypothesized reasons align with product design?
+ - [ ] Are alternatives realistic paths users would take?
 
 3. **Actionability**
-   - [ ] Can you identify specific design changes from the journey?
-   - [ ] Are recommendations specific (not generic advice)?
-   - [ ] Do suggestions address root causes vs. symptoms?
-   - [ ] Can you measure impact of addressing issues?
+ - [ ] Can you identify specific design changes from the journey?
+ - [ ] Are recommendations specific (not generic advice)?
+ - [ ] Do suggestions address root causes vs. symptoms?
+ - [ ] Can you measure impact of addressing issues?
 
 **Example validation:**
 

@@ -334,7 +334,7 @@ For most pricing research workflows, using both tools in sequence provides the b
 
 The key is understanding that these tools serve different but complementary purposes. Perplexity answers "what is?" while ChatGPT explores "what does it mean?" Together, they form a powerful research toolkit for any developer or power user focused on competitive pricing intelligence.
 
-
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

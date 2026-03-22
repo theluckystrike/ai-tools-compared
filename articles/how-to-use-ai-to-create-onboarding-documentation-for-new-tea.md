@@ -287,5 +287,7 @@ Track documentation effectiveness by monitoring how quickly new team members bec
 - [Effective Strategies for Using AI](/ai-tools-compared/effective-strategies-for-using-ai-to-learn-new-programming-languages-faster/)
 - [AI Employee Onboarding Tools Comparison 2026](/ai-tools-compared/ai-employee-onboarding-tools-comparison-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
 ```
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

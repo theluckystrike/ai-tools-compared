@@ -440,11 +440,11 @@ def check_doc_quality(markdown_file: str) -> dict:
 
     return {
         "has_examples": "Example:" in content or "```" in content,
-        "has_parameters": "Args:" in content or "Parameters:" in content,
-        "has_returns": "Returns:" in content,
-        "has_errors": "Raises:" in content or "Errors:" in content,
-        "line_count": len(content.split('\n')),
-        "code_blocks": content.count("```")
+ "has_parameters": "Args:" in content or "Parameters:" in content,
+ "has_returns": "Returns:" in content,
+ "has_errors": "Raises:" in content or "Errors:" in content,
+ "line_count": len(content.split('\n')),
+ "code_blocks": content.count("```")
     }
 
 # Monitor these metrics weekly

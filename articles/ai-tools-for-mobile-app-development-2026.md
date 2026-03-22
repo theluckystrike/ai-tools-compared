@@ -321,5 +321,4 @@ class SettingsScreen extends StatelessWidget {
 - [AI Coding Assistant Comparison for TypeScript Svelte Components](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-svelte-component/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

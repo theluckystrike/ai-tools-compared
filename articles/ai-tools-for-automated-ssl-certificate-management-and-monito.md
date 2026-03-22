@@ -316,7 +316,7 @@ groups:
 
 ## Integration Patterns with CI/CD
 
-Modern CI/CD pipelines can leverage AI for certificate automation:
+Modern CI/CD pipelines can use AI for certificate automation:
 
 ```yaml
 # GitHub Actions workflow for certificate renewal

@@ -88,7 +88,7 @@ for query in queries:
 similar = find_similar_embeddings(new_query, k=5)
 ```
 
-You identify patterns across your query history. If query A and B are similar but A uses an index and B doesn't, you see the difference immediately.
+You identify patterns across your query history. If query An and B are similar but An uses an index and B doesn't, you see the difference immediately.
 
 **Actual result**: One company found that 30% of their slow queries could be fixed by adding 3 indexes across a product table.
 
@@ -138,7 +138,7 @@ After: Cost estimate 8.5 (Index Scan)
 
 **Best for**: Large enterprises, complex multi-database environments.
 
-DPA combines machine learning with traditional monitoring for comprehensive optimization.
+DPA combines machine learning with traditional monitoring for optimization.
 
 Capabilities:
 - Real-time query analysis across 10k+ queries/second
@@ -290,15 +290,4 @@ One production example:
 
 ---
 
-## Conclusion
-
-AI-driven SQL optimization works best as part of a process:
-1. Identify slow queries (logging + monitoring)
-2. Analyze root causes (AI tools)
-3. Implement changes (controlled, staged environment)
-4. Measure impact (before/after metrics)
-5. Iterate on patterns
-
-The tools save time on step 2 (analysis), but steps 1, 3, 4, 5 are non-negotiable for reliability.
-
-Start with the free/cheap options (pgBadger, Claude API) before investing in enterprise solutions.
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

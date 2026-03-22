@@ -278,5 +278,4 @@ Each step takes 15-30 minutes instead of 2-4 hours. The AI won't get the design 
 - [AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026](/ai-tools-compared/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

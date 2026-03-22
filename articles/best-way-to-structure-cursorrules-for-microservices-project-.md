@@ -361,7 +361,7 @@ As your microservices grow, update your CursorRules to reflect changes:
 
 A well-maintained CursorRules setup ensures consistent, high-quality code generation across your entire microservices ecosystem.
 
-
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

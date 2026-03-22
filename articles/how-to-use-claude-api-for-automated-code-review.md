@@ -146,45 +146,45 @@ def review_pull_request(repo_name: str, pr_number: int) -> dict:
     text = response.content[0].text.strip()
     # Strip markdown code fences if present
     if text.startswith("```"):
-        text = "\n".join(text.split("\n")[1:-1])
+ text = "\n".join(text.split("\n")[1:-1])
 
-    try:
-        return json.loads(text)
-    except json.JSONDecodeError:
-        # Fallback: return as plain comment if JSON parsing fails
-        return {
-            "summary": text,
-            "verdict": "comment",
-            "issues": []
-        }
+ try:
+ return json.loads(text)
+ except json.JSONDecodeError:
+ # Fallback: return as plain comment if JSON parsing fails
+ return {
+ "summary": text,
+ "verdict": "comment",
+ "issues": []
+ }
 ```
 
 ## Post Review Comments to GitHub
 
 ```python
 def post_github_review(repo_name: str, pr_number: int, review: dict) -> None:
-    """Post the AI review as a GitHub PR review with inline comments."""
-    repo = gh.get_repo(repo_name)
-    pr = repo.get_pull(pr_number)
+ """Post the AI review as a GitHub PR review with inline comments."""
+ repo = gh.get_repo(repo_name)
+ pr = repo.get_pull(pr_number)
 
-    # Build inline comments (requires commit SHA for position mapping)
-    # Simpler approach: post review-level comment + file-level comments
-    comments_text = ""
-    critical_count = sum(1 for i in review["issues"] if i["severity"] == "critical")
-    warning_count = sum(1 for i in review["issues"] if i["severity"] == "warning")
+ # Build inline comments (requires commit SHA for position mapping)
+ # Simpler approach: post review-level comment + file-level comments
+ comments_text = ""
+ critical_count = sum(1 for i in review["issues"] if i["severity"] == "critical")
+ warning_count = sum(1 for i in review["issues"] if i["severity"] == "warning")
 
-    if review["issues"]:
-        comments_text = "\n\n### Issues Found\n\n"
-        for issue in review["issues"]:
-            severity_icon = "🔴" if issue["severity"] == "critical" else "🟡"
-            comments_text += f"**{severity_icon} {issue['severity'].upper()} — {issue['category']}**\n"
-            comments_text += f"`{issue['filename']}` line {issue['line']}\n"
-            comments_text += f"{issue['comment']}\n"
-            if issue.get("suggestion"):
-                comments_text += f"*Suggestion: {issue['suggestion']}*\n"
-            comments_text += "\n"
+ if review["issues"]:
+ comments_text = "\n\n### Issues Found\n\n"
+ for issue in review["issues"]:
+ severity_icon = "🔴" if issue["severity"] == "critical" else "🟡"
+ comments_text += f"**{severity_icon} {issue['severity'].upper()} — {issue['category']}**\n"
+ comments_text += f"`{issue['filename']}` line {issue['line']}\n"
+ comments_text += f"{issue['comment']}\n"
+ if issue.get("suggestion"):
+ comments_text += f"*Suggestion: {issue['suggestion']}*\n"
+ comments_text += "\n"
 
-    body = f"""## AI Code Review
+ body = f"""## AI Code Review
 
 {review['summary']}
 
@@ -193,18 +193,18 @@ def post_github_review(repo_name: str, pr_number: int, review: dict) -> None:
 ---
 *Reviewed by Claude claude-sonnet-4-6. This is automated analysis — use judgment.*"""
 
-    # Map verdict to GitHub event type
-    event_map = {
-        "approve": "APPROVE",
-        "request_changes": "REQUEST_CHANGES",
-        "comment": "COMMENT"
-    }
+ # Map verdict to GitHub event type
+ event_map = {
+ "approve": "APPROVE",
+ "request_changes": "REQUEST_CHANGES",
+ "comment": "COMMENT"
+ }
 
-    pr.create_review(
-        body=body,
-        event=event_map.get(review["verdict"], "COMMENT")
-    )
-    print(f"Posted review: {review['verdict']} ({critical_count} critical issues)")
+ pr.create_review(
+ body=body,
+ event=event_map.get(review["verdict"], "COMMENT")
+ )
+ print(f"Posted review: {review['verdict']} ({critical_count} critical issues)")
 ```
 
 ## GitHub Actions Webhook Integration
@@ -216,46 +216,46 @@ Trigger the reviewer automatically on every PR:
 name: AI Code Review
 
 on:
-  pull_request:
-    types: [opened, synchronize]
-    # Skip draft PRs
-  workflow_dispatch:
+ pull_request:
+ types: [opened, synchronize]
+ # Skip draft PRs
+ workflow_dispatch:
 
 jobs:
-  review:
-    runs-on: ubuntu-latest
-    # Don't run on draft PRs
-    if: github.event.pull_request.draft == false
-    permissions:
-      pull-requests: write
-      contents: read
+ review:
+ runs-on: ubuntu-latest
+ # Don't run on draft PRs
+ if: github.event.pull_request.draft == false
+ permissions:
+ pull-requests: write
+ contents: read
 
-    steps:
-      - uses: actions/checkout@v4
+ steps:
+ - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
+ - name: Set up Python
+ uses: actions/setup-python@v5
+ with:
+ python-version: '3.12'
 
-      - name: Install dependencies
-        run: pip install anthropic pygithub python-dotenv
+ - name: Install dependencies
+ run: pip install anthropic pygithub python-dotenv
 
-      - name: Run AI review
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REPO_NAME: ${{ github.repository }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
-        run: |
-          python -c "
-          import os
-          from review_bot import review_pull_request, post_github_review
-          repo = os.environ['REPO_NAME']
-          pr_num = int(os.environ['PR_NUMBER'])
-          review = review_pull_request(repo, pr_num)
-          post_github_review(repo, pr_num, review)
-          "
+ - name: Run AI review
+ env:
+ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+REPO_NAME: ${{ github.repository }}
+PR_NUMBER: ${{ github.event.pull_request.number }}
+ run: |
+ python -c "
+ import os
+ from review_bot import review_pull_request, post_github_review
+ repo = os.environ['REPO_NAME']
+ pr_num = int(os.environ['PR_NUMBER'])
+ review = review_pull_request(repo, pr_num)
+ post_github_review(repo, pr_num, review)
+ "
 ```
 
 ## Add File Context Beyond the Diff
@@ -264,21 +264,21 @@ For better accuracy on complex changes, send the full file alongside the diff:
 
 ```python
 def get_file_content(repo_name: str, filename: str, ref: str) -> str:
-    """Get full file content at a given ref."""
-    repo = gh.get_repo(repo_name)
-    try:
-        content = repo.get_contents(filename, ref=ref)
-        return content.decoded_content.decode("utf-8")
-    except Exception:
-        return ""
+ """Get full file content at a given ref."""
+ repo = gh.get_repo(repo_name)
+ try:
+ content = repo.get_contents(filename, ref=ref)
+ return content.decoded_content.decode("utf-8")
+ except Exception:
+ return ""
 
 def build_enhanced_review_prompt(pr_data: dict, repo_name: str, head_sha: str) -> str:
-    """Build prompt with full file context for critical files."""
-    files_text = ""
-    for f in pr_data["files"]:
-        if not f["patch"]:
-            continue
-        files_text += f"\n### {f['filename']} (diff)\n```diff\n{f['patch']}\n```\n"
+ """Build prompt with full file context for critical files."""
+ files_text = ""
+ for f in pr_data["files"]:
+ if not f["patch"]:
+ continue
+ files_text += f"\n### {f['filename']} (diff)\n```diff\n{f['patch']}\n```\n"
 
         # For Python/TypeScript files under 200 lines, include full content
         if f["filename"].endswith((".py", ".ts", ".js")) and f["additions"] < 200:

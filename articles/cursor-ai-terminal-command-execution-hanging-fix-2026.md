@@ -283,3 +283,5 @@ Implement these practices to minimize future terminal hanging issues:
 4. **Keep shell profiles minimal** with conditional loading based on terminal type
 5. **Regularly clear command history** and terminal buffers
 6. **Monitor system resources** to catch memory issues before they cause hangs
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

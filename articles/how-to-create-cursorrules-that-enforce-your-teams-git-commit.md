@@ -368,5 +368,4 @@ A well-maintained commit message convention, enforced through CursorRules, elimi
 - [Best Practices for Versioning CursorRules Files Across Team](/ai-tools-compared/best-practices-for-versioning-cursorrules-files-across-team-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

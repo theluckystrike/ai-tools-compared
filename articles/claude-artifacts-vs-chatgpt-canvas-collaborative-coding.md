@@ -130,7 +130,7 @@ Now make it async and add a check against a blocklist API.
 ```
 
 **2. Fast Prototyping (Sub-5-Minute Iterations)**
-Canvas is 40-50% faster for simple code changes. If you're sketching a utility function or shell script, Canvas's speed wins.
+Canvas is 40-50% faster for simple code changes. If you're sketching an utility function or shell script, Canvas's speed wins.
 
 **3. Learning New Syntax**
 You want to learn Rust or Go. Canvas's code-focused approach keeps syntax highlighted and editable. You can modify examples yourself.
@@ -208,7 +208,7 @@ Add proper error handling and logging.
 2. Claude builds it in Artifacts (both see the live preview)
 3. Engineer B: "Add debouncing" (Engineer A prompts Claude)
 4. Claude updates Artifacts (both see changes instantly)
-5. A and B both test the interactive component in real-time
+5. An and B both test the interactive component in real-time
 6. Share the Artifacts URL in code review (reviewers see it working)
 
 **With Canvas:**
@@ -216,7 +216,7 @@ Add proper error handling and logging.
 2. ChatGPT renders code in Canvas
 3. Engineer B: "Add debouncing" (needs to be pasted back to A)
 4. ChatGPT updates code in Canvas
-5. A and B both copy code to test locally
+5. An and B both copy code to test locally
 6. Review requires reading code without seeing it run
 
 **Artifacts are better for live collaboration** because both engineers see the same interactive output in real-time.

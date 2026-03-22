@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Best AI Tool for Generating Accessible Data Table Markup with Proper Headers"
-description: "A practical guide to AI-powered tools that generate accessible HTML data tables with proper semantic markup, ARIA attributes, and header associations for screen readers."
+title: "Best AI Tool for Generating Accessible Data Table Markup"
+description: "A practical guide to AI-powered tools that generate accessible HTML data tables with proper semantic markup, ARIA attributes, and header associations for"
 date: 2026-03-21
 author: theluckystrike
 permalink: /best-ai-tool-for-generating-accessible-data-table-markup-wit/

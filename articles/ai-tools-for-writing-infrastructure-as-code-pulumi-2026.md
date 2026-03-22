@@ -382,26 +382,26 @@ pulumi stack export
 Ask yourself these questions:
 
 1. **How large is the infrastructure change?** (1-2 resources vs entire new stack)
-   - Small: Use Copilot for velocity
-   - Large: Use Claude for accuracy
+ - Small: Use Copilot for velocity
+ - Large: Use Claude for accuracy
 
 2. **Do you need to reference existing infrastructure?**
-   - Yes, across many stacks: Claude's context window wins
-   - No, isolated resources: Copilot/Cursor sufficient
+ - Yes, across many stacks: Claude's context window wins
+ - No, isolated resources: Copilot/Cursor sufficient
 
 3. **Is your team already on a specific IDE?**
-   - Already on VSCode: Cursor eliminates friction
-   - Different editors: Claude API is universal
+ - Already on VSCode: Cursor eliminates friction
+ - Different editors: Claude API is universal
 
 4. **What's your error tolerance?**
-   - Low (production): Claude with explicit version pinning
-   - Medium (staging): Copilot is acceptable
-   - High (dev): Any tool with quick iteration
+ - Low (production): Claude with explicit version pinning
+ - Medium (staging): Copilot is acceptable
+ - High (dev): Any tool with quick iteration
 
 5. **How often do you write IaC?**
-   - Daily: Cursor ($20/month) pays for itself
-   - Weekly: Claude ($3-5/week API cost) more economical
-   - Monthly: Copilot ($10/month) simplest
+ - Daily: Cursor ($20/month) pays for itself
+ - Weekly: Claude ($3-5/week API cost) more economical
+ - Monthly: Copilot ($10/month) simplest
 
 ## Common Mistakes AI Tools Make
 

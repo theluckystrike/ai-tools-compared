@@ -20,7 +20,7 @@ Use Claude 3.5 Sonnet for designing instrumentation strategies that span multipl
 
 Effective observability requires consistent span naming, proper trace context propagation between services, and meaningful attributes on every span. Most teams struggle with:
 
-- **Inconsistent span names** across services (is it "db.query" or "database.execute"?  "http.server.request" or "request.handle"?)
+- **Inconsistent span names** across services (is it "db.query" or "database.execute"? "http.server.request" or "request.handle"?)
 - **Lost trace context** when async operations or message queues break the call chain
 - **Missing attributes** on critical spans (customer ID, API version, error codes)
 - **Sampling logic** that either discards interesting errors or overwhelming the backend with noise

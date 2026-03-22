@@ -258,30 +258,30 @@ Claude and ChatGPT are nearly equivalent—choose based on your existing AI tool
 Before choosing an AI tool, answer these questions:
 
 1. **What's your brief volume?**
-   - 1-2 per month: Claude (no setup, flexibility)
-   - 4+ per month: ChatGPT with custom GPT (consistency ROI)
-   - 10+ per month: Jasper (brand voice at scale)
+ - 1-2 per month: Claude (no setup, flexibility)
+ - 4+ per month: ChatGPT with custom GPT (consistency ROI)
+ - 10+ per month: Jasper (brand voice at scale)
 
 2. **Who creates briefs?**
-   - Single owner: Claude (simplest workflow)
-   - 2-5 people: ChatGPT (template consistency)
-   - 6+ people: Jasper or Notion (collaboration built-in)
+ - Single owner: Claude (simplest workflow)
+ - 2-5 people: ChatGPT (template consistency)
+ - 6+ people: Jasper or Notion (collaboration built-in)
 
 3. **How specialized is your brief structure?**
-   - Generic or flexible: Claude
-   - Highly standardized: ChatGPT custom GPT
-   - Brand-driven: Jasper
+ - Generic or flexible: Claude
+ - Highly standardized: ChatGPT custom GPT
+ - Brand-driven: Jasper
 
 4. **What's your integration need?**
-   - Standalone tool: Claude or ChatGPT
-   - Google Workspace: ChatGPT + Docs
-   - Notion workspace: Notion AI
-   - Existing Slack workflows: Copy.ai
+ - Standalone tool: Claude or ChatGPT
+ - Google Workspace: ChatGPT + Docs
+ - Notion workspace: Notion AI
+ - Existing Slack workflows: Copy.ai
 
 5. **Budget consideration?**
-   - Under $50/month: Claude (free tier) + subscription as needed
-   - $50-150/month: ChatGPT Pro or Jasper
-   - 150+/month: Jasper team plan or Notion AI
+ - Under $50/month: Claude (free tier) + subscription as needed
+ - $50-150/month: ChatGPT Pro or Jasper
+ - 150+/month: Jasper team plan or Notion AI
 
 ## Campaign Brief Prompt Template
 

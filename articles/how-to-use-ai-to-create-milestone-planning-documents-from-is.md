@@ -194,6 +194,63 @@ Priority ordering:
 AI tools can then logically arrange milestones, ensuring prerequisites are completed before dependent work begins.
 
 
+## Comparing AI Tools for Milestone Planning
+
+Different AI tools handle milestone planning with varying levels of sophistication. Understanding each tool's strengths helps you choose the right one for your workflow.
+
+| Tool | Best For | Context Window | Structured Output |
+|------|----------|----------------|-------------------|
+| Claude (Anthropic) | Complex dependency reasoning, nuanced prioritization | 200k tokens | Excellent Markdown |
+| GPT-4o | General-purpose planning, Excel/CSV integration | 128k tokens | Reliable JSON/MD |
+| Gemini 1.5 Pro | Large backlogs (500+ issues), spreadsheet analysis | 1M tokens | Good structured text |
+| Cursor / Copilot | In-editor planning, inline documentation | 64k tokens | Code-focused output |
+
+For backlogs under 100 issues, any of these tools produces reliable milestone plans. For backlogs exceeding 300 issues, Gemini's larger context window is a practical advantage. Claude tends to produce more nuanced reasoning when dependency chains are tangled or business priorities conflict.
+
+
+## Structuring the Output Document
+
+AI-generated milestone plans are most actionable when they follow a predictable structure. Request this template when prompting:
+
+```
+## Milestone 1: Foundation (Weeks 1-2)
+
+**Goal:** Establish core infrastructure and security
+
+**Success Criteria:**
+- User authentication operational in staging
+- CI/CD pipeline running all tests on each commit
+- Deployment takes less than 10 minutes
+
+**Issues:**
+| ID | Title | Points | Owner |
+|----|-------|--------|-------|
+| PROJ-101 | Implement user authentication flow | 8 | Backend team |
+| PROJ-103 | Set up CI/CD pipeline | 3 | DevOps |
+
+**Total Points:** 11 / 15 capacity
+
+**Risks:**
+- Auth integration with legacy SSO system may require additional investigation
+- CI/CD configuration for new cloud provider untested
+```
+
+This format gives team leads a ready-to-share document without requiring post-processing. The success criteria section is especially valuable: it forces the AI to think about measurable outcomes rather than just task completion.
+
+
+## Iterative Refinement Workflow
+
+AI-generated milestone plans rarely emerge perfect on the first attempt. Adopt an iterative refinement loop:
+
+1. **Generate initial plan**: Use your structured prompt with full backlog data
+2. **Review for business logic gaps**: AI lacks context about organizational constraints, vendor dependencies, or seasonal business cycles
+3. **Inject missing context**: Feed corrections back with specific instructions: "Move PROJ-108 to Milestone 2 because the design vendor delivers wireframes in week 3"
+4. **Re-generate affected sections**: Ask AI to regenerate only the modified milestone, preserving approved sections
+5. **Finalize and export**: Convert Markdown output to Confluence, Notion, or Linear using their import tools
+
+This loop typically takes 2-3 iterations and produces plans that incorporate both AI's pattern recognition and human domain knowledge. Teams report saving 3-5 hours per planning cycle compared to fully manual approaches.
+
+
 ## Validating AI-Generated Milestones
 
 

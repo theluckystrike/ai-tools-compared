@@ -428,5 +428,4 @@ For fiction writers serious about AI assistance, the hybrid approach often produ
 - [AI Tools for Designers Writing Handoff Notes That Include](/ai-tools-compared/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

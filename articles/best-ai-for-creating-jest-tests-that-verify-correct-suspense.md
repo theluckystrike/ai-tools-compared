@@ -56,6 +56,10 @@ When testing Suspense, you encounter several technical hurdles:
 
 AI coding assistants vary significantly in their ability to generate correct tests for these scenarios.
 
+A common failure mode is generating a test that uses `getBy` queries immediately after render, before the async component has resolved. React Testing Library throws an error because the element doesn't exist yet, and the test fails not because the component is broken but because the test itself is incorrect. Experienced developers instinctively reach for `findBy` or `waitFor`, but AI tools vary in how consistently they apply this knowledge.
+
+Another subtlety is the `act()` warning. When Suspense boundaries resolve outside of an `act()` call, React logs a warning about state updates. Properly structured tests wrap async operations to suppress these warnings and keep test output clean. Claude tends to get this right consistently; other tools require explicit prompting.
+
 
 ## AI Tool Comparison for Suspense Testing
 
@@ -100,7 +104,7 @@ test('Suspense shows fallback during lazy load', async () => {
 ```
 
 
-Claude generates tests that properly await async transitions and verify both loading and success states.
+Claude generates tests that properly await async transitions and verify both loading and success states. When prompted with a component that uses `React.lazy()` plus an error boundary, Claude generates the complete test scaffold including a reusable ErrorBoundary class component, proper `console.error` suppression (React logs expected errors even when caught), and cleanup in `afterEach` hooks.
 
 
 ### GitHub Copilot
@@ -143,7 +147,7 @@ test('lazy component loads', async () => {
 ```
 
 
-The generated code works for straightforward cases but may require manual refinement for complex scenarios.
+The generated code works for straightforward cases but may require manual refinement for complex scenarios. Copilot's inline suggestion model shines when you're already in a test file and have existing patterns for it to follow — it extrapolates well from context. The gap appears when starting from scratch on an unfamiliar pattern.
 
 
 ### Cursor
@@ -170,6 +174,9 @@ Cursor combines AI assistance with IDE features, making it useful for building t
 - Context-dependent performance
 
 
+Cursor's agent mode is particularly useful for updating an existing test suite to cover new Suspense patterns. If you have 20 existing component tests and want to add Suspense coverage, Cursor can read all existing files, understand your project's testing conventions, and generate consistent additions. This contextual awareness sets it apart from tools that treat each prompt in isolation.
+
+
 ### Aider
 
 
@@ -192,6 +199,9 @@ Aider works well for terminal-based test generation, particularly when you need 
 - Requires explicit prompting for async handling
 
 - Manual verification recommended
+
+
+Aider works best when you write explicit instructions in your prompt. Instead of "add tests for this Suspense component," prompt it with "add Jest tests using React Testing Library that use waitFor to handle async Suspense resolution and include an error boundary test case." That level of specificity reliably produces correct output.
 
 
 ## Practical Testing Patterns
@@ -265,6 +275,21 @@ test('error boundary catches lazy component failure', async () => {
 ```
 
 
+One important implementation note: when testing error boundaries, React will still call `console.error` with the error details even when the error is caught. To keep test output clean, suppress this in a `beforeEach` hook:
+
+```javascript
+beforeEach(() => {
+  jest.spyOn(console, 'error').mockImplementation(() => {});
+});
+
+afterEach(() => {
+  console.error.mockRestore();
+});
+```
+
+Claude generates this suppression automatically. Other tools require you to add it manually or prompt explicitly for it.
+
+
 ### Testing Suspense with Data Fetching
 
 
@@ -299,19 +324,52 @@ test('Suspense handles async data fetching', async () => {
 ```
 
 
+### Testing Nested Suspense Boundaries
+
+
+Real applications often nest Suspense boundaries — an outer boundary for page-level loading and inner boundaries for individual widgets. Testing nested boundaries requires verifying that each resolves independently:
+
+```javascript
+test('nested Suspense boundaries resolve independently', async () => {
+  render(
+    <Suspense fallback={<div>Page loading...</div>}>
+      <PageLayout>
+        <Suspense fallback={<div>Widget loading...</div>}>
+          <LazyWidget />
+        </Suspense>
+      </PageLayout>
+    </Suspense>
+  );
+
+  // Page resolves first, widget still loading
+  await waitFor(() => {
+    expect(screen.queryByText('Page loading...')).not.toBeInTheDocument();
+  });
+  expect(screen.getByText('Widget loading...')).toBeInTheDocument();
+
+  // Widget resolves
+  await waitFor(() => {
+    expect(screen.queryByText('Widget loading...')).not.toBeInTheDocument();
+  });
+  expect(screen.getByText('Widget Content')).toBeInTheDocument();
+});
+```
+
+Claude handles this pattern well when given the component structure as context. Copilot and Aider both require explicit prompting to generate tests for nested boundary scenarios.
+
+
 ## Recommendations by Use Case
 
 
-For test suites: Use Claude with explicit instructions about React Testing Library and async handling
+For test suites: Use Claude with explicit instructions about React Testing Library and async handling.
 
+For quick inline tests: GitHub Copilot works well for straightforward Suspense scenarios where you already have test patterns in the file.
 
-For quick inline tests: GitHub Copilot works well for straightforward Suspense scenarios
+For refactoring existing tests: Cursor's agent mode provides useful improvements when the existing codebase provides enough context.
 
+For CI/CD integration: Aider generates tests efficiently in terminal workflows when given sufficiently detailed prompts.
 
-For refactoring existing tests: Cursor's agent mode provides useful improvements
-
-
-For CI/CD integration: Aider generates tests efficiently in terminal workflows
+When correctness on first generation matters — such as when adding tests to CI pipelines that must pass before merging — Claude's consistent output makes it the practical choice. The cost of a debugging a subtly wrong async test often exceeds the cost of an AI tool subscription.
 
 
 ## Best Practices for AI-Generated Suspense Tests
@@ -326,6 +384,10 @@ For CI/CD integration: Aider generates tests efficiently in terminal workflows
 4. Clean up resources: Ensure proper unmounting in after hooks
 
 5. Mock appropriately: Use proper mocks for lazy-loaded dependencies
+
+6. Suppress expected console errors: Use `jest.spyOn(console, 'error')` to keep output readable when testing error boundary behavior
+
+7. Test with `act()`: Wrap state updates and async resolutions in `act()` to avoid React warnings in test output
 
 
 ## Related Articles

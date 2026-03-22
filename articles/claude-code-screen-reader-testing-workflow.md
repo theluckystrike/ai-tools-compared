@@ -402,6 +402,7 @@ const testResults = {
 
 Screen reader testing requires manual validation alongside automated tools. Use this workflow with Claude Code to systematically test across NVDA, VoiceOver, and JAWS, ensuring your web applications are accessible to all users.
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

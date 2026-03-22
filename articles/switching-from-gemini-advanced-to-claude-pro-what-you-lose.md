@@ -228,34 +228,34 @@ To minimize disruption when switching:
 
 
 1. **Export your Gemini conversation history** before canceling your subscription
-   - Use Gemini's export feature to save conversations as PDFs or text
-   - Search for specific problem-solution pairs you reference frequently
+ - Use Gemini's export feature to save conversations as PDFs or text
+ - Search for specific problem-solution pairs you reference frequently
 
 2. **Replicate your key workflows** in Claude one at a time
-   - Start with your most-used task (debugging, code review, documentation)
-   - Test Claude's output quality before migrating all workflows
-   - Keep Gemini access available as a fallback for first 2-3 weeks
+ - Start with your most-used task (debugging, code review, documentation)
+ - Test Claude's output quality before migrating all workflows
+ - Keep Gemini access available as a fallback for first 2-3 weeks
 
 3. **Keep both subscriptions** during a transition period if possible
-   - Gemini Advanced: ~$20/month (bundled with Google One Premium)
-   - Claude Pro: $20/month
-   - Temporary overlap ($40/month) beats productivity loss from poor tooling
+ - Gemini Advanced: ~$20/month (bundled with Google One Premium)
+ - Claude Pro: $20/month
+ - Temporary overlap ($40/month) beats productivity loss from poor tooling
 
 4. **Document prompts that work well** for your common tasks
-   - Save your effective prompts in a local document or GitHub Gist
-   - Note which models produce best outputs for specific tasks
-   - Include example inputs and expected output quality
+ - Save your effective prompts in a local document or GitHub Gist
+ - Note which models produce best outputs for specific tasks
+ - Include example inputs and expected output quality
 
 5. **Re-create your custom snippets** in Claude's preferred style
-   - Claude favors functional programming patterns—test your Java/OOP code carefully
-   - Use Claude's Projects feature to organize related prompts and codebase context
-   - Create saved instructions for recurring tasks (code review template, testing checklist)
+ - Claude favors functional programming patterns—test your Java/OOP code carefully
+ - Use Claude's Projects feature to organize related prompts and codebase context
+ - Create saved instructions for recurring tasks (code review template, testing checklist)
 
 6. **Adjust your workflow for Claude's strengths**
-   - Use uploads for complete files instead of pasting code
-   - Reference line numbers specifically: "In the PaymentService, lines 45-60, the error handling is..."
-   - Ask for intermediate explanations before detailed refactoring
-   - Request step-by-step approaches for complex problems
+ - Use uploads for complete files instead of pasting code
+ - Reference line numbers specifically: "In the PaymentService, lines 45-60, the error handling is..."
+ - Ask for intermediate explanations before detailed refactoring
+ - Request step-by-step approaches for complex problems
 
 **30-day transition checklist:**
 - Week 1: Test Claude on 3-5 common tasks, evaluate quality

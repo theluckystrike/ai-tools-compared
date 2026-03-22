@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Self-Hosted AI Assistant for Writing Docker Files Without Cloud API Compared 2026"
+title: "Self-Hosted AI Assistant for Writing Docker Files Without"
 description: "A practical comparison of self-hosted AI tools that generate Dockerfiles locally without sending data to external cloud APIs"
 date: 2026-03-16
 last_modified_at: 2026-03-21
@@ -53,7 +53,7 @@ Ollama runs inference locally and returns generated Dockerfile content. The resp
 
 ### LocalAI
 
-LocalAI offers a unified API compatible with OpenAI, making it drop-in replaceable for many existing tools. It supports multiple model backends including llama.cpp, gpt4all, and transformer models.
+LocalAI offers an unified API compatible with OpenAI, making it drop-in replaceable for many existing tools. It supports multiple model backends including llama.cpp, gpt4all, and transformer models.
 
 **Configuration example:**
 ```yaml

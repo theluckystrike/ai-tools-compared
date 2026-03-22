@@ -196,15 +196,15 @@ Here are complete, production-tested custom instruction sets for different teams
 - Implement proper loading and error states
 - Example pattern:
   ```typescript
-  interface ButtonProps {
-    onClick: () => void;
-    loading?: boolean;
-    variant?: 'primary' | 'secondary';
-  }
-  export function Button({ onClick, loading, variant = 'primary' }: ButtonProps) {
-    return <button disabled={loading} className={`btn-${variant}`} onClick={onClick} />
-  }
-  ```
+ interface ButtonProps {
+ onClick: () => void;
+ loading?: boolean;
+ variant?: 'primary' | 'secondary';
+ }
+ export function Button({ onClick, loading, variant = 'primary' }: ButtonProps) {
+ return <button disabled={loading} className={`btn-${variant}`} onClick={onClick} />
+ }
+ ```
 
 ### API Routes
 - Use Next.js API routes in /app/api

@@ -237,6 +237,88 @@ class Repository(ABC, Generic[T]):
 Reference this documentation when working with AI assistants to ensure consistent pattern application.
 
 
+## Strategy 7: Use Architecture Decision Records as AI Context
+
+
+Architecture Decision Records (ADRs) capture the reasoning behind architectural choices. When you feed relevant ADRs to an AI assistant before requesting code, the assistant generates implementations that respect documented constraints.
+
+
+A well-structured ADR provides exactly the kind of context AI assistants need:
+
+
+```markdown
+# ADR-004: Use Repository Pattern for All Data Access
+
+## Status
+Accepted
+
+## Context
+Our application requires testable data access logic that can work
+against both production databases and in-memory test doubles.
+
+## Decision
+All data access goes through repository interfaces. No service layer
+class may import SQLAlchemy models directly. Repositories are
+injected via dependency injection containers.
+
+## Consequences
+- Services remain unit-testable without database connections
+- Repository implementations can be swapped (SQL, Redis, mock)
+- Slight overhead from abstraction layer
+```
+
+Prefacing an AI prompt with "Given ADR-004, generate a repository for the Order entity" produces code that respects your documented decision to avoid direct ORM imports in service classes.
+
+
+## Strategy 8: Enforce Patterns Through Linting Rules
+
+
+Static analysis tools enforce architectural rules automatically. `pylint` custom plugins, `flake8` extensions, and `archunit` (for Java) let you codify pattern constraints as machine-checkable rules. AI tools that have access to your linting configuration naturally generate code that avoids flagged patterns.
+
+
+Example custom flake8 rule that flags direct ORM usage outside repository files:
+
+
+```python
+# flake8_architecture.py
+import ast
+
+class RepositoryPatternChecker(ast.NodeVisitor):
+    """Flag SQLAlchemy imports outside repository modules."""
+
+    def __init__(self, filename):
+        self.filename = filename
+        self.errors = []
+
+    def visit_Import(self, node):
+        if 'repository' not in self.filename:
+            for alias in node.names:
+                if 'sqlalchemy' in alias.name:
+                    self.errors.append(
+                        (node.lineno, node.col_offset,
+                         'ARC001 SQLAlchemy imported outside repository layer',
+                         type(self))
+                    )
+        self.generic_visit(node)
+```
+
+When AI-generated code triggers these rules during CI, engineers learn which patterns are mandatory — and can reframe their prompts accordingly.
+
+
+## Comparing AI Assistants for Pattern Compliance
+
+Different AI coding assistants handle architectural context differently:
+
+| Tool | Context Window | ADR Support | Pattern Memory | Best For |
+|------|---------------|-------------|----------------|----------|
+| GitHub Copilot | File-level | Via comments | None cross-session | Inline completions |
+| Cursor | Project-wide | Via rules files | .cursorrules persist | Pattern-heavy projects |
+| Claude Code | Conversation | Via CLAUDE.md | Session-scoped | Complex refactors |
+| Tabnine | File-level | Limited | Team model fine-tuning | Large teams |
+
+Cursor's `.cursorrules` file is particularly effective for enforcing patterns — it acts as a persistent system prompt that shapes every suggestion. Placing your ADRs and pattern guidelines in `.cursorrules` ensures every completion respects your architecture.
+
+
 ## Measuring Success
 
 

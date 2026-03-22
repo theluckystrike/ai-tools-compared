@@ -123,13 +123,13 @@ Return ONLY valid JSON array, no explanation."""
 
     raw = response.content[0].text
     if raw.startswith("```"):
-        raw = "\n".join(raw.split("\n")[1:-1])
-    return json.loads(raw)
+ raw = "\n".join(raw.split("\n")[1:-1])
+ return json.loads(raw)
 
 users = generate_coherent_user_batch(20, {
-    "geographic_distribution": "Mix of East Coast and West Coast cities",
-    "seniority_distribution": "60% junior, 40% senior",
-    "no_duplicate_emails": True
+ "geographic_distribution": "Mix of East Coast and West Coast cities",
+ "seniority_distribution": "60% junior, 40% senior",
+ "no_duplicate_emails": True
 })
 ```
 
@@ -152,22 +152,22 @@ import anthropic
 import json
 
 def generate_from_schema(engine, table_name: str, count: int) -> list[dict]:
-    inspector = inspect(engine)
-    columns = inspector.get_columns(table_name)
-    foreign_keys = inspector.get_foreign_keys(table_name)
+ inspector = inspect(engine)
+ columns = inspector.get_columns(table_name)
+ foreign_keys = inspector.get_foreign_keys(table_name)
 
-    schema_description = f"Table: {table_name}\nColumns:\n"
-    for col in columns:
-        nullable = "nullable" if col["nullable"] else "required"
-        schema_description += f"  - {col['name']}: {col['type']} ({nullable})\n"
+ schema_description = f"Table: {table_name}\nColumns:\n"
+ for col in columns:
+ nullable = "nullable" if col["nullable"] else "required"
+ schema_description += f" - {col['name']}: {col['type']} ({nullable})\n"
 
-    client = anthropic.Anthropic()
-    response = client.messages.create(
-        model="claude-haiku-3-5",
-        max_tokens=4096,
-        messages=[{
-            "role": "user",
-            "content": f"""Generate {count} rows of realistic test data for this database table.
+ client = anthropic.Anthropic()
+ response = client.messages.create(
+ model="claude-haiku-3-5",
+ max_tokens=4096,
+ messages=[{
+ "role": "user",
+ "content": f"""Generate {count} rows of realistic test data for this database table.
 
 {schema_description}
 
@@ -178,26 +178,26 @@ Rules:
 - Strings should be realistic, not 'test_value_1'
 
 Return as a JSON array of objects with exact column names."""
-        }]
-    )
+ }]
+ )
 
-    return json.loads(response.content[0].text)
+ return json.loads(response.content[0].text)
 ```
 
 ## Mockaroo for Team Use
 
 ```bash
 curl "https://api.mockaroo.com/api/generate.json?count=100&key=YOUR_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "fields": [
-      {"name": "id", "type": "Row Number"},
-      {"name": "full_name", "type": "Full Name"},
-      {"name": "email", "type": "Email Address"},
-      {"name": "status", "type": "Custom List", "values": ["active", "inactive", "pending"]},
-      {"name": "created_at", "type": "Datetime", "min": "01/01/2024", "max": "03/21/2026"}
-    ]
-  }'
+ -H "Content-Type: application/json" \
+ -d '{
+ "fields": [
+ {"name": "id", "type": "Row Number"},
+ {"name": "full_name", "type": "Full Name"},
+ {"name": "email", "type": "Email Address"},
+ {"name": "status", "type": "Custom List", "values": ["active", "inactive", "pending"]},
+ {"name": "created_at", "type": "Datetime", "min": "01/01/2024", "max": "03/21/2026"}
+ ]
+ }'
 ```
 
 Mockaroo's strength is accessibility for QA teams who don't write code. The web UI generates schema-defined data without code. Custom List types ensure status fields use your exact enum values.
@@ -208,20 +208,20 @@ Mockaroo's strength is accessibility for QA teams who don't write code. The web 
 from faker import Faker
 
 def anonymize_for_testing(real_record: dict) -> dict:
-    fake = Faker()
-    return {
-        **real_record,
-        "user_id": real_record["user_id"],  # Keep ID for relational integrity
-        "email": fake.email(),
-        "full_name": fake.name(),
-        "phone": fake.phone_number(),
-        "address": fake.address(),
-        "ssn": fake.ssn(),
-        # Keep behavioral fields unchanged
-        "subscription_plan": real_record["subscription_plan"],
-        "created_at": real_record["created_at"],
-        "total_orders": real_record["total_orders"],
-    }
+ fake = Faker()
+ return {
+ **real_record,
+ "user_id": real_record["user_id"], # Keep ID for relational integrity
+ "email": fake.email(),
+ "full_name": fake.name(),
+ "phone": fake.phone_number(),
+ "address": fake.address(),
+ "ssn": fake.ssn(),
+ # Keep behavioral fields unchanged
+ "subscription_plan": real_record["subscription_plan"],
+ "created_at": real_record["created_at"],
+ "total_orders": real_record["total_orders"],
+ }
 ```
 
 ## Generating Business-Rule-Compliant Data
@@ -232,29 +232,29 @@ Use Claude to encode business rules directly in the generation prompt:
 
 ```python
 def generate_order_data(user_credit_limits: dict, count: int) -> list[dict]:
-    rules = """
-    Business rules for order data:
-    - order_amount must not exceed the user's credit_limit
-    - order_date must be within the last 12 months
-    - status must be 'pending' if order_date is within 3 days, else 'completed' or 'cancelled'
-    - cancelled orders must have a cancellation_reason
-    - discount_pct can only be 0, 10, 15, or 25
-    - total = order_amount * (1 - discount_pct/100), rounded to 2 decimal places
-    """
+ rules = """
+Business rules for order data:
+ - order_amount must not exceed the user's credit_limit
+ - order_date must be within the last 12 months
+ - status must be 'pending' if order_date is within 3 days, else 'completed' or 'cancelled'
+ - cancelled orders must have a cancellation_reason
+ - discount_pct can only be 0, 10, 15, or 25
+ - total = order_amount * (1 - discount_pct/100), rounded to 2 decimal places
+ """
 
-    prompt = f"""Generate {count} order records following these business rules:
+ prompt = f"""Generate {count} order records following these business rules:
 {rules}
 
 User credit limits: {json.dumps(user_credit_limits)}
 
 Return as JSON array."""
 
-    response = client.messages.create(
-        model="claude-sonnet-4-5",
-        max_tokens=8192,
-        messages=[{"role": "user", "content": prompt}]
-    )
-    return json.loads(response.content[0].text)
+ response = client.messages.create(
+ model="claude-sonnet-4-5",
+ max_tokens=8192,
+ messages=[{"role": "user", "content": prompt}]
+ )
+ return json.loads(response.content[0].text)
 ```
 
 This approach works for any business constraint that can be expressed in plain language. The tradeoff is generation speed and API cost — use it for complex edge-case data, not for high-volume load test fixtures.
@@ -292,5 +292,4 @@ Mimesis is 2-5x faster and better for generating millions of rows for load tests
 - [AI Tools for Creating Test Data Snapshots for Database](/ai-tools-compared/ai-tools-for-creating-test-data-snapshots-for-database-rollback-between-test-runs/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

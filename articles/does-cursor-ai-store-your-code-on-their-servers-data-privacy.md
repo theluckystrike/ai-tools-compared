@@ -334,19 +334,19 @@ Run this regularly to catch accidental data exposure before it becomes a complia
 If you discover that sensitive code was sent to Cursor servers:
 
 1. **Immediately:**
-   - Disable Cursor access for affected developers
-   - Rotate compromised API keys, tokens, and credentials
-   - Notify your security team
+ - Disable Cursor access for affected developers
+ - Rotate compromised API keys, tokens, and credentials
+ - Notify your security team
 
 2. **Within 24 hours:**
-   - Contact Cursor support with specific request IDs to request data deletion
-   - File incident report with your compliance team
-   - Review access logs to identify what else might have been exposed
+ - Contact Cursor support with specific request IDs to request data deletion
+ - File incident report with your compliance team
+ - Review access logs to identify what else might have been exposed
 
 3. **Within 1 week:**
-   - Implement preventive controls (file exclusion rules, team training)
-   - Update privacy policies to reflect the incident
-   - Consider enabling stricter privacy settings
+ - Implement preventive controls (file exclusion rules, team training)
+ - Update privacy policies to reflect the incident
+ - Consider enabling stricter privacy settings
 
 Cursor's enterprise team typically processes data deletion requests within 7 days, though you should assume the data was processed by their servers in the interim.
 

@@ -208,7 +208,7 @@ Graceful degradation prepares for total outages. Cache successful generations an
 
 ## Complete Production-Ready Retry Implementation
 
-For production systems, build a comprehensive retry manager that handles all failure modes:
+For production systems, build a retry manager that handles all failure modes:
 
 ```python
 import time

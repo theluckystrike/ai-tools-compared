@@ -232,7 +232,7 @@ result = inference_mot(model, imgs, output=None)
 ```
 
 
-MMTracking supports single object tracking (SOT), multi-object tracking (MOT), and video object segmentation (VOS) within a unified framework. This breadth makes it useful for research applications where you need to compare algorithms across paradigms, though the API is more complex than Ultralytics for straightforward production use.
+MMTracking supports single object tracking (SOT), multi-object tracking (MOT), and video object segmentation (VOS) within an unified framework. This breadth makes it useful for research applications where you need to compare algorithms across paradigms, though the API is more complex than Ultralytics for straightforward production use.
 
 
 ## Performance Metrics and Evaluation

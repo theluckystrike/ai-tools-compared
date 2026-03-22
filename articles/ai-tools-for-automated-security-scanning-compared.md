@@ -27,7 +27,7 @@ AI-enhanced security scanners have changed the economics of application security
 
 ## Snyk Code
 
-Snyk Code is a SAST tool with a strong developer experience. It runs in CI, the IDE, and on PRs. The AI fix suggestions are the standout feature — many findings come with a one-click fix that you can review before applying.
+Snyk Code is a SAST tool with a strong developer experience. It runs in CI, the IDE, and on PRs. The AI fix suggestions are the standout feature — many findings come with an one-click fix that you can review before applying.
 
 ```yaml
 name: Snyk Security Scan
@@ -373,5 +373,4 @@ Semgrep + CodeQL is the cheapest combo for teams under GitHub Advanced Security.
 - [AI Code Generation Quality for Java Spring Security](/ai-tools-compared/ai-code-generation-quality-for-java-spring-security-configur/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

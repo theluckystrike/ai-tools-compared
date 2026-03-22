@@ -226,7 +226,7 @@ Select Cursor Composer for multi-file refactoring, when you need the AI to under
 
 **Copilot Panel for Interactive Refinement:** Copilot's conversational style excels when you're discovering the right approach. You can say "Actually, keep the error handling but remove the retry logic" and get targeted changes. This iterative exploration works well when you're not sure of the exact outcome upfront.
 
-**Cursor for Batch Operations:** Cursor shines when you have a clear architectural goal and need comprehensive changes. "Migrate all service classes from dependency injection constructor params to factory pattern" gets handled holistically rather than file-by-file.
+**Cursor for Batch Operations:** Cursor shines when you have a clear architectural goal and need changes. "Migrate all service classes from dependency injection constructor params to factory pattern" gets handled holistically rather than file-by-file.
 
 ## Setting Up Your Workflow
 

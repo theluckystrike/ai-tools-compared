@@ -269,7 +269,7 @@ Midjourney's 2026 pricing structure maintains the same tier allocations as 2025,
 
 The platform also introduced `--quality` parameters allowing faster generation at reduced detail, extending Basic Plan usability for developers who need quick concept previews rather than production-ready assets.
 
-The 2026 web interface at midjourney.com added a usage dashboard that displays your remaining fast hours in real time, down to the minute. Previously, users had to run `/info` in Discord to check consumption. This dashboard is now the fastest way to manage your monthly budget without switching contexts.
+The 2026 web interface at midjourney.com added an usage dashboard that displays your remaining fast hours in real time, down to the minute. Previously, users had to run `/info` in Discord to check consumption. This dashboard is now the fastest way to manage your monthly budget without switching contexts.
 
 
 ## Common Pitfalls for New Basic Plan Users

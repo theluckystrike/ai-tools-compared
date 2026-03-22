@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "AI Tools for Generating Renovate Bot Configuration for Automated Dependency Updates"
-description: "A practical guide to AI tools for generating Renovate bot configuration for automated dependency updates in 2026. Learn how to leverage AI to streamline your dependency management workflow."
+title: "AI Tools for Generating Renovate Bot Configuration for"
+description: "A practical guide to AI tools for generating Renovate bot configuration for automated dependency updates in 2026. Learn how to leverage AI to streamline"
 date: 2026-03-21
 author: theluckystrike
 permalink: /ai-tools-for-generating-renovate-bot-configuration-for-autom/
@@ -317,5 +317,4 @@ When your standards evolve, prompt an AI to update the shared preset and reason 
 - [Best AI Tools for Automated DNS Configuration Management](/best-ai-tools-for-automated-dns-configuration-management-acr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

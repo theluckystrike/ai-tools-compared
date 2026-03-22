@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "AI Tools for Generating GitHub Wiki Pages from Repository Structure"
-description: "A practical comparison of AI tools that automatically generate GitHub wiki pages from your repository structure. Find the best solution for your project in 2026."
+title: "AI Tools for Generating GitHub Wiki Pages from Repository"
+description: "A practical comparison of AI tools that automatically generate GitHub wiki pages from your repository structure. Find the best solution for your project"
 date: 2026-03-21
 last_modified_at: 2026-03-21
 author: theluckystrike
@@ -16,7 +16,7 @@ voice-checked: true
 
 {% raw %}
 
-Maintaining up-to-date documentation is one of the most challenging aspects of software development. GitHub Wiki pages serve as an excellent repository for project documentation, but manually keeping them synchronized with your codebase is time-consuming. AI-powered tools now exist that can analyze your repository structure and automatically generate comprehensive wiki pages. This guide compares the leading solutions available in 2026.
+Maintaining up-to-date documentation is one of the most challenging aspects of software development. GitHub Wiki pages serve as an excellent repository for project documentation, but manually keeping them synchronized with your codebase is time-consuming. AI-powered tools now exist that can analyze your repository structure and automatically generate wiki pages. This guide compares the leading solutions available in 2026.
 
 ## Why Generate Wiki Pages from Repository Structure
 
@@ -74,7 +74,7 @@ GitBook provides AI-assisted documentation generation with strong GitHub integra
 
 ### Docusaurus with AI Plugins
 
-Docusaurus, while not originally an AI tool, now has community plugins that leverage AI to generate documentation from code. You can export Docusaurus-generated docs to GitHub Wiki format.
+Docusaurus, while not originally an AI tool, now has community plugins that use AI to generate documentation from code. You can export Docusaurus-generated docs to GitHub Wiki format.
 
 **Key Features:**
 - Extensive plugin ecosystem

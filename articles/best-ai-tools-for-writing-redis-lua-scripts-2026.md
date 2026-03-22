@@ -286,3 +286,5 @@ Generate 20 complex Redis Lua scripts using Claude API:
 ChatGPT 4o API equivalent: ~$4.80 for same volume (weaker quality).
 
 **Conclusion:** Claude Opus 4.6 is the de-facto standard for Redis Lua script generation. Reliable, cost-efficient, and production-safe for most workloads under 50k req/sec. Use ChatGPT 4o for secondary sources and educational framing. Avoid Copilot, Codeium, and TabbyML for script generation; they're better suited to other tasks.
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

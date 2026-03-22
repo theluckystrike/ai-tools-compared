@@ -45,11 +45,11 @@ Bearer token required. Token must have `payments:write` scope.
 ### Response (201 Created)
 ```json
 {
-  "id": "pay_1234abc",
-  "amount": 2999,
-  "currency": "USD",
-  "status": "pending",
-  "created_at": "2026-03-21T14:22:00Z"
+ "id": "pay_1234abc",
+ "amount": 2999,
+ "currency": "USD",
+ "status": "pending",
+ "created_at": "2026-03-21T14:22:00Z"
 }
 ```
 
@@ -319,7 +319,7 @@ Without doc linking:
 
 With Swimm:
 1. Create a doc linked to the route definition:
-   ```
+ ```
    <!-- Swimm links to: src/routes/users.ts:getUsersHandler -->
    The [`/api/v2/users` endpoint](../src/routes/users.ts) lists all users...
    ```
@@ -356,5 +356,4 @@ For a 50-endpoint API:
 - [Claude vs ChatGPT for Converting REST API Documentation](/ai-tools-compared/claude-vs-chatgpt-for-converting-rest-api-documentation-to-g/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -161,22 +161,22 @@ Creating effective CLAUDE MD files for API versioning requires clarity and compl
 ### v3 (Current)
 ```json
 {
-  "api_version": "v3",
-  "method": "GET /api/v3/users/123",
-  "headers": {
-    "Authorization": "Bearer TOKEN",
-    "X-Request-ID": "uuid-here"
-  }
+ "api_version": "v3",
+ "method": "GET /api/v3/users/123",
+ "headers": {
+ "Authorization": "Bearer TOKEN",
+ "X-Request-ID": "uuid-here"
+ }
 }
 ```
 
 ### v2 (Deprecated)
 ```json
 {
-  "method": "GET /api/v2/users/123",
-  "headers": {
-    "Authorization": "Bearer TOKEN"
-  }
+ "method": "GET /api/v2/users/123",
+ "headers": {
+ "Authorization": "Bearer TOKEN"
+ }
 }
 ```
 
@@ -185,21 +185,21 @@ Creating effective CLAUDE MD files for API versioning requires clarity and compl
 ### v3 Error Response
 ```json
 {
-  "error": {
-    "code": "INVALID_VERSION",
-    "message": "API version v1 is deprecated",
-    "request_id": "req_abc123",
-    "deprecated_by": "v2",
-    "migration_docs": "https://docs.example.com/v2-migration"
-  }
+ "error": {
+ "code": "INVALID_VERSION",
+ "message": "API version v1 is deprecated",
+ "request_id": "req_abc123",
+ "deprecated_by": "v2",
+ "migration_docs": "https://docs.example.com/v2-migration"
+ }
 }
 ```
 
 ### v2 Error Response
 ```json
 {
-  "error_code": "401",
-  "error_message": "Unauthorized"
+ "error_code": "401",
+ "error_message": "Unauthorized"
 }
 ```
 
@@ -210,17 +210,17 @@ import requests
 from datetime import datetime
 
 def upgrade_request_v2_to_v3(v2_request):
-    headers = v2_request['headers']
-    headers['api_version'] = 'v3'
-    headers['X-Request-ID'] = uuid.uuid4()
+ headers = v2_request['headers']
+ headers['api_version'] = 'v3'
+ headers['X-Request-ID'] = uuid.uuid4()
 
-    # Convert timestamps from ms to RFC 3339
-    if 'timestamps' in v2_request['body']:
-        for field, ts_ms in v2_request['body']['timestamps'].items():
-            dt = datetime.fromtimestamp(ts_ms/1000)
-            v2_request['body'][field] = dt.isoformat() + 'Z'
+ # Convert timestamps from ms to RFC 3339
+ if 'timestamps' in v2_request['body']:
+ for field, ts_ms in v2_request['body']['timestamps'].items():
+ dt = datetime.fromtimestamp(ts_ms/1000)
+ v2_request['body'][field] = dt.isoformat() + 'Z'
 
-    return v2_request
+ return v2_request
 ```
 ```
 

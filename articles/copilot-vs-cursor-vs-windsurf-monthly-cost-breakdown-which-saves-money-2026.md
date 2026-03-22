@@ -281,5 +281,4 @@ For most 5-30 person development teams, **Cursor Pro** delivers the lowest total
 - [Copilot Business vs Cursor Business Per Developer Cost](/ai-tools-compared/copilot-business-vs-cursor-business-per-developer-cost-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

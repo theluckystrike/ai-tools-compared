@@ -214,7 +214,7 @@ GitHub Copilot handles basic error wrapping well but requires more oversight to 
 Regardless of which tool you choose, always verify that error wrapping preserves the information callers need—whether that's checking against sentinel errors with `errors.Is()` or extracting custom error types with `errors.As()`.
 
 
-## Comprehensive Error Handling Pattern Examples
+## Error Handling Pattern Examples
 
 ### HTTP Handler with Proper Error Wrapping
 

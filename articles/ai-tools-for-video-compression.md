@@ -290,7 +290,7 @@ Choosing a codec without considering your delivery environment is the most commo
 
 **Live streaming or real-time encoding**: H.264 with GPU acceleration (NVENC/VAAPI). Every major CDN and player supports it, and encoding latency stays under 500ms at typical resolutions.
 
-**Video-on-demand with long shelf life**: AV1 via SVT-AV1 at preset 5-6. The extra encoding time is a one-time cost per video, and the 30-50% size reduction compounds over millions of views.
+**Video-on-demand with long shelf life**: AV1 via SVT-AV1 at preset 5-6. The extra encoding time is an one-time cost per video, and the 30-50% size reduction compounds over millions of views.
 
 **Mobile-first delivery with adaptive bitrate**: H.265 in an HLS ladder with four to six quality tiers. iOS hardware decodes H.265 efficiently, and file sizes are 25-35% smaller than equivalent H.264 streams.
 
@@ -319,7 +319,7 @@ For H.264, start at CRF 23 and adjust based on your VMAF target. For H.265, CRF 
 Expect 35-50% storage reduction for VOD content encoded at equivalent perceptual quality. For a 100 TB library, that translates to 35-50 TB freed at the same VMAF scores. Encoding cost at scale requires careful ROI calculation against cloud compute pricing.
 
 **Does AI denoising affect audio quality?**
-No. Audio and video streams are processed independently. Denoising filters in FFmpeg operate only on the video stream. Ensure you copy or re-encode audio separately with `-c:a copy` or `-c:a aac -b:a 128k`.
+No. Audio and video streams are processed independently. Denoising filters in FFmpeg operate only on the video stream. Ensure you copy or re-encode audio separately with `-c:a copy` or `-c:an aac -b:a 128k`.
 
 
 ## Practical Recommendations

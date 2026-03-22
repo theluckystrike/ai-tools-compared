@@ -79,7 +79,7 @@ async def create_payment(request: PaymentRequest) -> PaymentResponse:
  curl -X POST http://localhost:8000/payments \
  -H "Content-Type: application/json" \
  -d '{"amount": 99.99, "currency": "USD", "idempotency_key": "unique-123"}'
-        ```
+ ```
 
     Rate limit: 100 requests per minute
     Authentication: Bearer token required

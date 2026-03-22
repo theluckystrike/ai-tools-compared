@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "AI Coding Assistant for Network Traffic Analysis: What Connection Do They Have?"
+title: "AI Coding Assistant for Network Traffic Analysis: What"
 description: "Explore how AI coding assistants can help with network traffic analysis, from writing packet capture scripts to analyzing connection logs"
 date: 2026-03-22
 last_modified_at: 2026-03-22
