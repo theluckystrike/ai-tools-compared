@@ -381,7 +381,6 @@ class JWTDebugger:
                               jwks_check: Dict = None) -> str:
         """Format all diagnostics into a Claude prompt."""
         analysis = f"""JWT Diagnostics Report
-======================
 
 Decoded Token:
 {json.dumps(decoded, indent=2)}

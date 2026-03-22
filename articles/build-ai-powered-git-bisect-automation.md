@@ -259,7 +259,6 @@ $ python ai_bisect_cli.py \
 Generating test script for: User login returns 500 error when email contains uppercase letters
 
 Generated test script:
-========================================
 #!/bin/bash
 set -e
 
@@ -280,7 +279,6 @@ elif [ "$HTTP_STATUS" = "200" ] || [ "$HTTP_STATUS" = "401" ]; then
 else
   exit 125  # skip (server not running, build failed, etc)
 fi
-========================================
 
 Run bisect with this script? [y/N]: y
 
