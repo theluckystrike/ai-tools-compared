@@ -221,6 +221,154 @@ To get the most out of Cursor's multi-file editing feature, follow these guideli
 - Use Cursor Rules to encode project conventions
 
 
+## Debugging Multi-File Edit Failures
+
+When multi-file edits go wrong, understanding common failure modes helps you recover:
+
+**Import Path Errors:** Cursor generates correct import syntax but may use relative paths that don't match your project structure. If you see "Cannot find module" errors, review the import statements and adjust file organization.
+
+**Partial Updates:** Sometimes Cursor modifies some but not all files in scope. This happens when context limits are exceeded. Solution: Break large refactors into smaller batches or explicitly tell Cursor which files to modify.
+
+**Type Mismatches:** In typed languages, Cursor might update function signatures but forget to update all call sites with new parameter types. Always run type checking after multi-file edits.
+
+**Configuration File Misses:** Cursor occasionally forgets to update configuration files (webpack.config.js, tsconfig.json, etc.) that reference changed code. Manually verify configuration after refactoring.
+
+## Performance Optimization for Large Codebases
+
+For teams managing large repositories:
+
+**Focus Cursor's Attention:** Before multi-file operations, open only the relevant files in your editor. This reduces context noise and improves accuracy. A 100,000-line codebase becomes much more manageable if Cursor only sees the 20 most relevant files.
+
+**Use .cursorrules Effectively:**
+```
+# .cursorrules file
+- Prefer absolute imports over relative imports
+- Use PascalCase for React component files
+- Place utility functions in utils/ directory
+- Always add JSDoc comments to exported functions
+- Use TypeScript strict mode
+- Order imports: third-party, then local modules
+```
+
+**Split Large Refactors:** Instead of "refactor this entire authentication system," break it into smaller chunks: "move auth types to new file," then "extract auth service," then "update imports." Sequential operations often succeed better than monolithic changes.
+
+## Comparison with Manual Refactoring
+
+Understanding Cursor's efficiency gains helps justify the mental effort of learning it well:
+
+**Manual refactoring of extracting a service module:**
+- Time: 20-30 minutes
+- Steps: Create file, move code, update imports, fix syntax errors, run tests
+- Mental overhead: Tracking all references manually
+- Risk: Missing imports, breaking other modules
+
+**Cursor refactoring of same task:**
+- Time: 3-5 minutes
+- Steps: Select code, "Extract to utils/service.js," verify diffs, accept
+- Mental overhead: Writing precise instructions
+- Risk: Minor, handled by Cursor's analysis
+
+The 4-6x time saving compounds over a large refactoring project. A week-long architectural redesign might take 1-2 days with Cursor.
+
+## Real-World Refactoring Examples
+
+**Example 1: Extract API Client Service**
+```
+Cursor prompt: "Extract the fetch-based API calls from
+pages/dashboard.jsx, pages/analytics.jsx, and
+pages/reports.jsx into a new utils/api-client.js file.
+Update all three files to import and use the new service."
+
+Result:
+- Creates utils/api-client.js with extracted methods
+- Updates all three files with correct imports
+- Preserves existing error handling
+Time: 2 minutes
+```
+
+**Example 2: Rename Database Column Globally**
+```
+Cursor prompt: "In the database schema, rename the 'user_id'
+column to 'customer_id'. Update all ORM models, migrations,
+and queries that reference this column."
+
+Result:
+- Updates schema file with new column name
+- Updates ORM model properties
+- Updates migration files
+- Updates all queries/queries/ files with new column reference
+- Updates related model associations
+Time: 3 minutes
+```
+
+**Example 3: Convert Class Component to Hooks**
+```
+Cursor prompt: "Convert the UserProfile component from
+class-based to functional with hooks. Extract lifecycle
+methods to useEffect, replace state with useState, and
+create a custom useUserProfile hook if beneficial."
+
+Result:
+- Transforms component structure
+- Converts componentDidMount, componentDidUpdate to useEffect
+- Replaces this.state with useState hooks
+- Creates custom hook for reusable logic
+- Updates any files importing this component
+Time: 4 minutes
+```
+
+## Context Window Management
+
+Cursor's context window (the amount of code it can see simultaneously) affects refactoring success:
+
+**Optimal Context:**
+- 10-20 files open in editor
+- 500-2000 lines of code visible
+- Clear file names indicating purpose
+- Related files grouped in sidebar
+
+**Context Overflow Prevention:**
+- Close unrelated tabs before large refactors
+- Use search to find specific files rather than scrolling through sidebar
+- For massive changes, operate on subdirectories (src/auth/, src/api/, etc.)
+- Save between operations to checkpoint your progress
+
+## Testing Multi-File Changes
+
+After Cursor completes multi-file edits:
+
+**Immediate Validation:**
+```bash
+# Check syntax
+npm run lint
+# or
+python -m py_compile yourfile.py
+
+# Run type checking (if applicable)
+npx tsc --noEmit
+```
+
+**Unit Testing:**
+```bash
+# Run tests for modified modules
+npm test -- src/utils/service.test.js
+npm test -- pages/dashboard.test.js
+```
+
+**Integration Testing:**
+```bash
+# Run full test suite to catch cross-module issues
+npm test
+# or
+pytest
+```
+
+**Manual Verification:**
+- Click through affected features in development environment
+- Check network requests match new API structure
+- Verify database queries use new column names
+- Test error scenarios to ensure error handling persists
+
 Cursor's multi-file editing represents a significant advancement in AI-assisted development. By understanding how the feature works and applying these practical strategies, developers can efficiently make coordinated changes across their codebases while maintaining code integrity.
 
 

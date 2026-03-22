@@ -216,6 +216,148 @@ public class OrderProcessingException extends RuntimeException {
 
 Good exception handling practices combined with effective AI analysis tools will dramatically reduce debugging time for complex Java applications.
 
+## Advanced Stack Trace Scenarios
+
+**Spring Boot + Database Connection Pool Exhaustion:**
+```
+Caused by: HikariPool-1 - Connection is not available, request timed out after 30000ms.
+    at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:514)
+    at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:489)
+    ...
+Caused by: java.sql.SQLTransientConnectionException: HikariPool-1 -
+    Connection is not available, request timed out after 30000ms.
+    at com.zaxxer.hikari.pool.HikariPool.createPoolInitializationException(HikariPool.java:560)
+```
+
+Claude Code analysis: "The database connection pool (HikariPool) is exhausted. This indicates either:
+1. Database server is slow/unreachable (queries hold connections too long)
+2. Connection pool is misconfigured (too few connections for load)
+3. Connections have a leak (not being returned)
+
+Solutions: Increase `maximumPoolSize`, reduce query timeout, or investigate connection leaks with stack traces on connection.getConnection() calls."
+
+**Hibernate LazyInitializationException with Detached Entity:**
+```
+LazyInitializationException: could not initialize proxy - no Session
+    at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:169)
+    at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:309)
+Caused by: org.hibernate.SessionException: Session is closed!
+    at org.hibernate.internal.SessionImpl.checkOpen(SessionImpl.java:3728)
+```
+
+Claude Code: "You're accessing a lazy-loaded Hibernate relationship after the Session closed. The entity was detached from the session. Fix by:
+1. Eagerly loading: `@OneToMany(fetch = FetchType.EAGER)`
+2. Fetch in query: `Query.setHint('org.hibernate.fetchMode.field', FetchMode.JOIN)`
+3. Use @Transactional on caller: `@Transactional` ensures Session stays open during processing."
+
+## Stack Trace Pattern Recognition
+
+AI tools recognize recurring patterns in stack traces:
+
+**Pattern 1: N+1 Query Problem**
+- Symptom: Hibernate or JPA generating hundreds of select queries in a loop
+- Stack trace shows repeated calls to `Query.executeUpdate()` or `Query.getResultList()`
+- AI recommendation: Use JOIN FETCH or @EntityGraph to eager-load relationships
+
+**Pattern 2: Deadlock in Concurrent Access**
+- Symptom: SQLException with "Deadlock detected" message
+- Stack shows multiple threads accessing same resources in different order
+- AI recommendation: Ensure threads acquire locks in consistent order or use optimistic locking
+
+**Pattern 3: Memory Leak in Long-Running Process**
+- Symptom: OutOfMemoryError with millions of cached objects
+- Stack shows Thread sleeping/waiting, accumulated objects never released
+- AI recommendation: Implement cache eviction, use WeakReferences, or add explicit cleanup
+
+## Debugging Multi-Thread Exception Scenarios
+
+When exceptions involve multiple threads:
+
+```java
+// Problematic code with race condition
+public class OrderProcessor {
+    private Map<Long, Order> cache = new HashMap<>();
+
+    public void processOrder(Long orderId) {
+        if (!cache.containsKey(orderId)) {  // Thread A checks here
+            Order order = database.fetch(orderId);
+            cache.put(orderId, order);      // Thread B may have already cached
+        }
+        Order order = cache.get(orderId);   // Potential race
+        order.process();
+    }
+}
+```
+
+Stack trace showing ConcurrentModificationException points to the race condition.
+
+AI recommendation with fix:
+```java
+public class OrderProcessor {
+    private Map<Long, Order> cache = new ConcurrentHashMap<>();
+
+    public void processOrder(Long orderId) {
+        Order order = cache.computeIfAbsent(orderId, id -> {
+            try {
+                return database.fetch(id);
+            } catch (SQLException e) {
+                throw new RuntimeException("DB error", e);
+            }
+        });
+        order.process();
+    }
+}
+```
+
+## Creating Effective Stack Trace Prompts
+
+**Good prompt format:**
+```
+My Java application is throwing this exception in production:
+[FULL STACK TRACE]
+
+The application: [1-2 sentence description of what it does]
+Framework: Spring Boot 3.x
+Java version: 21
+Database: PostgreSQL
+
+What's the root cause and how do I fix it?
+```
+
+**Better prompt format (including context):**
+```
+When users submit large orders, I get this error:
+[FULL STACK TRACE]
+
+Context:
+- This happens intermittently (5% of high-volume order submissions)
+- OrderService.processOrder() calls PaymentService.charge()
+- PaymentService.charge() makes REST calls to external payment gateway
+- The call sometimes times out after 30 seconds
+
+Application:
+- Spring Boot 3.2
+- Running on 4 application instances behind load balancer
+- PostgreSQL database with connection pool (max 20 connections)
+
+What's the root cause?
+```
+
+## Production vs Development Debugging
+
+AI tools help differently based on environment:
+
+**Production Debugging:**
+- AI analyzes logs to extract exception chains
+- Provides remediation without changing code
+- Suggests monitoring/alerting improvements
+- Helps identify customer impact scope
+
+**Development Debugging:**
+- AI generates test cases that reproduce the error
+- Suggests code refactoring to prevent similar errors
+- Provides educational context about why error occurred
+- Recommends library upgrades if error is due to known bug
 
 ## Recommendation
 

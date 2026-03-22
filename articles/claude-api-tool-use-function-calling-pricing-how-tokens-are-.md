@@ -222,6 +222,243 @@ def execute_tool(tool_name, tool_input):
 ```
 
 
+## Real-World Cost Calculations
+
+**Scenario 1: Weather Assistant (Simple Tool Use)**
+
+User asks: "What's the weather in New York and San Francisco?"
+
+Token flow:
+```
+1. User message: "What's the weather..." = 15 tokens (input)
+2. Tool definitions (get_weather) = 80 tokens (input)
+3. Claude responds with tool_use blocks = 45 tokens (output)
+4. Tool 1 returns: {"temp": 72, "condition": "sunny"} = 20 tokens (input)
+5. Tool 2 returns: {"temp": 65, "condition": "cloudy"} = 20 tokens (input)
+6. Final response = 60 tokens (output)
+
+Total: 160 input + 105 output tokens
+Cost on Sonnet: (160 × $0.003) + (105 × $0.015) = $0.48 + $1.575 = $2.055
+
+Monthly (1000 such queries): ~$2,055
+```
+
+**Scenario 2: Database Query Tool (Complex Tool Use)**
+
+User asks: "Show me customers who spent over $1000 in the last month"
+
+Token flow:
+```
+1. System prompt: 200 tokens
+2. User message: 30 tokens
+3. Tool definitions (database schema descriptions): 300 tokens
+4. Claude generates SQL query in tool_use: 80 tokens (output)
+5. Tool returns result set (10 customers with details): 150 tokens (input)
+6. Claude formats response: 100 tokens (output)
+
+Total: 680 input + 180 output tokens
+Cost on Sonnet: (680 × $0.003) + (180 × $0.015) = $2.04 + $2.70 = $4.74
+
+Monthly (500 such queries): ~$2,370
+```
+
+**Scenario 3: Multi-Step Data Analysis (Extended Tool Use)**
+
+User: "Which product categories have declining revenue this quarter? Analyze trends."
+
+Token flow:
+```
+Round 1 - Fetch data:
+  Input: 400 (system + user + tools) | Output: 90 (tool calls)
+
+Round 2 - Process data:
+  Input: 350 (tool results) | Output: 120 (analysis + tool calls)
+
+Round 3 - Generate insights:
+  Input: 200 (more tool results) | Output: 150 (final analysis)
+
+Total: 950 input + 360 output tokens
+Cost on Sonnet: (950 × $0.003) + (360 × $0.015) = $2.85 + $5.40 = $8.25
+
+Monthly (200 such queries): ~$1,650
+```
+
+## Comparing Tool Use to Direct API Calls
+
+**Option 1: Tool Use Approach (with Claude)**
+- Claude decides which tools to use
+- You pay for all tool definitions as input tokens
+- Results included in conversation
+- More flexible, handles unpredictable workflows
+
+Cost per complex query: $0.008 - $0.015
+
+**Option 2: Direct API Approach (without tool use)**
+- Your application handles all logic, no tool definitions
+- Claude provides text responses only
+- Lighter token overhead
+- Less flexible, harder to integrate with external systems
+
+Cost per query: $0.003 - $0.006
+
+**Recommendation:** Tool use becomes cost-effective when you need Claude to make intelligent decisions about which APIs to call. If you always call the same APIs in the same order, direct API calls are cheaper.
+
+## Optimization Strategies for Tool Use
+
+**Strategy 1: Cache Tool Definitions**
+Tool definitions can be cached using Claude's prompt caching feature, reducing repeated input costs:
+
+```python
+import anthropic
+
+client = anthropic.Anthropic(api_key="your-key")
+
+tools = [
+    {
+        "name": "database",
+        "description": "Query customer database",
+        # ... full definition
+    }
+]
+
+# With prompt caching - definitions cached after first use
+response = client.messages.create(
+    model="claude-opus-4-20250514",
+    max_tokens=1024,
+    tools=tools,
+    system=[
+        {
+            "type": "text",
+            "text": "You are a database analyst"
+        },
+        {
+            "type": "text",
+            "text": "Here are the tool definitions",
+            "cache_control": {"type": "ephemeral"}
+        }
+    ],
+    messages=[{"role": "user", "content": "Find high-value customers"}]
+)
+
+# Subsequent calls with same tools pay only 10% of definition tokens
+# Savings: 70% reduction on repeated tool definition costs
+```
+
+**Strategy 2: Return Minimal Tool Results**
+After each tool execution, return only essential data:
+
+```python
+# Inefficient - returns everything
+def get_customer(customer_id):
+    result = database.query(f"SELECT * FROM customers WHERE id = {customer_id}")
+    return json.dumps(result, indent=2)  # Includes metadata, timestamps, etc.
+    # Returns 250 tokens
+
+# Efficient - returns only what AI needs
+def get_customer(customer_id):
+    result = database.query(f"SELECT * FROM customers WHERE id = {customer_id}")
+    return {
+        "id": result.id,
+        "name": result.name,
+        "lifetime_value": result.lifetime_value,
+        "segment": result.segment
+    }
+    # Returns 35 tokens (7x reduction)
+```
+
+**Strategy 3: Use Smaller Models for Simple Tools**
+For straightforward tool use (fetch data, return result), use Haiku instead of Opus:
+
+```python
+# For simple data retrieval - use Haiku ($0.80/$4.00)
+response = client.messages.create(
+    model="claude-haiku-4-5-20251001",  # Cheaper
+    tools=[fetch_database_tool],
+    messages=[...]
+)
+
+# For complex reasoning - use Sonnet ($3.00/$15.00)
+response = client.messages.create(
+    model="claude-sonnet-4-20250514",
+    tools=[complex_reasoning_tools],
+    messages=[...]
+)
+```
+
+## Monitoring Tool Use Costs
+
+Track your actual tool use spending:
+
+```python
+def track_tool_use_cost(response, model):
+    """Calculate actual cost from API response."""
+    usage = response.usage
+    input_tokens = usage.input_tokens
+    output_tokens = usage.output_tokens
+
+    pricing = {
+        "claude-opus-4-20250514": {"input": 0.015, "output": 0.075},
+        "claude-sonnet-4-20250514": {"input": 0.003, "output": 0.015},
+        "claude-haiku-4-5-20251001": {"input": 0.0008, "output": 0.004},
+    }
+
+    prices = pricing[model]
+    cost = (input_tokens * prices["input"] / 1_000_000) + \
+           (output_tokens * prices["output"] / 1_000_000)
+
+    print(f"Tokens: {input_tokens} input + {output_tokens} output = ${cost:.6f}")
+    return cost
+
+# Usage
+response = client.messages.create(...)
+cost = track_tool_use_cost(response, "claude-sonnet-4-20250514")
+```
+
+## Common Pitfalls That Increase Costs
+
+**Pitfall 1: Oversized Tool Results**
+```python
+# BAD: Returns entire table
+def get_products():
+    return database.query("SELECT * FROM products")
+    # Returns 5000 products × 50 fields = 25,000 tokens
+
+# GOOD: Returns filtered set
+def get_products(category):
+    return database.query(f"SELECT id, name, price FROM products WHERE category = ?", (category,))
+    # Returns 100 products × 3 fields = 1,500 tokens
+```
+
+**Pitfall 2: Redundant Tool Calls**
+Sometimes Claude calls the same tool twice with slightly different parameters. Implement result caching:
+
+```python
+def intelligent_tool_call(tool_name, params):
+    """Cache results to avoid duplicate calls."""
+    cache_key = f"{tool_name}:{json.dumps(params)}"
+    if cache_key in result_cache:
+        return result_cache[cache_key]
+
+    result = execute_tool(tool_name, params)
+    result_cache[cache_key] = result
+    return result
+```
+
+**Pitfall 3: Excessive Tool Definitions**
+Including 20 tools when only 5 will ever be used wastes tokens on every request.
+
+```python
+# BAD: Define every possible tool upfront
+tools = [get_user, get_order, get_product, get_inventory,
+         get_shipping, get_payment, get_refund, ...]  # 15+ tools
+
+# GOOD: Define only tools needed for this request
+if request_type == "order_lookup":
+    tools = [get_order, get_user]
+elif request_type == "inventory_check":
+    tools = [get_product, get_inventory]
+```
+
 Understanding these mechanics enables you to build applications that use Claude's tool use capabilities while managing costs effectively. The key is designing clean, focused tools that return only necessary data, and structuring your implementation to minimize unnecessary token accumulation across conversation turns.
 
 
