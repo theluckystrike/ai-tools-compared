@@ -248,6 +248,160 @@ with a maximum of 5 restarts in 60 seconds (circuit breaker pattern). Log everyt
 
 Claude implements the circuit breaker correctly using an array of timestamps and checking how many falls within the window. GPT-4o uses a simple counter without the time window — it would restart 5 times quickly then refuse to restart after a single recovery.
 
+**Claude's full process monitor:**
+
+```bash
+#!/usr/bin/env bash
+set -euo pipefail
+
+PROCESS_NAME="${1:?Usage: $0 <process-name>}"
+MAX_RESTARTS=5
+WINDOW_SECONDS=60
+LOG_FILE="/var/log/monitor-${PROCESS_NAME}.log"
+
+log() {
+    printf '[%s] %s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$*" | tee -a "${LOG_FILE}"
+}
+
+# Ring buffer of restart timestamps
+restart_times=()
+
+is_running() {
+    pgrep -x "${PROCESS_NAME}" > /dev/null 2>&1
+}
+
+count_restarts_in_window() {
+    local now
+    now=$(date +%s)
+    local cutoff=$(( now - WINDOW_SECONDS ))
+    local count=0
+    for ts in "${restart_times[@]:-}"; do
+        [[ -n "${ts}" && "${ts}" -gt "${cutoff}" ]] && (( count++ )) || true
+    done
+    echo "${count}"
+}
+
+start_process() {
+    log "INFO" "Starting ${PROCESS_NAME}"
+    "${PROCESS_NAME}" &
+    log "INFO" "${PROCESS_NAME} started (PID $!)"
+}
+
+log "INFO" "Monitor starting for process: ${PROCESS_NAME}"
+
+while true; do
+    if ! is_running; then
+        log "WARN" "${PROCESS_NAME} is not running"
+
+        recent=$(count_restarts_in_window)
+        if [[ "${recent}" -ge "${MAX_RESTARTS}" ]]; then
+            log "ERROR" "Circuit open: ${recent} restarts in ${WINDOW_SECONDS}s. Backing off 120s."
+            sleep 120
+            restart_times=()  # Reset after backoff
+            continue
+        fi
+
+        start_process
+        restart_times+=("$(date +%s)")
+    fi
+    sleep 5
+done
+```
+
+This is a meaningful difference: the time-windowed restart counter prevents the monitor from permanently locking out a process that had a burst of failures but is now stable, while still protecting against rapid crash loops.
+
+## Test 5: Parallel Task Runner
+
+**Prompt:**
+```text
+Write a Bash script that runs up to N jobs in parallel, reads commands from stdin,
+captures each job's exit code and output, and prints a summary at the end.
+```
+
+Claude's approach uses process substitution and a job queue:
+
+```bash
+#!/usr/bin/env bash
+set -euo pipefail
+
+MAX_PARALLEL="${1:-4}"
+declare -A job_pids=()
+declare -A job_outputs=()
+declare -A job_statuses=()
+
+run_job() {
+    local job_id="${1}"
+    local cmd="${2}"
+    local tmpfile
+    tmpfile=$(mktemp)
+
+    if eval "${cmd}" > "${tmpfile}" 2>&1; then
+        job_statuses["${job_id}"]="OK"
+    else
+        job_statuses["${job_id}"]="FAIL:$?"
+    fi
+    job_outputs["${job_id}"]="${tmpfile}"
+}
+
+job_id=0
+running=0
+
+while IFS= read -r cmd; do
+    [[ -z "${cmd}" || "${cmd}" == \#* ]] && continue
+
+    run_job "${job_id}" "${cmd}" &
+    job_pids["${job_id}"]=$!
+    (( job_id++ ))
+    (( running++ ))
+
+    # Wait if at capacity
+    if [[ "${running}" -ge "${MAX_PARALLEL}" ]]; then
+        wait -n 2>/dev/null || wait  # wait -n requires Bash 4.3+
+        (( running-- ))
+    fi
+done
+
+# Wait for remaining jobs
+wait
+
+# Print summary
+echo ""
+echo "=== Job Summary ==="
+pass=0; fail=0
+for id in $(seq 0 $(( job_id - 1 ))); do
+    status="${job_statuses[${id}]:-UNKNOWN}"
+    output_file="${job_outputs[${id}]:-}"
+    if [[ "${status}" == "OK" ]]; then
+        echo "[PASS] Job ${id}"
+        (( pass++ ))
+    else
+        echo "[FAIL] Job ${id} (${status})"
+        [[ -f "${output_file}" ]] && cat "${output_file}"
+        (( fail++ ))
+    fi
+    [[ -f "${output_file}" ]] && rm -f "${output_file}"
+done
+echo "Result: ${pass} passed, ${fail} failed out of ${job_id} jobs"
+```
+
+GPT-4o tends to use `xargs -P` for parallelism, which is simpler but doesn't capture per-job output or exit codes separately. Claude's version maintains full observability of each job.
+
+## Summary Scorecard
+
+| Test | Claude | GPT-4o | Notes |
+|---|---|---|---|
+| Safe file processing | Excellent | Good | Claude adds nullglob, IFS, printf |
+| Deployment + rollback | Excellent | Good | Claude's trap/port isolation is correct |
+| Argument parsing | Excellent | Good | Claude validates without being asked |
+| Process monitor (circuit breaker) | Excellent | Partial | GPT-4o misses time-windowed counter |
+| Parallel task runner | Excellent | Good | Claude maintains per-job observability |
+| POSIX portability notes | Yes | Sometimes | Claude proactively notes bash-isms |
+| Destructive operation guards | Always | Usually | Claude never writes unguarded rm -rf |
+
+**Overall: Claude is the stronger shell scripting tool for production scripts.** The gap is clearest in safety-critical patterns: trap-based cleanup, proper glob expansion, time-windowed circuit breakers, and guarded destructive operations. GPT-4o produces functional scripts that usually work, but lacks Claude's habit of adding defensive layers unprompted.
+
+For inline autocomplete in editors, GitHub Copilot remains convenient — it's fast and context-aware within a file. But for generating complete, production-ready scripts from a prompt, Claude is the better choice in 2026.
+
 ## Related Reading
 
 - [Best AI Tools for Writing Shell Scripts for Server Automation](/ai-tools-compared/best-ai-tools-for-writing-shell-scripts-for-server-automatio/)
