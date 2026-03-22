@@ -16,6 +16,17 @@ voice-checked: true---
 
 E2E test generation is one of the most time-consuming parts of QA. Writing Playwright tests that are reliable, maintainable, and cover realistic user flows takes days. AI tools can compress this to hours — if you know how to direct them past the common failure modes of generated tests (flaky selectors, hardcoded waits, missing assertions).
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **E2E test generation is**: one of the most time-consuming parts of QA.
+- **Payment failure**: use test card 4000000000000002 and verify error handling
+4.
+- Use the new selector
+2.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+
 ## Approach 1: Playwright MCP with Claude
 
 The Playwright MCP (Model Context Protocol) server gives Claude direct browser control. Claude can navigate your app, observe DOM state, and generate tests based on what it actually sees.

@@ -28,7 +28,17 @@ voice-checked: true
 intent-checked: true---
 
 {% raw %}
+
 Most engineers write good code comments but hate writing documentation. Modern AI can transform those inline comments into professional API documentation: OpenAPI specs, Markdown guides, and interactive API references. This guide covers the best tools and workflows.
+
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **The cost per regeneration**: is typically under $0.10 for a medium-sized API.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **- OpenAPI YAML**: Choose this when you need to generate SDKs, mock servers, or integrate with API gateways.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
 
 ## Why AI-Generated Docs Matter
 

@@ -16,6 +16,15 @@ voice-checked: true---
 
 Automated accessibility testing catches roughly 30-40% of WCAG violations. The rest require human or AI-augmented judgment: color contrast in context, keyboard navigation flows, screen reader announcement ordering. AI tools are closing that gap by interpreting violations, suggesting fixes, and testing interaction patterns that static analysis misses.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **It's the most accurate**: open-source rule engine and integrates with every major testing framework.
+- **Here are axe-core violations**: from our app: ${JSON.stringify(violations, null, 2)} For each violation: 1.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Automated accessibility testing catches**: roughly 30-40% of WCAG violations.
+
 ## The Baseline: axe-core in CI
 
 Every accessibility pipeline starts with axe-core. It's the most accurate open-source rule engine and integrates with every major testing framework.
