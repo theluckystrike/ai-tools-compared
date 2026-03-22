@@ -169,6 +169,98 @@ FakerAI enhances standard Faker output with contextually appropriate values. The
 - Less flexible than pure LLMs
 - Limited to predefined field types
 
+## Using Ollama as a Backend for Any Tool
+
+Ollama has become the de facto standard for serving local models on developer machines. Both LlamaFill and TestGPT Local can use Ollama as their inference backend, which simplifies model management significantly.
+
+```bash
+# Install Ollama
+curl -fsSL https://ollama.ai/install.sh | sh
+
+# Pull a code-capable model with good instruction following
+ollama pull mistral:7b-instruct-q4_K_M
+
+# Verify the model serves correctly
+ollama run mistral:7b-instruct-q4_K_M "Generate 3 JSON user records with id, name, email, and created_at fields"
+```
+
+Configure LlamaFill to use the Ollama endpoint:
+
+```python
+from llamafill import FixtureGenerator
+
+generator = FixtureGenerator(
+    schema="./models/user.schema.json",
+    backend="ollama",
+    model="mistral:7b-instruct-q4_K_M",
+    base_url="http://localhost:11434"
+)
+users = generator.generate(count=500)
+```
+
+The advantage of routing through Ollama is model swapping: you can test different models (Llama 3, Mistral, CodeLlama) without changing your application code. Ollama handles downloading, caching, and serving.
+
+
+## Generating Edge Cases and Boundary Data
+
+One underused capability of LLM-based test data generators is intentional edge case generation. Rather than just filling valid records, you can prompt them to produce data that exercises boundary conditions:
+
+```python
+from llamafill import FixtureGenerator
+
+generator = FixtureGenerator(schema="./models/user.schema.json")
+
+# Generate deliberately edge-case records
+edge_cases = generator.generate(
+    count=20,
+    edge_cases=True,
+    edge_case_types=[
+        "empty_string_fields",
+        "max_length_strings",
+        "unicode_characters",
+        "null_optional_fields",
+        "boundary_dates"
+    ]
+)
+```
+
+This produces records like users with names containing emoji, emails at the maximum allowed length, or dates at year 9999 — exactly the data that exposes bugs in form validation, database constraints, and serialization code.
+
+For DataForge AI, pass edge case configuration directly in the API call:
+
+```bash
+curl -X POST http://localhost:8080/generate \
+  -H "Content-Type: application/json" \
+  -d '{
+    "tables": ["users"],
+    "records_per_table": 50,
+    "mode": "edge_cases",
+    "include_nulls": true,
+    "unicode_stress": true
+  }'
+```
+
+
+## Seeding Deterministic Test Fixtures
+
+For reproducible test suites, you need the same fixture data on every run. All four tools support seeding, though the mechanism differs:
+
+```python
+# LlamaFill — seed via config
+generator = FixtureGenerator(schema="./schema.json", seed=42)
+
+# FakerAI — seed via Faker compatibility
+from faker_ai import FakerAI
+fake = FakerAI(locale="en_US", seed=42)
+
+# TestGPT Local — seed via generation call
+builder = FixtureBuilder(seed=42)
+result = builder.generate(description="100 user accounts", format="json")
+```
+
+Seeded generation ensures that CI builds use the same test data as local development. Commit the seed value to your test configuration so all team members get identical fixtures without committing the fixture files themselves.
+
+
 ## Performance Considerations
 
 Hardware requirements vary significantly across tools:
