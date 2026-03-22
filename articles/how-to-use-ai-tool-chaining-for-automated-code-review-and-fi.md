@@ -182,6 +182,60 @@ Cursor provides an alternative approach by integrating AI directly into your edi
 Cursor's advantage is immediate feedback during development rather than waiting for CI to run.
 
 
+## Comparing AI Tools for Code Review Chaining
+
+Different tools in a chain contribute different strengths. The table below maps common review concerns to the tool best positioned to handle each one:
+
+| Review Dimension | Best Tool | Why |
+|---|---|---|
+| Syntax and style | ESLint / Pylint / RuboCop | Deterministic, fast, rule-based |
+| Type safety | TypeScript / mypy | Compile-time guarantees |
+| Security vulnerabilities | Semgrep / Snyk | Pattern library tuned for CVEs |
+| Logic and design flaws | Claude / GPT-4 | Contextual reasoning across files |
+| Test coverage gaps | AI + coverage report | AI interprets coverage data |
+| Inline quick fixes | GitHub Copilot | Tight editor integration |
+
+Using the right tool for each concern means your AI review agent spends its token budget on logic and design—the areas where language models genuinely outperform rules-based tools—rather than formatting issues that a linter handles for free.
+
+
+## Structuring Prompts for Maximum Accuracy
+
+The quality of an AI code review depends heavily on what context you provide. Weak prompts produce generic feedback; well-structured prompts produce actionable, file-specific observations.
+
+A strong review prompt includes:
+
+- The diff or changed file contents, not the whole repository
+- The language and framework ("TypeScript with React 18")
+- The specific concern to focus on ("focus on error handling and async race conditions")
+- The desired output format ("return findings as a numbered list with file name and line number")
+
+Example prompt structure:
+
+```
+You are a senior engineer reviewing a pull request.
+
+Language: TypeScript / Node.js 20
+Framework: Express 4
+
+Review the following diff for:
+1. Unhandled promise rejections
+2. Missing input validation
+3. Inefficient database queries
+
+For each finding, provide:
+- File name and approximate line number
+- Severity: critical / warning / suggestion
+- A one-sentence explanation
+- A corrected code snippet when applicable
+
+<diff>
+[paste diff here]
+</diff>
+```
+
+This format gives the AI enough context to produce findings that a developer can act on immediately without additional clarification.
+
+
 ## Best Practices for Tool Chains
 
 
@@ -215,6 +269,45 @@ Tool chaining introduces complexity that single-tool setups avoid:
 **Prompt drift.** As you tweak prompts for different stages, they may conflict. Keep prompts documented and version-controlled.
 
 
+## Integrating with Pull Request Workflows
+
+The most effective chains activate automatically at pull request creation and update. Beyond posting a comment, you can configure the pipeline to block merges when the AI review flags critical issues.
+
+Use GitHub's branch protection rules to require the AI Review job to pass before a PR can merge. In your workflow, add a step that exits with a non-zero code if the AI report contains critical-severity findings:
+
+```python
+# check_severity.py
+import sys
+import re
+
+with open('ai-review.md', 'r') as f:
+    content = f.read()
+
+critical_count = len(re.findall(r'Severity:\s*critical', content, re.IGNORECASE))
+
+if critical_count > 0:
+    print(f"Blocking merge: {critical_count} critical finding(s) detected.")
+    sys.exit(1)
+
+print("No critical findings. PR may proceed.")
+sys.exit(0)
+```
+
+Add this as a step after your AI review runs. Developers see a failed check directly in the GitHub PR interface and can click through to the AI comment for details. This tight integration ensures the pipeline is not advisory—it actively enforces review quality gates.
+
+
+## Measuring Pipeline Effectiveness
+
+Track these metrics to determine whether your chained review pipeline is paying off:
+
+- **Defect escape rate** — Issues caught in production that the pipeline missed. A declining escape rate confirms the chain is working.
+- **Review turnaround time** — Measure from PR open to first meaningful comment. Automated chains should reduce this to minutes.
+- **False positive rate** — Track how often developers dismiss AI findings as incorrect. A rate above 20% signals that prompts or tool configuration needs tuning.
+- **Auto-fix acceptance rate** — The percentage of automatic fixes that developers accept without modification. High acceptance validates your safe-fix classification logic.
+
+Review these numbers monthly. If defect escape rate drops but false positive rate climbs, tighten the AI's focus by narrowing the prompt scope. If auto-fix acceptance drops, tighten the categories you allow the fixer to touch automatically.
+
+
 ## Extending Your Pipeline
 
 
@@ -230,7 +323,7 @@ Once you have a working three-stage chain, consider adding:
 - **Test coverage verification** to ensure fixes do not break existing tests
 
 
-Each addition makes your pipeline more but increases runtime and complexity. Balance scope with practical development speed.
+Each addition makes your pipeline more comprehensive but increases runtime and complexity. Balance scope with practical development speed. A pipeline that takes 15 minutes to run on a small PR will erode developer confidence faster than one that takes 3 minutes and catches 80% of the same issues.
 
 
 ---
