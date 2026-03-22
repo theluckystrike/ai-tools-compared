@@ -163,11 +163,291 @@ Your starting point matters. Here's how to approach different schema sources.
 
 Even with AI assistance, certain aspects require your attention. Business logic within handler functions—database operations, side effects, notifications—must be implemented manually. Security concerns like signature verification (checking HMAC headers) need explicit implementation. Observability through structured logging and metrics requires configuration. These are areas where AI generates scaffolding, but domain expertise shapes the implementation.
 
+## Testing Webhook Receivers with Generated Test Suites
+
+AI tools can generate complete test suites alongside webhook receivers. Request that your assistant produce tests covering:
+
+```typescript
+// Generated webhook receiver tests
+import { describe, it, expect } from 'vitest';
+import { handleWebhook } from './webhook-handler';
+
+describe('Webhook Handler', () => {
+  it('accepts valid webhook payloads', async () => {
+    const validPayload = {
+      event_type: 'user.created',
+      timestamp: new Date().toISOString(),
+      payload: {
+        user_id: 'uuid-1234',
+        action: 'created',
+        data: { email: 'test@example.com' }
+      }
+    };
+
+    const response = await handleWebhook(
+      new Request('http://localhost', {
+        method: 'POST',
+        body: JSON.stringify(validPayload),
+        headers: { 'Content-Type': 'application/json' }
+      })
+    );
+
+    expect(response.status).toBe(200);
+  });
+
+  it('rejects malformed payloads', async () => {
+    const invalidPayload = {
+      // Missing required fields
+      event_type: 'user.created'
+    };
+
+    const response = await handleWebhook(
+      new Request('http://localhost', {
+        method: 'POST',
+        body: JSON.stringify(invalidPayload),
+        headers: { 'Content-Type': 'application/json' }
+      })
+    );
+
+    expect(response.status).toBe(400);
+  });
+
+  it('handles duplicate events idempotently', async () => {
+    const payload = {
+      event_type: 'user.created',
+      timestamp: new Date().toISOString(),
+      payload: { user_id: 'uuid-1234', action: 'created', data: {} }
+    };
+
+    const idempotencyKey = 'webhook-idempotency-key-123';
+
+    const response1 = await handleWebhook(
+      new Request('http://localhost', {
+        method: 'POST',
+        body: JSON.stringify(payload),
+        headers: {
+          'Idempotency-Key': idempotencyKey,
+          'Content-Type': 'application/json'
+        }
+      })
+    );
+
+    const response2 = await handleWebhook(
+      new Request('http://localhost', {
+        method: 'POST',
+        body: JSON.stringify(payload),
+        headers: {
+          'Idempotency-Key': idempotencyKey,
+          'Content-Type': 'application/json'
+        }
+      })
+    );
+
+    expect(response1.status).toBe(200);
+    expect(response2.status).toBe(200);
+    // Both should succeed without side effects doubling
+  });
+});
+```
+
+## Handling Webhook Signature Verification
+
+Security requires verifying webhook authenticity via signature headers. Request that AI generate signature verification code:
+
+```typescript
+import crypto from 'crypto';
+
+export async function verifyWebhookSignature(
+  payload: string,
+  signature: string,
+  secret: string
+): Promise<boolean> {
+  // Compute HMAC-SHA256
+  const computed = crypto
+    .createHmac('sha256', secret)
+    .update(payload)
+    .digest('hex');
+
+  // Compare using timing-safe comparison to prevent timing attacks
+  return crypto.timingSafeEqual(
+    Buffer.from(signature),
+    Buffer.from(computed)
+  );
+}
+
+// Integrate into webhook handler
+export async function handleWebhookWithVerification(req: Request): Promise<Response> {
+  const signature = req.headers.get('x-signature-sha256');
+  if (!signature) {
+    return new Response('Missing signature', { status: 401 });
+  }
+
+  const rawBody = await req.text();
+  const isValid = await verifyWebhookSignature(
+    rawBody,
+    signature,
+    process.env.WEBHOOK_SECRET || ''
+  );
+
+  if (!isValid) {
+    return new Response('Invalid signature', { status: 401 });
+  }
+
+  // Process verified webhook
+  const body = JSON.parse(rawBody);
+  return handleWebhook(body);
+}
+```
+
+## Retry Logic for Webhook Processing
+
+Generate retry strategies that handle transient failures:
+
+```typescript
+export async function handleWebhookWithRetry(
+  event: WebhookEvent,
+  maxRetries: number = 3
+): Promise<void> {
+  let lastError: Error | null = null;
+
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    try {
+      await processEvent(event);
+      return; // Success
+    } catch (error) {
+      lastError = error as Error;
+
+      // Don't retry on validation errors
+      if (error instanceof ValidationError) {
+        throw error;
+      }
+
+      // Exponential backoff: 1s, 2s, 4s
+      const delayMs = Math.pow(2, attempt - 1) * 1000;
+
+      if (attempt < maxRetries) {
+        await new Promise(resolve => setTimeout(resolve, delayMs));
+      }
+    }
+  }
+
+  // All retries exhausted
+  if (lastError) {
+    throw new Error(`Failed after ${maxRetries} attempts: ${lastError.message}`);
+  }
+}
+```
+
+## Monitoring Generated Webhook Receivers
+
+AI-generated receivers need observability. Request instrumentation code:
+
+```typescript
+import { Counter, Histogram } from 'prom-client';
+
+const webhookCounter = new Counter({
+  name: 'webhook_events_total',
+  help: 'Total webhook events processed',
+  labelNames: ['event_type', 'status']
+});
+
+const processingDuration = new Histogram({
+  name: 'webhook_processing_duration_ms',
+  help: 'Webhook processing duration',
+  labelNames: ['event_type']
+});
+
+export async function handleWebhookWithMetrics(event: WebhookEvent): Promise<Response> {
+  const startTime = Date.now();
+
+  try {
+    await processEvent(event);
+
+    const duration = Date.now() - startTime;
+    processingDuration.labels(event.event_type).observe(duration);
+    webhookCounter.labels(event.event_type, 'success').inc();
+
+    return new Response(JSON.stringify({ status: 'ok' }), { status: 200 });
+  } catch (error) {
+    const duration = Date.now() - startTime;
+    processingDuration.labels(event.event_type).observe(duration);
+    webhookCounter.labels(event.event_type, 'error').inc();
+
+    console.error('Webhook processing failed:', error);
+    return new Response(JSON.stringify({ error: 'processing failed' }), { status: 500 });
+  }
+}
+```
+
+## Scaling Generated Receivers
+
+As webhook volume increases, generated receivers need scaling strategies:
+
+```typescript
+// Using a task queue for high-volume scenarios
+import Bull from 'bull';
+
+const webhookQueue = new Bull('webhooks', {
+  redis: { host: 'localhost', port: 6379 }
+});
+
+// Webhook endpoint immediately returns, queues for processing
+export async function handleWebhookAsync(event: WebhookEvent): Promise<Response> {
+  try {
+    // Validate first
+    validateWebhookEvent(event);
+
+    // Queue for async processing
+    const job = await webhookQueue.add(event, {
+      attempts: 3,
+      backoff: { type: 'exponential', delay: 2000 },
+      removeOnComplete: true
+    });
+
+    return new Response(
+      JSON.stringify({ jobId: job.id, status: 'queued' }),
+      { status: 202 } // Accepted
+    );
+  } catch (error) {
+    return new Response(
+      JSON.stringify({ error: 'invalid payload' }),
+      { status: 400 }
+    );
+  }
+}
+
+// Process queued webhooks asynchronously
+webhookQueue.process(async (job) => {
+  const event = job.data;
+  await processEvent(event);
+  return { success: true };
+});
+```
+
+## Multi-Language Webhook Receiver Generation
+
+AI tools can generate receivers in multiple languages from the same schema:
+
+```bash
+# Generate from JSON Schema in multiple languages
+ai-scaffold webhook --schema user-events-schema.json --output-dir ./receivers
+
+# Generates:
+# - receivers/typescript/handler.ts
+# - receivers/python/handler.py
+# - receivers/go/handler.go
+# - receivers/java/Handler.java
+
+# All with identical validation logic, different language idioms
+```
+
 ## Selecting Your Tool
 
 For teams already using Claude Code or Cursor, the integration workflow feels natural—you stay within your existing environment. For rapid prototyping or when you lack a local development setup, Bolt.new provides immediate results. The code quality across these tools has converged; the practical difference lies in workflow integration and how well the tool understands your existing codebase.
 
-Start with the tool that minimizes context-switching, then evaluate the generated code for production readiness. Most scaffolded receivers require minimal modifications before deployment.
+Start with the tool that minimizes context-switching, then evaluate the generated code for production readiness. Most scaffolded receivers require minimal modifications before deployment—mainly adding your specific business logic and integrating with your observability infrastructure.
+
+Remember: AI generates the infrastructure and boilerplate. Your job is adding domain expertise—understanding what each webhook event means in your business context and what actions should result from receiving it.
 
 
 

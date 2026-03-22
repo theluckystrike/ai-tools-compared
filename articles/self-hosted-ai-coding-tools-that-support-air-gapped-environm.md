@@ -153,12 +153,194 @@ All these tools perform significantly better with a dedicated GPU. An NVIDIA RTX
 
 Running on CPU alone works for smaller 3B-7B parameter models but expect noticeably slower response times—often several seconds per completion rather than milliseconds.
 
+## Fine-Tuning Models for Your Codebase
+
+Air-gapped environments allow you to fine-tune models on your proprietary code without exposing it to external services. This improves model output quality significantly:
+
+```bash
+# Fine-tune a code model on your codebase
+ollama create custom-codellama --base codellama:7b --train ./training-data.txt
+
+# Or use LM Studio's fine-tuning interface
+# 1. Load base model (CodeQwen-7B, CodeLlama, etc.)
+# 2. Provide training examples from your codebase
+# 3. Run fine-tuning (GPU-accelerated)
+# 4. Save output model for continued development
+
+# The result: AI assistance tuned to your coding patterns
+# Including your framework patterns, naming conventions, and architectural styles
+```
+
+Fine-tuned models understand your specific tech stack better than general-purpose models, producing more relevant suggestions.
+
+## Setting Up Secure Air-Gapped Networks
+
+For government, military, or highly sensitive environments, implement additional security controls:
+
+```bash
+# Network isolation verification
+# 1. No outbound traffic from development machines
+iptables -L OUTPUT | grep REJECT
+
+# 2. Verify all AI tools run locally
+netstat -tulpn | grep -E "ollama|tabby|continue"
+
+# 3. Implement host-based firewall
+ufw status
+ufw allow 8080  # Only internal AI service
+ufw deny out any
+
+# 4. Audit all network connections
+tcpdump -i eth0 -w traffic.pcap
+# Should show only internal traffic, no external connections
+
+# 5. Verify no DNS lookups to external services
+grep "external.domain" /var/log/syslog
+# Should return nothing
+```
+
+## Model Selection for Resource-Constrained Environments
+
+Smaller models work better in air-gapped environments where hardware might be limited:
+
+| Model | Size | VRAM | Performance | Code Quality |
+|-------|------|------|-------------|--------------|
+| CodeQwen-1.5B | 1.5B | 4GB | Fast | Acceptable |
+| CodeLlama-7B | 7B | 12GB | Good | Very Good |
+| StarCoder-15B | 15B | 24GB | Better | Excellent |
+| WizardCoder-34B | 34B | 48GB+ | Best | Best |
+
+Start with 7B parameter models for single-user scenarios. Scale to larger models only if your hardware supports it and you need better output quality.
+
+## Continuous Model Updates in Air-Gapped Settings
+
+Even in offline environments, you can benefit from model improvements:
+
+```bash
+# Pre-download new model versions on a connected machine
+# (external network)
+ollama pull codellama:latest
+tar czf codellama-latest.tar.gz ~/.ollama/
+
+# Transfer to air-gapped environment via secure channel
+# (USB drive, secure network transfer, etc.)
+scp -i privkey codellama-latest.tar.gz user@airgapped-host:~/
+
+# On air-gapped machine
+tar xzf codellama-latest.tar.gz -C ~/.ollama/
+ollama serve  # Now uses latest model
+
+# Set up automated download mechanism for new models quarterly
+# Use secure channels only (never cloud connectivity)
+```
+
+## Monitoring AI Tool Performance
+
+Track performance metrics in your air-gapped environment:
+
+```python
+# Monitor tool usage and performance
+import time
+import json
+from pathlib import Path
+
+class AIToolMetrics:
+    def __init__(self):
+        self.metrics = []
+
+    def log_completion(self, model, prompt_length, completion_time, tokens):
+        self.metrics.append({
+            "timestamp": time.time(),
+            "model": model,
+            "prompt_tokens": prompt_length,
+            "completion_time_ms": completion_time * 1000,
+            "generated_tokens": tokens,
+            "throughput_tokens_per_sec": tokens / completion_time
+        })
+
+    def save_metrics(self):
+        with open("ai_tool_metrics.json", "w") as f:
+            json.dump(self.metrics, f, indent=2)
+
+    def analyze_performance(self):
+        avg_time = sum(m["completion_time_ms"] for m in self.metrics) / len(self.metrics)
+        avg_throughput = sum(m["throughput_tokens_per_sec"] for m in self.metrics) / len(self.metrics)
+        print(f"Avg completion time: {avg_time:.0f}ms")
+        print(f"Avg throughput: {avg_throughput:.1f} tokens/sec")
+
+# Usage in your IDE or CLI
+metrics = AIToolMetrics()
+# [Log completions as they happen]
+metrics.save_metrics()
+metrics.analyze_performance()
+```
+
+Identifying bottlenecks helps you optimize your setup over time.
+
+## Building Your Air-Gapped Development Workflow
+
+Establish a complete offline development workflow:
+
+```bash
+# 1. Initialize air-gapped development environment
+docker pull python:3.11
+docker run -d --name dev-box -v /code:/workspace python:3.11 sleep infinity
+
+# 2. Start AI assistance services
+ollama serve --models-dir /workspace/.ollama &
+continue-dev --port 8080 &
+tabby serve --port 8081 &
+
+# 3. Configure your editor
+# .vscode/settings.json
+{
+  "copilot.enabled": false,
+  "[python]": {
+    "defaultInterpreterPath": "/usr/local/bin/python"
+  },
+  "continue.serverUrl": "http://localhost:8080"
+}
+
+# 4. All development happens locally
+# No external API calls, no cloud sync, full data control
+
+# 5. Periodic backups of generated code
+rsync -av /workspace /backup/workspace_$(date +%Y%m%d)
+```
+
+## Compliance and Audit Trails
+
+Air-gapped AI tools simplify compliance requirements. All code stays internal, all processing is local, and audit trails exist entirely within your infrastructure:
+
+```bash
+# Generate compliance report
+echo "=== AI Tool Usage Audit ===" > audit_report.txt
+echo "Date: $(date)" >> audit_report.txt
+echo "Tools in use:" >> audit_report.txt
+
+ollama list >> audit_report.txt 2>&1
+continue-dev --version >> audit_report.txt 2>&1
+tabby --version >> audit_report.txt 2>&1
+
+echo "Network access violations: $(tcpdump -r traffic.pcap | grep -c 'external')" >> audit_report.txt
+
+echo "Code files processed: $(find /workspace -name "*.py" -o -name "*.ts" | wc -l)" >> audit_report.txt
+echo "All processing: LOCAL ONLY" >> audit_report.txt
+
+# Submit compliance report to your organization
+```
+
+This type of audit trail helps satisfy security and compliance requirements that cloud-based tools cannot meet.
+
+## Conclusion
 
 ## Related Articles
 
 - [AI Tools for Self Service Support Portals: Practical Guide](/ai-tools-for-self-service-support-portals/)
 - [Free AI Coding Tools That Work Offline Without Internet](/free-ai-coding-tools-that-work-offline-without-internet/)
 - [How to Create Custom Instructions for AI Coding Tools That](/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
+
+For organizations with strict compliance requirements, air-gapped AI tools provide the only viable path to AI-assisted development without creating security or regulatory risks.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

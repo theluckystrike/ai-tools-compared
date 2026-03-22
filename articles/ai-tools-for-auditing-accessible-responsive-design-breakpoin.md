@@ -192,6 +192,226 @@ A practical workflow for teams new to AI-assisted breakpoint auditing combines f
 The combination of automated detection and human judgment consistently outperforms either approach alone. AI tools reduce the manual testing surface dramatically, but they work best when developers understand what each flagged issue means for real screen reader and keyboard users.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+## Automating Breakpoint Accessibility in CI/CD
+
+Integrate accessible breakpoint testing into your continuous integration pipeline. Generate test suites that run on every pull request:
+
+```javascript
+// GitHub Actions workflow for breakpoint accessibility testing
+const { chromium } = require('playwright');
+const { injectAxe, checkA11y } = require('axe-playwright');
+
+const BREAKPOINTS = [
+  { width: 320, height: 568, name: 'mobile' },
+  { width: 768, height: 1024, name: 'tablet' },
+  { width: 1920, height: 1080, name: 'desktop' }
+];
+
+async function testAccessibilityAcrossBreakpoints(url) {
+  const browser = await chromium.launch();
+  const violations = [];
+
+  for (const breakpoint of BREAKPOINTS) {
+    const context = await browser.newContext({
+      viewport: { width: breakpoint.width, height: breakpoint.height }
+    });
+    const page = await context.newPage();
+
+    await page.goto(url);
+    await injectAxe(page);
+
+    const results = await checkA11y(page, null, {
+      detailedReport: true
+    });
+
+    if (results.violations.length > 0) {
+      violations.push({
+        breakpoint: breakpoint.name,
+        violations: results.violations
+      });
+    }
+
+    await context.close();
+  }
+
+  await browser.close();
+  return violations;
+}
+```
+
+Run this script on every PR to catch breakpoint issues before merge. Fail the build if violations exceed your threshold.
+
+## Screen Reader Testing Across Breakpoints
+
+Different viewport sizes can affect how screen readers perceive content. Generate test cases that verify screen reader announcements remain correct:
+
+```javascript
+// Test accessibility tree changes at different breakpoints
+async function verifyAccessibilityTreeConsistency(url) {
+  const browser = await chromium.launch();
+  const trees = {};
+
+  for (const width of [320, 768, 1024, 1920]) {
+    const page = await browser.newPage({
+      viewport: { width, height: 1080 }
+    });
+
+    await page.goto(url);
+    const snapshot = await page.accessibility.snapshot();
+    trees[width] = snapshot;
+  }
+
+  // Compare trees to find navigation path changes
+  const issues = [];
+
+  if (trees[320].children[0].role !== trees[1920].children[0].role) {
+    issues.push({
+      issue: 'Root element role changes',
+      mobile: trees[320].children[0].role,
+      desktop: trees[1920].children[0].role
+    });
+  }
+
+  return issues;
+}
+```
+
+## Touch Target Sizing at Mobile Breakpoints
+
+Mobile breakpoints require larger touch targets (typically 44×44 pixels minimum). Generate tests that verify touch targets meet requirements:
+
+```javascript
+async function auditTouchTargets(page, breakpoint) {
+  const elements = await page.$$eval('button, a, [role="button"]', els => {
+    return els.map(el => {
+      const rect = el.getBoundingClientRect();
+      return {
+        tag: el.tagName,
+        width: rect.width,
+        height: rect.height,
+        meets44x44: rect.width >= 44 && rect.height >= 44,
+        meets48x48: rect.width >= 48 && rect.height >= 48
+      };
+    });
+  });
+
+  const violations = elements.filter(el => !el.meets44x44);
+
+  if (breakpoint.width <= 768 && violations.length > 0) {
+    console.warn(`Touch target issues on ${breakpoint.name}:`, violations);
+  }
+
+  return violations;
+}
+```
+
+## Keyboard Navigation Path Testing
+
+Keyboard navigation paths change when layouts shift. Test Tab order consistency:
+
+```javascript
+async function verifyTabOrder(page, breakpoint) {
+  // Get all focusable elements
+  const focusableElements = await page.$$eval(
+    'button, a, input, textarea, select, [tabindex]',
+    els => els.map(el => ({
+      tag: el.tagName,
+      text: el.textContent?.substring(0, 50),
+      tabindex: el.getAttribute('tabindex'),
+      visible: el.offsetParent !== null
+    }))
+  );
+
+  // Verify no visible elements have negative tabindex (removes from tab order)
+  const badTabindexes = focusableElements.filter(
+    el => el.visible && el.tabindex && parseInt(el.tabindex) < 0
+  );
+
+  return {
+    breakpoint: breakpoint.name,
+    focusableCount: focusableElements.length,
+    visibleFocusableCount: focusableElements.filter(el => el.visible).length,
+    invalidTabindexes: badTabindexes
+  };
+}
+```
+
+## Zoom Level Accessibility
+
+Responsive design interacts with browser zoom. Generate tests at various zoom levels:
+
+```javascript
+async function testAtZoomLevels(url, breakpoint) {
+  const browser = await chromium.launch();
+  const page = await browser.newPage({
+    viewport: { width: breakpoint.width, height: breakpoint.height }
+  });
+
+  const zoomLevels = [0.5, 0.75, 1, 1.25, 1.5, 2];
+  const results = {};
+
+  for (const zoom of zoomLevels) {
+    await page.goto(url);
+    await page.evaluate(z => {
+      document.body.style.zoom = z;
+    }, zoom);
+
+    // Check for horizontal scrollbar (indicates overflow)
+    const overflow = await page.evaluate(() => {
+      return document.documentElement.scrollWidth > window.innerWidth;
+    });
+
+    results[zoom] = { hasHorizontalScroll: overflow };
+  }
+
+  await browser.close();
+  return results;
+}
+```
+
+## Visual Regression Testing for Breakpoints
+
+Pair accessibility testing with visual regression detection:
+
+```javascript
+// Combine accessibility and visual testing
+async function comprehensiveBreakpointAudit(url) {
+  const results = [];
+
+  for (const breakpoint of BREAKPOINTS) {
+    const a11yIssues = await testAccessibilityAcrossBreakpoints(url);
+    const tabOrder = await verifyTabOrder(url, breakpoint);
+    const touchTargets = await auditTouchTargets(url, breakpoint);
+
+    results.push({
+      breakpoint: breakpoint.name,
+      accessibility: a11yIssues,
+      tabNavigation: tabOrder,
+      touchTargets: touchTargets
+    });
+  }
+
+  return results;
+}
+```
+
+## Choosing the Right Tool
+
+Consider these factors when selecting an AI breakpoint auditing tool:
+
+| Tool | Best For | Learning Curve | Cost |
+|------|----------|-----------------|------|
+| Playwright + Custom AI | Full control, specific needs | Medium | Free (open source) |
+| axe DevTools Pro | Comprehensive WCAG coverage | Low | $$$ |
+| Lighthouse CI | DevOps teams, CI integration | Low | Free |
+| WAVE Enterprise | Large organizations | Medium | $$$ |
+
+## Conclusion
+
+AI-powered breakpoint accessibility auditing has matured significantly in 2026. The best approach combines automated CI checks for immediate feedback with periodic deep audits for comprehensive analysis. Tools like Playwright with AI analysis, axe DevTools Pro, Lighthouse, and WAVE each serve different needs—evaluate based on your team's size, technical expertise, and integration requirements.
+
+The key is starting somewhere. Even basic breakpoint accessibility testing catches issues that would otherwise reach production and frustrate users who rely on assistive technologies. Begin with automated CI checks, add visual regression testing, then expand to include screen reader testing as your practice matures.
+
 {% endraw %}
 
 ## Frequently Asked Questions

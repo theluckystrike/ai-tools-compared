@@ -28,13 +28,15 @@ AI-enhanced trace analyzers automate this process by applying machine learning t
 
 When evaluating AI tools for trace analysis, several capabilities matter most for practical use:
 
-**Automatic Anomaly Detection**: The best tools learn your application's normal behavior and flag deviations automatically. This includes unusual latency increases, elevated error rates, and dependency failures.
+**Automatic Anomaly Detection**: The best tools learn your application's normal behavior and flag deviations automatically. This includes unusual latency increases, elevated error rates, and dependency failures. Good tools establish baselines during normal operations, then alert when actual performance deviates significantly.
 
-**Root Cause Suggestions**: Rather than showing you thousands of spans, AI tools should point you directly to the problematic operation and explain why it's causing issues.
+**Root Cause Suggestions**: Rather than showing you thousands of spans, AI tools should point you directly to the problematic operation and explain why it's causing issues. This includes identifying which service is slowest, which database queries are most expensive, and which dependencies are impacting latency.
 
-**Correlation with Metrics and Logs**: Performance problems rarely exist in isolation. Tools that bridge traces with metrics and logs provide faster resolution.
+**Correlation with Metrics and Logs**: Performance problems rarely exist in isolation. Tools that bridge traces with metrics and logs provide faster resolution. When a trace shows high latency, correlated metrics reveal whether CPU spiked, memory filled, disk I/O blocked, or network bandwidth saturated.
 
-**Support for Open Standards**: Look for tools that work with OpenTelemetry, Jaeger, and Zipkin formats. This ensures vendor independence and long-term viability.
+**Support for Open Standards**: Look for tools that work with OpenTelemetry, Jaeger, and Zipkin formats. This ensures vendor independence and long-term viability. OpenTelemetry standardization means you can switch tools without re-instrumenting your application.
+
+**Cost Attribution**: Understanding which customers, features, or operations consume the most infrastructure resources. AI tools that trace requests end-to-end can attribute compute costs accurately.
 
 ## Comparing Leading AI Trace Analysis Tools
 
@@ -97,6 +99,54 @@ The open-source ecosystem offers cost-effective options. Jaeger provides trace s
 
 SigNoz is an open-source APM that includes anomaly detection and service dependency mapping. It uses OpenTelemetry for instrumentation and provides an unified interface for traces, metrics, and logs. The machine learning features are more basic than commercial offerings but improving rapidly.
 
+## Practical Trace Analysis Workflow
+
+A realistic trace analysis process using AI tools involves several phases:
+
+**Phase 1: Data Collection**
+Set up OpenTelemetry instrumentation across your services. Configure sampling intelligently—capture 100% of errors, 10% of slow requests, and 1% of normal traffic. This balances cost with visibility.
+
+```yaml
+# OpenTelemetry configuration
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: otel-config
+data:
+  config.yaml: |
+    receivers:
+      otlp:
+        protocols:
+          grpc:
+            endpoint: 0.0.0.0:4317
+    processors:
+      sampling:
+        sampling_percentage: 10  # 10% of normal traffic
+      attributes:
+        actions:
+          - key: service.name
+            value: my-app
+            action: insert
+    exporters:
+      jaeger:
+        endpoint: jaeger-collector:14250
+    service:
+      pipelines:
+        traces:
+          receivers: [otlp]
+          processors: [sampling, attributes]
+          exporters: [jaeger]
+```
+
+**Phase 2: Baseline Establishment**
+Collect traces during normal operations for at least one week. This establishes baseline latency, error rates, and service dependencies that the AI tool learns from.
+
+**Phase 3: Alert Configuration**
+Based on established baselines, configure alerts that fire when actual performance deviates significantly. A rule like "P99 latency increases by more than 50%" triggers investigation rather than static "p99 > 1000ms" thresholds.
+
+**Phase 4: Incident Investigation**
+When alerts fire, use the AI tool to rapidly locate root cause. The tool correlates the trace anomaly with related metric changes and log entries.
+
 ## Choosing the Right Tool
 
 Your choice depends on several factors:
@@ -107,7 +157,7 @@ Your choice depends on several factors:
 
 **Budget**: Commercial tools offer more sophisticated AI but at enterprise pricing. Open-source alternatives require more manual effort but provide greater flexibility.
 
-**Scale**: High-volume applications generate massive trace data. Some tools handle this better than others, with implications for storage costs and query performance.
+**Scale**: High-volume applications generate massive trace data. Some tools handle this better than others, with implications for storage costs and query performance. Plan for 50-100 bytes per span, multiply by expected daily spans, and budget accordingly.
 
 ## Implementation Best Practices
 
@@ -120,6 +170,99 @@ Regardless of which tool you choose, certain practices improve your success:
 **Define Business Transactions**: Mark important user journeys as transactions. AI tools can then optimize for user experience rather than technical metrics.
 
 **Correlate with Deployment Data**: Connect your trace data with deployment timestamps. This helps AI distinguish between code changes and infrastructure issues.
+
+## Analyzing Span Duration Patterns
+
+Beyond anomaly detection, AI tools help identify systematic issues in your trace data. Examine span duration distributions—when a particular service consistently shows median latency of 100ms but the p99 reaches 5 seconds, that's a pattern worth investigating. AI can spot these distributions automatically and highlight the most problematic spans.
+
+```python
+# Analyzing trace spans with statistical significance
+from collections import defaultdict
+import statistics
+
+spans_by_operation = defaultdict(list)
+
+for trace in traces:
+    for span in trace.spans:
+        operation_key = f"{span.service}:{span.operation}"
+        spans_by_operation[operation_key].append(span.duration_ms)
+
+# Find operations with high variance
+for operation, durations in spans_by_operation.items():
+    median = statistics.median(durations)
+    p99 = sorted(durations)[int(len(durations) * 0.99)]
+    variance_ratio = p99 / median if median > 0 else 0
+
+    if variance_ratio > 5:  # P99 is 5x higher than median
+        print(f"High variance: {operation}")
+        print(f"  Median: {median}ms, P99: {p99}ms")
+```
+
+This systematic analysis reveals which services have unpredictable performance—often the first place to focus optimization efforts.
+
+## Service Dependency Critical Paths
+
+Understanding your critical path—the sequence of services that directly impact user-facing latency—requires tracing the full request journey. AI tools can automatically construct and visualize these paths, highlighting which service delays have the most impact on end-to-end latency.
+
+Create a dependency graph from your traces:
+
+```
+User Request
+  -> API Gateway (10ms)
+    -> Auth Service (20ms)
+      -> User Cache (5ms) [CRITICAL]
+        -> Database (15ms) [CRITICAL]
+    -> Product Service (100ms) [BOTTLENECK]
+      -> Search Index (80ms) [CRITICAL]
+    -> Pricing Service (30ms)
+  -> Response Assembly (5ms)
+
+Critical Path: 230ms (Auth → User Cache → Database, Product → Search Index)
+```
+
+Optimizing the critical path provides the most bang for effort. An AI tool that identifies this automatically saves substantial analysis time.
+
+## Correlation Analysis Between Services
+
+Sophisticated trace analysis correlates behavior changes across services. If your payment service suddenly slows down whenever inventory service increases latency, these services might be competing for shared resources. AI tools surfacing these correlations help you understand emergent system behavior.
+
+```python
+# Cross-service correlation detection
+from scipy.stats import pearsonr
+
+correlations = {}
+for service_a, service_b in service_pairs:
+    latencies_a = [span.duration for span in traces if span.service == service_a]
+    latencies_b = [span.duration for span in traces if span.service == service_b]
+
+    if len(latencies_a) > 10 and len(latencies_b) > 10:
+        correlation, p_value = pearsonr(latencies_a, latencies_b)
+
+        if p_value < 0.05 and abs(correlation) > 0.7:  # Statistically significant
+            correlations[(service_a, service_b)] = correlation
+            print(f"Strong correlation: {service_a} <-> {service_b}: {correlation:.2f}")
+```
+
+Understanding these correlations prevents incorrect optimization decisions. You might spend effort optimizing the wrong service when the real bottleneck is resource contention.
+
+## Practical Trace-Driven Optimization Workflow
+
+The modern optimization workflow using AI trace analysis looks like this:
+
+1. **Establish baselines**: Collect traces under normal traffic patterns and measure service latencies, error rates, and resource utilization
+2. **Alert on deviations**: Use AI anomaly detection to flag when actual performance deviates significantly from baseline
+3. **Analyze contributing factors**: When alerts fire, use AI correlation analysis to identify which services are behaving abnormally
+4. **Generate optimization suggestions**: Based on trace patterns, AI suggests specific improvements (caching, connection pooling, index creation)
+5. **Validate improvements**: Run A/B tests or gradual rollouts, collecting new traces to confirm improvements
+6. **Update baselines**: As your system improves, update baseline expectations
+
+This closed-loop process continuously optimizes your system without requiring constant manual investigation.
+
+## Integration with Existing Monitoring
+
+Your trace analysis tools don't exist in isolation. Integrate them with your metrics system (Prometheus), logging infrastructure (ELK, Loki), and alerting platform (PagerDuty, Opsgenie). This unified observability gives context: traces show what happened, metrics show system-wide patterns, logs show specific error details.
+
+An AI tool that bridges these systems—correlating a trace anomaly with a metric spike and related log entries—cuts investigation time from hours to minutes.
 
 ## Looking Ahead
 
