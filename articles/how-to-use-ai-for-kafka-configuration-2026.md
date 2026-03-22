@@ -251,6 +251,184 @@ orders
 
 Claude uses `ofSizeWithNoGrace` (Kafka Streams 3.0+ API) rather than the deprecated `of()`, which is the correct modern pattern.
 
+## Producer Configuration for High Durability
+
+When you need guaranteed delivery with no data loss, producer settings matter as much as broker settings.
+
+**Prompt:**
+```text
+Write a Kafka producer configuration for a financial transactions system.
+Requirements: exactly-once semantics, max latency 100ms, acks=all,
+compression lz4, idempotent producer, retry on transient failures.
+Java properties format with comments.
+```
+
+```properties
+# Producer identity
+client.id=payments-producer-${hostname}
+
+# Durability: require all in-sync replicas to acknowledge
+acks=all
+
+# Idempotent producer — prevents duplicate messages on retry
+enable.idempotence=true
+
+# Exactly-once semantics (requires idempotence=true)
+transactional.id=payments-producer-${hostname}-${pid}
+
+# Retries: retry up to 10 times with backoff
+retries=10
+retry.backoff.ms=100
+delivery.timeout.ms=120000       # 2 min total delivery timeout
+
+# Batching: balance latency vs throughput
+linger.ms=5                      # Wait up to 5ms for batch fill
+batch.size=65536                 # 64KB batch size
+
+# Compression
+compression.type=lz4
+
+# Buffer and request sizing
+buffer.memory=33554432           # 32MB producer buffer
+max.request.size=5242880         # 5MB max single message
+
+# Timeouts
+request.timeout.ms=30000
+metadata.max.age.ms=300000
+```
+
+The key insight Claude surfaces here: `enable.idempotence=true` automatically sets `acks=all` and `max.in.flight.requests.per.connection=5` if not explicitly set. Setting `transactional.id` upgrades to exactly-once but requires wrapping sends in `beginTransaction()` / `commitTransaction()` blocks in your application code.
+
+## Schema Registry Integration
+
+Modern Kafka deployments use Confluent Schema Registry to enforce message contracts. AI excels at generating the boilerplate for schema-aware producers and consumers.
+
+**Prompt:**
+```text
+Write Python code to produce Avro-encoded messages to Kafka using
+confluent-kafka with Schema Registry. Schema: {orderId: string, amount: float,
+timestamp: long}. Include schema registration and both producer and consumer.
+```
+
+```python
+from confluent_kafka import Producer, Consumer
+from confluent_kafka.schema_registry import SchemaRegistryClient
+from confluent_kafka.schema_registry.avro import AvroSerializer, AvroDeserializer
+from confluent_kafka.serialization import SerializationContext, MessageField
+import time
+
+SCHEMA_STR = """
+{
+  "type": "record",
+  "name": "Order",
+  "namespace": "com.example.orders",
+  "fields": [
+    {"name": "orderId", "type": "string"},
+    {"name": "amount",  "type": "float"},
+    {"name": "timestamp", "type": "long", "logicalType": "timestamp-millis"}
+  ]
+}
+"""
+
+schema_registry_conf = {"url": "http://schema-registry:8081"}
+sr_client = SchemaRegistryClient(schema_registry_conf)
+
+avro_serializer = AvroSerializer(
+    sr_client,
+    SCHEMA_STR,
+    lambda obj, ctx: obj,  # dict passthrough
+)
+
+avro_deserializer = AvroDeserializer(
+    sr_client,
+    SCHEMA_STR,
+    lambda obj, ctx: obj,
+)
+
+# Producer
+producer_conf = {
+    "bootstrap.servers": "broker1:9093",
+    "security.protocol": "SSL",
+    "ssl.ca.location": "/etc/kafka/ssl/ca.pem",
+}
+producer = Producer(producer_conf)
+
+def produce_order(order_id: str, amount: float):
+    order = {
+        "orderId": order_id,
+        "amount": amount,
+        "timestamp": int(time.time() * 1000),
+    }
+    producer.produce(
+        topic="orders",
+        key=order_id,
+        value=avro_serializer(order, SerializationContext("orders", MessageField.VALUE)),
+        on_delivery=lambda err, msg: print(f"Delivered: {msg.offset()}" if not err else f"Error: {err}"),
+    )
+    producer.flush()
+
+# Consumer
+consumer_conf = {
+    "bootstrap.servers": "broker1:9093",
+    "group.id": "order-processor",
+    "auto.offset.reset": "earliest",
+    "enable.auto.commit": False,
+    "security.protocol": "SSL",
+    "ssl.ca.location": "/etc/kafka/ssl/ca.pem",
+}
+consumer = Consumer(consumer_conf)
+consumer.subscribe(["orders"])
+
+while True:
+    msg = consumer.poll(timeout=1.0)
+    if msg is None:
+        continue
+    if msg.error():
+        print(f"Consumer error: {msg.error()}")
+        continue
+    order = avro_deserializer(msg.value(), SerializationContext("orders", MessageField.VALUE))
+    print(f"Received order: {order}")
+    consumer.commit(message=msg)
+```
+
+Claude correctly registers the schema automatically via `AvroSerializer` on first produce — no separate schema registration step required. It also uses the logical type `timestamp-millis` annotation on the Avro schema so downstream consumers can interpret the long as a proper timestamp.
+
+## Troubleshooting with AI
+
+AI is also useful for diagnosing Kafka issues from log snippets or metric descriptions.
+
+**Prompt:**
+```text
+My Kafka consumer is lagging 500k messages on partition 3 of the "orders" topic.
+Consumer group: order-processor. The consumer CPU is at 10%, network is fine.
+What are the most likely causes and how do I investigate?
+```
+
+Claude's diagnostic response:
+
+1. **Processing bottleneck downstream** — The consumer is fetching but can't process fast enough. Check if your processing code has blocking I/O calls (database writes, HTTP calls) that are serializing within the poll loop. Consider async processing or a thread pool.
+
+2. **`max.poll.records` too high** — If poll returns 500 records but processing takes 4 minutes, you'll exceed `max.poll.interval.ms` and trigger rebalance, which resets progress. Reduce `max.poll.records` to 50 and measure processing time per batch.
+
+3. **Single-partition hotspot** — Lag only on partition 3 suggests a key skew issue. Check if one producer key maps disproportionately to partition 3 (`hash(key) % 12`). Consider custom partitioner or rekeying.
+
+4. **Investigation commands:**
+
+```bash
+# Check consumer group lag across all partitions
+kafka-consumer-groups.sh --bootstrap-server broker1:9093 \
+  --group order-processor --describe
+
+# Check producer throughput per partition
+kafka-log-dirs.sh --bootstrap-server broker1:9093 \
+  --topic-list orders --describe | grep "partition:3"
+
+# Monitor consumer lag over time (requires kcat)
+kcat -b broker1:9093 -C -t orders -p 3 -o end -e -q | wc -l
+```
+
+This kind of structured diagnostic output — triage list plus investigation commands — is where AI saves significant time versus searching documentation.
+
 ## Related Reading
 
 - [Gemini vs Claude for Writing Apache Kafka Consumer/Producer Config](/ai-tools-compared/gemini-vs-claude-for-writing-apache-kafka-consumer-producer-/)
