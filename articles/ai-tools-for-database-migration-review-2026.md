@@ -16,6 +16,16 @@ voice-checked: true---
 
 Migration review is where AI provides measurable value: it reads migration code faster than humans, knows the failure modes for each database engine, and can flag risks that only appear in specific scenarios (large table, concurrent access, replication lag). This guide shows how to build an automated migration review pipeline using Claude.
 
+## Key Takeaways
+
+- **For occasional use**: consider whether a free alternative covers enough of your needs.
+- **CRITICAL**: Will cause downtime or data loss
+2.
+- **ADD COLUMN` (lock-free in**: PostgreSQL 11+) versus `ALTER TABLE ...
+- **Free and basic plans**: typically get community forum support and documentation.
+- **Use mTLS or a**: shared secret header for authentication between GitHub Actions and the review endpoint.
+- **The `claude-opus-4-6` model allows**: 5 requests per minute on the default tier; batch small migrations into a single prompt to stay within that limit during peak CI hours.
+
 ## The Review Pipeline
 
 ```

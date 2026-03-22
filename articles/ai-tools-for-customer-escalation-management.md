@@ -31,6 +31,15 @@ intent-checked: true---
 
 AI tools for customer escalation management use sentiment analysis, keyword detection, and contact-frequency tracking to automatically classify, prioritize, and route support tickets that need human intervention. These tools reduce escalation response times by 40-60% while maintaining quality through weighted recommendation systems rather than binary decisions. This guide covers practical implementations with code examples for developers building or integrating escalation capabilities into existing support workflows.
 
+## Key Takeaways
+
+- **These tools reduce escalation**: response times by 40-60% while maintaining quality through weighted recommendation systems rather than binary decisions.
+- **A keyword scoring above**: 0.9 should almost always trigger immediate escalation; words between 0.5 and 0.65 should feed into the aggregate scoring rather than triggering escalation alone.
+- **Use confidence thresholds**: not hard rules. A single keyword match at 0.6 confidence should never trigger an escalation by itself.
+- **Require at least two**: signals or a combined weighted score above 1.5 before auto-routing.
+- **Teams handling enterprise accounts**: often lower it to 0.70 because individual account risk is higher.
+- **What is a reasonable**: false-positive rate target? Aim for under 8% in the first month, under 5% by month three.
+
 ## Understanding Escalation Triggers
 
 Before implementing any AI solution, you need to identify what constitutes an escalation-worthy situation. Common triggers include:

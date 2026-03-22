@@ -33,6 +33,15 @@ AI tools for data mesh architecture automate the hardest parts of decentralized 
 
 The critical challenge in any data mesh adoption is not technology selection — it is organizational change. Domains resist ownership until metadata burden is low and quality tooling is automatic. AI tools reduce this friction by doing the boring work: inferring schemas, suggesting tags, detecting anomalies, and generating documentation that human teams would never maintain manually.
 
+## Key Takeaways
+
+- **Amundsen (open source) uses**: machine learning to auto-generate column descriptions from data patterns, identify relationships between tables, and suggest owners based on usage patterns.
+- **Verify that tools handle**: your data volume and velocity requirements, and prefer options that explain their recommendations; explainability builds the trust needed for adoption.
+- **Start with open-source options**: like Amundsen or DataHub for cataloging, then add commercial tools for sensitive data discovery as needs mature.
+- **Instrument Great Expectations on**: their most critical pipelines.
+- **Governance without a catalog is blind enforcement**: the most common reason data mesh governance initiatives fail.
+- **Build exception workflows that**: let teams document why they overrode a suggestion, which feeds back into improving the model's recommendations over time.
+
 ## Understanding Data Mesh Requirements
 
 Data mesh rests on four core principles:
