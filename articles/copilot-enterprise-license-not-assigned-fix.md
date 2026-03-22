@@ -13,24 +13,34 @@ intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, troubleshooting]
 ---
+---
+layout: default
+title: "Copilot Enterprise License Not Assigned"
+description: "When your organization has purchased GitHub Copilot Enterprise but you cannot access the features, the 'license not assigned' error blocks productivity. This"
+date: 2026-03-15
+last_modified_at: 2026-03-15
+author: theluckystrike
+permalink: /copilot-enterprise-license-not-assigned-fix/
+reviewed: true
+score: 8
+categories: [guides]
+intent-checked: true
+voice-checked: true
+tags: [ai-tools-compared, troubleshooting]
+---
 
 {% raw %}
 
 When your organization has purchased GitHub Copilot Enterprise but you cannot access the features, the "license not assigned" error blocks productivity. This issue typically occurs during initial setup, user onboarding, or after organizational changes. This guide walks you through the most effective solutions.
 
-## Table of Contents
+## Key Takeaways
 
-- [Understanding the License Assignment Problem](#understanding-the-license-assignment-problem)
-- [Step-by-Step Fixes](#step-by-step-fixes)
-- [Diagnostic Tips](#diagnostic-tips)
-- [Prevention Strategies](#prevention-strategies)
-- [List Copilot-Licensed Users via Microsoft Graph API](#list-copilot-licensed-users-via-microsoft-graph-api)
-- [Copilot Licensing Architecture: Understanding the Hierarchy](#copilot-licensing-architecture-understanding-the-hierarchy)
-- [Bulk License Assignment via GraphQL](#bulk-license-assignment-via-graphql)
-- [Automated License Synchronization Script](#automated-license-synchronization-script)
-- [Troubleshooting Cost vs. Access Issues](#troubleshooting-cost-vs-access-issues)
-- [Monitoring Copilot License Utilization](#monitoring-copilot-license-utilization)
-- [Copilot Pricing vs. Alternative AI Coding Tools](#copilot-pricing-vs-alternative-ai-coding-tools)
+- **Use Copilot Business ($21/user/month) as the team tier instead**: it's cheaper than Enterprise and covers most team needs.
+- **Most administrators encounter this**: issue when migrating from Copilot Business to Enterprise, during bulk user imports, or when setting up Copilot for the first time in a new organization.
+- **Consider recycling unused seats.")**: ``` Run this monthly to identify licenses wasted on inactive users, freeing capacity for new team members.
+- **Search for the affected**: user's username 3.
+- **Click on Assign seats**: or Add users 4.
+- **Search for the affected**: user by username or email 5.
 
 ## Understanding the License Assignment Problem
 
@@ -396,10 +406,11 @@ No. EMU is an enterprise-level feature. If you need EMU's centralized control bu
 
 ## Related Articles
 
-- [Switching from Copilot Enterprise to Cursor Business](/ai-tools-compared/switching-from-copilot-enterprise-to-cursor-business-migrati/)
-- [Copilot for JetBrains: Does It Cost Same as VS Code Version](/ai-tools-compared/copilot-for-jetbrains-does-it-cost-same-as-vscode-version/)
-- [Copilot Suggestions in Private Repos Do They Cost More Than](/ai-tools-compared/copilot-suggestions-in-private-repos-do-they-cost-more-than-public/)
+- [Switching from Copilot Enterprise to Cursor Business Migrati](/ai-tools-compared/switching-from-copilot-enterprise-to-cursor-business-migrati/)
+- [Copilot Chat Not Responding in GitHub Fix](/ai-tools-compared/copilot-chat-not-responding-in-github-fix/)
+- [Copilot Not Suggesting Imports Automatically Fix](/ai-tools-compared/copilot-not-suggesting-imports-automatically-fix/)
 - [Copilot Suggestions Not Showing Up Fix 2026](/ai-tools-compared/copilot-suggestions-not-showing-up-fix-2026/)
-- [Copilot Business Org-Wide Enable: Cost If Not All Devs Use](/ai-tools-compared/copilot-business-org-wide-enable-cost-if-not-all-devs-use-it/)
+- [Copilot Suggestions Wrong How to Fix](/ai-tools-compared/copilot-suggestions-wrong-how-to-fix/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
