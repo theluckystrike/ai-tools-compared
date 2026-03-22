@@ -259,6 +259,197 @@ Yes, the underlying concepts transfer to other stacks, though the specific imple
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
 
+## Advanced Prompt Techniques for Production Systems
+
+Once you're comfortable with basic system prompts, these advanced patterns help you control AI output at scale.
+
+### Technique 1: Constraint Ladder
+
+Rather than listing all constraints at once, organize them by priority:
+
+```
+CRITICAL (never violate):
+- All interactive elements must be keyboard accessible
+- Never output img tags without alt attributes
+- Form fields must have labels
+
+IMPORTANT (follow unless user explicitly asks otherwise):
+- Use semantic HTML5 elements
+- Keep CSS classes minimal
+- Use aria-label only when semantic HTML won't work
+
+NICE TO HAVE (follow if reasonable):
+- Include comments explaining accessibility decisions
+- Use BEM naming convention for classes
+- Validate against WCAG 2.1 AA standards
+```
+
+This prevents over-specification that makes AI conservative, while ensuring critical requirements are always met.
+
+### Technique 2: Example-Driven Prompts
+
+Instead of describing rules, show examples:
+
+```
+You generate accessible component HTML. Here are three examples of correct output:
+
+EXAMPLE 1 - Form field:
+<label for="email-input">Email Address</label>
+<input id="email-input" type="email" required aria-required="true">
+
+EXAMPLE 2 - Navigation:
+<nav>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About</a></li>
+  </ul>
+</nav>
+
+EXAMPLE 3 - Modal:
+<dialog open aria-labelledby="modal-title">
+  <h2 id="modal-title">Confirm Action</h2>
+  <button>Cancel</button>
+  <button>Confirm</button>
+</dialog>
+
+Generate similar HTML for: [USER REQUEST]
+```
+
+AI consistency improves dramatically when it can pattern-match against examples.
+
+### Technique 3: Constraint Chains
+
+For complex output requirements, create conditional logic:
+
+```
+IF the component is interactive (button, link, input, select):
+  THEN it must have a text label or aria-label
+  AND it must respond to keyboard navigation
+  AND it must have sufficient color contrast
+
+IF the component displays dynamic data (list, table, data):
+  THEN it must have a clear heading or aria-label
+  AND it must include loading and error states
+  AND it must be responsive to screen reader announcements
+
+IF the component is decorative only:
+  THEN use aria-hidden="true"
+  AND ensure it doesn't affect keyboard navigation
+```
+
+This logic prevents conflicting requirements (e.g., "add aria-label to everything" leading to redundant labels on labeled inputs).
+
+## Testing System Prompts for Effectiveness
+
+Don't assume a system prompt works—validate it:
+
+```javascript
+// Test suite for validating system prompt effectiveness
+const testCases = [
+  {
+    input: "Create a login form",
+    shouldContain: ['<label', 'aria-required', '<button'],
+    shouldNotContain: ['placeholder (for="', '<div onclick="'],
+    accessibilityScore: 0.9
+  },
+  {
+    input: "Build a data table",
+    shouldContain: ['<caption>', '<thead>', 'scope="col"'],
+    shouldNotContain: ['<div></div>', 'width="100%"'],
+    accessibilityScore: 0.95
+  }
+];
+
+async function validatePrompt(systemPrompt, testCases) {
+  const results = [];
+  for (const test of testCases) {
+    const response = await callAI(systemPrompt, test.input);
+    const passed = test.shouldContain.every(s => response.includes(s)) &&
+                   !test.shouldNotContain.some(s => response.includes(s));
+    results.push({
+      test: test.input,
+      passed,
+      score: passed ? 1.0 : 0.5
+    });
+  }
+  return results;
+}
+```
+
+Run this validation test against your system prompt before deployment. Iterate on the prompt if pass rate is below 85%.
+
+## Prompt Versioning and A/B Testing
+
+For production systems, version your prompts and track effectiveness:
+
+```
+System Prompt v1 (baseline):
+"Generate accessible HTML components"
+
+System Prompt v2 (with constraints):
+"Generate accessible HTML. Requirements: semantic HTML5, explicit labels for inputs, keyboard navigation"
+
+System Prompt v3 (with examples):
+[includes example components]
+
+System Prompt v4 (with constraint chains):
+[includes conditional logic]
+
+Metrics tracking:
+- v1: 65% passes accessibility validation
+- v2: 78% passes
+- v3: 89% passes
+- v4: 94% passes
+```
+
+Deploy v3 or v4 based on your accuracy requirements and latency tolerances.
+
+## Integration with Design Systems
+
+Link your system prompts to your design system to ensure consistency:
+
+```
+You generate HTML components that implement our design system.
+Reference: https://design.company.com/
+
+Component library standards:
+- Use only colors from our palette
+- Use only font sizes: 12px, 14px, 16px, 18px, 24px, 32px
+- Use only spacing units: 4px, 8px, 16px, 24px, 32px
+- Use consistent button styles from Button.tsx
+- Use our Icon component from @company/icons
+
+When generating UI, reference existing patterns from https://github.com/company/design-system
+```
+
+This prevents drift between AI-generated components and your actual design system.
+
+## Monitoring System Prompt Effectiveness Over Time
+
+Track how well your system prompt performs:
+
+```python
+# Log system prompt effectiveness metrics
+metrics = {
+    "timestamp": "2026-03-22T10:00:00Z",
+    "system_prompt_version": "v4",
+    "requests_processed": 247,
+    "accessibility_failures": 15,  # Down from 54 with v1
+    "semantic_html_violations": 3,
+    "label_missing_errors": 1,
+    "keyboard_accessibility_failures": 0,
+    "user_feedback_score": 4.7  # Out of 5
+}
+
+# Track over time
+historical_data = [metrics_week1, metrics_week2, metrics_week3]
+improvement = (metrics_week1["accessibility_failures"] -
+               metrics_week3["accessibility_failures"]) / metrics_week1["accessibility_failures"]
+# Result: 81% reduction in failures over 3 weeks
+```
+
+Use this data to justify refinement investments and identify where the prompt needs adjustment.
+
 ## Related Articles
 
 - [How to Write System Prompts for AI Coding Assistants Project](/ai-tools-compared/how-to-write-system-prompts-for-ai-coding-assistants-project/)
