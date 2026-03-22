@@ -27,7 +27,17 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 Transfer Copilot code review settings to Cursor by exporting rules, reconfiguring Cursor's AI review panel, and testing on sample code. This guide shows how to preserve your custom code review logic.
+
+## Key Takeaways
+
+- **Also consider that Cursor's default model may differ from what Copilot uses**: switching Cursor to GPT-4 often produces the most Copilot-like results during the transition period.
+- **Option 2**: Use a GitHub Action with the Claude API. For teams that want automated PR review, the Claude API can be wired into a GitHub Actions workflow to comment on PRs.
+- **Copilot's code review settings**: live primarily in your GitHub account under Copilot settings, while Cursor uses local configuration files and project-specific Rules for AI.
+- **This means the migration**: involves exporting Copilot preferences and recreating them in Cursor's format.
+- **When you configure Copilot**: those preferences are stored in your GitHub account and synced across machines.
+- **This matters because different**: models respond differently to the same review instructions, so you may need to adjust prompt wording when migrating rules.
 
 ## Understanding the Difference Between Copilot and Cursor
 

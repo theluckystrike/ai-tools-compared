@@ -16,6 +16,25 @@ voice-checked: true---
 
 Choose Talkdesk if you prefer strong low-code options with bundled AI capabilities through Talkdesk Autopilot, tighter native CRM integrations, and pre-built industry templates that reduce development time. Choose Five9 if you need maximum API flexibility with both REST and SOAP endpoints, granular control over AI feature deployment and pricing, or want to build custom analytics pipelines with raw data access. Both are cloud-native platforms, but Talkdesk delivers a more turnkey AI experience while Five9 favors an API-first approach for custom implementations.
 
+| Feature | Talkdesk | Five9 |
+|---|---|---|
+| API Type | RESTful with OAuth 2.0 | REST + SOAP endpoints |
+| AI Platform | Talkdesk Autopilot (bundled) | IVA with third-party AI support |
+| Low-Code Tools | Strong built-in options | Limited, API-focused |
+| CRM Integration | Native Salesforce, Dynamics, Zendesk | API-based, more flexible |
+| Speech Analytics | Built-in with auto-scoring | Granular API for custom pipelines |
+| AI Pricing | Bundled in premium tiers | Per-feature granular pricing |
+| Event System | Signed webhook payloads | Polling and push options |
+| Best For | Turnkey AI contact center | Custom-built contact center |
+
+## Key Takeaways
+
+- **Authentication uses OAuth 2.0**: and the API supports both synchronous and asynchronous operations for bulk operations.
+- **The best choice depends**: on your specific use case, existing infrastructure, and team expertise.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+- **Understanding their architectural differences**: helps you choose the right foundation for your implementation.
+- **Five9 takes a platform**: approach with its Five9 Intelligent Cloud Contact Center, offering extensive API coverage and a marketplace of partner integrations.
 
 ## Platform Architecture Overview
 

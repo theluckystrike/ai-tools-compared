@@ -27,7 +27,17 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 Choose Windsurf Free if you want faster, more numerous completions (roughly 500 AI commands per day) and work on smaller projects. Choose Cursor Free if you value Claude-powered contextual reasoning, deep codebase understanding, and more detailed code suggestions (around 2000 completions per month). Both editors are VS Code-based and support the same extensions, but they differ in AI models, rate limit structures, and inline editing shortcuts.
+
+## Key Takeaways
+
+- **Choose Windsurf Free if you want faster**: more numerous completions (roughly 500 AI commands per day) and work on smaller projects.
+- **Choose Cursor Free if**: you value Claude-powered contextual reasoning, deep codebase understanding, and more detailed code suggestions (around 2000 completions per month).
+- **If you have used**: the tool for at least 3 months and plan to continue, the annual discount usually makes sense.
+- **Cursor Free**: Understands validation patterns better and generates more complete implementations that work on first try.
+- **Cursor Free offers around**: 2000 completions per month, which resets monthly.
+- **Cursor Free provides access**: to the chat interface with Claude integration.
 
 ## Understanding the Free Tier Differences
 
