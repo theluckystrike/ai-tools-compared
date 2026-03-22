@@ -242,6 +242,256 @@ Review each tool's privacy policy, data handling practices, and security certifi
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Building an Automated Documentation Pipeline
+
+CI/CD integration ensures docs stay current with code:
+
+```python
+#!/usr/bin/env python3
+# generate_api_docs.py — convert code to OpenAPI + reference docs
+
+import ast
+import json
+import anthropic
+from pathlib import Path
+
+class APIDocGenerator:
+    def __init__(self, source_file: str):
+        self.source_file = source_file
+        with open(source_file) as f:
+            self.tree = ast.parse(f.read())
+        self.client = anthropic.Anthropic()
+
+    def extract_endpoints(self) -> list:
+        """Extract Flask/FastAPI routes from source."""
+        endpoints = []
+        for node in ast.walk(self.tree):
+            if isinstance(node, ast.FunctionDef):
+                # Look for @app.route, @router.post, etc decorators
+                decorators = [d.attr if isinstance(d, ast.Attribute) else None
+                             for d in node.decorator_list]
+                if any(d in ['route', 'get', 'post', 'put', 'delete'] for d in decorators):
+                    endpoints.append({
+                        'name': node.name,
+                        'docstring': ast.get_docstring(node),
+                        'args': [arg.arg for arg in node.args.args],
+                        'lineno': node.lineno
+                    })
+        return endpoints
+
+    def generate_openapi_spec(self) -> dict:
+        """Use Claude to generate OpenAPI 3.0 spec from endpoints."""
+        endpoints = self.extract_endpoints()
+        endpoint_text = json.dumps(endpoints, indent=2)
+
+        prompt = f"""Generate an OpenAPI 3.0.0 specification for this API.
+
+Endpoints extracted from code:
+{endpoint_text}
+
+Source file: {self.source_file}
+
+Create a complete OpenAPI spec with:
+1. Server information
+2. Path definitions for each endpoint
+3. Request/response schemas
+4. Status codes and error responses
+5. Security schemes (if any)
+
+Return only valid OpenAPI 3.0.0 JSON."""
+
+        message = self.client.messages.create(
+            model="claude-opus-4-6",
+            max_tokens=4096,
+            messages=[{"role": "user", "content": prompt}]
+        )
+
+        # Parse OpenAPI JSON from Claude
+        spec_text = message.content[0].text
+        try:
+            return json.loads(spec_text)
+        except json.JSONDecodeError:
+            # If Claude wrapped it in markdown code block
+            spec_text = spec_text.replace("```json", "").replace("```", "").strip()
+            return json.loads(spec_text)
+
+    def generate_reference_docs(self) -> str:
+        """Generate markdown reference from endpoints."""
+        endpoints = self.extract_endpoints()
+
+        prompt = f"""Generate comprehensive API reference documentation.
+
+Endpoints:
+{json.dumps(endpoints, indent=2)}
+
+Create markdown with:
+1. Overview section
+2. Authentication requirements
+3. For each endpoint:
+   - HTTP method and path
+   - Description (from docstring)
+   - Parameters with types
+   - Request/response examples
+   - Status codes
+   - Error handling
+
+Make it suitable for developers to understand and use the API."""
+
+        message = self.client.messages.create(
+            model="claude-opus-4-6",
+            max_tokens=3000,
+            messages=[{"role": "user", "content": prompt}]
+        )
+
+        return message.content[0].text
+
+
+if __name__ == "__main__":
+    gen = APIDocGenerator("app.py")
+
+    # Generate OpenAPI spec
+    openapi = gen.generate_openapi_spec()
+    with open("docs/openapi.json", "w") as f:
+        json.dump(openapi, f, indent=2)
+
+    # Generate markdown reference
+    docs = gen.generate_reference_docs()
+    with open("docs/api-reference.md", "w") as f:
+        f.write(docs)
+```
+
+Use in GitHub Actions:
+
+```yaml
+# .github/workflows/docs.yml
+name: Generate API Docs
+on:
+  push:
+    paths:
+      - 'src/app.py'
+      - 'src/api/**'
+
+jobs:
+  generate-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate OpenAPI + Markdown
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/generate_api_docs.py
+
+      - name: Commit documentation
+        run: |
+          git config user.name "Docs Bot"
+          git config user.email "bot@example.com"
+          git add docs/openapi.json docs/api-reference.md
+          git commit -m "docs: auto-generated from code" || true
+          git push
+```
+
+## JSDoc to Markdown Workflow
+
+For JavaScript/TypeScript teams:
+
+```javascript
+/**
+ * Fetch user profile by ID
+ * @param {number} userId - The user's unique identifier
+ * @param {Object} options - Additional options
+ * @param {boolean} options.includeProfile - Include profile picture
+ * @returns {Promise<User>} User object with profile data
+ * @throws {NotFoundError} If user doesn't exist
+ * @example
+ * const user = await getUser(123, { includeProfile: true });
+ * console.log(user.name, user.profileUrl);
+ */
+async function getUser(userId, options = {}) {
+  // Implementation
+}
+```
+
+Prompt Claude:
+```
+Convert all JSDoc comments in this file to Markdown API reference documentation.
+Include all examples, parameter descriptions, and error cases.
+Format as a single .md file suitable for publishing.
+```
+
+Claude generates professional documentation:
+
+```markdown
+## getUser(userId, options)
+
+Fetch user profile by ID
+
+### Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `userId` | number | The user's unique identifier |
+| `options` | Object | Additional options |
+| `options.includeProfile` | boolean | Include profile picture (default: false) |
+
+### Returns
+
+Promise<User> — User object with profile data
+
+### Throws
+
+- **NotFoundError** — If user doesn't exist
+
+### Example
+
+```javascript
+const user = await getUser(123, { includeProfile: true });
+console.log(user.name, user.profileUrl);
+```
+```
+
+## Integration with Documentation Sites
+
+Generate docs that integrate with Mintlify, Docusaurus, or Swagger UI:
+
+```python
+# For Swagger UI (OpenAPI endpoint)
+@app.get("/docs/openapi.json")
+async def get_openapi():
+    return gen.generate_openapi_spec()
+
+# For Docusaurus (MDX format)
+def generate_docusaurus_docs(endpoints) -> str:
+    prompt = """Generate Docusaurus-formatted MDX documentation.
+    Include frontmatter with sidebar_position and title."""
+    # Claude generates MDX with JSX components for interactive examples
+```
+
+## Documentation Quality Metrics
+
+Track whether your API docs match your code:
+
+```python
+def check_doc_accuracy(source_file: str, docs_file: str) -> dict:
+    """Compare endpoints in code vs documented endpoints."""
+    gen = APIDocGenerator(source_file)
+    actual_endpoints = set(e['name'] for e in gen.extract_endpoints())
+
+    # Parse docs to find documented endpoints
+    with open(docs_file) as f:
+        doc_content = f.read()
+
+    missing_in_docs = actual_endpoints - documented_endpoints
+    undocumented_in_docs = documented_endpoints - actual_endpoints
+
+    if missing_in_docs or undocumented_in_docs:
+        print(f"⚠️ Docs are out of sync:")
+        if missing_in_docs:
+            print(f"  Missing: {missing_in_docs}")
+        if undocumented_in_docs:
+            print(f"  Outdated: {undocumented_in_docs}")
+```
+
 ## Related Articles
 
 - [Best AI Tools for Generating API Documentation From Code](/ai-tools-compared/best-ai-tools-for-generating-api-documentation-from-code-2026/)
