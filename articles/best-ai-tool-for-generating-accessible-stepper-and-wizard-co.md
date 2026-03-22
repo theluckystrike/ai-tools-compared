@@ -6,7 +6,7 @@ date: 2026-03-21
 author: theluckystrike
 permalink: /best-ai-tool-for-generating-accessible-stepper-and-wizard-co/
 categories: [accessibility, ai-tools]
-tags: [accessibility, ai-tools, react, components, wcag, aria]
+tags: [ai-tools-compared, accessibility, ai-tools, react, components, wcag, aria, best-of]
 reviewed: true
 intent-checked: true
 voice-checked: true

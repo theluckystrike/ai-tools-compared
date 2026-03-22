@@ -7,9 +7,9 @@ last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: /best-ai-tool-for-generating-accessible-search-results-page-m/
 categories: [guides]
-tags: [ai-tools-compared, accessibility, search, markup, web-development]
+tags: [ai-tools-compared, accessibility, search, markup, web-development, best-of, artificial-intelligence]
 reviewed: true
-score: 0
+score: 8
 intent-checked: false
 voice-checked: false
 ---

@@ -9,7 +9,7 @@ categories: [accessibility, ai-tools, web-development]
 reviewed: true
 intent-checked: true
 voice-checked: true
-tags: [accessibility, cookie-consent, gdpr, wcag, react, components]
+tags: [ai-tools-compared, accessibility, cookie-consent, gdpr, wcag, react, components, best-of]
 ---
 
 Accessible cookie consent banners are essential for compliance with GDPR, CCPA, and similar regulations. Beyond legal requirements, these components must work seamlessly with screen readers and keyboard navigation. This guide evaluates how different AI coding assistants perform when generating accessible cookie consent banner components.
