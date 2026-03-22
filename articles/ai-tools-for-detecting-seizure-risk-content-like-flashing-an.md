@@ -8,6 +8,7 @@ permalink: /ai-tools-for-detecting-seizure-risk-content-like-flashing-an/
 reviewed: true
 score: 7
 categories: [guides]
+voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]
 ---
 
