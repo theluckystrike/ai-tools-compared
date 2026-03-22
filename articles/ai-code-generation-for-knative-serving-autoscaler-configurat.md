@@ -16,15 +16,6 @@ voice-checked: true
 
 Knative Serving has become the standard for running serverless containers on Kubernetes, but configuring its autoscaler correctly requires understanding multiple interconnected parameters. AI code generation tools can help you craft precise autoscaler configurations tailored to your specific workload characteristics, saving hours of trial-and-error and preventing misconfigurations that could impact application performance or cost.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **For example, prompting an AI with**: > "Generate a Knative Serving autoscaler configuration for a Go HTTP API that handles 1000 requests/second with p99 latency under 50ms.
-- **For production services**: always set `minScale` to at least 1 or 2 to maintain availability during brief traffic dips.
-- **A lightweight JSON API**: might handle 50+ concurrent requests, while a database-heavy service might perform better at 5.
-
 ## Table of Contents
 
 - [Understanding Knative Serving Autoscaling Fundamentals](#understanding-knative-serving-autoscaling-fundamentals)
@@ -202,6 +193,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [AI Code Completion for Flutter BLoC Pattern Event and State Class Generation](/ai-code-completion-for-flutter-bloc-pattern-event-and-state-/)
 - [AI Code Generation for Java Reactive Programming](/ai-code-generation-for-java-reactive-programming-with-projec/)
 - [AI Code Generation for Java Virtual Threads Project Loom](/ai-code-generation-for-java-virtual-threads-project-loom-pat/)
+- [AI Code Generation for Python FastAPI Endpoints](/ai-tools-compared/ai-code-generation-for-python-fastapi-endpoints-with-pydantic-models-compared/)
 ## Advanced Scaling with Multiple Metrics
 
 While Knative defaults to request-based scaling, you can extend configurations with custom metrics. AI tools can help generate configurations that respond to custom Prometheus metrics:

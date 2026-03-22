@@ -18,15 +18,6 @@ voice-checked: true
 
 This guide provides practical steps and best practices to help you accomplish this task effectively. Follow the recommendations to get the best results from your AI tools.
 
-## Key Takeaways
-
-- **Free users access basic**: models with limited context.
-- **Follow the recommendations to**: get the best results from your AI tools.
-- **Claude 3 Opus and**: GPT-4o handle these tasks better than smaller models.
-- **Pro users access all**: models including Claude 3 Opus and can set default models for different contexts.
-- **This guide provides practical**: steps and best practices to help you accomplish this task effectively.
-- **The model you choose**: affects how well Cursor understands your codebase, generates accurate code, explains existing implementations, and handles complex refactoring tasks.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

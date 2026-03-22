@@ -19,15 +19,6 @@ Regression testing consumes 30-50% of QA timelines for mature products, yet AI t
 
 This guide shows you how to prompt AI tools effectively for test generation, which tools perform best for different tech stacks, and how to integrate AI-generated tests into your CI/CD pipeline.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Regression testing consumes 30-50%**: of QA timelines for mature products, yet AI tools can now generate 60-80% of required test cases directly from bug reports.
-- **This guide shows you**: how to prompt AI tools effectively for test generation, which tools perform best for different tech stacks, and how to integrate AI-generated tests into your CI/CD pipeline.
-- **Extraction Phase****: The AI identifies the core bug (e.g., "Date picker fails when year is 1999") and the reproduction context (e.g., "occurs on Chrome 125 with input type=date").
-
 ## Why Regression Tests From Bug Reports Matter
 
 Every bug that reaches production should prevent regression through automated tests. However, many teams skip test generation because writing test cases is tedious and lower-priority than shipping the next feature.
@@ -213,7 +204,6 @@ jobs:
           branch: regression-tests/${{ github.event.issue.number }}
 ```
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 ### 2. Direct Prompt in Development

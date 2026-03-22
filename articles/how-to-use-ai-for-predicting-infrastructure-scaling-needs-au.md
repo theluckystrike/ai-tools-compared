@@ -17,15 +17,6 @@ voice-checked: true
 
 Use AI to predict scaling by analyzing metrics, asking what-if questions about traffic patterns, and generating load testing scenarios. This guide shows the prompting techniques that help AI analyze infrastructure data and recommend proactive scaling decisions.
 
-## Key Takeaways
-
-- **You set CPU thresholds**: at 80% and add instances when utilization exceeds that limit.
-- **The prediction horizon determines how far ahead you're planning**: 30 minutes provides enough buffer for most container orchestration systems to spin up new instances.
-- **If you predict 30 minutes ahead**: you need training data that shows utilization patterns at least 30 minutes apart.
-- **Your 5-minute sampling rate**: provides sufficient granularity for most prediction windows.
-- **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
-- **Use AI to predict**: scaling by analyzing metrics, asking what-if questions about traffic patterns, and generating load testing scenarios.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

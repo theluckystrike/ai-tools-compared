@@ -17,15 +17,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 LangGraph lets you build AI workflows that maintain state across multiple steps, loop until conditions are met, and route to different agents based on intermediate results. For developer tools, this means you can build a code agent that writes code, runs tests, reads the failure output, fixes the code, and loops until tests pass — without hardcoding the number of steps.
 
-## Key Takeaways
-
-- **Use simple LLM calls**: for one-shot tasks or when latency is critical (graph overhead adds ~50ms).
-- **Use streaming for long**: tasks. LangGraph supports streaming intermediate state.
-- **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
-- **Use simpler tools for**: linear agent chains or one-shot tasks.
-- **Monitor token usage per**: node. Track which nodes consume the most tokens and optimize their prompts.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-
 ## Table of Contents
 
 - [Why LangGraph for Dev Tools](#why-langgraph-for-dev-tools)
@@ -371,6 +362,7 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [How to Build an AI-Powered Code Linter](/ai-tools-compared/how-to-build-ai-powered-code-linter/)
 - [How to Build an AI Code Review Bot](/ai-tools-compared/how-to-build-ai-code-review-bot/)
 - [Prompt Engineering Patterns for Code Generation](/ai-tools-compared/prompt-engineering-patterns-for-code-generation/)
+- [How to Build Custom AI Coding Workflows with MCP Server](/ai-tools-compared/how-to-build-custom-ai-coding-workflows-with-mcp-server-inte/)
 
 ## Related Articles
 

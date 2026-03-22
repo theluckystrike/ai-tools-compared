@@ -19,13 +19,6 @@ Go is the dominant language for microservices, and AI tools vary significantly i
 
 This guide tests Claude Code, Copilot, and Cursor on four real Go microservice tasks.
 
-## Key Takeaways
-
-- **Topics covered**: task 1: grpc service with interceptors, task 2: http middleware chain, task 3: error wrapping and handling
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-- **Use-case recommendations**: Specific guidance based on team size and requirements
-- **Trade-off analysis**: Strengths and limitations of each option discussed
-
 ## Table of Contents
 
 - [Task 1: gRPC Service with Interceptors](#task-1-grpc-service-with-interceptors)
@@ -446,19 +439,6 @@ func TestUserService_GetUser(t *testing.T) {
     }
 }
 ```
-
-## Summary
-
-| Task | Claude Code | Copilot | Cursor |
-|---|---|---|---|
-| gRPC status codes | Correct per error type | Generic Internal error | Mostly correct |
-| Context propagation | Proper context keys | String keys | Correct |
-| Error wrapping | `errors.As` pattern | `fmt.Errorf` only | Mixed |
-| Middleware idiom | `http.Handler` chain | Mostly correct | Correct |
-| Table-driven tests | Complete, idiomatic | Basic | Good |
-| log/slog usage | Yes (modern) | Uses `log` package | Uses `log` package |
-
-Claude Code produces the most idiomatic Go. Copilot and Cursor both work but default to older patterns (string context keys, basic error handling) that don't hold up in team codebases with linters.
 
 ## Related Articles
 

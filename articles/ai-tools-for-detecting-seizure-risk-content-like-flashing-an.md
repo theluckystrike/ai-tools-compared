@@ -17,15 +17,6 @@ intent-checked: true
 
 Web content with flashing lights and rapid animations poses serious health risks for people with photosensitive epilepsy. Approximately 3% of people with epilepsy are sensitive to flashing lights, and content creators, platform moderators, and accessibility teams need reliable tools to detect these risks before publishing. AI-powered solutions now offer automated detection capabilities that were previously impossible at scale.
 
-## Key Takeaways
-
-- **Limitations**: Higher pricing for video analysis, limited support for user-generated content patterns.
-- **Regulatory standards like the**: WCAG 2.1 and the EU Accessibility Act require platforms to warn users about potentially hazardous content.
-- **Strengths**: Free tier available, browser extensions for real-time checking, integrates with common design tools.
-- **Content violates the General**: Flash threshold if it contains more than three flashes per second where each flash covers more than 25% of any 341x256 pixel area.
-- **The most cost-effective approach**: integrates detection into the design and production workflow so risks are identified before final render.
-- **VisionAi Seizure Detector VisionAi**: provides an open-source model that can be deployed on-premise, making it attractive for organizations with data privacy requirements.
-
 ## Table of Contents
 
 - [Understanding Seizure Risk in Digital Content](#understanding-seizure-risk-in-digital-content)

@@ -18,16 +18,6 @@ tags: [ai-tools-compared, comparison, claude-ai]
 
 Backend development sits in a different zone from frontend work. The tasks — schema migrations, API endpoint design, service orchestration, query optimization, deployment configuration — often span many files and require understanding system-level constraints. Claude Code and Cursor approach these tasks differently, and the right choice depends on your working style.
 
-## Key Takeaways
-
-- **Each notification has**: user_id (FK to users), title (str, max 200 chars), body (text), read (bool, default false),
-created_at (timestamp).
-- **Claude Code found this**: because it read 5 files across the codebase to trace the full flow.
-- **Flags are user-id scoped**: (some flags apply only to specific users).
-- **Backfills existing users by**: GeoIP lookup (use services/geo.py) 3.
-- **Adds the field to**: UserResponse Pydantic schema 6.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-
 ## Table of Contents
 
 - [Fundamental Difference: Terminal vs IDE](#fundamental-difference-terminal-vs-ide)

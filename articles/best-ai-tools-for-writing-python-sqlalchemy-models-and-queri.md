@@ -18,15 +18,6 @@ voice-checked: true
 
 Claude generates proper SQLAlchemy ORM models with correct relationships, lazy loading strategies, and query optimization; ChatGPT produces basic models that work but often miss relationship configurations. Choose Claude for complex schema designs; use ChatGPT for simple CRUD models. This guide compares AI tools for SQLAlchemy development.
 
-## Key Takeaways
-
-- **Providing your full schema**: explaining your data access patterns, and specifying the SQLAlchemy version you use all yield better results.
-- **You can ask it**: to refactor a simple query into one using `selectinload` for better performance, or convert synchronous code to async SQLAlchemy 2.0 patterns.
-- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
-- **Choose Claude for complex**: schema designs; use ChatGPT for simple CRUD models.
-- **The tool works best**: when you provide context about your existing models.
-- **A week-long trial with**: actual work gives better signal than feature comparison charts.
-
 ## Table of Contents
 
 - [Why SQLAlchemy Benefits from AI Assistance](#why-sqlalchemy-benefits-from-ai-assistance)

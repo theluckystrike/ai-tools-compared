@@ -19,15 +19,6 @@ Load testing catches performance regressions before production. Traditional tool
 
 This guide compares five tools: k6 with AI plugins, Locust with code generation, Gatling, Artillery, and Grafana k6 Cloud. We cover pricing, script generation quality, test interpretation capabilities, and real-world workflows.
 
-## Key Takeaways
-
-- **ChatGPT/Claude can produce usable**: k6 scripts 80% of the time; manual tweaking needed for complex flows.
-- **AI success rate**: 75% for simple CRUD APIs, 40% for complex flows.
-- **ChatGPT/Claude can generate 90%**: accurate test configs from API specs.
-- **164 req/s throughput." AI-powered**: (Grafana k6 Cloud): "P95 checkout latency 420ms (+12% vs baseline).
-- **Error rate 0.2% (all**: 500s on POST /checkout).
-- **Recommend load-balancing checkout service**: across 3 additional pods.
-
 ## k6 + AI Plugins
 
 k6 is a developer-friendly load testing tool written in Go. AI plugins auto-generate test scripts from OpenAPI specs or natural language descriptions. Results are real-time and exportable to dashboards.

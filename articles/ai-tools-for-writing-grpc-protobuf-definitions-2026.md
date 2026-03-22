@@ -18,15 +18,6 @@ intent-checked: true
 
 Claude Code dominates gRPC protobuf generation with the best understanding of proto3 syntax, service definitions, and client stub patterns. GitHub Copilot requires heavy manual correction on complex message nesting and streaming directives. Cursor provides solid performance for single-file generation but struggles with multi-service architectures. This comparison evaluates real .proto files and generated Go/Python client stubs across three use cases: REST-to-gRPC migrations, microservice definitions, and streaming service patterns.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Claude Code dominates gRPC**: protobuf generation with the best understanding of proto3 syntax, service definitions, and client stub patterns.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-
 ## Table of Contents
 
 - [How gRPC Generation Differs from Regular Code](#how-grpc-generation-differs-from-regular-code)

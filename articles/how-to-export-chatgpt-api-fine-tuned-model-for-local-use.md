@@ -17,19 +17,6 @@ voice-checked: true
 
 Export fine-tuned ChatGPT models by calling the OpenAI API with your fine-tuned model ID—you cannot directly download the weights but can run inference locally with proper API integration. This guide explains the limitations and the practical workflow for local deployment.
 
-## Key Takeaways
-
-- **Recreate the fine-tuning using open-source models**: Take your training data and fine-tune an open-source model like Llama 2, Mistral, or Phi on it
-
-2.
-- **Use distilled models**: Apply knowledge distillation techniques to create a smaller local model
-
-3.
-- **Expect 80-90% behavioral parity**: as a realistic target; achieving exact parity is not possible without access to OpenAI's internal training pipeline.
-- **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
-- **This is fundamentally different**: from open-source fine-tuning where you have full access to the model files.
-- **Creates a model variant**: with a unique ID like `ft:gpt-3.5-turbo:your-org:custom-name:abc123` 4.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)

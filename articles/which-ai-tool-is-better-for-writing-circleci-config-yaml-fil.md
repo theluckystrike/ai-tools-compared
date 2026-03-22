@@ -17,15 +17,6 @@ voice-checked: true
 
 Claude Code is the best AI tool for writing CircleCI config YAML, producing the most complete and correct configurations on the first attempt with proper orb references, branch filters, and workflow dependencies. Choose GitHub Copilot for quick inline additions to existing configs or standard pipelines, and Cursor when CircleCI configuration is part of a broader codebase conversation. All three handle basic setups, but Claude Code's contextual understanding gives it an edge on multi-job workflows with deployment stages.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **If you prefer terminal-based work**: Claude Code offers the most reliable results for CircleCI configurations.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-
 ## Why CircleCI Config YAML Is Tricky
 
 

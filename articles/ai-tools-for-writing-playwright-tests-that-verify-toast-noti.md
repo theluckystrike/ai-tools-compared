@@ -18,15 +18,6 @@ voice-checked: true
 
 Toast notifications are an ubiquitous UI pattern in modern web applications. Users expect them to appear at the right time, stay visible long enough to be read, and disappear either automatically or through user interaction. Testing these behaviors thoroughly requires careful consideration of timing, visibility states, and interaction patterns. AI coding assistants can significantly accelerate the process of writing these tests, but understanding what makes a good toast test and how to prompt AI tools effectively remains essential.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **A toast appears within**: 200ms of clicking '#save-button' 2.
-- **The toast auto-dismisses after**: 5 seconds 4.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-
 ## Table of Contents
 
 - [Why Toast Notifications Are Tricky to Test](#why-toast-notifications-are-tricky-to-test)

@@ -17,15 +17,6 @@ voice-checked: true
 
 To migrate Copilot chat history to Cursor AI, export the JSON conversation files from `~/Library/Application Support/Visual Studio Code/User/GlobalStorage/github.copilot-chat/`, parse them into a context document, and place the result in your project root where Cursor indexes it automatically. There is no direct import path between the two tools, so the migration involves extracting, reformatting, and recreating context through Cursor's `.cursorrules` and `@`-mention system.
 
-## Key Takeaways
-
-- **The migration involves three main areas**: exporting your Copilot conversation history, transferring project-specific context, and configuring Cursor to match your workflow preferences.
-- **These are rarely useful**: to replay verbatim, but they contain decisions and explanations.
-- **Conversation transcripts are useful**: as a reference archive, but trying to inject raw chat history into Cursor's context window just creates noise.
-- **Cursor supports custom instructions**: through: 1.
-- **Follow these recommendations**: Start fresh but reference the past: Don't try to import every conversation.
-- **Use version control**: Commit your context documents to Git so teammates benefit from the accumulated knowledge.
-
 ## Table of Contents
 
 - [Why Migrate to Cursor AI](#why-migrate-to-cursor-ai)

@@ -16,13 +16,6 @@ voice-checked: true
 
 {% raw %}
 
-## Key Takeaways
-
-- **They might reference columns**: that don't exist, use wrong data types, miss required NOT NULL columns, or ignore your foreign key relationships entirely.
-- **You'll also need access**: to a database—PostgreSQL, MySQL, SQLite, or any other database supported by SQLAlchemy.
-- **Use environment variables exclusively**: and ensure your logging configuration excludes environment variable values.
-- **AI assistants can use**: this to explain the full data model and suggest correct JOIN paths for complex multi-table queries.
-
 ## Table of Contents
 
 - [Introduction](#introduction)

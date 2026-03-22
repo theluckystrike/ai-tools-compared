@@ -17,17 +17,6 @@ voice-checked: true
 
 Prevent hallucinated imports by including only the files your feature needs in context, explicitly showing available imports in prompts, and asking AI to verify imports exist. This guide shows the context management technique that eliminates the frustration of AI suggesting non-existent modules.
 
-## Key Takeaways
-
-- **Use File-Specific Context Windows**: Most modern AI coding tools let you specify which files are currently in context.
-- **For each task**: Specify constraints like "use only stdlib and our existing dependencies"
-
-3.
-- GPT-4o can handle only 25%.
-- **Save the useful parts**: of previous discussions, then begin with a clean slate that includes only your current task and necessary dependencies.
-- **Save current useful context**: to a file # 2.
-- **Only use dependencies already**: in requirements.txt.
-
 ## What Is the Context Window Problem
 
 AI coding assistants like Claude, Cursor, and GitHub Copilot maintain a conversation context that includes your recent messages, generated code, and file contents they've read. This context has limits—both hard limits on total tokens and practical limits on what the model can effectively track.

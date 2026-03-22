@@ -19,19 +19,6 @@ AI tools follow your naming conventions when you include examples in your codeba
 
 AI code completion tools have transformed how developers write code, but one persistent challenge remains: getting these tools to respect your project's specific naming conventions. Whether you use snake_case, camelCase, PascalCase, or custom prefixes, training your AI assistant to match your codebase conventions saves significant editing time and maintains code consistency across your team.
 
-## Key Takeaways
-
-- **A function named `calculate_user_order_total` in your snake_case Python project becomes `calculateUserOrderTotal` when Copilot suggests it**: exactly backwards for Python's PEP 8 guidelines.
-- **If your project uses**: flake8 for Python or ESLint for JavaScript, run these tools regularly and monitor naming-related warnings.
-- **Single-letter variables**: acceptable in specific contexts
-   - for (let i = 0; i < items.length; i++) ✓
-   - let i = getUserById(...) ✗
-
-4.
-- **When these preferences clash**: with your project standards, you face constant manual corrections.
-- **The most effective approach**: combines editor settings with context awareness.
-- **If your project uses**: a linter or formatter configured for specific conventions, Copilot observes these settings when generating code.
-
 ## Table of Contents
 
 - [Why Naming Conventions Matter for AI Suggestions](#why-naming-conventions-matter-for-ai-suggestions)
@@ -408,5 +395,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How Context Window Size Affects AI Code Suggestions](/ai-tools-compared/how-context-window-size-affects-ai-code-suggestions-in-different-idess/)
 - [Configure Claude Code](/ai-tools-compared/how-to-configure-claude-code-to-follow-your-teams-feature-fl/)
 - [What Code Snippets Get Logged in AI Coding Tool Provider Aud](/ai-tools-compared/what-code-snippets-get-logged-in-ai-coding-tool-provider-aud/)
+- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

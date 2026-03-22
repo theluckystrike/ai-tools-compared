@@ -20,16 +20,6 @@ When you work with AI coding assistants, the difference between generic, awkward
 
 The challenge lies in understanding that AI models generate code based on patterns learned from millions of repositories. Without explicit direction, they may produce technically correct but stylistically misaligned code—Python that looks like translated Java, or TypeScript that ignores your project's established patterns. Effective system prompts bridge this gap by making your conventions explicit.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **Use
-utility types like Partial**: Required, and Pick where appropriate.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **All async database operations**: use the asyncpg driver.
-
 ## Table of Contents
 
 - [Understanding Idiomatic Code in the AI Context](#understanding-idiomatic-code-in-the-ai-context)

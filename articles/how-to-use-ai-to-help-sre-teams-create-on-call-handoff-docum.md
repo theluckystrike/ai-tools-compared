@@ -17,15 +17,6 @@ intent-checked: true
 
 On-call rotations are a cornerstone of site reliability engineering, but the handoff process between shifts often becomes a time-consuming manual task. SRE teams frequently struggle to capture the right details, maintain consistency, and ensure the next engineer has everything needed to handle incoming incidents. AI tools offer practical ways to automate and improve on-call handoff documentation without adding cognitive burden to already-taxed teams.
 
-## Key Takeaways
-
-- **Monitor user-service memory usage**: - may need to scale if it continues trending up 2.
-- **Important details get omitted**: because the outgoing engineer assumes "everyone knows" certain systems or processes.
-- **The most effective approach**: combines automated data gathering with intelligent summarization, then allows engineers to review and augment the output.
-- **Define what information matters**: for your team, then use AI to populate those sections intelligently.
-- The rollback was delayed because...
-- **This automation works best**: when paired with clear team conventions.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
@@ -542,5 +533,6 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [How to Use AI to Help Devrel Create Comparison Tables](/ai-tools-compared/how-to-use-ai-to-help-devrel-create-comparison-tables-for-competing-api-features/)
 - [How to Use AI to Help Devrel Create Interactive Coding](/ai-tools-compared/how-to-use-ai-to-help-devrel-create-interactive-coding-playgrounds/)
 - [How to Use AI to Help QA Engineers Create Test Environment](/ai-tools-compared/how-to-use-ai-to-help-qa-engineers-create-test-environment-p/)
+- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

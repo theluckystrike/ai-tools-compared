@@ -17,23 +17,6 @@ voice-checked: true
 
 Shift your mindset from writing code to directing code generation by articulating requirements clearly, reviewing generated output carefully, and using AI for architectural decisions rather than just syntax. Senior developers amplify productivity by mastering prompt engineering, using AI for fast prototyping and refactoring, and applying their experience to validate and improve AI-generated code—not by replacing their expertise with blind automation.
 
-## Key Takeaways
-
-- **Do these recommendations work**: for small teams? Yes, most practices scale down well.
-- **Missing tests
-
-Diff**: $(cat $DIFF_FILE)
-EOF
-```
-
-This captures objective findings quickly.
-- **Vague requests produce mediocre results**: while specific, contextual prompts generate useful code.
-- **Establish Clear Context Boundaries**: AI assistants work best when you define their scope explicitly.
-- **Use AI for Repetitive Patterns**: Not Novel Solutions
-
-AI excels at generating boilerplate, converting between patterns, and implementing well-documented algorithms.
-- **class PaymentService(Protocol)**: def setup_account(self, user_id: str) -> bool: ...
-
 ## Table of Contents
 
 - [Understanding the Mental Model Shift](#understanding-the-mental-model-shift)
@@ -424,6 +407,7 @@ Trying to change everything at once. Pick one or two practices, implement them w
 - [Best AI Coding Tool for Golang Developers 2026](/ai-tools-compared/best-ai-coding-tool-for-golang-developers-2026/)
 - [Best Budget AI Coding Assistant for Freelance Developers 202](/ai-tools-compared/best-budget-ai-coding-assistant-for-freelance-developers-202/)
 - [How to Manage AI Coding Context When Switching Between Diffe](/ai-tools-compared/how-to-manage-ai-coding-context-when-switching-between-diffe/)
+- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```

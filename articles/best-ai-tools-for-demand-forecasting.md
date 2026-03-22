@@ -17,15 +17,6 @@ voice-checked: true
 
 The best AI tools for demand forecasting are Prophet for seasonal data with quick setup, StatsForecast for large-scale multi-series forecasting, AWS Forecast for managed infrastructure, and NeuralProphet for complex non-linear patterns. For most teams, start with Prophet or StatsForecast since both are open-source and run locally. This guide compares each tool with code examples, tradeoffs, and guidance on when to choose managed services versus self-hosted models.
 
-## Key Takeaways
-
-- **Use StatsForecast for most other scenarios**: it offers 90% of Forecast's capability at 10% of the cost.
-- **For most teams**: start with Prophet or StatsForecast since both are open-source and run locally.
-- **Most teams benefit from starting with Prophet or StatsForecast**: both are open-source, run locally, and provide good results for common forecasting scenarios.
-- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
-- **This guide compares each**: tool with code examples, tradeoffs, and guidance on when to choose managed services versus self-hosted models.
-- **The best tools also**: provide uncertainty quantification, letting you understand prediction confidence intervals rather than single-point estimates.
-
 ## Table of Contents
 
 - [What to Look for in a Demand Forecasting Tool](#what-to-look-for-in-a-demand-forecasting-tool)

@@ -18,16 +18,6 @@ voice-checked: true
 
 Windsurf AI Flows lets you chain multiple editing steps together to automate complex code transformations like refactoring, documentation updates, and testing in a single coherent pipeline. Each step executes sequentially with context from previous steps, ensuring consistency across multi-file changes. This approach eliminates the need for manual coordination between separate edits and provides auditability of how your codebase evolved through each transformation phase.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Does Windsurf offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Keep steps focused**: Each step should have one clear objective
-2.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-
 ## Table of Contents
 
 - [What Are Windsurf AI Flows?](#what-are-windsurf-ai-flows)

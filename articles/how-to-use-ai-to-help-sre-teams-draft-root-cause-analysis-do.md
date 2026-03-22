@@ -17,16 +17,6 @@ voice-checked: true
 
 Root cause analysis (RCA) documents are critical for SRE teams, yet writing thorough post-mortems often takes hours after an exhausting incident response. AI assistants can significantly accelerate this process by helping structure findings, identify patterns, and generate clear explanations. This guide shows practical approaches to incorporating AI into your RCA workflow.
 
-## Key Takeaways
-
-- Technical root cause explanation
-4.
-- **Root Cause (what technically**: failed) 2.
-- **Prevention Action Items (3-5**: specific improvements) Use a blameless tone.
-- **Root cause analysis (RCA)**: documents are critical for SRE teams, yet writing thorough post-mortems often takes hours after an exhausting incident response.
-- **A typical post-mortem requires**: recounting the timeline, identifying contributing factors, determining the root cause, and outlining prevention measures.
-- **Specific prompts that include context**: desired structure, and tone guide the AI toward useful output.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
@@ -374,4 +364,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [AI Powered Incident Response Tools for DevOps Teams Compared](/ai-tools-compared/ai-powered-incident-response-tools-for-devops-teams-compared/)
 - [AI Debugging Assistants Compared 2026](/ai-tools-compared/ai-debugging-assistants-compared-2026/)
 - [How to Use AI to Help Sre Teams Create on Call Handoff](/ai-tools-compared/how-to-use-ai-to-help-sre-teams-create-on-call-handoff-docum/)
+- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

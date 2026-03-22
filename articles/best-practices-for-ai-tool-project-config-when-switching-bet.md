@@ -17,10 +17,6 @@ voice-checked: true
 
 Manage AI tool configurations across client projects by using environment-specific configuration files with API keys isolated in .env files, implementing a project switcher script for instant context switching, and maintaining separate configuration directories for each client. This approach prevents data leaks, reduces setup time, and keeps your multi-client workflow consistent across all projects.
 
-## Key Takeaways
-
-- **Most providers support this**: through their dashboard.
-- **Add this file per repo**: ```markdown
 # Copilot Instructions
 
 This project uses Python 3.11 with strict type hints.

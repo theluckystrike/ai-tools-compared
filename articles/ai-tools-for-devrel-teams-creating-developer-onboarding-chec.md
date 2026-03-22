@@ -17,15 +17,6 @@ intent-checked: true
 
 Developer onboarding remains one of the most time-consuming responsibilities for Developer Relations (DevRel) teams. Every new engineer, whether joining a startup or an enterprise, needs access to tools, repositories, documentation, and processes that often live scattered across Confluence spaces, Notion pages, GitHub wikis, and SharePoint sites. Creating a coherent onboarding checklist from these disparate sources traditionally requires hours of manual curation. AI tools now offer a practical alternative: they can parse your internal wikis, extract relevant setup steps, and generate structured checklists that new developers can follow from day one.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Does Teams offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Use this feedback to**: refine AI-generated content: ``` We've collected feedback from 5 new hires.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-
 ## Table of Contents
 
 - [The Problem with Fragmented Onboarding Documentation](#the-problem-with-fragmented-onboarding-documentation)
@@ -354,4 +345,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [AI Tools for Converting Code Comments into Developer Facing](/ai-tools-compared/ai-tools-for-converting-code-comments-into-developer-facing-/)
 - [Configuring AI Coding Tools to Follow Your Teams Dependency](/ai-tools-compared/configuring-ai-coding-tools-to-follow-your-teams-dependency-/)
 - [AI Tools for Creating Custom Algorithm Visualization](/ai-tools-compared/ai-tools-for-creating-custom-algorithm-visualization-tutoria/)
+- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

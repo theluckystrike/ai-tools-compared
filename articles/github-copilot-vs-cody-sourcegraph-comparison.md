@@ -18,16 +18,6 @@ tags: [ai-tools-compared, comparison]
 
 Choose Cody by Sourcegraph if you work with large, complex codebases and need AI that understands your entire repository—Cody indexes all your code and generates suggestions matching your project's existing patterns and conventions. Choose GitHub Copilot if you want the most polished IDE integration, already use GitHub's ecosystem, and work primarily with popular frameworks where Copilot's training data advantage shines. Cody offers a more generous free tier; Copilot costs $10 per month with broader IDE support.
 
-## Key Takeaways
-
-- **Cody offers a more**: generous free tier; Copilot costs $10 per month with broader IDE support.
-- **Choose GitHub Copilot if**: you want the most polished IDE integration, already use GitHub's ecosystem, and work primarily with popular frameworks where Copilot's training data advantage shines.
-- **Cody's completions are slightly slower on average**: typically 200-400ms — because the retrieval step adds latency.
-- **The free and Pro**: tiers use Sourcegraph's cloud indexing service, which encrypts data in transit and at rest.
-- **Week 3**: Disable Copilot for new files, use only for complex edits
-3.
-- **It uses OpenAI's models**: (specifically GPT-4 and newer variants) to generate code suggestions based on your current file and surrounding context.
-
 ## Table of Contents
 
 - [Core Architecture and Context Awareness](#core-architecture-and-context-awareness)

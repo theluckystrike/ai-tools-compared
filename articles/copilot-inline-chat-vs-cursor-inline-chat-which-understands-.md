@@ -18,18 +18,6 @@ voice-checked: true
 
 This guide provides an overview to help you understand and make informed decisions about this topic.
 
-## Key Takeaways
-
-- **Use it for single-responsibility tasks**: Best results when asking for one modification at a time
-4.
-- **use VS Code's connected**: repository context: Copilot works better when your Git history is clean and recent ### For Cursor Inline Chat: 1.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-- **use Composer for multi-file operations**: Use `@file` references to coordinate changes across services
-2.
-- **Use symbol references**: Reference functions by name and Cursor finds them across your project
-4.
-
 ## Table of Contents
 
 - [How Inline Chat Works in Each Platform](#how-inline-chat-works-in-each-platform)

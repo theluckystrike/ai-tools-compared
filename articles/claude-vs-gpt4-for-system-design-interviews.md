@@ -19,15 +19,6 @@ System design interviews are half memorization, half reasoning under pressure. Y
 
 This guide tests both on real interview scenarios: designing a URL shortener, a distributed cache, and a real-time notification system.
 
-## Key Takeaways
-
-- **Cache the hot 20%**: → cache hit rate ~80%.
-- **Redis needs**: 30GB * 20% = 6 GB for hot URLs.
-- **GPT-4's partitioning answer (condensed)**: > "Use consistent hashing to distribute keys across nodes.
-- **For a user with 50M followers**: this is a catastrophic fan-out.
-- Use GPT-4 for breadth review.
-- **When you want a**: checklist of components without depth, it delivers: ``` Prompt: "List the key components of a rate limiter design." GPT-4: Token bucket, sliding window, fixed window, Leaky bucket.
-
 ## The Test Setup
 
 Both models were prompted with the same interviewer-style questions. No extra context. Just the problem statement and "walk me through your design."

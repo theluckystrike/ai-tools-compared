@@ -17,15 +17,6 @@ intent-checked: true
 
 Claude's artifact feature transforms React prototyping by rendering component previews directly within the conversation interface. Instead of context-switching between your browser, editor, and terminal, you can iterate on React components with instant visual feedback while maintaining full conversation history. This guide covers the complete workflow—from creating your first component to exporting production-ready code.
 
-## Key Takeaways
-
-- **Canvas has better mobile support**: the mobile ChatGPT app includes a limited Canvas experience.
-- **"Generate three different layouts**: for this form: vertical, horizontal, and tabbed." Compare them visually, choose the best, and refine.
-- **For prototyping user flows**: requiring persistence, request Claude to add localStorage or explain how to integrate a real backend.
-- **For testing with 10**:000+ items, use a smaller subset in the artifact and validate scalability in your production environment.
-- **Claude 3.5 Sonnet (Claude's**: fastest frontier model with high capability) excels at structured components with clear patterns.
-- **Artifacts don't support real API integration**: always ask Claude to use fetch or axios with mock data, then integrate real APIs in your project.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)

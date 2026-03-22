@@ -18,21 +18,6 @@ voice-checked: true
 
 Finding affordable AI tools requires understanding the true cost structure. This guide breaks down the cheapest options and explains what you get at each price point.
 
-## Key Takeaways
-
-- **Use local models**: Ollama runs on your machine for free with no per-token charges
-
-5.
-- **At Haiku pricing ($0.25/M input**: $1.25/M output), a complete project scaffold costs approximately $0.01-$0.03.
-- **At $1.25 per million tokens**: that's $0.0075-$0.015.
-- **Step 1**: Choose your model tier based on project complexity.
-
-For simple REST APIs or static sites, Haiku is sufficient.
-- **For full-stack apps with**: complex auth flows or third-party integrations, use Sonnet.
-- **Use smaller models for scaffolding**: Haiku handles project structure generation just fine—reserve Opus/Sonnet for complex logic
-
-2.
-
 ## Table of Contents
 
 - [Why Generate Projects from Description?](#why-generate-projects-from-description)

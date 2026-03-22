@@ -18,15 +18,6 @@ voice-checked: true
 
 Transfer your Midjourney prompt library to Ideogram by stripping Midjourney-specific parameters (`--ar`, `--stylize`, `--v`), mapping aspect ratios to Ideogram's preset options, and converting style values into natural language descriptions. Use the Python converter scripts below to batch-process your entire prompt collection from a CSV export. Text-heavy prompts for logos and typography will often produce better results on Ideogram without additional modification.
 
-## Key Takeaways
-
-- **API keys are available from ideogram.ai**: pricing starts at $0.04 per image for Turbo and $0.08 for standard quality.
-- **Use V_2 for highest**: quality when processing curated prompts.
-- **When Midjourney uses `subject1**: :2 background::0.5`, translate to priority-ordered natural language: "a [subject1] with [background] in the distance".
-- **Use the Python converter**: scripts below to batch-process your entire prompt collection from a CSV export.
-- **Text-heavy prompts for logos**: and typography will often produce better results on Ideogram without additional modification.
-- **Midjourney uses a Discord-based**: command system with parameters like `--ar` for aspect ratio, `--stylize` for artistic strength, and `--v` for model version.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

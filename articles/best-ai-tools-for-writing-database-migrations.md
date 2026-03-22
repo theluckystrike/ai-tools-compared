@@ -17,17 +17,6 @@ voice-checked: true
 
 Database migrations are high-risk operations. A poorly written migration with no rollback path, missing index, or table lock on a large table can cause production outages. AI tools vary significantly in their ability to generate safe, production-ready migrations — the difference between a model that adds a column and one that understands table locks, zero-downtime strategies, and rollback requirements.
 
-## Key Takeaways
-
-- **Prompt**: ```
-Generate an Alembic migration to add a 'notification_preferences' JSONB column
-to the 'users' table (PostgreSQL, ~5 million rows).
-- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
-- **A poorly written migration**: with no rollback path, missing index, or table lock on a large table can cause production outages.
-- **It also notes `NOT**: VALID` as an option for check constraints (though NOT NULL doesn't use it).
-- **-- Either use Flyway's**: outOfOrder or a separate migration file for the index.
-- **A week-long trial with**: actual work gives better signal than feature comparison charts.
-
 ## What Separates Good Migration Generation
 
 Before comparing tools, define what a production-quality migration requires:
@@ -285,16 +274,6 @@ Review this migration against this checklist:
 Migration:
 [paste migration]
 ```
-
-## Summary
-
-| Migration Type | Claude | Copilot |
-|---|---|---|
-| Large table NOT NULL column | Multi-step, safe | Single step, locks table |
-| Concurrent index creation | Correct + Flyway caveat | Standard non-concurrent |
-| Zero-downtime rename | Three-phase trigger pattern | Direct rename (breaks app) |
-| Rollback implementation | Always included | Inconsistent |
-| Batch backfill with sleep | Generated automatically | Not generated |
 
 ## Related Articles
 

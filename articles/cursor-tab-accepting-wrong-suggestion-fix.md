@@ -17,15 +17,6 @@ tags: [ai-tools-compared, troubleshooting]
 
 To fix Cursor Tab accepting the wrong suggestion, immediately press Ctrl+Z (Cmd+Z on Mac) to undo the acceptance. To prevent it going forward, increase the "Quick Suggestions Delay" to 100-200ms in editor settings, use the right-arrow key to accept suggestions word-by-word instead of all at once, and disable conflicting AI extensions. These changes stop accidental acceptances while keeping Cursor's autocomplete productive.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Some users find that**: switching between different AI models (if available in your plan) produces better results for their specific coding style.
-- **Does Cursor offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Increasing this delay from**: the default (often 0ms) to 100-200ms can significantly reduce accidental acceptances without eliminating the feature entirely.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-
 ## Table of Contents
 
 - [Understanding the Problem](#understanding-the-problem)

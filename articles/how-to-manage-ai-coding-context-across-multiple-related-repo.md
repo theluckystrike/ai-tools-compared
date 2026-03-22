@@ -17,15 +17,6 @@ voice-checked: true
 
 Manage context across multiple repos by symlinking shared packages, maintaining an unified context in your IDE settings, and being explicit about which repo each task targets. This guide shows the configuration patterns that prevent hallucinated imports and cross-repo inconsistencies.
 
-## Key Takeaways
-
-- **Review with team before**: first use ## When you discover an issue: 1.
-- **A typical scenario involves**: a shared library repository used by several service repositories, or a monorepo split into separate Git repositories over time.
-- **This is particularly useful**: for cross-cutting concerns like authentication, logging, or data models.
-- **Establish a template or**: scaffold that all your repositories use, then reference this standard in your context documentation.
-- **Use submodules for shared**: code that you actively develop.
-- **shared-lib changes must be**: merged first (1 day buffer for integration) 2.
-
 ## Table of Contents
 
 - [Why Context Management Matters Across Repositories](#why-context-management-matters-across-repositories)

@@ -17,18 +17,6 @@ tags: [ai-tools-compared, comparison, claude-ai]
 
 Data analysis requires models that write correct code on the first attempt, handle messy real-world data, and reason about statistical validity. Claude and GPT-4 both generate Python, SQL, and R — but they differ in how they handle ambiguous data problems, statistical nuance, and long analysis pipelines. This comparison tests both on real data analysis scenarios.
 
-## Key Takeaways
-
-- **Only if <5% missing.'**:
-    'impute_mean': 'Use mean of available months.
-- **Claude's costs are ~30%**: lower for equivalent work.
-- **Claude and GPT-4 serve**: different strengths, so combining them can cover more use cases than relying on either one alone.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-- **Which is better for beginners**: Claude or GPT-4?
-
-It depends on your background.
-- **Claude tends to work**: well if you prefer a guided experience, while GPT-4 gives more control for users comfortable with configuration.
-
 ## Table of Contents
 
 - [Test Setup](#test-setup)

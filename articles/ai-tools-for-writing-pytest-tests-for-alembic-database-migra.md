@@ -18,15 +18,6 @@ voice-checked: true
 
 Testing database migrations is one of the most critical yet often overlooked aspects of application development. When working with Alembic for SQLAlchemy-based database migrations, you need tests that verify both upgrade (up) and downgrade (down) paths work correctly. AI tools can significantly accelerate the creation of these tests, helping you catch schema inconsistencies, data loss issues, and migration failures before they reach production.
 
-## Key Takeaways
-
-- **Use `scope="session"` only when**: database setup is genuinely slow and you are confident tests do not interfere with each other.
-- **Testing database migrations is**: one of the most critical yet often overlooked aspects of application development.
-- **Similarly**: migrations that lose data without warning can cause serious issues.
-- **Understanding these differences helps**: you pick the right assistant for this specific task.
-- **Copilot works better for**: incremental additions once the structure exists.
-- **This template will be**: used with each migration file and should include your project's fixture conventions, the test database URL pattern, and any helper utilities already in your test suite.
-
 ## Table of Contents
 
 - [Why Migration Testing Matters](#why-migration-testing-matters)

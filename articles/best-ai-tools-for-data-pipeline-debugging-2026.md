@@ -17,17 +17,6 @@ intent-checked: true
 
 Data pipeline failures require understanding transformation logic, diagnosing why records don't appear in destination tables, and correlating schema changes across systems. AI tools accelerate debugging by analyzing transformation code, explaining data lineage, and suggesting fixes for common pipeline failures. This guide compares specialized data tools with general coding assistants for pipeline troubleshooting.
 
-## Key Takeaways
-
-- **A typical debugging session**: costs $0.02-0.08.
-- **Use Copilot to implement**: the fix Pipeline slow: 1.
-- **If in Databricks**: use Assistant for optimization suggestions
-3.
-- **If using dbt Cloud**: use dbt Cloud AI to generate model
-2.
-- **Use Copilot to write**: dbt test cases 4.
-- **Add tests using dbt**: Cloud AI ## Recommendations by Pipeline Type SQL-only pipelines (e.g., dbt without Databricks): Use Claude + Copilot.
-
 ## Table of Contents
 
 - [Data Pipeline Debugging Challenges](#data-pipeline-debugging-challenges)

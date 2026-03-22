@@ -19,54 +19,6 @@ AI tools struggle with Rust WASM configuration, generating broken wasm-bindgen c
 
 Rust WebAssembly (WASM) development has become increasingly popular for high-performance web applications. The `wasm-bindgen` crate serves as the bridge between Rust and JavaScript, enabling interoperability. But how accurate are AI coding assistants when generating this specialized code? This article evaluates leading AI tools on their ability to produce correct WASM compilation setups and bindgen code.
 
-## Key Takeaways
-
-- **Accuracy**: 95%
-
-GitHub Copilot suggested:
-
-```rust
-use wasm_bindgen::prelude::*;
-
-#[wasm_bindgen]
-pub fn add(a: i32, b: i32) -> i32 {
-    return a + b;
-}
-```
-
-This compiles successfully.
-- **Accuracy**: 90%
-
-Cursor generated:
-
-```rust
-use wasm_bindgen::prelude::*;
-
-#[wasm_bindgen]
-pub fn add(a: i32, b: i32) -> i32 {
-    a + b
-}
-```
-
-Identical to Claude Code's output.
-- **Accuracy**: 100%
-
-GitHub Copilot suggested:
-
-```rust
-use wasm_bindgen::prelude::*;
-
-#[wasm_bindgen]
-pub fn sum(arr: &[i32]) -> i32 {
-    arr.iter().sum()
-}
-```
-
-This code fails to compile.
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Does Rust offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-
 ## Table of Contents
 
 - [The Test Methodology](#the-test-methodology)

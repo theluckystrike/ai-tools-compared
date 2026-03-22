@@ -17,13 +17,6 @@ tags: [ai-tools-compared]
 
 Running LLM calls in a script works until it doesn't — an API rate limit drops a batch halfway through, a timeout leaves data in an inconsistent state, or you can't tell which step failed. Prefect solves these problems for AI pipelines: retry policies, state persistence, observability, and scheduling that survives process restarts.
 
-## Key Takeaways
-
-- **Topics covered**: why prefect for ai pipelines, setup, pipeline 1: document ingestion for rag
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-- **Use-case recommendations**: Specific guidance based on team size and requirements
-- **Trade-off analysis**: Strengths and limitations of each option discussed
-
 ## Why Prefect for AI Pipelines
 
 Three AI-specific reasons:
@@ -274,57 +267,6 @@ def generate_report(evaluations: list[dict]) -> str:
 
     report = f"""# Batch Evaluation Report
 
-## Summary
-- Items processed: {len(evaluations)}
-- Average score: {statistics.mean(scores):.2f}/5 (n={len(scores)})
-- Total input tokens: {total_input:,}
-- Total output tokens: {total_output:,}
-- Estimated cost: ${(total_input * 0.000003 + total_output * 0.000015):.4f}
-
-### Step 4: Results
-
-| ID | Score | Reason |
-|---|---|---|
-"""
-    for e in evaluations[:20]:
-        report += f"| {e['id']} | {e.get('score', 'N/A')} | {e.get('reason', '')[:60]} |\n"
-
-    return report
-
-@flow(name="llm-batch-evaluation")
-def evaluate_batch(
-    items: list[dict],  # [{"id": str, "prompt": str, "expected": str}]
-):
-    """Process and evaluate a batch of LLM tasks."""
-    # Submit all tasks concurrently
-    futures = [
-        process_with_claude.submit(item["prompt"], item["id"])
-        for item in items
-    ]
-
-    results = [f.result() for f in futures]
-
-    # Evaluate results
-    eval_futures = [
-        evaluate_response.submit(r, items[i].get("expected"))
-        for i, r in enumerate(results)
-    ]
-    evaluations = [f.result() for f in eval_futures]
-
-    # Generate and store report
-    report = generate_report(evaluations)
-    create_markdown_artifact(
-        key="batch-evaluation-report",
-        markdown=report,
-        description="LLM batch evaluation results"
-    )
-
-    return evaluations
-```
-
-### Step 5: Scheduled Daily Pipeline
-
-```python
 # schedule_pipeline.py
 from prefect.deployments import Deployment
 from prefect.server.schemas.schedules import CronSchedule

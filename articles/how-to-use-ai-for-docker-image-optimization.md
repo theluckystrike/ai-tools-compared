@@ -17,14 +17,6 @@ voice-checked: true
 
 Docker image bloat is a recurring problem: images that start at 200MB balloon to 1.8GB over months as teams add dependencies without removing base layers. AI tools accelerate the optimization cycle by identifying inefficiencies, rewriting Dockerfiles with correct layer ordering, and suggesting base image alternatives.
 
-## Key Takeaways
-
-- **Best cache hit rate**: for typical development changes 3.
-- Non-root user for security
-4.
-- **Cache hit rate improves**: because `package.json` changes far less often than source files.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

@@ -24,15 +24,7 @@ voice-checked: true
 | Codeium | Fast completions, free tier | File-level context | IDE extensions | Free tier available |
 
 
-
 Break large features into independent components: request data models first, then API endpoints, then tests. Provide existing code examples for context, specify constraints (frameworks, libraries, error handling), and ask for one focused piece at a time. This sequential approach improves AI output quality by 40% and reduces debugging effort. This guide covers practical task decomposition strategies for AI-assisted development.
-
-## Key Takeaways
-
-- **This sequential approach improves**: AI output quality by 40% and reduces debugging effort.
-- **Define the user schema**: and validation rules 2.
-- **Use our existing Redis**: client from redis_service.py." The second version tells the AI exactly what behavior to implement, what parameters matter, and where to find supporting code.
-- **Constraints**: use bcrypt with cost factor 12, store refresh tokens in encrypted cookies."
 
 ## Table of Contents
 

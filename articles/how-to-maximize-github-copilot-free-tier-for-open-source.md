@@ -17,17 +17,6 @@ voice-checked: true
 
 Maximize GitHub Copilot free tier on open source by batching your completions, focusing on boilerplate tasks where Copilot excels, and strategically using the monthly limit for your highest-ROI work. This guide shows the workflow that gets maximum value before hitting the 2,000 completion limit.
 
-## Key Takeaways
-
-- **The AI model works best when you**: ### Use Clear Function Names
-
-Descriptive naming helps Copilot understand your intent.
-- **Maximize GitHub Copilot free**: tier on open source by batching your completions, focusing on boilerplate tasks where Copilot excels, and strategically using the monthly limit for your highest-ROI work.
-- **Generate changelog from commits**: ```bash git log v1.0.0..HEAD --oneline | \ copilot-explain "summarize these changes for end users" ``` 2.
-- **Update README examples ```bash**: # Ask Copilot to update all code examples for new API @workspace Update all fetch examples to use new async/await pattern ``` 3.
-- **Start with free tier**: on 1-2 projects 2.
-- **Use Copilot strategically on**: high-friction tasks 4.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)

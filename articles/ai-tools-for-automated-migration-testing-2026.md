@@ -17,7 +17,7 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 # AI Tools for Automated Migration Testing 2026
 
-Database migrations are one of the riskiest operations in software — a bad rollout can corrupt data or lock a production table for minutes. AI tools can help generate comprehensive migration test suites that catch problems before they reach prod.
+Database migrations are one of the riskiest operations in software — a bad rollout can corrupt data or lock a production table for minutes. AI tools can help generate migration test suites that catch problems before they reach prod.
 
 ## What Migration Tests Cover
 
@@ -228,7 +228,7 @@ jobs:
 For migrations affecting millions of rows, ask Claude to generate performance tests:
 
 ```text
-Write pytest tests for a migration that backfills 10M rows in a users table.
+Write pytest tests for a migration that backfills 10M rows in an users table.
 Include: test that migration completes within 5 minutes on production-like data,
 test that no rows are lost, test that indexes remain usable during migration.
 ```
@@ -241,21 +241,21 @@ When migrations are part of a larger workflow (deploy → migrate → verify →
 
 ```python
 class MigrationStateMachine(TestCase):
-    def test_pre_migration_state(self):
-        # Verify schema before
-        pass
+ def test_pre_migration_state(self):
+ # Verify schema before
+ pass
 
-    def test_post_migration_state(self):
-        # Verify schema after
-        pass
+ def test_post_migration_state(self):
+ # Verify schema after
+ pass
 
-    def test_rollback_from_post_migration_state(self):
-        # Verify rollback works
-        pass
+ def test_rollback_from_post_migration_state(self):
+ # Verify rollback works
+ pass
 
-    def test_idempotent_migration(self):
-        # Verify running migration twice is safe
-        pass
+ def test_idempotent_migration(self):
+ # Verify running migration twice is safe
+ pass
 ```
 
 Claude understands that a robust migration must be idempotent — you should be able to apply it multiple times without errors, important if your deployment pipeline has to retry failed migrations.
@@ -269,34 +269,34 @@ Ask Claude to generate migration test scripts that integrate with GitHub Actions
 name: Test Migrations
 on: [pull_request]
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    services:
-      postgres:
-        image: postgres:16
-        env:
-          POSTGRES_USER: test
-          POSTGRES_PASSWORD: test
-          POSTGRES_DB: test_migrations
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-        ports:
-          - 5432:5432
+ test:
+ runs-on: ubuntu-latest
+ services:
+ postgres:
+ image: postgres:16
+ env:
+ POSTGRES_USER: test
+ POSTGRES_PASSWORD: test
+ POSTGRES_DB: test_migrations
+ options: >-
+ --health-cmd pg_isready
+ --health-interval 10s
+ --health-timeout 5s
+ --health-retries 5
+ ports:
+ - 5432:5432
 
-    steps:
-      - uses: actions/checkout@v4
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - run: pip install -r requirements-test.txt
-      - name: Run migration tests
-        env:
-          DATABASE_URL: postgresql://test:test@localhost:5432/test_migrations
-        run: pytest tests/test_migrations/ -v --tb=short
+ steps:
+ - uses: actions/checkout@v4
+ - name: Setup Python
+ uses: actions/setup-python@v5
+ with:
+ python-version: '3.12'
+ - run: pip install -r requirements-test.txt
+ - name: Run migration tests
+ env:
+ DATABASE_URL: postgresql://test:test@localhost:5432/test_migrations
+ run: pytest tests/test_migrations/ -v --tb=short
 ```
 
 Always test against the same database engine you run in production. A migration that works on SQLite can fail on PostgreSQL due to differences in constraint enforcement, column type handling, and transaction behavior.

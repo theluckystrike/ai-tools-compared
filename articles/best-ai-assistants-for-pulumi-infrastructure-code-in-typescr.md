@@ -17,15 +17,6 @@ voice-checked: true
 
 AI assistants have become invaluable for developers working with Pulumi and TypeScript to define cloud infrastructure. These tools accelerate infrastructure as code development, reduce errors, and help teams adopt best practices for managing cloud resources. This guide evaluates the most effective AI assistants for Pulumi infrastructure code in TypeScript.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **These tools accelerate infrastructure**: as code development, reduce errors, and help teams adopt best practices for managing cloud resources.
-
 ## Table of Contents
 
 - [Why AI Assistants Matter for Pulumi Development](#why-ai-assistants-matter-for-pulumi-development)

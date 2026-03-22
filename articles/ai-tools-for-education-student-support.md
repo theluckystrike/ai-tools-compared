@@ -18,15 +18,6 @@ intent-checked: true
 
 AI tools for education student support use large language models, recommendation engines, and sentiment analysis to deliver tutoring, administrative help, accessibility services, and mental health screening within learning platforms. Developers can integrate these capabilities through Python SDKs and REST APIs from providers like Anthropic, OpenAI, and Whisper. This guide covers practical implementations with code examples for each major student support use case.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **This guide covers practical**: implementations with code examples for each major student support use case.
-- **Build mechanisms for human**: review of AI recommendations, especially for high-stakes situations like academic standing or support referrals.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-
 ## Table of Contents
 
 - [Understanding Student Support Requirements](#understanding-student-support-requirements)

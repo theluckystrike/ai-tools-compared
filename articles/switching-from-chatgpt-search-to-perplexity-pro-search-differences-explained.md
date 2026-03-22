@@ -18,15 +18,6 @@ tags: [ai-tools-compared, chatgpt]
 
 Making the switch from ChatGPT Search to Perplexity Pro Search represents a significant workflow change for developers, researchers, and knowledge workers who rely on AI-powered search tools. While both platforms offer conversational search capabilities, they differ substantially in their underlying technology, user experience, pricing structure, and ideal use cases. This guide breaks down everything you need to know before migrating your workflows.
 
-## Key Takeaways
-
-- **Free users receive limited**: search queries per day, while ChatGPT Plus subscribers ($20/month) get higher limits and access to advanced features.
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **The integration with the**: broader ChatGPT ecosystem means Plus users also access GPT-4o, image generation, and other capabilities.
-- **Perplexity Pro Search operates**: on a credit-based system with the Pro tier at $20/month or $200/year.
-- **Does ChatGPT offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-
 ## Table of Contents
 
 - [Understanding the Platforms](#understanding-the-platforms)

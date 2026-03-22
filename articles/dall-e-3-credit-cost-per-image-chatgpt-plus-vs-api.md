@@ -18,15 +18,6 @@ voice-checked: true
 
 DALL-E 3 powers image generation through two primary access points: the ChatGPT Plus subscription at $20 per month, and the direct API with per-image billing. Understanding the actual cost per image from each option helps developers and power users make informed decisions about which approach fits their workflow and budget.
 
-## Key Takeaways
-
-- **DALL-E 3 powers image**: generation through two primary access points: the ChatGPT Plus subscription at $20 per month, and the direct API with per-image billing.
-- **If you generate 200 images monthly**: your effective cost becomes $0.10 per image.
-- **Choose the API when**: building applications, needing automation, requiring more than 500 images monthly, or needing programmatic control over generation parameters.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-- **Understanding the actual cost**: per image from each option helps developers and power users make informed decisions about which approach fits their workflow and budget.
-
 ## Table of Contents
 
 - [ChatGPT Plus: The Subscription Model](#chatgpt-plus-the-subscription-model)

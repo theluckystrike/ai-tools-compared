@@ -18,16 +18,6 @@ voice-checked: true
 
 Security researchers have increasingly focused on AI coding tools and their IDE integrations, discovering significant vulnerabilities that affect millions of developers. This article examines common findings from penetration tests conducted on popular AI coding assistant plugins, providing practical recommendations for developers and security teams.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Use Enterprise Versions**: Enterprise-tier AI coding tools typically offer better security controls, including data processing guarantees and advanced access controls.
-- **What is the learning curve like?** Most tools discussed here can be used productively within a few hours.
-
-**Do security researchers focus on AI coding tools?** Yes—researchers have increasingly focused on AI coding tools and their IDE integrations, discovering significant vulnerabilities that affect millions of developers.
-
-**What mitigation strategies work?** Choose AI coding tools that support OAuth authentication flows and avoid plain-text API key storage.
-
 ## Table of Contents
 
 - [Remote Code Execution Through Prompt Injection](#remote-code-execution-through-prompt-injection)

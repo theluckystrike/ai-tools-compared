@@ -56,14 +56,14 @@ local filesystem.
 ## C4 Context Diagram
 ```mermaid
 C4Context
-  Person(user, "Developer", "Uses CLI to manage tasks")
-  System(cobraTask, "cobra-task", "Local CLI task manager")
-  SystemDb(sqlite, "SQLite Database", "~/.cobra-task/tasks.db")
-  System_Ext(plugins, "Plugins", "Local gRPC plugins")
+ Person(user, "Developer", "Uses CLI to manage tasks")
+ System(cobraTask, "cobra-task", "Local CLI task manager")
+ SystemDb(sqlite, "SQLite Database", "~/.cobra-task/tasks.db")
+ System_Ext(plugins, "Plugins", "Local gRPC plugins")
 
-  Rel(user, cobraTask, "Uses", "CLI")
-  Rel(cobraTask, sqlite, "Reads/writes")
-  Rel(cobraTask, plugins, "Calls", "gRPC")
+ Rel(user, cobraTask, "Uses", "CLI")
+ Rel(cobraTask, sqlite, "Reads/writes")
+ Rel(cobraTask, plugins, "Calls", "gRPC")
 ```
 ```
 
@@ -166,11 +166,11 @@ The most effective workflow for open source architecture documentation:
 ## Component Diagram
 ```mermaid
 graph TD
-  A[CLI Entry] --> B[Command Parser]
-  B --> C[Task Repository]
-  C --> D[SQLite Driver]
-  B --> E[Plugin Manager]
-  E --> F[gRPC Client]
+ A[CLI Entry] --> B[Command Parser]
+ B --> C[Task Repository]
+ C --> D[SQLite Driver]
+ B --> E[Plugin Manager]
+ E --> F[gRPC Client]
 ```
 
 ## Data Flow: Creating a Task
@@ -252,4 +252,6 @@ In the repo. Wiki pages drift out of sync because they are not part of the PR pr
 
 - [AI Assistants for Creating Security Architecture Review Documentation](/ai-assistants-for-creating-security-architecture-review-docu/)
 - [Best AI Assistant for Generating Open Source Release Announcements](/best-ai-assistant-for-generating-open-source-release-announcements/)
+- [Best AI Assistant for Creating Open Source Project Branding](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)
+- [AI Tools for Analyzing Which Open Source Issues Would Benefi](/ai-tools-compared/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
 

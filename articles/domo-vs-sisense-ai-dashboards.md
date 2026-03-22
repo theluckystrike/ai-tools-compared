@@ -18,15 +18,6 @@ voice-checked: true
 
 Choose Domo if you need rapid dashboard deployment with pre-built connectors and low-code workflows for business users. Choose Sisense if you need deep customization through JavaScript/Python APIs, custom ML model integration, and superior query performance on large datasets. This comparison covers API patterns, AI features, and implementation details for both platforms.
 
-## Key Takeaways
-
-- **Authentication uses OAuth 2.0**: and the API rate limits are generous for enterprise plans.
-- **For real-time dashboards with**: high user concurrency, Sisense generally performs better out of the box.
-- **Choose Sisense if you**: need deep customization through JavaScript/Python APIs, custom ML model integration, and superior query performance on large datasets.
-- **While this works well**: for business users, developers have limited programmatic access to these AI features.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-
 ## Table of Contents
 
 - [Platform Architecture Overview](#platform-architecture-overview)

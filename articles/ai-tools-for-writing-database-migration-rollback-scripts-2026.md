@@ -14,17 +14,6 @@ voice-checked: true
 intent-checked: true
 ---
 
-## Key Takeaways
-
-- **One prevented data loss (value**: $10k+) offsets months of subscriptions.
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **Design Phase**: Use Claude to architect migration strategy
-2.
-- **Implementation Phase**: Use Claude to generate migration + rollback
-3.
-
 ## Table of Contents
 
 - [Overview](#overview)
@@ -508,5 +497,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [AI Tools for Writing pytest Tests for Alembic Database Paths](/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
 - [Best AI Tools for Writing Database Seed Scripts 2026](/best-ai-tools-for-writing-database-seed-scripts-2026/)
 - [AI-Powered Database Migration Tools Comparison 2026](/ai-powered-database-migration-tools-comparison/)
+- [AI Code Completion for Writing Shell Commands Inside](/ai-tools-compared/ai-code-completion-for-writing-shell-commands-inside-scripts/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

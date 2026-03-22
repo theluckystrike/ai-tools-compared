@@ -18,15 +18,6 @@ If you use Neovim as your primary editor, you have likely explored ways to integ
 
 This article compares the leading open-source AI code completion tools for Neovim that run locally without cloud API dependencies. Each solution has distinct trade-offs in setup complexity, model quality, and resource requirements.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **For daily driver use**: llm.nvim with streaming enabled provides the most responsive feel.
-- **Does Neovim offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **If you use Neovim**: as your primary editor, you have likely explored ways to integrate AI-powered code completion.
-
 ## Table of Contents
 
 - [Why Skip Cloud API Keys?](#why-skip-cloud-api-keys)
@@ -456,6 +447,7 @@ Local completion makes sense when privacy matters more than raw speed, or when y
 - [Open Source AI Code Linting Tools With Automatic Fix](/open-source-ai-code-linting-tools-with-automatic-fix-suggest/)
 - [AI Code Completion for Flutter BLoC Pattern Event and State](/ai-code-completion-for-flutter-bloc-pattern-event-and-state-/)
 - [AI Code Completion for Java Jakarta EE Migration from Javax](/ai-code-completion-for-java-jakarta-ee-migration-from-javax-/)
+- [AI Code Completion for Java Record Classes and Sealed](/ai-tools-compared/ai-code-completion-for-java-record-classes-and-sealed-interf/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

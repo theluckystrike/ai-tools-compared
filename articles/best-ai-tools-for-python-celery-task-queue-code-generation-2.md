@@ -24,17 +24,7 @@ voice-checked: true
 | Codeium | Fast completions, free tier | File-level context | IDE extensions | Free tier available |
 
 
-
 Several AI tools excel at this task. This guide recommends the best options based on specific use cases and shows you which tool to choose for your situation.
-
-## Key Takeaways
-
-- **This guide recommends the**: best options based on specific use cases and shows you which tool to choose for your situation.
-- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
-- **Poorly generated code can**: cause task serialization issues, missing result handling, improper retry logic, or worker configuration problems that lead to missed jobs.
-- **Uses asyncio.run() to execute**: async code within the task.
-- **""" return asyncio.run(fetch_user_data(user_id)) @app.task**: def batch_process_users(user_ids: list[int]) -> list[dict]: """ Process multiple users concurrently.
-- **Using `asyncio.run()` within tasks**: is the current recommended approach.
 
 ## Table of Contents
 

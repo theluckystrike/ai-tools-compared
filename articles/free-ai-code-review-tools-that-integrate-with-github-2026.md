@@ -19,15 +19,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Automated code review has become essential for maintaining code quality, especially in teams practicing continuous integration. GitHub provides native code scanning capabilities, but combining it with dedicated AI-powered review tools catches issues that traditional linters miss. This guide covers free tools that integrate directly with your GitHub workflow without costing anything.
 
-## Key Takeaways
-
-- **It focuses on code**: quality improvements and best practices.
-- **For occasional use**: consider whether a free alternative covers enough of your needs.
-- **This guide covers free**: tools that integrate directly with your GitHub workflow without costing anything.
-- **GitHub Copilot (Free for**: Individuals) GitHub Copilot integrates directly into your development environment through IDE extensions and provides inline suggestions during coding.
-- **The free plan includes**: unlimited reviews for public repositories and limited reviews for private repos.
-- **It integrates through the**: GitHub Marketplace and focuses on making code reviews more visual and collaborative.
-
 ## Why AI-Powered Code Review Matters
 
 

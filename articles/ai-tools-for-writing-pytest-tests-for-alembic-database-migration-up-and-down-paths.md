@@ -17,15 +17,6 @@ voice-checked: true
 
 Claude and Cursor analyze Alembic migration files and generate pytest tests covering both upgrade and downgrade paths, verifying schema changes, data integrity, and proper rollback functionality. These AI tools understand Alembic's operation patterns and pytest fixtures, producing test coverage that ensures migrations work bidirectionally without manual test writing.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **AI tools consistently include**: downgrade tests when prompted for "complete migration coverage." ## Best Practices for AI-Generated Migration Tests To maximize the value of AI-generated tests: 1.
-- **Use transaction fixtures to**: ensure tests don't leave lasting database changes 6.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-
 ## Table of Contents
 
 - [Understanding Alembic Migration Testing Requirements](#understanding-alembic-migration-testing-requirements)

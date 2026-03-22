@@ -17,15 +17,6 @@ voice-checked: true
 
 Configure Claude Code project memory by creating a CLAUDE.md file in your project root that persists across sessions and documents coding conventions, project-specific configurations, and architectural decisions. Claude Code automatically reads this file and applies stored context about your tech stack, naming patterns, testing requirements, and architectural approaches—enabling consistent AI assistance across all team members.
 
-## Key Takeaways
-
-- **Follow these practices to**: keep it useful: - Date significant decisions: Add `<!-- Added 2026-01 -->` comments on architectural decisions so the team knows how old they are.
-- **- Use headers consistently**: Claude Code parses the document top-to-bottom; clear H2 headers let it find relevant sections quickly.
-- **The file uses markdown**: syntax and can include any information helpful for understanding your codebase.
-- **Use this when the**: backend is unavailable." This type of contextual information prevents Claude Code from making technically correct but project-inappropriate suggestions.
-- **Stale instructions confuse Claude**: Code just as they confuse new developers.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)

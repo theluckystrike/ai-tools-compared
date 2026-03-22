@@ -18,15 +18,6 @@ intent-checked: true
 
 Code completion has become an essential part of modern software development. Tabnine has dominated the market for years as a commercial AI assistant, but privacy concerns, subscription costs, and the desire for offline functionality have driven developers toward self-hosted alternatives. If you need a code completion tool that runs entirely on your local hardware, several compelling options exist in 2026.
 
-## Key Takeaways
-
-- **Models like Qwen2.5-Coder 7B**: achieve HumanEval scores above 88%, which exceeds what Tabnine delivers for many users.
-- **Cost at scale**: Tabnine Enterprise runs $39+ per seat per month.
-- **A shared Tabby ML**: server on a single RTX 4090 (roughly $1,600 hardware cost) serves 10-15 developers with sub-second latency indefinitely, breaking even in under four months.
-- **Qwen2.5-Coder 7B in Q4_K_M**: quantization fits in 8GB unified memory and delivers completions most developers find indistinguishable from Tabnine's on everyday tasks.
-- **If your machine has 32GB RAM**: you can comfortably run larger models for better suggestions.
-- **Many developers find that**: a fast 7B model responding in under a second feels better in practice than a higher-quality 13B model with 3-second latency.
-
 ## Table of Contents
 
 - [Why Consider Self-Hosted Code Completion?](#why-consider-self-hosted-code-completion)
@@ -258,6 +249,7 @@ Once you have a working setup, benchmark it against your actual workflow before 
 - [Best Self-Hosted AI Model for JavaScript TypeScript Code](/best-self-hosted-ai-model-for-javascript-typescript-code-gen/)
 - [Self-Hosted AI Assistant for Writing Docker Files Without](/self-hosted-ai-assistant-for-writing-docker-files-without-cl/)
 - [Self Hosted AI Coding Tools That Support Air Gapped](/self-hosted-ai-coding-tools-that-support-air-gapped-environm/)
+- [Best Self Hosted AI Model for Writing SQL Queries from](/ai-tools-compared/best-self-hosted-ai-model-for-writing-sql-queries-from-natural-language/)
 
 ## Performance Optimization and Tuning
 

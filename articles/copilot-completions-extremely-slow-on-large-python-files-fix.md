@@ -16,15 +16,6 @@ intent-checked: true
 
 GitHub Copilot transforms how you write code, but working with large Python files can feel like wading through molasses. What should be instant suggestions take seconds, breaking your flow and defeating the purpose of AI-assisted coding. This guide covers why Copilot slows down on large Python files and practical fixes you can apply immediately.
 
-## Key Takeaways
-
-- **Use Local Extensions for**: Better Performance Install the Copilot Chat extension alongside Copilot.
-- **Adjust the values based on your file sizes**: 4096 tokens works well for most large files.
-- **Use the `#` Prefix**: for Faster Suggestions Starting a line with `#` tells Copilot to generate a comment-based suggestion without analyzing surrounding code deeply.
-- **Handles user creation**: authentication, and profile management.
-- **Test them with your**: specific codebase to see if they handle large files better.
-- **Use Copilot Labs -**: Microsoft's experimental features sometimes include performance improvements.
-
 ## Table of Contents
 
 - [Why Copilot Struggles with Large Python Files](#why-copilot-struggles-with-large-python-files)
@@ -484,4 +475,5 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 - [Copilot Suggestions Wrong How](/ai-tools-compared/copilot-suggestions-wrong-how-to-fix/)
 - [Copilot for JetBrains: Does It Cost Same as VS Code Version](/ai-tools-compared/copilot-for-jetbrains-does-it-cost-same-as-vscode-version/)
 - [How to Use Copilot for Writing Terraform Provider Configurat](/ai-tools-compared/how-to-use-copilot-for-writing-terraform-provider-configurat/)
+- [Top 10 AI Tools for Developers in 2024](https://theluckystrike.github.io/remote-work-tools/top-10-ai-tools-for-developers-in-2024/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

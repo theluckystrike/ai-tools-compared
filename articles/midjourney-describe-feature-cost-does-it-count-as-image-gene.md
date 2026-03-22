@@ -17,16 +17,6 @@ voice-checked: true
 
 No, Midjourney's `/describe` command does not count toward your image generation quota. It performs image-to-text analysis rather than image generation, so it consumes no GPU minutes from your subscription. However, if you click one of the four returned prompts to generate an image from it, that subsequent generation does count against your quota. This guide covers the technical details of how `/describe` billing works and strategies for using it efficiently in prompt engineering workflows.
 
-## Key Takeaways
-
-- Cherry-pick the best one
-3.
-- **Pick the best; describe**: it again if refining 6.
-- **If you have used**: the tool for at least 3 months and plan to continue, the annual discount usually makes sense.
-- **Generate 10 image variations**: ($0.80 in credits) 2.
-- **Repeat until you find**: the right direction Total cost: $2-4 per final design, with 5-8 iterations New approach (describe-first): 1.
-- **Generate 4 variations based**: on those prompts ($0.32 in credits) 5.
-
 ## Table of Contents
 
 - [What Midjourney /describe Actually Does](#what-midjourney-describe-actually-does)

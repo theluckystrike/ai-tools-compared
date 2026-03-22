@@ -19,14 +19,6 @@ Generate production-ready error handling by explicitly requesting typed errors, 
 
 Error handling remains one of the most critical yet frequently neglected aspects of production software. When you delegate code generation to AI tools, getting strong error handling requires specific prompting strategies. This guide shows you how to craft prompts that produce production-ready error handling code across multiple programming languages and frameworks.
 
-## Key Takeaways
-
-- **Implement a dependency that**: catches these and returns proper JSON responses with the error code at $.error.code and message at $.error.message.
-- **On retry**: use exponential backoff with jitter (base: 1s, max: 30s).
-- **Error handling remains one**: of the most critical yet frequently neglected aspects of production software.
-- **Include structured logging with**: request IDs, and use custom exception classes.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

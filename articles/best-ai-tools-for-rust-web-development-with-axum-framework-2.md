@@ -17,18 +17,6 @@ voice-checked: true
 
 Several AI tools excel at this task. This guide recommends the best options based on specific use cases and shows you which tool to choose for your situation.
 
-## Key Takeaways
-
-- **This guide recommends the**: best options based on specific use cases and shows you which tool to choose for your situation.
-- **Use Copilot for implementation**: Inline suggestions accelerate repetitive pattern implementation
-3.
-- **Manual review**: Always verify suggestions handle error cases and follow Rust best practices
-
-This hybrid approach captures the strengths of each tool while minimizing weaknesses.
-- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
-- **The best AI tools**: for this workflow understand these patterns and can generate idiomatic Rust code that follows best practices.
-- **While it may not**: always produce the most optimized async code, it significantly reduces typing overhead for standard patterns.
-
 ## Table of Contents
 
 - [Why AI Tools Matter for Axum Development](#why-ai-tools-matter-for-axum-development)

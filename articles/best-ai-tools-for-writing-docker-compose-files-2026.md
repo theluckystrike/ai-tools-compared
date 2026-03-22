@@ -19,15 +19,6 @@ Choose Claude Code for the best Docker Compose accuracy and context length—it 
 
 Claude Code generates production-ready compose files on first try approximately 85% of the time. Copilot needs 2-3 iterations for complex setups. Cursor sits between them, excelling at simple services but struggling with cross-service networking. All three handle basic web app stacks (Node, Python, DB) well.
 
-## Key Takeaways
-
-- **Cost**: Free tier available, $20/month for Claude backend.
-- **Choose Claude Code for the best Docker Compose accuracy and context length**: it handles multi-file setups, networking complexity, and environment configurations without context loss.
-- **Limitations**: Slower than IDE-based tools (30-60 seconds per request).
-- **Cost**: $20/month (Copilot subscription).
-- **Best For**: Full-time IDE use with good autocomplete, developers preferring Claude over OpenAI.
-- **Claude Code generates production-ready**: compose files on first try approximately 85% of the time.
-
 ## Table of Contents
 
 - [Docker Compose Challenges](#docker-compose-challenges)

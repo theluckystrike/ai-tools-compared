@@ -17,13 +17,6 @@ voice-checked: true
 
 AI tools can significantly accelerate the creation of data pipeline orchestration configurations for Prefect and Dagster. By understanding the structure of these frameworks and providing clear context about your pipelines, you can generate production-ready configs in minutes instead of hours.
 
-## Key Takeaways
-
-- **Prefect emphasizes flow-based definitions**: with explicit task dependencies, while Dagster uses a graph-based model with solid definitions for operations.
-- **The more context you**: provide about data sources, transformations, and execution environment, the better the generated configuration will be.
-- **Instead**: request that the tool use environment variables or secrets management patterns.
-- **This guide covers understanding**: prefect and dagster configuration patterns, generating prefect flow configurations, creating dagster asset definitions, with specific setup instructions
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

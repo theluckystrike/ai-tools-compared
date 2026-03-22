@@ -17,15 +17,6 @@ voice-checked: true
 
 To transfer Custom GPTs to Claude Projects, export your GPT's system prompt, knowledge files, and conversation starters, then recreate them as Claude Project resources in Claude.ai or as a CLAUDE.md file for Claude Code. The process has five steps: export the GPT configuration, organize your files locally, rebuild in Claude Projects, recreate conversation starters as prompt templates, and test for behavior parity. There is no direct migration tool, so each component must be extracted and reconstructed manually.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Restructure with XML tags**: for long prompts. Claude handles structured prompts well: ```xml <system_context> You are a specialized code review assistant focused on Python best practices.
-- **Does ChatGPT offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-
 ## Table of Contents
 
 - [Understanding What You Are Migrating](#understanding-what-you-are-migrating)

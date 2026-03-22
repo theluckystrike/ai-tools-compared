@@ -17,15 +17,6 @@ intent-checked: true
 
 Generating unit tests for legacy code is notoriously difficult because the original developers rarely documented their reasoning, and understanding the actual behavior (versus intended behavior) requires deep code review. AI tools now excel at this task by analyzing code structure, tracing data flow, and generating test cases that cover edge cases and error paths. The key challenge is selecting the right tool for your codebase—Copilot works best for quick incremental testing, Cursor excels at multi-file understanding, Claude handles complex architectural patterns, and Diffblue automates coverage metrics at scale.
 
-## Key Takeaways
-
-- **Generates a coverage report**: showing 87% line coverage, 95% branch coverage 5.
-- **Generated tests often achieve**: 70-80% branch coverage.
-- **Non-functional requirements**: Tests for "this must work in under 100ms" require manual specification.
-- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
-- **Many teams defer testing**: indefinitely because the effort seems disproportionate to perceived value.
-- **This happens because AI**: forces you to explicitly verify behavior through assertions.
-
 ## Table of Contents
 
 - [The Legacy Code Testing Problem](#the-legacy-code-testing-problem)

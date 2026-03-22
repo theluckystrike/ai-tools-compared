@@ -29,11 +29,6 @@ permalink: /ai-tools-for-generating-github-actions-composite-actions-2026/
 
 Composite actions are GitHub's answer to reusable CI/CD building blocks. Instead of copying YAML across repos, you version a single action and reference it everywhere. AI tools accelerate the boilerplate and catch mistakes faster than manual writing.
 
-## Key Takeaways
-
-- **Update docs**: Claude writes README explaining inputs/outputs
-
-```bash
 # Test locally with act
 act -j deploy-staging -s GITHUB_TOKEN=$GITHUB_TOKEN
 ```
@@ -48,8 +43,6 @@ act -j deploy-staging -s GITHUB_TOKEN=$GITHUB_TOKEN
 2.
 - **docker/build-push-action Uses multi-line inputs**: for complex Docker build arguments.
 - **Advanced GitHub Actions**: Reusable Workflows vs Composite Actions
-
-Built by theluckystrike — More at zovo.one
 
 
 ## Table of Contents
@@ -74,32 +67,32 @@ Composite actions bundle multiple shell commands or other actions into one reusa
 name: Deploy to Staging
 description: Build, test, and push to staging environment
 inputs:
-  aws-region:
-    description: AWS region
-    required: true
-    default: us-east-1
+ aws-region:
+ description: AWS region
+ required: true
+ default: us-east-1
 outputs:
-  deployment-url:
-    description: URL of deployed staging environment
-    value: ${{ steps.deploy.outputs.url }}
+ deployment-url:
+ description: URL of deployed staging environment
+ value: ${{ steps.deploy.outputs.url }}
 runs:
-  using: composite
-  steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-      with:
-        node-version: '20'
-    - run: npm install
-      shell: bash
-    - run: npm test
-      shell: bash
-    - run: npm run build
-      shell: bash
-    - id: deploy
-      run: |
-        URL=$(aws s3 sync dist/ s3://staging-bucket-${{ inputs.aws-region }} --region ${{ inputs.aws-region }} && echo "https://staging.example.com")
-        echo "url=$URL" >> $GITHUB_OUTPUT
-      shell: bash
+ using: composite
+ steps:
+ - uses: actions/checkout@v4
+ - uses: actions/setup-node@v4
+ with:
+ node-version: '20'
+ - run: npm install
+ shell: bash
+ - run: npm test
+ shell: bash
+ - run: npm run build
+ shell: bash
+ - id: deploy
+ run: |
+ URL=$(aws s3 sync dist/ s3://staging-bucket-${{ inputs.aws-region }} --region ${{ inputs.aws-region }} && echo "https://staging.example.com")
+ echo "url=$URL" >> $GITHUB_OUTPUT
+ shell: bash
 ```
 
 The challenge: wiring inputs to outputs, handling errors, escaping strings, and publishing to the Actions Marketplace correctly. AI tools shine here.
@@ -143,198 +136,198 @@ description: Run database migrations with rollback capability and pre-flight val
 author: theluckystrike
 
 inputs:
-  database-url:
-    description: Database connection string (supports PostgreSQL, MySQL)
-    required: true
-  migration-path:
-    description: Path to migration files (Flyway or Liquibase format)
-    required: true
-    default: 'db/migrations'
-  dry-run:
-    description: Run migration in dry-run mode without commits
-    required: false
-    default: 'false'
-  timeout-seconds:
-    description: Timeout for migration execution
-    required: false
-    default: '300'
-  notification-webhook:
-    description: Optional Slack webhook for notifications
-    required: false
+ database-url:
+ description: Database connection string (supports PostgreSQL, MySQL)
+ required: true
+ migration-path:
+ description: Path to migration files (Flyway or Liquibase format)
+ required: true
+ default: 'db/migrations'
+ dry-run:
+ description: Run migration in dry-run mode without commits
+ required: false
+ default: 'false'
+ timeout-seconds:
+ description: Timeout for migration execution
+ required: false
+ default: '300'
+ notification-webhook:
+ description: Optional Slack webhook for notifications
+ required: false
 
 outputs:
-  migration-status:
-    description: SUCCESS, FAILED, or ROLLED_BACK
-    value: ${{ steps.execute-migration.outputs.status }}
-  rows-affected:
-    description: Count of rows modified during migration
-    value: ${{ steps.execute-migration.outputs.rows-affected }}
-  rollback-available:
-    description: true if rollback script was created
-    value: ${{ steps.validate-rollback.outputs.available }}
-  execution-time-ms:
-    description: Milliseconds spent on migration
-    value: ${{ steps.execute-migration.outputs.time-ms }}
+ migration-status:
+ description: SUCCESS, FAILED, or ROLLED_BACK
+ value: ${{ steps.execute-migration.outputs.status }}
+ rows-affected:
+ description: Count of rows modified during migration
+ value: ${{ steps.execute-migration.outputs.rows-affected }}
+ rollback-available:
+ description: true if rollback script was created
+ value: ${{ steps.validate-rollback.outputs.available }}
+ execution-time-ms:
+ description: Milliseconds spent on migration
+ value: ${{ steps.execute-migration.outputs.time-ms }}
 
 runs:
-  using: composite
-  steps:
-    # Step 1: Validate inputs
-    - id: validate-inputs
-      run: |
-        if [[ -z "${{ inputs.database-url }}" ]]; then
-          echo "ERROR: database-url is required"
-          exit 1
-        fi
-        if [[ ! -d "${{ inputs.migration-path }}" ]]; then
-          echo "ERROR: migration-path '${{ inputs.migration-path }}' does not exist"
-          exit 1
-        fi
-        # Detect database type from connection string
-        if [[ "${{ inputs.database-url }}" == postgres* ]]; then
-          echo "db-type=postgresql" >> $GITHUB_OUTPUT
-        elif [[ "${{ inputs.database-url }}" == mysql* ]]; then
-          echo "db-type=mysql" >> $GITHUB_OUTPUT
-        else
-          echo "WARNING: Unknown database type, assuming PostgreSQL"
-          echo "db-type=postgresql" >> $GITHUB_OUTPUT
-        fi
-      shell: bash
+ using: composite
+ steps:
+ # Step 1: Validate inputs
+ - id: validate-inputs
+ run: |
+ if [[ -z "${{ inputs.database-url }}" ]]; then
+ echo "ERROR: database-url is required"
+ exit 1
+ fi
+ if [[ ! -d "${{ inputs.migration-path }}" ]]; then
+ echo "ERROR: migration-path '${{ inputs.migration-path }}' does not exist"
+ exit 1
+ fi
+ # Detect database type from connection string
+ if [[ "${{ inputs.database-url }}" == postgres* ]]; then
+ echo "db-type=postgresql" >> $GITHUB_OUTPUT
+ elif [[ "${{ inputs.database-url }}" == mysql* ]]; then
+ echo "db-type=mysql" >> $GITHUB_OUTPUT
+ else
+ echo "WARNING: Unknown database type, assuming PostgreSQL"
+ echo "db-type=postgresql" >> $GITHUB_OUTPUT
+ fi
+ shell: bash
 
-    # Step 2: Pre-flight checks
-    - id: preflight-checks
-      run: |
-        set +e  # Don't exit on first error, collect all
+ # Step 2: Pre-flight checks
+ - id: preflight-checks
+ run: |
+ set +e # Don't exit on first error, collect all
 
-        # Check database connectivity
-        if [[ "${{ steps.validate-inputs.outputs.db-type }}" == "postgresql" ]]; then
-          PGPASSWORD="${{ secrets.DB_PASSWORD }}" psql -h $(echo "${{ inputs.database-url }}" | cut -d'/' -f3) -d postgres -c "SELECT 1" > /dev/null 2>&1
-          if [[ $? -ne 0 ]]; then
-            echo "ERROR: Cannot connect to PostgreSQL database"
-            exit 1
-          fi
-        fi
+ # Check database connectivity
+ if [[ "${{ steps.validate-inputs.outputs.db-type }}" == "postgresql" ]]; then
+ PGPASSWORD="${{ secrets.DB_PASSWORD }}" psql -h $(echo "${{ inputs.database-url }}" | cut -d'/' -f3) -d postgres -c "SELECT 1" > /dev/null 2>&1
+ if [[ $? -ne 0 ]]; then
+ echo "ERROR: Cannot connect to PostgreSQL database"
+ exit 1
+ fi
+ fi
 
-        # Validate migration files exist
-        MIGRATION_COUNT=$(find "${{ inputs.migration-path }}" -name "V*.sql" -o -name "*.yaml" | wc -l)
-        if [[ $MIGRATION_COUNT -eq 0 ]]; then
-          echo "ERROR: No migration files found in ${{ inputs.migration-path }}"
-          exit 1
-        fi
-        echo "migrations-found=$MIGRATION_COUNT" >> $GITHUB_OUTPUT
-        echo "preflight-status=passed" >> $GITHUB_OUTPUT
-      shell: bash
+ # Validate migration files exist
+ MIGRATION_COUNT=$(find "${{ inputs.migration-path }}" -name "V*.sql" -o -name "*.yaml" | wc -l)
+ if [[ $MIGRATION_COUNT -eq 0 ]]; then
+ echo "ERROR: No migration files found in ${{ inputs.migration-path }}"
+ exit 1
+ fi
+ echo "migrations-found=$MIGRATION_COUNT" >> $GITHUB_OUTPUT
+ echo "preflight-status=passed" >> $GITHUB_OUTPUT
+ shell: bash
 
-    # Step 3: Execute migration (with timeout)
-    - id: execute-migration
-      timeout-minutes: 6  # Safety buffer above input timeout
-      run: |
-        START_TIME=$(date +%s%N)
+ # Step 3: Execute migration (with timeout)
+ - id: execute-migration
+ timeout-minutes: 6 # Safety buffer above input timeout
+ run: |
+ START_TIME=$(date +%s%N)
 
-        if [[ "${{ inputs.dry-run }}" == "true" ]]; then
-          DRY_RUN_FLAG="--dry-run"
-          echo "Running in DRY-RUN mode - no data will be committed"
-        else
-          DRY_RUN_FLAG=""
-        fi
+ if [[ "${{ inputs.dry-run }}" == "true" ]]; then
+ DRY_RUN_FLAG="--dry-run"
+ echo "Running in DRY-RUN mode - no data will be committed"
+ else
+ DRY_RUN_FLAG=""
+ fi
 
-        # Build migration command based on database type
-        if [[ "${{ steps.validate-inputs.outputs.db-type }}" == "postgresql" ]]; then
-          timeout ${{ inputs.timeout-seconds }}s \
-            flyway -url="${{ inputs.database-url }}" \
-                   -locations="filesystem:${{ inputs.migration-path }}" \
-                   migrate $DRY_RUN_FLAG \
-                   > migration-output.log 2>&1
-        else
-          timeout ${{ inputs.timeout-seconds }}s \
-            flyway -url="${{ inputs.database-url }}" \
-                   -locations="filesystem:${{ inputs.migration-path }}" \
-                   migrate $DRY_RUN_FLAG \
-                   > migration-output.log 2>&1
-        fi
+ # Build migration command based on database type
+ if [[ "${{ steps.validate-inputs.outputs.db-type }}" == "postgresql" ]]; then
+ timeout ${{ inputs.timeout-seconds }}s \
+ flyway -url="${{ inputs.database-url }}" \
+ -locations="filesystem:${{ inputs.migration-path }}" \
+ migrate $DRY_RUN_FLAG \
+ > migration-output.log 2>&1
+ else
+ timeout ${{ inputs.timeout-seconds }}s \
+ flyway -url="${{ inputs.database-url }}" \
+ -locations="filesystem:${{ inputs.migration-path }}" \
+ migrate $DRY_RUN_FLAG \
+ > migration-output.log 2>&1
+ fi
 
-        EXIT_CODE=$?
-        END_TIME=$(date +%s%N)
-        ELAPSED_MS=$(( (END_TIME - START_TIME) / 1000000 ))
+ EXIT_CODE=$?
+ END_TIME=$(date +%s%N)
+ ELAPSED_MS=$(( (END_TIME - START_TIME) / 1000000 ))
 
-        if [[ $EXIT_CODE -eq 124 ]]; then
-          echo "status=FAILED" >> $GITHUB_OUTPUT
-          echo "error=Migration timeout after ${{ inputs.timeout-seconds }} seconds" >> $GITHUB_OUTPUT
-          exit 1
-        elif [[ $EXIT_CODE -ne 0 ]]; then
-          echo "status=FAILED" >> $GITHUB_OUTPUT
-          LAST_ERROR=$(tail -20 migration-output.log | tr '\n' ' ')
-          echo "error=$LAST_ERROR" >> $GITHUB_OUTPUT
-          exit 1
-        else
-          echo "status=SUCCESS" >> $GITHUB_OUTPUT
-        fi
+ if [[ $EXIT_CODE -eq 124 ]]; then
+ echo "status=FAILED" >> $GITHUB_OUTPUT
+ echo "error=Migration timeout after ${{ inputs.timeout-seconds }} seconds" >> $GITHUB_OUTPUT
+ exit 1
+ elif [[ $EXIT_CODE -ne 0 ]]; then
+ echo "status=FAILED" >> $GITHUB_OUTPUT
+ LAST_ERROR=$(tail -20 migration-output.log | tr '\n' ' ')
+ echo "error=$LAST_ERROR" >> $GITHUB_OUTPUT
+ exit 1
+ else
+ echo "status=SUCCESS" >> $GITHUB_OUTPUT
+ fi
 
-        echo "time-ms=$ELAPSED_MS" >> $GITHUB_OUTPUT
+ echo "time-ms=$ELAPSED_MS" >> $GITHUB_OUTPUT
 
-        # Parse rows affected (database-specific)
-        if [[ "${{ steps.validate-inputs.outputs.db-type }}" == "postgresql" ]]; then
-          ROWS=$(grep -oP 'INSERT.*\K\d+' migration-output.log | head -1 || echo "0")
-        else
-          ROWS=$(grep -oP 'affected\s+\K\d+' migration-output.log | head -1 || echo "0")
-        fi
-        echo "rows-affected=$ROWS" >> $GITHUB_OUTPUT
-      shell: bash
-      continue-on-error: true
+ # Parse rows affected (database-specific)
+ if [[ "${{ steps.validate-inputs.outputs.db-type }}" == "postgresql" ]]; then
+ ROWS=$(grep -oP 'INSERT.*\K\d+' migration-output.log | head -1 || echo "0")
+ else
+ ROWS=$(grep -oP 'affected\s+\K\d+' migration-output.log | head -1 || echo "0")
+ fi
+ echo "rows-affected=$ROWS" >> $GITHUB_OUTPUT
+ shell: bash
+ continue-on-error: true
 
-    # Step 4: Validate rollback capability
-    - id: validate-rollback
-      run: |
-        if [[ "${{ steps.execute-migration.outputs.status }}" == "SUCCESS" ]]; then
-          # Check if rollback script exists
-          ROLLBACK_SCRIPT="db/migrations/undo-migration-$(date +%Y%m%d%H%M%S).sql"
-          if [[ -f "db/rollback.sql" ]]; then
-            echo "available=true" >> $GITHUB_OUTPUT
-          else
-            echo "available=false" >> $GITHUB_OUTPUT
-          fi
-        else
-          echo "available=false" >> $GITHUB_OUTPUT
-        fi
-      shell: bash
+ # Step 4: Validate rollback capability
+ - id: validate-rollback
+ run: |
+ if [[ "${{ steps.execute-migration.outputs.status }}" == "SUCCESS" ]]; then
+ # Check if rollback script exists
+ ROLLBACK_SCRIPT="db/migrations/undo-migration-$(date +%Y%m%d%H%M%S).sql"
+ if [[ -f "db/rollback.sql" ]]; then
+ echo "available=true" >> $GITHUB_OUTPUT
+ else
+ echo "available=false" >> $GITHUB_OUTPUT
+ fi
+ else
+ echo "available=false" >> $GITHUB_OUTPUT
+ fi
+ shell: bash
 
-    # Step 5: Notify Slack (optional)
-    - id: notify-slack
-      if: inputs.notification-webhook != ''
-      run: |
-        STATUS="${{ steps.execute-migration.outputs.status }}"
-        COLOR=$([ "$STATUS" = "SUCCESS" ] && echo "good" || echo "danger")
+ # Step 5: Notify Slack (optional)
+ - id: notify-slack
+ if: inputs.notification-webhook != ''
+ run: |
+ STATUS="${{ steps.execute-migration.outputs.status }}"
+ COLOR=$([ "$STATUS" = "SUCCESS" ] && echo "good" || echo "danger")
 
-        curl -X POST "${{ inputs.notification-webhook }}" \
-          -H 'Content-Type: application/json' \
-          -d "{
-            \"attachments\": [{
-              \"color\": \"$COLOR\",
-              \"title\": \"Database Migration: $STATUS\",
-              \"fields\": [
-                {\"title\": \"Rows Affected\", \"value\": \"${{ steps.execute-migration.outputs.rows-affected }}\", \"short\": true},
-                {\"title\": \"Time\", \"value\": \"${{ steps.execute-migration.outputs.time-ms }}ms\", \"short\": true},
-                {\"title\": \"Repository\", \"value\": \"${{ github.repository }}\", \"short\": true}
-              ]
-            }]
-          }"
-      shell: bash
-      continue-on-error: true
+ curl -X POST "${{ inputs.notification-webhook }}" \
+ -H 'Content-Type: application/json' \
+ -d "{
+ \"attachments\": [{
+ \"color\": \"$COLOR\",
+ \"title\": \"Database Migration: $STATUS\",
+ \"fields\": [
+ {\"title\": \"Rows Affected\", \"value\": \"${{ steps.execute-migration.outputs.rows-affected }}\", \"short\": true},
+ {\"title\": \"Time\", \"value\": \"${{ steps.execute-migration.outputs.time-ms }}ms\", \"short\": true},
+ {\"title\": \"Repository\", \"value\": \"${{ github.repository }}\", \"short\": true}
+ ]
+ }]
+ }"
+ shell: bash
+ continue-on-error: true
 
-    # Step 6: Generate summary report
-    - run: |
-        echo "## Migration Report" >> $GITHUB_STEP_SUMMARY
-        echo "" >> $GITHUB_STEP_SUMMARY
-        echo "- **Status**: ${{ steps.execute-migration.outputs.status }}" >> $GITHUB_STEP_SUMMARY
-        echo "- **Rows Affected**: ${{ steps.execute-migration.outputs.rows-affected }}" >> $GITHUB_STEP_SUMMARY
-        echo "- **Time**: ${{ steps.execute-migration.outputs.time-ms }}ms" >> $GITHUB_STEP_SUMMARY
-        echo "- **Rollback Available**: ${{ steps.validate-rollback.outputs.available }}" >> $GITHUB_STEP_SUMMARY
+ # Step 6: Generate summary report
+ - run: |
+ echo "## Migration Report" >> $GITHUB_STEP_SUMMARY
+ echo "" >> $GITHUB_STEP_SUMMARY
+ echo "- **Status**: ${{ steps.execute-migration.outputs.status }}" >> $GITHUB_STEP_SUMMARY
+ echo "- **Rows Affected**: ${{ steps.execute-migration.outputs.rows-affected }}" >> $GITHUB_STEP_SUMMARY
+ echo "- **Time**: ${{ steps.execute-migration.outputs.time-ms }}ms" >> $GITHUB_STEP_SUMMARY
+ echo "- **Rollback Available**: ${{ steps.validate-rollback.outputs.available }}" >> $GITHUB_STEP_SUMMARY
 
-        if [[ "${{ steps.execute-migration.outputs.status }}" != "SUCCESS" ]]; then
-          echo "- **Error**: ${{ steps.execute-migration.outputs.error }}" >> $GITHUB_STEP_SUMMARY
-          exit 1
-        fi
-      shell: bash
+ if [[ "${{ steps.execute-migration.outputs.status }}" != "SUCCESS" ]]; then
+ echo "- **Error**: ${{ steps.execute-migration.outputs.error }}" >> $GITHUB_STEP_SUMMARY
+ exit 1
+ fi
+ shell: bash
 ```
 
 ### Key Features Claude Explained
@@ -372,39 +365,39 @@ GPT-4 generates working composite actions fast, though less detailed than Claude
 name: Deploy to Lambda
 description: Deploy Node.js function to AWS Lambda using SAM
 inputs:
-  function-name:
-    required: true
-  aws-region:
-    required: true
-    default: us-east-1
-  dry-run:
-    required: false
-    default: 'false'
+ function-name:
+ required: true
+ aws-region:
+ required: true
+ default: us-east-1
+ dry-run:
+ required: false
+ default: 'false'
 outputs:
-  function-arn:
-    value: ${{ steps.deploy.outputs.arn }}
-  deployment-status:
-    value: ${{ steps.deploy.outputs.status }}
+ function-arn:
+ value: ${{ steps.deploy.outputs.arn }}
+ deployment-status:
+ value: ${{ steps.deploy.outputs.status }}
 runs:
-  using: composite
-  steps:
-    - uses: actions/checkout@v4
-    - uses: aws-actions/configure-aws-credentials@v2
-      with:
-        aws-region: ${{ inputs.aws-region }}
-    - run: sam build
-      shell: bash
-    - id: deploy
-      run: |
-        if [[ "${{ inputs.dry-run }}" == "true" ]]; then
-          sam deploy --guided --no-confirm-changeset
-        else
-          sam deploy --no-prompts
-        fi
-        ARN=$(aws lambda get-function --function-name ${{ inputs.function-name }} --query 'Configuration.FunctionArn' --output text)
-        echo "arn=$ARN" >> $GITHUB_OUTPUT
-        echo "status=SUCCESS" >> $GITHUB_OUTPUT
-      shell: bash
+ using: composite
+ steps:
+ - uses: actions/checkout@v4
+ - uses: aws-actions/configure-aws-credentials@v2
+ with:
+ aws-region: ${{ inputs.aws-region }}
+ - run: sam build
+ shell: bash
+ - id: deploy
+ run: |
+ if [[ "${{ inputs.dry-run }}" == "true" ]]; then
+ sam deploy --guided --no-confirm-changeset
+ else
+ sam deploy --no-prompts
+ fi
+ ARN=$(aws lambda get-function --function-name ${{ inputs.function-name }} --query 'Configuration.FunctionArn' --output text)
+ echo "arn=$ARN" >> $GITHUB_OUTPUT
+ echo "status=SUCCESS" >> $GITHUB_OUTPUT
+ shell: bash
 ```
 
 GPT-4 nails the basics but misses error handling details Claude would add.
@@ -448,13 +441,13 @@ Here are actual actions worth studying:
 ### 1. setup-node (5.9M+ weekly downloads)
 ```yaml
 runs:
-  using: composite
-  steps:
-    - run: |
-        REGISTRY=$(echo "${{ inputs.registry-url }}" | sed 's|https://||g')
-        # Complex .npmrc handling
-        echo "registry=$REGISTRY" >> .npmrc
-      shell: bash
+ using: composite
+ steps:
+ - run: |
+ REGISTRY=$(echo "${{ inputs.registry-url }}" | sed 's|https://||g')
+ # Complex .npmrc handling
+ echo "registry=$REGISTRY" >> .npmrc
+ shell: bash
 ```
 
 **Why it works:** Handles edge cases (registry URL format), provides clear outputs.
@@ -474,19 +467,19 @@ name: My Action
 description: One-sentence description
 author: your-github-username
 branding:
-  icon: 'box'
-  color: 'blue'
+ icon: 'box'
+ color: 'blue'
 
 inputs:
-  param-name:
-    description: What this does
-    required: false
-    default: 'value'
+ param-name:
+ description: What this does
+ required: false
+ default: 'value'
 
 outputs:
-  result:
-    description: What this returns
-    value: ${{ steps.step-id.outputs.result }}
+ result:
+ description: What this returns
+ value: ${{ steps.step-id.outputs.result }}
 ```
 
 **Marketplace requirements:**

@@ -17,15 +17,6 @@ voice-checked: true
 
 Load testing is where AI assistance genuinely saves time — the boilerplate is repetitive, the configuration options are numerous, and the failure modes are hard to predict without experience. This guide compares three approaches: using Claude to generate k6 scripts, using Grafana Cloud k6's AI-assisted test builder, and using purpose-built AI load testing tools.
 
-## Key Takeaways
-
-- **The output requires manual**: review but saves 60-70% of scripting time for complex multi-step flows.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-- **Use AI-generated tests as**: a starting point, then add cases that cover your unique requirements and failure modes.
-- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-- **Useful for a quick**: smoke test; not useful for realistic load simulation.
-- **the first tool and**: the second tool serve different strengths, so combining them can cover more use cases than relying on either one alone.
-
 ## What Makes a Good AI-Generated Load Test
 
 A load test that just hammers an endpoint is easy to write. A useful load test requires:

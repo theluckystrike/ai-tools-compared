@@ -18,15 +18,6 @@ voice-checked: true
 
 Use Claude Code or Cursor if you need test autocomplete that understands expected behavior and suggests meaningful assertions. GitHub Copilot provides an useful baseline but tends to generate overly generic test code. The key difference in test autocomplete quality lies in contextual awareness—the best tools analyze function signatures, docstrings, and expected behavior to suggest assertions that validate correctness rather than just syntactic correctness.
 
-## Key Takeaways
-
-- **Codeium typically responds fastest**: often within 100ms.
-- **A Copilot suggestion that**: takes 200ms but requires three rounds of editing to become useful costs more total time than a Claude Code suggestion that takes 800ms but is correct on first generation.
-- **GitHub Copilot averages 200-400ms**: for suggestions.
-- **Cursor and Claude Code**: may take 500ms or longer but provide more complete suggestions that often require fewer overall interactions.
-- **A test named `test_calculate_discount_with_zero_price_returns_zero`**: will consistently receive better suggestions than one named `test_4`.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-
 ## Table of Contents
 
 - [What Makes Test Autocomplete Different](#what-makes-test-autocomplete-different)

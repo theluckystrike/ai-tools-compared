@@ -18,15 +18,6 @@ voice-checked: true
 
 AI tools can generate complete Jest integration test files for Express routes with proper mocking of database services, error scenario coverage, and supertest HTTP assertions, eliminating hours of manual boilerplate writing. By providing your route handler code and specifying what your routes expect (authentication requirements, request payloads, error conditions), Claude or ChatGPT produces test suites with fixtures, parameterized tests for edge cases, and assertions that verify both response status and body content. These generated tests cover success paths, 404/401/400 error scenarios, and service failures, allowing you to focus on adding project-specific test cases rather than writing the foundational test infrastructure from scratch.
 
-## Key Takeaways
-
-- **Cover**: GET /:id returning 200 with user object, 404 when not found, 500 on service error.
-- **The tests verify 404**: responses when users don't exist and 500 responses when services fail.
-- Mock `userService` using `jest.mock`.
-- Use `beforeEach` to clear mocks.
-- **Assert both status codes**: and response body shapes." The strong prompt tells the AI exactly which scenarios to cover and which testing patterns to use.
-- **In the example**: `userService` is mocked so tests run fast and don't require an actual database connection.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)

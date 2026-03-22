@@ -32,15 +32,6 @@ intent-checked: true
 
 CI/CD pipeline configuration is one of the highest-value applications for AI coding assistants. Pipelines follow predictable patterns—checkout, install dependencies, run tests, build artifacts, deploy—yet require specific syntax for each platform. GitHub Actions uses YAML with different conventions than GitLab CI or CircleCI, and manually translating between them wastes engineering time. Modern AI assistants understand all major CI/CD platforms well enough to generate working pipelines that pass security scanning and handle edge cases like secrets management, artifact caching, and matrix builds.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Iterate on failures (usually**: 1-2 rounds) For most teams, moving from manual pipeline writing to AI-assisted generation reduces pipeline development time by 70-80%.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **GitHub Actions uses YAML**: with different conventions than GitLab CI or CircleCI, and manually translating between them wastes engineering time.
-
 ## Table of Contents
 
 - [Why AI Excels at Pipeline Generation](#why-ai-excels-at-pipeline-generation)

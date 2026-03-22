@@ -18,17 +18,6 @@ voice-checked: true
 
 Finding affordable AI tools requires understanding the true cost structure. This guide breaks down the cheapest options and explains what you get at each price point.
 
-## Key Takeaways
-
-- **Use Claude Code (free)**: for initial code review $ claude "review my API endpoints for security issues" # 2.
-- **Use Claude Code as your primary tool**: It handles 90% of coding tasks for free
-
-2.
-- **If you have used**: the tool for at least 3 months and plan to continue, the annual discount usually makes sense.
-- **Understanding these options helps**: you choose the most cost-effective approach for your workflow.
-- **At approximately $0.25 per**: million input tokens and $1.25 per million output tokens, Haiku offers the lowest API costs.
-- **Usage limits apply**: heavy daily usage will eventually hit the free cap, at which point you either wait until the next day or upgrade to the paid Max plan.
-
 ## Table of Contents
 
 - [Understanding Claude's Pricing Structure](#understanding-claudes-pricing-structure)

@@ -18,15 +18,6 @@ intent-checked: true
 
 Distributed tracing has become essential for understanding how requests flow through microservices architectures. When your application spans dozens of services, finding the root cause of slow responses requires more than logs or metrics alone. This is where AI-powered trace analysis tools come into play.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **While primarily focused on**: CPU and memory profiling, their trace integration allows you to correlate performance spikes with specific function calls.
-- **It then identifies that**: 80% of the request time is spent in the `inventory-service`, specifically in database queries.
-- **Configure sampling intelligently**: capture 100% of errors, 10% of slow requests, and 1% of normal traffic.
-
 ## Table of Contents
 
 - [What Are Trace-Based Performance Analyzers?](#what-are-trace-based-performance-analyzers)

@@ -17,15 +17,6 @@ voice-checked: true
 
 Choose Cognigy if you need maximum extensibility through its SDK and Cognigy Script, deep enterprise integrations with SAP and ServiceNow, on-premises deployment, or support for 80+ languages. Choose Boost AI if you prioritize fast no-code deployment, operate in Nordic or European markets, or want ML-driven intent recognition with minimal developer overhead. Both serve the enterprise virtual agent space, but Cognigy favors programmatic control while Boost AI emphasizes rapid time-to-production.
 
-## Key Takeaways
-
-- **Choose Cognigy if you**: need maximum extensibility through its SDK and Cognigy Script, deep enterprise integrations with SAP and ServiceNow, on-premises deployment, or support for 80+ languages.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-- **Choose Boost AI if**: you prioritize fast no-code deployment, operate in Nordic or European markets, or want ML-driven intent recognition with minimal developer overhead.
-- **Their platform focuses on**: the Nordic and European enterprise market, with strong capabilities in multilingual deployments.
-- **The Boost AI architecture**: uses a concept called Topics to organize conversation flows, with an underlying NLU engine that handles intent recognition and entity extraction.
-
 ## Platform Architecture Overview
 
 

@@ -20,15 +20,6 @@ Write custom instructions for AI tools by specifying all required security heade
 
 This guide shows you how to create effective custom instructions for AI coding tools that enforce your security header standards across all projects.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories.
-- Use appropriate framework-specific implementations.
-- **For Express.js**: use helmet with explicit configuration.
-- **Use framework-native middleware or**: established libraries like helmet for Node.js.
-- **Rather than weakening your base instructions**: create supplementary rules for specific use cases.
-- **Use a centralized location**: that applies to all repositories, or explicitly document where instructions live in each project.
-
 ## Why Security Headers Need Explicit Instructions
 
 
@@ -288,7 +279,7 @@ curl -I https://yourdomain.com
 # X-Frame-Options: DENY
 ```
 
-For a comprehensive grade, submit your domain to securityheaders.com or run Mozilla Observatory against it. An A or A+ rating indicates your headers are complete and correctly configured.
+For a grade, submit your domain to securityheaders.com or run Mozilla Observatory against it. An An or A+ rating indicates your headers are complete and correctly configured.
 
 
 ## Maintaining Security Header Instructions

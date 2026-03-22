@@ -18,15 +18,6 @@ voice-checked: true
 
 Enterprise security teams face unique challenges when developers adopt AI coding assistant browser extensions. These tools boost productivity but introduce data leakage risks that traditional DLP solutions fail to address. This guide provides practical rules and implementation strategies for securing AI coding assistants in enterprise environments.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **A rule that developers**: bypass is worse than no rule at all, because it creates a false sense of security.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **If developers are using**: personal or free-tier accounts, treat every outbound request as if data retention is unlimited.
-- **Aim for a false**: positive rate below 2% before deploying any new pattern to production.
-- **Build a regression test**: suite that covers your top 50 most common code patterns.
-
 ## Table of Contents
 
 - [Understanding the Threat Model](#understanding-the-threat-model)

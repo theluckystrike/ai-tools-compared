@@ -17,15 +17,6 @@ voice-checked: true
 
 Write CursorRules for Go projects by explicitly defining goroutine lifecycle management, channel usage patterns, and error propagation strategies. These rules ensure AI generates code following Go's idiomatic concurrency model rather than generic async patterns—specifying exact requirements for sync.WaitGroup usage, error channels, worker pool patterns, and proper cleanup to prevent subtle concurrency bugs.
 
-## Key Takeaways
-
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Does Cursor offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-- **Whether you use a**: simple channel-based approach or a library like errgroup for parallel operation coordination, the AI needs explicit instructions to match your implementation.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-
 ## Table of Contents
 
 - [Why CursorRules Matter for Go Projects](#why-cursorrules-matter-for-go-projects)

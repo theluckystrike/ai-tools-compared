@@ -18,16 +18,6 @@ intent-checked: true
 
 Building Retool applications often involves writing complex resource queries to fetch, filter, and transform data. While Retool's query builders simplify many tasks, translating business requirements into SQL or REST API calls still requires significant developer effort. AI-powered tools now promise to automate this translation process, converting natural language descriptions directly into functional Retool resource queries. This article compares the leading solutions and evaluates their practical effectiveness.
 
-## Key Takeaways
-
-- **GitHub Copilot**: $10–20/month for IDE integration; free for public repositories.
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Average cost**: $0.05–0.15 per query generation session.
-- **ChatGPT API (GPT-4)**: $0.03–0.06 per 1K input tokens, $0.06–0.12 per 1K output tokens.
-- **Similar query cost profile**: ~$0.10–0.20 per session.
-- Calls /api/users with limit=100
-2.
-
 ## Table of Contents
 
 - [Understanding the Challenge](#understanding-the-challenge)

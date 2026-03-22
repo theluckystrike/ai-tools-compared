@@ -303,6 +303,7 @@ Target accuracy: >90% on seen error types (similarity path), >75% on novel error
 - [How to Build Semantic Search with Embeddings](/ai-tools-compared/how-to-build-semantic-search-with-embeddings/)
 - [AI-Powered Observability Configuration Tools](/ai-tools-compared/ai-powered-observability-configuration-tools-2026/)
 - [How to Build AI-Powered CLI Tools](/ai-tools-compared/how-to-build-ai-powered-cli-tools-2026/)
+- [How to Build AI-Powered Code Formatters](/ai-tools-compared/build-ai-powered-code-formatters/)
 
 ---
 

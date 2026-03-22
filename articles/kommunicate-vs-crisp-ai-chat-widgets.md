@@ -18,15 +18,6 @@ voice-checked: true
 
 Choose Kommunicate if you need a visual bot builder for complex customer support workflows, full automation with human handoff, or dedicated AI training on your FAQ content. Choose Crisp if you want unified messaging across email, chat, and social channels, prefer AI that assists agents rather than replacing them, or need a budget-friendly option starting at 25 euros per month. Kommunicate offers deeper automation tools, while Crisp provides an improved approach better suited for smaller teams or simpler requirements.
 
-## Key Takeaways
-
-- **If you're building a**: fully automated first-tier support bot that handles 80%+ of inquiries without human involvement, Kommunicate's pricing is reasonable for what you get.
-- **Choose Kommunicate if you**: need a visual bot builder for complex customer support workflows, full automation with human handoff, or dedicated AI training on your FAQ content.
-- **Both platforms claim 99.9%**: uptime SLAs on paid plans.
-- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
-- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-- **Kommunicate offers deeper automation**: tools, while Crisp provides an improved approach better suited for smaller teams or simpler requirements.
-
 ## Table of Contents
 
 - [Installation and Integration](#installation-and-integration)

@@ -17,18 +17,6 @@ voice-checked: true
 
 Transfer your Cursor Composer prompts to Claude Code by converting reusable prompts into skill files in `~/.claude/skills/`, migrating `.cursorrules` into a `.claude.md` project file, and using the `-p` flag for one-off prompts. The key adaptation is shifting from Cursor's conversational prompt style to Claude Code's imperative, declarative instruction format stored as Markdown skill definitions.
 
-## Key Takeaways
-
-- **Start with your most-used prompts**: convert them to skills, and expand your library as you discover new patterns.
-- Profile your most-used prompts.
-- **Start a session with relevant context**: then invoke the skill:
-
-```bash
-claude -p "Here is my project structure: $(find .
-- **Use the `generate-component` skill**: with the component name 2.
-- **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
-- **Claude Code skills work**: best when they capture the complete workflow in a single definition.
-
 ## Table of Contents
 
 - [Understanding the Fundamental Differences](#understanding-the-fundamental-differences)

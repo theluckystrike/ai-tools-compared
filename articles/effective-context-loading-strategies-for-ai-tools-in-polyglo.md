@@ -17,15 +17,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Modern software projects increasingly span multiple programming languages. A typical stack might combine Python data processing, TypeScript frontends, Rust performance components, and Go microservices. This polyglot reality creates unique challenges for AI coding assistants that rely on context windows to understand and generate code.
 
-## Key Takeaways
-
-- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
-- **Stale dependency graphs are worse than none**: they cause AI tools to generate code targeting the wrong communication pattern.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **Mastering advanced features takes**: 1-2 weeks of regular use.
-- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-
 ## Table of Contents
 
 - [The Polyglot Context Problem](#the-polyglot-context-problem)

@@ -19,15 +19,6 @@ Write custom instructions for AI coding tools by defining your error response sc
 
 This guide shows you practical techniques for writing custom instructions that ensure AI-generated error handling code always follows your error response schema.
 
-## Key Takeaways
-
-- **Use custom error classes**: extending Error 2.
-- **Create a clear mapping**: ```
-Error codes must use UPPERCASE_WITH_UNDERSCORES format.
-- **For critical schema enforcement**: project-level config files are the most reliable mechanism.
-- **Provide examples for each**: language you use.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)

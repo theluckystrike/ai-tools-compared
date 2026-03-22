@@ -28,19 +28,6 @@ For proprietary code, running CodeLlama locally is the better choice if data sec
 | Offline Support | Full offline capability | Requires internet |
 | Best For | Regulated industries, NDA code | General development, speed |
 
-## Key Takeaways
-
-- **Response times typically stay**: under 500ms for most completions.
-- **Your code genuinely isn't sensitive
-- Open source projects, internal tools, learning exercises
-- Copilot is faster and better quality**: no reason to handicap yourself
-
-3.
-- **For proprietary code**: running CodeLlama locally is the better choice if data security is your priority, while GitHub Copilot is better if you prefer convenience and AI features.
-- **The training data includes**: millions of open-source examples, so common patterns receive strong recommendations.
-- **Some developers use Copilot**: for open-source work while running CodeLlama locally for sensitive projects.
-- **Be concise and output**: only code without explanation." } ``` For Neovim, use cmp-ollama or similar completion plugin configured to point to localhost:11434.
-
 ## Table of Contents
 
 - [Understanding the Fundamental Difference](#understanding-the-fundamental-difference)

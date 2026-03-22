@@ -21,15 +21,6 @@ Flaky integration tests represent one of the most frustrating challenges in CI/C
 
 This guide demonstrates practical techniques for using AI to debug flaky integration tests in CI pipelines, with concrete examples you can apply immediately.
 
-## Key Takeaways
-
-- **This exercise often reveals**: that 60-70% of flaky tests share just 2-3 root causes, making systematic fixes far more efficient than addressing each test individually.
-- **What are the most**: likely causes and recommended fixes? ``` The second prompt gives the AI framework version, infrastructure topology, parallelism configuration, exact failure message, and test logic.
-- **Flaky integration tests represent**: one of the most frustrating challenges in CI/CD pipelines.
-- **The test fails roughly**: 20% of the time with 404 errors.
-- **Recommended fixes**: 1.
-- **Check if your database**: uses async replication 3.
-
 ## Table of Contents
 
 - [Understanding Flaky Test Patterns](#understanding-flaky-test-patterns)

@@ -19,15 +19,6 @@ Choose Claude for more accurate summaries of earnings calls with better financia
 
 This comparison focuses on practical implementation—how each model handles transcript structure, extracts key metrics, and integrates into your existing code.
 
-## Key Takeaways
-
-- **Choose Claude for more**: accurate summaries of earnings calls with better financial terminology understanding and nuanced insights.
-- **What is the best**: way to handle very long transcripts that exceed context limits? For Claude (200K limit), most earnings call transcripts fit comfortably.
-- **This comparison focuses on practical implementation**: how each model handles transcript structure, extracts key metrics, and integrates into your existing code.
-- **At scale**: processing 1,000 transcripts monthly with Gemini 2.5 Pro can cost 40-60% less than equivalent Claude Sonnet processing, depending on transcript length and output verbosity.
-- **Choose Gemini if you**: need faster processing of multiple transcripts and don't need maximum accuracy.
-- **The Q&A section is often where the most actionable information appears**: executives answering probing questions about guidance, margin pressure, or competitive dynamics.
-
 ## Table of Contents
 
 - [Understanding the Task](#understanding-the-task)

@@ -18,19 +18,6 @@ voice-checked: true
 
 Finding affordable AI tools requires understanding the true cost structure. This guide breaks down the cheapest options and explains what you get at each price point.
 
-## Key Takeaways
-
-- **If you have used**: the tool for at least 3 months and plan to continue, the annual discount usually makes sense.
-- **Zero Retention**: Commitment that your code won't be used for AI training
-
-4.
-- **No Training Data**: Your code is never used to train or improve AI models
-
-4.
-- **Is the annual plan**: worth it over monthly billing? Annual plans typically save 15-30% compared to monthly billing.
-- **Discounts of 25-50% are**: common for qualifying organizations.
-- **This is important because**: some competing AI coding tools charge extra for enhanced privacy features.
-
 ## Table of Contents
 
 - [Understanding Cursor Pro's Privacy Features](#understanding-cursor-pros-privacy-features)

@@ -14,20 +14,12 @@ voice-checked: true
 tags: [ai-tools-compared, comparison, swagger, openapi, api-documentation, developer-tools]
 ---
 
-Claude 3 Opus excels at generating complete Swagger/OpenAPI specs from code comments and natural language descriptions. GPT-4 produces cleaner endpoint descriptions and example payloads but requires more revision cycles. GitHub Copilot integrates seamlessly into VS Code but struggles with complex nested schemas. For serious API documentation projects, Claude's context window and understanding of API design patterns justify its $20/month cost. GPT-4 fits teams needing batch documentation generation. Copilot shines for quick inline specs within your IDE.
-
-## Key Takeaways
-
-- **Claude 3 Opus** generates production-ready Swagger specs with 85% accuracy on first pass. Context window handles 100+ endpoints per session.
-- **GPT-4 Turbo** produces more readable descriptions but requires 2-3 revision rounds. Better for narrative-heavy documentation.
-- **GitHub Copilot** integrates directly into VS Code but limited to simple endpoint documentation. Struggles with schema relationships and authentication flows.
-- **Cost**: Claude ($20/month), GPT-4 (API pay-per-use ~$0.03/1K input tokens), Copilot ($10-19/month).
-- **Best choice**: Claude for bulk API documentation projects. GPT-4 for high-quality descriptions. Copilot for quick inline specs.
+Claude 3 Opus excels at generating complete Swagger/OpenAPI specs from code comments and natural language descriptions. GPT-4 produces cleaner endpoint descriptions and example payloads but requires more revision cycles. GitHub Copilot integrates into VS Code but struggles with complex nested schemas. For serious API documentation projects, Claude's context window and understanding of API design patterns justify its $20/month cost. GPT-4 fits teams needing batch documentation generation. Copilot shines for quick inline specs within your IDE.
 
 ## Table of Contents
 
 - [Understanding Swagger/OpenAPI Generation Challenges](#understanding-swaggeropenapi-generation-challenges)
-- [Claude 3 Opus: Comprehensive Spec Generation](#claude-3-opus-comprehensive-spec-generation)
+- [Claude 3 Opus: Spec Generation](#claude-3-opus--spec-generation)
 - [GPT-4 Turbo: High-Quality Descriptions](#gpt-4-turbo-high-quality-descriptions)
 - [GitHub Copilot: IDE-Native Autocomplete](#github-copilot-ide-native-autocomplete)
 - [Real-World Implementation: Building a Complete API Spec](#real-world-implementation-building-a-complete-api-spec)
@@ -44,7 +36,7 @@ AI tools can accelerate this process dramatically. Rather than manually typing o
 
 Three major AI platforms target this use case: Claude's powerful context model, OpenAI's GPT-4 with broad API knowledge, and GitHub's Copilot with IDE integration.
 
-## Claude 3 Opus: Comprehensive Spec Generation
+## Claude 3 Opus: Spec Generation
 
 Claude excels at understanding complex API architectures and translating them into well-structured Swagger specs. The 200K context window means you can feed multiple source files, existing documentation, and detailed requirements simultaneously.
 

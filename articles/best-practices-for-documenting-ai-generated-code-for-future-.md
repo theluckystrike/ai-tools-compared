@@ -28,16 +28,6 @@ voice-checked: true
 
 Add comments explaining design decisions and tradeoffs for every AI-generated function; document the AI prompt used so future developers understand the requirements. Include examples showing how to use the code correctly. Mark AI-generated sections with `// AI-generated:` comments. Document assumptions about context, error conditions, and performance characteristics. This guide covers strategies for documenting AI code for long-term team maintenance.
 
-## Key Takeaways
-
-- **Can I use these**: tools with a distributed team across time zones? Most modern tools support asynchronous workflows that work well across time zones.
-- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
-- **Add comments explaining design**: decisions and tradeoffs for every AI-generated function; document the AI prompt used so future developers understand the requirements.
-- **Include examples showing how**: to use the code correctly.
-- **Handles null displayName by**: falling back * to username.
-- **Does NOT validate email format**: that validation happens in the
- * downstream user-registration service.
-
 ## Table of Contents
 
 - [Why AI-Generated Code Needs Extra Documentation](#why-ai-generated-code-needs-extra-documentation)

@@ -17,17 +17,6 @@ voice-checked: true
 
 To move Stable Diffusion workflows to Midjourney, convert weighted prompt syntax to Midjourney's `::` weight system, replace explicit sampler and CFG settings with `--stylize` and `--quality` flags, and swap ControlNet for `--cref` and `--sref` reference parameters. The core shift is from parameter-heavy configuration to descriptive, flag-based prompt construction. This guide provides the complete syntax mappings, parameter equivalents, and workflow adaptation patterns you need.
 
-## Key Takeaways
-
-- **Midjourney uses `--cfg` with**: a similar effective range: ``` /imagine prompt: cyberpunk city at night --cfg 8 ``` For most prompts, values between 5-12 produce consistent results.
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Does Midjourney offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **However**: you can control iteration behavior:
-
-Midjourney uses `--quality` or `--q` to adjust rendering time (0.25, 0.5, 1, 2).
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
@@ -287,5 +276,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Stable Diffusion vs Midjourney for Character Design](/ai-tools-compared/stable-diffusion-vs-midjourney-for-character-design/)
 - [DALL-E 3 vs Stable Diffusion for Illustrations](/ai-tools-compared/dall-e-3-vs-stable-diffusion-for-illustrations/)
 - [Stable Diffusion ComfyUI vs Automatic1111 Comparison](/ai-tools-compared/stable-diffusion-comfyui-vs-automatic1111-comparison/)
+- [Claude Code for Faker.js Test Data Workflow Guide](https://theluckystrike.github.io/remote-work-tools/claude-code-for-faker-js-test-data-workflow-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

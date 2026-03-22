@@ -17,17 +17,6 @@ voice-checked: true
 
 Proc macros remain one of Rust's most powerful features, enabling code generation at compile time, custom derive implementations, and DSL creation. But how well do modern AI coding tools handle this advanced Rust feature? I tested several leading AI assistants with various macro tasks to find out.
 
-## Key Takeaways
-
-- **Use Claude for proc macros**: It has the best understanding of the `syn`/`quote` ecosystem
-
-2.
-- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
-- **Does Rust offer a**: free tier? Most major tools offer some form of free tier or trial period.
-- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
-- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
-- **The key was using `$(#field_ids)**:*` for repetition.
-
 ## Table of Contents
 
 - [Testing Methodology](#testing-methodology)

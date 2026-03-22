@@ -23,15 +23,6 @@ GitHub Copilot Chat provides a powerful interface for generating code through na
 
 This guide covers practical techniques for using Copilot Chat effectively to generate code from natural language descriptions.
 
-## Key Takeaways
-
-- **"Add pagination with 10**: items per page" (additional feature) This approach produces more focused code than attempting to specify everything in a single prompt.
-- **A more effective prompt**: includes specifics: ``` Create a TypeScript user service class for a Node.js API using dependency injection.
-- **The service should handle**: user registration with email validation, login with password hashing using bcrypt, and token generation using JWT.
-- **Use async/await patterns and**: proper error handling.
-- **Generated code may occasionally**: use outdated patterns or deprecated APIs.
-- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

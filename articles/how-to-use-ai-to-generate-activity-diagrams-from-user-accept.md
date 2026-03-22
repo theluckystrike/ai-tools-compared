@@ -20,24 +20,6 @@ Activity diagrams serve as a powerful visualization tool for understanding busin
 
 This guide walks you through the process of generating activity diagrams from user acceptance criteria using AI coding assistants and specialized tools.
 
-## Key Takeaways
-
-- **User enters username and**: password 2.
-- **After 3 failed attempts**: lock account for 15 minutes
-```
-
-AI Prompt:
-
-```
-Generate a Mermaid activity diagram for this user login flow acceptance criteria.
-- **User views cart with**: items 2.
-- User clicks checkout
-3.
-- **If user not logged in**: prompt login or guest checkout
-4.
-- User enters shipping address
-5.
-
 ## Table of Contents
 
 - [Why Generate Activity Diagrams from Acceptance Criteria](#why-generate-activity-diagrams-from-acceptance-criteria)

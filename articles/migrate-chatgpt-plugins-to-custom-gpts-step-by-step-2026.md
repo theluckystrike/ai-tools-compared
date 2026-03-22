@@ -18,17 +18,6 @@ voice-checked: true
 
 Migrate a ChatGPT Plugin to a Custom GPT by exporting your existing OpenAPI specification, creating a new GPT in the GPT Builder, pasting the spec into the Actions configuration panel, mapping your authentication settings, and testing each endpoint. The process reuses your plugin's API server and OpenAPI schema directly, so the backend stays the same while the configuration moves into the GPT Builder interface. This step-by-step guide covers the full migration with code examples for both manual and programmatic approaches.
 
-## Key Takeaways
-
-- **The process reuses your**: plugin's API server and OpenAPI schema directly, so the backend stays the same while the configuration moves into the GPT Builder interface.
-- **Plugins used a manifest**: file (`ai-plugin.json`) and OpenAPI specifications to define endpoints.
-- **Custom GPTs use Actions**: which are conceptually similar but require a different setup approach through the GPT Builder interface or the Assistants API.
-- **Ask your GPT to**: perform an action your plugin supported 2.
-- **Use this when users**: ask about weather." } ``` Custom GPT system prompt approach (expanded): ``` You are a weather assistant.
-- **When users ask about current conditions**: forecasts,
-or weather-related travel planning, call the getWeather action with the
-location they specify.
-
 ## Table of Contents
 
 - [Understanding the Architecture Differences](#understanding-the-architecture-differences)

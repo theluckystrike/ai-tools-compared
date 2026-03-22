@@ -17,15 +17,6 @@ intent-checked: true
 
 Start by examining four critical DPA elements: data transmission scope (what code gets sent to the AI service), retention periods (how long it's stored), access controls (who can see your code internally and externally), and training usage (whether code snippets feed into model training). Use these to compare vendor DPAs systematically and identify red flags before signing, ensuring your enterprise deployment aligns with security and compliance requirements.
 
-## Key Takeaways
-
-- **Which vendors have the**: best DPAs? Cloud providers (AWS, GCP, Azure) have mature, detailed DPAs because they're fundamental to their business.
-- **A standard clause might**: specify notification "without undue delay" or within a specific window like 72 hours.
-- **Use these to compare**: vendor DPAs systematically and identify red flags before signing, ensuring your enterprise deployment aligns with security and compliance requirements.
-- **The ideal clause states that you retain full ownership of your code, and the vendor gains no rights to use it for any purpose**: including model training.
-- **Phrases like "license to**: use" your code for "service improvement" can be problematic.
-- **Many vendors use global infrastructure**: meaning your code might be processed in data centers across multiple regions.
-
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)

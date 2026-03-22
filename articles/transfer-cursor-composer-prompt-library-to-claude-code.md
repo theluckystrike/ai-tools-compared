@@ -17,15 +17,6 @@ voice-checked: true
 
 Transfer your Cursor Composer prompts to Claude Code by exporting prompts, adapting them to Claude's format, and organizing them in Claude's library. This guide shows the conversion process that preserves your prompt investments.
 
-## Key Takeaways
-
-- **You can use Claude**: Code's CLI capabilities to integrate prompts into CI/CD pipelines, use them with custom scripts, and take advantage of a more open ecosystem.
-- **Prompts converted and copied**: to $CLAUDE_DIR" ``` Run this script whenever you update your prompt library to keep both systems in sync.
-- **Its tool-use capabilities allow**: for more sophisticated automation workflows, and many developers find that Claude Code produces cleaner, more maintainable code with fewer hallucinations.
-- **Claude Code uses a**: more flexible markdown-based format that works well with its conversation interface.
-- **Edit your `CLAUDE.md` file**: in the project root: ```markdown # Custom Commands ## /review When I type /review, use the following prompt: You are a code review expert.
-- **Best practice violations Provide**: specific, actionable feedback with file paths and line numbers.
-
 ## Why Migrate from Cursor Composer to Claude Code
 
 
