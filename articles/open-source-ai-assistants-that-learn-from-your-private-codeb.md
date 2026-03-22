@@ -10,7 +10,7 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [open-source, ai-assistant, codebase-analysis, private-code, local-llm, coding-assistant]
+tags: [ai-tools-compared, open-source, ai-assistant, codebase-analysis, private-code, local-llm, coding-assistant, artificial-intelligence]
 ---
 ---
 layout: default
