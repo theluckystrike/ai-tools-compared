@@ -11,6 +11,7 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true---
+{% raw %}
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
@@ -35,4 +36,5 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 **Should I switch tools if something better comes out?**
 
 Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific pain point you experience regularly. Marginal improvements rarely justify the transition overhead.
+{% endraw %}
 {% endraw %}
