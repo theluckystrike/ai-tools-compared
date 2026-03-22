@@ -6,7 +6,7 @@ date: 2026-03-21
 author: theluckystrike
 permalink: /best-ai-tool-for-debugging-android-proguard-r8-class-shrinki/
 categories: [guides]
-tags: [android, proguard, r8, debugging, ai-tools-compared]
+tags: [android, proguard, r8, debugging, ai-tools-compared, troubleshooting, best-of, artificial-intelligence]
 reviewed: true
 score: 9
 intent-checked: true
