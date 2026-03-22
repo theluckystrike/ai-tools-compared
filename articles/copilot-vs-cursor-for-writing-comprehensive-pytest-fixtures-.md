@@ -258,6 +258,256 @@ Not yet. AI tools generate useful test scaffolding and catch common patterns, bu
 Review each tool's privacy policy and terms of service carefully. Most AI tools process your input on their servers, and policies on data retention and training usage vary. If you work with sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
 
+## Advanced Fixture Patterns Both Tools Handle
+
+
+**Dependency Injection Pattern:**
+Both tools understand that fixtures can depend on other fixtures. The pattern `def test_function(fixture1, fixture2)` where `fixture2` depends on `fixture1` is well-recognized by both:
+
+```python
+@pytest.fixture
+def database_connection():
+    """Setup database connection."""
+    db = establish_connection()
+    yield db
+    db.close()
+
+@pytest.fixture
+def authenticated_session(database_connection):
+    """Use database fixture to create authenticated session."""
+    session = create_session(database_connection)
+    authenticate_session(session)
+    return session
+```
+
+Both tools generate this correctly, though Cursor more explicitly understands the dependency chain.
+
+
+**Fixture Request Object:**
+For advanced use cases, accessing the `request` object within fixtures allows dynamic behavior:
+
+```python
+@pytest.fixture
+def temporary_file(request):
+    """Create temp file with test-specific name."""
+    test_name = request.node.name
+    file = create_temp_file(f"/tmp/{test_name}.txt")
+    yield file
+    cleanup_temp_file(file)
+```
+
+Copilot rarely suggests this pattern unless context hints at it. Cursor can be explicitly prompted to use the request object for meta-information.
+
+
+**Marker-Based Fixtures:**
+Fixtures that conditionally run based on test markers:
+
+```python
+@pytest.fixture
+def slow_db(request):
+    """Only setup slow database for marked tests."""
+    if 'slow' not in request.keywords:
+        return None
+    return setup_slow_database()
+```
+
+Both tools handle this when you provide clear context about marker-based conditional behavior.
+
+
+## Testing Fixture Quality
+
+
+After generating fixtures, validate them with this checklist:
+
+
+```python
+# Fixture validation tests
+def test_fixture_setup_teardown():
+    """Verify fixture cleanup works."""
+    fixture_instance = mock_api_client()
+    # Assert cleanup happened correctly after yield
+
+def test_fixture_isolation():
+    """Verify fixtures don't leak state between tests."""
+    # Run two tests with same fixture
+    # Assert state is isolated
+
+def test_fixture_error_handling():
+    """Verify fixtures handle errors gracefully."""
+    # Force error condition during setup
+    # Verify teardown still executes
+
+def test_fixture_performance():
+    """Verify fixtures don't add excessive overhead."""
+    start = time.time()
+    fixture = expensive_fixture()
+    elapsed = time.time() - start
+    assert elapsed < 0.5  # Should be fast
+```
+
+
+## Prompt Engineering for Better Fixture Generation
+
+
+**Bad prompt:**
+"Generate pytest fixtures"
+
+**Good prompt:**
+"Generate pytest fixtures for a Django REST API that:
+- Tests user creation with valid/invalid email validation
+- Mocks external payment service using pytest-mock
+- Creates fixture scopes: function for test isolation, session for expensive setup
+- Includes factory patterns for creating multiple user types
+- Uses parametrize for testing multiple scenarios"
+
+The second prompt provides specific requirements that both tools can then address directly.
+
+
+## Fixture Performance Optimization
+
+
+For large test suites, fixture performance matters:
+
+
+**Slow Approach (Function-Scoped Everything):**
+```python
+@pytest.fixture
+def database():
+    db = setup_database()  # 2 seconds
+    yield db
+    teardown_database()  # 1 second
+
+# Every test: 3 second overhead
+# 100 tests: 300 seconds total fixture time
+```
+
+
+**Optimized Approach (Mixed Scope):**
+```python
+@pytest.fixture(scope='session')
+def database():
+    db = setup_database()  # 2 seconds, once per session
+    yield db
+    teardown_database()  # 1 second
+
+@pytest.fixture
+def database_transaction(database):
+    # Wrap in transaction, 10ms per test
+    transaction = database.begin()
+    yield database
+    transaction.rollback()  # Fast cleanup, no data pollution
+
+# Every test: 10ms overhead
+# 100 tests: 1 second total fixture time (299 second savings)
+```
+
+Cursor better understands these performance optimization trade-offs when you describe the performance concern.
+
+
+## Real-World Fixture Suite Example
+
+
+A complete pytest fixture suite generated with AI assistance:
+
+
+```python
+import pytest
+from unittest.mock import Mock, patch
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+
+# Database fixtures
+@pytest.fixture(scope='session')
+def database_engine():
+    """Session-scoped database for all tests."""
+    engine = create_engine('sqlite:///:memory:')
+    return engine
+
+@pytest.fixture
+def database_session(database_engine):
+    """Function-scoped transaction for test isolation."""
+    connection = database_engine.connect()
+    transaction = connection.begin()
+
+    session = sessionmaker(bind=connection)()
+
+    yield session
+
+    session.close()
+    transaction.rollback()
+    connection.close()
+
+# API client fixtures
+@pytest.fixture
+def mock_external_api(mocker):
+    """Mock external REST API."""
+    mock = mocker.patch('app.services.external_api.fetch_data')
+    mock.return_value = {
+        'status': 'success',
+        'data': [{'id': 1, 'name': 'Test'}]
+    }
+    return mock
+
+# Authentication fixtures
+@pytest.fixture
+def authenticated_user(database_session):
+    """Create and authenticate a test user."""
+    from app.models import User
+    user = User(
+        email='test@example.com',
+        name='Test User',
+        password_hash='hashed_password'
+    )
+    database_session.add(user)
+    database_session.commit()
+    return user
+
+@pytest.fixture
+def auth_headers(authenticated_user):
+    """JWT headers for authenticated requests."""
+    token = generate_jwt_token(authenticated_user.id)
+    return {'Authorization': f'Bearer {token}'}
+
+# Factory fixture for parametrized testing
+@pytest.fixture
+def user_factory(database_session):
+    """Factory for creating multiple user types."""
+    def _create_user(
+        email='user@example.com',
+        role='standard',
+        **kwargs
+    ):
+        from app.models import User
+        user_data = {
+            'email': email,
+            'name': kwargs.get('name', 'Test User'),
+            'role': role,
+            'password_hash': 'hashed_password',
+        }
+        user = User(**user_data)
+        database_session.add(user)
+        database_session.commit()
+        return user
+    return _create_user
+
+# Test using fixtures
+def test_user_creation(user_factory):
+    """Test creating different user types."""
+    admin = user_factory(role='admin')
+    standard = user_factory(role='standard')
+
+    assert admin.role == 'admin'
+    assert standard.role == 'standard'
+
+def test_api_with_auth(mock_external_api, auth_headers):
+    """Test API call with authentication."""
+    result = call_api(headers=auth_headers)
+    mock_external_api.assert_called_once()
+```
+
+This suite represents best practices—session scoping for expensive setup, function scoping for isolation, factories for parametrized testing, and mocking for external dependencies.
+
+
 ## Related Articles
 
 - [Copilot vs Claude Code for Writing Jest Test](/ai-tools-compared/copilot-vs-claude-code-for-writing--jest-test-s/)
