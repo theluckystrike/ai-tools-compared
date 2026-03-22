@@ -297,4 +297,4 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [Switching from ChatGPT Voice to Gemini Live Conversation](/ai-tools-compared/switching-from-chatgpt-voice-to-gemini-live-conversation-differences/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

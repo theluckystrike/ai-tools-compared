@@ -344,4 +344,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Cursor vs Windsurf for Building Next Js App from Design Mock](/ai-tools-compared/cursor-vs-windsurf-for-building-next-js-app-from-design-mock/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+```
+{% endraw %}

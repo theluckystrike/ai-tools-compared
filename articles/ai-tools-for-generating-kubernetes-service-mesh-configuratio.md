@@ -328,4 +328,4 @@ Paste your current `values.yaml` into the AI prompt and ask it to generate the e
 - [Best AI Tools for Kubernetes Manifest Generation](/ai-tools-compared/best-ai-tools-for-kubernetes-manifest-generation/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

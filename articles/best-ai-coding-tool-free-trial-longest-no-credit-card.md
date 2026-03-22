@@ -477,4 +477,4 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [Free AI Coding Tools That Work Offline Without Internet](/ai-tools-compared/free-ai-coding-tools-that-work-offline-without-internet/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

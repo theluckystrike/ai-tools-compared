@@ -339,4 +339,5 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [Copilot Suggestions in Private Repos Do They Cost More Than](/ai-tools-compared/copilot-suggestions-in-private-repos-do-they-cost-more-than-public/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+```
 {% endraw %}

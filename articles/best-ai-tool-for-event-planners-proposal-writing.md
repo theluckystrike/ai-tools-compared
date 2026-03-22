@@ -432,3 +432,4 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [AI Tools for Designers Writing Handoff Notes That Include](/ai-tools-compared/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

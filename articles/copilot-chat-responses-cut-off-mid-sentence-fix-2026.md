@@ -414,5 +414,5 @@ Check the tool's GitHub Issues page or community forum to see if others report t
 **Should I reinstall the tool to fix this?**
 
 A clean reinstall sometimes resolves persistent issues caused by corrupted caches or configuration files. Before reinstalling, back up your settings and project files. Try clearing the cache first, since that fixes the majority of cases without a full reinstall.
-
+```
 {% endraw %}

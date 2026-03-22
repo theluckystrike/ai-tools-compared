@@ -9,6 +9,7 @@ voice-checked: true
 intent-checked: true
 tags: [ai-tools-compared, github actions, devops, ci/cd, composite actions, ai tools, artificial-intelligence]
 permalink: /ai-tools-for-generating-github-actions-composite-actions-2026/---
+{% raw %}
 ---
 title: "Best AI Tools for Generating GitHub Actions Composite"
 description: "Compare Claude, GPT-4, Copilot for writing reusable composite actions. Real YAML examples, input/output handling, error handling, marketplace publishing."
@@ -20,7 +21,7 @@ voice-checked: true
 intent-checked: true
 tags: [ai-tools-compared, github actions, devops, ci/cd, composite actions, ai tools, artificial-intelligence]
 permalink: /ai-tools-for-generating-github-actions-composite-actions-2026/---
-{% raw %}
+
 
 # Best AI Tools for Generating GitHub Actions Composite Actions 2026
 
@@ -47,7 +48,7 @@ act -j deploy-staging -s GITHUB_TOKEN=$GITHUB_TOKEN
 - **Advanced GitHub Actions**: Reusable Workflows vs Composite Actions
 
 Built by theluckystrike — More at zovo.one
-{% endraw %}
+
 
 ## What Are Composite Actions?
 

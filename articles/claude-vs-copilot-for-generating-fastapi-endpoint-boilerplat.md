@@ -319,4 +319,5 @@ Copilot runs $10-19/month as a flat subscription regardless of usage. Claude API
 - [Best Way to Configure CursorRules for Python FastAPI Project](/ai-tools-compared/best-way-to-configure-cursorrules-for-python-fastapi-project/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+```
 {% endraw %}

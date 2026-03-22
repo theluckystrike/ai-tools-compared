@@ -275,3 +275,4 @@ This setup particularly suits healthcare developers handling HIPAA data, financi
 With CodeLlama running locally, explore fine-tuning options for specialized domains. You can also experiment with different model sizes based on your current task—use 7B for quick autocomplete and switch to 34B for complex code generation.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+```

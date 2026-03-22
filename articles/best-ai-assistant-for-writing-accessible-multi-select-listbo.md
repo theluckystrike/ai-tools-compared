@@ -39,7 +39,7 @@ tags: [ai-tools-compared, comparison, accessibility, frontend, best-of, artifici
 | axe DevTools | Dedicated a11y testing | Rule-based ARIA validation | Automated WCAG audits | Free browser extension |
 
 
-{% raw %}
+
 
 Building accessible multi-select listbox components requires careful attention to ARIA specifications, keyboard interactions, and screen reader compatibility. The right AI assistant can significantly speed up development while ensuring your component meets WCAG 2.1 AA standards. This guide evaluates how different AI coding tools handle the complexity of accessible listbox implementation.
 
@@ -50,7 +50,7 @@ Building accessible multi-select listbox components requires careful attention t
 - **The most widely used**: screen readers respond differently to ARIA patterns, so testing across multiple tools surfaces edge cases that manual code review misses.
 - **NVDA (Windows) is the**: most popular free screen reader.
 - **Most tools skip this unless prompted**: even though it is critical for screen reader users.
-- **{% endraw %} ##**: Frequently Asked Questions Who is this article written for? This article is written for developers, technical professionals, and power users who want practical guidance.
+- ** ##**: Frequently Asked Questions Who is this article written for? This article is written for developers, technical professionals, and power users who want practical guidance.
 
 ## What Makes an AI Assistant Effective for Accessible Components
 
@@ -309,7 +309,7 @@ const GroupedListbox = ({ groups, selected }) => {
 
 **Disabled options**: Options can carry aria-disabled="true" rather than the native disabled attribute (which does not apply to li elements). Keyboard navigation should skip disabled options in most implementations—Arrow keys should jump past them rather than landing on an uninteractable item. Verify that AI-generated code implements this skip logic.
 
-{% endraw %}
+
 
 ## Frequently Asked Questions
 

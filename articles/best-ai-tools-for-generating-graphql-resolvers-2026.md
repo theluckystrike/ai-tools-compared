@@ -369,3 +369,4 @@ Claude often includes this pattern. GPT-4 requires explicit request. Copilot lea
 - [Best AI Assistant for API Design and Schema Review](/best-ai-assistant-for-api-design-schema-review-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+```
