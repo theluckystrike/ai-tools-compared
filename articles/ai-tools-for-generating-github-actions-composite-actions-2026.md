@@ -9,6 +9,7 @@ voice-checked: true
 intent-checked: true
 tags: ["github actions", "devops", "ci/cd", "composite actions", "ai tools"]
 ---
+{% raw %}
 
 # Best AI Tools for Generating GitHub Actions Composite Actions 2026
 
@@ -502,3 +503,4 @@ action-validator .github/actions/my-action/action.yml
 5. [Advanced GitHub Actions: Reusable Workflows vs Composite Actions](/articles/github-actions-reusable-workflows/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
