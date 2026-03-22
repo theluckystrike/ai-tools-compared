@@ -24,7 +24,9 @@ Copy your Cursor `settings.json`, `keybindings.json`, and theme files directly i
 Cursor and Visual Studio Code are built on the same underlying technology. Cursor is a fork of VSCode with additional AI features built on top. This means your theme files, keyboard shortcuts, and many configuration settings work in both editors without modification.
 
 
-The primary difference lies in how each editor handles AI assistance. Cursor has its own AI integration, while VSCode relies on GitHub Copilot through an extension. Understanding this relationship helps you plan your migration strategy effectively.
+The primary difference lies in how each editor handles AI assistance. Cursor has its own AI integration built around its proprietary models and agent mode, while VSCode relies on GitHub Copilot through an extension. Understanding this relationship helps you plan your migration strategy effectively.
+
+Both editors share the same extension marketplace, the same settings JSON format, the same keybindings format, and the same underlying Monaco editor engine. The only divergences are Cursor-specific settings that begin with the `cursor.` prefix, which should be removed rather than carried over.
 
 
 ## Exporting Your Cursor Settings
@@ -58,13 +60,34 @@ Your Cursor theme consists of two components: the color scheme and the UI custom
 
 
 ```bash
-# Example: Copy Cursor settings to a backup location
-cp ~/Library/Application Support/Cursor/User/settings.json ~/cursor-migration/settings-cursor.json
-cp ~/Library/Application Support/Cursor/User/keybindings.json ~/cursor-migration/keybindings-cursor.json
+# Create a backup directory and copy Cursor settings
+mkdir -p ~/cursor-migration
+
+# macOS paths
+cp ~/Library/Application\ Support/Cursor/User/settings.json ~/cursor-migration/settings-cursor.json
+cp ~/Library/Application\ Support/Cursor/User/keybindings.json ~/cursor-migration/keybindings-cursor.json
+
+# List your installed Cursor extensions for reference
+ls ~/.cursor/extensions/ > ~/cursor-migration/extensions-list.txt
 ```
 
 
-If you installed custom themes from the VSCode marketplace, note their names for reinstallation in VSCode.
+If you installed custom themes from the VSCode marketplace, note their names for reinstallation in VSCode. Popular developer themes like Dracula, One Dark Pro, Tokyo Night, and Catppuccin are available on the VSCode marketplace and install identically in both editors.
+
+
+### Identifying Cursor-Specific Settings to Remove
+
+
+Before importing into VSCode, identify settings that are Cursor-only. Common Cursor-specific keys include:
+
+- `cursor.aiEnabled`
+- `cursor.ruleBasedCompletion`
+- `cursor.cpp.disabledLanguages`
+- `cursor.chat.*` keys
+- `cursor.composer.*` keys
+- `aipopup.action.modal.enable`
+
+Strip these before pasting into VSCode's `settings.json` — VSCode will ignore unknown keys, but keeping the config clean avoids confusion.
 
 
 ## Setting Up VSCode with Copilot
@@ -90,7 +113,7 @@ Open VSCode and install the Copilot extension:
 5. Authenticate with your GitHub account when asked
 
 
-After installation, Copilot becomes active and starts providing suggestions as you type, similar to Cursor's AI functionality.
+After installation, Copilot becomes active and starts providing suggestions as you type, similar to Cursor's AI functionality. A Copilot icon appears in the status bar; clicking it opens quick settings and shows your current authentication status.
 
 
 ### Transferring Your Theme
@@ -109,22 +132,21 @@ If you used a built-in theme in Cursor, it is likely available in VSCode as well
 3. Select it to apply
 
 
-**For custom themes:**
+**For custom themes from the marketplace:**
 
 
 1. Open Extensions view
 
-2. Search for your theme by name
+2. Search for your theme by name (e.g., "One Dark Pro", "Tokyo Night", "Dracula")
 
 3. Install and activate
 
 
-If your theme is not on the marketplace, you can manually add the theme file:
+If your theme is not on the marketplace, you can manually add the theme file. Place your `.tmTheme` or `.json` theme file inside a folder under `~/.vscode/extensions/`, then reference it in settings:
 
 
 ```json
-// Place your .tmTheme file in ~/.vscode/extensions/your-theme/
-// Then add to settings.json:
+// Add to settings.json after placing theme file in extensions:
 {
   "workbench.colorTheme": "Your Theme Name"
 }
@@ -194,6 +216,8 @@ VSCode with Copilot has its own settings for AI assistance. Add these to customi
 }
 ```
 
+One key behavioral difference: Cursor's AI panel is always visible in the sidebar, while Copilot Chat opens as a separate panel that you invoke explicitly. Set `"chat.editor.wordWrap": "on"` to improve readability of long Copilot responses.
+
 
 ## Recreating Your Layout
 
@@ -248,6 +272,11 @@ Configure your navigation panel:
 ```
 
 
+### Split Editor and Workbench Layout
+
+Recreate split editor layouts using `View: Split Editor Right` or `View: Split Editor Down` from the Command Palette (`Cmd+Shift+P`). Save a workspace file (`.code-workspace`) to persist your preferred arrangement across restarts.
+
+
 ## Transferring Keyboard Shortcuts
 
 
@@ -257,7 +286,7 @@ Many keyboard shortcuts work identically since both editors share the same base.
 ### Exporting Cursor Keybindings
 
 
-Your Cursor keybindings are stored in `keybindings.json`. Review this file and add any custom shortcuts to VSCode:
+Your Cursor keybindings are stored in `keybindings.json`. Review this file and add any custom shortcuts to VSCode. Most shortcuts that use `cmd`, `ctrl`, `shift`, and `alt` modifiers transfer without change:
 
 
 ```json
@@ -267,6 +296,10 @@ Your Cursor keybindings are stored in `keybindings.json`. Review this file and a
     "key": "cmd+shift+a",
     "command": "editor.action.selectAll",
     "when": "editorTextFocus"
+  },
+  {
+    "key": "cmd+k cmd+s",
+    "command": "workbench.action.openGlobalKeybindings"
   }
 ]
 ```
@@ -275,16 +308,43 @@ Your Cursor keybindings are stored in `keybindings.json`. Review this file and a
 ### Copilot-Specific Shortcuts
 
 
-Copilot adds its own keyboard shortcuts. You can customize these:
+Copilot adds its own keyboard shortcuts. You can customize these to match your former Cursor muscle memory:
 
 
 ```json
-{
-  // Copilot Chat shortcuts
-  "keybinding": "cmd+shift+i",
-  "command": "github.copilot.generate"
-}
+[
+  {
+    "key": "cmd+shift+i",
+    "command": "github.copilot.generate",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "cmd+i",
+    "command": "workbench.action.chat.open"
+  },
+  {
+    "key": "tab",
+    "command": "editor.action.inlineSuggest.commit",
+    "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorTabMovesFocus"
+  }
+]
 ```
+
+Cursor uses `Cmd+K` for inline edits and `Cmd+L` for chat. In VSCode, inline chat is `Cmd+I` and the Copilot Chat sidebar is opened from the activity bar. Remapping these shortcuts helps rebuild familiarity quickly.
+
+
+## Migrating Extensions
+
+
+Most extensions that work in Cursor also work in VSCode since they share the same marketplace. From your `~/cursor-migration/extensions-list.txt` file, install your daily-use extensions in bulk:
+
+```bash
+code --install-extension esbenp.prettier-vscode
+code --install-extension ms-python.python
+code --install-extension eamodio.gitlens
+```
+
+Common categories that transfer seamlessly include formatters (Prettier, ESLint), language support (Python, Go, Rust Analyzer), Git tools (GitLens, Git Graph), and icon themes (Material Icon Theme).
 
 
 ## Using Copilot Effectively
@@ -296,7 +356,7 @@ Once your environment is set up, Copilot provides AI assistance similar to Curso
 ### Inline Suggestions
 
 
-Copilot provides inline code completions as you type. Press `Tab` to accept suggestions or `Escape` to dismiss them.
+Copilot provides inline code completions as you type. Press `Tab` to accept suggestions or `Escape` to dismiss them. Use `Alt+]` and `Alt+[` to cycle through alternative suggestions when the first completion is not quite right.
 
 
 ### Copilot Chat
@@ -305,13 +365,21 @@ Copilot provides inline code completions as you type. Press `Tab` to accept sugg
 Access Copilot Chat through the chat icon in the sidebar or use the keyboard shortcut. The chat interface supports:
 
 
-- Explaining code selections
+- Explaining code selections (highlight code, then ask `/explain`)
 
-- Generating new code
+- Generating new code (`/new`)
 
-- Refactoring existing code
+- Refactoring existing code (`/fix`, `/refactor`)
 
-- Writing tests
+- Writing tests (`/tests`)
+
+- Documentation generation (`/doc`)
+
+
+### Using Copilot Edits (Multi-File Mode)
+
+
+VSCode's Copilot Edits feature, introduced in late 2024, allows Copilot to propose changes across multiple files simultaneously — analogous to Cursor's Composer mode. Open it with `Cmd+Shift+I` (or through the Copilot Chat dropdown). Add files to the working set and describe what you want changed across your codebase.
 
 
 ### Example: Using Copilot for Code Generation
@@ -324,7 +392,6 @@ Access Copilot Chat through the chat icon in the sidebar or use the keyboard sho
 
 
 Copilot generates complete, context-aware code that follows best practices.
-
 
 
 ## Frequently Asked Questions
