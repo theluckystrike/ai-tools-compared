@@ -139,6 +139,65 @@ Different AI assistants have distinct strengths for this task:
 
 **Cursor**: Combines code editing with documentation generation. Good for updating error documentation alongside code changes. Requires active development session. Cost: $20 per month.
 
+## Generating an OpenAPI-Aligned Error Schema
+
+The most maintainable approach is generating error documentation that mirrors your OpenAPI specification directly. AI assistants can produce both the schema component and the human-readable reference simultaneously.
+
+**Prompt:**
+```
+We use OpenAPI 3.1. Generate:
+1. A reusable ErrorResponse schema component
+2. A Markdown error reference table for our three error categories:
+   authentication (AUTH_*), validation (VAL_*), and resource errors (RES_*)
+Include example JSON responses for each error.
+```
+
+**Claude output (schema portion):**
+
+```yaml
+components:
+  schemas:
+    ErrorResponse:
+      type: object
+      required: [code, message, status]
+      properties:
+        code:
+          type: string
+          pattern: '^[A-Z]{3}_\d{3}$'
+          example: AUTH_001
+        message:
+          type: string
+          example: Invalid authentication token
+        status:
+          type: integer
+          example: 401
+        detail:
+          type: string
+          description: Extended explanation for debugging
+        field:
+          type: string
+          description: Field name for validation errors
+          example: email
+```
+
+Once the schema is defined, reference it across all error responses in your path definitions: `$ref: '#/components/schemas/ErrorResponse'`. Claude generates the `$ref` links automatically when you ask it to write the full path spec.
+
+### Generating Example Responses
+
+AI assistants produce realistic example responses when you give them the error code list. This saves time on the most tedious part of API docs:
+
+```
+Generate JSON example responses for these errors:
+- AUTH_001: missing or invalid Bearer token
+- AUTH_002: token expired
+- AUTH_003: insufficient permissions for the requested resource
+- VAL_001: required field missing
+- VAL_002: field value out of allowed range
+- RES_001: requested resource does not exist
+```
+
+Claude returns fully-formed JSON objects with realistic messages, appropriate HTTP status codes, and useful `detail` fields — ready to paste into your OpenAPI spec or Markdown docs.
+
 ## Workflow for Maintaining Error Documentation
 
 Keep your API error reference current using this workflow:
@@ -200,6 +259,47 @@ API consumers.
 
 This produces clear changelog entries and consumer-facing migration guides.
 
+## Automating Documentation Updates with CI
+
+The most durable documentation strategy embeds AI generation into your CI pipeline so docs never drift from code. The approach: after any change to error definition files, run an AI-assisted documentation update step.
+
+```yaml
+# .github/workflows/docs.yml
+name: Update Error Docs
+
+on:
+  push:
+    paths:
+      - 'src/exceptions/**'
+      - 'src/errors/**'
+
+jobs:
+  update-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Extract error definitions
+        run: |
+          python scripts/extract_errors.py src/exceptions/ > /tmp/errors.json
+
+      - name: Generate documentation
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python scripts/generate_error_docs.py \
+            --input /tmp/errors.json \
+            --output docs/api/errors.md
+
+      - name: Commit updated docs
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "docs: update error reference [auto]"
+          file_pattern: docs/api/errors.md
+```
+
+The `extract_errors.py` script parses exception classes and outputs structured JSON. The `generate_error_docs.py` script sends that JSON to the Claude API with a fixed system prompt that enforces your documentation format. The result is committed back to the repo automatically.
+
 ## Common Pitfalls to Avoid
 
 AI-generated error documentation works best when you avoid these mistakes:
@@ -226,7 +326,7 @@ The ROI is significant for APIs with 50+ error codes or frequent changes.
 
 AI assistants streamline API error code reference documentation by generating initial drafts, maintaining consistency, and helping with updates. Claude 3.5 Sonnet excels at understanding error relationships, while GPT-4 produces rapid, template-following output. For best results, provide comprehensive context, specify clear formats, and always validate generated documentation against your actual API behavior.
 
-Start by documenting your most common errors—authentication, validation, and database errors—then expand to edge cases. Keep documentation synchronized with code through regular AI-assisted reviews.
+Start by documenting your most common errors — authentication, validation, and database errors — then expand to edge cases. Embed documentation generation into CI to keep the reference synchronized with code automatically.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
