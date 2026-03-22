@@ -36,7 +36,7 @@ Gemini in Docs requires one of these Google subscriptions:
 - Google Workspace AI添 (various plans)
 
 
-Without an eligible subscription, Gemini features remain hidden regardless of other configuration efforts.
+Without an eligible subscription, Gemini features remain hidden regardless of other configuration efforts. This is the most common reason users see nothing—no error, no disabled button, just a missing sidebar icon.
 
 
 ## Primary Fix: Verify Your Subscription Status
@@ -52,7 +52,7 @@ The most common reason Gemini disappears from Google Docs is an expired or lapse
 3. Confirm the subscription shows "Active" status
 
 
-If you recently changed Google accounts or upgraded your workspace plan, sign out of all Google services completely and sign back in. Cached authentication tokens sometimes prevent proper feature detection.
+If you recently changed Google accounts or upgraded your workspace plan, sign out of all Google services completely and sign back in. Cached authentication tokens sometimes prevent proper feature detection. A full sign-out cycle forces Google's servers to recheck entitlements for your account.
 
 
 ## Browser-Specific Troubleshooting
@@ -73,13 +73,19 @@ Clear your browser cache and cookies specifically for docs.google.com:
 4. Open a new Google Doc and check for the Gemini icon in the right sidebar
 
 
-Disable all Chrome extensions temporarily. Some privacy-focused extensions like uBlock Origin or privacy badgers can block the Gemini iframe from loading. Test in incognito mode with extensions disabled to isolate the issue.
+Disable all Chrome extensions temporarily. Some privacy-focused extensions like uBlock Origin or Privacy Badger can block the Gemini iframe from loading. Test in incognito mode with extensions disabled to isolate the issue.
+
+
+If the Gemini panel appears in incognito but not your regular profile, the culprit is almost certainly a browser extension. Re-enable extensions one at a time to identify which one blocks Gemini, then add `docs.google.com` to that extension's allowlist.
 
 
 ### Firefox and Edge Considerations
 
 
-Firefox users should verify Enhanced Tracking Protection isn't blocking Gemini scripts. Check the shield icon in the address bar when viewing a Google Doc. For Edge, ensure Microsoft Defender SmartScreen isn't flagging Google's AI endpoints incorrectly.
+Firefox users should verify Enhanced Tracking Protection isn't blocking Gemini scripts. Check the shield icon in the address bar when viewing a Google Doc. Click the shield and toggle protection off for docs.google.com, then reload the page.
+
+
+For Edge, ensure Microsoft Defender SmartScreen isn't flagging Google's AI endpoints incorrectly. Check SmartScreen settings under Settings → Privacy, search, and services → Microsoft Defender SmartScreen.
 
 
 Try the browser-specific fix by clearing credential manager entries for Google domains, then re-authenticating.
@@ -91,10 +97,19 @@ Try the browser-specific fix by clearing credential manager entries for Google d
 If you're using Google Workspace (formerly GSuite), your domain administrator may have disabled Gemini features. This affects organizational accounts regardless of your personal subscription status.
 
 
-Contact your admin or check the Admin console at admin.google.com under Apps → Google Workspace → Gemini. Administrators must enable "Gemini in Docs and Gmail" toggle.
+Contact your admin or check the Admin console at admin.google.com under Apps → Google Workspace → Gemini. Administrators must enable the "Gemini in Docs and Gmail" toggle.
 
 
 The administrator setting path has changed throughout 2025-2026. Current administrators should look for: Apps → Google Workspace → Gemini for Workspace → User setting
+
+
+**For administrators enabling Gemini across an organization:**
+
+1. Sign in to admin.google.com with super admin credentials
+2. Navigate to Apps → Google Workspace → Gemini for Workspace
+3. Click "User settings" and select the relevant organizational unit
+4. Toggle "Gemini in Docs, Gmail, and other Workspace apps" to On
+5. Save changes—propagation can take up to 24 hours
 
 
 ## Clearing Browser Data and Service Caches
@@ -110,7 +125,7 @@ Sometimes Google's own caching layer causes issues. Try these advanced steps:
 3. Wait 10 minutes before testing again
 
 
-Alternatively, use a different browser profile entirely. Create a fresh Chrome profile, sign into your Google account, and test Gemini in Docs there.
+Alternatively, use a different browser profile entirely. Create a fresh Chrome profile, sign into your Google account, and test Gemini in Docs there. If Gemini appears in the new profile, your existing profile has a corrupted settings cache.
 
 
 ## Checking for Regional Availability
@@ -119,7 +134,10 @@ Alternatively, use a different browser profile entirely. Create a fresh Chrome p
 Google gradually rolls out Gemini features by region. If you're in a recently supported country, your account may take 24-48 hours to reflect the new capabilities. Check the [Google Workspace updates blog](https://workspaceupdates.googleblog.com/) for the latest availability announcements.
 
 
-Users in unsupported regions see no error message—features simply fail to appear. This affects developers working remotely or traveling internationally.
+Users in unsupported regions see no error message—features simply fail to appear. This affects developers working remotely or traveling internationally. Using a VPN to an unsupported region can also cause Gemini to disappear from an account that previously had access.
+
+
+As of early 2026, Gemini in Docs is available in most major markets but remains unavailable in some regions subject to data residency regulations, including certain EU configurations depending on your Workspace data region setting.
 
 
 ## Network and Firewall Configuration
@@ -144,7 +162,7 @@ curl -I https://lia.googleusercontent.com
 ```
 
 
-Both should return 200 OK status codes. If either fails, your network administrator needs to whitelist these endpoints.
+Both should return 200 OK status codes. If either fails, your network administrator needs to whitelist these endpoints. For corporate environments, the IT team may need to add Gemini endpoints to proxy allowlists and SSL inspection exemptions.
 
 
 ## Document-Level Restrictions
@@ -160,7 +178,10 @@ Some Google Docs have restricted sharing or editing permissions that disable AI 
 3. Verify "Editors can change permissions and share" is enabled
 
 
-Organizationally-owned documents may have lock icons indicating admin-enforced restrictions that prevent Gemini activation.
+Organizationally-owned documents may have lock icons indicating admin-enforced restrictions that prevent Gemini activation. If you see a lock icon in the document title bar, contact the document owner or your Workspace administrator.
+
+
+**Note on externally shared documents:** If you're editing a document shared by someone in a different Google Workspace domain, Gemini availability depends on both domains having the feature enabled. Even if your organization enables Gemini, you may not see it in documents owned by organizations with Gemini disabled.
 
 
 ## Re-enabling Gemini Manually
@@ -176,7 +197,10 @@ If Gemini was previously available and suddenly disappeared, try forcing a refre
 3. If this shortcut doesn't work, the feature is disabled at account level
 
 
-Some users report success by starting a new document rather than editing existing ones. Create a fresh doc and see if the Gemini sidebar appears there.
+Some users report success by starting a new document rather than editing existing ones. Create a fresh doc and see if the Gemini sidebar appears there. This rules out document-specific settings as the cause.
+
+
+You can also try accessing Gemini via the menu: click Extensions → Gemini for Workspace if the option appears. If the menu item is missing entirely, the feature is disabled at the subscription or domain level.
 
 
 ## Workspace Add-on Conflicts
@@ -192,7 +216,7 @@ Third-party Google Workspace add-ons can conflict with Gemini. Uninstall recentl
 3. Restart Google Docs and test again
 
 
-Particularly problematic are grammar checkers, AI writing assistants, and document analytics tools that inject their own sidebars.
+Particularly problematic are grammar checkers, AI writing assistants, and document analytics tools that inject their own sidebars. Tools like Grammarly for Docs, Writer, and some translation add-ons have been reported to conflict with the Gemini sidebar in specific configurations.
 
 
 ## Browser Console Diagnostic Commands
@@ -217,8 +241,10 @@ Common error codes include:
 
 - `GEMINI_REGION_UNAVAILABLE`: Geographic restriction in effect
 
+- `GEMINI_FEATURE_GATING`: Feature is in staged rollout, not yet available to your account
 
-Share these error codes with your administrator or Google Support for targeted assistance.
+
+Share these error codes with your administrator or Google Support for targeted assistance. You can also filter the Network tab in DevTools for requests containing "gemini" to see what API responses your browser is receiving when the feature fails to load.
 
 
 ## Final Resort: Account Recovery
@@ -228,6 +254,8 @@ If all else fails, your account may have a corrupted AI preferences profile. Cre
 
 
 Alternatively, submit feedback directly to Google through Help → Help Docs improve → Report a problem. Include your domain, subscription type, and exact error messages. Google's AI team monitors these reports and sometimes provides personalized recovery steps.
+
+If you have a Google Workspace paid plan, you can also open a support ticket through the Admin console. Enterprise and Business Plus subscribers get access to technical support representatives who can inspect account-level entitlement flags that aren't visible from the user side.
 
 
 ---
