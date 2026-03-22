@@ -9,7 +9,7 @@ permalink: /effective-strategies-for-using-ai-to-learn-new-programming-languages
 categories: [guides]
 tags: [ai-tools-compared, learning, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
