@@ -19,10 +19,12 @@ Python type annotations have a long tail of complexity: `TypeVar` bounds, `Proto
 
 ## Key Takeaways
 
-- **Use Literal for string**: enums 4.
-- **Topics covered**: the annotation quality spectrum, task 1: generic functions, task 2: decorator type safety with paramspec
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-- **Use-case recommendations**: Specific guidance based on team size and requirements
+- **Use Literal for string enums** — Copilot often reaches for `str` where `Literal["a", "b"]` gives exact type narrowing.
+- **ParamSpec is the hardest pattern** — only Claude consistently produces correct decorator annotations that preserve wrapped function signatures.
+- **Protocol beats ABC for duck typing** — structural typing with `Protocol` avoids inheritance hierarchies while keeping full type checker support.
+- **MonkeyType is a good starting point** — runtime type collection paired with AI review produces better annotations than either approach alone.
+- **Practical guidance included**: Step-by-step setup and configuration instructions.
+- **Use-case recommendations**: Specific guidance based on team size and requirements.
 
 ## The Annotation Quality Spectrum
 
@@ -37,6 +39,37 @@ These are where they diverge:
 def map_values(d: dict, fn: ???) -> ???: ...  # Generic typing
 def retry(fn: ???) -> ???: ...                # Decorator typing
 class Repository(???): ...                   # Protocol/ABC typing
+```
+
+The difference matters in real codebases. `dict` without parameters is technically valid but tells the type checker nothing useful. `Any` is worse — it silently disables checking downstream.
+
+## Why Type Annotations Pay Off
+
+Type annotations are documentation that can't go stale. When a function signature says `fn: Callable[[V], R]`, every IDE and type checker understands the relationship between inputs and outputs. When someone changes the callable's return type, the type checker immediately flags every call site that assumes the old return type.
+
+The investment also compounds. A codebase with 60%+ annotation coverage catches refactoring errors before they reach CI. Teams that add annotations incrementally — starting with public APIs and utility functions — see meaningful error detection within weeks. AI tools dramatically accelerate this process because generating annotations is mechanical work that doesn't require understanding business logic.
+
+## Setting Up Your Annotation Workflow
+
+Before comparing tools, a quick setup note. For interactive use, `pyright` gives instant feedback:
+
+```bash
+pip install pyright mypy monkeytype
+# VS Code: install the Pylance extension (uses pyright internally)
+
+# Check a file for annotation errors
+pyright your_module.py
+
+# Strict mode: catch everything
+pyright --strict your_module.py
+```
+
+For CI, add mypy to your pipeline:
+
+```yaml
+# .github/workflows/typecheck.yml
+- name: Run mypy
+  run: mypy --strict src/ --ignore-missing-imports
 ```
 
 ## Task 1: Generic Functions
@@ -62,6 +95,7 @@ def map_values(d: dict, fn: callable) -> dict:
 
 ```python
 from typing import TypeVar
+from collections.abc import Callable
 
 K = TypeVar("K")
 V = TypeVar("V")
@@ -79,7 +113,7 @@ prices: dict[str, int] = {"apple": 100, "banana": 50}
 discounted: dict[str, float] = map_values(prices, lambda p: p * 0.9)  # Correct!
 ```
 
-Claude's version allows type checkers to infer the output type based on the callable's return type.
+Claude's version allows type checkers to infer the output type based on the callable's return type. This means `map_values(user_ids, fetch_user)` correctly infers `dict[str, User | None]` without any additional annotation.
 
 ## Task 2: Decorator Type Safety with ParamSpec
 
@@ -155,7 +189,7 @@ result: bytes = fetch_data("https://example.com", timeout=10)  # Correctly typed
 fetch_data(123)  # mypy error: Argument 1 has incompatible type "int"; expected "str"
 ```
 
-`ParamSpec` is the key — it preserves the parameter types of the wrapped function.
+`ParamSpec` is the key — it preserves the parameter types of the wrapped function. This was introduced in Python 3.10 and backported via `typing_extensions` for earlier versions.
 
 ## Task 3: Protocol for Structural Typing
 
@@ -210,6 +244,8 @@ persist("not saveable")   # mypy error: Argument 1 missing save()
 assert isinstance(UserModel(), Saveable)  # True at runtime
 ```
 
+The practical advantage of `Protocol` over `ABC` is that existing classes satisfy it without modification. If you're consuming third-party objects that happen to have a `save()` method, `Protocol` lets you type-check against them without monkey-patching.
+
 ## Task 4: TypedDict and Overload
 
 ```python
@@ -256,6 +292,42 @@ batch_result = process_config(BatchConfig(mode="batch", batch_size=100))
 # batch_result.job_id is valid — type checker knows it's BatchResult
 ```
 
+`@overload` lets you express that a function's return type depends on its input type. Without it, the return type would be `BatchResult | StreamResult` and you'd need a type narrowing assertion every time you use the result.
+
+## Task 5: TypeGuard for Narrowing Functions
+
+One pattern where tool quality diverges sharply is `TypeGuard` — functions that narrow a union type inside conditionals.
+
+```python
+# Before — type checker can't narrow inside this branch
+def is_valid_user(obj: dict) -> bool:
+    return "id" in obj and "email" in obj
+
+# After — Claude adds TypeGuard
+from typing import TypeGuard
+
+class UserDict(TypedDict):
+    id: str
+    email: str
+    name: str
+
+def is_valid_user(obj: dict) -> TypeGuard[UserDict]:
+    """Return True if obj has all required UserDict fields."""
+    return (
+        isinstance(obj.get("id"), str) and
+        isinstance(obj.get("email"), str) and
+        isinstance(obj.get("name"), str)
+    )
+
+# Now type checker narrows inside the branch
+def process_api_response(data: dict) -> str | None:
+    if is_valid_user(data):
+        return data["email"]  # data is UserDict here — no error
+    return None
+```
+
+Copilot produces `-> bool` without the `TypeGuard` wrapper. This works at runtime but the type checker treats the branch as still having type `dict`, so field access still generates warnings.
+
 ## Automated Annotation with MonkeyType + AI Review
 
 ```bash
@@ -263,9 +335,11 @@ batch_result = process_config(BatchConfig(mode="batch", batch_size=100))
 pip install monkeytype
 monkeytype run your_script.py
 monkeytype apply your_module
+```
 
-# Then use Claude to review and improve the generated annotations
-python3 << 'EOF'
+Then use Claude to review and improve the generated annotations:
+
+```python
 from anthropic import Anthropic
 from pathlib import Path
 
@@ -282,6 +356,7 @@ response = client.messages.create(
 2. Add Protocol types where duck typing is used
 3. Use Literal for string enums
 4. Add TypeVar/ParamSpec where functions are generic
+5. Add TypeGuard where isinstance checks narrow types
 
 Source:
 {source[:4000]}
@@ -290,8 +365,17 @@ Return the improved source with annotations."""
     }]
 )
 print(response.content[0].text)
-EOF
 ```
+
+MonkeyType captures what types actually flowed through at runtime, which eliminates guesswork about what values a function actually receives. The AI review then upgrades flat `str` annotations to `Literal["pending", "shipped"]` where the sample values suggest it, and adds generics where MonkeyType fell back to `Any`.
+
+## Choosing the Right Tool by Team Size
+
+For **solo projects or small teams** (1–5 engineers): Use Claude Code interactively. Ask it to annotate one module at a time and review the output. Focus on public function signatures first; internal helpers can wait.
+
+For **medium teams** (5–20 engineers): Add mypy to CI with `--strict` on new code only (`--exclude` existing modules). Use MonkeyType to collect runtime types for existing modules, then AI-review the generated stubs before committing.
+
+For **large codebases**: Run pyright in watch mode for developers and mypy in CI. Use a staged rollout — annotate utilities and shared libraries first, then work outward. Copilot handles the mechanical volume; Claude handles the complex patterns like ParamSpec and Protocol.
 
 ## Tool Comparison
 
@@ -303,6 +387,7 @@ EOF
 | Protocol types | Full with @runtime_checkable | Uses `Any` | No |
 | TypedDict + overload | Complete | Basic TypedDict | No |
 | Literal types | Yes | Sometimes | No |
+| TypeGuard | Yes | Rarely | No |
 
 ## Related Reading
 
