@@ -316,6 +316,154 @@ All three tools produce better output with concrete topology descriptions. Inste
 
 Claude handles the full topology in a single prompt reliably. GPT-4 handles it but may need a follow-up prompt to add security details. Copilot works best for completing individual stanzas when you already have the structure scaffolded.
 
+## Task 4: Handling Provider-Specific Quirks
+
+A real-world issue: Windows Hyper-V has different networking than VirtualBox.
+
+**Prompt:** "I'm switching from VirtualBox to Hyper-V on Windows. My Vagrantfile uses NFS shared folders and a private network. Convert it to work on both providers automatically."
+
+Claude suggests using Vagrant's provider detection and fallback:
+
+```ruby
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/jammy64"
+
+  if Vagrant::Util::Platform.windows?
+    # Windows + Hyper-V: Use SMB, not NFS
+    config.vm.synced_folder ".", "/vagrant", type: "smb",
+      smb_username: ENV['USERNAME'],
+      smb_password: ENV['PASSWORD']
+
+    # Hyper-V doesn't support private_network directly — use public with IP
+    config.vm.network "public_network", ip: "192.168.1.100"
+  else
+    # Linux/macOS: Use NFS
+    config.vm.synced_folder ".", "/vagrant", type: "nfs",
+      nfs_udp: false
+    config.vm.network "private_network", ip: "192.168.56.10"
+  end
+
+  case ARGV[1]
+  when /vmware/
+    config.vm.provider "vmware_desktop" do |vmware|
+      vmware.vmx["memsize"] = "4096"
+      vmware.vmx["numvcpus"] = "2"
+    end
+  when /hyperv/
+    config.vm.provider "hyperv" do |hv|
+      hv.memory = 4096
+      hv.cpus = 2
+      hv.vm_integration_services = {
+        guest_service_interface: true,
+        heartbeat: true,
+        key_value_pair_exchange: true,
+        shutdown: true,
+        time_synchronization: true,
+        vss: true
+      }
+    end
+  else
+    # Default: VirtualBox
+    config.vm.provider "virtualbox" do |vb|
+      vb.memory = 4096
+      vb.cpus = 2
+    end
+  end
+end
+```
+
+## Task 5: Debugging Vagrant Issues with AI
+
+Common failure modes and how AI helps:
+
+**Scenario:** "Vagrant SSH hangs. The VM boots but SSH won't connect."
+
+Claude's troubleshooting steps:
+1. Check guest additions version mismatch (VirtualBox version → guest additions mismatch)
+2. Verify provisioning completed (check `vagrant provision` log)
+3. Test connectivity (SSH directly using IP, not `vagrant ssh`)
+
+```bash
+# Claude suggests running
+vagrant ssh-config
+# If this hangs, the VM isn't actually ready. Try:
+vagrant halt
+vagrant destroy
+vagrant up --provider virtualbox
+```
+
+**Scenario:** "Shared folder mounting fails with permission errors."
+
+Claude identifies the root cause is often:
+- User `vagrant` not in the host machine's group (NFS case)
+- SMB credentials wrong (Windows case)
+- Mount options incompatible with the filesystem
+
+```bash
+# For NFS on macOS
+sudo nfsd status
+sudo nfsd restart
+
+# For SMB on Windows
+net use Z: \\<host-ip>\vagrant /user:<username>
+```
+
+## Migration Strategy: From Docker Compose to Vagrant
+
+Teams often ask Claude: "Should we move from Docker Compose to Vagrant?"
+
+Claude explains the tradeoff:
+- **Keep Compose if:** everyone's already on Docker, you need instant test environment, networking is simple
+- **Switch to Vagrant if:** you need to test actual package managers, system services, kernel modules, or multi-distro compatibility
+
+Claude can generate both simultaneously:
+
+```yaml
+# docker-compose.yml for quick dev
+version: '3.9'
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+```
+
+```ruby
+# Vagrantfile for system-level testing
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/jammy64"
+  config.vm.provision "shell", inline: "apt-get update && apt-get install -y build-essential"
+end
+```
+
+## Performance Comparison: Cold Starts
+
+When speed matters (CI/CD context), AI helps pick the right tool:
+
+| Tool | First Boot | Subsequent Boots | Network Setup | Best For |
+|---|---|---|---|---|
+| Vagrant + VirtualBox | 2-4 minutes | 30-60 seconds | Automatic | Local dev, multi-VM |
+| Vagrant + Hyper-V | 1-2 minutes | 20-40 seconds | Automatic | Windows teams |
+| Docker | 5-30 seconds | 1-2 seconds | Manual | Stateless, testing |
+| Vagrant + Multipass | 30-60 seconds | 10-20 seconds | Automatic | Lightweight Ubuntu |
+
+Claude notes: if you're booting 20 Vagrant VMs in CI, switch to containers. But for local development requiring real Systemd/networking, Vagrant wins.
+
+## Real-World Lessons
+
+**Lesson 1: Always version lock your box**
+Claude warns: `config.vm.box_version` prevents silent failures when base images change.
+
+**Lesson 2: Provisioning order matters**
+Claude enforces: install packages before writing configs that depend on them.
+
+**Lesson 3: Use `vagrant-reload` plugin for kernel updates**
+When provisioning installs a new kernel, add:
+```ruby
+config.vm.provision :shell, inline: "reboot"
+config.vm.provision :reload
+```
+
 ## Related Reading
 
 - [Best AI Tools for Writing Apache Configs](/ai-tools-compared/ai-tools-for-writing-apache-configs/)

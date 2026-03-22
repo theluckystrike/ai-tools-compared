@@ -9,7 +9,7 @@ permalink: /ai-autocomplete-accuracy-for-boilerplate-code-vs-complex-log/
 categories: [guides]
 tags: [ai-tools-compared, tools, comparison, artificial-intelligence]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 ---

@@ -225,6 +225,188 @@ Yes, the underlying concepts transfer to other stacks, though the specific imple
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
+## Building Onboarding Checklists with AI
+
+Beyond static documentation, generate dynamic checklists that teams can fork and customize:
+
+```markdown
+# Onboarding Checklist for [Role]: [Team]
+
+## Week 1: Foundation (40 hours)
+
+### Day 1: Environment & Access
+- [ ] Receive laptop and hardware
+- [ ] Set up GitHub SSH keys: `ssh-keygen -t ed25519 && cat ~/.ssh/id_ed25519.pub`
+- [ ] Join Slack channels: #engineering, #your-team, #oncall
+- [ ] Create 1Password account and unlock `Backend Secrets` vault
+- [ ] Clone repositories: `backend`, `infrastructure`, `docs`
+- [ ] Verify Node.js version: `node --version` (need 20.x)
+
+**Expected time:** 2 hours
+**Blocker contact:** @eng-lead on Slack
+
+### Day 2: Local Environment
+- [ ] Complete setup guide: [Local Dev Guide](./local-dev-setup.md)
+- [ ] Run `npm ci` and verify no build errors
+- [ ] Start dev server: `npm run dev`
+- [ ] Access http://localhost:3000/health → expect `{"status":"healthy"}`
+- [ ] Run test suite: `npm test` (should pass 100%)
+- [ ] Attend: "Codebase tour" (1h, optional but recommended)
+
+**Expected time:** 4 hours
+**What to do if stuck:** Check #help-local-dev or pair with @senior-dev
+
+### Day 3-5: First Task
+- [ ] Review: [Code Review Standards](./code-review.md)
+- [ ] Claim your first issue: filter by `good-first-issue`
+- [ ] Create feature branch: `git checkout -b feat/issue-123`
+- [ ] Write code + tests
+- [ ] Run pre-commit: `npm run lint:fix`
+- [ ] Push and create PR
+- [ ] Incorporate feedback from code review
+- [ ] Merge and deploy to staging
+
+**Expected time:** 8 hours across 3 days
+**Deliverable:** Merged PR to main branch
+```
+
+When AI generates this, it personalizes based on your team's actual tools and workflows.
+
+## Measure Documentation Effectiveness
+
+AI helps track whether onboarding docs are working:
+
+```python
+# measure_onboarding.py — track new hire progress
+
+import anthropic
+import json
+
+def evaluate_onboarding_success(metrics: dict) -> str:
+    """Use Claude to interpret onboarding metrics."""
+    client = anthropic.Anthropic()
+
+    prompt = f"""Analyze these onboarding metrics for our engineering team:
+
+Metrics from 10 recent new hires (30-day window):
+- Average time to productive (first PR merged): {metrics['days_to_first_pr']} days
+- Documentation pages read: {metrics['docs_pages_read']} pages
+- Questions asked in #help-onboarding Slack: {metrics['help_questions']} messages
+- Setup failures (environment issues): {metrics['setup_failures']} people
+- Tests passed on first try: {metrics['tests_passed_first_try']}%
+- Code review feedback rounds (avg): {metrics['review_rounds']} rounds
+
+Benchmarks (from industry data):
+- Productive in <5 days: top 25%
+- 10-14 days: average
+- >21 days: needs improvement
+
+Provide:
+1. How is our onboarding performing?
+2. What gaps are evident in the documentation?
+3. Top 3 improvements to make immediately
+4. Which docs get read most/least (ask about flow)?
+"""
+
+    message = client.messages.create(
+        model="claude-opus-4-6",
+        max_tokens=1500,
+        messages=[{"role": "user", "content": prompt}]
+    )
+
+    return message.content[0].text
+
+
+# Sample metrics
+metrics = {
+    'days_to_first_pr': 6.2,
+    'docs_pages_read': 15,
+    'help_questions': 8,
+    'setup_failures': 2,
+    'tests_passed_first_try': 65,
+    'review_rounds': 2.1
+}
+
+report = evaluate_onboarding_success(metrics)
+print(report)
+```
+
+Claude will identify patterns like: "Setup failures cluster around database initialization. Your docs mention `npm run db:migrate` but don't explain what it does or why it fails if Postgres isn't running."
+
+## AI-Assisted Documentation Review
+
+Before publishing onboarding docs to new hires, use AI to find gaps:
+
+```
+I'm publishing a new onboarding guide to my team. For a [React frontend developer],
+reviewing this guide, would you identify:
+
+1. Missing prerequisite knowledge (what am I assuming they know?)
+2. Steps that could fail silently (the command succeeds but something's wrong)
+3. Terminology without explanation
+4. Commands that work on macOS but fail on Windows/Linux
+5. Security gaps (credentials stored insecurely, secrets in code)
+
+Here's the guide:
+[paste entire guide]
+```
+
+Claude returns specific feedback like:
+- "Step 5 runs `npm ci` but doesn't explain why not `npm install`. New hires might get confused by the difference."
+- "You mention 'the usual Slack channels' but don't list them. New hire on day 2 doesn't know which ones are relevant."
+- ".env.local instructions say 'ask on Slack for values' — be specific about which person has the secrets."
+
+## Role-Specific Documentation Generation
+
+AI can generate customized onboarding for different roles from a single master template:
+
+```python
+def generate_role_specific_onboarding(master_context: str, role: str) -> str:
+    """Generate role-specific onboarding guide."""
+    client = anthropic.Anthropic()
+
+    prompt = f"""Using this team context:
+{master_context}
+
+Generate an onboarding guide specifically for: {role}
+
+This guide should include:
+1. Role-specific tools and access they need
+2. First week tasks appropriate for this role
+3. Pairing/mentoring suggestions
+4. Metrics for success in the first 90 days
+5. Common mistakes people in this role make (with solutions)
+
+Format as markdown suitable for publishing.
+Focus on practical, actionable steps, not generic corporate onboarding."""
+
+    message = client.messages.create(
+        model="claude-opus-4-6",
+        max_tokens=2500,
+        messages=[{"role": "user", "content": prompt}]
+    )
+
+    return message.content[0].text
+
+# Generate guides for each role
+for role in ["Backend Engineer", "Frontend Engineer", "DevOps Engineer", "QA Engineer"]:
+    guide = generate_role_specific_onboarding(master_context, role)
+    with open(f"docs/onboarding-{role.lower().replace(' ', '-')}.md", "w") as f:
+        f.write(guide)
+```
+
+## Onboarding Documentation Tools Comparison
+
+| Tool | Best For | AI Capability | Cost |
+|---|---|---|---|
+| Claude (DIY with prompts) | Custom, detailed guides | Excellent contextual generation | API costs (~$1-5 per guide) |
+| Loom (video-based) | Visual setup walkthroughs | Limited (narration suggestions only) | $10-25/month |
+| Notion (structured templates) | Team wiki + AI suggestions | Basic (AI blocks available) | $10-40/month |
+| GitBook | Documentation site + AI | Moderate (generation limited) | Free-$40/month |
+| Guru | Searchable knowledge base | Good (content optimization) | $12-25/user/month |
+
+For engineering teams specifically, Claude wins because it understands code, integrates with your repo, and can generate technically accurate guides without manual effort.
+
 ## Related Articles
 
 - [How to Write Custom Instructions for AI That Follow Your](/ai-tools-compared/how-to-write-custom-instructions-for-ai-that-follow-your-teams-code-review-standards/)

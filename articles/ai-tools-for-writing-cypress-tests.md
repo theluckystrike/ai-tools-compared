@@ -375,6 +375,202 @@ A few patterns that consistently improve AI-generated Cypress tests across all t
 | Session-based auth helpers | Correct | Correct | Basic |
 | Realistic fixture data | Good | Good | No |
 
+## Task 4: Fixing Flaky Tests
+
+When tests fail intermittently, AI helps diagnose race conditions:
+
+**Flaky test example:**
+```javascript
+it('submits form after validation', () => {
+  cy.get('[data-testid="email"]').type('user@example.com');
+  cy.get('[data-testid="submit"]').click();
+  cy.get('[data-testid="success-message"]').should('be.visible');  // Flaky here
+});
+```
+
+**Prompt to Claude:**
+```
+This test is flaky — sometimes it passes, sometimes it fails at the success message.
+The message appears after form validation (async check against server).
+How do I fix the race condition?
+```
+
+Claude identifies the issue and suggests:
+
+```javascript
+// Problem: Clicking submit doesn't wait for async validation
+
+// Solution 1: Intercept and wait for validation request
+it('submits form after validation', () => {
+  cy.intercept('POST', '/api/validate', { statusCode: 200 }).as('validate');
+
+  cy.get('[data-testid="email"]').type('user@example.com');
+  cy.get('[data-testid="submit"]').click();
+
+  // Explicitly wait for the validation request to complete
+  cy.wait('@validate');
+
+  // Now success message should be visible
+  cy.get('[data-testid="success-message"]').should('be.visible');
+});
+
+// Solution 2: Use cy.findByText (retries until found)
+// Better than cy.get for dynamic content
+cy.findByText('Success!', { timeout: 5000 }).should('be.visible');
+
+// Solution 3: Intercept the success state change
+cy.intercept('POST', '/api/submit', (req) => {
+  req.reply({ statusCode: 200, body: { status: 'success' } });
+}).as('submitForm');
+
+cy.get('[data-testid="submit"]').click();
+cy.wait('@submitForm');
+cy.get('[data-testid="success-message"]').should('be.visible');
+```
+
+Claude recognizes the async pattern and suggests the right fix. GPT-4 sometimes suggests flawed solutions like `cy.wait(2000)` (bad practice).
+
+## Task 5: Custom Cypress Commands
+
+Prompt: "Generate a custom command for the login flow that handles MFA. Takes email, password, and optional MFA code. Returns authenticated state."
+
+```javascript
+// cypress/support/commands.js
+
+Cypress.Commands.add('loginWithMFA', (email, password, mfaCode = null) => {
+  // Navigate to login
+  cy.visit('/login');
+
+  // Fill credentials
+  cy.get('[data-testid="email"]').type(email);
+  cy.get('[data-testid="password"]').type(password, { log: false }); // Hide password from logs
+
+  // Intercept authentication request
+  cy.intercept('POST', '/api/auth/login', (req) => {
+    req.reply({
+      statusCode: 200,
+      body: {
+        sessionToken: 'token-abc123',
+        requiresMFA: !!mfaCode
+      }
+    });
+  }).as('login');
+
+  cy.get('[data-testid="login-btn"]').click();
+  cy.wait('@login');
+
+  // Handle MFA if provided
+  if (mfaCode) {
+    cy.get('[data-testid="mfa-input"]').should('be.visible');
+    cy.get('[data-testid="mfa-input"]').type(mfaCode, { log: false });
+
+    cy.intercept('POST', '/api/auth/mfa-verify', {
+      statusCode: 200,
+      body: { authenticated: true }
+    }).as('mfaVerify');
+
+    cy.get('[data-testid="mfa-submit"]').click();
+    cy.wait('@mfaVerify');
+  }
+
+  // Verify we're logged in
+  cy.url().should('include', '/dashboard');
+  cy.get('[data-testid="user-menu"]').should('be.visible');
+});
+
+// Usage in tests:
+it('logs in with MFA', () => {
+  cy.loginWithMFA('user@example.com', 'password123', '123456');
+});
+```
+
+Claude generates well-structured custom commands with error handling and secret masking. Copilot struggles with the logic flow.
+
+## E2E Testing Anti-Patterns: What Claude Catches
+
+Claude can audit your Cypress suite and flag problems:
+
+**Prompt:** "Review this Cypress test and identify anti-patterns:"
+
+```javascript
+it('creates a new project', () => {
+  cy.get('.create-btn').click();          // ❌ Brittle class selector
+  cy.wait(2000);                          // ❌ Hard-coded delay
+  cy.get('input').first().type('name');   // ❌ No testid, relies on order
+  cy.get('textarea').type('description'); // ❌ Same issue
+  cy.get('form button').last().click();   // ❌ Fragile selector
+  cy.get('.success').should('exist');     // ❌ Doesn't wait for visibility
+});
+```
+
+**Claude response:**
+
+```
+Issues found:
+
+1. ❌ cy.wait(2000) — Hard-coded delays fail in slow environments
+   → Use cy.intercept() to wait for actual request
+
+2. ❌ .get('.create-btn') — Class selectors break when styling changes
+   → Use data-testid attributes
+
+3. ❌ .get('input').first() — Relies on DOM order
+   → Use data-testid for specific inputs
+
+4. ❌ .should('exist') — Element could be invisible
+   → Use .should('be.visible')
+
+Refactored:
+
+it('creates a new project', () => {
+  cy.intercept('POST', '/api/projects', { statusCode: 201 }).as('createProject');
+
+  cy.get('[data-testid="create-btn"]').click();
+  cy.get('[data-testid="project-name"]').type('name');
+  cy.get('[data-testid="project-description"]').type('description');
+  cy.get('[data-testid="save-btn"]').click();
+
+  cy.wait('@createProject');
+  cy.get('[data-testid="success-message"]').should('be.visible');
+});
+```
+
+GPT-4 gives similar feedback but sometimes misses the `cy.wait()` delay issue.
+
+## Cypress Tools Comparison
+
+| Aspect | Claude | GPT-4 | Copilot |
+|--------|--------|-------|---------|
+| Full test generation from requirements | Excellent | Very Good | Weak |
+| Identifying flaky test causes | Excellent | Good | Moderate |
+| Custom command design | Excellent | Good | Moderate |
+| Anti-pattern detection | Excellent | Good | No |
+| Modern API knowledge (cy.intercept) | Excellent | Good (sometimes outdated) | Good in-context |
+| Fixture file generation | Yes | Yes | No |
+
+## Real-World Test Maintenance
+
+Cypress test maintenance often requires quick fixes. Claude excels at "what broke my test":
+
+```
+My test was working last week, now it fails with:
+"Timed out retrying after 4000ms: cy.click() failed because the
+element has css property: pointer-events set to none"
+
+The element exists in the DOM, but a loading overlay is blocking it.
+```
+
+Claude identifies: you need to wait for the overlay to disappear before clicking.
+
+```javascript
+// Fix: Wait for overlay to be gone
+cy.get('[data-testid="loading-overlay"]').should('not.exist');
+cy.get('[data-testid="submit-btn"]').click();
+
+// Or use { force: true } only as last resort
+cy.get('[data-testid="submit-btn"]').click({ force: true });
+```
+
 ## Related Articles
 
 - [Best AI Tools for Writing Playwright Tests](/ai-tools-compared/ai-tools-for-writing-playwright-tests-guide)
@@ -382,6 +578,7 @@ A few patterns that consistently improve AI-generated Cypress tests across all t
 - [ChatGPT vs Claude for Generating Cypress Component Test](/ai-tools-compared/chatgpt-vs-claude-for-generating-cypress-component-test-boil/)
 - [AI Tools for Debugging Flaky Cypress Tests Caused by Timing](/ai-tools-compared/ai-tools-for-debugging-flaky-cypress-tests-caused-by-timing-issues/)
 - [Best AI Tools for Writing Unit Tests Comparison 2026](/ai-tools-compared/best-ai-tools-for-writing-unit-tests-comparison-2026/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

@@ -38,7 +38,6 @@ Post model (Prisma): id, userId, title, content, status, createdAt
 
 Generate a GraphQL resolver for the posts field on User type.
 Use Prisma as the data layer. TypeScript.
-{% raw %}
 
 # Best AI Tool for Converting REST APIs to GraphQL Resolvers
 

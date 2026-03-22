@@ -345,6 +345,229 @@ Copilot doesn't debug errors conversationally — you'd need to paste the error 
 | Time series features | Claude | Understands leakage, groupby patterns |
 | Simple plot generation | Copilot | Faster with existing column context |
 
+## Task 4: Debugging Statistical Analysis
+
+**Scenario:** Your model's validation AUC is 0.68 (bad), but training AUC is 0.95 (overfitting).
+
+**Claude prompt:**
+```
+Training AUC: 0.95, Validation AUC: 0.68
+
+This is a severe overfitting problem. My dataset has:
+- 10,000 training samples
+- 2,000 validation samples
+- 150 features (numerical and categorical)
+- Logistic Regression with default parameters
+
+What are the top 5 most likely causes?
+```
+
+Claude generates:
+1. Too many features relative to samples (150:10000 ratio is bad)
+2. Categorical features not properly encoded (might have high cardinality)
+3. No regularization (add C parameter, use L1/L2)
+4. Data leakage (feature contains target information)
+5. Class imbalance (minority class overfit)
+
+Claude then provides the diagnostic code:
+
+```python
+# Check feature importance — might reveal leakage
+from sklearn.inspection import permutation_importance
+perm_importance = permutation_importance(model, X_val, y_val, n_repeats=10)
+
+# Check for extreme feature values
+print(X_train.describe())
+
+# Verify no target leakage
+print("Features correlated with target:")
+print(X_train.corrwith(y_train).abs().sort_values(ascending=False).head(10))
+```
+
+**Copilot** in the same scenario would suggest:
+```python
+# Add regularization
+LogisticRegression(C=0.01, max_iter=1000)
+```
+
+Copilot gives the fix but not the diagnostic. Claude explains why each cause is likely.
+
+## Task 5: Hyperparameter Tuning Strategy
+
+**Prompt to Claude:**
+```
+I'm tuning a RandomForest for a classification task:
+- Dataset: 50,000 samples, 30 features
+- Training takes 5 minutes per model
+- Need results within 24 hours (288 minutes = ~57 models max)
+
+Design a hyperparameter tuning strategy. I can evaluate:
+1. n_estimators: [50, 100, 200, 500]
+2. max_depth: [5, 10, 20, None]
+3. min_samples_split: [2, 5, 10, 20]
+4. min_samples_leaf: [1, 2, 4, 8]
+5. max_features: ['sqrt', 'log2', None]
+
+Which parameters matter most? What's the best search strategy?
+```
+
+Claude analyzes:
+
+```
+Priority ranking (impact on performance):
+1. n_estimators: High impact, test [100, 300] first
+2. max_depth: High impact, test [10, 20] first
+3. min_samples_split: Medium impact, test [5, 10]
+4. max_features: Medium impact, test ['sqrt', 'log2']
+5. min_samples_leaf: Low impact, skip (use default)
+
+Recommended approach:
+- Phase 1 (10 models): GridSearch on n_estimators × max_depth
+  Time: 50 minutes. Keep top 3 parameter combinations.
+- Phase 2 (15 models): RandomSearch on remaining 3 params around winning combo
+  Time: 75 minutes
+- Phase 3 (20 models): Bayesian optimization to fine-tune top performers
+  Time: 100 minutes
+- Total: 225 minutes (leaves 63 minutes buffer)
+
+Implementation:
+"""
+from sklearn.model_selection import GridSearchCV, RandomizedSearchCV
+from skopt import BayesSearchCV
+
+# Phase 1: GridSearch (most important parameters)
+grid = GridSearchCV(
+    RandomForestClassifier(n_jobs=-1, random_state=42),
+    {
+        'n_estimators': [100, 200, 300],
+        'max_depth': [10, 15, 20, 25]
+    },
+    cv=5, scoring='roc_auc', n_jobs=-1
+)
+grid.fit(X_train, y_train)
+
+# Keep best params
+best_params = grid.best_params_
+
+# Phase 2: RandomSearch around winners
+search = RandomizedSearchCV(
+    RandomForestClassifier(**best_params, n_jobs=-1, random_state=42),
+    {
+        'min_samples_split': [2, 5, 10, 20],
+        'max_features': ['sqrt', 'log2'],
+        'min_samples_leaf': [1, 2, 4]
+    },
+    n_iter=15, cv=5, scoring='roc_auc', n_jobs=-1, random_state=42
+)
+search.fit(X_train, y_train)
+"""
+
+This strategy is impossible for Copilot — it can't reason about time constraints and feature importance ranking.
+
+## Handling Imbalanced Data: Claude vs Copilot
+
+**Prompt:** "My dataset is 95% class 0, 5% class 1. How do I fix this?"
+
+**Copilot** suggests:
+```python
+from imblearn.over_sampling import SMOTE
+smote = SMOTE()
+X_train_balanced, y_train_balanced = smote.fit_resample(X_train, y_train)
+model.fit(X_train_balanced, y_train_balanced)
+```
+
+This is correct but incomplete — SMOTE can cause leakage if applied before train-test split.
+
+**Claude** explains:
+```
+SMOTE during training is common but risky. Best practice:
+
+1. Split first: X_train/y_train, X_test/y_test
+2. Apply SMOTE only to training data
+3. Evaluate on original test distribution
+4. Watch for inflated metrics due to synthetic minority samples
+
+Better code:
+"""
+from sklearn.model_selection import train_test_split
+from imblearn.pipeline import Pipeline
+from imblearn.over_sampling import SMOTE
+from sklearn.linear_model import LogisticRegression
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# SMOTE inside pipeline — applies only during fit
+pipeline = Pipeline([
+    ('smote', SMOTE(random_state=42)),
+    ('classifier', LogisticRegression(max_iter=1000))
+])
+
+pipeline.fit(X_train, y_train)
+score = pipeline.score(X_test, y_test)  # Evaluated on original distribution
+"""
+
+Also mention: if SMOTE hurts performance, try class_weight='balanced' instead.
+```
+
+## Tool Decision Framework
+
+| Data Science Task | Claude | Copilot | Winner |
+|---|---|---|---|
+| Exploratory Data Analysis | Good (explains patterns) | Excellent (sees columns) | Copilot |
+| Feature engineering ideation | Excellent | Good | Claude |
+| Debugging model overfitting | Excellent | Weak | Claude |
+| Sklearn pipeline building | Excellent | Good | Claude |
+| Visualization code | Good | Excellent (in-notebook) | Copilot |
+| Statistical test interpretation | Excellent | Weak | Claude |
+| Quick boilerplate code | Moderate | Excellent | Copilot |
+| Cross-validation strategy | Excellent | Weak | Claude |
+| Hyperparameter tuning design | Excellent | Poor | Claude |
+
+## Real Workflow: ML Practitioners Use Both
+
+Smart teams use Claude for reasoning and Copilot for speed:
+
+```python
+# Step 1: Use Copilot to generate boilerplate
+# Type: "import pandas" → Copilot fills in common imports
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+
+# Step 2: Load data with Copilot
+df = pd.read_csv('data.csv')
+X = df.drop('target', axis=1)
+y = df['target']
+
+# Step 3: Use Claude for strategy
+# "I have 50k samples, 30 features, binary classification.
+#  Training is slow. What features should I engineer?"
+# → Claude generates domain-specific feature ideas
+
+# Step 4: Back to Copilot for implementation
+# Type comment: "# normalize numerical features"
+# → Copilot suggests StandardScaler
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+
+# Step 5: Claude for debugging
+# Paste error: "ValueError: y_true and y_pred have different shapes"
+# → Claude explains and provides fix
+
+# Step 6: Copilot for testing boilerplate
+# Type: "# test model performance"
+from sklearn.metrics import classification_report, confusion_matrix
+print(classification_report(y_test, model.predict(X_test_scaled)))
+```
+
+This hybrid approach is faster than either tool alone.
+
 ## Related Reading
 
 - [Best AI Code Completion for Python Data Science 2026](/ai-tools-compared/best-ai-code-completion-for-python-data-science-2026/)

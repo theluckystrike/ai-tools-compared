@@ -230,7 +230,6 @@ This does not auto-update the docs — that is fragile and produces low-quality 
 | Keeping docs in sync with code | Claude (re-run on PR) |
 | Architecture Decision Records | Claude |
 | Sequence diagrams for API flows | Eraser.io or Claude |
-{% raw %}
 
 # Best AI Tools for Creating Open Source Project Architecture Documentation
 
