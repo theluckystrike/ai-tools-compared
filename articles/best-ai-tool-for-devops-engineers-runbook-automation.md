@@ -11,7 +11,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, best-of, artificial-intelligence, automation]---
+tags: [ai-tools-compared, best-of, artificial-intelligence, automation]
+---
 ---
 layout: default
 title: "Best AI Tool for DevOps Engineers Runbook Automation"
@@ -25,7 +26,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, best-of, artificial-intelligence, automation]---
+tags: [ai-tools-compared, best-of, artificial-intelligence, automation]
+---
 
 
 | Tool | Runbook Generation | Infrastructure Awareness | Script Quality | Pricing |

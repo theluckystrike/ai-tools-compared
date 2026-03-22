@@ -11,7 +11,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 9
-tags: [ai-tools-compared, troubleshooting, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, troubleshooting, best-of, artificial-intelligence]
+---
 ---
 layout: default
 title: "Best AI for Fixing Ruby on Rails ActiveRecord Migration"
@@ -25,7 +26,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 9
-tags: [ai-tools-compared, troubleshooting, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, troubleshooting, best-of, artificial-intelligence]
+---
 
 
 | Tool | Rails Knowledge | Migration Handling | ActiveRecord Support | Pricing |
