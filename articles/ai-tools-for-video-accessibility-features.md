@@ -9,7 +9,7 @@ permalink: /ai-tools-for-video-accessibility-features/
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
-score: 8
+score: 9
 reviewed: true
 tags: [ai-tools-compared, artificial-intelligence]
 ---
