@@ -17,6 +17,88 @@ voice-checked: false---
 """
 ```
 
+## Generating Deprecation Notices with AI
+
+Deprecation notices need to communicate three things clearly: what is being removed, when it disappears, and what replaces it. AI tools can generate these from your OpenAPI spec's `deprecated: true` fields and a migration guide outline.
+
+**Claude prompt pattern:**
+```
+Generate deprecation notices for these deprecated endpoints.
+Format each as: a developer-facing warning suitable for API docs,
+an HTTP response header value, and a brief migration guide.
+
+Deprecated endpoints:
+- GET /api/v1/users (deprecated: 2026-01-01, sunset: 2026-07-01, replacement: GET /api/v2/users)
+- POST /api/v1/auth/login (deprecated: 2026-02-01, sunset: 2026-08-01, replacement: POST /api/v2/auth/token)
+```
+
+Claude generates:
+
+```markdown
+## Deprecation: GET /api/v1/users
+
+**Status:** Deprecated as of 2026-01-01. Sunset date: **2026-07-01**.
+
+After July 1, 2026, this endpoint will return `410 Gone`. Requests must be
+migrated to `GET /api/v2/users` before that date.
+
+**Migration:** The v2 endpoint returns the same user fields plus `last_seen_at`.
+Change your base URL from `/api/v1/` to `/api/v2/`. Pagination parameters are
+identical. No authentication changes required.
+```
+
+And the HTTP header value:
+```
+Deprecation: Thu, 01 Jan 2026 00:00:00 GMT
+Sunset: Wed, 01 Jul 2026 00:00:00 GMT
+Link: <https://api.example.com/v2/users>; rel="successor-version"
+```
+
+These headers are defined in RFC 8594 and are supported by API gateway tooling including AWS API Gateway, Kong, and Apigee.
+
+---
+
+## Automating OpenAPI Spec Updates for New Versions
+
+When releasing a new API version, use AI to generate the diff description between versions:
+
+```python
+# scripts/version_diff.py
+import anthropic
+import json
+
+def describe_version_diff(old_spec_path: str, new_spec_path: str) -> str:
+    with open(old_spec_path) as f:
+        old_spec = json.load(f)
+    with open(new_spec_path) as f:
+        new_spec = json.load(f)
+
+    client = anthropic.Anthropic()
+    response = client.messages.create(
+        model="claude-sonnet-4-6",
+        max_tokens=2048,
+        messages=[{
+            "role": "user",
+            "content": f"""Compare these two OpenAPI specs and generate a changelog.
+Format as Markdown with sections: Breaking Changes, New Endpoints, Modified Endpoints, Deprecated.
+
+Old spec (v1): {json.dumps(old_spec, indent=2)[:8000]}
+
+New spec (v2): {json.dumps(new_spec, indent=2)[:8000]}
+"""
+        }]
+    )
+    return response.content[0].text
+
+if __name__ == "__main__":
+    import sys
+    print(describe_version_diff(sys.argv[1], sys.argv[2]))
+```
+
+Run this in CI after any spec changes to auto-generate your CHANGELOG entries.
+
+---
+
 ## Versioning Strategies and Their Documentation Implications
 
 How you version your API shapes the kind of documentation tooling you need. The three dominant strategies each have different documentation requirements:
