@@ -16,6 +16,14 @@ voice-checked: true---
 
 Use AI to generate test cases from requirements; write tests first; then ask AI to implement code to pass the tests. AI generates edge case coverage 3x faster than manual test writing. Verify generated tests actually fail before implementation, then review AI implementations against test requirements. This workflow combines TDD discipline with AI acceleration. This guide covers step-by-step AI-assisted TDD workflows.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Most teams report 15-30%**: faster feature delivery once the workflow stabilizes.
+- **Most teams see 20-35%**: reduction in escape rates once the workflow matures.
+- **Most teams report 20-30%**: faster delivery after stabilizing the workflow (first 2-3 sprints are slower due to learning curve).
+- **Most effective approach**: Use Claude for initial test suite architecture, then use Copilot for inline suggestions while writing tests locally.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 
 ## Why AI-Assisted TDD Works Better in 2026
 

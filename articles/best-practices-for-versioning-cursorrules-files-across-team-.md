@@ -33,6 +33,13 @@ CursorRules files (`.cursorrules`) have become essential for customizing Cursor 
 
 This guide covers practical strategies for managing CursorRules files in Git, from basic setup to advanced workflows that keep your team synchronized.
 
+## Key Takeaways
+
+- **These files define how**: the AI assistant interacts with your codebase, including coding conventions, file preferences, and context handling.
+- **Most teams find the**: committed approach simpler to maintain.
+- **Can we use .cursorrules**: to enforce security rules? Yes, and it is worth doing.
+- **Rules like "never suggest**: storing secrets in environment variable comments" or "always recommend parameterized queries for database calls" add a lightweight AI-level guardrail.
+
 ## Understanding.cursorrules File Structure
 
 Before implementing version control, understand what you're managing. A typical `.cursorrules` file contains instructions that shape Cursor's responses:

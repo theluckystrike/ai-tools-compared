@@ -30,6 +30,18 @@ voice-checked: true---
 
 Manage AI tool configurations across client projects by using environment-specific configuration files with API keys isolated in .env files, implementing a project switcher script for instant context switching, and maintaining separate configuration directories for each client. This approach prevents data leaks, reduces setup time, and keeps your multi-client workflow consistent across all projects.
 
+## Key Takeaways
+
+- **Most providers support this**: through their dashboard.
+- **Add this file per repo**: ```markdown
+# Copilot Instructions
+
+This project uses Python 3.11 with strict type hints.
+- **Instead**: use environment-specific files that load based on the active project context.
+- **If you use a**: single AI platform account for multiple clients, create separate API keys per project.
+- **Here is how to**: handle the most common ones across client projects: ### Cursor Cursor reads `.cursorrules` from the project root.
+- **Always use the internal**: logging library at `internal/logger`.
+
 ## Use Environment-Specific Configuration Files
 
 The foundation of multi-client project management is separating configuration from code. Never hardcode API keys, endpoints, or client-specific settings directly in your scripts. Instead, use environment-specific files that load based on the active project context.

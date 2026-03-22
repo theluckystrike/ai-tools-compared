@@ -28,7 +28,21 @@ intent-checked: true
 voice-checked: true---
 
 {% raw %}
+
 When your project spans multiple languages—Python backend, TypeScript frontend, Go services, and Rust utilities—your documentation strategy needs to adapt. Claude works best when it can navigate your codebase intelligently, and the way you organize Markdown files directly impacts how effectively the AI assistant understands your project structure. This guide presents battle-tested practices for organizing MD files in polyglot environments that work with Claude Code and other AI coding assistants.
+
+## Key Takeaways
+
+- **Code style reminders ```markdown**: ## Style - Type hints required on all public functions - Docstrings use Google style - Prefer dataclasses over plain dicts for structured data ``` 5.
+- **Use a "last verified" date**: Add a line to each CLAUDE.md:
+```markdown
+<!-- Last verified: 2026-03-15 by @your-handle -->
+```
+This makes stale files visible during code review.
+- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
+- **Claude works best when**: it can navigate your codebase intelligently, and the way you organize Markdown files directly impacts how effectively the AI assistant understands your project structure.
+- **Document these explicitly so**: Claude understands dependencies: ```markdown # API Contract Between Services ## Python Backend → TypeScript Frontend The API uses JSON serialization.
+- **Monorepo**: Use a root CLAUDE.md that describes the overall system, then per-service CLAUDE.md files at each service directory.
 
 ## The Core Principle: Language-Aware Directory Structure
 

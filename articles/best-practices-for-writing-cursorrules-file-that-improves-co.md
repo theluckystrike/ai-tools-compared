@@ -30,6 +30,15 @@ voice-checked: true---
 
 Write effective.cursorrules files by using markdown-based natural language instructions starting with a project overview, then specifying explicit coding style guidelines rather than vague preferences, defining precise naming conventions for different contexts, and articulating architectural patterns and testing requirements. The more specific you are about conventions, the better Cursor AI anticipates your needs and generates code matching your exact standards.
 
+## Key Takeaways
+
+- **The more precisely you**: articulate these preferences, the better the AI can anticipate your needs.
+- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
+- **The more specific you**: are about conventions, the better Cursor AI anticipates your needs and generates code matching your exact standards.
+- **Unlike simple configuration files**: that use strict syntax, it uses natural language to communicate your coding preferences, architectural decisions, and project conventions to the AI.
+- **When Cursor AI reads**: your `.cursorrules` file, it uses the information to contextualize every suggestion it generates.
+- **Start with a brief**: project overview that describes your application type, tech stack, and primary use cases.
+
 ## Understanding the Cursorrules File
 
 The `.cursorrules` file is a markdown-based configuration file that lives in your project root directory. Unlike simple configuration files that use strict syntax, it uses natural language to communicate your coding preferences, architectural decisions, and project conventions to the AI. This flexibility makes it incredibly powerful but also means that how you write it significantly impacts the quality of suggestions you receive.
