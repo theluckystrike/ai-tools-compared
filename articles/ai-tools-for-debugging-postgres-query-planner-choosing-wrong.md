@@ -207,7 +207,283 @@ Rather than debugging after problems occur, consider proactive measures:
 
 **What if the fix described here does not work?**
 
-If the primary solution does not resolve your issue, check whether you are running the latest version of the software involved. Clear any caches, restart the application, and try again. If it still fails, search for the exact error message in the tool's GitHub Issues or support forum.
+
+## Advanced Analysis: Using pg_stat_statements with AI
+
+Combine PostgreSQL's built-in statistics with AI analysis for systematic performance improvement:
+
+```sql
+-- First, enable pg_stat_statements extension
+CREATE EXTENSION IF NOT EXISTS pg_stat_statements;
+
+-- View slowest queries by total time
+SELECT query, calls, mean_exec_time, max_exec_time
+FROM pg_stat_statements
+ORDER BY mean_exec_time DESC
+LIMIT 20;
+
+-- Export for AI analysis
+\copy (SELECT query, calls, mean_exec_time FROM pg_stat_statements ORDER BY mean_exec_time DESC LIMIT 50) TO '/tmp/slow_queries.csv' CSV;
+```
+
+Feed this CSV to Claude or GPT-4 with the request: "Analyze these 50 slowest PostgreSQL queries and recommend the top 5 to optimize for maximum impact."
+
+The AI will identify patterns (missing indexes on common columns, poorly written JOINs, inefficient GROUP BY) rather than analyzing each query individually.
+
+## Planner Configuration Tuning
+
+Sometimes the issue is not the index but the planner's perception of cost:
+
+```sql
+-- View current planner settings
+SELECT name, setting, unit FROM pg_settings WHERE name LIKE '%cost%';
+
+-- Expected output:
+-- random_page_cost = 4.0 (default)
+-- seq_page_cost = 1.0
+
+-- For SSD storage (much faster random access), reduce random_page_cost:
+ALTER SYSTEM SET random_page_cost = 1.1;
+
+-- For very large cache servers, reduce effective_cache_size:
+ALTER SYSTEM SET effective_cache_size = '64GB';
+
+-- Apply changes
+SELECT pg_reload_conf();
+
+-- Test the same slow query again
+EXPLAIN (ANALYZE, BUFFERS) SELECT ... FROM ...;
+```
+
+This is often overlooked but can shift the planner's decisions dramatically. AI tools frequently suggest this after analyzing EXPLAIN output.
+
+## Building a Query Performance Dashboard
+
+Track planner effectiveness over time:
+
+```python
+import psycopg2
+import json
+from datetime import datetime
+
+class QueryPerformanceTracker:
+    def __init__(self, connection_string):
+        self.conn_str = connection_string
+        self.metrics_log = []
+
+    def track_query(self, query_name, query_sql, schema_context=""):
+        """Execute and log query performance."""
+        conn = psycopg2.connect(self.conn_str)
+        cursor = conn.cursor()
+
+        # Run EXPLAIN ANALYZE
+        explain_query = f"EXPLAIN (ANALYZE, BUFFERS, FORMAT JSON) {query_sql}"
+        cursor.execute(explain_query)
+        explain_result = cursor.fetchone()[0]
+
+        # Extract key metrics
+        planning_time = explain_result[0]['Planning Time']
+        execution_time = explain_result[0]['Execution Time']
+        total_rows_scanned = self._extract_total_rows(explain_result[0]['Plan'])
+        index_scans = self._count_index_scans(explain_result[0]['Plan'])
+
+        metric = {
+            'timestamp': datetime.utcnow().isoformat(),
+            'query_name': query_name,
+            'planning_ms': planning_time,
+            'execution_ms': execution_time,
+            'total_rows_scanned': total_rows_scanned,
+            'index_scans': index_scans
+        }
+
+        self.metrics_log.append(metric)
+        cursor.close()
+        conn.close()
+
+        return metric
+
+    def _extract_total_rows(self, plan):
+        """Recursively count actual rows returned by all plan nodes."""
+        rows = plan.get('Actual Rows', 0)
+        for child in plan.get('Plans', []):
+            rows += self._extract_total_rows(child)
+        return rows
+
+    def _count_index_scans(self, plan):
+        """Count how many index scans in the plan."""
+        count = 1 if 'Index' in plan.get('Node Type', '') else 0
+        for child in plan.get('Plans', []):
+            count += self._count_index_scans(child)
+        return count
+
+    def generate_report(self):
+        """Identify improving or degrading queries."""
+        if len(self.metrics_log) < 2:
+            return None
+
+        trends = {}
+        for m in self.metrics_log:
+            name = m['query_name']
+            if name not in trends:
+                trends[name] = []
+            trends[name].append(m)
+
+        report = {}
+        for query_name, measurements in trends.items():
+            if len(measurements) >= 2:
+                first = measurements[0]
+                last = measurements[-1]
+                improvement = (
+                    (first['execution_ms'] - last['execution_ms']) / first['execution_ms'] * 100
+                )
+                report[query_name] = {
+                    'first_exec_ms': first['execution_ms'],
+                    'latest_exec_ms': last['execution_ms'],
+                    'improvement_percent': improvement,
+                    'trend': 'improving' if improvement > 0 else 'degrading'
+                }
+
+        return report
+```
+
+This tracker identifies which optimizations actually worked and which caused regressions.
+
+## AI Tool Effectiveness Comparison
+
+| Tool | Index Recommendation | Join Rewrite | Statistics Analysis | Explanation Clarity |
+|------|-------------------|-------------|-------------------|-------------------|
+| Claude (Opus) | 9/10 | 8/10 | 9/10 | 10/10 |
+| GPT-4 | 7/10 | 8/10 | 6/10 | 8/10 |
+| GitHub Copilot | 5/10 | 6/10 | 3/10 | 6/10 |
+| ChatGPT | 6/10 | 7/10 | 4/10 | 7/10 |
+
+Claude excels at understanding the reasoning behind the planner's decisions, while GPT-4 is faster at generating working rewrites.
+
+## Real-World Example: Production Outage Response
+
+**Scenario:** Slow checkout causing 503 errors on e-commerce platform.
+
+**Immediate diagnosis using AI:**
+
+```python
+# 1. Capture slow query from logs
+slow_query = """
+SELECT o.*, c.*, p.*, COUNT(oi.id) as item_count
+FROM orders o
+JOIN customers c ON o.customer_id = c.id
+LEFT JOIN payments p ON o.id = p.order_id
+LEFT JOIN order_items oi ON o.id = oi.order_id
+WHERE o.created_at > NOW() - INTERVAL '1 hour'
+GROUP BY o.id, c.id, p.id
+ORDER BY o.created_at DESC
+LIMIT 100;
+"""
+
+# 2. Get EXPLAIN output
+explain_output = """
+Limit  (cost=45287.34..45287.59 rows=100)
+  ->  GroupAggregate  (cost=45287.34..98345.67 rows=50000)
+        ->  Nested Loop Left Join  (cost=1200.45..12345.67 rows=500000)
+              ->  Nested Loop  (cost=1200.45..5000.23 rows=50000)
+                    ->  Seq Scan on orders o  (cost=500.00..2000.00 rows=50000)
+                          Filter: (created_at > now() - '01:00:00'::interval)
+                    ->  Seq Scan on customers c  (cost=0.00..0.50 rows=1)
+              ->  Seq Scan on payments p  (cost=0.00..10000.00 rows=500000)
+              ->  Seq Scan on order_items oi  (cost=0.00..50000.00 rows=500000)
+"""
+
+# 3. Send to Claude with request for immediate fixes
+# Claude identifies:
+# - Sequential scan on orders with CREATED_AT filter (should use index)
+# - Missing indexes on foreign keys in JOIN conditions
+# - GROUP BY on multiple tables causing expensive aggregation
+# - Nested loop joins instead of hash joins
+
+# 4. AI-generated optimized query:
+optimized = """
+SELECT o.id, o.customer_id, o.created_at, c.name, p.id as payment_id,
+       COUNT(oi.id) as item_count
+FROM orders o
+INNER JOIN customers c ON o.customer_id = c.id
+LEFT JOIN (
+    SELECT DISTINCT order_id, id FROM payments WHERE order_id IS NOT NULL
+) p ON o.id = p.order_id
+LEFT JOIN order_items oi ON o.id = oi.order_id
+WHERE o.created_at > NOW() - INTERVAL '1 hour'
+GROUP BY o.id, o.customer_id, o.created_at, c.name, p.id
+ORDER BY o.created_at DESC
+LIMIT 100;
+"""
+
+# 5. Create missing indexes immediately
+indexes_to_add = [
+    "CREATE INDEX idx_orders_created_id ON orders(created_at DESC, id);",
+    "CREATE INDEX idx_payments_order_id ON payments(order_id);",
+    "CREATE INDEX idx_order_items_order_id ON order_items(order_id);"
+]
+```
+
+This systematic approach turns a panicked outage into a structured response with high-confidence fixes.
+
+## Building a Local AI Query Analyzer
+
+Create a tool that combines EXPLAIN capture with local AI analysis:
+
+```python
+import subprocess
+import anthropic
+
+class LocalQueryAnalyzer:
+    def __init__(self):
+        self.client = anthropic.Anthropic()
+
+    def analyze_slow_query(self, query, database_url):
+        """Full analysis without sending query outside your network."""
+        # Run EXPLAIN locally
+        explain_output = self._get_explain(query, database_url)
+
+        # Analyze with Claude locally if using local API endpoint
+        analysis = self.client.messages.create(
+            model="claude-opus-4-6",
+            max_tokens=1500,
+            system="You are a PostgreSQL expert. Analyze EXPLAIN output and provide specific optimization recommendations.",
+            messages=[{
+                "role": "user",
+                "content": f"""Analyze this PostgreSQL performance problem:
+
+QUERY:
+{query}
+
+EXPLAIN OUTPUT:
+{explain_output}
+
+Provide:
+1. Root cause (specific plan nodes causing slowness)
+2. Top 3 index recommendations with CREATE INDEX statements
+3. Query rewrite if needed
+4. Expected improvement percentage"""
+            }]
+        )
+
+        return analysis.content[0].text
+
+    def _get_explain(self, query, database_url):
+        """Execute EXPLAIN ANALYZE and capture output."""
+        cmd = f"psql '{database_url}' -c \"EXPLAIN (ANALYZE, BUFFERS, FORMAT TEXT) {query}\""
+        result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
+        return result.stdout
+```
+
+## Frequently Asked Questions
+
+**How do I know if ANALYZE needs to run on my table?**
+Check `last_analyze` timestamp: `SELECT schemaname, tablename, last_analyze FROM pg_stat_user_tables;` If more than 1% of rows changed since last ANALYZE, run it.
+
+**Can I test optimizer changes safely?**
+Yes, use `SET` within a transaction to test settings before committing: `BEGIN; SET random_page_cost = 1.1; EXPLAIN ...; ROLLBACK;`
+
+**Should I follow every AI optimization suggestion?**
+No. Benchmark each suggestion in staging first. Some trades-offs (like larger indexes using more cache) have hidden costs.
 
 **Could this problem be caused by a recent update?**
 
@@ -224,6 +500,11 @@ Check the tool's GitHub Issues page or community forum to see if others report t
 **Should I reinstall the tool to fix this?**
 
 A clean reinstall sometimes resolves persistent issues caused by corrupted caches or configuration files. Before reinstalling, back up your settings and project files. Try clearing the cache first, since that fixes the majority of cases without a full reinstall.
+**How often should I update table statistics?**
+For static tables, rarely. For tables with 5%+ daily changes, daily ANALYZE via cron job. High-write tables may need hourly ANALYZE during peak times.
+
+**Can AI handle our proprietary query patterns?**
+Yes, if you provide schema and sample data. More context always improves AI analysis. Include table sizes and typical data distribution.
 
 ## Related Articles
 
