@@ -28,6 +28,35 @@ Terminal command execution hangs in Cursor AI typically stem from several root c
 
 **Buffer and history issues** accumulate over time. Large command histories or terminal buffers can slow down terminal responsiveness, eventually causing apparent hangs during command execution.
 
+## Diagnosing Whether It Is a Hang or a Slow Command
+
+Before applying fixes, confirm your terminal is actually hung rather than just running a slow command. A genuine hang shows no CPU activity and produces no output after 30+ seconds. A slow command (large dependency install, compilation, test suite) shows CPU usage and may simply need more time.
+
+Check which case you have:
+
+```bash
+# In a separate terminal, check if your process is consuming CPU
+top -pid $(pgrep -f "npm install")
+
+# Or use watch to monitor output file if you redirected output
+watch -n 2 tail -5 install.log
+```
+
+If CPU is 0% and no output appears, you have a genuine hang. If CPU is active, the command is just slow—let it run.
+
+Also distinguish between **Cursor's AI agent hanging** (when you ask Cursor to run a terminal command via the AI chat) and **the integrated terminal itself hanging**. AI agent hangs often occur because the agent is waiting for a confirmation prompt that never appears in the output it monitors. Use non-interactive flags to prevent this:
+
+```bash
+# Instead of: npm install (may prompt for confirmations)
+npm install --yes
+
+# Instead of: pip install package
+pip install package --quiet --no-input
+
+# Instead of: git clone URL
+git clone URL --quiet
+```
+
 ## Fix 1: Kill Stuck Terminal Processes
 
 When your terminal hangs, the quickest solution involves terminating stuck processes. Open a new terminal window and use these commands:
@@ -273,6 +302,30 @@ rm -rf ~/Library/Application\ Support/Cursor
 # Reinstall from cursor.sh
 ```
 
+## Fix 6: Adjust Cursor's AI Terminal Timeout Settings
+
+Cursor has configurable timeouts for AI-driven terminal command execution. When the AI agent runs commands on your behalf, it uses an internal timeout before declaring a command hung. You can surface and extend this in settings:
+
+Open Cursor's settings (Cmd+, on macOS) and search for `terminal.integrated.gpuAcceleration`. Disabling GPU acceleration resolves hangs for some users on specific graphics drivers:
+
+```json
+{
+  "terminal.integrated.gpuAcceleration": "off",
+  "terminal.integrated.smoothScrolling": false,
+  "terminal.integrated.rendererType": "dom"
+}
+```
+
+For the AI agent specifically, if you are running commands through Cursor's composer or chat, add explicit success markers to your commands so the agent knows when they complete:
+
+```bash
+# Wrap commands with explicit completion markers
+npm install && echo "INSTALL_COMPLETE"
+python setup.py install && echo "SETUP_COMPLETE"
+```
+
+The AI agent monitors terminal output for completion signals. Without a clear marker, it may continue waiting indefinitely even after the command finishes.
+
 ## Prevention Strategies
 
 Implement these practices to minimize future terminal hanging issues:
@@ -283,6 +336,8 @@ Implement these practices to minimize future terminal hanging issues:
 4. **Keep shell profiles minimal** with conditional loading based on terminal type
 5. **Regularly clear command history** and terminal buffers
 6. **Monitor system resources** to catch memory issues before they cause hangs
+7. **Add `--no-interaction` or `--yes` flags** to all package manager commands run through the AI agent
+8. **Keep Cursor updated** — terminal stability improvements ship frequently in point releases
 
 
 ## Frequently Asked Questions
