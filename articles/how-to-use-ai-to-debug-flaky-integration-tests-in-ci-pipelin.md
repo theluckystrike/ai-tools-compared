@@ -202,6 +202,104 @@ Present the aggregated patterns to AI:
 This approach reveals whether flaky tests share underlying causes—common database fixtures, shared service dependencies, or configuration drift.
 
 
+## Flakiness Classification Matrix
+
+When you have many suspect tests, a classification matrix helps you communicate severity and prioritize fixes. Prompt your AI tool to categorize failures by impact:
+
+| Failure Pattern | Root Cause Category | AI Confidence | Recommended Fix |
+|---|---|---|---|
+| 401 on concurrent login | Auth token race condition | High | Add token refresh lock |
+| 404 after POST creation | Read replica lag | High | Retry with backoff |
+| Timeout on external API | Network instability | Medium | Mock external calls |
+| DB connection refused | Pool exhaustion | High | Increase pool size |
+| File not found in fixture | Parallel write conflict | Medium | Use unique temp paths |
+| Assertion on ordering | Non-deterministic sort | High | Explicit ORDER BY |
+
+AI tools generate this classification automatically when you paste 10-20 representative failures with their stack traces. This exercise often reveals that 60-70% of flaky tests share just 2-3 root causes, making systematic fixes far more efficient than addressing each test individually.
+
+
+## Crafting High-Signal Prompts for Flaky Test Analysis
+
+The quality of AI analysis depends heavily on prompt construction. Vague prompts produce generic advice; specific prompts with structured context yield actionable fixes.
+
+**Low-signal prompt (avoid):**
+```
+Our tests are flaky. What should we do?
+```
+
+**High-signal prompt (use this structure):**
+```
+Context:
+- Framework: pytest 7.4, Python 3.11
+- CI: GitHub Actions, Ubuntu 22.04 runner
+- Database: PostgreSQL 15 with PgBouncer connection pooling
+- Test parallelism: 4 workers via pytest-xdist
+
+Failure pattern (occurs in 30% of CI runs):
+FAILED tests/integration/test_billing.py::test_charge_idempotency
+E  AssertionError: Expected exactly 1 charge record, found 2
+E  assert len(charges) == 1
+
+The test:
+1. Creates a payment intent
+2. Calls charge endpoint twice with the same idempotency key
+3. Asserts only 1 charge record in DB
+
+This passes locally every time. Fails only when CI runs 4 workers in parallel.
+
+What are the most likely causes and recommended fixes?
+```
+
+The second prompt gives the AI framework version, infrastructure topology, parallelism configuration, exact failure message, and test logic. An AI given this context will identify PgBouncer transaction mode as a likely culprit (it breaks PostgreSQL advisory locks used for idempotency checks) rather than offering generic race-condition advice.
+
+
+## Building an Automated Flakiness Detection Pipeline
+
+Rather than waiting for failures to accumulate, proactively detect flaky tests by running your suite multiple times and analyzing variance:
+
+```python
+import subprocess
+import json
+from collections import defaultdict
+
+def detect_flaky_tests(test_path, runs=10):
+    """Run tests multiple times and identify flaky ones."""
+    results = defaultdict(list)
+
+    for i in range(runs):
+        result = subprocess.run(
+            ["pytest", test_path, "--json-report",
+             f"--json-report-file=run_{i}.json", "-q"],
+            capture_output=True, text=True
+        )
+
+        with open(f"run_{i}.json") as f:
+            report = json.load(f)
+
+        for test in report.get("tests", []):
+            results[test["nodeid"]].append(test["outcome"])
+
+    # Find tests that don't have consistent outcomes
+    flaky = {}
+    for test_id, outcomes in results.items():
+        unique = set(outcomes)
+        if len(unique) > 1:
+            pass_rate = outcomes.count("passed") / len(outcomes)
+            flaky[test_id] = {
+                "pass_rate": pass_rate,
+                "outcomes": outcomes
+            }
+
+    return flaky
+
+# Use output to build AI prompt
+flaky_tests = detect_flaky_tests("tests/integration/", runs=10)
+print(f"Found {len(flaky_tests)} flaky tests across 10 runs")
+```
+
+Feed this output to your AI assistant: "Here are 8 flaky tests with their pass rates across 10 runs. Identify which are likely related and suggest a diagnostic sequence to isolate root causes." AI tools can then group tests by likely cause and propose a testing plan.
+
+
 ## Preventing Future Flakiness
 
 

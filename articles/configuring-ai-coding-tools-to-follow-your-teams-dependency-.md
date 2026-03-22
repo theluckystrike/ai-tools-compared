@@ -27,6 +27,21 @@ AI coding assistants trained on millions of public repositories recognize popula
 
 Most AI assistants support context files, custom instructions, or workspace configurations that guide their suggestions. Understanding these mechanisms helps you align AI behavior with your team's conventions without sacrificing productivity gains.
 
+The underlying problem is statistical: public open-source code is dominated by simple, direct instantiation patterns because most tutorials and sample projects skip DI for clarity. The AI has seen `new UserService()` far more often than `container.Resolve<IUserService>()`, so it defaults to the simpler pattern unless you actively redirect it.
+
+
+## Understanding DI Pattern Variants Before You Configure
+
+Before writing configuration files, document precisely which DI approach your team uses. The three most common variants require different instruction strategies:
+
+**Constructor injection** — dependencies are declared as constructor parameters. This is the most testable pattern and the easiest to document. Your configuration should tell the AI to always inject dependencies via constructor parameters, never via property setters or static accessors.
+
+**Property injection** — dependencies are set as public properties after construction. Less common in modern .NET or Java codebases but still present in some legacy systems. Your configuration needs to specify which services use this pattern as exceptions.
+
+**Factory patterns** — the container returns a factory delegate rather than the service itself, useful when you need multiple instances or runtime-parameterized construction. This pattern confuses AI tools most frequently because the factory call site looks like direct instantiation.
+
+Knowing which variant your team uses lets you write configuration instructions that are specific rather than generic, which produces more accurate AI suggestions.
+
 
 ## Configuring GitHub Copilot for Team DI Patterns
 
@@ -216,6 +231,43 @@ var service = new LegacyAdapter(); // Legacy code only
 ```
 
 
+## Documenting the Container Registration Layer
+
+AI tools frequently suggest correct injection at the call site but fail to generate the corresponding container registration. Document your registration patterns explicitly so the AI produces complete, working DI code rather than injection calls without registrations.
+
+Add a `DI_REGISTRATION.md` file to your `docs/` folder and reference it from your Copilot context file:
+
+```markdown
+# Container Registration Patterns
+
+## Service Lifetimes
+
+| Lifetime | When to Use | Registration Method |
+|----------|-------------|---------------------|
+| Singleton | Stateless, shared state | `services.AddSingleton<I, T>()` |
+| Scoped | Per-request state, EF DbContext | `services.AddScoped<I, T>()` |
+| Transient | Lightweight, no shared state | `services.AddTransient<I, T>()` |
+
+## Registration Location
+All registrations go in `src/Infrastructure/DependencyInjection.cs`.
+Never register services in controllers, handlers, or service classes themselves.
+
+## Example
+```csharp
+// Correct: centralized registration
+public static IServiceCollection AddApplicationServices(this IServiceCollection services)
+{
+    services.AddScoped<IOrderRepository, OrderRepository>();
+    services.AddScoped<IOrderService, OrderService>();
+    services.AddSingleton<IEmailSender, SmtpEmailSender>();
+    return services;
+}
+```
+```
+
+When your Copilot context file points to this document, the AI generates registration code in the correct location with the correct lifetime, not just the injection constructor.
+
+
 ## Best Practices for Team Implementation
 
 
@@ -260,6 +312,42 @@ After implementing your configuration, verify it works by:
 4. Testing edge cases like generic types and factory patterns
 
 
+Add a fifth test step: ask the AI to generate a complete feature end-to-end, from the service interface through the registration. A well-configured tool generates the interface, the implementation with constructor injection, and the registration in the correct file—all in one pass. If it misses the registration, your context file needs a stronger pointer to the registration documentation.
+
+
+## Handling Framework-Specific DI Systems
+
+Different frameworks use different DI vocabulary. The instructions you write for a .NET project using `Microsoft.Extensions.DependencyInjection` will not transfer directly to a Java project using Spring or a Python project using `dependency-injector`. Write framework-specific configuration rather than generic DI guidance.
+
+For TypeScript/NestJS projects:
+
+```markdown
+## DI Pattern — NestJS
+
+This project uses NestJS's built-in dependency injection.
+
+Rules:
+- Decorate all providers with `@Injectable()`
+- Inject dependencies via constructor with `private readonly` modifier
+- Register providers in the relevant module's `providers` array
+- Never use `new ServiceName()` outside of test files
+- Use `ModuleRef` only when dynamic service resolution is truly necessary
+
+Example:
+```typescript
+@Injectable()
+export class OrderService {
+  constructor(
+    private readonly orderRepository: OrderRepository,
+    private readonly emailService: EmailService,
+  ) {}
+}
+```
+```
+
+Framework-specific instructions eliminate the ambiguity that causes AI tools to fall back on the generic pattern they've seen most often in training data.
+
+
 ## Common Pitfalls to Avoid
 
 
@@ -267,6 +355,8 @@ Configuration files sometimes conflict with each other. If you use multiple AI t
 
 
 Another common issue involves stale context. AI tools cache previous suggestions, so clear caches after updating configuration files. Most IDEs require a restart or manual cache clear after changing AI settings.
+
+A third pitfall is over-specifying. Configuration files that attempt to document every edge case in your DI setup often become so long that the AI's context window dilutes the most important instructions. Focus your configuration on the three or four patterns your team uses in 90% of new code and handle rare exceptions with inline comments at the point of use.
 
 
 ## Related Articles
