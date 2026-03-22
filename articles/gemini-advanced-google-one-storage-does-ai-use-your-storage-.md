@@ -390,10 +390,6 @@ if [ $PERCENT -gt $THRESHOLD ]; then
 fi
 ```
 
-## Related Reading
-
-
-
 ## Frequently Asked Questions
 
 

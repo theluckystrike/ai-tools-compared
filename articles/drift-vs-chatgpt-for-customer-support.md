@@ -433,10 +433,6 @@ For healthcare (HIPAA) or financial (SOX) customers, Drift's managed compliance 
 - Custom integrations required
 - Complete data control necessary
 
-## Related Reading
-
-
-
 ## Frequently Asked Questions
 
 

@@ -468,10 +468,6 @@ async function benchmarkCachePatterns() {
 Ask either tool: "Write a benchmark comparing cache-aside vs write-through patterns."
 Cursor generates more complete benchmarks with warmup periods and statistical analysis.
 
-## Related Reading
-
-
-
 ## Frequently Asked Questions
 
 

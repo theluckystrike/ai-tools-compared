@@ -409,10 +409,6 @@ When each AI tool starts hallucinating (based on testing):
 
 Stay in the "safe limit" column to maintain quality.
 
-## Related Reading
-
-
-
 ## Frequently Asked Questions
 
 

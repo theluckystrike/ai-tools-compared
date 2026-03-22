@@ -370,10 +370,6 @@ Developers who maintain independent skills remain valuable even as AI improves:
 
 The goal isn't avoiding AI—it's using AI as acceleration while maintaining fundamental competence.
 
-## Related Reading
-
-
-
 ## Frequently Asked Questions
 
 

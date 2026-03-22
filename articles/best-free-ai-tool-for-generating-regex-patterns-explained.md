@@ -454,10 +454,6 @@ Better: \p{L}  // Unicode letters (if regex engine supports)
 Ask AI: "This needs to match names with accents, umlauts, and non-Latin scripts"
 ```
 
-## Related Reading
-
-
-
 ## Frequently Asked Questions
 
 

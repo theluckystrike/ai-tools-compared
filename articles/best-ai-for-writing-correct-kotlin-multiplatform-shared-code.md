@@ -239,13 +239,6 @@ Add explicit instructions in your system prompt or comment context: "This file i
 
 Partially. Compose Multiplatform has stabilized on desktop and is in beta on iOS. AI tools have reasonable coverage of standard composables but may suggest Android-specific Compose APIs (like `LocalContext.current`) in multiplatform contexts where they fail on iOS.
 
-## Related Reading
-
-- [Claude vs ChatGPT for Refactoring Legacy Java Code to Kotlin](/ai-tools-compared/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
-- [Best AI for Fixing Android Gradle Sync Failed Errors in Large Projects](/ai-tools-compared/best-ai-for-fixing-android-gradle-sync-failed-errors-in-larg/)
-- [AI Code Generation Quality for Java Pattern Matching and Switch Expressions](/ai-tools-compared/ai-code-generation-quality-for-java-pattern-matching-and-swi/)
-
-
 ## Related Articles
 
 - [Claude vs ChatGPT for Refactoring Legacy Java Code to Kotlin](/ai-tools-compared/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)

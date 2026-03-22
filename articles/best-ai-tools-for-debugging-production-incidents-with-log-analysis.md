@@ -373,10 +373,6 @@ def should_analyze(log_entry: dict) -> bool:
     return True
 ```
 
-## Related Reading
-
-
-
 ## Frequently Asked Questions
 
 
