@@ -96,7 +96,7 @@ def audit_file(file_path: Path) -> dict:
     try:
         json_text = response.content[0].text
         if '```json' in json_text:
- json_text = json_text.split('```json')[1].split('```')[0]
+            json_text = json_text.split('```json')[1].split('```')[0]
         result = json.loads(json_text)
         result['file'] = str(file_path)
         return result
@@ -217,6 +217,36 @@ Return the complete updated file."""
 ```
 
 The "fix ONLY this specific issue" instruction prevents AI from over-refactoring, which introduces risk.
+
+## Specific AI Tools for Technical Debt
+
+### SonarQube with AI Assistance
+
+SonarQube's long-standing static analysis engine now integrates AI explanations for flagged issues. Its debt remediation time estimates are more accurate than manual guesses because they're based on aggregated data from millions of repositories. The Community Edition is free and covers the most common debt patterns for Java, Python, JavaScript, and TypeScript. Pair SonarQube's systematic scanning with Claude or GPT-4 for generating the actual fix code—SonarQube finds it, the LLM fixes it.
+
+### CodeClimate Velocity
+
+CodeClimate adds a team-productivity lens to technical debt: it correlates high-debt files with developer velocity data, showing which files slow down your team the most during pull requests. This is a useful prioritization signal that pure code analysis misses. A 300-line god class that nobody touches is less important than a 100-line module that every PR touches.
+
+### GitHub Copilot for Refactoring
+
+Copilot's inline refactoring suggestions (triggered via `/fix` and `/refactor` in Copilot Chat) work well for targeted debt items. The key is specificity: "Refactor this function to eliminate the nested callbacks and use async/await instead" produces better results than "improve this code." Copilot also explains its changes, which helps reviewers understand the before/after difference.
+
+### Cursor with Codebase Context
+
+Cursor's `@codebase` feature lets you ask questions about debt patterns across your entire project: "Find all places where we're catching exceptions and silently swallowing them" or "Show me all functions longer than 50 lines that lack unit tests." This kind of codebase-wide query is difficult with traditional tools and fast with Cursor's indexed context.
+
+### Tool Comparison
+
+| Tool | Best For | Cost | Language Support |
+|---|---|---|---|
+| SonarQube CE | Systematic scanning, CI gates | Free | 30+ languages |
+| CodeClimate | Velocity correlation | Paid | 10+ languages |
+| GitHub Copilot Chat | Targeted refactoring | $10-19/mo | All major |
+| Cursor | Codebase-wide queries | $20/mo | All major |
+| DeepSource | Automated PRs for fixes | Free/Paid | Python, JS, Go, Java |
+
+DeepSource deserves special mention: it can automatically open pull requests with fixes for certain debt categories, closing the loop without human intervention for low-risk issues.
 
 ## Measuring Progress
 
