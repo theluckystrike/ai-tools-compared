@@ -53,7 +53,7 @@ Configure Continue in your VS Code settings:
 }
 ```
 
-Continue excels at inline code completion and chat-based assistance. The trade-off is that local models generally lack Tabnine's context-aware suggestions built from billions of code samples.
+Continue excels at inline code completion and chat-based assistance. The trade-off is that local models generally lack Tabnine's context-aware suggestions built from billions of code samples. However, using a purpose-built model like `qwen2.5-coder:7b` instead of generic CodeLlama narrows that quality gap considerably. Continue also supports FIM (Fill-in-the-Middle) prompting natively, which produces better inline completions than standard generation—the model sees both the code before and after the cursor position before generating its suggestion.
 
 ### 2. CodeGPT Plus with Local Inference
 
@@ -85,6 +85,8 @@ docker run -d \
 
 Integrate with VS Code using the Tabby extension. The setup requires minimal configuration and provides fast, locally-hosted completions. Tabby's advantage is its narrow focus—it does one thing well rather than attempting to be a general AI assistant.
 
+Tabby also supports **repository-level context indexing**, which lets it learn from your existing codebase and generate project-specific completions. This directly matches one of Tabnine's marquee features. Enable it by mounting your repositories into the container and setting the `--repository-context` flag. After an initial indexing pass (typically a few minutes for codebases under 500K lines), Tabby's suggestions reflect your project's naming conventions and patterns rather than just general training data.
+
 ### 4. Fauxpilot
 
 Fauxpilot functions as a self-hosted alternative to GitHub Copilot. It uses the Same-Disk LLM approach, running inference locally with minimal resources.
@@ -96,7 +98,7 @@ cd fauxpilot
 docker-compose up -d
 ```
 
-Configure your editor to connect to your local Fauxpilot server. This option provides Copilot-like experience while keeping everything local.
+Configure your editor to connect to your local Fauxpilot server. This option provides Copilot-like experience while keeping everything local. Fauxpilot works by exposing the same API endpoint format that GitHub Copilot uses, which means editor plugins designed for Copilot can connect to it by simply changing the endpoint URL. This approach makes migration straightforward for teams that already have Copilot workflows established.
 
 ### 5. LocalCode with CodeGen
 
@@ -117,6 +119,50 @@ completion:
   temperature: 0.2
 ```
 
+### 6. llama.cpp with OpenAI-Compatible API
+
+For maximum control and minimum overhead, running llama.cpp directly provides an OpenAI-compatible API that works with nearly every editor plugin. This eliminates abstraction layers from Ollama or LM Studio and reduces latency on constrained hardware.
+
+```bash
+# Build llama.cpp with Metal (macOS GPU acceleration)
+git clone https://github.com/ggerganov/llama.cpp.git
+cd llama.cpp && cmake -B build -DLLAMA_METAL=ON && cmake --build build
+
+# Run the server with a code model
+./build/bin/llama-server \
+  --model models/qwen2.5-coder-7b-q4_k_m.gguf \
+  --port 8080 \
+  --ctx-size 8192 \
+  --n-predict 256
+```
+
+llama.cpp with Metal acceleration on Apple Silicon produces first-token latency under 200ms for 7B models—faster than many cloud services under load.
+
+## Model Selection: Which Model Works Best
+
+Choosing the right model matters as much as choosing the right tool. Purpose-built code models from Alibaba and DeepSeek now outperform older options like CodeLlama on most benchmarks.
+
+| Model | Parameters | Best For | HumanEval Pass@1 |
+|-------|-----------|----------|-------------------|
+| Qwen2.5-Coder | 7B | Python, JS, Go | 88.4% |
+| DeepSeek-Coder-V2-Lite | 16B (MoE) | Multi-language | 81.1% |
+| StarCoder2 | 7B | Open-source focus | 73.2% |
+| CodeLlama | 13B | Instruction following | 67.8% |
+
+DeepSeek-Coder-V2-Lite uses a Mixture of Experts architecture that activates only 2.4B parameters per forward pass despite 16B total, making it fast on consumer hardware. Qwen2.5-Coder 7B in Q4_K_M quantization fits in 8GB unified memory and delivers completions most developers find indistinguishable from Tabnine's on everyday tasks.
+
+## Comparing Self-Hosted Directly to Tabnine
+
+Tabnine's commercial advantages include whole-project context awareness, team-level learning, and enterprise support contracts. Here is how the best self-hosted options compare:
+
+**Whole-project context**: Tabby ML's repository indexing matches this feature directly. Continue with a 32K+ token context window approximates it for smaller projects.
+
+**Team learning**: Self-hosted solutions can be fine-tuned on your codebase using LLaMA-Factory or Axolotl. This requires upfront GPU resources but produces genuinely organization-specific completions.
+
+**Privacy guarantees**: Self-hosted wins outright. No data leaves your infrastructure at any point—not for training, not for telemetry, not for billing.
+
+**Cost at scale**: Tabnine Enterprise runs $39+ per seat per month. A shared Tabby ML server on a single RTX 4090 (roughly $1,600 hardware cost) serves 10-15 developers with sub-second latency indefinitely, breaking even in under four months.
+
 ## Performance Comparison
 
 When evaluating local alternatives, consider three metrics: **suggestion quality**, **response latency**, and **resource consumption**.
@@ -124,9 +170,12 @@ When evaluating local alternatives, consider three metrics: **suggestion quality
 | Tool | Model Size | RAM Usage | Latency | Quality |
 |------|-----------|-----------|---------|---------|
 | Continue + CodeLLama | 7B-13B | 8-16GB | 2-5s | Good |
+| Continue + Qwen2.5-Coder | 7B | 6-8GB | 1-2s | Very Good |
 | Tabby ML | 1B-3B | 2-4GB | <1s | Moderate |
+| Tabby ML + DeepSeek | 7B | 8GB | 1-2s | Good |
 | Fauxpilot | 6B-7B | 6-10GB | 1-3s | Good |
 | CodeGPT + Mistral | 7B | 8GB | 2-4s | Good |
+| llama.cpp + Qwen2.5 | 7B | 6GB | <1s | Very Good |
 
 Local models with 7B parameters offer the best balance between quality and hardware requirements. If your machine has 32GB RAM, you can comfortably run larger models for better suggestions.
 
@@ -144,6 +193,8 @@ For optimal experience with 7B parameter models:
 - **16GB VRAM**: NVIDIA RTX 4070 or equivalent
 - **SSD Storage**: Faster model loading and swapping
 
+Apple Silicon deserves special mention: the M3 Pro and M4 chips use unified memory shared between CPU and GPU, so a MacBook Pro with 36GB runs 7B models on-chip at speeds comparable to a discrete GPU, eliminating the need for separate GPU hardware.
+
 ## Choosing the Right Solution
 
 Select your self-hosted alternative based on your priorities:
@@ -152,6 +203,8 @@ Select your self-hosted alternative based on your priorities:
 - **Copilot-like experience**: Fauxpilot provides the most similar interface
 - **Resource-constrained**: Tabby's lightweight models run on modest hardware
 - **Maximum quality**: Run larger models with more RAM and VRAM
+- **Team deployment**: Tabby ML with a shared server handles multiple developers simultaneously
+- **Lowest latency**: llama.cpp with Metal/CUDA acceleration beats all alternatives on first-token speed
 
 ## Setup Recommendations
 
@@ -166,41 +219,28 @@ curl -fsSL https://ollama.com/install.sh | sh  # Linux
 # Install VS Code extension
 code --install-extension continue.continue
 
-# Pull a capable model
-ollama pull codellama:7b
+# Pull a capable model — Qwen2.5-Coder outperforms CodeLlama for most tasks
+ollama pull qwen2.5-coder:7b
 ```
 
-From there, experiment with different models and tools to find your ideal setup. The local AI ecosystem continues evolving rapidly, with new models and optimizations appearing regularly.
+Once you have a working setup, benchmark it against your actual workflow before investing in a larger model. Many developers find that a fast 7B model responding in under a second feels better in practice than a higher-quality 13B model with 3-second latency. The local AI ecosystem continues evolving rapidly, and as inference hardware becomes cheaper, the quality gap between self-hosted solutions and commercial offerings continues to close.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 
 ## Frequently Asked Questions
 
+**Can self-hosted code completion match Tabnine's quality?**
 
-**Who is this article written for?**
+For most common programming tasks in popular languages like Python, TypeScript, and Go, yes. Models like Qwen2.5-Coder 7B achieve HumanEval scores above 88%, which exceeds what Tabnine delivers for many users. The main area where Tabnine still has an edge is very deep repository-level context across massive codebases, though Tabby ML's indexing feature is narrowing that gap.
 
-This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
+**Do I need a GPU to run local code completion?**
 
+No, but a GPU accelerates inference significantly. On Apple Silicon hardware with unified memory, CPU-based inference is fast enough for comfortable real-time completions. On x86 systems, a CPU alone can run 7B models but response times may feel slow (3-6 seconds). Any discrete GPU with 8GB VRAM—including older NVIDIA cards—makes a noticeable difference.
 
-**How current is the information in this article?**
+**Which editor extensions work with self-hosted models?**
 
-We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
-
-
-**Are there free alternatives available?**
-
-Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support. Open-source options can fill some gaps if you are willing to handle setup and maintenance yourself. Evaluate whether the time savings from a paid tool justify the cost for your situation.
-
-
-**How do I get started quickly?**
-
-Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
-
-
-**What is the learning curve like?**
-
-Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+Continue.dev works with VS Code and JetBrains IDEs. Tabby has extensions for VS Code, IntelliJ, and Vim/Neovim. Fauxpilot works with the GitHub Copilot extension by pointing it at a local endpoint. For Emacs users, gptel and ellama both support Ollama backends.
 
 
 {% endraw %}
