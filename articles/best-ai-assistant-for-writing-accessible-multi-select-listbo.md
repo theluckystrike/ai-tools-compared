@@ -1,18 +1,20 @@
 ---
+
 layout: default
 title: "Best AI Assistant for Writing Accessible Multi Select Listbox Components 2026"
 description: "A practical comparison of AI coding assistants for building WCAG-compliant multi-select listbox components with ARIA attributes and keyboard navigation"
 date: 2026-03-21
 last_modified_at: 2026-03-21
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /best-ai-assistant-for-writing-accessible-multi-select-listbo/
-reviewed: false
-score: 0
+reviewed: true
+score: 8
 categories: [comparison]
 intent-checked: false
 voice-checked: false
 tags: [ai-tools-compared, comparison, accessibility, frontend]
 ---
+
 
 
 {% raw %}
