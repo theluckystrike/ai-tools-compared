@@ -27,9 +27,21 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 Running AI-powered code assistance locally gives you complete control over your data. When working with proprietary algorithms, internal APIs, or regulated codebases, sending context to cloud-based AI services may violate compliance requirements or security policies. Ollama provides a solution by running large language models directly on your machine, enabling intelligent code completion and assistance without any data leaving your local environment.
 
 This guide walks through setting up Ollama as a private coding assistant, configuring it with appropriate models, and integrating it into your development workflow.
+
+## Key Takeaways
+
+- **Use llama.cpp directly only**: if you need fine-grained quantization control (e.g., GGUF Q4_K_M vs Q5_K_S) or want to integrate into a custom inference pipeline.
+- **Q**: What happens to model performance when running on CPU only?
+
+Inference on CPU is 10-30x slower than GPU.
+- **Ensure your machine has sufficient memory**: 16GB is a practical minimum for coding models, with 32GB recommended for larger models or simultaneous use with other applications.
+- **Larger models (13B-34B) offer**: better reasoning but require more resources.
+- **Install Ollama and expose**: it on an internal network address: ```bash OLLAMA_HOST=0.0.0.0:11434 ollama serve ``` Restrict access with your corporate firewall to the VPN subnet only.
+- Always use Pydantic v2 models.
 
 ## Installing Ollama
 

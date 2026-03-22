@@ -18,6 +18,14 @@ voice-checked: true---
 
 Choose Cursor if you need to refactor error handling across multiple files, migrate from `String` errors to custom error enums, or describe complex `thiserror`/`anyhow` requirements conversationally. Choose GitHub Copilot if you prefer inline suggestions for standard Rust error patterns like `Result<T, E>` returns and `?` operator usage without leaving your editor. Cursor's project-wide awareness gives it an advantage for custom error type architectures, while Copilot is faster for single-file, pattern-based completions.
 
+## Key Takeaways
+
+- **It may recommend using**: `unwrap()` in contexts where proper error handling would be more appropriate, or suggest `anyhow` when `thiserror` would provide better type safety.
+- **For most application-level code**: you'll work with `Result` types that wrap your desired return type in `Ok` and errors in `Err`.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+- **Choose Cursor if you**: need to refactor error handling across multiple files, migrate from `String` errors to custom error enums, or describe complex `thiserror`/`anyhow` requirements conversationally.
+- **Choose GitHub Copilot if**: you prefer inline suggestions for standard Rust error patterns like `Result<T, E>` returns and `?` operator usage without leaving your editor.
 
 ## Understanding Rust Error Handling Fundamentals
 

@@ -31,6 +31,15 @@ voice-checked: true---
 
 The Model Context Protocol (MCP) enables AI systems to connect with external tools and data sources through a standardized interface. When building AI-powered development workflows, providing accurate deployment environment context becomes essential for generating relevant code, configuration, and infrastructure suggestions. This guide walks you through creating an MCP server that exposes deployment environment information to AI agents.
 
+## Key Takeaways
+
+- **For Kubernetes integrations**: use a service account with read-only RBAC permissions scoped to the namespaces the MCP server needs to query.
+- **Configuration files are a**: natural fit for resources because the AI can reference them without invoking a tool call.
+- **Exposing environment configs as**: resources allows the AI to proactively load them into context without the user needing to ask.
+- **Well-formed AI assistants use this flag to adjust their response**: explaining that the lookup failed rather than fabricating status information.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## Understanding MCP Server Architecture
 
 An MCP server operates as a bridge between AI models and external systems. It exposes resources, tools, and prompts that AI clients can discover and invoke. For deployment environment context, you'll want to expose information about your infrastructure, environment variables, container configurations, and deployment status.

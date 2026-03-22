@@ -27,9 +27,19 @@ score: 8
 intent-checked: true
 voice-checked: true---
 
+
 Migrate DALL-E prompts to Midjourney by converting your descriptive prompts to style tokens, adjusting aspect ratios, and using Midjourney's parameter syntax. This guide shows the translation patterns for different image types.
 
 This guide covers the key distinctions between DALL-E and Midjourney prompt formats, with practical examples you can use immediately.
+
+## Key Takeaways
+
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **While you can use natural language**: the model responds better to specific keyword arrangements and parameter flags.
+- **Does Midjourney offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
 
 ## Core Philosophical Differences
 

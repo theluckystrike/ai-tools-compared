@@ -16,6 +16,14 @@ tags: [ai-tools-compared, best-of, artificial-intelligence]---
 
 Claude Code produces the most security-hardened Dockerfiles, scoring 95% on security benchmarks with consistent non-root users, minimal base images, and proper layer ordering. Cursor generates the best-optimized multi-stage builds and provides the smoothest editor experience. For most developers, start with whichever tool already fits your editor workflow—the security and optimization gaps between top tools are narrowing—but prioritize Claude Code if you are building production containers where security matters most.
 
+## Key Takeaways
+
+- **Claude Code produces the**: most security-hardened Dockerfiles, scoring 95% on security benchmarks with consistent non-root users, minimal base images, and proper layer ordering.
+- **When asked to explain its choices, Claude Code articulates why each decision was made**: useful when onboarding team members to container best practices.
+- **The gap between tools**: continues to narrow, but developers focused on production containers will find Claude Code's security focus most valuable for reliable, secure image generation.
+- **Notice how the build stage installs dependencies before copying application code**: this ensures Docker's layer cache is used on repeated builds when only source files change, not package.json.
+- **Where Copilot falls short**: is in suggesting pinned digest-based image references (`FROM golang:1.21-alpine@sha256:...`) and configuring a non-root user for the runtime stage.
+- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
 
 ## What Dockerfile Generation Needs from AI Tools
 

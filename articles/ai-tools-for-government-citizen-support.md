@@ -16,9 +16,16 @@ intent-checked: true---
 
 {% raw %}
 
-
 AI tools for government citizen support handle inquiry triage, document processing, and multilingual communication while maintaining the security, audit trails, and human oversight that public sector work requires. The most effective implementations use retrieval-augmented generation for citizen inquiries, OCR-based form extraction for applications, and translation workflows with human review for multilingual outreach. This guide provides implementation examples with code snippets for developers building these systems within government compliance frameworks.
 
+## Key Takeaways
+
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **The most effective approach**: uses a hybrid model where AI handles initial triage and common queries while routing complex issues to human agents.
+- **In the US**: FedRAMP Moderate covers most state and federal use cases.
+- **Does Go offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Setting it too high**: (0.95+) causes excessive escalation that burdens human staff without meaningful accuracy improvement.
 
 ## Understanding Citizen Support Requirements
 

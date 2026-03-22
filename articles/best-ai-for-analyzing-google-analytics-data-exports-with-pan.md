@@ -27,7 +27,18 @@ score: 8
 voice-checked: true
 intent-checked: true---
 
+
 AI tools like Claude and ChatGPT 4o can generate pandas code for Google Analytics data analysis, handling nested event parameters, datetime conversions, and cohort analysis. Claude excels at producing modular, readable code when you provide sample data structures. GitHub Copilot offers inline suggestions that adapt to your coding style, while Cursor enables iterative refactoring for complex pipelines. The key to accurate results is providing clear context about your GA export structure and desired analysis output.
+
+## Key Takeaways
+
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **Does Go offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Example prompt**: ```
+I have a Google Analytics 4 CSV export with columns: date, session_id, user_id, event_name, event_params (JSON string), device_category, country.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
 
 ## Why AI-Assisted Analytics Matters
 

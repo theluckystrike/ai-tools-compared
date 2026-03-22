@@ -27,7 +27,17 @@ score: 9
 voice-checked: true
 intent-checked: true---
 
+
 Writing GraphQL schemas by hand is tedious. Type definitions, resolver signatures, federation directives, and subscription patterns all require boilerplate. AI coding assistants now handle schema generation competently—some handle complex federation setups, others excel at resolver logic. This guide benchmarks the top tools for GraphQL work.
+
+## Key Takeaways
+
+- **If you're writing schemas**: infrequently (weekly design sessions), ChatGPT Plus at $20/month for the team shared account is better.
+- **For enterprises**: Sourcegraph Cody Pro ($20/month in IDE) if you need codebase consistency, otherwise Claude API with enterprise support.
+- **For teams**: GitHub Copilot at $19/month per developer is cheapest if your team codes daily.
+- **For enterprises**: Sourcegraph Cody Pro at $20/month in IDE is strong if you need codebase consistency across 10+ repositories.
+- **Use Cody Pro for**: maintaining consistency across your codebase Most productive teams use Claude for schema architecture + Copilot for inline scaffolding.
+- **For teams**: Copilot's $19/month per developer is unbeatable for daily work, with Claude reserved for architectural decisions.
 
 ## What We Tested
 

@@ -33,6 +33,15 @@ Several AI tools excel at this task. This guide recommends the best options base
 
 This guide evaluates the best AI tools for writing AWS CDK infrastructure code in Python, focusing on practical output quality and developer experience.
 
+## Key Takeaways
+
+- **This guide recommends the**: best options based on specific use cases and shows you which tool to choose for your situation.
+- **Testing current versions against**: your specific use cases provides the most accurate basis for selection.
+- **The abstraction level means**: more boilerplate than handwritten Terraform, and the CDK v2 migration introduced changes that still cause confusion when AI tools suggest deprecated v1 patterns.
+- **This approach uses its**: completion strengths while avoiding the v1/v2 confusion that appears when generating from scratch.
+- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
+- **This guide evaluates the**: best AI tools for writing AWS CDK infrastructure code in Python, focusing on practical output quality and developer experience.
+
 ## Why AI Tools Matter for AWS CDK Development
 
 AWS CDK Python code differs from typical application code. You work with constructs from the AWS Construct Library, manage stack outputs, handle cross-stack references, and ensure proper IAM permissions. The abstraction level means more boilerplate than handwritten Terraform, and the CDK v2 migration introduced changes that still cause confusion when AI tools suggest deprecated v1 patterns.

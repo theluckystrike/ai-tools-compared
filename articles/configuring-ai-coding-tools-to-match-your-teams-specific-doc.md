@@ -27,7 +27,18 @@ intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]---
 
+
 AI coding assistants have become essential for developer productivity, but they often generate Dockerfiles that clash with your team's established patterns. When your team follows specific layer ordering conventions—whether prioritizing dependency caching, security scanning, or multi-stage build optimization—generic AI suggestions can undermine your build pipeline efficiency. Configuring AI tools to match your team's Dockerfile layer ordering requires understanding how these tools interpret context and learning to guide them toward your conventions.
+
+## Key Takeaways
+
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **Does Teams offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Use golang**: 1.21-alpine as build stage
+2.
+- **Set non-root user for**: runtime 7.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
 
 ## Why Dockerfile Layer Ordering Matters to Your Team
 

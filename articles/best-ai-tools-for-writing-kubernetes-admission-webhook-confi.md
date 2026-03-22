@@ -16,6 +16,14 @@ voice-checked: true---
 
 Claude Code excels at generating complete Kubernetes admission webhooks with both server code and configurations, while GitHub Copilot works well for inline additions and Amazon Q provides AWS/EKS integration. Cursor's strength is refactoring and multi-file context awareness for webhook migrations. The best choice depends on whether you need full-stack webhook generation (Claude Code), inline completion (Copilot), enterprise AWS integration (Amazon Q), or refactoring existing code (Cursor).
 
+## Key Takeaways
+
+- **The best choice depends**: on whether you need full-stack webhook generation (Claude Code), inline completion (Copilot), enterprise AWS integration (Amazon Q), or refactoring existing code (Cursor).
+- **If your team uses EKS heavily**: Amazon Q Developer provides tighter AWS integration.
+- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
+- **A single misconfiguration can**: cause deployment failures or security gaps.
+- **AI tools assist by**: generating boilerplate code, suggesting best practices, debugging existing configurations, and explaining complex admission controller concepts.
+- **The best tools understand**: Kubernetes API patterns and can produce working configurations faster than manual documentation lookup.
 
 ## Why AI Tools Help with Admission Webhooks
 

@@ -27,7 +27,17 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 Choose Lightdash if your team already uses dbt and wants AI-powered natural language queries with minimal infrastructure overhead. Choose Preset if you need custom ML model integration, Python-native visualizations, or work with data sources outside dbt. This comparison covers architecture, AI features, and code examples for both platforms.
+
+## Key Takeaways
+
+- **The cost scales with seats**: which works well for focused analytics teams of 5–20 people where most users are analysts who benefit directly from the dbt-integrated workflow.
+- **Choose Preset if you**: need custom ML model integration, Python-native visualizations, or work with data sources outside dbt.
+- **Asking "show me daily**: active users by region for the past 30 days" returns a working chart because Lightdash can map the question to defined dbt metrics.
+- **Preset's pricing is usage-based**: and typically higher for small teams but more cost-effective for large organizations where many users need read-only dashboard access.
+- **Choose Preset if you**: need custom ML model integration, your data doesn't use dbt, you want full programmatic control, or Python-based visualizations are essential.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 
 ## Architecture Overview
 

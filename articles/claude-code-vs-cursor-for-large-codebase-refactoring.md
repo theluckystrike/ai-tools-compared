@@ -31,6 +31,26 @@ tags: [ai-tools-compared, comparison, claude-ai]---
 
 Claude Code wins for repo-wide refactoring that requires reasoning across many files simultaneously — it reads entire directory trees, plans changes across dozens of files, and executes them with a single session. Cursor wins for iterative, file-by-file refactoring inside an IDE where you want inline diffs, immediate preview, and the ability to accept/reject individual changes. The deciding factor is usually the size of what you're changing: single module or service → Cursor; cross-cutting concern affecting 20+ files → Claude Code.
 
+## Key Takeaways
+
+- **If `getUserById()` is called**: via a wrapper that itself is called 40 places, Claude Code traces that chain; Cursor Composer may stop at the direct callers.
+- **Group by**: Prisma schema, DB queries, API layer, React components, tests."
+
+# Step 2: Plan the migration
+claude "Create a migration plan for renaming user_id to userId.
+- **All files in src/api/**: that query user_id 3.
+- Remove all unused imports
+2.
+- **Replace deprecated getUser() with**: getUser({id}) 3.
+- **Show diffs for each."
+```
+
+### Tip 2**: Use Git After Each Phase
+
+```bash
+# After each Claude Code refactor phase
+git add .
+
 ## Context Window Handling
 
 Claude Code (Sonnet 4.6 and Opus 4.6) ships with a 200k token context window. For a large codebase, this matters directly:

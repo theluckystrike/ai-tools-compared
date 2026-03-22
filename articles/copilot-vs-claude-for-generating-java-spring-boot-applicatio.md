@@ -31,6 +31,15 @@ tags: [ai-tools-compared, comparison, claude-ai]---
 
 When building Java Spring Boot applications in 2026, developers need AI assistants that understand the framework's conventions, annotations, and dependency injection patterns. GitHub Copilot and Claude each approach Spring Boot code generation differently, and understanding these differences helps you choose the right tool for your workflow.
 
+## Key Takeaways
+
+- **For the best results**: many developers use both tools: Claude for initial architecture and component creation, Copilot for filling in details and making incremental changes during development.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **Use AI-generated tests as**: a starting point, then add cases that cover your unique requirements and failure modes.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+- **GitHub Copilot and Claude**: each approach Spring Boot code generation differently, and understanding these differences helps you choose the right tool for your workflow.
+- **The controller should expose**: CRUD endpoints for an User entity.
+
 ## Understanding the Generation Approaches
 
 GitHub Copilot operates as a code completion tool integrated directly into your IDE. It generates code based on context from your current file, comments, and surrounding code. Copilot excels at predicting what comes next in a partially written file, making it effective for scaffolding boilerplate and filling in method implementations.

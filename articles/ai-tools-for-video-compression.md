@@ -35,6 +35,15 @@ Traditional video codecs like H.264 and H.265 rely on hand-crafted heuristics to
 
 Three categories of AI tools exist in this space: end-to-end neural codecs, AI-enhanced traditional encoders, and preprocessing tools that optimize input before conventional encoding.
 
+## Key Takeaways
+
+- **The result is consistently**: better VMAF at the same file size, typically 5-10% improvement.
+- **If more than 15%**: of your audience uses platforms that lack hardware AV1 decoding, consider offering H.265 as a fallback in your HLS/DASH manifest.
+- **Every major CDN and player supports it**: and encoding latency stays under 500ms at typical resolutions.
+- **Deploy AV1 for new applications where decoder support is available**: most modern browsers and mobile devices now include hardware AV1 decoding.
+- **Quality values between 24-28**: typically balance size and visual fidelity for most streaming applications.
+- **For most streaming applications**: target 85-93 depending on content type.
+
 ## Tool Comparison: AI Video Compression Options
 
 Choosing the right tool depends on your delivery targets, available compute, and decoder support requirements:

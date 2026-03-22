@@ -28,7 +28,17 @@ intent-checked: true
 voice-checked: true---
 
 {% raw %}
+
 Maintaining accurate developer documentation consumes significant time. Many teams start with good intentions—writing inline comments, documenting APIs, creating README files—only to watch that documentation become outdated as code evolves. AI-powered tools now offer a practical solution: automatically converting existing code comments into polished, developer-facing documentation. This approach bridges the gap between informal notes and professional docs without requiring a complete documentation rewrite.
+
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Most tools support multiple**: documentation formats including Javadoc-style comments, Docstrings (Python, JavaScript), TypeScript declarations, and general inline comments.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **Used for scaling metrics**: before visualization.
 
 ## How AI Documentation Converters Work
 

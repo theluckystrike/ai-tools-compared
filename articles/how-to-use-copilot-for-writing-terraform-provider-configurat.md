@@ -27,7 +27,17 @@ score: 8
 intent-checked: true
 voice-checked: true---
 
+
 GitHub Copilot accelerates Terraform provider configuration by suggesting provider blocks with standard parameters when you start typing, reducing the need to consult documentation repeatedly. By providing clear context through variables, existing provider blocks, and comments describing requirements, Copilot generates accurate configurations for AWS, Azure, and GCP with proper authentication methods and feature flags. The key is maintaining consistent variable naming and project organization so Copilot can incorporate your specific infrastructure patterns into suggestions.
+
+## Key Takeaways
+
+- **Copilot performs better with**: consistent file organization because it has clearer context about your infrastructure setup.
+- **Copilot works best when**: it has context about your project, so open your existing Terraform files alongside new configurations.
+- **Copilot works best when**: relevant files are open in the same editor session.
+- **Use `terraform providers lock`**: after confirming your versions to generate a `.terraform.lock.hcl` file that the whole team shares through source control.
+- **What file should I**: keep open to give Copilot the best context? Keep `variables.tf`, `locals.tf`, and any existing `providers.tf` open in separate editor tabs.
+- **Copilot uses open files as context**: so having your variable definitions visible dramatically improves the relevance of provider suggestions.
 
 ## Setting Up Copilot for Terraform
 

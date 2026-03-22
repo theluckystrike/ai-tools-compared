@@ -31,6 +31,15 @@ voice-checked: true---
 
 Choose Sonnet if you need cost-effective, high-volume processing at $3/$15 per million input/output tokens. Choose Opus if first-attempt accuracy on complex reasoning tasks justifies the 5x premium at $15/$75 per million tokens. Most production systems should default to Sonnet and selectively route complex requests to Opus for the best balance of cost and quality.
 
+## Key Takeaways
+
+- **Choose Sonnet if you**: need cost-effective, high-volume processing at $3/$15 per million input/output tokens.
+- **Choose Opus if first-attempt**: accuracy on complex reasoning tasks justifies the 5x premium at $15/$75 per million tokens.
+- **Claude Haiku at roughly**: $0.25/$1.25 per million tokens handles simple classification, extraction, and single-sentence tasks at 12x less cost than Sonnet.
+- **If the correction rate is under 15%**: Sonnet is sufficient for that task category.
+- **This hybrid approach captures**: 80% of Sonnet's cost savings while reserving premium capabilities for where they genuinely improve outcomes.
+- **If correction cost exceeds**: 15% of the Opus premium, upgrade the routing threshold.
+
 ## Current API Pricing (2026)
 
 Anthropic's API pricing has stabilized with clear tiers:

@@ -27,7 +27,27 @@ score: 9
 voice-checked: true
 intent-checked: true---
 
+
 Claude Code and Cursor Composer represent two distinct approaches to AI-assisted full-stack development. Claude Code operates as a CLI tool integrated with your existing editor, maintaining unlimited context across massive codebases. Cursor Composer embeds AI directly into a specialized editor built on VSCode, optimizing for speed and real-time collaboration. Both accelerate development, but they excel in different scenarios: choose Claude Code for greenfield projects where context depth matters, or Cursor Composer for teams already working in VSCode who need immediate multi-file edits.
+
+## Key Takeaways
+
+- **Cheaper per-session**: Pay only for what you use
+3.
+- **VSCode-only**: Can't use with other editors
+3.
+- **Model flexibility limited**: Cursor uses Claude or GPT-4, less customization
+4.
+- **You review them together**: understanding the complete change set:
+
+```bash
+# Claude Code output for "Add user profile editing"
+Files to create/modify:
+1.
+- api/users/[id]/profile.ts (new)
+2.
+- types/user.ts (modify)
+3.
 
 ## Architecture & Workflow Differences
 

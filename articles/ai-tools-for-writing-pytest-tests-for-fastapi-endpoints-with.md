@@ -16,9 +16,16 @@ intent-checked: true---
 
 {% raw %}
 
-
 Writing tests for FastAPI applications that use dependency injection can feel like navigating a maze. The very feature that makes FastAPI powerful—its dependency injection system—also creates challenges when you need to mock external services, databases, or authentication providers in your tests. AI coding assistants can help you generate pytest tests that properly override dependencies, but not all tools handle this equally well.
 
+## Key Takeaways
+
+- **Claude Code and Cursor**: can read pytest output directly; for Aider, pipe the output: `pytest 2>&1 | aider --message "Fix these test failures: $(cat /dev/stdin)"`.
+- **Both produce significantly better**: output than prompting Copilot inline, which tends to generate only the minimum required code.
+- **Writing tests for FastAPI**: applications that use dependency injection can feel like navigating a maze.
+- **AI tools perform dramatically**: better with full context.
+- **Use `app.dependency_overrides` to mock**: `get_database` and `get_current_user`.
+- **Missing cleanup causes test**: pollution where dependencies bleed across tests, producing false positives or hard-to-debug failures.
 
 ## Understanding FastAPI Dependency Injection in Tests
 

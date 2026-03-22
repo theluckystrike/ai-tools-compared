@@ -16,6 +16,14 @@ intent-checked: true---
 
 For private repository code, run DeepSeek Coder locally to eliminate privacy risks—your code never leaves your infrastructure and you maintain complete control over proprietary data. The cloud API offers faster processing and more powerful models but requires transmitting code over the internet. This guide compares the two deployment models across privacy, cost, performance, and hardware requirements to help you choose the right approach for handling sensitive code.
 
+## Key Takeaways
+
+- **The 33B model delivers more accurate results but requires longer generation times**: sometimes 3-5 seconds per completion on consumer hardware.
+- **The 7B model provides**: a good balance of capability and accessibility for most development tasks.
+- **Choose the cloud API**: when you need maximum model capability, lack suitable local hardware, or work with code that doesn't require strict isolation.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+- **This guide compares the**: two deployment models across privacy, cost, performance, and hardware requirements to help you choose the right approach for handling sensitive code.
 
 ## Understanding the Two Deployment Models
 

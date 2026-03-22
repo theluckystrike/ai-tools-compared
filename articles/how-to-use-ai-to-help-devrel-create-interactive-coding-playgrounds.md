@@ -31,6 +31,18 @@ intent-checked: true---
 
 For DevRel teams building interactive coding playgrounds, the fastest path is CodeSandbox or StackBlitz for infrastructure, Claude or GPT-4 for generating initial example code, and Monaco Editor for custom in-page editors. AI cuts the "blank canvas" problem — paste your SDK docs and ask for 3-5 complete working examples at different complexity levels, then embed them. The remaining work is refining examples for accuracy and adding the UX layer (progress tracking, step instructions, expected outputs).
 
+## Key Takeaways
+
+- **SDK Documentation**: $(cat docs/sdk-reference.md)
+
+Generate 5 complete, runnable code examples:
+1.
+- **A step with 40%**: drop-off usually has an example that's too abstract, too complex, or assumes knowledge the previous steps didn't cover.
+- **A well-designed playground can**: demonstrate SDK usage, showcase API capabilities, and let potential users experience your tool's value within minutes.
+- **An interactive playground removes**: friction by providing a ready-to-use environment directly in the browser.
+- **Provide AI with context**: about your product's API or SDK, and it can generate multiple example scenarios showing different features and use cases.
+- **AI can help generate test cases**: but manual testing remains essential for user experience.
+
 ## Why Interactive Coding Playgrounds Matter for DevRel
 
 Interactive coding playgrounds serve multiple purposes in developer relations. They provide hands-on experiences that help developers understand your product without setting up local environments. A well-designed playground can demonstrate SDK usage, showcase API capabilities, and let potential users experience your tool's value within minutes.

@@ -28,7 +28,17 @@ intent-checked: true
 voice-checked: true---
 
 {% raw %}
+
 AI assistants debug Chrome DevTools heap snapshot memory leaks by interpreting retained size data to show which objects are preventing garbage collection, recognizing patterns like detached DOM trees, forgotten event listeners, and unbounded caches, and explaining the difference between shallow and retained size in actionable terms. The best AI memory leak debuggers can trace retention paths and suggest specific code fixes—like adding unsubscribe functions, cache eviction limits, or proper cleanup in useEffect—based on your exact leak pattern and JavaScript framework.
+
+## Key Takeaways
+
+- **When you paste retention**: paths or describe what you see in the DevTools memory panel, the AI should translate technical data into practical recommendations.
+- **The best AI assistants**: explain this distinction clearly and help you focus on the retained size when hunting leaks.
+- **The `listeners` array grows**: indefinitely because `subscribe()` is called on every component mount but nothing ever removes listeners.
+- **The fix is to**: properly clean up the DataManager in an useEffect cleanup function, as shown above.
+- **Common React memory leaks**: include stale closures in useEffect, uncleaned-up subscriptions, forgotten timers or intervals, and context providers that hold large data.
+- **Use it for vanilla**: JavaScript problems where retention paths are simpler.
 
 ## What to Look for in an AI Memory Leak Debugging Assistant
 

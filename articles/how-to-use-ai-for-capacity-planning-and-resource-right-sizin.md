@@ -30,6 +30,15 @@ tags: [ai-tools-compared, artificial-intelligence]---
 
 Capacity planning and resource right sizing represent critical challenges for engineering teams managing cloud infrastructure. Overprovisioning leads to wasted budget, while underprovisioning causes performance degradation and potential outages. AI-powered tools now offer sophisticated approaches to predict workload demands and optimize resource allocation with greater accuracy than traditional rule-of-thumb methods.
 
+## Key Takeaways
+
+- **For most infrastructure use cases**: time series forecasting provides the most immediate value.
+- **Services where p95 usage**: is below 40% of the current limit are flagged as over-provisioned.
+- **You need time-series metrics**: collected at regular intervals, typically every 60 seconds or more frequently for volatile workloads.
+- **Tuesday**: model scoring. The Prophet or ARIMA models score the fresh data against their forecasts and produce updated limit recommendations.
+- **Wednesday**: review and approval. Engineers review the flagged recommendations in a 30-minute sync.
+- **Overprovisioning leads to wasted budget**: while underprovisioning causes performance degradation and potential outages.
+
 ## Understanding the Basics
 
 Traditional capacity planning relies on historical data analysis and manual forecasting. You might examine past CPU usage patterns, memory consumption, and request volumes to estimate future needs. This approach works reasonably well for stable workloads but struggles with seasonal variations, growth trends, and sudden traffic spikes.

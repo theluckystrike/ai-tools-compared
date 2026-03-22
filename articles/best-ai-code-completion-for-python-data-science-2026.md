@@ -27,6 +27,7 @@ score: 9
 voice-checked: true
 intent-checked: true---
 
+
 Python data science workflows live in notebooks—Jupyter, IPython, Google Colab, VS Code. AI code completion in this environment differs fundamentally from traditional IDE development. Data scientists need:
 
 - **Pandas/NumPy autocomplete**: `df.groupby()` chains, index manipulation, vectorized operations.
@@ -35,6 +36,15 @@ Python data science workflows live in notebooks—Jupyter, IPython, Google Colab
 - **scikit-learn patterns**: Model initialization, pipeline construction, cross-validation setup.
 
 This guide compares five leading AI completion tools for Python data science: GitHub Copilot, Cursor, Claude, Amazon CodeWhisperer, and Codeium.
+
+## Key Takeaways
+
+- **- Amazon CodeWhisperer**: Free to $600/year ($10/month × 5 if standalone).
+- **I need to identify**: power users (top 10% by spending) and their repeat purchase rate.
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **- GitHub Copilot**: $50/month ($10 × 5).
+- **- Cursor**: $100/month ($20 × 5).
+- - Everyone gets Copilot ($50/month).
 
 ## Comparison Table
 

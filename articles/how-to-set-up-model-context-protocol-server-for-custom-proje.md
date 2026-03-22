@@ -28,9 +28,19 @@ intent-checked: true
 voice-checked: true---
 
 {% raw %}
+
 Setting up a Model Context Protocol server for your custom project documentation transforms how AI coding assistants understand and interact with your codebase. When your AI tool can access your internal docs, architecture decisions, and API specifications directly through MCP, you get more accurate suggestions that align with your project's conventions.
 
 This guide walks you through building an MCP server that serves your documentation to Claude, Cursor, and other compatible AI tools.
+
+## Key Takeaways
+
+- **Finding API conventions**: > "What format should I use for API response errors?"
+
+Your conventions document gets searched and relevant details are extracted.
+- **Use clear**: scannable headings. AI tools parse markdown headings to understand document structure quickly.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **This guide covers prerequisites, step 1**: initialize your mcp server project, step 2: structure your documentation, with specific setup instructions
 
 ## Prerequisites
 

@@ -31,6 +31,15 @@ tags: [ai-tools-compared, best-of]---
 
 GitHub Copilot Custom Instructions transform how developers interact with AI-assisted coding. Rather than accepting generic suggestions, you can configure Copilot to understand your project's conventions, coding preferences, and team standards. This guide covers practical strategies for writing custom instructions that genuinely improve your development workflow.
 
+## Key Takeaways
+
+- **Can I use these**: tools with a distributed team across time zones? Most modern tools support asynchronous workflows that work well across time zones.
+- **Include details about your**: architecture and commonly used patterns.
+- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
+- **Rather than accepting generic**: suggestions, you can configure Copilot to understand your project's conventions, coding preferences, and team standards.
+- **Group related rules together**: and use consistent formatting.
+- **This includes indentation**: naming patterns, and language-specific preferences.
+
 ## Understanding Copilot Custom Instructions
 
 GitHub Copilot reads custom instructions from your VSCode settings file (`settings.json`). These instructions act as persistent context that Copilot considers when generating code suggestions. Unlike inline comments that apply to a single session, custom instructions remain active across all your coding sessions within that workspace.

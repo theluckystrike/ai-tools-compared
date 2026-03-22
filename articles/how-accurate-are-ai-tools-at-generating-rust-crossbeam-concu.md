@@ -27,7 +27,17 @@ score: 8
 intent-checked: true
 voice-checked: true---
 
+
 AI tools generate correct Crossbeam code for basic channel patterns and synchronization primitives about 70% of the time, but struggle with advanced features like epochs and memory ordering. This guide shows which patterns each tool handles well, which require manual verification, and when to review the output closely.
+
+## Key Takeaways
+
+- **Use Claude for complex concurrent patterns**: It handles epochs and lock-free structures better than alternatives.
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **It's best used as**: a starting point rather than final code.
+- **Does Rust offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 
 ## Testing Methodology
 

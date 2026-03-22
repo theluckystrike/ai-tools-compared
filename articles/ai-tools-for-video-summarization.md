@@ -27,7 +27,17 @@ intent-checked: true
 tags: [ai-tools-compared, artificial-intelligence]
 categories: [guides]---
 
+
 Video content dominates the internet, but processing and extracting value from hours of footage remains challenging. For developers building applications that handle video content, AI-powered summarization tools offer practical solutions.
+
+## Key Takeaways
+
+- **Whisper large-v3 consistently produces**: the most accurate transcriptions, which directly improves summary quality since the LLM works from cleaner input.
+- **Use GPT-4o Vision or**: Gemini 1.5 Pro to process key frames extracted at regular intervals.
+- **Extract one frame every 5-10 seconds**: then send a batch of frames with a prompt asking the model to describe what is happening on screen.
+- **Extractive methods identify and**: clip the most important segments from a video.
+- **Most production tools combine**: both approaches.
+- **The choice between approaches**: depends on your use case.
 
 ## Understanding Video Summarization Approaches
 

@@ -27,9 +27,19 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 AI coding assistants can make legacy code refactoring significantly safer by generating tests before changes, suggesting incremental improvements, and explaining transformations. This guide shows you the workflow to refactor risky code using AI while maintaining test coverage and understanding every change.
 
 This guide covers practical strategies for AI-assisted refactoring that keep your test suite intact.
+
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Step 3**: Gradually update the controller to use the new service.
+- **Commit with clear message**: git commit -m "Refactor: [what changed] - all tests green, coverage +2%" ``` This ensures you're not just refactoring blindly but actively improving code quality metrics.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
 ## The Core Principle: Small, Verifiable Changes
 

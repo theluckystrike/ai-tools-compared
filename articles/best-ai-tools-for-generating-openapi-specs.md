@@ -16,6 +16,20 @@ voice-checked: true---
 
 OpenAPI specs are the contract between your API and its consumers. AI-generated specs that miss edge cases — nullable fields, error schemas, authentication schemes — create downstream problems in generated SDKs and client code. This guide tests Claude, Copilot, and Speakeasy on real API code and measures output quality against what you'd need in production.
 
+## Key Takeaways
+
+- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
+- **@router.get("/{order_id}"**: response_model=OrderResponse)
+async def get_order(
+    order_id: str,
+    current_user = Depends(get_current_user)
+) -> OrderResponse:
+    """Get order details.
+- **A week-long trial with**: actual work gives better signal than feature comparison charts.
+- **Do these tools work**: offline? Most AI-powered tools require an internet connection since they run models on remote servers.
+- **How quickly do AI**: tool recommendations go out of date? AI tools evolve rapidly, with major updates every few months.
+- **Should I switch tools**: if something better comes out? Switching costs are real: learning curves, workflow disruption, and data migration all take time.
+
 ## Test: FastAPI to OpenAPI 3.1
 
 FastAPI auto-generates OpenAPI specs, but the defaults miss important details. Use Claude to enhance them:

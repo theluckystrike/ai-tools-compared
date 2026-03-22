@@ -16,9 +16,16 @@ voice-checked: true---
 
 {% raw %}
 
-
 GitHub Actions has become a standard platform for automating CI CD pipelines, but writing workflow files from scratch can be time-consuming. GitHub Copilot helps developers generate pipeline configurations faster by suggesting YAML syntax, common actions, and best practices as you type. This guide shows practical approaches for using Copilot to write, test, and optimize GitHub Actions workflows.
 
+## Key Takeaways
+
+- **Use the chat feature**: for asking specific questions about GitHub Actions syntax or best practices.
+- **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
+- **GitHub Copilot helps developers**: generate pipeline configurations faster by suggesting YAML syntax, common actions, and best practices as you type.
+- **Copilot uses the filename**: and surrounding context to provide relevant suggestions.
+- **Copilot helps construct these**: pipelines while following security best practices.
+- **Use your IDE's YAML**: validator to catch indentation problems before committing.
 
 ## Setting Up Copilot for YAML Workflows
 

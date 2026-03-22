@@ -27,11 +27,21 @@ score: 8
 intent-checked: true
 voice-checked: true---
 
+
 Debug flaky tests with AI by analyzing test logs, asking about race conditions and timing issues, and getting suggestions for stabilization. This guide shows the prompting technique that helps AI identify subtle flakiness causes.
 
 Flaky integration tests represent one of the most frustrating challenges in CI/CD pipelines. These tests fail intermittently without code changes, eroding team confidence in the test suite and wasting hours of developer time. Traditional debugging approaches—adding logs, increasing timeouts, and manually analyzing test output—often prove insufficient. AI-powered debugging tools now offer a more systematic approach to identifying root causes and suggesting fixes.
 
 This guide demonstrates practical techniques for using AI to debug flaky integration tests in CI pipelines, with concrete examples you can apply immediately.
+
+## Key Takeaways
+
+- **This exercise often reveals**: that 60-70% of flaky tests share just 2-3 root causes, making systematic fixes far more efficient than addressing each test individually.
+- **What are the most**: likely causes and recommended fixes? ``` The second prompt gives the AI framework version, infrastructure topology, parallelism configuration, exact failure message, and test logic.
+- **Flaky integration tests represent**: one of the most frustrating challenges in CI/CD pipelines.
+- **The test fails roughly**: 20% of the time with 404 errors.
+- **Recommended fixes**: 1.
+- **Check if your database**: uses async replication 3.
 
 ## Understanding Flaky Test Patterns
 

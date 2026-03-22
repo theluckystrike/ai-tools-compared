@@ -31,6 +31,15 @@ tags: [ai-tools-compared, artificial-intelligence]---
 
 Developers who have invested time building custom snippets and templates in Cursor AI often face a challenge when trying to move to WindSurf. While both editors share roots in Visual Studio Code, their approaches to custom AI-assisted content differ in ways that affect how you transfer your workflows. This guide walks through the practical steps of migrating your Cursor snippets and templates to WindSurf, with working code examples you can apply immediately.
 
+## Key Takeaways
+
+- **On Windows**: check `%APPDATA%\Cursor\User\snippets\`.
+- **On macOS**: they're typically stored in `~/Library/Application Support/Cursor/User/snippets/` or `~/.cursor/extensions/`.
+- **On macOS**: this is `~/Library/Application Support/WindSurf/User/snippets/`.
+- **WindSurf, developed by Codeium, takes a different approach**: it uses a combination of VS Code's native snippet system and its own AI context files.
+- **WindSurf uses the `scope`**: field to define where the snippet applies, and the JSON format requires careful attention to commas between properties.
+- **WindSurf uses a different**: mechanism called `windrules` for project-specific AI behavior.
+
 ## Understanding the Difference Between Cursor and WindSurf
 
 Cursor stores user snippets in a JSON format within its configuration directory. These snippets appear as AI-completable options when you type trigger words or invoke the AI completion feature. WindSurf, developed by Codeium, takes a different approach—it uses a combination of VS Code's native snippet system and its own AI context files.

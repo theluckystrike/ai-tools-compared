@@ -30,6 +30,15 @@ tags: [ai-tools-compared, best-of, artificial-intelligence]---
 
 AI-powered ChatOps tools have become essential for DevOps teams that want to automate workflows, reduce alert fatigue, and accelerate incident response. When integrated with Slack, these tools create a centralized hub where developers and operations staff can monitor systems, trigger deployments, and collaborate on issues without switching between multiple platforms.
 
+## Key Takeaways
+
+- **Can I use these**: tools with a distributed team across time zones? Most modern tools support asynchronous workflows that work well across time zones.
+- **Most AI ChatOps tools**: support fingerprint-based deduplication.
+- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
+- **The platform uses predictive**: analytics to identify potential issues before they impact users.
+- **Splunk ITSI (IT Service**: Intelligence) Splunk ITSI uses AI to provide contextual awareness for IT operations.
+- **When an alert fires**: ITSI can attach a pre-built correlation search result showing the last ten similar incidents, the resolution time for each, and which runbook was used to fix them.
+
 ## What Makes a ChatOps Tool Effective for DevOps
 
 Before looking at specific tools, it helps to understand what capabilities matter most for DevOps integration:

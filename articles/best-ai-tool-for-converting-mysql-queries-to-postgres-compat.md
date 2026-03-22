@@ -31,6 +31,17 @@ voice-checked: true---
 
 Migrating from MySQL to PostgreSQL is a common scenario for development teams seeking better features, JSON support, or stricter SQL compliance. However, the query syntax differences between these database systems create a significant challenge. Manually rewriting hundreds or thousands of queries is error-prone and time-consuming. This is where AI-powered conversion tools become valuable.
 
+## Key Takeaways
+
+- **Cost**: Many AI translators offer free tiers for limited use.
+- **Can I use these**: tools with a distributed team across time zones? Most modern tools support asynchronous workflows that work well across time zones.
+- **GitHub Copilot**: Best for In-Editor Workflow
+
+GitHub Copilot handles straightforward query conversions well when used with a clear comment directive.
+- **The most effective migration**: strategy uses AI as a time-saver rather than a complete solution.
+- **Migrating from MySQL to**: PostgreSQL is a common scenario for development teams seeking better features, JSON support, or stricter SQL compliance.
+- **In PostgreSQL 10+**: the preferred modern form is `GENERATED ALWAYS AS IDENTITY`, which is SQL standard and avoids some edge cases with sequence ownership.
+
 ## Understanding the MySQL to PostgreSQL Syntax Gap
 
 MySQL and PostgreSQL share much of the same SQL foundation, but they diverge in several critical areas that cause migration headaches:

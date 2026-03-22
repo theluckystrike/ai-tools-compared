@@ -15,6 +15,16 @@ voice-checked: true---
 
 Cursor Business requires a minimum of two seats at $19/user/month (or $15/user/month on annual billing), making it accessible for small teams that need centralized management. A five-developer team on annual billing pays $75/month ($900/year), with onboarding costs primarily driven by training time (roughly one week for full adoption) and optional SSO integration. Below is a detailed breakdown of the pricing tiers, seat requirements, and total cost of ownership for teams evaluating the platform.
 
+## Key Takeaways
+
+- **Cursor Business requires a**: minimum of two seats at $19/user/month (or $15/user/month on annual billing), making it accessible for small teams that need centralized management.
+- **A five-developer team on**: annual billing pays $75/month ($900/year), with onboarding costs primarily driven by training time (roughly one week for full adoption) and optional SSO integration.
+- **At $80/hour loaded developer cost**: a 10-person team saves $800/day.
+- **The $15/seat/month annual plan adds up to $1,800/year for 10 seats**: a payback period of roughly two to three workdays.
+- **The ROI is weakest**: for teams that spend most of their time in configuration files, infrastructure-as-code, or documentation, where AI completions offer less use.
+- **AI usage patterns**: Heavy users of AI completion benefit more from unlimited access
+
+3.
 
 ## Business Tier Pricing Structure
 

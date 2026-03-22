@@ -16,6 +16,15 @@ voice-checked: true---
 
 Terraform module authoring requires more than generating resource blocks. A good module handles variable validation, conditional logic, output exposure, version constraints, and documentation. This guide compares Claude Code, GitHub Copilot, and Cursor on real module-writing tasks with measurable outcomes.
 
+## Key Takeaways
+
+- **It performs best when you already have some file structure in place**: it uses surrounding context heavily.
+- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
+- **Copilot often generates outputs**: referencing attributes that don't exist on the resource or uses deprecated attribute names.
+- **Use `Ctrl+I` (or `Cmd+I`**: on Mac) and describe the module.
+- **Use Copilot for inline**: edits inside existing modules.
+- **Use Cursor when you**: want to iterate quickly across multiple files simultaneously.
+
 ## What Good Terraform Module Generation Looks Like
 
 Before comparing tools, define what you need from AI-assisted module writing:

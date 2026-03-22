@@ -14,7 +14,17 @@ voice-checked: true
 intent-checked: true---
 
 {% raw %}
+
 Code documentation is the forgotten tax that grows exponentially as teams scale. Manual docstring maintenance kills velocity. This guide compares five AI documentation generators with real pricing, setup complexity, and output quality metrics.
+
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Pricing**: $29/month or $490/year (5-person teams).
+- **Pricing**: Custom quotes starting $1,500/month.
+- **Pay per API call**: (~$0.01-0.03 per docstring for Opus 4.6).
+- **Pricing**: $10/month (individual) or $21/month (business).
+- **Pricing**: $400/month.
 
 ## Quick Comparison Table
 

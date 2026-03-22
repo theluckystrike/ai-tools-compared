@@ -15,8 +15,17 @@ voice-checked: true---
 
 
 {% raw %}
+
 AI coding assistants can dramatically accelerate your development workflow, but they often generate code that conflicts with your established database naming conventions. When your team uses snake_case for table columns but the AI outputs camelCase, you spend more time correcting suggestions than you save. This guide shows you how to configure major AI coding tools to respect your specific naming patterns.
 
+## Key Takeaways
+
+- **Can I use these**: tools with a distributed team across time zones? Most modern tools support asynchronous workflows that work well across time zones.
+- **The most effective approach**: uses `.github/copilot-instructions.md` at the repository root.
+- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
+- **When your team uses**: snake_case for table columns but the AI outputs camelCase, you spend more time correcting suggestions than you save.
+- **Some teams prefer snake_case (`user_id`**: `created_at`), others use PascalCase (`UserId`, `CreatedAt`), and some adopt prefixed conventions (`tbl_users`, `col_user_id`).
+- **The best approach involves**: a combination of prompt engineering, configuration files, and custom instructions that your AI assistant can reference across sessions.
 
 ## Why Naming Convention Configuration Matters
 

@@ -32,6 +32,17 @@ Creating accurate comparison tables for competing API products is a core respons
 
 This guide covers how to use AI to help DevRel create comparison tables for competing API features, focusing on practical workflows that maintain accuracy while reducing manual effort.
 
+## Key Takeaways
+
+- **What's the minimum table size before comparison becomes useful?
+
+A comparison of fewer than 3 options provides limited value**: it becomes obvious why users should choose the one that fits best.
+- **Be explicit about limitations.**: If an API caps free tier requests at 1,000/day, include that number.
+- **Handle missing features consistently. Use "No" or "Not supported" rather than leaving cells blank**: this makes the table easier to scan.
+- **A comparison table with**: 30 features is harder to use than one focused on the 5-8 features that actually drive adoption decisions.
+- **Instead of "Ease of use**: Easy vs Hard," use "Learning curve: 2 hours to first API call" or "Documentation: 50 examples provided." Measurable comparison is more valuable to developers.
+- **This guide covers how**: to use AI to help DevRel create comparison tables for competing API features, focusing on practical workflows that maintain accuracy while reducing manual effort.
+
 ## Why AI Works Well for API Comparison Tables
 
 API documentation tends to follow predictable structures. Vendors organize features into categories like authentication, rate limits, data formats, and SDK support. This consistency makes it possible to prompt AI systems to extract and organize information systematically.

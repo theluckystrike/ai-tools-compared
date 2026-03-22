@@ -27,7 +27,17 @@ score: 8
 intent-checked: true
 voice-checked: true---
 
+
 AI tools generate correct Zod schemas about 80% of the time for common validation patterns but frequently miss edge cases, custom validators, and complex nested structures. This guide evaluates each tool's accuracy and shows which schema types are reliable versus requiring manual review.
+
+## Key Takeaways
+
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **Does TypeScript offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **AI tools generate correct**: Zod schemas about 80% of the time for common validation patterns but frequently miss edge cases, custom validators, and complex nested structures.
+- **These represent the 80%**: accuracy case.
 
 ## Testing AI Tools with Zod Schema Generation
 

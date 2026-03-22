@@ -27,7 +27,17 @@ score: 7
 voice-checked: true
 intent-checked: true---
 
+
 Polaris validates Kubernetes deployments against best practices, but writing validation configs requires deep knowledge of both Kubernetes resource types and Polaris's validation schema. The right AI assistant can accelerate this process significantly. This guide compares leading AI tools for generating Polaris validation configurations, with practical benchmarks and code examples.
+
+## Key Takeaways
+
+- **Claude 3.5 Sonnet provides**: the best balance of accuracy and speed.
+- **Cursor works well if**: you prefer an IDE-integrated solution.
+- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
+- **Polaris validates Kubernetes deployments**: against best practices, but writing validation configs requires deep knowledge of both Kubernetes resource types and Polaris's validation schema.
+- **Claude and Cursor both**: produce syntactically correct JSON Schema definitions for most single-field validations.
+- **When you use Claude to generate a production-grade config, review the `severity: error` checks carefully before enabling webhook mode**: any error-severity check will block deployments that fail it.
 
 ## Understanding Polaris Validation Configs
 

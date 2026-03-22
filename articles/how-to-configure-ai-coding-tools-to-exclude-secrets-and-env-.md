@@ -19,6 +19,12 @@ AI coding tools have become integral to modern development workflows, offering i
 
 This guide covers configuration methods for major AI coding tools, practical patterns for organizing sensitive files, and verification steps to ensure your secrets remain protected.
 
+## Key Takeaways
+
+- **Most AI coding platforms**: have policies against using customer code for training, but configuration errors or overly broad context settings can still lead to unintended exposure.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **This guide covers why**: exclude secrets from ai tools, the risk in concrete terms, configuring github copilot, with specific setup instructions
+- **Setup and configuration**: Step-by-step instructions included for each tool discussed
 
 ## Why Exclude Secrets from AI Tools
 

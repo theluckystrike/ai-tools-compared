@@ -31,6 +31,15 @@ tags: [ai-tools-compared, claude-ai]---
 
 Use the `/clear` command in Claude Code to reset conversation history without ending your session. If that is not enough, start a fresh conversation—copy any crucial code snippets first and provide a brief summary of your current task. To prevent hitting the limit again, use file references instead of pasting code (let Claude read files directly), break large tasks into focused requests, and create a `CLAUDE.md` file for persistent project context that loads automatically without using conversation tokens.
 
+## Key Takeaways
+
+- **For Claude Code users, the best proxy is keeping an eye on response quality**: when it degrades, you're likely approaching the limit.
+- **For API users hitting context limits**: the standard solution is to implement a sliding window that drops the oldest messages while keeping the system prompt and most recent N turns.
+- **Use the `/clear` command**: in Claude Code to reset conversation history without ending your session.
+- **Current status**: User model complete, working on login endpoint.
+- **I'll use this to**: start a fresh session if needed.
+- **Asking Claude to read**: that file through its file-reading tool is more efficient because Claude processes it internally without that content persisting in the conversation history the same way.
+
 ## Understanding the Context Window Limit
 
 Claude Max has a maximum context window that determines how much conversation history the model can process at once. This includes your messages, the AI's responses, and any files or code being analyzed. When you exceed this limit, Claude cannot continue the current conversation meaningfully.

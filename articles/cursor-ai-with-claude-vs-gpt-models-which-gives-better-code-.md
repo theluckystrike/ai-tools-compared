@@ -31,6 +31,15 @@ voice-checked: true---
 
 Claude models excel at complex TypeScript patterns, legacy codebase consistency, and multi-file architectural decisions, while GPT models provide faster inline completions for straightforward patterns and common frameworks. For debugging, Claude offers more thorough explanations while GPT delivers quicker solutions. The optimal approach involves selecting models based on task requirements: use GPT for speed with familiar patterns, Claude for complexity requiring deeper understanding.
 
+## Key Takeaways
+
+- **When you're working with**: well-established patterns or commonly used libraries, GPT-4o and its variants produce suggestions almost instantaneously.
+- **The $10/month Cursor subscription**: dwarfs token costs.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **Use AI-generated tests as**: a starting point, then add cases that cover your unique requirements and failure modes.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+- **The optimal approach involves**: selecting models based on task requirements: use GPT for speed with familiar patterns, Claude for complexity requiring deeper understanding.
+
 ## Understanding Cursor AI's Model Options
 
 Cursor AI provides access to multiple model families through its settings. The Claude options typically include models from the Sonnet and Haiku families, while GPT options span from the GPT-4o to newer variants. The model you choose directly impacts completion quality, response speed, and the types of suggestions you receive.

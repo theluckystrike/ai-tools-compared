@@ -28,7 +28,23 @@ intent-checked: true
 voice-checked: true---
 
 {% raw %}
+
 Model Context Protocol (MCP) has become the standard for connecting AI assistants to external data sources. If you're building AI-powered workflows that need access to Jira tickets, MCP provides a clean, maintainable approach to this integration. This guide walks through setting up MCP to feed Jira ticket context to your AI tools.
+
+## Key Takeaways
+
+- **Use `python3 -m json.tool**: < ~/Library/Application\ Support/Claude/claude_desktop_config.json` to validate the file before restarting the application.
+- **Instead of hardcoding Jira**: API calls into your AI prompts or building custom integrations, MCP lets you define resources and tools that any compatible AI assistant can use.
+- **Most tools notify you**: when MCP servers connect successfully.
+- **To verify manually**: ask your AI assistant:
+
+```
+Can you list my recent Jira tickets?
+```
+
+If configured correctly, the AI will use the MCP server to fetch Jira data.
+- **This is faster and**: more consistent than writing messages manually, especially for bug fixes where the ticket already contains the root cause.
+- **Authentication errors**: Double-check that your email matches the account used to generate the API token.
 
 ## Why Use MCP for Jira Integration
 

@@ -15,11 +15,23 @@ voice-checked: true---
 
 
 {% raw %}
+
 Creating changelogs that clearly separate breaking changes from new features is essential for maintaining good developer experience. When done well, users can quickly assess the impact of an update and plan their upgrade path. When done poorly, important breaking changes get lost in a sea of feature descriptions, leading to production issues after upgrades.
 
 
 AI tools can significantly accelerate this process, but getting high-quality results requires understanding how to structure your inputs and prompts effectively.
 
+## Key Takeaways
+
+- **Improve commit message quality**: to get better AI outputs: use conventional commits format (`feat:`, `fix:`, `BREAKING CHANGE:`) to give the AI clear signals.
+- **Should I use AI**: to generate changelogs for open source projects? Yes, with human review.
+- **What commit message format**: gives AI the best results? Conventional commits format (`feat:`, `fix:`, `docs:`, `BREAKING CHANGE:`) gives AI the clearest signal because the category is explicit.
+- **Lists all breaking changes first**: clearly explaining what changed and what action users need to take
+2.
+- **Improvements Focus on user-facing**: changes only.
+- **AI first draft**: Use AI to create an initial categorization
+
+3.
 
 ## The Problem with Manual Changelog Creation
 

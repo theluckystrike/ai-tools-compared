@@ -27,7 +27,21 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 Claude Projects is available on the Pro, Team, and Enterprise plans -- it is not included in the free tier. The Pro plan is the most affordable path to Projects access, giving you persistent file uploads, custom instructions, and organized workspaces for multi-conversation context. Below is a full breakdown of plan tiers, practical use cases for developers, and a decision framework for choosing the right plan.
+
+## Key Takeaways
+
+- **Create separate Projects for**: - Each client (if freelancing)
+- Each major service or app
+- Learning/R&D experiments
+
+Estimated annual value: $1,500-$3,000 in saved context-switching time.
+- **As of early 2026**: Pro users can upload files up to 10MB each with a combined project limit around 200MB.
+- **Claude Projects is available on the Pro**: Team, and Enterprise plans -- it is not included in the free tier.
+- **The Pro plan is**: the most affordable path to Projects access, giving you persistent file uploads, custom instructions, and organized workspaces for multi-conversation context.
+- **Below is a full breakdown of plan tiers**: practical use cases for developers, and a decision framework for choosing the right plan.
+- **If you are using**: the free version of Claude, you will need to upgrade to Pro or higher to access Projects functionality.
 
 ## What Is Claude Projects?
 

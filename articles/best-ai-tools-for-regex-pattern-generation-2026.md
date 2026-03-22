@@ -31,6 +31,15 @@ intent-checked: true---
 
 Claude produces the most accurate regex patterns with correct handling of lookaheads, character classes, and edge cases. ChatGPT generates working patterns but occasionally includes unnecessary escaping. GitHub Copilot excels at context-aware patterns but produces verbose expressions. Cursor performs well for simple patterns but struggles with complex multi-condition requirements. Testing across email validation, URL extraction, password complexity, and domain-specific patterns reveals significant accuracy differences that matter in production systems.
 
+## Key Takeaways
+
+- **Valid examples**: `https://example.com`, `http://localhost:3000/api`, `https://api.example.com/v1/users?page=1#top`.
+- **A classic example**: `^(a+)+$` tested against `aaaaaaaaaaaaaaab`.
+- **Go's RE2 engine**: Go uses RE2, which guarantees linear time matching but prohibits backreferences and lookaheads entirely.
+- **Choose Cursor if you**: need fast inline generation but with similar caveats as Copilot.
+- **Performance - Catastrophic backtracking**: on certain inputs (use regex101.com debugger) 6.
+- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
+
 ## Why Regex Generation Matters
 
 Regex patterns are deceptively complex. A pattern that works for 99% of inputs fails on edge cases: email validation that rejects internationalized domains, phone number matching that breaks on extensions, password patterns that are too restrictive or too loose. Most developers copy regex from StackOverflow without understanding the underlying logic, leading to silent failures in production.

@@ -27,7 +27,17 @@ intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, comparison, artificial-intelligence, claude-ai]---
 
+
 Choose Aider if you want automatic git integration, multi-file refactoring with import updates, and the flexibility to switch between Claude, GPT, and local models mid-session. Choose Claude Code if you want Anthropic's latest reasoning capabilities, explicit control over when file changes are applied, and a general-purpose terminal assistant that handles non-coding tasks too. Many developers use both—Aider for focused coding sessions with git tracking, Claude Code for exploration and broader questions.
+
+## Key Takeaways
+
+- **You select between different**: Claude models when starting a session or through configuration, but you cannot use GPT or open-source models directly.
+- **Choose Aider if you**: want automatic git integration, multi-file refactoring with import updates, and the flexibility to switch between Claude, GPT, and local models mid-session.
+- **It integrates deeply with**: Claude's advanced reasoning capabilities and supports tool use for file operations, command execution, and more.
+- **This git-first approach makes**: Aider particularly useful for developers who want their AI assistance integrated into their version control workflow.
+- **Claude Code uses Anthropic's**: models exclusively.
+- **Many developers end up using both tools for different purposes**: Aider for focused coding sessions with git integration, Claude Code for broader questions and exploration.
 
 ## What is Aider?
 

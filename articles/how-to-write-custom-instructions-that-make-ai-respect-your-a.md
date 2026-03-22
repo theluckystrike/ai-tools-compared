@@ -28,7 +28,17 @@ intent-checked: true
 voice-checked: true---
 
 {% raw %}
+
 When integrating AI into your development workflow, understanding how to control API consumption becomes essential. Custom instructions let you define behavior boundaries that AI tools follow consistently. This guide shows you how to write custom instructions specifically designed to make AI respect your API rate limit patterns.
+
+## Key Takeaways
+
+- **Use concrete limits and**: preferred patterns: ``` I work with APIs that have strict rate limits.
+- **When AI tools generate**: code without understanding your rate limits, they can trigger throttling errors, cause your application to fail, or consume more quota than intended.
+- **Most AI providers implement**: rate limits in different ways.
+- **OpenAI uses tokens-per-minute and**: requests-per-minute limits.
+- **Your custom instructions should**: reflect the specific limits of the APIs you use.
+- **Circuit breaker pattern if**: failures exceed 5 in 60 seconds 4.
 
 ## Why Rate Limit Awareness Matters
 

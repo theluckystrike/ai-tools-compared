@@ -31,6 +31,15 @@ voice-checked: true---
 
 Choose Claude for complex, multi-widget Datadog dashboards and debugging broken Terraform configurations -- it produced valid code 80-95% of the time across test scenarios. Choose ChatGPT for quick scaffolding of simple dashboards where you can validate and correct the output yourself. In practical testing, Claude's accuracy advantage grew as dashboard complexity increased, while ChatGPT generated output faster with fewer tokens.
 
+## Key Takeaways
+
+- **Choose Claude for complex**: multi-widget Datadog dashboards and debugging broken Terraform configurations -- it produced valid code 80-95% of the time across test scenarios.
+- **One advantage**: Claude handled variable interpolation correctly in most cases, understanding when to use `var.name` versus literal strings.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **Use AI-generated tests as**: a starting point, then add cases that cover your unique requirements and failure modes.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+- **Choose ChatGPT for quick**: scaffolding of simple dashboards where you can validate and correct the output yourself.
+
 ## The Task: Generating Datadog Terraform Resources
 
 Datadog's Terraform provider uses a specific structure for dashboards. A basic dashboard with a timeseries widget looks like this:

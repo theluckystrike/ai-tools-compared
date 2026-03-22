@@ -25,7 +25,26 @@ intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, graphql, resolvers, code-generation, performance-optimization, dataloader, n-plus-one-queries, api-development]---
 
+
 Modern AI coding assistants can generate production-ready GraphQL resolvers with performance optimizations built in. Claude (opus), GPT-4, and GitHub Copilot each handle N+1 query prevention, DataLoader integration, and error handling differently. This guide compares their output quality, turnaround time, and ability to prevent common pitfalls like missing batch loaders and inefficient data fetching patterns.
+
+## Key Takeaways
+
+- **const posts = await**: db.query( 'SELECT * FROM posts WHERE user_id = $1', [user.id] ); return posts; } } ``` All three AI tools catch this.
+- **Here's the wrong way**: ```javascript
+// DON'T: Creates N+1 queries
+User: {
+  posts: async (user) => {
+    // This fires one query per user!
+- **When to use GPT-4**: Building new TypeScript-based GraphQL server, need full type coverage, documentation requirement.
+- **Claude (opus)**: GPT-4, and GitHub Copilot each handle N+1 query prevention, DataLoader integration, and error handling differently.
+- **Example**: User + Posts Resolver Chain
+
+```javascript
+// Schema structure
+type User {
+  id: ID!
+- **Copilot follows your existing patterns**: if your codebase uses loaders, Copilot will too.
 
 ## Why GraphQL Resolver Generation Matters
 

@@ -17,6 +17,15 @@ tags: [ai-tools-compared, guides]---
 
 If you have been using GitHub Copilot with custom instructions and want to switch to Cursor, you need to understand how to migrate your configuration. Both tools use configuration files to customize AI behavior, but the formats differ significantly. This guide walks you through converting Copilot custom instructions into Cursor rules files, with practical examples and common conversion patterns.
 
+## Key Takeaways
+
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **Does Copilot offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Cursor**: on the other hand, uses `.cursorrules` files that support structured YAML-like syntax with distinct sections for different types of instructions.
+- **Only use let when**: the variable must be reassigned later.
+
 ## Key Differences Between Copilot and Cursor Configuration
 
 GitHub Copilot stores custom instructions in your VSCode settings under `github.copilot.chat.instructions`. The setting accepts a single string containing your guidelines. Cursor, on the other hand, uses `.cursorrules` files that support structured YAML-like syntax with distinct sections for different types of instructions.

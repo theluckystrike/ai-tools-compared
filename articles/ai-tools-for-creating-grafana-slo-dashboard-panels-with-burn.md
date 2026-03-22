@@ -31,6 +31,15 @@ intent-checked: true---
 
 AI tools can generate complex PromQL queries and Grafana panel configurations for SLO dashboards with burn rate calculations, reducing hours of manual query writing to minutes. By providing SLO targets, metric names, and time windows, AI generates queries that calculate short-term and long-term burn rates, error budgets, and remaining budget percentages. These tools handle multi-layer SLOs with proper aggregation and support templated queries for multi-service dashboards.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **A burn rate of**: 100% means you're using your error budget at the expected rate.
+- **Values above 100% indicate**: faster consumption (warning sign), while values below 100% mean you're under-consuming your budget (potentially too conservative with SLO targets).
+- **The SLO is 99.9%**: over 7 days.
+
 ## Understanding SLO Burn Rate Calculations
 
 Before looking at AI-assisted creation, let's establish what burn rate panels need. Burn rate represents how quickly your error budget is being consumed. A burn rate of 100% means you're using your error budget at the expected rate. Values above 100% indicate faster consumption (warning sign), while values below 100% mean you're under-consuming your budget (potentially too conservative with SLO targets).

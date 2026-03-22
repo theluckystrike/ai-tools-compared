@@ -27,7 +27,19 @@ score: 8
 intent-checked: true
 voice-checked: true---
 
+
 Finding affordable AI tools requires understanding the true cost structure. This guide breaks down the cheapest options and explains what you get at each price point.
+
+## Key Takeaways
+
+- **Claude Sonnet 4.5 (the**: current default model) scores around 93% on HumanEval, matching or exceeding GPT-4o on most coding tasks.
+- **GitHub Copilot Free (New in 2025)
+
+GitHub now offers a free tier for Copilot with 2,000 completions per month and 50 chat messages per month**: enough for light to moderate individual use.
+- **If you have used**: the tool for at least 3 months and plan to continue, the annual discount usually makes sense.
+- **Claude Code (Free Tier**: Available) Anthropic's Claude Code offers a generous free tier that covers most individual developer needs.
+- **Gemini 2.0 Flash (Free**: Through Google AI Studio) Google's Gemini 2.0 Flash model provides impressive code generation through AI Studio, completely free with generous rate limits.
+- **As a reference baseline**: GPT-4o scores around 90% on HumanEval (OpenAI's Python coding benchmark) and approximately 72% on the more difficult LiveCodeBench.
 
 ## What Defines GPT-4 Level Code Generation
 

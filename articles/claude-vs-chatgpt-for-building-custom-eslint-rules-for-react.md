@@ -31,6 +31,15 @@ voice-checked: true---
 
 Choose Claude if your custom ESLint rules require deep codebase context, complex edge-case handling, or iterative refinement across a session. Choose ChatGPT if you need quick implementations of standard rule patterns with minimal back-and-forth. Both tools produce working AST-based rules, but Claude's contextual memory and debugging support give it an edge for intricate React-specific enforcement.
 
+## Key Takeaways
+
+- **A team might want**: to enforce specific component naming conventions, restrict certain hook dependencies, or prevent common mistakes like missing dependency arrays in useEffect.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+- **Choose Claude if your**: custom ESLint rules require deep codebase context, complex edge-case handling, or iterative refinement across a session.
+- **Choose ChatGPT if you**: need quick implementations of standard rule patterns with minimal back-and-forth.
+- **For example**: when generating a rule to check useEffect dependencies, Claude often includes checks for async functions, cleanup functions, and edge cases that ChatGPT might miss initially.
+
 ## Why Custom ESLint Rules Matter for React
 
 React projects often develop their own patterns that standard ESLint rules cannot capture. A team might want to enforce specific component naming conventions, restrict certain hook dependencies, or prevent common mistakes like missing dependency arrays in useEffect. Custom rules transform these team-specific requirements into automated enforcement that runs during development.

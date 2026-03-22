@@ -27,7 +27,22 @@ score: 9
 voice-checked: true
 intent-checked: true---
 
+
 Use Claude 3.5 Sonnet if you need idiomatic proto3 syntax with correct message field numbering and streaming semantics, GitHub Copilot if you already have seat licenses and want inline suggestions while editing .proto files, or Codeium if you need real-time completion for gRPC boilerplate across multiple languages. This guide compares these tools for Protocol Buffer definition quality, service stub generation accuracy, and client code idioms in Go, Python, and TypeScript.
+
+## Key Takeaways
+
+- **Can I use these**: tools with a distributed team across time zones? Most modern tools support asynchronous workflows that work well across time zones.
+- **For teams already paying**: for Copilot seats ($10-19/month per developer), inline suggestions reduce context switching compared to prompting a separate tool.
+- **Field number collisions**: AI sometimes reuses numbers in message additions
+ - *Fix*: Use `reserved` declarations; ask AI to show your field history first
+
+2.
+- **Validation phase (Manual)**: Use `protolint` and `buf` to catch errors AI might miss
+4.
+- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
+- **Typical workflow**: ```
+User: "I need a gRPC service that processes orders.
 
 ## Why AI Helps with gRPC and Protobuf
 

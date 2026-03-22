@@ -27,7 +27,21 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 AI assistants have become valuable tools for designers who need to transform raw analytics data into coherent user journey maps. Rather than manually poring through spreadsheets of events, sessions, and conversion metrics, you can use AI to identify patterns, suggest touchpoints, and structure the narrative flow that emerges from user behavior data.
+
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **symptoms? - [ ]**: Can you measure impact of addressing issues? Example validation: ``` AI Generated Insight: "Users abandon checkout 40% of the time on the payment step.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Data source description**: What platform, time range, and user segment the data covers
+
+2.
+- **Output format preference**: Bulleted lists, narrative paragraphs, or structured stages
+
+4.
 
 ## The Core Challenge: From Data Points to Journey Narratives
 

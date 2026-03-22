@@ -16,6 +16,14 @@ voice-checked: true---
 
 Off-the-shelf code completion models don't know your internal APIs, naming conventions, or domain-specific patterns. A custom fine-tuned model that completes your internal SDK calls or company-specific patterns can save significant developer time. This guide covers training data preparation, fine-tuning with QLoRA, evaluation, and deploying with Ollama or vLLM.
 
+## Key Takeaways
+
+- **CodeLlama also supports FIM;**: DeepSeek-Coder uses a slightly different format.
+- **Aim for at least 5**:000 examples before fine-tuning; below that, the model memorizes rather than generalizes.
+- **For a 3B model (Starcoder2-3b)**: you can use a single A10G.
+- **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## When Custom Models Make Sense
 
 Fine-tuning is worth the investment when:

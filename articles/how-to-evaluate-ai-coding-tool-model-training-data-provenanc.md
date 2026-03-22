@@ -27,7 +27,17 @@ score: 8
 intent-checked: true
 voice-checked: true---
 
+
 When you use an AI coding tool, the suggestions and completions it generates depend on the data used to train its underlying model. Understanding how to evaluate AI coding tool model training data provenance helps you assess legal risk before relying on these tools for production code. This guide provides practical methods to investigate training data sources, recognize potential copyright concerns, and make informed decisions about which tools align with your compliance requirements.
+
+## Key Takeaways
+
+- **When you use an AI coding tool**: the suggestions and completions it generates depend on the data used to train its underlying model.
+- **However, individual files within those repositories carry their own licenses**: some permissive like MIT or Apache 2.0, others restrictive like GPL requiring source disclosure of modifications.
+- **Some providers use customer**: interactions to improve models unless explicitly opted out.
+- **Generate code for common patterns**: sorting algorithms, API clients, database connections—and compare against well-known open source implementations.
+- **In practice**: use more sophisticated embeddings or hash comparisons.
+- **Meta (Llama)**: Open-source models with published training data sources.
 
 ## Why Training Data Provenance Matters for Legal Risk
 

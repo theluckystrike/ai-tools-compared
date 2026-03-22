@@ -33,6 +33,14 @@ When integrating AI voice synthesis into applications, developers need to evalua
 
 The choice between these services affects more than audio quality. It shapes your deployment architecture: whether you poll for completed audio, stream it in real time, or cache it at the CDN layer. Getting this decision right early avoids painful refactors when your usage scales.
 
+## Key Takeaways
+
+- **WellSaid Labs offers limited SSML support**: primarily pauses and basic rate control.
+- **Cache hit rates above**: 80% are common for applications with fixed UI strings.
+- **Which service has better**: SSML support? PlayHT provides full SSML compliance including prosody, emphasis, breaks, and say-as tags.
+- **Their voices are designed**: for enterprise use cases, prioritizing clarity over expressiveness.
+- **Which API is easier**: to get started with? PlayHT has a free tier and extensive SDKs, making it faster to prototype.
+
 ## API Architecture and Authentication
 
 Both services offer REST-based APIs, but their authentication approaches differ slightly.

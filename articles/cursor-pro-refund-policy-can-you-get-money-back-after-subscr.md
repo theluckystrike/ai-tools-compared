@@ -27,7 +27,19 @@ score: 8
 intent-checked: true
 voice-checked: true---
 
+
 Yes, you can get a refund from Cursor Pro if you request it within the 30-day refund window from your purchase date. To start the process, email support@cursor.sh with your account email, purchase date, order confirmation number, and reason for the refund -- expect a response within 2-5 business days and the refund itself within 5-10 business days to your original payment method. After the refund, your account will be downgraded to the free tier.
+
+## Key Takeaways
+
+- **It is worth knowing**: that the free Hobby tier is still functional for light use.
+- **Users on the free**: tier sometimes accidentally upgrade when clicking on upgrade prompts.
+- **If you're 2 months**: into an annual $192 subscription, you'd typically receive a refund for the remaining 10 months ($160 before any applicable fees).
+- **Not have exceeded usage limits**: Some refund requests may be denied if you've heavily used the service
+
+The refund window is designed to give users enough time to evaluate the Pro features.
+- **Most AI coding tools**: follow similar policies, offering anywhere from 14 to 30 days for refunds.
+- **PayPal payments**: if used through Stripe's integration, may follow slightly different timelines.
 
 ## Understanding Cursor Pro Subscription Tiers
 

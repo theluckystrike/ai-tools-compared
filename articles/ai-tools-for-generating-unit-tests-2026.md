@@ -31,6 +31,15 @@ tags: [ai-tools-compared, artificial-intelligence]---
 
 Generating useful unit tests with AI is harder than it looks. The easy version — generating tests that pass — is trivially achievable. The hard version — generating tests that catch bugs, cover edge cases, and stay maintainable — requires tools that understand what your code should do, not just what it currently does.
 
+## Key Takeaways
+
+- **The most cost-efficient approach**: for most teams: use Claude with a structured prompt.
+- **For integration tests**: use test database or fixtures.
+- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
+- **Generating useful unit tests**: with AI is harder than it looks.
+- **For coverage improvement on**: existing code: CodiumAI is the most efficient.
+- **A week-long trial with**: actual work gives better signal than feature comparison charts.
+
 ## Tools Compared
 
 - **CodiumAI (now Qodo)** — Purpose-built test generation with behavior analysis

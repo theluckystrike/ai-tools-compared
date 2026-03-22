@@ -31,6 +31,15 @@ voice-checked: true---
 
 Several AI tools excel at scientific computing tasks. This guide recommends the best options based on specific use cases and shows you which tool to choose for your situation—covering vectorization quality, numerical stability, SciPy integration, and performance benchmarks that separate genuinely useful assistants from ones that just look plausible.
 
+## Key Takeaways
+
+- **Quality generators use Kahan**: summation or promote to float64 for intermediate accumulation, not just whatever dtype the input happens to have.
+- **9.] ``` The implementation**: uses cumulative sums for O(n) complexity instead of naive O(n*k) convolution, making it suitable for large datasets.
+- **On a 100**:000-element array, the loop-based implementation runs roughly 40-60x slower than the equivalent `np.corrcoef(x, y)[0, 1]` call.
+- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
+- **A strong AI assistant**: mentions `np.asfortranarray()` when generating column-heavy operations, or at least avoids access patterns that defeat CPU prefetchers.
+- **Most assistants don't reach**: this level unprompted, but Claude Code and Cursor will include it if you ask about performance.
+
 ## What Defines Quality in Scientific Computing Code Generation
 
 High-quality scientific computing code requires more than syntactically correct Python. The best AI assistants generate code that uses NumPy's vectorized operations for performance, handles edge cases like empty arrays and broadcasting correctly, and produces numerically stable algorithms. Key evaluation criteria include proper use of NumPy functions over Python loops, correct handling of array shapes and data types, appropriate error handling, and integration with related scientific libraries like SciPy, pandas, and matplotlib.

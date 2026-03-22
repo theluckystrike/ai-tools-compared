@@ -16,6 +16,15 @@ voice-checked: true---
 
 Helm chart authoring requires understanding both Kubernetes resource structure and Go templating syntax. AI tools that know Kubernetes but not Helm idioms produce charts that deploy but are unmaintainable. This guide tests Claude and Copilot on a realistic chart for a multi-component application and evaluates the output on correctness, idiomatic Helm patterns, and schema validation.
 
+## Key Takeaways
+
+- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
+- Use helm create conventions.
+- **A week-long trial with**: actual work gives better signal than feature comparison charts.
+- **Do these tools work**: offline? Most AI-powered tools require an internet connection since they run models on remote servers.
+- **How quickly do AI**: tool recommendations go out of date? AI tools evolve rapidly, with major updates every few months.
+- **Should I switch tools**: if something better comes out? Switching costs are real: learning curves, workflow disruption, and data migration all take time.
+
 ## What a Production Helm Chart Needs
 
 - `values.yaml` with complete, commented defaults
@@ -308,6 +317,16 @@ Claude Code will create the full directory tree and populate each file, respecti
 ---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
+
+
+| Tool | Helm Chart Generation | Template Syntax | Values Management | Pricing |
+|---|---|---|---|---|
+| Claude | Full chart scaffolding | Handles Go templates well | Generates structured values.yaml | API-based (per token) |
+| ChatGPT (GPT-4) | Complete charts with helpers | Good Go template support | Suggests sensible defaults | $20/month (Plus) |
+| GitHub Copilot | Inline YAML completion | Autocompletes template blocks | Context-aware value suggestions | $10-39/user/month |
+| Cursor | Project-aware chart generation | Reads existing templates | Cross-file value references | $20/month (Pro) |
+| Codeium | Fast YAML suggestions | Basic template completion | Limited context | Free tier available |
 
 ## Frequently Asked Questions
 

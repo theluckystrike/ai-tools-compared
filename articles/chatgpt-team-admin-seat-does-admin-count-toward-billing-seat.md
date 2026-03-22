@@ -31,6 +31,17 @@ voice-checked: true---
 
 Yes—admin seats in ChatGPT Team count toward your billing seat count exactly the same as member seats. Every user you invite to your ChatGPT Team workspace, regardless of their role (admin or member), consumes one seat from your subscription. There is no distinction between role types when it comes to billing.
 
+## Key Takeaways
+
+- **List pricing remains $25/month**: but enterprise agreements often include 10-20% discounts for 100+ seats, plus priority support and administration tools.
+- **As of 2026**: the cost is approximately $25 per user per month when billed annually, or $30 when billed monthly.
+- **Use member seats for most users**: Reserve admin for those managing settings
+
+4.
+- **Microsoft Copilot Pro ($20/month)**: Individual-only subscription without team features.
+- **Most teams stick with**: annual billing to save ~13%.
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+
 ## How ChatGPT Team Billing Works
 
 ChatGPT Team pricing is straightforward: you pay a monthly subscription per active seat in your workspace. As of 2026, the cost is approximately $25 per user per month when billed annually, or $30 when billed monthly. Each seat represents one user who can access the team's GPT-4 and Claude models, shared conversation history, and custom GPTs.

@@ -33,6 +33,17 @@ Mermaid sequence diagrams help developers visualize API interactions, document s
 
 This guide shows you how to use AI to generate Mermaid sequence diagrams from API endpoint descriptions, covering practical workflows, prompt strategies, and tools that excel at this task.
 
+## Key Takeaways
+
+- **Manually creating these diagrams from endpoint documentation requires translating descriptions into Mermaid syntax**: a repetitive task that consumes time better spent on development work.
+- **This guide shows you**: how to use AI to generate Mermaid sequence diagrams from API endpoint descriptions, covering practical workflows, prompt strategies, and tools that excel at this task.
+- **Clear**: specific descriptions produce better results than vague requests.
+- **To use Claude Code**: provide your endpoint description and request Mermaid output explicitly:
+
+```
+Generate a Mermaid sequence diagram for this API flow.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## Why Generate Sequence Diagrams with AI
 
 API documentation typically describes endpoints in OpenAPI format, plain English, or structured formats like Postman collections. Converting these descriptions into visual sequence diagrams requires understanding actor roles, request-response flows, and potential branching logic.

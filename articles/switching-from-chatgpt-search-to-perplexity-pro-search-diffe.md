@@ -27,7 +27,20 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 Choose ChatGPT Search if you want conversational, context-aware answers during coding sessions and prefer staying in the OpenAI ecosystem. Choose Perplexity Pro Search if you need, multi-source research with structured responses and explicit citations. ChatGPT Search excels at quick follow-up questions within a single conversation, while Perplexity Pro Search organizes research into threads and searches multiple sources in parallel for deeper coverage.
+
+## Key Takeaways
+
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **Does ChatGPT offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Use strong signing algorithms**: RS256 or ES256 instead of HS256
+2.
+- **Using focus mode**: Use Academic focus for peer-reviewed content, Reddit focus for developer community discussions, or Wolfram Alpha for mathematical queries
+
+3.
 
 ## How ChatGPT Search Works
 

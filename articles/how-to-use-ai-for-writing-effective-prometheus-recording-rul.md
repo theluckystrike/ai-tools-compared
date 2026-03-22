@@ -34,6 +34,15 @@ Recording rules in Prometheus transform complex, expensive queries into pre-comp
 
 This guide explores how to use AI for writing effective Prometheus recording rules in 2026, with practical examples and strategies for developers managing production monitoring systems.
 
+## Key Takeaways
+
+- **This guide explores how**: to use AI for writing effective Prometheus recording rules in 2026, with practical examples and strategies for developers managing production monitoring systems.
+- **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
+- **AI generates better rules**: when it knows your established patterns.
+- **Use PromQL debugging tools**: to verify results match expectations.
+- **A useful AI prompt distinguishes these**: > "Show me the differences between recording rules and alerting rules.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## Understanding Recording Rule Fundamentals
 
 Before using AI to generate rules, you need a clear mental model of what recording rules accomplish. A recording rule pre-evaluates a PromQL expression and stores the result as a new metric name. Instead of calculating `sum(rate(http_requests_total[5m])) by (service, status)` repeatedly across dozens of dashboards, you compute it once and reference the pre-computed result.

@@ -27,7 +27,26 @@ score: 8
 intent-checked: true
 voice-checked: true---
 
+
 Java stack traces with nested exception chains present unique debugging challenges. When your application throws a `RuntimeException` that wraps a `SQLException`, which in turn wraps a `SocketTimeoutException`, the actual root cause becomes buried under layers of framework code. Finding the right AI tool to parse through these nested exceptions can save hours of frustration.
+
+## Key Takeaways
+
+- **Caused by**: java.sql.SQLTransientConnectionException: HikariPool-1 -
+    Connection is not available, request timed out after 30000ms.
+- **15 more
+Caused by**: PaymentProcessingException: Payment declined
+    at com.example.PaymentService.processPayment(PaymentService.java:85)
+    ...
+- **3 more
+Caused by**: SQLException: Connection refused
+    at com.example.DatabaseUtil.getConnection(DatabaseUtil.java:34)
+    ...
+- **2 more
+Caused by**: SocketTimeoutException: Connect timed out
+    ...
+- **Identify the root cause**: by traversing the exception chain to find the original exception 2.
+- **Can you analyze the**: exception chain and explain what's actually failing?" ```java // Claude Code response explains: /* The root cause is SocketTimeoutException at line 34 of DatabaseUtil.java.
 
 ## Why Nested Exception Chains Are Hard to Debug
 

@@ -26,9 +26,20 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true---
+
+
 Write custom instructions for AI coding tools by defining your error response schema (success flag, nested error object with code/message/details, timestamp, requestId) and requiring the AI to implement exactly this structure in all generated error handling code. Custom instructions ensure consistent API error responses across generated code without requiring repeated schema specification in each prompt.
 
 This guide shows you practical techniques for writing custom instructions that ensure AI-generated error handling code always follows your error response schema.
+
+## Key Takeaways
+
+- **Use custom error classes**: extending Error 2.
+- **Create a clear mapping**: ```
+Error codes must use UPPERCASE_WITH_UNDERSCORES format.
+- **For critical schema enforcement**: project-level config files are the most reliable mechanism.
+- **Provide examples for each**: language you use.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
 ## Understanding Error Response Schemas
 

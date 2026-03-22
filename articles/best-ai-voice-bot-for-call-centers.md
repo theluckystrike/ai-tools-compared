@@ -28,7 +28,17 @@ voice-checked: true
 tags: [ai-tools-compared, best-of, artificial-intelligence]---
 
 {% raw %}
+
 Building an AI voice bot for call center operations requires understanding speech recognition, natural language understanding, text-to-speech synthesis, and conversation flow management. This guide covers the technical components you need to evaluate when selecting a platform, with practical code examples for integration.
+
+## Key Takeaways
+
+- **Google Cloud Contact Center AI**: ~$0.07 per minute, minimum $500/month per instance.
+- **For a 1**:000-call center processing 2,000 calls daily (average 3 minutes each), monthly cost is ~$18,000.
+- **Amazon Connect + Lex**: Combination of $0.035/minute for Amazon Connect + $0.75 per 100 speech requests for Lex.
+- **Same 2**:000 daily calls costs ~$5,000/month, but with lower accuracy on complex conversations.
+- **Twilio + OpenAI**: Build custom with Twilio ($0.01-0.03/minute) and OpenAI API ($0.005 per 1K input tokens).
+- **Total runs $2**:000-4,000/month for same volume with highest flexibility but requires engineering.
 
 ## Key Technical Components
 

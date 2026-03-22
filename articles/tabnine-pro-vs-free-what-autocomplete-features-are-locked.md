@@ -31,6 +31,17 @@ voice-checked: true---
 
 Choose Tabnine Free if you want local-only, privacy-first autocomplete for simple projects under 1,000 lines. Choose Tabnine Pro ($12/month) if you need project-wide context awareness across multiple files, integrated chat for code explanations, and custom AI model training on your codebase. The key features locked behind Pro are full-file context awareness, larger context windows (up to 10,000 tokens vs. limited), chat and code explanation, custom model training, and team collaboration features.
 
+## Key Takeaways
+
+- **Choose Tabnine Pro ($12/month)**: if you need project-wide context awareness across multiple files, integrated chat for code explanations, and custom AI model training on your codebase.
+- **Choose Tabnine Free if**: you want local-only, privacy-first autocomplete for simple projects under 1,000 lines.
+- **Full-File Context Awareness
+
+Free**: Only sees the current file and limited surrounding context.
+- **Larger Context Windows Pro**: provides up to 10,000 tokens of context versus the free tier's limited context window.
+- **However**: the free version remains genuinely useful.
+- **Premium Support Pro users**: get access to priority support, which matters when you encounter issues affecting your productivity.
+
 ## Understanding Tabnine's Free Tier
 
 The free version of Tabnine provides solid baseline functionality for developers who want AI-assisted code completion without spending money. When you install Tabnine from your IDE's marketplace, you start with the free tier automatically.

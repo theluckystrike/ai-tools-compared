@@ -27,9 +27,17 @@ score: 8
 intent-checked: true
 voice-checked: true---
 
+
 Building a Model Context Protocol (MCP) server specifically for your internal design system component documentation transforms how AI coding assistants interact with your UI libraries. Instead of relying on vague descriptions or searching through outdated wikis, developers can query your design system directly through structured tools that return accurate, up-to-date component information.
 
 This guide walks through creating a production-ready MCP server that exposes your design system components to any MCP-compatible AI client.
+
+## Key Takeaways
+
+- **Rate limiting protects against abuse, and logging helps track which components developers query most frequently**: valuable signal for documentation priorities.
+- **Your server focuses on one thing**: translating component metadata into useful AI-readable responses.
+- **For most design systems**: a JSON registry works well.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
 ## Why Your Design System Needs an MCP Server
 

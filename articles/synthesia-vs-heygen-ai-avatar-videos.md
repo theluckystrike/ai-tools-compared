@@ -16,9 +16,16 @@ voice-checked: true---
 
 {% raw %}
 
-
 Choose Synthesia if you need enterprise-grade avatar video quality with SLA guarantees and compliance certifications. Choose HeyGen if you need custom avatar uploads, webhook-based async processing, and more competitive pricing at high volume. Both platforms provide REST APIs for text-to-video generation with AI avatars, but Synthesia targets polished corporate training content while HeyGen offers faster iteration and creative flexibility.
 
+## Key Takeaways
+
+- **The personal plan starts**: around $30/month with limited minutes, while professional plans offer more generous allotments.
+- **API usage is billed**: separately at approximately $0.04-0.08 per second depending on avatar quality.
+- **For a practical example**: generating 100 one-minute videos monthly costs roughly $120-240 on Synthesia versus $90-180 on HeyGen, though exact pricing varies by plan and usage patterns.
+- **HeyGen uses the `x-api-key`**: header and supports IP whitelisting for additional security.
+- **If you are building**: enterprise training software and need the most polished output with strong support, Synthesia delivers.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 
 ## Platform Overview
 

@@ -27,7 +27,20 @@ score: 8
 voice-checked: true
 intent-checked: true---
 
+
 Code documentation is painful. Most developers hate writing it. AI tools now generate JSDoc, docstrings, and README files directly from your source code—sometimes well, often not. Here's what actually works.
+
+## Key Takeaways
+
+- **Cost**: Free tier sufficient for most teams, Pro $12/month adds team features.
+- **Cost**: Free (limited), Claude.ai Pro $20/month, or Claude API ($0.003/1K input tokens, $0.015/1K output tokens).
+- **"""
+```
+
+Pros**: Works offline, free tier covers most use cases, IDE-integrated, fast response times, good for Python/JavaScript.
+- **Cost**: $10/month individual, $39/month per business user.
+- **Cost**: Free, Pro tier $99/month for teams.
+- **For Python-heavy teams**: Codeium Docs free tier + Copilot Pro ($20/mo Claude.ai) for complex APIs.
 
 ## Why Documentation Generation Matters
 

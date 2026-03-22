@@ -27,7 +27,17 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 Claude 3.5 Sonnet writes the best PowerShell scripts for Windows Server administration, producing the most secure and idiomatic code with proper error handling, `-WhatIf` support, and approved verb usage. Choose ChatGPT-4 if you need broader Windows ecosystem coverage with more detailed inline comments. Choose GitHub Copilot if you work primarily inside VS Code and want inline completions rather than full script generation. This comparison tests all four leading AI tools across Active Directory management, disk cleanup automation, service monitoring, and backup scripts.
+
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Claude Code (CLI version)**: worked well for generating the initial script but performed best when used interactively to refine the output.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Choose ChatGPT-4 if you**: need broader Windows ecosystem coverage with more detailed inline comments.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
 
 ## Test Methodology
 

@@ -31,6 +31,15 @@ voice-checked: true---
 
 This guide compares the strengths and weaknesses of each tool for this specific task. Choose the tool that best matches your workflow, budget, and technical requirements.
 
+## Key Takeaways
+
+- **Choose the tool that**: best matches your workflow, budget, and technical requirements.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+- **However**: it sometimes over-uses `Any` when the context is unclear.
+- **Use List[T] syntax and**: infer types from usage.
+- **Copilot and Cursor serve**: different strengths, so combining them can cover more use cases than relying on either one alone.
+
 ## Understanding the Type Hint Challenge
 
 Legacy Python code often lacks type annotations, making it harder to maintain, refactor, and debug. Manually adding type hints to a large codebase can take weeks or months. AI coding assistants promise to automate this process, but the quality of their type inferences varies significantly.

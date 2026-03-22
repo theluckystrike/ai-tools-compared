@@ -16,6 +16,16 @@ tags: [ai-tools-compared]---
 
 Making the transition from GitHub Copilot's ghost text to Cursor's tab autocomplete represents a meaningful shift in how you interact with AI code completion. This guide walks you through the practical differences, configuration adjustments, and workflow changes you'll encounter when switching.
 
+## Key Takeaways
+
+- **Copilot users typically start**: at 30-40% acceptance.
+- **Many Copilot users report**: 20-30% faster coding within two weeks of Cursor usage because the tab-based model removes decision paralysis.
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **The default settings work**: well for most developers, but tweaking them early helps establish your preferred workflow.
+- **See ghost text suggestion**: `return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); }`
+3.
+- **Continue typing or press Tab again for**: `/^[^\s@]+@[^\s@]+\.[^\s@]+$/`
+5.
 
 ## Understanding the Fundamental Difference
 

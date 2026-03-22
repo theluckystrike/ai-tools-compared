@@ -27,7 +27,17 @@ score: 8
 intent-checked: true
 voice-checked: true---
 
+
 If you have been using Cursor's custom rules configuration and want to switch to Windsurf, you need to understand how to translate your existing rules. Both tools use rule-based systems to customize AI behavior, but they have different file formats and structures. This guide walks you through the migration process with practical examples.
+
+## Key Takeaways
+
+- **Both tools use rule-based**: systems to customize AI behavior, but they have different file formats and structures.
+- **While both systems aim**: to achieve similar goals, Windsurf uses YAML-based configuration with specific sections for different rule types.
+- **Common rule categories include**: code style preferences, framework-specific guidelines, testing requirements, and documentation standards.
+- **Convert each rule category**: Use the conversion examples above as templates.
+- **Project-Level Rules Both Cursor**: and Windsurf support two scopes of rules: global (applied to all projects) and project-level (applied only to the current project).
+- **Windsurf**: Global rules are configured in Windsurf's preferences.
 
 ## Understanding Cursor Rules and Windsurf Rules
 

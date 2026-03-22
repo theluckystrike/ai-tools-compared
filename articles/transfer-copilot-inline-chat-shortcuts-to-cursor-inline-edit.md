@@ -27,7 +27,17 @@ score: 8
 intent-checked: true
 voice-checked: true---
 
+
 Remap Copilot's `Cmd+I` inline chat shortcut to Cursor's `Cmd+K` inline edit by adding custom entries to Cursor's `keybindings.json` — map `Cmd+I` to `cursor.inlineChat.start`, `Cmd+Shift+I` to `cursor.inlineChat.history`, and `Cmd+Shift+Space` to `editor.action.inlineSuggest.trigger`. Open Cursor's Command Palette, navigate to "Open Keyboard Shortcuts," and paste the JSON keybinding definitions. This preserves your Copilot muscle memory while giving you access to Cursor's inline edit capabilities.
+
+## Key Takeaways
+
+- **Here is a side-by-side**: comparison of the most commonly used keybindings.
+- **Use the `when` clause**: liberally to limit binding scope A minimal keybinding file (10–20 entries) processes instantly.
+- **Hundreds of bindings can**: introduce 100–200ms latency.
+- **Instead of a chat interface**: Cursor allows you to highlight code and ask for modifications, or use AI to rewrite sections directly.
+- **On Windows/Linux**: go to `File > Preferences > Keybindings`.
+- **In Copilot**: you might use the chat panel to ask for an explanation.
 
 ## Understanding Inline AI Features
 

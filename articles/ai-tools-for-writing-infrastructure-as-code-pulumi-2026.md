@@ -27,7 +27,17 @@ score: 9
 voice-checked: true
 intent-checked: true---
 
+
 Writing Pulumi infrastructure-as-code (IaC) requires understanding both cloud provider APIs and programmatic resource composition. AI assistants excel at this because Pulumi's code-first approach maps well to how LLMs reason about code generation. Claude, GitHub Copilot, and Cursor each have distinct strengths when generating TypeScript and Python Pulumi programs. The key difference lies in context window size, code understanding depth, and real-time completion accuracy.
+
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **For a 50**:000-token infrastructure context: ~$0.15 input cost.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Copilot uses GPT-4 as**: its underlying model but with codebase-specific context.
+- **How large is the**: infrastructure change? (1-2 resources vs entire new stack) - Small: Use Copilot for velocity - Large: Use Claude for accuracy 2.
 
 ## Why Pulumi IaC Is Different From Other Code
 

@@ -30,6 +30,15 @@ voice-checked: true---
 
 This guide provides an overview to help you understand and make informed decisions about this topic.
 
+## Key Takeaways
+
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **Use AI-generated tests as**: a starting point, then add cases that cover your unique requirements and failure modes.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+- **Choose Copilot if you**: prefer minimal interface intrusion and rely on pattern recognition rather than explicit diff analysis for routine completions.
+- **Choose Windsurf if you want a middle ground**: detailed diffs available on demand without cluttering the editing experience for simple suggestions.
+- **Verdict**: For complex multi-file changes, Cascade (Windsurf) is most efficient.
+
 ## Understanding Inline Diff Preview
 
 Inline diff preview shows you the exact differences between your current code and the AI-generated suggestion before any changes are applied. Rather than accepting suggestions blindly, developers can review additions, deletions, and modifications in context. This becomes particularly valuable when working with unfamiliar codebases or when suggestions affect multiple files.

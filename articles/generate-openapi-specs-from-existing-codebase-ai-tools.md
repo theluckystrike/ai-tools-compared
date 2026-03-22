@@ -27,7 +27,17 @@ score: 8
 voice-checked: true
 intent-checked: true---
 
+
 Most legacy APIs lack OpenAPI specifications, making it impossible to generate SDKs, documentation, or proper contract testing. Manually writing OpenAPI specs is tedious and error-prone. Modern AI tools can analyze your existing API code and generate complete, accurate OpenAPI 3.0 specifications in minutes. This guide shows exactly how to use Claude, ChatGPT, and specialized tools to turn any API into a properly documented specification.
+
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **Most legacy APIs lack**: OpenAPI specifications, making it impossible to generate SDKs, documentation, or proper contract testing.
 
 ## Why Generate OpenAPI from Code?
 

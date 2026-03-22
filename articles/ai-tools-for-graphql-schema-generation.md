@@ -29,6 +29,22 @@ tags: [ai-tools-compared, artificial-intelligence]---
 
 GraphQL schema design is one of the tasks AI handles well — it's structured, rule-based, and has clear conventions. Whether you're generating a schema from existing TypeScript types, a database model, or a REST API, AI tools can produce 80-90% of a working schema in seconds. This guide tests the practical approaches.
 
+## Key Takeaways
+
+- **Add connection types with**: explicit depth limits: ```graphql # Better: use connections with explicit pagination type User { posts(first: Int = 10, after: String): PostConnection!
+- **Whether you're generating a**: schema from existing TypeScript types, a database model, or a REST API, AI tools can produce 80-90% of a working schema in seconds.
+- **GPT-4o shines on SQL**: schemas with useful derived fields.
+- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
+- **publishedAt**: DateTime
+  author: User!
+- **startCursor**: String
+  endCursor: String
+}
+
+type Query {
+  user(id: ID!): User
+  users(first: Int, after: String, role: UserRole): UserConnection!
+
 ## What Makes a Good AI-Generated Schema
 
 A well-generated GraphQL schema should:

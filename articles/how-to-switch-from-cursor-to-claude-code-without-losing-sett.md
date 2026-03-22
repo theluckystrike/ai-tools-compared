@@ -27,9 +27,19 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 Switch from Cursor to Claude Code by exporting your Cursor settings, configuring equivalent keybindings in Claude Code, and migrating your custom prompts. This guide shows the step-by-step process that minimizes friction when making the switch.
 
 Making the switch from Cursor AI to Claude Code doesn't mean abandoning your carefully configured workflow. With proper preparation, you can export most of your custom settings and continue working without missing a beat. This guide walks you through preserving your snippets, keyboard shortcuts, and workspace preferences during the transition.
+
+## Key Takeaways
+
+- **On macOS**: this typically lives in `~/Library/Application Support/Cursor/User/snippets/`.
+- **For iTerm2 users**: export your profile settings.
+- **For VS Code Terminal users**: check the Terminal Integrated settings.
+- **With proper preparation**: you can export most of your custom settings and continue working without missing a beat.
+- **This guide walks you**: through preserving your snippets, keyboard shortcuts, and workspace preferences during the transition.
+- **The terminal-based workflow appeals**: to developers who prefer staying in the command line, and the tool-use approach provides explicit control over when changes get applied to your codebase.
 
 ## Why Switch from Cursor to Claude Code?
 

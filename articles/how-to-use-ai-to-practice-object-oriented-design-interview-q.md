@@ -31,6 +31,15 @@ intent-checked: true---
 
 Use AI tools combined with UML diagrams to practice object-oriented design interviews effectively. AI serves as an intelligent practice partner that generates problems, validates your designs against SOLID principles, and provides immediate feedback on class relationships and architectural decisions. This approach accelerates preparation by automating the feedback loop while you focus on developing strong design intuition.
 
+## Key Takeaways
+
+- **Are there any missing**: entities or redundant ones?" ``` ### Step 3: Apply SOLID Principles Here's where AI becomes particularly useful.
+- **Use AI to test**: your understanding of each: Single Responsibility Principle (SRP): A class should have only one reason to change.
+- **Use AI tools combined**: with UML diagrams to practice object-oriented design interviews effectively.
+- **The challenge most developers**: face is that OOD requires a different skill set than algorithmic coding.
+- **Use AI to validate**: that your class list covers all requirements before drawing any diagram.
+- **This is more valuable**: than solving new problems because it deepens understanding of why the principles exist.
+
 ## Understanding the OOD Interview Format
 
 In object-oriented design interviews, interviewers present a problem—such as designing a parking lot, a restaurant management system, or a deck of cards. Your task is to identify the key entities, define their relationships, and demonstrate solid OOP principles. This is where UML diagrams become invaluable, allowing you to visualize class structures before writing code.

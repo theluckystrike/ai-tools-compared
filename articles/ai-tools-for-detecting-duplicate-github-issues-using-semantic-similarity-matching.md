@@ -30,6 +30,15 @@ voice-checked: true---
 
 Duplicate GitHub issues clutter repositories, confuse contributors, and make it harder for maintainers to prioritize fixes. When multiple users report the same bug or request the same feature using different wording, these scattered reports split the discussion and delay resolution. AI tools that use semantic similarity matching can automatically detect when new issues are likely duplicates of existing ones, helping teams keep their issue trackers organized and actionable.
 
+## Key Takeaways
+
+- **The `all-MiniLM-L6-v2` model used**: in the example above works well for most use cases.
+- **A mid-size open source project with 5**:000+ issues reduced duplicate reports by 35-40% after deploying an AI duplicate detector.
+- **The cosine similarity threshold**: of 0.75 works well for most projects, though you can adjust it based on your tolerance for false positives.
+- **For more demanding applications**: larger models like `all-mpnet-base-v2` provide better semantic understanding at the cost of slower processing.
+- **Caching embeddings and only**: recalculating them for new or modified issues makes the system practical for real-world use.
+- **This cleanup effort typically**: reveals 5-15% of your issue corpus consists of duplicates that have accumulated over years of operation.
+
 ## The Duplicate Issue Problem
 
 Open source projects often receive duplicate reports without any malicious intent. One user describes a bug as "the app crashes when I upload a large file," while another reports "file upload fails with memory error for big documents." To a human, these clearly describe the same underlying issue, but traditional keyword-based search fails to connect them because they use different vocabulary.

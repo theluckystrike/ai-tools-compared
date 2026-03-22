@@ -31,6 +31,19 @@ tags: [ai-tools-compared, troubleshooting, artificial-intelligence]---
 
 To fix Notion AI not working, sign out of Notion completely, clear browser cookies and cache for notion.so, then log back in and retry in an incognito window. If the AI button still does not respond, verify your plan includes the AI add-on under Settings > Plans & Billing, check your monthly AI usage quota under Settings > AI, and disable browser extensions (especially ad blockers) that may block Notion's AI endpoints.
 
+## Key Takeaways
+
+- **Users on Free plans**: or without AI add-ons see authentication failures.
+- **Delete the desktop app**: cache at `~/Library/Application Support/Notion` (Mac) or `%AppData%\Notion` (Windows) 3.
+- **Use official clients**: third-party apps may lack full AI feature support
+
+4.
+- **Free plans include limited AI requests**: while paid plans offer higher allocations.
+- **Quit Notion fully**: on Mac, right-click the dock icon and choose Quit, not just close the window
+
+2.
+- **Revoke and regenerate API keys**: If you use integrations, go to Settings → Integrations and delete all existing keys.
+
 ## Common Notion AI Issues
 
 Notion AI failures typically fall into several categories: authentication problems, rate limiting, workspace configuration issues, network connectivity, and model availability. Understanding which category your issue falls into helps you apply the right fix quickly.

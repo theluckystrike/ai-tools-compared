@@ -31,6 +31,21 @@ intent-checked: true---
 
 Claude Code is an AI-powered CLI tool that can significantly accelerate your memory profiling workflow. This tutorial walks you through using Claude Code to identify memory leaks, analyze heap snapshots, optimize memory usage, and debug memory issues effectively.
 
+## Key Takeaways
+
+- **What's wrong and how**: do I fix it?" ## Best Practices for Continuous Memory Profiling Integrate memory profiling into your development workflow: 1.
+- **Analyze what objects are**: consuming the most memory." 2.
+- **Set up memory alerts**: Use tools like `pm2` or `nodemon` to alert on memory thresholds
+
+2.
+- **Track memory trends**: Use monitoring tools to track memory usage over time
+
+4.
+- **Use Claude Code for code review**: Have Claude Code review code for potential memory leak patterns
+
+5.
+- **Debugging specific issues**: > "I'm using a global array to store user sessions.
+
 ## Why Use Claude Code for Memory Profiling?
 
 Traditional memory profiling requires manual investigation of heap snapshots, allocation timelines, and memory traces. While tools like Chrome DevTools, Node.js built-in diagnostics, and specialized profilers are powerful, they can be overwhelming, especially when tracking down elusive memory leaks. Claude Code acts as an intelligent assistant that helps you interpret memory profiling data, identifies potential leak patterns, and guides you through the entire debugging workflow.

@@ -33,6 +33,15 @@ Configuring CursorRules effectively transforms Cursor from a generic code editor
 
 This guide covers the most effective strategies for configuring CursorRules specifically for Python FastAPI projects that use Pydantic for data modeling.
 
+## Key Takeaways
+
+- **This guide covers the**: most effective strategies for configuring CursorRules specifically for Python FastAPI projects that use Pydantic for data modeling.
+- **The file uses YAML**: format with clear sections for different aspects of your development workflow.
+- **Add a comment at**: the top explaining the file's purpose for developers who haven't used Cursor before.
+- **The conventions you define**: in `.cursorrules` should mirror what you document in `CLAUDE.md` so both tools generate consistent code regardless of which developer uses which tool.
+- **If your project uses**: a particular folder structure or follows specific patterns, encode those in the configuration.
+- **Outdated CursorRules generates code**: that diverges from your actual codebase, which is worse than no configuration at all.
+
 ## Understanding CursorRules Structure
 
 CursorRules files (`.cursorrules`) allow you to define project-specific instructions that Cursor uses when generating code, answering questions, and providing suggestions. For FastAPI projects, the configuration should reflect your stack, coding conventions, and architectural patterns.

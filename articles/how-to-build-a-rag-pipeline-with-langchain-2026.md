@@ -31,6 +31,15 @@ tags: [ai-tools-compared]---
 
 Retrieval-Augmented Generation (RAG) lets you ground LLM responses in your own documents. LangChain remains the most widely adopted framework for wiring together the components — loaders, splitters, embeddings, vector stores, and retrievers. This guide walks through building a production-quality RAG pipeline from scratch with real code, covering the decisions that actually affect answer quality.
 
+## Key Takeaways
+
+- **Retrieval**: Given a user query, embed it and find the most semantically similar chunks.
+- **For better recall**: use MMR (Maximum Marginal Relevance) to trade off relevance against diversity.
+- **In testing across hundreds of datasets**: hybrid search typically improves recall by 15–25% over vector-only retrieval.
+- **Often a hybrid**: semantic boundaries with a 512-token size limit—performs best.
+- **Embedding model selection**: `text-embedding-3-small` (62M dimensions) costs $0.02 per million tokens.
+- **`text-embedding-3-large` (3072 dimensions) costs**: $0.13 per million tokens.
+
 ## What a RAG Pipeline Does
 
 A RAG pipeline has three stages:

@@ -19,6 +19,16 @@ Use AI during live coding by having AI suggestions off by default, activating it
 
 Live coding interviews have evolved significantly with the integration of AI coding assistants. Whether you're interviewing at a startup or a tech giant, understanding how to use these tools effectively can differentiate you from other candidates. This guide provides actionable strategies for using AI coding tools during technical interviews in 2026.
 
+## Key Takeaways
+
+- **Each offers unique advantages**: Claude Code excels at explanation and iterative refinement, while Copilot provides inline suggestions that integrate smoothly with most code editors.
+- **Configure your preferred AI**: coding assistant to work with your development environment.
+- **State your intention**: "I'll use AI to generate the input parser so we can focus on the algorithm"
+
+2.
+- **Use AI during live**: coding by having AI suggestions off by default, activating it for specific problems, and narrating decisions to avoid creating confusion.
+- **Whether you're interviewing at**: a startup or a tech giant, understanding how to use these tools effectively can differentiate you from other candidates.
+- **Most companies now explicitly state their policies on AI tool usage during interviews**: always clarify this with your interviewer at the start.
 
 ## Understanding the Interview Context
 

@@ -27,7 +27,24 @@ intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]---
 
+
 Writing prompts that produce clean, idiomatic code requires more than simply describing what you want. The difference between generic code and language-appropriate solutions often comes down to how you structure your request. This guide covers practical techniques for eliciting idiomatic code from AI coding assistants across multiple programming languages.
+
+## Key Takeaways
+
+- **Use case context**: Describe what the code should accomplish
+
+3.
+- **Constraints or preferences**: Mention performance needs, edge cases, or restrictions
+
+Here's a template that works across languages:
+
+```
+Write a [language] function that [description].
+- Use modern ES6+ syntax.
+- **Use generics so the**: function works with any response shape.
+- **A well-structured prompt that**: specifies the language, use case, and performance requirements gets you the built-in sorting method your language provides.
+- Use Python's type hints.
 
 ## Why Prompt Structure Determines Code Quality
 

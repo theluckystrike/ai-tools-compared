@@ -27,7 +27,17 @@ score: 8
 voice-checked: true
 intent-checked: true---
 
+
 ChatGPT API costs are calculated by multiplying your token usage by the per-token rate for your chosen model: Cost = (Input Tokens x Input Rate) + (Output Tokens x Output Rate). GPT-4o currently runs $2.50 per million input tokens and $10.00 per million output tokens, while GPT-4o-mini costs roughly 6% of that. This guide walks you through the full pricing structure, provides formulas for estimating monthly spend, and includes ready-to-use Python code for building your own token pricing calculator.
+
+## Key Takeaways
+
+- **GPT-4o currently runs $2.50**: per million input tokens and $10.00 per million output tokens, while GPT-4o-mini costs roughly 6% of that.
+- **Choose the right model**: GPT-4o-mini costs roughly 6% of GPT-4o for many tasks.
+- **Use the most capable**: model only when necessary.
+- **If your calculated monthly cost is $500**: budget for $600-$650 to avoid surprises.
+- **Set output token limits**: Use the `max_tokens` parameter to cap response length and prevent runaway costs.
+- **This guide walks you**: through the full pricing structure, provides formulas for estimating monthly spend, and includes ready-to-use Python code for building your own token pricing calculator.
 
 ## Understanding ChatGPT API Token Pricing
 

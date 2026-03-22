@@ -27,9 +27,20 @@ intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]---
 
+
 Refactoring large codebases presents unique challenges for AI coding assistants. The context window limits that constrain all AI tools mean you cannot simply dump an entire legacy codebase into a single prompt and expect coherent results. Understanding how to manage context effectively determines whether your AI-assisted refactoring succeeds or becomes a debugging nightmare.
 
 This guide covers practical strategies for working with AI context during substantial refactoring projects, helping you break down large changes into manageable pieces while maintaining code quality throughout the process.
+
+## Key Takeaways
+
+- **Start with files that**: have no dependencies on the code you're changing, then work toward the most dependent files.
+- **If something breaks**: you know exactly which AI-assisted change caused the problem.
+- **It can diagnose and**: fix the problem because it understands the refactoring intent.
+- **This allows incremental migration**: some components can use Zustand while
+others still use Redux.
+- **If tests fail**: the AI can often diagnose the issue when you share the error messages, because it understands the intent behind the code it generated.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
 ## The Context Window Challenge
 

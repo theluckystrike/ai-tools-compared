@@ -27,9 +27,32 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 Use chat history effectively by maintaining context across iterations, referring back to earlier discussions, and building on previous code decisions. This guide shows the chat practices that keep iterations productive and prevent re-explaining context repeatedly.
 
 When working with AI coding assistants, each conversation builds on previous exchanges. The context from your chat history becomes a powerful tool for refining code solutions, avoiding past mistakes, and accelerating your development workflow. Learning to use this history effectively transforms how you iterate on problems with AI assistance.
+
+## Key Takeaways
+
+- **Current blocker**: webhook integration."
+
+## When NOT to Use Chat History
+
+Sometimes starting fresh is better:
+
+1.
+- **Instead of pasting error messages alone, provide context:
+
+```
+# Following our discussion of the user authentication flow**: # we're getting 'Token expired' errors exactly 15 minutes
+# after login.
+- **✅ Migrated user service**: to TypeScript 2.
+- **User**: Added explicit waits, still failing occasionally
+
+Attempt 2 (Next day):
+User: Still hitting that race condition we debugged yesterday.
+- **Use chat history effectively**: by maintaining context across iterations, referring back to earlier discussions, and building on previous code decisions.
+- **Learning to use this**: history effectively transforms how you iterate on problems with AI assistance.
 
 ## Why Chat History Matters for Code Iteration
 

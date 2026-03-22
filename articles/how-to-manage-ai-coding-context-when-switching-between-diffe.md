@@ -27,9 +27,19 @@ score: 8
 intent-checked: true
 voice-checked: true---
 
+
 Switch between features without losing AI context by explicitly naming features in prompts, maintaining separate chat threads per feature, and periodically summarizing context. This guide shows the workflow that keeps AI focused on the right problem as you jump between different tasks.
 
 This guide covers practical methods for maintaining context continuity with AI coding tools, regardless of which assistant you use.
+
+## Key Takeaways
+
+- **This guide shows the**: workflow that keeps AI focused on the right problem as you jump between different tasks.
+- **This guide covers practical**: methods for maintaining context continuity with AI coding tools, regardless of which assistant you use.
+- **Previous context**: user authentication (complete).
+- **When your codebase has**: clear module boundaries, switching context becomes easier because each module contains related functionality.
+- **- Large projects (many**: concurrent features): Use context automation plus dedicated context files per feature, stored in version control.
+- **Your AI coding assistant**: performs best when you clearly define what context matters for the current task.
 
 ## The Context Switching Problem
 

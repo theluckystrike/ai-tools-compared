@@ -31,6 +31,15 @@ intent-checked: true---
 
 Starcoder2 running locally is the solution for developers who need AI code completion while keeping sensitive code private. You can install it using Ollama (install Ollama, run `ollama pull starcoder2:7b`, then integrate it with VS Code via the Continue extension) and have your code stay completely on your local machine without any cloud transmission. This setup takes about 30 minutes and requires a machine with 16GB+ RAM and optional GPU for faster inference.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **However**: cloud-based solutions may still be preferable when you need the most advanced suggestions, have unlimited internet access, and don't have stringent privacy requirements.
+- **The most straightforward approach**: uses the Continue extension, which provides AI assistance directly within VS Code.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **You'll need a machine**: with at least 16GB of RAM for smaller variants like Starcoder2-3b, though the 7b and 15b models require more memory.
+- **The 7b model handles**: most development scenarios effectively, while the 15b variant excels at understanding complex codebases but requires significant resources.
+
 ## Understanding Starcoder2 and Local Code Completion
 
 Starcoder2 is a family of open-source code generation models developed by BigCode, designed specifically for code completion and generation tasks. These models are trained on a diverse corpus of programming languages and can generate contextually appropriate code suggestions in real-time.

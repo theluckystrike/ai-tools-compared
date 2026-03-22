@@ -27,7 +27,21 @@ score: 8
 reviewed: true
 tags: [ai-tools-compared, artificial-intelligence]---
 
+
 Self-service support portals have evolved beyond static FAQ pages. Modern implementations use AI to provide instant answers, automate ticket routing, and personalize user experiences. This guide covers practical implementations of AI tools for developers building or enhancing self-service support portals.
+
+## Key Takeaways
+
+- **The result**: reduced support volume, faster resolution times, and improved user satisfaction.
+- **Modern implementations use AI**: to provide instant answers, automate ticket routing, and personalize user experiences.
+- **These systems handle user**: queries through chat interfaces, providing instant responses while escalating complex issues to human agents.
+- **Answer the user's question**: based on the provided documentation.
+- **Context**: {context}
+
+Question: {user_query}
+
+Provide a clear, concise answer.
+- **A hybrid retrieval pipeline**: gives you the best of both approaches: keyword search narrows the candidate set quickly, then a re-ranker model scores results by semantic relevance.
 
 ## The Case for AI in Self-Service Support
 

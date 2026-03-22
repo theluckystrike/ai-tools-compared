@@ -31,6 +31,15 @@ tags: [ai-tools-compared]---
 
 The difference between a prompt that produces working code and one that produces plausible-looking garbage is usually structure, not length. These patterns work across Claude, GPT-4o, and Gemini. Each includes a before/after example showing the actual output difference.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **The role + stack**: + constraint triple removes the three most common sources of useless AI code: wrong library choice, wrong async approach, and missing configurability.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **What data structure best**: represents this problem and why 2.
+- **Without "do not use regex for splitting**:" every model defaults to `line.split(",")` which breaks on `"Smith, John",30,NYC`.
+
 ## Pattern 1: Role + Stack + Constraint Priming
 
 Most developers write: "Write a function that caches API responses."

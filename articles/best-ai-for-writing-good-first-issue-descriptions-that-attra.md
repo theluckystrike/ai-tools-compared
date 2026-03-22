@@ -18,6 +18,14 @@ score: 9---
 
 Writing good first issue descriptions is one of the most effective ways to grow an open source project. When issues are clear, well-structured, and approachable, new contributors feel confident jumping in. AI tools have become surprisingly good at helping maintainers craft these descriptions, and the right tool can transform a vague bug report into an inviting task that actually gets completed.
 
+## Key Takeaways
+
+- **Writing good first issue**: descriptions is one of the most effective ways to grow an open source project.
+- **Problem (what user-facing behavior**: needs fixing) 2.
+- **Is welcoming to newcomers**: ``` This prompt structure gives the AI exactly what it needs to produce an useful result.
+- **However**: it works best when you already have a solid outline.
+- **This contextual awareness produces**: more specific and useful descriptions.
+- **Here are practical patterns**: that produce better results.
 
 ## What Separates Good First Issues From Bad Ones
 

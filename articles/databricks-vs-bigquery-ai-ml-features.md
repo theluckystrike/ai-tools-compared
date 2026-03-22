@@ -16,9 +16,16 @@ voice-checked: true---
 
 {% raw %}
 
-
 Choose Databricks if your team writes Python/Scala ML pipelines and needs fine-grained control over model training, experiment tracking, and GPU-accelerated workloads. Choose BigQuery ML if your data already lives in BigQuery, your team prefers SQL, and you need fast prototyping for standard ML problems like forecasting and classification. This guide compares both platforms with code examples and implementation details.
 
+## Key Takeaways
+
+- **Evaluate based on your specific use case**: not marketing claims—and you'll make the choice that serves your project best.
+- **BigQuery**: Google's analytics warehouse, takes a serverless SQL-first approach with growing ML integrations.
+- **Its lakehouse format works**: with Apache Iceberg for table formats.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+- **Choose Databricks if your**: team writes Python/Scala ML pipelines and needs fine-grained control over model training, experiment tracking, and GPU-accelerated workloads.
 
 ## The Core Difference
 

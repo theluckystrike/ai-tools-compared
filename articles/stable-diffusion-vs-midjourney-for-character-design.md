@@ -27,7 +27,21 @@ intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, comparison]---
 
+
 Choose Stable Diffusion if you need programmatic control, custom-trained models (LoRAs), and local processing for consistent character franchises across hundreds of images. Choose Midjourney if you want rapid concept exploration with gallery-quality aesthetics and minimal setup. Many professional workflows use both -- Midjourney for initial exploration, Stable Diffusion for final consistent assets.
+
+## Key Takeaways
+
+- **The core model is free**: though hardware requirements (typically a GPU with 8GB+ VRAM) represent an upfront investment.
+- **For character design**: the OpenPose controlnet is particularly useful:
+
+```python
+# Automatic1111 WebUI ControlNet setup
+# 1.
+- **Use --cref to generate**: alternate poses/expressions maintaining consistency 5.
+- **Use ControlNet + pose**: reference images for consistency 7.
+- **Use IP Adapter for**: face consistency across poses 8.
+- **Use an automatic tool**: to tag them (WD14 Tagger) 3.
 
 ## Platform Architecture
 

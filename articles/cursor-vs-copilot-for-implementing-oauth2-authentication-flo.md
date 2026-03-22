@@ -31,6 +31,17 @@ tags: [ai-tools-compared, comparison]---
 
 Implementing OAuth2 authentication in an Express application involves multiple components: route setup, token handling, callback processing, and security considerations. Both GitHub Copilot and Cursor can assist with this task, but their approaches differ. This comparison examines how each tool performs when building OAuth2 flows in Express.
 
+## Key Takeaways
+
+- **Redirecting users to the**: authorization server 2.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+- **The choice comes down**: to whether you prefer building piece by piece with Copilot or describing the full implementation to Cursor.
+- **Copilot and Cursor serve**: different strengths, so combining them can cover more use cases than relying on either one alone.
+- **Which is better for beginners**: Copilot or Cursor?
+
+It depends on your background.
+
 ## Understanding the OAuth2 Flow in Express
 
 Before comparing the tools, let's establish what an OAuth2 implementation in Express typically requires. A standard authorization code flow involves several steps:

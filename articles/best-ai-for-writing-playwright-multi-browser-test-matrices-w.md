@@ -30,6 +30,15 @@ voice-checked: true---
 
 Claude excels at generating Playwright multi-browser test matrices integrated with GitHub Actions because it understands browser-specific nuances, generates clean idiomatic code, and provides detailed explanations of configuration logic. When tasked with creating test coverage across Chromium, Firefox, and WebKit with GitHub Actions integration, Claude produces maintainable configurations that balance coverage with CI/CD efficiency.
 
+## Key Takeaways
+
+- **WebKit is historically the most flake-prone**: consider allowing one automatic retry only for WebKit projects.
+- **Pin browser versions**: Use `npx playwright install --with-deps chromium@1117` to pin specific browser versions and prevent surprise failures after Playwright updates.
+- **It's particularly useful when**: you want inline suggestions while writing tests.
+- **The `headed**: true` option launches visible browser windows, which is useful for debugging locally but impractical in CI.
+- **How often should I**: run the full cross-browser matrix? Most teams run full cross-browser matrices on merges to main and in nightly scheduled runs.
+- **Maintain readability**: Use descriptive names for projects and clear comments explaining browser selections.
+
 ## Understanding Playwright Multi-Browser Test Matrices
 
 A test matrix ensures your application works consistently across different browser combinations. With Playwright, you can test against Chromium, Firefox, WebKit, and their respective versions. When combined with GitHub Actions, you create automated CI/CD pipelines that validate your code against these matrices on every push.

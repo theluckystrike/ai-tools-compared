@@ -27,9 +27,18 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 AI coding assistants have become integral to modern development workflows, but their default behaviors often miss the mark when it comes to your team's specific code review standards. Rather than fighting against AI-generated code that fails pull request reviews, you can write custom instructions that guide the AI to produce code matching your team's conventions from the start.
 
 This guide shows you how to create effective custom instructions that enforce your code review standards, reducing iteration cycles and helping your AI pair-programmer become a truly valuable team member.
+
+## Key Takeaways
+
+- **Most AI coding tools support some form of custom instructions**: whether through Claude's `CLAUDE.md`, Cursor's `.cursorrules`, or GitHub Copilot's custom instructions file.
+- **The key insight is**: that these instructions work best when they are specific, enforceable, and aligned with your actual code review checklist.
+- **Most teams find that**: their instructions evolve over time.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
 
 ## Understanding Custom Instructions
 

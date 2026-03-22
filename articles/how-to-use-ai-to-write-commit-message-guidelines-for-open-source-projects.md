@@ -31,6 +31,15 @@ voice-checked: true---
 
 AI can help you create commit message guidelines for your open source project that ensure consistency, improve code review efficiency, and make your project's history more meaningful. By using AI tools, you can develop detailed conventions tailored to your project's specific needs without spending hours researching best practices.
 
+## Key Takeaways
+
+- **AI can help you**: create commit message guidelines for your open source project that ensure consistency, improve code review efficiency, and make your project's history more meaningful.
+- **By using AI tools**: you can develop detailed conventions tailored to your project's specific needs without spending hours researching best practices.
+- **Additionally**: tools like `git log`, `git blame`, and automated changelog generators work much better when commits follow consistent formatting.
+- **AI can help you**: analyze your project type and determine what conventions will be most valuable.
+- **Examples of good vs**: bad commit messages ``` ## Developing Detailed Conventions Once you have a basic framework, use AI to elaborate on specific aspects of your conventions.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## Why Commit Message Guidelines Matter
 
 Well-crafted commit message guidelines serve multiple critical purposes for open source projects. They create a consistent history that makes it easy to understand when and why changes were made, which is invaluable for debugging, code reviews, and onboarding new contributors.

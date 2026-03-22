@@ -31,6 +31,14 @@ layout: default---
 
 This guide provides practical steps and best practices to help you accomplish this task effectively. Follow the recommendations to get the best results from your AI tools.
 
+## Key Takeaways
+
+- **Follow the recommendations to**: get the best results from your AI tools.
+- **This guide provides practical**: steps and best practices to help you accomplish this task effectively.
+- **Use a shared fixtures**: module to keep test data centralized.
+- **This pattern is especially useful when upgrading SDK versions**: broken snapshots immediately surface breaking changes.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## Introduction
 
 Testing is a critical aspect of SDK development, ensuring reliability, stability, and correct behavior across different use cases. This guide covers establishing testing workflows for Claude Code SDK implementations.

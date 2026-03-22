@@ -27,7 +27,17 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 Split large files into focused modules before sharing with AI to stay within context limits while improving solution quality. Use semantic chunking—grouping related functions by feature rather than arbitrary line breaks—and always provide class/interface definitions first. This guide covers practical context window management techniques that dramatically improve AI assistance effectiveness on projects exceeding 100,000 lines of code.
+
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Split large files into**: focused modules before sharing with AI to stay within context limits while improving solution quality.
+- **Most AI coding tools**: support file-specific commands that let you explicitly include or exclude files from context.
+- **Learn the specific syntax for your tool**: Cursor uses `@Files`, GitHub Copilot supports `/references`, and similar patterns exist across platforms.
+- **A 150-line complete class**: is better than two 75-line file fragments.
 
 ## Understanding Context Window Constraints
 

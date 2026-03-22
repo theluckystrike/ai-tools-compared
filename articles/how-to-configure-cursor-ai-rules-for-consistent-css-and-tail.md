@@ -26,7 +26,17 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true---
+
+
 Configure Cursor AI rules using a.cursorrules file that enforces consistent Tailwind class ordering following a logical pattern: layout properties first, then sizing, typography, colors, and interactive states. This consistency improves code readability, simplifies code review diffs, and enables Cursor AI to generate CSS with proper class organization matching your team's established conventions.
+
+## Key Takeaways
+
+- **Add a new rule**: with your ordering preferences 4.
+- **Use Cursor Settings for**: personal preferences like preferred code style or response verbosity that you want across all projects.
+- **GitHub Copilot uses `.github/copilot-instructions.md`**: for repository-level instructions (available in Copilot for Business and Enterprise).
+- **Copilot also lacks the**: inline edit mode that makes Cursor particularly useful for refactoring class ordering across an existing codebase.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
 ## Why Class Ordering Matters
 

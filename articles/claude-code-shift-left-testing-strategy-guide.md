@@ -27,7 +27,18 @@ intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, claude-ai]---
 
+
 Shift left testing is a methodology that moves testing activities earlier in the software development lifecycle. Instead of waiting until after code is written to test, teams integrate testing from the earliest stages of design and development. Claude Code CLI is particularly well-suited for implementing shift left testing strategies because it works directly in your terminal and can assist with test creation, code analysis, and quality verification at every stage of development.
+
+## Key Takeaways
+
+- **Claude Code learns from context**: so providing examples of good tests helps it generate better recommendations over time.
+- **Start with higher-level integration**: tests that verify key user journeys, then use Claude Code to help decompose these into unit tests for individual components.
+- **Authorization**: Can users access other users' data?
+3.
+- **test_get_user_without_auth() - verify 401**: when no token 2.
+- **test_user_cannot_access_other_user_data() - verify 403**: for other users 3.
+- **test_get_user_with_invalid_id() - test non-numeric**: IDs 4.
 
 ## Why Shift Left Testing Matters
 

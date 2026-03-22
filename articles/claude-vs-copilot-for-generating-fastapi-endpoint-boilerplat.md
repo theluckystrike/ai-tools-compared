@@ -33,6 +33,21 @@ This guide compares the strengths and weaknesses of each tool for this specific 
 
 This article compares both tools based on practical experience, focusing on code quality, context awareness, and developer workflow.
 
+## Key Takeaways
+
+- **Choose the tool that**: best matches your workflow, budget, and technical requirements.
+- **Is there a cost**: difference? Copilot runs $10-19/month as a flat subscription regardless of usage.
+- **Claude API usage is token-based**: for code generation sessions, a typical day of FastAPI boilerplate generation runs $1-5 using Sonnet.
+- **Asking Claude to "add**: a background task that sends a welcome email after user registration" produces a complete `BackgroundTasks` integration.
+- **The model understands Pydantic**: v2 syntax and integrates it correctly.
+- **You might type**: ```python
+@router.post("/users")
+def create_user(user: UserCreate, db: Session = Depends(get_db)):
+    # Create a new user
+```
+
+And Copilot would suggest the implementation.
+
 ## Understanding the Task
 
 FastAPI endpoint boilerplate typically includes several components:

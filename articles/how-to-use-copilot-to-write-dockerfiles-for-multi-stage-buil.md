@@ -27,7 +27,19 @@ voice-checked: true
 score: 9
 tags: [ai-tools-compared]---
 
+
 Multi-stage Docker builds dramatically reduce image size by separating build dependencies from runtime artifacts. GitHub Copilot can accelerate Dockerfile creation by suggesting appropriate base images, stage configurations, and optimization strategies. This guide shows how to effectively collaborate with Copilot to produce production-ready multi-stage Dockerfiles.
+
+## Key Takeaways
+
+- **FROM --platform=$BUILDPLATFORM golang**: 1.21-alpine as builder
+ARG TARGETARCH
+RUN GOARCH=$TARGETARCH CGO_ENABLED=0 go build -o app .
+- **Multi-stage builds use intermediate**: stages to compile artifacts, then copy only the necessary outputs to a slim final image.
+- **The builder pattern works**: best when each stage contains precisely what it needs and nothing more.
+- **Useful for projects with**: lengthy build processes.
+- **CMD ["./worker"] ``` This**: pattern reuses the base stage for multiple services, reducing rebuild times and disk space.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
 ## Why Multi-Stage Builds Matter
 

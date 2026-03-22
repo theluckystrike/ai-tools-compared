@@ -27,7 +27,21 @@ intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]---
 
+
 Exploratory data analysis demands understanding your dataset's structure, distributions, and quality issues before building models or generating insights. Manually inspecting every column, checking for missing values, and calculating summary statistics consumes significant time. DataFrame profiling automates this process, and AI enhancements make it even more powerful for discovering patterns and anomalies that manual inspection might miss.
+
+## Key Takeaways
+
+- **Focus on actionables**: use AI to filter noise from insights
+
+5.
+- **Sample large datasets**: a 5-10% stratified sample gives equivalent distributional insights at a fraction of the compute cost for datasets above 5 million rows
+
+6.
+- **How do I profile**: a DataFrame that has over 10 million rows? Use `minimal=True` and consider sampling first.
+- **A representative 5-10% sample**: usually gives the same distributional insights at a fraction of the compute cost.
+- **A shift greater than**: 10-15% in any feature is a trigger for investigation.
+- **Use dataprep when you**: want to clean and profile in one pass.
 
 ## Understanding DataFrame Profiling
 

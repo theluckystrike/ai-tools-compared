@@ -31,6 +31,15 @@ voice-checked: true---
 
 Choose Steve AI if you need varied video styles (animated, whiteboard, live-action), extensive branding controls, and multi-language support for long-form content. Choose Raw Shorts if you prioritize fast generation of short-form social media videos at lower cost with a simpler API. Both platforms offer REST APIs for automated pipelines, but they target different ends of the video creation spectrum.
 
+## Key Takeaways
+
+- **A typical 2-minute 1080p**: animated video costs approximately $0.50-$1.00 per generation through the API, depending on your subscription tier.
+- **At 100 videos per month**: this works out to $50-100 in generation costs.
+- **Raw Shorts uses a**: per-video model better suited for short content.
+- **A 30-second social video**: costs roughly $0.10-$0.25, making bulk generation of short clips significantly cheaper.
+- **At 100 thirty-second clips per month**: costs run $10-25.
+- **Choose Steve AI if**: you need varied video styles (animated, whiteboard, live-action), extensive branding controls, and multi-language support for long-form content.
+
 ## Platform Overview
 
 **Steve AI** positions itself as a versatile AI video creation tool that supports multiple video styles, including animated, live-action, and whiteboard formats. It offers a cloud-based editor alongside AI generation capabilities, with a focus on accessibility for both technical and non-technical users.

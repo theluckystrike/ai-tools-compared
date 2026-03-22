@@ -16,6 +16,20 @@ voice-checked: true---
 
 Legacy code explanation is one of the most underrated AI use cases. The models don't need to write perfect new code — they need to read dense, undocumented, historically idiosyncratic code and produce accurate explanations. This guide tests Claude Opus 4.6 and GPT-4o on three real legacy scenarios: a COBOL batch job, a Java EJB 2.x session bean, and an undocumented C utility with global state.
 
+## Key Takeaways
+
+- **Identifies hidden assumptions
+   - Poor**: "Uses hardcoded values"
+   - Good: "Assumes all amounts fit in 32-bit integer; fails for enterprise accounts >$2B"
+
+4.
+- **The balance field supports**: up to 13 digits before decimal, so max representable is $9,999,999,999,999.99.
+- **Legacy code explanation is**: one of the most underrated AI use cases.
+- **>
+> Hidden constraints**: ACCT-BALANCE uses COMP-3 (packed decimal) with 2 implied decimal places (V99).
+- **> > The program**: uses a FILE STATUS field to detect end of file ('10').
+- **GPT-4o produces accurate syntactic**: explanations but misses the failure modes that matter most when deciding whether code is safe to modify.
+
 ## The Test Setup
 
 Each snippet was fed to both models with the same prompt structure:

@@ -31,6 +31,15 @@ voice-checked: true---
 
 Claude API bills extended thinking tokens at the standard output token rate. When extended thinking is enabled, the model generates internal reasoning tokens that are invisible in the final response but count toward your output token total. This means your output token cost increases proportionally to the complexity of the reasoning task, even though only the final answer appears in the response. Below is a practical breakdown of the billing mechanism, cost implications, and strategies to optimize your spending.
 
+## Key Takeaways
+
+- **Step 1**: Select representative prompts. Pick 20–30 prompts from your actual production logs that span the range of complexity in your workload.
+- **Step 3**: Score the responses. Use a simple rubric: correctness (0–3), completeness (0–3), and clarity (0–2).
+- **Extended thinking specifically affects**: output token billing because the reasoning process generates additional tokens beyond the visible response.
+- **Use the same `max_tokens`**: value for both runs.
+- **Have at least two**: reviewers score each response independently and average the scores.
+- **This ratio tells you**: where extended thinking delivers the best return.
+
 ## What Is Extended Thinking in Claude API
 
 Extended thinking is a feature that allows Claude models to engage in deeper reasoning before producing their final response. When enabled, the model breaks down complex problems, explores multiple approaches, and reasons through its solution before delivering the actual output. This results in more thoughtful, accurate responses for tasks that require complex reasoning, coding, or analysis.

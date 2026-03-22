@@ -27,7 +27,17 @@ reviewed: true
 score: 9
 tags: [ai-tools-compared, artificial-intelligence]---
 
+
 Customer churn remains one of the most costly problems for subscription-based businesses. Predicting which users will leave before they do enables proactive retention strategies that can significantly impact revenue. Modern AI tools make building churn prediction systems more accessible than ever, even for teams without dedicated data science expertise.
+
+## Key Takeaways
+
+- **For most teams, DistilBERT provides 97% of BERT's accuracy at 40% of the compute cost**: a practical trade-off for production systems that score users daily.
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Training on imbalanced data**: without correction produces models that predict "no churn" for everyone and still achieve 95% accuracy, which is useless in practice.
+- **An user who downgrades**: from premium to free might still represent valuable retention compared to complete cancellation.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 
 ## Understanding Churn Prediction Fundamentals
 

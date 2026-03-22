@@ -27,7 +27,17 @@ score: 8
 voice-checked: true
 intent-checked: true---
 
+
 Kubernetes troubleshooting requires interpreting cryptic error messages, analyzing pod logs across multiple containers, and understanding complex networking issues. AI tools accelerate this process by automatically explaining errors, suggesting fixes, and identifying root causes. This guide compares specialized Kubernetes AI tools with general coding assistants for cluster debugging.
+
+## Key Takeaways
+
+- **Analysis uses OpenAI API**: $0.0005 per prompt + token usage.
+- A typical analysis costs $0.01-0.05.
+- **For Kubernetes troubleshooting**: Claude 3.5 Sonnet works well: $3 per million input tokens, $15 per million output tokens.
+- **Cloud version**: $299/month + per-alert fees.
+- **Total cost**: ~$5-10/month in API usage.
+- **Growing team (5-25 people)**: Add GitHub Copilot ($10/month) for shared manifest editing, plus k8sgpt for cluster analysis.
 
 ## Understanding Kubernetes Debugging Challenges
 

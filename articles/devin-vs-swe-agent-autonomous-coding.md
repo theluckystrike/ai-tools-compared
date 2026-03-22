@@ -29,6 +29,16 @@ tags: [ai-tools-compared, comparison]---
 
 Autonomous coding agents — tools that read a GitHub issue, write code, run tests, and open a PR with minimal human intervention — have moved from research demos to production tools. Devin (Cognition) and SWE-Agent (Princeton) are the two most benchmarked. This guide cuts through the hype and focuses on what each actually accomplishes on real tasks.
 
+## Key Takeaways
+
+- **The remaining 60% typically**: requires context that isn't in the issue description.
+- **- SWE-Agent (Claude)**: Found the same root cause in 8 minutes, wrote a more complete fix that also handled edge cases in the URL decoder.
+- **Took 20 minutes and**: one user clarification.
+- **This was the most impressive task**: multi-file changes across 30+ files.
+- **Tasks without measurable success**: criteria fail 80-90% of the time.
+- **Pick 5 issues spanning**: 1 bug fix, 1 refactor, 1 feature, 1 dependency, 1 test-fix
+2.
+
 ## What These Tools Do
 
 **Devin** is a commercial product from Cognition AI. You give it a task in natural language or a GitHub issue URL. It spins up a sandboxed environment, explores the codebase, writes code, runs tests, and reports back. It has a web UI and team features for tracking what Devin worked on.

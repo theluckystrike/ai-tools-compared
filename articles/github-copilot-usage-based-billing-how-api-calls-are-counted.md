@@ -16,6 +16,14 @@ voice-checked: true---
 
 GitHub Copilot's usage-based billing counts API calls by measuring prompt tokens (your code context) and completion tokens (generated suggestions) rather than charging per individual request. A typical inline completion consumes 100-500 tokens total, while a Copilot Chat exchange can use 400-1,000 tokens depending on complexity. This guide explains exactly how token consumption works, what factors drive usage up, and how to monitor and optimize your spend.
 
+## Key Takeaways
+
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **For consistent daily users**: the subscription model might offer better value through predictable pricing.
+- Subscription ($240/year) would be wasteful.
+- **Does Copilot offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **A typical inline completion**: consumes 100-500 tokens total, while a Copilot Chat exchange can use 400-1,000 tokens depending on complexity.
 
 ## The Two Billing Models
 

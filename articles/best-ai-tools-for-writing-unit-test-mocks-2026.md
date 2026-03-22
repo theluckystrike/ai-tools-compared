@@ -25,7 +25,20 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 Generating test mocks requires understanding your project's mocking framework, mock behavior specification, and assertion patterns. Claude Code excels at complex mock hierarchies and dependency injection scenarios. Cursor handles multi-file test generation with superior context awareness. GitHub Copilot provides quick incremental mock suggestions within your test file. This guide compares leading AI tools for generating mocks, stubs, and test doubles—evaluating accuracy, framework compatibility, and developer experience.
+
+## Key Takeaways
+
+- **Use Copilot/Codeium for quick**: mock suggestions - Generate 80% of boilerplate code with inline completions 2.
+- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
+- **Chat-based mock generation**: ```
+User prompt:
+"Generate complete mocks for the DatabaseConnection interface with methods:
+execute(query), executeAsync(query), transaction(callback), and close().
+- **A week-long trial with**: actual work gives better signal than feature comparison charts.
+- **Do these tools work**: offline? Most AI-powered tools require an internet connection since they run models on remote servers.
+- **How quickly do AI**: tool recommendations go out of date? AI tools evolve rapidly, with major updates every few months.
 
 ## Why AI Tools Transform Mock Writing
 

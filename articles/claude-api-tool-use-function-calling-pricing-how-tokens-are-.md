@@ -31,6 +31,21 @@ voice-checked: true---
 
 Claude API tool use (function calling) is billed as standard API token usage with no separate pricing category -- tool definitions count as input tokens, tool call blocks count as output tokens, and tool results count as input tokens on the next turn. For example, a typical multi-tool conversation on Sonnet 4 costs roughly $0.008, with costs accumulating across all token exchanges during the interaction. Understanding these mechanics helps you estimate costs accurately and design efficient tool integrations.
 
+## Key Takeaways
+
+- **If you have used**: the tool for at least 3 months and plan to continue, the annual discount usually makes sense.
+- **For example**: a typical multi-tool conversation on Sonnet 4 costs roughly $0.008, with costs accumulating across all token exchanges during the interaction.
+- **Final response**: 60 output tokens
+
+Total: 700 input tokens + 235 output tokens at Sonnet pricing = approximately $0.0077 per conversation.
+- **When Claude generates a tool call**: the entire tool_use block counts toward your output token limit.
+- **Initial request**: 100 tokens (user message) + 200 tokens (tool definitions) = 300 input
+
+2.
+- **First tool call**: 50 output tokens (tool_use block)
+
+3.
+
 ## How Tool Use Works in Claude API
 
 Tool use (also called function calling) allows Claude to request that your application execute specific functions and return the results back to the model. This creates a powerful loop where the AI can gather real-time information, perform calculations, or manipulate external data.
