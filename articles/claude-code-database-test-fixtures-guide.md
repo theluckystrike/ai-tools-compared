@@ -11,8 +11,7 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, troubleshooting, claude-ai]
----
+tags: [ai-tools-compared, troubleshooting, claude-ai]---
 
 
 Claude Code excels at generating database test fixtures that are maintainable, realistic, and properly isolated. This guide covers how to use Claude Code effectively for creating fixture factories, seeding strategies, and ensuring test isolation across your test suite.
@@ -320,12 +319,10 @@ Set `sqlalchemy_session_persistence = None` on the factory Meta class and flush 
 
 Yes. Claude Code generates `mongomock` fixtures for MongoDB testing, using the `mongomock` library which provides an in-memory MongoDB implementation compatible with `pymongo`. For Redis, it generates fixtures using `fakeredis`. Prompt: "Generate pytest fixtures for MongoDB using mongomock, with factory functions for User and Session documents matching this schema."
 
-
 ---
 
 
 *This article was written by theluckystrike for zovo.one*
-
 
 ## Related Articles
 

@@ -11,16 +11,26 @@ tags: [ai-tools-compared, tools]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true
+voice-checked: true---
 ---
+layout: default
+title: "Writing Effective CursorRules for React TypeScript Projects"
+description: "A practical guide to creating CursorRules that handle React TypeScript component patterns, custom hooks, and state management effectively"
+date: 2026-03-16
+last_modified_at: 2026-03-16
+author: theluckystrike
+permalink: /writing-effective-cursorrules-for-react-typescript-projects-/
+categories: [guides]
+tags: [ai-tools-compared, tools]
+reviewed: true
+score: 8
+intent-checked: true
+voice-checked: true---
 {% raw %}
-
 
 Write CursorRules for React TypeScript projects by specifying TypeScript configuration (strict mode, jsx setting, module resolution), React hook rules (exhaustiveDeps warnings), and component patterns (functional/arrow function preference). These rules ensure Cursor AI generates code following your team's established conventions for component composition, prop typing, hook patterns, and state management approaches.
 
-
 ## Why CursorRules Matter for React TypeScript
-
 
 When working with React and TypeScript, projects often develop unique patterns around component composition, prop typing, and state management. Without explicit guidance, AI assistants may generate code that conflicts with your established conventions. CursorRules solve this by providing persistent context about your project's specific requirements.
 
@@ -28,12 +38,9 @@ A well-structured CursorRules file acts as documentation and enforcement mechani
 
 For React TypeScript projects in particular, this matters because the surface area of valid code is large. You can write a React component as a function declaration, an arrow function, a class component, or using `React.memo`. TypeScript props can use `interface`, `type`, or inline annotations. State management can use `useState`, `useReducer`, Zustand, Redux, Jotai, or Recoil. CursorRules let you narrow this space to what your team actually uses.
 
-
 ## Setting Up Basic React TypeScript Rules
 
-
 Start with project-specific configuration details that affect every file:
-
 
 ```yaml
 # .cursorrules
@@ -53,23 +60,17 @@ Start with project-specific configuration details that affect every file:
 }
 ```
 
-
 This establishes the foundation. Next, address component structure specifically.
 
 The `moduleResolution: "bundler"` setting matches the default for Vite and other modern bundlers. If your project uses `node16` or `nodenext` (common in Node.js libraries), update this value accordingly. Cursor will use these settings to infer path resolution behavior when generating imports.
 
-
 ## Component Pattern Rules
-
 
 React TypeScript projects benefit from consistent component patterns. Define how components should be written, including file organization, naming conventions, and typing approaches.
 
-
 ### Functional Components with Explicit Props
 
-
 For projects using explicit prop interfaces:
-
 
 ```typescript
 // Define props interface outside component
@@ -101,7 +102,6 @@ export function Button({
 }
 ```
 
-
 Your CursorRules should specify whether components use interfaces or types, inline styles versus CSS modules, and naming conventions for props. A common rule to include:
 
 ```
@@ -112,12 +112,9 @@ Export named exports, not default exports, for all components.
 
 Consistent naming makes codebase navigation faster and eliminates debates about conventions during code review.
 
-
 ### Handling Compound Components
 
-
 Compound components require special consideration in your rules. These patterns where a parent component manages state while child components render content need explicit guidance:
-
 
 ```typescript
 // Tabs.tsx - Parent manages state
@@ -158,15 +155,11 @@ function Tab({ index, children }: { index: number; children: React.ReactNode }) 
 }
 ```
 
-
 Specify that compound components should use Context for state sharing, with clear separation between parent and child files.
-
 
 ## Custom Hooks Patterns
 
-
 Custom hooks deserve their own section in CursorRules. Define naming conventions, return types, and error handling approaches:
-
 
 ```typescript
 // useFetch.ts
@@ -204,7 +197,6 @@ export function useFetch<T>(url: string): FetchState<T> {
 }
 ```
 
-
 Rules should specify that hooks must start with "use", handle cleanup properly, and always return tuples or objects with consistent shapes. Include guidance on where to place hooks in your project directory:
 
 ```
@@ -214,15 +206,11 @@ Hooks must clean up effects (abort controllers, event listeners, timers) in the 
 Never call a hook conditionally — enforce React's rules of hooks.
 ```
 
-
 ## State Management Conventions
-
 
 For projects using different state management solutions, include specific rules for each:
 
-
 ### React Context for Global State
-
 
 ```typescript
 // AuthContext.tsx
@@ -270,12 +258,9 @@ export function useAuth() {
 }
 ```
 
-
 Specify that context should always include a custom hook with runtime validation, typed values properly, and include proper cleanup where needed.
 
-
 ### Zustand Store Conventions
-
 
 If your project uses Zustand, your CursorRules should specify the store file structure and typing pattern:
 
@@ -303,12 +288,9 @@ export const useUserStore = create<UserState>((set) => ({
 
 Add a rule specifying that Zustand stores are named `useEntityStore`, live in `src/stores/`, and that selectors are extracted into separate hooks to avoid unnecessary re-renders.
 
-
 ## Import Organization
 
-
 Consistent import ordering improves readability and reduces merge conflicts:
-
 
 ```typescript
 // 1. React imports
@@ -337,15 +319,11 @@ import { formatDate } from '@/utils';
 import styles from './UserProfile.module.css';
 ```
 
-
 Define the exact import order and enforce separation between type and value imports. Note that tools like `eslint-plugin-import` and `@typescript-eslint/consistent-type-imports` can enforce import ordering automatically—reference these in your CursorRules so Cursor generates code that will pass your linter on the first attempt.
-
 
 ## Testing Considerations
 
-
 CursorRules should also address testing patterns. Specify your testing library (Vitest vs Jest, React Testing Library vs Enzyme) and the coverage expectations:
-
 
 ```typescript
 // Button.test.tsx
@@ -377,7 +355,6 @@ describe('Button', () => {
 });
 ```
 
-
 Specify testing library preferences, mock patterns, and what should be tested versus skipped. A useful rule:
 
 ```
@@ -386,9 +363,7 @@ Use vi.fn() for mocks, not jest.fn(). Use screen queries, not container queries.
 Test user behavior, not implementation details. Do not test internal state directly.
 ```
 
-
 ## Putting It All Together: A Complete CursorRules Template
-
 
 Here is a complete starting template for a React TypeScript project using Vite, Zustand, and React Query:
 
@@ -426,34 +401,27 @@ Here is a complete starting template for a React TypeScript project using Vite, 
 - No testing implementation details
 ```
 
-
 ## Frequently Asked Questions
-
 
 **Who is this article written for?**
 
 This article is written for developers building React TypeScript applications who want Cursor AI to generate code that matches their team's established patterns, rather than generic boilerplate.
 
-
 **How current is the information in this article?**
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Check Cursor's changelog for the latest `.cursorrules` capabilities, as the format and supported options change across versions.
-
 
 **Does Cursor offer a free tier?**
 
 Most major tools offer some form of free tier or trial period. Check Cursor's current pricing page for the latest free tier details, as these change frequently. Free tiers typically have usage limits that work for evaluation but may not be sufficient for daily professional use.
 
-
 **How do I get started quickly?**
 
 Copy the complete CursorRules template from this article into a `.cursorrules` file at your project root. Open a component file, trigger a generation, and see how it changes the output. Refine the rules based on what Cursor gets wrong in that first generation.
 
-
 **What is the learning curve like?**
 
 CursorRules are plain text—there is no special syntax to learn beyond what your project already uses. The main challenge is identifying which rules matter most for your codebase. Start with component patterns and import ordering, then add state management and testing rules once those are working.
-
 
 ## Related Articles
 

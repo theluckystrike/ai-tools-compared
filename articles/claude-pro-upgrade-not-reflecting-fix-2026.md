@@ -11,8 +11,7 @@ score: 9
 categories: [troubleshooting]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, troubleshooting, claude-ai]
----
+tags: [ai-tools-compared, troubleshooting, claude-ai]---
 
 
 {% raw %}
@@ -275,31 +274,24 @@ To avoid this issue in the future:
 
 - Keep your Claude CLI and desktop app updated to the latest version
 
-
 ---
 
 
 ## Frequently Asked Questions
 
-
 **How long does it normally take for Claude Pro to activate after payment?**
 For most users, Pro status activates within 5–10 minutes of a successful payment. If you are still seeing Free tier after 30 minutes, start with Fix 1 (sign out and back in). Only escalate to support if it has been more than 24 hours.
-
 
 **Will clearing `~/.config/claude/` delete my Projects or saved conversations?**
 Local cache clearing removes locally stored conversation history and cached auth tokens. Projects and conversations synced to claude.ai are stored server-side and will reappear after you sign back in. If you use Claude Code in offline mode with local-only conversation history, back up that directory first.
 
-
 **I upgraded through the Claude app on iOS. Why does claude.ai still show Free?**
 In-app purchases on iOS go through Apple's payment system, which triggers a separate entitlement sync with Anthropic's servers. This sync can take longer than direct web payments. Sign out of claude.ai and sign back in after 15–20 minutes. If still not reflecting, use the "Restore Purchases" option in the Claude iOS app settings.
-
 
 **Can I be charged for Pro while still seeing Free-tier limits?**
 Yes, this can happen during a sync delay—your payment succeeds but the tier hasn't propagated yet. You will not lose the Pro features; they activate once the sync completes. You will not be double-charged. If the sync never completes, support can manually apply the tier while preserving your billing cycle.
 
-
 ---
-
 
 ## Related Articles
 
@@ -310,4 +302,4 @@ Yes, this can happen during a sync delay—your payment succeeds but the tier ha
 - [Switching from Gemini Advanced to Claude Pro: What You Lose](/ai-tools-compared/switching-from-gemini-advanced-to-claude-pro-what-you-lose/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+

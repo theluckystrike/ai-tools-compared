@@ -11,8 +11,7 @@ tags: [ai-tools-compared, kubernetes, helm, ai-tools, devops, yaml, best-of, art
 reviewed: true
 score: 9
 voice-checked: true
-intent-checked: true
----
+intent-checked: true---
 
 {% raw %}
 
@@ -166,27 +165,26 @@ metadata:
 spec:
   podSelector: {}
   policyTypes:
-  - Ingress
----
+  - Ingress---
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: allow-frontend-to-api
-  namespace: production
+ name: allow-frontend-to-api
+ namespace: production
 spec:
-  podSelector:
-    matchLabels:
-      app: api
-  policyTypes:
-  - Ingress
-  ingress:
-  - from:
-    - podSelector:
-        matchLabels:
-          app: frontend
-    ports:
-    - protocol: TCP
-      port: 8080
+ podSelector:
+ matchLabels:
+ app: api
+ policyTypes:
+ - Ingress
+ ingress:
+ - from:
+ - podSelector:
+ matchLabels:
+ app: frontend
+ ports:
+ - protocol: TCP
+ port: 8080
 ```
 
 **Claude's response:** "Your deny-all-ingress policy is solid. However, you're missing a critical detail: egress. A pod can still exfiltrate data to external systems. Add a deny-all-egress policy and explicitly allow only necessary egress (DNS, API calls, external services). Also, your allow-frontend-to-api policy doesn't specify `namespaceSelector`, meaning traffic from any namespace with a frontend pod would be allowed. Use both `podSelector` and `namespaceSelector` to ensure true multi-tenant isolation."
@@ -197,39 +195,39 @@ Claude then generates the corrected policies:
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: deny-all-egress
-  namespace: production
+ name: deny-all-egress
+ namespace: production
 spec:
-  podSelector: {}
-  policyTypes:
-  - Egress
+ podSelector: {}
+ policyTypes:
+ - Egress
 ---
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: allow-api-dns-egress
-  namespace: production
+ name: allow-api-dns-egress
+ namespace: production
 spec:
-  podSelector:
-    matchLabels:
-      app: api
-  policyTypes:
-  - Egress
-  egress:
-  - to:
-    - namespaceSelector:
-        matchLabels:
-          name: kube-system
-    ports:
-    - protocol: UDP
-      port: 53
-  - to:
-    - podSelector:
-        matchLabels:
-          app: database
-    ports:
-    - protocol: TCP
-      port: 5432
+ podSelector:
+ matchLabels:
+ app: api
+ policyTypes:
+ - Egress
+ egress:
+ - to:
+ - namespaceSelector:
+ matchLabels:
+ name: kube-system
+ ports:
+ - protocol: UDP
+ port: 53
+ - to:
+ - podSelector:
+ matchLabels:
+ app: database
+ ports:
+ - protocol: TCP
+ port: 5432
 ```
 
 This level of security-focused reasoning is Claude's strength.
@@ -296,81 +294,81 @@ Start with Copilot generating a basic Deployment. Then use Cursor to wrap it in 
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "secure-api.fullname" . }}
-  namespace: {{ .Values.namespace | quote }}
-  labels:
-    {{- include "secure-api.labels" . | nindent 4 }}
+ name: {{ include "secure-api.fullname" . }}
+ namespace: {{ .Values.namespace | quote }}
+ labels:
+ {{- include "secure-api.labels" . | nindent 4 }}
 spec:
-  replicas: {{ .Values.replicaCount }}
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 0
-  selector:
-    matchLabels:
-      {{- include "secure-api.selectorLabels" . | nindent 6 }}
-  template:
-    metadata:
-      annotations:
-        prometheus.io/scrape: "true"
-        prometheus.io/port: "8080"
-        {{- with .Values.podAnnotations }}
-        {{- toYaml . | nindent 8 }}
-        {{- end }}
-      labels:
-        {{- include "secure-api.selectorLabels" . | nindent 8 }}
-    spec:
-      securityContext:
-        fsGroup: 1000
-        runAsNonRoot: true
-        runAsUser: 1000
-      serviceAccountName: {{ include "secure-api.serviceAccountName" . }}
-      containers:
-      - name: api
-        securityContext:
-          allowPrivilegeEscalation: false
-          capabilities:
-            drop:
-            - ALL
-          readOnlyRootFilesystem: true
-        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-        imagePullPolicy: IfNotPresent
-        ports:
-        - name: http
-          containerPort: 8080
-        livenessProbe:
-          httpGet:
-            path: /health
-            port: http
-            scheme: HTTP
-          initialDelaySeconds: 30
-          periodSeconds: 10
-          timeoutSeconds: 5
-          failureThreshold: 3
-        readinessProbe:
-          httpGet:
-            path: /ready
-            port: http
-            scheme: HTTP
-          initialDelaySeconds: 10
-          periodSeconds: 5
-        resources:
-          requests:
-            cpu: {{ .Values.resources.requests.cpu }}
-            memory: {{ .Values.resources.requests.memory }}
-          limits:
-            cpu: {{ .Values.resources.limits.cpu }}
-            memory: {{ .Values.resources.limits.memory }}
-        env:
-        - name: LOG_LEVEL
-          value: {{ .Values.logLevel | quote }}
-        volumeMounts:
-        - name: tmp
-          mountPath: /tmp
-      volumes:
-      - name: tmp
-        emptyDir: {}
+ replicas: {{ .Values.replicaCount }}
+ strategy:
+ type: RollingUpdate
+ rollingUpdate:
+ maxSurge: 1
+ maxUnavailable: 0
+ selector:
+ matchLabels:
+ {{- include "secure-api.selectorLabels" . | nindent 6 }}
+ template:
+ metadata:
+ annotations:
+ prometheus.io/scrape: "true"
+ prometheus.io/port: "8080"
+ {{- with .Values.podAnnotations }}
+ {{- toYaml . | nindent 8 }}
+ {{- end }}
+ labels:
+ {{- include "secure-api.selectorLabels" . | nindent 8 }}
+ spec:
+ securityContext:
+ fsGroup: 1000
+ runAsNonRoot: true
+ runAsUser: 1000
+ serviceAccountName: {{ include "secure-api.serviceAccountName" . }}
+ containers:
+ - name: api
+ securityContext:
+ allowPrivilegeEscalation: false
+ capabilities:
+ drop:
+ - ALL
+ readOnlyRootFilesystem: true
+ image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+ imagePullPolicy: IfNotPresent
+ ports:
+ - name: http
+ containerPort: 8080
+ livenessProbe:
+ httpGet:
+ path: /health
+ port: http
+ scheme: HTTP
+ initialDelaySeconds: 30
+ periodSeconds: 10
+ timeoutSeconds: 5
+ failureThreshold: 3
+ readinessProbe:
+ httpGet:
+ path: /ready
+ port: http
+ scheme: HTTP
+ initialDelaySeconds: 10
+ periodSeconds: 5
+ resources:
+ requests:
+ cpu: {{ .Values.resources.requests.cpu }}
+ memory: {{ .Values.resources.requests.memory }}
+ limits:
+ cpu: {{ .Values.resources.limits.cpu }}
+ memory: {{ .Values.resources.limits.memory }}
+ env:
+ - name: LOG_LEVEL
+ value: {{ .Values.logLevel | quote }}
+ volumeMounts:
+ - name: tmp
+ mountPath: /tmp
+ volumes:
+ - name: tmp
+ emptyDir: {}
 ```
 
 This combines Copilot's speed, Cursor's Helm awareness, and Claude's security hardening.
@@ -390,35 +388,27 @@ Start with whichever tool you already use (Copilot in VSCode, Cursor for better 
 
 The optimal AI-assisted Kubernetes workflow combines speed (Copilot/Cursor), context awareness (Cursor/Claude), and security rigor (Claude), with human review as the final gate.
 
-
-
 ## Frequently Asked Questions
-
 
 **Are free AI tools good enough for ai tools for writing kubernetes manifests and helm?**
 
 Free tiers work for basic tasks and evaluation, but paid plans typically offer higher rate limits, better models, and features needed for professional work. Start with free options to find what works for your workflow, then upgrade when you hit limitations.
 
-
 **How do I evaluate which tool fits my workflow?**
 
 Run a practical test: take a real task from your daily work and try it with 2-3 tools. Compare output quality, speed, and how naturally each tool fits your process. A week-long trial with actual work gives better signal than feature comparison charts.
-
 
 **Do these tools work offline?**
 
 Most AI-powered tools require an internet connection since they run models on remote servers. A few offer local model options with reduced capability. If offline access matters to you, check each tool's documentation for local or self-hosted options.
 
-
 **How quickly do AI tool recommendations go out of date?**
 
 AI tools evolve rapidly, with major updates every few months. Feature comparisons from 6 months ago may already be outdated. Check the publication date on any review and verify current features directly on each tool's website before purchasing.
 
-
 **Should I switch tools if something better comes out?**
 
 Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific pain point you experience regularly. Marginal improvements rarely justify the transition overhead.
-
 
 ## Related Articles
 
@@ -429,4 +419,4 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [Best AI Tools for Writing Kubernetes Custom Resource](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-custom-resource-definitions-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+

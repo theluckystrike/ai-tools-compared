@@ -11,8 +11,7 @@ voice-checked: true
 score: 9
 reviewed: true
 intent-checked: true
-tags: [ai-tools-compared, comparison, artificial-intelligence]
----
+tags: [ai-tools-compared, comparison, artificial-intelligence]---
 
 
 {% raw %}
@@ -298,7 +297,6 @@ There is no direct migration path. Conversation flows, intents, and entities nee
 **How do both platforms handle human handoff?**
 Both support agent handoff, but the implementation differs. Yellow AI's Inbox product provides an unified agent console with conversation context transfer. Haptik integrates with third-party agent platforms and provides API hooks for custom handoff logic. Teams running existing contact center infrastructure typically find Haptik's API approach more compatible with complex routing requirements.
 
-
 ---
 
 
@@ -311,4 +309,4 @@ Both support agent handoff, but the implementation differs. Yellow AI's Inbox pr
 - [AI Policy Management Tools Enterprise Compliance](/ai-tools-compared/ai-policy-management-tools-enterprise-compliance-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+

@@ -11,32 +11,37 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]
+tags: [ai-tools-compared, artificial-intelligence]---
 ---
-
+layout: default
+title: "How to Use AI to Draft RFC Documents for Proposed Open"
+description: "Artificial intelligence has become a valuable assistant for open source maintainers and contributors drafting Request for Comments (RFC) documents. When"
+date: 2026-03-16
+last_modified_at: 2026-03-16
+author: theluckystrike
+permalink: /how-to-use-ai-to-draft-rfc-documents-for-proposed-open-source-feature-changes/
+categories: [guides]
+reviewed: true
+score: 9
+intent-checked: true
+voice-checked: true
+tags: [ai-tools-compared, artificial-intelligence]---
 
 {% raw %}
 
 Artificial intelligence has become a valuable assistant for open source maintainers and contributors drafting Request for Comments (RFC) documents. When proposing new features to open source projects, a well-structured RFC helps reviewers understand your proposal, its rationale, and implementation details. AI tools can accelerate this process significantly.
 
-
 ## Understanding RFC Documents in Open Source Projects
-
 
 RFC documents serve as formal proposals for changes to open source projects. Most large open source projects—including Kubernetes, Rust, and Django—have established RFC processes that require contributors to document their proposed changes before implementation begins.
 
-
 A typical RFC includes several key sections: a summary of the proposed change, motivation for the change, detailed design, alternatives considered, and potential drawbacks. Writing these sections from scratch takes time, especially when you need to match the project's specific RFC template and conventions.
-
 
 ## Using AI to Structure Your RFC
 
-
 AI tools excel at generating structured content based on your requirements. To get the best results, provide the AI with context about the project, its existing RFC process, and specific details about your proposed feature.
 
-
 Start by explaining the project and its RFC template requirements:
-
 
 ```
 I need to write an RFC for an open source project that uses the following RFC template:
@@ -52,18 +57,13 @@ The project is a Python CLI tool for managing database migrations. I want to pro
 Please draft the RFC document following this template, focusing on a feature that allows developers to mark migrations as reversible and automatically generate rollback scripts.
 ```
 
-
 The AI will generate a structured draft that you can then refine with specific implementation details.
-
 
 ## Drafting the Motivation Section
 
-
 The motivation section explains why the proposed change matters. This is where AI can help you articulate the problem your feature solves.
 
-
 Provide the AI with specific pain points you're experiencing:
-
 
 ```
 The motivation for reversible migrations in our database migration tool:
@@ -75,15 +75,11 @@ The motivation for reversible migrations in our database migration tool:
 Help me write a compelling motivation section that explains these problems with concrete examples.
 ```
 
-
 AI can transform bullet points into flowing prose that clearly communicates the problem to reviewers.
-
 
 ## Generating Technical Design Details
 
-
 The detailed design section requires precise technical explanation. Here, AI serves as a collaborative partner rather than a complete solution generator. You provide the technical constraints and requirements, and AI helps structure the explanation.
-
 
 ```
 I need help writing the detailed design section for reversible migrations. Here are the technical constraints:
@@ -101,18 +97,13 @@ Please help me structure the detailed design section with these components:
 - Error handling for failed rollbacks
 ```
 
-
 This approach uses AI's strength in organizing technical information while you provide the domain-specific constraints.
-
 
 ## Creating Code Examples
 
-
 Including working code examples strengthens any RFC. AI can generate example implementations, API signatures, or CLI output that demonstrates your proposed feature.
 
-
 For the reversible migrations RFC, you might ask:
-
 
 ```
 Generate example CLI output showing how a developer would use the new reversible migration feature. Include:
@@ -123,15 +114,11 @@ Generate example CLI output showing how a developer would use the new reversible
 5. Error output when rollback fails
 ```
 
-
 AI can produce realistic CLI output that helps reviewers visualize the feature in action.
-
 
 ## Documenting Alternatives and Drawbacks
 
-
 Strong RFCs acknowledge alternatives and drawbacks. This demonstrates you've thought through the design thoroughly. AI can help brainstorm alternatives you might not have considered.
-
 
 ```
 For the reversible migrations feature, what alternative approaches should we consider?
@@ -144,9 +131,7 @@ For the reversible migrations feature, what alternative approaches should we con
 For each alternative, explain why it wouldn't work as well as the proposed approach.
 ```
 
-
 Similarly, AI can help identify potential drawbacks:
-
 
 ```
 What are the potential drawbacks of implementing automatic reversible migrations?
@@ -158,22 +143,17 @@ Consider:
 - Breaking changes where no meaningful rollback is possible
 ```
 
-
 ## Refining the RFC for Your Project
-
 
 Every open source project has specific conventions for RFCs. Review existing merged RFCs in your project to understand the expected format and tone. AI can adapt its output to match these conventions once you provide examples.
 
-
 Provide the AI with the project's existing RFCs:
-
 
 ```
 Here are three example RFCs from our project that were accepted. Notice the style, level of detail, and format. Please draft my new RFC following the same patterns:
 
 [Provide examples from 2-3 existing RFCs]
 ```
-
 
 This ensures your AI-generated draft matches project expectations.
 
@@ -184,10 +164,6 @@ Study existing RFCs from major projects to understand tone and structure:
 ```markdown
 # RFC Example: Rust RFC 2019-12
 ## Title: Stabilize the Async/Await Syntax
-
-### Summary
-This RFC proposes stabilizing async/await syntax for futures-based
-concurrency in Rust 2018 edition.
 
 ### Motivation
 Current closure-based approach requires understanding advanced type system
@@ -218,9 +194,6 @@ Create project-specific templates that AI tools can use:
 
 ```markdown
 # RFC Template for {PROJECT_NAME}
-
-## Summary
-One paragraph describing what this RFC proposes. Keep it 1-2 sentences.
 
 ## Motivation
 Why do we need this change? What problems does it solve? Include specific
@@ -291,50 +264,37 @@ The AI generates expanded sections that directly address reviewer concerns.
 
 ## Best Practices for AI-Assisted RFC Writing
 
-
 Getting good results from AI requires providing clear context and iterating on the output. Here are practical tips:
-
 
 Provide complete context upfront. Include the RFC template, project background, and your specific feature requirements in the initial prompt. This reduces the need for multiple clarification rounds.
 
-
 Review critically. AI generates plausible content that may contain inaccuracies, especially around technical details. Always verify the generated content matches your intended design.
-
 
 Iterate incrementally. Generate sections one at a time rather than asking for a complete RFC in a single prompt. This allows you to refine each section before moving to the next.
 
-
 Maintain your voice. Use AI to structure and draft, but add your own analysis and insights. The best RFCs reflect the author's deep understanding of the problem space.
 
-
-
 ## Frequently Asked Questions
-
 
 **How long does it take to use ai to draft rfc documents for proposed open?**
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-
 **What are the most common mistakes to avoid?**
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
-
 
 **Do I need prior experience to follow this guide?**
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-
 **Can I adapt this for a different tech stack?**
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-
 **Where can I get help if I run into issues?**
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
-
 
 ## Related Articles
 

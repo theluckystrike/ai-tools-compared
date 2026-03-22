@@ -11,8 +11,7 @@ tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true
----
+voice-checked: true---
 Write custom instructions for AI tools by specifying all required security headers (Strict-Transport-Security, Content-Security-Policy, X-Content-Type-Options, X-Frame-Options, X-XSS-Protection, Referrer-Policy, Permissions-Policy) with exact values and explaining when to apply them in middleware or server configuration. These instructions ensure every piece of AI-generated web server code includes your complete security header requirements automatically.
 
 
@@ -311,38 +310,30 @@ Several mistakes reduce the effectiveness of security header instructions. Avoid
 **Failing to test** means you won't discover issues until a security audit catches them. Regularly generate sample code to verify instructions remain effective.
 
 **Environment-conditional bypasses** are a frequent AI suggestion. Instructions should explicitly forbid patterns like disabling headers in development mode.
-
 ---
 
 
-
 ## Frequently Asked Questions
-
 
 **Who is this article written for?**
 
 This article is written for developers, technical professionals, and power users who want practical guidance on securing AI-generated code. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
-
 **How current is the information in this article?**
 
 We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
-
 
 **Are there free alternatives available?**
 
 Free alternatives exist for most tool categories. Helmet.js is open source and free for Express. Next.js headers configuration requires no additional libraries. For AI tool instructions, the `.cursorrules` and `CLAUDE.md` mechanisms are available on all tiers including free.
 
-
 **Can I trust these tools with sensitive data?**
 
 Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
 
-
 **What is the learning curve like?**
 
 Writing security header instructions is straightforward once you understand what each header does. The table in this article provides a starting point. Adapting the instructions for your specific framework and verifying output with curl or securityheaders.com takes less than an hour for most projects.
-
 
 ## Related Articles
 

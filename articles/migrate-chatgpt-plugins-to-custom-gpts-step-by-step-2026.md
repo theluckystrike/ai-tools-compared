@@ -11,29 +11,35 @@ tags: [ai-tools-compared, tools, chatgpt]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true
+voice-checked: true---
 ---
-
+layout: default
+title: "How to Migrate ChatGPT Plugins"
+description: "A practical guide for developers and power users to migrate ChatGPT plugins to Custom GPTs. Includes code examples and best practices"
+date: 2026-03-16
+last_modified_at: 2026-03-16
+author: theluckystrike
+permalink: /migrate-chatgpt-plugins-to-custom-gpts-step-by-step-2026/
+categories: [guides]
+tags: [ai-tools-compared, tools, chatgpt]
+reviewed: true
+score: 9
+intent-checked: true
+voice-checked: true---
 
 {% raw %}
 
 Migrate a ChatGPT Plugin to a Custom GPT by exporting your existing OpenAPI specification, creating a new GPT in the GPT Builder, pasting the spec into the Actions configuration panel, mapping your authentication settings, and testing each endpoint. The process reuses your plugin's API server and OpenAPI schema directly, so the backend stays the same while the configuration moves into the GPT Builder interface. This step-by-step guide covers the full migration with code examples for both manual and programmatic approaches.
 
-
 ## Understanding the Architecture Differences
-
 
 ChatGPT Plugins and Custom GPTs serve similar purposes but operate differently under the hood. Plugins used a manifest file (`ai-plugin.json`) and OpenAPI specifications to define endpoints. Custom GPTs use Actions, which are conceptually similar but require a different setup approach through the GPT Builder interface or the Assistants API.
 
-
 The key distinction is that plugins required external server hosting with a publicly accessible HTTPS endpoint. Custom GPTs with Actions can connect to APIs the same way, but also benefit from a more improved configuration process directly within ChatGPT.
-
 
 ## Step 1: Audit Your Current Plugin
 
-
 Before migrating, document your plugin's current functionality. Create a checklist of:
-
 
 - All endpoints your plugin exposes
 
@@ -43,9 +49,7 @@ Before migrating, document your plugin's current functionality. Create a checkli
 
 - Any third-party dependencies
 
-
 For example, a typical plugin manifest looks like this:
-
 
 ```json
 {
@@ -62,22 +66,17 @@ For example, a typical plugin manifest looks like this:
 }
 ```
 
-
 ## Step 2: Export Your OpenAPI Specification
-
 
 Your plugin's OpenAPI specification is the foundation for your Custom GPT Action. Locate your `openapi.yaml` or `openapi.json` file from the plugin repository. Review it for compatibility with the Custom GPT Actions format.
 
-
 Key adjustments you may need to make:
-
 
 - Ensure all endpoints use HTTPS
 
 - Verify response schemas are properly defined
 
 - Add operation IDs if missing (required for Actions)
-
 
 ```yaml
 openapi: 3.0.0
@@ -109,12 +108,9 @@ paths:
                     type: string
 ```
 
-
 ## Step 3: Create Your Custom GPT
 
-
 Navigate to ChatGPT and access the GPT Builder:
-
 
 1. Click your profile menu and select "My GPTs"
 
@@ -126,15 +122,11 @@ Navigate to ChatGPT and access the GPT Builder:
 
 5. Add your Action using the OpenAPI specification
 
-
 In the Actions configuration panel, paste your refined OpenAPI specification. The GPT Builder will parse your endpoints and generate a configuration interface.
-
 
 ## Step 4: Configure Authentication
 
-
 Custom GPT Actions support multiple authentication methods. Map your plugin's auth configuration to the appropriate Action auth type:
-
 
 | Plugin Auth Type | Custom GPT Action Auth |
 |-----------------|----------------------|
@@ -142,9 +134,7 @@ Custom GPT Actions support multiple authentication methods. Map your plugin's au
 | API Key | Header or query parameter |
 | OAuth 2.0 | OAuth 2.0 configuration |
 
-
 For API key authentication in Actions, specify how the key should be passed:
-
 
 ```yaml
 securitySchemes:
@@ -156,15 +146,11 @@ security:
   - apiKey: []
 ```
 
-
 Configure the authentication credentials in the Action settings panel, providing your API key or OAuth client credentials.
-
 
 ## Step 5: Test Your Migrated GPT
 
-
 The GPT Builder provides a testing panel where you can interact with your Custom GPT and verify the Actions work correctly. Run through each endpoint:
-
 
 1. Ask your GPT to perform an action your plugin supported
 
@@ -174,9 +160,7 @@ The GPT Builder provides a testing panel where you can interact with your Custom
 
 4. Test error handling with invalid inputs
 
-
 Common issues during testing include:
-
 
 - Missing authentication headers
 
@@ -186,15 +170,11 @@ Common issues during testing include:
 
 - Response parsing errors
 
-
 Address each issue by adjusting your OpenAPI specification or updating the Action configuration.
-
 
 ## Step 6: Deploy and Monitor
 
-
 Once testing passes, save your Custom GPT and decide on visibility:
-
 
 - Private: Only you can use the GPT
 
@@ -202,15 +182,11 @@ Once testing passes, save your Custom GPT and decide on visibility:
 
 - Public: Listed in the GPT Store (if available in your region)
 
-
 Monitor usage through the My GPTs dashboard. Track API call volumes and response times to ensure your backend can handle the load.
-
 
 ## Advanced: Programmatic GPT Creation
 
-
 For bulk migrating multiple plugins, use the Assistants API to create Custom GPTs programmatically:
-
 
 ```python
 from openai import OpenAI
@@ -243,18 +219,13 @@ assistant = client.beta.assistants.create(
 )
 ```
 
-
 This approach gives you version control over your GPT configurations and enables CI/CD pipelines for GPT management.
-
 
 ## Writing Effective System Prompts for Migrated GPTs
 
-
 One area where Custom GPTs diverge significantly from plugins is the system prompt. Plugins relied entirely on the `description_for_model` field in the manifest to guide behavior. Custom GPTs have a full system prompt field where you can provide detailed instructions, personas, and constraints.
 
-
 When migrating, translate your plugin's `description_for_model` into a richer system prompt:
-
 
 **Plugin manifest approach (limited):**
 ```json
@@ -262,7 +233,6 @@ When migrating, translate your plugin's `description_for_model` into a richer sy
   "description_for_model": "Fetches current weather data for any location. Use this when users ask about weather."
 }
 ```
-
 
 **Custom GPT system prompt approach (expanded):**
 ```
@@ -281,15 +251,11 @@ Never fabricate weather data if the API call fails — inform the user that
 the service is temporarily unavailable.
 ```
 
-
 The system prompt investment pays off in user experience. Take time to write instructions that match how your plugin originally behaved, then extend them with behaviors the constrained manifest format could not express.
-
 
 ## Migrating Multiple Plugins: Batch Automation Script
 
-
 If you have more than two or three plugins to migrate, automate the process. This script reads plugin manifests from a directory and creates corresponding Assistants API configurations:
-
 
 ```python
 import json
@@ -347,15 +313,11 @@ for manifest_file in plugin_dir.glob("*/ai-plugin.json"):
     print(f"Migrated {manifest_file.parent.name} -> Assistant ID: {assistant_id}")
 ```
 
-
 This script handles the mechanical conversion. You will still need to review each generated assistant and refine its system prompt and tool definitions manually.
-
 
 ## Plugin Migration Compatibility Reference
 
-
 Not all plugin features translate cleanly to Custom GPTs. Use this reference when auditing your plugins:
-
 
 | Plugin Feature | Custom GPT Equivalent | Migration Effort |
 |---------------|----------------------|-----------------|
@@ -369,9 +331,7 @@ Not all plugin features translate cleanly to Custom GPTs. Use this reference whe
 | `contact_email` | Not required in Custom GPTs | None — field removed |
 | Multiple endpoints | Multiple operations in one Action | Low — single spec covers all |
 
-
 ## Frequently Asked Questions
-
 
 **Q: Do I need to change my backend API when migrating from a plugin to a Custom GPT?**
 
@@ -392,7 +352,6 @@ In the Actions configuration panel, select "OAuth" as the authentication type. E
 **Q: Can I test Actions against a local development server?**
 
 Not directly through the GPT Builder interface, which requires publicly accessible HTTPS URLs. Use a tunneling tool like ngrok or Cloudflare Tunnel to expose your local server temporarily during development and testing.
-
 
 ## Related Articles
 

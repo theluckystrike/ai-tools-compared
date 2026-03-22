@@ -11,8 +11,7 @@ tags: [ai-tools-compared, tools, best-of, artificial-intelligence]
 reviewed: true
 intent-checked: true
 voice-checked: true
-score: 9
----
+score: 9---
 
 
 {% raw %}
@@ -312,8 +311,7 @@ Track how well-written issues correlate with contributor engagement:
 
 Create a standard template that AI tools understand:
 
-```markdown
----
+```markdown---
 type: bug|feature|documentation
 difficulty: beginner|intermediate|advanced
 estimated_time: 30min|1hour|2hours|4hours+
@@ -356,28 +354,28 @@ LABEL=${2:-"good-first-issue"}
 
 # Get all issues with label
 gh issue list \
-  --repo "$REPO" \
-  --label "$LABEL" \
-  --json number,title,body \
-  --template '{{range .}}{{.number}}|{{.title}}|{{.body}}{{"\n"}}{{end}}' | \
+ --repo "$REPO" \
+ --label "$LABEL" \
+ --json number,title,body \
+ --template '{{range .}}{{.number}}|{{.title}}|{{.body}}{{"\n"}}{{end}}' | \
 while IFS='|' read issue_num title body; do
-  echo "Processing issue #$issue_num..."
+ echo "Processing issue #$issue_num..."
 
-  # Call AI to improve
-  claude_response=$(curl -s -X POST https://api.anthropic.com/v1/messages \
-    -H "x-api-key: $CLAUDE_API_KEY" \
-    -H "content-type: application/json" \
-    -d '{
-      "model": "claude-opus-4-6",
-      "max_tokens": 1000,
-      "system": "Improve this GitHub issue for beginners",
-      "messages": [{"role": "user", "content": "Title: '"$title"'\n\nBody: '"$body"'"}]
-    }' | jq -r '.content[0].text')
+ # Call AI to improve
+ claude_response=$(curl -s -X POST https://api.anthropic.com/v1/messages \
+ -H "x-api-key: $CLAUDE_API_KEY" \
+ -H "content-type: application/json" \
+ -d '{
+ "model": "claude-opus-4-6",
+ "max_tokens": 1000,
+ "system": "Improve this GitHub issue for beginners",
+ "messages": [{"role": "user", "content": "Title: '"$title"'\n\nBody: '"$body"'"}]
+ }' | jq -r '.content[0].text')
 
-  # Save improvements
-  echo "=== Issue #$issue_num ===" >> improvements.txt
-  echo "$claude_response" >> improvements.txt
-  echo "" >> improvements.txt
+ # Save improvements
+ echo "=== Issue #$issue_num ===" >> improvements.txt
+ echo "$claude_response" >> improvements.txt
+ echo "" >> improvements.txt
 done
 
 echo "Improvements saved to improvements.txt"
@@ -403,34 +401,27 @@ Before asking AI to improve an issue, verify it contains:
 
 The more complete your input, the better the AI-improved output.
 
-
 ## Frequently Asked Questions
-
 
 **What if the fix described here does not work?**
 
 If the primary solution does not resolve your issue, check whether you are running the latest version of the software involved. Clear any caches, restart the application, and try again. If it still fails, search for the exact error message in the tool's GitHub Issues or support forum.
 
-
 **Could this problem be caused by a recent update?**
 
 Yes, updates frequently introduce new bugs or change behavior. Check the tool's release notes and changelog for recent changes. If the issue started right after an update, consider rolling back to the previous version while waiting for a patch.
-
 
 **How can I prevent this issue from happening again?**
 
 Pin your dependency versions to avoid unexpected breaking changes. Set up monitoring or alerts that catch errors early. Keep a troubleshooting log so you can quickly reference solutions when similar problems recur.
 
-
 **Is this a known bug or specific to my setup?**
 
 Check the tool's GitHub Issues page or community forum to see if others report the same problem. If you find matching reports, you will often find workarounds in the comments. If no one else reports it, your local environment configuration is likely the cause.
 
-
 **Should I reinstall the tool to fix this?**
 
 A clean reinstall sometimes resolves persistent issues caused by corrupted caches or configuration files. Before reinstalling, back up your settings and project files. Try clearing the cache first, since that fixes the majority of cases without a full reinstall.
-
 
 ## Related Articles
 
@@ -441,4 +432,4 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 - [How to Use AI to Create GitHub Issue Triage Flowcharts](/ai-tools-compared/how-to-use-ai-to-create-github-issue-triage-flowcharts-for-n/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+
