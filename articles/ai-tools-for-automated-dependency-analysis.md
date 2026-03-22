@@ -1,0 +1,352 @@
+---
+layout: default
+title: "AI Tools for Automated Dependency Analysis"
+description: "Use Claude and open-source AI tools to analyze dependency graphs, detect circular deps, find unused packages, and assess vulnerability blast radius"
+date: 2026-03-22
+author: theluckystrike
+permalink: ai-tools-for-automated-dependency-analysis
+categories: [guides]
+reviewed: true
+score: 8
+intent-checked: true
+voice-checked: true
+tags: [ai-tools-compared]
+---
+
+{% raw %}
+
+Dependency analysis is one of the highest-ROI applications for AI in engineering. A dependency graph can tell you what depends on what — but understanding *why*, predicting the blast radius of an upgrade, and prioritizing which vulnerabilities to fix first requires reasoning that pure graph analysis can't do. AI bridges that gap.
+
+## Key Takeaways
+
+- **AFFECTED_DEPENDENTS**: Which dependents are most likely to need code changes?
+3.
+- **Circular dependency explanation**: Not just "A→B→A exists" but "this cycle forms because auth imports config which imports auth for logging"
+2.
+- **Upgrade impact analysis**: "If I upgrade lodash from 4.17.15 to 4.17.21, which of my 47 dependencies actually use it?"
+3.
+- **ROOT_CAUSE**: Why does this cycle likely exist? (1-2 sentences)
+2.
+- **BREAK_STRATEGY**: Most practical way to break the cycle
+3.
+- **CODE_CHANGE**: Describe the specific refactoring needed
+4.
+
+## Three Problems AI Solves Well
+
+1. **Circular dependency explanation**: Not just "A→B→A exists" but "this cycle forms because auth imports config which imports auth for logging"
+2. **Upgrade impact analysis**: "If I upgrade lodash from 4.17.15 to 4.17.21, which of my 47 dependencies actually use it?"
+3. **Vulnerability prioritization**: "Of these 12 CVEs, which are exploitable given my actual call graph?"
+
+## Setup: Build a Dependency Graph
+
+Start with the actual dependency data. Here's how to extract it for npm, pip, and Go:
+
+```python
+# dep_graph.py
+import subprocess
+import json
+from pathlib import Path
+
+def get_npm_deps() -> dict:
+    result = subprocess.run(
+        ["npm", "list", "--all", "--json"],
+        capture_output=True, text=True
+    )
+    return json.loads(result.stdout)
+
+def get_pip_deps() -> dict:
+    """Build a pip dependency graph using pipdeptree."""
+    result = subprocess.run(
+        ["pip", "install", "-q", "pipdeptree"],
+        capture_output=True
+    )
+    result = subprocess.run(
+        ["pipdeptree", "--json-tree"],
+        capture_output=True, text=True
+    )
+    return json.loads(result.stdout)
+
+def get_go_deps() -> dict:
+    result = subprocess.run(
+        ["go", "mod", "graph"],
+        capture_output=True, text=True
+    )
+    edges = []
+    for line in result.stdout.strip().split("\n"):
+        if " " in line:
+            parts = line.split(" ")
+            edges.append({"from": parts[0], "to": parts[1]})
+    return {"edges": edges}
+
+def detect_circular_deps_python() -> list[str]:
+    """Use pipdeptree to detect circular dependencies."""
+    result = subprocess.run(
+        ["pipdeptree", "--warn", "silence"],
+        capture_output=True, text=True
+    )
+    cycles = [
+        line for line in result.stderr.split("\n")
+        if "circular" in line.lower()
+    ]
+    return cycles
+```
+
+## AI Analysis: Circular Dependency Explanation
+
+```python
+# analyze_deps.py
+from anthropic import Anthropic
+import json
+
+client = Anthropic()
+
+def explain_circular_dependency(cycle: list[str], dep_graph: dict) -> str:
+    """Have Claude explain why a circular dependency exists and how to break it."""
+    cycle_str = " → ".join(cycle)
+
+    # Find relevant portion of the graph
+    relevant_edges = []
+    for edge in dep_graph.get("edges", []):
+        if any(pkg in edge["from"] or pkg in edge["to"] for pkg in cycle):
+            relevant_edges.append(edge)
+
+    response = client.messages.create(
+        model="claude-opus-4-6",
+        max_tokens=1000,
+        messages=[{
+            "role": "user",
+            "content": f"""Analyze this circular dependency and explain how to break it.
+
+Cycle: {cycle_str}
+
+Relevant dependency edges:
+{json.dumps(relevant_edges[:30], indent=2)}
+
+Provide:
+1. ROOT_CAUSE: Why does this cycle likely exist? (1-2 sentences)
+2. BREAK_STRATEGY: Most practical way to break the cycle
+3. CODE_CHANGE: Describe the specific refactoring needed
+4. RISK: Low/Medium/High — how difficult is the fix?"""
+        }]
+    )
+    return response.content[0].text
+
+def analyze_upgrade_impact(
+    package: str,
+    from_version: str,
+    to_version: str,
+    dep_graph: dict
+) -> str:
+    """Predict the impact of upgrading a package."""
+    # Find all packages that depend on this one
+    dependents = []
+    for edge in dep_graph.get("edges", []):
+        if package.lower() in edge.get("to", "").lower():
+            dependents.append(edge["from"])
+
+    response = client.messages.create(
+        model="claude-opus-4-6",
+        max_tokens=1500,
+        messages=[{
+            "role": "user",
+            "content": f"""Analyze the impact of upgrading {package} from {from_version} to {to_version}.
+
+Direct dependents in this codebase:
+{json.dumps(dependents, indent=2)}
+
+Based on semantic versioning and common knowledge of {package}:
+1. BREAKING_CHANGES: What typically changes between these versions?
+2. AFFECTED_DEPENDENTS: Which dependents are most likely to need code changes?
+3. SAFE_UPGRADE: Is this likely a safe drop-in upgrade?
+4. TESTING_PRIORITY: Which areas to test first?
+5. ROLLBACK_PLAN: How to safely roll back if the upgrade breaks something?"""
+        }]
+    )
+    return response.content[0].text
+```
+
+## Vulnerability Blast Radius Analysis
+
+```python
+def analyze_vulnerability_blast_radius(
+    cve_id: str,
+    vulnerable_package: str,
+    vuln_description: str,
+    dep_graph: dict,
+    endpoints: list[str] = None
+) -> str:
+    """Assess how exploitable a vulnerability is given the actual dependency graph."""
+    # Build reverse dependency path
+    def find_paths_to_root(pkg: str, graph: dict, depth: int = 0) -> list[list[str]]:
+        if depth > 5:
+            return []
+        paths = []
+        for edge in graph.get("edges", []):
+            if pkg.lower() in edge.get("to", "").lower():
+                parent = edge["from"]
+                sub_paths = find_paths_to_root(parent, graph, depth + 1)
+                if sub_paths:
+                    paths.extend([[parent] + p for p in sub_paths])
+                else:
+                    paths.append([parent])
+        return paths
+
+    paths = find_paths_to_root(vulnerable_package, dep_graph)
+    paths_str = "\n".join(" → ".join(p) for p in paths[:20])
+
+    endpoints_str = "\n".join(endpoints[:10]) if endpoints else "Unknown"
+
+    response = client.messages.create(
+        model="claude-opus-4-6",
+        max_tokens=1200,
+        messages=[{
+            "role": "user",
+            "content": f"""Assess the blast radius of this vulnerability in our codebase.
+
+CVE: {cve_id}
+Vulnerable package: {vulnerable_package}
+Description: {vuln_description}
+
+Dependency paths to vulnerable package:
+{paths_str}
+
+Exposed endpoints/surfaces:
+{endpoints_str}
+
+Provide:
+EXPLOITABILITY: [Critical/High/Medium/Low] — can this actually be reached?
+ATTACK_VECTOR: How would an attacker trigger this?
+AFFECTED_FEATURES: What parts of the product are at risk?
+IMMEDIATE_MITIGATION: What to do right now if patching is delayed?
+PRIORITY: Should this block the current release?"""
+        }]
+    )
+    return response.content[0].text
+```
+
+## Unused Dependency Detection
+
+```python
+import ast
+import os
+from pathlib import Path
+
+def find_actually_used_packages(src_dir: str, packages: list[str]) -> dict:
+    """Scan Python source to find which installed packages are actually imported."""
+    imported = set()
+
+    for py_file in Path(src_dir).rglob("*.py"):
+        try:
+            tree = ast.parse(py_file.read_text())
+        except SyntaxError:
+            continue
+
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Import):
+                for alias in node.names:
+                    imported.add(alias.name.split(".")[0])
+            elif isinstance(node, ast.ImportFrom):
+                if node.module:
+                    imported.add(node.module.split(".")[0])
+
+    return {
+        "used": [p for p in packages if any(
+            p.lower().replace("-", "_") == imp.lower()
+            for imp in imported
+        )],
+        "unused": [p for p in packages if not any(
+            p.lower().replace("-", "_") == imp.lower()
+            for imp in imported
+        )]
+    }
+
+def get_ai_removal_advice(unused_packages: list[str], project_description: str) -> str:
+    """Ask Claude which unused packages are safe to remove."""
+    response = client.messages.create(
+        model="claude-opus-4-6",
+        max_tokens=800,
+        messages=[{
+            "role": "user",
+            "content": f"""This Python project ({project_description}) has these packages
+installed but no direct imports found in source code:
+
+{', '.join(unused_packages)}
+
+For each package, advise:
+SAFE_TO_REMOVE: [Yes/No/Maybe]
+REASON: Why it might be needed even without direct imports
+  (e.g., pytest plugins, build tools, transitive deps pulled in intentionally)
+
+Format as a table: Package | Safe | Reason"""
+        }]
+    )
+    return response.content[0].text
+```
+
+## CI Integration
+
+```yaml
+# .github/workflows/dep-analysis.yml
+name: Dependency Analysis
+
+on:
+  pull_request:
+    paths:
+      - 'package.json'
+      - 'requirements.txt'
+      - 'go.mod'
+      - 'pyproject.toml'
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run dependency analysis
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          pip install pipdeptree anthropic
+          python3 scripts/analyze_deps.py \
+            --check-circular \
+            --check-unused \
+            > /tmp/dep_report.md
+
+      - name: Post analysis as PR comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const report = fs.readFileSync('/tmp/dep_report.md', 'utf8');
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `## Dependency Analysis\n\n${report}`
+            });
+```
+
+## Tool Comparison
+
+| Tool | Circular Deps | Vuln Analysis | Upgrade Impact | AI Explanation |
+|---|---|---|---|---|
+| Claude (API) | Via graph + AI | Full blast radius | Semantic analysis | Yes |
+| Snyk | No | Yes | Limited | No |
+| FOSSA | Basic | Yes | No | No |
+| Depcheck (npm) | No | No | No | No |
+| pipdeptree | Detects only | No | No | No |
+
+The AI-powered approach is the only one that combines detection with reasoning about impact and prioritization.
+
+## Related Reading
+
+- [AI Tools for Automated Schema Validation](/ai-tools-compared/ai-tools-for-automated-schema-validation/)
+- [AI Tools for Automated PR Description Generation](/ai-tools-compared/ai-tools-for-automated-pr-description-generation/)
+- [Best AI Tools for Writing GitHub Actions Workflows](/ai-tools-compared/best-ai-tools-for-writing-github-actions-workflows-2026/)
+
+---
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

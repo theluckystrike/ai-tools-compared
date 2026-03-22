@@ -14,9 +14,17 @@ tags: [ai-tools-compared]
 ---
 
 {% raw %}
+
 Rust's borrow checker, lifetime annotations, and trait system create a uniquely high AI assistance ceiling — and floor. An AI that understands ownership deeply can cut hours from your development cycle. One that doesn't will generate code that looks plausible but won't compile.
 
 This comparison tests Claude Code and GitHub Copilot on four Rust tasks that require real language understanding.
+
+## Key Takeaways
+
+- **Topics covered**: task 1: fixing borrow checker errors, task 2: async error handling with `?`, task 3: trait implementation with generics
+- **Practical guidance included**: Step-by-step setup and configuration instructions
+- **Use-case recommendations**: Specific guidance based on team size and requirements
+- **Trade-off analysis**: Strengths and limitations of each option discussed
 
 ## Task 1: Fixing Borrow Checker Errors
 

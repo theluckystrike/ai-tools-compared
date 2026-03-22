@@ -14,9 +14,17 @@ tags: [ai-tools-compared]
 ---
 
 {% raw %}
+
 Go is the dominant language for microservices, and AI tools vary significantly in their Go idiom knowledge. The gap between "compiles" and "idiomatic Go" is where most AI tools fall short — returning errors with `fmt.Errorf` wrapping vs `errors.As`, using goroutines without proper context cancellation, or generating middleware that doesn't follow the standard `http.Handler` pattern.
 
 This guide tests Claude Code, Copilot, and Cursor on four real Go microservice tasks.
+
+## Key Takeaways
+
+- **Topics covered**: task 1: grpc service with interceptors, task 2: http middleware chain, task 3: error wrapping and handling
+- **Practical guidance included**: Step-by-step setup and configuration instructions
+- **Use-case recommendations**: Specific guidance based on team size and requirements
+- **Trade-off analysis**: Strengths and limitations of each option discussed
 
 ## Task 1: gRPC Service with Interceptors
 

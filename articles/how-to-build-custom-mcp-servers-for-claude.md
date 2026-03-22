@@ -14,9 +14,17 @@ tags: [ai-tools-compared]
 ---
 
 {% raw %}
+
 Model Context Protocol (MCP) lets you extend Claude with custom tools, expose data sources as resources, and define reusable prompts — all without modifying Claude's core behavior. A custom MCP server can give Claude access to your internal APIs, databases, or file systems in a controlled, auditable way.
 
 This guide builds three real MCP servers: a database query tool, a REST API wrapper, and a file watcher resource.
+
+## Key Takeaways
+
+- **Topics covered**: how mcp works, setup, server 1: database query tool (python)
+- **Practical guidance included**: Step-by-step setup and configuration instructions
+- **Use-case recommendations**: Specific guidance based on team size and requirements
+- **Trade-off analysis**: Strengths and limitations of each option discussed
 
 ## How MCP Works
 
