@@ -182,6 +182,51 @@ const alertConfig = {
 ```
 
 
+## Reclaiming Idle Seats: A Practical Workflow
+
+
+GitHub allows you to remove seat assignments at any time from the organization's Copilot settings page. The billing adjustment takes effect at the start of the next billing cycle — you will not receive a prorated refund for the current month. Given this, the optimal reclamation cadence is monthly, aligned with your billing renewal date.
+
+
+A practical seat audit workflow:
+
+
+1. Pull the Copilot usage report from Settings → Copilot → Policies and access under your GitHub organization.
+
+2. Filter for users with zero "active days" in the past 30 days.
+
+3. Send a notification to those developers: "We noticed you have not used Copilot this month. Your seat will be unassigned on [date] unless you confirm you want to keep it."
+
+4. Wait 5 business days for responses.
+
+5. Unassign non-responding seats 3 days before your billing renewal date.
+
+6. Document unassigned seats in your license management system so re-requests go through a lightweight approval process rather than a new procurement cycle.
+
+
+This workflow typically recovers 10-20% of seats in organizations that ran org-wide enablement without a structured adoption program. On a 100-seat org at $10/seat, recovering even 15 seats saves $1,800/year.
+
+
+## Copilot Business vs. Copilot Enterprise: When the Tier Matters
+
+
+If you are evaluating org-wide enablement, understanding the tier difference helps calibrate the cost conversation:
+
+
+| Feature | Copilot Business | Copilot Enterprise |
+|---------|-----------------|-------------------|
+| Price | $10/user/month | $19/user/month |
+| IDE support | VS Code, JetBrains, Vim, Neovim | Same |
+| Organization policy controls | Yes | Yes + granular |
+| Custom model fine-tuning | No | Yes |
+| GitHub.com chat integration | Limited | Full |
+| Knowledge bases (codebase indexing) | No | Yes |
+| Minimum seat requirement | None | None |
+
+
+For most engineering teams under 200 developers without specific compliance or fine-tuning needs, Copilot Business at $10/seat delivers the core productivity value. Copilot Enterprise becomes worth the 90% price premium when you need indexed codebase search across large private repositories or deeply customized organizational policies.
+
+
 ## When Org-Wide Makes Sense Despite Partial Adoption
 
 
@@ -204,19 +249,30 @@ If only a few developers will use Copilot, compare the options:
 
 
 | Factor | Copilot Business | Individual Subscription |
-
 |--------|------------------|--------------------------|
-
 | Cost | $10/user/month | $10/month (personal) |
-
 | Policy control | Organization-managed | None |
-
 | Code privacy | Enterprise controls | Individual settings |
-
 | Minimum users | None | 1 |
 
 
 For teams with less than 10 potential users, individual subscriptions might make more financial sense, though you lose organizational control.
+
+
+## Break-Even Analysis: Is Org-Wide Worth It?
+
+
+The key question is whether the operational savings from removing per-seat management justify the cost of idle seats. Use this break-even framework:
+
+
+- **License management time saved**: Estimate how many minutes per week your engineering manager or DevOps team spends processing Copilot access requests. For most teams this is 15-30 minutes per week, or $50-150/month in loaded labor cost at typical engineering salary rates.
+
+- **Idle seat cost**: (Total seats − Active users) × $10
+
+- **Break-even point**: Org-wide enablement pays off when license management savings exceed idle seat cost.
+
+
+For a 50-developer org where 35 are active, idle seat cost is $150/month. If managing individual seat assignments takes more than 90 minutes of engineering management time per month, org-wide enablement costs the same or less than selective licensing — while delivering better developer experience.
 
 
 ## Measuring Actual Productivity Gains
