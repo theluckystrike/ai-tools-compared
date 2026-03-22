@@ -51,7 +51,17 @@ Migration planning requires understanding how your applications interact with da
 
 AI tools can analyze your codebase, infrastructure configuration, and runtime behavior to build dependency graphs that reveal these hidden connections.
 
-## Static Code Analysis Approaches
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Static Code Analysis Approaches
 
 Modern AI coding assistants can scan your repositories to identify explicit dependencies. Provide your AI tool with context about your application structure and request dependency analysis:
 
@@ -89,7 +99,7 @@ for source, targets in resources.items():
     print(f"  {source} depends on: {targets}")
 ```
 
-## Runtime Dependency Discovery
+### Step 2: Run time Dependency Discovery
 
 Static analysis catches explicit code references but misses dynamic connections. For runtime dependencies, consider deploying traffic analysis tools alongside AI-powered log aggregation.
 
@@ -108,7 +118,7 @@ kubectl exec -it your-app-pod -- cat /proc/net/tcp | \
 
 Feed this connection data to your AI tool to map actual runtime dependencies versus what documentation claims.
 
-## Building the Dependency Graph
+### Step 3: Build the Dependency Graph
 
 Once you collect static and dynamic dependency data, combine them into an actionable graph. A Python script using NetworkX can visualize the relationships:
 
@@ -150,7 +160,7 @@ for scc in sccs:
 
 This analysis reveals which services form tight coupling clusters and which have clear boundaries for independent migration.
 
-## Prioritizing Migration Waves
+### Step 4: Prioritizing Migration Waves
 
 Not all dependencies equal. Use your dependency graph to categorize applications:
 
@@ -172,7 +182,7 @@ Given this dependency graph, suggest a migration order that:
 - Delays high-coupling services until dependencies are stable
 ```
 
-## AI-Assisted Migration Wave Planning Table
+### Step 5: AI-Assisted Migration Wave Planning Table
 
 Use a structured table to track each wave's status, risk level, and dependencies across teams. AI tools like Claude or ChatGPT can generate and maintain this table from your dependency graph output:
 
@@ -185,7 +195,7 @@ Use a structured table to track each wave's status, risk level, and dependencies
 
 Keep this table in a shared document and prompt your AI assistant to update it automatically as new dependencies are discovered during analysis. The AI can also flag when a proposed wave ordering creates a hidden dependency cycle—something spreadsheets alone cannot catch.
 
-## Handling Configuration Drift
+### Step 6: Handling Configuration Drift
 
 After identifying dependencies, you will find configuration values that break in the cloud environment. Database connection strings might point to on-premise hosts. Environment variables might reference internal DNS names unavailable in the target cloud.
 
@@ -209,7 +219,7 @@ Suggest environment variable names and configuration patterns
 that allow the same code to work in both environments.
 ```
 
-## Pro Tips for AI-Driven Dependency Analysis
+### Step 7: Pro Tips for AI-Driven Dependency Analysis
 
 These practices consistently improve accuracy when using AI for migration planning:
 
@@ -223,7 +233,7 @@ These practices consistently improve accuracy when using AI for migration planni
 
 **Generate a dependency risk score.** Ask your AI assistant to assign a numeric risk score to each service based on how many other services depend on it, whether it holds shared state, and how frequently it changes. Services scoring above a threshold get dedicated runbooks before migration begins.
 
-## Validating the Migration Plan
+### Step 8: Validating the Migration Plan
 
 Before executing your migration, validate assumptions with canary deployments. Route a small percentage of traffic to the cloud environment and measure:
 
@@ -237,7 +247,7 @@ Ask AI to generate observability dashboards that compare on-premise versus cloud
 
 After each canary phase, provide the AI with the actual metrics and ask it to compare them against the predicted behavior from the migration plan. Significant deviations—more than 20% latency increase or unexpected timeout spikes—indicate undiscovered dependencies that need investigation before the full cutover proceeds.
 
-## Common Pitfalls and How AI Helps Avoid Them
+### Step 9: Common Pitfalls and How AI Helps Avoid Them
 
 Several recurring mistakes account for the majority of cloud migration failures. AI tools help surface these before they cause outages:
 
@@ -246,6 +256,21 @@ Several recurring mistakes account for the majority of cloud migration failures.
 - **Missing service account and IAM permission gaps.** When services move to cloud-native identity systems, hardcoded credentials or overly broad on-premise service accounts break. AI can scan your codebase for authentication patterns and flag those incompatible with cloud IAM.
 
 - **Ignoring data transfer costs.** Dependencies between services that cross availability zones or regions incur unexpected egress fees. AI can estimate data transfer volume from your dependency graph and help model cost scenarios before you commit to an architecture.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

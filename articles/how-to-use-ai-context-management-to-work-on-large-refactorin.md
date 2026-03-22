@@ -42,13 +42,23 @@ others still use Redux.
 - **If tests fail**: the AI can often diagnose the issue when you share the error messages, because it understands the intent behind the code it generated.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## The Context Window Challenge
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The Context Window Challenge
 
 Every AI model processes a limited number of tokens in a single request. When refactoring a substantial feature, you might need to show the AI several related files, explain the current implementation, specify your target architecture, and request specific changes—all within a token budget that varies by tool. Exceeding this limit results in truncated responses or degraded quality.
 
 The solution involves systematic context management: breaking your refactoring into atomic units that each fit within the model's context window while preserving the critical information needed for accurate code generation.
 
-## Strategy One: File-by-File Contextualization
+### Step 2: Strategy One: File-by-File Contextualization
 
 Rather than dumping entire modules, provide targeted context for each file you want the AI to modify. This approach works well when refactoring involves changing implementation details without altering the public interface.
 
@@ -62,7 +72,7 @@ Rather than dumping entire modules, provide targeted context for each file you w
 
 This framing tells the AI exactly what you're doing and why, without requiring it to infer intent from unrelated code. The constraint specification prevents the AI from making breaking changes that affect dependent code you haven't shown it yet.
 
-## Strategy Two: Dependency-Aware Chunking
+### Step 3: Strategy Two: Dependency-Aware Chunking
 
 Large refactorings often span multiple files with dependencies. Group files by their relationship to each other, then process each group sequentially. Start with files that have no dependencies on the code you're changing, then work toward the most dependent files.
 
@@ -78,7 +88,7 @@ For a service-layer refactoring, you might structure your approach as:
 
 This sequencing means each subsequent prompt can reference changes made in previous steps without carrying forward all the implementation details.
 
-## Preserving Context Across Multiple Sessions
+### Step 4: Preserving Context Across Multiple Sessions
 
 When refactoring spans hours or days, you need mechanisms to maintain continuity. Several approaches work effectively:
 
@@ -99,7 +109,7 @@ Related to: large-refactoring-order-system"
 Maintain a separate document that tracks the current state of your refactoring. This serves as a running summary for the AI and for yourself:
 
 ```
-## Refactoring Progress: Payment Module
+### Step 5: Refactoring Progress: Payment Module
 
 ### Completed
 - [x] Extracted PaymentGateway interface
@@ -132,7 +142,7 @@ Following up on the OrderService refactor we completed yesterday:
 Please modify billing/client.py to accept PaymentGateway via constructor injection...
 ```
 
-## Handling Cross-Cutting Changes
+### Step 6: Handling Cross-Cutting Changes
 
 Some refactorings affect concerns that span multiple files in different directories—error handling patterns, logging conventions, or authentication logic. These require a different approach than file-by-file changes.
 
@@ -183,7 +193,7 @@ Instead, break the work into discrete phases:
 
 Each phase produces working code you can test before proceeding. If something breaks, you know exactly which AI-assisted change caused the problem.
 
-## Using Git to Track AI Refactoring Progress
+### Step 7: Use Git to Track AI Refactoring Progress
 
 Git becomes your safety net when working with AI-assisted refactorings. Create a dedicated branch for AI work and commit frequently after each successful AI interaction:
 
@@ -209,7 +219,7 @@ git commit -m "refactor(order): migrate OrderService to use new validator
 
 If an AI modification introduces bugs, reverting becomes trivial: `git revert COMMIT_HASH`. This granular history also helps during code review—reviewers can see exactly which parts the AI generated versus which you wrote manually.
 
-## Prompt Templates for Effective Refactoring
+### Step 8: Prompt Templates for Effective Refactoring
 
 Develop reusable prompt templates that structure AI requests effectively. These templates embed your refactoring strategy into the prompt itself:
 
@@ -264,7 +274,7 @@ Constraints for this phase:
 
 These templates ensure consistent, high-quality prompts that set clear expectations for AI-generated code.
 
-## Handling Complex Dependency Graphs
+### Step 9: Handling Complex Dependency Graphs
 
 Some refactorings involve files with circular or complex dependencies. Rather than fighting these patterns, work with them:
 
@@ -283,7 +293,7 @@ List the import changes needed to eliminate the circular dependency.
 
 The AI can map out a refactoring path that untangles these dependencies without destroying intermediate code states.
 
-## Validating AI-Generated Refactoring
+### Step 10: Validating AI-Generated Refactoring
 
 Before committing AI-generated code, run additional checks beyond tests:
 
@@ -307,7 +317,7 @@ du -h dist/
 
 If any of these catch issues, share the specific error with the AI. It can diagnose and fix the problem because it understands the refactoring intent.
 
-## Real-World Complexity: State Management Migration
+### Step 11: Real-World Complexity: State Management Migration
 
 Here's how to tackle a concrete, complex scenario using these techniques. Suppose you're migrating from Redux to Zustand:
 
@@ -353,11 +363,26 @@ the store integration works before moving to the next component.
 
 This phased approach keeps the codebase in a working state throughout the migration, enabling safer, faster refactoring with AI assistance.
 
-## Testing AI-Assisted Refactoring
+### Step 12: Test AI-Assisted Refactoring
 
 Automated tests become essential when AI generates significant portions of your refactored code. Before introducing AI changes, ensure you have test coverage that validates the contract between your refactored code and its consumers.
 
 Run tests after each atomic refactoring step. If tests pass, commit and proceed. If tests fail, the AI can often diagnose the issue when you share the error messages, because it understands the intent behind the code it generated.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

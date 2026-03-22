@@ -76,7 +76,7 @@ With an MCP server providing schema context, the same assistant can:
 
 The difference in code quality is significant—particularly on databases that have evolved through many migrations and diverged from any documentation.
 
-## Building the MCP Server
+### Step 1: Build the MCP Server
 
 Create a file named `server.py` in your project directory. This server will connect to your database and expose schema information through MCP tools.
 
@@ -139,7 +139,7 @@ if __name__ == "__main__":
 
 This server exposes three tools: `get_tables` lists all available tables, `get_table_schema` returns detailed information about a specific table including columns, keys, and indexes, and `get_all_schemas` provides an overview of your entire database structure.
 
-## Configuring the MCP Server
+### Step 2: Configure the MCP Server
 
 To connect your AI assistant to this server, you need to configure the MCP client. The configuration varies depending on your AI tool, but most support a `mcp.json` configuration file.
 
@@ -188,7 +188,7 @@ In practice, you'll want different configurations for development, staging, and 
 
 Having both servers registered lets you ask your AI assistant "check the staging schema for this table" and get an accurate answer without manually connecting to each environment.
 
-## Using the Server with AI Assistants
+### Step 3: Use the Server with AI Assistants
 
 Once configured, your AI assistant can now query your database schema directly. Here's how this works in practice:
 
@@ -216,7 +216,7 @@ The AI now understands both the `users` and `orders` table structures, enabling 
 
 With schema access, the AI compares your model definition against the live schema and flags any mismatches—a common source of subtle bugs after migrations.
 
-## Adding Dynamic Schema Updates
+### Step 4: Adding Dynamic Schema Updates
 
 For development environments where the database schema changes frequently, you might want the schema information to stay current. Modify the server to support on-demand schema refreshing:
 
@@ -238,7 +238,7 @@ def refresh_schema() -> str:
 
 Add the `@lru_cache` decorator to the `get_db_inspector` function to enable caching, then provide a tool to clear it when schema changes occur. After running a migration, ask the AI to "refresh the schema cache" before asking schema-dependent questions.
 
-## Extending the Server with Sample Data
+### Step 5: Extending the Server with Sample Data
 
 Beyond schema structure, AI assistants benefit from seeing representative sample data. Add a tool that returns anonymized sample rows:
 
@@ -289,7 +289,7 @@ def get_table_schema(table_name: str) -> Dict[str, Any]:
 
 **Avoid logging credentials:** Never log the DATABASE_URL or connection strings. Use environment variables exclusively and ensure your logging configuration excludes environment variable values.
 
-## Extending the Server Further
+### Step 6: Extending the Server Further
 
 Once the basic schema server is working, consider adding these capabilities to make it more useful across your entire development workflow:
 
@@ -311,6 +311,21 @@ def compare_schemas(schema_a: str, schema_b: str) -> Dict[str, Any]:
 ```
 
 The MCP architecture makes it easy to add new tools as your needs evolve. Start with the core schema exposure tools and layer on additional capabilities as you identify gaps in your AI assistant's database knowledge.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

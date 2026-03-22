@@ -23,7 +23,17 @@ Incident response automation with AI reduces mean time to resolution by handling
 - **This guide covers architecture**: webhook handler, context gathering, with specific setup instructions
 - **Setup and configuration**: Step-by-step instructions included for each tool discussed
 
-## Architecture
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Architecture
 
 ```
 PagerDuty Alert
@@ -39,7 +49,7 @@ Slack Incident Channel (auto-created)
 Runbook Bot (optional automated remediation)
 ```
 
-## Webhook Handler
+### Step 2: Webhook Handler
 
 ```python
 # incident_responder/main.py
@@ -94,7 +104,7 @@ async def handle_new_incident(incident: dict):
         await post_triage_summary(channel, {"error": str(e)}, incident)
 ```
 
-## Context Gathering
+### Step 3: Context Gathering
 
 ```python
 # incident_responder/context.py
@@ -194,7 +204,7 @@ async def get_kubernetes_status(service: str) -> str:
         return "kubectl unavailable"
 ```
 
-## AI Triage
+### Step 4: AI Triage
 
 ```python
 # incident_responder/triage.py
@@ -258,7 +268,7 @@ Triage this incident.
         }
 ```
 
-## Slack Integration
+### Step 5: Slack Integration
 
 ```python
 # incident_responder/slack.py
@@ -348,7 +358,7 @@ async def post_triage_summary(channel_id: str, triage: dict, incident: dict):
         )
 ```
 
-## Automated Post-Mortem Generation
+### Step 6: Automated Post-Mortem Generation
 
 After an incident resolves, generate a draft post-mortem:
 
@@ -380,19 +390,19 @@ Resolution:
 
 Format:
 ## Summary
-## Impact
-## Root Cause
-## Timeline
-## What Went Well
-## What Could Have Gone Better
-## Action Items (specific, assigned, with deadlines)
+### Step 7: Impact
+### Step 8: Root Cause
+### Step 9: Timeline
+### Step 10: What Went Well
+### Step 11: What Could Have Gone Better
+### Step 12: Action Items (specific, assigned, with deadlines)
 """
         }]
     )
     return response.content[0].text
 ```
 
-## Deployment
+### Step 13: Deploy ment
 
 ```dockerfile
 # Dockerfile
@@ -415,6 +425,21 @@ services:
     ports:
       - "8080:8080"
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

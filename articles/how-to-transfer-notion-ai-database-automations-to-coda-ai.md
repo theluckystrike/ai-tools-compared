@@ -44,7 +44,17 @@ For more complex workflows, Coda supports "Button" columns that users click to t
 - **Coda tables use similar**: types but with different names and behaviors.
 - **Coda uses "lookup" columns**: and formulas that can reference other tables directly.
 
-## Understanding the Architectural Differences
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Architectural Differences
 
 Notion stores data in a block-based system with databases as collections of pages. Each page can contain blocks, and database properties provide structured fields. AI features in Notion work primarily through the Notion AI button, which generates content within pages, and through integrations with external AI services via the Notion API.
 
@@ -69,7 +79,7 @@ Before migrating, it helps to understand exactly where the two platforms differ 
 
 The most significant operational change is eliminating middleware. If your Notion setup relies on Zapier or Make workflows to call OpenAI and write results back, that entire layer disappears in Coda — the AI formula column handles it natively.
 
-## Mapping Notion Database Automations to Coda
+### Step 2: Mapping Notion Database Automations to Coda
 
 ### Property Types Comparison
 
@@ -145,7 +155,7 @@ AI.Generate(
 
 Coda AI formulas support specifying the model, temperature, and other parameters. The AI column recalculates when source data changes, providing automatic updates without external scripts.
 
-## Building Equivalent Automations
+### Step 3: Build Equivalent Automations
 
 ### Notion to Slack Notification
 
@@ -173,7 +183,7 @@ Coda handles this natively without external services:
 
 For more complex workflows, Coda supports "Button" columns that users click to trigger sequences of actions.
 
-## Handling Relational Data
+### Step 4: Handling Relational Data
 
 Notion databases use "relations" to link between databases. Coda uses lookup columns and the `Filter()` function for similar functionality.
 
@@ -194,7 +204,7 @@ Coda equivalent using formulas:
 Filter(Tasks, [Assignee] = CurrentUser())
 ```
 
-## Exporting Notion Data for Migration
+### Step 5: Exporting Notion Data for Migration
 
 Before you can recreate anything in Coda, you need your Notion data out. The Notion API is the most reliable extraction path for database contents, especially when you have more than a few hundred rows.
 
@@ -259,7 +269,7 @@ print(f"Exported {len(rows)} rows")
 
 This script handles pagination automatically, which is critical for databases over 100 rows. The Notion API caps each response at 100 items; the `has_more` / `next_cursor` loop collects the full dataset.
 
-## Practical Migration Steps
+### Step 6: Practical Migration Steps
 
 1. Export Notion data: Use the Notion API or a tool like `notion2md` to export database contents
 
@@ -299,7 +309,7 @@ async function processWithCodaAI(tableId, rowId, content) {
 }
 ```
 
-## Migration Pitfalls and How to Avoid Them
+### Step 7: Migration Pitfalls and How to Avoid Them
 
 **AI formula columns recalculate on every edit.** If your Coda table has a large number of rows and your AI formula references a frequently-edited column, you can burn through AI tokens quickly. Use the "Locked" formula mode in Coda to prevent recalculation after the initial generation, similar to a cache.
 
@@ -308,6 +318,21 @@ async function processWithCodaAI(tableId, rowId, content) {
 **Notion's block structure doesn't map 1:1 to Coda text columns.** Rich text with nested blocks, callouts, and embeds in Notion simplifies to plain text when exported via the API. If your content relies heavily on Notion's block formatting, plan for a content cleanup pass after migration.
 
 **Test automations with a single row before enabling globally.** Coda automations that send Slack messages or emails can fire for every matching row when first enabled on an existing table. Create a test row, run the automation manually, verify the output, then enable it on the full dataset.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

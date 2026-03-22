@@ -42,13 +42,23 @@ Trunk-based development emphasizes short-lived feature branches and frequent int
 - **Pull from main frequently**: (at least daily) 2.
 - **Use AI with trunk-based**: development by managing short-lived branches, maintaining proper context across small commits, and using AI to generate safe, incremental changes.
 
-## Understanding the Trunk-Based Workflow
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Trunk-Based Workflow
 
 Trunk-based development typically involves developers creating short-lived branches that live for hours or a few days at most. Multiple developers commit to these branches multiple times per day, with frequent merges back to main. This contrasts with Git Flow models where branches might persist for weeks.
 
 The key constraint: **your branch must stay mergeable**. Long gaps between integration cause painful conflicts. AI assistants can help you move faster, but they can also generate large, complex changes that complicate merging if not managed properly.
 
-## Strategic AI Integration Points
+### Step 2: Strategic AI Integration Points
 
 ### 1. Use AI for Code Generation, Not Architecture Decisions
 
@@ -107,7 +117,7 @@ def validate_email(email: str) -> bool:
 
 Running AI-generated tests immediately after implementation catches issues before they reach the trunk.
 
-## Practical Workflow Patterns
+### Step 3: Practical Workflow Patterns
 
 ### Pattern 1: AI-Assisted TDD
 
@@ -170,7 +180,7 @@ Task: Create a serializer for the User model that:
 
 This approach works well because you're specifying your constraints without dumping your entire codebase into the AI context window.
 
-## Common Pitfalls to Avoid
+### Step 4: Common Pitfalls to Avoid
 
 ### Over-Reliance on AI Suggestions
 
@@ -219,7 +229,7 @@ git rebase main  # Better than merge for cleaner history
 # Now continue working with latest code
 ```
 
-## Tools That Support Trunk-Based Workflows
+### Step 5: Tools That Support Trunk-Based Workflows
 
 Several AI tools integrate particularly well with trunk-based development:
 
@@ -233,7 +243,7 @@ Several AI tools integrate particularly well with trunk-based development:
 
 Choose tools that minimize friction between thinking and committing.
 
-## Measuring Success
+### Step 6: Measuring Success
 
 Track these metrics to ensure your AI-assisted trunk workflow is working:
 
@@ -244,6 +254,21 @@ Track these metrics to ensure your AI-assisted trunk workflow is working:
 - Merge conflict frequency: Should decrease as you get better at bounded changes
 
 - Bug escape rate: Monitor if AI-introduced bugs reach production
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -24,7 +24,17 @@ Docker image bloat is a recurring problem: images that start at 200MB balloon to
 - **Cache hit rate improves**: because `package.json` changes far less often than source files.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Diagnosing Bloat Before AI Assistance
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Diagnosing Bloat Before AI Assistance
 
 Before asking AI to optimize a Dockerfile, gather the data it needs:
 
@@ -42,7 +52,7 @@ dive my-app:latest
 
 Feed the `docker history` output to Claude with the Dockerfile. This gives the model concrete evidence of where size is coming from, not just the instructions.
 
-## Prompt Pattern for Dockerfile Optimization
+### Step 2: Prompt Pattern for Dockerfile Optimization
 
 ```
 Here is my Dockerfile and the layer sizes from `docker history`.
@@ -56,7 +66,7 @@ Optimize it for:
 [paste docker history output]
 ```
 
-## Node.js: Before and After
+### Step 3: Node.js: Before and After
 
 **Before (1.2GB image):**
 
@@ -121,7 +131,7 @@ coverage
 
 Size reduction: 1.2GB → 187MB. Cache hit rate improves because `package.json` changes far less often than source files.
 
-## Python: Multi-Stage with uv
+### Step 4: Python: Multi-Stage with uv
 
 **Before (890MB):**
 
@@ -167,7 +177,7 @@ CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000"]
 
 The `uv sync --frozen` guarantees reproducibility. The separate build/runtime stages eliminate uv itself from the final image.
 
-## Go: Static Binary
+### Step 5: Go: Static Binary
 
 Go produces statically compiled binaries, enabling the smallest possible images:
 
@@ -202,7 +212,7 @@ The `-ldflags="-s -w"` strips debug symbols and DWARF info, reducing binary size
 | gcr.io/distroless/static | 5MB + binary |
 | scratch | 0MB + binary |
 
-## Using Claude to Audit Existing Dockerfiles
+### Step 6: Use Claude to Audit Existing Dockerfiles
 
 Ask Claude to audit without rewriting — useful when you need to understand tradeoffs before committing to changes:
 
@@ -230,7 +240,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 ```
 
-## Layer Cache Analysis Workflow
+### Step 7: Layer Cache Analysis Workflow
 
 ```bash
 # Build with BuildKit and capture provenance
@@ -242,7 +252,7 @@ DOCKER_BUILDKIT=1 docker build --progress=plain -t my-app:test . 2>&1 | tee buil
 #  How should I reorder the Dockerfile to maximize cache hits?"
 ```
 
-## Scanning for Vulnerabilities
+### Step 8: Scanning for Vulnerabilities
 
 After optimizing, scan the final image:
 
@@ -264,7 +274,7 @@ vulnerabilities in my base image. Suggest specific base image
 versions that eliminate the HIGH/CRITICAL findings.
 ```
 
-## Automating Optimization Checks in CI
+### Step 9: Automate Optimization Checks in CI
 
 ```yaml
 # .github/workflows/docker-check.yml
@@ -289,6 +299,21 @@ jobs:
       - name: Scan for vulnerabilities
         run: docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy:latest image --exit-code 1 --severity HIGH,CRITICAL app:test
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

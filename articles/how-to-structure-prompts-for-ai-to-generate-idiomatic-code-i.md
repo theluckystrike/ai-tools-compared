@@ -52,7 +52,17 @@ When you ask an AI to write code, the model responds to subtle cues in your prom
 
 Generic prompts produce generic results. A request like "write a function to sort a list" might yield bubble sort in any language. A well-structured prompt that specifies the language, use case, and performance requirements gets you the built-in sorting method your language provides.
 
-## The Core Prompt Framework
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The Core Prompt Framework
 
 Effective prompts for idiomatic code contain five elements:
 
@@ -75,7 +85,7 @@ Output: [expected result type]
 Requirements: [specific patterns, libraries, or constraints]
 ```
 
-## Language-Specific Prompt Patterns
+### Step 2: Language-Specific Prompt Patterns
 
 ### Python
 
@@ -211,7 +221,7 @@ async function fetchJson<T>(url: string): Promise<Result<T>> {
 }
 ```
 
-## Specifying Patterns and Libraries
+### Step 3: Specifying Patterns and Libraries
 
 If you need specific approaches, mention them directly. For React components, say "use functional components with hooks." For data processing, mention "use pandas DataFrames." The AI responds to these signals.
 
@@ -224,7 +234,7 @@ Use pandas rolling() method.
 
 This explicitly requests pandas rather than getting a manual implementation.
 
-## Prompt Patterns for Code Reviews
+### Step 4: Prompt Patterns for Code Reviews
 
 Prompt engineering for idiomatic code is not just about generation—AI assistants are also effective reviewers. Structured review prompts produce more actionable feedback:
 
@@ -242,7 +252,7 @@ Review this Python code for idiomaticity. Flag any places that use C-style loops
 
 The strong prompt scopes the review precisely, preventing the AI from returning generic feedback about variable naming or docstring format when you want idiom-specific guidance.
 
-## Handling Multi-Language Consistency
+### Step 5: Handling Multi-Language Consistency
 
 When generating code for multiple languages, structure prompts identically with language as a variable:
 
@@ -256,7 +266,7 @@ Requirements:
 
 Replace `[language]` with each target. This produces comparable implementations that respect each language's conventions.
 
-## Prompt Templates by Use Case
+### Step 6: Prompt Templates by Use Case
 
 The following templates are ready to copy and adapt. They are structured to consistently produce idiomatic output across the most common code generation scenarios.
 
@@ -304,7 +314,7 @@ Requirements:
 - Avoid unwrap() anywhere
 ```
 
-## Iterative Refinement: When the First Output Falls Short
+### Step 7: Iterative Refinement: When the First Output Falls Short
 
 Even well-structured prompts sometimes produce code that is correct but not idiomatic. A refinement workflow:
 
@@ -330,7 +340,7 @@ This three-step loop consistently moves outputs from functional-but-generic towa
 
 **Not specifying the target language version** — Python 3.10+ pattern matching, JavaScript ES2022 features, and Rust 2021 edition idioms differ meaningfully from older versions. Include the version when it matters.
 
-## Testing Generated Code
+### Step 8: Test Generated Code
 
 Review generated code for language-specific patterns:
 
@@ -345,6 +355,21 @@ Review generated code for language-specific patterns:
 - TypeScript: Does the code use the type system rather than using `any` as an escape hatch?
 
 If the code feels foreign to the language, refine your prompt with more specific constraints. Keep a personal library of prompts that reliably produce idiomatic output for the languages you use most—this prompt library becomes a force multiplier over time, letting you generate high-quality code faster than writing it manually.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

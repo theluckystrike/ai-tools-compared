@@ -42,7 +42,17 @@ This guide demonstrates how to use AI coding assistants to establish, validate, 
 - **Use code analysis prompts**: to scan your project: ``` Review all API route handlers in the routes/ directory.
 - **By defining clear standards**: creating utility functions, and directing AI generation toward your preferred patterns, you maintain consistent API responses with minimal friction.
 
-## Defining Your Response Format Standard
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Defining Your Response Format Standard
 
 Before AI tools can help enforce consistency, your team needs a clear specification. Define your standard response structure in a shared location—typically a schema file or documentation that your AI tools can reference.
 
@@ -80,7 +90,7 @@ interface PaginatedResponse<T> extends ApiResponse<T> {
 
 Store this file in a central location where your AI assistant can easily reference it. Place it in a `types/` or `shared/` directory that gets included in the AI context window during coding sessions.
 
-## Using AI for Response Format Enforcement
+### Step 2: Use AI for Response Format Enforcement
 
 Modern AI coding tools can actively help maintain response format consistency through several approaches. The most effective strategy combines prompt engineering with pattern-based generation.
 
@@ -116,7 +126,7 @@ Every API endpoint must return ApiResponse<T> or PaginatedResponse<T> as defined
 
 This instruction prevents accidental deviations from your standard format during normal coding.
 
-## Practical Implementation Workflow
+### Step 3: Practical Implementation Workflow
 
 Implementing AI-driven format enforcement works best with a structured workflow. Here's how to integrate it effectively:
 
@@ -222,7 +232,7 @@ app.get('/products', async (req, res) => {
   }
 });
 ```
-## Automating Format Validation
+### Step 4: Automate Format Validation
 
 Beyond generation, AI tools can help validate existing codebases for consistency violations. Use code analysis prompts to scan your project:
 
@@ -261,7 +271,7 @@ describe('API Response Format', () => {
 
 Running these tests in your CI pipeline catches format regressions before they reach production.
 
-## Maintaining Standards Over Time
+### Step 5: Maintaining Standards Over Time
 
 As your API evolves, new response types and edge cases will emerge. Keep your standards documentation and type definitions current. When adding new fields or response patterns, update your shared types and communicate changes to your team.
 
@@ -276,6 +286,21 @@ This practice ensures your standards remain current and helps identify areas nee
 AI coding tools transform API consistency from a manual enforcement task into an automated process. By defining clear standards, creating utility functions, and directing AI generation toward your preferred patterns, you maintain consistent API responses with minimal friction.
 
 {% endraw %}
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

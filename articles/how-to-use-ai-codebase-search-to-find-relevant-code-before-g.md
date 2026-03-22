@@ -42,7 +42,17 @@ When you ask an AI to generate code without providing relevant context, it relie
 Consider a scenario where you need to add a new API endpoint to a Python FastAPI application. If you simply ask the AI to generate the endpoint, it might produce code that doesn't match your error handling style, authentication approach, or response formatting. However, if you first find an existing endpoint and share it as a reference, the AI will follow your established patterns.
 
 
-## Effective Codebase Search Strategies
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Effective Codebase Search Strategies
 
 
 ### Pattern-Based Search
@@ -115,7 +125,7 @@ For a TypeScript React application, this might mean finding the main component f
 ```
 
 
-## Practical Workflow for Search-Then-Generate
+### Step 2: Practical Workflow for Search-Then-Generate
 
 
 ### Step One: Define Your Target
@@ -238,7 +248,7 @@ The most effective AI coding relies on your existing patterns. Ignoring your cod
 It can be tempting to ask AI to generate code immediately, especially for seemingly simple tasks. However, even simple tasks benefit from consistency with your codebase's patterns. The few minutes spent searching typically save more time in review and refactoring.
 
 
-## Measuring Success
+### Step 3: Measuring Success
 
 
 After implementing code generated with codebase search context, evaluate:
@@ -258,6 +268,21 @@ When the answer to these questions is yes, your search-and-generate workflow is 
 ---
 
 {% raw %}
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

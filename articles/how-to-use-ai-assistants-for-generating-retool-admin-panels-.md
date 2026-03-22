@@ -42,13 +42,23 @@ Building admin panels from scratch consumes significant development time, especi
 - **Date and timestamp fields**: use Date Picker or Datetime Picker components.
 - **Common issues include incorrect**: parameter syntax, missing RETURNING clauses for inserted records, and improper handling of NULL values in filters.
 
-## Understanding the Retool Data Connection Pipeline
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Retool Data Connection Pipeline
 
 Retool connects to databases through queries that retrieve, filter, and manipulate data. When you have an existing PostgreSQL, MySQL, or MongoDB schema, AI assistants can analyze the table structures, relationships, and data types to generate the corresponding Retool query logic automatically.
 
 The workflow involves three primary stages: schema extraction, query generation, and UI component mapping. Each stage benefits from AI assistance, reducing the repetitive boilerplate code that typically accompanies admin panel development.
 
-## Extracting Your Database Schema
+### Step 2: Extracting Your Database Schema
 
 Before generating Retool components, you need a clear representation of your database structure. Most modern databases provide information schema queries that reveal table definitions, column types, and relationships.
 
@@ -82,7 +92,7 @@ ORDER BY TABLE_NAME, ORDINAL_POSITION;
 
 Execute these queries and save the results. You'll pass this schema information to your AI assistant for analysis.
 
-## Prompting AI Assistants for Retool Generation
+### Step 3: Prompting AI Assistants for Retool Generation
 
 When working with AI assistants, the quality of your prompt determines the quality of the generated output. Structure your prompts to include the schema details, desired functionality, and any specific business logic requirements.
 
@@ -107,7 +117,7 @@ Provide:
 
 The AI assistant processes this information and outputs SQL queries formatted for Retool's query editor, along with recommendations for table components, text inputs, and form configurations.
 
-## Generating CRUD Queries
+### Step 4: Generate CRUD Queries
 
 Retool uses specific SQL syntax for different database operations. AI assistants can translate your schema into appropriate queries for each action type.
 
@@ -164,7 +174,7 @@ SET deleted_at = NOW(), active = false
 WHERE id = {{ table1.selectedRow.id }};
 ```
 
-## Mapping Schema Types to UI Components
+### Step 5: Mapping Schema Types to UI Components
 
 AI assistants can recommend appropriate Retool components based on column data types. This mapping accelerates the UI configuration process.
 
@@ -176,7 +186,7 @@ For enum-like columns with limited valid values, AI assistants can generate quer
 SELECT DISTINCT role FROM users WHERE role IS NOT NULL;
 ```
 
-## Implementing Advanced Features
+### Step 6: Implementing Advanced Features
 
 Beyond basic CRUD operations, AI assistants help implement common admin panel features that would otherwise require significant custom logic.
 
@@ -215,13 +225,13 @@ SET status = 'archived'
 WHERE id = ANY({{ table1.selectedRowIds }});
 ```
 
-## Validating Generated Output
+### Step 7: Validating Generated Output
 
 AI-generated queries require validation before deployment. Test each query within Retool's query editor, checking for proper parameter binding and error handling. Verify that the UI components correctly reference query data and that the flow matches your application's requirements.
 
 Common issues include incorrect parameter syntax, missing RETURNING clauses for inserted records, and improper handling of NULL values in filters. Address these during development rather than after deployment.
 
-## Optimizing for Production
+### Step 8: Optimizing for Production
 
 Once generated, optimize your Retool application for performance and security. AI assistants can suggest improvements including:
 
@@ -267,7 +277,7 @@ After AI generates your queries:
 
 **Component Performance:** AI can suggest which components should use lazy loading, virtualization, or server-side operations. For tables with thousands of rows, server-side filtering and pagination are critical.
 
-## Real-World Implementation Example
+### Step 9: Real-World Implementation Example
 
 **Scenario:** Building an admin panel for an e-commerce platform with 50K orders.
 
@@ -300,7 +310,7 @@ Prompt AI with schema and requirements:
 
 Without AI assistance, the same panel would require 3-5 hours of manual SQL writing and Retool configuration.
 
-## Cost-Benefit Analysis
+### Step 10: Cost-Benefit Analysis
 
 AI-assisted admin panel generation saves significant development time:
 
@@ -321,7 +331,7 @@ When AI generates your admin queries:
 3. **Audit logging:** Add logging to UPDATE/DELETE operations even though AI may not suggest it.
 4. **Query validation:** Never trust parameter binding without testing. Malformed Retool parameters could cause SQL errors.
 
-## Integration with Existing Systems
+### Step 11: Integration with Existing Systems
 
 AI-generated panels work best when:
 

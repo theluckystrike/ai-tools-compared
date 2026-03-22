@@ -26,7 +26,7 @@ When your production system triggers an alert at 3 AM, you need your AI assistan
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## Understanding MCP for Monitoring Integration
+### Step 1: Understand MCP for Monitoring Integration
 
 
 Model Context Protocol provides a standardized way for AI systems to interact with external data sources and tools. Rather than manually copying error messages or switching between terminals and dashboards, MCP allows your AI assistant to directly query monitoring systems, retrieve alert details, and analyze trends in real time.
@@ -50,7 +50,7 @@ Second, access to your monitoring system. This guide uses Prometheus and Alertma
 Third, API credentials with appropriate read access to your monitoring data. Create service accounts with minimal permissions—your AI needs to read metrics and alerts, not modify them.
 
 
-## Configuring MCP for Prometheus and Alertmanager
+### Step 2: Configure MCP for Prometheus and Alertmanager
 
 
 The most common setup involves connecting MCP to Prometheus Alertmanager. Here's how to configure this connection:
@@ -79,7 +79,7 @@ First, create a configuration file for your MCP server. The server acts as a bri
 Add this configuration to your AI client's MCP settings. The exact location varies by client—look for settings related to MCP servers or integrations.
 
 
-## Connecting to Multiple Monitoring Sources
+### Step 3: Connecting to Multiple Monitoring Sources
 
 
 Production environments typically have multiple monitoring systems. MCP supports multiple simultaneous connections, allowing your AI to correlate data across sources:
@@ -121,7 +121,7 @@ Production environments typically have multiple monitoring systems. MCP supports
 This configuration enables your AI to query Prometheus for metrics, fetch dashboards from Grafana, and pull CloudWatch logs—all within a single conversation.
 
 
-## Querying Alerts Through MCP
+### Step 4: Querying Alerts Through MCP
 
 
 Once configured, your AI can directly query alert status. Here's a practical example of how this works in practice:
@@ -153,7 +153,7 @@ AI Response: You have 3 critical alerts active:
 This immediate context helps you prioritize incident response without manually checking multiple dashboards.
 
 
-## Automating Alert Context Retrieval
+### Step 5: Automate Alert Context Retrieval
 
 
 Beyond ad-hoc queries, you can automate alert context retrieval for common scenarios. Create MCP tool definitions that trigger automatically:
@@ -255,6 +255,21 @@ This approach maintains consistent configuration, simplifies updates, and enable
 
 
 Setting up MCP for monitoring integration transforms how you respond to incidents. Your AI assistant becomes knowledgeable about your system's actual state, enabling faster diagnosis and more informed remediation decisions. Start with a single monitoring source, validate the queries work as expected, then expand to additional data sources as your confidence grows.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

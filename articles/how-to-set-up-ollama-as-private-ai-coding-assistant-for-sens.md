@@ -43,7 +43,17 @@ Inference on CPU is 10-30x slower than GPU.
 - **Install Ollama and expose**: it on an internal network address: ```bash OLLAMA_HOST=0.0.0.0:11434 ollama serve ``` Restrict access with your corporate firewall to the VPN subnet only.
 - Always use Pydantic v2 models.
 
-## Installing Ollama
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Install Ollama
 
 Ollama supports macOS, Linux, and Windows. The installation process is straightforward across all platforms.
 
@@ -65,7 +75,7 @@ ollama --version
 
 Windows users can install Ollama through the Microsoft Store or by downloading the installer from the official website. After installation, restart your terminal to ensure the `ollama` command is available.
 
-## Selecting and Downloading Models
+### Step 2: Select and Downloading Models
 
 Ollama supports various models optimized for different tasks. For coding assistance, several models perform well:
 
@@ -104,7 +114,7 @@ Choosing the right model matters for both quality and performance. Here is how t
 
 For most sensitive-codebase scenarios, Qwen2.5-Coder 7B delivers the best quality-to-resource ratio. Its 32K token context window lets you paste entire files without truncation, which is critical when you cannot send code to a cloud API and need the model to see the full picture.
 
-## Running Ollama as a Local Server
+### Step 3: Run Ollama as a Local Server
 
 By default, Ollama runs as a local server on port 11434. Start the server:
 
@@ -120,7 +130,7 @@ ollama serve &
 
 The server listens on `http://localhost:11434`. All API calls remain local—no external network requests occur during model inference.
 
-## Integrating with Code Editors
+### Step 4: Integrate with Code Editors
 
 Several editors support integration with local LLMs through Ollama.
 
@@ -162,7 +172,7 @@ Zed includes native Ollama support. Open settings and enable the Ollama integrat
 }
 ```
 
-## Using Ollama via Command Line
+### Step 5: Use Ollama via Command Line
 
 Beyond editor integration, you can interact with Ollama directly through the command line for quick queries:
 
@@ -242,7 +252,7 @@ curl http://localhost:11434/api/generate -d '{
 }'
 ```
 
-## Full Setup Walkthrough: Secure Team Environment
+### Step 6: Full Setup Walkthrough: Secure Team Environment
 
 This workflow covers setting up Ollama for a small engineering team where all code must stay on-premises—common in fintech, defense contracting, and healthcare software shops.
 
@@ -337,6 +347,21 @@ Inference on CPU is 10-30x slower than GPU. A 7B model generating a 200-token re
 **Q: Is there a way to prevent Ollama from phoning home for model metadata?**
 
 Set `OLLAMA_NOPRUNE=1` and `OLLAMA_SKIP_UPDATE=1` environment variables. For fully airgapped environments, download GGUF model files directly from Hugging Face on a connected machine, copy them to the isolated server, and import with `ollama create mymodel -f ./Modelfile` pointing to the local GGUF path.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Articles
 

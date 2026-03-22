@@ -47,7 +47,17 @@ FedRAMP (Federal Risk and Authorization Management Program) standardizes securit
 
 AI coding tools generally fall into three categories based on their data handling: cloud-based services that send code to external APIs, self-hosted solutions that process locally, and hybrid approaches with configurable data retention. For FedRAMP environments, you need tools that either operate entirely within your authorized cloud boundary or provide explicit controls ensuring no sensitive data leaves the permitted environment.
 
-## Self-Hosted AI Coding Solutions
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Self-Hosted AI Coding Solutions
 
 The most straightforward path to FedRAMP-compliant AI coding involves running AI models entirely within your authorized infrastructure. Tools like Continue.dev paired with Ollama running on your FedRAMP-authorized VM enable code completion and assistance without external network calls.
 
@@ -71,7 +81,7 @@ models:
 
 This setup processes all code locally. Your source code never leaves the authorized environment, maintaining compliance while providing AI assistance.
 
-## Configuring Cloud-Based Tools with Data Restrictions
+### Step 2: Configure Cloud-Based Tools with Data Restrictions
 
 Some AI coding tools offer enterprise configurations that restrict data processing to specific geographic regions or dedicated infrastructure. If your organization uses GitHub Copilot Enterprise or similar services, verify that your administrative settings enforce data residency within FedRAMP-authorized regions.
 
@@ -89,7 +99,7 @@ copilot:
 
 Review the service's FedRAMP authorization documentation. Azure OpenAI Service, for example, offers government-region deployments with FedRAMP High authorization. Confirm that your specific configuration qualifies under your existing authorization boundary.
 
-## Network Architecture for Secure AI Tool Usage
+### Step 3: Network Architecture for Secure AI Tool Usage
 
 Network architecture plays a critical role in maintaining compliance. Implement a zero-trust approach where AI tooling operates within the same security boundary as your sensitive workloads.
 
@@ -108,7 +118,7 @@ Network architecture plays a critical role in maintaining compliance. Implement 
 
 Configure network security groups to block outbound traffic from your AI tooling to unapproved destinations. Use DNS filtering to prevent accidental connections to cloud AI services. Audit logs should capture all AI tool network activity for compliance verification.
 
-## Code Review Processes for AI-Assisted Development
+### Step 4: Code Review Processes for AI-Assisted Development
 
 Even with compliant tools, establish verification processes for AI-generated code. FedRAMP environments typically require code review before deployment, and AI-generated code warrants additional scrutiny.
 
@@ -126,7 +136,7 @@ Even with compliant tools, establish verification processes for AI-generated cod
 
 Many organizations add AI-specific review notes to their compliance documentation. This demonstrates awareness of AI-generated code risks and provides audit trail evidence.
 
-## Alternative Approaches for Sensitive Workloads
+### Step 5: Alternative Approaches for Sensitive Workloads
 
 For the most sensitive workloads, consider segregating AI-assisted development from production systems. Use AI tools for prototyping and learning in isolated development environments, then implement hand-off procedures for production code.
 
@@ -146,7 +156,7 @@ git cherry-pick <commit-hash>
 
 This approach provides a safety buffer. Even if an AI tool introduces issues, they remain isolated from production systems until thorough human review.
 
-## Tool Recommendations for FedRAMP Environments
+### Step 6: Tool Recommendations for FedRAMP Environments
 
 Several tools work well in government-regulated environments:
 
@@ -176,7 +186,7 @@ Maintain documentation demonstrating your AI tooling complies with organizationa
 
 Regular audits verify that AI tool configurations haven't drifted from compliant settings. Automated policy enforcement through infrastructure-as-code helps maintain consistent compliance.
 
-## Practical Implementation: Setting Up a Compliant Workflow
+### Step 7: Practical Implementation: Setting Up a Compliant Workflow
 
 Walk through a concrete example of integrating Continue.dev with Ollama in a FedRAMP environment:
 
@@ -254,7 +264,7 @@ spec:
 
 This policy ensures development containers can only communicate with local AI services and authorized external endpoints. Attempting to connect to OpenAI, Anthropic, or other cloud AI services triggers network policy violations—visible in audit logs.
 
-## Common Pitfalls and How to Avoid Them
+### Step 8: Common Pitfalls and How to Avoid Them
 
 **Pitfall 1: Running Ollama with Public API**
 
@@ -288,7 +298,7 @@ export OLLAMA_NOHISTORY=1
 # codeqwen:7b-instruct-q4_K_M (specific digest, not latest tag)
 ```
 
-## Integration with Development Workflows
+### Step 9: Integration with Development Workflows
 
 Make compliant AI tooling the path of least resistance:
 
@@ -306,6 +316,21 @@ Include AI-usage information in PR reviews:
 
 **For knowledge sharing:**
 When you find effective prompts for local AI tools, document them in your team's wiki. "How to ask Continue.dev for boilerplate Redux reducer code" becomes a shared resource, eliminating the learning curve for new team members.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -40,7 +40,17 @@ Transfer your Midjourney prompt library to Ideogram by stripping Midjourney-spec
 - **Text-heavy prompts for logos**: and typography will often produce better results on Ideogram without additional modification.
 - **Midjourney uses a Discord-based**: command system with parameters like `--ar` for aspect ratio, `--stylize` for artistic strength, and `--v` for model version.
 
-## Understanding the Platform Differences
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Platform Differences
 
 Midjourney and Ideogram take fundamentally different approaches to image generation. Midjourney uses a Discord-based command system with parameters like `--ar` for aspect ratio, `--stylize` for artistic strength, and `--v` for model version. Prompts are space-separated with double-dash parameters appended at the end.
 
@@ -50,7 +60,7 @@ The most significant difference lies in text rendering. If your Midjourney promp
 
 Additionally, Ideogram supports a `magic_prompt` API parameter that automatically enhances your prompts with additional detail. Setting `magic_prompt: "ON"` acts similarly to Midjourney's higher `--stylize` values — it gives the model creative latitude to interpret your prompt rather than producing a literal rendering.
 
-## Converting Midjourney Parameters to Ideogram Format
+### Step 2: Converting Midjourney Parameters to Ideogram Format
 
 ### Aspect Ratio Conversion
 
@@ -113,7 +123,7 @@ def strip_mj_version_params(prompt):
     return cleaned.strip()
 ```
 
-## Building a Complete Prompt Converter
+### Step 3: Build a Complete Prompt Converter
 
 Here's a Python script that converts Midjourney prompts to Ideogram format:
 
@@ -208,7 +218,7 @@ This produces:
 }
 ```
 
-## Handling Complex Prompt Patterns
+### Step 4: Handling Complex Prompt Patterns
 
 ### Multi-Prompt Segments
 
@@ -258,7 +268,7 @@ def strip_non_transferable_params(prompt):
     return prompt.strip()
 ```
 
-## Batch Processing Your Prompt Library
+### Step 5: Batch Processing Your Prompt Library
 
 For large prompt collections, process them in batches:
 
@@ -295,7 +305,7 @@ count = batch_convert_library('midjourney_prompts.csv', 'ideogram_prompts.csv')
 print(f"Converted {count} prompts")
 ```
 
-## Using the Ideogram API After Conversion
+### Step 6: Use the Ideogram API After Conversion
 
 Once your prompts are converted, you can submit them programmatically using Ideogram's REST API:
 
@@ -338,7 +348,7 @@ print(result["data"][0]["url"])
 
 Ideogram V_2_TURBO is the recommended model for batch processing due to its speed. Use V_2 for highest quality when processing curated prompts. API keys are available from ideogram.ai — pricing starts at $0.04 per image for Turbo and $0.08 for standard quality.
 
-## Style Type Mapping Reference
+### Step 7: Style Type Mapping Reference
 
 Ideogram's `style_type` parameter has no direct Midjourney equivalent, but this mapping works well in practice:
 
@@ -350,7 +360,7 @@ Ideogram's `style_type` parameter has no direct Midjourney equivalent, but this 
 | Anime/manga | `--niji 6` | ANIME |
 | 3D render | `--v 6 --style raw` | GENERAL + descriptive |
 
-## Limitations and Manual Review
+### Step 8: Limitations and Manual Review
 
 Automated conversion handles approximately 80% of prompts effectively. However, certain Midjourney features require manual intervention:
 
@@ -361,6 +371,21 @@ Automated conversion handles approximately 80% of prompts effectively. However, 
 - **Complex weighted prompts**: May need manual consolidation. When Midjourney uses `subject1::2 background::0.5`, translate to priority-ordered natural language: "a [subject1] with [background] in the distance".
 
 After running your conversion, review prompts containing these elements manually to ensure the converted version maintains your intended output.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

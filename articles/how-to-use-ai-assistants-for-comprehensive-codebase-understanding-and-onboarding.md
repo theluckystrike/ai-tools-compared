@@ -50,7 +50,17 @@ Traditional codebase exploration requires manually tracing function calls, readi
 
 The key advantage is context preservation. Modern AI assistants can read entire files, understand project structure, and maintain conversation context across multiple questions. This allows you to build progressively deeper understanding rather than starting fresh with each query.
 
-## Essential Techniques for Codebase Exploration
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Essential Techniques for Codebase Exploration
 
 ### Starting with Project Structure
 
@@ -114,7 +124,7 @@ def calculate_order_total(items, tax_rate, discount_code=None):
 
 The AI would explain each step: calculating line item totals, applying discount logic if provided, computing tax on the discounted subtotal, and returning a breakdown of all components.
 
-## Practical Onboarding Workflow
+### Step 2: Practical Onboarding Workflow
 
 ### Day 1: Get the Big Picture
 
@@ -154,7 +164,7 @@ Keep an AI assistant open while working. When you encounter confusing code, ask 
 
 This real-time clarification prevents misunderstanding from compounding.
 
-## Code Examples: Asking the Right Questions
+### Step 3: Code Examples: Asking the Right Questions
 
 The quality of answers depends on question specificity. Here are effective question patterns:
 
@@ -180,7 +190,7 @@ What's the difference between how caching is implemented in the
 product service versus the user service? Which approach is better?
 ```
 
-## Handling Large Codebases
+### Step 4: Handling Large Codebases
 
 When working with large codebases, context windows become critical. Modern AI assistants like Claude, GPT-4, and others offer large context windows that can handle substantial code portions. For extremely large projects:
 
@@ -195,7 +205,7 @@ Give me a summary of the payment processing module. What are the
 main classes, their responsibilities, and how they interact?
 ```
 
-## Verifying AI Understanding
+### Step 5: Verify AI Understanding
 
 AI assistants can occasionally misunderstand code or provide incorrect explanations. Always verify critical information:
 
@@ -209,7 +219,7 @@ AI assistants can occasionally misunderstand code or provide incorrect explanati
 Can you show me the test file that verifies this behavior so I can confirm your explanation?
 ```
 
-## Integrating AI into Team Onboarding
+### Step 6: Integrate AI into Team Onboarding
 
 Consider these approaches for team adoption:
 
@@ -219,7 +229,7 @@ Consider these approaches for team adoption:
 
 3. **Document AI-assisted discoveries** - Have new developers document insights for future team members
 
-## Common Pitfalls to Avoid
+### Step 7: Common Pitfalls to Avoid
 
 - **Over-reliance on AI explanations** - Always verify critical code paths yourself
 
@@ -228,6 +238,21 @@ Consider these approaches for team adoption:
 - **Ignoring outdated context** - AI may not know about recent changes; verify against current code
 
 - **Skipping manual exploration** - Use AI to accelerate, not replace, understanding
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

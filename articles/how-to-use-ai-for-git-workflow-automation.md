@@ -37,7 +37,17 @@ Git workflow tasks are repetitive, context-dependent, and time-consuming when do
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **This guide covers ai-powered**: commit messages, pr description generator, what changed, with specific setup instructions
 
-## AI-Powered Commit Messages
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: AI-Powered Commit Messages
 
 The most common git automation task: generating commit messages from staged diffs.
 
@@ -119,7 +129,7 @@ Add an alias to `~/.gitconfig`:
 
 Now `git aic` generates a commit message, shows it for review, and commits on confirmation.
 
-## PR Description Generator
+### Step 2: PR Description Generator
 
 ```python
 #!/usr/bin/env python3
@@ -183,16 +193,16 @@ Code diff (sample):
 Output format:
 TITLE: <concise title under 72 chars>
 
-## What changed
+### Step 3: What changed
 <2-4 bullet points describing the changes>
 
-## Why
+### Step 4: Why
 <1-2 sentences on the motivation/problem solved>
 
-## Testing
+### Step 5: Test
 <how to verify this works>
 
-## Notes for reviewer
+### Step 6: Notes for reviewer
 <anything specific to check or context that helps review>"""
         }]
     )
@@ -216,7 +226,7 @@ if '--create' in sys.argv:
     ])
 ```
 
-## AI Git Hook: Pre-Push Code Review
+### Step 7: AI Git Hook: Pre-Push Code Review
 
 Run a lightweight AI check before pushing to catch obvious issues:
 
@@ -287,7 +297,7 @@ fi
 
 This hook costs under $0.002 per push and catches the most common "oops before merge" mistakes.
 
-## Branch Naming from Issue Titles
+### Step 8: Branch Naming from Issue Titles
 
 ```python
 #!/usr/bin/env python3
@@ -360,7 +370,7 @@ print(f"Creating branch: {branch_name}")
 subprocess.run(['git', 'checkout', '-b', branch_name])
 ```
 
-## Merge Conflict Assistant
+### Step 9: Merge Conflict Assistant
 
 When `git merge` produces conflicts, get AI help understanding them:
 
@@ -412,6 +422,21 @@ Be specific about WHY you recommend the resolution you suggest."""
 print(response.content[0].text)
 PYTHON
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

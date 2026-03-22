@@ -41,13 +41,23 @@ Instead of having AI write code for you, use it to explore APIs and libraries.
 - **Review Generated Code Thoroughly**: When you do use AI to generate code, treat it as a first draft requiring careful review.
 - **If mostly "no"**: ask the author to review and re-explain.
 
-## The Autocomplete Dependency Trap
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The Autocomplete Dependency Trap
 
 When you accept AI suggestions without understanding them, you skip the mental process of solving a problem. This creates a dangerous cycle: the less you practice fundamental skills, the more you need AI assistance, and the weaker your independent problem-solving becomes.
 
 Signs of autocomplete dependency include struggling to write code without AI active, difficulty explaining why certain code works, and anxiety when AI suggestions are unavailable. These symptoms indicate you've shifted from using AI as a tool to relying on it as a crutch.
 
-## Strategic AI Tool Usage
+### Step 2: Strategic AI Tool Usage
 
 ### 1. Write First, Accept Second
 
@@ -135,7 +145,7 @@ public ResponseEntity<User> createUser(@Valid @RequestBody User user) {
 
 This review process transforms AI output from a shortcut into a learning opportunity.
 
-## Building Sustainable Skills Alongside AI
+### Step 3: Build Sustainable Skills Alongside AI
 
 ### Maintain Coding Practice Without AI
 
@@ -150,7 +160,7 @@ One of the most effective ways to ensure understanding is explaining AI-generate
 When AI solves a problem for you, add the underlying concept to your personal documentation. This creates a growing reference that reduces future AI dependency while reinforcing learning:
 
 ```
-## Promise.all() Error Handling
+### Step 4: Promise.all() Error Handling
 
 Key insight: Promise.all() fails fast - one rejection rejects all
 Solution: Use Promise.allSettled() when you need all results
@@ -159,7 +169,7 @@ Learn more: MDN Promise documentation
 Date added: 2026-03-16
 ```
 
-## Practical Integration Framework
+### Step 5: Practical Integration Framework
 
 Develop a personal framework for when to use AI versus when to work independently:
 
@@ -179,7 +189,7 @@ Develop a personal framework for when to use AI versus when to work independentl
 
 | Production code | Always review and understand |
 
-## Measuring Your Independence
+### Step 6: Measuring Your Independence
 
 Track your AI dependency over time with simple metrics:
 
@@ -193,7 +203,7 @@ Track your AI dependency over time with simple metrics:
 
 Regular assessment helps you maintain balance and identify when dependency is increasing.
 
-## Practical Coding Exercises to Build Independence
+### Step 7: Practical Coding Exercises to Build Independence
 
 Design deliberate practice sessions without AI to reinforce skills:
 
@@ -209,7 +219,7 @@ Track your success rate over time. If you solve 60% of problems in week 1 and 75
 
 Pick a topic you use AI for frequently (async/await, database queries, state management) and implement 3-5 projects in that area without assistance. The goal is building muscle memory that survives AI unavailability.
 
-## Testing Your Actual Comprehension
+### Step 8: Test Your Actual Comprehension
 
 Before accepting AI-generated code, verify you genuinely understand it:
 
@@ -233,7 +243,7 @@ def memoize(func):
 # Ask AI to explain until you understand.
 ```
 
-## Measuring Dependency Over Time
+### Step 9: Measuring Dependency Over Time
 
 Create concrete metrics to track your independence:
 
@@ -266,14 +276,14 @@ If metrics are trending down, you're becoming more dependent. Adjust by:
 - Solving problems without AI before checking your work
 - Skipping AI on problems you've solved before
 
-## Building a Personal Code Reference Library
+### Step 10: Build a Personal Code Reference Library
 
 Transform AI-assisted learning into reusable knowledge:
 
 ```markdown
 # Personal Code Reference
 
-## Database Connection Pooling (Python + SQLAlchemy)
+### Step 11: Database Connection Pooling (Python + SQLAlchemy)
 
 Problem: Database connections are expensive; I need to reuse them.
 Solution: Use SQLAlchemy's QueuePool
@@ -305,7 +315,7 @@ Source: AI-assisted, verified in production
 
 Having a reference of patterns you've internalized prevents reflexive AI dependency.
 
-## Team Strategies for Maintaining Balance
+### Step 12: Team Strategies for Maintaining Balance
 
 If you manage a team, establish norms around AI tool usage:
 
@@ -330,7 +340,7 @@ Encourage team members to spend time debugging without AI, implementing from scr
 
 Have team members present how they solved complex problems without AI. This reinforces that AI acceleration doesn't mean AI dependency.
 
-## Red Flags: When You're Too Dependent
+### Step 13: Red Flags: When You're Too Dependent
 
 Watch for these patterns indicating unhealthy AI reliance:
 
@@ -344,7 +354,7 @@ Watch for these patterns indicating unhealthy AI reliance:
 
 If you identify 3+ of these, implement a 2-week AI restriction on routine tasks.
 
-## Long-Term Career Resilience
+### Step 14: Long-Term Career Resilience
 
 Developers who maintain independent skills remain valuable even as AI improves:
 
@@ -358,6 +368,21 @@ Developers who maintain independent skills remain valuable even as AI improves:
 | Architectural decisions | Defers to AI suggestions | Makes informed design choices |
 
 The goal isn't avoiding AI—it's using AI as acceleration while maintaining fundamental competence.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

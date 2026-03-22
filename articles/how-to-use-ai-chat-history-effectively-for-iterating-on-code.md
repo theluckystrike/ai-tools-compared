@@ -36,7 +36,17 @@ When working with AI coding assistants, each conversation builds on previous exc
 
 - **Current blocker**: webhook integration."
 
-## When NOT to Use Chat History
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: When NOT to Use Chat History
 
 Sometimes starting fresh is better:
 
@@ -62,7 +72,7 @@ Consider a typical development scenario: you're building a feature that requires
 
 This matters especially for complex refactoring tasks, debugging sessions, and when exploring multiple implementation approaches. The AI becomes more useful when it has context about your specific situation.
 
-## Techniques for Using Conversation Context
+### Step 2: Techniques for Using Conversation Context
 
 ### Reference Previous Attempts Directly
 
@@ -92,12 +102,12 @@ For ongoing projects, maintain a lightweight reference document that summarizes 
 A practical reference document might include:
 
 ```
-## Project Constraints
+### Step 3: Project Constraints
 - Node.js 18 LTS
 - PostgreSQL with connection pooling
 - Max 100ms response time for API calls
 
-## Coding Standards
+### Step 4: Coding Standards
 - Use async/await over promises
 - Prefer functional components in React
 - All database queries in dedicated repository files
@@ -139,7 +149,7 @@ Debugging sessions benefit enormously from chat history. Instead of pasting erro
 
 This approach helps the AI connect the error to your specific implementation rather than providing generic troubleshooting steps.
 
-## Organizing Long Conversations
+### Step 5: Organizing Long Conversations
 
 For extended coding sessions, periodically summarize the current state. This creates natural breakpoints and ensures key decisions are preserved:
 
@@ -156,7 +166,7 @@ These summaries serve as anchors for future reference and help you pick up where
 
 Despite the benefits of chat history, sometimes starting fresh makes sense. If you're working on a completely unrelated feature, switching projects, or if the conversation has become convoluted with abandoned approaches, a clean start often produces better results. The goal is to use history strategically, not rigidly.
 
-## Building Better AI Collaboration Habits
+### Step 6: Build Better AI Collaboration Habits
 
 Effective use of AI chat history is a skill that improves with practice. Each conversation becomes more productive as you develop patterns for providing context, referencing previous work, and maintaining clarity about your goals. The investment in learning these techniques pays dividends in reduced iteration cycles and better code solutions.
 
@@ -171,30 +181,30 @@ For longer projects, managing context becomes critical. Here are sophisticated t
 ```markdown
 # Project: E-Commerce API Refactor
 
-## Tech Stack
+### Step 7: Tech Stack
 - Node.js 18 LTS + TypeScript
 - PostgreSQL with Prisma ORM
 - Express.js with async/await
 - Jest for testing
 
-## Architecture Decisions
+### Step 8: Architecture Decisions
 - Monorepo with /api, /services, /migrations
 - All DB access through repository pattern
 - Authentication: JWT tokens, 24-hour expiry
 - Rate limiting: Redis, 100 req/min per IP
 
-## Known Constraints
+### Step 9: Known Constraints
 - API response time SLA: 200ms p95
 - Database connections: max 20 concurrent
 - No breaking changes to public API without versioning
 
-## Completed Iterations
+### Step 10: Completed Iterations
 1. ✅ Migrated user service to TypeScript
 2. ✅ Added complete error handling
 3. ⏳ Working on: Product service refactor
 4. 🔄 Next: Payment service integration
 
-## Current Issues
+### Step 11: Current Issues
 - N+1 query problem in product listing (under investigation)
 - Jest test suite slow (>30 seconds for full run)
 ```
@@ -222,7 +232,7 @@ Chat Session 3: "Refinement Phase"
 
 Rather than one massive conversation, break into logical phases. Reference earlier sessions: "Following our design from Session 1, the implementation is working but we need to optimize the database queries we discussed."
 
-## Practical Chat History Patterns
+### Step 12: Practical Chat History Patterns
 
 ### Pattern 1: Progressive Problem Solving
 
@@ -272,7 +282,7 @@ def fetch_user(user_id):
 
 Each session builds on prior work, reducing context loss.
 
-## ChatBot-Specific History Features
+### Step 13: ChatBot-Specific History Features
 
 **Claude (claude.ai and API):**
 - Conversation context is automatic within a session
@@ -293,7 +303,7 @@ Each session builds on prior work, reducing context loss.
 - Use `cmd+K` with @file references
 - Context persists within project
 
-## Using Chat History for Debugging
+### Step 14: Use Chat History for Debugging
 
 Debugging sessions benefit most from good history tracking:
 
@@ -320,7 +330,7 @@ What's different about the concurrent scenario?
 
 The AI connects your new findings to yesterday's investigation, proposing concurrency-specific solutions rather than re-suggesting the basics.
 
-## CLI and Automation Integration
+### Step 15: CLI and Automation Integration
 
 For automated debugging, feed previous AI suggestions into logs:
 
@@ -354,7 +364,7 @@ curl https://api.anthropic.com/v1/messages \
   }
 ```
 
-## Organizing Multi-Month Projects
+### Step 16: Organizing Multi-Month Projects
 
 For projects spanning months, create indexed summaries:
 
@@ -390,7 +400,7 @@ completed_components:
 
 When starting work on a component, reference the specific session range: "Working on payment processing as continued from sessions 68-82. Current blocker: webhook integration."
 
-## When NOT to Use Chat History
+### Step 17: When NOT to Use Chat History
 
 Sometimes starting fresh is better:
 
@@ -402,7 +412,7 @@ Sometimes starting fresh is better:
 
 4. **When exploring radically different solutions** — Don't force new ideas into an existing conversation focused on the old approach
 
-## Metrics: Tracking How Chat History Improves Productivity
+### Step 18: Metrics: Tracking How Chat History Improves Productivity
 
 Track these metrics to see impact of better history management:
 
@@ -419,6 +429,21 @@ Week 2-4 (With project context file):
 ```
 
 The investment in organizing history pays back quickly.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

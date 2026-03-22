@@ -28,7 +28,17 @@ Switching AI coding providers mid-sprint doesn't have to derail your team. With 
 
 Teams change AI coding tools for various reasons: pricing changes, better feature alignment, superior code quality for specific languages, or organizational policy shifts. Regardless of the motivation, the transition process remains similar. The key is minimizing the learning curve impact while preserving your team's established workflows.
 
-## Phase 1: Preparation Before the Switch
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Phase 1: Preparation Before the Switch
 
 ### Audit Your Current Configuration
 
@@ -61,23 +71,23 @@ Create a project-specific `CLAUDE.md` or `.cursorrules` file that documents thes
 ```markdown
 # Project Context
 
-## API Client Patterns
+### Step 2: API Client Patterns
 - All HTTP clients use axios with custom interceptors
 - Error responses follow RFC 7807 Problem Details format
 - Retry logic: 3 attempts with exponential backoff
 
-## Testing Conventions
+### Step 3: Test Conventions
 - Use Vitest for unit tests
 - Mock external APIs with MSW (Mock Service Worker)
 - Test files colocated with source: `src/utils.ts` -> `src/utils.test.ts`
 
-## TypeScript Guidelines
+### Step 4: TypeScript Guidelines
 - Strict mode enabled
 - No `any` types—use `unknown` with type guards instead
 - Prefer interfaces over types for object shapes
 ```
 
-## Phase 2: Parallel Running Period
+### Step 5: Phase 2: Parallel Running Period
 
 ### The Two-Week Overlap Strategy
 
@@ -122,7 +132,7 @@ Configure both tools with consistent rules to reduce cognitive load:
 
 Disable the new tool's features you're not ready to adopt yet. Gradual enablement reduces overwhelm.
 
-## Phase 3: Configuration Migration
+### Step 6: Phase 3: Configuration Migration
 
 ### Translating Custom Instructions
 
@@ -150,7 +160,7 @@ typescript:
   asyncPatterns: prefer-async-await
 
 # Translates to CLAUDE.md
-## Async Patterns
+### Step 7: Async Patterns
 Use async/await exclusively for asynchronous operations. Avoid callback patterns.
 ```
 
@@ -178,7 +188,7 @@ const copilotSnippets = [
 // Place in ~/.cursor/snippets/typescript.json
 ```
 
-## Phase 4: Maintaining Velocity During Transition
+### Step 8: Phase 4: Maintaining Velocity During Transition
 
 ### The First Week Checklist
 
@@ -229,7 +239,7 @@ def track_sprint_velocity():
     }
 ```
 
-## Common Transition Pitfalls
+### Step 9: Common Transition Pitfalls
 
 ### Trying to Match Feature-for-Feature
 
@@ -256,20 +266,35 @@ As you learn the new tool, document findings immediately:
 ```markdown
 # New Tool Setup Guide
 
-## Installation
+### Step 10: Install ation
 1. Download from official site
 2. Sign in with team account
 3. Sync settings from backup
 
-## Configuration
+### Step 11: Configuration
 - Extension settings location
 - Keybindings to update
 - Environment variables needed
 
-## Known Issues
+### Step 12: Known Issues
 - Local debugging configuration
 - Proxy/network requirements
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

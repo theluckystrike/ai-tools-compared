@@ -30,7 +30,17 @@ Live coding interviews have evolved significantly with the integration of AI cod
 - **Whether you're interviewing at**: a startup or a tech giant, understanding how to use these tools effectively can differentiate you from other candidates.
 - **Most companies now explicitly state their policies on AI tool usage during interviews**: always clarify this with your interviewer at the start.
 
-## Understanding the Interview Context
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Interview Context
 
 
 Before examining strategies, recognize that live coding interviews assess your problem-solving abilities, code quality, and communication skills. AI tools should augment your capabilities, not replace your core competencies. Most companies now explicitly state their policies on AI tool usage during interviews—always clarify this with your interviewer at the start.
@@ -48,7 +58,7 @@ The primary benefits of using AI assistants during interviews include:
 - Handling edge cases and error scenarios
 
 
-## Setting Up Your AI Toolkit
+### Step 2: Set Up Your AI Toolkit
 
 
 Preparation before the interview is crucial. Configure your preferred AI coding assistant to work with your development environment. Here's a practical setup for a typical interview scenario:
@@ -71,7 +81,7 @@ ai_context = {
 Popular AI coding tools in 2026 include Claude Code, GitHub Copilot, and Cursor. Each offers unique advantages—Claude Code excels at explanation and iterative refinement, while Copilot provides inline suggestions that integrate smoothly with most code editors.
 
 
-## Strategic AI Usage During Interviews
+### Step 3: Strategic AI Usage During Interviews
 
 
 ### 1. Code Generation for Boilerplate
@@ -225,7 +235,7 @@ class LRUCache:
 ```
 
 
-## Final Tips for Interview Success
+### Step 4: Final Tips for Interview Success
 
 
 - Practice with AI tools beforehand: Familiarize yourself with commands and shortcuts
@@ -242,6 +252,21 @@ AI coding tools are powerful allies in technical interviews when used thoughtful
 ---
 
 {% raw %}
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

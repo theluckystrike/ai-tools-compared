@@ -40,7 +40,17 @@ AI assistants can generate production-ready database backup scripts with compres
 - **The worst time to**: discover a broken failover script is during an actual outage.
 - **Use AI to help**: document these steps clearly in runbooks that on-call engineers can follow under pressure.
 
-## Generating Backup Scripts with AI
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Generate Backup Scripts with AI
 
 AI assistants excel at generating database backup scripts because they understand the nuances of different database systems. Whether you use PostgreSQL, MySQL, MongoDB, or SQL Server, an AI can produce production-ready scripts tailored to your specific requirements.
 
@@ -77,7 +87,7 @@ fi
 
 This script handles compression using PostgreSQL's custom format (`-Fc`), which allows for parallel restores and selective table recovery. The retention policy automatically removes backups older than 30 days.
 
-## AI-Powered Disaster Recovery Planning
+### Step 2: AI-Powered Disaster Recovery Planning
 
 Beyond generating individual scripts, AI can help you design disaster recovery strategies. The key is providing detailed context about your Recovery Time Objective (RTO) and Recovery Point Objective (RPO) requirements.
 
@@ -183,7 +193,7 @@ if __name__ == '__main__':
 
 This monitoring script continuously checks primary health and replication lag, automatically promoting the replica if the primary becomes unavailable.
 
-## Automating Backup Verification
+### Step 3: Automate Backup Verification
 
 A common oversight in backup automation is verifying that backups can actually be restored. AI can help you build verification scripts that test restore capabilities without disrupting production.
 
@@ -228,7 +238,7 @@ else
 fi
 ```
 
-## Integrating with Existing Infrastructure
+### Step 4: Integrate with Existing Infrastructure
 
 AI-generated scripts work well with existing infrastructure tools. You can integrate backup verification into your CI/CD pipeline, schedule automated restores using cron, or trigger health checks from your monitoring system.
 
@@ -258,7 +268,7 @@ spec:
           restartPolicy: OnFailure
 ```
 
-## Choosing the Right AI Tool for Backup Automation
+### Step 5: Choose the Right AI Tool for Backup Automation
 
 Different AI tools bring different strengths to backup and DR script generation:
 
@@ -271,7 +281,7 @@ Different AI tools bring different strengths to backup and DR script generation:
 
 For PostgreSQL and MySQL, Claude and ChatGPT produce the most accurate scripts. For RDS and Aurora-specific patterns — including multi-AZ failover and automated snapshots — Amazon Q Developer generates idiomatic AWS patterns that the general-purpose LLMs sometimes miss.
 
-## Cloud-Specific Backup Patterns
+### Step 6: Cloud-Specific Backup Patterns
 
 AI tools excel at cloud-native backup patterns. Provide your cloud provider and service name for best results.
 
@@ -342,6 +352,21 @@ When using AI to generate backup and disaster recovery scripts, follow these gui
 **Document manual steps.** Some failover procedures may require manual intervention. Use AI to help document these steps clearly in runbooks that on-call engineers can follow under pressure.
 
 **Monitor your monitoring.** Ensure your backup verification jobs themselves are running successfully and alerting you to failures. A silent failure in a backup job is worse than no backup job at all.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

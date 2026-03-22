@@ -25,7 +25,17 @@ Transfer your Notion AI workflows to Claude Projects by exporting Notion databas
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **This guide covers understanding**: the core differences, mapping notion concepts to claude projects, from database properties to data structures, with specific setup instructions
 
-## Understanding the Core Differences
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Core Differences
 
 
 Notion AI operates within the constraints of a block-based document system. Your workflows likely involve database properties, page templates, and Notion's AI block that generates content within those constraints. Claude Projects, by contrast, gives you a working directory, the ability to run actual code, and a context-aware AI that understands your entire project structure.
@@ -36,7 +46,7 @@ The fundamental shift involves moving from a visual, database-driven approach to
 This shift requires some upfront investment but pays dividends quickly. Notion AI workflows are constrained by what Notion's interface exposes — you cannot loop over a database, call an external API mid-workflow, or conditionally branch based on the result of an AI call. In Claude Projects, all of those patterns become straightforward Python or shell scripts. The migration is less about recreating what Notion did and more about unlocking what was previously impossible.
 
 
-## Mapping Notion Concepts to Claude Projects
+### Step 2: Mapping Notion Concepts to Claude Projects
 
 
 ### From Database Properties to Data Structures
@@ -88,7 +98,7 @@ echo "Created meeting notes at $OUTPUT_DIR"
 Notion's relational database properties let you link records across databases. In Claude Projects, you represent these relationships as foreign key references in JSON, or as symlinks and relative paths in a directory structure. A task that relates to a project becomes `"project_id": "proj-042"`, resolved by looking up `projects.json`.
 
 
-## Building Equivalent Workflows
+### Step 3: Build Equivalent Workflows
 
 
 ### Automated Content Generation
@@ -189,7 +199,7 @@ def summarize_content(content):
 Making prompts explicit in files has a significant benefit: you can version-control them with git, track how output quality changes when you refine wording, and A/B test different prompt versions against the same input data. Notion AI prompts are buried in block configuration and cannot be easily compared or audited.
 
 
-## Preserving Data During Migration
+### Step 4: Preserving Data During Migration
 
 
 Moving from Notion to Claude Projects requires exporting your existing data. Notion provides export options for CSV or Markdown. For a database containing AI-generated content:
@@ -239,7 +249,7 @@ if __name__ == "__main__":
 When migrating AI-generated content (summaries, tags, extracted entities), you have a choice: migrate the existing AI output and use it as-is, or set those fields to `null` and regenerate them with Claude. Regeneration is usually worth the cost. Notion AI outputs tend to be shorter and less precise than what Claude Projects can produce with a well-crafted prompt.
 
 
-## When Claude Projects Shines
+### Step 5: When Claude Projects Shines
 
 
 Claude Projects offer advantages that Notion cannot match for AI workflows:
@@ -256,7 +266,7 @@ Claude Projects offer advantages that Notion cannot match for AI workflows:
 **Audit trails** are straightforward with git. Every change to your data files, prompts, and scripts is tracked. When an AI-generated summary is wrong, you can trace back exactly which prompt version and model produced it. Notion has no equivalent audit mechanism for AI-generated content.
 
 
-## Practical Migration Strategy
+### Step 6: Practical Migration Strategy
 
 
 Start by identifying your most critical Notion AI workflows. For each workflow:
@@ -276,7 +286,7 @@ Most teams find that after migration, they build additional automation they coul
 A reasonable migration timeline for a team with 10-20 active Notion AI workflows is two to four weeks: one week for export and data transformation, one week for prompt migration and script development, and one to two weeks for testing and parallel running before fully decommissioning the Notion workflows.
 
 
-## Handling Edge Cases in Migration
+### Step 7: Handling Edge Cases in Migration
 
 
 A few Notion AI features require special handling during migration:
@@ -288,6 +298,21 @@ A few Notion AI features require special handling during migration:
 **AI filters on database views**: Notion lets you filter database views by AI-generated property values. In Claude Projects, implement this as a query against your JSON data: `[t for t in tasks if 'urgent' in t.get('ai_tags', [])]`. The logic is more explicit and easier to debug than Notion's filter UI.
 
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions

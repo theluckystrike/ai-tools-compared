@@ -40,7 +40,17 @@ If you have been building web applications with Lovable and are considering swit
 - **Open Cursor settings and**: navigate to the Models section to select your preferred AI model.
 - **The default model works**: well for most tasks, but you can experiment with different options based on your needs.
 
-## Understanding the Core Differences
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Core Differences
 
 Lovable operates as a conversational AI platform specifically designed for rapid web application prototyping. It uses a chat-based interface where you describe what you want to build, and the AI generates the code for you. The platform manages your project infrastructure and deployment automatically, making it particularly attractive for quickly spinning up MVPs and proof-of-concept applications.
 
@@ -48,7 +58,7 @@ Cursor, on the other hand, is an AI-powered code editor built on top of Visual S
 
 The fundamental shift when moving from Lovable to Cursor involves changing from a prompt-driven generation model to an augmented coding workflow. In Lovable, you describe features and receive generated code. In Cursor, you write code with AI assistance, maintaining full control over every line while letting the AI help with speed and accuracy.
 
-## Preparing Your Project for Migration
+### Step 2: Preparing Your Project for Migration
 
 Before transitioning to Cursor, you need to export your Lovable project. Lovable projects are typically stored in their cloud environment, so you will need to download the source code directly from the platform. Navigate to your project settings in Lovable and look for an export or download option that provides your complete codebase including all components, configurations, and dependencies.
 
@@ -110,7 +120,7 @@ export function UserProfile({ userId }: UserProfileProps) {
 
 This refactoring adds TypeScript typing, proper error handling, and follows more conventional React patterns that you would maintain and extend within Cursor.
 
-## Setting Up Cursor for Web Development
+### Step 3: Set Up Cursor for Web Development
 
 After installing Cursor, you will want to configure it for optimal web development performance. Open Cursor settings and navigate to the Models section to select your preferred AI model. The default model works well for most tasks, but you can experiment with different options based on your needs.
 
@@ -136,7 +146,7 @@ When you need to implement a new feature in Cursor, start by creating the basic 
 
 This approach gives you more control but still uses AI for efficiency. You maintain ownership of the architecture while Cursor handles boilerplate and helps with complex implementations.
 
-## Managing Deployment and Infrastructure
+### Step 4: Manage Deployment and Infrastructure
 
 One significant change when switching from Lovable to Cursor involves handling deployment yourself. Lovable manages hosting and deployment automatically, while Cursor requires you to set up your own deployment pipeline.
 
@@ -162,7 +172,7 @@ Cursor makes sense if you want full control over your codebase, need to integrat
 
 Lovable remains useful for rapid prototyping when you need to validate ideas quickly without setting up development environments. The two tools can even complement each other in your workflow, using Lovable for quick experiments and Cursor for production applications.
 
-## Making the Transition Smooth
+### Step 5: Making the Transition Smooth
 
 Start by migrating one small project to Cursor rather than attempting to move everything at once. Spend time learning Cursor's keyboard shortcuts and AI commands. The initial learning curve is higher than Lovable, but the long-term benefits include greater control and more professional development practices.
 
@@ -284,7 +294,7 @@ As you work with Cursor, you will encounter problems that require deeper investi
 
 When you paste an error stack trace and describe unexpected behavior, Cursor analyzes the execution flow and identifies likely culprits. This is particularly valuable when migrating complex Lovable projects where the original code organization may obscure the root cause of issues.
 
-## Comparing Development Speed: Lovable vs Cursor
+### Step 6: Comparing Development Speed: Lovable vs Cursor
 
 Understanding the productivity tradeoff helps set realistic expectations for your migration.
 
@@ -298,7 +308,7 @@ For a simple CRUD feature:
 
 However, modifying existing Lovable features is often painful (you must regenerate or manually edit). Modifying Cursor code is straightforward—you make changes and ask Cursor for help with specific parts.
 
-## Building Your First Project in Cursor
+### Step 7: Build Your First Project in Cursor
 
 Start with a new project rather than migrating immediately to establish confidence in the workflow:
 
@@ -310,11 +320,26 @@ Start with a new project rather than migrating immediately to establish confiden
 
 This approach builds muscle memory and reduces frustration when you encounter the differences between the two tools.
 
-## Long-term Considerations
+### Step 8: Long-term Considerations
 
 After migrating to Cursor, you will likely find that your development practices evolve. You will write more tests because Cursor makes test generation easy. You will refactor more often because modifying code is lower-friction than regenerating. You will care more about code organization because you maintain the codebase directly.
 
 These changes typically result in better long-term project health, even if initial development speed feels slower compared to Lovable's approach.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

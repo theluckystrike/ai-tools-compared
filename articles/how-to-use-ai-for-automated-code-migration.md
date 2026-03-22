@@ -49,7 +49,17 @@ Transform any code that calls the old API to use the new API.
 - **If the file doesn't use this API**: return it unchanged.
 - **Test files**: Often use the old API in mock setups with different patterns than production code.
 
-## Migration Type 1: Library Upgrade with Breaking Changes
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Migration Type 1: Library Upgrade with Breaking Changes
 
 Example: Migrating from React Router v5 to v6 (useHistory to useNavigate, Switch to Routes, etc.)
 
@@ -123,7 +133,7 @@ print(f"Changed: {len(results['changed'])} files")
 
 Always stage, validate, then apply. Never write AI-migrated code directly over source files without a validation step.
 
-## Migration Type 2: Language Port (Python 2 to Python 3)
+### Step 2: Migration Type 2: Language Port (Python 2 to Python 3)
 
 For large codebases, use the Anthropic Batch API to process hundreds of files concurrently at 50% cost:
 
@@ -170,7 +180,7 @@ print(f"Batch submitted: {batch.id}")
 print(f"Processing {len(batch_requests)} files at 50% API cost")
 ```
 
-## Migration Type 3: Internal API Breaking Changes
+### Step 3: Migration Type 3: Internal API Breaking Changes
 
 When you rename a method or change a signature, every call site needs updating.
 
@@ -220,7 +230,7 @@ result = subprocess.run(
 affected_files = result.stdout.strip().split("\n")
 ```
 
-## Validation After AI Migration
+### Step 4: Validation After AI Migration
 
 ```python
 import ast
@@ -253,7 +263,7 @@ The standard migration workflow:
 5. Human review of files flagged by any check
 6. Apply staging to source
 
-## What AI Migration Gets Wrong
+### Step 5: What AI Migration Gets Wrong
 
 **Multi-line destructuring:** An AI might correctly identify `useHistory()` but miss:
 
@@ -269,7 +279,7 @@ const { push, replace } = useHistory();
 
 Flag these categories for manual review rather than trusting automated migration.
 
-## Diff Review Workflow
+### Step 6: Diff Review Workflow
 
 The biggest risk with AI migration is silent correctness issues — code that passes the type checker but behaves differently. Build a diff review step into every migration:
 
@@ -297,7 +307,7 @@ with open("migration-review.diff", "w") as review:
 
 Run `git diff --stat migration-review.diff` or open it in a tool like `delta` to review all changes before applying. High-confidence mechanical changes (print statements, import renames) need less scrutiny. Low-confidence changes (async addition, parameter reordering) need a human read.
 
-## Sizing the Migration
+### Step 7: Sizing the Migration
 
 Rule of thumb for estimating AI migration effort:
 
@@ -309,6 +319,21 @@ Rule of thumb for estimating AI migration effort:
 | 500+ files | Quarter-long project | 3-5 days | Requires phased rollout |
 
 The time savings grow with scale. For fewer than 20 files, writing a migration prompt and validation script may take longer than just doing it manually.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 
