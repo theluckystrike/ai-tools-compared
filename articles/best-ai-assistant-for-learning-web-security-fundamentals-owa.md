@@ -9,6 +9,7 @@ permalink: /best-ai-assistant-for-learning-web-security-fundamentals-owa/
 reviewed: true
 score: 8
 categories: [best-of]
+tags: [ai-tools-compared, best-of, security, artificial-intelligence]
 ---
 
 
