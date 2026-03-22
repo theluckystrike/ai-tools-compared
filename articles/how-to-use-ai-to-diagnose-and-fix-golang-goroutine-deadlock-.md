@@ -65,6 +65,21 @@ main.main()
 ```
 
 
+## Which AI Tools Work Best for Goroutine Debugging
+
+Different AI tools have different strengths when it comes to diagnosing Go deadlocks.
+
+**Claude (claude.ai or Claude Code)** is the strongest choice for complex goroutine issues. It understands the full Go memory model, including happens-before relationships, and can trace deadlock causality across multiple goroutines. It handles long stack traces without truncating analysis and suggests fixes that account for the broader concurrency design.
+
+**ChatGPT (GPT-4o)** handles common patterns well and is useful for straightforward unbuffered-channel or WaitGroup misuse cases. It sometimes misses subtle issues in larger codebases but is fast for quick lookups.
+
+**GitHub Copilot** is most useful in-editor for proactive suggestions while writing concurrent code. It won't help you debug an existing panic in isolation, but it can steer you toward buffered channels and `errgroup` while coding.
+
+**Cursor** with Claude or GPT-4o under the hood lets you paste panic output directly in the chat panel and get fixes applied to the correct file immediately. This is the fastest iteration loop for live debugging.
+
+For serious goroutine deadlocks, Claude via Claude Code or the claude.ai interface is the recommended starting point.
+
+
 ## How AI Tools Help Decode Deadlock Scenarios
 
 
@@ -240,13 +255,44 @@ results := make(chan int, 5) // Buffer all expected results
 ```
 
 
+## Mutex Deadlocks and Lock Ordering
+
+Goroutine deadlocks are not limited to channels. Mutex misuse is equally common, especially in larger codebases where multiple locks guard related data.
+
+**Double-lock deadlock:**
+
+```go
+var mu sync.Mutex
+
+func badFunc() {
+    mu.Lock()
+    defer mu.Unlock()
+    mu.Lock() // Deadlocks — same goroutine can't re-acquire the lock
+}
+```
+
+AI tools catch this immediately and suggest `sync.RWMutex` for read-heavy workloads or restructuring to avoid nested locks.
+
+**Lock ordering violations (two-goroutine deadlock):**
+
+```go
+var mu1, mu2 sync.Mutex
+
+// Goroutine A: locks mu1 then mu2
+// Goroutine B: locks mu2 then mu1
+// Classic deadlock when both hold one lock and wait for the other
+```
+
+When you paste both goroutines into Claude with the race detector output, it maps the lock acquisition order and tells you exactly which goroutine to reorder. The fix is always consistent lock ordering — both goroutines must acquire locks in the same sequence.
+
+
 ## Proactive Deadlock Prevention
 
 
 AI tools can also help you design code that prevents deadlocks from occurring:
 
 
-1. **Always set channel direction** — Use `<-chan` and `chan<` in function signatures to catch direction errors at compile time.
+1. **Always set channel direction** — Use `<-chan` and `chan<-` in function signatures to catch direction errors at compile time.
 
 
 2. **Use context for cancellation** — Pass `context.Context` to goroutines so they can be stopped gracefully.
@@ -278,6 +324,8 @@ if err := g.Wait(); err != nil {
 }
 ```
 
+5. **Prefer pipelines over ad-hoc goroutines** — Structuring concurrent code as explicit pipeline stages (producers, transformers, consumers) makes data flow visible and deadlock causes obvious. AI tools are particularly good at converting tangled goroutine code into clean pipeline patterns.
+
 
 ## Debugging Live Systems
 
@@ -308,6 +356,15 @@ func printAllGoroutines() {
 }
 ```
 
+Expose this via an HTTP handler on a debug port and call it from a cURL command when you observe symptoms. Paste the dump into Claude to get a full analysis of which goroutines are stuck and what they are waiting on.
+
+For persistent profiling, enable the `net/http/pprof` handler and use `go tool pprof` to capture goroutine profiles:
+
+```bash
+go tool pprof http://localhost:6060/debug/pprof/goroutine
+```
+
+AI tools help interpret the pprof flame graph output and identify the goroutine accumulation patterns that indicate a slow deadlock forming over time.
 
 
 ## Frequently Asked Questions
