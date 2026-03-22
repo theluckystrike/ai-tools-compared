@@ -13,6 +13,7 @@ score: 8
 voice-checked: true
 intent-checked: true
 ---
+{% raw %}
 
 ## The Helm Chart Challenge
 
@@ -500,3 +501,4 @@ A: Not dedicated ones as of 2026. Most Helm generation flows through general-pur
 ---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
