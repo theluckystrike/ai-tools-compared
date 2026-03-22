@@ -12,6 +12,7 @@ voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence, api]
 intent-checked: true
 ---
+{% raw %}
 
 If you use Neovim as your primary editor, you have likely explored ways to integrate AI-powered code completion. Many developers turn to cloud-based solutions like GitHub Copilot, but these require API keys, subscriptions, and an internet connection. For privacy-conscious developers, teams working in secure environments, or anyone wanting to avoid recurring costs, self-hosted alternatives offer a compelling path forward.
 
@@ -459,3 +460,4 @@ Pick one tool from the options discussed and sign up for a free trial. Spend 30 
 **What is the learning curve like?**
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+{% endraw %}
