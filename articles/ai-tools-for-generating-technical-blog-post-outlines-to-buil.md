@@ -1,9 +1,10 @@
 ---
+
 layout: default
 title: "AI Tools for Generating Technical Blog Post Outlines to Build Developer Brand"
 description: "A practical guide to AI tools for generating technical blog post outlines to build your developer brand. Learn frameworks, see code examples, and implement strategies for consistent technical content creation."
 date: 2026-03-21
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /ai-tools-for-generating-technical-blog-post-outlines-to-build-developer-brand-2026/
 categories: [guides]
 tags: [ai-tools-compared, developer-brand, content-creation, technical-writing, artificial-intelligence]
@@ -12,6 +13,7 @@ score: 9
 intent-checked: true
 voice-checked: true
 ---
+
 {% raw %}
 
 Building a developer brand requires consistent, high-quality technical content. Creating that content from scratch takes hours of planning before you ever write the first paragraph. AI tools for generating technical blog post outlines help you move from idea to structure faster, ensuring each piece aligns with your professional goals while saving valuable time.
