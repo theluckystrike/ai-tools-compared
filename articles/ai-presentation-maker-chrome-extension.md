@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Presentation Maker Chrome Extension"
-description: "A guide to AI-powered Chrome extensions for creating presentations automatically, with feature comparisons and recommendations"
+description: "AI Chrome extensions that build slide decks from text prompts. SlidesAI, Gamma, and Plus AI compared on template quality and export options."
 date: 2026-03-18
 last_modified_at: 2026-03-18
 author: theluckystrike

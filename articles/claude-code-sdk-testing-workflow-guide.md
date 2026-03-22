@@ -1,6 +1,6 @@
 ---
 title: "Claude Code SDK Testing Workflow Guide"
-description: "A guide to setting up and maintaining testing workflows for Claude Code SDK implementations"
+description: "Set up testing workflows for Claude Code SDK integrations: unit tests, mock responses, CI pipelines, and regression test patterns explained."
 author: "theluckystrike"
 date: 2026-03-17
 last_modified_at: 2026-03-17

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Generating Grafana Dashboard JSON Templates"
-description: "Discover how AI tools can automate the creation of Grafana dashboard JSON templates using YAML specifications, saving time and reducing errors"
+description: "Generate Grafana dashboard JSON from YAML specs using AI. Panel layout, variable templating, and alert rule configuration automated with examples."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

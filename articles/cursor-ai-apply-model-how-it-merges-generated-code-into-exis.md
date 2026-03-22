@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Cursor AI Apply Model How It Merges Generated Code"
-description: "This guide provides practical steps and best practices to help you accomplish this task effectively. Follow the recommendations to get the best results from"
+description: "How Cursor AI Apply merges generated code into existing files: diff algorithm, conflict resolution, multi-hunk patches, and failure recovery."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

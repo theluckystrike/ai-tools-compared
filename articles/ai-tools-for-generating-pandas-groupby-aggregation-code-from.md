@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Generating pandas GroupBy Aggregation Code"
-description: "Discover how AI tools can convert plain English descriptions into pandas groupby aggregation code. Practical examples and code snippets for developers"
+description: "Describe groupby operations in plain English and get pandas code from AI. Multi-column aggregation, custom functions, and pivot table generation."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

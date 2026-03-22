@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Generating Renovate Bot Configuration for"
-description: "A practical guide to AI tools for generating Renovate bot configuration for automated dependency updates in 2026. Learn how to leverage AI to streamline"
+description: "Generate Renovate bot configs with AI: dependency grouping rules, automerge policies, custom managers, and monorepo scheduling strategies."
 date: 2026-03-21
 author: theluckystrike
 permalink: /ai-tools-for-generating-renovate-bot-configuration-for-autom/

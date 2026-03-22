@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Interpreting Python Traceback Errors"
-description: "Discover how AI tools can help developers quickly interpret and debug Python traceback errors in Django middleware chains with practical examples"
+description: "Paste Django tracebacks into Claude or GPT-4 for instant diagnosis. Covers ORM errors, middleware failures, template exceptions, and migrations."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

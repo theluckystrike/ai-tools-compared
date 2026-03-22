@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI for Writing Internal Developer Portal Content"
-description: "Discover how to use AI tools to consolidate scattered wiki documentation into polished internal developer portal content"
+description: "Turn scattered wiki pages into polished developer portal content using Claude, GPT-4, and Backstage plugins. Migration workflows included."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

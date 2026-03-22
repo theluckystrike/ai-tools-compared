@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Writing Ansible Playbooks 2026"
-description: "Compare Claude, GPT-4, GitHub Copilot, and specialized tools for generating Ansible playbooks. Includes YAML examples, role structure, vault integration, and real-world use cases"
+description: "Claude, Copilot, and Cursor tested on Ansible playbook generation. Role structure, idempotency, vault integration, and handler patterns compared."
 date: 2026-03-22
 last_modified_at: 2026-03-22
 author: theluckystrike

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Reviewing Documentation Pull Requests"
-description: "Discover how AI tools can help developers and technical writers review documentation pull requests for accuracy, completeness, and consistency"
+description: "AI tools that review documentation PRs for technical accuracy: code sample validation, API reference checking, and terminology consistency."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

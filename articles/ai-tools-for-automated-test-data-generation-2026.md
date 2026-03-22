@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Automated Test Data Generation 2026"
-description: "Compare AI tools for generating realistic test data in 2026: Faker AI, Mimesis, Claude-driven generators, and Mockaroo."
+description: "Faker AI, Mimesis, and Claude-driven test data generators compared. Realistic datasets with referential integrity and PII masking in 2026."
 date: 2026-03-21
 last_modified_at: 2026-03-21
 author: theluckystrike

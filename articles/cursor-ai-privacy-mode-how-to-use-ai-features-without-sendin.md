@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Cursor AI Privacy Mode How to Use AI Features"
-description: "This guide provides practical steps and best practices to help you accomplish this task effectively. Follow the recommendations to get the best results from"
+description: "Cursor privacy mode: which AI features work without sending code to the cloud, local model options, and data retention policy differences."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

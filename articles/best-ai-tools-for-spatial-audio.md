@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Spatial Audio: A Developer Guide"
-description: "Explore AI tools that transform spatial audio production—物体定位、3D音频渲染、HRTF定制，为开发者提供实用方案和代码示例。"
+description: "AI spatial audio tools for developers: object placement, 3D rendering, HRTF customization, and binaural processing with code examples included."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: theluckystrike

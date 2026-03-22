@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Debugging Production Incidents"
-description: "AI tools that parse error logs, correlate events, and suggest fixes for rapid incident resolution"
+description: "AI tools that parse production error logs, correlate events across services, and suggest root causes. Tested on real Datadog and Splunk outputs."
 date: 2026-03-20
 last_modified_at: 2026-03-20
 author: theluckystrike

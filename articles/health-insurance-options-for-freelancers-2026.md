@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Health Insurance Options for Freelancers 2026"
-description: "A guide to health insurance options for freelancers in 2026, including marketplace plans, associations, and cost-saving strategies with practical tools"
+description: "Freelancer health insurance options in 2026: marketplace plans, association health plans, HSA strategies, and cost comparison by coverage level."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: theluckystrike

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Creating Automated Release Changelog"
-description: "Discover how AI tools transform conventional commit messages into polished release changelogs. Practical examples and implementation guide for developers"
+description: "Generate release changelogs from conventional commits using AI. Semantic grouping, breaking change highlights, and GitHub Release integration."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

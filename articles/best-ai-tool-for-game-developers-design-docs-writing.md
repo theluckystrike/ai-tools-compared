@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tool for Game Developers Design Docs Writing"
-description: "Discover how AI tools can improve game design documentation, from GDDs to technical specifications, with practical examples and real-world use cases"
+description: "AI tools for game design documents: GDD templates, technical specs, and system design documentation tested with Claude, GPT-4, and Notion AI."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: theluckystrike

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Enterprise AI Coding Tool Network Security Requirements"
-description: "A practical guide to securing AI coding tools in enterprise environments with firewall configuration examples"
+description: "Firewall rules, proxy configs, and data retention policies for enterprise AI coding tools. Covers Copilot, Cursor, and Claude network requirements."
 date: 2026-03-20
 last_modified_at: 2026-03-22
 author: "AI Tools Compared"

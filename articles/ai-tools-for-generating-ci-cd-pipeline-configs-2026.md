@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Generating CI/CD Pipeline Configs 2026"
-description: "Compare Claude, GPT-4, GitHub Copilot for generating GitHub Actions, GitLab CI, Jenkins pipeline YAML. Includes real examples, workflow syntax, secrets management, and matrix builds"
+description: "Generate GitHub Actions, GitLab CI, and Jenkins pipeline configs with AI. Matrix builds, caching, and deployment stage patterns automated."
 date: 2026-03-22
 last_modified_at: 2026-03-22
 author: theluckystrike

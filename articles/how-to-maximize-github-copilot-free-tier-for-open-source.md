@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Maximize GitHub Copilot Free Tier for Open Source"
-description: "A guide to getting the most out of GitHub Copilot's free tier for open source maintainers and contributors"
+description: "Get full value from Copilot's free tier for open source: usage limits, qualifying repos, and tips to maximize completions without paying."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

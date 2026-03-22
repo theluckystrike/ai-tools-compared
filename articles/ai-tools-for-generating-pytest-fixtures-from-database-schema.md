@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Generating pytest Fixtures from Database"
-description: "Discover how AI coding assistants can automatically generate pytest fixtures from your database schema definitions, saving hours of manual test setup work"
+description: "Auto-generate pytest fixtures from database schemas using AI. Foreign key resolution, factory patterns, and SQLAlchemy model fixture creation."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Kubernetes Troubleshooting 2026"
-description: "Compare AI tools for Kubernetes debugging: k8sgpt, Claude Code, GitHub Copilot, and Robusta. Analyze pod crashes, interpret logs, optimize resources"
+description: "K8sGPT, Claude Code, Copilot, and diagnostic tools tested on Kubernetes debugging: CrashLoopBackOff diagnosis, resource limits, and network fixes."
 date: 2026-03-20
 last_modified_at: 2026-03-20
 author: theluckystrike

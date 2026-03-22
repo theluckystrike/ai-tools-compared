@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI for Automated Code Migration"
-description: "Practical guide to AI-assisted code migration: framework upgrades, language ports, and API breaking changes."
+description: "Migrate codebases with AI: framework upgrades, language ports, and API breaking changes handled by Claude, GPT-4, and specialized migration tools."
 date: 2026-03-21
 last_modified_at: 2026-03-21
 author: theluckystrike

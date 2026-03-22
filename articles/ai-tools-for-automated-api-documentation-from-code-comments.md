@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Automated API Documentation from Code Comments"
-description: "Generate professional API docs from inline code comments using Claude, GPT-4, and specialized tools"
+description: "Generate API documentation from code comments using Claude, GPT-4, and Mintlify. OpenAPI spec output, accuracy, and language support compared."
 date: 2026-03-20
 last_modified_at: 2026-03-20
 author: theluckystrike

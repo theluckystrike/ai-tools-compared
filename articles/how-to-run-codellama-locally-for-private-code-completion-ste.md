@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Run CodeLlama Locally for Private Code Completion"
-description: "A practical guide to running Meta's CodeLlama locally for private, secure code completion. Step-by-step instructions for developers who need offline AI assistance."
+description: "Run CodeLlama locally for private code completion: hardware requirements, quantization options, IDE integration, and performance tuning steps."
 date: 2026-03-21
 author: theluckystrike
 permalink: /how-to-run-codellama-locally-for-private-code-completion-ste/

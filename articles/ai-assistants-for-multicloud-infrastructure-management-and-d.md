@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Assistants for Multicloud Infrastructure Management"
-description: "Discover how AI assistants are transforming multicloud infrastructure management and deployment workflows for developers and DevOps teams"
+description: "AI assistants for multicloud ops: Terraform generation, cross-provider drift detection, and deployment automation across AWS, GCP, and Azure."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

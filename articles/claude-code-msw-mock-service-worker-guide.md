@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code MSW Mock Service Worker Guide"
-description: "A guide to using MSW (Mock Service Worker) with Claude Code for API mocking in development workflows. Learn setup, configuration, and best practices"
+description: "Set up MSW with Claude Code for API mocking: request handlers, response factories, network error simulation, and browser/Node dual environments."
 date: 2026-03-18
 last_modified_at: 2026-03-18
 author: theluckystrike

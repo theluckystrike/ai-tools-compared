@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Writing AWS CDK Infrastructure 2026"
-description: "How AI assistants handle AWS CDK constructs, stack definitions, and cross-stack references in TypeScript and Python"
+description: "Claude, Copilot, and Cursor tested on AWS CDK constructs, stack definitions, and cross-stack references in TypeScript and Python CDK projects."
 date: 2026-03-21
 last_modified_at: 2026-03-21
 author: theluckystrike

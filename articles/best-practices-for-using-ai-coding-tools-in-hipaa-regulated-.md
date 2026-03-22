@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Practices for Using AI Coding Tools in HIPAA Regulated"
-description: "A practical guide for developers working with AI coding assistants in HIPAA-compliant healthcare software environments"
+description: "Use AI coding assistants in HIPAA environments safely: data handling rules, approved deployment modes, BAA requirements, and audit logging."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

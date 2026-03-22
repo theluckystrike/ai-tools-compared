@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Export ChatGPT API Fine-Tuned Model for Local"
-description: "A practical guide for developers on exporting fine-tuned models from OpenAI's API for local deployment and inference"
+description: "Export fine-tuned OpenAI models for local deployment: weight extraction limitations, ONNX conversion, and alternative self-hosting strategies."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

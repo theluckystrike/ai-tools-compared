@@ -3,7 +3,7 @@
 
 layout: default
 title: "AI Tools That Analyze Application Performance Bottlenecks"
-description: "Discover how AI-powered trace analysis tools help developers identify and resolve performance bottlenecks in modern applications."
+description: "AI tools that pinpoint performance bottlenecks from distributed traces. OpenTelemetry integration, flame graph analysis, and latency attribution."
 date: 2026-03-21
 author: "AI Tools Compared"
 permalink: /ai-tools-that-analyze-application-performance-bottlenecks-fr/

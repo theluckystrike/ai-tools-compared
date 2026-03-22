@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tool for Environmental Scientists Reporting"
-description: "Discover how AI tools improve environmental reporting workflows, from data analysis to compliance documentation"
+description: "AI tools for environmental reporting: data analysis automation, compliance document drafting, and visualization generation for field researchers."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: theluckystrike

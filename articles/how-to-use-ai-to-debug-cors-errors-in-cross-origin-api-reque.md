@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI to Debug CORS Errors in Cross-Origin API"
-description: "Learn practical techniques for using AI assistants to identify, diagnose, and fix CORS errors in your web applications"
+description: "Feed CORS errors to Claude or Copilot Chat and get working fixes. Covers preflight failures, credential headers, and proxy workarounds."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

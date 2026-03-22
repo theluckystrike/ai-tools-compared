@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Debugging Postgres Query Planner Choosing"
-description: "Discover how AI tools help debug PostgreSQL query planner choosing wrong index scan paths. Practical examples and techniques for developers"
+description: "Debug PostgreSQL wrong index selection with AI: EXPLAIN output analysis, statistics skew detection, and planner hint strategies automated."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

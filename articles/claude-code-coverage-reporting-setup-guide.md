@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Coverage Reporting Setup Guide"
-description: "A guide to setting up automated code coverage reporting with Claude Code. Learn how to integrate coverage tools, generate reports, and track metrics"
+description: "Set up code coverage reporting with Claude Code: Istanbul, Coverage.py, and Go cover integration with CI badge generation and threshold enforcement."
 date: 2026-03-18
 last_modified_at: 2026-03-18
 author: theluckystrike

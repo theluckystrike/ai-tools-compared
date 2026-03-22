@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Generating Grafana Dashboards from Metrics"
-description: "Discover how AI tools automatically generate Grafana dashboards from your metrics. Practical approaches for developers to improve observability"
+description: "Auto-generate Grafana dashboards from Prometheus and CloudWatch metrics using AI. Panel types, query building, and alert thresholds configured."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

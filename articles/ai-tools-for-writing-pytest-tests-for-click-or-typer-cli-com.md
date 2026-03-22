@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Writing pytest Tests for Click or Typer CLI"
-description: "Discover how AI-powered tools can automate and accelerate writing pytest tests for Click and Typer command-line applications"
+description: "Generate pytest tests for Click and Typer CLI apps with AI. Covers argument parsing, subcommands, exit codes, and CliRunner test patterns."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

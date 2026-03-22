@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Windsurf Premium Model Access Which Models Cost Extra"
-description: "A guide to Windsurf Premium model access, including which AI models require extra credits, pricing breakdown, and recommendations for 2026"
+description: "Windsurf premium model pricing in 2026: which AI models cost extra credits, per-request rates, and how to control spending on premium completions."
 date: 2026-03-18
 last_modified_at: 2026-03-18
 author: theluckystrike

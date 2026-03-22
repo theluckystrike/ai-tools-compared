@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Vendor Payment Optimization Tools 2026: A Practical"
-description: "Discover how AI-powered vendor payment optimization tools can reduce costs, automate reconciliation, and improve cash flow management in 2026"
+description: "AI payment optimization tools for vendor management: invoice matching, duplicate detection, early payment discounts, and reconciliation automation."
 date: 2026-03-20
 last_modified_at: 2026-03-20
 author: theluckystrike

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Returns and Refund Automation"
-description: "A practical guide to AI-powered returns and refund automation tools for developers building e-commerce solutions"
+description: "AI-powered returns and refund tools for e-commerce: fraud detection, policy enforcement, customer communication, and platform integrations covered."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: theluckystrike

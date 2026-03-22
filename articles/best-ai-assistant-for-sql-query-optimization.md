@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Assistant for SQL Query Optimization"
-description: "Discover how AI assistants can dramatically improve your SQL query performance with real-world examples and actionable techniques"
+description: "AI SQL optimizers tested on real slow queries: index suggestions, join rewriting, and execution plan analysis from Claude, GPT-4, and EverSQL."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: theluckystrike

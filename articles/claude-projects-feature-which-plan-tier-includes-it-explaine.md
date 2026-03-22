@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Projects Feature Which Plan Tier Includes It Explaine"
-description: "A guide to understanding which Claude AI subscription plan includes the Projects feature, with practical examples for developers"
+description: "Claude Projects is available on Pro, Team, and Enterprise plans. Feature differences, usage limits, and project sharing capabilities by tier."
 date: 2026-03-16
 last_modified_at: 2026-03-22
 author: theluckystrike

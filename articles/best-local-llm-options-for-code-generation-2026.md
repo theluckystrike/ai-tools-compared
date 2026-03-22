@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Local LLM Options for Code Generation 2026"
-description: "Compare local LLMs for code generation in 2026: DeepSeek Coder V3, Qwen2.5-Coder, CodeLlama, and Starcoder2."
+description: "DeepSeek Coder V3, Qwen2.5-Coder, CodeLlama, and StarCoder2 benchmarked locally. VRAM needs, completion speed, and code quality scores compared."
 date: 2026-03-21
 last_modified_at: 2026-03-21
 author: theluckystrike

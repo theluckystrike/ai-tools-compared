@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Practices for AI Tool Project Config When Switching"
-description: "A practical guide for developers managing AI tool configurations across multiple client projects in 2026"
+description: "Manage AI tool configurations across client projects: .cursorrules, CLAUDE.md, and .github/copilot files organized per-repo with switching workflows."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Generating pandas Merge and Join Operations"
-description: "Discover how AI tools can convert table relationship diagrams into pandas merge and join code. Practical examples and code snippets for developers"
+description: "Convert table relationship diagrams into pandas merge and join code using AI. Covers inner/outer joins, multi-key merges, and index alignment."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

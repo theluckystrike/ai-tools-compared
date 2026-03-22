@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Social Media Analytics: A Practical Guide"
-description: "Discover how to use AI for social media analytics. This guide covers APIs, Python libraries, and code examples for developers building data-driven"
+description: "AI social media analytics tools for developers: sentiment APIs, engagement prediction models, and Python libraries for cross-platform data analysis."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: theluckystrike

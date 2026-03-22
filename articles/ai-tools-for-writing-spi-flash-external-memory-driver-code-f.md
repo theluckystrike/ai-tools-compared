@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Writing SPI Flash External Memory Driver"
-description: "Discover how AI coding assistants help developers write SPI flash external memory driver code for microcontrollers. Practical examples and code"
+description: "Generate SPI flash driver code for microcontrollers with AI. Covers read/write commands, sector erase, DMA transfers, and HAL abstraction layers."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

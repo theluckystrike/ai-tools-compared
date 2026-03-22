@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Python Pydantic V2 Model Validation Code"
-description: "Pydantic V2 revolutionized Python data validation by introducing a ground-up rewrite with significant performance improvements. The shift from Pydantic V1"
+description: "AI tools tested on Pydantic V2 model generation: field validators, nested models, custom types, and migration from V1 patterns benchmarked."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tool for Network Engineers: Runbook Writing Guide"
-description: "Discover how AI can improve runbook creation for network engineers. Learn practical approaches to automating documentation workflows"
+description: "AI tools for network runbook automation: Claude, GPT-4, and Copilot tested on Cisco, Juniper, and Arista configuration documentation tasks."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: theluckystrike

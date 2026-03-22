@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Writing pytest Tests with Moto Library for AWS"
-description: "Discover how AI tools can help you write pytest tests using the moto library for AWS service mocking. Practical examples and code snippets included"
+description: "Generate pytest tests with moto for AWS service mocking using AI. S3, DynamoDB, SQS, and Lambda mock patterns with fixture examples included."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

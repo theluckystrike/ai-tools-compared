@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Copilot Workspace vs Cursor Composer Multi File Editing"
-description: "This guide provides an overview to help you understand and make informed decisions about this topic"
+description: "Copilot Workspace vs Cursor Composer for multi-file editing: context handling, refactoring accuracy, and cross-file dependency awareness tested."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike
