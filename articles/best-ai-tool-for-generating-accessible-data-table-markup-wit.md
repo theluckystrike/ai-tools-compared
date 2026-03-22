@@ -173,6 +173,162 @@ AI-generated markup requires verification. Use these methods to confirm accessib
 
 **HTML Validation**: The HTML specification requires `scope` on `<th>` elements in valid documents. Validation tools catch missing attributes.
 
+## Advanced Table Accessibility: Complex Scenarios
+
+Simple tables with straightforward headers are easy. Real-world data often requires more complex markup.
+
+**Example: Multi-Level Headers**
+
+Consider a table with quarterly sales data broken down by region and product category:
+
+```html
+<table>
+  <caption>2026 Sales Performance by Region and Category</caption>
+  <thead>
+    <tr>
+      <th scope="col">Region</th>
+      <th scope="colgroup" colspan="3">Q1 2026</th>
+      <th scope="colgroup" colspan="3">Q2 2026</th>
+    </tr>
+    <tr>
+      <th scope="col">Region</th>
+      <th scope="col">Hardware</th>
+      <th scope="col">Software</th>
+      <th scope="col">Services</th>
+      <th scope="col">Hardware</th>
+      <th scope="col">Software</th>
+      <th scope="col">Services</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">North America</th>
+      <td>$125,000</td>
+      <td>$85,000</td>
+      <td>$45,000</td>
+      <td>$145,000</td>
+      <td>$95,000</td>
+      <td>$52,000</td>
+    </tr>
+    <tr>
+      <th scope="row">Europe</th>
+      <td>$98,000</td>
+      <td>$72,000</td>
+      <td>$38,000</td>
+      <td>$110,000</td>
+      <td>$82,000</td>
+      <td>$44,000</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+Note the use of `scope="colgroup"` to group related headers. This helps screen reader users understand that three columns belong to the same quarter.
+
+**Example: Using `headers` Attribute for Maximum Clarity**
+
+For truly complex tables, use ID-based associations:
+
+```html
+<table>
+  <caption>Server Performance Metrics by Data Center</caption>
+  <thead>
+    <tr>
+      <th id="dc-header">Data Center</th>
+      <th id="cpu-us-west">CPU % (US-West)</th>
+      <th id="mem-us-west">Memory % (US-West)</th>
+      <th id="cpu-us-east">CPU % (US-East)</th>
+      <th id="mem-us-east">Memory % (US-East)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th headers="dc-header">web-01</th>
+      <td headers="cpu-us-west">45%</td>
+      <td headers="mem-us-west">62%</td>
+      <td headers="cpu-us-east">38%</td>
+      <td headers="mem-us-east">58%</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+Every data cell has a `headers` attribute pointing to its column header by ID. This works for arbitrarily complex table structures.
+
+## Automating Accessibility Testing
+
+Beyond generating the markup, test it:
+
+**Using axe-core in JavaScript:**
+```javascript
+import { axe } from 'jest-axe';
+
+test('data table is accessible', async () => {
+  const { container } = render(
+    <DataTable data={mockData} />
+  );
+  const results = await axe(container);
+  expect(results).toHaveNoViolations();
+});
+```
+
+**Using Python + axe-core:**
+```python
+from axe_core import Axe
+
+def test_table_accessibility():
+    driver = webdriver.Chrome()
+    driver.get('http://localhost:3000/table')
+    axe = Axe(driver)
+    axe.inject()
+    axe.run()
+    violations = axe.results['violations']
+    assert len(violations) == 0, f"Accessibility violations found: {violations}"
+```
+
+**In CI/CD Pipelines:**
+Add accessibility checks to your build process so violations are caught before deployment.
+
+## When to Use Different Tools
+
+**Use Claude for:**
+- Complex tables with multiple header levels
+- Tables you want to describe in natural language ("I have this data...")
+- Accessibility-first projects where you want correct markup the first time
+- Getting explanations of accessibility requirements
+
+**Use ChatGPT-4 for:**
+- Quick basic tables (they work but less polished)
+- Learning—it explains accessibility concepts well
+- When you need formatted markdown output
+- Generating variants (React, Vue, plain HTML)
+
+**Use GitHub Copilot for:**
+- IDE integration—suggest completions as you type
+- Maintaining consistency with existing tables in your codebase
+- Quick code generation when you already know what you need
+
+**Use Local Models for:**
+- Sensitive data (healthcare, finance)
+- Offline work (no internet)
+- High volume generation (cost per token matters)
+
+## Common Accessibility Mistakes AI Tools Make
+
+Even good AI tools can produce flawed markup:
+
+**Mistake 1: Forgetting `<thead>` and `<tbody>`**
+Some AI models generate valid but unstructured tables. Always have `<thead>` and `<tbody>` sections—they help assistive technology understand the table structure.
+
+**Mistake 2: Inconsistent `scope` Attributes**
+A table with `scope="col"` on some headers but not others creates confusion. AI should apply it consistently or use `headers` attributes throughout.
+
+**Mistake 3: Missing `<caption>`**
+Tables without captions force users to infer the table's purpose from context. Always include `<caption>` (visually hidden with CSS if design doesn't accommodate it).
+
+**Mistake 4: Complex Tables Without `headers`**
+For tables with multiple row and column headers, `scope` alone isn't enough. The `headers` attribute provides explicit associations that work for any table structure.
+
 ## Recommendations
 
 For most teams, Claude provides the best balance of accessibility awareness and output quality. It consistently generates correct markup without extensive prompting. ChatGPT requires explicit accessibility instructions but produces acceptable results. GitHub Copilot works well for teams already using it for general code completion.
@@ -181,6 +337,7 @@ Regardless of tool choice, treat AI output as a starting point rather than final
 
 Building accessible data tables protects all users from confusing content while meeting legal requirements in many jurisdictions. AI tools accelerate the process, but human verification remains essential.
 
+The markup you generate today serves users 2-3 years from now. Invest the time to get accessibility right—it's not a feature you bolt on later.
 
 
 ## Frequently Asked Questions

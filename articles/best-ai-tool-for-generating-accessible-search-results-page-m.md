@@ -14,8 +14,6 @@ intent-checked: false
 voice-checked: false
 ---
 
-{% raw %}
-
 Accessible search results pages are essential for inclusive web experiences. Users relying on screen readers, keyboard navigation, and assistive technologies expect search results that communicate content clearly and enable efficient interaction. Generating proper ARIA attributes, semantic HTML, and structured data manually takes time—and often gets overlooked under deadline pressure. AI tools now automate much of this work, producing markup that meets WCAG 2.1 AA and Section 508 requirements without sacrificing performance or developer workflow.
 
 This guide evaluates the leading AI solutions for generating accessible search results page markup in 2026, with practical implementation examples for developers integrating these tools into production pipelines.
@@ -287,6 +285,230 @@ test('SearchResults has no accessibility violations', async () => {
 - TalkBack + Chrome on Android
 
 Automated tools catch approximately 30-40% of real accessibility issues. The remaining issues — like unclear link context, confusing reading order, or unhelpful live region announcements — require manual testing with actual screen readers.
+## Real-World Search Results Implementation
+
+Here's a complete, production-ready search results component with AI-generated accessible markup:
+
+```jsx
+import React, { useState, useEffect } from 'react';
+
+function SearchResults({ query, results, totalCount, hasNextPage, onLoadMore }) {
+  const [focusedIndex, setFocusedIndex] = useState(0);
+
+  const handleKeyDown = (e, index) => {
+    // Arrow keys navigate results
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      setFocusedIndex(Math.min(index + 1, results.length - 1));
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      setFocusedIndex(Math.max(index - 1, 0));
+    }
+  };
+
+  return (
+    <main aria-label="Search results">
+      <section>
+        <h1>Search Results</h1>
+        <p className="sr-only">
+          Found {totalCount} results for "{query}". Use arrow keys to navigate.
+        </p>
+
+        {results.length === 0 ? (
+          <div role="status" aria-live="polite">
+            <p>No results found for "{query}". Try different keywords.</p>
+          </div>
+        ) : (
+          <>
+            <ul className="results-list" role="list">
+              {results.map((result, index) => (
+                <li
+                  key={result.id}
+                  role="listitem"
+                  onKeyDown={(e) => handleKeyDown(e, index)}
+                  tabIndex={focusedIndex === index ? 0 : -1}
+                >
+                  <article>
+                    <h2>
+                      <a href={result.url} onClick={() => trackClick(result.id)}>
+                        {result.title}
+                      </a>
+                    </h2>
+
+                    <div className="metadata">
+                      <span className="domain" aria-label="Domain">
+                        {new URL(result.url).hostname}
+                      </span>
+                      <time dateTime={result.publishDate}>
+                        {formatDate(result.publishDate)}
+                      </time>
+                    </div>
+
+                    <p className="snippet">{result.snippet}</p>
+
+                    {result.rating && (
+                      <div
+                        className="rating"
+                        aria-label={`Rating: ${result.rating} out of 5 stars`}
+                      >
+                        {Array(Math.round(result.rating))
+                          .fill('★')
+                          .join('')}
+                      </div>
+                    )}
+                  </article>
+                </li>
+              ))}
+            </ul>
+
+            {hasNextPage && (
+              <div className="pagination">
+                <button
+                  onClick={onLoadMore}
+                  aria-label={`Load more results. Current page: ${results.length / 10}`}
+                  className="load-more-btn"
+                >
+                  Load More Results
+                </button>
+              </div>
+            )}
+          </>
+        )}
+      </section>
+    </main>
+  );
+}
+
+export default SearchResults;
+```
+
+This implementation includes:
+- Keyboard navigation (arrow keys)
+- Screen reader announcements (sr-only class for screen readers)
+- Semantic HTML (main, nav, article, h2)
+- Proper aria-labels and aria-live regions
+- Structured time element with machine-readable datetime
+- Accessible link text (title, not "click here")
+
+## Pagination and Dynamic Results Accessibility
+
+Search results often load dynamically. Ensure accessibility for these patterns:
+
+```jsx
+// Live region announces when new results load
+function DynamicSearchResults({ query, isLoading, results }) {
+  return (
+    <div
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+      className="live-region"
+    >
+      {isLoading && <p>Loading results...</p>}
+      {!isLoading && results.length > 0 && (
+        <p>Loaded {results.length} new results</p>
+      )}
+    </div>
+  );
+}
+```
+
+**Key patterns:**
+- `role="status"` + `aria-live="polite"` announces changes to assistive tech
+- `aria-atomic="true"` reads entire region, not just changes
+- Keep messages brief and clear
+- Avoid auto-playing announcements that interrupt user focus
+
+## Search Filters and Facets Accessibility
+
+Search results typically include filters:
+
+```jsx
+function SearchFilters({ availableFilters, selectedFilters, onFilterChange }) {
+  return (
+    <aside aria-label="Search filters">
+      <h2>Refine Results</h2>
+      <form>
+        {availableFilters.map((filter) => (
+          <fieldset key={filter.name}>
+            <legend>{filter.label}</legend>
+            <div role="group" aria-labelledby={`filter-${filter.name}`}>
+              {filter.options.map((option) => (
+                <div key={option.value}>
+                  <input
+                    type="checkbox"
+                    id={`filter-${filter.name}-${option.value}`}
+                    checked={selectedFilters.includes(option.value)}
+                    onChange={() => onFilterChange(option.value)}
+                    aria-label={`${filter.label}: ${option.label}`}
+                  />
+                  <label htmlFor={`filter-${filter.name}-${option.value}`}>
+                    {option.label} ({option.count})
+                  </label>
+                </div>
+              ))}
+            </div>
+          </fieldset>
+        ))}
+      </form>
+    </aside>
+  );
+}
+```
+
+## Testing Checklist for Accessible Search Results
+
+Before shipping, verify:
+
+1. **Keyboard Navigation**
+   - Can navigate entire page with Tab key
+   - Can open links with Enter key
+   - Can operate checkboxes and buttons with Space
+   - Focus indicator visible on all interactive elements
+
+2. **Screen Reader Testing**
+   - Page structure announced correctly (landmarks, headings)
+   - Result list announced as unordered list
+   - All interactive elements have descriptive labels
+   - Dynamic content changes announced with live regions
+
+3. **Visual Design**
+   - Color contrast ratio 4.5:1 for normal text, 3:1 for large text
+   - Focus indicators visible (not just color, not less than 2px thick)
+   - Text remains readable when zoomed to 200%
+   - No information conveyed by color alone
+
+4. **Mobile/Touch**
+   - Touch targets at least 48x48px
+   - No hover-only functionality
+   - Zoom not disabled (no `user-scalable=no`)
+
+5. **Automated Testing**
+   ```javascript
+   import { axe } from 'jest-axe';
+
+   test('search results are accessible', async () => {
+     const { container } = render(
+       <SearchResults results={mockResults} />
+     );
+     const results = await axe(container);
+     expect(results).toHaveNoViolations();
+   });
+   ```
+
+## Common AI Mistakes in Search Result Markup
+
+**Mistake 1: Using `<div role="link">` instead of `<a>`**
+AI sometimes generates semantic HTML when the shortcut would work. Always use actual `<a>` elements for links—they're keyboard accessible by default.
+
+**Mistake 2: Forgetting result count context**
+Screen reader users need to know how many results exist. Include: "Found 1,240 results for 'javascript async/await'."
+
+**Mistake 3: Auto-focusing first result**
+Tempting to auto-focus the first result, but this breaks user expectations. Let users focus—they'll tab to the first result naturally.
+
+**Mistake 4: Pagination without keyboard control**
+"Load more" buttons should be keyboard accessible and announced. Infinite scroll without keyboard alternatives excludes keyboard-only users.
 
 ## Recommendations
 
@@ -309,7 +531,6 @@ Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 
 ## Frequently Asked Questions
-
 
 **Are free AI tools good enough for ai tool for generating accessible search results page?**
 
@@ -334,6 +555,3 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 **Should I switch tools if something better comes out?**
 
 Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific pain point you experience regularly. Marginal improvements rarely justify the transition overhead.
-
-
-{% endraw %}

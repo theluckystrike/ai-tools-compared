@@ -170,6 +170,189 @@ Dockerfile generation is less demanding than other AI tasks, but you'll still wa
 
 Models quantized to 4-bit significantly reduce memory requirements with minimal quality loss for this use case.
 
+## Real-World Dockerfile Generation Examples
+
+**Example 1: Multi-Stage Python Application**
+
+Prompt to your self-hosted AI:
+```
+Generate a multi-stage Dockerfile for a Python 3.11 FastAPI application that:
+- Has a requirements.txt with dependencies
+- Includes optional dev dependencies (pytest, black) in a separate requirements-dev.txt
+- Runs database migrations on startup
+- Exposes port 8000
+- Runs as non-root user for security
+- Uses a health check endpoint at /health
+- Should be optimized for production (minimal image size)
+```
+
+Expected output (which a self-hosted model should generate):
+```dockerfile
+# Build stage
+FROM python:3.11-slim as builder
+WORKDIR /app
+RUN apt-get update && apt-get install -y build-essential
+COPY requirements.txt .
+RUN pip install --user --no-cache-dir -r requirements.txt
+
+# Runtime stage
+FROM python:3.11-slim
+WORKDIR /app
+RUN useradd -m -u 1000 appuser
+COPY --from=builder /root/.local /home/appuser/.local
+COPY . .
+ENV PATH=/home/appuser/.local/bin:$PATH
+RUN chown -R appuser:appuser /app
+USER appuser
+RUN python -m alembic upgrade head
+EXPOSE 8000
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+  CMD python -c "import requests; requests.get('http://localhost:8000/health')"
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+```
+
+**Example 2: Go Application with Static Binary**
+
+```
+Generate a Dockerfile for a Go application that:
+- Compiles to a static binary (no runtime dependencies)
+- Uses Alpine as the final image
+- Includes a health check
+- Runs as non-root
+- Is optimized for minimal size
+```
+
+Expected output:
+```dockerfile
+FROM golang:1.21-alpine as builder
+WORKDIR /build
+COPY go.mod go.sum ./
+RUN go mod download
+COPY . .
+RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w" -o /build/app .
+
+FROM alpine:3.18
+RUN apk add --no-cache ca-certificates
+RUN addgroup -g 1000 appuser && adduser -D -u 1000 -G appuser appuser
+COPY --from=builder /build/app /app
+USER appuser
+EXPOSE 8080
+HEALTHCHECK --interval=30s CMD wget --no-verbose --tries=1 --spider http://localhost:8080/health || exit 1
+CMD ["/app"]
+```
+
+## Performance Optimization Techniques
+
+Self-hosted AI models can be optimized for faster generation:
+
+**Quantization**
+Reduce model size by 4-8x with minimal quality loss:
+```bash
+# Use 4-bit quantization with Ollama
+ollama run codellama:7b-instruct --quantize=q4
+```
+
+**Caching Generated Dockerfiles**
+For common patterns, cache previous generations:
+```python
+def get_dockerfile(app_type, framework, version):
+    cache_key = f"{app_type}_{framework}_{version}"
+    if cache_key in DOCKERFILE_CACHE:
+        return DOCKERFILE_CACHE[cache_key]
+
+    # Only generate if not in cache
+    dockerfile = generate_with_ai(app_type, framework, version)
+    DOCKERFILE_CACHE[cache_key] = dockerfile
+    return dockerfile
+```
+
+**Batch Processing**
+Generate multiple Dockerfiles in one API call:
+```bash
+curl -X POST http://localhost:11434/api/generate \
+  -d '{
+    "model": "codellama:7b",
+    "prompt": "Generate 3 Dockerfiles for Node.js, Python, and Go applications",
+    "stream": false
+  }'
+```
+
+## Security Considerations
+
+Self-hosted models introduce security responsibilities:
+
+**Model Source Verification**
+Only pull models from official sources:
+- Ollama: Download from ollama.ai
+- Hugging Face: Download from huggingface.co
+- Verify checksums and GPG signatures when available
+
+**Network Isolation**
+Run your inference server only on localhost or trusted networks:
+```bash
+# Wrong: Exposes model to the internet
+ollama serve --host 0.0.0.0:11434
+
+# Right: Local-only or private network
+ollama serve --host localhost:11434
+```
+
+**Generated Dockerfile Validation**
+Never automatically run generated Dockerfiles in production without review. Always:
+1. Scan generated images with Trivy
+2. Check for suspicious commands
+3. Verify base image versions
+4. Review privilege escalation patterns
+
+## Integration with CI/CD
+
+Embed self-hosted Dockerfile generation in your build pipeline:
+
+```yaml
+# GitHub Actions example
+name: Generate Dockerfile
+on: [push]
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Start Ollama
+        run: |
+          docker run -d -p 11434:11434 ollama/ollama
+          docker exec {container} ollama pull codellama:7b
+      - name: Generate Dockerfile
+        run: |
+          curl -X POST http://localhost:11434/api/generate \
+            -d '{"model":"codellama:7b","prompt":"Generate Dockerfile for Node.js with TypeScript"}' \
+            > Dockerfile
+      - name: Validate Dockerfile
+        run: docker build --dry-run .
+      - name: Commit if changed
+        run: |
+          if git diff --exit-code; then
+            git add Dockerfile
+            git commit -m "Auto-generated Dockerfile"
+            git push
+          fi
+```
+
+## Cost Analysis: Self-Hosted vs Cloud
+
+**Self-Hosted Costs:**
+- GPU hardware: $2,000-$5,000 (one-time)
+- Electricity: ~$50-100/month
+- Maintenance: <1 hour/month
+- Total 2-year cost: $3,200-$7,400
+
+**Cloud API Costs (Dockerfile generation at scale):**
+- Average prompt: 100 input tokens, 300 output tokens
+- Claude: $3/M input + $15/M output = (100×3 + 300×15) / 1,000,000 = $0.0054 per Dockerfile
+- At 100 Dockerfiles/month: $0.54/month = $6.48/year
+
+**Analysis:**
+For individual developers, cloud APIs are cheaper. For teams generating 1000+ Dockerfiles annually, self-hosting breaks even around year 2.
+
 ## Workflow Integration
 
 Integrate self-hosted AI into your development workflow through:
@@ -180,6 +363,8 @@ Integrate self-hosted AI into your development workflow through:
 4. **Pre-commit hooks**: Validate and suggest Dockerfile improvements automatically
 
 The key advantage of self-hosted solutions is privacy. Your infrastructure details, dependencies, and architecture never leave your network.
+
+For teams with compliance requirements (HIPAA, SOC 2, PCI-DSS), self-hosting may be mandatory rather than optional.
 
 
 ## Frequently Asked Questions

@@ -12,7 +12,6 @@ voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence, api]
 intent-checked: true
 ---
-{% raw %}
 
 If you use Neovim as your primary editor, you have likely explored ways to integrate AI-powered code completion. Many developers turn to cloud-based solutions like GitHub Copilot, but these require API keys, subscriptions, and an internet connection. For privacy-conscious developers, teams working in secure environments, or anyone wanting to avoid recurring costs, self-hosted alternatives offer a compelling path forward.
 
@@ -214,6 +213,216 @@ To get the best experience from local AI code completion in Neovim:
 - Cache completions locally to avoid redundant API calls
 - Prefer fill-in-the-middle (FIM) capable models (CodeLLama Instruct, Qwen2.5-Coder) for inline completion over pure next-token models
 
+## Advanced Configuration: Building a Production Setup
+
+For developers committed to self-hosted completions, here's a production-ready architecture:
+
+**Infrastructure Stack:**
+```
+Neovim Editor
+  ↓
+nvim-cmp (completion engine)
+  ↓
+Custom Lua plugin (talks to inference server)
+  ↓
+vLLM or Ollama (inference server)
+  ↓
+Quantized CodeLLama model (GPU inference)
+```
+
+**Example: Ollama + nvim-cmp Setup**
+
+First, install Ollama and pull a model:
+```bash
+# Install Ollama (https://ollama.ai)
+ollama pull codellama:7b-instruct
+
+# Start Ollama service
+ollama serve --host 127.0.0.1:11434
+```
+
+Then configure Neovim (`~/.config/nvim/init.lua`):
+
+```lua
+-- Install packer if needed, then add these plugins
+use 'hrsh7th/nvim-cmp'
+use 'hrsh7th/cmp-nvim-lsp'
+use 'hrsh7th/cmp-buffer'
+use 'hrsh7th/cmp-path'
+
+-- Custom completion source for Ollama
+local cmp = require('cmp')
+local source = {}
+
+function source.new()
+  return setmetatable({}, { __index = source })
+end
+
+function source:complete(params, callback)
+  local prefix = params.context.line:sub(params.offset)
+
+  -- Call Ollama API
+  local cmd = string.format(
+    "curl -s http://127.0.0.1:11434/api/generate -d '{\"model\": \"codellama:7b-instruct\", \"prompt\": \"%s\", \"stream\": false}' | jq -r '.response'",
+    prefix
+  )
+
+  local handle = io.popen(cmd)
+  local result = handle:read("*a")
+  handle:close()
+
+  -- Parse completion and return
+  local items = {{
+    label = result,
+    kind = cmp.lsp.CompletionItemKind.Text
+  }}
+
+  callback({ items = items })
+end
+
+function source:resolve(completion_item, callback)
+  callback(completion_item)
+end
+
+function source:execute(completion_item, callback)
+  callback(completion_item)
+end
+
+-- Register the source
+cmp.register_source('ollama', source.new())
+
+-- Configure cmp
+cmp.setup({
+  sources = cmp.config.sources({
+    { name = 'ollama', priority = 10 },
+    { name = 'nvim_lsp' },
+    { name = 'buffer' },
+  })
+})
+```
+
+**Production Considerations:**
+
+1. **Response Caching**: Cache completions for identical context to reduce latency
+```lua
+local completion_cache = {}
+
+function get_completion_cached(prompt)
+  if completion_cache[prompt] then
+    return completion_cache[prompt]
+  end
+  local result = get_completion(prompt)
+  completion_cache[prompt] = result
+  return result
+end
+```
+
+2. **Timeout Handling**: Set timeouts for inference to prevent hanging
+```bash
+# In Ollama startup
+timeout 5 curl http://127.0.0.1:11434/api/generate ...
+```
+
+3. **Error Recovery**: Gracefully fall back to LSP if AI completion fails
+```lua
+function source:complete(params, callback)
+  local success, result = pcall(function()
+    return call_ollama(params)
+  end)
+
+  if not success then
+    -- Fall back to LSP completion
+    vim.lsp.completion.trigger(params)
+  else
+    callback(result)
+  end
+end
+```
+
+## Model Selection for Different Languages
+
+Not all models excel equally across languages:
+
+**For Python/Go/Rust:**
+- CodeLLama 13B (best overall balance)
+- DeepSeek Coder (if you have GPU resources)
+- StarCoder 15B (good alternative)
+
+**For JavaScript/TypeScript:**
+- Qwen Coder (excellent for JS/TS)
+- CodeLLama 13B+ (needs more VRAM)
+- CodeGeex (specialized for JS)
+
+**For C/C++/Java:**
+- CodeLLama 70B (if you have resources)
+- StarCoder (surprisingly good for C++)
+- Specialized Java model if available
+
+## Benchmarking Your Setup
+
+Before deploying, benchmark completion quality and speed:
+
+```bash
+#!/bin/bash
+# Benchmark completion latency
+
+MODEL="codellama:7b"
+ITERATIONS=10
+
+echo "Benchmarking $MODEL..."
+
+for i in $(seq 1 $ITERATIONS); do
+  prompt="def factorial(n):"
+
+  time_start=$(date +%s%N)
+
+  curl -s http://127.0.0.1:11434/api/generate \
+    -d "{\"model\": \"$MODEL\", \"prompt\": \"$prompt\", \"stream\": false}" > /dev/null
+
+  time_end=$(date +%s%N)
+  time_ms=$(( (time_end - time_start) / 1000000 ))
+
+  echo "Iteration $i: ${time_ms}ms"
+done
+```
+
+Track:
+- Average latency (should be <2s for coding)
+- Completion quality (matches what you'd write)
+- GPU utilization (staying below 80%)
+- Memory usage (not exceeding available VRAM)
+
+## Troubleshooting Common Issues
+
+**Issue: Completions are very slow (>5s)**
+- Reduce context length: `--n-ctx 512` instead of 2048
+- Use quantized models (4-bit or 8-bit)
+- Add more VRAM or use smaller models
+
+**Issue: Out of memory errors**
+- Check model size: `ollama list`
+- Use 7B parameter models instead of 13B+
+- Enable 4-bit quantization in your model pull command
+
+**Issue: Completions don't match the current context**
+- Increase context window in your prompt
+- Provide more surrounding code to the API
+- Use a larger model with better code understanding
+
+## Integration with Other Tools
+
+**GitHub Copilot Comparison:**
+| Aspect | Local Completion | GitHub Copilot |
+|--------|------------------|-----------------|
+| Privacy | Complete (local) | Data sent to GitHub |
+| Cost | ~$100-200/year electricity | $10/month |
+| Quality | Good (7-13B models) | Excellent (larger models) |
+| Setup | 2-4 hours | 5 minutes |
+| Speed | 1-5 seconds/completion | <500ms |
+| Offline | Yes | No |
+
+Local completion makes sense when privacy matters more than raw speed, or when you want to avoid recurring subscription costs.
+
 
 ## Related Articles
 
@@ -250,6 +459,3 @@ Pick one tool from the options discussed and sign up for a free trial. Spend 30 
 **What is the learning curve like?**
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-
-
-{% endraw %}
