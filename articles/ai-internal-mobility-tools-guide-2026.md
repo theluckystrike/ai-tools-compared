@@ -58,29 +58,29 @@ class MobilityMatcher:
         self.graph = skill_graph
 
     def compute_match_score(
-        self, 
-        profile: SkillProfile, 
+        self,
+        profile: SkillProfile,
         role: RoleRequirement
     ) -> float:
         # Skill overlap calculation
         required_overlap = len(
             set(profile.skills) & set(role.required_skills)
         ) / len(role.required_skills)
-        
+
         # Experience alignment
         exp_score = self._calculate_experience_match(
             profile.experience_years,
             role.min_experience
         )
-        
+
         # Graph-based skill proximity
         graph_score = self.graph.proximity_score(
             profile.skills,
             role.required_skills
         )
-        
-        return (0.5 * required_overlap + 
-                0.3 * exp_score + 
+
+        return (0.5 * required_overlap +
+                0.3 * exp_score +
                 0.2 * graph_score)
 ```
 
@@ -97,16 +97,16 @@ Successful implementations require aggregating data from multiple sources. Commo
 ```python
 # Extracting skills from text using embeddings
 async def extract_skills_from_text(
-    text: str, 
+    text: str,
     model: EmbeddingModel
 ) -> List[Skill]:
     # Chunk text into meaningful sections
     chunks = text_chunker.split(text)
-    
+
     # Compare against known skill taxonomy
     embeddings = await model.encode(chunks)
     skill_embeddings = await model.encode(SKILL_TAXONOMY)
-    
+
     # Find semantic matches above threshold
     matches = cosine_similarity(embeddings, skill_embeddings)
     return [SKILL_TAXONOMY[i] for i in matches.max(axis=0) > 0.75]
@@ -123,30 +123,30 @@ A skill graph maps relationships between skills—prerequisites, related compete
 class SkillGraph:
     def __init__(self):
         self.graph = nx.DiGraph()
-    
+
     def add_skill(self, skill: str, category: str):
         self.graph.add_node(skill, category=category)
-    
+
     def add_relationship(
-        self, 
-        skill_a: str, 
-        skill_b: str, 
+        self,
+        skill_a: str,
+        skill_b: str,
         relationship: str
     ):
         self.graph.add_edge(
-            skill_a, skill_b, 
+            skill_a, skill_b,
             relationship=relationship
         )
-    
+
     def find_path(
-        self, 
-        from_skill: str, 
+        self,
+        from_skill: str,
         to_skill: str
     ) -> List[str]:
         try:
             return nx.shortest_path(
-                self.graph, 
-                from_skill, 
+                self.graph,
+                from_skill,
                 to_skill
             )
         except nx.NetworkXNoPath:
@@ -154,6 +154,32 @@ class SkillGraph:
 ```
 
 Skill graphs also power the "skills before role" approach—identifying which competencies are transferable and which are role-specific, helping employees make informed decisions about their career direction.
+
+## Vendor Landscape in 2026
+
+Several mature platforms now offer AI internal mobility as a managed service, reducing the burden of building from scratch:
+
+- **Gloat**: Strong on skills inference from work history; integrates with Workday and SAP SuccessFactors. Best for large enterprises (5,000+ employees).
+- **Eightfold.ai**: Uses a deep-learning talent graph; well-regarded for bias mitigation features and global language support.
+- **Phenom**: Combines internal mobility with talent acquisition in one platform; particularly good at surfacing gig or project-based opportunities inside the org.
+- **Fuel50**: Career pathing-first; integrates with LMS platforms like Cornerstone and Degreed for tightly coupled learning recommendations.
+- **Workday Opportunity Marketplace**: Native for Workday shops; lower integration cost if you're already on Workday HCM.
+
+Choosing between building in-house and buying depends primarily on two factors: the uniqueness of your skill taxonomy (niche technical organizations often need custom ontologies), and your data privacy posture (regulated industries frequently require on-premise or private-cloud deployments that most SaaS vendors can't accommodate out of the box).
+
+## Measuring Success
+
+Track these metrics after deployment to evaluate your internal mobility program's effectiveness:
+
+| Metric | Target Range | Why It Matters |
+|--------|-------------|----------------|
+| Internal hire rate | 25–40% of open roles | Signals talent retention and cost savings |
+| Time-to-fill (internal) | 30% faster than external | Validates matching efficiency |
+| Employee adoption | >60% profile completion | Low adoption means poor data quality |
+| Match acceptance rate | >35% of suggestions | Indicates recommendation relevance |
+| 12-month retention after mobility | >85% | Confirms moves are good fits |
+
+A low match acceptance rate is usually a data problem: profiles are stale, or the skill taxonomy doesn't reflect how employees actually describe their work. Prompt employees quarterly to update skills and weight recent activity more heavily than older records.
 
 ## Privacy and Ethics Considerations
 
@@ -171,16 +197,16 @@ def detect_bias(
     protected_attributes: Dict[str, List]
 ) -> Dict[str, float]:
     from scipy import stats
-    
+
     # Group by protected attribute
     groups = group_by(matches, protected_attributes)
-    
+
     # Calculate statistical parity
     acceptance_rates = {
         group: mean([m.score > 0.7 for m in matches])
         for group, matches in groups.items()
     }
-    
+
     # Report disparate impact
     return {
         group: rate / min(acceptance_rates.values())
@@ -206,9 +232,9 @@ For organizations just starting out, many turn to specialized vendors who handle
 ## Frequently Asked Questions
 
 
-**How long does it take to 2026: a practical?**
+**How long does it take to implement an AI internal mobility system?**
 
-For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
+For a SaaS vendor deployment, expect 8–16 weeks for configuration, data integration, and pilot testing. Custom builds take 4–9 months depending on team size and data readiness. The longest lead time is usually cleaning HRIS data and building a coherent skill taxonomy—plan for this before writing any matching code.
 
 
 **What are the most common mistakes to avoid?**
