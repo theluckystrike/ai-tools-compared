@@ -13,7 +13,17 @@ intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, comparison, kubernetes, network-policy]---
 
+
 Kubernetes NetworkPolicies are notoriously tricky to write correctly. A single misconfigured policy can lock down your entire cluster or leave critical security gaps. The YAML syntax is verbose, the logic is counter-intuitive (deny-all-then-allow-needed is safer than allow-all-then-deny-bad), and the interaction between multiple policies compounds the complexity. AI tools can help draft policies quickly, but they often generate permissive defaults that weaken security. This comparison shows how Claude, GPT-4, and GitHub Copilot handle NetworkPolicy generation, including real-world policy examples.
+
+## Key Takeaways
+
+- **Kubernetes has several options**: Calico: Open-source, supports both standard NetworkPolicy and extended Calico-specific policies.
+- Most network plugins support this.
+- **This is crucial because**: AI-generated policies often make incorrect assumptions.
+- **This default-deny-within-selection behavior confuses**: many developers.
+- **A common mistake**: writing policies that are too permissive because the developer didn't realize that once ANY policy matches a pod, all unspecified traffic is denied.
+- Works well in most environments.
 
 ## Understanding Kubernetes NetworkPolicy Fundamentals
 

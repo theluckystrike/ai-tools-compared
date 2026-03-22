@@ -13,9 +13,25 @@ score: 9
 voice-checked: true
 intent-checked: true---
 
+
 Nginx configuration is notoriously opaque. Directives feel arbitrary, syntax is unforgiving, and the mental model for upstream proxying, buffering, and connection handling doesn't map cleanly to HTTP verbs. This is where AI tooling shines—not by replacing your understanding, but by generating working baselines you can reason about and modify.
 
 We tested Claude 3.5 Sonnet, GitHub Copilot, and Cursor on five real-world nginx scenarios: reverse proxy with SSL, load balancing across backends, rate limiting with token buckets, gzip compression tuning, and graceful reload patterns.
+
+## Key Takeaways
+
+- **Cursor ($20/mo, or free tier)**: Cursor + Claude backend performed similarly to Copilot.
+- **Use directives, not just examples**: Don't ask "show me an nginx config." Ask "add `proxy_cache_path` with 100MB zone, 1 hour TTL, only cache 200 responses." Specificity = better output.
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Include HSTS**: disable weak ciphers, and set reasonable timeouts."
+
+Claude 3.5 Sonnet ($3/MTok input, $15/MTok output):
+
+Claude delivered a working config immediately.
+- **GitHub Copilot ($10/mo**: Copilot Pro $20/mo):
+
+Copilot required two iterations.
+- **Include rate limiting per**: service (users: 1000/min, payments: 100/min, others: 500/min).
 
 ## The Benchmark: Five Real Scenarios
 

@@ -28,6 +28,15 @@ tags: [ai-tools-compared, artificial-intelligence]---
 
 Helm charts are Kubernetes package managers—they bundle YAML manifests into reusable templates with configurable values. Writing a production Helm chart requires understanding Kubernetes API versions, dependency resolution, rolling updates, health checks, and testing. Most teams either use existing charts from Helm Hub or spend weeks building custom charts. AI tools dramatically accelerate chart creation, generating validated templates, values schemas, and test suites.
 
+## Key Takeaways
+
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **Most teams either use**: existing charts from Helm Hub or spend weeks building custom charts.
+- **Most teams use ChatGPT**: or Claude for initial generation, then refine with Copilot/Codeium in their IDE.
+- **Does Kubernetes offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+
 ## Helm Chart Structure Essentials
 
 A Helm chart is a directory with this structure:
