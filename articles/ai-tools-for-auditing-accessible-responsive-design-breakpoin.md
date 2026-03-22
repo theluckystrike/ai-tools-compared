@@ -9,6 +9,7 @@ permalink: /ai-tools-for-auditing-accessible-responsive-design-breakpoin/
 reviewed: true
 score: 8
 categories: [guides]
+voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]
 ---
 

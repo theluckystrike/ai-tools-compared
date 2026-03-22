@@ -181,6 +181,59 @@ Steve AI offers more extensive customization options, including custom watermark
 Raw Shorts provides basic customization through preset themes and limited branding options. The platform prioritizes simplicity over granular control, which suits use cases where quick generation matters more than detailed customization.
 
 
+## Side-by-Side Comparison Table
+
+| Feature | Steve AI | Raw Shorts |
+|---|---|---|
+| Video styles | Animated, whiteboard, live-action, infographic | Social media, ads, explainer shorts |
+| Typical generation time | 3-8 minutes | 1-3 minutes |
+| Max video length | 30+ minutes | 3-5 minutes |
+| Voice languages | 20+ languages | 5-8 languages |
+| Brand asset upload | Yes (logo, fonts, colors) | Limited (logo only) |
+| Webhook support | Yes | Polling only |
+| Template library size | 1,000+ | 300+ |
+| API complexity | Moderate | Simple |
+| Pricing model | Per minute of video | Per video generated |
+| Best content format | YouTube, explainer, training | TikTok, Reels, ads |
+
+
+## Pricing and Cost Modeling
+
+Understanding the cost per output helps you model API usage at scale.
+
+Steve AI charges based on video length and resolution. A typical 2-minute 1080p animated video costs approximately $0.50-$1.00 per generation through the API, depending on your subscription tier. At 100 videos per month, this works out to $50-100 in generation costs.
+
+Raw Shorts uses a per-video model better suited for short content. A 30-second social video costs roughly $0.10-$0.25, making bulk generation of short clips significantly cheaper. At 100 thirty-second clips per month, costs run $10-25.
+
+For pipelines generating both long-form explainers and social clips, using both platforms in parallel optimizes costs: Steve AI for the 5-minute product demo, Raw Shorts for the 30-second social teaser cut.
+
+
+## Building a Combined Pipeline
+
+When your use case spans both long-form and short-form content, a unified pipeline that routes to the right platform saves both time and cost:
+
+```python
+def route_video_request(script, target_platform, duration_seconds):
+    """Route video generation to the appropriate platform."""
+    if duration_seconds > 180 or target_platform in ["youtube", "training", "webinar"]:
+        # Long-form or professional content -> Steve AI
+        return create_steve_ai_video(
+            api_key=STEVE_AI_KEY,
+            script=script,
+            style="animated"
+        )
+    else:
+        # Short-form social content -> Raw Shorts
+        return create_raw_shorts_video(
+            api_key=RAW_SHORTS_KEY,
+            script=script,
+            video_type="social"
+        )
+```
+
+This routing logic keeps costs predictable and matches output quality to platform expectations. A 15-second Instagram Reel does not need the full rendering pipeline Steve AI applies to a 10-minute explainer.
+
+
 ## Integration Considerations
 
 
@@ -229,6 +282,40 @@ Your choice depends on the primary use case:
 
 
 For developers building video automation systems that require both long-form content and social media clips, combining both platforms in a single pipeline may provide optimal results. Use Steve AI for explainer videos and detailed content, while using Raw Shorts for quick social media updates and advertisements.
+
+
+## Error Handling and Webhook Integration
+
+Production video pipelines need resilient error handling. Steve AI's webhook support lets you avoid polling loops, which is important when generating dozens of videos simultaneously.
+
+```python
+from flask import Flask, request, jsonify
+
+app = Flask(__name__)
+
+@app.route('/webhooks/steve-ai', methods=['POST'])
+def handle_steve_ai_webhook():
+    """Receive Steve AI completion webhook."""
+    data = request.json
+    video_id = data.get('video_id')
+    status = data.get('status')
+    video_url = data.get('video_url')
+
+    if status == 'completed':
+        # Store the URL and notify downstream systems
+        save_video_result(video_id, video_url)
+        trigger_downstream_workflow(video_id)
+    elif status == 'failed':
+        error = data.get('error', 'Unknown error')
+        log_failure(video_id, error)
+        schedule_retry(video_id)
+
+    return jsonify({'received': True}), 200
+```
+
+Raw Shorts requires polling, but you can wrap it in a background task queue like Celery or RQ to avoid blocking your main application thread. For high-volume pipelines generating 50+ videos per day, webhook-based processing (Steve AI) reduces infrastructure load compared to continuous polling (Raw Shorts).
+
+Both platforms support retry logic for transient failures. Network timeouts during upload, temporary rendering queue backlogs, and stock asset licensing checks can all cause intermittent failures. Always implement exponential backoff before marking a job as failed.
 
 
 ## Related Articles

@@ -9,6 +9,7 @@ permalink: /ai-tools-for-generating-aws-cloudwatch-composite-alarm-confi/
 reviewed: true
 score: 7
 categories: [guides]
+voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]
 ---
 

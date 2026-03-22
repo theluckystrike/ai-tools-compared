@@ -31,6 +31,22 @@ Most teams establish branch naming conventions for good reason. A consistent pat
 
 When AI tools ignore these conventions, you spend time renaming branches or explaining to teammates why their automated scripts failed. Teaching your AI assistant about your conventions once saves repeated manual corrections.
 
+Branch naming consistency also pays dividends in audit trails. Many compliance frameworks require that code changes map clearly to tickets or requirements. When every branch follows a pattern like `feature/JIRA-4512-payment-retry-logic`, you get automatic traceability from Git history back to the original requirement without any extra tooling.
+
+
+## Common Branch Naming Patterns
+
+Before configuring your AI tools, it helps to document exactly which convention your team uses. The most widely adopted patterns are:
+
+| Pattern | Example | Best For |
+|---------|---------|----------|
+| type/description | feature/add-search | Small teams, simple projects |
+| type/ticket-description | fix/PROJ-99-null-pointer | Ticket-driven workflows |
+| team/type/description | frontend/feature/login-modal | Monorepos with multiple teams |
+| release/version | release/v2.4.0 | Release-branch strategies |
+
+Agreeing on the pattern before configuring your tools prevents conflicting instructions later. If some developers configure their AI to include ticket numbers while others don't, you end up with inconsistent branches even with configuration in place.
+
 
 ## Configuring Cursor with Branch Rules
 
@@ -61,6 +77,8 @@ Example: When implementing user profile editing, create `feature/user-profile-ed
 
 
 Cursor reads this configuration and applies it when generating branch names. The AI learns to match your prefix patterns and avoids special characters that cause Git issues.
+
+For Cursor's newer `.cursor/rules` directory format (used in Cursor 0.42+), you can also create a dedicated `branch-conventions.mdc` rule file with `alwaysApply: true` to ensure the rules load for every conversation regardless of which files are open.
 
 
 ## Claude Code Configuration
@@ -99,6 +117,8 @@ When I ask you to create a branch, apply these rules automatically.
 
 Place this file in your repository root. Claude Code checks for `CLAUDE.md` on each session and applies the conventions when generating branch names.
 
+You can also place a `CLAUDE.md` in your home directory (`~/.claude/CLAUDE.md`) for global instructions that apply across all projects. This is useful if you want a baseline set of naming rules that every project inherits, with project-level files overriding specifics.
+
 
 ## GitHub Copilot Custom Instructions
 
@@ -130,6 +150,23 @@ Add this to your `.vscode/settings.json`:
 
 
 Copilot uses these settings when suggesting branch names through Git commands or pull request descriptions. This approach works team-wide if you commit the settings file to your repository.
+
+For repositories using the `.github/copilot-instructions.md` format, add a dedicated section there as well:
+
+```markdown
+## Branch Naming
+
+Always suggest branch names using this format: `<type>/<description>`
+
+Valid types: feature, fix, hotfix, refactor, docs, test, chore
+
+Rules:
+- Lowercase only, hyphens between words
+- Maximum 50 characters total
+- Include JIRA ticket ID when user provides one (e.g., feature/PROJ-42-user-search)
+```
+
+Copilot Chat reads this file and uses it when you ask it to suggest a branch name, write a PR description, or draft commit messages that reference branch context.
 
 
 ## Windsurf Rules Configuration
@@ -196,6 +233,8 @@ With proper configuration, the AI generates:
 
 The consistent prefix helps your team quickly identify branch purpose during standups, code reviews, and when browsing your Git history.
 
+A well-configured AI will also handle edge cases correctly. Ask "what branch should I use for a production emergency fixing the checkout crash?" and a configured tool responds with `hotfix/checkout-crash` rather than a vague `emergency-fix` or an incorrectly typed `fix/checkout-crash` when your team's convention distinguishes hotfixes from regular fixes.
+
 
 ## Testing Your Configuration
 
@@ -213,6 +252,8 @@ After setting up branch naming rules, verify they work by requesting a branch na
 
 
 If the response doesn't match your conventions, add more explicit examples to your configuration file. AI tools learn from demonstration, so showing correct examples accelerates compliance.
+
+Run through a short test matrix covering each branch type: features, fixes, hotfixes, refactors, and documentation. This catches cases where the AI handles common types correctly but reverts to generic names for less-frequent branch types. Document any failures and add them as explicit examples to your configuration.
 
 
 ## Team-Wide Enforcement
@@ -247,6 +288,23 @@ fi
 
 
 This catches misnamed branches before they're pushed, complementing your AI configuration.
+
+For teams using GitHub or GitLab, add branch protection rules that restrict what patterns can be merged. GitHub's branch protection API lets you enforce naming patterns at the server level, so even branches created outside your AI tools must conform. This creates a two-layer defense: AI configuration prevents most misnamed branches from being created, and protection rules prevent any that slip through from being merged.
+
+
+## Keeping Configuration Files Maintained
+
+Configuration files drift out of date when teams iterate on conventions. Build a simple check into your quarterly engineering reviews: compare a sample of recent branch names against your documented convention to see whether the AI is complying.
+
+When your team updates its convention—adding a new branch type, changing the separator character, or adopting ticket-prefixed names—update all four configuration files at once. Create a checklist in your team wiki so the update is never half-done:
+
+- `.cursorrules` — update prefix list and examples
+- `CLAUDE.md` — update the naming table and rules section
+- `.vscode/settings.json` — update prefixes object
+- `.github/copilot-instructions.md` — update the branch naming section
+- Pre-commit hook regex — update the pattern to match new types
+
+Treating these files as living documentation, checked into version control alongside your code, ensures every developer and every AI assistant on the team works from the same playbook.
 
 
 ## Related Articles
