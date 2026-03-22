@@ -355,4 +355,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Using Claude Code for Backend and Cursor for Frontend Same](/ai-tools-compared/using-claude-code-for-backend-and-cursor-for-frontend-same-p/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
+```
 {% endraw %}
