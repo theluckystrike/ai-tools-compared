@@ -9,7 +9,7 @@ permalink: /ai-code-generation-quality-for-javascript-async-await-patter/
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 ---
