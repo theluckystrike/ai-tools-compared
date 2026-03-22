@@ -8,7 +8,7 @@ permalink: /ai-tools-for-generating-renovate-bot-configuration-for-autom/
 categories: [guides]
 tags: [ai-tools-compared, renovate, dependency-updates, automation, devops, artificial-intelligence]
 reviewed: true
-score: 7
+score: 9
 intent-checked: true
 voice-checked: true
 ---

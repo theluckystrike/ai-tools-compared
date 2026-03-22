@@ -9,7 +9,7 @@ score: 8
 voice-checked: true
 intent-checked: true
 category: "AI Tools"
-tags: ["OpenTelemetry", "Observability", "Instrumentation", "Tracing", "AI"]
+tags: [ai-tools-compared, OpenTelemetry, Observability, Instrumentation, Tracing, AI, artificial-intelligence]
 ---
 
 ## AI Tools for OpenTelemetry Instrumentation Generation
