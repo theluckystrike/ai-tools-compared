@@ -314,10 +314,51 @@ Different violations warrant different responses.
 | Low | Generic secrets patterns | Log only |
 
 
+## Aligning DLP Rules with Vendor Data Policies
+
+Not all AI vendors handle your code the same way. Before writing rules, understand what each approved vendor does with transmitted data:
+
+| Vendor | Training on your code | Data retention | Zero Data Retention option |
+|--------|----------------------|----------------|---------------------------|
+| GitHub Copilot (Business/Enterprise) | No (opt-out default) | 28 days logs | Yes, with Enterprise plan |
+| OpenAI API | No (API tier) | 30 days by default | Yes, via zero retention agreement |
+| Anthropic API | No | 30 days by default | Yes, with enterprise agreement |
+| Codeium (Teams) | No | Session only | Included in Teams plan |
+| Tabnine (Enterprise) | No | No retention | Included by default |
+
+Use this to inform your rule priorities. If your vendor already has zero data retention, your DLP rules can focus on compliance logging rather than hard blocks for low-severity patterns. If developers are using personal or free-tier accounts, treat every outbound request as if data retention is unlimited.
+
+
+## Enforcing Tool Approval at the Network Layer
+
+DLP rules inside browser extensions are only as reliable as the extension itself. A developer can uninstall an extension in seconds. Pair extension-level controls with network-layer enforcement:
+
+```yaml
+# Squid proxy ACL example for AI tool enforcement
+# /etc/squid/conf.d/ai-tools.conf
+
+# Approved AI coding endpoints
+acl approved_ai_api dstdomain api.github.com
+acl approved_ai_api dstdomain api.openai.com
+acl approved_ai_api dstdomain api.anthropic.com
+acl approved_ai_api dstdomain api.codeium.org
+
+# Block unapproved AI services
+acl unapproved_ai dstdomain api.deepseek.com
+acl unapproved_ai dstdomain generativelanguage.googleapis.com
+acl unapproved_ai dstdomain api.together.ai
+
+http_access deny unapproved_ai
+http_access allow approved_ai_api
+```
+
+Network-layer blocking means that even if a developer bypasses the extension, requests to unapproved vendors never leave the corporate perimeter. Combine this with certificate inspection on the approved endpoints to enforce content scanning at the proxy level.
+
+
 ## Testing Your DLP Rules
 
 
- testing ensures rules work without blocking legitimate traffic.
+Testing ensures rules work without blocking legitimate traffic.
 
 
 ```bash
@@ -337,7 +378,48 @@ node dlp-tester.js --code '// password example' --context comment
 ```
 
 
-Run tests against your actual codebase. False positives frustrate developers and encourage workarounds.
+Run tests against your actual codebase. False positives frustrate developers and encourage workarounds. A rule that developers bypass is worse than no rule at all, because it creates a false sense of security. Aim for a false positive rate below 2% before deploying any new pattern to production.
+
+Build a regression test suite that covers your top 50 most common code patterns. Run it automatically whenever rules are updated, and require a security team sign-off before any pattern change reaches developer machines.
+
+
+## Audit Logging and Incident Response
+
+DLP enforcement is only half the equation. Comprehensive audit logging enables incident response when a violation is detected or suspected.
+
+Configure your extension to forward violation events to your SIEM:
+
+```javascript
+async function sendViolationToSIEM(violation) {
+  const event = {
+    timestamp: new Date().toISOString(),
+    source: 'ai-coding-assistant-dlp',
+    severity: violation.level,         // critical, high, medium, low
+    developer_id: await getIdentifier(),
+    matched_rule: violation.ruleId,
+    data_type: violation.type,
+    destination_url: violation.url,
+    action_taken: violation.action,    // blocked, redacted, warned
+    code_snippet_hash: await sha256(violation.snippet)  // hash, never the content
+  };
+
+  await fetch('https://siem.corp.internal/api/events', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${SIEM_TOKEN}` },
+    body: JSON.stringify(event)
+  });
+}
+```
+
+Never log the actual matched content — only the hash and metadata. This preserves your ability to investigate incidents without creating a secondary data store of sensitive values that itself becomes a compliance risk.
+
+Define escalation thresholds that trigger automatic incident tickets:
+
+- Three or more high-severity violations from the same developer in one hour: auto-create P2 security ticket
+- Any critical violation (private key, database credential): immediate page to on-call security engineer
+- Spike in low-severity violations across the team (more than 20 in one hour): review for accidental inclusion of secrets in shared codebases
+
+Quarterly reviews of violation logs reveal patterns: which repositories trigger the most alerts, which developer groups need additional training, and which DLP rules generate excessive false positives. Use this data to continuously refine your rule set rather than leaving the initial configuration static.
 
 
 ## Related Articles
