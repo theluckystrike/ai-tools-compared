@@ -269,6 +269,31 @@ Ask Claude to generate migration test scripts that integrate with GitHub Actions
 name: Test Migrations
 on: [pull_request]
 jobs:
+<<<<<<< HEAD
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: test
+          POSTGRES_PASSWORD: test
+          POSTGRES_DB: test_migrations
+| Feature | Claude | GPT-4o | Copilot |
+|---------|--------|--------|---------|
+| Fixture-scoped setup/teardown | Yes | Often missing | No |
+| Rollback validation | Complete | Partial | Skipped |
+| Data integrity assertions | Yes | Sometimes | Rarely |
+| Lock-free migration checks | Yes | Skipped | Not attempted |
+| Java/Flyway support | Yes | Yes | Partial |
+| CI config generation | Accurate | Minor gaps | Basic |
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          alembic upgrade head  # Run migrations
+          pytest tests/test_migrations.py  # Test them
+          alembic downgrade -1  # Test rollback
+=======
  test:
  runs-on: ubuntu-latest
  services:
@@ -297,24 +322,52 @@ jobs:
  env:
  DATABASE_URL: postgresql://test:test@localhost:5432/test_migrations
  run: pytest tests/test_migrations/ -v --tb=short
+>>>>>>> 2d1c47c16fb62f06950641ed41edf031fb823a41
 ```
 
-Always test against the same database engine you run in production. A migration that works on SQLite can fail on PostgreSQL due to differences in constraint enforcement, column type handling, and transaction behavior.
+Claude correctly includes the postgres service definition with health checks and the proper sequence of upgrade → test → downgrade. This catches migrations that fail in CI before they reach production.
 
-## Tool Comparison Summary
+## Data Integrity Verification with Checksums
 
-| Capability | Claude | Copilot | ChatGPT |
-|------------|--------|---------|---------|
-| Forward migration tests | Comprehensive | Basic | Moderate |
-| Rollback tests | Yes | Rarely | Sometimes |
-| Data integrity checks | Yes | No | Rarely |
-| Lock-free validation | Yes | No | No |
-| Fixture-based isolation | Yes | Sometimes | No |
-| Java / Flyway support | Yes | Moderate | Yes |
-| CI YAML generation | Yes | Yes | Yes |
+For critical tables, ask Claude to generate checksum validation tests:
 
-## Related Articles
+```python
+def test_data_integrity_after_migration(migrated_db):
+    """Verify data hasn't been corrupted by the migration."""
+    # Compute checksum before
+    before_query = text("""
+        SELECT COUNT(*), SUM(id), MIN(created_at), MAX(created_at)
+        FROM users
+    """)
 
+    # Verify counts match after migration
+    with migrated_db.connect() as conn:
+        result = conn.execute(before_query)
+        count, id_sum, min_date, max_date = result.fetchone()
+
+    assert count == 2  # Our seeded rows
+    assert id_sum is not None
+```
+
+This catches silent data loss where rows are deleted without errors during the migration process.
+
+## Comparing Migration Tools
+
+| Aspect | Alembic | Flyway | Liquibase |
+|--------|---------|--------|-----------|
+| AI Test Generation | Excellent (Python) | Good (Java) | Good (Java/XML) |
+| Schema Tracking | SQL-based | SQL-based | XML/YAML-based |
+| Rollback Support | Full | Limited | Full |
+| Learning Curve | Moderate | Low | High |
+
+Claude generates best-in-class tests for all three, but Alembic benefits most because Claude understands Python well and can generate comprehensive pytest fixtures that properly manage database state.
+## Related Reading
+
+- [AI Tools for Automated Contract Testing](/ai-tools-compared/ai-tools-for-automated-contract-testing-2026/)
+- [AI-Powered CI/CD Pipeline Optimization](/ai-tools-compared/ai-powered-cicd-pipeline-optimization-2026/)
+- [How to Use AI for Kafka Configuration](/ai-tools-compared/how-to-use-ai-for-kafka-configuration-2026/)
+
+---
 - [AI Tools for Database Migration Review 2026](/ai-tools-compared/ai-tools-for-database-migration-review-2026/)
 - [AI Tools for Database Schema Migration Review 2026](/ai-tools-compared/ai-tools-for-database-schema-migration-review-2026/)
 - [Best AI Tools for Database Schema Migration Review 2026](/ai-tools-compared/best-ai-tools-for-database-schema-migration-review-2026/)

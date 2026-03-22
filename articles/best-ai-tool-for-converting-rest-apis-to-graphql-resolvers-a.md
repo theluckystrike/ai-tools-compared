@@ -13,6 +13,7 @@ intent-checked: true
 voice-checked: true
 ---
 
+{% raw %}
 Converting REST endpoints to GraphQL resolvers involves more than mechanical translation. REST maps verbs and nouns to URLs; GraphQL maps fields to resolver functions, with a schema that defines exactly what data is available and how to fetch it. AI tools have made this conversion significantly faster, but the quality varies. This guide covers which tools work, how to use them, and what to verify after conversion.
 
 ## Why REST-to-GraphQL Conversion Is Non-Trivial

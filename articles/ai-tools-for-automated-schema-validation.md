@@ -12,7 +12,6 @@ intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]
 ---
-
 {% raw %}
 
 Schema drift silently breaks APIs, corrupts databases, and causes midnight pages. Manual review catches maybe 60% of issues. AI-assisted schema validation can catch breaking changes, suggest fixes, and enforce conventions before code merges.
