@@ -235,6 +235,204 @@ Claude can generate a debugging checklist when you describe validation error pat
 | `invalid signature` | Wrong secret/key | Verify you're using correct key type for alg |
 | `jwt malformed` | Bad base64 encoding | Check for URL encoding of `.` or `+` in token |
 
+## Building a JWT Debugging Toolkit
+
+Create a reusable CLI tool that handles common JWT problems and surfaces them to Claude:
+
+```python
+#!/usr/bin/env python3
+# jwt_debugger.py — comprehensive JWT diagnostics
+
+import base64
+import json
+import sys
+import requests
+from typing import Tuple, Dict, Any
+import anthropic
+
+class JWTDebugger:
+    def __init__(self, token: str):
+        self.token = token.strip()
+        self.parts = token.split('.')
+
+    def is_valid_format(self) -> bool:
+        """Check if token has 3 parts."""
+        return len(self.parts) == 3
+
+    def decode_safely(self) -> Dict[str, Any]:
+        """Decode all parts without verification."""
+        if not self.is_valid_format():
+            return {"error": f"Token has {len(self.parts)} parts, expected 3"}
+
+        result = {}
+        for name, part in [("header", 0), ("payload", 1)]:
+            try:
+                # Fix base64url padding
+                padding = 4 - len(part) % 4
+                if padding != 4:
+                    part += '=' * padding
+                decoded = base64.urlsafe_b64decode(part)
+                result[name] = json.loads(decoded)
+            except Exception as e:
+                result[name] = {"decode_error": str(e)}
+
+        result["signature_length"] = len(self.parts[2])
+        result["signature_hex"] = self.parts[2][:32] + "..."
+        return result
+
+    def check_expiration(self) -> Dict[str, Any]:
+        """Check if token is expired."""
+        try:
+            payload = json.loads(
+                base64.urlsafe_b64decode(self.parts[1] + '==')
+            )
+            if 'exp' not in payload:
+                return {"has_exp": False}
+
+            from datetime import datetime
+            exp_time = datetime.fromtimestamp(payload['exp'])
+            now = datetime.now()
+            return {
+                "expires_at": exp_time.isoformat(),
+                "is_expired": now > exp_time,
+                "seconds_remaining": int((exp_time - now).total_seconds())
+            }
+        except Exception as e:
+            return {"error": str(e)}
+
+    def check_jwks(self, jwks_uri: str) -> Dict[str, Any]:
+        """Verify token kid against JWKS endpoint."""
+        try:
+            header = json.loads(
+                base64.urlsafe_b64decode(self.parts[0] + '==')
+            )
+            token_kid = header.get('kid')
+            if not token_kid:
+                return {"error": "Token has no kid in header"}
+
+            resp = requests.get(jwks_uri, timeout=5)
+            resp.raise_for_status()
+            jwks = resp.json()
+
+            available_kids = [k.get('kid') for k in jwks.get('keys', [])]
+            return {
+                "token_kid": token_kid,
+                "available_kids": available_kids,
+                "kid_found": token_kid in available_kids
+            }
+        except Exception as e:
+            return {"error": str(e)}
+
+    def create_analysis_prompt(self, decoded: Dict, expiration: Dict,
+                              jwks_check: Dict = None) -> str:
+        """Format all diagnostics into a Claude prompt."""
+        analysis = f"""JWT Diagnostics Report
+======================
+
+Decoded Token:
+{json.dumps(decoded, indent=2)}
+
+Expiration Status:
+{json.dumps(expiration, indent=2)}
+"""
+        if jwks_check and 'error' not in jwks_check:
+            analysis += f"\nJWKS Key Status:\n{json.dumps(jwks_check, indent=2)}"
+
+        return analysis + "\n\nWhat are the issues with this token and how do I fix them?"
+
+    def diagnose(self, jwks_uri: str = None) -> str:
+        """Run full diagnostics and get Claude's analysis."""
+        if not self.is_valid_format():
+            return f"Token format error: {len(self.parts)} parts instead of 3"
+
+        decoded = self.decode_safely()
+        expiration = self.check_expiration()
+        jwks_check = self.check_jwks(jwks_uri) if jwks_uri else None
+
+        prompt = self.create_analysis_prompt(decoded, expiration, jwks_check)
+
+        client = anthropic.Anthropic()
+        message = client.messages.create(
+            model="claude-opus-4-6",
+            max_tokens=1024,
+            messages=[{"role": "user", "content": prompt}]
+        )
+
+        return message.content[0].text
+
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("Usage: jwt_debugger.py <token> [--jwks-uri <uri>]")
+        sys.exit(1)
+
+    token = sys.argv[1]
+    jwks_uri = None
+
+    if "--jwks-uri" in sys.argv:
+        idx = sys.argv.index("--jwks-uri")
+        jwks_uri = sys.argv[idx + 1]
+
+    debugger = JWTDebugger(token)
+    analysis = debugger.diagnose(jwks_uri)
+    print(analysis)
+```
+
+Usage in production debugging:
+
+```bash
+# Diagnose a token from your app logs
+./jwt_debugger.py "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+
+# Diagnose with JWKS validation
+./jwt_debugger.py "eyJ..." --jwks-uri "https://auth.example.com/.well-known/jwks.json"
+
+# Output example from Claude:
+# Token is expired by 3 hours (exp: 2026-03-22T14:30:00)
+# The token was issued for audience 'api.old.example.com' but you're verifying against 'api.example.com'
+# Action: Re-authenticate user or update audience configuration
+```
+
+## Common JWT Issues Reference Table
+
+| Symptom | Root Cause | Test Command | Fix |
+|---------|-----------|--------------|-----|
+| 401 "invalid signature" | Wrong secret or key | Check if `alg` is RS256 or HS256 | Verify secret rotation, check JWKS endpoint |
+| "token expired" | exp claim in past | `jwt_debugger.py --check-exp` | Re-issue token, check server time sync |
+| "invalid audience" | aud mismatch | Decode payload, check `aud` field | Ensure verify() gets correct audience |
+| "invalid issuer" | iss mismatch | Decode payload, check `iss` field | Verify issuer URL matches exactly (trailing slash matters) |
+| "jwt malformed" | Base64 encoding issue | Run jwt_debugger.py first | Re-encode token, check for URL encoding artifacts |
+| "kid not found" | Key rotation issue | jwt_debugger.py --jwks-uri <uri> | JWKS cache too old, refresh or re-issue |
+
+## Testing JWT Integration with AI
+
+Prompt Claude to generate comprehensive test cases:
+
+```
+Generate Jest/Mocha test cases for verifying JWTs. Include:
+1. Valid token verification
+2. Expired token rejection
+3. Wrong audience rejection
+4. Algorithm confusion attack prevention
+5. Key rotation (kid mismatch)
+6. Clock skew tolerance
+
+Use Auth0 as the issuer for examples.
+```
+
+Claude generates the full test suite with mocks, edge cases, and security assertions.
+
+## JWT Tools Comparison
+
+| Tool | Debugging Speed | Accuracy | Learning Curve |
+|---|---|---|---|
+| Claude (with diagnostics) | Fast (30-60s) | 95%+ | Low (natural language) |
+| jwt.io web tool | Instant | Manual inspection | Low (visual) |
+| Manual base64 decode | Slow (2-5 min) | 70% (easy to misread) | High |
+| Dedicated JWT debuggers | Moderate (1-2 min) | 80% (limited context) | Moderate |
+
+Claude wins because it connects the dots between multiple issues (wrong audience + expired = authentication problem, not authorization).
+
 ## Related Reading
 
 - [How to Use AI to Debug Segmentation Faults in C and C++ Programs](/ai-tools-compared/how-to-use-ai-to-debug-segmentation-faults-in-c-and-cpp-prog/)
