@@ -32,7 +32,7 @@ Pricing optimization uses data to find the price point that balances volume and 
 - **Constraint handling** — respecting business rules like minimum margins or price floors
 
 
-Traditional rule-based pricing fails because it cannot handle the complexity of real-world demand curves. AI tools address this by learning from data and adapting to market changes.
+Traditional rule-based pricing fails because it cannot handle the complexity of real-world demand curves. AI tools address this by learning from data and adapting to market changes. The difference between static and dynamic pricing can be significant: retailers using AI-driven dynamic pricing typically see 2–5% revenue lift compared to rule-based approaches, with some verticals like hospitality and airlines achieving 10%+ improvements.
 
 
 ## Open-Source Libraries for Pricing Optimization
@@ -116,6 +116,26 @@ predictions = model.predict(future_prices)
 **Statsmodels** provides statistical models for more interpretable pricing analysis, including ARIMA for time-series demand forecasting and logit models for choice-based pricing.
 
 
+**EconML** from Microsoft Research is particularly useful for causal pricing analysis. It estimates heterogeneous treatment effects — in pricing terms, how different customer segments respond to price changes — using techniques like Double Machine Learning and Causal Forests. This helps avoid the trap of assuming all customers have the same price sensitivity.
+
+
+```python
+from econml.dml import CausalForestDML
+from sklearn.ensemble import RandomForestRegressor, RandomForestClassifier
+
+# Estimate how price changes affect quantity for different customer segments
+est = CausalForestDML(
+    model_y=RandomForestRegressor(),
+    model_t=RandomForestClassifier(),
+    n_estimators=200
+)
+est.fit(Y=quantity_sold, T=price, X=customer_features, W=controls)
+
+# Get segment-specific price elasticity
+elasticity_by_segment = est.effect(customer_features)
+```
+
+
 ## Commercial AI Pricing Platforms
 
 
@@ -147,7 +167,10 @@ recommended_price = monitor.calculate_relative_price(
 ```
 
 
-**Prisync** and **Competera** provide API-based competitive pricing monitoring with automated alerts.
+**Prisync** and **Competera** provide API-based competitive pricing monitoring with automated alerts. Prisync is better suited to e-commerce retailers tracking thousands of SKUs, while Competera adds AI-driven price recommendations on top of its monitoring layer.
+
+
+**Wiser** targets enterprise retailers and brands, combining competitive data with internal sell-through data to suggest prices that balance market position and inventory velocity.
 
 
 ### Dynamic Pricing Engines
@@ -182,6 +205,35 @@ async def get_price(request: PriceRequest):
         time_of_day=request.timestamp
     )
     return {"price": optimal_price, "confidence": 0.87}
+```
+
+
+## SaaS and Subscription Pricing
+
+
+Subscription businesses face a distinct challenge: pricing affects not just conversion but also churn, expansion revenue, and lifetime value. Tools like **ProfitWell** (acquired by Paddle) and **Maxio** (formerly Chargify + SaaSOptics) provide analytics specifically designed for subscription economics.
+
+
+**Paddle's Price Intelligently** service runs surveys and models willingness-to-pay across customer segments, using the Van Westendorp Price Sensitivity Meter alongside regression models to identify optimal price points for each tier.
+
+
+For teams building in-house, a logistic regression on historical plan conversion data gives a quick starting point:
+
+
+```python
+from sklearn.linear_model import LogisticRegression
+import numpy as np
+
+# Features: price_shown, plan_tier, customer_segment, trial_days
+X = df[['price', 'tier', 'segment', 'trial']]
+y = df['converted']
+
+model = LogisticRegression()
+model.fit(X, y)
+
+# Predict conversion probability at different price points
+test_prices = np.array([[29, 1, 2, 14], [39, 1, 2, 14], [49, 1, 2, 14]])
+conversion_probs = model.predict_proba(test_prices)[:, 1]
 ```
 
 
@@ -273,6 +325,20 @@ class PricingExperiment:
 ```
 
 
+## Tool Comparison at a Glance
+
+
+| Tool | Best For | Pricing | AI-Native |
+|------|----------|---------|-----------|
+| Scikit-learn + Optuna | Custom ML pipelines | Free (OSS) | No |
+| EconML | Causal pricing analysis | Free (OSS) | No |
+| Prisync | Competitor monitoring | $99+/month | Partial |
+| Competera | Retail AI recommendations | Custom | Yes |
+| Wiser | Enterprise retail | Custom | Yes |
+| Price Intelligently | SaaS willingness-to-pay | Custom | Yes |
+| Repricer Express | E-commerce repricing | $79+/month | Partial |
+
+
 ## Key Considerations
 
 
@@ -300,7 +366,7 @@ When implementing AI pricing tools, keep these factors in mind:
 For most developers, starting with open-source tools makes sense. Use scikit-learn for demand forecasting and Optuna for parameter optimization. Add competitive intelligence APIs as needed.
 
 
-If you need enterprise features like multi-channel consistency or sophisticated segmentation, commercial platforms like Prisync or custom-built solutions on top of your data warehouse provide more capability.
+If you need enterprise features like multi-channel consistency or sophisticated segmentation, commercial platforms like Prisync or Competera, or custom-built solutions on top of your data warehouse, provide more capability.
 
 
 The best choice depends on your specific requirements: e-commerce platforms have different needs than SaaS subscription pricing, which differs again from B2B negotiated pricing. Match your tool selection to your business model.
