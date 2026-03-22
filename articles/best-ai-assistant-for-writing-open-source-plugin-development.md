@@ -138,7 +138,7 @@ The guide includes initialization, configuration, command registration, and clea
 When assessing AI-generated plugin documentation, check several factors. Code examples must be syntactically correct and follow language best practices. Explanations should accurately describe how the plugin system works, including edge cases and error conditions.
 
 
-The documentation should answer common developer questions: How do I register my plugin? What methods must I implement? How do I handle configuration? How do I test my plugin? The best AI assistants address these questions comprehensively.
+The documentation should answer common developer questions: How do I register my plugin? What methods must I implement? How do I handle configuration? How do I test my plugin? The best AI assistants address these questions fully.
 
 
 Consider also the assistant's ability to maintain consistency across long documents. Plugin documentation often requires consistent terminology and formatting. Assistants with larger context windows typically produce more coherent long-form content.

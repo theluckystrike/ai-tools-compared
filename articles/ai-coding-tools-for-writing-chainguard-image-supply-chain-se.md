@@ -247,7 +247,7 @@ spec:
 
 ## Supply Chain Transparency Reporting
 
-Generate comprehensive reports of your supply chain security posture:
+Generate complete reports of your supply chain security posture:
 
 ```python
 # Generate supply chain security report
@@ -374,7 +374,7 @@ High false positive rates indicate policies need adjustment. Zero violations mig
 
 ## Conclusion
 
-The combination of Chainguard's hardened images and well-designed AI-assisted policies creates a robust defense-in-depth strategy for container supply chain security. Start with basic image verification policies, measure their impact, then progressively add runtime monitoring, network controls, and vulnerability scanning integration. The result is a supply chain security program that catches threats at multiple layers while maintaining operational efficiency.
+The combination of Chainguard's hardened images and well-designed AI-assisted policies creates a durable defense-in-depth strategy for container supply chain security. Start with basic image verification policies, measure their impact, then progressively add runtime monitoring, network controls, and vulnerability scanning integration. The result is a supply chain security program that catches threats at multiple layers while maintaining operational efficiency.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

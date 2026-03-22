@@ -402,13 +402,13 @@ Consider these factors when selecting an AI breakpoint auditing tool:
 | Tool | Best For | Learning Curve | Cost |
 |------|----------|-----------------|------|
 | Playwright + Custom AI | Full control, specific needs | Medium | Free (open source) |
-| axe DevTools Pro | Comprehensive WCAG coverage | Low | $$$ |
+| axe DevTools Pro | Detailed WCAG coverage | Low | $$$ |
 | Lighthouse CI | DevOps teams, CI integration | Low | Free |
 | WAVE Enterprise | Large organizations | Medium | $$$ |
 
 ## Conclusion
 
-AI-powered breakpoint accessibility auditing has matured significantly in 2026. The best approach combines automated CI checks for immediate feedback with periodic deep audits for comprehensive analysis. Tools like Playwright with AI analysis, axe DevTools Pro, Lighthouse, and WAVE each serve different needs—evaluate based on your team's size, technical expertise, and integration requirements.
+AI-powered breakpoint accessibility auditing has matured significantly in 2026. The best approach combines automated CI checks for immediate feedback with periodic deep audits for detailed analysis. Tools like Playwright with AI analysis, axe DevTools Pro, Lighthouse, and WAVE each serve different needs—evaluate based on your team's size, technical expertise, and integration requirements.
 
 The key is starting somewhere. Even basic breakpoint accessibility testing catches issues that would otherwise reach production and frustrate users who rely on assistive technologies. Begin with automated CI checks, add visual regression testing, then expand to include screen reader testing as your practice matures.
 

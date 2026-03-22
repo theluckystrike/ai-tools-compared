@@ -212,7 +212,7 @@ Start with the tool that matches your current IDE preference, as the productivit
 
 The migration from Spring Boot 2.x to 3.x introduced breaking changes that AI tools must understand: `javax.*` packages moved to `jakarta.*`, Spring Security's configuration API changed significantly, and actuator endpoints require explicit exposure configuration.
 
-When using AI tools for migration tasks, Claude Code handles the namespace change comprehensively. A prompt like "Migrate this Spring Boot 2.7 security configuration to Spring Boot 3.x" produces correctly updated imports, configuration class structure, and the new `SecurityFilterChain` bean pattern:
+When using AI tools for migration tasks, Claude Code handles the namespace change completely. A prompt like "Migrate this Spring Boot 2.7 security configuration to Spring Boot 3.x" produces correctly updated imports, configuration class structure, and the new `SecurityFilterChain` bean pattern:
 
 ```java
 // Spring Boot 3.x Security Configuration

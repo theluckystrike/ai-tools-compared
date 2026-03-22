@@ -340,7 +340,7 @@ jobs:
 This integrates documentation improvement into the normal review cycle without requiring writers to run any tools locally.
 
 
-## Error Handling and Production Robustness
+## Error Handling and Production Durability
 
 
 Both APIs return HTTP 429 errors when rate limits are hit. A retry-with-backoff pattern prevents cascading failures in batch pipelines:
