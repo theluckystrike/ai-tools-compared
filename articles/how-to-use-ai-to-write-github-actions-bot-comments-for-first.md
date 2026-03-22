@@ -32,6 +32,14 @@ Use AI to generate GitHub Actions bot comments that automatically welcome first-
 
 This guide shows you how to set up AI-generated bot comments in GitHub Actions that respond intelligently to pull requests from first-time contributors.
 
+## Key Takeaways
+
+- **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
+- **You can go further**: by incorporating repository context that helps AI generate more specific and useful guidance.
+- **Start with the basic**: version that uses a static AI prompt before adding dynamic context.
+- **If your community is**: casual and uses first names, include that instruction.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## Why Automated Welcome Messages Matter
 
 First-time contributors often feel uncertain about the contribution process. They may wonder whether their PR follows the correct format, if tests will pass, or how long they should wait for feedback. A well-crafted automated comment addresses these concerns immediately, reducing friction and encouraging continued participation.

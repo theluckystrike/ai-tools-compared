@@ -30,6 +30,15 @@ tags: [ai-tools-compared, workflow, artificial-intelligence]---
 
 GitHub Actions has become the backbone of modern CI/CD pipelines, but slow workflow run times can frustrate developers and delay deployments. Artificial intelligence offers powerful ways to analyze your workflows, identify bottlenecks, and suggest optimizations that would take hours to discover manually. This guide shows you how to use AI to improve your GitHub Actions performance.
 
+## Key Takeaways
+
+- **Most teams see 30-50%**: reductions in workflow runtime after implementing AI-suggested changes.
+- **Set a baseline by**: exporting the average run time for your three most-used workflows over the previous 30 days.
+- **Conditionally skip expensive jobs.**: Use `paths` filters on workflow triggers so that documentation-only changes do not trigger a full build-and-deploy pipeline.
+- **Pin action versions with**: SHA hashes. AI security tools increasingly flag workflows that use `@v4` floating tags because maintainers can push breaking changes at any time.
+- **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
+- **This guide shows you**: how to use AI to improve your GitHub Actions performance.
+
 ## Why Workflow Optimization Matters
 
 Every minute your CI/CD pipeline runs costs money in compute time and delays feedback to developers. A workflow that takes 30 minutes instead of 10 minutes means your team waits longer for test results, code reviews stall, and release cycles stretch out. In fast-paced development environments, these delays compound quickly.

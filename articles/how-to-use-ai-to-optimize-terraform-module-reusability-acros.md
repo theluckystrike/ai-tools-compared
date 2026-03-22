@@ -27,7 +27,15 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 Optimize Terraform modules by asking AI to identify duplication across modules, abstract common patterns, and generate reusable components. This guide shows the refactoring workflow that increases module reusability while maintaining backwards compatibility.
+
+## Key Takeaways
+
+- **The goal is creating**: modules that are flexible enough to handle variations while remaining simple to understand and use.
+- **Use AI to generate variations**: test different approaches, and refine based on feedback from teams using the modules.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **This guide covers the**: reusability challenge, using ai to analyze module structure, generating standardized variable schemas, with specific setup instructions
 
 ## The Reusability Challenge
 
