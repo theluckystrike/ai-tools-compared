@@ -27,9 +27,20 @@ score: 8
 intent-checked: true
 voice-checked: true---
 
+
 Use AI to tackle technical debt by identifying debt patterns, generating targeted refactorings, and using AI to write supporting tests. This guide shows the systematic workflow that pays down debt without breaking features.
 
 This guide shows you how to use AI tools systematically to tackle technical debt in your projects.
+
+## Key Takeaways
+
+- **Use AI to tackle**: technical debt by identifying debt patterns, generating targeted refactorings, and using AI to write supporting tests.
+- **Use your AI assistant**: to scan for common debt patterns: ```python # Prompt your AI assistant with this pattern """ Analyze this Python codebase for technical debt indicators: 1.
+- **Duplicate code patterns (functions**: >70% similar) 3.
+- Unused imports or variables
+5.
+- **- Set realistic goals**: Aim to reduce debt by 10-15% per sprint rather than attempting complete overhauls.
+- **This guide shows you**: how to use AI tools systematically to tackle technical debt in your projects.
 
 ## Identifying Technical Debt with AI Assistance
 

@@ -27,7 +27,17 @@ intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]---
 
+
 When AI coding assistants generate code that violates your team's linting rules, you waste time manually fixing formatting issues, import order, or naming convention violations. Setting up custom instructions that align AI output with your linting configuration eliminates these repetitive corrections and keeps your codebase consistent across all contributions—whether written by humans or AI.
+
+## Key Takeaways
+
+- **Most teams see it**: improve from 50–60% (AI output passing lint without changes) to 85–95% after one round of instruction refinement based on the patterns that keep failing.
+- **The difference between "follow**: our coding standards" and listing the actual rule names is the difference between a 40% reduction in lint violations and a 95% reduction.
+- **Consider a team that**: uses ESLint with the Airbnb configuration and a custom rule requiring specific import ordering.
+- **Create a test prompt**: ```
+Generate a React TypeScript component that fetches user data from /api/users/:id and displays the name and email.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
 ## Why Linting Rules Need AI Configuration
 

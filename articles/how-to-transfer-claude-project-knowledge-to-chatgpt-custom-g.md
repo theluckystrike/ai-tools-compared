@@ -16,9 +16,14 @@ voice-checked: true---
 
 {% raw %}
 
-
 Export your Claude Project's instructions and uploaded files, then restructure them as a Custom GPT system prompt and knowledge documents. Copy project instructions directly into the GPT's "Instructions" field, convert uploaded reference files into the GPT's knowledge base, and remap conversation starters to match ChatGPT's format. This guide covers the full export-to-import workflow with code examples for automating the conversion.
 
+## Key Takeaways
+
+- **Always use type hints**: write docstrings, and follow PEP 8.
+- **When writing async code**: prefer asyncio over threading.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **This guide covers understanding**: the platform differences, exporting your claude project knowledge, retrieving project instructions, with specific setup instructions
 
 ## Understanding the Platform Differences
 

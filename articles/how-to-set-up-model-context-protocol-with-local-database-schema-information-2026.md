@@ -33,6 +33,15 @@ The Model Context Protocol (MCP) enables AI assistants to connect directly to yo
 
 This guide walks you through configuring MCP to work with local database schema information, covering PostgreSQL, MySQL, and SQLite setups with practical examples you can implement immediately.
 
+## Key Takeaways
+
+- **Use database users with minimal required permissions**: typically read-only access to schema metadata and restricted query capabilities.
+- **Most modern AI coding**: assistants support MCP through a standardized interface.
+- **Replace `username`**: `password`, and `mydb` with your actual credentials and database name.
+- **Most AI assistants provide**: feedback when they successfully connect to configured MCP servers.
+- **In such cases**: you can configure the server to fetch only specific schemas or limit the metadata retrieval to essential tables.
+- **Ask the AI to**: "compare the user count between production and staging" and it can reference both databases simultaneously.
+
 ## Prerequisites and Initial Setup
 
 Before configuring MCP, ensure you have a recent version of an MCP-compatible AI client installed. Most modern AI coding assistants support MCP through a standardized interface. You will also need database connection details and appropriate access credentials.

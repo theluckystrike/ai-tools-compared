@@ -31,6 +31,19 @@ voice-checked: true---
 
 Transfer Notion AI database automations to Coda AI by exporting your Notion data via the API, recreating table structures in Coda, replacing external AI scripts with Coda's native `AI.Generate` formula columns, and rebuilding triggers using Coda's built-in automation system. The key architectural shift is that Notion relies on external services for AI processing, while Coda embeds AI directly into its formula language, eliminating the need for middleware scripts. This guide walks through the full migration with code examples for both platforms.
 
+## Key Takeaways
+
+- **The key distinction**: Notion AI operates mostly as an user-initiated action, while Coda AI allows you to embed AI responses directly into table columns using formulas.
+- **Action**: "Send notification" or "Send to Slack"
+
+For more complex workflows, Coda supports "Button" columns that users click to trigger sequences of actions.
+- **Export Notion data**: Use the Notion API or a tool like `notion2md` to export database contents
+
+2.
+- **Does Coda AI support**: Claude as well as GPT models? Coda's AI formula layer uses Coda's own AI infrastructure, which abstracts the underlying model.
+- **Coda tables use similar**: types but with different names and behaviors.
+- **Coda uses "lookup" columns**: and formulas that can reference other tables directly.
+
 ## Understanding the Architectural Differences
 
 Notion stores data in a block-based system with databases as collections of pages. Each page can contain blocks, and database properties provide structured fields. AI features in Notion work primarily through the Notion AI button, which generates content within pages, and through integrations with external AI services via the Notion API.
