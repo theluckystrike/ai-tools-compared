@@ -172,6 +172,13 @@ ollama pull codellama:7b
 
 From there, experiment with different models and tools to find your ideal setup. The local AI ecosystem continues evolving rapidly, with new models and optimizations appearing regularly.
 
+
+## Related Articles
+
+- [Best Self-Hosted AI Model for JavaScript TypeScript Code](/best-self-hosted-ai-model-for-javascript-typescript-code-gen/)
+- [Self-Hosted AI Assistant for Writing Docker Files Without](/self-hosted-ai-assistant-for-writing-docker-files-without-cl/)
+- [Self Hosted AI Coding Tools That Support Air Gapped](/self-hosted-ai-coding-tools-that-support-air-gapped-environm/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 
