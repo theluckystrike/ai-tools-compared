@@ -11,7 +11,8 @@ score: 8
 voice-checked: true
 categories: [guides]
 intent-checked: true
-tags: [ai-tools-compared, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, best-of, artificial-intelligence]
+---
 ---
 layout: default
 title: "Best AI Tool for Musicians Lyric Writing in 2026"
@@ -25,7 +26,8 @@ score: 8
 voice-checked: true
 categories: [guides]
 intent-checked: true
-tags: [ai-tools-compared, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, best-of, artificial-intelligence]
+---
 
 {% raw %}
 

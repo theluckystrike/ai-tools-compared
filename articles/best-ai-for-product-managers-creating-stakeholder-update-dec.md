@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, best-of, artificial-intelligence]
+---
 ---
 layout: default
 title: "Best AI for Product Managers Creating Stakeholder Update"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, best-of, artificial-intelligence]
+---
 
 {% raw %}
 

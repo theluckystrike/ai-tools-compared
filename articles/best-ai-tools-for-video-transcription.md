@@ -11,7 +11,8 @@ intent-checked: true
 voice-checked: true
 score: 8
 reviewed: true
-tags: [ai-tools-compared, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, best-of, artificial-intelligence]
+---
 ---
 layout: default
 title: "Best AI Tools for Video Transcription: A Developer's Guide"
@@ -25,7 +26,8 @@ intent-checked: true
 voice-checked: true
 score: 8
 reviewed: true
-tags: [ai-tools-compared, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, best-of, artificial-intelligence]
+---
 
 {% raw %}
 

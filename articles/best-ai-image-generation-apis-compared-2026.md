@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison, best-of, artificial-intelligence, api]---
+tags: [ai-tools-compared, comparison, best-of, artificial-intelligence, api]
+---
 ---
 layout: default
 title: "Best AI Image Generation APIs Compared 2026"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison, best-of, artificial-intelligence, api]---
+tags: [ai-tools-compared, comparison, best-of, artificial-intelligence, api]
+---
 
 {% raw %}
 

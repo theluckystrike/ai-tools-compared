@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, best-of, artificial-intelligence]
+---
 ---
 layout: default
 title: "Best AI Tool for Product Managers Writing User Stories"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, best-of, artificial-intelligence]
+---
 
 
 Writing user stories from customer feedback is one of those tasks that sounds straightforward but quickly becomes a bottleneck. You gather feedback from support tickets, user interviews, and survey responses—and then face a wall of unstructured text that needs to become actionable, testable backlog items.

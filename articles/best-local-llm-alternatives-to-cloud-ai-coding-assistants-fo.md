@@ -11,7 +11,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 9
-tags: [ai-tools-compared, best-of, artificial-intelligence, llm]---
+tags: [ai-tools-compared, best-of, artificial-intelligence, llm]
+---
 ---
 layout: default
 title: "Best Local LLM Alternatives to Cloud AI Coding Assistants"
@@ -25,7 +26,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 9
-tags: [ai-tools-compared, best-of, artificial-intelligence, llm]---
+tags: [ai-tools-compared, best-of, artificial-intelligence, llm]
+---
 
 {% raw %}
 

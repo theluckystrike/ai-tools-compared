@@ -12,7 +12,8 @@ score: 7
 categories: [comparisons]
 intent-checked: false
 voice-checked: false
-tags: [ai-tools-compared, comparison, accessibility, frontend, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, comparison, accessibility, frontend, best-of, artificial-intelligence]
+---
 ---
 
 layout: default
@@ -27,7 +28,8 @@ score: 7
 categories: [comparisons]
 intent-checked: false
 voice-checked: false
-tags: [ai-tools-compared, comparison, accessibility, frontend, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, comparison, accessibility, frontend, best-of, artificial-intelligence]
+---
 
 
 | Tool | Accessibility Knowledge | ARIA Support | WCAG Compliance | Pricing |

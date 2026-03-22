@@ -11,7 +11,8 @@ score: 9
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, comparison, best-of, artificial-intelligence]
+---
 
 
 For quick one-off regex patterns, ChatGPT or Claude work best—describe what you need in plain English and refine conversationally. For complex patterns where you have example strings but struggle to articulate the rule, use a dedicated tool like Regex.ai that reverse-engineers patterns from your examples. For the tightest feedback loop, use Regex101 with AI assistance so you can generate and test patterns in the same interface. Here is how each approach handles common regex tasks.

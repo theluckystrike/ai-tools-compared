@@ -9,7 +9,8 @@ categories: [guides]
 reviewed: true
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, accessibility, cookie-consent, gdpr, wcag, react, components, best-of]---
+tags: [ai-tools-compared, accessibility, cookie-consent, gdpr, wcag, react, components, best-of]
+---
 ---
 layout: default
 title: "Best AI Tool for Generating Accessible Cookie Consent"
@@ -21,7 +22,8 @@ categories: [guides]
 reviewed: true
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, accessibility, cookie-consent, gdpr, wcag, react, components, best-of]---
+tags: [ai-tools-compared, accessibility, cookie-consent, gdpr, wcag, react, components, best-of]
+---
 
 
 | Tool | Accessibility Knowledge | ARIA Support | WCAG Compliance | Pricing |

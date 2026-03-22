@@ -11,7 +11,8 @@ score: 9
 categories: [best-of]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, best-of, artificial-intelligence]
+---
 ---
 layout: default
 title: "Best AI Coding Assistant for React Development"
@@ -25,7 +26,8 @@ score: 9
 categories: [best-of]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, best-of, artificial-intelligence]
+---
 
 {% raw %}
 

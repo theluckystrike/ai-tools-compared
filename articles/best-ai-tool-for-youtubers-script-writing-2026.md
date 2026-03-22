@@ -11,7 +11,8 @@ score: 8
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, best-of, artificial-intelligence]
+---
 ---
 layout: default
 title: "Best AI Tool for YouTubers Script Writing in 2026"
@@ -25,7 +26,8 @@ score: 8
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, best-of, artificial-intelligence]
+---
 
 
 | Tool | Script Quality | Hook Generation | SEO Optimization | Pricing |
