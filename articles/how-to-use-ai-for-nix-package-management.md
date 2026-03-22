@@ -29,7 +29,7 @@ Use the new-style lib.mkOption and lib.types. Do not use <nixpkgs> import syntax
 Assume nix-darwin for macOS or NixOS modules where relevant.
 ```
 
-This prevents Claude from generating pre-flake patterns like `import <nixpkgs> {}` which don't work in flake contexts.
+This prevents Claude from generating pre-flake patterns like `import <nixpkgs> {}` which don't work in flake contexts. Without this context, Claude and GPT-4o will produce a mix of legacy and Flakes syntax that fails on first `nix build`.
 
 ## Writing a Derivation with stdenv
 
@@ -80,6 +80,64 @@ rustPlatform.buildRustPackage rec {
 Claude correctly uses `rustPlatform.buildRustPackage` instead of raw `stdenv.mkDerivation` for Rust projects. It separates `nativeBuildInputs` (build-time) from `buildInputs` (runtime), which is important for cross-compilation.
 
 One thing to correct: the `cargoHash` needs to be computed. Tell Claude: "The cargoHash is unknown — set it to the empty hash so Nix prints the correct one." Claude will then produce `cargoHash = lib.fakeHash;`, which triggers Nix to print the real hash on first build.
+
+## Python Package Derivation
+
+Claude handles Python packaging well when you specify the build system:
+
+**Prompt:**
+```text
+Write a Nix derivation for a Python package that uses pyproject.toml with hatchling
+as the build backend. The package is called "mylib", version 1.2.0, depends on
+requests and pydantic at runtime. Tests use pytest.
+```
+
+**Claude output:**
+
+```nix
+{ lib
+, python3
+, fetchPypi
+}:
+
+python3.pkgs.buildPythonPackage rec {
+  pname = "mylib";
+  version = "1.2.0";
+  pyproject = true;
+
+  src = fetchPypi {
+    inherit pname version;
+    hash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+  };
+
+  build-system = [
+    python3.pkgs.hatchling
+  ];
+
+  dependencies = [
+    python3.pkgs.requests
+    python3.pkgs.pydantic
+  ];
+
+  nativeCheckInputs = [
+    python3.pkgs.pytest
+  ];
+
+  checkPhase = ''
+    runHook preCheck
+    pytest tests/
+    runHook postCheck
+  '';
+
+  meta = with lib; {
+    description = "My Python library";
+    license = licenses.mit;
+    homepage = "https://github.com/example/mylib";
+  };
+}
+```
+
+The `pyproject = true` flag is required for pyproject.toml-based packages in recent nixpkgs. Claude correctly distinguishes `build-system` (build backend) from `dependencies` (runtime) from `nativeCheckInputs` (test-only). GPT-4o frequently puts pytest in `buildInputs`, which makes it a runtime dependency rather than a test-only one.
 
 ## Flake devShell
 
@@ -148,6 +206,16 @@ Write a flake.nix with a devShell for a Python 3.12 project. Include:
 ```
 
 This is a production-quality flake. The `shellHook` handles PostgreSQL initialization and auto-start, sets `PGDATA` to the project directory so it doesn't conflict with system Postgres, and uses `postgresql_16` from nixpkgs directly.
+
+### Adding direnv Integration
+
+For direnv auto-loading, add a `.envrc` file:
+
+```bash
+use flake
+```
+
+Then run `direnv allow` once. The shell environment activates automatically on `cd`. Claude knows to add this instruction when asked — but note that `direnv` itself must be installed on the host; the flake can include it in `buildInputs` for teams that manage their machines with NixOS or nix-darwin.
 
 ## NixOS Module Configuration
 
@@ -224,12 +292,65 @@ in {
 
 Claude adds systemd hardening options (`NoNewPrivileges`, `ProtectSystem`) and the `ReadWritePaths` override — details that most generated configs miss.
 
+## Overlays for Package Overrides
+
+Overlays are one of the trickier Nix concepts. Claude handles simple overlays correctly but can produce composition issues with complex ones.
+
+**Prompt:**
+```text
+Write a Nix overlay that overrides the version of ripgrep to 14.1.1 with a specific
+hash. The overlay should be applicable in both a flake and a non-flake context.
+```
+
+**Claude output:**
+
+```nix
+# overlays/ripgrep.nix
+final: prev: {
+  ripgrep = prev.ripgrep.overrideAttrs (old: rec {
+    version = "14.1.1";
+    src = prev.fetchFromGitHub {
+      owner = "BurntSushi";
+      repo = "ripgrep";
+      rev = version;
+      hash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+    };
+    cargoDeps = old.cargoDeps.overrideAttrs (lib.const {
+      name = "${old.pname}-${version}-vendor.tar.gz";
+      inherit src;
+      outputHash = "sha256-BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB=";
+    });
+  });
+}
+```
+
+To use in a flake:
+
+```nix
+nixpkgs.overlays = [ (import ./overlays/ripgrep.nix) ];
+pkgs = import nixpkgs { inherit system overlays; };
+```
+
+The `cargoDeps` override is needed for Rust packages — Claude includes it correctly, while GPT-4o typically forgets it, producing a derivation that fails because the vendored dependencies hash doesn't match the new source.
+
 ## Where AI Struggles with Nix
 
 - **`cargoHash` and `vendorHash`** — always need to be determined via Nix's hash mismatch output; AI can't compute these
 - **Overlays** — Claude sometimes writes syntactically correct overlays that don't compose properly with other overlays
 - **NixOS module options types** — `types.attrs` is almost always wrong; ask Claude to use `types.attrsOf` with a submodule
 - **Cross-compilation** — `depsBuildBuild`, `depsBuildHost`, etc. are often mixed up
+- **Fixed-output derivations** — Claude sometimes sets the wrong `outputHashMode` for FODs; `recursive` is correct for directories, `flat` for single files
+
+## Tool Comparison
+
+| Task | Claude | GPT-4o | Copilot |
+|------|--------|--------|---------|
+| Rust derivation | Correct | Usually correct | Partial |
+| Python pyproject.toml | Correct | `buildInputs` confusion | Incomplete |
+| devShell + PostgreSQL | Production-quality | Functional | Basic |
+| NixOS module with hardening | Yes | Misses hardening | No |
+| Overlay with cargoDeps | Correct | Misses cargoDeps | Not attempted |
+| Flakes vs legacy distinction | Consistent with context | Mixes styles | N/A |
 
 ## Related Reading
 
