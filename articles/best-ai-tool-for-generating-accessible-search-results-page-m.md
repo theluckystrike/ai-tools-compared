@@ -9,7 +9,7 @@ permalink: /best-ai-tool-for-generating-accessible-search-results-page-m/
 categories: [guides]
 tags: [ai-tools-compared, accessibility, search, markup, web-development, best-of, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: false
 voice-checked: false
 ---

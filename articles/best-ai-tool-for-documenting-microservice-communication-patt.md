@@ -8,7 +8,7 @@ author: "AI Tools Compared"
 permalink: /best-ai-tool-for-documenting-microservice-communication-patt/
 categories: [tutorials]
 voice-checked: true
-tags: [ai-tools-compared, microservices, documentation, architecture, dependencies, service-mesh]
+tags: [ai-tools-compared, microservices, documentation, architecture, dependencies, service-mesh, best-of, artificial-intelligence]
 ---
 reviewed: true
 score: 8
