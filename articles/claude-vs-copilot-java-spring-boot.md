@@ -108,6 +108,10 @@ resilience4j:
 
 Claude generates the full solution including the `FallbackFactory` (which provides the Throwable cause, better than `Fallback`) and the corresponding `application.yml`. Copilot requires separate prompts for each piece.
 
+### Why FallbackFactory Matters
+
+The distinction between `fallback` and `fallbackFactory` is important: `fallback` gives you a static default response, while `fallbackFactory` exposes the actual cause of the failure. This matters for logging and for distinguishing between timeout failures and downstream service errors. Claude picks this up correctly when given a well-formed prompt; Copilot tends to default to the simpler `fallback` form unless you explicitly ask for it.
+
 ## Task 2: Spring WebFlux Reactive Service
 
 **Prompt to Claude:** "Write a reactive Spring WebFlux endpoint that fetches user data and their orders concurrently using Reactor, handles errors gracefully, and returns a combined DTO."
@@ -181,6 +185,12 @@ public class UserWebClient {
 ```
 
 Copilot generates basic `WebClient` calls but typically doesn't add `Mono.zip` for concurrent calls, fallback behavior on order fetch failure, or the retry configuration. It requires multiple prompts.
+
+### Reactive Patterns Claude Gets Right
+
+Claude consistently produces the concurrent fetch pattern (`Mono.zip`) rather than sequential blocking calls. It also applies `onErrorResume` with type-specific error handling — treating 404 as a hard failure (rethrow) versus an order service outage as a soft failure (empty list). Copilot in isolation often generates blocking `block()` calls or misses the distinction between service-unavailable and not-found errors.
+
+The `retryWhen(Retry.backoff(...))` configuration on the `UserWebClient` is also notable: Claude includes exponential backoff out of the box for network-level exceptions (`WebClientRequestException`) while filtering out 4xx client errors that shouldn't be retried. This is a subtle but critical distinction.
 
 ## Task 3: Docker Compose for Multi-Service Development
 
