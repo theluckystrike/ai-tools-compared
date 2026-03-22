@@ -7,7 +7,7 @@ last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /chatgpt-canvas-not-saving-changes-fix-2026/
 reviewed: true
-score: 8
+score: 9
 categories: [troubleshooting]
 intent-checked: true
 voice-checked: true

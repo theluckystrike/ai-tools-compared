@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /chatgpt-custom-gpt-not-following-instructions/
 categories: [troubleshooting, guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, chatgpt]

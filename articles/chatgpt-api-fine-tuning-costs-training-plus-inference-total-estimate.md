@@ -7,7 +7,7 @@ last_modified_at: 2026-03-18
 author: "theluckystrike"
 permalink: /chatgpt-api-fine-tuning-costs-training-plus-inference-total-estimate/
 reviewed: true
-score: 8
+score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true

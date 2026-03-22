@@ -9,7 +9,7 @@ permalink: /chatgpt-api-token-pricing-calculator-how-to-estimate-monthly/
 categories: [guides]
 tags: [ai-tools-compared, tools, chatgpt, api]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---

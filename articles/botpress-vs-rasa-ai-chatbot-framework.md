@@ -9,7 +9,7 @@ permalink: /botpress-vs-rasa-ai-chatbot-framework/
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
-score: 8
+score: 9
 reviewed: true
 tags: [ai-tools-compared, comparison, artificial-intelligence]
 ---
