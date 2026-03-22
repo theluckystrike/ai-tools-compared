@@ -16,6 +16,20 @@ voice-checked: true---
 
 Large codebase refactoring is the hardest thing to do with AI assistance. The context window fills fast, changes ripple across files in unexpected ways, and a partial refactor is often worse than no refactor. This guide documents what actually works when using Claude Code and Cursor Composer for refactoring 50,000+ line codebases.
 
+## Key Takeaways
+
+- **Cursor has better IDE**: integration (inline diffs, file tree context) but depends on you knowing which files to include.
+- **Use shell tools to**: find all affected files 2.
+- **Keep UserService delegating to**: AuthService for backward compatibility.
+- **Now migrate services/ to**: use the async repositories." # Session 3: "The db, repository, and service layers are async.
+- **After each step**: run pytest and fix failures before continuing."
+
+# Phase 3: Use Cursor for complex individual files
+
+# Phase 4: Final verification
+claude "Run the full test suite, mypy, and ruff.
+- **The context window fills fast**: changes ripple across files in unexpected ways, and a partial refactor is often worse than no refactor.
+
 ## The Core Problem: Context Limits
 
 Both tools run into the same constraint: you can't fit a large codebase into one context window. The strategies differ in how they work around this.

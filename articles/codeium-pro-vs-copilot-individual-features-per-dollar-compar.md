@@ -27,7 +27,17 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 This guide provides an overview to help you understand and make informed decisions about this topic.
+
+## Key Takeaways
+
+- **GitHub Copilot Individual runs**: $10 per month or $100 per year, giving a slight edge in base pricing.
+- **At face value**: Copilot is $2 cheaper per month.
+- **For developers working on**: large codebases with complex relationships, Codeium Pro's context awareness justifies the extra $2.
+- **Most developers would benefit from trying both tools**: their free tiers are generous enough for meaningful evaluation.
+- **It also offers a**: free tier for verified students and maintainers, though the feature set is limited compared to the paid version.
+- **For JetBrains users specifically**: Codeium often feels snappier while Copilot provides more mature integration.
 
 ## Pricing Overview
 
