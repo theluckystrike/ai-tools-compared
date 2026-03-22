@@ -12,24 +12,31 @@ intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]
 ---
+---
+layout: default
+title: "How to Build an AI Code Review"
+description: "Build a GitHub Actions bot that runs AI code review on pull requests using Claude or GPT-4, posts inline comments, and enforces custom review rules"
+date: 2026-03-21
+author: theluckystrike
+permalink: /how-to-build-ai-code-review-bot/
+categories: [guides]
+reviewed: true
+score: 8
+intent-checked: true
+voice-checked: true
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 {% raw %}
 
 An AI code review bot runs on every pull request, posts inline comments on specific lines, and enforces the rules your team cares about — without a human having to review every diff. This guide builds a working GitHub Actions bot that reviews PRs using Claude, posts comments as a GitHub App, and runs in under 60 seconds.
 
-## Table of Contents
+## Key Takeaways
 
-- [Architecture](#architecture)
-- [Step 1: Create the GitHub App](#step-1-create-the-github-app)
-- [Step 2: GitHub Actions Workflow](#step-2-github-actions-workflow)
-- [Step 3: The Review Script](#step-3-the-review-script)
-- [Customizing Review Rules](#customizing-review-rules)
-- [Cost at Scale](#cost-at-scale)
-- [Handling Large PRs](#handling-large-prs)
-- [Security-Focused Review Rules](#security-focused-review-rules)
-- [Measuring Review Quality](#measuring-review-quality)
-- [Pros and Cons of AI Code Review Bots](#pros-and-cons-of-ai-code-review-bots)
-- [Related Reading](#related-reading)
+- **This guide builds a**: working GitHub Actions bot that reviews PRs using Claude, posts comments as a GitHub App, and runs in under 60 seconds.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+- **This guide covers architecture, step 1**: create the github app, step 2: github actions workflow, with specific setup instructions
 
 ## Architecture
 
@@ -305,13 +312,14 @@ Log every review outcome and periodically retune your prompts based on which com
 
 The best approach combines AI review for mechanical checks (security, error handling, performance) with human review for architecture, readability, and business logic.
 
-## Related Articles
+## Related Reading
 
-- [How to Use AI to Write GitHub Actions Bot Comments](/ai-tools-compared/how-to-use-ai-to-write-github-actions-bot-comments-for-first/)
-- [Copilot vs Claude Code for Writing GitHub Actions Cicd](/ai-tools-compared/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
-- [AI Tools for Generating GitHub Actions Workflows (2)](/ai-tools-compared/ai-tools-github-actions-workflows/)
-- [Free AI Code Review Tools That Integrate With GitHub (2026)](/ai-tools-compared/free-ai-code-review-tools-that-integrate-with-github-2026/)
-- [Best AI Tools for Generating GitHub Actions Composite](/ai-tools-compared/ai-tools-for-generating-github-actions-composite-actions-2026/)
+- [AI Code Review Automation Tools Comparison](/ai-tools-compared/ai-code-review-automation-tools-comparison/)
+- [How to Build an AI-Powered Code Linter](/ai-tools-compared/how-to-build-ai-powered-code-linter/)
+- [AI Tools for Automated Changelog Generation 2026](/ai-tools-compared/ai-tools-for-automated-changelog-generation-2026/)
+- [Remote Developer Code Review Workflow Tools for Teams](https://theluckystrike.github.io/remote-work-tools/remote-developer-code-review-workflow-tools-for-teams-without-synchronous-overlap/)
+- [Async Code Review Process Without Zoom Calls Step by Step](https://theluckystrike.github.io/remote-work-tools/async-code-review-process-without-zoom-calls-step-by-step/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

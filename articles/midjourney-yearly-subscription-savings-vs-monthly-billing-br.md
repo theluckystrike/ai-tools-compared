@@ -19,6 +19,15 @@ tags: [ai-tools-compared, comparison]
 
 Midjourney offers subscription plans that cater to different usage levels, from casual creators to professional studios. Understanding the difference between monthly and yearly billing can help you optimize your creative tool budget. This breakdown provides concrete numbers and practical guidance for developers and power users evaluating their options.
 
+## Key Takeaways
+
+- **For a freelance designer**: billing $100/hour, the $72 annual savings on a Standard plan represents roughly 43 minutes of billable work.
+- **The Mega plan yearly**: option at $96/month (effectively) provides 60 fast hours, enough for most MVP visual needs.
+- **With approximately 20% savings across all tiers, the question isn't whether yearly billing saves money**: it's whether you'll use the service enough to justify the commitment.
+- **Will you generate images**: at least 6 months this year? → Choose yearly billing 2.
+- **The $72-$144 annual savings**: compounds nicely when reinvested in other tools or training.
+- **The yearly plans provide**: approximately 20-21% savings compared to paying monthly.
+
 ## Midjourney Subscription Tiers Overview
 
 

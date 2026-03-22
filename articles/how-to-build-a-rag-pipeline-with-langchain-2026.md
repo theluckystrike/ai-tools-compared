@@ -13,27 +13,34 @@ intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared]
 ---
+---
+layout: default
+title: "How to Build a RAG Pipeline with LangChain 2026"
+description: "Step-by-step guide to building a production RAG pipeline with LangChain, including chunking strategies, vector stores, retrieval tuning, and evaluation methods"
+date: 2026-03-21
+last_modified_at: 2026-03-21
+author: theluckystrike
+permalink: /how-to-build-a-rag-pipeline-with-langchain-2026/
+categories: [guides]
+reviewed: true
+score: 9
+intent-checked: true
+voice-checked: true
+tags: [ai-tools-compared]
+---
 
 {% raw %}
 
 Retrieval-Augmented Generation (RAG) lets you ground LLM responses in your own documents. LangChain remains the most widely adopted framework for wiring together the components — loaders, splitters, embeddings, vector stores, and retrievers. This guide walks through building a production-quality RAG pipeline from scratch with real code, covering the decisions that actually affect answer quality.
 
-## Table of Contents
+## Key Takeaways
 
-- [What a RAG Pipeline Does](#what-a-rag-pipeline-does)
-- [Install Dependencies](#install-dependencies)
-- [Step 1: Load and Split Documents](#step-1-load-and-split-documents)
-- [Step 2: Embed and Store](#step-2-embed-and-store)
-- [Step 3: Build the Retriever](#step-3-build-the-retriever)
-- [Step 4: Wire the Chain](#step-4-wire-the-chain)
-- [Step 5: Add a Reranker for Better Precision](#step-5-add-a-reranker-for-better-precision)
-- [Evaluating RAG Quality](#evaluating-rag-quality)
-- [Common Production Issues](#common-production-issues)
-- [Advanced: Hybrid Search for Better Recall](#advanced-hybrid-search-for-better-recall)
-- [Chunking Strategy Deep Dive](#chunking-strategy-deep-dive)
-- [Prompt Optimization for Factuality](#prompt-optimization-for-factuality)
-- [Performance Optimization Techniques](#performance-optimization-techniques)
-- [Scaling RAG to Production](#scaling-rag-to-production)
+- **Retrieval**: Given a user query, embed it and find the most semantically similar chunks.
+- **For better recall**: use MMR (Maximum Marginal Relevance) to trade off relevance against diversity.
+- **In testing across hundreds of datasets**: hybrid search typically improves recall by 15–25% over vector-only retrieval.
+- **Often a hybrid**: semantic boundaries with a 512-token size limit—performs best.
+- **Embedding model selection**: `text-embedding-3-small` (62M dimensions) costs $0.02 per million tokens.
+- **`text-embedding-3-large` (3072 dimensions) costs**: $0.13 per million tokens.
 
 ## What a RAG Pipeline Does
 
@@ -41,7 +48,7 @@ A RAG pipeline has three stages:
 
 1. **Indexing** — Load documents, split into chunks, embed them, store in a vector database.
 2. **Retrieval** — Given a user query, embed it and find the most semantically similar chunks.
-3. **Generation** — Pass the retrieved chunks as context to a LLM and return its response.
+3. **Generation** — Pass the retrieved chunks as context to an LLM and return its response.
 
 The bottleneck in most broken RAG systems is retrieval quality, not the LLM. If the wrong chunks come back, no amount of prompt tuning fixes the answer.
 

@@ -13,16 +13,33 @@ reviewed: true
 intent-checked: true
 tags: [ai-tools-compared]
 ---
+---
+layout: default
+title: "How to Export Midjourney Images Before Downgrading Plan"
+description: "A practical developer guide for exporting Midjourney images before downgrading your subscription plan in 2026. Includes API methods, batch export"
+date: 2026-03-16
+last_modified_at: 2026-03-16
+author: theluckystrike
+permalink: /how-to-export-midjourney-images-before-downgrading-plan-2026/
+categories: [guides]
+score: 8
+voice-checked: true
+reviewed: true
+intent-checked: true
+tags: [ai-tools-compared]
+---
 
 
 Midjourney offers powerful AI image generation, but subscription costs add up quickly. If you're considering downgrading your plan—whether moving from Pro to Standard or Standard to Basic—you need to export your generated images first. Once you downgrade, you lose access to your previous generations stored on Midjourney's servers. This guide covers practical methods for developers and power users to export Midjourney images before downgrading, with code examples and automation strategies.
 
-## Table of Contents
+## Key Takeaways
 
-- [Why Export Before Downgrading](#why-export-before-downgrading)
-- [Prerequisites](#prerequisites)
-- [Best Practices Before Downgrading](#best-practices-before-downgrading)
-- [Troubleshooting](#troubleshooting)
+- **The 2026 pricing structure**: shows the practical impact: Pro plan users get 2000+ fast hours monthly with full access to all features and image storage.
+- **This guide covers practical**: methods for developers and power users to export Midjourney images before downgrading, with code examples and automation strategies.
+- **Downgrading to Standard reduces**: this to 200 fast hours and limits certain advanced features.
+- **Right-click the image and**: select "Save Image" or use the reaction buttons (envelope icon) to have Midjourney DM you the image file.
+- **Then use a library**: like discord.js to listen for Midjourney bot responses and extract image URLs.
+- **Click any image to view it full-size**: then use the download button to save it.
 
 ## Why Export Before Downgrading
 
@@ -464,9 +481,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Midjourney Basic Plan Image Limits Per Month: Real Numbers](/ai-tools-compared/midjourney-basic-plan-image-limits-per-month-real-numbers-20/)
 - [How to Export Dall E Generated Images at Full Resolution](/ai-tools-compared/how-to-export-dall-e-generated-images-at-full-resolution-before-leaving/)
-- [Midjourney Standard vs Pro Plan: Is Stealth Mode Worth](/ai-tools-compared/midjourney-standard-vs-pro-plan-stealth-mode-worth-extra-cost/)
 - [Ideogram vs Midjourney for Text in Images Compared](/ai-tools-compared/ideogram-vs-midjourney-for-text-in-images-compared/)
-- [Switching from Midjourney to Dall E 3 Prompt Adaptation](/ai-tools-compared/switching-from-midjourney-to-dall-e-3-prompt-adaptation-guid/)
+- [Midjourney Basic Plan Image Limits Per Month: Real Numbers](/ai-tools-compared/midjourney-basic-plan-image-limits-per-month-real-numbers-20/)
+- [Midjourney Standard vs Pro Plan: Is Stealth Mode Worth](/ai-tools-compared/midjourney-standard-vs-pro-plan-stealth-mode-worth-extra-cost/)
+- [AI Tools for Generating Website Hero Images Compared](/ai-tools-compared/ai-tools-for-generating-website-hero-images-compared/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

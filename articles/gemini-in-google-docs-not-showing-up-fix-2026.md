@@ -19,6 +19,20 @@ tags: [ai-tools-compared, troubleshooting]
 
 To fix Gemini not showing up in Google Docs, first verify your Google One AI Premium, Gemini Business, or Gemini Enterprise subscription is active at one.google.com. Then clear your browser cache and cookies for docs.google.com, disable privacy-focused extensions (uBlock Origin, Privacy Badger) that block the Gemini iframe, and test in an incognito window. For Workspace accounts, have your domain admin enable "Gemini in Docs and Gmail" under Admin console > Apps > Google Workspace > Gemini.
 
+## Key Takeaways
+
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **This is the most common reason users see nothing**: no error, no disabled button, just a missing sidebar icon.
+- **Does Gemini offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Current administrators should look for**: Apps → Google Workspace → Gemini for Workspace → User setting
+
+
+For administrators enabling Gemini across an organization:
+
+1.
+- **Click "User settings" and**: select the relevant organizational unit 4.
+
 ## Understanding Gemini Integration Requirements
 
 
