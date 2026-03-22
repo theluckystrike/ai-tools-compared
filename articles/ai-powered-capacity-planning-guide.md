@@ -34,6 +34,8 @@ Traditional capacity planning uses linear extrapolation. AI-assisted planning ad
 - Multi-metric correlation (CPU and memory together predict saturation)
 - Natural language interpretation of complex forecasts
 
+The biggest practical gain is speed. A human analyst reviewing 90 days of CloudWatch data across 20 services might take a full day. The pipeline below runs end-to-end in about four minutes and surfaces the same insights in a structured format that engineers can act on immediately.
+
 ## Step 1: Collect and Prepare Metrics
 
 ```python
@@ -312,6 +314,98 @@ Keep it concise — this is a weekly standup artifact, not a novel."""
 report = generate_capacity_report(["order-service", "inventory-service", "payment-service"])
 # Send to #infra-capacity Slack channel
 ```
+
+## Step 6: Anomaly-Driven Capacity Alerts
+
+Forecasts tell you what to expect under normal growth. Anomaly detection tells you when something unexpected is happening right now. Combining both gives you both strategic and tactical visibility:
+
+```python
+import numpy as np
+from scipy import stats
+
+def detect_capacity_anomalies(
+    df: pd.DataFrame,
+    metric_col: str,
+    window_hours: int = 24,
+    z_threshold: float = 3.0
+) -> list[dict]:
+    """
+    Flag data points more than z_threshold standard deviations from
+    the rolling mean. Returns a list of anomaly dicts for downstream alerting.
+    """
+    rolling_mean = df[metric_col].rolling(window=window_hours).mean()
+    rolling_std  = df[metric_col].rolling(window=window_hours).std()
+
+    z_scores = (df[metric_col] - rolling_mean) / rolling_std.replace(0, np.nan)
+    anomalies = df[z_scores.abs() > z_threshold].copy()
+    anomalies["z_score"] = z_scores[anomalies.index]
+
+    return anomalies[["Timestamp", metric_col, "z_score"]].to_dict("records")
+
+
+def explain_anomalies(service_name: str, anomalies: list[dict]) -> str:
+    """Ask Claude to suggest root causes for detected anomalies."""
+    if not anomalies:
+        return "No anomalies detected in the observation window."
+
+    response = client.messages.create(
+        model="claude-opus-4-6",
+        max_tokens=600,
+        messages=[{
+            "role": "user",
+            "content": f"""Service: {service_name}
+The following metric anomalies were detected in the last 24 hours:
+{json.dumps(anomalies, indent=2, default=str)}
+
+Suggest three likely root causes ranked by probability,
+and for each one describe one diagnostic step an on-call engineer
+should take immediately."""
+        }]
+    )
+    return response.content[0].text
+```
+
+Integrate this into your existing alerting stack by routing the output to PagerDuty or posting it directly to a Slack channel:
+
+```python
+import urllib.request
+
+def post_to_slack(webhook_url: str, message: str) -> None:
+    payload = json.dumps({"text": message}).encode()
+    req = urllib.request.Request(
+        webhook_url,
+        data=payload,
+        headers={"Content-Type": "application/json"},
+        method="POST"
+    )
+    urllib.request.urlopen(req, timeout=5)
+
+# Wire it together
+for service in ["order-service", "inventory-service", "payment-service"]:
+    df = fetch_service_metrics(service)["cpu_utilization"]
+    if df.empty:
+        continue
+    anomalies = detect_capacity_anomalies(df, "Average")
+    if anomalies:
+        explanation = explain_anomalies(service, anomalies)
+        post_to_slack(
+            os.environ["SLACK_CAPACITY_WEBHOOK"],
+            f":warning: *Capacity anomaly — {service}*\n{explanation}"
+        )
+```
+
+## Choosing Your Forecasting Horizon
+
+Different decisions require different planning horizons. A rough guide:
+
+| Horizon | Forecast Method | Action |
+|---|---|---|
+| 0-4 hours | Real-time anomaly detection | Page on-call, trigger auto-scaling |
+| 1-7 days | Prophet with weekly seasonality | Pre-warm instances, adjust autoscaling bounds |
+| 30 days | Prophet with growth events | Right-size reserved instances |
+| 90+ days | Trend extrapolation + LLM judgment | Budget submissions, architecture changes |
+
+For horizons beyond 30 days, statistical confidence intervals widen significantly. At that point the LLM's role shifts from interpreting numbers to synthesizing qualitative signals — roadmap commitments, sales pipeline, seasonal business patterns — into a coherent planning narrative.
 
 ## Related Reading
 
