@@ -308,6 +308,89 @@ Add a coverage gate that triggers AI test generation when coverage drops:
   run: python scripts/ai_coverage_gap.py
 ```
 
+## Validating AI-Generated Tests Before Committing
+
+AI-generated tests can pass coverage metrics while testing the wrong thing — asserting `result is not None` instead of verifying the actual return value. Before committing generated tests, run a mutation testing check:
+
+```bash
+pip install mutmut
+
+# Run mutation testing only on AI-generated test files
+mutmut run \
+  --paths-to-mutate src/payment_processor.py \
+  --tests-dir tests/ai_generated \
+  --runner "pytest tests/ai_generated -x -q"
+
+mutmut results
+```
+
+Mutation testing modifies your source code in small ways (flipping `>` to `>=`, removing a `not`, etc.) and checks if your tests catch those mutations. AI-generated tests often miss mutations in boundary conditions — this surfaces them before you ship.
+
+A mutation survival rate above 30% signals the generated tests need manual review and strengthening.
+
+## Prioritizing Coverage by Risk
+
+Not all uncovered code is equally important. A 40%-covered error handler in your payment flow is far more dangerous than a 40%-covered utility formatter. Add a risk weighting step to the gap analysis:
+
+```python
+HIGH_RISK_PATTERNS = [
+    "payment", "auth", "refund", "delete", "admin",
+    "permission", "credential", "token", "charge"
+]
+
+def score_gap_risk(gap: dict) -> float:
+    base_score = 1.0 - gap["coverage"]  # more uncovered = higher score
+    risk_multiplier = 1.0
+
+    # Boost risk score for high-value paths
+    name_lower = (gap["function"] + gap["file"]).lower()
+    if any(pattern in name_lower for pattern in HIGH_RISK_PATTERNS):
+        risk_multiplier = 3.0
+
+    # Boost for functions with many uncovered branches
+    if len(gap["missing_lines"]) > 10:
+        risk_multiplier *= 1.5
+
+    return base_score * risk_multiplier
+
+def prioritize_gaps(gaps: list[dict]) -> list[dict]:
+    for gap in gaps:
+        gap["risk_score"] = score_gap_risk(gap)
+    return sorted(gaps, key=lambda x: x["risk_score"], reverse=True)
+```
+
+Running the AI test generator against the top 10 risk-weighted gaps rather than the bottom 10 coverage gaps produces tests with far more security value.
+
+## Tracking Coverage Trends Over Time
+
+Coverage percentage is a lagging indicator. What matters is whether coverage is trending up or down as new code gets merged. Store historical coverage data and alert on drops:
+
+```yaml
+# .github/workflows/coverage-trend.yml
+- name: Store coverage snapshot
+  run: |
+    COVERAGE=$(python -c "
+    import json
+    d = json.load(open('coverage.json'))
+    print(int(d['totals']['percent_covered']))
+    ")
+    DATE=$(date +%Y-%m-%d)
+    echo "${DATE},${COVERAGE}" >> coverage-history.csv
+    git add coverage-history.csv
+    git commit -m "chore: coverage snapshot ${DATE} (${COVERAGE}%)" || true
+
+- name: Alert on coverage drop
+  run: |
+    PREV=$(tail -2 coverage-history.csv | head -1 | cut -d',' -f2)
+    CURR=$(tail -1 coverage-history.csv | cut -d',' -f2)
+    if [ "$((CURR - PREV))" -lt "-3" ]; then
+      echo "::error::Coverage dropped by more than 3% (${PREV}% → ${CURR}%)"
+      exit 1
+    fi
+```
+
+This creates an auditable record of coverage health alongside your commit history, making it easy to correlate coverage drops with specific feature branches.
+
 ## Related Reading
 
 - [Claude Code Coverage Reporting Setup Guide](/ai-tools-compared/claude-code-coverage-reporting-setup-guide/)
