@@ -211,20 +211,110 @@ def update_item(
 Codeium handles authorization checks and partial updates reasonably well. The free tier makes it attractive for developers comparing options without immediate cost commitment.
 
 
+## Async Endpoint Generation
+
+
+A critical differentiator across AI tools is how well they generate async FastAPI endpoints. Synchronous endpoints block the event loop under I/O load; async endpoints handle concurrent requests efficiently.
+
+
+Claude Code and Cursor both produce async-native patterns when you specify this requirement:
+
+
+```python
+from fastapi import FastAPI, Depends, HTTPException
+from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.future import select
+from pydantic import BaseModel
+from typing import List
+
+app = FastAPI()
+
+class OrderSummary(BaseModel):
+    id: int
+    total: float
+    status: str
+
+    class Config:
+        from_attributes = True
+
+@app.get("/orders", response_model=List[OrderSummary])
+async def list_orders(
+    skip: int = 0,
+    limit: int = 20,
+    db: AsyncSession = Depends(get_async_db)
+):
+    result = await db.execute(
+        select(Order).offset(skip).limit(limit)
+    )
+    return result.scalars().all()
+```
+
+
+When prompting any AI tool for FastAPI code, explicitly include "async" in your request. Without this cue, Copilot and Codeium often default to synchronous patterns even when your project uses async SQLAlchemy.
+
+
+## Pagination and Filtering Patterns
+
+
+A common FastAPI need is paginated list endpoints with query-parameter filtering. Here is the pattern that Claude Code generates well when prompted for "a paginated product list endpoint with optional category and price range filters":
+
+
+```python
+from fastapi import FastAPI, Depends, Query
+from pydantic import BaseModel
+from typing import Optional, List
+
+class ProductListResponse(BaseModel):
+    items: List[ProductSummary]
+    total: int
+    page: int
+    pages: int
+
+@app.get("/products", response_model=ProductListResponse)
+async def list_products(
+    category: Optional[str] = Query(None, description="Filter by category"),
+    min_price: Optional[float] = Query(None, ge=0, description="Minimum price"),
+    max_price: Optional[float] = Query(None, ge=0, description="Maximum price"),
+    page: int = Query(1, ge=1),
+    page_size: int = Query(20, ge=1, le=100),
+    db: AsyncSession = Depends(get_async_db)
+):
+    query = select(Product)
+    if category:
+        query = query.where(Product.category == category)
+    if min_price is not None:
+        query = query.where(Product.price >= min_price)
+    if max_price is not None:
+        query = query.where(Product.price <= max_price)
+
+    count_result = await db.execute(select(func.count()).select_from(query.subquery()))
+    total = count_result.scalar()
+
+    offset = (page - 1) * page_size
+    result = await db.execute(query.offset(offset).limit(page_size))
+    items = result.scalars().all()
+
+    return ProductListResponse(
+        items=items,
+        total=total,
+        page=page,
+        pages=(total + page_size - 1) // page_size
+    )
+```
+
+
+This level of completeness—covering count queries, offset calculation, and response model structure—is where Claude Code and Cursor outperform Copilot and Codeium, which tend to produce simpler skeletons that require more manual completion.
+
+
 ## Comparison Summary
 
 
 | Tool | Strengths | Best For |
-
 |------|-----------|----------|
-
-| Claude Code | Pydantic v2 support, complex validation | Terminal-focused developers |
-
+| Claude Code | Pydantic v2 support, complex validation, async patterns | Terminal-focused developers |
 | GitHub Copilot | Inline suggestions, editor integration | Quick incremental changes |
-
-| Cursor | Multi-file editing, chat interface | Complex endpoint scaffolding |
-
-| Codeium | Free tier available | Budget-conscious projects |
+| Cursor | Multi-file editing, chat interface, project context | Complex endpoint scaffolding |
+| Codeium | Free tier available, solid CRUD generation | Budget-conscious projects |
 
 
 ## Practical Recommendations
