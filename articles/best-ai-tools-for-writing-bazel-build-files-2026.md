@@ -358,6 +358,17 @@ For teams with custom Starlark rules, Claude handles macro generation well:
 Write a Starlark macro called service_library that wraps go_library and go_test,
 sets default visibility to internal_services, and enforces that every service
 has a corresponding test file.
+## Cross-Language Dependencies and External Rules
+
+**Prompt:**
+```text
+Write BUILD files for a monorepo with:
+- Go service at //services/api
+- Python worker at //services/worker
+- Shared protobuf definitions at //proto
+- External dependencies: gRPC, FastAPI
+
+Show the full dependency chain.
 ```
 
 **Claude output:**
@@ -396,6 +407,153 @@ def service_library(name, srcs, deps = [], test_srcs = None, **kwargs):
 ```
 
 The macro pattern is useful for enforcing organizational conventions across hundreds of packages without duplicating the same boilerplate in every BUILD file.
+# //proto/BUILD
+load("@rules_proto//proto:defs.bzl", "proto_library")
+load("@io_bazel_rules_go//proto:def.bzl", "go_proto_library")
+load("@com_github_grpc_grpc//bazel:python_rules.bzl", "py_grpc_library", "py_proto_library")
+
+proto_library(
+    name = "api_proto",
+    srcs = ["api.proto"],
+    visibility = ["//visibility:public"],
+)
+
+go_proto_library(
+    name = "api_go_proto",
+    importpath = "github.com/example/api/proto/api/v1",
+    proto = ":api_proto",
+    compilers = ["@io_bazel_rules_go//proto:go_grpc"],
+    visibility = ["//visibility:public"],
+)
+
+py_proto_library(
+    name = "api_py_proto",
+    deps = [":api_proto"],
+    visibility = ["//visibility:public"],
+)
+
+py_grpc_library(
+    name = "api_py_grpc",
+    srcs = [":api_proto"],
+    deps = [":api_py_proto"],
+    visibility = ["//visibility:public"],
+)
+
+---
+
+# //services/api/BUILD
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "api_lib",
+    srcs = ["main.go", "handler.go"],
+    importpath = "github.com/example/services/api",
+    deps = [
+        "//proto:api_go_proto",
+        "@com_github_grpc_grpc_go//grpc",
+        "@org_golang_google_grpc//:go_default_library",
+    ],
+)
+
+go_binary(
+    name = "api",
+    embed = [":api_lib"],
+    visibility = ["//visibility:public"],
+)
+
+---
+
+# //services/worker/BUILD
+load("@rules_python//python:defs.bzl", "py_binary", "py_library")
+
+py_library(
+    name = "worker_lib",
+    srcs = ["main.py", "tasks.py"],
+    deps = [
+        "//proto:api_py_grpc",
+        requirement("fastapi"),
+        requirement("grpcio"),
+    ],
+)
+
+py_binary(
+    name = "worker",
+    main = "main.py",
+    srcs = ["main.py"],
+    deps = [":worker_lib"],
+    visibility = ["//visibility:public"],
+)
+```
+
+Claude correctly separates proto, go_proto, py_proto, and py_grpc libraries so Go and Python consumers pull only what they need.
+
+## Conditional Rules and Selects
+
+**Prompt:**
+```text
+I have platform-specific code: Windows uses one library, Linux another.
+Write a BUILD file using select() to choose the right dependency.
+```
+
+**Claude output:**
+
+```python
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "platform_lib",
+    srcs = ["main.go"] + select({
+        "@io_bazel_rules_go//go/platform:linux": ["linux_specific.go"],
+        "@io_bazel_rules_go//go/platform:windows": ["windows_specific.go"],
+        "//conditions:default": ["generic.go"],
+    }),
+    deps = select({
+        "@io_bazel_rules_go//go/platform:linux": [
+            "@org_golang_google_protobuf//:protobuf",
+        ],
+        "@io_bazel_rules_go//go/platform:windows": [
+            "@com_microsoft_windows_libs//:kernel32",
+        ],
+        "//conditions:default": [],
+    }),
+)
+```
+
+The `select()` function chooses based on conditions (platform, OS, build flags). It's cleaner than separate BUILD files per platform.
+
+## Build Cache and Remote Execution
+
+**Prompt:**
+```text
+I want Bazel to cache build outputs so rebuilds are fast.
+Should I use local cache or remote cache (Bazelisk, BuildBuddy)?
+```
+
+Claude explains:
+
+```
+Local cache (default):
+- ~/.bazel/cache/ stores outputs from previous builds
+- Same machine rebuilds are instant
+- Disk cost: typically 1-5GB for medium projects
+
+Remote cache options:
+1. Bazelisk + local cache
+   bazel build --disk_cache=/mnt/bazel-cache //...
+   Good for: build farms, CI/CD pipelines
+
+2. BuildBuddy (hosted)
+   bazel build --bes_backend=grpcs://api.buildbuddy.io:1985
+   Good for: teams, sharing cache across machines
+
+3. Self-hosted remote cache
+   bazel build --remote_cache=http://localhost:9090
+   Good for: on-premises deployments
+
+Performance impact:
+- Cache hit: 1 second (instant)
+- Cache miss: full build (5-30 minutes depending on project size)
+```
 
 ## Related Reading
 

@@ -222,6 +222,155 @@ print(mj_prompt)
 # Output: a cozy coffee shop interior, warm lighting, wooden furniture, rainy outside --ar 1:1 --v 6
 ```
 
+## Advanced Midjourney Parameters for Production Workflows
+
+When building applications that generate images at scale, understanding advanced parameters becomes essential. Beyond basic aspect ratio and version selection, several parameters control subtle but important behaviors.
+
+**The `--quality` parameter** controls how much effort Midjourney spends rendering. Values range from 0.25 to 2. Lower values render faster (useful for rapid iteration), while higher values produce more detailed outputs at the cost of longer processing time:
+
+```text
+/imagine prompt: professional product photography, watch, studio lighting --v 6 --q 2 --ar 1:1
+```
+
+This produces a higher-quality but slower render. For product photography applications, this trade-off often justifies the longer wait time.
+
+**The `--repeat` parameter** generates multiple variations in a single batch. Instead of queueing five separate prompt submissions, you can use:
+
+```text
+/imagine prompt: character portrait, fantasy armor, dramatic lighting --v 6 --repeat 4
+```
+
+This generates four variations simultaneously, reducing queue time for batch operations.
+
+**The `--cref` parameter** enables character reference consistency. If you're generating a character across multiple scenes, use the same character reference to maintain consistency:
+
+```text
+/imagine prompt: character standing in forest, sunny day --v 6 --cref https://cdn.midjourney.com/char_abc123 --cw 50
+```
+
+The `--cw` (character weight) parameter controls how closely the model adheres to the reference, with values from 0 (ignore) to 100 (strictly follow).
+
+## Building API Wrappers for Multi-Model Image Generation
+
+If your application needs to support both DALL-E and Midjourney simultaneously, building a unified wrapper simplifies prompt handling:
+
+```python
+class ImageGenerator:
+    def __init__(self, dalle_client, midjourney_client):
+        self.dalle = dalle_client
+        self.mj = midjourney_client
+
+    def generate(self, description, platform="auto", style="photorealistic"):
+        if platform == "auto":
+            platform = self._choose_platform(description, style)
+
+        if platform == "dalle":
+            return self._generate_dalle(description, style)
+        elif platform == "midjourney":
+            return self._generate_midjourney(description, style)
+
+    def _choose_platform(self, description, style):
+        # DALL-E excels at photorealistic and specific objects
+        if style == "photorealistic" and len(description) < 200:
+            return "dalle"
+        # Midjourney better for artistic styles and complex scenes
+        elif any(art_term in description.lower()
+                for art_term in ["impressionist", "oil painting", "concept art"]):
+            return "midjourney"
+        else:
+            return "dalle"
+
+    def _generate_dalle(self, description, style):
+        prompt = f"{description}, {style}"
+        return self.dalle.images.generate(
+            model="dall-e-3",
+            prompt=prompt,
+            size="1024x1024",
+            quality="hd",
+            n=1
+        )
+
+    def _generate_midjourney(self, description, style):
+        # Convert to Midjourney format
+        keywords = ", ".join([p.strip() for p in description.split(",")])
+        style_map = {
+            "photorealistic": "--s 750",
+            "artistic": "--s 500",
+            "abstract": "--s 250"
+        }
+        mj_prompt = f"{keywords} {style_map.get(style, '')}"
+        return self.mj.create_generation(mj_prompt, version="6")
+```
+
+## Cost Analysis and ROI Calculation
+
+Image generation costs vary significantly between platforms, affecting long-term project economics:
+
+**DALL-E 3 Pricing (as of early 2026):**
+- Standard 1024x1024: $0.04 per image
+- Higher resolution: $0.08-0.12 per image
+
+**Midjourney Pricing (subscription-based):**
+- Basic plan: $10/month (approximately 200 images)
+- Standard plan: $30/month (unlimited fast generations)
+- Pro plan: $120/month (faster queue priority)
+
+For applications generating fewer than 5,000 images monthly, DALL-E's per-image pricing often proves cheaper. For higher volumes, Midjourney's unlimited fast generations become more economical.
+
+## Integration Patterns for Production Systems
+
+When integrating image generation into production applications, consider these patterns:
+
+**Asynchronous Generation**: Both platforms support asynchronous workflows where you queue generation requests and poll for completion:
+
+```javascript
+class ImageQueue {
+  async queueGeneration(prompt, platform) {
+    const jobId = generateUUID();
+
+    // Store in queue database
+    await db.queue.insert({
+      id: jobId,
+      prompt,
+      platform,
+      status: "pending",
+      created_at: new Date()
+    });
+
+    // Start background worker
+    this.startGeneration(jobId, prompt, platform);
+
+    return jobId;
+  }
+
+  async getStatus(jobId) {
+    return db.queue.findById(jobId);
+  }
+}
+```
+
+**Caching and Deduplication**: Many applications receive similar prompts repeatedly. Implement content-addressable caching to avoid redundant generations:
+
+```javascript
+class GenerationCache {
+  async generate(prompt, platform) {
+    const hash = crypto.createHash('sha256')
+      .update(prompt + platform)
+      .digest('hex');
+
+    // Check cache first
+    const cached = await redis.get(`img:${hash}`);
+    if (cached) return JSON.parse(cached);
+
+    // Generate and cache
+    const result = await this.generateImage(prompt, platform);
+    await redis.setex(`img:${hash}`, 86400, JSON.stringify(result)); // 24-hour TTL
+
+    return result;
+  }
+}
+```
+
 ## Frequently Asked Questions
 
 **Who is this article written for?**

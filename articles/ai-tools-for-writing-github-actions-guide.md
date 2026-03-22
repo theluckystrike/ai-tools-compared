@@ -39,6 +39,21 @@ Write a GitHub Actions workflow for a Node.js monorepo. Requirements:
 - On push to main only: build Docker image, push to ECR using OIDC (no stored AWS keys)
 - Fail fast: false for the matrix
 - Concurrency: cancel in-progress runs on the same branch
+# Best AI Tools for Writing GitHub Actions
+
+GitHub Actions YAML is verbose and error-prone. Security hardening, matrix builds, composite actions, and OIDC authentication patterns are tedious to write manually. AI tools excel at generating the boilerplate and catching common mistakes like insecure checkout practices or missing permissions.
+
+## Basic Workflow Generation
+
+**Prompt to Claude:**
+```text
+Write a GitHub Actions workflow that:
+- Triggers on push to main and pull requests
+- Runs on ubuntu-latest
+- Checks out code, sets up Node.js 20, installs dependencies with npm ci
+- Runs linting and tests
+- Only builds on main branch
+Use strict permissions: contents read, checks write.
 ```
 
 **Claude output:**
@@ -96,6 +111,201 @@ jobs:
     permissions:
       id-token: write   # Required for OIDC
       contents: read
+name: Tests and Linting
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+  checks: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # full history for better linting
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+
+  build:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+```
+
+Claude adds `fetch-depth: 0` (needed by some linters), uses `npm ci` instead of `npm install` (correct for CI), and includes the `cache: 'npm'` line that saves ~30 seconds per run. It also sets strict permissions instead of the default `contents: write`.
+
+## Matrix Builds
+
+**Prompt:**
+```text
+Write a GitHub Actions matrix build for a Python package.
+Test on Python 3.9, 3.10, 3.11, 3.12 and OS: ubuntu-latest, windows-latest, macos-latest.
+Skip Python 3.9 on Windows (not supported). Use uv for dependency management.
+Include coverage report upload to Codecov.
+```
+
+**Claude output:**
+
+```yaml
+name: Matrix Tests
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python-version: ['3.9', '3.10', '3.11', '3.12']
+        exclude:
+          - os: windows-latest
+            python-version: '3.9'
+
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - run: uv sync
+      - run: uv run pytest --cov=src tests/
+      - run: uv run coverage xml
+
+      - uses: codecov/codecov-action@v3
+        with:
+          files: coverage.xml
+          flags: unittests
+          os: ${{ matrix.os }}
+          python-version: ${{ matrix.python-version }}
+```
+
+Claude uses `exclude` to skip the 3.9-on-Windows combination and includes `python-version` in the Codecov upload flags so reports are grouped correctly.
+
+## Composite Actions (Reusable Steps)
+
+**Prompt:**
+```text
+Write a composite GitHub Action that:
+- Checks out the code
+- Sets up Node.js with npm cache
+- Installs dependencies
+- Runs ESLint and Prettier
+
+The action should accept inputs: node-version (default 20), and cache-enabled (default true).
+Use it from a main workflow.
+```
+
+**Claude output (action.yml):**
+
+```yaml
+name: Setup and Lint
+description: Check out, install, and lint a Node.js project
+inputs:
+  node-version:
+    description: Node.js version
+    required: false
+    default: '20'
+  cache-enabled:
+    description: Enable npm cache
+    required: false
+    default: 'true'
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/checkout@v4
+
+    - uses: actions/setup-node@v4
+      with:
+        node-version: ${{ inputs.node-version }}
+        cache: ${{ inputs.cache-enabled == 'true' && 'npm' || '' }}
+
+    - run: npm ci
+      shell: bash
+
+    - run: npm run lint
+      shell: bash
+
+    - run: npm run format:check
+      shell: bash
+```
+
+**Usage in main workflow:**
+
+```yaml
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./.github/actions/setup-and-lint
+        with:
+          node-version: '20'
+          cache-enabled: 'true'
+```
+
+Claude correctly uses `shell: bash` in composite actions (required) and shows how to conditionally set the cache parameter.
+
+## OIDC Authentication and Token Exchange
+
+**Prompt:**
+```text
+Write a GitHub Actions workflow that:
+- Authenticates to AWS using OIDC (no static credentials)
+- Assumes a role with proper trust policy
+- Pushes a Docker image to ECR
+Include the AWS trust policy configuration.
+```
+
+**Claude output (workflow):**
+
+```yaml
+name: Build and Push to ECR
+on:
+  push:
+    branches: [main]
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  AWS_REGION: us-east-1
+  ECR_REGISTRY: 123456789.dkr.ecr.us-east-1.amazonaws.com
+  ECR_REPOSITORY: myapp
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      image: ${{ steps.image.outputs.image }}
 
     steps:
       - uses: actions/checkout@v4
@@ -246,6 +456,107 @@ jobs:
 - [Best AI Tools for Writing Makefiles](/best-ai-tools-for-writing-makefiles-2026/)
 - [AI Tools for Automated Migration Testing](/ai-tools-for-automated-migration-testing-2026/)
 - [AI Tools for Writing GitHub Actions Workflows (2026)](/ai-tools-compared/ai-tools/best-ai-tools-for-github-actions-workflows/)
+          role-to-assume: arn:aws:iam::123456789:role/github-actions-role
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Login to Amazon ECR
+        run: aws ecr get-login-password --region ${{ env.AWS_REGION }} | docker login --username AWS --password-stdin ${{ env.ECR_REGISTRY }}
+
+      - name: Build Docker image
+        run: docker build -t ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:${{ github.sha }} .
+
+      - name: Push to ECR
+        id: image
+        run: |
+          docker push ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:${{ github.sha }}
+          echo "image=${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:${{ github.sha }}" >> $GITHUB_OUTPUT
+```
+
+**AWS IAM Trust Policy:**
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Federated": "arn:aws:iam::123456789:oidc-provider/token.actions.githubusercontent.com"
+      },
+      "Action": "sts:AssumeRoleWithWebIdentity",
+      "Condition": {
+        "StringEquals": {
+          "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
+          "token.actions.githubusercontent.com:sub": "repo:myorg/myrepo:ref:refs/heads/main"
+        }
+      }
+    }
+  ]
+}
+```
+
+Claude includes the `id-token: write` permission (required for OIDC) and shows the correct trust policy syntax with both `aud` and `sub` conditions.
+
+## Secrets Management Best Practices
+
+**Prompt:**
+```text
+Show me how to:
+- Use GitHub Secrets in a workflow
+- Encrypt sensitive data
+- Pass secrets to Docker builds without exposing in logs
+- Rotate secrets safely
+```
+
+Claude's explanation includes:
+
+```bash
+# In your workflow, use ${{ secrets.SECRET_NAME }}
+# GitHub automatically masks the value in logs
+
+# For Docker build secrets (BuildKit):
+docker build \
+  --secret DATABASE_PASSWORD \
+  --build-arg REGISTRY_URL=${{ secrets.REGISTRY_URL }} \
+  .
+
+# Dockerfile (with buildkit syntax):
+# syntax=docker/dockerfile:1
+FROM ubuntu
+RUN --mount=type=secret,id=DATABASE_PASSWORD \
+  cat /run/secrets/DATABASE_PASSWORD
+```
+
+Never echo secrets or print them to logs. GitHub masks known secrets but not dynamic ones. Rotate regularly — set an expiration date for long-lived secrets.
+
+## Tool Comparison
+
+| Task | Claude | ChatGPT |
+|------|--------|---------|
+| Basic workflows | Excellent | Excellent |
+| Matrix builds with exclusions | Handles correctly | Sometimes wrong |
+| Composite action inputs | Correct shell handling | Omits shell directive |
+| OIDC trust policy JSON | Accurate syntax | Incomplete |
+| Permission scoping | Strict (reads=read, checks=write) | Often too permissive |
+| Secrets handling | Honest about limitations | Sometimes unsafe advice |
+| Caching (npm, pip, etc) | Includes by default | Sometimes omitted |
+
+## Common Mistakes to Avoid
+
+Claude catches these automatically:
+- Using `actions/checkout@v3` (old) instead of `v4`
+- Running `npm install` in CI (use `npm ci`)
+- Using `permissions: write-all` (overly permissive)
+- Forgetting `id-token: write` for OIDC workflows
+- Using `pull_request` without specifying `branches:` on `push` (triggers on every branch)
+
+## Related Reading
+
+- [Best AI Tools for Writing GitHub Actions Matrix Build Strategies](/ai-tools-compared/best-ai-tools-for-writing-github-actions-matrix-build-strate/)
+- [Best AI Tools for Writing Kubernetes Custom Resource Definitions](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-custom-resource-definitions-2026/)
+- [AI Assistants for Writing Correct AWS IAM Policies](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
+
+---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

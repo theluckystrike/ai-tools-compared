@@ -206,6 +206,191 @@ print(validate_and_describe("0 0 31 2 *"))  # Feb 31 — never runs
 
 AI tools can also generate this validation code, and Claude will correctly note that `0 0 31 2 *` is syntactically valid but will never execute (February has at most 29 days).
 
+## Timezone Handling and DST Issues
+
+**Prompt:**
+```text
+Write cron expressions for:
+1. Daily backup at 2 AM in America/New_York timezone
+2. Every weekday at 9 AM, account for DST transitions
+3. Monthly report at 1st day, 8 AM EST (winter) / EDT (summer)
+
+Address: what happens when DST shifts the clock?
+```
+
+**Claude response:**
+
+```
+Timezone handling varies by system:
+
+1. Linux cron (systemd):
+   Uses system timezone via /etc/localtime or TZ environment variable.
+   Set TZ=America/New_York in crontab or systemd service.
+   Standard cron (non-systemd) does NOT support timezone in the file itself.
+
+   Workaround: use a wrapper script that sets TZ:
+   ```bash
+   0 2 * * * TZ=America/New_York /usr/bin/backup.sh
+   ```
+
+2. Kubernetes CronJob (1.25+):
+   ```yaml
+   apiVersion: batch/v1
+   kind: CronJob
+   metadata:
+     name: backup
+   spec:
+     schedule: "0 2 * * *"
+     timeZone: "America/New_York"  # Native timezone support
+   ```
+
+3. AWS EventBridge:
+   No timezone parameter in basic expressions — times are always UTC.
+   Workaround: convert to UTC:
+   - America/New_York in winter (EST, UTC-5): 2 AM EST = 7 AM UTC = cron(0 7 * * ? *)
+   - America/New_York in summer (EDT, UTC-4): 2 AM EDT = 6 AM UTC = cron(0 6 * * ? *)
+
+   For automatic DST handling, use EventBridge Scheduler (2022+):
+   ```json
+   {
+     "ScheduleExpression": "at(2023-01-01T02:00:00)",
+     "Timezone": "America/New_York"
+   }
+   ```
+
+DST Transition Examples:
+- Spring forward (2 AM → 3 AM): A 2 AM job doesn't run that day in spring
+- Fall back (2 AM occurs twice): A 2 AM job runs twice in fall
+
+Best Practice: Use UTC cron expressions and convert user-facing times to UTC.
+```
+
+Claude correctly identifies the DST trap — a cron job scheduled for 2 AM during spring-forward night might not run (the time doesn't exist). Using UTC avoids this.
+
+## Advanced Scheduling: Non-Repeating Patterns
+
+**Prompt:**
+```text
+I need to run a cleanup job:
+- Once per week on Mondays
+- But skip it if today is a holiday (Christmas, Thanksgiving)
+- Retry if it fails
+
+How do I express this in cron?
+```
+
+**Claude response:**
+
+```
+Standard cron cannot express conditional logic. The 5-field format
+handles periodic schedules only. Solution: Use the cron entry for
+the base schedule, then add logic in the script.
+
+1. Crontab entry (run every Monday):
+   0 3 * * 1 /opt/scripts/cleanup.sh
+
+2. Bash script with holiday check:
+   #!/bin/bash
+   set -e
+
+   HOLIDAYS="12-25 12-31 11-23"  # Month-Day format
+   TODAY=$(date +%m-%d)
+
+   if [[ "$HOLIDAYS" == *"$TODAY"* ]]; then
+     echo "Today is a holiday; skipping cleanup"
+     exit 0
+   fi
+
+   # Run cleanup
+   /opt/bin/cleanup_db
+   /opt/bin/cleanup_logs
+
+   # Retry on failure (systemd handles this via RestartSec)
+   if [ $? -ne 0 ]; then
+     echo "Cleanup failed; systemd will retry"
+     exit 1
+   fi
+```
+
+For complex conditional logic, consider:
+- Airflow DAGs (if you need rich scheduling)
+- APScheduler (Python, supports callbacks and constraints)
+- Temporal (microservice orchestration)
+
+## Cron Expression Debugging CLI Tool
+
+**Prompt:**
+```text
+Write a Python CLI tool that validates cron expressions and shows next N executions.
+Input: a cron expression
+Output: valid/invalid, next 10 execution times
+```
+
+Claude generates:
+
+```python
+#!/usr/bin/env python3
+"""Cron expression validator and next-run calculator."""
+
+import sys
+from croniter import croniter
+from datetime import datetime
+from typing import Optional
+
+def validate_and_show_next_runs(
+    expression: str,
+    base_time: Optional[datetime] = None,
+    count: int = 10,
+    timezone: str = "UTC"
+) -> None:
+    """Validate a cron expression and display next execution times."""
+
+    if base_time is None:
+        base_time = datetime.now()
+
+    try:
+        cron = croniter(expression, base_time)
+        print(f"✓ Valid cron expression: {expression}")
+        print(f"  Base time: {base_time.isoformat()}")
+        print(f"  Timezone: {timezone}")
+        print()
+        print("Next 10 executions:")
+        for i in range(count):
+            next_run = cron.get_next(datetime)
+            print(f"  {i+1}. {next_run.isoformat()}")
+
+    except (ValueError, KeyError) as e:
+        print(f"✗ Invalid cron expression: {expression}")
+        print(f"  Error: {e}")
+        sys.exit(1)
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("Usage: cron-validate.py '<cron-expression>' [count]")
+        print("Example: cron-validate.py '*/15 9-17 * * 1-5' 20")
+        sys.exit(1)
+
+    expr = sys.argv[1]
+    count = int(sys.argv[2]) if len(sys.argv) > 2 else 10
+
+    validate_and_show_next_runs(expr, count=count)
+```
+
+**Usage:**
+
+```bash
+$ python cron-validate.py "*/15 9-17 * * 1-5" 5
+✓ Valid cron expression: */15 9-17 * * 1-5
+  Base time: 2026-03-23T14:30:00
+
+Next 5 executions:
+  1. 2026-03-23T14:45:00
+  2. 2026-03-23T15:00:00
+  3. 2026-03-23T15:15:00
+  4. 2026-03-23T15:30:00
+  5. 2026-03-23T15:45:00
+```
+
 ## Tool Comparison
 
 | Task | Claude | ChatGPT |
