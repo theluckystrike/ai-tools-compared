@@ -9,7 +9,7 @@ permalink: /writing-claude-md-files-that-teach-ai-your-project-specific-error-ha
 categories: [guides]
 tags: [ai-tools-compared, claude-code, ai-assistants, error-handling, troubleshooting, artificial-intelligence, claude-ai]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
