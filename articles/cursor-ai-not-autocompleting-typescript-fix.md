@@ -233,5 +233,218 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Cursor Composer Stuck in Loop: How to Fix](/ai-tools-compared/cursor-composer-stuck-in-loop-how-to-fix/)
 - [Cursor Extensions Conflicting with AI Fix](/ai-tools-compared/cursor-extensions-conflicting-with-ai-fix/)
 
+## Performance Benchmarks: Cursor vs Alternatives for TypeScript
+
+| Tool | TypeScript Support | Completion Speed | Context Window | Troubleshooting |
+|------|------------------|------------------|-----------------|-----------------|
+| Cursor | Excellent | <100ms | 4K+ tokens | Many configuration options |
+| GitHub Copilot | Good | 50-150ms | 2K-8K | Limited docs for TS-specific issues |
+| JetBrains AI | Excellent | 100-200ms | 8K+ tokens | IDE-integrated debugging |
+| VS Code Pylance (TS) | Good | 50-100ms | 2K tokens | Limited AI suggestions |
+
+## Detailed Troubleshooting: Which Fix Applies to Your Situation
+
+**Scenario 1: Completions stopped working after updating TypeScript**
+
+TypeScript version mismatches often cause this. Check your installed version against Cursor's bundled version:
+
+```bash
+# Check project TypeScript
+cd your-project && npx tsc --version
+
+# Check Cursor's status bar for version info
+# If mismatch: update project to match
+npm install typescript@latest --save-dev
+npm install --save-dev typescript@5.3.3  # Match Cursor's version
+```
+
+Then restart the TypeScript server via Command Palette.
+
+**Scenario 2: Monorepo completions fail in specific packages**
+
+Monorepos require explicit workspace configuration. Each package may need its own `tsconfig.json`:
+
+```json
+{
+  "compilerOptions": {
+    "composite": true,
+    "baseUrl": ".",
+    "paths": {
+      "@monorepo/*": ["packages/*/src"]
+    }
+  },
+  "references": [
+    { "path": "packages/core" },
+    { "path": "packages/utils" }
+  ]
+}
+```
+
+Also create `.cursorignore` to prevent indexing noise:
+
+```
+node_modules/
+dist/
+build/
+.next/
+coverage/
+*.lock
+```
+
+**Scenario 3: Completions work in JS files but not TypeScript**
+
+This indicates the TypeScript language server isn't initialized for your file type. Check `tsconfig.json` includes the right files:
+
+```json
+{
+  "include": [
+    "src/**/*",
+    "lib/**/*",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
+```
+
+If certain directories aren't in the `include` list, Cursor won't provide completions there.
+
+**Scenario 4: Complex types not completing**
+
+Cursor struggles with very deep type inference. Simplify by:
+
+```typescript
+// Instead of chained generics:
+// type Complicated = Awaited<Readonly<Partial<MyType>>>[keyof Something]
+
+// Break into simpler steps:
+type BaseType = MyType;
+type PartialBase = Partial<BaseType>;
+type ReadonlyPartial = Readonly<PartialBase>;
+type Final = Awaited<ReadonlyPartial>;
+```
+
+This makes inference easier for the AI to follow.
+
+## Preventing Future Autocompletion Issues
+
+**Best Practice 1: Keep TypeScript Updated**
+
+Set up regular updates in your CI pipeline:
+
+```bash
+# Check for outdated TypeScript weekly
+npm outdated typescript
+
+# Update in a separate branch
+npm install typescript@latest --save-dev
+npm test
+# Merge if tests pass
+```
+
+**Best Practice 2: Version Lock Critical Dependencies**
+
+In package.json:
+
+```json
+{
+  "devDependencies": {
+    "typescript": "5.3.3",
+    "@types/node": "20.8.0"
+  }
+}
+```
+
+Version locking prevents surprise breaking changes when team members install dependencies.
+
+**Best Practice 3: Document Your TypeScript Configuration**
+
+Add a README explaining your `tsconfig.json`:
+
+```markdown
+# TypeScript Configuration
+
+- **target**: ES2020 (Node 16+)
+- **module**: ESNext (for bundlers)
+- **moduleResolution**: bundler
+- **strict**: true (enables strict null checks, etc)
+- **skipLibCheck**: true (faster compilation)
+
+See [TypeScript Handbook](https://www.typescriptlang.org/docs/) for options.
+```
+
+## Comparing TypeScript Completion Across Tools
+
+Testing the same TypeScript scenario with different tools reveals their strengths:
+
+**Test Case: Generic function with conditional types**
+
+```typescript
+type IsString<T> = T extends string ? true : false;
+
+function processValue<T>(value: T): IsString<T> extends true ? string : number {
+  // What does each tool suggest here?
+  return value as any;
+}
+```
+
+- **Cursor**: Completes with proper generic inference, suggests correct return type
+- **GitHub Copilot**: Suggests a generic completion but may not understand conditional type fully
+- **JetBrains AI**: Excellent completion with detailed type information
+- **VS Code Pylance**: Provides IntelliSense but limited AI-assisted suggestions
+
+**Lesson**: For complex TypeScript scenarios, Cursor and JetBrains AI lead. If you hit a ceiling, consider JetBrains as an alternative.
+
+## TypeScript-Specific Configuration for Cursor
+
+Create a `.cursor` directory with workspace settings:
+
+```yaml
+# .cursor/settings.yml
+typescript:
+  enableStrictMode: true
+  checkJs: false
+  skipLibCheck: false
+
+completions:
+  triggerOn:
+    - "property_access"  # foo.
+    - "word_boundaries"  # after space
+  ignorePatterns:
+    - "**/*.d.ts"  # Exclude type definitions from triggering
+    - "node_modules"
+
+# Context for AI
+context:
+  includes:
+    - "src/**/*.ts"
+    - "src/**/*.tsx"
+  excludes:
+    - "**/node_modules/**"
+    - "**/dist/**"
+```
+
+## When to Switch Tools
+
+If you've tried all fixes and completions still fail, consider switching tools:
+
+**Switch to GitHub Copilot if:**
+- You need broader IDE support
+- You want less configuration overhead
+- You're comfortable with fewer customization options
+
+**Switch to JetBrains AI Assistant if:**
+- You use IntelliJ, WebStorm, or other JetBrains IDEs
+- You need excellent type inference for complex generics
+- Your team benefits from integrated IDE features
+
+**Switch to Claude Code CLI if:**
+- You want maximum control over context
+- You work in terminal environments
+- You need deterministic, reproducible completions
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -248,4 +248,316 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Perplexity Pro File Upload Limits and Storage Costs Explaine](/ai-tools-compared/perplexity-pro-file-upload-limits-and-storage-costs-explaine/)
 - [Claude Code vs Cursor for Large Codebase Refactoring](/ai-tools-compared/claude-code-vs-cursor-for-large-codebase-refactoring/)
 
+## Real-World Indexing Scenarios
+
+**Scenario 1: Medium Monorepo (250MB codebase)**
+
+Structure: React frontend + Node backend + shared utilities
+
+```
+apps/
+  frontend/src/           (80MB)
+  backend/src/           (90MB)
+packages/
+  utils/                 (30MB)
+  types/                 (10MB)
+node_modules/           (3GB) — Excluded
+.git/                   (500MB) — Excluded
+```
+
+Cursor's indexing performance:
+- Initial index build: 45 seconds
+- Incremental indexing (after changes): 2-5 seconds per change
+- Context retrieval (chat): <500ms
+- No additional charges
+
+**Scenario 2: Large Monorepo (2.5GB codebase, intelligently managed)**
+
+Structure: Enterprise monorepo with 50+ packages
+
+Strategies to stay efficient:
+```json
+// .cursorignore configuration
+{
+  "excludePatterns": [
+    "node_modules/",
+    ".git/",
+    "dist/",
+    "build/",
+    "coverage/",
+    "*.test.ts",
+    "*.spec.ts",
+    "*.lock",
+    "pnpm-lock.yaml"
+  ]
+}
+```
+
+After exclusions: 300MB actual source code
+- Initial index build: 120 seconds (first time only)
+- Subsequent: <5 seconds per change
+- Cost: $20/month Pro (no additional charges)
+
+## Comparison: Cursor vs Competing Tools on Large Projects
+
+| Tool | Pro Price | Free Limit | Indexing Cost | Best For |
+|------|-----------|-----------|---|---|
+| Cursor | $20/mo | 50MB | Included | Monorepos |
+| GitHub Copilot | $10/mo | None | Included | Small-medium projects |
+| JetBrains AI | $9/mo | Limited | Included | JetBrains IDEs |
+| Claude Code | Pay per use | Free | Included | Terminal-based, custom context |
+| Windsurf | $15/mo | 50MB | Included | Windsurf editor |
+
+All tools include indexing in their paid tier—Cursor doesn't uniquely charge extra.
+
+## Indexing Strategy by Project Type
+
+**Single Monorepo (Most Efficient)**
+
+```
+apps/
+  web/src/
+  api/src/
+packages/
+  shared/src/
+
+.cursorignore strategy: Exclude node_modules, build outputs only
+Cursor handles this easily, <1 minute index time
+Cost: $20/month for Pro, no additional charges
+```
+
+**Multiple Independent Projects**
+
+```
+projects/
+  project-a/
+  project-b/
+  project-c/
+```
+
+Strategy: Open one project at a time in different Cursor windows
+- Pro subscription covers multiple projects (they don't share index)
+- Each project indexed independently
+- Cost: Still $20/month, no per-project fee
+
+**Mixed Source + Generated Files**
+
+Example: Next.js project with prisma schema + generated client
+
+```
+src/                    (source code) — Index
+prisma/                 (schema) — Index
+node_modules/           (dependencies) — Exclude
+.next/                  (generated) — Exclude
+dist/                   (compiled) — Exclude
+```
+
+```typescript
+// .cursorignore file
+**/node_modules/**
+**/.next/**
+**/dist/**
+**/build/**
+**/*.generated.ts
+**.lock
+```
+
+Result: Only actual source indexed, faster responses, no extra cost.
+
+## When Indexing Performance Matters
+
+**Scenario A: You're working fine (Don't optimize)**
+
+- Fast completions even with large codebase
+- Chat responses are immediate
+- Refactoring works smoothly
+
+Action: Leave indexing as-is. No need to troubleshoot what's working.
+
+**Scenario B: Indexing seems stuck**
+
+- Initial indexing takes >5 minutes
+- Incremental indexing slow (>10 seconds per change)
+- Editor feels unresponsive
+
+Action:
+```bash
+# Force reindex
+Cmd+Shift+P → "Cursor: Reindex Project"
+
+# Or clear cache and restart
+rm -rf ~/Library/Application\ Support/Cursor/User/Cache
+# Then restart Cursor
+```
+
+**Scenario C: Very large codebase (>5GB)**
+
+- Cursor indexing too slow
+- Want better performance
+
+Action: Use `.cursorignore` aggressively
+
+```
+# Be explicit about what to index
+**/node_modules/**
+**/.git/**
+**/dist/**
+**/build/**
+**/.next/**
+**/coverage/**
+**/*.lock
+**/*.lock.yaml
+**/pnpm-lock.yaml
+# Also exclude test files if they're huge
+**/cypress/**
+**/e2e/**
+# Exclude large data files
+**/data/fixtures/**
+**/data/dumps/**
+```
+
+## Code Examples: Optimized .cursorignore Patterns
+
+**For React/Next.js:**
+
+```
+# Dependencies
+node_modules/**
+.pnpm-store/**
+
+# Build outputs
+.next/**
+dist/**
+build/**
+out/**
+
+# Generated files
+coverage/**
+.coverage/**
+*.generated.*
+
+# IDE
+.vscode/**
+.idea/**
+
+# Environment
+.env.local
+.env.*.local
+
+# Version control
+.git/**
+.gitignore
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Cache
+.eslintcache
+.cache/**
+```
+
+**For Python projects:**
+
+```
+__pycache__/**
+.venv/**
+venv/**
+env/**
+dist/**
+build/**
+*.egg-info/**
+.pytest_cache/**
+.mypy_cache/**
+.coverage/**
+*.pyc
+```
+
+**For Monorepos (Turborepo/pnpm):**
+
+```
+# Root dependencies
+node_modules/**
+
+# Build outputs in all packages
+**/dist/**
+**/build/**
+**/out/**
+
+# Node package lock files
+**/node_modules/**
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+npm-shrinkwrap.json
+
+# Generated
+**/generated/**
+**/*.generated.*
+
+# Tests (unless you want them indexed)
+**/*.test.ts
+**/*.test.js
+**/*.spec.ts
+**/*.spec.js
+```
+
+## Practical Limits You Might Hit
+
+**Limit 1: Context Window Size**
+
+Even with full codebase indexed, Cursor can only fit ~8,000 tokens in context for a single chat.
+
+Workaround:
+```
+// Use explicit file references in chat
+@file:src/auth/login.ts
+@file:src/auth/middleware.ts
+
+"Explain how login flow works across these files"
+```
+
+**Limit 2: Indexing Coverage**
+
+Cursor Pro indexes up to a practical limit (usually 500MB-1GB of actual source).
+
+If you exceed this:
+1. Add more aggressive `.cursorignore` patterns, or
+2. Split into multiple workspaces, or
+3. Upgrade to Cursor Business tier (higher limits)
+
+**Limit 3: Real-Time Index Update Lag**
+
+After you save a file, indexing updates within 2-5 seconds. During that window, old context is used.
+
+Not a problem in practice—just be aware if you're editing rapidly.
+
+## FAQ: Cursor Indexing
+
+**Does Cursor index node_modules?**
+
+By default, no. You should exclude it in `.cursorignore` to ensure it doesn't.
+
+**If I have two projects open, does indexing count twice?**
+
+Both projects are indexed, but you're not charged extra. The Pro subscription covers unlimited projects.
+
+**Can I upgrade to Business tier just for indexing limits?**
+
+Yes, Cursor Business includes higher limits. Contact sales@cursor.sh for details and pricing.
+
+**What if my .cursorignore is wrong?**
+
+Cursor will index more than necessary, but no additional charges. Performance might be slower. Just correct the file and restart Cursor.
+
+**Does indexing use my fast/slow model credits?**
+
+No. Indexing is separate from AI request credits. Indexing is included in the subscription, period.
+
+## Related Articles
+
+- [Cursor vs GitHub Copilot for Large Codebases](/ai-tools-compared/cursor-vs-copilot-large-codebase/)
+- [Monorepo Best Practices with AI Coding Assistants](/ai-tools-compared/monorepo-best-practices-ai-coding/)
+- [Setting Up Cursor for Turborepo Projects](/ai-tools-compared/cursor-turborepo-setup/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

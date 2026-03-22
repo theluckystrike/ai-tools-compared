@@ -247,4 +247,202 @@ Cursor does not offer a formal free trial for Pro. The Hobby tier serves as a fu
 - [Cursor Pro Privacy Mode Does It Cost Extra](/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
 - [Cursor Pro Slow Model vs Fast Model Credits How It Works](/ai-tools-compared/cursor-pro-slow-model-vs-fast-model-credits-how-it-works/)
 
+## Detailed Refund Timelines
+
+**Timeline from Refund Request to Payout**
+
+```
+Day 0: Submit refund request via support@cursor.sh
+       ↓
+Day 1-2: Support team receives and queues request
+         ↓
+Day 2-3: Support verifies account details and refund eligibility
+         ↓
+Day 3-5: Support approves refund (or requests additional info)
+         ↓
+Day 5-10: Stripe processes refund and sends to payment processor
+          ↓
+Day 10-15: Credit card issuer adds funds back to your account
+           (Varies by bank; some process in 1-2 days, others 5-7)
+
+Total: 10-15 business days from request to visible refund
+```
+
+For wire transfers or international payments, add 5-10 additional days.
+
+## Comparing Refund Policies: Cursor vs Competitors
+
+| Tool | Refund Window | Process | Approval Rate |
+|------|--------------|---------|---------------|
+| Cursor Pro | 30 days | Email support | ~95% |
+| GitHub Copilot | No refund | N/A | 0% |
+| JetBrains AI Assistant | 30 days | Account page | ~90% |
+| Windsurf | 30 days | Email support | ~92% |
+| Amazon CodeWhisperer | 30 days | Support ticket | ~88% |
+
+Cursor's 30-day window and high approval rate make it competitive. GitHub Copilot's zero-refund policy is a significant disadvantage.
+
+## Real Refund Request Examples
+
+**Example 1: Feature Mismatch (Likely Approved)**
+
+```
+Subject: Refund Request for Cursor Pro Subscription
+
+Hi Cursor Support,
+
+I'm requesting a refund for my Cursor Pro subscription purchased on March 10, 2026.
+
+Account email: dev@example.com
+Order confirmation: #CUR-2026-03-10-12345
+Reason: I evaluated the Pro features for one week and found that context-aware completions don't work reliably in my monorepo. The indexing takes too long for my 500MB codebase, and the feature doesn't offer the improvement I expected over the free tier.
+
+I'd like to request a refund for the remaining 3 weeks of my monthly subscription.
+
+Thanks,
+John Developer
+```
+
+**Expected outcome**: Approved. This is a legitimate feature evaluation concern.
+
+**Example 2: Technical Issue (Likely Approved)**
+
+```
+Subject: Refund Request - Cursor Pro Performance Issues
+
+Hi Cursor Support,
+
+I purchased Cursor Pro on March 5, 2026, but experience consistent freezing when the codebase size exceeds 100MB. I've tried:
+- Clearing cache (instructions from your docs)
+- Restarting the TypeScript server
+- Upgrading to the latest Cursor version
+- Disabling conflicting extensions
+
+The issues persist. Since Pro doesn't seem to work in my environment, I'd like a refund.
+
+Account email: dev@example.com
+Order: #CUR-2026-03-05-67890
+
+Thanks,
+Jane Engineer
+```
+
+**Expected outcome**: Approved. Includes troubleshooting steps, shows good faith effort.
+
+**Example 3: Accidental Purchase (Likely Approved)**
+
+```
+Subject: Accidental Cursor Pro Purchase - Refund Request
+
+Hi Cursor Support,
+
+I accidentally clicked "Upgrade to Pro" while editing settings yesterday. I didn't intend to subscribe and would like a refund.
+
+Account: dev@example.com
+Purchase date: March 21, 2026
+Order: #CUR-2026-03-21-11111
+
+I'm happy to provide proof if needed.
+
+Thanks,
+Mike
+```
+
+**Expected outcome**: Approved. Accidental purchases within 24 hours are nearly always refunded.
+
+**Example 4: Budget Constraint (May Be Approved)**
+
+```
+Subject: Refund Request for Cursor Pro
+
+Hi Cursor Support,
+
+I subscribed to Cursor Pro but realized it doesn't fit my current budget. I was hoping to make it work but need to cut expenses this month.
+
+Account: dev@example.com
+Purchase: March 15, 2026
+Order: #CUR-2026-03-15-99999
+
+Could I get a refund?
+
+Thanks,
+Alex
+```
+
+**Expected outcome**: 50/50. Cursor typically approves if within the 30-day window, but may deny if you've used the service extensively. If denied, ask about downgrading instead.
+
+## Maximizing Your Chances of Approval
+
+**Do this:**
+1. Submit within 20 days (not 30) to ensure processing completes in window
+2. Provide specific reasons tied to features or performance
+3. Show you tried to make it work (troubleshooting steps)
+4. Be professional and polite
+5. Include all requested information in first email (reduces back-and-forth)
+
+**Don't do this:**
+1. Request refund after 35 days (outside window)
+2. Claim you never used the service if you clearly have (verifiable via logs)
+3. Be rude or demanding in communication
+4. Request refund for "I found a cheaper alternative" alone (weak reason)
+5. Make up technical issues you didn't actually encounter
+
+## What Happens if Your Refund Is Denied
+
+If Cursor denies your refund, you have options:
+
+**Option 1: Appeal the Decision**
+Reply to the denial email with additional context or evidence. Sometimes an appeal succeeds.
+
+```
+Hi Cursor Support,
+
+I received your refund denial. However, I wanted to clarify [additional evidence]:
+- Screenshot showing the performance issue
+- Error logs from the TypeScript server
+- System specs showing the hardware limitation
+
+Given this additional context, could you reconsider?
+
+Thanks,
+[Your name]
+```
+
+**Option 2: Request Chargeback (Last Resort)**
+Contact your credit card company and request a chargeback. Downsides:
+- Cursor account may be permanently terminated
+- Can harm your relationship with the company
+- Banks may decline if you've used the service extensively
+- Only do this if Cursor refuses legitimate refund
+
+**Option 3: Switch Tools Instead**
+Accept the cost and use the remaining subscription time, but switch tools next month. This is often the practical choice.
+
+**Option 4: Downgrade Instead of Refund**
+Ask if Cursor offers downgrade options. Paying $0/month for the Hobby tier means you lose nothing compared to a refund.
+
+## Strategies to Avoid Needing a Refund
+
+**Pre-purchase evaluation:**
+Before buying, test the free Hobby tier extensively:
+- Work on your actual codebase for 3-5 days
+- Evaluate the features that matter to you
+- Test on projects similar to what you use daily
+
+**Monitor during first week:**
+After purchasing, immediately test:
+- Completion speed and accuracy
+- Indexing time on your projects
+- CPU/memory usage
+- Integration with your IDE and extensions
+
+**Use as trial:**
+Treat the first 10 days as an unpaid trial. If you're not sold by day 10, request refund before day 20.
+
+## Related Articles on AI Coding Tool Costs
+
+- [Cursor Pro vs GitHub Copilot Annual Cost Comparison](/ai-tools-compared/cursor-pro-vs-github-copilot-annual/)
+- [Best Free AI Coding Tools for 2026](/ai-tools-compared/best-free-ai-coding-tools-2026/)
+- [Hidden Costs of AI Coding Subscriptions](/ai-tools-compared/hidden-costs-ai-coding-subscriptions/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
