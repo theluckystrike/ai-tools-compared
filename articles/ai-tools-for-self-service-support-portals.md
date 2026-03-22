@@ -163,6 +163,40 @@ class SemanticSearch:
 For production systems, consider dense embeddings from models like sentence-transformers for better semantic understanding, combined with traditional keyword search in a hybrid approach.
 
 
+### Choosing the Right Embedding Strategy
+
+TF-IDF works adequately for smaller knowledge bases (under a few thousand articles) but degrades as content grows because it ignores semantic meaning. Dense embeddings from models like `text-embedding-3-small` (OpenAI) or `all-MiniLM-L6-v2` (sentence-transformers) represent text as high-dimensional vectors that capture meaning, not just term frequency.
+
+A hybrid retrieval pipeline gives you the best of both approaches: keyword search narrows the candidate set quickly, then a re-ranker model scores results by semantic relevance. Libraries like LlamaIndex and LangChain include pre-built hybrid retriever components that wire up these stages with minimal configuration.
+
+```python
+from sentence_transformers import SentenceTransformer
+import faiss, numpy as np
+
+class DenseSearch:
+    def __init__(self, articles):
+        self.model = SentenceTransformer("all-MiniLM-L6-v2")
+        self.articles = articles
+        corpus = [a["content"] for a in articles]
+        embeddings = self.model.encode(corpus, convert_to_numpy=True)
+        self.index = faiss.IndexFlatIP(embeddings.shape[1])
+        faiss.normalize_L2(embeddings)
+        self.index.add(embeddings)
+
+    def search(self, query, top_k=5):
+        q_vec = self.model.encode([query], convert_to_numpy=True)
+        faiss.normalize_L2(q_vec)
+        scores, indices = self.index.search(q_vec, top_k)
+        return [
+            {"article": self.articles[i], "score": float(s)}
+            for i, s in zip(indices[0], scores[0])
+            if i >= 0
+        ]
+```
+
+Using FAISS with inner-product similarity on L2-normalized vectors is equivalent to cosine similarity and scales to millions of articles with sub-millisecond query times.
+
+
 ## Automated Ticket Classification
 
 
@@ -223,6 +257,17 @@ class TicketClassifier:
 
 
 This approach works well for standard support categories. For domain-specific needs, fine-tuned models provide better accuracy.
+
+
+### Confidence Thresholds and Routing Rules
+
+Raw classification scores tell you how confident the model is, but confidence alone doesn't dictate the right action. Combine confidence with routing rules to build a tiered triage system:
+
+- **High confidence (>0.85)**: Auto-route to the correct queue with no human review
+- **Medium confidence (0.60–0.85)**: Route to the queue but flag for agent spot-check
+- **Low confidence (<0.60)**: Send to a triage agent who reviews and reclassifies manually
+
+Store misclassified tickets and their corrected labels. Over time this dataset becomes training data for a fine-tuned classifier that outperforms the zero-shot baseline on your specific product vocabulary.
 
 
 ## Integrating AI Responsibly
@@ -286,6 +331,22 @@ def should_escalate(self, conversation_history, user_feedback):
 ```
 
 
+## Comparing Popular AI Support Tools
+
+Different organizations have different requirements. The table below summarizes how major AI tool categories compare for self-service support portal use cases:
+
+| Capability | LLM Chatbot (RAG) | Semantic Search | Zero-Shot Classifier | Fine-Tuned Model |
+|---|---|---|---|---|
+| Setup time | Days | Hours | Hours | Weeks |
+| Accuracy out-of-box | High | Medium | Medium | Very High |
+| Customization | System prompt | Corpus | Labels | Full fine-tune |
+| Hallucination risk | Medium (mitigated by RAG) | None | None | Low |
+| Infrastructure cost | High | Low | Medium | Medium |
+| Best for | Conversational FAQ | Article retrieval | Ticket triage | High-volume routing |
+
+For most teams starting out, a RAG-based chatbot covering the top 80 support topics combined with semantic search for article recommendations covers the majority of deflection value. Add a classifier for ticket routing once the volume justifies the operational overhead.
+
+
 ## Practical Considerations
 
 
@@ -302,6 +363,37 @@ Several factors affect AI implementation success in support portals:
 
 
 **Transparency builds trust.** When AI provides answers, users should understand they are interacting with an automated system. Clearly indicate when information comes from AI versus human-verified documentation.
+
+
+### Measuring Deflection Rate
+
+The primary business metric for any self-service AI investment is deflection rate: the percentage of interactions that resolve without a human agent. Calculate it as:
+
+```
+deflection_rate = (sessions_resolved_without_escalation / total_sessions) * 100
+```
+
+Track deflection rate by intent category so you can identify where the AI performs well and where knowledge gaps exist. A low deflection rate on billing questions usually means your billing documentation needs improvement, not that the model is broken. Fixing the source material is almost always more effective than tuning the AI configuration.
+
+Log every session with the user's initial query, the AI's response, whether the user escalated, and any explicit feedback rating. A structured log schema makes it straightforward to build dashboards and identify the highest-value documentation improvements:
+
+```python
+import json, datetime
+
+def log_session(session_id, query, response, escalated, rating=None):
+    record = {
+        "session_id": session_id,
+        "timestamp": datetime.datetime.utcnow().isoformat(),
+        "query": query,
+        "response_length": len(response),
+        "escalated": escalated,
+        "rating": rating,
+    }
+    with open("support_sessions.jsonl", "a") as f:
+        f.write(json.dumps(record) + "\n")
+```
+
+Weekly review of unresolved and escalated sessions surfaces gaps far faster than waiting for quarterly content audits.
 
 
 ## Related Articles
