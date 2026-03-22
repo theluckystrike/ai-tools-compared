@@ -513,3 +513,4 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [Gemini vs ChatGPT for Writing BigQuery SQL Window Functions](/ai-tools-compared/gemini-vs-chatgpt-for-writing-bigquery-sql-window-functions-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+```

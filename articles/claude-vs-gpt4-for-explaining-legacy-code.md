@@ -327,4 +327,4 @@ Not yet. AI tools generate useful test scaffolding and catch common patterns, bu
 **What happens to my data when using Claude or GPT-4?**
 
 Review each tool's privacy policy and terms of service carefully. Most AI tools process your input on their servers, and policies on data retention and training usage vary. If you work with sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-
+{% endraw %}

@@ -354,4 +354,4 @@ Many AI tools and software platforms offer reduced pricing for students, educato
 **What happens to my work if I cancel my subscription?**
 
 Policies vary widely. Some tools let you access your data for a grace period after cancellation, while others lock you out immediately. Export your important work before canceling, and check the terms of service for data retention policies.
-
+{% endraw %}

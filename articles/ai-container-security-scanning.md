@@ -7,7 +7,7 @@ last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /ai-container-security-scanning/
 reviewed: true
-score: 9
+score: 8
 voice-checked: true
 categories: [guides]
 tags: [ai-tools-compared, security, artificial-intelligence]
@@ -530,4 +530,4 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [AI Assistants for Creating Security Architecture Review.](/ai-tools-compared/ai-assistants-for-creating-security-architecture-review-docu/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

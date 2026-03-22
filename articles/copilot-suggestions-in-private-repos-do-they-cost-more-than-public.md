@@ -344,3 +344,4 @@ Policies vary widely. Some tools let you access your data for a grace period aft
 - [Copilot for JetBrains: Does It Cost Same as VSCode Version](/ai-tools-compared/copilot-for-jetbrains-does-it-cost-same-as-vscode-version/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

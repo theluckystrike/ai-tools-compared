@@ -385,7 +385,8 @@ for issue in issues:
 ## Tool Comparison
 
 | Tool | Schema Types | CI Integration | Custom Rules | Cost |
-|---|---|---|---|---|
+|
+---|---|---|---|---|
 | Claude (API) | Any (Protobuf, JSON, SQL) | Via script | Prompt engineering | ~$0.01/review |
 | GPT-4 (API) | Any | Via script | Prompt engineering | ~$0.02/review |
 | Buf (Protobuf) | Protobuf only | Native | Config file | Free |

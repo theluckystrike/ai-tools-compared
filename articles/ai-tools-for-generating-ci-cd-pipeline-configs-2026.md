@@ -466,3 +466,4 @@ For most teams, Claude's accuracy for platform-specific syntax and best-practice
 - [GitLab CI vs GitHub Actions: Pipeline Architecture Comparison](/ai-tools-compared/gitlab-ci-vs-github-actions/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
