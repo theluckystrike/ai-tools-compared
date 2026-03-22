@@ -11,11 +11,21 @@ score: 6
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]
+---
 
 {% raw %}
 A good PR description saves your team hours of archaeology. A bad one — "fixed stuff" — forces reviewers to read every line. AI tools can auto-generate descriptions from diffs, but the quality varies wildly depending on how the tool processes context.
 
 This guide covers the main options: a Claude-powered GitHub Action, GPT-4 via the API, and the built-in GitHub Copilot PR description feature.
+
+## Key Takeaways
+
+- **Claude via GitHub Actions**: Produces the most context-aware descriptions, picking up latency motivations from code comments, at ~$0.01/PR
+- **GPT-4 via API**: Accurate but more generic output; handles larger diffs (up to ~1,500 lines) than Claude's 500-line limit
+- **GitHub Copilot built-in**: Zero setup but no format control and often too verbose (500+ words)
+- **PR Agent (open source)**: Best for teams needing custom templates, multi-model support, and ticket linking (Jira/Linear)
+- **Large diff handling**: Chunk diffs by file and summarize independently, then combine; strip test files and generated code before sending to the model
+- **Measurable impact**: Teams report 20-40% fewer reviewer question comments on PRs with AI-generated descriptions
 
 ## The Test Diff
 
