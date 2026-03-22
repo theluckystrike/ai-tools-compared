@@ -551,4 +551,5 @@ action-validator .github/actions/my-action/action.yml
 5. [Advanced GitHub Actions: Reusable Workflows vs Composite Actions](/articles/github-actions-reusable-workflows/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+```
 {% endraw %}

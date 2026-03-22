@@ -13,6 +13,8 @@ score: 8
 voice-checked: true
 intent-checked: true
 ---
+{% raw %}
+
 
 Prometheus alerting rules require deep knowledge of PromQL syntax, time series semantics, and operational thresholds. Writing rules manually means wrestling with query syntax, threshold tuning, and escalation logic. AI assistants can accelerate this process significantly—but only tools trained on Prometheus monitoring patterns generate rules that survive production use.
 
@@ -303,3 +305,4 @@ A: rate(), increase(), sum(), avg(), histogram_quantile(), absent(), topk(). For
 ---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

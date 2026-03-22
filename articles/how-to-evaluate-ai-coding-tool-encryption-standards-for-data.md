@@ -483,4 +483,5 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [AI Coding Tool Penetration Test Findings Common Vulnerabilit](/ai-tools-compared/ai-coding-tool-penetration-test-findings-common-vulnerabilit/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
+```
 {% endraw %}

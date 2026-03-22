@@ -423,4 +423,5 @@ This reference covers 80% of Swift compiler errors developers encounter:
 - [AI Tools for Interpreting Rust Compiler Borrow Checker](/ai-tools-compared/ai-tools-for-interpreting-rust-compiler-borrow-checker-error/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
+```
 {% endraw %}
