@@ -29,6 +29,14 @@ voice-checked: false
 
 Good documentation is the difference between a codebase teammates actually use and one they stumble through. JSDoc and TSDoc comments are the standard for documenting JavaScript and TypeScript code, yet most developers write them reluctantly or skip them entirely because the process feels tedious. AI coding assistants have matured significantly, and several now generate accurate documentation comments that follow established conventions without requiring extensive manual correction.
 
+## Key Takeaways
+
+- **Open-source projects or developers**: preferring local-first solutions should evaluate Tabnine with its offline mode, though documentation generation lags behind the cloud-based alternatives.
+- **JSDoc and TSDoc comments**: are the standard for documenting JavaScript and TypeScript code, yet most developers write them reluctantly or skip them entirely because the process feels tedious.
+- **The best tools analyze imports**: exported interfaces, and usage patterns across your project to produce more accurate descriptions.
+- **The more explicit your TypeScript types**: the better Copilot's suggestions.
+- **If you already use**: GitHub Copilot through your organization, its inline suggestions may be sufficient for routine documentation.
+
 ## What Makes an AI Assistant Good at Documentation Comments
 
 The best AI assistants for writing JSDoc and TSDoc share several characteristics. They understand your codebase's types through Language Server Protocol (LSP) integration, recognize parameter names and return types from your actual code, and produce comments that conform to the JSDoc or TSDoc specifications without requiring you to fix formatting issues.

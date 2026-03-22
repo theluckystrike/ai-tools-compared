@@ -14,7 +14,17 @@ tags: [ai-tools-compared]
 ---
 
 {% raw %}
+
 Coverage percentage numbers are nearly useless. 85% coverage could mean all your critical paths are tested and only logging is uncovered, or it could mean your happy path is tested but every error branch is uncovered. AI tools can interpret coverage data and explain what actually matters.
+
+## Key Takeaways
+
+- **85% coverage could mean**: all your critical paths are tested and only logging is uncovered, or it could mean your happy path is tested but every error branch is uncovered.
+- **Recommended test additions (3 specific tests**: with function names)
+4.
+- **PREDICTED_DATE**: When will coverage reach 85% at current pace?
+3.
+- **Topics covered**: what coverage tools don't tell you, build an intelligent coverage reporter, github action integration
 
 ## What Coverage Tools Don't Tell You
 

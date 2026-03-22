@@ -14,7 +14,20 @@ tags: [ai-tools-compared]
 ---
 
 {% raw %}
+
 Alert fatigue kills on-call effectiveness. The average engineering team has hundreds of Prometheus alerts, 30-60% of which fire as false positives. AI tools can analyze your alerting rules, identify structural problems, and generate better expressions with appropriate thresholds and inhibition rules.
+
+## Key Takeaways
+
+- **The average engineering team**: has hundreds of Prometheus alerts, 30-60% of which fire as false positives.
+- **Missing inhibition**: Cascade alerts where one root cause fires 10 alerts
+3.
+- **RECOMMENDED_THRESHOLD**: Value and why
+2.
+- **PROMQL_EXPRESSION**: Ready-to-use alert expression
+4.
+- **AI tools can analyze your alerting rules**: identify structural problems, and generate better expressions with appropriate thresholds and inhibition rules.
+- **Inhibition rules to suppress**: ticket alerts when pager fires Use these labels: severity=page|ticket, team=[team from config] Include runbook_url in annotations.
 
 ## The Three Alert Problems AI Solves
 
