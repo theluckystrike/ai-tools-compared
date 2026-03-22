@@ -7,9 +7,9 @@ last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: /ai-tools-for-keeping-documentation-in-sync-with-codebase-cha/
 categories: [guides]
-tags: [ai-tools-compared, tools, documentation, automation, devtools]
+tags: [ai-tools-compared, tools, documentation, automation, devtools, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---
