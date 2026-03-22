@@ -234,32 +234,205 @@ Write-Host "Total Copilot-licensed users: $($licensedUsers.Count)"
 
 
 
+## Copilot Licensing Architecture: Understanding the Hierarchy
+
+GitHub uses a three-tier licensing structure that often confuses admins:
+
+```
+GitHub Enterprise (Organization-level)
+│
+├─ GitHub Copilot Business (Org subscription)
+│  └─ Individual seat assignments (per-user)
+│
+├─ GitHub Copilot Enterprise (Premium org subscription)
+│  └─ Individual seat assignments (per-user)
+│
+└─ GitHub Enterprise Managed Users (EMU)
+   └─ Licensing controlled at enterprise level
+      └─ NOT at organization level
+```
+
+Misunderstanding this hierarchy is the #1 cause of assignment failures. If your organization uses EMUs, organization-level admins cannot assign Copilot. You must:
+
+1. Escalate to enterprise administrator
+2. Configure at enterprise > people > managed users
+3. Wait for synchronization (24-48 hours)
+
+## Bulk License Assignment via GraphQL
+
+For organizations managing 100+ Copilot licenses, use GitHub's GraphQL API:
+
+```graphql
+query {
+  organization(login: "YOUR_ORG") {
+    members(first: 100) {
+      edges {
+        node {
+          login
+          id
+        }
+      }
+    }
+  }
+}
+
+mutation AssignCopilot($orgId: ID!, $userIds: [ID!]!) {
+  updateOrganizationCopilotSeatManagement(
+    input: {
+      organizationId: $orgId
+      seatAllotment: UNLIMITED
+    }
+  ) {
+    organization {
+      copilotSeatManagement {
+        activeSeats
+        pendingSeats
+        totalSeats
+      }
+    }
+  }
+}
+```
+
+This enables batch operations far more efficient than clicking through the UI.
+
+## Automated License Synchronization Script
+
+Create a GitHub Actions workflow to continuously sync Copilot access:
+
+```yaml
+name: Sync Copilot Licenses
+
+on:
+  schedule:
+    # Run daily at 2 AM UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Sync SAML Group to Copilot
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Fetch developers from SAML IdP via API
+          DEVELOPERS=$(curl -H "Authorization: Bearer $IDPTOKEN" \
+            https://your-idp.com/api/groups/developers/members | jq -r '.[].email')
+
+          # Assign each to Copilot Enterprise
+          for email in $DEVELOPERS; do
+            USERNAME=$(gh api /search/users --raw-field "q=email:$email" | jq -r '.items[0].login')
+            gh api orgs/YOUR_ORG/copilot/seat_assignments/$USERNAME --method PUT
+          done
+
+      - name: Verify Assignments
+        run: |
+          gh api orgs/YOUR_ORG/copilot/seats --paginate > copilot_seats.json
+          ASSIGNED=$(jq 'length' copilot_seats.json)
+          echo "Total assigned seats: $ASSIGNED"
+```
+
+This script runs nightly, ensuring new team members automatically gain Copilot access within 24 hours.
+
+## Troubleshooting Cost vs. Access Issues
+
+Different root causes require different solutions:
+
+| Symptom | Root Cause | Fix |
+|---------|---|---|
+| "License not assigned" error | User not in assignment list | Use Fix #3 above |
+| "Access denied" after assignment | Policy restrictions | Use Fix #5 above |
+| "Waiting for admin approval" | First-time access pending | Wait 24 hours, contact admin if stuck |
+| "You don't have access" (still) | Multiple org membership | Ensure logged into correct org |
+| Error code 403 in IDE | Stale auth token | Force re-authentication in IDE settings |
+| Seats show full but users missing | Orphaned licenses (inactive users) | Unassign inactive accounts, recycle seat |
+
+## Monitoring Copilot License Utilization
+
+Prevent exhaustion and manage costs by tracking usage:
+
+```python
+#!/usr/bin/env python3
+import subprocess
+import json
+from datetime import datetime, timedelta
+
+def check_copilot_seats(org):
+    """Query GitHub API for Copilot seat usage."""
+    cmd = f"gh api orgs/{org}/copilot/seats --paginate"
+    result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
+    seats = json.loads(result.stdout)
+
+    total = len(seats)
+    active = sum(1 for s in seats if s['last_used_at'] and
+                 datetime.fromisoformat(s['last_used_at'].replace('Z', '+00:00'))
+                 > datetime.now() - timedelta(days=30))
+
+    return {
+        'total_assigned': total,
+        'active_last_30_days': active,
+        'inactive': total - active,
+        'utilization': round(100 * active / total, 1) if total > 0 else 0
+    }
+
+if __name__ == '__main__':
+    usage = check_copilot_seats('YOUR_ORG')
+    print(f"Copilot Seat Summary:")
+    print(f"  Total assigned: {usage['total_assigned']}")
+    print(f"  Active (last 30 days): {usage['active_last_30_days']}")
+    print(f"  Inactive: {usage['inactive']}")
+    print(f"  Utilization: {usage['utilization']}%")
+
+    if usage['inactive'] > usage['total_assigned'] * 0.2:
+        print("\n⚠️  Warning: >20% inactive licenses. Consider recycling unused seats.")
+```
+
+Run this monthly to identify licenses wasted on inactive users, freeing capacity for new team members.
+
+## Copilot Pricing vs. Alternative AI Coding Tools
+
+When deciding to invest in Copilot Enterprise:
+
+| Tool | Cost | Access Model | IDE Integration | Code Privacy |
+|------|------|---|---|---|
+| **GitHub Copilot Enterprise** | $39/user/month (org) | Web + IDE | VS Code, JetBrains, Vim | Code excluded from training (contract) |
+| **Cursor** | $20/month | Standalone IDE | Cursor only | Local-first, optional cloud |
+| **AWS CodeWhisperer** | Free or $99/month | VS Code, JetBrains | Good integration | Excluded from training (free tier) |
+| **Anthropic Claude API** | $3–15/million tokens | API only | Via integration | Excluded from training (default) |
+| **Tabnine** | $25/month | IDE plugins | Excellent | Local on-device option |
+
+For teams already invested in GitHub, Copilot Enterprise's cost is justified by integration and policy compliance. For privacy-first teams, Cursor or local tools are better.
+
 ## Frequently Asked Questions
 
 
-**Who is this article written for?**
+**Can we use Copilot Individual if we can't afford Enterprise?**
 
-This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
-
-
-**How current is the information in this article?**
-
-We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
+Copilot Individual is designed for personal use and may violate your organizational policies. If considering this for team development, you're likely violating your software licensing compliance. Use Copilot Business ($21/user/month) as the team tier instead—it's cheaper than Enterprise and covers most team needs.
 
 
-**Does Copilot offer a free tier?**
+**How long does license synchronization take after assignment?**
 
-Most major tools offer some form of free tier or trial period. Check Copilot's current pricing page for the latest free tier details, as these change frequently. Free tiers typically have usage limits that work for evaluation but may not be sufficient for daily professional use.
-
-
-**How do I get started quickly?**
-
-Pick one tool from the options discussed and sign up for a free trial. Spend 30 minutes on a real task from your daily work rather than running through tutorials. Real usage reveals fit faster than feature comparisons.
+Typically 15-30 minutes for the web interface, up to 24 hours for IDE plugins to recognize the assignment. Restarting the IDE generally speeds this up. If it takes >24 hours, check organizational audit logs for errors using the diagnostic tips above.
 
 
-**What is the learning curve like?**
+**Can I assign seats retroactively for past usage?**
 
-Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+No. Copilot Enterprise licenses are prospective only. If you need to track usage from before assignment, use your IDE's local usage logs, but understand that usage before assignment won't affect billing—it's only assigned users going forward.
+
+
+**What happens if a user leaves and we don't unassign their seat?**
+
+The seat remains assigned and billable. GitHub's seat management doesn't automatically recycle licenses when users depart. Proactively unassign departing user seats through the admin interface to avoid waste.
+
+
+**Can we use Enterprise-Managed Users with regular organizations?**
+
+No. EMU is an enterprise-level feature. If you need EMU's centralized control but don't need an enterprise contract, consider Copilot Business with strong SAML sync policies to keep access aligned with your IdP.
 
 
 ## Related Articles

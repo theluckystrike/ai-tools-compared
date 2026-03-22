@@ -4,10 +4,10 @@ description: "Compare Claude, GPT-4, Copilot for writing reusable composite acti
 author: "theluckystrike"
 date: 2026-03-22
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
-tags: ["github actions", "devops", "ci/cd", "composite actions", "ai tools"]
+tags: [ai-tools-compared, github actions, devops, ci/cd, composite actions, ai tools, artificial-intelligence]
 ---
 {% raw %}
 
