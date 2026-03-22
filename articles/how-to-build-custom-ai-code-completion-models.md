@@ -28,6 +28,20 @@ Fine-tuning is worth the investment when:
 
 For general programming tasks, Claude or Copilot still win. For your internal `PaymentProcessor.process_with_retry()` calls, a fine-tuned model is more accurate.
 
+## Model Selection: CodeLlama vs StarCoder2
+
+Before writing a single line of training code, choose the right base model. The decision affects GPU requirements, licensing, and accuracy on specific languages.
+
+| Model | Parameters | GPU RAM (QLoRA) | License | Best For |
+|---|---|---|---|---|
+| StarCoder2-3B | 3B | ~8 GB (single A10G) | BigCode OpenRAIL-M | Fast inference, Python/JS/Go |
+| StarCoder2-7B | 7B | ~16 GB (single A100) | BigCode OpenRAIL-M | Better accuracy, more languages |
+| CodeLlama-7B | 7B | ~16 GB | Llama 2 Community | General code, Python focus |
+| CodeLlama-13B | 13B | ~28 GB (2x A10G) | Llama 2 Community | Highest accuracy, slower |
+| DeepSeek-Coder-6.7B | 6.7B | ~14 GB | DeepSeek License | Strong on multi-language repos |
+
+For most internal codebases, **StarCoder2-7B** is the best starting point. It supports Fill-in-the-Middle (FIM) natively, which is the right training objective for autocomplete — the model learns to predict the middle of a function given its prefix and suffix. CodeLlama also supports FIM; DeepSeek-Coder uses a slightly different format.
+
 ## Training Data Preparation
 
 Quality training data is more important than model size. A well-curated 10,000-example dataset beats a scraped 1M-example dataset for domain-specific tasks.
@@ -119,6 +133,8 @@ with open("training_data.jsonl", "w") as f:
         f.write(json.dumps(ex) + "\n")
 ```
 
+A codebase of 200,000 lines typically yields 8,000–15,000 usable FIM examples after filtering. Aim for at least 5,000 examples before fine-tuning; below that, the model memorizes rather than generalizes.
+
 ## Fine-Tuning with QLoRA
 
 QLoRA lets you fine-tune a 7B parameter model on a single A100 (40GB) or two A10G GPUs. For a 3B model (Starcoder2-3b), you can use a single A10G.
@@ -195,6 +211,8 @@ trainer.train()
 trainer.model.save_pretrained("./fine-tuned-model")
 tokenizer.save_pretrained("./fine-tuned-model")
 ```
+
+Training 10,000 examples for 3 epochs on a single A100 takes roughly 45–90 minutes. Monitor your TensorBoard loss curve: if training loss drops below 0.8 but validation loss stops improving, you're starting to overfit. Reduce epochs or increase dropout.
 
 ## Merging LoRA Weights
 
@@ -286,6 +304,8 @@ print(f"Exact match: {exact_matches}/{len(results)} ({exact_matches/len(results)
 print(f"Average token overlap: {avg_overlap:.1%}")
 ```
 
+A well-tuned model on an internal codebase typically reaches 20–35% exact match on single-function completions and 60–75% token overlap. The exact match number sounds low, but in practice it means the model produces functionally equivalent code even when the whitespace or variable name differs slightly. Run the suggested completions through your unit tests as a more meaningful quality signal.
+
 ## Deploying with Ollama
 
 Convert the merged model to GGUF format and serve with Ollama:
@@ -317,6 +337,8 @@ ollama create custom-coder -f Modelfile
 ollama run custom-coder "def process_payment(amount: float, currency: str) ->"
 ```
 
+The Q4_K_M quantization reduces a 7B model to roughly 4.5 GB. On a MacBook Pro M3, this runs at 25–40 tokens per second — fast enough for real-time autocomplete. For a team deployment, run Ollama on a shared Linux machine with a GPU and point all developer clients at `http://your-server:11434`.
+
 ## VS Code Integration
 
 ```json
@@ -342,6 +364,8 @@ ollama run custom-coder "def process_payment(amount: float, currency: str) ->"
   }
 }
 ```
+
+Continue.dev is the recommended VS Code extension for connecting local Ollama models to the editor. It supports FIM-mode autocomplete natively and works without any data leaving your network.
 
 ## Related Reading
 
