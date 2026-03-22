@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /how-to-use-ai-to-generate-playwright-tests-for-iframe-and-cross-origin-content/
 categories: [guides]
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]
