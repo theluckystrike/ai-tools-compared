@@ -369,10 +369,6 @@ After initial migration, keep your Custom GPT updated when your Claude project e
 # 6. Document any divergences in a "migration notes" file
 ```
 
-## Related Reading
-
-
-
 ## Frequently Asked Questions
 
 

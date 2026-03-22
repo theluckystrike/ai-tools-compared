@@ -452,10 +452,6 @@ def check_doc_quality(markdown_file: str) -> dict:
 # retrain your documentation generation prompts
 ```
 
-## Related Reading
-
-
-
 ## Frequently Asked Questions
 
 

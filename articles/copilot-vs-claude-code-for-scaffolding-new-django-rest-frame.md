@@ -348,10 +348,6 @@ Both tools prevent common mistakes when you guide them properly:
 - Unprotected API endpoints (both can add authentication, but require explicit prompting)
 - Missing migrations (Claude often creates a migration script; Copilot requires manual `makemigrations`)
 
-## Related Reading
-
-
-
 ## Frequently Asked Questions
 
 

@@ -13,8 +13,6 @@ intent-checked: true
 voice-checked: true
 ---
 
-{% raw %}
-
 Picking between Sonnet and Opus matters when you're paying per token at scale. Opus 4.6 costs roughly 5x more than Sonnet 4.6 per token. For an agentic pipeline running 1,000 tasks per day, that difference is significant. This guide documents which tasks justify Opus and which work fine with Sonnet, based on measurable output quality differences.
 
 ## The Core Tradeoff
@@ -194,6 +192,153 @@ def review_pr(pr_diff: str, risk_level: str) -> str:
 
 Classify risk by: files touched (auth, payments, infra = high), number of files changed, whether tests are included.
 
+## Real-World Pricing Analysis
+
+Let's put this in perspective with actual use cases:
+
+**Scenario 1: Small Team (5 developers, 100 coding tasks/day)**
+- Average task: 500 input tokens, 300 output tokens
+- Daily volume: 100 × 500 = 50K input tokens, 100 × 300 = 30K output tokens
+
+Using Sonnet:
+- Input: 50,000 × ($3/1M) = $0.15
+- Output: 30,000 × ($15/1M) = $0.45
+- Daily cost: $0.60
+- Monthly cost: $18
+
+Using Opus:
+- Input: 50,000 × ($15/1M) = $0.75
+- Output: 30,000 × ($75/1M) = $2.25
+- Daily cost: $3.00
+- Monthly cost: $90
+
+**Savings: $72/month ($864/year) by using Sonnet for everything**
+
+**Scenario 2: Enterprise Scale (50 developers, 1000 tasks/day)**
+Daily cost with all Sonnet: $6
+Daily cost with all Opus: $30
+Monthly savings: $720
+
+But what if 10% of tasks genuinely need Opus (complex architecture design, critical security reviews)?
+- 900 tasks with Sonnet: $5.40
+- 100 tasks with Opus: $3.00
+- Total: $8.40 (only 40% more expensive than all-Sonnet, but better quality)
+
+## Building a Smart Router
+
+For agentic systems, use a simple heuristic to route to the right model:
+
+```python
+def choose_model_for_task(task):
+    """Route to Sonnet or Opus based on task characteristics"""
+
+    # High-risk tasks always get Opus
+    high_risk_patterns = [
+        'security',
+        'authentication',
+        'encryption',
+        'payment',
+        'critical',
+        'architecture',
+    ]
+
+    if any(pattern in task.lower() for pattern in high_risk_patterns):
+        return "claude-opus-4-6"
+
+    # Complex tasks (multi-file changes) get Opus
+    if task.file_count > 5:
+        return "claude-opus-4-6"
+
+    # Large codebases get Opus (more context to understand)
+    if task.codebase_size_mb > 50:
+        return "claude-opus-4-6"
+
+    # Everything else uses Sonnet
+    return "claude-sonnet-4-6"
+
+# Usage
+model = choose_model_for_task(task)
+response = client.messages.create(
+    model=model,
+    messages=[...],
+    max_tokens=2048
+)
+```
+
+## Quality vs Cost Tradeoff Matrix
+
+| Use Case | Sonnet OK? | Why? | Estimated Quality |
+|----------|-----------|------|-------------------|
+| Boilerplate | Yes | Mechanical task | 95% |
+| CRUD endpoints | Yes | Well-defined pattern | 95% |
+| Bug fixes (simple) | Yes | Localized change | 92% |
+| Feature implementation | Maybe | Depends on complexity | 85% |
+| Architecture design | No | Needs deep reasoning | 70% with Sonnet, 95% with Opus |
+| Security review | No | Needs comprehensive analysis | 60% with Sonnet, 95% with Opus |
+| Large refactoring | No | Multi-system impact | 75% with Sonnet, 95% with Opus |
+
+**Quality definition: "The output is production-ready with no modifications"**
+
+## Measuring Model Performance on Your Codebase
+
+Don't trust generic benchmarks—test on your actual code:
+
+```python
+# Test both models on recent PRs
+import random
+
+def benchmark_models():
+    pr_diffs = load_recent_prs(limit=20)
+
+    results = {
+        'sonnet': [],
+        'opus': []
+    }
+
+    for model, reviews in results.items():
+        for pr_diff in pr_diffs:
+            # Get code review from model
+            review = get_code_review(model, pr_diff)
+
+            # Evaluate against actual PR review from team
+            actual_review = get_actual_team_review(pr_diff)
+            quality_score = compare_reviews(review, actual_review)
+
+            reviews.append(quality_score)
+
+    # Calculate metrics
+    for model, scores in results.items():
+        avg = sum(scores) / len(scores)
+        std_dev = statistics.stdev(scores)
+
+        print(f"{model.upper()}: {avg:.1%} quality ({std_dev:.1%} variance)")
+```
+
+This tells you definitively whether Sonnet is good enough for your team's actual work.
+
+## When to Escalate to Opus
+
+Implement an escalation system:
+
+```python
+def review_with_escalation(pr_diff):
+    # First pass: quick Sonnet review
+    sonnet_review = get_sonnet_review(pr_diff)
+
+    # Check for confidence/risk indicators
+    red_flags = find_red_flags(sonnet_review)
+
+    if red_flags or high_confidence_issues(sonnet_review):
+        # Escalate to Opus for deeper analysis
+        opus_review = get_opus_review(pr_diff)
+        return merge_reviews(sonnet_review, opus_review)
+
+    # Return Sonnet review if high confidence
+    return sonnet_review
+```
+
+This hybrid approach saves costs while ensuring quality where it matters.
+
 ## Related Reading
 
 - [Claude Sonnet vs Opus API Pricing: Is the Difference Worth It?](/claude-sonnet-vs-opus-api-pricing-difference-worth-it-2026/)
@@ -231,6 +376,3 @@ Not yet. AI tools generate useful test scaffolding and catch common patterns, bu
 **What happens to my data when using Claude or the second tool?**
 
 Review each tool's privacy policy and terms of service carefully. Most AI tools process your input on their servers, and policies on data retention and training usage vary. If you work with sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
-
-
-{% endraw %}
