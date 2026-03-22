@@ -13,16 +13,39 @@ intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]
 ---
+---
+layout: default
+title: "How to Write System Prompts for AI Coding Assistants"
+description: "A practical guide for developers learning to write effective system prompts that make AI coding assistants understand your project's unique requirements"
+date: 2026-03-16
+last_modified_at: 2026-03-16
+author: theluckystrike
+permalink: /how-to-write-system-prompts-for-ai-coding-assistants-project/
+categories: [guides]
+reviewed: true
+score: 9
+intent-checked: true
+voice-checked: true
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 
 Writing effective system prompts for AI coding assistants requires understanding how these tools interpret instructions and what information they need to generate contextually appropriate code. When you work on a project with specific conventions, testing requirements, or architectural patterns, conveying those details through well-crafted system prompts significantly improves the quality of AI-generated code.
 
-## Table of Contents
+## Key Takeaways
 
-- [Why Project-Specific Rules Matter](#why-project-specific-rules-matter)
-- [Prerequisites](#prerequisites)
-- [Practical Examples](#practical-examples)
-- [Troubleshooting](#troubleshooting)
+- **The practical approach is to start with a core prompt covering your three or four most critical conventions**: the ones where deviation causes the most rework.
+- **Language and framework specifics**: Version requirements, preferred patterns
+
+4.
+- **Project-specific conventions**: Custom patterns unique to your codebase
+
+### Use Concrete Examples
+
+Include actual code examples from your project to illustrate expected patterns.
+- **The project uses SQLAlchemy**: 2.0 async sessions with PostgreSQL.
+- **Consider a scenario where**: your project uses a specific error-handling pattern across all API endpoints.
+- **Include preferences for file**: organization and import patterns.
 
 ## Why Project-Specific Rules Matter
 
@@ -269,9 +292,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Writing Effective System Prompts for AI Coding Assistants](/ai-tools-compared/writing-effective-system-prompts-for-ai-coding-assistants-th/)
 - [How to Write System Prompts for AI Assistants That Produce](/ai-tools-compared/how-to-write-system-prompts-for-ai-assistants-that-produce-a/)
-- [How to Write Better Prompts for AI Code Generation](/ai-tools-compared/how-to-write-better-prompts-for-ai-code-generation-with-examples/)
+- [Writing Effective System Prompts for AI Coding Assistants](/ai-tools-compared/writing-effective-system-prompts-for-ai-coding-assistants-th/)
 - [How to Create Custom System Prompts for AI That Match Your](/ai-tools-compared/how-to-create-custom-system-prompts-for-ai-that-match-your-d/)
-- [How to Train Your AI Coding Assistant on Your Team Coding](/ai-tools-compared/how-to-train-your-ai-coding-assistant-on-your-team-coding-st/)
+- [How to Migrate ChatGPT System Prompts](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-forma/)
+- [Migrate ChatGPT System Prompts](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-format/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

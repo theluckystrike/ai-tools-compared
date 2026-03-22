@@ -18,6 +18,13 @@ tags: [ai-tools-compared, claude-ai, api]
 
 The Claude API can review pull request diffs and post structured feedback as GitHub comments. The key engineering decisions are: what context to send (diff only vs diff + surrounding file context), how to structure the review prompt to get actionable output, and how to parse the response into per-line GitHub review comments. This guide builds a working PR reviewer from scratch.
 
+## Key Takeaways
+
+- **Asking for free-form feedback**: produces noise.
+- **Your goal is to catch bugs**: security issues, and violations of best practices.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+- **Consider a security review**: if your application handles sensitive user data.
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

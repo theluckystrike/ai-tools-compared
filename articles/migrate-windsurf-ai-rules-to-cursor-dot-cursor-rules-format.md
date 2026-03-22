@@ -17,6 +17,15 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 If you have been using WindSurf's AI rules configuration and want to switch to Cursor, or if you need to use both editors in your workflow, migrating your custom AI rules is essential for maintaining consistent coding assistance. This guide walks you through the complete migration process, explains the key differences between the two formats, and provides practical code examples to help you adapt your rules quickly.
 
+## Key Takeaways
+
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **Does Cursor offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Mastering advanced features takes**: 1-2 weeks of regular use.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+
 ## Understanding the Two Rule Systems
 
 
@@ -62,8 +71,7 @@ Here is a practical example of how this conversion works. Suppose your WindSurf 
 The equivalent Cursor.cursorrules format would look like this:
 
 
-```yaml
----
+```yaml---
 version: 1.0
 preferences:
  indentation: spaces
@@ -78,22 +86,6 @@ context:
 ---
 
 # Project Rules
-
-## Table of Contents
-
-- [Code Style](#code-style)
-- [Context Guidelines](#context-guidelines)
-- [Handling WindSurf Action Rules](#handling-windsurf-action-rules)
-- [Auto-Documentation](#auto-documentation)
-- [Pre-Save Actions](#pre-save-actions)
-- [Import Organization](#import-organization)
-- [Migrating WindSurf Context Rules](#migrating-windsurf-context-rules)
-- [Always Include](#always-include)
-- [Exclude Patterns](#exclude-patterns)
-- [Priority Files](#priority-files)
-- [Step-by-Step Migration Process](#step-by-step-migration-process)
-- [Testing Your Migrated Rules](#testing-your-migrated-rules)
-- [Common Pitfalls to Avoid](#common-pitfalls-to-avoid)
 
 ## Code Style
 - Use 2 spaces for indentation

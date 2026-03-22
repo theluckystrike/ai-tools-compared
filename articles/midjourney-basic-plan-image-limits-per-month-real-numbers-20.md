@@ -17,6 +17,15 @@ tags: [ai-tools-compared]
 
 The Midjourney Basic Plan remains the entry point for developers and hobbyists who want to explore AI image generation without committing to expensive subscriptions. Understanding the actual image limits requires examining how Midjourney measures usage—specifically through "fast mode" GPU hours rather than raw image counts.
 
+## Key Takeaways
+
+- **If you have used**: the tool for at least 3 months and plan to continue, the annual discount usually makes sense.
+- **For the Basic Plan at $10/month**: you receive 3.3 hours of fast mode time per month.
+- **Evaluate your monthly generation needs honestly**: if 200 images per month falls short, the Standard Plan at $30/month provides significantly more headroom without dramatic cost increases.
+- **However**: improvements in rendering efficiency mean the 3.3 fast hours now generate approximately 10% more images than previous years under equivalent parameters.
+- **Is the annual plan**: worth it over monthly billing? Annual plans typically save 15-30% compared to monthly billing.
+- **Discounts of 25-50% are**: common for qualifying organizations.
+
 ## How Midjourney Counts Usage
 
 
@@ -30,8 +39,7 @@ For the Basic Plan at $10/month, you receive **3.3 hours of fast mode time** per
 
 
 ```
-Plan          Monthly Fast Hours    Approximate Images
----
+Plan          Monthly Fast Hours    Approximate Images---
 ------------------------------------------------
 Basic 3.3 hours ~150-200 images
 Standard 15 hours ~700-900 images

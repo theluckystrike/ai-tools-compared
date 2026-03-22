@@ -13,9 +13,35 @@ reviewed: true
 intent-checked: true
 tags: [ai-tools-compared, artificial-intelligence]
 ---
+---
+layout: default
+title: "How to Use AI Coding Tools Without Becoming Dependent on"
+description: "A practical guide for developers on using AI coding assistants effectively while maintaining core programming skills and avoiding autocomplete dependency"
+date: 2026-03-16
+last_modified_at: 2026-03-16
+author: theluckystrike
+permalink: /how-to-use-ai-coding-tools-without-becoming-dependent-on-aut/
+categories: [guides]
+score: 9
+voice-checked: true
+reviewed: true
+intent-checked: true
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 
 AI coding tools have transformed how developers write software, offering intelligent suggestions, automating repetitive patterns, and helping navigate unfamiliar APIs. However, relying too heavily on autocomplete features can erode your fundamental programming abilities over time. The key lies in using these tools as accelerators while maintaining your own problem-solving capabilities.
+
+## Key Takeaways
+
+- **If you solve 60%**: of problems in week 1 and 75% in week 4, your independence is improving.
+- **Monthly deeper dives (2-3 hours)**: Pick a topic you use AI for frequently (async/await, database queries, state management) and implement 3-5 projects in that area without assistance.
+- **Why use *args instead**: of specific parameters? # 2.
+- **Use AI for Exploration**: Not Execution
+
+Instead of having AI write code for you, use it to explore APIs and libraries.
+- **Review Generated Code Thoroughly**: When you do use AI to generate code, treat it as a first draft requiring careful review.
+- **If mostly "no"**: ask the author to review and re-explain.
 
 ## Prerequisites
 
