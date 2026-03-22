@@ -43,6 +43,21 @@ Key areas where AI assistance accelerates development:
 - Unit test generation for controllers
 
 
+## Setting Up a Kubebuilder Project Before Using AI
+
+Before any AI tool can generate useful operator code, your Kubebuilder scaffold needs to exist. AI tools work best when they can reference your existing API types rather than inventing them from scratch.
+
+```bash
+# Initialize a new operator project
+kubebuilder init --domain example.com --repo github.com/example/my-operator
+
+# Create an API and controller scaffold
+kubebuilder create api --group cache --version v1alpha1 --kind Cache --resource --controller
+```
+
+Once the scaffold is in place, feed the generated `api/v1alpha1/cache_types.go` file into your AI tool of choice. This gives the model the concrete type definitions it needs to generate reconciliation logic that compiles on the first attempt.
+
+
 ## Claude Code
 
 
@@ -211,6 +226,22 @@ The tool supports adding multiple files to context, which helps when generating 
 Aider requires explicit file management in the session. Developers must remember to add relevant files for the AI to understand the full context.
 
 
+## Head-to-Head Comparison
+
+| Capability | Claude Code | Cursor | Copilot | Aider |
+|---|---|---|---|---|
+| Full reconcile loop generation | Excellent | Good | Partial | Good |
+| Finalizer implementation | Excellent | Good | Partial | Good |
+| Webhook code (validating/mutating) | Excellent | Good | Weak | Good |
+| Status subresource management | Excellent | Good | Good | Good |
+| Unit test generation for controllers | Good | Good | Good | Good |
+| Multi-file context awareness | Good (prompt-based) | Excellent | Good | Excellent |
+| IDE integration | No | Yes | Yes | No |
+| Cost | Usage-based | Subscription | Subscription | Free (BYOK) |
+
+For production-grade operators where correctness matters more than speed, Claude Code leads. For rapid iteration in a familiar IDE, Cursor is the fastest workflow.
+
+
 ## Practical Recommendations
 
 
@@ -252,6 +283,16 @@ Generate a reconcile function for the CacheReconciler that:
 
 The specificity of prompts directly impacts code quality. Ambiguous requests produce generic implementations that require revision.
 
+For webhook code specifically, include your CRD validation rules and explain the business constraints you want enforced:
+
+```bash
+Generate a validating webhook for the Cache CRD that:
+- Rejects spec.replicas > 10 for non-premium tenants
+- Rejects changes to spec.storageClass after creation (immutable field)
+- Returns descriptive error messages for each rejection
+```
+
+Claude Code consistently generates webhook implementations that follow the admission.k8s.io/v1 conventions, including proper status codes and reasons in the AdmissionResponse.
 
 
 ## Frequently Asked Questions
