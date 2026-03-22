@@ -228,6 +228,62 @@ if __name__ == "__main__":
 Run this script after installing WindSurf to batch-convert your snippet collection.
 
 
+## Feature Comparison: Cursor vs WindSurf Snippets
+
+Understanding which features translate directly and which require manual adjustment helps you prioritize migration effort:
+
+| Feature | Cursor | WindSurf | Migration Effort |
+|---|---|---|---|
+| Basic snippet JSON format | `.json` in User/snippets | `.code-snippets` in User/snippets | Low — rename extension |
+| Tabstops (`$1`, `$2`) | Supported | Supported | None |
+| Placeholder labels (`${1:name}`) | Supported | Supported | None |
+| `scope` field for file types | Not required | Required for scoping | Low — add field |
+| AI rules file | `.cursorrules` | `.windrules` | Medium — reformat |
+| AI context injection | Via rules file | Via rules file + Cascade | Medium |
+| Editor-wide AI shortcuts | Cmd+K / Cmd+L | Cmd+I (Cascade) | Manual remapping |
+
+Items marked Low can be handled by the batch migration script above. Items marked Medium require manual review of your `.cursorrules` content and rewriting in WindSurf's preferred YAML structure.
+
+
+## Migrating Workspace-Level Snippets
+
+Beyond user-level snippets, Cursor supports workspace-specific snippets stored inside your project's `.vscode/` directory. WindSurf reads the same directory, so these snippets often migrate without any changes. Verify by opening WindSurf in your project root and triggering the snippet prefix in a relevant file.
+
+If workspace snippets fail to appear, check that the `.code-snippets` file is present in `.vscode/` and that its `scope` field matches the file type you are editing. WindSurf enforces scope more strictly than Cursor in some configurations.
+
+For teams sharing snippets across multiple developers via version control, move your workspace snippets into `.vscode/` and commit them to the repository. Both editors will pick them up automatically, making the transition gradual rather than a hard cutover.
+
+
+## Translating Cursor Composer Prompts to WindSurf Cascade
+
+Cursor's Composer is a multi-file AI editing interface. Developers who use Composer heavily often have refined prompt patterns saved in notes or documentation—these need to be adapted for WindSurf's Cascade interface, which operates similarly but with different context controls.
+
+Key differences to account for when translating prompts:
+
+**Context scope.** In Cursor Composer, you use `@file` and `@folder` mentions to add context. In WindSurf Cascade, context is controlled through the windrules file or by highlighting code before opening Cascade. Explicitly referencing file paths in your prompt text still works in both tools.
+
+**Multi-step instructions.** Cascade handles sequential instructions well when you number them clearly. If your Cursor Composer prompts use implicit ordering ("first do X, then Y"), make the order explicit in WindSurf to avoid step-skipping.
+
+**Refactoring prompts.** Cursor Composer allows you to apply changes across multiple files in a single session. WindSurf Cascade supports the same capability—open the relevant files in tabs before starting a Cascade session, and they become available in context automatically.
+
+A Cursor Composer prompt like:
+
+```
+Refactor @services/auth.ts and @middleware/validate.ts to use the new
+UserSession type defined in @types/session.ts. Update all call sites.
+```
+
+Translates to this Cascade prompt:
+
+```
+Refactor services/auth.ts and middleware/validate.ts to use the new
+UserSession type defined in types/session.ts. Update all call sites
+in both files and any imports that reference the old type.
+```
+
+The @ syntax is optional in Cascade if the files are already open in your editor workspace. The explicit file path reference serves the same purpose.
+
+
 ## Verifying Your Migration
 
 
@@ -261,6 +317,35 @@ echo "Snippets synchronized"
 
 
 This approach keeps both editors in sync while you evaluate WindSurf's capabilities.
+
+
+
+## Frequently Asked Questions
+
+
+**How long does it take to migrate cursor ai snippets and templates?**
+
+For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
+
+
+**What are the most common mistakes to avoid?**
+
+The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
+
+
+**Do I need prior experience to follow this guide?**
+
+Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
+
+
+**Can I adapt this for a different tech stack?**
+
+Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
+
+
+**Where can I get help if I run into issues?**
+
+Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
 
 
 ## Related Articles
