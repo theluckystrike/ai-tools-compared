@@ -268,6 +268,91 @@ async function formatWithCache(source: string): Promise<string> {
 
 Add `.formatter-cache.json` to `.gitignore`. This reduces API calls by 80-90% on repeated runs.
 
+## Handling Large Files: Chunking Strategy
+
+Files over 4,000 lines can exceed model context limits. The right approach is function-level chunking, not line-based splitting, because splitting mid-function produces broken output:
+
+```typescript
+// chunked-formatter.ts
+interface CodeChunk {
+  startLine: number;
+  endLine: number;
+  source: string;
+}
+
+function splitIntoFunctions(source: string): CodeChunk[] {
+  const lines = source.split('\n');
+  const chunks: CodeChunk[] = [];
+  let chunkStart = 0;
+  let braceDepth = 0;
+  let inFunction = false;
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    // Track function declarations
+    if (/^(export\s+)?(async\s+)?function\s+\w+/.test(line) ||
+        /^\s+(async\s+)?\w+\s*\(.*\)\s*\{/.test(line)) {
+      if (!inFunction) {
+        inFunction = true;
+        chunkStart = i;
+      }
+    }
+    // Count braces
+    braceDepth += (line.match(/\{/g) || []).length;
+    braceDepth -= (line.match(/\}/g) || []).length;
+
+    // Flush chunk when function closes
+    if (inFunction && braceDepth === 0) {
+      chunks.push({
+        startLine: chunkStart,
+        endLine: i,
+        source: lines.slice(chunkStart, i + 1).join('\n'),
+      });
+      inFunction = false;
+    }
+  }
+
+  return chunks;
+}
+
+async function formatLargeFile(filePath: string): Promise<string> {
+  const source = fs.readFileSync(filePath, 'utf-8');
+  const chunks = splitIntoFunctions(source);
+
+  const formattedChunks = await Promise.all(
+    chunks.map((chunk) => formatWithCache(chunk.source))
+  );
+
+  return formattedChunks.join('\n\n');
+}
+```
+
+This preserves import context at the top of the file and avoids truncating functions mid-body.
+
+## Prompt Engineering for Consistent Output
+
+The biggest source of non-determinism in AI formatters is prompt quality. Two techniques that improve consistency:
+
+**Anchor with examples:** Instead of describing rules abstractly, include a before/after example pair in the system prompt. Claude is significantly more consistent when it can pattern-match against a concrete example.
+
+```typescript
+const SYSTEM_WITH_EXAMPLES = `You are a TypeScript formatter. Apply these rules:
+
+BEFORE:
+function greet(name) {
+  return 'Hello, ' + name + '!';
+}
+
+AFTER:
+function greet(name: string): string {
+  return \`Hello, \${name}!\`;
+}
+
+Apply the same transformations (type hints, template literals) to all functions.`;
+```
+
+**Constrain scope explicitly:** Adding "Do not rename variables. Do not change logic. Do not add or remove imports." prevents the model from making unsolicited improvements. AI tools tend toward overcorrection when not explicitly bounded.
+
 ## CI/CD Integration
 
 ```yaml
@@ -291,6 +376,20 @@ jobs:
           npx ts-node formatter.ts --dry-run src/**/*.ts
           # Exit 1 if any changes detected
 ```
+
+One practical limitation: AI formatters are slower than Prettier (seconds vs. milliseconds per file). For large codebases, run the AI formatter only on changed files in PRs, not on the entire tree. Use `git diff --name-only HEAD~1` to get the changed file list and pass it to the formatter.
+
+## Claude vs GPT-4 as the Formatting Engine
+
+Both models work, but they differ in output reliability:
+
+**Instruction adherence:** Claude is more consistent about returning only the formatted code without commentary. GPT-4 sometimes adds preamble like "Here is the formatted code:" before the actual output, which breaks the formatter pipeline unless you strip it. Adding "Return ONLY the code. No explanations." to the system prompt fixes this for GPT-4.
+
+**Determinism:** Neither model is fully deterministic, but Claude with temperature=0 produces more consistent output across runs on the same input. GPT-4 at temperature=0 still occasionally produces different orderings for import sort operations.
+
+**Code preservation:** Claude is more conservative about preserving comments and unused variables when instructed to "preserve all comments." GPT-4 occasionally drops inline comments that appear on the same line as code it restructures.
+
+For a production formatter, test both models against your codebase's actual code samples before committing to one. A formatter that occasionally corrupts comments is worse than no formatter at all.
 
 ## Related Reading
 

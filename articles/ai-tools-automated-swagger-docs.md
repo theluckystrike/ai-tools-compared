@@ -339,6 +339,74 @@ async def enrich_docs():
     app.openapi_schema = enriched
 ```
 
+## Spring Boot: Extracting from Controllers
+
+Spring Boot's `@RestController` annotations contain more structured information than Express route handlers. Claude can parse the Java code and produce accurate specs:
+
+```python
+# spring_swagger_generator.py
+import os
+import re
+import anthropic
+
+def extract_spring_controllers(src_dir: str) -> list[str]:
+    """Find all @RestController classes and return their source."""
+    controllers = []
+    for root, _, files in os.walk(src_dir):
+        for f in files:
+            if not f.endswith('.java'):
+                continue
+            path = os.path.join(root, f)
+            content = open(path).read()
+            if '@RestController' in content or '@Controller' in content:
+                controllers.append(f"// {path}\n{content}")
+    return controllers
+
+def generate_spec_from_spring(controllers: list[str]) -> str:
+    client = anthropic.Anthropic()
+
+    combined = "\n\n".join(controllers)
+
+    message = client.messages.create(
+        model="claude-opus-4-6",
+        max_tokens=8096,
+        system="""You are an OpenAPI 3.1 spec generator for Spring Boot.
+Given @RestController source code:
+- Extract @RequestMapping, @GetMapping, @PostMapping etc. for paths
+- Parse @PathVariable, @RequestParam, @RequestBody annotations for parameters
+- Infer response schemas from return types and @ResponseStatus annotations
+- Extract validation constraints from @Valid, @NotNull, @Size etc.
+Return a complete OpenAPI 3.1 YAML spec only.""",
+        messages=[{
+            "role": "user",
+            "content": f"Generate OpenAPI spec from these Spring Boot controllers:\n\n{combined}"
+        }]
+    )
+    return message.content[0].text
+
+if __name__ == "__main__":
+    import sys
+    src = sys.argv[1] if len(sys.argv) > 1 else "./src/main/java"
+    controllers = extract_spring_controllers(src)
+    print(f"Found {len(controllers)} controller(s)")
+    spec = generate_spec_from_spring(controllers)
+    with open("openapi.yaml", "w") as f:
+        f.write(spec)
+    print("openapi.yaml written")
+```
+
+Claude handles Spring's annotation-heavy style well. It correctly maps `@PathVariable String id` to an OpenAPI path parameter and `@RequestBody @Valid CreateUserDto dto` to a required request body with schema derived from the DTO fields.
+
+## Comparing Claude vs GPT-4 for Spec Generation
+
+Both tools produce valid OpenAPI YAML, but they differ in two ways:
+
+**Schema completeness:** Claude tends to infer more response schemas from variable names and comments. If a route returns `{ id, email, createdAt }`, Claude creates a named schema `UserResponse` in `components/schemas`. GPT-4 sometimes inlines the schema directly in the path, which works but reduces reusability.
+
+**Error response handling:** Claude consistently generates 401, 403, 404, and 500 responses based on middleware patterns it sees in the code (`authenticate`, `authorize`, etc.). GPT-4 often only generates the happy-path 200/201 unless you explicitly ask for error responses in the prompt.
+
+**Prompt tip:** Add "Include all error response schemas (400, 401, 403, 404, 422, 500) and use $ref for reusable error schemas" to get GPT-4 closer to Claude's default output quality.
+
 ## CI Drift Detection
 
 ```yaml
@@ -360,107 +428,17 @@ jobs:
           python compare_specs.py openapi.yaml /tmp/generated-spec.yaml
 ```
 
-## Spring Boot with Springdoc and AI Enrichment
+The `compare_specs.py` script can use a simple YAML diff or send both specs to Claude with the prompt: "List all breaking changes between spec A and spec B. A breaking change is a removed path, removed parameter, or changed response schema that would break existing clients." This catches regressions that naive string diffs miss — like renaming a field or changing a parameter from optional to required.
 
-Spring Boot's Springdoc library auto-generates OpenAPI from annotations, but the generated descriptions are sparse. Use AI to fill in example values, error response details, and property descriptions:
+## Keeping Specs Current Over Time
 
-**Prompt:**
-```
-Given this Spring Boot controller, generate the @Operation, @ApiResponse, and
-@Schema annotations to fully document each endpoint. Include example request
-bodies, error response schemas for 400/401/404/500, and property descriptions
-for all DTOs. Follow the OpenAPI 3.1 standard.
-```
+One-shot generation solves the bootstrap problem. The harder challenge is keeping the spec accurate as routes change. The most reliable pattern:
 
-```java
-// ProductController.java — before AI enrichment
-@RestController
-@RequestMapping("/api/products")
-public class ProductController {
+1. **Store the spec in version control** — treat `openapi.yaml` like production code, not generated output
+2. **Generate a "shadow spec" in CI** — regenerate from current code on every PR
+3. **Diff and alert** — fail the build if the shadow spec has paths not in the committed spec, or if committed spec has paths not in the code
 
-    @GetMapping("/{id}")
-    public ResponseEntity<ProductDTO> getProduct(@PathVariable Long id) {
-        return productService.findById(id)
-            .map(ResponseEntity::ok)
-            .orElse(ResponseEntity.notFound().build());
-    }
-
-    @PostMapping
-    public ResponseEntity<ProductDTO> createProduct(
-        @Valid @RequestBody CreateProductRequest request) {
-        ProductDTO created = productService.create(request);
-        URI location = URI.create("/api/products/" + created.getId());
-        return ResponseEntity.created(location).body(created);
-    }
-}
-```
-
-AI-generated annotations:
-
-```java
-// ProductController.java — after AI enrichment
-@RestController
-@RequestMapping("/api/products")
-@Tag(name = "Products", description = "Product catalog management endpoints")
-public class ProductController {
-
-    @Operation(
-        summary = "Get product by ID",
-        description = "Retrieves a single product by its unique identifier"
-    )
-    @ApiResponses({
-        @ApiResponse(responseCode = "200", description = "Product found",
-            content = @Content(schema = @Schema(implementation = ProductDTO.class))),
-        @ApiResponse(responseCode = "404", description = "Product not found",
-            content = @Content(schema = @Schema(implementation = ErrorResponse.class))),
-        @ApiResponse(responseCode = "401", description = "Authentication required")
-    })
-    @GetMapping("/{id}")
-    public ResponseEntity<ProductDTO> getProduct(
-        @Parameter(description = "Product ID", example = "42")
-        @PathVariable Long id) {
-        return productService.findById(id)
-            .map(ResponseEntity::ok)
-            .orElse(ResponseEntity.notFound().build());
-    }
-
-    @Operation(summary = "Create a new product")
-    @ApiResponses({
-        @ApiResponse(responseCode = "201", description = "Product created"),
-        @ApiResponse(responseCode = "400", description = "Validation failed",
-            content = @Content(schema = @Schema(implementation = ValidationErrorResponse.class)))
-    })
-    @PostMapping
-    public ResponseEntity<ProductDTO> createProduct(
-        @io.swagger.v3.oas.annotations.parameters.RequestBody(
-            content = @Content(examples = @ExampleObject(value = """
-                {"name":"Widget Pro","price":29.99,"sku":"WGT-001","stock":100}
-                """)))
-        @Valid @RequestBody CreateProductRequest request) {
-        ProductDTO created = productService.create(request);
-        URI location = URI.create("/api/products/" + created.getId());
-        return ResponseEntity.created(location).body(created);
-    }
-}
-```
-
----
-
-## Prompting Strategies for Higher-Quality Specs
-
-The quality of AI-generated OpenAPI specs depends heavily on what context you provide:
-
-**Provide validation rules explicitly**: If your route handler calls a validator, include the validator's rules in the prompt. AI cannot infer `maxLength: 255` from a database constraint it can't see.
-
-**Include error handling code**: Route handlers that short-circuit with `return res.status(404)` tell the AI which error responses to document. Including the error handling code doubles the accuracy of generated `responses` sections.
-
-**Reference existing schema files**: If your project has Zod, Joi, or Pydantic schemas, include them in the prompt. AI can extract every validation constraint directly from the schema definition.
-
-**Ask for examples**: Add "Include realistic examples for all request/response schemas" to get `example` values populated. Empty schemas are technically valid but unhelpful in Swagger UI.
-
-**Validate with a linter**: After generation, run `npx @redocly/cli lint openapi.yaml` or `spectral lint openapi.yaml`. AI-generated specs occasionally produce schema references to components that don't exist. The linter catches these before they reach production.
-
----
+This catches both directions of drift: code added without spec updates, and spec updates without corresponding code changes.
 
 ## Related Reading
 

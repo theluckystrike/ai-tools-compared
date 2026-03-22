@@ -276,6 +276,161 @@ class OrderServiceTest {
 
 Claude uses `@Captor` annotation (cleaner than `ArgumentCaptor.forClass()` inline), AssertJ fluent assertions, and `thenAnswer` for realistic repository mocking. GPT-4 sometimes uses JUnit 4 patterns (`@RunWith(MockitoJUnitRunner.class)`) in JUnit 5 tests.
 
+## Task 4: Mocking Async Code — Node.js with Timers
+
+Async code involving timers, queues, or retry logic is notoriously hard to mock. Claude handles this well; GPT-4 often produces tests that work only with `jest.useFakeTimers()` misconfigured.
+
+**Prompt:** "Write a Jest test for a retry function that retries a failing async operation up to 3 times with exponential backoff. Mock time so the test runs instantly."
+
+**Claude:**
+
+```typescript
+// retry.ts
+export async function withRetry<T>(
+  fn: () => Promise<T>,
+  maxAttempts: number = 3,
+  baseDelayMs: number = 1000,
+): Promise<T> {
+  let lastError: Error;
+
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    try {
+      return await fn();
+    } catch (err) {
+      lastError = err as Error;
+      if (attempt < maxAttempts) {
+        const delay = baseDelayMs * Math.pow(2, attempt - 1);
+        await new Promise(resolve => setTimeout(resolve, delay));
+      }
+    }
+  }
+
+  throw lastError!;
+}
+
+// retry.test.ts
+import { withRetry } from './retry';
+
+describe('withRetry', () => {
+  beforeEach(() => {
+    jest.useFakeTimers();
+  });
+
+  afterEach(() => {
+    jest.useRealTimers();
+  });
+
+  it('returns result on first success', async () => {
+    const fn = jest.fn().mockResolvedValue('ok');
+    await expect(withRetry(fn)).resolves.toBe('ok');
+    expect(fn).toHaveBeenCalledTimes(1);
+  });
+
+  it('retries and succeeds on third attempt', async () => {
+    const fn = jest.fn()
+      .mockRejectedValueOnce(new Error('fail 1'))
+      .mockRejectedValueOnce(new Error('fail 2'))
+      .mockResolvedValueOnce('success');
+
+    // Start the retry (don't await yet — it's waiting on a timer)
+    const resultPromise = withRetry(fn, 3, 1000);
+
+    // Advance past first backoff (1000ms)
+    await jest.advanceTimersByTimeAsync(1000);
+    // Advance past second backoff (2000ms)
+    await jest.advanceTimersByTimeAsync(2000);
+
+    await expect(resultPromise).resolves.toBe('success');
+    expect(fn).toHaveBeenCalledTimes(3);
+  });
+
+  it('throws after exhausting all retries', async () => {
+    const fn = jest.fn().mockRejectedValue(new Error('persistent failure'));
+
+    const resultPromise = withRetry(fn, 3, 100);
+
+    // Advance past both backoff delays
+    await jest.advanceTimersByTimeAsync(100);
+    await jest.advanceTimersByTimeAsync(200);
+
+    await expect(resultPromise).rejects.toThrow('persistent failure');
+    expect(fn).toHaveBeenCalledTimes(3);
+  });
+});
+```
+
+The key: `jest.advanceTimersByTimeAsync()` (Jest 27+) is needed instead of `jest.advanceTimersByTime()` when the code under test uses `await` with timers. Claude knows this distinction; GPT-4 often uses the sync version, leaving tests that hang indefinitely.
+
+## Task 5: Mocking HTTP Clients — MSW vs jest.mock
+
+For testing code that makes HTTP requests, there are two schools: mock the HTTP layer with `jest.mock`, or intercept at the network level with MSW (Mock Service Worker). Claude explains both and recommends correctly.
+
+**Claude's MSW approach for a React component test:**
+
+```typescript
+// handlers.ts — MSW request handlers
+import { http, HttpResponse } from 'msw';
+
+export const handlers = [
+  http.get('/api/users/:id', ({ params }) => {
+    if (params.id === '404') {
+      return HttpResponse.json({ error: 'Not found' }, { status: 404 });
+    }
+    return HttpResponse.json({
+      id: params.id,
+      name: 'Test User',
+      email: 'test@example.com',
+    });
+  }),
+
+  http.post('/api/users', async ({ request }) => {
+    const body = await request.json() as Record<string, unknown>;
+    if (!body.email) {
+      return HttpResponse.json({ error: 'Email required' }, { status: 400 });
+    }
+    return HttpResponse.json({ id: 'new-123', ...body }, { status: 201 });
+  }),
+];
+
+// setupTests.ts
+import { setupServer } from 'msw/node';
+import { handlers } from './handlers';
+
+export const server = setupServer(...handlers);
+
+beforeAll(() => server.listen({ onUnhandledRequest: 'error' }));
+afterEach(() => server.resetHandlers());
+afterAll(() => server.close());
+
+// user-profile.test.tsx
+import { render, screen, waitFor } from '@testing-library/react';
+import { server } from './setupTests';
+import { http, HttpResponse } from 'msw';
+import UserProfile from './UserProfile';
+
+it('displays user data', async () => {
+  render(<UserProfile userId="123" />);
+  await waitFor(() => expect(screen.getByText('Test User')).toBeInTheDocument());
+});
+
+it('shows error on 404', async () => {
+  render(<UserProfile userId="404" />);
+  await waitFor(() => expect(screen.getByText(/not found/i)).toBeInTheDocument());
+});
+
+it('handles server error', async () => {
+  // Override handler for this test only
+  server.use(
+    http.get('/api/users/:id', () => HttpResponse.json({}, { status: 500 }))
+  );
+
+  render(<UserProfile userId="123" />);
+  await waitFor(() => expect(screen.getByText(/something went wrong/i)).toBeInTheDocument());
+});
+```
+
+GPT-4 tends to reach for `jest.mock('axios')` or `jest.mock('fetch')` by default, which is lower fidelity and breaks if you swap HTTP libraries. Claude explains the MSW tradeoff clearly and uses the v2 MSW API (`http`, `HttpResponse`) rather than the deprecated v1 `rest` API.
+
 ## Comparison Summary
 
 | Scenario | Claude | GPT-4 |
@@ -284,6 +439,8 @@ Claude uses `@Captor` annotation (cleaner than `ArgumentCaptor.forClass()` inlin
 | Python partial mocking | Correct patch.object vs spy distinction | Often patches full class |
 | Java Mockito | JUnit 5 patterns, @Captor, AssertJ | Sometimes JUnit 4 patterns |
 | Async mock setup | mockResolvedValue/mockRejectedValue | Correct |
+| Timer mocking | advanceTimersByTimeAsync (correct) | Sometimes uses sync variant |
+| MSW vs jest.mock | Recommends MSW, uses v2 API | Defaults to jest.mock |
 | Mock verification ordering | Handles ordered verification | Good |
 | Complex nested matchers | Strong | Good |
 

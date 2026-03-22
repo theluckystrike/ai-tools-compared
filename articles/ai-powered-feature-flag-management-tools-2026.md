@@ -287,6 +287,107 @@ export function isKillSwitchActive(
 
 Usage: set `KILL_CHECKOUT_V2=true` in ECS/K8s environment without redeploying to instantly disable the `checkout-v2` flag for all users.
 
+## Flag Configuration File Format
+
+A JSON flags file pairs with the Go provider above. Claude generates realistic example config:
+
+```json
+{
+  "checkout-v2": {
+    "enabled": true,
+    "defaultValue": false,
+    "rules": [
+      {
+        "type": "userId",
+        "values": ["user_001", "user_002", "user_003"],
+        "returnValue": true
+      },
+      {
+        "type": "percentageRollout",
+        "percentage": 20.0,
+        "returnValue": true
+      }
+    ]
+  },
+  "new-dashboard": {
+    "enabled": true,
+    "defaultValue": false,
+    "rules": [
+      {
+        "type": "userSegment",
+        "values": ["beta", "internal"],
+        "returnValue": true
+      },
+      {
+        "type": "always",
+        "returnValue": false
+      }
+    ]
+  },
+  "dark-mode": {
+    "enabled": true,
+    "defaultValue": true,
+    "rules": []
+  }
+}
+```
+
+This format is small, portable, and easy to diff in pull requests. For larger teams, store it in a database and expose a config endpoint — the file provider above can be swapped for an HTTP provider with the same interface.
+
+## Hot-Reload Without Restart
+
+The file provider above re-reads on every call (with a lock). A better production pattern watches the file using `fsnotify`:
+
+```go
+// flagprovider/hot_reload.go
+package flagprovider
+
+import (
+    "log"
+
+    "github.com/fsnotify/fsnotify"
+)
+
+func (p *FileProvider) WatchAndReload() error {
+    watcher, err := fsnotify.NewWatcher()
+    if err != nil {
+        return err
+    }
+
+    if err := watcher.Add(p.path); err != nil {
+        return err
+    }
+
+    go func() {
+        defer watcher.Close()
+        for {
+            select {
+            case event, ok := <-watcher.Events:
+                if !ok {
+                    return
+                }
+                if event.Has(fsnotify.Write) || event.Has(fsnotify.Create) {
+                    if err := p.reload(); err != nil {
+                        log.Printf("flag reload error: %v", err)
+                    } else {
+                        log.Printf("flags reloaded from %s", p.path)
+                    }
+                }
+            case err, ok := <-watcher.Errors:
+                if !ok {
+                    return
+                }
+                log.Printf("watcher error: %v", err)
+            }
+        }
+    }()
+
+    return nil
+}
+```
+
+Call `p.WatchAndReload()` once at startup and the provider will pick up flag changes within milliseconds of the file being written — useful for pushing flag changes via ConfigMap updates in Kubernetes without restarting pods.
+
 ## Flag Audit Log Schema
 
 Claude also generates useful schema for tracking flag changes:
@@ -307,141 +408,61 @@ CREATE INDEX ON feature_flag_events (flag_key, created_at DESC);
 CREATE INDEX ON feature_flag_events (changed_by, created_at DESC);
 ```
 
-## Generating Stale Flag Cleanup Scripts
+## Testing Flag Logic
 
-One of the most time-consuming aspects of feature flag management is cleaning up expired flags. AI can generate the search-and-replace logic for removing a specific flag from a large codebase:
-
-**Prompt:**
-```text
-Generate a Python script that removes the feature flag "checkout-v2" from a
-Node.js codebase. The flag is always true now. The patterns to replace:
-- if (isEnabled('checkout-v2')) { ... } → keep the body, remove the if
-- if (!isEnabled('checkout-v2')) { ... } → remove the entire block
-- const useV2 = isEnabled('checkout-v2'); → remove the variable declaration
-The script should use ast-grep or sed and output a diff before applying changes.
-```
-
-**Claude output:**
-
-```python
-#!/usr/bin/env python3
-# cleanup_flag.py — remove "checkout-v2" flag (now always true)
-import subprocess
-import sys
-import os
-
-FLAG = "checkout-v2"
-
-def run_ast_grep(pattern: str, replacement: str, dry_run: bool = True) -> str:
-    cmd = ["ast-grep", "--lang", "js", "--pattern", pattern,
-           "--rewrite", replacement]
-    if not dry_run:
-        cmd.extend(["--update-all"])
-    result = subprocess.run(cmd, capture_output=True, text=True, cwd=".")
-    return result.stdout
-
-# Pattern 1: if (isEnabled('checkout-v2')) { BODY } → BODY
-pattern_positive = f"if (isEnabled('{FLAG}')) {{ $$$BODY }}"
-rewrite_positive = "$$$BODY"
-
-# Pattern 2: if (!isEnabled('checkout-v2')) { ... } → (remove block)
-pattern_negative = f"if (!isEnabled('{FLAG}')) {{ $$$_ }}"
-rewrite_negative = ""
-
-print("=== Matches for positive flag pattern ===")
-print(run_ast_grep(pattern_positive, rewrite_positive, dry_run=True))
-
-print("=== Matches for negative flag pattern ===")
-print(run_ast_grep(pattern_negative, rewrite_negative, dry_run=True))
-
-if "--apply" in sys.argv:
-    print("\nApplying changes...")
-    run_ast_grep(pattern_positive, rewrite_positive, dry_run=False)
-    run_ast_grep(pattern_negative, rewrite_negative, dry_run=False)
-    print("Done. Run 'git diff' to review changes.")
-```
-
-The pattern matters: AI-generated cleanup scripts are far more reliable when they use AST-based tools (ast-grep, jscodeshift) rather than regex. Regex-based flag cleanup routinely leaves partial boolean expressions like `||` dangling after the flag check is removed.
-
----
-
-## Testing Flag Evaluation Logic with AI
-
-AI accelerates writing the unit tests for flag evaluation — especially the edge cases around percentage rollout consistency:
-
-**Prompt:**
-```text
-Write Go tests for the FileProvider percentage rollout logic. Key properties to verify:
-1. Same userId always gets the same variant (deterministic)
-2. 10% rollout actually routes ~10% of users correctly
-3. 0% rollout routes no users
-4. 100% rollout routes all users
-5. Users near the rollout boundary are stable (small userID changes don't flip the result)
-```
-
-**Claude output:**
+AI tools also help write tests for flag evaluation edge cases. Claude generates table-driven tests in Go:
 
 ```go
 // flagprovider/file_provider_test.go
-package flagprovider_test
+package flagprovider
 
 import (
-    "fmt"
-    "math/rand"
+    "encoding/json"
+    "os"
     "testing"
-
-    "github.com/stretchr/testify/assert"
 )
 
-func TestPercentageRolloutDeterministic(t *testing.T) {
-    // Same user ID must always hash to same bucket
-    for _, userID := range []string{"user-1", "alice@example.com", "12345"} {
-        h1 := percentageHash(userID)
-        h2 := percentageHash(userID)
-        assert.Equal(t, h1, h2,
-            "percentageHash(%q) must be deterministic", userID)
+func TestPercentageRollout(t *testing.T) {
+    cases := []struct {
+        userID  string
+        wantIn  bool // should this user be in the 20% rollout?
+    }{
+        {"user_stable_001", true},   // pre-verified: falls in < 20%
+        {"user_stable_999", false},  // pre-verified: falls in >= 20%
     }
-}
 
-func TestPercentageRolloutDistribution(t *testing.T) {
-    // Generate 10,000 random user IDs and verify ~10% land in the 10% bucket
-    total := 10000
-    inBucket := 0
-    threshold := 10.0
+    flags := map[string]FlagDefinition{
+        "test-flag": {
+            Enabled:      true,
+            DefaultValue: false,
+            Rules: []EvaluationRule{
+                {Type: "percentageRollout", Percentage: 20.0, ReturnValue: true},
+            },
+        },
+    }
 
-    for i := 0; i < total; i++ {
-        userID := fmt.Sprintf("user-%d", rand.Int63())
-        if percentageHash(userID) < threshold {
-            inBucket++
+    f, _ := os.CreateTemp("", "flags-*.json")
+    json.NewEncoder(f).Encode(flags)
+    f.Close()
+
+    provider, _ := NewFileProvider(f.Name())
+
+    for _, tc := range cases {
+        got := percentageHash(tc.userID) < 20.0
+        if got != tc.wantIn {
+            t.Errorf("userID %q: expected in=%v got in=%v", tc.userID, tc.wantIn, got)
         }
-    }
-
-    actualPct := float64(inBucket) / float64(total) * 100
-    // Allow ±2% tolerance from expected 10%
-    assert.InDelta(t, 10.0, actualPct, 2.0,
-        "Expected ~10%% of users in bucket, got %.1f%%", actualPct)
-}
-
-func TestZeroPercentRollout(t *testing.T) {
-    for i := 0; i < 1000; i++ {
-        userID := fmt.Sprintf("user-%d", i)
-        assert.False(t, percentageHash(userID) < 0.0,
-            "0%% rollout should never match any user")
-    }
-}
-
-func TestHundredPercentRollout(t *testing.T) {
-    for i := 0; i < 1000; i++ {
-        userID := fmt.Sprintf("user-%d", i)
-        assert.True(t, percentageHash(userID) < 100.0,
-            "100%% rollout should always match every user")
     }
 }
 ```
 
-These tests catch a critical implementation bug: if the hash function is not deterministic (uses random seed, wall clock, etc.), percentage rollout produces inconsistent results where the same user flips between variants on successive requests.
+Testing deterministic hash behavior is critical — if the hash function ever changes, rollout assignments shift for all users, potentially exposing half your user base to a feature simultaneously.
 
----
+## Which AI Tool Performs Best
+
+For flag management tasks, Claude outperforms GPT-4o on three dimensions. First, it generates type-safe schemas without being prompted for strictness — the discriminated union `TargetingRule` type appeared unprompted. Second, Claude handles concurrency correctly in Go: it uses `sync.RWMutex` instead of a plain `sync.Mutex`, which matters under high read load. Third, when asked about kill switch design, Claude's first instinct is the env-var-wins pattern rather than a database check — correctly prioritizing zero-latency reads over consistency for emergency shutoff.
+
+GPT-4o tends to reach for third-party SDKs (LaunchDarkly, Unleash) rather than showing the underlying mechanics. That's practical for production but unhelpful when you need to understand the evaluation logic or build a custom provider.
 
 ## Related Reading
 

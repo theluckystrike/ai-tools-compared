@@ -26,6 +26,8 @@ The "correct" TLS configuration changes as cipher suites age out and vulnerabili
 3. Building automated certificate renewal pipelines
 4. Generating HSTS policies without foot-shooting
 
+The challenge is that TLS configuration involves interacting layers: the server software version, the OpenSSL version it was compiled against, the CA issuing certificates, and the client compatibility target. A setting that's correct for Nginx 1.25 on Ubuntu 22.04 may be wrong for Apache 2.4 on RHEL 8. AI tools handle this nuance reasonably well when you include version context in your prompts.
+
 ## Using Claude to Generate TLS Configs
 
 Claude knows the Mozilla SSL Configuration Generator recommendations and can apply them to specific server versions.
@@ -145,6 +147,99 @@ echo "$(date): Nginx reloaded after cert renewal" >> /var/log/certbot-renew.log
 0 0,12 * * * root /usr/local/bin/certbot-renew.sh
 ```
 
+## Monitoring Certificate Expiry with AI-Generated Scripts
+
+Automated renewal can fail silently. A certificate expiry monitoring script catches those failures before users do:
+
+```python
+#!/usr/bin/env python3
+# cert_monitor.py — checks expiry for a list of domains and alerts via email
+
+import ssl
+import socket
+import smtplib
+import datetime
+from email.mime.text import MIMEText
+from dataclasses import dataclass, field
+from typing import Optional
+
+DOMAINS = [
+    "example.com",
+    "api.example.com",
+    "admin.example.com",
+]
+ALERT_DAYS = 14        # Warn when cert expires within this many days
+SMTP_HOST = "localhost"
+ALERT_EMAIL = "ops@example.com"
+
+
+@dataclass
+class CertStatus:
+    domain: str
+    days_remaining: Optional[int] = None
+    error: Optional[str] = None
+
+    @property
+    def expiring_soon(self) -> bool:
+        return self.days_remaining is not None and self.days_remaining < ALERT_DAYS
+
+    @property
+    def ok(self) -> bool:
+        return self.error is None and not self.expiring_soon
+
+
+def check_cert_expiry(domain: str, port: int = 443) -> CertStatus:
+    ctx = ssl.create_default_context()
+    try:
+        with ctx.wrap_socket(
+            socket.create_connection((domain, port), timeout=10),
+            server_hostname=domain,
+        ) as conn:
+            cert = conn.getpeercert()
+            expiry_str = cert["notAfter"]
+            expiry = datetime.datetime.strptime(expiry_str, "%b %d %H:%M:%S %Y %Z")
+            days_remaining = (expiry - datetime.datetime.utcnow()).days
+            return CertStatus(domain=domain, days_remaining=days_remaining)
+    except Exception as e:
+        return CertStatus(domain=domain, error=str(e))
+
+
+def send_alert(statuses: list[CertStatus]) -> None:
+    problems = [s for s in statuses if not s.ok]
+    if not problems:
+        return
+
+    lines = []
+    for s in problems:
+        if s.error:
+            lines.append(f"  ERROR  {s.domain}: {s.error}")
+        else:
+            lines.append(f"  EXPIRING {s.domain}: {s.days_remaining} days remaining")
+
+    body = "SSL certificate alert:\n\n" + "\n".join(lines)
+    msg = MIMEText(body)
+    msg["Subject"] = f"SSL Alert: {len(problems)} domain(s) need attention"
+    msg["From"] = ALERT_EMAIL
+    msg["To"] = ALERT_EMAIL
+
+    with smtplib.SMTP(SMTP_HOST) as smtp:
+        smtp.sendmail(ALERT_EMAIL, [ALERT_EMAIL], msg.as_string())
+
+
+if __name__ == "__main__":
+    statuses = [check_cert_expiry(d) for d in DOMAINS]
+    for s in statuses:
+        if s.ok:
+            print(f"OK      {s.domain}: {s.days_remaining}d remaining")
+        elif s.error:
+            print(f"ERROR   {s.domain}: {s.error}")
+        else:
+            print(f"WARN    {s.domain}: expires in {s.days_remaining}d")
+    send_alert(statuses)
+```
+
+Run this as a daily cron job alongside the renewal script. If Certbot fails to renew, this script catches the approaching expiry and sends a warning with 14 days of lead time.
+
 ## Automated TLS Audit with Claude
 
 Use Claude to audit an existing SSL Labs report:
@@ -241,6 +336,48 @@ volumes:
   letsencrypt:
 ```
 
+## Wildcard Certificates with DNS-01 Challenge
+
+For internal services or wildcard certificates, the DNS-01 challenge is required. Claude generates the correct Certbot incantation plus a Route53 deploy hook:
+
+```bash
+#!/bin/bash
+# Obtain wildcard cert using DNS-01 challenge with Route53
+# Requires: certbot, python3-certbot-dns-route53, AWS credentials
+
+DOMAIN="example.com"
+EMAIL="admin@example.com"
+
+certbot certonly \
+  --dns-route53 \
+  --dns-route53-propagation-seconds 30 \
+  -d "${DOMAIN}" \
+  -d "*.${DOMAIN}" \
+  --email "${EMAIL}" \
+  --agree-tos \
+  --non-interactive
+```
+
+```bash
+# /usr/local/bin/post-renew-wildcard.sh
+# Deploy hook: copies renewed cert to services that need it
+
+set -euo pipefail
+
+DOMAIN="example.com"
+CERT_SRC="/etc/letsencrypt/live/${DOMAIN}"
+
+# Reload nginx
+nginx -t && systemctl reload nginx
+
+# Restart internal service that reads cert files directly
+systemctl restart internal-grpc-service
+
+echo "$(date): Wildcard cert deployed for ${DOMAIN}" >> /var/log/certbot-renew.log
+```
+
+GPT-4 generates similar DNS-01 scripts but sometimes omits the `--dns-route53-propagation-seconds` flag, which causes intermittent failures when Route53 propagation is slow.
+
 ## Comparing AI Tool Accuracy
 
 | TLS Task | Claude | GPT-4 |
@@ -251,6 +388,20 @@ volumes:
 | TLS 1.3 cipher preferences | Correct ssl_prefer_server_ciphers off | Sometimes wrong |
 | DH param recommendation | Includes dhparam generation command | Sometimes omits |
 | Traefik/Caddy automation | Strong | Good |
+| DNS-01 wildcard certs | Includes propagation delay flag | Sometimes omits |
+| Certificate expiry monitoring | Full script with alerting | Basic check |
+
+## Prompting Tips for Better TLS Configs
+
+When prompting for TLS configuration, include:
+
+- **Server software and version** — `Nginx 1.25`, not just `Nginx`
+- **OS and OpenSSL version** — `Ubuntu 22.04 / OpenSSL 3.0`
+- **Client compatibility target** — `modern (no IE11)`, `intermediate (2016+)`, or `legacy`
+- **Certificate type** — Let's Encrypt, DigiCert, self-signed, wildcard
+- **Additional requirements** — OCSP stapling, mutual TLS, client certificate auth
+
+The more specific the prompt, the less you need to verify manually. Both Claude and GPT-4 produce better output when given version context upfront rather than being asked to "make some assumptions."
 
 ## Related Reading
 

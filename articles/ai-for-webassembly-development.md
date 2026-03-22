@@ -256,6 +256,62 @@ const freshView = new Float32Array(wasm.memory.buffer); // get fresh view
 freshView[0] = 1.0;
 ```
 
+## Passing Complex Data Across the JS/Wasm Boundary
+
+One of the trickiest parts of Wasm development is efficiently passing non-primitive data between JavaScript and Wasm without excessive copying. Claude handles this well when prompted explicitly.
+
+**Prompt:** "I need to pass a large array of f32 values from JavaScript into a Wasm function without copying. How do I do zero-copy access with wasm-bindgen?"
+
+Claude's response covers the `unsafe` pointer approach:
+
+```rust
+// src/lib.rs
+use wasm_bindgen::prelude::*;
+
+/// Process a float slice in-place without copying.
+/// The caller must ensure the pointer and length are valid.
+#[wasm_bindgen]
+pub fn process_floats_in_place(ptr: *mut f32, len: usize) {
+    let slice = unsafe { std::slice::from_raw_parts_mut(ptr, len) };
+    for val in slice.iter_mut() {
+        *val = val.sqrt(); // example: square root each element
+    }
+}
+```
+
+```javascript
+// JavaScript side: allocate in Wasm memory, pass pointer directly
+const wasmMemory = wasm.memory;
+const length = 1024;
+const byteSize = length * 4; // f32 = 4 bytes
+
+// Allocate in Wasm linear memory
+const ptr = wasm.alloc(byteSize);
+const view = new Float32Array(wasmMemory.buffer, ptr, length);
+
+// Fill data directly into Wasm memory — no copy
+for (let i = 0; i < length; i++) view[i] = Math.random();
+
+// Process in-place
+wasm.process_floats_in_place(ptr, length);
+
+// Read result (same buffer, no copy)
+console.log(view[0]); // sqrt of original value
+
+// Free when done
+wasm.dealloc(ptr, byteSize);
+```
+
+Claude notes that `wasm.alloc` and `wasm.dealloc` need to be exposed from Rust using `wasm_bindgen`, and provides the Rust implementation for those as well.
+
+## Comparing Claude vs GPT-4 for Wasm Workflows
+
+**Toolchain knowledge:** Claude has better recall of the `wasm-pack` toolchain flags and `wasm-opt` optimization passes. GPT-4 occasionally confuses `wasm32-unknown-unknown` and `wasm32-wasi` targets, which require different Cargo.toml settings.
+
+**WIT interface generation:** Claude generates valid WIT syntax consistently. GPT-4 sometimes produces WIT that mixes preview 1 and preview 2 syntax, which breaks `wit-bindgen` code generation.
+
+**Memory debugging:** Both tools diagnose the stale view problem, but Claude typically explains the underlying reason (Wasm linear memory is a single contiguous buffer that can be reallocated, invalidating all `ArrayBufferView` objects pointing into it) rather than just providing the fix.
+
 ## Build and Optimization Tips
 
 Claude provides a complete build command sequence:
@@ -276,6 +332,62 @@ ls -lh pkg/*.wasm
 ```
 
 Claude knows to suggest `wasm-opt -O3` for production builds — GPT-4 sometimes omits this step. Claude also warns about the `panic = "abort"` vs `panic = "unwind"` difference and why abort is required for `cdylib` Wasm targets.
+
+For size-sensitive deployments, Claude also suggests enabling the `wasm-opt` size optimization mode (`-Oz`) and stripping DWARF debug sections. A typical `wasm-pack` release build produces 200-400KB; after `wasm-opt -Oz` and stripping, the same module often drops to 80-150KB — a meaningful reduction for browser delivery.
+
+## Testing Wasm Modules
+
+AI tools handle test generation for Wasm differently depending on the target. For browser-targeted Wasm, you test the Rust logic in isolation using standard `cargo test`, then test the JS bindings using Playwright or Jest with a real browser environment. For WASI modules, you run tests directly in Wasmtime.
+
+Claude generates the full test setup when prompted:
+
+```bash
+# Run Rust unit tests (no Wasm involved — tests pure logic)
+cargo test
+
+# Run Wasm-specific tests in headless browser (via wasm-pack)
+wasm-pack test --headless --firefox
+
+# Run WASI component tests in Wasmtime
+wasmtime run --dir=. target/wasm32-wasi/release/config_processor.wasm -- \
+  input.json output.json
+```
+
+For the Rust unit tests, Claude generates table-driven tests that cover edge cases Claude itself identified in the implementation — like the `data.len() % 4 != 0` guard in the grayscale function:
+
+```rust
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_grayscale_basic() {
+        let mut data = vec![255u8, 0, 0, 255]; // red pixel
+        to_grayscale(&mut data);
+        // Luminosity: 0.299*255 ≈ 76
+        assert_eq!(data[0], data[1]);
+        assert_eq!(data[1], data[2]);
+        assert_eq!(data[3], 255); // alpha unchanged
+    }
+
+    #[test]
+    fn test_grayscale_invalid_length() {
+        let mut data = vec![255u8, 0, 0]; // not multiple of 4
+        to_grayscale(&mut data); // should not panic
+        assert_eq!(data, vec![255, 0, 0]); // unchanged
+    }
+
+    #[test]
+    fn test_parse_redis_url() {
+        // Note: test requires the url crate at dev-dependencies
+        let result = parse_connection_string("redis://localhost:6379?tls=false");
+        // Returns JsValue in Wasm context; test the Rust logic separately
+        assert!(result.is_ok());
+    }
+}
+```
+
+This test-first mindset is something Claude applies automatically when you ask for a complete implementation. GPT-4 generates tests when explicitly requested but less often volunteers them unprompted.
 
 ## Related Reading
 

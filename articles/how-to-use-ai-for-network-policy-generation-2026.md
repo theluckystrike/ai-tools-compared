@@ -330,6 +330,93 @@ resource "aws_security_group" "rds" {
 
 Claude uses security group references (not CIDR blocks) for inter-tier rules — this is correct for AWS and survives IP changes. ChatGPT sometimes uses CIDR blocks, which is less secure.
 
+## Cross-Namespace Policy with NamespaceSelector
+
+When services in different namespaces need to communicate, the `namespaceSelector` must be combined precisely. A common pattern is allowing a shared `ingress-nginx` namespace to forward traffic into application namespaces:
+
+**Prompt:**
+```text
+Write a NetworkPolicy that allows pods in the "ingress-nginx" namespace to reach
+pods labeled "app: api" in the "production" namespace on port 8080.
+The ingress controller pods are labeled "app.kubernetes.io/name: ingress-nginx".
+```
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-ingress-controller
+  namespace: production
+spec:
+  podSelector:
+    matchLabels:
+      app: api
+  policyTypes:
+    - Ingress
+  ingress:
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: ingress-nginx
+          podSelector:
+            matchLabels:
+              app.kubernetes.io/name: ingress-nginx
+      ports:
+        - port: 8080
+          protocol: TCP
+```
+
+The key here is placing both selectors in the same list item (AND semantics). Moving them to separate list items would allow any pod in any namespace labeled `ingress-nginx`, or any pod labeled `ingress-nginx` in any namespace — both of which are too broad.
+
+## Policy Validation with kubectl
+
+After generating policies, validate them before applying:
+
+```bash
+# Dry-run apply to catch YAML syntax errors
+kubectl apply --dry-run=server -f network-policies/
+
+# Check which policies affect a pod
+kubectl describe pod api-deployment-abc123 -n production | grep -A5 "Network Policy"
+
+# Verify policy is applied
+kubectl get networkpolicy -n production
+```
+
+Claude can also generate a verification script that tests connectivity between pods after policies are applied:
+
+```bash
+#!/bin/bash
+# verify-network-policies.sh
+NAMESPACE="production"
+
+echo "Testing: frontend → api (should succeed)"
+kubectl exec -n $NAMESPACE deploy/frontend -- curl -s -o /dev/null -w "%{http_code}" http://api:8080/health
+
+echo "Testing: frontend → postgres (should fail)"
+kubectl exec -n $NAMESPACE deploy/frontend -- nc -zv postgres 5432 --wait 3 2>&1 | tail -1
+
+echo "Testing: api → postgres (should succeed)"
+kubectl exec -n $NAMESPACE deploy/api -- nc -zv postgres 5432 --wait 3 2>&1 | tail -1
+
+echo "Testing: api → external HTTPS (should succeed)"
+kubectl exec -n $NAMESPACE deploy/api -- curl -s -o /dev/null -w "%{http_code}" https://api.stripe.com/v1/charges
+```
+
+Run this script before and after applying policies to confirm the access matrix matches intent.
+
+## Common Mistakes Claude Catches
+
+When you paste an existing NetworkPolicy and ask Claude to review it, it reliably catches these problems:
+
+**Missing policyTypes.** A policy with only `ingress` rules but no `policyTypes: [Ingress]` field does nothing — Kubernetes ignores it. Claude flags this immediately.
+
+**OR vs AND semantics.** When you need namespace AND pod selector together, they must be in a single `from` entry. Separate entries create an OR condition. Claude explains this in comments when generating policies.
+
+**Forgotten DNS egress.** Default-deny egress blocks DNS resolution on port 53, which breaks almost everything silently. Claude always adds the DNS egress exception when generating default-deny policies.
+
+**ipBlock not excluding RFC 1918.** Allowing `0.0.0.0/0` egress without excepting private ranges lets pods reach internal services through external routing. Claude includes the `except` block automatically.
+
 ## Related Reading
 
 - [AI-Powered Service Mesh Configuration](/ai-tools-compared/ai-powered-service-mesh-configuration-2026/)

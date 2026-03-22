@@ -276,6 +276,116 @@ SELECT
 
 Claude correctly uses `jsonb_array_elements_text` with `LATERAL` to unnest the product ID array — this is the PostgreSQL-idiomatic approach. GPT-4o sometimes uses `json_each` (for plain JSON) or misses the `LATERAL` keyword.
 
+## Test 5: Query Plan Analysis
+
+This is where the comparison gets interesting. When given a slow query and its `EXPLAIN ANALYZE` output, both tools can suggest fixes — but the quality of reasoning differs.
+
+**Prompt:**
+```text
+This query takes 8 seconds on a 10M row events table:
+
+SELECT user_id, COUNT(*) as event_count
+FROM events
+WHERE occurred_at > NOW() - INTERVAL '30 days'
+  AND event_type = 'page_view'
+GROUP BY user_id
+ORDER BY event_count DESC
+LIMIT 100;
+
+EXPLAIN ANALYZE output:
+  Sort  (cost=142857.23..143107.23 rows=100000 width=12) (actual time=8234.123..8241.456 rows=100 loops=1)
+    ->  HashAggregate  (cost=127234.00..132234.00 rows=100000 width=12) (actual time=8100.234..8210.123 rows=45231 loops=1)
+          ->  Seq Scan on events  (cost=0.00..119234.00 rows=1600000 width=8) (actual time=0.123..7234.567 rows=1587432 loops=1)
+                Filter: ((occurred_at > (now() - '30 days'::interval)) AND (event_type = 'page_view'))
+                Rows Removed by Filter: 8412568
+
+What indexes should I add?
+```
+
+**Claude's response:**
+
+```sql
+-- The Seq Scan with 8.4M rows removed means no useful index exists.
+-- Create a composite index matching the WHERE clause columns:
+
+CREATE INDEX CONCURRENTLY idx_events_type_occurred
+ON events (event_type, occurred_at DESC)
+WHERE occurred_at > NOW() - INTERVAL '90 days';  -- partial index to keep it small
+
+-- After index creation, verify it's used:
+EXPLAIN (ANALYZE, BUFFERS) SELECT user_id, COUNT(*) as event_count
+FROM events
+WHERE occurred_at > NOW() - INTERVAL '30 days'
+  AND event_type = 'page_view'
+GROUP BY user_id
+ORDER BY event_count DESC
+LIMIT 100;
+
+-- Expected improvement: Index Scan instead of Seq Scan,
+-- reducing rows examined from 10M to ~1.6M
+-- Estimated query time after index: 800ms-1.2s
+```
+
+Claude explains the reasoning: the composite index on `(event_type, occurred_at)` allows the planner to do an index range scan on the exact `event_type = 'page_view'` partition and then filter by date — eliminating the sequential scan. The partial index (`WHERE occurred_at > NOW() - INTERVAL '90 days'`) keeps the index small since data older than 90 days is never queried with this pattern.
+
+GPT-4o suggests a similar index but omits the partial index option and doesn't explain why the column order matters (high-cardinality filter first, range filter second).
+
+## Test 6: BigQuery vs PostgreSQL Syntax Differences
+
+**Prompt:**
+```text
+I'm migrating this PostgreSQL window function query to BigQuery.
+What needs to change?
+
+SELECT
+  user_id,
+  SUM(order_value) OVER (
+    PARTITION BY user_id
+    ORDER BY occurred_at
+    ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+  ) AS running_total
+FROM events;
+```
+
+Claude's migration output:
+
+```sql
+-- BigQuery version (mostly identical — standard SQL window functions are portable)
+SELECT
+  user_id,
+  SUM(order_value) OVER (
+    PARTITION BY user_id
+    ORDER BY occurred_at
+    ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+  ) AS running_total
+FROM `project.dataset.events`;
+
+-- Key differences Claude notes:
+-- 1. Table reference uses backtick notation: `project.dataset.table`
+-- 2. TIMESTAMPTZ → TIMESTAMP (BigQuery uses TIMESTAMP with UTC semantics)
+-- 3. BIGSERIAL → INT64 (no sequences in BigQuery)
+-- 4. JSONB → JSON (BigQuery uses JSON type, operators differ: JSON_VALUE instead of ->>)
+-- 5. NOW() → CURRENT_TIMESTAMP() in BigQuery standard SQL
+```
+
+Claude proactively lists the PostgreSQL-specific types that won't migrate cleanly, even though the question only asked about the window function. This is the pattern where Claude's broader context awareness is useful: it answers the stated question and flags adjacent issues.
+
+## Summary: When to Use Each Tool
+
+Claude is stronger for:
+- Complex multi-step queries requiring precise interval and timestamp arithmetic
+- Recursive CTEs with cycle detection
+- JSONB queries using PostgreSQL-specific operators
+- Query plan analysis and index recommendations
+- Cross-dialect migration awareness
+
+GPT-4o is comparable for:
+- Simple SELECT/JOIN/GROUP BY queries
+- Generating CREATE TABLE schemas from descriptions
+- Explaining what an existing query does
+
+For production SQL work — especially analytics queries with window functions, CTEs, and JSONB — Claude produces fewer subtle errors. The interval arithmetic and pre-signup event filter in Test 1, the LATERAL usage in Test 4, and the partial index recommendation in Test 5 are all things GPT-4o missed or got wrong.
+
 ## Related Articles
 
 - [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
@@ -283,6 +393,7 @@ Claude correctly uses `jsonb_array_elements_text` with `LATERAL` to unnest the p
 - [Best AI Assistant for Generating SQL Recursive Queries](/ai-tools-compared/best-ai-assistant-for-generating-sql-recursive-queries-for-hierarchical-org-chart-data/)
 - [Best AI for Writing dbt Macros That Generate Dynamic SQL](/ai-tools-compared/best-ai-for-writing-dbt-macros-that-generate-dynamic-sql-bas/)
 - [Best AI for Writing SQL Performance Tuning Recommendations](/ai-tools-compared/best-ai-for-writing-sql-performance-tuning-recommendations-f/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}
