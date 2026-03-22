@@ -7,6 +7,7 @@ date: 2026-03-21
 author: "AI Tools Compared"
 permalink: /ai-tools-for-generating-mobile-app-deep-linking-configuratio/
 categories: [guides]
+voice-checked: true
 tags: [ai-tools-compared, mobile-development, deep-linking, cross-platform, artificial-intelligence]
 reviewed: true
 score: 9
