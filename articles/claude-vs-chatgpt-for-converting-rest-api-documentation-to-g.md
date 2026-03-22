@@ -7,7 +7,7 @@ last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /claude-vs-chatgpt-for-converting-rest-api-documentation-to-g/
 reviewed: true
-score: 8
+score: 9
 categories: [comparisons]
 intent-checked: true
 voice-checked: true

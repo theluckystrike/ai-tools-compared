@@ -6,7 +6,7 @@ date: 2026-03-20
 author: theluckystrike
 permalink: /claude-code-terminal-output-garbled-on-windows-fix-2026/
 reviewed: true
-score: 8
+score: 9
 categories: [troubleshooting]
 intent-checked: true
 voice-checked: true
