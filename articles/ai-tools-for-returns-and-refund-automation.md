@@ -27,7 +27,17 @@ intent-checked: true
 tags: [ai-tools-compared, artificial-intelligence, automation]
 categories: [guides]---
 
+
 Returns and refund processing represents one of the most resource-intensive operations in e-commerce. Manual review of return requests, verification of conditions, and processing refunds consume significant staff time while creating friction for customers. AI tools for returns and refund automation address these challenges by automating decision-making, improving accuracy, and accelerating processing times.
+
+## Key Takeaways
+
+- **A good target is**: below 2% false positives on auto-rejections before moving fully to automated decisions.
+- **Fine-tuned models on your**: historical data can reach 93-96%.
+- **Returns and refund processing**: represents one of the most resource-intensive operations in e-commerce.
+- **High return frequency combined**: with short order-to-return intervals often indicates abuse.
+- **Here is a practical**: breakdown to help you choose the right tool for each layer of your system.
+- **Start with high-confidence use cases**: clear policy violations and obvious fraud patterns—before attempting complex edge cases.
 
 ## Understanding Return Automation Requirements
 

@@ -29,6 +29,16 @@ tags: [ai-tools-compared, artificial-intelligence]---
 
 Technical debt accumulates in every codebase. AI tools don't eliminate debt, but they can accelerate the three stages that matter: identifying it systematically, prioritizing what to fix, and generating the refactored code. This guide covers practical workflows for each stage.
 
+## Key Takeaways
+
+- **The Community Edition is**: free and covers the most common debt patterns for Java, Python, JavaScript, and TypeScript.
+- **CRITICAL - likely to cause bugs**: security issues, or major maintenance problems
+2.
+- **A CRITICAL issue that**: takes 30 minutes and affects only one file scores higher than an IMPORTANT issue that touches 20 files.
+- **Its debt remediation time**: estimates are more accurate than manual guesses because they're based on aggregated data from millions of repositories.
+- **This is a useful**: prioritization signal that pure code analysis misses.
+- **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
 ## Stage 1: Identification
 
 AI-assisted debt identification goes beyond what linters catch. Linters find style violations; AI identifies architectural problems, outdated patterns, and code that works but was written before modern idioms existed.
