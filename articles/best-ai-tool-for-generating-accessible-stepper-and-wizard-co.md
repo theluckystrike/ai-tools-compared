@@ -5,7 +5,7 @@ description: "A practical guide to AI-powered tools that generate accessible ste
 date: 2026-03-21
 author: theluckystrike
 permalink: /best-ai-tool-for-generating-accessible-stepper-and-wizard-co/
-categories: [accessibility, ai-tools]
+categories: [guides]
 tags: [ai-tools-compared, accessibility, ai-tools, react, components, wcag, aria, best-of]
 reviewed: true
 intent-checked: true

@@ -5,7 +5,7 @@ description: "A practical comparison of AI coding assistants for generating WCAG
 date: 2026-03-21
 author: theluckystrike
 permalink: /best-ai-tool-for-generating-accessible-cookie-consent-banner/
-categories: [accessibility, ai-tools, web-development]
+categories: [guides]
 reviewed: true
 intent-checked: true
 voice-checked: true
