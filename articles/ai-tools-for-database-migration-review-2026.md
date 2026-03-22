@@ -8,7 +8,7 @@ permalink: /ai-tools-for-database-migration-review-2026/
 categories: [guides]
 tags: [ai-tools-compared, artificial-intelligence]
 reviewed: true
-score: 9
+score: 6
 intent-checked: true
 voice-checked: true---
 

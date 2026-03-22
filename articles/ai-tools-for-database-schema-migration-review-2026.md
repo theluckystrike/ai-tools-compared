@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /ai-tools-for-database-schema-migration-review-2026/
 categories: [guides, comparisons]
 reviewed: true
-score: 9
+score: 7
 voice-checked: true
 intent-checked: true
 tags: [ai-tools-compared, database, devops, migration, artificial-intelligence]---
