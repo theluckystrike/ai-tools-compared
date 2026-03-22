@@ -236,6 +236,59 @@ print(f"Improvement: {((baseline_loss - finetuned_loss) / baseline_loss) * 100:.
 
 **ROI**: Break-even when fine-tuned model reduces code review cycles by 5-10% across a 10+ person team.
 
+## Building a Data Quality Pipeline
+
+The quality of your fine-tuning dataset determines the quality of the resulting model more than any hyperparameter choice. A systematic pipeline for collecting and filtering training examples is worth the engineering investment.
+
+### Filtering Low-Quality Examples
+
+Not all code in your repository is suitable for training. Exclude:
+
+- Auto-generated files (migrations, protobuf output, build artifacts)
+- Files with TODO/FIXME density above 5% of lines — these signal incomplete work
+- Vendored external dependencies
+- Test fixtures and mock data files
+- Functions shorter than 3 lines — too little context for the model to learn from
+
+A quality filter checks the file header for "auto-generated" or "do not edit" strings, counts TODO density, and skips files under 20 lines. For Python, extract `(docstring, implementation)` pairs using the `ast` module: walk the tree for `FunctionDef` nodes, skip functions without docstrings, and store the prompt as the signature plus docstring, with the full function body as the completion target.
+
+### Deduplication
+
+Near-duplicate examples teach the model nothing new but inflate training time. A simple approach is hashing the first 200 characters of each completion and dropping collisions. More robust deduplication using MinHash LSH (`pip install datasketch`) can detect near-duplicates with ~85% similarity. A codebase with 50,000 extractable functions typically deduplicates down to 8,000-12,000 distinct patterns — which is the training set size you want.
+
+## Choosing Your Fine-tuning Approach: LoRA vs Full Fine-tuning vs RLHF
+
+Three fine-tuning strategies exist, each with different cost and quality profiles:
+
+| Approach | VRAM Required | Training Time | Quality Gain | Use Case |
+|---|---|---|---|---|
+| QLoRA (4-bit) | 16-24GB | 2-6 hours | Good | Most teams — best cost/quality tradeoff |
+| LoRA (full precision) | 40-80GB | 4-12 hours | Better | When VRAM is available |
+| Full fine-tuning | 80GB+ | Days | Best | Large teams with dedicated ML infra |
+| RLHF | 80GB+ (2 models) | Weeks | Best for alignment | Enterprise with human feedback pipeline |
+
+For most engineering teams, QLoRA on a rented cloud GPU is the right answer. Full fine-tuning provides marginally better results but requires 4-8x more compute budget.
+
+## Benchmarking Your Fine-tuned Model
+
+Measuring improvement objectively prevents wasting time on failed runs. Reserve 10% of your training examples as a held-out test set before fine-tuning begins. After training, evaluate using next-line exact match: generate a completion from each test prompt and check whether the first non-trivial generated line matches the expected line.
+
+```python
+def evaluate_exact_match(model, tokenizer, test_examples: list[dict]) -> float:
+    matches = 0
+    for ex in test_examples:
+        inputs = tokenizer(ex["prompt"], return_tensors="pt").to(model.device)
+        with torch.no_grad():
+            output = model.generate(**inputs, max_new_tokens=128, temperature=0.1)
+        generated = tokenizer.decode(output[0][inputs["input_ids"].shape[1]:], skip_special_tokens=True)
+        expected_line = ex["completion"].strip().split("\n")[0].strip()
+        if expected_line in generated:
+            matches += 1
+    return matches / len(test_examples)
+```
+
+A meaningful improvement is a 15-25% increase in exact match rate compared to the base model. Under 10% improvement usually means the training dataset needs more examples or better quality filtering.
+
 ## Common Pitfalls
 
 1. **Too few training examples**: Under 300 examples doesn't create meaningful improvement. Aim for 1000+.
