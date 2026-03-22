@@ -8,6 +8,7 @@ permalink: /open-source-ai-code-completion-for-neovim-without-cloud-api-/
 reviewed: true
 score: 8
 categories: [guides]
+tags: [ai-tools-compared, artificial-intelligence, api]
 ---
 
 {% raw %}

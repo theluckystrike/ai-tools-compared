@@ -7,9 +7,9 @@ last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: /open-source-ai-code-linting-tools-with-automatic-fix-suggest/
 categories: [guides]
-tags: [ai-tools-compared, tools, open-source, linting, code-quality]
+tags: [ai-tools-compared, tools, open-source, linting, code-quality, troubleshooting, artificial-intelligence]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 ---
