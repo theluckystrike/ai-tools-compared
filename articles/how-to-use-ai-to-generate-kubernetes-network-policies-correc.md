@@ -9,7 +9,7 @@ permalink: /how-to-use-ai-to-generate-kubernetes-network-policies-correc/
 categories: [guides]
 tags: [ai-tools-compared, kubernetes, security, networking, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
