@@ -7,7 +7,7 @@ date: 2026-03-20
 author: "AI Tools Compared"
 permalink: /claude-api-connection-reset-by-peer-error-troubleshooting-20/
 reviewed: true
-score: 8
+score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true

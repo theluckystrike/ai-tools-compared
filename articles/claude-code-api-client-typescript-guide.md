@@ -10,7 +10,7 @@ tags: [ai-tools-compared, claude-code, typescript, api-client, type-safety, sdk,
 permalink: /claude-code-api-client-typescript-guide/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

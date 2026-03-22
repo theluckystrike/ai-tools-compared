@@ -7,10 +7,10 @@ author: theluckystrike
 permalink: claude-code-hooks-and-custom-workflows-guide
 categories: [guides]
 reviewed: true
-score: 8
+score: 6
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared]
+tags: [ai-tools-compared, workflow, claude-ai]
 ---
 {% raw %}
 

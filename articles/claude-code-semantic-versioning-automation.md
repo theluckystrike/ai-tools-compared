@@ -9,7 +9,7 @@ permalink: /claude-code-semantic-versioning-automation/
 categories: [guides]
 tags: [ai-tools-compared, tools, claude-ai, automation]
 reviewed: true
-score: 8
+score: 9
 robots: "index, follow"
 last_updated: "2026-03-18"
 structured_data:
