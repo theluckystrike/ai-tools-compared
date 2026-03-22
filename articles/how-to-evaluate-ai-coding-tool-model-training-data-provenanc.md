@@ -47,7 +47,17 @@ Legal risk manifests in several ways. You might inadvertently incorporate code w
 
 Evaluating training data provenance gives you visibility into these risks before they become legal problems.
 
-## Key Questions to Ask About Training Data
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Key Questions to Ask About Training Data
 
 ### What Public Code Repositories Were Included?
 
@@ -69,7 +79,7 @@ Enterprise users should specifically ask whether their code, or code from privat
 
 Review the privacy policy and terms of service for explicit language about training data usage. Look for options to opt out of training data inclusion.
 
-## Practical Evaluation Methods
+### Step 2: Practical Evaluation Methods
 
 ### Review Public Documentation
 
@@ -160,7 +170,7 @@ if detect_license_headers(generated_code):
 
 The presence of these elements suggests the model reproduced copyrighted or licensed code rather than generating original implementations.
 
-## Red Flags and Warning Signs
+### Step 3: Red Flags and Warning Signs
 
 Certain indicators suggest elevated legal risk. Be particularly cautious when:
 
@@ -184,7 +194,7 @@ On the other hand, providers that offer:
 
 ...demonstrate more mature approaches to managing these risks.
 
-## Risk Mitigation Strategies
+### Step 4: Risk Mitigation Strategies
 
 Even when using tools with uncertain training data provenance, you can reduce legal exposure through practical measures.
 
@@ -212,7 +222,7 @@ Understanding how major AI providers approach training data disclosure helps con
 
 This comparison shows variation in transparency levels. More transparent providers often demonstrate stronger compliance frameworks, though transparency alone doesn't eliminate risk.
 
-## Building Your Organization's Evaluation Framework
+### Step 5: Build Your Organization's Evaluation Framework
 
 Rather than trusting any single tool's claims, develop a systematic framework for evaluating AI coding tools within your organization:
 
@@ -240,7 +250,7 @@ Rather than trusting any single tool's claims, develop a systematic framework fo
 - Create usage guidelines for your development team
 - Schedule quarterly reviews to reassess as tools evolve
 
-## Training Data Composition Analysis
+### Step 6: Training Data Composition Analysis
 
 When evaluating a tool's training data, ask about proportional composition:
 
@@ -260,7 +270,7 @@ training_data_composition = {
 
 Higher-quality tools increasingly filter training data by license type, removing GPL-licensed code and other restrictive licenses. Understanding the filtering methodology matters more than the simple fact that filtering occurred.
 
-## Making Informed Tool Selection
+### Step 7: Making Informed Tool Selection
 
 Evaluating training data provenance requires balancing practical concerns against legal risk tolerance. Individual developers and small teams may accept different risk levels than enterprises with strict compliance requirements.
 
@@ -279,6 +289,21 @@ For organizations requiring deeper analysis, advanced techniques provide additio
 **Licensing Audit Trail:** When AI generates code for your organization, maintain records of the generation source, selected tool, and code lineage. This documentation proves due diligence if any licensing questions arise later.
 
 **Third-Party Compliance Verification:** Some organizations benefit from hiring specialized firms that conduct AI training data audits, generating formal compliance reports suitable for legal review.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

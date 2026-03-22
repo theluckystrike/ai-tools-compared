@@ -40,13 +40,23 @@ Error handling remains one of the most critical yet frequently neglected aspects
 - **Include structured logging with**: request IDs, and use custom exception classes.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## The Problem with Generic Error Handling Prompts
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: The Problem with Generic Error Handling Prompts
 
 Most developers ask AI tools for error handling using vague requests like "add error handling" or "handle exceptions properly." These prompts produce generic try-catch blocks that catch Exception without distinguishing between recoverable errors, programming bugs, and system failures.
 
 Production-grade error handling demands specificity. Your prompts must communicate the error categories your application encounters, the recovery strategies appropriate for each, logging requirements, and whether errors should propagate or be contained.
 
-## Prompt Structure for Production Error Handling
+### Step 2: Prompt Structure for Production Error Handling
 
 Effective error handling prompts contain five distinct components:
 
@@ -71,7 +81,7 @@ Handle three error categories:
 Include structured logging with request IDs, and use custom exception classes.
 ```
 
-## Language-Specific Prompt Optimization
+### Step 3: Language-Specific Prompt Optimization
 
 ### Python FastAPI Applications
 
@@ -211,7 +221,7 @@ Create a TypeScript function that attempts file processing with three strategies
 Log each strategy attempt with timing, and include metrics for strategy effectiveness.
 ```
 
-## Testing Your Error Handling Prompts
+### Step 4: Test Your Error Handling Prompts
 
 Validate AI-generated error handling by prompting for test cases:
 
@@ -223,7 +233,7 @@ Generate Jest test cases for the error handling code above:
 4) Test that error responses include request ID for correlation
 ```
 
-## Common Prompt Failures and Fixes
+### Step 5: Common Prompt Failures and Fixes
 
 Problem: AI generates catch(Exception e) that hides bugs
 
@@ -240,6 +250,21 @@ Fix: Specify log structure including timestamps, request IDs, and error hierarch
 Problem: Inconsistent error formats across endpoints
 
 Fix: Request an unified error response schema and global error handler
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -47,7 +47,17 @@ AI coding tools rely on context to generate relevant suggestions. When your tool
 
 Default settings work reasonably well for general-purpose code, but specialized projects require deliberate configuration. The difference between optimized and default settings often means the difference between useful suggestions and irrelevant noise.
 
-## Configuring GitHub Copilot for Different Project Types
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Configure GitHub Copilot for Different Project Types
 
 GitHub Copilot offers extensive customization through `.github/copilot-instructions.md` files and editor settings. Here's how to optimize for various scenarios.
 
@@ -117,7 +127,7 @@ Configure your IDE to understand data science libraries:
 }
 ```
 
-## Configuring Cursor with .cursorrules
+### Step 2: Configure Cursor with .cursorrules
 
 Cursor, built on VS Code, offers a powerful `.cursorrules` file at the repository root that provides persistent project context to the underlying model. Unlike Copilot's `copilot-instructions.md`, `.cursorrules` content is included in every Cursor AI request, making it the highest-use configuration file for Cursor users.
 
@@ -127,16 +137,16 @@ A well-structured `.cursorrules` file for a Django REST Framework project:
 # Project: Django REST Framework API
 # Stack: Python 3.12, Django 5.x with DRF 3.15, PostgreSQL, Celery, pytest-django
 
-## Code Standards
+### Step 3: Code Standards
 - All views must be class-based (APIView or ViewSet)
 - Never put business logic in views — use service layer classes in services/
 - All database queries go through the ORM; use select_related proactively
 
-## Testing Standards
+### Step 4: Test Standards
 - Every endpoint needs a happy-path and an error-path test
 - Use pytest fixtures for database setup; factory_boy for model factories
 
-## Error Handling
+### Step 5: Error Handling
 - Return RFC 7807 Problem Details format for all error responses
 - Log exceptions with logger.exception() at the view boundary
 ```
@@ -151,20 +161,20 @@ Create project-specific rules to ensure consistent component patterns:
 # cursor/rules/react-components.mdc
 # @description Rules for React component development
 
-## Component Structure
+### Step 6: Component Structure
 - Use functional components with hooks exclusively
 - Implement proper prop types using TypeScript interfaces
 - Keep components under 200 lines
 - Extract custom hooks for reusable logic
 - Use CSS modules or Tailwind for styling
 
-## State Management
+### Step 7: State Management
 - Use useState for component-local state
 - Use useReducer for complex state logic
 - Prefer context for truly global state only
 - Use React Query or SWR for server state
 
-## Performance
+### Step 8: Performance
 - Memoize callbacks with useCallback when passed to children
 - Memoize expensive computations with useMemo
 - Use React.memo for pure components
@@ -178,26 +188,26 @@ For Node.js or Python API development, configure Cursor to understand REST and G
 # cursor/rules/backend-api.mdc
 # @description Rules for backend API development
 
-## Endpoint Design
+### Step 9: Endpoint Design
 - Use RESTful conventions: GET for retrieval, POST for creation
 - Return appropriate HTTP status codes
 - Include pagination for list endpoints
 - Use versioning in URL paths: /api/v1/
 
-## Error Handling
+### Step 10: Error Handling
 - Implement centralized error handling
 - Return consistent error response structure
 - Log errors with appropriate context
 - Never expose internal error details to clients
 
-## Security
+### Step 11: Security
 - Validate all inputs
 - Use parameterized queries to prevent SQL injection
 - Implement proper authentication and authorization
 - Sanitize outputs to prevent XSS
 ```
 
-## Language-Specific Configuration for Go and Rust
+### Step 12: Language-Specific Configuration for Go and Rust
 
 Go and Rust projects have strong idiom requirements that AI tools often miss without explicit configuration.
 
@@ -223,7 +233,7 @@ Go and Rust projects have strong idiom requirements that AI tools often miss wit
 - Use cargo clippy and cargo fmt as the authoritative style guides
 ```
 
-## Project Type-Specific Optimization Strategies
+### Step 13: Project Type-Specific Optimization Strategies
 
 Different project types require different optimization approaches. Here's a practical framework:
 
@@ -254,7 +264,7 @@ When working on migrating legacy code, provide explicit migration guidelines:
 - Document migration decisions in ADR format
 ```
 
-## Comparing Configuration Approaches Across Tools
+### Step 14: Comparing Configuration Approaches Across Tools
 
 Different AI coding tools expose different configuration mechanisms. Knowing which knob to turn for each tool saves significant setup time:
 
@@ -268,7 +278,7 @@ Different AI coding tools expose different configuration mechanisms. Knowing whi
 
 Cursor's `.cursorrules` approach provides the deepest per-repository customization because rules are injected into every AI request context. Copilot's `copilot-instructions.md` is a close second. Codeium and Tabnine rely more on learned patterns from your existing code rather than explicit rules.
 
-## Testing Your Configuration
+### Step 15: Test Your Configuration
 
 After implementing project-specific settings, verify they work correctly:
 
@@ -280,7 +290,7 @@ After implementing project-specific settings, verify they work correctly:
 
 A useful validation technique: ask the AI to explain your project constraints in plain English. If it accurately describes your stack, error handling approach, and test patterns, your configuration is working. Generic answers indicate your rules need more specificity.
 
-## Common Configuration Pitfalls
+### Step 16: Common Configuration Pitfalls
 
 Avoid these frequent mistakes when optimizing AI coding tool settings:
 
@@ -293,6 +303,21 @@ Avoid these frequent mistakes when optimizing AI coding tool settings:
 - Project-specific amnesia: Remember that settings often need to be recreated per-project
 
 - Mixing abstraction levels: Keep rules focused on patterns and conventions, not line-by-line instructions
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

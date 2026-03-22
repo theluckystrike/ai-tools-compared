@@ -45,7 +45,17 @@ Your ESLint, Prettier, or Ruff configuration defines code standards that your te
 
 Consider a team that uses ESLint with the Airbnb configuration and a custom rule requiring specific import ordering. An AI assistant unaware of these requirements might generate imports in the wrong order, forcing developers to manually sort them before committing. By configuring your AI tool with these exact specifications, generated code arrives ready to merge without modification.
 
-## What to Include in Your Custom Instructions
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: What to Include in Your Custom Instructions
 
 Effective AI instructions for coding style are specific, not abstract. The difference between "follow our coding standards" and listing the actual rule names is the difference between a 40% reduction in lint violations and a 95% reduction.
 
@@ -60,7 +70,7 @@ The most impactful categories to document are:
 
 Document these as concrete rules with examples, not general principles. AI assistants respond much better to "use named exports; never use default exports except for page components" than to "follow our export conventions."
 
-## Setting Up Custom Instructions in Popular AI Tools
+### Step 2: Set Up Custom Instructions in Popular AI Tools
 
 ### Claude Code (and Claude Desktop)
 
@@ -69,26 +79,26 @@ Claude Code respects instructions stored in `CLAUDE.md` files within your projec
 ```
 # Project Linting Rules
 
-## ESLint Configuration
+### Step 3: ESLint Configuration
 This project uses ESLint with the following rules enforced in CI:
 - No unused variables (no-unused-vars: error)
 - Prefer const over let (no-var: error)
 - Enforce import order: built-in → external → relative
 - Maximum line length: 100 characters
 
-## Prettier Configuration
+### Step 4: Prettier Configuration
 - Use single quotes for strings
 - Trailing commas: es5
 - Print width: 100
 - Tab width: 2 spaces
 
-## Import Patterns
+### Step 5: Import Patterns
 All imports must use named exports where available. Import ordering:
 1. Node.js built-in (path, fs, etc.)
 2. External packages (React, lodash, etc.)
 3. Relative imports (./, ../)
 
-## TypeScript Specific
+### Step 6: TypeScript Specific
 - Strict mode enabled
 - No any types allowed
 - Interface over type for public APIs
@@ -165,21 +175,21 @@ ln -s .cursorrules .windsurfrules
 
 This keeps a single source of truth for AI instructions across both editors.
 
-## Connecting AI Instructions to Your Actual Configuration
+### Step 7: Connecting AI Instructions to Your Actual Configuration
 
 The most effective approach ties AI instructions directly to your actual linting files. Reference specific rules and show concrete examples from your configuration.
 
 For ESLint, extract and include the actual rule names:
 
 ```
-## ESLint Rules to Enforce
+### Step 8: ESLint Rules to Enforce
 - no-console: error (use logger.info/warn/error instead)
 - no-unused-vars: error
 - import/order: error (groups: [builtin, external, internal])
 - @typescript-eslint/no-explicit-any: error
 - prettier/prettier: error
 
-## Example Valid Import Block
+### Step 9: Example Valid Import Block
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { apiClient } from '@/lib/api';
@@ -189,7 +199,7 @@ import { User } from '@/types';
 For Prettier, specify exact settings:
 
 ```
-## Prettier Settings (from .prettierrc)
+### Step 10: Prettier Settings (from .prettierrc)
 {
   "semi": true,
   "singleQuote": true,
@@ -202,7 +212,7 @@ For Prettier, specify exact settings:
 
 You can automate this: write a script that reads your actual `.eslintrc.json` and `.prettierrc` and generates the AI instruction text. Run it as part of your CI pipeline whenever linting config changes, then commit the updated instruction file. This keeps AI instructions in sync with the actual enforced rules without manual maintenance.
 
-## Testing Your AI Configuration
+### Step 11: Test Your AI Configuration
 
 After setting up custom instructions, verify they work by asking the AI to generate a small code snippet. Check the output against your linting rules.
 
@@ -222,7 +232,7 @@ If fixes are applied automatically, your instructions need refinement. The goal 
 
 Track your lint pass rate over two weeks. Most teams see it improve from 50–60% (AI output passing lint without changes) to 85–95% after one round of instruction refinement based on the patterns that keep failing.
 
-## Centralizing Team Rules
+### Step 12: Centralizing Team Rules
 
 For teams with multiple projects sharing similar standards, consider creating a shared configuration package. This package contains your linting rules, and both your AI instructions and project configs reference it.
 
@@ -243,11 +253,26 @@ This project extends @yourteam/eslint-config. See
 detailed rules and examples.
 ```
 
-## Maintaining Consistency
+### Step 13: Maintaining Consistency
 
 Review and update your AI instructions when you update your linting configuration. Treat AI instructions as version-controlled documentation that evolves with your project standards.
 
 Set a calendar reminder to audit AI-generated code monthly. Track which linting rules frequently appear as violations in AI output, then add explicit examples to your instructions. Over time, your instructions become precise enough that AI output requires zero manual corrections.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

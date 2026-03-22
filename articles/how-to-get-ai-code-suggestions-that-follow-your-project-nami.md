@@ -51,7 +51,17 @@ AI code models trained on vast datasets develop their own preferences for variab
 
 This mismatch creates friction in several ways. You waste time refactoring AI suggestions, team code reviews surface style inconsistencies, and new team members receive mixed signals about naming standards. The solution involves configuring your AI tools to learn from your existing codebase.
 
-## Configuring GitHub Copilot for Your Conventions
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Configure GitHub Copilot for Your Conventions
 
 GitHub Copilot offers several configuration options that influence its suggestions. The most effective approach combines editor settings with context awareness.
 
@@ -76,7 +86,7 @@ Beyond editor settings, Copilot learns from your codebase through open file cont
 
 GitHub Copilot also respects language server protocols. If your project uses a linter or formatter configured for specific conventions, Copilot observes these settings when generating code.
 
-## Training Cursor to Match Your Style
+### Step 2: Training Cursor to Match Your Style
 
 Cursor, built on VS Code, provides more direct control over AI behavior through its Rules feature. Create a `.cursorrules` file in your project root to establish naming guidelines:
 
@@ -101,7 +111,7 @@ def get_user_account_status(user_id):
 
 Yields suggestions that respect the snake_case pattern rather than defaulting to camelCase.
 
-## Using Project Context for Better Suggestions
+### Step 3: Use Project Context for Better Suggestions
 
 All major AI coding assistants benefit from project context. The more relevant code the tool can analyze, the better its suggestions align with your patterns.
 
@@ -138,13 +148,13 @@ DEFAULT_TIMEOUT_SECONDS = 30
 
 Reference this file in your documentation and keep it accessible. AI tools that index your project will incorporate these patterns into their suggestions.
 
-## Using Codeium with Custom Dictionaries
+### Step 4: Use Codeium with Custom Dictionaries
 
 Codeium's enterprise features include custom dictionary support, allowing teams to define approved terminology and naming patterns. Configure these through your team's Codeium dashboard.
 
 For individual developers, Codeium learns from your editing patterns. When you consistently accept or reject certain suggestion styles, the tool adjusts its future recommendations. This feedback loop requires patience but produces results over time.
 
-## Tabnine's Contextual Learning
+### Step 5: Tabnine's Contextual Learning
 
 Tabnine offers both local and cloud modes, with the local option providing enhanced privacy for proprietary codebases. Its Pro and Enterprise tiers support team-wide configuration files that define coding standards.
 
@@ -161,7 +171,7 @@ naming_convention = "camelCase"
 
 Tabnine reads these settings and generates suggestions aligned with your specified conventions. This approach works particularly well for teams enforcing standardized naming across multiple projects.
 
-## Strategies for Consistent Results
+### Step 6: Strategies for Consistent Results
 
 Beyond tool configuration, adopt practices that improve AI suggestion quality:
 
@@ -179,13 +189,13 @@ def process_user_data(user_data):
 
 **Provide feedback.** Most tools include mechanisms to report incorrect suggestions. Use these features to improve both your experience and future model versions.
 
-## Measuring Improvement
+### Step 7: Measuring Improvement
 
 Track your naming convention compliance over time using linter reports. If your project uses flake8 for Python or ESLint for JavaScript, run these tools regularly and monitor naming-related warnings. A decreasing trend indicates your AI configuration successfully aligns with project standards.
 
 You can also time your coding sessions. With properly configured AI suggestions, you should spend less time refactoring variable names and more time writing functional code.
 
-## Language-Specific Naming Configuration
+### Step 8: Language-Specific Naming Configuration
 
 Different languages have different conventions. Set up AI tools correctly for each:
 
@@ -224,7 +234,7 @@ Rust (.cursorrules):
 
 Store language-specific rules files in your repository and reference them in team documentation.
 
-## Progressive Enforcement: Feedback Loop Training
+### Step 9: Progressive Enforcement: Feedback Loop Training
 
 AI tools improve through positive feedback loops:
 
@@ -247,7 +257,7 @@ Week 3: Optimization
 
 This approach trains AI tools through practice, similar to human learning.
 
-## Team Standardization with Shared Configuration
+### Step 10: Team Standardization with Shared Configuration
 
 Multi-developer teams benefit from centralized convention enforcement:
 
@@ -288,7 +298,7 @@ eslint src/ --format json | jq '.[] | select(.messages[].rule == "camelcase")' |
 
 Generate compliance reports monthly showing improvement from AI suggestion refinement.
 
-## Handling Edge Cases and Exceptions
+### Step 11: Handling Edge Cases and Exceptions
 
 Some names require exceptions to standard conventions. Document these:
 
@@ -314,7 +324,7 @@ Naming Exceptions:
 
 Communicate these exceptions clearly so AI tools (and humans) understand the boundaries.
 
-## Onboarding New Team Members with AI Configuration
+### Step 12: Onboarding New Team Members with AI Configuration
 
 New developers should receive pre-configured AI tools matching the team's conventions:
 
@@ -334,7 +344,7 @@ Expected result: AI immediately suggests code following established conventions
 
 This reduces onboarding friction and ensures consistency from day one.
 
-## Customizing AI Behavior Per File Type
+### Step 13: Customizing AI Behavior Per File Type
 
 Advanced configuration targets specific file patterns:
 
@@ -359,6 +369,21 @@ max_identifier_length = 60
 ```
 
 File-based configuration adapts AI suggestions to context-specific requirements.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

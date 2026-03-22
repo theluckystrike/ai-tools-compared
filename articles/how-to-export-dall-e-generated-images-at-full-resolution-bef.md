@@ -36,7 +36,17 @@ OpenAI stores your Dall-E generations on their servers while your subscription r
 The resolution difference matters significantly. Dall-E 3 offers 1024x1024 pixel outputs by default, with variations available at different aspect ratios. These high-resolution images are suitable for print, web, and commercial use. However, if you only download the preview versions or fail to export before leaving, you're stuck with lower-quality copies or nothing at all.
 
 
-## Method 1: Manual ChatGPT Export
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Method 1: Manual ChatGPT Export
 
 
 The simplest approach uses ChatGPT's built-in download functionality. When Dall-E generates an image, hover over it and click the download icon. This saves the image directly to your device at the available resolution.
@@ -48,7 +58,7 @@ For individual images, this method works well. However, if you've generated hund
 To maximize what you can export manually, log into ChatGPT and navigate to your conversation history. Scroll through past conversations featuring Dall-E generations. Download each image individually. This process is time-consuming but requires no technical setup.
 
 
-## Method 2: OpenAI API for Programmatic Export
+### Step 2: Method 2: OpenAI API for Programmatic Export
 
 
 Developers can automate image export using the OpenAI API. This approach provides full control over resolution, format, and batch processing.
@@ -103,7 +113,7 @@ def download_image(url, filename, output_dir="dalle_exports"):
 The API approach requires you to generate images via API calls while your subscription is active. Store the returned image URLs and metadata in your own database. Then use the download function to export at any time.
 
 
-## Method 3: Browser Automation with Selenium
+### Step 3: Method 3: Browser Automation with Selenium
 
 
 For users who generated images through the ChatGPT web interface, browser automation provides an alternative. This method scrapes your conversation history and downloads images programmatically.
@@ -153,7 +163,7 @@ def export_chatgpt_dalle_images(email, password, output_dir="chatgpt_exports"):
 This approach works but requires careful handling of login sessions and rate limiting. OpenAI may block automated scraping, so use responsibly.
 
 
-## Method 4: Using the ChatGPT Legacy with API Integration
+### Step 4: Method 4: Using the ChatGPT Legacy with API Integration
 
 
 If you maintain API credits alongside your Plus subscription, generate new images via API for guaranteed high-resolution export. The API returns base64-encoded images or temporary URLs that you can immediately download.
@@ -191,7 +201,7 @@ def generate_and_download_dalle(prompt, output_dir="dalle_high_res"):
 The API approach gives you 1024x1024 resolution with Dall-E 3. For even higher resolution, the `dall-e-3` model supports 1024x1024, while older versions offer 512x512 or 1024x1024 options.
 
 
-## Resolution Considerations
+### Step 5: Resolution Considerations
 
 
 Dall-E 3 generates images at 1024x1024 pixels by default. This resolution works well for most use cases but may require upscaling for large print projects. When exporting, ensure you're downloading the full-resolution version, not a compressed preview.
@@ -200,7 +210,7 @@ Dall-E 3 generates images at 1024x1024 pixels by default. This resolution works 
 The ChatGPT interface sometimes displays smaller previews while storing the full resolution on OpenAI's servers. Always verify the downloaded file size—if a "full resolution" image is only 50KB, it's likely a compressed version.
 
 
-## Practical Workflow for Preservation
+### Step 6: Practical Workflow for Preservation
 
 
 Before canceling your ChatGPT Plus subscription, follow this checklist:
@@ -217,7 +227,7 @@ Before canceling your ChatGPT Plus subscription, follow this checklist:
 5. Backup storage: Store exports in multiple locations—local drive, cloud storage, and external backup
 
 
-## Handling Expired Subscriptions
+### Step 7: Handling Expired Subscriptions
 
 
 If your subscription has already expired, your options become more limited. Contact OpenAI support and request image retrieval. They may be able to provide access for a limited period or offer alternative solutions.
@@ -451,7 +461,7 @@ backed_up = backup.list_backed_up_images()
 print(f"Backed up {len(backed_up)} images to S3")
 ```
 
-## Export Timing Strategy
+### Step 8: Export Timing Strategy
 
 ### When to Export
 
@@ -476,7 +486,7 @@ print(f"Backed up {len(backed_up)} images to S3")
 - [ ] Only then cancel subscription
 ```
 
-## Tools and Services for Export Automation
+### Step 9: Tools and Services for Export Automation
 
 **DownloadThemAll** (Firefox extension): Batch download images from ChatGPT conversations
 
@@ -487,6 +497,21 @@ print(f"Backed up {len(backed_up)} images to S3")
 **Hugging Face Datasets:** Store Dall-E generations in version-controlled datasets
 
 Exporting Dall-E images at full resolution requires proactive effort. Whether you choose manual export, API automation, or browser scripting, the key is acting before losing subscription access. Start with a small batch to verify your process works, then scale up to export your entire generation history.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

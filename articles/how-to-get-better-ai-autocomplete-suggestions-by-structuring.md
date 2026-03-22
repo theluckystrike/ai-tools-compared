@@ -49,7 +49,17 @@ Consider two scenarios: in a disorganized project with mixed naming conventions 
 
 The difference isn't the AI—it's how you structure your code.
 
-## Use Clear and Consistent Naming Conventions
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Use Clear and Consistent Naming Conventions
 
 Naming conventions serve as the primary communication channel between you and AI coding assistants. When you use descriptive, consistent names for variables, functions, classes, and files, AI tools can accurately predict what you intend to write.
 
@@ -88,7 +98,7 @@ user_authentication.py
 
 When AI tools can infer file purpose from names, they provide more relevant suggestions based on the context of what you're working on.
 
-## Organize Code into Logical Modules
+### Step 2: Organize Code into Logical Modules
 
 Grouping related functionality into clear modules helps AI assistants understand the architectural context of your code. This separation allows AI tools to make predictions based on which module you're working in.
 
@@ -135,7 +145,7 @@ When you're working in `payment_service.py`, AI tools understand you're dealing 
 
 This structure helps AI assistants understand feature boundaries and provide more relevant suggestions within each context.
 
-## Use Type Annotations and Documentation
+### Step 3: Use Type Annotations and Documentation
 
 Type hints and documentation significantly improve AI comprehension of your code's intent. Modern AI assistants use type information to narrow down suggestion possibilities.
 
@@ -195,7 +205,7 @@ function processOrder(order: Order): void {
 }
 ```
 
-## Write Code in Self-Contained Units
+### Step 4: Write Code in Self-Contained Units
 
 Functions and classes that do one thing well are easier for AI to understand and suggest completions for. When each unit has a clear single responsibility, AI tools can predict the next logical operation more accurately.
 
@@ -235,7 +245,7 @@ async function handleUserRegistration(userData) {
 
 The refactored version allows AI to understand each step clearly and suggest appropriate completions for each function.
 
-## Use Consistent Import Patterns
+### Step 5: Use Consistent Import Patterns
 
 AI assistants track your import statements to understand available functionality. Consistent, explicit imports help AI suggest the right functions and classes.
 
@@ -264,6 +274,21 @@ from services.auth import AuthService
 ```
 
 When AI tools can see exactly what you're importing, they suggest those specific functions when you need them.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

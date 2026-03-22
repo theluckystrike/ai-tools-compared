@@ -47,7 +47,17 @@ Cursor snippets give you instant, deterministic code insertion. Once you save a 
 
 Additionally, snippets allow you to maintain consistency across your codebase in ways that Copilot cannot guarantee. When you save a pattern, you know exactly what you will get every single time.
 
-## Capturing Valuable Copilot Suggestions
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Capturing Valuable Copilot Suggestions
 
 Before you can move patterns to Cursor, you need to identify which Copilot suggestions are worth preserving. Look for patterns that meet these criteria:
 
@@ -75,7 +85,7 @@ useEffect(() => {
 
 Documenting these patterns as you discover them prevents the need to reverse-engineer your Copilot history later.
 
-## Creating Snippets in Cursor
+### Step 2: Create Snippets in Cursor
 
 Cursor supports VS Code snippet format, which means you can create snippets in two ways: through the graphical interface or by editing the JSON configuration directly.
 
@@ -116,7 +126,7 @@ A JSON snippet configuration looks like this:
 
 The `${1:dataSource}` syntax creates a placeholder that Cursor will highlight for immediate editing after insertion.
 
-## Adapting Copilot Patterns for Snippet Portability
+### Step 3: Adapting Copilot Patterns for Snippet Portability
 
 Not all Copilot suggestions translate directly to snippets. Some patterns rely heavily on surrounding context—variable names, imports, or function signatures that Copilot infers from your code. When converting these to snippets, you need to make them adaptable.
 
@@ -152,7 +162,7 @@ To make this a reusable snippet, replace specific names with placeholders:
 
 This approach lets you trigger the snippet and then tab through each placeholder to customize it for your specific use case.
 
-## Organizing Your Snippet Collection
+### Step 4: Organizing Your Snippet Collection
 
 As your snippet library grows, organization becomes essential. Consider grouping snippets by:
 
@@ -166,7 +176,7 @@ Cursor supports language-specific snippet files, so you can create a `python.jso
 
 A consistent naming convention for prefixes also helps. Using a format like `lang-action`—`pyfunc`, `jsclass`, `gostruct`—makes your snippets predictable and easy to remember.
 
-## Using Snippets Alongside Copilot
+### Step 5: Use Snippets Alongside Copilot
 
 Snippets do not replace Copilot; they complement it. Use snippets for patterns you type dozens of times per day—boilerplate that never changes. Use Copilot for one-off solutions that require heavy context awareness.
 
@@ -225,7 +235,7 @@ For advanced snippets, use regex-based transformations:
 
 The same placeholder name (`${2:props}`) appears twice—the IDE fills both when you type, keeping them synchronized.
 
-## Snippet Library Organization Strategy
+### Step 6: Snippet Library Organization Strategy
 
 Structure your snippet collection by frequency and language:
 
@@ -251,7 +261,7 @@ Use prefix conventions to group related snippets:
 - `async*` for asynchronous patterns
 - `ts*` for TypeScript-specific patterns
 
-## Validating Snippets Against Your Codebase
+### Step 7: Validating Snippets Against Your Codebase
 
 Before finalizing a snippet, verify it matches your actual project style:
 
@@ -281,7 +291,7 @@ git log -S "useEffect" --oneline | head -10
 
 Review commits where you accepted Copilot suggestions, extract the repeating patterns, and convert them to snippets. This ensures your snippet library reflects real, production-validated patterns from your project.
 
-## Cross-Language Snippet Libraries
+### Step 8: Cross-Language Snippet Libraries
 
 If you work across multiple languages, maintain separate snippet files:
 
@@ -297,7 +307,7 @@ If you work across multiple languages, maintain separate snippet files:
 
 Cursor applies language-specific snippets automatically. When you open a Python file and type `class`, it suggests Python class snippets, not JavaScript snippets.
 
-## Snippet Testing and Maintenance
+### Step 9: Snippet Testing and Maintenance
 
 Just as you would test code, validate snippets work correctly before relying on them:
 
@@ -307,6 +317,21 @@ Just as you would test code, validate snippets work correctly before relying on 
 4. Verify indentation and formatting match your style
 
 Periodically review your snippet collection. Delete snippets you never use. Update snippets when your project's conventions change. Comment snippets that depend on specific context.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -46,7 +46,17 @@ Suggestion acceptance rate measures the percentage of AI-generated code suggesti
 
 A healthy acceptance rate varies by context. For routine boilerplate code, acceptance rates above 70% indicate good tool alignment. For complex or novel implementations, 40-50% may be acceptable. Rates below 30% typically signal problems with prompt quality, context setup, or tool configuration.
 
-## Measuring Acceptance Rate Effectively
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Measuring Acceptance Rate Effectively
 
 ### Using Built-in Analytics
 
@@ -114,7 +124,7 @@ Beyond the overall acceptance rate, monitor these specific metrics:
 
 **Rejection Categories** classify why you reject suggestions. Common categories include incorrect logic, wrong API usage, style mismatches, and security concerns.
 
-## Improving Suggestion Acceptance Rate
+### Step 2: Improving Suggestion Acceptance Rate
 
 ### Optimize Your Context Setup
 
@@ -179,7 +189,7 @@ def log_rejection(suggestion_text, reason, context=""):
 
 Review this log monthly. Common rejection patterns often point to fixable issues in your workflow or tool configuration.
 
-## Real-World Example
+### Step 3: Real-World Example
 
 Consider a team working on a Python FastAPI application. Initially, their acceptance rate was 35%. After implementing these strategies:
 
@@ -317,7 +327,7 @@ patterns = analyzer.analyze()
 # Shows most common rejection reasons
 ```
 
-## Improvement Checklist by Acceptance Rate
+### Step 4: Improvement Checklist by Acceptance Rate
 
 ### Below 30% Acceptance Rate
 
@@ -416,7 +426,7 @@ Result: 78% average acceptance across team
 """
 ```
 
-## Industry Benchmarks
+### Step 5: Industry Benchmarks
 
 Based on public data from GitHub and Copilot users:
 
@@ -430,7 +440,7 @@ Based on public data from GitHub and Copilot users:
 
 If your rates are significantly below these benchmarks, investigate settings and code organization.
 
-## A/B Testing Tool Configurations
+### Step 6: A/B Testing Tool Configurations
 
 ```python
 import json
@@ -489,6 +499,21 @@ results = tester.calculate_results()
 print(json.dumps(results, indent=2))
 # Use config with highest acceptance rate
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

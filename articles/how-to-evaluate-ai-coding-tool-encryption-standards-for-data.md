@@ -54,7 +54,17 @@ Without proper encryption, anyone with network visibility could intercept these 
 
 Evaluating encryption standards protects your code from unauthorized access during transmission.
 
-## Core Encryption Concepts for Evaluation
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Core Encryption Concepts for Evaluation
 
 Before examining specific tools, understand the fundamental standards that matter:
 
@@ -64,7 +74,7 @@ Before examining specific tools, understand the fundamental standards that matte
 
 **Perfect Forward Secrecy (PFS)** generates unique session keys for each connection. Even if long-term keys are compromised, past sessions remain secure.
 
-## Practical Evaluation Methods
+### Step 2: Practical Evaluation Methods
 
 ### 1. Check Documentation for Protocol Support
 
@@ -143,7 +153,7 @@ Beyond basic TLS, evaluate these protective measures:
 
 **Data retention policies** describe how long transmitted code gets stored. Some tools retain code for model training; others process and immediately discard.
 
-## Red Flags to Watch For
+### Step 3: Red Flags to Watch For
 
 Certain indicators suggest inadequate encryption practices:
 
@@ -161,7 +171,7 @@ Certain indicators suggest inadequate encryption practices:
 
 Tools that prioritize security typically provide detailed security documentation, often in a dedicated security whitepaper.
 
-## Example: Evaluating a Hypothetical Tool
+### Step 4: Example: Evaluating a Hypothetical Tool
 
 Suppose you're evaluating "CodeAI," a fictional AI coding assistant. Here's your evaluation process:
 
@@ -183,7 +193,7 @@ Expected output shows TLS 1.3 with strong ciphers.
 
 This systematic approach reveals whether the tool meets your security requirements.
 
-## Making Informed Decisions
+### Step 5: Making Informed Decisions
 
 After evaluating encryption standards, compare results against your requirements:
 
@@ -195,7 +205,7 @@ After evaluating encryption standards, compare results against your requirements
 
 Document your findings. Security assessments become valuable references when evaluating new tools or responding to security reviews.
 
-## Encryption Evaluation Checklist
+### Step 6: Encryption Evaluation Checklist
 
 ### Transport Layer Assessment
 
@@ -300,7 +310,7 @@ def check_certificate_pinning(domain: str) -> bool:
 
 *Ollama runs locally; TLS depends on your setup
 
-## Real-World Security Scenarios
+### Step 7: Real-World Security Scenarios
 
 ### Scenario 1: Proprietary Algorithm
 
@@ -338,7 +348,7 @@ You're contributing to an open-source project (code is public).
 
 **Decision:** Copilot, ChatGPT, or any commercial tool acceptable
 
-## Data Retention and Deletion
+### Step 8: Data Retention and Deletion
 
 Beyond encryption, verify what happens to your code after transmission:
 
@@ -380,7 +390,7 @@ For regulated industries, maintain encryption evaluation documentation:
 **Date:** 2026-03-21
 **Reviewer:** Security Team
 
-## Findings
+### Step 9: Findings
 
 ### Transport Security
 - [x] TLS 1.3 enforced
@@ -399,15 +409,15 @@ For regulated industries, maintain encryption evaluation documentation:
 - [x] SOC 2 Type II certified
 - [ ] HIPAA BAA available
 
-## Recommendation
+### Step 10: Recommendation
 Approved for: General development, non-sensitive code
 Not approved for: HIPAA data, client secrets, proprietary algorithms
 
-## Remediation
+### Step 11: Remediation
 For sensitive work, use local tools (Ollama) or implement code redaction layer.
 ```
 
-## Implementing Code Redaction
+### Step 12: Implementing Code Redaction
 
 For tools without sufficient security, implement code redaction:
 
@@ -444,6 +454,21 @@ db_url = "postgres://user:password@localhost:5432/db"
 safe_code = redactor.redact(code_to_analyze)
 # Send safe_code to Copilot instead of original
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

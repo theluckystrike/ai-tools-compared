@@ -60,7 +60,17 @@ AI tools interpret endpoint descriptions and produce Mermaid syntax without manu
 
 The process works best when your endpoint descriptions include sufficient context about actors, authentication, and data flow.
 
-## Converting OpenAPI Specifications to Mermaid
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Converting OpenAPI Specifications to Mermaid
 
 OpenAPI specifications contain endpoint information that AI tools can parse and convert. When you provide an OpenAPI spec (JSON or YAML), AI assistants extract the relevant details and generate corresponding sequence diagrams.
 
@@ -109,7 +119,7 @@ sequenceDiagram
 
 This conversion captures the main request flow and error path. The resulting diagram renders immediately in GitHub Markdown, documentation sites, or Mermaid viewers.
 
-## Effective Prompt Strategies
+### Step 2: Effective Prompt Strategies
 
 AI-generated diagram quality depends significantly on how you structure prompts. Clear, specific descriptions produce better results than vague requests.
 
@@ -146,7 +156,7 @@ Show success and failure paths for payment validation.
 
 This structured prompt gives the AI complete context for generating an accurate diagram.
 
-## Tools That Excel at Diagram Generation
+### Step 3: Tools That Excel at Diagram Generation
 
 Several AI coding assistants handle Mermaid generation effectively. Each offers distinct advantages depending on your workflow.
 
@@ -172,7 +182,7 @@ Cursor works well when you want to generate diagrams as part of a larger documen
 
 Copilot suggests code completions including Mermaid syntax within Markdown files. While less interactive than Claude or Cursor, Copilot works well when you already have endpoint descriptions written in comments or documentation blocks adjacent to your Markdown.
 
-## Workflow Integration
+### Step 4: Workflow Integration
 
 Integrating AI-generated diagrams into your documentation workflow maximizes their value. Consider these practical approaches.
 
@@ -188,7 +198,7 @@ AI-generated diagrams serve as starting points. Review each diagram for accuracy
 
 Sequence diagrams created from AI output communicate API behavior effectively to team members who prefer visual representations over text documentation. Share generated diagrams in pull requests, technical specifications, or onboarding materials.
 
-## Handling Complex API Flows
+### Step 5: Handling Complex API Flows
 
 Real-world APIs often involve more complexity than simple request-response pairs. AI tools handle various scenarios when prompted appropriately.
 
@@ -235,7 +245,7 @@ sequenceDiagram
     end
 ```
 
-## Practical Tips
+### Step 6: Practical Tips
 
 Several techniques improve diagram generation results:
 
@@ -246,6 +256,21 @@ Several techniques improve diagram generation results:
 3. Iterate refinement: Generate an initial diagram, then request specific modifications
 
 4. Use consistent naming: Establish conventions for actor names used across multiple diagrams
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

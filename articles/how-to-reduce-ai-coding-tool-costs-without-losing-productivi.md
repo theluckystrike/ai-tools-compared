@@ -39,7 +39,17 @@ Reduce AI costs by batching expensive chat requests, using free tiers strategica
 - **Save Opus or GPT-4o**: for architectural decisions and complex refactoring, then use Haiku or Flash for straightforward autocomplete tasks.
 - **Set monthly caps and**: use tools that support them.
 
-## Understand Your Actual Usage Patterns
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Your Actual Usage Patterns
 
 The first step to cutting costs is understanding where your money actually goes. Most AI coding tools track usage in different ways: some count messages, others track tokens, and some limit features rather than raw usage. Before making any changes, spend a week logging your actual consumption.
 
@@ -70,7 +80,7 @@ def print_weekly_summary():
 
 This baseline reveals hidden spending. Many developers discover they use advanced features (like full codebase indexing or extended thinking modes) only occasionally, yet pay for them monthly.
 
-## Switch to Model-Agnostic Tools
+### Step 2: Switch to Model-Agnostic Tools
 
 One of the most effective cost-saving approaches is choosing tools that let you switch between AI models. When GPT-4o hits rate limits or becomes too expensive, you can pivot to Claude Haiku or Gemini Flash without changing your workflow.
 
@@ -88,7 +98,7 @@ Consider tools that offer model switching:
 
 This flexibility lets you use expensive models only when necessary. Save Opus or GPT-4o for architectural decisions and complex refactoring, then use Haiku or Flash for straightforward autocomplete tasks.
 
-## Use Free Tiers Strategically
+### Step 3: Use Free Tiers Strategically
 
 Most AI coding tools offer generous free plans that cover substantial development work. The key is knowing how to maximize these without hitting walls.
 
@@ -106,7 +116,7 @@ GitHub Copilot for students and open-source maintainers remains free. If you con
 
 Stack free tiers across multiple tools. Use Copilot for VS Code, Claude Code for terminal work, and Tabnine as a fallback. This approach covers different use cases without monthly fees.
 
-## Optimize Your Prompts for Efficiency
+### Step 4: Optimize Your Prompts for Efficiency
 
 Poorly crafted prompts waste tokens and generate unnecessary context. Learning to write efficient prompts directly impacts your costs.
 
@@ -128,7 +138,7 @@ def process_user_data(user_input):  # Add input validation, return error dict
 
 Break complex tasks into smaller steps. Asking an AI to write an entire authentication system in one prompt generates more tokens (and higher costs) than building it piece by piece. Each smaller request stays within cheaper token limits.
 
-## Use API Access Instead of Premium Subscriptions
+### Step 5: Use API Access Instead of Premium Subscriptions
 
 For developers comfortable with integrations, direct API access often costs less than premium subscriptions. The trade-off is setup time versus ongoing savings.
 
@@ -157,7 +167,7 @@ response = openai.ChatCompletion.create(
 
 This approach requires more technical setup (handling keys, building prompts, managing rate limits) but delivers significant savings for power users.
 
-## Cache and Reuse AI Responses
+### Step 6: Cache and Reuse AI Responses
 
 Many AI coding tasks are repetitive. You generate the same types of boilerplate, write similar test patterns, and face similar errors across projects. Caching responses eliminates redundant API calls.
 
@@ -185,7 +195,7 @@ def cached_ai_call(prompt, tool="default"):
 
 This works especially well for documentation generation, boilerplate creation, and explaining common error messages. The cache persists across sessions if you store it in a database or file.
 
-## Set Hard Spending Limits
+### Step 7: Set Hard Spending Limits
 
 Budgeting works for AI tools just like any other expense. Set monthly caps and use tools that support them.
 
@@ -203,7 +213,7 @@ Many paid tools now include budget alerts:
 
 When you approach your limit, the tool automatically switches to cheaper models or reduces functionality. This prevents surprise bills at the end of the month.
 
-## Consider Self-Hosted Alternatives
+### Step 8: Consider Self-Hosted Alternatives
 
 For teams or individual developers with technical expertise, self-hosted solutions eliminate per-user licensing entirely. Tools like Ollama, LM Studio, or local AI models run on your own hardware.
 
@@ -217,7 +227,7 @@ The trade-off is upfront hardware cost versus long-term savings:
 
 For teams running AI coding tools across multiple developers, self-hosting often pays for itself within 6-12 months.
 
-## Evaluate Your Tool Stack Quarterly
+### Step 9: Evaluate Your Tool Stack Quarterly
 
 AI tooling evolves rapidly. Prices change, new competitors emerge, and your needs shift. Set calendar reminders to review your stack every quarter.
 
@@ -232,6 +242,21 @@ During each review, ask:
 - Could combining tools reduce costs?
 
 This habit prevents feature creep and ensures you only pay for what you actually use.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

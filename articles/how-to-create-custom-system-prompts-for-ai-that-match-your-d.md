@@ -45,7 +45,17 @@ When you use an AI assistant without customization, it defaults to generic respo
 
 For developers, this means getting code examples in your preferred style, with the exact comments, error handling, and documentation patterns your project requires. For technical writers, it ensures output matches your documentation templates, terminology, and structure conventions.
 
-## Building Blocks of an Effective System Prompt
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Build Blocks of an Effective System Prompt
 
 An effective custom system prompt contains several key components that work together to shape AI behavior.
 
@@ -78,7 +88,7 @@ You are a technical writer specializing in API documentation. When creating docu
 
 This prompt produces documentation that matches your team's existing API reference style, requiring no additional editing or reformatting.
 
-## Adapting Prompts for Different AI Tools
+### Step 2: Adapting Prompts for Different AI Tools
 
 Different AI assistants handle custom system prompts in varying ways. Understanding these differences helps you optimize your approach.
 
@@ -88,7 +98,7 @@ VS Code Extensions: Tools like GitHub Copilot and Cursor allow you to set projec
 
 API Implementations: When calling AI APIs directly, you pass system prompts as the first message in the conversation array. This gives you programmatic control over behavior in your applications.
 
-## Iterating on Your System Prompts
+### Step 3: Iterating on Your System Prompts
 
 Creating an effective system prompt rarely succeeds on the first attempt. You should expect to refine and adjust based on the output you receive.
 
@@ -106,7 +116,7 @@ Context Injection: Include project-specific information in your system prompt th
 
 Conditional Instructions: Structure prompts with conditional logic that activates based on the task type. For example, certain formatting rules apply only when generating test code, while different conventions apply to production code.
 
-## Common Pitfalls to Avoid
+### Step 4: Common Pitfalls to Avoid
 
 System prompts can backfire if not carefully constructed. Watch for these common issues.
 
@@ -208,7 +218,7 @@ Team members reference prompts in their AI conversations: "Use system prompt fro
 
 Good prompts typically reach 85-90% of optimal quality at 250-400 words. Beyond that is vanishing returns.
 
-## Testing and Deploying System Prompts at Scale
+### Step 5: Test and Deploying System Prompts at Scale
 
 When working with teams, you need a formal deployment process for system prompts. Create a versioning system and track performance metrics:
 
@@ -254,7 +264,7 @@ git clone $PROMPTS_REPO $LOCAL_PROMPTS
 cat $LOCAL_PROMPTS/code-review-comments.txt > ~/.vscode/copilot-instructions.txt
 ```
 
-## Measuring Prompt Effectiveness
+### Step 6: Measuring Prompt Effectiveness
 
 Track metrics that matter. Count how often teammates accept suggestions without modification, measure time spent editing AI output, and compare baseline quality before and after prompt standardization.
 

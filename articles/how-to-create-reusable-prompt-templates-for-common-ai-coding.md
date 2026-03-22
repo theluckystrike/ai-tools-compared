@@ -46,30 +46,40 @@ When you rely on one-off prompts, each interaction starts from scratch. You ment
 
 The key is designing templates that are flexible enough to handle variations but specific enough to guide the AI toward your desired outcome. Parameters like file names, function signatures, or testing frameworks become variables you fill in each time, rather than re-explaining in every prompt.
 
-## Template Structure Fundamentals
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Template Structure Fundamentals
 
 A well-designed prompt template consists of four components: context, task definition, constraints, and output format. Context provides background information the AI needs—existing code, project conventions, or relevant documentation. Task definition clearly states what you want accomplished. Constraints specify boundaries like performance requirements, style guidelines, or prohibited patterns. Output format tells the AI exactly how to structure its response.
 
 ```
-## Context
+### Step 2: Context
 - Project: {{project_name}}
 - Framework: {{framework}}
 - Code style: {{coding_style}}
 
-## Task
+### Step 3: Task
 {{task_description}}
 
-## Constraints
+### Step 4: Constraints
 - {{constraint_1}}
 - {{constraint_2}}
 
-## Output Format
+### Step 5: Output Format
 {{output_format_specification}}
 ```
 
 This structure works across languages and frameworks. The variables enclosed in double braces become placeholders you replace when invoking the template.
 
-## Practical Template Examples
+### Step 6: Practical Template Examples
 
 ### Unit Test Generation Template
 
@@ -168,7 +178,7 @@ Format each error as:
 - Suggested resolution:
 ```
 
-## Building Your Template Library
+### Step 7: Build Your Template Library
 
 Start with your most frequent tasks. Identify coding activities you perform repeatedly—generating CRUD endpoints, writing data validation, creating Docker configurations—and build templates for each. Store templates in a centralized location, perhaps in a `prompts/` directory within your project or as a dedicated repository for team-wide access.
 
@@ -184,7 +194,7 @@ Implement template variables with sensible defaults. When you frequently use a s
 
 Some developers embed template logic directly in their IDEs using custom snippets or scripts. A simple shell alias or VS Code snippet can expand a short trigger into your full template, complete with placeholder navigation. This integration makes template usage feel natural within your existing workflow.
 
-## Measuring Template Effectiveness
+### Step 8: Measuring Template Effectiveness
 
 Track metrics that matter: time saved per task, consistency of AI outputs, and iteration count needed to reach acceptable results. Templates that require fewer refinements deliver more value than those producing inconsistent results despite time savings.
 
@@ -192,7 +202,7 @@ Gather feedback from team members using shared templates. What works well might 
 
 Building a prompt template library takes initial investment but pays dividends through consistency, speed, and reduced cognitive load. As AI coding tools continue advancing, developers with well-structured templates will use these capabilities more effectively than those relying on ad-hoc interactions.
 
-## Template Storage and Organization
+### Step 9: Template Storage and Organization
 
 Where and how you store templates affects usability:
 
@@ -203,17 +213,17 @@ mkdir prompts
 cat > prompts/test_generation.md << 'EOF'
 # Unit Test Generation Template
 
-## Context
+### Step 10: Context
 - Language: {{language}}
 - Framework: {{test_framework}}
 - Project: {{project_name}}
 
-## Task
+### Step 11: Task
 Generate complete unit tests for the following function:
 
 {{function_code}}
 
-## Output
+### Step 12: Output
 Complete test file with setup, teardown, and edge cases.
 EOF
 
@@ -259,7 +269,7 @@ pip install langsmith
 langsmith push-template test_generation
 ```
 
-## Template Variations for Different Contexts
+### Step 13: Template Variations for Different Contexts
 
 Create template variants for specific frameworks or languages:
 
@@ -287,7 +297,7 @@ Include:
 
 Maintaining variants prevents "one template fits all" situations where generic advice produces suboptimal code.
 
-## Template Effectiveness Metrics
+### Step 14: Template Effectiveness Metrics
 
 Track which templates save the most time:
 
@@ -344,7 +354,7 @@ Generate API documentation for the above code
 
 This composition ensures each step builds on previous output, creating a complete solution pipeline.
 
-## Template Versioning and Iteration
+### Step 15: Template Versioning and Iteration
 
 As your projects evolve, templates must adapt:
 
@@ -361,7 +371,7 @@ Deprecated: Use v2.1+ for all new tests
 
 Versioning templates prevents confusion when teams use different versions. Clearly mark deprecated templates and communicate migration paths.
 
-## Team Template Standards
+### Step 16: Team Template Standards
 
 For distributed teams, establish template standards:
 
@@ -374,7 +384,7 @@ For distributed teams, establish template standards:
 
 Require code review for new templates before adding to your library. This prevents low-quality templates from proliferating.
 
-## Integration with CI/CD
+### Step 17: Integration with CI/CD
 
 Automate template-based code generation in your build pipeline:
 
@@ -404,34 +414,34 @@ jobs:
 
 Automated template application ensures consistency and catches gaps automatically.
 
-## Real-World Template Examples from Production
+### Step 18: Real-World Template Examples from Production
 
 Here's a template used by successful development teams:
 
 **Production Bug Analysis Template:**
 
 ```
-## Context
+### Step 19: Context
 - Bug ID: {{issue_id}}
 - Severity: {{severity}}
 - Affected components: {{components}}
 
-## Symptom
+### Step 20: Symptom
 {{user_reported_symptom}}
 
-## Environment
+### Step 21: Environment
 - OS: {{os}}
 - Version: {{version}}
 - Steps to reproduce: {{reproduction_steps}}
 
-## Task
+### Step 22: Task
 Analyze this bug and provide:
 1. Root cause analysis
 2. Code location where fix applies
 3. Implementation approach
 4. Test cases to verify fix
 
-## Constraints
+### Step 23: Constraints
 - Maintain backward compatibility
 - No breaking API changes
 - Performance impact < 5%
@@ -439,7 +449,7 @@ Analyze this bug and provide:
 
 This template structures bug analysis work, ensuring root causes are identified before coding solutions.
 
-## Common Pitfalls to Avoid
+### Step 24: Common Pitfalls to Avoid
 
 **Over-parameterization:** Too many variables create complex templates that feel more work than manual prompting.
 
@@ -450,6 +460,21 @@ This template structures bug analysis work, ensuring root causes are identified 
 **No feedback loop:** Not measuring effectiveness means you keep using templates that don't work well.
 
 Successful template libraries balance specificity with simplicity, measurable improvement, and regular maintenance.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

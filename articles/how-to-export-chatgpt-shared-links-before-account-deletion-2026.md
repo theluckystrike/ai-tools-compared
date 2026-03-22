@@ -46,7 +46,17 @@ ChatGPT shared links contain the full conversations you've had with the AI, incl
 
 The export process involves retrieving your shared link URLs and their associated content. Since ChatGPT doesn't provide a direct "export all shared links" button, we'll cover several methods to accomplish this.
 
-## Method 1: Using the ChatGPT Web Interface
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Method 1: Using the ChatGPT Web Interface
 
 The simplest approach is manual but works well if you have only a few shared links:
 
@@ -60,7 +70,7 @@ The simplest approach is manual but works well if you have only a few shared lin
 
 This method works but becomes time-consuming if you have dozens of shared links. If you have many links, consider the programmatic approaches below.
 
-## Method 2: Using the ChatGPT Data Export Feature
+### Step 2: Method 2: Using the ChatGPT Data Export Feature
 
 OpenAI provides a data export feature that includes some shared link information:
 
@@ -74,7 +84,7 @@ OpenAI provides a data export feature that includes some shared link information
 
 The exported data includes metadata about your shared links but may not contain the full conversation content. You'll still need to visit each link to capture the complete conversation.
 
-## Method 3: Programmatic Export with Python
+### Step 3: Method 3: Programmatic Export with Python
 
 For a more complete solution, you can use Python to fetch and save your shared link content. This approach requires some technical setup but gives you the best results.
 
@@ -152,7 +162,7 @@ if __name__ == "__main__":
 
 This script fetches each shared link and converts the HTML content to Markdown format, which is easier to read and archive.
 
-## Method 4: Bulk Export Using ChatGPT API
+### Step 4: Method 4: Bulk Export Using ChatGPT API
 
 If you have API access, you can create a more sophisticated export solution. Note that this requires a paid API subscription and access to your conversation data through official channels.
 
@@ -202,7 +212,7 @@ mkdir -p chatgpt-exports/$(date +%Y-%m-%d)
 
 **Document the export date** - Include metadata about when you exported each link for future reference.
 
-## What Happens When You Delete Your ChatGPT Account
+### Step 5: What Happens When You Delete Your ChatGPT Account
 
 Once you delete your ChatGPT account:
 
@@ -216,7 +226,7 @@ Once you delete your ChatGPT account:
 
 The deletion process is irreversible, so completing your export beforehand is essential.
 
-## Method 5: Browser Automation with Playwright
+### Step 6: Method 5: Browser Automation with Playwright
 
 If you have many shared links and want to capture the rendered page (including images and formatted code blocks), Playwright gives you full browser automation with screenshot support:
 
@@ -272,7 +282,7 @@ The screenshot approach preserves formatted code blocks, math rendering, and ima
 
 **Recommendation**: For fewer than 10 links, use the manual method or data export. For 10-100 links, the Python + html2text approach is the sweet spot. For 100+ links or when you need pixel-perfect captures, Playwright is worth the setup time.
 
-## Before You Delete: Pre-Deletion Checklist
+### Step 7: Before You Delete: Pre-Deletion Checklist
 
 Run through this checklist before submitting the account deletion request:
 
@@ -286,7 +296,7 @@ Run through this checklist before submitting the account deletion request:
 
 After completing the export, wait 24-48 hours to confirm the download is complete before submitting the deletion request.
 
-## Alternatives to Account Deletion
+### Step 8: Alternatives to Account Deletion
 
 If you want to keep using AI tools but reduce your ChatGPT footprint:
 
@@ -295,6 +305,21 @@ If you want to keep using AI tools but reduce your ChatGPT footprint:
 - Use Claude or other alternatives for new conversations
 
 - Export everything and then delete if you must
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

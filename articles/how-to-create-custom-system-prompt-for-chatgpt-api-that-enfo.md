@@ -46,7 +46,17 @@ The system prompt sets the foundation for every response the API produces. Unlik
 
 Without explicit instructions, the model generates code based on its training data, which may not align with your organization's standards. A custom system prompt solves this by establishing clear expectations before any user code requests arrive.
 
-## Building an Effective Coding Standards System Prompt
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Build an Effective Coding Standards System Prompt
 
 An effective system prompt for enforcing coding standards contains several key components. Start with your language preferences, then specify formatting rules, and finally add any architectural constraints your team follows.
 
@@ -101,7 +111,7 @@ PROJECT REQUIREMENTS
 - Follow the repository's commit message format
 ```
 
-## Implementation Example
+### Step 2: Implementation Example
 
 Here's how to use these prompts with the OpenAI API in Python:
 
@@ -145,7 +155,7 @@ def generate_code_with_standards(user_request: str) -> str:
 
 The `temperature` parameter set to 0.3 produces more consistent, predictable output. Higher values introduce randomness that may result in non-standard code patterns.
 
-## Enforcing Standards Across Multiple Languages
+### Step 3: Enforcing Standards Across Multiple Languages
 
 If your project spans multiple programming languages, create language-specific sections in your system prompt:
 
@@ -165,7 +175,7 @@ GO STANDARDS
 
 The model will switch between standards based on the language requested in the user's message.
 
-## Testing Your System Prompt
+### Step 4: Test Your System Prompt
 
 After creating your system prompt, verify it works correctly. Generate code for several scenarios and check against your standards checklist:
 
@@ -195,7 +205,7 @@ function calculateTotal(items) {
 }
 ```
 
-## Prompt Priority and Instruction Conflict Resolution
+### Step 5: Prompt Priority and Instruction Conflict Resolution
 
 One challenge teams encounter is that the model sometimes prioritizes user-message instructions over system-prompt rules. A user might say "use var instead of const for this one" and the model complies, overriding your standard. You can mitigate this by adding an explicit override policy to your system prompt:
 
@@ -210,7 +220,7 @@ OVERRIDE POLICY
 
 This locks in your standards while still giving senior developers an escape hatch for legitimate exceptions.
 
-## Using System Prompts for Code Review Integration
+### Step 6: Use System Prompts for Code Review Integration
 
 Beyond code generation, system prompts work well for automated code review workflows. Structure the prompt to act as a reviewer rather than a generator:
 
@@ -246,7 +256,7 @@ def review_code(code_snippet: str) -> str:
 
 Setting `temperature` to 0.1 for review tasks produces highly deterministic output, which is what you want when catching rule violations consistently across the team.
 
-## Handling Context Length and Prompt Efficiency
+### Step 7: Handling Context Length and Prompt Efficiency
 
 Long system prompts consume tokens on every API call, which adds up at scale. A 500-token system prompt on a high-traffic endpoint can represent meaningful cost overhead over millions of requests. Balance completeness against efficiency:
 
@@ -257,7 +267,7 @@ Long system prompts consume tokens on every API call, which adds up at scale. A 
 
 A practical target for most teams is 300–500 tokens for the system prompt. Measure token usage with OpenAI's tokenizer tool or the `tiktoken` library before deploying at scale.
 
-## Maintaining Consistency Over Time
+### Step 8: Maintaining Consistency Over Time
 
 Your coding standards evolve, and your system prompt should too. Keep your prompt in version control alongside your code. When standards change, update the prompt and regenerate any affected code to maintain consistency.
 
@@ -271,6 +281,21 @@ def get_coding_standards_prompt() -> str:
 ```
 
 This approach ensures everyone uses the same prompt version and makes updates straightforward. Pair the prompt file with a changelog comment at the top documenting what changed and when, so the team always knows the rationale behind each version.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

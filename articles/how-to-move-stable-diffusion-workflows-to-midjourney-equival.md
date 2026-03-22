@@ -41,7 +41,17 @@ To move Stable Diffusion workflows to Midjourney, convert weighted prompt syntax
 
 Midjourney uses `--quality` or `--q` to adjust rendering time (0.25, 0.5, 1, 2).
 
-## Understanding the Fundamental Differences
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Fundamental Differences
 
 Stable Diffusion gives you control over every aspect of the generation process. You select the checkpoint model, configure sampling method, set CFG scale, choose step count, and often employ ControlNet for structural guidance. Midjourney abstracts many of these decisions into presets and style parameters, prioritizing aesthetic output over granular control.
 
@@ -49,7 +59,7 @@ When migrating workflows, you trade explicit configuration for Midjourney's styl
 
 The tradeoff is real: you gain consistently polished output with less fiddling, but you lose reproducibility and the ability to make surgical adjustments. If your SD workflow depends on precise ControlNet poses or inpainting for specific edits, Midjourney will require workarounds or a hybrid approach.
 
-## Prompt Conversion Strategies
+### Step 2: Prompt Conversion Strategies
 
 The most immediate adjustment involves prompt syntax. Stable Diffusion prompts use weighted terms with parentheses and brackets:
 
@@ -84,7 +94,7 @@ For text prompts without explicit weighting, map your Stable Diffusion emphasis 
 | `[term]` | Omit or deprioritize in prompt |
 | Negative prompt | `--no term1 term2` |
 
-## Parameter Mapping Reference
+### Step 3: Parameter Mapping Reference
 
 Stable Diffusion users configure numerous explicit parameters. Here's how they translate to Midjourney:
 
@@ -132,7 +142,7 @@ Stable Diffusion defaults to 512x512 or 768x768, with common XL outputs at 1024x
 
 For high-resolution output, Midjourney's upscaling happens post-generation. Use the Upscale buttons after generation, or add `--upbeta` for the enhanced upscaling model.
 
-## Workflow Adaptation Patterns
+### Step 4: Workflow Adaptation Patterns
 
 ### From Automatic1111 to Discord
 
@@ -180,7 +190,7 @@ Stable Diffusion excels at batch generation for testing prompts or creating vari
 
 This generates four independent image sets from the same prompt, useful for rapid iteration. Note that `--repeat` consumes GPU time proportionally—`--repeat 4` uses four times your standard GPU allocation.
 
-## Model Version Management
+### Step 5: Model Version Management
 
 Stable Diffusion checkpoint files provide explicit model selection. Midjourney uses version flags:
 
@@ -230,7 +240,7 @@ Equivalent Midjourney workflow:
 
 Note how negative prompts use `--no` in Midjourney rather than a separate parameter field.
 
-## Handling Multi-Step Pipelines
+### Step 6: Handling Multi-Step Pipelines
 
 Stable Diffusion workflows often chain multiple generation stages: initial generation, img2img refinement, inpainting for corrections, then upscaling. Midjourney handles this differently:
 
@@ -245,6 +255,21 @@ Stable Diffusion workflows often chain multiple generation stages: initial gener
 5. **Style transfer**: `--sref` for applying aesthetic styles from reference images
 
 For complex pipelines requiring inpainting, consider maintaining Stable Diffusion as a secondary tool while using Midjourney for initial exploration and final outputs. The two tools complement each other well—Midjourney for ideation and aesthetic polish, SD for precise corrections and automation.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

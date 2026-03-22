@@ -41,13 +41,23 @@ Descriptive naming helps Copilot understand your intent.
 - **Start with free tier**: on 1-2 projects 2.
 - **Use Copilot strategically on**: high-friction tasks 4.
 
-## Understanding the Free Tier Eligibility
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Free Tier Eligibility
 
 GitHub Copilot's free tier is available to verified open source maintainers through the GitHub Copilot for Open Source program. To qualify, your repository must meet specific criteria: it needs to be a public GitHub repository with an OSI-approved open source license, and you must have write access to the repository.
 
 The application process is straightforward. Navigate to the GitHub Copilot settings page, select "Apply for free access," and provide details about your open source project. Approval typically comes within a few days, though some repositories may require additional verification.
 
-## Optimizing Copilot Suggestions
+### Step 2: Optimizing Copilot Suggestions
 
 Getting the most from Copilot requires understanding how to frame your code and provide context. The AI model works best when you:
 
@@ -76,7 +86,7 @@ const expiringSession = sessions
 
 Copilot learns from your codebase's style. Using consistent indentation, naming conventions, and formatting helps generate more relevant completions. If your project uses TypeScript, keeping types explicit improves suggestion accuracy.
 
-## Practical Workflow Integration
+### Step 3: Practical Workflow Integration
 
 ### Terminal Integration
 
@@ -95,7 +105,7 @@ During code reviews, Copilot can suggest improvements. When reviewing pull reque
 @copilot What are the potential security implications of this JSON parsing approach?
 ```
 
-## Managing Rate Limits Effectively
+### Step 4: Manage Rate Limits Effectively
 
 The free tier includes generous but finite monthly completions. To stretch your allocation:
 
@@ -148,7 +158,7 @@ The newer Copilot Edits feature allows you to make targeted changes across multi
 @workspace Rename `getUserData` to `fetchUserProfile` in all TypeScript files
 ```
 
-## Strategic Completion Budget Planning
+### Step 5: Strategic Completion Budget Planning
 
 The 2,000 monthly completion limit requires strategic allocation:
 
@@ -163,7 +173,7 @@ The 2,000 monthly completion limit requires strategic allocation:
 
 A single avoided bug through Copilot-assisted testing justifies the entire monthly allocation.
 
-## Open Source Project Tiers
+### Step 6: Open Source Project Tiers
 
 **Tier 1 Projects (Qualify for free tier):**
 - 10K+ GitHub stars
@@ -183,7 +193,7 @@ Examples: React, Vue, Kubernetes, TensorFlow
 - Apply individually to GitHub for approval
 - Usually approved within 1-2 weeks
 
-## Real ROI Calculation for Maintainers
+### Step 7: Real ROI Calculation for Maintainers
 
 As an open source maintainer, Copilot saves significant time:
 
@@ -206,7 +216,7 @@ With Copilot:
 
 At $50/hour developer rate: **$4,200 value annually from free tier**
 
-## Integration with Maintainer Workflows
+### Step 8: Integration with Maintainer Workflows
 
 **Pre-release Checklist with Copilot:**
 
@@ -234,7 +244,7 @@ git log v1.0.0..HEAD --oneline | \
 copilot-generate-release-notes v1.0.0 v2.0.0
 ```
 
-## Preventing Completion Waste
+### Step 9: Preventing Completion Waste
 
 Track your monthly usage to avoid surprises:
 
@@ -273,7 +283,7 @@ gh copilot usage
 - Full-time FOSS work
 - Need guaranteed uptime/priority
 
-## Building a Sustainable Open Source Career
+### Step 10: Build a Sustainable Open Source Career
 
 Copilot enables maintainers to be more productive at no cost:
 

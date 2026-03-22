@@ -30,7 +30,17 @@ Organize your exported conversations into logical groups**: perhaps by project c
 - **For programmatic export**: you can use the OpenAI API to fetch conversation threads.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Understanding ChatGPT Team Workspace Data
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand ChatGPT Team Workspace Data
 
 
 ChatGPT Team workspaces store several types of data that you'll want to preserve during migration. Conversation histories represent the bulk of your workspace content—thousands of interactions containing code snippets, architectural decisions, and problem-solving sessions. Custom GPTs are another critical asset if your team built specialized assistants with custom instructions. Workspace settings include team member access controls, usage preferences, and any integrated tools or APIs.
@@ -39,7 +49,7 @@ ChatGPT Team workspaces store several types of data that you'll want to preserve
 Claude Team organizes work around Projects, which serve as containers for conversation history, knowledge files, and custom instructions. Understanding this structural difference helps you plan an effective migration strategy.
 
 
-## Exporting ChatGPT Team Data
+### Step 2: Exporting ChatGPT Team Data
 
 
 OpenAI provides several export pathways for team administrators. The primary method involves accessing the admin panel at platform.openai.com and navigating to the workspace settings. From there, you can request a full data export that includes conversation history, custom GPT definitions, and workspace configuration.
@@ -92,7 +102,7 @@ with open("chatgpt-export.json", "w") as f:
 This script exports conversation data to a JSON file that you can later reference when recreating workflows in Claude.
 
 
-## Preserving Custom GPT Configurations
+### Step 3: Preserving Custom GPT Configurations
 
 
 If your team uses custom GPTs, you'll need to manually recreate them in Claude. While there's no automatic migration, you can export your GPT configurations by accessing each custom GPT's settings page and copying the instructions, knowledge files, and conversation starters.
@@ -130,13 +140,13 @@ Assistant: Here's a JWT-based authentication flow...
 
 Recreate your custom GPT instructions as project-level system prompts in Claude. Navigate to each project's settings and add instructions that mirror your original GPT behavior.
 
-## Handling Shared Links and Collaborations
+### Step 4: Handling Shared Links and Collaborations
 
 ChatGPT Team workspaces often contain shared links to specific conversations. These links do not transfer to Claude. Create new shared links in Claude for conversations you want to collaborate on with team members.
 
 For real-time collaboration, Claude Team supports multi-user workspaces where team members can participate in the same conversation thread, similar to ChatGPT's collaborative features.
 
-## API Integration Considerations
+### Step 5: API Integration Considerations
 
 If your ChatGPT Team workspace uses the API for automated workflows, you'll need to update your integration code to use Claude's API. The SDK differences are minimal:
 
@@ -165,12 +175,12 @@ Test the migration with a small team subset before rolling out to everyone. This
 
 Document your migration process internally so future team members understand how the workspace was set up and what decisions shaped the migration.
 
-## Complete Migration Checklist
+### Step 6: Complete Migration Checklist
 
 Here's a practical checklist for teams migrating between platforms:
 
 ```markdown
-## ChatGPT Team to Claude Team Migration Checklist
+### Step 7: ChatGPT Team to Claude Team Migration Checklist
 
 ### Week 1: Inventory and Planning
 - [ ] Export all conversations (OpenAI API)
@@ -347,7 +357,7 @@ For a 5-person team:
 
 Claude Team saves $300/year for this size, plus better admin controls.
 
-## Migration Impact on Team Workflows
+### Step 8: Migration Impact on Team Workflows
 
 Plan for these workflow changes:
 
@@ -369,7 +379,7 @@ Migration opportunity:
 - Better cost tracking
 - Improved access control
 
-## Validation After Migration
+### Step 9: Validation After Migration
 
 Verify the migration was successful:
 
@@ -408,6 +418,21 @@ fi
 ```
 
 ---
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

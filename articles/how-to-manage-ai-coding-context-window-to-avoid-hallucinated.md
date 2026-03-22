@@ -49,7 +49,17 @@ When you work on a large codebase, the AI eventually "forgets" which libraries y
 
 Consider this scenario: you ask an AI to add a feature requiring date handling. The assistant imports `from datetime import timezone`—a valid Python import. But your project uses Arrow or Pendulum instead. The code looks correct but fails immediately.
 
-## Techniques That Actually Work
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Techniques That Actually Work
 
 ### 1. Provide Explicit Dependency Lists
 
@@ -113,7 +123,7 @@ Never import from packages not listed in dependencies.
 
 When conversations become long and the AI starts making obvious errors, starting fresh often works better than continuing to pile on context. Save the useful parts of previous discussions, then begin with a clean slate that includes only your current task and necessary dependencies.
 
-## Practical Workflow Example
+### Step 2: Practical Workflow Example
 
 Here's a workflow that minimizes hallucinated imports:
 
@@ -137,7 +147,7 @@ Project constraints:
 """
 ```
 
-## Detecting Hallucinated Imports Early
+### Step 3: Detecting Hallucinated Imports Early
 
 Add these checks to your development workflow:
 
@@ -156,7 +166,7 @@ go vet ./...
 
 Running these tools immediately after AI-generated code catches hallucinated imports before they reach your main codebase.
 
-## When Hallucinations Still Happen
+### Step 4: When Hallucinations Still Happen
 
 Sometimes despite your best efforts, the AI still generates invalid imports. Common causes include:
 
@@ -168,7 +178,7 @@ Sometimes despite your best efforts, the AI still generates invalid imports. Com
 
 The fix is simple: tell the AI what went wrong and provide the correct dependency information. Most models recover quickly when given explicit correction.
 
-## Building Long-Term Context Habits
+### Step 5: Build Long-Term Context Habits
 
 The best defense against hallucinated imports is consistent communication discipline. Always:
 
@@ -182,7 +192,7 @@ The best defense against hallucinated imports is consistent communication discip
 
 These habits reduce AI errors dramatically and make your coding assistant a reliable partner rather than a source of subtle bugs.
 
-## Comparing Context Windows Across AI Tools
+### Step 6: Comparing Context Windows Across AI Tools
 
 Different AI tools maintain different context window sizes, affecting how much information they can consider:
 
@@ -197,7 +207,7 @@ Different AI tools maintain different context window sizes, affecting how much i
 
 Practical implication: If your repository is 500K tokens, Claude 3.5 Sonnet can ingest 40% of it. GPT-4o can handle only 25%. Cursor and Copilot can see nothing at full codebase scale.
 
-## Tokenization Awareness
+### Step 7: Tokenization Awareness
 
 Before dumping files into an AI tool, understand how many tokens you're consuming:
 
@@ -234,7 +244,7 @@ print(f"Total project context: {total_tokens} tokens")
 # If >100K, you're using 50% of Claude's context window
 ```
 
-## Smart Context Management Patterns
+### Step 8: Smart Context Management Patterns
 
 **Pattern 1: File Priority List**
 
@@ -277,7 +287,7 @@ def prepare_fresh_context(original_conversation_length: int):
         # Start fresh conversation with that file + current task
 ```
 
-## Real-World Scenario: Large Django Project
+### Step 9: Real-World Scenario: Large Django Project
 
 Suppose you're working on a 2MB Django project with 15 Python files, 100+ database models, and 200 views.
 
@@ -329,7 +339,7 @@ Files for reference:
 
 This focused approach dramatically reduces hallucinations.
 
-## Incremental Conversation Strategy
+### Step 10: Incremental Conversation Strategy
 
 Instead of large context dumps, use smaller iterative conversations:
 
@@ -358,7 +368,7 @@ Only use dependencies already in requirements.txt.
 # Less hallucination because less context confusion
 ```
 
-## Tools for Context Management
+### Step 11: Tools for Context Management
 
 **CLI tools to help organize context:**
 
@@ -381,7 +391,7 @@ grep -r "^class\|^def\|^import" src/ > /tmp/project_summary.txt
 # Result: ~2-5K tokens capturing project structure without implementation
 ```
 
-## Context Window Limits by Tool
+### Step 12: Context Window Limits by Tool
 
 When each AI tool starts hallucinating (based on testing):
 
@@ -393,6 +403,21 @@ When each AI tool starts hallucinating (based on testing):
 | Copilot | 8K tokens | 12K tokens | >14K tokens |
 
 Stay in the "safe limit" column to maintain quality.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

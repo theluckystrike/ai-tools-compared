@@ -48,7 +48,17 @@ Traditional code review happens after you push changes. By then, you've already 
 
 The benefits include catching logic errors before they reach version control, enforcing project coding standards automatically, reducing back-and-forth with reviewers, and learning better patterns through inline feedback.
 
-## Setting Up GitHub Copilot for Inline Code Review
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Set Up GitHub Copilot for Inline Code Review
 
 GitHub Copilot provides code review capabilities through its chat interface. Install the Copilot extension in VS Code, then configure review prompts.
 
@@ -74,7 +84,7 @@ To review specific functions, highlight the code block and ask:
 Review this function for error handling completeness
 ```
 
-## Configuring Cursor for Continuous Code Analysis
+### Step 2: Configure Cursor for Continuous Code Analysis
 
 Cursor, built on VS Code, offers more aggressive AI review features. Install Cursor from cursor.sh, then enable the review features in Settings.
 
@@ -114,7 +124,7 @@ function UserProfile({ userId }) {
 // if userId changes frequently.
 ```
 
-## Using Claude Code for Terminal-Based Review
+### Step 3: Use Claude Code for Terminal-Based Review
 
 For developers who prefer terminal environments, Claude Code provides CLI-based review. Install via:
 
@@ -152,7 +162,7 @@ Issues found:
   Consider adding documentation for authenticateUser()
 ```
 
-## Setting Up Aider for Git-Integrated Review
+### Step 4: Set Up Aider for Git-Integrated Review
 
 Aider works directly with git repositories. Install and configure:
 
@@ -178,7 +188,7 @@ Review findings:
 - Line 78: Exception handling could expose sensitive data
 ```
 
-## Configuring ESLint with AI Plugins
+### Step 5: Configure ESLint with AI Plugins
 
 For JavaScript and TypeScript projects, combine ESLint with AI-enhanced rules. Install the necessary packages:
 
@@ -208,7 +218,7 @@ npx eslint src/
 
 This approach catches issues during your normal development workflow—before you even commit.
 
-## Comparing AI Review Tools by Use Case
+### Step 6: Comparing AI Review Tools by Use Case
 
 Different tools suit different team structures and workflows. Here is how the main options compare across the factors that matter most:
 
@@ -222,7 +232,7 @@ Different tools suit different team structures and workflows. Here is how the ma
 
 For teams that want coverage at every stage, running Copilot during development plus a Claude Code pre-commit hook gives the best overlap between interactive and automated review.
 
-## Building a Pre-Commit Hook That Does Not Slow You Down
+### Step 7: Build a Pre-Commit Hook That Does Not Slow You Down
 
 The main objection to AI review in commit hooks is latency. A review that takes 30 seconds per commit will be bypassed with `--no-verify` within days. Avoid this by scoping the review tightly.
 
@@ -256,7 +266,7 @@ exit 0
 
 The `--stdin` flag passes only the diff context, keeping requests short and latency under five seconds for typical commits.
 
-## Building a Custom Review Pipeline
+### Step 8: Build a Custom Review Pipeline
 
 For teams wanting full control, build a custom pipeline using the above tools. Create a shell script that runs multiple analyzers:
 
@@ -286,7 +296,7 @@ chmod +x ai-review.sh
 ./ai-review.sh src/auth.ts
 ```
 
-## Integrating AI Review into JetBrains IDEs
+### Step 9: Integrate AI Review into JetBrains IDEs
 
 VS Code-based tools dominate the AI review space, but JetBrains users are not without options. The GitHub Copilot plugin for IntelliJ, WebStorm, and PyCharm provides the same chat-based review through the Copilot Chat panel. Open any file, select code, and press `Alt+Enter` to access the Copilot context menu with review options.
 
@@ -307,6 +317,21 @@ claude-code review --staged
 Keep your AI tools updated—vendors regularly improve their analysis capabilities. Combine AI review with traditional tools like linters and formatters for coverage. Finally, train your team on interpreting AI feedback to avoid blindly accepting suggestions.
 
 One discipline that pays off quickly: when AI review flags something you disagree with, annotate the code with a comment explaining why the pattern is intentional. This creates a living record of architectural decisions and prevents the same false positive from being raised in future reviews.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

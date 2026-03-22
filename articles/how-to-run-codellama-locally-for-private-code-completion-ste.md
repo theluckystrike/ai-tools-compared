@@ -57,7 +57,17 @@ For an usable local code completion experience, aim for these minimum specificat
 
 Apple Silicon Macs handle the 7B and 13B models surprisingly well using Metal acceleration. NVIDIA GPUs on Linux or WSL2 offer the most flexibility for all model sizes.
 
-## Installing Ollama
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Install Ollama
 
 Ollama is the easiest way to run CodeLlama locally. It handles model downloading, inference, and provides a simple API.
 
@@ -83,7 +93,7 @@ Verify the installation:
 ollama --version
 ```
 
-## Downloading the CodeLlama Model
+### Step 2: Downloading the CodeLlama Model
 
 Pull the model that matches your hardware capabilities:
 
@@ -100,7 +110,7 @@ ollama pull codellama:34b
 
 The 7B model downloads approximately 4GB, while the 13B model requires around 8GB. Initial download time depends on your internet connection.
 
-## Testing CodeLlama in the Terminal
+### Step 3: Test CodeLlama in the Terminal
 
 Once installed, test the model directly:
 
@@ -116,7 +126,7 @@ Type a code-related query to verify functionality:
 
 The model should respond with a working implementation. Press Ctrl+D or type `/exit` to quit.
 
-## Integrating with Your Code Editor
+### Step 4: Integrate with Your Code Editor
 
 For real-time code completion in your IDE, you have several integration options.
 
@@ -144,7 +154,7 @@ LM Studio provides a GUI alternative:
 3. Select the Chat tab to use it as a coding assistant
 4. The app also provides an OpenAI-compatible local server
 
-## Configuring Code Completion Settings
+### Step 5: Configure Code Completion Settings
 
 Fine-tune your setup for optimal results.
 
@@ -254,7 +264,7 @@ pkill ollama
 ollama serve
 ```
 
-## Security Benefits
+### Step 6: Security Benefits
 
 Running locally provides security advantages cloud services cannot match. Your code never traverses networks, eliminating interception risks. There are no third-party data retention policies to review. Compliance becomes simpler since data processing stays within your infrastructure.
 

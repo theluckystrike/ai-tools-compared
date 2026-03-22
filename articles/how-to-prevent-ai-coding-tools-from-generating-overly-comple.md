@@ -73,7 +73,17 @@ def is_valid_email(email: str) -> bool:
     return bool(re.match(pattern, email))
 ```
 
-## Prompt Engineering for Simplicity
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Prompt Engineering for Simplicity
 
 The most effective way to prevent AI over-complexity is through precise prompts. Your instructions directly influence the complexity of the output. Instead of open-ended requests like "write me a function to handle user authentication," provide constraints that push toward simplicity.
 
@@ -87,7 +97,7 @@ Example simple prompt:
 
 This produces a much simpler result than asking "how do I read JSON files in Python?"
 
-## Use Constraint Prompts Effectively
+### Step 2: Use Constraint Prompts Effectively
 
 Beyond specifying what you want, explicitly state what you want to avoid. Tell the AI not to use classes if functions would suffice. Request that it skip error handling for edge cases you do not care about. Ask for direct implementations without abstraction layers you do not need.
 
@@ -97,7 +107,7 @@ Here is a practical constraint prompt:
 
 The AI will respond with exactly what you asked for—a simple, focused function without unnecessary additions.
 
-## Iterate with Refinement Prompts
+### Step 3: Iterate with Refinement Prompts
 
 AI coding tools work best through iteration. Start with a simple request, evaluate the output, and refine with follow-up prompts if the solution is too complex. This approach gives you control over the complexity level.
 
@@ -111,7 +121,7 @@ If the AI generates a full controller with service layer, repository pattern, an
 
 This incremental refinement approach puts you in control. You get the complexity you want, where you want it, and avoid it where you do not need it.
 
-## Use AI Tool Configuration
+### Step 4: Use AI Tool Configuration
 
 Many AI coding tools offer settings that affect output complexity. Claude Code, GitHub Copilot, and Cursor all have configuration options that influence how the tool behaves.
 
@@ -119,7 +129,7 @@ In Claude Code, you can set preferences in your configuration that emphasize sim
 
 Some tools support custom instructions or system prompts where you can specify your preferences once and have them apply to all interactions. Setting a system prompt like "prefer simple, imperative code over complex abstractions" guides the AI toward simplicity without repeating yourself.
 
-## Review and Simplify AI Output
+### Step 5: Review and Simplify AI Output
 
 AI-generated code requires the same review process as human-written code. Do not accept AI solutions without evaluation. When reviewing AI output, apply the same simplicity tests you would apply to any code: does this add unnecessary abstraction? Could this be simpler? Is this complexity justified?
 
@@ -135,7 +145,7 @@ A practical review checklist for AI code:
 
 When you find unnecessary complexity, ask the AI to simplify specific parts rather than regenerating everything. This maintains the parts that work while fixing the complexity issues.
 
-## Build Your Own Prompt Library
+### Step 6: Build Your Own Prompt Library
 
 Over time, build a collection of prompts that work well for your projects. Document prompts that consistently produce the right level of complexity for your needs. This becomes a reference that speeds up your workflow and ensures consistent results.
 
@@ -155,7 +165,7 @@ Different AI coding assistants offer varying levels of control over complexity. 
 
 Claude Code performs particularly well when you provide explicit constraints, while Cursor excels at understanding project context to auto-adjust complexity levels.
 
-## Real-World Example: REST API Endpoint
+### Step 7: Real-World Example: REST API Endpoint
 
 Here's how to guide AI from complex to simple for a common task:
 
@@ -180,7 +190,7 @@ app.get('/users/:id', (req, res) => {
 });
 ```
 
-## Anti-Patterns to Watch For
+### Step 8: Anti-Patterns to Watch For
 
 When reviewing AI-generated code, watch for these complexity red flags:
 
@@ -190,7 +200,7 @@ When reviewing AI-generated code, watch for these complexity red flags:
 - Utility classes wrapping single functions
 - Over-engineered error handling for simple operations
 
-## Testing Complexity Preferences
+### Step 9: Test Complexity Preferences
 
 Before committing to an AI tool, test it with a simple scenario:
 
@@ -203,7 +213,7 @@ Just use regex and return true/false."
 
 Tools that consistently generate 3-5 line solutions are better for simplicity-first workflows. Tools requiring 10+ lines may default toward enterprise patterns.
 
-## Handling AI-Generated Boilerplate
+### Step 10: Handling AI-Generated Boilerplate
 
 AI tools often generate defensive code—error handling, logging, configuration classes—that your project doesn't need. When this happens, ask the AI to strip it out explicitly:
 
@@ -239,7 +249,7 @@ async function getUser(id) {
 
 This iterative refinement is faster than regenerating from scratch and gives you control over which boilerplate stays.
 
-## Context Windows and Scope Management
+### Step 11: Context Windows and Scope Management
 
 When asking AI to generate code, explicitly set the scope boundary. AI models respond to explicit constraints:
 
@@ -248,7 +258,7 @@ Strong prompt: "Generate a login function that takes email and password, checks 
 
 The strong version eliminates the ambiguity that leads to over-engineering. Your AI tool knows exactly what you want because you defined the boundaries clearly.
 
-## Evaluating Third-Party Code
+### Step 12: Evaluating Third-Party Code
 
 When you receive AI-generated code that uses third-party libraries, question each dependency:
 
@@ -274,7 +284,7 @@ def process_users(data):
 
 This constraint-driven approach prevents your codebase from accumulating unnecessary dependencies.
 
-## Integrating Simplicity into Your Team Workflow
+### Step 13: Integrate Simplicity into Your Team Workflow
 
 If you work in a team, establish simplicity standards and share them with your AI tool:
 
@@ -285,7 +295,7 @@ If you work in a team, establish simplicity standards and share them with your A
 
 Over time, your tool learns your preferences. Claude Code, for instance, remembers your feedback and adjusts its output in subsequent interactions.
 
-## Measuring Code Complexity
+### Step 14: Measuring Code Complexity
 
 Quantify complexity to verify your AI tool is respecting your constraints:
 
@@ -304,6 +314,21 @@ Quantify complexity to verify your AI tool is respecting your constraints:
 ```
 
 Share these metrics with your team and enforce them during code review. This gives reviewers concrete reasons to push back on over-engineered solutions.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

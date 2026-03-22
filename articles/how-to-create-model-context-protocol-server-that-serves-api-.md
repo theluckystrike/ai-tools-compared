@@ -54,7 +54,7 @@ Before building your MCP documentation server, ensure you have:
 
 - Basic familiarity with FastMCP or similar MCP frameworks
 
-## Setting Up Your Project
+### Step 1: Set Up Your Project
 
 Start by creating a new Python project and installing the necessary dependencies:
 
@@ -75,7 +75,7 @@ api-docs-mcp-server/
 └── requirements.txt
 ```
 
-## Creating the MCP Server
+### Step 2: Create the MCP Server
 
 The core of your documentation server involves parsing your API documentation and exposing it through MCP tools. Here's a complete implementation using FastMCP:
 
@@ -194,7 +194,7 @@ if __name__ == "__main__":
     mcp.run()
 ```
 
-## Creating Sample Documentation
+### Step 3: Create Sample Documentation
 
 Create a sample OpenAPI specification to test your server:
 
@@ -291,7 +291,7 @@ paths:
           description: Task deleted successfully
 ```
 
-## Running and Testing the Server
+### Step 4: Run and Testing the Server
 
 Start your MCP server:
 
@@ -327,7 +327,7 @@ async def test_server():
 asyncio.run(test_server())
 ```
 
-## Integrating with AI Tools
+### Step 5: Integrate with AI Tools
 
 Once your MCP server is running, configure your AI assistant to connect to it. Most AI coding tools support MCP through their configuration files:
 
@@ -362,7 +362,7 @@ Rate Limiting Info: Include rate limit headers and retry-after values in endpoin
 
 Version Comparison: Support multiple API versions and allow querying differences between versions.
 
-## Caching Documentation in Memory vs. Reloading on Change
+### Step 6: Caching Documentation in Memory vs. Reloading on Change
 
 Loading the OpenAPI spec on every tool call adds latency. But serving stale docs when the spec changes during development produces confusing AI suggestions. The right approach is to cache with optional hot-reload:
 
@@ -396,7 +396,7 @@ class DocumentationCache:
 
 This approach reloads automatically when the file changes without polling. When the MD5 matches the cached hash, it returns the cached result immediately. Development workflows benefit from the hot-reload; production deployments benefit from the cache hit performance.
 
-## Exposing Authentication Schemes
+### Step 7: Exposing Authentication Schemes
 
 AI assistants generate better API client code when they understand the authentication model. Parse the security schemes from your OpenAPI spec and expose them as a dedicated tool:
 
@@ -431,7 +431,7 @@ async def get_auth_schemes() -> dict:
 
 When an AI assistant calls `get_auth_schemes()` before generating code for a protected endpoint, it automatically includes correct `Authorization` headers or API key parameters rather than requiring you to specify authentication in every prompt.
 
-## Supporting Multiple API Versions
+### Step 8: Supporting Multiple API Versions
 
 APIs evolve. An MCP documentation server that only knows the current version can't help when a client is pinned to an older version. Add multi-version support with a version registry:
 
@@ -474,6 +474,21 @@ async def search_endpoints_by_version(query: str, version_label: str = "current"
 ```
 
 Load both versions at startup and AI assistants can generate code targeting either, or compare endpoints across versions to identify breaking changes.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

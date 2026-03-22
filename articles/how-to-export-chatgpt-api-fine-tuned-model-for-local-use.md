@@ -43,7 +43,17 @@ Export fine-tuned ChatGPT models by calling the OpenAI API with your fine-tuned 
 - **This is fundamentally different**: from open-source fine-tuning where you have full access to the model files.
 - **Creates a model variant**: with a unique ID like `ft:gpt-3.5-turbo:your-org:custom-name:abc123` 4.
 
-## Understanding What You Actually Have
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand What You Actually Have
 
 Before attempting an export, you need to understand the technical reality: **OpenAI does not provide a direct download mechanism for fine-tuned model weights**. Their fine-tuning service creates a model that lives on their infrastructure, and you access it exclusively through their API. This is fundamentally different from open-source fine-tuning where you have full access to the model files.
 
@@ -57,7 +67,7 @@ However, several legitimate approaches exist to achieve local fine-tuned inferen
 
 The most practical path for most developers involves recreating the fine-tuning on an open-source base model.
 
-## What OpenAI's Fine-Tuning API Actually Gives You
+### Step 2: What OpenAI's Fine-Tuning API Actually Gives You
 
 OpenAI's fine-tuning API currently supports base models including `gpt-4o-mini`, `gpt-3.5-turbo`, and several others. When you submit a fine-tuning job, OpenAI:
 
@@ -68,7 +78,7 @@ OpenAI's fine-tuning API currently supports base models including `gpt-4o-mini`,
 
 You own the training data and the fine-tuning job metadata. You do not own the resulting weights. This distinction matters enormously for portability and cost planning.
 
-## Exporting Your Training Data
+### Step 3: Exporting Your Training Data
 
 The first step is extracting the training data you used for fine-tuning. If you still have your training files, you're in luck. If not, you can retrieve your fine-tuning job details and training examples through the OpenAI API.
 
@@ -109,7 +119,7 @@ print("Training data saved to training_data.jsonl")
 
 This training data becomes your seed for recreating the model locally.
 
-## Converting OpenAI JSONL Format for Open-Source Training
+### Step 4: Converting OpenAI JSONL Format for Open-Source Training
 
 OpenAI's fine-tuning format uses a chat messages structure. Most open-source training frameworks expect a slightly different format, so you will need a conversion step:
 
@@ -145,7 +155,7 @@ def convert_openai_to_alpaca(input_path: str, output_path: str) -> None:
 convert_openai_to_alpaca("training_data.jsonl", "training_alpaca.jsonl")
 ```
 
-## Recreating the Fine-Tuned Model Locally
+### Step 5: Recreating the Fine-Tuned Model Locally
 
 With your training data extracted, you can now fine-tune an open-source model. The goal is to replicate the behavior of your OpenAI fine-tuned model as closely as possible using local infrastructure.
 
@@ -237,7 +247,7 @@ training_args = TrainingArguments(
 print("Ready to fine-tune locally")
 ```
 
-## Running Inference Locally
+### Step 6: Run Inference Locally
 
 After fine-tuning completes, you can run inference without any external API calls:
 
@@ -277,7 +287,7 @@ response = generate("Your prompt here")
 print(response)
 ```
 
-## Serving the Model as a Local API
+### Step 7: Serving the Model as a Local API
 
 Once you have a working local model, you often want to expose it with an OpenAI-compatible API so that existing code that calls `openai.chat.completions.create` works without modification. The `vllm` library makes this straightforward:
 
@@ -293,7 +303,7 @@ python -m vllm.entrypoints.openai.api_server \
 
 Your application can then point to `http://localhost:8000` instead of the OpenAI API, with zero code changes beyond the base URL.
 
-## Optimizing for Production
+### Step 8: Optimizing for Production
 
 For production deployment, consider these optimizations:
 
@@ -320,7 +330,7 @@ model = AutoModelForCausalLM.from_pretrained(
 )
 ```
 
-## Limitations and Tradeoffs
+### Step 9: Limitations and Tradeoffs
 
 You should know that recreating your fine-tuned model locally will not produce identical results. Differences include:
 
@@ -349,7 +359,7 @@ One of the primary motivations for local deployment is cost reduction at scale. 
 
 At volumes above roughly 25M tokens per month, self-hosting becomes economically favorable. Below that threshold, the simplicity and reliability of OpenAI's API usually wins. The latency advantage of local inference is significant for user-facing applications regardless of cost.
 
-## Common Pitfalls to Avoid
+### Step 10: Common Pitfalls to Avoid
 
 **Forgetting to merge LoRA adapters before serving.** LoRA adapters are stored separately from base model weights. For production serving with vLLM, merge them first:
 
@@ -367,6 +377,21 @@ tokenizer.save_pretrained("./local-finetuned-model-merged")
 **Using mismatched tokenizers.** Always load the tokenizer from the same base model checkpoint. Mismatched tokenizers produce garbled outputs that are hard to diagnose.
 
 **Skipping chat template formatting.** Mistral and Llama models require specific chat templates to produce coherent conversational outputs. Pass messages through the tokenizer's `apply_chat_template` method rather than formatting prompts manually.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Related Reading
 

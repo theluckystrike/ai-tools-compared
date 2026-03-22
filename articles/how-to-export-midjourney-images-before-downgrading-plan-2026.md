@@ -45,7 +45,17 @@ Midjourney stores your image generations on their servers while your subscriptio
 
 The 2026 pricing structure shows the practical impact: Pro plan users get 2000+ fast hours monthly with full access to all features and image storage. Downgrading to Standard reduces this to 200 fast hours and limits certain advanced features. Your generated images don't automatically transfer—you must download them before the downgrade takes effect.
 
-## Method 1: Manual Discord Export
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Method 1: Manual Discord Export
 
 The simplest approach uses Midjourney's built-in Discord functionality. Each generated image appears in your Discord channel with download options.
 
@@ -53,7 +63,7 @@ Navigate to your Midjourney server in Discord. Find the image you want to preser
 
 For bulk manual export, open your server settings, go to "Privacy Settings," and enable "Allow server members to download images." This lets you right-click and save multiple images quickly in Discord's desktop or web client.
 
-## Method 2: Discord Bot API for Automated Export
+### Step 2: Method 2: Discord Bot API for Automated Export
 
 Developers can automate image export using Discord's API. This approach requires more setup but scales to hundreds or thousands of images.
 
@@ -116,7 +126,7 @@ client.login('YOUR_BOT_TOKEN');
 
 This script listens for messages from the Midjourney bot (user ID 936929561302675456) and automatically downloads any attached images. Run this while you're actively generating images to capture everything in real-time.
 
-## Method 3: Midjourney Web Gallery Export
+### Step 3: Method 3: Midjourney Web Gallery Export
 
 Midjourney's web interface at midjourney.com provides an alternative export method. Log in to your account and navigate to "Midjourney Web" or "Gallery" (the exact name varies by current UI). This web interface displays your generation history in a browsable format.
 
@@ -124,7 +134,7 @@ The web gallery shows thumbnails of your previous generations. Click any image t
 
 The web interface has limitations—it's primarily designed for viewing rather than mass export. Large archives spanning months of generation may take considerable time to navigate and download manually.
 
-## Method 4: Browser Automation with Puppeteer or Playwright
+### Step 4: Method 4: Browser Automation with Puppeteer or Playwright
 
 For large archives, browser automation provides the most powerful solution. Use Puppeteer or Playwright to programmatically navigate your Midjourney web gallery and download images at scale.
 
@@ -174,7 +184,7 @@ exportMidjourneyGallery().catch(console.error);
 
 This approach gives you programmatic control over the export process. You can enhance it with rate limiting, retry logic, and progress tracking for large archives.
 
-## Method 5: Using Midjourney's API (If Available)
+### Step 5: Method 5: Using Midjourney's API (If Available)
 
 Midjourney has been gradually rolling out official API access to select partners and enterprise customers. If you have API access, you can query your generation history programmatically.
 
@@ -214,7 +224,7 @@ Third, test your export method before the downgrade. Run a small batch of downlo
 
 Fourth, consider redundant storage. Save exports to multiple locations—local drive, cloud storage (Google Drive, Dropbox, AWS S3), or external backup. This protects against local hardware failures.
 
-## Automated Batch Export with Python
+### Step 6: Automated Batch Export with Python
 
 For developers managing large Midjourney archives, Python automation provides efficient bulk export:
 
@@ -286,7 +296,7 @@ async def main():
 asyncio.run(main())
 ```
 
-## Metadata Management
+### Step 7: Metadata Management
 
 Preserve context alongside your images to make future retrieval easier:
 
@@ -326,7 +336,7 @@ metadata.add_image(
 metadata.save()
 ```
 
-## Organizing Exported Images
+### Step 8: Organizing Exported Images
 
 Create a structured directory layout for easy navigation:
 
@@ -386,7 +396,7 @@ organize_exports(
 )
 ```
 
-## Downgrade Timeline Checklist
+### Step 9: Downgrade Timeline Checklist
 
 **Two Weeks Before Downgrade:**
 - Review your generation history
@@ -413,7 +423,7 @@ organize_exports(
 - Verify local and cloud backups are intact
 - Delete temporary export files from device if storage is tight
 
-## Storage Calculation
+### Step 10: Storage Calculation
 
 Before exporting, estimate storage needs:
 
@@ -429,6 +439,21 @@ For reference:
 - AWS S3 storage: $0.023/GB/month (1TB = ~$24/month)
 
 Choose storage method based on your collection size and access patterns.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

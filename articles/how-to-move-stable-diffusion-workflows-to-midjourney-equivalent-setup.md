@@ -41,13 +41,23 @@ Moving your AI image generation workflows from Stable Diffusion to Midjourney re
 - **MJ doesn't have direct inpainting**: use describe/blend instead.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
-## Understanding the Platform Differences
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand the Platform Differences
 
 Stable Diffusion gives you complete control over the generation process. You can modify models, embed custom embeddings, and fine-tune every parameter through APIs like Automatic1111 or ComfyUI. Midjourney abstracts much of this complexity, focusing on producing high-quality results through its curated model versions and Discord-based interface.
 
 The key challenge lies in translating your existing Stable Diffusion prompts, Loras, and workflow patterns into Midjourney's equivalent functionality. This involves understanding how prompt weighting, style modifiers, and generation parameters map between the two systems.
 
-## Converting Stable Diffusion Prompts to Midjourney Syntax
+### Step 2: Converting Stable Diffusion Prompts to Midjourney Syntax
 
 One of the first hurdles you'll face is converting your existing Stable Diffusion prompts. Midjourney uses a different syntax for specifying weights and parameters. Here's a Python tool that helps automate this conversion:
 
@@ -135,7 +145,7 @@ chmod +x prompt_converter.py
 python3 prompt_converter.py
 ```
 
-## Creating Equivalent Workflow Configurations
+### Step 3: Create Equivalent Workflow Configurations
 
 Your Stable Diffusion workflows likely use config files to manage model paths, VAE settings, and sampling parameters. Here's how to create equivalent configurations for Midjourney through Discord bot commands:
 
@@ -176,7 +186,7 @@ style_presets:
   photographic: "--photo"
 ```
 
-## Building a Batch Migration Pipeline
+### Step 4: Build a Batch Migration Pipeline
 
 When migrating large prompt libraries, you'll want a batch processing solution. This Bash script processes directories of prompts and converts them systematically:
 
@@ -225,7 +235,7 @@ chmod +x batch_convert.sh
 ./batch_convert.sh
 ```
 
-## Setting Up Equivalent Image Processing
+### Step 5: Set Up Equivalent Image Processing
 
 Stable Diffusion often uses img2img for variations and inpainting. Midjourney handles these through different parameters and the Discord interface. Here's how to map these workflows:
 
@@ -313,7 +323,7 @@ if __name__ == "__main__":
     print(f"MJ: {mj_result}")
 ```
 
-## Managing Workflow State and History
+### Step 6: Manage Workflow State and History
 
 Unlike Stable Diffusion's local file-based workflow storage, Midjourney stores job history in Discord. Here's a Python class for tracking your migrated workflows:
 
@@ -407,7 +417,7 @@ if __name__ == "__main__":
     print(f"Found {len(similar)} similar prompts")
 ```
 
-## Practical Migration Checklist
+### Step 7: Practical Migration Checklist
 
 Use this checklist when moving your workflows:
 
@@ -426,6 +436,21 @@ Use this checklist when moving your workflows:
 7. **Build reference library** - Use the tracker to maintain consistency
 
 8. **Batch process** - Migrate entire prompt collections systematically
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -39,7 +39,17 @@ Start by examining four critical DPA elements: data transmission scope (what cod
 - **Phrases like "license to**: use" your code for "service improvement" can be problematic.
 - **Many vendors use global infrastructure**: meaning your code might be processed in data centers across multiple regions.
 
-## What a Data Processing Agreement Actually Covers
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: What a Data Processing Agreement Actually Covers
 
 A data processing agreement is a legally binding contract that defines how a vendor handles personal data and, more importantly for developers, how it handles your proprietary code and project data. For AI coding tools specifically, the DPA should address several critical questions:
 
@@ -55,7 +65,7 @@ A data processing agreement is a legally binding contract that defines how a ven
 
 Let's examine each of these areas in detail.
 
-## Data Collection and Transmission Scope
+### Step 2: Data Collection and Transmission Scope
 
 The first thing to verify is exactly what gets sent to the AI service. Some tools process everything locally on your machine, while others send code to cloud APIs for analysis.
 
@@ -75,7 +85,7 @@ For example, GitHub Copilot's architecture involves sending code context to Micr
 
 When evaluating vendors, request a technical explanation of the data flow. Reputable vendors publish architecture diagrams showing exactly what leaves your environment. If a vendor cannot clearly explain their data transmission scope, that's a red flag for enterprise consideration.
 
-## Ownership and Retention Policies
+### Step 3: Ownership and Retention Policies
 
 One of the most critical sections addresses data ownership. The ideal clause states that you retain full ownership of your code, and the vendor gains no rights to use it for any purpose—including model training.
 
@@ -91,7 +101,7 @@ Watch for ambiguous language. Phrases like "license to use" your code for "servi
 
 The retention period also matters. Some tools delete processed data immediately after generating a response, while others retain it for months or years. For compliance with regulations like GDPR or industry standards, you need concrete retention timelines.
 
-## Processing Location and Cross-Border Transfers
+### Step 4: Processing Location and Cross-Border Transfers
 
 Enterprise environments often have data residency requirements. Financial services, healthcare, and government sectors frequently mandate that data stays within specific geographic boundaries.
 
@@ -130,7 +140,7 @@ compliance:
   backup_frequency: daily
 ```
 
-## Third-Party Data Sharing
+### Step 5: Third-Party Data Sharing
 
 AI coding tools often rely on subprocessors—other companies that handle data as part of providing the service. These might include cloud providers (AWS, GCP, Azure), AI model providers, or infrastructure partners.
 
@@ -144,7 +154,7 @@ The DPA should include a subprocessor list or provisions for notifying you of su
 
 Some agreements allow you to veto certain subprocessors, particularly those in jurisdictions with weaker privacy laws.
 
-## Practical Evaluation Framework
+### Step 6: Practical Evaluation Framework
 
 When systematically evaluating AI coding tool DPAs, use this structured approach:
 
@@ -188,7 +198,7 @@ Even standard agreements often have room for modification. Common negotiable ite
 
 - Deletion procedures upon contract termination
 
-## Common Pitfalls to Avoid
+### Step 7: Common Pitfalls to Avoid
 
 Several mistakes frequently occur in enterprise AI tool evaluations:
 
@@ -200,7 +210,7 @@ Several mistakes frequently occur in enterprise AI tool evaluations:
 
 **Failing to verify claims.** Vendor marketing often makes broad privacy claims. Cross-reference with actual DPA language.
 
-## Making the Final Decision
+### Step 8: Making the Final Decision
 
 Data processing agreement evaluation is one piece of the enterprise AI tool selection puzzle, but it's a critical one. A tool with excellent code completion capabilities but problematic data practices creates unacceptable risk for organizations handling sensitive codebases.
 
@@ -222,7 +232,7 @@ When evaluating multiple AI coding tools for enterprise adoption, use this frame
 
 *Cursor has fewer public transparency commitments; request specific documentation during evaluation.
 
-## Creating a DPA Scoring Matrix
+### Step 9: Create a DPA Scoring Matrix
 
 Build a standardized evaluation across vendors using weighted criteria:
 
@@ -283,7 +293,7 @@ for vendor, score in results:
     print(f"{vendor}: {score:.1f}/100")
 ```
 
-## Red Flag Language in DPAs
+### Step 10: Red Flag Language in DPAs
 
 Watch for these problematic phrases that suggest weak data protections:
 
@@ -326,6 +336,21 @@ When your standard risk tolerance requires modifications to a vendor's DPA:
   ☐ Verify: No transfers without explicit consent
   ☐ Document: Data center location commitments
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 
