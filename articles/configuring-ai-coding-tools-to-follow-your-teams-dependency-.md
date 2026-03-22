@@ -9,7 +9,7 @@ permalink: /configuring-ai-coding-tools-to-follow-your-teams-dependency-/
 categories: [guides]
 tags: [ai-tools-compared, tools, configuration, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

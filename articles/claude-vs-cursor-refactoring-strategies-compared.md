@@ -6,9 +6,9 @@ date: 2026-03-22
 author: theluckystrike
 permalink: /claude-vs-cursor-refactoring-strategies-compared/
 categories: [guides]
-tags: [ai-tools-compared]
+tags: [ai-tools-compared, comparison, claude-ai]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
