@@ -7,9 +7,9 @@ last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: /ai-tools-for-generating-github-wiki-pages-from-repository-st/
 categories: [guides]
-tags: [ai-tools-compared, github, documentation, wiki, developer-tools]
+tags: [ai-tools-compared, github, documentation, wiki, developer-tools, artificial-intelligence]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 ---
