@@ -89,7 +89,7 @@ app.use('/api/v1/*', (req, res, next) => {
              'Migrate to API v2 for continued support.',
     datetime: '2026-12-01T00:00:00Z'
   });
-  
+
   res.set('X-API-Deprecated', 'true');
   res.set('X-Sunset-Date', '2026-12-01');
   next();
@@ -115,14 +115,14 @@ const fs = require('fs');
 
 async function generateVersionDocs(specPath, outputPath) {
   const api = await parser.validate(specPath);
-  
+
   const version = api.info.version;
   const endpoints = Object.entries(api.paths).map(([path, methods]) => ({
     path,
     methods: Object.keys(methods).filter(m => ['get','post','put','delete'].includes(m)),
     deprecated: methods.get?.deprecated || methods.post?.deprecated || false
   }));
-  
+
   const markdown = generateMarkdown(version, endpoints);
   fs.writeFileSync(outputPath, markdown);
 }
@@ -131,7 +131,7 @@ function generateMarkdown(version, endpoints) {
   return `# API Version ${version}\n\n` +
     endpoints.map(e => `## ${e.path}\n\n` +
       `Methods: ${e.methods.join(', ')}\n\n` +
-      (e.deprecated ? `> ⚠️ This endpoint is deprecated\n\n` : '')
+      (e.deprecated ? `> This endpoint is deprecated\n\n` : '')
     ).join('\n');
 }
 ```
@@ -157,6 +157,16 @@ GitBook provides AI-powered documentation features including automatic content g
 - Team collaboration features
 
 **Best for:** Distributed teams needing collaborative documentation workflows.
+
+## Tool Comparison at a Glance
+
+| Tool | AI Features | Versioning Support | Deprecation Tracking | Self-Hostable | Starting Price |
+|------|-------------|-------------------|----------------------|---------------|----------------|
+| Mintlify | Strong | Native | Policy-based | No | $150/mo |
+| ReadMe | Moderate | Native | Analytics-driven | No | $99/mo |
+| Docusaurus + plugins | Custom | Native | Custom scripts | Yes | Free (OSS) |
+| Scalar | Moderate | Spec-driven | Inline flags | Yes | Free tier |
+| GitBook | Strong | Git-based | Manual + AI | No | $8/user/mo |
 
 ## Implementation Recommendations
 
@@ -186,29 +196,29 @@ class DeprecationNoticeGenerator:
     def __init__(self, api_spec, current_version):
         self.spec = api_spec
         self.current_version = current_version
-    
+
     def analyze_deprecations(self):
         deprecations = []
-        
+
         for path, methods in self.spec['paths'].items():
             for method, details in methods.items():
                 if details.get('deprecated'):
                     deprecation = {
                         'endpoint': f"{method.upper()} {path}",
                         'version': self.current_version,
-                        'sunset_date': details.get('sunsetDate', 
+                        'sunset_date': details.get('sunsetDate',
                             self._calculate_default_sunset()),
-                        'migration_guide': details.get('x-migration-guide', 
+                        'migration_guide': details.get('x-migration-guide',
                             'See documentation for upgrade instructions'),
                         'breaking_changes': details.get('x-breaking-changes', [])
                     }
                     deprecations.append(deprecation)
-        
+
         return deprecations
-    
+
     def _calculate_default_sunset(self):
         return (datetime.now() + timedelta(days=180)).strftime('%Y-%m-%d')
-    
+
     def generate_notice(self, deprecation):
         return f"""## Deprecation Notice: {deprecation['endpoint']}
 
@@ -228,6 +238,47 @@ This endpoint will be removed on {deprecation['sunset_date']}.
 """
 ```
 
+## Versioning Strategies and Their Documentation Implications
+
+How you version your API shapes the kind of documentation tooling you need. The three dominant strategies each have different documentation requirements:
+
+**URL path versioning** (`/api/v1/`, `/api/v2/`) is the most common and easiest to document. Every version is a distinct namespace, so tools like Mintlify and Scalar can generate separate reference sections per version without ambiguity.
+
+**Header-based versioning** (`API-Version: 2026-01`) produces a single URL surface but many behavioral variants. Documentation must clearly explain which headers trigger which behavior, and your OpenAPI spec needs vendor extensions (`x-api-version`) to capture this. Scalar handles this better than most.
+
+**Date-based versioning** (used by Anthropic, Stripe, and others) ties behavior to release dates rather than integer versions. It simplifies the consumer's upgrade path but requires documentation tooling that can display a timeline of behavioral changes alongside endpoint references. ReadMe's changelog integration works well for this pattern.
+
+Whatever strategy you choose, encode the deprecation lifecycle into your OpenAPI spec using `deprecated: true` and the `x-sunset-date` extension. This enables AI tools to generate accurate notices rather than producing generic warnings.
+
+## CI/CD Integration for Documentation Drift Prevention
+
+The biggest failure mode for API documentation is drift—the spec diverges from the code silently. Integrate a diff check into your CI pipeline so documentation updates are mandatory on any PR that touches an API path:
+
+```yaml
+# .github/workflows/api-docs-check.yml
+name: API Docs Freshness Check
+on: [pull_request]
+
+jobs:
+  check-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate spec from code
+        run: python scripts/generate_openapi.py --output /tmp/generated.json
+
+      - name: Diff against committed spec
+        run: |
+          diff openapi.json /tmp/generated.json > /tmp/diff.txt
+          if [ -s /tmp/diff.txt ]; then
+            echo "API spec is out of date. Run: make generate-docs"
+            cat /tmp/diff.txt
+            exit 1
+          fi
+```
+
+Pair this with a Mintlify or Scalar sync step that automatically publishes the updated spec to your documentation portal on merge to main. The goal is zero manual documentation steps in the deployment path.
 
 ## Frequently Asked Questions
 
