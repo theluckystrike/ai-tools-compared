@@ -97,13 +97,13 @@ Connect Neovim using a custom completion source. You can use `vim-go` or write a
 local function get_completion(prompt)
   local http = require("socket.http")
   local json = require("cjson")
-  
+
   local response = {}
   local body = json.encode({
     prompt = prompt,
     max_length = 256,
   })
-  
+
   local result = http.request({
     url = "http://localhost:8080/completions",
     method = "POST",
@@ -114,7 +114,7 @@ local function get_completion(prompt)
     source = ltn12.source.string(body),
     sink = ltn12.sink.table(response),
   })
-  
+
   return table.concat(response)
 end
 ```
@@ -160,16 +160,39 @@ wget https://huggingface.co/TheBloke/StarCoder-GGML/resolve/main/starcoder-q4_0.
 
 Configure your Neovim completion plugin to query this local endpoint. The setup requires more configuration than Ollama but provides more control over the model behavior.
 
+## Qwen2.5-Coder
+
+Qwen2.5-Coder (from Alibaba's Qwen team) emerged as a strong contender in late 2025. The 7B and 14B variants perform competitively with CodeLLama 34B on most benchmarks while running comfortably on consumer hardware.
+
+### Setup via Ollama
+
+```bash
+ollama pull qwen2.5-coder:7b
+```
+
+Then configure your completion source to use `qwen2.5-coder` as the model name. The model has notably better instruction-following for fill-in-the-middle (FIM) tasks than earlier Qwen iterations, which translates to more accurate inline completions rather than pure next-token generation.
+
+## Neovim Plugins Purpose-Built for Local Completion
+
+Beyond generic cmp sources, several plugins are specifically designed for local LLM completion workflows:
+
+- **gen.nvim**: Lightweight plugin that speaks directly to any Ollama endpoint; requires zero extra dependencies and exposes completions through a simple `:Gen` command interface.
+- **llm.nvim**: Supports multiple backends (Ollama, llama.cpp HTTP server) and offers streaming completions that display tokens as they arrive rather than waiting for the full response.
+- **copilot.lua** (unofficial): Forks of the official Copilot plugin have been adapted to redirect requests to local endpoints, preserving the ghost-text completion UX while eliminating the cloud dependency.
+
+For daily driver use, llm.nvim with streaming enabled provides the most responsive feel. Latency on a 7B quantized model running on Apple Silicon or a mid-range NVIDIA GPU is typically under 500ms for short completions—fast enough to not disrupt flow.
+
 ## Comparing the Options
 
 | Tool | Model Size | Hardware Requirements | Setup Complexity |
 |------|-----------|----------------------|------------------|
 | Ollama + CodeLLama | 7-13B parameters | 8-16GB RAM recommended | Low |
+| Ollama + Qwen2.5-Coder | 7-14B parameters | 8-16GB RAM | Low |
 | CodeGeex | 13B parameters | 16GB+ RAM | Medium |
 | CodeGen | 2-16B parameters | 4-16GB RAM | Medium |
 | StarCoder + llama.cpp | Quantized options | 4-8GB RAM | Medium-High |
 
-Ollama provides the easiest setup experience. If you want minimal configuration time, CodeLLama through Ollama delivers the fastest path to working local AI code completion.
+Ollama provides the easiest setup experience. If you want minimal configuration time, CodeLLama or Qwen2.5-Coder through Ollama delivers the fastest path to working local AI code completion.
 
 CodeGeex and CodeGen offer specialized code models but require more manual setup. These work well if you need specific capabilities from these architectures.
 
@@ -189,6 +212,7 @@ To get the best experience from local AI code completion in Neovim:
 - Adjust the context length based on your typical completion needs
 - Consider using a dedicated GPU or eGPU for faster responses
 - Cache completions locally to avoid redundant API calls
+- Prefer fill-in-the-middle (FIM) capable models (CodeLLama Instruct, Qwen2.5-Coder) for inline completion over pure next-token models
 
 
 ## Related Articles
