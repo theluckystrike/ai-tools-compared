@@ -330,7 +330,6 @@ This catches silent data loss where rows are deleted without errors during the m
 | Learning Curve | Moderate | Low | High |
 
 Claude generates best-in-class tests for all three, but Alembic benefits most because Claude understands Python well and can generate comprehensive pytest fixtures that properly manage database state.
-
 ## Related Reading
 
 - [AI Tools for Automated Contract Testing](/ai-tools-compared/ai-tools-for-automated-contract-testing-2026/)

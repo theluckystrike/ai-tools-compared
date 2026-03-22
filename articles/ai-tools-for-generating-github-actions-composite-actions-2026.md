@@ -21,7 +21,8 @@ score: 9
 voice-checked: true
 intent-checked: true
 tags: [ai-tools-compared, github actions, devops, ci/cd, composite actions, ai tools, artificial-intelligence]
-permalink: /ai-tools-for-generating-github-actions-composite-actions-2026/---
+permalink: /ai-tools-for-generating-github-actions-composite-actions-2026/
+---
 
 
 # Best AI Tools for Generating GitHub Actions Composite Actions 2026

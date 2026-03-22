@@ -84,7 +84,6 @@ jobs:
 Missing: permissions, timeout, caching, and Docker credentials are handled insecurely (mixing with plaintext).
 
 **Claude's output:**
-
 ```yaml
 name: CI
 
@@ -108,7 +107,6 @@ jobs:
     strategy:
       matrix:
         python-version: ['3.11', '3.12']
-
     steps:
       - uses: actions/checkout@v4
 
@@ -204,71 +202,73 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     environment: production
-
     steps:
       - uses: actions/checkout@v4
 
       - name: Configure AWS credentials via OIDC
         uses: aws-actions/configure-aws-credentials@v4
         with:
-role-to-assume: arn:aws:iam::${{ vars.AWS_ACCOUNT_ID }}:role/github-actions-deploy
-          role-session-name: github-${{ github.run_id }}
-          aws-region: us-east-1
+          role-to-assume: ${{ secrets.AWS_ECR_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
 
-      - name: Deploy to ECS
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Build and push Docker image
+        env:
+          REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          REPOSITORY: my-app
+          IMAGE_TAG: ${{ github.sha }}
         run: |
-          aws ecs update-service \
-            --cluster ${{ vars.ECS_CLUSTER }} \
-            --service ${{ vars.ECS_SERVICE }} \
-            --force-new-deployment \
-            --region us-east-1
+          docker build \
+            --label "git-commit=${{ github.sha }}" \
+            --label "built-by=github-actions" \
+            -t $REGISTRY/$REPOSITORY:$IMAGE_TAG \
+            -t $REGISTRY/$REPOSITORY:latest \
+            .
+          docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
+          docker push $REGISTRY/$REPOSITORY:latest
 ```
 
-The required IAM trust policy for the OIDC role, which Claude also generates on request:
+Key things Claude gets right automatically:
+- `permissions: id-token: write` is required for OIDC — omitting it causes a silent 403
+- Coverage upload only on one matrix combination to avoid duplicate Codecov reports
+- `cancel-in-progress: true` prevents queue buildup on busy branches
+- `npm ci` instead of `npm install` for reproducible installs
 
-```json
-{
-  "Version": "2012-10-17",
-  "Statement": [{
-    "Effect": "Allow",
-    "Principal": {
-      "Federated": "arn:aws:iam::ACCOUNT_ID:oidc-provider/token.actions.githubusercontent.com"
-    },
-    "Action": "sts:AssumeRoleWithWebIdentity",
-    "Condition": {
-      "StringEquals": {
-        "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
-        "token.actions.githubusercontent.com:sub": "repo:myorg/myrepo:ref:refs/heads/main"
-      }
-    }
-  }]
-}
-```
+## Copilot for GitHub Actions
 
-### Step 4: Task 3: Composite Action (Reusable Steps)
+Copilot (inline in VS Code) generates structurally valid workflows but misses security-critical details. In testing, it:
+- Omits `permissions` blocks entirely, relying on over-broad default token permissions
+- Uses `npm install` instead of `npm ci`
+- Doesn't set `fail-fast: false` unless asked
+- Generates OIDC setup incorrectly, missing the `id-token: write` permission
 
-**Prompt:** "Create a composite action for setting up Node.js with caching."
+For simple single-job workflows, Copilot is fine. For anything involving credentials or matrix builds, it requires significant manual review.
+
+## Composite Actions: Reusable Workflow Patterns
+
+Claude handles reusable workflows and composite actions well. Here's a composite action for shared build steps:
 
 ```yaml
-# .github/actions/setup-node-cached/action.yml
-name: Setup Node.js with caching
-description: 'Install Node.js and cache node_modules and npm cache'
+# .github/actions/setup-and-build/action.yml
+name: Setup and Build
+description: Install dependencies and build the project
 
 inputs:
   node-version:
-    description: 'Node.js version to use'
+    description: Node.js version to use
     required: false
     default: '20'
   working-directory:
-    description: 'Directory containing package.json'
-    required: false
+    description: Directory containing package.json    required: false
     default: '.'
 
 outputs:
   cache-hit:
 description: 'Whether the node_modules cache was hit'
     value: ${{ steps.cache-modules.outputs.cache-hit }}
-
 runs:
   using: composite
   steps:
@@ -388,6 +388,5 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [Claude Code Hooks and Custom Workflows Guide](/ai-tools-compared/claude-code-hooks-and-custom-workflows-guide/)
 
 ---
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

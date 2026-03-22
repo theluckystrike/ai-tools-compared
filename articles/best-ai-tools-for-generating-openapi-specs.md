@@ -12,8 +12,11 @@ score: 8
 intent-checked: true
 voice-checked: true
 ---
+<<<<<<< HEAD
 
 {% raw %}{% raw %}
+=======
+>>>>>>> c8931ba67e79f64c03d5b1c734452f30c0808152
 
 Writing OpenAPI specs by hand is tedious and error-prone. For a moderately complex API — 20 endpoints, nested schemas, security definitions — manually writing the YAML takes hours and still misses edge cases. AI tools have changed this significantly. Claude, GitHub Copilot, and specialized tools like Speakeasy can generate production-quality OpenAPI 3.1 specs from existing code or natural language descriptions. This guide compares them with real examples.
 
@@ -145,4 +148,3 @@ Run a practical test: take a real endpoint from your codebase and ask each tool 
 
 AI tools evolve rapidly. The comparison above reflects March 2026 capabilities. Claude and Copilot have both improved significantly on code understanding in the past year. Verify current features before committing to a paid plan.
 
-{% endraw %}

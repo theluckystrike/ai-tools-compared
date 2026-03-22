@@ -71,7 +71,8 @@ Here is a practical example of how this conversion works. Suppose your WindSurf 
 The equivalent Cursor.cursorrules format would look like this:
 
 
-```yaml---
+```yaml
+---
 version: 1.0
 preferences:
  indentation: spaces

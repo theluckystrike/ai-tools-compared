@@ -7,7 +7,7 @@ last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /ai-container-security-scanning/
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 categories: [guides]
 tags: [ai-tools-compared, security, artificial-intelligence]

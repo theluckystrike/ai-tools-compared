@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Assistant for Writing Kubernetes Operator Documentation from CRD Specs"
+title: "Best AI for Kubernetes Operator Docs (2026)"
 description: "A practical guide to using AI coding assistants to generate comprehensive Kubernetes Operator documentation from Custom Resource Definitions, with examples and code"
 date: 2026-03-21
 author: theluckystrike

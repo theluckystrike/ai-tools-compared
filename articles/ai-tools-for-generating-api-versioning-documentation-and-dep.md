@@ -15,7 +15,6 @@ voice-checked: false
 ---
 
 {% raw %}
-{% raw %}
 *Auto-generated on {datetime.now().isoformat()}*
 """
 ```
