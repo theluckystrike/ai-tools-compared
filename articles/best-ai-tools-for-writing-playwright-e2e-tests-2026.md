@@ -27,7 +27,17 @@ score: 9
 voice-checked: true
 intent-checked: true---
 
+
 Writing Playwright end-to-end tests requires understanding both test semantics (what should the test verify) and Playwright mechanics (selectors, waits, fixtures, reporters). AI tools handle the mechanics well—they know Playwright syntax, common patterns like page objects, and proper assertion structure. Claude 3.5 Sonnet excels at building maintainable test architectures with proper page object models and fixture patterns. GitHub Copilot generates working tests quickly but sometimes bypasses best practices (hardcoded waits instead of proper locator strategies). Cursor provides the smoothest development experience with real-time type hints and validation. For learning Playwright architecture or building enterprise-grade suites, Claude edges ahead.
+
+## Key Takeaways
+
+- **They know that `page.locator()`**: is preferred over older `page.$()` methods, understand the difference between `waitForLoadState()` and `waitForURL()`, and can generate proper fixture configurations.
+- **Role-based (most resilient) page.getByRole('button',**: { name: /submit/i }) 2.
+- **XPath (most fragile) page.locator('//button[contains(text(),**: "Submit")]') ``` Claude's approach: Prioritizes role-based selectors, explains why, and suggests test IDs only when necessary.
+- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
+- **GitHub Copilot generates working**: tests quickly but sometimes bypasses best practices (hardcoded waits instead of proper locator strategies).
+- **Good tests use role-based**: locators that survive CSS/class refactors.
 
 ## Why Playwright Benefits from AI Assistance
 

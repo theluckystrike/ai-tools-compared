@@ -16,6 +16,17 @@ intent-checked: true---
 
 Generating realistic test data is tedious. You need valid email formats, proper password hashes, realistic addresses, correct foreign key relationships, and edge cases—all matching your schema. AI tools now understand ORM conventions (Prisma, Django, Rails) and generate production-like seed data in seconds. This guide compares specific tools, real-world implementations, and ORM-specific patterns.
 
+## Key Takeaways
+
+- **Cost**: Claude.dev free tier (limited), $20/month Pro.
+- **Cost**: $10-20/month.
+- **Cost**: $0.03 per 1K input tokens, $0.06 per 1K output tokens.
+- **Cost**: $20/month Pro.
+- **Hardcoding 50 users**: 100 posts, and related comments takes hours and rarely includes edge cases (deleted users, orphaned posts, boundary values).
+- **Edit directly in editor
+
+Pros**: Fastest iteration, integrated with your editor, Claude-powered.
+
 ## The Data Generation Problem
 
 Manual seed scripts are error-prone. Hardcoding 50 users, 100 posts, and related comments takes hours and rarely includes edge cases (deleted users, orphaned posts, boundary values). Fake data generators (Faker, Fakerjs) reduce friction but still require you to write boilerplate loops and relationship logic. AI tools understand your schema from comments or type hints and generate complete, relationships-aware scripts.

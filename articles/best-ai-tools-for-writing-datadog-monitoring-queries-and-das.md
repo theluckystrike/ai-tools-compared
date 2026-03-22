@@ -15,8 +15,20 @@ voice-checked: true---
 
 
 {% raw %}
+
 Use Claude to write DQL queries with complex aggregations and formula logic; use ChatGPT for generating dashboard JSON from descriptions. Claude excels at metric math and time-window aggregations; ChatGPT works better for quick visualization layouts. This guide compares AI tools for building Datadog monitoring queries and dashboards.
 
+## Key Takeaways
+
+- **The service emits**: - payments_api.requests.count (counter, tagged by status_code)
+  - payments_api.requests.duration (distribution, tagged by endpoint)
+Use 5-minute evaluation windows.
+- **Step 5**: Iterate on threshold tuning.
+After deploying monitors, paste the alert history into the AI and ask for threshold recommendations.
+- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
+- **Use Claude to write**: DQL queries with complex aggregations and formula logic; use ChatGPT for generating dashboard JSON from descriptions.
+- **Claude excels at metric**: math and time-window aggregations; ChatGPT works better for quick visualization layouts.
+- **The best tools provide**: context-aware suggestions that account for your specific infrastructure tags, service names, and monitoring conventions.
 
 ## What to Look for in Datadog AI Tools
 

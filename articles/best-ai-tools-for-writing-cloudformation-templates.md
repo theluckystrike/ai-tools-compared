@@ -16,6 +16,15 @@ voice-checked: true---
 
 CloudFormation template authoring is tedious by design: every resource type has dozens of properties, dependency ordering matters, and IAM policies require precise action names. AI tools vary significantly in their CloudFormation accuracy — some generate templates with deprecated properties or incorrect dependency chains. This guide compares Claude, GitHub Copilot, and the cfn-lint-integrated workflow.
 
+## Key Takeaways
+
+- **Sometimes generates `!Sub` expressions**: with incorrect variable references (`${ClusterName}` when the resource is `ECSCluster`) 4.
+- **Uses deprecated `Cluster` property**: format instead of current syntax 2.
+- **IAM policies often use**: `ecs-tasks.amazonaws.com` without the correct assume role format for newer resource types 3.
+- **Three iterations of Claude**: + cfn-lint fix produces clean templates for 95%+ of scenarios.
+- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
+- **It handles dependency ordering**: IAM least-privilege, and auto-scaling resource IDs correctly.
+
 ## What Good CloudFormation Generation Looks Like
 
 Before comparing tools, establish what a good generated template requires:
@@ -329,6 +338,16 @@ jobs:
 ---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
+
+
+| Tool | Template Generation | Resource Coverage | Drift Detection | Pricing |
+|---|---|---|---|---|
+| Claude | Full stack templates | 200+ AWS resource types | Can analyze drift reports | API-based (per token) |
+| ChatGPT (GPT-4) | Complete templates with conditions | Broad AWS coverage | Explains drift implications | $20/month (Plus) |
+| GitHub Copilot | Inline YAML/JSON completion | Common resources well-covered | No drift analysis | $10-39/user/month |
+| Amazon CodeWhisperer | AWS-optimized suggestions | Native AWS resource support | Integrated with AWS tooling | Free tier available |
+| Cursor | Context-aware template generation | Good with existing stacks | Can read stack outputs | $20/month (Pro) |
 
 ## Frequently Asked Questions
 

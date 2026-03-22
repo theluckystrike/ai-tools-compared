@@ -31,6 +31,15 @@ voice-checked: true---
 
 Claude generates complete Kubernetes operators with proper reconciliation logic, finalizers, webhook validations, and status subresources; ChatGPT produces working scaffolding but requires manual customization. Use Claude for production operators; use ChatGPT for learning operator patterns. This guide compares AI tools for building Kubernetes operators from scratch.
 
+## Key Takeaways
+
+- **Use r.Status().Update() for status**: changes // 3.
+- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
+- **Use Claude for production**: operators; use ChatGPT for learning operator patterns.
+- **Then use Cursor for**: incremental modifications during development.
+- **A week-long trial with**: actual work gives better signal than feature comparison charts.
+- **Do these tools work**: offline? Most AI-powered tools require an internet connection since they run models on remote servers.
+
 ## Why AI Tools Are Valuable for Operator Development
 
 Kubernetes operators follow specific architectural patterns that differ from typical application code. The controller-runtime library, reconciliation semantics, and Kubernetes API conventions create a steep learning curve. AI tools trained on large codebases of Kubernetes operators can generate idiomatic code that follows established patterns.
