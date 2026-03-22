@@ -233,6 +233,158 @@ public class OrderValidationService {
 AI can also suggest adding integration tests that verify your beans initialize correctly, catching context failures during your CI pipeline rather than at deployment.
 
 
+## Advanced Diagnostic Patterns
+
+
+### Multi-Module Application Context Failures
+
+
+For applications spanning multiple modules, context startup failures often stem from inter-module dependency issues. Use this diagnostic approach:
+
+
+1. Identify which module fails to start (look for the last successful bean creation in the trace)
+2. Identify which module's bean it tried to create when failing
+3. Ask AI to map the dependency chain between those modules
+
+
+```java
+// Module A (fails here)
+@Service
+public class PaymentService {
+    @Autowired
+    private NotificationService notificationService; // Comes from Module B
+}
+
+// Module B configuration must export NotificationService
+@Configuration
+public class NotificationConfiguration {
+    @Bean
+    public NotificationService notificationService() {
+        return new NotificationService();
+    }
+}
+
+// The AI can identify that Module B's bean factory wasn't loaded
+// when Module A tried to initialize
+```
+
+
+AI recognizes that the problem isn't the code itself but the initialization order. It suggests using `@Lazy` to defer instantiation or restructuring module dependencies so they don't form a cycle.
+
+
+### Configuration Profile Conflicts
+
+
+Spring Boot's profile system (dev, test, production) can cause context failures when profiles conflict. Paste your `application-dev.yml`, `application-test.yml`, and `application.yml` to the AI:
+
+
+```yaml
+# application.yml (base)
+spring:
+  datasource:
+    url: jdbc:mysql://db:3306/prod
+
+# application-dev.yml (overrides)
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+
+# When running with profile 'dev', which properties win?
+# AI clarifies the precedence: profile-specific values override base values
+```
+
+
+The AI identifies property conflicts and explains which takes precedence. It can suggest refactoring to make profiles non-conflicting—moving environment-specific properties into external configuration files rather than bundling them with your application.
+
+
+### Bean Factory Post-Processor Issues
+
+
+Some context failures occur in BeanFactoryPostProcessor implementations, which run before bean instantiation. These are notoriously hard to debug:
+
+
+```java
+@Component
+public class CustomBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
+    @Override
+    public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) {
+        // If this throws an exception, Spring logs it cryptically
+        // The stack trace might not point here directly
+    }
+}
+```
+
+
+When you encounter confusing context failures, ask AI: "Could this be a BeanFactoryPostProcessor issue?" and share your implementations. AI often identifies that your BeanFactoryPostProcessor is either missing required dependencies or making assumptions about bean registration order.
+
+
+## Performance and Debugging Best Practices
+
+
+### Capturing Verbose Startup Logs
+
+
+By default, Spring Boot truncates stack traces. For AI diagnosis, enable full verbose output:
+
+
+```properties
+# application.properties
+logging.level.org.springframework.boot=DEBUG
+logging.level.org.springframework=INFO
+spring.devtools.restart.enabled=true
+```
+
+
+With verbose logging, AI has the full context to identify issues. Without it, critical information is omitted from the trace.
+
+
+### Using AI for Benchmarking Startup Time
+
+
+After fixing a context failure, ask AI to identify why startup is slow. Paste your Spring Boot startup logs, including timing information:
+
+
+```bash
+# Run with timing information
+java -Dspring.jmx.enabled=true -jar application.jar
+
+# Check startup timing in logs
+# 2026-03-22 10:15:30 - Started application in 5.234 seconds
+# 2026-03-22 10:15:25 - Loading Spring beans (took 3.5 seconds)
+# 2026-03-22 10:15:28 - Initializing database (took 1.7 seconds)
+```
+
+
+AI recognizes bottlenecks. For example, if database initialization takes 1.7 seconds, the AI might suggest lazy initialization or async bean creation. If Spring is spending 3.5 seconds loading beans, it might recommend reviewing your component scanning configuration.
+
+
+## Testing Context Startup in CI
+
+
+Create a dedicated test that verifies your application context starts without errors:
+
+
+```java
+@SpringBootTest
+public class ApplicationContextTest {
+    @Test
+    public void contextLoads() {
+        // If this test fails, your context won't start in production
+        // AI can analyze which beans prevent startup
+    }
+
+    @Test
+    public void allBeansInitialize() {
+        // Force initialization of all lazy beans to catch startup issues early
+        applicationContext.getBeansOfType(Object.class);
+    }
+}
+```
+
+
+When this test fails in CI, paste the output to AI. The AI connects the test failure to your configuration changes and explains which bean is causing the problem.
+
+
 
 ## Frequently Asked Questions
 

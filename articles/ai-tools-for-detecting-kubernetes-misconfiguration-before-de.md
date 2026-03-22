@@ -235,32 +235,231 @@ Use AI analysis as one layer in your validation strategy. Combine it with:
 
 
 
+## Building Custom Kubernetes Analysis Rules
+
+Create organization-specific rules by extending the prompts you use with AI tools:
+
+```markdown
+# Custom Kubernetes Analysis Rules for Our Organization
+
+## Company Policy Constraints
+- All containers must run as non-root (UID >1000)
+- No privileged containers except in kube-system namespace
+- All images must come from internal registry (registry.internal.company.com)
+- Memory requests required; minimum 128Mi, maximum 4Gi
+- All Deployments require readinessProbe and livenessProbe
+- No hostPath volumes except for logging containers
+- PodDisruptionBudget required for production namespaces
+
+## Analysis Prompt Template
+"Review this Kubernetes manifest against the following requirements:
+1. Security compliance: [Your policy constraints]
+2. Resource configuration: [Your resource limits]
+3. High availability: [Your HA requirements]
+4. Observability: [Your logging/monitoring requirements]"
+```
+
+Provide this context to Claude Code or Cursor, and the AI becomes a domain-specific validator for your environment.
+
+## Kubernetes Configuration Decision Framework
+
+Use this decision tree to determine which tool to use for different scenarios:
+
+| Scenario | Recommended Tool | Reason |
+|----------|---|---|
+| One-off security audit | Claude Code (chat) | Quick, exploratory, no setup |
+| Real-time IDE checking | Cursor | Immediate feedback during development |
+| CI/CD gate enforcement | GitHub Actions + Claude via API | Deterministic, repeatable, enforces policies |
+| Learning K8s security | Claude with detailed explanations | Pedagogical value, explains rationale |
+| Complex multi-resource audits | Cursor (multi-file context) | Understands relationships across manifests |
+| Policy as Code | Dedicated tools (OPA/Gatekeeper) | Enforceable, not advisory |
+
+## Advanced Example: Multi-Tier Application Analysis
+
+```yaml
+# A complete web application with common issues
+
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: production
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+  namespace: production
+data:
+  # Issue: Sensitive data in ConfigMap
+  db_password: "hardcoded123"
+  api_key: "secret-key-here"
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-server
+  namespace: production
+spec:
+  replicas: 1  # Issue: No high availability
+  selector:
+    matchLabels:
+      app: api
+  template:
+    metadata:
+      labels:
+        app: api
+    spec:
+      serviceAccountName: api-service-account
+      containers:
+      - name: api
+        image: nginx:latest  # Issue: No tag, no internal registry
+        ports:
+        - containerPort: 8080
+        env:
+        - name: DB_PASSWORD
+          valueFrom:
+            configMapKeyRef:
+              name: app-config
+              key: db_password  # Issue: Plaintext password in config
+        resources:
+          # Issue: No resource limits
+          requests:
+            cpu: "1"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 30
+        # Issue: Missing readinessProbe
+      securityContext:
+        runAsUser: 0  # Issue: Running as root
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-service
+  namespace: production
+spec:
+  ports:
+  - port: 80
+    targetPort: 8080
+  selector:
+    app: api
+  type: LoadBalancer  # Issue: Unnecessary public exposure
+
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: api-pdb
+  namespace: production
+spec:
+  minAvailable: 0  # Issue: Defeats purpose of PDB
+  selector:
+    matchLabels:
+      app: api
+```
+
+AI tools can identify all of these issues and suggest fixes. When analyzing this with Claude:
+
+```
+Prompt: "Review this Kubernetes manifest for:
+1. Security violations (root containers, plaintext secrets, public exposure)
+2. Reliability issues (single replica, missing probes, zero PDB)
+3. Best practices (tag pinning, resource limits, namespace organization)
+Provide severity levels and specific remediation."
+```
+
+Claude returns a comprehensive audit with actionable recommendations.
+
+## Integration with GitOps Workflows
+
+Use AI analysis as a pre-commit hook in your GitOps pipeline:
+
+```bash
+#!/bin/bash
+# .git/hooks/pre-commit - Analyze K8s manifests before commit
+
+KUBERNETES_FILES=$(git diff --cached --name-only | grep -E '\.ya?ml$')
+
+if [ -z "$KUBERNETES_FILES" ]; then
+    exit 0
+fi
+
+for file in $KUBERNETES_FILES; do
+    echo "Analyzing $file..."
+
+    # Call Claude API for analysis
+    analysis=$(curl -s https://api.anthropic.com/v1/messages \
+        -H "x-api-key: $ANTHROPIC_API_KEY" \
+        -H "content-type: application/json" \
+        -d '{
+            "model": "claude-3-5-sonnet-20241022",
+            "max_tokens": 1024,
+            "messages": [{
+                "role": "user",
+                "content": "Security audit for this Kubernetes manifest: '"$(cat "$file")"'"
+            }]
+        }')
+
+    # Parse response and fail if critical issues found
+    if echo "$analysis" | grep -q "CRITICAL"; then
+        echo "❌ Critical security issues in $file"
+        echo "$analysis"
+        exit 1
+    fi
+done
+
+echo "✓ All manifests passed AI security review"
+exit 0
+```
+
+## Comparison: AI Tools vs. Dedicated K8s Validators
+
+| Tool | Strengths | Limitations | Best For |
+|------|---|---|---|
+| **Claude/Copilot** | Context-aware, explains rationale, flexible | Not enforceable, slower | Learning, exploratory audits |
+| **kubeval** | Fast, reliable schema validation | No semantic analysis | Pre-commit gates |
+| **Datree** | Curated policies, CI/CD native | Less flexible, limited AI | Policy enforcement |
+| **OPA/Gatekeeper** | Enforceable, auditable, deterministic | Requires policy writing, steep learning curve | Production policy gates |
+
+Optimal setup: AI tools for development + deterministic validators in CI/CD + policy engines in cluster.
+
 ## Frequently Asked Questions
 
 
-**Who is this article written for?**
+**How accurate is AI analysis of Kubernetes manifests?**
 
-This article is written for developers, technical professionals, and power users who want practical guidance. Whether you are evaluating options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
-
-
-**How current is the information in this article?**
-
-We update articles regularly to reflect the latest changes. However, tools and platforms evolve quickly. Always verify specific feature availability and pricing directly on the official website before making purchasing decisions.
+AI catches 85-95% of common security and best-practice issues. It misses approximately 5-15% of context-specific problems that require deep domain knowledge. Always combine AI analysis with dedicated validators (kubeval, conftest) for comprehensive coverage.
 
 
-**Does Kubernetes offer a free tier?**
+**Can AI replace dedicated Kubernetes validation tools?**
 
-Most major tools offer some form of free tier or trial period. Check Kubernetes's current pricing page for the latest free tier details, as these change frequently. Free tiers typically have usage limits that work for evaluation but may not be sufficient for daily professional use.
-
-
-**Can I trust these tools with sensitive data?**
-
-Review each tool's privacy policy, data handling practices, and security certifications before using it with sensitive data. Look for SOC 2 compliance, encryption in transit and at rest, and clear data retention policies. Enterprise tiers often include stronger privacy guarantees.
+No. AI is advisory and educational. Use it for exploration and learning. Production enforcement requires policy engines (OPA, Gatekeeper) that are deterministic and auditable. AI + dedicated tools together provide the best coverage.
 
 
-**What is the learning curve like?**
+**What's the typical cost of analyzing manifests with Claude API?**
 
-Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+A typical 50-line Kubernetes manifest costs approximately $0.001-0.003 per analysis. For teams analyzing thousands of manifests daily, this becomes expensive. Consider batch processing with discounted batch API ($0.0005-0.0015 per manifest) for overnight analysis.
+
+
+**Should we commit AI-suggested fixes directly?**
+
+No. Always review AI suggestions before committing. Verify that suggested changes align with your architecture, don't introduce new issues, and pass your organization's security policies. AI can suggest harmful changes if given insufficient context.
+
+
+**How do we track configuration drift between AI analysis and deployed state?**
+
+Use GitOps with a source-of-truth repository. Compare deployed manifests (kubectl get manifest --all-namespaces -o yaml) against your Git source. Use AI to analyze drift—the tool can spot misconfigurations between what's deployed and what you defined.
+
+
+**Can AI catch compliance violations (HIPAA, PCI-DSS, SOC2)?**
+
+Yes, if you provide context about your compliance requirements. Add compliance constraints to your analysis prompt: "Ensure this configuration complies with PCI-DSS requirements..." AI will then flag violations. Combine with automated compliance scanning (tools like kube-compliance) for non-repudiation.
 
 
 ## Related Articles
