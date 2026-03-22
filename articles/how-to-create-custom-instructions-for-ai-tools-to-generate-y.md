@@ -11,8 +11,7 @@ tags: [ai-tools-compared, tools, ai, configuration, artificial-intelligence]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true
----
+voice-checked: true---
 
 
 {% raw %}
@@ -279,11 +278,9 @@ Review them whenever your log aggregation configuration changes, when you adopt 
 Review and update your custom instructions periodically. As your project evolves, logging requirements change. Keep instructions in version control so changes are tracked and can be rolled back if needed.
 
 Document the reasoning behind your format choices. This helps team members understand why the AI generates certain output and makes it easier to propose improvements.
-
 ---
 
 Custom instructions transform AI assistants from generic code generators into domain-specific tools that understand your project's conventions. By investing time in proper configuration, you achieve consistent, structured logging without repetitive manual corrections.
-
 
 ## Related Articles
 
@@ -293,8 +290,7 @@ Custom instructions transform AI assistants from generic code generators into do
 - [How to Write ChatGPT Custom Instructions](/ai-tools-compared/how-to-write-chatgpt-custom-instructions-for-consistent-api-design-suggestions/)
 - [How to Write Custom Instructions for AI That Follow Your](/ai-tools-compared/how-to-write-custom-instructions-for-ai-that-follow-your-teams-code-review-standards/)
 
-
 ```
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+

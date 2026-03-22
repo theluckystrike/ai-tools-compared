@@ -11,8 +11,7 @@ tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 9
 intent-checked: true
-voice-checked: true
----
+voice-checked: true---
 
 
 {% raw %}
@@ -113,7 +112,6 @@ Use clear, concise language suitable for developer documentation.
 
 ```
 Given these commit messages, create a changelog grouped by breaking changes, features, fixes, and improvements:
-
 ---
 {{COMMIT_MESSAGES}}
 ---
@@ -125,9 +123,7 @@ Format each entry as:
 - **Improvements**: [description]
 ```
 
-
 ### Template 2: From PR Descriptions
-
 
 ```
 Review these pull request descriptions and titles, then generate a changelog organized by:
@@ -141,9 +137,7 @@ Focus on user-facing changes only. Skip internal refactoring unless it affects t
 {{PR_LIST}}
 ```
 
-
 ### Template 3: From Diff Output
-
 
 ```
 Analyze this diff output and categorize each change as breaking, feature, fix, or improvement.
@@ -152,12 +146,9 @@ For breaking changes, include a migration note.
 {{DIFF_OUTPUT}}
 ```
 
-
 ## Handling Breaking Changes Specifically
 
-
 Breaking changes require special attention because they directly impact users upgrading from previous versions. When prompting AI for breaking changes, be explicit about what you need:
-
 
 ```
 Review these changes and identify anything that:
@@ -173,15 +164,11 @@ For each breaking change found, provide:
 3. A migration step users can follow
 ```
 
-
 AI models are generally good at identifying obvious API signature changes but can miss subtle behavioral changes -- for example, a function that still accepts the same arguments but now validates them more strictly. Always have a human review the breaking changes section before publishing.
-
 
 ## Automating the Workflow
 
-
 For teams releasing frequently, consider setting up a semi-automated workflow:
-
 
 1. Generate diff: Create a diff file between versions
 
@@ -191,9 +178,7 @@ For teams releasing frequently, consider setting up a semi-automated workflow:
 
 4. Refine and publish: Adjust wording and publish to your changelog location
 
-
 Here's a simple script that combines Git with AI:
-
 
 ```bash
 #!/bin/bash
@@ -205,29 +190,24 @@ CHANGES=$(git log --pretty=format:"%h - %s%n%b" $OLD_TAG..$NEW_TAG)
 
 # Send to AI (example with OpenAI)
 curl -s https://api.openai.com/v1/chat/completions \
-  -H "Authorization: Bearer $OPENAI_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "model": "gpt-4",
-    "messages": [{
-      "role": "user",
-      "content": "Create a changelog from these commits, grouped by breaking changes, features, fixes, and improvements:\n\n'"$CHANGES"'"
-    }]
-  }' | jq -r '.choices[0].message.content'
+ -H "Authorization: Bearer $OPENAI_API_KEY" \
+ -H "Content-Type: application/json" \
+ -d '{
+ "model": "gpt-4",
+ "messages": [{
+ "role": "user",
+ "content": "Create a changelog from these commits, grouped by breaking changes, features, fixes, and improvements:\n\n'"$CHANGES"'"
+ }]
+ }' | jq -r '.choices[0].message.content'
 ```
-
 
 ## Integrating AI Changelog Generation into CI/CD
 
-
 The most scalable approach runs changelog generation automatically as part of your release pipeline. A Python script can pull commits between two tags, send them to an AI API with a structured prompt, and output a draft changelog. Invoke this script from a GitHub Actions workflow on tag push, with the output committed back to your CHANGELOG.md or posted as a GitHub Release draft for human review before publishing. The key is to keep human review mandatory for the breaking changes section -- automation handles the tedious extraction work, humans verify accuracy before the release goes public.
-
 
 ## Best Practices for AI-Generated Changelogs
 
-
 Regardless of how you generate the content, follow these principles:
-
 
 **Always verify breaking changes** -- AI can miss subtle breaking changes or flag non-breaking changes as breaking. Have a human review critical sections, especially for libraries with large user bases where a missed breaking change can cause widespread disruption.
 
@@ -239,12 +219,9 @@ Regardless of how you generate the content, follow these principles:
 
 **Keep entries concise** -- For each item, aim for one to two sentences. Links to detailed documentation or migration guides can provide additional context without bloating the changelog itself.
 
-
 ## Common Pitfalls to Avoid
 
-
 When using AI for changelog generation, watch for these issues:
-
 
 - **Over-categorization** -- AI sometimes creates too many categories, making the changelog hard to scan. Stick to four sections: Breaking Changes, New Features, Bug Fixes, and Performance (or Improvements). Merge anything that doesn't fit cleanly.
 
@@ -256,9 +233,7 @@ When using AI for changelog generation, watch for these issues:
 
 - **Hallucinated details** -- AI occasionally invents specific details like function names or parameter values that were not actually changed. Cross-reference every specific claim against the actual diff before publishing.
 
-
 ## Frequently Asked Questions
-
 
 **Which AI model produces the best changelogs?**
 Claude and GPT-4o both perform well. Claude tends to write more precise technical prose, while GPT-4o is better at following complex formatting instructions. Either works well if your prompt is clear. For automated pipelines, Claude's API is straightforward to integrate and produces consistent structured output.
@@ -275,7 +250,6 @@ Yes. Use a separate prompt specifically for migration guides, providing the brea
 **What commit message format gives AI the best results?**
 Conventional commits format (`feat:`, `fix:`, `docs:`, `BREAKING CHANGE:`) gives AI the clearest signal because the category is explicit. The AI doesn't need to infer whether "Update authentication flow" is a feature or a breaking change -- if the commit is marked `BREAKING CHANGE: Update authentication flow`, the categorization is unambiguous.
 
-
 ## Related Reading
 
 - [AI Tools for Automated Changelog Generation 2026](/ai-tools-compared/ai-tools-for-automated-changelog-generation-2026/)
@@ -285,4 +259,4 @@ Conventional commits format (`feat:`, `fix:`, `docs:`, `BREAKING CHANGE:`) gives
 - [Create CursorRules That Teach Cursor Your Team's State](/ai-tools-compared/how-to-create-cursorrules-that-teach-cursor-your-teams-state/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+

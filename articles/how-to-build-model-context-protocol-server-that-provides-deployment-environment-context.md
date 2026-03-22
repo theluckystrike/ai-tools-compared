@@ -11,8 +11,7 @@ tags: [ai-tools-compared, tools]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true
----
+voice-checked: true---
 Build an MCP server that exposes your deployment environment details to AI coding assistants by creating a Node.js server using the Model Context Protocol that returns structured information about cloud provider, regions, container orchestration, and infrastructure configuration. This context enables your AI assistant to generate Terraform, Kubernetes manifests, and deployment workflows that match your actual infrastructure setup.
 
 
@@ -272,31 +271,26 @@ spec:
           valueFrom:
             secretKeyRef:
               name: db-credentials
-              key: connection-string
----
+              key: connection-string---
 apiVersion: v1
 kind: Service
 metadata:
-  name: api-gateway
-  namespace: production
+ name: api-gateway
+ namespace: production
 spec:
-  type: ClusterIP
-  selector:
-    app: api-gateway
-  ports:
-  - port: 80
-    targetPort: 8080
+ type: ClusterIP
+ selector:
+ app: api-gateway
+ ports:
+ - port: 80
+ targetPort: 8080
 ```
-
 
 The manifest now includes your production namespace, appropriate resource limits, and secret references matching your actual Kubernetes configuration.
 
-
 ## Extending Your Server
 
-
 Beyond basic context, consider adding these capabilities:
-
 
 - Secrets retrieval: Safely expose non-sensitive metadata about secrets without exposing actual values
 
@@ -306,59 +300,44 @@ Beyond basic context, consider adding these capabilities:
 
 - Dependency mapping: Show which services communicate with each other to help the AI understand integration points
 
-
 ## Security Considerations
-
 
 When building your deployment context server, follow these practices:
 
-
 Never expose actual secrets or credentials through your MCP server. Return only metadata and configuration patterns. Implement authentication if your server will be used by multiple team members. Consider rate limiting to prevent abuse, and audit logging to track which tools accessed what information.
-
 
 ## Testing Your Implementation
 
-
 Verify your server works correctly before using it with your AI assistant:
-
 
 ```bash
 # Test the server directly
 echo '{"jsonrpc": "2.0", "id": 1, "method": "tools/list"}' | node server.js
 ```
 
-
 You should receive a list of available tools. Then test each tool individually to confirm it returns the expected data structure.
 
-
-
 ## Frequently Asked Questions
-
 
 **How long does it take to build a model context protocol server that?**
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-
 **What are the most common mistakes to avoid?**
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
-
 
 **Do I need prior experience to follow this guide?**
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-
 **Is this approach secure enough for production?**
 
 The patterns shown here follow standard practices, but production deployments need additional hardening. Add rate limiting, input validation, proper secret management, and monitoring before going live. Consider a security review if your application handles sensitive user data.
 
-
 **Where can I get help if I run into issues?**
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
-
 
 ## Related Articles
 

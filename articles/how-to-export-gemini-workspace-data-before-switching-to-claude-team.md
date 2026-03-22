@@ -11,30 +11,35 @@ tags: [ai-tools-compared, tools, claude-ai]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true
+voice-checked: true---
 ---
-
+layout: default
+title: "How to Export Gemini Workspace Data Before Switching"
+description: "A practical guide for developers and power users on exporting your Google Gemini workspace data before migrating to Claude Team. Includes code examples"
+date: 2026-03-16
+last_modified_at: 2026-03-16
+author: theluckystrike
+permalink: /how-to-export-gemini-workspace-data-before-switching-to-claude-team/
+categories: [guides]
+tags: [ai-tools-compared, tools, claude-ai]
+reviewed: true
+score: 8
+intent-checked: true
+voice-checked: true---
 
 To export your Gemini workspace data before switching to Claude Team, use Google Takeout at takeout.google.com to download your conversation history, custom Gems, and settings as JSON files. Back up your configuration, parse the exported JSON programmatically if needed, and document your custom instructions and prompts so you can recreate them in Claude. The process takes minutes to set up, though Google may need hours to prepare large archives.
 
-
 ## Why Export Your Gemini Workspace Data
-
 
 Your Gemini workspace contains more than just chat logs. Depending on your subscription level, you have accumulated conversation threads, custom instructions, project-specific contexts, and possibly integrated code or documents. Before you cancel your subscription or reduce access, retrieving this data ensures continuity in your work.
 
-
 Developers and power users especially benefit from exporting conversation history because those threads often contain debugging sessions, architectural discussions, and code generation that you may want to reference later.
-
 
 There is also a practical timing consideration: once your Gemini subscription lapses, you may lose access to Gems you created, shared prompts, and older conversation threads depending on your account type. Export before canceling, not after.
 
-
 ## What Data You Can Export
 
-
 Google Gemini provides several data export options depending on your workspace type:
-
 
 **Consumer Accounts (gemini.google.com):**
 
@@ -43,7 +48,6 @@ Google Gemini provides several data export options depending on your workspace t
 - Saved chats and bookmarks
 
 - Custom Gems (customized AI behaviors)
-
 
 **Google Workspace / Google One:**
 
@@ -55,24 +59,17 @@ Google Gemini provides several data export options depending on your workspace t
 
 - Organization-wide settings
 
-
 The export process uses Google Takeout, which provides your data in JSON format. This means your exported conversations remain readable and searchable.
-
 
 ## Step-by-Step Export Process
 
-
 ### Step 1: Access Google Takeout
-
 
 Navigate to [Google Takeout](https://takeout.google.com/) and sign in with the account connected to your Gemini subscription. You will see a list of Google services that store your data.
 
-
 ### Step 2: Select Gemini Data
 
-
 Scroll through the service list and find "Gemini". If you do not see it explicitly listed, check under "Other Google services" or "Cloud Storage" depending on how your data is stored. Google periodically updates which products appear in Takeout, so if Gemini is not visible, check the "Select all" option for a complete archive.
-
 
 ```bash
 # After downloading, your Takeout archive structure looks like:
@@ -84,24 +81,17 @@ Scroll through the service list and find "Gemini". If you do not see it explicit
 #         └── settings.json
 ```
 
-
 ### Step 3: Choose Export Format and Frequency
-
 
 Select your preferred delivery method. You can choose to receive a download link via email, add files to Google Drive, or send to cloud storage providers. Decide between an one-time export or scheduled exports if you want ongoing backups.
 
-
 ### Step 4: Download and Verify
-
 
 Once Google prepares your archive (this may take minutes to hours depending on data volume), download the ZIP file. Verify the contents include what you expect before deleting from your account.
 
-
 ## Extracting Conversations Programmatically
 
-
 If you have large conversation histories or want to process them further, you can parse the exported JSON:
-
 
 ```python
 import json
@@ -151,15 +141,11 @@ if __name__ == "__main__":
         f.write(formatted)
 ```
 
-
 This script converts your JSON export into markdown, making it easy to search through past conversations or import them into other tools.
-
 
 ## Exporting Custom Gems and Instructions
 
-
 If you have created custom Gems (Gemini's version of customized AI behaviors), export those separately:
-
 
 ```python
 def export_gems(gemini_path: str) -> dict:
@@ -186,15 +172,11 @@ def export_gems(gemini_path: str) -> dict:
 # }
 ```
 
-
 Document these custom instructions manually, as they represent valuable workflows you may want to recreate in Claude.
-
 
 ## Recreating Gems as Claude Projects
 
-
 Claude Team uses Projects instead of Gems. A Project is a persistent workspace with custom instructions, uploaded files, and shared conversation history for your team. The mapping from Gemini Gems to Claude Projects is fairly direct:
-
 
 | Gemini Gem Feature | Claude Project Equivalent |
 |-------------------|---------------------------|
@@ -204,7 +186,6 @@ Claude Team uses Projects instead of Gems. A Project is a persistent workspace w
 | Shared prompts | Shared project instructions |
 | Name and description | Project name and description |
 
-
 To recreate a Gem as a Claude Project:
 
 1. Open Claude Team and create a new Project
@@ -212,15 +193,11 @@ To recreate a Gem as a Claude Project:
 3. Upload any reference documents the Gem depended on
 4. Invite the relevant team members to the Project
 
-
 For Gems that used Google-specific tool integrations (Google Docs, Sheets, Drive), you will need alternative approaches in Claude since direct Google Workspace integration works differently. Claude can read documents you upload directly, or you can use copy-paste workflows.
-
 
 ## Searching and Indexing Your Exported History
 
-
 After exporting, your Gemini conversation history can become a searchable reference library. Use tools like `ripgrep` or build a simple search interface:
-
 
 ```python
 import sqlite3
@@ -267,15 +244,11 @@ def search_history(query: str, db_path: str = "gemini_history.db"):
     return results
 ```
 
-
 This gives you a local, searchable archive of all your Gemini work—useful when you need to recall how you solved a specific problem months ago.
-
 
 ## Preserving Context for Claude Migration
 
-
 When switching to Claude Team, you cannot directly import Gemini conversations. However, you can preserve the value:
-
 
 1. **Convert conversations to markdown** using the script above
 
@@ -284,7 +257,6 @@ When switching to Claude Team, you cannot directly import Gemini conversations. 
 3. **Document custom prompts** that worked well in Gemini
 
 4. **Export code snippets** that Gemini helped generate
-
 
 ```markdown
 # Migration Context - Gemini to Claude
@@ -302,12 +274,9 @@ When switching to Claude Team, you cannot directly import Gemini conversations. 
 - Used Gemini for SQL query optimization
 ```
 
-
 ## What Cannot Be Exported
 
-
 Some Gemini data remains inaccessible:
-
 
 - Real-time collaboration history (ephemeral sessions)
 
@@ -317,15 +286,11 @@ Some Gemini data remains inaccessible:
 
 - Third-party integrations unless separately exported
 
-
 Check [Google's official Takeout documentation](https://support.google.com/accounts/answer/6150127) for the most current export capabilities.
-
 
 ## Best Practices Before Switching
 
-
 Before canceling your Gemini subscription:
-
 
 1. **Download all exports** - Verify you have complete archives
 
@@ -339,35 +304,27 @@ Before canceling your Gemini subscription:
 
 6. **Overlap subscriptions briefly** - Consider keeping both active for 1-2 weeks during the transition to catch anything you missed
 
-
-
 ## Frequently Asked Questions
-
 
 **How long does it take to export gemini workspace data before switching?**
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-
 **What are the most common mistakes to avoid?**
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
-
 
 **Do I need prior experience to follow this guide?**
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-
 **Can I adapt this for a different tech stack?**
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-
 **Where can I get help if I run into issues?**
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
-
 
 ## Related Articles
 

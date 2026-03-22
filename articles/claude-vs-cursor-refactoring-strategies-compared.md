@@ -10,8 +10,7 @@ tags: [ai-tools-compared]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true
----
+voice-checked: true---
 
 {% raw %}
 
@@ -323,9 +322,7 @@ Use **Cursor Composer** when:
 - [Claude Code vs Cursor for Large Codebase Refactoring](/claude-code-vs-cursor-for-large-codebase-refactoring/)
 - [AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026](/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
 - [How to Build AI Agents with Claude Agent SDK](/how-to-build-ai-agents-with-claude-agent-sdk/)
-
 ---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
-{% endraw %}

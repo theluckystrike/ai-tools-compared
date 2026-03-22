@@ -11,8 +11,7 @@ tags: [ai-tools-compared, tools, claude-ai]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true
----
+voice-checked: true---
 
 
 Transfer your Cursor Composer prompts to Claude Code by exporting prompts, adapting them to Claude's format, and organizing them in Claude's library. This guide shows the conversion process that preserves your prompt investments.
@@ -84,14 +83,12 @@ Here is a simple example of converting a Cursor prompt to Claude Code format:
 
 **Original Cursor Composer Prompt:**
 
-```
----
+```---
 name: Code Review
 instruction: Review the following code for bugs and improvements
 context: Include file paths and line numbers
 ---
 ```
-
 
 **Converted Claude Code Format:**
 
@@ -99,12 +96,9 @@ context: Include file paths and line numbers
 You are a code review assistant. Your task is to review the following code for bugs and improvements. When providing feedback, include the file paths and line numbers for each issue you identify.
 ```
 
-
 ### Batch Conversion Script
 
-
 For larger prompt libraries, create a conversion script:
-
 
 ```python
 #!/usr/bin/env python3
@@ -114,70 +108,60 @@ import json
 from pathlib import Path
 
 def convert_cursor_prompt(content):
-    """Convert Cursor prompt format to Claude Code format."""
-    # Remove front matter if present
-    content = re.sub(r'^---.*?---\n', '', content, flags=re.DOTALL)
+ """Convert Cursor prompt format to Claude Code format."""
+ # Remove front matter if present
+ content = re.sub(r'^---.*?---\n', '', content, flags=re.DOTALL)
 
-    # Clean up formatting
-    content = content.strip()
+ # Clean up formatting
+ content = content.strip()
 
-    # Add clear instructions if missing
-    if not content.startswith('You are') and not content.startswith('I want'):
-        content = "You are a helpful assistant. " + content
+ # Add clear instructions if missing
+ if not content.startswith('You are') and not content.startswith('I want'):
+ content = "You are a helpful assistant. " + content
 
-    return content
+ return content
 
 def process_prompt_file(input_file, output_file):
-    """Process a single prompt file."""
-    with open(input_file, 'r') as f:
-        content = f.read()
+ """Process a single prompt file."""
+ with open(input_file, 'r') as f:
+ content = f.read()
 
-    converted = convert_cursor_prompt(content)
+ converted = convert_cursor_prompt(content)
 
-    with open(output_file, 'w') as f:
-        f.write(converted)
+ with open(output_file, 'w') as f:
+ f.write(converted)
 
-    print(f"Converted: {input_file} -> {output_file}")
+ print(f"Converted: {input_file} -> {output_file}")
 
 # Example usage
 if __name__ == "__main__":
-    import sys
-    if len(sys.argv) > 1:
-        input_path = sys.argv[1]
-        output_path = sys.argv[2] if len(sys.argv) > 2 else input_path
-        process_prompt_file(input_path, output_path)
+ import sys
+ if len(sys.argv) > 1:
+ input_path = sys.argv[1]
+ output_path = sys.argv[2] if len(sys.argv) > 2 else input_path
+ process_prompt_file(input_path, output_path)
 ```
-
 
 Save this script as `convert_prompts.py` and run it against your exported prompts.
 
-
 ## Importing Prompts into Claude Code
-
 
 With your prompts converted, you can now import them into Claude Code. There are several ways to do this depending on your workflow.
 
-
 ### Method 1: Using.claude Directory
 
-
 Claude Code recognizes prompts stored in a `.claude` directory at the project root. Create a structure like this:
-
 
 ```bash
 mkdir -p .claude/prompts
 cp converted-prompts/*.md .claude/prompts/
 ```
 
-
 You can then reference these prompts in your conversations using `/prompt` or by including them directly.
-
 
 ### Method 2: Creating Custom Commands
 
-
 For frequently used prompts, create custom commands in Claude Code. Edit your `CLAUDE.md` file in the project root:
-
 
 ```markdown
 # Custom Commands
@@ -202,42 +186,30 @@ Explain the following code in simple terms. Include:
 3. Any potential issues or concerns
 ```
 
-
 ### Method 3: Using Include Directive
 
-
 For complex prompts, store them as separate files and include them when needed:
-
 
 ```markdown
 <!-- At the start of your conversation -->
 Please analyze the following code using the guidelines from ./claude/prompts/security-review.md
 ```
 
-
 ## Best Practices for Prompt Migration
-
 
 When moving your prompt library to Claude Code, keep these tips in mind for the best results.
 
-
 Test each prompt individually after migration. Claude Code's conversation model may interpret prompts slightly differently than Cursor Composer, so verify that each prompt produces the expected behavior.
-
 
 Organize your prompts by function. Create a clear directory structure in your `.claude/prompts` folder, such as `prompts/code-review/`, `prompts/refactoring/`, and `prompts/testing/`.
 
-
 Version control your prompts. Store your prompt library in git so you can track changes and roll back if needed. This also makes it easy to share prompts across team members.
-
 
 Document prompt purpose and usage. Add comments or a separate README in your prompts directory explaining when and how to use each prompt.
 
-
 ## Automating the Migration
 
-
 For teams with large prompt libraries, consider creating an automated migration pipeline:
-
 
 ```bash
 #!/bin/bash
@@ -249,45 +221,36 @@ CLAUDE_DIR=".claude/prompts"
 mkdir -p "$CLAUDE_DIR"
 
 for prompt in "$PROMPTS_DIR"/*.md; do
-    filename=$(basename "$prompt")
-    python3 convert_prompts.py "$prompt" "$CLAUDE_DIR/$filename"
+ filename=$(basename "$prompt")
+ python3 convert_prompts.py "$prompt" "$CLAUDE_DIR/$filename"
 done
 
 echo "Migration complete. Prompts converted and copied to $CLAUDE_DIR"
 ```
 
-
 Run this script whenever you update your prompt library to keep both systems in sync.
 
-
-
 ## Frequently Asked Questions
-
 
 **How long does it take to transfer your cursor composer prompt library?**
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-
 **What are the most common mistakes to avoid?**
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
-
 
 **Do I need prior experience to follow this guide?**
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-
 **Can I adapt this for a different tech stack?**
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-
 **Where can I get help if I run into issues?**
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
-
 
 ## Related Articles
 

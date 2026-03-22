@@ -11,8 +11,7 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]
----
+tags: [ai-tools-compared, artificial-intelligence]---
 
 
 AI coding tools have become integral to modern development workflows, offering intelligent code suggestions, autocomplete, and even full-file generation. However, these tools need access to your codebase to function effectively, and that access can inadvertently expose sensitive information. Configuring your AI assistant to exclude secrets and environment files is essential for maintaining security while enjoying the productivity benefits of AI-powered development.
@@ -122,61 +121,49 @@ Create or edit `.cursor/rules` in your project root to define exclusion patterns
 Then create `.cursor/rules/default.mdc` with your exclusions:
 
 
-```
----
+```---
 version: 1
 rules:
-  - type: file_pattern
-    pattern: "**/.env*"
-    action: exclude
-  - type: file_pattern
-    pattern: "**/secrets/**"
-    action: exclude
-  - type: file_pattern
-    pattern: "**/*.pem"
-    action: exclude
+ - type: file_pattern
+ pattern: "**/.env*"
+ action: exclude
+ - type: file_pattern
+ pattern: "**/secrets/**"
+ action: exclude
+ - type: file_pattern
+ pattern: "**/*.pem"
+ action: exclude
 ```
-
 
 ### Using VS Code Settings
 
-
 Cursor respects VS Code settings. Add these to your `.vscode/settings.json`:
-
 
 ```json
 {
-  "cursor.exclude": {
-    "**/.{env,env.*,credentials,secrets,*.pem,*.key}": true
-  },
-  "files.exclude": {
-    "**/.env*": true,
-    "**/secrets": true
-  }
+ "cursor.exclude": {
+ "**/.{env,env.*,credentials,secrets,*.pem,*.key}": true
+ },
+ "files.exclude": {
+ "**/.env*": true,
+ "**/secrets": true
+ }
 }
 ```
 
-
 This prevents Cursor's AI from reading excluded files while maintaining normal file operations.
-
 
 ### Disabling Cursor's Codebase Indexing for Sensitive Directories
 
-
 Cursor's codebase indexing feature scans your entire project to enable semantic search. To exclude directories from the index, open **Cursor Settings > Features > Codebase Indexing** and add ignore patterns. Any directory matching these patterns will not be indexed, providing an additional layer of protection independent of the rules file.
-
 
 ## Configuring Claude Code (Anthropic)
 
-
 Claude Code provides explicit controls for file access through its configuration system.
-
 
 ### Using CLAUDE.md for Project Rules
 
-
 Create a `CLAUDE.md` file in your project root to instruct Claude about file exclusions:
-
 
 ```markdown
 # Project Guidelines
@@ -195,27 +182,20 @@ Do not read or analyze the following files:
 - Recommend environment variable patterns instead of hardcoded values
 ```
 
-
 ### Claude Code Local Rules
 
-
 For system-wide exclusions, edit your Claude Code configuration:
-
 
 ```bash
 # Edit global config
 claude config set --global excludePatterns "[\"**/.env*\", \"**/secrets/**\", \"**/*.pem\"]"
 ```
 
-
 This ensures all projects using Claude Code automatically exclude sensitive patterns.
-
 
 ## Configuring Windsurf and Codeium
 
-
 Windsurf (formerly Codeium) offers workspace-level context controls through its settings panel. Open **Windsurf Settings > AI Context** and configure the ignore list:
-
 
 ```
 .env
@@ -227,21 +207,15 @@ Windsurf (formerly Codeium) offers workspace-level context controls through its 
 *serviceAccountKey*
 ```
 
-
 Codeium also respects a `.codeiumignore` file at the project root, following the same syntax as `.gitignore`. This file takes precedence over workspace settings for per-repository control.
-
 
 ## Best Practices for Secret Management
 
-
 Beyond configuring AI tools, adopting secret management practices provides defense in depth.
-
 
 ### Environment File Structure
 
-
 Use a `.env.example` file that contains only placeholder values:
-
 
 ```bash
 # .env.example (safe to commit)
@@ -249,34 +223,26 @@ DATABASE_URL=postgres://user:password@localhost:5432/db
 API_KEY=your_api_key_here
 ```
 
-
 Your actual `.env` file stays in `.gitignore`. Team members copy the example and fill in their own values locally.
-
 
 ### Dedicated Secrets Directory
 
-
 Consider a structured approach for larger projects:
-
 
 ```
 config/
 ├── development.env
 ├── production.env
-└── secrets/          # Add to .gitignore
-    ├── api-keys.env
-    └── database-creds.env
+└── secrets/ # Add to .gitignore
+ ├── api-keys.env
+ └── database-creds.env
 ```
-
 
 This separation makes it easier to apply broad exclusion patterns while keeping configuration organized.
 
-
 ### Using Secret Management Services
 
-
 For production systems, integrate dedicated secret management:
-
 
 ```python
 # Instead of reading .env directly
@@ -287,15 +253,11 @@ from secretmanager import get_secret
 api_key = get_secret("production-api-key")
 ```
 
-
 Tools like AWS Secrets Manager, HashiCorp Vault, or Doppler provide APIs that your code uses at runtime, eliminating the need for env files in your codebase entirely.
-
 
 ## Pre-Commit Hooks as a Safety Net
 
-
 Even with AI tools properly configured, a pre-commit hook provides a final line of defense before secrets reach version control. Tools like `git-secrets` and `detect-secrets` can catch accidental commits:
-
 
 ```bash
 # Install git-secrets
@@ -311,9 +273,7 @@ git secrets --add 'PRIVATE_KEY'
 git secrets --add 'sk-[a-zA-Z0-9]{32,}'
 ```
 
-
 The `detect-secrets` tool from Yelp takes a different approach, creating a baseline file of known false positives so the scanner remains accurate over time:
-
 
 ```bash
 pip install detect-secrets
@@ -321,41 +281,29 @@ detect-secrets scan > .secrets.baseline
 # Commit the baseline, then add to pre-commit hooks
 ```
 
-
 These tools run before every commit and reject pushes that contain strings matching secret patterns. They complement AI tool exclusions rather than replacing them — the AI configuration prevents inadvertent context exposure, while the pre-commit hooks catch any residual secrets that end up in code.
-
 
 ## Verification and Testing
 
-
 After configuring your AI tools, verify the exclusions work correctly.
-
 
 ### Testing Copilot Exclusions
 
-
 Open a file containing a secret and attempt a Copilot suggestion. If properly excluded, Copilot should not reference the secret value in its suggestions.
-
 
 ### Testing Claude Exclusions
 
-
 Ask Claude to read a forbidden file:
-
 
 ```
 Read the contents of .env
 ```
 
-
 Claude should respond that the file is excluded per project rules.
-
 
 ### Regular Audits
 
-
 Periodically review your configuration:
-
 
 1. Check that `.gitignore` includes all secret file patterns
 
@@ -363,12 +311,9 @@ Periodically review your configuration:
 
 3. Scan your repository for accidentally committed secrets using tools like git-secrets or TruffleHog
 
-
 ### Scanning Git History for Leaked Secrets
 
-
 If your project has been running for some time, it is worth scanning the entire commit history for previously leaked secrets, not just the current working tree:
-
 
 ```bash
 # TruffleHog scans entire git history
@@ -378,38 +323,29 @@ trufflehog git file://. --only-verified
 gitleaks detect --source . --log-opts="--all"
 ```
 
-
 Rotate any secrets discovered in history immediately, then remove them using BFG Repo-Cleaner or `git filter-repo` before the next push.
 
-
-
 ## Frequently Asked Questions
-
 
 **How long does it take to configure ai coding tools to exclude secrets and env?**
 
 For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
 
-
 **What are the most common mistakes to avoid?**
 
 The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
-
 
 **Do I need prior experience to follow this guide?**
 
 Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
 
-
 **Can I adapt this for a different tech stack?**
 
 Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
 
-
 **Where can I get help if I run into issues?**
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
-
 
 ## Related Articles
 

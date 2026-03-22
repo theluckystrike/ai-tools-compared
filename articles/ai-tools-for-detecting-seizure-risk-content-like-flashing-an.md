@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Detecting Seizure Risk Content Like Flashing Animations Compared 2026"
+title: "AI Tools for Detecting Seizure Risk Content Like Flashing"
 description: "Compare the best AI tools for detecting seizure-inducing content, flashing animations, and photosensitive epilepsy triggers in images and videos."
 date: 2026-03-16
 author: "AI Tools Compared"
@@ -10,7 +10,7 @@ score: 7
 categories: [guides]
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]
----
+intent-checked: true---
 
 {% raw %}
 
@@ -60,7 +60,7 @@ async function analyzeImage(imageBuffer) {
         modelPath: './models/seizure-detector-v2.onnx',
         threshold: 0.7
     });
-    
+
     const result = await detector.analyze(imageBuffer);
     return {
         hasRisk: result.probability > 0.7,
@@ -88,7 +88,7 @@ def check_content_accessibility(image_url):
         url=image_url,
         checks=["seizure_risk", "flash_detection", "pattern_analysis"]
     )
-    
+
     return {
         "seizure_risk": result.seizure_risk.score,
         "flash_frequency": result.flash_detection.hz_detected,
@@ -106,7 +106,7 @@ While primarily focused on color contrast, WebAIM's extended analysis now includ
 
 **Strengths**: Free tier available, browser extensions for real-time checking, integrates with common design tools.
 
-**Limitations**: Limited to web-based content analysis, less comprehensive for video.
+**Limitations**: Limited to web-based content analysis, less for video.
 
 ## Implementation Recommendations
 
@@ -119,11 +119,11 @@ Animation-heavy platforms like gaming marketplaces and educational content sites
 def safe_content_pipeline(video_path):
     # Step 1: Quick screening
     initial = AccessibilityShield.quick_check(video_path)
-    
+
     if initial.risk_score > 0.5:
         # Step 2: Detailed analysis for flagged content
         detailed = VisionAi.analyze(video_path)
-        
+
         if detailed.confirmed_risk:
             # Step 3: Generate safety warnings
             return {
@@ -131,7 +131,7 @@ def safe_content_pipeline(video_path):
                 "warning_timestamps": detailed.timestamps,
                 "recommended_actions": ["add_warning_card", "reduce_frame_rate"]
             }
-    
+
     return {"status": "approved"}
 ```
 
