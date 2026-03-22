@@ -27,7 +27,17 @@ score: 8
 voice-checked: true
 intent-checked: true---
 
+
 AI tools can diagnose Tailwind CSS issues by analyzing configuration files to identify missing content patterns, spotting dynamic class name construction that prevents static detection, and verifying CSS cascade order. When you share your tailwind.config.js, build output, and relevant code snippets, AI quickly identifies whether classes got purged, have incorrect naming, or are overridden by other styles. The systematic workflow—starting with configuration analysis, then checking build output, pattern matching, and CSS specificity—transforms vague "classes not applying" issues into concrete solutions.
+
+## Key Takeaways
+
+- **Tailwind's JIT compiler generates**: only the CSS you use, and the content configuration must correctly identify all files containing Tailwind classes.
+- **For instance**: if you use `.vue` files but only include `{js,jsx,ts,tsx}` in your content array, classes in Vue components get purged.
+- **The fix is to**: either remove the custom CSS, use Tailwind's `!` prefix for important annotations, or refactor to use only Tailwind classes.
+- **The most frequent culprit**: is purged CSS.
+- **Import order can also**: cause problems.
+- **In most build tools**: you can inspect the compiled CSS.
 
 ## Common Reasons Tailwind Classes Fail in Production
 

@@ -31,6 +31,15 @@ intent-checked: true---
 
 AI tools can generate Jest test suites using Testing Library and user-event that focus on real user interactions rather than implementation details, handling the tedious boilerplate and fixture setup automatically. By providing your React component code to Claude or ChatGPT along with specifications about which libraries you're using, you receive test files with proper async handling, semantic queries like `getByRole` and `getByLabelText`, and assertions that verify user-facing behavior. AI-generated tests cover interaction patterns like form submission, button clicks, and text input while properly handling async user events, saving hours of manual test writing and allowing you to focus on adding edge cases and refining assertions for your specific component requirements.
 
+## Key Takeaways
+
+- **An effective prompt structure**: looks like this: "Generate Jest tests for the following React component using `@testing-library/react` and `@testing-library/user-event` v14.
+- **With user-event v14 and**: React Testing Library v14+, `act()` wrapping is handled internally.
+- **Ask AI to use `getByRole('button'**: { name: /submit/i })` with a regex, or mock your i18n provider to return predictable strings.
+- **Prompt your AI assistant**: to generate tests using Testing Library and user events 4.
+- **Instead of testing internal**: component state or methods, you test what users see and do.
+- **The `user-event` library extends this by providing realistic user interaction simulations**: typing, clicking, selecting—exactly how users interact with your app.
+
 ## Why Testing Library and User Events Matter
 
 Testing Library encourages tests that simulate real user interactions. Instead of testing internal component state or methods, you test what users see and do. The `user-event` library extends this by providing realistic user interaction simulations—typing, clicking, selecting—exactly how users interact with your app.

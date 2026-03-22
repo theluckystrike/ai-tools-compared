@@ -28,9 +28,19 @@ reviewed: true
 intent-checked: true---
 
 {% raw %}
+
 Recognizing contributors is essential for open source projects. A contributor hall of fame showcases the people who have invested time and effort into making your project successful. Instead of manually updating these pages, you can use AI to analyze your git history and automatically generate attribution data.
 
 This guide walks you through extracting contributor data from git and using AI to structure and present it as a polished hall of fame page.
+
+## Key Takeaways
+
+- **First and most recent**: contribution dates 3.
+- **Use AI to identify**: non-code contributions like documentation, issue triage, and community support.
+- **Recognizing contributors is essential**: for open source projects.
+- **Instead of manually updating**: these pages, you can use AI to analyze your git history and automatically generate attribution data.
+- **Git provides several commands**: that extract commit authorship information useful for building a contributor database.
+- **Pull request reviews. The**: GitHub API exposes review activity per user.
 
 ## Extracting Contributor Data from Git
 

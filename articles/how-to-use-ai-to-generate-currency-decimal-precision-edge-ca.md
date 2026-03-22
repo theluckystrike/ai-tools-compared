@@ -31,6 +31,17 @@ voice-checked: true---
 
 Currency decimal precision remains one of the most common sources of financial software bugs. Floating-point arithmetic, rounding inconsistencies, and currency-specific decimal requirements can cause incorrect calculations that are difficult to detect until they reach production. AI tools can help you generate edge case test suites that catch these precision issues before they become expensive problems.
 
+## Key Takeaways
+
+- **Which rounding mode should**: I use for currency? HALF_UP (commercial rounding) is the most common for retail and e-commerce.
+- **Currency-specific decimal requirements**: JPY uses 0 decimals, while KWD uses 3
+
+2.
+- **The function must use**: HALF_UP rounding to 2 decimal places.
+- **What about cryptocurrency decimal**: precision? Cryptocurrencies like Bitcoin use up to 8 decimal places (satoshis).
+- **Currency decimal precision remains**: one of the most common sources of financial software bugs.
+- **Floating-point arithmetic**: rounding inconsistencies, and currency-specific decimal requirements can cause incorrect calculations that are difficult to detect until they reach production.
+
 ## The Challenge of Currency Decimal Precision
 
 Financial applications must handle currency with exact precision. Unlike general-purpose arithmetic, currency calculations have strict requirements:
