@@ -268,12 +268,124 @@ LIMIT :top_k;
 
 RRF (Reciprocal Rank Fusion) with k=60 is a well-tested method for combining ranked lists without needing to tune weights.
 
+## Choosing the Right Embedding Model
+
+The embedding model you choose has a direct impact on search quality and cost. Here is a practical comparison of the most widely used options in 2026:
+
+| Model | Dimensions | Cost per 1M tokens | Latency | Best For |
+|---|---|---|---|---|
+| `text-embedding-3-small` | 1536 | $0.02 | ~50ms | General purpose, cost-sensitive |
+| `text-embedding-3-large` | 3072 | $0.13 | ~80ms | High-accuracy requirements |
+| `text-embedding-ada-002` | 1536 | $0.10 | ~60ms | Legacy; use 3-small instead |
+| Cohere `embed-english-v3.0` | 1024 | $0.10 | ~60ms | Multilingual or Cohere stack |
+| `nomic-embed-text` (local) | 768 | Free | ~10ms | Air-gapped / self-hosted |
+
+For most applications, `text-embedding-3-small` is the right choice. It outperforms `ada-002` at one-fifth the price. Switch to `text-embedding-3-large` only when you have measured a meaningful recall gap on your specific query distribution.
+
+If you are running on-premises or need sub-10ms embedding latency for high-throughput workloads, `nomic-embed-text` via Ollama or a local FastAPI wrapper is a solid self-hosted option.
+
+### Dimensionality Reduction
+
+OpenAI's third-generation models support shortening embeddings via the `dimensions` parameter. This trades some accuracy for lower storage and faster similarity computation:
+
+```python
+response = await client.embeddings.create(
+    model="text-embedding-3-large",
+    input=texts,
+    dimensions=512,  # truncate from 3072 → 512
+)
+```
+
+At 512 dimensions, `text-embedding-3-large` is still competitive with `text-embedding-3-small` at full dimensions, while using one-sixth the storage per vector.
+
+## Re-Ranking with a Cross-Encoder
+
+Vector similarity retrieves candidates but does not guarantee relevance ordering. A cross-encoder re-ranker reads each (query, candidate) pair jointly and produces a calibrated relevance score. This is the standard two-stage retrieval approach:
+
+1. **Stage 1 — ANN retrieval**: Fetch top-50 candidates from pgvector using cosine similarity
+2. **Stage 2 — Re-ranking**: Pass all 50 pairs through a cross-encoder, return the top-10
+
+```python
+# reranker.py
+from sentence_transformers import CrossEncoder
+
+reranker = CrossEncoder("cross-encoder/ms-marco-MiniLM-L-6-v2")
+
+def rerank(query: str, candidates: list[str], top_k: int = 10) -> list[tuple[int, float]]:
+    """Returns (original_index, score) pairs sorted by relevance."""
+    pairs = [(query, c) for c in candidates]
+    scores = reranker.predict(pairs)
+    ranked = sorted(enumerate(scores), key=lambda x: x[1], reverse=True)
+    return ranked[:top_k]
+```
+
+Update the search endpoint to call `rerank` after the ANN query:
+
+```python
+@app.post("/search", response_model=list[SearchResult])
+async def search(req: SearchRequest):
+    # ... embed query, fetch top-50 from pgvector ...
+    candidates = [row.content for row in raw_results]
+    ranked_indices = rerank(req.query, candidates, top_k=req.top_k)
+
+    return [
+        SearchResult(
+            source_id=raw_results[i].source_id,
+            chunk_index=raw_results[i].chunk_index,
+            content=raw_results[i].content,
+            score=round(float(score), 4),
+            metadata=raw_results[i].metadata or {},
+        )
+        for i, score in ranked_indices
+    ]
+```
+
+The `ms-marco-MiniLM-L-6-v2` model is 23MB and runs in ~5ms per pair on CPU — fast enough for 50 candidates without GPU.
+
+## Metadata Filtering
+
+Real search workloads need metadata pre-filters — for example, search only within a specific tenant, document type, or date range. pgvector supports combining vector search with regular SQL predicates:
+
+```sql
+SELECT
+    source_id,
+    chunk_index,
+    content,
+    metadata,
+    1 - (embedding <=> :embedding) AS score
+FROM documents
+WHERE
+    metadata->>'tenant_id' = :tenant_id
+    AND metadata->>'doc_type' = ANY(:doc_types)
+    AND created_at >= :since
+    AND 1 - (embedding <=> :embedding) >= :min_score
+ORDER BY embedding <=> :embedding
+LIMIT :top_k;
+```
+
+Pass `doc_types` as a Postgres array: `{"doc_types": ["policy", "runbook"]}`. The planner will apply the metadata filters before the ANN scan, reducing the candidate set and improving performance.
+
+For high-cardinality metadata, add a btree index: `CREATE INDEX ON documents ((metadata->>'tenant_id'));`.
+
 ## Performance Notes
 
 - At 1M rows, IVFFlat with `lists=1000` queries in ~20ms on an 8-core server
 - Embedding a single query with `text-embedding-3-small` takes ~50ms
 - Batch indexing: 1000 chunks/minute is a safe rate without hitting OpenAI rate limits
 - Consider `pgvector`'s HNSW index if you need consistent <10ms query latency
+- HNSW build time is 5–10x slower than IVFFlat but query time is more predictable under load
+- For 10M+ rows, consider partitioning the `documents` table by tenant or date to keep per-partition index sizes manageable
+
+## Operational Checklist
+
+Before shipping semantic search to production, verify:
+
+- [ ] `pg_prewarm('documents_embedding_idx')` runs at Postgres startup to warm the index into shared buffers
+- [ ] Embedding dimension in `vector(N)` matches your model's output — mismatches fail silently and return garbage scores
+- [ ] Re-indexing pipeline handles document updates idempotently via `ON CONFLICT DO UPDATE`
+- [ ] Query latency budget: ANN (~20ms) + embedding API (~50ms) + re-ranking (~25ms) = ~95ms P95 target
+- [ ] Rate limit handling: exponential backoff on OpenAI 429 responses during bulk indexing
+- [ ] `SET LOCAL ivfflat.probes = 10;` in your search transaction to increase recall without a full `HNSW` migration
 
 ## Related Reading
 
