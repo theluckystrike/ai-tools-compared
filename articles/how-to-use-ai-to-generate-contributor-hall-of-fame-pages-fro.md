@@ -237,6 +237,49 @@ jobs:
 This automation ensures your hall of fame reflects current contributor activity without manual maintenance.
 
 
+## Choosing the Right AI Tool for Each Stage
+
+Different stages of the hall of fame generation process benefit from different AI tools:
+
+| Stage | Recommended Tool | Why |
+|---|---|---|
+| Data extraction from git | Shell scripts + jq | Deterministic; no AI needed |
+| Preprocessing and deduplication | Python + GPT-4 / Claude | Handles ambiguous name matches |
+| Writing contributor bios | Claude Opus / GPT-4 | Best at personalized prose generation |
+| Generating HTML / YAML templates | GitHub Copilot / Cursor | Inline code generation from context |
+| Automated scheduling (GitHub Actions) | Any AI for workflow YAML | Simple YAML generation task |
+
+Claude performs particularly well at the bio-writing stage because it can infer contribution themes from commit message patterns without requiring file-level diff data. A prompt that includes 10-20 commit messages per contributor gives it enough signal to produce varied, accurate descriptions.
+
+
+## Enriching Contributor Data Beyond Commit Counts
+
+Raw commit counts can misrepresent actual impact. A contributor who opened 50 detailed bug reports and reviewed 30 pull requests may have more influence than someone with 200 small formatting commits. AI can help identify non-commit contributions if you feed it additional data sources:
+
+**GitHub Issues API.** Export issues opened and closed by each contributor using the GitHub API. Include this count alongside commit data in your AI prompt so the generated bios reflect the full picture.
+
+**Pull request reviews.** The GitHub API exposes review activity per user. Reviewers who catch critical bugs deserve recognition even if they write little code themselves.
+
+**Discussion and wiki contributions.** Some platforms track these separately. If your project uses GitHub Discussions, export participation data and include it in the contributor summary.
+
+Example enriched contributor record for AI processing:
+
+```json
+{
+  "name": "Alex Contributor",
+  "commits": 34,
+  "issues_opened": 22,
+  "issues_closed": 18,
+  "pr_reviews": 41,
+  "first_contribution": "2024-02-10",
+  "last_contribution": "2026-03-01",
+  "primary_areas": ["docs", "tests", "src/auth"]
+}
+```
+
+Providing this level of detail produces bios that mention a contributor's role as a reviewer and issue triager, not just a committer—which is more accurate and more motivating for contributors to read.
+
+
 ## Best Practices for AI-Generated Contributor Pages
 
 
@@ -253,6 +296,8 @@ When using AI to generate hall of fame content, keep these considerations in min
 
 
 **Include context** - Raw commit counts don't tell the whole story. Use AI to identify non-code contributions like documentation, issue triage, and community support.
+
+**Request consent for bios** - If AI generates personalized descriptions, consider sending each contributor a preview before publishing. Most contributors appreciate the recognition and will correct inaccuracies, improving the overall quality of the page.
 
 
 
