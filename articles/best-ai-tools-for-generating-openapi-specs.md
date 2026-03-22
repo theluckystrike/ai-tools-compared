@@ -14,6 +14,295 @@ voice-checked: true
 ---
 
 Writing OpenAPI specs by hand is tedious and error-prone. For a moderately complex API — 20 endpoints, nested schemas, security definitions — manually writing the YAML takes hours and still misses edge cases. AI tools have changed this significantly. Claude, GitHub Copilot, and specialized tools like Speakeasy can generate production-quality OpenAPI 3.1 specs from existing code or natural language descriptions. This guide compares them with real examples.
+{% raw %}
+
+# Best AI Tools for Generating OpenAPI Specs
+
+OpenAPI 3.1 specifications are essential for API documentation and code generation, but writing them by hand is tedious and error-prone. AI tools can generate accurate specs from code, auto-validate response schemas, and catch missing security definitions.
+
+## FastAPI Automatic Generation
+
+FastAPI generates OpenAPI specs automatically, but you still need to add proper docstrings and response models. Claude excels at this:
+
+**Prompt:**
+```text
+Write a FastAPI endpoint for fetching user profiles.
+Include Pydantic request/response models, proper error handling,
+and full OpenAPI documentation with examples.
+Users endpoint: GET /api/v1/users/{user_id}
+Responses: 200 (User object), 404 (not found), 401 (unauthorized)
+```
+
+**Claude output:**
+
+```python
+from fastapi import FastAPI, HTTPException, status
+from pydantic import BaseModel, Field
+from typing import Optional
+
+app = FastAPI()
+
+class User(BaseModel):
+    id: int = Field(..., description="User ID")
+    name: str = Field(..., min_length=1, max_length=255)
+    email: str = Field(..., pattern=r'^[\w\.-]+@[\w\.-]+\.\w+$')
+    plan: Optional[str] = Field(None, description="Plan type: free, pro, enterprise")
+    created_at: str = Field(..., description="ISO 8601 timestamp")
+
+    class Config:
+        json_schema_extra = {
+            "example": {
+                "id": 1,
+                "name": "Alice",
+                "email": "alice@example.com",
+                "plan": "pro",
+                "created_at": "2026-01-15T10:30:00Z"
+            }
+        }
+
+@app.get(
+    "/api/v1/users/{user_id}",
+    response_model=User,
+    status_code=status.HTTP_200_OK,
+    tags=["users"],
+    summary="Retrieve a user by ID",
+    responses={
+        200: {"description": "User found"},
+        404: {"description": "User not found"},
+        401: {"description": "Unauthorized"},
+    }
+)
+async def get_user(user_id: int = Field(..., gt=0, description="User ID")) -> User:
+    """
+    Fetch a user profile by their ID.
+
+    Returns the user object with profile information.
+    Requires authentication via Authorization header.
+    """
+    if user_id == 999:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="User not found"
+        )
+    return User(
+        id=user_id,
+        name="Alice",
+        email="alice@example.com",
+        plan="pro",
+        created_at="2026-01-15T10:30:00Z"
+    )
+```
+
+FastAPI auto-generates the OpenAPI spec from these models and docstrings. Access it at `/openapi.json`.
+
+## Express.js with swagger-jsdoc
+
+**Prompt:**
+```text
+Write an Express.js endpoint with Swagger/OpenAPI documentation.
+Endpoint: POST /api/v1/orders
+Request: { user_id, items, shipping_address }
+Response: 201 { order_id, total, status }
+Include validation, error responses, and security requirements.
+```
+
+**Claude output:**
+
+```javascript
+import express from 'express';
+import swaggerJsdoc from 'swagger-jsdoc';
+
+const app = express();
+app.use(express.json());
+
+/**
+ * @swagger
+ * /api/v1/orders:
+ *   post:
+ *     summary: Create a new order
+ *     tags:
+ *       - orders
+ *     security:
+ *       - bearerAuth: []
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - user_id
+ *               - items
+ *               - shipping_address
+ *             properties:
+ *               user_id:
+ *                 type: integer
+ *                 description: User ID
+ *               items:
+ *                 type: array
+ *                 items:
+ *                   type: object
+ *                   properties:
+ *                     product_id:
+ *                       type: integer
+ *                     quantity:
+ *                       type: integer
+ *                       minimum: 1
+ *               shipping_address:
+ *                 type: string
+ *                 minLength: 5
+ *     responses:
+ *       201:
+ *         description: Order created successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 order_id:
+ *                   type: string
+ *                   example: "ORD-2026-001"
+ *                 total:
+ *                   type: number
+ *                   example: 99.99
+ *                 status:
+ *                   type: string
+ *                   enum: [pending, confirmed, shipped]
+ *       400:
+ *         description: Invalid request
+ *       401:
+ *         description: Unauthorized
+ *       500:
+ *         description: Server error
+ */
+app.post('/api/v1/orders', (req, res) => {
+  const { user_id, items, shipping_address } = req.body;
+
+  if (!user_id || !items || items.length === 0) {
+    return res.status(400).json({ error: 'Missing required fields' });
+  }
+
+  res.status(201).json({
+    order_id: `ORD-${Date.now()}`,
+    total: 99.99,
+    status: 'pending'
+  });
+});
+
+const swaggerDef = {
+  definition: {
+    openapi: '3.1.0',
+    info: {
+      title: 'Orders API',
+      version: '1.0.0'
+    },
+    components: {
+      securitySchemes: {
+        bearerAuth: {
+          type: 'http',
+          scheme: 'bearer'
+        }
+      }
+    }
+  },
+  apis: ['./routes/*.js']
+};
+
+export const swaggerSpec = swaggerJsdoc(swaggerDef);
+```
+
+## Go with swag
+
+**Prompt:**
+```text
+Write a Go handler using gin-gonic that fetches products.
+Endpoint: GET /api/v1/products?limit=10&offset=0
+Response: { total, items: [ { id, name, price } ] }
+Include swag comments for OpenAPI generation.
+```
+
+**Claude output:**
+
+```go
+package handlers
+
+import (
+	"github.com/gin-gonic/gin"
+	"net/http"
+)
+
+type Product struct {
+	ID    int     `json:"id" example:"123"`
+	Name  string  `json:"name" example:"Widget"`
+	Price float64 `json:"price" example:"29.99"`
+}
+
+type ProductList struct {
+	Total int       `json:"total" example:"100"`
+	Items []Product `json:"items"`
+}
+
+// GetProducts retrieves a paginated list of products
+// @Summary List products
+// @Description Get all products with pagination
+// @Tags products
+// @Accept json
+// @Produce json
+// @Param limit query int false "Limit" default(10) maximum(100)
+// @Param offset query int false "Offset" default(0) minimum(0)
+// @Success 200 {object} ProductList
+// @Failure 400 {object} ErrorResponse
+// @Failure 401 {object} ErrorResponse
+// @Router /api/v1/products [get]
+// @Security ApiKeyAuth
+func GetProducts(c *gin.Context) {
+	limit := 10
+	offset := 0
+
+	if l := c.Query("limit"); l != "" {
+		// Parse and validate limit
+	}
+
+	c.JSON(http.StatusOK, ProductList{
+		Total: 100,
+		Items: []Product{
+			{ID: 1, Name: "Widget", Price: 29.99},
+		},
+	})
+}
+```
+
+Run `swag init` to auto-generate the OpenAPI spec from these comments.
+
+## Tool Comparison
+
+| Aspect | Claude | ChatGPT | Speakeasy |
+|--------|--------|---------|-----------|
+| FastAPI generation | Excellent (Pydantic models) | Good but less detailed | N/A (code-first) |
+| Express.js JSDoc | Very accurate | Mostly correct | N/A |
+| Go swag comments | Precise | Sometimes incomplete | Excellent |
+| Schema validation | Catches missing fields | Sometimes misses | Thorough validation |
+| Security (bearer, API key) | Includes correctly | Inconsistent | Built-in |
+| Response examples | Detailed | Minimal | Auto-extracted |
+| Pricing | Free (Claude Opus $20/mo) | Free tier + $20/mo Pro | ~$10/request |
+
+## Common Mistakes
+
+Claude avoids these:
+- Missing `required:` arrays in request bodies
+- Forgetting status codes (400, 401, 404, 500)
+- Inconsistent schema naming (inconsistent with code)
+- Not including examples
+- Missing security definitions
+
+## Related Articles
+
+- [Best AI Tools for Generating API Documentation From Code](/best-ai-tools-for-generating-api-documentation-from-code-2026/)
+- [AI Tools for API Documentation from Code 2026](/ai-tools-for-api-documentation-from-code-2026/)
+- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-for-automated-api-documentation-from-code-comments/)
+- [AI Tools for Generating OpenAPI Specs from Code](/ai-tools-compared/ai-tools-openapi-spec-generation/)
+
+---
 
 ## Claude: Best for Complex Schema Generation
 
@@ -294,3 +583,4 @@ AI tools evolve rapidly. The comparison above reflects March 2026 capabilities. 
 - [AI Tools for Writing OpenAPI Specifications in 2026](/ai-tools-compared/articles/ai-tools-for-writing-openapi-specifications-2026/)
 - [Best AI Tools for Writing Swagger API Documentation 2026](/ai-tools-compared/best-ai-tools-for-writing-swagger-api-documentation-2026/)
 - [Claude vs Copilot for Generating FastAPI Endpoint Boilerplat](/ai-tools-compared/claude-vs-copilot-for-generating-fastapi-endpoint-boilerplat/)
+{% endraw %}

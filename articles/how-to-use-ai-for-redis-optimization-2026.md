@@ -224,6 +224,165 @@ loglevel notice
 logfile /var/log/redis/redis-7001.log
 ```
 
+## Monitoring Redis Performance with AI Analysis
+
+**Prompt:**
+```text
+Analyze this Redis INFO command output and identify bottlenecks.
+Our redis-cli INFO stats output:
+total_connections_received:50000
+total_commands_processed:2000000
+instantaneous_ops_per_sec:500
+rejected_connections:100
+sync_full:5
+sync_partial_ok:2
+```
+
+Claude's analysis:
+
+"Your instance is healthy but shows some signs of stress:
+
+**Connection Metrics:**
+- 50k total connections is high — check if you're establishing new connections per request instead of pooling
+- 100 rejected connections suggests hitting `maxclients` limit. Current default: 10,000. If you need more, increase with: `config set maxclients 50000` (but monitor memory)
+
+**Command Throughput:**
+- 500 ops/sec is moderate. For reference:
+ - Typical app: 100-1000 ops/sec
+ - High-traffic app: 5000-50000 ops/sec
+ - Redis can handle 100k+ ops/sec on modern hardware
+
+**Replication Issue:**
+- 5 full syncs (resync with replica) suggests the primary and replica are losing sync or there's network latency
+- Set `repl-diskless-sync yes` to avoid disk I/O during sync
+- Monitor network latency: `redis-cli --latency`
+
+**Recommendation:**
+- Enable connection pooling (redis-py with connection_pool parameter)
+- Increase maxclients if rejections continue
+- Monitor slave lag: `redis-cli info replication | grep slave_lag`
+"
+
+## Lua Scripts for Atomic Operations
+
+**Prompt:**
+```text
+Write a Lua script that atomically:
+1. Increments a counter for a user
+2. Sets expiry if it's the first increment
+3. Returns the new count
+
+This prevents race conditions where two requests
+both create the counter and lose one update.
+```
+
+**Claude output:**
+
+```lua
+-- atomic_increment.lua
+-- KEYS[1]: counter key
+-- ARGV[1]: expiry in seconds
+-- ARGV[2]: increment amount (default 1)
+
+local key = KEYS[1]
+local expiry = tonumber(ARGV[1])
+local amount = tonumber(ARGV[2]) or 1
+
+-- Increment counter
+local new_value = redis.call('INCRBY', key, amount)
+
+-- Set expiry only if this is the first call (new_value == amount)
+if new_value == amount then
+  redis.call('EXPIRE', key, expiry)
+end
+
+return new_value
+```
+
+**Python usage:**
+
+```python
+import redis
+
+r = redis.Redis(decode_responses=True)
+
+# Load script
+with open('atomic_increment.lua', 'r') as f:
+    script = f.read()
+
+# Register script (returns SHA1 hash)
+script_sha = r.script_load(script)
+
+# Call with KEYS and ARGV
+result = r.evalsha(
+    script_sha,
+    1,  # number of keys
+    'rate_limit:user:42',  # KEYS[1]
+    '3600',  # ARGV[1]: expire in 1 hour
+    '1'  # ARGV[2]: increment by 1
+)
+
+print(f"New count: {result}")
+```
+
+This avoids the traditional race condition: read → increment → write. Lua executes atomically.
+
+## Redis Stream Optimization
+
+**Prompt:**
+```text
+I'm using Redis Streams for a message queue.
+Current setup: XADD to stream, XREAD to consume.
+Seeing latency spikes. What's wrong?
+```
+
+Claude's answer:
+
+```
+Redis Streams defaults can cause issues:
+
+1. XREAD blocks indefinitely (XREAD BLOCK 0)
+   Better: XREAD BLOCK 5000 (5 second timeout prevents zombies)
+
+2. No consumer group — every reader re-reads entire stream
+   Better: use XGROUP CREATE and XREADGROUP for partitioning
+
+3. No ack — if reader crashes, message is lost
+   Better: XREADGROUP with explicit XACK
+
+Optimized consumer:
+
+```python
+r = redis.Redis(decode_responses=True)
+
+# Create consumer group
+try:
+ r.xgroup_create('events', 'my-group', id='$', mkstream=True)
+except redis.ResponseError:
+ pass # Group already exists
+
+# Read with 5-second timeout
+while True:
+ messages = r.xreadgroup(
+ 'my-group',
+ 'consumer-1',
+ {'events': '>'}, # '>' = new messages only
+ block=5000,
+ count=10 # batch 10 at a time
+ )
+
+ for stream, msg_list in messages or []:
+ for msg_id, data in msg_list:
+ # Process message
+ print(f"Processing {msg_id}: {data}")
+
+ # Acknowledge after processing
+ r.xack('events', 'my-group', msg_id)
+```
+
+This uses consumer groups so multiple readers can share the load without duplicate processing.
+```
+
 ## Related Reading
 
 - [AI Tools for Writing Redis Caching Strategies](/ai-tools-compared/ai-tools-for-writing-redis-caching-strategies-2026/)
