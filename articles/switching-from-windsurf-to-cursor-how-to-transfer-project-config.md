@@ -85,7 +85,17 @@ Now that you have exported your Windsurf settings, the next step is importing th
 ### Creating Cursor Rules
 
 
-Cursor uses `.cursorrules` files (or `cursor.rules` in the root directory) to define project-specific AI behavior. Create or update this file in your project root:
+Cursor supports two locations for project rules. The legacy approach uses a `.cursorrules` file in the project root. The current preferred approach uses the `.cursor/rules/` directory, which allows you to split rules into multiple focused files:
+
+```
+.cursor/
+  rules/
+    coding-style.mdc
+    testing-conventions.mdc
+    api-guidelines.mdc
+```
+
+Each `.mdc` file in this directory is applied automatically. This modular approach maps well from Windsurf's rules system, where you may have had separate files for different concerns. Create a base rules file in your project root:
 
 
 ```markdown
@@ -236,7 +246,51 @@ After transferring all configurations, spend time verifying that everything work
 ### Adjust and Iterate
 
 
-You will likely need to fine-tune some settings. Cursor's AI behavior differs from Windsurf's, so adjust your rules to get similar results. The initial setup takes time, but the investment pays off in improved productivity.
+You will likely need to fine-tune some settings. Cursor's AI behavior differs from Windsurf's Cascade in important ways. Cascade in Windsurf operates more autonomously across multi-file changes with minimal prompting. Cursor's Composer mode (invoked with Cmd+I) is the closest equivalent, but it requires more explicit instruction. Plan to rewrite your Windsurf rules with more detailed context to get comparable results from Cursor's AI.
+
+
+## Migrating VS Code Extensions
+
+
+Since both editors are VS Code forks, most extensions are compatible. However, some extensions available in Windsurf's marketplace may not be published on the Open VSX Registry or Cursor's extension marketplace. Audit your installed extensions before switching:
+
+
+```bash
+# In Windsurf, list all installed extensions
+code --list-extensions > windsurf-extensions.txt
+
+# Review and install compatible ones in Cursor
+cat windsurf-extensions.txt
+```
+
+
+Common extensions that migrate cleanly include ESLint, Prettier, GitLens, Docker, and language-specific syntax highlighters. Extensions that are AI-specific to Windsurf (like Windsurf's built-in Cascade integration) have no direct equivalent—Cursor's AI features replace them natively.
+
+If an extension you rely on is unavailable in Cursor's marketplace, check whether it is published on the Open VSX Registry (open-vsx.org). Cursor can install extensions from `.vsix` files directly:
+
+```bash
+cursor --install-extension path/to/extension.vsix
+```
+
+
+## Windsurf vs. Cursor: Configuration Feature Comparison
+
+
+Understanding what maps to what helps you plan the migration:
+
+
+| Windsurf Feature | Cursor Equivalent | Migration Effort |
+|------------------|-------------------|-----------------|
+| `.windsurf/rules.md` | `.cursorrules` or `.cursor/rules/*.mdc` | Low — copy and reformat |
+| Cascade workflows | Cursor Composer (Cmd+I) | Medium — manual recreation |
+| Custom commands | VS Code Tasks (`tasks.json`) | Low — direct copy |
+| Windsurf snippets | VS Code snippets | Low — direct copy |
+| AI model selection | Cursor model picker | Low — UI setting |
+| Usage analytics | Cursor admin dashboard | Low — UI navigation |
+| Project indexing | Cursor codebase indexing | Automatic on open |
+
+
+The biggest investment is in recreating Cascade workflows as Composer sessions or task definitions. Cascade's ability to chain multi-step AI actions is a distinctive Windsurf feature; Cursor's equivalent requires more manual orchestration but gives you finer control over each step.
 
 
 
