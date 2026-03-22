@@ -13,8 +13,6 @@ intent-checked: true
 voice-checked: true
 ---
 
-{% raw %}
-
 Self-hosting AI models for code generation gives you data privacy, no API rate limits, and full control over your infrastructure. For JavaScript and TypeScript development specifically, certain models outperform others due to their training data and architecture. This guide compares the top self-hosted models for code generation in 2026, with practical implementation examples to help you choose the right one.
 
 ## Why Self-Host Your Code Generation Model?
@@ -192,6 +190,197 @@ curl http://localhost:11434/v1/chat/completions \
   }'
 ```
 
+## Advanced: Fine-Tuning Models on Your Codebase
+
+Self-hosted models shine when you can fine-tune them on your specific codebase patterns:
+
+**Why Fine-Tune?**
+- Model learns your naming conventions (camelCase vs snake_case preferences)
+- Understands your company's architectural patterns
+- Generates code matching your team's style guide
+- Performs better on domain-specific abstractions
+
+**Fine-Tuning Workflow:**
+
+```python
+# Step 1: Collect training data from your repo
+import os
+import json
+
+def collect_code_samples(repo_path, file_pattern="*.ts"):
+    samples = []
+    for root, dirs, files in os.walk(repo_path):
+        for file in files:
+            if file.endswith('.ts'):
+                filepath = os.path.join(root, file)
+                with open(filepath) as f:
+                    content = f.read()
+                    # Split into ~1000 token chunks
+                    for i in range(0, len(content), 3000):
+                        samples.append({
+                            'text': content[i:i+3000],
+                            'file': filepath
+                        })
+    return samples
+
+# Step 2: Format for training
+def format_training_data(samples):
+    training_data = []
+    for sample in samples:
+        training_data.append({
+            'instruction': 'Complete this TypeScript code:',
+            'input': sample['text'][:1500],
+            'output': sample['text'][1500:],
+        })
+    return training_data
+
+# Step 3: Fine-tune using Ollama or similar
+# (Framework-specific, consult model documentation)
+```
+
+## IDE Integration Examples
+
+**VS Code with Continue.dev:**
+```json
+{
+  "models": [
+    {
+      "title": "DeepSeek Coder V2",
+      "provider": "ollama",
+      "model": "deepseek-coder-v2",
+      "apiBase": "http://localhost:11434/v1"
+    }
+  ],
+  "completionOptions": {
+    "maxTokens": 256,
+    "temperature": 0.2
+  }
+}
+```
+
+**Neovim with cmp-ai:**
+```lua
+use { 'dense-analysis/ale' }
+use { 'tzachar/cmp-ai', requires = {'nvim-lua/plenary.nvim'} }
+
+require('cmp_ai.config'):setup({
+  max_lines = 20,
+  provider = 'ollama',
+  provider_options = {
+    model = 'deepseek-coder-v2',
+    url = 'http://localhost:11434/api/generate',
+  },
+  notify = true,
+  notify_callback = function(msg)
+    vim.notify(msg)
+  end,
+  run_on_every_keystroke = true,
+  ignored_file_types = {},
+})
+```
+
+**JetBrains IDEs with Continue:**
+Search IDE plugin marketplace for "Continue" and configure with local Ollama endpoint.
+
+## Performance Tuning for Production
+
+When scaling to a team, optimize for throughput and latency:
+
+**Batching Requests:**
+```python
+# Generate completions for multiple developers concurrently
+import asyncio
+from openai import AsyncOpenAI
+
+client = AsyncOpenAI(
+    base_url="http://localhost:11434/v1",
+    api_key="not-needed"
+)
+
+async def generate_completions(prompts):
+    tasks = [
+        client.chat.completions.create(
+            model="deepseek-coder-v2",
+            messages=[{"role": "user", "content": p}],
+            max_tokens=256
+        )
+        for p in prompts
+    ]
+    return await asyncio.gather(*tasks)
+
+# Run for 10 concurrent developers
+prompts = [generate_prompt_for_context() for _ in range(10)]
+results = asyncio.run(generate_completions(prompts))
+```
+
+**Load Balancing:**
+For teams with many developers, run multiple inference servers:
+
+```bash
+# Server 1: GPU 0
+CUDA_VISIBLE_DEVICES=0 ollama serve --host 127.0.0.1:11434
+
+# Server 2: GPU 1
+CUDA_VISIBLE_DEVICES=1 ollama serve --host 127.0.0.1:11435
+
+# Load balancer (nginx)
+upstream ollama_backend {
+    server 127.0.0.1:11434;
+    server 127.0.0.1:11435;
+}
+
+server {
+    listen 11434;
+    location / {
+        proxy_pass http://ollama_backend;
+    }
+}
+```
+
+## Measuring Success Metrics
+
+Track these metrics to validate that your self-hosted setup is working:
+
+**Developer Productivity:**
+- Lines of code generated per developer per day
+- Time spent writing boilerplate (should decrease)
+- Code review feedback (acceptance rate of AI suggestions)
+
+**Code Quality:**
+- Test coverage (should increase with better-tested generated code)
+- Bug rate in AI-generated code vs. hand-written
+- Performance (generated code should be as efficient)
+
+**Infrastructure:**
+- GPU utilization (target 70-85%)
+- Average completion latency (<2 seconds ideal)
+- Model cost per completion (should trend down)
+
+## Security Considerations for Team Deployment
+
+Self-hosting code generation at scale introduces security concerns:
+
+**Data Isolation:**
+- Never send proprietary code outside your network
+- Run inference servers in private VPC/network only
+- Use VPN for remote developers
+
+**Model Security:**
+- Only use models from trusted sources (Ollama, Hugging Face)
+- Verify model checksums and signatures
+- Keep models updated for security patches
+
+**Code Review:**
+- Always review AI-generated code before merging
+- Add CODEOWNERS requirement for files with AI generation
+- Track which code came from AI for audit purposes
+
+## Conclusion
+
+Self-hosted AI code generation for JavaScript and TypeScript gives you control, privacy, and cost efficiency. DeepSeek Coder V2, Qwen 2.5 Coder, and CodeLlama each offer distinct advantages depending on your hardware and requirements.
+
+Start small—try Ollama with a 7B model on your development machine. If it works well, scale to production infrastructure. The combination of deep learning capability with complete data privacy makes self-hosting an increasingly attractive option for teams serious about AI-assisted development.
+
 
 ## Related Articles
 
@@ -228,6 +417,3 @@ Pick one tool from the options discussed and sign up for a free trial. Spend 30 
 **What is the learning curve like?**
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
-
-
-{% endraw %}
