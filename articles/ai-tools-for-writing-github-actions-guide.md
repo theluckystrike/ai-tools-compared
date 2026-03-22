@@ -312,6 +312,54 @@ Copilot generated a similar composite action but omitted the `outputs` section a
 | timeout-minutes | Always includes | Often missing | Sometimes includes |
 | Docker layer caching | `type=gha` | Basic or missing | Basic |
 
+## Workflow Patterns AI Tools Frequently Get Wrong
+
+Even beyond the security gap, there are workflow patterns that AI tools consistently handle poorly. Knowing these ahead of time saves debugging time.
+
+### Concurrency Control
+
+Without explicit concurrency settings, multiple pushes to the same branch will queue parallel runs, which wastes minutes and can cause deployment race conditions. Claude adds this automatically; the other tools rarely do:
+
+```yaml
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true  # Cancel the old run when a new push arrives
+```
+
+For production deploys you may want `cancel-in-progress: false` so an in-flight deploy finishes before the next one starts. Claude understands this distinction when you explain it — Copilot and Cursor typically do not.
+
+### Pinned vs Floating Action Versions
+
+Using `actions/checkout@v4` is convenient but means your workflow behavior can change when the action maintainer pushes a new commit to that tag. A more secure pattern pins to the full commit SHA:
+
+```yaml
+- uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
+```
+
+Claude will suggest SHA pinning when asked about supply chain security. Copilot defaults to tag references. For high-security environments, use a tool like `pin-github-action` to automate SHA pinning across all your workflows.
+
+### Environment Protection Rules
+
+Claude is the only tool tested that proactively suggests setting up GitHub Environment protection rules for production deployments. This requires a reviewer to approve the deploy job before it runs:
+
+```yaml
+jobs:
+  deploy:
+    environment:
+      name: production
+      url: https://yourapp.com  # Shows in the PR as the deployment URL
+```
+
+Without `environment: production`, any push to main deploys immediately with no approval gate.
+
+## When to Use Each Tool
+
+**Use Claude Code** when you are writing a new workflow from scratch and security matters. It produces complete, production-hardened YAML with minimal back-and-forth. The security defaults (OIDC, permission scoping, injection prevention) are baked in.
+
+**Use Copilot** for quick edits to existing workflows inside VS Code. It is fast and context-aware about the files in your repo, which helps when you are adding a step that references a local script or Dockerfile. For new workflows, review it against a security checklist.
+
+**Use Cursor** when you are iterating rapidly and want an in-editor chat to explain why a step is failing. Cursor's ability to read error logs and suggest fixes is its strongest feature. Its security defaults are not reliable enough to use unreviewed in production.
+
 ## Troubleshooting
 
 **Configuration changes not taking effect**
@@ -326,6 +374,13 @@ Run the command with `sudo` for system-level operations, or check that your user
 
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
+**OIDC credentials error: "Could not assume role"**
+
+Verify that the OIDC provider `token.actions.githubusercontent.com` is registered in your AWS account under IAM > Identity providers. The trust policy `sub` condition must exactly match your repo path and branch: `repo:org/repo:ref:refs/heads/main`.
+
+**Cache not restoring between runs**
+
+The cache key must be deterministic. If your lock file changes between runs (e.g., a bot auto-updates dependencies), use `restore-keys` as a fallback. Caches are scoped to the branch — a cache created on `main` is available to PRs, but not vice versa.
 
 ## Related Reading
 
