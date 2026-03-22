@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /ai-code-generation-quality-for-java-spring-security-configur/
 categories: [guides, comparisons]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, security, artificial-intelligence]
