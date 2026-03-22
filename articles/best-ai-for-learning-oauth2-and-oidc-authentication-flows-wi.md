@@ -27,6 +27,16 @@ score: 8
 voice-checked: true
 intent-checked: true---
 
+
+| Tool | Security Knowledge | Code Examples | Vulnerability Detection | Pricing |
+|---|---|---|---|---|
+| Claude | Deep OWASP Top 10 understanding | Generates secure code patterns | Identifies auth flow weaknesses | API-based (per token) |
+| ChatGPT (GPT-4) | Broad security topic coverage | Interactive attack simulations | Explains CVE implications | $20/month (Plus) |
+| GitHub Copilot | Inline secure code suggestions | Security-aware completions | Limited vuln scanning | $10-39/user/month |
+| Snyk Code | Dedicated security scanning | Fix suggestions with context | Real-time vulnerability detection | Free for open source |
+| Cursor | Project-wide security analysis | Reads auth configurations | Cross-file vulnerability tracking | $20/month (Pro) |
+
+
 {% raw %}
 
 Claude and ChatGPT are the best AI tools for learning OAuth2 and OIDC authentication flows, excelling at generating sequence diagrams and providing detailed explanations of token exchanges. GitHub Copilot and Gemini also offer valuable learning support for authentication implementation and Google-specific OAuth2 flows. OAuth 2.0 and OpenID Connect (OIDC) remain foundational for modern authentication systems, yet the protocol flows involve multiple steps that can confuse even experienced developers. Understanding the authorization code flow, implicit flow, and PKCE extension requires visualizing how tokens move between clients, authorization servers, and resource servers.

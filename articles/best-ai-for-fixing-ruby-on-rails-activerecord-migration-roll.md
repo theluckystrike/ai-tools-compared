@@ -28,6 +28,16 @@ score: 9
 tags: [ai-tools-compared, troubleshooting, best-of, artificial-intelligence]---
 
 
+| Tool | Rails Knowledge | Migration Handling | ActiveRecord Support | Pricing |
+|---|---|---|---|---|
+| Claude | Deep Rails convention understanding | Generates reversible migrations | Complex association queries | API-based (per token) |
+| ChatGPT (GPT-4) | Good Rails pattern coverage | Migration rollback strategies | Scope and callback generation | $20/month (Plus) |
+| GitHub Copilot | Inline Ruby/Rails completion | Context-aware migration steps | Auto-suggests model methods | $10-39/user/month |
+| Cursor | Full Rails project analysis | Reads schema.rb for context | Cross-model relationship tracking | $20/month (Pro) |
+| Codeium | Fast Ruby code suggestions | Basic migration templates | Common ActiveRecord patterns | Free tier available |
+
+
+
 ActiveRecord migration rollbacks in production can be terrifying. You've deployed a new feature, everything worked fine in staging, and then production throws an error during rollback that leaves your database in an inconsistent state. This guide covers how AI tools can help you diagnose, understand, and fix these issues faster.
 
 ## Key Takeaways

@@ -26,6 +26,16 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true---
+
+
+| Tool | Playwright Test Generation | Edge Case Coverage | Framework Awareness | Pricing |
+|---|---|---|---|---|
+| Claude | Generates full test suites with assertions | Handles async, error, and boundary cases | Strong Jest/Vitest/Playwright knowledge | API-based (per token) |
+| ChatGPT (GPT-4) | Complete test files with mocks | Good error scenario coverage | Broad framework support | $20/month (Plus) |
+| GitHub Copilot | Inline test completion as you type | Suggests missing test branches | Context-aware from open files | $10-39/user/month |
+| Cursor | Project-aware test generation | Reads source to find edge cases | Understands project test patterns | $20/month (Pro) |
+| Codeium | Fast inline test suggestions | Basic happy-path coverage | Template-based patterns | Free tier available |
+
 {% raw %}
 
 Claude Code excels at generating Playwright tests for multi-step form wizards because it understands complex state preservation, conditional navigation, step-specific validation, and asynchronous wait strategies. When given your form structure, Claude produces maintainable tests with proper selectors, correct async handling, and meaningful assertions that account for wizard-specific patterns like progress indicators and data persistence across steps.

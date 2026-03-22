@@ -71,6 +71,16 @@ An AI assistant might transform this into a professional release announcement:
 ---
 
 
+
+
+| Tool | Release Notes Quality | Commit Analysis | Tone Control | Pricing |
+|---|---|---|---|---|
+| Claude | Generates user-facing changelogs | Summarizes git history accurately | Adjustable technical depth | API-based (per token) |
+| ChatGPT (GPT-4) | Good release announcement drafts | Understands semantic versioning | Marketing and developer tones | $20/month (Plus) |
+| GitHub Copilot | Inline text completion | Limited commit analysis | Basic tone suggestions | $10-39/user/month |
+| Cursor | Reads full repo for context | Git log integration | Project-aware language | $20/month (Pro) |
+| Codeium | Basic text suggestions | Limited changelog support | Template-based output | Free tier available |
+
 ## Release v2.1.0: Python 3.13 Support and Performance Improvements
 
 We're excited to announce version 2.1.0 of our library, bringing Python 3.13 compatibility, significant performance improvements, and important deprecation notices.
