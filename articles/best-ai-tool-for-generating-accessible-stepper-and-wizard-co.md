@@ -24,6 +24,16 @@ intent-checked: true
 voice-checked: true---
 
 
+| Tool | Accessibility Knowledge | ARIA Support | WCAG Compliance | Pricing |
+|---|---|---|---|---|
+| Claude | Strong WCAG 2.1 AA/AAA understanding | Generates correct ARIA attributes | Identifies compliance gaps | API-based (per token) |
+| ChatGPT (GPT-4) | Good a11y pattern knowledge | Suggests ARIA roles and states | Explains success criteria | $20/month (Plus) |
+| GitHub Copilot | Inline ARIA attribute completion | Context-aware suggestions | Limited compliance checking | $10-39/user/month |
+| Cursor | Project-wide a11y analysis | Reads existing component patterns | Cross-file consistency checks | $20/month (Pro) |
+| axe DevTools | Dedicated a11y testing | Rule-based ARIA validation | Automated WCAG audits | Free browser extension |
+
+
+
 Accessible stepper and wizard components guide users through multi-step processes while maintaining clear orientation in the overall flow. These components present unique accessibility challenges because they combine navigation patterns, state management, and progressive disclosure—all of which require proper semantic markup and ARIA attributes to work correctly with assistive technologies.
 
 ## Key Takeaways

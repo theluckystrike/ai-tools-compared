@@ -27,6 +27,16 @@ intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, best-of, artificial-intelligence, automation]---
 
+
+| Tool | Runbook Generation | Infrastructure Awareness | Script Quality | Pricing |
+|---|---|---|---|---|
+| Claude Code | Full runbooks from incident descriptions | Reads Terraform, Ansible, K8s configs | Production-grade bash/Python | API-based (per token) |
+| ChatGPT (GPT-4) | Complete runbook templates | Broad infrastructure knowledge | Good script generation | $20/month (Plus) |
+| GitHub Copilot | Inline script completion | Context from open files | Fast iteration on scripts | $10-39/user/month |
+| Cursor | Project-aware runbook generation | Full repo infrastructure context | Cross-file config references | $20/month (Pro) |
+| PagerDuty Copilot | Incident-triggered runbooks | Integrates with monitoring tools | Pre-built remediation steps | Included with PagerDuty |
+
+
 {% raw %}
 
 Runbook automation is a critical component of modern DevOps practices. When infrastructure incidents occur, well-documented runbooks enable teams to respond quickly and consistently. However, creating, maintaining, and executing these runbooks manually consumes significant time and introduces human error. AI-powered tools are now transforming how DevOps engineers approach runbook automation, making processes more reliable and scalable.
