@@ -209,6 +209,56 @@ Top 3 savings opportunities:
    Terminate or reassign.
 ```
 
+## Building a Weekly Cost Digest
+
+For teams that want automated weekly summaries without a SaaS subscription, this script fetches the last 7 days of AWS cost data via the Cost Explorer API and generates a human-readable digest with Claude:
+
+```python
+# weekly_digest.py
+import boto3
+import anthropic
+from datetime import date, timedelta
+
+def get_weekly_cost_data() -> dict:
+    ce = boto3.client("ce", region_name="us-east-1")
+    end = date.today()
+    start = end - timedelta(days=14)  # 2 weeks for MoM comparison
+
+    response = ce.get_cost_and_usage(
+        TimePeriod={"Start": str(start), "End": str(end)},
+        Granularity="DAILY",
+        Metrics=["UnblendedCost"],
+        GroupBy=[{"Type": "DIMENSION", "Key": "SERVICE"}],
+    )
+    return response["ResultsByTime"]
+
+def generate_digest(cost_data: dict) -> str:
+    client = anthropic.Anthropic()
+
+    message = client.messages.create(
+        model="claude-opus-4-6",
+        max_tokens=1500,
+        messages=[{
+            "role": "user",
+            "content": (
+                "Generate a concise weekly cloud cost digest for an engineering team. "
+                "Highlight top cost drivers, any anomalies vs the prior week, "
+                "and 2-3 concrete savings recommendations.\n\n"
+                f"Cost data (last 14 days by service/day):\n{cost_data}"
+            ),
+        }],
+    )
+    return message.content[0].text
+
+if __name__ == "__main__":
+    data = get_weekly_cost_data()
+    digest = generate_digest(data)
+    print(digest)
+    # In production: post to Slack, send email, etc.
+```
+
+Schedule this with a cron job or AWS EventBridge rule to run every Monday morning. The output lands in Slack before the weekly engineering standup.
+
 ## Comparison Summary
 
 | Tool | Best For | AI Strength | Cost |
@@ -220,6 +270,16 @@ Top 3 savings opportunities:
 | AWS Cost Intelligence | AWS-native, existing customers | Basic recommendations | Free |
 
 The DIY Claude approach works well for one-time deep dives or building custom cost reporting pipelines. SaaS tools win for ongoing monitoring and alerting.
+
+## When to Use Each Approach
+
+**Use Vantage** when your team needs a polished dashboard with multi-cloud support and you want anomaly alerts without writing any code. The natural language query interface is genuinely useful for ad-hoc questions during incidents.
+
+**Use Cloudthread** when engineering leadership wants cost visibility tied to product delivery — sprints, features, and services. The unit economics framing resonates more with product teams than raw dollar amounts.
+
+**Use Spot.io** when EC2 or Kubernetes compute costs dominate your bill and you want automated rightsizing without manual intervention. The savings projections are accurate; the 60-80% reduction claim holds for stateless workloads.
+
+**Use DIY Claude** when you need custom analysis logic, want to correlate costs with internal business data that SaaS tools cannot access, or are running a cost audit rather than ongoing monitoring. The API cost for analyzing a month of CUR data is typically under $1.
 
 ## Related Reading
 

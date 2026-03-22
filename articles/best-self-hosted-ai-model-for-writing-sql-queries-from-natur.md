@@ -647,4 +647,5 @@ Start with a quantized version of DeepSeek Coder or CodeLlama to test accuracy w
 - [Best AI Tools for Writing SQL Migrations in 2026](/ai-tools-compared/articles/best-ai-tools-for-writing-sql-migrations-2026/---)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+```
 {% endraw %}

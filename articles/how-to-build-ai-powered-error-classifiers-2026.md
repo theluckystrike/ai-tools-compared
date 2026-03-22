@@ -283,6 +283,84 @@ async def classify_error(
     return classification
 ```
 
+## Step 5: Database Schema
+
+You need pgvector installed on PostgreSQL to store and query embeddings efficiently.
+
+```sql
+CREATE EXTENSION IF NOT EXISTS vector;
+
+CREATE TABLE error_examples (
+    id              BIGSERIAL PRIMARY KEY,
+    normalized_error TEXT NOT NULL,
+    category        TEXT NOT NULL,
+    severity        TEXT NOT NULL,
+    team            TEXT NOT NULL,
+    embedding       vector(1536),
+    source          TEXT DEFAULT 'manual',  -- 'manual' or 'llm'
+    created_at      TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- IVFFlat index for fast approximate nearest-neighbor search
+CREATE INDEX ON error_examples USING ivfflat (embedding vector_cosine_ops)
+    WITH (lists = 20);
+
+-- Index for category-level queries
+CREATE INDEX ON error_examples (category);
+```
+
+Seed the table with a handful of hand-labeled examples before deploying — 5-10 per category is enough to bootstrap the similarity path.
+
+## Step 6: Routing Alerts
+
+Once you have a classification, route it to the right destination:
+
+```python
+# router.py
+import httpx
+
+SLACK_CHANNELS = {
+    "platform": "#platform-alerts",
+    "backend": "#backend-alerts",
+    "frontend": "#frontend-alerts",
+}
+
+PAGERDUTY_ROUTING = {
+    "critical": "platform-oncall",
+    "high": "backend-oncall",
+}
+
+async def route_classification(
+    error_text: str,
+    classification: ErrorClassification,
+    slack_webhook: str,
+) -> None:
+    channel = SLACK_CHANNELS.get(classification.team, "#general-alerts")
+    severity_emoji = {
+        "critical": ":red_circle:",
+        "high": ":orange_circle:",
+        "medium": ":yellow_circle:",
+        "low": ":white_circle:",
+    }.get(classification.severity, ":white_circle:")
+
+    message = {
+        "channel": channel,
+        "text": (
+            f"{severity_emoji} *{classification.category.upper()}* "
+            f"[{classification.severity}] — {classification.explanation}\n"
+            f"```{error_text[:300]}```"
+        ),
+    }
+
+    async with httpx.AsyncClient() as client:
+        await client.post(slack_webhook, json=message)
+
+    # Page on-call for critical/high
+    if classification.severity in PAGERDUTY_ROUTING:
+        routing_key = PAGERDUTY_ROUTING[classification.severity]
+        await trigger_pagerduty(routing_key, classification, error_text)
+```
+
 ## Evaluation
 
 After a few hundred classifications, measure accuracy on a held-out test set:
@@ -297,6 +375,24 @@ def evaluate_classifier(test_cases: list[dict]) -> None:
 ```
 
 Target accuracy: >90% on seen error types (similarity path), >75% on novel errors (LLM path). The similarity database grows over time, shifting more classifications to the fast path.
+
+### Tuning the Similarity Threshold
+
+The `threshold=0.85` default is conservative. Lower it if you find the LLM is being invoked too often for errors that look similar to known ones. Raise it if you see the similarity path making incorrect matches for errors that only superficially resemble labeled examples.
+
+A good workflow: run a batch of 500 recent production errors through both paths independently, compare disagreements, and adjust the threshold to minimize disagreements on clearly similar pairs.
+
+## Cost Profile
+
+At scale, keeping LLM calls rare is the main cost lever:
+
+| Path | Latency | Cost per call | When triggered |
+|---|---|---|---|
+| Similarity (embedding only) | ~50ms | ~$0.00002 | Known error classes |
+| LLM fallback (gpt-4o-mini) | ~300ms | ~$0.0002 | Novel errors |
+| LLM fallback (gpt-4o) | ~800ms | ~$0.002 | High-stakes classification |
+
+After the first week of operation, most production errors route through the similarity path. The LLM path handles new error types introduced by deployments, which are relatively rare once a service stabilizes.
 
 ## Related Reading
 

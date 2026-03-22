@@ -180,6 +180,91 @@ List all breaking changes, new required fields, and deprecated parameters.
 
 This helps users understand what changes they need to make to their existing Custom Resources.
 
+## Automating Documentation with a Script
+
+For teams with multiple operators, you can wrap the AI call in a script that processes every CRD file in a directory and writes the resulting documentation to Markdown files automatically:
+
+```python
+# generate_docs.py
+import os
+import glob
+import anthropic
+
+client = anthropic.Anthropic()
+
+PROMPT_TEMPLATE = """
+Generate API reference documentation for this Kubernetes CRD.
+Include:
+1. A Markdown table for all spec fields (type, default, required, description)
+2. A Markdown table for all status fields
+3. Valid enum values inline in the description column
+4. CEL validation rules explained in plain English
+5. A complete example Custom Resource
+
+Output only Markdown, no extra commentary.
+
+CRD:
+{crd_yaml}
+"""
+
+def generate_docs_for_crd(crd_path: str, output_dir: str) -> None:
+    with open(crd_path) as f:
+        crd_yaml = f.read()
+
+    message = client.messages.create(
+        model="claude-opus-4-6",
+        max_tokens=4096,
+        messages=[{
+            "role": "user",
+            "content": PROMPT_TEMPLATE.format(crd_yaml=crd_yaml),
+        }],
+    )
+
+    doc_content = message.content[0].text
+    base_name = os.path.splitext(os.path.basename(crd_path))[0]
+    out_path = os.path.join(output_dir, f"{base_name}-reference.md")
+
+    with open(out_path, "w") as f:
+        f.write(doc_content)
+
+    print(f"Generated: {out_path}")
+
+
+if __name__ == "__main__":
+    import sys
+    crd_dir = sys.argv[1] if len(sys.argv) > 1 else "./config/crd/bases"
+    out_dir = sys.argv[2] if len(sys.argv) > 2 else "./docs/api"
+    os.makedirs(out_dir, exist_ok=True)
+
+    for crd_file in glob.glob(f"{crd_dir}/**/*.yaml", recursive=True):
+        generate_docs_for_crd(crd_file, out_dir)
+```
+
+Run it as part of your CI pipeline after any CRD change:
+
+```yaml
+# .github/workflows/docs.yml
+- name: Generate CRD docs
+  run: python generate_docs.py config/crd/bases docs/api
+  env:
+    ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+```
+
+## Comparing AI Assistants for This Task
+
+Not every AI assistant handles CRD documentation equally well. Here is how the major options compare across the criteria that matter for this use case:
+
+| Assistant | Understands CRD schema | Produces table format | Handles CEL rules | IDE integration |
+|---|---|---|---|---|
+| Claude (claude.ai / API) | Excellent | Reliable | Good | Via API |
+| GitHub Copilot (Chat) | Good | Inconsistent | Basic | VS Code native |
+| Cursor | Good | Good | Basic | Editor native |
+| ChatGPT (GPT-4o) | Good | Reliable | Basic | Via API |
+
+Claude tends to produce the most structurally complete output on first attempt, particularly for complex nested schemas with CEL validation. Copilot and Cursor are more convenient for in-editor workflows where you want to paste the CRD and get documentation in a side panel.
+
+For automated pipelines using the API, Claude is generally the strongest choice. For interactive one-off documentation sessions directly in your editor, Cursor offers the lowest-friction experience since it can read your CRD files directly from the filesystem without copy-pasting.
+
 ## Practical Workflow
 
 Integrating AI-assisted documentation into your operator development workflow follows a straightforward pattern:
@@ -191,14 +276,32 @@ Integrating AI-assisted documentation into your operator development workflow fo
 
 This workflow ensures documentation stays synchronized with your implementation.
 
-## Tools and Approaches
+## Keeping Documentation in Sync
 
-Several AI assistants handle this task effectively. The best choice depends on your existing workflow and tooling. Claude, Cursor, and GitHub Copilot all understand Kubernetes schemas and can generate documentation from CRD specifications.
+The biggest maintenance problem with operator documentation is drift — the CRD evolves but the documentation does not. Two strategies prevent this:
 
-When selecting a tool, consider whether it supports:
-- Reading YAML files directly from your project
-- Integrating with your documentation generator (Hugo, Docusaurus, MkDocs)
-- Maintaining documentation in version control alongside your CRDs
+**Hash-based staleness detection**: Store a hash of the CRD file alongside the generated docs. In CI, recompute the hash and skip regeneration if nothing changed. Fail the pipeline if docs are missing for any CRD that has changed.
+
+```bash
+#!/bin/bash
+# check_docs_fresh.sh
+for crd in config/crd/bases/*.yaml; do
+  name=$(basename "$crd" .yaml)
+  doc="docs/api/${name}-reference.md"
+  hash_file="docs/api/${name}.sha256"
+
+  current_hash=$(sha256sum "$crd" | cut -d' ' -f1)
+  stored_hash=$(cat "$hash_file" 2>/dev/null || echo "")
+
+  if [ "$current_hash" != "$stored_hash" ]; then
+    echo "STALE: $doc needs regeneration"
+    exit 1
+  fi
+done
+echo "All docs are fresh"
+```
+
+**Version-pinned generation**: Include the CRD `metadata.resourceVersion` or a manual `docs-version` annotation in the generated file header. Reviewers can spot at a glance whether documentation reflects the current CRD version.
 
 ## Related Articles
 

@@ -340,6 +340,109 @@ CREATE INDEX ON code_units USING ivfflat (embedding vector_cosine_ops)
 CREATE INDEX ON code_units (language);
 ```
 
+## Keeping the Index Fresh
+
+A static index goes stale as soon as developers push new code. The simplest incremental update strategy is a file-hash cache: store a SHA-256 of each indexed file and skip re-embedding files that have not changed.
+
+```python
+# incremental_indexer.py
+import hashlib
+from pathlib import Path
+
+def file_hash(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+async def index_incremental(repo_path: str, session: AsyncSession) -> dict:
+    """Re-index only files that have changed since last run."""
+    repo = Path(repo_path)
+    stats = {"indexed": 0, "skipped": 0, "deleted": 0}
+
+    # Load stored hashes
+    rows = await session.execute(text("SELECT DISTINCT file_path, file_hash FROM code_units"))
+    stored = {r.file_path: r.file_hash for r in rows}
+
+    current_files = set()
+    for ext in [".py", ".go", ".ts", ".tsx"]:
+        for file in repo.rglob(f"*{ext}"):
+            if any(p in file.parts for p in ["vendor", "node_modules", ".git"]):
+                continue
+            current_files.add(str(file))
+
+            h = file_hash(file)
+            if stored.get(str(file)) == h:
+                stats["skipped"] += 1
+                continue
+
+            # File is new or changed — delete old units and re-index
+            await session.execute(
+                text("DELETE FROM code_units WHERE file_path = :path"),
+                {"path": str(file)}
+            )
+            units = extract_units(file)
+            await embed_and_store(units, h, session)
+            stats["indexed"] += 1
+
+    # Remove units for deleted files
+    for path in set(stored.keys()) - current_files:
+        await session.execute(
+            text("DELETE FROM code_units WHERE file_path = :path"),
+            {"path": path}
+        )
+        stats["deleted"] += 1
+
+    await session.commit()
+    return stats
+```
+
+Run this on a git post-commit hook or as a CI step after every merge to main. For repositories with 10,000+ functions, incremental indexing completes in seconds rather than minutes.
+
+## Tuning Embedding Quality
+
+The default `make_embedding_text` function concatenates the filename, function name, and full source code. For better retrieval on specific query types, consider augmenting the text with docstrings and inferred purpose:
+
+```python
+def make_embedding_text_enriched(unit: CodeUnit) -> str:
+    lines = unit.code.split("\n")
+
+    # Extract docstring if present (Python)
+    docstring = ""
+    if unit.language == "py":
+        in_doc = False
+        doc_lines = []
+        for line in lines[1:6]:  # check first 5 lines after def
+            stripped = line.strip()
+            if stripped.startswith('"""') or stripped.startswith("'''"):
+                in_doc = not in_doc
+                doc_lines.append(stripped.strip('"""').strip("'''"))
+            elif in_doc:
+                doc_lines.append(stripped)
+        docstring = " ".join(doc_lines).strip()
+
+    parts = [
+        f"File: {Path(unit.file_path).name}",
+        f"Function: {unit.name}",
+    ]
+    if docstring:
+        parts.append(f"Description: {docstring}")
+    parts.append(unit.code)
+
+    return "\n".join(parts)
+```
+
+The enriched format improves recall for natural-language queries against well-documented codebases. For undocumented code, the plain format performs comparably since the model infers semantics from the code itself.
+
+## Performance at Scale
+
+For repositories with more than 50,000 code units, the IVFFlat index becomes critical. The `lists` parameter controls the trade-off between index build time, query speed, and recall:
+
+| Repository size | Recommended lists | Approximate query time |
+|---|---|---|
+| < 10,000 units | 20 | < 10ms |
+| 10,000–100,000 units | 100 | 10–30ms |
+| > 100,000 units | 200–500 | 30–80ms |
+
+After inserting a large batch of new embeddings, run `VACUUM ANALYZE code_units` to refresh statistics and ensure the index planner uses the vector index rather than a sequential scan.
+
 ## Related Reading
 
 - [How to Build Semantic Search with Embeddings](/ai-tools-compared/how-to-build-semantic-search-with-embeddings/)
