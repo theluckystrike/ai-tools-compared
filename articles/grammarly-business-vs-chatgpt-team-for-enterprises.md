@@ -321,7 +321,7 @@ const brandVoiceConfig = {
       replace: {
         'use': 'use',
         'use': 'use',
-        'synergy': 'collaboration'
+        'collaboration': 'collaboration'
       }
     }
   }

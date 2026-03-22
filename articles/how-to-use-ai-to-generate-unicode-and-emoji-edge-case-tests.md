@@ -39,7 +39,7 @@ AI language models excel at generating test suites because they understand chara
 
 
 ```
-Generate a comprehensive list of Unicode and emoji test cases for a text processing application. Include:
+Generate a thorough list of Unicode and emoji test cases for a text processing application. Include:
 1. Combining characters and diacritical marks
 2. Right-to-left text (Arabic, Hebrew)
 3. Zero-width characters (joiner, non-joiner, space)

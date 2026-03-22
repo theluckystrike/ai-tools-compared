@@ -111,7 +111,7 @@ For developers, this impacts how you structure your debugging sessions:
 # Say: "How do I handle null values in Python?"
 # Follow up: "What's the difference between None and NaN?"
 
-# Gemini Live session - better for comprehensive code reviews
+# Gemini Live session - better for full code reviews
 # Share screenshot of error → "Explain this stack trace"
 # Share multiple files → "How do these components interact?"
 ```

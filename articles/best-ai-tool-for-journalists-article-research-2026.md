@@ -281,7 +281,7 @@ Many journalists use all three tools strategically, matching the tool to the res
 - **Investigative (weeks):** Perplexity → Claude → NotebookLM → iterative → write
 - **Beat coverage (ongoing):** NotebookLM (source hub) + Perplexity (quick facts) + Claude (analysis)
 
-The landscape continues evolving. New capabilities emerge regularly, and journalists benefit from periodically reassessing their tool selections as features change. The key principle remains constant: select tools that reduce time spent on information gathering while maintaining the accuracy standards that journalism demands.
+The field continues evolving. New capabilities emerge regularly, and journalists benefit from periodically reassessing their tool selections as features change. The key principle remains constant: select tools that reduce time spent on information gathering while maintaining the accuracy standards that journalism demands.
 
 
 

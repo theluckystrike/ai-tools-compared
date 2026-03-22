@@ -239,7 +239,7 @@ def calculate_discount(amount: float, tier: str) -> float:
         raise ValueError("Amount must be positive")
     return amount * (1 - tiers.get(tier, 0))
 
-# AI-generated comprehensive test suite
+# AI-generated thorough test suite
 import pytest
 
 class TestCalculateDiscount:

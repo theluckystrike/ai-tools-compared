@@ -105,7 +105,7 @@ DataForge outputs directly to SQL, JSON, or CSV. Its strength is generating real
 
 ### 3. TestGPT Local
 
-TestGPT Local leverages smaller language models to interpret natural language descriptions and generate appropriate fixtures. If you need to describe what you want in plain English, this tool provides the most flexibility.
+TestGPT Local takes advantage of smaller language models to interpret natural language descriptions and generate appropriate fixtures. If you need to describe what you want in plain English, this tool provides the most flexibility.
 
 **Installation:**
 ```bash

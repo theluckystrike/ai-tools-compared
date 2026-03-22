@@ -3,7 +3,7 @@ layout: default
 title: "How to Migrate Cursor AI Snippets and Templates"
 description: "A practical guide for developers moving their custom snippets and templates from Cursor AI to WindSurf. Includes code examples and step-by-step"
 date: 2026-03-16
-last_modified_at: 2026-03-16
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /migrate-cursor-ai-snippets-and-templates-to-windsurf-editor/
 reviewed: true
@@ -16,8 +16,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 
 {% raw %}
-
-# How to Migrate Cursor AI Snippets and Templates to WindSurf Editor
 
 
 Developers who have invested time building custom snippets and templates in Cursor AI often face a challenge when trying to move to WindSurf. While both editors share roots in Visual Studio Code, their approaches to custom AI-assisted content differ in ways that affect how you transfer your workflows. This guide walks through the practical steps of migrating your Cursor snippets and templates to WindSurf, with working code examples you can apply immediately.

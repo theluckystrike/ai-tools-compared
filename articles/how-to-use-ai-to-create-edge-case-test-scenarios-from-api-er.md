@@ -168,7 +168,7 @@ Authentication errors (401, 403) have multiple failure modes that AI can systema
 
 ```python
 class TestAuthenticationErrors:
-    """Comprehensive authentication failure scenarios."""
+    """Full authentication failure scenarios."""
 
     @pytest.mark.parametrize("auth_header,expected_error", [
         (None, "missing_api_key"),
@@ -210,7 +210,7 @@ class TestRequestValidation:
         ("name", "   ", "name_cannot_be_whitespace"),
     ])
     def test_validation_errors(self, field, invalid_value, expected_code):
-        """Test comprehensive input validation scenarios."""
+        """Test thorough input validation scenarios."""
         client = APIClient()
         payload = {"email": "valid@example.com", "quantity": 10, "name": "Test"}
         payload[field] = invalid_value

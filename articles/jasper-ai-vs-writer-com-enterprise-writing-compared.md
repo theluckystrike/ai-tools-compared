@@ -192,7 +192,7 @@ Jasper includes brand voice features that allow teams to define tone, style, and
 const brandVoice = {
     tone: "professional",
     formality: "medium",
-    prohibited_words: ["synergy", "use", "circle back"],
+    prohibited_words: ["teamwork", "use", "circle back"],
     required_terms: {
         "our product": "the Platform",
         "customers": "enterprise users"

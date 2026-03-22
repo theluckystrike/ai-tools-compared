@@ -242,7 +242,7 @@ GPT-4 generates clear, user-friendly Markdown documentation quickly.
 
 ```plaintext
 Prompt:
-Convert this FastAPI code into a comprehensive getting-started guide
+Convert this FastAPI code into a detailed getting-started guide
 for developers. Include authentication setup, example requests/responses,
 and common errors.
 

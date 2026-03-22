@@ -158,7 +158,7 @@ Beyond ad-hoc queries, you can automate alert context retrieval for common scena
 const alertTools = {
   tools: {
     get_alert_context: {
-      description: "Get comprehensive context for an alert including metrics, logs, and related incidents",
+      description: "Get complete context for an alert including metrics, logs, and related incidents",
       inputSchema: {
         type: "object",
         properties: {

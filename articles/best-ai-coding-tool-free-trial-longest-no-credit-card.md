@@ -26,7 +26,7 @@ This guide covers AI coding tools that offer the longest free trials without req
 ## What Makes a Free Trial Actually Useful
 
 
-Before diving into specific tools, let's establish what matters when evaluating free trials:
+Before exploring specific tools, let's establish what matters when evaluating free trials:
 
 
 - No credit card required: This eliminates accidental charges and removes hesitation about trying tools

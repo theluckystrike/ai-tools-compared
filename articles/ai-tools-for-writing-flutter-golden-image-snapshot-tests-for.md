@@ -132,7 +132,7 @@ While AI accelerates test creation, human oversight remains essential. Apply the
 Beyond basic widget rendering, AI tools can help you generate tests for complex interactions and edge cases. Consider a form widget with validation:
 
 ```dart
-// AI-generated comprehensive test for form widget
+// AI-generated full test for form widget
 testWidgets('Form widget validation golden tests', (WidgetTester tester) async {
   // Valid input state
   await tester.pumpWidget(const MaterialApp(
@@ -201,11 +201,11 @@ As your widget library grows, managing dozens of golden image tests becomes chal
 void main() {
   group('Widget Golden Tests', () {
     testWidgets('All button variants', (tester) async {
-      // Comprehensive button testing
+      // Thorough button testing
     });
 
     testWidgets('All form input types', (tester) async {
-      // Comprehensive form testing
+      // Detailed form testing
     });
 
     testWidgets('All navigation components', (tester) async {
@@ -256,7 +256,7 @@ void main() {
     const sizes = [
       Size(480, 800),   // Mobile
       Size(768, 1024),  // Tablet
-      Size(1280, 720),  // Landscape
+      Size(1280, 720),  // World
     ];
 
     for (final size in sizes) {
@@ -307,7 +307,7 @@ Future<void> validateGoldenFiles() async {
 
 ## Conclusion
 
-AI-powered tools significantly reduce the effort required to establish and maintain Flutter golden image snapshot tests. By generating test scaffolding, identifying coverage gaps, and assisting with API migrations, these tools let your team focus on widget quality rather than test administrative overhead. The key lies in combining AI efficiency with developer judgment to create comprehensive regression detection that protects your widget library's visual consistency.
+AI-powered tools significantly reduce the effort required to establish and maintain Flutter golden image snapshot tests. By generating test scaffolding, identifying coverage gaps, and assisting with API migrations, these tools let your team focus on widget quality rather than test administrative overhead. The key lies in combining AI efficiency with developer judgment to create detailed regression detection that protects your widget library's visual consistency.
 
 Implement AI-assisted golden image testing as part of your Flutter development workflow, and establish clear protocols for baseline management and test maintenance. Your widget library will benefit from thorough visual regression detection while your team maintains productive development velocity.
 

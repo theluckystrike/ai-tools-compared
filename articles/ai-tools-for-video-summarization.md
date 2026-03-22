@@ -27,7 +27,7 @@ The choice between approaches depends on your use case. If you need quick highli
 
 ## Tool Comparison: AI Video Summarization Options in 2026
 
-Before diving into implementation, here is how the leading tools compare across the dimensions that matter most for developer use cases:
+Before looking at implementation, here is how the leading tools compare across the dimensions that matter most for developer use cases:
 
 | Tool | Approach | Video Source Support | Output Format | Cost Model | Best For |
 |------|----------|---------------------|---------------|------------|----------|

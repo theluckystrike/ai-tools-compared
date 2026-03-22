@@ -3,7 +3,7 @@ layout: default
 title: "Cursor AI Multi File Editing Feature How It Actually Works"
 description: "A guide for developers on how Cursor AI's multi-file editing feature works. Learn the mechanics, practical examples, and best practices for editing multiple"
 date: 2026-03-16
-last_modified_at: 2026-03-16
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /cursor-ai-multi-file-editing-feature-how-it-actually-works-explained/
 categories: [guides]
@@ -16,9 +16,6 @@ voice-checked: true
 
 
 {% raw %}
-
-
-# Cursor AI Multi-File Editing Feature: How It Actually Works Explained
 
 
 Cursor AI has transformed how developers work with code by introducing intelligent multi-file editing capabilities. Unlike traditional code editors that require manual edits across multiple files, Cursor uses artificial intelligence to understand code relationships and make coordinated changes. This guide explains the mechanics behind this feature and provides practical strategies for developers and power users.

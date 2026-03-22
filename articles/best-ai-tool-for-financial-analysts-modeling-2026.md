@@ -129,7 +129,7 @@ The best tool for any given analyst depends on their specific workflow, technica
 
 ### Microsoft Copilot (Excel Integration)
 
-Deep integration with Excel and Microsoft 365. Generates formulas directly in spreadsheets, analyzes data, and suggests scenarios. Strength: seamless workflow within tools analysts already use daily. Cost: Included with Microsoft 365 subscriptions ($69-99/month). Best for analysts whose entire workflow centers on Excel.
+Deep integration with Excel and Microsoft 365. Generates formulas directly in spreadsheets, analyzes data, and suggests scenarios. Strength: smooth workflow within tools analysts already use daily. Cost: Included with Microsoft 365 subscriptions ($69-99/month). Best for analysts whose entire workflow centers on Excel.
 
 Weakness: Limited to Microsoft ecosystem. Cannot access external data sources or APIs. Formula suggestions sometimes lack explanation for complex financial constructs.
 
@@ -335,7 +335,7 @@ Analysts typically build integrated Income Statement, Balance Sheet, and Cash Fl
 
 ### Project Finance: LBO Model
 
-Leveraged Buyout models involve complex debt schedules, waterfall calculations, and IRR targeting. AI tools:
+Built on Buyout models involve complex debt schedules, waterfall calculations, and IRR targeting. AI tools:
 - Generate debt amortization schedules automatically
 - Calculate optimal debt structure for target returns
 - Model working capital impacts

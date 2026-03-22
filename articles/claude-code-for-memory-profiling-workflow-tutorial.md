@@ -32,7 +32,7 @@ The key advantage is that Claude Code understands both your codebase and common 
 ## Setting Up Your Memory Profiling Environment
 
 
-Before diving into memory profiling, ensure your environment is properly configured. You'll need Node.js installed along with the built-in memory profiling tools.
+Before examining memory profiling, ensure your environment is properly configured. You'll need Node.js installed along with the built-in memory profiling tools.
 
 
 Initialize a sample project with intentional memory issues to practice the profiling workflow:

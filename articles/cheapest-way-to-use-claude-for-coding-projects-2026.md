@@ -3,7 +3,7 @@ layout: default
 title: "Cheapest Way to Use Claude for Coding Projects 2026"
 description: "A practical guide to using Claude AI for coding while minimizing costs. Explore free tiers, API pricing, and cost-effective strategies for developers"
 date: 2026-03-16
-last_modified_at: 2026-03-16
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /cheapest-way-to-use-claude-for-coding-projects-2026/
 categories: [guides]
@@ -329,3 +329,4 @@ Policies vary widely. Some tools let you access your data for a grace period aft
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
+```

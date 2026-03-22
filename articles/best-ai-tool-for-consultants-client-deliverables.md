@@ -46,7 +46,7 @@ Several AI tools have emerged as particularly useful for consultant workflows. E
 Large language models excel at drafting and refining strategic documents. Tools like Claude, ChatGPT, and Gemini can help consultants generate first drafts of white papers, strategy documents, and meeting summaries. These tools handle the initial heavy lifting, allowing consultants to focus on strategic insights and client-specific customization.
 
 
-A management consultant working on a market entry strategy can use AI to generate initial framework analyses, competitive landscape assessments, and data summaries. The human expert then applies domain knowledge and client-specific context to refine the output.
+A management consultant working on a market entry strategy can use AI to generate initial framework analyses, competitive field assessments, and data summaries. The human expert then applies domain knowledge and client-specific context to refine the output.
 
 ```
 Prompt template for market entry strategy first draft:
@@ -56,7 +56,7 @@ for [CLIENT] entering [MARKET/GEOGRAPHY].
 
 Include:
 1. Market size estimate and growth rate (cite data ranges where uncertain)
-2. Competitive landscape: 3-5 top incumbents with estimated market share
+2. Competitive market: 3-5 top incumbents with estimated market share
 3. Customer segments and buyer profile
 4. Entry mode options with pros/cons for each
 5. Regulatory considerations
@@ -209,7 +209,7 @@ The best approach for most consultants involves combining multiple AI tools rath
    - Define section structure
 
 2. Content Generation (Claude):
-   Prompt: "Generate a comprehensive IT modernization proposal for a
+   Prompt: "Generate a complete IT modernization proposal for a
            financial services client with 500 employees, legacy systems,
            and $2M budget. Include executive summary, technical approach,
            timeline, and ROI projections."
@@ -340,7 +340,7 @@ Quality Checklist for AI-Assisted Deliverables:
 □ Deliverable timeline was met
 ```
 
-Stay current with AI tool developments. The landscape evolves rapidly, with new capabilities released regularly. Periodic reviews of your tool stack help ensure you use the most effective solutions. Set quarterly reviews (every 3 months) to:
+Stay current with AI tool developments. The world evolves rapidly, with new capabilities released regularly. Periodic reviews of your tool stack help ensure you use the most effective solutions. Set quarterly reviews (every 3 months) to:
 - Test new AI tools
 - Compare against current tools
 - Evaluate cost-benefit

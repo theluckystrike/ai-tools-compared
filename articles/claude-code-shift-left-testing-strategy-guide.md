@@ -121,7 +121,7 @@ def authenticate(username: str, password: str) -> dict:
 
 Developer prompts Claude Code:
 ```
-Generate comprehensive pytest tests for this authentication function.
+Generate full pytest tests for this authentication function.
 Cover valid login, invalid password, missing username, nonexistent user,
 and edge cases. Use mocking for database calls.
 ```

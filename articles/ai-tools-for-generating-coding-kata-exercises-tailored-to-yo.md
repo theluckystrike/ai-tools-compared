@@ -39,7 +39,7 @@ Modern AI coding kata tools use large language models trained on thousands of pr
 
 - Time constraints or complexity limits
 
-- Preferred paradigm (functional, object-oriented, procedural)
+- Preferred pattern (functional, object-oriented, procedural)
 
 
 The AI then generates an unique exercise that meets your criteria. Unlike static kata libraries, AI-created exercises can vary infinitely, ensuring you never run out of fresh challenges.

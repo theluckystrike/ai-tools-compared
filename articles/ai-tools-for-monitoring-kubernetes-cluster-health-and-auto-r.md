@@ -226,7 +226,7 @@ class KubernetesAIMonitor:
         self.client = anthropic.Anthropic()
 
     def get_cluster_status(self, namespace: str = "default") -> dict:
-        """Gather comprehensive cluster data."""
+        """Gather complete cluster data."""
         metrics = {
             "timestamp": datetime.now().isoformat(),
             "nodes": self._get_node_status(),

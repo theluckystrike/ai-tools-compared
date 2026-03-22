@@ -38,7 +38,7 @@ Softr combines with AI agents to generate functional helpdesk portals from simpl
 
 **Strengths:**
 - Fast prototyping with AI-generated interfaces
-- Seamless Airtable integration for data storage
+- Easy Airtable integration for data storage
 - Built-in user authentication
 - Customizable with JavaScript blocks
 

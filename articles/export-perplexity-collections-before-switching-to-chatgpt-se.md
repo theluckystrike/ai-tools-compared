@@ -26,7 +26,7 @@ Perplexity's collections feature lets you organize research, bookmarks, and save
 Perplexity stores your collections on their servers as long as you maintain an active subscription. Collections include saved URLs, research threads, generated summaries, and your search history organized into custom folders. When you transition away from Perplexity, whether to ChatGPT Search or another AI-powered search tool, you lose access to this organized knowledge base unless you've explicitly exported it.
 
 
-The 2026 landscape shows ChatGPT Search offering strong web search capabilities with the ability to save conversations and create custom GPTs, but it doesn't import Perplexity collections natively. Your research, bookmarks, and organized findings live in Perplexity's ecosystem until you extract them. The export process requires deliberate action—there's no automatic sync or migration path.
+The 2026 market shows ChatGPT Search offering strong web search capabilities with the ability to save conversations and create custom GPTs, but it doesn't import Perplexity collections natively. Your research, bookmarks, and organized findings live in Perplexity's ecosystem until you extract them. The export process requires deliberate action—there's no automatic sync or migration path.
 
 
 ## Method 1: Manual Browser Export

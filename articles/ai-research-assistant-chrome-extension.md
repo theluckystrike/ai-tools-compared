@@ -3,7 +3,7 @@ layout: default
 title: "AI Research Assistant Chrome Extension"
 description: "Learn how to build and use AI research assistant Chrome extensions for enhanced productivity. Practical examples, code snippets, and implementation"
 date: 2026-03-15
-last_modified_at: 2026-03-15
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /ai-research-assistant-chrome-extension/
 categories: [guides]
@@ -16,8 +16,6 @@ voice-checked: true
 
 
 {% raw %}
-
-# Building an AI Research Assistant Chrome Extension: A Developer's Guide
 
 
 Build an AI research assistant Chrome extension that extracts page content, integrates with language models (Claude, GPT, or Ollama), and maintains conversation history—this eliminates context switching and enables AI assistance directly within your research workflow. Browser extensions offer unique advantages over standalone applications by operating within your existing browsing context and providing access to AI assistance.

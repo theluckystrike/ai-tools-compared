@@ -41,7 +41,7 @@ For API request/response schemas:
 ```typescript
 import { z } from 'zod';
 
-// Request schema with comprehensive validation
+// Request schema with complete validation
 const CreateUserRequest = z.object({
   email: z.string()
     .email('Invalid email format')

@@ -85,7 +85,7 @@ Copilot understands context across repositories and integrates with the GitHub e
 
 ```go
 func TestUserService_CreateUser(t *testing.T) {
-    // Copilot suggests comprehensive test patterns
+    // Copilot suggests complete test patterns
     tests := []struct {
         name    string
         req     CreateUserRequest

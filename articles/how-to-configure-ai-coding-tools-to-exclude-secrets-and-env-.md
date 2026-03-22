@@ -33,7 +33,7 @@ Most AI coding platforms have policies against using customer code for training,
 ## The Risk in Concrete Terms
 
 
-Before diving into configuration, it helps to understand exactly what exposure looks like. AI coding tools typically index your workspace in one of three ways:
+Before exploring configuration, it helps to understand exactly what exposure looks like. AI coding tools typically index your workspace in one of three ways:
 
 - **Context window inclusion**: The tool reads nearby files and open tabs to generate relevant suggestions. If `.env` is open in your editor, its contents become part of the AI's context.
 - **Workspace indexing**: Some tools like Cursor index your entire project directory for semantic search. Any file not excluded is fair game.

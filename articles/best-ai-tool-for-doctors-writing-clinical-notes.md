@@ -342,7 +342,7 @@ As you implement AI documentation, develop internal expertise:
 - Train your EHR department on AI tool capabilities and limitations
 - Create documentation practices for your specific specialty
 - Build feedback loops with physicians for continuous improvement
-- Stay informed about new tools and capabilities (landscape changes monthly)
+- Stay informed about new tools and capabilities (field changes monthly)
 
 ## The Future of AI-Assisted Clinical Documentation
 

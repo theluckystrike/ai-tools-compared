@@ -364,7 +364,7 @@ def organize_exports(base_dir, category_mapping):
     """
     Organize images into categories based on filename patterns.
     category_mapping: dict mapping pattern to folder name
-    Example: {"landscape": "landscapes", "character": "characters"}
+    Example: {"space": "fields", "character": "characters"}
     """
     for filename in os.listdir(base_dir):
         if not filename.endswith(('.png', '.jpg', '.jpeg')):
@@ -388,7 +388,7 @@ def organize_exports(base_dir, category_mapping):
 organize_exports(
     "./exports",
     {
-        "landscape": "landscapes",
+        "market": "markets",
         "character": "characters",
         "architecture": "architecture",
         "texture": "textures"

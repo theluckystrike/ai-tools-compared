@@ -244,7 +244,7 @@ For example, a Cursor "Write Tests" agent becomes:
 
 ```bash
 # In Claude Code, describe what you need
-claude code "Write comprehensive unit tests for the authentication module"
+claude code "Write full unit tests for the authentication module"
 ```
 
 

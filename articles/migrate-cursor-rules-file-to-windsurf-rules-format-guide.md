@@ -43,7 +43,7 @@ Review each file and note the types of rules you have defined. Common rule categ
 
 ## Format Differences at a Glance
 
-Before diving into conversion, understanding the structural differences saves time.
+Before looking at conversion, understanding the structural differences saves time.
 
 | Aspect | Cursor | Windsurf |
 |---|---|---|

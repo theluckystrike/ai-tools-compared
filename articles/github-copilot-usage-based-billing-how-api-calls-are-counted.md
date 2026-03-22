@@ -231,7 +231,7 @@ def calculate_discount(price: float, discount_percent: float) -> float:
 Instead of asking Copilot to generate tests one at a time (5 requests = 2,000 tokens):
 
 ```python
-# Single comprehensive prompt
+# Single thorough prompt
 """
 Generate all unit tests for this function including:
 1. Valid input test

@@ -24,7 +24,7 @@ This guide shows you how to use AI coding assistants effectively while studying 
 ## What Consistent Hashing Solves
 
 
-Before diving into study methods, briefly understand why consistent hashing matters. In traditional hashing, when you add or remove servers from a pool, nearly all keys get remapped to different servers. This causes a massive cache invalidation storm.
+Before examining study methods, briefly understand why consistent hashing matters. In traditional hashing, when you add or remove servers from a pool, nearly all keys get remapped to different servers. This causes a massive cache invalidation storm.
 
 
 Consistent hashing minimizes the number of keys that need to be reassigned when servers join or leave. The core idea involves mapping both data keys and server nodes onto a hash ring. Each key then routes to the next server in clockwise order.

@@ -113,7 +113,7 @@ def calculate_price(items, tax_rate=0.0, currency='USD'):
 # - Refactor calculate_price to accept optional tax_rate (0-1.0 decimal)
 # - Add multi-currency support with convert_currency integration
 # - Implement banker's rounding to 2 decimal places for currency safety
-# - Add comprehensive docstring with arg types and descriptions
+# - Add complete docstring with arg types and descriptions
 # - Breaking change: price calculation now returns rounded float instead of raw sum
 ```
 

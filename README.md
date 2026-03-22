@@ -1,6 +1,6 @@
 # AI Tools Compared
 
-Comprehensive comparisons and guides for AI development tools.
+Thorough comparisons and guides for AI development tools.
 
 **Browse:** [theluckystrike.github.io/ai-tools-compared](https://theluckystrike.github.io/ai-tools-compared/)
 

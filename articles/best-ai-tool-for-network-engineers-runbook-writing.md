@@ -132,7 +132,7 @@ Example details for a VPN failover procedure:
 Prompt the AI with these details in a structured format:
 
 ```
-Create a comprehensive runbook for the following network procedure:
+Create a full runbook for the following network procedure:
 
 PROCEDURE: VPN Failover from Primary to Secondary IPSec Tunnel
 

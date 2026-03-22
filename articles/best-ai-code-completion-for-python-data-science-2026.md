@@ -76,7 +76,7 @@ df.groupby('product')['revenue'].sum().nlargest(5)
 
 - **Instant completion**: 2-3 second latency in VS Code and Jupyter
 - **Cheap**: $10/month for individuals, free for educational accounts
-- **GitHub integration**: Seamless if already using GitHub
+- **GitHub integration**: Smooth if already using GitHub
 - **Broad training**: Trained on public data science notebooks
 - **Cross-language**: Works for Python, SQL, R in same environment
 

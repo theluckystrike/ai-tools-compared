@@ -69,7 +69,7 @@ Casetext provides several integration options for organizations looking to incor
 
 ### Native Integrations
 
-The platform offers integrations with popular practice management systems, document management platforms, and legal billing software. These integrations allow seamless data flow between Casetext and other tools in the legal technology stack, reducing duplicate data entry and ensuring research materials are properly organized.
+The platform offers integrations with popular practice management systems, document management platforms, and legal billing software. These integrations allow simple data flow between Casetext and other tools in the legal technology stack, reducing duplicate data entry and ensuring research materials are properly organized.
 
 ### API Access
 
@@ -122,7 +122,7 @@ class CasetextClient:
 
         payload = {
             "document": document_text,
-            "analysis_type": "comprehensive"
+            "analysis_type": "full"
         }
 
         response = requests.post(
@@ -243,7 +243,7 @@ CoCounsel provides research assistance and analytical support, not strategic jud
 
 Experienced CoCounsel users build templates for common research questions in their practice area. A litigation firm might develop templates for authority analysis on specific legal theories, contract review templates for common transaction types, or regulatory research templates for compliance monitoring.
 
-## 2026 Competitive Landscape
+## 2026 Competitive Market
 
 In 2026, the legal research market has shifted considerably. Westlaw and LexisNexis have substantially improved their AI capabilities, making the competitive advantage narrower than it was in 2024. However, Casetext's AI-first philosophy and aggressive product development continue to differentiate it.
 

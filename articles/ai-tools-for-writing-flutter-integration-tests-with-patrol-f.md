@@ -131,7 +131,7 @@ AI-generated tests require human review. Verify that selectors are specific enou
 // Original AI-suggested (may need refinement)
 await $.tap($('Submit'));
 
-// More robust version with key
+// More strong version with key
 await $.tap(find.byKey(const Key('submit_button')));
 await $.pumpAndSettle();
 

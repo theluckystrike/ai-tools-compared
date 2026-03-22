@@ -240,7 +240,7 @@ content = generator.generate_regulatory_compliant_content(
 
 ## CLI Tools for Batch Processing
 
-For teams running regular healthcare content generation workflows, command-line tools streamline batch operations:
+For teams running regular healthcare content generation workflows, command-line tools speed up batch operations:
 
 ```bash
 # Using Claude API via curl for batch processing

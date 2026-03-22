@@ -31,7 +31,7 @@ When Cursor AI reads your `.cursorrules` file, it uses the information to contex
 ## Structuring Your Cursorrules File
 
 
-A well-organized `.cursorrules` file should follow a logical structure that makes it easy for the AI to parse and apply your preferences. Start with a brief project overview that describes your application type, tech stack, and primary use cases. This foundation helps the AI understand the general context before diving into specific conventions.
+A well-organized `.cursorrules` file should follow a logical structure that makes it easy for the AI to parse and apply your preferences. Start with a brief project overview that describes your application type, tech stack, and primary use cases. This foundation helps the AI understand the general context before looking at specific conventions.
 
 
 ```markdown

@@ -248,7 +248,7 @@ Based on penetration test findings, developers should implement these security p
 ## Looking Ahead
 
 
-The security landscape for AI coding tools continues to evolve rapidly. As penetration testing methodologies improve, researchers discover new vulnerability classes specific to AI-powered development environments.
+The security market for AI coding tools continues to evolve rapidly. As penetration testing methodologies improve, researchers discover new vulnerability classes specific to AI-powered development environments.
 
 
 Vendors are responding with enhanced security features, including:

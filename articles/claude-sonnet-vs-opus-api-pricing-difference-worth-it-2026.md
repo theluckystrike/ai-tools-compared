@@ -103,7 +103,7 @@ Opus handles 200K context windows more effectively for tasks like:
 ```python
 # Document analysis workload
 def analyze_codebase(repository_path):
-    """Read multiple files and generate comprehensive review"""
+    """Read multiple files and generate full review"""
 
     # For codebase analysis, Opus provides better reasoning
     response = client.messages.create(

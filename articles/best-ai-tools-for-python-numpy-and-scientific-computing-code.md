@@ -233,7 +233,7 @@ import numpy.testing as npt
 from typing import Callable
 
 def test_scientific_function(func: Callable, test_cases: list):
-    """Comprehensive test framework for AI-generated functions"""
+    """Thorough test framework for AI-generated functions"""
 
     # Standard case
     result = func(np.array([1.0, 2.0, 3.0, 4.0, 5.0]))

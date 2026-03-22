@@ -390,7 +390,7 @@ The most effective teams use both tools:
 2. Use Cursor to refine individual components and integrate with APIs
 3. Use Cursor for bug fixes and feature additions in established projects
 
-This hybrid approach captures Windsurf's prototyping speed while leveraging Cursor's precision for production code.
+This hybrid approach captures Windsurf's prototyping speed while applying Cursor's precision for production code.
 
 ---
 

@@ -21,7 +21,7 @@ Claude's free tier (5 messages daily) offers the best code quality per message; 
 ## What Makes an AI Coding Assistant Worth It for Freelancers
 
 
-Before diving into specific tools, it's worth understanding what matters most for freelance work. Speed matters when you're billing by the hour—any tool that saves time directly impacts your income. Code quality matters because poor code creates future maintenance headaches for you or your clients. Context awareness matters because you often switch between projects, and a tool that understands your codebase saves hours of explanation time.
+Before exploring specific tools, it's worth understanding what matters most for freelance work. Speed matters when you're billing by the hour—any tool that saves time directly impacts your income. Code quality matters because poor code creates future maintenance headaches for you or your clients. Context awareness matters because you often switch between projects, and a tool that understands your codebase saves hours of explanation time.
 
 The ideal budget AI coding assistant balances these factors without requiring a steep learning curve or expensive subscription.
 

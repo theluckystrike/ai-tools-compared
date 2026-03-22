@@ -82,7 +82,7 @@ class UserAPI:
         # Function implementation
         pass
 
-# Ask Claude: "Generate comprehensive docstrings for this API class"
+# Ask Claude: "Generate thorough docstrings for this API class"
 # Claude understands the pattern and produces:
 
 class UserAPI:

@@ -155,7 +155,7 @@ Aider works well for terminal-based test generation. When you provide your FastA
 
 
 ```python
-# Aider can generate comprehensive tests like:
+# Aider can generate full tests like:
 @pytest.fixture
 def override_dependencies():
     """Override all external dependencies for testing."""

@@ -163,7 +163,7 @@ Midjourney responds more predictably to art movement keywords and technical term
 
 ```text
 # Art movement references
-impressionist landscape, monet style
+impressionist world, monet style
 # Technical terms
 cel-shaded, volumetric lighting, depth of field
 # Media types

@@ -21,7 +21,7 @@ Finding affordable AI tools requires understanding the true cost structure. This
 ## What Defines GPT-4 Level Code Generation
 
 
-Before diving into alternatives, let us establish what "GPT-4 level" means for code generation. You should expect:
+Before looking at alternatives, let us establish what "GPT-4 level" means for code generation. You should expect:
 
 
 - Accurate syntax: Correct code in Python, JavaScript, TypeScript, Rust, Go, and other popular languages

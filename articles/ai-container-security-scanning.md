@@ -211,7 +211,7 @@ jobs:
       - name: Build image
         run: docker build -t myapp:${{ github.sha }} .
 
-      - name: Run comprehensive AI scan
+      - name: Run complete AI scan
         uses: anchore/scan-action@v3
         with:
           image: myapp:${{ github.sha }}

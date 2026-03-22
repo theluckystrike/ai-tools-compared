@@ -177,7 +177,7 @@ Here's how a typical red team plan generation session flows:
 Gather your materials in a single prompt:
 
 ```
-Generate a comprehensive red team engagement plan for this microservices architecture:
+Generate a thorough red team engagement plan for this microservices architecture:
 
 Architecture Overview:
 - API Gateway (Kong) at api.company.com, handles OAuth 2.0

@@ -3,7 +3,7 @@ layout: default
 title: "How to Create Custom Instructions for AI Tools to Generate"
 description: "A practical guide for developers and power users on configuring AI coding assistants to produce consistent, structured log output that matches your project's"
 date: 2026-03-16
-last_modified_at: 2026-03-16
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /how-to-create-custom-instructions-for-ai-tools-to-generate-y/
 categories: [guides]
@@ -16,8 +16,6 @@ voice-checked: true
 
 
 {% raw %}
-
-# How to Create Custom Instructions for AI Tools to Generate Your Preferred Log Format
 
 
 Log format consistency matters more than most developers realize. When every team member follows the same pattern, debugging becomes faster, log aggregation tools work better, and incident response improves significantly. AI coding assistants can enforce these standards automatically—but only when you teach them what you want.

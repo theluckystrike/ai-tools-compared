@@ -21,7 +21,7 @@ Conventional commits have become the standard for writing meaningful Git commit 
 
 ## The Conventional Commit Workflow
 
-Before diving into AI tools, let's establish the conventional commit foundation. The specification uses this format:
+Before looking at AI tools, let's establish the conventional commit foundation. The specification uses this format:
 
 ```
 <type>(<scope>): <subject>
@@ -64,7 +64,7 @@ Copilot examines your staged changes, understands the context, and generates mes
 
 ### 2. Ollama with Commit Analysis
 
-Ollama runs local LLMs that can analyze Git diffs and generate commit messages. This approach keeps your code private while leveraging AI.
+Ollama runs local LLMs that can analyze Git diffs and generate commit messages. This approach keeps your code private while using AI.
 
 **Setup:**
 ```bash

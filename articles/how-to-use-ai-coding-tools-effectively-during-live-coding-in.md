@@ -24,7 +24,7 @@ Live coding interviews have evolved significantly with the integration of AI cod
 ## Understanding the Interview Context
 
 
-Before diving into strategies, recognize that live coding interviews assess your problem-solving abilities, code quality, and communication skills. AI tools should augment your capabilities, not replace your core competencies. Most companies now explicitly state their policies on AI tool usage during interviews—always clarify this with your interviewer at the start.
+Before examining strategies, recognize that live coding interviews assess your problem-solving abilities, code quality, and communication skills. AI tools should augment your capabilities, not replace your core competencies. Most companies now explicitly state their policies on AI tool usage during interviews—always clarify this with your interviewer at the start.
 
 
 The primary benefits of using AI assistants during interviews include:

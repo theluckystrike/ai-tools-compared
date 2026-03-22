@@ -278,7 +278,7 @@ Most documentation sites support Mermaid or PlantUML. Ask your AI to help integr
 
 > "I use [Docusaurus/Next.js/Jekyll]. Show me how to embed these Mermaid diagrams directly in my markdown documentation with version control integration."
 
-AI provides platform-specific guidance for seamless integration with your existing doc infrastructure.
+AI provides platform-specific guidance for smooth integration with your existing doc infrastructure.
 
 
 

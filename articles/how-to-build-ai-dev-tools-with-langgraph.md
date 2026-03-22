@@ -299,7 +299,7 @@ def read_source(state: DocGenState) -> dict:
     with open(state['current_file']) as f:
         code = f.read()
     response = model.invoke([HumanMessage(
-        content=f"Generate comprehensive docstrings for all functions. "
+        content=f"Generate detailed docstrings for all functions. "
                 f"Include parameters, return types, and usage examples.\n\n{code}"
     )])
     return {'generated_docs': response.content}

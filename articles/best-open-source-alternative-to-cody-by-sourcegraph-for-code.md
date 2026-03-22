@@ -84,7 +84,7 @@ OpenCode delivers an AI coding assistant experience similar to Cursor or Cody, w
 **Strengths:**
 - Modern chat interface for code interactions
 - Multi-model support including open source LLMs
-- Seamless editor integrations
+- Simple editor integrations
 - Emphasis on privacy and local processing
 
 **Quick Start:**

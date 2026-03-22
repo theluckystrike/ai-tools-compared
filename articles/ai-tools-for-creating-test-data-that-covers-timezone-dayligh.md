@@ -205,7 +205,7 @@ For ongoing projects, you can create reusable AI-generated utilities that produc
 
 ```python
 class TimezoneTestDataGenerator:
-    """Generate comprehensive timezone test data."""
+    """Generate complete timezone test data."""
 
     def __init__(self, timezone_name: str):
         self.tz = ZoneInfo(timezone_name)

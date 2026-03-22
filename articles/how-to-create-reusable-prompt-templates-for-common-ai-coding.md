@@ -222,7 +222,7 @@ cat > prompts/test_generation.md << 'EOF'
 - Project: {{project_name}}
 
 ## Task
-Generate comprehensive unit tests for the following function:
+Generate complete unit tests for the following function:
 
 {{function_code}}
 
@@ -349,7 +349,7 @@ Generate basic {{framework}} service for:
 {{business_requirement}}
 
 # Step 2: Test Generation (triggered on Step 1 output)
-Generate comprehensive tests for the above code
+Generate detailed tests for the above code
 
 # Step 3: Documentation (triggered on Step 2 output)
 Generate API documentation for the above code

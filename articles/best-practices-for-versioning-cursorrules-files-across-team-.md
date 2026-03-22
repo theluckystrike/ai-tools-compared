@@ -3,7 +3,7 @@ layout: default
 title: "Best Practices for Versioning CursorRules Files Across Team"
 description: "A practical guide to managing .cursorrules files in Git. Learn how to version control Cursor rules across your development team with clear workflows"
 date: 2026-03-16
-last_modified_at: 2026-03-16
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /best-practices-for-versioning-cursorrules-files-across-team-/
 categories: [guides]
@@ -16,8 +16,6 @@ voice-checked: true
 
 
 {% raw %}
-
-# Best Practices for Versioning CursorRules Files Across Team Members in Git
 
 
 CursorRules files (`.cursorrules`) have become essential for customizing Cursor AI's behavior on a per-project basis. These files define how the AI assistant interacts with your codebase, including coding conventions, file preferences, and context handling. When working in a team environment, properly versioning these files through Git ensures everyone benefits from consistent AI assistance across all team members.

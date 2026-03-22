@@ -18,7 +18,7 @@ voice-checked: true
 Combining GitHub Copilot for autocomplete with Claude for complex multi-file reasoning creates a faster development workflow than either tool alone. This guide explains the specific workflow: use Copilot for boilerplate and quick suggestions, use Claude for architecture decisions and refactoring tasks.
 
 
-Building an effective AI-assisted development workflow requires understanding how different tools complement each other. GitHub Copilot excels at inline code suggestions and rapid iteration, while Claude brings deep reasoning, architectural thinking, and complex problem-solving capabilities. Combining these tools creates a powerful synergy that addresses the limitations of using either assistant alone.
+Building an effective AI-assisted development workflow requires understanding how different tools complement each other. GitHub Copilot excels at inline code suggestions and rapid iteration, while Claude brings deep reasoning, architectural thinking, and complex problem-solving capabilities. Combining these tools creates a powerful teamwork that addresses the limitations of using either assistant alone.
 
 
 ## Understanding Tool Strengths

@@ -280,7 +280,7 @@ def generate_postmortem_from_files(logs_file, metrics_file, slack_file):
 ### Team Discussion
 {slack[:2000]}
 
-Generate a comprehensive postmortem with:
+Generate a full postmortem with:
 1. Executive summary (2-3 sentences)
 2. Impact: affected services, user count, duration
 3. Timeline: at least 5 key events with timestamps

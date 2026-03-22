@@ -3,7 +3,7 @@ layout: default
 title: "Claude Projects Feature Which Plan Tier Includes It Explaine"
 description: "A guide to understanding which Claude AI subscription plan includes the Projects feature, with practical examples for developers"
 date: 2026-03-16
-last_modified_at: 2026-03-16
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /claude-projects-feature-which-plan-tier-includes-it-explaine/
 categories: [guides]
@@ -13,9 +13,6 @@ score: 9
 intent-checked: true
 voice-checked: true
 ---
-
-
-# Claude Projects Feature: Which Plan Tier Includes It Explained
 
 
 Claude Projects is available on the Pro, Team, and Enterprise plans -- it is not included in the free tier. The Pro plan is the most affordable path to Projects access, giving you persistent file uploads, custom instructions, and organized workspaces for multi-conversation context. Below is a full breakdown of plan tiers, practical use cases for developers, and a decision framework for choosing the right plan.
@@ -178,7 +175,7 @@ Create separate projects for separate concerns. A monorepo might have a project 
 
 **Step 5: Verify Context Loading**
 
-Start your first conversation with "summarize the key files in this project" to confirm Claude has loaded your uploads correctly before diving into complex work.
+Start your first conversation with "summarize the key files in this project" to confirm Claude has loaded your uploads correctly before exploring complex work.
 
 
 ```bash

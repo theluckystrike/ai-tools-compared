@@ -255,7 +255,7 @@ For teams, Cursor is more predictable. For individuals doing occasional work, Cl
 ### Cursor Composer Strengths
 1. **Real-time visual feedback**: See changes as they're generated
 2. **Granular approval**: Accept/reject changes file-by-file or line-by-line
-3. **Seamless editor integration**: No context switching
+3. **Simple editor integration**: No context switching
 4. **Fast iteration**: Speeds optimized for responsive UX
 5. **Team collaboration**: Built-in team workspaces
 
@@ -263,7 +263,7 @@ For teams, Cursor is more predictable. For individuals doing occasional work, Cl
 1. **Limited context depth**: Struggles with massive codebases
 2. **VSCode-only**: Can't use with other editors
 3. **Model flexibility limited**: Cursor uses Claude or GPT-4, less customization
-4. **Steeper learning curve**: New UI paradigm if coming from traditional VSCode
+4. **Steeper learning curve**: New UI model if coming from traditional VSCode
 
 ## Practical Workflow Examples
 

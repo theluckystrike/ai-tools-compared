@@ -167,7 +167,7 @@ Midjourney uses `--no` to exclude elements:
 
 
 ```text
-a forest landscape --no buildings, roads
+a forest field --no buildings, roads
 ```
 
 

@@ -285,7 +285,7 @@ accessibility_requirements:
   - Focus indicators 2px minimum
 
 ai_prompt: |
-  Generate comprehensive interaction state documentation.
+  Generate thorough interaction state documentation.
   Include: default, focus, hover, disabled, error, success states.
   Add accessibility requirements for screen readers.
   Format as developer-ready markdown.

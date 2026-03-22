@@ -213,7 +213,7 @@ Simple title-and-body matching misses some duplicates. A system compares multipl
 
 ```python
 def get_issue_vector(issue, model):
-    """Create a comprehensive vector representing an issue."""
+    """Create a thorough vector representing an issue."""
     # Weight different fields by importance
     title_weight = 0.5
     body_weight = 0.3
