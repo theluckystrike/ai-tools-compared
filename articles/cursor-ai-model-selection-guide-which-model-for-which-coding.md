@@ -31,6 +31,15 @@ voice-checked: true---
 
 This guide provides practical steps and best practices to help you accomplish this task effectively. Follow the recommendations to get the best results from your AI tools.
 
+## Key Takeaways
+
+- **Free users access basic**: models with limited context.
+- **Follow the recommendations to**: get the best results from your AI tools.
+- **Claude 3 Opus and**: GPT-4o handle these tasks better than smaller models.
+- **Pro users access all**: models including Claude 3 Opus and can set default models for different contexts.
+- **This guide provides practical**: steps and best practices to help you accomplish this task effectively.
+- **The model you choose**: affects how well Cursor understands your codebase, generates accurate code, explains existing implementations, and handles complex refactoring tasks.
+
 ## Understanding Cursor's Model Options
 
 Cursor provides several AI models accessible through its chat and autocomplete features. The primary models include Claude 3.5 Sonnet, GPT-4o, and Claude 3 Opus, with variations available depending on your subscription tier. Each model brings distinct strengths regarding speed, context understanding, code generation accuracy, and reasoning capabilities.

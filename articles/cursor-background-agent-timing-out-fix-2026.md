@@ -16,9 +16,16 @@ tags: [ai-tools-compared, troubleshooting]---
 
 {% raw %}
 
-
 Open Cursor Settings, search for "timeout," and increase `cursor.agent.timeout` from the default to 300000 (five minutes). If timeouts persist, create a `.cursorignore` file in your project root listing `node_modules/`, `dist/`, and other large directories to reduce context load. Update Cursor to the latest version and clear the cache (`~/Library/Application Support/Cursor/Cache` on macOS). These three fixes resolve most background agent timeout issues. Full diagnostic steps are below.
 
+## Key Takeaways
+
+- **Setting this to 3**: with a 5-second delay means the agent will try for up to 15 additional seconds before giving up, which covers most transient network blips without making the experience feel broken.
+- **Cache corruption most commonly**: occurs after Cursor crashes mid-session or after an abrupt system shutdown.
+- **These three fixes resolve**: most background agent timeout issues.
+- **Understanding the root cause**: helps you apply the right fix: - Network connectivity issues.
+- **Intermittent connections cause requests**: to fail.
+- **Older versions have bugs**: that cause premature timeouts.
 
 ## What Causes Cursor Background Agent Timeouts
 

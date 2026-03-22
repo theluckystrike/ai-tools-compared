@@ -31,6 +31,15 @@ voice-checked: true---
 
 To fix Cursor multi-file edits breaking your code, narrow your edit scope to only the files you need changed, chain edits sequentially (update definitions first, then call sites), and use the "Preview Changes" button to review proposed modifications before applying them. Run your test suite between each edit phase to catch errors early. For complex refactoring, include explicit dependency hints in your prompts so Cursor maintains consistency across interdependent files.
 
+## Key Takeaways
+
+- **Context window limitations cause**: Cursor to truncate or misinterpret file relationships.
+- **Use the `Ctrl/Cmd +**: Shift + P` command palette 3.
+- **Step 4**: Use Cursor's own chat to fix Cursor's mistakes. Paste your error output and ask Cursor to identify which of its edits caused the problem.
+- **Reopen only the files**: that need changing 3.
+- **Step 2**: Group errors by category. TypeScript errors group naturally by type: missing properties, incompatible signatures, undefined references.
+- **Could this problem be**: caused by a recent update? Yes, updates frequently introduce new bugs or change behavior.
+
 ## Common Causes of Multi-File Edit Failures
 
 Understanding why Cursor breaks code during multi-file edits helps you prevent issues and troubleshoot when they occur.
