@@ -8,7 +8,7 @@ permalink: /best-self-hosted-ai-model-for-javascript-typescript-code-gen/
 categories: [guides]
 tags: [ai-tools-compared, code-generation, javascript, typescript, self-hosted, best-of, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

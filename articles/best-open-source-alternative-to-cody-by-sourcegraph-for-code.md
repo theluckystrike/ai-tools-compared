@@ -9,7 +9,7 @@ permalink: /best-open-source-alternative-to-cody-by-sourcegraph-for-code/
 categories: [guides]
 tags: [ai-tools-compared, open-source, code-search, coding-assistant, best-of]
 reviewed: true
-score: 8
+score: 9
 intent-checked: false
 voice-checked: false
 ---

@@ -7,10 +7,10 @@ author: theluckystrike
 permalink: /best-self-hosted-ai-model-for-writing-sql-queries-from-natural-language/
 categories: [tutorials, guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
-tags: [self-hosted-ai, sql-generation, llm, natural-language-to-sql, ai-tools-compared, open-source-ai, local-ai]
+tags: [self-hosted-ai, sql-generation, llm, natural-language-to-sql, ai-tools-compared, open-source-ai, local-ai, best-of]
 ---
 ---
 layout: default
