@@ -339,6 +339,74 @@ async def enrich_docs():
     app.openapi_schema = enriched
 ```
 
+## Spring Boot: Extracting from Controllers
+
+Spring Boot's `@RestController` annotations contain more structured information than Express route handlers. Claude can parse the Java code and produce accurate specs:
+
+```python
+# spring_swagger_generator.py
+import os
+import re
+import anthropic
+
+def extract_spring_controllers(src_dir: str) -> list[str]:
+    """Find all @RestController classes and return their source."""
+    controllers = []
+    for root, _, files in os.walk(src_dir):
+        for f in files:
+            if not f.endswith('.java'):
+                continue
+            path = os.path.join(root, f)
+            content = open(path).read()
+            if '@RestController' in content or '@Controller' in content:
+                controllers.append(f"// {path}\n{content}")
+    return controllers
+
+def generate_spec_from_spring(controllers: list[str]) -> str:
+    client = anthropic.Anthropic()
+
+    combined = "\n\n".join(controllers)
+
+    message = client.messages.create(
+        model="claude-opus-4-6",
+        max_tokens=8096,
+        system="""You are an OpenAPI 3.1 spec generator for Spring Boot.
+Given @RestController source code:
+- Extract @RequestMapping, @GetMapping, @PostMapping etc. for paths
+- Parse @PathVariable, @RequestParam, @RequestBody annotations for parameters
+- Infer response schemas from return types and @ResponseStatus annotations
+- Extract validation constraints from @Valid, @NotNull, @Size etc.
+Return a complete OpenAPI 3.1 YAML spec only.""",
+        messages=[{
+            "role": "user",
+            "content": f"Generate OpenAPI spec from these Spring Boot controllers:\n\n{combined}"
+        }]
+    )
+    return message.content[0].text
+
+if __name__ == "__main__":
+    import sys
+    src = sys.argv[1] if len(sys.argv) > 1 else "./src/main/java"
+    controllers = extract_spring_controllers(src)
+    print(f"Found {len(controllers)} controller(s)")
+    spec = generate_spec_from_spring(controllers)
+    with open("openapi.yaml", "w") as f:
+        f.write(spec)
+    print("openapi.yaml written")
+```
+
+Claude handles Spring's annotation-heavy style well. It correctly maps `@PathVariable String id` to an OpenAPI path parameter and `@RequestBody @Valid CreateUserDto dto` to a required request body with schema derived from the DTO fields.
+
+## Comparing Claude vs GPT-4 for Spec Generation
+
+Both tools produce valid OpenAPI YAML, but they differ in two ways:
+
+**Schema completeness:** Claude tends to infer more response schemas from variable names and comments. If a route returns `{ id, email, createdAt }`, Claude creates a named schema `UserResponse` in `components/schemas`. GPT-4 sometimes inlines the schema directly in the path, which works but reduces reusability.
+
+**Error response handling:** Claude consistently generates 401, 403, 404, and 500 responses based on middleware patterns it sees in the code (`authenticate`, `authorize`, etc.). GPT-4 often only generates the happy-path 200/201 unless you explicitly ask for error responses in the prompt.
+
+**Prompt tip:** Add "Include all error response schemas (400, 401, 403, 404, 422, 500) and use $ref for reusable error schemas" to get GPT-4 closer to Claude's default output quality.
+
 ## CI Drift Detection
 
 ```yaml
@@ -359,6 +427,18 @@ jobs:
           python swagger_generator.py ./src/routes /tmp/generated-spec.yaml
           python compare_specs.py openapi.yaml /tmp/generated-spec.yaml
 ```
+
+The `compare_specs.py` script can use a simple YAML diff or send both specs to Claude with the prompt: "List all breaking changes between spec A and spec B. A breaking change is a removed path, removed parameter, or changed response schema that would break existing clients." This catches regressions that naive string diffs miss — like renaming a field or changing a parameter from optional to required.
+
+## Keeping Specs Current Over Time
+
+One-shot generation solves the bootstrap problem. The harder challenge is keeping the spec accurate as routes change. The most reliable pattern:
+
+1. **Store the spec in version control** — treat `openapi.yaml` like production code, not generated output
+2. **Generate a "shadow spec" in CI** — regenerate from current code on every PR
+3. **Diff and alert** — fail the build if the shadow spec has paths not in the committed spec, or if committed spec has paths not in the code
+
+This catches both directions of drift: code added without spec updates, and spec updates without corresponding code changes.
 
 ## Related Reading
 
