@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /ai-coding-assistants-for-go-testing-table-driven-tests-gener/
 categories: [guides, comparisons]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]---

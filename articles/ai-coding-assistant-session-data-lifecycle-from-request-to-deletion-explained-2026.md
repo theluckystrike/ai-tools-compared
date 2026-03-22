@@ -9,7 +9,7 @@ permalink: /ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-
 categories: [guides]
 tags: [ai-tools-compared, privacy, security, tools, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true---
 ---
