@@ -310,6 +310,30 @@ Individual repositories reference the preset with a single line:
 
 When your standards evolve, prompt an AI to update the shared preset and reason about backward compatibility. The AI can suggest a staged rollout where high-risk changes—like enabling automerge for major updates—are introduced with additional safeguards before applying organization-wide.
 
+**Drift detection**: Over time, individual repositories accumulate local overrides that diverge from the shared preset. A simple script can surface these differences for AI-assisted review:
+
+```bash
+# List repositories with local Renovate overrides beyond the shared extend
+for repo in $(gh repo list your-org --json name -q '.[].name'); do
+  config=$(gh api repos/your-org/$repo/contents/renovate.json \
+    --jq '.content' 2>/dev/null | base64 -d 2>/dev/null)
+  if [ -n "$config" ]; then
+    echo "$config" | python3 -c "
+import json, sys
+try:
+    c = json.load(sys.stdin)
+    keys = [k for k in c if k != 'extends']
+    if keys:
+        print('$repo:', keys)
+except:
+    pass
+" 2>/dev/null
+  fi
+done
+```
+
+Paste the output to an LLM and ask it to classify each override as intentional (project-specific requirements) or accidental drift that should be consolidated into the shared preset. This review process takes minutes with AI assistance versus hours of manual inspection across dozens of repositories.
+
 ## Related Articles
 
 - [AI Tools for Generating Dependency Update Pull Request](/ai-tools-for-generating-dependency-update-pull-request-descr/)

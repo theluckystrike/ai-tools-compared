@@ -424,4 +424,11 @@ Write-Host "Encoding verification complete."
 4. **Use configuration management** - store encoding settings in version control
 5. **Test regularly** - use the test scripts above monthly
 
+
+## Related Articles
+
+- [Claude Code Terminal Permission Denied](/claude-code-terminal-permission-denied-fix/)
+- [Does Claude Code Send Terminal Output to Anthropic Servers](/does-claude-code-send-terminal-output-to-anthropic-servers-p/)
+- [aider vs Claude Code: Terminal AI Coding Assistants Compared](/aider-vs-claude-code-terminal-ai-comparison/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

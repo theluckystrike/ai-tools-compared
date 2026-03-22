@@ -201,5 +201,12 @@ Consider these factors when selecting an alternative to Cody:
 
 4. **Model preferences**: Some tools lock you to specific models, while others offer flexibility to run any compatible LLM.
 
+
+## Related Articles
+
+- [Continue Dev Free vs Cody Free: Open Source AI Comparison](/continue-dev-free-vs-cody-free-open-source-ai-comparison/)
+- [Copilot Code Referencing Feature: How It Handles Open Source](/copilot-code-referencing-feature-how-it-handles-open-source-/)
+- [Fine Tune Open Source Code Models for Your Codebase](/fine-tune-open-source-code-models-for-your-codebase-2026/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

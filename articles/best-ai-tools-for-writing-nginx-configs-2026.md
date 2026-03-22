@@ -180,4 +180,11 @@ For teams without access to Cursor's Claude backend: Use Claude Opus directly, g
 
 Never blindly copy AI-generated configs to production. Read what the AI generated, understand why each directive exists, and remove what you don't need.
 
+
+## Related Articles
+
+- [AI Tools for Writing Nginx Configurations 2026](/ai-tools-for-writing-nginx-configurations-2026/)
+- [AI Coding Tools for Writing Chainguard Image Supply Chain](/ai-coding-tools-for-writing-chainguard-image-supply-chain-se/)
+- [AI Tools for Designers Writing Handoff Notes That Include](/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
