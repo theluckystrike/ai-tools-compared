@@ -225,8 +225,77 @@ Once you delete your ChatGPT account:
 The deletion process is irreversible, so completing your export beforehand is essential.
 
 
-## Alternatives to Account Deletion
+## Method 5: Browser Automation with Playwright
 
+If you have many shared links and want to capture the rendered page (including images and formatted code blocks), Playwright gives you full browser automation with screenshot support:
+
+```bash
+pip install playwright
+playwright install chromium
+```
+
+```python
+import asyncio
+from playwright.async_api import async_playwright
+import os
+
+async def export_with_playwright(urls: list[str], output_dir: str = "playwright_exports"):
+    os.makedirs(output_dir, exist_ok=True)
+    async with async_playwright() as p:
+        browser = await p.chromium.launch()
+        page = await browser.new_page()
+        for url in urls:
+            try:
+                await page.goto(url, wait_until="networkidle", timeout=30000)
+                # Save full-page screenshot
+                slug = url.rstrip("/").split("/")[-1]
+                await page.screenshot(
+                    path=os.path.join(output_dir, f"{slug}.png"),
+                    full_page=True
+                )
+                # Also save the page HTML
+                content = await page.content()
+                with open(os.path.join(output_dir, f"{slug}.html"), "w") as f:
+                    f.write(content)
+                print(f"Saved {slug}")
+            except Exception as e:
+                print(f"Failed {url}: {e}")
+        await browser.close()
+
+asyncio.run(export_with_playwright([
+    "https://chatgpt.com/share/your-link-id",
+]))
+```
+
+The screenshot approach preserves formatted code blocks, math rendering, and image attachments that plain text export misses. HTML snapshots also let you re-parse content later if your markdown conversion needs adjustment.
+
+## Method Comparison
+
+| Method | Setup Effort | Works for Many Links | Captures Code | Captures Images |
+|---|---|---|---|---|
+| Manual web interface | None | No (tedious) | Yes | Yes |
+| Data export + JSON | Low | Partial | Partial | No |
+| Python + html2text | Medium | Yes | Yes | No |
+| OpenAI API | Medium | Yes | Yes | No |
+| Playwright automation | High | Yes | Yes | Yes |
+
+**Recommendation**: For fewer than 10 links, use the manual method or data export. For 10-100 links, the Python + html2text approach is the sweet spot. For 100+ links or when you need pixel-perfect captures, Playwright is worth the setup time.
+
+## Before You Delete: Pre-Deletion Checklist
+
+Run through this checklist before submitting the account deletion request:
+
+1. **Download official data export** from Settings → Data Controls → Export Data and confirm the ZIP file contains your conversation history
+2. **List all shared links** from the Shared Links section in your account settings and record the URLs
+3. **Export shared link content** using one of the methods above
+4. **Cancel any active subscriptions** — ChatGPT Plus, Team, or Enterprise subscriptions should be canceled before deletion to avoid additional charges
+5. **Revoke API keys** if you have any in the developer dashboard — deleted accounts do not automatically invalidate keys in all third-party integrations
+6. **Check connected apps** under Settings → Security → Connected Applications and disconnect any OAuth integrations
+7. **Archive custom GPTs** you've built — these are deleted with your account and cannot be transferred
+
+After completing the export, wait 24-48 hours to confirm the download is complete before submitting the deletion request.
+
+## Alternatives to Account Deletion
 
 If you want to keep using AI tools but reduce your ChatGPT footprint:
 
