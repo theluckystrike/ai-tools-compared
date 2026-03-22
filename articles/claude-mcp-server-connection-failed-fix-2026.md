@@ -36,6 +36,32 @@ The Model Context Protocol (MCP) enables Claude to connect with external tools a
 - "MCP server not responding"
 
 
+## How MCP Connections Work Internally
+
+Understanding the connection lifecycle helps narrow down failures faster. When Claude Desktop or Claude Code starts, it reads the MCP server list from your configuration file and spawns each server as a child process (for `stdio` transport) or connects to it over a TCP socket (for `http` or `sse` transport). The most common setup — and the one most likely to silently fail — is `stdio` transport with `npx`.
+
+With `stdio` transport, Claude runs the server inline:
+
+```json
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/Users/you/projects"]
+    }
+  }
+}
+```
+
+If `npx` can't resolve the package, the process exits immediately and Claude reports a connection failure. This is different from a network failure, but the error message looks the same. The first diagnostic step is always to run the command manually in a terminal to see the raw error.
+
+```bash
+npx -y @modelcontextprotocol/server-filesystem /Users/you/projects
+```
+
+If that fails, the fix is a package issue, not a Claude configuration issue.
+
+
 ## Common Causes of Connection Failures
 
 
@@ -315,6 +341,31 @@ export PATH=~/.npm-global/bin:$PATH
 # Fix node modules ownership
 sudo chown -R $(whoami) ~/.npm
 ```
+
+
+## MCP Server-Specific Failures and Fixes
+
+Some MCP servers have quirks that generic troubleshooting misses.
+
+**filesystem server** — The most common failure is a path that doesn't exist or that Claude lacks read permission on. Verify the allowed directory exists and is readable:
+
+```bash
+ls -la /path/to/allowed-directory
+```
+
+If you see "Permission denied," fix it with `chmod 755` or run Claude with a user that has access.
+
+**puppeteer / playwright servers** — These require a browser binary. The server crashes silently if Chromium is missing:
+
+```bash
+npx puppeteer browsers install chrome
+```
+
+**postgres server** — Connection strings with special characters in passwords must be URL-encoded. A `@` in a password breaks the connection string parser. Use `%40` instead.
+
+**github server** — Tokens need the correct OAuth scopes. A personal access token missing `repo` scope causes a 403 that looks like a connection failure. Regenerate the token with the correct scopes.
+
+**brave-search server** — Requires `BRAVE_API_KEY` as an environment variable, not an arg. If the variable is missing, the server exits immediately. Set it in your shell profile before launching Claude Desktop.
 
 
 ## Diagnostic Checklist
