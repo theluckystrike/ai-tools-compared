@@ -9,7 +9,7 @@ categories: [tutorials]
 voice-checked: true
 tags: [ai-tools-compared, microservices, documentation, architecture, dependencies, service-mesh, best-of, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 ---
 
 
