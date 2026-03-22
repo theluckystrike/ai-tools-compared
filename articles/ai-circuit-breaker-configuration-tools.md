@@ -266,6 +266,146 @@ Claude's tuning recommendations:
 3. Increase `minimumNumberOfCalls` from default 5 to 15 — avoid trips on startup or low-traffic periods
 4. Add `slowCallDurationThreshold=1500ms` + `slowCallRateThreshold=50` — catch degradation separately from errors
 
+## Adding Hystrix Legacy Config (Migration Path)
+
+Many older Spring Boot services still use Netflix Hystrix, which is no longer actively maintained. AI tools help you both configure existing Hystrix and plan the migration to Resilience4j.
+
+**Prompt:** "Generate Hystrix configuration for my UserService → AuthService call. AuthService p99 is 400ms. Then show me the equivalent Resilience4j config for when we migrate."
+
+**Claude's Hystrix config (for legacy services):**
+
+```yaml
+# application.yml — Hystrix (legacy)
+hystrix:
+  command:
+    auth-service:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 800       # 2x p99
+      circuitBreaker:
+        requestVolumeThreshold: 20           # Minimum calls to evaluate
+        sleepWindowInMilliseconds: 30000     # Stay open 30s
+        errorThresholdPercentage: 25         # Open at 25% errors
+      metrics:
+        rollingStats:
+          timeInMilliseconds: 10000          # Evaluate over 10s window
+          numBuckets: 10
+```
+
+**Claude's equivalent Resilience4j migration target:**
+
+```yaml
+# application.yml — Resilience4j equivalent
+resilience4j:
+  circuitbreaker:
+    instances:
+      auth-service:
+        sliding-window-type: TIME_BASED
+        sliding-window-size: 10              # 10-second window (matches Hystrix rollingStats)
+        failure-rate-threshold: 25
+        minimum-number-of-calls: 20
+        wait-duration-in-open-state: 30s
+        slow-call-duration-threshold: 800ms
+        slow-call-rate-threshold: 50
+        automatic-transition-from-open-to-half-open-enabled: true
+```
+
+This side-by-side mapping is something Claude generates reliably. GPT-4 can do it too, but sometimes translates `rollingStats.timeInMilliseconds` incorrectly as a count-based window rather than a time-based one.
+
+## Using AI for Fallback Strategy Design
+
+The fallback is as important as the circuit breaker itself. A circuit breaker without a graceful fallback just converts remote failures into local exceptions. Claude is particularly good at generating fallback implementations when you describe your business constraints.
+
+**Prompt:**
+
+```
+My SearchService calls an external recommendations API. When the circuit is open,
+I need a fallback. Constraints:
+- We have a local Redis cache of last-known recommendations (TTL 1 hour)
+- If cache is empty, return top-10 static product IDs from a config list
+- Log which fallback was used for observability
+Generate the fallback implementation in Java with Resilience4j.
+```
+
+**Claude's output:**
+
+```java
+@Service
+@Slf4j
+@RequiredArgsConstructor
+public class RecommendationService {
+
+    private final RecommendationsApiClient apiClient;
+    private final RedisTemplate<String, List<String>> redisTemplate;
+    private final RecommendationProperties properties;
+    private final MeterRegistry meterRegistry;
+
+    @CircuitBreaker(name = "recommendations-api", fallbackMethod = "getRecommendationsFallback")
+    public List<String> getRecommendations(String userId) {
+        return apiClient.fetchRecommendations(userId);
+    }
+
+    private List<String> getRecommendationsFallback(String userId, Throwable ex) {
+        // Try Redis cache first
+        String cacheKey = "recs:" + userId;
+        List<String> cached = redisTemplate.opsForValue().get(cacheKey);
+
+        if (cached != null && !cached.isEmpty()) {
+            log.info("recommendations fallback: using Redis cache for user={}", userId);
+            meterRegistry.counter("recommendations.fallback", "source", "cache").increment();
+            return cached;
+        }
+
+        // Fall back to static defaults
+        log.warn("recommendations fallback: Redis miss, using static defaults for user={}", userId);
+        meterRegistry.counter("recommendations.fallback", "source", "static").increment();
+        return properties.getDefaultProductIds();
+    }
+}
+```
+
+This pattern — tiered fallback with observability counters — is exactly what production systems need, and Claude generates it from a plain-English description.
+
+## Observability: Exposing Circuit Breaker Metrics
+
+Circuit breakers are only useful if you can monitor their state. Claude generates Prometheus/Grafana integration automatically:
+
+```yaml
+# application.yml — expose Resilience4j metrics via Actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,prometheus,circuitbreakers
+  health:
+    circuitbreakers:
+      enabled: true
+  metrics:
+    tags:
+      application: ${spring.application.name}
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      payment-service:
+        register-health-indicator: true
+        event-consumer-buffer-size: 10
+```
+
+Ask Claude for a Grafana dashboard query and it generates PromQL like:
+
+```promql
+# Circuit breaker state (0=CLOSED, 1=OPEN, 2=HALF_OPEN)
+resilience4j_circuitbreaker_state{application="order-service", name="payment-service"}
+
+# Failure rate over time
+resilience4j_circuitbreaker_failure_rate{name="payment-service"}
+
+# Call rate through the circuit breaker
+rate(resilience4j_circuitbreaker_calls_total{name="payment-service"}[5m])
+```
+
 ## Related Reading
 
 - [Claude vs Copilot for Java Spring Boot Microservices](/ai-tools-compared/claude-vs-copilot-java-spring-boot/)
