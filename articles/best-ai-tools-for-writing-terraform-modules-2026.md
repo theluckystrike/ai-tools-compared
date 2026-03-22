@@ -252,6 +252,128 @@ output "target_group_arn" {
 }
 ```
 
+## Cursor AI — Best for Inline Multi-File Editing
+
+Cursor is an AI-native code editor built on VS Code that understands your entire infrastructure codebase, not just the current file.
+
+**Pricing:** Hobby tier free; Pro at $20/month per user.
+
+**Strengths:**
+- Understands cross-file variable references and module composition
+- Composer mode generates changes across multiple `.tf` files simultaneously
+- Excellent at refactoring existing modules to add new variables or outputs
+- Can read your existing modules and generate new ones that follow the same style
+
+**Real Example Output — Multi-file Module Update:**
+
+When you ask Cursor to "add a WAF association to this ALB module," it edits `main.tf`, `variables.tf`, and `outputs.tf` in a single operation, adding the `enable_waf` boolean variable with conditional validation, the `aws_wafv2_web_acl_association` resource block, and the corresponding output — without leaving the editor.
+
+**Best For:** Teams already using VS Code, developers working across large module repositories.
+
+## Amazon CodeWhisperer — Best for AWS-Native Patterns
+
+AWS CodeWhisperer (now part of Amazon Q Developer) is trained specifically on AWS service documentation and generates idiomatic AWS-provider Terraform.
+
+**Pricing:** Individual tier free; Professional at $19/user/month.
+
+**Strengths:**
+- Deep knowledge of AWS-specific resource arguments and defaults
+- Generates IAM policies and resource policies with minimal hallucination
+- Excellent at service-linked role and resource policy patterns
+- Integrated with AWS Console and popular IDEs
+
+**Real Example Output — IAM Policy for S3:**
+
+```hcl
+data "aws_iam_policy_document" "s3_access" {
+  statement {
+    sid    = "AllowS3ReadWrite"
+    effect = "Allow"
+
+    actions = [
+      "s3:GetObject",
+      "s3:PutObject",
+      "s3:DeleteObject",
+      "s3:ListBucket"
+    ]
+
+    resources = [
+      aws_s3_bucket.main.arn,
+      "${aws_s3_bucket.main.arn}/*"
+    ]
+
+    condition {
+      test     = "StringEquals"
+      variable = "s3:prefix"
+      values   = [var.s3_key_prefix]
+    }
+  }
+}
+
+resource "aws_iam_policy" "s3_access" {
+  name   = "${var.app_name}-s3-access-${var.environment}"
+  policy = data.aws_iam_policy_document.s3_access.json
+}
+```
+
+**Best For:** AWS-focused teams, shops running large AWS footprints.
+
+## Prompt Engineering for Better Terraform Output
+
+The quality of AI-generated Terraform depends heavily on prompt structure. Use this pattern for consistent results across all tools:
+
+```
+Generate a Terraform module for [resource type] with:
+- Provider: [aws/azurerm/google]
+- Variables: [list required inputs with types]
+- Features: [specific requirements]
+- Validation: [constraints on inputs]
+- Outputs: [what the module should expose]
+- Environment support: [dev/staging/prod toggles if needed]
+Follow Terraform best practices with locals for computed values.
+```
+
+This prompt format reduces back-and-forth iterations by 60–70% across all tested tools because it front-loads the decisions the AI would otherwise ask about one by one.
+
+## State Management and Remote Backends
+
+AI tools generate solid `backend` configuration blocks when prompted. Claude handles multi-workspace patterns especially well:
+
+```hcl
+terraform {
+  required_version = ">= 1.5.0"
+
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+  }
+
+  backend "s3" {
+    bucket         = "company-terraform-state"
+    key            = "modules/vpc/terraform.tfstate"
+    region         = "us-east-1"
+    encrypt        = true
+    dynamodb_table = "terraform-state-lock"
+  }
+}
+```
+
+GPT-4 and Copilot generate correct backend blocks but often miss the `dynamodb_table` locking argument without explicit prompting.
+
+## Tool Comparison: Full Stack Support
+
+| Feature | Claude | GPT-4 | Copilot | Cursor | CodeWhisperer |
+|---------|--------|-------|---------|--------|---------------|
+| Complex logic | Excellent | Good | Fair | Good | Fair |
+| AWS-specific | Excellent | Excellent | Good | Good | Excellent |
+| Azure/GCP | Excellent | Good | Fair | Fair | Poor |
+| Multi-file edits | Good | Poor | Fair | Excellent | Fair |
+| IDE integration | API only | API only | Native | Native | Native |
+| Price/month | API usage | API usage | $10/user | $20/user | $19/user |
+| Validation rules | Advanced | Good | Basic | Good | Basic |
+
 ## Cost Comparison for High-Volume Use
 
 For teams generating 50+ modules monthly:
@@ -259,29 +381,41 @@ For teams generating 50+ modules monthly:
 - **Claude:** $750–$1,200/month (input-heavy, longer prompts)
 - **GPT-4:** $500–$800/month (faster generation)
 - **Copilot:** $100–$1,000/month (100–1,000 users)
+- **Cursor:** $2,000/month (100 users)
+- **CodeWhisperer:** $1,900/month (100 users)
 
-Claude provides the best ROI on complex infrastructure; Copilot wins for per-user cost at scale.
+Claude provides the best ROI on complex infrastructure; Copilot wins for per-user cost at scale. For AWS-only teams, CodeWhisperer's free individual tier combined with Claude for complex modules offers an effective zero-cost starting point.
 
 ## Testing AI-Generated Modules
 
-Always validate generated code:
+Always validate generated code. Add `terraform-docs` and `tflint` to your review process:
 
 ```bash
+# Basic Terraform validation
 terraform init
 terraform validate
 terraform plan -out=tfplan
 terraform show tfplan
+
+# Linting for style and best practices
+tflint --recursive
+
+# Auto-generate module documentation
+terraform-docs markdown table . > README.md
 ```
 
-Claude and GPT-4 outputs typically pass validation on first run; Copilot suggestions require more manual verification.
+Claude and GPT-4 outputs typically pass `terraform validate` on first run. Copilot suggestions require more manual verification. All tools benefit from running `tflint` before committing, as it catches deprecated arguments and provider-specific anti-patterns the AI may use.
+
+For integration testing of critical modules, Terratest provides automated apply-and-verify cycles that catch runtime errors the static tools miss.
 
 ## Recommendations
 
-- **Enterprise teams with complex infrastructure:** Claude
+- **Enterprise teams with complex infrastructure:** Claude for design, Cursor for multi-file implementation
+- **AWS-focused shops:** CodeWhisperer (free) + Claude for complex modules
 - **Fast-moving startups:** GPT-4 + Copilot
 - **Individual developers:** Copilot for IDE integration, Claude for complex tasks
 
-The best approach combines tools — use Claude for architectural decisions, Copilot for iterative development, and GPT-4 for rapid prototyping.
+The best approach combines tools — use Claude for architectural decisions and complex logic, Cursor for multi-file module development, Copilot for iterative daily coding, and GPT-4 for rapid prototyping of new patterns.
 
 ## Related Articles
 
