@@ -15,6 +15,104 @@ tags: [ai-tools-compared, artificial-intelligence]
 ---
 
 
+## The iframe Testing Challenge
+
+Playwright can interact with iframe content, but cross-origin iframes impose restrictions: you cannot access a cross-origin iframe's DOM via `frameLocator` in the same way as same-origin content, and some interactions require working around Content Security Policy or `sandbox` attributes.
+
+AI tools are useful here for generating the correct Playwright API patterns — the distinction between `page.frame()`, `page.frameLocator()`, and `frame.childFrames()` trips up most developers, and Claude in particular reliably produces the right approach.
+
+---
+
+## Approach 1: Same-Origin iframes with frameLocator
+
+For iframes serving content from your own domain, `frameLocator` is the simplest approach:
+
+```typescript
+import { test, expect } from '@playwright/test';
+
+test('should interact with embedded checkout iframe', async ({ page }) => {
+  await page.goto('https://yourapp.com/product/123');
+
+  // Wait for the iframe to be present and loaded
+  const frame = page.frameLocator('#checkout-iframe');
+
+  // Interact with content inside the iframe as if it were the main page
+  await frame.getByLabel('Card number').fill('4242424242424242');
+  await frame.getByLabel('Expiry date').fill('12/28');
+  await frame.getByLabel('CVC').fill('123');
+  await frame.getByRole('button', { name: 'Pay now' }).click();
+
+  // Verify the result on the parent page (after iframe redirects)
+  await expect(page.getByText('Payment successful')).toBeVisible({ timeout: 10_000 });
+});
+```
+
+---
+
+## Approach 2: Cross-Origin iframes (Stripe, YouTube, Maps)
+
+Cross-origin iframes are sandboxed by the browser. Playwright can locate and click elements within them, but cannot read their internal DOM state from the parent context.
+
+```typescript
+test('should verify Stripe payment iframe loads and accepts input', async ({ page }) => {
+  await page.goto('https://yourapp.com/checkout');
+
+  // Stripe embeds a cross-origin iframe for card input
+  // Use the iframe's name or data attribute to locate it
+  const stripeFrame = page.frameLocator('iframe[name="__privateStripeFrame"]');
+
+  // Playwright CAN interact with inputs inside cross-origin iframes
+  await stripeFrame.locator('[data-elements-stable-field-name="cardNumber"]')
+    .fill('4242 4242 4242 4242');
+
+  await stripeFrame.locator('[data-elements-stable-field-name="cardExpiry"]')
+    .fill('12 / 28');
+
+  await stripeFrame.locator('[data-elements-stable-field-name="cardCvc"]')
+    .fill('123');
+
+  await page.getByRole('button', { name: 'Subscribe' }).click();
+  await expect(page.getByTestId('success-message')).toBeVisible({ timeout: 15_000 });
+});
+```
+
+---
+
+## Approach 3: Waiting for Dynamic iframe Content
+
+Some iframes load content asynchronously after the parent page. Use `waitForSelector` within the frame context:
+
+```typescript
+test('should wait for dynamically loaded map iframe', async ({ page }) => {
+  await page.goto('https://yourapp.com/locations');
+
+  // Wait for the iframe element to appear in the DOM
+  await page.waitForSelector('iframe[title="Map"]');
+  const mapFrame = page.frameLocator('iframe[title="Map"]');
+
+  // Wait for specific content to load inside the iframe
+  await mapFrame.locator('.gm-style').waitFor({ timeout: 10_000 });
+
+  // Verify the map rendered
+  await expect(mapFrame.locator('[aria-label="Map"]')).toBeVisible();
+});
+
+test('should handle iframe with lazy loading', async ({ page }) => {
+  await page.goto('https://yourapp.com/embed');
+
+  // Some iframes only initialize when scrolled into view
+  const iframeContainer = page.locator('#embedded-widget');
+  await iframeContainer.scrollIntoViewIfNeeded();
+
+  const frame = page.frameLocator('#embedded-widget iframe');
+  await frame.locator('.widget-loaded').waitFor({ timeout: 8_000 });
+
+  await expect(frame.getByRole('button', { name: 'Get Quote' })).toBeEnabled();
+});
+```
+
+---
+
 ## Troubleshooting
 
 **Configuration changes not taking effect**
