@@ -226,6 +226,199 @@ Review generated constraints carefully. Verify that the constraint interface inc
 
 Understand that AI assistants may not always choose optimal constraint definitions. Custom constraints require domain knowledge about what operations are actually needed. The generated code serves as a starting point that requires developer validation.
 
+## Real-World: Building a Generic Tree Data Structure
+
+Request:
+```text
+Write a generic binary search tree in Go using type parameters.
+The tree should support any comparable type (int, string, custom structs with comparison).
+Include Insert, Search, and Delete methods.
+Use an interface-based constraint for comparison support.
+```
+
+Claude produces:
+```go
+package tree
+
+import "cmp"
+
+// Comparable interface for tree comparison
+type Comparable interface {
+    ~int | ~int64 | ~float64 | ~string
+}
+
+type Node[T Comparable] struct {
+    value T
+    left  *Node[T]
+    right *Node[T]
+}
+
+type BinarySearchTree[T Comparable] struct {
+    root *Node[T]
+}
+
+func (bst *BinarySearchTree[T]) Insert(value T) {
+    bst.root = bst.insertNode(bst.root, value)
+}
+
+func (bst *BinarySearchTree[T]) insertNode(node *Node[T], value T) *Node[T] {
+    if node == nil {
+        return &Node[T]{value: value}
+    }
+
+    if value < node.value {
+        node.left = bst.insertNode(node.left, value)
+    } else if value > node.value {
+        node.right = bst.insertNode(node.right, value)
+    }
+
+    return node
+}
+
+func (bst *BinarySearchTree[T]) Search(target T) bool {
+    return bst.searchNode(bst.root, target)
+}
+
+func (bst *BinarySearchTree[T]) searchNode(node *Node[T], target T) bool {
+    if node == nil {
+        return false
+    }
+
+    if target == node.value {
+        return true
+    } else if target < node.value {
+        return bst.searchNode(node.left, target)
+    } else {
+        return bst.searchNode(node.right, target)
+    }
+}
+```
+
+This is excellent. Claude correctly:
+- Uses `~` in the constraint to allow both base types and named types (e.g., `type MyInt int` works)
+- Uses `<` and `>` operators which work for the specified constraint
+- Implements proper BST insertion and search logic
+- Names receiver variables idiomatically (`bst` for the tree)
+
+The `cmp` import is unnecessary but shows Claude understands Go 1.22's comparison packages.
+
+## Error Handling with Generic Types
+
+Request:
+```text
+Write a generic Result type that wraps either a value or an error.
+Include methods: IsOk(), IsErr(), Unwrap(), UnwrapOr(defaultValue).
+```
+
+Claude produces:
+```go
+type Result[T any] struct {
+    value T
+    err   error
+    ok    bool
+}
+
+func Ok[T any](value T) Result[T] {
+    return Result[T]{value: value, ok: true}
+}
+
+func Err[T any](err error) Result[T] {
+    return Result[T]{err: err, ok: false}
+}
+
+func (r Result[T]) IsOk() bool {
+    return r.ok
+}
+
+func (r Result[T]) IsErr() bool {
+    return !r.ok
+}
+
+func (r Result[T]) Unwrap() (T, error) {
+    if r.ok {
+        return r.value, nil
+    }
+    return *new(T), r.err  // Return zero value on error
+}
+
+func (r Result[T]) UnwrapOr(defaultValue T) T {
+    if r.ok {
+        return r.value
+    }
+    return defaultValue
+}
+```
+
+This pattern is correct for Go. The `*new(T)` idiom returns the zero value of type T, which Claude demonstrates correctly. Some teams prefer returning a bool instead:
+
+```go
+func (r Result[T]) Unwrap() (T, bool) {
+    return r.value, r.ok
+}
+```
+
+Ask Claude if you prefer the bool-returning variant.
+
+## Type Parameter Inference Limitations
+
+Request:
+```text
+Can Go's type inference deduce type parameters from function arguments?
+Give an example where it works and where it fails.
+```
+
+Claude explains:
+```go
+// Type inference works
+result := Ok(42)  // Infers T = int
+
+// Type inference fails (ambiguous)
+emptyResult := Err[int](fmt.Errorf("oops"))  // Must specify [int]
+
+// Type inference from context
+var r Result[string] = Ok("hello")  // T inferred from context
+```
+
+Go's type inference is limited compared to other languages. Claude usually understands this and suggests explicit type parameters when inference might fail, which is the safe approach.
+
+## Common Patterns: Map and Filter
+
+Request:
+```text
+Write generic Map and Filter functions that work with slices of any type.
+Include type constraints where needed.
+```
+
+Claude produces:
+```go
+// Map transforms a slice of T to a slice of U
+func Map[T any, U any](slice []T, fn func(T) U) []U {
+    result := make([]U, len(slice))
+    for i, item := range slice {
+        result[i] = fn(item)
+    }
+    return result
+}
+
+// Filter keeps only elements where predicate returns true
+func Filter[T any](slice []T, predicate func(T) bool) []T {
+    result := []T{}
+    for _, item := range slice {
+        if predicate(item) {
+            result = append(result, item)
+        }
+    }
+    return result
+}
+
+// Usage
+numbers := []int{1, 2, 3, 4, 5}
+doubled := Map(numbers, func(n int) int { return n * 2 })
+evens := Filter(numbers, func(n int) bool { return n%2 == 0 })
+```
+
+This is idiomatic Go. One minor optimization: Filter could pre-allocate if the expected filtered size is known, but the simple append-based approach is safer and clearer.
+
 ## Frequently Asked Questions
 
 **Who is this article written for?**

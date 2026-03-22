@@ -337,6 +337,163 @@ Keep these one-liners ready for mid-session corrections:
 - **Store instead of runes**: "This is a Svelte 5 project — use a `.svelte.ts` module with `$state`, not a writable store"
 
 Pasting these corrections directly into the chat is faster than re-explaining the Svelte 5 migration context, and Claude applies the correction cleanly without needing a full restart.
+## Advanced: Reactive State with Nested Objects
+
+Claude handles complex nested state correctly when you guide it:
+
+**Prompt:**
+```text
+Create a Svelte 5 component for managing a nested user profile object with name, email, and preferences (theme, notifications).
+Use $state and $derived to keep a dirty flag that tracks if any field has been modified.
+The component should have Save and Cancel buttons.
+```
+
+**Claude output:**
+```svelte
+<script lang="ts">
+  const {
+    user,
+    onSave,
+  } = $props<{
+    user: User;
+    onSave: (user: User) => Promise<void>;
+  }>();
+
+  let draft = $state.snapshot(user);
+
+  const isDirty = $derived(JSON.stringify(draft) !== JSON.stringify(user));
+
+  function handleChange(field: keyof User, value: any) {
+    draft[field] = value;
+  }
+
+  async function save() {
+    await onSave(draft);
+  }
+
+  function cancel() {
+    draft = $state.snapshot(user);
+  }
+</script>
+
+<div class="form">
+  <input
+    type="text"
+    value={draft.name}
+    onchange={(e) => handleChange('name', e.currentTarget.value)}
+  />
+
+  <button onclick={save} disabled={!isDirty}>Save</button>
+  <button onclick={cancel}>Cancel</button>
+</div>
+```
+
+This uses `$state.snapshot()` to create a shallow copy for the draft — correct but worth understanding. Deep nested object mutations won't trigger reactivity without reassignment at each level.
+
+## Form Validation Patterns
+
+Ask Claude for schema-based form validation:
+
+```text
+Create a Svelte 5 form component that validates with Zod.
+Fields: email (required, must be email), password (min 8 chars), confirmPassword (must match password).
+Show error messages below each field as the user types.
+Disable the submit button if validation fails.
+```
+
+Claude generates:
+```svelte
+<script lang="ts">
+  import { z } from 'zod';
+
+  const schema = z.object({
+    email: z.string().email(),
+    password: z.string().min(8),
+    confirmPassword: z.string(),
+  }).refine((d) => d.password === d.confirmPassword, {
+    message: "Passwords must match",
+    path: ["confirmPassword"],
+  });
+
+  let formData = $state({
+    email: '',
+    password: '',
+    confirmPassword: '',
+  });
+
+  let errors = $derived.by(() => {
+    const result = schema.safeParse(formData);
+    return result.success ? {} : result.error.flatten().fieldErrors;
+  });
+
+  const isValid = $derived(Object.keys(errors).length === 0);
+</script>
+
+<form onsubmit={(e) => { e.preventDefault(); if (isValid) handleSubmit(); }}>
+  <input
+    type="email"
+    value={formData.email}
+    onchange={(e) => formData.email = e.currentTarget.value}
+  />
+  {#if errors.email}
+    <span class="error">{errors.email.join(', ')}</span>
+  {/if}
+</form>
+```
+
+Claude correctly uses `$derived.by()` with a function to compute complex validation state and includes the Zod `.refine()` call for cross-field validation.
+
+## Event Forwarding and Bubbling
+
+Claude sometimes forgets that Svelte 5 doesn't auto-forward events. Guide it:
+
+```text
+Create a reusable Button component that accepts an onclick prop and forwards it properly.
+Do not use on:click directives. Use onclick prop and call it directly.
+```
+
+Claude will then produce:
+```svelte
+<script lang="ts">
+  const { onclick, children, ...attrs } = $props();
+</script>
+
+<button {onclick} {...attrs}>
+  {#if children}
+    {children}
+  {/if}
+</button>
+```
+
+This is the correct Svelte 5 pattern — pass `onclick` as a prop and invoke it directly, not through a directive.
+
+## Performance: Server-Side Rendering with +page.svelte
+
+Ask Claude for SSR patterns that render on the server and hydrate correctly:
+
+```text
+Create a +page.svelte that uses the load function data to render a list of posts.
+Include a count of total posts derived from the data.
+Ensure this works with server-side rendering.
+```
+
+Claude generates:
+```svelte
+<script lang="ts">
+  import type { PageData } from './$types';
+
+  const { posts, totalCount } = $props<PageData>();
+
+  const postCount = $derived(posts.length);
+</script>
+
+<h1>Posts ({postCount} of {totalCount})</h1>
+{#each posts as post (post.id)}
+  <article>{post.title}</article>
+{/each}
+```
+
+This correctly uses typed PageData and avoids state that would cause hydration mismatches.
 
 ## Related Reading
 
