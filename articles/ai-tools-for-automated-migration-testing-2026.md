@@ -269,7 +269,6 @@ Ask Claude to generate migration test scripts that integrate with GitHub Actions
 name: Test Migrations
 on: [pull_request]
 jobs:
-<<<<<<< HEAD
   test:
     runs-on: ubuntu-latest
     services:
@@ -293,36 +292,6 @@ jobs:
           alembic upgrade head  # Run migrations
           pytest tests/test_migrations.py  # Test them
           alembic downgrade -1  # Test rollback
-=======
- test:
- runs-on: ubuntu-latest
- services:
- postgres:
- image: postgres:16
- env:
- POSTGRES_USER: test
- POSTGRES_PASSWORD: test
- POSTGRES_DB: test_migrations
- options: >-
- --health-cmd pg_isready
- --health-interval 10s
- --health-timeout 5s
- --health-retries 5
- ports:
- - 5432:5432
-
- steps:
- - uses: actions/checkout@v4
- - name: Setup Python
- uses: actions/setup-python@v5
- with:
- python-version: '3.12'
- - run: pip install -r requirements-test.txt
- - name: Run migration tests
- env:
- DATABASE_URL: postgresql://test:test@localhost:5432/test_migrations
- run: pytest tests/test_migrations/ -v --tb=short
->>>>>>> 2d1c47c16fb62f06950641ed41edf031fb823a41
 ```
 
 Claude correctly includes the postgres service definition with health checks and the proper sequence of upgrade → test → downgrade. This catches migrations that fail in CI before they reach production.
