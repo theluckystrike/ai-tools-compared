@@ -316,13 +316,13 @@ Run the command with `sudo` for system-level operations, or check that your user
 Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
-## Related Reading
+## Related Articles
 
-- [AI Tools for Generating Docker Compose Files for Complex Microservices](/ai-tools-for-generating-docker-compose-files-for-complex-mic/)
-- [AI Tools for Resolving Docker Build Context Permission Denied](/ai-tools-for-resolving-docker-build-context-permission-denie/)
-- [Best AI Coding Tool for Dockerfile Generation](/best-ai-coding-tool-for-dockerfile-generation/)
----
-
+- [How to Use AI to Optimize Docker Images for Smaller Size](/ai-tools-compared/how-to-use-ai-to-optimize-docker-images-for-smaller-size/)
+- [Best AI Tools for Writing Dockerfile Optimization 2026](/ai-tools-compared/best-ai-tools-for-writing-dockerfile-optimization-2026/)
+- [Best AI Coding Tool for Dockerfile Generation](/ai-tools-compared/best-ai-coding-tool-for-dockerfile-generation/)
+- [AI Tools for Generating Docker Compose Files for Complex Mic](/ai-tools-compared/ai-tools-for-generating-docker-compose-files-for-complex-mic/)
+- [AI Tools for Resolving Docker Build Context Permission](/ai-tools-compared/ai-tools-for-resolving-docker-build-context-permission-denie/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

@@ -442,14 +442,13 @@ Verify that `app_mentions:read` is in your bot's OAuth scopes and that Event Sub
 
 Use `redis://` for unencrypted connections and `rediss://` for TLS. Most managed Redis providers (Redis Cloud, Upstash) require TLS. Upstash's free tier works well for bots with under 10,000 commands per day.
 
-## Related Reading
+## Related Articles
 
-- [How to Build a RAG Chatbot with Pinecone](/ai-tools-compared/how-to-build-rag-chatbot-with-pinecone/)
-- [How to Build Custom MCP Servers for Claude](/ai-tools-compared/how-to-build-custom-mcp-servers-for-claude/)
-- [How to Build Voice AI Apps with Claude](/ai-tools-compared/how-to-build-voice-ai-apps-with-claude/)
-
----
-
+- [How to Build Voice AI Apps with Claude](/ai-tools-compared/how-to-build-voice-ai-apps-with-claude)
+- [How to Use AI for Incident Response Automation](/ai-tools-compared/how-to-use-ai-for-incident-response-automation/)
+- [How to Build AI Pipelines with Prefect](/ai-tools-compared/how-to-build-ai-pipelines-with-prefect)
+- [How to Build AI-Powered CLI Tools 2026](/ai-tools-compared/how-to-build-ai-powered-cli-tools-2026/)
+- [How to Build AI Agents with Claude Agent SDK](/ai-tools-compared/how-to-build-ai-agents-with-claude-agent-sdk/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 {% endraw %}

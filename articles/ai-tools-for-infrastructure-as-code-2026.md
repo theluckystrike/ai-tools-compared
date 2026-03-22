@@ -292,12 +292,13 @@ A workflow that combines AI generation with automated scanning catches the most 
 
 Claude's security-conscious defaults save 15-20 minutes per resource compared to starting with a template that has insecure defaults and fixing them manually.
 
-## Related Reading
+## Related Articles
 
-- [Claude vs GPT-4 for Terraform and Pulumi Infrastructure Code](/ai-tools-compared/claude-vs-gpt4-terraform-pulumi-infrastructure-code-2026/)
-- [AI Tools for Writing Terraform Infrastructure as Code](/ai-tools-compared/ai-tools-for-writing-terraform-infrastructure-as-code-comparison-2026/)
+- [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-compared/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)
 - [Best Workflow for Using AI to Write Infrastructure as Code](/ai-tools-compared/best-workflow-for-using-ai-to-write-infrastructure-as-code-f/)
-
+- [Best AI Tools for Writing AWS CDK Infrastructure Code](/ai-tools-compared/best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/)
+- [Best AI Assistants for Pulumi Infrastructure Code](/ai-tools-compared/best-ai-assistants-for-pulumi-infrastructure-code-in-typescript-2026/)
+- [Claude vs Gpt4 Terraform Pulumi Infrastructure Code](/ai-tools-compared/claude-vs-gpt4-terraform-pulumi-infrastructure-code-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

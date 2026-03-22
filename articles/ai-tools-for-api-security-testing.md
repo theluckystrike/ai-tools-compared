@@ -328,12 +328,13 @@ for result in fuzz_results:
 | OWASP ZAP | No | YAML/scripts | Medium | Free |
 | Burp Suite Pro | No | Ruby scripts | Flexible | $449/yr |
 
-## Related Reading
+## Related Articles
 
-- [AI Coding Tool Penetration Test Findings](/ai-tools-compared/ai-coding-tool-penetration-test-findings-common-vulnerabilit/)
-- [AI Tools for API Load Testing Comparison](/ai-tools-compared/ai-assisted-api-load-testing-tools-comparison/)
-- [How to Build an AI Code Review Bot](/ai-tools-compared/how-to-build-ai-code-review-bot/)
-
+- [AI Tools for API Documentation from Code 2026](/ai-tools-compared/ai-tools-for-api-documentation-from-code-2026/)
+- [AI Tools for Automated Security Scanning Compared](/ai-tools-compared/ai-tools-for-automated-security-scanning-compared/)
+- [AI Tools for Automated API Documentation Generation in 2026](/ai-tools-compared/ai-tools-for-automated-api-documentation-generation-2026/)
+- [AI Tools for Automating Cloud Security Compliance Scanning](/ai-tools-compared/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
+- [Best AI for QA Engineers Writing API Contract Testing Cases](/ai-tools-compared/best-ai-for-qa-engineers-writing-api-contract-test-cases-fro/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

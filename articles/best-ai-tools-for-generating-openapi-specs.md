@@ -13,8 +13,6 @@ intent-checked: true
 voice-checked: true
 ---
 
-{% raw %}
-
 Writing OpenAPI specs by hand is tedious and error-prone. For a moderately complex API — 20 endpoints, nested schemas, security definitions — manually writing the YAML takes hours and still misses edge cases. AI tools have changed this significantly. Claude, GitHub Copilot, and specialized tools like Speakeasy can generate production-quality OpenAPI 3.1 specs from existing code or natural language descriptions. This guide compares them with real examples.
 
 ## Claude: Best for Complex Schema Generation
@@ -289,8 +287,10 @@ Run a practical test: take a real endpoint from your codebase and ask each tool 
 
 AI tools evolve rapidly. The comparison above reflects March 2026 capabilities. Claude and Copilot have both improved significantly on code understanding in the past year. Verify current features before committing to a paid plan.
 
-**Should I commit the OpenAPI spec to the repository?**
+## Related Articles
 
-Yes. Treat the spec as a first-class artifact alongside your code. Commit it to version control, validate it in CI, and use it to generate documentation and SDKs. Teams that generate the spec on-demand from code annotations tend to have more accurate specs than teams that maintain it manually, but both approaches work better with a committed, validated spec than without one.
-
-{% endraw %}
+- [AI Tools for Generating OpenAPI Specs from Code](/ai-tools-compared/ai-tools-openapi-spec-generation/)
+- [Generate Openapi Specs from Existing Codebase AI Tools](/ai-tools-compared/generate-openapi-specs-from-existing-codebase-ai-tools/)
+- [AI Tools for Writing OpenAPI Specifications in 2026](/ai-tools-compared/articles/ai-tools-for-writing-openapi-specifications-2026/)
+- [Best AI Tools for Writing Swagger API Documentation 2026](/ai-tools-compared/best-ai-tools-for-writing-swagger-api-documentation-2026/)
+- [Claude vs Copilot for Generating FastAPI Endpoint Boilerplat](/ai-tools-compared/claude-vs-copilot-for-generating-fastapi-endpoint-boilerplat/)

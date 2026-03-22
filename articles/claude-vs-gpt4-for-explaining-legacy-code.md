@@ -234,13 +234,13 @@ and anything that would break if called from a different context
 
 This prompt consistently improves GPT-4o's output by about 30% on the failure-mode dimension. Claude's output improves less because it already applies this lens by default.
 
-## Related Reading
+## Related Articles
 
-- [Aider vs Claude Code: Terminal AI Comparison](/aider-vs-claude-code-terminal-ai-comparison/)
-- [AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026](/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
-- [Claude Code vs Cursor for Large Codebase Refactoring](/claude-code-vs-cursor-for-large-codebase-refactoring/)
----
-
+- [Switching from GPT-4o to Claude Sonnet for Code Review](/ai-tools-compared/switching-from-gpt-4o-to-claude-sonnet-for-code-review-which/)
+- [Claude Code vs ChatGPT Code Interpreter Comparison](/ai-tools-compared/claude-code-vs-chatgpt-code-interpreter-comparison/)
+- [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
+- [Claude Code Developer Portal Setup Guide](/ai-tools-compared/claude-code-developer-portal-setup-guide/)
+- [Claude Code for Node.js Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-nodejs-profiling-workflow-tutorial/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## When to Choose Each Model

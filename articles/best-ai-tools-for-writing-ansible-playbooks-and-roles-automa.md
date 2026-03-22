@@ -54,7 +54,8 @@ Large language models from Anthropic and OpenAI provide strong Ansible generatio
 When prompted with a clear description, these models generate complete playbooks:
 
 
-```yaml---
+```yaml
+---
 - name: Configure web server
  hosts: webservers
  become: yes

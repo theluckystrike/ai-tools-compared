@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: ai-powered-capacity-planning-guide
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]
@@ -423,13 +423,12 @@ Different decisions require different planning horizons. A rough guide:
 
 For horizons beyond 30 days, statistical confidence intervals widen significantly. At that point the LLM's role shifts from interpreting numbers to synthesizing qualitative signals — roadmap commitments, sales pipeline, seasonal business patterns — into a coherent planning narrative.
 
-## Related Reading
+## Related Articles
 
-- [How to Use AI for Capacity Planning and Resource Right-Sizing](/ai-tools-compared/how-to-use-ai-for-capacity-planning-and-resource-right-sizin/)
-- [How to Use AI for Log Anomaly Detection](/ai-tools-compared/how-to-use-ai-for-log-anomaly-detection/)
-- [AI-Powered Database Performance Tuning](/ai-tools-compared/ai-powered-database-performance-tuning/)
-
----
-
+- [How to Use AI for Capacity Planning and Resource Right](/ai-tools-compared/how-to-use-ai-for-capacity-planning-and-resource-right-sizin/)
+- [How to Use AI to Create Milestone Planning Documents](/ai-tools-compared/how-to-use-ai-to-create-milestone-planning-documents-from-is/)
+- [How to Use AI for Cloud Migration Planning and Dependency](/ai-tools-compared/how-to-use-ai-for-cloud-migration-planning-and-dependency-ma/)
+- [How to Use AI for Predicting Infrastructure Scaling Needs](/ai-tools-compared/how-to-use-ai-for-predicting-infrastructure-scaling-needs-au/)
+- [AI Tools for Automated Infrastructure Drift Detection: Co](/ai-tools-compared/ai-tools-for-automated-infrastructure-drift-detection-and-co/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

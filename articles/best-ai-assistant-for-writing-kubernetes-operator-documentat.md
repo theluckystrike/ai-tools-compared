@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Assistant for Writing Kubernetes Operator Documentation from CRD Specs"
+title: "Best AI for Kubernetes Operator Docs (2026)"
 description: "A practical guide to using AI coding assistants to generate comprehensive Kubernetes Operator documentation from Custom Resource Definitions, with examples and code"
 date: 2026-03-21
 author: theluckystrike
@@ -211,6 +211,14 @@ When selecting a tool, consider whether it supports:
 AI assistants transform Kubernetes Operator documentation from a manual, error-prone task into an automated process. By feeding your CRD specifications to these tools, you generate accurate API references, examples, and migration guides that stay synchronized with your code. This approach reduces maintenance overhead and ensures users always have correct documentation.
 
 The initial investment involves writing comprehensive CRD schemas with clear descriptions. Once established, documentation generation becomes a one-command operation that scales with your operator's complexity.
+
+## Related Articles
+
+- [AI Tools for Writing Kubernetes Operators 2026](/ai-tools-compared/ai-tools-for-writing-kubernetes-operators-2026/)
+- [Best AI Tools for Writing Kubernetes Custom Resource](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-custom-resource-definitions-2026/)
+- [Best AI Tools for Writing Kubernetes Operator Code](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-operator-code-from-scratch/)
+- [Best AI Tools for Go Kubernetes Operator Development](/ai-tools-compared/best-ai-tools-for-go-kubernetes-operator-development-with-kubebuilder-2026/)
+- [Best AI Tools for Writing Kubernetes Manifests and Helm](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-manifests-and-helm-charts-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

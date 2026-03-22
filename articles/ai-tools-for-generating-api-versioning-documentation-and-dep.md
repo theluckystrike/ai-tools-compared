@@ -15,34 +15,8 @@ voice-checked: false
 ---
 
 {% raw %}
-
-# AI Tools for Generating API Versioning Documentation and Deprecation Notices
-
-API versioning documentation is painful to write manually. Every endpoint change requires updating reference docs, generating deprecation notices, and communicating timelines to consumers. AI tools have gotten good at automating this — but the quality varies significantly depending on how well you structure your prompts and OpenAPI specs.
-
-This guide compares Claude, ChatGPT, and Mintlify for generating versioning docs and deprecation content from real API specs.
-
-## What Makes Versioning Documentation Hard
-
-The core challenge is that API versioning documentation isn't just reference content — it's lifecycle management. You need to communicate:
-
-- What changed between versions (diff)
-- Why it changed (motivation)
-- What consumers need to do (migration path)
-- When old versions stop working (sunset date)
-
-Most documentation generators handle the "what" poorly and ignore the rest entirely. AI tools can fill that gap when given the right inputs.
-
-## Generating Deprecation Notices from OpenAPI Specs
-
-**Prompt to Claude:**
-```text
-I have an OpenAPI 3.1 spec. The /users/{id}/preferences endpoint is deprecated
-as of v2.1 and will be sunset on 2026-09-01. The replacement is
-/users/{id}/settings (GET/PUT). Generate:
-1. A deprecation notice for the endpoint-level description
-2. A migration guide section explaining what changed
-3. A changelog entry
+*Auto-generated on {datetime.now().isoformat()}*
+"""
 ```
 
 **Claude output:**

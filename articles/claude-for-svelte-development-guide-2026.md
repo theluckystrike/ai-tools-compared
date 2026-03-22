@@ -495,14 +495,13 @@ Claude generates:
 
 This correctly uses typed PageData and avoids state that would cause hydration mismatches.
 
-## Related Reading
+## Related Articles
 
-- [Best AI Tools for Go CLI Tool Development](/ai-tools-compared/best-ai-tools-for-go-cli-tool-development-with-cobra-viper-2/)
-- [Copilot vs Claude Code for Writing GitHub Actions CI/CD Workflows](/ai-tools-compared/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
-- [AI Coding Assistant Accuracy for TypeScript Svelte Components](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-svelte-component/)
-
----
-
+- [AI Coding Assistant Accuracy for TypeScript Svelte Component](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-svelte-component/)
+- [Claude Max vs Claude Pro Actual Difference](/ai-tools-compared/claude-max-vs-claude-pro-actual-difference-in-daily-message-limits/)
+- [Claude Code Losing Context Across Sessions](/ai-tools-compared/claude-code-losing-context-across-sessions-fix/)
+- [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
+- [How to Build Custom MCP Servers for Claude](/ai-tools-compared/how-to-build-custom-mcp-servers-for-claude)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

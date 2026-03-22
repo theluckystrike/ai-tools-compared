@@ -395,13 +395,13 @@ Run the review service behind an internal load balancer, not on the public inter
 
 For teams running many PRs simultaneously, add a queue (Redis or SQS) in front of the review worker to avoid overwhelming the Anthropic API rate limits. The `claude-opus-4-6` model allows 5 requests per minute on the default tier; batch small migrations into a single prompt to stay within that limit during peak CI hours.
 
-## Related Reading
+## Related Articles
 
-- [Best AI Tools for Writing Database Migrations](/best-ai-tools-for-writing-database-migrations/)
-- [AI Tools for Writing Pytest Tests for Alembic Database Migration Paths](/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
-- [AI Powered Database Migration Tools Comparison](/ai-powered-database-migration-tools-comparison/)
----
-
+- [AI Tools for Database Schema Migration Review 2026](/ai-tools-compared/ai-tools-for-database-schema-migration-review-2026/)
+- [AI Tools for Automated Migration Testing 2026](/ai-tools-compared/ai-tools-for-automated-migration-testing-2026/)
+- [Best AI Tools for Database Schema Migration Review 2026](/ai-tools-compared/best-ai-tools-for-database-schema-migration-review-2026/)
+- [AI Tools for Writing pytest Tests for Alembic Database](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migra/)
+- [AI Tools for Writing Database Migration Rollback Scripts](/ai-tools-compared/ai-tools-for-writing-database-migration-rollback-scripts-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

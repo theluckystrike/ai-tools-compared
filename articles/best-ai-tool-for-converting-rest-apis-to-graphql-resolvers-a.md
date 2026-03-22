@@ -13,8 +13,6 @@ intent-checked: true
 voice-checked: true
 ---
 
-{% raw %}
-
 Converting REST endpoints to GraphQL resolvers involves more than mechanical translation. REST maps verbs and nouns to URLs; GraphQL maps fields to resolver functions, with a schema that defines exactly what data is available and how to fetch it. AI tools have made this conversion significantly faster, but the quality varies. This guide covers which tools work, how to use them, and what to verify after conversion.
 
 ## Why REST-to-GraphQL Conversion Is Non-Trivial
@@ -235,4 +233,3 @@ For a 30-endpoint REST API with a well-documented schema, expect 2-3 days with C
 - [Best AI Tool for Converting MySQL Queries to Postgres](/best-ai-tool-for-converting-mysql-queries-to-postgres-compat/)
 - [Best AI Tools for Writing GraphQL Resolvers 2026](/best-ai-tools-for-writing-graphql-resolvers-2026/)
 
-{% endraw %}

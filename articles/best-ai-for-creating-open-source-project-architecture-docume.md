@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI for Creating Open Source Project Architecture Documentation"
+title: "Best AI for Open Source Architecture Docs (2026)"
 description: "Compare Claude, Copilot, and Mermaid AI for generating C4 diagrams, API specs, and architecture docs for open source projects."
 date: 2026-03-19
 last_modified_at: 2026-03-22
@@ -13,8 +13,6 @@ score: 8
 voice-checked: true
 intent-checked: true
 ---
-
-{% raw %}
 
 Good architecture documentation makes the difference between a project contributors can ramp up on in a day versus one that takes a week of reading source code. AI tools have made generating this documentation faster, but the quality depends on what you provide as input and which tool you use. This guide focuses on creating C4 diagrams, component overviews, and API architecture docs for open source projects.
 
@@ -255,4 +253,3 @@ In the repo. Wiki pages drift out of sync because they are not part of the PR pr
 - [AI Assistants for Creating Security Architecture Review Documentation](/ai-assistants-for-creating-security-architecture-review-docu/)
 - [Best AI Assistant for Generating Open Source Release Announcements](/best-ai-assistant-for-generating-open-source-release-announcements/)
 
-{% endraw %}

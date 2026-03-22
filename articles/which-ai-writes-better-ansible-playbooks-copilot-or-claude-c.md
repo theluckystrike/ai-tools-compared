@@ -44,7 +44,8 @@ GitHub Copilot integrates directly into Visual Studio Code and other editors, su
 Copilot excels at generating boilerplate playbooks quickly. When you start typing a basic playbook structure, Copilot often suggests complete task blocks that match common patterns:
 
 
-```yaml---
+```yaml
+---
 - name: Install and configure Nginx
  hosts: webservers
  become: yes

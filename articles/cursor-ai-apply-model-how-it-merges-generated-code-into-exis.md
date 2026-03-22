@@ -16,7 +16,6 @@ voice-checked: true
 
 {% raw %}
 
-{% raw %}
 
 This guide provides practical steps and best practices to help you accomplish this task effectively. Follow the recommendations to get the best results from your AI tools.
 

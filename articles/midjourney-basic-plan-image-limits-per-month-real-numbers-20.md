@@ -39,7 +39,8 @@ For the Basic Plan at $10/month, you receive **3.3 hours of fast mode time** per
 
 
 ```
-Plan          Monthly Fast Hours    Approximate Images---
+Plan          Monthly Fast Hours    Approximate Images
+---
 ------------------------------------------------
 Basic 3.3 hours ~150-200 images
 Standard 15 hours ~700-900 images
