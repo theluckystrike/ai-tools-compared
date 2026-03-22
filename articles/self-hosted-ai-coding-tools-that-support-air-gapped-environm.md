@@ -154,6 +154,13 @@ All these tools perform significantly better with a dedicated GPU. An NVIDIA RTX
 
 Running on CPU alone works for smaller 3B-7B parameter models but expect noticeably slower response times—often several seconds per completion rather than milliseconds.
 
+
+## Related Articles
+
+- [AI Tools for Self Service Support Portals: Practical Guide](/ai-tools-for-self-service-support-portals/)
+- [Free AI Coding Tools That Work Offline Without Internet](/free-ai-coding-tools-that-work-offline-without-internet/)
+- [How to Create Custom Instructions for AI Coding Tools That](/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 

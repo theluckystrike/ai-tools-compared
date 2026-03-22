@@ -190,6 +190,13 @@ To get the best experience from local AI code completion in Neovim:
 - Consider using a dedicated GPU or eGPU for faster responses
 - Cache completions locally to avoid redundant API calls
 
+
+## Related Articles
+
+- [Open Source AI Code Linting Tools With Automatic Fix](/open-source-ai-code-linting-tools-with-automatic-fix-suggest/)
+- [AI Code Completion for Flutter BLoC Pattern Event and State](/ai-code-completion-for-flutter-bloc-pattern-event-and-state-/)
+- [AI Code Completion for Java Jakarta EE Migration from Javax](/ai-code-completion-for-java-jakarta-ee-migration-from-javax-/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 
