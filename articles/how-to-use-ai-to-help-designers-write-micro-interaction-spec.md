@@ -219,27 +219,104 @@ Iterate rather than perfect: Generate a baseline spec quickly, then refine speci
 
 The goal is not to replace designer judgment but to accelerate the documentation process. AI handles the structural writing, while designers and developers provide context and validate the output against actual requirements.
 
+## Common AI Tools for Specification Generation
+
+Different AI assistants have distinct strengths when working with micro interaction specifications.
+
+### Claude for Architecture and Complexity
+
+Claude excels at maintaining context across long specifications and understanding subtle requirements. When specifying complex multi-step interactions like checkout flows, Claude's extended context window allows you to paste entire design documents and receive detailed specifications without losing detail. Claude handles "what if" scenarios effectively—add a constraint like "what if the network is slow?" and Claude produces thoughtful variations with appropriate fallback states.
+
+### GPT-4 for Rapid Iteration
+
+GPT-4 generates specifications quickly and handles quick pivots. Its strength lies in transforming rough sketches into code-ready specs within seconds. GPT-4 is particularly strong at recognizing patterns in design systems—if you show it three button states, it can extrapolate complete specifications for related components without requiring exhaustive detail.
+
+### Specialized Tools: Design-to-Code Platforms
+
+Some AI tools specifically target design-to-code workflows. Figma's built-in AI plugins can extract component specifications directly from design files. These specialized tools understand design tokens, component hierarchies, and constraint systems that general-purpose LLMs might miss.
+
+## Real-World Implementation Examples
+
+### Example: E-commerce Checkout Interaction
+
+A realistic workflow for a complex interaction demonstrates the process:
+
+**Initial Prompt:**
+```
+I'm designing a cart summary sidebar for e-commerce. When users click "Review Cart",
+the sidebar slides in from the right with a dark overlay. The sidebar has an animated
+product list—each item fades in staggered. The checkout button enables after all
+items load (simulate 800ms load). On mobile, the sidebar takes full height; on desktop
+it takes 450px width. Error states show a retry button.
+```
+
+**Generated Specification:**
+The AI produces a 150+ line specification with all timing, easing, responsive behavior, error handling, and accessibility requirements. Then request implementation code:
+
+**Refinement Prompt:**
+```
+The animation feels sluggish on low-end Android devices. Reduce all durations by 30%,
+simplify easing curves to linear, and add prefers-reduced-motion support that removes
+all animations.
+```
+
+The AI adjusts every timing value, easing curve, and adds the appropriate CSS media query without requiring you to manually recalculate everything.
+
+### Example: Form Validation Across Fields
+
+A multi-field form with dependent validation requires careful specification:
+
+**Initial Specification:**
+```
+Spec for password field with real-time validation:
+- Validate after user stops typing 500ms
+- Show strength indicator (weak/fair/strong) with color changes
+- If password matches email domain, show warning
+- Field shake animation on submission if invalid
+```
+
+**AI Enhancement:**
+The AI identifies that strength indicators should animate smoothly, that the warning requires research (checking email domain logic), and that the shake animation needs specific parameters. The output includes:
+- Debounce logic implementation
+- Strength calculation algorithm
+- Warning condition logic
+- Shake animation keyframes
+- ARIA announcements for each state
+
+## Testing Specifications Against Real Implementations
+
+AI-generated specifications should be validated against actual implementations before finalizing. A practical workflow:
+
+1. Generate specification with AI
+2. Developer implements using the spec
+3. Collect implementation questions/ambiguities
+4. Refine specification based on actual development issues
+5. Update code
+6. Repeat until implementation matches intent
+
+This iteration catches specification gaps that only surface during actual coding.
+
 ## Frequently Asked Questions
 
 **How long does it take to use ai to help designers write micro interaction?**
 
-For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
+For straightforward interactions, expect 15-30 minutes from initial description to implementation-ready specification. Complex interactions with many states may take 1-2 hours of iterative refinement. The process accelerates on the second and third interaction—patterns from earlier work reuse.
 
 **What are the most common mistakes to avoid?**
 
-The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
+Providing vague timing descriptions ("smooth transition," "quick fade") instead of numbers. Being inconsistent about units (sometimes milliseconds, sometimes seconds). Omitting accessibility requirements. Not specifying behavior for loading/error states. Start concrete—"300ms with ease-out timing"—and let AI expand from precision.
 
 **Do I need prior experience to follow this guide?**
 
-Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
+Basic design vocabulary helps but isn't required. Understanding the difference between opacity and scale, knowing what "cubic-bezier" means, and having familiarity with animation concepts accelerates the process. The guide explains technical terms, though some background research into CSS animations or design system principles strengthens specifications.
 
 **Can I adapt this for a different tech stack?**
 
-Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
+Absolutely. The specification format is platform-agnostic. Request implementation code for your specific stack—Svelte, Angular, Vue, native iOS/Android, game engines. The specification itself remains consistent; only the code examples change. A specification written without framework assumptions transfers to any stack.
 
 **Where can I get help if I run into issues?**
 
-Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
+Start with example specifications from your design system documentation. Post specifications to design Slack channels for feedback before implementation. If AI-generated values feel wrong, check against real-world timing from popular apps (open DevTools, measure actual animations). The Framer Motion and Web Animations documentation have excellent examples of specification-to-code mapping.
 
 ## Related Articles
 

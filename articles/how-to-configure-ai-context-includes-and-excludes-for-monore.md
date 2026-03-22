@@ -248,4 +248,446 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 - [Best Way to Configure CursorRules for Python FastAPI Project](/ai-tools-compared/best-way-to-configure-cursorrules-for-python-fastapi-project/)
 - [How to Configure AI Coding Tools to Exclude Secrets and](/ai-tools-compared/how-to-configure-ai-coding-tools-to-exclude-secrets-and-env-/)
 
+## Tool-Specific Configuration Deep Dives
+
+### Cursor: Complete Monorepo Configuration
+
+For a Turborepo with apps/web, apps/api, packages/ui, packages/utils:
+
+```json
+// .cursorrules (root of monorepo)
+// Prioritize frontend work
+@apps/web/src/**
+@apps/web/pages/**
+@apps/web/components/**
+@packages/ui/**
+@packages/utils/**
+
+// Exclude everything else
+!node_modules
+!dist
+!build
+!.next
+!**/*.test.ts
+!**/*.spec.ts
+```
+
+For per-workspace configuration, create:
+
+```json
+// apps/web/.cursorrules
+@apps/web/src/**
+@packages/ui/**
+@packages/utils/**
+!**/node_modules
+!**/dist
+!**/.next
+```
+
+This allows different context rules depending on which workspace folder you're editing.
+
+### Claude Code (via .claude folder)
+
+For the same monorepo:
+
+```yaml
+# .claude/settings.local.yml
+contextRules:
+  version: 2
+
+includes:
+  # Frontend code
+  - apps/web/src/**
+  - apps/web/pages/**
+  - apps/web/components/**
+
+  # Shared UI package
+  - packages/ui/src/**
+  - packages/ui/components/**
+
+  # Utilities both apps depend on
+  - packages/utils/**
+  - packages/types/**
+
+excludes:
+  - "**/node_modules/**"
+  - "**/.next/**"
+  - "**/dist/**"
+  - "**/build/**"
+  - "**/*.test.ts"
+  - "**/*.test.js"
+  - "**/*.spec.ts"
+  - "**/*.spec.js"
+  - "**/__snapshots__/**"
+  - "**/coverage/**"
+
+# Optional: token budget for context window
+tokenBudget: 8000
+```
+
+Use from CLI:
+
+```bash
+# Use these context rules
+claude --context-config .claude/settings.local.yml "Analyze the login flow"
+
+# Or temporarily override
+claude --context "apps/api/**" "Review API middleware"
+```
+
+### GitHub Copilot: Repository Configuration
+
+Copilot uses GitHub's symantic search. Configure priority files:
+
+```markdown
+<!-- .github/copilot-includes.md -->
+# High-priority files for Copilot context
+apps/web/src/**/*.tsx
+apps/web/src/**/*.ts
+packages/ui/src/**/*.tsx
+packages/utils/**/*.ts
+packages/types/**/*.ts
+```
+
+```markdown
+<!-- .github/copilot-excludes.md -->
+# Files to ignore
+**/node_modules/**
+**/.next/**
+**/dist/**
+**/build/**
+**/__snapshots__/**
+**/*.test.ts
+**/*.test.js
+**/*.spec.ts
+**/*.spec.js
+```
+
+Copilot processes includes first, respects excludes absolutely.
+
+### Windsurf: Workspace Rules
+
+```
+// .windsurfrules (root)
+// Frontend focus
+@apps/web/**
+@packages/ui/**
+
+// Exclude noise
+!node_modules
+!.next
+!dist
+!**/*.test.*
+!coverage
+```
+
+Create workspace-specific overrides:
+
+```
+// apps/web/.windsurfrules
+// When editing frontend, only frontend context needed
+@apps/web/src/**
+@apps/web/pages/**
+@apps/web/components/**
+@packages/ui/**
+
+// Don't pull in backend
+!apps/api/**
+```
+
+## Monorepo Architecture Patterns and Context Config
+
+**Pattern 1: npm/pnpm Workspaces**
+
+```
+root/
+├─ packages/
+│  ├─ ui/
+│  ├─ utils/
+│  └─ types/
+├─ apps/
+│  ├─ web/
+│  └─ api/
+└─ package.json
+```
+
+Configuration:
+```
+@packages/ui/src/**
+@packages/utils/src/**
+@packages/types/src/**
+@apps/web/src/**
+!**/node_modules
+!**/dist
+```
+
+**Pattern 2: Turborepo**
+
+```
+root/
+├─ apps/
+│  ├─ web/
+│  ├─ api/
+│  └─ docs/
+├─ packages/
+│  ├─ config/
+│  ├─ eslint-config/
+│  └─ typescript-config/
+└─ turbo.json
+```
+
+Configuration:
+```
+@apps/web/src/**
+@apps/api/src/**
+@packages/config/**
+!**/node_modules
+!**/.turbo
+!**/dist
+!**/.next
+```
+
+**Pattern 3: Nx Workspace**
+
+```
+root/
+├─ apps/
+│  ├─ web/src/
+│  └─ api/src/
+├─ libs/
+│  ├─ ui/
+│  ├─ utils/
+│  └─ shared-types/
+└─ nx.json
+```
+
+Configuration:
+```
+@apps/web/src/**
+@libs/ui/src/**
+@libs/utils/src/**
+!**/node_modules
+!**/dist
+!**/coverage
+```
+
+**Pattern 4: Yarn Workspaces**
+
+```
+root/
+├─ workspaces/
+│  ├─ app/
+│  ├─ api/
+│  └─ shared/
+└─ package.json (with "workspaces" field)
+```
+
+Configuration:
+```
+@workspaces/app/**
+@workspaces/shared/**
+!**/node_modules
+!**/dist
+!**/.yarn
+```
+
+## Testing Your Configuration
+
+**Test 1: Verify includes work**
+
+```bash
+# In Cursor, open a file from the include list
+# Ask Cursor to analyze it
+"Summarize what this component does"
+
+# If Cursor understands it, includes are working
+```
+
+**Test 2: Verify excludes work**
+
+```bash
+# Ask about a file in the exclude list
+"What's in my node_modules for this package?"
+
+# If Cursor says "I don't have access to that", excludes are working
+```
+
+**Test 3: Check context token usage**
+
+In Cursor, hover over the @ symbol in chat:
+
+```
+@file:src/components/Button.tsx
+     ↑ Shows token count for this file
+```
+
+Aim for total context <6,000 tokens to leave room for response.
+
+**Test 4: Verify monorepo awareness**
+
+```
+# Ask about cross-package dependencies
+"How does apps/web import from packages/ui?"
+
+# If it explains the import path correctly, it understands monorepo structure
+```
+
+## Common Configuration Mistakes
+
+**Mistake 1: Too Broad Includes**
+
+```
+# Wrong: Includes entire root
+@**
+
+# Correct: Specific packages
+@apps/web/**
+@packages/ui/**
+```
+
+Broad includes waste tokens on irrelevant code.
+
+**Mistake 2: Forgetting Package Boundaries**
+
+```
+# Wrong: Imports between unrelated packages
+@apps/web/**
+@apps/api/**
+# Now AI might suggest using API routes in web, which breaks boundaries
+
+# Correct: Each workspace separate
+@apps/web/**
+# (api is separate in different editor window)
+```
+
+**Mistake 3: Excluding Test Files Entirely**
+
+```
+# Tempting but wrong: Excludes all tests
+!**/*.test.ts
+!**/*.spec.ts
+
+# Better: Exclude only large test suites
+!**/e2e/**
+!**/cypress/**
+# But keep unit tests for understanding
+```
+
+Tests show expected behavior and provide implementation clues.
+
+**Mistake 4: Not Excluding Generated Files**
+
+```
+# Wrong: Includes generated code
+@**
+
+# Correct: Explicitly exclude generated
+!**/generated/**
+!**/*.generated.ts
+!**/.next/**
+!**/dist/**
+```
+
+Generated files add noise without value.
+
+**Mistake 5: Version-Specific Lock Files Not Excluded**
+
+```
+# Add to excludes
+!pnpm-lock.yaml
+!package-lock.json
+!yarn.lock
+!npm-shrinkwrap.json
+!Cargo.lock  # if Rust project
+```
+
+Lock files are huge and add no value to AI context.
+
+## Context Configuration Cheat Sheet
+
+**Quick start for React + Node monorepo:**
+
+```
+# Include
+@apps/web/src/**/*.{tsx,ts}
+@apps/api/src/**/*.{ts}
+@packages/types/**
+@packages/ui/**
+
+# Exclude
+!node_modules/**
+!dist/**
+!build/**
+!.next/**
+!*.test.*
+!*.spec.*
+```
+
+**For GraphQL/TypeScript backend:**
+
+```
+# Include
+@apps/api/src/**
+@packages/schema/**
+@packages/database/**
+
+# Exclude
+!node_modules
+!dist
+!**/*.test.ts
+!*.graphql.ts (generated from schema)
+```
+
+**For Design System Package:**
+
+```
+# Include
+@packages/design-system/src/**
+@packages/design-system/stories/**
+
+# Exclude
+!node_modules
+!dist
+!**/dist
+!coverage
+```
+
+## Measuring Configuration Effectiveness
+
+Track these metrics:
+
+1. **Completion Accuracy**: % of AI suggestions that compile without changes
+   - Target: >80%
+   - If lower, broaden includes or narrow excludes
+
+2. **Response Time**: Seconds until AI responds
+   - Target: <5 seconds for chat
+   - If slower, reduce context size with more excludes
+
+3. **Relevance**: % of suggestions actually usable for your current task
+   - Target: >70%
+   - If lower, make includes more specific
+
+Example measurement:
+
+```
+Week 1 (Default context):
+- Completion accuracy: 65%
+- Response time: 12s
+- Relevance: 52%
+
+After optimizing configuration:
+- Completion accuracy: 88%
+- Response time: 3s
+- Relevance: 78%
+
+= Major improvement in usability
+```
+
+## Related Articles
+
+- [Cursor Configuration Best Practices for Teams](/ai-tools-compared/cursor-configuration-teams/)
+- [Managing Multiple Monorepos with AI Assistants](/ai-tools-compared/multiple-monorepos-ai/)
+- [Context Window Management for Large Projects](/ai-tools-compared/context-window-large-projects/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -199,4 +199,158 @@ test("skip navigation link reaches main content", async ({ page }) => {
 
 This test catches regressions where a code change breaks skip link functionality. Run it as part of your accessibility test suite alongside automated WCAG scanning.
 
+## Tool Comparison: Which AI Assistant Handles Skip Links Best
+
+| Tool | Code Quality | Accuracy | Explanation | Framework Support | Cost |
+|------|-------------|----------|-------------|------------------|------|
+| Claude Code | Excellent | Very High | Explains rationale well | All frameworks | $20/mo or API |
+| GitHub Copilot | Good | High | Quick suggestions | VS Code, JetBrains | $10/mo or free |
+| Cursor | Excellent | Very High | Context-aware refinement | VS Code-based | $20/mo |
+| Amazon CodeWhisperer | Fair | Medium | Generic templates | AWS ecosystem | Free or $20/mo |
+| Zed AI | Good | High | Real-time inline hints | Zed editor | Free |
+
+## Avoiding Common Mistakes in AI-Generated Skip Links
+
+AI tools sometimes produce skip links that pass automated accessibility checks but fail in real use. Watch for these pitfalls:
+
+**Mistake 1: Missing tabindex on target**
+AI may generate code without `tabindex="-1"` on the target element, which means focus moves to the element but isn't properly managed for all assistive technology contexts:
+
+```html
+<!-- Wrong: target lacks tabindex -->
+<main id="main-content">
+  Content here
+</main>
+
+<!-- Correct: target has tabindex -->
+<main id="main-content" tabindex="-1">
+  Content here
+</main>
+```
+
+**Mistake 2: Skip link in hidden container**
+Some AI implementations accidentally nest the skip link inside a hidden element or scrollable container, making it unreachable:
+
+```html
+<!-- Wrong: skip link hidden by parent -->
+<nav style="overflow: hidden;">
+  <a href="#main" class="skip-link">Skip to main</a>
+</nav>
+
+<!-- Correct: skip link is first, not in hidden container -->
+<a href="#main" class="skip-link">Skip to main</a>
+<nav>
+  <!-- navigation items -->
+</nav>
+```
+
+**Mistake 3: Broken href attribute**
+Watch for inconsistencies where the href points to an ID that doesn't exist or has a typo:
+
+```html
+<!-- Wrong: mismatched ID -->
+<a href="#main-content">Skip to main content</a>
+<main id="main-content-area"> <!-- ID doesn't match -->
+
+<!-- Correct: IDs match -->
+<a href="#main-content">Skip to main content</a>
+<main id="main-content">
+```
+
+## Decision Framework: When to Use Which Tool
+
+**Use Claude Code if:**
+- You need thorough explanation of accessibility requirements
+- Your project uses multiple frameworks and you want portable knowledge
+- You plan to teach team members about accessibility best practices
+
+**Use Cursor if:**
+- Your entire workflow is already Cursor-based
+- You need iterative refinement through conversation
+- You're refactoring existing codebases and need context awareness
+
+**Use GitHub Copilot if:**
+- You want quick, minimal suggestions without explanation
+- You're already in VS Code and need speed
+- Your team uses Copilot for other tasks and wants consistency
+
+**Use Zed AI if:**
+- You prefer real-time inline hints while typing
+- You want a lightweight alternative to heavier editors
+- You don't need extensive explanations, just fast code suggestions
+
+## Testing Framework for AI-Generated Skip Links
+
+Before deploying AI-generated accessibility code, run this verification checklist:
+
+```javascript
+// qa/accessibility-tests.js
+const tests = {
+  skipLinkPresent: () => {
+    const skipLink = document.querySelector('a[href*="main"]');
+    return skipLink !== null && skipLink.textContent.includes('skip');
+  },
+
+  skipLinkIsFirstFocusable: () => {
+    const focusable = document.querySelectorAll(
+      'button, a, input, select, textarea, [tabindex]'
+    );
+    return focusable[0]?.textContent.includes('skip');
+  },
+
+  targetExists: () => {
+    const skipLink = document.querySelector('a[href*="main"]');
+    const href = skipLink?.getAttribute('href');
+    const target = document.querySelector(href);
+    return target !== null;
+  },
+
+  targetIsFocusable: () => {
+    const skipLink = document.querySelector('a[href*="main"]');
+    const href = skipLink?.getAttribute('href');
+    const target = document.querySelector(href);
+    return target?.getAttribute('tabindex') === '-1' ||
+           ['MAIN', 'SECTION', 'ARTICLE'].includes(target?.tagName);
+  },
+
+  visibleOnFocus: () => {
+    const skipLink = document.querySelector('a[href*="main"]');
+    const focused = document.activeElement === skipLink;
+    const isVisible = skipLink?.offsetHeight > 0;
+    return focused && isVisible;
+  }
+};
+
+// Run all tests
+Object.entries(tests).forEach(([name, fn]) => {
+  console.log(`${name}: ${fn() ? 'PASS' : 'FAIL'}`);
+});
+```
+
+## Best Practices When Prompting AI for Skip Links
+
+Provide context to AI tools to get better results:
+
+**Good prompt:**
+"Generate a skip navigation link for a React component. The main content is in a <main> element with id='main-content'. The skip link should be invisible until focused, use keyboard navigation, and follow WCAG 2.1 standards. Include both HTML and CSS."
+
+**Poor prompt:**
+"Add a skip link."
+
+**Better prompt with constraints:**
+"Generate a skip link that:
+1. Is the first focusable element
+2. Targets #main-content
+3. Uses absolutely positioned CSS to hide it offscreen until focused
+4. Works with both keyboard-only users and screen reader users
+5. Passes axe-core accessibility scans"
+
+Quality of input dramatically affects output quality when working with AI tools.
+
+## Related Articles on Accessibility and AI
+
+- [AI Tools for WCAG Compliance Testing and Fixes](/ai-tools-compared/ai-tools-for-wcag-compliance-testing/)
+- [Using Claude for Accessibility Audits](/ai-tools-compared/using-claude-for-accessibility-audits/)
+- [GitHub Copilot for Semantic HTML Generation](/ai-tools-compared/github-copilot-for-semantic-html/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
