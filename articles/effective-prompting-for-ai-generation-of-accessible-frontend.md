@@ -242,6 +242,111 @@ Pick one tool from the options discussed and sign up for a free trial. Spend 30 
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Real-World Component Libraries
+
+Accessible components generated through good prompting can be reused across projects. Build a component library using these patterns:
+
+**Reusable Button Component Prompt:**
+
+```
+Create a React button component library that exports variants: primary, secondary, danger.
+Each variant must:
+- Use native <button> element
+- Support disabled state with proper aria-disabled attribute
+- Have visible focus indicators with 3:1 contrast
+- Include loading state with aria-busy="true"
+- Support custom onClick handlers
+- Have full TypeScript types
+
+Include unit tests using jest-axe for accessibility compliance.
+```
+
+**Card Component Pattern:**
+
+```
+Build a card component that displays rich content (image, title, description, link).
+Requirements:
+- Image has alt text or aria-hidden if decorative
+- Title uses semantic heading (h2-h4 depending on context)
+- "Learn More" link uses descriptive text, not placeholder text
+- Visible focus state applies to entire card
+- Color contrast meets 4.5:1 for body text
+- Includes ARIA landmarks for structure
+```
+
+Once you have a library of AI-generated accessible components, test them once, then reuse them across projects with confidence.
+
+## Integration with Design Systems
+
+Many teams use design systems like Storybook to document components. AI-generated accessible code integrates well:
+
+```
+Create a React component that meets these Storybook story requirements:
+1. Create a primary story showing default state
+2. Create a disabled story
+3. Create a loading story with aria-busy
+4. Create a story with long text to test overflow handling
+5. Include accessibility testing in the play function
+6. Document ARIA attributes in the story description
+```
+
+This produces components that work both in development and in design system documentation.
+
+## Common Accessible Component Patterns
+
+Rather than starting from scratch each time, ask AI to generate variations of proven accessible patterns:
+
+**Select Dropdown:**
+```
+Create a custom select dropdown component using the Headless UI pattern.
+Use role="listbox" for the container, role="option" for items.
+Support keyboard: Arrow keys to navigate, Enter to select, Escape to close.
+Announce selected value to screen readers.
+```
+
+**Modal Dialog:**
+```
+Build a modal dialog component that:
+- Traps focus within the modal
+- Closes on Escape key
+- Announces modal title via aria-labelledby
+- Describes modal purpose via aria-describedby
+- Restores focus to trigger element on close
+- Prevents body scroll while open
+```
+
+**Data Table:**
+```
+Create a sortable, filterable data table where:
+- Headers are <th> with scope="col"
+- Click headers to sort, announce via aria-sort
+- Row selection uses checkboxes with proper labels
+- Announce sort direction changes to screen readers
+- Ensure logical reading order in source
+```
+
+## Measuring Accessibility Improvement
+
+After implementing AI-generated accessible components, measure the improvement:
+
+```javascript
+// Before: Run accessibility scan on old component
+// After: Run accessibility scan on new component
+
+// Use Accessibility Insights or axe DevTools
+// Compare violation counts and severity levels
+
+// Example:
+// Before: 12 violations (3 critical, 5 serious, 4 minor)
+// After: 0 violations
+
+// Time to generate:
+// Manual component: 4-6 hours
+// AI-generated component: 30 minutes + 1 hour testing/review
+```
+
+The efficiency gains from AI-assisted accessible component generation compound as your library grows.
+
 ## Related Articles
 
 - [Effective Prompting Strategies for AI Generation of Complex](/ai-tools-compared/effective-prompting-strategies-for-ai-generation-of-complex-/)

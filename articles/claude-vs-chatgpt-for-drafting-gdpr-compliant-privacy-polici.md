@@ -246,6 +246,99 @@ Both tools release updates regularly, often monthly or more frequently. Feature 
 
 Review each tool's privacy policy and terms of service carefully. Most AI tools process your input on their servers, and policies on data retention and training usage vary. If you work with sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
+## Privacy Policy Customization for Your Tech Stack
+
+Both tools excel when you provide tech-specific context:
+
+**For a serverless Node.js app:**
+```
+Draft a GDPR privacy policy for a serverless Node.js application deployed on AWS Lambda.
+Tech stack:
+- Frontend: React running on CloudFront CDN
+- Backend: AWS Lambda + API Gateway
+- Database: DynamoDB for user data, RDS PostgreSQL for analytics
+- Email: SendGrid for transactional emails
+- Analytics: Segment for event tracking
+- Authentication: Auth0
+
+Specify data retention for each service and how users can request data deletion.
+```
+
+**For a Python Django SaaS:**
+```
+Create a GDPR privacy policy for a Python Django SaaS application.
+Tech stack:
+- Application: Django running on Heroku
+- Database: PostgreSQL
+- File storage: AWS S3
+- Email: Mailgun for transactional emails
+- Analytics: Mixpanel
+- Payment: Stripe for subscriptions
+- CDN: Cloudflare
+
+Include compliance requirements for PCI DSS (Stripe) and personal data in S3.
+```
+
+Claude tends to produce more architecture-specific policies with less iteration.
+
+## Implementation Checklist for AI-Generated Policies
+
+Once you've generated a privacy policy with either tool, this checklist ensures legal compliance:
+
+- [ ] All data categories explicitly listed (user data, cookies, logs, analytics)
+- [ ] Legal basis specified for each data category (consent, legitimate interest, contract)
+- [ ] Retention periods defined for each data type
+- [ ] Data subject rights section complete (access, rectification, erasure, portability)
+- [ ] Third-party processor list accurate and complete
+- [ ] International data transfer mechanism specified (Standard Contractual Clauses, etc.)
+- [ ] DPA or processor agreement references
+- [ ] Cookies section matches actual cookie usage
+- [ ] Data protection officer contact information (if applicable)
+- [ ] Recent GDPR fines mentioned (context about compliance importance)
+- [ ] Version history with update dates
+- [ ] Legal review by qualified attorney
+
+Even with AI assistance, legal review is mandatory before deployment.
+
+## Multi-Jurisdiction Requirements
+
+GDPR is European, but many companies serve multiple regions. Request AI-generated policies for your actual jurisdictions:
+
+**For US + EU:**
+```
+Generate GDPR compliant privacy policies, but also include CCPA compliance for California users.
+Clarify where privacy rules differ and how your application handles each region.
+Specifically: data minimization in EU vs. right to deletion in California.
+```
+
+**For Canada + US:**
+```
+Create a privacy policy compliant with PIPEDA (Canada) and CCPA (California).
+Specify how consent requirements differ and how your application adapts.
+```
+
+Claude and ChatGPT both handle multi-jurisdiction policies, but require explicit specification of all jurisdictions upfront.
+
+## Continuous Policy Maintenance
+
+A privacy policy isn't a one-time document. Use AI assistance to maintain it as your application evolves:
+
+- **When adding a new data processor**: Ask the AI to update the processor section
+- **When implementing new features**: Ask the AI to identify new data collection and update retention policies
+- **When changing cookie usage**: Ask the AI to update the cookies section
+- **When setting up new integrations**: Ask the AI to add the integration to the processor list
+
+```
+Recent update to our application: we now integrate with Slack for user notifications.
+Update the privacy policy to:
+1. Add Slack to the third-party processor list
+2. Specify what data we share with Slack
+3. Update the data retention section
+4. Ensure GDPR Article 28 compliance for this new processor
+```
+
+This iterative approach keeps your policy current with your actual data practices.
+
 ## Related Articles
 
 - [AI Coding Tool GDPR Compliance Checklist for European Engine](/ai-tools-compared/ai-coding-tool-gdpr-compliance-checklist-for-european-engine/)

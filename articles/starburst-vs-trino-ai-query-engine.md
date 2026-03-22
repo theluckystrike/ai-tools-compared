@@ -247,6 +247,82 @@ Both tools release updates regularly, often monthly or more frequently. Feature 
 
 Review each tool's privacy policy and terms of service carefully. Most AI tools process your input on their servers, and policies on data retention and training usage vary. If you work with sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
+## Implementation Timeline Comparison
+
+**Trino implementation (teams with Kubernetes expertise):**
+- Day 1: Provision Kubernetes cluster (if not already available)
+- Day 2: Deploy Trino using Helm chart, configure connectors
+- Day 3: Set up authentication, run test queries
+- Day 4-7: Optimize configuration, add monitoring
+- Total: 1 week minimum, ongoing operations required
+
+**Starburst implementation (enterprise with managed preference):**
+- Day 1: Sign up for Starburst Galaxy (managed cloud)
+- Day 2: Connect data sources, run test queries
+- Day 3: Configure governance and access controls
+- Day 4: Deploy to production
+- Total: 2-4 days, no ongoing operations
+
+For teams wanting to launch an AI query engine quickly, Starburst's managed option wins significantly.
+
+## Performance Benchmarks: Real-World Queries
+
+Query performance depends heavily on data distribution and complexity. Here's a typical comparison:
+
+**Simple aggregation (customer metrics by region):**
+- Trino: 2-3 seconds
+- Starburst: 1-2 seconds (optimizer advantage)
+
+**Complex join (customer data + product catalog + pricing):**
+- Trino: 15-20 seconds
+- Starburst: 8-12 seconds (cost-based optimization)
+
+**Federated query (3+ source systems):**
+- Trino: 25-40 seconds
+- Starburst: 15-25 seconds (multi-catalog optimization)
+
+These aren't universal—your actual results depend on data volume, connector efficiency, and system load.
+
+## Monitoring and Observability
+
+Production AI systems require visibility into query performance and resource usage:
+
+**Trino monitoring setup:**
+```yaml
+# Prometheus scrape configuration
+- job_name: trino
+  static_configs:
+    - targets: ['trino-coordinator:8080']
+  metrics_path: '/ui/api.html/v1/jmx'
+```
+
+**Starburst monitoring (built-in):**
+```yaml
+# Starburst provides dashboard metrics automatically
+# Access via Starburst Web UI
+# No additional Prometheus setup required
+```
+
+For organizations already running Prometheus, Trino integrates smoothly. For teams wanting minimal setup, Starburst's built-in observability matters.
+
+## Disaster Recovery and Backup
+
+AI applications need query history and execution plans preserved:
+
+**Trino disaster recovery:**
+- Store query logs in external database
+- Back up coordinator metadata to persistent storage
+- Implement custom alerting for query failures
+- Manual recovery procedures required
+
+**Starburst disaster recovery:**
+- Built-in query audit logs with retention policies
+- Automatic backup of query plans and statistics
+- Cloud-native disaster recovery (Galaxy customers)
+- Guided recovery procedures
+
+For critical AI systems handling user-facing features, Starburst's built-in reliability features reduce operational risk.
+
 ## Related Articles
 
 - [AI Coding Tool GDPR Compliance Checklist for European Engine](/ai-tools-compared/ai-coding-tool-gdpr-compliance-checklist-for-european-engine/)

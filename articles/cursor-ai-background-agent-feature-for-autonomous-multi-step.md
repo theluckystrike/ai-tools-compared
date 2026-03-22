@@ -246,6 +246,76 @@ Pick one tool from the options discussed and sign up for a free trial. Spend 30 
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Error Recovery and Debugging Agent Tasks
+
+When a background agent fails partway through a task, recovery strategies prevent lost progress:
+
+**Immediate response when agent encounters an error:**
+
+1. Review the partial changes the agent made (check git diff)
+2. Identify which phase failed (agent should log this clearly)
+3. Fix the failure cause manually or provide additional context
+4. Resume with a refined prompt that builds on completed work
+
+**Example recovery scenario:**
+
+```
+Previous attempt partially completed. You generated the authentication module and tests passed.
+However, the integration step failed because you used wrong auth service URL.
+The correct URL is: https://auth.company.internal (not https://auth.company.com)
+
+Continue from where you left off. Complete the integration step with the correct URL.
+Don't regenerate the module you already built—just finish integrating it.
+```
+
+**Preventing common agent failures:**
+
+- Provide all external dependencies upfront (API keys, service URLs, credentials)
+- Specify version constraints explicitly for new dependencies
+- Include examples of error messages the agent might encounter
+- Define success criteria the agent can validate locally
+- Enable verbose logging so the agent explains its reasoning
+
+**Debugging why an agent failed:**
+
+```bash
+# Check Cursor's logs for agent activity
+tail -f ~/.cursor/logs/agent-*.log
+
+# Look for: resource not found, permission denied, timeout errors
+# Match errors against task requirements to identify mismatches
+```
+
+## Measuring Agent Productivity Gains
+
+Track whether agent tasks save time compared to manual development:
+
+**Example: Feature implementation with agent**
+- Agent time: 35 minutes
+- Human review time: 10 minutes
+- Manual fixes: 5 minutes
+- Total: 50 minutes vs. 150+ minutes manually
+
+**Example: Test generation with agent**
+- Agent generates: 200 test cases
+- Human validation: 30 minutes
+- Manual additions: 15 minutes
+- Coverage improvement: 40% → 85%
+
+Teams that systematically measure agent productivity identify which task types benefit most from automation. Focus agents on high-impact tasks and reserve manual work for creative decisions.
+
+## Cost Implications of Background Agents
+
+If you're on Cursor Pro with metered pricing, background agents affect your API costs:
+
+- Short agent task (10-15 min): 2-5 API calls
+- Medium agent task (30-45 min): 8-15 API calls
+- Long agent task (60+ min): 20-40 API calls
+
+Compare this to manual development costs. A 2-hour feature implemented by an agent using 30 API calls costs far less than 2 hours of developer time at typical rates.
+
+For teams with large API budgets, background agents provide exceptional ROI on implementation speed.
+
 ## Related Articles
 
 - [How to Use Copilot Agent Mode for Multi-Step Coding Tasks](/ai-tools-compared/how-to-use-copilot-agent-mode-for-multi-step-coding-tasks-20/)
