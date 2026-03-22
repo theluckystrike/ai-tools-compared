@@ -31,6 +31,26 @@ tags: [ai-tools-compared, comparison, artificial-intelligence]---
 
 Fiction writers seeking AI assistance face a crowded market, but two platforms consistently appear in conversations about serious storytelling: Sudowrite and NovelAI. Both target fiction specifically, yet they take fundamentally different approaches to AI-assisted writing. This comparison breaks down the technical capabilities, customization options, and integration possibilities that matter to developers and power users.
 
+| Feature | Sudowrite | NovelAI |
+|---|---|---|
+| Starting Price | $10/month (Basic) | $5.99/month (Basic) |
+| Unlimited Tier | $50/month | $15.99/month (Scroll) |
+| API Access | Yes (paid tiers) | Yes (all tiers) |
+| Custom Models | No (uses fine-tuned GPT) | Yes (Clio, Kayra) |
+| Context System | Automatic rolling summary | Manual Lorebook + Memory |
+| IDE/Editor | Web-based only | Web + API for custom UIs |
+| Image Generation | No | Yes (Opus tier) |
+| Best For | Guided drafting and revision | Controlled long-form fiction |
+
+## Key Takeaways
+
+- **This comparison breaks down**: the technical capabilities, customization options, and integration possibilities that matter to developers and power users.
+- **For casual writers (1 novel/month)**: NovelAI's Basic tier is most economical.
+- **Sudowrite uses a fine-tuned**: version of GPT (older generation, pre-GPT-4).
+- **Use "Story Engine" to**: generate opening scene 3.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+
 ## What is Sudowrite?
 
 Sudowrite positions itself as a creative writing assistant built specifically for novelists and fiction writers. The platform offers a web-based editor with specialized AI modes designed for different stages of the writing process. Rather than simply continuing your text, Sudowrite provides tools for brainstorming, plotting, character development, and revision.

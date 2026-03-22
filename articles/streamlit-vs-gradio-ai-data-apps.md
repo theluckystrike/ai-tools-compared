@@ -27,7 +27,17 @@ intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, comparison, artificial-intelligence]---
 
+
 When building AI-powered data applications, choosing the right frontend framework can significantly impact your development speed and user experience. Streamlit and Gradio have emerged as the two dominant Python frameworks for turning machine learning models into interactive web applications. This guide compares them across the dimensions that matter most for developers building AI data apps.
+
+## Key Takeaways
+
+- **Which framework has better**: community support? Both have active communities.
+- **When building AI-powered data**: applications, choosing the right frontend framework can significantly impact your development speed and user experience.
+- **This guide compares them**: across the dimensions that matter most for developers building AI data apps.
+- **Created by Snowflake (originally**: by Streamlit Inc.), it focuses on turning data scripts into shareable web apps in minutes.
+- **Streamlit uses a declarative**: approach where you define your app's structure by writing Python functions.
+- **Gradio uses a block-based**: API that gives you more granular control over your interface layout.
 
 ## What is Streamlit?
 

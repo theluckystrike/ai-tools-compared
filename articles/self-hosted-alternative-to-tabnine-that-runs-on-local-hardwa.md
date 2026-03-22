@@ -30,6 +30,15 @@ intent-checked: true---
 
 Code completion has become an essential part of modern software development. Tabnine has dominated the market for years as a commercial AI assistant, but privacy concerns, subscription costs, and the desire for offline functionality have driven developers toward self-hosted alternatives. If you need a code completion tool that runs entirely on your local hardware, several compelling options exist in 2026.
 
+## Key Takeaways
+
+- **Models like Qwen2.5-Coder 7B**: achieve HumanEval scores above 88%, which exceeds what Tabnine delivers for many users.
+- **Cost at scale**: Tabnine Enterprise runs $39+ per seat per month.
+- **A shared Tabby ML**: server on a single RTX 4090 (roughly $1,600 hardware cost) serves 10-15 developers with sub-second latency indefinitely, breaking even in under four months.
+- **Qwen2.5-Coder 7B in Q4_K_M**: quantization fits in 8GB unified memory and delivers completions most developers find indistinguishable from Tabnine's on everyday tasks.
+- **If your machine has 32GB RAM**: you can comfortably run larger models for better suggestions.
+- **Many developers find that**: a fast 7B model responding in under a second feels better in practice than a higher-quality 13B model with 3-second latency.
+
 ## Why Consider Self-Hosted Code Completion?
 
 Running AI code completion locally offers three significant advantages. First, **data privacy** ensures your proprietary code never leaves your machine—critical for enterprise developers working on sensitive projects. Second, **cost control** eliminates subscription fees while taking advantage of open-source models you can run indefinitely. Third, **offline capability** means your coding assistant works without internet connectivity, whether you're on a flight or working in secure environments.
