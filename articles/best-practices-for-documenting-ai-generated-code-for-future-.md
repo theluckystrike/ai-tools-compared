@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Practices for Documenting AI-Generated Code for Future"
-description: "Learn essential strategies for documenting AI-generated code to ensure long-term maintainability and team collaboration"
+description: "Document AI-generated code for long-term maintenance: attribution comments, decision logs, prompt archival, and review workflow standards."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

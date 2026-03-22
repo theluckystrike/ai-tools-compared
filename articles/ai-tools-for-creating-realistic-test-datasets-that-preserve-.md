@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Creating Realistic Test Datasets That Preserve"
-description: "Discover how AI-powered tools can generate realistic test data while maintaining foreign key relationships and database integrity for your development"
+description: "Generate test datasets with valid foreign keys using AI. Referential integrity, realistic distributions, and PII-safe synthetic data generation."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

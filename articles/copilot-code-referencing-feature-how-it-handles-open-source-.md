@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Copilot Code Referencing Feature: How It Handles Open Source"
-description: "This guide provides practical steps and best practices to help you accomplish this task effectively. Follow the recommendations to get the best results from"
+description: "Copilot code referencing: how it flags open-source license matches, suppresses suggestions, and what the duplication detection filter catches."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

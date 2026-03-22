@@ -2,7 +2,7 @@
 
 layout: default
 title: "AI Tools for Generating AWS CloudWatch Composite Alarm"
-description: "Discover how AI tools can automate the creation of CloudWatch composite alarms using Terraform. Practical examples and code snippets for developers."
+description: "Generate CloudWatch composite alarm Terraform configs with AI. Multi-metric conditions, SNS actions, and cross-account alarm aggregation covered."
 date: 2026-03-21
 author: "AI Tools Compared"
 permalink: /ai-tools-for-generating-aws-cloudwatch-composite-alarm-confi/

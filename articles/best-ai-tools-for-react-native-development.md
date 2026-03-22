@@ -14,7 +14,15 @@ tags: [ai-tools-compared]
 ---
 
 {% raw %}
+
 React Native development has a unique set of AI challenges: the component model is familiar, but platform-specific APIs, StyleSheet constraints, and the gap between web expectations and mobile behavior trip up most AI tools. This guide tests Claude Code, Cursor, and GitHub Copilot on real React Native tasks.
+
+## Key Takeaways
+
+- **This works but is**: not recommended for new projects using the gesture handler library.
+- **Also flagged the inline**: style object as a re-render cause.
+- **Topics covered**: the test cases, task 1: swipeable card (gesture handler), task 2: custom bottom tab bar with haptics
+- **Practical guidance included**: Step-by-step setup and configuration instructions
 
 ## The Test Cases
 

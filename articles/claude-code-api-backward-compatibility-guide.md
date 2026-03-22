@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code API Backward Compatibility Guide"
-description: "A guide to maintaining API backward compatibility using Claude Code, covering version strategies, contract testing, and migration patterns"
+description: "Maintain API backward compatibility with Claude Code: versioning strategies, contract testing, deprecation workflows, and breaking change detection."
 date: 2026-03-18
 last_modified_at: 2026-03-18
 author: theluckystrike

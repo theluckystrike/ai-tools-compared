@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Coding Tools With Generous Free Tier for Hobbyists"
-description: "Discover the top AI-powered coding assistants that offer free plans perfect for hobbyists and side projects"
+description: "AI coding assistants with free plans for hobbyists: Codeium, Copilot free tier, Cursor basic, and Claude. Usage limits and features compared."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

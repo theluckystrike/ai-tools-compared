@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Midjourney Relax Mode Queue Times How Slow Is It Really"
-description: "A guide to understanding Midjourney Relax mode queue times, what affects wait times, and practical tips for faster image generation"
+description: "Midjourney Relax mode actual wait times in 2026: peak vs off-peak benchmarks, queue position factors, and strategies to reduce delays."
 date: 2026-03-18
 last_modified_at: 2026-03-18
 author: theluckystrike

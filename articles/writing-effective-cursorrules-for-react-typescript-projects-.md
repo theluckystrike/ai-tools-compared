@@ -30,6 +30,15 @@ voice-checked: true---
 
 Write CursorRules for React TypeScript projects by specifying TypeScript configuration (strict mode, jsx setting, module resolution), React hook rules (exhaustiveDeps warnings), and component patterns (functional/arrow function preference). These rules ensure Cursor AI generates code following your team's established conventions for component composition, prop typing, hook patterns, and state management approaches.
 
+## Key Takeaways
+
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **Does Cursor offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **A common rule to**: include: ``` Component props must use TypeScript interface (not type alias) unless the props require union or intersection types.
+- **For React TypeScript projects in particular**: this matters because the surface area of valid code is large.
+- **TypeScript props can use `interface`**: `type`, or inline annotations.
+- **State management can use `useState`**: `useReducer`, Zustand, Redux, Jotai, or Recoil.
+
 ## Why CursorRules Matter for React TypeScript
 
 When working with React and TypeScript, projects often develop unique patterns around component composition, prop typing, and state management. Without explicit guidance, AI assistants may generate code that conflicts with your established conventions. CursorRules solve this by providing persistent context about your project's specific requirements.

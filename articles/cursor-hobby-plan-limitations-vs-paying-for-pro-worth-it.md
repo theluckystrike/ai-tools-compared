@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Cursor Hobby Plan Limitations vs Paying for Pro Worth"
-description: "This guide compares the strengths and weaknesses of each tool for this specific task. Choose the tool that best matches your workflow, budget, and technical"
+description: "Cursor Hobby vs Pro plan in 2026: completion limits, model access, premium features, and whether upgrading pays off for different use cases."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

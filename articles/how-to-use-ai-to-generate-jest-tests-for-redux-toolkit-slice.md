@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI to Generate Jest Tests for Redux Toolkit"
-description: "A practical guide for developers looking to automate Jest test generation for Redux Toolkit slices using AI tools"
+description: "Generate Jest tests for Redux Toolkit slices with Claude and Copilot. Covers createSlice, createAsyncThunk, and RTK Query test patterns."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

@@ -12,11 +12,21 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true---
+
+
 Write custom instructions for AI tools by specifying all required security headers (Strict-Transport-Security, Content-Security-Policy, X-Content-Type-Options, X-Frame-Options, X-XSS-Protection, Referrer-Policy, Permissions-Policy) with exact values and explaining when to apply them in middleware or server configuration. These instructions ensure every piece of AI-generated web server code includes your complete security header requirements automatically.
 
 
 This guide shows you how to create effective custom instructions for AI coding tools that enforce your security header standards across all projects.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories.
+- Use appropriate framework-specific implementations.
+- **For Express.js**: use helmet with explicit configuration.
+- **Use framework-native middleware or**: established libraries like helmet for Node.js.
+- **Rather than weakening your base instructions**: create supplementary rules for specific use cases.
+- **Use a centralized location**: that applies to all repositories, or explicitly document where instructions live in each project.
 
 ## Why Security Headers Need Explicit Instructions
 

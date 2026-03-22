@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Automated Load Testing Script Generation"
-description: "Discover how AI tools are transforming load testing script generation and analysis for developers and performance engineers in 2026"
+description: "Generate k6, Locust, and JMeter load test scripts with AI. Covers scenario modeling, threshold configuration, and result analysis automation."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

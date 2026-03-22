@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Copilot vs Cursor for Implementing Redis Caching Patterns"
-description: "This guide compares the strengths and weaknesses of each tool for this specific task. Choose the tool that best matches your workflow, budget, and technical"
+description: "Copilot vs Cursor for Redis caching in Python: cache decorator generation, TTL patterns, invalidation logic, and async Redis client support."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

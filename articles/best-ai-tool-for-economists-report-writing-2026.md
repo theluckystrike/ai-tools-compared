@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tool for Economists Report Writing 2026"
-description: "A practical guide to AI writing tools for economists creating reports, research papers, and policy documents in 2026"
+description: "AI writing tools for economists: Claude, GPT-4, and Writefull tested on policy briefs, research papers, and data-driven reports with citations."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: theluckystrike

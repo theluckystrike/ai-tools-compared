@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Copilot Vision Feature for Understanding Screenshots"
-description: "This guide provides an overview to help you understand and make informed decisions about this topic"
+description: "GitHub Copilot Vision reads screenshots and mockups to generate matching code. Accuracy tests on Figma exports, wireframes, and UI screenshots."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

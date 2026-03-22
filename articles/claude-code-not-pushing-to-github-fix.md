@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Not Pushing to GitHub Fix: Troubleshooting Guide"
-description: "A guide to fixing Claude Code push failures to GitHub. Learn to diagnose and resolve authentication, SSH, and configuration issues"
+description: "Fix Claude Code GitHub push failures: SSH key mismatches, token scope errors, remote URL issues, and authentication troubleshooting steps."
 date: 2026-03-15
 last_modified_at: 2026-03-22
 author: theluckystrike

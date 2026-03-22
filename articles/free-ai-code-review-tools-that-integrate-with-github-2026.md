@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Free AI Code Review Tools That Integrate With GitHub (2026)"
-description: "A practical guide to free AI-powered code review tools that integrate with GitHub for developers and power users"
+description: "Free AI code review bots for GitHub in 2026: CodeRabbit, PR-Agent, and Sourcery compared on accuracy, PR comment quality, and setup difficulty."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

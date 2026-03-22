@@ -16,9 +16,16 @@ voice-checked: true---
 
 {% raw %}
 
-
 When AI coding assistants generate release notes, version updates, or changelog entries, they often produce inconsistent formatting that doesn't match your team's established conventions. Without explicit instructions, AI tools default to generic formats that may not align with your project's documentation standards. Custom instructions solve this problem by teaching AI exactly how your team structures changelog entries.
 
+## Key Takeaways
+
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+- **Use imperative mood ("Added"**: not "Adding") 2.
+- **Use Keep a Changelog**: format 2.
+- **Use imperative mood for**: all entries 4.
 
 ## Why Changelog Format Consistency Matters
 

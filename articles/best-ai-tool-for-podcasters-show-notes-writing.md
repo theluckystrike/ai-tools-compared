@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tool for Podcasters Show Notes Writing"
-description: "A practical comparison of AI-powered tools for creating professional podcast show notes efficiently"
+description: "AI tools for podcast show notes: Descript, Castmagic, Claude, and Opus Clip tested on transcription accuracy, timestamp linking, and SEO output."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: theluckystrike

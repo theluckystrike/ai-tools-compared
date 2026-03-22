@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI to Build Data Pipeline Retry and Dead Letter"
-description: "Learn how to use AI to create intelligent retry mechanisms and dead letter queue handling for data pipelines"
+description: "Build retry logic and dead letter queues for data pipelines with AI assistance. Covers exponential backoff, poison pill handling, and alerting."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

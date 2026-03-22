@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Creating Dbt Documentation Blocks"
-description: "Discover how AI-powered tools can automatically generate dbt documentation blocks by analyzing column-level lineage and transform your data"
+description: "Generate dbt documentation blocks from column lineage using AI. Automate descriptions, add freshness metadata, and trace data transformations."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

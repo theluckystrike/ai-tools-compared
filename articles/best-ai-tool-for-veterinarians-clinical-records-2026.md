@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tool for Veterinarians Clinical Records 2026"
-description: "A practical comparison of AI-powered clinical record solutions for veterinary practices in 2026"
+description: "AI clinical record tools for veterinary practices in 2026: voice-to-SOAP notes, drug interaction checks, and EHR integration options compared."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: theluckystrike

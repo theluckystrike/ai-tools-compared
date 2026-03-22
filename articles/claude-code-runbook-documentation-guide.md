@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Runbook Documentation Guide"
-description: "A guide to creating and maintaining operational runbooks using Claude Code. Learn how to document procedures, automate runbook creation"
+description: "Create operational runbooks with Claude Code: incident procedures, deployment steps, rollback plans, and on-call documentation templates."
 date: 2026-03-18
 last_modified_at: 2026-03-18
 author: "theluckystrike"

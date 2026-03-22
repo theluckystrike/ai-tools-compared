@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tool for Event Planners Proposal Writing"
-description: "Discover how AI can improve your event planning proposals. Learn practical strategies for creating compelling, professional proposals faster"
+description: "AI tools for event proposals: Claude, Jasper, and GPT-4 tested on venue comparisons, budget breakdowns, and client-facing document formatting."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: theluckystrike

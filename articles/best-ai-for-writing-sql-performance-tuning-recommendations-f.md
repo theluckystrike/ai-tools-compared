@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI for Writing SQL Performance Tuning Recommendations"
-description: "Discover how AI tools analyze slow query logs and generate performance tuning recommendations. Practical examples and tool comparisons for developers"
+description: "AI tools that analyze slow query logs and write tuning recommendations: index suggestions, query rewrites, and partitioning advice from real data."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

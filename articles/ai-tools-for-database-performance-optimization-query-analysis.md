@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Database Performance Optimization Query"
-description: "guide to using AI assistants for identifying slow queries, optimizing indexes, and improving database performance"
+description: "AI tools that parse slow query logs, suggest missing indexes, and rewrite inefficient SQL. EverSQL, Aiven, and Claude compared on real queries."
 date: 2026-03-20
 last_modified_at: 2026-03-20
 author: theluckystrike

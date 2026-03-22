@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tool for Academic Paper Editing 2026"
-description: "A technical comparison of AI-powered academic paper editing tools for developers and power users in 2026"
+description: "Grammarly, Writefull, Paperpal, and Claude tested for academic paper editing. Citation handling, LaTeX support, and journal style compliance compared."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: theluckystrike

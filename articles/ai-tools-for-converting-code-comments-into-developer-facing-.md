@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Converting Code Comments into Developer Facing"
-description: "Discover how AI tools transform code comments into professional developer documentation. Practical examples and implementation guide for automating"
+description: "AI tools that extract code comments into formatted developer docs. JSDoc, docstring, and inline comment conversion with style consistency checks."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

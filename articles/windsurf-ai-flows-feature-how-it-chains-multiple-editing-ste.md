@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Windsurf AI Flows Feature How It Chains Multiple Editing"
-description: "A practical guide to Windsurf AI Flows, explaining how to chain multiple editing steps for automated code workflows"
+description: "Windsurf AI Flows chains multi-file edits into automated sequences. Setup, custom flow creation, and comparison with Cursor Composer workflows."
 date: 2026-03-16
 last_modified_at: 2026-03-16
 author: theluckystrike

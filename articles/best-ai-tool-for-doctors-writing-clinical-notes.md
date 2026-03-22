@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tool for Doctors Writing Clinical"
-description: "Discover how AI tools help doctors write clinical notes faster while maintaining accuracy and compliance. Real-world use cases and practical guidance"
+description: "AI clinical note tools for physicians: voice-to-text SOAP notes, EHR integration, HIPAA compliance, and ambient listening features compared."
 date: 2026-03-15
 last_modified_at: 2026-03-15
 author: theluckystrike

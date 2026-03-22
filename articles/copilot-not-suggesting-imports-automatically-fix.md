@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Copilot Not Suggesting Imports Automatically"
-description: "Troubleshooting guide for GitHub Copilot not suggesting imports automatically. Step-by-step fixes for developers"
+description: "Fix GitHub Copilot not auto-suggesting imports: settings checks, language server conflicts, extension order, and tsconfig adjustments step by step."
 date: 2026-03-15
 last_modified_at: 2026-03-22
 author: theluckystrike
