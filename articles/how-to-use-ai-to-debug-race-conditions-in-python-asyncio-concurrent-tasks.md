@@ -297,6 +297,109 @@ async def test_counter_increment(n):
 ```
 
 
+## Choosing the Right AI Tool for Asyncio Debugging
+
+Not all AI coding assistants are equally effective at diagnosing concurrency bugs. The table below compares how major tools handle asyncio race condition analysis:
+
+| Tool | Race Condition Detection | Sync Primitive Suggestions | Stress Test Generation | Context Window |
+|------|--------------------------|----------------------------|------------------------|----------------|
+| Claude (Sonnet/Opus) | Excellent | Excellent | Strong | 200k tokens |
+| GitHub Copilot | Good | Good | Moderate | 8k tokens |
+| Cursor (Claude backend) | Excellent | Excellent | Strong | 200k tokens |
+| ChatGPT GPT-4o | Good | Good | Moderate | 128k tokens |
+| Gemini 1.5 Pro | Good | Moderate | Moderate | 1M tokens |
+
+**Context window matters significantly for asyncio debugging.** Race conditions often span multiple modules and call sites. Tools with larger context windows can analyze the complete coroutine lifecycle—from task creation through gathering and cancellation—without requiring you to manually curate which code sections to share.
+
+For complex asyncio codebases, use a tool that can hold your entire event loop configuration, task spawning logic, and shared state definitions simultaneously. Claude-backed tools handle this particularly well because they can track data flow across long files and identify the specific `await` expressions where concurrent access becomes possible.
+
+
+## Prompt Engineering for Concurrency Bugs
+
+How you phrase your prompt to an AI tool dramatically affects the quality of race condition analysis. Vague descriptions produce generic advice. Specific, structured prompts produce actionable fixes.
+
+**Weak prompt:**
+```
+My async code has a race condition, help me fix it
+```
+
+**Strong prompt:**
+```
+I have a Python asyncio application with the following symptoms:
+- Running 500 concurrent coroutines that each read from and write to `self.cache` (a dict)
+- Under load, cache entries occasionally disappear
+- The bug is non-deterministic and only appears with >200 concurrent tasks
+- I'm using Python 3.11, asyncio with the default event loop
+
+Here's the relevant code section: [paste code]
+
+Please:
+1. Identify the exact lines where the race condition can occur
+2. Explain the specific timing sequence that causes the bug
+3. Recommend the best synchronization primitive for this use case
+4. Provide the corrected code with an explanation of why it's safe
+```
+
+This structure forces the AI to work through the problem systematically rather than offering generic asyncio advice. The symptom description (disappearing entries, non-deterministic, load-dependent) gives the AI enough signal to identify the correct race condition class without guessing.
+
+
+## Debugging Real-World Asyncio Patterns
+
+Beyond the counter example, AI tools prove effective at diagnosing several common real-world asyncio patterns that frequently develop race conditions.
+
+**Shared cache with TTL expiry**: Multiple coroutines check if a cache entry is expired, then race to refresh it. The correct pattern uses a per-key lock:
+
+```python
+import asyncio
+from collections import defaultdict
+
+class AsyncCache:
+    def __init__(self):
+        self._cache = {}
+        self._locks = defaultdict(asyncio.Lock)
+
+    async def get_or_fetch(self, key: str, fetch_fn):
+        # Check without lock first (fast path)
+        if key in self._cache and not self._cache[key].is_expired():
+            return self._cache[key].value
+
+        # Acquire per-key lock to prevent thundering herd
+        async with self._locks[key]:
+            # Re-check after acquiring lock (double-checked locking)
+            if key in self._cache and not self._cache[key].is_expired():
+                return self._cache[key].value
+
+            result = await fetch_fn(key)
+            self._cache[key] = CacheEntry(result)
+            return result
+```
+
+AI tools immediately recognize this double-checked locking pattern and generate it when you describe the thundering herd problem. Without AI assistance, most developers either skip the inner check (making the lock ineffective) or use a global lock (creating a bottleneck).
+
+**Connection pool exhaustion**: When multiple coroutines compete for database connections, improper semaphore usage leads to deadlocks. AI tools reliably identify when a `Semaphore` is acquired but never released on error paths, and generate the corrected `async with` version.
+
+**Task cancellation cleanup**: Cancelled tasks that hold locks cause deadlocks in downstream coroutines. AI tools recognize when `asyncio.shield()` is appropriate versus when you should handle `asyncio.CancelledError` explicitly in your `finally` blocks.
+
+
+## Using asyncio Debug Mode with AI Analysis
+
+Python's built-in asyncio debug mode surfaces additional runtime information that makes AI analysis more effective:
+
+```python
+import asyncio
+import os
+
+os.environ["PYTHONASYNCIODEBUG"] = "1"
+
+async def main():
+    await your_application()
+
+asyncio.run(main(), debug=True)
+```
+
+Debug mode logs coroutines that block the event loop too long, tasks destroyed while pending, and futures created outside an event loop. When debug mode produces warnings, copy them verbatim into your AI prompt alongside the relevant code. The combination of runtime warnings and static code analysis gives the AI enough signal to pinpoint which coroutines are blocking the event loop or creating race windows for other tasks.
+
+
 ## Related Articles
 
 - [Best AI Tools for Python asyncio Concurrent Task Management](/ai-tools-compared/best-ai-tools-for-python-asyncio-concurrent-task-management-/)
