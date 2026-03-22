@@ -49,6 +49,16 @@ Configure Claude Code for internal library APIs using three core methods: create
 - **Without proper configuration**: it treats internal library calls as black boxes, providing generic suggestions instead of context-aware recommendations.
 - **Use TypeScript interfaces in**: your specifications when possible.
 
+## Table of Contents
+
+- [Why Internal API Configuration Matters](#why-internal-api-configuration-matters)
+- [Prerequisites](#prerequisites)
+- [Best Practices for Maintaining Accuracy](#best-practices-for-maintaining-accuracy)
+- [Overview](#overview)
+- [Practical Example: Complete Setup](#practical-example-complete-setup)
+- [Overview](#overview)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Internal API Configuration Matters
 
 Claude Code operates by analyzing your project's context. Without proper configuration, it treats internal library calls as black boxes, providing generic suggestions instead of context-aware recommendations. When you configure access to your internal API definitions, Claude Code can offer precise completions, accurate error explanations, and relevant refactoring suggestions based on your actual library interfaces.
@@ -388,10 +398,9 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Configuring Claude Code to Understand Your Teams Pull Reques](/ai-tools-compared/configuring-claude-code-to-understand-your-teams-pull-reques/)
-- [Best Way to Configure AI Coding Tools to Follow Your Databas](/ai-tools-compared/best-way-to-configure-ai-coding-tools-to-follow-your-databas/)
-- [Best Way to Configure CursorRules for Python FastAPI Project](/ai-tools-compared/best-way-to-configure-cursorrules-for-python-fastapi-project/)
-- [How to Configure Claude Code Project Memory for Persistent](/ai-tools-compared/how-to-configure-claude-code-project-memory-for-persistent-c/)
 - [Configure Claude Code](/ai-tools-compared/how-to-configure-claude-code-to-follow-your-teams-feature-fl/)
-
+- [Claude Code Losing Context Across Sessions](/ai-tools-compared/claude-code-losing-context-across-sessions-fix/)
+- [Configuring Claude Code to Understand Your Teams Pull](/ai-tools-compared/configuring-claude-code-to-understand-your-teams-pull-reques/)
+- [AI Pair Programming Tools Comparison 2026: Claude Code](/ai-tools-compared/ai-pair-programming-tools-comparison-2026/)
+- [Claude Code Runbook Documentation Guide](/ai-tools-compared/claude-code-runbook-documentation-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

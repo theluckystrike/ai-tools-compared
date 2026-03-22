@@ -41,6 +41,24 @@ The refund window is designed to give users enough time to evaluate the Pro feat
 - **Most AI coding tools**: follow similar policies, offering anywhere from 14 to 30 days for refunds.
 - **PayPal payments**: if used through Stripe's integration, may follow slightly different timelines.
 
+## Table of Contents
+
+- [Understanding Cursor Pro Subscription Tiers](#understanding-cursor-pro-subscription-tiers)
+- [Can You Get a Refund from Cursor Pro?](#can-you-get-a-refund-from-cursor-pro)
+- [How to Request a Refund from Cursor Pro](#how-to-request-a-refund-from-cursor-pro)
+- [What Happens After a Refund?](#what-happens-after-a-refund)
+- [Common Reasons for Refund Requests](#common-reasons-for-refund-requests)
+- [Tips for a Successful Refund Request](#tips-for-a-successful-refund-request)
+- [Alternatives to Requesting a Refund](#alternatives-to-requesting-a-refund)
+- [Understanding Cursor's Billing Through Stripe](#understanding-cursors-billing-through-stripe)
+- [Detailed Refund Timelines](#detailed-refund-timelines)
+- [Comparing Refund Policies: Cursor vs Competitors](#comparing-refund-policies-cursor-vs-competitors)
+- [Real Refund Request Examples](#real-refund-request-examples)
+- [Maximizing Your Chances of Approval](#maximizing-your-chances-of-approval)
+- [What Happens if Your Refund Is Denied](#what-happens-if-your-refund-is-denied)
+- [Strategies to Avoid Needing a Refund](#strategies-to-avoid-needing-a-refund)
+- [Related Articles on AI Coding Tool Costs](#related-articles-on-ai-coding-tool-costs)
+
 ## Understanding Cursor Pro Subscription Tiers
 
 Cursor Pro offers several subscription tiers, each with different features and pricing. Before examining the refund policy, let's briefly review the typical structure:
@@ -241,12 +259,11 @@ Cursor does not offer a formal free trial for Pro. The Hobby tier serves as a fu
 
 ## Related Articles
 
-- [Copilot vs Cursor vs Windsurf: Monthly Cost Breakdown](/ai-tools-compared/copilot-vs-cursor-vs-windsurf-monthly-cost-breakdown-which-saves-money-2026/)
-- [Copilot Individual vs Cursor Pro Annual Cost Breakdown 2026](/ai-tools-compared/copilot-individual-vs-cursor-pro-annual-cost-breakdown-2026/)
-- [Cursor Hobby Plan Limitations vs Paying for Pro Worth It](/ai-tools-compared/cursor-hobby-plan-limitations-vs-paying-for-pro-worth-it/)
-- [Cursor Pro Privacy Mode Does It Cost Extra](/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
-- [Cursor Pro Slow Model vs Fast Model Credits How It Works](/ai-tools-compared/cursor-pro-slow-model-vs-fast-model-credits-how-it-works/)
-
+- [Windsurf Pro vs Cursor Pro: Price and Features Compared 2026](/ai-tools-compared/windsurf-pro-vs-cursor-pro-price-and-features-compared-2026/)
+- [Cursor Pro Usage Cap: How Many Requests Per Day in 2026](/ai-tools-compared/cursor-pro-usage-cap-how-many-requests-per-day-2026/)
+- [Does Cursor Pro Charge Extra for Large File Indexing in 2026](/ai-tools-compared/does-cursor-pro-charge-extra-for-large-file-indexing-2026/)
+- [Cursor Hobby Plan Limitations vs Paying for Pro Worth](/ai-tools-compared/cursor-hobby-plan-limitations-vs-paying-for-pro-worth-it/)
+- [AI Tools for Returns and Refund Automation](/ai-tools-compared/ai-tools-for-returns-and-refund-automation/)
 ## Detailed Refund Timelines
 
 **Timeline from Refund Request to Payout**

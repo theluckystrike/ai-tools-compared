@@ -39,6 +39,17 @@ AWS development demands precision. A misconfigured IAM policy opens security hol
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **Missing ListBucket if code**: uses list operations, but the prompt didn't require it.
 
+## Table of Contents
+
+- [AWS Lambda Function Generation](#aws-lambda-function-generation)
+- [AWS CDK Infrastructure Code](#aws-cdk-infrastructure-code)
+- [IAM Policy Generation](#iam-policy-generation)
+- [CloudFormation Template Generation](#cloudformation-template-generation)
+- [Cost Comparison for AWS Development](#cost-comparison-for-aws-development)
+- [Overall Accuracy Summary](#overall-accuracy-summary)
+- [Recommendations by Use Case](#recommendations-by-use-case)
+- [Practical Metrics for Your Decision](#practical-metrics-for-your-decision)
+
 ## AWS Lambda Function Generation
 
 Lambda is the most common AWS workload AI tools assist with. Both Copilot and CodeWhisperer have seen countless Lambda examples in training data.

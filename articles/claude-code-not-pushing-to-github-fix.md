@@ -46,6 +46,21 @@ GitHub's email privacy setting is blocking the push because your commit email is
 - **Most push failures resolve**: by regenerating your SSH key or Personal Access Token and ensuring the remote URL matches your authentication method (SSH vs HTTPS).
 - **This happens frequently on**: machines used for multiple GitHub accounts.
 
+## Table of Contents
+
+- [Understanding the Push Failure](#understanding-the-push-failure)
+- [Authentication Issues](#authentication-issues)
+- [SSH Configuration Problems](#ssh-configuration-problems)
+- [Repository and Permission Issues](#repository-and-permission-issues)
+- [Network and Connection Issues](#network-and-connection-issues)
+- [Git Configuration Problems](#git-configuration-problems)
+- [Reading Git Push Error Messages](#reading-git-push-error-messages)
+- [Personal Access Token Scope Errors](#personal-access-token-scope-errors)
+- [Git Credential Cache and Keychain Issues](#git-credential-cache-and-keychain-issues)
+- [Claude Code Specific Issues](#claude-code-specific-issues)
+- [Diagnostic Checklist](#diagnostic-checklist)
+- [Preventive Measures](#preventive-measures)
+
 ## Understanding the Push Failure
 
 When Claude Code attempts to push to GitHub and fails, the issue typically falls into one of several categories: authentication problems, SSH key misconfiguration, repository permissions, or network issues. Identifying which category applies to your situation is the first step toward resolution.
@@ -441,12 +456,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [ChatGPT Slow Response Fix 2026: Complete Troubleshooting](/ai-tools-compared/chatgpt-slow-response-fix-2026/)
-- [Cursor AI Making Too Many API Calls Fix: Troubleshooting](/ai-tools-compared/cursor-ai-making-too-many-api-calls-fix/)
-- [Cursor Keeps Crashing Fix 2026: Complete Troubleshooting](/ai-tools-compared/cursor-keeps-crashing-fix-2026/)
-- [Copilot vs Claude Code for Writing GitHub Actions Cicd Workf](/ai-tools-compared/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
-- [Claude Code Losing Context Across Sessions Fix](/ai-tools-compared/claude-code-losing-context-across-sessions-fix/)
-
+- [Claude Code Terminal Permission Denied](/ai-tools-compared/claude-code-terminal-permission-denied-fix/)
+- [Copilot vs Claude Code for Writing GitHub Actions Cicd](/ai-tools-compared/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
+- [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
+- [Claude Code Runbook Documentation Guide](/ai-tools-compared/claude-code-runbook-documentation-guide/)
+- [Configure Claude Code](/ai-tools-compared/how-to-configure-claude-code-to-follow-your-teams-feature-fl/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 {% endraw %}

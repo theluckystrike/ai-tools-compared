@@ -40,6 +40,24 @@ VS Code with Live Share and AI completion extensions provides real-time pair pro
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Choose VS Code for**: lightweight remote sessions with strong AI code hints; choose JetBrains for heavy-duty refactoring sessions where both developers need structured IDE navigation.
 
+## Table of Contents
+
+- [Real-Time Collaborative Code Editing](#real-time-collaborative-code-editing)
+- [AI-Assisted Code Discussion and Explanation](#ai-assisted-code-discussion-and-explanation)
+- [Shared AI Context and Project Understanding](#shared-ai-context-and-project-understanding)
+- [Naming Standards](#naming-standards)
+- [AI Behavior](#ai-behavior)
+- [Voice and Screen-Sharing AI Assistance](#voice-and-screen-sharing-ai-assistance)
+- [Multi-LLM Support for Diverse Problem Solving](#multi-llm-support-for-diverse-problem-solving)
+- [Practical Remote Pairing Workflow](#practical-remote-pairing-workflow)
+- [Advanced Session Management](#advanced-session-management)
+- [AI-Assisted Debugging in Remote Sessions](#ai-assisted-debugging-in-remote-sessions)
+- [Real-Time Code Review Integration](#real-time-code-review-integration)
+- [Async Pair Programming (Time Zone Distributed)](#async-pair-programming-time-zone-distributed)
+- [Pair Programming Session: [Task Name]](#pair-programming-session-task-name)
+- [Team Onboarding with AI Pair Programming](#team-onboarding-with-ai-pair-programming)
+- [Performance Optimization in Remote Sessions](#performance-optimization-in-remote-sessions)
+
 ## Real-Time Collaborative Code Editing
 
 The foundation of effective remote pair programming lies in real-time code synchronization. AI-enhanced collaborative editing goes beyond simple shared cursors to provide contextual awareness of what your partner is working on.
@@ -491,11 +509,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026](/ai-tools-compared/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
-- [AI Pair Programming Tools Comparison 2026: Claude Code.](/ai-tools-compared/ai-pair-programming-tools-comparison-2026/)
+- [Best AI IDE Features for Understanding and Modifying Legacy](/ai-tools-compared/best-ai-ide-features-for-understanding-and-modifying-legacy-/)
+- [Best AI IDE Features for Refactoring Class Hierarchies](/ai-tools-compared/best-ai-ide-features-for-refactoring-class-hierarchies-and-i/)
 - [AI Pair Programming Tools for C# and .NET Development](/ai-tools-compared/ai-pair-programming-tools-for-c-sharp-dotnet/)
-- [Free AI Pair Programming Tools That Work in Terminal in 2026](/ai-tools-compared/free-ai-pair-programming-tools-that-work-in-terminal-2026/)
-- [Best AI IDE Features for Database Query Writing and](/ai-tools-compared/best-ai-ide-features-for-database-query-writing-and-optimization/)
-
+- [Best AI Features for Generating API Client Code](/ai-tools-compared/best-ai-features-for-generating-api-client-code-from-openapi/)
+- [AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026](/ai-tools-compared/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

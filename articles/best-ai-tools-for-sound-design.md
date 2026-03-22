@@ -39,6 +39,24 @@ Choose AudioCraft for local, privacy-first generation; Soundraw for music creati
 - **Soundraw works well for**: game backgrounds, app soundtracks, and video content where you need music that adapts to user actions or scene changes.
 - **Their API enables transforming one voice into another while preserving emotional expression**: useful for creating consistent character voices or localizing content.
 
+## Table of Contents
+
+- [Why AI Tools Matter for Sound Design](#why-ai-tools-matter-for-sound-design)
+- [Soundraw: Music Generation for Developers](#soundraw-music-generation-for-developers)
+- [ElevenLabs: Voice Synthesis and Sound Effects](#elevenlabs-voice-synthesis-and-sound-effects)
+- [AudioCraft: Open-Source Local Generation](#audiocraft-open-source-local-generation)
+- [Respeecher: Voice Conversion and Synthesis](#respeecher-voice-conversion-and-synthesis)
+- [Murf AI: Studio-Quality Voiceovers](#murf-ai-studio-quality-voiceovers)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+- [Integration Considerations](#integration-considerations)
+- [Detailed Tool Comparison: Features and Pricing](#detailed-tool-comparison-features-and-pricing)
+- [Building Audio Generation Pipelines](#building-audio-generation-pipelines)
+- [Real-Time Audio Generation for Interactive Applications](#real-time-audio-generation-for-interactive-applications)
+- [Evaluating Audio Quality Programmatically](#evaluating-audio-quality-programmatically)
+- [Caching and Optimization Strategies](#caching-and-optimization-strategies)
+- [Integrating Generated Audio into Web Applications](#integrating-generated-audio-into-web-applications)
+- [Building Datasets from AI-Generated Audio](#building-datasets-from-ai-generated-audio)
+
 ## Why AI Tools Matter for Sound Design
 
 Modern AI audio tools go beyond simple sample libraries. They generate original audio from text descriptions, clone voices, create ambient soundscapes, and even produce music stems. For developers, the key advantage is programmatic control—you can embed AI-generated audio directly into applications, games, and interactive experiences.

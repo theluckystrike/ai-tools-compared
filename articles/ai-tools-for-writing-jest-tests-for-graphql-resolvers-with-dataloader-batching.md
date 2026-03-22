@@ -39,6 +39,17 @@ Claude and GitHub Copilot excel at generating Jest tests for DataLoader-enabled 
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [The Testing Challenge with DataLoader Batching](#the-testing-challenge-with-dataloader-batching)
+- [Setting Up Your Test Environment](#setting-up-your-test-environment)
+- [Writing Tests with AI Assistance](#writing-tests-with-ai-assistance)
+- [Handling Edge Cases](#handling-edge-cases)
+- [Testing Nested Resolvers with Batching](#testing-nested-resolvers-with-batching)
+- [Mocking Strategies for AI-Generated Tests](#mocking-strategies-for-ai-generated-tests)
+- [Common Pitfalls AI Tools Can Help Avoid](#common-pitfalls-ai-tools-can-help-avoid)
+- [Integrating with GraphQL Testing Libraries](#integrating-with-graphql-testing-libraries)
+
 ## The Testing Challenge with DataLoader Batching
 
 DataLoader solves the N+1 query problem in GraphQL by collecting multiple field resolution requests and dispatching them as a single batched load call. While this improves performance, it complicates testing because you need to verify:
@@ -304,8 +315,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 - [Best AI Tools for Writing GraphQL Resolvers 2026](/ai-tools-compared/best-ai-tools-for-writing-graphql-resolvers-2026/)
 - [AI Tools for Writing Jest Tests for Web Worker and Service](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-web-worker-and-service-w/)
-- [Best AI for Writing Jest Tests for React Custom Hooks](/ai-tools-compared/best-ai-for-writing-jest-tests-for-react-custom-hooks-with-c/)
-- [Best AI Assistant for Creating Jest Tests That Verify Error](/ai-tools-compared/best-ai-assistant-for-creating-jest-tests-that-verify-error-/)
-- [Best AI for Creating Jest Tests That Cover Race Conditions](/ai-tools-compared/best-ai-for-creating-jest-tests-that-cover-race-conditions-i/)
-
+- [AI Tools for Writing Playwright Tests That Verify Accessibil](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-accessibil/)
+- [AI Tools for Writing Playwright Tests That Verify Responsive](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-responsive/)
+- [AI Tools for Writing pytest Tests for Alembic Database Paths](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

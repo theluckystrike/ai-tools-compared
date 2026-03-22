@@ -51,6 +51,20 @@ This guide explores how AI assistants can help you create effective Playwright t
 - **Claude Code excels at**: creating Playwright tests for file uploads and downloads because it understands Playwright's file chooser APIs and download handling mechanisms.
 - **When evaluating AI tools**: for creating Playwright tests, several capabilities matter most.
 
+## Table of Contents
+
+- [What Makes an AI Assistant Effective for Playwright Test Generation](#what-makes-an-ai-assistant-effective-for-playwright-test-generation)
+- [File Upload Testing with Playwright](#file-upload-testing-with-playwright)
+- [File Download Testing with Playwright](#file-download-testing-with-playwright)
+- [Handling Dynamic File Names and Paths](#handling-dynamic-file-names-and-paths)
+- [Testing Upload Validation and Error Handling](#testing-upload-validation-and-error-handling)
+- [Using AI to Accelerate Test Development](#using-ai-to-accelerate-test-development)
+- [Best Practices for AI-Generated Tests](#best-practices-for-ai-generated-tests)
+- [Advanced File Upload Scenarios](#advanced-file-upload-scenarios)
+- [Testing Upload Security and Validation](#testing-upload-security-and-validation)
+- [Performance and Stress Testing for Uploads](#performance-and-stress-testing-for-uploads)
+- [Integrating with CI/CD Pipelines](#integrating-with-cicd-pipelines)
+
 ## What Makes an AI Assistant Effective for Playwright Test Generation
 
 Not all AI assistants handle code generation equally. When evaluating AI tools for creating Playwright tests, several capabilities matter most.
@@ -491,9 +505,8 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [Best AI Assistant for Creating Playwright Tests for Multi](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-multi-st/)
-- [Best AI Assistant for Creating Playwright Tests for Table](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-table-sorting-filtering-and-pagination/)
-- [Best AI Assistant for Writing Playwright Tests](/ai-tools-compared/best-ai-assistant-for-writing-playwright-tests-for-drag-and-drop-interactions-2026/)
+- [Which AI Is Better for Writing Playwright End-to-End Tests](/ai-tools-compared/which-ai-is-better-for-writing-playwright-end-to-end-tests-2/)
 - [Best AI Assistant for Creating Jest Tests That Verify Error](/ai-tools-compared/best-ai-assistant-for-creating-jest-tests-that-verify-error-/)
-- [AI Tools for Writing Playwright Tests That Verify Accessibil](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-accessibil/)
-
+- [Best AI for Creating Jest Tests That Verify Correct Suspense](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-suspense/)
+- [Best AI Assistant for Creating Test Data Factories with Real](/ai-tools-compared/best-ai-assistant-for-creating-test-data-factories-with-real/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

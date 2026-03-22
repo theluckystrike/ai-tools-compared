@@ -50,6 +50,18 @@ Provide 2-3 concrete working examples showing your preferred style and patterns;
 - **Three to five relevant**: examples usually work better.
 - **Using outdated examples**: Make sure your reference code reflects current library versions and best practices.
 
+## Table of Contents
+
+- [Why Examples Matter for AI Code Generation](#why-examples-matter-for-ai-code-generation)
+- [Strategy 1: Include Real Code from Your Project](#strategy-1-include-real-code-from-your-project)
+- [Strategy 2: Provide Input-Output Examples](#strategy-2-provide-input-output-examples)
+- [Strategy 3: Show Error Handling Patterns](#strategy-3-show-error-handling-patterns)
+- [Strategy 4: Specify Testing Requirements](#strategy-4-specify-testing-requirements)
+- [Strategy 5: Use File References and Context](#strategy-5-use-file-references-and-context)
+- [Strategy 6: Chain Examples for Complex Tasks](#strategy-6-chain-examples-for-complex-tasks)
+- [Common Mistakes to Avoid](#common-mistakes-to-avoid)
+- [Practical Example: Complete Prompt](#practical-example-complete-prompt)
+
 ## Why Examples Matter for AI Code Generation
 
 AI coding tools work by recognizing patterns in your input and generating code that matches the style, structure, and conventions of your project. Without clear examples, these tools default to general-purpose patterns that may not fit your specific requirements.

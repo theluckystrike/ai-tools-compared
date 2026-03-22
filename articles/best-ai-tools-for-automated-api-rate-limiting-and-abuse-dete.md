@@ -53,6 +53,18 @@ API rate limiting and abuse detection are critical security layers that protect 
 3.
 - **Include your authentication model.**: Rate limiting per IP address behaves differently from per-API-key or per-user-session.
 
+## Table of Contents
+
+- [Understanding Rate Limiting and Abuse Detection](#understanding-rate-limiting-and-abuse-detection)
+- [AI Tools for Configuration Generation](#ai-tools-for-configuration-generation)
+- [Testing Rate Limit Configurations](#testing-rate-limit-configurations)
+- [Validating Configuration Edge Cases](#validating-configuration-edge-cases)
+- [Generating Abuse Detection Rules](#generating-abuse-detection-rules)
+- [Best Practices for Configuration Testing](#best-practices-for-configuration-testing)
+- [AI Tool Prompting Strategies for Rate Limiting Code](#ai-tool-prompting-strategies-for-rate-limiting-code)
+- [Validating Rate Limit Headers](#validating-rate-limit-headers)
+- [Distributed Rate Limiting Considerations](#distributed-rate-limiting-considerations)
+
 ## Understanding Rate Limiting and Abuse Detection
 
 Rate limiting controls how many requests a client can make within a time window. Common algorithms include:
@@ -365,11 +377,10 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
+- [Best AI Tools for Generating API Rate Limiting Code 2026](/ai-tools-compared/best-ai-tools-for-generating-api-rate-limiting-code-2026/)
 - [Best AI Tools for Writing API Rate Limiting Code 2026](/ai-tools-compared/best-ai-tools-for-writing-api-rate-limiting-code-2026/)
-- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)
-- [How to Use the Claude API for Automated Code Review](/ai-tools-compared/how-to-use-claude-api-for-automated-code-review/)
-- [How to Manage AI Coding Tool Rate Limits Across Team of](/ai-tools-compared/how-to-manage-ai-coding-tool-rate-limits-across-team-of-developers/)
+- [AI Tools for API Security Testing](/ai-tools-compared/ai-tools-for-api-security-testing/)
+- [AI Tools for API Documentation from Code 2026](/ai-tools-compared/ai-tools-for-api-documentation-from-code-2026/)
 - [How to Use AI to Generate pytest Tests for Rate Limited](/ai-tools-compared/how-to-use-ai-to-generate-pytest-tests-for-rate-limited-endpoint-throttling-behavior/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

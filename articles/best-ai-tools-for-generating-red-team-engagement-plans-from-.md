@@ -45,6 +45,24 @@ This month we focused on privilege escalation.
 - **Timeline with daily milestones**: ``` This yields 90%+ quality plans.
 - **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
 
+## Table of Contents
+
+- [What Makes These Tools Effective](#what-makes-these-tools-effective)
+- [Claude (Anthropic)](#claude-anthropic)
+- [GPT-4 (OpenAI)](#gpt-4-openai)
+- [Gemini (Google)](#gemini-google)
+- [CodeLLama (Meta)](#codellama-meta)
+- [Practical Workflow: Integrating AI into Your Red Team Process](#practical-workflow-integrating-ai-into-your-red-team-process)
+- [Tool Selection Guide](#tool-selection-guide)
+- [Limitations and Considerations](#limitations-and-considerations)
+- [Real-World Implementation Example: Complete Workflow](#real-world-implementation-example-complete-workflow)
+- [Pricing Comparison for Plan Generation](#pricing-comparison-for-plan-generation)
+- [Prompt Engineering for High-Quality Plans](#prompt-engineering-for-high-quality-plans)
+- [Validating AI-Generated Plans Against Industry Standards](#validating-ai-generated-plans-against-industry-standards)
+- [Common Red Team Plan Gaps](#common-red-team-plan-gaps)
+- [Automation: Continuous Red Team Planning](#automation-continuous-red-team-planning)
+- [Pricing Reality Check](#pricing-reality-check)
+
 ## What Makes These Tools Effective
 
 Before examining specific tools, understanding the core requirements helps filter noise from signal. Effective red team plan generation requires the AI to:
@@ -353,9 +371,8 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 ## Related Articles
 
 - [AI Tools for Reviewing Terraform Plans Before Applying](/ai-tools-compared/ai-tools-for-reviewing-terraform-plans-before-applying-to-pr/)
-- [How Much Does Cursor AI Actually Cost Per Month All Plans](/ai-tools-compared/how-much-does-cursor-ai-actually-cost-per-month-all-plans/)
-- [Best AI IDE Features for Pair Programming](/ai-tools-compared/best-ai-ide-features-for-pair-programming-with-remote-team-members/)
-- [Best Practices for Versioning CursorRules Files Across Team](/ai-tools-compared/best-practices-for-versioning-cursorrules-files-across-team-/)
-- [ChatGPT Canvas Feature Is It Included in Plus or Team Only](/ai-tools-compared/chatgpt-canvas-feature-is-it-included-in-plus-or-team-only/)
-
+- [How to Prevent AI Coding Tools from Generating Overly](/ai-tools-compared/how-to-prevent-ai-coding-tools-from-generating-overly-complex-solutions/)
+- [How Accurate Are AI Tools at Generating Rust Crossbeam](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
+- [Best AI Powered Chatops Tools](/ai-tools-compared/best-ai-powered-chatops-tools-for-slack-and-devops-integration/)
+- [How Accurate Are AI Tools at Generating TypeScript Zod](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-typescript-zod-schem/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

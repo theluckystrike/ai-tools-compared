@@ -42,6 +42,27 @@ This guide evaluates the best AI tools for generating C4 model system context di
 - **The model understands C4**: notation conventions and can produce PlantUML, Mermaid, or Structurizr DSL depending on your preference.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Understanding C4 Model System Context Diagrams](#understanding-c4-model-system-context-diagrams)
+- [Claude Code](#claude-code)
+- [Cursor](#cursor)
+- [ChatGPT](#chatgpt)
+- [Practical Workflows for Diagram Automation](#practical-workflows-for-diagram-automation)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+- [Key Considerations](#key-considerations)
+- [Prompt Template for Accurate Diagram Generation](#prompt-template-for-accurate-diagram-generation)
+- [System Overview](#system-overview)
+- [User Types (Actors)](#user-types-actors)
+- [External Systems](#external-systems)
+- [Data Stores](#data-stores)
+- [Critical Data Flows](#critical-data-flows)
+- [Constraints](#constraints)
+- [Automated Diagram Generation from Code](#automated-diagram-generation-from-code)
+- [Diagram Rendering and CI/CD Integration](#diagram-rendering-and-cicd-integration)
+- [Tool Comparison Matrix](#tool-comparison-matrix)
+- [Best Practices for Diagram Accuracy](#best-practices-for-diagram-accuracy)
+
 ## Understanding C4 Model System Context Diagrams
 
 The C4 model provides a hierarchical approach to software architecture documentation. The system context diagram sits at the top of this hierarchy, depicting:

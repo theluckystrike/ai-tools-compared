@@ -43,6 +43,17 @@ The free version uses a smaller model and has limited context awareness, but it 
 - **It launched with a**: free tier that includes unlimited completions and supports Vim through its plugin.
 - **If you are on**: Vim 8 or 9 without Lua support, Codeium remains the more reliable free option.
 
+## Table of Contents
+
+- [Why AI Code Completion in Vim Matters](#why-ai-code-completion-in-vim-matters)
+- [Top Budget-Friendly Options for Vim AI Completion](#top-budget-friendly-options-for-vim-ai-completion)
+- [Comparison at a Glance](#comparison-at-a-glance)
+- [Supermaven: A Rising Free Contender](#supermaven-a-rising-free-contender)
+- [Practical Setup Guide](#practical-setup-guide)
+- [Choosing the Right Local Model for Ollama](#choosing-the-right-local-model-for-ollama)
+- [Performance Tips](#performance-tips)
+- [Avoiding Common Setup Problems](#avoiding-common-setup-problems)
+
 ## Why AI Code Completion in Vim Matters
 
 Vim users love efficiency. The ability to navigate and edit code quickly is what makes Vim powerful. AI code completion takes this further by suggesting entire lines, functions, or even complex code blocks based on context. Instead of typing everything from scratch, you get intelligent suggestions that understand your codebase.

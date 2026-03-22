@@ -39,6 +39,14 @@ Legacy code without tests is a maintenance nightmare. When you need to refactor 
 - **Do these tools work**: offline? Most AI-powered tools require an internet connection since they run models on remote servers.
 - **How quickly do AI**: tool recommendations go out of date? AI tools evolve rapidly, with major updates every few months.
 
+## Table of Contents
+
+- [The Challenge of Testing Legacy Code](#the-challenge-of-testing-legacy-code)
+- [AI Tools Compared for Test Generation](#ai-tools-compared-for-test-generation)
+- [Comparison Table: AI Test Generation Tools](#comparison-table-ai-test-generation-tools)
+- [Workflow: Testing Legacy Code End-to-End](#workflow-testing-legacy-code-end-to-end)
+- [Footer](#footer)
+
 ## The Challenge of Testing Legacy Code
 
 Untested legacy systems present a dilemma. Refactoring without tests is risky, but writing tests requires understanding code that may lack documentation and have implicit dependencies. The function you need to modify might have subtle bugs you don't want to preserve, yet you can't distinguish intended behavior from bugs without tests that define expected behavior.
@@ -308,8 +316,7 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 - [Best AI Tools for Generating Unit Tests](/ai-tools-compared/best-ai-tools-for-generating-unit-tests-from-legacy-code-comparison/)
 - [Best AI Tools for Generating Unit Tests 2026](/ai-tools-compared/ai-tools-for-generating-unit-tests-2026/)
-- [Best AI Tools for Writing Unit Tests Comparison 2026.](/ai-tools-compared/best-ai-tools-for-writing-unit-tests-comparison-2026/)
+- [Best AI Tools for Writing Unit Tests Comparison 2026](/ai-tools-compared/best-ai-tools-for-writing-unit-tests-comparison-2026/)
 - [Best Free AI Tool for Writing Unit Tests Automatically](/ai-tools-compared/best-free-ai-tool-for-writing-unit-tests-automatically/)
-- [Claude vs ChatGPT for Refactoring Legacy Java Code to Kotlin](/ai-tools-compared/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
-
+- [Best AI Tools for Writing Playwright Tests 2026](/ai-tools-compared/best-ai-tools-for-writing-playwright-tests-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

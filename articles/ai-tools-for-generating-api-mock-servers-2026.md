@@ -41,6 +41,19 @@ Mock API servers are essential during development when backend teams and fronten
 - Simulate API latency (200–500ms)
 4.
 
+## Table of Contents
+
+- [Why AI-Generated Mock Servers Matter](#why-ai-generated-mock-servers-matter)
+- [AI-Powered Mock Server Generation Workflow](#ai-powered-mock-server-generation-workflow)
+- [AI-Assisted Mock Server Generation: Step-by-Step](#ai-assisted-mock-server-generation-step-by-step)
+- [Comparison Table: AI-Assisted Mock Server Approaches](#comparison-table-ai-assisted-mock-server-approaches)
+- [Real-World Decision Framework](#real-world-decision-framework)
+- [Cost Comparison: Manual vs. AI-Assisted](#cost-comparison-manual-vs-ai-assisted)
+- [Advanced: AI-Generated Load Testing Mock Server](#advanced-ai-generated-load-testing-mock-server)
+- [Integration with CI/CD Pipelines](#integration-with-cicd-pipelines)
+- [Limitations of AI-Generated Mocks](#limitations-of-ai-generated-mocks)
+- [Recommended Workflow for Teams](#recommended-workflow-for-teams)
+
 ## Why AI-Generated Mock Servers Matter
 
 A mock API server must:

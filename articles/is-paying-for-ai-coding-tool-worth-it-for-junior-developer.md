@@ -42,6 +42,24 @@ As a junior developer, every dollar counts. When you see monthly subscriptions r
 - **The investment in your productivity as a developer almost always pays off**: and AI tools, whether free or paid, represent one of the highest-ROI investments you can make early in your career.
 - **When you notice consistent**: free tier limits (objective evidence you need more) 5.
 
+## Table of Contents
+
+- [What Junior Developers Actually Get From AI Tools](#what-junior-developers-actually-get-from-ai-tools)
+- [Free Tools vs Paid: The Real Differences](#free-tools-vs-paid-the-real-differences)
+- [Cost-Benefit Analysis for Bootcamp Graduates](#cost-benefit-analysis-for-bootcamp-graduates)
+- [When Free Tools Are Actually Enough](#when-free-tools-are-actually-enough)
+- [Practical Example: Debugging With and Without AI](#practical-example-debugging-with-and-without-ai)
+- [The Learning Curve Consideration](#the-learning-curve-consideration)
+- [When to Make the Switch](#when-to-make-the-switch)
+- [Making the Most of Whatever Tier You Choose](#making-the-most-of-whatever-tier-you-choose)
+- [Final Recommendation](#final-recommendation)
+- [Real Pricing Comparison: What You Actually Pay](#real-pricing-comparison-what-you-actually-pay)
+- [The Hidden Value Beyond Speed](#the-hidden-value-beyond-speed)
+- [Measuring Your Actual Usage](#measuring-your-actual-usage)
+- [The Mentorship Angle](#the-mentorship-angle)
+- [When to Delay Purchasing](#when-to-delay-purchasing)
+- [Strategic Timing for the Upgrade](#strategic-timing-for-the-upgrade)
+
 ## What Junior Developers Actually Get From AI Tools
 
 The primary value proposition for junior developers isn't just code completion—it's learning. When you're building your first REST API or working with a new framework, having an AI that explains what code does in context accelerates understanding in ways documentation sometimes cannot.
@@ -287,11 +305,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Cursor Hobby Plan Limitations vs Paying for Pro Worth It](/ai-tools-compared/cursor-hobby-plan-limitations-vs-paying-for-pro-worth-it/)
+- [Best Free AI Coding Tool With No Message Limits in 2026](/ai-tools-compared/best-free-ai-coding-tool-with-no-message-limits-2026/)
 - [Cheapest AI Coding Tool for Indie Game Developer 2026](/ai-tools-compared/cheapest-ai-coding-tool-for-indie-game-developer-2026/)
-- [Claude Sonnet vs Opus API Pricing Difference Worth It](/ai-tools-compared/claude-sonnet-vs-opus-api-pricing-difference-worth-it-2026/)
-- [Is Tabnine Free Plan Still Worth Using in 2026?](/ai-tools-compared/is-tabnine-free-plan-still-worth-using-in-2026/)
-- [Midjourney Standard vs Pro Plan: Is Stealth Mode Worth](/ai-tools-compared/midjourney-standard-vs-pro-plan-stealth-mode-worth-extra-cost/)
-
+- [AI Coding Tool Penetration Test Findings Common Vulnerabilit](/ai-tools-compared/ai-coding-tool-penetration-test-findings-common-vulnerabilit/)
+- [Enterprise AI Coding Tool Network Security Requirements](/ai-tools-compared/enterprise-ai-coding-tool-network-security-requirements-and-/)
+- [Configure AI Coding Tools](/ai-tools-compared/how-to-configure-ai-coding-tools-to-respect-your-teams-branc/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

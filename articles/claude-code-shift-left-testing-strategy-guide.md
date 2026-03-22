@@ -40,6 +40,14 @@ Shift left testing is a methodology that moves testing activities earlier in the
 - **test_user_cannot_access_other_user_data() - verify 403**: for other users 3.
 - **test_get_user_with_invalid_id() - test non-numeric**: IDs 4.
 
+## Table of Contents
+
+- [Why Shift Left Testing Matters](#why-shift-left-testing-matters)
+- [Prerequisites](#prerequisites)
+- [Best Practices for Claude Code-Assisted Shift Left Testing](#best-practices-for-claude-code-assisted-shift-left-testing)
+- [Best Practices Summary](#best-practices-summary)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Shift Left Testing Matters
 
 Traditional testing approaches often discover defects late in the development cycle, when fixing them is significantly more expensive and time-consuming. Research consistently shows that bugs discovered in production cost 10 to 100 times more to fix than those caught during design or initial development. Shift left testing addresses this problem by embedding quality assurance into the earliest phases of your workflow.
@@ -436,10 +444,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Claude Code API Snapshot Testing Guide](/ai-tools-compared/claude-code-api-snapshot-testing-guide/)
-- [Claude Code Parallel Testing Configuration - Complete](/ai-tools-compared/claude-code-parallel-testing-configuration/)
-- [Claude Code Screen Reader Testing Workflow](/ai-tools-compared/claude-code-screen-reader-testing-workflow/)
 - [Claude Code SDK Testing Workflow Guide](/ai-tools-compared/claude-code-sdk-testing-workflow-guide/)
-- [Writing CLAUDE MD Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
-
+- [Claude Code Parallel Testing Configuration](/ai-tools-compared/claude-code-parallel-testing-configuration/)
+- [Claude Code Screen Reader Testing Workflow](/ai-tools-compared/claude-code-screen-reader-testing-workflow/)
+- [Claude Code API Snapshot Testing Guide](/ai-tools-compared/claude-code-api-snapshot-testing-guide/)
+- [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

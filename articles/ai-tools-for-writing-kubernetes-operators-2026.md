@@ -41,6 +41,20 @@ This guide tests how well current AI tools handle operator development and when 
 - **This cuts development time**: by 40% compared to writing from scratch while maintaining code quality.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Why Operators Are Hard for AI](#why-operators-are-hard-for-ai)
+- [Top AI Tools for Operators](#top-ai-tools-for-operators)
+- [What Works: CRD Design](#what-works-crd-design)
+- [What Fails: Reconciliation Logic](#what-fails-reconciliation-logic)
+- [Better Approach: Operator SDK Scaffolding](#better-approach-operator-sdk-scaffolding)
+- [Testing: The Biggest Gap](#testing-the-biggest-gap)
+- [Real-World Tool Comparison](#real-world-tool-comparison)
+- [Practical Workflow](#practical-workflow)
+- [Tools for Each Operator Stage](#tools-for-each-operator-stage)
+- [Avoiding Common Mistakes](#avoiding-common-mistakes)
+- [The Bottom Line](#the-bottom-line)
+
 ## Why Operators Are Hard for AI
 
 Operators require understanding:
@@ -368,8 +382,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Writing Kubernetes Helm Charts 2026](/ai-tools-for-writing-kubernetes-helm-charts-2026/)
-- [Best AI Tools for Writing Kubernetes Admission Webhook](/best-ai-tools-for-writing-kubernetes-admission-webhook-confi/)
-- [Best AI Tools for Writing Kubernetes Custom Resource](/best-ai-tools-for-writing-kubernetes-custom-resource-definitions-2026/)
-
+- [Best AI Tools for Writing Kubernetes Operator Code](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-operator-code-from-scratch/)
+- [Best AI Tools for Writing Kubernetes Custom Resource](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-custom-resource-definitions-2026/)
+- [Best AI Tools for Go Kubernetes Operator Development](/ai-tools-compared/best-ai-tools-for-go-kubernetes-operator-development-with-kubebuilder-2026/)
+- [AI Tools for Writing Kubernetes Helm Charts 2026](/ai-tools-compared/ai-tools-for-writing-kubernetes-helm-charts-2026/)
+- [AI Tools for Kubernetes Troubleshooting 2026](/ai-tools-compared/ai-tools-for-kubernetes-troubleshooting-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

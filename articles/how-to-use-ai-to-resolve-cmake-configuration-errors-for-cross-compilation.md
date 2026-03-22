@@ -41,6 +41,15 @@ AI with full context solves 90%+ of your problems within minutes.
 - **AI struggles here because**: the error patterns are non-deterministic.
 - **It's perfectly valid to**: use AI for initial diagnosis, then hand off to a toolchain expert.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Practical Examples](#practical-examples)
+- [Best Practices for AI-Assisted CMake Debugging](#best-practices-for-ai-assisted-cmake-debugging)
+- [Advanced Scenarios: When AI Struggles](#advanced-scenarios-when-ai-struggles)
+- [Troubleshooting](#troubleshooting)
+- [Tool-Specific Comparison: Which AI Assistant Is Best for CMake](#tool-specific-comparison-which-ai-assistant-is-best-for-cmake)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

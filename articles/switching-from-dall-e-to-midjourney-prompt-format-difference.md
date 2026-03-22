@@ -41,6 +41,16 @@ This guide covers the key distinctions between DALL-E and Midjourney prompt form
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Core Philosophical Differences](#core-philosophical-differences)
+- [Prompt Syntax Structure](#prompt-syntax-structure)
+- [Parameter Systems](#parameter-systems)
+- [Handling Style and Quality](#handling-style-and-quality)
+- [Negative Prompting](#negative-prompting)
+- [Practical Migration Tips](#practical-migration-tips)
+- [Code Integration Example](#code-integration-example)
+
 ## Core Philosophical Differences
 
 DALL-E and Midjourney approach image generation differently, and this affects how you write prompts.

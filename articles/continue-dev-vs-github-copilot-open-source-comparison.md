@@ -39,6 +39,21 @@ Choose Continue Dev if you need data privacy (run models locally with Ollama so 
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 - **Use AI-generated tests as**: a starting point, then add cases that cover your unique requirements and failure modes.
 
+## Table of Contents
+
+- [What is Continue Dev?](#what-is-continue-dev)
+- [Quick Comparison](#quick-comparison)
+- [What is GitHub Copilot?](#what-is-github-copilot)
+- [Practical Comparison](#practical-comparison)
+- [Which Should You Choose?](#which-should-you-choose)
+- [Deep Dive: Local Processing with Continue Dev and Ollama](#deep-dive-local-processing-with-continue-dev-and-ollama)
+- [Model Selection Strategy for Continue Dev](#model-selection-strategy-for-continue-dev)
+- [Actual Pricing Comparison with Real Numbers](#actual-pricing-comparison-with-real-numbers)
+- [Performance Testing: Real Latency Numbers](#performance-testing-real-latency-numbers)
+- [Customization Examples That Show Continue Dev's Power](#customization-examples-that-show-continue-devs-power)
+- [Enterprise Scenario: When Each Tool Wins](#enterprise-scenario-when-each-tool-wins)
+- [Migration Path from Copilot to Continue Dev](#migration-path-from-copilot-to-continue-dev)
+
 ## What is Continue Dev?
 
 Continue Dev is an open-source extension for Visual Studio Code and JetBrains IDEs that brings large language models directly into your development environment. Unlike many AI assistants that operate as closed systems, Continue Dev allows you to connect to various LLM providers, including Ollama, OpenAI, Anthropic, and custom endpoints.

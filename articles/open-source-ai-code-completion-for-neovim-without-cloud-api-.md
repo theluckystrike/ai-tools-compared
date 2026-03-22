@@ -39,6 +39,24 @@ This article compares the leading open-source AI code completion tools for Neovi
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **If you use Neovim**: as your primary editor, you have likely explored ways to integrate AI-powered code completion.
 
+## Table of Contents
+
+- [Why Skip Cloud API Keys?](#why-skip-cloud-api-keys)
+- [CodeLLama (via Ollama)](#codellama-via-ollama)
+- [CodeGeex](#codegeex)
+- [CodeGen (Salesforce)](#codegen-salesforce)
+- [StarCoder](#starcoder)
+- [Qwen2.5-Coder](#qwen25-coder)
+- [Neovim Plugins Purpose-Built for Local Completion](#neovim-plugins-purpose-built-for-local-completion)
+- [Comparing the Options](#comparing-the-options)
+- [Hardware Considerations](#hardware-considerations)
+- [Performance Tips](#performance-tips)
+- [Advanced Configuration: Building a Production Setup](#advanced-configuration-building-a-production-setup)
+- [Model Selection for Different Languages](#model-selection-for-different-languages)
+- [Benchmarking Your Setup](#benchmarking-your-setup)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Integration with Other Tools](#integration-with-other-tools)
+
 ## Why Skip Cloud API Keys?
 
 Cloud-based AI code completion services send your code to external servers. This raises legitimate concerns around data privacy, especially when working with proprietary codebases. Additionally, reliance on external services means your completion workflow depends on internet connectivity and service availability.

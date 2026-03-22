@@ -41,6 +41,23 @@ GitHub Copilot has become an essential tool for developers, offering AI-powered 
 - **If you have used**: the tool for at least 3 months and plan to continue, the annual discount usually makes sense.
 - **GitHub Copilot free tier**: has several hidden limits: 2,000 completions per month, no chat interface, limited context window, and blocking on enterprise firewalls.
 
+## Table of Contents
+
+- [Monthly Code Completion Limits](#monthly-code-completion-limits)
+- [Chat Message Restrictions](#chat-message-restrictions)
+- [Feature Gaps in the Free Tier](#feature-gaps-in-the-free-tier)
+- [IDE Compatibility Considerations](#ide-compatibility-considerations)
+- [Practical Strategies for Free Tier Users](#practical-strategies-for-free-tier-users)
+- [When to Consider Upgrading](#when-to-consider-upgrading)
+- [Detailed Limit Analysis: What Counts as a Completion](#detailed-limit-analysis-what-counts-as-a-completion)
+- [Strategic Consumption: Maximizing Monthly Budget](#strategic-consumption-maximizing-monthly-budget)
+- [Chat Message Quota Management](#chat-message-quota-management)
+- [Enterprise Firewall Blocking and VPN Issues](#enterprise-firewall-blocking-and-vpn-issues)
+- [IDE Support Gaps in Free Tier](#ide-support-gaps-in-free-tier)
+- [Calculating True Cost: When to Upgrade](#calculating-true-cost-when-to-upgrade)
+- [Workarounds and Alternatives](#workarounds-and-alternatives)
+- [Future-Proofing Your Decision](#future-proofing-your-decision)
+
 ## Monthly Code Completion Limits
 
 The free tier of GitHub Copilot provides approximately 2,000 code completions per month for individual developers. This limit sounds substantial until you consider how quickly it depletes in active development environments.

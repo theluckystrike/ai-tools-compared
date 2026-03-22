@@ -39,6 +39,21 @@ Choose Polars AI if you need high performance on large datasets, memory-efficien
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **Choose Polars AI if**: you need high performance on large datasets, memory-efficient streaming, or production ETL pipelines.
 
+## Table of Contents
+
+- [Understanding the Core Technologies](#understanding-the-core-technologies)
+- [Performance Comparison](#performance-comparison)
+- [AI Features and Natural Language Queries](#ai-features-and-natural-language-queries)
+- [Memory Usage and Scalability](#memory-usage-and-scalability)
+- [API Familiarity and Learning Curve](#api-familiarity-and-learning-curve)
+- [When to Choose Each Library](#when-to-choose-each-library)
+- [Real-World Performance Benchmarks](#real-world-performance-benchmarks)
+- [Memory Usage Comparison](#memory-usage-comparison)
+- [Query Optimization Under the Hood](#query-optimization-under-the-hood)
+- [Cost Implications at Scale](#cost-implications-at-scale)
+- [Migration Path from Pandas to Polars](#migration-path-from-pandas-to-polars)
+- [Error Handling and Debugging Differences](#error-handling-and-debugging-differences)
+
 ## Understanding the Core Technologies
 
 Pandas has been the standard for data manipulation in Python for over a decade. Pandas AI extends this foundation by adding natural language query capabilities, allowing users to interact with DataFrames using conversational commands. Polars, written in Rust but with Python bindings, offers a faster alternative to Pandas with lazy evaluation and better memory management. Polars AI brings similar natural language processing features to this performance-oriented framework.

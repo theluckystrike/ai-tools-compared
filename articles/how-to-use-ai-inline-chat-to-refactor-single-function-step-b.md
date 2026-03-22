@@ -45,6 +45,22 @@ The more specific your instruction, the better the results.
 - **This guide shows how**: inline chat keeps refactoring focused and verifiable.
 - **While functional**: it uses older JavaScript patterns that could benefit from modernization.
 
+## Table of Contents
+
+- [What Is AI Inline Chat](#what-is-ai-inline-chat)
+- [Preparing Your Function for Refactoring](#preparing-your-function-for-refactoring)
+- [Step-by-Step Refactoring Process](#step-by-step-refactoring-process)
+- [Common Refactoring Scenarios](#common-refactoring-scenarios)
+- [Tips for Effective Refactoring](#tips-for-effective-refactoring)
+- [Handling Edge Cases](#handling-edge-cases)
+- [Language and Framework Support](#language-and-framework-support)
+- [Advanced Refactoring Examples](#advanced-refactoring-examples)
+- [Refactoring Patterns AI Handles Well](#refactoring-patterns-ai-handles-well)
+- [Iterative Refactoring Workflow](#iterative-refactoring-workflow)
+- [Handling Refactoring Failures](#handling-refactoring-failures)
+- [Testing After Refactoring](#testing-after-refactoring)
+- [Framework-Specific Refactoring](#framework-specific-refactoring)
+
 ## What Is AI Inline Chat
 
 AI inline chat integrates large language model capabilities directly into VS Code's editing experience. Unlike traditional AI assistants that require context switching, inline chat appears within your editor and can modify code in place. When you refactor a single function, this approach offers several advantages: immediate visual feedback, the ability to preview changes before applying them, and integration with your existing workflow.
@@ -455,11 +471,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Use AI Inline Completion](/ai-tools-compared/how-to-use-ai-inline-completion-for-writing-function-signatures-quickly/)
-- [Best AI Inline Chat Features in VSCode Compared to Jetbrains](/ai-tools-compared/best-ai-inline-chat-features-in-vscode-compared-to-jetbrains/)
+- [Best AI Inline Chat Features in VS Code Compared to](/ai-tools-compared/best-ai-inline-chat-features-in-vscode-compared-to-jetbrains/)
 - [Copilot Inline Chat vs Cursor Inline Chat: Which Understands](/ai-tools-compared/copilot-inline-chat-vs-cursor-inline-chat-which-understands-/)
 - [How to Transfer Copilot Inline Chat Shortcuts](/ai-tools-compared/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)
-- [Cursor Project-Wide Refactor Breaking Build Fix](/ai-tools-compared/cursor-project-wide-refactor-breaking-build-fix/)
-
+- [How to Use AI Inline Completion](/ai-tools-compared/how-to-use-ai-inline-completion-for-writing-function-signatures-quickly/)
+- [How to Use Copilot Chat to Generate Code from Natural](/ai-tools-compared/how-to-use-copilot-chat-to-generate-code-from-natural-langua/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```

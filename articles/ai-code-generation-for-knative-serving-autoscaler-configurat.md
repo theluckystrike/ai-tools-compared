@@ -37,6 +37,20 @@ Knative Serving has become the standard for running serverless containers on Kub
 - **For production services**: always set `minScale` to at least 1 or 2 to maintain availability during brief traffic dips.
 - **A lightweight JSON API**: might handle 50+ concurrent requests, while a database-heavy service might perform better at 5.
 
+## Table of Contents
+
+- [Understanding Knative Serving Autoscaling Fundamentals](#understanding-knative-serving-autoscaling-fundamentals)
+- [How AI Tools Generate Autoscaler Configurations](#how-ai-tools-generate-autoscaler-configurations)
+- [Advanced Autoscaling Parameters](#advanced-autoscaling-parameters)
+- [Optimizing for Specific Workload Patterns](#optimizing-for-specific-workload-patterns)
+- [Testing Your Generated Configuration](#testing-your-generated-configuration)
+- [Common Pitfalls to Avoid](#common-pitfalls-to-avoid)
+- [Advanced Scaling with Multiple Metrics](#advanced-scaling-with-multiple-metrics)
+- [Integrating with Kubernetes Metrics Server](#integrating-with-kubernetes-metrics-server)
+- [Cold Start Optimization Strategies](#cold-start-optimization-strategies)
+- [Monitoring and Adjusting Generated Configurations](#monitoring-and-adjusting-generated-configurations)
+- [Production Best Practices](#production-best-practices)
+
 ## Understanding Knative Serving Autoscaling Fundamentals
 
 Knative Serving uses the Knative Autoscaler (KPA - Kubernetes Pod Autoscaler based) by default, which provides fine-grained control over scaling behavior. The autoscaler operates based on concurrent requests per replica, not traditional CPU/memory thresholds. This approach works exceptionally well for request-driven serverless workloads where you want predictable scaling based on actual demand.

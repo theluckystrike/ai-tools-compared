@@ -37,6 +37,22 @@ When building integrations with third-party APIs, webhook receivers are essentia
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [What These Tools Actually Do](#what-these-tools-actually-do)
+- [Tools Worth Considering](#tools-worth-considering)
+- [Implementation Patterns That Matter](#implementation-patterns-that-matter)
+- [Generating From Different Schema Formats](#generating-from-different-schema-formats)
+- [A Practical Workflow](#a-practical-workflow)
+- [What Remains Manual](#what-remains-manual)
+- [Testing Webhook Receivers with Generated Test Suites](#testing-webhook-receivers-with-generated-test-suites)
+- [Handling Webhook Signature Verification](#handling-webhook-signature-verification)
+- [Retry Logic for Webhook Processing](#retry-logic-for-webhook-processing)
+- [Monitoring Generated Webhook Receivers](#monitoring-generated-webhook-receivers)
+- [Scaling Generated Receivers](#scaling-generated-receivers)
+- [Multi-Language Webhook Receiver Generation](#multi-language-webhook-receiver-generation)
+- [Selecting Your Tool](#selecting-your-tool)
+
 ## What These Tools Actually Do
 
 AI-powered code generation tools can take an event schema—typically defined in OpenAPI, JSON Schema, or a raw payload sample—and produce a functioning webhook receiver. This includes request validation, type-safe payload parsing, error handling, and often a basic routing structure. The goal is reducing boilerplate while maintaining correctness.

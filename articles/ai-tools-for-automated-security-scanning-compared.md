@@ -42,6 +42,21 @@ AI-enhanced security scanners have changed the economics of application security
 - **This comparison covers the**: tools that engineers actually use day-to-day.
 - **The open-source version is**: free for individuals.
 
+## Table of Contents
+
+- [Tools Compared](#tools-compared)
+- [Snyk Code](#snyk-code)
+- [Semgrep](#semgrep)
+- [CodeQL](#codeql)
+- [Socket](#socket)
+- [False Positive Rates](#false-positive-rates)
+- [CLI Integration Examples](#cli-integration-examples)
+- [Real Vulnerability Examples](#real-vulnerability-examples)
+- [Performance Under Load](#performance-under-load)
+- [Integrating with GitHub Code Scanning](#integrating-with-github-code-scanning)
+- [Recommended Combination](#recommended-combination)
+- [Cost Summary (Annual, 20 developers)](#cost-summary-annual-20-developers)
+
 ## Tools Compared
 
 - **Snyk Code** — SAST with AI-generated fix suggestions and IDE integration
@@ -411,11 +426,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [AI Container Security Scanning](/ai-tools-compared/ai-container-security-scanning/)
-- [AI Tools for Automating Cloud Security Compliance Scanning I](/ai-tools-compared/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
 - [Best AI Tools for Container Security Scanning in Deployment](/ai-tools-compared/best-ai-tools-for-container-security-scanning-in-deployment-/)
-- [AI Assistants for Creating Security Architecture Review.](/ai-tools-compared/ai-assistants-for-creating-security-architecture-review-docu/)
-- [AI Code Generation Quality for Java Spring Security](/ai-tools-compared/ai-code-generation-quality-for-java-spring-security-configur/)
-
+- [Best AI Tools for Automated Code Review 2026](/ai-tools-compared/best-ai-tools-for-automated-code-review-2026/)
+- [AI Tools for Automating Cloud Security Compliance Scanning](/ai-tools-compared/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
+- [AI Tools for API Security Testing](/ai-tools-compared/ai-tools-for-api-security-testing/)
+- [Best AI Tools for Code Review Automation 2026](/ai-tools-compared/best-ai-tools-for-code-review-automation-2026/---)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

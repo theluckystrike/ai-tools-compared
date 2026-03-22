@@ -39,6 +39,21 @@ Choose Copilot if you need a basic Spring Boot SSE endpoint fast and already kno
 - **Choose Copilot if you**: need a basic Spring Boot SSE endpoint fast and already know the `SseEmitter` patterns well.
 - **Choose Cursor if you**: need a production-ready implementation with client registry management, error recovery, and broadcast logic generated in one pass.
 
+## Table of Contents
+
+- [Understanding Server-Sent Events in Spring Boot](#understanding-server-sent-events-in-spring-boot)
+- [GitHub Copilot for SSE Implementation](#github-copilot-for-sse-implementation)
+- [Cursor for SSE Implementation](#cursor-for-sse-implementation)
+- [Client-Side Considerations](#client-side-considerations)
+- [Real-World Performance Factors](#real-world-performance-factors)
+- [Recommendations](#recommendations)
+- [Advanced SSE Patterns: Client Registry and Broadcasting](#advanced-sse-patterns-client-registry-and-broadcasting)
+- [Reconnection Logic and Event IDs](#reconnection-logic-and-event-ids)
+- [Testing SSE Implementations](#testing-sse-implementations)
+- [Performance Considerations](#performance-considerations)
+- [Real-World Pricing and Decision Framework](#real-world-pricing-and-decision-framework)
+- [Decision Matrix](#decision-matrix)
+
 ## Understanding Server-Sent Events in Spring Boot
 
 Server-Sent Events enable an unidirectional communication channel where the server pushes data to clients over a single, long-lived HTTP connection. Unlike WebSockets, SSE works over standard HTTP, works through firewalls and proxies more easily, and automatically reconnects when the connection drops. Spring Boot provides native support through the `SseEmitter` class, making implementation straightforward.

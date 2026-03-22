@@ -40,6 +40,18 @@ Claude generates clean, idiomatic Go error handling with proper error wrapping u
 - **For error handling**: the chat mode works well when you need to discuss error strategy or get recommendations on structuring your error types.
 - **Using %v instead of %w**: AI sometimes suggests `fmt.Errorf("error: %v", err)` instead of `%w`.
 
+## Table of Contents
+
+- [Why Error Handling Patterns Matter in Go](#why-error-handling-patterns-matter-in-go)
+- [Claude Code](#claude-code)
+- [GitHub Copilot](#github-copilot)
+- [Zed AI](#zed-ai)
+- [Cursor](#cursor)
+- [Recommendations](#recommendations)
+- [Error Handling Pattern Examples](#error-handling-pattern-examples)
+- [AI Tool Decision Matrix](#ai-tool-decision-matrix)
+- [Common Pitfalls AI Tools Make](#common-pitfalls-ai-tools-make)
+
 ## Why Error Handling Patterns Matter in Go
 
 Go's `error` interface is minimal—just a single method returning a string. Yet this simplicity enables powerful patterns when combined with the language's built-in wrapping capabilities. Sentinel errors (predefined error values for comparison) and error wrapping (preserving context through the call stack) are essential for building maintainable Go applications.
@@ -527,11 +539,10 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [AI Tools for Interpreting Rust Compiler Borrow Checker Error](/ai-tools-compared/ai-tools-for-interpreting-rust-compiler-borrow-checker-error/)
-- [Best AI Assistant for Creating Jest Tests That Verify Error](/ai-tools-compared/best-ai-assistant-for-creating-jest-tests-that-verify-error-/)
 - [Best AI Tools for Writing Idiomatic Rust Error Handling](/ai-tools-compared/best-ai-tools-for-writing-idiomatic-rust-error-handling-with/)
-- [ChatGPT Network Error on Long Responses: How to Fix in 2026](/ai-tools-compared/chatgpt-network-error-on-long-responses-how-to-fix-2026/)
-- [ChatGPT vs Claude for Writing Effective Celery Task Error](/ai-tools-compared/chatgpt-vs-claude-for-writing-effective-celery-task-error-ha/)
-
+- [Claude Code API Error Handling Standards](/ai-tools-compared/claude-code-api-error-handling-standards/)
+- [Copilot vs Cursor for Writing Rust Error Handling](/ai-tools-compared/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
+- [Best AI Assistant for Creating API Error Code Reference Documentation 2026](/ai-tools-compared/best-ai-assistant-for-creating-api-error-code-reference-docu/)
+- [Best AI Assistant for Creating Jest Tests That Verify Error](/ai-tools-compared/best-ai-assistant-for-creating-jest-tests-that-verify-error-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

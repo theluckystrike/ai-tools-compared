@@ -40,6 +40,20 @@ Fine-tuning Llama 3 on your own codebase produces a model that knows your intern
 - **Filter aggressively**: require docstrings of at least 50 characters and exclude test functions, which often lack meaningful descriptions of intent.
 - **A 20-30% improvement in**: passing tests over the base model indicates successful domain adaptation.
 
+## Table of Contents
+
+- [Why Fine-Tune vs Use a General Model](#why-fine-tune-vs-use-a-general-model)
+- [Prerequisites](#prerequisites)
+- [Step 1: Prepare the Training Dataset](#step-1-prepare-the-training-dataset)
+- [Step 2: Configure QLoRA Training](#step-2-configure-qlora-training)
+- [Step 3: Train](#step-3-train)
+- [Step 4: Merge and Export for Ollama](#step-4-merge-and-export-for-ollama)
+- [Evaluating the Fine-Tuned Model](#evaluating-the-fine-tuned-model)
+- [Connecting to Your Editor](#connecting-to-your-editor)
+- [Iterating After the First Fine-Tune](#iterating-after-the-first-fine-tune)
+- [Dataset Size vs Training Time Trade-offs](#dataset-size-vs-training-time-trade-offs)
+- [Maintaining the Model Over Time](#maintaining-the-model-over-time)
+
 ## Why Fine-Tune vs Use a General Model
 
 General code models are trained on public code. They do not know your internal SDK, your team's preferred patterns, or your domain-specific abstractions. A model fine-tuned on your codebase:
@@ -367,11 +381,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
+- [How to Build Custom AI Code Completion Models](/ai-tools-compared/how-to-build-custom-ai-code-completion-models/)
+- [Running Starcoder2 Locally for Code Completion](/ai-tools-compared/running-starcoder2-locally-for-code-completion-without-sendi/)
+- [Cheapest Way to Get AI Code Completion in Vim 2026](/ai-tools-compared/cheapest-way-to-get-ai-code-completion-in-vim-2026/)
+- [How to Run CodeLlama Locally for Private Code Completion](/ai-tools-compared/how-to-run-codellama-locally-for-private-code-completion-ste/)
 - [Fine Tune Open Source Code Models for Your Codebase](/ai-tools-compared/fine-tune-open-source-code-models-for-your-codebase-2026/)
-- [AI Code Completion for Java Jakarta EE Migration from Javax](/ai-tools-compared/ai-code-completion-for-java-jakarta-ee-migration-from-javax-/)
-- [AI Code Completion for Java Record Classes and Sealed Interf](/ai-tools-compared/ai-code-completion-for-java-record-classes-and-sealed-interf/)
-- [AI Code Completion for Writing Shell Commands Inside Scripts](/ai-tools-compared/ai-code-completion-for-writing-shell-commands-inside-scripts/)
-- [AI Code Completion Latency Comparison](/ai-tools-compared/ai-code-completion-latency-comparison-copilot-vs-cursor-vs-cody-2026/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

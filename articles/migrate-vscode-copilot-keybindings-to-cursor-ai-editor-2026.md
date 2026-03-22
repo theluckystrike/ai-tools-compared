@@ -40,6 +40,36 @@ Migrate your VSCode Copilot keybindings to Cursor by exporting your `keybindings
 - **Identify which extension causes**: conflict 2.
 - **Disable the extension if**: you rarely use it 3.
 
+## Table of Contents
+
+- [Why Your Keybindings Matter After Switching to Cursor](#why-your-keybindings-matter-after-switching-to-cursor)
+- [Exporting Your VSCode Keybindings](#exporting-your-vscode-keybindings)
+- [Importing Keybindings into Cursor](#importing-keybindings-into-cursor)
+- [Adapting Keybindings for Cursor's AI Features](#adapting-keybindings-for-cursors-ai-features)
+- [Handling Command Conflicts](#handling-command-conflicts)
+- [Migrating Context Menu and Extension Keybindings](#migrating-context-menu-and-extension-keybindings)
+- [Testing Your Migrated Keybindings](#testing-your-migrated-keybindings)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Final Steps and Recommendations](#final-steps-and-recommendations)
+- [Platform-Specific Keybinding Paths](#platform-specific-keybinding-paths)
+- [Complete Copilot Command Mapping Reference](#complete-copilot-command-mapping-reference)
+- [Cursor AI Command Reference](#cursor-ai-command-reference)
+- [Advanced: Custom When Clauses](#advanced-custom-when-clauses)
+- [Conflict Detection and Resolution](#conflict-detection-and-resolution)
+- [Testing Your Migrated Keybindings](#testing-your-migrated-keybindings)
+- [Keyboard Layout Considerations](#keyboard-layout-considerations)
+- [Integration with Extension Keybindings](#integration-with-extension-keybindings)
+- [Synchronizing Keybindings Across Machines](#synchronizing-keybindings-across-machines)
+- [Creating Keybinding Profiles](#creating-keybinding-profiles)
+- [Migration Troubleshooting](#migration-troubleshooting)
+- [Long-Term Maintenance](#long-term-maintenance)
+- [AI Generation](#ai-generation)
+- [Navigation](#navigation)
+- [Acceptance/Rejection](#acceptancerejection)
+- [Migration Date](#migration-date)
+- [Issues Found](#issues-found)
+- [Team Coordination](#team-coordination)
+
 ## Why Your Keybindings Matter After Switching to Cursor
 
 Custom keybindings represent your personal workflow optimization. When you switch from VSCode with Copilot to Cursor, preserving those shortcuts reduces friction and maintains your coding velocity. Many developers report that the initial frustration of re-learning shortcuts slows their adoption of new editors, making this migration a practical step for productivity.
@@ -574,10 +604,9 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [How to Transfer Cursor Editor Theme and Layout](/ai-tools-compared/transfer-cursor-editor-theme-and-layout-to-vscode-with-copil/)
-- [How to Migrate Cursor AI Snippets and Templates](/ai-tools-compared/migrate-cursor-ai-snippets-and-templates-to-windsurf-editor/)
+- [How to Transfer Copilot Code Review Settings](/ai-tools-compared/transfer-copilot-code-review-settings-to-cursor-ai-review-co/)
 - [How to Migrate Copilot Chat History and Context to Cursor AI](/ai-tools-compared/migrate-copilot-chat-history-and-context-to-cursor-ai-guide/)
 - [Migrate GitHub Copilot Workspace Setup to Cursor Background](/ai-tools-compared/migrate-github-copilot-workspace-setup-to-cursor-background-/)
-- [Copilot for JetBrains: Does It Cost Same as VSCode Version](/ai-tools-compared/copilot-for-jetbrains-does-it-cost-same-as-vscode-version/)
-
+- [How to Transfer Copilot Inline Chat Shortcuts](/ai-tools-compared/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)
+- [How to Transfer Cursor Editor Theme and Layout](/ai-tools-compared/transfer-cursor-editor-theme-and-layout-to-vscode-with-copil/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

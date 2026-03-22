@@ -36,6 +36,32 @@ AI can generate first drafts of solid technical documentation. But which tools u
 - **For fast iteration on**: marketing-focused docs (READMEs aimed at developers new to your project): Use GPT-4 for faster turnaround.
 - **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
 
+## Table of Contents
+
+- [Claude Opus 4.6](#claude-opus-46)
+- [ChatGPT (GPT-4)](#chatgpt-gpt-4)
+- [Cursor with Claude Backend](#cursor-with-claude-backend)
+- [Gemini (Google)](#gemini-google)
+- [Anthropic Claude 3.5 Sonnet](#anthropic-claude-35-sonnet)
+- [Real-World Documentation Tasks](#real-world-documentation-tasks)
+- [Installation](#installation)
+- [Quick Start](#quick-start)
+- [Configuration](#configuration)
+- [Troubleshooting](#troubleshooting)
+- [Status: Proposed](#status-proposed)
+- [Context](#context)
+- [Decision](#decision)
+- [Tradeoffs](#tradeoffs)
+- [Consequences](#consequences)
+- [Runbook: High Replication Lag (>60s)](#runbook-high-replication-lag-60s)
+- [Overview](#overview)
+- [Architecture](#architecture)
+- [Key Concepts](#key-concepts)
+- [Debugging Checklist](#debugging-checklist)
+- [Real-World Usage Patterns](#real-world-usage-patterns)
+- [Benchmark Summary](#benchmark-summary)
+- [Recommendation](#recommendation)
+
 ## Claude Opus 4.6
 
 Claude understands technical depth and writes with precision. Give it a Python FastAPI endpoint and ask for full API documentation, and it generates complete, accurate docs with correct parameter types, return schemas, and error handling. It balances clarity with technical rigor.

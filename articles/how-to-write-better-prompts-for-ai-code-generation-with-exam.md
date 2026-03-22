@@ -46,6 +46,14 @@ Write a function to process user data.
 Build a complete user authentication system with registration, login, password reset, and JWT token management.
 - **Use the reqwest and**: serde crates.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Include Constraints and Requirements](#include-constraints-and-requirements)
+- [Advanced Prompt Engineering Techniques](#advanced-prompt-engineering-techniques)
+- [Prompt Composition Best Practices](#prompt-composition-best-practices)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
@@ -553,10 +561,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Write System Prompts for AI Assistants That Produce](/ai-tools-compared/how-to-write-system-prompts-for-ai-assistants-that-produce-a/)
-- [How to Write System Prompts for AI Coding Assistants Project](/ai-tools-compared/how-to-write-system-prompts-for-ai-coding-assistants-project/)
 - [How to Structure Prompts for AI to Generate Idiomatic Code](/ai-tools-compared/how-to-structure-prompts-for-ai-to-generate-idiomatic-code-i/)
-- [Cursor AI with Claude vs GPT Models: Which Gives Better Code](/ai-tools-compared/cursor-ai-with-claude-vs-gpt-models-which-gives-better-code-/)
-- [Best Workflow for Using AI to Write Infrastructure as Code F](/ai-tools-compared/best-workflow-for-using-ai-to-write-infrastructure-as-code-f/)
-
+- [Best Practices for Combining AI Code Generation](/ai-tools-compared/best-practices-for-combining-ai-code-generation-with-manual-code-review/)
+- [Prompt Engineering Patterns for Code Generation](/ai-tools-compared/prompt-engineering-patterns-for-code-generation/)
+- [How to Write System Prompts for AI Coding Assistants](/ai-tools-compared/how-to-write-system-prompts-for-ai-coding-assistants-project/)
+- [Writing Effective System Prompts for AI Coding Assistants](/ai-tools-compared/writing-effective-system-prompts-for-ai-coding-assistants-th/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

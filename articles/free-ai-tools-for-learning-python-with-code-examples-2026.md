@@ -37,6 +37,19 @@ The best free AI tools for learning Python are Claude (via free tier or API cred
 - **Local setups via Aider**: or Continue are best for developers who work with proprietary code and cannot send it to cloud services.
 - **The free tiers of**: both Claude and ChatGPT handle this level of depth without rate-limiting issues for typical learning sessions.
 
+## Table of Contents
+
+- [Why AI-Assisted Python Learning Matters](#why-ai-assisted-python-learning-matters)
+- [Comparing Free AI Tools at a Glance](#comparing-free-ai-tools-at-a-glance)
+- [Claude Code: Terminal-Based Python Assistance](#claude-code-terminal-based-python-assistance)
+- [GitHub Copilot: Inline Code Generation](#github-copilot-inline-code-generation)
+- [Aider: Pair Programming in the Terminal](#aider-pair-programming-in-the-terminal)
+- [ChatGPT and Claude: Conceptual Learning](#chatgpt-and-claude-conceptual-learning)
+- [Debugging Python Errors With AI: A Practical Workflow](#debugging-python-errors-with-ai-a-practical-workflow)
+- [Practical Examples: Building Real Projects](#practical-examples-building-real-projects)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+- [Getting Started](#getting-started)
+
 ## Why AI-Assisted Python Learning Matters
 
 The traditional approach to learning Python involves reading documentation, completing tutorials, and practicing coding challenges. AI tools accelerate this process by providing contextual assistance that adapts to your skill level and learning goals. These tools act as intelligent tutors available around the clock, capable of explaining concepts, debugging code, and suggesting improvements.

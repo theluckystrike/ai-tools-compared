@@ -43,6 +43,13 @@ This guide explores how to use AI for writing effective Prometheus recording rul
 - **A useful AI prompt distinguishes these**: > "Show me the differences between recording rules and alerting rules.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Practical Examples of AI-Generated Recording Rules](#practical-examples-of-ai-generated-recording-rules)
+- [Best Practices for AI-Assisted Rule Development](#best-practices-for-ai-assisted-rule-development)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
@@ -287,10 +294,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [How to Use AI for Writing Prometheus Alerting Rules](/ai-tools-compared/how-to-use-ai-for-writing-prometheus-alerting-rules-effectively/)
-- [ChatGPT vs Claude for Writing Effective Celery Task Error](/ai-tools-compared/chatgpt-vs-claude-for-writing-effective-celery-task-error-ha/)
-- [How to Use AI for Writing Effective Runbooks and Incident](/ai-tools-compared/how-to-use-ai-for-writing-effective-runbooks-and-incident-pl/)
-- [How to Use AI for Writing Effective Runbooks and Incident](/ai-tools-compared/how-to-use-ai-for-writing-effective-runbooks-and-incident-playbooks/)
-- [How to Use AI for Writing Effective Sli Slo Definitions](/ai-tools-compared/how-to-use-ai-for-writing-effective-sli-slo-definitions-for-services/)
-
+- [AI Tools for Generating Prometheus Alerting Rules (2026)](/ai-tools-compared/ai-tools-for-generating-prometheus-alerting-rules-2026/---)
+- [How to Use AI for Writing Effective Runbooks](/ai-tools-compared/how-to-use-ai-for-writing-effective-runbooks-and-incident-playbooks/)
+- [Best AI Tools for Screen Recording Editing](/ai-tools-compared/best-ai-tools-for-screen-recording-editing/)
+- [Effective Strategies for Using AI](/ai-tools-compared/effective-strategies-for-using-ai-to-learn-new-programming-languages-faster/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

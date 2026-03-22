@@ -44,6 +44,21 @@ Finding the right AI tool for journalistic research can dramatically reduce the 
 - **NotebookLM (Free)**: Document organization & synthesis
 3.
 
+## Table of Contents
+
+- [What Journalists Actually Need from AI Research Tools](#what-journalists-actually-need-from-ai-research-tools)
+- [Claude: Strong for Deep Investigative Research](#claude-strong-for-deep-investigative-research)
+- [Perplexity: Best for Quick Topic Overview and Source Discovery](#perplexity-best-for-quick-topic-overview-and-source-discovery)
+- [NotebookLM: Superior for Organizing Personal Research](#notebooklm-superior-for-organizing-personal-research)
+- [Comparing Tool Strengths by Research Phase](#comparing-tool-strengths-by-research-phase)
+- [Tool Pricing & Feature Comparison](#tool-pricing-feature-comparison)
+- [Real Research Workflows by Story Type](#real-research-workflows-by-story-type)
+- [Fact-Checking Workflow Example](#fact-checking-workflow-example)
+- [Real-World Application: Daily News Workflow](#real-world-application-daily-news-workflow)
+- [Common Journalist Mistakes with AI Research Tools](#common-journalist-mistakes-with-ai-research-tools)
+- [Building a Research Kit](#building-a-research-kit)
+- [Making Your Selection](#making-your-selection)
+
 ## What Journalists Actually Need from AI Research Tools
 
 Journalists approach research differently than academic researchers or students. Deadline pressure means tools must deliver actionable information quickly. Verification capabilities matter because accuracy directly impacts credibility. Additionally, journalists often work with sensitive sources, making data privacy a non-negotiable requirement.
@@ -307,10 +322,9 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [AI Research Assistant Chrome Extension](/ai-tools-compared/ai-research-assistant-chrome-extension/)
-- [Best AI Tool for Traders: Market Research Summaries](/ai-tools-compared/best-ai-tool-for-traders-market-research-summaries/)
 - [Best AI Tool for UX Designers User Research Synthesis](/ai-tools-compared/best-ai-tool-for-ux-designers-user-research-synthesis/)
-- [Casetext AI Legal Research Review: A Guide.](/ai-tools-compared/casetext-ai-legal-research-review-2026/)
+- [Best AI Tool for Traders: Market Research Summaries](/ai-tools-compared/best-ai-tool-for-traders-market-research-summaries/)
+- [AI Research Assistant Chrome Extension](/ai-tools-compared/ai-research-assistant-chrome-extension/)
+- [Casetext AI Legal Research Review: A Guide](/ai-tools-compared/casetext-ai-legal-research-review-2026/)
 - [Legal Research AI Tools: Best Options for Attorneys in 2026](/ai-tools-compared/legal-research-ai-tools-best-options-for-attorneys-2026/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

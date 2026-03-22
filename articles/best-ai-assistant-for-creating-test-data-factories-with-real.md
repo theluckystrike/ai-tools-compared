@@ -51,6 +51,20 @@ Creating realistic test data is a critical part of software development. Whether
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **It can also create**: factories that maintain relationships between entities, such as orders linked to users, or posts linked to authors.
 
+## Table of Contents
+
+- [Why Test Data Factories Matter](#why-test-data-factories-matter)
+- [Claude Code for Test Data Factory Generation](#claude-code-for-test-data-factory-generation)
+- [Cursor for Test Data Generation](#cursor-for-test-data-generation)
+- [GitHub Copilot for Test Data Factories](#github-copilot-for-test-data-factories)
+- [Comparing AI Assistants for Test Data Generation](#comparing-ai-assistants-for-test-data-generation)
+- [Practical Tips for AI-Assisted Test Data Generation](#practical-tips-for-ai-assisted-test-data-generation)
+- [Advanced Factory Patterns](#advanced-factory-patterns)
+- [Language-Specific Considerations](#language-specific-considerations)
+- [Relationship Management in Factories](#relationship-management-in-factories)
+- [Performance Testing with Generated Data](#performance-testing-with-generated-data)
+- [Evaluating AI Tool Generated Factories](#evaluating-ai-tool-generated-factories)
+
 ## Why Test Data Factories Matter
 
 Production-like test data helps catch bugs that simple placeholder text cannot reveal. When your application expects valid email formats, realistic names, proper date sequences, and contextually appropriate data, using generic "test" strings leads to false confidence in your test suite. Realistic fake data reveals validation issues, edge cases, and integration problems that would otherwise surface in production.

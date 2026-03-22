@@ -122,6 +122,16 @@ Grafana k6 Cloud adds AI-powered insights: "P95 response time increased 15% vs b
 
 ## Locust + AI Code Generation
 
+## Table of Contents
+
+- [Locust + AI Code Generation](#locust-ai-code-generation)
+- [Gatling](#gatling)
+- [Artillery](#artillery)
+- [Grafana k6 Cloud](#grafana-k6-cloud)
+- [Feature Comparison Table](#feature-comparison-table)
+- [Real Example: E-commerce API Load Test](#real-example-e-commerce-api-load-test)
+- [Recommendation by Use Case](#recommendation-by-use-case)
+
 Locust is Python-based load testing with distributed execution. AI tools (ChatGPT, Copilot) can auto-generate Locust test classes from API documentation.
 
 **Pricing:**

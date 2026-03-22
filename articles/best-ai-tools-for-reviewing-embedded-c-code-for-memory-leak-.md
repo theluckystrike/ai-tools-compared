@@ -26,6 +26,21 @@ Finding memory leaks and buffer overflows in embedded C code presents unique cha
 - **A week-long trial with**: actual work gives better signal than feature comparison charts.
 - **Do these tools work**: offline? Most AI-powered tools require an internet connection since they run models on remote servers.
 
+## Table of Contents
+
+- [Understanding Memory Issues in Embedded C](#understanding-memory-issues-in-embedded-c)
+- [How AI Tools Help Review Embedded C Code](#how-ai-tools-help-review-embedded-c-code)
+- [Practical AI Tool Usage for Embedded Code Review](#practical-ai-tool-usage-for-embedded-code-review)
+- [Stack Overflow Detection in RTOS Environments](#stack-overflow-detection-in-rtos-environments)
+- [Integer Overflow in Size Calculations](#integer-overflow-in-size-calculations)
+- [Limitations and Verification](#limitations-and-verification)
+- [Pricing for AI Code Review Tools](#pricing-for-ai-code-review-tools)
+- [Practical Workflow: Using AI for Embedded C Review](#practical-workflow-using-ai-for-embedded-c-review)
+- [Comparing AI Assistance with Traditional Methods](#comparing-ai-assistance-with-traditional-methods)
+- [Real-World Example: Complete Memory Safety Audit](#real-world-example-complete-memory-safety-audit)
+- [Integration with Development Workflow](#integration-with-development-workflow)
+- [Advanced Topics: ISR and DMA Safety](#advanced-topics-isr-and-dma-safety)
+
 ## Understanding Memory Issues in Embedded C
 
 Embedded C code differs from application C in several ways that affect how you should approach memory safety:

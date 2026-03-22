@@ -40,6 +40,23 @@ Finding affordable AI tools requires understanding the true cost structure. This
 4.
 - **Set up your preferred LLM (Claude**: GPT-4, or Mistral) in the configuration.
 
+## Table of Contents
+
+- [Understanding the Two Tools](#understanding-the-two-tools)
+- [Code Understanding and Context](#code-understanding-and-context)
+- [Editor Integration and User Experience](#editor-integration-and-user-experience)
+- [Performance in Real-World Scenarios](#performance-in-real-world-scenarios)
+- [Limitations of Each Free Tier](#limitations-of-each-free-tier)
+- [Pricing for Power Users](#pricing-for-power-users)
+- [Which Should You Choose](#which-should-you-choose)
+- [Installation and Setup Comparison](#installation-and-setup-comparison)
+- [Real-World Performance Testing](#real-world-performance-testing)
+- [Cost Breakdown for Scaling](#cost-breakdown-for-scaling)
+- [Decision Matrix for Tool Selection](#decision-matrix-for-tool-selection)
+- [Practical Workflow Examples](#practical-workflow-examples)
+- [Migration Path Between Tools](#migration-path-between-tools)
+- [Open Source Philosophy](#open-source-philosophy)
+
 ## Understanding the Two Tools
 
 Continue Dev is an open source AI coding assistant that runs locally or connects to various LLM providers. It started as a VS Code extension and has expanded to support JetBrains IDEs and other editors. The free tier provides access to open source models and allows you to connect your own API keys for more powerful models.

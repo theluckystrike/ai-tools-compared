@@ -40,6 +40,14 @@ To fix a broken build after a Cursor project-wide refactor, start by running `gi
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Use `git diff HEAD~1**: -- src/` to see exactly what changed in the last commit, then selectively restore files that are hard to fix.
 
+## Table of Contents
+
+- [Understanding What Happens During Project-Wide Refactor](#understanding-what-happens-during-project-wide-refactor)
+- [Common Build Errors After Project-Wide Refactor](#common-build-errors-after-project-wide-refactor)
+- [Step-by-Step Fix Guide](#step-by-step-fix-guide)
+- [Diagnostic Tips for Complex Cases](#diagnostic-tips-for-complex-cases)
+- [Prevention](#prevention)
+
 ## Understanding What Happens During Project-Wide Refactor
 
 When you use Cursor's project-wide refactor capability, the AI analyzes your entire codebase and applies changes across multiple files simultaneously. This includes renaming variables, updating function signatures, moving code between modules, and rewriting imports. The problem is that automated refactoring doesn't always account for:

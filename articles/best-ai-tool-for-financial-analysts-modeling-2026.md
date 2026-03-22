@@ -57,6 +57,20 @@ Claude is 80% cheaper for solo practitioners who can work conversationally.
 - **The most effective tools**: in this space integrate directly with existing workflows rather than requiring analysts to abandon familiar platforms.
 - **FRED (Federal Reserve Economic**: Data) offers free access to 500,000+ time series.
 
+## Table of Contents
+
+- [Understanding AI Capabilities in Financial Modeling](#understanding-ai-capabilities-in-financial-modeling)
+- [Key Features for Financial Modeling Tasks](#key-features-for-financial-modeling-tasks)
+- [Real-World Use Cases](#real-world-use-cases)
+- [Selecting the Right Tool](#selecting-the-right-tool)
+- [The Path Forward](#the-path-forward)
+- [Specific Tools for Financial Modeling in 2026](#specific-tools-for-financial-modeling-in-2026)
+- [Real Cost Comparison for Financial Modeling](#real-cost-comparison-for-financial-modeling)
+- [Advanced Formula Techniques with AI](#advanced-formula-techniques-with-ai)
+- [Evaluation Checklist for Financial Analysts](#evaluation-checklist-for-financial-analysts)
+- [Industry-Specific Financial Modeling Examples](#industry-specific-financial-modeling-examples)
+- [Practical Implementation Timeline](#practical-implementation-timeline)
+
 ## Understanding AI Capabilities in Financial Modeling
 
 Modern AI tools designed for financial analysts offer several distinct capability categories. Natural language processing allows models to interpret financial documents, earnings call transcripts, and regulatory filings. Spreadsheet intelligence enables automation of formula creation, error detection, and scenario modeling. Predictive analytics provides forecasting assistance based on historical data patterns. Each capability addresses specific pain points in the financial modeling workflow.

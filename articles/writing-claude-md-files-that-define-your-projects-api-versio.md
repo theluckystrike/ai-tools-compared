@@ -40,6 +40,20 @@ When working with AI coding assistants on API-driven projects, consistent versio
 - **Keep the CLAUDE.md current.**: An outdated CLAUDE.md that still lists v1 as the current stable version will cause the AI to generate v1 endpoints for new features.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Why API Versioning Belongs in CLAUDE.md](#why-api-versioning-belongs-in-claudemd)
+- [Versioning Scheme Comparison](#versioning-scheme-comparison)
+- [Structuring Your API Versioning Documentation](#structuring-your-api-versioning-documentation)
+- [API Versioning Strategy](#api-versioning-strategy)
+- [Practical Implementation Patterns](#practical-implementation-patterns)
+- [Version-Specific Response Handling](#version-specific-response-handling)
+- [Migration and Backward Compatibility](#migration-and-backward-compatibility)
+- [API Migration Guidelines](#api-migration-guidelines)
+- [Testing Versioned Endpoints](#testing-versioned-endpoints)
+- [Integrating CLAUDE.md With Your CI Pipeline](#integrating-claudemd-with-your-ci-pipeline)
+- [Common Pitfalls to Avoid](#common-pitfalls-to-avoid)
+
 ## Why API Versioning Belongs in CLAUDE.md
 
 Your API versioning strategy affects every endpoint, request, and response in your project. Without explicit instructions, AI assistants may generate inconsistent endpoint paths, ignore version headers, or fail to implement proper deprecation warnings. By documenting your versioning approach in CLAUDE.md, you establish a source of truth that guides every code generation decision.

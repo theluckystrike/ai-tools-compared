@@ -41,6 +41,13 @@ Descriptive naming helps Copilot understand your intent.
 - **Start with free tier**: on 1-2 projects 2.
 - **Use Copilot strategically on**: high-friction tasks 4.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Advanced Tips for Power Users](#advanced-tips-for-power-users)
+- [Comparison: Free Tier vs. Paid (for OSS Contributors)](#comparison-free-tier-vs-paid-for-oss-contributors)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

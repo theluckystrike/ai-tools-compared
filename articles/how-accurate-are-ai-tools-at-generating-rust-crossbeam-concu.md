@@ -39,6 +39,16 @@ AI tools generate correct Crossbeam code for basic channel patterns and synchron
 - **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 
+## Table of Contents
+
+- [Testing Methodology](#testing-methodology)
+- [Test Results at a Glance](#test-results-at-a-glance)
+- [Basic Channel Generation](#basic-channel-generation)
+- [Epoch-Based Concurrent Structures](#epoch-based-concurrent-structures)
+- [Crossbeam Scopes](#crossbeam-scopes)
+- [Key Findings](#key-findings)
+- [Recommendations](#recommendations)
+
 ## Testing Methodology
 
 I evaluated four major AI coding tools: Claude (via Cursor), GitHub Copilot, Gemini, and GPT-4. Each tool was given five Crossbeam-related tasks of increasing complexity:

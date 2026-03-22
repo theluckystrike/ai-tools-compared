@@ -50,6 +50,24 @@ Configuring AI coding tools effectively in large enterprise codebases requires s
 - **The solution involves helping**: your AI tool focus on what matters most.
 - **Use these strategically to**: improve suggestion quality: ```python # ai:context:api-handlers # This file handles all REST API endpoints for the payment service.
 
+## Table of Contents
+
+- [Understanding Large Codebase Challenges](#understanding-large-codebase-challenges)
+- [Optimizing Exclude Patterns](#optimizing-exclude-patterns)
+- [Language-Specific Configuration Files](#language-specific-configuration-files)
+- [Context Files and Annotation](#context-files-and-annotation)
+- [Monorepo Workspace Configuration](#monorepo-workspace-configuration)
+- [Security and Compliance Considerations](#security-and-compliance-considerations)
+- [Editor Configuration Best Practices](#editor-configuration-best-practices)
+- [Tool-Specific Configuration Files](#tool-specific-configuration-files)
+- [Project Conventions](#project-conventions)
+- [Testing](#testing)
+- [Team Collaboration and Shared Configurations](#team-collaboration-and-shared-configurations)
+- [Measuring and Iterating](#measuring-and-iterating)
+- [Handling Multi-Language Codebases](#handling-multi-language-codebases)
+- [Context Window Budget Management](#context-window-budget-management)
+- [CI Integration for Configuration Drift Detection](#ci-integration-for-configuration-drift-detection)
+
 ## Understanding Large Codebase Challenges
 
 Enterprise repositories often contain legacy code, multiple programming languages, monorepo structures, and extensive dependency trees. AI coding tools analyze your codebase to provide relevant suggestions, but massive repositories can overwhelm context windows and degrade performance. A monorepo with 50,000 files forces AI tools to parse through irrelevant code, resulting in slower suggestions and lower accuracy.
@@ -409,10 +427,9 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 ## Related Articles
 
 - [Best Practices for Maintaining AI Tool Configuration Files](/ai-tools-compared/best-practices-for-maintaining-ai-tool-configuration-files-a/)
-- [Best Practices for Sharing AI Tool Configuration Files Acros](/ai-tools-compared/best-practices-for-sharing-ai-tool-configuration-files-acros/)
-- [Best Practices for AI Tool Project Config When Switching](/ai-tools-compared/best-practices-for-ai-tool-project-config-when-switching-between-multiple-client-projects/)
-- [How to Optimize Your AI Coding Tool Configuration for Specif](/ai-tools-compared/how-to-optimize-your-ai-coding-tool-configuration-for-specif/)
-- [Best Practices for AI Coding Tools](/ai-tools-compared/best-practices-for-ai-coding-tools-in-sox-compliant-financial-environments/)
-
+- [Best Practices for AI Tool Customization Files When Onboardi](/ai-tools-compared/best-practices-for-ai-tool-customization-files-when-onboardi/)
+- [How to Optimize Your AI Coding Tool Configuration](/ai-tools-compared/how-to-optimize-your-ai-coding-tool-configuration-for-specif/)
+- [Best Practices for Sharing AI Tool Configuration Files](/ai-tools-compared/best-practices-for-sharing-ai-tool-configuration-files-acros/)
+- [Best Practices for Breaking Down Complex Coding Tasks](/ai-tools-compared/best-practices-for-breaking-down-complex-coding-tasks-for-ai/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

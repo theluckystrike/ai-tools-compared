@@ -43,6 +43,21 @@ Choose Stable Diffusion if you need programmatic control, custom-trained models 
 - **Use IP Adapter for**: face consistency across poses 8.
 - **Use an automatic tool**: to tag them (WD14 Tagger) 3.
 
+## Table of Contents
+
+- [Platform Architecture](#platform-architecture)
+- [Prompt Engineering for Characters](#prompt-engineering-for-characters)
+- [Control and Consistency](#control-and-consistency)
+- [Workflow Integration](#workflow-integration)
+- [Model Versions and Updates](#model-versions-and-updates)
+- [Recommendations by Use Case](#recommendations-by-use-case)
+- [Detailed Workflow Comparison: Concept to Final Asset](#detailed-workflow-comparison-concept-to-final-asset)
+- [LoRA Training Deep Dive](#lora-training-deep-dive)
+- [Hardware Reality Check](#hardware-reality-check)
+- [Iteration Speed Comparison in Detail](#iteration-speed-comparison-in-detail)
+- [Quality Comparison by Style](#quality-comparison-by-style)
+- [Tool Recommendation Matrix](#tool-recommendation-matrix)
+
 ## Platform Architecture
 
 Stable Diffusion operates as an open-source image generation model that runs locally on your hardware or through various hosted interfaces. You maintain full control over the model, can fine-tune it on custom datasets, and integrate it into automated pipelines. The core model is free, though hardware requirements (typically a GPU with 8GB+ VRAM) represent an upfront investment.

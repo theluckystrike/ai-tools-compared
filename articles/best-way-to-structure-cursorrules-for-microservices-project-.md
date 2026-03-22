@@ -40,6 +40,20 @@ CursorRules offer a powerful way to customize AI behavior for specific project t
 - ****Q**: Our services use different languages (Go, Java, TypeScript).
 - **The root-level `code_generation` block can hold all three plugin configs simultaneously**: Cursor picks the right one based on the file extension it is editing.
 
+## Table of Contents
+
+- [Understanding the Microservices Challenge](#understanding-the-microservices-challenge)
+- [Recommended Project Structure](#recommended-project-structure)
+- [Root-Level CursorRules Configuration](#root-level-cursorrules-configuration)
+- [Service-Specific CursorRules](#service-specific-cursorrules)
+- [Handling Shared Proto Imports](#handling-shared-proto-imports)
+- [Best Practices for Proto-Aware Code Generation](#best-practices-for-proto-aware-code-generation)
+- [Cross-Service Communication Patterns](#cross-service-communication-patterns)
+- [CursorRules Tool Comparison for Microservices](#cursorrules-tool-comparison-for-microservices)
+- [Step-by-Step Implementation Workflow](#step-by-step-implementation-workflow)
+- [Testing the Configuration](#testing-the-configuration)
+- [Maintenance and Evolution](#maintenance-and-evolution)
+
 ## Understanding the Microservices Challenge
 
 Microservices projects present unique challenges for AI coding assistants. You deal with multiple services, shared dependencies, inter-service communication, and consistent API contracts. When your team uses protobuf for defining these contracts, the AI needs to understand the relationship between generated code and the underlying proto definitions.

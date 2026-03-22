@@ -40,6 +40,37 @@ examples for implementing retries, and links to related articles.
 - **This approach keeps documentation**: close to implementation: ```python def authenticate_user(token: str) -> User: """ Validates JWT token and returns corresponding user.
 - **Those preferring separate writing**: environments might prefer Claude Code or cloud-based alternatives.
 
+## Table of Contents
+
+- [Why Help Center Content Needs Specialized Tools](#why-help-center-content-needs-specialized-tools)
+- [Claude Code for Documentation Workflows](#claude-code-for-documentation-workflows)
+- [GitHub Copilot for Inline Documentation](#github-copilot-for-inline-documentation)
+- [Cursor for Large Documentation Projects](#cursor-for-large-documentation-projects)
+- [Ollama for Self-Hosted Documentation](#ollama-for-self-hosted-documentation)
+- [Practical Implementation Strategy](#practical-implementation-strategy)
+- [Common Help Center Content Patterns](#common-help-center-content-patterns)
+- [Symptom](#symptom)
+- [Cause](#cause)
+- [Resolution](#resolution)
+- [Step 1: [Action]](#step-1-action)
+- [Step 2: [Action]](#step-2-action)
+- [Troubleshooting](#troubleshooting)
+- [Recommendations](#recommendations)
+- [Tool Selection Matrix](#tool-selection-matrix)
+- [Structured Help Center Workflow](#structured-help-center-workflow)
+- [Integration with Help Desk Platforms](#integration-with-help-desk-platforms)
+- [Overview](#overview)
+- [Prerequisites](#prerequisites)
+- [Batch Documentation Updates](#batch-documentation-updates)
+- [Help Center Content Patterns and Templates](#help-center-content-patterns-and-templates)
+- [{{API_ENDPOINT}}](#apiendpoint)
+- [{{Problem Title}}](#problem-title)
+- [Measuring Documentation Effectiveness](#measuring-documentation-effectiveness)
+- [Content Localization with AI Tools](#content-localization-with-ai-tools)
+- [Documentation Maintenance Schedule](#documentation-maintenance-schedule)
+- [Team Collaboration on Help Center Content](#team-collaboration-on-help-center-content)
+- [Recommendations by Team Size](#recommendations-by-team-size)
+
 ## Why Help Center Content Needs Specialized Tools
 
 Help center articles differ from blog posts or marketing copy. They require consistent terminology, clear step-by-step instructions, and often need localization. A help center might contain articles on API authentication, troubleshooting guides, and feature explanations—each demanding different approaches.

@@ -46,6 +46,24 @@ Tempting to auto-focus the first result, but this breaks user expectations.
 - **Infinite scroll without keyboard**: alternatives excludes keyboard-only users.
 - **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
 
+## Table of Contents
+
+- [What Makes Search Results Markup Accessible](#what-makes-search-results-markup-accessible)
+- [Leading AI Tools for Accessible Markup Generation](#leading-ai-tools-for-accessible-markup-generation)
+- [Implementation Example](#implementation-example)
+- [Structured Data for Search Results](#structured-data-for-search-results)
+- [Evaluating AI Tool Output](#evaluating-ai-tool-output)
+- [AI Tool Comparison for Accessible Markup Generation](#ai-tool-comparison-for-accessible-markup-generation)
+- [Dynamic Search Results: The Live Region Problem](#dynamic-search-results-the-live-region-problem)
+- [Testing AI-Generated Accessible Markup](#testing-ai-generated-accessible-markup)
+- [Real-World Search Results Implementation](#real-world-search-results-implementation)
+- [Pagination and Dynamic Results Accessibility](#pagination-and-dynamic-results-accessibility)
+- [Search Filters and Facets Accessibility](#search-filters-and-facets-accessibility)
+- [Testing Checklist for Accessible Search Results](#testing-checklist-for-accessible-search-results)
+- [Common AI Mistakes in Search Result Markup](#common-ai-mistakes-in-search-result-markup)
+- [Recommendations](#recommendations)
+- [Related Reading](#related-reading)
+
 ## What Makes Search Results Markup Accessible
 
 Search results pages present unique accessibility challenges. Each result must be identifiable as a distinct item, contain meaningful links, provide context about its position in the list, and expose any additional metadata (like ratings, dates, or snippets) in ways assistive technologies can interpret.
@@ -554,6 +572,14 @@ The best approach combines AI efficiency with developer judgment and accessibili
 - [Best AI Tools for Web Developers](/best-ai-tools-for-web-developers-2026/)
 - [Accessibility Testing Tools Comparison](/accessibility-testing-tools/)
 - [Semantic HTML Best Practices](/semantic-html-best-practices/)
+
+## Related Articles
+
+- [Best AI Tool for Generating Accessible Data Table Markup](/ai-tools-compared/best-ai-tool-for-generating-accessible-data-table-markup-wit/)
+- [Best AI Tool for Generating Accessible Cookie Consent](/ai-tools-compared/best-ai-tool-for-generating-accessible-cookie-consent-banner/)
+- [Best AI Tool for Generating Accessible Stepper and Wizard](/ai-tools-compared/best-ai-tool-for-generating-accessible-stepper-and-wizard-co/)
+- [Perplexity Not Finding Recent Results](/ai-tools-compared/perplexity-not-finding-recent-results-fix/)
+- [Switching from ChatGPT Search to Perplexity Pro Search](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

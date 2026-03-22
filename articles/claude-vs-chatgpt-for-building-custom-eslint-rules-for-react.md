@@ -40,6 +40,17 @@ Choose Claude if your custom ESLint rules require deep codebase context, complex
 - **Choose ChatGPT if you**: need quick implementations of standard rule patterns with minimal back-and-forth.
 - **For example**: when generating a rule to check useEffect dependencies, Claude often includes checks for async functions, cleanup functions, and edge cases that ChatGPT might miss initially.
 
+## Table of Contents
+
+- [Why Custom ESLint Rules Matter for React](#why-custom-eslint-rules-matter-for-react)
+- [Quick Comparison](#quick-comparison)
+- [Claude's Approach to Custom ESLint Rules](#claudes-approach-to-custom-eslint-rules)
+- [ChatGPT's Approach to Custom ESLint Rules](#chatgpts-approach-to-custom-eslint-rules)
+- [Key Differences in Practice](#key-differences-in-practice)
+- [Practical Recommendations](#practical-recommendations)
+- [Example: Building an useEffect Dependency Checker](#example-building-an-useeffect-dependency-checker)
+- [Advanced ESLint Rule Development](#advanced-eslint-rule-development)
+
 ## Why Custom ESLint Rules Matter for React
 
 React projects often develop their own patterns that standard ESLint rules cannot capture. A team might want to enforce specific component naming conventions, restrict certain hook dependencies, or prevent common mistakes like missing dependency arrays in useEffect. Custom rules transform these team-specific requirements into automated enforcement that runs during development.
@@ -276,11 +287,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [How to Transfer Claude Project Knowledge to ChatGPT Custom](/ai-tools-compared/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-g/)
-- [How to Transfer Claude Project Knowledge to ChatGPT Custom (2)](/ai-tools-compared/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-gpt/)
-- [Transfer ChatGPT Custom GPTs to Claude Projects Step by Step](/ai-tools-compared/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
-- [Migrating Copilot Custom Instructions to Cursor Rules.](/ai-tools-compared/migrating-copilot-custom-instructions-to-cursor-rules-file-f/)
-- [Best AI for Writing Jest Tests for React Custom Hooks](/ai-tools-compared/best-ai-for-writing-jest-tests-for-react-custom-hooks-with-c/)
-
+- [Transfer ChatGPT Custom GPTs to Claude Projects](/ai-tools-compared/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
+- [ChatGPT vs Claude for Explaining TensorFlow Model](/ai-tools-compared/chatgpt-vs-claude-for-explaining-tensorflow-model-architectu/)
+- [ChatGPT vs Claude for Writing API Documentation](/ai-tools-compared/chatgpt-vs-claude-for-writing-api-documentation/)
+- [ChatGPT vs Claude for Creative Storytelling Compared](/ai-tools-compared/chatgpt-vs-claude-for-creative-storytelling-compared/)
+- [ChatGPT vs Claude for Generating Cypress Component Test](/ai-tools-compared/chatgpt-vs-claude-for-generating-cypress-component-test-boil/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -40,6 +40,16 @@ This guide shows you how to create effective custom instructions that enforce yo
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Code Review Requirements](#code-review-requirements)
+- [Practical Examples for Common Standards](#practical-examples-for-common-standards)
+- [Testing Requirements](#testing-requirements)
+- [Advanced: Context-Aware Instructions](#advanced-context-aware-instructions)
+- [Testing Requirements](#testing-requirements)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

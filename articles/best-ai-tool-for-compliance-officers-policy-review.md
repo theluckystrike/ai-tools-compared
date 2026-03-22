@@ -55,6 +55,15 @@ Organizations using Microsoft 365 benefit from Copilot's deep integration with W
 - **COVERED REQUIREMENTS (list each**: requirement the policy addresses, with the exact policy clause that covers it) 2.
 - **AMBIGUOUS LANGUAGE (flag any**: clause that could be interpreted multiple ways and suggest clearer wording) 4.
 
+## Table of Contents
+
+- [What Compliance Officers Need from AI Policy Review Tools](#what-compliance-officers-need-from-ai-policy-review-tools)
+- [Top AI Tools for Policy Review](#top-ai-tools-for-policy-review)
+- [Practical Applications for Compliance Officers](#practical-applications-for-compliance-officers)
+- [Implementing AI Policy Review](#implementing-ai-policy-review)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+- [Policy Gap Analysis Prompt Template](#policy-gap-analysis-prompt-template)
+
 ## What Compliance Officers Need from AI Policy Review Tools
 
 Policy review presents unique challenges that differ from general document processing. Compliance officers require tools that understand regulatory language, detect potential violations, and maintain audit trails. Key capabilities include:

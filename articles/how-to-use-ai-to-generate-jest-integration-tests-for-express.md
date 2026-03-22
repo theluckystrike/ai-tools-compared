@@ -40,6 +40,13 @@ AI tools can generate complete Jest integration test files for Express routes wi
 - **Assert both status codes**: and response body shapes." The strong prompt tells the AI exactly which scenarios to cover and which testing patterns to use.
 - **In the example**: `userService` is mocked so tests run fast and don't require an actual database connection.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [AI Tool Comparison for Test Generation](#ai-tool-comparison-for-test-generation)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

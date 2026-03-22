@@ -39,6 +39,22 @@ Managing AWS CloudWatch alarms at scale becomes complex when you need composite 
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Suppose you need an**: alarm that triggers when either database CPU exceeds 80% AND connection count exceeds 500, OR when the database becomes unreachable.
 
+## Table of Contents
+
+- [Why Composite Alarms Matter](#why-composite-alarms-matter)
+- [AI Tools for Generating Alarm Configurations](#ai-tools-for-generating-alarm-configurations)
+- [Practical Examples](#practical-examples)
+- [Optimizing AI Outputs for Production](#optimizing-ai-outputs-for-production)
+- [Structuring Prompts for Better Alarm Configurations](#structuring-prompts-for-better-alarm-configurations)
+- [Modular Terraform Patterns for Reusable Alarms](#modular-terraform-patterns-for-reusable-alarms)
+- [Validating AI-Generated Alarm Configurations](#validating-ai-generated-alarm-configurations)
+- [Limitations to Consider](#limitations-to-consider)
+- [Advanced Composite Alarm Patterns](#advanced-composite-alarm-patterns)
+- [Incorporating Actions into Composite Alarms](#incorporating-actions-into-composite-alarms)
+- [Testing Composite Alarm Logic](#testing-composite-alarm-logic)
+- [Dynamic Alarm Generation for Multiple Environments](#dynamic-alarm-generation-for-multiple-environments)
+- [Monitoring Alarm Effectiveness](#monitoring-alarm-effectiveness)
+
 ## Why Composite Alarms Matter
 
 Composite alarms in CloudWatch allow you to combine multiple individual alarms using logical operators like AND, OR, and NOT. This approach reduces alarm fatigue by creating single alert conditions that trigger only when specific combinations of metrics reach concerning thresholds. For example, you might want to alert only when high CPU usage coincides with reduced memory available, rather than receiving separate alerts for each condition.
@@ -444,10 +460,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Creating Mutation Testing Configurations](/ai-tools-for-creating-mutation-testing-configurations-to-find-weak-test-assertions/)
-- [AI Tools for Generating API Client SDKs 2026](/ai-tools-for-generating-api-client-sdks-2026/)
-- [AI Tools for Generating API Mock Servers 2026](/ai-tools-for-generating-api-mock-servers-2026/)
-
+- [How Accurate Are AI Tools at Generating Rust Crossbeam](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
+- [AI Tools for Writing pytest Tests with Moto Library for AWS](/ai-tools-compared/ai-tools-for-writing-pytest-tests-with-moto-library-for-aws-/)
+- [How Accurate Are AI Tools at Generating TypeScript Zod](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-typescript-zod-schem/)
+- [How to Prevent AI Coding Tools from Generating Overly](/ai-tools-compared/how-to-prevent-ai-coding-tools-from-generating-overly-complex-solutions/)
+- [Best AI Tools for Writing AWS CDK Infrastructure Code](/ai-tools-compared/best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/)
 Remember that composite alarms are one piece of observability. Pair them with good instrumentation, proper threshold tuning, and strong runbooks that guide your team's response. The goal isn't just alerting—it's enabling fast, confident incident response.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

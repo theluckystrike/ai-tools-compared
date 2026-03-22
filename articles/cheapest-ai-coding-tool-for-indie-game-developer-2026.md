@@ -41,6 +41,16 @@ This guide evaluates the cheapest AI coding tools for indie game developers in 2
 - **Claude Code is free**: for individual use via the CLI.
 - **You pay only if**: you use it through the Anthropic API directly (which gives you programmatic access).
 
+## Table of Contents
+
+- [Understanding Your Options](#understanding-your-options)
+- [Pricing Comparison at a Glance](#pricing-comparison-at-a-glance)
+- [Top Recommendation: Claude Code](#top-recommendation-claude-code)
+- [Runner-Up: GitHub Copilot](#runner-up-github-copilot)
+- [Budget Alternative: Amazon CodeWhisperer](#budget-alternative-amazon-codewhisperer)
+- [Game-Specific Workflows: Where Each Tool Shines](#game-specific-workflows-where-each-tool-shines)
+- [Making Your Choice](#making-your-choice)
+
 ## Understanding Your Options
 
 Most AI coding tools offer tiered pricing. The free tier often covers individual developers, while paid plans unlock advanced features. For indie game developers, the key is finding tools that provide meaningful assistance without monthly fees that cut into your budget.
@@ -279,10 +289,9 @@ Claude Code handles Unreal C++ well, including UPROPERTY macros, UObject inherit
 
 ## Related Articles
 
-- [Cheapest AI Coding Subscription with Unlimited Requests 2026](/ai-tools-compared/cheapest-ai-coding-subscription-with-unlimited-requests-2026/)
-- [Cheapest Way to Use Claude for Coding Projects 2026](/ai-tools-compared/cheapest-way-to-use-claude-for-coding-projects-2026/)
 - [Is Paying for AI Coding Tool Worth It for Junior Developer?](/ai-tools-compared/is-paying-for-ai-coding-tool-worth-it-for-junior-developer/)
+- [Cheapest Way to Use Claude for Coding Projects 2026](/ai-tools-compared/cheapest-way-to-use-claude-for-coding-projects-2026/)
+- [Best AI Coding Tool with Pay As You Go No Subscription](/ai-tools-compared/best-ai-coding-tool-with-pay-as-you-go-no-subscription/)
 - [Best AI Tool for Game Developers Design Docs Writing](/ai-tools-compared/best-ai-tool-for-game-developers-design-docs-writing/)
-- [Best AI Tools for Video Game Trailers](/ai-tools-compared/best-ai-tools-for-video-game-trailers/)
-
+- [Best Free AI Coding Tool With No Message Limits in 2026](/ai-tools-compared/best-free-ai-coding-tool-with-no-message-limits-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

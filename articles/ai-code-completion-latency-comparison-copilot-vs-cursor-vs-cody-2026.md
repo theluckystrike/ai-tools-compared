@@ -39,6 +39,19 @@ Latency kills productivity. When your AI code completion tool takes 800ms to sug
 - **Copilot uses larger models**: than Codeium's free tier, so inference takes longer.
 - **It's consistently fastest across**: scenarios and offers a free tier to test.
 
+## Table of Contents
+
+- [How Latency Matters in Code Completion](#how-latency-matters-in-code-completion)
+- [Testing Methodology](#testing-methodology)
+- [Results: GitHub Copilot](#results-github-copilot)
+- [Results: Cursor](#results-cursor)
+- [Results: Codeium](#results-codeium)
+- [Comparison Table](#comparison-table)
+- [Factors Affecting Your Actual Latency](#factors-affecting-your-actual-latency)
+- [How to Optimize Latency in Your Setup](#how-to-optimize-latency-in-your-setup)
+- [Real-World Impact](#real-world-impact)
+- [Testing Your Own Setup](#testing-your-own-setup)
+
 ## How Latency Matters in Code Completion
 
 Latency directly impacts your coding workflow. Research shows that delays above 200ms feel "laggy" to users—they break flow state and create cognitive overhead. You stop thinking about your code and start thinking about the tool.

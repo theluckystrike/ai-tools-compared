@@ -45,6 +45,17 @@ Review the user input handling in this codebase.
 - **Focus on cases where**: route parameters are used in raw database queries.
 - **Educate your team**: Use Claude Code's explanations to help developers understand security concepts and remediation strategies.
 
+## Table of Contents
+
+- [What is Taint Analysis?](#what-is-taint-analysis)
+- [Why Use Claude Code for Taint Analysis?](#why-use-claude-code-for-taint-analysis)
+- [Setting Up Taint Analysis with Claude Code](#setting-up-taint-analysis-with-claude-code)
+- [Using Claude Code to Enhance Taint Analysis](#using-claude-code-to-enhance-taint-analysis)
+- [Integrating Taint Analysis into CI/CD](#integrating-taint-analysis-into-cicd)
+- [Interpreting and Remediating Findings](#interpreting-and-remediating-findings)
+- [Taint Analysis Across Languages](#taint-analysis-across-languages)
+- [Best Practices for Taint Analysis Workflows](#best-practices-for-taint-analysis-workflows)
+
 ## What is Taint Analysis?
 
 Taint analysis (also known as taint tracking) is a form of static or dynamic analysis that monitors how data flows through your application. The core concept is straightforward: data from untrusted sources (user input, file reads, network requests) is marked as "tainted," and the analyzer tracks whether this tainted data reaches sensitive sinks (database queries, command execution, file writes) without proper sanitization.
@@ -311,12 +322,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Claude Code for Memory Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-memory-profiling-workflow-tutorial/)
 - [Claude Code for Node.js Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-nodejs-profiling-workflow-tutorial/)
-- [Claude Code Screen Reader Testing Workflow](/ai-tools-compared/claude-code-screen-reader-testing-workflow/)
-- [Claude Code SDK Testing Workflow Guide](/ai-tools-compared/claude-code-sdk-testing-workflow-guide/)
-- [Effective Tool Chaining Workflow Using Copilot and Claude](/ai-tools-compared/effective-tool-chaining-workflow-using-copilot-and-claude-together-for-coding/)
-
+- [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
+- [Claude vs GPT-4 for Data Analysis Tasks](/ai-tools-compared/claude-vs-gpt4-for-data-analysis/)
+- [Claude Code for Memory Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-memory-profiling-workflow-tutorial/)
+- [Claude Code Runbook Documentation Guide](/ai-tools-compared/claude-code-runbook-documentation-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 {% endraw %}

@@ -39,6 +39,15 @@ Use AI to generate pytest parametrize test cases covering edge conditions includ
 This approach saves hours of manual test writing while ensuring better coverage than writing tests after the fact.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [What Is Pytest Parametrize?](#what-is-pytest-parametrize)
+- [Prerequisites](#prerequisites)
+- [Practical Example: Email Validation](#practical-example-email-validation)
+- [Advanced Parametrize Patterns](#advanced-parametrize-patterns)
+- [Combining Parametrize with Other Pytest Features](#combining-parametrize-with-other-pytest-features)
+- [Troubleshooting](#troubleshooting)
+
 ## What Is Pytest Parametrize?
 
 The parametrize decorator allows you to define multiple arguments for a single test function. Instead of writing separate test functions for each input combination, you declare all test cases as parameters:
@@ -358,10 +367,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Use AI to Write pytest Parametrize Test Cases](/ai-tools-compared/how-to-use-ai-to-write-pytest-parametrize-test-cases-for-edge-conditions/)
-- [AI Tools for Creating Property-Based Test Cases](/ai-tools-compared/ai-tools-for-creating-property-based-test-cases-using-hypoth/)
-- [Best AI for Creating Negative Test Cases](/ai-tools-compared/best-ai-for-creating--negative-test-cases-from-/)
-- [Best AI for QA Engineers Writing API Contract Testing Cases](/ai-tools-compared/best-ai-for-qa-engineers-writing-api-contract-test-cases-fro/)
+- [How to Use AI to Write pytest Parametrize Test Cases: Edge](/ai-tools-compared/how-to-use-ai-to-write-pytest-parametrize-test-cases-for-edge-conditions/)
 - [Best AI Tool for Generating Jest Test Cases from React](/ai-tools-compared/best-ai-tool-for-generating-jest-test-cases-from-react-compo/)
-
+- [Best AI Assistant for Writing pytest Tests for Background](/ai-tools-compared/best-ai-assistant-for-writing-pytest-tests-for-background-job-retry-failure-scenarios/)
+- [How to Use AI to Generate pytest Tests for Django REST](/ai-tools-compared/how-to-use-ai-to-generate-pytest-tests-for-django-rest-frame/)
+- [Best AI for Creating Negative Test Cases](/ai-tools-compared/best-ai-for-creating--negative-test-cases-from-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

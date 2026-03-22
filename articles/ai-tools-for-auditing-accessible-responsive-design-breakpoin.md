@@ -41,6 +41,22 @@ As web applications grow more complex, ensuring consistent accessible experience
 Use AI to correlate accessibility issues with actual user behavior data.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Why Breakpoint Accessibility Matters](#why-breakpoint-accessibility-matters)
+- [Tool Comparison](#tool-comparison)
+- [Practical Implementation Strategy](#practical-implementation-strategy)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+- [Common Breakpoint Accessibility Issues](#common-breakpoint-accessibility-issues)
+- [Setting Up a Breakpoint Audit Workflow](#setting-up-a-breakpoint-audit-workflow)
+- [Automating Breakpoint Accessibility in CI/CD](#automating-breakpoint-accessibility-in-cicd)
+- [Screen Reader Testing Across Breakpoints](#screen-reader-testing-across-breakpoints)
+- [Touch Target Sizing at Mobile Breakpoints](#touch-target-sizing-at-mobile-breakpoints)
+- [Keyboard Navigation Path Testing](#keyboard-navigation-path-testing)
+- [Zoom Level Accessibility](#zoom-level-accessibility)
+- [Visual Regression Testing for Breakpoints](#visual-regression-testing-for-breakpoints)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+
 ## Why Breakpoint Accessibility Matters
 
 When responsive design breakpoints change layout structure, keyboard navigation paths can break, focus traps can appear unexpectedly, and screen reader announcements can become confusing. A button that works perfectly at desktop width might become unreachable or improperly labeled when the viewport shrinks. Traditional manual testing at every breakpoint is impractical, which is where AI-assisted auditing tools provide real value.

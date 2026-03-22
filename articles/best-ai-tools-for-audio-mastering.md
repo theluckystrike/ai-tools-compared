@@ -39,6 +39,16 @@ Landr is the best all-around AI mastering tool for most developers, offering a w
 - **Landr is the best**: all-around AI mastering tool for most developers, offering a well-documented API and consistent output quality across genres.
 - **For stem-based mastering with**: finer control, AudioShake is the stronger choice, while eMastered suits users who prioritize simplicity and natural dynamics.
 
+## Table of Contents
+
+- [Understanding AI Audio Mastering](#understanding-ai-audio-mastering)
+- [Leading AI Mastering Tools](#leading-ai-mastering-tools)
+- [Building Automated Mastering Pipelines](#building-automated-mastering-pipelines)
+- [Building a Complete Mastering Pipeline](#building-a-complete-mastering-pipeline)
+- [DAW Integration Workflow](#daw-integration-workflow)
+- [Platform-Specific Loudness Standards](#platform-specific-loudness-standards)
+- [Key Considerations for Power Users](#key-considerations-for-power-users)
+
 ## Understanding AI Audio Mastering
 
 AI mastering tools use machine learning models trained on thousands of professionally mastered tracks. They analyze frequency content, dynamic range, stereo width, and loudness standards, then apply corrections that mimic what a professional engineer would do. The key difference from traditional plugins is that AI tools make holistic decisions across the entire track rather than requiring you to tweak individual parameters.

@@ -38,6 +38,23 @@ Debugging ProGuard and R8 class shrinking errors remains one of the most frustra
 - **Do these tools work**: offline? Most AI-powered tools require an internet connection since they run models on remote servers.
 - **How quickly do AI**: tool recommendations go out of date? AI tools evolve rapidly, with major updates every few months.
 
+## Table of Contents
+
+- [Understanding ProGuard R8 Class Shrinking Errors](#understanding-proguard-r8-class-shrinking-errors)
+- [Best AI Tools for Debugging R8 Errors](#best-ai-tools-for-debugging-r8-errors)
+- [Practical Debugging Workflow](#practical-debugging-workflow)
+- [Common Error Patterns and Solutions](#common-error-patterns-and-solutions)
+- [Advanced R8 Debugging Techniques](#advanced-r8-debugging-techniques)
+- [Choosing Your AI Debugging Tool](#choosing-your-ai-debugging-tool)
+- [Building a Keep Rules Library](#building-a-keep-rules-library)
+- [Advanced R8 Configuration Techniques](#advanced-r8-configuration-techniques)
+- [Creating Effective Prompts for AI R8 Debugging](#creating-effective-prompts-for-ai-r8-debugging)
+- [Comparing R8 vs ProGuard](#comparing-r8-vs-proguard)
+- [Testing Strategy for Minified Builds](#testing-strategy-for-minified-builds)
+- [Automated R8 Analysis Tool](#automated-r8-analysis-tool)
+- [Integration with CI/CD](#integration-with-cicd)
+- [Choosing Your AI Debugging Tool](#choosing-your-ai-debugging-tool)
+
 ## Understanding ProGuard R8 Class Shrinking Errors
 
 R8, Google's successor to ProGuard, performs three critical operations on your release builds: shrinking (removing unused code), optimizing (improving bytecode), and obfuscating (renaming classes and methods). Errors typically surface in几种 ways:

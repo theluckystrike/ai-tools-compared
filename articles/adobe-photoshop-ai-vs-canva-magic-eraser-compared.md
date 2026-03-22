@@ -42,6 +42,21 @@ Solution: Duplicate image, downscale by 50%, perform removal, then upscale back 
 - **Choose Photoshop AI if you need precise**: professional-grade object removal for client work, product photography, or complex compositions.
 - **Choose Canva Magic Eraser**: if you want fast, no-learning-curve removals for social media content and internal materials.
 
+## Table of Contents
+
+- [Understanding the Two Approaches](#understanding-the-two-approaches)
+- [Photoshop AI: Power and Precision](#photoshop-ai-power-and-precision)
+- [Canva Magic Eraser: Speed and Simplicity](#canva-magic-eraser-speed-and-simplicity)
+- [Feature-by-Feature Comparison](#feature-by-feature-comparison)
+- [Practical Recommendations](#practical-recommendations)
+- [Detailed Feature Comparison Matrix](#detailed-feature-comparison-matrix)
+- [Real-World Performance Benchmarks](#real-world-performance-benchmarks)
+- [Advanced Photoshop Workflow: Multi-Pass Removal](#advanced-photoshop-workflow-multi-pass-removal)
+- [Canva Workflow: Quick Social Content](#canva-workflow-quick-social-content)
+- [Pricing Deep Dive](#pricing-deep-dive)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Decision Tree for Tool Selection](#decision-tree-for-tool-selection)
+
 ## Understanding the Two Approaches
 
 Adobe Photoshop has evolved significantly with AI integration. The Remove Tool uses machine learning to intelligently eliminate unwanted objects from images. Photoshop's AI analyzes surrounding pixels to reconstruct backgrounds realistically, handling complex scenarios like removing people from landscapes or clearing power lines from sky shots.

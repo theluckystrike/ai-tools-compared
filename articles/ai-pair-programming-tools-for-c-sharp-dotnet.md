@@ -41,6 +41,21 @@ GitHub Copilot is the best all-around AI pair programmer for C# and.NET, with br
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Understanding AI Pair Programming in the.NET Context](#understanding-ai-pair-programming-in-thenet-context)
+- [GitHub Copilot: The Industry Standard](#github-copilot-the-industry-standard)
+- [Amazon CodeWhisperer: Free Alternative with Enterprise Options](#amazon-codewhisperer-free-alternative-with-enterprise-options)
+- [JetBrains AI Assistant: Deep IDE Integration](#jetbrains-ai-assistant-deep-ide-integration)
+- [Comparing the Tools](#comparing-the-tools)
+- [Best Practices for Using AI Tools in.NET Development](#best-practices-for-using-ai-tools-innet-development)
+- [Advanced .NET Patterns AI Tools Should Understand](#advanced-net-patterns-ai-tools-should-understand)
+- [LINQ Query Optimization](#linq-query-optimization)
+- [Async/Await Patterns](#asyncawait-patterns)
+- [Practical Workflow: Real Example](#practical-workflow-real-example)
+- [Testing Support](#testing-support)
+- [Choosing Based on Your .NET Focus](#choosing-based-on-your-net-focus)
+
 ## Understanding AI Pair Programming in the.NET Context
 
 AI pair programming tools act as intelligent collaborators that suggest code completions, generate entire functions, refactor existing code, and explain complex patterns. For C# and.NET development, these tools understand the nuances of the type system, async patterns, LINQ queries, and the extensive standard library.

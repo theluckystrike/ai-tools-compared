@@ -39,6 +39,22 @@ To migrate ChatGPT system prompts to Claude's format, restructure your instructi
 - **Analyze code for bugs**: performance issues, and best practice violations.
 - Help users design scalable systems.
 
+## Table of Contents
+
+- [Key Differences Between ChatGPT and Claude System Prompts](#key-differences-between-chatgpt-and-claude-system-prompts)
+- [Converting Basic System Prompts](#converting-basic-system-prompts)
+- [Handling Role-Based Prompts](#handling-role-based-prompts)
+- [Migrating Prompts with Output Format Requirements](#migrating-prompts-with-output-format-requirements)
+- [Endpoint Overview](#endpoint-overview)
+- [HTTP Method and Path](#http-method-and-path)
+- [Request Parameters](#request-parameters)
+- [Request Example](#request-example)
+- [Response Example](#response-example)
+- [HTTP Status Codes](#http-status-codes)
+- [Converting Multi-Part Instructions](#converting-multi-part-instructions)
+- [Using Developer Messages Effectively](#using-developer-messages-effectively)
+- [Best Practices for Migration](#best-practices-for-migration)
+
 ## Key Differences Between ChatGPT and Claude System Prompts
 
 Before converting your prompts, understand the fundamental differences between how each model processes system instructions.

@@ -39,6 +39,16 @@ ChatGPT API fine-tuning allows developers to customize OpenAI's language models 
 - **ChatGPT API fine-tuning allows**: developers to customize OpenAI's language models for specific use cases, but understanding the complete cost structure is essential for budgeting.
 - **Can I change plans**: later without losing my data? Most tools allow plan changes at any time.
 
+## Table of Contents
+
+- [Understanding Fine-Tuning Costs](#understanding-fine-tuning-costs)
+- [Calculating Total Cost of Ownership](#calculating-total-cost-of-ownership)
+- [Hidden Costs to Consider](#hidden-costs-to-consider)
+- [Cost Optimization Strategies](#cost-optimization-strategies)
+- [Example Cost Scenarios](#example-cost-scenarios)
+- [Is Fine-Tuning Worth It?](#is-fine-tuning-worth-it)
+- [Getting Started with Fine-Tuning](#getting-started-with-fine-tuning)
+
 ## Understanding Fine-Tuning Costs
 
 When you fine-tune a ChatGPT model, you incur costs in two main phases: training (one-time) and inference (ongoing). Each phase has its own pricing structure, and understanding both helps you plan your budget effectively.

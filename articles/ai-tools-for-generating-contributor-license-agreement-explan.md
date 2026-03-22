@@ -40,6 +40,22 @@ AI tools like Claude, ChatGPT, and specialized legal summarization platforms can
 - What this clause means
         2.
 
+## Table of Contents
+
+- [Why Plain Language CLA Explanations Matter](#why-plain-language-cla-explanations-matter)
+- [How AI Tools Approach CLA Translation](#how-ai-tools-approach-cla-translation)
+- [Practical Examples](#practical-examples)
+- [What This CLA Means For You](#what-this-cla-means-for-you)
+- [Best Practices for AI-Generated CLA Explanations](#best-practices-for-ai-generated-cla-explanations)
+- [Tools That Work Well](#tools-that-work-well)
+- [Common CLA Clauses That Need Explanation](#common-cla-clauses-that-need-explanation)
+- [Building Interactive CLA Explainers](#building-interactive-cla-explainers)
+- [CLA Comparison for Contributors](#cla-comparison-for-contributors)
+- [Generating FAQ from Real Questions](#generating-faq-from-real-questions)
+- [Version History and Change Explanation](#version-history-and-change-explanation)
+- [Compliance Checking](#compliance-checking)
+- [Real-World Impact](#real-world-impact)
+
 ## Why Plain Language CLA Explanations Matter
 
 Contributor License Agreements (CLAs) are legal documents that define the terms under which contributors submit code to your project. While necessary for protecting both contributors and project maintainers, CLAs are often written in dense legalese that confuses everyone except lawyers. This creates friction in open source projects—contributors may hesitate to contribute when they cannot easily understand what rights they're granting.

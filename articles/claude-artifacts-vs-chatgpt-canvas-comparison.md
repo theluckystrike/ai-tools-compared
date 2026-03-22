@@ -39,6 +39,26 @@ Claude Artifacts and ChatGPT Canvas both solve the same problem: AI chat interfa
 - **Canvas updates only that**: section while preserving the rest 5.
 - **Artifacts feel faster because**: you see changes rendered instantly.
 
+## Table of Contents
+
+- [Core Difference](#core-difference)
+- [Artifact Types](#artifact-types)
+- [Side-by-Side Coding Workflow](#side-by-side-coding-workflow)
+- [Collaborative Editing Features](#collaborative-editing-features)
+- [Code Quality Comparison](#code-quality-comparison)
+- [Pricing and Access](#pricing-and-access)
+- [When to Use Each](#when-to-use-each)
+- [Collaborative Workflows](#collaborative-workflows)
+- [Performance and Iteration Speed](#performance-and-iteration-speed)
+- [File Organization and Management](#file-organization-and-management)
+- [When Live Preview Matters](#when-live-preview-matters)
+- [When Collaborative Editing Matters](#when-collaborative-editing-matters)
+- [API Integration and Extensibility](#api-integration-and-extensibility)
+- [Cost Comparison Over Time](#cost-comparison-over-time)
+- [Switching Between Tools](#switching-between-tools)
+- [Hybrid Approach](#hybrid-approach)
+- [Related Reading](#related-reading)
+
 ## Core Difference
 
 **Claude Artifacts** is a rendered preview panel. When Claude produces HTML, React code, SVG, or Markdown, it appears in a preview pane you can interact with directly. You see the running application, not just code. You can click buttons, fill forms, and interact with the generated UI.
@@ -342,6 +362,14 @@ Start with Artifacts for visual feedback, export to your editor, then use Canvas
 - [How to Use Claude Artifacts for Rapid Prototyping React Components](/ai-tools-compared/how-to-use-claude-artifacts-for-rapid-prototyping-react-components/)
 - [Claude Artifacts Not Rendering Fix 2026](/ai-tools-compared/claude-artifacts-not-rendering-fix-2026/)
 - [ChatGPT Canvas Not Saving Changes Fix 2026](/ai-tools-compared/chatgpt-canvas-not-saving-changes-fix-2026/)
+
+## Related Articles
+
+- [Claude Artifacts vs ChatGPT Canvas Collaborative Coding](/ai-tools-compared/claude-artifacts-vs-chatgpt-canvas-collaborative-coding/)
+- [How to Use Claude Artifacts](/ai-tools-compared/how-to-use-claude-artifacts-for-rapid-prototyping-react-components/)
+- [Claude Code vs ChatGPT Code Interpreter Comparison](/ai-tools-compared/claude-code-vs-chatgpt-code-interpreter-comparison/)
+- [Claude vs ChatGPT for Refactoring Legacy Java Code](/ai-tools-compared/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
+- [ChatGPT vs Claude for Writing API Documentation](/ai-tools-compared/chatgpt-vs-claude-for-writing-api-documentation/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

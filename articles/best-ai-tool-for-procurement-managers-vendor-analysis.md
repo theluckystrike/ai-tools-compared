@@ -41,6 +41,16 @@ For supplier intelligence and risk monitoring, use Onesumer. For synthesizing ve
 - **Run baseline analysis on**: top 20% of suppliers by spend.
 - **Recommended negotiation points\n" "Rate**: overall risk: Low / Medium / High with justification." )}] ) return message.content[0].text proposal = ( "Net 60 payment terms.
 
+## Table of Contents
+
+- [What Procurement Managers Need from AI Vendor Analysis](#what-procurement-managers-need-from-ai-vendor-analysis)
+- [Practical AI Tools for Vendor Analysis](#practical-ai-tools-for-vendor-analysis)
+- [Evaluating AI Tools for Your Procurement Needs](#evaluating-ai-tools-for-your-procurement-needs)
+- [Implementation Recommendations](#implementation-recommendations)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+- [Measuring Success: KPIs After 90 Days](#measuring-success-kpis-after-90-days)
+- [Vendor Risk Analysis with Claude API](#vendor-risk-analysis-with-claude-api)
+
 ## What Procurement Managers Need from AI Vendor Analysis
 
 Vendor analysis extends beyond simple price comparisons. Procurement professionals must evaluate financial stability, compliance history, delivery performance, and strategic fit. The most useful AI tools for this purpose share several capabilities that directly address these requirements.

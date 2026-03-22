@@ -40,6 +40,21 @@ Cursor's codebase indexing analyzes your entire project to build an internal rep
 - **Exclude tests from core indexing**: Use separate test indexes
 4.
 
+## Table of Contents
+
+- [What Is Codebase Indexing](#what-is-codebase-indexing)
+- [How Cursor's Indexing Works](#how-cursors-indexing-works)
+- [Why Codebase Indexing Matters for Developers](#why-codebase-indexing-matters-for-developers)
+- [Performance Considerations](#performance-considerations)
+- [Practical Tips for Better Indexing](#practical-tips-for-better-indexing)
+- [The Bigger Picture](#the-bigger-picture)
+- [Advanced Indexing Strategies](#advanced-indexing-strategies)
+- [Comparison with Competitors](#comparison-with-competitors)
+- [Practical Impact on Development Speed](#practical-impact-on-development-speed)
+- [File Size and Performance Metrics](#file-size-and-performance-metrics)
+- [Language-Specific Indexing](#language-specific-indexing)
+- [Maximizing Indexing Benefits](#maximizing-indexing-benefits)
+
 ## What Is Codebase Indexing
 
 Codebase indexing is the process by which Cursor AI analyzes your project files, builds an internal representation of your code structure, and creates searchable indexes that enable fast retrieval of relevant context. When you first open a project in Cursor, the indexing system begins scanning your files to understand the relationships between different modules, classes, and functions.
@@ -292,8 +307,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 - [Does Cursor Pro Charge Extra for Large File Indexing in 2026](/ai-tools-compared/does-cursor-pro-charge-extra-for-large-file-indexing-2026/)
 - [Cursor AI Multi File Editing Feature How It Actually Works](/ai-tools-compared/cursor-ai-multi-file-editing-feature-how-it-actually-works-explained/)
-- [Cursor Pro Slow Model vs Fast Model Credits How It Works](/ai-tools-compared/cursor-pro-slow-model-vs-fast-model-credits-how-it-works/)
 - [Claude Code vs Cursor for Large Codebase Refactoring](/ai-tools-compared/claude-code-vs-cursor-for-large-codebase-refactoring/)
-- [Fine Tune Open Source Code Models for Your Codebase](/ai-tools-compared/fine-tune-open-source-code-models-for-your-codebase-2026/)
-
+- [Cursor Extensions Conflicting with AI](/ai-tools-compared/cursor-extensions-conflicting-with-ai-fix/)
+- [Cursor Free Tier Limitations: What Stops Working After Trial](/ai-tools-compared/cursor-free-tier-limitations-what-stops-working-after-trial/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

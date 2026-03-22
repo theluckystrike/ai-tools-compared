@@ -43,6 +43,14 @@ This guide evaluates the leading AI solutions for Figma-to-React conversion, foc
 - **Use Cursor's AI features**: (Ctrl+K) to generate implementation details 4.
 - **Use Figma plugins to**: extract initial component structure 2.
 
+## Table of Contents
+
+- [What Matters in Figma-to-React Conversion](#what-matters-in-figma-to-react-conversion)
+- [Leading AI Tools for Design-to-React Conversion](#leading-ai-tools-for-design-to-react-conversion)
+- [Practical Recommendations](#practical-recommendations)
+- [Code Quality Considerations](#code-quality-considerations)
+- [Choosing Your Tool](#choosing-your-tool)
+
 ## What Matters in Figma-to-React Conversion
 
 Before comparing tools, understanding what makes conversion useful is essential. The best results come from AI that produces:

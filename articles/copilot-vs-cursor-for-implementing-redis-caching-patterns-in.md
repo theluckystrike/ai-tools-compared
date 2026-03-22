@@ -39,6 +39,21 @@ This guide compares the strengths and weaknesses of each tool for this specific 
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **Node.js developers typically use**: libraries like `ioredis` or `redis` to interact with Redis, and the right AI assistant can help structure these interactions correctly.
 
+## Table of Contents
+
+- [Understanding Redis Caching in Node.js](#understanding-redis-caching-in-nodejs)
+- [GitHub Copilot for Redis Caching](#github-copilot-for-redis-caching)
+- [Cursor for Redis Caching](#cursor-for-redis-caching)
+- [Comparing Pattern Implementation](#comparing-pattern-implementation)
+- [Performance and Response Quality](#performance-and-response-quality)
+- [Recommendations](#recommendations)
+- [Pricing and Cost Analysis](#pricing-and-cost-analysis)
+- [Hands-On: Write-Through Cache Pattern](#hands-on-write-through-cache-pattern)
+- [Hands-On: Cache Invalidation Pattern](#hands-on-cache-invalidation-pattern)
+- [Integration Testing for Caching](#integration-testing-for-caching)
+- [CLI Commands for Cache Management](#cli-commands-for-cache-management)
+- [Performance Benchmarking](#performance-benchmarking)
+
 ## Understanding Redis Caching in Node.js
 
 Redis provides in-memory data storage that dramatically reduces database load and response times. Common caching patterns include simple key-value lookups, TTL-based expiration, distributed locks, and cache-aside strategies. Node.js developers typically use libraries like `ioredis` or `redis` to interact with Redis, and the right AI assistant can help structure these interactions correctly.
@@ -479,9 +494,8 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 ## Related Articles
 
 - [AI Tools for Writing Redis Caching Strategies 2026](/ai-tools-compared/ai-tools-for-writing-redis-caching-strategies-2026/)
-- [Copilot vs Cursor for Implementing Server-Sent Events in Spr](/ai-tools-compared/copilot-vs-cursor-for-implementing-server-sent-events-in-spr/)
-- [Cursor vs Copilot for Implementing Oauth2 Authentication Flo](/ai-tools-compared/cursor-vs-copilot-for-implementing-oauth2-authentication-flo/)
-- [Cursor vs Copilot for Implementing Stripe Payment](/ai-tools-compared/cursor-vs-copilot-for-implementing-stripe-payment-integratio/)
-- [How to Move Copilot Suggested Code Patterns to Cursor Snippe](/ai-tools-compared/how-to-move-copilot-suggested-code-patterns-to-cursor-snippe/)
-
+- [Copilot vs Cursor for Writing Terraform Modules](/ai-tools-compared/copilot-vs-cursor-for-writing-terraform-modules-from-scratch/)
+- [Copilot vs Cursor for Implementing Server-Sent Events](/ai-tools-compared/copilot-vs-cursor-for-implementing-server-sent-events-in-spr/)
+- [Copilot vs Cursor for Writing pytest Fixtures](/ai-tools-compared/copilot-vs-cursor-for-writing--pytest-fixtures-/)
+- [Cursor vs Copilot for Implementing Oauth2 Authentication](/ai-tools-compared/cursor-vs-copilot-for-implementing-oauth2-authentication-flo/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

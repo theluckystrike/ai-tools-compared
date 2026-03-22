@@ -40,6 +40,19 @@ When developers use AI coding assistants, understanding what happens behind the 
 - **Amazon designed the tool**: with enterprise use cases in mind, implementing AWS-integrated security features.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [What Is Context Window in AI Coding Tools](#what-is-context-window-in-ai-coding-tools)
+- [GitHub Copilot Context Window](#github-copilot-context-window)
+- [Codeium Context Window](#codeium-context-window)
+- [Tabnine Context Window](#tabnine-context-window)
+- [Claude Code and Anthropic Integration](#claude-code-and-anthropic-integration)
+- [Amazon CodeWhisperer Context Window](#amazon-codewhisperer-context-window)
+- [Cursor IDE Context Window](#cursor-ide-context-window)
+- [Practical Implications for Developers](#practical-implications-for-developers)
+- [API Cost Comparison: GPT-4 vs Alternatives](#api-cost-comparison-gpt-4-vs-alternatives)
+- [Structured Output Extraction Comparison](#structured-output-extraction-comparison)
+
 ## What Is Context Window in AI Coding Tools
 
 Context window refers to the amount of code and surrounding information an AI tool can consider when generating suggestions or answering questions. A larger context window means the AI can "see" more of your codebase simultaneously, leading to more relevant recommendations.
@@ -271,11 +284,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How to Manage AI Coding Context Window to Avoid Hallucinated](/ai-tools-compared/how-to-manage-ai-coding-context-window-to-avoid-hallucinated/)
 - [How Context Window Size Affects AI Code Suggestions](/ai-tools-compared/how-context-window-size-affects-ai-code-suggestions-in-different-idess/)
-- [Best AI Context Window Management Strategies for Large Codeb](/ai-tools-compared/best-ai-context-window-management-strategies-for-large-codeb/)
-- [Claude Max Context Window Exceeded: What To Do](/ai-tools-compared/claude-max-context-window-exceeded-what-to-do/)
 - [How to Audit What Source Code AI Coding Tools Transmit](/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
-
+- [Best AI Context Window Management Strategies for Large](/ai-tools-compared/best-ai-context-window-management-strategies-for-large-codeb/)
+- [How to Manage AI Coding Context Window to Avoid Hallucinated](/ai-tools-compared/how-to-manage-ai-coding-context-window-to-avoid-hallucinated/)
+- [What Code Snippets Get Logged in AI Coding Tool Provider](/ai-tools-compared/what-code-snippets-get-logged-in-ai-coding-tool-provider-aud/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

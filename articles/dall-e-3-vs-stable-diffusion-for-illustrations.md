@@ -43,6 +43,17 @@ This approach uses DALL-E 3's ease of use for exploration while using Stable Dif
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
+## Table of Contents
+
+- [Platform Architecture](#platform-architecture)
+- [Quick Comparison](#quick-comparison)
+- [API Integration and Developer Experience](#api-integration-and-developer-experience)
+- [Illustration Quality Analysis](#illustration-quality-analysis)
+- [Cost Comparison](#cost-comparison)
+- [Workflow Recommendations](#workflow-recommendations)
+- [Hybrid Approaches](#hybrid-approaches)
+- [Implementation Checklist](#implementation-checklist)
+
 ## Platform Architecture
 
 DALL-E 3 operates as a closed, managed service from OpenAI. You send prompts via API, receive generated images, and pay per invocation. No local hardware requirements beyond standard compute—this approach minimizes operational complexity and maximizes reliability.

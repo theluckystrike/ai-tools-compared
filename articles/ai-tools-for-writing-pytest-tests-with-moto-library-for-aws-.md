@@ -39,6 +39,20 @@ AI tools can generate pytest test cases that use the moto library for mocking AW
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Effective prompts to AI**: tools should include your function signatures, the boto3 clients you use, the specific operations you call, and the expected outcomes.
 
+## Table of Contents
+
+- [Why Use Moto for AWS Testing](#why-use-moto-for-aws-testing)
+- [How AI Tools Generate Moto-Based Tests](#how-ai-tools-generate-moto-based-tests)
+- [Best Practices for AI-Generated Moto Tests](#best-practices-for-ai-generated-moto-tests)
+- [Testing SQS Message Processing](#testing-sqs-message-processing)
+- [Testing Async AWS Operations](#testing-async-aws-operations)
+- [Moto Coverage for Different AWS Services](#moto-coverage-for-different-aws-services)
+- [Testing Error Scenarios with Moto](#testing-error-scenarios-with-moto)
+- [Performance Testing with Moto](#performance-testing-with-moto)
+- [Moto Server Mode for Integration Tests](#moto-server-mode-for-integration-tests)
+- [Generating Test Data Fixtures](#generating-test-data-fixtures)
+- [Tool-Specific Recommendations](#tool-specific-recommendations)
+
 ## Why Use Moto for AWS Testing
 
 The moto library provides mock implementations of AWS services, allowing developers to test code that interacts with AWS without incurring costs or requiring AWS credentials. When you write pytest tests with moto, your test suite runs quickly and does not depend on external service availability. This isolation makes tests reliable and fast, which is essential for continuous integration pipelines.

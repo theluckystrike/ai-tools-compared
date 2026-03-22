@@ -29,6 +29,18 @@ Managing service mesh configurations manually becomes increasingly complex as mi
 Step 2**: Generate the base manifests with AI. Prompt Claude or ChatGPT with your goal and existing DestinationRule.
 - **Step 3**: Generate the progressive delivery configuration. Use Argo Rollouts or Flagger for automated canary progression.
 
+## Table of Contents
+
+- [Why AI Assistance Matters for Service Mesh Configs](#why-ai-assistance-matters-for-service-mesh-configs)
+- [AI Tool Comparison for Service Mesh Config Generation](#ai-tool-comparison-for-service-mesh-config-generation)
+- [Tool Categories for Configuration Generation](#tool-categories-for-configuration-generation)
+- [Practical Examples with Istio](#practical-examples-with-istio)
+- [Envoy Configuration Generation](#envoy-configuration-generation)
+- [Step-by-Step Workflow: AI-Assisted Canary Deployment](#step-by-step-workflow-ai-assisted-canary-deployment)
+- [Integration Patterns](#integration-patterns)
+- [Choosing the Right Approach](#choosing-the-right-approach)
+- [Related Reading](#related-reading)
+
 ## Why AI Assistance Matters for Service Mesh Configs
 
 

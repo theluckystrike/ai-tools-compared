@@ -39,6 +39,22 @@ Claude.md, CursorRules, and Copilot Instructions are three distinct approaches t
 - **When Claude starts working**: in your project, it automatically reads this file to understand your coding standards, project structure, and preferred patterns.
 - **The instructions persist in**: version control, travel with the repo, and can be updated through the same code review process used for any other project file.
 
+## Table of Contents
+
+- [What Is Claude.md?](#what-is-claudemd)
+- [Quick Comparison](#quick-comparison)
+- [Understanding CursorRules](#understanding-cursorrules)
+- [Copilot Instructions in GitHub](#copilot-instructions-in-github)
+- [Comparing the Three Approaches](#comparing-the-three-approaches)
+- [Practical Examples](#practical-examples)
+- [Tech Stack](#tech-stack)
+- [Code Standards](#code-standards)
+- [Testing](#testing)
+- [API Docs](#api-docs)
+- [README Structure](#readme-structure)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+- [Making the Most of Your Configuration](#making-the-most-of-your-configuration)
+
 ## What Is Claude.md?
 
 Claude.md is a markdown file that lives in your project repository and contains instructions for Claude Code (claude.ai/cli). When Claude starts working in your project, it automatically reads this file to understand your coding standards, project structure, and preferred patterns.

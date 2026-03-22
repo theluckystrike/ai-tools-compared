@@ -37,6 +37,20 @@ description: "Compare AI tools for Redis Lua scripting.
 - **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
 - **Avoid Copilot**: Codeium, and TabbyML for script generation; they're better suited to other tasks.
 
+## Table of Contents
+
+- [Why Redis Lua Scripts Matter](#why-redis-lua-scripts-matter)
+- [Claude (claude-opus-4-6)](#claude-claude-opus-4-6)
+- [ChatGPT Plus (GPT-4)](#chatgpt-plus-gpt-4)
+- [Specialized Tools: Redisearch, RedisJSON Docs](#specialized-tools-redisearch-redisjson-docs)
+- [Comparative Testing: Rate Limiting](#comparative-testing-rate-limiting)
+- [Pub/Sub Patterns: The Hidden Complexity](#pubsub-patterns-the-hidden-complexity)
+- [Caching Strategy: Lua for Cache Coherence](#caching-strategy-lua-for-cache-coherence)
+- [Atomic Operations: The Core Reason to Use Lua](#atomic-operations-the-core-reason-to-use-lua)
+- [Production Considerations](#production-considerations)
+- [Real-World Benchmarks](#real-world-benchmarks)
+- [Recommendation Matrix](#recommendation-matrix)
+
 ## Why Redis Lua Scripts Matter
 
 Redis Lua scripting solves atomicity problems in distributed systems. Without scripts, multi-command operations create race conditions. Lua scripts execute as single atomic transactions, preventing concurrent modifications from interfering.

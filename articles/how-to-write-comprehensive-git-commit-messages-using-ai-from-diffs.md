@@ -37,6 +37,14 @@ Writing a good git commit message is often overlooked until your team needs to d
 - **This keeps your commit**: history focused on substantive changes.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Why AI-Generated Commit Messages Matter](#why-ai-generated-commit-messages-matter)
+- [Prerequisites](#prerequisites)
+- [Comparison: AI Commit Message Tools](#comparison-ai-commit-message-tools)
+- [Best Practices for AI-Generated Commits](#best-practices-for-ai-generated-commits)
+- [Troubleshooting](#troubleshooting)
+
 ## Why AI-Generated Commit Messages Matter
 
 A commit message serves multiple purposes. It provides immediate context for code review, enables future developers to understand changes without reading the full diff, and creates a searchable history of architectural decisions. Teams using detailed commit messages spend less time tracing through git blame and more time shipping features.

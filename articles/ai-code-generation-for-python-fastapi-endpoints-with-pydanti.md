@@ -42,6 +42,18 @@ This guide compares leading AI tools for generating FastAPI endpoints with Pydan
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Why AI Tools Matter for FastAPI Development](#why-ai-tools-matter-for-fastapi-development)
+- [Claude Code](#claude-code)
+- [GitHub Copilot](#github-copilot)
+- [Cursor](#cursor)
+- [Codeium](#codeium)
+- [Async Endpoint Generation](#async-endpoint-generation)
+- [Pagination and Filtering Patterns](#pagination-and-filtering-patterns)
+- [Comparison Summary](#comparison-summary)
+- [Practical Recommendations](#practical-recommendations)
+
 ## Why AI Tools Matter for FastAPI Development
 
 FastAPI endpoints typically require several interconnected components: route handlers, Pydantic models for request/response, dependency injection, and error handling. Writing these components manually for each endpoint introduces redundancy and opportunities for inconsistency.

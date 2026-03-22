@@ -26,6 +26,17 @@ AI-powered pricing optimization has moved beyond simple markup formulas. Modern 
 - **Discounts of 25-50% are**: common for qualifying organizations.
 - **Modern tools use machine**: learning to analyze demand elasticity, competitor behavior, and historical sales data to set prices that maximize revenue or profit.
 
+## Table of Contents
+
+- [Understanding Pricing Optimization Fundamentals](#understanding-pricing-optimization-fundamentals)
+- [Open-Source Libraries for Pricing Optimization](#open-source-libraries-for-pricing-optimization)
+- [Commercial AI Pricing Platforms](#commercial-ai-pricing-platforms)
+- [SaaS and Subscription Pricing](#saas-and-subscription-pricing)
+- [Implementing Your Own Pricing System](#implementing-your-own-pricing-system)
+- [Tool Comparison at a Glance](#tool-comparison-at-a-glance)
+- [Key Considerations](#key-considerations)
+- [Choosing Your Approach](#choosing-your-approach)
+
 ## Understanding Pricing Optimization Fundamentals
 
 Pricing optimization uses data to find the price point that balances volume and margin. The key components include:

@@ -40,6 +40,44 @@ Cursor AI notepads provide a powerful mechanism for preserving project context b
 - **Document any new patterns**: used # When completing a feature 1.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Understanding Cursor AI Notepads](#understanding-cursor-ai-notepads)
+- [Setting Up Project Notepads](#setting-up-project-notepads)
+- [Architecture](#architecture)
+- [Key Dependencies](#key-dependencies)
+- [Coding Standards](#coding-standards)
+- [Project Structure](#project-structure)
+- [Creating Multiple Context Files](#creating-multiple-context-files)
+- [Context Template for Different Project Types](#context-template-for-different-project-types)
+- [Component Patterns](#component-patterns)
+- [State Management](#state-management)
+- [Styling](#styling)
+- [Testing](#testing)
+- [API Design](#api-design)
+- [Error Handling](#error-handling)
+- [Database](#database)
+- [Maintaining Notepads Over Time](#maintaining-notepads-over-time)
+- [Advanced Notepad Patterns](#advanced-notepad-patterns)
+- [Getting Started](#getting-started)
+- [Common Tasks](#common-tasks)
+- [Code Review Standards](#code-review-standards)
+- [Notepad Organization Patterns for Large Projects](#notepad-organization-patterns-for-large-projects)
+- [Tech Stack](#tech-stack)
+- [Key Conventions](#key-conventions)
+- [Project Structure](#project-structure)
+- [Important Files](#important-files)
+- [Notepad Best Practices](#notepad-best-practices)
+- [Last Updated: 2026-03-21](#last-updated-2026-03-21)
+- [Next Review: 2026-06-21](#next-review-2026-06-21)
+- [1. Stack (50 tokens)](#1-stack-50-tokens)
+- [2. Must-Know Patterns (100 tokens)](#2-must-know-patterns-100-tokens)
+- [3. File Locations (50 tokens)](#3-file-locations-50-tokens)
+- [4. DO's and DON'Ts (100 tokens)](#4-dos-and-donts-100-tokens)
+- [Contextual Prompting with Notepads](#contextual-prompting-with-notepads)
+- [Sharing Notepads Across Teams](#sharing-notepads-across-teams)
+- [Troubleshooting Notepad Issues](#troubleshooting-notepad-issues)
+
 ## Understanding Cursor AI Notepads
 
 Notepads in Cursor AI function as persistent memory containers for your project. They store information that you want the AI to remember across sessions, reducing the need to reexplain context each time you start working. Unlike chat history that disappears or becomes unwieldy, notepads give you structured control over what context persists.
@@ -430,11 +468,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Configuring Cursor AI to Work with Corporate VPN and Proxy](/ai-tools-compared/configuring-cursor-ai-to-work-with-corporate-vpn-and-proxy-a/)
-- [Does WindSurf AI Send Entire Project Context or Just Open](/ai-tools-compared/does-windsurf-ai-send-entire-project-context-or-just-open-fi/)
-- [Cursor Project-Wide Refactor Breaking Build Fix](/ai-tools-compared/cursor-project-wide-refactor-breaking-build-fix/)
 - [Switching from Windsurf to Cursor How to Transfer Project](/ai-tools-compared/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
+- [Best Practices for AI Coding Tool Project Configuration](/ai-tools-compared/best-practices-for-ai-coding-tool-project-configuration-in-l/)
 - [How to Migrate Copilot Chat History and Context to Cursor AI](/ai-tools-compared/migrate-copilot-chat-history-and-context-to-cursor-ai-guide/)
-
+- [Does WindSurf AI Send Entire Project Context or Just Open](/ai-tools-compared/does-windsurf-ai-send-entire-project-context-or-just-open-fi/)
+- [Configuring Cursor AI to Work with Corporate VPN and Proxy](/ai-tools-compared/configuring-cursor-ai-to-work-with-corporate-vpn-and-proxy-a/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -39,6 +39,19 @@ Writing Pulumi infrastructure-as-code (IaC) requires understanding both cloud pr
 - **Copilot uses GPT-4 as**: its underlying model but with codebase-specific context.
 - **How large is the**: infrastructure change? (1-2 resources vs entire new stack) - Small: Use Copilot for velocity - Large: Use Claude for accuracy 2.
 
+## Table of Contents
+
+- [Why Pulumi IaC Is Different From Other Code](#why-pulumi-iac-is-different-from-other-code)
+- [Tool Comparison: Claude vs Copilot vs Cursor](#tool-comparison-claude-vs-copilot-vs-cursor)
+- [Comparison Table: Capabilities Matrix](#comparison-table-capabilities-matrix)
+- [Real-World Examples: TypeScript Pulumi Generation](#real-world-examples-typescript-pulumi-generation)
+- [Practical Workflow: Which Tool for Which Task](#practical-workflow-which-tool-for-which-task)
+- [CLI Commands for Pulumi Workflow](#cli-commands-for-pulumi-workflow)
+- [Decision Framework: Accuracy vs Velocity](#decision-framework-accuracy-vs-velocity)
+- [Common Mistakes AI Tools Make](#common-mistakes-ai-tools-make)
+- [Testing Generated Infrastructure Code](#testing-generated-infrastructure-code)
+- [Cost Comparison: Per-Project Basis](#cost-comparison-per-project-basis)
+
 ## Why Pulumi IaC Is Different From Other Code
 
 Traditional Terraform uses HCL, a declarative language specifically designed for infrastructure. Pulumi uses general-purpose languages (Python, TypeScript, Go, C#) to define infrastructure through SDK calls. This means you're writing code that calls Pulumi provider APIs, manages state through object references, and often needs to handle cross-stack dependencies.

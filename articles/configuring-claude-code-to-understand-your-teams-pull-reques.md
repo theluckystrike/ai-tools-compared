@@ -39,6 +39,53 @@ Claude Code can be configured to understand and respect your team's pull request
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **The most effective approach**: involves creating a CLAUDE.md file that documents your team's review requirements.
 
+## Table of Contents
+
+- [Understanding Pull Request Checklist Context](#understanding-pull-request-checklist-context)
+- [Setting Up CLAUDE.md for Review Checklists](#setting-up-claudemd-for-review-checklists)
+- [Security Requirements](#security-requirements)
+- [Testing Requirements](#testing-requirements)
+- [Code Quality](#code-quality)
+- [Documentation](#documentation)
+- [Creating Project-Specific Review Rules](#creating-project-specific-review-rules)
+- [Endpoint Requirements](#endpoint-requirements)
+- [Database Rules](#database-rules)
+- [React Components](#react-components)
+- [State Management](#state-management)
+- [Using Review Context in Claude Code Sessions](#using-review-context-in-claude-code-sessions)
+- [Integrating with GitHub Pull Requests](#integrating-with-github-pull-requests)
+- [Automating Pre-Submission Checks](#automating-pre-submission-checks)
+- [Handling Checklist Evolution](#handling-checklist-evolution)
+- [Best Practices for Effective Configuration](#best-practices-for-effective-configuration)
+- [Performance Checklist Items](#performance-checklist-items)
+- [Database Queries](#database-queries)
+- [Frontend Performance](#frontend-performance)
+- [API Response Times](#api-response-times)
+- [Testing Strategy Requirements](#testing-strategy-requirements)
+- [Coverage Minimums](#coverage-minimums)
+- [Test Patterns](#test-patterns)
+- [Performance Tests](#performance-tests)
+- [Documentation Requirements](#documentation-requirements)
+- [Required for New Features](#required-for-new-features)
+- [Required for Modified Features](#required-for-modified-features)
+- [Dependency Management Rules](#dependency-management-rules)
+- [Adding Dependencies](#adding-dependencies)
+- [Version Updates](#version-updates)
+- [Multi-Environment Configuration](#multi-environment-configuration)
+- [Development](#development)
+- [Staging](#staging)
+- [Production](#production)
+- [Error Handling Standards](#error-handling-standards)
+- [API Errors](#api-errors)
+- [Logging](#logging)
+- [Monitoring](#monitoring)
+- [Commit Message Standards](#commit-message-standards)
+- [Code Review Feedback Tiers](#code-review-feedback-tiers)
+- [Blocker (Must Fix)](#blocker-must-fix)
+- [Important (Should Fix)](#important-should-fix)
+- [Nice-to-Have (Consider)](#nice-to-have-consider)
+- [Handling False Positives](#handling-false-positives)
+
 ## Understanding Pull Request Checklist Context
 
 Your team's pull request checklist likely includes items specific to your codebase, coding standards, and project requirements. These might cover security considerations, performance criteria, testing requirements, and documentation standards. Claude Code needs to understand this context to provide meaningful assistance during code reviews and before you submit changes.
@@ -415,10 +462,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best Way to Configure Claude Code to Understand Your Interna](/ai-tools-compared/best-way-to-configure-claude-code-to-understand-your-interna/)
-- [Configuring AI Coding Tools to Follow Your Teams Dependency](/ai-tools-compared/configuring-ai-coding-tools-to-follow-your-teams-dependency-/)
-- [Configuring AI Coding Tools to Match Your Teams Specific Doc](/ai-tools-compared/configuring-ai-coding-tools-to-match-your-teams-specific-doc/)
 - [Configure Claude Code](/ai-tools-compared/how-to-configure-claude-code-to-follow-your-teams-feature-fl/)
-- [How to Structure Project Files So AI Coding Tools Understand](/ai-tools-compared/how-to-structure-project-files-so-ai-coding-tools-understand/)
-
+- [Best Way to Configure Claude Code to Understand Your](/ai-tools-compared/best-way-to-configure-claude-code-to-understand-your-interna/)
+- [Claude Code Runbook Documentation Guide](/ai-tools-compared/claude-code-runbook-documentation-guide/)
+- [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
+- [Does Claude Code Send Terminal Output to Anthropic Servers](/ai-tools-compared/does-claude-code-send-terminal-output-to-anthropic-servers-p/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

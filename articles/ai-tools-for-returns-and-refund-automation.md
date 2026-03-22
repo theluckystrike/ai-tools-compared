@@ -41,6 +41,17 @@ Returns and refund processing represents one of the most resource-intensive oper
 - **Here is a practical**: breakdown to help you choose the right tool for each layer of your system.
 - **Start with high-confidence use cases**: clear policy violations and obvious fraud patterns—before attempting complex edge cases.
 
+## Table of Contents
+
+- [Understanding Return Automation Requirements](#understanding-return-automation-requirements)
+- [Implementing Return Request Classification](#implementing-return-request-classification)
+- [Building Policy Verification Logic](#building-policy-verification-logic)
+- [Detecting Fraudulent Returns](#detecting-fraudulent-returns)
+- [Automating Refund Processing](#automating-refund-processing)
+- [Comparing AI Tools for Returns Automation](#comparing-ai-tools-for-returns-automation)
+- [Building an Unified Returns Pipeline](#building-an-unified-returns-pipeline)
+- [Practical Implementation Considerations](#practical-implementation-considerations)
+
 ## Understanding Return Automation Requirements
 
 Effective returns automation handles several core functions. Return request intake captures customer information, order details, and reason for return. Policy verification checks whether the return meets your established criteria—time window, condition requirements, and eligible items. Decision routing determines whether to approve automatically, flag for review, or reject. Refund processing handles the financial transaction and notifies relevant systems.

@@ -41,6 +41,17 @@ This guide explores how to use AI coding assistants for creating timezone test d
 - **This guide explores how**: to use AI coding assistants for creating timezone test data, with practical examples and strategies for ensuring your applications handle DST transitions correctly.
 - **Historical meetings before timezone**: laws changed Use Python with zoneinfo and pytest.
 
+## Table of Contents
+
+- [Understanding DST Edge Cases in Test Data](#understanding-dst-edge-cases-in-test-data)
+- [Using AI Tools to Generate Timezone Test Data](#using-ai-tools-to-generate-timezone-test-data)
+- [Practical Strategies for AI-Assisted Test Generation](#practical-strategies-for-ai-assisted-test-generation)
+- [Automating Test Data Generation](#automating-test-data-generation)
+- [Common Pitfalls to Watch For](#common-pitfalls-to-watch-for)
+- [Real-World DST Failures: Learning from Production Incidents](#real-world-dst-failures-learning-from-production-incidents)
+- [Automating DST Test Data Generation](#automating-dst-test-data-generation)
+- [Integrating Timezone Tests into CI/CD](#integrating-timezone-tests-into-cicd)
+
 ## Understanding DST Edge Cases in Test Data
 
 Daylight saving time creates several categories of problematic scenarios that your test data must cover:

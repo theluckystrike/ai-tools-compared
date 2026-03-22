@@ -39,6 +39,19 @@ Claude 3.5 Sonnet writes the best PowerShell scripts for Windows Server administ
 - **Choose ChatGPT-4 if you**: need broader Windows ecosystem coverage with more detailed inline comments.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Test Methodology](#test-methodology)
+- [Test Results](#test-results)
+- [Recommendations](#recommendations)
+- [Pricing Comparison](#pricing-comparison)
+- [Advanced Scenarios: Real-World Use Cases](#advanced-scenarios-real-world-use-cases)
+- [Performance Testing Results](#performance-testing-results)
+- [Integration with Common Windows Tools](#integration-with-common-windows-tools)
+- [Test Coverage Recommendations](#test-coverage-recommendations)
+- [Production Deployment Checklist](#production-deployment-checklist)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+
 ## Test Methodology
 
 I evaluated four major AI assistants: ChatGPT-4, Claude 3.5 Sonnet, GitHub Copilot, and Claude Code. For each test, I provided identical prompts describing real-world Windows Server automation tasks. I then assessed the output based on correctness, security, efficiency, and adherence to PowerShell best practices.
@@ -354,10 +367,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Which AI Writes Better Ansible Playbooks Copilot or Claude C](/ai-tools-compared/which-ai-writes-better-ansible-playbooks-copilot-or-claude-c/)
 - [Best AI Tools for Writing Shell Scripts](/ai-tools-compared/best-ai-tools-for-writing-shell-scripts-for-server-automation/)
-- [AI Code Completion for Writing Shell Commands Inside Scripts](/ai-tools-compared/ai-code-completion-for-writing-shell-commands-inside-scripts/)
-- [Best AI Tools for Writing Database Seed Scripts 2026](/ai-tools-compared/best-ai-tools-for-writing-database-seed-scripts-2026/)
-- [ChatGPT vs Claude for Creating Database Migration Scripts](/ai-tools-compared/chatgpt-vs-claude-for-creating-database-migration-scripts-po/)
-
+- [Free AI Tools for Writing Bash Scripts and Automation](/ai-tools-compared/free-ai-tools-for-writing-bash-scripts-and-automation/)
+- [AI Tools for Writing Database Migration Rollback Scripts](/ai-tools-compared/ai-tools-for-writing-database-migration-rollback-scripts-2026/)
+- [AI Coding Assistant Accuracy for TypeScript Next Js Server](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
+- [AI Tools for Generating Platform Specific Code in Kotlin](/ai-tools-compared/ai-tools-for-generating-platform-specific-code-in-kotlin-mul/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

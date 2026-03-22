@@ -202,6 +202,16 @@ The best solution is one that actually gets deployed and used. A simpler tool in
 
 ## Platform Integration Examples
 
+## Table of Contents
+
+- [Platform Integration Examples](#platform-integration-examples)
+- [Handling Edge Cases and Limitations](#handling-edge-cases-and-limitations)
+- [Response Time Comparison](#response-time-comparison)
+- [Implementation Deployment Scripts](#implementation-deployment-scripts)
+- [Cost Analysis at Scale](#cost-analysis-at-scale)
+- [Data Privacy and Compliance](#data-privacy-and-compliance)
+- [Making the Final Decision](#making-the-final-decision)
+
 **Drift integration with Slack:**
 
 ```javascript
@@ -462,11 +472,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [AI Tools for Multilingual Customer Support](/ai-tools-compared/ai-tools-for-multilingual-customer-support/)
-- [Best AI Tools for SaaS Customer Support](/ai-tools-compared/best-ai-tools-for-saas-customer-support/)
-- [Claude vs ChatGPT for Technical Writing 2026](/ai-tools-compared/claude-vs-chatgpt-for-technical-writing-2026/)
+- [ChatGPT vs Custom Chatbot for Business: A Developer Guide](/ai-tools-compared/chatgpt-vs-custom-chatbot-for-business/)
 - [ChatGPT Enterprise vs Custom Support Bot: A Practical](/ai-tools-compared/chatgpt-enterprise-vs-custom-support-bot/)
-- [AI Tools for Automated Infrastructure Drift Detection](/ai-tools-compared/ai-tools-for-automated-infrastructure-drift-detection-and-co/)
-
+- [Copy AI vs ChatGPT for Social Media Content](/ai-tools-compared/copy-ai-vs-chatgpt-for-social-media-content/)
+- [Claude vs ChatGPT for Technical Writing 2026](/ai-tools-compared/claude-vs-chatgpt-for-technical-writing-2026/)
+- [ChatGPT vs Claude for Writing API Documentation](/ai-tools-compared/chatgpt-vs-claude-for-writing-api-documentation/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

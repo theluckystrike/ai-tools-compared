@@ -42,6 +42,20 @@ Database performance bottlenecks are invisible until they become critical. Moder
 4.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Why AI Tools Excel at Query Optimization](#why-ai-tools-excel-at-query-optimization)
+- [Tool Comparison for Database Optimization](#tool-comparison-for-database-optimization)
+- [Step 1: Capture Your Query Execution Plans](#step-1-capture-your-query-execution-plans)
+- [Step 2: Analyze with Claude 3.5 Sonnet](#step-2-analyze-with-claude-35-sonnet)
+- [Step 3: Index Recommendations with Analysis](#step-3-index-recommendations-with-analysis)
+- [Step 4: Automate Detection with Monitoring](#step-4-automate-detection-with-monitoring)
+- [Real-World Example: N+1 Query Problem](#real-world-example-n1-query-problem)
+- [Step 5: Query Refactoring Patterns](#step-5-query-refactoring-patterns)
+- [Benchmarking Your Improvements](#benchmarking-your-improvements)
+- [Common Pitfalls with AI Database Advice](#common-pitfalls-with-ai-database-advice)
+- [Recommended Workflow](#recommended-workflow)
+
 ## Why AI Tools Excel at Query Optimization
 
 Database optimization typically requires deep expertise in execution plans, index structures, and query cost analysis. AI tools trained on thousands of optimization patterns can:

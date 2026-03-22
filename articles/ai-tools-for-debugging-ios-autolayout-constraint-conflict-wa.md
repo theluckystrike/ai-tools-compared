@@ -43,6 +43,14 @@ iOS AutoLayout constraint conflicts remain one of the most frustrating issues de
 - **iOS AutoLayout constraint conflicts**: remain one of the most frustrating issues developers face when working with Interface Builder.
 - **When your storyboard displays**: that red constraint line or crashes at runtime with "Unable to simultaneously satisfy constraints," understanding the root cause becomes critical.
 
+## Table of Contents
+
+- [Understanding Constraint Conflict Warnings](#understanding-constraint-conflict-warnings)
+- [AI Tools for Analyzing Constraint Conflicts](#ai-tools-for-analyzing-constraint-conflicts)
+- [Practical Examples of AI-Assisted Resolution](#practical-examples-of-ai-assisted-resolution)
+- [Strategies for Effective AI Debugging](#strategies-for-effective-ai-debugging)
+- [Common Patterns AI Tools Recognize](#common-patterns-ai-tools-recognize)
+
 ## Understanding Constraint Conflict Warnings
 
 AutoLayout constraint conflicts occur when multiple constraints contradict each other, making it mathematically impossible for the system to determine an unique layout. In storyboards, these manifest in several ways: red lines indicating broken constraints, yellow warning triangles showing ambiguous layouts, and runtime crashes when the system cannot resolve conflicting requirements.
@@ -284,9 +292,8 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 ## Related Articles
 
 - [AI Tools for Generating Pull Request Merge Conflict](/ai-tools-compared/ai-tools-for-generating-pull-request-merge-conflict-resoluti/)
-- [Best AI for Resolving Git Merge Conflict Markers in Complex](/ai-tools-compared/best-ai-for-resolving-git-merge-conflict-markers-in-complex-/)
-- [How to Use AI to Resolve NPM Peer Dependency Conflict Errors](/ai-tools-compared/how-to-use-ai-to-resolve-npm-peer-dependency-conflict-errors/)
+- [Best AI Tools for Debugging Production Incidents](/ai-tools-compared/best-ai-tools-for-debugging-production-incidents-with-log-analysis/)
+- [Best AI for Debugging CSS Flexbox Alignment Issues](/ai-tools-compared/best-ai-for-debugging-css-flexbox-alignment-issues-across-di/)
 - [AI Debugging Assistants Compared 2026](/ai-tools-compared/ai-debugging-assistants-compared-2026/)
 - [AI Powered Log Analysis Tools for Production Debugging](/ai-tools-compared/ai-powered-log-analysis-tools-for-production-debugging-compa/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

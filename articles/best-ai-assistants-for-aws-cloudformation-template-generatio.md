@@ -52,6 +52,20 @@ The best AI assistant for AWS CloudFormation template generation and validation 
 - **Does AWS offer a**: free tier? Most major tools offer some form of free tier or trial period.
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 
+## Table of Contents
+
+- [What to Look for in an AI CloudFormation Assistant](#what-to-look-for-in-an-ai-cloudformation-assistant)
+- [Practical Examples of AI CloudFormation Generation](#practical-examples-of-ai-cloudformation-generation)
+- [Validation Capabilities That Matter](#validation-capabilities-that-matter)
+- [Comparing Top AI Assistants for CloudFormation](#comparing-top-ai-assistants-for-cloudformation)
+- [Effective Prompting Strategies](#effective-prompting-strategies)
+- [Advanced Template Patterns](#advanced-template-patterns)
+- [Security-Focused Generation](#security-focused-generation)
+- [Common CloudFormation Anti-Patterns](#common-cloudformation-anti-patterns)
+- [Testing and Validation Workflows](#testing-and-validation-workflows)
+- [Managing Template Versions and Changes](#managing-template-versions-and-changes)
+- [Cost Optimization Through AI](#cost-optimization-through-ai)
+
 ## What to Look for in an AI CloudFormation Assistant
 
 Not all AI assistants handle infrastructure-as-code equally. The best ones share several characteristics that make them genuinely useful for developers working with AWS:

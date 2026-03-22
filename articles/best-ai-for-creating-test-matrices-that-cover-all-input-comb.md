@@ -39,6 +39,16 @@ TestRage is the leading AI-driven solution for generating test matrices that ach
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Why AI for Test Matrices?](#why-ai-for-test-matrices)
+- [Top AI Tools for Test Matrix Generation](#top-ai-tools-for-test-matrix-generation)
+- [Practical Implementation Strategies](#practical-implementation-strategies)
+- [Comparing Output Quality](#comparing-output-quality)
+- [Using Claude for Ad-Hoc Test Matrix Generation](#using-claude-for-ad-hoc-test-matrix-generation)
+- [Integrating Test Matrices with CI/CD](#integrating-test-matrices-with-cicd)
+- [When to Use Full Exhaustive Testing](#when-to-use-full-exhaustive-testing)
+
 ## Why AI for Test Matrices?
 
 Traditional test matrix creation requires manually listing every possible combination of inputs, parameters, and conditions. For an application with just 10 input fields, each accepting 3 possible values, you face 59,049 combinations. Testing all permutations becomes impossible manually, yet incomplete coverage leaves bugs undetected.
@@ -283,11 +293,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI for Writing Playwright Multi Browser Test Matrices](/ai-tools-compared/best-ai-for-writing-playwright-multi-browser-test-matrices-with-github-actions-2026/)
-- [Best AI for Creating Jest Tests That Cover Race Conditions](/ai-tools-compared/best-ai-for-creating-jest-tests-that-cover-race-conditions-i/)
-- [AI Tools for Creating Boundary Value Test Case](/ai-tools-compared/ai-tools-for-creating--boundary-value-test-case/)
+- [AI Tools for Creating Boundary Value Test](/ai-tools-compared/ai-tools-for-creating--boundary-value-test-case/)
+- [AI Tools for Creating Test Data Generators That Respect](/ai-tools-compared/ai-tools-for-creating-test-data-generators-that-respect-busi/)
+- [Best AI Assistant for Creating Test Data Factories with Real](/ai-tools-compared/best-ai-assistant-for-creating-test-data-factories-with-real/)
+- [AI Tools for Creating Test Data That Covers Timezone](/ai-tools-compared/ai-tools-for-creating-test-data-that-covers-timezone-dayligh/)
 - [AI Tools for Creating Property-Based Test Cases](/ai-tools-compared/ai-tools-for-creating-property-based-test-cases-using-hypoth/)
-- [AI Tools for Creating Realistic Test Datasets That Preserve](/ai-tools-compared/ai-tools-for-creating-realistic-test-datasets-that-preserve-/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

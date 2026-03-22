@@ -40,6 +40,19 @@ Gemini Code Assist Standard costs $19/user/month. The Enterprise tier is negotia
 - **For a 50-developer team on Standard**: the annual cost is $11,400.
 - **While limited in scope**: the free tier includes access to Gemini's underlying AI models and basic IDE integrations.
 
+## Table of Contents
+
+- [Understanding Gemini Code Assist Pricing Tiers](#understanding-gemini-code-assist-pricing-tiers)
+- [Per-Developer Cost Analysis](#per-developer-cost-analysis)
+- [Feature Comparison Across Tiers](#feature-comparison-across-tiers)
+- [Comparison with Competitors](#comparison-with-competitors)
+- [Strategic Recommendations for Enterprises](#strategic-recommendations-for-enterprises)
+- [Deep Dive: Cost Justification for Enterprise Decision Makers](#deep-dive-cost-justification-for-enterprise-decision-makers)
+- [Feature-by-Feature Pricing Justification](#feature-by-feature-pricing-justification)
+- [Detailed Cost Scenarios](#detailed-cost-scenarios)
+- [Alternative Scenarios and Vendor Comparison](#alternative-scenarios-and-vendor-comparison)
+- [Budget Timeline and Approval Process](#budget-timeline-and-approval-process)
+
 ## Understanding Gemini Code Assist Pricing Tiers
 
 Gemini Code Assist offers a tiered pricing model designed to accommodate organizations of various sizes. The enterprise tier typically includes advanced security features, administrative controls, and priority support that individual plans lack. As of 2026, Google's enterprise pricing follows a per-seat model where organizations pay for each developer accessing the platform.
@@ -442,11 +455,10 @@ For procurement teams preparing budget requests:
 
 ## Related Articles
 
-- [ChatGPT API Assistants API Pricing Threads and Runs Cost](/ai-tools-compared/chatgpt-api-assistants-api-pricing-threads-and-runs-cost-breakdown/)
-- [Claude API vs OpenAI API Pricing Breakdown 2026](/ai-tools-compared/claude-api-vs-openai-api-pricing-breakdown-2026/)
-- [ChatGPT Edu Pricing Per Student: How Schools Get Volume](/ai-tools-compared/chatgpt-edu-pricing-per-student-how-schools-get-volume-disco/)
-- [Gemini Flash vs Pro API Pricing: When to Use Which Model](/ai-tools-compared/gemini-flash-vs-pro-api-pricing-when-to-use-which-model/)
+- [Copilot Business vs Cursor Business Per Developer Cost](/ai-tools-compared/copilot-business-vs-cursor-business-per-developer-cost-comparison/)
+- [Copilot for JetBrains: Does It Cost Same as VS Code Version](/ai-tools-compared/copilot-for-jetbrains-does-it-cost-same-as-vscode-version/)
+- [How Much Does Cursor AI Actually Cost Per Month All](/ai-tools-compared/how-much-does-cursor-ai-actually-cost-per-month-all-plans/)
+- [Gemini in Google Docs Not Showing Up? Fixes for 2026](/ai-tools-compared/gemini-in-google-docs-not-showing-up-fix-2026/)
 - [Gemini Advanced vs ChatGPT Plus Price Per Feature Comparison](/ai-tools-compared/gemini-advanced-vs-chatgpt-plus-price-per-feature-comparison-2026/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

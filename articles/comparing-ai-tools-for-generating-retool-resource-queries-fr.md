@@ -42,6 +42,25 @@ Building Retool applications often involves writing complex resource queries to 
 - Calls /api/users with limit=100
 2.
 
+## Table of Contents
+
+- [Understanding the Challenge](#understanding-the-challenge)
+- [Tool Comparison](#tool-comparison)
+- [Practical Evaluation Criteria](#practical-evaluation-criteria)
+- [Real-World Testing Results](#real-world-testing-results)
+- [Workflow Integration Recommendations](#workflow-integration-recommendations)
+- [Limitations and When to Write Manually](#limitations-and-when-to-write-manually)
+- [Pricing and Practical Implementation Costs](#pricing-and-practical-implementation-costs)
+- [Practical Prompting Strategies for Better Query Generation](#practical-prompting-strategies-for-better-query-generation)
+- [Common Mistakes to Avoid](#common-mistakes-to-avoid)
+- [Comparison Table: Tools and Their Strengths](#comparison-table-tools-and-their-strengths)
+- [Troubleshooting Query Generation Issues](#troubleshooting-query-generation-issues)
+- [Advanced: REST API Query Generation](#advanced-rest-api-query-generation)
+- [Practical CLI Workflow for Query Optimization](#practical-cli-workflow-for-query-optimization)
+- [Performance Tuning with AI Assistance](#performance-tuning-with-ai-assistance)
+- [Retool-Specific Parameters and Variables](#retool-specific-parameters-and-variables)
+- [Multi-Step Query Chains in Retool](#multi-step-query-chains-in-retool)
+
 ## Understanding the Challenge
 
 Retool supports multiple query types: SQL queries for databases, REST API queries for external services, GraphQL queries, and JavaScript transformations. Each requires specific syntax and structure. When a business user asks "Show me all orders from the past week that haven't shipped yet," a developer must determine which database tables contain this information, write the appropriate WHERE clauses, and ensure the query performs efficiently.
@@ -406,11 +425,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How to Use AI Assistants for Generating Retool Admin.](/ai-tools-compared/how-to-use-ai-assistants-for-generating-retool-admin-panels-/)
-- [Comparing AI Tools for Generating No-Code Helpdesk.](/ai-tools-compared/comparing-ai-tools-for-generating-no-code-helpdesk-ticketing/)
-- [Comparing AI Tools for Generating No-Code Membership and.](/ai-tools-compared/comparing-ai-tools-for-generating-no-code-membership-and-sub/)
-- [Best AI Assistant for Generating SQL Recursive Queries](/ai-tools-compared/best-ai-assistant-for-generating-sql-recursive-queries-for-hierarchical-org-chart-data/)
-- [Best AI Tools for Cloud Resource Tagging Compliance](/ai-tools-compared/best-ai-tools-for-cloud-resource-tagging-compliance-automati/)
-
+- [Comparing AI Tools for Generating No-Code Membership](/ai-tools-compared/comparing-ai-tools-for-generating-no-code-membership-and-sub/)
+- [AI Tools for Generating Contributor License Agreement](/ai-tools-compared/ai-tools-for-generating-contributor-license-agreement-explan/)
+- [Comparing AI Tools for Generating No-Code Helpdesk](/ai-tools-compared/comparing-ai-tools-for-generating-no-code-helpdesk-ticketing/)
+- [Best AI Tools for Writing Kubernetes Custom Resource](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-custom-resource-definitions-2026/)
+- [AI Tools for Generating Closed Captions and Transcripts](/ai-tools-compared/ai-tools-for-generating-closed-captions-and-transcripts-from/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

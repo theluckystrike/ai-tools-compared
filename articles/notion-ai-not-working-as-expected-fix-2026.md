@@ -44,6 +44,16 @@ To fix Notion AI not working, sign out of Notion completely, clear browser cooki
 2.
 - **Revoke and regenerate API keys**: If you use integrations, go to Settings → Integrations and delete all existing keys.
 
+## Table of Contents
+
+- [Common Notion AI Issues](#common-notion-ai-issues)
+- [Advanced Diagnostic Commands](#advanced-diagnostic-commands)
+- [Diagnosing Notion AI via the Desktop App](#diagnosing-notion-ai-via-the-desktop-app)
+- [Step-by-Step Full Reset Workflow](#step-by-step-full-reset-workflow)
+- [Notion AI Prompt Failures vs. Technical Failures](#notion-ai-prompt-failures-vs-technical-failures)
+- [Notion AI for API Developers: Common Integration Pitfalls](#notion-ai-for-api-developers-common-integration-pitfalls)
+- [Prevention Best Practices](#prevention-best-practices)
+
 ## Common Notion AI Issues
 
 Notion AI failures typically fall into several categories: authentication problems, rate limiting, workspace configuration issues, network connectivity, and model availability. Understanding which category your issue falls into helps you apply the right fix quickly.
@@ -311,11 +321,10 @@ Notion AI uses temperature sampling, so outputs vary. Use specific, constrained 
 
 ## Related Articles
 
-- [ChatGPT Image Upload Not Working Fix (2026)](/ai-tools-compared/chatgpt-image-upload-not-working-fix-2026/)
+- [Notion AI vs ChatGPT for Content Creation Compared](/ai-tools-compared/notion-ai-vs-chatgpt-for-content-creation-compared/)
+- [How to Transfer Notion AI Workflows to Claude Projects 2026](/ai-tools-compared/how-to-transfer-notion-ai-workflows-to-claude-projects-2026/)
+- [How to Transfer Notion AI Database Automations to Coda](/ai-tools-compared/how-to-transfer-notion-ai-database-automations-to-coda-ai/)
+- [Notion AI vs Google Docs AI: Complete Writing Features](/ai-tools-compared/notion-ai-writing-features-vs-google-docs-ai-compared/)
 - [Grammarly AI Not Working in Browser Fix (2026)](/ai-tools-compared/grammarly-ai-not-working-in-browser-fix-2026/)
-- [Perplexity Pro Search Not Working Fix (2026)](/ai-tools-compared/perplexity-pro-search-not-working-fix-2026/)
-- [AI Code Suggestion Quality When Working With Environment Var](/ai-tools-compared/ai-code-suggestion-quality-when-working-with-environment-var/)
-- [Cursor Free Tier Limitations: What Stops Working After Trial](/ai-tools-compared/cursor-free-tier-limitations-what-stops-working-after-trial/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

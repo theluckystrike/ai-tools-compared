@@ -41,6 +41,14 @@ Migrating from Windsurf to Cursor involves more than just installing a new edito
 
 If you use Husky, lefthook, or similar tools for Git hooks, these work in Cursor without modification.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Migrating Keyboard Shortcuts and Keybindings](#migrating-keyboard-shortcuts-and-keybindings)
+- [Migrating VS Code Extensions](#migrating-vs-code-extensions)
+- [Windsurf vs. Cursor: Configuration Feature Comparison](#windsurf-vs-cursor-configuration-feature-comparison)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
@@ -304,10 +312,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Best Practices for AI Tool Project Config When Switching](/ai-tools-compared/best-practices-for-ai-tool-project-config-when-switching-between-multiple-client-projects/)
+- [Migrate Windsurf AI Rules to Cursor Dot Cursor Rules](/ai-tools-compared/migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/)
+- [How to Migrate Cursor Rules File](/ai-tools-compared/migrate-cursor-rules-file-to-windsurf-rules-format-guide/)
 - [Switching from Windsurf Free to Cursor Free What Is](/ai-tools-compared/switching-from-windsurf-free-to-cursor-free-what-is-different/)
-- [How to Transfer GitHub Copilot Organization Settings](/ai-tools-compared/transfer-github-copilot-org-settings-when-switching-to-curso/)
-- [How to Transfer Claude Project Knowledge to ChatGPT Custom](/ai-tools-compared/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-g/)
-- [How to Transfer Claude Project Knowledge to ChatGPT Custom (2)](/ai-tools-compared/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-gpt/)
-
+- [How to Migrate Cursor AI Snippets and Templates](/ai-tools-compared/migrate-cursor-ai-snippets-and-templates-to-windsurf-editor/)
+- [Cursor vs Windsurf for Implementing Drag and Drop Interfaces](/ai-tools-compared/cursor-vs-windsurf-for-implementing-drag-and-drop-interfaces/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

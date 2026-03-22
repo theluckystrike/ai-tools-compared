@@ -40,6 +40,23 @@ Rust's borrow checker is one of the most powerful safety features in modern prog
 - **Use Codeium while coding**: to prevent errors 2.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [The Challenge with Borrow Checker Errors](#the-challenge-with-borrow-checker-errors)
+- [GitHub Copilot for Error Interpretation](#github-copilot-for-error-interpretation)
+- [Codeium for Rapid Error Resolution](#codeium-for-rapid-error-resolution)
+- [Claude and GPT-4 for Deep Explanations](#claude-and-gpt-4-for-deep-explanations)
+- [Practical Example: Fixing a Data Structure](#practical-example-fixing-a-data-structure)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+- [Common Borrow Checker Errors and AI Solutions](#common-borrow-checker-errors-and-ai-solutions)
+- [Real-World Error Resolution Example](#real-world-error-resolution-example)
+- [Debugging Lifetime Errors](#debugging-lifetime-errors)
+- [Codeium vs Claude for Borrow Errors](#codeium-vs-claude-for-borrow-errors)
+- [Performance-Critical Borrow Checker Solutions](#performance-critical-borrow-checker-solutions)
+- [Ownership Transfer Learning Path](#ownership-transfer-learning-path)
+- [Choosing the Right Debugging Tool](#choosing-the-right-debugging-tool)
+- [Borrow Checker Error Progression Tracker](#borrow-checker-error-progression-tracker)
+
 ## The Challenge with Borrow Checker Errors
 
 Rust's ownership system enforces memory safety without garbage collection, but this means the compiler rigorously tracks references throughout your code. When you violate ownership rules, the compiler rejects your program with errors that often point to the symptom rather than the root cause. For example, you might see "cannot borrow `x` as mutable because it is also borrowed as immutable" without understanding why your perfectly logical code triggers this error.

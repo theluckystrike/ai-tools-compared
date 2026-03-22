@@ -42,6 +42,15 @@ This guide walks through practical approaches to building an automated transcrip
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Implement data handling policies**: and consider running analysis locally using open-source models for highly confidential conversations.
 
+## Table of Contents
+
+- [The Transcript Analysis Pipeline](#the-transcript-analysis-pipeline)
+- [Python Implementation for Transcript Processing](#python-implementation-for-transcript-processing)
+- [Integrating Language Models for Deeper Analysis](#integrating-language-models-for-deeper-analysis)
+- [Automating Report Generation](#automating-report-generation)
+- [Building the Complete Workflow](#building-the-complete-workflow)
+- [Practical Considerations](#practical-considerations)
+
 ## The Transcript Analysis Pipeline
 
 A typical customer interview yields 30-60 minutes of transcript text. The analysis challenge involves extracting structured information: pain points, feature requests, competitor mentions, sentiment indicators, and actionable quotes. Doing this manually across multiple interviews compounds the time investment.
@@ -366,11 +375,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Claude vs Gemini for Converting Jupyter Notebooks to Product](/ai-tools-compared/claude-vs-gemini-for-converting-jupyter-notebooks-to-product/)
 - [AI Tools for Product Managers Drafting Release](/ai-tools-compared/ai-tools-for-product-managers-drafting-release-communication-emails-from-feature-lists/)
-- [Best AI Assistant for Product Managers Writing Sprint](/ai-tools-compared/best-ai-assistant-for-product-managers-writing-sprint-retrospective-summaries-from-notes-2026/)
-- [Best AI for Product Managers Creating Stakeholder Update Dec](/ai-tools-compared/best-ai-for-product-managers-creating-stakeholder-update-dec/)
+- [Best AI for Product Managers Creating Stakeholder Update](/ai-tools-compared/best-ai-for-product-managers-creating-stakeholder-update-dec/)
 - [Best AI for Product Managers Creating User Persona Documents](/ai-tools-compared/best-ai-for-product-managers-creating-user-persona-documents/)
-
+- [AI Tools for Customer Health Scoring](/ai-tools-compared/ai-tools-for-customer-health-scoring/)
+- [Best AI Tools for Customer Onboarding: A Developer Guide](/ai-tools-compared/best-ai-tools-for-customer-onboarding/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

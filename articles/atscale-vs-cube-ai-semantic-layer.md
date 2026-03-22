@@ -43,6 +43,18 @@ When building AI-powered applications that need reliable data access, choosing t
 - **Both AtScale and Cube**: offer AI capabilities that sit between your data warehouse and your application, but they take different approaches.
 - **An AI-powered semantic layer**: adds the ability to handle conversational queries, making data accessible to non-technical users while maintaining accuracy.
 
+## Table of Contents
+
+- [What Is an AI Semantic Layer](#what-is-an-ai-semantic-layer)
+- [AtScale: Intelligent Data Abstraction](#atscale-intelligent-data-abstraction)
+- [Cube: Open Semantic Layer with AI Agents](#cube-open-semantic-layer-with-ai-agents)
+- [Practical Comparison for Developers](#practical-comparison-for-developers)
+- [When to Choose Each Platform](#when-to-choose-each-platform)
+- [Example: Building a Revenue Query](#example-building-a-revenue-query)
+- [Implementation Deep Dive](#implementation-deep-dive)
+- [Performance and Scalability](#performance-and-scalability)
+- [Pricing Comparison at Scale](#pricing-comparison-at-scale)
+
 ## What Is an AI Semantic Layer
 
 A semantic layer acts as an abstraction between your raw data and the applications consuming it. It translates business logic into consistent definitions, ensuring that when your AI agent queries "revenue" or "customer count," it gets the same calculation every time. When AI capabilities are added, these layers can also interpret natural language queries and convert them into precise data requests.
@@ -358,10 +370,9 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [AI Tools for Detecting Duplicate GitHub Issues Using](/ai-tools-compared/ai-tools-for-detecting-duplicate-github-issues-using-semantic-similarity-matching/)
-- [Claude Code Semantic Versioning Automation: A Complete Guide](/ai-tools-compared/claude-code-semantic-versioning-automation/)
-- [AI CI/CD Pipeline Optimization: A Developer Guide](/ai-tools-compared/ai-ci-cd-pipeline-optimization/)
+- [Lakehouse vs Data Warehouse for AI Workloads: AI Comparison](/ai-tools-compared/lakehouse-vs-data-warehouse-ai-comparison/)
 - [AI Data Labeling Tools Comparison: A Developer Guide](/ai-tools-compared/ai-data-labeling-tools-comparison/)
-- [AI Summarizer Chrome Extension: A Developer Guide](/ai-tools-compared/ai-summarizer-chrome-extension/)
-
+- [Streamlit vs Gradio for AI Data Apps: A Practical Comparison](/ai-tools-compared/streamlit-vs-gradio-ai-data-apps/)
+- [Genesys vs NICE AI Contact Center: A Developer Comparison](/ai-tools-compared/genesys-vs-nice-ai-contact-center/)
+- [Custify vs Gainsight AI Customer Success: A Developer Guide](/ai-tools-compared/custify-vs-gainsight-ai-customer-success/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

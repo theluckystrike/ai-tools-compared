@@ -42,6 +42,20 @@ Finding an AI coding assistant that delivers powerful capabilities without locki
 - **OpenAI API for heavy**: lifting ($3-5/month) 3.
 - **GitHub Copilot for IDE**: completion ($10/month) 4.
 
+## Table of Contents
+
+- [What Defines Pay-As-You-Go Pricing](#what-defines-pay-as-you-go-pricing)
+- [Top Recommendation: Claude Code](#top-recommendation-claude-code)
+- [Other Pay-As-You-Go Options](#other-pay-as-you-go-options)
+- [Comparing the Options](#comparing-the-options)
+- [Practical Example: Building a Feature with Claude Code](#practical-example-building-a-feature-with-claude-code)
+- [Real Cost Analysis: Subscription vs Pay-As-You-Go](#real-cost-analysis-subscription-vs-pay-as-you-go)
+- [Practical Cost Tracking](#practical-cost-tracking)
+- [Feature Comparison: Pricing vs Capability](#feature-comparison-pricing-vs-capability)
+- [Building Your Own AI Coding Workflow](#building-your-own-ai-coding-workflow)
+- [Making the Right Choice](#making-the-right-choice)
+- [Final Recommendation](#final-recommendation)
+
 ## What Defines Pay-As-You-Go Pricing
 
 True pay-as-you-go pricing means you are charged based on actual usage rather than a fixed monthly fee. This model benefits developers who need AI assistance intermittently or who want to test tools before committing financially. The ideal tool should offer:

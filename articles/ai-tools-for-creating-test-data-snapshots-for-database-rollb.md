@@ -41,6 +41,17 @@ Automated testing requires consistent, predictable database states. When tests m
 - **Most AI snapshot tools**: work with containerized databases.
 - **This causes flaky tests**: intermittent failures, and developer frustration.
 
+## Table of Contents
+
+- [The Core Problem](#the-core-problem)
+- [Snapshot Creation Tools](#snapshot-creation-tools)
+- [Rollback Automation](#rollback-automation)
+- [Step-by-Step Workflow: Setting Up AI Snapshot Management](#step-by-step-workflow-setting-up-ai-snapshot-management)
+- [Using AI Coding Assistants to Generate Snapshot Fixtures](#using-ai-coding-assistants-to-generate-snapshot-fixtures)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+- [Implementation Best Practices](#implementation-best-practices)
+- [Common Mistakes and How to Avoid Them](#common-mistakes-and-how-to-avoid-them)
+
 ## The Core Problem
 
 Consider a typical test scenario: your test suite creates an user record, processes an order, and verifies the result. The next test expects a clean database but finds the previous test's data. Without proper isolation, tests depend on execution order, making CI/CD pipelines unreliable.
@@ -331,10 +342,9 @@ A: Configure your snapshot to be taken after migrations run but before test data
 
 ## Related Articles
 
-- [AI Tools for Creating Test Data Generators That Respect Busi](/ai-tools-compared/ai-tools-for-creating-test-data-generators-that-respect-busi/)
+- [AI Tools for Creating Test Data Generators That Respect](/ai-tools-compared/ai-tools-for-creating-test-data-generators-that-respect-busi/)
+- [AI Tools for Creating Realistic Test Datasets That Preserve](/ai-tools-compared/ai-tools-for-creating-realistic-test-datasets-that-preserve-/)
 - [AI Tools for Creating Test Data That Covers Timezone](/ai-tools-compared/ai-tools-for-creating-test-data-that-covers-timezone-dayligh/)
-- [Best AI Assistant for Creating Test Data Factories with Real](/ai-tools-compared/best-ai-assistant-for-creating-test-data-factories-with-real/)
-- [Claude Code Database Test Fixtures Guide](/ai-tools-compared/claude-code-database-test-fixtures-guide/)
-- [ChatGPT vs Claude for Creating Database Migration Scripts](/ai-tools-compared/chatgpt-vs-claude-for-creating-database-migration-scripts-po/)
-
+- [AI Tools for Writing pytest Tests for Alembic Database](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migra/)
+- [AI Tools for Automated Test Data Generation 2026](/ai-tools-compared/ai-tools-for-automated-test-data-generation-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

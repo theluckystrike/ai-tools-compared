@@ -40,6 +40,18 @@ Choose Claude if you need production-ready Pydantic models with field validators
 - **Choose ChatGPT if you want quick**: straightforward conversions for simple schemas or prototyping.
 - **It often anticipates additional**: validation needs and includes better docstrings and field descriptions.
 
+## Table of Contents
+
+- [The Basic Task](#the-basic-task)
+- [ChatGPT Approach](#chatgpt-approach)
+- [Claude Approach](#claude-approach)
+- [Handling Complex Schemas](#handling-complex-schemas)
+- [Side-by-Side Feature Comparison](#side-by-side-feature-comparison)
+- [Crafting Effective Prompts for Both Models](#crafting-effective-prompts-for-both-models)
+- [API Integration Comparison](#api-integration-comparison)
+- [Validating AI-Generated Pydantic Models](#validating-ai-generated-pydantic-models)
+- [When to Choose Each Model](#when-to-choose-each-model)
+
 ## The Basic Task
 
 When you have a JSON schema like this:
@@ -323,11 +335,10 @@ Claude generally produces more test coverage without prompting. If you ask eithe
 
 ## Related Articles
 
-- [AI Tools for Generating Grafana Dashboard JSON Templates Fro](/ai-tools-compared/ai-tools-for-generating-grafana-dashboard-json-templates-fro/)
-- [ChatGPT vs Claude for Generating Cypress Component Test Boil](/ai-tools-compared/chatgpt-vs-claude-for-generating-cypress-component-test-boil/)
-- [Cursor AI Switching Between Claude and GPT Models Extra Cost](/ai-tools-compared/cursor-ai-switching-between-claude-and-gpt-models-extra-cost/)
-- [Cursor AI with Claude vs GPT Models: Which Gives Better Code](/ai-tools-compared/cursor-ai-with-claude-vs-gpt-models-which-gives-better-code-/)
-- [Best AI Assistant for Writing pytest Tests for Pydantic Mode](/ai-tools-compared/best-ai-assistant-for-writing-pytest-tests-for-pydantic-mode/)
-
+- [ChatGPT vs Claude for Explaining TensorFlow Model](/ai-tools-compared/chatgpt-vs-claude-for-explaining-tensorflow-model-architectu/)
+- [ChatGPT vs Claude for Writing API Documentation](/ai-tools-compared/chatgpt-vs-claude-for-writing-api-documentation/)
+- [Claude vs ChatGPT for Writing Datadog Dashboard Terraform](/ai-tools-compared/claude-vs-chatgpt-for-writing-datadog-dashboard-terraform-de/)
+- [ChatGPT vs Claude for Generating Cypress Component Test](/ai-tools-compared/chatgpt-vs-claude-for-generating-cypress-component-test-boil/)
+- [Claude vs ChatGPT for Refactoring Legacy Java Code](/ai-tools-compared/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

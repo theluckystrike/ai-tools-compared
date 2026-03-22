@@ -39,6 +39,14 @@ Start by examining four critical DPA elements: data transmission scope (what cod
 - **Phrases like "license to**: use" your code for "service improvement" can be problematic.
 - **Many vendors use global infrastructure**: meaning your code might be processed in data centers across multiple regions.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Security Certifications and Compliance](#security-certifications-and-compliance)
+- [Vendor DPA Comparison Table](#vendor-dpa-comparison-table)
+- [DPA Negotiation Checklist for Enterprise Deals](#dpa-negotiation-checklist-for-enterprise-deals)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
@@ -377,9 +385,8 @@ Audit rights (if negotiated) help, but aren't foolproof. Look for SOC 2 Type II 
 ## Related Articles
 
 - [How to Evaluate AI Coding Tool Model Training Data Provenanc](/ai-tools-compared/how-to-evaluate-ai-coding-tool-model-training-data-provenanc/)
-- [How to Evaluate AI Coding Tool Encryption Standards for Data](/ai-tools-compared/how-to-evaluate-ai-coding-tool-encryption-standards-for-data/)
-- [pandas AI vs Polars AI Data Processing Compared](/ai-tools-compared/pandas-ai-vs-polars-ai-data-processing/)
-- [AI Coding Assistant Data Sovereignty Requirements](/ai-tools-compared/ai-coding-assistant-data-sovereignty-requirements-for-companies-operating-in-eu-2026/)
+- [How to Evaluate AI Coding Tool Encryption Standards](/ai-tools-compared/how-to-evaluate-ai-coding-tool-encryption-standards-for-data/)
 - [AI Coding Assistant Session Data Lifecycle](/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-
+- [AI Coding Tool GDPR Compliance Checklist for European](/ai-tools-compared/ai-coding-tool-gdpr-compliance-checklist-for-european-engine/)
+- [Enterprise Data Loss Prevention Rules for AI Coding Assistan](/ai-tools-compared/enterprise-data-loss-prevention-rules-for-ai-coding-assistan/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -42,6 +42,17 @@ Ask for explanation alongside code. Requesting that the AI explain each section 
 - **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
 - **Use Claude to design**: optimized matrix builds with proper exclude/include syntax and conditional skipping logic; use ChatGPT for basic matrix definitions.
 
+## Table of Contents
+
+- [Why Matrix Build Strategies Matter](#why-matrix-build-strategies-matter)
+- [AI Tools for Writing Matrix Strategies](#ai-tools-for-writing-matrix-strategies)
+- [Tool Comparison Summary](#tool-comparison-summary)
+- [Practical Examples](#practical-examples)
+- [Best Practices for AI-Assisted Matrix Writing](#best-practices-for-ai-assisted-matrix-writing)
+- [Common Pitfalls to Avoid](#common-pitfalls-to-avoid)
+- [Prompting Techniques That Improve Matrix Output](#prompting-techniques-that-improve-matrix-output)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+
 ## Why Matrix Build Strategies Matter
 
 Matrix builds transform a single workflow into parallel execution across multiple dimensions. Instead of writing separate jobs for each Node.js version, operating system, or dependency configuration, you define a matrix that generates all combinations automatically.
@@ -322,10 +333,9 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 ## Related Articles
 
 - [AI Tools for Writing GitHub Actions Workflows (2026)](/ai-tools-compared/ai-tools/best-ai-tools-for-github-actions-workflows/)
+- [Best AI Tools for Writing GitHub Actions](/ai-tools-compared/ai-tools-for-writing-github-actions-guide)
+- [Best AI Tools for Writing GitHub Actions Workflows 2026](/ai-tools-compared/best-ai-tools-for-writing-github-actions-workflows-2026/)
 - [Best AI Tools for Writing GitHub Actions Reusable Workflow](/ai-tools-compared/best-ai-tools-for-writing-github-actions-reusable-workflow-t/)
-- [Copilot vs Claude Code for Writing GitHub Actions Cicd Workf](/ai-tools-compared/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
 - [AI Tools for Generating GitHub Actions Workflows](/ai-tools-compared/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
-- [AI Tools for Generating GitHub Actions Workflows (2)](/ai-tools-compared/ai-tools-github-actions-workflows/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

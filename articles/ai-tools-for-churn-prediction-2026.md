@@ -41,6 +41,18 @@ Customer churn remains one of the most costly problems for subscription-based bu
 - **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 
+## Table of Contents
+
+- [Understanding Churn Prediction Fundamentals](#understanding-churn-prediction-fundamentals)
+- [Building a Churn Prediction Model](#building-a-churn-prediction-model)
+- [AI Tools for Enhanced Churn Prediction](#ai-tools-for-enhanced-churn-prediction)
+- [Production Considerations](#production-considerations)
+- [Handling Class Imbalance in Churn Data](#handling-class-imbalance-in-churn-data)
+- [Tool Comparison: Managed ML Platforms for Churn Prediction](#tool-comparison-managed-ml-platforms-for-churn-prediction)
+- [Selecting the Right Tools](#selecting-the-right-tools)
+- [Common Pitfalls to Avoid](#common-pitfalls-to-avoid)
+- [Related Reading](#related-reading)
+
 ## Understanding Churn Prediction Fundamentals
 
 Churn prediction involves classifying users as likely to cancel or continue their subscription. The core approach uses historical user behavior data to train a model that identifies patterns associated with churn. These patterns might include declining usage frequency, reduced feature adoption, support ticket frequency, or payment failures.

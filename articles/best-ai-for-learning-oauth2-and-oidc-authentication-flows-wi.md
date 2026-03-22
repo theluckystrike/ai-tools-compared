@@ -52,6 +52,14 @@ Claude and ChatGPT are the best AI tools for learning OAuth2 and OIDC authentica
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Claude and ChatGPT are**: the best AI tools for learning OAuth2 and OIDC authentication flows, excelling at generating sequence diagrams and providing detailed explanations of token exchanges.
 
+## Table of Contents
+
+- [Why Sequence Diagrams Matter for Authentication Learning](#why-sequence-diagrams-matter-for-authentication-learning)
+- [Top AI Tools for Learning OAuth2 and OIDC](#top-ai-tools-for-learning-oauth2-and-oidc)
+- [How to Use AI Effectively for Authentication Learning](#how-to-use-ai-effectively-for-authentication-learning)
+- [Common Learning Pitfalls to Avoid](#common-learning-pitfalls-to-avoid)
+- [Building Your Learning Project](#building-your-learning-project)
+
 ## Why Sequence Diagrams Matter for Authentication Learning
 
 Authentication flows involve several actors exchanging tokens and authorization codes across network boundaries. A sequence diagram makes these interactions explicit, showing the exact order of HTTP requests and responses. When learning OAuth2 and OIDC, you need to see how the user browser redirects to the authorization server, how the authorization code gets exchanged for tokens, and how the refresh token extends sessions.

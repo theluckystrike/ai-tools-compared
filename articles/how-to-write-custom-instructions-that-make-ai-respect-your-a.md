@@ -40,6 +40,13 @@ When integrating AI into your development workflow, understanding how to control
 - **Your custom instructions should**: reflect the specific limits of the APIs you use.
 - **Circuit breaker pattern if**: failures exceed 5 in 60 seconds 4.
 
+## Table of Contents
+
+- [Why Rate Limit Awareness Matters](#why-rate-limit-awareness-matters)
+- [Prerequisites](#prerequisites)
+- [Practical Examples](#practical-examples)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Rate Limit Awareness Matters
 
 API rate limits exist to prevent abuse and ensure service availability. When AI tools generate code without understanding your rate limits, they can trigger throttling errors, cause your application to fail, or consume more quota than intended. Writing custom instructions that explicitly define your rate limit constraints helps AI generate code that operates within those boundaries.
@@ -364,11 +371,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Write Custom Instructions That Make AI Follow Your](/ai-tools-compared/how-to-write-custom-instructions-that-make-ai-follow-your-error-response-schema/)
-- [Writing Custom Instructions That Make AI Follow Your Team's](/ai-tools-compared/writing-custom-instructions-that-make-ai-follow-your-teams-changelog-entry-format/)
-- [How to Write ChatGPT Custom Instructions](/ai-tools-compared/how-to-write-chatgpt-custom-instructions-for-consistent-api-design-suggestions/)
 - [How to Write Custom Instructions for AI That Follow Your](/ai-tools-compared/how-to-write-custom-instructions-for-ai-that-follow-your-teams-code-review-standards/)
-- [ChatGPT Custom GPT Not Following Instructions](/ai-tools-compared/chatgpt-custom-gpt-not-following-instructions/)
-
+- [How to Write Custom Instructions That Make AI Follow Your](/ai-tools-compared/how-to-write-custom-instructions-that-make-ai-follow-your-error-response-schema/)
+- [How to Write ChatGPT Custom Instructions](/ai-tools-compared/how-to-write-chatgpt-custom-instructions-for-consistent-api-design-suggestions/)
+- [How to Create Custom Instructions for AI Coding Tools That](/ai-tools-compared/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
+- [How to Set Up Custom Instructions for AI Tools to Match](/ai-tools-compared/how-to-set-up-custom-instructions-for-ai-tools-to-match-your/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

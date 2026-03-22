@@ -48,6 +48,20 @@ For BigQuery:
 
 This gives you both the query and supporting infrastructure.
 
+## Table of Contents
+
+- [Provide Your Schema Up Front](#provide-your-schema-up-front)
+- [Specify the SQL Dialect and Version](#specify-the-sql-dialect-and-version)
+- [Specify the Output Format You Need](#specify-the-output-format-you-need)
+- [Chain Complex Queries into Steps](#chain-complex-queries-into-steps)
+- [Include Sample Data and Expected Results](#include-sample-data-and-expected-results)
+- [Handle Edge Cases Explicitly](#handle-edge-cases-explicitly)
+- [Request Optimization Hints](#request-optimization-hints)
+- [Use System Prompts for Consistent Results](#use-system-prompts-for-consistent-results)
+- [Validate Generated SQL](#validate-generated-sql)
+- [Tool-Specific Prompt Patterns](#tool-specific-prompt-patterns)
+- [Example: Building a Complex Report](#example-building-a-complex-report)
+
 ## Provide Your Schema Up Front
 
 The foundation of any SQL generation prompt is providing complete schema information. AI models work best when they understand your table structure, data types, and relationships.
@@ -268,11 +282,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
+- [Effective Strategies for Using AI](/ai-tools-compared/effective-strategies-for-using-ai-to-learn-new-programming-languages-faster/)
 - [Effective Prompting for AI Generation of Accessible Frontend](/ai-tools-compared/effective-prompting-for-ai-generation-of-accessible-frontend/)
-- [Best Prompting Strategies for Getting Accurate Code from](/ai-tools-compared/best-prompting-strategies-for-getting-accurate-code-from-ai-/)
-- [Effective Context Loading Strategies for AI Tools in](/ai-tools-compared/effective-context-loading-strategies-for-ai-tools-in-polyglo/)
-- [Effective Context Management Strategies for AI Coding](/ai-tools-compared/effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/)
-- [Effective Strategies for AI Assisted Debugging of](/ai-tools-compared/effective-strategies-for-ai-assisted-debugging-of-intermittent-failures/)
-
+- [Best Prompting Strategies for Getting Accurate Code From AI](/ai-tools-compared/best-prompting-strategies-for-getting-accurate-code-from-ai-/)
+- [Best AI Tools for SQL Query Generation 2026](/ai-tools-compared/best-ai-tools-for-sql-query-generation-2026/)
+- [Effective Strategies for Using AI to Write](/ai-tools-compared/effective-strategies-for-using-ai-to-write--api/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

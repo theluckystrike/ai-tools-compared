@@ -40,6 +40,14 @@ Export ChatGPT shared links by using Markdownify to convert HTML to readable tex
 - **Check connected apps under**: Settings → Security → Connected Applications and disconnect any OAuth integrations 7.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Why Export Your Shared Links First](#why-export-your-shared-links-first)
+- [Prerequisites](#prerequisites)
+- [Preserving Shared Links: Best Practices](#preserving-shared-links-best-practices)
+- [Method Comparison](#method-comparison)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Export Your Shared Links First
 
 ChatGPT shared links contain the full conversations you've had with the AI, including prompts, responses, and any code or content generated. When you delete your ChatGPT account, all this data disappears. Unlike regular conversation history which you can download through ChatGPT's data export feature, shared links require a separate approach since they're publicly accessible URLs tied to your account.

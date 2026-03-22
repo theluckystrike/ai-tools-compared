@@ -39,6 +39,13 @@ Capacity planning and resource right sizing represent critical challenges for en
 - **Wednesday**: review and approval. Engineers review the flagged recommendations in a 30-minute sync.
 - **Overprovisioning leads to wasted budget**: while underprovisioning causes performance degradation and potential outages.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Tool Comparison: AI-Powered Capacity Planning Platforms](#tool-comparison-ai-powered-capacity-planning-platforms)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
@@ -278,6 +285,14 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [Best AI Tools for Cloud Resource Tagging Compliance](/ai-tools-compared/best-ai-tools-for-cloud-resource-tagging-compliance-automati/)
 - [Best AI Tools for Writing Kubernetes Custom Resource](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-custom-resource-definitions-2026/)
 - [Comparing AI Tools for Generating Retool Resource.](/ai-tools-compared/comparing-ai-tools-for-generating-retool-resource-queries-fr/)
+
+## Related Articles
+
+- [How to Use AI for Infrastructure Capacity Planning](/ai-tools-compared/ai-powered-capacity-planning-guide)
+- [How to Use AI for Cloud Migration Planning and Dependency](/ai-tools-compared/how-to-use-ai-for-cloud-migration-planning-and-dependency-ma/)
+- [Best AI Tools for Cloud Resource Tagging Compliance](/ai-tools-compared/best-ai-tools-for-cloud-resource-tagging-compliance-automati/)
+- [Comparing AI Tools for Generating Retool Resource](/ai-tools-compared/comparing-ai-tools-for-generating-retool-resource-queries-fr/)
+- [How to Use AI to Create Milestone Planning Documents](/ai-tools-compared/how-to-use-ai-to-create-milestone-planning-documents-from-is/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

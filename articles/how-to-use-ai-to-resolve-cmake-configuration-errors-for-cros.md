@@ -40,6 +40,16 @@ AI assistants have become valuable tools for debugging complex build systems, an
 - **Toolchain file misconfiguration causes**: errors when the CMAKE_SYSTEM_PROCESSOR or CMAKE_SYSTEM_NAME values do not match CrOS expectations.
 - **Missing dependencies occur because**: CrOS uses trimmed-down system libraries compared to standard desktop Linux distributions.
 
+## Table of Contents
+
+- [Why CrOS Cross-Compilation Differs from Standard Targets](#why-cros-cross-compilation-differs-from-standard-targets)
+- [Prerequisites](#prerequisites)
+- [Practical Example: Resolving sysroot Path Errors](#practical-example-resolving-sysroot-path-errors)
+- [Practical Example: Fixing Missing Portage Dependencies](#practical-example-fixing-missing-portage-dependencies)
+- [AI-Assisted Build System Troubleshooting](#ai-assisted-build-system-troubleshooting)
+- [Performance Optimization for CrOS Builds](#performance-optimization-for-cros-builds)
+- [Troubleshooting](#troubleshooting)
+
 ## Why CrOS Cross-Compilation Differs from Standard Targets
 
 Chrome OS uses a modified Gentoo Linux foundation with its own package manager (Portage), system libraries, and build utilities. When cross-compiling for CrOS, you must account for several CrOS-specific requirements that typically cause CMake to fail during configuration.
@@ -471,11 +481,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Use AI to Resolve Cmake Configuration Errors](/ai-tools-compared/how-to-use-ai-to-resolve-cmake-configuration-errors-for-cross-compilation/)
+- [How to Use AI to Resolve Cmake Configuration Errors: Cross](/ai-tools-compared/how-to-use-ai-to-resolve-cmake-configuration-errors-for-cross-compilation/)
 - [How to Use AI to Resolve Nginx 502 Bad Gateway Errors](/ai-tools-compared/how-to-use-ai-to-resolve-nginx-502-bad-gateway-errors-from-u/)
-- [How to Use AI to Resolve NPM Peer Dependency Conflict Errors](/ai-tools-compared/how-to-use-ai-to-resolve-npm-peer-dependency-conflict-errors/)
-- [How to Use AI to Resolve Python Import Circular Dependency E](/ai-tools-compared/how-to-use-ai-to-resolve-python-import-circular-dependency-e/)
-- [Best AI IDE Features for Writing Configuration Files YAML](/ai-tools-compared/best-ai-ide-features-for-writing-configuration-files-yaml-json-toml/)
-
+- [How to Use AI to Debug CORS Errors in Cross-Origin API](/ai-tools-compared/how-to-use-ai-to-debug-cors-errors-in-cross-origin-api-reque/)
+- [Best AI Assistant for Debugging Swift Compiler Errors](/ai-tools-compared/best-ai-assistant-for-debugging-swift-compiler-errors-in-xco/)
+- [How to Optimize Your AI Coding Tool Configuration](/ai-tools-compared/how-to-optimize-your-ai-coding-tool-configuration-for-specif/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

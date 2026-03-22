@@ -25,6 +25,18 @@ API versioning is one of those problems that looks simple until you have 50 cons
 - **Consumer impact analysis prevents incidents** — knowing which consumers are affected before a release lets you reach out proactively rather than reactively.
 - **Practical guidance included**: Step-by-step setup and configuration instructions.
 
+## Table of Contents
+
+- [Why API Versioning is Hard](#why-api-versioning-is-hard)
+- [Breaking Change Detection](#breaking-change-detection)
+- [Migration Guide Generator](#migration-guide-generator)
+- [Migration Guide: API v2 to v3](#migration-guide-api-v2-to-v3)
+- [Versioning Strategy Advisor](#versioning-strategy-advisor)
+- [Automated Version Bump Detection in CI](#automated-version-bump-detection-in-ci)
+- [Consumer Impact Analysis](#consumer-impact-analysis)
+- [Changelog Generation from Spec Diffs](#changelog-generation-from-spec-diffs)
+- [Related Reading](#related-reading)
+
 ## Why API Versioning is Hard
 
 Every API change falls somewhere on a spectrum from "obviously safe" to "definitely breaks consumers." The problem is the middle: changes that seem safe but break specific client patterns.
@@ -394,6 +406,14 @@ Use bullet points. Be specific about field names and endpoints."""
 - [AI Tools for Automated Dependency Analysis](/ai-tools-compared/ai-tools-for-automated-dependency-analysis/)
 
 ---
+
+## Related Articles
+
+- [AI Tools for Generating API Versioning Documentation and](/ai-tools-compared/ai-tools-for-generating-api-versioning-documentation-and-dep/)
+- [Writing CLAUDE.md Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy/)
+- [Writing CLAUDE MD Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
+- [AI-Powered API Gateway Configuration Tools 2026](/ai-tools-compared/ai-powered-api-gateway-configuration-tools-2026/)
+- [AI Tools for API Documentation from Code 2026](/ai-tools-compared/ai-tools-for-api-documentation-from-code-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

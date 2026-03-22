@@ -40,6 +40,23 @@ This guide provides practical steps and best practices to help you accomplish th
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Understanding Cursor's Apply Model](#understanding-cursors-apply-model)
+- [How the Merge Process Works](#how-the-merge-process-works)
+- [Practical Applications](#practical-applications)
+- [Best Practices for Working with Apply](#best-practices-for-working-with-apply)
+- [Advanced Workflow: Multi-File Refactoring with Apply](#advanced-workflow-multi-file-refactoring-with-apply)
+- [Handling Merge Conflicts and Rollback](#handling-merge-conflicts-and-rollback)
+- [Performance and Token Costs](#performance-and-token-costs)
+- [Version Control Integration with Apply](#version-control-integration-with-apply)
+- [Limitations and Considerations](#limitations-and-considerations)
+- [Real-World Apply Patterns and Gotchas](#real-world-apply-patterns-and-gotchas)
+- [Token Accounting for Apply Operations](#token-accounting-for-apply-operations)
+- [Advanced: Chaining Apply Requests](#advanced-chaining-apply-requests)
+- [When to Avoid Apply Entirely](#when-to-avoid-apply-entirely)
+- [Integrating Apply with Your Development Workflow](#integrating-apply-with-your-development-workflow)
+
 ## Understanding Cursor's Apply Model
 
 When you ask Cursor AI to generate code or make modifications, the Apply model doesn't just spit out a complete file replacement. Instead, it analyzes your existing codebase, understands the context, and generates precise changes that integrate with what you already have.
@@ -357,11 +374,10 @@ This prevents the "black box" problem where AI-generated code enters production 
 
 ## Related Articles
 
-- [Best Practices for Documenting AI-Generated Code for Future](/ai-tools-compared/best-practices-for-documenting-ai-generated-code-for-future-/)
-- [Effective Strategies for Reviewing AI Generated Code Before](/ai-tools-compared/effective-strategies-for-reviewing-ai-generated-code-before-committing-to-repo/)
 - [Cursor AI Model Selection Guide Which Model for Which Coding](/ai-tools-compared/cursor-ai-model-selection-guide-which-model-for-which-coding/)
-- [Cursor Pro Slow Model vs Fast Model Credits How It Works](/ai-tools-compared/cursor-pro-slow-model-vs-fast-model-credits-how-it-works/)
-- [Best AI Tools for Python Pydantic V2 Model Validation Code](/ai-tools-compared/best-ai-tools-for-python-pydantic-v2-model-validation-code-2/)
-
+- [Does Cursor AI Store Your Code on Their Servers Data](/ai-tools-compared/does-cursor-ai-store-your-code-on-their-servers-data-privacy/)
+- [Using Claude Code for Backend and Cursor for Frontend Same](/ai-tools-compared/using-claude-code-for-backend-and-cursor-for-frontend-same-p/)
+- [Cursor AI Multi File Editing Feature How It Actually Works](/ai-tools-compared/cursor-ai-multi-file-editing-feature-how-it-actually-works-explained/)
+- [Cursor Free Tier Limitations: What Stops Working After Trial](/ai-tools-compared/cursor-free-tier-limitations-what-stops-working-after-trial/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

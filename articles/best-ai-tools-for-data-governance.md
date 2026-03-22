@@ -44,6 +44,15 @@ Amundsen**: developed by Lyft, provides data discovery and cataloging with metad
 - **Teams at large companies**: use it to solve the "I know we have a table for this, but I can't find it" problem.
 - **The ML-based table and**: column recommendations surface related assets that users may not have considered, reducing the time spent searching for data.
 
+## Table of Contents
+
+- [What Makes an AI Tool Effective for Data Governance](#what-makes-an-ai-tool-effective-for-data-governance)
+- [Comparison at a Glance](#comparison-at-a-glance)
+- [Top AI Tools for Data Governance](#top-ai-tools-for-data-governance)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+- [Implementation Approach](#implementation-approach)
+- [Related Reading](#related-reading)
+
 ## What Makes an AI Tool Effective for Data Governance
 
 Effective data governance tools share several characteristics that matter most to technical users. They integrate with existing data infrastructure without requiring complete system overhauls. They provide programmatic interfaces for automation and custom workflows. They offer granular control over governance policies while reducing manual overhead.

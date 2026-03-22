@@ -45,6 +45,13 @@ AI code completion tools have transformed how developers write code, but one per
 - **The most effective approach**: combines editor settings with context awareness.
 - **If your project uses**: a linter or formatter configured for specific conventions, Copilot observes these settings when generating code.
 
+## Table of Contents
+
+- [Why Naming Conventions Matter for AI Suggestions](#why-naming-conventions-matter-for-ai-suggestions)
+- [Prerequisites](#prerequisites)
+- [Measuring Naming Convention Compliance](#measuring-naming-convention-compliance)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Naming Conventions Matter for AI Suggestions
 
 AI code models trained on vast datasets develop their own preferences for variable naming, function names, and class names. When these preferences clash with your project standards, you face constant manual corrections. A function named `calculate_user_order_total` in your snake_case Python project becomes `calculateUserOrderTotal` when Copilot suggests it—exactly backwards for Python's PEP 8 guidelines.

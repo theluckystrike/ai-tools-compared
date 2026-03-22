@@ -43,6 +43,24 @@ Network traffic analysis forms a critical component of cybersecurity, DevOps, an
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [The Connection Between AI Coding Assistants and Network Traffic Analysis](#the-connection-between-ai-coding-assistants-and-network-traffic-analysis)
+- [Practical Applications](#practical-applications)
+- [Tool Comparison: AI Assistants for Network Analysis Code](#tool-comparison-ai-assistants-for-network-analysis-code)
+- [Key Capabilities to Look For](#key-capabilities-to-look-for)
+- [Integrating AI-Generated Code Into Your Workflow](#integrating-ai-generated-code-into-your-workflow)
+- [Security Considerations When Using AI for Network Code](#security-considerations-when-using-ai-for-network-code)
+- [Comparing AI Assistants for Network Tasks](#comparing-ai-assistants-for-network-tasks)
+- [Common Network Analysis Tasks and Time Savings](#common-network-analysis-tasks-and-time-savings)
+- [Real-World Integration Patterns](#real-world-integration-patterns)
+- [Limitations and When to Use Domain Experts](#limitations-and-when-to-use-domain-experts)
+- [Prompt Engineering for Better Network Code](#prompt-engineering-for-better-network-code)
+- [Building a Network Analysis Toolkit](#building-a-network-analysis-toolkit)
+- [Comparing Assistant Capabilities for Network Tasks](#comparing-assistant-capabilities-for-network-tasks)
+- [Real-World Scenario: Building a Network Intrusion Detector](#real-world-scenario-building-a-network-intrusion-detector)
+- [When to Build vs. Buy](#when-to-build-vs-buy)
+
 ## The Connection Between AI Coding Assistants and Network Traffic Analysis
 
 AI coding assistants contribute to network traffic analysis in several meaningful ways. First, they accelerate the development of analysis scripts by generating boilerplate code for common tasks like parsing PCAP files, filtering network logs, or extracting patterns from connection data. Second, they help developers working with network analysis libraries like Scapy, pyshark, or network flow exporters by suggesting correct API calls and handling complex parameter configurations. Third, they assist in creating custom analysis tools tailored to specific organizational needs.
@@ -460,8 +478,9 @@ The best use of AI for network analysis is as a force multiplier for experienced
 
 ## Related Articles
 
-- [AI Coding Assistant Accuracy for Typescript Next Js Server](/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
-- [AI Coding Assistant Accuracy for TypeScript Svelte Component](/ai-coding-assistant-accuracy-for-typescript-svelte-component/)
-- [AI Coding Assistant Comparison for React Component](/ai-coding-assistant-comparison-for-react-component-generatio/)
-
+- [Enterprise AI Coding Tool Network Security Requirements](/ai-tools-compared/enterprise-ai-coding-tool-network-security-requirements-and-/)
+- [AI Tools for Cohort Analysis](/ai-tools-compared/ai-tools-for-cohort-analysis/)
+- [AI Coding Assistant Data Sovereignty Requirements](/ai-tools-compared/ai-coding-assistant-data-sovereignty-requirements-for-companies-operating-in-eu-2026/)
+- [Best AI Coding Assistant for Under $5 Per](/ai-tools-compared/best-ai-coding-assistant-for-under-5-dollars-per-month/)
+- [Best AI Tools for Competitor Analysis](/ai-tools-compared/best-ai-tools-for-competitor-analysis/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

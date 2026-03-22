@@ -43,6 +43,23 @@ Economists produce some of the most data-intensive written content in any profes
 - **For large reports**: regenerate sections 2-3 times and select the best version.
 - **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
 
+## Table of Contents
+
+- [Why Economists Need Specialized Writing Support](#why-economists-need-specialized-writing-support)
+- [Key Capabilities for Economic Report Writing](#key-capabilities-for-economic-report-writing)
+- [Practical AI Tools for Economic Report Writing](#practical-ai-tools-for-economic-report-writing)
+- [Real-World Use Cases](#real-world-use-cases)
+- [Recommendations by Report Type](#recommendations-by-report-type)
+- [Best Practices for Economists](#best-practices-for-economists)
+- [Detailed Comparison of Major Tools](#detailed-comparison-of-major-tools)
+- [Practical Workflows for Different Report Types](#practical-workflows-for-different-report-types)
+- [Tool Comparison Table](#tool-comparison-table)
+- [Advanced Prompt Structure for Reports](#advanced-prompt-structure-for-reports)
+- [Quality Metrics and Validation](#quality-metrics-and-validation)
+- [Pricing and ROI Analysis](#pricing-and-roi-analysis)
+- [Common Pitfalls to Avoid](#common-pitfalls-to-avoid)
+- [Best Practices Summary](#best-practices-summary)
+
 ## Why Economists Need Specialized Writing Support
 
 Economic writing presents unique challenges that generic AI tools handle poorly. You work with specific terminology spanning econometrics, macroeconomic theory, and sector-specific jargon. Your readers—policy makers, academic peers, business executives—expect accurate citations and rigorous logical chains. A tool that writes well about general topics may struggle with concepts like instrumental variables, DSGE models, or supply-side economics.

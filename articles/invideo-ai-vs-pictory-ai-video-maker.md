@@ -42,6 +42,18 @@ Choose InVideo AI if you need template-driven batch video generation with strong
 
 InVideo's web editor and template library make it easier to get a polished video without API integration.
 
+## Table of Contents
+
+- [Platform Overview](#platform-overview)
+- [API Capabilities and Developer Features](#api-capabilities-and-developer-features)
+- [Workflow Automation Comparison](#workflow-automation-comparison)
+- [Caption and Accessibility Quality](#caption-and-accessibility-quality)
+- [Brand Consistency at Scale](#brand-consistency-at-scale)
+- [Pricing and Rate Limits](#pricing-and-rate-limits)
+- [Voice and Text-to-Speech Quality](#voice-and-text-to-speech-quality)
+- [Integration Considerations](#integration-considerations)
+- [Decision Framework](#decision-framework)
+
 ## Platform Overview
 
 **InVideo AI** positions itself as a full-featured video creation platform with strong emphasis on template-based workflows. It offers a web-based editor alongside AI-powered generation, making it accessible for both non-technical users and developers seeking quick integrations.
@@ -334,11 +346,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [AI Presentation Maker Chrome Extension](/ai-tools-compared/ai-presentation-maker-chrome-extension/)
-- [AI Tools for Video Accessibility Features](/ai-tools-compared/ai-tools-for-video-accessibility-features/)
-- [AI Tools for Video Color Grading](/ai-tools-compared/ai-tools-for-video-color-grading/)
-- [AI Tools for Video Compression: A Developer Guide](/ai-tools-compared/ai-tools-for-video-compression/)
-- [AI Tools for Video Frame Interpolation](/ai-tools-compared/ai-tools-for-video-frame-interpolation/)
-
+- [Best AI Video Editor 2026 to Intelligent Video Production](/ai-tools-compared/best-ai-video-editor-2026/)
+- [Kling AI vs Gen 3 Video Generation: Developer Comparison](/ai-tools-compared/kling-ai-vs-gen-3-video-generation/)
+- [AI Tools for Video Thumbnail Generation](/ai-tools-compared/ai-tools-for-video-thumbnail-generation/)
+- [AI Tools for Video Summarization](/ai-tools-compared/ai-tools-for-video-summarization/)
+- [Runway ML vs Pika AI: Video Generation Tools Compared](/ai-tools-compared/runway-ml-vs-pika-ai-video-generation/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

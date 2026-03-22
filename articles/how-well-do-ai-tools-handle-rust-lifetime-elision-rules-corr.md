@@ -39,6 +39,22 @@ AI tools understand Rust lifetime elision rules about 70% of the time but often 
 - **AI tools understand Rust**: lifetime elision rules about 70% of the time but often miss edge cases in generic functions and trait definitions.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Understanding Lifetime Elision Rules](#understanding-lifetime-elision-rules)
+- [Testing Methodology](#testing-methodology)
+- [Test Case One: Simple Elision](#test-case-one-simple-elision)
+- [Test Case Two: Multiple References](#test-case-two-multiple-references)
+- [Test Case Three: Method Syntax](#test-case-three-method-syntax)
+- [Test Case Four: The Elusive Third Lifetime](#test-case-four-the-elusive-third-lifetime)
+- [Test Case Five: Generic Lifetimes](#test-case-five-generic-lifetimes)
+- [Practical Implications](#practical-implications)
+- [Recommendations for Developers](#recommendations-for-developers)
+- [Common Lifetime Patterns AI Struggles With](#common-lifetime-patterns-ai-struggles-with)
+- [Testing Strategy for Your Project](#testing-strategy-for-your-project)
+- [Comparison Table: AI Tool Reliability by Scenario](#comparison-table-ai-tool-reliability-by-scenario)
+- [Building Your Lifetime Intuition](#building-your-lifetime-intuition)
+
 ## Understanding Lifetime Elision Rules
 
 Before testing AI tools, let's establish what lifetime elision covers. Rust applies three rules to infer lifetimes:
@@ -272,10 +288,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How Well Do AI Tools Handle Go Generics Type Parameter Const](/ai-tools-compared/how-well-do-ai-tools-handle-go-generics-type-parameter-const/)
+- [Best AI Coding Tools for Rust Developers 2026](/ai-tools-compared/ai-tools-for-rust-developers-2026/)
+- [How Accurate Are AI Tools for Rust Unsafe Code Blocks](/ai-tools-compared/how-accurate-are-ai-tools-for-rust-unsafe-code-blocks-and-ff/)
+- [How Accurate Are AI Tools at Generating Rust Crossbeam](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
 - [How Well Do AI Tools Generate Rust Macro Definitions and Pro](/ai-tools-compared/how-well-do-ai-tools-generate-rust-macro-definitions-and-pro/)
-- [Best AI for Writing Playwright Tests That Handle Dynamic Loa](/ai-tools-compared/best-ai-for-writing-playwright-tests-that-handle-dynamic-loa/)
-- [AI Autocomplete for Test Files How Well Different Tools Pred](/ai-tools-compared/ai-autocomplete-for-test-files-how-well-different-tools-pred/)
-- [How Well Do AI Tools Generate Correct Go Interface Implement](/ai-tools-compared/how-well-do-ai-tools-generate-correct-go-interface-implement/)
-
+- [AI Tools for Interpreting Rust Compiler Borrow Checker](/ai-tools-compared/ai-tools-for-interpreting-rust-compiler-borrow-checker-error/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

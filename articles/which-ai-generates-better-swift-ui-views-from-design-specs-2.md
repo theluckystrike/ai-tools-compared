@@ -39,6 +39,17 @@ Claude generates better SwiftUI from design specs than Cursor due to superior re
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Add "target iOS 17**: use `@Observable` macro for state" or "target iOS 16, use `ObservableObject`" to prevent the AI from mixing paradigms.
 
+## Table of Contents
+
+- [The Challenge of Design-to-SwiftUI Conversion](#the-challenge-of-design-to-swiftui-conversion)
+- [Tools Tested](#tools-tested)
+- [Test Design Specification](#test-design-specification)
+- [Results Comparison](#results-comparison)
+- [Scoring Each Tool](#scoring-each-tool)
+- [Prompting Strategies That Improve Output](#prompting-strategies-that-improve-output)
+- [Key Findings](#key-findings)
+- [Recommendations](#recommendations)
+
 ## The Challenge of Design-to-SwiftUI Conversion
 
 Design specifications come in various formats: Figma exports, Sketch files, Zeplin outputs, or plain text descriptions. Each format presents unique challenges. A Figma frame might specify a button with specific corner radius, background color in hex, typography settings, and shadow values. Converting this to SwiftUI requires understanding both the design intent and SwiftUI's declarative syntax.
@@ -346,10 +357,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Which AI Generates Better Go Goroutine Patterns for Concurre](/ai-tools-compared/which-ai-generates-better-go-goroutine-patterns-for-concurre/)
-- [Which AI Tool Generates Better Vue 3 Composition API](/ai-tools-compared/which-ai-tool-generates-better-vue-3-composition-api-components/)
-- [AI Tools for Generating OpenAPI Specs from Code](/ai-tools-compared/ai-tools-openapi-spec-generation/)
-- [Best AI Assistant for Debugging Swift Compiler Errors in Xco](/ai-tools-compared/best-ai-assistant-for-debugging-swift-compiler-errors-in-xco/)
-- [Best AI Assistant for Debugging Swift Compiler Errors](/ai-tools-compared/best-ai-assistant-for-debugging-swift-compiler-errors-in-xcode-build-phases-2026/)
-
+- [AI Tools for Auditing Accessible Responsive Design](/ai-tools-compared/ai-tools-for-auditing-accessible-responsive-design-breakpoin/)
+- [AI Tools for Designers Writing Handoff Notes That Include](/ai-tools-compared/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
+- [AI Tools for Interior Design Visualization Compared](/ai-tools-compared/ai-tools-for-interior-design-visualization-compared/)
+- [How to Use AI to Practice Object-Oriented Design Interview](/ai-tools-compared/how-to-use-ai-to-practice-object-oriented-design-interview-q/)
+- [Best AI Tool for Game Developers Design Docs Writing](/ai-tools-compared/best-ai-tool-for-game-developers-design-docs-writing/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

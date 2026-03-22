@@ -40,6 +40,13 @@ Artificial intelligence has become a valuable assistant for open source maintain
 - **When proposing new features**: to open source projects, a well-structured RFC helps reviewers understand your proposal, its rationale, and implementation details.
 - **To get the best results**: provide the AI with context about the project, its existing RFC process, and specific details about your proposed feature.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Detailed Design](#detailed-design)
+- [Best Practices for AI-Assisted RFC Writing](#best-practices-for-ai-assisted-rfc-writing)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

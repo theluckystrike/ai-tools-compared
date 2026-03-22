@@ -42,6 +42,16 @@ AI coding tools log your input code, generated suggestions, conversation context
 2.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [What Are AI Coding Tool Audit Trails](#what-are-ai-coding-tool-audit-trails)
+- [What Code Gets Logged](#what-code-gets-logged)
+- [What Typically Gets Excluded](#what-typically-gets-excluded)
+- [How Different Providers Handle Logging](#how-different-providers-handle-logging)
+- [Practical Implications for Developers](#practical-implications-for-developers)
+- [Checking Your Provider's Policies](#checking-your-providers-policies)
+- [Making Informed Decisions](#making-informed-decisions)
+
 ## What Are AI Coding Tool Audit Trails
 
 AI coding tool providers maintain audit trails to improve their models, ensure quality, comply with legal requirements, and detect abuse. These trails record interactions between users and AI assistants, including the code you submit, the suggestions you receive, and sometimes the context surrounding those interactions.
@@ -274,11 +284,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How to Move Copilot Suggested Code Patterns to Cursor](/ai-tools-compared/how-to-move-copilot-suggested-code-patterns-to-cursor-snippets/)
-- [Cheapest Way to Get AI Code Completion in Vim 2026](/ai-tools-compared/cheapest-way-to-get-ai-code-completion-in-vim-2026/)
-- [How to Get AI Code Suggestions That Follow Your Project](/ai-tools-compared/how-to-get-ai-code-suggestions-that-follow-your-project-naming-conventions/)
-- [Best AI Assistant for Designers Generating Accessibility Aud](/ai-tools-compared/best-ai-assistant-for-designers-generating-accessibility-aud/)
-- [AI Tools for Interpreting Terraform Plan Errors](/ai-tools-compared/ai-tools-for-interpreting-terraform-plan-errors-with-provider-version-conflicts/)
-
+- [What Source Code Context Window Do Different AI Coding Tools](/ai-tools-compared/what-source-code-context-window-do-different-ai-coding-tools/)
+- [How to Audit What Source Code AI Coding Tools Transmit](/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
+- [Configure AI Coding Tools](/ai-tools-compared/how-to-configure-ai-coding-tools-to-respect-your-teams-branc/)
+- [How to Evaluate AI Coding Tool Encryption Standards](/ai-tools-compared/how-to-evaluate-ai-coding-tool-encryption-standards-for-data/)
+- [Self Hosted AI Coding Tools That Support Air Gapped](/ai-tools-compared/self-hosted-ai-coding-tools-that-support-air-gapped-environm/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

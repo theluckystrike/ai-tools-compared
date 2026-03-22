@@ -41,6 +41,20 @@ This guide covers practical strategies for AI-assisted refactoring that keep you
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [The Core Principle: Small, Verifiable Changes](#the-core-principle-small-verifiable-changes)
+- [Strategy 1: Contextual Prompting with Test Awareness](#strategy-1-contextual-prompting-with-test-awareness)
+- [Strategy 2: Use AI for Mechanical Transformations](#strategy-2-use-ai-for-mechanical-transformations)
+- [Strategy 3: Scaffold Before Committing](#strategy-3-scaffold-before-committing)
+- [Strategy 4: Use AI to Generate Regression Tests](#strategy-4-use-ai-to-generate-regression-tests)
+- [Strategy 5: Interpret Test Failures Strategically](#strategy-5-interpret-test-failures-strategically)
+- [Real-World Example: Extracting a Service Class](#real-world-example-extracting-a-service-class)
+- [Advanced Refactoring Patterns](#advanced-refactoring-patterns)
+- [Real-World Refactoring Metrics](#real-world-refactoring-metrics)
+- [Test-Driven Refactoring Workflow](#test-driven-refactoring-workflow)
+- [Handling Refactoring Conflicts](#handling-refactoring-conflicts)
+
 ## The Core Principle: Small, Verifiable Changes
 
 The most effective approach treats AI as a collaborative partner rather than an autonomous agent. You maintain control over the scope and pace of changes while AI handles mechanical transformations.

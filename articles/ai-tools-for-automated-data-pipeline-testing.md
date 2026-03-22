@@ -27,6 +27,18 @@ This guide covers three approaches: AI-generated dbt tests, Great Expectations s
 - **CI integration closes the gap** — auto-generating tests on PR for new models means every new model ships with a test suite, not an empty YAML file.
 - **Practical guidance included**: Step-by-step setup and configuration instructions.
 
+## Table of Contents
+
+- [Why Pipeline Testing Is Underinvested](#why-pipeline-testing-is-underinvested)
+- [Setting Up the Stack](#setting-up-the-stack)
+- [Approach 1: AI-Generated dbt Tests](#approach-1-ai-generated-dbt-tests)
+- [Approach 2: Great Expectations Suite Generation](#approach-2-great-expectations-suite-generation)
+- [Approach 3: LLM-Based Output Anomaly Detection](#approach-3-llm-based-output-anomaly-detection)
+- [Integrating Anomaly Detection into Airflow](#integrating-anomaly-detection-into-airflow)
+- [CI Integration for dbt](#ci-integration-for-dbt)
+- [Tool Comparison](#tool-comparison)
+- [Related Reading](#related-reading)
+
 ## Why Pipeline Testing Is Underinvested
 
 Application code has decades of testing culture: unit tests, integration tests, CI pipelines. Data pipelines don't. The reasons are practical: data quality tests require domain knowledge about acceptable value ranges, valid states, and business rules. A generic not_null check doesn't encode that an order with `status = 'shipped'` must have a non-null `shipped_at`. Writing that test requires someone who understands both the SQL and the business logic.

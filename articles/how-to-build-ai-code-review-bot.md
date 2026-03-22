@@ -36,6 +36,20 @@ An AI code review bot runs on every pull request, posts inline comments on speci
 - **Consider a security review**: if your application handles sensitive user data.
 - **This guide covers architecture, step 1**: create the github app, step 2: github actions workflow, with specific setup instructions
 
+## Table of Contents
+
+- [Architecture](#architecture)
+- [Step 1: Create the GitHub App](#step-1-create-the-github-app)
+- [Step 2: GitHub Actions Workflow](#step-2-github-actions-workflow)
+- [Step 3: The Review Script](#step-3-the-review-script)
+- [Customizing Review Rules](#customizing-review-rules)
+- [Cost at Scale](#cost-at-scale)
+- [Handling Large PRs](#handling-large-prs)
+- [Security-Focused Review Rules](#security-focused-review-rules)
+- [Measuring Review Quality](#measuring-review-quality)
+- [Pros and Cons of AI Code Review Bots](#pros-and-cons-of-ai-code-review-bots)
+- [Related Reading](#related-reading)
+
 ## Architecture
 
 The bot runs as a GitHub Actions workflow triggered on `pull_request` events. It:

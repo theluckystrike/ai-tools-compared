@@ -49,6 +49,20 @@ CREATE INDEX idx_activities_created_user
 
 -- 2.
 
+## Table of Contents
+
+- [The Challenge: Why SQL Optimization Needs AI](#the-challenge-why-sql-optimization-needs-ai)
+- [Claude: Deep Analysis of Execution Plans](#claude-deep-analysis-of-execution-plans)
+- [Copilot: Quick Fixes in Your IDE](#copilot-quick-fixes-in-your-ide)
+- [ChatGPT: Explanations & Quick Optimization Rules](#chatgpt-explanations-quick-optimization-rules)
+- [Comparison: Which Tool for Which Problem](#comparison-which-tool-for-which-problem)
+- [Real-World Query Optimization Examples](#real-world-query-optimization-examples)
+- [Advanced: Cursor for Real-Time Optimization](#advanced-cursor-for-real-time-optimization)
+- [Cost Analysis for Teams](#cost-analysis-for-teams)
+- [Database-Specific Considerations](#database-specific-considerations)
+- [Practical Workflow: Using All Three](#practical-workflow-using-all-three)
+- [Index Recommendations: Real Examples](#index-recommendations-real-examples)
+
 ## The Challenge: Why SQL Optimization Needs AI
 
 A slow query might have multiple causes:

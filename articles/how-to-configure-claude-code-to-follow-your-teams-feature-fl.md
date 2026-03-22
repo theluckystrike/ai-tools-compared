@@ -40,6 +40,13 @@ Feature flags have become essential for modern software development, enabling te
 - **You can then prioritize the migrations by flag usage frequency**: high-traffic flags warrant careful migration plans, while flags only used in one place can be renamed in a single PR.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Why Feature Flag Naming Conventions Matter](#why-feature-flag-naming-conventions-matter)
+- [Prerequisites](#prerequisites)
+- [Practical Examples of Flag Creation](#practical-examples-of-flag-creation)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Feature Flag Naming Conventions Matter
 
 Inconsistent feature flag names create technical debt and increase the risk of conflicts. A flag named `enable_new_dashboard` might conflict with `enable_new_dashboard_v2` or `feature-dashboard-2024`, leading to unintended behavior or deployment failures. When Claude Code generates new flags or modifies existing ones, it needs clear guidance on your naming scheme to avoid introducing inconsistencies.

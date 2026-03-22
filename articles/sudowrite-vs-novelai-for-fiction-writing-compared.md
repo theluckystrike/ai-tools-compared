@@ -51,6 +51,28 @@ Fiction writers seeking AI assistance face a crowded market, but two platforms c
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
+## Table of Contents
+
+- [What is Sudowrite?](#what-is-sudowrite)
+- [What is NovelAI?](#what-is-novelai)
+- [API Access and Developer Integration](#api-access-and-developer-integration)
+- [Customization and Control](#customization-and-control)
+- [Context Management and Long-Form Writing](#context-management-and-long-form-writing)
+- [Pricing and Value](#pricing-and-value)
+- [Which Should You Choose?](#which-should-you-choose)
+- [Real-World Writing Examples](#real-world-writing-examples)
+- [Pricing Comparison in Detail](#pricing-comparison-in-detail)
+- [Model Architecture Differences](#model-architecture-differences)
+- [Advanced Customization Examples](#advanced-customization-examples)
+- [Writing Style Adaptation](#writing-style-adaptation)
+- [Collaboration and Sharing](#collaboration-and-sharing)
+- [Community and Resources](#community-and-resources)
+- [Performance and Speed](#performance-and-speed)
+- [Long-Form Project Tracking](#long-form-project-tracking)
+- [Use Case Flowchart](#use-case-flowchart)
+- [Trial Recommendations](#trial-recommendations)
+- [The Verdict](#the-verdict)
+
 ## What is Sudowrite?
 
 Sudowrite positions itself as a creative writing assistant built specifically for novelists and fiction writers. The platform offers a web-based editor with specialized AI modes designed for different stages of the writing process. Rather than simply continuing your text, Sudowrite provides tools for brainstorming, plotting, character development, and revision.
@@ -441,11 +463,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [AI Assistants for Writing Correct AWS IAM Policies](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
-- [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
-- [AI Autocomplete for Writing Tests: Comparison of Suggestion](/ai-tools-compared/ai-autocomplete-for-writing-tests-comparison-of-suggestion-q/)
-- [AI Code Completion for Writing Shell Commands Inside Scripts](/ai-tools-compared/ai-code-completion-for-writing-shell-commands-inside-scripts/)
-- [AI Tools for Designers Writing Handoff Notes That Include](/ai-tools-compared/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
-
+- [AI Writing Tools for Healthcare Content Compared 2026](/ai-tools-compared/ai-writing-tools-for-healthcare-content-compared-2026/)
+- [Best AI Tool for Musicians Lyric Writing in 2026](/ai-tools-compared/best-ai-tool-for-musicians-lyric-writing-2026/)
+- [Best AI Image Generation APIs Compared 2026](/ai-tools-compared/best-ai-image-generation-apis-compared-2026/)
+- [Runway ML vs Pika AI: Video Generation Tools Compared](/ai-tools-compared/runway-ml-vs-pika-ai-video-generation/)
+- [Claude vs ChatGPT for Technical Writing 2026](/ai-tools-compared/claude-vs-chatgpt-for-technical-writing-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

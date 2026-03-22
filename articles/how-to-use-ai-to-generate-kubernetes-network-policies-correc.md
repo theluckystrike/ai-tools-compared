@@ -43,6 +43,13 @@ This guide shows you how to use AI tools effectively to generate Kubernetes netw
 - **Prompting it to "include**: all required egress rules for service discovery" fixes most issues.
 - **GitHub Copilot (inline) is**: best for single-policy generation when you start typing the YAML structure.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Practical Example: Microservices Application](#practical-example-microservices-application)
+- [Advanced Considerations](#advanced-considerations)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

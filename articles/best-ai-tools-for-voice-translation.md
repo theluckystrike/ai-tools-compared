@@ -42,6 +42,16 @@ For developers building multilingual applications, real-time communication tools
 - **Libraries like `noisereduce` and**: `librosa` handle this in Python pipelines and can recover accuracy on noisy recordings by 15-25% compared to raw input.
 - **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
 
+## Table of Contents
+
+- [Understanding Voice Translation Architecture](#understanding-voice-translation-architecture)
+- [Top AI Voice Translation Tools](#top-ai-voice-translation-tools)
+- [Tool Comparison at a Glance](#tool-comparison-at-a-glance)
+- [Real-Time Implementation Considerations](#real-time-implementation-considerations)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+- [Accuracy Benchmarking for Production Pipelines](#accuracy-benchmarking-for-production-pipelines)
+- [Speaker Diarization for Multi-Party Conversations](#speaker-diarization-for-multi-party-conversations)
+
 ## Understanding Voice Translation Architecture
 
 Voice translation involves three distinct stages: speech recognition (transcribing spoken language to text), machine translation (converting text from source to target language), and text-to-speech synthesis (producing audio in the target language). Each stage presents unique challenges and opportunities for optimization.

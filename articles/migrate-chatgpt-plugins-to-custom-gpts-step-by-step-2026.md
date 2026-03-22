@@ -42,6 +42,20 @@ Migrate a ChatGPT Plugin to a Custom GPT by exporting your existing OpenAPI spec
 or weather-related travel planning, call the getWeather action with the
 location they specify.
 
+## Table of Contents
+
+- [Understanding the Architecture Differences](#understanding-the-architecture-differences)
+- [Step 1: Audit Your Current Plugin](#step-1-audit-your-current-plugin)
+- [Step 2: Export Your OpenAPI Specification](#step-2-export-your-openapi-specification)
+- [Step 3: Create Your Custom GPT](#step-3-create-your-custom-gpt)
+- [Step 4: Configure Authentication](#step-4-configure-authentication)
+- [Step 5: Test Your Migrated GPT](#step-5-test-your-migrated-gpt)
+- [Step 6: Deploy and Monitor](#step-6-deploy-and-monitor)
+- [Advanced: Programmatic GPT Creation](#advanced-programmatic-gpt-creation)
+- [Writing Effective System Prompts for Migrated GPTs](#writing-effective-system-prompts-for-migrated-gpts)
+- [Migrating Multiple Plugins: Batch Automation Script](#migrating-multiple-plugins-batch-automation-script)
+- [Plugin Migration Compatibility Reference](#plugin-migration-compatibility-reference)
+
 ## Understanding the Architecture Differences
 
 ChatGPT Plugins and Custom GPTs serve similar purposes but operate differently under the hood. Plugins used a manifest file (`ai-plugin.json`) and OpenAPI specifications to define endpoints. Custom GPTs use Actions, which are conceptually similar but require a different setup approach through the GPT Builder interface or the Assistants API.

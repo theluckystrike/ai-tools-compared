@@ -43,6 +43,25 @@ The best AI brief creation tools extract requirements from raw client input (ema
 Present the structured brief to the client, allowing it to drive a more focused conversation.
 - **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
 
+## Table of Contents
+
+- [Why Brief Quality Matters](#why-brief-quality-matters)
+- [Key Capabilities in AI Brief Creation Tools](#key-capabilities-in-ai-brief-creation-tools)
+- [Real-World Applications](#real-world-applications)
+- [Comparing Approaches](#comparing-approaches)
+- [Implementation Tips](#implementation-tips)
+- [Measuring Success](#measuring-success)
+- [Specific Tools for AI-Assisted Brief Creation](#specific-tools-for-ai-assisted-brief-creation)
+- [Real-World Brief Creation Workflow](#real-world-brief-creation-workflow)
+- [Comparing AI Tools for Brief Creation](#comparing-ai-tools-for-brief-creation)
+- [Advanced Techniques for Better Results](#advanced-techniques-for-better-results)
+- [Measuring Brief Quality Improvement](#measuring-brief-quality-improvement)
+- [Implementation Recommendations](#implementation-recommendations)
+- [ROI Calculation for AI-Assisted Brief Creation](#roi-calculation-for-ai-assisted-brief-creation)
+- [Real-World Brief Evolution](#real-world-brief-evolution)
+- [Tool Selection Criteria](#tool-selection-criteria)
+- [Prompt Library for Common Design Projects](#prompt-library-for-common-design-projects)
+
 ## Why Brief Quality Matters
 
 A well-crafted brief serves as the foundation for successful design projects. It aligns stakeholder expectations, provides clear creative direction, and reduces the back-and-forth that extends timelines and strains client relationships. When briefs are vague or incomplete, designers face costly revisions and clients receive deliverables that miss the mark.

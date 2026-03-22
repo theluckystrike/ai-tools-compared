@@ -39,6 +39,15 @@ AI tools can translate SQL queries between PostgreSQL, MySQL, BigQuery, and Snow
 - **While AI handles bulk**: translation work correctly, developers should verify outputs and account for vendor-specific features like PostgreSQL's RETURNING clause or BigQuery's nested records.
 - **PostgreSQL uses `COALESCE`**: while MySQL prefers `IFNULL`.
 
+## Table of Contents
+
+- [Why SQL Dialects Differ](#why-sql-dialects-differ)
+- [Prerequisites](#prerequisites)
+- [AI Tool Comparison for SQL Translation](#ai-tool-comparison-for-sql-translation)
+- [Best Practices for AI SQL Translation](#best-practices-for-ai-sql-translation)
+- [Limitations and Considerations](#limitations-and-considerations)
+- [Troubleshooting](#troubleshooting)
+
 ## Why SQL Dialects Differ
 
 Database systems evolved independently, resulting in incompatible syntax for many operations. PostgreSQL uses `COALESCE`, while MySQL prefers `IFNULL`. BigQuery requires specific date functions like `DATE_ADD`, different from PostgreSQL's `INTERVAL` syntax. Snowflake has its own window function variations and array handling. These differences multiply across complex queries, making manual conversion time-consuming and error-prone.
@@ -415,10 +424,9 @@ No. Use AI to handle the mechanical bulk of translation — it dramatically redu
 
 ## Related Articles
 
-- [Best AI Tool for Converting MySQL Queries to Postgres Compat](/ai-tools-compared/best-ai-tool-for-converting-mysql-queries-to-postgres-compat/)
-- [AI Tools for Debugging Postgres Query Planner Choosing Wrong](/ai-tools-compared/ai-tools-for-debugging-postgres-query-planner-choosing-wrong/)
-- [How to Use AI to Generate Realistic Test Data for Postgres](/ai-tools-compared/how-to-use-ai-to-generate-realistic-test-data-for-postgres-d/)
-- [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
+- [Best AI Tool for Converting MySQL Queries to Postgres](/ai-tools-compared/best-ai-tool-for-converting-mysql-queries-to-postgres-compat/)
 - [Best AI Assistant for Generating SQL Recursive Queries](/ai-tools-compared/best-ai-assistant-for-generating-sql-recursive-queries-for-hierarchical-org-chart-data/)
-
+- [Best AI Tools for SQL Query Optimization in 2026](/ai-tools-compared/best-ai-tools-for-sql-query-optimization-2026/---)
+- [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
+- [Best AI Tools for SQL Query Generation 2026](/ai-tools-compared/best-ai-tools-for-sql-query-generation-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

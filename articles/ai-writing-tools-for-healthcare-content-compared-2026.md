@@ -42,6 +42,19 @@ Choose Claude or GPT-4 if you need the best combination of medical terminology a
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
+## Table of Contents
+
+- [What Healthcare Content Requires from AI Tools](#what-healthcare-content-requires-from-ai-tools)
+- [Tool Comparison Overview](#tool-comparison-overview)
+- [Practical Integration Approaches](#practical-integration-approaches)
+- [Evaluating Tool Performance](#evaluating-tool-performance)
+- [Building a Healthcare Content Workflow](#building-a-healthcare-content-workflow)
+- [Pricing and API Access](#pricing-and-api-access)
+- [Integration with Healthcare Systems](#integration-with-healthcare-systems)
+- [CLI Tools for Batch Processing](#cli-tools-for-batch-processing)
+- [Verification Workflows](#verification-workflows)
+- [Key Selection Criteria](#key-selection-criteria)
+
 ## What Healthcare Content Requires from AI Tools
 
 Healthcare content spans multiple categories, each with distinct requirements. Patient education materials demand plain language without sacrificing accuracy. Clinical documentation requires formal medical terminology. Regulatory content must comply with HIPAA, FDA, and institutional guidelines. Research summaries need accurate citation handling and statistical interpretation.

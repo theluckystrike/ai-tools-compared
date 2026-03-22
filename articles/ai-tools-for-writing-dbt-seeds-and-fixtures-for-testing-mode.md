@@ -40,6 +40,15 @@ AI tools can generate dbt seeds and fixtures that cover edge cases, null handlin
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Whether you are evaluating**: options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
+## Table of Contents
+
+- [Why AI-Assisted Seed and Fixture Generation Matters](#why-ai-assisted-seed-and-fixture-generation-matters)
+- [AI Tools for Generating dbt Seeds](#ai-tools-for-generating-dbt-seeds)
+- [Creating Fixtures for Model Testing](#creating-fixtures-for-model-testing)
+- [Practical Workflow for AI-Assisted Test Data](#practical-workflow-for-ai-assisted-test-data)
+- [Example: Testing a Revenue Aggregation Model](#example-testing-a-revenue-aggregation-model)
+- [Limitations and Best Practices](#limitations-and-best-practices)
+
 ## Why AI-Assisted Seed and Fixture Generation Matters
 
 dbt seeds are static CSV files loaded into your warehouse, while fixtures are typically YAML-defined test datasets used within dbt packages or custom tests. Both require careful construction to cover edge cases, null handling, and boundary conditions in your transformations.

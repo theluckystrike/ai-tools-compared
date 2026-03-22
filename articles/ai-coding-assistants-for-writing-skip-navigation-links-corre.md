@@ -24,6 +24,24 @@ Skip navigation links are a fundamental accessibility feature that allows keyboa
 - **Many developers get these details wrong**: resulting in skip links that either remain hidden to all users or fail to function as intended.
 - **The assistant explains its reasoning**: noting that the link must be the first focusable element and should use a semantic target.
 
+## Table of Contents
+
+- [What Makes Skip Navigation Links Work Correctly](#what-makes-skip-navigation-links-work-correctly)
+- [Claude Code](#claude-code)
+- [GitHub Copilot](#github-copilot)
+- [Cursor](#cursor)
+- [Amazon CodeWhisperer](#amazon-codewhisperer)
+- [Zed AI](#zed-ai)
+- [Practical Recommendations](#practical-recommendations)
+- [Multiple Skip Links for Complex Page Structures](#multiple-skip-links-for-complex-page-structures)
+- [Testing Skip Links with Real Assistive Technology](#testing-skip-links-with-real-assistive-technology)
+- [Tool Comparison: Which AI Assistant Handles Skip Links Best](#tool-comparison-which-ai-assistant-handles-skip-links-best)
+- [Avoiding Common Mistakes in AI-Generated Skip Links](#avoiding-common-mistakes-in-ai-generated-skip-links)
+- [Decision Framework: When to Use Which Tool](#decision-framework-when-to-use-which-tool)
+- [Testing Framework for AI-Generated Skip Links](#testing-framework-for-ai-generated-skip-links)
+- [Best Practices When Prompting AI for Skip Links](#best-practices-when-prompting-ai-for-skip-links)
+- [Related Articles on Accessibility and AI](#related-articles-on-accessibility-and-ai)
+
 ## What Makes Skip Navigation Links Work Correctly
 
 A properly implemented skip navigation link meets several criteria. The link must be the first focusable element in the DOM, it needs a valid href pointing to the main content area, and it should be visible at least when focused. Many developers get these details wrong, resulting in skip links that either remain hidden to all users or fail to function as intended.

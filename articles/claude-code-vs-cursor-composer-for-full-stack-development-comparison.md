@@ -49,6 +49,20 @@ Files to create/modify:
 - types/user.ts (modify)
 3.
 
+## Table of Contents
+
+- [Architecture & Workflow Differences](#architecture-workflow-differences)
+- [Feature Comparison Table](#feature-comparison-table)
+- [Context Handling: The Core Difference](#context-handling-the-core-difference)
+- [Multi-File Editing: Visual vs Terminal](#multi-file-editing-visual-vs-terminal)
+- [Pricing & Cost Analysis](#pricing-cost-analysis)
+- [Strengths & Weaknesses](#strengths-weaknesses)
+- [Practical Workflow Examples](#practical-workflow-examples)
+- [When to Choose Each](#when-to-choose-each)
+- [Setup: Getting Started](#setup-getting-started)
+- [Real-World Cost Comparison](#real-world-cost-comparison)
+- [Integration with Existing Tools](#integration-with-existing-tools)
+
 ## Architecture & Workflow Differences
 
 ### Claude Code: CLI-First, Context-Rich
@@ -462,11 +476,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [How to Transfer Cursor Composer Prompt Library](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code-commands/)
+- [Claude Code vs Cursor for Large Codebase Refactoring](/ai-tools-compared/claude-code-vs-cursor-for-large-codebase-refactoring/)
 - [How to Transfer Your Cursor Composer Prompt Library](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code/)
-- [How to Chain Multiple AI Tools Together for Full Stack Devel](/ai-tools-compared/how-to-chain-multiple-ai-tools-together-for-full-stack-devel/)
+- [How to Switch from Cursor to Claude Code Without Losing](/ai-tools-compared/how-to-switch-from-cursor-to-claude-code-without-losing-settings/)
 - [Claude Code vs Cursor for Backend Development](/ai-tools-compared/claude-code-vs-cursor-for-backend-development/)
-- [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
-
+- [How to Transfer Cursor Composer Prompt Library](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code-commands/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```

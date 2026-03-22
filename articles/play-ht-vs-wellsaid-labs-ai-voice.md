@@ -41,6 +41,20 @@ The choice between these services affects more than audio quality. It shapes you
 - **Their voices are designed**: for enterprise use cases, prioritizing clarity over expressiveness.
 - **Which API is easier**: to get started with? PlayHT has a free tier and extensive SDKs, making it faster to prototype.
 
+## Table of Contents
+
+- [API Architecture and Authentication](#api-architecture-and-authentication)
+- [Voice Quality and Selection](#voice-quality-and-selection)
+- [Latency and Performance](#latency-and-performance)
+- [Code Implementation Patterns](#code-implementation-patterns)
+- [Pricing Comparison](#pricing-comparison)
+- [Feature Comparison at a Glance](#feature-comparison-at-a-glance)
+- [Use Case Recommendations](#use-case-recommendations)
+- [Integrating with a React Frontend](#integrating-with-a-react-frontend)
+- [Handling Long-Form Content](#handling-long-form-content)
+- [Error Handling Patterns](#error-handling-patterns)
+- [Caching Strategy for Cost Optimization](#caching-strategy-for-cost-optimization)
+
 ## API Architecture and Authentication
 
 Both services offer REST-based APIs, but their authentication approaches differ slightly.

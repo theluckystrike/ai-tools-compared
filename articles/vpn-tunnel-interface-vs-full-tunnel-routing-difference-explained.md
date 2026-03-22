@@ -39,6 +39,23 @@ Understanding the difference between VPN tunnel interfaces and full tunnel routi
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
+## Table of Contents
+
+- [What Is a VPN Tunnel Interface?](#what-is-a-vpn-tunnel-interface)
+- [Understanding Full Tunnel Routing](#understanding-full-tunnel-routing)
+- [Key Differences Between Tunnel Interface and Full Tunnel Routing](#key-differences-between-tunnel-interface-and-full-tunnel-routing)
+- [When to Use Full Tunnel Routing](#when-to-use-full-tunnel-routing)
+- [When Split Tunneling Makes Sense](#when-split-tunneling-makes-sense)
+- [Performance Considerations](#performance-considerations)
+- [Security Implications](#security-implications)
+- [Configuring Your Choice](#configuring-your-choice)
+- [Advanced Configuration Examples](#advanced-configuration-examples)
+- [Measuring the Performance Impact](#measuring-the-performance-impact)
+- [Real-World Use Cases and Configurations](#real-world-use-cases-and-configurations)
+- [DNS Leak Risks and Solutions](#dns-leak-risks-and-solutions)
+- [Practical Decision Matrix](#practical-decision-matrix)
+- [Making the Right Choice for Your Needs](#making-the-right-choice-for-your-needs)
+
 ## What Is a VPN Tunnel Interface?
 
 A VPN tunnel interface is a virtual network interface that your computer or router creates when connecting to a VPN server. This interface acts as a dedicated pathway for encrypted data to travel between your device and the VPN endpoint. When you establish a VPN connection, your operating system creates this virtual adapter that handles all the encryption, decryption, and routing logic.
@@ -307,8 +324,7 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 - [Configuring Cursor AI to Work with Corporate VPN and Proxy](/ai-tools-compared/configuring-cursor-ai-to-work-with-corporate-vpn-and-proxy-a/)
 - [How Well Do AI Tools Generate Correct Go Interface Implement](/ai-tools-compared/how-well-do-ai-tools-generate-correct-go-interface-implement/)
-- [Claude Code vs Cursor Composer](/ai-tools-compared/claude-code-vs-cursor-composer-for-full-stack-development-comparison/)
-- [Claude Max vs Claude Pro Actual Difference](/ai-tools-compared/claude-max-vs-claude-pro-actual-difference-in-daily-message-limits/)
-- [Claude Sonnet vs Opus API Pricing Difference Worth It](/ai-tools-compared/claude-sonnet-vs-opus-api-pricing-difference-worth-it-2026/)
-
+- [Enterprise AI Coding Tool Network Security Requirements](/ai-tools-compared/enterprise-ai-coding-tool-network-security-requirements-and-/)
+- [AI Code Generation Quality for Java Spring Security](/ai-tools-compared/ai-code-generation-quality-for-java-spring-security-configur/)
+- [AI Tools for Automated Security Scanning Compared](/ai-tools-compared/ai-tools-for-automated-security-scanning-compared/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

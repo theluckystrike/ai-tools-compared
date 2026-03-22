@@ -40,6 +40,23 @@ The difference between a prompt that produces working code and one that produces
 - **What data structure best**: represents this problem and why 2.
 - **Without "do not use regex for splitting**:" every model defaults to `line.split(",")` which breaks on `"Smith, John",30,NYC`.
 
+## Table of Contents
+
+- [Pattern 1: Role + Stack + Constraint Priming](#pattern-1-role-stack-constraint-priming)
+- [Pattern 2: Show the Interface, Ask for the Implementation](#pattern-2-show-the-interface-ask-for-the-implementation)
+- [Pattern 3: Provide the Failing Test](#pattern-3-provide-the-failing-test)
+- [Pattern 4: Chain-of-Thought for Algorithmic Code](#pattern-4-chain-of-thought-for-algorithmic-code)
+- [Pattern 5: Negative Constraints](#pattern-5-negative-constraints)
+- [Pattern 6: Incremental Build Pattern](#pattern-6-incremental-build-pattern)
+- [Pattern 7: Self-Review Loop](#pattern-7-self-review-loop)
+- [Combining Patterns](#combining-patterns)
+- [Testing Prompt Quality](#testing-prompt-quality)
+- [Real Workflow: Building an Event Router](#real-workflow-building-an-event-router)
+- [Effectiveness by Language](#effectiveness-by-language)
+- [Measuring Pattern Impact](#measuring-pattern-impact)
+- [Common Mistakes to Avoid](#common-mistakes-to-avoid)
+- [CLI Tool: Prompt Quality Linter](#cli-tool-prompt-quality-linter)
+
 ## Pattern 1: Role + Stack + Constraint Priming
 
 Most developers write: "Write a function that caches API responses."

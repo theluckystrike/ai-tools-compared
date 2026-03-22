@@ -39,6 +39,13 @@ Writing tests for Django REST Framework serializers can be time-consuming. AI to
 - **The more specific your prompt**: the more useful the generated tests.
 - **- Email provider edge cases**: Some real email addresses contain `+` characters (`user+tag@example.com`).
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Best Practices for AI-Generated Tests](#best-practices-for-ai-generated-tests)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

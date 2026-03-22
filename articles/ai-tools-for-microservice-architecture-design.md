@@ -26,6 +26,17 @@ Microservice architecture decisions have long-term consequences that are hard to
 - **Mitigation**: Cache user context in JWT tokens; Identity Service only called on auth.
 - **Use GPT-4o for OpenAPI**: spec generation (slightly faster, equally accurate) 3.
 
+## Table of Contents
+
+- [Stage 1: Domain Decomposition](#stage-1-domain-decomposition)
+- [Suggested Service Boundaries](#suggested-service-boundaries)
+- [Stage 2: API Contract Generation](#stage-2-api-contract-generation)
+- [Stage 3: Event Schema Design](#stage-3-event-schema-design)
+- [Stage 4: Identifying Coupling Problems](#stage-4-identifying-coupling-problems)
+- [Stage 5: Service Mesh Configuration](#stage-5-service-mesh-configuration)
+- [Recommended AI Workflow](#recommended-ai-workflow)
+- [Related Reading](#related-reading)
+
 ## Stage 1: Domain Decomposition
 
 The hardest part of microservices is deciding where to draw boundaries. AI tools can help by analyzing your domain model and suggesting decompositions based on bounded contexts.

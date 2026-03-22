@@ -40,6 +40,15 @@ Mobile development has unique AI challenges: platform-specific APIs change frequ
 - **Do these tools work**: offline? Most AI-powered tools require an internet connection since they run models on remote servers.
 - **How quickly do AI**: tool recommendations go out of date? AI tools evolve rapidly, with major updates every few months.
 
+## Table of Contents
+
+- [iOS Development with AI](#ios-development-with-ai)
+- [Android Development with AI](#android-development-with-ai)
+- [Cross-Platform: React Native](#cross-platform-react-native)
+- [Flutter with AI](#flutter-with-ai)
+- [Tool Recommendation by Platform](#tool-recommendation-by-platform)
+- [Related Reading](#related-reading)
+
 ## iOS Development with AI
 
 ### SwiftUI Component Generation
@@ -342,6 +351,14 @@ class SettingsScreen extends StatelessWidget {
 - [Which AI Generates Better Swift UI Views from Design Specs](/ai-tools-compared/which-ai-generates-better-swift-ui-views-from-design-specs-2/)
 - [Best AI Tools for Frontend Component Generation](/ai-tools-compared/best-ai-tools-for-frontend-component-generation/)
 - [AI Coding Assistant Comparison for TypeScript Svelte Components](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-svelte-component/)
+
+## Related Articles
+
+- [Best AI Tools for Go CLI Tool Development with Cobra Viper](/ai-tools-compared/best-ai-tools-for-go-cli-tool-development-with-cobra-viper-2/)
+- [Best AI Coding Assistant for React Development](/ai-tools-compared/best-ai-coding-assistant-for-react-development/)
+- [Best AI Coding Tools for Go API Development with Gin](/ai-tools-compared/best-ai-coding-tools-for-go-api-development-with-gin-and-ech/)
+- [AI Tools for Generating Mobile App Deep Linking](/ai-tools-compared/ai-tools-for-generating-mobile-app-deep-linking-configuratio/)
+- [Best AI Tools for Go Kubernetes Operator Development](/ai-tools-compared/best-ai-tools-for-go-kubernetes-operator-development-with-kubebuilder-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -234,6 +234,15 @@ The final decision comes down to your specific use case. If you want simplicity 
 
 ## Detailed Token Cost Examples
 
+## Table of Contents
+
+- [Detailed Token Cost Examples](#detailed-token-cost-examples)
+- [Advanced Caching Strategy for API Users](#advanced-caching-strategy-for-api-users)
+- [Batch Processing for Cost-Effective Scale](#batch-processing-for-cost-effective-scale)
+- [Cost Comparison: Real-World Scenarios](#cost-comparison-real-world-scenarios)
+- [Token Estimation Tools and Commands](#token-estimation-tools-and-commands)
+- [Migration Path: From Subscription to API or Vice Versa](#migration-path-from-subscription-to-api-or-vice-versa)
+
 Understanding token usage is crucial for API cost prediction. Here's how tokens map to real queries:
 
 ```python
@@ -551,9 +560,8 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 ## Related Articles
 
 - [Claude API Pay Per Token vs Pro Subscription Which Cheaper](/ai-tools-compared/claude-api-pay-per-token-vs-pro-subscription-which-cheaper/)
-- [Gemini Flash vs Pro API Pricing: When to Use Which Model](/ai-tools-compared/gemini-flash-vs-pro-api-pricing-when-to-use-which-model/)
-- [ChatGPT vs Perplexity for Researching Competitor Pricing Str](/ai-tools-compared/chatgpt-vs-perplexity-for-researching-competitor-pricing-str/)
-- [Perplexity Pro File Upload Limits and Storage Costs Explaine](/ai-tools-compared/perplexity-pro-file-upload-limits-and-storage-costs-explaine/)
 - [Perplexity Pro Search Not Working Fix (2026)](/ai-tools-compared/perplexity-pro-search-not-working-fix-2026/)
-
+- [Claude API vs OpenAI API Pricing Breakdown 2026](/ai-tools-compared/claude-api-vs-openai-api-pricing-breakdown-2026/)
+- [Gemini Flash vs Pro API Pricing: When to Use Which](/ai-tools-compared/gemini-flash-vs-pro-api-pricing-when-to-use-which-model/)
+- [Switching from ChatGPT Search to Perplexity Pro: Explained](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

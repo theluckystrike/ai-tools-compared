@@ -42,6 +42,16 @@ tags: [ai-tools-compared, best-of, artificial-intelligence]
 - **VetRocket saves approximately $1/patient**: in documentation time, requiring 2,388 annual visits (6-7 per day for 350-day practice) to break even.
 - **At 50 patient visits/day**: 5 minutes documentation per patient = 250 minutes of transcription = $187.50 daily = $46,875 annually.
 
+## Table of Contents
+
+- [What Veterinary Practices Need in Clinical Record Tools](#what-veterinary-practices-need-in-clinical-record-tools)
+- [Leading AI Solutions for Veterinary Clinical Records](#leading-ai-solutions-for-veterinary-clinical-records)
+- [Selection Criteria for Your Practice](#selection-criteria-for-your-practice)
+- [Implementation Best Practices](#implementation-best-practices)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+- [Generating SOAP Notes with Claude API](#generating-soap-notes-with-claude-api)
+- [Related Reading](#related-reading)
+
 ## What Veterinary Practices Need in Clinical Record Tools
 
 Veterinary clinics face unique documentation challenges that generic medical record systems fail to address. A practice seeing 40 to 60 patients daily needs tools that handle species-specific terminology, drug dosing calculations, and regulatory requirements across multiple jurisdictions.

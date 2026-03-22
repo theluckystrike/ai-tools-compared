@@ -40,6 +40,20 @@ Claude excels at translating cryptic Swift compiler errors into clear explanatio
 - **Errors in Run Script phases**: missing build settings, or incorrect input/output file configurations can cause builds to fail in ways that aren't immediately obvious from the error messages.
 - **When you paste multiple**: related error messages or provide context about your project structure, these assistants can identify patterns across your errors that suggest a common root cause.
 
+## Table of Contents
+
+- [What Makes an AI Assistant Effective for Swift Compiler Errors](#what-makes-an-ai-assistant-effective-for-swift-compiler-errors)
+- [Practical Examples of AI Debugging Swift Errors](#practical-examples-of-ai-debugging-swift-errors)
+- [Handling Build Phase Errors](#handling-build-phase-errors)
+- [Comparing AI Assistants for Swift Development](#comparing-ai-assistants-for-swift-development)
+- [Tips for Getting Better Results](#tips-for-getting-better-results)
+- [Error Classification Framework](#error-classification-framework)
+- [Complex Debugging Workflow Example](#complex-debugging-workflow-example)
+- [Performance Metrics: Tool Comparison on Real Errors](#performance-metrics-tool-comparison-on-real-errors)
+- [Integration Setup Guide](#integration-setup-guide)
+- [Troubleshooting AI-Assisted Debugging](#troubleshooting-ai-assisted-debugging)
+- [Best Practices for Fastest Error Resolution](#best-practices-for-fastest-error-resolution)
+
 ## What Makes an AI Assistant Effective for Swift Compiler Errors
 
 An effective AI assistant for debugging Swift compiler errors needs to understand several key areas. First, it should interpret Swift compiler output accurately, translating technical error messages into actionable explanations. Second, it needs to work well with Xcode's build system, including build phases and scheme configurations. Third, it should recognize common Swift patterns and anti-patterns that trigger compiler errors.
@@ -302,11 +316,10 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 
 ## Related Articles
 
-- [Best AI Assistant for Debugging Swift Compiler Errors](/ai-tools-compared/best-ai-assistant-for-debugging-swift-compiler-errors-in-xcode-build-phases-2026/)
-- [Best AI Tools for Debugging React Hydration Mismatch](/ai-tools-compared/best-ai-for-debugging-react-hydration-mismatch-errors-in-nextjs/)
-- [Best AI Assistant for Debugging CSS Custom Property](/ai-tools-compared/best-ai-assistant-for-debugging-css-custom-property-inheritance-failures-in-shadow-dom/)
-- [Best AI Assistant for Debugging CSS Grid Layout Overflow Iss](/ai-tools-compared/best-ai-assistant-for-debugging-css-grid-layout-overflow-iss/)
-- [Best AI Assistant for Debugging CSS Z Index Stacking Context](/ai-tools-compared/best-ai-assistant-for-debugging-css-z-index-stacking-context/)
-
+- [Best AI Assistant for Debugging Swift Compiler Errors: 2026](/ai-tools-compared/best-ai-assistant-for-debugging-swift-compiler-errors-in-xcode-build-phases-2026/)
+- [AI Debugging Assistants Compared 2026](/ai-tools-compared/ai-debugging-assistants-compared-2026/)
+- [How to Use AI to Resolve Cmake Configuration Errors: Cross](/ai-tools-compared/how-to-use-ai-to-resolve-cmake-configuration-errors-for-cross-compilation/)
+- [AI Tools for Interpreting Python Traceback Errors](/ai-tools-compared/ai-tools-for-interpreting-python-traceback-errors-in-django-middleware-chains/)
+- [Claude vs Copilot for Swift Development 2026](/ai-tools-compared/claude-vs-copilot-for-swift-development-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

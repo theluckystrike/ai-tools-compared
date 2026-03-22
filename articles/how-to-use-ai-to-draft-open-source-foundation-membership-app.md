@@ -43,6 +43,14 @@ for organizations running large-scale deployments.
 - **My presentations at ApacheCon**: have shared operational best practices with the broader Apache community.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Why Use AI for Membership Applications](#why-use-ai-for-membership-applications)
+- [Prerequisites](#prerequisites)
+- [Core Contribution Summary](#core-contribution-summary)
+- [Foundation-Specific Requirements](#foundation-specific-requirements)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Use AI for Membership Applications
 
 Membership applications for open source foundations typically require several components: a personal statement, contribution history, technical background, community involvement documentation, and future commitment plans. Each section demands careful articulation of your experience and goals.

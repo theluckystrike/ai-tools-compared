@@ -41,6 +41,15 @@ To fix Cursor Composer stuck in a loop, clear the Cursor cache (Cmd+Shift+P > "C
 The most productive approach treats Composer issues as software debugging problems.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [When to Seek Further Help](#when-to-seek-further-help)
+- [Advanced Debugging Techniques](#advanced-debugging-techniques)
+- [Systematic Troubleshooting Checklist](#systematic-troubleshooting-checklist)
+- [When to Seek Professional Help](#when-to-seek-professional-help)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
@@ -354,10 +363,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Claude Code Tool Use Loop Not Terminating Fix](/ai-tools-compared/claude-code-tool-use-loop-not-terminating-fix/)
+- [Cursor Extensions Conflicting with AI](/ai-tools-compared/cursor-extensions-conflicting-with-ai-fix/)
+- [Cursor Keeps Crashing Fix 2026: Complete Troubleshooting](/ai-tools-compared/cursor-keeps-crashing-fix-2026/)
+- [Cursor AI Not Autocompleting TypeScript](/ai-tools-compared/cursor-ai-not-autocompleting-typescript-fix/)
 - [Claude Code vs Cursor Composer](/ai-tools-compared/claude-code-vs-cursor-composer-for-full-stack-development-comparison/)
-- [Copilot Edits Panel vs Cursor Composer Workflow Comparison](/ai-tools-compared/copilot-edits-panel-vs-cursor-composer-workflow-comparison-f/)
-- [Copilot Workspace vs Cursor Composer Multi File Editing Comp](/ai-tools-compared/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)
-- [How to Transfer Cursor Composer Prompt Library](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code-commands/)
-
+- [Cursor Free Tier Limitations: What Stops Working After Trial](/ai-tools-compared/cursor-free-tier-limitations-what-stops-working-after-trial/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

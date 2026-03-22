@@ -41,6 +41,19 @@ intent-checked: true---
 - **A week-long trial with**: actual work gives better signal than feature comparison charts.
 - **How quickly do AI**: tool recommendations go out of date? AI tools evolve rapidly, with major updates every few months.
 
+## Table of Contents
+
+- [Overview](#overview)
+- [The Testing Problem](#the-testing-problem)
+- [AI Tools Ranked for Playwright](#ai-tools-ranked-for-playwright)
+- [Feature Comparison Table](#feature-comparison-table)
+- [Workflow: Best Practices](#workflow-best-practices)
+- [Critical Selector Strategies](#critical-selector-strategies)
+- [CI/CD Integration Patterns](#cicd-integration-patterns)
+- [Recommendation Matrix](#recommendation-matrix)
+- [Practical Workflow: Hybrid Approach](#practical-workflow-hybrid-approach)
+- [Quality Metrics](#quality-metrics)
+
 ## Overview
 
 Writing Playwright tests is repetitive: selectors, assertions, waits, page objects. AI coding assistants now handle this workload effectively. This guide compares how Claude, GitHub Copilot, Cursor, and Codeium generate production-ready Playwright tests for web applications.
@@ -468,8 +481,9 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [AI Tools for Writing Playwright Tests That Verify Accessibil](/ai-tools-for-writing-playwright-tests-that-verify-accessibil/)
-- [AI Tools for Writing Playwright Tests That Verify Responsive](/ai-tools-for-writing-playwright-tests-that-verify-responsive/)
-- [AI Tools for Writing Playwright Tests That Verify Toast](/ai-tools-for-writing-playwright-tests-that-verify-toast-noti/)
-
+- [Best AI Tools for Writing Playwright E2E Tests 2026](/ai-tools-compared/best-ai-tools-for-writing-playwright-e2e-tests-2026/)
+- [Which AI Is Better for Writing Playwright End-to-End Tests](/ai-tools-compared/which-ai-is-better-for-writing-playwright-end-to-end-tests-2/)
+- [Best AI for Writing Playwright Tests That Handle Dynamic](/ai-tools-compared/best-ai-for-writing-playwright-tests-that-handle-dynamic-loa/)
+- [AI Tools for Writing Playwright Tests That Verify Accessibil](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-accessibil/)
+- [AI Tools for Writing Playwright Tests That Verify Responsive](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-responsive/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

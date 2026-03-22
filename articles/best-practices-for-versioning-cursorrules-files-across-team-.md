@@ -40,6 +40,17 @@ This guide covers practical strategies for managing CursorRules files in Git, fr
 - **Can we use .cursorrules**: to enforce security rules? Yes, and it is worth doing.
 - **Rules like "never suggest**: storing secrets in environment variable comments" or "always recommend parameterized queries for database calls" add a lightweight AI-level guardrail.
 
+## Table of Contents
+
+- [Understanding.cursorrules File Structure](#understandingcursorrules-file-structure)
+- [Why Version Control for .cursorrules Matters](#why-version-control-for-cursorrules-matters)
+- [Recommended Git Workflow for CursorRules](#recommended-git-workflow-for-cursorrules)
+- [Essential.gitignore Configuration](#essentialgitignore-configuration)
+- [Handling Team-Specific Variations](#handling-team-specific-variations)
+- [CursorRules Setup](#cursorrules-setup)
+- [Automating Rule Synchronization](#automating-rule-synchronization)
+- [Best Practices Summary](#best-practices-summary)
+
 ## Understanding.cursorrules File Structure
 
 Before implementing version control, understand what you're managing. A typical `.cursorrules` file contains instructions that shape Cursor's responses:
@@ -311,11 +322,10 @@ Yes, and it is worth doing. Rules like "never suggest storing secrets in environ
 
 ## Related Articles
 
-- [Writing CLAUDE MD Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
-- [How to Manage AI Coding Tool Rate Limits Across Team of](/ai-tools-compared/how-to-manage-ai-coding-tool-rate-limits-across-team-of-developers/)
-- [Create CursorRules That Enforce Your Team's Git Commit](/ai-tools-compared/how-to-create-cursorrules-that-enforce-your-teams-git-commit/)
+- [Create CursorRules That Enforce Your Team's Git](/ai-tools-compared/how-to-create-cursorrules-that-enforce-your-teams-git-commit/)
+- [Best Practices for Sharing AI Tool Configuration Files](/ai-tools-compared/best-practices-for-sharing-ai-tool-configuration-files-acros/)
+- [Best Practices for AI Tool Customization Files When Onboardi](/ai-tools-compared/best-practices-for-ai-tool-customization-files-when-onboardi/)
+- [Best Way to Structure CursorRules for Microservices Project](/ai-tools-compared/best-way-to-structure-cursorrules-for-microservices-project-/)
 - [Create CursorRules That Teach Cursor Your Team's State](/ai-tools-compared/how-to-create-cursorrules-that-teach-cursor-your-teams-state/)
-- [Best Practices for Writing .cursorrules File That Improves](/ai-tools-compared/best-practices-for-writing-cursorrules-file-that-improves-co/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

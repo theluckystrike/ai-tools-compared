@@ -41,6 +41,19 @@ Most extensions support exclusion rules based on URL patterns.
 - **Some extensions use simple**: keyword matching, while others employ more sophisticated content analysis.
 - **Tab State Awareness Developer**: workflows involve switching between focused work and research.
 
+## Table of Contents
+
+- [How AI Tab Organizers Differ from Traditional Tools](#how-ai-tab-organizers-differ-from-traditional-tools)
+- [Key Features for Developers](#key-features-for-developers)
+- [Popular AI Tab Organizer Extensions](#popular-ai-tab-organizer-extensions)
+- [Extension Comparison Table](#extension-comparison-table)
+- [Implementation Patterns](#implementation-patterns)
+- [Integrating with Development Workflows](#integrating-with-development-workflows)
+- [Limitations and Considerations](#limitations-and-considerations)
+- [Choosing the Right Extension](#choosing-the-right-extension)
+- [Future Developments](#future-developments)
+- [Related Reading](#related-reading)
+
 ## How AI Tab Organizers Differ from Traditional Tools
 
 Traditional tab management relies on manual grouping or simple heuristics like domain-based sorting. AI tab organizers analyze page content, user behavior patterns, and contextual signals to make intelligent decisions.

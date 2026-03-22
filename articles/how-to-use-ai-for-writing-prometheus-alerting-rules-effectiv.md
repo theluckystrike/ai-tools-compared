@@ -44,6 +44,16 @@ You can adapt this template by changing the threshold, duration, and labels to m
 common false positive causes, and resolution workflows.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Why Use AI for Prometheus Alerting Rules](#why-use-ai-for-prometheus-alerting-rules)
+- [Prerequisites](#prerequisites)
+- [Practical Examples for Common Use Cases](#practical-examples-for-common-use-cases)
+- [Best Practices for AI-Assisted Prometheus Rule Writing](#best-practices-for-ai-assisted-prometheus-rule-writing)
+- [Advanced Use Cases: AI for Alert Optimization](#advanced-use-cases-ai-for-alert-optimization)
+- [Recording Rules and Performance Optimization](#recording-rules-and-performance-optimization)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Use AI for Prometheus Alerting Rules
 
 Prometheus alerting rules require precise syntax, understanding of PromQL, and knowledge of your specific metrics. AI models trained on vast amounts of monitoring code can accelerate rule creation while helping you avoid common pitfalls. The key lies in providing the right context and understanding how to interpret AI suggestions.

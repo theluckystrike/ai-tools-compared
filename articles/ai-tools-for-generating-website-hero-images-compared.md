@@ -41,6 +41,25 @@ Choose **Stable Diffusion** for the best cost-to-quality ratio when generating h
 - **The tool must produce**: images with sufficient resolution for full-width display, typically requiring outputs of at least 1920x1080 pixels.
 - **DALL-E 3 is the**: best choice when rapid prototyping matters more than cost optimization.
 
+## Table of Contents
+
+- [What Developers Need from Hero Image Generators](#what-developers-need-from-hero-image-generators)
+- [Comparing Leading AI Image Generation Tools](#comparing-leading-ai-image-generation-tools)
+- [Practical Recommendations](#practical-recommendations)
+- [Automating Hero Image Workflows](#automating-hero-image-workflows)
+- [Pricing Breakdown: Cost per Image](#pricing-breakdown-cost-per-image)
+- [Quality Metrics and Testing](#quality-metrics-and-testing)
+- [Bulk Generation Workflow](#bulk-generation-workflow)
+- [Prompt Engineering for Hero Images](#prompt-engineering-for-hero-images)
+- [DALL-E 3 Effective Prompts:](#dall-e-3-effective-prompts)
+- [Stable Diffusion Effective Prompts:](#stable-diffusion-effective-prompts)
+- [Midjourney Effective Prompts:](#midjourney-effective-prompts)
+- [Adobe Firefly Effective Prompts:](#adobe-firefly-effective-prompts)
+- [A/B Testing Hero Images](#ab-testing-hero-images)
+- [Integration with Modern Web Frameworks](#integration-with-modern-web-frameworks)
+- [Performance Optimization](#performance-optimization)
+- [Choosing Your Generation Approach](#choosing-your-generation-approach)
+
 ## What Developers Need from Hero Image Generators
 
 When selecting an AI tool for generating hero images, developers prioritize several key factors. The tool must produce images with sufficient resolution for full-width display, typically requiring outputs of at least 1920x1080 pixels. Consistency in style matters for maintaining brand coherence across a website. API access enables programmatic generation, which is crucial for dynamic content or A/B testing scenarios. Finally, the ability to generate transparent backgrounds or easily removable backgrounds provides flexibility for overlay text and other design elements.
@@ -471,10 +490,9 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [How to Export Dall E Generated Images at Full Resolution](/ai-tools-compared/how-to-export-dall-e-generated-images-at-full-resolution-before-leaving/)
-- [How to Export Midjourney Images Before Downgrading Plan](/ai-tools-compared/how-to-export-midjourney-images-before-downgrading-plan-2026/)
-- [How to Use AI to Optimize Docker Images for Smaller Size](/ai-tools-compared/how-to-use-ai-to-optimize-docker-images-for-smaller-size/)
+- [AI Tools for Generating UI Mockups Compared in 2026](/ai-tools-compared/ai-tools-for-generating-ui-mockups-compared-2026/)
+- [AI Tools for Generating Coloring Book Pages Compared](/ai-tools-compared/ai-tools-for-generating-coloring-book-pages-compared/)
+- [DALL-E 3 vs Gemini Imagen: Quality Compared 2026](/ai-tools-compared/dall-e-3-vs-gemini-imagen-quality-compared-2026/)
+- [Best AI Tools for Generating Red Team Engagement Plans](/ai-tools-compared/best-ai-tools-for-generating-red-team-engagement-plans-from-/)
 - [Ideogram vs Midjourney for Text in Images Compared](/ai-tools-compared/ideogram-vs-midjourney-for-text-in-images-compared/)
-- [AI Tools for Generating API Client SDKs 2026](/ai-tools-compared/ai-tools-for-generating-api-client-sdks-2026/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -41,6 +41,15 @@ Video thumbnails serve as the first visual impression for your content, directly
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Understanding Thumbnail Generation Approaches](#understanding-thumbnail-generation-approaches)
+- [Tool Comparison: Which Approach Fits Your Needs](#tool-comparison-which-approach-fits-your-needs)
+- [Open-Source Solutions for Developers](#open-source-solutions-for-developers)
+- [Cloud APIs for Production Systems](#cloud-apis-for-production-systems)
+- [Practical Considerations](#practical-considerations)
+- [Choosing Your Approach](#choosing-your-approach)
+
 ## Understanding Thumbnail Generation Approaches
 
 AI thumbnail generation typically falls into three categories: image generation from text prompts, image editing and enhancement, and intelligent frame extraction from video content. Each approach serves different use cases, and many production systems combine multiple techniques.

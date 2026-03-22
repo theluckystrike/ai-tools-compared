@@ -52,6 +52,20 @@ Writing idiomatic Rust error handling requires understanding the `Result` type, 
 - **Copilot typically uses the**: eager `context("string literal")` form, which allocates on every call even when the operation succeeds.
 - **The terminal-based workflow suits**: developers who prefer explaining requirements in natural language and reviewing generated code before acceptance.
 
+## Table of Contents
+
+- [Why Rust Error Handling Demands Specialized Tools](#why-rust-error-handling-demands-specialized-tools)
+- [Claude Code: Best for Complex Error Architectures](#claude-code-best-for-complex-error-architectures)
+- [Cursor: Best for IDE Integration and Refactoring](#cursor-best-for-ide-integration-and-refactoring)
+- [GitHub Copilot: Best for Pattern Recognition](#github-copilot-best-for-pattern-recognition)
+- [Aider: Best for Terminal Workflows with Version Control](#aider-best-for-terminal-workflows-with-version-control)
+- [Advanced Patterns: Where Tools Diverge](#advanced-patterns-where-tools-diverge)
+- [Recommendations by Use Case](#recommendations-by-use-case)
+- [Practical Tips for Better Results](#practical-tips-for-better-results)
+- [Advanced Error Composition Patterns](#advanced-error-composition-patterns)
+- [Error Handling in Library vs Application Code](#error-handling-in-library-vs-application-code)
+- [Testing Error Handling Code](#testing-error-handling-code)
+
 ## Why Rust Error Handling Demands Specialized Tools
 
 Rust's error handling differs fundamentally from most mainstream languages. Instead of exceptions, Rust uses the `Result<T, E>` enum for recoverable errors and `panic!` for unrecoverable ones. This approach provides compile-time guarantees but requires explicit error propagation using the `?` operator or `match` expressions.
@@ -372,11 +386,10 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Copilot vs Cursor for Writing Rust Error Handling with](/ai-tools-compared/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
-- [Writing Claude Md Files That Teach AI Your Project Specific](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/)
+- [Copilot vs Cursor for Writing Rust Error Handling](/ai-tools-compared/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
+- [Best AI Tools for Go Error Wrapping and Sentinel Error](/ai-tools-compared/best-ai-tools-for-go-error-wrapping-and-sentinel-error-patte/)
 - [Claude Code API Error Handling Standards](/ai-tools-compared/claude-code-api-error-handling-standards/)
-- [How to Optimize AI Coding Prompts for Generating Production](/ai-tools-compared/how-to-optimize-ai-coding-prompts-for-generating-production-ready-error-handling/)
-- [AI Tools for Interpreting Rust Compiler Borrow Checker Error](/ai-tools-compared/ai-tools-for-interpreting-rust-compiler-borrow-checker-error/)
-
+- [Best AI Coding Tools for Rust Developers 2026](/ai-tools-compared/ai-tools-for-rust-developers-2026/)
+- [Writing Claude Md Files That Teach AI Your Project Specific](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

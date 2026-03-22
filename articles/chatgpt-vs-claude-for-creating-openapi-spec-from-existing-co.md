@@ -41,6 +41,17 @@ This guide compares the strengths and weaknesses of each tool for this specific 
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **It better understands TypeScript**: interfaces and can map them to OpenAPI schemas.
 
+## Table of Contents
+
+- [Understanding the Task](#understanding-the-task)
+- [ChatGPT Approach](#chatgpt-approach)
+- [Claude Approach](#claude-approach)
+- [Side-by-Side Comparison](#side-by-side-comparison)
+- [TypeScript and Zod Schema Extraction](#typescript-and-zod-schema-extraction)
+- [Handling Authentication and Security Schemes](#handling-authentication-and-security-schemes)
+- [Validating Generated Specs](#validating-generated-specs)
+- [Practical Recommendations](#practical-recommendations)
+
 ## Understanding the Task
 
 When you have an existing API codebase—whether Express, FastAPI, Django, or another framework—creating an OpenAPI specification manually is time-consuming. The AI must analyze your route handlers, function signatures, and data models to generate accurate OpenAPI JSON or YAML.

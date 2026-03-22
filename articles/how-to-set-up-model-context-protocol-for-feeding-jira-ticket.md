@@ -46,6 +46,18 @@ If configured correctly, the AI will use the MCP server to fetch Jira data.
 - **This is faster and**: more consistent than writing messages manually, especially for bug fixes where the ticket already contains the root cause.
 - **Authentication errors**: Double-check that your email matches the account used to generate the API token.
 
+## Table of Contents
+
+- [Why Use MCP for Jira Integration](#why-use-mcp-for-jira-integration)
+- [Prerequisites](#prerequisites)
+- [Step 1: Install the Jira MCP Server](#step-1-install-the-jira-mcp-server)
+- [Step 2: Configure MCP for Your Jira Instance](#step-2-configure-mcp-for-your-jira-instance)
+- [Step 3: Verify the Connection](#step-3-verify-the-connection)
+- [Step 4: Use Jira Context in AI Conversations](#step-4-use-jira-context-in-ai-conversations)
+- [Step 5: Customize for Your Workflow](#step-5-customize-for-your-workflow)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Extending the Integration](#extending-the-integration)
+
 ## Why Use MCP for Jira Integration
 
 MCP defines a standardized way for AI applications to communicate with external services. Instead of hardcoding Jira API calls into your AI prompts or building custom integrations, MCP lets you define resources and tools that any compatible AI assistant can use.
@@ -339,11 +351,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
+- [How to Build Model Context Protocol Server That Provides](/ai-tools-compared/how-to-build-model-context-protocol-server-that-provides-deployment-environment-context/)
+- [How to Build Model Context Protocol Server That Provides Rea](/ai-tools-compared/how-to-build-model-context-protocol-server-that-provides-rea/)
+- [How to Set Up Model Context Protocol Server for Custom](/ai-tools-compared/how-to-set-up-model-context-protocol-server-for-custom-proje/)
 - [How to Set Up Model Context Protocol for Feeding Monitoring](/ai-tools-compared/how-to-set-up-model-context-protocol-for-feeding-monitoring-/)
-- [How to Set Up Model Context Protocol Server for Custom Proje](/ai-tools-compared/how-to-set-up-model-context-protocol-server-for-custom-proje/)
-- [How to Set Up Model Context Protocol Server for Internal Pac](/ai-tools-compared/how-to-set-up-model-context-protocol-server-for-internal-pac/)
 - [How to Set Up Model Context Protocol Server Providing Live](/ai-tools-compared/how-to-set-up-model-context-protocol-server-providing-live-d/)
-- [How to Set Up Model Context Protocol with Local Database](/ai-tools-compared/how-to-set-up-model-context-protocol-with-local-database-schema-information-2026/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

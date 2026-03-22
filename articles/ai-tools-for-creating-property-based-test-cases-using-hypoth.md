@@ -39,6 +39,16 @@ Claude and ChatGPT excel at generating property-based tests when you provide fun
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [What Makes Property-Based Testing Valuable](#what-makes-property-based-testing-valuable)
+- [Why Property-Based Tests Catch More Bugs](#why-property-based-tests-catch-more-bugs)
+- [AI Tools for Hypothesis (Python)](#ai-tools-for-hypothesis-python)
+- [AI Tools for Fast-Check (JavaScript/TypeScript)](#ai-tools-for-fast-check-javascripttypescript)
+- [Practical Workflow for AI-Assisted Property Testing](#practical-workflow-for-ai-assisted-property-testing)
+- [Comparing AI Tools for Property-Based Test Generation](#comparing-ai-tools-for-property-based-test-generation)
+- [Limitations and Best Practices](#limitations-and-best-practices)
+
 ## What Makes Property-Based Testing Valuable
 
 Traditional example-based testing requires you to anticipate specific inputs and expected outputs. Property-based testing flips this model: you define what should always be true, and the testing library generates hundreds or thousands of random inputs to verify those properties hold.
@@ -313,11 +323,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
+- [AI Tools for Creating Boundary Value Test](/ai-tools-compared/ai-tools-for-creating--boundary-value-test-case/)
+- [AI Tools for Creating Mutation Testing Configurations](/ai-tools-compared/ai-tools-for-creating-mutation-testing-configurations-to-find-weak-test-assertions/)
+- [AI Tools for Creating Test Data That Covers Timezone](/ai-tools-compared/ai-tools-for-creating-test-data-that-covers-timezone-dayligh/)
+- [AI Tools for Creating Test Data Generators That Respect](/ai-tools-compared/ai-tools-for-creating-test-data-generators-that-respect-busi/)
 - [Best AI for Creating Negative Test Cases](/ai-tools-compared/best-ai-for-creating--negative-test-cases-from-/)
-- [Best AI for QA Engineers Writing API Contract Testing Cases](/ai-tools-compared/best-ai-for-qa-engineers-writing-api-contract-test-cases-fro/)
-- [Best AI Tool for Generating Jest Test Cases from React](/ai-tools-compared/best-ai-tool-for-generating-jest-test-cases-from-react-compo/)
-- [How to Use AI to Write pytest Parametrize Test Cases for Edg](/ai-tools-compared/how-to-use-ai-to-write-pytest-parametrize-test-cases-for-edg/)
-- [How to Use AI to Write pytest Parametrize Test Cases](/ai-tools-compared/how-to-use-ai-to-write-pytest-parametrize-test-cases-for-edge-conditions/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

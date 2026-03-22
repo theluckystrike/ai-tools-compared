@@ -39,6 +39,21 @@ AI assistants debug CSS custom property inheritance failures in Shadow DOM by im
 - **AI tools sometimes recommend**: patterns that work in Chrome but fail elsewhere.
 - **Recommends using CSS-in-JS instead**: - Wrong.
 
+## Table of Contents
+
+- [Understanding Shadow DOM and Custom Property Inheritance](#understanding-shadow-dom-and-custom-property-inheritance)
+- [How AI Assistants Diagnose These Issues](#how-ai-assistants-diagnose-these-issues)
+- [Practical Debugging Workflow](#practical-debugging-workflow)
+- [Common Patterns AI Assistants Recognize](#common-patterns-ai-assistants-recognize)
+- [Example: Building a Themeable Card Component](#example-building-a-themeable-card-component)
+- [What to Look for in an AI Assistant](#what-to-look-for-in-an-ai-assistant)
+- [Debugging Workflow with AI Assistance](#debugging-workflow-with-ai-assistance)
+- [Testing Your Fixes](#testing-your-fixes)
+- [Browser Compatibility Considerations](#browser-compatibility-considerations)
+- [Advanced Pattern: Theming System](#advanced-pattern-theming-system)
+- [When AI Gets It Wrong](#when-ai-gets-it-wrong)
+- [Building Reusable Component Patterns](#building-reusable-component-patterns)
+
 ## Understanding Shadow DOM and Custom Property Inheritance
 
 Shadow DOM creates an encapsulation boundary that fundamentally affects how CSS custom properties are inherited. By default, CSS custom properties do NOT cross the shadow boundary unless you explicitly allow them. This behavior differs from regular DOM inheritance, where custom properties naturally cascade down through the element tree.
@@ -339,10 +354,9 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 
 ## Related Articles
 
-- [Best AI Assistant for Debugging CSS Grid Layout Overflow Iss](/ai-tools-compared/best-ai-assistant-for-debugging-css-grid-layout-overflow-iss/)
-- [Best AI Assistant for Debugging CSS Z Index Stacking Context](/ai-tools-compared/best-ai-assistant-for-debugging-css-z-index-stacking-context/)
-- [AI Tools for Debugging CSS Media Query Breakpoints Not Match](/ai-tools-compared/ai-tools-for-debugging-css-media-query-breakpoints-not-match/)
-- [Best AI for Debugging CSS Flexbox Alignment Issues Across](/ai-tools-compared/best-ai-for-debugging-css-flexbox-alignment-issues-across-di/)
-- [AI Coding Assistant Comparison for TypeScript Tailwind CSS](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-tailwind-css-c/)
-
+- [Best AI Assistant for Debugging CSS Z Index Stacking](/ai-tools-compared/best-ai-assistant-for-debugging-css-z-index-stacking-context/)
+- [Best AI Assistant for Debugging CSS Grid Layout Overflow](/ai-tools-compared/best-ai-assistant-for-debugging-css-grid-layout-overflow-iss/)
+- [Best AI for Debugging CSS Flexbox Alignment Issues](/ai-tools-compared/best-ai-for-debugging-css-flexbox-alignment-issues-across-di/)
+- [Best AI Tools for Generating CSS](/ai-tools-compared/best-ai-tools-for-css-from-designs/)
+- [Best AI for Fixing CSS Specificity Conflicts When Integratin](/ai-tools-compared/best-ai-for-fixing-css-specificity-conflicts-when-integratin/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

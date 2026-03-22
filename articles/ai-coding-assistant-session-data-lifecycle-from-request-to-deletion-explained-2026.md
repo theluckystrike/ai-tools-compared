@@ -39,6 +39,22 @@ Understanding how AI coding assistants handle your data throughout the entire se
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **This typically ranges from**: 30 days for free tiers to 90 days or longer for paid plans.
 
+## Table of Contents
+
+- [What Is Session Data in AI Coding Assistants](#what-is-session-data-in-ai-coding-assistants)
+- [Stage 1: Request Initialization](#stage-1-request-initialization)
+- [Stage 2: Data Transmission](#stage-2-data-transmission)
+- [Stage 3: Server-Side Processing](#stage-3-server-side-processing)
+- [Stage 4: Response Generation and Delivery](#stage-4-response-generation-and-delivery)
+- [Stage 5: Session Storage and Retention](#stage-5-session-storage-and-retention)
+- [Stage 6: Data Deletion](#stage-6-data-deletion)
+- [Practical Recommendations](#practical-recommendations)
+- [Data Retention Policies by Provider (2026)](#data-retention-policies-by-provider-2026)
+- [Implementing Data Minimization Strategies](#implementing-data-minimization-strategies)
+- [Regulatory Compliance Frameworks](#regulatory-compliance-frameworks)
+- [Organizational Implementation Patterns](#organizational-implementation-patterns)
+- [Advanced Privacy Architectures](#advanced-privacy-architectures)
+
 ## What Is Session Data in AI Coding Assistants
 
 When you interact with an AI coding assistant like GitHub Copilot, Claude Code, or Cursor, your session encompasses all the data exchanged during a coding session. This includes:
@@ -332,9 +348,8 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [AI Coding Assistant Data Sovereignty Requirements](/ai-tools-compared/ai-coding-assistant-data-sovereignty-requirements-for-companies-operating-in-eu-2026/)
-- [Best AI Assistant for Creating Test Data Factories with Real](/ai-tools-compared/best-ai-assistant-for-creating-test-data-factories-with-real/)
-- [Best AI Assistant for Generating SQL Recursive Queries](/ai-tools-compared/best-ai-assistant-for-generating-sql-recursive-queries-for-hierarchical-org-chart-data/)
-- [How to Export ChatGPT Shared Links Before Account Deletion](/ai-tools-compared/how-to-export-chatgpt-shared-links-before-account-deletion-2026/)
-- [Best AI Coding Tools for Python Data Science and pandas Work](/ai-tools-compared/best-ai-coding-tools-for-python-data-science-and-pandas-work/)
-
+- [AI Powered Data Cataloging Tools](/ai-tools-compared/ai-powered-data-cataloging-tools/)
+- [Best AI Coding Tools for Python Data Science and pandas](/ai-tools-compared/best-ai-coding-tools-for-python-data-science-and-pandas-work/)
+- [Enterprise Data Loss Prevention Rules for AI Coding Assistan](/ai-tools-compared/enterprise-data-loss-prevention-rules-for-ai-coding-assistan/)
+- [AI Tools for Data Mesh Architecture: A Practical Guide](/ai-tools-compared/ai-tools-for-data-mesh-architecture/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

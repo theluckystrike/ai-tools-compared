@@ -42,6 +42,16 @@ For developers building video processing pipelines and power users automating po
 - **Most tools handle common**: formats (ProRes, H.264, H.265), but specialized formats may require preprocessing.
 - **For quick integration and prototyping**: Color.io's API offers the fastest path to functional color grading without local GPU requirements.
 
+## Table of Contents
+
+- [Why AI Color Grading Matters for Developers](#why-ai-color-grading-matters-for-developers)
+- [Practical AI Color Grading Tools](#practical-ai-color-grading-tools)
+- [Key Considerations for Integration](#key-considerations-for-integration)
+- [Recommendations by Use Case](#recommendations-by-use-case)
+- [Deep Integration Examples for Production Pipelines](#deep-integration-examples-for-production-pipelines)
+- [Tool Pricing and Performance Comparison](#tool-pricing-and-performance-comparison)
+- [Best Practices for Automated Grading](#best-practices-for-automated-grading)
+
 ## Why AI Color Grading Matters for Developers
 
 Traditional color grading requires expertise in color theory, histogram analysis, and tool-specific workflows. AI tools reduce this barrier by analyzing footage and applying corrections based on trained models that understand cinematic color patterns, skin tone preservation, and exposure balancing. For developers, the key advantage lies in API access and programmatic control—enabling batch processing, integration with editing software, and custom workflows that would otherwise require manual intervention.

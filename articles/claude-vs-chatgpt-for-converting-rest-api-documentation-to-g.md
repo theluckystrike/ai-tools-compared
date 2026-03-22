@@ -39,6 +39,20 @@ When you need to migrate a REST API to GraphQL, the initial schema generation ca
 - **Claude takes more time**: per endpoint but produces higher-quality output with better type design.
 - **Then use ChatGPT to**: convert any remaining one-off endpoints that didn't fit neatly into Claude's first pass.
 
+## Table of Contents
+
+- [Understanding the Conversion Challenge](#understanding-the-conversion-challenge)
+- [Quick Comparison](#quick-comparison)
+- [Practical Comparison](#practical-comparison)
+- [Handling Complex API Hierarchies](#handling-complex-api-hierarchies)
+- [Resolver and Input Type Generation](#resolver-and-input-type-generation)
+- [Speed and Iteration](#speed-and-iteration)
+- [Handling OpenAPI Specifications Directly](#handling-openapi-specifications-directly)
+- [Dealing with Polymorphic Responses](#dealing-with-polymorphic-responses)
+- [Prompting Strategies That Improve Output Quality](#prompting-strategies-that-improve-output-quality)
+- [Recommendations by Use Case](#recommendations-by-use-case)
+- [Effective Prompting Strategies](#effective-prompting-strategies)
+
 ## Understanding the Conversion Challenge
 
 Converting REST endpoints to a GraphQL schema requires more than syntax translation. You need to identify root query fields, determine appropriate object types, map REST response hierarchies to GraphQL relationships, and decide which operations need mutations versus queries. A well-designed GraphQL schema also considers data fetching patterns—what should be queryable, what requires arguments, and how to handle pagination.

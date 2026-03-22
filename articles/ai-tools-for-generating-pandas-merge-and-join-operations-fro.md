@@ -40,6 +40,20 @@ Data manipulation in pandas frequently requires combining multiple DataFrames ba
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **When you have an**: users table connected to an orders table through an user_id field, the diagram makes the join strategy obvious.
 
+## Table of Contents
+
+- [Understanding Table Relationships for Pandas Operations](#understanding-table-relationships-for-pandas-operations)
+- [Practical Examples of AI-Generated Merge Operations](#practical-examples-of-ai-generated-merge-operations)
+- [Handling Complex Join Types with AI Assistance](#handling-complex-join-types-with-ai-assistance)
+- [Multi-Table Join Strategies](#multi-table-join-strategies)
+- [Validation and Data Quality Checks](#validation-and-data-quality-checks)
+- [Performance Optimization in Merge Operations](#performance-optimization-in-merge-operations)
+- [Common Pitfalls and AI Prevention](#common-pitfalls-and-ai-prevention)
+- [Getting the Best Results from AI Merge Code Generation](#getting-the-best-results-from-ai-merge-code-generation)
+- [Performance Optimization for Large Merges](#performance-optimization-for-large-merges)
+- [Decision Tree for Merge Type Selection](#decision-tree-for-merge-type-selection)
+- [Real-World Example: Multi-Step Merge Workflow](#real-world-example-multi-step-merge-workflow)
+
 ## Understanding Table Relationships for Pandas Operations
 
 Table relationship diagrams typically display connections between tables using notation that indicates cardinality: one-to-one, one-to-many, or many-to-many relationships. When you have an users table connected to an orders table through an user_id field, the diagram makes the join strategy obvious. However, translating that visual representation into correct pandas syntax requires understanding merge parameters, indicator flags, and validation options.

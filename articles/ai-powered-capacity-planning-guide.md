@@ -26,6 +26,22 @@ Capacity planning is the art of having enough resources before you need them wit
 - **Topics covered**: what ai adds to capacity planning, step 1: collect and prepare metrics, step 2: generate forecasts with prophet
 - **Practical guidance included**: Step-by-step setup and configuration instructions
 
+## Table of Contents
+
+- [What AI Adds to Capacity Planning](#what-ai-adds-to-capacity-planning)
+- [Step 1: Collect and Prepare Metrics](#step-1-collect-and-prepare-metrics)
+- [Step 2: Generate Forecasts with Prophet](#step-2-generate-forecasts-with-prophet)
+- [Step 3: AI-Powered Capacity Analysis](#step-3-ai-powered-capacity-analysis)
+- [Step 4: Autoscaling Policy Generation](#step-4-autoscaling-policy-generation)
+- [Step 5: Capacity Planning Report](#step-5-capacity-planning-report)
+- [Executive Summary (3-4 sentences)](#executive-summary-3-4-sentences)
+- [High Priority Actions (must do this week)](#high-priority-actions-must-do-this-week)
+- [Upcoming Capacity Events (next 30 days)](#upcoming-capacity-events-next-30-days)
+- [Cost Optimization Opportunities](#cost-optimization-opportunities)
+- [Step 6: Anomaly-Driven Capacity Alerts](#step-6-anomaly-driven-capacity-alerts)
+- [Choosing Your Forecasting Horizon](#choosing-your-forecasting-horizon)
+- [Related Reading](#related-reading)
+
 ## What AI Adds to Capacity Planning
 
 Traditional capacity planning uses linear extrapolation. AI-assisted planning adds:

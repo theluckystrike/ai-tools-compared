@@ -39,6 +39,23 @@ Duplicate GitHub issues clutter repositories, confuse contributors, and make it 
 - **Caching embeddings and only**: recalculating them for new or modified issues makes the system practical for real-world use.
 - **This cleanup effort typically**: reveals 5-15% of your issue corpus consists of duplicates that have accumulated over years of operation.
 
+## Table of Contents
+
+- [The Duplicate Issue Problem](#the-duplicate-issue-problem)
+- [How Semantic Similarity Matching Works](#how-semantic-similarity-matching-works)
+- [Implementing Duplicate Detection](#implementing-duplicate-detection)
+- [GitHub Actions Integration](#github-actions-integration)
+- [Choosing the Right Embedding Model](#choosing-the-right-embedding-model)
+- [Practical Considerations](#practical-considerations)
+- [Maintaining a Clean Issue Tracker](#maintaining-a-clean-issue-tracker)
+- [Real-World Implementation Results](#real-world-implementation-results)
+- [Choosing Embedding Models for Your Domain](#choosing-embedding-models-for-your-domain)
+- [Advanced Detection: Multi-Field Matching](#advanced-detection-multi-field-matching)
+- [Handling False Positives and False Negatives](#handling-false-positives-and-false-negatives)
+- [Performance at Scale](#performance-at-scale)
+- [Integration with GitHub's Native Features](#integration-with-githubs-native-features)
+- [Measuring Success](#measuring-success)
+
 ## The Duplicate Issue Problem
 
 Open source projects often receive duplicate reports without any malicious intent. One user describes a bug as "the app crashes when I upload a large file," while another reports "file upload fails with memory error for big documents." To a human, these clearly describe the same underlying issue, but traditional keyword-based search fails to connect them because they use different vocabulary.

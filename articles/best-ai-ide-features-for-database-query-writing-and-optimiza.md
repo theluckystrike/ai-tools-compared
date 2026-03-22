@@ -54,6 +54,20 @@ Modern AI-powered IDEs provide schema-aware query autocompletion, real-time vali
 
 4.
 
+## Table of Contents
+
+- [Intelligent Query Autocompletion](#intelligent-query-autocompletion)
+- [Real-Time Query Validation](#real-time-query-validation)
+- [AI-Powered Query Optimization Suggestions](#ai-powered-query-optimization-suggestions)
+- [Execution Plan Analysis](#execution-plan-analysis)
+- [Natural Language to SQL](#natural-language-to-sql)
+- [Query History and Pattern Learning](#query-history-and-pattern-learning)
+- [Multi-Database Support](#multi-database-support)
+- [Detecting N+1 Query Patterns in Application Code](#detecting-n1-query-patterns-in-application-code)
+- [Index Coverage Analysis](#index-coverage-analysis)
+- [Migrating from a Basic SQL Editor to an AI-Powered IDE](#migrating-from-a-basic-sql-editor-to-an-ai-powered-ide)
+- [Choosing the Right AI Database IDE](#choosing-the-right-ai-database-ide)
+
 ## Intelligent Query Autocompletion
 
 The foundation of any AI database IDE is context-aware autocompletion. Modern tools analyze your database schema, existing query patterns, and even your application's data access layer to provide relevant suggestions.

@@ -43,6 +43,17 @@ Writing CI/CD pipeline configurations requires understanding orchestration synta
 
 AI tools handle GitLab CI syntax differently.
 
+## Table of Contents
+
+- [Why AI Assistance Matters for CI/CD Configs](#why-ai-assistance-matters-for-cicd-configs)
+- [CircleCI Configuration with AI Assistance](#circleci-configuration-with-ai-assistance)
+- [GitLab CI/CD Configuration Patterns](#gitlab-cicd-configuration-patterns)
+- [Comparing AI Tools for CI/CD Configs](#comparing-ai-tools-for-cicd-configs)
+- [Practical Examples](#practical-examples)
+- [Parallelism and Test Splitting](#parallelism-and-test-splitting)
+- [Workflow: Prompting AI for Pipeline Generation](#workflow-prompting-ai-for-pipeline-generation)
+- [Tips for Better AI Assistance](#tips-for-better-ai-assistance)
+
 ## Why AI Assistance Matters for CI/CD Configs
 
 CI/CD configuration files use domain-specific syntax that differs from general-purpose code. A `.gitlab-ci.yml` or `config.yml` for CircleCI has unique constructs—workflows, jobs, steps, orbs, and runners—that most general-purpose code completion tools struggle to understand. The right AI assistant recognizes these patterns and suggests appropriate configurations based on your project's needs.
@@ -343,12 +354,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Which AI Tool Is Better for Writing CircleCI Config YAML Fil](/ai-tools-compared/which-ai-tool-is-better-for-writing-circleci-config-yaml-fil/)
-- [AI Assistants for Writing Correct AWS IAM Policies](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
-- [Writing Effective System Prompts for AI Coding Assistants](/ai-tools-compared/writing-effective-system-prompts-for-ai-coding-assistants-th/)
-- [AI Assistants for Creating Security Architecture Review.](/ai-tools-compared/ai-assistants-for-creating-security-architecture-review-docu/)
-- [AI Assistants for Multicloud Infrastructure Management](/ai-tools-compared/ai-assistants-for-multicloud-infrastructure-management-and-d/)
-
+- [AI Tools for Writing CI CD Pipeline Configurations 2026](/ai-tools-compared/ai-tools-for-writing-ci-cd-pipeline-configurations-2026/)
+- [AI Tools for Generating CI/CD Pipeline Configs 2026](/ai-tools-compared/ai-tools-for-generating-ci-cd-pipeline-configs-2026/)
+- [Which AI Tool Is Better for Writing CircleCI Config YAML](/ai-tools-compared/which-ai-tool-is-better-for-writing-circleci-config-yaml-fil/)
+- [AI Tools for Writing Redis Caching Strategies 2026](/ai-tools-compared/ai-tools-for-writing-redis-caching-strategies-2026/)
+- [AI Tools for Writing Kubernetes Operators 2026](/ai-tools-compared/ai-tools-for-writing-kubernetes-operators-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 {% endraw %}

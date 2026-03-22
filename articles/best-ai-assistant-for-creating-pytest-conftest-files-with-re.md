@@ -40,6 +40,18 @@ Creating maintainable pytest conftest files with reusable shared fixtures is ess
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Why pytest conftest Files Matter for Test Architecture](#why-pytest-conftest-files-matter-for-test-architecture)
+- [Comparing AI Tools for pytest conftest Generation](#comparing-ai-tools-for-pytest-conftest-generation)
+- [Effective Prompting Strategies for conftest Generation](#effective-prompting-strategies-for-conftest-generation)
+- [Practical Example: Database Fixtures with AI Assistance](#practical-example-database-fixtures-with-ai-assistance)
+- [Advanced Patterns AI Tools Handle Well](#advanced-patterns-ai-tools-handle-well)
+- [Common Patterns AI Tools Handle Well](#common-patterns-ai-tools-handle-well)
+- [Tips for Getting Better Results](#tips-for-getting-better-results)
+- [Step-by-Step Workflow: Generating a Full conftest with Claude Code](#step-by-step-workflow-generating-a-full-conftest-with-claude-code)
+- [Related Reading](#related-reading)
+
 ## Why pytest conftest Files Matter for Test Architecture
 
 pytest conftest.py files serve as centralized locations for defining fixtures that can be shared across multiple test files and directories. When used properly, they reduce code duplication, improve test maintainability, and enable sophisticated test setup patterns. However, writing effective conftest files requires understanding pytest's fixture system deeply—including scope management, parametrization, autouse fixtures, and fixture composition.

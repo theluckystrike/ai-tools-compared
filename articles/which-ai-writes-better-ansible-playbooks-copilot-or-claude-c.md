@@ -100,6 +100,18 @@ The tool handles complex Jinja2 expressions more accurately. It can work through
  owner: "{{ app_user }}"
  mode: '0755'
 
+## Table of Contents
+
+- [Side-by-Side Comparison](#side-by-side-comparison)
+- [Practical Recommendations](#practical-recommendations)
+- [Performance Comparison: Real-World Metrics](#performance-comparison-real-world-metrics)
+- [Tool Integration: Workflow Differences](#tool-integration-workflow-differences)
+- [Handling Role-Based Configurations](#handling-role-based-configurations)
+- [Idempotency and Rerunability](#idempotency-and-rerunability)
+- [Security Considerations in Generated Code](#security-considerations-in-generated-code)
+- [Pricing and Accessibility](#pricing-and-accessibility)
+- [Making Your Decision](#making-your-decision)
+
  - name: Deploy database configuration
  template:
  src: templates/database.yml.j2

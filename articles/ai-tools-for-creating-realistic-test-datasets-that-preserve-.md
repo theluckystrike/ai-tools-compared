@@ -39,6 +39,19 @@ Claude and ChatGPT can generate realistic test data that maintains database refe
 - **An user table links to orders**: which connect to products and payment records.
 - **If your test dataset**: contains an order referencing a non-existent user, your tests will fail with integrity errors rather than revealing actual application bugs.
 
+## Table of Contents
+
+- [Why Referential Integrity Matters in Test Data](#why-referential-integrity-matters-in-test-data)
+- [Popular AI Tools for Test Data Generation](#popular-ai-tools-for-test-data-generation)
+- [Implementing AI-Generated Test Data in Your Workflow](#implementing-ai-generated-test-data-in-your-workflow)
+- [Advanced Considerations](#advanced-considerations)
+- [Automating Test Data Refresh in CI/CD](#automating-test-data-refresh-in-cicd)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+- [Database-Specific Generation Patterns](#database-specific-generation-patterns)
+- [Advanced: Temporal Data and Distributions](#advanced-temporal-data-and-distributions)
+- [Performance Tuning for Large Datasets](#performance-tuning-for-large-datasets)
+- [Testing Against Generated Data](#testing-against-generated-data)
+
 ## Why Referential Integrity Matters in Test Data
 
 When your application relies on related database tables, test data must reflect real-world relationships. An user table links to orders, which connect to products and payment records. If your test dataset contains an order referencing a non-existent user, your tests will fail with integrity errors rather than revealing actual application bugs.
@@ -412,10 +425,9 @@ def validate_test_data(connection):
 ## Related Articles
 
 - [How to Use AI to Generate Realistic Test Data for Postgres](/ai-tools-compared/how-to-use-ai-to-generate-realistic-test-data-for-postgres-d/)
-- [AI Tools for Creating Boundary Value Test Case](/ai-tools-compared/ai-tools-for-creating--boundary-value-test-case/)
-- [AI Tools for Creating Property-Based Test Cases](/ai-tools-compared/ai-tools-for-creating-property-based-test-cases-using-hypoth/)
-- [AI Tools for Creating Test Data Generators That Respect Busi](/ai-tools-compared/ai-tools-for-creating-test-data-generators-that-respect-busi/)
+- [AI Tools for Creating Test Data Generators That Respect](/ai-tools-compared/ai-tools-for-creating-test-data-generators-that-respect-busi/)
 - [AI Tools for Creating Test Data Snapshots for Database](/ai-tools-compared/ai-tools-for-creating-test-data-snapshots-for-database-rollback-between-test-runs/)
-
+- [Best AI Assistant for Creating Test Data Factories with Real](/ai-tools-compared/best-ai-assistant-for-creating-test-data-factories-with-real/)
+- [AI Tools for Automated Test Data Generation 2026](/ai-tools-compared/ai-tools-for-automated-test-data-generation-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

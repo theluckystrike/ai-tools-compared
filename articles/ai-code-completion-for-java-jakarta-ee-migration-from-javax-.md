@@ -41,6 +41,16 @@ Migrating enterprise Java applications from the `javax` namespace to `jakarta` r
 - **In VS Code with Cursor**: open the search panel and use regex mode.
 - **AI tools struggle with XML namespace migration because there is less training data for it**: treat these files as manual work.
 
+## Table of Contents
+
+- [Understanding the Javax to Jakarta Transition](#understanding-the-javax-to-jakarta-transition)
+- [How AI Code Completion Tools Handle Namespace Migration](#how-ai-code-completion-tools-handle-namespace-migration)
+- [AI Tool Comparison for Jakarta EE Migration](#ai-tool-comparison-for-jakarta-ee-migration)
+- [Practical Migration Examples](#practical-migration-examples)
+- [Step-by-Step Migration Workflow with AI Assistance](#step-by-step-migration-workflow-with-ai-assistance)
+- [Limitations and Manual Verification](#limitations-and-manual-verification)
+- [Best Practices for AI-Assisted Migration](#best-practices-for-ai-assisted-migration)
+
 ## Understanding the Javax to Jakarta Transition
 
 The namespace change from `javax` to `jakarta` occurred because the `javax` package prefix was retained by Oracle for Java SE specifications, while Jakarta EE gained stewardship of the enterprise specifications. This means every import statement, annotation, and interface reference must be updated when moving to Jakarta EE 9 or later.
@@ -269,10 +279,9 @@ Yes, for obscure APIs. Common packages (servlet, persistence, validation, ws.rs)
 
 ## Related Articles
 
-- [Best AI Tools for Code Migration Python 2](/ai-tools-compared/best-ai-tools-for-code-migration-python-2-to-3-java-8-to-21-guide/)
-- [AI Code Completion for Java Record Classes and Sealed Interf](/ai-tools-compared/ai-code-completion-for-java-record-classes-and-sealed-interf/)
+- [AI Code Completion for Java Record Classes and Sealed](/ai-tools-compared/ai-code-completion-for-java-record-classes-and-sealed-interf/)
 - [Best AI Tools for Code Migration Between Languages 2026](/ai-tools-compared/best-ai-tools-for-code-migration-between-languages-2026/)
 - [How to Use AI for Automated Code Migration](/ai-tools-compared/how-to-use-ai-for-automated-code-migration/)
-- [AI Code Completion for Writing Shell Commands Inside Scripts](/ai-tools-compared/ai-code-completion-for-writing-shell-commands-inside-scripts/)
-
+- [AI Code Generation Quality for Java Pattern Matching](/ai-tools-compared/ai-code-generation-quality-for-java-pattern-matching-and-swi/)
+- [Claude Code Java Library Development Guide](/ai-tools-compared/claude-code-java-library-development-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

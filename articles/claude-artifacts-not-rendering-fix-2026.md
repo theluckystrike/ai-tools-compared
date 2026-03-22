@@ -38,6 +38,16 @@ Claude artifacts provide an interactive way to preview code, web components, and
 - **If no one else reports it**: your local environment configuration is likely the cause.
 - **Should I reinstall the**: tool to fix this? A clean reinstall sometimes resolves persistent issues caused by corrupted caches or configuration files.
 
+## Table of Contents
+
+- [Quick Fixes to Try First](#quick-fixes-to-try-first)
+- [Understanding Claude Artifact Rendering](#understanding-claude-artifact-rendering)
+- [Detailed Troubleshooting Steps](#detailed-troubleshooting-steps)
+- [Diagnostic Commands and Checks](#diagnostic-commands-and-checks)
+- [When to Report the Issue](#when-to-report-the-issue)
+- [Preventing Future Rendering Issues](#preventing-future-rendering-issues)
+- [Detecting Blocked Iframes via Browser Console](#detecting-blocked-iframes-via-browser-console)
+
 ## Quick Fixes to Try First
 
 Before exploring detailed troubleshooting, try these quick solutions that resolve most rendering issues:

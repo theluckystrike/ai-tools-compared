@@ -40,6 +40,17 @@ Generating realistic test data that satisfies complex business validation rules 
 - **Generating realistic test data**: that satisfies complex business validation rules remains one of the most time-consuming aspects of software testing.
 - **An user registration system**: might require email addresses to follow specific formats, passwords to meet complexity requirements, and phone numbers to match regional patterns.
 
+## Table of Contents
+
+- [The Challenge of Valid Test Data](#the-challenge-of-valid-test-data)
+- [How AI Tools Approach Test Data Generation](#how-ai-tools-approach-test-data-generation)
+- [Practical Implementation Strategies](#practical-implementation-strategies)
+- [Evaluating AI-Generated Test Data](#evaluating-ai-generated-test-data)
+- [Limitations and Best Practices](#limitations-and-best-practices)
+- [Advanced Test Data Generation Patterns](#advanced-test-data-generation-patterns)
+- [Tool Comparison for Test Data Generation](#tool-comparison-for-test-data-generation)
+- [Validating Generated Test Data](#validating-generated-test-data)
+
 ## The Challenge of Valid Test Data
 
 Business applications typically enforce validation rules across multiple layers. An user registration system might require email addresses to follow specific formats, passwords to meet complexity requirements, and phone numbers to match regional patterns. Order processing systems enforce constraints like minimum order values, shipping restrictions, and inventory availability. Financial applications validate account numbers, transaction limits, and regulatory compliance requirements.

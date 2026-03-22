@@ -41,6 +41,16 @@ Subscription management presents unique challenges for support teams: handling b
 - **Is the annual plan**: worth it over monthly billing? Annual plans typically save 15-30% compared to monthly billing.
 - **Discounts of 25-50% are**: common for qualifying organizations.
 
+## Table of Contents
+
+- [The Subscription Support Challenge](#the-subscription-support-challenge)
+- [Practical AI Tools for Subscription Support](#practical-ai-tools-for-subscription-support)
+- [Tool Comparison by Use Case](#tool-comparison-by-use-case)
+- [Building a Custom Subscription Support Bot](#building-a-custom-subscription-support-bot)
+- [Handling Escalation Gracefully](#handling-escalation-gracefully)
+- [Proactive Retention with AI](#proactive-retention-with-ai)
+- [Evaluating AI Tools for Your Use Case](#evaluating-ai-tools-for-your-use-case)
+
 ## The Subscription Support Challenge
 
 Subscription businesses face recurring support patterns that consume significant agent time. Common inquiries include:

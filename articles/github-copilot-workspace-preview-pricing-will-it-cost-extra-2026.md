@@ -44,6 +44,20 @@ GitHub Copilot Workspace is currently available as a technical preview, and duri
 3.
 - **Is the annual plan**: worth it over monthly billing? Annual plans typically save 15-30% compared to monthly billing.
 
+## Table of Contents
+
+- [What is GitHub Copilot Workspace?](#what-is-github-copilot-workspace)
+- [Current Preview Pricing](#current-preview-pricing)
+- [What Workspace Adds Beyond Traditional Copilot](#what-workspace-adds-beyond-traditional-copilot)
+- [Will Copilot Workspace Cost Extra When It Launches?](#will-copilot-workspace-cost-extra-when-it-launches)
+- [Pricing Comparison with Competitors](#pricing-comparison-with-competitors)
+- [When Will Pricing Be Announced?](#when-will-pricing-be-announced)
+- [How to Prepare](#how-to-prepare)
+- [Detailed Feature Comparison (2026)](#detailed-feature-comparison-2026)
+- [Pricing Strategy Analysis](#pricing-strategy-analysis)
+- [Competitive Pressure Analysis](#competitive-pressure-analysis)
+- [Decision Framework: Should You Switch?](#decision-framework-should-you-switch)
+
 ## What is GitHub Copilot Workspace?
 
 GitHub Copilot Workspace is an AI-powered development environment that goes beyond code completion. It provides an agentic experience where Copilot can understand your entire codebase, suggest multi-file changes, and help you implement features through natural language commands. Unlike traditional code completion that works line-by-line, Workspace operates at the project level.
@@ -296,11 +310,10 @@ Policies vary widely. Some tools let you access your data for a grace period aft
 
 ## Related Articles
 
+- [Copilot vs Cursor vs Windsurf: Monthly Cost Breakdown](/ai-tools-compared/copilot-vs-cursor-vs-windsurf-monthly-cost-breakdown-which-saves-money-2026/)
+- [Copilot Suggestions in Private Repos Do They Cost More Than](/ai-tools-compared/copilot-suggestions-in-private-repos-do-they-cost-more-than-public/)
 - [Migrate GitHub Copilot Workspace Setup to Cursor Background](/ai-tools-compared/migrate-github-copilot-workspace-setup-to-cursor-background-/)
-- [Cursor AI Switching Between Claude and GPT Models Extra Cost](/ai-tools-compared/cursor-ai-switching-between-claude-and-gpt-models-extra-cost/)
-- [Cursor Pro Privacy Mode Does It Cost Extra](/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
-- [Midjourney Standard vs Pro Plan: Is Stealth Mode Worth](/ai-tools-compared/midjourney-standard-vs-pro-plan-stealth-mode-worth-extra-cost/)
-- [Windsurf Premium Model Access Which Models Cost Extra](/ai-tools-compared/windsurf-premium-model-access-which-models-cost-extra-credits-2026/)
-
+- [Copilot Individual vs Cursor Pro Annual Cost Breakdown 2026](/ai-tools-compared/copilot-individual-vs-cursor-pro-annual-cost-breakdown-2026/)
+- [Copilot for JetBrains: Does It Cost Same as VS Code Version](/ai-tools-compared/copilot-for-jetbrains-does-it-cost-same-as-vscode-version/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

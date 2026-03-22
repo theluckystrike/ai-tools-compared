@@ -40,6 +40,26 @@ Technical writing is one of the highest-value tasks for AI assistance — and on
 - **This 35-40% reduction in revision cycles matters at scale**: 50 docs × 0.5 edits saved = hours saved.
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 
+## Table of Contents
+
+- [Tasks Tested](#tasks-tested)
+- [Task 1: API Documentation from Code](#task-1-api-documentation-from-code)
+- [POST /api/v2/webhooks](#post-apiv2webhooks)
+- [Create Webhook](#create-webhook)
+- [Task 2: Incident Runbook](#task-2-incident-runbook)
+- [Task 3: Architecture Decision Records](#task-3-architecture-decision-records)
+- [Consequences](#consequences)
+- [Consequences](#consequences)
+- [Task 4: README for an Open-Source Library](#task-4-readme-for-an-open-source-library)
+- [Task 5: Post-Mortem Reports](#task-5-post-mortem-reports)
+- [Overall Assessment](#overall-assessment)
+- [Practical CLI Integration](#practical-cli-integration)
+- [Batch Documentation Generation](#batch-documentation-generation)
+- [Writing Consistency Checks](#writing-consistency-checks)
+- [Task-Specific Performance](#task-specific-performance)
+- [Model-Specific Tips](#model-specific-tips)
+- [Real-World Workflow](#real-world-workflow)
+
 ## Tasks Tested
 
 1. API endpoint documentation from code

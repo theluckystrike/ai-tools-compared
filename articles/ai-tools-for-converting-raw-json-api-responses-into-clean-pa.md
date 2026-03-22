@@ -40,6 +40,20 @@ AI-powered tools can automatically convert messy JSON API responses into clean p
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **For complex nested responses**: consider a two-step approach: use AI to understand the structure, then implement targeted extraction logic.
 
+## Table of Contents
+
+- [The Common Problem](#the-common-problem)
+- [AI-Powered Solutions](#ai-powered-solutions)
+- [Practical Implementation Pattern](#practical-implementation-pattern)
+- [Tool Comparison for JSON Transformation](#tool-comparison-for-json-transformation)
+- [Real-World Example: Multi-Level Nesting](#real-world-example-multi-level-nesting)
+- [Advanced Patterns: Type Conversion](#advanced-patterns-type-conversion)
+- [Error Handling in Production](#error-handling-in-production)
+- [Performance Optimization for Large Datasets](#performance-optimization-for-large-datasets)
+- [Testing Your Transformations](#testing-your-transformations)
+- [Choosing the Right Approach](#choosing-the-right-approach)
+- [Production Deployment Checklist](#production-deployment-checklist)
+
 ## The Common Problem
 
 API responses rarely arrive in pandas-friendly formats. Consider this typical JSON response from a REST API:
@@ -443,11 +457,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Claude vs ChatGPT for Converting REST API Documentation](/ai-tools-compared/claude-vs-chatgpt-for-converting-rest-api-documentation-to-g/)
-- [ChatGPT Network Error on Long Responses: How to Fix in 2026](/ai-tools-compared/chatgpt-network-error-on-long-responses-how-to-fix-2026/)
-- [Copilot vs Cursor for Writing Clean Prisma Schema with Relat](/ai-tools-compared/copilot-vs-cursor-for-writing-clean-prisma-schema-with-relat/)
-- [AI Tools for Creating dbt Model Definitions from Raw Databas](/ai-tools-compared/ai-tools-for-creating-dbt-model-definitions-from-raw-databas/)
-- [Steve AI vs Raw Shorts: AI Video Creation Comparison for](/ai-tools-compared/steve-ai-vs-raw-shorts-ai-video/)
-
+- [AI Tools for API Documentation from Code 2026](/ai-tools-compared/ai-tools-for-api-documentation-from-code-2026/)
+- [AI Tools for API Security Testing](/ai-tools-compared/ai-tools-for-api-security-testing/)
+- [AI Tools for Product Managers Converting Customer](/ai-tools-compared/ai-tools-for-product-managers-converting-customer-interview-/)
+- [AI Tools for Generating Grafana Dashboard JSON Templates](/ai-tools-compared/ai-tools-for-generating-grafana-dashboard-json-templates-fro/)
+- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

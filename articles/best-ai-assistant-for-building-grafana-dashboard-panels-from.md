@@ -40,6 +40,16 @@ For simple dashboards (under 10 panels), yes**: AI-generated JSON is a practical
 - **It handles complex PromQL**: patterns well and can explain what specific queries do, making it useful for learning while working.
 - **It understands YAML and**: JSON structures used in Grafana configurations.
 
+## Table of Contents
+
+- [Why Use AI Assistants for Grafana Panel Creation](#why-use-ai-assistants-for-grafana-panel-creation)
+- [Top AI Assistants for Grafana Panel Development](#top-ai-assistants-for-grafana-panel-development)
+- [AI Assistant Comparison Table](#ai-assistant-comparison-table)
+- [Practical Examples](#practical-examples)
+- [Step-by-Step: Using an AI Assistant for a New Dashboard](#step-by-step-using-an-ai-assistant-for-a-new-dashboard)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+- [Best Practices](#best-practices)
+
 ## Why Use AI Assistants for Grafana Panel Creation
 
 Creating Grafana panels involves more than just writing PromQL queries. You need to choose appropriate visualization types, set correct time ranges, configure thresholds, and ensure your queries return meaningful data. An AI assistant can help with all of these aspects, especially when working with unfamiliar metrics or complex aggregation patterns.
@@ -298,10 +308,9 @@ For simple dashboards (under 10 panels), yes—AI-generated JSON is a practical 
 
 ## Related Articles
 
-- [AI Tools for Creating Grafana SLO Dashboard Panels with Burn](/ai-tools-compared/ai-tools-for-creating-grafana-slo-dashboard-panels-with-burn/)
-- [Best AI Assistant for Building Superset Dashboard Charts Fro](/ai-tools-compared/best-ai-assistant-for-building-superset-dashboard-charts-fro/)
-- [AI Tools for Generating Grafana Dashboard JSON Templates Fro](/ai-tools-compared/ai-tools-for-generating-grafana-dashboard-json-templates-fro/)
-- [How to Use AI Assistants for Generating Retool Admin.](/ai-tools-compared/how-to-use-ai-assistants-for-generating-retool-admin-panels-/)
-- [AI Tools for Generating Grafana Dashboards from Metrics Auto](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
-
+- [AI Tools for Generating Grafana Dashboard JSON Templates](/ai-tools-compared/ai-tools-for-generating-grafana-dashboard-json-templates-fro/)
+- [AI Tools for Creating Grafana SLO Dashboard Panels](/ai-tools-compared/ai-tools-for-creating-grafana-slo-dashboard-panels-with-burn/)
+- [Best AI Assistant for Building Superset Dashboard Charts](/ai-tools-compared/best-ai-assistant-for-building-superset-dashboard-charts-fro/)
+- [AI Tools for Generating Grafana Dashboards from Metrics](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
+- [Best AI Assistant for Generating SQL Recursive Queries](/ai-tools-compared/best-ai-assistant-for-generating-sql-recursive-queries-for-hierarchical-org-chart-data/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

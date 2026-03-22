@@ -39,6 +39,29 @@ AI tools have become valuable for debugging Terraform configurations, especially
 - **An AI assistant helps**: by analyzing all provider versions simultaneously and identifying which combination caused the conflict.
 - **Provider version differences can**: exacerbate drift detection because attribute names and structures may have changed between versions.
 
+## Table of Contents
+
+- [Understanding Provider Version Conflicts in Terraform](#understanding-provider-version-conflicts-in-terraform)
+- [How AI Assistants Parse Terraform Error Messages](#how-ai-assistants-parse-terraform-error-messages)
+- [Practical Example: Resolving an AWS Provider Version Conflict](#practical-example-resolving-an-aws-provider-version-conflict)
+- [Handling Multiple Provider Conflicts](#handling-multiple-provider-conflicts)
+- [Interpreting State Drift and Version Mismatches](#interpreting-state-drift-and-version-mismatches)
+- [Best Practices for Using AI with Terraform Errors](#best-practices-for-using-ai-with-terraform-errors)
+- [Building Version-Aware Terraform Workflows](#building-version-aware-terraform-workflows)
+- [Real Deployment Incident: AWS Provider Version Jump](#real-deployment-incident-aws-provider-version-jump)
+- [Provider Migration Strategies](#provider-migration-strategies)
+- [Handling State Drift During Provider Updates](#handling-state-drift-during-provider-updates)
+- [Cross-Provider Compatibility Matrix](#cross-provider-compatibility-matrix)
+- [Automated Provider Update Testing](#automated-provider-update-testing)
+- [Debugging Complex Multi-Provider Errors](#debugging-complex-multi-provider-errors)
+- [Documentation and Knowledge Base](#documentation-and-knowledge-base)
+- [Symptoms](#symptoms)
+- [Root Cause](#root-cause)
+- [Resolution](#resolution)
+- [Code Changes](#code-changes)
+- [Testing Verification](#testing-verification)
+- [AI Tool Comparison for Terraform](#ai-tool-comparison-for-terraform)
+
 ## Understanding Provider Version Conflicts in Terraform
 
 Terraform providers are plugins that interact with cloud APIs and services. Each provider maintains its own version sequence, and Terraform locks specific versions in your dependency lock file. When a provider version conflict occurs, Terraform fails to reconcile the state between your configuration and the existing infrastructure, producing errors that reference attribute types, missing resources, or deprecated fields.

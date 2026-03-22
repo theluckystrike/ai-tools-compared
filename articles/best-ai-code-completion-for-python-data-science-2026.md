@@ -46,6 +46,21 @@ This guide compares five leading AI completion tools for Python data science: Gi
 - **- Cursor**: $100/month ($20 × 5).
 - - Everyone gets Copilot ($50/month).
 
+## Table of Contents
+
+- [Comparison Table](#comparison-table)
+- [GitHub Copilot for Data Science](#github-copilot-for-data-science)
+- [Cursor for Data Science](#cursor-for-data-science)
+- [Claude Code for Data Science](#claude-code-for-data-science)
+- [Amazon CodeWhisperer for Data Science](#amazon-codewhisperer-for-data-science)
+- [Codeium for Data Science](#codeium-for-data-science)
+- [Real-World Data Science Workflows](#real-world-data-science-workflows)
+- [Notebook Magic and Completion](#notebook-magic-and-completion)
+- [Integration Comparison](#integration-comparison)
+- [Cost Analysis: Team of 5 Data Scientists](#cost-analysis-team-of-5-data-scientists)
+- [Debugging and Error Messages](#debugging-and-error-messages)
+- [Best Practices for Data Science with AI Completion](#best-practices-for-data-science-with-ai-completion)
+
 ## Comparison Table
 
 | Tool | Monthly Cost | Pandas Accuracy | Notebook Support | Model Pipeline Knowledge | Latency | Best For |

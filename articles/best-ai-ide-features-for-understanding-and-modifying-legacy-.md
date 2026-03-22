@@ -40,6 +40,29 @@ JetBrains IDEs with AI refactoring provide semantic code search that understands
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Context-Aware Code Navigation](#context-aware-code-navigation)
+- [Automated Code Explanation and Documentation](#automated-code-explanation-and-documentation)
+- [Intelligent Code Completion for Legacy Patterns](#intelligent-code-completion-for-legacy-patterns)
+- [Automated Refactoring Suggestions](#automated-refactoring-suggestions)
+- [Contextual Test Generation](#contextual-test-generation)
+- [Integration with Version Control](#integration-with-version-control)
+- [Choosing the Right Tools](#choosing-the-right-tools)
+- [IDE-Specific Tool Comparison](#ide-specific-tool-comparison)
+- [Real-World Legacy Code Scenarios](#real-world-legacy-code-scenarios)
+- [Real CLI Commands for Legacy Work](#real-cli-commands-for-legacy-work)
+- [Using Git History with AI IDE Features](#using-git-history-with-ai-ide-features)
+- [Advanced: Creating Custom AI Rules for Legacy Codebases](#advanced-creating-custom-ai-rules-for-legacy-codebases)
+- [Understanding the Codebase](#understanding-the-codebase)
+- [Key Patterns to Recognize](#key-patterns-to-recognize)
+- [Safety First](#safety-first)
+- [Legacy Anti-Patterns to Avoid](#legacy-anti-patterns-to-avoid)
+- [Troubleshooting Legacy Code Issues with AI](#troubleshooting-legacy-code-issues-with-ai)
+- [Performance Tips for Legacy Code Analysis](#performance-tips-for-legacy-code-analysis)
+- [Measuring Success: Before/After Legacy Work](#measuring-success-beforeafter-legacy-work)
+- [Tool Recommendations by Legacy Code Type](#tool-recommendations-by-legacy-code-type)
+
 ## Context-Aware Code Navigation
 
 One of the most valuable capabilities for legacy codebase work is intelligent code search that understands your project's structure. Modern AI IDEs go beyond simple text matching to provide semantic search that finds code based on functionality rather than just variable names.
@@ -391,10 +414,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI IDE Features for Database Query Writing and](/ai-tools-compared/best-ai-ide-features-for-database-query-writing-and-optimization/)
 - [Best AI IDE Features for Pair Programming](/ai-tools-compared/best-ai-ide-features-for-pair-programming-with-remote-team-members/)
 - [Best AI IDE Features for Refactoring Class Hierarchies](/ai-tools-compared/best-ai-ide-features-for-refactoring-class-hierarchies-and-i/)
+- [Best AI Features for Generating API Client Code](/ai-tools-compared/best-ai-features-for-generating-api-client-code-from-openapi/)
 - [Best AI IDE Features for Writing Configuration Files YAML](/ai-tools-compared/best-ai-ide-features-for-writing-configuration-files-yaml-json-toml/)
-- [Copilot Vision Feature for Understanding Screenshots and Moc](/ai-tools-compared/copilot-vision-feature-for-understanding-screenshots-and-moc/)
-
+- [Best AI IDE Features for Database Query Writing and](/ai-tools-compared/best-ai-ide-features-for-database-query-writing-and-optimization/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

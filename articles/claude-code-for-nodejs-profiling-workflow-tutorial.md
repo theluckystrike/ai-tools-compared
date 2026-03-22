@@ -40,6 +40,17 @@ Claude Code is an AI-powered CLI tool that can significantly accelerate your Nod
 - **Create performance benchmarks**: Use frameworks like benchmark.js to measure the impact of optimizations.
 - **Use Claude Code for code review**: Have Claude Code review performance-critical code changes before merging.
 
+## Table of Contents
+
+- [Why Use Claude Code for Node.js Profiling?](#why-use-claude-code-for-nodejs-profiling)
+- [Setting Up Your Profiling Environment](#setting-up-your-profiling-environment)
+- [Profiling Workflow with Claude Code](#profiling-workflow-with-claude-code)
+- [Optimizing Based on Profiling Insights](#optimizing-based-on-profiling-insights)
+- [Using clinic.js and 0x for Deeper Profiling](#using-clinicjs-and-0x-for-deeper-profiling)
+- [Interpreting CPU Profiles with Claude Code](#interpreting-cpu-profiles-with-claude-code)
+- [Async Performance and Event Loop Analysis](#async-performance-and-event-loop-analysis)
+- [Best Practices for Continuous Profiling](#best-practices-for-continuous-profiling)
+
 ## Why Use Claude Code for Node.js Profiling?
 
 Traditional Node.js profiling requires manual investigation of flame graphs, heap snapshots, and performance metrics. While powerful, these tools can be overwhelming, especially when you're new to performance optimization. Claude Code acts as an intelligent assistant that helps you interpret profiling data, suggests targeted optimizations, and guides you through the entire profiling workflow.
@@ -365,10 +376,9 @@ Yes. The profiling flags (`--prof`, `--inspect`) and external tools (clinic.js, 
 ## Related Articles
 
 - [Claude Code for Memory Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-memory-profiling-workflow-tutorial/)
+- [Claude Code Profiler Integration Guide](/ai-tools-compared/claude-code-profiler-integration-guide/)
 - [Claude Code for Taint Analysis Workflow Tutorial Guide](/ai-tools-compared/claude-code-for-taint-analysis-workflow-tutorial-guide/)
-- [Claude Code Screen Reader Testing Workflow](/ai-tools-compared/claude-code-screen-reader-testing-workflow/)
-- [Claude Code SDK Testing Workflow Guide](/ai-tools-compared/claude-code-sdk-testing-workflow-guide/)
-- [Effective Tool Chaining Workflow Using Copilot and Claude](/ai-tools-compared/effective-tool-chaining-workflow-using-copilot-and-claude-together-for-coding/)
-
+- [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
+- [Claude Code Runbook Documentation Guide](/ai-tools-compared/claude-code-runbook-documentation-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

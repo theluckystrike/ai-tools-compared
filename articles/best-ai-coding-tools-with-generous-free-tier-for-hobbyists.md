@@ -41,6 +41,21 @@ Claude's free tier offers 5 messages daily with superior code reasoning, while G
 
 GitHub Copilot remains one of the most popular AI coding assistants, and its free tier is surprisingly.
 
+## Table of Contents
+
+- [Why AI Coding Tools Matter for Hobbyists](#why-ai-coding-tools-matter-for-hobbyists)
+- [1. GitHub Copilot: The Industry Standard](#1-github-copilot-the-industry-standard)
+- [2. Cursor: AI-First IDE Built for Speed](#2-cursor-ai-first-ide-built-for-speed)
+- [3. Codeium: Zero-Config AI Assistance](#3-codeium-zero-config-ai-assistance)
+- [4. Tabnine: Offline-First AI Completion](#4-tabnine-offline-first-ai-completion)
+- [5. Amazon CodeWhisperer: Enterprise-Grade Free](#5-amazon-codewhisperer-enterprise-grade-free)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+- [Detailed Feature Comparison Matrix](#detailed-feature-comparison-matrix)
+- [Getting the Most Value from Free Tiers](#getting-the-most-value-from-free-tiers)
+- [Workflow Examples for Different Projects](#workflow-examples-for-different-projects)
+- [Hobby Project Cost Analysis](#hobby-project-cost-analysis)
+- [Skill Development with AI Assistance](#skill-development-with-ai-assistance)
+
 ## Why AI Coding Tools Matter for Hobbyists
 
 Building side projects often means juggling multiple responsibilities—coding, design, testing, and deployment—often in limited spare time. AI coding assistants help by handling repetitive tasks, suggesting optimizations, and catching errors before they become headaches. The right tool can shave hours off debugging sessions and help you learn new frameworks faster.

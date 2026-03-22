@@ -39,6 +39,15 @@ To migrate Copilot chat history to Cursor AI, export the JSON conversation files
 - **Follow these recommendations**: Start fresh but reference the past: Don't try to import every conversation.
 - **Use version control**: Commit your context documents to Git so teammates benefit from the accumulated knowledge.
 
+## Table of Contents
+
+- [Why Migrate to Cursor AI](#why-migrate-to-cursor-ai)
+- [Prerequisites](#prerequisites)
+- [Migrating Custom Copilot Extensions](#migrating-custom-copilot-extensions)
+- [Copilot vs Cursor: Feature Comparison](#copilot-vs-cursor-feature-comparison)
+- [Best Practices for the Transition](#best-practices-for-the-transition)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Migrate to Cursor AI
 
 Cursor AI builds on VS Code with integrated AI capabilities that differ from Copilot's approach. While Copilot provides inline suggestions and chat within GitHub's ecosystem, Cursor offers a fully integrated AI assistant that understands your entire codebase. Many developers find Cursor's contextual awareness more powerful for complex refactoring tasks and multi-file operations.

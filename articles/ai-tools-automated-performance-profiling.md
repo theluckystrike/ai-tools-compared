@@ -43,6 +43,17 @@ Focus on:
 - **Are any hot functions**: in user application code (not node_modules)? 2.
 - **Estimated impact of fixing**: each bottleneck` }] }); return response.content[0].text; } ``` ## Database Query Analysis The most common performance issue in web apps is slow SQL.
 
+## Table of Contents
+
+- [The Manual Profiling Problem](#the-manual-profiling-problem)
+- [Pyroscope + AI Analysis](#pyroscope-ai-analysis)
+- [Node.js Clinic.js with AI](#nodejs-clinicjs-with-ai)
+- [Database Query Analysis](#database-query-analysis)
+- [Memory Leak Detection](#memory-leak-detection)
+- [Continuous Performance Monitoring with AI Alerts](#continuous-performance-monitoring-with-ai-alerts)
+- [Tool Comparison](#tool-comparison)
+- [Related Reading](#related-reading)
+
 ## The Manual Profiling Problem
 
 A Node.js CPU flame graph is a wall of stack frames. Most developers know how to generate one but not how to interpret it. An N+1 query in a Python endpoint is obvious in a query count log but invisible in application code. AI tools bridge this gap.

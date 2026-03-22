@@ -39,6 +39,21 @@ Choose Mode Analytics if your team is SQL-centric with structured reporting need
 - **Choose Mode Analytics if**: your team is SQL-centric with structured reporting needs and stakeholder-facing dashboards.
 - **Choose Hex AI Notebooks**: if you need complex Python workflows, AI-assisted analysis throughout, and the ability to publish interactive data apps.
 
+## Table of Contents
+
+- [What is Mode Analytics?](#what-is-mode-analytics)
+- [What is Hex AI Notebooks?](#what-is-hex-ai-notebooks)
+- [Query Language and Data Handling](#query-language-and-data-handling)
+- [AI Integration and Assistance](#ai-integration-and-assistance)
+- [Collaboration and Publishing](#collaboration-and-publishing)
+- [Performance and Scalability](#performance-and-scalability)
+- [When to Choose Each Platform](#when-to-choose-each-platform)
+- [Practical Example: Customer Churn Analysis](#practical-example-customer-churn-analysis)
+- [Implementation Complexity Comparison](#implementation-complexity-comparison)
+- [Real-World Pricing Scenarios](#real-world-pricing-scenarios)
+- [Migration Path Between Platforms](#migration-path-between-platforms)
+- [Connector Ecosystem Differences](#connector-ecosystem-differences)
+
 ## What is Mode Analytics?
 
 Mode Analytics is a collaborative analytics platform that combines SQL queries, Python/R notebooks, and interactive visualizations in a single workspace. Originally focused on SQL-first analysis, Mode provides a structured environment where analysts can write queries, build reports, and share findings with stakeholders.

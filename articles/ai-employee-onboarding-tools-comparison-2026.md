@@ -41,6 +41,20 @@ This comparison examines tools based on their API capabilities, customization op
 - **The ability to fetch**: and display recommendations in your internal portals adds significant value.
 - **the first tool and**: the second tool serve different strengths, so combining them can cover more use cases than relying on either one alone.
 
+## Table of Contents
+
+- [Platform Categories](#platform-categories)
+- [API Capabilities and Integration Points](#api-capabilities-and-integration-points)
+- [Document Processing and Policy Automation](#document-processing-and-policy-automation)
+- [Personalized Learning Paths](#personalized-learning-paths)
+- [Compliance and Security Considerations](#compliance-and-security-considerations)
+- [Platform Pricing and Feature Comparison](#platform-pricing-and-feature-comparison)
+- [Integration Code Examples](#integration-code-examples)
+- [Document Processing with AI](#document-processing-with-ai)
+- [Common Integration Patterns](#common-integration-patterns)
+- [Implementation Challenges and Solutions](#implementation-challenges-and-solutions)
+- [Cost Analysis Framework](#cost-analysis-framework)
+
 ## Platform Categories
 
 AI employee onboarding tools fall into three main categories: standalone onboarding platforms with AI features, HRIS systems with built-in AI capabilities, and custom solutions built using AI APIs. Each approach offers different trade-offs for organizations with technical teams capable of building integrations.
@@ -338,10 +352,9 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [AI Tools for Devrel Teams Creating Developer Onboarding Chec](/ai-tools-compared/ai-tools-for-devrel-teams-creating-developer-onboarding-chec/)
 - [Best AI Tools for Customer Onboarding: A Developer Guide](/ai-tools-compared/best-ai-tools-for-customer-onboarding/)
-- [Cursor Business Seat Minimum and Onboarding Costs Breakdown](/ai-tools-compared/cursor-business-seat-minimum-and-onboarding-costs-breakdown-/)
-- [How to Use AI Assistants for Codebase](/ai-tools-compared/how-to-use-ai-assistants-for--codebase-understanding-and-onboarding/)
-- [How to Use AI to Create Onboarding Documentation for New Tea](/ai-tools-compared/how-to-use-ai-to-create-onboarding-documentation-for-new-tea/)
-
+- [AI Tools for Devrel Teams Creating Developer Onboarding](/ai-tools-compared/ai-tools-for-devrel-teams-creating-developer-onboarding-chec/)
+- [AI Code Review Automation Tools Comparison 2026](/ai-tools-compared/ai-code-review-automation-tools-comparison/)
+- [AI Third Party Risk Management Tools Comparison 2026](/ai-tools-compared/ai-third-party-risk-management-tools-comparison-2026/)
+- [AI Tools for Automated Security Scanning Compared](/ai-tools-compared/ai-tools-for-automated-security-scanning-compared/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

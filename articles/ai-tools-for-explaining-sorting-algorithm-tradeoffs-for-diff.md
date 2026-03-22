@@ -41,6 +41,21 @@ Understanding when to use one sorting algorithm over another requires analyzing 
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Understanding when to use**: one sorting algorithm over another requires analyzing your data's characteristics.
 
+## Table of Contents
+
+- [Why Data Characteristics Drive Algorithm Choice](#why-data-characteristics-drive-algorithm-choice)
+- [Common Data Patterns and Algorithm Matching](#common-data-patterns-and-algorithm-matching)
+- [How AI Tools Explain Tradeoffs](#how-ai-tools-explain-tradeoffs)
+- [Practical Example: Choosing Based on Real Constraints](#practical-example-choosing-based-on-real-constraints)
+- [AI Tools for Algorithm Explanation](#ai-tools-for-algorithm-explanation)
+- [Practical Benchmarking Approach](#practical-benchmarking-approach)
+- [Real-World Scenarios with Algorithm Recommendations](#real-world-scenarios-with-algorithm-recommendations)
+- [Decision Framework AI Can Help Generate](#decision-framework-ai-can-help-generate)
+- [Real-Time Complexity Calculator](#real-time-complexity-calculator)
+- [Customizing Sorts for Your Exact Use Case](#customizing-sorts-for-your-exact-use-case)
+- [When Human Judgment Still Matters](#when-human-judgment-still-matters)
+- [Profiling and Validation Workflow](#profiling-and-validation-workflow)
+
 ## Why Data Characteristics Drive Algorithm Choice
 
 Sorting algorithm performance varies dramatically based on input data. A quicksort implementation that performs excellently on random data may degrade to O(n²) worst-case behavior on already-sorted arrays. Understanding these interactions helps you make informed architectural decisions.

@@ -39,6 +39,14 @@ Monorepos with multiple services present unique challenges for AI coding assista
 - **Document what lives in**: shared packages and when to use them versus when to create service-specific code.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Why Monorepos Need Special CLAUDE.md Treatment](#why-monorepos-need-special-claudemd-treatment)
+- [Prerequisites](#prerequisites)
+- [Testing Requirements](#testing-requirements)
+- [Best Practices Summary](#best-practices-summary)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Monorepos Need Special CLAUDE.md Treatment
 
 In a monorepo containing multiple services, AI tools face several challenges that single-repo projects don't encounter. The AI needs to understand which service it's working in, what shared dependencies exist, and how services communicate with each other. Without this context, AI might suggest code that conflicts with your architectural patterns or reinvents solutions already available in shared packages.

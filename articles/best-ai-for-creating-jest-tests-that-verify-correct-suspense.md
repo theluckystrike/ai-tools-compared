@@ -56,6 +56,15 @@ Claude produces the most reliable Jest tests for React Suspense because it corre
 
 7.
 
+## Table of Contents
+
+- [Understanding Suspense and Lazy Loading Test Requirements](#understanding-suspense-and-lazy-loading-test-requirements)
+- [Key Challenges in Testing Suspense](#key-challenges-in-testing-suspense)
+- [AI Tool Comparison for Suspense Testing](#ai-tool-comparison-for-suspense-testing)
+- [Practical Testing Patterns](#practical-testing-patterns)
+- [Recommendations by Use Case](#recommendations-by-use-case)
+- [Best Practices for AI-Generated Suspense Tests](#best-practices-for-ai-generated-suspense-tests)
+
 ## Understanding Suspense and Lazy Loading Test Requirements
 
 React Suspense lets components pause rendering while waiting for async operations. Testing these patterns involves verifying:
@@ -408,8 +417,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Best AI for Creating Jest Tests That Verify Correct React](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-react-co/)
 - [Best AI Assistant for Creating Jest Tests That Verify Error](/ai-tools-compared/best-ai-assistant-for-creating-jest-tests-that-verify-error-/)
 - [Best AI for Creating Jest Tests That Cover Race Conditions](/ai-tools-compared/best-ai-for-creating-jest-tests-that-cover-race-conditions-i/)
-- [AI Tools for Writing Playwright Tests That Verify Accessibil](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-accessibil/)
-- [AI Tools for Writing Playwright Tests That Verify Responsive](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-responsive/)
-
+- [Best AI Assistant for Creating Playwright Tests for Multi](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-multi-st/)
+- [Best AI Tool for Generating Jest Test Cases from React](/ai-tools-compared/best-ai-tool-for-generating-jest-test-cases-from-react-compo/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

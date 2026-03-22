@@ -24,6 +24,16 @@ React Native development has a unique set of AI challenges: the component model 
 - **Topics covered**: the test cases, task 1: swipeable card (gesture handler), task 2: custom bottom tab bar with haptics
 - **Practical guidance included**: Step-by-step setup and configuration instructions
 
+## Table of Contents
+
+- [The Test Cases](#the-test-cases)
+- [Task 1: Swipeable Card (Gesture Handler)](#task-1-swipeable-card-gesture-handler)
+- [Task 2: Custom Bottom Tab Bar with Haptics](#task-2-custom-bottom-tab-bar-with-haptics)
+- [Task 3: Offline-First Data Sync Hook](#task-3-offline-first-data-sync-hook)
+- [Task 4: FlatList Performance Fix](#task-4-flatlist-performance-fix)
+- [Tool Rankings for React Native](#tool-rankings-for-react-native)
+- [Related Reading](#related-reading)
+
 ## The Test Cases
 
 Four tasks that cover the spectrum of React Native work:

@@ -42,6 +42,18 @@ Choose ChatGPT Search if you want conversational, context-aware answers during c
 
 3.
 
+## Table of Contents
+
+- [How ChatGPT Search Works](#how-chatgpt-search-works)
+- [How Perplexity Pro Search Works](#how-perplexity-pro-search-works)
+- [Best Practices for JWT in Node.js](#best-practices-for-jwt-in-nodejs)
+- [Head-to-Head Comparison Table](#head-to-head-comparison-table)
+- [Core Differences for Developers](#core-differences-for-developers)
+- [Real-World Workflow: Technical Research Session](#real-world-workflow-technical-research-session)
+- [When to Use Each Tool](#when-to-use-each-tool)
+- [Making the Switch](#making-the-switch)
+- [Practical Example: Comparing Documentation](#practical-example-comparing-documentation)
+
 ## How ChatGPT Search Works
 
 ChatGPT Search integrates web search capabilities directly into the ChatGPT interface. When you ask a question that requires current information, ChatGPT searches the web and synthesizes the results into a conversational response.

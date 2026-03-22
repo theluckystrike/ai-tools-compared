@@ -40,6 +40,17 @@ Choose Copy.ai at $49 per month for quick template-based social media posts with
 - **Choose the ChatGPT API**: when you need custom output formats (JSON, Markdown), technical accuracy for developer audiences, or complex automation pipelines with A/B testing and personalization logic.
 - **For technical content like**: API announcements or SDK releases, ChatGPT with a developer-focused system prompt produces far more precise results than Copy.ai's generic marketing templates.
 
+## Table of Contents
+
+- [Platform Overview](#platform-overview)
+- [API Integration for Developers](#api-integration-for-developers)
+- [Pricing Comparison](#pricing-comparison)
+- [Quality for Developer Content](#quality-for-developer-content)
+- [Output Quality Comparison by Content Type](#output-quality-comparison-by-content-type)
+- [Building a Production Content Pipeline with ChatGPT](#building-a-production-content-pipeline-with-chatgpt)
+- [When to Choose Each](#when-to-choose-each)
+- [A Hybrid Approach](#a-hybrid-approach)
+
 ## Platform Overview
 
 **Copy.ai** positions itself as a marketing-focused AI writing assistant. It offers pre-built templates for social media posts, captions, and ad copy. The platform provides a dedicated API and workflow tools designed for marketing teams rather than developers.

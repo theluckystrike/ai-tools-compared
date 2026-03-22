@@ -39,6 +39,21 @@ AI tools for inventory analytics use demand forecasting models, anomaly detectio
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **If you need natural**: language interfaces for team members, LLMs with proper system prompts provide the most flexibility.
 
+## Table of Contents
+
+- [Understanding the AI Inventory Analytics Stack](#understanding-the-ai-inventory-analytics-stack)
+- [Python-Based Approaches for Demand Forecasting](#python-based-approaches-for-demand-forecasting)
+- [Integrating Large Language Models for Inventory Queries](#integrating-large-language-models-for-inventory-queries)
+- [Automated Reorder Point Calculations](#automated-reorder-point-calculations)
+- [Real-Time Anomaly Detection for Inventory](#real-time-anomaly-detection-for-inventory)
+- [Choosing the Right Approach](#choosing-the-right-approach)
+- [Seasonal Demand Adjustment](#seasonal-demand-adjustment)
+- [Multi-SKU Optimization](#multi-sku-optimization)
+- [Supplier Lead Time Variability](#supplier-lead-time-variability)
+- [Integration with ERP and E-Commerce Platforms](#integration-with-erp-and-e-commerce-platforms)
+- [Cost-Benefit Analysis of AI Implementation](#cost-benefit-analysis-of-ai-implementation)
+- [Common Implementation Pitfalls](#common-implementation-pitfalls)
+
 ## Understanding the AI Inventory Analytics Stack
 
 The AI tools available for inventory analytics fall into several categories. Demand forecasting models predict future sales based on historical data. Replenishment optimization suggests when and how much to reorder. Anomaly detection flags unusual patterns like sudden stockouts or overstocking. Finally, natural language interfaces let you query inventory data conversationally.
@@ -405,10 +420,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Real-Time Analytics: A Practical Guide](/ai-tools-compared/ai-tools-for-real-time-analytics/)
 - [AI Tools for Social Media Analytics: A Practical Guide](/ai-tools-compared/ai-tools-for-social-media-analytics/)
-- [Mode Analytics vs Hex AI Notebooks: A Practical](/ai-tools-compared/mode-analytics-vs-hex-ai-notebooks/)
-- [AI Tools for Customer Journey Analytics](/ai-tools-compared/ai-tools-for-customer-journey-analytics/)
-- [Best AI for Analyzing Google Analytics Data Exports with Pan](/ai-tools-compared/best-ai-for-analyzing-google-analytics-data-exports-with-pan/)
-
+- [AI Tools for Real-Time Analytics: A Practical Guide](/ai-tools-compared/ai-tools-for-real-time-analytics/)
+- [AI Tools for Education Student](/ai-tools-compared/ai-tools-for-education-student-support/)
+- [AI Tax Preparation Tools for Accountants](/ai-tools-compared/ai-tax-preparation-tools-for-accountants-2026/)
+- [AI Tools for Generating Grafana Dashboards from Metrics](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

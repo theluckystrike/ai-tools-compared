@@ -40,6 +40,18 @@ Manual API documentation is outdated the moment you ship code changes. AI-genera
 - **Example**: 4999 for $49.99
 - reason (string): The reason for the refund.
 
+## Table of Contents
+
+- [The API Documentation Problem](#the-api-documentation-problem)
+- [Mintlify: AI-Powered Documentation Platform](#mintlify-ai-powered-documentation-platform)
+- [Cursor: IDE-Based Documentation Generation](#cursor-ide-based-documentation-generation)
+- [GitHub Copilot: Lightweight Documentation Assistance](#github-copilot-lightweight-documentation-assistance)
+- [readme.com AI: Documentation Platform with AI](#readmecom-ai-documentation-platform-with-ai)
+- [Comparison Table](#comparison-table)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+- [Best Practices for AI-Generated Documentation](#best-practices-for-ai-generated-documentation)
+- [Real-World Example: Building Complete API Docs](#real-world-example-building-complete-api-docs)
+
 ## The API Documentation Problem
 
 API documentation falls into two categories: reference documentation (what each endpoint does) and practical documentation (how to actually use it). AI tools excel at generating reference docs from code—extracting signatures, types, and generating descriptions. They struggle with practical docs—why you'd use this endpoint, real-world workflows, and error scenarios.

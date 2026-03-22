@@ -42,6 +42,21 @@ Include:
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [What Makes an AI Assistant Suitable for Plugin Documentation](#what-makes-an-ai-assistant-suitable-for-plugin-documentation)
+- [Top AI Assistants for Plugin Development Documentation](#top-ai-assistants-for-plugin-development-documentation)
+- [Practical Comparison: Generating a Plugin Guide](#practical-comparison-generating-a-plugin-guide)
+- [Evaluating Output Quality](#evaluating-output-quality)
+- [Recommendations by Use Case](#recommendations-by-use-case)
+- [Building Your Documentation Workflow](#building-your-documentation-workflow)
+- [Pricing and Implementation Costs](#pricing-and-implementation-costs)
+- [CLI Workflow for Documentation Generation](#cli-workflow-for-documentation-generation)
+- [Real-World Plugin Documentation Examples](#real-world-plugin-documentation-examples)
+- [Interactive Documentation Generation](#interactive-documentation-generation)
+- [Multi-Language Code Example Generation](#multi-language-code-example-generation)
+- [Documentation Evaluation Checklist](#documentation-evaluation-checklist)
+
 ## What Makes an AI Assistant Suitable for Plugin Documentation
 
 Plugin development guides differ from typical documentation. They must cover extension points, show how to register handlers, demonstrate configuration options, and explain lifecycle methods. The best AI assistants for this task share several characteristics.
@@ -485,10 +500,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [Best AI Assistant for Writing Open Source Roadmap Documents](/ai-tools-compared/best-ai-assistant-for-writing-open-source-roadmap-documents-from-issue-milestone-data/)
-- [Best AI Assistant for Creating Open Source Project Branding](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)
-- [Best AI Assistant for Drafting Open Source Partnership and](/ai-tools-compared/best-ai-assistant-for-drafting-open-source-partnership-and-integration-proposals-2026/)
-- [Best AI Assistant for Generating Open Source Release](/ai-tools-compared/best-ai-assistant-for-generating-open-source-release-announcements/)
+- [Best AI Assistant for Writing Playwright Tests](/ai-tools-compared/best-ai-assistant-for-writing-playwright-tests-for-drag-and-drop-interactions-2026/)
+- [Best AI Coding Assistant for React Development](/ai-tools-compared/best-ai-coding-assistant-for-react-development/)
+- [AI Tools for Designers Writing Handoff Notes That Include](/ai-tools-compared/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
 - [Best AI for Writing: Open Source Maintainer Burnout](/ai-tools-compared/best-ai-for-writing-open-source-maintainer-burnout-preventio/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

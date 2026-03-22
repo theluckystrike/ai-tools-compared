@@ -39,6 +39,19 @@ AI tools generate correct Go interface implementations about 85% of the time for
 - **- "Wrap errors with fmt.Errorf and %w"**: Ensures error chain compatibility with `errors.Is` and `errors.As`.
 - **The receiver must be**: a pointer receiver if the interface will be used polymorphically, and error types must match Go's conventions.
 
+## Table of Contents
+
+- [The Challenge of Go Interface Generation](#the-challenge-of-go-interface-generation)
+- [Testing Methodology](#testing-methodology)
+- [Results from Popular AI Coding Assistants](#results-from-popular-ai-coding-assistants)
+- [Common Failure Patterns](#common-failure-patterns)
+- [Embedded Interface Implementations](#embedded-interface-implementations)
+- [Context-Aware Interfaces](#context-aware-interfaces)
+- [Best Practices for Working with AI-Generated Go Interfaces](#best-practices-for-working-with-ai-generated-go-interfaces)
+- [Prompting Strategies that Improve AI Output](#prompting-strategies-that-improve-ai-output)
+- [When to Trust AI Output vs When to Verify Manually](#when-to-trust-ai-output-vs-when-to-verify-manually)
+- [Accuracy Comparison Summary](#accuracy-comparison-summary)
+
 ## The Challenge of Go Interface Generation
 
 Go interfaces differ significantly from interfaces in languages like Java or TypeScript. In Go, interfaces are implemented implicitly—there is no explicit `implements` keyword. This means AI tools must correctly identify which methods need implementation based on the interface definition, and match method signatures precisely including the correct receiver type.

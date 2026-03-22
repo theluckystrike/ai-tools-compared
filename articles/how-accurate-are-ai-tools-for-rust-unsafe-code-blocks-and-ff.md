@@ -43,6 +43,24 @@ let value = *ptr;  // Use-after-free!
 - **Does Rust offer a**: free tier? Most major tools offer some form of free tier or trial period.
 - **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 
+## Table of Contents
+
+- [Understanding the Challenge](#understanding-the-challenge)
+- [Testing Methodology](#testing-methodology)
+- [Results: Where AI Tools Excel](#results-where-ai-tools-excel)
+- [Results: Where AI Tools Struggle](#results-where-ai-tools-struggle)
+- [AI Tool Accuracy by Task Category](#ai-tool-accuracy-by-task-category)
+- [Synchronization Mistakes in Concurrent Unsafe Code](#synchronization-mistakes-in-concurrent-unsafe-code)
+- [Memory Layout Pitfalls with `#[repr(C)]`](#memory-layout-pitfalls-with-reprc)
+- [Best Practices When Using AI Tools for Unsafe Rust](#best-practices-when-using-ai-tools-for-unsafe-rust)
+- [When to Skip AI and Write Unsafe Manually](#when-to-skip-ai-and-write-unsafe-manually)
+- [Unsafe Pattern Accuracy Matrix](#unsafe-pattern-accuracy-matrix)
+- [Testing Your Unsafe Code with AI](#testing-your-unsafe-code-with-ai)
+- [Prompting Strategies for Better Unsafe Code](#prompting-strategies-for-better-unsafe-code)
+- [Safe Wrapper Pattern for Risky Operations](#safe-wrapper-pattern-for-risky-operations)
+- [Common Mistakes in AI-Generated Unsafe Rust](#common-mistakes-in-ai-generated-unsafe-rust)
+- [Decision Framework: When to Ask AI for Unsafe Code](#decision-framework-when-to-ask-ai-for-unsafe-code)
+
 ## Understanding the Challenge
 
 Rust's ownership system and borrow checker provide memory safety without garbage collection. When you step outside these guarantees with unsafe code, you're responsible for ensuring correctness. FFI takes this further by crossing language boundaries—calling C libraries, interacting with operating system APIs, or embedding foreign code. The complexity here involves understanding:
@@ -504,9 +522,8 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [How Accurate Are AI Tools at Generating Rust Crossbeam](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
+- [Best AI Coding Tools for Rust Developers 2026](/ai-tools-compared/ai-tools-for-rust-developers-2026/)
 - [How Accurate Are AI Tools](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-serde-serialization-code/)
-- [How Accurate Are AI Tools at Rust WASM Compilation and Bindg](/ai-tools-compared/how-accurate-are-ai-tools-at-rust-wasm-compilation-and-bindg/)
-- [Best Prompting Strategies for Getting Accurate Code from](/ai-tools-compared/best-prompting-strategies-for-getting-accurate-code-from-ai-/)
-- [Best AI Tools for Writing Rust Async Code with Tokio Runtime](/ai-tools-compared/best-ai-tools-for-writing-rust-async-code-with-tokio-runtime/)
-
+- [How Well Do AI Tools Generate Rust Macro Definitions and Pro](/ai-tools-compared/how-well-do-ai-tools-generate-rust-macro-definitions-and-pro/)
+- [How Accurate Are AI Tools at Rust WASM Compilation](/ai-tools-compared/how-accurate-are-ai-tools-at-rust-wasm-compilation-and-bindg/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

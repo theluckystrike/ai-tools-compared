@@ -42,6 +42,13 @@ Building admin panels from scratch consumes significant development time, especi
 - **Date and timestamp fields**: use Date Picker or Datetime Picker components.
 - **Common issues include incorrect**: parameter syntax, missing RETURNING clauses for inserted records, and improper handling of NULL values in filters.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Troubleshooting Common Generation Issues](#troubleshooting-common-generation-issues)
+- [Performance Optimization Strategies](#performance-optimization-strategies)
+- [Security Considerations for Generated Panels](#security-considerations-for-generated-panels)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

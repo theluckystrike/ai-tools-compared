@@ -48,6 +48,17 @@ Result: 100% type-safe, catches entire classes of bugs.
 3.
 - **Remaining 10–20% is performance**: tuning and error handling refinement.
 
+## Table of Contents
+
+- [Why Language Migration Matters](#why-language-migration-matters)
+- [AI Tools for Code Migration: Capabilities Comparison](#ai-tools-for-code-migration-capabilities-comparison)
+- [Detailed Migration Workflows by Language Pair](#detailed-migration-workflows-by-language-pair)
+- [Cost Comparison: Manual vs. AI-Assisted](#cost-comparison-manual-vs-ai-assisted)
+- [Decision Framework: Which AI Tool to Use](#decision-framework-which-ai-tool-to-use)
+- [Real-World Workflow: Python to Rust Financial Pipeline](#real-world-workflow-python-to-rust-financial-pipeline)
+- [Common Pitfalls to Avoid](#common-pitfalls-to-avoid)
+- [Integration into CI/CD](#integration-into-cicd)
+
 ## Why Language Migration Matters
 
 Companies migrate code for:

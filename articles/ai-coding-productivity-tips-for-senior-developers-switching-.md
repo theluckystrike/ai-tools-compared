@@ -47,6 +47,16 @@ This captures objective findings quickly.
 AI excels at generating boilerplate, converting between patterns, and implementing well-documented algorithms.
 - **class PaymentService(Protocol)**: def setup_account(self, user_id: str) -> bool: ...
 
+## Table of Contents
+
+- [Understanding the Mental Model Shift](#understanding-the-mental-model-shift)
+- [Practical Strategies for AI-Assisted Development](#practical-strategies-for-ai-assisted-development)
+- [Real-World Example: Refactoring Legacy Code](#real-world-example-refactoring-legacy-code)
+- [Measuring Productivity Gains](#measuring-productivity-gains)
+- [Advanced Techniques for Senior Developers](#advanced-techniques-for-senior-developers)
+- [Comparing AI Tool Capabilities for Senior Dev Work](#comparing-ai-tool-capabilities-for-senior-dev-work)
+- [Time Investment vs. Return](#time-investment-vs-return)
+
 ## Understanding the Mental Model Shift
 
 The most significant change when adopting AI coding tools involves moving from writing code to directing code generation. Your role evolves from implementation detail specialist to architect and reviewer. You specify *what* needs to happen, and the AI handles the *how* at a syntactic level.

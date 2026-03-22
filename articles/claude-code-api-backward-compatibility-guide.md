@@ -40,6 +40,13 @@ Maintaining backward compatibility is crucial for API stability and user trust. 
 - **When you release an API update**: you cannot force millions of app users to update immediately.
 - **For most APIs**: URL versioning provides better discoverability and debugging.
 
+## Table of Contents
+
+- [Why Backward Compatibility Matters](#why-backward-compatibility-matters)
+- [Prerequisites](#prerequisites)
+- [Best Practices Summary](#best-practices-summary)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Backward Compatibility Matters
 
 Backward compatibility ensures that existing clients continue to function when you release new versions of your API. Breaking changes force all consumers to update simultaneously, creating friction, risking integrations, and potentially causing service disruptions. By maintaining compatibility, you give clients the flexibility to upgrade on their own timeline while you introduce new features.
@@ -278,10 +285,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [Best AI for Writing Backward Compatibility Testing Checklist](/ai-tools-compared/best-ai-for-writing-backward-compatibility-testing-checklist/)
-- [How to Use the Claude API for Automated Code Review](/ai-tools-compared/how-to-use-claude-api-for-automated-code-review/)
-- [Claude Code API Client TypeScript Guide: Build Type-Safe](/ai-tools-compared/claude-code-api-client-typescript-guide/)
-- [Claude Code API Error Handling Standards](/ai-tools-compared/claude-code-api-error-handling-standards/)
+- [Writing CLAUDE MD Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
+- [AI Tools for API Documentation from Code 2026](/ai-tools-compared/ai-tools-for-api-documentation-from-code-2026/)
 - [Claude Code API Snapshot Testing Guide](/ai-tools-compared/claude-code-api-snapshot-testing-guide/)
-
+- [Claude Code API Client TypeScript Guide: Build Type-Safe](/ai-tools-compared/claude-code-api-client-typescript-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

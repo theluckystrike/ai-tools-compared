@@ -37,6 +37,20 @@ Good documentation is the difference between a codebase teammates actually use a
 - **The more explicit your TypeScript types**: the better Copilot's suggestions.
 - **If you already use**: GitHub Copilot through your organization, its inline suggestions may be sufficient for routine documentation.
 
+## Table of Contents
+
+- [What Makes an AI Assistant Good at Documentation Comments](#what-makes-an-ai-assistant-good-at-documentation-comments)
+- [GitHub Copilot](#github-copilot)
+- [Claude (via Cursor or Windsurf)](#claude-via-cursor-or-windsurf)
+- [Cursor](#cursor)
+- [Codeium](#codeium)
+- [Practical Recommendations](#practical-recommendations)
+- [Advanced Patterns for Complex Documentation](#advanced-patterns-for-complex-documentation)
+- [Workflow Integration Strategies](#workflow-integration-strategies)
+- [Comparing Documentation Quality Across Models](#comparing-documentation-quality-across-models)
+- [TypeScript-Specific Best Practices](#typescript-specific-best-practices)
+- [Conclusion](#conclusion)
+
 ## What Makes an AI Assistant Good at Documentation Comments
 
 The best AI assistants for writing JSDoc and TSDoc share several characteristics. They understand your codebase's types through Language Server Protocol (LSP) integration, recognize parameter names and return types from your actual code, and produce comments that conform to the JSDoc or TSDoc specifications without requiring you to fix formatting issues.
@@ -392,6 +406,14 @@ export function query<T>(
 The best AI assistant for JSDoc and TSDoc comments depends on your specific needs. **Cursor** offers the most comprehensive out-of-the-box experience with the `/doc` command and strong type inference. **Claude** excels for complex documentation scenarios and generates more nuanced explanations. **GitHub Copilot** is the practical choice if you're already in the GitHub ecosystem.
 
 Regardless of tool, remember that AI-assisted documentation works best when your code has explicit types and clear function purposes. Invest time in type clarity, and your AI assistant will generate documentation that actually helps your team.
+
+## Related Articles
+
+- [Best AI Coding Tool Under $20 Per Month (2026)](/ai-tools-compared/best-ai-coding-tool-under-20-dollars-per-month-2026/)
+- [Best Budget AI Coding Assistant for Freelance Developers](/ai-tools-compared/best-budget-ai-coding-assistant-for-freelance-developers-202/)
+- [AI Coding Assistant Accuracy for TypeScript Next Js Server](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
+- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)
+- [Best AI Coding Assistant for Under $5 Per](/ai-tools-compared/best-ai-coding-assistant-for-under-5-dollars-per-month/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

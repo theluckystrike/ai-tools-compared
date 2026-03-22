@@ -42,6 +42,17 @@ AI coding assistants have become valuable allies in diagnosing and resolving the
 - **This guide examines which**: AI tools excel at identifying hydration mismatch causes and providing actionable fixes.
 - **They analyze your component**: tree to identify non-deterministic code, suggest appropriate fixes using conditional rendering, and explain why certain patterns cause issues.
 
+## Table of Contents
+
+- [Understanding Hydration Mismatch Errors](#understanding-hydration-mismatch-errors)
+- [How AI Assistants Help](#how-ai-assistants-help)
+- [AI Tool Comparison for Hydration Debugging](#ai-tool-comparison-for-hydration-debugging)
+- [Practical Debugging Workflow](#practical-debugging-workflow)
+- [Advanced: Debugging Third-Party Library Hydration Issues](#advanced-debugging-third-party-library-hydration-issues)
+- [Using suppressHydrationWarning Correctly](#using-suppresshydrationwarning-correctly)
+- [Prompting Strategy for Hydration Debugging](#prompting-strategy-for-hydration-debugging)
+- [Choosing Your AI Tool](#choosing-your-ai-tool)
+
 ## Understanding Hydration Mismatch Errors
 
 When Next.js renders a page on the server, it produces static HTML. This HTML gets sent to the browser, and React then "hydrates" it by attaching event listeners and making it interactive. During hydration, React compares the server output with what it expects to render. If there's a mismatch, you get an error.

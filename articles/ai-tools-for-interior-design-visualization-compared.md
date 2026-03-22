@@ -44,6 +44,14 @@ Interior AI focuses on speed and ease of use.
 - **Users upload a room**: photo and select a style (modern, minimalist, industrial, Scandinavian), then receive generated visualizations within seconds.
 - **The platform combines AI**: generation with a furniture library, allowing users to specify exact pieces or let the AI select appropriate items.
 
+## Table of Contents
+
+- [What Interior Design Visualization Requires](#what-interior-design-visualization-requires)
+- [Leading AI Tools for Interior Design Visualization](#leading-ai-tools-for-interior-design-visualization)
+- [Comparison Matrix](#comparison-matrix)
+- [Implementation Recommendations](#implementation-recommendations)
+- [Performance Considerations](#performance-considerations)
+
 ## What Interior Design Visualization Requires
 
 Effective AI visualization tools must handle several complex tasks:

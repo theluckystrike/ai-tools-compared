@@ -42,6 +42,19 @@ Video lip sync technology has matured significantly, enabling developers to crea
 - **The ARPABET phoneme set**: used for English has 44 phonemes; Mandarin uses a pinyin-based system with different consonant clusters and tones that require separate viseme definitions.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Understanding Lip Sync Technology](#understanding-lip-sync-technology)
+- [Open-Source Libraries](#open-source-libraries)
+- [Cloud APIs and Services](#cloud-apis-and-services)
+- [Implementation Considerations](#implementation-considerations)
+- [Building a Custom Pipeline](#building-a-custom-pipeline)
+- [Performance Optimization](#performance-optimization)
+- [Multilingual Lip Sync](#multilingual-lip-sync)
+- [Quality Evaluation](#quality-evaluation)
+- [Practical Applications](#practical-applications)
+- [Deployment Considerations](#deployment-considerations)
+
 ## Understanding Lip Sync Technology
 
 Lip sync AI analyzes audio and generates corresponding facial animations. The technology works by extracting speech features—phonemes, timing, and intensity—from audio, then mapping these to viseme (visual phoneme) sequences that drive 3D or 2D model mouth shapes.

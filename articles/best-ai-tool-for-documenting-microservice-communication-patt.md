@@ -24,6 +24,24 @@ Modern microservice architectures can quickly become difficult to understand as 
 - **The best solutions combine static code analysis with runtime observation** for comprehensive dependency tracking.
 - **Open-source options exist** alongside commercial offerings, making this accessible for teams of various sizes.
 
+## Table of Contents
+
+- [Why Microservice Documentation Matters](#why-microservice-documentation-matters)
+- [Approaches to AI-Powered Documentation](#approaches-to-ai-powered-documentation)
+- [Practical Implementation Example](#practical-implementation-example)
+- [Extracting Dependencies from Code Automatically](#extracting-dependencies-from-code-automatically)
+- [Comparing Leading Tools](#comparing-leading-tools)
+- [Using LLMs to Narrate Architecture Diagrams](#using-llms-to-narrate-architecture-diagrams)
+- [Integrating Documentation into CI/CD](#integrating-documentation-into-cicd)
+- [Choosing the Right Tool for Your Needs](#choosing-the-right-tool-for-your-needs)
+- [Implementation Recommendations](#implementation-recommendations)
+- [Advanced Configuration Examples](#advanced-configuration-examples)
+- [Real-World Integration Scenarios](#real-world-integration-scenarios)
+- [Troubleshooting Common Documentation Issues](#troubleshooting-common-documentation-issues)
+- [CLI Tools for Documentation Generation](#cli-tools-for-documentation-generation)
+- [Validation and Quality Assurance](#validation-and-quality-assurance)
+- [Conclusion](#conclusion)
+
 ## Why Microservice Documentation Matters
 
 When you have dozens or hundreds of services communicating through APIs, message queues, and event streams, understanding the overall architecture becomes essential for:
@@ -518,5 +536,13 @@ def validate_documentation(docs, actual_traffic_logs):
 AI tools for documenting microservice communication patterns have matured significantly, offering practical solutions for teams struggling to maintain accurate architecture documentation. The best choice depends on your specific infrastructure, team capabilities, and documentation requirements. Start with a tool that matches your current setup, then expand as your documentation needs grow.
 
 The investment in automated documentation pays dividends through faster incident response, smoother onboarding, and clearer architectural understanding across your team.
+
+## Related Articles
+
+- [Best Free AI Tool for Code Explanation and Documentation](/ai-tools-compared/best-free-ai-tool-for-code-explanation-and-documentation/)
+- [Best AI Tools for Code Documentation Generation 2026](/ai-tools-compared/best-ai-tools-for-code-documentation-generation-2026/)
+- [AI Tools for Creating Dbt Documentation Blocks](/ai-tools-compared/ai-tools-for-creating-dbt-documentation-blocks-from-column-level-lineage-analysis/)
+- [AI Tools for Reviewing Documentation Pull Requests](/ai-tools-compared/ai-tools-for-reviewing-documentation-pull-requests-for-accur/)
+- [Best AI Tools for Generating API Documentation From Code](/ai-tools-compared/best-ai-tools-for-generating-api-documentation-from-code-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

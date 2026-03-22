@@ -39,6 +39,22 @@ Choose GitHub Copilot if you need fast inline test scaffolding for straightforwa
 - **Claude-generated tests typically show**: 30-40% fewer flaky failures.
 - **Create a "test template"**: showing your preferred patterns 4.
 
+## Table of Contents
+
+- [Understanding the Test Writing Challenge](#understanding-the-test-writing-challenge)
+- [GitHub Copilot for Jest Test Generation](#github-copilot-for-jest-test-generation)
+- [Claude Code for Jest Test Generation](#claude-code-for-jest-test-generation)
+- [Practical Comparison in Real Projects](#practical-comparison-in-real-projects)
+- [Recommendations by Use Case](#recommendations-by-use-case)
+- [Pricing and Availability](#pricing-and-availability)
+- [Test Coverage Comparison](#test-coverage-comparison)
+- [Decision Framework for Tool Selection](#decision-framework-for-tool-selection)
+- [Practical Prompting Strategies](#practical-prompting-strategies)
+- [Common Pitfalls and Solutions](#common-pitfalls-and-solutions)
+- [Optimizing Your Workflow](#optimizing-your-workflow)
+- [Test Performance Metrics](#test-performance-metrics)
+- [Team Adoption Strategy](#team-adoption-strategy)
+
 ## Understanding the Test Writing Challenge
 
 React applications present specific challenges for AI-assisted test writing. Components often involve complex state management, async operations, user interactions, and context dependencies. A test assistant must understand React's rendering lifecycle, hooks behavior, and the interplay between components and their data sources.
@@ -288,10 +304,9 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Copilot vs Cursor for Writing pytest Fixtures](/ai-tools-compared/copilot-vs-cursor-for-writing--pytest-fixtures-/)
+- [Claude Code Database Test Fixtures Guide](/ai-tools-compared/claude-code-database-test-fixtures-guide/)
+- [Best AI Tool for Generating Jest Test Cases from React](/ai-tools-compared/best-ai-tool-for-generating-jest-test-cases-from-react-compo/)
 - [Copilot vs Claude Code for Writing Complex SQL Stored Proced](/ai-tools-compared/copilot-vs-claude-code-for-writing-complex-sql-stored-proced/)
-- [Copilot vs Claude Code for Writing GitHub Actions Cicd Workf](/ai-tools-compared/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
-- [AI Tools for Creating Boundary Value Test Case](/ai-tools-compared/ai-tools-for-creating--boundary-value-test-case/)
-- [Best AI for Creating Negative Test Cases](/ai-tools-compared/best-ai-for-creating--negative-test-cases-from-/)
-
+- [Copilot vs Claude Code for Writing GitHub Actions Cicd](/ai-tools-compared/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
+- [Copilot vs Claude Code for Scaffolding New Django REST](/ai-tools-compared/copilot-vs-claude-code-for-scaffolding-new-django-rest-frame/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

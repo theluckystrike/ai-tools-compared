@@ -41,6 +41,19 @@ Claude models produce the most functionally pure Scala code by default, generati
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Claude models produce the**: most functionally pure Scala code by default, generating solutions using map, flatMap, and fold operations rather than mutable variables.
 
+## Table of Contents
+
+- [Understanding Scala's Functional Programming Demands](#understanding-scalas-functional-programming-demands)
+- [Claude and GPT Models for Scala Development](#claude-and-gpt-models-for-scala-development)
+- [Practical Examples](#practical-examples)
+- [Working with Scala Libraries](#working-with-scala-libraries)
+- [Practical Tips for Better Results](#practical-tips-for-better-results)
+- [Limitations and Considerations](#limitations-and-considerations)
+- [Advanced Scala Patterns](#advanced-scala-patterns)
+- [Tool-Specific Prompt Strategies](#tool-specific-prompt-strategies)
+- [Performance Considerations](#performance-considerations)
+- [Testing Scala AI Output](#testing-scala-ai-output)
+
 ## Understanding Scala's Functional Programming Demands
 
 Scala's functional programming capabilities extend beyond simple lambda expressions. Developers regularly work with higher-order functions, monadic transformations, type classes, and immutable data structures. When an AI assistant generates Scala code, it must understand how to compose functions, handle Option and Either types correctly, and apply for comprehensions rather than nested loops.

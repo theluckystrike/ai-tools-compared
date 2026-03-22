@@ -24,6 +24,22 @@ Building an FAQ page from your customer support ticket history can reduce repeat
 - **Accuracy varies** based on ticket quality and tool configuration
 - **Custom pipelines** give you control over output format and tone
 
+## Table of Contents
+
+- [Why Generate FAQs from Support Tickets](#why-generate-faqs-from-support-tickets)
+- [Approaches to FAQ Generation](#approaches-to-faq-generation)
+- [Pulling Tickets from Common Helpdesk Platforms](#pulling-tickets-from-common-helpdesk-platforms)
+- [Tool Comparison](#tool-comparison)
+- [Practical Implementation Tips](#practical-implementation-tips)
+- [Keeping FAQs Fresh](#keeping-faqs-fresh)
+- [Common Challenges](#common-challenges)
+- [Building an End-to-End FAQ Pipeline](#building-an-end-to-end-faq-pipeline)
+- [Integration with Documentation Systems](#integration-with-documentation-systems)
+- [{faq['question']}](#faqquestion)
+- [Measuring FAQ Effectiveness](#measuring-faq-effectiveness)
+- [Updating FAQs Over Time](#updating-faqs-over-time)
+- [Conclusion](#conclusion)
+
 ## Why Generate FAQs from Support Tickets
 
 Customer support teams sit on goldmines of data. Every ticket represents a real user problem that likely affects hundreds of other customers. Manually reviewing thousands of tickets to identify common questions is time-consuming and error-prone.

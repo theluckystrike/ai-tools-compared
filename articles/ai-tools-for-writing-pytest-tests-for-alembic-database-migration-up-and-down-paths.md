@@ -39,6 +39,18 @@ Claude and Cursor analyze Alembic migration files and generate pytest tests cove
 - **Use transaction fixtures to**: ensure tests don't leave lasting database changes 6.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Understanding Alembic Migration Testing Requirements](#understanding-alembic-migration-testing-requirements)
+- [How AI Tools Generate Migration Tests](#how-ai-tools-generate-migration-tests)
+- [Practical Workflow for AI-Assisted Test Generation](#practical-workflow-for-ai-assisted-test-generation)
+- [Setting Up a strong Test Fixture](#setting-up-a-strong-test-fixture)
+- [Comparing AI Tools for Migration Testing](#comparing-ai-tools-for-migration-testing)
+- [Advanced Testing Patterns](#advanced-testing-patterns)
+- [Testing PostgreSQL-Specific Migrations](#testing-postgresql-specific-migrations)
+- [Common Pitfalls and How AI Helps Avoid Them](#common-pitfalls-and-how-ai-helps-avoid-them)
+- [Best Practices for AI-Generated Migration Tests](#best-practices-for-ai-generated-migration-tests)
+
 ## Understanding Alembic Migration Testing Requirements
 
 Each Alembic migration consists of two primary functions: `upgrade()` applies changes to your database schema, while `downgrade()` reverses those changes. Testing both directions ensures your migrations work correctly and that you can safely roll back if issues arise in production.

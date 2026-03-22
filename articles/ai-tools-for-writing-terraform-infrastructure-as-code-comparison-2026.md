@@ -39,6 +39,16 @@ Infrastructure-as-Code has become the standard for managing cloud resources, but
 - **Pricing**: $20/month Cursor Pro, plus Claude API usage ($3-15/month depending on usage).
 - **Pricing**: Claude API at $3/month (light usage) to $30/month (heavy usage).
 
+## Table of Contents
+
+- [Why AI Matters for Infrastructure-as-Code](#why-ai-matters-for-infrastructure-as-code)
+- [Tool Comparison](#tool-comparison)
+- [Detailed Feature Comparison Table](#detailed-feature-comparison-table)
+- [Security Best Practices When Using AI for IaC](#security-best-practices-when-using-ai-for-iac)
+- [Real-World Integration Scenarios](#real-world-integration-scenarios)
+- [Provider Coverage and Limitations](#provider-coverage-and-limitations)
+- [Getting Started Recommendations](#getting-started-recommendations)
+
 ## Why AI Matters for Infrastructure-as-Code
 
 Terraform syntax is verbose and requires deep provider knowledge. Generating an RDS instance requires understanding resource dependencies, subnet groups, parameter groups, security groups, and backup strategies. A single mistake can cause deployment failures, security vulnerabilities, or unexpected costs.
@@ -340,10 +350,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Claude vs Gpt4 Terraform Pulumi Infrastructure Code](/ai-tools-compared/claude-vs-gpt4-terraform-pulumi-infrastructure-code-2026/)
+- [Best AI Tools for Writing Terraform Modules in 2026](/ai-tools-compared/best-ai-tools-for-writing-terraform-modules-2026/---)
+- [AI Tools for Generating Terraform Provider Configurations 2026](/ai-tools-compared/ai-tools-for-generating-terraform-provider-configurations-2026/)
+- [Best AI Tools for Writing Terraform Provider Plugins 2026](/ai-tools-compared/best-ai-tools-for-writing-terraform-provider-plugins-2026/)
 - [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-compared/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)
-- [Best AI Tools for Writing AWS CDK Infrastructure Code](/ai-tools-compared/best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/)
-- [Best AI Assistants for Pulumi Infrastructure Code](/ai-tools-compared/best-ai-assistants-for-pulumi-infrastructure-code-in-typescript-2026/)
-- [Best Workflow for Using AI to Write Infrastructure as Code F](/ai-tools-compared/best-workflow-for-using-ai-to-write-infrastructure-as-code-f/)
-
+- [AI Tools for Reviewing Terraform Plans Before Applying](/ai-tools-compared/ai-tools-for-reviewing-terraform-plans-before-applying-to-pr/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

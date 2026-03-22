@@ -46,6 +46,22 @@ Save this as `claude.bat` and place it in a directory in your PATH.
 - **Use Windows Terminal instead**: of Command Prompt - it handles UTF-8 natively 2.
 - **Use configuration management -**: store encoding settings in version control 5.
 
+## Table of Contents
+
+- [Understanding the Garbled Output Problem](#understanding-the-garbled-output-problem)
+- [Primary Solution: Configure Terminal Encoding](#primary-solution-configure-terminal-encoding)
+- [Solution: Set Claude Code Environment Variables](#solution-set-claude-code-environment-variables)
+- [Solution: Terminal Font Compatibility](#solution-terminal-font-compatibility)
+- [Solution: Update Claude Code Installation](#solution-update-claude-code-installation)
+- [Troubleshooting Specific Symptoms](#troubleshooting-specific-symptoms)
+- [Verification: Testing Your Fix](#verification-testing-your-fix)
+- [Advanced Diagnostics](#advanced-diagnostics)
+- [Platform-Specific Encoding Tables](#platform-specific-encoding-tables)
+- [Integration with CI/CD Pipelines](#integration-with-cicd-pipelines)
+- [Troubleshooting Terminal Emulator Issues](#troubleshooting-terminal-emulator-issues)
+- [Long-term Maintenance](#long-term-maintenance)
+- [Preventive Measures: Avoid Garbled Output](#preventive-measures-avoid-garbled-output)
+
 ## Understanding the Garbled Output Problem
 
 Claude Code outputs text using UTF-8 encoding by default. Windows terminals, particularly Command Prompt (cmd.exe) and older PowerShell configurations, often default to legacy encodings like Windows-1252 or the system's active code page (typically CP437 or CP1252). When UTF-8 encoded characters hit a terminal expecting a different encoding, characters get misinterpreted, resulting in garbled output.

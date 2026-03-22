@@ -42,6 +42,23 @@ AI assistants can help you write AWS IAM policies that follow the principle of l
    - Operations: SELECT, INSERT, UPDATE (not DELETE or DDL)
 4.
 
+## Table of Contents
+
+- [The Challenge of Least Privilege in IAM](#the-challenge-of-least-privilege-in-iam)
+- [How AI Assistants Approach IAM Policy Generation](#how-ai-assistants-approach-iam-policy-generation)
+- [Practical Examples](#practical-examples)
+- [Working with Multi-Service Permissions](#working-with-multi-service-permissions)
+- [Limitations and Verification](#limitations-and-verification)
+- [Building Effective Prompts for IAM](#building-effective-prompts-for-iam)
+- [Iterative Policy Refinement](#iterative-policy-refinement)
+- [Security Best Practices](#security-best-practices)
+- [Comparing AI Assistants for IAM Policy Generation](#comparing-ai-assistants-for-iam-policy-generation)
+- [Tool Comparison Table](#tool-comparison-table)
+- [Real-World Example: Multi-Tier Application](#real-world-example-multi-tier-application)
+- [Validation Checklist](#validation-checklist)
+- [Iterative Refinement Workflow](#iterative-refinement-workflow)
+- [Pricing Implications](#pricing-implications)
+
 ## The Challenge of Least Privilege in IAM
 
 The principle of least privilege requires that users, applications, and services receive only the permissions they absolutely need to function. In AWS, this translates to crafting IAM policies with specific Action, Resource, and Condition elements that precisely match actual access requirements. The complexity arises because real-world applications often need access to multiple services, and determining the exact permissions needed requires deep understanding of AWS service behavior.
@@ -310,9 +327,8 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [Best AI Assistants for AWS CloudFormation Template](/ai-tools-compared/best-ai-assistants-for-aws-cloudformation-template-generatio/)
-- [Best AI for Writing Correct Kotlin Multiplatform Shared](/ai-tools-compared/best-ai-for-writing-correct-kotlin-multiplatform-shared-code/)
 - [AI Tools for Writing pytest Tests with Moto Library for AWS](/ai-tools-compared/ai-tools-for-writing-pytest-tests-with-moto-library-for-aws-/)
-- [Best AI Tools for Writing AWS CDK Infrastructure Code](/ai-tools-compared/best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/)
+- [Best AI Assistant for Preparing for AWS Solutions Architect](/ai-tools-compared/best-ai-assistant-for-preparing-for-aws-solutions-architect/)
+- [GitHub Copilot vs Amazon Codewhisperer for AWS Development](/ai-tools-compared/github-copilot-vs-amazon-codewhisperer-for-aws-development-2026/)
 - [Best AI Assistants for Writing CircleCI and GitLab CI](/ai-tools-compared/best-ai-assistants-for-writing-circleci-and-gitlab-ci-pipeli/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -41,6 +41,19 @@ Choose ChatGPT Enterprise if you need fast deployment, lack ML engineering resou
 3.
 - **Choose ChatGPT Enterprise if**: you need fast deployment, lack ML engineering resources, or want OpenAI to handle infrastructure and model updates.
 
+## Table of Contents
+
+- [What ChatGPT Enterprise Offers](#what-chatgpt-enterprise-offers)
+- [Building a Custom Support Bot](#building-a-custom-support-bot)
+- [Comparing Key Dimensions](#comparing-key-dimensions)
+- [Feature Comparison Table](#feature-comparison-table)
+- [When to Choose Each Option](#when-to-choose-each-option)
+- [Hybrid Approach](#hybrid-approach)
+- [Scaling Considerations: What Changes at 10k Requests/Day](#scaling-considerations-what-changes-at-10k-requestsday)
+- [Integration Patterns: Real-World Implementation](#integration-patterns-real-world-implementation)
+- [Monitoring and Optimization](#monitoring-and-optimization)
+- [Data Privacy and Compliance Deep Dive](#data-privacy-and-compliance-deep-dive)
+
 ## What ChatGPT Enterprise Offers
 
 ChatGPT Enterprise provides OpenAI's language models behind your organization's firewall with enhanced security, administrative controls, and API access. The platform handles model training, infrastructure, and updates, letting your team focus on integration rather than model management.

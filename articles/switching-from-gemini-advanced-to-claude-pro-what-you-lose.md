@@ -39,6 +39,18 @@ Switching to Claude Pro gains better reasoning and code generation but loses Gem
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Switching to Claude Pro**: gains better reasoning and code generation but loses Gemini's superior real-time web search and Workspace integration.
 
+## Table of Contents
+
+- [Context Window Differences](#context-window-differences)
+- [Code Generation Style](#code-generation-style)
+- [Tool Integration Ecosystem](#tool-integration-ecosystem)
+- [Pricing Structure](#pricing-structure)
+- [Multimodal Capabilities](#multimodal-capabilities)
+- [Conversation Continuity](#conversation-continuity)
+- [API Access and Customization](#api-access-and-customization)
+- [What You Gain (Bonus)](#what-you-gain-bonus)
+- [Making the Transition Smoother](#making-the-transition-smoother)
+
 ## Context Window Differences
 
 One of the first things you'll notice is the context window size. Gemini Advanced offers a substantial context window that can handle large codebases in a single conversation. Claude Pro also provides an impressive context window, but the way each model handles long context varies significantly.
@@ -286,10 +298,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How to Export Gemini Workspace Data Before Switching to](/ai-tools-compared/how-to-export-gemini-workspace-data-before-switching-to-claude-team/)
-- [Gemini Advanced Google One Storage: Does AI Use Your Storage](/ai-tools-compared/gemini-advanced-google-one-storage-does-ai-use-your-storage-/)
-- [Gemini Advanced Not Available in My Country Fix](/ai-tools-compared/gemini-advanced-not-available-in-my-country-fix/)
-- [Gemini Advanced vs ChatGPT Plus Price Per Feature Comparison](/ai-tools-compared/gemini-advanced-vs-chatgpt-plus-price-per-feature-comparison-2026/)
-- [Switching from ChatGPT Voice to Gemini Live Conversation](/ai-tools-compared/switching-from-chatgpt-voice-to-gemini-live-conversation-differences/)
-
+- [Claude Max vs Claude Pro Actual Difference](/ai-tools-compared/claude-max-vs-claude-pro-actual-difference-in-daily-message-limits/)
+- [Gemini vs Claude for Multimodal Coding](/ai-tools-compared/gemini-vs-claude-multimodal-coding-tasks/)
+- [Claude vs Gemini for Converting Jupyter Notebooks](/ai-tools-compared/claude-vs-gemini-for-converting-jupyter-notebooks-to-product/)
+- [Cursor AI Switching Between Claude and GPT Models Extra](/ai-tools-compared/cursor-ai-switching-between-claude-and-gpt-models-extra-cost/)
+- [Gemini Advanced Not Available in My Country](/ai-tools-compared/gemini-advanced-not-available-in-my-country-fix/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -66,6 +66,21 @@ Copilot is the baseline for test generation. It's trained on millions of open-so
 
 ## Claude
 
+## Table of Contents
+
+- [Claude](#claude)
+- [Diffblue Cover](#diffblue-cover)
+- [CodiumAI](#codiumai)
+- [Tabnine](#tabnine)
+- [Comparison Table](#comparison-table)
+- [Coverage Deep Dive](#coverage-deep-dive)
+- [Framework-Specific Performance](#framework-specific-performance)
+- [Workflow Integration](#workflow-integration)
+- [Cost Analysis (Annual)](#cost-analysis-annual)
+- [Decision Framework](#decision-framework)
+- [Practical Recommendations by Project Type](#practical-recommendations-by-project-type)
+- [Bottom Line](#bottom-line)
+
 Claude (via Claude Code or API) uses a 200K token context window to understand entire test suites and generate coverage.
 
 **Test Generation Quality:**

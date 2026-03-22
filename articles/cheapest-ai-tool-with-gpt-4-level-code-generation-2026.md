@@ -41,6 +41,14 @@ GitHub now offers a free tier for Copilot with 2,000 completions per month and 5
 - **Gemini 2.0 Flash (Free**: Through Google AI Studio) Google's Gemini 2.0 Flash model provides impressive code generation through AI Studio, completely free with generous rate limits.
 - **As a reference baseline**: GPT-4o scores around 90% on HumanEval (OpenAI's Python coding benchmark) and approximately 72% on the more difficult LiveCodeBench.
 
+## Table of Contents
+
+- [What Defines GPT-4 Level Code Generation](#what-defines-gpt-4-level-code-generation)
+- [Top Budget-Friendly AI Code Generation Tools](#top-budget-friendly-ai-code-generation-tools)
+- [Comparative Benchmark](#comparative-benchmark)
+- [Practical Examples Across Languages](#practical-examples-across-languages)
+- [Making the Right Choice](#making-the-right-choice)
+
 ## What Defines GPT-4 Level Code Generation
 
 Before looking at alternatives, let us establish what "GPT-4 level" means for code generation. You should expect:
@@ -348,9 +356,8 @@ Policies vary widely. Some tools let you access your data for a grace period aft
 ## Related Articles
 
 - [Claude Sonnet vs GPT-4o for Code Generation: Practical](/ai-tools-compared/claude-sonnet-vs-gpt-4o-for-code-generation/)
-- [Cheapest Way to Get AI Code Completion in Vim 2026](/ai-tools-compared/cheapest-way-to-get-ai-code-completion-in-vim-2026/)
-- [Claude Sonnet vs GPT-4o for Code Review Accuracy Comparison](/ai-tools-compared/claude-sonnet-vs-gpt-4o-for-code-review-accuracy-comparison-2026/)
-- [Cursor AI with Claude vs GPT Models: Which Gives Better Code](/ai-tools-compared/cursor-ai-with-claude-vs-gpt-models-which-gives-better-code-/)
-- [Switching from GPT-4o to Claude Sonnet for Code Review.](/ai-tools-compared/switching-from-gpt-4o-to-claude-sonnet-for-code-review-which/)
-
+- [Free Alternatives to ChatGPT Plus for Code Generation](/ai-tools-compared/free-alternatives-to-chatgpt-plus-for-code-generation-2026/)
+- [Best Practices for Combining AI Code Generation](/ai-tools-compared/best-practices-for-combining-ai-code-generation-with-manual-code-review/)
+- [AI Code Generation for Java Reactive Programming](/ai-tools-compared/ai-code-generation-for-java-reactive-programming-with-projec/)
+- [Best Free AI Tool for Code Explanation and Documentation](/ai-tools-compared/best-free-ai-tool-for-code-explanation-and-documentation/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

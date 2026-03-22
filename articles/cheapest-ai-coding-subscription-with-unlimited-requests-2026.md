@@ -42,6 +42,24 @@ A typical interaction (5K input, 2K output) costs roughly $0.05.
 - **At 100 interactions per day, that's $5 per day or $150 per month**: more expensive than any subscription.
 - **Productivity Gain**: A tool that saves you 10 minutes per day is worth ~$200/month in time value (at $100/hour).
 
+## Table of Contents
+
+- [Why Unlimited Matters for Developers](#why-unlimited-matters-for-developers)
+- [Top Affordable Unlimited Plans in 2026](#top-affordable-unlimited-plans-in-2026)
+- [What to Watch For](#what-to-watch-for)
+- [Making the Right Choice](#making-the-right-choice)
+- [Implementation Roadmap](#implementation-roadmap)
+- [Quick Setup Guide](#quick-setup-guide)
+- [Detailed Feature Comparison](#detailed-feature-comparison)
+- [Windsurf — Emerging Contender](#windsurf-emerging-contender)
+- [API-Based Approaches](#api-based-approaches)
+- [The Real Cost Calculation](#the-real-cost-calculation)
+- [Free Tier Limitations and Workarounds](#free-tier-limitations-and-workarounds)
+- [Transitioning From Free to Paid](#transitioning-from-free-to-paid)
+- [Specialized Scenarios](#specialized-scenarios)
+- [Hidden Costs and Gotchas](#hidden-costs-and-gotchas)
+- [Negotiating Enterprise Rates](#negotiating-enterprise-rates)
+
 ## Why Unlimited Matters for Developers
 
 When you are deep in debugging or refactoring, the last thing you need is a tool stopping you mid-thought because you reached a monthly limit. Unlimited requests transform an AI assistant from an occasional helper into a genuine pair programmer you can rely on throughout your entire development session.
@@ -344,10 +362,9 @@ Policies vary widely. Some tools let you access your data for a grace period aft
 
 ## Related Articles
 
+- [Best Free AI Coding Tool With No Message Limits in 2026](/ai-tools-compared/best-free-ai-coding-tool-with-no-message-limits-2026/)
+- [Cheapest Way to Use Claude for Coding Projects 2026](/ai-tools-compared/cheapest-way-to-use-claude-for-coding-projects-2026/)
+- [Best AI Coding Assistant for Under $5 Per](/ai-tools-compared/best-ai-coding-assistant-for-under-5-dollars-per-month/)
 - [Best AI Coding Tool with Pay As You Go No Subscription](/ai-tools-compared/best-ai-coding-tool-with-pay-as-you-go-no-subscription/)
 - [Cheapest AI Coding Tool for Indie Game Developer 2026](/ai-tools-compared/cheapest-ai-coding-tool-for-indie-game-developer-2026/)
-- [Cheapest Way to Use Claude for Coding Projects 2026](/ai-tools-compared/cheapest-way-to-use-claude-for-coding-projects-2026/)
-- [AI Tools for Reviewing Documentation Pull Requests for Accur](/ai-tools-compared/ai-tools-for-reviewing-documentation-pull-requests-for-accur/)
-- [ChatGPT API 429 Too Many Requests Fix](/ai-tools-compared/chatgpt-api-429-too-many-requests-fix/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

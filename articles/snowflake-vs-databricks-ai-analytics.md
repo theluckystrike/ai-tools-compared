@@ -40,6 +40,18 @@ Choose Snowflake if your team is SQL-focused, works with clean structured data, 
 - **Its lakehouse architecture combines**: flexible data lake storage with warehouse-like management features.
 - **Real-world note**: both platforms auto-scale, but Snowflake's auto-clustering and multi-cluster warehouses abstract away more operational decisions.
 
+## Table of Contents
+
+- [Platform Foundations](#platform-foundations)
+- [Query Language and Developer Experience](#query-language-and-developer-experience)
+- [Machine Learning Integration](#machine-learning-integration)
+- [Performance at Scale](#performance-at-scale)
+- [Cost Structure Differences](#cost-structure-differences)
+- [When to Choose Snowflake](#when-to-choose-snowflake)
+- [When to Choose Databricks](#when-to-choose-databricks)
+- [Hybrid Exists](#hybrid-exists)
+- [Making Your Decision](#making-your-decision)
+
 ## Platform Foundations
 
 Snowflake started as a cloud-native data warehouse. Its architecture separates storage from compute, allowing independent scaling. The platform speaks SQL natively and has built its reputation on handling analytical workloads with minimal administration.
@@ -278,10 +290,9 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 ## Related Articles
 
 - [Databricks vs BigQuery AI ML Features: A Practical](/ai-tools-compared/databricks-vs-bigquery-ai-ml-features/)
-- [AI Tools for Customer Journey Analytics](/ai-tools-compared/ai-tools-for-customer-journey-analytics/)
-- [AI Tools for Inventory Analytics: A Practical Guide for](/ai-tools-compared/ai-tools-for-inventory-analytics/)
-- [AI Tools for Real-Time Analytics: A Practical Guide](/ai-tools-compared/ai-tools-for-real-time-analytics/)
-- [AI Tools for Social Media Analytics: A Practical Guide](/ai-tools-compared/ai-tools-for-social-media-analytics/)
-
+- [Lakehouse vs Data Warehouse for AI Workloads: AI Comparison](/ai-tools-compared/lakehouse-vs-data-warehouse-ai-comparison/)
+- [Mode Analytics vs Hex AI Notebooks: A Practical](/ai-tools-compared/mode-analytics-vs-hex-ai-notebooks/)
+- [Best AI Tools for Revenue Analytics: A Developer's Guide](/ai-tools-compared/best-ai-tools-for-revenue-analytics/)
+- [Best AI for Analyzing Google Analytics Data Exports](/ai-tools-compared/best-ai-for-analyzing-google-analytics-data-exports-with-pan/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

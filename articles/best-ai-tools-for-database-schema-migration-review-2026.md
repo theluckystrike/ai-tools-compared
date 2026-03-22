@@ -36,6 +36,20 @@ user_audit is not accessed by active queries.
 - **Flyway Best Practices for**: Large-Scale Migrations 2.
 - **NOT NULL without backfill**: Assumes all users have email set.
 
+## Table of Contents
+
+- [Why AI-Assisted Migration Review Matters](#why-ai-assisted-migration-review-matters)
+- [The Three Contenders](#the-three-contenders)
+- [Claude 3.5 Sonnet: Deep Structural Analysis](#claude-35-sonnet-deep-structural-analysis)
+- [GPT-4 Turbo: Fast Pattern Recognition](#gpt-4-turbo-fast-pattern-recognition)
+- [GitHub Copilot: IDE Integration for Speed](#github-copilot-ide-integration-for-speed)
+- [Real-World Comparison: Three Migration Scenarios](#real-world-comparison-three-migration-scenarios)
+- [Practical Implementation: Setting Up AI-Assisted Review](#practical-implementation-setting-up-ai-assisted-review)
+- [Best Practices by Migration Type](#best-practices-by-migration-type)
+- [Cost Analysis: 12-Month Projection](#cost-analysis-12-month-projection)
+- [Real Tool Names & Pricing (2026)](#real-tool-names-pricing-2026)
+- [Limitations of All Tools](#limitations-of-all-tools)
+
 ## Why AI-Assisted Migration Review Matters
 
 Manual review of complex migrations is slow and error-prone. Modern migrations often involve:
@@ -335,6 +349,11 @@ Assuming 40 migrations/month (typical startup):
 
 ## Related Articles
 
+- [AI Tools for Database Schema Migration Review 2026](/ai-tools-compared/ai-tools-for-database-schema-migration-review-2026/)
+- [AI Tools for Database Migration Review 2026](/ai-tools-compared/ai-tools-for-database-migration-review-2026/)
+- [AI-Powered Database Migration Tools Comparison 2026](/ai-tools-compared/ai-powered-database-migration-tools-comparison/)
+- [AI Tools for Writing Database Migration Rollback Scripts](/ai-tools-compared/ai-tools-for-writing-database-migration-rollback-scripts-2026/)
+- [AI Tools for Automated Migration Testing 2026](/ai-tools-compared/ai-tools-for-automated-migration-testing-2026/)
 1. [Flyway Best Practices for Large-Scale Migrations](/articles/flyway-best-practices-large-scale/)
 2. [Liquibase Conditional Changesets for Multi-Environment Deploys](/articles/liquibase-conditional-changesets/)
 3. [Database Rollback Strategies: Online DDL, Blue-Green, Feature Flags](/articles/database-rollback-strategies/)

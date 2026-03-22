@@ -41,6 +41,14 @@ Infrastructure-as-code requires precision: a single misconfigured security group
 It depends on your background.
 - **Claude tends to work**: well if you prefer a guided experience, while Terraform gives more control for users comfortable with configuration.
 
+## Table of Contents
+
+- [The Core Differences](#the-core-differences)
+- [Comparing Generated Code Quality](#comparing-generated-code-quality)
+- [Practical Workflow: Claude First, GPT-4 Refine](#practical-workflow-claude-first-gpt-4-refine)
+- [Code Example: Multi-Region Terraform](#code-example-multi-region-terraform)
+- [When to Use Each Tool](#when-to-use-each-tool)
+
 ## The Core Differences
 
 Claude excels at maintaining context across large IaC files and understanding implicit resource dependencies. GPT-4 generates faster code but sometimes misses cross-resource interactions. Pulumi (Python-based) favors Claude's superior Python understanding; Terraform (HCL-based) sees more parity.
@@ -421,9 +429,8 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 ## Related Articles
 
 - [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-compared/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)
-- [Best AI Assistants for Pulumi Infrastructure Code](/ai-tools-compared/best-ai-assistants-for-pulumi-infrastructure-code-in-typescript-2026/)
-- [AI Tools for Writing Terraform Infrastructure-as-Code](/ai-tools-compared/ai-tools-for-writing-terraform-infrastructure-as-code-comparison-2026/)
-- [Claude vs ChatGPT for Creating AWS CDK Infrastructure Stacks](/ai-tools-compared/claude-vs-chatgpt-for-creating-aws-cdk-infrastructure-stacks/)
 - [Claude vs ChatGPT for Writing Datadog Dashboard Terraform](/ai-tools-compared/claude-vs-chatgpt-for-writing-datadog-dashboard-terraform-de/)
-
+- [Claude Code Runbook Documentation Guide](/ai-tools-compared/claude-code-runbook-documentation-guide/)
+- [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
+- [Best AI Tools for Infrastructure as Code 2026](/ai-tools-compared/ai-tools-for-infrastructure-as-code-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

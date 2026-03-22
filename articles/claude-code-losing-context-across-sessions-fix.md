@@ -41,6 +41,21 @@ To fix Claude Code losing context across sessions, enable session persistence by
 - **The good news is**: that every common cause of context loss has a reliable fix.
 - **The key is structuring**: this file so it covers everything Claude Code needs to be immediately useful without re-explanation.
 
+## Table of Contents
+
+- [Understanding Claude Code Session Behavior](#understanding-claude-code-session-behavior)
+- [Step-by-Step Fixes](#step-by-step-fixes)
+- [Diagnostic Tips](#diagnostic-tips)
+- [Building a Persistent Context File That Actually Works](#building-a-persistent-context-file-that-actually-works)
+- [What this is](#what-this-is)
+- [Architecture decisions](#architecture-decisions)
+- [Naming conventions](#naming-conventions)
+- [Current WIP](#current-wip)
+- [Key commands](#key-commands)
+- [Session Snapshot Workflow](#session-snapshot-workflow)
+- [Preventing Future Context Loss](#preventing-future-context-loss)
+- [Comparison: Session Management Approaches](#comparison-session-management-approaches)
+
 ## Understanding Claude Code Session Behavior
 
 Claude Code maintains context within an active session through its conversation history and working memory. When you start a new terminal session, the default behavior loads a fresh context unless specific configuration options or session management techniques are employed. Understanding how Claude Code handles session data helps diagnose where context loss occurs.
@@ -319,10 +334,9 @@ A: Claude Code re-reads file contents each time you reference them, so file-leve
 
 ## Related Articles
 
-- [How to Switch from Cursor to Claude Code Without Losing](/ai-tools-compared/how-to-switch-from-cursor-to-claude-code-without-losing-settings/)
-- [How to Manage AI Coding Context Across Multiple Related Repo](/ai-tools-compared/how-to-manage-ai-coding-context-across-multiple-related-repo/)
-- [Claude Code Not Pushing to GitHub Fix: Troubleshooting Guide](/ai-tools-compared/claude-code-not-pushing-to-github-fix/)
-- [Claude Code Terminal Permission Denied Fix](/ai-tools-compared/claude-code-terminal-permission-denied-fix/)
-- [Claude Code Tool Use Loop Not Terminating Fix](/ai-tools-compared/claude-code-tool-use-loop-not-terminating-fix/)
-
+- [Claude Max Context Window Exceeded: What](/ai-tools-compared/claude-max-context-window-exceeded-what-to-do/)
+- [Best Way to Configure Claude Code to Understand Your](/ai-tools-compared/best-way-to-configure-claude-code-to-understand-your-interna/)
+- [Claude Code Runbook Documentation Guide](/ai-tools-compared/claude-code-runbook-documentation-guide/)
+- [How to Configure Claude Code Project Memory for Persistent](/ai-tools-compared/how-to-configure-claude-code-project-memory-for-persistent-c/)
+- [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

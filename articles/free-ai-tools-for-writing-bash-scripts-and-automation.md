@@ -40,6 +40,17 @@ Writing bash scripts and automation workflows can be time-consuming, especially 
 - **It connects to various**: AI models and is completely free to use with your own API key, or you can use it with free-tier models.
 - **Integration with your preferred workflow**: whether terminal, VS Code, or Neovim—matters significantly for daily use.
 
+## Table of Contents
+
+- [What to Look for in a Free AI Tool for Bash Scripting](#what-to-look-for-in-a-free-ai-tool-for-bash-scripting)
+- [Comparing Free AI Tools for Bash Scripts](#comparing-free-ai-tools-for-bash-scripts)
+- [Recommendation](#recommendation)
+- [Advanced Bash Scripting Examples with AI Assistance](#advanced-bash-scripting-examples-with-ai-assistance)
+- [Prompting Strategies for AI-Generated Bash Scripts](#prompting-strategies-for-ai-generated-bash-scripts)
+- [Common Bash Patterns AI Struggles With](#common-bash-patterns-ai-struggles-with)
+- [Workflow Comparison: Free AI Tools for Bash](#workflow-comparison-free-ai-tools-for-bash)
+- [Free Tier Limits and Quotas](#free-tier-limits-and-quotas)
+
 ## What to Look for in a Free AI Tool for Bash Scripting
 
 The most useful free AI assistants for bash scripting share several capabilities. They should understand shell syntax, environment variables, and common Unix commands. They need to handle error handling patterns like `set -e` and `trap`. The best tools explain what each command does and help debug failed scripts. Integration with your preferred workflow—whether terminal, VS Code, or Neovim—matters significantly for daily use.

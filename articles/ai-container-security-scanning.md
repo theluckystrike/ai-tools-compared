@@ -265,6 +265,14 @@ spec:
  runAsUser: 1000
  fsReadOnlyRootFilesystem: true
 
+## Table of Contents
+
+- [Vulnerability Prioritization Scoring](#vulnerability-prioritization-scoring)
+- [Integration Patterns: Build vs. Runtime vs. Registry](#integration-patterns-build-vs-runtime-vs-registry)
+- [Scan Result Analysis and Action](#scan-result-analysis-and-action)
+- [False Positive Management](#false-positive-management)
+- [Measuring Scanning Program Effectiveness](#measuring-scanning-program-effectiveness)
+
  containers:
  - name: web
  image: myapp:sha-abc123

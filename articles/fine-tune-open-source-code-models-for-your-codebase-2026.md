@@ -39,6 +39,20 @@ Fine-tuning open source code models like Code Llama, Deepseek Coder, and Mistral
 - **More strong deduplication using**: MinHash LSH (`pip install datasketch`) can detect near-duplicates with ~85% similarity.
 - **Full fine-tuning provides marginally**: better results but requires 4-8x more compute budget.
 
+## Table of Contents
+
+- [Why Fine-tune Instead of Using Commercial Models?](#why-fine-tune-instead-of-using-commercial-models)
+- [Choosing Your Base Model](#choosing-your-base-model)
+- [Step 1: Prepare Your Training Dataset](#step-1-prepare-your-training-dataset)
+- [Step 2: Fine-tune Using QLoRA (Memory-Efficient)](#step-2-fine-tune-using-qlora-memory-efficient)
+- [Step 3: Deploy Your Fine-tuned Model](#step-3-deploy-your-fine-tuned-model)
+- [Step 4: Continuous Improvement](#step-4-continuous-improvement)
+- [Infrastructure and Cost](#infrastructure-and-cost)
+- [Building a Data Quality Pipeline](#building-a-data-quality-pipeline)
+- [Choosing Your Fine-tuning Approach: LoRA vs Full Fine-tuning vs RLHF](#choosing-your-fine-tuning-approach-lora-vs-full-fine-tuning-vs-rlhf)
+- [Benchmarking Your Fine-tuned Model](#benchmarking-your-fine-tuned-model)
+- [Common Pitfalls](#common-pitfalls)
+
 ## Why Fine-tune Instead of Using Commercial Models?
 
 Commercial AI coding tools (GitHub Copilot, Claude Code) learn from billions of public repositories. But they miss your team's unique patterns: your custom frameworks, internal library conventions, and proprietary architectural decisions. Fine-tuning creates a personalized version that:

@@ -33,6 +33,25 @@ Infrastructure as code demands precision. Terraform modules define your cloud ar
 - **Pricing**: GPT-4 Turbo at $10/1M input tokens, $30/1M output tokens.
 - **Use GPT-4 for rapid**: prototyping and provider-specific patterns 3.
 
+## Table of Contents
+
+- [Why AI Tools Matter for Terraform](#why-ai-tools-matter-for-terraform)
+- [Claude (Opus 4.6) — Best for Complex Logic](#claude-opus-46-best-for-complex-logic)
+- [GPT-4 (via OpenAI API) — Best for Quick Generation](#gpt-4-via-openai-api-best-for-quick-generation)
+- [GitHub Copilot — Best for IDE Integration](#github-copilot-best-for-ide-integration)
+- [Provider Configuration Comparison](#provider-configuration-comparison)
+- [Variable Validation Patterns](#variable-validation-patterns)
+- [Practical Implementation Strategy](#practical-implementation-strategy)
+- [Real-World Module Example: Load Balancer](#real-world-module-example-load-balancer)
+- [Cursor AI — Best for Inline Multi-File Editing](#cursor-ai-best-for-inline-multi-file-editing)
+- [Amazon CodeWhisperer — Best for AWS-Native Patterns](#amazon-codewhisperer-best-for-aws-native-patterns)
+- [Prompt Engineering for Better Terraform Output](#prompt-engineering-for-better-terraform-output)
+- [State Management and Remote Backends](#state-management-and-remote-backends)
+- [Tool Comparison: Full Stack Support](#tool-comparison-full-stack-support)
+- [Cost Comparison for High-Volume Use](#cost-comparison-for-high-volume-use)
+- [Testing AI-Generated Modules](#testing-ai-generated-modules)
+- [Recommendations](#recommendations)
+
 ## Why AI Tools Matter for Terraform
 
 Terraform modules require consistent variable definitions, provider configuration, outputs, and documentation. AI tools accelerate this repetitive work while maintaining infrastructure standards. The best tools understand HCL syntax, variable validation rules, and cloud provider-specific patterns.
@@ -439,10 +458,9 @@ The best approach combines tools — use Claude for architectural decisions and 
 
 ## Related Articles
 
-- [Terraform State Management Best Practices 2026](/articles/terraform-state-management-2026.md)
-- [Infrastructure as Code Testing Frameworks Compared](/articles/iac-testing-frameworks-2026.md)
-- [AWS CloudFormation vs Terraform for Enterprise](/articles/cloudformation-vs-terraform-2026.md)
-- [Automating Terraform Code Reviews with AI](/articles/ai-terraform-code-review-2026.md)
-- [Multi-Cloud Infrastructure Patterns with Terraform](/articles/multi-cloud-terraform-patterns-2026.md)
-
+- [Best AI Tools for Writing Terraform Modules](/ai-tools-compared/best-ai-tools-for-writing-terraform-modules/)
+- [AI Tools for Writing Terraform Infrastructure-as-Code](/ai-tools-compared/ai-tools-for-writing-terraform-infrastructure-as-code-comparison-2026/)
+- [AI Tools for Generating Terraform Provider Configurations 2026](/ai-tools-compared/ai-tools-for-generating-terraform-provider-configurations-2026/)
+- [Copilot vs Cursor for Writing Terraform Modules](/ai-tools-compared/copilot-vs-cursor-for-writing-terraform-modules-from-scratch/)
+- [Best AI Tools for Writing Terraform Provider Plugins 2026](/ai-tools-compared/best-ai-tools-for-writing-terraform-provider-plugins-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

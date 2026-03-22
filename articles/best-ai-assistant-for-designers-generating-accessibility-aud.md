@@ -42,6 +42,23 @@ This guide evaluates the best AI assistants for generating accessibility audit r
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [The Workflow: From Screenshot to Accessibility Report](#the-workflow-from-screenshot-to-accessibility-report)
+- [Practical Example: Using Claude for Accessibility Analysis](#practical-example-using-claude-for-accessibility-analysis)
+- [Generating Structured Reports with Code](#generating-structured-reports-with-code)
+- [Evaluating AI Tools for Screenshot Analysis](#evaluating-ai-tools-for-screenshot-analysis)
+- [Comparing Approaches](#comparing-approaches)
+- [Integrating Into Design Systems](#integrating-into-design-systems)
+- [Limitations and Human Review](#limitations-and-human-review)
+- [Practical Tools and Their Strengths](#practical-tools-and-their-strengths)
+- [Comparison of Approaches](#comparison-of-approaches)
+- [Detailed Code Example with JSON Output](#detailed-code-example-with-json-output)
+- [Color Contrast Deep Dive](#color-contrast-deep-dive)
+- [Integration with Design Workflows](#integration-with-design-workflows)
+- [Testing Results and Success Rates](#testing-results-and-success-rates)
+- [Best Practices for Effective Analysis](#best-practices-for-effective-analysis)
+
 ## The Workflow: From Screenshot to Accessibility Report
 
 Modern AI tools can analyze design screenshots and output structured accessibility findings. The typical workflow involves providing an image—either a design mockup or a rendered screenshot—and receiving a detailed report covering contrast ratios, text hierarchy, interactive element sizing, color blindness simulation, and screen reader considerations.
@@ -378,11 +395,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI Assistant for Designers Writing User Journey Maps](/ai-tools-compared/best-ai-assistant-for-designers-writing-user-journey-maps-fr/)
-- [Best AI Assistant for Generating Open Source Release](/ai-tools-compared/best-ai-assistant-for-generating-open-source-release-announcements/)
-- [Best AI Assistant for Generating SQL Recursive Queries](/ai-tools-compared/best-ai-assistant-for-generating-sql-recursive-queries-for-hierarchical-org-chart-data/)
-- [What Code Snippets Get Logged in AI Coding Tool Provider Aud](/ai-tools-compared/what-code-snippets-get-logged-in-ai-coding-tool-provider-aud/)
-- [AI Tools for Qa Engineers Creating Accessibility Testing Che](/ai-tools-compared/ai-tools-for-qa-engineers-creating-accessibility-testing-che/)
-
+- [AI Tools for Video Accessibility Features](/ai-tools-compared/ai-tools-for-video-accessibility-features/)
+- [AI Tools for Qa Engineers Creating Accessibility Testing](/ai-tools-compared/ai-tools-for-qa-engineers-creating-accessibility-testing-che/)
+- [AI Tools for Generating Closed Captions and Transcripts](/ai-tools-compared/ai-tools-for-generating-closed-captions-and-transcripts-from/)
+- [AI Tools for Automated Accessibility Testing](/ai-tools-compared/ai-tools-for-automated-accessibility-testing/)
+- [AI Tools for Generating Grafana Dashboards from Metrics](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

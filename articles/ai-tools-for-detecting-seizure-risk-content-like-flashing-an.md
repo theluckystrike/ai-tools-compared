@@ -25,6 +25,26 @@ Web content with flashing lights and rapid animations poses serious health risks
 - **The most cost-effective approach**: integrates detection into the design and production workflow so risks are identified before final render.
 - **VisionAi Seizure Detector VisionAi**: provides an open-source model that can be deployed on-premise, making it attractive for organizations with data privacy requirements.
 
+## Table of Contents
+
+- [Understanding Seizure Risk in Digital Content](#understanding-seizure-risk-in-digital-content)
+- [Tool Comparison](#tool-comparison)
+- [Implementation Recommendations](#implementation-recommendations)
+- [Detailed Tool Comparison Table](#detailed-tool-comparison-table)
+- [Tool Selection Decision Tree](#tool-selection-decision-tree)
+- [Advanced Detection Capabilities](#advanced-detection-capabilities)
+- [Implementation Workflow for Development Teams](#implementation-workflow-for-development-teams)
+- [Regulatory Compliance and Standards](#regulatory-compliance-and-standards)
+- [Cost Analysis and Scaling](#cost-analysis-and-scaling)
+- [Testing Your Detection Setup](#testing-your-detection-setup)
+- [Decision Framework for Tool Selection](#decision-framework-for-tool-selection)
+- [Production Implementation Architecture](#production-implementation-architecture)
+- [Performance Benchmarking Results](#performance-benchmarking-results)
+- [Understanding WCAG Flash Thresholds and Why They Matter](#understanding-wcag-flash-thresholds-and-why-they-matter)
+- [Building a Moderation Pipeline for User-Generated Content](#building-a-moderation-pipeline-for-user-generated-content)
+- [Integrating Detection into Design Workflows](#integrating-detection-into-design-workflows)
+- [Regulatory Compliance Checklist for 2026](#regulatory-compliance-checklist-for-2026)
+
 ## Understanding Seizure Risk in Digital Content
 
 Photosensitive seizures can be triggered by flashing lights between 15-25 Hz, certain spatial patterns, and rapid color transitions. Regulatory standards like the WCAG 2.1 and the EU Accessibility Act require platforms to warn users about potentially hazardous content. Manual review processes cannot scale to the volume of daily uploads on major platforms, creating demand for automated solutions.
@@ -604,6 +624,14 @@ def audit_video_library(library_path: str, detector, output_report: str):
 ```
 
 Prioritize remediating blocked content first, then review warning-level content to determine whether warnings are sufficient or the content should be modified to reduce flash frequency.
+
+## Related Articles
+
+- [Best AI Tools for Help Center Content](/ai-tools-compared/best-ai-tools-for-help-center-content/)
+- [AI Writing Tools for Healthcare Content Compared 2026](/ai-tools-compared/ai-writing-tools-for-healthcare-content-compared-2026/)
+- [AI Third Party Risk Management Tools Comparison 2026](/ai-tools-compared/ai-third-party-risk-management-tools-comparison-2026/)
+- [Best AI for Writing Internal Developer Portal Content](/ai-tools-compared/best-ai-for-writing-internal-developer-portal-content-from-s/)
+- [Best AI Tool for Repurposing Blog Content 2026](/ai-tools-compared/best-ai-tool-for-repurposing-blog-content-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

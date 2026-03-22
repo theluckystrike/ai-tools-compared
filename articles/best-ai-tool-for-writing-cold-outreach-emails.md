@@ -42,6 +42,22 @@ For developers and power users, a general-purpose LLM like Claude or GPT-4 with 
 - **The tool you choose**: needs to handle several specific challenges effectively.
 - **The best tools help**: you hit the right note without sounding robotic.
 
+## Table of Contents
+
+- [What Cold Outreach Email Writing Requires](#what-cold-outreach-email-writing-requires)
+- [Approaches for Developers](#approaches-for-developers)
+- [Evaluating AI Tools for Cold Outreach](#evaluating-ai-tools-for-cold-outreach)
+- [Practical Comparison](#practical-comparison)
+- [Implementation Tips](#implementation-tips)
+- [The Bottom Line](#the-bottom-line)
+- [Deep Dive: Building a Custom Cold Email System](#deep-dive-building-a-custom-cold-email-system)
+- [Specialized Tool Comparison with Pricing](#specialized-tool-comparison-with-pricing)
+- [Industry-Specific Email Approaches](#industry-specific-email-approaches)
+- [Testing and Optimization Framework](#testing-and-optimization-framework)
+- [Red Flags to Avoid in Generated Content](#red-flags-to-avoid-in-generated-content)
+- [Compliance Considerations](#compliance-considerations)
+- [The Economics of Cold Outreach](#the-economics-of-cold-outreach)
+
 ## What Cold Outreach Email Writing Requires
 
 Cold outreach emails differ from other writing tasks in several important ways. They must be concise, relevant to the recipient, and create a compelling reason to reply. The tool you choose needs to handle several specific challenges effectively.

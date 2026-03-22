@@ -40,6 +40,22 @@ This guide compares the strengths and weaknesses of each tool for this specific 
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
+## Table of Contents
+
+- [Understanding GDPR Requirements for Privacy Policies](#understanding-gdpr-requirements-for-privacy-policies)
+- [Claude's Approach to Privacy Policy Drafting](#claudes-approach-to-privacy-policy-drafting)
+- [Data Retention](#data-retention)
+- [ChatGPT's Approach to Privacy Policy Drafting](#chatgpts-approach-to-privacy-policy-drafting)
+- [Side-by-Side Comparison](#side-by-side-comparison)
+- [Practical Examples for Developers](#practical-examples-for-developers)
+- [Data Processing Agreement](#data-processing-agreement)
+- [Which Tool Should You Use?](#which-tool-should-you-use)
+- [Quick Reference Prompts](#quick-reference-prompts)
+- [Privacy Policy Customization for Your Tech Stack](#privacy-policy-customization-for-your-tech-stack)
+- [Implementation Checklist for AI-Generated Policies](#implementation-checklist-for-ai-generated-policies)
+- [Multi-Jurisdiction Requirements](#multi-jurisdiction-requirements)
+- [Continuous Policy Maintenance](#continuous-policy-maintenance)
+
 ## Understanding GDPR Requirements for Privacy Policies
 
 Before comparing the tools, let's establish what a GDPR-compliant privacy policy must contain. The regulation requires disclosure of:

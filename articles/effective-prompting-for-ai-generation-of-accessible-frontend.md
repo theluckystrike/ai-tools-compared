@@ -39,6 +39,20 @@ To generate truly accessible frontend components with AI, you need specific prom
 - **The AI generates visually**: functional code without considering screen reader compatibility, keyboard users, or color contrast requirements.
 - **Use automated tools**: screen readers, and keyboard-only navigation.
 
+## Table of Contents
+
+- [Why Standard Prompts Fall Short](#why-standard-prompts-fall-short)
+- [Core Prompting Strategies](#core-prompting-strategies)
+- [Practical Prompt Templates](#practical-prompt-templates)
+- [Testing Your AI-Generated Code](#testing-your-ai-generated-code)
+- [Advanced Prompting Techniques](#advanced-prompting-techniques)
+- [Common Prompt Mistakes](#common-prompt-mistakes)
+- [The Path Forward](#the-path-forward)
+- [Real-World Component Libraries](#real-world-component-libraries)
+- [Integration with Design Systems](#integration-with-design-systems)
+- [Common Accessible Component Patterns](#common-accessible-component-patterns)
+- [Measuring Accessibility Improvement](#measuring-accessibility-improvement)
+
 ## Why Standard Prompts Fall Short
 
 When you ask an AI to "create a button component" or "build a modal dialog," the resulting code often lacks accessibility fundamentals. The AI generates visually functional code without considering screen reader compatibility, keyboard users, or color contrast requirements. This happens because the base training data includes countless inaccessible examples, and the AI optimizes for common patterns rather than best practices.

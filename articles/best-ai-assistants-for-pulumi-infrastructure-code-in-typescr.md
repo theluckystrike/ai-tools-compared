@@ -39,6 +39,18 @@ AI assistants have become invaluable for developers working with Pulumi and Type
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **These tools accelerate infrastructure**: as code development, reduce errors, and help teams adopt best practices for managing cloud resources.
 
+## Table of Contents
+
+- [Why AI Assistants Matter for Pulumi Development](#why-ai-assistants-matter-for-pulumi-development)
+- [Evaluating AI Assistants for Pulumi TypeScript Projects](#evaluating-ai-assistants-for-pulumi-typescript-projects)
+- [Practical Workflow: AI-Assisted Pulumi Development](#practical-workflow-ai-assisted-pulumi-development)
+- [Code Generation Example](#code-generation-example)
+- [Real-World Multi-Stack Pulumi Project](#real-world-multi-stack-pulumi-project)
+- [Cost Optimization Tips (AI-Generated)](#cost-optimization-tips-ai-generated)
+- [Testing Pulumi Infrastructure Code](#testing-pulumi-infrastructure-code)
+- [Pricing and Tool Recommendations (2026)](#pricing-and-tool-recommendations-2026)
+- [Best Practices for AI-Assisted Pulumi Development](#best-practices-for-ai-assisted-pulumi-development)
+
 ## Why AI Assistants Matter for Pulumi Development
 
 Pulumi's programmable infrastructure approach means you write TypeScript, Python, or Go to define cloud resources. While powerful, this workflow benefits significantly from AI assistance. Infrastructure code often involves complex provider configurations, dependency management, and cross-service integrations that are time-consuming to write and maintain.

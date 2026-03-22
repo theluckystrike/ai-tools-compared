@@ -240,6 +240,14 @@ The choice ultimately depends on your requirements. If you're building a system 
 
 ## Celery Architecture Patterns: AI Comparison Deep Dive
 
+## Table of Contents
+
+- [Celery Architecture Patterns: AI Comparison Deep Dive](#celery-architecture-patterns-ai-comparison-deep-dive)
+- [Real-World Performance Comparison](#real-world-performance-comparison)
+- [Tool Recommendation Matrix](#tool-recommendation-matrix)
+- [Advanced Celery Patterns Both Tools Handle Well](#advanced-celery-patterns-both-tools-handle-well)
+- [Testing: Another Key Difference](#testing-another-key-difference)
+
 Let's compare how each AI handles a more realistic production scenario:
 
 **Scenario: Distributed Task Processing with Multiple Failure Types**
@@ -437,11 +445,10 @@ Copy your task code to Claude and ask: "Improve this for production with proper 
 
 ## Related Articles
 
-- [Best AI Tools for Python Celery Task Queue Code Generation](/ai-tools-compared/best-ai-tools-for-python-celery-task-queue-code-generation-2/)
-- [How to Use AI to Generate pytest Tests for Celery Task Chain](/ai-tools-compared/how-to-use-ai-to-generate-pytest-tests-for-celery-task-chain/)
-- [Writing Claude Md Files That Teach AI Your Project Specific](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/)
-- [Notion AI vs ClickUp AI: Task Writing Compared](/ai-tools-compared/notion-ai-vs-clickup-ai-task-writing-compared/)
-- [ChatGPT Network Error on Long Responses: How to Fix in 2026](/ai-tools-compared/chatgpt-network-error-on-long-responses-how-to-fix-2026/)
-
+- [Claude vs ChatGPT for Technical Writing 2026](/ai-tools-compared/claude-vs-chatgpt-for-technical-writing-2026/)
+- [ChatGPT vs Claude for Writing API Documentation](/ai-tools-compared/chatgpt-vs-claude-for-writing-api-documentation/)
+- [Claude Code API Error Handling Standards](/ai-tools-compared/claude-code-api-error-handling-standards/)
+- [ChatGPT vs Claude for Creating OpenAPI Spec from Existing](/ai-tools-compared/chatgpt-vs-claude-for-creating-openapi-spec-from-existing-co/)
+- [Claude vs ChatGPT for Refactoring Legacy Java Code](/ai-tools-compared/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

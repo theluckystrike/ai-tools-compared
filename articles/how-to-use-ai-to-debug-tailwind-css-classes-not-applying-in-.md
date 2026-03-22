@@ -39,6 +39,16 @@ AI tools can diagnose Tailwind CSS issues by analyzing configuration files to id
 - **Import order can also**: cause problems.
 - **In most build tools**: you can inspect the compiled CSS.
 
+## Table of Contents
+
+- [Common Reasons Tailwind Classes Fail in Production](#common-reasons-tailwind-classes-fail-in-production)
+- [Using AI to Diagnose Tailwind Issues](#using-ai-to-diagnose-tailwind-issues)
+- [Prevention Strategies](#prevention-strategies)
+- [Advanced Debugging: CSS Generation Analysis](#advanced-debugging-css-generation-analysis)
+- [Using Browser DevTools with AI](#using-browser-devtools-with-ai)
+- [Performance Testing for Tailwind in Production](#performance-testing-for-tailwind-in-production)
+- [Real-World Troubleshooting Workflow](#real-world-troubleshooting-workflow)
+
 ## Common Reasons Tailwind Classes Fail in Production
 
 Before examining AI-assisted debugging, understanding the root causes helps frame the problem correctly. Tailwind classes not applying in production typically stems from a few recurring issues.

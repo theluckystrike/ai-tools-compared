@@ -45,6 +45,22 @@ SQL query generation is one of the few AI tasks with objective evaluation criter
 
 Ask Claude explicitly: "Include NULL checks.
 
+## Table of Contents
+
+- [Tools Compared](#tools-compared)
+- [Why SQL Generation Is Hard](#why-sql-generation-is-hard)
+- [Benchmark Query 1: Year-over-Year Revenue with Window Functions](#benchmark-query-1-year-over-year-revenue-with-window-functions)
+- [Benchmark Query 2: Recursive CTE for Hierarchy](#benchmark-query-2-recursive-cte-for-hierarchy)
+- [Benchmark Query 3: BigQuery QUALIFY Clause](#benchmark-query-3-bigquery-qualify-clause)
+- [Schema-Aware Tools](#schema-aware-tools)
+- [Accuracy Summary](#accuracy-summary)
+- [Practical Workflow](#practical-workflow)
+- [Benchmark Query 4: Percentile Calculation Without Window Functions](#benchmark-query-4-percentile-calculation-without-window-functions)
+- [Integrating Generated Queries into Applications](#integrating-generated-queries-into-applications)
+- [Testing Generated Queries](#testing-generated-queries)
+- [Common Query Generation Mistakes to Watch For](#common-query-generation-mistakes-to-watch-for)
+- [When to Skip AI Query Generation](#when-to-skip-ai-query-generation)
+
 ## Tools Compared
 
 - **SQLAI.ai** — Dedicated text-to-SQL with schema awareness

@@ -16,6 +16,18 @@ intent-checked: true
 
 ## Why AI for Nginx Configuration?
 
+## Table of Contents
+
+- [Why AI for Nginx Configuration?](#why-ai-for-nginx-configuration)
+- [Claude 3.5 Sonnet (Anthropic)](#claude-35-sonnet-anthropic)
+- [GitHub Copilot (GitHub/OpenAI)](#github-copilot-githubopenai)
+- [ChatGPT 4o (OpenAI)](#chatgpt-4o-openai)
+- [Codeium (Exafunction)](#codeium-exafunction)
+- [Comparison Table](#comparison-table)
+- [Real-World Workflow: Building a Production Nginx Config](#real-world-workflow-building-a-production-nginx-config)
+- [Production-Grade Nginx Best Practices](#production-grade-nginx-best-practices)
+- [Decision Framework: Which Tool to Use?](#decision-framework-which-tool-to-use)
+
 Nginx configuration is deceptively complex. A single syntax error—missing semicolon, wrong directive scope, malformed regex—silences your server with zero helpful error messages. Developers waste hours debugging `upstream` blocks, variable scoping in `if` statements, and TLS cipher settings.
 
 AI tools can generate working Nginx configs in minutes. They understand context: whether you need reverse proxy semantics, WebSocket passthrough, rate limiting logic, or geoIP blocking. But not all AI tools handle Nginx equally. Some generate syntactically correct but semantically wrong configs (upstream URLs that break, location regex that never matches, TLS chains that fail certificate validation).

@@ -41,6 +41,14 @@ RUN GOARCH=$TARGETARCH CGO_ENABLED=0 go build -o app .
 - **CMD ["./worker"] ``` This**: pattern reuses the base stage for multiple services, reducing rebuild times and disk space.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Why Multi-Stage Builds Matter](#why-multi-stage-builds-matter)
+- [Prerequisites](#prerequisites)
+- [Advanced Multi-Stage Patterns](#advanced-multi-stage-patterns)
+- [Performance Metrics](#performance-metrics)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Multi-Stage Builds Matter
 
 Traditional Dockerfiles install all build tools, dependencies, and source code in a single layer, resulting in bloated images that slow deployment and increase security exposure. Multi-stage builds use intermediate stages to compile artifacts, then copy only the necessary outputs to a slim final image. A Node.js application built this way might weigh 50MB instead of 1GB, while a Go binary could shrink to under 20MB.

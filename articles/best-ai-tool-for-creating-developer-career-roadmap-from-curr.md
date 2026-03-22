@@ -25,6 +25,21 @@ Use AI to compare what you have vs.
 - **The AI then maps**: your current position to potential career trajectories, identifying skill gaps and recommending specific learning paths.
 - **It can discuss trade-offs**: between different career paths, explain why certain skills are more valuable in specific industries, and adapt recommendations based on your feedback.
 
+## Table of Contents
+
+- [Why AI-Powered Career Roadmapping Matters](#why-ai-powered-career-roadmapping-matters)
+- [Top AI Tools for Developer Career Roadmapping](#top-ai-tools-for-developer-career-roadmapping)
+- [Sample Career Roadmap Output](#sample-career-roadmap-output)
+- [How to Use These Tools Effectively](#how-to-use-these-tools-effectively)
+- [Comparing Tool Capabilities](#comparing-tool-capabilities)
+- [Practical Example: Mid-Level Developer Transition](#practical-example-mid-level-developer-transition)
+- [Making the Most of AI Career Planning](#making-the-most-of-ai-career-planning)
+- [Building a Personal Career Roadmap Framework](#building-a-personal-career-roadmap-framework)
+- [Common Career Path Patterns](#common-career-path-patterns)
+- [Real-World Examples of AI-Generated Roadmaps](#real-world-examples-of-ai-generated-roadmaps)
+- [Roadmap Measurement and Adjustment](#roadmap-measurement-and-adjustment)
+- [When to Seek Additional Guidance](#when-to-seek-additional-guidance)
+
 ## Why AI-Powered Career Roadmapping Matters
 
 The technology ecosystem evolves rapidly. What was relevant for developers two years ago may no longer align with current market demands. AI career roadmap tools address this challenge by continuously updating their recommendations based on industry trends, job market data, and your demonstrated skills.

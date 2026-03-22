@@ -39,6 +39,15 @@ Custom system prompts let you shape AI behavior to match your team's documentati
 - **We use JWT tokens**: with 24-hour expiration.
 - **Identify which instructions matter**: most 5.
 
+## Table of Contents
+
+- [Why Custom System Prompts Matter](#why-custom-system-prompts-matter)
+- [Prerequisites](#prerequisites)
+- [Practical Example: Documentation Style Prompt](#practical-example-documentation-style-prompt)
+- [Advanced Techniques](#advanced-techniques)
+- [Troubleshooting Common Prompt Issues](#troubleshooting-common-prompt-issues)
+- [Advanced: Prompt Composition for Complex Tasks](#advanced-prompt-composition-for-complex-tasks)
+
 ## Why Custom System Prompts Matter
 
 When you use an AI assistant without customization, it defaults to generic responses that may not align with your organization's standards. The AI might produce output in a different tone, use unfamiliar formatting, or omit details your team expects. By crafting a custom system prompt, you establish clear expectations that the AI follows automatically.

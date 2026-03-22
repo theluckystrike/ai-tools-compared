@@ -41,6 +41,14 @@ Go developers have embraced table-driven tests as the standard approach for writ
 - **Lower-quality outputs might omit**: the error checking logic or use generic test names like "test1", "test2".
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Understanding Go Table-Driven Tests](#understanding-go-table-driven-tests)
+- [Common AI Generation Issues](#common-ai-generation-issues)
+- [Practical Examples](#practical-examples)
+- [Quality Assessment Criteria](#quality-assessment-criteria)
+- [Best Practices for AI-Assisted Test Generation](#best-practices-for-ai-assisted-test-generation)
+
 ## Understanding Go Table-Driven Tests
 
 Table-driven tests in Go represent a pattern where test cases are defined as slices of structs, with each struct containing input parameters and expected outputs. This approach consolidates test logic into a single function while running multiple scenarios, improving both readability and maintainability.

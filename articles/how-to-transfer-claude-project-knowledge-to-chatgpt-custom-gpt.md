@@ -41,6 +41,32 @@ Transferring your Claude project knowledge to ChatGPT Custom GPTs requires under
 - **While Claude uses project**: instructions and knowledge files, ChatGPT employs Custom GPTs with specific configuration options.
 - **Code style preferences and**: output requirements work similarly in both systems.
 
+## Table of Contents
+
+- [Understanding the Platform Differences](#understanding-the-platform-differences)
+- [Step-by-Step Migration Process](#step-by-step-migration-process)
+- [Purpose](#purpose)
+- [Knowledge Boundaries](#knowledge-boundaries)
+- [Communication Style](#communication-style)
+- [Technical Guidelines](#technical-guidelines)
+- [Special Instructions](#special-instructions)
+- [Practical Examples](#practical-examples)
+- [Instructions for Developer GPT](#instructions-for-developer-gpt)
+- [Instructions for Content Writer GPT](#instructions-for-content-writer-gpt)
+- [Limitations and Workarounds](#limitations-and-workarounds)
+- [Sharing and Deployment](#sharing-and-deployment)
+- [Practical Migration Template](#practical-migration-template)
+- [Your Role](#your-role)
+- [Technical Requirements](#technical-requirements)
+- [Code Style Preferences](#code-style-preferences)
+- [API Response Format](#api-response-format)
+- [Error Handling](#error-handling)
+- [Automated Migration Checklist](#automated-migration-checklist)
+- [Testing Custom GPT Fidelity](#testing-custom-gpt-fidelity)
+- [Handling Knowledge Base Migration at Scale](#handling-knowledge-base-migration-at-scale)
+- [Cost Analysis: Claude Projects vs Custom GPTs](#cost-analysis-claude-projects-vs-custom-gpts)
+- [Maintaining Parity After Migration](#maintaining-parity-after-migration)
+
 ## Understanding the Platform Differences
 
 Claude organizes project knowledge through project-specific instructions, uploaded files as knowledge bases, and memory features. When you work on a project in Claude, you can set up detailed instructions that define how the AI behaves, what context it should consider, and specific guidelines for your workflow. These instructions live with your project and persist across conversations.
@@ -379,9 +405,8 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [How to Transfer Claude Project Knowledge to ChatGPT Custom](/ai-tools-compared/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-g/)
-- [Transfer ChatGPT Custom GPTs to Claude Projects Step by Step](/ai-tools-compared/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
-- [ChatGPT Custom GPT Not Following Instructions](/ai-tools-compared/chatgpt-custom-gpt-not-following-instructions/)
-- [Claude vs ChatGPT for Building Custom ESLint Rules for React](/ai-tools-compared/claude-vs-chatgpt-for-building-custom-eslint-rules-for-react/)
-- [Switching from Windsurf to Cursor How to Transfer Project](/ai-tools-compared/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
-
+- [Transfer ChatGPT Custom GPTs to Claude Projects](/ai-tools-compared/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
+- [Claude Free vs ChatGPT Free Which Gives More Per](/ai-tools-compared/claude-free-vs-chatgpt-free-which-gives-more-per-day/)
+- [How to Write ChatGPT Custom Instructions](/ai-tools-compared/how-to-write-chatgpt-custom-instructions-for-consistent-api-design-suggestions/)
+- [ChatGPT vs Claude for Writing API Documentation](/ai-tools-compared/chatgpt-vs-claude-for-writing-api-documentation/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

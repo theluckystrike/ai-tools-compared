@@ -40,6 +40,16 @@ Production debugging used to mean staring at thousands of log lines looking for 
 - Different use case from Datadog.
 - **For complex incident investigation**: where you need narrative analysis and hypothesis generation, the custom Claude pipeline produces better explanations than purpose-built tools.
 
+## Table of Contents
+
+- [The Problem with Traditional Log Analysis](#the-problem-with-traditional-log-analysis)
+- [Tool 1: Datadog Watchdog and AI Features](#tool-1-datadog-watchdog-and-ai-features)
+- [Tool 2: Honeycomb with AI Query Assistance](#tool-2-honeycomb-with-ai-query-assistance)
+- [Tool 3: Custom Pipeline with OpenSearch + LLM](#tool-3-custom-pipeline-with-opensearch-llm)
+- [Structured Log Analysis](#structured-log-analysis)
+- [Comparing Tools](#comparing-tools)
+- [Related Reading](#related-reading)
+
 ## The Problem with Traditional Log Analysis
 
 A production incident often generates 50,000+ log lines across 10+ services. The signal is buried: one specific database timeout that triggered a cascade of retries. Grep and regex find known patterns — they can't find unknown ones. AI log analysis specifically addresses "I don't know what I'm looking for."

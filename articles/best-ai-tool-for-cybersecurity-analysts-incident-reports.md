@@ -41,6 +41,23 @@ Incident reports are critical artifacts in cybersecurity operations. They docume
 - **AI handles repetitive documentation**: tasks, freeing analysts to apply their expertise where it matters most: investigating threats, containing attacks, and protecting organizational assets.
 - **Security teams work with**: data that may include IP addresses, usernames, system configurations, and vulnerability details.
 
+## Table of Contents
+
+- [Why Incident Reports Matter for Cybersecurity Professionals](#why-incident-reports-matter-for-cybersecurity-professionals)
+- [Key Capabilities to Look for in an AI Tool for Incident Reporting](#key-capabilities-to-look-for-in-an-ai-tool-for-incident-reporting)
+- [Practical Use Cases for AI-Assisted Incident Reporting](#practical-use-cases-for-ai-assisted-incident-reporting)
+- [How AI Tools Transform the Documentation Workflow](#how-ai-tools-transform-the-documentation-workflow)
+- [Evaluation Criteria for Choosing an AI Tool](#evaluation-criteria-for-choosing-an-ai-tool)
+- [Real-World Impact on Security Operations](#real-world-impact-on-security-operations)
+- [Specific Tool Recommendations for Security Teams](#specific-tool-recommendations-for-security-teams)
+- [Practical Incident Report Workflow](#practical-incident-report-workflow)
+- [Real-World Implementation Examples](#real-world-implementation-examples)
+- [Tool Comparison for Incident Reporting](#tool-comparison-for-incident-reporting)
+- [Security Considerations for AI-Assisted Reporting](#security-considerations-for-ai-assisted-reporting)
+- [Implementation Best Practices](#implementation-best-practices)
+- [Measuring Impact](#measuring-impact)
+- [Making the Transition](#making-the-transition)
+
 ## Why Incident Reports Matter for Cybersecurity Professionals
 
 When a security incident occurs, the documentation produced shapes multiple downstream outcomes. Incident reports inform executive briefings, support compliance audits, guide remediation efforts, and serve as evidence in legal proceedings. A poorly written report can delay response, obscure root cause, and create liability. A well-crafted report demonstrates professional competence and enables organizational learning.

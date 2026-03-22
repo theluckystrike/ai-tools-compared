@@ -27,6 +27,23 @@ Open source maintainers face unique challenges that often lead to burnout. The c
 - **Maintainers should use these**: efficiencies to enforce limits on their availability.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Understanding Maintainer Burnout](#understanding-maintainer-burnout)
+- [AI Tools Compared for Maintainer Workflows](#ai-tools-compared-for-maintainer-workflows)
+- [AI Tools for Issue Response Automation](#ai-tools-for-issue-response-automation)
+- [Documentation Generation with AI](#documentation-generation-with-ai)
+- [Pull Request Review Assistance](#pull-request-review-assistance)
+- [AI-Assisted PR Review Comment](#ai-assisted-pr-review-comment)
+- [Establishing Sustainable Communication Processes](#establishing-sustainable-communication-processes)
+- [Bug Description](#bug-description)
+- [Steps to Reproduce](#steps-to-reproduce)
+- [Expected Behavior](#expected-behavior)
+- [Actual Behavior](#actual-behavior)
+- [Environment](#environment)
+- [Time Management and Boundaries](#time-management-and-boundaries)
+- [Response Time Guidelines](#response-time-guidelines)
+
 ## Understanding Maintainer Burnout
 
 

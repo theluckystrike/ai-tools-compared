@@ -27,6 +27,30 @@ This guide covers the main options: a Claude-powered GitHub Action, GPT-4 via th
 - **Large diff handling**: Chunk diffs by file and summarize independently, then combine; strip test files and generated code before sending to the model
 - **Measurable impact**: Teams report 20-40% fewer reviewer question comments on PRs with AI-generated descriptions
 
+## Table of Contents
+
+- [The Test Diff](#the-test-diff)
+- [Option 1: Claude via GitHub Actions](#option-1-claude-via-github-actions)
+- [What Changed](#what-changed)
+- [Why It Matters](#why-it-matters)
+- [Testing Notes](#testing-notes)
+- [Option 2: GPT-4 via API](#option-2-gpt-4-via-api)
+- [Summary](#summary)
+- [Option 3: GitHub Copilot Built-In](#option-3-github-copilot-built-in)
+- [Description](#description)
+- [Comparison Table](#comparison-table)
+- [PR Agent (Open Source)](#pr-agent-open-source)
+- [Custom Prompt Engineering](#custom-prompt-engineering)
+- [TL;DR](#tldr)
+- [What changed](#what-changed)
+- [Why](#why)
+- [Testing](#testing)
+- [Breaking changes](#breaking-changes)
+- [Handling Large Diffs](#handling-large-diffs)
+- [Enforcing Team PR Templates](#enforcing-team-pr-templates)
+- [Measuring Description Quality Over Time](#measuring-description-quality-over-time)
+- [Related Reading](#related-reading)
+
 ## The Test Diff
 
 All tools were given the same diff: a 200-line change adding Redis caching to a FastAPI endpoint, including a new `CacheManager` class, TTL configuration, and a cache invalidation hook.
@@ -403,6 +427,14 @@ Teams consistently report 20-40% reduction in reviewer question comments on PRs 
 - [AI Tools for Automated Code Documentation Generation](/ai-tools-compared/ai-tools-for-automated-code-documentation-generation-2026/)
 - [Claude vs ChatGPT for Technical Writing](/ai-tools-compared/claude-vs-chatgpt-for-technical-writing-2026/)
 ---
+
+## Related Articles
+
+- [AI Tools for Automated Code Documentation Generation in 2026](/ai-tools-compared/ai-tools-for-automated-code-documentation-generation-2026/---)
+- [AI Tools for Generating GitHub Actions Workflows (2)](/ai-tools-compared/ai-tools-github-actions-workflows/)
+- [AI Tools for Generating GitHub Actions Workflows](/ai-tools-compared/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
+- [AI Tools for Automated Schema Validation](/ai-tools-compared/ai-tools-for-automated-schema-validation)
+- [Best AI Tools for Automated Code Review 2026](/ai-tools-compared/best-ai-tools-for-automated-code-review-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

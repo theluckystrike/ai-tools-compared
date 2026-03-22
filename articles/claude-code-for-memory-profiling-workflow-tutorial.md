@@ -46,6 +46,15 @@ Claude Code is an AI-powered CLI tool that can significantly accelerate your mem
 5.
 - **Debugging specific issues**: > "I'm using a global array to store user sessions.
 
+## Table of Contents
+
+- [Why Use Claude Code for Memory Profiling?](#why-use-claude-code-for-memory-profiling)
+- [Setting Up Your Memory Profiling Environment](#setting-up-your-memory-profiling-environment)
+- [Memory Profiling Workflow with Claude Code](#memory-profiling-workflow-with-claude-code)
+- [Debugging Common Memory Issues](#debugging-common-memory-issues)
+- [Using Claude Code for Memory Analysis](#using-claude-code-for-memory-analysis)
+- [Best Practices for Continuous Memory Profiling](#best-practices-for-continuous-memory-profiling)
+
 ## Why Use Claude Code for Memory Profiling?
 
 Traditional memory profiling requires manual investigation of heap snapshots, allocation timelines, and memory traces. While tools like Chrome DevTools, Node.js built-in diagnostics, and specialized profilers are powerful, they can be overwhelming, especially when tracking down elusive memory leaks. Claude Code acts as an intelligent assistant that helps you interpret memory profiling data, identifies potential leak patterns, and guides you through the entire debugging workflow.
@@ -417,10 +426,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [Claude Code for Node.js Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-nodejs-profiling-workflow-tutorial/)
-- [Claude Code for Taint Analysis Workflow Tutorial Guide](/ai-tools-compared/claude-code-for-taint-analysis-workflow-tutorial-guide/)
+- [Claude Code Profiler Integration Guide](/ai-tools-compared/claude-code-profiler-integration-guide/)
 - [How to Configure Claude Code Project Memory for Persistent](/ai-tools-compared/how-to-configure-claude-code-project-memory-for-persistent-c/)
-- [Claude Code Screen Reader Testing Workflow](/ai-tools-compared/claude-code-screen-reader-testing-workflow/)
-- [Claude Code SDK Testing Workflow Guide](/ai-tools-compared/claude-code-sdk-testing-workflow-guide/)
-
+- [Claude Code for Taint Analysis Workflow Tutorial Guide](/ai-tools-compared/claude-code-for-taint-analysis-workflow-tutorial-guide/)
+- [Best AI Tools for Reviewing Embedded C Code for Memory](/ai-tools-compared/best-ai-tools-for-reviewing-embedded-c-code-for-memory-leak-and-buffer-overflow/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

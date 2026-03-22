@@ -36,6 +36,13 @@ Database schema design is a task where AI provides substantial value — not by 
 - **This guide covers starting**: from domain requirements, asking for index strategy, modeling complex constraints, with specific setup instructions
 - **Setup and configuration**: Step-by-step instructions included for each tool discussed
 
+## Table of Contents
+
+- [Starting from Domain Requirements](#starting-from-domain-requirements)
+- [Prerequisites](#prerequisites)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## Starting from Domain Requirements
 
 The most effective approach is describing your domain in plain language, not trying to specify the schema yourself:

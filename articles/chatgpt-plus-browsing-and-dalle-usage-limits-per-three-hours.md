@@ -45,6 +45,16 @@ ChatGPT Plus ($20/month) limits DALL-E image generation to approximately 50 imag
 
 4.
 
+## Table of Contents
+
+- [ChatGPT Plus: Current Feature Set](#chatgpt-plus-current-feature-set)
+- [Understanding Three-Hour Usage Windows](#understanding-three-hour-usage-windows)
+- [DALL-E Usage Limits](#dall-e-usage-limits)
+- [Web Browsing Limits](#web-browsing-limits)
+- [Practical Strategies for Power Users](#practical-strategies-for-power-users)
+- [Alternative Approaches When Limits Are Reached](#alternative-approaches-when-limits-are-reached)
+- [Planning Your ChatGPT Plus Usage](#planning-your-chatgpt-plus-usage)
+
 ## ChatGPT Plus: Current Feature Set
 
 ChatGPT Plus ($20/month) provides several advantages over the free tier:
@@ -285,10 +295,9 @@ Understanding these limits prevents workflow disruptions during critical develop
 
 ## Related Articles
 
-- [DALL-E 3 Credit Cost Per Image: ChatGPT Plus vs API](/ai-tools-compared/dall-e-3-credit-cost-per-image-chatgpt-plus-vs-api/)
+- [DALL-E 3 Credit Cost Per Image: ChatGPT Plus vs](/ai-tools-compared/dall-e-3-credit-cost-per-image-chatgpt-plus-vs-api/)
+- [Claude Free vs ChatGPT Free Which Gives More Per](/ai-tools-compared/claude-free-vs-chatgpt-free-which-gives-more-per-day/)
 - [Do ChatGPT Plus Memory and Custom GPTs Count Toward](/ai-tools-compared/chatgpt-plus-memory-and-custom-gpts-count-toward-usage-limit/)
-- [Gemini Advanced vs ChatGPT Plus Price Per Feature Comparison](/ai-tools-compared/gemini-advanced-vs-chatgpt-plus-price-per-feature-comparison-2026/)
-- [DALL-E Image Generation Failed: How to Retry](/ai-tools-compared/dalle-image-generation-failed-how-to-retry/)
-- [Cursor Pro Usage Cap: How Many Requests Per Day in 2026](/ai-tools-compared/cursor-pro-usage-cap-how-many-requests-per-day-2026/)
-
+- [ChatGPT Plus Cancel Mid Month: Do You Keep Access Until End?](/ai-tools-compared/chatgpt-plus-cancel-mid-month-do-you-keep-access-until-end/)
+- [DALL-E Image Generation Failed: How](/ai-tools-compared/dalle-image-generation-failed-how-to-retry/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -39,6 +39,21 @@ AI tools can dramatically accelerate the creation of design handoff documentatio
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **They require detailed documentation**: of how elements behave across different states: default, hover, active, focused, disabled, loading, error, and success.
 
+## Table of Contents
+
+- [Why Interaction State Descriptions Matter](#why-interaction-state-descriptions-matter)
+- [Using AI to Generate State Descriptions](#using-ai-to-generate-state-descriptions)
+- [Login Button - Interaction States](#login-button-interaction-states)
+- [Practical AI Tools for Design Documentation](#practical-ai-tools-for-design-documentation)
+- [Automating Documentation Workflows](#automating-documentation-workflows)
+- [Best Practices for AI-Assisted Documentation](#best-practices-for-ai-assisted-documentation)
+- [Handling Edge Cases](#handling-edge-cases)
+- [Modal Dialog - Complex States](#modal-dialog-complex-states)
+- [Complete Component Documentation Example](#complete-component-documentation-example)
+- [States & Specifications](#states-specifications)
+- [Advanced Template System](#advanced-template-system)
+- [Measuring Documentation Quality](#measuring-documentation-quality)
+
 ## Why Interaction State Descriptions Matter
 
 Developers need more than static visual specs. They require detailed documentation of how elements behave across different states: default, hover, active, focused, disabled, loading, error, and success. Without these descriptions, teams encounter implementation inconsistencies, wasted iteration cycles, and frustrated developers reconstructing intent from mockups alone.

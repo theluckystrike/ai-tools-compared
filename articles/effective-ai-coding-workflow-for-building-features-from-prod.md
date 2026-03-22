@@ -223,6 +223,15 @@ Keep your context documents updated. As your project evolves, ensure the context
 
 Building features from product requirements documents doesn't have to be a painful iteration of clarification and rework. By applying a structured AI coding workflow—extracting tasks, preparing context, generating incrementally, integrating carefully, and verifying thoroughly—you can significantly accelerate development while maintaining code quality. The key is treating AI as a powerful assistant rather than a replacement for developer judgment.
 
+## Table of Contents
+
+- [Automating the Workflow with Scripts](#automating-the-workflow-with-scripts)
+- [Project Structure](#project-structure)
+- [Real-World Workflow Metrics](#real-world-workflow-metrics)
+- [Handling Ambiguous Requirements](#handling-ambiguous-requirements)
+- [Integrating with Version Control](#integrating-with-version-control)
+- [Measuring AI Workflow Effectiveness](#measuring-ai-workflow-effectiveness)
+
 ## Automating the Workflow with Scripts
 
 Create scripts that execute the workflow systematically. This reduces manual overhead and makes the process repeatable:

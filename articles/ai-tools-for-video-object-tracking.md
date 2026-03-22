@@ -39,6 +39,19 @@ Video object tracking uses AI to locate and follow specific objects across conse
 - **SORT (Simple Online and**: Realtime Tracking) uses Kalman filters for motion prediction combined with Hungarian algorithm for data association.
 - **CSRT trades speed for**: accuracy and handles aspect ratio changes better.
 
+## Table of Contents
+
+- [Understanding Object Tracking Fundamentals](#understanding-object-tracking-fundamentals)
+- [Tracker Algorithm Comparison](#tracker-algorithm-comparison)
+- [Implementing Tracking with Python](#implementing-tracking-with-python)
+- [Advanced Tracking with Deep Learning](#advanced-tracking-with-deep-learning)
+- [Real-Time Inference Considerations](#real-time-inference-considerations)
+- [Specialized Tracking Frameworks](#specialized-tracking-frameworks)
+- [Performance Metrics and Evaluation](#performance-metrics-and-evaluation)
+- [Deployment Considerations](#deployment-considerations)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+- [Related Reading](#related-reading)
+
 ## Understanding Object Tracking Fundamentals
 
 Object tracking differs from object detection. Detection identifies objects in individual frames, while tracking maintains consistent identities across frames. The typical pipeline involves detecting objects in each frame, associating detections with existing tracks based on appearance and motion, and handling occlusions and appearance changes.

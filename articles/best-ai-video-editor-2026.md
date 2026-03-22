@@ -41,6 +41,21 @@ For developers and power users, AI video editors in 2026 range from CLI-powered 
 - **For developers and power users**: AI video editors in 2026 range from CLI-powered pipelines to GUI applications with automation APIs.
 - **However**: it works best for talking-head videos and may feel restrictive for cinematic editing.
 
+## Table of Contents
+
+- [What Developers Need From AI Video Editing Tools](#what-developers-need-from-ai-video-editing-tools)
+- [Top AI Video Editing Solutions for 2026](#top-ai-video-editing-solutions-for-2026)
+- [Choosing the Right Tool for Your Workflow](#choosing-the-right-tool-for-your-workflow)
+- [Implementation Recommendations](#implementation-recommendations)
+- [Comparative Performance Benchmarks](#comparative-performance-benchmarks)
+- [Audio Processing](#audio-processing)
+- [Integration Pipelines](#integration-pipelines)
+- [Subtitles and Captions](#subtitles-and-captions)
+- [Batch Processing at Scale](#batch-processing-at-scale)
+- [GPU Requirements for Real-Time Preview](#gpu-requirements-for-real-time-preview)
+- [Color Grading and Aesthetic Control](#color-grading-and-aesthetic-control)
+- [When to Use Each Tool](#when-to-use-each-tool)
+
 ## What Developers Need From AI Video Editing Tools
 
 The best AI video editor for technical users must meet several criteria beyond basic editing features. First, it needs command-line or API access for integration into existing pipelines. Second, it should handle batch processing efficiently when working with multiple files. Third, automation capabilities matter for repetitive tasks like subtitling, resizing, or applying consistent effects across projects.

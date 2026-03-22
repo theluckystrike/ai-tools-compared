@@ -42,6 +42,21 @@ Screen reader testing is a critical component of web accessibility validation. T
 - **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 
+## Table of Contents
+
+- [Understanding Screen Reader Testing Fundamentals](#understanding-screen-reader-testing-fundamentals)
+- [Setting Up Claude Code for Screen Reader Testing](#setting-up-claude-code-for-screen-reader-testing)
+- [Creating Screen Reader Test Scripts](#creating-screen-reader-test-scripts)
+- [Testing with NVDA on Windows](#testing-with-nvda-on-windows)
+- [Testing with VoiceOver on macOS](#testing-with-voiceover-on-macos)
+- [Testing with JAWS on Windows](#testing-with-jaws-on-windows)
+- [Automating Screen Reader Tests](#automating-screen-reader-tests)
+- [Common Screen Reader Issues and Fixes](#common-screen-reader-issues-and-fixes)
+- [Testing Dynamic Content with Live Regions](#testing-dynamic-content-with-live-regions)
+- [Best Practices for Screen Reader Compatibility](#best-practices-for-screen-reader-compatibility)
+- [Integrating with Claude Code Workflows](#integrating-with-claude-code-workflows)
+- [Measuring and Reporting Screen Reader Compatibility](#measuring-and-reporting-screen-reader-compatibility)
+
 ## Understanding Screen Reader Testing Fundamentals
 
 Screen readers interpret web content for users with visual impairments. Unlike automated accessibility checkers that can only validate code patterns, screen reader testing reveals the actual user experience. The major screen readers include NVDA (Windows, free), JAWS (Windows, commercial), and VoiceOver (macOS/iOS, built-in).
@@ -410,9 +425,8 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [Claude Code SDK Testing Workflow Guide](/ai-tools-compared/claude-code-sdk-testing-workflow-guide/)
-- [Claude Code API Snapshot Testing Guide](/ai-tools-compared/claude-code-api-snapshot-testing-guide/)
-- [Claude Code Parallel Testing Configuration - Complete](/ai-tools-compared/claude-code-parallel-testing-configuration/)
 - [Claude Code Shift Left Testing Strategy Guide](/ai-tools-compared/claude-code-shift-left-testing-strategy-guide/)
-- [Claude Code for Memory Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-memory-profiling-workflow-tutorial/)
-
+- [Claude Code Parallel Testing Configuration](/ai-tools-compared/claude-code-parallel-testing-configuration/)
+- [Writing Claude Md Files That Teach AI Your Project Testing](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-testing-conventions-and-patterns/)
+- [Claude Code API Snapshot Testing Guide](/ai-tools-compared/claude-code-api-snapshot-testing-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

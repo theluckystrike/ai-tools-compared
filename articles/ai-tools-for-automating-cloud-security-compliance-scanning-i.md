@@ -42,6 +42,18 @@ tags: [ai-tools-compared, security, artificial-intelligence]
 - **Use incremental scanning. For**: large infrastructures, scan only changed resources rather than performing full environment scans on every pipeline run.
 - **SOC 2 requirements map**: less directly to specific IaC checks—SOC 2 is process-oriented as much as technical.
 
+## Table of Contents
+
+- [Why Automate Compliance Scanning in CI CD](#why-automate-compliance-scanning-in-ci-cd)
+- [Key AI-Powered Approaches for Pipeline Integration](#key-ai-powered-approaches-for-pipeline-integration)
+- [Tool Comparison: AI Compliance Scanners](#tool-comparison-ai-compliance-scanners)
+- [Implementing AI Compliance Scanning](#implementing-ai-compliance-scanning)
+- [Writing Effective Policy-as-Code with AI Assistance](#writing-effective-policy-as-code-with-ai-assistance)
+- [CI CD Integration Patterns](#ci-cd-integration-patterns)
+- [Best Practices for AI Compliance Scanning](#best-practices-for-ai-compliance-scanning)
+- [Compliance Framework Coverage](#compliance-framework-coverage)
+- [Measuring Effectiveness](#measuring-effectiveness)
+
 ## Why Automate Compliance Scanning in CI CD
 
 Security compliance in cloud environments has become a non-negotiable requirement for organizations deploying infrastructure at scale. Manual compliance checks are slow, error-prone, and simply cannot keep pace with the velocity of modern development workflows. Integrating AI-powered compliance scanning directly into your CI CD pipeline addresses these challenges by catching misconfigurations, policy violations, and security risks before they reach production.

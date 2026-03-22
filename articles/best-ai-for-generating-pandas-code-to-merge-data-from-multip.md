@@ -40,6 +40,17 @@ When you need to combine data from multiple API endpoints into unified pandas Da
 - **The right choice depends**: on your specific use case, but all four tools can significantly reduce the time spent writing pandas merge code for API data integration.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [The Challenge: Merging Data from Multiple APIs](#the-challenge-merging-data-from-multiple-apis)
+- [Tool Comparison](#tool-comparison)
+- [Head-to-Head Capability Comparison](#head-to-head-capability-comparison)
+- [Performance Considerations](#performance-considerations)
+- [Handling Schema Inconsistencies Across APIs](#handling-schema-inconsistencies-across-apis)
+- [Verifying Merge Results](#verifying-merge-results)
+- [Prompting Tips for Better AI-Generated Merge Code](#prompting-tips-for-better-ai-generated-merge-code)
+- [Recommendation](#recommendation)
+
 ## The Challenge: Merging Data from Multiple APIs
 
 Real-world data pipelines often pull from multiple REST APIs—CRM systems, analytics platforms, third-party services. Each API returns data in different formats, with varying schemas and relationship structures. Writing efficient pandas code to unify this data requires understanding merge strategies, handling duplicates, managing memory, and dealing with missing values.

@@ -43,6 +43,23 @@ utility types like Partial**: Required, and Pick where appropriate.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **All async database operations**: use the asyncpg driver.
 
+## Table of Contents
+
+- [Understanding Idiomatic Code in the AI Context](#understanding-idiomatic-code-in-the-ai-context)
+- [Structuring Your System Prompt for Language-Specific Success](#structuring-your-system-prompt-for-language-specific-success)
+- [Language-Specific Prompt Strategies](#language-specific-prompt-strategies)
+- [Practical Examples](#practical-examples)
+- [Testing Your System Prompts](#testing-your-system-prompts)
+- [Maintaining System Prompts Over Time](#maintaining-system-prompts-over-time)
+- [Building Your Project-Specific Prompt Template](#building-your-project-specific-prompt-template)
+- [Project Overview](#project-overview)
+- [Technology Stack](#technology-stack)
+- [Code Style Requirements](#code-style-requirements)
+- [Architecture Patterns](#architecture-patterns)
+- [Real-World Prompt Comparison](#real-world-prompt-comparison)
+- [Versioning Your System Prompt](#versioning-your-system-prompt)
+- [Testing Your System Prompt Effectiveness](#testing-your-system-prompt-effectiveness)
+
 ## Understanding Idiomatic Code in the AI Context
 
 Idiomatic code follows the accepted conventions of a programming language and its community. It uses language-specific features appropriately, follows established style patterns, and integrates with code written by human developers. For AI assistants to generate such code consistently, they need clear guidance about what "idiomatic" means in your specific context.
@@ -370,11 +387,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How to Write System Prompts for AI Coding Assistants Project](/ai-tools-compared/how-to-write-system-prompts-for-ai-coding-assistants-project/)
+- [How to Write System Prompts for AI Coding Assistants](/ai-tools-compared/how-to-write-system-prompts-for-ai-coding-assistants-project/)
 - [How to Write System Prompts for AI Assistants That Produce](/ai-tools-compared/how-to-write-system-prompts-for-ai-assistants-that-produce-a/)
-- [How to Create Custom System Prompts for AI That Match Your](/ai-tools-compared/how-to-create-custom-system-prompts-for-ai-that-match-your-d/)
-- [How to Migrate ChatGPT System Prompts](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-forma/)
-- [Migrate ChatGPT System Prompts](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-format/)
-
+- [How to Structure Prompts for AI to Generate Idiomatic Code](/ai-tools-compared/how-to-structure-prompts-for-ai-to-generate-idiomatic-code-i/)
+- [Effective Context Management Strategies for AI Coding](/ai-tools-compared/effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/)
+- [How to Write Better Prompts for AI Code Generation](/ai-tools-compared/how-to-write-better-prompts-for-ai-code-generation-with-examples/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

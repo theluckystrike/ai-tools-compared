@@ -39,6 +39,21 @@ This guide compares the strengths and weaknesses of each tool for this specific 
 - **Claude tends toward directness**: and brevity, which often works better for cold outreach where you have seconds to capture attention.
 - **I wanted to reach**: out because we have helped companies like yours consolidate their analytics into one unified dashboard.
 
+## Table of Contents
+
+- [How Each Model Approaches Cold Email Writing](#how-each-model-approaches-cold-email-writing)
+- [Prompt Engineering for Cold Outreach](#prompt-engineering-for-cold-outreach)
+- [Comparing Actual Output](#comparing-actual-output)
+- [Temperature and Creativity Settings](#temperature-and-creativity-settings)
+- [Practical Workflow for Developers](#practical-workflow-for-developers)
+- [When to Choose Each Model](#when-to-choose-each-model)
+- [Measuring Results](#measuring-results)
+- [Advanced Prompt Engineering for Cold Email](#advanced-prompt-engineering-for-cold-email)
+- [Comparative Performance Analysis](#comparative-performance-analysis)
+- [A/B Testing Framework for Email Variants](#ab-testing-framework-for-email-variants)
+- [ROI Calculator for Cold Email Campaigns](#roi-calculator-for-cold-email-campaigns)
+- [Industry-Specific Email Strategies](#industry-specific-email-strategies)
+
 ## How Each Model Approaches Cold Email Writing
 
 ChatGPT and Claude share similar foundations but differ in their default writing tendencies. ChatGPT often produces more verbose, friendly-sounding output with transitional phrases. Claude tends toward directness and brevity, which often works better for cold outreach where you have seconds to capture attention.
@@ -533,10 +548,9 @@ Only one way: Send them. Track open rates, reply rates, and meetings booked. Com
 
 ## Related Articles
 
-- [Best AI Tool for Writing Cold Outreach Emails](/ai-tools-compared/best-ai-tool-for-writing-cold-outreach-emails/)
-- [Best AI Writing Tool for SaaS Marketing Teams](/ai-tools-compared/best-ai-writing-tool-for-saas-marketing-teams/)
+- [Best AI Tool for Writing Cold Outreach](/ai-tools-compared/best-ai-tool-for-writing-cold-outreach-emails/)
+- [Claude vs ChatGPT for Technical Writing 2026](/ai-tools-compared/claude-vs-chatgpt-for-technical-writing-2026/)
 - [ChatGPT vs Claude for Writing API Documentation](/ai-tools-compared/chatgpt-vs-claude-for-writing-api-documentation/)
-- [ChatGPT vs Claude for Writing Effective Celery Task Error](/ai-tools-compared/chatgpt-vs-claude-for-writing-effective-celery-task-error-ha/)
-- [ChatGPT vs Claude for Writing Nginx Reverse Proxy Configurat](/ai-tools-compared/chatgpt-vs-claude-for-writing-nginx-reverse-proxy-configurat/)
-
+- [Claude vs ChatGPT for Writing Datadog Dashboard Terraform](/ai-tools-compared/claude-vs-chatgpt-for-writing-datadog-dashboard-terraform-de/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -40,6 +40,15 @@ This guide compares the strengths and weaknesses of each tool for this specific 
 - **Codeium's integrations are more**: IDE-focused, with strong support for VS Code and JetBrains, plus an API for enterprise self-hosting.
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 
+## Table of Contents
+
+- [Understanding Framework-Specific Code Generation](#understanding-framework-specific-code-generation)
+- [Quick Comparison](#quick-comparison)
+- [GitHub Copilot for React and Vue](#github-copilot-for-react-and-vue)
+- [Codeium for React and Vue](#codeium-for-react-and-vue)
+- [Direct Comparison](#direct-comparison)
+- [Recommendations](#recommendations)
+
 ## Understanding Framework-Specific Code Generation
 
 Framework-specific code generation differs from general JavaScript completion. The best results come from assistants that recognize React hooks, Vue composition API patterns, component composition techniques, and framework-specific best practices. Both Copilot and Codeium offer code completion and generation capabilities, but their approaches and strengths vary significantly.

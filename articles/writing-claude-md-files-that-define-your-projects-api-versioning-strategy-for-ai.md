@@ -39,6 +39,27 @@ Write CLAUDE MD files that define API versioning strategy by specifying current 
 - **The AI should know**: whether to recommend v2 for all new code or if v1 is still acceptable in certain contexts.
 - **This leads to fewer integration errors**: smoother migrations, and better developer experience overall.
 
+## Table of Contents
+
+- [Why API Versioning Matters for AI-Assisted Development](#why-api-versioning-matters-for-ai-assisted-development)
+- [Structuring Your CLAUDE MD for API Versioning](#structuring-your-claude-md-for-api-versioning)
+- [Current Version](#current-version)
+- [Versioning Method](#versioning-method)
+- [Defining Version Schemas](#defining-version-schemas)
+- [Handling Breaking Changes](#handling-breaking-changes)
+- [Version Selection Rules](#version-selection-rules)
+- [Version Selection Guidelines](#version-selection-guidelines)
+- [Error Handling Across Versions](#error-handling-across-versions)
+- [Testing Version-Specific Code](#testing-version-specific-code)
+- [Best Practices Summary](#best-practices-summary)
+- [Current Status (Last updated: 2026-03-20)](#current-status-last-updated-2026-03-20)
+- [Version Selection Rules](#version-selection-rules)
+- [v3 Key Differences from v2](#v3-key-differences-from-v2)
+- [Breaking Changes History](#breaking-changes-history)
+- [Request Examples](#request-examples)
+- [Error Response Schemas by Version](#error-response-schemas-by-version)
+- [Migration Script](#migration-script)
+
 ## Why API Versioning Matters for AI-Assisted Development
 
 When an AI assistant interacts with your codebase, it needs to understand not just the current API structure, but how that API evolves over time. Without clear versioning documentation, AI tools may inadvertently use deprecated endpoints or misunderstand breaking changes. A well-crafted CLAUDE MD file bridges this gap by providing explicit guidance on your versioning philosophy and current API state.
@@ -272,7 +293,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Writing CLAUDE.md Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy/)
 - [Writing Claude Md Files That Teach AI Your Project Specific](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/)
 - [Writing Claude Md Files That Teach AI Your Project Testing](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-testing-conventions-and-patterns/)
-- [Best Practices for Versioning CursorRules Files Across Team](/ai-tools-compared/best-practices-for-versioning-cursorrules-files-across-team-/)
 - [How to Use Claude API Cheaply for Small Coding Projects](/ai-tools-compared/how-to-use-claude-api-cheaply-for-small-coding-projects/)
-
+- [Claude Code API Backward Compatibility Guide](/ai-tools-compared/claude-code-api-backward-compatibility-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

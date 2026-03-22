@@ -39,6 +39,24 @@ Developer onboarding remains one of the most time-consuming responsibilities for
 - **Use this feedback to**: refine AI-generated content: ``` We've collected feedback from 5 new hires.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [The Problem with Fragmented Onboarding Documentation](#the-problem-with-fragmented-onboarding-documentation)
+- [How AI Tools Parse and Structure Wiki Content](#how-ai-tools-parse-and-structure-wiki-content)
+- [Practical Workflow: From Wiki to Checklist](#practical-workflow-from-wiki-to-checklist)
+- [Example: Generating a Local Development Checklist](#example-generating-a-local-development-checklist)
+- [Local Development Setup Checklist](#local-development-setup-checklist)
+- [Tools and Approaches](#tools-and-approaches)
+- [Maintaining Accuracy Over Time](#maintaining-accuracy-over-time)
+- [Automating Checklist Updates with CI/CD](#automating-checklist-updates-with-cicd)
+- [Tailoring Checklists by Role](#tailoring-checklists-by-role)
+- [Measuring Onboarding Effectiveness](#measuring-onboarding-effectiveness)
+- [Integrating with Documentation Platforms](#integrating-with-documentation-platforms)
+- [Creating Video Walkthroughs from Checklists](#creating-video-walkthroughs-from-checklists)
+- [Checklist Item 1: Install Node.js via nvm](#checklist-item-1-install-nodejs-via-nvm)
+- [Handling Special Cases and Edge Cases](#handling-special-cases-and-edge-cases)
+- [Building Institutional Knowledge](#building-institutional-knowledge)
+
 ## The Problem with Fragmented Onboarding Documentation
 
 Internal wikis accumulate documentation over months or years. A typical engineering organization might have setup instructions for local development environments buried in a three-year-old Confluence page, while API authentication details live in a different GitHub repository's README. Environment variable configurations appear in a Slack thread from six months ago, and deployment procedures exist as a series of internal blog posts.
@@ -344,10 +362,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How to Use AI to Help Devrel Teams Create Video Tutorial Scr](/ai-tools-compared/how-to-use-ai-to-help-devrel-teams-create-video-tutorial-scr/)
 - [Best AI Tools for Customer Onboarding: A Developer Guide](/ai-tools-compared/best-ai-tools-for-customer-onboarding/)
-- [How to Use AI to Help Devrel Create Comparison Tables](/ai-tools-compared/how-to-use-ai-to-help-devrel-create-comparison-tables-for-competing-api-features/)
-- [How to Use AI to Help Devrel Create Interactive Coding](/ai-tools-compared/how-to-use-ai-to-help-devrel-create-interactive-coding-playgrounds/)
 - [AI Employee Onboarding Tools Comparison 2026](/ai-tools-compared/ai-employee-onboarding-tools-comparison-2026/)
-
+- [AI Tools for Converting Code Comments into Developer Facing](/ai-tools-compared/ai-tools-for-converting-code-comments-into-developer-facing-/)
+- [Configuring AI Coding Tools to Follow Your Teams Dependency](/ai-tools-compared/configuring-ai-coding-tools-to-follow-your-teams-dependency-/)
+- [AI Tools for Creating Custom Algorithm Visualization](/ai-tools-compared/ai-tools-for-creating-custom-algorithm-visualization-tutoria/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

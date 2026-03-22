@@ -41,6 +41,17 @@ Data pipeline failures require understanding transformation logic, diagnosing wh
 - **Use Copilot to write**: dbt test cases 4.
 - **Add tests using dbt**: Cloud AI ## Recommendations by Pipeline Type SQL-only pipelines (e.g., dbt without Databricks): Use Claude + Copilot.
 
+## Table of Contents
+
+- [Data Pipeline Debugging Challenges](#data-pipeline-debugging-challenges)
+- [Claude for Pipeline Analysis](#claude-for-pipeline-analysis)
+- [GitHub Copilot for Pipeline Code](#github-copilot-for-pipeline-code)
+- [Databricks Assistant: Pipeline-Native AI](#databricks-assistant-pipeline-native-ai)
+- [dbt Cloud AI: Transformation-Focused](#dbt-cloud-ai-transformation-focused)
+- [Comparison Matrix](#comparison-matrix)
+- [Practical Debugging Workflow](#practical-debugging-workflow)
+- [Recommendations by Pipeline Type](#recommendations-by-pipeline-type)
+
 ## Data Pipeline Debugging Challenges
 
 Modern data pipelines combine multiple layers: batch jobs, streaming connectors, transformation logic, and schema management. Debugging requires understanding:
@@ -396,10 +407,9 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [How to Use Claude for Debugging Failed CI/CD Pipeline Logs](/ai-tools-compared/how-to-use-claude-for-debugging-failed-ci-cd-pipeline-logs/)
-- [How to Use AI to Build Data Pipeline Retry and Dead Letter](/ai-tools-compared/how-to-use-ai-to-build-data-pipeline-retry-and-dead-letter-2/)
-- [How to Use AI to Create Data Pipeline Orchestration Configs](/ai-tools-compared/how-to-use-ai-to-create-data-pipeline-orchestration-configs-/)
-- [AI CI/CD Pipeline Optimization: A Developer Guide](/ai-tools-compared/ai-ci-cd-pipeline-optimization/)
-- [AI Powered Tools for Predicting CI/CD Pipeline Failures Befo](/ai-tools-compared/ai-powered-tools-for-predicting-ci-cd-pipeline-failures-befo/)
-
+- [AI Tools for Automated Data Pipeline Testing](/ai-tools-compared/ai-tools-for-automated-data-pipeline-testing)
+- [AI Powered Tools for Predicting CI/CD Pipeline Failures](/ai-tools-compared/ai-powered-tools-for-predicting-ci-cd-pipeline-failures-befo/)
+- [AI Tools for Writing CI CD Pipeline Configurations 2026](/ai-tools-compared/ai-tools-for-writing-ci-cd-pipeline-configurations-2026/)
+- [AI Tools for Generating CI/CD Pipeline Configs 2026](/ai-tools-compared/ai-tools-for-generating-ci-cd-pipeline-configs-2026/)
+- [AI Tools for Data Mesh Architecture: A Practical Guide](/ai-tools-compared/ai-tools-for-data-mesh-architecture/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

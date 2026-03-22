@@ -41,6 +41,16 @@ This comparison focuses on practical implementation—how each model handles tra
 - **Choose Gemini if you**: need faster processing of multiple transcripts and don't need maximum accuracy.
 - **The Q&A section is often where the most actionable information appears**: executives answering probing questions about guidance, margin pressure, or competitive dynamics.
 
+## Table of Contents
+
+- [Understanding the Task](#understanding-the-task)
+- [Claude for Transcript Summarization](#claude-for-transcript-summarization)
+- [Gemini for Transcript Analysis](#gemini-for-transcript-analysis)
+- [Head-to-Head Comparison](#head-to-head-comparison)
+- [Prompt Engineering Tips for Financial Transcripts](#prompt-engineering-tips-for-financial-transcripts)
+- [Recommendation by Use Case](#recommendation-by-use-case)
+- [Building Your Pipeline](#building-your-pipeline)
+
 ## Understanding the Task
 
 Quarterly earnings calls present unique challenges for AI summarization. These transcripts contain:
@@ -280,10 +290,9 @@ Both models handle earnings call transcripts effectively. Your choice ultimately
 
 ## Related Articles
 
-- [Claude vs Gemini for Converting Jupyter Notebooks to Product](/ai-tools-compared/claude-vs-gemini-for-converting-jupyter-notebooks-to-product/)
-- [Gemini vs Claude for Analyzing Large CSV Datasets Over 100MB](/ai-tools-compared/gemini-vs-claude-for-analyzing-large-csv-datasets-over-100mb/)
-- [Gemini vs Claude for Generating Markdown Documentation](/ai-tools-compared/gemini-vs-claude-for-generating-markdown-documentation-from-/)
+- [Claude vs Gemini for Converting Jupyter Notebooks](/ai-tools-compared/claude-vs-gemini-for-converting-jupyter-notebooks-to-product/)
+- [Switching from Gemini Advanced to Claude Pro: What You](/ai-tools-compared/switching-from-gemini-advanced-to-claude-pro-what-you-lose/)
 - [Gemini vs Claude for Writing Apache Kafka Consumer Producer](/ai-tools-compared/gemini-vs-claude-for-writing-apache-kafka-consumer-producer-/)
-- [How to Export Gemini Workspace Data Before Switching to](/ai-tools-compared/how-to-export-gemini-workspace-data-before-switching-to-claude-team/)
-
+- [Gemini vs Claude for Multimodal Coding](/ai-tools-compared/gemini-vs-claude-multimodal-coding-tasks/)
+- [Claude Max vs Claude Pro Actual Difference](/ai-tools-compared/claude-max-vs-claude-pro-actual-difference-in-daily-message-limits/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

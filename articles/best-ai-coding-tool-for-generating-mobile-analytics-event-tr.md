@@ -51,6 +51,15 @@ This guide explores how to use AI coding tools to generate mobile analytics even
 userId (string).
 - Use proper TypeScript types.
 
+## Table of Contents
+
+- [The Challenge of Cross-Platform Event Tracking](#the-challenge-of-cross-platform-event-tracking)
+- [How AI Coding Tools Generate Event Tracking Code](#how-ai-coding-tools-generate-event-tracking-code)
+- [Building a Cross-Platform Event Tracking System](#building-a-cross-platform-event-tracking-system)
+- [Best Practices for AI-Generated Event Tracking Code](#best-practices-for-ai-generated-event-tracking-code)
+- [Common Use Cases for AI-Generated Event Tracking](#common-use-cases-for-ai-generated-event-tracking)
+- [Limitations and Considerations](#limitations-and-considerations)
+
 ## The Challenge of Cross-Platform Event Tracking
 
 Mobile developers often face a common problem: implementing the same analytics events across different platforms. Each platform has its own SDK—Analytics for iOS uses Swift, Android uses Kotlin or Java, React Native uses JavaScript, and Flutter uses Dart. Writing and maintaining parallel implementations creates duplication and inconsistency.

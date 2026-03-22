@@ -42,6 +42,18 @@ Automating semantic versioning saves time and reduces human error when releasing
 - **Understanding where each fits**: helps you choose the right combination.
 - **The plugin ecosystem covers**: most edge cases.
 
+## Table of Contents
+
+- [Understanding Semver in Automated Workflows](#understanding-semver-in-automated-workflows)
+- [How AI Analyzes Commit History](#how-ai-analyzes-commit-history)
+- [Practical Implementation Approaches](#practical-implementation-approaches)
+- [Integration with Release Workflows](#integration-with-release-workflows)
+- [Tool Comparison: semantic-release vs release-please vs AI-Enhanced Analysis](#tool-comparison-semantic-release-vs-release-please-vs-ai-enhanced-analysis)
+- [Advanced: Multi-Package Monorepo Versioning](#advanced-multi-package-monorepo-versioning)
+- [Step-by-Step: Setting Up AI Version Analysis in CI](#step-by-step-setting-up-ai-version-analysis-in-ci)
+- [Limitations and Considerations](#limitations-and-considerations)
+- [Choosing the Right Approach](#choosing-the-right-approach)
+
 ## Understanding Semver in Automated Workflows
 
 Semantic versioning follows a three-number format: `major.minor.patch`. Each increment carries specific meaning:
@@ -329,11 +341,10 @@ Consider these factors when selecting a tool:
 
 ## Related Articles
 
-- [Best AI for Writing SQL Performance Tuning Recommendations](/ai-tools-compared/best-ai-for-writing-sql-performance-tuning-recommendations-f/)
-- [AI Tools for Interpreting Terraform Plan Errors](/ai-tools-compared/ai-tools-for-interpreting-terraform-plan-errors-with-provider-version-conflicts/)
-- [Best Practices for Version Controlling AI Prompts and Rules](/ai-tools-compared/best-practices-for-version-controlling-ai-prompts-and-rules-/)
-- [Copilot for JetBrains: Does It Cost Same as VSCode Version](/ai-tools-compared/copilot-for-jetbrains-does-it-cost-same-as-vscode-version/)
-- [AI Tools for Generating API Client SDKs 2026](/ai-tools-compared/ai-tools-for-generating-api-client-sdks-2026/)
-
+- [How Accurate Are AI Tools at Generating Rust Crossbeam](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
+- [AI Coding Tools for Automating Changelog Generation from](/ai-tools-compared/ai-coding-tools-for-automating-changelog-generation-from-con/)
+- [AI Tools for Creating Automated Release Changelog](/ai-tools-compared/ai-tools-for-creating-automated-release-changelog-from-conve/)
+- [AI Tools for Generating Dependency Update Pull Request](/ai-tools-compared/ai-tools-for-generating-dependency-update-pull-request-descr/)
+- [AI Tools for Generating Grafana Dashboards from Metrics](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

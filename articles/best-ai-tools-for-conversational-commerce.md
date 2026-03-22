@@ -39,6 +39,17 @@ The best AI tools for conversational commerce are Claude and GPT-4 APIs for flex
 - **LLM-only**: use GPT or Claude directly for simple FAQ and product discovery.
 - **What is the typical**: latency for LLM-based commerce assistants? Claude and GPT-4o typically return first-token responses in 500–900ms under normal load.
 
+## Table of Contents
+
+- [Understanding Conversational Commerce Requirements](#understanding-conversational-commerce-requirements)
+- [Tool Comparison at a Glance](#tool-comparison-at-a-glance)
+- [Claude and GPT APIs: Foundation Models](#claude-and-gpt-apis-foundation-models)
+- [RAG Systems for Product Knowledge](#rag-systems-for-product-knowledge)
+- [No-Code and Low-Code Platform Alternatives](#no-code-and-low-code-platform-alternatives)
+- [Voice and Multichannel Considerations](#voice-and-multichannel-considerations)
+- [Selecting Your Architecture](#selecting-your-architecture)
+- [Related Reading](#related-reading)
+
 ## Understanding Conversational Commerce Requirements
 
 Identify what your conversational commerce system needs to accomplish. The core requirements typically include:
@@ -315,5 +326,13 @@ Yes, but limit the assistant to information gathering and status lookups. The ac
 - [Best AI Tools for SaaS Customer Support](/ai-tools-compared/best-ai-tools-for-saas-customer-support/)
 - [AI Tools for Inventory Analytics: A Practical Guide for.](/ai-tools-compared/ai-tools-for-inventory-analytics/)
 - [Best AI Tools for Competitor Analysis](/ai-tools-compared/best-ai-tools-for-competitor-analysis/)
+
+## Related Articles
+
+- [AI Code Review Automation Tools Comparison 2026](/ai-tools-compared/ai-code-review-automation-tools-comparison/)
+- [Best AI Tools for Help Center Content](/ai-tools-compared/best-ai-tools-for-help-center-content/)
+- [Free AI Tools for Learning Python with Code Examples 2026](/ai-tools-compared/free-ai-tools-for-learning-python-with-code-examples-2026/)
+- [Best AI Tools for Automated Code Review 2026](/ai-tools-compared/best-ai-tools-for-automated-code-review-2026/)
+- [AI Tools for Inventory Analytics](/ai-tools-compared/ai-tools-for-inventory-analytics/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

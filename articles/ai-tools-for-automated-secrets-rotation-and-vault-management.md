@@ -42,6 +42,17 @@ This guide explores how developers can use AI tools to build secrets rotation wo
 - **Use AI tools to**: generate vault integration code and rotation logic for your chosen solution (HashiCorp Vault, AWS Secrets Manager, Azure Key Vault, or Google Secret Manager).
 - **This guide explores how**: developers can use AI tools to build secrets rotation workflows and integrate with popular vault solutions.
 
+## Table of Contents
+
+- [Understanding Secrets Rotation Requirements](#understanding-secrets-rotation-requirements)
+- [Using AI Tools to Generate Vault Integration Code](#using-ai-tools-to-generate-vault-integration-code)
+- [Automating Rotation Workflows](#automating-rotation-workflows)
+- [Choosing the Right AI Tool for Vault Code Generation](#choosing-the-right-ai-tool-for-vault-code-generation)
+- [Azure Key Vault Integration](#azure-key-vault-integration)
+- [Crafting Effective Prompts for Vault Code Generation](#crafting-effective-prompts-for-vault-code-generation)
+- [Testing Rotation Logic with AI-Generated Tests](#testing-rotation-logic-with-ai-generated-tests)
+- [Best Practices for AI-Assisted Implementation](#best-practices-for-ai-assisted-implementation)
+
 ## Understanding Secrets Rotation Requirements
 
 Traditional secret management often relies on static credentials that remain valid for months or years. This approach creates security vulnerabilities: forgotten credentials continue working, rotated keys go unnoticed, and compliance audits become complicated. Automated rotation addresses these issues by ensuring credentials change on a predictable schedule without manual intervention.
@@ -343,11 +354,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Automated SSL Certificate Management and](/ai-tools-compared/ai-tools-for-automated-ssl-certificate-management-and-monito/)
-- [Best AI Tools for Automated DNS Configuration Management Acr](/ai-tools-compared/best-ai-tools-for-automated-dns-configuration-management-acr/)
-- [How to Configure AI Coding Tools to Exclude Secrets and](/ai-tools-compared/how-to-configure-ai-coding-tools-to-exclude-secrets-and-env-/)
-- [AI Assistants for Multicloud Infrastructure Management](/ai-tools-compared/ai-assistants-for-multicloud-infrastructure-management-and-d/)
-- [AI Policy Management Tools Enterprise Compliance](/ai-tools-compared/ai-policy-management-tools-enterprise-compliance-2026/)
-
+- [Best AI Tools for Automated Code Review 2026](/ai-tools-compared/best-ai-tools-for-automated-code-review-2026/)
+- [AI Tools for Automated SSL Certificate Management](/ai-tools-compared/ai-tools-for-automated-ssl-certificate-management-and-monito/)
+- [How to Configure AI Coding Tools to Exclude Secrets and Env](/ai-tools-compared/how-to-configure-ai-coding-tools-to-exclude-secrets-and-env-/)
+- [How Accurate Are AI Tools](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-serde-serialization-code/)
+- [AI Tools for Automated Security Scanning Compared](/ai-tools-compared/ai-tools-for-automated-security-scanning-compared/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

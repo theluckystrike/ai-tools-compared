@@ -42,6 +42,22 @@ This guide evaluates the leading AI coding assistants for generating Playwright 
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Understanding the Testing Requirements](#understanding-the-testing-requirements)
+- [GitHub Copilot for Table Tests](#github-copilot-for-table-tests)
+- [Claude by Anthropic](#claude-by-anthropic)
+- [Codeium](#codeium)
+- [Tabnine](#tabnine)
+- [Recommendations by Use Case](#recommendations-by-use-case)
+- [Optimizing AI-Generated Table Tests](#optimizing-ai-generated-table-tests)
+- [Advanced Table Test Scenarios](#advanced-table-test-scenarios)
+- [Table Testing Best Practices with AI Assistance](#table-testing-best-practices-with-ai-assistance)
+- [Performance Considerations in Generated Tests](#performance-considerations-in-generated-tests)
+- [Handling Dynamic Table Content](#handling-dynamic-table-content)
+- [Comparison Table: AI Tools for Table Testing](#comparison-table-ai-tools-for-table-testing)
+- [Production Readiness Checklist](#production-readiness-checklist)
+
 ## Understanding the Testing Requirements
 
 Table components in modern web applications typically include several interactive features that require separate test cases. Sorting tests must verify that clicking column headers correctly reorders data in ascending and descending directions. Filtering tests need to validate that search inputs and filter dropdowns properly narrow displayed results. Pagination tests should confirm that navigation controls work correctly and that changing pages updates displayed content appropriately.
@@ -347,11 +363,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI Assistant for Creating Playwright Tests for File Upl](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-file-upl/)
-- [Best AI Assistant for Creating Playwright Tests for Multi](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-multi-st/)
 - [Best AI Assistant for Writing Playwright Tests](/ai-tools-compared/best-ai-assistant-for-writing-playwright-tests-for-drag-and-drop-interactions-2026/)
-- [Best AI Assistant for Creating Jest Tests That Verify Error](/ai-tools-compared/best-ai-assistant-for-creating-jest-tests-that-verify-error-/)
-- [AI Coding Assistants for Go Testing Table Driven Tests Gener](/ai-tools-compared/ai-coding-assistants-for-go-testing-table-driven-tests-gener/)
-
+- [Best AI Assistant for Creating Playwright Tests for Multi](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-multi-st/)
+- [Which AI Is Better for Writing Playwright End-to-End Tests](/ai-tools-compared/which-ai-is-better-for-writing-playwright-end-to-end-tests-2/)
+- [AI Tools for Writing Playwright Tests That Verify Accessibil](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-accessibil/)
+- [Best AI Tools for Writing Playwright Tests 2026](/ai-tools-compared/best-ai-tools-for-writing-playwright-tests-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

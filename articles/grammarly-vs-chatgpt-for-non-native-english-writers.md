@@ -39,6 +39,19 @@ Choose Grammarly if you need real-time grammar correction as you type across bro
 - **Which tool is better**: for learning English? Grammarly wins for learning specific grammar rules because it shows an explanation for each flagged error inline.
 - **Can I use both**: tools for free? Yes.
 
+## Table of Contents
+
+- [How Grammarly Works](#how-grammarly-works)
+- [How ChatGPT Works](#how-chatgpt-works)
+- [Direct Comparison for Specific Tasks](#direct-comparison-for-specific-tasks)
+- [Feature Comparison Table](#feature-comparison-table)
+- [Common Writing Problems Non-Native Writers Face](#common-writing-problems-non-native-writers-face)
+- [Integrating Both Tools in Your Workflow](#integrating-both-tools-in-your-workflow)
+- [Practical ChatGPT Prompts for Non-Native Writers](#practical-chatgpt-prompts-for-non-native-writers)
+- [When to Use Each Tool](#when-to-use-each-tool)
+- [Cost Considerations](#cost-considerations)
+- [Final Recommendations](#final-recommendations)
+
 ## How Grammarly Works
 
 Grammarly operates as a rule-based grammar checker with machine learning enhancements. It scans your text against thousands of grammatical rules and flags errors in real-time.

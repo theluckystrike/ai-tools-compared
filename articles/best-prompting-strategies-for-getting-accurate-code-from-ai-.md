@@ -39,6 +39,24 @@ Getting accurate, production-ready code from AI assistants requires more than ju
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - Use only Python standard library.
 
+## Table of Contents
+
+- [Why Prompt Quality Matters More Than You Think](#why-prompt-quality-matters-more-than-you-think)
+- [Provide Context Before Asking for Code](#provide-context-before-asking-for-code)
+- [Specify Input and Output Formats Explicitly](#specify-input-and-output-formats-explicitly)
+- [Use Step-by-Step Requests for Complex Tasks](#use-step-by-step-requests-for-complex-tasks)
+- [Request Edge Case Handling](#request-edge-case-handling)
+- [Use Role-Based Prompting](#use-role-based-prompting)
+- [Request Test Cases Along with Code](#request-test-cases-along-with-code)
+- [Use Constraint Language Effectively](#use-constraint-language-effectively)
+- [Provide Examples of Expected Output](#provide-examples-of-expected-output)
+- [AI Tool Comparison: Prompt Responsiveness](#ai-tool-comparison-prompt-responsiveness)
+- [Advanced Technique: Chain-of-Thought Prompting](#advanced-technique-chain-of-thought-prompting)
+- [Using System Context for Persistent Constraints](#using-system-context-for-persistent-constraints)
+- [Iterate and Refine](#iterate-and-refine)
+- [Common Mistakes to Avoid](#common-mistakes-to-avoid)
+- [Related Reading](#related-reading)
+
 ## Why Prompt Quality Matters More Than You Think
 
 AI coding tools are fundamentally pattern-completion engines trained on vast amounts of code. When you provide a vague prompt, the model fills in the missing context with its best guess—which may be a pattern from a completely different codebase or use case. A specific, well-structured prompt narrows the solution space dramatically and produces code that fits your actual requirements.
@@ -284,5 +302,13 @@ Pick one tool from the options discussed and sign up for a free trial. Spend 30 
 **What is the learning curve like?**
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+
+## Related Articles
+
+- [Effective Prompting Strategies for AI Generation of Complex](/ai-tools-compared/effective-prompting-strategies-for-ai-generation-of-complex-/)
+- [Effective Strategies for Reviewing AI Generated Code Before](/ai-tools-compared/effective-strategies-for-reviewing-ai-generated-code-before-committing-to-repo/)
+- [Effective Context Management Strategies for AI Coding](/ai-tools-compared/effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/)
+- [Effective Strategies for AI-Assisted Refactoring](/ai-tools-compared/effective-strategies-for-ai-assisted-refactoring-without-bre/)
+- [Effective Prompting for AI Generation of Accessible Frontend](/ai-tools-compared/effective-prompting-for-ai-generation-of-accessible-frontend/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

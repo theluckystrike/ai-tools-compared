@@ -35,6 +35,26 @@ The best tool depends on your specific workflow, language preferences, and integ
 3.
 - **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
 
+## Table of Contents
+
+- [What Makes a Free Trial Actually Useful](#what-makes-a-free-trial-actually-useful)
+- [Cursor: Generous Free Tier with Extended Trials](#cursor-generous-free-tier-with-extended-trials)
+- [Windsurf (Codeium): Extensive Free Access](#windsurf-codeium-extensive-free-access)
+- [Amazon CodeWhisperer: Enterprise-Grade Free Tier](#amazon-codewhisperer-enterprise-grade-free-tier)
+- [GitHub Copilot: Free for Verified Students and Open Source](#github-copilot-free-for-verified-students-and-open-source)
+- [Comparing the Options](#comparing-the-options)
+- [Making Your Decision](#making-your-decision)
+- [Tips for Evaluating AI Coding Tools](#tips-for-evaluating-ai-coding-tools)
+- [Hands-On Testing Strategy](#hands-on-testing-strategy)
+- [Feature Parity Comparison](#feature-parity-comparison)
+- [Language Support Breakdown](#language-support-breakdown)
+- [Real-World Productivity Metrics](#real-world-productivity-metrics)
+- [Trial Evaluation Sheet](#trial-evaluation-sheet)
+- [Transition Plan After Trial](#transition-plan-after-trial)
+- [Decision Matrix](#decision-matrix)
+- [Avoiding Common Trial Mistakes](#avoiding-common-trial-mistakes)
+- [Extending Your Trial](#extending-your-trial)
+
 ## What Makes a Free Trial Actually Useful
 
 
@@ -470,11 +490,10 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Cursor Free Tier Limitations: What Stops Working After Trial](/ai-tools-compared/cursor-free-tier-limitations-what-stops-working-after-trial/)
-- [Best AI Coding Tools With Generous Free Tier for Hobbyists](/ai-tools-compared/best-ai-coding-tools-with-generous-free-tier-for-hobbyists/)
-- [Best Free AI Coding Extensions for Visual Studio Code 2026](/ai-tools-compared/best-free-ai-coding-extensions-for-visual-studio-code-2026/)
+- [Best AI Coding Tool for Golang Developers 2026](/ai-tools-compared/best-ai-coding-tool-for-golang-developers-2026/)
 - [Best Free AI Coding Tool With No Message Limits in 2026](/ai-tools-compared/best-free-ai-coding-tool-with-no-message-limits-2026/)
-- [Free AI Coding Tools That Work Offline Without Internet](/ai-tools-compared/free-ai-coding-tools-that-work-offline-without-internet/)
-
+- [Best AI Coding Tools With Generous Free Tier for Hobbyists](/ai-tools-compared/best-ai-coding-tools-with-generous-free-tier-for-hobbyists/)
+- [Best AI Coding Tool with Pay As You Go No Subscription](/ai-tools-compared/best-ai-coding-tool-with-pay-as-you-go-no-subscription/)
+- [Best Practices for AI Coding Tool Project Configuration](/ai-tools-compared/best-practices-for-ai-coding-tool-project-configuration-in-l/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

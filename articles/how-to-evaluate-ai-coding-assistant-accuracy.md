@@ -38,6 +38,20 @@ Marketing claims for AI coding tools are unreliable. "10x productivity" and "gen
 - **Models that score below**: 10% are essentially ignoring the reference files and generating from training data alone, which explains poor performance on domain-specific tasks.
 - **The 4-8 hour setup**: is a one-time cost; the framework runs in minutes and can be re-used every quarter as models update.
 
+## Table of Contents
+
+- [Why Vendor Benchmarks Don't Transfer](#why-vendor-benchmarks-dont-transfer)
+- [Step 1: Build Your Evaluation Task Set](#step-1-build-your-evaluation-task-set)
+- [Step 2: Automated Evaluation Runner](#step-2-automated-evaluation-runner)
+- [Step 3: Metrics That Matter](#step-3-metrics-that-matter)
+- [Step 4: Blind Comparison](#step-4-blind-comparison)
+- [Realistic Pass Rates](#realistic-pass-rates)
+- [Step 5: Measuring Context Window Utilization](#step-5-measuring-context-window-utilization)
+- [Step 6: Cost-Adjusted Accuracy](#step-6-cost-adjusted-accuracy)
+- [Comparing Evaluation Approaches](#comparing-evaluation-approaches)
+- [Making the Decision](#making-the-decision)
+- [Related Reading](#related-reading)
+
 ## Why Vendor Benchmarks Don't Transfer
 
 HumanEval measures whether a model can implement simple algorithmic functions from docstrings. SWE-bench measures GitHub issue resolution. Neither measures what you actually care about:

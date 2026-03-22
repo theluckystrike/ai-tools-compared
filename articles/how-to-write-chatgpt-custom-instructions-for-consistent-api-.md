@@ -40,6 +40,13 @@ ChatGPT's custom instructions feature lets you define persistent context that sh
 - **Copy code directly into**: your project or IDE ### API Design Assistant Strategy Use ChatGPT for exploratory design: ``` Session Flow: 1.
 - **What endpoints should I**: include?" (Uses your custom instructions for tech stack) 2.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced Custom Instruction Techniques](#advanced-custom-instruction-techniques)
+- [Advanced Custom Instruction Techniques](#advanced-custom-instruction-techniques)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

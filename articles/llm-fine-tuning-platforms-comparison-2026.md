@@ -40,6 +40,18 @@ Fine-tuning a language model means training it on your specific data to adapt it
 - **In 2026, fine-tuning is no longer exclusively available to large enterprises with GPU clusters**: multiple platforms offer managed fine-tuning at accessible price points.
 - **Both approaches adapt models**: to your use case, but they have different trade-offs.
 
+## Table of Contents
+
+- [The Fine-Tuning vs Prompt Engineering Decision](#the-fine-tuning-vs-prompt-engineering-decision)
+- [OpenAI Fine-Tuning: Industry Standard](#openai-fine-tuning-industry-standard)
+- [Together AI: Best for Open-Source Model Fine-Tuning](#together-ai-best-for-open-source-model-fine-tuning)
+- [Anyscale: Best for High-Throughput Fine-Tuning](#anyscale-best-for-high-throughput-fine-tuning)
+- [Modal: Best for Custom Fine-Tuning Workflows](#modal-best-for-custom-fine-tuning-workflows)
+- [Replicate: Best for Simplicity and Community Models](#replicate-best-for-simplicity-and-community-models)
+- [Cost Comparison Table](#cost-comparison-table)
+- [Decision Framework](#decision-framework)
+- [When Fine-Tuning ROI is Positive](#when-fine-tuning-roi-is-positive)
+
 ## The Fine-Tuning vs Prompt Engineering Decision
 
 Before choosing a platform, understand whether fine-tuning solves your problem. Both approaches adapt models to your use case, but they have different trade-offs.

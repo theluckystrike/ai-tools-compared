@@ -40,6 +40,17 @@ Code translation — converting a working codebase from one language to another 
 - **This is better than**: the original JavaScript.
 - **the first tool and**: the second tool serve different strengths, so combining them can cover more use cases than relying on either one alone.
 
+## Table of Contents
+
+- [The Translation Challenge](#the-translation-challenge)
+- [Tool 1: Claude for Full-File Translation](#tool-1-claude-for-full-file-translation)
+- [Tool 2: GPT-4o for JavaScript to TypeScript](#tool-2-gpt-4o-for-javascript-to-typescript)
+- [Tool 3: GitHub Copilot for In-Editor Translation](#tool-3-github-copilot-for-in-editor-translation)
+- [Java to Kotlin Migration](#java-to-kotlin-migration)
+- [Batch Translation Workflow](#batch-translation-workflow)
+- [Accuracy by Translation Type](#accuracy-by-translation-type)
+- [Related Reading](#related-reading)
+
 ## The Translation Challenge
 
 AI code translation isn't just syntax substitution. The hard parts are:

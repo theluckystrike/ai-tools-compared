@@ -44,6 +44,20 @@ This guide covers a practical workflow for using AI to generate and maintain cha
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Setting Up Your Changelog Workflow](#setting-up-your-changelog-workflow)
+- [Generating Changelog Entries with AI](#generating-changelog-entries-with-ai)
+- [Maintaining Changelog Quality](#maintaining-changelog-quality)
+- [Automating the Workflow](#automating-the-workflow)
+- [Practical Example](#practical-example)
+- [Using AI Tools Effectively for Changelog Tasks](#using-ai-tools-effectively-for-changelog-tasks)
+- [Tools and Integrations](#tools-and-integrations)
+- [Addressing Common Pitfalls](#addressing-common-pitfalls)
+- [Scaling Across Teams](#scaling-across-teams)
+- [Integration with Release Notes](#integration-with-release-notes)
+- [Maintenance and Long-Term Viability](#maintenance-and-long-term-viability)
+
 ## Setting Up Your Changelog Workflow
 
 The foundation of an effective AI-powered changelog workflow starts with structured commit messages. AI models work best when they have clear, consistent input data. Raw git logs are noisy and inconsistent across teams, making AI output equally unreliable.

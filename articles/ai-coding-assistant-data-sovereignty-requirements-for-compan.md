@@ -40,6 +40,16 @@ European companies face increasingly strict data sovereignty requirements when a
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Understanding Data Sovereignty in the AI Context](#understanding-data-sovereignty-in-the-ai-context)
+- [GDPR Implications for AI Coding Tools](#gdpr-implications-for-ai-coding-tools)
+- [NIS2 Directive Considerations](#nis2-directive-considerations)
+- [Practical Configuration Examples](#practical-configuration-examples)
+- [Code Handling Best Practices](#code-handling-best-practices)
+- [Evaluating AI Tool Providers](#evaluating-ai-tool-providers)
+- [Building a Compliant AI Coding Strategy](#building-a-compliant-ai-coding-strategy)
+
 ## Understanding Data Sovereignty in the AI Context
 
 Data sovereignty means that data remains under the legal jurisdiction of a specific region or country. For AI coding assistants, this applies to several categories of information:
@@ -269,10 +279,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [AI Coding Assistant Session Data Lifecycle](/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-- [Enterprise AI Coding Tool Network Security Requirements.](/ai-tools-compared/enterprise-ai-coding-tool-network-security-requirements-and-/)
-- [Best AI Assistant for Creating Test Data Factories with Real](/ai-tools-compared/best-ai-assistant-for-creating-test-data-factories-with-real/)
-- [Best AI Assistant for Generating SQL Recursive Queries](/ai-tools-compared/best-ai-assistant-for-generating-sql-recursive-queries-for-hierarchical-org-chart-data/)
-- [Best AI Coding Tools for Python Data Science and pandas Work](/ai-tools-compared/best-ai-coding-tools-for-python-data-science-and-pandas-work/)
-
+- [AI Coding Tool GDPR Compliance Checklist for European](/ai-tools-compared/ai-coding-tool-gdpr-compliance-checklist-for-european-engine/)
+- [AI Powered Data Cataloging Tools](/ai-tools-compared/ai-powered-data-cataloging-tools/)
+- [Best AI Coding Tools for Python Data Science and pandas](/ai-tools-compared/best-ai-coding-tools-for-python-data-science-and-pandas-work/)
+- [Enterprise Data Loss Prevention Rules for AI Coding Assistan](/ai-tools-compared/enterprise-data-loss-prevention-rules-for-ai-coding-assistan/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

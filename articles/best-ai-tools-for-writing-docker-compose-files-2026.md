@@ -41,6 +41,21 @@ Claude Code generates production-ready compose files on first try approximately 
 - **Best For**: Full-time IDE use with good autocomplete, developers preferring Claude over OpenAI.
 - **Claude Code generates production-ready**: compose files on first try approximately 85% of the time.
 
+## Table of Contents
+
+- [Docker Compose Challenges](#docker-compose-challenges)
+- [Claude Code: The Strongest Output](#claude-code-the-strongest-output)
+- [GitHub Copilot: Fast, Good Enough](#github-copilot-fast-good-enough)
+- [Cursor: IDE-First AI](#cursor-ide-first-ai)
+- [Real-World Comparison: Multi-Service Web App](#real-world-comparison-multi-service-web-app)
+- [Networking Patterns](#networking-patterns)
+- [Environment Configuration](#environment-configuration)
+- [Volume Management](#volume-management)
+- [Debugging and Validation](#debugging-and-validation)
+- [Quick Decision Matrix](#quick-decision-matrix)
+- [Best Practices All Tools Miss](#best-practices-all-tools-miss)
+- [Workflow Recommendation](#workflow-recommendation)
+
 ## Docker Compose Challenges
 
 Writing Docker Compose files requires understanding service interdependencies, port mapping, volume mounts, environment variables, and networking. A typical production compose file contains:
@@ -380,9 +395,8 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 ## Related Articles
 
 - [AI Tools for Generating Docker Compose Files for Complex Mic](/ai-tools-compared/ai-tools-for-generating-docker-compose-files-for-complex-mic/)
-- [Best AI IDE Features for Writing Configuration Files YAML](/ai-tools-compared/best-ai-ide-features-for-writing-configuration-files-yaml-json-toml/)
-- [Writing CLAUDE.md Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy/)
-- [Writing CLAUDE MD Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
-- [Writing Claude Md Files That Teach AI Your Project Specific](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/)
-
+- [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-compared/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)
+- [AI Pair Programming Tools Comparison 2026: Claude Code](/ai-tools-compared/ai-pair-programming-tools-comparison-2026/)
+- [Best AI Tools for Writing Kubernetes Operator Code](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-operator-code-from-scratch/)
+- [Copilot vs Claude Code for Writing GitHub Actions Cicd](/ai-tools-compared/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -211,6 +211,21 @@ The best tool for your team depends on your existing workflow, technical capabil
 
 Writing effective sprint retrospective summaries doesn't require sacrificing hours of manual work. AI assistants provide a practical foundation that you refine through iterative prompt engineering and human review. The goal remains the same: clear, actionable documentation that helps your team improve continuously.
 
+## Table of Contents
+
+- [Tool-Specific Implementation](#tool-specific-implementation)
+- [What Went Well](#what-went-well)
+- [What Could Improve](#what-could-improve)
+- [Action Items](#action-items)
+- [Metrics](#metrics)
+- [Handling Different Retrospective Formats](#handling-different-retrospective-formats)
+- [Automation Workflow](#automation-workflow)
+- [Quality Metrics for Generated Summaries](#quality-metrics-for-generated-summaries)
+- [Integration with Project Management Tools](#integration-with-project-management-tools)
+- [Common Pitfalls and Solutions](#common-pitfalls-and-solutions)
+- [Iterative Refinement](#iterative-refinement)
+- [Measuring Impact](#measuring-impact)
+
 ## Tool-Specific Implementation
 
 ### Claude.ai for Retrospective Summarization
@@ -529,11 +544,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI Tool for Product Managers Writing User Stories](/ai-tools-compared/best-ai-tool-for-product-managers-writing-user-stories-from-customer-feedback-2026/)
-- [AI Tools for Product Managers Converting Customer](/ai-tools-compared/ai-tools-for-product-managers-converting-customer-interview-/)
 - [AI Tools for Product Managers Drafting Release](/ai-tools-compared/ai-tools-for-product-managers-drafting-release-communication-emails-from-feature-lists/)
-- [Best AI for Product Managers Creating Stakeholder Update Dec](/ai-tools-compared/best-ai-for-product-managers-creating-stakeholder-update-dec/)
-- [Best AI for Product Managers Creating User Persona Documents](/ai-tools-compared/best-ai-for-product-managers-creating-user-persona-documents/)
-
+- [AI Tools for Product Managers Converting Customer](/ai-tools-compared/ai-tools-for-product-managers-converting-customer-interview-/)
+- [Best AI for Product Managers Creating Stakeholder Update](/ai-tools-compared/best-ai-for-product-managers-creating-stakeholder-update-dec/)
+- [Best AI Tool for Product Managers Writing User Stories](/ai-tools-compared/best-ai-tool-for-product-managers-writing-user-stories-from-customer-feedback-2026/)
+- [Best AI Assistant for Writing Open Source Plugin Development](/ai-tools-compared/best-ai-assistant-for-writing-open-source-plugin-development/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

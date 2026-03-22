@@ -42,6 +42,21 @@ The BLoC pattern has become one of the most popular state management solutions i
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Why BLoC Pattern Testing Matters for AI Code Completion](#why-bloc-pattern-testing-matters-for-ai-code-completion)
+- [Event Class Generation](#event-class-generation)
+- [State Class Generation](#state-class-generation)
+- [The BLoC Class Itself](#the-bloc-class-itself)
+- [Comparing AI Tool Performance](#comparing-ai-tool-performance)
+- [Testing BLoC Code with AI Assistance](#testing-bloc-code-with-ai-assistance)
+- [Real-World BLoC Implementation Examples](#real-world-bloc-implementation-examples)
+- [Advanced AI Completion for BLoC Patterns](#advanced-ai-completion-for-bloc-patterns)
+- [Comparing AI Code Completion Tools for BLoC](#comparing-ai-code-completion-tools-for-bloc)
+- [Practical Recommendations](#practical-recommendations)
+- [Maximizing Productivity](#maximizing-productivity)
+- [Common Pitfalls to Avoid](#common-pitfalls-to-avoid)
+
 ## Why BLoC Pattern Testing Matters for AI Code Completion
 
 The BLoC pattern requires creating multiple interconnected classes that follow specific conventions. A typical BLoC implementation includes:

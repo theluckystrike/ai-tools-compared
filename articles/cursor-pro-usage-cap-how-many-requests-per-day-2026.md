@@ -48,6 +48,19 @@ Cursor Pro provides 2,000 monthly requests for individual plans (approximately 6
 
 ### 2.
 
+## Table of Contents
+
+- [What is Cursor Pro?](#what-is-cursor-pro)
+- [Request Limits in 2026](#request-limits-in-2026)
+- [How Requests Are Consumed](#how-requests-are-consumed)
+- [What Happens When You Hit the Limit](#what-happens-when-you-hit-the-limit)
+- [Tips to Maximize Your Request Allocation](#tips-to-maximize-your-request-allocation)
+- [Alternatives When You Need More Requests](#alternatives-when-you-need-more-requests)
+- [Real Usage Patterns and Monthly Costs](#real-usage-patterns-and-monthly-costs)
+- [Cost Comparison: Pro vs Teams/Business](#cost-comparison-pro-vs-teamsbusiness)
+- [Request Optimization Strategies](#request-optimization-strategies)
+- [When to Upgrade to Teams/Business](#when-to-upgrade-to-teamsbusiness)
+
 ## What is Cursor Pro?
 
 Cursor Pro is the paid subscription tier of Cursor AI, an AI-powered code editor built on VSCode. It provides access to advanced AI models, unlimited autocomplete suggestions, and priority access to new features. The subscription is designed for professional developers and teams who need consistent AI assistance.
@@ -341,12 +354,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [ChatGPT API 429 Too Many Requests Fix](/ai-tools-compared/chatgpt-api-429-too-many-requests-fix/)
 - [Cursor Pro vs Copilot Individual Price Per Feature](/ai-tools-compared/cursor-pro-vs-copilot-individual-price-per-feature-compariso/)
-- [Claude Free vs ChatGPT Free Which Gives More Per Day](/ai-tools-compared/claude-free-vs-chatgpt-free-which-gives-more-per-day/)
-- [ChatGPT Plus Browsing and DALL-E Usage Limits Per Three](/ai-tools-compared/chatgpt-plus-browsing-and-dalle-usage-limits-per-three-hours/)
-- [Cursor AI Making Too Many API Calls Fix: Troubleshooting](/ai-tools-compared/cursor-ai-making-too-many-api-calls-fix/)
-
+- [Does Cursor Pro Charge Extra for Large File Indexing in 2026](/ai-tools-compared/does-cursor-pro-charge-extra-for-large-file-indexing-2026/)
+- [Windsurf Pro vs Cursor Pro: Price and Features Compared 2026](/ai-tools-compared/windsurf-pro-vs-cursor-pro-price-and-features-compared-2026/)
+- [How Much Does Cursor AI Actually Cost Per Month All](/ai-tools-compared/how-much-does-cursor-ai-actually-cost-per-month-all-plans/)
+- [Cursor Pro Refund Policy Can You Get Money Back After](/ai-tools-compared/cursor-pro-refund-policy-can-you-get-money-back-after-subscr/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 {% endraw %}

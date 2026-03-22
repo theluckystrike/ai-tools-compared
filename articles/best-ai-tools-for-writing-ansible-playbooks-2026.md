@@ -26,6 +26,22 @@ Claude outperforms competing AI tools for Ansible playbook generation due to sup
 - **Use GPT-4 if cost**: is critical but accept slower execution times from overcomplex tasks.
 - **Wait for Ansible Lightspeed**: if you heavily use Red Hat Ansible Tower—the native integration may justify the premium once pricing clarifies.
 
+## Table of Contents
+
+- [Why Ansible Playbooks Are Uniquely Challenging for AI](#why-ansible-playbooks-are-uniquely-challenging-for-ai)
+- [Claude: The Highest Accuracy for Complex Requirements](#claude-the-highest-accuracy-for-complex-requirements)
+- [GPT-4: Functional but Overcomplicates](#gpt-4-functional-but-overcomplicates)
+- [GitHub Copilot: Best as Inline Assistant, Not Generator](#github-copilot-best-as-inline-assistant-not-generator)
+- [Specialized Ansible AI Tools](#specialized-ansible-ai-tools)
+- [Feature Comparison Table](#feature-comparison-table)
+- [Real-World Use Case: Deploying Docker Compose Stacks](#real-world-use-case-deploying-docker-compose-stacks)
+- [Best Practices When Using AI for Ansible](#best-practices-when-using-ai-for-ansible)
+- [Vault Integration and Secrets Management](#vault-integration-and-secrets-management)
+- [Error Handling and Debugging](#error-handling-and-debugging)
+- [Performance Optimization Patterns](#performance-optimization-patterns)
+- [Testing AI-Generated Playbooks](#testing-ai-generated-playbooks)
+- [Making Your Choice](#making-your-choice)
+
 ## Why Ansible Playbooks Are Uniquely Challenging for AI
 
 Ansible playbooks demand precision that generic AI tools often miss. The language requires exact YAML indentation, task-level idempotency (tasks must produce identical results on repeated runs), and proper module selection from Ansible's extensive library. Most AI models trained on diverse code samples excel at popular languages like Python or JavaScript but falter on configuration-as-code syntax where a single indentation error breaks the entire playbook.

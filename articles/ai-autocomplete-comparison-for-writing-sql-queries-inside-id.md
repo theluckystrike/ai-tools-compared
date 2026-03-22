@@ -40,6 +40,23 @@ For writing SQL efficiently in your IDE, choose GitHub Copilot for broad languag
 - **If you need free**: access with broad IDE support, Codeium provides solid SQL autocomplete without monthly costs, making it ideal for hobbyists and students learning database development.
 - **AI autocomplete continues to**: improve rapidly, with tools adding better schema understanding, dialect-specific optimizations, and integration with database management systems.
 
+## Table of Contents
+
+- [What Makes SQL Autocomplete Effective in IDEs](#what-makes-sql-autocomplete-effective-in-ides)
+- [Comparing Top AI Autocomplete Tools for SQL](#comparing-top-ai-autocomplete-tools-for-sql)
+- [Tool Comparison at a Glance](#tool-comparison-at-a-glance)
+- [Practical Examples](#practical-examples)
+- [Dialect-Specific Behavior](#dialect-specific-behavior)
+- [Maximizing Your SQL Autocomplete](#maximizing-your-sql-autocomplete)
+- [Which Tool Should You Choose](#which-tool-should-you-choose)
+- [Real-World SQL Generation Workflows](#real-world-sql-generation-workflows)
+- [Choosing SQL Autocomplete by Use Case](#choosing-sql-autocomplete-by-use-case)
+- [Performance Impact Comparison](#performance-impact-comparison)
+- [Database-Specific Optimizations](#database-specific-optimizations)
+- [Building Custom SQL Autocomplete](#building-custom-sql-autocomplete)
+- [Tables](#tables)
+- [Common Queries](#common-queries)
+
 ## What Makes SQL Autocomplete Effective in IDEs
 
 Effective SQL autocomplete in an IDE goes beyond simple keyword completion. The best tools understand your database schema, recognize query patterns, suggest relevant joins based on foreign key relationships, and even identify potential performance issues before you execute a query.

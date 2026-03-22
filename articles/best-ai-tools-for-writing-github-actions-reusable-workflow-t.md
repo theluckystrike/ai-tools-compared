@@ -39,6 +39,16 @@ Claude generates production-ready GitHub Actions workflows with proper input val
 - **Claude generates production-ready GitHub**: Actions workflows with proper input validation, secrets handling, and error checking; ChatGPT produces basic templates but often omits security best practices.
 - **Choose Claude for enterprise**: reusable workflows; use ChatGPT for simple CI examples.
 
+## Table of Contents
+
+- [What Defines Effective AI Assistance for GitHub Actions](#what-defines-effective-ai-assistance-for-github-actions)
+- [Top AI Tools for GitHub Actions Reusable Workflow Templates](#top-ai-tools-for-github-actions-reusable-workflow-templates)
+- [Practical Comparison: Building a Reusable Test Workflow](#practical-comparison-building-a-reusable-test-workflow)
+- [Secrets Inheritance: Where Most Tools Stumble](#secrets-inheritance-where-most-tools-stumble)
+- [Tool Comparison Summary](#tool-comparison-summary)
+- [Recommendations by Use Case](#recommendations-by-use-case)
+- [Key Features to Look For](#key-features-to-look-for)
+
 ## What Defines Effective AI Assistance for GitHub Actions
 
 AI tools vary significantly in their understanding of GitHub Actions specifics. The most capable tools recognize workflow syntax, job dependencies, matrix strategies, and security best practices. They understand how reusable workflows accept inputs, pass outputs between jobs, and handle conditional logic based on trigger events.

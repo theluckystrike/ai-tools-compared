@@ -39,6 +39,14 @@ When you use an AI coding tool, the suggestions and completions it generates dep
 - **In practice**: use more sophisticated embeddings or hash comparisons.
 - **Meta (Llama)**: Open-source models with published training data sources.
 
+## Table of Contents
+
+- [Why Training Data Provenance Matters for Legal Risk](#why-training-data-provenance-matters-for-legal-risk)
+- [Prerequisites](#prerequisites)
+- [Real-World Provider Transparency Comparison](#real-world-provider-transparency-comparison)
+- [Advanced Risk Assessment Techniques](#advanced-risk-assessment-techniques)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Training Data Provenance Matters for Legal Risk
 
 AI models learn patterns from vast datasets containing billions of lines of code. Some of this code carries specific licenses requiring attribution, modification notices, or share-alike provisions. When a model trained on such data generates similar code, questions arise about whether the output inherits licensing obligations or infringes on copyrights.
@@ -330,9 +338,8 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [How to Evaluate AI Coding Tool Data Processing Agreements](/ai-tools-compared/how-to-evaluate-ai-coding-tool-data-processing-agreements-be/)
-- [How to Evaluate AI Coding Tool Encryption Standards for Data](/ai-tools-compared/how-to-evaluate-ai-coding-tool-encryption-standards-for-data/)
-- [Cursor AI Model Selection Guide Which Model for Which Coding](/ai-tools-compared/cursor-ai-model-selection-guide-which-model-for-which-coding/)
-- [ChatGPT API Fine Tuning Costs Training Plus Inference Total](/ai-tools-compared/chatgpt-api-fine-tuning-costs-training-plus-inference-total-estimate/)
+- [How to Evaluate AI Coding Tool Encryption Standards](/ai-tools-compared/how-to-evaluate-ai-coding-tool-encryption-standards-for-data/)
 - [AI Coding Assistant Data Sovereignty Requirements](/ai-tools-compared/ai-coding-assistant-data-sovereignty-requirements-for-companies-operating-in-eu-2026/)
-
+- [AI Coding Assistant Session Data Lifecycle](/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [AI Coding Tool GDPR Compliance Checklist for European](/ai-tools-compared/ai-coding-tool-gdpr-compliance-checklist-for-european-engine/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

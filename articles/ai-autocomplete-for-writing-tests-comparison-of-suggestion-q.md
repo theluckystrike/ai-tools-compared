@@ -40,6 +40,18 @@ Use Claude Code or Cursor if you need test autocomplete that understands expecte
 - **A test named `test_calculate_discount_with_zero_price_returns_zero`**: will consistently receive better suggestions than one named `test_4`.
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 
+## Table of Contents
+
+- [What Makes Test Autocomplete Different](#what-makes-test-autocomplete-different)
+- [GitHub Copilot: The Baseline](#github-copilot-the-baseline)
+- [Cursor: Context-Aware Completions](#cursor-context-aware-completions)
+- [Claude Code: Detailed and Precise](#claude-code-detailed-and-precise)
+- [Codeium: Fast but Variable Quality](#codeium-fast-but-variable-quality)
+- [Tool Comparison at a Glance](#tool-comparison-at-a-glance)
+- [Practical Recommendations](#practical-recommendations)
+- [Performance Considerations](#performance-considerations)
+- [Getting the Most Out of Any Tool](#getting-the-most-out-of-any-tool)
+
 ## What Makes Test Autocomplete Different
 
 Test writing presents unique challenges for AI autocomplete tools. Unlike regular code completion, tests require understanding of expected behavior, edge cases, and appropriate assertion strategies. A good test autocomplete should recognize the function under test, predict appropriate inputs, and suggest assertions that validate the correct behavior without being overly generic.

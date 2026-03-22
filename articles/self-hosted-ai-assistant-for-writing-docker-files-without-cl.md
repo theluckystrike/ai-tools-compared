@@ -41,6 +41,20 @@ This guide compares practical self-hosted AI options for generating Dockerfiles 
 - **It provides a desktop**: application and local API server, with support for various open-source models.
 - **For CI/CD pipeline integration**: LocalAI or vLLM offer better API compatibility with existing infrastructure.
 
+## Table of Contents
+
+- [Why Self-Hosted for Dockerfile Generation](#why-self-hosted-for-dockerfile-generation)
+- [Options Compared](#options-compared)
+- [Practical Comparison](#practical-comparison)
+- [Effective Prompting Strategies](#effective-prompting-strategies)
+- [Resource Considerations](#resource-considerations)
+- [Real-World Dockerfile Generation Examples](#real-world-dockerfile-generation-examples)
+- [Performance Optimization Techniques](#performance-optimization-techniques)
+- [Security Considerations](#security-considerations)
+- [Integration with CI/CD](#integration-with-cicd)
+- [Cost Analysis: Self-Hosted vs Cloud](#cost-analysis-self-hosted-vs-cloud)
+- [Workflow Integration](#workflow-integration)
+
 ## Why Self-Hosted for Dockerfile Generation
 
 When you send Dockerfile snippets to cloud AI services, you're potentially exposing application architecture, dependency details, and deployment patterns. Self-hosted solutions run entirely on your hardware—whether a local development machine, a private server, or an internal Kubernetes cluster. This eliminates external data transmission and gives you full control over the model and its outputs.

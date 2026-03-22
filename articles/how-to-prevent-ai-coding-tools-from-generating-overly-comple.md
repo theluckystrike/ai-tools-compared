@@ -39,6 +39,13 @@ Prevent over-engineered solutions by explicitly requesting simplicity in prompts
 - **Document your team's preferred**: patterns for common tasks 2.
 - **Instead of open-ended requests**: like "write me a function to handle user authentication," provide constraints that push toward simplicity.
 
+## Table of Contents
+
+- [Why AI Tools Over-Complexify Code](#why-ai-tools-over-complexify-code)
+- [Prerequisites](#prerequisites)
+- [Comparison of AI Tools for Simplicity Control](#comparison-of-ai-tools-for-simplicity-control)
+- [Troubleshooting](#troubleshooting)
+
 ## Why AI Tools Over-Complexify Code
 
 Understanding why AI coding assistants generate complex code helps you combat the problem. AI models trained on vast codebases have seen every possible architectural pattern, factory abstraction, and design pattern. When given a problem, the model selects the most "sophisticated" solution it thinks fits, often defaulting to patterns that would be appropriate for large enterprise codebases but are overkill for small to medium projects.

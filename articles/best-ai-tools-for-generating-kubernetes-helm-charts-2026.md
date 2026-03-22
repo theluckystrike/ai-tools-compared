@@ -17,6 +17,19 @@ intent-checked: true
 
 ## The Helm Chart Challenge
 
+## Table of Contents
+
+- [The Helm Chart Challenge](#the-helm-chart-challenge)
+- [Claude 3.5 Sonnet (Anthropic)](#claude-35-sonnet-anthropic)
+- [GitHub Copilot (GitHub/OpenAI)](#github-copilot-githubopenai)
+- [Claude 3 Opus (Anthropic)](#claude-3-opus-anthropic)
+- [Codeium (Exafunction)](#codeium-exafunction)
+- [Comparison Table](#comparison-table)
+- [Real-World Workflow: Generating a Production Helm Chart](#real-world-workflow-generating-a-production-helm-chart)
+- [Production-Grade Helm Best Practices](#production-grade-helm-best-practices)
+- [Helm Testing with AI](#helm-testing-with-ai)
+- [Decision Framework: Which Tool to Use?](#decision-framework-which-tool-to-use)
+
 Kubernetes Helm charts are notoriously tedious to write from scratch. You're managing YAML templates, values files, dependencies, conditional logic, and helper functions. A single misconfigured `.Values` reference breaks deployments. Variable scoping in `tpl` functions creates silent failures. Most developers spend hours debugging indentation and Go templating syntax.
 
 AI coding tools can accelerate this dramatically—but not all handle Helm's template complexity equally. Some struggle with the distinction between Helm template directives (`{{ }}`) and Kubernetes resource syntax. Others generate working manifests but missing production-grade practices like resource requests, health checks, and security contexts.
@@ -492,13 +505,10 @@ A: Not dedicated ones as of 2026. Most Helm generation flows through general-pur
 
 ## Related Articles
 
-- [How to Optimize Kubernetes Deployment Resource Limits](/best-ai-tools-for-generating-kubernetes-helm-charts-2026/)
-- [AI Tools for Writing Kubernetes YAML Manifests](/ai-tools-compared/)
-- [Kubernetes Security Best Practices with AI Assistance](/ai-tools-compared/)
-- [Automating Helm Chart Updates with GitOps](/ai-tools-compared/)
-- [Understanding Helm Template Scope and Variable Binding](/ai-tools-compared/)
-
----
-
+- [AI Tools for Writing Kubernetes Helm Charts 2026](/ai-tools-compared/ai-tools-for-writing-kubernetes-helm-charts-2026/)
+- [Best AI Tools for Writing Helm Charts](/ai-tools-compared/best-ai-tools-for-writing-helm-charts/)
+- [Best AI Tools for Writing Kubernetes Manifests and Helm](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-manifests-and-helm-charts-2026/)
+- [Claude vs ChatGPT for Writing Kubernetes Helm Chart Values](/ai-tools-compared/claude-vs-chatgpt-for-writing-kubernetes-helm-chart-values-f/)
+- [Best AI Tools for Kubernetes Manifest Generation](/ai-tools-compared/best-ai-tools-for-kubernetes-manifest-generation/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

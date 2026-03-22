@@ -239,6 +239,15 @@ spec:
  port: 5432
 ```
 
+## Table of Contents
+
+- [k8sgpt: Specialized Kubernetes Diagnosis Tool](#k8sgpt-specialized-kubernetes-diagnosis-tool)
+- [Comparison Table](#comparison-table)
+- [Recommended Workflow](#recommended-workflow)
+- [Practical Example: Full Workflow](#practical-example-full-workflow)
+- [When to Skip AI for Kubernetes Config](#when-to-skip-ai-for-kubernetes-config)
+- [Getting Started](#getting-started)
+
 This level of security-focused reasoning is Claude's strength.
 
 **Best for:** Security-conscious teams, complex configuration reviews, and policies/RBAC generation.

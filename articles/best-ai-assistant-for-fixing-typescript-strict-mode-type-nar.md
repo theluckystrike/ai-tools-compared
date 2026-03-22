@@ -50,6 +50,17 @@ TypeScript's strict mode transforms many runtime errors into compile-time failur
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Why Type Narrowing Errors Intensify in Strict Mode](#why-type-narrowing-errors-intensify-in-strict-mode)
+- [What Makes an AI Assistant Effective for Type Narrowing](#what-makes-an-ai-assistant-effective-for-type-narrowing)
+- [Comparing AI Assistants on Type Narrowing Tasks](#comparing-ai-assistants-on-type-narrowing-tasks)
+- [Practical Example: Fixing Complex Type Narrowing](#practical-example-fixing-complex-type-narrowing)
+- [Recommendations by Use Case](#recommendations-by-use-case)
+- [Advanced Type Narrowing Patterns](#advanced-type-narrowing-patterns)
+- [Measuring Type Safety Improvements](#measuring-type-safety-improvements)
+- [Real-World Performance Impact](#real-world-performance-impact)
+
 ## Why Type Narrowing Errors Intensify in Strict Mode
 
 When you enable strict mode in your `tsconfig.json`, TypeScript applies stricter type checking across your entire codebase. The `strictNullChecks` flag alone can expose dozens of previously hidden errors where you attempt to access properties on potentially undefined values. Combined with `strictPropertyInitialization` and `strictBindCallApply`, the compiler becomes far less forgiving about type relationships.
@@ -303,11 +314,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI Tools for TypeScript Type Inference and Generic Type](/ai-tools-compared/best-ai-tools-for-typescript-type-inference-and-generic-type/)
-- [Claude Code API Client TypeScript Guide: Build Type-Safe](/ai-tools-compared/claude-code-api-client-typescript-guide/)
-- [Best AI Assistant for Writing pytest Tests for Pydantic Mode](/ai-tools-compared/best-ai-assistant-for-writing-pytest-tests-for-pydantic-mode/)
-- [AI Coding Assistant Accuracy for Typescript Next Js Server C](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
-- [AI Coding Assistant Accuracy for TypeScript Svelte Component](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-svelte-component/)
-
+- [Best AI Tools for TypeScript Type Inference and Generic](/ai-tools-compared/best-ai-tools-for-typescript-type-inference-and-generic-type/)
+- [Best AI Tools for Writing Python Type Hints 2026](/ai-tools-compared/best-ai-tools-for-writing-python-type-hints-2026/)
+- [How Well Do AI Tools Handle Go Generics Type Parameter](/ai-tools-compared/how-well-do-ai-tools-handle-go-generics-type-parameter-const/)
+- [Cursor vs Copilot for Adding Type Hints to Untyped Python](/ai-tools-compared/cursor-vs-copilot-for-adding-type-hints-to-untyped-python-co/)
+- [Best AI Tools for Python Type Annotation](/ai-tools-compared/ai-tools-for-python-type-annotation)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

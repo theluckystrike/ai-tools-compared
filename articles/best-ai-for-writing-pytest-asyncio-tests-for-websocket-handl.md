@@ -39,6 +39,18 @@ Claude Code stands out for WebSocket handler testing because it deeply understan
 - **Step 2**: Specify the testing framework explicitly. State which version of pytest-asyncio you are using and whether you use `asyncio_mode = "auto"` in your `pytest.ini`.
 - **Verify async behavior -**: Ensure all I/O operations use proper await syntax 5.
 
+## Table of Contents
+
+- [Understanding the Testing Requirements for WebSocket Handlers](#understanding-the-testing-requirements-for-websocket-handlers)
+- [Top AI Tools for WebSocket Handler Testing](#top-ai-tools-for-websocket-handler-testing)
+- [AI Tool Comparison for Async WebSocket Testing](#ai-tool-comparison-for-async-websocket-testing)
+- [Practical Example: Generating a WebSocket Handler Test](#practical-example-generating-a-websocket-handler-test)
+- [Advanced Patterns: FastAPI WebSocket Testing](#advanced-patterns-fastapi-websocket-testing)
+- [Step-by-Step: Getting the Best WebSocket Tests from AI](#step-by-step-getting-the-best-websocket-tests-from-ai)
+- [Choosing the Right Tool for Your Needs](#choosing-the-right-tool-for-your-needs)
+- [Best Practices When Using AI for Test Generation](#best-practices-when-using-ai-for-test-generation)
+- [Related Reading](#related-reading)
+
 ## Understanding the Testing Requirements for WebSocket Handlers
 
 WebSocket handler functions differ significantly from traditional HTTP endpoint tests. When testing async WebSocket handlers, you must account for several critical aspects:
@@ -341,5 +353,13 @@ Pick one tool from the options discussed and sign up for a free trial. Spend 30 
 **What is the learning curve like?**
 
 Most tools discussed here can be used productively within a few hours. Mastering advanced features takes 1-2 weeks of regular use. Focus on the 20% of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+
+## Related Articles
+
+- [AI Tools for Writing pytest Tests for Alembic Database Paths](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
+- [AI Tools for Writing pytest Tests for Click or Typer CLI](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-click-or-typer-cli-com/)
+- [Best AI Assistant for Writing pytest Tests for Background](/ai-tools-compared/best-ai-assistant-for-writing-pytest-tests-for-background-job-retry-failure-scenarios/)
+- [AI Tools for Writing Jest Tests for Graphql Resolvers](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-graphql-resolvers-with-dataloader-batching/)
+- [AI Tools for Writing Playwright Tests That Verify Accessibil](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-accessibil/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

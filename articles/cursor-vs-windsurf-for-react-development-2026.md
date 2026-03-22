@@ -40,6 +40,23 @@ Cursor and Windsurf both offer AI-powered coding in a VS Code fork, but their be
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **Cursor setup**: Install Cursor, create `.cursorrules` in project root, use `Cmd+K` for inline edits, `Cmd+L` for chat.
 
+## Table of Contents
+
+- [Editor Setup](#editor-setup)
+- [Component Generation](#component-generation)
+- [Custom Hook Generation](#custom-hook-generation)
+- [Multi-File Refactoring: Adding React Query](#multi-file-refactoring-adding-react-query)
+- [TypeScript Integration](#typescript-integration)
+- [Autocomplete Quality for React Patterns](#autocomplete-quality-for-react-patterns)
+- [Pricing (March 2026)](#pricing-march-2026)
+- [Performance Metrics](#performance-metrics)
+- [IDE Feature Comparison](#ide-feature-comparison)
+- [Keyboard Shortcuts Quick Reference](#keyboard-shortcuts-quick-reference)
+- [Testing on Real React Tasks](#testing-on-real-react-tasks)
+- [CLI Installation](#cli-installation)
+- [Strength Summary](#strength-summary)
+- [Which to Choose for React](#which-to-choose-for-react)
+
 ## Editor Setup
 
 Both editors require minimal configuration for a React/TypeScript project.
@@ -336,11 +353,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Best AI Coding Assistant for React Development](/ai-tools-compared/best-ai-coding-assistant-for-react-development/)
-- [Claude Code vs Cursor Composer](/ai-tools-compared/claude-code-vs-cursor-composer-for-full-stack-development-comparison/)
-- [Claude Code vs Cursor for Backend Development](/ai-tools-compared/claude-code-vs-cursor-for-backend-development/)
-- [AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026](/ai-tools-compared/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
-- [Copilot vs Cursor vs Windsurf Inline Diff Preview Comparison](/ai-tools-compared/copilot-vs-cursor-vs-windsurf-inline-diff-preview-comparison/)
-
+- [Cursor vs Windsurf for Implementing Drag and Drop Interfaces](/ai-tools-compared/cursor-vs-windsurf-for-implementing-drag-and-drop-interfaces/)
+- [Switching from Windsurf to Cursor How to Transfer Project](/ai-tools-compared/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
+- [AI Coding Assistant Comparison for React Component](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
+- [Cursor vs Windsurf for Building Next Js App from Design](/ai-tools-compared/cursor-vs-windsurf-for-building-next-js-app-from-design-mock/)
+- [Switching from Windsurf Free to Cursor Free What Is](/ai-tools-compared/switching-from-windsurf-free-to-cursor-free-what-is-different/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

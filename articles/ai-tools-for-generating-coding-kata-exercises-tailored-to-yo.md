@@ -41,6 +41,15 @@ Coding kata exercises have long been a staple of developer practice, but finding
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **AI generators excel at**: finding this sweet spot because they can adjust parameters in real-time based on your performance.
 
+## Table of Contents
+
+- [Why Skill-Tailored Kata Generation Matters](#why-skill-tailored-kata-generation-matters)
+- [How AI Kata Generators Work](#how-ai-kata-generators-work)
+- [Top AI Tools for Skill-Tailored Kata Generation](#top-ai-tools-for-skill-tailored-kata-generation)
+- [Creating Effective Skill-Tailored Katas](#creating-effective-skill-tailored-katas)
+- [Measuring Your Progress](#measuring-your-progress)
+- [Practical Example: Building a Personal Kata Pipeline](#practical-example-building-a-personal-kata-pipeline)
+
 ## Why Skill-Tailored Kata Generation Matters
 
 Traditional coding kata platforms offer fixed difficulty levels—beginner, intermediate, advanced—that often fail to account for your specific background. A kata marked "intermediate" in Python might be trivial if you have years of experience but impossibly hard if you're new to the language. AI tools solve this by analyzing your current abilities and generating exercises that push you slightly beyond your comfort zone without overwhelming you.
@@ -284,10 +293,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How to Optimize AI Coding Prompts for Generating Production](/ai-tools-compared/how-to-optimize-ai-coding-prompts-for-generating-production-ready-error-handling/)
 - [How to Prevent AI Coding Tools from Generating Overly](/ai-tools-compared/how-to-prevent-ai-coding-tools-from-generating-overly-complex-solutions/)
-- [AI Tools for Generating API Client SDKs 2026](/ai-tools-compared/ai-tools-for-generating-api-client-sdks-2026/)
-- [AI Tools for Generating API Mock Servers 2026](/ai-tools-compared/ai-tools-for-generating-api-mock-servers-2026/)
-- [AI Tools for Generating Coloring Book Pages Compared](/ai-tools-compared/ai-tools-for-generating-coloring-book-pages-compared/)
-
+- [Configure AI Coding Tools](/ai-tools-compared/how-to-configure-ai-coding-tools-to-respect-your-teams-branc/)
+- [AI Coding Tools for Automating Changelog Generation from](/ai-tools-compared/ai-coding-tools-for-automating-changelog-generation-from-con/)
+- [Free AI Coding Tools That Work Offline Without Internet](/ai-tools-compared/free-ai-coding-tools-that-work-offline-without-internet/)
+- [Self Hosted AI Coding Tools That Support Air Gapped](/ai-tools-compared/self-hosted-ai-coding-tools-that-support-air-gapped-environm/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

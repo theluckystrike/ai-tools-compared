@@ -42,6 +42,19 @@ Implementing OAuth2 authentication in an Express application involves multiple c
 
 It depends on your background.
 
+## Table of Contents
+
+- [Understanding the OAuth2 Flow in Express](#understanding-the-oauth2-flow-in-express)
+- [Quick Comparison](#quick-comparison)
+- [Copilot's Approach to OAuth2 Implementation](#copilots-approach-to-oauth2-implementation)
+- [Cursor's Approach to OAuth2 Implementation](#cursors-approach-to-oauth2-implementation)
+- [Token Management and Protected Routes](#token-management-and-protected-routes)
+- [Implementing PKCE for Enhanced Security](#implementing-pkce-for-enhanced-security)
+- [Refresh Token Rotation](#refresh-token-rotation)
+- [Session and Token Storage Patterns](#session-and-token-storage-patterns)
+- [Refactoring and Security Improvements](#refactoring-and-security-improvements)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+
 ## Understanding the OAuth2 Flow in Express
 
 Before comparing the tools, let's establish what an OAuth2 implementation in Express typically requires. A standard authorization code flow involves several steps:
@@ -354,11 +367,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Best AI for Learning OAuth2 and OIDC Authentication Flows](/ai-tools-compared/best-ai-for-learning-oauth2-and-oidc-authentication-flows-wi/)
-- [Copilot vs Cursor for Implementing Redis Caching Patterns](/ai-tools-compared/copilot-vs-cursor-for-implementing-redis-caching-patterns-in/)
-- [Copilot vs Cursor for Implementing Server-Sent Events in Spr](/ai-tools-compared/copilot-vs-cursor-for-implementing-server-sent-events-in-spr/)
+- [Copilot vs Cursor for Implementing Server-Sent Events](/ai-tools-compared/copilot-vs-cursor-for-implementing-server-sent-events-in-spr/)
 - [Cursor vs Copilot for Implementing Stripe Payment](/ai-tools-compared/cursor-vs-copilot-for-implementing-stripe-payment-integratio/)
-- [Cursor vs Windsurf for Implementing Drag and Drop Interfaces](/ai-tools-compared/cursor-vs-windsurf-for-implementing-drag-and-drop-interfaces/)
-
+- [Copilot vs Cursor for Writing Terraform Modules](/ai-tools-compared/copilot-vs-cursor-for-writing-terraform-modules-from-scratch/)
+- [Switching from Copilot Enterprise to Cursor Business](/ai-tools-compared/switching-from-copilot-enterprise-to-cursor-business-migrati/)
+- [Best AI for Learning OAuth2 and OIDC Authentication Flows](/ai-tools-compared/best-ai-for-learning-oauth2-and-oidc-authentication-flows-wi/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

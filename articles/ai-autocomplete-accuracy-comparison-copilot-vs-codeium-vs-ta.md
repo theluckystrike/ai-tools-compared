@@ -42,6 +42,24 @@ Choose GitHub Copilot if you prioritize broad IDE integration and accuracy acros
 - **Choose Codeium if you**: want faster suggestions with a generous free tier.
 - **Choose GitHub Copilot if**: you prioritize broad IDE integration and accuracy across multiple languages.
 
+## Table of Contents
+
+- [How These Tools Work](#how-these-tools-work)
+- [Testing Methodology](#testing-methodology)
+- [Results: Boilerplate Code](#results-boilerplate-code)
+- [Results: Standard Library Usage](#results-standard-library-usage)
+- [Results: Domain-Specific Logic](#results-domain-specific-logic)
+- [Results: Unfamiliar Frameworks](#results-unfamiliar-frameworks)
+- [Latency Comparison](#latency-comparison)
+- [Context Window Effects](#context-window-effects)
+- [Practical Recommendations](#practical-recommendations)
+- [Optimizing Accuracy Regardless of Tool](#optimizing-accuracy-regardless-of-tool)
+- [Measuring Autocomplete Accuracy in Your Project](#measuring-autocomplete-accuracy-in-your-project)
+- [CLI Tools for Evaluating Autocomplete](#cli-tools-for-evaluating-autocomplete)
+- [Configuring Tools for Maximum Accuracy](#configuring-tools-for-maximum-accuracy)
+- [Decision Matrix for Tool Selection](#decision-matrix-for-tool-selection)
+- [Hybrid Approach: Using Multiple Tools](#hybrid-approach-using-multiple-tools)
+
 ## How These Tools Work
 
 GitHub Copilot uses OpenAI's Codex model, trained on public GitHub repositories. It analyzes your current code context, comments, and function signatures to generate suggestions. Copilot integrates directly into VS Code, Visual Studio, JetBrains IDEs, and Neovim.

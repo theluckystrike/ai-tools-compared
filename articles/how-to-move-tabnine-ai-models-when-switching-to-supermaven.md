@@ -45,6 +45,14 @@ Tabnine AI models cannot be directly imported into Supermaven because the two pl
 - **Instead**: back up your Tabnine configuration from `~/.tabnine/user.config.json` and custom models from the `models/` subdirectory, then configure Supermaven's settings to match your preferences.
 - **Supermaven's adaptive learning will**: personalize suggestions to your coding style within a few hours of active use.
 
+## Table of Contents
+
+- [Why Developers Switch from Tabnine to Supermaven](#why-developers-switch-from-tabnine-to-supermaven)
+- [Prerequisites](#prerequisites)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [When to Start Fresh](#when-to-start-fresh)
+- [Best Practices for Transition](#best-practices-for-transition)
+
 ## Why Developers Switch from Tabnine to Supermaven
 
 Supermaven has gained popularity among developers for its faster inference speeds and competitive pricing model. Some developers find that Supermaven's contextual understanding better matches their coding style, while others appreciate its more straightforward subscription tiers. The primary reasons developers cite when making this switch include:
@@ -290,10 +298,9 @@ In practice, Supermaven suggestions become noticeably more relevant after roughl
 
 ## Related Articles
 
-- [Cursor AI Switching Between Claude and GPT Models Extra Cost](/ai-tools-compared/cursor-ai-switching-between-claude-and-gpt-models-extra-cost/)
 - [Is Tabnine Free Plan Still Worth Using in 2026?](/ai-tools-compared/is-tabnine-free-plan-still-worth-using-in-2026/)
+- [Self-Hosted Alternative to Tabnine That Runs on Local](/ai-tools-compared/self-hosted-alternative-to-tabnine-that-runs-on-local-hardwa/)
 - [Tabnine Pro vs Free: What Autocomplete Features Are Locked](/ai-tools-compared/tabnine-pro-vs-free-what-autocomplete-features-are-locked/)
-- [Best AI Tools for Writing Python SQLAlchemy Models and](/ai-tools-compared/best-ai-tools-for-writing-python-sqlalchemy-models-and-queri/)
-- [ChatGPT vs Claude for Generating Pydantic Models from JSON](/ai-tools-compared/chatgpt-vs-claude-for-generating-pydantic-models-from-json-s/)
-
+- [Cursor AI Switching Between Claude and GPT Models Extra](/ai-tools-compared/cursor-ai-switching-between-claude-and-gpt-models-extra-cost/)
+- [Fine Tune Open Source Code Models for Your Codebase](/ai-tools-compared/fine-tune-open-source-code-models-for-your-codebase-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

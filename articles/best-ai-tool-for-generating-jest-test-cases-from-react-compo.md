@@ -50,6 +50,16 @@ Generating Jest test cases for React components that properly validate prop type
 - **The best AI tools**: for this task analyze your component's prop types and generate test coverage with minimal manual intervention.
 - **The best tools generate**: assertions that verify actual component behavior.
 
+## Table of Contents
+
+- [Why Prop Type Testing Matters](#why-prop-type-testing-matters)
+- [Cursor: Strong Prop Type Analysis](#cursor-strong-prop-type-analysis)
+- [Claude Code: Detailed Test Generation](#claude-code-detailed-test-generation)
+- [GitHub Copilot: Baseline Performance](#github-copilot-baseline-performance)
+- [Comparing Tool Performance](#comparing-tool-performance)
+- [Practical Workflow Recommendations](#practical-workflow-recommendations)
+- [Performance Considerations](#performance-considerations)
+
 ## Why Prop Type Testing Matters
 
 React component prop types serve as a contract between components. When you define prop types using TypeScript interfaces, PropTypes, or runtime validation, you're establishing expectations for how your component should behave. Testing these prop validations ensures your component correctly rejects invalid inputs and accepts valid ones.

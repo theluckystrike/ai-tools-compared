@@ -41,6 +41,18 @@ Building an effective AI-assisted development workflow requires understanding ho
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Use Copilot to generate**: each test rapidly 3.
 
+## Table of Contents
+
+- [Understanding Tool Strengths](#understanding-tool-strengths)
+- [The Tool Chaining Workflow](#the-tool-chaining-workflow)
+- [Practical Examples](#practical-examples)
+- [Best Practices for Tool Chaining](#best-practices-for-tool-chaining)
+- [When to Use Each Tool](#when-to-use-each-tool)
+- [Comparative Productivity Metrics](#comparative-productivity-metrics)
+- [Building a Tool-Chaining Decision Tree](#building-a-tool-chaining-decision-tree)
+- [Advanced Workflow: Feature Branch Lifecycle](#advanced-workflow-feature-branch-lifecycle)
+- [Tool Chaining Cost Analysis](#tool-chaining-cost-analysis)
+
 ## Understanding Tool Strengths
 
 GitHub Copilot works best as an inline coding partner. It suggests code completions as you type, handles repetitive boilerplate efficiently, and adapts to your immediate context. Copilot shines when you know what you want to write but need speed. It fills in methods, generates test cases, and completes patterns you already understand.
@@ -372,10 +384,9 @@ This ROI compounds as developers become more proficient with both tools.
 
 ## Related Articles
 
-- [Effective AI Coding Workflow for Building Features from Prod](/ai-tools-compared/effective-ai-coding-workflow-for-building-features-from-prod/)
-- [Effective Workflow for AI-Assisted Open Source Contribution](/ai-tools-compared/effective-workflow-for-ai-assisted-open-source-contribution-/)
-- [Effective Workflow for Using AI](/ai-tools-compared/effective-workflow-for-using-ai-to-debug-production-issues-from-logs/)
-- [Effective Workflow for Using AI — Generate](/ai-tools-compared/effective-workflow-for-using-ai-to-generate-and-maintain-changelog-documentation/)
-- [Copilot Edits Panel vs Cursor Composer Workflow Comparison](/ai-tools-compared/copilot-edits-panel-vs-cursor-composer-workflow-comparison-f/)
-
+- [Copilot vs Claude Code for Writing GitHub Actions Cicd](/ai-tools-compared/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
+- [Copilot vs Claude Code for Scaffolding New Django REST](/ai-tools-compared/copilot-vs-claude-code-for-scaffolding-new-django-rest-frame/)
+- [Claude vs Copilot for Generating FastAPI Endpoint Boilerplat](/ai-tools-compared/claude-vs-copilot-for-generating-fastapi-endpoint-boilerplat/)
+- [Copilot vs Claude Code for Writing Complex SQL Stored Proced](/ai-tools-compared/copilot-vs-claude-code-for-writing-complex-sql-stored-proced/)
+- [AI Pair Programming Tools Comparison 2026: Claude Code](/ai-tools-compared/ai-pair-programming-tools-comparison-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

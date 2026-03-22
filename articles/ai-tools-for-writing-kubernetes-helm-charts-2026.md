@@ -39,6 +39,21 @@ Helm charts are Kubernetes package managers—they bundle YAML manifests into re
 - **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 
+## Table of Contents
+
+- [Helm Chart Structure Essentials](#helm-chart-structure-essentials)
+- [OpenAI ChatGPT (GPT-4)](#openai-chatgpt-gpt-4)
+- [Anthropic Claude](#anthropic-claude)
+- [GitHub Copilot](#github-copilot)
+- [Codeium](#codeium)
+- [Dependency Management Best Practices](#dependency-management-best-practices)
+- [Values Schema Validation](#values-schema-validation)
+- [Testing Helm Charts with helm-unittest](#testing-helm-charts-with-helm-unittest)
+- [Real-World Chart: Multi-Tier E-Commerce App](#real-world-chart-multi-tier-e-commerce-app)
+- [Helm Chart Best Practices](#helm-chart-best-practices)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+- [Testing Generated Charts](#testing-generated-charts)
+
 ## Helm Chart Structure Essentials
 
 A Helm chart is a directory with this structure:

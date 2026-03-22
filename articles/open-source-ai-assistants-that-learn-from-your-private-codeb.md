@@ -38,6 +38,16 @@ Open source AI coding assistants have evolved significantly, now offering the ab
 - **Subsequent queries use this**: index to provide context-aware responses.
 - **Use `.gitignore` patterns to**: exclude generated files, dependencies, and sensitive configuration from analysis.
 
+## Table of Contents
+
+- [Why Local Codebase Analysis Matters](#why-local-codebase-analysis-matters)
+- [Setting Up Codebase-Aware AI Assistance](#setting-up-codebase-aware-ai-assistance)
+- [Implementing Custom Pattern Learning](#implementing-custom-pattern-learning)
+- [Practical Applications](#practical-applications)
+- [Best Practices for Pattern Learning](#best-practices-for-pattern-learning)
+- [Building a RAG Pipeline for Deep Codebase Understanding](#building-a-rag-pipeline-for-deep-codebase-understanding)
+- [Keeping Codebase Indexes Current](#keeping-codebase-indexes-current)
+
 ## Why Local Codebase Analysis Matters
 
 When you work with AI assistants that can learn from your codebase, you get suggestions that actually fit your project. Instead of generic recommendations, the AI understands your specific patterns—how you name variables, structure your modules, handle errors, and organize imports. This leads to more relevant completions and fewer manual corrections.
@@ -333,6 +343,14 @@ def incremental_update(project_path: str, hash_store: str = ".index-hashes.json"
 ```
 
 Run this incremental update as a pre-commit hook or integrate it into your file watcher setup. The index stays current without the full reindex cost, keeping suggestions accurate even during rapid development cycles.
+
+## Related Articles
+
+- [How to Use AI Assistants for Codebase](/ai-tools-compared/how-to-use-ai-assistants-for--codebase-understanding-and-onboarding/)
+- [Fine Tune Open Source Code Models for Your Codebase](/ai-tools-compared/fine-tune-open-source-code-models-for-your-codebase-2026/)
+- [How to Audit What Source Code AI Coding Tools Transmit](/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
+- [Effective Workflow for AI-Assisted Open Source Contribution](/ai-tools-compared/effective-workflow-for-ai-assisted-open-source-contribution-/)
+- [Best AI Assistant for Drafting Open Source Partnership](/ai-tools-compared/best-ai-assistant-for-drafting-open-source-partnership-and-integration-proposals-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

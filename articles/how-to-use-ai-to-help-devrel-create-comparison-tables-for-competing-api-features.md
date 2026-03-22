@@ -43,6 +43,18 @@ A comparison of fewer than 3 options provides limited value**: it becomes obviou
 - **Instead of "Ease of use**: Easy vs Hard," use "Learning curve: 2 hours to first API call" or "Documentation: 50 examples provided." Measurable comparison is more valuable to developers.
 - **This guide covers how**: to use AI to help DevRel create comparison tables for competing API features, focusing on practical workflows that maintain accuracy while reducing manual effort.
 
+## Table of Contents
+
+- [Why AI Works Well for API Comparison Tables](#why-ai-works-well-for-api-comparison-tables)
+- [Practical Workflow for API Feature Comparison](#practical-workflow-for-api-feature-comparison)
+- [Code Example: Automating Table Generation](#code-example-automating-table-generation)
+- [Best Practices for Accuracy](#best-practices-for-accuracy)
+- [Common Pitfalls to Avoid](#common-pitfalls-to-avoid)
+- [Integrating Comparison Tables into Documentation](#integrating-comparison-tables-into-documentation)
+- [Advanced Table Formatting and Presentation](#advanced-table-formatting-and-presentation)
+- [Automation: Generating Tables Programmatically](#automation-generating-tables-programmatically)
+- [Real-World Comparison Example: CDN Services](#real-world-comparison-example-cdn-services)
+
 ## Why AI Works Well for API Comparison Tables
 
 API documentation tends to follow predictable structures. Vendors organize features into categories like authentication, rate limits, data formats, and SDK support. This consistency makes it possible to prompt AI systems to extract and organize information systematically.
@@ -334,11 +346,10 @@ A comparison of fewer than 3 options provides limited value—it becomes obvious
 
 ## Related Articles
 
+- [Domo vs Sisense AI Dashboards: A Practical Comparison](/ai-tools-compared/domo-vs-sisense-ai-dashboards/)
+- [Stable Diffusion ComfyUI vs Automatic1111 Comparison](/ai-tools-compared/stable-diffusion-comfyui-vs-automatic1111-comparison/)
 - [How to Use AI to Help Devrel Create Interactive Coding](/ai-tools-compared/how-to-use-ai-to-help-devrel-create-interactive-coding-playgrounds/)
-- [How to Use AI to Help Devrel Teams Create Video Tutorial Scr](/ai-tools-compared/how-to-use-ai-to-help-devrel-teams-create-video-tutorial-scr/)
-- [How to Use AI to Help QA Engineers Create Test Environment](/ai-tools-compared/how-to-use-ai-to-help-qa-engineers-create-test-environment-p/)
-- [How to Use AI to Help Sre Teams Create on Call Handoff Docum](/ai-tools-compared/how-to-use-ai-to-help-sre-teams-create-on-call-handoff-docum/)
-- [Best AI Features for Generating API Client Code from](/ai-tools-compared/best-ai-features-for-generating-api-client-code-from-openapi/)
-
+- [AI Third Party Risk Management Tools Comparison 2026](/ai-tools-compared/ai-third-party-risk-management-tools-comparison-2026/)
+- [AI Coding Assistant Comparison for TypeScript monorepo](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-monorepo-with-turborepo-setup/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

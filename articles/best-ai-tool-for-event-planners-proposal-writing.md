@@ -42,6 +42,25 @@ The best approach to AI-assisted event planning proposals is using AI for specif
 - **Most event types follow predictable phases**: initial consultation, vendor selection, marketing launch, final preparations, and execution.
 - **Research-focused AI assists with**: the information-gathering phase.
 
+## Table of Contents
+
+- [Understanding What Event Planners Actually Need in Proposals](#understanding-what-event-planners-actually-need-in-proposals)
+- [Practical Applications for AI in Proposal Writing](#practical-applications-for-ai-in-proposal-writing)
+- [Evaluating AI Tools for Your Specific Needs](#evaluating-ai-tools-for-your-specific-needs)
+- [Real-World Workflow Integration](#real-world-workflow-integration)
+- [Common Mistakes to Avoid](#common-mistakes-to-avoid)
+- [AI Tools Ranked for Event Planning Proposals](#ai-tools-ranked-for-event-planning-proposals)
+- [Decision Tree: When to Use AI for Proposals](#decision-tree-when-to-use-ai-for-proposals)
+- [Time Savings Measurement](#time-savings-measurement)
+- [Measuring Success](#measuring-success)
+- [Advanced Proposal Structures for Specific Event Types](#advanced-proposal-structures-for-specific-event-types)
+- [Risk Management Matrix](#risk-management-matrix)
+- [Client Discovery to Proposal Framework](#client-discovery-to-proposal-framework)
+- [Post-Interview AI Prompt](#post-interview-ai-prompt)
+- [Measuring Proposal Quality Beyond Win Rate](#measuring-proposal-quality-beyond-win-rate)
+- [Avoiding AI Hallucinations in Proposals](#avoiding-ai-hallucinations-in-proposals)
+- [Proposal Verification Checklist](#proposal-verification-checklist)
+
 ## Understanding What Event Planners Actually Need in Proposals
 
 Before evaluating AI tools, you need to recognize what makes a successful event planning proposal. Clients purchasing event planning services expect several key elements:

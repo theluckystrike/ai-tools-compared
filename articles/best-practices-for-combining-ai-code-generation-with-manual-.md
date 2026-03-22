@@ -40,6 +40,16 @@ for validation.
 - **The most effective approach**: assigns clear responsibilities: let AI handle the mechanical work while you focus on logic validation, security review, and architectural consistency.
 - **Follow our existing patterns**: in models/user.py.
 
+## Table of Contents
+
+- [The Role Division: What AI Does Well](#the-role-division-what-ai-does-well)
+- [Practical Workflow for AI + Manual Review](#practical-workflow-for-ai-manual-review)
+- [Configuring AI Tools for Better Output](#configuring-ai-tools-for-better-output)
+- [Balancing Speed and Quality](#balancing-speed-and-quality)
+- [Review Effort by Code Category](#review-effort-by-code-category)
+- [Common Pitfalls to Avoid](#common-pitfalls-to-avoid)
+- [Measuring Success](#measuring-success)
+
 ## The Role Division: What AI Does Well
 
 AI excels at generating repetitive boilerplate, scaffolding project structures, and creating test cases. It can rapidly produce code based on specifications, saving hours of manual typing. However, AI lacks understanding of your specific business context, security requirements, and architectural decisions.
@@ -264,10 +274,9 @@ Some teams annotate AI-generated functions with a comment like `# generated: cla
 
 ## Related Articles
 
-- [Best Practices for AI Assisted Code Review Response and Revi](/ai-tools-compared/best-practices-for-ai-assisted-code-review-response-and-revi/)
-- [Best Practices for Documenting AI-Generated Code for Future](/ai-tools-compared/best-practices-for-documenting-ai-generated-code-for-future-/)
-- [AI Code Generation for Java Reactive Programming with Projec](/ai-tools-compared/ai-code-generation-for-java-reactive-programming-with-projec/)
-- [AI Code Generation for Java Virtual Threads Project Loom Pat](/ai-tools-compared/ai-code-generation-for-java-virtual-threads-project-loom-pat/)
-- [AI Code Generation for Python FastAPI Endpoints](/ai-tools-compared/ai-code-generation-for-python-fastapi-endpoints-with-pydantic-models-compared/)
-
+- [AI Code Generation for Java Reactive Programming](/ai-tools-compared/ai-code-generation-for-java-reactive-programming-with-projec/)
+- [Claude Sonnet vs GPT-4o for Code Generation: Practical](/ai-tools-compared/claude-sonnet-vs-gpt-4o-for-code-generation/)
+- [Best Local LLM Options for Code Generation 2026](/ai-tools-compared/best-local-llm-options-for-code-generation-2026/)
+- [Prompt Engineering Patterns for Code Generation](/ai-tools-compared/prompt-engineering-patterns-for-code-generation/)
+- [Cheapest AI Tool With GPT-4 Level Code Generation 2026](/ai-tools-compared/cheapest-ai-tool-with-gpt-4-level-code-generation-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

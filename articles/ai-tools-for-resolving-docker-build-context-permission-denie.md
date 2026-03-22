@@ -46,6 +46,16 @@ RUN mkdir -p /app && \
 
 3.
 
+## Table of Contents
+
+- [Understanding Docker Build Context Permission Errors](#understanding-docker-build-context-permission-errors)
+- [Using AI Tools to Diagnose Permission Issues](#using-ai-tools-to-diagnose-permission-issues)
+- [Practical Examples](#practical-examples)
+- [Comparing AI Tools for Docker Debugging](#comparing-ai-tools-for-docker-debugging)
+- [Preventing Future Permission Issues](#preventing-future-permission-issues)
+- [Using AI in Your CI/CD Pipeline for Permission Checks](#using-ai-in-your-cicd-pipeline-for-permission-checks)
+- [Best Practices](#best-practices)
+
 ## Understanding Docker Build Context Permission Errors
 
 When you run `docker build -t myimage .`, Docker sends the entire build context to the daemon. If any file or directory in that context has restrictive permissions or incorrect ownership, the build fails with errors like "open /path/to/file: permission denied" or "failed to register layer".
@@ -321,12 +331,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How to Build Model Context Protocol Server for Internal Desi](/ai-tools-compared/how-to-build-model-context-protocol-server-for-internal-desi/)
-- [How to Build Model Context Protocol Server That Provides](/ai-tools-compared/how-to-build-model-context-protocol-server-that-provides-deployment-environment-context/)
-- [How to Build a Model Context Protocol Server That](/ai-tools-compared/how-to-build-model-context-protocol-server-that-provides-deployment-environment-context/)
-- [How to Build Model Context Protocol Server That Provides Rea](/ai-tools-compared/how-to-build-model-context-protocol-server-that-provides-rea/)
-- [How to Build a Model Context Protocol Server That Serves](/ai-tools-compared/how-to-build-model-context-protocol-server-that-serves-opena/)
-
+- [AI Tools for Generating Docker Compose Files for Complex Mic](/ai-tools-compared/ai-tools-for-generating-docker-compose-files-for-complex-mic/)
+- [Best AI Tools for Writing Docker Compose Files 2026](/ai-tools-compared/best-ai-tools-for-writing-docker-compose-files-2026/)
+- [Effective Context Loading Strategies for AI Tools](/ai-tools-compared/effective-context-loading-strategies-for-ai-tools-in-polyglo/)
+- [What Source Code Context Window Do Different AI Coding Tools](/ai-tools-compared/what-source-code-context-window-do-different-ai-coding-tools/)
+- [Self-Hosted AI Assistant for Writing Docker Files Without](/ai-tools-compared/self-hosted-ai-assistant-for-writing-docker-files-without-cl/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 {% endraw %}

@@ -44,6 +44,18 @@ The critical challenge in any data mesh adoption is not technology selection —
 - **Governance without a catalog is blind enforcement**: the most common reason data mesh governance initiatives fail.
 - **Build exception workflows that**: let teams document why they overrode a suggestion, which feeds back into improving the model's recommendations over time.
 
+## Table of Contents
+
+- [Understanding Data Mesh Requirements](#understanding-data-mesh-requirements)
+- [AI Tools for Domain Ownership](#ai-tools-for-domain-ownership)
+- [AI for Federated Governance](#ai-for-federated-governance)
+- [Self-Serve Data Platform Tools](#self-serve-data-platform-tools)
+- [Tool Comparison by Data Mesh Principle](#tool-comparison-by-data-mesh-principle)
+- [Implementing AI-Assisted Lineage Tracking](#implementing-ai-assisted-lineage-tracking)
+- [AI-Powered Data Discovery for Self-Serve Consumers](#ai-powered-data-discovery-for-self-serve-consumers)
+- [Measuring AI Tool Effectiveness in a Data Mesh](#measuring-ai-tool-effectiveness-in-a-data-mesh)
+- [Implementation Recommendations](#implementation-recommendations)
+
 ## Understanding Data Mesh Requirements
 
 Data mesh rests on four core principles:
@@ -286,11 +298,10 @@ Treating the catalog as an one-time setup task. Metadata goes stale as schemas e
 
 ## Related Articles
 
-- [AI Powered Data Cataloging Tools: A Practical Guide for](/ai-tools-compared/ai-powered-data-cataloging-tools/)
-- [Best AI Tools for Data Cleaning: A Practical Guide for](/ai-tools-compared/best-ai-tools-for-data-cleaning/)
-- [Best AI Tools for Data Governance: A Practical Guide for](/ai-tools-compared/best-ai-tools-for-data-governance/)
-- [Streamlit vs Gradio for AI Data Apps: A Practical Comparison](/ai-tools-compared/streamlit-vs-gradio-ai-data-apps/)
-- [AI Tools for Generating Kubernetes Service Mesh](/ai-tools-compared/ai-tools-for-generating-kubernetes-service-mesh-configuratio/)
-
+- [Best AI Tools for Data Governance](/ai-tools-compared/best-ai-tools-for-data-governance/)
+- [AI Powered Data Cataloging Tools](/ai-tools-compared/ai-powered-data-cataloging-tools/)
+- [Best AI Tools for Data Cleaning](/ai-tools-compared/best-ai-tools-for-data-cleaning/)
+- [AI Tools for Creating Test Data Generators That Respect](/ai-tools-compared/ai-tools-for-creating-test-data-generators-that-respect-busi/)
+- [AI Tools for Automated Test Data Generation 2026](/ai-tools-compared/ai-tools-for-automated-test-data-generation-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

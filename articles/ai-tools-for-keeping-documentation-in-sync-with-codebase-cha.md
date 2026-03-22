@@ -30,6 +30,22 @@ Traditional solutions include manual review processes, documentation-as-code app
 - **The best approach combines detection + generation**: tools that both identify drift and suggest fixes outperform those that only flag issues.
 - **Integration with CI/CD matters**: the most effective tools work as part of your existing workflow, not as separate processes.
 
+## Table of Contents
+
+- [The Problem: Documentation Rot](#the-problem-documentation-rot)
+- [Tool Categories](#tool-categories)
+- [Comparing Top Tools](#comparing-top-tools)
+- [Practical Example: CI/CD Integration](#practical-example-cicd-integration)
+- [Building a Custom Drift Detector with Claude](#building-a-custom-drift-detector-with-claude)
+- [Handling Drift at Scale: Strategies for Large Codebases](#handling-drift-at-scale-strategies-for-large-codebases)
+- [Recommendations](#recommendations)
+- [Advanced Drift Detection Techniques](#advanced-drift-detection-techniques)
+- [Real-Time Drift Detection](#real-time-drift-detection)
+- [Documentation Generation from Type Definitions](#documentation-generation-from-type-definitions)
+- [Handling Breaking Changes](#handling-breaking-changes)
+- [Testing Documentation Accuracy](#testing-documentation-accuracy)
+- [Recommendations](#recommendations)
+
 ## Tool Categories
 
 AI tools for documentation sync generally fall into three categories:
@@ -644,4 +660,12 @@ For large monorepos or complex codebases, **SourceGraph** provides the necessary
 For teams already using **Docusaurus**, the plugin ecosystem provides flexibility to build custom solutions without switching platforms.
 
 {% endraw %}
+## Related Articles
+
+- [Best AI Tools for Code Documentation Generation 2026](/ai-tools-compared/best-ai-tools-for-code-documentation-generation-2026/)
+- [AI Tools for Reviewing Documentation Pull Requests](/ai-tools-compared/ai-tools-for-reviewing-documentation-pull-requests-for-accur/)
+- [Best AI Tools for Generating API Documentation From Code](/ai-tools-compared/best-ai-tools-for-generating-api-documentation-from-code-2026/)
+- [AI Tools for Automated Code Documentation Generation in 2026](/ai-tools-compared/ai-tools-for-automated-code-documentation-generation-2026/---)
+- [AI Tools for Generating API Versioning Documentation and](/ai-tools-compared/ai-tools-for-generating-api-versioning-documentation-and-dep/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

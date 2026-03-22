@@ -42,6 +42,19 @@ This comparison examines both platforms through the lens of technical integratio
 - **Mistake 3**: Separate tools, no sync
 Teams that use Jasper and Frase in isolation waste effort.
 
+## Table of Contents
+
+- [Platform Architecture and API Access](#platform-architecture-and-api-access)
+- [SEO Workflow Integration](#seo-workflow-integration)
+- [Content Quality and Specificity](#content-quality-and-specificity)
+- [Pricing and Scalability](#pricing-and-scalability)
+- [Developer Experience and Documentation](#developer-experience-and-documentation)
+- [Which Platform Suits Your Workflow](#which-platform-suits-your-workflow)
+- [Pricing and Cost Analysis](#pricing-and-cost-analysis)
+- [Real-World Integration Examples](#real-world-integration-examples)
+- [Feature Comparison Table](#feature-comparison-table)
+- [Common Integration Mistakes](#common-integration-mistakes)
+
 ## Platform Architecture and API Access
 
 Jasper AI provides a REST API that allows developers to generate content programmatically. The API supports headline creation, blog post generation, and product descriptions. Authentication uses API keys, and you can make requests directly from your application code.

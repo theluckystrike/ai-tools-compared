@@ -40,6 +40,30 @@ GitHub Copilot has become an essential tool for developers seeking to accelerate
 - **Some IDEs display tooltip**: messages that reveal the underlying cause when you hover over the status indicator.
 - **Running outdated versions may**: cause suggestion failures.
 
+## Table of Contents
+
+- [Diagnosing the Problem](#diagnosing-the-problem)
+- [Verify Copilot Subscription and Authentication](#verify-copilot-subscription-and-authentication)
+- [Check Editor Compatibility and Extensions](#check-editor-compatibility-and-extensions)
+- [Examine File-Type and Language Settings](#examine-file-type-and-language-settings)
+- [Review Context and Completions Settings](#review-context-and-completions-settings)
+- [Network and Proxy Configuration](#network-and-proxy-configuration)
+- [Disable Competing Extensions](#disable-competing-extensions)
+- [Check File Encoding and Line Endings](#check-file-encoding-and-line-endings)
+- [Examine GitHub Copilot for Business Settings](#examine-github-copilot-for-business-settings)
+- [Clear Local Cache and Reset Settings](#clear-local-cache-and-reset-settings)
+- [Test with Sample Code](#test-with-sample-code)
+- [Common Hardware and System Issues](#common-hardware-and-system-issues)
+- [IDE-Specific Troubleshooting](#ide-specific-troubleshooting)
+- [Diagnosing Network Connectivity Issues](#diagnosing-network-connectivity-issues)
+- [Checking Workspace Trust and Security Settings](#checking-workspace-trust-and-security-settings)
+- [Advanced Diagnostics: Enabling Debug Logging](#advanced-diagnostics-enabling-debug-logging)
+- [Subscription and Billing Issues](#subscription-and-billing-issues)
+- [Performance Optimization for Faster Suggestions](#performance-optimization-for-faster-suggestions)
+- [Testing Across Different File Types](#testing-across-different-file-types)
+- [When to Seek Support](#when-to-seek-support)
+- [Prevention: Maintaining Copilot Health](#prevention-maintaining-copilot-health)
+
 ## Diagnosing the Problem
 
 Before applying specific fixes, determine whether the issue affects all files or specific project types. Open a new file in a different programming language and test whether suggestions appear. This isolation helps identify whether the problem stems from project-specific settings or a broader configuration issue.

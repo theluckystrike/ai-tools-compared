@@ -46,6 +46,25 @@ Making the switch from JetBrains AI to GitHub Copilot in IntelliJ IDEA doesn't h
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Navigate to Settings/Preferences (Windows:**: `Ctrl + Alt + S`, Mac: `Cmd + ,`) 3.
 
+## Table of Contents
+
+- [Why Consider Switching to Copilot?](#why-consider-switching-to-copilot)
+- [Prerequisites](#prerequisites)
+- [Step 1: Disable or Uninstall JetBrains AI Plugin](#step-1-disable-or-uninstall-jetbrains-ai-plugin)
+- [Step 2: Install GitHub Copilot Plugin](#step-2-install-github-copilot-plugin)
+- [Step 3: Authenticate with GitHub](#step-3-authenticate-with-github)
+- [Step 4: Configure Copilot Settings](#step-4-configure-copilot-settings)
+- [Step 5: Import JetBrains AI Custom Instructions (Optional)](#step-5-import-jetbrains-ai-custom-instructions-optional)
+- [Code Style](#code-style)
+- [Testing](#testing)
+- [API Patterns](#api-patterns)
+- [Step 6: Migrate Your Snippets](#step-6-migrate-your-snippets)
+- [Step 7: Verify Functionality](#step-7-verify-functionality)
+- [Step 8: Compare Your Workflow](#step-8-compare-your-workflow)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Best Practices After Migration](#best-practices-after-migration)
+- [Cost Comparison](#cost-comparison)
+
 ## Why Consider Switching to Copilot?
 
 GitHub Copilot offers several advantages that make it an attractive alternative:

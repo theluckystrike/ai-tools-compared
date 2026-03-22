@@ -39,6 +39,17 @@ Use Claude Code to generate type-safe Express middleware chains that handle auth
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Copilot works within GitHub's ecosystem**: making it convenient if your project uses GitHub Actions for CI/CD or GitHub Packages for distribution.
 
+## Table of Contents
+
+- [What Developers Need for Express Middleware](#what-developers-need-for-express-middleware)
+- [Claude Code](#claude-code)
+- [Cursor](#cursor)
+- [GitHub Copilot](#github-copilot)
+- [Zed](#zed)
+- [Recommendations by Use Case](#recommendations-by-use-case)
+- [Advanced Middleware Patterns and AI Assistance](#advanced-middleware-patterns-and-ai-assistance)
+- [AI Tool Pricing for Middleware Development](#ai-tool-pricing-for-middleware-development)
+
 ## What Developers Need for Express Middleware
 
 TypeScript Express middleware development has distinct requirements. Your AI assistant should understand the Request and Response types from Express, handle async middleware correctly, preserve type safety across the chain, and generate middleware that follows Express conventions. The best assistants also recognize common patterns like authentication decorators, request validation with libraries such as Zod or Yup, and proper error propagation.
@@ -273,10 +284,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Coding Assistants for Typescript Deno Fresh Framework Com](/ai-tools-compared/ai-coding-assistants-for-typescript-deno-fresh-framework-com/)
-- [AI Coding Assistants for Typescript Graphql Resolver and](/ai-tools-compared/ai-coding-assistants-for-typescript-graphql-resolver-and-schema-generation-2026/)
-- [AI Coding Assistant Accuracy for Typescript Next Js Server C](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
-- [AI Coding Assistant Accuracy for TypeScript Svelte Component](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-svelte-component/)
-- [AI Coding Assistant Comparison for Typescript monorepo](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-monorepo-with-turborepo-setup/)
-
+- [AI Coding Assistants for TypeScript Graphql Resolver](/ai-tools-compared/ai-coding-assistants-for-typescript-graphql-resolver-and-schema-generation-2026/)
+- [AI Coding Assistants for TypeScript Deno Fresh Framework](/ai-tools-compared/ai-coding-assistants-for-typescript-deno-fresh-framework-com/)
+- [AI Coding Assistant Accuracy for TypeScript Next Js Server](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
+- [Best AI Coding Tools With Generous Free Tier for Hobbyists](/ai-tools-compared/best-ai-coding-tools-with-generous-free-tier-for-hobbyists/)
+- [AI Coding Assistant Comparison for TypeScript monorepo](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-monorepo-with-turborepo-setup/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

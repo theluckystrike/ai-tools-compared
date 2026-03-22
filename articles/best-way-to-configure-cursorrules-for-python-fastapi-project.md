@@ -42,6 +42,13 @@ This guide covers the most effective strategies for configuring CursorRules spec
 - **If your project uses**: a particular folder structure or follows specific patterns, encode those in the configuration.
 - **Outdated CursorRules generates code**: that diverges from your actual codebase, which is worse than no configuration at all.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced CursorRules Patterns for FastAPI](#advanced-cursorrules-patterns-for-fastapi)
+- [Comparison: CursorRules vs CLAUDE.md vs GitHub Copilot Settings](#comparison-cursorrules-vs-claudemd-vs-github-copilot-settings)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

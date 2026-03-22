@@ -45,6 +45,22 @@ AI tools have matured significantly in their ability to help product managers tr
 - **If above 90%**: you might be missing edge cases.
 - **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
 
+## Table of Contents
+
+- [The Core Problem: From Feedback to Stories](#the-core-problem-from-feedback-to-stories)
+- [What Makes an AI Tool Effective for User Story Generation](#what-makes-an-ai-tool-effective-for-user-story-generation)
+- [Practical Workflow: Transforming Feedback to User Stories](#practical-workflow-transforming-feedback-to-user-stories)
+- [Feedback Theme: Export Functionality](#feedback-theme-export-functionality)
+- [Feedback Theme: Dashboard Visibility](#feedback-theme-dashboard-visibility)
+- [Export Functionality](#export-functionality)
+- [Code Integration: Automating the Pipeline](#code-integration-automating-the-pipeline)
+- [Evaluating AI Output Quality](#evaluating-ai-output-quality)
+- [Recommendations for Implementation](#recommendations-for-implementation)
+- [Advanced Workflow: Batch Processing Large Feedback Sets](#advanced-workflow-batch-processing-large-feedback-sets)
+- [Template Library for Faster Generation](#template-library-for-faster-generation)
+- [Integration with Existing Product Systems](#integration-with-existing-product-systems)
+- [Measuring Quality and Adjusting Your Process](#measuring-quality-and-adjusting-your-process)
+
 ## The Core Problem: From Feedback to Stories
 
 Customer feedback typically arrives in messy formats:

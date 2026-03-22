@@ -41,6 +41,24 @@ Your application uses the ChatGPT API with a Plus subscription benefit (reduced 
 - **Does ChatGPT offer a**: free tier? Most major tools offer some form of free tier or trial period.
 - **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 
+## Table of Contents
+
+- [How ChatGPT Plus Billing Works](#how-chatgpt-plus-billing-works)
+- [What Happens Step-by-Step](#what-happens-step-by-step)
+- [Access Timeline in Practice](#access-timeline-in-practice)
+- [Handling the Transition in Code](#handling-the-transition-in-code)
+- [What Changes When Plus Ends](#what-changes-when-plus-ends)
+- [Practical Tips for Developers](#practical-tips-for-developers)
+- [ChatGPT Plus Pricing and Billing Dates](#chatgpt-plus-pricing-and-billing-dates)
+- [Tracking Subscription Status Programmatically](#tracking-subscription-status-programmatically)
+- [API Rate Limits: Plus vs Free Tier](#api-rate-limits-plus-vs-free-tier)
+- [Refund Policy for Mid-Month Cancellations](#refund-policy-for-mid-month-cancellations)
+- [Managing Multiple ChatGPT Plus Accounts](#managing-multiple-chatgpt-plus-accounts)
+- [Custom GPTs and Plus Dependency](#custom-gpts-and-plus-dependency)
+- [Custom GPT Lifecycle](#custom-gpt-lifecycle)
+- [Resubscription Grace Period](#resubscription-grace-period)
+- [When to Re-subscribe](#when-to-re-subscribe)
+
 ## How ChatGPT Plus Billing Works
 
 ChatGPT Plus operates on a monthly subscription model billed in advance. When you subscribe, you pay roughly $20 USD per month, and you receive uninterrupted access to GPT-4, GPT-4o, and Claude 3.5 Sonnet (depending on the model selection available at your subscription tier). The subscription renews automatically on the same date each month unless you cancel.

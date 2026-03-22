@@ -39,6 +39,16 @@ When evaluating AI-powered video generation tools, developers and content creato
 - **Enterprise options include custom**: rate limits and dedicated support.
 - **Consider starting with the**: platform that aligns with your primary use case, then evaluate the other for specific scenarios where it might excel.
 
+## Table of Contents
+
+- [Platform Overview](#platform-overview)
+- [API Integration and Developer Experience](#api-integration-and-developer-experience)
+- [Generation Quality and Capabilities](#generation-quality-and-capabilities)
+- [Practical Considerations for Developers](#practical-considerations-for-developers)
+- [Use Case Recommendations](#use-case-recommendations)
+- [Implementation Example: Video Generation Pipeline](#implementation-example-video-generation-pipeline)
+- [Making Your Decision](#making-your-decision)
+
 ## Platform Overview
 
 Runway ML has evolved from a creative tool platform into an AI media suite. Its Gen-2 and subsequent models have established strong recognition in the AI video space, offering both web-based editing tools and programmatic access through APIs. The platform emphasizes professional creative workflows, with features that integrate into existing production pipelines.
@@ -269,6 +279,5 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 - [Sora vs Runway AI Video Generation: A Technical](/ai-tools-compared/sora-vs-runway-ai-video-generation/)
 - [AI Tools for Video Thumbnail Generation](/ai-tools-compared/ai-tools-for-video-thumbnail-generation/)
 - [Kling AI vs Gen 3 Video Generation: Developer Comparison](/ai-tools-compared/kling-ai-vs-gen-3-video-generation/)
-- [Runway Inpainting vs Adobe Firefly Generative Fill](/ai-tools-compared/runway-inpainting-vs-adobe-firefly-generative-fill/)
-
+- [Best AI Tools for Video Game Trailers](/ai-tools-compared/best-ai-tools-for-video-game-trailers/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
