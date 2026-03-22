@@ -62,98 +62,98 @@ Use strict permissions: contents read, checks write.
 name: CI
 
 on:
-  push:
-    branches: [main, 'release/**']
-  pull_request:
-    branches: [main]
+ push:
+ branches: [main, 'release/**']
+ pull_request:
+ branches: [main]
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+ group: ${{ github.workflow }}-${{ github.ref }}
+ cancel-in-progress: true
 
 jobs:
-  test:
-    name: Test (Node ${{ matrix.node-version }} / ${{ matrix.os }})
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        node-version: ['18', '20', '22']
-        os: [ubuntu-latest, windows-latest]
+ test:
+ name: Test (Node ${{ matrix.node-version }} / ${{ matrix.os }})
+ runs-on: ${{ matrix.os }}
+ strategy:
+ fail-fast: false
+ matrix:
+ node-version: ['18', '20', '22']
+ os: [ubuntu-latest, windows-latest]
 
-    steps:
-      - uses: actions/checkout@v4
+ steps:
+ - uses: actions/checkout@v4
 
-      - name: Setup Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: npm
+ - name: Setup Node.js ${{ matrix.node-version }}
+ uses: actions/setup-node@v4
+ with:
+ node-version: ${{ matrix.node-version }}
+ cache: npm
 
-      - name: Install dependencies
-        run: npm ci
+ - name: Install dependencies
+ run: npm ci
 
-      - name: Run tests with coverage
-        run: npm run test:coverage
+ - name: Run tests with coverage
+ run: npm run test:coverage
 
-      - name: Upload coverage to Codecov
-        if: matrix.os == 'ubuntu-latest' && matrix.node-version == '20'
-        uses: codecov/codecov-action@v4
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          fail_ci_if_error: true
+ - name: Upload coverage to Codecov
+ if: matrix.os == 'ubuntu-latest' && matrix.node-version == '20'
+ uses: codecov/codecov-action@v4
+ with:
+ token: ${{ secrets.CODECOV_TOKEN }}
+ fail_ci_if_error: true
 
-  build-and-push:
-    name: Build and Push to ECR
-    needs: test
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-    runs-on: ubuntu-latest
-    permissions:
-      id-token: write   # Required for OIDC
-      contents: read
+ build-and-push:
+ name: Build and Push to ECR
+ needs: test
+ if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+ runs-on: ubuntu-latest
+ permissions:
+ id-token: write # Required for OIDC
+ contents: read
 name: Tests and Linting
 on:
-  push:
-    branches: [main]
-  pull_request:
+ push:
+ branches: [main]
+ pull_request:
 
 permissions:
-  contents: read
-  checks: write
+ contents: read
+ checks: write
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # full history for better linting
+ test:
+ runs-on: ubuntu-latest
+ steps:
+ - uses: actions/checkout@v4
+ with:
+ fetch-depth: 0 # full history for better linting
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
+ - uses: actions/setup-node@v4
+ with:
+ node-version: '20'
+ cache: 'npm'
 
-      - run: npm ci
-      - run: npm run lint
-      - run: npm test
+ - run: npm ci
+ - run: npm run lint
+ - run: npm test
 
-  build:
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-    needs: test
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-      - run: npm ci
-      - run: npm run build
-      - uses: actions/upload-artifact@v4
-        with:
-          name: dist
-          path: dist/
+ build:
+ runs-on: ubuntu-latest
+ if: github.ref == 'refs/heads/main'
+ needs: test
+ steps:
+ - uses: actions/checkout@v4
+ - uses: actions/setup-node@v4
+ with:
+ node-version: '20'
+ cache: 'npm'
+ - run: npm ci
+ - run: npm run build
+ - uses: actions/upload-artifact@v4
+ with:
+ name: dist
+ path: dist/
 ```
 
 Claude adds `fetch-depth: 0` (needed by some linters), uses `npm ci` instead of `npm install` (correct for CI), and includes the `cache: 'npm'` line that saves ~30 seconds per run. It also sets strict permissions instead of the default `contents: write`.
@@ -175,36 +175,36 @@ name: Matrix Tests
 on: [push, pull_request]
 
 permissions:
-  contents: read
+ contents: read
 
 jobs:
-  test:
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
-        python-version: ['3.9', '3.10', '3.11', '3.12']
-        exclude:
-          - os: windows-latest
-            python-version: '3.9'
+ test:
+ strategy:
+ matrix:
+ os: [ubuntu-latest, windows-latest, macos-latest]
+ python-version: ['3.9', '3.10', '3.11', '3.12']
+ exclude:
+ - os: windows-latest
+ python-version: '3.9'
 
-    runs-on: ${{ matrix.os }}
-    steps:
-      - uses: actions/checkout@v4
+ runs-on: ${{ matrix.os }}
+ steps:
+ - uses: actions/checkout@v4
 
-      - uses: astral-sh/setup-uv@v2
-        with:
-          python-version: ${{ matrix.python-version }}
+ - uses: astral-sh/setup-uv@v2
+ with:
+ python-version: ${{ matrix.python-version }}
 
-      - run: uv sync
-      - run: uv run pytest --cov=src tests/
-      - run: uv run coverage xml
+ - run: uv sync
+ - run: uv run pytest --cov=src tests/
+ - run: uv run coverage xml
 
-      - uses: codecov/codecov-action@v3
-        with:
-          files: coverage.xml
-          flags: unittests
-          os: ${{ matrix.os }}
-          python-version: ${{ matrix.python-version }}
+ - uses: codecov/codecov-action@v3
+ with:
+ files: coverage.xml
+ flags: unittests
+ os: ${{ matrix.os }}
+ python-version: ${{ matrix.python-version }}
 ```
 
 Claude uses `exclude` to skip the 3.9-on-Windows combination and includes `python-version` in the Codecov upload flags so reports are grouped correctly.
@@ -229,46 +229,46 @@ Use it from a main workflow.
 name: Setup and Lint
 description: Check out, install, and lint a Node.js project
 inputs:
-  node-version:
-    description: Node.js version
-    required: false
-    default: '20'
-  cache-enabled:
-    description: Enable npm cache
-    required: false
-    default: 'true'
+ node-version:
+ description: Node.js version
+ required: false
+ default: '20'
+ cache-enabled:
+ description: Enable npm cache
+ required: false
+ default: 'true'
 
 runs:
-  using: composite
-  steps:
-    - uses: actions/checkout@v4
+ using: composite
+ steps:
+ - uses: actions/checkout@v4
 
-    - uses: actions/setup-node@v4
-      with:
-        node-version: ${{ inputs.node-version }}
-        cache: ${{ inputs.cache-enabled == 'true' && 'npm' || '' }}
+ - uses: actions/setup-node@v4
+ with:
+ node-version: ${{ inputs.node-version }}
+ cache: ${{ inputs.cache-enabled == 'true' && 'npm' || '' }}
 
-    - run: npm ci
-      shell: bash
+ - run: npm ci
+ shell: bash
 
-    - run: npm run lint
-      shell: bash
+ - run: npm run lint
+ shell: bash
 
-    - run: npm run format:check
-      shell: bash
+ - run: npm run format:check
+ shell: bash
 ```
 
 **Usage in main workflow:**
 
 ```yaml
 jobs:
-  check:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: ./.github/actions/setup-and-lint
-        with:
-          node-version: '20'
-          cache-enabled: 'true'
+ check:
+ runs-on: ubuntu-latest
+ steps:
+ - uses: ./.github/actions/setup-and-lint
+ with:
+ node-version: '20'
+ cache-enabled: 'true'
 ```
 
 Claude correctly uses `shell: bash` in composite actions (required) and shows how to conditionally set the cache parameter.
@@ -289,51 +289,51 @@ Include the AWS trust policy configuration.
 ```yaml
 name: Build and Push to ECR
 on:
-  push:
-    branches: [main]
+ push:
+ branches: [main]
 
 permissions:
-  id-token: write
-  contents: read
+ id-token: write
+ contents: read
 
 env:
-  AWS_REGION: us-east-1
-  ECR_REGISTRY: 123456789.dkr.ecr.us-east-1.amazonaws.com
-  ECR_REPOSITORY: myapp
+ AWS_REGION: us-east-1
+ ECR_REGISTRY: 123456789.dkr.ecr.us-east-1.amazonaws.com
+ ECR_REPOSITORY: myapp
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    outputs:
-      image: ${{ steps.image.outputs.image }}
+ build:
+ runs-on: ubuntu-latest
+ outputs:
+ image: ${{ steps.image.outputs.image }}
 
-    steps:
-      - uses: actions/checkout@v4
+ steps:
+ - uses: actions/checkout@v4
 
-      - name: Configure AWS credentials via OIDC
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          role-to-assume: ${{ secrets.AWS_ECR_ROLE_ARN }}
-          aws-region: ${{ vars.AWS_REGION }}
+ - name: Configure AWS credentials via OIDC
+ uses: aws-actions/configure-aws-credentials@v4
+ with:
+ role-to-assume: ${{ secrets.AWS_ECR_ROLE_ARN }}
+ aws-region: ${{ vars.AWS_REGION }}
 
-      - name: Login to Amazon ECR
-        id: login-ecr
-        uses: aws-actions/amazon-ecr-login@v2
+ - name: Login to Amazon ECR
+ id: login-ecr
+ uses: aws-actions/amazon-ecr-login@v2
 
-      - name: Build and push Docker image
-        env:
-          REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          REPOSITORY: my-app
-          IMAGE_TAG: ${{ github.sha }}
-        run: |
-          docker build \
-            --label "git-commit=${{ github.sha }}" \
-            --label "built-by=github-actions" \
-            -t $REGISTRY/$REPOSITORY:$IMAGE_TAG \
-            -t $REGISTRY/$REPOSITORY:latest \
-            .
-          docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
-          docker push $REGISTRY/$REPOSITORY:latest
+ - name: Build and push Docker image
+ env:
+ REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+ REPOSITORY: my-app
+ IMAGE_TAG: ${{ github.sha }}
+ run: |
+ docker build \
+ --label "git-commit=${{ github.sha }}" \
+ --label "built-by=github-actions" \
+ -t $REGISTRY/$REPOSITORY:$IMAGE_TAG \
+ -t $REGISTRY/$REPOSITORY:latest \
+ .
+ docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
+ docker push $REGISTRY/$REPOSITORY:latest
 ```
 
 Key things Claude gets right automatically:
@@ -362,39 +362,39 @@ name: Setup and Build
 description: Install dependencies and build the project
 
 inputs:
-  node-version:
-    description: Node.js version to use
-    required: false
-    default: '20'
-  working-directory:
-    description: Directory containing package.json
-    required: false
-    default: '.'
+ node-version:
+ description: Node.js version to use
+ required: false
+ default: '20'
+ working-directory:
+ description: Directory containing package.json
+ required: false
+ default: '.'
 
 outputs:
-  cache-hit:
-    description: Whether the cache was restored
-    value: ${{ steps.cache.outputs.cache-hit }}
+ cache-hit:
+ description: Whether the cache was restored
+ value: ${{ steps.cache.outputs.cache-hit }}
 
 runs:
-  using: composite
-  steps:
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ inputs.node-version }}
-        cache: npm
-        cache-dependency-path: ${{ inputs.working-directory }}/package-lock.json
+ using: composite
+ steps:
+ - name: Setup Node.js
+ uses: actions/setup-node@v4
+ with:
+ node-version: ${{ inputs.node-version }}
+ cache: npm
+ cache-dependency-path: ${{ inputs.working-directory }}/package-lock.json
 
-    - name: Install dependencies
-      shell: bash
-      working-directory: ${{ inputs.working-directory }}
-      run: npm ci
+ - name: Install dependencies
+ shell: bash
+ working-directory: ${{ inputs.working-directory }}
+ run: npm ci
 
-    - name: Build
-      shell: bash
-      working-directory: ${{ inputs.working-directory }}
-      run: npm run build
+ - name: Build
+ shell: bash
+ working-directory: ${{ inputs.working-directory }}
+ run: npm run build
 ```
 
 The `shell: bash` is required in composite actions — Claude includes it; many AI tools omit it, causing failures on Windows runners.
@@ -405,19 +405,19 @@ For production workflows, add these hardening steps that Claude applies correctl
 
 ```yaml
 # Pin all actions to full commit SHA, not tags
-- uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
+- uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
 # Minimal permissions — override per-job
 permissions:
-  contents: read
+ contents: read
 
 # Prevent script injection via environment variables
 - name: Process user input safely
-  env:
-    USER_INPUT: ${{ github.event.pull_request.title }}
-  run: |
-    # Never interpolate github context directly into run commands
-    echo "PR title length: ${#USER_INPUT}"
+ env:
+ USER_INPUT: ${{ github.event.pull_request.title }}
+ run: |
+ # Never interpolate github context directly into run commands
+ echo "PR title length: ${#USER_INPUT}"
 ```
 
 The script injection pattern — interpolating `${{ github.event.pull_request.title }}` directly into a `run` block — is a common vulnerability that Copilot frequently generates. Claude warns about this and uses environment variable indirection instead.
@@ -426,28 +426,28 @@ The script injection pattern — interpolating `${{ github.event.pull_request.ti
 
 ```yaml
 jobs:
-  generate-matrix:
-    runs-on: ubuntu-latest
-    outputs:
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
-    steps:
-      - uses: actions/checkout@v4
-      - id: set-matrix
-        run: |
-          # Build matrix dynamically from changed services
-          SERVICES=$(git diff --name-only HEAD~1 HEAD | grep '^services/' | cut -d/ -f2 | sort -u | jq -R . | jq -sc .)
-          echo "matrix={\"service\":$SERVICES}" >> $GITHUB_OUTPUT
+ generate-matrix:
+ runs-on: ubuntu-latest
+ outputs:
+ matrix: ${{ steps.set-matrix.outputs.matrix }}
+ steps:
+ - uses: actions/checkout@v4
+ - id: set-matrix
+ run: |
+ # Build matrix dynamically from changed services
+ SERVICES=$(git diff --name-only HEAD~1 HEAD | grep '^services/' | cut -d/ -f2 | sort -u | jq -R . | jq -sc .)
+ echo "matrix={\"service\":$SERVICES}" >> $GITHUB_OUTPUT
 
-  build-services:
-    needs: generate-matrix
-    if: ${{ needs.generate-matrix.outputs.matrix != '{"service":[]}' }}
-    strategy:
-      matrix: ${{ fromJson(needs.generate-matrix.outputs.matrix) }}
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Build ${{ matrix.service }}
-        run: docker build services/${{ matrix.service }}
+ build-services:
+ needs: generate-matrix
+ if: ${{ needs.generate-matrix.outputs.matrix != '{"service":[]}' }}
+ strategy:
+ matrix: ${{ fromJson(needs.generate-matrix.outputs.matrix) }}
+ runs-on: ubuntu-latest
+ steps:
+ - uses: actions/checkout@v4
+ - name: Build ${{ matrix.service }}
+ run: docker build services/${{ matrix.service }}
 ```
 
 ## Related Articles

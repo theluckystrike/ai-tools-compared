@@ -170,15 +170,15 @@ Gemini is comparable to GPT-4o for basics, weaker on Prometheus-specific pattern
 
 1. Start with Claude Opus.
 2. Provide context:
-   - Your metric name (e.g., `http_request_duration_seconds`)
-   - What constitutes "bad" (e.g., p99 > 500ms)
-   - Expected duration before alerting (e.g., 5m, 15m)
-   - Severity level (critical, warning, info)
+ - Your metric name (e.g., `http_request_duration_seconds`)
+ - What constitutes "bad" (e.g., p99 > 500ms)
+ - Expected duration before alerting (e.g., 5m, 15m)
+ - Severity level (critical, warning, info)
 
 3. Ask Claude:
-   - "Is this cardinality-safe?" (won't explode label combinations)
-   - "How do I reduce false positives?"
-   - "What's the recording rule version?" (pre-compute expensive aggregations)
+ - "Is this cardinality-safe?" (won't explode label combinations)
+ - "How do I reduce false positives?"
+ - "What's the recording rule version?" (pre-compute expensive aggregations)
 
 4. Validate with `promtool`:
 

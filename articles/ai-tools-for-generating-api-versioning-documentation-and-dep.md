@@ -41,7 +41,7 @@ Changelog entry:
 
 #### Deprecated
 - `GET /users/{id}/preferences` — replaced by `GET /users/{id}/settings`.
-  Sunset date: **2026-09-01**.
+ Sunset date: **2026-09-01**.
 - `PUT /users/{id}/preferences` — replaced by `PUT /users/{id}/settings`.
 
 #### Added
@@ -64,30 +64,30 @@ The most reliable way to get consistent AI-generated deprecation content is to e
 **OpenAPI with deprecation metadata:**
 ```yaml
 paths:
-  /users/{id}/preferences:
-    get:
-      deprecated: true
-      summary: Get user preferences (deprecated)
-      description: |
-        **Deprecated.** Use `/users/{id}/settings` instead.
-        This endpoint will be removed 2026-09-01.
-      x-sunset-date: "2026-09-01"
-      x-replaced-by: /users/{id}/settings
-      x-deprecation-reason: >
-        Replaced by unified /settings endpoint with improved schema.
-        The theme_preference field is now display.theme.
-      responses:
-        200:
-          description: User preferences
-          headers:
-            Deprecation:
-              schema:
-                type: string
-              description: "RFC 8594 Deprecation header — date after which endpoint is sunset"
-            Sunset:
-              schema:
-                type: string
-              description: "RFC 8594 Sunset header — 2026-09-01T00:00:00Z"
+ /users/{id}/preferences:
+ get:
+ deprecated: true
+ summary: Get user preferences (deprecated)
+ description: |
+ **Deprecated.** Use `/users/{id}/settings` instead.
+ This endpoint will be removed 2026-09-01.
+ x-sunset-date: "2026-09-01"
+ x-replaced-by: /users/{id}/settings
+ x-deprecation-reason: >
+ Replaced by unified /settings endpoint with improved schema.
+ The theme_preference field is now display.theme.
+ responses:
+ 200:
+ description: User preferences
+ headers:
+ Deprecation:
+ schema:
+ type: string
+ description: "RFC 8594 Deprecation header — date after which endpoint is sunset"
+ Sunset:
+ schema:
+ type: string
+ description: "RFC 8594 Sunset header — 2026-09-01T00:00:00Z"
 ```
 
 **Prompt:** "Generate a migration guide from this OpenAPI spec using x-sunset-date and x-replaced-by extensions."
@@ -151,14 +151,14 @@ Clients can parse the `Sunset` header to warn users of upcoming removal.
 
 ```yaml
 paths:
-  /api/v1/old-endpoint:
-    get:
-      deprecated: true
-      description: |
-        **DEPRECATED** Use `/api/v2/new-endpoint` instead.
-        This endpoint will be removed on 2026-09-22.
-      x-sunset-date: "2026-09-22"
-      x-successor: "/api/v2/new-endpoint"
+ /api/v1/old-endpoint:
+ get:
+ deprecated: true
+ description: |
+ **DEPRECATED** Use `/api/v2/new-endpoint` instead.
+ This endpoint will be removed on 2026-09-22.
+ x-sunset-date: "2026-09-22"
+ x-successor: "/api/v2/new-endpoint"
 ```
 
 **Email Template:**
@@ -211,15 +211,15 @@ v1 request body: { "user_id": string, "items": [{ "sku": string, "qty": number }
 v2 endpoint: POST /api/v2/orders
 v2 request body:
 {
-  "customerId": string,           // renamed from user_id, now camelCase
-  "lineItems": [                  // renamed from items
-    {
-      "productSku": string,       // renamed from sku
-      "quantity": integer,        // renamed from qty, now integer not number
-      "priceOverride": number?    // new optional field
-    }
-  ],
-  "idempotencyKey": string?       // new optional field for deduplication
+ "customerId": string, // renamed from user_id, now camelCase
+ "lineItems": [ // renamed from items
+ {
+ "productSku": string, // renamed from sku
+ "quantity": integer, // renamed from qty, now integer not number
+ "priceOverride": number? // new optional field
+ }
+ ],
+ "idempotencyKey": string? // new optional field for deduplication
 }
 ```
 
@@ -283,84 +283,84 @@ Include the deprecation field and custom extension x-sunset-date.
 ```yaml
 openapi: 3.1.0
 info:
-  title: Payment API
-  version: 3.0.0
+ title: Payment API
+ version: 3.0.0
 
 paths:
-  /api/v1/payments/{id}:
-    get:
-      summary: Get payment (deprecated)
-      deprecated: true
-      description: |
-        **DEPRECATED** This endpoint is scheduled for removal on
-        2026-09-22. Use `/api/v3/payments/{id}` instead.
-      x-sunset-date: "2026-09-22"
-      x-successor: "/api/v3/payments/{id}"
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          description: Payment object
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/PaymentV1'
-        '410':
-          description: Gone (after sunset date)
+ /api/v1/payments/{id}:
+ get:
+ summary: Get payment (deprecated)
+ deprecated: true
+ description: |
+ **DEPRECATED** This endpoint is scheduled for removal on
+ 2026-09-22. Use `/api/v3/payments/{id}` instead.
+ x-sunset-date: "2026-09-22"
+ x-successor: "/api/v3/payments/{id}"
+ parameters:
+ - name: id
+ in: path
+ required: true
+ schema:
+ type: string
+ responses:
+ '200':
+ description: Payment object
+ content:
+ application/json:
+ schema:
+ $ref: '#/components/schemas/PaymentV1'
+ '410':
+ description: Gone (after sunset date)
 
-  /api/v3/payments/{id}:
-    get:
-      summary: Get payment (current)
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          description: Payment object
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/PaymentV3'
+ /api/v3/payments/{id}:
+ get:
+ summary: Get payment (current)
+ parameters:
+ - name: id
+ in: path
+ required: true
+ schema:
+ type: string
+ responses:
+ '200':
+ description: Payment object
+ content:
+ application/json:
+ schema:
+ $ref: '#/components/schemas/PaymentV3'
 
 components:
-  schemas:
-    PaymentV1:
-      type: object
-      properties:
-        id:
-          type: string
-        amount:
-          type: number
-        status:
-          type: string
-          enum: [pending, completed, failed]
+ schemas:
+ PaymentV1:
+ type: object
+ properties:
+ id:
+ type: string
+ amount:
+ type: number
+ status:
+ type: string
+ enum: [pending, completed, failed]
 
-    PaymentV3:
-      type: object
-      properties:
-        id:
-          type: string
-        amount:
-          type: number
-        currency:
-          type: string
-          example: "USD"
-        status:
-          type: string
-          enum: [pending, completed, failed, refunded]
-        created_at:
-          type: string
-          format: date-time
-        metadata:
-          type: object
-          additionalProperties: true
+ PaymentV3:
+ type: object
+ properties:
+ id:
+ type: string
+ amount:
+ type: number
+ currency:
+ type: string
+ example: "USD"
+ status:
+ type: string
+ enum: [pending, completed, failed, refunded]
+ created_at:
+ type: string
+ format: date-time
+ metadata:
+ type: object
+ additionalProperties: true
 ```
 
 The `deprecated: true` field signals to documentation tools that this is end-of-life. The custom `x-sunset-date` lets tools render a "removal timeline" in the docs.
@@ -439,28 +439,28 @@ name: API Docs Freshness Check
 on: [pull_request]
 
 jobs:
-  check-docs:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+ check-docs:
+ runs-on: ubuntu-latest
+ steps:
+ - uses: actions/checkout@v4
 
-      - name: Generate spec from code
-        run: python scripts/generate_openapi.py --output /tmp/generated.json
+ - name: Generate spec from code
+ run: python scripts/generate_openapi.py --output /tmp/generated.json
 
-      - name: Diff against committed spec
-        run: |
-          diff openapi.json /tmp/generated.json > /tmp/diff.txt
-          if [ -s /tmp/diff.txt ]; then
-            echo "API spec is out of date. Run: make generate-docs"
-            cat /tmp/diff.txt
-            exit 1
-          fi
+ - name: Diff against committed spec
+ run: |
+ diff openapi.json /tmp/generated.json > /tmp/diff.txt
+ if [ -s /tmp/diff.txt ]; then
+ echo "API spec is out of date. Run: make generate-docs"
+ cat /tmp/diff.txt
+ exit 1
+ fi
 
-      - name: Check sunset dates
-        run: |
-          python scripts/check_sunsets.py --spec openapi.json --warn-days 60
-          # Warns if any deprecated endpoint's sunset date is within 60 days
-          # without a corresponding migration guide
+ - name: Check sunset dates
+ run: |
+ python scripts/check_sunsets.py --spec openapi.json --warn-days 60
+ # Warns if any deprecated endpoint's sunset date is within 60 days
+ # without a corresponding migration guide
 ```
 
 Pair this with a Mintlify or Scalar sync step that automatically publishes the updated spec to your documentation portal on merge to main. The goal is zero manual documentation steps in the deployment path.

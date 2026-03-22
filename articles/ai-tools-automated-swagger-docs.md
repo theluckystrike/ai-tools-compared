@@ -365,6 +365,7 @@ jobs:
 - [Best AI Tools for Writing Swagger API Documentation 2026](/ai-tools-compared/best-ai-tools-for-writing-swagger-api-documentation-2026/)
 - [How to Build AI-Powered API Diff Tools](/ai-tools-compared/build-ai-powered-api-diff-tools/)
 - [AI Code Review Automation Tools Comparison](/ai-tools-compared/ai-code-review-automation-tools-comparison/)
+- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)
 
 ---
 

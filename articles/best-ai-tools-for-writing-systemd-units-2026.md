@@ -161,7 +161,7 @@ WantedBy=timers.target
 
 Note that systemd timers use `Type=oneshot` for the service (not `Type=simple`) — Claude gets this right. ChatGPT sometimes generates `Type=simple` for timer services, which can cause issues with service tracking.
 
-The "service should not run if the previous run is still active" requirement is handled by `Type=oneshot` combined with no `Restart=` directive. If you add `Restart=on-failure` to a oneshot service, it only retries on non-zero exit — it does not overlap with a running instance.
+The "service should not run if the previous run is still active" requirement is handled by `Type=oneshot` combined with no `Restart=` directive. If you add `Restart=on-failure` to an oneshot service, it only retries on non-zero exit — it does not overlap with a running instance.
 
 ## Socket Activation
 
@@ -421,10 +421,10 @@ tracking it like a service. Use systemd-run for temporary units.
 ```bash
 # Create and start a background service at runtime
 systemd-run --unit=cleanup-task \
-  --working-directory=/opt/app \
-  --slice=user-tasks.slice \
-  --remain-after-exit \
-  /opt/scripts/cleanup.sh
+ --working-directory=/opt/app \
+ --slice=user-tasks.slice \
+ --remain-after-exit \
+ /opt/scripts/cleanup.sh
 
 # Monitor it
 systemctl status cleanup-task
@@ -479,12 +479,12 @@ and how to check its output.
 ```bash
 # Run a command as a transient service with resource limits
 systemd-run \
-  --unit=my-oneoff \
-  --property=MemoryMax=256M \
-  --property=CPUShares=100 \
-  --property=User=myapp \
-  --wait \
-  /opt/scripts/heavy-task.sh
+ --unit=my-oneoff \
+ --property=MemoryMax=256M \
+ --property=CPUShares=100 \
+ --property=User=myapp \
+ --wait \
+ /opt/scripts/heavy-task.sh
 
 # Check status
 systemctl status my-oneoff

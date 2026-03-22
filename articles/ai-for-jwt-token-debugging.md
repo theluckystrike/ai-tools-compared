@@ -240,6 +240,7 @@ Claude can generate a debugging checklist when you describe validation error pat
 - [How to Use AI to Debug Segmentation Faults in C and C++ Programs](/ai-tools-compared/how-to-use-ai-to-debug-segmentation-faults-in-c-and-cpp-prog/)
 - [AI Assistants for Writing Correct AWS IAM Policies with Least Privilege](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
 - [AI Tools for Automated SSL/TLS Configuration](/ai-tools-compared/ai-tools-automated-ssl-tls-config/)
+- [AI Debugging Assistants Compared 2026](/ai-tools-compared/ai-debugging-assistants-compared-2026/)
 
 ---
 

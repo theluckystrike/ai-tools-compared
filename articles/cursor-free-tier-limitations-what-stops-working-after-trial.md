@@ -2,6 +2,7 @@
 
 
 
+<<<<<<< HEAD
 
 
 
@@ -687,21 +688,24 @@
 
 
 
+
+=======
+>>>>>>> 2d1c47c16fb62f06950641ed41edf031fb823a41
 layout: default
 title: "Cursor Free Tier Limitations: What Stops Working After Trial"
 description: "What breaks when Cursor's free trial ends: feature lockouts, model downgrades, completion limits, and whether the free tier is still usable."
 keywords:
-  - cursor free tier limitations
-  - cursor free trial what stops working
-  - cursor ai free vs pro comparison
-  - cursor hobby plan limitations
-  - cursor free features 2026
-  - cursor ai pricing free tier
-  - cursor vs copilot free comparison
-  - cursor free trial expired what next
+ - cursor free tier limitations
+ - cursor free trial what stops working
+ - cursor ai free vs pro comparison
+ - cursor hobby plan limitations
+ - cursor free features 2026
+ - cursor ai pricing free tier
+ - cursor vs copilot free comparison
+ - cursor free trial expired what next
 categories:
-  - AI Coding Tools
-  - Cursor
+ - AI Coding Tools
+ - Cursor
 permalink: /cursor-free-tier-limitations-what-stops-working-after-trial/
 slug: cursor-free-tier-limitations-what-stops-working-after-trial
 score: 8
@@ -716,6 +720,7 @@ tags: [ai-tools-compared]
 
 
 
+<<<<<<< HEAD
 
 
 
@@ -799,6 +804,9 @@ tags: [ai-tools-compared]
 
 
 
+
+=======
+>>>>>>> 2d1c47c16fb62f06950641ed41edf031fb823a41
 layout: default
 title: "Cursor Free Tier Limitations: What Stops Working After Trial"
 description: "A guide to understanding what features become limited or unavailable when Cursor's free trial ends in 2026"

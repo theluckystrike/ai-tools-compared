@@ -56,26 +56,26 @@ REST endpoints:
 
 GraphQL schema:
 type User {
-  id: ID!
-  name: String!
-  email: String!
-  posts: [Post!]!
+ id: ID!
+ name: String!
+ email: String!
+ posts: [Post!]!
 }
 
 type Post {
-  id: ID!
-  title: String!
-  content: String!
-  userId: ID!
+ id: ID!
+ title: String!
+ content: String!
+ userId: ID!
 }
 
 type Query {
-  user(id: ID!): User
-  users: [User!]!
+ user(id: ID!): User
+ users: [User!]!
 }
 
 type Mutation {
-  createUser(name: String!, email: String!): User!
+ createUser(name: String!, email: String!): User!
 }
 
 Write Apollo Server (Node.js) resolvers.
@@ -89,36 +89,36 @@ import axios from 'axios';
 const API_BASE = 'http://api.example.com/api/v1';
 
 const resolvers = {
-  Query: {
-    user: async (_, { id }) => {
-      const response = await axios.get(`${API_BASE}/users/${id}`);
-      return response.data;
-    },
-    users: async () => {
-      const response = await axios.get(`${API_BASE}/users`);
-      return response.data;
-    }
-  },
+ Query: {
+ user: async (_, { id }) => {
+ const response = await axios.get(`${API_BASE}/users/${id}`);
+ return response.data;
+ },
+ users: async () => {
+ const response = await axios.get(`${API_BASE}/users`);
+ return response.data;
+ }
+ },
 
-  Mutation: {
-    createUser: async (_, { name, email }) => {
-      const response = await axios.post(
-        `${API_BASE}/users`,
-        { name, email },
-        { headers: { 'Content-Type': 'application/json' } }
-      );
-      return response.data;
-    }
-  },
+ Mutation: {
+ createUser: async (_, { name, email }) => {
+ const response = await axios.post(
+ `${API_BASE}/users`,
+ { name, email },
+ { headers: { 'Content-Type': 'application/json' } }
+ );
+ return response.data;
+ }
+ },
 
-  User: {
-    posts: async (user) => {
-      const response = await axios.get(
-        `${API_BASE}/users/${user.id}/posts`
-      );
-      return response.data;
-    }
-  }
+ User: {
+ posts: async (user) => {
+ const response = await axios.get(
+ `${API_BASE}/users/${user.id}/posts`
+ );
+ return response.data;
+ }
+ }
 };
 
 export default resolvers;
@@ -142,22 +142,22 @@ import DataLoader from 'dataloader';
 import axios from 'axios';
 
 const postsLoader = new DataLoader(async (userIds) => {
-  // Batch fetch posts for multiple users in a single request
-  const response = await axios.get(
-    `${API_BASE}/users/batch/posts`,
-    { params: { ids: userIds.join(',') } }
-  );
+ // Batch fetch posts for multiple users in a single request
+ const response = await axios.get(
+ `${API_BASE}/users/batch/posts`,
+ { params: { ids: userIds.join(',') } }
+ );
 
-  // Return results in the same order as requested IDs
-  return userIds.map(userId =>
-    response.data.filter(post => post.userId === userId)
-  );
+ // Return results in the same order as requested IDs
+ return userIds.map(userId =>
+ response.data.filter(post => post.userId === userId)
+ );
 });
 
 const resolvers = {
-  User: {
-    posts: (user) => postsLoader.load(user.id)
-  }
+ User: {
+ posts: (user) => postsLoader.load(user.id)
+ }
 };
 ```
 
@@ -176,40 +176,40 @@ Use Apollo Server types and a client for the REST API.
 ```typescript
 // Schema addition
 const typeDefs = gql`
-  extend type User {
-    posts(limit: Int = 10, status: PostStatus): PostConnection!
-  }
+ extend type User {
+ posts(limit: Int = 10, status: PostStatus): PostConnection!
+ }
 
-  enum PostStatus {
-    PUBLISHED
-    DRAFT
-  }
+ enum PostStatus {
+ PUBLISHED
+ DRAFT
+ }
 
-  type PostConnection {
-    posts: [Post!]!
-    total: Int!
-  }
+ type PostConnection {
+ posts: [Post!]!
+ total: Int!
+ }
 `;
 
 // Resolver
 const resolvers = {
-  User: {
-    posts: async (parent: { id: string }, args: { limit?: number; status?: PostStatus }, context: Context) => {
-      const where: Prisma.PostWhereInput = { userId: parent.id };
-      if (args.status) where.status = args.status;
+ User: {
+ posts: async (parent: { id: string }, args: { limit?: number; status?: PostStatus }, context: Context) => {
+ const where: Prisma.PostWhereInput = { userId: parent.id };
+ if (args.status) where.status = args.status;
 
-      const [posts, total] = await Promise.all([
-        context.prisma.post.findMany({
-          where,
-          take: args.limit ?? 10,
-          orderBy: { createdAt: 'desc' },
-        }),
-        context.prisma.post.count({ where }),
-      ]);
+ const [posts, total] = await Promise.all([
+ context.prisma.post.findMany({
+ where,
+ take: args.limit ?? 10,
+ orderBy: { createdAt: 'desc' },
+ }),
+ context.prisma.post.count({ where }),
+ ]);
 
-      return { posts, total };
-    },
-  },
+ return { posts, total };
+ },
+ },
 };
 ```
 
@@ -227,11 +227,11 @@ If you are writing the schema first and need resolver stubs, Copilot autocomplet
 // Copilot suggests:
 
 const resolvers = {
-  Query: {
-    user: async (_: unknown, { id }: { id: string }, context: Context) => {
-      return context.db.users.findOne({ id }); // or context.prisma.user.findUnique
-    },
-  },
+ Query: {
+ user: async (_: unknown, { id }: { id: string }, context: Context) => {
+ return context.db.users.findOne({ id }); // or context.prisma.user.findUnique
+ },
+ },
 };
 ```
 
@@ -246,8 +246,8 @@ For automatic REST-to-GraphQL wrapping (not full resolver generation), StepZen a
 ```yaml
 # StepZen: define REST endpoint in SDL
 type Query {
-  user(id: ID!): User
-    @rest(endpoint: "https://api.example.com/users/$id")
+ user(id: ID!): User
+ @rest(endpoint: "https://api.example.com/users/$id")
 }
 ```
 
@@ -269,27 +269,27 @@ REST APIs typically pass authentication via headers (`Authorization: Bearer toke
 ```typescript
 // REST handler (Express):
 app.get('/profile', authenticate, (req, res) => {
-  res.json({ userId: req.user.id, email: req.user.email });
+ res.json({ userId: req.user.id, email: req.user.email });
 });
 
 // GraphQL resolver equivalent (Claude generates this correctly):
 const resolvers = {
-  Query: {
-    profile: async (_: unknown, __: unknown, context: Context) => {
-      if (!context.user) throw new AuthenticationError('Not authenticated');
-      return {
-        userId: context.user.id,
-        email: context.user.email,
-      };
-    },
-  },
+ Query: {
+ profile: async (_: unknown, __: unknown, context: Context) => {
+ if (!context.user) throw new AuthenticationError('Not authenticated');
+ return {
+ userId: context.user.id,
+ email: context.user.email,
+ };
+ },
+ },
 };
 
 // Context builder (needs to be set up separately):
 const context = ({ req }: { req: Request }): Context => {
-  const token = req.headers.authorization?.replace('Bearer ', '');
-  const user = token ? verifyToken(token) : null;
-  return { user, prisma };
+ const token = req.headers.authorization?.replace('Bearer ', '');
+ const user = token ? verifyToken(token) : null;
+ return { user, prisma };
 };
 ```
 
@@ -318,15 +318,15 @@ import DataLoader from 'dataloader';
 
 // In context setup:
 postsLoader: new DataLoader(async (userIds: readonly string[]) => {
-  const posts = await prisma.post.findMany({
-    where: { userId: { in: [...userIds] } },
-  });
-  return userIds.map(id => posts.filter(p => p.userId === id));
+ const posts = await prisma.post.findMany({
+ where: { userId: { in: [...userIds] } },
+ });
+ return userIds.map(id => posts.filter(p => p.userId === id));
 }),
 
 // In resolver:
 User: {
-  posts: (parent, args, context) => context.postsLoader.load(parent.id),
+ posts: (parent, args, context) => context.postsLoader.load(parent.id),
 }
 ```
 
@@ -473,6 +473,7 @@ Claude avoids:
 - [AI Tools for Writing Jest Tests for Graphql Resolvers](/ai-tools-for-writing-jest-tests-for-graphql-resolvers-with-dataloader-batching/)
 - [Best AI Tool for Converting MySQL Queries to Postgres](/best-ai-tool-for-converting-mysql-queries-to-postgres-compat/)
 - [Best AI Tools for Writing GraphQL Resolvers 2026](/best-ai-tools-for-writing-graphql-resolvers-2026/)
+- [AI Tools for Converting Raw JSON API Responses into Clean](/ai-tools-compared/ai-tools-for-converting-raw-json-api-responses-into-clean-pandas-dataframes/)
 
 ---
 
