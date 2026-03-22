@@ -30,6 +30,15 @@ tags: [ai-tools-compared, artificial-intelligence]---
 
 Server Components fundamentally changed how developers build Next.js applications, and AI coding assistants must adapt to this model. When you write TypeScript code for Server Components, the rules differ significantly from traditional React client-side code. This evaluation tests leading AI assistants on their accuracy when generating, debugging, and maintaining Server Components in 2026.
 
+## Key Takeaways
+
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **Does TypeScript offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+- **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+- **Each test used a**: realistic Next.js 14+ project structure with TypeScript strict mode enabled.
+- **It correctly identifies when**: components must be server-only, avoids suggesting client-side hooks inappropriately, and understands the `use server` directive syntax.
+
 ## Why Server Components Challenge AI Assistants
 
 TypeScript Server Components introduce constraints that confuse many AI assistants. You cannot use browser APIs, hooks behave differently, and data fetching happens directly in components without `useEffect`. The `use server` directive creates entirely new syntax patterns that assistants must recognize.

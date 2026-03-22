@@ -27,7 +27,17 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 Use Claude Code for Fresh development if you need assistants that understand Deno's URL-based imports and Fresh's island components architecture. Fresh requires understanding Deno's module system and the framework's conventions that differ from Node.js frameworks—most general-purpose AI assistants struggle with these patterns, making specialized tool selection important for productive Fresh development.
+
+## Key Takeaways
+
+- **Do these recommendations work**: for small teams? Yes, most practices scale down well.
+- **Copilot works within GitHub's ecosystem**: making it convenient if your project uses GitHub Actions for deployment.
+- **For IDE-heavy workflows**: Cursor provides the most integrated experience.
+- **Use Claude Code for**: Fresh development if you need assistants that understand Deno's URL-based imports and Fresh's island components architecture.
+- **The best assistants also**: recognize Fresh-specific patterns like handler functions, middleware using the Fresh middleware interface, and state management through the context object.
+- **When generating Fresh route handlers**: it correctly uses URL-based imports and understands the Handlers type from Fresh's server module.
 
 ## What Developers Need for Deno Fresh Projects
 
