@@ -193,7 +193,7 @@ Gemini excels at connecting OAuth2 concepts with Google-specific implementations
 ### Start with Flow Visualization
 
 
-Begin each OAuth2 topic by requesting a sequence diagram. Ask the AI to show the exact HTTP methods, endpoints, and query parameters for each step. This builds a mental model before diving into code.
+Begin each OAuth2 topic by requesting a sequence diagram. Ask the AI to show the exact HTTP methods, endpoints, and query parameters for each step. This builds a mental model before examining code.
 
 
 **Effective prompt:**

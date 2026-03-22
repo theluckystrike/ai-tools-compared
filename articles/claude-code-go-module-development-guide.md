@@ -21,7 +21,7 @@ Claude Code transforms Go module development by providing intelligent assistance
 ## Setting Up Your Go Environment
 
 
-Before diving into Claude Code for Go development, ensure your environment is properly configured. You'll need Go installed (preferably version 1.21 or later), and Claude Code set up on your system. The combination of these tools creates a powerful development environment that understands both Go semantics and your specific codebase.
+Before examining Claude Code for Go development, ensure your environment is properly configured. You'll need Go installed (preferably version 1.21 or later), and Claude Code set up on your system. The combination of these tools creates a powerful development environment that understands both Go semantics and your specific codebase.
 
 
 Start by verifying your Go installation:

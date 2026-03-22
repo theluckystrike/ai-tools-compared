@@ -60,7 +60,7 @@ When Cursor detects this file, it automatically incorporates these guidelines in
 ## Advanced Rule Configuration
 
 
-Beyond basic style guidelines, you can define more sophisticated rules that address architectural decisions and project-specific patterns. This is particularly valuable for teams working with specific frameworks or coding paradigms.
+Beyond basic style guidelines, you can define more sophisticated rules that address architectural decisions and project-specific patterns. This is particularly valuable for teams working with specific frameworks or coding approaches.
 
 
 Consider a React project with TypeScript:

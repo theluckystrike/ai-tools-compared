@@ -184,4 +184,11 @@ AI tools have made career roadmap creation significantly more accessible and per
 
 The best approach combines AI-generated roadmaps with human guidance. Use these tools to generate options and structure your thinking, then validate recommendations through mentorship, job market research, and practical experience.
 
+
+## Related Articles
+
+- [AI Tools for Creating Automated Release Changelog](/ai-tools-for-creating-automated-release-changelog-from-conve/)
+- [AI Tools for Creating Dbt Documentation Blocks](/ai-tools-for-creating-dbt-documentation-blocks-from-column-level-lineage-analysis/)
+- [AI Tools for Creating dbt Model Definitions from Raw](/ai-tools-for-creating-dbt-model-definitions-from-raw-databas/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

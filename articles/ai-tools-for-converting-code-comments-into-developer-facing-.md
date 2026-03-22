@@ -348,7 +348,7 @@ AI expands the good comments into professional documentation. It cannot rescue p
 For existing code with sparse documentation:
 
 ```python
-# Strategy 1: Have AI write comprehensive comments first
+# Strategy 1: Have AI write complete comments first
 def legacy_function(a, b, c):
     result = a + (b * c)
     if result > 100:

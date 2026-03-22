@@ -76,7 +76,7 @@ I have a bug report about order total calculation. Here's the bug:
 Here's our order calculation code:
 [paste Order.ts and related code]
 
-Generate a comprehensive Jest test suite that:
+Generate a detailed Jest test suite that:
 1. Tests qty 999 and 1000 boundary cases
 2. Tests edge cases: 10000 qty, float quantities, negative quantities (should reject)
 3. Tests that total calculation never overflows
@@ -225,7 +225,7 @@ async function generateTest(bugReport, sourceCode) {
     messages: [
       {
         role: "user",
-        content: `Generate a comprehensive Jest regression test from this bug report:\n\n${bugReport}\n\nRelevant source code:\n\`\`\`\n${sourceCode}\n\`\`\`\n\nCreate test cases that prevent this bug from recurring. Include boundary conditions and edge cases.`,
+        content: `Generate a full Jest regression test from this bug report:\n\n${bugReport}\n\nRelevant source code:\n\`\`\`\n${sourceCode}\n\`\`\`\n\nCreate test cases that prevent this bug from recurring. Include boundary conditions and edge cases.`,
       },
     ],
   });

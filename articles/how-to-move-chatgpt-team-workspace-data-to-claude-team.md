@@ -255,7 +255,7 @@ class ChatGPTExporter:
         except Exception as e:
             print(f"Error exporting conversations: {e}")
 
-        # Save comprehensive export
+        # Save thorough export
         with open(f"{output_dir}/all_conversations.json", "w") as f:
             json.dump(
                 {

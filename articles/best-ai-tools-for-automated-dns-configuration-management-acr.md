@@ -206,7 +206,7 @@ Crossplane excels when you need consistent DNS semantics across providers while 
 ## Tool Comparison: Choosing the Right Fit
 
 
-The DNS automation landscape has several mature options. Understanding their trade-offs helps you select the best tool for your context:
+The DNS automation world has several mature options. Understanding their trade-offs helps you select the best tool for your context:
 
 | Tool | Best For | Provider Support | AI/ML Features | Kubernetes Native |
 |------|----------|-----------------|----------------|-------------------|
@@ -277,7 +277,7 @@ This pipeline enforces a validate-then-plan-then-apply workflow, mirroring Terra
 ## Monitoring DNS Propagation After Automated Changes
 
 
-Even with robust validation, DNS propagation requires active monitoring. A simple Python script using the `dnspython` library can poll propagation status across multiple public resolvers:
+Even with strong validation, DNS propagation requires active monitoring. A simple Python script using the `dnspython` library can poll propagation status across multiple public resolvers:
 
 
 ```python

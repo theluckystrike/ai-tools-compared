@@ -218,7 +218,7 @@ def user_factory(db_session):
 ```python
 @pytest.fixture
 def users_with_different_states(db_session):
-    """Create users in various states for comprehensive testing."""
+    """Create users in various states for detailed testing."""
     users = [
         User(email="active@example.com", username="active", status="active"),
         User(email="inactive@example.com", username="inactive", status="inactive"),

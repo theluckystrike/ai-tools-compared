@@ -222,7 +222,7 @@ Query execution through MCP maintains your database's existing performance chara
 
 ## Advanced MCP Configurations
 
-For organizations with complex database landscapes, MCP supports multiple simultaneous database connections:
+For organizations with complex database fields, MCP supports multiple simultaneous database connections:
 
 ```json
 {
@@ -392,7 +392,7 @@ rows without an index on the join column. Create this index:
 CREATE INDEX idx_orders_customer ON orders(customer_id);"
 ```
 
-MCP empowers the AI to understand cardinality, indexing implications, and query execution implications that generic AI cannot determine.
+MCP helps the AI to understand cardinality, indexing implications, and query execution implications that generic AI cannot determine.
 
 Setting up MCP with local database schema information transforms your AI assistant from a general-purpose chatbot into a database-aware tool capable of generating accurate queries, exploring your data meaningfully, and helping you understand your data structures more effectively.
 

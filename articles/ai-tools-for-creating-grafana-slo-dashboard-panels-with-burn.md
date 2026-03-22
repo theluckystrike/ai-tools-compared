@@ -24,7 +24,7 @@ AI tools can generate complex PromQL queries and Grafana panel configurations fo
 ## Understanding SLO Burn Rate Calculations
 
 
-Before diving into AI-assisted creation, let's establish what burn rate panels need. Burn rate represents how quickly your error budget is being consumed. A burn rate of 100% means you're using your error budget at the expected rate. Values above 100% indicate faster consumption (warning sign), while values below 100% mean you're under-consuming your budget (potentially too conservative with SLO targets).
+Before looking at AI-assisted creation, let's establish what burn rate panels need. Burn rate represents how quickly your error budget is being consumed. A burn rate of 100% means you're using your error budget at the expected rate. Values above 100% indicate faster consumption (warning sign), while values below 100% mean you're under-consuming your budget (potentially too conservative with SLO targets).
 
 
 The basic burn rate formula compares error rates over two windows:

@@ -210,7 +210,7 @@ Voice characteristics:
 - Avoid: Marketing jargon, excessive superlatives, internal acronyms
 - Prefer: Clear, direct language that explains value to customers
 - Brand personality: Innovative, reliable, customer-focused
-- Word choices: Use "enables" instead of "empowers", "customers" instead of "users"
+- Word choices: Use "enables" instead of "helps", "customers" instead of "users"
 """
 
 def generate_consistent_release(product_info, voice_guide=COMPANY_VOICE_GUIDE):

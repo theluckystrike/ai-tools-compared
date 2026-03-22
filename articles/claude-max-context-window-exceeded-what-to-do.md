@@ -3,7 +3,7 @@ layout: default
 title: "Claude Max Context Window Exceeded: What"
 description: "A practical troubleshooting guide for developers facing the Claude Max context window exceeded error. Learn step-by-step fixes and diagnostic tips"
 date: 2026-03-15
-last_modified_at: 2026-03-15
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /claude-max-context-window-exceeded-what-to-do/
 reviewed: true
@@ -16,9 +16,6 @@ tags: [ai-tools-compared, claude-ai]
 
 
 {% raw %}
-
-
-# Claude Max Context Window Exceeded: What To Do
 
 
 Use the `/clear` command in Claude Code to reset conversation history without ending your session. If that is not enough, start a fresh conversation—copy any crucial code snippets first and provide a brief summary of your current task. To prevent hitting the limit again, use file references instead of pasting code (let Claude read files directly), break large tasks into focused requests, and create a `CLAUDE.md` file for persistent project context that loads automatically without using conversation tokens.

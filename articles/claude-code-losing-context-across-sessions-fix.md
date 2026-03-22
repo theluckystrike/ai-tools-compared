@@ -3,7 +3,7 @@ layout: default
 title: "Claude Code Losing Context Across Sessions"
 description: "Troubleshooting guide for Claude Code losing context between sessions. Step-by-step fixes for developers and power users"
 date: 2026-03-15
-last_modified_at: 2026-03-15
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /claude-code-losing-context-across-sessions-fix/
 reviewed: true
@@ -13,9 +13,6 @@ intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, troubleshooting, claude-ai]
 ---
-
-
-# Claude Code Losing Context Across Sessions Fix
 
 
 To fix Claude Code losing context across sessions, enable session persistence by running `claude --resume` or setting `"persist": true` and `"autoResume": true` in `~/.claude/settings.json`. Also verify that history files in `~/.claude/history/` have proper read-write permissions with `chmod -R u+rw ~/.claude/`. For ongoing projects, maintain a context file at `.claude/context.md` and load it at startup with `claude --context.claude/context.md`.

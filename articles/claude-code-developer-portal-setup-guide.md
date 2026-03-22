@@ -346,7 +346,7 @@ For portals serving many products or APIs, consider dynamic generation strategie
 // Generate docs on-demand for new endpoints
 async function generateEndpointDocs(apiSpec) {
   const prompt = `
-    Generate comprehensive documentation for this API endpoint:
+    Generate thorough documentation for this API endpoint:
     ${JSON.stringify(apiSpec, null, 2)}
 
     Include:

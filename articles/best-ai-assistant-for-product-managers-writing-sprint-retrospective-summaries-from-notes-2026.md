@@ -299,7 +299,7 @@ BUD (potential): New design system components could accelerate future work
 AI prompt:
 ```
 "Analyze these Rose-Thorn-Bud notes. For the thorns, generate root cause
-hypotheses. For the buds, outline how to leverage them. Create a one-page
+hypotheses. For the buds, outline how to apply them. Create a one-page
 action plan for next sprint."
 ```
 

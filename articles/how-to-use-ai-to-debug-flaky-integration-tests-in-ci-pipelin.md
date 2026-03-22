@@ -27,7 +27,7 @@ This guide demonstrates practical techniques for using AI to debug flaky integra
 ## Understanding Flaky Test Patterns
 
 
-Before diving into AI-assisted debugging, recognize that flaky tests typically fall into several categories:
+Before looking at AI-assisted debugging, recognize that flaky tests typically fall into several categories:
 
 
 - Timing-dependent failures: Tests assume operations complete within specific timeframes

@@ -21,7 +21,7 @@ If you have been using WindSurf's AI rules configuration and want to switch to C
 ## Understanding the Two Rule Systems
 
 
-Before diving into the migration process, it helps to understand how WindSurf and Cursor handle AI rules differently. WindSurf uses a JSON-based configuration system that defines AI behavior through rules files, while Cursor employs a YAML-based approach called.cursorrules that offers more flexibility and readability.
+Before examining the migration process, it helps to understand how WindSurf and Cursor handle AI rules differently. WindSurf uses a JSON-based configuration system that defines AI behavior through rules files, while Cursor employs a YAML-based approach called.cursorrules that offers more flexibility and readability.
 
 
 WindSurf rules typically live in a `.windsurfrules` file at your project root and define behavior through a structured JSON format. These rules control how the AI assistant interacts with your code, what context it considers, and what constraints it should follow. Cursor's approach, on the other hand, uses `.cursorrules` files that can include YAML front matter followed by Markdown content, allowing for more natural language explanations alongside structured configuration.

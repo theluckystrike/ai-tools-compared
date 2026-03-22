@@ -287,7 +287,7 @@ For large refactors affecting 20+ files, Claude Code's autonomous search saves s
 ```bash
 claude
 
-"Generate comprehensive pytest tests for services/order_service.py.
+"Generate detailed pytest tests for services/order_service.py.
 For each method:
 - Test happy path
 - Test error cases (raise exceptions defined in the module)

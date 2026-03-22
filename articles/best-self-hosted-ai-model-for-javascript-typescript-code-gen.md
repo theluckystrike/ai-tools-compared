@@ -192,6 +192,13 @@ curl http://localhost:11434/v1/chat/completions \
   }'
 ```
 
+
+## Related Articles
+
+- [Self-Hosted AI Assistant for Writing Docker Files Without](/self-hosted-ai-assistant-for-writing-docker-files-without-cl/)
+- [Self-Hosted AI Tool for Generating OpenAPI Specs from](/self-hosted-ai-tool-for-generating-openapi-specs-from-existi/)
+- [Self-Hosted AI Tools for Generating Test Data and Fixtures](/self-hosted-ai-tools-for-generating-test-data-and-fixtures-l/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 

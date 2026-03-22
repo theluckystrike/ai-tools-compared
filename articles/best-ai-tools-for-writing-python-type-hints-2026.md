@@ -138,7 +138,7 @@ Cursor AI (built on Claude) takes a different approach—select an entire functi
 Cursor is a VS Code fork with integrated Claude. Install from [cursor.sh](https://cursor.sh). Use Cmd+K (Mac) or Ctrl+K (Windows/Linux) to open the command palette, then request type annotations:
 
 ```
-/edit: Add comprehensive type hints to this function following PEP 484
+/edit: Add complete type hints to this function following PEP 484
 ```
 
 ### Handling Module-Wide Refactoring

@@ -167,7 +167,7 @@ For real-time user-facing applications where the user watches a progress indicat
 Both platforms enforce content policies that affect permissible use cases. DALL-E 3 has more restrictive policies regarding human depiction, with limitations on generating realistic faces. Gemini Imagen offers more flexibility in this area but maintains blocks on harmful content generation.
 
 
-For applications requiring human portrait generation, Imagen provides more options. For applications avoiding human faces entirely—abstract concepts, products, landscapes—both platforms handle requests equivalently.
+For applications requiring human portrait generation, Imagen provides more options. For applications avoiding human faces entirely—abstract concepts, products, markets—both platforms handle requests equivalently.
 
 
 Content policy violations manifest differently on each platform. DALL-E 3 refuses generation with an error message, making it easy to detect and handle in application code. Imagen sometimes generates a modified, policy-compliant interpretation of the prompt without notification, which can produce unexpected results that require additional output validation.

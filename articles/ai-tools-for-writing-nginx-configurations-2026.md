@@ -217,7 +217,7 @@ At scale (20+ configs/month), Claude's accuracy advantage saves more time than C
 4. If you need tweaks, ask Copilot or Cursor (cheaper iteration).
 5. Document your customizations for future reference.
 
-The tooling landscape here is mature. Claude is fastest to production-ready config; Copilot saves money if you're patient with iteration. Cursor is the middle ground if you spend most of your time in an editor.
+The tooling space here is mature. Claude is fastest to production-ready config; Copilot saves money if you're patient with iteration. Cursor is the middle ground if you spend most of your time in an editor.
 
 ## Advanced Scenarios: AI-Assisted Tuning
 

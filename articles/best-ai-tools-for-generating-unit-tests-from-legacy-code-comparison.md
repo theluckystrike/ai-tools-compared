@@ -194,7 +194,7 @@ You'd need to manually write 10-15 test methods to cover all paths.
 You write an instruction in chat:
 
 ```
-Generate comprehensive tests for OrderProcessor. Cover:
+Generate detailed tests for OrderProcessor. Cover:
 - Null order handling
 - Payment success path
 - Payment failure path
@@ -260,7 +260,7 @@ public class OrderProcessorTest {
 You paste the entire class and ask:
 
 ```
-Analyze this OrderProcessor class and generate a comprehensive test suite.
+Analyze this OrderProcessor class and generate a detailed test suite.
 Identify all code paths, edge cases, and potential bugs. Include tests
 for mocking external dependencies and verify state transitions.
 ```

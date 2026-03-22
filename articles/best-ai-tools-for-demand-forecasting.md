@@ -158,7 +158,7 @@ The neural network backbone lets NeuralProphet learn more complex temporal depen
 Google Cloud's AutoML Time Series offers automatic model selection and feature engineering. You provide your data, and Google's infrastructure handles the rest—including building ensemble models that combine multiple approaches.
 
 
-This service suits teams that want forecasts without diving into algorithm details. The tradeoff is less visibility into how predictions are generated and higher costs for repeated forecasting jobs.
+This service suits teams that want forecasts without exploring algorithm details. The tradeoff is less visibility into how predictions are generated and higher costs for repeated forecasting jobs.
 
 
 ## Choosing the Right Tool

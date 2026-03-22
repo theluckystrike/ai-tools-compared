@@ -84,7 +84,7 @@ OpenCode delivers an AI coding assistant experience similar to Cursor or Cody, w
 **Strengths:**
 - Modern chat interface for code interactions
 - Multi-model support including open source LLMs
-- Seamless editor integrations
+- Simple editor integrations
 - Emphasis on privacy and local processing
 
 **Quick Start:**
@@ -200,6 +200,13 @@ Consider these factors when selecting an alternative to Cody:
 3. **Editor integration**: Verify your preferred IDE supports the tool. All options listed work with VS Code, but JetBrains support varies.
 
 4. **Model preferences**: Some tools lock you to specific models, while others offer flexibility to run any compatible LLM.
+
+
+## Related Articles
+
+- [Continue Dev Free vs Cody Free: Open Source AI Comparison](/continue-dev-free-vs-cody-free-open-source-ai-comparison/)
+- [Copilot Code Referencing Feature: How It Handles Open Source](/copilot-code-referencing-feature-how-it-handles-open-source-/)
+- [Fine Tune Open Source Code Models for Your Codebase](/fine-tune-open-source-code-models-for-your-codebase-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

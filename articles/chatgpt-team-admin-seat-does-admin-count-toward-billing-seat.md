@@ -265,7 +265,7 @@ The optimal ChatGPT Team configuration depends on your actual usage pattern:
 
 **Small Teams (2-5 people):** Minimum seats (2-5) at annual billing ($25/month = $300/year per seat). Total: $600-1,500 annually. At this scale, the team features barely break even compared to individual Plus subscriptions, but shared conversation history and admin controls provide value for coordinated work.
 
-**Growing Teams (6-15 people):** Groups of 8-10 represent a natural scaling point where team features become genuinely valuable. Shared custom GPTs reduce duplication of effort, and conversation sharing across team members streamlines collaboration. Cost: $2,400-3,600 annually. Annual billing saves ~13% vs. monthly.
+**Growing Teams (6-15 people):** Groups of 8-10 represent a natural scaling point where team features become genuinely valuable. Shared custom GPTs reduce duplication of effort, and conversation sharing across team members simplifies collaboration. Cost: $2,400-3,600 annually. Annual billing saves ~13% vs. monthly.
 
 **Departments (20-50 people):** Large departments justify ChatGPT Team investment through reduced duplicate subscriptions (individual Plus × 50 = $12,000/year vs. ChatGPT Team × 50 = $7,500/year annual). Savings exceed $4,500 annually.
 

@@ -217,7 +217,7 @@ I have a React form component that:
 - Handles network errors gracefully
 - Disables the button during submission
 
-Write comprehensive Jest tests covering:
+Write thorough Jest tests covering:
 1. Valid submission flow
 2. Invalid email states
 3. Network error handling

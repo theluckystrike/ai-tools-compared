@@ -3,7 +3,7 @@ layout: default
 title: "How to Use AI to Create Onboarding Documentation for New"
 description: "A practical guide for developers and power users using AI to build onboarding documentation that accelerates new team member"
 date: 2026-03-16
-last_modified_at: 2026-03-16
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /how-to-use-ai-to-create-onboarding-documentation-for-new-tea/
 categories: [guides]
@@ -235,7 +235,7 @@ curl http://localhost:3000/health
 Expected response: `{"status":"healthy"}`
 
 ## Next Steps
-- Read [Code Review Guidelines](link)
+- Read Code Review Guidelines
 - Join #engineering-daily Slack channel
 - Schedule pairing session with team lead
 ```

@@ -139,7 +139,7 @@ A graduate student working on their dissertation chapter uses ChatGPT to help re
 ### Client Report Automation
 
 
-An economic consulting firm serving corporate clients uses AI tools to maintain their report template library. They have created custom prompts for their standard report formats—market entry analyses, competitive landscape assessments, regulatory impact evaluations. When a new engagement begins, their team generates a tailored outline in minutes rather than starting from blank documents each time.
+An economic consulting firm serving corporate clients uses AI tools to maintain their report template library. They have created custom prompts for their standard report formats—market entry analyses, competitive space assessments, regulatory impact evaluations. When a new engagement begins, their team generates a tailored outline in minutes rather than starting from blank documents each time.
 
 
 ## Recommendations by Report Type

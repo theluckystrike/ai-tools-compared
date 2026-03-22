@@ -3,7 +3,7 @@ layout: default
 title: "Claude vs ChatGPT for Refactoring Legacy Java Code"
 description: "A practical comparison of Claude and ChatGPT for converting legacy Java code to Kotlin. See real code examples and performance benchmarks"
 date: 2026-03-16
-last_modified_at: 2026-03-16
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/
 categories: [guides]
@@ -17,8 +17,6 @@ voice-checked: true
 
 {% raw %}
 
-# Claude vs ChatGPT for Refactoring Legacy Java Code to Kotlin
-
 
 This guide compares the strengths and weaknesses of each tool for this specific task. Choose the tool that best matches your workflow, budget, and technical requirements.
 
@@ -30,7 +28,6 @@ Legacy Java applications often contain verbose patterns, outdated idioms, and ye
 
 
 The scope of a Java-to-Kotlin migration is often underestimated. Beyond syntactic translation, idiomatic Kotlin requires rethinking how you handle nullability, collections, and concurrency. A tool that only translates syntax without understanding idioms produces Kotlin that looks like Java written in a different language—technically valid but missing the point. The quality of AI assistance depends on how deeply the model understands Kotlin's design philosophy, not just its grammar.
-
 
 
 ## Quick Comparison

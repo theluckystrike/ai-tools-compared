@@ -224,7 +224,7 @@ Chat-based mock generation:
 
 ```
 User prompt:
-"Generate comprehensive mocks for the DatabaseConnection interface with methods:
+"Generate complete mocks for the DatabaseConnection interface with methods:
 execute(query), executeAsync(query), transaction(callback), and close().
 Include success paths and error cases. Use Jest with TypeScript."
 

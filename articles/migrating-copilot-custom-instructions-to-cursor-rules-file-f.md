@@ -274,7 +274,7 @@ directoryRules:
         rule: |
           Utility functions should:
           - Have single, well-defined purpose
-          - Include comprehensive docstrings
+          - Include detailed docstrings
           - Be pure functions when possible
           - Handle edge cases explicitly
           - Include examples in docstrings

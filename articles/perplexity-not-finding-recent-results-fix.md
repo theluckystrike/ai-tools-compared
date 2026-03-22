@@ -3,7 +3,7 @@ layout: default
 title: "Perplexity Not Finding Recent Results"
 description: "A practical troubleshooting guide for developers and power users experiencing issues with Perplexity not returning recent search results. Learn"
 date: 2026-03-15
-last_modified_at: 2026-03-15
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /perplexity-not-finding-recent-results-fix/
 categories: [guides]
@@ -18,16 +18,13 @@ tags: [ai-tools-compared, troubleshooting]
 {% raw %}
 
 
-# Perplexity Not Finding Recent Results Fix
-
-
 Perplexity has become a go-to tool for developers and researchers who need AI-powered search with citations. However, users sometimes encounter issues where the tool fails to return recent results or provides outdated information. This guide covers the most common causes and practical solutions.
 
 
 ## Understanding How Perplexity Sources Information
 
 
-Before diving into fixes, it helps to understand how Perplexity retrieves information. The tool pulls data from multiple sources including web search results, academic papers, and user-uploaded documents. When results seem outdated, the issue typically stems from search scope settings, model knowledge cutoff, indexing delays, or account tier limitations.
+Before exploring fixes, it helps to understand how Perplexity retrieves information. The tool pulls data from multiple sources including web search results, academic papers, and user-uploaded documents. When results seem outdated, the issue typically stems from search scope settings, model knowledge cutoff, indexing delays, or account tier limitations.
 
 
 ## Common Causes and Solutions

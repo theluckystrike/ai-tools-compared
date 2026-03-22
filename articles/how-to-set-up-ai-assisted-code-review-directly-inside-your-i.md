@@ -286,7 +286,7 @@ For teams wanting full control, build a custom pipeline using the above tools. C
 
 ```bash
 #!/bin/bash
-# ai-review.sh - Run comprehensive AI code review
+# ai-review.sh - Run thorough AI code review
 
 echo "Running AI Code Review..."
 echo "========================"
@@ -317,7 +317,7 @@ chmod +x ai-review.sh
 
 VS Code-based tools dominate the AI review space, but JetBrains users are not without options. The GitHub Copilot plugin for IntelliJ, WebStorm, and PyCharm provides the same chat-based review through the Copilot Chat panel. Open any file, select code, and press `Alt+Enter` to access the Copilot context menu with review options.
 
-For more structured reviews in JetBrains, install the HTTP Client plugin and create a scratch file that posts to the Anthropic or OpenAI API with your file content. While less seamless than a dedicated extension, it keeps your review prompts version-controlled and reusable across the team.
+For more structured reviews in JetBrains, install the HTTP Client plugin and create a scratch file that posts to the Anthropic or OpenAI API with your file content. While less smooth than a dedicated extension, it keeps your review prompts version-controlled and reusable across the team.
 
 Teams using JetBrains Gateway for remote development can pipe review requests through their gateway connection, centralizing AI calls on the server side rather than each developer's machine. This approach also makes it easier to enforce DLP policies by controlling outbound API traffic at a single point.
 

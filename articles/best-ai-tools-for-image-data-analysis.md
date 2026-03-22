@@ -106,7 +106,7 @@ YOLO offers excellent API design, pretrained models, and support for multiple ta
 ### Roboflow
 
 
-Roboflow provides an end-to-end platform covering annotation, preprocessing, model training, and deployment. Its strength lies in streamlining the entire computer vision workflow.
+Roboflow provides an end-to-end platform covering annotation, preprocessing, model training, and deployment. Its strength lies in smoothing out the entire computer vision workflow.
 
 
 ```python

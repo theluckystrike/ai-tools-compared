@@ -234,7 +234,7 @@ from typing import List, Dict
 from pathlib import Path
 
 class DalleExporter:
-    """Robust batch exporter with resume capability"""
+    """Strong batch exporter with resume capability"""
 
     def __init__(self, api_key: str, export_dir: str = "dalle_exports"):
         self.api_key = api_key

@@ -313,7 +313,7 @@ RUN trivy fs --exit-code 0 --severity MEDIUM . || true
 CMD ["./app"]
 ```
 
-Claude will add scanning steps; Copilot will suggest them in comments. The integration is not yet seamless, but AI tools push you toward security by default.
+Claude will add scanning steps; Copilot will suggest them in comments. The integration is not yet simple, but AI tools push you toward security by default.
 
 ## Common AI Mistakes to Watch For
 

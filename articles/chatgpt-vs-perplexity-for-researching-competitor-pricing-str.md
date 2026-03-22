@@ -305,7 +305,7 @@ strategy = intelligence.analyze_pricing_strategy(current)
 ```
 Perplexity: 50 competitors × 4 quarters × $0.005 = $1/month
 ChatGPT: 4 analyses/month × 2000 tokens × $0.01 = $0.08/month
-Total: ~$1.08/month for comprehensive competitive pricing data
+Total: ~$1.08/month for complete competitive pricing data
 ```
 
 ## Limitations to Consider

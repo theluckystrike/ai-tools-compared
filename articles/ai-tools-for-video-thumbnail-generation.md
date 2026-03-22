@@ -33,7 +33,7 @@ The choice depends on your workflow. If you have existing video content, intelli
 ## Tool Comparison: Which Approach Fits Your Needs
 
 
-Before diving into implementation, understanding the trade-offs between approaches helps you choose the right tool:
+Before looking at implementation, understanding the trade-offs between approaches helps you choose the right tool:
 
 
 | Approach | Quality | Speed | Cost | Control | Best For |

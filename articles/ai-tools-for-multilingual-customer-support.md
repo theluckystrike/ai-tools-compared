@@ -361,7 +361,7 @@ Use a quality confidence threshold. After generating a response, send the origin
 ## Future Directions
 
 
-The multilingual AI support landscape continues evolving. Emerging capabilities include:
+The multilingual AI support space continues evolving. Emerging capabilities include:
 
 
 - **Zero-shot translation** models that work without language-specific training

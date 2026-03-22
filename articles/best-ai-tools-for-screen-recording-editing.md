@@ -254,7 +254,7 @@ curl -X POST https://api.descript.com/v1/uploads \
 # (Descript handles this through its UI or API)
 ```
 
-This pipeline captures at the highest quality locally, applies non-destructive processing without uploading raw recordings, then leverages Descript's AI for transcript and caption generation.
+This pipeline captures at the highest quality locally, applies non-destructive processing without uploading raw recordings, then takes advantage of Descript's AI for transcript and caption generation.
 
 ## Troubleshooting Common Issues
 
@@ -323,7 +323,7 @@ Your screen recording tooling will evolve. Consider switching when:
 3. New regulatory requirements (GDPR, HIPAA) necessitate local processing
 4. Your team expands and collaboration features become critical
 
-Evaluate new tools annually. The screen recording landscape changes rapidly—tools that led in 2025 may lag in 2026.
+Evaluate new tools annually. The screen recording market changes rapidly—tools that led in 2025 may lag in 2026.
 
 
 ## Automating Your Screen Recording Workflow
@@ -350,7 +350,7 @@ descript export --format mp4 --add-captions --studio-sound final.mp4
 ```
 
 
-The screen recording and editing landscape in 2026 offers powerful AI capabilities for developers willing to invest in understanding the tooling. Start with the tool matching your primary use case, then expand your workflow as requirements grow.
+The screen recording and editing field in 2026 offers powerful AI capabilities for developers willing to invest in understanding the tooling. Start with the tool matching your primary use case, then expand your workflow as requirements grow.
 
 
 

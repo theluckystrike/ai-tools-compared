@@ -3,7 +3,7 @@ layout: default
 title: "AI Tools for Self Service Support Portals: Practical Guide"
 description: "A developer-focused guide to AI tools that enhance self-service support portals. Includes implementation examples, API integrations, and practical code"
 date: 2026-03-15
-last_modified_at: 2026-03-15
+last_modified_at: 2026-03-22
 author: theluckystrike
 permalink: /ai-tools-for-self-service-support-portals/
 categories: [guides]
@@ -13,9 +13,6 @@ score: 8
 reviewed: true
 tags: [ai-tools-compared, artificial-intelligence]
 ---
-
-
-# AI Tools for Self Service Support Portals: Practical Guide
 
 
 Self-service support portals have evolved beyond static FAQ pages. Modern implementations use AI to provide instant answers, automate ticket routing, and personalize user experiences. This guide covers practical implementations of AI tools for developers building or enhancing self-service support portals.

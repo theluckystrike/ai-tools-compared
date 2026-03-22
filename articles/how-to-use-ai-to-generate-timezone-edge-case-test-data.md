@@ -208,7 +208,7 @@ from zoneinfo import ZoneInfo
 # Fixture provides test data that runs every deployment
 @pytest.fixture
 def timezone_test_cases():
-    """Comprehensive timezone edge case test data."""
+    """Detailed timezone edge case test data."""
     return [
         {
             "name": "spring_forward_eastern",

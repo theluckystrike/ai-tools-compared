@@ -45,7 +45,7 @@ def generate_environment_checklist(app_type, dependencies, infrastructure):
     tailored to your specific stack and requirements.
     """
     prompt = f"""
-    Create a comprehensive test environment provisioning checklist for a {app_type} application.
+    Create a full test environment provisioning checklist for a {app_type} application.
 
     Tech stack components:
     - Backend: {dependencies['backend']}

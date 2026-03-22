@@ -20,7 +20,7 @@ voice-checked: true
 Choose Kling AI if you need longer video clips with strong motion coherence and flexible API controls. Choose Gen 3 if you prioritize rapid prototyping, image-to-video workflows, and tight integration with existing AI pipelines. Both platforms serve distinct developer needs—your choice depends on whether throughput or cinematic quality drives your application.
 
 
-## Understanding the Video Generation Landscape
+## Understanding the Video Generation Field
 
 
 AI video generation has moved beyond novelty into production-ready tooling. For developers building applications that incorporate generated video, understanding the technical differences between platforms determines project success. Kling AI and Gen 3 represent different approaches to text-to-video and image-to-video generation, each with distinct trade-offs for implementation.

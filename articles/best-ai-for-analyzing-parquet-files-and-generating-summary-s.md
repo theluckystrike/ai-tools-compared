@@ -84,7 +84,7 @@ import pandas as pd
 # Read Parquet file
 df = pd.read_parquet('analytics_data.parquet')
 
-# Comprehensive summary statistics
+# Thorough summary statistics
 def generate_summary(df):
     """Generate detailed summary statistics for a DataFrame."""
     numeric_cols = df.select_dtypes(include=['number']).columns
@@ -176,7 +176,7 @@ class ParquetAnalyzer:
         return self
 
     def summary(self):
-        """Generate comprehensive summary."""
+        """Generate detailed summary."""
         return {
             'shape': self.df.shape,
             'columns': list(self.df.columns),

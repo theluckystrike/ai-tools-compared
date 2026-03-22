@@ -32,7 +32,7 @@ The key advantage is that Claude Code understands both your codebase and Node.js
 ## Setting Up Your Profiling Environment
 
 
-Before diving into profiling, ensure your environment is properly configured. You'll need Node.js installed along with the built-in performance hooks and optionally, external profiling tools like 0x or clinic.js.
+Before exploring profiling, ensure your environment is properly configured. You'll need Node.js installed along with the built-in performance hooks and optionally, external profiling tools like 0x or clinic.js.
 
 
 Initialize a sample project to practice the profiling workflow:

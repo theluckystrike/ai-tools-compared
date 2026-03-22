@@ -223,7 +223,7 @@ Cursor inline chat excels at:
 Your choice between these tools depends on your workflow and project complexity. For smaller projects or when working with unfamiliar codebases where understanding existing patterns is less critical, Copilot's inline chat provides reliable assistance without the overhead of project indexing.
 
 
-For larger projects with established patterns, or when you need AI assistance that understands your full codebase, Cursor's approach offers meaningful advantages. The key is understanding what each tool prioritizes: Copilot focuses on the immediate context while Cursor considers the broader project landscape.
+For larger projects with established patterns, or when you need AI assistance that understands your full codebase, Cursor's approach offers meaningful advantages. The key is understanding what each tool prioritizes: Copilot focuses on the immediate context while Cursor considers the broader project field.
 
 
 Both tools continue to evolve, and the gap between them narrows as each platform adds new capabilities. The decision ultimately comes down to whether you value the predictability of focused context or the potential of project awareness.

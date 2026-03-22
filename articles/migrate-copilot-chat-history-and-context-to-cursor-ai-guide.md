@@ -30,7 +30,7 @@ The migration involves three main areas: exporting your Copilot conversation his
 ## Understanding What You Are Actually Migrating
 
 
-Before diving into the mechanics, it helps to be clear about what "migrating Copilot history" actually means in practice. There are three distinct categories of value stored in Copilot's history:
+Before exploring the mechanics, it helps to be clear about what "migrating Copilot history" actually means in practice. There are three distinct categories of value stored in Copilot's history:
 
 1. **Conversation transcripts** — The raw back-and-forth text between you and the AI. These are rarely useful to replay verbatim, but they contain decisions and explanations.
 2. **Project-specific context** — Architecture decisions, naming conventions, and constraints that came up in conversations and shaped how the codebase evolved.

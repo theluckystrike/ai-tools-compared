@@ -275,7 +275,7 @@ class CompetitiveIntelligenceDashboard:
             max_tokens=1000,
             messages=[{
                 "role": "user",
-                "content": f"""Analyze our competitive landscape and provide:
+                "content": f"""Analyze our competitive space and provide:
 1. Key competitive threats (top 3)
 2. Market opportunities we're missing
 3. Recommended immediate actions

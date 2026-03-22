@@ -84,7 +84,7 @@ This example shows how AI can generate a complete flow with appropriate decorato
 ## Creating Dagster Asset Definitions
 
 
-Dagster uses a different paradigm centered around assets and ops. When generating Dagster configurations, you describe your data assets and their dependencies:
+Dagster uses a different model centered around assets and ops. When generating Dagster configurations, you describe your data assets and their dependencies:
 
 
 **Prompt:** "Create Dagster assets for a data pipeline that ingests API data, validates the schema, and stores partitioned Parquet files in S3. Include a sensor for periodic execution."

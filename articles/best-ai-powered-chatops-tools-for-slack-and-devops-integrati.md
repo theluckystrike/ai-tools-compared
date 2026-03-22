@@ -23,7 +23,7 @@ AI-powered ChatOps tools have become essential for DevOps teams that want to aut
 ## What Makes a ChatOps Tool Effective for DevOps
 
 
-Before diving into specific tools, it helps to understand what capabilities matter most for DevOps integration:
+Before looking at specific tools, it helps to understand what capabilities matter most for DevOps integration:
 
 
 - Alert aggregation: The ability to consolidate alerts from multiple monitoring tools into actionable notifications

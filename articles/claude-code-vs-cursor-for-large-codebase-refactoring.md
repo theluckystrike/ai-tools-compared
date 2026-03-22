@@ -211,7 +211,7 @@ Output a summary of changed files."
 Refactor these authentication files:
 1. Move all JWT logic to a dedicated utils/jwt.ts file
 2. Update imports in routes.ts and middleware
-3. Add comprehensive JSDoc comments to all exported functions
+3. Add detailed JSDoc comments to all exported functions
 4. Replace magic strings (HS256, exp) with exported constants
 ```
 

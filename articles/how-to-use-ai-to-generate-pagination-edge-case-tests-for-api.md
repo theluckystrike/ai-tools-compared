@@ -24,7 +24,7 @@ Pagination is one of the most common yet overlooked areas in API testing. While 
 ## Understanding Pagination Edge Cases
 
 
-Before diving into AI-powered test generation, you need to understand what makes pagination testing challenging. APIs typically implement pagination using several approaches: offset-based, cursor-based, or page-based. Each approach has distinct edge cases that can break your API.
+Before looking at AI-powered test generation, you need to understand what makes pagination testing challenging. APIs typically implement pagination using several approaches: offset-based, cursor-based, or page-based. Each approach has distinct edge cases that can break your API.
 
 
 Common pagination edge cases include:

@@ -95,7 +95,7 @@ Calculate basic statistical metrics from input data.
 Claude's output includes parameter types, return values, and exceptions. The markdown structure follows common documentation conventions that developers recognize immediately.
 
 
-For the `DataProcessor` class, Claude correctly identified public versus private methods, noting that `_transform` is an internal implementation detail. This contextual understanding demonstrates Claude's strength in code comprehension. Claude also produces prose-style section introductions before diving into parameter details, which makes generated docs more approachable for readers encountering an API for the first time.
+For the `DataProcessor` class, Claude correctly identified public versus private methods, noting that `_transform` is an internal implementation detail. This contextual understanding demonstrates Claude's strength in code comprehension. Claude also produces prose-style section introductions before exploring parameter details, which makes generated docs more approachable for readers encountering an API for the first time.
 
 
 ## Gemini's Approach to Documentation

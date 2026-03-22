@@ -533,7 +533,7 @@ This creates 9 jobs automatically. Claude explains this clearly. Copilot sometim
 - Real-time validation and schema checking
 - Rapid iteration without context-switching
 - Catching YAML syntax errors immediately
-- Seamless workflow when writing configs locally
+- Easy workflow when writing configs locally
 
 
 ## Frequently Asked Questions

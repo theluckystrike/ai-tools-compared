@@ -197,7 +197,7 @@ For developers seeking higher-quality outputs, several advanced patterns improve
 const summaryPrompts = {
   brief: 'Provide a one-sentence summary of the main point.',
   standard: 'Summarize in 2-3 paragraphs covering the key points.',
-  detailed: 'Create a comprehensive summary with section-by-section breakdown.',
+  detailed: 'Create a thorough summary with section-by-section breakdown.',
   technical: 'Focus on technical details, specifications, and implementation specifics.'
 };
 
