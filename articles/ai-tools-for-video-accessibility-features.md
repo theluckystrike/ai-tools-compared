@@ -24,7 +24,7 @@ Video accessibility is a critical requirement for reaching broader audiences and
 Web Content Accessibility Guidelines (WCAG) 2.1 requires captions for pre-recorded audio content and sign language alternatives where practical. Beyond compliance, accessible video reaches approximately 15% of the global population with some form of hearing or visual impairment. AI automation reduces the cost barrier, enabling even small teams to provide accessible content.
 
 
-Manual captioning costs around $1-3 per minute, while AI-powered solutions reduce this to cents. Audio description—narrating visual content for blind users—traditionally requires professional voice talent but can now be partially automated with text-to-speech and scene description AI.
+Manual captioning costs around $1-3 per minute, while AI-powered solutions reduce this to cents. Audio description — narrating visual content for blind users — traditionally requires professional voice talent but can now be partially automated with text-to-speech and scene description AI.
 
 
 ## AI-Powered Captioning and Transcription
@@ -61,7 +61,7 @@ Generate SRT files and convert to WebVTT format for HTML5 video captions. The AP
 ### AssemblyAI
 
 
-AssemblyAI offers real-time transcription with speaker diarization—identifying different speakers in the video automatically.
+AssemblyAI offers real-time transcription with speaker diarization — identifying different speakers in the video automatically.
 
 
 ```python
@@ -98,6 +98,20 @@ def format_timestamp(ms):
 
 
 Speaker identification proves valuable for multi-person interviews, podcasts, and educational content.
+
+
+### Comparing Transcription Accuracy
+
+Accuracy varies significantly by audio quality and content type. In practice:
+
+| Tool | Clean audio | Accented speech | Technical vocabulary | Real-time support |
+|------|-------------|-----------------|----------------------|-------------------|
+| Whisper large-v3 | 95%+ | 90%+ | 88% | No (batch only) |
+| AssemblyAI | 94% | 91% | 90% | Yes |
+| Google Cloud STT | 93% | 89% | 92% | Yes |
+| AWS Transcribe | 92% | 87% | 91% | Yes |
+
+For pre-recorded content with good audio, all four tools produce captions accurate enough to pass WCAG 2.1 AA compliance with light editing. For live streams or content with heavy accents, AssemblyAI and Google Cloud STT are the better options.
 
 
 ## Audio Description Generation
@@ -143,6 +157,62 @@ for i, desc in enumerate(descriptions):
 
 
 For production systems, integrate with video analysis APIs to automatically generate scene descriptions, then use Polly to convert them to audio tracks that can be muxed into the video.
+
+### Scene Description with Claude Vision
+
+Claude's vision capability can generate descriptions of video frames, which you then convert to audio descriptions. This creates an end-to-end pipeline without manual annotation:
+
+```python
+import anthropic
+import base64
+import subprocess
+from pathlib import Path
+
+client = anthropic.Anthropic()
+
+def extract_frame(video_path: str, timestamp_secs: float, output_path: str):
+    """Extract a single frame from video at given timestamp."""
+    subprocess.run([
+        "ffmpeg", "-ss", str(timestamp_secs),
+        "-i", video_path, "-vframes", "1",
+        "-q:v", "2", output_path, "-y"
+    ], check=True, capture_output=True)
+
+def describe_frame_for_audio_description(image_path: str) -> str:
+    """Generate audio description for a video frame using Claude."""
+    with open(image_path, "rb") as f:
+        image_data = base64.standard_b64encode(f.read()).decode("utf-8")
+
+    response = client.messages.create(
+        model="claude-opus-4-6",
+        max_tokens=200,
+        messages=[{
+            "role": "user",
+            "content": [
+                {
+                    "type": "image",
+                    "source": {"type": "base64", "media_type": "image/jpeg", "data": image_data}
+                },
+                {
+                    "type": "text",
+                    "text": "Write a concise audio description of this video frame for a visually impaired viewer. Describe only what's visually significant — actions, scene changes, text on screen. Keep it under 20 words and present tense."
+                }
+            ]
+        }]
+    )
+    return response.content[0].text
+
+# Generate descriptions for key frames every 5 seconds
+video_path = "product_demo.mp4"
+for t in range(0, 120, 5):
+    frame_path = f"/tmp/frame_{t}.jpg"
+    extract_frame(video_path, t, frame_path)
+    description = describe_frame_for_audio_description(frame_path)
+    audio_path = generate_audio_description(description, f"desc_{t}.mp3")
+    print(f"t={t}s: {description}")
+```
+
+This pipeline works well for demo videos, tutorials, and informational content. Complex narrative content requires human audio description writers — AI-generated descriptions serve as a starting point for human review.
 
 
 ## Sign Language Generation
@@ -263,6 +333,46 @@ Build accessibility into your video pipeline systematically:
 
 Ensure your video player handles caption toggling, font size adjustments, and high contrast modes.
 
+## Caption Quality and Post-Processing
+
+Raw AI transcription output often needs cleanup before publication. Punctuation may be missing, proper nouns may be transcribed phonetically, and domain-specific terms get mangled. Build a post-processing step into your pipeline:
+
+```python
+import anthropic
+
+client = anthropic.Anthropic()
+
+def clean_captions(raw_vtt: str, context: str = "") -> str:
+    """Use Claude to clean up raw AI-generated captions."""
+    response = client.messages.create(
+        model="claude-opus-4-6",
+        max_tokens=4096,
+        messages=[{
+            "role": "user",
+            "content": f"""Clean up these auto-generated WebVTT captions.
+
+Rules:
+- Fix punctuation and sentence boundaries
+- Correct obvious transcription errors
+- Preserve all timestamps exactly — do not change them
+- Preserve the WEBVTT header
+- Do not add or remove caption blocks — only edit text content
+{f'- Domain context: {context}' if context else ''}
+
+Captions:
+{raw_vtt}"""
+        }]
+    )
+    return response.content[0].text
+
+# Example usage
+raw = open("raw_captions.vtt").read()
+cleaned = clean_captions(raw, context="Software engineering tutorial about Kubernetes")
+open("cleaned_captions.vtt", "w").write(cleaned)
+```
+
+Running captions through Claude after transcription reduces word error rate and fixes the most common problems: missing punctuation, spoken contractions, and technical term errors.
+
 
 ## Choosing the Right Tools
 
@@ -279,6 +389,8 @@ Select tools based on your specific requirements:
 - Neural voiceovers: Amazon Polly or Google Cloud Text-to-Speech for audio descriptions
 
 - Sign language requirements: SignAll or similar services for avatar generation
+
+- Caption post-processing: Claude for cleanup and correction after transcription
 
 
 Test with your actual content before production deployment. AI accuracy varies significantly based on audio quality, speaker accents, domain vocabulary, and visual complexity. Free tiers from most providers enable adequate testing before committing to a platform.
