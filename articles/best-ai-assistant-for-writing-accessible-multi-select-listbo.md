@@ -278,4 +278,11 @@ const GroupedListbox = ({ groups, selected }) => {
 **Disabled options**: Options can carry aria-disabled="true" rather than the native disabled attribute (which does not apply to li elements). Keyboard navigation should skip disabled options in most implementations—Arrow keys should jump past them rather than landing on an uninteractable item. Verify that AI-generated code implements this skip logic.
 {% endraw %}
 
+
+## Related Articles
+
+- [Best AI Assistant for Creating Playwright Tests for Multi](/best-ai-assistant-for-creating-playwright-tests-for-multi-st/)
+- [Best AI Assistant for Designers Writing User Journey Maps](/best-ai-assistant-for-designers-writing-user-journey-maps-fr/)
+- [Best AI Assistant for Product Managers Writing Sprint](/best-ai-assistant-for-product-managers-writing-sprint-retrospective-summaries-from-notes-2026/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -312,6 +312,13 @@ Implement AI-assisted golden image testing as part of your Flutter development w
 
 Track key metrics when implementing AI-assisted golden testing: number of tests written per day, time spent on test maintenance, regression detection rate, and false positive rate from golden file differences. These metrics help you quantify the productivity gains from AI assistance and justify continued investment in the approach.
 
+
+## Related Articles
+
+- [AI Tools for Writing Flutter Integration Tests with Patrol Framework](/ai-tools-for-writing-flutter-integration-tests-with-patrol-f/)
+- [AI Coding Tools for Writing Chainguard Image Supply Chain Security Policies](/ai-coding-tools-for-writing-chainguard-image-supply-chain-se/)
+- [AI Tools for Writing Jest Tests for Graphql Resolvers](/ai-tools-for-writing-jest-tests-for-graphql-resolvers-with-dataloader-batching/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

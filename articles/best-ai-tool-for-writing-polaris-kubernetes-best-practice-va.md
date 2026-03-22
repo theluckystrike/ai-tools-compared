@@ -221,4 +221,149 @@ For writing Polaris Kubernetes best practice validation configs in 2026, **Claud
 
 The key advantage of Claude is its ability to generate configs that match Polaris's exact schema on the first attempt, reducing the feedback loop that slows down other tools.
 
+## Integrating AI-Generated Polaris Configs into CI/CD Pipelines
+
+A Polaris validation config only provides value when it runs automatically on every code change. Integrating the generated configuration into your CI/CD pipeline ensures that Kubernetes manifests are validated before they reach production. Here is how to wire up AI-generated Polaris configs with common CI systems.
+
+**GitHub Actions integration**: Polaris ships as both a CLI tool and a Helm chart. The CLI approach works well in GitHub Actions workflows:
+
+```yaml
+name: Kubernetes Manifest Validation
+on:
+  pull_request:
+    paths:
+      - 'kubernetes/**'
+      - 'helm/**'
+
+jobs:
+  polaris-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Polaris
+        run: |
+          curl -L https://github.com/FairwindsOps/polaris/releases/latest/download/polaris_linux_amd64.tar.gz \
+            | tar xz
+          sudo mv polaris /usr/local/bin/
+
+      - name: Run Polaris audit
+        run: |
+          polaris audit \
+            --config polaris-config.yaml \
+            --audit-path kubernetes/ \
+            --format pretty \
+            --set-exit-code-on-danger \
+            --set-exit-code-below-score 80
+```
+
+The `--set-exit-code-on-danger` flag causes the pipeline to fail when any check with severity `error` fires. The `--set-exit-code-below-score` flag provides a score-based threshold. Adjust the threshold based on your team's current compliance baseline—starting at 70 and incrementing by 5 each sprint is a practical approach for brownfield clusters.
+
+**Custom check definitions**: Polaris supports custom checks written in Rego or JSON Schema. AI tools generate these well when given a specific policy to encode:
+
+```yaml
+# Custom check: ensure all deployments have a topology spread constraint
+checks:
+  topologySpreadMissing:
+    severity: warning
+    successMessage: Deployment uses topology spread constraints
+    failureMessage: Deployment missing topology spread constraints for zone distribution
+    category: Reliability
+    target: Deployment
+    schema:
+      '$schema': "http://json-schema.org/draft-07/schema"
+      type: object
+      required: ["spec"]
+      properties:
+        spec:
+          type: object
+          required: ["template"]
+          properties:
+            template:
+              type: object
+              required: ["spec"]
+              properties:
+                spec:
+                  type: object
+                  required: ["topologySpreadConstraints"]
+                  properties:
+                    topologySpreadConstraints:
+                      type: array
+                      minItems: 1
+```
+
+Prompt your AI tool with the specific Kubernetes resource field path you want to validate and ask it to produce a Polaris custom check schema. Claude and Cursor both produce syntactically correct JSON Schema definitions for most single-field validations.
+
+## Using Polaris with Admission Controllers
+
+For stronger enforcement, Polaris can operate as a Kubernetes admission controller via a webhook. In this mode, the policy config you generate with AI tools becomes a live gate that rejects non-compliant deployments at apply time rather than just reporting issues.
+
+Deploy Polaris as a webhook using its Helm chart:
+
+```bash
+# Add the Fairwinds chart repository
+helm repo add fairwinds-stable https://charts.fairwinds.com/stable
+helm repo update
+
+# Install Polaris as a validating webhook
+helm install polaris fairwinds-stable/polaris \
+  --namespace polaris \
+  --create-namespace \
+  --set webhook.enable=true \
+  --set dashboard.enable=true \
+  --set config.checks.cpuLimitsMissing.severity=error \
+  --set config.checks.memoryLimitsMissing.severity=error
+```
+
+To use a custom config file with the Helm deployment, create a ConfigMap from your AI-generated config and reference it:
+
+```bash
+# Create ConfigMap from your AI-generated polaris-config.yaml
+kubectl create configmap polaris-config \
+  --from-file=config.yaml=polaris-config.yaml \
+  -n polaris
+
+# Install with the custom config reference
+helm install polaris fairwinds-stable/polaris \
+  --namespace polaris \
+  --set webhook.enable=true \
+  --set configUrl=""
+```
+
+The webhook mode makes AI-generated Polaris configs permanent enforcement artifacts rather than optional audit reports. When you use Claude to generate a production-grade config, review the `severity: error` checks carefully before enabling webhook mode—any error-severity check will block deployments that fail it.
+
+## Maintaining and Evolving Your Polaris Config Over Time
+
+Kubernetes best practices evolve with each release, and your Polaris configuration should evolve with them. AI tools provide ongoing value by helping you update configs when new Polaris versions introduce additional checks, or when your organization's policies change.
+
+**Version tracking**: Pin your Polaris config to specific check IDs and use AI to generate a migration plan when upgrading Polaris versions:
+
+```bash
+# Audit current config against the new Polaris version
+polaris audit --config polaris-config.yaml --audit-path kubernetes/ --format json \
+  | jq '.Results[].PodResult.Results | to_entries[] | select(.value.Success == false) | .key' \
+  | sort -u
+```
+
+Paste this list of failing checks to Claude with the message: "These checks are failing in our Polaris audit output. For each one, suggest whether we should fix the Kubernetes manifests, adjust the check severity, or add an exemption, given that this is a production cluster with a 2-week deploy cycle."
+
+**Exemptions for legacy workloads**: Polaris supports resource-level exemptions for workloads that legitimately cannot meet a specific check. AI tools generate exemption annotations accurately:
+
+```yaml
+# Add to Deployment metadata to exempt a specific check
+metadata:
+  annotations:
+    polaris.fairwinds.com/cpuLimitsMissing-exempt: "true"
+    polaris.fairwinds.com/cpuLimitsMissing-exemptionReason: "Benchmark workload requires unbounded CPU"
+```
+
+Ask your AI tool to review your full Kubernetes manifest directory and identify which workloads might need exemptions, providing justification for each. This produces a starting point for a structured exemption review with your security and platform teams.
+
+
+## Related Articles
+
+- [AI Tools for Writing Kubernetes Helm Charts 2026](/ai-tools-for-writing-kubernetes-helm-charts-2026/)
+- [AI Tools for Writing Kubernetes Operators 2026](/ai-tools-for-writing-kubernetes-operators-2026/)
+- [Best AI Tool for Doctors Writing Clinical](/best-ai-tool-for-doctors-writing-clinical-notes/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
