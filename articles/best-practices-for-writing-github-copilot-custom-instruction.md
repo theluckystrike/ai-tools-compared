@@ -27,6 +27,16 @@ intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, best-of]---
 
+
+| Tool | Key Strength | Context Window | API Access | Pricing |
+|---|---|---|---|---|
+| Claude | Deep reasoning and long context | 200K tokens | Full REST API | API-based (per token) |
+| ChatGPT (GPT-4) | Broad knowledge and plugins | 128K tokens | Full REST API | $20/month (Plus) |
+| GitHub Copilot | Real-time IDE integration | File-level context | Via IDE extension | $10-39/user/month |
+| Cursor | Full codebase awareness | Project-level context | Built into IDE | $20/month (Pro) |
+| Codeium | Fast completions, free tier | File-level context | IDE extensions | Free tier available |
+
+
 {% raw %}
 
 GitHub Copilot Custom Instructions transform how developers interact with AI-assisted coding. Rather than accepting generic suggestions, you can configure Copilot to understand your project's conventions, coding preferences, and team standards. This guide covers practical strategies for writing custom instructions that genuinely improve your development workflow.

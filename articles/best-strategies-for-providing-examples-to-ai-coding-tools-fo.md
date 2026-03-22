@@ -27,6 +27,16 @@ score: 8
 intent-checked: true
 voice-checked: true---
 
+
+| Tool | Key Strength | Context Window | API Access | Pricing |
+|---|---|---|---|---|
+| Claude | Deep reasoning and long context | 200K tokens | Full REST API | API-based (per token) |
+| ChatGPT (GPT-4) | Broad knowledge and plugins | 128K tokens | Full REST API | $20/month (Plus) |
+| GitHub Copilot | Real-time IDE integration | File-level context | Via IDE extension | $10-39/user/month |
+| Cursor | Full codebase awareness | Project-level context | Built into IDE | $20/month (Pro) |
+| Codeium | Fast completions, free tier | File-level context | IDE extensions | Free tier available |
+
+
 {% raw %}
 
 Provide 2-3 concrete working examples showing your preferred style and patterns; include edge cases you want handled; show error handling patterns from your codebase. Use real code snippets rather than descriptions. Highlight the specific parts you want the AI to emulate. Examples significantly improve code quality and alignment with your project standards. This guide covers effective example strategies for AI coding tools.

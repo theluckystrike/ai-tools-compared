@@ -27,6 +27,16 @@ reviewed: true
 intent-checked: true
 tags: [ai-tools-compared, best-of, artificial-intelligence]---
 
+
+| Tool | Key Strength | Context Window | API Access | Pricing |
+|---|---|---|---|---|
+| Claude | Deep reasoning and long context | 200K tokens | Full REST API | API-based (per token) |
+| ChatGPT (GPT-4) | Broad knowledge and plugins | 128K tokens | Full REST API | $20/month (Plus) |
+| GitHub Copilot | Real-time IDE integration | File-level context | Via IDE extension | $10-39/user/month |
+| Cursor | Full codebase awareness | Project-level context | Built into IDE | $20/month (Pro) |
+| Codeium | Fast completions, free tier | File-level context | IDE extensions | Free tier available |
+
+
 {% raw %}
 
 When new developers join your team, the last thing you want is for them to spend hours configuring AI assistants, code completion tools, and automation scripts. A well-structured approach to customization files dramatically reduces onboarding friction and ensures everyone starts with a consistent, optimized environment from day one.

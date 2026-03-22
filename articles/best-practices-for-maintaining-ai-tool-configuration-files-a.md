@@ -27,6 +27,16 @@ intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, best-of, artificial-intelligence]---
 
+
+| Tool | Key Strength | Context Window | API Access | Pricing |
+|---|---|---|---|---|
+| Claude | Deep reasoning and long context | 200K tokens | Full REST API | API-based (per token) |
+| ChatGPT (GPT-4) | Broad knowledge and plugins | 128K tokens | Full REST API | $20/month (Plus) |
+| GitHub Copilot | Real-time IDE integration | File-level context | Via IDE extension | $10-39/user/month |
+| Cursor | Full codebase awareness | Project-level context | Built into IDE | $20/month (Pro) |
+| Codeium | Fast completions, free tier | File-level context | IDE extensions | Free tier available |
+
+
 {% raw %}
 
 Managing AI tool configuration files alongside your code documentation ensures consistency across development environments and makes your AI assistants more effective at understanding your project. When your configuration lives alongside your documentation, team members can quickly understand how AI tools interact with your codebase without hunting through separate repositories or wikis.

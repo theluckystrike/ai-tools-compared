@@ -26,6 +26,16 @@ tags: [ai-tools-compared, best-of, artificial-intelligence]
 intent-checked: true---
 
 
+| Tool | Test Generation | Edge Case Coverage | Framework Awareness | Pricing |
+|---|---|---|---|---|
+| Claude | Generates full test suites with assertions | Handles async, error, and boundary cases | Strong Jest/Vitest/Playwright knowledge | API-based (per token) |
+| ChatGPT (GPT-4) | Complete test files with mocks | Good error scenario coverage | Broad framework support | $20/month (Plus) |
+| GitHub Copilot | Inline test completion as you type | Suggests missing test branches | Context-aware from open files | $10-39/user/month |
+| Cursor | Project-aware test generation | Reads source to find edge cases | Understands project test patterns | $20/month (Pro) |
+| Codeium | Fast inline test suggestions | Basic happy-path coverage | Template-based patterns | Free tier available |
+
+
+
 Running AI coding assistants locally has become essential for developers who need to generate Java unit tests without exposing proprietary code to external services. Self-hosted solutions give you complete control over your codebase while taking advantage of powerful language models to automate test creation.
 
 ## Key Takeaways
