@@ -13,6 +13,15 @@ tags: [ai-tools-compared, artificial-intelligence]---
 
 Writing mocks and stubs is tedious but necessary for unit testing. AI tools can generate valid, framework-specific mock code from interfaces and function signatures. Here's what actually saves time.
 
+## Key Takeaways
+
+- **Cost**: Free (open source), $19/month for cloud version.
+- **Are there free alternatives**: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
+- **Cost**: $0.50-$2/month for typical team (depends on volume).
+- **Cost**: $10-$20/month per developer (GitHub Copilot subscription).
+- **Limitations**: Requires running separate service, not ideal for unit tests (too slow), better for integration tests.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
+
 ## Why Mocks Matter
 
 A typical service depends on:

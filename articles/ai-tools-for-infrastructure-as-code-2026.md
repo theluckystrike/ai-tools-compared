@@ -29,6 +29,16 @@ tags: [ai-tools-compared, artificial-intelligence]---
 
 Infrastructure as Code is one of the highest-risk areas for AI hallucinations. A hallucinated Terraform resource that references a non-existent attribute doesn't just fail tests — it can leave infrastructure in a broken state or, worse, create insecure configurations silently. This guide evaluates AI tools specifically for IaC accuracy and security defaults.
 
+## Key Takeaways
+
+- **Use Claude Sonnet for initial IaC generation**: best security defaults
+2.
+- **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
+- **A hallucinated Terraform resource that references a non-existent attribute doesn't just fail tests**: it can leave infrastructure in a broken state or, worse, create insecure configurations silently.
+- **It also adds a**: `description` to the security group ingress rule, which is a best practice that linters like Checkov flag when missing.
+- **It fills in `resource**: "aws_db_instance"` attribute names correctly but doesn't apply security best practices to the defaults it suggests.
+- **This is the opposite**: of what many public examples do (attach `AWSLambdaFullAccess` or worse).
+
 ## Why IaC Is Harder for AI
 
 Language models are trained on public Terraform registry data, AWS/Azure documentation, and GitHub examples. But:

@@ -16,9 +16,18 @@ intent-checked: true---
 
 {% raw %}
 
-
 AI tools for multilingual customer support combine translation APIs, language-specific LLM prompts, and real-time speech-to-text to handle customer conversations across dozens of languages automatically. Developers can build a complete multilingual pipeline using OpenAI or Anthropic APIs for translation, Whisper for voice transcription, and language detection libraries for routing. This guide walks through each integration pattern with working code examples and production considerations like cost management and brand voice consistency.
 
+## Key Takeaways
+
+- **Translation API Integration The**: most straightforward approach uses translation APIs to convert customer messages and agent responses.
+- **Most SaaS companies find that English**: Spanish, German, French, and Japanese cover 80%+ of non-English volume.
+- **Test with at least**: 20 real support tickets from each target language.
+- **Q**: What's the cheapest architecture for multilingual support at scale?
+
+Use `claude-3-haiku` or `gpt-4o-mini` for language detection and intent triage (typically 50-200 tokens per message).
+- **At 10**:000 tickets/month across 10 languages, this architecture typically costs $80-150/month in API fees.
+- **Switch triage steps (language detection**: intent classification) to cheaper models like `gpt-4o-mini` or `claude-haiku` to reduce per-ticket costs by 60-80%.
 
 ## Understanding the Technical Challenges
 
