@@ -325,7 +325,7 @@ Speaker diarization labels who is speaking when in multi-person audio. It is use
 
 Split long videos into chunks before submission. Use ffmpeg to cut at silence boundaries to avoid splitting words. Reassemble transcript segments using the returned timestamps for continuity.
 
-
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

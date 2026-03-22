@@ -257,7 +257,7 @@ def detect_stalled_shipments():
 ### Multiple Carrier Aggregation
 
 
-Large e-commerce operations route shipments through UPS, FedEx, USPS, and regional carriers simultaneously. A unified tracking layer abstracts these differences:
+Large e-commerce operations route shipments through UPS, FedEx, USPS, and regional carriers simultaneously. An unified tracking layer abstracts these differences:
 
 
 ```python

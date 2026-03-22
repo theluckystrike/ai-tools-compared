@@ -113,9 +113,9 @@ For VS Code:
 2. Run "Developer: Clear Window State"
 3. Close VS Code completely
 4. Delete the extension cache folder:
-   - Windows: `%APPDATA%\Code\User\globalStorage\github.copilot`
-   - macOS: `~/Library/Application Support/Code/User/globalStorage/github.copilot`
-   - Linux: `~/.config/Code/User/globalStorage/github.copilot`
+ - Windows: `%APPDATA%\Code\User\globalStorage\github.copilot`
+ - macOS: `~/Library/Application Support/Code/User/globalStorage/github.copilot`
+ - Linux: `~/.config/Code/User/globalStorage/github.copilot`
 5. Reopen VS Code and let the extension rebuild its cache
 
 For JetBrains IDEs, locate the IDE's system directory and delete the Copilot-related cache folders:
@@ -276,29 +276,29 @@ class TruncationLogger:
         incomplete_markers = [
             text.endswith('...'),
             text.endswith('```'),
-            not text.endswith(('.', ')', ']', '}', '\n')),
-            len([c for c in text if c == '(' ]) != len([c for c in text if c == ')'])
-        ]
-        return any(incomplete_markers)
+ not text.endswith(('.', ')', ']', '}', '\n')),
+ len([c for c in text if c == '(' ]) != len([c for c in text if c == ')'])
+ ]
+ return any(incomplete_markers)
 
-    def analyze_patterns(self) -> dict:
-        """Identify truncation patterns"""
-        if not self.log_file.exists():
-            return {}
+ def analyze_patterns(self) -> dict:
+ """Identify truncation patterns"""
+ if not self.log_file.exists():
+ return {}
 
-        truncations = []
-        with open(self.log_file) as f:
-            for line in f:
-                truncations.append(json.loads(line))
+ truncations = []
+ with open(self.log_file) as f:
+ for line in f:
+ truncations.append(json.loads(line))
 
-        return {
-            "total_incidents": len(truncations),
-            "average_prompt_length": sum(t['prompt_length'] for t in truncations) / len(truncations),
-            "most_affected_version": max(set(t['copilot_version'] for t in truncations),
-                                        key=lambda v: sum(1 for t in truncations if t['copilot_version'] == v)),
-            "ide_breakdown": {ide: sum(1 for t in truncations if t['ide'] == ide)
-                             for ide in set(t['ide'] for t in truncations)}
-        }
+ return {
+ "total_incidents": len(truncations),
+ "average_prompt_length": sum(t['prompt_length'] for t in truncations) / len(truncations),
+ "most_affected_version": max(set(t['copilot_version'] for t in truncations),
+ key=lambda v: sum(1 for t in truncations if t['copilot_version'] == v)),
+ "ide_breakdown": {ide: sum(1 for t in truncations if t['ide'] == ide)
+ for ide in set(t['ide'] for t in truncations)}
+ }
 
 # Usage
 logger = TruncationLogger()
@@ -314,26 +314,26 @@ For VS Code, inspect the streaming connection in real-time:
 // In VS Code extension dev tools
 const originalFetch = window.fetch;
 window.fetch = async function(...args) {
-  const response = await originalFetch.apply(this, args);
+ const response = await originalFetch.apply(this, args);
 
-  if (args[0].includes('copilot')) {
-    const reader = response.body.getReader();
-    const decoder = new TextDecoder();
-    let accumulated = '';
+ if (args[0].includes('copilot')) {
+ const reader = response.body.getReader();
+ const decoder = new TextDecoder();
+ let accumulated = '';
 
-    while (true) {
-      const { done, value } = await reader.read();
-      if (done) {
-        console.log('Stream ended. Total chunks:', accumulated.length);
-        break;
-      }
+ while (true) {
+ const { done, value } = await reader.read();
+ if (done) {
+ console.log('Stream ended. Total chunks:', accumulated.length);
+ break;
+ }
 
-      accumulated += decoder.decode(value, { stream: true });
-      console.log('Chunk received:', value.length, 'bytes');
-    }
-  }
+ accumulated += decoder.decode(value, { stream: true });
+ console.log('Chunk received:', value.length, 'bytes');
+ }
+ }
 
-  return response;
+ return response;
 };
 ```
 
@@ -362,4 +362,5 @@ Please continue the sentence and complete the explanation with code examples."
 
 Copilot often recognizes the context and provides the complete, untruncated answer on the retry.
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

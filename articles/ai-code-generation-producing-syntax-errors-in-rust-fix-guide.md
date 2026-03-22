@@ -407,7 +407,7 @@ The most reliable approach is to use AI for initial scaffolding and prototyping,
 2. **Generate**: Get initial implementation
 3. **Validate**: Run cargo check and tests
 4. **Review**: Examine for Rust idioms and safety
-5. **Test**: Add comprehensive unit tests
+5. **Test**: Add unit tests
 6. **Benchmark**: Verify performance matches expectations
 
 For complex Rust features (FFI, proc macros, unsafe code), consider requesting multiple implementations and comparing approaches.

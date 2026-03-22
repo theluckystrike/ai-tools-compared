@@ -335,5 +335,4 @@ DALL-E has the strongest SLA. FAL's latency is the best for real-time applicatio
 - [Midjourney Basic Plan Image Limits Per Month: Real Numbers](/ai-tools-compared/midjourney-basic-plan-image-limits-per-month-real-numbers-20/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

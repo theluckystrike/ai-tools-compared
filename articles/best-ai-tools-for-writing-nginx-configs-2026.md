@@ -1,6 +1,6 @@
 ---
 title: "Best AI Tools for Writing Nginx Configs in 2026"
-description: "Compare AI code assistants for nginx configuration. Which tools handle reverse proxies, load balancing, SSL termination, rate limiting, and upstream configs best?"
+description: "Compare AI code assistants for nginx configuration. Which tools handle reverse proxies, load balancing, SSL termination, rate limiting, and upstream"
 author: "theluckystrike"
 date: 2026-03-21
 reviewed: true
@@ -179,3 +179,5 @@ For production nginx work: Start with Claude Opus for architecture (reverse prox
 For teams without access to Cursor's Claude backend: Use Claude Opus directly, generate the full config, then use a nginx config linter (like `nginx -t` or Konfig) to validate before deploying.
 
 Never blindly copy AI-generated configs to production. Read what the AI generated, understand why each directive exists, and remove what you don't need.
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

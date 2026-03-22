@@ -464,6 +464,7 @@ Track metrics to ensure AI assistance improves your process:
 
 Adjust your prompts and tools based on these metrics.
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

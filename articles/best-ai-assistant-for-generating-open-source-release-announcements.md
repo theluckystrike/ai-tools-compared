@@ -377,7 +377,7 @@ Our style guidelines:
 
 ChatGPT excels when given clear structural requirements and style guidance.
 
-### For Cursor: Leverage Codebase Context
+### For Cursor: Use Codebase Context
 
 ```
 I'm releasing version X.X.X of this project.
@@ -470,7 +470,7 @@ from mylib import Client, sync_wrapper
 
 # Wrapped client blocks internally, safe for sync code
 client = sync_wrapper(Client())
-data = client.fetch_data()  # Blocks until done
+data = client.fetch_data() # Blocks until done
 ```
 
 ### 2. Configuration Moved to Constructor
@@ -500,7 +500,7 @@ with minimal changes. Average upgrade time: 30 minutes for codebases under 50K L
 
 ## Version-Specific Announcement Checklist
 
-Use this checklist to ensure comprehensive release coverage:
+Use this checklist to ensure release coverage:
 
 ```yaml
 major_version_checklist:

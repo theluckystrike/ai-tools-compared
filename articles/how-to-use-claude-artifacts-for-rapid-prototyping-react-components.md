@@ -53,7 +53,7 @@ Example pattern: "Create a [component type] that [main behavior]. The component 
 Bad prompt: "Make a nice dashboard."
 Better prompt: "Create a responsive dashboard grid displaying 6 metric cards showing real estate property statistics: total properties, average price, occupancy rate, monthly revenue, days on market, and portfolio value. Each card has a title, large metric number, and small trend indicator (up/down arrow with percentage). Use Tailwind CSS with a light blue primary color. Cards should stack to 1 column on mobile, 2 on tablet, 3 on desktop."
 
-The specific version generates a usable component on the first try. The vague version requires multiple back-and-forth clarifications.
+The specific version generates an usable component on the first try. The vague version requires multiple back-and-forth clarifications.
 
 For complex components, break requests into phases. Start with the basic structure and styling, then add interactivity, then add advanced features. This approach lets you validate the foundation before building complexity.
 

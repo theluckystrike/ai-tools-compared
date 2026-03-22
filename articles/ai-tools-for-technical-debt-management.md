@@ -96,7 +96,7 @@ def audit_file(file_path: Path) -> dict:
     try:
         json_text = response.content[0].text
         if '```json' in json_text:
-            json_text = json_text.split('```json')[1].split('```')[0]
+ json_text = json_text.split('```json')[1].split('```')[0]
         result = json.loads(json_text)
         result['file'] = str(file_path)
         return result
@@ -254,5 +254,4 @@ A developer who would previously fix 2 debt items in a sprint can address 6-8 wi
 - [Free AI Tools for Code Refactoring That Actually Improve Quality](/ai-tools-compared/free-ai-tools-for-code-refactoring-that-actually-improve-qua/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

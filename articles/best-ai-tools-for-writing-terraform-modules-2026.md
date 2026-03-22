@@ -514,3 +514,5 @@ For pure Terraform work, Claude's $20/month pays for itself in 2-3 hours of work
 Claude dominates Terraform module generation due to superior state management understanding, variable validation patterns, and multi-cloud support. ChatGPT handles simple scaffolding. Copilot wins for in-IDE speed. CodeWhisperer is a free option for AWS-only teams.
 
 The real productivity win comes from Claude + Copilot: Claude for architecture, Copilot for execution. Start there if building modules at scale.
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

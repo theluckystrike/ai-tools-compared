@@ -583,10 +583,10 @@ const users = await Promise.all([
 - [ ] Create initial schema document or paste schema into AI
 - [ ] Generate seed script using your chosen tool
 - [ ] Review generated code for:
-  - [ ] Correct relationships and foreign keys
-  - [ ] Realistic data (emails, dates, values)
-  - [ ] Handling of unique constraints
-  - [ ] Transaction safety and error handling
+ - [ ] Correct relationships and foreign keys
+ - [ ] Realistic data (emails, dates, values)
+ - [ ] Handling of unique constraints
+ - [ ] Transaction safety and error handling
 - [ ] Add seed script to `.gitignore` or commit to repo (team decision)
 - [ ] Test seed script: `npm run seed` / `python manage.py seed` / `rake db:seed`
 - [ ] Verify data in database client

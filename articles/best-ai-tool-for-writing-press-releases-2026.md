@@ -286,5 +286,4 @@ Speed is measured for a typical 400-word release. Quality reflects journalist-re
 - [AI Tools for Designers Writing Handoff Notes That Include](/ai-tools-compared/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

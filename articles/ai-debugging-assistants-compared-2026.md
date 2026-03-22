@@ -304,5 +304,4 @@ Then reuse these templates across the team with file-specific code substituted.
 - [AI Tools for Debugging Postgres Query Planner Choosing Wrong](/ai-tools-compared/ai-tools-for-debugging-postgres-query-planner-choosing-wrong/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

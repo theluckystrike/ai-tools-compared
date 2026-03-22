@@ -467,7 +467,7 @@ class PromptEffectiveness:
 ✅ "Fix the bug in index.ts line 45 where getUserData returns undefined for users with no profile picture. Include error handling and unit tests."
 
 ### Inconsistent Requirements
-❌ "Make it simple but comprehensive with all edge cases"
+❌ "Make it simple but with all edge cases"
 ✅ "Create a basic implementation (under 50 lines) that handles the happy path. Add error handling for these 3 specific edge cases."
 
 ### Mixed Multiple Tasks

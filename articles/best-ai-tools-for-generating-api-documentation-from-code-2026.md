@@ -336,13 +336,13 @@ Create a new invoice for a customer.
 **Response:**
 ```json
 {
-  "id": "inv_123abc",
-  "customer_id": "cus_456def",
-  "amount": 2999,
-  "currency": "usd",
-  "status": "draft",
-  "created_at": "2026-03-20T14:22:00Z",
-  "due_date": "2026-04-19"
+ "id": "inv_123abc",
+ "customer_id": "cus_456def",
+ "amount": 2999,
+ "currency": "usd",
+ "status": "draft",
+ "created_at": "2026-03-20T14:22:00Z",
+ "due_date": "2026-04-19"
 }
 ```
 
@@ -366,17 +366,17 @@ Create a new invoice for a customer.
 Input OpenAPI spec:
 ```yaml
 components:
-  schemas:
-    Refund:
-      type: object
-      properties:
-        id:
-          type: string
-        amount:
-          type: integer
-        reason:
-          type: string
-          enum: [customer_request, duplicate, fraud]
+ schemas:
+Refund:
+ type: object
+ properties:
+ id:
+ type: string
+ amount:
+ type: integer
+ reason:
+ type: string
+ enum: [customer_request, duplicate, fraud]
 ```
 
 readme.com generates:
@@ -389,9 +389,9 @@ Represents a refund issued to a customer.
 - id (string): Unique refund identifier. Example: "ref_1234567890"
 - amount (integer): Refund amount in cents. Example: 4999 for $49.99
 - reason (string): The reason for the refund. Must be one of:
-  - customer_request: Customer initiated the refund
-  - duplicate: Duplicate charge (accidental duplicate)
-  - fraud: Customer reported fraudulent charge
+ - customer_request: Customer initiated the refund
+ - duplicate: Duplicate charge (accidental duplicate)
+ - fraud: Customer reported fraudulent charge
 ```
 
 This is more complete than Mintlify's output and includes context about each value.
@@ -453,5 +453,7 @@ Total time for a 20-endpoint API: 3-4 hours (vs 16-20 hours without AI).
 - [Best AI Features for Generating API Client Code from](/ai-tools-compared/best-ai-features-for-generating-api-client-code-from-openapi/)
 - [ChatGPT vs Claude for Writing API Documentation](/ai-tools-compared/chatgpt-vs-claude-for-writing-api-documentation/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
 ```
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -248,5 +248,4 @@ Free AI assistants for JetBrains have reached a point where they genuinely impro
 - [Copilot for Students Free Access: What Exactly Is Included](/ai-tools-compared/copilot-for-students-free-access-what-exactly-is-included-20/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -68,6 +68,8 @@ This command attempts to restore the previous session state. Some installations 
   }
 }
 ```
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

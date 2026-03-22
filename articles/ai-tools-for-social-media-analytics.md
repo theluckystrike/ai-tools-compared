@@ -352,6 +352,7 @@ Start small. Collect a few hundred posts, run the sentiment analysis code above,
 
 The ecosystem of AI tools for social media analytics is mature enough that you don't need to reinvent the core components. Focus your energy on the unique aspects of your analysis—whatever specific insights you're trying to extract from the conversation.
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

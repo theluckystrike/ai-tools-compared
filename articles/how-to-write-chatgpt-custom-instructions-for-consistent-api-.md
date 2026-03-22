@@ -395,7 +395,7 @@ Maintenance schedule:
 
 - **Monthly**: Review acceptance rates and adjust wording if needed
 - **Quarterly**: Update with new technology versions or framework changes
-- **Annually**: Comprehensive review with team for standardization
+- **Annually**: review with team for standardization
 
 
 Example update:

@@ -472,18 +472,18 @@ Retrieve a single invoice by ID.
 
 ```json
 {
-  "id": "inv_2V8XLjkWZ4bDQE",
-  "amount": 15999,
-  "currency": "USD",
-  "status": "paid",
-  "createdAt": "2026-03-20T14:32:00Z",
-  "items": [
-    {
-      "description": "API calls (1M requests)",
-      "unitPrice": 0.01,
-      "quantity": 1000000
-    }
-  ]
+ "id": "inv_2V8XLjkWZ4bDQE",
+ "amount": 15999,
+ "currency": "USD",
+ "status": "paid",
+ "createdAt": "2026-03-20T14:32:00Z",
+ "items": [
+ {
+ "description": "API calls (1M requests)",
+ "unitPrice": 0.01,
+ "quantity": 1000000
+ }
+ ]
 }
 ```
 
@@ -492,7 +492,7 @@ Retrieve a single invoice by ID.
 **JavaScript:**
 ```javascript
 const invoice = await fetch('/api/v2/invoices/inv_2V8XLjkWZ4bDQE', {
-  headers: { 'Authorization': `Bearer ${API_KEY}` }
+ headers: { 'Authorization': `Bearer ${API_KEY}` }
 }).then(r => r.json());
 console.log(`Invoice total: $${invoice.amount / 100}`);
 ```
@@ -501,8 +501,8 @@ console.log(`Invoice total: $${invoice.amount / 100}`);
 ```python
 import requests
 invoice = requests.get(
-    f'https://api.example.com/api/v2/invoices/inv_2V8XLjkWZ4bDQE',
-    headers={'Authorization': f'Bearer {API_KEY}'}
+ f'https://api.example.com/api/v2/invoices/inv_2V8XLjkWZ4bDQE',
+ headers={'Authorization': f'Bearer {API_KEY}'}
 ).json()
 print(f"Invoice total: ${invoice['amount'] / 100}")
 ```
@@ -510,7 +510,7 @@ print(f"Invoice total: ${invoice['amount'] / 100}")
 **cURL:**
 ```bash
 curl https://api.example.com/api/v2/invoices/inv_2V8XLjkWZ4bDQE \
-  -H "Authorization: Bearer $API_KEY"
+ -H "Authorization: Bearer $API_KEY"
 ```
 ```
 
@@ -688,5 +688,4 @@ git push
 - [Claude Code Runbook Documentation Guide](/ai-tools-compared/claude-code-runbook-documentation-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

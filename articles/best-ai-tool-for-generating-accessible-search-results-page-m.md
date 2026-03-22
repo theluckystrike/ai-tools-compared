@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Best AI Tool for Generating Accessible Search Results Page Markup"
-description: "A practical guide to AI-powered accessible search results page markup generation for developers and power users. Compare solutions, see code examples, and implement"
+title: "Best AI Tool for Generating Accessible Search Results Page"
+description: "A practical guide to AI-powered accessible search results page markup generation for developers and power users. Compare solutions, see code examples, and"
 date: 2026-03-21
 last_modified_at: 2026-03-21
 author: theluckystrike
@@ -190,5 +190,4 @@ The best approach combines AI efficiency with developer judgment and accessibili
 - [Semantic HTML Best Practices](/semantic-html-best-practices/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

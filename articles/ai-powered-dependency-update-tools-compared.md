@@ -433,5 +433,4 @@ For most teams: Renovate free tier is optimal. Add Socket.dev if you're security
 - [AI-Powered Database Migration Tools Comparison](/ai-tools-compared/ai-powered-database-migration-tools-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

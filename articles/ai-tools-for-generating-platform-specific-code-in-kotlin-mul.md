@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "AI Tools for Generating Platform Specific Code in Kotlin Multiplatform Projects"
-description: "A practical guide for developers comparing AI tools that help generate platform-specific code in Kotlin Multiplatform projects, with code examples and tool recommendations."
+title: "AI Tools for Generating Platform Specific Code in Kotlin"
+description: "A practical guide for developers comparing AI tools that help generate platform-specific code in Kotlin Multiplatform projects, with code examples and"
 date: 2026-03-21
 author: theluckystrike
 permalink: /ai-tools-for-generating-platform-specific-code-in-kotlin-mul/
@@ -334,13 +334,6 @@ Before committing AI-generated platform-specific code:
 4. **Nullability** — Confirm Kotlin nullability rules are enforced on both platforms
 5. **Testing** — Run unit tests on both actual platforms before merging
 6. **Documentation** — Add comments explaining platform-specific decisions
-
-## Conclusion
-
-AI coding assistants have become valuable tools for generating platform-specific code in Kotlin Multiplatform projects. Claude 3.7 Sonnet leads in accuracy and context awareness, while GitHub Copilot and Cursor provide solid assistance for common patterns. For teams working with multiple target platforms, these tools significantly reduce the boilerplate overhead associated with the expect/actual pattern.
-
-The key to success lies in providing clear context about your target platforms and reviewing AI-generated code before integration. With proper oversight, AI tools accelerate platform-specific implementation without sacrificing code quality.
-
 
 ## Related Articles
 

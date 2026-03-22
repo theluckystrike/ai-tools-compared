@@ -131,13 +131,13 @@ rules:
       All API endpoints must return responses in this format:
 
       ```typescript
-      interface ApiResponse<T> {
-        data: T;
-        success: boolean;
-        message?: string;
-        errors?: string[];
-      }
-      ```
+ interface ApiResponse<T> {
+ data: T;
+ success: boolean;
+ message?: string;
+ errors?: string[];
+ }
+ ```
 
       Use this interface for every controller response.
 ```
@@ -298,26 +298,26 @@ rules:
 
       **GOOD:**
       ```typescript
-      async function fetchUser(id: string) {
-        try {
-          const response = await fetch(`/api/users/${id}`);
-          if (!response.ok) throw new Error('Not found');
-          return response.json();
-        } catch (error) {
-          console.error('Failed to fetch user:', error);
-          throw error;
-        }
-      }
-      ```
+ async function fetchUser(id: string) {
+ try {
+ const response = await fetch(`/api/users/${id}`);
+ if (!response.ok) throw new Error('Not found');
+ return response.json();
+ } catch (error) {
+ console.error('Failed to fetch user:', error);
+ throw error;
+ }
+ }
+ ```
 
       **BAD:**
       ```typescript
-      function fetchUser(id: string) {
-        return fetch(`/api/users/${id}`)
-          .then(res => res.json())
-          .catch(err => console.log(err));
-      }
-      ```
+ function fetchUser(id: string) {
+ return fetch(`/api/users/${id}`)
+ .then(res => res.json())
+ .catch(err => console.log(err));
+ }
+ ```
 
       Always include catch blocks. Always log errors. Always propagate critical errors.
 
@@ -331,27 +331,27 @@ rules:
 
       **GOOD (simple state):**
       ```typescript
-      const UserForm = () => {
-        const [name, setName] = useState('');
-        const [email, setEmail] = useState('');
-        // ...
-      };
-      ```
+ const UserForm = () => {
+ const [name, setName] = useState('');
+ const [email, setEmail] = useState('');
+ // ...
+ };
+ ```
 
       **GOOD (complex state):**
       ```typescript
-      type FormState = { name: string; email: string; phone: string; };
-      type FormAction = { type: 'setName'; value: string } | { type: 'reset' };
+ type FormState = { name: string; email: string; phone: string; };
+ type FormAction = { type: 'setName'; value: string } | { type: 'reset' };
 
-      const reducer = (state: FormState, action: FormAction): FormState => {
-        // ...
-      };
+ const reducer = (state: FormState, action: FormAction): FormState => {
+ // ...
+ };
 
-      const UserForm = () => {
-        const [state, dispatch] = useReducer(reducer, initialState);
-        // ...
-      };
-      ```
+ const UserForm = () => {
+ const [state, dispatch] = useReducer(reducer, initialState);
+ // ...
+ };
+ ```
 ```
 
 ### Performance Optimization in Rules

@@ -375,5 +375,4 @@ Verify your MCP migration with basic smoke tests for each tool. For organization
 - [ChatGPT Plus vs Claude Pro Monthly Cost for Daily Coding](/ai-tools-compared/chatgpt-plus-vs-claude-pro-monthly-cost-for-daily-coding/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

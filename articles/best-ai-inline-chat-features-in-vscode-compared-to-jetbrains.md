@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Inline Chat Features in VSCode Compared to Jetbrains"
+title: "Best AI Inline Chat Features in VS Code Compared to"
 description: "A practical comparison of the best AI inline chat features in VSCode versus JetBrains IDEs for developers in 2026. Includes code examples and feature"
 date: 2026-03-16
 last_modified_at: 2026-03-16

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Autocomplete Behavior Differences Between VSCode Jetbrain"
+title: "AI Autocomplete Behavior Differences Between VS Code"
 description: "A practical comparison of AI autocomplete behavior across VSCode, JetBrains IDEs, and Neovim plugins. Learn how each platform handles suggestions"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -293,7 +293,7 @@ Modern IDEs rely on Language Servers (LSP) for intelligent code understanding. A
 
 **JetBrains**: LSP integration is native and deep. AI suggestions incorporate LSP-provided information about types, imports, and dependencies.
 
-**Neovim**: LSP integration is native and tight. Tools like nvim-cmp combine LSP suggestions with AI suggestions in a unified menu.
+**Neovim**: LSP integration is native and tight. Tools like nvim-cmp combine LSP suggestions with AI suggestions in an unified menu.
 
 This integration difference is subtle but impacts suggestion quality significantly for larger projects.
 

@@ -158,7 +158,7 @@ System prompts help significantly with ChatGPT Enterprise, but they cannot repli
 
 With ChatGPT Enterprise, OpenAI handles model updates, infrastructure, and reliability. A custom bot requires monitoring, updates, and troubleshooting. The maintenance investment grows with complexity—adding RAG, fine-tuning, or multi-channel deployment each add operational requirements.
 
-Expect a custom bot to require 4–8 engineering hours per month for routine maintenance: updating the knowledge base, reviewing failed responses, adjusting prompts, and handling library dependency updates. Add a one-time build cost of 80–200 hours for initial implementation, testing, and deployment.
+Expect a custom bot to require 4–8 engineering hours per month for routine maintenance: updating the knowledge base, reviewing failed responses, adjusting prompts, and handling library dependency updates. Add an one-time build cost of 80–200 hours for initial implementation, testing, and deployment.
 
 
 ### Data Control

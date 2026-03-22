@@ -488,20 +488,20 @@ Claude explains reporter configuration and why certain choices matter (HTML for 
 For a realistic e-commerce checkout flow:
 
 1. **Initial architecture with Claude:**
-   - Describe your application structure
-   - Request page objects for each page (Login, Cart, Checkout, Confirmation)
-   - Ask for fixture patterns for authenticated users, seeded data
-   - Request test cases covering happy path and error scenarios
+ - Describe your application structure
+ - Request page objects for each page (Login, Cart, Checkout, Confirmation)
+ - Ask for fixture patterns for authenticated users, seeded data
+ - Request test cases covering happy path and error scenarios
 
 2. **Refine in Cursor:**
-   - Copy Claude's output into your project
-   - Use type hints to verify POM method signatures
-   - Catch missing async/awaits
-   - Configure Playwright settings with real-time validation
+ - Copy Claude's output into your project
+ - Use type hints to verify POM method signatures
+ - Catch missing async/awaits
+ - Configure Playwright settings with real-time validation
 
 3. **Quick additions with Copilot:**
-   - Once structure is established, use Copilot's inline suggestions for additional test cases
-   - It quickly generates test methods that follow your established patterns
+ - Once structure is established, use Copilot's inline suggestions for additional test cases
+ - It quickly generates test methods that follow your established patterns
 
 Example complete test suite structure:
 

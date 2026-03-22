@@ -63,7 +63,7 @@ Execute these queries and save the results. You'll pass this schema information 
 
 When working with AI assistants, the quality of your prompt determines the quality of the generated output. Structure your prompts to include the schema details, desired functionality, and any specific business logic requirements.
 
-A effective prompt template:
+An effective prompt template:
 
 ```
 Analyze the following database schema and generate Retool queries and UI specifications:

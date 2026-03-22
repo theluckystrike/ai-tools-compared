@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best Open Source Alternative to Cody by Sourcegraph for Code Search 2026"
+title: "Best Open Source Alternative to Cody by Sourcegraph for"
 description: "A practical guide to the best open source alternatives to Cody by Sourcegraph for code search in 2026. Compare solutions, see code examples, and implement"
 date: 2026-03-16
 last_modified_at: 2026-03-21
@@ -201,12 +201,5 @@ Consider these factors when selecting an alternative to Cody:
 
 4. **Model preferences**: Some tools lock you to specific models, while others offer flexibility to run any compatible LLM.
 
-## Conclusion
-
-The open source ecosystem provides robust alternatives to Cody for code search and AI-assisted development. Tabby and OpenCode lead the pack for self-hosted AI coding assistants, while Sourcegraph remains the gold standard for code search. Fauxpilot offers a lightweight option for teams prioritizing completion over chat.
-
-Evaluate each option against your team's specific requirements for privacy, performance, and feature set. The best choice depends on your infrastructure, budget, and workflow priorities.
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

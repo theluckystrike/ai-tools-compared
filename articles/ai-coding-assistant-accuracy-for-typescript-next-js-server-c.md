@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Coding Assistant Accuracy for Typescript Next Js Server"
+title: "AI Coding Assistant Accuracy for TypeScript Next Js Server"
 description: "A practical evaluation of AI coding assistants for TypeScript Next.js Server Components, with accuracy benchmarks and code examples for developers in 2026"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -291,5 +291,4 @@ A high-accuracy assistant will produce 95%+ working code. Lower-accuracy tools m
 - [AI Coding Assistants for Typescript Deno Fresh Framework Com](/ai-tools-compared/ai-coding-assistants-for-typescript-deno-fresh-framework-com/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

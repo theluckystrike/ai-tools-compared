@@ -410,5 +410,4 @@ curl -X POST http://localhost:8080/run \
 ---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

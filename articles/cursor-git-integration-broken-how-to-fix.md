@@ -128,6 +128,8 @@ This command recreates the index from the current HEAD without changing your wor
 rm -f .git/index
 git reset
 ```
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 

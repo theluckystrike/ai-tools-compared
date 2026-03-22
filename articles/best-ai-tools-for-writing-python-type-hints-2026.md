@@ -131,7 +131,7 @@ Copilot handles basic recursion but struggles with more complex patterns.
 ## Cursor AI: Module-Level Type Annotation
 
 
-Cursor AI (built on Claude) takes a different approach—select an entire function or module, request type annotation, and it refactors the entire block with comprehensive type hints.
+Cursor AI (built on Claude) takes a different approach—select an entire function or module, request type annotation, and it refactors the entire block with type hints.
 
 ### Installation and Workflow
 

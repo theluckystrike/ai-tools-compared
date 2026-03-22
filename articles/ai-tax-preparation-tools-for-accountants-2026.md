@@ -445,6 +445,7 @@ For a typical accounting practice processing 100 client returns per year:
 
 **ROI**: AI pays for itself if you capture just 5% of the time savings in improved efficiency or additional billable work.
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 ## Related Reading

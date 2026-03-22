@@ -293,31 +293,31 @@ print(ai_prompt)
 Before asking AI for help, verify you've gathered sufficient information:
 
 1. **Error Timeline**
-   - When exactly did the error start?
-   - Is it continuous or intermittent?
-   - What's the frequency pattern?
+ - When exactly did the error start?
+ - Is it continuous or intermittent?
+ - What's the frequency pattern?
 
 2. **Affected Systems**
-   - Which services are impacted?
-   - Are there dependencies between failures?
-   - Is the blast radius increasing or contained?
+ - Which services are impacted?
+ - Are there dependencies between failures?
+ - Is the blast radius increasing or contained?
 
 3. **Recent Changes**
-   - Deployments in last 24 hours
-   - Configuration changes
-   - Infrastructure changes
-   - Dependency updates
+ - Deployments in last 24 hours
+ - Configuration changes
+ - Infrastructure changes
+ - Dependency updates
 
 4. **Resource Status**
-   - CPU, memory, disk usage
-   - Database connection pools
-   - Network bandwidth
-   - Queue depths
+ - CPU, memory, disk usage
+ - Database connection pools
+ - Network bandwidth
+ - Queue depths
 
 5. **User Impact**
-   - How many users affected?
-   - Which features are broken?
-   - Workaround availability?
+ - How many users affected?
+ - Which features are broken?
+ - Workaround availability?
 
 ## Real-World Debugging Example
 

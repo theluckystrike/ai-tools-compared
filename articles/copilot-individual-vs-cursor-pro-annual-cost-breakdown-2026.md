@@ -210,25 +210,25 @@ The bottom line is straightforward: GitHub Copilot Individual costs $92 less per
 ## Quick Decision Tree
 
 1. Do you use VS Code regularly?
-   - Yes → Start with Copilot Individual
-   - No or using other IDE → Evaluate both
+ - Yes → Start with Copilot Individual
+ - No or using other IDE → Evaluate both
 
 2. Do you frequently refactor code across 5+ files?
-   - Yes → Cursor Pro ($92 premium justifies itself)
-   - No → Copilot Individual
+ - Yes → Cursor Pro ($92 premium justifies itself)
+ - No → Copilot Individual
 
 3. Is your codebase larger than 50K lines?
-   - Yes → Cursor Pro's codebase awareness valuable
-   - No → Copilot Individual
+ - Yes → Cursor Pro's codebase awareness valuable
+ - No → Copilot Individual
 
 4. Do you need zero-retention privacy processing?
-   - Yes → Cursor Pro (Copilot doesn't offer this)
-   - No → Either tool
+ - Yes → Cursor Pro (Copilot doesn't offer this)
+ - No → Either tool
 
 5. What's your annual coding revenue/value per hour?
-   - <$50/hour → Copilot Individual (ROI threshold lower)
-   - $50-$150/hour → Either tool (ROI similar)
-   - >$150/hour → Cursor Pro (feature ROI strongest)
+ - <$50/hour → Copilot Individual (ROI threshold lower)
+ - $50-$150/hour → Either tool (ROI similar)
+ - >$150/hour → Cursor Pro (feature ROI strongest)
 
 
 ## Related Articles

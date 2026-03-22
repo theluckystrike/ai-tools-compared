@@ -99,15 +99,15 @@ Consider an incident playbook for database connection pool exhaustion. An AI-ass
 1. Check current connection count:
    ```bash
  psql -h $DB_HOST -U $DB_USER -c "SELECT count(*) FROM pg_stat_activity;"
-   ```
+ ```
 2. Identify long-running queries:
    ```bash
  psql -h $DB_HOST -U $DB_USER -c "SELECT pid, now() - pg_stat_activity.query_start AS duration, query FROM pg_stat_activity WHERE state = 'active' ORDER BY duration DESC LIMIT 10;"
-   ```
+ ```
 3. Terminate blocking connections if necessary:
    ```sql
- SELECT pg_terminate_backend($PID);
-   ```
+SELECT pg_terminate_backend($PID);
+ ```
 
 ### Escalation
 - 5 minutes: Notify on-call DBA
