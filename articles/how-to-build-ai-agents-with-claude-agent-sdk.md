@@ -6,9 +6,9 @@ date: 2026-03-22
 author: theluckystrike
 permalink: /how-to-build-ai-agents-with-claude-agent-sdk/
 categories: [guides]
-tags: [ai-tools-compared]
+tags: [ai-tools-compared, artificial-intelligence, claude-ai, sdk]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
