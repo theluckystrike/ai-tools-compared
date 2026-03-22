@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI for Creating Open Source Project Architecture Documentation"
+title: "Best AI for Open Source Architecture Docs (2026)"
 description: "Compare Claude, Copilot, and Mermaid AI for generating C4 diagrams, API specs, and architecture docs for open source projects."
 date: 2026-03-19
 last_modified_at: 2026-03-22
