@@ -165,6 +165,21 @@ Claude correctly uses dot-notation wildcard rules for nested arrays (`items.*.pr
 
 **GPT-4** produces similar output but sometimes misses the `'array'` rule on `shipping_address`, validating it as a flat field. Claude consistently handles nested array validation.
 
+### The `prepareForValidation` Hook
+
+Claude will also add the `prepareForValidation` method unprompted when sanitizing inputs makes sense:
+
+```php
+protected function prepareForValidation(): void
+{
+    $this->merge([
+        'user_id' => $this->user()?->id ?? $this->user_id,
+    ]);
+}
+```
+
+This pattern — overwriting `user_id` from the authenticated user rather than trusting client input — is a security best practice that Claude applies when the prompt mentions authenticated endpoints. GPT-4 omits it unless the security concern is spelled out explicitly.
+
 ## Task 3: Queue Job with Retry Logic
 
 **Prompt:** "Write a Laravel queue job that sends an order confirmation email. Handle failures: retry up to 3 times with exponential backoff, log the failure, send Slack notification on final failure."
@@ -224,6 +239,28 @@ class SendOrderConfirmationEmail implements ShouldQueue
 
 Claude uses the `backoff()` method (correct for custom backoff intervals in Laravel), `readonly` constructor promotion, and the `failed()` method with proper Throwable typing. GPT-4 sometimes outputs `$this->release(30)` inside `handle()` in a try/catch, which is a legacy pattern.
 
+### Unique Jobs and Preventing Duplicates
+
+For jobs where duplicate execution would be harmful (double-charging, duplicate emails), Claude generates the `ShouldBeUnique` interface correctly:
+
+```php
+use Illuminate\Contracts\Queue\ShouldBeUnique;
+
+class SendOrderConfirmationEmail implements ShouldQueue, ShouldBeUnique
+{
+    // ...
+
+    public function uniqueId(): string
+    {
+        return (string) $this->order->id;
+    }
+
+    public int $uniqueFor = 3600; // 1 hour lock
+}
+```
+
+The `uniqueFor` property ensures the lock expires after an hour even if the job fails without releasing it. GPT-4 generates the `uniqueId()` method but regularly omits `uniqueFor`, which can cause jobs to stay locked indefinitely on worker crash.
+
 ## Task 4: API Resource Transformation
 
 Both models handle API Resources, but Claude includes conditional fields and meta more naturally:
@@ -249,6 +286,110 @@ public function toArray(Request $request): array
 
 `whenLoaded()` prevents N+1 issues in resource responses. Claude includes this by default. GPT-4 includes it when reminded.
 
+### Resource Collections with Metadata
+
+For paginated API responses, Claude also generates the `ResourceCollection` wrapper with cursor pagination metadata:
+
+```php
+<?php
+
+namespace App\Http\Resources;
+
+use Illuminate\Http\Resources\Json\ResourceCollection;
+
+class PostCollection extends ResourceCollection
+{
+    public $collects = PostResource::class;
+
+    public function toArray($request): array
+    {
+        return [
+            'data' => $this->collection,
+            'meta' => [
+                'current_page' => $this->currentPage(),
+                'last_page'    => $this->lastPage(),
+                'per_page'     => $this->perPage(),
+                'total'        => $this->total(),
+            ],
+        ];
+    }
+
+    public function paginationInformation($request, $paginated, $default): array
+    {
+        return [
+            'links' => [
+                'first' => $paginated['first_page_url'] ?? null,
+                'last'  => $paginated['last_page_url'] ?? null,
+                'prev'  => $paginated['prev_page_url'] ?? null,
+                'next'  => $paginated['next_page_url'] ?? null,
+            ],
+        ];
+    }
+}
+```
+
+GPT-4 generates a flat `toArray` that merges pagination into the top level, which breaks API consumers expecting a consistent `data` + `meta` envelope.
+
+## Task 5: Service Container and Dependency Injection
+
+Both models understand the service container, but Claude produces more testable patterns using interface binding:
+
+```php
+// Claude's approach: bind interface to implementation in ServiceProvider
+// app/Providers/AppServiceProvider.php
+public function register(): void
+{
+    $this->app->bind(
+        \App\Contracts\OrderRepository::class,
+        \App\Repositories\EloquentOrderRepository::class,
+    );
+
+    $this->app->singleton(
+        \App\Services\PaymentGateway::class,
+        fn ($app) => new \App\Services\StripeGateway(
+            config('services.stripe.secret'),
+            $app->make(\Illuminate\Log\LogManager::class),
+        ),
+    );
+}
+```
+
+And the controller that consumes it:
+
+```php
+class OrderController extends Controller
+{
+    public function __construct(
+        private readonly OrderRepository $orders,
+        private readonly PaymentGateway $payments,
+    ) {}
+
+    public function store(CreateOrderRequest $request): JsonResponse
+    {
+        $order = $this->orders->create($request->validated());
+        $this->payments->charge($order);
+
+        return new JsonResponse(new OrderResource($order), 201);
+    }
+}
+```
+
+Claude's use of constructor injection with interfaces makes the controller fully mockable in tests. GPT-4 frequently reaches for `app()->make()` inside methods, which defeats testability.
+
+## Overall Comparison
+
+| Task | Claude | GPT-4 |
+|---|---|---|
+| Eloquent relationships + eager loading | Excellent — constrained columns, typed | Good — works, no constraints |
+| Form Request nested array validation | Excellent | Good — sometimes misses array rule |
+| Queue jobs with backoff | Excellent — backoff(), failed() | Good — sometimes legacy pattern |
+| Unique jobs | Excellent — includes uniqueFor | Partial — misses uniqueFor |
+| API Resources with whenLoaded | Excellent by default | Good when prompted |
+| Service container / DI | Excellent — interface binding | Good — prefers app()->make() |
+| PHP 8.x idioms | Current (readonly, arrow fns) | Mostly current |
+
+For routine Laravel tasks — generating models, migrations, controllers — both models perform acceptably. The gap opens on edge cases: N+1 prevention, backoff configuration, unique job locks, and constructor-injected interfaces vs. service locator calls. Claude handles these without prompting; GPT-4 handles them when prompted.
+
 ## Related Articles
 
 - [Claude vs Copilot for Swift Development 2026](/ai-tools-compared/claude-vs-copilot-for-swift-development-2026/)
@@ -256,6 +397,7 @@ public function toArray(Request $request): array
 - [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
 - [Claude Max vs Claude Pro Actual Difference](/ai-tools-compared/claude-max-vs-claude-pro-actual-difference-in-daily-message-limits/)
 - [Claude Code vs Cursor for Backend Development](/ai-tools-compared/claude-code-vs-cursor-for-backend-development/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

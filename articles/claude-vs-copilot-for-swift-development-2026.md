@@ -274,6 +274,183 @@ Keys are String, values are generic. Include get, set, and clear methods.
 
 Claude correctly uses `actor` keyword with `nonisolated` for Sendable conformance and properly models the LRU ordering. Copilot sometimes uses `class` with `NSLock` instead of an actor — semantically equivalent but not idiomatic modern Swift.
 
+### Claude's Actor Implementation
+
+```swift
+actor LRUCache<Value: Sendable> {
+    private let capacity: Int
+    private var cache: [String: Value] = [:]
+    private var accessOrder: [String] = []
+
+    init(capacity: Int) {
+        self.capacity = max(1, capacity)
+    }
+
+    func get(_ key: String) -> Value? {
+        guard let value = cache[key] else { return nil }
+        // Move to most recently used
+        accessOrder.removeAll { $0 == key }
+        accessOrder.append(key)
+        return value
+    }
+
+    func set(_ key: String, value: Value) {
+        if cache[key] != nil {
+            accessOrder.removeAll { $0 == key }
+        } else if cache.count >= capacity {
+            // Evict least recently used
+            let lruKey = accessOrder.removeFirst()
+            cache.removeValue(forKey: lruKey)
+        }
+        cache[key] = value
+        accessOrder.append(key)
+    }
+
+    func clear() {
+        cache.removeAll()
+        accessOrder.removeAll()
+    }
+
+    nonisolated var description: String {
+        "LRUCache(capacity: \(capacity))"
+    }
+}
+```
+
+The actor model here is significant: callers must use `await` for every access, which guarantees thread safety at the type system level rather than through manual locking. Copilot's `NSLock` version works but forces you to remember to acquire/release the lock correctly everywhere.
+
+## Test 5: Combine Publisher Chain
+
+**Prompt:**
+```text
+Write a Swift Combine pipeline that takes a search text publisher, debounces it by 300ms,
+filters out strings shorter than 2 characters, maps to an API call returning AnyPublisher,
+and handles errors by replacing with an empty array.
+```
+
+```swift
+import Combine
+import Foundation
+
+struct SearchResult: Decodable {
+    let id: Int
+    let title: String
+}
+
+class SearchViewModel: ObservableObject {
+    @Published var searchText: String = ""
+    @Published var results: [SearchResult] = []
+    @Published var isLoading: Bool = false
+
+    private var cancellables = Set<AnyCancellable>()
+    private let apiClient: APIClient
+
+    init(apiClient: APIClient) {
+        self.apiClient = apiClient
+        setupSearch()
+    }
+
+    private func setupSearch() {
+        $searchText
+            .debounce(for: .milliseconds(300), scheduler: DispatchQueue.main)
+            .filter { $0.count >= 2 }
+            .removeDuplicates()
+            .handleEvents(receiveOutput: { [weak self] _ in
+                self?.isLoading = true
+            })
+            .flatMap { [weak self] query -> AnyPublisher<[SearchResult], Never> in
+                guard let self = self else {
+                    return Just([]).eraseToAnyPublisher()
+                }
+                return self.apiClient.search(query: query)
+                    .catch { _ in Just([]) }
+                    .eraseToAnyPublisher()
+            }
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] results in
+                self?.isLoading = false
+                self?.results = results
+            }
+            .store(in: &cancellables)
+    }
+}
+```
+
+Claude's pipeline correctly uses `.flatMap` (not `.switchToLatest` + `.map`, which requires extra type gymnastics) and wraps the error in `.catch { _ in Just([]) }` to produce a `Never`-failing publisher that composes cleanly with `@Published`. Copilot tends to suggest `.switchToLatest()` which requires explicit type annotations that beginners often miss.
+
+## Test 6: XCTest with async/await
+
+**Prompt:**
+```text
+Write an XCTest for the fetchUsers() function from Test 1 that mocks URLSession.
+Test success case returning two users, and 404 error case.
+Use async/await in the test — no XCTestExpectation.
+```
+
+```swift
+import XCTest
+@testable import SwiftNetworking
+
+final class FetchUsersTests: XCTestCase {
+    var mockSession: MockURLSession!
+
+    override func setUp() {
+        super.setUp()
+        mockSession = MockURLSession()
+    }
+
+    func testFetchUsersSuccess() async throws {
+        let json = """
+        [{"id": 1, "name": "Alice", "email": "alice@example.com"},
+         {"id": 2, "name": "Bob", "email": "bob@example.com"}]
+        """.data(using: .utf8)!
+
+        mockSession.stub(data: json, response: HTTPURLResponse(
+            url: URL(string: "https://api.example.com/users")!,
+            statusCode: 200, httpVersion: nil, headerFields: nil
+        )!)
+
+        let users = try await fetchUsers(session: mockSession)
+
+        XCTAssertEqual(users.count, 2)
+        XCTAssertEqual(users[0].name, "Alice")
+        XCTAssertEqual(users[1].email, "bob@example.com")
+    }
+
+    func testFetchUsersThrowsOnHTTP404() async {
+        mockSession.stub(data: Data(), response: HTTPURLResponse(
+            url: URL(string: "https://api.example.com/users")!,
+            statusCode: 404, httpVersion: nil, headerFields: nil
+        )!)
+
+        do {
+            _ = try await fetchUsers(session: mockSession)
+            XCTFail("Expected APIError.httpError to be thrown")
+        } catch APIError.httpError(let statusCode, _) {
+            XCTAssertEqual(statusCode, 404)
+        } catch {
+            XCTFail("Unexpected error type: \(error)")
+        }
+    }
+}
+```
+
+This test pattern — `async throws` on the test function, no `XCTestExpectation` — is how modern Swift tests work. Copilot often still generates `XCTestExpectation` + `fulfill()` patterns, which work but are verbose and can mask timeout failures.
+
+## Summary Scorecard
+
+| Feature | Claude | Copilot |
+|---|---|---|
+| async/await error separation | Excellent | Good |
+| Swift 5.9+ `@Observable` | Correct | Often uses `@StateObject` |
+| Actor vs NSLock | Actor (idiomatic) | Sometimes NSLock |
+| Combine pipelines | Strong | Good |
+| XCTest async patterns | Modern | Often uses expectations |
+| SPM Package.swift | Correct | Correct |
+| SwiftUI navigation API | `navigationDestination` | Often deprecated |
+
+Claude outperforms Copilot on API currency — knowing which Swift 5.9 and iOS 17 APIs to use by default. Copilot is strong for autocomplete within established patterns but generates older patterns for types it hasn't seen updated training examples of. If your codebase is targeting Swift 5.9+ and iOS 16/17, Claude saves significant cleanup time.
+
 ## Related Reading
 
 - [Claude vs Copilot for Elixir Development](/ai-tools-compared/claude-vs-copilot-for-elixir-development-2026/)

