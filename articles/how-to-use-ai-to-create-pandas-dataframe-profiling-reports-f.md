@@ -50,7 +50,7 @@ pip install pandas ydata-profiling sweetviz autoviz
 ```
 
 
-The `ydata-profiling` library (formerly pandas-profiling) remains the most open-source option. `sweetviz` and `autoviz` provide alternative approaches with different visualization styles and comparison capabilities.
+The `ydata-profiling` library (formerly pandas-profiling) remains the most comprehensive open-source option. `sweetviz` and `autoviz` provide alternative approaches with different visualization styles and comparison capabilities.
 
 
 ## Generating Your First Profile Report
@@ -197,6 +197,24 @@ comparison_report.show_html("data_comparison.html")
 
 Sweetviz highlights differences in feature distributions, missing value patterns, and value frequencies between datasets. This proves invaluable for catching data leakage or identifying distribution shift that degrades model performance.
 
+## Using dataprep for Combined Cleaning and Profiling
+
+The `dataprep` library takes an integrated approach: it profiles and cleans in one pass, which avoids the common pitfall of profiling a dirty dataset and then profiling again after cleaning without tracking what changed.
+
+```python
+from dataprep.eda import create_report
+from dataprep.clean import clean_df
+
+# Profile the raw dataset
+raw_report = create_report(df, title="Raw Dataset")
+raw_report.save("raw_profile.html")
+
+# Clean and re-profile
+cleaned_df, clean_report = clean_df(df)
+clean_report.save("cleaned_profile.html")
+```
+
+The side-by-side comparison of raw and cleaned profiles gives you a precise record of every transformation applied — useful for reproducibility audits and for explaining data preprocessing decisions to non-technical stakeholders.
 
 ## Practical Workflows for Common Scenarios
 
@@ -248,6 +266,55 @@ def full_quality_profile(df, name):
 
 This configuration enables correlation analysis, missing value visualizations, and duplicate detection — critical checks before model training.
 
+### Scheduled Profiling for Data Drift Detection
+
+In production environments, data drift silently degrades model accuracy. Scheduling weekly profiling runs and comparing the output against a baseline catches drift before it causes business impact.
+
+```python
+import json
+from datetime import datetime
+from ydata_profiling import ProfileReport
+import pandas as pd
+
+def profile_and_compare(current_df, baseline_path="baseline_summary.json"):
+    """Profile current data and flag columns that drift from baseline."""
+    profile = ProfileReport(current_df, minimal=True)
+    summary = json.loads(profile.to_json())
+
+    try:
+        with open(baseline_path) as f:
+            baseline = json.load(f)
+
+        drift_flags = []
+        for col, stats in summary["variables"].items():
+            if col not in baseline:
+                continue
+            base_mean = baseline[col].get("mean")
+            curr_mean = stats.get("mean")
+            if base_mean and curr_mean:
+                pct_change = abs(curr_mean - base_mean) / (abs(base_mean) + 1e-9)
+                if pct_change > 0.15:  # >15% shift triggers alert
+                    drift_flags.append({
+                        "column": col,
+                        "baseline_mean": round(base_mean, 4),
+                        "current_mean": round(curr_mean, 4),
+                        "pct_change": round(pct_change * 100, 1)
+                    })
+
+        return profile, drift_flags
+
+    except FileNotFoundError:
+        # First run — save baseline
+        with open(baseline_path, "w") as f:
+            json.dump({col: v for col, v in summary["variables"].items()}, f)
+        return profile, []
+
+profile, flags = profile_and_compare(pd.read_csv("production_data.csv"))
+if flags:
+    print(f"DRIFT DETECTED in {len(flags)} columns: {flags}")
+```
+
+This pattern integrates naturally with Airflow, Prefect, or any scheduled job system.
 
 ## Integration with Data Pipelines
 
@@ -299,6 +366,10 @@ Keep your profiling efficient and actionable:
 
 4. **Focus on actionables** — use AI to filter noise from insights
 
+5. **Sample large datasets** — a 5-10% stratified sample gives equivalent distributional insights at a fraction of the compute cost for datasets above 5 million rows
+
+6. **Version your baselines** — store profile JSON summaries in git alongside your model artifacts so you can always trace what the training data looked like
+
 ## Frequently Asked Questions
 
 **What is the difference between ydata-profiling and the old pandas-profiling?**
@@ -313,6 +384,8 @@ Yes. Generate the report as JSON using `profile.to_json()`, extract key metrics,
 **Which AI tool works best for interpreting profiling output?**
 Any capable LLM works well. The key is structure: extract findings into a clean JSON or bullet-point summary before prompting. Cursor's chat, GitHub Copilot, or a direct API call to an LLM all produce useful preprocessing recommendations when given a clear dataset summary.
 
+**How do I detect data drift in production without retraining?**
+Profile your production data on a schedule and compare key statistics — mean, standard deviation, and null rate — against a saved baseline. A shift greater than 10-15% in any feature is a trigger for investigation. The scheduled profiling script in this article implements exactly this pattern.
 
 ## Related Articles
 
