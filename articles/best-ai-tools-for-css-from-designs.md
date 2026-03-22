@@ -200,7 +200,7 @@ Most projects see best ROI from Locofy + Claude vision model: Locofy handles str
 1. Do you have Figma designs? → Yes: Locofy
 2. Do you need production-ready in <30 minutes? → Yes: Builder.io
 3. Do you need pixel-perfect color accuracy? → Yes: Claude Opus vision
-4. Is this a one-off component? → Yes: Claude vision, paste output into your IDE
+4. Is this an one-off component? → Yes: Claude vision, paste output into your IDE
 5. Do you have design system tokens to extract? → Yes: Figma Dev Mode
 
 ## Real-World Example: Landing Page
@@ -305,5 +305,4 @@ For one-off component extraction: Figma Dev Mode CSS, pasted into Claude with "m
 - [Which AI Tool Generates Better Vue 3 Composition API Components](/ai-tools-compared/which-ai-tool-generates-better-vue-3-composition-api-components/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

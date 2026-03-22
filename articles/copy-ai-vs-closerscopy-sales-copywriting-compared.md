@@ -244,5 +244,4 @@ For developers building sales automation tools, ClosersCopy's workflow system ac
 - [Jasper AI vs Copy AI: Which Is Better for Marketing in 2026](/ai-tools-compared/jasper-ai-vs-copy-ai-which-is-better-for-marketing/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

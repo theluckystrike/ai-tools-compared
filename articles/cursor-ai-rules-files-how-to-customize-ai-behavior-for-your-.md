@@ -209,8 +209,8 @@ Sometimes Cursor may override rules in specific contexts. For example, when expl
 ```typescript
 // Use this pattern for all stores
 export const useProductStore = create<ProductState>((set) => ({
-  products: [],
-  setProducts: (products) => set({ products }),
+ products: [],
+ setProducts: (products) => set({ products }),
 }));
 ```
 
@@ -260,10 +260,10 @@ src/
 ```typescript
 // Always return consistent format
 {
-  success: boolean,
-  data: T | null,
-  error?: string,
-  timestamp: ISO8601
+ success: boolean,
+ data: T | null,
+ error?: string,
+ timestamp: ISO8601
 }
 ```
 

@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "AI Coding Assistant for Network Traffic Analysis: What Connection Do They Have?"
+title: "AI Coding Assistant for Network Traffic Analysis: What"
 description: "Explore how AI coding assistants can help with network traffic analysis, from writing packet capture scripts to analyzing connection logs"
 date: 2026-03-22
 last_modified_at: 2026-03-22
@@ -46,8 +46,5 @@ When investigating security incidents, developers need custom forensics tools. A
 
 When using AI coding assistants for network traffic analysis tasks, prioritize tools that demonstrate strong understanding of network protocols, support relevant libraries and frameworks, and can handle complex parsing scenarios. The best assistants recognize common protocol structures like TCP/IP headers, HTTP requests, and DNS queries without requiring extensive context.
 
-## Conclusion
-
-AI coding assistants serve as valuable collaborators in network traffic analysis workflows. They do not replace human expertise in network security but amplify productivity by handling code generation, reducing syntax errors, and accelerating the development of custom analysis tools. For teams building network monitoring solutions or conducting traffic analysis, these tools represent a significant productivity enhancement.
-
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

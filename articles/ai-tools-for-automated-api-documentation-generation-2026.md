@@ -683,7 +683,5 @@ For new projects in 2026, start with **Mintlify** (free, fast). As you scale to 
 - [AI Tools for API Documentation from Code 2026](/ai-tools-for-api-documentation-from-code-2026/)
 - [AI Tools for Automated Changelog Generation 2026](/ai-tools-for-automated-changelog-generation-2026/)
 
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

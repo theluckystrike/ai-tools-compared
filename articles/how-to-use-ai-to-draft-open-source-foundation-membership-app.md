@@ -281,88 +281,88 @@ from datetime import datetime, timedelta
 from pathlib import Path
 
 class ContributionAnalyzer:
-    def __init__(self, repo_path: str, author_email: str):
-        self.repo = repo_path
-        self.author = author_email
-        self.data = {}
+ def __init__(self, repo_path: str, author_email: str):
+ self.repo = repo_path
+ self.author = author_email
+ self.data = {}
 
-    def count_merged_prs(self) -> int:
-        """Count merged pull requests by author."""
-        result = subprocess.run(
-            ['git', 'log', '--grep=Merge pull', f'--author={self.author}',
-             '--oneline'],
-            cwd=self.repo,
-            capture_output=True, text=True
-        )
-        return len(result.stdout.strip().split('\n')) if result.stdout else 0
+ def count_merged_prs(self) -> int:
+ """Count merged pull requests by author."""
+ result = subprocess.run(
+ ['git', 'log', '--grep=Merge pull', f'--author={self.author}',
+ '--oneline'],
+ cwd=self.repo,
+ capture_output=True, text=True
+ )
+ return len(result.stdout.strip().split('\n')) if result.stdout else 0
 
-    def extract_commit_messages(self, limit: int = 20) -> list:
-        """Extract recent commit messages (for application content)."""
-        result = subprocess.run(
-            ['git', 'log', '-n', str(limit), f'--author={self.author}',
-             '--pretty=format:%B'],
-            cwd=self.repo,
-            capture_output=True, text=True
-        )
-        messages = result.stdout.strip().split('\n\n')
-        return [m for m in messages if m.strip()]
+ def extract_commit_messages(self, limit: int = 20) -> list:
+ """Extract recent commit messages (for application content)."""
+ result = subprocess.run(
+ ['git', 'log', '-n', str(limit), f'--author={self.author}',
+ '--pretty=format:%B'],
+ cwd=self.repo,
+ capture_output=True, text=True
+ )
+ messages = result.stdout.strip().split('\n\n')
+ return [m for m in messages if m.strip()]
 
-    def calculate_contribution_stats(self) -> dict:
-        """Calculate contribution statistics."""
-        # Count commits
-        commits_result = subprocess.run(
-            ['git', 'rev-list', '--count', f'--author={self.author}', 'HEAD'],
-            cwd=self.repo,
-            capture_output=True, text=True
-        )
-        commits = int(commits_result.stdout.strip())
+ def calculate_contribution_stats(self) -> dict:
+ """Calculate contribution statistics."""
+ # Count commits
+ commits_result = subprocess.run(
+ ['git', 'rev-list', '--count', f'--author={self.author}', 'HEAD'],
+ cwd=self.repo,
+ capture_output=True, text=True
+ )
+ commits = int(commits_result.stdout.strip())
 
-        # Count changed lines
-        changes_result = subprocess.run(
-            ['git', 'log', '--numstat', f'--author={self.author}',
-             '--pretty=format:'],
-            cwd=self.repo,
-            capture_output=True, text=True
-        )
+ # Count changed lines
+ changes_result = subprocess.run(
+ ['git', 'log', '--numstat', f'--author={self.author}',
+ '--pretty=format:'],
+ cwd=self.repo,
+ capture_output=True, text=True
+ )
 
-        additions = 0
-        deletions = 0
-        for line in changes_result.stdout.strip().split('\n'):
-            if line.strip():
-                parts = line.split('\t')
-                if len(parts) >= 2:
-                    try:
-                        additions += int(parts[0])
-                        deletions += int(parts[1])
-                    except ValueError:
-                        pass
+ additions = 0
+ deletions = 0
+ for line in changes_result.stdout.strip().split('\n'):
+ if line.strip():
+ parts = line.split('\t')
+ if len(parts) >= 2:
+ try:
+ additions += int(parts[0])
+ deletions += int(parts[1])
+ except ValueError:
+ pass
 
-        # Years of contribution
-        first_commit = subprocess.run(
-            ['git', 'log', '--diff-filter=A', f'--author={self.author}',
-             '--pretty=format:%ai', '--reverse', '-n', '1'],
-            cwd=self.repo,
-            capture_output=True, text=True
-        )
-        if first_commit.stdout:
-            first_date = datetime.fromisoformat(first_commit.stdout.strip()[:10])
-            years = (datetime.now() - first_date).days / 365.25
-        else:
-            years = 0
+ # Years of contribution
+ first_commit = subprocess.run(
+ ['git', 'log', '--diff-filter=A', f'--author={self.author}',
+ '--pretty=format:%ai', '--reverse', '-n', '1'],
+ cwd=self.repo,
+ capture_output=True, text=True
+ )
+ if first_commit.stdout:
+ first_date = datetime.fromisoformat(first_commit.stdout.strip()[:10])
+ years = (datetime.now() - first_date).days / 365.25
+ else:
+ years = 0
 
-        return {
-            'total_commits': commits,
-            'lines_added': additions,
-            'lines_deleted': deletions,
-            'years_contributing': round(years, 1),
-        }
+ return {
+ 'total_commits': commits,
+ 'lines_added': additions,
+ 'lines_deleted': deletions,
+ 'years_contributing': round(years, 1),
+ }
 
-    def generate_ai_prompt(self) -> str:
-        """Generate prompt for AI to create application draft."""
-        stats = self.calculate_contribution_stats()
-        recent_work = self.extract_commit_messages(10)
+ def generate_ai_prompt(self) -> str:
+ """Generate prompt for AI to create application draft."""
+ stats = self.calculate_contribution_stats()
+ recent_work = self.extract_commit_messages(10)
 
-        prompt = f"""Create a foundation membership application statement based on:
+ prompt = f"""Create a foundation membership application statement based on:
 
 Years Contributing: {stats['years_contributing']}
 Total Commits: {stats['total_commits']}
@@ -376,12 +376,12 @@ Focus on:
 2. Collaborative spirit and mentoring
 3. Future vision for the project
 """
-        return prompt
+ return prompt
 
 # Usage
 analyzer = ContributionAnalyzer(
-    repo_path="/path/to/project",
-    author_email="user@example.com"
+ repo_path="/path/to/project",
+ author_email="user@example.com"
 )
 stats = analyzer.calculate_contribution_stats()
 print("Contribution Statistics:")
@@ -426,5 +426,7 @@ Before submitting AI-drafted applications:
 - [Best AI Assistant for Drafting Open Source Partnership and](/ai-tools-compared/best-ai-assistant-for-drafting-open-source-partnership-and-integration-proposals-2026/)
 - [Best AI Assistant for Generating Open Source Release](/ai-tools-compared/best-ai-assistant-for-generating-open-source-release-announcements/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
 ```
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

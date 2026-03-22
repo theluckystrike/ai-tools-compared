@@ -229,7 +229,7 @@ Let's trace how each tool handles a complete character design project:
 - Midjourney: Rapid iteration, visual feedback in Discord, 10 minutes per character variant
 - Stable Diffusion: Setup heavy upfront, but faster generation once trained (30 seconds per image vs Midjourney's 45-90 seconds)
 
-For a one-off character design, Midjourney is faster. For a character franchise needing 100+ variations, Stable Diffusion pays dividends in setup time.
+For an one-off character design, Midjourney is faster. For a character franchise needing 100+ variations, Stable Diffusion pays dividends in setup time.
 
 
 ## LoRA Training Deep Dive

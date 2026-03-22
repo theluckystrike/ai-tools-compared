@@ -337,7 +337,7 @@ Firefox has subtle differences in how it interprets `min-width` on flex items:
 When you encounter a Flexbox issue, the most productive AI workflow follows this pattern:
 
 1. **Isolate the minimal HTML/CSS that reproduces the issue**
-   ```html
+ ```html
    <div class="container">
      <div class="item">Item 1</div>
      <div class="item">Item 2</div>
@@ -345,21 +345,21 @@ When you encounter a Flexbox issue, the most productive AI workflow follows this
    ```
 
 2. **Show the CSS causing issues**
-   ```css
+ ```css
    .container { display: flex; /* rest of code */ }
    ```
 
 3. **Describe what you expect vs what you see**
-   - "I expect items to be centered vertically"
-   - "I see items aligned to the top"
-   - "This works in Chrome but not Safari"
+ - "I expect items to be centered vertically"
+ - "I see items aligned to the top"
+ - "This works in Chrome but not Safari"
 
 4. **Ask AI to identify the root cause**
-   - Claude: "Why is this alignment not working?"
-   - Cursor: "Help me fix this flexbox centering issue"
+ - Claude: "Why is this alignment not working?"
+ - Cursor: "Help me fix this flexbox centering issue"
 
 5. **Review the suggested fix and understand it**
-   - Ask "Why does this fix work?" if unclear
+ - Ask "Why does this fix work?" if unclear
 
 The key is providing complete context. Partial code snippets lead to generic suggestions. Complete minimal examples enable AI tools to give precise advice.
 

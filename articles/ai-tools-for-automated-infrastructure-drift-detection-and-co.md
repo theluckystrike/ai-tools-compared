@@ -319,7 +319,7 @@ Configure your AI drift tool with an exception list for known patterns, and rout
 Managing drift across AWS, GCP, and Azure simultaneously introduces challenges that single-cloud tools don't encounter. Each provider has different APIs, resource models, and update cadences. An AI drift tool operating across clouds must normalize resource representations before comparison.
 
 
-For example, a security group in AWS and a firewall rule in GCP serve similar purposes but have different schemas. AI tools that understand semantic equivalence—rather than just schema matching—catch drift that simpler tools miss entirely. When a GCP firewall rule is opened to `0.0.0.0/0` while the equivalent AWS security group is correctly restricted, a semantically-aware AI flags both issues using a unified policy, not cloud-specific rules.
+For example, a security group in AWS and a firewall rule in GCP serve similar purposes but have different schemas. AI tools that understand semantic equivalence—rather than just schema matching—catch drift that simpler tools miss entirely. When a GCP firewall rule is opened to `0.0.0.0/0` while the equivalent AWS security group is correctly restricted, a semantically-aware AI flags both issues using an unified policy, not cloud-specific rules.
 
 
 This capability is particularly valuable for organizations running hybrid workloads where applications span multiple clouds. Define your desired security posture once, and let the AI enforce it consistently regardless of cloud provider.

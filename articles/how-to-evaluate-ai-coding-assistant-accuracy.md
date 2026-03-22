@@ -144,7 +144,7 @@ def run_tests(task, generated_code):
     """Apply generated code and run the relevant test."""
     # Parse code from markdown blocks if present
     if "```python" in generated_code:
-        code = generated_code.split("```python")[1].split("```")[0].strip()
+ code = generated_code.split("```python")[1].split("```")[0].strip()
     else:
         code = generated_code
 
@@ -259,5 +259,4 @@ Based on running this framework on a Python/Django codebase:
 - [AI Autocomplete Accuracy Comparison: Copilot vs Codeium vs Tabnine](/ai-tools-compared/ai-autocomplete-accuracy-comparison-copilot-vs-codeium-vs-ta/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

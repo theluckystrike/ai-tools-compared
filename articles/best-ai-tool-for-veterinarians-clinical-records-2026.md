@@ -261,7 +261,7 @@ notes = (
 print(generate_soap_note("Max", "Canine, 4yr, M/N Labrador", notes))
 ```
 
-
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
 
 ## Related Reading

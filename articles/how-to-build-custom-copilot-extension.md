@@ -385,5 +385,4 @@ For internal tools, skip marketplace publication entirely — install the GitHub
 - [Continue Dev vs GitHub Copilot: Open Source Comparison](/ai-tools-compared/continue-dev-vs-github-copilot-open-source-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

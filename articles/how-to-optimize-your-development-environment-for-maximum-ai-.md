@@ -154,12 +154,12 @@ Not all environment changes provide equal benefit. Here's an honest breakdown:
 | Conventional project structure | High — models learned on OSS repos | Yes, always |
 | `.editorconfig` / formatting | Medium — reduces cleanup passes | Yes, low effort |
 | TypeScript strict mode | High — eliminates type ambiguity | Yes for TS projects |
-| Comprehensive JSDoc comments | High — gives AI function intent | Yes, especially on utilities |
+| JSDoc comments | High — gives AI function intent | Yes, especially on utilities |
 | Detailed README | Low — rarely included in context | Marginal |
 | Clean git history | Low — not in real-time context | Marginal for PR review tools |
 | `.aiignore` exclusions | Medium — keeps context focused | Yes for large repos |
 
-The highest-leverage configurations are project structure, type annotations, and in-file comments. The AI reads what's in your open files and nearby modules — invest there first.
+The highest-use configurations are project structure, type annotations, and in-file comments. The AI reads what's in your open files and nearby modules — invest there first.
 
 
 ## Using AI-Powered Search and Navigation

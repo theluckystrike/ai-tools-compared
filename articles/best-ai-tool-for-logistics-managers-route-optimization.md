@@ -380,25 +380,25 @@ import anthropic
 client = anthropic.Anthropic()
 
 def optimize_routes(stops):
-    stops_text = "\n".join(
-        f"Stop {i+1}: {s['address']} -- {s['window']} -- {s['load_kg']}kg"
-        for i, s in enumerate(stops)
-    )
-    message = client.messages.create(
-        model="claude-opus-4-6",
-        max_tokens=600,
-        messages=[{"role": "user", "content": (
-            f"Delivery stops for today:\n{stops_text}\n\n"
-            "Identify sequencing inefficiencies, suggest a reordered route "
-            "that minimizes backtracking, and flag stops with tight time windows."
-        )}]
-    )
-    return message.content[0].text
+ stops_text = "\n".join(
+ f"Stop {i+1}: {s['address']} -- {s['window']} -- {s['load_kg']}kg"
+ for i, s in enumerate(stops)
+ )
+ message = client.messages.create(
+ model="claude-opus-4-6",
+ max_tokens=600,
+ messages=[{"role": "user", "content": (
+ f"Delivery stops for today:\n{stops_text}\n\n"
+ "Identify sequencing inefficiencies, suggest a reordered route "
+ "that minimizes backtracking, and flag stops with tight time windows."
+ )}]
+ )
+ return message.content[0].text
 
 stops = [
-    {"address": "123 Main St", "window": "9-11am",  "load_kg": 50},
-    {"address": "900 Oak Ave", "window": "8-9am",   "load_kg": 30},
-    {"address": "45 Elm Rd",   "window": "10-12pm", "load_kg": 80},
+ {"address": "123 Main St", "window": "9-11am", "load_kg": 50},
+ {"address": "900 Oak Ave", "window": "8-9am", "load_kg": 30},
+ {"address": "45 Elm Rd", "window": "10-12pm", "load_kg": 80},
 ]
 print(optimize_routes(stops))
 ```
@@ -412,6 +412,8 @@ print(optimize_routes(stops))
 - [AI Tools for Pricing Optimization: A Practical Guide for](/ai-tools-compared/ai-tools-for-pricing-optimization/)
 - [AI Vendor Payment Optimization Tools 2026: A Practical](/ai-tools-compared/ai-vendor-payment-optimization-tools-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
 ```
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -65,27 +65,27 @@ def migrate_file(filepath: str) -> tuple[str, bool]:
 
     migrated = response.content[0].text
     if migrated.startswith("```"):
-        migrated = "\n".join(migrated.split("\n")[1:-1])
+ migrated = "\n".join(migrated.split("\n")[1:-1])
 
-    changed = migrated.strip() != original.strip()
-    return migrated, changed
+ changed = migrated.strip() != original.strip()
+ return migrated, changed
 
 src_dir = Path("./src")
 files = list(src_dir.rglob("*.tsx")) + list(src_dir.rglob("*.jsx"))
 results = {"changed": [], "unchanged": [], "errors": []}
 
 for filepath in files:
-    try:
-        migrated_content, was_changed = migrate_file(str(filepath))
-        if was_changed:
-            staging_path = Path("./migration-staging") / filepath.relative_to("./src")
-            staging_path.parent.mkdir(parents=True, exist_ok=True)
-            staging_path.write_text(migrated_content)
-            results["changed"].append(str(filepath))
-        else:
-            results["unchanged"].append(str(filepath))
-    except Exception as e:
-        results["errors"].append({"file": str(filepath), "error": str(e)})
+ try:
+ migrated_content, was_changed = migrate_file(str(filepath))
+ if was_changed:
+ staging_path = Path("./migration-staging") / filepath.relative_to("./src")
+ staging_path.parent.mkdir(parents=True, exist_ok=True)
+ staging_path.write_text(migrated_content)
+ results["changed"].append(str(filepath))
+ else:
+ results["unchanged"].append(str(filepath))
+ except Exception as e:
+ results["errors"].append({"file": str(filepath), "error": str(e)})
 
 print(f"Changed: {len(results['changed'])} files")
 ```
@@ -120,16 +120,16 @@ python_files = list(Path("./legacy_app").rglob("*.py"))
 batch_requests = []
 
 for i, filepath in enumerate(python_files):
-    with open(filepath, encoding="latin-1") as f:
-        content = f.read()
+ with open(filepath, encoding="latin-1") as f:
+ content = f.read()
 
-    batch_requests.append({
-        "custom_id": f"file-{i}",
-        "params": {
-            "model": "claude-haiku-3-5",
-            "max_tokens": 8192,
-            "messages": [
-                {"role": "user", "content": f"{PYTHON_23_MIGRATION_PROMPT}\n\n```python\n{content}\n```"}
+ batch_requests.append({
+ "custom_id": f"file-{i}",
+ "params": {
+ "model": "claude-haiku-3-5",
+ "max_tokens": 8192,
+ "messages": [
+ {"role": "user", "content": f"{PYTHON_23_MIGRATION_PROMPT}\n\n```python\n{content}\n```"}
             ],
         }
     })
@@ -289,5 +289,4 @@ The time savings grow with scale. For fewer than 20 files, writing a migration p
 - [Best AI Tools for Automated Code Review 2026](/ai-tools-compared/best-ai-tools-for-automated-code-review-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

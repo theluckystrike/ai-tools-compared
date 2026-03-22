@@ -365,4 +365,5 @@ Track these metrics monthly to evaluate your AI pricing tool:
 - **Booking Lead Time**: How far in advance guests book. Shorter lead times may indicate underpricing; very long lead times suggest you could price higher.
 - **Occupancy Rate vs. Market Average**: Compare your occupancy to similar listings in your area. Healthy occupancy sits between 70-85% -- above 90% often means you are leaving money on the table.
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

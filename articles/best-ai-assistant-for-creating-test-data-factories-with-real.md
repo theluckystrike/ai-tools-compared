@@ -72,7 +72,7 @@ Claude Code excels at generating factories that use libraries like Factory Boy, 
 ## Cursor for Test Data Generation
 
 
- Cursor provides strong autocomplete capabilities for test data generation. Its understanding of TypeScript and JavaScript patterns makes it particularly effective for projects using Node.js testing frameworks.
+Cursor provides strong autocomplete capabilities for test data generation. Its understanding of TypeScript and JavaScript patterns makes it particularly effective for projects using Node.js testing frameworks.
 
 
 When generating test data in JavaScript or TypeScript, Cursor can create mock data utilities:

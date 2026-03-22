@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "AI Coding Tools for Automating Changelog Generation from Conventional Commits"
-description: "A practical guide to AI coding tools for automating changelog generation from conventional commits. Learn how to integrate AI-powered tools with your Git workflow in 2026."
+title: "AI Coding Tools for Automating Changelog Generation from"
+description: "A practical guide to AI coding tools for automating changelog generation from conventional commits. Learn how to integrate AI-powered tools with your Git"
 date: 2026-03-21
 last_modified_at: 2026-03-21
 author: theluckystrike
@@ -208,13 +208,6 @@ npx commitlint --from HEAD~1 --to HEAD --format conventional
 **Provide context.** When using AI for commit messages, include issue numbers or PR context in your prompts for more accurate suggestions.
 
 **Train your model.** If using local models like Ollama, provide feedback on commit suggestions to improve accuracy over time.
-
-## Conclusion
-
-AI coding tools have matured significantly for automating changelog generation from conventional commits. Whether you prefer GitHub Copilot's tight IDE integration, Ollama's privacy-first local approach, or Aider's command-line workflow, implementing these tools reduces manual overhead while maintaining structured commit history.
-
-The key is starting with consistent conventional commits, then layering AI tools to handle message generation and changelog aggregation. This workflow scales from small projects to enterprise monorepos, keeping your release notes accurate without the repetitive manual work.
-
 
 ## Related Articles
 

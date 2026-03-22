@@ -449,19 +449,19 @@ npx prettier --write schema.graphql
 ## Common Mistakes in AI-Generated Resolvers
 
 1. **N+1 Queries**: Generated resolvers fetch individually without DataLoader
-   - Fix: Explicitly mention "Use DataLoader batching" in prompt
+ - Fix: Explicitly mention "Use DataLoader batching" in prompt
 
 2. **Missing Context Typing**: Loaders not properly typed
-   - Fix: Provide sample context interface to Claude
+ - Fix: Provide sample context interface to Claude
 
 3. **Hardcoded Database Queries**: No ORM abstraction
-   - Fix: Specify "Use Prisma" explicitly in prompt
+ - Fix: Specify "Use Prisma" explicitly in prompt
 
 4. **No Error Handling**: Generated resolvers don't catch null/undefined
-   - Fix: Request "Add error handling for missing data"
+ - Fix: Request "Add error handling for missing data"
 
 5. **Inefficient Counts**: Loading all data just to count
-   - Fix: Prompt "Use SQL count for commentCount, not array length"
+ - Fix: Prompt "Use SQL count for commentCount, not array length"
 
 ## Real-World Performance Impact
 

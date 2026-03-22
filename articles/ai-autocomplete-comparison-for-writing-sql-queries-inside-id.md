@@ -146,7 +146,7 @@ Tabnine offers both local and cloud-based AI completion with strong privacy opti
 
 
 | Tool | SQL Dialect Support | Schema Awareness | Natural Language Queries | Offline Mode | Price |
-|------|--------------------|-----------------|--------------------------|-----------   |-------|
+|------|--------------------|-----------------|--------------------------|----------- |-------|
 | GitHub Copilot | PostgreSQL, MySQL, SQLite, MSSQL | Via project context | Limited | No | $10/mo |
 | Cursor | PostgreSQL, MySQL, SQLite, MSSQL | Strong via codebase | Yes (Ctrl+K) | No | $20/mo |
 | Codeium | PostgreSQL, MySQL, SQLite | Via DB connector | Limited | No | Free |

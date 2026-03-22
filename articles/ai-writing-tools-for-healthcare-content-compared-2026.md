@@ -311,5 +311,4 @@ When evaluating AI writing tools for healthcare content, prioritize these practi
 - [How to Transfer WriteSonic Content to Jasper AI Brand Voice](/ai-tools-compared/how-to-transfer-writesonic-content-to-jasper-ai-brand-voice/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Hubspot vs Salesforce Service Cloud"
+title: "HubSpot vs Salesforce Service Cloud"
 description: "A practical technical comparison of HubSpot and Salesforce Service Cloud AI capabilities, with API examples and integration insights for developers"
 date: 2026-03-15
 last_modified_at: 2026-03-15
@@ -296,5 +296,4 @@ The most common mistake teams make is choosing the platform based on brand recog
 - [Best AI Tools for Writing Go gRPC Service Definitions and](/ai-tools-compared/best-ai-tools-for-writing-go-grpc-service-definitions-and-implementations/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

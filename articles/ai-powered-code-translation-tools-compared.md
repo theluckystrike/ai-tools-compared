@@ -319,7 +319,7 @@ Output only the {TARGET_LANG} code, no explanations."""
 
     code = response.content[0].text
     if f"```{TARGET_LANG.lower()}" in code:
-        code = code.split(f"```{TARGET_LANG.lower()}")[1].split("```")[0].strip()
+ code = code.split(f"```{TARGET_LANG.lower()}")[1].split("```")[0].strip()
 
     target_path.parent.mkdir(parents=True, exist_ok=True)
     target_path.write_text(code)
@@ -359,5 +359,4 @@ Neither tool produces code that compiles without any review. Plan for 15-30% of 
 - [How to Use AI Context Management for Large Refactoring](/ai-tools-compared/how-to-use-ai-context-management-to-work-on-large-refactorin/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

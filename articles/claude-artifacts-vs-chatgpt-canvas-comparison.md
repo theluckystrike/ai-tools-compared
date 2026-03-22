@@ -322,5 +322,4 @@ Start with Artifacts for visual feedback, export to your editor, then use Canvas
 - [ChatGPT Canvas Not Saving Changes Fix 2026](/ai-tools-compared/chatgpt-canvas-not-saving-changes-fix-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

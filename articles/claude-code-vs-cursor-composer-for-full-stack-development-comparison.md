@@ -224,9 +224,9 @@ This visual approach is slower for large changes but gives you fine-grained cont
 - CLI tool costs depend on Claude API usage
 - Standard Claude: $3 per 1M input tokens, $15 per 1M output tokens
 - For a typical full-stack project (building 5 API routes + components):
-  - ~400k input tokens (your codebase context)
-  - ~150k output tokens (generated code)
-  - **Cost: ~$3.50 per session**
+ - ~400k input tokens (your codebase context)
+ - ~150k output tokens (generated code)
+ - **Cost: ~$3.50 per session**
 - Monthly budget: ~$100-150 for active development
 
 **Cursor Composer:**

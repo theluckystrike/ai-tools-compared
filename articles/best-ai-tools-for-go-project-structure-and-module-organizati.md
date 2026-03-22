@@ -225,7 +225,7 @@ When asking AI tools for structure feedback, understanding common mistakes helps
 
 **The "Everything in Root" Anti-Pattern**: Placing all code in the root package directory sacrifices organization and violates Go conventions. A properly structured project separates concerns into dedicated packages.
 
-**Circular Dependencies**: When package A imports package B and package B imports package A (directly or transitively), Go compilation fails. AI tools can identify these patterns by analyzing import statements across your codebase.
+**Circular Dependencies**: When package An imports package B and package B imports package A (directly or transitively), Go compilation fails. AI tools can identify these patterns by analyzing import statements across your codebase.
 
 **Underscore Imports Without Documentation**: Using `import _ "package/name"` for side effects requires explanatory comments. Developers new to the codebase get confused about why an imported package isn't directly used.
 

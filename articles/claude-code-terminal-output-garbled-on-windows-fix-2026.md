@@ -423,3 +423,5 @@ Write-Host "Encoding verification complete."
 3. **Monitor system updates** - Windows updates sometimes reset code page settings
 4. **Use configuration management** - store encoding settings in version control
 5. **Test regularly** - use the test scripts above monthly
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

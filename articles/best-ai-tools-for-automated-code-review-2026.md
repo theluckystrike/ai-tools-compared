@@ -403,5 +403,4 @@ Automated code review works best as one layer in a quality strategy. Pair with h
 - [AI for Automated Regression Test Generation from Bug Reports](/ai-tools-compared/ai-for-automated-regression-test-generation-from-bug-reports/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

@@ -348,5 +348,4 @@ ollama create qwen-code-custom -f ~/.ollama/Modelfile_qwen
 - [AI Code Generation for Java Reactive Programming with Projec](/ai-tools-compared/ai-code-generation-for-java-reactive-programming-with-projec/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

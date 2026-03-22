@@ -294,7 +294,7 @@ Create a spreadsheet tracking your actual usage:
 | Memory + 3 Custom GPTs | 40 | 4,500 | ~$0.90 | ~$27 |
 | Memory + Full-Featured GPT | 40 | 8,000 | ~$1.60 | ~$48 |
 
-Your actual Plus subscription ($20/month) includes a usage allowance. Additional consumption beyond that allowance incurs the token-based charges shown above.
+Your actual Plus subscription ($20/month) includes an usage allowance. Additional consumption beyond that allowance incurs the token-based charges shown above.
 
 ## Migration Path for Heavy Users
 

@@ -320,3 +320,5 @@ AI tools excel at CRD design and can scaffold reconcilers. They struggle with pr
 For most teams: Use Operator SDK to scaffold, ask Claude to explain Kubernetes patterns you don't understand, write reconciliation logic with Copilot suggestions, and manually build tests. This cuts development time by 40% compared to writing from scratch while maintaining code quality.
 
 Estimated time: 2-3 weeks for simple operator (backup, scaling). Without AI: 4-5 weeks. The gap narrows for complex operators because AI can't handle architectural decisions—you're making those anyway.
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

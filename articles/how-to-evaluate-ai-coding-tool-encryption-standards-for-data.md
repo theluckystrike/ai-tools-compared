@@ -194,7 +194,7 @@ Suppose you're evaluating "CodeAI," a fictional AI coding assistant. Here's your
 
  ```
 
- Expected output shows TLS 1.3 with strong ciphers.
+Expected output shows TLS 1.3 with strong ciphers.
 
 
 3. Traffic capture: Use a local proxy to verify all traffic uses HTTPS. Plain HTTP requests to the API indicate problems.
@@ -222,7 +222,7 @@ After evaluating encryption standards, compare results against your requirements
 Document your findings. Security assessments become valuable references when evaluating new tools or responding to security reviews.
 
 
-## Comprehensive Encryption Evaluation Checklist
+## Encryption Evaluation Checklist
 
 
 ### Transport Layer Assessment
