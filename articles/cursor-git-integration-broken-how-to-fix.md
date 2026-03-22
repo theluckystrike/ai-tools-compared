@@ -65,11 +65,11 @@ Solution: First, ensure your remote URL matches your authentication method. Chec
 ```bash
 git remote -v
 ```
-{% endraw %}
+
 
 For HTTPS, ensure your credentials are stored:
 
-{% raw %}
+
 
 ```bash
 git config --global credential.helper store
