@@ -333,17 +333,117 @@ Source:
 # Run on every PR as a documentation quality gate
 ```
 
+## Approach 5: Changelog and Release Notes Generation
+
+One underused application is generating changelogs directly from git commits and diffs. This eliminates the friction of writing release notes manually:
+
+```python
+import subprocess
+
+def generate_changelog_entry(version: str, since_tag: str) -> str:
+    """Generate a changelog entry from git commits since the last tag."""
+    # Get commit log since last tag
+    log = subprocess.check_output([
+        "git", "log", f"{since_tag}..HEAD",
+        "--pretty=format:%h %s",
+        "--no-merges"
+    ]).decode()
+
+    # Get the full diff for context
+    diff_stat = subprocess.check_output([
+        "git", "diff", f"{since_tag}..HEAD", "--stat"
+    ]).decode()
+
+    response = client.messages.create(
+        model="claude-opus-4-6",
+        max_tokens=1000,
+        messages=[{
+            "role": "user",
+            "content": f"""Generate a changelog entry for version {version}.
+
+Git commits since {since_tag}:
+{log[:3000]}
+
+Files changed:
+{diff_stat[:1000]}
+
+Format as Keep a Changelog (https://keepachangelog.com):
+## [{version}] - YYYY-MM-DD
+
+### Added
+### Changed
+### Fixed
+### Removed
+
+Group commits by type. Skip trivial commits (typos, formatting).
+Translate technical commit messages into user-facing language."""
+        }]
+    )
+    return response.content[0].text
+```
+
+This pairs well with a pre-release GitHub Action that auto-creates a draft release with the generated changelog, which an engineer then reviews and edits before publishing.
+
 ## Tool Comparison
 
-| Tool | Docstrings | API Ref | Architecture Docs | Accuracy Review |
-|---|---|---|---|---|
-| Claude (API) | Excellent, infers types | Full markdown | Yes | Yes |
-| GPT-4 (API) | Good | Good | Basic | Partial |
-| Sphinx autodoc | From existing docstrings | HTML output | No | No |
-| pydoc-markdown | From existing docstrings | Markdown | No | No |
-| Copilot (inline) | In-editor only | No batch | No | No |
+| Tool | Docstrings | API Ref | Architecture Docs | Accuracy Review | Changelog |
+|---|---|---|---|---|---|
+| Claude (API) | Excellent, infers types | Full markdown | Yes | Yes | Yes |
+| GPT-4 (API) | Good | Good | Basic | Partial | Good |
+| Sphinx autodoc | From existing docstrings | HTML output | No | No | No |
+| pydoc-markdown | From existing docstrings | Markdown | No | No | No |
+| Copilot (inline) | In-editor only | No batch | No | No | No |
 
 The AI-based approaches (Claude and GPT-4) are the only ones that generate documentation where none exists. Tools like Sphinx require docstrings to already be present.
+
+**Claude vs GPT-4 for documentation**: Claude follows style guides more consistently. When you tell it to use Google style docstrings throughout a 20-function module, it stays consistent where GPT-4 may drift between styles. For changelog generation, both tools perform similarly, but Claude produces more user-focused language rather than mirroring the raw commit messages.
+
+## Integration with Pre-commit Hooks
+
+To enforce documentation as part of the development workflow, add a pre-commit hook that blocks commits with undocumented public functions:
+
+```yaml
+# .pre-commit-config.yaml
+repos:
+  - repo: local
+    hooks:
+      - id: check-docstrings
+        name: Check for missing docstrings
+        entry: python scripts/check_docstrings.py
+        language: python
+        types: [python]
+        pass_filenames: true
+```
+
+```python
+# scripts/check_docstrings.py
+import ast
+import sys
+
+def check_file(filepath: str) -> list[str]:
+    source = open(filepath).read()
+    tree = ast.parse(source)
+    missing = []
+    for node in ast.walk(tree):
+        if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
+            if node.name.startswith("_"):
+                continue  # Skip private methods
+            has_doc = (node.body and isinstance(node.body[0], ast.Expr)
+                      and isinstance(node.body[0].value, ast.Constant))
+            if not has_doc:
+                missing.append(f"{filepath}:{node.lineno}: {node.name}() missing docstring")
+    return missing
+
+issues = []
+for f in sys.argv[1:]:
+    issues.extend(check_file(f))
+
+if issues:
+    print("\n".join(issues))
+    sys.exit(1)
+```
+
+This keeps docstring debt from accumulating without requiring every developer to remember to write them. Pair it with a weekly CI job that uses Claude to auto-generate drafts for any remaining gaps.
 
 ## Related Reading
 
