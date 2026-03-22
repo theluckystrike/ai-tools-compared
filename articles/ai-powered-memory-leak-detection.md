@@ -25,6 +25,8 @@ Memory leaks are among the hardest bugs to track down. The leak might be gradual
 4. **Generate instrumentation** — AI writes targeted tracking code to confirm
 5. **Fix and verify** — re-run diagnostics to confirm zero growth
 
+The key insight is that AI tools are not replacements for profilers — they are *interpreters*. The profiler gives you data, the AI tells you what the data means in the context of your codebase.
+
 ## Node.js: Heap Snapshot Analysis with Claude
 
 Node.js heap snapshots are V8's native diagnostic format. They're large and hard to read manually.
@@ -147,6 +149,17 @@ io.on('connection', (socket) => {
 
 Claude also suggests adding `redis.setMaxListeners(0)` is a smell — it hides the leak rather than fixing it.
 
+### Confirming the Fix
+
+After applying a fix, always re-run the same load test and snapshot comparison. A clean result looks like this:
+
+```
+Baseline: heapUsed=180MB
+After 6 hours under load: heapUsed=182MB (+2MB — normal GC variance)
+```
+
+If the heap still climbs, paste the new snapshot diff back to Claude with a note that the original fix didn't solve it. Claude will re-analyze with the new data.
+
 ## Python: tracemalloc Analysis
 
 ```python
@@ -230,6 +243,15 @@ def monitor_process(func, iterations=100, context="Unknown process"):
     tracemalloc.stop()
 ```
 
+### Common Python Leak Patterns Claude Identifies
+
+Claude is particularly good at recognizing these Python-specific patterns from tracemalloc output:
+
+- **Growing `dict` or `list` in module scope**: A cache without eviction, often disguised as a module-level variable that accumulates items across requests.
+- **Unclosed file handles in exception paths**: `with` blocks that are skipped due to early returns or exception handling.
+- **Circular references preventing GC**: Python's reference-counting GC can't collect cycles — `tracemalloc` shows the allocation site, Claude identifies the cycle.
+- **ORM session accumulation**: SQLAlchemy sessions not explicitly closed, keeping objects in memory indefinitely.
+
 ## C/C++: Valgrind Output Analysis
 
 For C/C++ programs, Valgrind memcheck output is invaluable but verbose:
@@ -298,6 +320,48 @@ For each error type:
     return message.content[0].text
 ```
 
+### Reading Valgrind Error Categories
+
+Valgrind reports several error kinds. Claude excels at explaining what each means:
+
+- **`definitely lost`**: Memory with no pointers to it — the most critical. Almost always a missing `free()` or `delete`.
+- **`indirectly lost`**: Memory reachable only through definitely-lost memory. Fixing the parent fixes these too.
+- **`possibly lost`**: Pointers exist but only to the interior of a block, not its start. Common with custom allocators.
+- **`still reachable`**: Memory that could be freed at exit but wasn't. Lower priority, often in third-party libraries.
+
+Paste this taxonomy to Claude when you have a mix of error types and it will correctly triage which to fix first.
+
+## Go: pprof Integration
+
+Go's built-in pprof profiler pairs well with AI analysis:
+
+```go
+// main.go — expose pprof HTTP endpoints
+import (
+    "net/http"
+    _ "net/http/pprof"  // Side-effect import registers handlers
+)
+
+func main() {
+    // Serve pprof on a separate port (don't expose to public)
+    go http.ListenAndServe("localhost:6060", nil)
+    // ... rest of app
+}
+```
+
+Collect a heap profile:
+
+```bash
+# Take a heap profile
+go tool pprof http://localhost:6060/debug/pprof/heap
+
+# In pprof interactive mode
+(pprof) top20        # top 20 allocations by size
+(pprof) svg          # generate flame graph
+```
+
+Then ask Claude to interpret the `top20` output by pasting it directly. Claude recognizes goroutine leak patterns (growing `goroutine` count in `/debug/pprof/goroutine`) and distinguish between expected runtime allocations and application-level leaks.
+
 ## Tool Comparison
 
 | Language | Best AI Tool | Best Diagnostic Tool | Key Insight AI Provides |
@@ -307,6 +371,20 @@ For each error type:
 | C/C++ | Claude | Valgrind memcheck | Root cause from stack trace |
 | Java | GPT-4 or Claude | JVM heap dumps + MAT | GC root retention chains |
 | Go | Claude | pprof + runtime/trace | Goroutine leak detection |
+
+## Frequently Asked Questions
+
+**Q: My app uses 500MB but I don't see a leak in profiling — is it still a leak?**
+
+Not necessarily. Some memory growth is expected: caches filling up, JIT compilation, OS-level memory fragmentation. The diagnostic for a real leak is *continuous growth* over time under constant load. If the memory plateaus after warming up, it's likely not a leak.
+
+**Q: Can Claude analyze a full heap snapshot file?**
+
+Heap snapshot files can be hundreds of MB, too large to paste directly. Always summarize first using DevTools or a scripted comparison, then send the summary. Claude will ask for more detail about specific object types if needed.
+
+**Q: GPT-4 vs Claude for memory leak analysis — which is better?**
+
+Claude edges ahead for Node.js and Python patterns, particularly for recognizing event emitter and closure leaks. GPT-4 performs comparably for Java (JVM heap dump analysis) and Valgrind output. For Go's pprof output, both tools are roughly equivalent.
 
 ## Related Reading
 
