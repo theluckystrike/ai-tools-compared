@@ -12,6 +12,7 @@ reviewed: true
 score: 7
 intent-checked: false
 voice-checked: false---
+{% raw %}
 *Auto-generated on {datetime.now().isoformat()}*
 """
 ```
@@ -87,4 +88,5 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [AI Tools for Automated API Documentation from Code Comments](/ai-tools-for-automated-api-documentation-from-code-comments/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
 {% endraw %}
