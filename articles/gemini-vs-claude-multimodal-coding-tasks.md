@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /gemini-vs-claude-multimodal-coding-tasks/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, comparison, claude-ai]
