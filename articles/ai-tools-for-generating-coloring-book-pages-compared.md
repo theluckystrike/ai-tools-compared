@@ -31,6 +31,15 @@ tags: [ai-tools-compared, comparison, artificial-intelligence]---
 
 For most developers, running Stable Diffusion locally with a specialized line art LoRA model produces the best coloring book pages—clean outlines, no shading, and unlimited generation after initial hardware setup. If you want a faster start with less control, use the DALL-E 3 API with a coloring-book-specific prompt, then run the output through an OpenCV edge-detection pipeline to clean up the soft edges. Both approaches are covered below with working code examples.
 
+## Key Takeaways
+
+- **If you want a**: faster start with less control, use the DALL-E 3 API with a coloring-book-specific prompt, then run the output through an OpenCV edge-detection pipeline to clean up the soft edges.
+- **Stable Diffusion with Outline**: LoRAs Stable Diffusion, particularly when run locally via ComfyUI or Automatic1111, offers the most control.
+- **The tradeoff is hardware**: requirements (minimum 8GB VRAM recommended), higher setup complexity than API solutions, and some experimentation to get clean outlines.
+- **Generate with your preferred**: AI tool (Stable Diffusion, DALL-E, Midjourney) 2.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+
 ## Understanding Coloring Book Page Requirements
 
 Not all AI-generated images work as coloring book pages. A good coloring page needs:

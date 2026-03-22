@@ -28,9 +28,19 @@ voice-checked: true
 intent-checked: true---
 
 {% raw %}
+
 GitHub Actions workflows are powerful but verbose—YAML syntax combined with conditional logic, secrets management, and job dependencies creates friction. AI tools can generate complete `.github/workflows/` files, but they vary significantly in accuracy, pricing, and understanding of GitHub's ecosystem constraints.
 
 This guide compares three leading AI tools for workflow generation: Claude Code, GitHub Copilot, and Cursor. We'll evaluate accuracy, real-world examples, debugging workflows, and total cost of ownership.
+
+## Key Takeaways
+
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **- Claude Code**: $20 × 5 = $100/month.
+- **- GitHub Copilot**: $10 × 5 = $50/month.
+- **- Cursor**: $20 × 2-3 engineers = $40-60/month.
+- **Does GitHub offer a**: free tier? Most major tools offer some form of free tier or trial period.
+- **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 
 ## Comparison Table
 

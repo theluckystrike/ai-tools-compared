@@ -26,7 +26,21 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true---
+
+
 Claude and ChatGPT can analyze SQLAlchemy models, Pydantic schemas, or raw SQL definitions and automatically generate complete pytest fixtures that handle table structure, foreign key relationships, and transaction management. By feeding your schema to these AI assistants, you can reduce hours of repetitive fixture boilerplate into minutes of AI-assisted code generation.
+
+## Key Takeaways
+
+- **Step 4**: Review FK sequencing. The most common AI mistake is generating a fixture that creates an `Order` before the `User` it references.
+- **Q**: How do I prevent unique constraint violations when running fixtures in parallel with pytest-xdist?
+Ask the AI to use `factory.Sequence` or `uuid4()` for all unique fields.
+- **Step 5**: Run the fixtures against a test database. Use `pytest -x --tb=short` to catch errors early.
+- **Specify your testing database**: Whether you use SQLite in-memory, PostgreSQL test containers, or mock objects
+
+3.
+- **Cursor matches Claude for**: fixture quality when you use `@models.py` to provide context.
+- **The in-editor workflow is**: faster because you see generated code immediately, making corrections easy.
 
 ## Understanding the Problem
 
