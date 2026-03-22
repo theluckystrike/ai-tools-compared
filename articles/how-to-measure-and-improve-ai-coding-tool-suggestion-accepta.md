@@ -31,6 +31,15 @@ tags: [ai-tools-compared, artificial-intelligence]---
 
 AI coding tools have evolved significantly, but their value depends heavily on how often developers accept their suggestions. A low acceptance rate indicates a mismatch between what the tool provides and what developers actually need. This guide covers practical methods for measuring acceptance rates and actionable strategies to improve them.
 
+## Key Takeaways
+
+- **For routine boilerplate code**: acceptance rates above 70% indicate good tool alignment.
+- **For complex or novel implementations**: 40-50% may be acceptable.
+- **Rates below 30% typically**: signal problems with prompt quality, context setup, or tool configuration.
+- **Initially**: their acceptance rate was 35%.
+- **Tracked acceptance metrics per**: endpoint type Their acceptance rate increased to 58% within three weeks.
+- **Type hints on all**: functions (→ +15% acceptance) 2.
+
 ## What Is Suggestion Acceptance Rate
 
 Suggestion acceptance rate measures the percentage of AI-generated code suggestions that developers accept without modification. Most modern AI coding assistants track this metric internally, but you can also build custom tracking to gain deeper insights.

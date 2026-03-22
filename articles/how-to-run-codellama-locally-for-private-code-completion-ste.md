@@ -25,7 +25,21 @@ score: 0
 voice-checked: false
 intent-checked: false---
 
+
 Running CodeLlama locally gives you powerful code completion capabilities while keeping all your code completely private. This guide walks through the complete setup process, from choosing your hardware to integrating the model with your development environment.
+
+## Key Takeaways
+
+- **NVIDIA GPUs on Linux**: or WSL2 offer the most flexibility for all model sizes.
+- **Configure it to use**: your local Ollama endpoint 3.
+- **Adjust the model in**: settings to `codellama:13b` or your preferred size ### Option 3: LM Studio LM Studio provides a GUI alternative: 1.
+- **Select the Chat tab**: to use it as a coding assistant 4.
+- **In Ollama, you can adjust this**: ```bash
+ollama run codellama:13b --verbose
+```
+
+This shows detailed output useful for debugging.
+- **You can also experiment with different model sizes based on your current task**: use 7B for quick autocomplete and switch to 34B for complex code generation.
 
 ## Why Run CodeLlama Locally
 

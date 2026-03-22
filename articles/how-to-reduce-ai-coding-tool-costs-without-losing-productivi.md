@@ -27,7 +27,17 @@ score: 8
 intent-checked: true
 voice-checked: true---
 
+
 Reduce AI costs by batching expensive chat requests, using free tiers strategically, selecting cheaper models for routine tasks, and implementing local alternatives for boilerplate. This guide shows which cost-cutting strategies actually work without tanking productivity.
+
+## Key Takeaways
+
+- **If you contribute to open source**: this alone saves $10-20 monthly.
+- **A ChatGPT Plus subscription**: costs $20/month with usage limits.
+- **Most AI coding tools**: track usage in different ways: some count messages, others track tokens, and some limit features rather than raw usage.
+- **Many developers discover they**: use advanced features (like full codebase indexing or extended thinking modes) only occasionally, yet pay for them monthly.
+- **Save Opus or GPT-4o**: for architectural decisions and complex refactoring, then use Haiku or Flash for straightforward autocomplete tasks.
+- **Set monthly caps and**: use tools that support them.
 
 ## Understand Your Actual Usage Patterns
 

@@ -27,11 +27,21 @@ score: 9
 intent-checked: true
 voice-checked: true---
 
+
 Reduce ghost-text distractions by disabling autocomplete for specific file types, setting longer completion delays, or switching to chat-only mode during deep focus work. This guide shows which IDE settings actually reduce distraction versus just hiding the visual display.
 
 AI autocomplete has transformed how developers write code. Tools like GitHub Copilot, Cursor, and Codeium suggest entire functions, complete patterns, and generate boilerplate as you type. However, this helpful feature can become a distraction when ghost text—those faded suggestions popping up in your editor—interrupts your thought process or conflicts with what you're actually trying to write.
 
 If you find yourself constantly fighting unwanted suggestions or losing focus because of aggressive autocomplete, these practical techniques will help you regain control of your coding environment.
+
+## Key Takeaways
+
+- **A low acceptance rate (below 20%) suggests suggestions don't match your needs**: consider reducing trigger frequency or switching to on-demand mode.
+- **Research on autocomplete shows**: that developers who see suggestions spend 15-20% longer on tasks, not from acceptance but from the evaluation time.
+- **This is why increasing**: suggestion delay (to 200-300ms) often improves perceived productivity even though the actual time to acceptance increases slightly.
+- **If suggestions are 90% relevant**: you accept them quickly without evaluation.
+- **If they're 30% relevant**: you spend time rejecting.
+- **If you find yourself**: constantly fighting unwanted suggestions or losing focus because of aggressive autocomplete, these practical techniques will help you regain control of your coding environment.
 
 ## Understanding Ghost Text Behavior
 
