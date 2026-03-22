@@ -9,7 +9,7 @@ permalink: /migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/
 categories: [guides]
 intent-checked: true
 voice-checked: true
-score: 8
+score: 9
 reviewed: true
 tags: [ai-tools-compared, artificial-intelligence]
 ---
