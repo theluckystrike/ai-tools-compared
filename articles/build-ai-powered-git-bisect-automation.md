@@ -326,6 +326,111 @@ done
 exit 1  # consistently failing = bad commit
 ```
 
+## GitHub Actions Integration
+
+Run AI-powered bisect automatically when a regression test fails on main:
+
+```yaml
+# .github/workflows/ai-bisect.yml
+name: AI Bisect on Regression
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  ai-bisect:
+    # Trigger with: /bisect good=v2.3.0 bug="login fails with uppercase email"
+    if: contains(github.event.comment.body, '/bisect')
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # full history needed for bisect
+
+      - name: Parse bisect command
+        id: parse
+        run: |
+          COMMENT="${{ github.event.comment.body }}"
+          GOOD=$(echo "$COMMENT" | grep -oP 'good=\K[^\s]+')
+          BUG=$(echo "$COMMENT" | grep -oP 'bug="\K[^"]+')
+          echo "good=$GOOD" >> $GITHUB_OUTPUT
+          echo "bug=$BUG" >> $GITHUB_OUTPUT
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install anthropic click
+
+      - name: Run AI bisect
+        id: bisect
+        run: |
+          python ai_bisect_cli.py \
+            --repo . \
+            --good "${{ steps.parse.outputs.good }}" \
+            --bad HEAD \
+            --bug "${{ steps.parse.outputs.bug }}" \
+            --no-confirm 2>&1 | tee /tmp/bisect-output.txt
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+      - name: Post result as comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const output = fs.readFileSync('/tmp/bisect-output.txt', 'utf8');
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `## AI Bisect Result\n\`\`\`\n${output.slice(0, 8000)}\n\`\`\``
+            });
+```
+
+Trigger from any GitHub issue or PR comment: `/bisect good=v2.3.0 bug="search returns no results after sorting"`.
+
+---
+
+## Strategies for Better AI Test Script Generation
+
+The quality of the generated test script depends on how precisely you describe the bug. A vague description generates an imprecise test; a precise description generates a tight binary predicate.
+
+**Imprecise:**
+```
+Bug: Login is broken
+```
+
+**Precise:**
+```
+Bug: POST /api/login returns HTTP 500 when the email field contains uppercase
+letters. Example: {"email": "User@EXAMPLE.com", "password": "abc123"} → 500.
+Lowercase email works fine. Started happening after deploy on 2026-03-15.
+Test command to reproduce: curl -X POST http://localhost:3000/api/login
+-H "Content-Type: application/json" -d '{"email": "User@EXAMPLE.COM", "password": "test"}'
+```
+
+Additional prompting strategies that improve script quality:
+
+1. **Provide the known-good reproduction step**: If you know the curl command, SQL query, or test that demonstrates the bug, include it in the description. Claude will incorporate it directly.
+
+2. **Name the affected file or function if known**: "The bug is in auth/normalizer.js, specifically the email normalization path" dramatically narrows the generated test.
+
+3. **Specify the build command**: If your project has a non-standard build step, include it. Claude defaults to `npm run build`, `make`, or `go build` based on the project files it detects — but an explicit build command prevents skip-on-build-failure errors.
+
+4. **Add performance constraints**: "Build takes 3 minutes; prefer a test that avoids a full rebuild" causes Claude to generate a test that restarts only the relevant service rather than rebuilding from scratch.
+
+For repositories with strong test coverage, instruct Claude to use the existing test suite as the oracle: "Use `npm test -- --grep 'email normalization'` as the bisect predicate." This produces more reliable results than generating ad-hoc curl commands.
+
+---
+
 ## Related Reading
 
 - [AI Code Review Automation Tools Comparison](/ai-tools-compared/ai-code-review-automation-tools-comparison/)

@@ -307,6 +307,142 @@ CREATE INDEX ON feature_flag_events (flag_key, created_at DESC);
 CREATE INDEX ON feature_flag_events (changed_by, created_at DESC);
 ```
 
+## Generating Stale Flag Cleanup Scripts
+
+One of the most time-consuming aspects of feature flag management is cleaning up expired flags. AI can generate the search-and-replace logic for removing a specific flag from a large codebase:
+
+**Prompt:**
+```text
+Generate a Python script that removes the feature flag "checkout-v2" from a
+Node.js codebase. The flag is always true now. The patterns to replace:
+- if (isEnabled('checkout-v2')) { ... } → keep the body, remove the if
+- if (!isEnabled('checkout-v2')) { ... } → remove the entire block
+- const useV2 = isEnabled('checkout-v2'); → remove the variable declaration
+The script should use ast-grep or sed and output a diff before applying changes.
+```
+
+**Claude output:**
+
+```python
+#!/usr/bin/env python3
+# cleanup_flag.py — remove "checkout-v2" flag (now always true)
+import subprocess
+import sys
+import os
+
+FLAG = "checkout-v2"
+
+def run_ast_grep(pattern: str, replacement: str, dry_run: bool = True) -> str:
+    cmd = ["ast-grep", "--lang", "js", "--pattern", pattern,
+           "--rewrite", replacement]
+    if not dry_run:
+        cmd.extend(["--update-all"])
+    result = subprocess.run(cmd, capture_output=True, text=True, cwd=".")
+    return result.stdout
+
+# Pattern 1: if (isEnabled('checkout-v2')) { BODY } → BODY
+pattern_positive = f"if (isEnabled('{FLAG}')) {{ $$$BODY }}"
+rewrite_positive = "$$$BODY"
+
+# Pattern 2: if (!isEnabled('checkout-v2')) { ... } → (remove block)
+pattern_negative = f"if (!isEnabled('{FLAG}')) {{ $$$_ }}"
+rewrite_negative = ""
+
+print("=== Matches for positive flag pattern ===")
+print(run_ast_grep(pattern_positive, rewrite_positive, dry_run=True))
+
+print("=== Matches for negative flag pattern ===")
+print(run_ast_grep(pattern_negative, rewrite_negative, dry_run=True))
+
+if "--apply" in sys.argv:
+    print("\nApplying changes...")
+    run_ast_grep(pattern_positive, rewrite_positive, dry_run=False)
+    run_ast_grep(pattern_negative, rewrite_negative, dry_run=False)
+    print("Done. Run 'git diff' to review changes.")
+```
+
+The pattern matters: AI-generated cleanup scripts are far more reliable when they use AST-based tools (ast-grep, jscodeshift) rather than regex. Regex-based flag cleanup routinely leaves partial boolean expressions like `||` dangling after the flag check is removed.
+
+---
+
+## Testing Flag Evaluation Logic with AI
+
+AI accelerates writing the unit tests for flag evaluation — especially the edge cases around percentage rollout consistency:
+
+**Prompt:**
+```text
+Write Go tests for the FileProvider percentage rollout logic. Key properties to verify:
+1. Same userId always gets the same variant (deterministic)
+2. 10% rollout actually routes ~10% of users correctly
+3. 0% rollout routes no users
+4. 100% rollout routes all users
+5. Users near the rollout boundary are stable (small userID changes don't flip the result)
+```
+
+**Claude output:**
+
+```go
+// flagprovider/file_provider_test.go
+package flagprovider_test
+
+import (
+    "fmt"
+    "math/rand"
+    "testing"
+
+    "github.com/stretchr/testify/assert"
+)
+
+func TestPercentageRolloutDeterministic(t *testing.T) {
+    // Same user ID must always hash to same bucket
+    for _, userID := range []string{"user-1", "alice@example.com", "12345"} {
+        h1 := percentageHash(userID)
+        h2 := percentageHash(userID)
+        assert.Equal(t, h1, h2,
+            "percentageHash(%q) must be deterministic", userID)
+    }
+}
+
+func TestPercentageRolloutDistribution(t *testing.T) {
+    // Generate 10,000 random user IDs and verify ~10% land in the 10% bucket
+    total := 10000
+    inBucket := 0
+    threshold := 10.0
+
+    for i := 0; i < total; i++ {
+        userID := fmt.Sprintf("user-%d", rand.Int63())
+        if percentageHash(userID) < threshold {
+            inBucket++
+        }
+    }
+
+    actualPct := float64(inBucket) / float64(total) * 100
+    // Allow ±2% tolerance from expected 10%
+    assert.InDelta(t, 10.0, actualPct, 2.0,
+        "Expected ~10%% of users in bucket, got %.1f%%", actualPct)
+}
+
+func TestZeroPercentRollout(t *testing.T) {
+    for i := 0; i < 1000; i++ {
+        userID := fmt.Sprintf("user-%d", i)
+        assert.False(t, percentageHash(userID) < 0.0,
+            "0%% rollout should never match any user")
+    }
+}
+
+func TestHundredPercentRollout(t *testing.T) {
+    for i := 0; i < 1000; i++ {
+        userID := fmt.Sprintf("user-%d", i)
+        assert.True(t, percentageHash(userID) < 100.0,
+            "100%% rollout should always match every user")
+    }
+}
+```
+
+These tests catch a critical implementation bug: if the hash function is not deterministic (uses random seed, wall clock, etc.), percentage rollout produces inconsistent results where the same user flips between variants on successive requests.
+
+---
+
 ## Related Reading
 
 - [AI-Powered CI/CD Pipeline Optimization](/ai-tools-compared/ai-powered-cicd-pipeline-optimization-2026/)

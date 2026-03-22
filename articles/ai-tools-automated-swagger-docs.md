@@ -360,6 +360,108 @@ jobs:
           python compare_specs.py openapi.yaml /tmp/generated-spec.yaml
 ```
 
+## Spring Boot with Springdoc and AI Enrichment
+
+Spring Boot's Springdoc library auto-generates OpenAPI from annotations, but the generated descriptions are sparse. Use AI to fill in example values, error response details, and property descriptions:
+
+**Prompt:**
+```
+Given this Spring Boot controller, generate the @Operation, @ApiResponse, and
+@Schema annotations to fully document each endpoint. Include example request
+bodies, error response schemas for 400/401/404/500, and property descriptions
+for all DTOs. Follow the OpenAPI 3.1 standard.
+```
+
+```java
+// ProductController.java — before AI enrichment
+@RestController
+@RequestMapping("/api/products")
+public class ProductController {
+
+    @GetMapping("/{id}")
+    public ResponseEntity<ProductDTO> getProduct(@PathVariable Long id) {
+        return productService.findById(id)
+            .map(ResponseEntity::ok)
+            .orElse(ResponseEntity.notFound().build());
+    }
+
+    @PostMapping
+    public ResponseEntity<ProductDTO> createProduct(
+        @Valid @RequestBody CreateProductRequest request) {
+        ProductDTO created = productService.create(request);
+        URI location = URI.create("/api/products/" + created.getId());
+        return ResponseEntity.created(location).body(created);
+    }
+}
+```
+
+AI-generated annotations:
+
+```java
+// ProductController.java — after AI enrichment
+@RestController
+@RequestMapping("/api/products")
+@Tag(name = "Products", description = "Product catalog management endpoints")
+public class ProductController {
+
+    @Operation(
+        summary = "Get product by ID",
+        description = "Retrieves a single product by its unique identifier"
+    )
+    @ApiResponses({
+        @ApiResponse(responseCode = "200", description = "Product found",
+            content = @Content(schema = @Schema(implementation = ProductDTO.class))),
+        @ApiResponse(responseCode = "404", description = "Product not found",
+            content = @Content(schema = @Schema(implementation = ErrorResponse.class))),
+        @ApiResponse(responseCode = "401", description = "Authentication required")
+    })
+    @GetMapping("/{id}")
+    public ResponseEntity<ProductDTO> getProduct(
+        @Parameter(description = "Product ID", example = "42")
+        @PathVariable Long id) {
+        return productService.findById(id)
+            .map(ResponseEntity::ok)
+            .orElse(ResponseEntity.notFound().build());
+    }
+
+    @Operation(summary = "Create a new product")
+    @ApiResponses({
+        @ApiResponse(responseCode = "201", description = "Product created"),
+        @ApiResponse(responseCode = "400", description = "Validation failed",
+            content = @Content(schema = @Schema(implementation = ValidationErrorResponse.class)))
+    })
+    @PostMapping
+    public ResponseEntity<ProductDTO> createProduct(
+        @io.swagger.v3.oas.annotations.parameters.RequestBody(
+            content = @Content(examples = @ExampleObject(value = """
+                {"name":"Widget Pro","price":29.99,"sku":"WGT-001","stock":100}
+                """)))
+        @Valid @RequestBody CreateProductRequest request) {
+        ProductDTO created = productService.create(request);
+        URI location = URI.create("/api/products/" + created.getId());
+        return ResponseEntity.created(location).body(created);
+    }
+}
+```
+
+---
+
+## Prompting Strategies for Higher-Quality Specs
+
+The quality of AI-generated OpenAPI specs depends heavily on what context you provide:
+
+**Provide validation rules explicitly**: If your route handler calls a validator, include the validator's rules in the prompt. AI cannot infer `maxLength: 255` from a database constraint it can't see.
+
+**Include error handling code**: Route handlers that short-circuit with `return res.status(404)` tell the AI which error responses to document. Including the error handling code doubles the accuracy of generated `responses` sections.
+
+**Reference existing schema files**: If your project has Zod, Joi, or Pydantic schemas, include them in the prompt. AI can extract every validation constraint directly from the schema definition.
+
+**Ask for examples**: Add "Include realistic examples for all request/response schemas" to get `example` values populated. Empty schemas are technically valid but unhelpful in Swagger UI.
+
+**Validate with a linter**: After generation, run `npx @redocly/cli lint openapi.yaml` or `spectral lint openapi.yaml`. AI-generated specs occasionally produce schema references to components that don't exist. The linter catches these before they reach production.
+
+---
+
 ## Related Reading
 
 - [Best AI Tools for Writing Swagger API Documentation 2026](/ai-tools-compared/best-ai-tools-for-writing-swagger-api-documentation-2026/)
