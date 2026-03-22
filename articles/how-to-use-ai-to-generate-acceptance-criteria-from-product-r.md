@@ -23,6 +23,21 @@ Generating acceptance criteria from product requirement documents is a repetitiv
 This guide shows you practical approaches to generate acceptance criteria using AI, with concrete examples you can apply immediately.
 
 
+## Which AI Tools Are Best for Acceptance Criteria Generation
+
+Not all AI tools handle this task equally. The quality of output depends on the model's ability to distinguish between implicit and explicit requirements, identify edge cases from brief descriptions, and format output in a way your team can immediately use.
+
+**Claude (claude.ai or Claude Code)** is the strongest choice for acceptance criteria work. It reliably identifies unstated assumptions — for example, inferring that "users can log in" implies a corresponding "users can log out" and "sessions expire after inactivity." It handles nested business rules and produces well-structured tables without coaching.
+
+**ChatGPT (GPT-4o)** produces good first drafts but often misses edge cases unless you explicitly ask for them. Adding "include edge cases and error states" to your prompt significantly improves output.
+
+**Gemini Advanced** handles long PRDs well due to its extended context window, making it useful when you need to process an entire 20-page requirements document in one shot.
+
+**Notion AI** is convenient if your PRDs already live in Notion — you can generate criteria in-line without copying text. Quality is lower than Claude or GPT-4o but workflow friction is minimal.
+
+For most teams, Claude is the recommended starting point.
+
+
 ## Understanding the Input: Product Requirement Documents
 
 
@@ -100,6 +115,32 @@ AI-generated acceptance criteria:
 | AC-8 | Link expires after 24 hours | Click link after 24h, verify failure |
 
 | AC-9 | Account inactive until verified | Attempt login before verification |
+
+
+## Writing Better Prompts for Complex PRDs
+
+The quality of AI-generated acceptance criteria is directly proportional to prompt quality. These patterns consistently produce better output.
+
+**Specify your output format upfront.** If your team uses Gherkin syntax in Cucumber or SpecFlow, tell the AI explicitly:
+
+```
+Convert the following requirements into Gherkin-format acceptance criteria.
+Use Given/When/Then structure. Include at least one negative scenario per requirement.
+
+Requirements:
+[PRD content]
+```
+
+This produces immediately usable `.feature` file content rather than output you need to reformat.
+
+**Ask for edge cases separately.** A two-pass approach yields more complete coverage:
+
+```
+Pass 1: Extract the happy path acceptance criteria from this requirement.
+Pass 2: Now identify edge cases, boundary conditions, and error states I might have missed.
+```
+
+**Include domain context.** PRDs for financial applications imply regulatory constraints that AI won't infer without context. Add a preamble like "This is a PCI-DSS compliant payment processing feature — account for audit logging and security requirements." Claude uses this context to surface criteria like "failed login attempts are logged with timestamp and IP" that would otherwise be missed.
 
 
 ## Automating with CLI Tools
@@ -245,6 +286,20 @@ def generate_tests():
                 assert validate(condition, inp) == exp
             globals()[test_name] = test_wrapper
 ```
+
+
+## Integrating AI Criteria Generation into Your Sprint Workflow
+
+The highest-value integration point is during sprint planning, before tickets are assigned. Run AI-generated criteria past the developer and QA engineer simultaneously during backlog refinement. This surfaces ambiguous requirements early when they are cheapest to fix.
+
+A practical sprint workflow:
+
+1. Product manager shares PRD section in the planning meeting
+2. Developer pastes the section into Claude and shares the output on screen
+3. Team reviews and adds criteria that AI missed (non-functional requirements, integration edge cases)
+4. Finalized criteria go directly into the Jira or Linear ticket as the Definition of Done
+
+Teams that adopt this workflow report that acceptance criteria coverage improves substantially because AI catches boundary conditions that verbal discussion tends to skip over. For Jira integrations, the Atlassian Rovo AI assistant can generate acceptance criteria natively within a ticket — quality is lower than Claude but workflow friction is minimal.
 
 
 ## Best Practices for Better Results
