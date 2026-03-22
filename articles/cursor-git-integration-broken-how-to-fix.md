@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /cursor-git-integration-broken-how-to-fix/
 categories: [troubleshooting]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, troubleshooting, integration]

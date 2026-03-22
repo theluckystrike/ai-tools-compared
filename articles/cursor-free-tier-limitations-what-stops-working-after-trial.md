@@ -763,7 +763,7 @@ categories:
   - Cursor
 permalink: /cursor-free-tier-limitations-what-stops-working-after-trial/
 slug: cursor-free-tier-limitations-what-stops-working-after-trial
-score: 8
+score: 9
 voice-checked: true
 reviewed: true
 intent-checked: true

@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /cursor-ai-terminal-command-execution-hanging-fix-2026/
 categories: [troubleshooting]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, troubleshooting, cursor, terminal, artificial-intelligence]
