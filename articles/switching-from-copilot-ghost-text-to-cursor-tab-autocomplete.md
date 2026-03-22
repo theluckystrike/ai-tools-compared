@@ -17,6 +17,17 @@ tags: [ai-tools-compared]
 
 Making the transition from GitHub Copilot's ghost text to Cursor's tab autocomplete represents a meaningful shift in how you interact with AI code completion. This guide walks you through the practical differences, configuration adjustments, and workflow changes you'll encounter when switching.
 
+## Key Takeaways
+
+- **Copilot users typically start**: at 30-40% acceptance.
+- **Many Copilot users report**: 20-30% faster coding within two weeks of Cursor usage because the tab-based model removes decision paralysis.
+- **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
+- **The default settings work**: well for most developers, but tweaking them early helps establish your preferred workflow.
+- **See ghost text suggestion**: `return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); }`
+3.
+- **Continue typing or press Tab again for**: `/^[^\s@]+@[^\s@]+\.[^\s@]+$/`
+5.
+
 ## Understanding the Fundamental Difference
 
 
@@ -190,16 +201,6 @@ The investment in switching pays dividends in faster completion acceptance and t
 
 Give yourself permission to struggle initially. The workflow difference is real, but so are the productivity gains once you've internalized Cursor's approach. Most developers report feeling comfortable within one to two weeks of dedicated usage.
 
-## Table of Contents
-
-- [The Physics of Ghost Text vs Tab Autocomplete](#the-physics-of-ghost-text-vs-tab-autocomplete)
-- [Advanced Cursor Configuration for Copilot Refugees](#advanced-cursor-configuration-for-copilot-refugees)
-- [Side-by-Side Workflow Comparison](#side-by-side-workflow-comparison)
-- [Performance Metrics You Should Track](#performance-metrics-you-should-track)
-- [Recovery Strategies When Tab Acceptance Goes Wrong](#recovery-strategies-when-tab-acceptance-goes-wrong)
-- [Languages Where Cursor Excel vs Requiring Adjustment](#languages-where-cursor-excel-vs-requiring-adjustment)
-- [When to Bail on Cursor and Go Back](#when-to-bail-on-cursor-and-go-back)
-
 ## The Physics of Ghost Text vs Tab Autocomplete
 
 Understanding why the UX feels different helps you adapt faster. Ghost text maintains a persistent visual layer on your screen—you see Copilot's prediction hanging there, giving your brain time to evaluate. This is actually slower in execution but feels safer because you can read the full suggestion before committing.
@@ -342,8 +343,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [Cursor Tab vs Copilot Ghost Text Comparison](/ai-tools-compared/cursor-tab-vs-copilot-ghost-text-comparison/)
-- [Switching from Copilot Enterprise to Cursor Business](/ai-tools-compared/switching-from-copilot-enterprise-to-cursor-business-migrati/)
 - [How to Reduce AI Autocomplete Ghost Text Distractions While](/ai-tools-compared/how-to-reduce-ai-autocomplete-ghost-text-distractions-while-coding/)
-- [How to Transfer Copilot Code Review Settings](/ai-tools-compared/transfer-copilot-code-review-settings-to-cursor-ai-review-co/)
-- [Cursor Tab Accepting Wrong Suggestion](/ai-tools-compared/cursor-tab-accepting-wrong-suggestion-fix/)
+- [Switching from Copilot Enterprise to Cursor Business Migrati](/ai-tools-compared/switching-from-copilot-enterprise-to-cursor-business-migrati/)
+- [Cursor Tab Accepting Wrong Suggestion Fix](/ai-tools-compared/cursor-tab-accepting-wrong-suggestion-fix/)
+- [AI Autocomplete Accuracy Comparison: Copilot vs Codeium Vs](/ai-tools-compared/ai-autocomplete-accuracy-comparison-copilot-vs-codeium-vs-ta/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
