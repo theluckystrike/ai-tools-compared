@@ -9,7 +9,7 @@ permalink: /how-to-use-ai-to-debug-flaky-integration-tests-in-ci-pipelin/
 categories: [guides]
 tags: [ai-tools-compared, testing, ci-cd, debugging, troubleshooting, integration, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

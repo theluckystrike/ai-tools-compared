@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /how-to-use-ai-for-writing-effective-sli-slo-definitions-for-services/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]
