@@ -46,7 +46,17 @@ API rate limits exist to prevent abuse and ensure service availability. When AI 
 
 Most AI providers implement rate limits in different ways. OpenAI uses tokens-per-minute and requests-per-minute limits. Anthropic enforces tokens-per-minute constraints. Third-party APIs like GitHub, Stripe, and various SaaS platforms each have their own throttling mechanisms. Your custom instructions should reflect the specific limits of the APIs you use.
 
-## Writing Effective Rate Limit Instructions
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Writing Effective Rate Limit Instructions
 
 Effective custom instructions combine specificity with clarity. Instead of vague requests like "be careful with API calls," provide concrete numbers and patterns the AI can follow.
 
@@ -212,7 +222,7 @@ class MultiAPICoordinator:
             await asyncio.sleep(wait)
 ```
 
-## Writing Instructions for Specific AI Tools
+### Step 2: Writing Instructions for Specific AI Tools
 
 Custom instruction placement varies by tool. Knowing where and how to register them ensures they take effect consistently.
 
@@ -246,7 +256,7 @@ Rate limit rules:
 
 **GitHub Copilot:** Use workspace-level comments at the top of key files, or add a `AGENTS.md` / `COPILOT.md` in the repo with guidelines. Copilot reads surrounding context, so comments near function definitions also influence suggestions.
 
-## Structuring Instructions for Reliability
+### Step 3: Structuring Instructions for Reliability
 
 The way you structure instructions affects how consistently AI follows them. These patterns produce the most reliable results:
 
@@ -266,7 +276,7 @@ Handle these error codes specifically:
 - 400: Log and skip — do not retry
 ```
 
-## Testing Your Custom Instructions
+### Step 4: Test Your Custom Instructions
 
 After writing custom instructions, verify they work as intended. Create test scenarios that stress your rate limits and observe whether the AI-generated code handles them correctly.
 
@@ -301,7 +311,7 @@ class TestRateLimitCompliance(unittest.IsolatedAsyncioTestCase):
         self.assertLessEqual(peak[0], 5)
 ```
 
-## Refining Your Instructions
+### Step 5: Refining Your Instructions
 
 Custom instructions require iteration. Start with basic limits, generate code, then observe the results. Add more specific guidance based on gaps you discover. Common refinements include:
 
@@ -314,6 +324,21 @@ Custom instructions require iteration. Start with basic limits, generate code, t
 - Including circuit breaker thresholds for sustained failures
 
 The more context you provide about your specific environment and constraints, the more accurately the AI generates code that respects your rate limit patterns.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

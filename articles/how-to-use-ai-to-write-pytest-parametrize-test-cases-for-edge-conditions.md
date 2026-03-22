@@ -47,7 +47,17 @@ def test_square(input, expected):
 When you run this test, pytest executes `test_square` three times—one for each parameter set. This approach keeps your test file clean while ensuring thorough coverage.
 
 
-## How AI Helps Identify Edge Cases
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: How AI Helps Identify Edge Cases
 
 
 AI tools analyze your function's logic and suggest boundary conditions you might overlook. The most common edge cases include:
@@ -114,7 +124,7 @@ def test_validate_email(email, expected):
 This covers the obvious cases plus subtle boundaries like single-character inputs.
 
 
-## Testing Numerical Functions
+### Step 2: Test Numerical Functions
 
 
 Numerical functions often have tricky edge cases around zero, negative values, and overflow. For a division function:
@@ -163,7 +173,7 @@ def test_divide(a, b, expected):
 ```
 
 
-## Testing List and Collection Functions
+### Step 3: Test List and Collection Functions
 
 
 List processing functions need edge case testing for empty lists, single elements, and duplicates:
@@ -204,7 +214,7 @@ def test_find_unique(items, expected):
 Notice how the AI identifies None, zero, and empty string as distinct edge cases—all important for thorough testing.
 
 
-## Crafting Prompts That Get Better Results
+### Step 4: Crafting Prompts That Get Better Results
 
 
 The quality of AI-generated test cases depends heavily on how you phrase your prompt. Vague prompts produce generic tests; specific prompts produce thorough parametrize sets tailored to your function's logic.
@@ -218,7 +228,7 @@ The stronger prompt specifies the function type, the domain of inputs, and the c
 When working on string functions, explicitly mention: encoding issues, leading/trailing whitespace, mixed case, and strings containing only whitespace. When working on date/time functions, mention: timezone boundaries, leap year handling, month-end dates, and Unix epoch zero. Domain knowledge embedded in your prompt directly improves coverage.
 
 
-## Using AI to Test Exception Handling
+### Step 5: Use AI to Test Exception Handling
 
 
 Many functions raise exceptions under certain conditions. AI assistants can generate parametrize tests that verify both the happy path and error conditions in the same test function using `pytest.raises` as a context manager.
@@ -265,7 +275,7 @@ def test_parse_age(value, expected_result, raises):
 This pattern—using a `raises` parameter to control whether the test expects an exception—is a clean way to test both success and failure paths without duplicating test logic.
 
 
-## Parametrize IDs for Readable Test Output
+### Step 6: Parametrize IDs for Readable Test Output
 
 
 When you run parametrize tests, pytest generates IDs like `test_validate_email[email0-expected0]` by default. AI assistants can add descriptive IDs that make test failures easier to diagnose.
@@ -308,7 +318,7 @@ Test error conditions explicitly: Use `pytest.raises` for exception testing. Mak
 Consider performance: Very large parametrize lists slow down test runs. Prioritize the most critical edge cases.
 
 
-## Automating Test Generation Workflow
+### Step 7: Automate Test Generation Workflow
 
 
 You can improve AI-assisted test generation with a consistent workflow:
@@ -328,6 +338,21 @@ You can improve AI-assisted test generation with a consistent workflow:
 This workflow reduces the manual effort of identifying edge cases while ensuring human oversight of the final test suite.
 
 ---
+
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
 
 
 ## Frequently Asked Questions

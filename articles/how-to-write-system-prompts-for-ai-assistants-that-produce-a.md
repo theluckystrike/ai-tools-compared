@@ -46,7 +46,17 @@ When an AI assistant generates HTML fragments for your application, that code be
 
 WCAG 2.1 AA is the benchmark most organizations target. It covers perceivability (text alternatives, adaptable content, distinguishable presentation), operability (keyboard access, timing, navigation), understandability (readable text, predictable behavior, input assistance), and robustness (compatibility with assistive technologies). AI-generated HTML that does not meet these criteria can expose your organization to legal risk and—more importantly—exclude users who rely on screen readers, keyboard navigation, or other assistive tools.
 
-## Core Principles for System Prompts
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Core Principles for System Prompts
 
 Effective system prompts for accessible HTML follow three principles: specificity, constraint specification, and example inclusion.
 
@@ -85,7 +95,7 @@ Your output must follow these rules:
 
 Positive rules tell the model what to do. Negative constraints tell it what to avoid. Both matter. AI models trained on large codebases have encountered countless examples of inaccessible patterns—placeholder-as-label, onclick on divs, decorative images without empty alt text. Explicitly banning these patterns reduces their occurrence in output.
 
-## Practical System Prompt Examples
+### Step 2: Practical System Prompt Examples
 
 Here are three system prompts you can adapt for different use cases.
 
@@ -135,7 +145,7 @@ Generate accessible modal dialog HTML:
 Return clean, semantic HTML5 markup.
 ```
 
-## Writing Prompts for Specific AI Tools
+### Step 3: Writing Prompts for Specific AI Tools
 
 System prompt behavior varies across tools. Understanding these differences helps you write prompts that work reliably.
 
@@ -186,7 +196,7 @@ function validateAccessibleHTML(html) {
 
 For production workflows, replace this manual check with an established library. `axe-core` can run in Node.js and validate HTML strings programmatically. `html-validate` offers a ruleset specifically aligned with WCAG. Running either after AI generation catches issues before they reach your codebase.
 
-## Testing Generated Output
+### Step 4: Test Generated Output
 
 After implementing your system prompt, verify the output with accessibility tools:
 
@@ -200,7 +210,7 @@ After implementing your system prompt, verify the output with accessibility tool
 
 5. Run Lighthouse in Chrome DevTools and aim for an Accessibility score above 90
 
-## Common Pitfalls to Avoid
+### Step 5: Common Pitfalls to Avoid
 
 Several patterns consistently produce inaccessible HTML:
 
@@ -228,7 +238,7 @@ Never do the following:
 - Skip heading levels (e.g., jump from h1 to h3)
 ```
 
-## Putting It All Together
+### Step 6: Putting It All Together
 
 A complete system prompt for accessible HTML might look like:
 
@@ -253,6 +263,21 @@ Output only the HTML markup without additional explanation.
 ```
 
 Treat this prompt as a living document. As your projects evolve—adding new component types, adopting new frameworks, or responding to audit findings—update the prompt to reflect new requirements. Version-control your system prompts alongside your code so changes are traceable and reversible.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 
@@ -356,7 +381,7 @@ IF the component is decorative only:
 
 This logic prevents conflicting requirements (e.g., "add aria-label to everything" leading to redundant labels on labeled inputs).
 
-## Testing System Prompts for Effectiveness
+### Step 7: Test System Prompts for Effectiveness
 
 Don't assume a system prompt works—validate it:
 
@@ -395,7 +420,7 @@ async function validatePrompt(systemPrompt, testCases) {
 
 Run this validation test against your system prompt before deployment. Iterate on the prompt if pass rate is below 85%.
 
-## Prompt Versioning and A/B Testing
+### Step 8: Prompt Versioning and A/B Testing
 
 For production systems, version your prompts and track effectiveness:
 
@@ -421,7 +446,7 @@ Metrics tracking:
 
 Deploy v3 or v4 based on your accuracy requirements and latency tolerances.
 
-## Integration with Design Systems
+### Step 9: Integration with Design Systems
 
 Link your system prompts to your design system to ensure consistency:
 
@@ -441,7 +466,7 @@ When generating UI, reference existing patterns from https://github.com/company/
 
 This prevents drift between AI-generated components and your actual design system.
 
-## Monitoring System Prompt Effectiveness Over Time
+### Step 10: Monitor System Prompt Effectiveness Over Time
 
 Track how well your system prompt performs:
 

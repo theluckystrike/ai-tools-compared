@@ -40,7 +40,17 @@ ChatGPT's custom instructions feature lets you define persistent context that sh
 - **Copy code directly into**: your project or IDE ### API Design Assistant Strategy Use ChatGPT for exploratory design: ``` Session Flow: 1.
 - **What endpoints should I**: include?" (Uses your custom instructions for tech stack) 2.
 
-## Understanding Custom Instructions in ChatGPT
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Custom Instructions in ChatGPT
 
 Custom instructions live in your ChatGPT settings and apply to every new conversation. They consist of two fields: "What would you like ChatGPT to know about you?" and "How would you like ChatGPT to respond?" Both fields work together to establish the context and behavioral patterns you want the model to follow.
 
@@ -56,7 +66,7 @@ For API design work, you need to address several dimensions in your instructions
 
 The key to effective custom instructions is specificity. Generic statements like "write good API code" produce generic results. Concrete, measurable requirements generate precise, useful suggestions.
 
-## Writing the Profile Section
+### Step 2: Writing the Profile Section
 
 The first field should establish your technical context. Include your primary language, framework, and any specific constraints your projects typically face.
 
@@ -71,7 +81,7 @@ with JSON request/response bodies. Error responses use problem details format (R
 
 This tells ChatGPT exactly what tools and patterns you use, eliminating the need to repeat this information in every prompt. The model will suggest Pydantic models, FastAPI route handlers, and JWT-based auth patterns because it knows those are your standards.
 
-## Defining Response Behavior
+### Step 3: Defining Response Behavior
 
 The second custom instruction field controls how ChatGPT structures its responses. For API design, you want suggestions that are immediately usable in your codebase, not abstract concepts.
 
@@ -92,7 +102,7 @@ and path, 2) Request model with field types and validation, 3) Response model,
 4) Implementation code, 5) Example request/response, 6) Common error cases.
 ```
 
-## Examples of Effective Custom Instructions
+### Step 4: Examples of Effective Custom Instructions
 
 ### Example 1: Microservices Developer
 
@@ -135,7 +145,7 @@ Follow DDD principles with clear separation of controllers, services, and reposi
 
 This produces TypeScript-first suggestions with proper typing, Zod schemas, and NestJS patterns.
 
-## Testing and Refining Your Instructions
+### Step 5: Test and Refining Your Instructions
 
 After setting up custom instructions, test them with a few API design questions:
 
@@ -183,7 +193,7 @@ When suggesting improvements, cite specific benefits (performance, security, mai
 If I could achieve the same result with less code, show the simpler approach.
 ```
 
-## Maintaining Consistency Across Sessions
+### Step 6: Maintaining Consistency Across Sessions
 
 Custom instructions persist until you change them, which creates consistency but also requires maintenance. Review and update your instructions when:
 
@@ -195,7 +205,7 @@ Custom instructions persist until you change them, which creates consistency but
 
 Consider keeping a backup of your custom instructions in a document. This lets you maintain different instruction sets for different project types and quickly swap between contexts.
 
-## Custom Instructions Library
+### Step 7: Custom Instructions Library
 
 Save these ready-to-use instruction templates for different tech stacks:
 
@@ -265,7 +275,7 @@ Example tone:
 Good: Use typed error responses to prevent information leakage in production. Example: return status 500 with generic 'Internal Error' rather than stacktraces."
 ```
 
-## Measuring Custom Instruction Effectiveness
+### Step 8: Measuring Custom Instruction Effectiveness
 
 Track whether custom instructions are improving suggestion quality:
 
@@ -310,7 +320,7 @@ def analyze_effectiveness():
 
 Track acceptance rates before and after updating instructions. If acceptance rate drops, revert instructions and try different wording.
 
-## Integration with Workflow
+### Step 9: Integration with Workflow
 
 ### ChatGPT Plus Workflow
 
@@ -339,7 +349,7 @@ Session Flow:
    (Produces production-ready code)
 ```
 
-## Updating Instructions Over Time
+### Step 10: Updating Instructions Over Time
 
 Maintenance schedule:
 
@@ -355,6 +365,21 @@ After: "Use JWT with RS256 algorithm, 15-minute expiry for access tokens, 7-day 
 ```
 
 Specific instructions yield better results than generic ones.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

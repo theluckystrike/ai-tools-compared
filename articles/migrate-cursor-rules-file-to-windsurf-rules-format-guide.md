@@ -39,13 +39,23 @@ If you have been using Cursor's custom rules configuration and want to switch to
 - **Project-Level Rules Both Cursor**: and Windsurf support two scopes of rules: global (applied to all projects) and project-level (applied only to the current project).
 - **Windsurf**: Global rules are configured in Windsurf's preferences.
 
-## Understanding Cursor Rules and Windsurf Rules
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Cursor Rules and Windsurf Rules
 
 Cursor uses a rules system that allows you to define custom instructions, coding standards, and behavior patterns for its AI assistant. These rules typically live in configuration files within your project or in Cursor's settings. The rules control how the AI responds to prompts, what code styles to follow, and which frameworks or libraries to prioritize.
 
 Windsurf, developed by Codeium, implements its own rules engine with a slightly different structure. While both systems aim to achieve similar goals, Windsurf uses YAML-based configuration with specific sections for different rule types. Understanding these differences is the first step toward successful migration.
 
-## Locating Your Cursor Rules Files
+### Step 2: Locating Your Cursor Rules Files
 
 Before migrating, locate all your Cursor rules files. They typically appear in these locations:
 
@@ -55,7 +65,7 @@ Before migrating, locate all your Cursor rules files. They typically appear in t
 
 Review each file and note the types of rules you have defined. Common rule categories include code style preferences, framework-specific guidelines, testing requirements, and documentation standards.
 
-## Format Differences at a Glance
+### Step 3: Format Differences at a Glance
 
 Before looking at conversion, understanding the structural differences saves time.
 
@@ -70,7 +80,7 @@ Before looking at conversion, understanding the structural differences saves tim
 
 The key insight is that Cursor rules are intentionally informal — they read like instructions written to a human. Windsurf rules are more structured, resembling a configuration file. This means migration involves converting prose instructions into discrete YAML keys.
 
-## Converting Cursor Rules to Windsurf Format
+### Step 4: Converting Cursor Rules to Windsurf Format
 
 ### Basic Rule Structure Conversion
 
@@ -155,7 +165,7 @@ rules:
       server_components: preferred
 ```
 
-## Step-by-Step Migration Process
+### Step 5: Step-by-Step Migration Process
 
 Follow these steps to migrate your rules:
 
@@ -169,7 +179,7 @@ Follow these steps to migrate your rules:
 
 5. **Test the migrated rules:** Start Windsurf and verify that your rules are being applied correctly. Make adjustments as needed.
 
-## Common Migration Challenges
+### Step 6: Common Migration Challenges
 
 ### Inline Code Examples
 
@@ -223,7 +233,7 @@ rules:
 
 Keep prose instructions concise — Windsurf's AI interprets them similarly to how Cursor does, but overly long instructions can produce inconsistent results.
 
-## Working with Global vs. Project-Level Rules
+### Step 7: Work with Global vs. Project-Level Rules
 
 Both Cursor and Windsurf support two scopes of rules: global (applied to all projects) and project-level (applied only to the current project).
 
@@ -233,7 +243,7 @@ Both Cursor and Windsurf support two scopes of rules: global (applied to all pro
 
 When migrating, identify which of your Cursor rules are project-specific versus team-wide conventions. Project-specific rules go into `.windsurfrules`. Team-wide conventions should be set globally in Windsurf preferences or committed to a shared configuration repository.
 
-## Verifying Your Migration
+### Step 8: Verify Your Migration
 
 After converting your rules, verify they work correctly in Windsurf:
 
@@ -246,7 +256,7 @@ If something does not work as expected, check the Windsurf documentation for the
 
 A useful verification prompt to give Windsurf after setting up your rules: "Summarize the rules you have for this project in bullet points." This confirms Windsurf has parsed your `.windsurfrules` file correctly and is applying the right constraints.
 
-## Keeping Rules Synchronized During Transition
+### Step 9: Keeping Rules Synchronized During Transition
 
 If your team is gradually migrating from Cursor to Windsurf and some members still use Cursor, maintaining both rule files during the transition period is practical. Keep `.cursorrules` and `.windsurfrules` in sync manually, or write a simple script that reads your canonical rule source and generates both formats.
 
@@ -262,6 +272,21 @@ echo "Generating Windsurf rules from shared source..."
 ```
 
 Committing both files to your repository ensures all team members get the correct AI behavior regardless of which editor they use.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -24,7 +24,17 @@ The Claude API can review pull request diffs and post structured feedback as Git
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## Install Dependencies and Set Up Authentication
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Install Dependencies and Set Up Authentication
 
 ```bash
 pip install anthropic pygithub python-dotenv
@@ -34,7 +44,7 @@ ANTHROPIC_API_KEY=sk-ant-...
 GITHUB_TOKEN=ghp_...
 ```
 
-## Fetch the PR Diff
+### Step 2: Fetch the PR Diff
 
 ```python
 # review_bot.py
@@ -72,7 +82,7 @@ def get_pr_diff(repo_name: str, pr_number: int) -> dict:
     }
 ```
 
-## Design the Review Prompt
+### Step 3: Design the Review Prompt
 
 The prompt structure determines review quality. Asking for free-form feedback produces noise. Asking for structured output with file/line references produces actionable comments:
 
@@ -125,7 +135,7 @@ Changed files:
 Review this pull request for bugs, security issues, and significant problems."""
 ```
 
-## Call the Claude API
+### Step 4: Call the Claude API
 
 ```python
 import json
@@ -165,7 +175,7 @@ def review_pull_request(repo_name: str, pr_number: int) -> dict:
  }
 ```
 
-## Post Review Comments to GitHub
+### Step 5: Post Review Comments to GitHub
 
 ```python
 def post_github_review(repo_name: str, pr_number: int, review: dict) -> None:
@@ -212,7 +222,7 @@ def post_github_review(repo_name: str, pr_number: int, review: dict) -> None:
  print(f"Posted review: {review['verdict']} ({critical_count} critical issues)")
 ```
 
-## GitHub Actions Webhook Integration
+### Step 6: GitHub Actions Webhook Integration
 
 Trigger the reviewer automatically on every PR:
 
@@ -263,7 +273,7 @@ PR_NUMBER: ${{ github.event.pull_request.number }}
  "
 ```
 
-## Add File Context Beyond the Diff
+### Step 7: Add File Context Beyond the Diff
 
 For better accuracy on complex changes, send the full file alongside the diff:
 
@@ -299,7 +309,7 @@ def build_enhanced_review_prompt(pr_data: dict, repo_name: str, head_sha: str) -
 Review for bugs, security vulnerabilities, and critical issues only."""
 ```
 
-## Control Cost and Rate Limits
+### Step 8: Control Cost and Rate Limits
 
 ```python
 import time
@@ -328,6 +338,21 @@ def truncate_diff(pr_data: dict, max_chars: int = MAX_DIFF_TOKENS * 4) -> dict:
 
  return {**pr_data, "files": truncated}
 ```
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

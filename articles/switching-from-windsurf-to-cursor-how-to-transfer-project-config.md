@@ -41,7 +41,17 @@ Migrating from Windsurf to Cursor involves more than just installing a new edito
 
 If you use Husky, lefthook, or similar tools for Git hooks, these work in Cursor without modification.
 
-## Understanding Windsurf and Cursor Config Structures
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Windsurf and Cursor Config Structures
 
 Both Windsurf and Cursor are built on VS Code, but they store custom configurations differently. Windsurf uses its own "rules" system and Cascade workflows, while Cursor employs "Cursor Rules" and project-specific settings. Understanding these differences helps you plan your migration strategy.
 
@@ -49,7 +59,7 @@ Windsurf stores project-specific configurations in a `.windsurf` directory at yo
 
 Before starting the migration, ensure both editors are installed on your system. You will need access to your project directories and some familiarity with editing configuration files.
 
-## Exporting Windsurf Project Config
+### Step 2: Exporting Windsurf Project Config
 
 Begin by locating your Windsurf configuration files. Open your project in Windsurf and navigate to the settings panel. Look for the "Project Settings" or "Rules" section where you have defined custom behaviors.
 
@@ -85,7 +95,7 @@ If you use Windsurf's Cascade feature for automated workflows, export these befo
 
 Copy these workflow definitions to a safe location. You will recreate them in Cursor using its own automation features.
 
-## Setting Up Cursor with Your Config
+### Step 3: Set Up Cursor with Your Config
 
 Now that you have exported your Windsurf settings, the next step is importing them into Cursor. Cursor uses a similar but distinct configuration system that requires some manual translation.
 
@@ -106,15 +116,15 @@ Each `.mdc` file in this directory is applied automatically. This modular approa
 ```markdown
 # Project Rules for [Your Project Name]
 
-## Context
+### Step 4: Context
 You are working on a [project description]. This is a [language/framework] application using [key technologies].
 
-## Code Style
+### Step 5: Code Style
 - Use [your preferred style guidelines]
 - Follow [specific conventions]
 - Prefer [patterns you commonly use]
 
-## Guidelines
+### Step 6: Guidelines
 - Always run tests before committing
 - Use descriptive variable names
 - Keep functions under 50 lines
@@ -164,7 +174,7 @@ cp ~/Library/Application\ Support/Windsurf/User/keybindings.json \
 
 Review each keybinding. Some may conflict with Cursor's default shortcuts and require modification.
 
-## Transferring Terminal Profiles and Tasks
+### Step 7: Transferring Terminal Profiles and Tasks
 
 If you have custom terminal configurations or task definitions in Windsurf, migrate these to Cursor for an experience.
 
@@ -182,7 +192,7 @@ cp .vscode/tasks.json .cursor/
 
 Custom terminal profiles and shell integrations may need reconfiguration. Check your shell configuration files (`.bashrc`, `.zshrc`, or `.fish`) for Windsurf-specific aliases and functions, then add equivalent configurations for Cursor if needed.
 
-## Preserving Git and Version Control Settings
+### Step 8: Preserving Git and Version Control Settings
 
 Your Git configurations, including hooks and settings, transfer automatically since they are project-based. However, review the following:
 
@@ -199,7 +209,7 @@ git remote -v
 git remote set-url origin git@github.com:your-repo-url.git
 ```
 
-## Verifying Your Migration
+### Step 9: Verify Your Migration
 
 After transferring all configurations, spend time verifying that everything works correctly in Cursor.
 
@@ -254,6 +264,21 @@ Understanding what maps to what helps you plan the migration:
 | Project indexing | Cursor codebase indexing | Automatic on open |
 
 The biggest investment is in recreating Cascade workflows as Composer sessions or task definitions. Cascade's ability to chain multi-step AI actions is a distinctive Windsurf feature; Cursor's equivalent requires more manual orchestration but gives you finer control over each step.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -45,14 +45,24 @@ In a monorepo containing multiple services, AI tools face several challenges tha
 
 A generic CLAUDE.md file works fine for simple projects. But monorepos require explicit documentation of your project structure, service boundaries, and team conventions. The goal is to help AI make decisions that align with your existing codebase rather than generating generic solutions.
 
-## Structuring Your Monorepo CLAUDE.md
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Structuring Your Monorepo CLAUDE.md
 
 ### Define Your Directory Structure First
 
 Start by documenting the root-level organization of your monorepo. This gives AI an immediate mental map of where things live.
 
 ```markdown
-## Project Structure
+### Step 2: Project Structure
 
 ```
 /
@@ -86,7 +96,7 @@ Include a brief description of each service's responsibility. This helps AI unde
 Monorepos often have complex dependency graphs. AI needs to know which services depend on which packages and how services communicate.
 
 ```markdown
-## Service Dependencies
+### Step 3: Service Dependencies
 
 - api-gateway: Depends on user-service, payment-service; uses shared-utils, database, types
 
@@ -96,7 +106,7 @@ Monorepos often have complex dependency graphs. AI needs to know which services 
 
 - notification-service: Consumes events from payment-service; uses types
 
-## Communication Patterns
+### Step 4: Communication Patterns
 
 - Services communicate via HTTP REST APIs
 
@@ -108,12 +118,12 @@ Monorepos often have complex dependency graphs. AI needs to know which services 
 
 This explicit documentation prevents AI from importing packages across service boundaries or creating circular dependencies.
 
-## Defining Shared Code Boundaries
+### Step 5: Defining Shared Code Boundaries
 
 Shared packages in monorepos require special attention. Document what lives in shared packages and when to use them versus when to create service-specific code.
 
 ```markdown
-## Shared Packages Usage
+### Step 6: Shared Packages Usage
 
 ### shared-utils
 
@@ -137,7 +147,7 @@ Do NOT duplicate: Types that already exist in packages/types
 
 This prevents the common monorepo problem of duplicated utilities and inconsistent type definitions across services.
 
-## Coding Conventions for Monorepo Context
+### Step 7: Coding Conventions for Monorepo Context
 
 ### Import Path Conventions
 
@@ -163,7 +173,7 @@ import { User } from '../../../packages/types';
 Each service in your monorepo likely has specific configuration requirements. Document these patterns:
 
 ```markdown
-## Service Configuration
+### Step 8: Service Configuration
 
 Each service follows the same configuration pattern:
 
@@ -177,12 +187,12 @@ Each service follows the same configuration pattern:
 
 ```
 
-## Commands and Scripts
+### Step 9: Commands and Scripts
 
 Document the monorepo-specific commands developers use regularly:
 
 ```markdown
-## Available Commands
+### Step 10: Available Commands
 
 ```bash
 # Build all services
@@ -201,12 +211,12 @@ npm test:all
 npm run lint -- --scope=user-service
 ```
 
-## Handling Cross-Service Changes
+### Step 11: Handling Cross-Service Changes
 
 One of the hardest things for AI to get right in monorepos is understanding the scope of changes. Document your workflow:
 
 ```markdown
-## Change Guidelines
+### Step 12: Change Guidelines
 
 1. **Single service changes**: Can be made independently; ensure tests pass
 2. **Shared package changes**: Require updating version in all dependent services; run full test suite
@@ -216,7 +226,7 @@ One of the hardest things for AI to get right in monorepos is understanding the 
 
 This helps AI understand the ripple effects of its suggestions and avoid making changes that break other services.
 
-## Testing Strategy Documentation
+### Step 13: Test Strategy Documentation
 
 Monorepos typically have complex testing requirements. Make sure your CLAUDE.md explains your testing philosophy:
 
@@ -249,6 +259,21 @@ A well-structured monorepo CLAUDE.md file should answer these questions for any 
 Keep your CLAUDE.md updated as your monorepo evolves. When you add a new service or change your dependency structure, update the documentation. An outdated CLAUDE.md file is worse than no file at all because it gives AI false confidence in its understanding of your project.
 
 The investment in maintaining a CLAUDE.md pays dividends in reduced AI hallucination, faster development cycles, and more accurate code generation across your entire monorepo team.
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 

@@ -40,13 +40,23 @@ This guide shows you how to create effective custom instructions that enforce yo
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **Consider a security review**: if your application handles sensitive user data.
 
-## Understanding Custom Instructions
+## Prerequisites
+
+Before you begin, make sure you have the following ready:
+
+- A computer running macOS, Linux, or Windows
+- Terminal or command-line access
+- Administrator or sudo privileges (for system-level changes)
+- A stable internet connection for downloading tools
+
+
+### Step 1: Understand Custom Instructions
 
 Custom instructions are system-level prompts that shape how an AI assistant behaves across all your interactions. Most AI coding tools support some form of custom instructions—whether through Claude's `CLAUDE.md`, Cursor's `.cursorrules`, or GitHub Copilot's custom instructions file.
 
 The key insight is that these instructions work best when they are specific, enforceable, and aligned with your actual code review checklist. Generic advice like "write clean code" rarely produces the results you want. Instead, you need precise rules that the AI can follow without ambiguity.
 
-## Structuring Your Custom Instructions
+### Step 2: Structuring Your Custom Instructions
 
 Effective custom instructions follow a structured approach. Start with your team's code review pain points—what gets flagged most often in pull requests? Common offenders include missing error handling, inadequate test coverage, inconsistent naming, and lack of documentation.
 
@@ -55,7 +65,7 @@ Here's a template for structuring custom instructions that actually work:
 ```markdown
 # Project Code Standards
 
-## Language and Framework Conventions
+### Step 3: Language and Framework Conventions
 - Use TypeScript strict mode for all new TypeScript files
 - Prefer functional components in React; use hooks over class components
 - Follow Airbnb JavaScript Style Guide with exceptions listed below
@@ -76,7 +86,7 @@ The structure matters because it gives the AI a mental framework for generating 
 If your team requires specific naming patterns, make them explicit. Instead of vague preferences, provide concrete rules:
 
 ```markdown
-## Naming Conventions
+### Step 4: Naming Conventions
 - Variables and functions: camelCase
 - React components: PascalCase
 - Constants: UPPER_SNAKE_CASE
@@ -92,7 +102,7 @@ This approach eliminates guesswork. When the AI needs to name a new component, i
 Code review often flags inconsistent error handling. Address this directly:
 
 ```markdown
-## Error Handling
+### Step 5: Error Handling
 - Never leave console.log in production code; use a proper logger
 - Always handle Promise rejections with try/catch or .catch()
 - Wrap async operations in proper error boundaries in React
@@ -117,7 +127,7 @@ If your team requires tests, specify the expectations clearly:
 
 The AI will then write tests alongside code rather than treating testing as a separate step.
 
-## Making Instructions Actionable
+### Step 6: Making Instructions Actionable
 
 The difference between custom instructions that work and those that get ignored comes down to actionability. Vague instructions like "write secure code" are meaningless to an AI. Specific, actionable instructions produce consistent results.
 
@@ -131,7 +141,7 @@ Versus this actionable version:
 
 The second version gives the AI concrete behaviors to avoid or adopt.
 
-## Iterating on Your Instructions
+### Step 7: Iterating on Your Instructions
 
 Custom instructions are not an one-time setup. Start with your top five code review concerns, implement instructions for those, and observe the results. Track what gets approved on first review versus what still needs fixes.
 
@@ -157,7 +167,7 @@ For larger projects, consider creating instruction tiers that apply based on con
 
 This targeted approach keeps instructions relevant to the task at hand rather than overwhelming the AI with rules that don't apply.
 
-## Real-World Custom Instructions Examples
+### Step 8: Real-World Custom Instructions Examples
 
 Here are complete, production-tested custom instruction sets for different teams:
 
@@ -166,14 +176,14 @@ Here are complete, production-tested custom instruction sets for different teams
 ```
 # Cursor Rules: Startup SaaS Development
 
-## Tech Stack
+### Step 9: Tech Stack
 - React 18 with TypeScript
 - Next.js 14 (App Router)
 - Supabase for authentication and database
 - Tailwind CSS for styling
 - Vercel for deployment
 
-## Code Standards
+### Step 10: Code Standards
 
 ### React Components
 - Use functional components only
@@ -221,14 +231,14 @@ Here are complete, production-tested custom instruction sets for different teams
 - Hardcoded values instead of env variables
 - No loading states on async operations
 
-## What NOT to do
+### Step 11: What NOT to do
 - No console.log in production code (use winston logger)
 - No raw SQL queries (use ORM/parameterized)
 - No mixing component logic with styling
 - No default exports for components
 - No modifying props directly in components
 
-## Security Checklist
+### Step 12: Security Checklist
 - Sanitize all user input before display
 - CSRF tokens on all state-changing requests
 - Rate limit API endpoints
@@ -241,27 +251,27 @@ Here are complete, production-tested custom instruction sets for different teams
 ```
 # Cursor Rules: Enterprise Backend (Python/FastAPI)
 
-## Architecture
+### Step 13: Architecture
 - Python 3.11+
 - FastAPI with async/await
 - PostgreSQL with SQLAlchemy ORM
 - Redis for caching
 - OpenTelemetry for observability
 
-## Code Style
+### Step 14: Code Style
 - Black formatter (line length: 100)
 - isort for imports
 - mypy for type checking (strict mode)
 - pylint with score threshold 8.0
 
-## API Standards
+### Step 15: API Standards
 - RESTful design with resource versioning (/v1/, /v2/)
 - OpenAPI documentation via FastAPI
 - Structured error responses with error codes
 - Request/response logging to CloudWatch
 - All endpoints require authentication
 
-## Database Patterns
+### Step 16: Database Patterns
 - Alembic for migrations (never manually alter schema)
 - ORM entities in /models/
 - Queries in repository classes
@@ -275,14 +285,14 @@ Here are complete, production-tested custom instruction sets for different teams
 - Load tests for critical paths (> 1000 req/sec)
 - Fixtures for test data
 
-## Required Code Review Checks
+### Step 17: Required Code Review Checks
 - No hardcoded credentials (use environment variables)
 - All external API calls have timeout and retry logic
 - Database queries use connection pooling
 - Sensitive data logged as [REDACTED]
 - Proper logging at info/warning/error levels
 
-## Deployment
+### Step 18: Deploy ment
 - Docker containers with minimal base images
 - Kubernetes manifests in /k8s/
 - Helm charts for configuration
@@ -295,28 +305,28 @@ Here are complete, production-tested custom instruction sets for different teams
 ```
 # Custom Instructions: Data Analysis Notebooks
 
-## Notebook Structure
+### Step 19: Notebook Structure
 - Clear markdown cells explaining each section
 - Descriptive cell comments for complex analysis
 - Results always include confidence intervals
 - Visualizations with titles, axes labels, legends
 - Summary cell at top with key findings
 
-## Code Quality
+### Step 20: Code Quality
 - Use pandas, numpy, scikit-learn from official docs
 - Always check for data quality issues first (nulls, duplicates, outliers)
 - Validate assumptions before modeling
 - Seeds for reproducibility (random_state=42)
 - All plots should be publication-quality (matplotlib.style.use('seaborn-v0_8-darkgrid'))
 
-## Analysis Standards
+### Step 21: Analysis Standards
 - Sample size and statistical significance always noted
 - P-values reported, not just p < 0.05
 - Effect sizes included, not just p-values
 - Explain why chosen that statistical test
 - Limitations of analysis clearly stated
 
-## Visualization Rules
+### Step 22: Visualization Rules
 - Color-blind friendly palettes (use colorblind=True in seaborn)
 - No pie charts (use bar charts instead)
 - Proper axis labels and units
@@ -324,12 +334,12 @@ Here are complete, production-tested custom instruction sets for different teams
 - Show 95% confidence intervals on estimates
 ```
 
-## Testing Your Custom Instructions
+### Step 23: Test Your Custom Instructions
 
 Create a validation checklist to verify instructions actually work:
 
 ```markdown
-## Custom Instructions Validation Checklist
+### Step 24: Custom Instructions Validation Checklist
 
 ### Test 1: Basic Compliance
 - [ ] AI generates code following naming conventions
@@ -355,7 +365,7 @@ Create a validation checklist to verify instructions actually work:
 - [ ] If any deviation: Update instructions to be clearer/more specific
 ```
 
-## Measuring Instruction Effectiveness
+### Step 25: Measuring Instruction Effectiveness
 
 Track the impact of your custom instructions:
 
@@ -386,7 +396,7 @@ pull_request_data = {
 
 When AI-generated code passes review comments drop by 60%+, your instructions are working.
 
-## Integrating Instructions Across Tools
+### Step 26: Integrate Instructions Across Tools
 
 Most modern AI tools support instructions, but syntax varies:
 
@@ -409,7 +419,7 @@ git add .cursorrules .github/copilot-instructions.md claude_system_prompt.md
 git commit -m "Update custom instructions across all AI tools"
 ```
 
-## Common Mistakes and How to Fix Them
+### Step 27: Common Mistakes and How to Fix Them
 
 **Mistake 1: Too Generic**
 ❌ "Write clean code and follow best practices"
@@ -426,6 +436,21 @@ git commit -m "Update custom instructions across all AI tools"
 **Mistake 4: Out of Date**
 ❌ Instructions reference old tech stack
 ✅ Review instructions quarterly as tools/standards evolve
+
+## Troubleshooting
+
+**Configuration changes not taking effect**
+
+Restart the relevant service or application after making changes. Some settings require a full system reboot. Verify the configuration file path is correct and the syntax is valid.
+
+**Permission denied errors**
+
+Run the command with `sudo` for system-level operations, or check that your user account has the necessary permissions. On macOS, you may need to grant terminal access in System Settings > Privacy & Security.
+
+**Connection or network-related failures**
+
+Check your internet connection and firewall settings. If using a VPN, try disconnecting temporarily to isolate the issue. Verify that the target server or service is accessible from your network.
+
 
 ## Frequently Asked Questions
 
