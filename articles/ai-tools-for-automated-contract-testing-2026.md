@@ -153,6 +153,46 @@ describe("UserService provider contract verification", () => {
 });
 ```
 
+## Using Pact Matchers for Flexible Contracts
+
+Pact tests become fragile when you hardcode exact field values. Claude correctly suggests matchers when asked:
+
+**Prompt:**
+```text
+Update the consumer test to use Pact matchers so the contract validates field types
+rather than exact values. The id should be an integer, name and email should be strings.
+```
+
+```python
+from pact import Consumer, Provider, Like, Term
+
+def test_get_user_by_id_with_matchers(pact):
+    (
+        pact
+        .given("user with id 42 exists")
+        .upon_receiving("a request for user 42")
+        .with_request(
+            method="GET",
+            path="/users/42",
+            headers={"Accept": "application/json"},
+        )
+        .will_respond_with(
+            status=200,
+            headers={"Content-Type": "application/json"},
+            body={
+                "id": Like(42),          # any integer
+                "name": Like("Alice"),   # any string
+                "email": Term(
+                    r"[^@]+@[^@]+\.[^@]+",
+                    "alice@example.com"
+                ),                       # validated by regex
+            },
+        )
+    )
+```
+
+This is the right approach for production contracts: the provider can return any valid user, not just Alice with id 42. Copilot and ChatGPT rarely suggest matchers unprompted — they default to exact values, creating brittle contracts that break on test data changes.
+
 ## OpenAPI Contract Validation
 
 For teams using OpenAPI specs as contracts, Claude generates validators using `schemathesis` or `dredd`:
@@ -188,6 +228,43 @@ def test_stateful_contract(case):
 ```
 
 Add `schemathesis run http://localhost:8000/openapi.json --checks all` to your CI pipeline for automated contract checking without writing tests manually.
+
+### Dredd Alternative for API Blueprint / OpenAPI
+
+```yaml
+# dredd.yml
+dry-run: null
+hookfiles: tests/contract/hooks.js
+language: nodejs
+sandbox: false
+server: uvicorn app.main:app --port 8000
+server-wait: 3
+reporter: [dot]
+custom:
+  apiaryApiKey: null
+blueprint: openapi.yaml
+endpoint: http://localhost:8000
+```
+
+```javascript
+// tests/contract/hooks.js
+const hooks = require('hooks');
+
+hooks.before('/users/{id} > GET', (transaction, done) => {
+  // Seed test data before running this contract test
+  transaction.request.params.id = '42';
+  done();
+});
+
+hooks.after('/users/{id} > GET', (transaction, done) => {
+  // Assert extra conditions not in the spec
+  const body = JSON.parse(transaction.real.body);
+  if (!body.email.includes('@')) {
+    transaction.fail = 'Email format invalid';
+  }
+  done();
+});
+```
 
 ## gRPC Contract Testing
 
@@ -258,16 +335,107 @@ func TestUserServiceContract(t *testing.T) {
 }
 ```
 
+### Extending the gRPC Tests for Pagination
+
+Claude also handles streaming RPC contract tests correctly:
+
+```go
+t.Run("ListUsers streams all results with pagination", func(t *testing.T) {
+    stream, err := client.ListUsers(ctx, &pb.ListUsersRequest{PageSize: 10})
+    if err != nil {
+        t.Fatalf("ListUsers failed: %v", err)
+    }
+
+    var users []*pb.User
+    for {
+        user, err := stream.Recv()
+        if err == io.EOF {
+            break
+        }
+        if err != nil {
+            t.Fatalf("stream error: %v", err)
+        }
+        if user.Id == 0 || user.Email == "" {
+            t.Errorf("incomplete user record: %+v", user)
+        }
+        users = append(users, user)
+    }
+
+    if len(users) == 0 {
+        t.Error("expected at least one user from stream")
+    }
+})
+```
+
+## Integrating Contract Tests into CI
+
+A practical GitHub Actions workflow that runs consumer tests, publishes pacts, and triggers provider verification:
+
+```yaml
+# .github/workflows/contract-tests.yml
+name: Contract Tests
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+
+jobs:
+  consumer-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pact-python pytest requests
+      - run: pytest tests/contract/test_user_service_consumer.py -v
+      - name: Publish pact to Pact Broker
+        if: github.ref == 'refs/heads/main'
+        env:
+          PACT_BROKER_BASE_URL: ${{ secrets.PACT_BROKER_URL }}
+          PACT_BROKER_TOKEN: ${{ secrets.PACT_BROKER_TOKEN }}
+        run: |
+          pact-broker publish pacts/ \
+            --consumer-app-version ${{ github.sha }} \
+            --branch ${{ github.ref_name }}
+
+  provider-contract:
+    needs: consumer-contract
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_PASSWORD: test
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: npm ci
+      - run: npm run test:contract:provider
+        env:
+          DATABASE_URL: postgresql://postgres:test@localhost/testdb
+          PACT_BROKER_URL: ${{ secrets.PACT_BROKER_URL }}
+          GIT_COMMIT: ${{ github.sha }}
+```
+
 ## AI Tool Comparison for Contract Tests
 
 | Task | Claude | Copilot | ChatGPT |
 |------|--------|---------|---------|
 | Pact consumer setup | Excellent | Good | Good |
+| Pact matchers (type-based) | Suggests unprompted | Rarely suggests | Rarely suggests |
 | State handlers | Strong | Partial | Partial |
 | OpenAPI schemathesis | Strong | Weak | Moderate |
 | gRPC contract tests | Strong | Weak | Moderate |
+| CI integration | Complete workflow | Partial | Partial |
 
-Claude is strongest for gRPC and OpenAPI contract testing, which require more domain knowledge than REST/JSON Pact tests that all tools handle well.
+Claude is strongest for gRPC and OpenAPI contract testing, which require more domain knowledge than REST/JSON Pact tests that all tools handle well. The matcher suggestion behavior is the biggest practical difference — exact-value contracts create maintenance burden that type-based matchers avoid entirely.
 
 ## Related Reading
 
