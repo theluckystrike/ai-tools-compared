@@ -9,7 +9,7 @@ permalink: /transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/
 categories: [guides]
 tags: [ai-tools-compared, tools]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
