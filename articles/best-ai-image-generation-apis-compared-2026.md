@@ -31,6 +31,15 @@ tags: [ai-tools-compared, comparison, best-of, artificial-intelligence, api]---
 
 Picking an image generation API involves tradeoffs between quality, speed, cost, and control. The browser-based tools (Midjourney, Adobe Firefly) are not programmable at scale — you need an API for product integration, batch generation, or CI/CD asset pipelines. This guide covers the APIs that are actually viable for production use.
 
+## Key Takeaways
+
+- **Their infrastructure is optimized for low latency**: under 5 seconds for most FLUX models.
+- **Weakness**: Cold starts can add 10-30 seconds.
+- **DALL-E would cost $2**: to generate equivalent quality.
+- **Pay only for what you use**: no subscription.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+
 ## APIs Covered
 
 - **DALL-E 3 (OpenAI)** — Highest prompt adherence, part of OpenAI API
