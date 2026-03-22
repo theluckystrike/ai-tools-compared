@@ -141,8 +141,19 @@ AI-generated resolutions require human verification. Check these aspects:
 - Are there any security implications?
 
 
-## Tools That excel at Conflict Resolution
+## Tools That Excel at Conflict Resolution
 
+### Tool Comparison by Scenario
+
+Different tools suit different types of conflicts. Here is a breakdown of which tool to reach for depending on the situation:
+
+| Scenario | Best Tool | Reason |
+|---|---|---|
+| Single-file logic conflict | GitHub Copilot Chat | Fast, inline suggestions in VS Code |
+| Multi-file architectural conflict | Claude (large context) | Can hold 10+ files in context simultaneously |
+| Conflict with unclear intent | Cursor Composer | Lets you ask "why" questions before resolving |
+| Automated pipeline resolution | Claude API / GPT-4o API | Scriptable, no manual UI interaction required |
+| Conflict in unfamiliar codebase | Sourcegraph Cody | Uses repo-wide context for better suggestions |
 
 ### Claude Code
 
@@ -183,8 +194,70 @@ Copilot works well for straightforward conflicts through its IDE integration. Wh
 ### Cursor
 
 
-Cursor combines IDE features with AI capabilities, allowing you to select conflicting sections and receive instant resolution suggestions.
+Cursor combines IDE features with AI capabilities, allowing you to select conflicting sections and receive instant resolution suggestions. The Composer mode is particularly effective: open it with Cmd+I, paste the conflicting block, and ask "resolve this conflict keeping the discount logic from HEAD."
 
+### Sourcegraph Cody
+
+Cody's strength is repository-wide context retrieval. When a conflict involves shared utilities or base classes, Cody can pull in the relevant upstream definitions automatically, so the suggested resolution accounts for how the changed function is actually called across the codebase. This is especially useful in monorepos where a change in one service breaks assumptions in another.
+
+## Automating Conflict Detection in CI
+
+You can add a pre-merge check that extracts conflict blocks and sends them to an AI API for a preliminary resolution suggestion. This surfaces the AI suggestion as a PR comment before any human reviewer looks at it.
+
+```python
+# ci/suggest_conflict_resolution.py
+import os
+import subprocess
+import anthropic
+
+client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+
+def get_conflict_blocks(filepath):
+    """Extract <<<, ===, >>> blocks from a conflicted file."""
+    with open(filepath) as f:
+        content = f.read()
+
+    blocks = []
+    in_conflict = False
+    current_block = []
+
+    for line in content.splitlines():
+        if line.startswith("<<<<<<<"):
+            in_conflict = True
+            current_block = [line]
+        elif line.startswith(">>>>>>>") and in_conflict:
+            current_block.append(line)
+            blocks.append("\n".join(current_block))
+            in_conflict = False
+            current_block = []
+        elif in_conflict:
+            current_block.append(line)
+
+    return blocks
+
+conflict_files = subprocess.run(
+    ["git", "diff", "--name-only", "--diff-filter=U"],
+    capture_output=True, text=True
+).stdout.strip().split("\n")
+
+for filepath in conflict_files:
+    if not filepath:
+        continue
+    blocks = get_conflict_blocks(filepath)
+    for i, block in enumerate(blocks):
+        response = client.messages.create(
+            model="claude-opus-4-6",
+            max_tokens=512,
+            messages=[{
+                "role": "user",
+                "content": f"Suggest a resolution for this merge conflict. Explain your reasoning briefly.\n\n{block}"
+            }]
+        )
+        print(f"\n--- {filepath} conflict {i+1} ---")
+        print(response.content[0].text)
+```
+
+Run this in CI and post the output as a PR comment using your platform's API. Engineers see the AI suggestion before opening the diff, which reduces resolution time significantly.
 
 ## Best Practices for AI-Assisted Conflict Resolution
 
