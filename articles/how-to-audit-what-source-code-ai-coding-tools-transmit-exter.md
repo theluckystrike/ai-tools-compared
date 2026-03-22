@@ -252,22 +252,101 @@ When auditing, pay attention to:
 - Third-party services: Check for requests to analytics or logging services
 
 
+## What Each Major Tool Actually Transmits
+
+Understanding the documented behavior of popular tools helps set expectations before you audit:
+
+**GitHub Copilot** transmits the current file, a few adjacent files it selects automatically, and your cursor position. The extension sends roughly 2,000-6,000 tokens of surrounding context per completion request.
+
+**Cursor** transmits file contents to Anthropic or OpenAI APIs depending on which model you select. Cursor's privacy mode reduces context sent to the active file only. Without it, Cursor can include files from your codebase based on semantic similarity to the current task.
+
+**Claude Code** transmits the content you explicitly share plus files you reference with @ mentions. It also collects anonymized usage analytics unless you opt out via `claude config set telemetry false`.
+
+**Codeium** transmits code snippets to its own servers for completion. The free tier allows code to be used to improve the model. Enterprise plans include a data privacy agreement preventing training on your code.
+
+**Tabnine** on its free tier runs the basic model locally — no code leaves your machine. The cloud-enhanced tier sends snippets for server-side inference, making Tabnine's free tier uniquely private among completion tools.
+
+
+## Tool-Specific Audit Commands
+
+Each tool exposes different hooks for monitoring:
+
+```bash
+# For GitHub Copilot — check VS Code extension logs
+code --log debug 2>&1 | grep -i copilot | grep -i request
+
+# For Claude Code — enable request logging
+ANTHROPIC_LOG=debug claude chat 2>&1 | grep -E "(POST|payload|tokens)"
+
+# For Cursor — check its local log directory
+ls ~/Library/Logs/Cursor/
+tail -f ~/Library/Logs/Cursor/main.log | grep -i api
+
+# For Codeium — inspect VS Code output panel
+# In VS Code: Cmd+Shift+U -> select "Codeium" from dropdown
+```
+
+For a tool-agnostic approach, mitmproxy with a custom script captures and logs all outbound requests:
+
+```python
+# mitmproxy_ai_logger.py
+from mitmproxy import http
+import json, time
+
+AI_DOMAINS = [
+    "api.anthropic.com", "api.openai.com", "api.github.com",
+    "api.codeium.com", "copilot-proxy.githubusercontent.com",
+]
+
+def request(flow: http.HTTPFlow) -> None:
+    host = flow.request.pretty_host
+    if any(domain in host for domain in AI_DOMAINS):
+        ts = time.strftime("%H:%M:%S")
+        print(f"[{ts}] {flow.request.method} {host} ({len(flow.request.content)}b)")
+        try:
+            body = json.loads(flow.request.content)
+            if "messages" in body:
+                for msg in body["messages"]:
+                    preview = str(msg.get("content", ""))[:150]
+                    print(f"  >> {preview}...")
+        except Exception:
+            pass
+```
+
+Run with: `mitmproxy -s mitmproxy_ai_logger.py -p 8080`
+
+
+## Creating a Data Transmission Baseline
+
+Before you can detect anomalies, establish a baseline. Spend 30 minutes coding normally while capturing all traffic, then analyze what was sent:
+
+```bash
+# Capture a coding session
+mitmweb -p 8080 --save-stream-file ai-session.mitm
+
+# Export and count code fragments transmitted
+mitmdump -r ai-session.mitm -w - | strings | grep -E "[a-zA-Z]{20,}" > code-fragments.txt
+wc -l code-fragments.txt
+```
+
+Compare the fragment count against the number of completions triggered. A ratio above 3:1 suggests the tool is sending substantial context beyond each immediate request.
+
+
 ## Reducing Transmitted Data
 
 
 After auditing, consider these mitigation strategies:
 
 
-- Use local-only AI models when available
+- Use local-only AI models when available (Tabnine free tier, Continue + Ollama, Aider with local models)
 
-- Configure context windows to limit uploaded code
+- Configure context windows to limit uploaded code — Cursor's privacy mode restricts to the active file
 
-- Disable telemetry in tool settings
+- Disable telemetry in tool settings — Claude Code: `claude config set telemetry false`; Copilot: disable in VS Code settings under `github.copilot.telemetry.enabled`
 
-- Use network isolation or VPN tunnels for sensitive work
+- Use network isolation for sensitive repositories — create a firewall rule that blocks AI tool domains for specific project directories
 
-- Review and rotate API keys if using direct integrations
-
+- Review and rotate API keys quarterly if using direct integrations
 
 
 ## Frequently Asked Questions
