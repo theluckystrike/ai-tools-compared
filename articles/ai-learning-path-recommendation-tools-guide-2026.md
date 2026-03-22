@@ -15,8 +15,6 @@ voice-checked: false
 ---
 
 {% raw %}
-{%- include why-choose-ai-learning-path-tools.html -%}
-
 AI-powered learning path recommendation tools have revolutionized how developers and tech professionals approach continuous education. These platforms analyze your current skills, career goals, and learning preferences to generate personalized curriculum recommendations that adapt as you progress. Whether you're transitioning into a new technology domain, upskilling in your current role, or preparing for certification exams, the right AI learning path tool can save hours of research and ensure you're focusing on the most relevant skills.
 
 ## How AI Learning Path Recommendations Work
@@ -187,3 +185,4 @@ To extract the most benefit from AI-powered learning recommendations:
 AI learning path recommendation tools have matured significantly, offering genuinely useful personalization for tech professionals at various career stages. The best choice depends on your specific goals, learning preferences, and budget constraints. For most developers transitioning into new roles or upskilling in cloud technologies, platforms like A Cloud Guru offer sophisticated AI optimization. Those entering data science benefit from Datacamp's specialized approach, while budget-conscious learners can still make strong progress with free options like The Odin Project and Kaggle.
 
 The key to success is treating AI recommendations as a starting point rather than gospel—combine platform guidance with self-reflection on what learning approaches work best for you, and don't hesitate to customize your path based on real-world project experience.
+{% endraw %}
