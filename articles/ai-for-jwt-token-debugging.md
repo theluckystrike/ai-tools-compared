@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /ai-for-jwt-token-debugging/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, troubleshooting, artificial-intelligence]
