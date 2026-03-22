@@ -163,7 +163,26 @@ const createUser = (data: Omit<User, 'id'>): User => {
 ```
 
 
-### 5. Aider (Terminal-Based, Free)
+### 5. Supermaven (Free Tier)
+
+Supermaven launched in 2024 with a focus on ultra-fast completions. Its free tier provides 300,000 completions per month, which is more than enough for most individual developers. The extension uses a proprietary model trained specifically for code, achieving noticeably lower latency than cloud-dependent alternatives.
+
+**Installation:** Search for "Supermaven" in the VS Code marketplace.
+
+Supermaven distinguishes itself with extremely low latency and a large context window. It integrates with VS Code's inline suggestions natively, appearing as grey ghost text that you accept with Tab.
+
+**Practical workflow for Python projects:**
+
+```python
+# Start typing a class definition
+class DataProcessor:
+    def __init__(self, source: str, output_dir: str):
+```
+
+Supermaven reads your project files and suggests the full `__init__` body consistent with your existing patterns, picking up naming conventions from other files in the workspace.
+
+
+### 6. Aider (Terminal-Based, Free)
 
 
 While not a traditional VS Code extension, Aider integrates well through the command line and works alongside VS Code. It is open-source and completely free, supporting multiple large language models.
@@ -216,6 +235,60 @@ OpenRouter aggregates multiple AI models and offers free credits for new users. 
 This approach gives you access to powerful models without running them locally.
 
 
+## Side-by-Side Comparison
+
+| Extension | Free Tier Limits | Offline? | Best Language | Context Window |
+|-----------|-----------------|----------|---------------|----------------|
+| Continue | Unlimited (local) | Yes | Any | Model-dependent |
+| Codeium | Unlimited completions | No | Multi-language | ~8K tokens |
+| Copilot | Students/OSS only | No | Any | ~32K tokens |
+| Tabnine | Basic completions | Yes | Multi-language | ~1K tokens |
+| Supermaven | 300K/month | No | Python, JS/TS | ~1M (paid) |
+| Aider | Unlimited (CLI) | Model-dependent | Any | Model-dependent |
+| OpenRouter | Free credits | No | Any | Model-dependent |
+
+The offline column matters more than it seems for developers on flights, in secure environments, or working with spotty connections. Continue with Ollama and Tabnine are the strongest options here.
+
+
+## Setting Up Continue with Local Models
+
+Continue paired with Ollama provides the best fully-offline experience. Here is a complete setup:
+
+```bash
+# Install Ollama
+curl -fsSL https://ollama.ai/install.sh | sh
+
+# Pull a code model (smaller = faster on CPU)
+ollama pull codellama:7b-instruct-q4_0
+
+# Verify it works
+ollama run codellama:7b-instruct-q4_0 "Write a Python function to sort a list of dicts by key"
+```
+
+Then configure Continue to use it:
+
+```json
+// ~/.continue/config.json
+{
+  "models": [
+    {
+      "title": "CodeLlama 7B (local)",
+      "provider": "ollama",
+      "model": "codellama:7b-instruct-q4_0",
+      "apiBase": "http://localhost:11434"
+    }
+  ],
+  "tabAutocompleteModel": {
+    "title": "CodeLlama 7B (local)",
+    "provider": "ollama",
+    "model": "codellama:7b-instruct-q4_0"
+  }
+}
+```
+
+With this setup, no code ever leaves your machine. On a modern laptop with 16GB RAM, inference on the 7B quantized model runs comfortably for completion-length tasks.
+
+
 ## Choosing the Right Extension
 
 
@@ -229,6 +302,26 @@ Consider these factors when selecting a free AI coding extension:
 
 
 **Integration complexity varies.** Codeium and Tabnine install and work immediately. Continue requires more configuration if you want custom LLM backends. Aider requires terminal comfort.
+
+
+## Combining Extensions Without Conflicts
+
+Running multiple AI extensions simultaneously can cause conflicts: competing inline suggestions, duplicate context indexing, and slowdowns. Manage this by designating one extension as your primary completion engine and disabling autocomplete in others.
+
+In VS Code settings, you can disable inline suggestions per extension while keeping chat or other features active:
+
+```json
+// settings.json
+{
+  // Use Codeium for completions, Continue for chat
+  "codeium.enableConfig": {"*": true},
+  "continue.enableTabAutocomplete": false,
+  "tabnine.enable_quick_access": false,
+  "tabnine.experimentalAutoImports": false
+}
+```
+
+This gives you Codeium's reliable completions with Continue's superior chat and codebase Q&A without the two systems fighting over the same keystrokes.
 
 
 ## Maximizing Your Free Extensions
