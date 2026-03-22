@@ -230,6 +230,59 @@ Claude outperforms GPT-4 for system design interview prep on depth, trade-off an
 
 Use GPT-4 for breadth review. Use Claude when you need an interviewer that will actually push back.
 
+## Drilling Weak Areas: Targeted Follow-Up Prompts
+
+Both models support follow-up questioning, but the technique matters. Vague prompts get vague answers. Use structured follow-up chains that mirror how interviewers actually probe:
+
+```
+# After getting an initial design, drill each layer:
+
+Round 1 (scale): "My design currently handles 10K RPS. Walk me through
+what breaks first at 100K RPS and what you'd change."
+
+Round 2 (failure modes): "What happens if the primary database goes down
+for 60 seconds? Walk through the exact failure sequence and recovery."
+
+Round 3 (trade-offs): "I proposed Kafka for event streaming. What would
+you lose if you replaced it with a simple Redis pub/sub? When is that
+trade-off acceptable?"
+
+Round 4 (cost): "Estimate the monthly AWS cost for this architecture
+at 1M daily active users. What's the most expensive component and is
+there a cheaper alternative with acceptable trade-offs?"
+```
+
+Claude handles this drill pattern better than GPT-4 because it maintains design state across the conversation. GPT-4 tends to start fresh with each question rather than building on previous answers.
+
+## Simulating Mock Interviews
+
+The highest-value prep mode is mock interview simulation. Claude handles this role convincingly with the right setup:
+
+```
+System: You are a senior staff engineer at a large tech company conducting
+a system design interview. Ask one design question. After the candidate
+responds, ask two follow-up questions based on gaps you noticed. Do not
+give hints. After the second follow-up, provide a structured debrief:
+what was strong, what was missing, what would fail at scale.
+
+Start the interview now.
+```
+
+GPT-4 can run this simulation but frequently breaks character to offer helpful hints, which undermines the prep value. Claude maintains the interviewer perspective more consistently through a full 45-minute session.
+
+## Calibrating for Company Level
+
+Staff-level interviews at companies like Google or Meta emphasize different things than senior-level interviews at mid-size companies. Calibrate explicitly:
+
+```
+"I'm preparing for a Staff Engineer interview at a company with ~100
+engineers, not a FAANG. Their system handles 500K DAU, not 500M.
+Adjust your feedback calibration — what matters at this scale vs what
+would be premature optimization?"
+```
+
+Claude adjusts the feedback relevance well at this prompt. GPT-4 tends to give FAANG-optimized answers regardless of the stated context — useful for stretch prep, but it can create anxiety about problems that won't actually come up in the interview you're taking.
+
 ## Related Reading
 
 - [Claude vs GPT-4 for Data Analysis](/ai-tools-compared/claude-vs-gpt4-for-data-analysis/)
