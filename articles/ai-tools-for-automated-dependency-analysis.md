@@ -19,7 +19,7 @@ Dependency analysis is one of the highest-ROI applications for AI in engineering
 
 ## Three Problems AI Solves Well
 
-1. **Circular dependency explanation**: Not just "A→B→An exists" but "this cycle forms because auth imports config which imports auth for logging"
+1. **Circular dependency explanation**: Not just "A→B→A exists" but "this cycle forms because auth imports config which imports auth for logging"
 2. **Upgrade impact analysis**: "If I upgrade lodash from 4.17.15 to 4.17.21, which of my 47 dependencies actually use it?"
 3. **Vulnerability prioritization**: "Of these 12 CVEs, which are exploitable given my actual call graph?"
 
@@ -76,6 +76,25 @@ def detect_circular_deps_python() -> list[str]:
     ]
     return cycles
 ```
+
+### Visualizing the Graph Before Analysis
+
+Before sending data to an AI, build a visual. Claude and GPT-4 reason better when you can point to a specific subgraph:
+
+```python
+# visualize_deps.py — output a Mermaid diagram for large graphs
+def to_mermaid(edges: list[dict], max_edges: int = 50) -> str:
+    lines = ["graph LR"]
+    for edge in edges[:max_edges]:
+        src = edge["from"].replace("-", "_").replace(".", "_")
+        dst = edge["to"].replace("-", "_").replace(".", "_")
+        lines.append(f"    {src} --> {dst}")
+    return "\n".join(lines)
+
+# Paste the Mermaid output into a prompt for visual context
+```
+
+Mermaid diagrams paste cleanly into Claude prompts and allow you to ask questions like "explain the path between `auth-service` and `db-driver` in this graph."
 
 ## AI Analysis: Circular Dependency Explanation
 
@@ -151,6 +170,16 @@ Based on semantic versioning and common knowledge of {package}:
     return response.content[0].text
 ```
 
+### Practical Upgrade Workflow
+
+The most effective pattern combines automated graph extraction with AI reasoning in a pull request comment:
+
+1. Run `npm outdated --json` or `pip list --outdated --format=json`
+2. For each package with a major version bump, call `analyze_upgrade_impact()`
+3. Post the AI summary as a PR comment before the upgrade lands
+
+This lets reviewers see the expected blast radius before merging, not after discovering broken tests.
+
 ## Vulnerability Blast Radius Analysis
 
 ```python
@@ -208,6 +237,36 @@ PRIORITY: Should this block the current release?"""
         }]
     )
     return response.content[0].text
+```
+
+### Integrating with Snyk or Dependabot Output
+
+Snyk and Dependabot surface CVEs but don't tell you whether your code actually reaches the vulnerable function. Combine their output with AI blast radius analysis:
+
+```python
+# snyk_bridge.py — pipe Snyk JSON output into Claude blast radius analysis
+import json, subprocess
+
+def get_snyk_vulns() -> list[dict]:
+    result = subprocess.run(
+        ["snyk", "test", "--json"],
+        capture_output=True, text=True
+    )
+    data = json.loads(result.stdout)
+    return data.get("vulnerabilities", [])
+
+def triage_snyk_vulns(dep_graph: dict) -> list[dict]:
+    vulns = get_snyk_vulns()
+    results = []
+    for vuln in vulns:
+        analysis = analyze_vulnerability_blast_radius(
+            cve_id=vuln.get("identifiers", {}).get("CVE", ["Unknown"])[0],
+            vulnerable_package=vuln["moduleName"],
+            vuln_description=vuln["title"],
+            dep_graph=dep_graph,
+        )
+        results.append({"vuln": vuln["title"], "analysis": analysis})
+    return results
 ```
 
 ## Unused Dependency Detection
@@ -269,6 +328,17 @@ Format as a table: Package | Safe | Reason"""
     return response.content[0].text
 ```
 
+### False Positives to Watch For
+
+The static import scanner misses several legitimate patterns. Tell Claude about these when asking for removal advice:
+
+- **Pytest plugins** (`pytest-cov`, `pytest-asyncio`) are loaded by pytest automatically with no import
+- **Django apps** in `INSTALLED_APPS` that register themselves via `AppConfig`
+- **Celery tasks** auto-discovered via `autodiscover_tasks()`
+- **Packages used only in config files** (e.g., `gunicorn` listed in `Procfile` but never imported)
+
+Claude will flag these as `Maybe` with an explanation when you provide the project description.
+
 ## CI Integration
 
 ```yaml
@@ -312,6 +382,26 @@ jobs:
               body: `## Dependency Analysis\n\n${report}`
             });
 ```
+
+### Caching Graph Data Between Runs
+
+Regenerating the full dependency graph on every CI run is slow. Cache it using the lock file as a cache key:
+
+```yaml
+- name: Cache dependency graph
+  uses: actions/cache@v4
+  with:
+    path: /tmp/dep-graph.json
+    key: dep-graph-${{ hashFiles('**/package-lock.json', '**/requirements.txt', '**/go.sum') }}
+
+- name: Build graph if not cached
+  run: |
+    if [ ! -f /tmp/dep-graph.json ]; then
+      python3 scripts/build_graph.py > /tmp/dep-graph.json
+    fi
+```
+
+This reduces CI time by 60-80% on large monorepos where the dependency structure changes infrequently.
 
 ## Tool Comparison
 
