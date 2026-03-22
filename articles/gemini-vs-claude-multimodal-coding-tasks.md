@@ -29,6 +29,15 @@ tags: [ai-tools-compared, comparison, claude-ai]---
 
 Multimodal coding tasks — where you provide an image or document alongside a text prompt — are a growing part of developer workflows. Uploading a database schema diagram and asking for the ORM models, sharing an UI screenshot and asking for the React component, or providing an architecture diagram and asking for Kubernetes config. This guide tests Gemini 1.5 Pro and Claude Opus on these specific developer tasks.
 
+## Key Takeaways
+
+- **Generation time**: ~45 seconds.
+- **Gemini's larger context window**: (1M vs Claude's 200K) would matter for very long documents, but most API PDFs are under 50 pages.
+- **Both are far better**: than GPT-4V for reading technical diagrams with text annotations.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **Use AI-generated tests as**: a starting point, then add cases that cover your unique requirements and failure modes.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+
 ## Test Setup
 
 All tests use:
