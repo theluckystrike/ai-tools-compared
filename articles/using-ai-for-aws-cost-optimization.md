@@ -247,6 +247,60 @@ Prioritize these AWS Compute Optimizer recommendations by:
 [paste recommendations JSON]
 ```
 
+## Step 6: Identify Idle and Orphaned Resources
+
+One of the most overlooked cost categories is orphaned resources — things that exist but serve no workload. Claude can help identify them when given the right CLI output.
+
+```bash
+# Find unattached EBS volumes
+aws ec2 describe-volumes \
+  --filters Name=status,Values=available \
+  --query 'Volumes[*].{ID:VolumeId,Size:Size,Type:VolumeType,AZ:AvailabilityZone}' \
+  --output json > unattached-volumes.json
+
+# Find Elastic IPs not associated to running instances
+aws ec2 describe-addresses \
+  --query 'Addresses[?AssociationId==null].[PublicIp,AllocationId]' \
+  --output json > idle-eips.json
+
+# Find load balancers with no registered targets
+aws elbv2 describe-load-balancers --output json > albs.json
+aws elbv2 describe-target-groups --output json > target-groups.json
+```
+
+Prompt Claude with all three files:
+
+```
+Review these AWS resource exports and identify resources that are costing money
+but appear unused. Estimate monthly cost for each idle resource and suggest
+whether to delete or repurpose it.
+
+Unattached EBS volumes: [paste unattached-volumes.json]
+Idle Elastic IPs: [paste idle-eips.json]
+Load balancers: [paste albs.json]
+Target groups: [paste target-groups.json]
+```
+
+Idle EBS volumes cost $0.10/GB-month (gp3). A 500GB forgotten snapshot or volume adds $50/month for nothing. Elastic IPs cost $3.60/month each when unattached. Most accounts accumulate 10-30 of these over time.
+
+## Step 7: NAT Gateway vs VPC Endpoints
+
+NAT Gateway charges $0.045/GB for all outbound traffic from private subnets. If your Lambda functions or EC2 instances are calling AWS APIs (S3, DynamoDB, Secrets Manager, SSM) through a NAT Gateway, you're paying for traffic that could go through free VPC endpoints instead.
+
+Ask Claude to audit your VPC endpoint configuration:
+
+```
+I pay $180/month in NAT Gateway data processing charges.
+My private subnets contain Lambda functions and EC2 instances that
+call S3, DynamoDB, SSM Parameter Store, and Secrets Manager.
+
+Which VPC Interface Endpoints and Gateway Endpoints should I create
+to eliminate NAT Gateway charges for these services?
+Provide the Terraform resource blocks for each endpoint.
+```
+
+Claude generates the endpoint Terraform and also flags which services support Gateway endpoints (free: S3, DynamoDB) vs Interface endpoints ($0.01/AZ/hour but cheaper than NAT at scale).
+
 ## Savings Summary by Category
 
 | Optimization | Typical Savings | Effort |
@@ -255,8 +309,10 @@ Prioritize these AWS Compute Optimizer recommendations by:
 | EC2 rightsizing | 20-35% of EC2 spend | Medium |
 | Reserved Instances (1yr) | 30-40% of covered spend | Low |
 | S3 Intelligent Tiering | 5-15% of S3 spend | Low |
-| NAT Gateway optimization | 10-20% of data transfer | High |
+| NAT Gateway → VPC Endpoints | 10-20% of data transfer | Medium |
 | RDS RI purchase | 30-40% of RDS spend | Low |
+| Orphaned resources cleanup | $50-300/month (varies) | Low |
+| EBS volume rightsizing | 10-20% of EBS spend | Low |
 
 ## Related Reading
 
