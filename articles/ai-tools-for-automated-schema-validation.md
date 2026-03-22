@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: ai-tools-for-automated-schema-validation
 categories: [guides]
 reviewed: true
-score: 6
+score: 8
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]
