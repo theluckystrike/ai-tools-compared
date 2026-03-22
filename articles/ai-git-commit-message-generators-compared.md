@@ -31,6 +31,17 @@ tags: [ai-tools-compared, comparison, artificial-intelligence]---
 
 A good commit message tells your future self (and teammates) why a change was made, not just what changed. AI commit message generators have gotten good enough that the question is no longer "can AI write a useful commit message" but "which tool produces messages that match my team's conventions without constant editing."
 
+## Key Takeaways
+
+- **Most developers skip the body because writing it is tedious**: this is exactly where AI helps most.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+- **For a TypeScript refactor**: that split a large component: ``` refactor: extract UserProfile subcomponents Split monolithic UserProfile into UserAvatar, UserBio, and UserStats components.
+- **the first tool and**: the second tool serve different strengths, so combining them can cover more use cases than relying on either one alone.
+- **Which is better for beginners**: the first tool or the second tool?
+
+It depends on your background.
+
 ## Tools Compared
 
 - **aicommits** — CLI tool, reads git diff, generates message via API

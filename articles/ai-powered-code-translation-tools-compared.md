@@ -29,6 +29,15 @@ tags: [ai-tools-compared, comparison, artificial-intelligence]---
 
 Code translation — converting a working codebase from one language to another — is one of the highest-stakes AI tasks. A wrong line can introduce a subtle bug that passes tests but fails in production. This guide tests the tools and workflows for language migration, focusing on the translations developers actually need.
 
+## Key Takeaways
+
+- **Plan for 15-30% of**: translated files needing fixes before tests pass.
+- **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+- **Use AI-generated tests as**: a starting point, then add cases that cover your unique requirements and failure modes.
+- **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+- **This is better than**: the original JavaScript.
+- **the first tool and**: the second tool serve different strengths, so combining them can cover more use cases than relying on either one alone.
+
 ## The Translation Challenge
 
 AI code translation isn't just syntax substitution. The hard parts are:
