@@ -21,12 +21,41 @@ This guide covers three approaches: AI-generated dbt tests, Great Expectations s
 
 ## Key Takeaways
 
-- **At least 2 custom**: relationship tests if foreign keys are apparent 3.
-- **At least 1 custom**: SQL test for business rule validation 4.
-- **NULL_CHANGES**: Have null rates changed significantly (>5% absolute change)?
-4.
-- **Column-level tests**: not_null, unique, accepted_values (based on actual values in sample)
-2.
+- **dbt tests from SQL + sample data** — Claude generates column-level tests, relationship tests, and custom business rule SQL from a model definition and 10 sample rows.
+- **Great Expectations suites from DataFrames** — profiling a DataFrame and sending the statistics to Claude produces a complete expectation suite without manual configuration.
+- **LLM anomaly detection catches distribution shifts** — comparing run summaries in natural language finds problems that fixed thresholds miss.
+- **CI integration closes the gap** — auto-generating tests on PR for new models means every new model ships with a test suite, not an empty YAML file.
+- **Practical guidance included**: Step-by-step setup and configuration instructions.
+
+## Why Pipeline Testing Is Underinvested
+
+Application code has decades of testing culture: unit tests, integration tests, CI pipelines. Data pipelines don't. The reasons are practical: data quality tests require domain knowledge about acceptable value ranges, valid states, and business rules. A generic not_null check doesn't encode that an order with `status = 'shipped'` must have a non-null `shipped_at`. Writing that test requires someone who understands both the SQL and the business logic.
+
+AI tools close this gap by inferring business rules from data patterns and model structure. When you show Claude a model that filters `WHERE created_at >= '2024-01-01'` and a sample row with `status = 'shipped'` and `shipped_at = null`, it knows to generate the constraint test. You don't have to write it.
+
+## Setting Up the Stack
+
+Install the dependencies for all three approaches:
+
+```bash
+pip install anthropic dbt-postgres great-expectations pandas psycopg2-binary pyyaml
+
+# For dbt project initialization (if you don't have one)
+dbt init my_project
+cd my_project
+
+# Configure your profile in ~/.dbt/profiles.yml
+# Then test connection
+dbt debug
+```
+
+For Great Expectations:
+
+```bash
+pip install great-expectations
+great_expectations init
+# Creates great_expectations/ directory with context
+```
 
 ## Approach 1: AI-Generated dbt Tests
 
@@ -159,6 +188,8 @@ models:
       error_after: {count: 24, period: hour}
 ```
 
+The two custom SQL tests at the bottom are the valuable ones. `not_null` and `unique` are boilerplate — the business rule tests are what actually catch data quality problems in production.
+
 ## Approach 2: Great Expectations Suite Generation
 
 Great Expectations needs a test suite for each dataset. Generating one manually takes hours. AI can generate it from a sample DataFrame:
@@ -246,6 +277,8 @@ def save_ge_suite(expectations: list[dict], suite_name: str, output_dir: str = "
     print(f"Saved {len(expectations)} expectations to {output_path}")
 ```
 
+The key advantage of using the statistical profile rather than raw data is that it's safe to send to an external API. You're not sending actual orders or user records — you're sending distributions, null rates, and sample cardinalities. For regulated data environments this distinction matters.
+
 ## Approach 3: LLM-Based Output Anomaly Detection
 
 For pipelines where the data structure changes between runs, use Claude to analyze output distributions:
@@ -317,6 +350,55 @@ Be specific with numbers."""
     }
 ```
 
+The strength of this approach is catching shifts that fixed thresholds miss. A `total_amount` column where the mean drops from $85 to $12 between runs is suspicious — a fixed not-null check won't catch it, but the LLM comparison will flag it immediately as a distribution shift worth investigating.
+
+## Integrating Anomaly Detection into Airflow
+
+```python
+# airflow_dag_with_checks.py
+from airflow import DAG
+from airflow.operators.python import PythonOperator
+from datetime import datetime, timedelta
+import pandas as pd
+
+def run_pipeline_with_check(**context):
+    """Run pipeline and validate output before marking success."""
+    # Run your actual pipeline
+    current_df = run_etl_pipeline()
+
+    # Load baseline from yesterday's run
+    baseline_df = load_baseline_from_s3(
+        date=context["ds"],
+        pipeline="orders_daily"
+    )
+
+    result = compare_pipeline_runs(current_df, baseline_df, "orders_daily")
+
+    if result["verdict"] == "FAIL":
+        raise ValueError(f"Pipeline output failed quality check:\n{result['analysis']}")
+    elif result["verdict"] == "WARN":
+        # Log warning but don't fail the DAG
+        context["task_instance"].xcom_push(
+            key="quality_warning",
+            value=result["analysis"]
+        )
+
+    return result["verdict"]
+
+with DAG(
+    "orders_daily_pipeline",
+    default_args={"retries": 1, "retry_delay": timedelta(minutes=5)},
+    schedule_interval="0 6 * * *",
+    start_date=datetime(2026, 1, 1),
+) as dag:
+
+    run_and_check = PythonOperator(
+        task_id="run_pipeline_with_quality_check",
+        python_callable=run_pipeline_with_check,
+        provide_context=True
+    )
+```
+
 ## CI Integration for dbt
 
 ```yaml
@@ -351,6 +433,8 @@ jobs:
         run: dbt test --select state:modified+
 ```
 
+This workflow triggers on any PR that modifies SQL models. For new models with no test YAML, it generates one. For existing models where the SQL changed, it regenerates the tests from the updated SQL. The `--only-missing-tests` flag prevents overwriting hand-crafted tests with AI-generated ones.
+
 ## Tool Comparison
 
 | Tool | dbt Tests | GE Suite | Distribution Checks | Custom Rules |
@@ -360,6 +444,8 @@ jobs:
 | dbt-osmosis | Auto-docs only | No | No | No |
 | re_data | Anomaly detection | No | Yes | Limited |
 | Elementary | Monitoring | No | Yes | No |
+
+Claude's edge over GPT-4 for this use case is consistency: it reliably returns valid YAML and JSON rather than prose explanations mixed with code. For automated pipelines where you're parsing the output programmatically, that matters.
 
 ## Related Reading
 
