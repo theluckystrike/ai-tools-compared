@@ -40,6 +40,19 @@ Flutter golden image snapshot tests represent one of the most powerful approache
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Understanding Flutter Golden Image Snapshot Tests](#understanding-flutter-golden-image-snapshot-tests)
+- [How AI Tools Accelerate Golden Image Test Creation](#how-ai-tools-accelerate-golden-image-test-creation)
+- [Practical Integration Workflow](#practical-integration-workflow)
+- [Best Practices for AI-Assisted Test Creation](#best-practices-for-ai-assisted-test-creation)
+- [Advanced Testing Scenarios](#advanced-testing-scenarios)
+- [Managing Large Test Suites](#managing-large-test-suites)
+- [CI/CD Integration](#cicd-integration)
+- [Best Practices for AI-Assisted Test Creation](#best-practices-for-ai-assisted-test-creation)
+- [Limitations to Consider](#limitations-to-consider)
+- [Automating Regression Detection](#automating-regression-detection)
+
 ## Understanding Flutter Golden Image Snapshot Tests
 
 Before exploring AI assistance, let's establish the fundamentals. Golden image tests in Flutter work by rendering a widget and saving its visual output as an image file. When tests run again, the new output gets compared against the stored baseline. Any pixel differences trigger a test failure, alerting you to potential regressions.
@@ -351,9 +364,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Writing Flutter Integration Tests with Patrol Framework](/ai-tools-for-writing-flutter-integration-tests-with-patrol-f/)
-- [AI Coding Tools for Writing Chainguard Image Supply Chain Security Policies](/ai-coding-tools-for-writing-chainguard-image-supply-chain-se/)
-- [AI Tools for Writing Jest Tests for Graphql Resolvers](/ai-tools-for-writing-jest-tests-for-graphql-resolvers-with-dataloader-batching/)
-
+- [AI Tools for Writing Flutter Integration Tests with Patrol](/ai-tools-compared/ai-tools-for-writing-flutter-integration-tests-with-patrol-f/)
+- [AI Tools for Writing Playwright Tests That Verify Accessibil](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-accessibil/)
+- [AI Tools for Writing Jest Tests for Graphql Resolvers](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-graphql-resolvers-with-dataloader-batching/)
+- [AI Tools for Writing pytest Tests for Alembic Database Paths](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
+- [AI Tools for Writing pytest Tests with Moto Library for AWS](/ai-tools-compared/ai-tools-for-writing-pytest-tests-with-moto-library-for-aws-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

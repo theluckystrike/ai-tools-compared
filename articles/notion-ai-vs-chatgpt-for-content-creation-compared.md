@@ -42,6 +42,25 @@ Notion AI uses simpler command-based interaction.
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **Choose Notion AI if**: your team already works in Notion and you want inline AI assistance for editing, summarizing, and expanding documents without switching contexts.
 
+## Table of Contents
+
+- [Core Architecture Differences](#core-architecture-differences)
+- [Content Creation Workflows](#content-creation-workflows)
+- [Practical Examples for Developers](#practical-examples-for-developers)
+- [Feature Comparison Table](#feature-comparison-table)
+- [Content Quality Deep Dive](#content-quality-deep-dive)
+- [Prompt Engineering Differences](#prompt-engineering-differences)
+- [Pricing Considerations](#pricing-considerations)
+- [Decision Framework](#decision-framework)
+- [The Hybrid Approach](#the-hybrid-approach)
+- [Integration Patterns for Teams](#integration-patterns-for-teams)
+- [API Pricing and Scaling](#api-pricing-and-scaling)
+- [Feature Comparison Table](#feature-comparison-table)
+- [Real-World Workflow Examples](#real-world-workflow-examples)
+- [Technical Considerations](#technical-considerations)
+- [Migration Path: Notion AI to ChatGPT](#migration-path-notion-ai-to-chatgpt)
+- [Integration Patterns for Teams](#integration-patterns-for-teams)
+
 ## Core Architecture Differences
 
 Notion AI operates as a feature within the Notion workspace—a document-centric platform that combines note-taking, databases, wikis, and project management. When you trigger Notion AI, it operates directly on your Notion page, modifying content in place. You invoke it with `/ai` commands or by highlighting text and selecting an AI action.

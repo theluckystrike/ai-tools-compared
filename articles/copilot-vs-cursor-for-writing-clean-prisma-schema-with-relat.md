@@ -39,6 +39,19 @@ Choose Cursor if your Prisma schemas involve complex relationships, explicit jun
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **Choose Cursor if your**: Prisma schemas involve complex relationships, explicit junction tables, MongoDB-specific syntax, or index configurations that benefit from natural-language prompting.
 
+## Table of Contents
+
+- [Understanding Prisma Schema Requirements](#understanding-prisma-schema-requirements)
+- [Quick Comparison](#quick-comparison)
+- [GitHub Copilot for Prisma Schema](#github-copilot-for-prisma-schema)
+- [Cursor for Prisma Schema](#cursor-for-prisma-schema)
+- [Comparative Analysis](#comparative-analysis)
+- [When to Use Each Tool in Practice](#when-to-use-each-tool-in-practice)
+- [Recommendations](#recommendations)
+- [Integration with Your Development Workflow](#integration-with-your-development-workflow)
+- [Handling Edge Cases and Advanced Patterns](#handling-edge-cases-and-advanced-patterns)
+- [Testing Your Generated Schemas](#testing-your-generated-schemas)
+
 ## Understanding Prisma Schema Requirements
 
 A well-structured Prisma schema requires careful attention to relation fields, scalar fields, and the underlying database constraints. The most common relationship patterns include one-to-one, one-to-many, and many-to-many relations. Each pattern has specific syntax requirements that must be correct for Prisma Client to generate properly.
@@ -289,10 +302,9 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
+- [Copilot vs Cursor for Writing Terraform Modules](/ai-tools-compared/copilot-vs-cursor-for-writing-terraform-modules-from-scratch/)
+- [Best AI Tools for Writing Prisma Schemas in 2026](/ai-tools-compared/articles/best-ai-tools-for-writing-prisma-schemas-2026/)
 - [Copilot vs Cursor for Writing pytest Fixtures](/ai-tools-compared/copilot-vs-cursor-for-writing--pytest-fixtures-/)
-- [Copilot vs Cursor for Writing Rust Error Handling with](/ai-tools-compared/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
-- [Copilot vs Cursor for Writing Terraform Modules from Scratch](/ai-tools-compared/copilot-vs-cursor-for-writing-terraform-modules-from-scratch/)
-- [AI Tools for Converting Raw JSON API Responses into Clean](/ai-tools-compared/ai-tools-for-converting-raw-json-api-responses-into-clean-pandas-dataframes/)
-- [AI Tools for Generating pytest Fixtures from Database](/ai-tools-compared/ai-tools-for-generating-pytest-fixtures-from-database-schema/)
-
+- [Copilot vs Cursor for Implementing Server-Sent Events](/ai-tools-compared/copilot-vs-cursor-for-implementing-server-sent-events-in-spr/)
+- [Switching from Copilot Enterprise to Cursor Business](/ai-tools-compared/switching-from-copilot-enterprise-to-cursor-business-migrati/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

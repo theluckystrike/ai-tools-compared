@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, best-of, artificial-intelligence]
+---
 ---
 categories: [guides]
 layout: default
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, best-of, artificial-intelligence]
+---
 
 
 | Tool | Compatibility Checks | Breaking Change Detection | Test Generation | Pricing |
@@ -48,6 +50,19 @@ Writing backward compatibility testing checklists for libraries requires thinkin
 - **Test critical paths -**: Focus on heavily-used APIs 2.
 - **Test actual patterns -**: Test how real consumers use your library, not just theoretical usage 3.
 - **AI tools can accelerate**: this process significantly, helping maintainers create thorough checklists that catch potential breaking changes before they reach users.
+
+## Table of Contents
+
+- [Why Backward Compatibility Checklists Matter for Library Maintainers](#why-backward-compatibility-checklists-matter-for-library-maintainers)
+- [AI Tools Best Suited for Checklist Generation](#ai-tools-best-suited-for-checklist-generation)
+- [Generating Your Backward Compatibility Checklist](#generating-your-backward-compatibility-checklist)
+- [Key Checklist Categories for Library Maintainers](#key-checklist-categories-for-library-maintainers)
+- [Integrating AI-Generated Checklists into Your Workflow](#integrating-ai-generated-checklists-into-your-workflow)
+- [Best Practices for Effective Checklist Maintenance](#best-practices-for-effective-checklist-maintenance)
+- [Advanced Compatibility Testing Patterns](#advanced-compatibility-testing-patterns)
+- [Breaking Changes](#breaking-changes)
+- [Monitoring and Documentation](#monitoring-and-documentation)
+- [Testing Philosophy for Library Maintainers](#testing-philosophy-for-library-maintainers)
 
 ## Why Backward Compatibility Checklists Matter for Library Maintainers
 
@@ -365,9 +380,8 @@ Trying to change everything at once. Pick one or two practices, implement them w
 ## Related Articles
 
 - [Claude Code API Backward Compatibility Guide](/ai-tools-compared/claude-code-api-backward-compatibility-guide/)
-- [AI Tools for Writing dbt Seeds and Fixtures for Testing Mode](/ai-tools-compared/ai-tools-for-writing-dbt-seeds-and-fixtures-for-testing-mode/)
 - [Best AI for QA Engineers Writing API Contract Testing Cases](/ai-tools-compared/best-ai-for-qa-engineers-writing-api-contract-test-cases-fro/)
-- [Writing Claude Md Files That Teach AI Your Project Testing](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-testing-conventions-and-patterns/)
-- [AI Coding Tool GDPR Compliance Checklist for European Engine](/ai-tools-compared/ai-coding-tool-gdpr-compliance-checklist-for-european-engine/)
-
+- [Best AI Tools for Writing Unit Test Mocks 2026](/ai-tools-compared/best-ai-tools-for-writing-unit-test-mocks-2026/)
+- [Best AI Assistant for Writing pytest Tests for Background](/ai-tools-compared/best-ai-assistant-for-writing-pytest-tests-for-background-job-retry-failure-scenarios/)
+- [Claude Code API Snapshot Testing Guide](/ai-tools-compared/claude-code-api-snapshot-testing-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

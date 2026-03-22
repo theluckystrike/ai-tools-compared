@@ -40,6 +40,26 @@ This guide compares the strengths and weaknesses of each tool for this specific 
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **However**: I noticed it sometimes over-relied on generic class names and occasionally missed opportunities to use Tailwind's more concise utility combinations.
 
+## Table of Contents
+
+- [The Test Scenario](#the-test-scenario)
+- [ChatGPT Results](#chatgpt-results)
+- [Gemini Results](#gemini-results)
+- [Side-by-Side Comparison](#side-by-side-comparison)
+- [Handling Complex Wireframes](#handling-complex-wireframes)
+- [Which Tool Should You Use?](#which-tool-should-you-use)
+- [Advanced Prompt Techniques](#advanced-prompt-techniques)
+- [Component Reusability](#component-reusability)
+- [Color and Theme Consistency](#color-and-theme-consistency)
+- [Typography and Spacing](#typography-and-spacing)
+- [Responsive Design Patterns](#responsive-design-patterns)
+- [Animation and Interaction States](#animation-and-interaction-states)
+- [Dark Mode Support](#dark-mode-support)
+- [Performance Considerations](#performance-considerations)
+- [Testing Generated Code](#testing-generated-code)
+- [Integration with Design Tools](#integration-with-design-tools)
+- [Real-World Workflow](#real-world-workflow)
+
 ## The Test Scenario
 
 I drew a simple but realistic wireframe: a landing page with a navigation bar containing a logo and three links, a hero section with a headline and CTA button, a three-column feature grid, and a footer. I then described this wireframe to both AI tools using the same prompt and measured the output quality.

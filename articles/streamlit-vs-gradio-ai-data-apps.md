@@ -39,6 +39,17 @@ When building AI-powered data applications, choosing the right frontend framewor
 - **Streamlit uses a declarative**: approach where you define your app's structure by writing Python functions.
 - **Gradio uses a block-based**: API that gives you more granular control over your interface layout.
 
+## Table of Contents
+
+- [What is Streamlit?](#what-is-streamlit)
+- [What is Gradio?](#what-is-gradio)
+- [Key Differences for AI Data Apps](#key-differences-for-ai-data-apps)
+- [Framework Comparison Table](#framework-comparison-table)
+- [When to Choose Streamlit](#when-to-choose-streamlit)
+- [When to Choose Gradio](#when-to-choose-gradio)
+- [Building a Practical AI App: Two Implementations](#building-a-practical-ai-app-two-implementations)
+- [Production Considerations](#production-considerations)
+
 ## What is Streamlit?
 
 Streamlit is an open-source Python framework designed specifically for data scientists and ML engineers to create interactive web applications without writing HTML, CSS, or JavaScript. Created by Snowflake (originally by Streamlit Inc.), it focuses on turning data scripts into shareable web apps in minutes.

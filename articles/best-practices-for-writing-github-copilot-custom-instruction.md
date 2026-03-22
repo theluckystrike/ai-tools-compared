@@ -50,6 +50,22 @@ GitHub Copilot Custom Instructions transform how developers interact with AI-ass
 - **Group related rules together**: and use consistent formatting.
 - **This includes indentation**: naming patterns, and language-specific preferences.
 
+## Table of Contents
+
+- [Understanding Copilot Custom Instructions](#understanding-copilot-custom-instructions)
+- [Structuring Your Custom Instructions](#structuring-your-custom-instructions)
+- [Language-Specific Configuration](#language-specific-configuration)
+- [Project-Specific Context](#project-specific-context)
+- [Practical Examples](#practical-examples)
+- [Iteration and Refinement](#iteration-and-refinement)
+- [Common Mistakes to Avoid](#common-mistakes-to-avoid)
+- [Sharing Configuration Across Teams](#sharing-configuration-across-teams)
+- [Automating Instruction Distribution](#automating-instruction-distribution)
+- [Testing Instructions Effectively](#testing-instructions-effectively)
+- [Instruction Versioning Strategy](#instruction-versioning-strategy)
+- [Real-World Instruction Performance](#real-world-instruction-performance)
+- [Advanced: Conditional Instructions Based on File Type](#advanced-conditional-instructions-based-on-file-type)
+
 ## Understanding Copilot Custom Instructions
 
 GitHub Copilot reads custom instructions from your VSCode settings file (`settings.json`). These instructions act as persistent context that Copilot considers when generating code suggestions. Unlike inline comments that apply to a single session, custom instructions remain active across all your coding sessions within that workspace.

@@ -40,6 +40,19 @@ Claude API bills extended thinking tokens at the standard output token rate. Whe
 - **Have at least two**: reviewers score each response independently and average the scores.
 - **This ratio tells you**: where extended thinking delivers the best return.
 
+## Table of Contents
+
+- [What Is Extended Thinking in Claude API](#what-is-extended-thinking-in-claude-api)
+- [How Output Tokens Are Billed](#how-output-tokens-are-billed)
+- [Current Pricing Structure](#current-pricing-structure)
+- [Practical Code Examples](#practical-code-examples)
+- [Understanding Token Usage in Responses](#understanding-token-usage-in-responses)
+- [How Much Do Reasoning Tokens Add?](#how-much-do-reasoning-tokens-add)
+- [Cost Optimization Strategies](#cost-optimization-strategies)
+- [Monitoring Your Spending](#monitoring-your-spending)
+- [Building a Cost-Aware Routing Layer](#building-a-cost-aware-routing-layer)
+- [Step-by-Step Workflow: Benchmarking Extended Thinking for Your Use Case](#step-by-step-workflow-benchmarking-extended-thinking-for-your-use-case)
+
 ## What Is Extended Thinking in Claude API
 
 Extended thinking is a feature that allows Claude models to engage in deeper reasoning before producing their final response. When enabled, the model breaks down complex problems, explores multiple approaches, and reasons through its solution before delivering the actual output. This results in more thoughtful, accurate responses for tasks that require complex reasoning, coding, or analysis.
@@ -322,10 +335,9 @@ No. The recommended pattern is to enable it selectively based on query complexit
 ## Related Articles
 
 - [Claude API Tool Use Function Calling Pricing How Tokens Are](/ai-tools-compared/claude-api-tool-use-function-calling-pricing-how-tokens-are-/)
-- [Does Claude Code Send Terminal Output to Anthropic Servers P](/ai-tools-compared/does-claude-code-send-terminal-output-to-anthropic-servers-p/)
+- [How to Use Claude API Cheaply for Small Coding Projects](/ai-tools-compared/how-to-use-claude-api-cheaply-for-small-coding-projects/)
 - [ChatGPT API Assistants API Pricing Threads and Runs Cost](/ai-tools-compared/chatgpt-api-assistants-api-pricing-threads-and-runs-cost-breakdown/)
-- [DALL-E 3 Credit Cost Per Image: ChatGPT Plus vs API](/ai-tools-compared/dall-e-3-credit-cost-per-image-chatgpt-plus-vs-api/)
-- [ChatGPT Plus vs Claude Pro Monthly Cost for Daily Coding](/ai-tools-compared/chatgpt-plus-vs-claude-pro-monthly-cost-for-daily-coding/)
-
+- [Claude API vs OpenAI API Pricing Breakdown 2026](/ai-tools-compared/claude-api-vs-openai-api-pricing-breakdown-2026/)
+- [Claude API Pay Per Token vs Pro Subscription Which Cheaper](/ai-tools-compared/claude-api-pay-per-token-vs-pro-subscription-which-cheaper/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -41,6 +41,13 @@ When working with large monorepo projects, AI coding assistants often struggle t
 - **Consider including focused test**: files rather than excluding all tests.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Why Monorepos Challenge AI Context](#why-monorepos-challenge-ai-context)
+- [Prerequisites](#prerequisites)
+- [Common Mistakes to Avoid](#common-mistakes-to-avoid)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Monorepos Challenge AI Context
 
 Monorepos contain multiple projects, packages, or services within a single repository. A typical monorepo might include a frontend application, backend API, shared utilities, design system components, and documentation. When you ask an AI coding assistant for help, it attempts to build context from files across the entire repository, which introduces several problems.

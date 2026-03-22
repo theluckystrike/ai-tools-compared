@@ -52,6 +52,53 @@ This guide covers practical strategies for creating Claude.md files that work ef
 - **A week-long trial with**: actual work gives better signal than feature comparison charts.
 - **Do these tools work**: offline? Most AI-powered tools require an internet connection since they run models on remote servers.
 
+## Table of Contents
+
+- [Why Claude.md Files Matter for Django Development](#why-claudemd-files-matter-for-django-development)
+- [Core Sections for Django Project Claude.md Files](#core-sections-for-django-project-claudemd-files)
+- [Models](#models)
+- [Views](#views)
+- [URL Naming](#url-naming)
+- [REST API](#rest-api)
+- [Pagination](#pagination)
+- [Authentication](#authentication)
+- [Error Responses](#error-responses)
+- [Filtering](#filtering)
+- [Project-Specific Context](#project-specific-context)
+- [Payment Processing](#payment-processing)
+- [Email](#email)
+- [Background Tasks](#background-tasks)
+- [Testing Requirements](#testing-requirements)
+- [Working with the Claude.md File](#working-with-the-claudemd-file)
+- [Maintaining Your Claude.md File](#maintaining-your-claudemd-file)
+- [Adding Database Schema Context](#adding-database-schema-context)
+- [Core Models](#core-models)
+- [Performance Optimization Patterns](#performance-optimization-patterns)
+- [Query Optimization](#query-optimization)
+- [Caching Strategy](#caching-strategy)
+- [Async Tasks](#async-tasks)
+- [Security Best Practices Section](#security-best-practices-section)
+- [Authentication & Authorization](#authentication-authorization)
+- [Data Protection](#data-protection)
+- [API Security](#api-security)
+- [Common Third-Party Integration Patterns](#common-third-party-integration-patterns)
+- [Payment Processing (Stripe)](#payment-processing-stripe)
+- [Email Service (SendGrid)](#email-service-sendgrid)
+- [Analytics (Mixpanel)](#analytics-mixpanel)
+- [File Storage (S3)](#file-storage-s3)
+- [Deployment and Environment Configuration](#deployment-and-environment-configuration)
+- [Environments](#environments)
+- [Environment Variables](#environment-variables)
+- [Deployment Process](#deployment-process)
+- [API Versioning Strategy](#api-versioning-strategy)
+- [URL Structure](#url-structure)
+- [Deprecation Policy](#deprecation-policy)
+- [Backward Compatibility](#backward-compatibility)
+- [Migration Planning](#migration-planning)
+- [Approach](#approach)
+- [Tools](#tools)
+- [Maintenance and Updates](#maintenance-and-updates)
+
 ## Why Claude.md Files Matter for Django Development
 
 Django projects involve multiple interconnected components: models, views, forms, serializers, URLs, and templates. Each team develops these components following specific patterns and conventions. Without clear context, AI assistants generate code that may not align with your existing architecture, forcing you to rewrite or extensively modify the output.

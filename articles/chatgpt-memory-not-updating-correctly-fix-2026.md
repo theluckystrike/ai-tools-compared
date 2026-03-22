@@ -39,6 +39,18 @@ To fix ChatGPT memory not updating correctly, force a memory refresh by logging 
 - **This guide walks through**: each fix step by step for developers and power users.
 - **ChatGPT memory stores information**: about your preferences, past conversations, and custom instructions.
 
+## Table of Contents
+
+- [Understanding How ChatGPT Memory Works](#understanding-how-chatgpt-memory-works)
+- [Common Causes of Memory Update Failures](#common-causes-of-memory-update-failures)
+- [Step-by-Step Fixes](#step-by-step-fixes)
+- [Diagnostic Tips for Power Users](#diagnostic-tips-for-power-users)
+- [Preventing Future Issues](#preventing-future-issues)
+- [Advanced Diagnostic Workflow](#advanced-diagnostic-workflow)
+- [Common Memory Failure Patterns](#common-memory-failure-patterns)
+- [Performance Metrics and Monitoring](#performance-metrics-and-monitoring)
+- [Preventive Maintenance Schedule](#preventive-maintenance-schedule)
+
 ## Understanding How ChatGPT Memory Works
 
 Understanding the underlying mechanism helps with debugging. ChatGPT memory stores information about your preferences, past conversations, and custom instructions. The system updates memory after conversations end, analyzing what information should be retained. This asynchronous update process explains why changes sometimes take time to reflect.
@@ -296,10 +308,9 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 
 ## Related Articles
 
-- [Do ChatGPT Plus Memory and Custom GPTs Count Toward](/ai-tools-compared/chatgpt-plus-memory-and-custom-gpts-count-toward-usage-limit/)
-- [ChatGPT API 429 Too Many Requests Fix](/ai-tools-compared/chatgpt-api-429-too-many-requests-fix/)
 - [ChatGPT Canvas Not Saving Changes Fix (2026)](/ai-tools-compared/chatgpt-canvas-not-saving-changes-fix-2026/)
-- [ChatGPT Code Interpreter Not Running Python: Fixes and Fix](/ai-tools-compared/chatgpt-code-interpreter-not-running-python-fix/)
-- [ChatGPT Conversation History Disappeared Fix](/ai-tools-compared/chatgpt-conversation-history-disappeared-fix/)
-
+- [Do ChatGPT Plus Memory and Custom GPTs Count Toward](/ai-tools-compared/chatgpt-plus-memory-and-custom-gpts-count-toward-usage-limit/)
+- [ChatGPT Slow Response Fix 2026: Complete Troubleshooting](/ai-tools-compared/chatgpt-slow-response-fix-2026/)
+- [Claude Code for Memory Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-memory-profiling-workflow-tutorial/)
+- [ChatGPT Network Error on Long Responses: How to Fix in 2026](/ai-tools-compared/chatgpt-network-error-on-long-responses-how-to-fix-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

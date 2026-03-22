@@ -39,6 +39,21 @@ Organizing Go projects effectively directly impacts maintainability, team collab
 - **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
 - **For project structure**: Claude Code excels at explaining Go module organization, suggesting appropriate package layouts, and recommending import strategies.
 
+## Table of Contents
+
+- [Why Project Structure Matters in Go](#why-project-structure-matters-in-go)
+- [Essential AI Tools for Go Development](#essential-ai-tools-for-go-development)
+- [Practical Module Organization Strategies](#practical-module-organization-strategies)
+- [Code Organization Patterns](#code-organization-patterns)
+- [Common Organization Mistakes to Avoid](#common-organization-mistakes-to-avoid)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+- [Practical Tool Comparison](#practical-tool-comparison)
+- [Common Go Project Structure Anti-Patterns](#common-go-project-structure-anti-patterns)
+- [Advanced Module Organization Techniques](#advanced-module-organization-techniques)
+- [Integration with Development Workflows](#integration-with-development-workflows)
+- [Testing Organization Best Practices](#testing-organization-best-practices)
+- [Monitoring and Maintenance](#monitoring-and-maintenance)
+
 ## Why Project Structure Matters in Go
 
 Go's philosophy emphasizes simplicity and explicit organization. Unlike languages with flexible conventions, Go projects benefit from consistent directory structures and clear module boundaries. A well-organized Go project makes it easier to onboard new team members, navigate codebase complexity, and separate concerns effectively. AI tools can accelerate the learning curve for developers new to Go conventions and help experienced developers maintain consistency across larger codebases.

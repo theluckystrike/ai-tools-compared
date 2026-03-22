@@ -43,6 +43,19 @@ Generate 5 complete, runnable code examples:
 - **Provide AI with context**: about your product's API or SDK, and it can generate multiple example scenarios showing different features and use cases.
 - **AI can help generate test cases**: but manual testing remains essential for user experience.
 
+## Table of Contents
+
+- [Why Interactive Coding Playgrounds Matter for DevRel](#why-interactive-coding-playgrounds-matter-for-devrel)
+- [AI-Powered Approaches for Building Coding Playgrounds](#ai-powered-approaches-for-building-coding-playgrounds)
+- [Practical Workflow for DevRel Teams](#practical-workflow-for-devrel-teams)
+- [Tools That Accelerate Playground Creation](#tools-that-accelerate-playground-creation)
+- [Measuring Playground Success](#measuring-playground-success)
+- [Common Pitfalls to Avoid](#common-pitfalls-to-avoid)
+- [Generating Examples with Claude Code](#generating-examples-with-claude-code)
+- [Structuring Multi-Step Tutorial Flows](#structuring-multi-step-tutorial-flows)
+- [Keeping Playground Examples Current with API Changes](#keeping-playground-examples-current-with-api-changes)
+- [Tracking Which Examples Drive Conversion](#tracking-which-examples-drive-conversion)
+
 ## Why Interactive Coding Playgrounds Matter for DevRel
 
 Interactive coding playgrounds serve multiple purposes in developer relations. They provide hands-on experiences that help developers understand your product without setting up local environments. A well-designed playground can demonstrate SDK usage, showcase API capabilities, and let potential users experience your tool's value within minutes.

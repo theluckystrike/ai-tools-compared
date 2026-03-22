@@ -41,6 +41,14 @@ To use AI coding tools in FedRAMP-authorized environments, deploy self-hosted so
 - **Use AI tools for**: prototyping and learning in isolated development environments, then implement hand-off procedures for production code.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Understanding FedRAMP Compliance Requirements](#understanding-fedramp-compliance-requirements)
+- [Prerequisites](#prerequisites)
+- [Compliance Documentation](#compliance-documentation)
+- [Monitoring Compliance Over Time](#monitoring-compliance-over-time)
+- [Troubleshooting](#troubleshooting)
+
 ## Understanding FedRAMP Compliance Requirements
 
 FedRAMP (Federal Risk and Authorization Management Program) standardizes security assessment and authorization for cloud products and services used by federal agencies. When your infrastructure operates under FedRAMP authorization, any data processed—including source code—must remain within authorized boundaries.

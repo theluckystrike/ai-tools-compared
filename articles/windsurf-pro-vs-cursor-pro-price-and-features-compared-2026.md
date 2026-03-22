@@ -40,6 +40,22 @@ If you are evaluating AI-powered code editors in 2026, the comparison between Wi
 # 2.
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 
+## Table of Contents
+
+- [Pricing Overview](#pricing-overview)
+- [Code Editing and AI Capabilities](#code-editing-and-ai-capabilities)
+- [Integration and Workflow](#integration-and-workflow)
+- [Performance and Speed](#performance-and-speed)
+- [Which Should You Choose?](#which-should-you-choose)
+- [Detailed Feature Comparison Table](#detailed-feature-comparison-table)
+- [Real-World Performance Benchmarks](#real-world-performance-benchmarks)
+- [Developer Workflow Differences](#developer-workflow-differences)
+- [Extension Ecosystem Impact](#extension-ecosystem-impact)
+- [Learning Curve and Productivity Impact](#learning-curve-and-productivity-impact)
+- [Cost Comparison Over Time](#cost-comparison-over-time)
+- [Model Access and Capabilities](#model-access-and-capabilities)
+- [Migration Path Between Tools](#migration-path-between-tools)
+
 ## Pricing Overview
 
 Both WindSurf Pro and Cursor Pro operate on subscription models with similar price points, but there are differences in tier structure and what each tier includes.

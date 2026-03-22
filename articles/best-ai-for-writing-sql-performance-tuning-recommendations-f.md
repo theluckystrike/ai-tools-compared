@@ -51,6 +51,22 @@ I have a PostgreSQL slow query that takes 4.2 seconds.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Understanding Slow Query Logs](#understanding-slow-query-logs)
+- [How AI Tools Analyze Slow Query Logs](#how-ai-tools-analyze-slow-query-logs)
+- [Practical AI Prompts for Slow Query Analysis](#practical-ai-prompts-for-slow-query-analysis)
+- [Comparing AI Tools for SQL Performance Tuning](#comparing-ai-tools-for-sql-performance-tuning)
+- [Common Performance Patterns AI Identifies](#common-performance-patterns-ai-identifies)
+- [Implementing AI Recommendations Safely](#implementing-ai-recommendations-safely)
+- [Which Tool Should You Choose](#which-tool-should-you-choose)
+- [Getting Started with AI-Powered Query Optimization](#getting-started-with-ai-powered-query-optimization)
+- [Advanced Performance Analysis Patterns](#advanced-performance-analysis-patterns)
+- [Integration with Database Tools](#integration-with-database-tools)
+- [Batch Optimization Workflows](#batch-optimization-workflows)
+- [Index Design Patterns AI Recognizes](#index-design-patterns-ai-recognizes)
+- [Measuring Optimization Impact](#measuring-optimization-impact)
+
 ## Understanding Slow Query Logs
 
 Slow query logs capture queries that take longer than a configured threshold—typically ranging from 1 second to 5 seconds depending on your application requirements. Each entry includes the query text, execution time, rows examined, and often the EXPLAIN output showing how the database engine executed the query.

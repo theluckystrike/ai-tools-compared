@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI Code Completion for Java Record Classes and Sealed"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 
 Java 14 introduced record classes as a preview feature, and Java 17 made them a standard feature alongside sealed classes and interfaces. These language features fundamentally change how developers model data and define type hierarchies. In 2026, AI code completion tools have significantly improved their support for these modern Java constructs, but understanding their capabilities and limitations remains essential for developers working with advanced Java features.
@@ -38,6 +40,21 @@ Java 14 introduced record classes as a preview feature, and Java 17 made them a 
 - **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Many AI code completion**: providers update their Java support based on user feedback and evolving language features.
+
+## Table of Contents
+
+- [Why Record Classes and Sealed Interfaces Matter](#why-record-classes-and-sealed-interfaces-matter)
+- [Code Completion for Record Classes](#code-completion-for-record-classes)
+- [Sealed Interface Completion Challenges](#sealed-interface-completion-challenges)
+- [Evaluating AI Tools for Modern Java](#evaluating-ai-tools-for-modern-java)
+- [Practical Recommendations](#practical-recommendations)
+- [Tool Comparison Matrix](#tool-comparison-matrix)
+- [Testing Record Classes with AI Assistance](#testing-record-classes-with-ai-assistance)
+- [Sealed Interface Verification Strategies](#sealed-interface-verification-strategies)
+- [AI Tool Evaluation Checklist](#ai-tool-evaluation-checklist)
+- [Common Generation Mistakes](#common-generation-mistakes)
+- [Building a Record/Sealed Type Strategy](#building-a-recordsealed-type-strategy)
+- [Looking Forward](#looking-forward)
 
 ## Why Record Classes and Sealed Interfaces Matter
 

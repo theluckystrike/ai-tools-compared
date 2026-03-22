@@ -40,6 +40,18 @@ When building Java Spring Boot applications in 2026, developers need AI assistan
 - **GitHub Copilot and Claude**: each approach Spring Boot code generation differently, and understanding these differences helps you choose the right tool for your workflow.
 - **The controller should expose**: CRUD endpoints for an User entity.
 
+## Table of Contents
+
+- [Understanding the Generation Approaches](#understanding-the-generation-approaches)
+- [Controller Generation Comparison](#controller-generation-comparison)
+- [Service Layer Generation](#service-layer-generation)
+- [Repository and Entity Generation](#repository-and-entity-generation)
+- [Configuration and Application Properties](#configuration-and-application-properties)
+- [Testing Code Generation](#testing-code-generation)
+- [Side-by-Side Capability Comparison](#side-by-side-capability-comparison)
+- [When Each Tool Excels](#when-each-tool-excels)
+- [Practical Recommendations](#practical-recommendations)
+
 ## Understanding the Generation Approaches
 
 GitHub Copilot operates as a code completion tool integrated directly into your IDE. It generates code based on context from your current file, comments, and surrounding code. Copilot excels at predicting what comes next in a partially written file, making it effective for scaffolding boilerplate and filling in method implementations.

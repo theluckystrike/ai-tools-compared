@@ -40,6 +40,15 @@ Choose Domo if you need rapid dashboard deployment with pre-built connectors and
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
+## Table of Contents
+
+- [Platform Architecture Overview](#platform-architecture-overview)
+- [API and Integration Patterns](#api-and-integration-patterns)
+- [AI Capabilities Comparison](#ai-capabilities-comparison)
+- [Performance and Scalability](#performance-and-scalability)
+- [Practical Recommendations](#practical-recommendations)
+- [Common Implementation Patterns](#common-implementation-patterns)
+
 ## Platform Architecture Overview
 
 Domo operates as a cloud-first platform with a low-code emphasis. Its strength lies in connecting multiple data sources through pre-built connectors and visualizing results quickly. Domo's Magic Cards feature uses machine learning to generate visualizations automatically based on data patterns.

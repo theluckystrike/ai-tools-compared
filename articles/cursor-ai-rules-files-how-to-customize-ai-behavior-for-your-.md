@@ -39,6 +39,18 @@ Cursor AI rules files provide a powerful mechanism for tailoring the AI's behavi
 - **Rules files use Markdown-like**: formatting, so check for proper structure.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [What Are Cursor AI Rules Files?](#what-are-cursor-ai-rules-files)
+- [Prerequisites](#prerequisites)
+- [Advanced Rule Configuration](#advanced-rule-configuration)
+- [Best Practices for Effective Rules](#best-practices-for-effective-rules)
+- [Troubleshooting Rule Behavior](#troubleshooting-rule-behavior)
+- [Advanced: Multi-File Rule Configuration](#advanced-multi-file-rule-configuration)
+- [Troubleshooting Rule Issues](#troubleshooting-rule-issues)
+- [Rules Format Best Practices](#rules-format-best-practices)
+- [Advanced: Conditional Rules](#advanced-conditional-rules)
+
 ## What Are Cursor AI Rules Files?
 
 Rules files are configuration documents that instruct Cursor AI how to behave within your project. They act as a set of instructions that the AI references when generating code, answering questions, or performing refactoring tasks. These files help maintain consistency across your codebase and ensure the AI adheres to your team's conventions.

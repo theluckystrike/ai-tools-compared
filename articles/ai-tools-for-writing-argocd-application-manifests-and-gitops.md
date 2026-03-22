@@ -11,7 +11,8 @@ score: 8
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 {% raw %}
 
 Writing ArgoCD application manifests manually can become repetitive and error-prone, especially when managing dozens of microservices across multiple environments. AI coding tools have matured enough to help generate correct YAML structures, suggest appropriate sync policies, and even create complete GitOps workflow templates. This guide evaluates how the leading AI assistants perform at writing ArgoCD manifests and maintaining GitOps pipelines.
@@ -30,6 +31,15 @@ Aider integrates directly into terminal-based workflows, making it suitable for 
 
 
 Cursor provides the smoothest experience when editing ArgoCD manifests directly in VS Code.
+
+## Table of Contents
+
+- [What ArgoCD Manifest Generation Requires](#what-argocd-manifest-generation-requires)
+- [Top AI Tools for ArgoCD Manifests](#top-ai-tools-for-argocd-manifests)
+- [Comparing Tool Performance](#comparing-tool-performance)
+- [Practical Examples](#practical-examples)
+- [Best Practices for Using AI with ArgoCD](#best-practices-for-using-ai-with-argocd)
+- [Recommendation](#recommendation)
 
 ## What ArgoCD Manifest Generation Requires
 

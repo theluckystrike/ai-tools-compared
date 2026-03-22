@@ -39,6 +39,28 @@ Remap Copilot's `Cmd+I` inline chat shortcut to Cursor's `Cmd+K` inline edit by 
 - **On Windows/Linux**: go to `File > Preferences > Keybindings`.
 - **In Copilot**: you might use the chat panel to ask for an explanation.
 
+## Table of Contents
+
+- [Understanding Inline AI Features](#understanding-inline-ai-features)
+- [Default Keybindings Comparison](#default-keybindings-comparison)
+- [Mapping Keybindings for Muscle Memory](#mapping-keybindings-for-muscle-memory)
+- [Practical Workflow Examples](#practical-workflow-examples)
+- [Advanced Configuration](#advanced-configuration)
+- [Why These Mappings Matter](#why-these-mappings-matter)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Advanced Keybinding Patterns](#advanced-keybinding-patterns)
+- [Performance Impact of Multiple Keybindings](#performance-impact-of-multiple-keybindings)
+- [Migrating Other Shortcuts Beyond Inline Chat](#migrating-other-shortcuts-beyond-inline-chat)
+- [Syncing Keybindings Across Machines](#syncing-keybindings-across-machines)
+- [Advanced Keybinding Techniques](#advanced-keybinding-techniques)
+- [Advanced Inline Chat Workflows](#advanced-inline-chat-workflows)
+- [Migration Troubleshooting](#migration-troubleshooting)
+- [Performance and Optimization](#performance-and-optimization)
+- [Team Standardization](#team-standardization)
+- [Inline Chat](#inline-chat)
+- [Code Generation](#code-generation)
+- [Navigation](#navigation)
+
 ## Understanding Inline AI Features
 
 GitHub Copilot provides inline chat through a dedicated interface that appears within your editor. You trigger it with a keyboard shortcut, type your question or prompt, and Copilot generates code directly in your file. The workflow is straightforward: press a shortcut, write your prompt, and accept the AI-generated code snippet.
@@ -546,9 +568,8 @@ Give yourself 2-3 weeks to adjust to new shortcuts. During this time, keep a che
 ## Related Articles
 
 - [Copilot Inline Chat vs Cursor Inline Chat: Which Understands](/ai-tools-compared/copilot-inline-chat-vs-cursor-inline-chat-which-understands-/)
-- [Copilot vs Cursor vs Windsurf Inline Diff Preview Comparison](/ai-tools-compared/copilot-vs-cursor-vs-windsurf-inline-diff-preview-comparison/)
+- [Best AI Inline Chat Features in VS Code Compared to](/ai-tools-compared/best-ai-inline-chat-features-in-vscode-compared-to-jetbrains/)
+- [Copilot Chat Not Responding in GitHub](/ai-tools-compared/copilot-chat-not-responding-in-github-fix/)
+- [How to Use AI Inline Chat to Refactor Single Function](/ai-tools-compared/how-to-use-ai-inline-chat-to-refactor-single-function-step-by-step/)
 - [How to Migrate Copilot Chat History and Context to Cursor AI](/ai-tools-compared/migrate-copilot-chat-history-and-context-to-cursor-ai-guide/)
-- [Best AI Inline Chat Features in VSCode Compared to Jetbrains](/ai-tools-compared/best-ai-inline-chat-features-in-vscode-compared-to-jetbrains/)
-- [How to Use AI Inline Chat to Refactor Single Function Step](/ai-tools-compared/how-to-use-ai-inline-chat-to-refactor-single-function-step-by-step/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -43,6 +43,27 @@ Understanding what data Claude Code transmits to Anthropic's servers is crucial 
 
 4.
 
+## Table of Contents
+
+- [How Claude Code Communicates with Anthropic](#how-claude-code-communicates-with-anthropic)
+- [What Claude Code Actually Sends](#what-claude-code-actually-sends)
+- [Privacy Controls Available](#privacy-controls-available)
+- [Examining Network Traffic](#examining-network-traffic)
+- [What Stays Local](#what-stays-local)
+- [Enterprise and Privacy Considerations](#enterprise-and-privacy-considerations)
+- [Best Practices for Privacy-Conscious Users](#best-practices-for-privacy-conscious-users)
+- [Making Informed Decisions](#making-informed-decisions)
+- [Data Retention and Privacy Policies](#data-retention-and-privacy-policies)
+- [Detailed Network Analysis](#detailed-network-analysis)
+- [Enterprise Privacy Controls](#enterprise-privacy-controls)
+- [Auditing Your Own Data Transmission](#auditing-your-own-data-transmission)
+- [Comparison: Claude Code vs. Other AI Tools](#comparison-claude-code-vs-other-ai-tools)
+- [Practical Privacy Implementation](#practical-privacy-implementation)
+- [GDPR Compliance with Claude Code](#gdpr-compliance-with-claude-code)
+- [Team Workflows and Security Policies](#team-workflows-and-security-policies)
+- [AI Coding Assistant Security Policy](#ai-coding-assistant-security-policy)
+- [Verifying Privacy Posture with Automated Testing](#verifying-privacy-posture-with-automated-testing)
+
 ## How Claude Code Communicates with Anthropic
 
 Claude Code operates as a local CLI tool that communicates with Anthropic's API infrastructure. When you run commands like `claude chat` or use the agent mode, your terminal sessions and code interactions are processed through Anthropic's servers to generate responses. This is fundamental to how the tool functions—the AI model runs on Anthropic's infrastructure, not locally on your machine.

@@ -43,6 +43,20 @@ Choose Splunk AI for enterprise-grade log analysis and pattern detection, Datado
 
 Most failure cases result from poor initial configuration, not tool limitations.
 
+## Table of Contents
+
+- [What DevOps Teams Need from AI Incident Response](#what-devops-teams-need-from-ai-incident-response)
+- [Top AI-Powered Incident Response Tools](#top-ai-powered-incident-response-tools)
+- [Implementation Considerations](#implementation-considerations)
+- [Practical Integration Example](#practical-integration-example)
+- [Recommendation](#recommendation)
+- [Detailed Tool Comparison Matrix](#detailed-tool-comparison-matrix)
+- [Implementation Strategies by Team Size](#implementation-strategies-by-team-size)
+- [Measuring Success: Key Metrics](#measuring-success-key-metrics)
+- [AI-Assisted Runbook Development](#ai-assisted-runbook-development)
+- [Cost Optimization](#cost-optimization)
+- [Common Pitfalls and How to Avoid Them](#common-pitfalls-and-how-to-avoid-them)
+
 ## What DevOps Teams Need from AI Incident Response
 
 Modern incident response requires more than simple alerting. Teams need tools that can correlate metrics across multiple sources, suggest remediation steps based on historical incidents, and automate repetitive debugging tasks. The right AI-powered tool should integrate with your existing monitoring stack, understand your infrastructure code, and provide context-aware recommendations during incidents.

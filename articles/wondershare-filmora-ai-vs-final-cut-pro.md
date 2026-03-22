@@ -41,6 +41,20 @@ Filmora's cloud collaboration option (additional $4.99/month per user) enables s
 - **Filmora integrates more naturally**: with consumer-focused workflows but offers less programmatic access.
 - **Choose Wondershare Filmora AI**: if cross-platform compatibility is essential, your team uses Windows workstations, or you need accessible AI features without steep learning curves.
 
+## Table of Contents
+
+- [Platform Architecture and System Requirements](#platform-architecture-and-system-requirements)
+- [AI Feature Implementation](#ai-feature-implementation)
+- [Automation and Scripting Capabilities](#automation-and-scripting-capabilities)
+- [Performance and Rendering](#performance-and-rendering)
+- [Pricing and Licensing Considerations](#pricing-and-licensing-considerations)
+- [Integration with Development Workflows](#integration-with-development-workflows)
+- [Making the Technical Choice](#making-the-technical-choice)
+- [Performance Benchmarking: Render Times and Workflows](#performance-benchmarking-render-times-and-workflows)
+- [Workflow Integration Scenarios](#workflow-integration-scenarios)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Decision Framework](#decision-framework)
+
 ## Platform Architecture and System Requirements
 
 Final Cut Pro runs exclusively on macOS and uses Apple's metal framework for hardware acceleration. The application requires a Mac with Apple Silicon for the full AI feature set, including machine learning-based object tracking and semantic segmentation. This tight hardware coupling means optimal performance on newer MacBook Pro and Mac Studio models, with noticeably slower processing on older Intel-based Macs.

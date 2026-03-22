@@ -40,6 +40,23 @@ Retrieval-Augmented Generation (RAG) lets you ground LLM responses in your own d
 - **Embedding model selection**: `text-embedding-3-small` (62M dimensions) costs $0.02 per million tokens.
 - **`text-embedding-3-large` (3072 dimensions) costs**: $0.13 per million tokens.
 
+## Table of Contents
+
+- [What a RAG Pipeline Does](#what-a-rag-pipeline-does)
+- [Install Dependencies](#install-dependencies)
+- [Step 1: Load and Split Documents](#step-1-load-and-split-documents)
+- [Step 2: Embed and Store](#step-2-embed-and-store)
+- [Step 3: Build the Retriever](#step-3-build-the-retriever)
+- [Step 4: Wire the Chain](#step-4-wire-the-chain)
+- [Step 5: Add a Reranker for Better Precision](#step-5-add-a-reranker-for-better-precision)
+- [Evaluating RAG Quality](#evaluating-rag-quality)
+- [Common Production Issues](#common-production-issues)
+- [Advanced: Hybrid Search for Better Recall](#advanced-hybrid-search-for-better-recall)
+- [Chunking Strategy Deep Dive](#chunking-strategy-deep-dive)
+- [Prompt Optimization for Factuality](#prompt-optimization-for-factuality)
+- [Performance Optimization Techniques](#performance-optimization-techniques)
+- [Scaling RAG to Production](#scaling-rag-to-production)
+
 ## What a RAG Pipeline Does
 
 A RAG pipeline has three stages:

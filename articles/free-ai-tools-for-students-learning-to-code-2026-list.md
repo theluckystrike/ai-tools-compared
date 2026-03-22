@@ -40,6 +40,20 @@ Step 3 — Before asking for the fix, attempt to identify which cause applies to
 - **The free tier provides**: basic code completion while the local option keeps your code private and works without internet connectivity.
 - **The tools listed above**: represent the strongest free options available in 2026 for students learning to code.
 
+## Table of Contents
+
+- [Claude Code: Terminal-Based Learning Assistant](#claude-code-terminal-based-learning-assistant)
+- [GitHub Copilot for Students](#github-copilot-for-students)
+- [Codeium: Generous Free Tier for Individuals](#codeium-generous-free-tier-for-individuals)
+- [Cursor: IDE Built on AI-First Principles](#cursor-ide-built-on-ai-first-principles)
+- [Tabnine: Local AI Completion](#tabnine-local-ai-completion)
+- [Perplexity: Research and Documentation Helper](#perplexity-research-and-documentation-helper)
+- [Continue: Open Source IDE Extension](#continue-open-source-ide-extension)
+- [Tool Comparison at a Glance](#tool-comparison-at-a-glance)
+- [How to Use AI Tools Without Stunting Your Learning](#how-to-use-ai-tools-without-stunting-your-learning)
+- [Debugging With AI: A Structured Approach](#debugging-with-ai-a-structured-approach)
+- [Combining Tools for Maximum Learning](#combining-tools-for-maximum-learning)
+
 ## Claude Code: Terminal-Based Learning Assistant
 
 Claude Code operates as a command-line AI assistant that excels at explaining code, debugging issues, and teaching programming concepts. It runs locally on your machine, providing privacy and no usage limits—critical advantages for students who spend hours coding daily.

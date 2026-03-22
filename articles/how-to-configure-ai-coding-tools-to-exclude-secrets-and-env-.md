@@ -26,6 +26,13 @@ This guide covers configuration methods for major AI coding tools, practical pat
 - **This guide covers why**: exclude secrets from ai tools, the risk in concrete terms, configuring github copilot, with specific setup instructions
 - **Setup and configuration**: Step-by-step instructions included for each tool discussed
 
+## Table of Contents
+
+- [Why Exclude Secrets from AI Tools](#why-exclude-secrets-from-ai-tools)
+- [Prerequisites](#prerequisites)
+- [Best Practices for Secret Management](#best-practices-for-secret-management)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Exclude Secrets from AI Tools
 
 

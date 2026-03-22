@@ -58,6 +58,22 @@ Caused by**: SocketTimeoutException: Connect timed out
 - **Identify the root cause**: by traversing the exception chain to find the original exception 2.
 - **Can you analyze the**: exception chain and explain what's actually failing?" ```java // Claude Code response explains: /* The root cause is SocketTimeoutException at line 34 of DatabaseUtil.java.
 
+## Table of Contents
+
+- [Why Nested Exception Chains Are Hard to Debug](#why-nested-exception-chains-are-hard-to-debug)
+- [What Makes an AI Tool Effective for Stack Trace Analysis](#what-makes-an-ai-tool-effective-for-stack-trace-analysis)
+- [Claude Code: Best for Deep Exception Analysis](#claude-code-best-for-deep-exception-analysis)
+- [ChatGPT: Solid for Common Exception Patterns](#chatgpt-solid-for-common-exception-patterns)
+- [GitHub Copilot: Limited for Debugging](#github-copilot-limited-for-debugging)
+- [Practical Workflow for Stack Trace Analysis](#practical-workflow-for-stack-trace-analysis)
+- [Configuration for Better Exception Handling](#configuration-for-better-exception-handling)
+- [Advanced Stack Trace Scenarios](#advanced-stack-trace-scenarios)
+- [Stack Trace Pattern Recognition](#stack-trace-pattern-recognition)
+- [Debugging Multi-Thread Exception Scenarios](#debugging-multi-thread-exception-scenarios)
+- [Creating Effective Stack Trace Prompts](#creating-effective-stack-trace-prompts)
+- [Production vs Development Debugging](#production-vs-development-debugging)
+- [Recommendation](#recommendation)
+
 ## Why Nested Exception Chains Are Hard to Debug
 
 Java's exception chaining mechanism uses the `cause` field in `Throwable`. When you catch an exception and throw a new one with the original as the cause, you create a chain that can be five, ten, or even twenty levels deep. Frameworks like Spring, Hibernate, and various middleware add their own exception layers, making the actual error location difficult to locate.
@@ -396,10 +412,9 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Best AI Assistant for Writing pandas Code](/ai-tools-compared/best-ai-assistant-for-writing-pandas-code-to-process-nested-json-api-pagination/)
-- [AI Tools for Explaining Sorting Algorithm Tradeoffs for Diff](/ai-tools-compared/ai-tools-for-explaining-sorting-algorithm-tradeoffs-for-diff/)
-- [ChatGPT vs Claude for Explaining TensorFlow Model](/ai-tools-compared/chatgpt-vs-claude-for-explaining-tensorflow-model-architectu/)
-- [Claude Code vs Cursor Composer](/ai-tools-compared/claude-code-vs-cursor-composer-for-full-stack-development-comparison/)
-- [How to Chain Multiple AI Tools Together for Full Stack Devel](/ai-tools-compared/how-to-chain-multiple-ai-tools-together-for-full-stack-devel/)
-
+- [Best Self Hosted AI Tool for Writing Unit Tests in Java](/ai-tools-compared/best-self-hosted-ai-tool-for-writing-unit-tests-in-java-loca/)
+- [How to Chain Multiple AI Tools Together for Full Stack](/ai-tools-compared/how-to-chain-multiple-ai-tools-together-for-full-stack-devel/)
+- [Best Practices for AI Tool Customization Files When Onboardi](/ai-tools-compared/best-practices-for-ai-tool-customization-files-when-onboardi/)
+- [How to Use AI to Interpret and Fix Java OutOfMemory Heap](/ai-tools-compared/how-to-use-ai-to-interpret-and-fix-java-outofmemory-heap-spa/)
+- [AI Debugging Assistants Compared 2026](/ai-tools-compared/ai-debugging-assistants-compared-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

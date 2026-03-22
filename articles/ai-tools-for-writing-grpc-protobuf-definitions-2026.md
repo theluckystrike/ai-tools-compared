@@ -40,6 +40,16 @@ Claude Code dominates gRPC protobuf generation with the best understanding of pr
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [How gRPC Generation Differs from Regular Code](#how-grpc-generation-differs-from-regular-code)
+- [Use Case 1: Migrating REST to gRPC](#use-case-1-migrating-rest-to-grpc)
+- [Use Case 2: Microservice Architecture with Multiple Services](#use-case-2-microservice-architecture-with-multiple-services)
+- [Use Case 3: Streaming Services](#use-case-3-streaming-services)
+- [Generated Client Code Quality](#generated-client-code-quality)
+- [Practical Recommendations](#practical-recommendations)
+- [Common gRPC Generation Errors](#common-grpc-generation-errors)
+
 ## How gRPC Generation Differs from Regular Code
 
 gRPC protobuf definitions require precision beyond typical code generation. Proto syntax has strict rules: field numbering must be sequential, reserved fields prevent breaking changes, streaming directives must match service method signatures. A misgenerated field number can break backward compatibility. An incorrect streaming direction (client_stream vs server_stream) breaks the entire service contract.

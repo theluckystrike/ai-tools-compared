@@ -52,6 +52,19 @@ This guide evaluates leading AI tools for generating pytest tests specifically f
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Why Background Job Testing Matters](#why-background-job-testing-matters)
+- [Claude Code](#claude-code)
+- [Cursor](#cursor)
+- [GitHub Copilot](#github-copilot)
+- [Recommendations](#recommendations)
+- [Testing Celery-Specific Scenarios](#testing-celery-specific-scenarios)
+- [Testing with RQ (Redis Queue)](#testing-with-rq-redis-queue)
+- [Testing Distributed Background Jobs](#testing-distributed-background-jobs)
+- [Monitoring and Observability Testing](#monitoring-and-observability-testing)
+- [Integration Tests with External Services](#integration-tests-with-external-services)
+
 ## Why Background Job Testing Matters
 
 Background jobs handle critical operations: processing payments, sending notifications, syncing data, and executing scheduled tasks. When these jobs fail, your system must respond predictably. Retry logic prevents transient failures from becoming permanent errors, while proper failure handling ensures problematic jobs don't block your queue indefinitely.
@@ -405,11 +418,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI Assistant for Writing pytest Tests for Pydantic Mode](/ai-tools-compared/best-ai-assistant-for-writing-pytest-tests-for-pydantic-mode/)
-- [AI Tools for Writing pytest Tests for Alembic Database](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migra/)
-- [AI Tools for Writing pytest Tests for Alembic Database](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
-- [AI Tools for Writing pytest Tests for Click or Typer CLI Com](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-click-or-typer-cli-com/)
-- [AI Tools for Writing pytest Tests for FastAPI Endpoints](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-fastapi-endpoints-with/)
-
+- [Best AI Assistant for Creating Playwright Tests for Multi](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-multi-st/)
+- [Best AI Assistant for Creating Jest Tests That Verify Error](/ai-tools-compared/best-ai-assistant-for-creating-jest-tests-that-verify-error-/)
+- [Best Self Hosted AI Tool for Writing Unit Tests in Java](/ai-tools-compared/best-self-hosted-ai-tool-for-writing-unit-tests-in-java-loca/)
+- [Best AI Assistant for Creating Playwright Tests for File](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-file-upl/)
+- [Best AI for Creating Jest Tests That Verify Correct Suspense](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-suspense/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

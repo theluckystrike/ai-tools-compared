@@ -40,6 +40,16 @@ To fix Cursor AI making too many API calls, reduce the context window size to 40
 - **Disable those you do**: not actively use.
 - **Configure automatic model switching**: based on task type Smaller models use significantly fewer tokens while maintaining adequate performance for routine coding assistance.
 
+## Table of Contents
+
+- [Understanding Cursor AI's API Usage](#understanding-cursor-ais-api-usage)
+- [Common Causes of Excessive API Calls](#common-causes-of-excessive-api-calls)
+- [Step-by-Step Fixes](#step-by-step-fixes)
+- [Diagnostic Tips](#diagnostic-tips)
+- [Optimizing Your Workflow](#optimizing-your-workflow)
+- [GitHub Copilot vs Cursor: Real-World Benchmark](#github-copilot-vs-cursor-real-world-benchmark)
+- [Configuring Copilot for Private Repositories](#configuring-copilot-for-private-repositories)
+
 ## Understanding Cursor AI's API Usage
 
 Cursor AI operates by continuously analyzing your codebase to provide context-aware suggestions. Under the hood, it communicates with large language models through API calls. Each chat message, autocomplete suggestion, and code analysis potentially triggers multiple API requests. The frequency depends on your project size, editing patterns, and configuration settings.
@@ -285,11 +295,10 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 
 ## Related Articles
 
-- [ChatGPT API 429 Too Many Requests Fix](/ai-tools-compared/chatgpt-api-429-too-many-requests-fix/)
 - [Cursor Keeps Crashing Fix 2026: Complete Troubleshooting](/ai-tools-compared/cursor-keeps-crashing-fix-2026/)
+- [Cursor AI Slow on Large monorepo Fix (2026)](/ai-tools-compared/cursor-ai-slow-on-large-monorepo-fix-2026/)
+- [Cursor Multi-File Edit Breaking Code Fix (2026)](/ai-tools-compared/cursor-multi-file-edit-breaking-code-fix-2026/)
 - [GitHub Copilot Usage Based Billing How API Calls Are Counted](/ai-tools-compared/github-copilot-usage-based-billing-how-api-calls-are-counted/)
 - [ChatGPT Slow Response Fix 2026: Complete Troubleshooting](/ai-tools-compared/chatgpt-slow-response-fix-2026/)
-- [Claude Code Not Pushing to GitHub Fix: Troubleshooting Guide](/ai-tools-compared/claude-code-not-pushing-to-github-fix/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

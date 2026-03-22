@@ -33,6 +33,24 @@ AI code assistants now generate production-grade nginx configs from natural lang
 - **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
 - **Most engineers would need**: 30+ minutes to write this correctly; Claude generates it in seconds.
 
+## Table of Contents
+
+- [Claude Opus 4.6](#claude-opus-46)
+- [ChatGPT (GPT-4)](#chatgpt-gpt-4)
+- [Cursor with Claude Backend](#cursor-with-claude-backend)
+- [Codeium](#codeium)
+- [GitHub Copilot](#github-copilot)
+- [Practical Comparison](#practical-comparison)
+- [Real-World Usage Patterns](#real-world-usage-patterns)
+- [When AI Misses the Mark](#when-ai-misses-the-mark)
+- [Benchmark Summary](#benchmark-summary)
+- [Recommendation](#recommendation)
+- [Testing AI-Generated Nginx Configs Safely](#testing-ai-generated-nginx-configs-safely)
+- [Common Mistakes AI Tools Make](#common-mistakes-ai-tools-make)
+- [Real Production Scenario: Multi-Region Load Balancing](#real-production-scenario-multi-region-load-balancing)
+- [Tool Recommendations by Use Case](#tool-recommendations-by-use-case)
+- [When to Write Nginx Config Manually](#when-to-write-nginx-config-manually)
+
 ## Claude Opus 4.6
 
 Claude excels at complex nginx architectures. Feed it a description like "set up mutual TLS authentication between my reverse proxy and backends, implement rate limiting per upstream, and force HTTPS with HSTS" and it generates a complete, properly-indented config with correct directive placement and no syntax errors.

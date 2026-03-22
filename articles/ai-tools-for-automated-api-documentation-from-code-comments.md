@@ -40,6 +40,22 @@ Most engineers write good code comments but hate writing documentation. Modern A
 - **- OpenAPI YAML**: Choose this when you need to generate SDKs, mock servers, or integrate with API gateways.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Why AI-Generated Docs Matter](#why-ai-generated-docs-matter)
+- [Extracting Comments: The Foundation](#extracting-comments-the-foundation)
+- [Claude for OpenAPI Specification Generation](#claude-for-openapi-specification-generation)
+- [Python Script: Extract Comments and Generate Docs](#python-script-extract-comments-and-generate-docs)
+- [GPT-4 for Markdown Documentation](#gpt-4-for-markdown-documentation)
+- [Tool Comparison: Documentation Generation](#tool-comparison-documentation-generation)
+- [Workflow: Comment → OpenAPI → Website](#workflow-comment-openapi-website)
+- [Code Example: End-to-End Documentation Generation](#code-example-end-to-end-documentation-generation)
+- [Best Practices](#best-practices)
+- [Keeping Docs in Sync with Code Changes](#keeping-docs-in-sync-with-code-changes)
+- [Language-Specific Comment Extraction Strategies](#language-specific-comment-extraction-strategies)
+- [Validating AI-Generated OpenAPI Specs](#validating-ai-generated-openapi-specs)
+- [Choosing the Right Tool for Your Documentation Needs](#choosing-the-right-tool-for-your-documentation-needs)
+
 ## Why AI-Generated Docs Matter
 
 Manual API documentation drifts. Code changes but docs don't. AI tools solve this by:
@@ -586,10 +602,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [AI Tools for API Documentation from Code 2026](/ai-tools-compared/ai-tools-for-api-documentation-from-code-2026/)
+- [AI Tools for Automated API Documentation Generation in 2026](/ai-tools-compared/ai-tools-for-automated-api-documentation-generation-2026/)
 - [Best AI Tools for Generating API Documentation From Code](/ai-tools-compared/best-ai-tools-for-generating-api-documentation-from-code-2026/)
-- [How to Use the Claude API for Automated Code Review](/ai-tools-compared/how-to-use-claude-api-for-automated-code-review/)
 - [AI Tools for Converting Code Comments into Developer Facing](/ai-tools-compared/ai-tools-for-converting-code-comments-into-developer-facing-/)
-- [Best AI for Generating API Reference Documentation from Jsdo](/ai-tools-compared/best-ai-for-generating-api-reference-documentation-from-jsdo/)
-
+- [AI Tools for Automated Code Documentation Generation in 2026](/ai-tools-compared/ai-tools-for-automated-code-documentation-generation-2026/---)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

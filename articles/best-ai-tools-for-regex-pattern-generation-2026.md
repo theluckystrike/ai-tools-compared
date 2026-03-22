@@ -40,6 +40,20 @@ Claude produces the most accurate regex patterns with correct handling of lookah
 - **Performance - Catastrophic backtracking**: on certain inputs (use regex101.com debugger) 6.
 - **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
 
+## Table of Contents
+
+- [Why Regex Generation Matters](#why-regex-generation-matters)
+- [Test Case 1: Email Validation](#test-case-1-email-validation)
+- [Test Case 2: URL Extraction](#test-case-2-url-extraction)
+- [Test Case 3: Password Complexity](#test-case-3-password-complexity)
+- [Test Case 4: Domain-Specific Pattern - Semantic Versioning](#test-case-4-domain-specific-pattern-semantic-versioning)
+- [Accuracy Scorecard](#accuracy-scorecard)
+- [Catastrophic Backtracking: The Hidden Performance Risk](#catastrophic-backtracking-the-hidden-performance-risk)
+- [Language-Specific Regex Engines: What AI Gets Wrong](#language-specific-regex-engines-what-ai-gets-wrong)
+- [Iterative Refinement: How Each Tool Handles Follow-Up](#iterative-refinement-how-each-tool-handles-follow-up)
+- [Practical Recommendations](#practical-recommendations)
+- [Testing Your Generated Patterns](#testing-your-generated-patterns)
+
 ## Why Regex Generation Matters
 
 Regex patterns are deceptively complex. A pattern that works for 99% of inputs fails on edge cases: email validation that rejects internationalized domains, phone number matching that breaks on extensions, password patterns that are too restrictive or too loose. Most developers copy regex from StackOverflow without understanding the underlying logic, leading to silent failures in production.

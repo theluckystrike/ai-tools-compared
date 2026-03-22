@@ -39,6 +39,17 @@ When selecting an AI chatbot platform for customer support automation, developer
 - **Webhook payloads include conversation**: metadata, user attributes, and conversation logs.
 - **Their system supports 40+**: languages with automatic language detection.
 
+## Table of Contents
+
+- [Platform Overview](#platform-overview)
+- [API and Integration Capabilities](#api-and-integration-capabilities)
+- [Natural Language Processing](#natural-language-processing)
+- [Deployment and Channel Support](#deployment-and-channel-support)
+- [Pricing Structure](#pricing-structure)
+- [Developer Experience](#developer-experience)
+- [Use Case Recommendations](#use-case-recommendations)
+- [Technical Considerations for Implementation](#technical-considerations-for-implementation)
+
 ## Platform Overview
 
 **Verloop** positions itself as an enterprise-grade conversational AI platform focused on customer support automation. The platform emphasizes healthcare, e-commerce, and financial services verticals, offering analytics and workflow automation.
@@ -257,10 +268,9 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Best AI-Powered Platform Engineering Tools for Developer Sel](/ai-tools-compared/best-ai-powered-platform-engineering-tools-for-developer-sel/)
-- [Kustomer vs Gladly AI Customer Platform: A Developer](/ai-tools-compared/kustomer-vs-gladly-ai-customer-platform/)
 - [Botpress vs Rasa AI Chatbot Framework Compared](/ai-tools-compared/botpress-vs-rasa-ai-chatbot-framework/)
-- [ChatGPT vs Custom Chatbot for Business: A Developer Guide](/ai-tools-compared/chatgpt-vs-custom-chatbot-for-business/)
 - [Tidio vs Intercom AI Chatbot: A Developer Comparison](/ai-tools-compared/tidio-vs-intercom-ai-chatbot/)
-
+- [Runway ML vs Pika AI: Video Generation Tools Compared](/ai-tools-compared/runway-ml-vs-pika-ai-video-generation/)
+- [Kustomer vs Gladly AI Customer Platform: A Developer](/ai-tools-compared/kustomer-vs-gladly-ai-customer-platform/)
+- [Custify vs Gainsight AI Customer Success: A Developer Guide](/ai-tools-compared/custify-vs-gainsight-ai-customer-success/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -40,6 +40,19 @@ Choose Claude for complex, multi-widget Datadog dashboards and debugging broken 
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **Choose ChatGPT for quick**: scaffolding of simple dashboards where you can validate and correct the output yourself.
 
+## Table of Contents
+
+- [The Task: Generating Datadog Terraform Resources](#the-task-generating-datadog-terraform-resources)
+- [Claude's Approach](#claudes-approach)
+- [ChatGPT's Approach](#chatgpts-approach)
+- [Testing Methodology](#testing-methodology)
+- [Practical Recommendations](#practical-recommendations)
+- [Hybrid Approach](#hybrid-approach)
+- [Code Quality Considerations](#code-quality-considerations)
+- [Generating Complex Widget Types](#generating-complex-widget-types)
+- [Using Terraform Modules for Dashboard Reuse](#using-terraform-modules-for-dashboard-reuse)
+- [Migrating Existing Dashboards to Terraform](#migrating-existing-dashboards-to-terraform)
+
 ## The Task: Generating Datadog Terraform Resources
 
 Datadog's Terraform provider uses a specific structure for dashboards. A basic dashboard with a timeseries widget looks like this:
@@ -332,11 +345,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Best AI Tools for Writing Datadog Monitoring Queries and](/ai-tools-compared/best-ai-tools-for-writing-datadog-monitoring-queries-and-dashboards/)
 - [ChatGPT vs Claude for Writing API Documentation](/ai-tools-compared/chatgpt-vs-claude-for-writing-api-documentation/)
-- [ChatGPT vs Claude for Writing Cold Outreach Emails to Saas](/ai-tools-compared/chatgpt-vs-claude-for-writing-cold-outreach-emails-to-saas-f/)
-- [ChatGPT vs Claude for Writing Effective Celery Task Error](/ai-tools-compared/chatgpt-vs-claude-for-writing-effective-celery-task-error-ha/)
-- [ChatGPT vs Claude for Writing Nginx Reverse Proxy Configurat](/ai-tools-compared/chatgpt-vs-claude-for-writing-nginx-reverse-proxy-configurat/)
-
+- [Claude vs Gpt4 Terraform Pulumi Infrastructure Code](/ai-tools-compared/claude-vs-gpt4-terraform-pulumi-infrastructure-code-2026/)
+- [Claude vs ChatGPT for Technical Writing 2026](/ai-tools-compared/claude-vs-chatgpt-for-technical-writing-2026/)
+- [ChatGPT vs Claude for Generating Cypress Component Test](/ai-tools-compared/chatgpt-vs-claude-for-generating-cypress-component-test-boil/)
+- [ChatGPT vs Claude for Explaining TensorFlow Model](/ai-tools-compared/chatgpt-vs-claude-for-explaining-tensorflow-model-architectu/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

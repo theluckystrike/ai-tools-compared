@@ -11,7 +11,8 @@ intent-checked: true
 voice-checked: true
 score: 8
 reviewed: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI Tools for Video Accessibility Features"
@@ -25,7 +26,8 @@ intent-checked: true
 voice-checked: true
 score: 8
 reviewed: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 
 Video accessibility is a critical requirement for reaching broader audiences and complying with regulations like WCAG 2.1 and ADA. AI-powered tools have transformed how developers implement accessibility features, making it possible to add captions, audio descriptions, and sign language interpretation without manual transcription. This guide covers practical approaches to implementing video accessibility features using AI APIs and libraries.
@@ -38,6 +40,17 @@ Video accessibility is a critical requirement for reaching broader audiences and
 - **Free tiers from most**: providers enable adequate testing before committing to a platform.
 - **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+
+## Table of Contents
+
+- [Why Video Accessibility Matters](#why-video-accessibility-matters)
+- [AI-Powered Captioning and Transcription](#ai-powered-captioning-and-transcription)
+- [Audio Description Generation](#audio-description-generation)
+- [Sign Language Generation](#sign-language-generation)
+- [Accessibility Testing Tools](#accessibility-testing-tools)
+- [Implementation Strategy](#implementation-strategy)
+- [Caption Quality and Post-Processing](#caption-quality-and-post-processing)
+- [Choosing the Right Tools](#choosing-the-right-tools)
 
 ## Why Video Accessibility Matters
 

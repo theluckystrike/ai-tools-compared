@@ -39,6 +39,23 @@ Write CursorRules for React TypeScript projects by specifying TypeScript configu
 - **TypeScript props can use `interface`**: `type`, or inline annotations.
 - **State management can use `useState`**: `useReducer`, Zustand, Redux, Jotai, or Recoil.
 
+## Table of Contents
+
+- [Why CursorRules Matter for React TypeScript](#why-cursorrules-matter-for-react-typescript)
+- [Setting Up Basic React TypeScript Rules](#setting-up-basic-react-typescript-rules)
+- [Component Pattern Rules](#component-pattern-rules)
+- [Custom Hooks Patterns](#custom-hooks-patterns)
+- [State Management Conventions](#state-management-conventions)
+- [Import Organization](#import-organization)
+- [Testing Considerations](#testing-considerations)
+- [Putting It All Together: A Complete CursorRules Template](#putting-it-all-together-a-complete-cursorrules-template)
+- [TypeScript](#typescript)
+- [Components](#components)
+- [Hooks](#hooks)
+- [State Management](#state-management)
+- [Imports](#imports)
+- [Testing](#testing)
+
 ## Why CursorRules Matter for React TypeScript
 
 When working with React and TypeScript, projects often develop unique patterns around component composition, prop typing, and state management. Without explicit guidance, AI assistants may generate code that conflicts with your established conventions. CursorRules solve this by providing persistent context about your project's specific requirements.
@@ -434,11 +451,10 @@ CursorRules are plain text—there is no special syntax to learn beyond what you
 
 ## Related Articles
 
-- [Writing CursorRules for Golang Projects with Specific Concur](/ai-tools-compared/writing-cursorrules-for-golang-projects-with-specific-concur/)
-- [Writing Effective .cursorrules for Next.js App Router](/ai-tools-compared/writing-effective-cursorrules-for-nextjs-app-router-project-with-specific-file-conventions/)
+- [Writing CursorRules for Golang Projects with Specific](/ai-tools-compared/writing-cursorrules-for-golang-projects-with-specific-concur/)
 - [How to Create .cursorrules That Enforce Your Teams React](/ai-tools-compared/how-to-create-cursorrules-that-enforce-your-teams-react-comp/)
-- [Copilot vs Codeium for TypeScript Projects 2026](/ai-tools-compared/copilot-vs-codeium-for-typescript-projects-2026/)
-- [Best Practices for Writing .cursorrules File That Improves](/ai-tools-compared/best-practices-for-writing-cursorrules-file-that-improves-co/)
-
+- [AI Coding Assistant Comparison for React Component](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
+- [Cursor vs Windsurf for React Development 2026](/ai-tools-compared/cursor-vs-windsurf-for-react-development-2026/)
+- [Create CursorRules That Teach Cursor Your Team's State](/ai-tools-compared/how-to-create-cursorrules-that-teach-cursor-your-teams-state/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

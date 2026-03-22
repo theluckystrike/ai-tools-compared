@@ -39,6 +39,22 @@ ChatGPT Edu pricing typically falls between $10-$20 per student annually for ful
 - **A single district managing 50,000 students across elementary, middle, and high schools can negotiate pricing below $10 per student**: roughly half the individual school rate.
 - **Some consortiums report securing**: rates as low as $8 per student.
 
+## Table of Contents
+
+- [Understanding ChatGPT Edu Pricing Structure](#understanding-chatgpt-edu-pricing-structure)
+- [How Schools Secure Volume Discounts](#how-schools-secure-volume-discounts)
+- [Implementation Considerations](#implementation-considerations)
+- [Cost-Benefit Analysis for IT Decision-Makers](#cost-benefit-analysis-for-it-decision-makers)
+- [Practical Example: District Rollout Budget](#practical-example-district-rollout-budget)
+- [Negotiation Tactics That Work](#negotiation-tactics-that-work)
+- [Maximizing ROI from ChatGPT Edu](#maximizing-roi-from-chatgpt-edu)
+- [Security and Compliance](#security-and-compliance)
+- [Multi-Year Contract Case Studies](#multi-year-contract-case-studies)
+- [Regional and State-Level Purchasing Cooperatives](#regional-and-state-level-purchasing-cooperatives)
+- [Advanced Negotiation Strategies](#advanced-negotiation-strategies)
+- [Privacy and Compliance Considerations Beyond FERPA](#privacy-and-compliance-considerations-beyond-ferpa)
+- [Financing and Budget Strategies](#financing-and-budget-strategies)
+
 ## Understanding ChatGPT Edu Pricing Structure
 
 OpenAI offers ChatGPT Edu through annual contracts with pricing that scales based on student population. The per-student model provides predictable costs, though exact figures vary based on institutional size and negotiation outcomes.

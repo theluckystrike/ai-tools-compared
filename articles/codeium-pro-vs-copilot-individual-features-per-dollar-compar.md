@@ -39,6 +39,28 @@ This guide provides an overview to help you understand and make informed decisio
 - **It also offers a**: free tier for verified students and maintainers, though the feature set is limited compared to the paid version.
 - **For JetBrains users specifically**: Codeium often feels snappier while Copilot provides more mature integration.
 
+## Table of Contents
+
+- [Pricing Overview](#pricing-overview)
+- [Code Completion and Generation Quality](#code-completion-and-generation-quality)
+- [Chat and Conversation Features](#chat-and-conversation-features)
+- [IDE Integration](#ide-integration)
+- [Privacy and Data Handling](#privacy-and-data-handling)
+- [Feature Comparison Table](#feature-comparison-table)
+- [Real-World Value Analysis](#real-world-value-analysis)
+- [Making the Decision](#making-the-decision)
+- [Performance Under Load](#performance-under-load)
+- [Language and Framework Coverage](#language-and-framework-coverage)
+- [Integration with Testing Frameworks](#integration-with-testing-frameworks)
+- [Onboarding and Learning Curve](#onboarding-and-learning-curve)
+- [Community and Support](#community-and-support)
+- [Long-Term Viability](#long-term-viability)
+- [Switching Costs](#switching-costs)
+- [Specialized Use Cases](#specialized-use-cases)
+- [Cost Tracking and ROI](#cost-tracking-and-roi)
+- [Trial Period Recommendations](#trial-period-recommendations)
+- [Final Comparison Matrix](#final-comparison-matrix)
+
 ## Pricing Overview
 
 **Codeium Pro** costs approximately $12 per month for individual developers, with annual billing reducing the effective monthly rate. The free tier provides basic autocomplete, making it easy to test before committing.

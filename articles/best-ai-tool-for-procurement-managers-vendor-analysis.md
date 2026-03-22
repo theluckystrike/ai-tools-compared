@@ -11,7 +11,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, best-of, artificial-intelligence]
+---
 ---
 layout: default
 title: "Best AI Tool for Procurement Managers Vendor Analysis"
@@ -25,7 +26,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, best-of, artificial-intelligence]
+---
 
 
 For supplier intelligence and risk monitoring, use Onesumer. For synthesizing vendor data across existing enterprise systems, choose Glean. For fast publicly-available vendor research, Perplexity Enterprise delivers. And if your organization runs on Microsoft 365, Copilot integrates directly into your existing workflow for contract prep and negotiation summaries. This guide breaks down each tool with practical use cases so you can match the right solution to your procurement operation.
@@ -38,6 +40,16 @@ For supplier intelligence and risk monitoring, use Onesumer. For synthesizing ve
 - **Assess your current technology**: infrastructure and choose a tool that integrates without excessive implementation effort.
 - **Run baseline analysis on**: top 20% of suppliers by spend.
 - **Recommended negotiation points\n" "Rate**: overall risk: Low / Medium / High with justification." )}] ) return message.content[0].text proposal = ( "Net 60 payment terms.
+
+## Table of Contents
+
+- [What Procurement Managers Need from AI Vendor Analysis](#what-procurement-managers-need-from-ai-vendor-analysis)
+- [Practical AI Tools for Vendor Analysis](#practical-ai-tools-for-vendor-analysis)
+- [Evaluating AI Tools for Your Procurement Needs](#evaluating-ai-tools-for-your-procurement-needs)
+- [Implementation Recommendations](#implementation-recommendations)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+- [Measuring Success: KPIs After 90 Days](#measuring-success-kpis-after-90-days)
+- [Vendor Risk Analysis with Claude API](#vendor-risk-analysis-with-claude-api)
 
 ## What Procurement Managers Need from AI Vendor Analysis
 

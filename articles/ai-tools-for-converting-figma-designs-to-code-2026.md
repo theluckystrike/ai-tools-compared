@@ -52,6 +52,16 @@ For a typical landing page (10-15 screens), manual conversion takes 8-16 hours. 
 
 ## Top Figma-to-Code Tools
 
+## Table of Contents
+
+- [Top Figma-to-Code Tools](#top-figma-to-code-tools)
+- [Accuracy Comparison Table](#accuracy-comparison-table)
+- [Real-World Benchmark: 10-Page Landing Site](#real-world-benchmark-10-page-landing-site)
+- [Framework Support Comparison](#framework-support-comparison)
+- [Best Practices for Design-to-Code Success](#best-practices-for-design-to-code-success)
+- [Recommendations by Use Case](#recommendations-by-use-case)
+- [Related Reading](#related-reading)
+
 ### 1. Locofy.ai
 
 **Price:** Free tier (5 projects) / $19/month (50 projects) / $79/month (unlimited)

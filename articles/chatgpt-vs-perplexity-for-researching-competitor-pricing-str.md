@@ -39,6 +39,19 @@ When researching competitor pricing strategies, developers and power users need 
 - **This is particularly useful**: when you need to present findings to stakeholders who demand sources.
 - **Deep Competitive Analysis**: Use ChatGPT.
 
+## Table of Contents
+
+- [The Core Difference in Research Approaches](#the-core-difference-in-research-approaches)
+- [Gathering Current Pricing Data](#gathering-current-pricing-data)
+- [Practical Implementation: Automated Pricing Alerts](#practical-implementation-automated-pricing-alerts)
+- [Workflow Recommendations by Use Case](#workflow-recommendations-by-use-case)
+- [Real-World Pricing Research Examples](#real-world-pricing-research-examples)
+- [Pricing Research Tool Comparison Table](#pricing-research-tool-comparison-table)
+- [Building a Pricing Intelligence Pipeline](#building-a-pricing-intelligence-pipeline)
+- [API Integration and Pricing](#api-integration-and-pricing)
+- [Limitations to Consider](#limitations-to-consider)
+- [Making the Choice](#making-the-choice)
+
 ## The Core Difference in Research Approaches
 
 ChatGPT operates as a conversational AI that generates responses based on its training data. When you ask about competitor pricing, it draws from patterns in its knowledge base, which may not reflect current market conditions. Perplexity, conversely, functions as an AI-powered search engine that retrieves live information from the web, providing citations and up-to-date data.

@@ -42,6 +42,13 @@ Currency decimal precision remains one of the most common sources of financial s
 - **Currency decimal precision remains**: one of the most common sources of financial software bugs.
 - **Floating-point arithmetic**: rounding inconsistencies, and currency-specific decimal requirements can cause incorrect calculations that are difficult to detect until they reach production.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [AI Tool Comparison for Currency Test Generation](#ai-tool-comparison-for-currency-test-generation)
+- [Best Practices for AI-Generated Currency Tests](#best-practices-for-ai-generated-currency-tests)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
@@ -346,11 +353,10 @@ Cryptocurrencies like Bitcoin use up to 8 decimal places (satoshis). Ethereum's 
 
 ## Related Articles
 
-- [How to Use AI to Generate Pagination Edge Case Tests for API](/ai-tools-compared/how-to-use-ai-to-generate-pagination-edge-case-tests-for-api/)
-- [How to Use AI to Generate Timezone Edge Case Test Data](/ai-tools-compared/how-to-use-ai-to-generate-timezone-edge-case-test-data/)
-- [How to Use AI to Generate Unicode and Emoji Edge Case Tests](/ai-tools-compared/how-to-use-ai-to-generate-unicode-and-emoji-edge-case-tests/)
-- [How to Use AI to Create Edge Case Test Scenarios from API Er](/ai-tools-compared/how-to-use-ai-to-create-edge-case-test-scenarios-from-api-er/)
-- [How to Use AI to Write pytest Parametrize Test Cases](/ai-tools-compared/how-to-use-ai-to-write-pytest-parametrize-test-cases-for-edge-conditions/)
-
+- [How to Use AI to Generate Timezone Edge Case Test](/ai-tools-compared/how-to-use-ai-to-generate-timezone-edge-case-test-data/)
+- [How to Use AI to Generate Unicode and Emoji Edge Case](/ai-tools-compared/how-to-use-ai-to-generate-unicode-and-emoji-edge-case-tests/)
+- [How to Use AI to Generate Pagination Edge Case Tests](/ai-tools-compared/how-to-use-ai-to-generate-pagination-edge-case-tests-for-api/)
+- [How to Use AI to Generate pytest Tests for Django REST](/ai-tools-compared/how-to-use-ai-to-generate-pytest-tests-for-django-rest-frame/)
+- [How to Use AI to Generate Jest Integration Tests](/ai-tools-compared/how-to-use-ai-to-generate-jest-integration-tests-for-express/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

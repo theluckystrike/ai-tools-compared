@@ -11,7 +11,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, best-of, artificial-intelligence]
+---
 ---
 layout: default
 title: "Best AI Tool for Veterinarians Clinical Records 2026"
@@ -25,7 +26,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, best-of, artificial-intelligence]
+---
 
 {% raw %}
 
@@ -39,6 +41,16 @@ tags: [ai-tools-compared, best-of, artificial-intelligence]---
 - **At $0.75 per minute of processed audio**: high-volume clinics often achieve lower costs than subscription alternatives.
 - **VetRocket saves approximately $1/patient**: in documentation time, requiring 2,388 annual visits (6-7 per day for 350-day practice) to break even.
 - **At 50 patient visits/day**: 5 minutes documentation per patient = 250 minutes of transcription = $187.50 daily = $46,875 annually.
+
+## Table of Contents
+
+- [What Veterinary Practices Need in Clinical Record Tools](#what-veterinary-practices-need-in-clinical-record-tools)
+- [Leading AI Solutions for Veterinary Clinical Records](#leading-ai-solutions-for-veterinary-clinical-records)
+- [Selection Criteria for Your Practice](#selection-criteria-for-your-practice)
+- [Implementation Best Practices](#implementation-best-practices)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+- [Generating SOAP Notes with Claude API](#generating-soap-notes-with-claude-api)
+- [Related Reading](#related-reading)
 
 ## What Veterinary Practices Need in Clinical Record Tools
 

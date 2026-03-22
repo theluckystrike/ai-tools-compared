@@ -26,6 +26,21 @@ Building a helpdesk ticketing system without writing code has become significant
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Understanding No-Code Helpdesk Requirements](#understanding-no-code-helpdesk-requirements)
+- [Comparing Leading AI Tools](#comparing-leading-ai-tools)
+- [Implementation Considerations](#implementation-considerations)
+- [Selecting Your Tool](#selecting-your-tool)
+- [Real CLI Commands for Deployment](#real-cli-commands-for-deployment)
+- [Practical Decision Framework](#practical-decision-framework)
+- [Cost Analysis: Build vs. No-Code vs. SaaS](#cost-analysis-build-vs-no-code-vs-saas)
+- [Advanced SLA Configuration Example](#advanced-sla-configuration-example)
+- [Troubleshooting Common Implementation Issues](#troubleshooting-common-implementation-issues)
+- [Testing Your Helpdesk System](#testing-your-helpdesk-system)
+- [Monitoring and Metrics](#monitoring-and-metrics)
+- [Migration Path: From Manual to Automated](#migration-path-from-manual-to-automated)
+
 ## Understanding No-Code Helpdesk Requirements
 
 Before comparing tools, establish your baseline requirements. A functional helpdesk ticketing system needs ticket creation, assignment workflows, status tracking, and escalation mechanisms. SLA tracking adds time-based rules that automatically escalate tickets approaching deadline thresholds.
@@ -413,11 +428,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Comparing AI Tools for Generating No-Code Membership and.](/ai-tools-compared/comparing-ai-tools-for-generating-no-code-membership-and-sub/)
-- [Comparing AI Tools for Generating Retool Resource.](/ai-tools-compared/comparing-ai-tools-for-generating-retool-resource-queries-fr/)
-- [AI Tools for Generating OpenAPI Specs from Code](/ai-tools-compared/ai-tools-openapi-spec-generation/)
-- [AI Tools for Generating pandas GroupBy Aggregation Code](/ai-tools-compared/ai-tools-for-generating-pandas-groupby-aggregation-code-from/)
-- [Best AI Features for Generating API Client Code from](/ai-tools-compared/best-ai-features-for-generating-api-client-code-from-openapi/)
-
+- [Comparing AI Tools for Generating No-Code Membership](/ai-tools-compared/comparing-ai-tools-for-generating-no-code-membership-and-sub/)
+- [AI Tools for Generating Grafana Dashboards from Metrics](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
+- [Comparing AI Tools for Generating Retool Resource](/ai-tools-compared/comparing-ai-tools-for-generating-retool-resource-queries-fr/)
+- [AI Tools for Generating Platform Specific Code in Kotlin](/ai-tools-compared/ai-tools-for-generating-platform-specific-code-in-kotlin-mul/)
+- [AI Tools for Generating Closed Captions and Transcripts](/ai-tools-compared/ai-tools-for-generating-closed-captions-and-transcripts-from/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

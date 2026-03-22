@@ -40,6 +40,18 @@ AI tools excel at recognizing race condition patterns in asyncio code by identif
 - **For complex asyncio codebases**: use a tool that can hold your entire event loop configuration, task spawning logic, and shared state definitions simultaneously.
 - **Claude-backed tools handle this**: particularly well because they can track data flow across long files and identify the specific `await` expressions where concurrent access becomes possible.
 
+## Table of Contents
+
+- [Understanding Race Conditions in Asyncio](#understanding-race-conditions-in-asyncio)
+- [How AI Tools Help Debug Race Conditions](#how-ai-tools-help-debug-race-conditions)
+- [Practical AI Debugging Workflow](#practical-ai-debugging-workflow)
+- [Common Pitfalls AI Helps You Avoid](#common-pitfalls-ai-helps-you-avoid)
+- [Advanced Techniques](#advanced-techniques)
+- [Choosing the Right AI Tool for Asyncio Debugging](#choosing-the-right-ai-tool-for-asyncio-debugging)
+- [Prompt Engineering for Concurrency Bugs](#prompt-engineering-for-concurrency-bugs)
+- [Debugging Real-World Asyncio Patterns](#debugging-real-world-asyncio-patterns)
+- [Using asyncio Debug Mode with AI Analysis](#using-asyncio-debug-mode-with-ai-analysis)
+
 ## Understanding Race Conditions in Asyncio
 
 Before exploring debugging strategies, let's establish what we're dealing with. A race condition occurs when the behavior of your program depends on the relative timing of concurrent operations. In asyncio, this typically happens when multiple coroutines access shared state without proper synchronization.
@@ -396,9 +408,8 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 - [Best AI Tools for Python asyncio Concurrent Task Management](/ai-tools-compared/best-ai-tools-for-python-asyncio-concurrent-task-management-/)
 - [Best AI for Creating Jest Tests That Cover Race Conditions](/ai-tools-compared/best-ai-for-creating-jest-tests-that-cover-race-conditions-i/)
-- [Best AI for Writing pytest Asyncio Tests for WebSocket Handl](/ai-tools-compared/best-ai-for-writing-pytest-asyncio-tests-for-websocket-handl/)
-- [Best Practices for Breaking Down Complex Coding Tasks](/ai-tools-compared/best-practices-for-breaking-down-complex-coding-tasks-for-ai/)
-- [How to Use AI to Write pytest Parametrize Test Cases](/ai-tools-compared/how-to-use-ai-to-write-pytest-parametrize-test-cases-for-edge-conditions/)
-
+- [Best AI Tools for Code Migration Python 2](/ai-tools-compared/best-ai-tools-for-code-migration-python-2-to-3-java-8-to-21-guide/)
+- [Free AI Tools for Learning Python with Code Examples 2026](/ai-tools-compared/free-ai-tools-for-learning-python-with-code-examples-2026/)
+- [Best AI Tools for Python Celery Task Queue Code Generation](/ai-tools-compared/best-ai-tools-for-python-celery-task-queue-code-generation-2/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

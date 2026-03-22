@@ -97,6 +97,20 @@ export class DatabaseStack extends cdk.Stack {
 
 ## ChatGPT 4o (Reliable Basics; Gaps on Advanced Patterns)
 
+## Table of Contents
+
+- [ChatGPT 4o (Reliable Basics; Gaps on Advanced Patterns)](#chatgpt-4o-reliable-basics-gaps-on-advanced-patterns)
+- [GitHub Copilot (Context-Dependent; IDE-Bound)](#github-copilot-context-dependent-ide-bound)
+- [Cursor (Claude Backbone; Strong but Limited Scope)](#cursor-claude-backbone-strong-but-limited-scope)
+- [Codeium (Fast Completions; Weak CDK Knowledge)](#codeium-fast-completions-weak-cdk-knowledge)
+- [TabbyML (Open Source; Minimal CDK Support)](#tabbyml-open-source-minimal-cdk-support)
+- [Comparison Table](#comparison-table)
+- [Practical Workflow: Multi-Stack VPC + RDS + Lambda Application](#practical-workflow-multi-stack-vpc-rds-lambda-application)
+- [Security Best Practices: Least-Privilege IAM](#security-best-practices-least-privilege-iam)
+- [When NOT to Use AI for CDK](#when-not-to-use-ai-for-cdk)
+- [Final Recommendations](#final-recommendations)
+- [Cost Analysis: 12-Month Content Strategy](#cost-analysis-12-month-content-strategy)
+
 **Pricing:** $20/month Pro, or API $0.003/$0.006 per 1K tokens.
 
 **Strengths:**
@@ -503,8 +517,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI Tools for Writing AWS CDK Infrastructure Code](/best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/)
-- [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)
-- [AI Tools for Writing pytest Tests with Moto Library for AWS](/ai-tools-for-writing-pytest-tests-with-moto-library-for-aws-/)
-
+- [Best AI Tools for Writing AWS CDK Infrastructure Code](/ai-tools-compared/best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/)
+- [Claude vs ChatGPT for Creating AWS CDK Infrastructure](/ai-tools-compared/claude-vs-chatgpt-for-creating-aws-cdk-infrastructure-stacks/)
+- [AI Tools for Writing Terraform Infrastructure-as-Code](/ai-tools-compared/ai-tools-for-writing-terraform-infrastructure-as-code-comparison-2026/)
+- [AI Tools for Writing pytest Tests with Moto Library for AWS](/ai-tools-compared/ai-tools-for-writing-pytest-tests-with-moto-library-for-aws-/)
+- [Best AI Assistant for Preparing for AWS Solutions Architect](/ai-tools-compared/best-ai-assistant-for-preparing-for-aws-solutions-architect/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

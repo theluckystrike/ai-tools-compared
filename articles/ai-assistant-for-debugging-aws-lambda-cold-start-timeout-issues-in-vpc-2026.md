@@ -10,7 +10,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, aws-lambda, cold-start, vpc, debugging, serverless, ai-assistant, troubleshooting]---
+tags: [ai-tools-compared, aws-lambda, cold-start, vpc, debugging, serverless, ai-assistant, troubleshooting]
+---
 ---
 layout: default
 title: "Best AI Assistant for Debugging AWS Lambda Cold Start"
@@ -23,7 +24,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, aws-lambda, cold-start, vpc, debugging, serverless, ai-assistant, troubleshooting]---
+tags: [ai-tools-compared, aws-lambda, cold-start, vpc, debugging, serverless, ai-assistant, troubleshooting]
+---
 
 
 Use AI assistants like Claude, Cursor, or GitHub Copilot to quickly diagnose why your AWS Lambda functions in VPC environments are timing out during cold starts. These tools can analyze your function configuration, suggest optimization strategies, and generate code improvements to reduce initialization time.
@@ -42,6 +44,19 @@ Please help me:
 1.
 - **Identify the likely causes**: of the cold start delay 2.
 - **DNS Resolution Time**: If your function does DNS lookups during initialization, that adds 100-500ms.
+
+## Table of Contents
+
+- [Understanding Lambda Cold Start in VPC](#understanding-lambda-cold-start-in-vpc)
+- [How AI Assistants Diagnose Cold Start Issues](#how-ai-assistants-diagnose-cold-start-issues)
+- [Prompting AI for VPC Lambda Optimization](#prompting-ai-for-vpc-lambda-optimization)
+- [Implementing VPC Endpoints for Faster Starts](#implementing-vpc-endpoints-for-faster-starts)
+- [Best Practices for AI-Assisted Lambda Debugging](#best-practices-for-ai-assisted-lambda-debugging)
+- [Comparing AI Tools for Lambda Debugging](#comparing-ai-tools-for-lambda-debugging)
+- [Advanced Optimization with RDS Proxy](#advanced-optimization-with-rds-proxy)
+- [Lambda Memory and Execution Speed Trade-offs](#lambda-memory-and-execution-speed-trade-offs)
+- [VPC Lambda Cold Start Troubleshooting Checklist](#vpc-lambda-cold-start-troubleshooting-checklist)
+- [Measuring and Monitoring Cold Start Performance](#measuring-and-monitoring-cold-start-performance)
 
 ## Understanding Lambda Cold Start in VPC
 

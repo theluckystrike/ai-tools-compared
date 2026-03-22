@@ -40,6 +40,19 @@ Build an AI research assistant Chrome extension that extracts page content, inte
 - **Larger models like GPT-4**: provide better answers but take longer.
 - **Build error handling that**: gracefully manages limits and provides useful feedback.
 
+## Table of Contents
+
+- [Why Chrome Extensions for AI Research](#why-chrome-extensions-for-ai-research)
+- [Core Features to Look For](#core-features-to-look-for)
+- [Building Your Own Extension](#building-your-own-extension)
+- [Adding Streaming Responses](#adding-streaming-responses)
+- [Handling Context Window Limits](#handling-context-window-limits)
+- [Popular Ready-Made Solutions](#popular-ready-made-solutions)
+- [Practical Use Cases](#practical-use-cases)
+- [Performance Considerations](#performance-considerations)
+- [Testing Your Extension Before Publishing](#testing-your-extension-before-publishing)
+- [Migrating from a Simple Popup to a Side Panel](#migrating-from-a-simple-popup-to-a-side-panel)
+
 ## Why Chrome Extensions for AI Research
 
 Browser extensions operate within the context of your current workflow. Unlike standalone applications that require context switching, an AI research assistant Chrome extension works where you already research—across documentation sites, academic papers, GitHub repositories, and technical blogs.

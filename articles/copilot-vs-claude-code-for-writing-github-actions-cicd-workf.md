@@ -40,6 +40,19 @@ This guide compares the strengths and weaknesses of each tool for this specific 
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **Start typing a workflow file**: and suggestions appear almost instantly.
 
+## Table of Contents
+
+- [Understanding the Workflow Development Challenge](#understanding-the-workflow-development-challenge)
+- [Quick Comparison](#quick-comparison)
+- [GitHub Copilot for Workflow Development](#github-copilot-for-workflow-development)
+- [Claude Code for Workflow Development](#claude-code-for-workflow-development)
+- [Direct Comparison](#direct-comparison)
+- [Practical Recommendations](#practical-recommendations)
+- [Hybrid Approach](#hybrid-approach)
+- [Handling Secrets and Environment Configuration](#handling-secrets-and-environment-configuration)
+- [Reusable Workflows and Composite Actions](#reusable-workflows-and-composite-actions)
+- [Debugging Failed Workflow Runs](#debugging-failed-workflow-runs)
+
 ## Understanding the Workflow Development Challenge
 
 GitHub Actions workflows have unique requirements that set them apart from general coding tasks. You need to understand YAML syntax, GitHub's marketplace actions, environment-specific configuration, secrets management, and the interplay between jobs, steps, and runners. An effective AI assistant should grasp these concepts and provide suggestions that actually work in production environments.

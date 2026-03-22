@@ -39,6 +39,23 @@ The OpenAI Assistants API charges based on input tokens, output tokens, thread s
 - **Switching to gpt-4o for**: all runs would increase costs to approximately $9,000 per month.
 - **Is the annual plan**: worth it over monthly billing? Annual plans typically save 15-30% compared to monthly billing.
 
+## Table of Contents
+
+- [Assistants API Pricing Model Overview](#assistants-api-pricing-model-overview)
+- [Thread Storage Costs](#thread-storage-costs)
+- [Run Execution Costs](#run-execution-costs)
+- [Message and Context Handling](#message-and-context-handling)
+- [Practical Cost Optimization Strategies](#practical-cost-optimization-strategies)
+- [Calculating Monthly Costs](#calculating-monthly-costs)
+- [Detailed Pricing Breakdown by Model](#detailed-pricing-breakdown-by-model)
+- [Thread Storage Cost Calculation](#thread-storage-cost-calculation)
+- [Advanced Cost Optimization Techniques](#advanced-cost-optimization-techniques)
+- [Batch Processing for Cost Savings](#batch-processing-for-cost-savings)
+- [Cost Forecasting Tool](#cost-forecasting-tool)
+- [Cost Monitoring and Alerts](#cost-monitoring-and-alerts)
+- [Comparison with Alternative APIs](#comparison-with-alternative-apis)
+- [ROI Analysis: When Assistants API Makes Sense](#roi-analysis-when-assistants-api-makes-sense)
+
 ## Assistants API Pricing Model Overview
 
 The Assistants API charges based on several distinct operations: assistant creation, thread storage, message handling, and run execution. Each operation has a specific cost per 1,000 tokens or per run, depending on the model you select.

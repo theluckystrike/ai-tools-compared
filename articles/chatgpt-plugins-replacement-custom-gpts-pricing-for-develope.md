@@ -39,6 +39,15 @@ OpenAI's transition from plugins to Custom GPTs represents a significant shift i
 - **Do Custom GPT interactions**: count against my API rate limits? Custom GPTs deployed through the ChatGPT interface use OpenAI's infrastructure and do not consume your API quota.
 - **Can I restrict who**: uses my Custom GPT? Yes.
 
+## Table of Contents
+
+- [From Plugins to Custom GPTs](#from-plugins-to-custom-gpts)
+- [Understanding Custom GPTs Pricing](#understanding-custom-gpts-pricing)
+- [Building a Custom GPT: Practical Example](#building-a-custom-gpt-practical-example)
+- [Estimating Your Monthly Costs](#estimating-your-monthly-costs)
+- [Cost Optimization Strategies](#cost-optimization-strategies)
+- [Migration Considerations](#migration-considerations)
+
 ## From Plugins to Custom GPTs
 
 The plugins system allowed external services to integrate with ChatGPT, enabling capabilities like web browsing, code execution, and third-party API connections. However, OpenAI deprecated this system in favor of Custom GPTs, which offer a more improved approach to extending ChatGPT functionality.

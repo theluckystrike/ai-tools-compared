@@ -11,7 +11,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, best-of, artificial-intelligence]
+---
 ---
 layout: default
 title: "Best AI Tools for Writing Rust Async Code with Tokio"
@@ -25,7 +26,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, best-of, artificial-intelligence]
+---
 
 {% raw %}
 
@@ -45,6 +47,16 @@ Cursor provides the smoothest IDE integration for Tokio development.
 Codeium offers a generous free tier with decent Rust async support.
 - **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
 - **For example**: it should know that holding a std::sync::MutexGuard across an `.await` point is a compile error (because MutexGuard is not Send), and proactively suggest tokio::sync::Mutex instead.
+
+## Table of Contents
+
+- [What Tokio Development Needs from AI Tools](#what-tokio-development-needs-from-ai-tools)
+- [Top AI Coding Tools for Rust Async with Tokio](#top-ai-coding-tools-for-rust-async-with-tokio)
+- [Common Tokio Pitfalls and How AI Tools Handle Them](#common-tokio-pitfalls-and-how-ai-tools-handle-them)
+- [Performance Comparison](#performance-comparison)
+- [Practical Recommendations](#practical-recommendations)
+- [Key Tokio Patterns AI Tools Should Generate](#key-tokio-patterns-ai-tools-should-generate)
+- [Testing Async Code: What AI Tools Help With](#testing-async-code-what-ai-tools-help-with)
 
 ## What Tokio Development Needs from AI Tools
 

@@ -43,6 +43,16 @@ role-based access control, rate limiting, and pagination.
 - **Version Your Specs** Use**: semantic versioning (2.5.0).
 - **Use ChatGPT-4 if**: You're designing a new API and want architectural guidance alongside specs.
 
+## Table of Contents
+
+- [Why AI-Generated OpenAPI Matters](#why-ai-generated-openapi-matters)
+- [Top AI Tools for OpenAPI Generation](#top-ai-tools-for-openapi-generation)
+- [Comparison Table: AI Tools for OpenAPI](#comparison-table-ai-tools-for-openapi)
+- [Real-World Spec Example: Multi-Tenant SaaS API](#real-world-spec-example-multi-tenant-saas-api)
+- [Best Practices for AI-Generated OpenAPI Specs](#best-practices-for-ai-generated-openapi-specs)
+- [Cost Comparison for Teams](#cost-comparison-for-teams)
+- [Choosing Your OpenAPI Tool](#choosing-your-openapi-tool)
+
 ## Why AI-Generated OpenAPI Matters
 
 API specifications serve as contracts between frontend, backend, and third-party integrators. Manual maintenance causes:

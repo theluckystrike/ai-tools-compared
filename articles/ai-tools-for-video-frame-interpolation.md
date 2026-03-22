@@ -11,7 +11,8 @@ score: 9
 reviewed: true
 intent-checked: true
 tags: [ai-tools-compared, artificial-intelligence]
-categories: [guides]---
+categories: [guides]
+---
 ---
 layout: default
 title: "AI Tools for Video Frame Interpolation"
@@ -25,7 +26,8 @@ score: 9
 reviewed: true
 intent-checked: true
 tags: [ai-tools-compared, artificial-intelligence]
-categories: [guides]---
+categories: [guides]
+---
 
 
 Video frame interpolation transforms footage by generating intermediate frames between existing ones, effectively increasing the frame rate or creating smooth slow-motion effects. AI-powered tools have dramatically improved the quality of interpolated frames, moving beyond traditional optical flow methods to neural network approaches that produce more natural results.
@@ -38,6 +40,18 @@ Video frame interpolation transforms footage by generating intermediate frames b
 - **Use lossless intermediate frames.**: Saving intermediate frames as PNG or using a lossless codec (like FFV1) prevents compression artifacts from accumulating across the interpolation pipeline.
 - **Extract a 10-second representative**: clip that includes fast motion, panning, and static shots, and use it for all your configuration testing before committing to a full run.
 - **If you already have**: 120fps footage you want to play at 24fps, use a re-timing approach in your video editor rather than interpolation.
+
+## Table of Contents
+
+- [Understanding Frame Interpolation Approaches](#understanding-frame-interpolation-approaches)
+- [Practical Tools and Implementation](#practical-tools-and-implementation)
+- [Open-Source Implementation Options](#open-source-implementation-options)
+- [Building a Processing Pipeline](#building-a-processing-pipeline)
+- [Performance Considerations](#performance-considerations)
+- [Tool Comparison Table](#tool-comparison-table)
+- [Step-by-Step Workflow: Doubling Frame Rate on Existing Footage](#step-by-step-workflow-doubling-frame-rate-on-existing-footage)
+- [Pro Tips for Better Results](#pro-tips-for-better-results)
+- [Selecting the Right Tool](#selecting-the-right-tool)
 
 ## Understanding Frame Interpolation Approaches
 

@@ -41,6 +41,14 @@ Error codes must use UPPERCASE_WITH_UNDERSCORES format.
 - **Provide examples for each**: language you use.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Why AI Deviates From Your Schema Without Instructions](#why-ai-deviates-from-your-schema-without-instructions)
+- [Tool-by-Tool Configuration Comparison](#tool-by-tool-configuration-comparison)
+- [Advanced: TypeScript Type-Driven Instructions](#advanced-typescript-type-driven-instructions)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
@@ -341,10 +349,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Writing Custom Instructions That Make AI Follow Your Team's](/ai-tools-compared/writing-custom-instructions-that-make-ai-follow-your-teams-changelog-entry-format/)
-- [How to Write Custom Instructions That Make AI Respect Your](/ai-tools-compared/how-to-write-custom-instructions-that-make-ai-respect-your-api-rate-limit-patterns/)
 - [How to Write Custom Instructions for AI That Follow Your](/ai-tools-compared/how-to-write-custom-instructions-for-ai-that-follow-your-teams-code-review-standards/)
 - [How to Write ChatGPT Custom Instructions](/ai-tools-compared/how-to-write-chatgpt-custom-instructions-for-consistent-api-design-suggestions/)
-- [ChatGPT Custom GPT Not Following Instructions](/ai-tools-compared/chatgpt-custom-gpt-not-following-instructions/)
-
+- [How to Write Custom Instructions That Make AI Respect Your](/ai-tools-compared/how-to-write-custom-instructions-that-make-ai-respect-your-api-rate-limit-patterns/)
+- [How to Set Up Custom Instructions for AI Tools to Match](/ai-tools-compared/how-to-set-up-custom-instructions-for-ai-tools-to-match-your/)
+- [How to Create Custom Instructions for AI Coding Tools That](/ai-tools-compared/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

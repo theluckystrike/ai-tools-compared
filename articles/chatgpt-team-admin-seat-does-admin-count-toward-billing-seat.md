@@ -42,6 +42,23 @@ Yes—admin seats in ChatGPT Team count toward your billing seat count exactly t
 - **Most teams stick with**: annual billing to save ~13%.
 - **Free tiers typically have**: usage limits that work for evaluation but may not be sufficient for daily professional use.
 
+## Table of Contents
+
+- [How ChatGPT Team Billing Works](#how-chatgpt-team-billing-works)
+- [Admin vs Member: What's the Difference?](#admin-vs-member-whats-the-difference)
+- [Cost Calculation Examples](#cost-calculation-examples)
+- [Setting Up Admin Seats via API](#setting-up-admin-seats-via-api)
+- [Common Misconceptions](#common-misconceptions)
+- [Best Practices](#best-practices)
+- [Real Cost Scenarios](#real-cost-scenarios)
+- [Billing Edge Cases and Common Questions](#billing-edge-cases-and-common-questions)
+- [Managing Billing Seat Additions and Removals](#managing-billing-seat-additions-and-removals)
+- [Role Transitions and Cost Implications](#role-transitions-and-cost-implications)
+- [Alternative Solutions Comparison](#alternative-solutions-comparison)
+- [Calculating Total Cost of Ownership](#calculating-total-cost-of-ownership)
+- [Most Cost-Effective Team Setup](#most-cost-effective-team-setup)
+- [Common Billing Questions from Teams](#common-billing-questions-from-teams)
+
 ## How ChatGPT Team Billing Works
 
 ChatGPT Team pricing is straightforward: you pay a monthly subscription per active seat in your workspace. As of 2026, the cost is approximately $25 per user per month when billed annually, or $30 when billed monthly. Each seat represents one user who can access the team's GPT-4 and Claude models, shared conversation history, and custom GPTs.
@@ -310,11 +327,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Do ChatGPT Plus Memory and Custom GPTs Count Toward](/ai-tools-compared/chatgpt-plus-memory-and-custom-gpts-count-toward-usage-limit/)
 - [ChatGPT Team vs Claude Team Cost Per Seat Comparison 2026](/ai-tools-compared/chatgpt-team-vs-claude-team-cost-per-seat-comparison-2026/)
 - [ChatGPT Canvas Feature Is It Included in Plus or Team Only](/ai-tools-compared/chatgpt-canvas-feature-is-it-included-in-plus-or-team-only/)
 - [Grammarly Business vs ChatGPT Team for Enterprises](/ai-tools-compared/grammarly-business-vs-chatgpt-team-for-enterprises/)
-- [How to Move ChatGPT Team Workspace Data to Claude Team](/ai-tools-compared/how-to-move-chatgpt-team-workspace-data-to-claude-team/)
-
+- [How to Move ChatGPT Team Workspace Data to Claude](/ai-tools-compared/how-to-move-chatgpt-team-workspace-data-to-claude-team/)
+- [Do ChatGPT Plus Memory and Custom GPTs Count Toward](/ai-tools-compared/chatgpt-plus-memory-and-custom-gpts-count-toward-usage-limit/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

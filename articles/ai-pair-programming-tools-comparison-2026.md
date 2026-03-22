@@ -54,6 +54,23 @@ Claude Code is the native IDE integration for Claude Opus and Sonnet. It ships w
 
 ## GitHub Copilot Chat
 
+## Table of Contents
+
+- [GitHub Copilot Chat](#github-copilot-chat)
+- [Cursor Composer](#cursor-composer)
+- [Aider](#aider)
+- [Continue.dev](#continuedev)
+- [Comparison Table](#comparison-table)
+- [Decision Framework](#decision-framework)
+- [Practical Performance Metrics (Real Workflows)](#practical-performance-metrics-real-workflows)
+- [Cost Breakdown (Monthly Scenario)](#cost-breakdown-monthly-scenario)
+- [Integration Patterns](#integration-patterns)
+- [Migration Notes](#migration-notes)
+- [Real-World Workflow Examples](#real-world-workflow-examples)
+- [IDE-Specific Considerations](#ide-specific-considerations)
+- [Advanced Prompting Patterns](#advanced-prompting-patterns)
+- [Bottom Line](#bottom-line)
+
 Copilot Chat integrates inline into VS Code and JetBrains IDEs with GitHub Copilot subscription. It's optimized for quick inline suggestions and chat-based code generation.
 
 **Key Strengths:**

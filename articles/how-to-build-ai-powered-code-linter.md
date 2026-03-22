@@ -38,6 +38,13 @@ Static linters catch syntax errors and style violations. AI linters catch logic 
 - **Update the rules file**: as your codebase conventions evolve and commit it alongside your code so everyone uses the same standards.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Combining AI and Traditional Linters](#combining-ai-and-traditional-linters)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
@@ -333,6 +340,14 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 - [AI Code Review Automation Tools Comparison](/ai-tools-compared/ai-code-review-automation-tools-comparison/)
 - [Prompt Engineering Patterns for Code Generation](/ai-tools-compared/prompt-engineering-patterns-for-code-generation/)
 - [AI Debugging Assistants Compared 2026](/ai-tools-compared/ai-debugging-assistants-compared-2026/)
+
+## Related Articles
+
+- [Best AI Tool for Software Engineers Code Review 2026](/ai-tools-compared/best-ai-tool-for-software-engineers-code-review-2026/)
+- [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
+- [Claude Code for Node.js Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-nodejs-profiling-workflow-tutorial/)
+- [Claude Code API Client TypeScript Guide: Build Type-Safe](/ai-tools-compared/claude-code-api-client-typescript-guide/)
+- [How to Build an AI Code Review](/ai-tools-compared/how-to-build-ai-code-review-bot/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

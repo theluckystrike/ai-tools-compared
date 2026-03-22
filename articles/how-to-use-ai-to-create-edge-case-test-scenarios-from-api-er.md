@@ -41,6 +41,14 @@ Gather all error-related documentation from your API provider.
 3.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Why API Error Documentation Matters for Testing](#why-api-error-documentation-matters-for-testing)
+- [Converting Error Documentation to Test Scenarios](#converting-error-documentation-to-test-scenarios)
+- [Practical Examples](#practical-examples)
+- [Automating the Workflow](#automating-the-workflow)
+- [Best Practices](#best-practices)
+
 ## Why API Error Documentation Matters for Testing
 
 API error documentation typically lists potential error codes, their meanings, and sometimes the conditions that trigger them. However, reading through pages of error codes and manually creating test cases is tedious and error-prone. Many teams end up testing only the happy path or a handful of common errors.
@@ -294,10 +302,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Use AI to Generate Timezone Edge Case Test Data](/ai-tools-compared/how-to-use-ai-to-generate-timezone-edge-case-test-data/)
-- [How to Use AI to Generate Pagination Edge Case Tests for API](/ai-tools-compared/how-to-use-ai-to-generate-pagination-edge-case-tests-for-api/)
-- [How to Use AI to Generate Unicode and Emoji Edge Case Tests](/ai-tools-compared/how-to-use-ai-to-generate-unicode-and-emoji-edge-case-tests/)
-- [AI Tools for Creating Boundary Value Test Case](/ai-tools-compared/ai-tools-for-creating--boundary-value-test-case/)
-- [How to Use AI to Write pytest Parametrize Test Cases](/ai-tools-compared/how-to-use-ai-to-write-pytest-parametrize-test-cases-for-edge-conditions/)
-
+- [AI Tools for API Documentation from Code 2026](/ai-tools-compared/ai-tools-for-api-documentation-from-code-2026/)
+- [How to Use AI to Write pytest Parametrize Test Cases: Edge](/ai-tools-compared/how-to-use-ai-to-write-pytest-parametrize-test-cases-for-edge-conditions/)
+- [Best AI Assistant for Creating API Error Code Reference Documentation 2026](/ai-tools-compared/best-ai-assistant-for-creating-api-error-code-reference-docu/)
+- [How to Use AI to Generate Timezone Edge Case Test](/ai-tools-compared/how-to-use-ai-to-generate-timezone-edge-case-test-data/)
+- [Best AI for Generating API Reference Documentation](/ai-tools-compared/best-ai-for-generating-api-reference-documentation-from-jsdo/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

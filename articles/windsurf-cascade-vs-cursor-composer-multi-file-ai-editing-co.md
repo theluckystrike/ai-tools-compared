@@ -41,6 +41,20 @@ Multi-file editing represents one of the most demanding tasks for AI coding assi
 - **Multi-file editing represents one**: of the most demanding tasks for AI coding assistants.
 - **When you ask Composer**: to "update the user authentication flow across these three files," it analyzes each file's context and generates specific edits for each location.
 
+## Table of Contents
+
+- [Understanding the Architecture](#understanding-the-architecture)
+- [Multi-File Editing in Practice](#multi-file-editing-in-practice)
+- [Performance Characteristics](#performance-characteristics)
+- [Error Handling and Recovery](#error-handling-and-recovery)
+- [Real-World Workflow Comparison](#real-world-workflow-comparison)
+- [Advanced Use Cases](#advanced-use-cases)
+- [Token Usage and Cost Implications](#token-usage-and-cost-implications)
+- [Integration with Version Control](#integration-with-version-control)
+- [Real Performance Data](#real-performance-data)
+- [Team Workflow Considerations](#team-workflow-considerations)
+- [When to Choose Each Tool](#when-to-choose-each-tool)
+
 ## Understanding the Architecture
 
 ### Cursor Composer

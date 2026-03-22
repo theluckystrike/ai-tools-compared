@@ -40,6 +40,21 @@ Use AI tools to automatically discover certificates across your infrastructure, 
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [The Certificate Management Problem](#the-certificate-management-problem)
+- [AI-Powered Certificate Discovery and Inventory](#ai-powered-certificate-discovery-and-inventory)
+- [Automated Renewal Workflows](#automated-renewal-workflows)
+- [Intelligent Monitoring and Alerting](#intelligent-monitoring-and-alerting)
+- [Integration with Existing Infrastructure](#integration-with-existing-infrastructure)
+- [Choosing the Right Approach](#choosing-the-right-approach)
+- [Implementing AI-Powered Renewal Automation](#implementing-ai-powered-renewal-automation)
+- [Advanced Monitoring Dashboards](#advanced-monitoring-dashboards)
+- [Common Certificate Management Challenges](#common-certificate-management-challenges)
+- [Integration Patterns with CI/CD](#integration-patterns-with-cicd)
+- [Cost Optimization in Certificate Management](#cost-optimization-in-certificate-management)
+- [Looking Ahead](#looking-ahead)
+
 ## The Certificate Management Problem
 
 SSL certificates power secure communications across the internet, yet managing them at scale remains challenging. Organizations often juggle hundreds or thousands of certificates across development, staging, and production environments. A single expired certificate can take down critical services, damage user trust, and trigger compliance violations.

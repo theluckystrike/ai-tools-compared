@@ -45,6 +45,21 @@ Accessible stepper and wizard components guide users through multi-step processe
 - **Users should be able**: to navigate forward and backward using Tab, Arrow keys, and Enter/Space for activation.
 - **The best results come**: from explicit specification of accessibility requirements in your prompts.
 
+## Table of Contents
+
+- [Understanding Stepper and Wizard Accessibility Requirements](#understanding-stepper-and-wizard-accessibility-requirements)
+- [Code Example: Accessible Stepper Structure](#code-example-accessible-stepper-structure)
+- [How AI Tools Generate Accessible Steppers](#how-ai-tools-generate-accessible-steppers)
+- [Evaluating AI Output for Accessibility](#evaluating-ai-output-for-accessibility)
+- [State Management in Multi-Step Forms](#state-management-in-multi-step-forms)
+- [Framework-Specific Considerations](#framework-specific-considerations)
+- [Testing Accessible Steppers with Assistive Technologies](#testing-accessible-steppers-with-assistive-technologies)
+- [Advanced Wizard Patterns](#advanced-wizard-patterns)
+- [Progressive Disclosure in Wizards](#progressive-disclosure-in-wizards)
+- [Multi-Form State Management](#multi-form-state-management)
+- [Best Practices for AI-Assisted Development](#best-practices-for-ai-assisted-development)
+- [Common Pitfalls to Avoid](#common-pitfalls-to-avoid)
+
 ## Understanding Stepper and Wizard Accessibility Requirements
 
 Stepper components, also called wizards, break complex workflows into digestible stages. For these components to work with screen readers and keyboard navigation, developers must implement several accessibility features:

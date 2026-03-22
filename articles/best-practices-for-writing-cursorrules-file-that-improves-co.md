@@ -49,6 +49,35 @@ Write effective.cursorrules files by using markdown-based natural language instr
 - **When Cursor AI reads**: your `.cursorrules` file, it uses the information to contextualize every suggestion it generates.
 - **Start with a brief**: project overview that describes your application type, tech stack, and primary use cases.
 
+## Table of Contents
+
+- [Understanding the Cursorrules File](#understanding-the-cursorrules-file)
+- [Structuring Your Cursorrules File](#structuring-your-cursorrules-file)
+- [Defining Naming Conventions](#defining-naming-conventions)
+- [Naming Conventions](#naming-conventions)
+- [Python Naming Conventions](#python-naming-conventions)
+- [Documenting Architectural Patterns](#documenting-architectural-patterns)
+- [Project Structure](#project-structure)
+- [Design Patterns](#design-patterns)
+- [Specifying Code Style Preferences](#specifying-code-style-preferences)
+- [Code Style](#code-style)
+- [React Specific](#react-specific)
+- [Including Testing Requirements](#including-testing-requirements)
+- [Testing Conventions](#testing-conventions)
+- [Testing Stack](#testing-stack)
+- [Defining Error Handling Approaches](#defining-error-handling-approaches)
+- [Error Handling](#error-handling)
+- [Setting Documentation Standards](#setting-documentation-standards)
+- [Documentation](#documentation)
+- [Example Cursorrules for a React TypeScript Project](#example-cursorrules-for-a-react-typescript-project)
+- [Tech Stack](#tech-stack)
+- [Code Standards](#code-standards)
+- [Component Patterns](#component-patterns)
+- [API Integration](#api-integration)
+- [Testing Requirements](#testing-requirements)
+- [Maintaining Your Cursorrules File](#maintaining-your-cursorrules-file)
+- [Measuring Improvement](#measuring-improvement)
+
 ## Understanding the Cursorrules File
 
 The `.cursorrules` file is a markdown-based configuration file that lives in your project root directory. Unlike simple configuration files that use strict syntax, it uses natural language to communicate your coding preferences, architectural decisions, and project conventions to the AI. This flexibility makes it incredibly powerful but also means that how you write it significantly impacts the quality of suggestions you receive.
@@ -259,11 +288,10 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Best Practices for Versioning CursorRules Files Across Team](/ai-tools-compared/best-practices-for-versioning-cursorrules-files-across-team-/)
-- [Best Practices for Claude Md File Organization in Polyglot C](/ai-tools-compared/best-practices-for-claude-md-file-organization-in-polyglot-c/)
-- [Writing CursorRules for Golang Projects with Specific Concur](/ai-tools-compared/writing-cursorrules-for-golang-projects-with-specific-concur/)
-- [Writing Effective .cursorrules for Next.js App Router](/ai-tools-compared/writing-effective-cursorrules-for-nextjs-app-router-project-with-specific-file-conventions/)
-- [Writing Effective CursorRules for React TypeScript Projects](/ai-tools-compared/writing-effective-cursorrules-for-react-typescript-projects-/)
-
+- [Best Practices for Writing GitHub Copilot Custom Instruction](/ai-tools-compared/best-practices-for-writing-github-copilot-custom-instruction/)
+- [Best Practices for AI Coding Tool Project Configuration](/ai-tools-compared/best-practices-for-ai-coding-tool-project-configuration-in-l/)
+- [Best Practices for Breaking Down Complex Coding Tasks](/ai-tools-compared/best-practices-for-breaking-down-complex-coding-tasks-for-ai/)
+- [Best Practices for Maintaining AI Tool Configuration Files](/ai-tools-compared/best-practices-for-maintaining-ai-tool-configuration-files-a/)
+- [Best Practices for AI Tool Customization Files When Onboardi](/ai-tools-compared/best-practices-for-ai-tool-customization-files-when-onboardi/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

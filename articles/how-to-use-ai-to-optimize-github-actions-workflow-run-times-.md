@@ -39,6 +39,13 @@ GitHub Actions has become the backbone of modern CI/CD pipelines, but slow workf
 - **Will this work with**: my existing CI/CD pipeline? The core concepts apply across most CI/CD platforms, though specific syntax and configuration differ.
 - **This guide shows you**: how to use AI to improve your GitHub Actions performance.
 
+## Table of Contents
+
+- [Why Workflow Optimization Matters](#why-workflow-optimization-matters)
+- [Prerequisites](#prerequisites)
+- [Advanced Caching Strategies](#advanced-caching-strategies)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Workflow Optimization Matters
 
 Every minute your CI/CD pipeline runs costs money in compute time and delays feedback to developers. A workflow that takes 30 minutes instead of 10 minutes means your team waits longer for test results, code reviews stall, and release cycles stretch out. In fast-paced development environments, these delays compound quickly.
@@ -385,11 +392,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Best AI Tools for Writing GitHub Actions Reusable Workflow](/ai-tools-compared/best-ai-tools-for-writing-github-actions-reusable-workflow-t/)
-- [AI Tools for Generating GitHub Actions Workflows](/ai-tools-compared/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
 - [AI Tools for Generating GitHub Actions Workflows (2)](/ai-tools-compared/ai-tools-github-actions-workflows/)
+- [AI Tools for Generating GitHub Actions Workflows](/ai-tools-compared/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
+- [Best AI Tools for Writing GitHub Actions Reusable Workflow](/ai-tools-compared/best-ai-tools-for-writing-github-actions-reusable-workflow-t/)
 - [AI Tools for Writing GitHub Actions Workflows (2026)](/ai-tools-compared/ai-tools/best-ai-tools-for-github-actions-workflows/)
-- [Best AI Tools for Writing GitHub Actions Matrix Build Strate](/ai-tools-compared/best-ai-tools-for-writing-github-actions-matrix-build-strate/)
-
+- [Best AI Tools for Generating GitHub Actions Composite](/ai-tools-compared/ai-tools-for-generating-github-actions-composite-actions-2026/---)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

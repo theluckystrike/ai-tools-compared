@@ -40,6 +40,21 @@ Claude generates proper SQLAlchemy ORM models with correct relationships, lazy l
 - **The tool works best**: when you provide context about your existing models.
 - **A week-long trial with**: actual work gives better signal than feature comparison charts.
 
+## Table of Contents
+
+- [Why SQLAlchemy Benefits from AI Assistance](#why-sqlalchemy-benefits-from-ai-assistance)
+- [Claude Code](#claude-code)
+- [GitHub Copilot](#github-copilot)
+- [Cursor](#cursor)
+- [Aider](#aider)
+- [Selecting Your Tool](#selecting-your-tool)
+- [Advanced SQLAlchemy Patterns](#advanced-sqlalchemy-patterns)
+- [CLI Commands for SQLAlchemy Development](#cli-commands-for-sqlalchemy-development)
+- [Performance Optimization Techniques](#performance-optimization-techniques)
+- [Testing SQLAlchemy Models](#testing-sqlalchemy-models)
+- [Tool Comparison Matrix](#tool-comparison-matrix)
+- [Common SQLAlchemy Mistakes](#common-sqlalchemy-mistakes)
+
 ## Why SQLAlchemy Benefits from AI Assistance
 
 SQLAlchemy's power comes with complexity. The library offers multiple coding styles—Core for query building, ORM for model management, and hybrid approaches combining both. Choosing between declarative and imperative mapping, understanding relationship loading strategies, and writing efficient queries all require knowledge that AI assistants can help you build faster.

@@ -82,6 +82,15 @@ def test_calculate_fibonacci():
 
 ### 2. Cursor ($10-20/Month)
 
+## Table of Contents
+
+- [Full Feature Comparison Table](#full-feature-comparison-table)
+- [Which Tool Fits Which Developer Profile](#which-tool-fits-which-developer-profile)
+- [Pro Tips for Getting More from Sub-$20 Tools](#pro-tips-for-getting-more-from-sub-20-tools)
+- [Common Pitfalls When Starting with AI Coding Tools](#common-pitfalls-when-starting-with-ai-coding-tools)
+- [Recommendation](#recommendation)
+- [Related Reading](#related-reading)
+
 Cursor, built on OpenAI's models, offers a modern AI-first IDE experience. The pricing tiers ($10/month for Pro, $20/month for Business) include advanced features like context-aware code generation and refactoring.
 
 **Strengths:**
@@ -316,5 +325,13 @@ AI tools evolve rapidly, with major updates every few months. Feature comparison
 **Should I switch tools if something better comes out?**
 
 Switching costs are real: learning curves, workflow disruption, and data migration all take time. Only switch if the new tool solves a specific pain point you experience regularly. Marginal improvements rarely justify the transition overhead.
+
+## Related Articles
+
+- [AI Coding Tools Under $10 Per Month Ranked](/ai-tools-compared/ai-coding-tools-under-10-dollars-per-month-ranked/)
+- [Best AI Coding Assistant for Under $5 Per](/ai-tools-compared/best-ai-coding-assistant-for-under-5-dollars-per-month/)
+- [Best Budget AI Coding Assistant for Freelance Developers](/ai-tools-compared/best-budget-ai-coding-assistant-for-freelance-developers-202/)
+- [Copilot for JetBrains: Does It Cost Same as VS Code Version](/ai-tools-compared/copilot-for-jetbrains-does-it-cost-same-as-vscode-version/)
+- [Best AI Coding Tool with Pay As You Go No Subscription](/ai-tools-compared/best-ai-coding-tool-with-pay-as-you-go-no-subscription/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

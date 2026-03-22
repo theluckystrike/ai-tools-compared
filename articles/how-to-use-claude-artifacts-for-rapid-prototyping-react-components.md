@@ -39,6 +39,16 @@ Claude's artifact feature transforms React prototyping by rendering component pr
 - **Claude 3.5 Sonnet (Claude's**: fastest frontier model with high capability) excels at structured components with clear patterns.
 - **Artifacts don't support real API integration**: always ask Claude to use fetch or axios with mock data, then integrate real APIs in your project.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Advanced: Connecting Multiple Components](#advanced-connecting-multiple-components)
+- [Production Deployment Checklist](#production-deployment-checklist)
+- [Advanced: Component Libraries from Artifacts](#advanced-component-libraries-from-artifacts)
+- [Performance Optimization Tips for Artifacts](#performance-optimization-tips-for-artifacts)
+- [Getting Started: Your First 5 Artifacts](#getting-started-your-first-5-artifacts)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
@@ -352,10 +362,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Best AI for Converting Figma Designs to React Components](/ai-tools-compared/best-ai-for-converting-figma-designs-to-react-components-2026/)
+- [Claude Artifacts vs ChatGPT Canvas Comparison](/ai-tools-compared/claude-artifacts-vs-chatgpt-canvas-comparison/)
 - [Claude Artifacts Not Rendering Fix 2026](/ai-tools-compared/claude-artifacts-not-rendering-fix-2026/)
 - [Claude Artifacts vs ChatGPT Canvas Collaborative Coding](/ai-tools-compared/claude-artifacts-vs-chatgpt-canvas-collaborative-coding/)
-- [Claude vs ChatGPT for Building Custom ESLint Rules for React](/ai-tools-compared/claude-vs-chatgpt-for-building-custom-eslint-rules-for-react/)
-- [AI Coding Assistant Comparison for React Component](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
-
+- [Claude Max vs Claude Pro Actual Difference](/ai-tools-compared/claude-max-vs-claude-pro-actual-difference-in-daily-message-limits/)
+- [Cheapest Way to Use Claude for Coding Projects 2026](/ai-tools-compared/cheapest-way-to-use-claude-for-coding-projects-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

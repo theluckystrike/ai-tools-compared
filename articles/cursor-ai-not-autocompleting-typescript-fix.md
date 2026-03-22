@@ -40,6 +40,18 @@ To fix Cursor AI not autocompleting TypeScript, open the Command Palette (`Cmd+S
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Why Cursor AI Stops Autocompleting TypeScript](#why-cursor-ai-stops-autocompleting-typescript)
+- [Step-by-Step Fixes for TypeScript Autocompletion](#step-by-step-fixes-for-typescript-autocompletion)
+- [Diagnostic Tips](#diagnostic-tips)
+- [Performance Benchmarks: Cursor vs Alternatives for TypeScript](#performance-benchmarks-cursor-vs-alternatives-for-typescript)
+- [Detailed Troubleshooting: Which Fix Applies to Your Situation](#detailed-troubleshooting-which-fix-applies-to-your-situation)
+- [Preventing Future Autocompletion Issues](#preventing-future-autocompletion-issues)
+- [Comparing TypeScript Completion Across Tools](#comparing-typescript-completion-across-tools)
+- [TypeScript-Specific Configuration for Cursor](#typescript-specific-configuration-for-cursor)
+- [When to Switch Tools](#when-to-switch-tools)
+
 ## Why Cursor AI Stops Autocompleting TypeScript
 
 Several factors can cause Cursor's AI autocompletion to fail in TypeScript projects. Understanding these causes helps you identify the right solution quickly.
@@ -227,12 +239,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Cursor AI Making Too Many API Calls Fix: Troubleshooting](/ai-tools-compared/cursor-ai-making-too-many-api-calls-fix/)
-- [Cursor AI Slow on Large monorepo Fix (2026)](/ai-tools-compared/cursor-ai-slow-on-large-monorepo-fix-2026/)
-- [Cursor Background Agent Timing Out Fix (2026)](/ai-tools-compared/cursor-background-agent-timing-out-fix-2026/)
-- [Cursor Composer Stuck in Loop: How to Fix](/ai-tools-compared/cursor-composer-stuck-in-loop-how-to-fix/)
-- [Cursor Extensions Conflicting with AI Fix](/ai-tools-compared/cursor-extensions-conflicting-with-ai-fix/)
-
+- [Cursor Keeps Crashing Fix 2026: Complete Troubleshooting](/ai-tools-compared/cursor-keeps-crashing-fix-2026/)
+- [Cursor Extensions Conflicting with AI](/ai-tools-compared/cursor-extensions-conflicting-with-ai-fix/)
+- [Cursor Composer Stuck in Loop: How](/ai-tools-compared/cursor-composer-stuck-in-loop-how-to-fix/)
+- [Cursor Free Tier Limitations: What Stops Working After Trial](/ai-tools-compared/cursor-free-tier-limitations-what-stops-working-after-trial/)
+- [Cursor Tab Accepting Wrong Suggestion](/ai-tools-compared/cursor-tab-accepting-wrong-suggestion-fix/)
 ## Performance Benchmarks: Cursor vs Alternatives for TypeScript
 
 | Tool | TypeScript Support | Completion Speed | Context Window | Troubleshooting |

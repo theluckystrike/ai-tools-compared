@@ -11,7 +11,8 @@ score: 9
 voice-checked: true
 intent-checked: true
 categories: [comparisons]
-tags: [ai-tools-compared, comparison, artificial-intelligence]---
+tags: [ai-tools-compared, comparison, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI Tools for Generating UI Mockups Compared in 2026"
@@ -25,7 +26,8 @@ score: 8
 voice-checked: true
 intent-checked: true
 categories: [comparisons]
-tags: [ai-tools-compared, comparison, artificial-intelligence]---
+tags: [ai-tools-compared, comparison, artificial-intelligence]
+---
 
 {% raw %}
 
@@ -39,6 +41,23 @@ Choose **v0** if you need clean React components with Tailwind CSS and API acces
 - **Use AI to generate**: layout variations 3.
 - **Use Bolt.new for rapid**: prototyping during ideation 2.
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
+
+## Table of Contents
+
+- [Understanding AI UI Generation Capabilities](#understanding-ai-ui-generation-capabilities)
+- [Quick Comparison](#quick-comparison)
+- [Comparing Leading Tools](#comparing-leading-tools)
+- [Integration Considerations](#integration-considerations)
+- [Practical Workflow Example](#practical-workflow-example)
+- [Cost and Accessibility](#cost-and-accessibility)
+- [Making Your Decision](#making-your-decision)
+- [Detailed Tool Comparison Table](#detailed-tool-comparison-table)
+- [Real-World Implementation Examples](#real-world-implementation-examples)
+- [Decision Flowchart](#decision-flowchart)
+- [Cost Analysis Over 12 Months](#cost-analysis-over-12-months)
+- [Evaluating Output Quality](#evaluating-output-quality)
+- [Common Pitfalls and How to Avoid Them](#common-pitfalls-and-how-to-avoid-them)
+- [When to Combine Tools](#when-to-combine-tools)
 
 ## Understanding AI UI Generation Capabilities
 

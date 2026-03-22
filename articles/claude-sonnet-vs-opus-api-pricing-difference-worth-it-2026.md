@@ -40,6 +40,17 @@ Choose Sonnet if you need cost-effective, high-volume processing at $3/$15 per m
 - **This hybrid approach captures**: 80% of Sonnet's cost savings while reserving premium capabilities for where they genuinely improve outcomes.
 - **If correction cost exceeds**: 15% of the Opus premium, upgrade the routing threshold.
 
+## Table of Contents
+
+- [Current API Pricing (2026)](#current-api-pricing-2026)
+- [When Opus Justifies the Premium](#when-opus-justifies-the-premium)
+- [When Sonnet Delivers Better Value](#when-sonnet-delivers-better-value)
+- [Cost Calculation Example](#cost-calculation-example)
+- [Extended Cost Scenarios](#extended-cost-scenarios)
+- [Quality Differences in Practice](#quality-differences-in-practice)
+- [Hybrid Strategy: The Smart Approach](#hybrid-strategy-the-smart-approach)
+- [Decision Framework](#decision-framework)
+
 ## Current API Pricing (2026)
 
 Anthropic's API pricing has stabilized with clear tiers:
@@ -331,11 +342,10 @@ Run an A/B test across 500 representative requests. Score outputs on your domain
 
 ## Related Articles
 
-- [Claude API Tool Use Function Calling Pricing How Tokens Are](/ai-tools-compared/claude-api-tool-use-function-calling-pricing-how-tokens-are-/)
+- [Claude Sonnet vs Opus for Different Coding Tasks](/ai-tools-compared/claude-sonnet-vs-opus-for-coding-tasks/)
+- [How to Use Claude API Cheaply for Small Coding Projects](/ai-tools-compared/how-to-use-claude-api-cheaply-for-small-coding-projects/)
 - [Claude API vs OpenAI API Pricing Breakdown 2026](/ai-tools-compared/claude-api-vs-openai-api-pricing-breakdown-2026/)
-- [Claude Max vs Claude Pro Actual Difference](/ai-tools-compared/claude-max-vs-claude-pro-actual-difference-in-daily-message-limits/)
-- [Claude Sonnet vs GPT-4o for Code Generation: Practical](/ai-tools-compared/claude-sonnet-vs-gpt-4o-for-code-generation/)
-- [Claude Sonnet vs GPT-4o for Code Review Accuracy Comparison](/ai-tools-compared/claude-sonnet-vs-gpt-4o-for-code-review-accuracy-comparison-2026/)
-
+- [Claude API Pay Per Token vs Pro Subscription Which Cheaper](/ai-tools-compared/claude-api-pay-per-token-vs-pro-subscription-which-cheaper/)
+- [ChatGPT API Assistants API Pricing Threads and Runs Cost](/ai-tools-compared/chatgpt-api-assistants-api-pricing-threads-and-runs-cost-breakdown/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

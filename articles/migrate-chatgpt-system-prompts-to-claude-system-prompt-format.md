@@ -56,6 +56,18 @@ Migrating your ChatGPT system prompts to Claude's format can significantly impro
 - **Asking the same queries**: you used with ChatGPT 2.
 - **Comparing response quality across**: multiple dimensions: - Clarity of explanation - Usefulness of examples - Appropriate boundaries - Overall helpfulness 3.
 
+## Table of Contents
+
+- [Key Differences Between ChatGPT and Claude System Prompts](#key-differences-between-chatgpt-and-claude-system-prompts)
+- [Step-by-Step Migration Guide](#step-by-step-migration-guide)
+- [Example Migration](#example-migration)
+- [Testing Your Migrated Prompt](#testing-your-migrated-prompt)
+- [Common Migration Issues and Solutions](#common-migration-issues-and-solutions)
+- [Handling Token Budget and Prompt Length Differences](#handling-token-budget-and-prompt-length-differences)
+- [Multi-Turn Context and Memory Handling](#multi-turn-context-and-memory-handling)
+- [Prompt Versioning: Managing Migrations Across Environments](#prompt-versioning-managing-migrations-across-environments)
+- [When Not to Migrate](#when-not-to-migrate)
+
 ## Key Differences Between ChatGPT and Claude System Prompts
 
 ### ChatGPT System Prompt Characteristics
@@ -367,10 +379,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [How to Migrate ChatGPT System Prompts](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-forma/)
-- [How to Create Custom System Prompt for ChatGPT API That Enfo](/ai-tools-compared/how-to-create-custom-system-prompt-for-chatgpt-api-that-enfo/)
-- [How to Migrate Cursor Rules File](/ai-tools-compared/migrate-cursor-rules-file-to-windsurf-rules-format-guide/)
-- [Migrate Windsurf AI Rules to Cursor Dot Cursor Rules Format](/ai-tools-compared/migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/)
-- [Switching from Dall E to Midjourney Prompt Format Difference](/ai-tools-compared/switching-from-dall-e-to-midjourney-prompt-format-difference/)
-
+- [How to Create Custom System Prompt for ChatGPT API That](/ai-tools-compared/how-to-create-custom-system-prompt-for-chatgpt-api-that-enfo/)
+- [Transfer ChatGPT Custom GPTs to Claude Projects](/ai-tools-compared/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
+- [How to Create Custom System Prompts for AI That Match Your](/ai-tools-compared/how-to-create-custom-system-prompts-for-ai-that-match-your-d/)
+- [How to Write System Prompts for AI Assistants That Produce](/ai-tools-compared/how-to-write-system-prompts-for-ai-assistants-that-produce-a/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -41,6 +41,15 @@ Use AI coding assistants familiar with Java 17+ to generate pattern matching and
 3.
 - **Specify the Java version**: Always mention Java 17, 20, or 21 in your prompt to ensure the tool uses modern syntax.
 
+## Table of Contents
+
+- [Understanding Pattern Matching and Switch Expressions](#understanding-pattern-matching-and-switch-expressions)
+- [Evaluating AI Code Generation Quality](#evaluating-ai-code-generation-quality)
+- [Practical Examples with AI-Generated Code](#practical-examples-with-ai-generated-code)
+- [Common Issues in AI-Generated Java Code](#common-issues-in-ai-generated-java-code)
+- [Tips for Better AI Code Generation](#tips-for-better-ai-code-generation)
+- [Comparing Tool Performance](#comparing-tool-performance)
+
 ## Understanding Pattern Matching and Switch Expressions
 
 Java 17 brought significant improvements to the language through pattern matching for instanceof and switch expressions. These features reduce boilerplate and make code more expressive and maintainable.

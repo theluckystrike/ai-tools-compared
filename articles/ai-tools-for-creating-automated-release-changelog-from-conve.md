@@ -40,6 +40,17 @@ Managing release notes manually consumes valuable developer time. Conventional c
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Conventional commits provide a**: structured format for commit messages, but converting those messages into readable, user-facing changelogs still requires significant effort.
 
+## Table of Contents
+
+- [Understanding Conventional Commits](#understanding-conventional-commits)
+- [AI-Powered Changelog Generation Tools](#ai-powered-changelog-generation-tools)
+- [Implementing AI Changelog Generation](#implementing-ai-changelog-generation)
+- [Practical Example: From Commits to Changelog](#practical-example-from-commits-to-changelog)
+- [Release v2.1.0](#release-v210)
+- [Prompt Engineering for Better Output](#prompt-engineering-for-better-output)
+- [Tool Comparison at a Glance](#tool-comparison-at-a-glance)
+- [Best Practices for Quality Output](#best-practices-for-quality-output)
+
 ## Understanding Conventional Commits
 
 Conventional commits follow a standardized format that makes commit history machine-readable. The structure uses a type, an optional scope, and a description:

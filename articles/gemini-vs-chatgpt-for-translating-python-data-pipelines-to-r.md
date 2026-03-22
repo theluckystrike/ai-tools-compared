@@ -39,6 +39,21 @@ Choose Gemini for idiomatic Rust code that uses the ecosystem's best libraries a
 - **Provide explicit Rust crate**: preferences in your initial prompt 2.
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 
+## Table of Contents
+
+- [Why Translate Data Pipelines to Rust](#why-translate-data-pipelines-to-rust)
+- [Gemini's Approach to Python-to-Rust Translation](#geminis-approach-to-python-to-rust-translation)
+- [ChatGPT's Approach to Python-to-Rust Translation](#chatgpts-approach-to-python-to-rust-translation)
+- [Comparative Strengths for Pipeline Translation](#comparative-strengths-for-pipeline-translation)
+- [Practical Recommendations](#practical-recommendations)
+- [Translation Quality Benchmarking](#translation-quality-benchmarking)
+- [Error Message Quality Comparison](#error-message-quality-comparison)
+- [Decision Framework for Tool Selection](#decision-framework-for-tool-selection)
+- [Workflow Optimization Tips](#workflow-optimization-tips)
+- [Struct-Driven Architecture: The Missing Step in AI Translations](#struct-driven-architecture-the-missing-step-in-ai-translations)
+- [Handling Python's Dynamic Typing at the Boundary](#handling-pythons-dynamic-typing-at-the-boundary)
+- [Post-Translation Validation Checklist](#post-translation-validation-checklist)
+
 ## Why Translate Data Pipelines to Rust
 
 Python data pipelines often struggle with CPU-bound transformations. Libraries like Pandas provide excellent abstractions but introduce overhead that becomes problematic at scale. Rust compiles to native machine code, eliminating the Python interpreter bottleneck. Common migration targets include ETL jobs running continuously, real-time streaming processors, and batch transformation scripts that process millions of rows.
@@ -434,10 +449,9 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Best AI Code Completion for Python Data Science 2026](/ai-tools-compared/ai-code-completion-python-data-science-2026/)
-- [Best AI Coding Tools for Python Data Science and pandas Work](/ai-tools-compared/best-ai-coding-tools-for-python-data-science-and-pandas-work/)
-- [How to Export Gemini Workspace Data Before Switching to](/ai-tools-compared/how-to-export-gemini-workspace-data-before-switching-to-claude-team/)
-- [ChatGPT Code Interpreter Not Running Python: Fixes and Fix](/ai-tools-compared/chatgpt-code-interpreter-not-running-python-fix/)
-- [ChatGPT vs Gemini for Generating Tailwind CSS from Hand Draw](/ai-tools-compared/chatgpt-vs-gemini-for-generating-tailwind-css-from-hand-draw/)
-
+- [ChatGPT vs Gemini for Generating Tailwind CSS from Hand](/ai-tools-compared/chatgpt-vs-gemini-for-generating-tailwind-css-from-hand-draw/)
+- [Gemini vs ChatGPT for Writing Google Cloud Function Deployme](/ai-tools-compared/gemini-vs-chatgpt-for-writing-google-cloud-function-deployme/)
+- [Gemini vs ChatGPT for Writing BigQuery SQL Window Functions](/ai-tools-compared/gemini-vs-chatgpt-for-writing-bigquery-sql-window-functions-/)
+- [Switching from ChatGPT Voice to Gemini Live Conversation](/ai-tools-compared/switching-from-chatgpt-voice-to-gemini-live-conversation-differences/)
+- [ChatGPT Code Interpreter Not Running Python: Fixes](/ai-tools-compared/chatgpt-code-interpreter-not-running-python-fix/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

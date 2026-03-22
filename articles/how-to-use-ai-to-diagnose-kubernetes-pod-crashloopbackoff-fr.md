@@ -41,6 +41,13 @@ This guide shows you how to use AI to diagnose Kubernetes pod CrashLoopBackOff i
 - **AI performs better with**: more information.
 - **AI recommendations are based**: on patterns, not your exact configuration.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Practical Example Walkthrough](#practical-example-walkthrough)
+- [Best Practices for AI-Assisted Debugging](#best-practices-for-ai-assisted-debugging)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

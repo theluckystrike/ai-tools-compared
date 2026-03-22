@@ -39,6 +39,20 @@ Windsurf Premium offers access to multiple AI models, but not all are created eq
 - **Export your model preferences**: from Cursor settings 2.
 - **your estimates to validate**: cost predictions Expected productivity during migration: 90% for week 1, 100%+ by week 2 as you adapt to credit model.
 
+## Table of Contents
+
+- [Understanding Windsurf Premium Credit System](#understanding-windsurf-premium-credit-system)
+- [Models That Require Extra Credits](#models-that-require-extra-credits)
+- [Credit Consumption Examples](#credit-consumption-examples)
+- [Optimizing Your Credit Usage](#optimizing-your-credit-usage)
+- [Subscription Tiers and Credit Allocations](#subscription-tiers-and-credit-allocations)
+- [Making the Right Choice](#making-the-right-choice)
+- [Real-World Usage Scenarios and Credit Consumption](#real-world-usage-scenarios-and-credit-consumption)
+- [Advanced Cost Optimization Strategies](#advanced-cost-optimization-strategies)
+- [Comparing Windsurf to Cursor and Copilot on Credits](#comparing-windsurf-to-cursor-and-copilot-on-credits)
+- [Migration Path: Switching From Cursor to Windsurf](#migration-path-switching-from-cursor-to-windsurf)
+- [Planning for Annual Costs](#planning-for-annual-costs)
+
 ## Understanding Windsurf Premium Credit System
 
 Windsurf Premium operates on a credit-based system that determines how much AI processing time you get each month. The credit allocation varies depending on your subscription tier, and different AI models consume credits at different rates. Understanding this system is crucial for managing your AI coding assistant costs effectively.

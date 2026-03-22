@@ -50,6 +50,18 @@ Writing dbt macros that generate dynamic SQL based on configuration requires und
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **This guide compares the**: top AI tools for this specific use case.
 
+## Table of Contents
+
+- [What Makes dbt Macro Generation Effective](#what-makes-dbt-macro-generation-effective)
+- [Comparing Top AI Tools for dbt Macro Writing](#comparing-top-ai-tools-for-dbt-macro-writing)
+- [Practical Examples](#practical-examples)
+- [Recommendations](#recommendations)
+- [Advanced dbt Patterns](#advanced-dbt-patterns)
+- [Performance Optimization Patterns](#performance-optimization-patterns)
+- [Integration with Data Validation](#integration-with-data-validation)
+- [Real-World Macro Library Structure](#real-world-macro-library-structure)
+- [Team Productivity with dbt Macros](#team-productivity-with-dbt-macros)
+
 ## What Makes dbt Macro Generation Effective
 
 Effective dbt macro generation involves several key capabilities that AI tools must demonstrate. First, the tool must understand Jinja2 syntax including loops, conditionals, and macros. Second, it should generate SQL that performs well and follows best practices. Third, it needs to handle configuration-driven logic where macro behavior changes based on variables passed in.

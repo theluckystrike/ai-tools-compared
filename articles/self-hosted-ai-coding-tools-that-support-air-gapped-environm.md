@@ -37,6 +37,26 @@ Air-gapped environments—systems physically isolated from public networks—are
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Here's a practical comparison**: of the best options for 2026.
 
+## Table of Contents
+
+- [What Makes an AI Coding Tool Work in Air-Gapped Environments](#what-makes-an-ai-coding-tool-work-in-air-gapped-environments)
+- [1. Codeium Community Edition](#1-codeium-community-edition)
+- [2. Continue.dev with Ollama](#2-continuedev-with-ollama)
+- [3. Tabby](#3-tabby)
+- [4. LocalAI](#4-localai)
+- [5. Cody (Sourcegraph)](#5-cody-sourcegraph)
+- [Comparison Summary](#comparison-summary)
+- [Practical Recommendations](#practical-recommendations)
+- [GPU and Storage Requirements for Air-Gapped Deployments](#gpu-and-storage-requirements-for-air-gapped-deployments)
+- [Security Checklist for Air-Gapped Deployments](#security-checklist-for-air-gapped-deployments)
+- [Fine-Tuning Models for Your Codebase](#fine-tuning-models-for-your-codebase)
+- [Setting Up Secure Air-Gapped Networks](#setting-up-secure-air-gapped-networks)
+- [Model Selection for Resource-Constrained Environments](#model-selection-for-resource-constrained-environments)
+- [Continuous Model Updates in Air-Gapped Settings](#continuous-model-updates-in-air-gapped-settings)
+- [Monitoring AI Tool Performance](#monitoring-ai-tool-performance)
+- [Building Your Air-Gapped Development Workflow](#building-your-air-gapped-development-workflow)
+- [Compliance and Audit Trails](#compliance-and-audit-trails)
+
 ## What Makes an AI Coding Tool Work in Air-Gapped Environments
 
 For an AI coding assistant to function in a disconnected environment, it must operate without external API calls and run inference locally using your own GPU or CPU. Key requirements include no outbound network traffic during normal operation, support for local model files (GGUF, GPTQ, or safetensors formats), and reasonable performance on available hardware.

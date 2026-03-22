@@ -39,6 +39,23 @@ Claude Code excels at complex multi-step server automation scripts with proper e
 - **The tool's integration with**: GitHub Actions also means it understands CI/CD pipeline scripts, making it useful for building automated deployment workflows.
 - **Its direct terminal integration**: appeals to system administrators who spend most of their time working on remote servers via SSH.
 
+## Table of Contents
+
+- [Why AI-Assisted Shell Scripting Matters](#why-ai-assisted-shell-scripting-matters)
+- [Claude Code: Strong Choice for Complex Automation](#claude-code-strong-choice-for-complex-automation)
+- [GitHub Copilot: Solid Inline Assistance](#github-copilot-solid-inline-assistance)
+- [Cursor: Multi-File Context for Infrastructure Projects](#cursor-multi-file-context-for-infrastructure-projects)
+- [Aider: Terminal-Based Option for Linux Engineers](#aider-terminal-based-option-for-linux-engineers)
+- [Codeium: Free Option with Good Basics](#codeium-free-option-with-good-basics)
+- [Best Practices for AI-Assisted Shell Scripting](#best-practices-for-ai-assisted-shell-scripting)
+- [Making Your Choice](#making-your-choice)
+- [Advanced Shell Script Examples](#advanced-shell-script-examples)
+- [Performance Metrics: Tool Comparison on Complex Scripts](#performance-metrics-tool-comparison-on-complex-scripts)
+- [Shell Scripting Best Practices AI Tools Should Follow](#shell-scripting-best-practices-ai-tools-should-follow)
+- [Workflow Optimization Tips](#workflow-optimization-tips)
+- [Testing AI-Generated Shell Scripts](#testing-ai-generated-shell-scripts)
+- [Cost Analysis: AI Tool Pricing for Shell Script Development](#cost-analysis-ai-tool-pricing-for-shell-script-development)
+
 ## Why AI-Assisted Shell Scripting Matters
 
 Server automation often involves writing scripts that handle file operations, process management, network configuration, and system monitoring. The complexity increases when scripts need to be portable across different Unix-like systems, handle edge cases gracefully, and integrate with existing tooling. AI assistants can accelerate this process by suggesting appropriate command combinations, identifying potential bugs before execution, and recommending security best practices.
@@ -484,10 +501,9 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [AI Code Completion for Writing Shell Commands Inside Scripts](/ai-tools-compared/ai-code-completion-for-writing-shell-commands-inside-scripts/)
-- [Which AI Writes Better PowerShell Scripts for Windows Server](/ai-tools-compared/which-ai-writes-better-powershell-scripts-for-windows-server/)
-- [Best AI Tools for Writing Database Seed Scripts 2026](/ai-tools-compared/best-ai-tools-for-writing-database-seed-scripts-2026/)
 - [Free AI Tools for Writing Bash Scripts and Automation](/ai-tools-compared/free-ai-tools-for-writing-bash-scripts-and-automation/)
-- [ChatGPT vs Claude for Creating Database Migration Scripts](/ai-tools-compared/chatgpt-vs-claude-for-creating-database-migration-scripts-po/)
-
+- [AI Code Completion for Writing Shell Commands Inside](/ai-tools-compared/ai-code-completion-for-writing-shell-commands-inside-scripts/)
+- [AI Tools for Writing GitHub Actions Workflows (2026)](/ai-tools-compared/ai-tools/best-ai-tools-for-github-actions-workflows/)
+- [AI Tools for Writing Database Migration Rollback Scripts](/ai-tools-compared/ai-tools-for-writing-database-migration-rollback-scripts-2026/)
+- [Best AI Tools for Writing Redis Lua Scripts (2026)](/ai-tools-compared/best-ai-tools-for-writing-redis-lua-scripts-2026/---)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

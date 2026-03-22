@@ -52,6 +52,20 @@ I'm using Swift 5.9 on iOS 17.
 - **From type mismatches to**: complex generic constraints, the compiler's error messages often point to the symptom rather than the root cause.
 - **For Swift compiler errors**: Copilot often suggests fixes based on patterns it has learned from millions of open-source Swift repositories.
 
+## Table of Contents
+
+- [Understanding Swift Compiler Errors in Xcode Build Phases](#understanding-swift-compiler-errors-in-xcode-build-phases)
+- [What Makes an AI Assistant Effective for Swift Compiler Errors](#what-makes-an-ai-assistant-effective-for-swift-compiler-errors)
+- [Comparing AI Assistants for Swift Compiler Debugging](#comparing-ai-assistants-for-swift-compiler-debugging)
+- [Practical Workflow for Debugging Swift Build Errors](#practical-workflow-for-debugging-swift-build-errors)
+- [Recommendations for Different Development Scenarios](#recommendations-for-different-development-scenarios)
+- [Advanced Error Scenarios and Solutions](#advanced-error-scenarios-and-solutions)
+- [Prompt Engineering for Swift Debugging](#prompt-engineering-for-swift-debugging)
+- [Performance: Which AI Tool Responds Fastest](#performance-which-ai-tool-responds-fastest)
+- [Setup Guide: Using Each Tool with Xcode](#setup-guide-using-each-tool-with-xcode)
+- [Decision Tree: Which Tool for Your Situation](#decision-tree-which-tool-for-your-situation)
+- [Common Swift Compiler Errors and Solutions](#common-swift-compiler-errors-and-solutions)
+
 ## Understanding Swift Compiler Errors in Xcode Build Phases
 
 When you build a Swift project in Xcode, the compiler processes your code through several phases: lexical analysis, parsing, semantic analysis, and code generation. Errors can occur at any stage, and each produces different error messages with varying levels of helpfulness.
@@ -436,12 +450,11 @@ This reference covers 80% of Swift compiler errors developers encounter:
 
 ## Related Articles
 
-- [Best AI Assistant for Debugging Swift Compiler Errors in Xco](/ai-tools-compared/best-ai-assistant-for-debugging-swift-compiler-errors-in-xco/)
-- [Best AI Tools for Debugging React Hydration Mismatch](/ai-tools-compared/best-ai-for-debugging-react-hydration-mismatch-errors-in-nextjs/)
-- [Best AI Assistant for Debugging CSS Custom Property](/ai-tools-compared/best-ai-assistant-for-debugging-css-custom-property-inheritance-failures-in-shadow-dom/)
-- [Best AI Assistant for Debugging CSS Grid Layout Overflow Iss](/ai-tools-compared/best-ai-assistant-for-debugging-css-grid-layout-overflow-iss/)
-- [Best AI Assistant for Debugging CSS Z Index Stacking Context](/ai-tools-compared/best-ai-assistant-for-debugging-css-z-index-stacking-context/)
-
+- [Best AI Assistant for Debugging Swift Compiler Errors](/ai-tools-compared/best-ai-assistant-for-debugging-swift-compiler-errors-in-xco/)
+- [Claude vs Copilot for Swift Development 2026](/ai-tools-compared/claude-vs-copilot-for-swift-development-2026/)
+- [How to Use AI to Resolve Cmake Configuration Errors: Cross](/ai-tools-compared/how-to-use-ai-to-resolve-cmake-configuration-errors-for-cross-compilation/)
+- [How to Use AI to Debug CORS Errors in Cross-Origin API](/ai-tools-compared/how-to-use-ai-to-debug-cors-errors-in-cross-origin-api-reque/)
+- [AI Tools for Interpreting Rust Compiler Borrow Checker](/ai-tools-compared/ai-tools-for-interpreting-rust-compiler-borrow-checker-error/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 {% endraw %}

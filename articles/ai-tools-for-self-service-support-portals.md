@@ -11,7 +11,8 @@ intent-checked: true
 voice-checked: true
 score: 8
 reviewed: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI Tools for Self Service Support Portals: Practical Guide"
@@ -25,7 +26,8 @@ intent-checked: true
 voice-checked: true
 score: 8
 reviewed: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 
 Self-service support portals have evolved beyond static FAQ pages. Modern implementations use AI to provide instant answers, automate ticket routing, and personalize user experiences. This guide covers practical implementations of AI tools for developers building or enhancing self-service support portals.
@@ -42,6 +44,16 @@ Question: {user_query}
 
 Provide a clear, concise answer.
 - **A hybrid retrieval pipeline**: gives you the best of both approaches: keyword search narrows the candidate set quickly, then a re-ranker model scores results by semantic relevance.
+
+## Table of Contents
+
+- [The Case for AI in Self-Service Support](#the-case-for-ai-in-self-service-support)
+- [Implementing Conversational AI](#implementing-conversational-ai)
+- [Semantic Search for Knowledge Base](#semantic-search-for-knowledge-base)
+- [Automated Ticket Classification](#automated-ticket-classification)
+- [Integrating AI Responsibly](#integrating-ai-responsibly)
+- [Comparing Popular AI Support Tools](#comparing-popular-ai-support-tools)
+- [Practical Considerations](#practical-considerations)
 
 ## The Case for AI in Self-Service Support
 
@@ -400,10 +412,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [ChatGPT Enterprise vs Custom Support Bot: A Practical](/ai-tools-compared/chatgpt-enterprise-vs-custom-support-bot/)
-- [AI Tools for Generating Kubernetes Service Mesh](/ai-tools-compared/ai-tools-for-generating-kubernetes-service-mesh-configuratio/)
-- [AI Tools for Writing Jest Tests for Web Worker and Service](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-web-worker-and-service-w/)
-- [Best AI Tools for Telecom Customer Service](/ai-tools-compared/best-ai-tools-for-telecom-customer-service/)
-- [Best AI Tools for Writing Go gRPC Service Definitions and](/ai-tools-compared/best-ai-tools-for-writing-go-grpc-service-definitions-and-implementations/)
-
+- [Best AI Tools for SaaS Customer](/ai-tools-compared/best-ai-tools-for-saas-customer-support/)
+- [Best AI Tools for Support Agent Assist](/ai-tools-compared/best-ai-tools-for-support-agent-assist/)
+- [Self Hosted AI Coding Tools That Support Air Gapped](/ai-tools-compared/self-hosted-ai-coding-tools-that-support-air-gapped-environm/)
+- [AI Tools for Education Student](/ai-tools-compared/ai-tools-for-education-student-support/)
+- [AI Tools for Subscription Management](/ai-tools-compared/ai-tools-for-subscription-management-support/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

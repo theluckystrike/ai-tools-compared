@@ -38,6 +38,14 @@ voice-checked: true---
 - **Use environment variables exclusively**: and ensure your logging configuration excludes environment variable values.
 - **AI assistants can use**: this to explain the full data model and suggest correct JOIN paths for complex multi-table queries.
 
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Prerequisites](#prerequisites)
+- [Why Live Schema Context Matters](#why-live-schema-context-matters)
+- [Security Considerations](#security-considerations)
+- [Troubleshooting](#troubleshooting)
+
 ## Introduction
 
 When you're building applications that interact with databases, AI coding assistants often struggle to generate accurate code because they lack visibility into your actual database structure. The Model Context Protocol (MCP) solves this problem by enabling your AI tools to query live database schema information directly. This guide walks you through setting up an MCP server that exposes your database schema to AI assistants like Claude, Cursor, or other MCP-compatible tools.
@@ -351,11 +359,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Set Up Model Context Protocol Server for Custom Proje](/ai-tools-compared/how-to-set-up-model-context-protocol-server-for-custom-proje/)
-- [How to Set Up Model Context Protocol Server for Internal Pac](/ai-tools-compared/how-to-set-up-model-context-protocol-server-for-internal-pac/)
-- [How to Set Up Model Context Protocol for Feeding Jira Ticket](/ai-tools-compared/how-to-set-up-model-context-protocol-for-feeding-jira-ticket/)
-- [How to Set Up Model Context Protocol for Feeding Monitoring](/ai-tools-compared/how-to-set-up-model-context-protocol-for-feeding-monitoring-/)
+- [How to Build Model Context Protocol Server That Provides](/ai-tools-compared/how-to-build-model-context-protocol-server-that-provides-deployment-environment-context/)
 - [How to Set Up Model Context Protocol with Local Database](/ai-tools-compared/how-to-set-up-model-context-protocol-with-local-database-schema-information-2026/)
-
+- [How to Set Up Model Context Protocol Server for Internal](/ai-tools-compared/how-to-set-up-model-context-protocol-server-for-internal-pac/)
+- [How to Set Up Model Context Protocol Server for Custom](/ai-tools-compared/how-to-set-up-model-context-protocol-server-for-custom-proje/)
+- [How to Build a Model Context Protocol Server That Serves](/ai-tools-compared/how-to-build-model-context-protocol-server-that-serves-opena/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

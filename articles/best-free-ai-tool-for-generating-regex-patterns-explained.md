@@ -11,7 +11,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, best-of, artificial-intelligence]
+---
 ---
 layout: default
 title: "Best Free AI Tool for Generating Regex Patterns Explained"
@@ -25,7 +26,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, best-of, artificial-intelligence]
+---
 
 {% raw %}
 
@@ -41,6 +43,21 @@ The pattern should be permissive enough for most real-world email formats.
 - **If you validate an entire field**: include `^` and `$` in your requirements.
 - **Use the Debugger tab**: to step through matching 4.
 - **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
+
+## Table of Contents
+
+- [Why AI Makes Regex Generation Practical](#why-ai-makes-regex-generation-practical)
+- [How to Prompt AI for Regex Generation](#how-to-prompt-ai-for-regex-generation)
+- [Practical Examples for Common Development Tasks](#practical-examples-for-common-development-tasks)
+- [Testing and Refining AI-Generated Patterns](#testing-and-refining-ai-generated-patterns)
+- [Common Pitfalls and How to Avoid Them](#common-pitfalls-and-how-to-avoid-them)
+- [Getting the Most from AI Regex Tools](#getting-the-most-from-ai-regex-tools)
+- [Free Tools Compared for Regex Generation](#free-tools-compared-for-regex-generation)
+- [Advanced Regex Patterns Examples](#advanced-regex-patterns-examples)
+- [Programmatic Regex Generation](#programmatic-regex-generation)
+- [Regex Performance Optimization](#regex-performance-optimization)
+- [Debugging AI-Generated Regex](#debugging-ai-generated-regex)
+- [Common Pitfalls in AI-Generated Regex](#common-pitfalls-in-ai-generated-regex)
 
 ## Why AI Makes Regex Generation Practical
 

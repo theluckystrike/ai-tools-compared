@@ -42,6 +42,15 @@ This guide walks you through configuring MCP to work with local database schema 
 - **In such cases**: you can configure the server to fetch only specific schemas or limit the metadata retrieval to essential tables.
 - **Ask the AI to**: "compare the user count between production and staging" and it can reference both databases simultaneously.
 
+## Table of Contents
+
+- [Prerequisites and Initial Setup](#prerequisites-and-initial-setup)
+- [Security Considerations](#security-considerations)
+- [Performance and Limitations](#performance-and-limitations)
+- [Advanced MCP Configurations](#advanced-mcp-configurations)
+- [Troubleshooting MCP Connections](#troubleshooting-mcp-connections)
+- [Performance Optimization with MCP](#performance-optimization-with-mcp)
+
 ## Prerequisites and Initial Setup
 
 Before configuring MCP, ensure you have a recent version of an MCP-compatible AI client installed. Most modern AI coding assistants support MCP through a standardized interface. You will also need database connection details and appropriate access credentials.

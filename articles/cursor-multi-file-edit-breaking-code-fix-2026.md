@@ -40,6 +40,15 @@ To fix Cursor multi-file edits breaking your code, narrow your edit scope to onl
 - **Step 2**: Group errors by category. TypeScript errors group naturally by type: missing properties, incompatible signatures, undefined references.
 - **Could this problem be**: caused by a recent update? Yes, updates frequently introduce new bugs or change behavior.
 
+## Table of Contents
+
+- [Common Causes of Multi-File Edit Failures](#common-causes-of-multi-file-edit-failures)
+- [Step-by-Step Fixes](#step-by-step-fixes)
+- [Diagnostic Tips](#diagnostic-tips)
+- [Prevention Strategies](#prevention-strategies)
+- [Recovering from a Bad Multi-File Edit](#recovering-from-a-bad-multi-file-edit)
+- [When to Use Alternative Approaches](#when-to-use-alternative-approaches)
+
 ## Common Causes of Multi-File Edit Failures
 
 Understanding why Cursor breaks code during multi-file edits helps you prevent issues and troubleshoot when they occur.
@@ -313,11 +322,10 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 
 ## Related Articles
 
-- [Copilot Workspace vs Cursor Composer Multi File Editing Comp](/ai-tools-compared/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)
+- [Cursor Keeps Crashing Fix 2026: Complete Troubleshooting](/ai-tools-compared/cursor-keeps-crashing-fix-2026/)
+- [Cursor AI Slow on Large monorepo Fix (2026)](/ai-tools-compared/cursor-ai-slow-on-large-monorepo-fix-2026/)
 - [Cursor AI Multi File Editing Feature How It Actually Works](/ai-tools-compared/cursor-ai-multi-file-editing-feature-how-it-actually-works-explained/)
-- [Windsurf Cascade vs Cursor Composer: Multi-File AI Editing](/ai-tools-compared/windsurf-cascade-vs-cursor-composer-multi-file-ai-editing-co/)
-- [Cursor Project-Wide Refactor Breaking Build Fix](/ai-tools-compared/cursor-project-wide-refactor-breaking-build-fix/)
-- [How to Use AI Multi File Context to Generate Consistent API](/ai-tools-compared/how-to-use-ai-multi-file-context-to-generate-consistent-api-endpoints/)
-
+- [Claude Code vs Cursor Composer](/ai-tools-compared/claude-code-vs-cursor-composer-for-full-stack-development-comparison/)
+- [Claude Code vs Cursor for Large Codebase Refactoring](/ai-tools-compared/claude-code-vs-cursor-for-large-codebase-refactoring/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

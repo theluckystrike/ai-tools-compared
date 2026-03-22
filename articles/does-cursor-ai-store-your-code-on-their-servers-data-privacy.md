@@ -42,6 +42,27 @@ This breakdown addresses the core question: does Cursor AI store your code on th
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [How Cursor AI Processes Your Code](#how-cursor-ai-processes-your-code)
+- [Data Transmission and Server Storage](#data-transmission-and-server-storage)
+- [Privacy Configuration Options](#privacy-configuration-options)
+- [Enterprise and Team Deployments](#enterprise-and-team-deployments)
+- [Comparing to Alternatives](#comparing-to-alternatives)
+- [Practical Steps to Minimize Data Exposure](#practical-steps-to-minimize-data-exposure)
+- [What Gets Stored Permanently](#what-gets-stored-permanently)
+- [Making an Informed Decision](#making-an-informed-decision)
+- [Feature Comparison: Privacy Options Across Tools](#feature-comparison-privacy-options-across-tools)
+- [Advanced Configuration for Sensitive Projects](#advanced-configuration-for-sensitive-projects)
+- [Legal and Compliance Implications](#legal-and-compliance-implications)
+- [Monitoring and Auditing Your AI Tool Usage](#monitoring-and-auditing-your-ai-tool-usage)
+- [Recovery Steps If Data Was Exposed](#recovery-steps-if-data-was-exposed)
+- [Organizational Policy Template](#organizational-policy-template)
+- [Approved Tools](#approved-tools)
+- [Prohibited Activities](#prohibited-activities)
+- [Required Configuration](#required-configuration)
+- [Violations](#violations)
+
 ## How Cursor AI Processes Your Code
 
 Cursor AI operates as a modified version of VS Code with integrated AI features. When you use features like **Ctrl+K** for inline code generation or **Ctrl+L** for chat-based assistance, your code context gets sent to Cursor's servers for processing. This is the fundamental architecture difference from traditional code editors.

@@ -40,6 +40,30 @@ Monorepo architectures have become the standard for organizations managing multi
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [The Context Challenge in Monorepos](#the-context-challenge-in-monorepos)
+- [Strategy One: Workspace-Aware Project References](#strategy-one-workspace-aware-project-references)
+- [Strategy Two: Selective Context Inclusion](#strategy-two-selective-context-inclusion)
+- [Strategy Three: Using Tool-Specific Index Features](#strategy-three-using-tool-specific-index-features)
+- [Strategy Four: Context Refinement Through Conversation](#strategy-four-context-refinement-through-conversation)
+- [Strategy Five: Managing Cross-Package Dependencies](#strategy-five-managing-cross-package-dependencies)
+- [Practical Implementation Tips](#practical-implementation-tips)
+- [Building Your Personal Context Strategy](#building-your-personal-context-strategy)
+- [Tool-Specific Context Strategies](#tool-specific-context-strategies)
+- [Advanced Context Patterns](#advanced-context-patterns)
+- [Package Layout](#package-layout)
+- [Key Dependencies](#key-dependencies)
+- [Naming Conventions](#naming-conventions)
+- [Important Files](#important-files)
+- [Testing Patterns](#testing-patterns)
+- [Token Usage Optimization](#token-usage-optimization)
+- [Monorepo-Specific Prompting](#monorepo-specific-prompting)
+- [Handling Large Dependencies](#handling-large-dependencies)
+- [Monorepo-Scale Context Management](#monorepo-scale-context-management)
+- [Tool Comparison for Monorepo Support](#tool-comparison-for-monorepo-support)
+- [Troubleshooting Context Issues](#troubleshooting-context-issues)
+
 ## The Context Challenge in Monorepos
 
 AI coding assistants operate within token limits, and monorepos can contain hundreds of thousands of lines across dozens of packages. When you ask an AI to help with a specific feature, it cannot possibly read your entire codebase. This creates a fundamental tension: you need to provide enough relevant context for accurate assistance, but overwhelm the context window and the AI loses focus.
@@ -472,11 +496,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI Context Window Management Strategies for Large Codeb](/ai-tools-compared/best-ai-context-window-management-strategies-for-large-codeb/)
-- [Effective Context Loading Strategies for AI Tools in](/ai-tools-compared/effective-context-loading-strategies-for-ai-tools-in-polyglo/)
-- [Effective Prompting Strategies for AI Generation of Complex](/ai-tools-compared/effective-prompting-strategies-for-ai-generation-of-complex-/)
-- [Effective Strategies for AI Assisted Debugging of](/ai-tools-compared/effective-strategies-for-ai-assisted-debugging-of-intermittent-failures/)
-- [Effective Strategies for AI-Assisted Refactoring Without Bre](/ai-tools-compared/effective-strategies-for-ai-assisted-refactoring-without-bre/)
-
+- [Effective Context Loading Strategies for AI Tools](/ai-tools-compared/effective-context-loading-strategies-for-ai-tools-in-polyglo/)
+- [Best AI Context Window Management Strategies for Large](/ai-tools-compared/best-ai-context-window-management-strategies-for-large-codeb/)
+- [How to Manage AI Coding Context When Switching](/ai-tools-compared/how-to-manage-ai-coding-context-when-switching-between-diffe/)
+- [What Source Code Context Window Do Different AI Coding Tools](/ai-tools-compared/what-source-code-context-window-do-different-ai-coding-tools/)
+- [How to Use AI Context Management to Work on Large Refactorin](/ai-tools-compared/how-to-use-ai-context-management-to-work-on-large-refactorin/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

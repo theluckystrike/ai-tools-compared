@@ -39,6 +39,20 @@ Migrating Selenium test suites to Cypress is a real problem. You have 500+ test 
 - **Verdict**: Use GPT-4o for scoping and planning migrations, not for generating code.
 - **Weakness**: sometimes too eager to match existing patterns, even when a fresh pattern would be better.
 
+## Table of Contents
+
+- [Migration Complexity](#migration-complexity)
+- [Claude 3.5 Sonnet](#claude-35-sonnet)
+- [ChatGPT Plus (GPT-4o)](#chatgpt-plus-gpt-4o)
+- [GitHub Copilot](#github-copilot)
+- [Cody Pro (Sourcegraph)](#cody-pro-sourcegraph)
+- [Gemini Advanced](#gemini-advanced)
+- [Conversion Strategy Comparison](#conversion-strategy-comparison)
+- [Migration Workflow Recommendation](#migration-workflow-recommendation)
+- [Real-World Timing](#real-world-timing)
+- [Cost Breakdown](#cost-breakdown)
+- [Final Verdict](#final-verdict)
+
 ## Migration Complexity
 
 Test migration isn't simple string replacement. Key differences:

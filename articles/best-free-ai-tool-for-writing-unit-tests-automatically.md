@@ -39,6 +39,18 @@ Claude's free tier generates unit tests with proper edge case coverage and asser
 - **AI excels at this**: pattern recognition because it has training data spanning millions of codebases and test suites.
 - **Include tests for free**: shipping threshold, express delivery, and international addresses.
 
+## Table of Contents
+
+- [Why AI for Unit Tests Makes Sense](#why-ai-for-unit-tests-makes-sense)
+- [What Free Tools Actually Deliver Results](#what-free-tools-actually-deliver-results)
+- [Workflow Strategies for Better Results](#workflow-strategies-for-better-results)
+- [Practical Example: Complete Test Suite Generation](#practical-example-complete-test-suite-generation)
+- [Limitations to Understand](#limitations-to-understand)
+- [Comparison Table: Free AI Tools for Unit Test Generation](#comparison-table-free-ai-tools-for-unit-test-generation)
+- [Advanced Test Generation Patterns](#advanced-test-generation-patterns)
+- [Integration with CI/CD](#integration-with-cicd)
+- [Recommendation](#recommendation)
+
 ## Why AI for Unit Tests Makes Sense
 
 Manual test writing consumes substantial development time. For every function you implement, you need to consider edge cases, error conditions, and happy-path scenarios. AI excels at this pattern recognition because it has training data spanning millions of codebases and test suites.

@@ -9,7 +9,8 @@ categories: [guides, comparisons]
 reviewed: true
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence, kotlin, kotlin-multiplatform]---
+tags: [ai-tools-compared, artificial-intelligence, kotlin, kotlin-multiplatform]
+---
 ---
 layout: default
 title: "AI Tools for Generating Platform Specific Code in Kotlin"
@@ -21,7 +22,8 @@ categories: [guides, comparisons]
 reviewed: true
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence, kotlin, kotlin-multiplatform]---
+tags: [ai-tools-compared, artificial-intelligence, kotlin, kotlin-multiplatform]
+---
 
 
 Kotlin Multiplatform has become a standard approach for sharing code across Android, iOS, web, desktop, and server targets. However, generating platform-specific implementations remains one of the most time-consuming aspects of KMP development. This guide examines which AI tools effectively assist with generating expect/actual declarations, platform-specific implementations, and native API integrations.
@@ -34,6 +36,21 @@ Kotlin Multiplatform has become a standard approach for sharing code across Andr
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **However**: generating platform-specific implementations remains one of the most time-consuming aspects of KMP development.
+
+## Table of Contents
+
+- [The Platform-Specific Code Challenge in KMP](#the-platform-specific-code-challenge-in-kmp)
+- [Key Capabilities for Platform-Specific Code Generation](#key-capabilities-for-platform-specific-code-generation)
+- [Tool Comparison: AI Assistants for Platform-Specific KMP Code](#tool-comparison-ai-assistants-for-platform-specific-kmp-code)
+- [Practical Examples](#practical-examples)
+- [How AI Tools Handle Platform-Specific Code](#how-ai-tools-handle-platform-specific-code)
+- [Advanced Platform-Specific Patterns](#advanced-platform-specific-patterns)
+- [AI Tool Comparison Matrix: Real-World Metrics](#ai-tool-comparison-matrix-real-world-metrics)
+- [Best Practices for AI-Assisted Platform Code Generation](#best-practices-for-ai-assisted-platform-code-generation)
+- [Android Target](#android-target)
+- [iOS Target](#ios-target)
+- [Shared Expectations](#shared-expectations)
+- [Validation Checklist for AI-Generated Code](#validation-checklist-for-ai-generated-code)
 
 ## The Platform-Specific Code Challenge in KMP
 
@@ -380,8 +397,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Code Completion for Kotlin Compose Multiplatform Shared UI Components](/ai-code-completion-for-kotlin-compose-multiplatform-shared-u/)
-- [AI Tools for Generating OpenAPI Specs from Code](/ai-tools-openapi-spec-generation/)
-- [AI Tools for Generating pandas GroupBy Aggregation Code](/ai-tools-for-generating-pandas-groupby-aggregation-code-from/)
-
+- [AI Code Completion for Kotlin Compose Multiplatform Shared](/ai-tools-compared/ai-code-completion-for-kotlin-compose-multiplatform-shared-u/)
+- [Best AI Features for Generating API Client Code](/ai-tools-compared/best-ai-features-for-generating-api-client-code-from-openapi/)
+- [AI Code Review Automation Tools Comparison 2026](/ai-tools-compared/ai-code-review-automation-tools-comparison/)
+- [AI Tools for Generating pandas GroupBy Aggregation Code](/ai-tools-compared/ai-tools-for-generating-pandas-groupby-aggregation-code-from/)
+- [Best AI Tools for Automated Code Review 2026](/ai-tools-compared/best-ai-tools-for-automated-code-review-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

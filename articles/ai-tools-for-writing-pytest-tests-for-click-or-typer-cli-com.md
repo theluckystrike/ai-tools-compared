@@ -39,6 +39,20 @@ Claude and GitHub Copilot excel at generating pytest tests for Click and Typer C
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Whether you are evaluating**: options or implementing a solution, the information here focuses on real-world applicability rather than theoretical overviews.
 
+## Table of Contents
+
+- [Understanding the Testing Challenge](#understanding-the-testing-challenge)
+- [Using AI to Generate Basic Test Structures](#using-ai-to-generate-basic-test-structures)
+- [Testing Typer Applications with CliRunner](#testing-typer-applications-with-clirunner)
+- [Automating Edge Case Discovery](#automating-edge-case-discovery)
+- [Integrating Parameterized Tests](#integrating-parameterized-tests)
+- [Testing Multi-Command Applications](#testing-multi-command-applications)
+- [Testing File I/O Operations](#testing-file-io-operations)
+- [Testing Environment Variables](#testing-environment-variables)
+- [Performance and Stress Testing](#performance-and-stress-testing)
+- [Best Practices for AI-Generated Tests](#best-practices-for-ai-generated-tests)
+- [Advanced Testing Patterns](#advanced-testing-patterns)
+
 ## Understanding the Testing Challenge
 
 CLI applications differ from web services in how they receive input and produce output. When you test a Click or Typer application, you need to verify that commands execute correctly with various argument combinations, that error handling works as expected, and that the application exits with appropriate status codes. Writing test cases manually can be time-consuming, especially for larger applications with numerous commands and options.

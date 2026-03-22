@@ -43,6 +43,18 @@ Save these images in a dedicated folder.
 - **This guide walks you**: through the technical steps for developers and power users who want to move their Midjourney expertise into the Stable Diffusion ecosystem.
 - **This choice matters because**: your LoRA will be anchored to the model's existing style space.
 
+## Table of Contents
+
+- [Understanding the Challenge](#understanding-the-challenge)
+- [Choosing Your Base Model](#choosing-your-base-model)
+- [Step 1: Collect Reference Images](#step-1-collect-reference-images)
+- [Step 2: Generate Captions for Training](#step-2-generate-captions-for-training)
+- [Step 3: Configure the Training Pipeline](#step-3-configure-the-training-pipeline)
+- [Step 4: Prepare Dataset Structure](#step-4-prepare-dataset-structure)
+- [Step 5: Execute Training](#step-5-execute-training)
+- [Step 6: Test Your LoRA](#step-6-test-your-lora)
+- [Common Issues and Solutions](#common-issues-and-solutions)
+
 ## Understanding the Challenge
 
 Midjourney and Stable Diffusion use fundamentally different approaches to image generation. Midjourney operates as a closed system where style is embedded in prompt engineering and parameter tuning. Stable Diffusion, by contrast, gives you direct control over the generation process and allows you to train custom models through LoRA (Low-Rank Adaptation) files. The goal is to extract the stylistic elements from your Midjourney workflow and encode them into a trainable format.
@@ -280,10 +292,10 @@ Yes. Tools like `kohya-ss` and `sd-scripts` include a `merge_lora.py` script for
 
 ## Related Articles
 
+- [How to Move Stable Diffusion Workflows to Midjourney](/ai-tools-compared/how-to-move-stable-diffusion-workflows-to-midjourney-equivalent-setup/)
 - [Move Stable Diffusion Workflows to Midjourney](/ai-tools-compared/how-to-move-stable-diffusion-workflows-to-midjourney-equivalent-setup/)
-- [Stable Diffusion vs Midjourney for Character Design](/ai-tools-compared/stable-diffusion-vs-midjourney-for-character-design/)
+- [Stable Diffusion vs Midjourney for Character](/ai-tools-compared/stable-diffusion-vs-midjourney-for-character-design/)
 - [DALL-E 3 vs Stable Diffusion for Illustrations](/ai-tools-compared/dall-e-3-vs-stable-diffusion-for-illustrations/)
 - [Stable Diffusion ComfyUI vs Automatic1111 Comparison](/ai-tools-compared/stable-diffusion-comfyui-vs-automatic1111-comparison/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```

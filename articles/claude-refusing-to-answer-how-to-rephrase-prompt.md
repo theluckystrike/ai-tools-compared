@@ -47,6 +47,13 @@ After (explicit intent):
 ```
 I'm building a user authentication system for a web application.
 
+## Table of Contents
+
+- [Why Claude Refuses to Answer](#why-claude-refuses-to-answer)
+- [Prerequisites](#prerequisites)
+- [Prompt Engineering Techniques for Compliance](#prompt-engineering-techniques-for-compliance)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Claude Refuses to Answer
 
 Claude is designed to decline requests that violate its usage policies, contain harmful content, or attempt to bypass safety mechanisms. However, sometimes legitimate requests get caught in these filters due to specific keywords, ambiguous phrasing, or patterns that trigger false positives. Understanding these triggers helps you adjust your approach.

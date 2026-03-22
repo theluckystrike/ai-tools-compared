@@ -41,6 +41,19 @@ Writing API documentation remains one of the most time-consuming tasks in softwa
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Use AI to write**: API documentation by providing your code, specifying your documentation style, and asking for both reference docs and usage examples.
 
+## Table of Contents
+
+- [Understanding the Documentation Challenge](#understanding-the-documentation-challenge)
+- [Strategy One: Generate Documentation from Code Annotations](#strategy-one-generate-documentation-from-code-annotations)
+- [Strategy Two: Use AI for Consistency Across Endpoints](#strategy-two-use-ai-for-consistency-across-endpoints)
+- [Strategy Three: Generate Practical Code Examples](#strategy-three-generate-practical-code-examples)
+- [Strategy Four: Implement Documentation-as-Code Workflows](#strategy-four-implement-documentation-as-code-workflows)
+- [Strategy Five: Validate Documentation Against Implementation](#strategy-five-validate-documentation-against-implementation)
+- [Strategy Six: Maintain Documentation Through Code Reviews](#strategy-six-maintain-documentation-through-code-reviews)
+- [Best Practices for AI-Assisted Documentation](#best-practices-for-ai-assisted-documentation)
+- [Measuring Documentation Quality](#measuring-documentation-quality)
+- [AI Documentation Pitfalls to Avoid](#ai-documentation-pitfalls-to-avoid)
+
 ## Understanding the Documentation Challenge
 
 API documentation must cover multiple dimensions: endpoint descriptions, request parameters, response schemas, authentication requirements, error codes, and usage examples. Traditional approaches require developers to write this content manually, often resulting in outdated or incomplete documentation when code evolves.
@@ -325,10 +338,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How to Write Git Commit Messages Using AI](/ai-tools-compared/how-to-write--git-commit-messages-using-ai-from-diffs/)
-- [Effective Context Loading Strategies for AI Tools in](/ai-tools-compared/effective-context-loading-strategies-for-ai-tools-in-polyglo/)
-- [Effective Context Management Strategies for AI Coding](/ai-tools-compared/effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/)
-- [Effective Prompting Strategies for AI Generation of Complex](/ai-tools-compared/effective-prompting-strategies-for-ai-generation-of-complex-/)
-- [Effective Strategies for AI Assisted Debugging of](/ai-tools-compared/effective-strategies-for-ai-assisted-debugging-of-intermittent-failures/)
-
+- [AI Tools for API Documentation from Code 2026](/ai-tools-compared/ai-tools-for-api-documentation-from-code-2026/)
+- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)
+- [AI Tools for Automated API Documentation Generation in 2026](/ai-tools-compared/ai-tools-for-automated-api-documentation-generation-2026/)
+- [Best AI Tools for Generating API Documentation From Code](/ai-tools-compared/best-ai-tools-for-generating-api-documentation-from-code-2026/)
+- [Effective Strategies for Using AI](/ai-tools-compared/effective-strategies-for-using-ai-to-learn-new-programming-languages-faster/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

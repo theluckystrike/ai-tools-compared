@@ -46,6 +46,14 @@ Write a [language] function that [description].
 - **A well-structured prompt that**: specifies the language, use case, and performance requirements gets you the built-in sorting method your language provides.
 - Use Python's type hints.
 
+## Table of Contents
+
+- [Why Prompt Structure Determines Code Quality](#why-prompt-structure-determines-code-quality)
+- [Prerequisites](#prerequisites)
+- [Common Mistakes to Avoid](#common-mistakes-to-avoid)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## Why Prompt Structure Determines Code Quality
 
 When you ask an AI to write code, the model responds to subtle cues in your prompt. Specify Python and you'll get Pythonic patterns. Mention Rust and you'll see ownership semantics. The key is providing the right context so the AI understands not just *what* to build, but *how* to build it in the target language's style.

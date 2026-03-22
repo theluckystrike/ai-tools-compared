@@ -43,6 +43,16 @@ Both platforms offer free trials that let you test these aspects before committi
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **This comparison examines Custify**: and Gainsight AI through the lens of implementation complexity, API capabilities, and extensibility for power users building custom workflows.
 
+## Table of Contents
+
+- [Platform Overview](#platform-overview)
+- [Quick Comparison](#quick-comparison)
+- [API Architecture and Developer Experience](#api-architecture-and-developer-experience)
+- [AI Features Comparison](#ai-features-comparison)
+- [Integration Patterns](#integration-patterns)
+- [When to Choose Each Platform](#when-to-choose-each-platform)
+- [Implementation Considerations](#implementation-considerations)
+
 ## Platform Overview
 
 **Custify** positions itself as a modern customer success platform with AI capabilities focused on automation and playbook execution. The platform emphasizes ease of integration with existing tech stacks and provides a developer-friendly API surface.

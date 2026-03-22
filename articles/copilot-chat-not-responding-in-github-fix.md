@@ -44,6 +44,25 @@ If Chat fails for extended periods, it's worth seeking refunds.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Identifying the Copilot Chat Issue](#identifying-the-copilot-chat-issue)
+- [Verify Authentication and Subscription Status](#verify-authentication-and-subscription-status)
+- [Check IDE and Extension Compatibility](#check-ide-and-extension-compatibility)
+- [Network and Connectivity Troubleshooting](#network-and-connectivity-troubleshooting)
+- [Clear Local Cache and Reset Configuration](#clear-local-cache-and-reset-configuration)
+- [Examine Chat Panel and Window State](#examine-chat-panel-and-window-state)
+- [Verify Organization Policies (Copilot for Business)](#verify-organization-policies-copilot-for-business)
+- [Test with Different Files and Contexts](#test-with-different-files-and-contexts)
+- [Reinstalling and Fresh Setup](#reinstalling-and-fresh-setup)
+- [Advanced Diagnostic Commands](#advanced-diagnostic-commands)
+- [Rate Limiting and Quota Considerations](#rate-limiting-and-quota-considerations)
+- [Comparing Copilot Chat to Alternatives](#comparing-copilot-chat-to-alternatives)
+- [File and Configuration Reset Procedures](#file-and-configuration-reset-procedures)
+- [Monitoring Copilot Health](#monitoring-copilot-health)
+- [Cost Implications of Chat Unavailability](#cost-implications-of-chat-unavailability)
+- [Escalation Path for Persistent Issues](#escalation-path-for-persistent-issues)
+
 ## Identifying the Copilot Chat Issue
 
 Before exploring fixes, confirm that you are experiencing a genuine Copilot Chat failure rather than a broader Copilot issue. The chat interface appears as a dedicated panel in supported IDEs, typically accessible through a chat icon in the sidebar or via a keyboard shortcut like Ctrl+Shift+P in Visual Studio Code.

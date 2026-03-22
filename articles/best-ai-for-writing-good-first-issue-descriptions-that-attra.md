@@ -328,6 +328,17 @@ estimated_time: 30min|1hour|2hours|4hours+
 ## Problem
 [What's broken or missing?]
 
+## Table of Contents
+
+- [Problem](#problem)
+- [Expected vs Actual](#expected-vs-actual)
+- [Reproduction Steps](#reproduction-steps)
+- [Acceptance Criteria](#acceptance-criteria)
+- [Resources](#resources)
+- [For Beginners](#for-beginners)
+- [CLI for Batch Issue Improvement](#cli-for-batch-issue-improvement)
+- [Issue Writing Checklist for AI](#issue-writing-checklist-for-ai)
+
 ## Expected vs Actual
 [How should it work? How does it currently work?]
 
@@ -433,11 +444,10 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 
 ## Related Articles
 
-- [Best AI for Writing Good First Issue Descriptions That — Attract](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attract-new-contributors/)
+- [Best AI for Writing Good First Issue Descriptions That](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attract-new-contributors/)
+- [Best AI Assistant for Writing Open Source Roadmap Documents](/ai-tools-compared/best-ai-assistant-for-writing-open-source-roadmap-documents-from-issue-milestone-data/)
 - [AI Tools for Writing App Store Descriptions 2026](/ai-tools-compared/ai-tools-for-writing-app-store-descriptions-2026/)
-- [How to Use AI to Write GitHub Actions Bot Comments for First](/ai-tools-compared/how-to-use-ai-to-write-github-actions-bot-comments-for-first/)
-- [AI Tools for Analyzing Issue Comment Sentiment to Identify F](/ai-tools-compared/ai-tools-for-analyzing-issue-comment-sentiment-to-identify-f/)
-- [How to Use AI to Create GitHub Issue Triage Flowcharts](/ai-tools-compared/how-to-use-ai-to-create-github-issue-triage-flowcharts-for-n/)
-
+- [AI Tools for Analyzing Which Open Source Issues Would Benefi](/ai-tools-compared/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
+- [AI Tools for Analyzing Issue Comment Sentiment to Identify](/ai-tools-compared/ai-tools-for-analyzing-issue-comment-sentiment-to-identify-f/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

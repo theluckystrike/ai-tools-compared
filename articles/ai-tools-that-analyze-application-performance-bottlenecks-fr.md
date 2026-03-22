@@ -40,6 +40,23 @@ Distributed tracing has become essential for understanding how requests flow thr
 - **It then identifies that**: 80% of the request time is spent in the `inventory-service`, specifically in database queries.
 - **Configure sampling intelligently**: capture 100% of errors, 10% of slow requests, and 1% of normal traffic.
 
+## Table of Contents
+
+- [What Are Trace-Based Performance Analyzers?](#what-are-trace-based-performance-analyzers)
+- [Key Capabilities to Look For](#key-capabilities-to-look-for)
+- [Comparing Leading AI Trace Analysis Tools](#comparing-leading-ai-trace-analysis-tools)
+- [Practical Example: Finding a Database Bottleneck](#practical-example-finding-a-database-bottleneck)
+- [Open Source Alternatives](#open-source-alternatives)
+- [Practical Trace Analysis Workflow](#practical-trace-analysis-workflow)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+- [Implementation Best Practices](#implementation-best-practices)
+- [Analyzing Span Duration Patterns](#analyzing-span-duration-patterns)
+- [Service Dependency Critical Paths](#service-dependency-critical-paths)
+- [Correlation Analysis Between Services](#correlation-analysis-between-services)
+- [Practical Trace-Driven Optimization Workflow](#practical-trace-driven-optimization-workflow)
+- [Integration with Existing Monitoring](#integration-with-existing-monitoring)
+- [Looking Ahead](#looking-ahead)
+
 ## What Are Trace-Based Performance Analyzers?
 
 Trace analysis tools capture the complete journey of a request across multiple services. Each trace contains spans—individual operations with timing, metadata, and parent-child relationships. Traditional debugging requires manually correlating these spans, which becomes impractical at scale.
@@ -314,8 +331,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools That Scaffold Webhook Receiver Microservices From Event Schemas Compared](/ai-tools-that-scaffold-webhook-receiver-microservices-from-e/)
-- [AI Coding Tools for Automating Changelog Generation from Conventional Commits](/ai-coding-tools-for-automating-changelog-generation-from-con/)
-- [AI Tools for Automated Performance Profiling](/ai-tools-automated-performance-profiling/)
-
+- [AI Tools for Automated Performance Profiling](/ai-tools-compared/ai-tools-automated-performance-profiling/)
+- [AI Tools for Database Performance Optimization Query](/ai-tools-compared/ai-tools-for-database-performance-optimization-query-analysis/)
+- [AI-Powered Database Query Optimization Tools 2026](/ai-tools-compared/ai-powered-database-query-optimization-tools/)
+- [AI Tools for Reviewing Documentation Pull Requests](/ai-tools-compared/ai-tools-for-reviewing-documentation-pull-requests-for-accur/)
+- [AI Powered Tools for Container Orchestration Beyond](/ai-tools-compared/ai-powered-tools-for-container-orchestration-beyond-kubernetes-compared/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

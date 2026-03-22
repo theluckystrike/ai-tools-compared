@@ -40,6 +40,18 @@ Testing database migrations is one of the most critical yet often overlooked asp
 - **Copilot works better for**: incremental additions once the structure exists.
 - **This template will be**: used with each migration file and should include your project's fixture conventions, the test database URL pattern, and any helper utilities already in your test suite.
 
+## Table of Contents
+
+- [Why Migration Testing Matters](#why-migration-testing-matters)
+- [Setting Up Your Test Environment](#setting-up-your-test-environment)
+- [Using AI Tools to Generate Migration Tests](#using-ai-tools-to-generate-migration-tests)
+- [Best Practices for AI-Generated Migration Tests](#best-practices-for-ai-generated-migration-tests)
+- [Common Pitfalls to Avoid](#common-pitfalls-to-avoid)
+- [Comparing AI Tools for Migration Test Generation](#comparing-ai-tools-for-migration-test-generation)
+- [Step-by-Step Workflow for AI-Assisted Migration Test Creation](#step-by-step-workflow-for-ai-assisted-migration-test-creation)
+- [Advanced Patterns for Complex Migrations](#advanced-patterns-for-complex-migrations)
+- [Integrating with CI/CD](#integrating-with-cicd)
+
 ## Why Migration Testing Matters
 
 Every database migration changes your schema or data structure. A migration that works forward but fails on rollback can leave your team unable to revert problematic changes. Similarly, migrations that lose data without warning can cause serious issues. Writing pytest tests for each migration ensures your database evolution remains safe and reversible.

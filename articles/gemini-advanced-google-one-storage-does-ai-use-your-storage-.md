@@ -39,6 +39,20 @@ No, Gemini Advanced AI processing does not count against your Google One storage
 - **Delete from Drive to**: free storage 4.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Understanding the Google One and Gemini Advanced Relationship](#understanding-the-google-one-and-gemini-advanced-relationship)
+- [What Gemini Advanced Does NOT Store in Your Google One Quota](#what-gemini-advanced-does-not-store-in-your-google-one-quota)
+- [What Actually Uses Your Google One Storage](#what-actually-uses-your-google-one-storage)
+- [Practical Storage Management for Gemini Users](#practical-storage-management-for-gemini-users)
+- [The 2TB AI Premium Plan: Is It Enough?](#the-2tb-ai-premium-plan-is-it-enough)
+- [Understanding Data Retention Policies](#understanding-data-retention-policies)
+- [Practical Storage Audit for Gemini Users](#practical-storage-audit-for-gemini-users)
+- [Gemini Advanced vs Other AI Plans](#gemini-advanced-vs-other-ai-plans)
+- [Maximizing Gemini Advanced Value](#maximizing-gemini-advanced-value)
+- [Integration with Google Workspace for Teams](#integration-with-google-workspace-for-teams)
+- [Monitoring Storage Over Time](#monitoring-storage-over-time)
+
 ## Understanding the Google One and Gemini Advanced Relationship
 
 Google One is Google's subscription service that provides expanded cloud storage across Google Drive, Gmail, and Google Photos. Gemini Advanced, formerly known as Gemini Ultra, is included with the Google One AI Premium plan, which costs $19.99 per month in the United States.

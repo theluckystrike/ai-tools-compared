@@ -42,6 +42,25 @@ This hybrid approach captures the strengths of each tool while minimizing weakne
 - **The best AI tools**: for this workflow understand these patterns and can generate idiomatic Rust code that follows best practices.
 - **While it may not**: always produce the most optimized async code, it significantly reduces typing overhead for standard patterns.
 
+## Table of Contents
+
+- [Why AI Tools Matter for Axum Development](#why-ai-tools-matter-for-axum-development)
+- [Claude Code for Axum Projects](#claude-code-for-axum-projects)
+- [GitHub Copilot for Axum Boilerplate](#github-copilot-for-axum-boilerplate)
+- [Cursor for Large Axum Codebases](#cursor-for-large-axum-codebases)
+- [Zed for Editor Integration](#zed-for-editor-integration)
+- [Practical Recommendations](#practical-recommendations)
+- [Real-World Axum Application Examples](#real-world-axum-application-examples)
+- [Tool Comparison: Specific Scenarios](#tool-comparison-specific-scenarios)
+- [Avoiding Common Axum Pitfalls with AI Help](#avoiding-common-axum-pitfalls-with-ai-help)
+- [Integration Patterns with Axum](#integration-patterns-with-axum)
+- [Performance Considerations](#performance-considerations)
+- [Dependency Ecosystem Awareness](#dependency-ecosystem-awareness)
+- [Development Workflow Optimization](#development-workflow-optimization)
+- [Staying Current with Axum](#staying-current-with-axum)
+- [Production Deployment Considerations](#production-deployment-considerations)
+- [Comparison Table: AI Tools for Axum in Detail](#comparison-table-ai-tools-for-axum-in-detail)
+
 ## Why AI Tools Matter for Axum Development
 
 Rust web development with Axum presents unique challenges that AI assistants can address. Axum combines routing, middleware, and state management in a type-safe way, requiring developers to understand async patterns, tower service traits, and Rust's ownership system. The best AI tools for this workflow understand these patterns and can generate idiomatic Rust code that follows best practices.
@@ -437,10 +456,9 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [AI Tools for Writing Jest Tests for Web Worker and Service](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-web-worker-and-service-w/)
-- [Best AI Tools for Web Scraping Data in 2026](/ai-tools-compared/best-ai-tools-for-web-scraping-data/)
-- [How to Switch From Lovable to Cursor for Building Web Apps](/ai-tools-compared/how-to-switch-from-lovable-to-cursor-for-building-web-apps-c/)
-- [AI Coding Assistants for Typescript Deno Fresh Framework Com](/ai-tools-compared/ai-coding-assistants-for-typescript-deno-fresh-framework-com/)
-- [Botpress vs Rasa AI Chatbot Framework Compared](/ai-tools-compared/botpress-vs-rasa-ai-chatbot-framework/)
-
+- [Best AI Coding Tools for Rust Developers 2026](/ai-tools-compared/ai-tools-for-rust-developers-2026/)
+- [How Accurate Are AI Tools for Rust Unsafe Code Blocks](/ai-tools-compared/how-accurate-are-ai-tools-for-rust-unsafe-code-blocks-and-ff/)
+- [How Accurate Are AI Tools at Generating Rust Crossbeam](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
+- [Best AI Tools for Mobile App Development 2026](/ai-tools-compared/ai-tools-for-mobile-app-development-2026/)
+- [Best AI Tools for Writing Rust Async Code with Tokio](/ai-tools-compared/best-ai-tools-for-writing-rust-async-code-with-tokio-runtime/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

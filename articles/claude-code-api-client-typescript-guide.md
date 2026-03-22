@@ -39,6 +39,13 @@ Build a production-ready TypeScript API client for Claude Code by using compile-
 - **Setup and configuration**: Step-by-step instructions included for each tool discussed
 - **Practical recommendations**: Specific use-case guidance based on team size and requirements
 
+## Table of Contents
+
+- [Why TypeScript for Claude Code Integration](#why-typescript-for-claude-code-integration)
+- [Prerequisites](#prerequisites)
+- [Best Practices for Production Use](#best-practices-for-production-use)
+- [Troubleshooting](#troubleshooting)
+
 ## Why TypeScript for Claude Code Integration
 
 TypeScript provides several advantages when working with Claude Code's API:

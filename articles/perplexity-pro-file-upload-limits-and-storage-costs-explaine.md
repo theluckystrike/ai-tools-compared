@@ -39,6 +39,19 @@ Perplexity Pro allows file uploads up to 25 MB per document and 100 files per mo
 - **Use Concurrent Analysis Perplexity**: Pro supports batch processing.
 - **Is the annual plan**: worth it over monthly billing? Annual plans typically save 15-30% compared to monthly billing.
 
+## Table of Contents
+
+- [File Upload Limits on Perplexity Pro](#file-upload-limits-on-perplexity-pro)
+- [Storage Cost Structure](#storage-cost-structure)
+- [How Perplexity Pro Compares to Competing AI Document Tools](#how-perplexity-pro-compares-to-competing-ai-document-tools)
+- [Practical Examples](#practical-examples)
+- [Cost Optimization Strategies](#cost-optimization-strategies)
+- [Integration Considerations for Developers](#integration-considerations-for-developers)
+- [API Rate Limits for File Operations](#api-rate-limits-for-file-operations)
+- [Common Error Codes](#common-error-codes)
+- [When to Choose Pro Basic vs Pro Unlimited](#when-to-choose-pro-basic-vs-pro-unlimited)
+- [Practical Workflow for Teams Using Perplexity Pro](#practical-workflow-for-teams-using-perplexity-pro)
+
 ## File Upload Limits on Perplexity Pro
 
 Perplexity Pro imposes specific constraints on file uploads that differ from the free tier. As of 2026, Pro subscribers can upload files up to **25 MB per document** and process up to **100 files per month** by default. This limit applies to individual files across all supported formats.

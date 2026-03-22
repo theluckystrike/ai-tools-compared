@@ -40,6 +40,16 @@ Choose Claude API batch processing to cut your API costs by exactly 50% compared
 - **For classification, extraction, or simple formatting tasks, Haiku delivers excellent accuracy at a fraction of the price**: $0.50 input / $2.50 output per million tokens in batch mode.
 - **Anthropic processes batch requests**: within 24 hours, though in practice most complete within a few hours depending on load.
 
+## Table of Contents
+
+- [Current Claude API Pricing (2026)](#current-claude-api-pricing-2026)
+- [How Batch Processing Works](#how-batch-processing-works)
+- [Practical Code Examples](#practical-code-examples)
+- [Real-World Cost Comparison](#real-world-cost-comparison)
+- [When to Use Batch vs Real-Time](#when-to-use-batch-vs-real-time)
+- [Optimizing Your Batch Workflows](#optimizing-your-batch-workflows)
+- [Common Pitfalls to Avoid](#common-pitfalls-to-avoid)
+
 ## Current Claude API Pricing (2026)
 
 Anthropic offers three main models with tiered pricing. The real-time (synchronous) API pricing is:

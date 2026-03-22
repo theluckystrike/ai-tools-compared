@@ -40,6 +40,16 @@ Claude is the best AI assistant for learning Python decorators and metaclasses, 
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Why Learning Decorators and Metaclasses Requires Specialized Help](#why-learning-decorators-and-metaclasses-requires-specialized-help)
+- [Key Features to Look for in an AI Learning Assistant](#key-features-to-look-for-in-an-ai-learning-assistant)
+- [Practical Exercise Examples for Decorators](#practical-exercise-examples-for-decorators)
+- [Metaclass Exercises That Build Real Skills](#metaclass-exercises-that-build-real-skills)
+- [How AI Assistants Enhance the Learning Process](#how-ai-assistants-enhance-the-learning-process)
+- [Choosing the Right Tool for Your Learning Style](#choosing-the-right-tool-for-your-learning-style)
+- [Getting Started with Practice](#getting-started-with-practice)
+
 ## Why Learning Decorators and Metaclasses Requires Specialized Help
 
 Unlike basic Python syntax, decorators and metaclasses involve concepts that require understanding of closures, first-class functions, and the Python object model. Many developers struggle because traditional tutorials present these topics in isolation without connecting them to real-world use cases. An effective AI assistant bridges this gap by providing contextual explanations, generating relevant exercises, and offering immediate feedback on your implementations.
@@ -278,10 +288,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [Free AI Tools for Learning Python with Code Examples 2026](/ai-tools-compared/free-ai-tools-for-learning-python-with-code-examples-2026/)
-- [Best AI for Learning OAuth2 and OIDC Authentication Flows](/ai-tools-compared/best-ai-for-learning-oauth2-and-oidc-authentication-flows-wi/)
-- [Free AI Tools for Students Learning to Code 2026 List](/ai-tools-compared/free-ai-tools-for-students-learning-to-code-2026-list/)
+- [Best AI Tools for Code Migration Python 2](/ai-tools-compared/best-ai-tools-for-code-migration-python-2-to-3-java-8-to-21-guide/)
 - [AI Code Generation for Python FastAPI Endpoints](/ai-tools-compared/ai-code-generation-for-python-fastapi-endpoints-with-pydantic-models-compared/)
-- [AI Tools for Interpreting Python Traceback Errors](/ai-tools-compared/ai-tools-for-interpreting-python-traceback-errors-in-django-middleware-chains/)
-
+- [Free AI Tools for Students Learning to Code 2026 List](/ai-tools-compared/free-ai-tools-for-students-learning-to-code-2026-list/)
+- [Best AI Assistant for Learning Web Security Fundamentals](/ai-tools-compared/best-ai-assistant-for-learning-web-security-fundamentals-owa/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

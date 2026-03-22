@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI Tools for Reviewing Terraform Plans Before Applying"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 {% raw %}
 
@@ -39,6 +41,20 @@ Deploying infrastructure changes without proper review leads to costly mistakes,
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
+
+## Table of Contents
+
+- [Why AI-Assisted Plan Review Matters](#why-ai-assisted-plan-review-matters)
+- [Categories of AI Tools for Terraform Review](#categories-of-ai-tools-for-terraform-review)
+- [Practical Integration Approaches](#practical-integration-approaches)
+- [Evaluating AI Tools for Your Workflow](#evaluating-ai-tools-for-your-workflow)
+- [Recommendations for Implementation](#recommendations-for-implementation)
+- [Comprehensive Tool Comparison Matrix](#comprehensive-tool-comparison-matrix)
+- [Production Implementation Guide](#production-implementation-guide)
+- [Cost Analysis: Infrastructure Changes](#cost-analysis-infrastructure-changes)
+- [Handling False Positives](#handling-false-positives)
+- [Multi-Stage Approval Workflow](#multi-stage-approval-workflow)
+- [Integration with Slack Notifications](#integration-with-slack-notifications)
 
 ## Why AI-Assisted Plan Review Matters
 

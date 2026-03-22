@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI Coding Assistants for Go Testing Table Driven Tests Gener"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 
 Go developers have embraced table-driven tests as the standard approach for writing concise, maintainable test cases. The quality of AI-generated table-driven tests varies significantly across different coding assistants, and understanding these differences helps developers choose the right tool for their testing workflows.
@@ -38,6 +40,14 @@ Go developers have embraced table-driven tests as the standard approach for writ
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Lower-quality outputs might omit**: the error checking logic or use generic test names like "test1", "test2".
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
+
+## Table of Contents
+
+- [Understanding Go Table-Driven Tests](#understanding-go-table-driven-tests)
+- [Common AI Generation Issues](#common-ai-generation-issues)
+- [Practical Examples](#practical-examples)
+- [Quality Assessment Criteria](#quality-assessment-criteria)
+- [Best Practices for AI-Assisted Test Generation](#best-practices-for-ai-assisted-test-generation)
 
 ## Understanding Go Table-Driven Tests
 

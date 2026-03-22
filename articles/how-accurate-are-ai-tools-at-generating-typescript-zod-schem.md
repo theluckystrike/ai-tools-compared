@@ -39,6 +39,13 @@ AI tools generate correct Zod schemas about 80% of the time for common validatio
 - **AI tools generate correct**: Zod schemas about 80% of the time for common validation patterns but frequently miss edge cases, custom validators, and complex nested structures.
 - **These represent the 80%**: accuracy case.
 
+## Table of Contents
+
+- [Testing AI Tools with Zod Schema Generation](#testing-ai-tools-with-zod-schema-generation)
+- [Accuracy Comparison](#accuracy-comparison)
+- [Best Practices for AI-Generated Zod Schemas](#best-practices-for-ai-generated-zod-schemas)
+- [When to Trust AI-Generated Schemas vs. Write Manually](#when-to-trust-ai-generated-schemas-vs-write-manually)
+
 ## Testing AI Tools with Zod Schema Generation
 
 I tested three leading AI coding tools—Claude Code, Cursor, and GitHub Copilot—by giving each the same TypeScript interfaces and asking them to generate corresponding Zod schemas. The test cases ranged from simple user objects to nested data structures with validation rules. Here is what I found.
@@ -288,10 +295,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
+- [AI Tools for Writing TypeScript Zod Schemas 2026](/ai-tools-compared/ai-tools-for-writing-typescript-zod-schemas-2026/)
 - [How Accurate Are AI Tools at Generating Rust Crossbeam](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
 - [How Accurate Are AI Tools](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-serde-serialization-code/)
-- [Best Prompting Strategies for Getting Accurate Code from](/ai-tools-compared/best-prompting-strategies-for-getting-accurate-code-from-ai-/)
-- [How Accurate Are AI Tools at Rust WASM Compilation and Bindg](/ai-tools-compared/how-accurate-are-ai-tools-at-rust-wasm-compilation-and-bindg/)
+- [How to Prevent AI Coding Tools from Generating Overly](/ai-tools-compared/how-to-prevent-ai-coding-tools-from-generating-overly-complex-solutions/)
 - [How Accurate Are AI Tools for Rust Unsafe Code Blocks](/ai-tools-compared/how-accurate-are-ai-tools-for-rust-unsafe-code-blocks-and-ff/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

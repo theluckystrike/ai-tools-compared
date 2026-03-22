@@ -39,6 +39,18 @@ The best AI tools for real-time analytics are Apache Kafka for event streaming, 
 - **Your system must ingest, process, and derive insights from data within a time window that matters for your use case**: often milliseconds to seconds.
 - **For teams with simpler**: needs or cloud-native preferences: - AWS Kinesis reduces operational overhead at the cost of less flexibility and higher per-message pricing at scale.
 
+## Table of Contents
+
+- [Understanding Real-Time Analytics Requirements](#understanding-real-time-analytics-requirements)
+- [Architecture Patterns: Choosing Your Stack](#architecture-patterns-choosing-your-stack)
+- [Streaming Data Pipelines with Apache Kafka](#streaming-data-pipelines-with-apache-kafka)
+- [Apache Flink for Complex Event Processing](#apache-flink-for-complex-event-processing)
+- [ClickHouse for Real-Time OLAP](#clickhouse-for-real-time-olap)
+- [Implementing Real-Time Anomaly Detection](#implementing-real-time-anomaly-detection)
+- [Materialize for Streaming SQL](#materialize-for-streaming-sql)
+- [Vector Databases for Real-Time Similarity Search](#vector-databases-for-real-time-similarity-search)
+- [Practical Recommendations](#practical-recommendations)
+
 ## Understanding Real-Time Analytics Requirements
 
 Real-time analytics demands low-latency data processing. Your system must ingest, process, and derive insights from data within a time window that matters for your use case—often milliseconds to seconds. Several core capabilities define effective real-time analytics:
@@ -309,10 +321,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [AI Tools for Inventory Analytics: A Practical Guide for](/ai-tools-compared/ai-tools-for-inventory-analytics/)
+- [AI Tools for Inventory Analytics](/ai-tools-compared/ai-tools-for-inventory-analytics/)
+- [AI Tools for Customer Journey Analytics](/ai-tools-compared/ai-tools-for-customer-journey-analytics/)
 - [AI Tools for Social Media Analytics: A Practical Guide](/ai-tools-compared/ai-tools-for-social-media-analytics/)
-- [Mode Analytics vs Hex AI Notebooks: A Practical](/ai-tools-compared/mode-analytics-vs-hex-ai-notebooks/)
-- [AI Tools for Real Estate Virtual Staging Compared](/ai-tools-compared/ai-tools-for-real-estate-virtual-staging-compared/)
-- [Best AI Assistant for Creating Test Data Factories with Real](/ai-tools-compared/best-ai-assistant-for-creating-test-data-factories-with-real/)
-
+- [Best AI Powered Chatops Tools](/ai-tools-compared/best-ai-powered-chatops-tools-for-slack-and-devops-integration/)
+- [Best AI Coding Tool for Generating Mobile Analytics Event](/ai-tools-compared/best-ai-coding-tool-for-generating-mobile-analytics-event-tr/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

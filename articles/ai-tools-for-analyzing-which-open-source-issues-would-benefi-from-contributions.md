@@ -38,6 +38,15 @@ To find open source issues worth contributing to, filter for `good first issue` 
 - **If no one else reports it**: your local environment configuration is likely the cause.
 - **Should I reinstall the**: tool to fix this? A clean reinstall sometimes resolves persistent issues caused by corrupted caches or configuration files.
 
+## Table of Contents
+
+- [Why Issue Analysis Matters for Contributors](#why-issue-analysis-matters-for-contributors)
+- [Approaches to Issue Analysis](#approaches-to-issue-analysis)
+- [Tools for Issue Analysis](#tools-for-issue-analysis)
+- [Best Practices for Issue Selection](#best-practices-for-issue-selection)
+- [Measuring Your Contribution Success](#measuring-your-contribution-success)
+- [Using GitHub CLI for Issue Discovery](#using-github-cli-for-issue-discovery)
+
 ## Why Issue Analysis Matters for Contributors
 
 Open source maintainers often struggle with issue triage, while contributors waste time on issues that may never be addressed. Understanding which issues are primed for contribution helps everyone involved:
@@ -336,11 +345,10 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 
 ## Related Articles
 
-- [Best AI Assistant for Creating Open Source Project Branding](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)
-- [Best AI Assistant for Drafting Open Source Partnership and](/ai-tools-compared/best-ai-assistant-for-drafting-open-source-partnership-and-integration-proposals-2026/)
-- [Best AI Assistant for Generating Open Source Release](/ai-tools-compared/best-ai-assistant-for-generating-open-source-release-announcements/)
-- [Best AI Assistant for Writing Open Source Plugin Development](/ai-tools-compared/best-ai-assistant-for-writing-open-source-plugin-development/)
-- [Best AI Assistant for Writing Open Source Roadmap Documents](/ai-tools-compared/best-ai-assistant-for-writing-open-source-roadmap-documents-from-issue-milestone-data/)
-
+- [AI Tools for Detecting Duplicate GitHub Issues Using](/ai-tools-compared/ai-tools-for-detecting-duplicate-github-issues-using-semantic-similarity-matching/)
+- [Best AI Tool for Triaging GitHub Issues by Severity and Cate](/ai-tools-compared/best-ai-tool-for-triaging-github-issues-by-severity-and-cate/)
+- [AI Tools for Analyzing Issue Comment Sentiment to Identify](/ai-tools-compared/ai-tools-for-analyzing-issue-comment-sentiment-to-identify-f/)
+- [Best AI Powered Chatops Tools](/ai-tools-compared/best-ai-powered-chatops-tools-for-slack-and-devops-integration/)
+- [Best AI for Writing Good First Issue Descriptions That](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attract-new-contributors/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

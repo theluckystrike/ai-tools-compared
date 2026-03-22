@@ -43,6 +43,13 @@ This guide covers practical methods for teaching AI coding tools—including Git
 - **Include a ticket number**: if applicable (e.g., feature/PROJ-123-user-dashboard) Example: When implementing user profile editing, create `feature/user-profile-edit` not `new-user-profile功能`.
 - **Check that it uses**: the correct prefix (`feature/`) 3.
 
+## Table of Contents
+
+- [Why Branch Naming Conventions Matter](#why-branch-naming-conventions-matter)
+- [Prerequisites](#prerequisites)
+- [Practical Example: From Request to Branch](#practical-example-from-request-to-branch)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Branch Naming Conventions Matter
 
 Most teams establish branch naming conventions for good reason. A consistent pattern like `feature/user-authentication` or `fix/payment-processing-error` makes it easy to identify what a branch contains without examining its commits. Convention-aware branches integrate with CI/CD pipelines, GitHub Actions workflows, and project management tools that parse branch names automatically.
@@ -335,11 +342,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Configure Claude Code](/ai-tools-compared/how-to-configure-claude-code-to-follow-your-teams-feature-fl/)
-- [Best Way to Configure AI Coding Tools to Follow Your Databas](/ai-tools-compared/best-way-to-configure-ai-coding-tools-to-follow-your-databas/)
-- [How to Configure AI Coding Tools to Exclude Secrets and](/ai-tools-compared/how-to-configure-ai-coding-tools-to-exclude-secrets-and-env-/)
 - [Configuring AI Coding Tools to Follow Your Teams Dependency](/ai-tools-compared/configuring-ai-coding-tools-to-follow-your-teams-dependency-/)
-- [Configuring AI Coding Tools to Match Your Teams Specific Doc](/ai-tools-compared/configuring-ai-coding-tools-to-match-your-teams-specific-doc/)
-
+- [Best Way to Configure AI Coding Tools to Follow Your](/ai-tools-compared/best-way-to-configure-ai-coding-tools-to-follow-your-databas/)
+- [Configuring AI Coding Tools to Match Your Teams Specific](/ai-tools-compared/configuring-ai-coding-tools-to-match-your-teams-specific-doc/)
+- [What Source Code Context Window Do Different AI Coding Tools](/ai-tools-compared/what-source-code-context-window-do-different-ai-coding-tools/)
+- [How to Audit What Source Code AI Coding Tools Transmit](/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

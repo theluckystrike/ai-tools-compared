@@ -50,6 +50,19 @@ act -j deploy-staging -s GITHUB_TOKEN=$GITHUB_TOKEN
 Built by theluckystrike — More at zovo.one
 
 
+## Table of Contents
+
+- [What Are Composite Actions?](#what-are-composite-actions)
+- [The Three Contenders](#the-three-contenders)
+- [Claude 3.5 Sonnet: Multi-Step Action Orchestration](#claude-35-sonnet-multi-step-action-orchestration)
+- [GPT-4 Turbo: Quick Action Generation](#gpt-4-turbo-quick-action-generation)
+- [GitHub Copilot: Fastest IDE Integration](#github-copilot-fastest-ide-integration)
+- [Real Composite Actions Published to Marketplace](#real-composite-actions-published-to-marketplace)
+- [Marketplace Publishing Checklist](#marketplace-publishing-checklist)
+- [Implementation Workflow: AI-Assisted Development](#implementation-workflow-ai-assisted-development)
+- [Pricing & Annual Cost (40 Actions/Year)](#pricing-annual-cost-40-actionsyear)
+- [Common Mistakes Caught by AI](#common-mistakes-caught-by-ai)
+
 ## What Are Composite Actions?
 
 Composite actions bundle multiple shell commands or other actions into one reusable unit. Example:
@@ -531,6 +544,11 @@ action-validator .github/actions/my-action/action.yml
 
 ## Related Articles
 
+- [AI Tools for Generating GitHub Actions Workflows (2)](/ai-tools-compared/ai-tools-github-actions-workflows/)
+- [AI Tools for Generating GitHub Actions Workflows](/ai-tools-compared/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
+- [Best AI Tools for Writing GitHub Actions](/ai-tools-compared/ai-tools-for-writing-github-actions-guide)
+- [AI Tools for Writing GitHub Actions Workflows (2026)](/ai-tools-compared/ai-tools/best-ai-tools-for-github-actions-workflows/)
+- [Best AI Tools for Writing GitHub Actions Reusable Workflow](/ai-tools-compared/best-ai-tools-for-writing-github-actions-reusable-workflow-t/)
 1. [GitHub Actions Matrix Builds: Parallel Testing Across Node Versions](/articles/github-actions-matrix-builds/)
 2. [Securing GitHub Actions: Secrets, Permissions, OIDC Tokens](/articles/github-actions-security-secrets/)
 3. [Publishing Actions to GitHub Marketplace: Complete Checklist](/articles/github-marketplace-action-publishing/)

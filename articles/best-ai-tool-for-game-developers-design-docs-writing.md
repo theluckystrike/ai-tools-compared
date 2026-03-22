@@ -11,7 +11,8 @@ score: 9
 categories: [best-of]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, best-of, artificial-intelligence]
+---
 ---
 layout: default
 title: "Best AI Tool for Game Developers Design Docs Writing"
@@ -25,7 +26,8 @@ score: 9
 categories: [best-of]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, best-of, artificial-intelligence]
+---
 
 {% raw %}
 
@@ -40,6 +42,25 @@ The best AI tools for game design documentation generate structured first drafts
 - **A designer describing a**: crafting system can receive a technical document that programmers can immediately use as a starting point for implementation.
 - **The document should also**: maintain consistent terminology, formatting, and depth throughout, since inconsistencies confuse readers and undermine the document's authority.
 - **A week-long trial with**: actual work gives better signal than feature comparison charts.
+
+## Table of Contents
+
+- [Why Game Developers Need Specialized Documentation Tools](#why-game-developers-need-specialized-documentation-tools)
+- [Key Capabilities to Evaluate](#key-capabilities-to-evaluate)
+- [Practical Applications in Game Development](#practical-applications-in-game-development)
+- [Workflow Integration Considerations](#workflow-integration-considerations)
+- [Measuring Documentation Quality](#measuring-documentation-quality)
+- [Getting Started with AI-Assisted Documentation](#getting-started-with-ai-assisted-documentation)
+- [Practical Documentation Generation Examples](#practical-documentation-generation-examples)
+- [AI Tool Recommendations for Game Dev](#ai-tool-recommendations-for-game-dev)
+- [Template: Game Mechanics Documentation](#template-game-mechanics-documentation)
+- [Overview](#overview)
+- [Core Mechanics](#core-mechanics)
+- [Data Structure](#data-structure)
+- [UI Flow](#ui-flow)
+- [Balance Parameters](#balance-parameters)
+- [Known Edge Cases](#known-edge-cases)
+- [Workflow Integration Best Practices](#workflow-integration-best-practices)
 
 ## Why Game Developers Need Specialized Documentation Tools
 

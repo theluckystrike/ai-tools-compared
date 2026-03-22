@@ -40,6 +40,20 @@ AI coding assistants generally understand to avoid hardcoding secrets and will s
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **They often see environment**: variables used correctly in production code, but they also encounter examples where developers accidentally committed secrets or used insecure patterns.
 
+## Table of Contents
+
+- [The Challenge With AI-Generated Secret Handling](#the-challenge-with-ai-generated-secret-handling)
+- [Common Patterns in AI Code Suggestions](#common-patterns-in-ai-code-suggestions)
+- [Environment Variable Loading Patterns](#environment-variable-loading-patterns)
+- [Secret Validation and Type Safety](#secret-validation-and-type-safety)
+- [Handling Missing Secrets Gracefully](#handling-missing-secrets-gracefully)
+- [Environment-Specific Configuration](#environment-specific-configuration)
+- [Best Practices for Working With AI Code Suggestions](#best-practices-for-working-with-ai-code-suggestions)
+- [Production-Ready Environment Variable Handling](#production-ready-environment-variable-handling)
+- [AI Quality Assessment by Language](#ai-quality-assessment-by-language)
+- [Red Flags in AI-Generated Code](#red-flags-in-ai-generated-code)
+- [Startup Validation Pattern](#startup-validation-pattern)
+
 ## The Challenge With AI-Generated Secret Handling
 
 AI code suggestion tools trained on vast code repositories inevitably absorb both good and bad practices related to secret management. They often see environment variables used correctly in production code, but they also encounter examples where developers accidentally committed secrets or used insecure patterns. This mixed training data creates inconsistency in how AI assistants recommend handling sensitive configuration.

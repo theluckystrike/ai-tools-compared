@@ -56,6 +56,14 @@ For example:
 I have an API that returns paginated user data.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Why This Specific Task Is Challenging](#why-this-specific-task-is-challenging)
+- [Key Features to Look for in an AI Assistant](#key-features-to-look-for-in-an-ai-assistant)
+- [Comparing Top AI Assistants](#comparing-top-ai-assistants)
+- [Practical Code Example](#practical-code-example)
+- [Optimizing Your Prompts for Better Results](#optimizing-your-prompts-for-better-results)
+
 ## Why This Specific Task Is Challenging
 
 Handling nested JSON from paginated APIs involves several complexities that make AI code generation particularly useful:

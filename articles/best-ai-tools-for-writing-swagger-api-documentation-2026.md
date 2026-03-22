@@ -24,6 +24,18 @@ Claude 3 Opus excels at generating complete Swagger/OpenAPI specs from code comm
 - **Cost**: Claude ($20/month), GPT-4 (API pay-per-use ~$0.03/1K input tokens), Copilot ($10-19/month).
 - **Best choice**: Claude for bulk API documentation projects. GPT-4 for high-quality descriptions. Copilot for quick inline specs.
 
+## Table of Contents
+
+- [Understanding Swagger/OpenAPI Generation Challenges](#understanding-swaggeropenapi-generation-challenges)
+- [Claude 3 Opus: Comprehensive Spec Generation](#claude-3-opus-comprehensive-spec-generation)
+- [GPT-4 Turbo: High-Quality Descriptions](#gpt-4-turbo-high-quality-descriptions)
+- [GitHub Copilot: IDE-Native Autocomplete](#github-copilot-ide-native-autocomplete)
+- [Real-World Implementation: Building a Complete API Spec](#real-world-implementation-building-a-complete-api-spec)
+- [Tool Selection Matrix](#tool-selection-matrix)
+- [Common Pitfalls and How to Avoid Them](#common-pitfalls-and-how-to-avoid-them)
+- [Automation Patterns](#automation-patterns)
+- [Cost Analysis](#cost-analysis)
+
 ## Understanding Swagger/OpenAPI Generation Challenges
 
 API documentation is critical but tedious. Manual Swagger spec writing involves countless curly braces, proper indentation, accurate endpoint parameters, and schema definitions. Most developers delay or skip proper documentation, creating maintainability nightmares downstream.

@@ -40,6 +40,19 @@ Generating Grafana dashboards manually for complex systems consumes significant 
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **This guide covers practical**: approaches for developers and power users implementing automated dashboard generation.
 
+## Table of Contents
+
+- [The Challenge with Manual Dashboard Creation](#the-challenge-with-manual-dashboard-creation)
+- [Approaches to Automated Dashboard Generation](#approaches-to-automated-dashboard-generation)
+- [Practical Implementation Strategy](#practical-implementation-strategy)
+- [Tools Worth Exploring](#tools-worth-exploring)
+- [Best Practices for Automated Dashboards](#best-practices-for-automated-dashboards)
+- [Advanced Panel Configuration Patterns](#advanced-panel-configuration-patterns)
+- [AI-Assisted Dashboard Quality Standards](#ai-assisted-dashboard-quality-standards)
+- [Comparison Table: Dashboard Generation Approaches](#comparison-table-dashboard-generation-approaches)
+- [Integration with Alerting Rules](#integration-with-alerting-rules)
+- [Production Deployment Checklist](#production-deployment-checklist)
+
 ## The Challenge with Manual Dashboard Creation
 
 Modern distributed systems generate hundreds of metrics across microservices, containers, and infrastructure components. Creating meaningful Grafana dashboards requires understanding metric cardinality, understanding query patterns, and designing appropriate visualization types. This task becomes repetitive when deploying new services or when metric schemas change frequently.

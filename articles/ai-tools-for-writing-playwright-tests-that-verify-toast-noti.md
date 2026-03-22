@@ -40,6 +40,23 @@ Toast notifications are an ubiquitous UI pattern in modern web applications. Use
 - **The toast auto-dismisses after**: 5 seconds 4.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Why Toast Notifications Are Tricky to Test](#why-toast-notifications-are-tricky-to-test)
+- [Writing Playwright Tests for Toast Notifications](#writing-playwright-tests-for-toast-notifications)
+- [How AI Tools Can Help](#how-ai-tools-can-help)
+- [Handling Animation and Timing Considerations](#handling-animation-and-timing-considerations)
+- [Testing Different Toast Types](#testing-different-toast-types)
+- [Best Practices for AI-Generated Toast Tests](#best-practices-for-ai-generated-toast-tests)
+- [Tool Comparison for Toast Tests](#tool-comparison-for-toast-tests)
+- [Real-World Toast Scenarios](#real-world-toast-scenarios)
+- [CLI Commands for Test Generation](#cli-commands-for-test-generation)
+- [Debugging Flaky Toast Tests](#debugging-flaky-toast-tests)
+- [AI Prompt Best Practices for Toast Tests](#ai-prompt-best-practices-for-toast-tests)
+- [Common Toast Test Mistakes and Fixes](#common-toast-test-mistakes-and-fixes)
+- [Performance Testing Toast Implementation](#performance-testing-toast-implementation)
+- [Integration with CI/CD](#integration-with-cicd)
+
 ## Why Toast Notifications Are Tricky to Test
 
 Toast notifications present unique testing challenges that differ from typical UI elements. The core difficulty lies in their ephemeral nature—they appear, potentially auto-dismiss, and can be manually closed. A test that works perfectly in one environment may fail in another due to timing variations, animation durations, or race conditions between the UI and your assertions.

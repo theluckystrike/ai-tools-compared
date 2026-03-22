@@ -37,6 +37,19 @@ permalink: /ai-tools-for-generating-prometheus-alerting-rules-2026/---
 - **It clarifies why `rate()`**: is necessary (smooths out metric spikes), why averaging across CPUs makes sense, and what `humanizePercentage` does (renders `0.85` as `85%`).
 - **Without access to your**: actual metrics and baselines, it suggests generic values (80% CPU, 1000ms latency).
 
+## Table of Contents
+
+- [The Prometheus Rules Problem](#the-prometheus-rules-problem)
+- [Claude (claude-opus-4-6)](#claude-claude-opus-4-6)
+- [ChatGPT Plus (GPT-4)](#chatgpt-plus-gpt-4)
+- [Copilot (GitHub Copilot)](#copilot-github-copilot)
+- [Official Prometheus Documentation](#official-prometheus-documentation)
+- [Comparative Benchmark: Complete Alerting Setup](#comparative-benchmark-complete-alerting-setup)
+- [Advanced PromQL Patterns](#advanced-promql-patterns)
+- [Practical Alert Design](#practical-alert-design)
+- [Production Validation](#production-validation)
+- [Recommendation Matrix](#recommendation-matrix)
+
 ## The Prometheus Rules Problem
 
 Prometheus alerting is deceptively complex. You write alert rules in PromQL (Prometheus Query Language), which looks simple: `node_cpu_seconds_total > 100`. But production rules juggle multiple metrics, thresholds, durations, and conditional logic. Mistakes cause alert storms or missed outages.

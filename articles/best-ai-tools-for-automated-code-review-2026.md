@@ -40,6 +40,19 @@ Automated code review tools augment human reviewers by catching common mistakesâ
 - **Automated code review works**: best as one layer in a quality strategy.
 - **A week-long trial with**: actual work gives better signal than feature comparison charts.
 
+## Table of Contents
+
+- [The Case for Automated Code Review](#the-case-for-automated-code-review)
+- [DeepSource](#deepsource)
+- [Codacy](#codacy)
+- [GitHub Advanced Security & CodeQL](#github-advanced-security-codeql)
+- [Language-Specific Tools](#language-specific-tools)
+- [Integrating Multiple Tools](#integrating-multiple-tools)
+- [Comparison Matrix](#comparison-matrix)
+- [Best Practices for Automated Review](#best-practices-for-automated-review)
+- [Common Pitfalls](#common-pitfalls)
+- [Choosing Your Tools](#choosing-your-tools)
+
 ## The Case for Automated Code Review
 
 Code reviews catch bugs, but human reviewers are inconsistent. Someone reviews 50 files carefully; the next day they're tired and skim changes. Automated tools apply consistent rules across every pull request while humans focus on architectural decisions and complex logic.

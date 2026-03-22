@@ -50,6 +50,15 @@ Managing GitHub issues efficiently becomes challenging as repositories grow. A w
 - **While primarily known for**: code generation, Copilot's natural language understanding helps categorize issues when used with GitHub's built-in automation features.
 - **Copilot works best within**: the GitHub ecosystem, maintaining context across issues, pull requests, and code reviews.
 
+## Table of Contents
+
+- [What Automated Issue Triage Requires](#what-automated-issue-triage-requires)
+- [Top AI Tools for GitHub Issue Triage](#top-ai-tools-for-github-issue-triage)
+- [Choosing the Right Triage Solution](#choosing-the-right-triage-solution)
+- [Implementation Best Practices](#implementation-best-practices)
+- [Building a Custom Triage System](#building-a-custom-triage-system)
+- [Scaling and Measuring Triage](#scaling-and-measuring-triage)
+
 ## What Automated Issue Triage Requires
 
 Effective AI-driven triage systems need to handle several core tasks. First, they must understand issue content through natural language processing to determine whether a report describes a bug, feature request, documentation gap, or question. Second, they need to assess severity by analyzing impact descriptions, error messages, and reproduction steps. Third, they should extract or suggest relevant labels, components, and assignees based on issue patterns and team structure.

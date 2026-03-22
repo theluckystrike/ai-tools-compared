@@ -51,6 +51,16 @@ Generate a Mermaid activity diagram for this user login flow acceptance criteria
 - User enters shipping address
 5.
 
+## Table of Contents
+
+- [Why Generate Activity Diagrams from Acceptance Criteria](#why-generate-activity-diagrams-from-acceptance-criteria)
+- [Tools for AI-Powered Activity Diagram Generation](#tools-for-ai-powered-activity-diagram-generation)
+- [Step-by-Step Workflow](#step-by-step-workflow)
+- [Practical Examples](#practical-examples)
+- [Integrating Activity Diagrams into Development Workflow](#integrating-activity-diagrams-into-development-workflow)
+- [Common Pitfalls and Solutions](#common-pitfalls-and-solutions)
+- [Tips for Better Results](#tips-for-better-results)
+
 ## Why Generate Activity Diagrams from Acceptance Criteria
 
 User acceptance criteria typically describe expected system behavior in structured text format. Converting these text descriptions into visual activity diagrams offers several advantages:

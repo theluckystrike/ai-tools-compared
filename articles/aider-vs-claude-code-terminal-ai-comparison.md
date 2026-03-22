@@ -11,7 +11,8 @@ score: 8
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison, artificial-intelligence, claude-ai]---
+tags: [ai-tools-compared, comparison, artificial-intelligence, claude-ai]
+---
 ---
 layout: default
 title: "aider vs Claude Code: Terminal AI Coding Assistants Compared"
@@ -25,7 +26,8 @@ score: 8
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison, artificial-intelligence, claude-ai]---
+tags: [ai-tools-compared, comparison, artificial-intelligence, claude-ai]
+---
 
 
 Choose Aider if you want automatic git integration, multi-file refactoring with import updates, and the flexibility to switch between Claude, GPT, and local models mid-session. Choose Claude Code if you want Anthropic's latest reasoning capabilities, explicit control over when file changes are applied, and a general-purpose terminal assistant that handles non-coding tasks too. Many developers use both—Aider for focused coding sessions with git tracking, Claude Code for exploration and broader questions.
@@ -38,6 +40,25 @@ Choose Aider if you want automatic git integration, multi-file refactoring with 
 - **This git-first approach makes**: Aider particularly useful for developers who want their AI assistance integrated into their version control workflow.
 - **Claude Code uses Anthropic's**: models exclusively.
 - **Many developers end up using both tools for different purposes**: Aider for focused coding sessions with git integration, Claude Code for broader questions and exploration.
+
+## Table of Contents
+
+- [What is Aider?](#what-is-aider)
+- [Quick Comparison](#quick-comparison)
+- [What is Claude Code?](#what-is-claude-code)
+- [Core Differences in Architecture](#core-differences-in-architecture)
+- [Practical Examples](#practical-examples)
+- [Performance Considerations](#performance-considerations)
+- [When to Choose Aider](#when-to-choose-aider)
+- [When to Choose Claude Code](#when-to-choose-claude-code)
+- [Recommendations](#recommendations)
+- [Specialized Use Cases](#specialized-use-cases)
+- [Installation and Setup Comparison](#installation-and-setup-comparison)
+- [Real-World Performance Comparison](#real-world-performance-comparison)
+- [Security and Data Handling](#security-and-data-handling)
+- [Migration Path from Copilot](#migration-path-from-copilot)
+- [Integration with Existing Tools](#integration-with-existing-tools)
+- [Performance Under Load](#performance-under-load)
 
 ## What is Aider?
 
@@ -336,10 +357,9 @@ For teams with large monorepos, Claude Code's manual context selection often pro
 
 ## Related Articles
 
-- [Claude Code Terminal Permission Denied Fix](/ai-tools-compared/claude-code-terminal-permission-denied-fix/)
-- [Does Claude Code Send Terminal Output to Anthropic Servers P](/ai-tools-compared/does-claude-code-send-terminal-output-to-anthropic-servers-p/)
-- [How to Migrate From Copilot for Neovim](/ai-tools-compared/migrate-copilot-for-neovim-setup-to-claude-code-terminal-wor/)
-- [AI Coding Assistants for Go Testing Table Driven Tests Gener](/ai-tools-compared/ai-coding-assistants-for-go-testing-table-driven-tests-gener/)
-- [AI Coding Assistants for Typescript Deno Fresh Framework Com](/ai-tools-compared/ai-coding-assistants-for-typescript-deno-fresh-framework-com/)
-
+- [Does Claude Code Send Terminal Output to Anthropic Servers](/ai-tools-compared/does-claude-code-send-terminal-output-to-anthropic-servers-p/)
+- [How to Switch from Cursor to Claude Code Without Losing](/ai-tools-compared/how-to-switch-from-cursor-to-claude-code-without-losing-settings/)
+- [Claude Code Runbook Documentation Guide](/ai-tools-compared/claude-code-runbook-documentation-guide/)
+- [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
+- [Cheapest Way to Use Claude for Coding Projects 2026](/ai-tools-compared/cheapest-way-to-use-claude-for-coding-projects-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

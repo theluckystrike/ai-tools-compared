@@ -39,6 +39,19 @@ This guide provides an overview to help you understand and make informed decisio
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Create the new preferences**: component with appropriate state management 3.
 
+## Table of Contents
+
+- [Understanding the Background Agent Architecture](#understanding-the-background-agent-architecture)
+- [Setting Up Background Agent Tasks](#setting-up-background-agent-tasks)
+- [Practical Example: Implementing a Feature End-to-End](#practical-example-implementing-a-feature-end-to-end)
+- [Configuring Agent Behavior](#configuring-agent-behavior)
+- [Best Practices for Autonomous Workflows](#best-practices-for-autonomous-workflows)
+- [Handling Agent Limitations](#handling-agent-limitations)
+- [Advanced: Chaining Multiple Agents](#advanced-chaining-multiple-agents)
+- [Error Recovery and Debugging Agent Tasks](#error-recovery-and-debugging-agent-tasks)
+- [Measuring Agent Productivity Gains](#measuring-agent-productivity-gains)
+- [Cost Implications of Background Agents](#cost-implications-of-background-agents)
+
 ## Understanding the Background Agent Architecture
 
 The background agent in Cursor operates as a persistent AI worker that can execute tasks independently while you continue coding or switch between projects. Unlike traditional chat-based interactions that require constant input, the background agent maintains context across multiple operations and can handle sequential tasks without interrupting your workflow.
@@ -318,10 +331,9 @@ For teams with large API budgets, background agents provide exceptional ROI on i
 
 ## Related Articles
 
-- [How to Use Copilot Agent Mode for Multi-Step Coding Tasks](/ai-tools-compared/how-to-use-copilot-agent-mode-for-multi-step-coding-tasks-20/)
 - [Cursor Background Agent Timing Out Fix (2026)](/ai-tools-compared/cursor-background-agent-timing-out-fix-2026/)
 - [Cursor AI Multi File Editing Feature How It Actually Works](/ai-tools-compared/cursor-ai-multi-file-editing-feature-how-it-actually-works-explained/)
+- [How to Use Copilot Agent Mode for Multi-Step Coding Tasks](/ai-tools-compared/how-to-use-copilot-agent-mode-for-multi-step-coding-tasks-20/)
+- [Best AI Tools for Support Agent Assist](/ai-tools-compared/best-ai-tools-for-support-agent-assist/)
 - [Migrate GitHub Copilot Workspace Setup to Cursor Background](/ai-tools-compared/migrate-github-copilot-workspace-setup-to-cursor-background-/)
-- [Copilot Workspace vs Cursor Composer Multi File Editing Comp](/ai-tools-compared/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -39,6 +39,21 @@ Chainguard images provide hardened, minimal container images designed for securi
 - **Here's how you might**: work with an AI assistant to generate the necessary policies: ``` I need Kubernetes admission controller policies that: 1.
 - **Only allow container images**: from us.gcr.io/distroless namespace 2.
 
+## Table of Contents
+
+- [Understanding Chainguard Image Supply Chain Security](#understanding-chainguard-image-supply-chain-security)
+- [AI-Assisted Policy Generation Workflow](#ai-assisted-policy-generation-workflow)
+- [Practical Examples](#practical-examples)
+- [Advanced Policy Configurations](#advanced-policy-configurations)
+- [Automating Policy Enforcement](#automating-policy-enforcement)
+- [Runtime Security Policies for Chainguard Images](#runtime-security-policies-for-chainguard-images)
+- [Network Policy Integration with Chainguard Verification](#network-policy-integration-with-chainguard-verification)
+- [Vulnerability Scanning Integration](#vulnerability-scanning-integration)
+- [Supply Chain Transparency Reporting](#supply-chain-transparency-reporting)
+- [Continuous Policy Refinement](#continuous-policy-refinement)
+- [Best Practices for AI-Generated Policies](#best-practices-for-ai-generated-policies)
+- [Monitoring Policy Effectiveness](#monitoring-policy-effectiveness)
+
 ## Understanding Chainguard Image Supply Chain Security
 
 Chainguard enforces supply chain security through multiple layers. The images are built using Tekton pipelines that produce SLSA Level 3 provenance, meaning you can verify every step of the build process. Each image includes an SBOM (Software Bill of Materials) in SPDX format, listing all included packages and their versions.
@@ -360,9 +375,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Writing Flutter Golden Image Snapshot Tests for Widget Regression](/ai-tools-for-writing-flutter-golden-image-snapshot-tests-for/)
-- [AI Assistants for Writing Correct AWS IAM Policies](/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
-- [AI Coding Assistants for TypeScript Express Middleware](/ai-coding-assistants-for-typescript-express-middleware-chain/)
+- [AI Tools for Writing Flutter Golden Image Snapshot Tests](/ai-tools-compared/ai-tools-for-writing-flutter-golden-image-snapshot-tests-for/)
+- [AI Tools for API Security Testing](/ai-tools-compared/ai-tools-for-api-security-testing/)
+- [Best Practices for AI Coding Tools](/ai-tools-compared/best-practices-for-ai-coding-tools-in-sox-compliant-financial-environments/)
+- [Enterprise AI Coding Tool Network Security Requirements](/ai-tools-compared/enterprise-ai-coding-tool-network-security-requirements-and-/)
+- [Configure AI Coding Tools](/ai-tools-compared/how-to-configure-ai-coding-tools-to-respect-your-teams-branc/)
 Include clear rationale comments in policies explaining which security requirements each rule addresses. This helps future maintainers understand policy intent and decide whether rules need adjustment as threats evolve.
 
 ## Monitoring Policy Effectiveness

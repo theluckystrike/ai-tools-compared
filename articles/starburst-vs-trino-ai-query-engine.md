@@ -39,6 +39,21 @@ Choose Trino if you have Kubernetes expertise, need zero licensing costs, and wa
 - **For AI applications processing**: user data or proprietary information, Starburst's integrated security reduces your implementation burden significantly.
 - **Both engines support this**: but Starburst's optimizer handles cross-catalog joins more reliably in production because its statistics collection covers more connector types.
 
+## Table of Contents
+
+- [What Are These Tools?](#what-are-these-tools)
+- [Query Performance for AI Workloads](#query-performance-for-ai-workloads)
+- [Enterprise Features That Matter for AI Systems](#enterprise-features-that-matter-for-ai-systems)
+- [Cost Considerations](#cost-considerations)
+- [Trino in Practice: Real-World Setup](#trino-in-practice-real-world-setup)
+- [When to Choose Trino](#when-to-choose-trino)
+- [When to Choose Starburst](#when-to-choose-starburst)
+- [Making the Decision](#making-the-decision)
+- [Implementation Timeline Comparison](#implementation-timeline-comparison)
+- [Performance Benchmarks: Real-World Queries](#performance-benchmarks-real-world-queries)
+- [Monitoring and Observability](#monitoring-and-observability)
+- [Disaster Recovery and Backup](#disaster-recovery-and-backup)
+
 ## What Are These Tools?
 
 Trino (formerly PrestoSQL) is a distributed SQL query engine designed for running interactive analytic queries against data sources of any size. It connects to multiple data sources through connectors and executes queries across distributed infrastructure. Trino's connector architecture lets you query Hive metastore, Iceberg tables, PostgreSQL, MySQL, Kafka, and dozens of other sources through a single SQL interface—without moving data into a central store.
@@ -325,10 +340,9 @@ For critical AI systems handling user-facing features, Starburst's built-in reli
 
 ## Related Articles
 
-- [AI Coding Tool GDPR Compliance Checklist for European Engine](/ai-tools-compared/ai-coding-tool-gdpr-compliance-checklist-for-european-engine/)
+- [Best AI Tools for SQL Query Generation 2026](/ai-tools-compared/best-ai-tools-for-sql-query-generation-2026/)
+- [Best AI Assistant for SQL Query Optimization](/ai-tools-compared/best-ai-assistant-for-sql-query-optimization/)
 - [AI-Powered Database Query Optimization Tools 2026](/ai-tools-compared/ai-powered-database-query-optimization-tools/)
-- [AI Tools for Database Performance Optimization Query](/ai-tools-compared/ai-tools-for-database-performance-optimization-query-analysis/)
-- [AI Tools for Debugging CSS Media Query Breakpoints Not Match](/ai-tools-compared/ai-tools-for-debugging-css-media-query-breakpoints-not-match/)
-- [AI Tools for Debugging Postgres Query Planner Choosing Wrong](/ai-tools-compared/ai-tools-for-debugging-postgres-query-planner-choosing-wrong/)
-
+- [Best AI Tools for SQL Query Optimization in 2026](/ai-tools-compared/best-ai-tools-for-sql-query-optimization-2026/---)
+- [Best AI IDE Features for Database Query Writing and](/ai-tools-compared/best-ai-ide-features-for-database-query-writing-and-optimization/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

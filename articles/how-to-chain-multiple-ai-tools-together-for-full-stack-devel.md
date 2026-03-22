@@ -41,6 +41,18 @@ Modern full stack development involves numerous repetitive tasks across frontend
 - **Building pipelines that respect**: these boundaries produces dramatically better output.
 - **Use embeddings-based retrieval to**: identify which files matter.
 
+## Table of Contents
+
+- [Understanding AI Tool Chaining](#understanding-ai-tool-chaining)
+- [Matching AI Tools to Pipeline Stages](#matching-ai-tools-to-pipeline-stages)
+- [Building Your First AI Pipeline](#building-your-first-ai-pipeline)
+- [Advanced Chaining Strategies](#advanced-chaining-strategies)
+- [Tool Selection Criteria](#tool-selection-criteria)
+- [Practical Example: API Feature Pipeline](#practical-example-api-feature-pipeline)
+- [Avoiding Common Pipeline Failures](#avoiding-common-pipeline-failures)
+- [Integrating Pipelines with CI/CD](#integrating-pipelines-with-cicd)
+- [Maintenance Considerations](#maintenance-considerations)
+
 ## Understanding AI Tool Chaining
 
 Tool chaining connects the output of one AI system as input to another, creating a processing pipeline. Each tool specializes in a specific domain—code generation, code review, testing, or deployment—and passes its results downstream. This specialization produces higher quality output than attempting to use a single tool for everything.

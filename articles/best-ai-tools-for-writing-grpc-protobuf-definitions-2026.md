@@ -44,6 +44,19 @@ Use Claude 3.5 Sonnet if you need idiomatic proto3 syntax with correct message f
 - **Typical workflow**: ```
 User: "I need a gRPC service that processes orders.
 
+## Table of Contents
+
+- [Why AI Helps with gRPC and Protobuf](#why-ai-helps-with-grpc-and-protobuf)
+- [Claude 3.5 Sonnet: Semantic Understanding of Proto Contracts](#claude-35-sonnet-semantic-understanding-of-proto-contracts)
+- [GitHub Copilot: Fast Inline Suggestions During File Editing](#github-copilot-fast-inline-suggestions-during-file-editing)
+- [Codeium: Free Real-Time Completion with Language Support](#codeium-free-real-time-completion-with-language-support)
+- [Comparative Tool Matrix](#comparative-tool-matrix)
+- [Practical Workflows by Tool](#practical-workflows-by-tool)
+- [Integration Patterns for Teams](#integration-patterns-for-teams)
+- [Common Mistakes AI Makes (and How to Catch Them)](#common-mistakes-ai-makes-and-how-to-catch-them)
+- [Complete Proto3 Best Practices Guide](#complete-proto3-best-practices-guide)
+- [AI-Assisted Proto Workflow Summary](#ai-assisted-proto-workflow-summary)
+
 ## Why AI Helps with gRPC and Protobuf
 
 Writing Protocol Buffer definitions requires precision. Field numbers must be unique and stable, field ordering affects binary encoding, and gRPC service definitions need correct method signatures with streaming flags. Manual errors lead to wire format incompatibility and breaking changes in production. AI assistants that understand proto3 syntax and gRPC semantics can generate correct definitions from natural language specifications, reducing iteration time from hours to minutes.
@@ -640,8 +653,9 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [AI Tools for Writing gRPC Protobuf Definitions 2026](/ai-tools-for-writing-grpc-protobuf-definitions-2026/)
-- [Best AI Tools for Writing Go GRPC Service Definitions](/best-ai-tools-for-writing-go-grpc-service-definitions-and-implementations/)
-- [Which AI Is Better for Writing gRPC Protobuf Service](/which-ai-is-better-for-writing-grpc-protobuf-service-definitions/)
-
+- [AI Tools for Writing gRPC Protobuf Definitions 2026](/ai-tools-compared/ai-tools-for-writing-grpc-protobuf-definitions-2026/)
+- [Best AI Tools for Writing Go GRPC Service Definitions](/ai-tools-compared/best-ai-tools-for-writing-go-grpc-service-definitions-and-implementations/)
+- [Which AI Is Better for Writing gRPC Protobuf Service](/ai-tools-compared/which-ai-is-better-for-writing-grpc-protobuf-service-definitions/)
+- [Best AI Tools for Writing GraphQL Schemas 2026](/ai-tools-compared/best-ai-tools-for-writing-graphql-schemas-2026/)
+- [Best AI Tools for Writing Unit Test Mocks 2026](/ai-tools-compared/best-ai-tools-for-writing-unit-test-mocks-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -40,6 +40,19 @@ Use AI tools combined with UML diagrams to practice object-oriented design inter
 - **Use AI to validate**: that your class list covers all requirements before drawing any diagram.
 - **This is more valuable**: than solving new problems because it deepens understanding of why the principles exist.
 
+## Table of Contents
+
+- [Understanding the OOD Interview Format](#understanding-the-ood-interview-format)
+- [AI Tool Comparison for OOD Practice](#ai-tool-comparison-for-ood-practice)
+- [Using AI as Your Practice Partner](#using-ai-as-your-practice-partner)
+- [Practical Workflow for OOD Practice](#practical-workflow-for-ood-practice)
+- [SOLID Principles Reference for Interview Practice](#solid-principles-reference-for-interview-practice)
+- [Sample Practice Session](#sample-practice-session)
+- [Advanced Techniques](#advanced-techniques)
+- [Building a 4-Week Study Plan with AI](#building-a-4-week-study-plan-with-ai)
+- [Common Mistakes to Avoid](#common-mistakes-to-avoid)
+- [Related Reading](#related-reading)
+
 ## Understanding the OOD Interview Format
 
 In object-oriented design interviews, interviewers present a problem—such as designing a parking lot, a restaurant management system, or a deck of cards. Your task is to identify the key entities, define their relationships, and demonstrate solid OOP principles. This is where UML diagrams become invaluable, allowing you to visualize class structures before writing code.
@@ -289,6 +302,14 @@ No, but it is a powerful complement. AI gives you unlimited reps and immediate f
 - [Clio AI Legal Practice Management Review 2026](/ai-tools-compared/clio-ai-legal-practice-management-review-2026/)
 - [AI Tools for Interior Design Visualization Compared](/ai-tools-compared/ai-tools-for-interior-design-visualization-compared/)
 - [Best AI Tool for Game Developers Design Docs Writing](/ai-tools-compared/best-ai-tool-for-game-developers-design-docs-writing/)
+
+## Related Articles
+
+- [Which AI Generates Better SwiftUI Views From Design Swift UI](/ai-tools-compared/which-ai-generates-better-swift-ui-views-from-design-specs-2/)
+- [AI Tools for Auditing Accessible Responsive Design](/ai-tools-compared/ai-tools-for-auditing-accessible-responsive-design-breakpoin/)
+- [AI Tools for Interior Design Visualization Compared](/ai-tools-compared/ai-tools-for-interior-design-visualization-compared/)
+- [Best AI Tool for Game Developers Design Docs Writing](/ai-tools-compared/best-ai-tool-for-game-developers-design-docs-writing/)
+- [AI Tools for Designers Writing Handoff Notes That Include](/ai-tools-compared/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

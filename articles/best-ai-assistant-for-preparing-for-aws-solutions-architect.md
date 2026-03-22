@@ -11,7 +11,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, best-of, artificial-intelligence]
+---
 ---
 layout: default
 title: "Best AI Assistant for Preparing for AWS Solutions Architect"
@@ -25,7 +26,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, best-of, artificial-intelligence]
+---
 
 
 
@@ -39,6 +41,15 @@ Claude, ChatGPT, GitHub Copilot, and Cursor are the top AI assistants for AWS So
 - **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Code-Based Learning Use AI**: to generate working AWS infrastructure code: - CloudFormation templates - AWS CDK applications - Lambda function examples - Serverless application patterns ### 5.
+
+## Table of Contents
+
+- [What Makes an AI Assistant Great for AWS Certification Prep](#what-makes-an-ai-assistant-great-for-aws-certification-prep)
+- [Top AI Assistants for AWS Solutions Architect Prep](#top-ai-assistants-for-aws-solutions-architect-prep)
+- [How to Use AI Effectively for AWS Certification Prep](#how-to-use-ai-effectively-for-aws-certification-prep)
+- [Study Schedule Recommendation](#study-schedule-recommendation)
+- [Recommendations](#recommendations)
+- [Common Pitfalls When Using AI for AWS Cert Prep](#common-pitfalls-when-using-ai-for-aws-cert-prep)
 
 ## What Makes an AI Assistant Great for AWS Certification Prep
 

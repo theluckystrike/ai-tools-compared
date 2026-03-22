@@ -27,6 +27,19 @@ Building a membership and subscription management system from scratch takes time
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **You need user authentication**: role-based access control, payment processing, tier management, webhooks for third-party integrations, and analytics.
 
+## Table of Contents
+
+- [Why AI-Assisted Generation Matters](#why-ai-assisted-generation-matters)
+- [Tools Tested](#tools-tested)
+- [Results: Code Quality and Completeness](#results-code-quality-and-completeness)
+- [Comparison Summary](#comparison-summary)
+- [Implementation Recommendations](#implementation-recommendations)
+- [Common Implementation Patterns](#common-implementation-patterns)
+- [Database Schema Considerations](#database-schema-considerations)
+- [Webhook Handling and Event Processing](#webhook-handling-and-event-processing)
+- [Cost Estimation for AI-Generated Systems](#cost-estimation-for-ai-generated-systems)
+- [Testing Membership Logic with AI Assistance](#testing-membership-logic-with-ai-assistance)
+
 ## Why AI-Assisted Generation Matters
 
 The no-code revolution has made it possible to build membership sites without writing code. However, most no-code platforms hit walls when you need custom logic, specific payment flows, or API integrations. AI-assisted generation bridges this gap by producing code you can extend, deploy, and own rather than being locked into platform-specific constraints.

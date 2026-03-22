@@ -40,6 +40,17 @@ Use the `/clear` command in Claude Code to reset conversation history without en
 - **I'll use this to**: start a fresh session if needed.
 - **Asking Claude to read**: that file through its file-reading tool is more efficient because Claude processes it internally without that content persisting in the conversation history the same way.
 
+## Table of Contents
+
+- [Understanding the Context Window Limit](#understanding-the-context-window-limit)
+- [Quick Reference: Fixes by Severity](#quick-reference-fixes-by-severity)
+- [Immediate Solutions When You Hit the Limit](#immediate-solutions-when-you-hit-the-limit)
+- [Preventing Context Window Issues](#preventing-context-window-issues)
+- [Diagnostic Steps for Frequent Issues](#diagnostic-steps-for-frequent-issues)
+- [Advanced Techniques for Power Users](#advanced-techniques-for-power-users)
+- [Troubleshooting Persistent Problems](#troubleshooting-persistent-problems)
+- [Related Reading](#related-reading)
+
 ## Understanding the Context Window Limit
 
 Claude Max has a maximum context window that determines how much conversation history the model can process at once. This includes your messages, the AI's responses, and any files or code being analyzed. When you exceed this limit, Claude cannot continue the current conversation meaningfully.
@@ -300,6 +311,14 @@ For API users hitting context limits, the standard solution is to implement a sl
 - [How to Manage AI Coding Context Window to Avoid Hallucinated](/ai-tools-compared/how-to-manage-ai-coding-context-window-to-avoid-hallucinated/)
 - [What Source Code Context Window Do Different AI Coding Tools](/ai-tools-compared/what-source-code-context-window-do-different-ai-coding-tools/)
 - [Claude Max vs Claude Pro Actual Difference](/ai-tools-compared/claude-max-vs-claude-pro-actual-difference-in-daily-message-limits/)
+
+## Related Articles
+
+- [Claude Code Losing Context Across Sessions](/ai-tools-compared/claude-code-losing-context-across-sessions-fix/)
+- [Claude Max vs Claude Pro Actual Difference](/ai-tools-compared/claude-max-vs-claude-pro-actual-difference-in-daily-message-limits/)
+- [Best Way to Configure Claude Code to Understand Your](/ai-tools-compared/best-way-to-configure-claude-code-to-understand-your-interna/)
+- [Claude Code Runbook Documentation Guide](/ai-tools-compared/claude-code-runbook-documentation-guide/)
+- [What Source Code Context Window Do Different AI Coding Tools](/ai-tools-compared/what-source-code-context-window-do-different-ai-coding-tools/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

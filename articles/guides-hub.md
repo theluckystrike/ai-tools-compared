@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools Guides Hub"
+title: "AI Tools Compared: All Guides and Reviews"
 description: "Browse every AI tool comparison, review, and guide — coding assistants, LLMs, productivity tools, and developer integrations."
 date: 2026-03-22
 last_modified_at: 2026-03-22
@@ -14,6 +14,22 @@ tags: [ai-tools-compared]
 ---
 
 Side-by-side comparisons and in-depth reviews of AI tools for developers and teams. Find the right tool for your workflow.
+
+## Table of Contents
+
+- [Guides](#guides)
+- [Comparisons](#comparisons)
+- [Tutorials](#tutorials)
+- [**Cost**: Free (Open Source), $19/Month For Cloud Version.](#cost-free-open-source-19month-for-cloud-version)
+- [Ai Tools](#ai-tools)
+- [Ai Assistants](#ai-assistants)
+- [Best-Of Lists](#best-of-lists)
+- [Cursor Free Tier Limitations](#cursor-free-tier-limitations)
+- [Enterprise](#enterprise)
+- [Productivity](#productivity)
+- [Security](#security)
+- [Troubleshooting](#troubleshooting)
+- [Uncategorized](#uncategorized)
 
 **1223 articles** organized by category.
 
@@ -1278,3 +1294,11 @@ Side-by-side comparisons and in-depth reviews of AI tools for developers and tea
 - [Best AI Tools for Writing Nginx Configs in 2026](/best-ai-tools-for-writing-nginx-configs-2026/---)
 - [Best AI Tools for Writing Redis Lua Scripts (2026)](/best-ai-tools-for-writing-redis-lua-scripts-2026/---)
 - [Best AI Tools for Writing Terraform Modules in 2026](/best-ai-tools-for-writing-terraform-modules-2026/---)
+
+## Related Articles
+
+- [AI Autocomplete for Test Files How Well Different Tools Pred](/ai-tools-compared/ai-autocomplete-for-test-files-how-well-different-tools-pred/)
+- [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
+- [AI Autocomplete for Writing Tests: Comparison of Suggestion](/ai-tools-compared/ai-autocomplete-for-writing-tests-comparison-of-suggestion-q/)
+- [Best AI Tools for Automated Code Review 2026](/ai-tools-compared/best-ai-tools-for-automated-code-review-2026/)
+- [AI Code Review Automation Tools Comparison 2026](/ai-tools-compared/ai-code-review-automation-tools-comparison/)

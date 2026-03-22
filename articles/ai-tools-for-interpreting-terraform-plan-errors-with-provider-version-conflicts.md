@@ -39,6 +39,21 @@ AI tools like Claude and ChatGPT can instantly decode Terraform provider version
 - **If your configuration uses AWS services**: it understands AWS provider quirks and can suggest region-specific configurations.
 - **This isolates which upgrade**: caused any issues.
 
+## Table of Contents
+
+- [The Provider Version Conflict Problem](#the-provider-version-conflict-problem)
+- [How AI Tools Help Parse Terraform Errors](#how-ai-tools-help-parse-terraform-errors)
+- [Practical Example: Resolving an AWS Provider Conflict](#practical-example-resolving-an-aws-provider-conflict)
+- [AI Tools for Different Workflows](#ai-tools-for-different-workflows)
+- [Best Practices When Using AI for Terraform Issues](#best-practices-when-using-ai-for-terraform-issues)
+- [Automating Provider Version Management](#automating-provider-version-management)
+- [Real-World Error Resolution Examples](#real-world-error-resolution-examples)
+- [Practical Version Management Strategy](#practical-version-management-strategy)
+- [CLI Workflow for Version Conflict Resolution](#cli-workflow-for-version-conflict-resolution)
+- [Pricing Impact of Version Management](#pricing-impact-of-version-management)
+- [Common Provider Version Patterns](#common-provider-version-patterns)
+- [Troubleshooting with AI: Common Questions](#troubleshooting-with-ai-common-questions)
+
 ## The Provider Version Conflict Problem
 
 Terraform providers bridge Terraform with cloud APIs and services. Each provider maintains its own version timeline, and when multiple resources require different provider versions, conflicts arise. These conflicts often manifest as:

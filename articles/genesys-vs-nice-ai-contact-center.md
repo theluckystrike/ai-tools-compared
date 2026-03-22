@@ -41,6 +41,16 @@ When building or modernizing a contact center, choosing between Genesys and NICE
 
 It depends on your background.
 
+## Table of Contents
+
+- [Platform Architecture Overview](#platform-architecture-overview)
+- [API Design and Developer Experience](#api-design-and-developer-experience)
+- [AI and Automation Capabilities](#ai-and-automation-capabilities)
+- [Integration Patterns and Webhooks](#integration-patterns-and-webhooks)
+- [Feature Comparison Table](#feature-comparison-table)
+- [Pricing Considerations](#pricing-considerations)
+- [When to Choose Each Platform](#when-to-choose-each-platform)
+
 ## Platform Architecture Overview
 
 **Genesys Cloud** is a cloud-native platform built on a microservices architecture. It provides the Genesys Cloud API (GCAPI) for programmatic access to nearly all platform functions. The architecture emphasizes scalability through automatic provisioning and supports webhook-based event-driven integrations.
@@ -364,10 +374,9 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Talkdesk vs Five9: AI Contact Center Comparison for](/ai-tools-compared/talkdesk-vs-five9-ai-contact-center/)
-- [Best AI Tools for Help Center Content](/ai-tools-compared/best-ai-tools-for-help-center-content/)
-- [AI CI/CD Pipeline Optimization: A Developer Guide](/ai-tools-compared/ai-ci-cd-pipeline-optimization/)
-- [AI Data Labeling Tools Comparison: A Developer Guide](/ai-tools-compared/ai-data-labeling-tools-comparison/)
-- [AI Summarizer Chrome Extension: A Developer Guide](/ai-tools-compared/ai-summarizer-chrome-extension/)
-
+- [Custify vs Gainsight AI Customer Success: A Developer Guide](/ai-tools-compared/custify-vs-gainsight-ai-customer-success/)
+- [Kling AI vs Gen 3 Video Generation: Developer Comparison](/ai-tools-compared/kling-ai-vs-gen-3-video-generation/)
+- [AI Employee Onboarding Tools Comparison 2026](/ai-tools-compared/ai-employee-onboarding-tools-comparison-2026/)
+- [Domo vs Sisense AI Dashboards: A Practical Comparison](/ai-tools-compared/domo-vs-sisense-ai-dashboards/)
+- [Talkdesk vs Five9 AI Contact Center](/ai-tools-compared/talkdesk-vs-five9-ai-contact-center/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

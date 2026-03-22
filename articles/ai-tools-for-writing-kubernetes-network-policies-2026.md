@@ -11,7 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison, kubernetes, network-policy]---
+tags: [ai-tools-compared, comparison, kubernetes, network-policy]
+---
 
 
 Kubernetes NetworkPolicies are notoriously tricky to write correctly. A single misconfigured policy can lock down your entire cluster or leave critical security gaps. The YAML syntax is verbose, the logic is counter-intuitive (deny-all-then-allow-needed is safer than allow-all-then-deny-bad), and the interaction between multiple policies compounds the complexity. AI tools can help draft policies quickly, but they often generate permissive defaults that weaken security. This comparison shows how Claude, GPT-4, and GitHub Copilot handle NetworkPolicy generation, including real-world policy examples.
@@ -24,6 +25,19 @@ Kubernetes NetworkPolicies are notoriously tricky to write correctly. A single m
 - **This default-deny-within-selection behavior confuses**: many developers.
 - **A common mistake**: writing policies that are too permissive because the developer didn't realize that once ANY policy matches a pod, all unspecified traffic is denied.
 - Works well in most environments.
+
+## Table of Contents
+
+- [Understanding Kubernetes NetworkPolicy Fundamentals](#understanding-kubernetes-networkpolicy-fundamentals)
+- [Evaluating Claude for NetworkPolicy Generation](#evaluating-claude-for-networkpolicy-generation)
+- [Evaluating GPT-4 for NetworkPolicy Generation](#evaluating-gpt-4-for-networkpolicy-generation)
+- [Evaluating GitHub Copilot for NetworkPolicy Generation](#evaluating-github-copilot-for-networkpolicy-generation)
+- [Real-World Policy Examples: The Three Tools Compared](#real-world-policy-examples-the-three-tools-compared)
+- [Common Mistakes in AI-Generated NetworkPolicies](#common-mistakes-in-ai-generated-networkpolicies)
+- [Advanced Scenarios: When AI-Generated Policies Break](#advanced-scenarios-when-ai-generated-policies-break)
+- [Validation: How to Review AI-Generated Policies](#validation-how-to-review-ai-generated-policies)
+- [Practical Recommendations](#practical-recommendations)
+- [Testing NetworkPolicies in a Development Environment](#testing-networkpolicies-in-a-development-environment)
 
 ## Understanding Kubernetes NetworkPolicy Fundamentals
 

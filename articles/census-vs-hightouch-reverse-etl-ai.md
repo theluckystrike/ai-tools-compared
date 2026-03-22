@@ -39,6 +39,15 @@ Choose Census if your team relies on Salesforce integrations, SQL-based transfor
 - **Their AI features primarily address**: Census analyzes your data warehouse schema and suggests mappings to downstream tools automatically.
 - **HighTouch's AI analyzes engagement**: patterns and suggests audience segments most likely to convert.
 
+## Table of Contents
+
+- [Understanding the AI Feature Set](#understanding-the-ai-feature-set)
+- [Practical Implementation Differences](#practical-implementation-differences)
+- [Cost and Performance Considerations](#cost-and-performance-considerations)
+- [Developer Experience](#developer-experience)
+- [Recommendations by Use Case](#recommendations-by-use-case)
+- [Common Implementation Patterns](#common-implementation-patterns)
+
 ## Understanding the AI Feature Set
 
 ### Census AI Capabilities

@@ -41,6 +41,19 @@ Free**: Only sees the current file and limited surrounding context.
 - **However**: the free version remains genuinely useful.
 - **Premium Support Pro users**: get access to priority support, which matters when you encounter issues affecting your productivity.
 
+## Table of Contents
+
+- [Understanding Tabnine's Free Tier](#understanding-tabnines-free-tier)
+- [What's Locked Behind Tabnine Pro](#whats-locked-behind-tabnine-pro)
+- [Performance Differences in Real-World Usage](#performance-differences-in-real-world-usage)
+- [When to Upgrade: Practical Scenarios](#when-to-upgrade-practical-scenarios)
+- [Code Examples: Free vs Pro Side by Side](#code-examples-free-vs-pro-side-by-side)
+- [Making the Decision](#making-the-decision)
+- [Integration with Development Workflow](#integration-with-development-workflow)
+- [Comparison with Alternatives](#comparison-with-alternatives)
+- [Building a Local Model with Tabnine Pro](#building-a-local-model-with-tabnine-pro)
+- [Long-Term Cost Analysis](#long-term-cost-analysis)
+
 ## Understanding Tabnine's Free Tier
 
 The free version of Tabnine provides solid baseline functionality for developers who want AI-assisted code completion without spending money. When you install Tabnine from your IDE's marketplace, you start with the free tier automatically.
@@ -330,10 +343,9 @@ The real question isn't whether Pro pays for itself—it obviously does. The que
 
 ## Related Articles
 
-- [Is Tabnine Free Plan Still Worth Using in 2026?](/ai-tools-compared/is-tabnine-free-plan-still-worth-using-in-2026/)
-- [Codeium Pro vs Copilot Individual Features Per Dollar Compar](/ai-tools-compared/codeium-pro-vs-copilot-individual-features-per-dollar-compar/)
 - [Windsurf Pro vs Cursor Pro: Price and Features Compared 2026](/ai-tools-compared/windsurf-pro-vs-cursor-pro-price-and-features-compared-2026/)
-- [Perplexity Spaces Collaboration Feature Free vs Pro Limits](/ai-tools-compared/perplexity-spaces-collaboration-feature-free-vs-pro-limits-explained/)
+- [Is Tabnine Free Plan Still Worth Using in 2026?](/ai-tools-compared/is-tabnine-free-plan-still-worth-using-in-2026/)
+- [Codeium Pro vs Copilot Individual Features Per Dollar](/ai-tools-compared/codeium-pro-vs-copilot-individual-features-per-dollar-compar/)
 - [How to Move Tabnine AI Models When Switching to Supermaven](/ai-tools-compared/how-to-move-tabnine-ai-models-when-switching-to-supermaven/)
-
+- [Self-Hosted Alternative to Tabnine That Runs on Local](/ai-tools-compared/self-hosted-alternative-to-tabnine-that-runs-on-local-hardwa/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

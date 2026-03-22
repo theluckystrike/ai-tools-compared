@@ -43,6 +43,22 @@ This guide compares GPT-4o and Claude Sonnet specifically for code review tasks.
 - **Update your settings to**: use Claude Sonnet as the default for code review commands.
 - **Add a CLAUDE.md file**: to your repository explaining your team's conventions, preferred patterns, and review priorities.
 
+## Table of Contents
+
+- [How GPT-4o Approaches Code Review](#how-gpt-4o-approaches-code-review)
+- [How Claude Sonnet Approaches Code Review](#how-claude-sonnet-approaches-code-review)
+- [Side-by-Side Comparison](#side-by-side-comparison)
+- [Practical Examples](#practical-examples)
+- [When to Choose GPT-4o](#when-to-choose-gpt-4o)
+- [When to Choose Claude Sonnet](#when-to-choose-claude-sonnet)
+- [Making the Switch](#making-the-switch)
+- [Deep Dive: Security-Focused Code Review](#deep-dive-security-focused-code-review)
+- [Performance Review Capabilities](#performance-review-capabilities)
+- [Testing Requirement Analysis](#testing-requirement-analysis)
+- [Practical Integration: Tools and Workflows](#practical-integration-tools-and-workflows)
+- [Cost Comparison for Code Review](#cost-comparison-for-code-review)
+- [Transitioning Your Team](#transitioning-your-team)
+
 ## How GPT-4o Approaches Code Review
 
 GPT-4o, OpenAI's flagship model, brings strong general-purpose reasoning to code review. It excels at identifying obvious bugs, suggesting performance improvements, and explaining complex logic in plain language.

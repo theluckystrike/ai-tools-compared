@@ -39,6 +39,23 @@ This guide compares the strengths and weaknesses of each tool for this specific 
 - **Use AI-generated tests as**: a starting point, then add cases that cover your unique requirements and failure modes.
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
+## Table of Contents
+
+- [Understanding the Core Differences](#understanding-the-core-differences)
+- [Quick Comparison](#quick-comparison)
+- [Generating Basic Fixtures](#generating-basic-fixtures)
+- [Handling Complex Mock Configurations](#handling-complex-mock-configurations)
+- [Parametrized Fixtures and Factory Patterns](#parametrized-fixtures-and-factory-patterns)
+- [Conftest Organization Strategies](#conftest-organization-strategies)
+- [Session and Function Scope Fixtures](#session-and-function-scope-fixtures)
+- [Integration with pytest-mock and pytest-asyncio](#integration-with-pytest-mock-and-pytest-asyncio)
+- [Practical Recommendations](#practical-recommendations)
+- [Advanced Fixture Patterns Both Tools Handle](#advanced-fixture-patterns-both-tools-handle)
+- [Testing Fixture Quality](#testing-fixture-quality)
+- [Prompt Engineering for Better Fixture Generation](#prompt-engineering-for-better-fixture-generation)
+- [Fixture Performance Optimization](#fixture-performance-optimization)
+- [Real-World Fixture Suite Example](#real-world-fixture-suite-example)
+
 ## Understanding the Core Differences
 
 GitHub Copilot operates as an inline autocomplete tool integrated directly into your IDE. It suggests code completions as you type, drawing context from your current file and project. Cursor AI functions as a chat-based AI assistant with additional compose and edit capabilities, allowing for more interactive code generation through conversational prompts.

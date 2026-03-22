@@ -39,6 +39,18 @@ Finding affordable AI tools requires understanding the true cost structure. This
 - **Startup MVPs**: Lovable's $29 plan includes database setup and authentication, which would cost significantly more to build manually.
 - **If your primary need**: is generating user interfaces with modern frameworks, v0 provides excellent value.
 
+## Table of Contents
+
+- [What Makes a Tool Suitable for Full Project Generation](#what-makes-a-tool-suitable-for-full-project-generation)
+- [Top Affordable Options](#top-affordable-options)
+- [Practical Example: Generating a Task API](#practical-example-generating-a-task-api)
+- [Comparing Costs for Typical Development Scenarios](#comparing-costs-for-typical-development-scenarios)
+- [How to Write Prompts That Generate Complete Projects](#how-to-write-prompts-that-generate-complete-projects)
+- [Step-by-Step Workflow for Maximum Value](#step-by-step-workflow-for-maximum-value)
+- [Pro Tips for Reducing Costs Further](#pro-tips-for-reducing-costs-further)
+- [Recommendations by Use Case](#recommendations-by-use-case)
+- [Related Reading](#related-reading)
+
 ## What Makes a Tool Suitable for Full Project Generation
 
 Not all AI coding assistants can handle generating an entire project from scratch. The best tools for this use case share several characteristics:

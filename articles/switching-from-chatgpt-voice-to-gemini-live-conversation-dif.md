@@ -39,6 +39,24 @@ Switching from ChatGPT Voice to Gemini Live involves understanding fundamental d
 - **Does ChatGPT offer a**: free tier? Most major tools offer some form of free tier or trial period.
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 
+## Table of Contents
+
+- [Conversation Architecture and Latency](#conversation-architecture-and-latency)
+- [Multimodal Capabilities](#multimodal-capabilities)
+- [Context Window and Memory](#context-window-and-memory)
+- [Response Speed and Interruption Handling](#response-speed-and-interruption-handling)
+- [Integration and Extensibility](#integration-and-extensibility)
+- [Practical Use Case Differences](#practical-use-case-differences)
+- [Making the Switch](#making-the-switch)
+- [Detailed Technical Workflow Comparison](#detailed-technical-workflow-comparison)
+- [Voice Interaction Patterns](#voice-interaction-patterns)
+- [Integration with Developer Workflows](#integration-with-developer-workflows)
+- [Multimodal Capabilities Deep Dive](#multimodal-capabilities-deep-dive)
+- [Conversation History and Continuity](#conversation-history-and-continuity)
+- [Cost-Benefit Analysis](#cost-benefit-analysis)
+- [Migration Strategy](#migration-strategy)
+- [Settings and Customization](#settings-and-customization)
+
 ## Conversation Architecture and Latency
 
 ChatGPT Voice uses OpenAI's GPT-4 model with voice optimized for turn-based conversations. The system processes your input, generates a response, and converts it to speech. Each exchange follows a request-response pattern where you wait for the model to finish speaking before responding.
@@ -365,10 +383,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [ChatGPT Conversation History Disappeared Fix](/ai-tools-compared/chatgpt-conversation-history-disappeared-fix/)
-- [Writesonic Chatsonic vs ChatGPT: Conversation Comparison](/ai-tools-compared/writesonic-chatsonic-vs-chatgpt-conversation-comparison/)
-- [How to Export Gemini Workspace Data Before Switching to](/ai-tools-compared/how-to-export-gemini-workspace-data-before-switching-to-claude-team/)
-- [Switching from Gemini Advanced to Claude Pro: What You Lose](/ai-tools-compared/switching-from-gemini-advanced-to-claude-pro-what-you-lose/)
-- [ChatGPT Voice Mode Advanced Does It Use Extra Credits or](/ai-tools-compared/chatgpt-voice-mode-advanced-does-it-use-extra-credits-or-free/)
-
+- [ChatGPT Voice Mode Advanced Does it Use Extra Credits](/ai-tools-compared/chatgpt-voice-mode-advanced-does-it-use-extra-credits-or-free/)
+- [Switching from ChatGPT Search to Perplexity Pro: Explained](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
+- [Switching from ChatGPT Plus to Perplexity Pro Feature](/ai-tools-compared/switching-from-chatgpt-plus-to-perplexity-pro-feature-compar/)
+- [Gemini vs ChatGPT for Writing Google Cloud Function Deployme](/ai-tools-compared/gemini-vs-chatgpt-for-writing-google-cloud-function-deployme/)
+- [Switching from Grammarly to ChatGPT for Editing Workflow](/ai-tools-compared/switching-from-grammarly-to-chatgpt-for-editing-workflow-mig/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

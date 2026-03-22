@@ -10,7 +10,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 ---
 layout: default
 title: "Best AI Tools for Infrastructure as Code 2026"
@@ -23,7 +24,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 {% raw %}
 
@@ -38,6 +40,17 @@ Infrastructure as Code is one of the highest-risk areas for AI hallucinations. A
 - **It also adds a**: `description` to the security group ingress rule, which is a best practice that linters like Checkov flag when missing.
 - **It fills in `resource**: "aws_db_instance"` attribute names correctly but doesn't apply security best practices to the defaults it suggests.
 - **This is the opposite**: of what many public examples do (attach `AWSLambdaFullAccess` or worse).
+
+## Table of Contents
+
+- [Why IaC Is Harder for AI](#why-iac-is-harder-for-ai)
+- [Testing Approach](#testing-approach)
+- [Terraform Generation](#terraform-generation)
+- [Pulumi TypeScript](#pulumi-typescript)
+- [Ansible Playbooks](#ansible-playbooks)
+- [Security Scanning Integration](#security-scanning-integration)
+- [Recommended Approach](#recommended-approach)
+- [Related Reading](#related-reading)
 
 ## Why IaC Is Harder for AI
 

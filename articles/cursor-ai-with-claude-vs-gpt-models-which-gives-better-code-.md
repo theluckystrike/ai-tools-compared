@@ -40,6 +40,23 @@ Claude models excel at complex TypeScript patterns, legacy codebase consistency,
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **The optimal approach involves**: selecting models based on task requirements: use GPT for speed with familiar patterns, Claude for complexity requiring deeper understanding.
 
+## Table of Contents
+
+- [Understanding Cursor AI's Model Options](#understanding-cursor-ais-model-options)
+- [Speed and Responsiveness](#speed-and-responsiveness)
+- [Handling Complex TypeScript Patterns](#handling-complex-typescript-patterns)
+- [Working with Legacy Codebases](#working-with-legacy-codebases)
+- [Multi-File Context and Architecture](#multi-file-context-and-architecture)
+- [Debugging and Error Resolution](#debugging-and-error-resolution)
+- [Practical Recommendations](#practical-recommendations)
+- [Real-World Performance Benchmarks](#real-world-performance-benchmarks)
+- [Practical Testing Setup](#practical-testing-setup)
+- [Cost Comparison for Regular Use](#cost-comparison-for-regular-use)
+- [Configuration Tips for Cursor Settings](#configuration-tips-for-cursor-settings)
+- [Real-World Code Example: Complex Type Utility](#real-world-code-example-complex-type-utility)
+- [Model Selection Checklist](#model-selection-checklist)
+- [Switching Models During Development](#switching-models-during-development)
+
 ## Understanding Cursor AI's Model Options
 
 Cursor AI provides access to multiple model families through its settings. The Claude options typically include models from the Sonnet and Haiku families, while GPT options span from the GPT-4o to newer variants. The model you choose directly impacts completion quality, response speed, and the types of suggestions you receive.
@@ -367,11 +384,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Cursor AI Switching Between Claude and GPT Models Extra Cost](/ai-tools-compared/cursor-ai-switching-between-claude-and-gpt-models-extra-cost/)
-- [Claude Sonnet vs GPT-4o for Code Generation: Practical](/ai-tools-compared/claude-sonnet-vs-gpt-4o-for-code-generation/)
-- [Claude Sonnet vs GPT-4o for Code Review Accuracy Comparison](/ai-tools-compared/claude-sonnet-vs-gpt-4o-for-code-review-accuracy-comparison-2026/)
-- [Switching from GPT-4o to Claude Sonnet for Code Review.](/ai-tools-compared/switching-from-gpt-4o-to-claude-sonnet-for-code-review-which/)
-- [Cursor Free Plan vs Windsurf Free Plan Which Gives More](/ai-tools-compared/cursor-free-plan-vs-windsurf-free-plan-which-gives-more/)
-
+- [Cursor AI Switching Between Claude and GPT Models Extra](/ai-tools-compared/cursor-ai-switching-between-claude-and-gpt-models-extra-cost/)
+- [Claude Code vs Cursor Composer](/ai-tools-compared/claude-code-vs-cursor-composer-for-full-stack-development-comparison/)
+- [How to Switch from Cursor to Claude Code Without Losing](/ai-tools-compared/how-to-switch-from-cursor-to-claude-code-without-losing-settings/)
+- [Claude Code vs Cursor for Large Codebase Refactoring](/ai-tools-compared/claude-code-vs-cursor-for-large-codebase-refactoring/)
+- [Claude Code vs Cursor for Backend Development](/ai-tools-compared/claude-code-vs-cursor-for-backend-development/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

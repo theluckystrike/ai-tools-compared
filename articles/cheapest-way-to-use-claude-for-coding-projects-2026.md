@@ -42,6 +42,16 @@ Finding affordable AI tools requires understanding the true cost structure. This
 - **At approximately $0.25 per**: million input tokens and $1.25 per million output tokens, Haiku offers the lowest API costs.
 - **Usage limits apply**: heavy daily usage will eventually hit the free cap, at which point you either wait until the next day or upgrade to the paid Max plan.
 
+## Table of Contents
+
+- [Understanding Claude's Pricing Structure](#understanding-claudes-pricing-structure)
+- [Free Options for Individual Developers](#free-options-for-individual-developers)
+- [Cost-Effective API Strategies](#cost-effective-api-strategies)
+- [Strategic Model Selection](#strategic-model-selection)
+- [Building Cost Monitoring Into Your Workflow](#building-cost-monitoring-into-your-workflow)
+- [Practical Example: Full Workflow](#practical-example-full-workflow)
+- [Maximizing Free Tier Usage](#maximizing-free-tier-usage)
+
 ## Understanding Claude's Pricing Structure
 
 Anthropic offers Claude through multiple channels, each with different pricing models. The main options include Claude Code (the CLI tool), the Claude API, and the Anthropic Console. Understanding these options helps you choose the most cost-effective approach for your workflow.
@@ -332,11 +342,10 @@ Policies vary widely. Some tools let you access your data for a grace period aft
 
 ## Related Articles
 
-- [Cheapest Way to Get AI Autocomplete in Neovim 2026](/ai-tools-compared/cheapest-way-to-get-ai-autocomplete-in-neovim-2026/)
-- [Cheapest Way to Get AI Code Completion in Vim 2026](/ai-tools-compared/cheapest-way-to-get-ai-code-completion-in-vim-2026/)
 - [How to Use Claude API Cheaply for Small Coding Projects](/ai-tools-compared/how-to-use-claude-api-cheaply-for-small-coding-projects/)
-- [Best Way to Configure AI Coding Tools to Follow Your Databas](/ai-tools-compared/best-way-to-configure-ai-coding-tools-to-follow-your-databas/)
-- [Cheapest AI Coding Subscription with Unlimited Requests 2026](/ai-tools-compared/cheapest-ai-coding-subscription-with-unlimited-requests-2026/)
-
+- [Claude Free vs ChatGPT Free Which Gives More Per](/ai-tools-compared/claude-free-vs-chatgpt-free-which-gives-more-per-day/)
+- [Claude Max vs Claude Pro Actual Difference](/ai-tools-compared/claude-max-vs-claude-pro-actual-difference-in-daily-message-limits/)
+- [aider vs Claude Code: Terminal AI Coding Assistants Compared](/ai-tools-compared/aider-vs-claude-code-terminal-ai-comparison/)
+- [Transfer ChatGPT Custom GPTs to Claude Projects](/ai-tools-compared/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

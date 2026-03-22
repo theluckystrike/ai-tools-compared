@@ -39,6 +39,22 @@ Cursor AI, the AI-powered code editor built on Visual Studio Code, provides powe
 - **Configure Cursor to use**: the local endpoint in settings 3.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Understanding the Network Requirements](#understanding-the-network-requirements)
+- [System-Level Proxy Configuration](#system-level-proxy-configuration)
+- [Cursor-Specific Configuration](#cursor-specific-configuration)
+- [Handling VPN Tunneling Issues](#handling-vpn-tunneling-issues)
+- [Dealing with NTLM and Kerberos Authentication](#dealing-with-ntlm-and-kerberos-authentication)
+- [Certificate and SSL Configuration](#certificate-and-ssl-configuration)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Alternative Approaches](#alternative-approaches)
+- [Automating Configuration Across Teams](#automating-configuration-across-teams)
+- [Debugging Network Issues with Cursor](#debugging-network-issues-with-cursor)
+- [Comparison: Cursor vs. Alternatives in Restricted Networks](#comparison-cursor-vs-alternatives-in-restricted-networks)
+- [Production Readiness Checklist](#production-readiness-checklist)
+- [Pre-Deployment Verification](#pre-deployment-verification)
+
 ## Understanding the Network Requirements
 
 Cursor AI communicates with external AI services for its chat and completion features. When you're behind a corporate VPN or proxy, your organization routes all internet traffic through intermediate servers that may require authentication. Cursor needs to be configured to route its traffic through these proxies just like any other application.

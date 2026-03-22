@@ -44,6 +44,27 @@ Most of the time is step 4—editing.
 - **Copy the generated description**: to GitHub Cursor works best when you have specific code to reference.
 - **For vaguer feature requests**: you might get less useful output.
 
+## Table of Contents
+
+- [What Makes a Good First Issue Description](#what-makes-a-good-first-issue-description)
+- [Claude Code: Best Overall for Issue Writing](#claude-code-best-overall-for-issue-writing)
+- [ChatGPT: Strong for Quick Drafts](#chatgpt-strong-for-quick-drafts)
+- [Cursor: Good for IDE Integration](#cursor-good-for-ide-integration)
+- [Gemini: Worth Considering for Google Ecosystem Users](#gemini-worth-considering-for-google-ecosystem-users)
+- [Tips for Getting Better Results](#tips-for-getting-better-results)
+- [Real-World Template Generation](#real-world-template-generation)
+- [About This Issue](#about-this-issue)
+- [Context](#context)
+- [Difficulty Level](#difficulty-level)
+- [What You'll Change](#what-youll-change)
+- [Acceptance Criteria](#acceptance-criteria)
+- [Getting Started](#getting-started)
+- [Questions?](#questions)
+- [Pricing and Tool Comparison](#pricing-and-tool-comparison)
+- [Practical Workflow: Issue Description in 5 Minutes](#practical-workflow-issue-description-in-5-minutes)
+- [Community Feedback and Common Pitfalls](#community-feedback-and-common-pitfalls)
+- [Comparing the Options](#comparing-the-options)
+
 ## What Makes a Good First Issue Description
 
 Before evaluating AI tools, it helps to understand what separates an useful first issue from one that scares away potential contributors. A strong first issue includes:

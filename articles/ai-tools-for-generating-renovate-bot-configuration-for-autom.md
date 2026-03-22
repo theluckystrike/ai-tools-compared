@@ -38,6 +38,18 @@ Keeping dependencies up to date is a critical but time-consuming task for develo
 - **It supports over 20**: package ecosystems including npm, pip, Docker, GitHub Actions, and more.
 - **Migration support**: Convert from other tools like Dependabot to Renovate
 
+## Table of Contents
+
+- [Practical Approaches to AI-Powered Renovate Configuration](#practical-approaches-to-ai-powered-renovate-configuration)
+- [What is Renovate Bot?](#what-is-renovate-bot)
+- [How AI Tools Help Generate Renovate Configurations](#how-ai-tools-help-generate-renovate-configurations)
+- [Practical Approaches to AI-Powered Renovate Configuration](#practical-approaches-to-ai-powered-renovate-configuration)
+- [Advanced Configuration Patterns](#advanced-configuration-patterns)
+- [Best Practices for AI-Generated Configurations](#best-practices-for-ai-generated-configurations)
+- [Debugging Renovate Configurations with AI Assistance](#debugging-renovate-configurations-with-ai-assistance)
+- [Validating Renovate Configurations Before Committing](#validating-renovate-configurations-before-committing)
+- [Team Workflows for AI-Assisted Renovate Management](#team-workflows-for-ai-assisted-renovate-management)
+
 ## Practical Approaches to AI-Powered Renovate Configuration
 
 ### 1.
@@ -374,9 +386,10 @@ Pick one tool from the options discussed and sign up for a free trial. Spend 30 
 
 ## Related Articles
 
-- [AI Tools for Generating Dependency Update Pull Request](/ai-tools-for-generating-dependency-update-pull-request-descr/)
-- [AI Tools for Generating Mobile App Deep Linking Configuration](/ai-tools-for-generating-mobile-app-deep-linking-configuratio/)
-- [Best AI Tools for Automated DNS Configuration Management](/best-ai-tools-for-automated-dns-configuration-management-acr/)
-
+- [AI-Powered Dependency Update Tools Compared](/ai-tools-compared/ai-powered-dependency-update-tools-compared/)
+- [AI Tools for Generating Grafana Dashboards from Metrics](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
+- [AI Tools for Generating Dependency Update Pull Request](/ai-tools-compared/ai-tools-for-generating-dependency-update-pull-request-descr/)
+- [AI-Powered API Gateway Configuration Tools 2026](/ai-tools-compared/ai-powered-api-gateway-configuration-tools-2026/)
+- [AI Tools for Generating Closed Captions and Transcripts](/ai-tools-compared/ai-tools-for-generating-closed-captions-and-transcripts-from/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

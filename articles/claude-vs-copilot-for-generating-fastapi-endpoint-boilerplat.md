@@ -48,6 +48,18 @@ def create_user(user: UserCreate, db: Session = Depends(get_db)):
 
 And Copilot would suggest the implementation.
 
+## Table of Contents
+
+- [Understanding the Task](#understanding-the-task)
+- [Claude's Approach to FastAPI Code Generation](#claudes-approach-to-fastapi-code-generation)
+- [Copilot's Approach to FastAPI Code Generation](#copilots-approach-to-fastapi-code-generation)
+- [Side-by-Side Comparison](#side-by-side-comparison)
+- [Authentication and Security Boilerplate](#authentication-and-security-boilerplate)
+- [Testing Boilerplate Generation](#testing-boilerplate-generation)
+- [Performance and Iteration Speed](#performance-and-iteration-speed)
+- [Practical Recommendations](#practical-recommendations)
+- [When to Use Each Tool](#when-to-use-each-tool)
+
 ## Understanding the Task
 
 FastAPI endpoint boilerplate typically includes several components:

@@ -11,7 +11,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, troubleshooting, artificial-intelligence]---
+tags: [ai-tools-compared, troubleshooting, artificial-intelligence]
+---
 ---
 
 layout: default
@@ -25,7 +26,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, troubleshooting, artificial-intelligence]---
+tags: [ai-tools-compared, troubleshooting, artificial-intelligence]
+---
 
 
 AI coding assistants have become invaluable for Rust development, but they sometimes generate code with syntax errors that can be frustrating to debug. This guide covers the most common syntax issues AI tools produce when generating Rust code and provides practical solutions you can apply immediately.
@@ -38,6 +40,15 @@ AI coding assistants have become invaluable for Rust development, but they somet
 - **AI assistants sometimes forget**: that Rust expressions require semicolons when used as statements.
 - **Rust infers types in**: most cases.
 - **If you need explicit types**: use the proper format without redundant annotations.
+
+## Table of Contents
+
+- [Why AI Tools Struggle with Rust Syntax](#why-ai-tools-struggle-with-rust-syntax)
+- [Prerequisites](#prerequisites)
+- [Advanced Error Categories and Solutions](#advanced-error-categories-and-solutions)
+- [AI Tool Comparison for Rust](#ai-tool-comparison-for-rust)
+- [When to Review AI Output](#when-to-review-ai-output)
+- [Troubleshooting](#troubleshooting)
 
 ## Why AI Tools Struggle with Rust Syntax
 
@@ -483,8 +494,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [AI Code Completion for Flutter BLoC Pattern Event and State Class Generation](/ai-code-completion-for-flutter-bloc-pattern-event-and-state-/)
-- [AI Code Generation for Java Reactive Programming](/ai-code-generation-for-java-reactive-programming-with-projec/)
-- [AI Code Generation for Java Virtual Threads Project Loom](/ai-code-generation-for-java-virtual-threads-project-loom-pat/)
-
+- [Best AI Coding Tools for Rust Developers 2026](/ai-tools-compared/ai-tools-for-rust-developers-2026/)
+- [AI Coding Assistant for Rust Developers Compared](/ai-tools-compared/ai-coding-assistant-for-rust-developers-compared/)
+- [How Accurate Are AI Tools for Rust Unsafe Code Blocks](/ai-tools-compared/how-accurate-are-ai-tools-for-rust-unsafe-code-blocks-and-ff/)
+- [How Well Do AI Tools Generate Rust Macro Definitions and Pro](/ai-tools-compared/how-well-do-ai-tools-generate-rust-macro-definitions-and-pro/)
+- [Best AI Tools for Writing Rust Async Code with Tokio](/ai-tools-compared/best-ai-tools-for-writing-rust-async-code-with-tokio-runtime/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

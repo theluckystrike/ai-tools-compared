@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison, artificial-intelligence]---
+tags: [ai-tools-compared, comparison, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI Git Commit Message Generators Compared 2026"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison, artificial-intelligence]---
+tags: [ai-tools-compared, comparison, artificial-intelligence]
+---
 
 {% raw %}
 
@@ -41,6 +43,27 @@ A good commit message tells your future self (and teammates) why a change was ma
 - **Which is better for beginners**: the first tool or the second tool?
 
 It depends on your background.
+
+## Table of Contents
+
+- [Tools Compared](#tools-compared)
+- [What Makes a Good Commit Message](#what-makes-a-good-commit-message)
+- [aicommits](#aicommits)
+- [commitizen with AI hooks](#commitizen-with-ai-hooks)
+- [Claude Code](#claude-code)
+- [Cursor IDE Commit](#cursor-ide-commit)
+- [GitHub Copilot Commit (VS Code)](#github-copilot-commit-vs-code)
+- [Quality Comparison](#quality-comparison)
+- [Recommended Setup](#recommended-setup)
+- [Advanced Hook: Custom Commit Messages for Different Types](#advanced-hook-custom-commit-messages-for-different-types)
+- [Integrating with Conventional Commits Linting](#integrating-with-conventional-commits-linting)
+- [Commit Messages as Documentation](#commit-messages-as-documentation)
+- [Multi-Author Commits](#multi-author-commits)
+- [Commit Messages for Semantic Release](#commit-messages-for-semantic-release)
+- [Team Commit Message Standards](#team-commit-message-standards)
+- [Subject Line (First Line)](#subject-line-first-line)
+- [Body (Separate with Blank Line)](#body-separate-with-blank-line)
+- [Example](#example)
 
 ## Tools Compared
 

@@ -52,6 +52,16 @@ This guide covers practical strategies for organizing AI tool configuration file
 - **It's better-structured configuration files**: that are self-explanatory, version-controlled, and easy to customize for different environments.
 - **Use Environment-Specific Configurations Separate**: development, staging, and production settings clearly.
 
+## Table of Contents
+
+- [Why Customization Files Matter for Onboarding](#why-customization-files-matter-for-onboarding)
+- [Core Principles for Configuration File Organization](#core-principles-for-configuration-file-organization)
+- [Practical Examples for Common AI Tools](#practical-examples-for-common-ai-tools)
+- [Best Practices for Distribution](#best-practices-for-distribution)
+- [Onboarding Workflow: Getting New Developers Started Fast](#onboarding-workflow-getting-new-developers-started-fast)
+- [Common Pitfalls in Configuration File Management](#common-pitfalls-in-configuration-file-management)
+- [Troubleshooting Configuration Issues](#troubleshooting-configuration-issues)
+
 ## Why Customization Files Matter for Onboarding
 
 AI tools—from GitHub Copilot and Claude Code to custom in-house scripts—typically rely on configuration files that control behavior, API keys, prompt templates, and integration settings. When these files are disorganized or poorly documented, new team members face a steep learning curve that slows productivity.
@@ -330,10 +340,9 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 ## Related Articles
 
 - [Best Practices for Maintaining AI Tool Configuration Files](/ai-tools-compared/best-practices-for-maintaining-ai-tool-configuration-files-a/)
-- [Best Practices for Sharing AI Tool Configuration Files Acros](/ai-tools-compared/best-practices-for-sharing-ai-tool-configuration-files-acros/)
-- [Best Practices for Versioning CursorRules Files Across Team](/ai-tools-compared/best-practices-for-versioning-cursorrules-files-across-team-/)
-- [AI Tool Customization Comparison: Claude.md vs .cursorrules](/ai-tools-compared/ai-tool-customization-comparison-claude-md-vs-cursorrules-vs/)
-- [AI Autocomplete for Test Files How Well Different Tools Pred](/ai-tools-compared/ai-autocomplete-for-test-files-how-well-different-tools-pred/)
-
+- [Best Practices for AI Coding Tool Project Configuration](/ai-tools-compared/best-practices-for-ai-coding-tool-project-configuration-in-l/)
+- [Best Practices for Sharing AI Tool Configuration Files](/ai-tools-compared/best-practices-for-sharing-ai-tool-configuration-files-acros/)
+- [Best Practices for Documenting AI-Generated Code for Future](/ai-tools-compared/best-practices-for-documenting-ai-generated-code-for-future-/)
+- [Best Practices for Writing .cursorrules File That Improves](/ai-tools-compared/best-practices-for-writing-cursorrules-file-that-improves-co/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

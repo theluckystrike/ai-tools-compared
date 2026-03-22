@@ -41,6 +41,22 @@ This guide examines practical strategies for getting the most out of AI code com
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **This guide examines practical**: strategies for getting the most out of AI code completion when working with Kotlin Compose Multiplatform shared UI components.
 
+## Table of Contents
+
+- [Understanding KMP Shared UI Architecture](#understanding-kmp-shared-ui-architecture)
+- [Configuring AI Tools for KMP Projects](#configuring-ai-tools-for-kmp-projects)
+- [Common Pitfalls and How to Avoid Them](#common-pitfalls-and-how-to-avoid-them)
+- [Optimizing AI Prompts for KMP UI Development](#optimizing-ai-prompts-for-kmp-ui-development)
+- [Advanced KMP UI Patterns with AI Assistance](#advanced-kmp-ui-patterns-with-ai-assistance)
+- [Handling AI Suggestions for Conditional Rendering](#handling-ai-suggestions-for-conditional-rendering)
+- [Context Management for Complex KMP Projects](#context-management-for-complex-kmp-projects)
+- [Module Structure](#module-structure)
+- [UI Patterns](#ui-patterns)
+- [Forbidden Patterns in Shared Code](#forbidden-patterns-in-shared-code)
+- [Safe Cross-Platform APIs](#safe-cross-platform-apis)
+- [Testing AI-Generated Shared Components](#testing-ai-generated-shared-components)
+- [Best Practices for KMP AI Assistance](#best-practices-for-kmp-ai-assistance)
+
 ## Understanding KMP Shared UI Architecture
 
 Kotlin Compose Multiplatform enables you to write UI code once and deploy it across platforms. The shared code typically lives in a common module, while platform-specific implementations reside in separate source sets.
@@ -342,8 +358,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI for Writing Correct Kotlin Multiplatform Shared](/best-ai-for-writing-correct-kotlin-multiplatform-shared-code/)
-- [AI Tools for Generating Platform Specific Code in Kotlin Multiplatform Projects](/ai-tools-for-generating-platform-specific-code-in-kotlin-mul/)
-- [AI Code Completion for Flutter BLoC Pattern Event and State Class Generation](/ai-code-completion-for-flutter-bloc-pattern-event-and-state-/)
-
+- [Best AI for Writing Correct Kotlin Multiplatform Shared](/ai-tools-compared/best-ai-for-writing-correct-kotlin-multiplatform-shared-code/)
+- [AI Tools for Generating Platform Specific Code in Kotlin](/ai-tools-compared/ai-tools-for-generating-platform-specific-code-in-kotlin-mul/)
+- [Best Air Gapped AI Code Completion Solutions for Offline](/ai-tools-compared/best-air-gapped-ai-code-completion-solutions-for-offline-dev/)
+- [Running Starcoder2 Locally for Code Completion](/ai-tools-compared/running-starcoder2-locally-for-code-completion-without-sendi/)
+- [AI Code Completion for Java Record Classes and Sealed](/ai-tools-compared/ai-code-completion-for-java-record-classes-and-sealed-interf/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

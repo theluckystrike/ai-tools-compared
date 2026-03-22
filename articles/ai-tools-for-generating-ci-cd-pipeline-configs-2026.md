@@ -39,6 +39,22 @@ CI/CD pipeline configuration is one of the highest-value applications for AI cod
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **GitHub Actions uses YAML**: with different conventions than GitLab CI or CircleCI, and manually translating between them wastes engineering time.
 
+## Table of Contents
+
+- [Why AI Excels at Pipeline Generation](#why-ai-excels-at-pipeline-generation)
+- [The Challenge: CI/CD Syntax Across Platforms](#the-challenge-cicd-syntax-across-platforms)
+- [Claude: Superior Pipeline Structure](#claude-superior-pipeline-structure)
+- [GPT-4: Functional but Verbose](#gpt-4-functional-but-verbose)
+- [GitHub Copilot: Inline Autocomplete, Not Generation](#github-copilot-inline-autocomplete-not-generation)
+- [Jenkins Groovy: More Complex Than Cloud Platforms](#jenkins-groovy-more-complex-than-cloud-platforms)
+- [Feature Comparison](#feature-comparison)
+- [Real-World Use Case: Multi-Stage Python Deployment](#real-world-use-case-multi-stage-python-deployment)
+- [Best Practices for AI-Generated Pipelines](#best-practices-for-ai-generated-pipelines)
+- [Making Your Choice](#making-your-choice)
+- [Debugging Pipeline Failures with AI](#debugging-pipeline-failures-with-ai)
+- [Performance Tips for AI-Generated Pipelines](#performance-tips-for-ai-generated-pipelines)
+- [Cost Analysis](#cost-analysis)
+
 ## Why AI Excels at Pipeline Generation
 score: 8
 intent-checked: true

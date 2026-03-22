@@ -49,6 +49,15 @@ Claude 3.5 Sonnet produces production-grade rate limiting implementations with e
 - **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
 - **Claude 3.5 Sonnet produces**: production-grade rate limiting implementations with explicit handling of distributed systems edge cases.
 
+## Table of Contents
+
+- [Three Rate Limiting Algorithms Explained](#three-rate-limiting-algorithms-explained)
+- [Claude 3.5 Sonnet: Distributed Rate Limiting](#claude-35-sonnet-distributed-rate-limiting)
+- [ChatGPT-4: Excellent Algorithm Explanations](#chatgpt-4-excellent-algorithm-explanations)
+- [Copilot: IDE Integration Convenience](#copilot-ide-integration-convenience)
+- [Real-World Implementation Considerations](#real-world-implementation-considerations)
+- [Choosing Your AI Tool](#choosing-your-ai-tool)
+
 ## Three Rate Limiting Algorithms Explained
 
 Token bucket allocates requests like coins dropped into a bucket. The bucket holds a maximum number of tokens (capacity). Every interval, new tokens are added. Each request consumes one token. When the bucket empties, requests are rejected. This algorithm handles burst traffic well—you can process 100 requests instantly if tokens are available, then throttle back to normal rates.
@@ -342,10 +351,9 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
+- [Best AI Tools for Generating API Rate Limiting Code 2026](/ai-tools-compared/best-ai-tools-for-generating-api-rate-limiting-code-2026/)
 - [Best AI Tools for Automated API Rate Limiting and Abuse](/ai-tools-compared/best-ai-tools-for-automated-api-rate-limiting-and-abuse-dete/)
-- [How to Manage AI Coding Tool Rate Limits Across Team of](/ai-tools-compared/how-to-manage-ai-coding-tool-rate-limits-across-team-of-developers/)
-- [How to Use AI to Generate pytest Tests for Rate Limited](/ai-tools-compared/how-to-use-ai-to-generate-pytest-tests-for-rate-limited-endpoint-throttling-behavior/)
-- [Best AI for QA Engineers Writing API Contract Testing Cases](/ai-tools-compared/best-ai-for-qa-engineers-writing-api-contract-test-cases-fro/)
-- [ChatGPT vs Claude for Writing API Documentation](/ai-tools-compared/chatgpt-vs-claude-for-writing-api-documentation/)
-
+- [AI Tools for API Documentation from Code 2026](/ai-tools-compared/ai-tools-for-api-documentation-from-code-2026/)
+- [Best AI Tools for Writing Kubernetes Operator Code](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-operator-code-from-scratch/)
+- [Best AI Tools for Generating API Documentation From Code](/ai-tools-compared/best-ai-tools-for-generating-api-documentation-from-code-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

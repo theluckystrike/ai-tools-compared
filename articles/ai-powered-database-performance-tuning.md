@@ -25,6 +25,20 @@ Database performance tuning requires reading query plans, understanding statisti
 - **Batch analysis at scale** — the real productivity gain is analyzing 20 slow queries in parallel, not debugging one at a time.
 - **Practical guidance included**: Step-by-step setup and configuration instructions.
 
+## Table of Contents
+
+- [The Core Workflow](#the-core-workflow)
+- [Prerequisites: Enabling Query Tracking](#prerequisites-enabling-query-tracking)
+- [Extracting Slow Queries](#extracting-slow-queries)
+- [AI Query Plan Interpretation](#ai-query-plan-interpretation)
+- [Index Recommendation Engine](#index-recommendation-engine)
+- [Reading EXPLAIN Output: What the AI Sees](#reading-explain-output-what-the-ai-sees)
+- [Query Rewrite Examples](#query-rewrite-examples)
+- [Automated Slow Query Report](#automated-slow-query-report)
+- [When AI Recommendations Fall Short](#when-ai-recommendations-fall-short)
+- [Tool Comparison](#tool-comparison)
+- [Related Reading](#related-reading)
+
 ## The Core Workflow
 
 ```
@@ -371,6 +385,14 @@ Claude's advantage is explaining *why* a query is slow in plain language — use
 - [AI Tools for Automated Schema Validation](/ai-tools-compared/ai-tools-for-automated-schema-validation/)
 
 ---
+
+## Related Articles
+
+- [AI Tools for Database Performance Optimization Query](/ai-tools-compared/ai-tools-for-database-performance-optimization-query-analysis/)
+- [AI-Powered Database Query Optimization Tools 2026](/ai-tools-compared/ai-powered-database-query-optimization-tools/)
+- [Best AI for Writing SQL Performance Tuning Recommendations](/ai-tools-compared/best-ai-for-writing-sql-performance-tuning-recommendations-f/)
+- [Best AI Tools for SQL Query Optimization and Database](/ai-tools-compared/best-ai-tools-for-sql-query-optimization-and-database-performance/)
+- [AI Tools for Automated Performance Profiling](/ai-tools-compared/ai-tools-automated-performance-profiling/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -26,6 +26,20 @@ Coverage reports tell you what's untested but not why or how to fix it. AI tools
 Copilot reads the active file, uses coverage annotations from the editor, and generates inline tests.
 - **This guide covers the coverage problem**: approach 1: claude for targeted gap analysis, example output, with specific setup instructions
 
+## Table of Contents
+
+- [The Coverage Problem](#the-coverage-problem)
+- [Approach 1: Claude for Targeted Gap Analysis](#approach-1-claude-for-targeted-gap-analysis)
+- [Example Output](#example-output)
+- [Approach 2: GitHub Copilot Chat for Coverage](#approach-2-github-copilot-chat-for-coverage)
+- [Approach 3: CodiumAI cover-agent (OSS)](#approach-3-codiumai-cover-agent-oss)
+- [Coverage Impact Comparison](#coverage-impact-comparison)
+- [Integration in CI](#integration-in-ci)
+- [Validating AI-Generated Tests Before Committing](#validating-ai-generated-tests-before-committing)
+- [Prioritizing Coverage by Risk](#prioritizing-coverage-by-risk)
+- [Tracking Coverage Trends Over Time](#tracking-coverage-trends-over-time)
+- [Related Reading](#related-reading)
+
 ## The Coverage Problem
 
 Low coverage is rarely random. It clusters in three places:
@@ -398,6 +412,14 @@ This creates an auditable record of coverage health alongside your commit histor
 - [Best AI Tools for Writing Playwright Tests](/ai-tools-compared/best-ai-tools-for-writing-playwright-tests-2026/)
 
 ---
+
+## Related Articles
+
+- [AI Tools for Automated Code Coverage Reporting](/ai-tools-compared/ai-tools-for-code-coverage-reporting)
+- [Claude Code Coverage Reporting Setup Guide](/ai-tools-compared/claude-code-coverage-reporting-setup-guide/)
+- [Best AI Tools for Generating Unit Tests](/ai-tools-compared/best-ai-tools-for-generating-unit-tests-from-legacy-code-comparison/)
+- [Best AI Assistant for QA Engineers Writing Test Coverage](/ai-tools-compared/best-ai-assistant-for-qa-engineers-writing-test-coverage-gap/)
+- [Best AI Tools for Generating Unit Tests 2026](/ai-tools-compared/ai-tools-for-generating-unit-tests-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

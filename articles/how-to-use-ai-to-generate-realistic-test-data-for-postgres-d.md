@@ -39,6 +39,14 @@ This guide shows you how to use AI to generate realistic test data for Postgres 
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **This guide covers why**: realistic test data matters, using ai to generate seed data, example: generating an users table, with specific setup instructions
 
+## Table of Contents
+
+- [Why Realistic Test Data Matters](#why-realistic-test-data-matters)
+- [Prerequisites](#prerequisites)
+- [Advanced Techniques](#advanced-techniques)
+- [Best Practices](#best-practices)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Realistic Test Data Matters
 
 Production-like test data reveals issues that synthetic or random data often misses. When your test data reflects actual usage patterns—real names, plausible email addresses, logical date sequences, and proper foreign key relationships—your testing becomes more meaningful. Queries behave as they would in production, edge cases surface naturally, and your application handles realistic data volumes more accurately.
@@ -289,10 +297,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Use AI to Generate Timezone Edge Case Test Data](/ai-tools-compared/how-to-use-ai-to-generate-timezone-edge-case-test-data/)
 - [AI Tools for Creating Realistic Test Datasets That Preserve](/ai-tools-compared/ai-tools-for-creating-realistic-test-datasets-that-preserve-/)
+- [AI Tools for Creating Test Data Generators That Respect](/ai-tools-compared/ai-tools-for-creating-test-data-generators-that-respect-busi/)
 - [AI Tools for Automated Test Data Generation 2026](/ai-tools-compared/ai-tools-for-automated-test-data-generation-2026/)
-- [AI Tools for Creating Test Data Generators That Respect Busi](/ai-tools-compared/ai-tools-for-creating-test-data-generators-that-respect-busi/)
-- [AI Tools for Creating Test Data Snapshots for Database](/ai-tools-compared/ai-tools-for-creating-test-data-snapshots-for-database-rollback-between-test-runs/)
-
+- [Best AI Assistant for Creating Test Data Factories with Real](/ai-tools-compared/best-ai-assistant-for-creating-test-data-factories-with-real/)
+- [Self-Hosted AI Tools for Generating Test Data and Fixtures](/ai-tools-compared/self-hosted-ai-tools-for-generating-test-data-and-fixtures-l/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

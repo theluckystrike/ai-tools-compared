@@ -41,6 +41,22 @@ Security architecture reviews are a critical component of any strong software de
 - **For occasional use**: consider whether a free alternative covers enough of your needs.
 - **GitHub Copilot**: Integrated into your IDE; useful for reviewing code patterns in real-time.
 
+## Table of Contents
+
+- [How AI Assistants Analyze Code Repositories](#how-ai-assistants-analyze-code-repositories)
+- [Generating Security Documentation](#generating-security-documentation)
+- [Practical Implementation Example](#practical-implementation-example)
+- [Best Practices for AI-Assisted Security Reviews](#best-practices-for-ai-assisted-security-reviews)
+- [Limitations to Consider](#limitations-to-consider)
+- [Integrating AI Documentation into Your Workflow](#integrating-ai-documentation-into-your-workflow)
+- [Tool Selection for Security Architecture Analysis](#tool-selection-for-security-architecture-analysis)
+- [Step-by-Step Workflow for AI-Assisted Security Review](#step-by-step-workflow-for-ai-assisted-security-review)
+- [Common Security Gaps AI Tools Identify](#common-security-gaps-ai-tools-identify)
+- [Price Comparison for AI-Assisted Security Reviews](#price-comparison-for-ai-assisted-security-reviews)
+- [Practical Example: Full Security Architecture Review](#practical-example-full-security-architecture-review)
+- [Integration with CI/CD Pipelines](#integration-with-cicd-pipelines)
+- [Limitations of AI-Assisted Security Reviews](#limitations-of-ai-assisted-security-reviews)
+
 ## How AI Assistants Analyze Code Repositories
 
 Modern AI assistants can parse multiple programming languages, understand code relationships, and identify security-relevant patterns within your repository. When you provide context about your codebase, these tools examine several key areas:

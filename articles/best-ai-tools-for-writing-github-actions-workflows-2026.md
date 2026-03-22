@@ -13,6 +13,7 @@ score: 8
 voice-checked: true
 intent-checked: true
 ---
+{% raw %}
 
 ## Overview
 
@@ -293,3 +294,4 @@ A: GitHub's UI is good for simple flows; AI tools are 10x faster for complex mul
 ---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

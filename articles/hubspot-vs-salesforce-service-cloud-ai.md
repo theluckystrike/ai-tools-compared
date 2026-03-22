@@ -40,6 +40,16 @@ When evaluating AI-powered customer service platforms, developers need more than
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **The platform uses a**: service-oriented architecture where AI features like summarization, classification, and content generation plug into existing objects (tickets, conversations, contacts).
 
+## Table of Contents
+
+- [Platform Architecture Overview](#platform-architecture-overview)
+- [API Capabilities and Developer Experience](#api-capabilities-and-developer-experience)
+- [AI Feature Comparison](#ai-feature-comparison)
+- [Pricing Comparison](#pricing-comparison)
+- [Data Residency and Enterprise Considerations](#data-residency-and-enterprise-considerations)
+- [Real-World Integration Patterns](#real-world-integration-patterns)
+- [Which Platform Suits Your Needs](#which-platform-suits-your-needs)
+
 ## Platform Architecture Overview
 
 Both platforms position AI as a core service layer, but their architectural approaches differ significantly.

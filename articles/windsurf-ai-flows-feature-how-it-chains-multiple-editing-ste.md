@@ -41,6 +41,25 @@ Windsurf AI Flows lets you chain multiple editing steps together to automate com
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [What Are Windsurf AI Flows?](#what-are-windsurf-ai-flows)
+- [How Multi-Step Chaining Works](#how-multi-step-chaining-works)
+- [Practical Example: Automated Code Refactoring Pipeline](#practical-example-automated-code-refactoring-pipeline)
+- [Benefits for Developer Workflows](#benefits-for-developer-workflows)
+- [Configuring Flow Execution](#configuring-flow-execution)
+- [Real-World Use Cases](#real-world-use-cases)
+- [Best Practices for Flow Design](#best-practices-for-flow-design)
+- [Advanced Flow Patterns](#advanced-flow-patterns)
+- [Real-World Use Cases Expanded](#real-world-use-cases-expanded)
+- [Comparing Windsurf Flows to Alternatives](#comparing-windsurf-flows-to-alternatives)
+- [Step-by-Step: Building Your First Flow](#step-by-step-building-your-first-flow)
+- [Performance Considerations](#performance-considerations)
+- [Monitoring and Debugging Flows](#monitoring-and-debugging-flows)
+- [Pricing and ROI Analysis](#pricing-and-roi-analysis)
+- [Best Practices for Flow Design](#best-practices-for-flow-design)
+- [Integration with CI/CD](#integration-with-cicd)
+
 ## What Are Windsurf AI Flows?
 
 Flows in Windsurf AI is a feature that lets you define sequences of actions that the AI executes automatically. Instead of manually triggering individual edits, you can create a flow that applies multiple transformations in a predetermined order. This proves particularly valuable when working with code refactoring, documentation updates, or multi-file modifications.
@@ -426,10 +445,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [Cursor AI Multi File Editing Feature How It Actually Works](/ai-tools-compared/cursor-ai-multi-file-editing-feature-how-it-actually-works-explained/)
+- [Does WindSurf AI Send Entire Project Context or Just Open](/ai-tools-compared/does-windsurf-ai-send-entire-project-context-or-just-open-fi/)
+- [Windsurf AI Not Picking Up ESLint Config](/ai-tools-compared/windsurf-ai-not-picking-up-eslint-config-troubleshooting-gui/)
 - [Windsurf Cascade vs Cursor Composer: Multi-File AI Editing](/ai-tools-compared/windsurf-cascade-vs-cursor-composer-multi-file-ai-editing-co/)
-- [Best AI for Learning OAuth2 and OIDC Authentication Flows](/ai-tools-compared/best-ai-for-learning-oauth2-and-oidc-authentication-flows-wi/)
-- [How to Chain Multiple AI Tools Together for Full Stack Devel](/ai-tools-compared/how-to-chain-multiple-ai-tools-together-for-full-stack-devel/)
-- [How to Manage AI Coding Context Across Multiple Related Repo](/ai-tools-compared/how-to-manage-ai-coding-context-across-multiple-related-repo/)
-
+- [Configure Claude Code](/ai-tools-compared/how-to-configure-claude-code-to-follow-your-teams-feature-fl/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

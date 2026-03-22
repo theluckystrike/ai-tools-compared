@@ -38,6 +38,26 @@ Running large language models locally has become practical for many developers. 
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **It targets users who**: want visual control over every parameter.
 
+## Table of Contents
+
+- [What Each Tool Does](#what-each-tool-does)
+- [Installation and Setup](#installation-and-setup)
+- [API Compatibility](#api-compatibility)
+- [Model Selection](#model-selection)
+- [Performance Comparison](#performance-comparison)
+- [Developer Workflow Integration](#developer-workflow-integration)
+- [Running Multiple Models](#running-multiple-models)
+- [When to Use Each](#when-to-use-each)
+- [Memory and Hardware Requirements](#memory-and-hardware-requirements)
+- [Quantization Levels Explained](#quantization-levels-explained)
+- [Streaming and Real-Time Usage](#streaming-and-real-time-usage)
+- [Integration with Development Tools](#integration-with-development-tools)
+- [Batch Processing and Scripting](#batch-processing-and-scripting)
+- [Monitoring and Observability](#monitoring-and-observability)
+- [When to Use Each: Detailed Decision Matrix](#when-to-use-each-detailed-decision-matrix)
+- [Hybrid Approach](#hybrid-approach)
+- [Related Reading](#related-reading)
+
 ## What Each Tool Does
 
 **Ollama** is a command-line tool that downloads, manages, and serves models via a local HTTP API. It abstracts away GGUF quantization selection, GPU layer offloading, and server configuration. You run `ollama run codellama` and you're talking to the model in seconds.

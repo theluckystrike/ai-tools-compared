@@ -26,6 +26,20 @@ This guide tests Claude Code, GitHub Copilot, and Cursor on real Pulumi tasks in
 - **Topics covered**: task 1: eks cluster with node groups, task 2: componentresource pattern, task 3: output handling
 - **Practical guidance included**: Step-by-step setup and configuration instructions
 
+## Table of Contents
+
+- [Task 1: EKS Cluster with Node Groups](#task-1-eks-cluster-with-node-groups)
+- [Task 2: ComponentResource Pattern](#task-2-componentresource-pattern)
+- [Task 3: Output Handling](#task-3-output-handling)
+- [Task 4: Stack References and Cross-Stack Dependencies](#task-4-stack-references-and-cross-stack-dependencies)
+- [Tool Comparison](#tool-comparison)
+- [Configuring AI Tools for Better Pulumi Output](#configuring-ai-tools-for-better-pulumi-output)
+- [Stack Organization](#stack-organization)
+- [Stack Reference Pattern](#stack-reference-pattern)
+- [Naming Convention](#naming-convention)
+- [Secrets](#secrets)
+- [Related Reading](#related-reading)
+
 ## Task 1: EKS Cluster with Node Groups
 
 **Prompt:** "Create a Pulumi TypeScript stack for an EKS cluster with two node groups: one for general workloads, one spot instance group for batch jobs."
@@ -407,6 +421,14 @@ When writing Pulumi TypeScript:
 - [Best AI Tools for Writing GitHub Actions Workflows](/ai-tools-compared/best-ai-tools-for-writing-github-actions-workflows-2026/)
 
 ---
+
+## Related Articles
+
+- [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-compared/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)
+- [Best AI Tools for Writing AWS CDK Infrastructure Code](/ai-tools-compared/best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/)
+- [AI Tools for Writing AWS CDK Infrastructure 2026](/ai-tools-compared/ai-tools-for-writing-aws-cdk-infrastructure-2026/)
+- [Best AI Assistants for Pulumi Infrastructure Code](/ai-tools-compared/best-ai-assistants-for-pulumi-infrastructure-code-in-typescript-2026/)
+- [Best AI Tools for Go Microservice Development](/ai-tools-compared/best-ai-tools-for-go-microservice-development)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

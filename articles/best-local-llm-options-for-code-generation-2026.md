@@ -40,6 +40,22 @@ Running code generation locally keeps your source code off external servers, eli
 - **In 2026**: the best local models have closed much of the gap with cloud APIs for everyday coding tasks.
 - **The 7B model's output was correct but used a manual doubly-linked list implementation**: verbose but functional.
 
+## Table of Contents
+
+- [Models Worth Running Locally in 2026](#models-worth-running-locally-in-2026)
+- [Hardware Requirements](#hardware-requirements)
+- [Setting Up Ollama](#setting-up-ollama)
+- [Model Deep Dives](#model-deep-dives)
+- [Integrating with VS Code via Continue.dev](#integrating-with-vs-code-via-continuedev)
+- [Model Comparison: DeepSeek Coder V3 vs Qwen2.5-Coder](#model-comparison-deepseek-coder-v3-vs-qwen25-coder)
+- [Running Quantized Models](#running-quantized-models)
+- [Batch Code Generation with Local Models](#batch-code-generation-with-local-models)
+- [Fine-Tuning Local Models](#fine-tuning-local-models)
+- [Offline Setup for Secure Environments](#offline-setup-for-secure-environments)
+- [Latency Reality Check](#latency-reality-check)
+- [Configure Model Context Size](#configure-model-context-size)
+- [When Local Makes Sense](#when-local-makes-sense)
+
 ## Models Worth Running Locally in 2026
 
 | Model | Parameters | VRAM (Q4_K_M) | HumanEval | Notes |

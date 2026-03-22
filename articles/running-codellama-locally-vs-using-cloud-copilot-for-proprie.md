@@ -54,6 +54,23 @@ For proprietary code, running CodeLlama locally is the better choice if data sec
 - **Some developers use Copilot**: for open-source work while running CodeLlama locally for sensitive projects.
 - **Be concise and output**: only code without explanation." } ``` For Neovim, use cmp-ollama or similar completion plugin configured to point to localhost:11434.
 
+## Table of Contents
+
+- [Understanding the Fundamental Difference](#understanding-the-fundamental-difference)
+- [Setting Up CodeLlama Locally](#setting-up-codellama-locally)
+- [Using GitHub Copilot for Proprietary Code](#using-github-copilot-for-proprietary-code)
+- [Comparing Performance and Quality](#comparing-performance-and-quality)
+- [Cost Analysis](#cost-analysis)
+- [Practical Recommendations](#practical-recommendations)
+- [Setting Up Local CodeLlama: The Complete Guide](#setting-up-local-codellama-the-complete-guide)
+- [Model Size vs Quality Trade-off](#model-size-vs-quality-trade-off)
+- [Performance Profiling: Local vs Cloud Reality](#performance-profiling-local-vs-cloud-reality)
+- [Compliance Use Cases Where Local is Mandatory](#compliance-use-cases-where-local-is-mandatory)
+- [Hybrid Strategy: Local + Cloud Workflow](#hybrid-strategy-local-cloud-workflow)
+- [When NOT to Run CodeLlama Locally](#when-not-to-run-codellama-locally)
+- [Cost Amortization Over Time](#cost-amortization-over-time)
+- [Migration Path: If You Decide to Switch Back](#migration-path-if-you-decide-to-switch-back)
+
 ## Understanding the Fundamental Difference
 
 CodeLlama is Meta's open-source language model designed for code generation and completion. It runs entirely on your local machine, meaning your code never leaves your environment during processing. GitHub Copilot, by contrast, processes your code through Microsoft's cloud infrastructure to generate suggestions in real-time.

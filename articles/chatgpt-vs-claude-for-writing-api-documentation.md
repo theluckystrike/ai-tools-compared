@@ -39,6 +39,19 @@ Choose Claude for API documentation when you need structured, consistent output 
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **Choose ChatGPT when you**: need rapid generation of multiple code snippets across languages or quick first drafts for review.
 
+## Table of Contents
+
+- [Understanding the Tools](#understanding-the-tools)
+- [Quick Comparison](#quick-comparison)
+- [Generating Endpoint Documentation](#generating-endpoint-documentation)
+- [Handling Authentication Sections](#handling-authentication-sections)
+- [Creating Code Examples](#creating-code-examples)
+- [Managing Long-Form Documentation](#managing-long-form-documentation)
+- [Version-Specific Documentation](#version-specific-documentation)
+- [Workflow Integration](#workflow-integration)
+- [Recommendations](#recommendations)
+- [Tips for Better Results](#tips-for-better-results)
+
 ## Understanding the Tools
 
 ChatGPT, powered by OpenAI's GPT models, generates text based on patterns learned during training. It excels at producing fluent, readable content quickly and supports multiple languages and code syntax highlighting. ChatGPT works best with explicit, detailed prompts and benefits from step-by-step instructions.

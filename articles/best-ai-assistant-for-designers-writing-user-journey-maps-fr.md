@@ -43,6 +43,17 @@ AI assistants have become valuable tools for designers who need to transform raw
 
 4.
 
+## Table of Contents
+
+- [The Core Challenge: From Data Points to Journey Narratives](#the-core-challenge-from-data-points-to-journey-narratives)
+- [How AI Assistants Process Analytics Data](#how-ai-assistants-process-analytics-data)
+- [Practical Example: Analyzing Checkout Abandonment](#practical-example-analyzing-checkout-abandonment)
+- [Code Snippet: Preparing Data for AI Analysis](#code-snippet-preparing-data-for-ai-analysis)
+- [Comparing AI Approaches for Journey Mapping](#comparing-ai-approaches-for-journey-mapping)
+- [Structuring Effective Prompts for Journey Analysis](#structuring-effective-prompts-for-journey-analysis)
+- [Limitations and Verification](#limitations-and-verification)
+- [Checkout Journey - Mobile Users (iPhone)](#checkout-journey-mobile-users-iphone)
+
 ## The Core Challenge: From Data Points to Journey Narratives
 
 User journey mapping requires connecting disparate data sources—Google Analytics event logs, Mixpanel exports, Amplitude funnels, and raw database queries—into a cohesive story about how users move through your product. The challenge isn't just visualization; it's interpretation. Raw analytics tell you what users did, but journey maps require understanding why they did it and what should happen next.

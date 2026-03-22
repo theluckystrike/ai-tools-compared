@@ -40,6 +40,18 @@ Mocking complex third-party libraries in Jest remains one of the most time-consu
 - **By providing context about**: the specific methods your code uses, you can receive accurate mock setups that match your actual usage patterns.
 - **Use `jest.clearAllMocks()` in a**: global `beforeEach` or `afterEach` rather than manually resetting individual mocks.
 
+## Table of Contents
+
+- [The Challenge of Mocking Complex Libraries](#the-challenge-of-mocking-complex-libraries)
+- [AI Tool Comparison for Jest Mock Generation](#ai-tool-comparison-for-jest-mock-generation)
+- [How AI Tools Generate Jest Mocks](#how-ai-tools-generate-jest-mocks)
+- [Practical Examples](#practical-examples)
+- [Handling Asynchronous Operations](#handling-asynchronous-operations)
+- [Mocking Error Conditions](#mocking-error-conditions)
+- [Effective Prompts for AI Mock Generation](#effective-prompts-for-ai-mock-generation)
+- [Organizing Mocks in Large Codebases](#organizing-mocks-in-large-codebases)
+- [Best Practices for AI-Generated Mocks](#best-practices-for-ai-generated-mocks)
+
 ## The Challenge of Mocking Complex Libraries
 
 When you work with third-party SDKs in your application code, writing tests requires replacing those dependencies with mocks that behave identically to the real implementations. The challenge intensifies with libraries that have deep method chains, complex configuration objects, or return different response types based on input parameters.
@@ -373,11 +385,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Prevent AI Coding Tools from Generating Overly](/ai-tools-compared/how-to-prevent-ai-coding-tools-from-generating-overly-complex-solutions/)
 - [AI Tools for Generating API Mock Servers 2026](/ai-tools-compared/ai-tools-for-generating-api-mock-servers-2026/)
-- [Best AI Tool for Generating Jest Test Cases from React](/ai-tools-compared/best-ai-tool-for-generating-jest-test-cases-from-react-compo/)
-- [Claude Code MSW Mock Service Worker Guide](/ai-tools-compared/claude-code-msw-mock-service-worker-guide/)
-- [Cursor vs Windsurf for Building Next Js App from Design Mock](/ai-tools-compared/cursor-vs-windsurf-for-building-next-js-app-from-design-mock/)
-
+- [Best AI Tools for Writing Unit Test Mocks 2026](/ai-tools-compared/best-ai-tools-for-writing-unit-test-mocks-2026/)
+- [AI Tools for Writing Jest Tests for Graphql Resolvers](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-graphql-resolvers-with-dataloader-batching/)
+- [AI Tools for Generating Platform Specific Code in Kotlin](/ai-tools-compared/ai-tools-for-generating-platform-specific-code-in-kotlin-mul/)
+- [How to Prevent AI Coding Tools from Generating Overly](/ai-tools-compared/how-to-prevent-ai-coding-tools-from-generating-overly-complex-solutions/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

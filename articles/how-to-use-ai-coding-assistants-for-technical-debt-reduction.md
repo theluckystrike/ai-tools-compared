@@ -42,6 +42,14 @@ This guide shows you how to use AI tools systematically to tackle technical debt
 - **- Set realistic goals**: Aim to reduce debt by 10-15% per sprint rather than attempting complete overhauls.
 - **This guide shows you**: how to use AI tools systematically to tackle technical debt in your projects.
 
+## Table of Contents
+
+- [Identifying Technical Debt with AI Assistance](#identifying-technical-debt-with-ai-assistance)
+- [Creating a Systematic Reduction Workflow](#creating-a-systematic-reduction-workflow)
+- [Practical Examples](#practical-examples)
+- [Tracking Progress Over Time](#tracking-progress-over-time)
+- [Best Practices for Sustainable Debt Reduction](#best-practices-for-sustainable-debt-reduction)
+
 ## Identifying Technical Debt with AI Assistance
 
 The first step in reducing technical debt involves knowing where it exists. AI assistants can analyze your codebase to surface problems that are easy to miss during normal development.

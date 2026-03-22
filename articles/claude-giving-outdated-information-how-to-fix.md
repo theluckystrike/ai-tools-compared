@@ -40,6 +40,21 @@ To fix Claude giving outdated information, start a fresh conversation to clear c
 - **Ask Claude to update**: the example for current versions ### Scenario: Old Framework Recommendations Web frameworks update frequently.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [When to Seek Alternative Resources](#when-to-seek-alternative-resources)
+- [Troubleshooting](#troubleshooting)
+- [Building a Verification Workflow](#building-a-verification-workflow)
+- [Handling Tool-Specific Outdated Information](#handling-tool-specific-outdated-information)
+- [Documentation Patterns That Prevent Outdated Advice](#documentation-patterns-that-prevent-outdated-advice)
+- [Current Version: 3.2.0 (Updated: March 2026)](#current-version-320-updated-march-2026)
+- [Authentication](#authentication)
+- [Endpoints](#endpoints)
+- [Prompting for Current Information](#prompting-for-current-information)
+- [Real-World Scenario: Outdated Framework Recommendations](#real-world-scenario-outdated-framework-recommendations)
+- [Common Tools and Their Update Schedules](#common-tools-and-their-update-schedules)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

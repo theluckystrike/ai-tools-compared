@@ -40,6 +40,14 @@ Responsive design testing remains one of the most tedious aspects of web develop
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Responsive design testing remains**: one of the most tedious aspects of web development.
 
+## Table of Contents
+
+- [Why Responsive Breakpoint Testing Matters](#why-responsive-breakpoint-testing-matters)
+- [AI Tool Comparison for Responsive Testing](#ai-tool-comparison-for-responsive-testing)
+- [Practical Testing Patterns](#practical-testing-patterns)
+- [Recommendations by Use Case](#recommendations-by-use-case)
+- [Best Practices for AI-Generated Responsive Tests](#best-practices-for-ai-generated-responsive-tests)
+
 ## Why Responsive Breakpoint Testing Matters
 
 Modern web applications must function across dozens of viewport sizes. CSS media queries control layout changes, but testing these transitions manually creates coverage gaps. Automated responsive tests verify that:

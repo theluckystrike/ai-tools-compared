@@ -42,6 +42,20 @@ Generate a Patrol test for the profile settings screen:
 1.
 - **Verify map loads with**: user location 4.
 
+## Table of Contents
+
+- [Understanding Patrol Framework for Flutter Testing](#understanding-patrol-framework-for-flutter-testing)
+- [AI Code Generation Tools for Patrol Tests](#ai-code-generation-tools-for-patrol-tests)
+- [Practical Workflow for AI-Assisted Patrol Testing](#practical-workflow-for-ai-assisted-patrol-testing)
+- [Advanced AI Tips for Patrol Test Generation](#advanced-ai-tips-for-patrol-test-generation)
+- [Best Practices for AI-Generated Patrol Tests](#best-practices-for-ai-generated-patrol-tests)
+- [AI-Assisted Test Structure Patterns](#ai-assisted-test-structure-patterns)
+- [Handling Async Operations in AI-Generated Tests](#handling-async-operations-in-ai-generated-tests)
+- [Advanced Scenario: Multi-Screen Flow Testing](#advanced-scenario-multi-screen-flow-testing)
+- [Debugging AI-Generated Test Failures](#debugging-ai-generated-test-failures)
+- [CI/CD Integration for AI-Generated Tests](#cicd-integration-for-ai-generated-tests)
+- [Best Practices for AI-Generated Patrol Tests](#best-practices-for-ai-generated-patrol-tests)
+
 ## Understanding Patrol Framework for Flutter Testing
 
 Patrol is an open-source Flutter package that extends the native capabilities of testing frameworks. Unlike standard Flutter widget tests that run in a controlled environment, Patrol tests execute on real devices or simulators, allowing interaction with platform-specific features like notifications, permissions, and native UI components.

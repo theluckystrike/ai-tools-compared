@@ -40,6 +40,18 @@ Security researchers have increasingly focused on AI coding tools and their IDE 
 - **Mitigation**: Choose AI coding tools that support OAuth authentication flows.
 - **AI assistant recommends the**: public package instead of the private one 3.
 
+## Table of Contents
+
+- [Remote Code Execution Through Prompt Injection](#remote-code-execution-through-prompt-injection)
+- [Credential Storage Vulnerabilities](#credential-storage-vulnerabilities)
+- [Insecure WebSocket Connections](#insecure-websocket-connections)
+- [Dependency Confusion Attacks](#dependency-confusion-attacks)
+- [Training Data Exfiltration](#training-data-exfiltration)
+- [Extension Permission Abuse](#extension-permission-abuse)
+- [Insecure Deserialization in Plugin Updates](#insecure-deserialization-in-plugin-updates)
+- [Practical Security Recommendations](#practical-security-recommendations)
+- [Looking Ahead](#looking-ahead)
+
 ## Remote Code Execution Through Prompt Injection
 
 The most critical vulnerability category involves prompt injection attacks that lead to remote code execution (RCE). Penetration testers have repeatedly found that AI coding tools process context from multiple sources without proper sanitization.
@@ -254,11 +266,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How to Create Reusable Prompt Templates for Common AI Coding](/ai-tools-compared/how-to-create-reusable-prompt-templates-for-common-ai-coding/)
-- [AI Autocomplete for Test Files How Well Different Tools Pred](/ai-tools-compared/ai-autocomplete-for-test-files-how-well-different-tools-pred/)
-- [AI for Automated Regression Test Generation from Bug Reports](/ai-tools-compared/ai-for-automated-regression-test-generation-from-bug-reports/)
-- [AI Tools for Automated Test Data Generation 2026](/ai-tools-compared/ai-tools-for-automated-test-data-generation-2026/)
-- [AI Tools for Creating Boundary Value Test Case](/ai-tools-compared/ai-tools-for-creating--boundary-value-test-case/)
-
+- [Enterprise AI Coding Tool Network Security Requirements](/ai-tools-compared/enterprise-ai-coding-tool-network-security-requirements-and-/)
+- [Best Free AI Coding Tool With No Message Limits in 2026](/ai-tools-compared/best-free-ai-coding-tool-with-no-message-limits-2026/)
+- [Configure AI Coding Tools](/ai-tools-compared/how-to-configure-ai-coding-tools-to-respect-your-teams-branc/)
+- [What Code Snippets Get Logged in AI Coding Tool Provider](/ai-tools-compared/what-code-snippets-get-logged-in-ai-coding-tool-provider-aud/)
+- [Self Hosted AI Coding Tools That Support Air Gapped](/ai-tools-compared/self-hosted-ai-coding-tools-that-support-air-gapped-environm/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

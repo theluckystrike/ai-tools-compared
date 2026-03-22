@@ -10,7 +10,8 @@ reviewed: true
 score: 7
 voice-checked: true
 intent-checked: true
-tags: [ai-tools-compared, database, devops, migration, artificial-intelligence]---
+tags: [ai-tools-compared, database, devops, migration, artificial-intelligence]
+---
 
 
 Database migrations are the highest-risk deployments in most systems. A schema change that looks correct in isolation can create performance cliffs, data loss, or deadlock conditions when applied at scale. AI tools now review migration scripts before execution, analyzing schema diffs, detecting breaking changes, modeling rollback scenarios, and integrating validation into CI/CD pipelines.
@@ -25,6 +26,18 @@ This guide evaluates which AI tools provide actionable migration review and whic
 - **For occasional use**: consider whether a free alternative covers enough of your needs.
 - **Backfill in chunks in**: background job (doesn't lock table): UPDATE orders SET status = 'pending' WHERE status IS NULL AND id % 100 = 0 AND id < 2500000; Repeat for each modulo slice 4.
 - **Free and basic plans**: typically get community forum support and documentation.
+
+## Table of Contents
+
+- [Why Database Migration Review is Hard](#why-database-migration-review-is-hard)
+- [Claude - Context-Aware Migration Analysis](#claude-context-aware-migration-analysis)
+- [GitHub Copilot - Migration Template Suggestions](#github-copilot-migration-template-suggestions)
+- [Cody (Sourcegraph) - Repository and Database Schema Integration](#cody-sourcegraph-repository-and-database-schema-integration)
+- [Specialized Tools: Atlas (HashiCorp) and Liquibase](#specialized-tools-atlas-hashicorp-and-liquibase)
+- [Practical Migration Review Checklist (AI-Assisted)](#practical-migration-review-checklist-ai-assisted)
+- [Real-World Migration Disasters AI Review Prevents](#real-world-migration-disasters-ai-review-prevents)
+- [CI/CD Integration for Migration Review](#cicd-integration-for-migration-review)
+- [Recommendation: Use Claude for Risky Migrations, Copilot for Routine Ones](#recommendation-use-claude-for-risky-migrations-copilot-for-routine-ones)
 
 ## Why Database Migration Review is Hard
 
@@ -437,10 +450,9 @@ Check the export options before committing. Most tools let you export your data,
 
 ## Related Articles
 
-- [AI Powered Database Migration Tools Comparison](/ai-tools-compared/ai-powered-database-migration-tools-comparison/)
-- [AI Tools for Database Performance Optimization Query Analysis](/ai-tools-compared/ai-tools-for-database-performance-optimization-query-analysis/)
-- [AI Tools for Reviewing Terraform Plans Before Applying to Production](/ai-tools-compared/ai-tools-for-reviewing-terraform-plans-before-applying-to-pr/)
-- [Best AI Tools for Data Pipeline Debugging 2026](/ai-tools-compared/best-ai-tools-for-data-pipeline-debugging-2026/)
-- [AI Tools for Automated Rollback Decision Making in Deployments](/ai-tools-compared/ai-tools-for-automated-rollback-decision-making-in-deploymen/)
-
+- [Best AI Tools for Database Schema Migration Review 2026](/ai-tools-compared/best-ai-tools-for-database-schema-migration-review-2026/---)
+- [AI Tools for Database Migration Review 2026](/ai-tools-compared/ai-tools-for-database-migration-review-2026/)
+- [AI-Powered Database Migration Tools Comparison 2026](/ai-tools-compared/ai-powered-database-migration-tools-comparison/)
+- [AI Tools for Writing Database Migration Rollback Scripts](/ai-tools-compared/ai-tools-for-writing-database-migration-rollback-scripts-2026/)
+- [AI Tools for Automated Migration Testing 2026](/ai-tools-compared/ai-tools-for-automated-migration-testing-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

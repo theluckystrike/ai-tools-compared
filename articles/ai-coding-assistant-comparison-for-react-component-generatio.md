@@ -40,6 +40,15 @@ Choose Claude Code for production-ready React components with strong TypeScript 
 - **Choose Claude Code for**: production-ready React components with strong TypeScript typing and accessibility considerations.
 - **Choose other tools if**: you prioritize quick scaffolding over quality.
 
+## Table of Contents
+
+- [What Defines Quality in React Component Generation](#what-defines-quality-in-react-component-generation)
+- [Comparing AI Assistants for React Component Generation](#comparing-ai-assistants-for-react-component-generation)
+- [Tool Comparison at a Glance](#tool-comparison-at-a-glance)
+- [Prompting Tips for Better React Components](#prompting-tips-for-better-react-components)
+- [Recommendations by Use Case](#recommendations-by-use-case)
+- [Related Reading](#related-reading)
+
 ## What Defines Quality in React Component Generation
 
 High-quality React component generation requires more than syntax correctness. The best AI assistants produce components that follow established patterns, handle edge cases appropriately, and integrate well with existing codebases. Key evaluation criteria include proper hook usage, correct TypeScript typing, accessibility attributes, prop validation, and appropriate separation of concerns. Components should be ready for production without requiring extensive refactoring.
@@ -278,6 +287,14 @@ All four assistants can extract component logic into custom hooks, but Claude Co
 - [How to Use AI to Generate Component Diagrams from React](/ai-tools-compared/how-to-use-ai-to-generate-component-diagrams-from-react-or-v/)
 - [Best AI Assistants for AWS CloudFormation Template](/ai-tools-compared/best-ai-assistants-for-aws-cloudformation-template-generatio/)
 - [AI Coding Assistant Accuracy for Typescript Next Js Server C](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
+
+## Related Articles
+
+- [Best AI Coding Assistant for React Development](/ai-tools-compared/best-ai-coding-assistant-for-react-development/)
+- [Cursor vs Windsurf for React Development 2026](/ai-tools-compared/cursor-vs-windsurf-for-react-development-2026/)
+- [How to Create .cursorrules That Enforce Your Teams React](/ai-tools-compared/how-to-create-cursorrules-that-enforce-your-teams-react-comp/)
+- [AI Coding Assistant Comparison for TypeScript monorepo](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-monorepo-with-turborepo-setup/)
+- [Writing Effective CursorRules for React TypeScript Projects](/ai-tools-compared/writing-effective-cursorrules-for-react-typescript-projects-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

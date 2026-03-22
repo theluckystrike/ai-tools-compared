@@ -10,7 +10,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI Tools for Automated Performance Profiling"
@@ -23,7 +24,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 {% raw %}
 
@@ -40,6 +42,17 @@ Focus on:
 - **Specific optimization recommendations with**: code examples 4.
 - **Are any hot functions**: in user application code (not node_modules)? 2.
 - **Estimated impact of fixing**: each bottleneck` }] }); return response.content[0].text; } ``` ## Database Query Analysis The most common performance issue in web apps is slow SQL.
+
+## Table of Contents
+
+- [The Manual Profiling Problem](#the-manual-profiling-problem)
+- [Pyroscope + AI Analysis](#pyroscope-ai-analysis)
+- [Node.js Clinic.js with AI](#nodejs-clinicjs-with-ai)
+- [Database Query Analysis](#database-query-analysis)
+- [Memory Leak Detection](#memory-leak-detection)
+- [Continuous Performance Monitoring with AI Alerts](#continuous-performance-monitoring-with-ai-alerts)
+- [Tool Comparison](#tool-comparison)
+- [Related Reading](#related-reading)
 
 ## The Manual Profiling Problem
 

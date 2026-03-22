@@ -40,6 +40,15 @@ Automated accessibility testing has become essential for building inclusive web 
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Understanding the Accessibility Testing Space](#understanding-the-accessibility-testing-space)
+- [Setting Up Playwright for Accessibility Testing](#setting-up-playwright-for-accessibility-testing)
+- [AI Tools for Generating Accessibility Tests](#ai-tools-for-generating-accessibility-tests)
+- [Automating WCAG Compliance Checks](#automating-wcag-compliance-checks)
+- [Testing Specific WCAG Success Criteria](#testing-specific-wcag-success-criteria)
+- [Best Practices for AI-Generated Accessibility Tests](#best-practices-for-ai-generated-accessibility-tests)
+
 ## Understanding the Accessibility Testing Space
 
 WCAG (Web Content Accessibility Guidelines) provides the foundation for making web content accessible to people with disabilities. The guidelines are organized around four principles: perceivable, operable, understandable, and. Each principle contains specific success criteria that web applications must meet to achieve compliance levels A, AA, or AAA.
@@ -303,10 +312,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [AI Tools for Writing Playwright Tests That Verify Responsive](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-responsive/)
-- [AI Tools for Writing Playwright Tests That Verify Toast Noti](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-toast-noti/)
-- [Best AI Assistant for Writing Playwright Tests](/ai-tools-compared/best-ai-assistant-for-writing-playwright-tests-for-drag-and-drop-interactions-2026/)
-- [Best AI for Writing Playwright Tests That Handle Dynamic Loa](/ai-tools-compared/best-ai-for-writing-playwright-tests-that-handle-dynamic-loa/)
+- [AI Tools for Writing Playwright Tests That Verify Toast](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-toast-noti/)
+- [Best AI Tools for Writing Playwright Tests 2026](/ai-tools-compared/best-ai-tools-for-writing-playwright-tests-2026/)
 - [Best AI Tools for Writing Playwright E2E Tests 2026](/ai-tools-compared/best-ai-tools-for-writing-playwright-e2e-tests-2026/)
-
+- [Which AI Is Better for Writing Playwright End-to-End Tests](/ai-tools-compared/which-ai-is-better-for-writing-playwright-end-to-end-tests-2/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

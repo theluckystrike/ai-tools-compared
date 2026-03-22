@@ -41,6 +41,29 @@ GitHub Copilot has become an essential tool for developers, but corporate networ
 - **Could this problem be**: caused by a recent update? Yes, updates frequently introduce new bugs or change behavior.
 - **If no one else reports it**: your local environment configuration is likely the cause.
 
+## Table of Contents
+
+- [Understanding the Problem](#understanding-the-problem)
+- [Diagnosing Your Network Configuration](#diagnosing-your-network-configuration)
+- [Solution 1: Configure VS Code Proxy Settings](#solution-1-configure-vs-code-proxy-settings)
+- [Solution 2: Set Environment Variables](#solution-2-set-environment-variables)
+- [Solution 3: Configure Git to Use Proxy](#solution-3-configure-git-to-use-proxy)
+- [Solution 4: Whitelist Copilot Endpoints](#solution-4-whitelist-copilot-endpoints)
+- [Solution 5: Use a SOCKS5 Proxy](#solution-5-use-a-socks5-proxy)
+- [Solution 6: Check Certificate Issues](#solution-6-check-certificate-issues)
+- [Solution 7: Use GitHub Copilot Business or Enterprise](#solution-7-use-github-copilot-business-or-enterprise)
+- [Quick Troubleshooting Checklist](#quick-troubleshooting-checklist)
+- [Advanced Proxy Debugging](#advanced-proxy-debugging)
+- [Enterprise Environment Configurations](#enterprise-environment-configurations)
+- [Performance Optimization Through Proxy](#performance-optimization-through-proxy)
+- [Monitoring and Logging](#monitoring-and-logging)
+- [Emergency Workarounds](#emergency-workarounds)
+- [Long-term Solutions](#long-term-solutions)
+- [Post-Mortem: Preventing Future Proxy Issues](#post-mortem-preventing-future-proxy-issues)
+- [If Copilot stops working:](#if-copilot-stops-working)
+- [Network info:](#network-info)
+- [Contact: IT Service Desk #2525](#contact-it-service-desk-2525)
+
 ## Understanding the Problem
 
 GitHub Copilot communicates with OpenAI's servers (and Microsoft Azure endpoints for enterprise users) through HTTPS connections. Corporate proxies and firewalls inspect, filter, and sometimes block these connections. The result is Copilot failing to load, returning authentication errors, or showing "Copilot could not connect to the server" notifications.

@@ -43,6 +43,19 @@ This guide demonstrates practical techniques for using AI to debug flaky integra
 - **Recommended fixes**: 1.
 - **Check if your database**: uses async replication 3.
 
+## Table of Contents
+
+- [Understanding Flaky Test Patterns](#understanding-flaky-test-patterns)
+- [Collecting the Right Data](#collecting-the-right-data)
+- [Using AI to Analyze Failure Patterns](#using-ai-to-analyze-failure-patterns)
+- [Practical Example: Debugging a Database Race Condition](#practical-example-debugging-a-database-race-condition)
+- [AI-Powered Log Analysis at Scale](#ai-powered-log-analysis-at-scale)
+- [Flakiness Classification Matrix](#flakiness-classification-matrix)
+- [Crafting High-Signal Prompts for Flaky Test Analysis](#crafting-high-signal-prompts-for-flaky-test-analysis)
+- [Building an Automated Flakiness Detection Pipeline](#building-an-automated-flakiness-detection-pipeline)
+- [Preventing Future Flakiness](#preventing-future-flakiness)
+- [Best Practices for AI Debugging](#best-practices-for-ai-debugging)
+
 ## Understanding Flaky Test Patterns
 
 Before looking at AI-assisted debugging, recognize that flaky tests typically fall into several categories:

@@ -40,6 +40,21 @@ The tax preparation industry has undergone significant transformation with the i
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [The Current State of AI in Tax Preparation](#the-current-state-of-ai-in-tax-preparation)
+- [Core API Integrations for Tax Applications](#core-api-integrations-for-tax-applications)
+- [Key Features for Developers](#key-features-for-developers)
+- [Practical Implementation Considerations](#practical-implementation-considerations)
+- [Emerging Capabilities in 2026](#emerging-capabilities-in-2026)
+- [Comparing Leading Tax AI Platforms](#comparing-leading-tax-ai-platforms)
+- [Advanced Example: Multi-Client Tax Batch Processing](#advanced-example-multi-client-tax-batch-processing)
+- [Compliance and Audit Trail Requirements](#compliance-and-audit-trail-requirements)
+- [Error Handling and Validation](#error-handling-and-validation)
+- [Integrating with Existing Tax Software](#integrating-with-existing-tax-software)
+- [Pricing Deep Dive for Accountants](#pricing-deep-dive-for-accountants)
+- [Related Reading](#related-reading)
+
 ## The Current State of AI in Tax Preparation
 
 Modern AI tax preparation tools use large language models, document recognition systems, and predictive analytics to handle various tax-related tasks. The technology has matured beyond basic form filling to include intelligent categorization, anomaly detection, and compliance verification. For developers, this means APIs and SDKs that can be integrated into custom workflows.

@@ -40,6 +40,21 @@ DALL-E 3 powers image generation through two primary access points: the ChatGPT 
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **Understanding the actual cost**: per image from each option helps developers and power users make informed decisions about which approach fits their workflow and budget.
 
+## Table of Contents
+
+- [ChatGPT Plus: The Subscription Model](#chatgpt-plus-the-subscription-model)
+- [DALL-E 3 API: Pay-Per-Image Model](#dall-e-3-api-pay-per-image-model)
+- [API Integration Code Examples](#api-integration-code-examples)
+- [Cost Comparison at Scale](#cost-comparison-at-scale)
+- [When to Choose Each Option](#when-to-choose-each-option)
+- [Hidden Cost Considerations](#hidden-cost-considerations)
+- [Decision Framework](#decision-framework)
+- [Real-World Cost Scenarios](#real-world-cost-scenarios)
+- [Advanced Cost Optimization](#advanced-cost-optimization)
+- [Comparison with Competitors](#comparison-with-competitors)
+- [Hidden Costs to Track](#hidden-costs-to-track)
+- [Building Budget-Conscious Image Generation](#building-budget-conscious-image-generation)
+
 ## ChatGPT Plus: The Subscription Model
 
 ChatGPT Plus costs $20 monthly and includes access to DALL-E 3 within the chat interface. The subscription approach bundles image generation with conversational AI access, making it attractive for users who already pay for Plus.
@@ -242,11 +257,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 ## Related Articles
 
 - [ChatGPT Plus Browsing and DALL-E Usage Limits Per Three](/ai-tools-compared/chatgpt-plus-browsing-and-dalle-usage-limits-per-three-hours/)
-- [Gemini Advanced vs ChatGPT Plus Price Per Feature Comparison](/ai-tools-compared/gemini-advanced-vs-chatgpt-plus-price-per-feature-comparison-2026/)
 - [ChatGPT Plus vs Claude Pro Monthly Cost for Daily Coding](/ai-tools-compared/chatgpt-plus-vs-claude-pro-monthly-cost-for-daily-coding/)
-- [ChatGPT Team vs Claude Team Cost Per Seat Comparison 2026](/ai-tools-compared/chatgpt-team-vs-claude-team-cost-per-seat-comparison-2026/)
-- [ChatGPT API Fine Tuning Costs Training Plus Inference Total](/ai-tools-compared/chatgpt-api-fine-tuning-costs-training-plus-inference-total-estimate/)
-
+- [ChatGPT Plus Cancel Mid Month: Do You Keep Access Until End?](/ai-tools-compared/chatgpt-plus-cancel-mid-month-do-you-keep-access-until-end/)
+- [DALL-E Image Generation Failed: How](/ai-tools-compared/dalle-image-generation-failed-how-to-retry/)
+- [Claude Free vs ChatGPT Free Which Gives More Per](/ai-tools-compared/claude-free-vs-chatgpt-free-which-gives-more-per-day/)
 ## Real-World Cost Scenarios
 
 **Scenario 1: Content Creator Generating Social Media Images**

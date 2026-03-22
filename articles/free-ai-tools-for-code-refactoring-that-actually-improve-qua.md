@@ -39,6 +39,23 @@ The most effective free AI tools for code refactoring are Claude via API, Cursor
 - **Complex function extraction (100-300**: lines): Use Claude Code.
 - **Multi-file architectural refactoring (1000+**: lines): Use Cursor.
 
+## Table of Contents
+
+- [Why AI-Assisted Refactoring Matters](#why-ai-assisted-refactoring-matters)
+- [Claude Code: Terminal-First Refactoring](#claude-code-terminal-first-refactoring)
+- [GitHub Copilot: IDE-Integrated Refactoring](#github-copilot-ide-integrated-refactoring)
+- [Cursor: Context-Aware Bulk Refactoring](#cursor-context-aware-bulk-refactoring)
+- [Sourcery: Python-Specific Refactoring](#sourcery-python-specific-refactoring)
+- [Comparing Performance and Quality Gains](#comparing-performance-and-quality-gains)
+- [Practical Integration Strategies](#practical-integration-strategies)
+- [Limitations and When to Refactor Manually](#limitations-and-when-to-refactor-manually)
+- [Getting Started](#getting-started)
+- [Measuring Refactoring Impact](#measuring-refactoring-impact)
+- [Common Pitfalls When Using Free Refactoring Tools](#common-pitfalls-when-using-free-refactoring-tools)
+- [Advanced Refactoring Scenarios](#advanced-refactoring-scenarios)
+- [Decision Framework for Tool Selection](#decision-framework-for-tool-selection)
+- [Implementation Roadmap for New Teams](#implementation-roadmap-for-new-teams)
+
 ## Why AI-Assisted Refactoring Matters
 
 Manual refactoring is time-consuming and error-prone. You need to understand the entire context, identify code smells, and ensure changes don't break existing functionality. AI tools accelerate this process by analyzing patterns across millions of codebases, identifying opportunities humans might miss, and suggesting improvements backed by proven best practices.
@@ -289,10 +306,9 @@ Policies vary widely. Some tools let you access your data for a grace period aft
 
 ## Related Articles
 
-- [Completely Free Alternatives to GitHub Copilot That Actually](/ai-tools-compared/completely-free-alternatives-to-github-copilot-that-actually/)
 - [Claude Code vs Cursor for Large Codebase Refactoring](/ai-tools-compared/claude-code-vs-cursor-for-large-codebase-refactoring/)
-- [Claude vs ChatGPT for Refactoring Legacy Java Code to Kotlin](/ai-tools-compared/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
-- [How to Measure and Improve AI Coding Tool Suggestion](/ai-tools-compared/how-to-measure-and-improve-ai-coding-tool-suggestion-acceptance-rate-2026/)
-- [Best Free AI Coding Extensions for Visual Studio Code 2026](/ai-tools-compared/best-free-ai-coding-extensions-for-visual-studio-code-2026/)
-
+- [Effective Strategies for AI-Assisted Refactoring](/ai-tools-compared/effective-strategies-for-ai-assisted-refactoring-without-bre/)
+- [AI Code Review Automation Tools Comparison 2026](/ai-tools-compared/ai-code-review-automation-tools-comparison/)
+- [Free AI Tools for Learning Python with Code Examples 2026](/ai-tools-compared/free-ai-tools-for-learning-python-with-code-examples-2026/)
+- [Free AI Code Review Tools That Integrate With GitHub (2026)](/ai-tools-compared/free-ai-code-review-tools-that-integrate-with-github-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

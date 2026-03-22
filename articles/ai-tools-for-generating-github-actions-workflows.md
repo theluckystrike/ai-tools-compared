@@ -42,6 +42,20 @@ This guide compares three leading AI tools for workflow generation: Claude Code,
 - **Does GitHub offer a**: free tier? Most major tools offer some form of free tier or trial period.
 - **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 
+## Table of Contents
+
+- [Comparison Table](#comparison-table)
+- [Claude Code for GitHub Actions](#claude-code-for-github-actions)
+- [GitHub Copilot for GitHub Actions](#github-copilot-for-github-actions)
+- [Cursor for GitHub Actions](#cursor-for-github-actions)
+- [Common Workflow Patterns](#common-workflow-patterns)
+- [Debugging Workflows](#debugging-workflows)
+- [Pricing Comparison for a Team of 5](#pricing-comparison-for-a-team-of-5)
+- [Real-World Workflows Generated](#real-world-workflows-generated)
+- [When Each Tool Wins](#when-each-tool-wins)
+- [Common Mistakes AI Tools Make](#common-mistakes-ai-tools-make)
+- [Debugging Tips for AI-Generated Workflows](#debugging-tips-for-ai-generated-workflows)
+
 ## Comparison Table
 
 | Tool | Monthly Cost | Accuracy | Secrets Handling | Matrix Jobs | Speed | Best For |
@@ -500,9 +514,8 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 - [AI Tools for Generating GitHub Actions Workflows](/ai-tools-compared/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
 - [AI Tools for Writing GitHub Actions Workflows (2026)](/ai-tools-compared/ai-tools/best-ai-tools-for-github-actions-workflows/)
-- [Best AI Tools for Writing GitHub Actions Matrix Build Strate](/ai-tools-compared/best-ai-tools-for-writing-github-actions-matrix-build-strate/)
+- [Best AI Tools for Generating GitHub Actions Composite](/ai-tools-compared/ai-tools-for-generating-github-actions-composite-actions-2026/---)
 - [Best AI Tools for Writing GitHub Actions Reusable Workflow](/ai-tools-compared/best-ai-tools-for-writing-github-actions-reusable-workflow-t/)
-- [Copilot vs Claude Code for Writing GitHub Actions Cicd Workf](/ai-tools-compared/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
-
+- [Best AI Tools for Writing GitHub Actions Workflows 2026](/ai-tools-compared/best-ai-tools-for-writing-github-actions-workflows-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

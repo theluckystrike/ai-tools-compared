@@ -43,6 +43,13 @@ Export fine-tuned ChatGPT models by calling the OpenAI API with your fine-tuned 
 - **This is fundamentally different**: from open-source fine-tuning where you have full access to the model files.
 - **Creates a model variant**: with a unique ID like `ft:gpt-3.5-turbo:your-org:custom-name:abc123` 4.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Cost Comparison: OpenAI API vs Self-Hosted](#cost-comparison-openai-api-vs-self-hosted)
+- [Troubleshooting](#troubleshooting)
+- [Related Reading](#related-reading)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
@@ -422,5 +429,13 @@ The core concepts apply across most CI/CD platforms, though specific syntax and 
 **Where can I get help if I run into issues?**
 
 Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
+
+## Related Articles
+
+- [Ollama vs LM Studio for Local Model Serving](/ai-tools-compared/ollama-vs-lm-studio-local-model-serving/)
+- [ChatGPT API Fine Tuning Costs Training Plus Inference Total](/ai-tools-compared/chatgpt-api-fine-tuning-costs-training-plus-inference-total-estimate/)
+- [How to Create Model Context Protocol Server That Serves API](/ai-tools-compared/how-to-create-model-context-protocol-server-that-serves-api-/)
+- [ChatGPT API 429 Too Many Requests](/ai-tools-compared/chatgpt-api-429-too-many-requests-fix/)
+- [Cursor AI Model Selection Guide Which Model for Which Coding](/ai-tools-compared/cursor-ai-model-selection-guide-which-model-for-which-coding/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

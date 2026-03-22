@@ -40,6 +40,14 @@ If you have been building web applications with Lovable and are considering swit
 - **Open Cursor settings and**: navigate to the Models section to select your preferred AI model.
 - **The default model works**: well for most tasks, but you can experiment with different options based on your needs.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Migrating Your Development Workflow](#migrating-your-development-workflow)
+- [When to Choose Cursor Over Lovable](#when-to-choose-cursor-over-lovable)
+- [Advanced Cursor Workflows for Web Development](#advanced-cursor-workflows-for-web-development)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
@@ -365,10 +373,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
+- [Cursor Keeps Crashing Fix 2026: Complete Troubleshooting](/ai-tools-compared/cursor-keeps-crashing-fix-2026/)
+- [Switching from Windsurf Free to Cursor Free What Is](/ai-tools-compared/switching-from-windsurf-free-to-cursor-free-what-is-different/)
+- [Switching from Windsurf to Cursor How to Transfer Project](/ai-tools-compared/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
 - [How to Switch from Cursor to Claude Code Without Losing](/ai-tools-compared/how-to-switch-from-cursor-to-claude-code-without-losing-settings/)
-- [Cursor vs Windsurf for Building Next Js App from Design Mock](/ai-tools-compared/cursor-vs-windsurf-for-building-next-js-app-from-design-mock/)
-- [Streamlit vs Gradio for AI Data Apps: A Practical Comparison](/ai-tools-compared/streamlit-vs-gradio-ai-data-apps/)
-- [How to Switch AI Coding Providers Without Disrupting.](/ai-tools-compared/how-to-switch-ai-coding-providers-without-disrupting-sprint-velocity-2026/)
-- [AI Tools for Writing Jest Tests for Web Worker and Service](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-web-worker-and-service-w/)
-
+- [Cursor vs Windsurf for Building Next Js App from Design](/ai-tools-compared/cursor-vs-windsurf-for-building-next-js-app-from-design-mock/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -46,6 +46,14 @@ certificate pinning.
 - **Traffic capture**: Use a local proxy to verify all traffic uses HTTPS.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Why Data-in-Transit Encryption Matters](#why-data-in-transit-encryption-matters)
+- [Prerequisites](#prerequisites)
+- [Tools Comparison: Encryption Features](#tools-comparison-encryption-features)
+- [Compliance Documentation](#compliance-documentation)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Data-in-Transit Encryption Matters
 
 Your source code represents significant intellectual property. When you use AI coding tools, code snippets get transmitted to external services for processing. The data travels through multiple network hops—your local network, your ISP, potentially third-party infrastructure, and finally to the AI provider's servers.
@@ -494,12 +502,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
+- [What Code Snippets Get Logged in AI Coding Tool Provider](/ai-tools-compared/what-code-snippets-get-logged-in-ai-coding-tool-provider-aud/)
+- [Enterprise AI Coding Tool Network Security Requirements](/ai-tools-compared/enterprise-ai-coding-tool-network-security-requirements-and-/)
 - [How to Evaluate AI Coding Tool Data Processing Agreements](/ai-tools-compared/how-to-evaluate-ai-coding-tool-data-processing-agreements-be/)
 - [How to Evaluate AI Coding Tool Model Training Data Provenanc](/ai-tools-compared/how-to-evaluate-ai-coding-tool-model-training-data-provenanc/)
-- [Claude Code API Error Handling Standards](/ai-tools-compared/claude-code-api-error-handling-standards/)
-- [AI Coding Assistant Data Sovereignty Requirements](/ai-tools-compared/ai-coding-assistant-data-sovereignty-requirements-for-companies-operating-in-eu-2026/)
-- [AI Coding Assistant Session Data Lifecycle](/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-
+- [AI Coding Tool Penetration Test Findings Common Vulnerabilit](/ai-tools-compared/ai-coding-tool-penetration-test-findings-common-vulnerabilit/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 {% endraw %}

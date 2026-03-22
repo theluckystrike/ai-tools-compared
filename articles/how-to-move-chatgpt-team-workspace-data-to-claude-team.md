@@ -136,6 +136,13 @@ Assistant: Here's a JWT-based authentication flow...
 ---
 ```
 
+## Table of Contents
+
+- [Best Practices for a Smooth Transition](#best-practices-for-a-smooth-transition)
+- [Detailed Export Script for Conversations](#detailed-export-script-for-conversations)
+- [Cost Comparison: ChatGPT Team vs Claude Team](#cost-comparison-chatgpt-team-vs-claude-team)
+- [Troubleshooting](#troubleshooting)
+
 **Step 3: Set Custom Instructions**
 
 Recreate your custom GPT instructions as project-level system prompts in Claude. Navigate to each project's settings and add instructions that mirror your original GPT behavior.

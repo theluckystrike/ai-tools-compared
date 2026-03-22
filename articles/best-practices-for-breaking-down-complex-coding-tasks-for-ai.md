@@ -47,6 +47,17 @@ Break large features into independent components: request data models first, the
 - **Use our existing Redis**: client from redis_service.py." The second version tells the AI exactly what behavior to implement, what parameters matter, and where to find supporting code.
 - **Constraints**: use bcrypt with cost factor 12, store refresh tokens in encrypted cookies."
 
+## Table of Contents
+
+- [When to Combine vs.](#when-to-combine-vs)
+- [Why Task Decomposition Matters](#why-task-decomposition-matters)
+- [Core Principles for Task Decomposition](#core-principles-for-task-decomposition)
+- [Practical Examples](#practical-examples)
+- [Handling Edge Cases](#handling-edge-cases)
+- [When to Combine vs. Separate](#when-to-combine-vs-separate)
+- [Benchmark Methodology for AI Tool Comparisons](#benchmark-methodology-for-ai-tool-comparisons)
+- [Rate Limit Handling Across AI Providers](#rate-limit-handling-across-ai-providers)
+
 ## When to Combine vs.
 - **Use temperature=0 for reproducible**: factual tasks.
 - **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.

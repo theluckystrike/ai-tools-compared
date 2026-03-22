@@ -39,6 +39,13 @@ To fix the ChatGPT API 429 "Too Many Requests" error, implement exponential back
 - **Second**: insufficient implementation of retry logic causes clients to repeatedly fail against already-exhausted limits.
 - **If you consistently hit**: rate limits despite implementing best practices, consider upgrading your OpenAI plan.
 
+## Table of Contents
+
+- [What Causes the 429 Error](#what-causes-the-429-error)
+- [Step-by-Step Fixes](#step-by-step-fixes)
+- [Diagnostic Tips](#diagnostic-tips)
+- [Long-Term Solutions](#long-term-solutions)
+
 ## What Causes the 429 Error
 
 OpenAI implements rate limits to protect their infrastructure and ensure fair access for all users. These limits vary depending on your subscription tier, the specific model you are using, and your organization's usage plan. When your application sends requests faster than the allowed rate, OpenAI responds with a 429 status code and includes headers indicating when you can retry.

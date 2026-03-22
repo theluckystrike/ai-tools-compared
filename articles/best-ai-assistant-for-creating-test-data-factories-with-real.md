@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, best-of, artificial-intelligence]
+---
 ---
 layout: default
 title: "Best AI Assistant for Creating Test Data Factories with Real"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, best-of, artificial-intelligence]
+---
 
 
 | Tool | Test Generation | Edge Case Coverage | Framework Awareness | Pricing |
@@ -48,6 +50,20 @@ Creating realistic test data is a critical part of software development. Whether
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **It can also create**: factories that maintain relationships between entities, such as orders linked to users, or posts linked to authors.
+
+## Table of Contents
+
+- [Why Test Data Factories Matter](#why-test-data-factories-matter)
+- [Claude Code for Test Data Factory Generation](#claude-code-for-test-data-factory-generation)
+- [Cursor for Test Data Generation](#cursor-for-test-data-generation)
+- [GitHub Copilot for Test Data Factories](#github-copilot-for-test-data-factories)
+- [Comparing AI Assistants for Test Data Generation](#comparing-ai-assistants-for-test-data-generation)
+- [Practical Tips for AI-Assisted Test Data Generation](#practical-tips-for-ai-assisted-test-data-generation)
+- [Advanced Factory Patterns](#advanced-factory-patterns)
+- [Language-Specific Considerations](#language-specific-considerations)
+- [Relationship Management in Factories](#relationship-management-in-factories)
+- [Performance Testing with Generated Data](#performance-testing-with-generated-data)
+- [Evaluating AI Tool Generated Factories](#evaluating-ai-tool-generated-factories)
 
 ## Why Test Data Factories Matter
 

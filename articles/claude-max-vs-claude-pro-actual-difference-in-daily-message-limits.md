@@ -44,6 +44,20 @@ Use this template for one week:
 - **Model Selection**: Max provides access to Claude 3 Opus, the most capable model for complex reasoning and large-scale codebases.
 - **Pro users primarily access**: Claude 3.5 Sonnet.
 
+## Table of Contents
+
+- [Understanding Claude's Pricing Tiers](#understanding-claudes-pricing-tiers)
+- [Daily Message Limits: The Actual Numbers](#daily-message-limits-the-actual-numbers)
+- [What Affects Your Message Count](#what-affects-your-message-count)
+- [Real-World Usage Scenarios](#real-world-usage-scenarios)
+- [Beyond Message Limits: Other Differences](#beyond-message-limits-other-differences)
+- [Detailed Limits by Use Case](#detailed-limits-by-use-case)
+- [Real Usage Patterns That Trigger Limits](#real-usage-patterns-that-trigger-limits)
+- [Decision Matrix: Pro vs Max](#decision-matrix-pro-vs-max)
+- [Cost Analysis: Pro vs Max](#cost-analysis-pro-vs-max)
+- [Beyond Message Limits: Other Tier Differences](#beyond-message-limits-other-tier-differences)
+- [Making the Right Choice](#making-the-right-choice)
+
 ## Understanding Claude's Pricing Tiers
 
 Claude offers several subscription tiers, with Claude Pro at $20/month and Claude Max at higher price points. The key differentiator between these tiers is primarily the message allocation and access to newer models.

@@ -39,6 +39,17 @@ This comparison evaluates Gemini and Claude on Apache Kafka consumer and produce
 - **The difference is most**: noticeable in error handling, configuration defaults, and lifecycle management.
 - **If you are building**: systems that need to run reliably in production, Claude is the better starting point.
 
+## Table of Contents
+
+- [Setting Up the Comparison](#setting-up-the-comparison)
+- [Gemini Performance](#gemini-performance)
+- [Claude Performance](#claude-performance)
+- [Where Each Tool Excels](#where-each-tool-excels)
+- [Recommendation](#recommendation)
+- [Prompting for Avro and Schema Registry Integration](#prompting-for-avro-and-schema-registry-integration)
+- [Error Handling for Deserialization Failures](#error-handling-for-deserialization-failures)
+- [Configuration Comparison: Default Settings Quality](#configuration-comparison-default-settings-quality)
+
 ## Setting Up the Comparison
 
 Both tools were tested by requesting identical Kafka implementations: a producer that sends JSON messages and a consumer that processes them with error handling. The test cases included standard configurations, serialization setup, and common production scenarios like retry logic and graceful shutdown.

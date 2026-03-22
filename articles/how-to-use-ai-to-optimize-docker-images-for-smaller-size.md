@@ -38,6 +38,13 @@ Docker images that balloon in size create multiple problems: slower container st
 - **When source code changes**: but dependencies don't, the expensive `npm ci` step uses cached results.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 
+## Table of Contents
+
+- [Why Docker Image Size Optimization Matters](#why-docker-image-size-optimization-matters)
+- [Prerequisites](#prerequisites)
+- [Best Practices for AI-Assisted Optimization](#best-practices-for-ai-assisted-optimization)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Docker Image Size Optimization Matters
 
 Large Docker images impact your infrastructure in several ways. A 1GB image takes significantly longer to pull across network connections, which directly impacts container orchestration startup times in Kubernetes or Docker Swarm. Storage costs accumulate when you maintain multiple versions of oversized images in your registry. Security attack surfaces expand with each unnecessary package included in the base image.
@@ -388,11 +395,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How Context Window Size Affects AI Code Suggestions](/ai-tools-compared/how-context-window-size-affects-ai-code-suggestions-in-different-idess/)
+- [How to Use AI for Docker Image Optimization](/ai-tools-compared/how-to-use-ai-for-docker-image-optimization/)
+- [AI Tools for Resolving Docker Build Context Permission](/ai-tools-compared/ai-tools-for-resolving-docker-build-context-permission-denie/)
 - [AI Tools for Generating Docker Compose Files for Complex Mic](/ai-tools-compared/ai-tools-for-generating-docker-compose-files-for-complex-mic/)
-- [AI Tools for Resolving Docker Build Context Permission Denie](/ai-tools-compared/ai-tools-for-resolving-docker-build-context-permission-denie/)
+- [Best AI Tools for Writing Dockerfile Optimization 2026](/ai-tools-compared/best-ai-tools-for-writing-dockerfile-optimization-2026/)
 - [Best AI Tools for Writing Docker Compose Files 2026](/ai-tools-compared/best-ai-tools-for-writing-docker-compose-files-2026/)
-- [AI Tools for Generating Website Hero Images Compared](/ai-tools-compared/ai-tools-for-generating-website-hero-images-compared/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

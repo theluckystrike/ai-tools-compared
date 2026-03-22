@@ -42,6 +42,18 @@ Your conventions document gets searched and relevant details are extracted.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
 - **This guide covers prerequisites, step 1**: initialize your mcp server project, step 2: structure your documentation, with specific setup instructions
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Step 1: Initialize Your MCP Server Project](#step-1-initialize-your-mcp-server-project)
+- [Step 2: Structure Your Documentation](#step-2-structure-your-documentation)
+- [Step 3: Build the MCP Server](#step-3-build-the-mcp-server)
+- [Step 4: Configure Your AI Tool](#step-4-configure-your-ai-tool)
+- [Step 5: Test Your Implementation](#step-5-test-your-implementation)
+- [Using Your Documentation Server](#using-your-documentation-server)
+- [Best Practices](#best-practices)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, ensure you have:
@@ -404,11 +416,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Set Up Model Context Protocol Server for Internal Pac](/ai-tools-compared/how-to-set-up-model-context-protocol-server-for-internal-pac/)
-- [How to Set Up Model Context Protocol Server Providing Live](/ai-tools-compared/how-to-set-up-model-context-protocol-server-providing-live-d/)
-- [How to Set Up Model Context Protocol for Feeding Jira Ticket](/ai-tools-compared/how-to-set-up-model-context-protocol-for-feeding-jira-ticket/)
-- [How to Set Up Model Context Protocol for Feeding Monitoring](/ai-tools-compared/how-to-set-up-model-context-protocol-for-feeding-monitoring-/)
-- [How to Set Up Model Context Protocol with Local Database](/ai-tools-compared/how-to-set-up-model-context-protocol-with-local-database-schema-information-2026/)
-
+- [How to Create Model Context Protocol Server That Serves API](/ai-tools-compared/how-to-create-model-context-protocol-server-that-serves-api-/)
+- [How to Build Model Context Protocol Server That Provides Rea](/ai-tools-compared/how-to-build-model-context-protocol-server-that-provides-rea/)
+- [How to Build a Model Context Protocol Server That Serves](/ai-tools-compared/how-to-build-model-context-protocol-server-that-serves-opena/)
+- [How to Build Model Context Protocol Server for Internal](/ai-tools-compared/how-to-build-model-context-protocol-server-for-internal-desi/)
+- [How to Set Up Model Context Protocol Server for Internal](/ai-tools-compared/how-to-set-up-model-context-protocol-server-for-internal-pac/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

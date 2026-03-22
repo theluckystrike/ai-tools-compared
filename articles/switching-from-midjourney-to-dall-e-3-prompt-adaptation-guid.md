@@ -39,6 +39,20 @@ Choose DALL-E 3 if you need a REST API for automated pipelines, consistent text 
 - **Does Midjourney offer a**: free tier? Most major tools offer some form of free tier or trial period.
 - **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 
+## Table of Contents
+
+- [Core Architecture Differences](#core-architecture-differences)
+- [Prompt Syntax Adaptation](#prompt-syntax-adaptation)
+- [Parameter Mapping Reference](#parameter-mapping-reference)
+- [Handling Aspect Ratios](#handling-aspect-ratios)
+- [Negative Prompting](#negative-prompting)
+- [Quality and Iteration Handling](#quality-and-iteration-handling)
+- [Text Rendering: A Key DALL-E 3 Advantage](#text-rendering-a-key-dall-e-3-advantage)
+- [Building an Automated Pipeline](#building-an-automated-pipeline)
+- [Working Around Missing Features](#working-around-missing-features)
+- [Practical Workflow Migration](#practical-workflow-migration)
+- [Pricing Comparison](#pricing-comparison)
+
 ## Core Architecture Differences
 
 Midjourney operates through Discord, using an unique command-based interface with parameters like `--ar` for aspect ratio, `--stylize` for artistic strength, and `--chaos` for variation. Each generation creates four image variations, and you upscaling individual selections.

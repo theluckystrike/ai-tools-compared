@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI Tools for Qa Engineers Creating Accessibility Testing"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 {% raw %}
 
@@ -43,6 +45,17 @@ Accessibility testing remains one of the most time-consuming aspects of quality 
 
 4.
 - **Contrast ratio issues (WCAG**: 1.4.3) similarly warrant high priority since they impact users with low vision.
+
+## Table of Contents
+
+- [Why AI-Generated Checklists Improve Accessibility Testing](#why-ai-generated-checklists-improve-accessibility-testing)
+- [Generating Checklists Using AI Prompts](#generating-checklists-using-ai-prompts)
+- [Practical Checklist Generation Workflow](#practical-checklist-generation-workflow)
+- [Automating Checklist Validation](#automating-checklist-validation)
+- [Prioritizing Tests by Impact](#prioritizing-tests-by-impact)
+- [Building Continuous Testing Pipelines](#building-continuous-testing-pipelines)
+- [Validating AI-Generated Checklists](#validating-ai-generated-checklists)
+- [WCAG 2.1 AA Checklist Verification](#wcag-21-aa-checklist-verification)
 
 ## Why AI-Generated Checklists Improve Accessibility Testing
 

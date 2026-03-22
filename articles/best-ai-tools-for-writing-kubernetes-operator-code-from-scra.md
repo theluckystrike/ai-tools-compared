@@ -50,6 +50,15 @@ Claude generates complete Kubernetes operators with proper reconciliation logic,
 - **A week-long trial with**: actual work gives better signal than feature comparison charts.
 - **Do these tools work**: offline? Most AI-powered tools require an internet connection since they run models on remote servers.
 
+## Table of Contents
+
+- [Why AI Tools Are Valuable for Operator Development](#why-ai-tools-are-valuable-for-operator-development)
+- [Claude Code](#claude-code)
+- [Cursor](#cursor)
+- [GitHub Copilot](#github-copilot)
+- [Aider](#aider)
+- [Practical Recommendations](#practical-recommendations)
+
 ## Why AI Tools Are Valuable for Operator Development
 
 Kubernetes operators follow specific architectural patterns that differ from typical application code. The controller-runtime library, reconciliation semantics, and Kubernetes API conventions create a steep learning curve. AI tools trained on large codebases of Kubernetes operators can generate idiomatic code that follows established patterns.

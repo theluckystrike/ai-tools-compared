@@ -39,6 +39,18 @@ Automated code review has become essential for teams managing high velocity depl
 - **Modern AI-powered tools now**: detect logic errors, security vulnerabilities, and style violations that human reviewers often miss, while reducing review latency by 40-60%.
 - **Code review time for**: data pipeline PRs dropped from 45 minutes to 15 minutes because reviewers could focus on logic rather than style.
 
+## Table of Contents
+
+- [CodeRabbit](#coderabbit)
+- [Codacy](#codacy)
+- [Sourcery](#sourcery)
+- [DeepSource](#deepsource)
+- [Comparison Table](#comparison-table)
+- [Implementation Checklist](#implementation-checklist)
+- [Performance Metrics to Track](#performance-metrics-to-track)
+- [Common Pitfalls to Avoid](#common-pitfalls-to-avoid)
+- [Selecting Your Tool](#selecting-your-tool)
+
 ## CodeRabbit
 
 CodeRabbit is a specialized AI code reviewer that runs directly on your GitHub pull requests. The tool uses a fine-tuned language model trained on real production code patterns and security best practices.

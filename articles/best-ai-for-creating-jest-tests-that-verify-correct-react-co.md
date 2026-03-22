@@ -54,6 +54,15 @@ Testing React Context Providers requires a different approach than testing regul
 
 6.
 
+## Table of Contents
+
+- [Why Context Provider Testing Is Different](#why-context-provider-testing-is-different)
+- [Claude Code and Cursor: Best for Context Testing](#claude-code-and-cursor-best-for-context-testing)
+- [GitHub Copilot: Fast for Simple Patterns](#github-copilot-fast-for-simple-patterns)
+- [What to Verify in Your Context Tests](#what-to-verify-in-your-context-tests)
+- [Prompting Strategies That Work](#prompting-strategies-that-work)
+- [When AI-Generated Tests Need Manual Review](#when-ai-generated-tests-need-manual-review)
+
 ## Why Context Provider Testing Is Different
 
 React Context Providers wrap your application state and distribute it through a component tree. Unlike simple components, they involve:

@@ -40,6 +40,21 @@ CSS Grid has become the go-to layout system for building responsive web interfac
 - **When you describe your overflow problem**: it often recommends media query solutions or alternative Grid configurations.
 - **Claude can walk through**: your entire layout stack and identify which combination of properties causes the issue.
 
+## Table of Contents
+
+- [Understanding CSS Grid Overflow on Mobile](#understanding-css-grid-overflow-on-mobile)
+- [AI Assistants for CSS Grid Debugging](#ai-assistants-for-css-grid-debugging)
+- [Practical Debugging Strategies](#practical-debugging-strategies)
+- [Working with AI Assistants Effectively](#working-with-ai-assistants-effectively)
+- [Comparative Recommendations](#comparative-recommendations)
+- [Prevention Best Practices](#prevention-best-practices)
+- [Advanced Grid Debugging: Container Queries and Subgrid](#advanced-grid-debugging-container-queries-and-subgrid)
+- [Visual Debugging Example: Before and After](#visual-debugging-example-before-and-after)
+- [CSS Grid Overflow Decision Matrix](#css-grid-overflow-decision-matrix)
+- [Performance Considerations for Grid Layouts](#performance-considerations-for-grid-layouts)
+- [Mobile-First Grid Strategy](#mobile-first-grid-strategy)
+- [Tool Recommendation Summary](#tool-recommendation-summary)
+
 ## Understanding CSS Grid Overflow on Mobile
 
 Mobile devices present unique challenges for CSS Grid layouts. The limited viewport width, combined with varying device pixel ratios and touch-friendly sizing requirements, creates numerous opportunities for overflow to occur. Common scenarios include grid items that exceed their container boundaries, content that pushes grid tracks beyond the viewport, and nested grids that fail to adapt properly to smaller screens.
@@ -368,11 +383,10 @@ Not necessarily. Grid excels at two-dimensional layouts; Flexbox at one-dimensio
 
 ## Related Articles
 
+- [AI Tools for Debugging CSS Media Query Breakpoints Not](/ai-tools-compared/ai-tools-for-debugging-css-media-query-breakpoints-not-match/)
+- [Best AI for Debugging CSS Flexbox Alignment Issues](/ai-tools-compared/best-ai-for-debugging-css-flexbox-alignment-issues-across-di/)
+- [Best AI Assistant for Debugging CSS Z Index Stacking](/ai-tools-compared/best-ai-assistant-for-debugging-css-z-index-stacking-context/)
 - [Best AI Assistant for Debugging CSS Custom Property](/ai-tools-compared/best-ai-assistant-for-debugging-css-custom-property-inheritance-failures-in-shadow-dom/)
-- [Best AI Assistant for Debugging CSS Z Index Stacking Context](/ai-tools-compared/best-ai-assistant-for-debugging-css-z-index-stacking-context/)
-- [AI Tools for Debugging CSS Media Query Breakpoints Not Match](/ai-tools-compared/ai-tools-for-debugging-css-media-query-breakpoints-not-match/)
-- [Best AI for Debugging CSS Flexbox Alignment Issues Across](/ai-tools-compared/best-ai-for-debugging-css-flexbox-alignment-issues-across-di/)
-- [AI Coding Assistant Comparison for TypeScript Tailwind CSS](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-tailwind-css-c/)
-
+- [Best AI Tools for Generating CSS](/ai-tools-compared/best-ai-tools-for-css-from-designs/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

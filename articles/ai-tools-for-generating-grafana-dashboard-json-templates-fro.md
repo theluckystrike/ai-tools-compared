@@ -40,6 +40,20 @@ AI tools translate readable YAML specifications into valid Grafana dashboard JSO
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **A YAML specification can**: describe panels, queries, thresholds, and layout preferences without the verbosity of nested JSON objects.
 
+## Table of Contents
+
+- [Why Use YAML Specifications for Grafana Dashboards](#why-use-yaml-specifications-for-grafana-dashboards)
+- [AI Approaches for Dashboard Generation](#ai-approaches-for-dashboard-generation)
+- [Practical Workflow for Teams](#practical-workflow-for-teams)
+- [Handling Complex Dashboard Structures](#handling-complex-dashboard-structures)
+- [Verification and Iteration](#verification-and-iteration)
+- [CLI Commands for Dashboard Management](#cli-commands-for-dashboard-management)
+- [Tool-Specific Approaches](#tool-specific-approaches)
+- [Common Dashboard Patterns](#common-dashboard-patterns)
+- [Validation Checklist](#validation-checklist)
+- [Integration with Infrastructure-as-Code](#integration-with-infrastructure-as-code)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+
 ## Why Use YAML Specifications for Grafana Dashboards
 
 YAML provides a more readable and maintainable alternative to raw JSON when defining dashboard structures. A YAML specification can describe panels, queries, thresholds, and layout preferences without the verbosity of nested JSON objects. This becomes particularly valuable when managing multiple environments or when dashboards need to follow consistent organizational patterns.
@@ -285,11 +299,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Creating Grafana SLO Dashboard Panels with Burn](/ai-tools-compared/ai-tools-for-creating-grafana-slo-dashboard-panels-with-burn/)
+- [AI Tools for Generating Grafana Dashboards from Metrics](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
+- [AI Tools for Creating Grafana SLO Dashboard Panels](/ai-tools-compared/ai-tools-for-creating-grafana-slo-dashboard-panels-with-burn/)
 - [Best AI Assistant for Building Grafana Dashboard Panels](/ai-tools-compared/best-ai-assistant-for-building-grafana-dashboard-panels-from-prometheus-queries/)
-- [Best AI Assistant for Building Superset Dashboard Charts Fro](/ai-tools-compared/best-ai-assistant-for-building-superset-dashboard-charts-fro/)
-- [AI Tools for Generating Grafana Dashboards from Metrics Auto](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
-- [ChatGPT vs Claude for Generating Pydantic Models from JSON](/ai-tools-compared/chatgpt-vs-claude-for-generating-pydantic-models-from-json-s/)
-
+- [AI Tools for Converting Raw JSON API Responses into Clean](/ai-tools-compared/ai-tools-for-converting-raw-json-api-responses-into-clean-pandas-dataframes/)
+- [AI Tools for Writing CI CD Pipeline Configurations 2026](/ai-tools-compared/ai-tools-for-writing-ci-cd-pipeline-configurations-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

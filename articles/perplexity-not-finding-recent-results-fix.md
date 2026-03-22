@@ -40,6 +40,13 @@ Perplexity has become a go-to tool for developers and researchers who need AI-po
 - **Does Perplexity offer a**: free tier? Most major tools offer some form of free tier or trial period.
 - **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 
+## Table of Contents
+
+- [Understanding How Perplexity Sources Information](#understanding-how-perplexity-sources-information)
+- [Common Causes and Solutions](#common-causes-and-solutions)
+- [Advanced Diagnostic Steps](#advanced-diagnostic-steps)
+- [When Results Are Still Outdated](#when-results-are-still-outdated)
+
 ## Understanding How Perplexity Sources Information
 
 Before exploring fixes, it helps to understand how Perplexity retrieves information. The tool pulls data from multiple sources including web search results, academic papers, and user-uploaded documents. When results seem outdated, the issue typically stems from search scope settings, model knowledge cutoff, indexing delays, or account tier limitations.

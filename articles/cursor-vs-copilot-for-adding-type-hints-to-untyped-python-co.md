@@ -40,6 +40,18 @@ This guide compares the strengths and weaknesses of each tool for this specific 
 - **Use List[T] syntax and**: infer types from usage.
 - **Copilot and Cursor serve**: different strengths, so combining them can cover more use cases than relying on either one alone.
 
+## Table of Contents
+
+- [Understanding the Type Hint Challenge](#understanding-the-type-hint-challenge)
+- [Cursor's Approach to Type Hints](#cursors-approach-to-type-hints)
+- [GitHub Copilot's Approach](#github-copilots-approach)
+- [Side-by-Side Comparison](#side-by-side-comparison)
+- [Practical Workflow Examples](#practical-workflow-examples)
+- [Handling Complex Type Inference](#handling-complex-type-inference)
+- [Database Query Type Hints](#database-query-type-hints)
+- [Verifying Type Hint Quality](#verifying-type-hint-quality)
+- [Which Tool Should You Use?](#which-tool-should-you-use)
+
 ## Understanding the Type Hint Challenge
 
 Legacy Python code often lacks type annotations, making it harder to maintain, refactor, and debug. Manually adding type hints to a large codebase can take weeks or months. AI coding assistants promise to automate this process, but the quality of their type inferences varies significantly.

@@ -244,6 +244,15 @@ Start with your core footage—AI tools enhance good source material rather than
 | Midjourney | Concept art generation | Text-to-image | $10/month (Basic) | Key art and storyboards |
 | Pika Labs | Short video clips | Text/image-to-video | Free tier available | Quick gameplay transitions |
 
+## Table of Contents
+
+- [Pricing and Tool Economics](#pricing-and-tool-economics)
+- [Workflow Optimization Strategies](#workflow-optimization-strategies)
+- [Real-World Workflow Example: Indie RPG Trailer](#real-world-workflow-example-indie-rpg-trailer)
+- [Advanced Techniques for Quality Enhancement](#advanced-techniques-for-quality-enhancement)
+- [Quality Validation Checklist](#quality-validation-checklist)
+- [Limitations and Workarounds](#limitations-and-workarounds)
+
 ## Frequently Asked Questions
 
 **Are free AI tools good enough for ai tools for video game trailers?**
@@ -396,11 +405,10 @@ AI tools excel at generation but have real limitations:
 
 ## Related Articles
 
-- [Best AI Tool for Game Developers Design Docs Writing](/ai-tools-compared/best-ai-tool-for-game-developers-design-docs-writing/)
-- [Cheapest AI Coding Tool for Indie Game Developer 2026](/ai-tools-compared/cheapest-ai-coding-tool-for-indie-game-developer-2026/)
-- [AI Tools for Video Accessibility Features](/ai-tools-compared/ai-tools-for-video-accessibility-features/)
-- [AI Tools for Video Color Grading](/ai-tools-compared/ai-tools-for-video-color-grading/)
-- [AI Tools for Video Compression: A Developer Guide](/ai-tools-compared/ai-tools-for-video-compression/)
-
+- [Runway ML vs Pika AI: Video Generation Tools Compared](/ai-tools-compared/runway-ml-vs-pika-ai-video-generation/)
+- [AI Tools for Video Thumbnail Generation](/ai-tools-compared/ai-tools-for-video-thumbnail-generation/)
+- [Sora vs Runway AI Video Generation: A Technical](/ai-tools-compared/sora-vs-runway-ai-video-generation/)
+- [Best AI Video Editor 2026 to Intelligent Video Production](/ai-tools-compared/best-ai-video-editor-2026/)
+- [Runway ML vs Pika Labs: AI Video Generation Comparison 2026](/ai-tools-compared/runway-ml-vs-pika-labs-ai-video-comparison-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

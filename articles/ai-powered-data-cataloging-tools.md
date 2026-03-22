@@ -11,7 +11,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI Powered Data Cataloging Tools"
@@ -25,7 +26,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 {% raw %}
 
@@ -39,6 +41,20 @@ AI-powered data cataloging tools automatically discover, classify, and document 
 - **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
+
+## Table of Contents
+
+- [What AI Brings to Data Catalogs](#what-ai-brings-to-data-catalogs)
+- [Key Capabilities for Developers](#key-capabilities-for-developers)
+- [Open Source Options](#open-source-options)
+- [Cloud-Based Solutions](#cloud-based-solutions)
+- [Implementation Patterns](#implementation-patterns)
+- [Common Pitfalls and How to Avoid Them](#common-pitfalls-and-how-to-avoid-them)
+- [Practical Considerations](#practical-considerations)
+- [Advanced Classification Workflows](#advanced-classification-workflows)
+- [Integration with Data Pipelines](#integration-with-data-pipelines)
+- [Cost Optimization Strategies](#cost-optimization-strategies)
+- [Governance Implementation](#governance-implementation)
 
 ## What AI Brings to Data Catalogs
 

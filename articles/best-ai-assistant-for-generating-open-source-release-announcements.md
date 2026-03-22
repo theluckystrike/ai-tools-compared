@@ -11,7 +11,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, best-of, artificial-intelligence]
+---
 
 
 {% raw %}
@@ -29,6 +30,33 @@ The best AI assistant for generating open source release announcements understan
 
 Then create a master announcement that synthesizes the best from each.
 - **Explain why changes matter**: to users 3.
+
+## Table of Contents
+
+- [What to Look for in an AI Release Announcement Assistant](#what-to-look-for-in-an-ai-release-announcement-assistant)
+- [Practical Examples of AI-Generated Release Announcements](#practical-examples-of-ai-generated-release-announcements)
+- [Changes in v2.1.0](#changes-in-v210)
+- [Release v2.1.0: Python 3.13 Support and Performance Improvements](#release-v210-python-313-support-and-performance-improvements)
+- [How Different AI Assistants Compare](#how-different-ai-assistants-compare)
+- [Best Practices for AI-Generated Release Announcements](#best-practices-for-ai-generated-release-announcements)
+- [Automated Release Note Generation Pipeline](#automated-release-note-generation-pipeline)
+- [Tool-Specific Prompting Strategies](#tool-specific-prompting-strategies)
+- [Semantic Versioning Guide for Release Notes](#semantic-versioning-guide-for-release-notes)
+- [What Changed](#what-changed)
+- [Migration Required](#migration-required)
+- [Timeline](#timeline)
+- [New Features](#new-features)
+- [Enhancements](#enhancements)
+- [Deprecations](#deprecations)
+- [Bug Fixes](#bug-fixes)
+- [Security Updates](#security-updates)
+- [Performance](#performance)
+- [Real-World Release Announcement Examples](#real-world-release-announcement-examples)
+- [Key Improvements](#key-improvements)
+- [Breaking Changes](#breaking-changes)
+- [Timeline](#timeline)
+- [Upgrade Path](#upgrade-path)
+- [Version-Specific Announcement Checklist](#version-specific-announcement-checklist)
 
 ## What to Look for in an AI Release Announcement Assistant
 
@@ -545,11 +573,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI Assistant for Creating Open Source Project Branding](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)
-- [Best AI Assistant for Drafting Open Source Partnership and](/ai-tools-compared/best-ai-assistant-for-drafting-open-source-partnership-and-integration-proposals-2026/)
+- [How to Use AI to Write GitHub Release Tag Descriptions](/ai-tools-compared/how-to-use-ai-to-write-github-release-tag-descriptions-with-/)
+- [AI Tools for Product Managers Drafting Release](/ai-tools-compared/ai-tools-for-product-managers-drafting-release-communication-emails-from-feature-lists/)
+- [Best AI Assistant for Drafting Open Source Partnership](/ai-tools-compared/best-ai-assistant-for-drafting-open-source-partnership-and-integration-proposals-2026/)
+- [AI Tools for Creating Automated Release Changelog](/ai-tools-compared/ai-tools-for-creating-automated-release-changelog-from-conve/)
 - [Best AI Assistant for Writing Open Source Plugin Development](/ai-tools-compared/best-ai-assistant-for-writing-open-source-plugin-development/)
-- [Best AI Assistant for Writing Open Source Roadmap Documents](/ai-tools-compared/best-ai-assistant-for-writing-open-source-roadmap-documents-from-issue-milestone-data/)
-- [AI Tools for Analyzing Which Open Source Issues Would Benefi](/ai-tools-compared/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

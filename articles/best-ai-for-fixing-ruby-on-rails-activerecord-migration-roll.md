@@ -11,7 +11,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 9
-tags: [ai-tools-compared, troubleshooting, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, troubleshooting, best-of, artificial-intelligence]
+---
 ---
 layout: default
 title: "Best AI for Fixing Ruby on Rails ActiveRecord Migration"
@@ -25,7 +26,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 score: 9
-tags: [ai-tools-compared, troubleshooting, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, troubleshooting, best-of, artificial-intelligence]
+---
 
 
 | Tool | Rails Knowledge | Migration Handling | ActiveRecord Support | Pricing |
@@ -48,6 +50,20 @@ ActiveRecord migration rollbacks in production can be terrifying. You've deploye
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Running `rails db**: rollback` fails with: 'PG::UndefinedTable: ERROR: relation users does not exist'.
 - **How do I fix**: this migration and what could cause this?" The AI responds with diagnostic steps and a concrete fix.
+
+## Table of Contents
+
+- [Understanding Migration Rollback Failures](#understanding-migration-rollback-failures)
+- [How AI Tools Help Diagnose Migration Issues](#how-ai-tools-help-diagnose-migration-issues)
+- [Practical AI Workflow for Migration Fixes](#practical-ai-workflow-for-migration-fixes)
+- [Prevention Strategies](#prevention-strategies)
+- [When to Seek Additional Help](#when-to-seek-additional-help)
+- [Testing Migrations in Isolation Before Production](#testing-migrations-in-isolation-before-production)
+- [Handling Complex Data Transformations During Rollback](#handling-complex-data-transformations-during-rollback)
+- [Concurrent Migration Strategies for Zero-Downtime Deployments](#concurrent-migration-strategies-for-zero-downtime-deployments)
+- [Monitoring and Alerting During Migration Execution](#monitoring-and-alerting-during-migration-execution)
+- [Database Lock Monitoring During Rollback](#database-lock-monitoring-during-rollback)
+- [Documentation and Runbook for Emergency Rollback](#documentation-and-runbook-for-emergency-rollback)
 
 ## Understanding Migration Rollback Failures
 
@@ -462,10 +478,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI Assistant for Fixing TypeScript Strict Mode Type Nar](/ai-tools-compared/best-ai-assistant-for-fixing-typescript-strict-mode-type-nar/)
-- [Best AI for Fixing Android Gradle Sync Failed Errors in Larg](/ai-tools-compared/best-ai-for-fixing-android-gradle-sync-failed-errors-in-larg/)
-- [Best AI for Fixing CSS Specificity Conflicts When Integratin](/ai-tools-compared/best-ai-for-fixing-css-specificity-conflicts-when-integratin/)
-- [AI Code Completion for Java Jakarta EE Migration from Javax](/ai-tools-compared/ai-code-completion-for-java-jakarta-ee-migration-from-javax-/)
-- [AI-Powered Database Migration Tools Comparison 2026](/ai-tools-compared/ai-powered-database-migration-tools-comparison/)
-
+- [AI Tools for Writing Database Migration Rollback Scripts](/ai-tools-compared/ai-tools-for-writing-database-migration-rollback-scripts-2026/)
+- [AI Tools for Automated Migration Testing 2026](/ai-tools-compared/ai-tools-for-automated-migration-testing-2026/)
+- [AI Tools for Database Schema Migration Review 2026](/ai-tools-compared/ai-tools-for-database-schema-migration-review-2026/)
+- [AI Tools for Database Migration Review 2026](/ai-tools-compared/ai-tools-for-database-migration-review-2026/)
+- [Best AI Tools for Database Schema Migration Review 2026](/ai-tools-compared/best-ai-tools-for-database-schema-migration-review-2026/---)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -39,6 +39,16 @@ The best terminal AI pair programming tools are Cline, Claude in terminal via AP
 - **This guide compares features**: installation, and real-world workflows for developers who prefer CLI-only development environments.
 - **The tool integrates with**: your existing GitHub Copilot subscription, which remains free for verified students, open source maintainers, and some individual developers.
 
+## Table of Contents
+
+- [Claude Code: Anthropic's CLI Companion](#claude-code-anthropics-cli-companion)
+- [GitHub Copilot CLI: Microsoft's Terminal Offering](#github-copilot-cli-microsofts-terminal-offering)
+- [Aider: Open Source Terminal AI Assistant](#aider-open-source-terminal-ai-assistant)
+- [CodeWhisperer: Amazon's Free Terminal Tool](#codewhisperer-amazons-free-terminal-tool)
+- [Ollama: Local AI Models for Terminal Work](#ollama-local-ai-models-for-terminal-work)
+- [Tabnine: Hybrid Terminal and IDE Approach](#tabnine-hybrid-terminal-and-ide-approach)
+- [Choosing Your Terminal AI Tool](#choosing-your-terminal-ai-tool)
+
 ## Claude Code: Anthropic's CLI Companion
 
 Claude Code (claude.ai/code) provides a free CLI that works as an interactive coding assistant. After installing via npm or downloading the binary, you get a conversational interface for code generation, debugging, and file manipulation.

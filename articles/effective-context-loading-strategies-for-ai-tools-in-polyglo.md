@@ -39,6 +39,22 @@ Modern software projects increasingly span multiple programming languages. A typ
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [The Polyglot Context Problem](#the-polyglot-context-problem)
+- [Strategy 1: Language-Specific Context Files](#strategy-1-language-specific-context-files)
+- [Strategy 2: Interface Definition Priority](#strategy-2-interface-definition-priority)
+- [Strategy 3: Dependency Graph Context](#strategy-3-dependency-graph-context)
+- [Strategy 4: Token Budget Allocation](#strategy-4-token-budget-allocation)
+- [Strategy 5: Selective File Inclusion](#strategy-5-selective-file-inclusion)
+- [Strategy 6: Environment and Configuration Context](#strategy-6-environment-and-configuration-context)
+- [Strategy 7: Cross-Language Error Pattern Reference](#strategy-7-cross-language-error-pattern-reference)
+- [Error Propagation Conventions](#error-propagation-conventions)
+- [Retry Policy](#retry-policy)
+- [Tool-Specific Implementation Notes](#tool-specific-implementation-notes)
+- [Measuring Context Strategy Effectiveness](#measuring-context-strategy-effectiveness)
+- [Implementation Checklist](#implementation-checklist)
+
 ## The Polyglot Context Problem
 
 AI tools operate within finite context windows. When your project contains Python, TypeScript, Go, and Rust files, each language brings its own conventions, dependencies, and patterns. Feeding everything into context often exceeds limits while diluting relevance. Strategic context loading becomes essential for maintaining AI accuracy across heterogeneous codebases.
@@ -276,9 +292,8 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [Effective Context Management Strategies for AI Coding](/ai-tools-compared/effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/)
-- [Effective Prompting Strategies for AI Generation of Complex](/ai-tools-compared/effective-prompting-strategies-for-ai-generation-of-complex-/)
-- [Effective Strategies for AI Assisted Debugging of](/ai-tools-compared/effective-strategies-for-ai-assisted-debugging-of-intermittent-failures/)
-- [Effective Strategies for AI-Assisted Refactoring Without Bre](/ai-tools-compared/effective-strategies-for-ai-assisted-refactoring-without-bre/)
-- [Effective Strategies for Reviewing AI Generated Code Before](/ai-tools-compared/effective-strategies-for-reviewing-ai-generated-code-before-committing-to-repo/)
-
+- [Effective Strategies for Using AI](/ai-tools-compared/effective-strategies-for-using-ai-to-learn-new-programming-languages-faster/)
+- [What Source Code Context Window Do Different AI Coding Tools](/ai-tools-compared/what-source-code-context-window-do-different-ai-coding-tools/)
+- [Best AI Context Window Management Strategies for Large](/ai-tools-compared/best-ai-context-window-management-strategies-for-large-codeb/)
+- [How to Manage AI Coding Context When Switching](/ai-tools-compared/how-to-manage-ai-coding-context-when-switching-between-diffe/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

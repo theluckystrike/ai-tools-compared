@@ -44,6 +44,14 @@ For more complex workflows, Coda supports "Button" columns that users click to t
 - **Coda tables use similar**: types but with different names and behaviors.
 - **Coda uses "lookup" columns**: and formulas that can reference other tables directly.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Platform Comparison: Notion AI vs Coda AI for Automations](#platform-comparison-notion-ai-vs-coda-ai-for-automations)
+- [Migrating AI-Generated Content](#migrating-ai-generated-content)
+- [Advanced: Using Coda API for Complex AI Tasks](#advanced-using-coda-api-for-complex-ai-tasks)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
@@ -350,8 +358,7 @@ Coda's AI formula layer uses Coda's own AI infrastructure, which abstracts the u
 - [How to Transfer Notion AI Workflows to Claude Projects 2026](/ai-tools-compared/how-to-transfer-notion-ai-workflows-to-claude-projects-2026/)
 - [Notion AI Not Working as Expected Fix (2026)](/ai-tools-compared/notion-ai-not-working-as-expected-fix-2026/)
 - [Notion AI vs ChatGPT for Content Creation Compared](/ai-tools-compared/notion-ai-vs-chatgpt-for-content-creation-compared/)
-- [Notion AI vs ClickUp AI: Task Writing Compared](/ai-tools-compared/notion-ai-vs-clickup-ai-task-writing-compared/)
 - [Notion AI vs Google Docs AI: Complete Writing Features](/ai-tools-compared/notion-ai-writing-features-vs-google-docs-ai-compared/)
-
+- [How to Set Up Model Context Protocol with Local Database](/ai-tools-compared/how-to-set-up-model-context-protocol-with-local-database-schema-information-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

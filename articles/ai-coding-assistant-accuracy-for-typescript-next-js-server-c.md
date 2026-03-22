@@ -11,7 +11,8 @@ intent-checked: true
 voice-checked: true
 score: 9
 reviewed: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI Coding Assistant Accuracy for TypeScript Next Js Server"
@@ -25,7 +26,8 @@ intent-checked: true
 voice-checked: true
 score: 9
 reviewed: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 {% raw %}
 
 Server Components fundamentally changed how developers build Next.js applications, and AI coding assistants must adapt to this model. When you write TypeScript code for Server Components, the rules differ significantly from traditional React client-side code. This evaluation tests leading AI assistants on their accuracy when generating, debugging, and maintaining Server Components in 2026.
@@ -38,6 +40,21 @@ Server Components fundamentally changed how developers build Next.js application
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Each test used a**: realistic Next.js 14+ project structure with TypeScript strict mode enabled.
 - **It correctly identifies when**: components must be server-only, avoids suggesting client-side hooks inappropriately, and understands the `use server` directive syntax.
+
+## Table of Contents
+
+- [Why Server Components Challenge AI Assistants](#why-server-components-challenge-ai-assistants)
+- [Test Methodology](#test-methodology)
+- [Claude Code](#claude-code)
+- [Cursor](#cursor)
+- [GitHub Copilot](#github-copilot)
+- [Zed](#zed)
+- [Accuracy Comparison Summary](#accuracy-comparison-summary)
+- [Real Server Component Pitfalls to Test](#real-server-component-pitfalls-to-test)
+- [Practical Recommendations](#practical-recommendations)
+- [Pricing and Tool Comparison](#pricing-and-tool-comparison)
+- [Common Mistakes AI Assistants Make](#common-mistakes-ai-assistants-make)
+- [Testing Your AI Assistant](#testing-your-ai-assistant)
 
 ## Why Server Components Challenge AI Assistants
 
@@ -300,11 +317,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
+- [How to Evaluate AI Coding Assistant Accuracy](/ai-tools-compared/how-to-evaluate-ai-coding-assistant-accuracy/)
 - [AI Coding Assistant Accuracy for TypeScript Svelte Component](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-svelte-component/)
-- [AI Coding Assistant Comparison for Typescript monorepo](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-monorepo-with-turborepo-setup/)
-- [AI Coding Assistant Comparison for TypeScript Tailwind CSS](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-tailwind-css-c/)
-- [Best AI Assistant for Fixing TypeScript Strict Mode Type Nar](/ai-tools-compared/best-ai-assistant-for-fixing-typescript-strict-mode-type-nar/)
-- [AI Coding Assistants for Typescript Deno Fresh Framework Com](/ai-tools-compared/ai-coding-assistants-for-typescript-deno-fresh-framework-com/)
-
+- [AI Coding Assistant Comparison for TypeScript monorepo](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-monorepo-with-turborepo-setup/)
+- [AI Coding Assistants for TypeScript Graphql Resolver](/ai-tools-compared/ai-coding-assistants-for-typescript-graphql-resolver-and-schema-generation-2026/)
+- [AI Coding Assistants for TypeScript Express Middleware](/ai-tools-compared/ai-coding-assistants-for-typescript-express-middleware-chain/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

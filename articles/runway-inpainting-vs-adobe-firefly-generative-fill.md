@@ -39,6 +39,21 @@ Runway inpainting and Adobe Firefly Generative Fill both use generative AI to mo
 - **Choose "Generative Fill" from**: the context menu 3.
 - **Additionally**: the free tier's watermarked outputs and credit limits can impede production workflows.
 
+## Table of Contents
+
+- [Core Technology and Approach](#core-technology-and-approach)
+- [Performance and Output Quality](#performance-and-output-quality)
+- [Use Case Suitability](#use-case-suitability)
+- [Cost Considerations](#cost-considerations)
+- [Limitations and Workarounds](#limitations-and-workarounds)
+- [Recommendations by Workflow](#recommendations-by-workflow)
+- [Pricing, Performance, and Speed Benchmarks](#pricing-performance-and-speed-benchmarks)
+- [CLI and Batch Processing with Runway](#cli-and-batch-processing-with-runway)
+- [Adobe Firefly Integration with Photoshop Scripting](#adobe-firefly-integration-with-photoshop-scripting)
+- [Real-World Performance Testing](#real-world-performance-testing)
+- [Feature Comparison Matrix](#feature-comparison-matrix)
+- [Deployment Recommendations](#deployment-recommendations)
+
 ## Core Technology and Approach
 
 Runway inpainting operates through its Gen-2 and Gen-3 models, offering an unified platform for video and image manipulation. The inpainting feature allows you to select specific regions of an image and replace them with AI-generated content that matches the surrounding context. Runway uses a diffusion-based approach that excels at maintaining visual consistency between edited and original areas.

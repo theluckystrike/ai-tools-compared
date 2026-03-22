@@ -39,6 +39,16 @@ Use AI tools like Claude or GPT to generate complete Docker Compose configuratio
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [The Complexity Challenge](#the-complexity-challenge)
+- [AI-Powered Generation Approaches](#ai-powered-generation-approaches)
+- [Tool Comparison for Docker Compose Generation](#tool-comparison-for-docker-compose-generation)
+- [Practical Workflow for Complex Stacks](#practical-workflow-for-complex-stacks)
+- [Advanced Considerations](#advanced-considerations)
+- [Prompt Engineering for Better Results](#prompt-engineering-for-better-results)
+- [Limitations and Best Practices](#limitations-and-best-practices)
+
 ## The Complexity Challenge
 
 Docker Compose simplifies multi-container applications, but configuring a complex microservice stack presents challenges. Each service requires careful specification of image versions, environment variables, port mappings, volume mounts, dependencies, and networking settings. In a typical e-commerce microservice architecture, you might need to define fifteen or more services, each with specific configuration requirements.

@@ -11,7 +11,8 @@ intent-checked: true
 voice-checked: true
 score: 9
 reviewed: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI Coding Assistant Comparison for TypeScript monorepo"
@@ -25,7 +26,8 @@ intent-checked: true
 voice-checked: true
 score: 9
 reviewed: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 {% raw %}
 
 When managing a TypeScript monorepo with Turborepo, choosing the right AI coding assistant can significantly impact your development workflow. Turborepo's caching, remote execution, and task orchestration features create unique requirements that not all AI assistants handle equally well. This comparison evaluates the leading options based on their ability to understand monorepo structure, work across multiple packages, and integrate with Turborepo's specific tooling.
@@ -38,6 +40,13 @@ When managing a TypeScript monorepo with Turborepo, choosing the right AI coding
 - **Use AI-generated tests as**: a starting point, then add cases that cover your unique requirements and failure modes.
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **Claude Code works directly**: in the terminal, which fits well with developers who prefer staying in their command-line environment while running Turborepo commands.
+
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Pricing and Subscription Comparison](#pricing-and-subscription-comparison)
+- [Performance Monitoring Integration](#performance-monitoring-integration)
+- [Troubleshooting](#troubleshooting)
 
 ## Prerequisites
 
@@ -497,11 +506,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [AI Coding Assistant Accuracy for Typescript Next Js Server C](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
-- [AI Coding Assistant Accuracy for TypeScript Svelte Component](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-svelte-component/)
 - [AI Coding Assistant Comparison for TypeScript Tailwind CSS](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-tailwind-css-c/)
-- [Best AI Assistant for Fixing TypeScript Strict Mode Type Nar](/ai-tools-compared/best-ai-assistant-for-fixing-typescript-strict-mode-type-nar/)
-- [AI Coding Assistants for Typescript Deno Fresh Framework Com](/ai-tools-compared/ai-coding-assistants-for-typescript-deno-fresh-framework-com/)
-
+- [AI Coding Assistant Accuracy for TypeScript Next Js Server](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
+- [AI Coding Assistant Comparison for React Component](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
+- [Best AI Coding Assistant for React Development](/ai-tools-compared/best-ai-coding-assistant-for-react-development/)
+- [AI Coding Assistant for Rust Developers Compared](/ai-tools-compared/ai-coding-assistant-for-rust-developers-compared/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

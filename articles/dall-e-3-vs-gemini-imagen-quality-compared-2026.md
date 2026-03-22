@@ -38,6 +38,21 @@ tags: [ai-tools-compared, comparison]---
 - **Gemini Imagen averages 8-15**: seconds for standard generation.
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Understanding the Models](#understanding-the-models)
+- [Image Quality Comparison](#image-quality-comparison)
+- [API Integration and Developer Experience](#api-integration-and-developer-experience)
+- [Performance and Latency](#performance-and-latency)
+- [Content Policy Considerations](#content-policy-considerations)
+- [Cost Analysis](#cost-analysis)
+- [Prompt Engineering Differences](#prompt-engineering-differences)
+- [Practical Recommendations](#practical-recommendations)
+- [Advanced Feature Comparison](#advanced-feature-comparison)
+- [Integration Patterns for Development](#integration-patterns-for-development)
+- [Migration Path Between Platforms](#migration-path-between-platforms)
+
 ## Introduction
 
 Choose DALL-E 3 if you need reliable text rendering in images, artistic style accuracy, and predictable per-image pricing starting at $0.04. Choose Gemini Imagen if you prioritize photorealistic detail in complex scenes, human portrait generation, and integration with the Google Cloud ecosystem. DALL-E 3 wins on ease of use and stylistic control, while Imagen produces superior photorealistic output with more accurate lighting and shadow physics.

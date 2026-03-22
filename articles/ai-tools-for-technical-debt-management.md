@@ -10,7 +10,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 ---
 layout: default
 title: "How to Use AI for Technical Debt Management"
@@ -23,7 +24,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 {% raw %}
 
@@ -38,6 +40,17 @@ Technical debt accumulates in every codebase. AI tools don't eliminate debt, but
 - **Its debt remediation time**: estimates are more accurate than manual guesses because they're based on aggregated data from millions of repositories.
 - **This is a useful**: prioritization signal that pure code analysis misses.
 - **What are the most**: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.
+
+## Table of Contents
+
+- [Stage 1: Identification](#stage-1-identification)
+- [Top 10 Most Indebted Files](#top-10-most-indebted-files)
+- [Stage 2: Prioritization](#stage-2-prioritization)
+- [Stage 3: Fixing with AI Assistance](#stage-3-fixing-with-ai-assistance)
+- [Specific AI Tools for Technical Debt](#specific-ai-tools-for-technical-debt)
+- [Measuring Progress](#measuring-progress)
+- [The 20% Time Model](#the-20-time-model)
+- [Related Reading](#related-reading)
 
 ## Stage 1: Identification
 
@@ -298,6 +311,14 @@ A developer who would previously fix 2 debt items in a sprint can address 6-8 wi
 - [How to Use AI Coding Assistants for Technical Debt Reduction](/ai-tools-compared/how-to-use-ai-coding-assistants-for-technical-debt-reduction/)
 - [AI Code Review Automation Tools Comparison](/ai-tools-compared/ai-code-review-automation-tools-comparison/)
 - [Free AI Tools for Code Refactoring That Actually Improve Quality](/ai-tools-compared/free-ai-tools-for-code-refactoring-that-actually-improve-qua/)
+
+## Related Articles
+
+- [How to Use AI Coding Assistants for Technical Debt Reduction](/ai-tools-compared/how-to-use-ai-coding-assistants-for-technical-debt-reduction/)
+- [AI Tools for Generating Technical Blog Post Outlines to](/ai-tools-compared/ai-tools-for-generating-technical-blog-post-outlines-to-build-developer-brand-2026/)
+- [Best AI Tools for Technical Documentation Writing in 2026](/ai-tools-compared/ai-tools-for-technical-writing-documentation-2026/---)
+- [Claude vs ChatGPT for Technical Writing 2026](/ai-tools-compared/claude-vs-chatgpt-for-technical-writing-2026/)
+- [AI Tools for Automated SSL Certificate Management](/ai-tools-compared/ai-tools-for-automated-ssl-certificate-management-and-monito/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

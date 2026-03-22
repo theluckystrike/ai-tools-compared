@@ -38,6 +38,19 @@ AI tools can automatically generate consistent component naming conventions from
 PascalCase works best for React component names.
 - **This guide covers the**: naming convention problem, which ai tools work best for naming convention generation, preparing your token data, with specific setup instructions
 
+## Table of Contents
+
+- [The Naming Convention Problem](#the-naming-convention-problem)
+- [Which AI Tools Work Best for Naming Convention Generation](#which-ai-tools-work-best-for-naming-convention-generation)
+- [Preparing Your Token Data](#preparing-your-token-data)
+- [Prompt Strategies for AI Naming Generation](#prompt-strategies-for-ai-naming-generation)
+- [Step-by-Step Workflow for Teams](#step-by-step-workflow-for-teams)
+- [Practical Examples](#practical-examples)
+- [Validation and Refinement](#validation-and-refinement)
+- [Common Pitfalls to Avoid](#common-pitfalls-to-avoid)
+- [Automating Name Generation with Scripts](#automating-name-generation-with-scripts)
+- [Cross-Platform Naming Consistency](#cross-platform-naming-consistency)
+
 ## The Naming Convention Problem
 
 Design tokens typically exist as raw values: colors like `#0066FF` or spacing values like `16px`. Turning these into component names requires understanding of semantic meaning, component hierarchy, and team conventions. A blue button isn't just "blue-button" — it might be "primary-action," "cta-primary," or "button-brand" depending on your system's architecture.

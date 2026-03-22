@@ -49,6 +49,16 @@ Task 2: Understand a complex codebase section
 1.
 - **Use vim's search-and-replace or**: manual editing 2.
 
+## Table of Contents
+
+- [Why Consider the Terminal Workflow](#why-consider-the-terminal-workflow)
+- [Prerequisites](#prerequisites)
+- [Migrating Your Workflow Habits](#migrating-your-workflow-habits)
+- [Real-World Task Comparisons: Copilot Neovim vs Claude Code Terminal](#real-world-task-comparisons-copilot-neovim-vs-claude-code-terminal)
+- [Advanced Claude Code Configuration for Neovim Veterans](#advanced-claude-code-configuration-for-neovim-veterans)
+- [Performance Characteristics](#performance-characteristics)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Consider the Terminal Workflow
 
 Copilot for Neovim provides inline suggestions as you type, which works well for quick completions. However, this approach has limitations. The suggestions appear in your buffer, which can interrupt your flow when you need to dismiss them frequently. The terminal workflow with Claude Code takes a different approach—it keeps AI interactions separate from your editing buffer, giving you more explicit control over when and how you engage with AI assistance.

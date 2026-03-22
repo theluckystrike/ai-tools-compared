@@ -53,6 +53,16 @@ It depends on your background.
 - **the first tool tends**: to work well if you prefer a guided experience, while the second tool gives more control for users comfortable with configuration.
 - **Try the free tier**: or trial of each before committing to a paid plan.
 
+## Table of Contents
+
+- [Platform Overview](#platform-overview)
+- [Developer Integration and API Access](#developer-integration-and-api-access)
+- [AI Analysis and Clip Quality](#ai-analysis-and-clip-quality)
+- [Export Options and Platform Optimization](#export-options-and-platform-optimization)
+- [Practical Workflow Integration](#practical-workflow-integration)
+- [Decision Factors](#decision-factors)
+- [Related Reading](#related-reading)
+
 ## Platform Overview
 
 **Opus Clip** positions itself as an AI-powered video clipping tool that analyzes content to identify compelling moments, adds captions automatically, and exports platform-optimized short videos. The platform targets content creators, marketers, and teams producing regular video content who need to repurpose long-form material into clips for social media.

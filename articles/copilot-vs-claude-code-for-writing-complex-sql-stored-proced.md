@@ -39,6 +39,18 @@ This guide compares the strengths and weaknesses of each tool for this specific 
 - **You can ask about**: index recommendations or query plan improvements, and Claude Code will explain the reasoning.
 - **Claude Code requires switching**: to a terminal session, which some developers prefer for complex tasks that benefit from step-by-step discussion.
 
+## Table of Contents
+
+- [Understanding the Challenge of SQL Stored Procedures](#understanding-the-challenge-of-sql-stored-procedures)
+- [Quick Comparison](#quick-comparison)
+- [GitHub Copilot for Stored Procedure Development](#github-copilot-for-stored-procedure-development)
+- [Claude Code for SQL Development](#claude-code-for-sql-development)
+- [Comparative Analysis](#comparative-analysis)
+- [Recommendations by Use Case](#recommendations-by-use-case)
+- [Practical Tips for Better Results](#practical-tips-for-better-results)
+- [Advanced Techniques for Complex Procedures](#advanced-techniques-for-complex-procedures)
+- [When to Choose Each Tool for Specific Tasks](#when-to-choose-each-tool-for-specific-tasks)
+
 ## Understanding the Challenge of SQL Stored Procedures
 
 Stored procedures differ from regular SQL queries in several ways. They incorporate procedural logic including loops, conditionals, error handling, and transactions. A complex stored procedure might need to validate input parameters, perform multiple inserts across related tables, handle race conditions, and return meaningful error messages when something fails.
@@ -332,10 +344,9 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
+- [Copilot vs Claude Code for Writing GitHub Actions Cicd](/ai-tools-compared/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
+- [Copilot vs Claude Code for Scaffolding New Django REST](/ai-tools-compared/copilot-vs-claude-code-for-scaffolding-new-django-rest-frame/)
 - [Copilot vs Claude Code for Writing Jest Test](/ai-tools-compared/copilot-vs-claude-code-for-writing--jest-test-s/)
-- [Copilot vs Claude Code for Writing GitHub Actions Cicd Workf](/ai-tools-compared/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
-- [AI Autocomplete Accuracy for Boilerplate Code vs Complex Log](/ai-tools-compared/ai-autocomplete-accuracy-for-boilerplate-code-vs-complex-log/)
-- [Copilot vs Claude Code for Scaffolding New Django REST Frame](/ai-tools-compared/copilot-vs-claude-code-for-scaffolding-new-django-rest-frame/)
-- [How to Migrate From Copilot for Neovim](/ai-tools-compared/migrate-copilot-for-neovim-setup-to-claude-code-terminal-wor/)
-
+- [AI Pair Programming Tools Comparison 2026: Claude Code](/ai-tools-compared/ai-pair-programming-tools-comparison-2026/)
+- [Claude vs ChatGPT for Refactoring Legacy Java Code](/ai-tools-compared/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

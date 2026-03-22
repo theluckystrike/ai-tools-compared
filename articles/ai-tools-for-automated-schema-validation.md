@@ -403,4 +403,4 @@ For polyglot schemas (Protobuf + JSON + SQL in one repo), an AI-based approach i
 ---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
+{% endraw %}

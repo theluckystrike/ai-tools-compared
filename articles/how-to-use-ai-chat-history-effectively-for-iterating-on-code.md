@@ -36,6 +36,15 @@ When working with AI coding assistants, each conversation builds on previous exc
 
 - **Current blocker**: webhook integration."
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Why Chat History Matters for Code Iteration](#why-chat-history-matters-for-code-iteration)
+- [Practical Examples](#practical-examples)
+- [When to Start Fresh](#when-to-start-fresh)
+- [Advanced Context Management Techniques](#advanced-context-management-techniques)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
@@ -470,10 +479,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [How to Migrate Copilot Chat History and Context to Cursor AI](/ai-tools-compared/migrate-copilot-chat-history-and-context-to-cursor-ai-guide/)
+- [Copilot Inline Chat vs Cursor Inline Chat: Which Understands](/ai-tools-compared/copilot-inline-chat-vs-cursor-inline-chat-which-understands-/)
 - [How to Use Copilot Chat to Generate Code from Natural](/ai-tools-compared/how-to-use-copilot-chat-to-generate-code-from-natural-langua/)
-- [ChatGPT Conversation History Disappeared Fix](/ai-tools-compared/chatgpt-conversation-history-disappeared-fix/)
-- [How to Use AI Coding Assistants Effectively with Trunk Based](/ai-tools-compared/how-to-use-ai-coding-assistants-effectively-with-trunk-based/)
-- [How to Use AI Coding Tools Effectively During Live Coding](/ai-tools-compared/how-to-use-ai-coding-tools-effectively-during-live-coding-interviews-2026/)
-
+- [Best AI Inline Chat Features in VS Code Compared to](/ai-tools-compared/best-ai-inline-chat-features-in-vscode-compared-to-jetbrains/)
+- [Copilot Chat Not Responding in GitHub](/ai-tools-compared/copilot-chat-not-responding-in-github-fix/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```

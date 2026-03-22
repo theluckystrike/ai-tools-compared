@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, security, artificial-intelligence]---
+tags: [ai-tools-compared, security, artificial-intelligence]
+---
 ---
 
 
@@ -27,7 +28,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, security, artificial-intelligence]---
+tags: [ai-tools-compared, security, artificial-intelligence]
+---
 
 {% raw %}
 
@@ -39,6 +41,18 @@ tags: [ai-tools-compared, security, artificial-intelligence]---
 - **Some tools use machine**: learning to prioritize vulnerabilities based on exploitability and environment context.
 - **Use incremental scanning. For**: large infrastructures, scan only changed resources rather than performing full environment scans on every pipeline run.
 - **SOC 2 requirements map**: less directly to specific IaC checks—SOC 2 is process-oriented as much as technical.
+
+## Table of Contents
+
+- [Why Automate Compliance Scanning in CI CD](#why-automate-compliance-scanning-in-ci-cd)
+- [Key AI-Powered Approaches for Pipeline Integration](#key-ai-powered-approaches-for-pipeline-integration)
+- [Tool Comparison: AI Compliance Scanners](#tool-comparison-ai-compliance-scanners)
+- [Implementing AI Compliance Scanning](#implementing-ai-compliance-scanning)
+- [Writing Effective Policy-as-Code with AI Assistance](#writing-effective-policy-as-code-with-ai-assistance)
+- [CI CD Integration Patterns](#ci-cd-integration-patterns)
+- [Best Practices for AI Compliance Scanning](#best-practices-for-ai-compliance-scanning)
+- [Compliance Framework Coverage](#compliance-framework-coverage)
+- [Measuring Effectiveness](#measuring-effectiveness)
 
 ## Why Automate Compliance Scanning in CI CD
 

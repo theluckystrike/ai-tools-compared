@@ -43,6 +43,13 @@ Exploratory data analysis demands understanding your dataset's structure, distri
 - **A shift greater than**: 10-15% in any feature is a trigger for investigation.
 - **Use dataprep when you**: want to clean and profile in one pass.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Profiling Library Comparison](#profiling-library-comparison)
+- [Best Practices](#best-practices)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
@@ -405,10 +412,9 @@ Profile your production data on a schedule and compare key statistics — mean, 
 
 ## Related Articles
 
-- [Claude Code for Memory Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-memory-profiling-workflow-tutorial/)
-- [Claude Code for Node.js Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-nodejs-profiling-workflow-tutorial/)
-- [AI for Automated Regression Test Generation from Bug Reports](/ai-tools-compared/ai-for-automated-regression-test-generation-from-bug-reports/)
-- [Best AI Assistant for QA Engineers Writing Test Coverage Gap](/ai-tools-compared/best-ai-assistant-for-qa-engineers-writing-test-coverage-gap/)
-- [Best AI Tool for Cybersecurity Analysts Incident Reports](/ai-tools-compared/best-ai-tool-for-cybersecurity-analysts-incident-reports/)
-
+- [AI Tools for Automated Performance Profiling](/ai-tools-compared/ai-tools-automated-performance-profiling/)
+- [Claude Code Profiler Integration Guide](/ai-tools-compared/claude-code-profiler-integration-guide/)
+- [Best AI for Generating pandas Code to Merge Data](/ai-tools-compared/best-ai-for-generating-pandas-code-to-merge-data-from-multip/)
+- [Best AI Coding Tools for Python Data Science and pandas](/ai-tools-compared/best-ai-coding-tools-for-python-data-science-and-pandas-work/)
+- [Best AI Assistant for Writing pandas Code](/ai-tools-compared/best-ai-assistant-for-writing-pandas-code-to-process-nested-json-api-pagination/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

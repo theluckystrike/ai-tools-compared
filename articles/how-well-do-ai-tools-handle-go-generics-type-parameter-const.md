@@ -39,6 +39,14 @@ Go generics, introduced in Go 1.18, brought powerful abstraction capabilities to
 - **The constraint system uses**: interfaces to define acceptable types, allowing developers to specify exactly which operations a type parameter must support.
 - **Include the function signature you want**: describe what operations the type parameter must support, and specify the types you intend to use.
 
+## Table of Contents
+
+- [Understanding Go Type Parameter Constraints](#understanding-go-type-parameter-constraints)
+- [Common AI Generation Issues with Generics](#common-ai-generation-issues-with-generics)
+- [Practical Examples](#practical-examples)
+- [Quality Assessment Criteria](#quality-assessment-criteria)
+- [Best Practices for AI-Assisted Generics Code](#best-practices-for-ai-assisted-generics-code)
+
 ## Understanding Go Type Parameter Constraints
 
 Type parameter constraints in Go restrict what types can be used with a generic function or type. The constraint system uses interfaces to define acceptable types, allowing developers to specify exactly which operations a type parameter must support.

@@ -42,6 +42,23 @@ For JetBrains IDEs, use the built-in update checker in Settings > Updates.
 - **Here's what you said so far**: 'To implement error handling in TypeScript, you can use try-catch blocks.
 - **Could this problem be**: caused by a recent update? Yes, updates frequently introduce new bugs or change behavior.
 
+## Table of Contents
+
+- [Understanding the Truncation Issue](#understanding-the-truncation-issue)
+- [Check Your Network Connection First](#check-your-network-connection-first)
+- [Adjust IDE Settings for Better Response Handling](#adjust-ide-settings-for-better-response-handling)
+- [Clear Copilot Extension Cache](#clear-copilot-extension-cache)
+- [Optimize Your Prompts to Prevent Truncation](#optimize-your-prompts-to-prevent-truncation)
+- [Update Your Extension and IDE](#update-your-extension-and-ide)
+- [Configure Proxy Settings for Enterprise Users](#configure-proxy-settings-for-enterprise-users)
+- [Use Alternative Interfaces When Issues Persist](#use-alternative-interfaces-when-issues-persist)
+- [Monitor Response Quality Over Time](#monitor-response-quality-over-time)
+- [Advanced Troubleshooting: Token Analysis](#advanced-troubleshooting-token-analysis)
+- [Comparative Analysis: Version Performance](#comparative-analysis-version-performance)
+- [Creating a Persistent Truncation Report](#creating-a-persistent-truncation-report)
+- [Response Streaming Inspection](#response-streaming-inspection)
+- [Emergency Recovery: Resuming Incomplete Responses](#emergency-recovery-resuming-incomplete-responses)
+
 ## Understanding the Truncation Issue
 
 When Copilot Chat responses get cut off mid-sentence, several factors could be at play. The truncation typically manifests as responses that simply stop in the middle of a word, sentence, or code block, leaving you without the complete answer you need. Understanding the root causes helps you apply the right fix.

@@ -10,7 +10,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, troubleshooting, artificial-intelligence]---
+tags: [ai-tools-compared, troubleshooting, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI-Powered Log Analysis Tools for Debugging"
@@ -23,7 +24,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, troubleshooting, artificial-intelligence]---
+tags: [ai-tools-compared, troubleshooting, artificial-intelligence]
+---
 
 {% raw %}
 
@@ -37,6 +39,16 @@ Production debugging used to mean staring at thousands of log lines looking for 
 - **Production debugging used to**: mean staring at thousands of log lines looking for anomalies.
 - Different use case from Datadog.
 - **For complex incident investigation**: where you need narrative analysis and hypothesis generation, the custom Claude pipeline produces better explanations than purpose-built tools.
+
+## Table of Contents
+
+- [The Problem with Traditional Log Analysis](#the-problem-with-traditional-log-analysis)
+- [Tool 1: Datadog Watchdog and AI Features](#tool-1-datadog-watchdog-and-ai-features)
+- [Tool 2: Honeycomb with AI Query Assistance](#tool-2-honeycomb-with-ai-query-assistance)
+- [Tool 3: Custom Pipeline with OpenSearch + LLM](#tool-3-custom-pipeline-with-opensearch-llm)
+- [Structured Log Analysis](#structured-log-analysis)
+- [Comparing Tools](#comparing-tools)
+- [Related Reading](#related-reading)
 
 ## The Problem with Traditional Log Analysis
 

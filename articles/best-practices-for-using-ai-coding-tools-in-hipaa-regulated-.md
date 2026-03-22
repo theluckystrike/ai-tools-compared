@@ -39,6 +39,18 @@ To use AI coding tools in HIPAA-regulated environments, deploy self-hosted model
 - **Use Local or Self-Hosted**: Models for PHI-Adjacent Code For code modules that directly handle PHI data structures, consider running local AI models.
 - **Never use real patient**: data as test data.
 
+## Table of Contents
+
+- [Understanding the Risk Model](#understanding-the-risk-model)
+- [Practical Best Practices](#practical-best-practices)
+- [Allowed Tools (Healthcare Projects)](#allowed-tools-healthcare-projects)
+- [Prohibited](#prohibited)
+- [Required](#required)
+- [Security Patterns for Healthcare AI Usage](#security-patterns-for-healthcare-ai-usage)
+- [Tools with HIPAA BAA Availability](#tools-with-hipaa-baa-availability)
+- [Implementing HIPAA-Compliant Audit Logs](#implementing-hipaa-compliant-audit-logs)
+- [Encryption at Rest: What AI Gets Right and Wrong](#encryption-at-rest-what-ai-gets-right-and-wrong)
+
 ## Understanding the Risk Model
 
 AI coding tools typically send code to external servers for processing. In healthcare contexts, this creates potential PHI exposure risks. The core challenge is ensuring that no patient data, even in code form, leaves your controlled environment without proper safeguards.

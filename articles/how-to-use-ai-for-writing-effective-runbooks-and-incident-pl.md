@@ -41,6 +41,16 @@ Runbooks and incident playbooks serve as the operational backbone for any reliab
 - **This guide covers practical**: approaches to using AI for writing runbooks and incident playbooks that your team will actually use when seconds matter.
 - **Iterate on drafts**: Generate multiple versions and combine the best elements.
 
+## Table of Contents
+
+- [The Challenge with Manual Runbook Creation](#the-challenge-with-manual-runbook-creation)
+- [Practical Approaches for AI-Assisted Runbook Writing](#practical-approaches-for-ai-assisted-runbook-writing)
+- [Database Connection Pool Exhaustion](#database-connection-pool-exhaustion)
+- [Payment Service 5xx Alert Response](#payment-service-5xx-alert-response)
+- [Integrating AI into Your Runbook Workflow](#integrating-ai-into-your-runbook-workflow)
+- [Practical Tips for Better AI-Generated Runbooks](#practical-tips-for-better-ai-generated-runbooks)
+- [Common Pitfalls to Avoid](#common-pitfalls-to-avoid)
+
 ## The Challenge with Manual Runbook Creation
 
 Writing effective runbooks requires documenting complex troubleshooting steps, decision trees, and remediation procedures in a way that remains clear under pressure. Engineers often face several common obstacles:
@@ -285,10 +295,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Use AI for Writing Effective Runbooks and Incident](/ai-tools-compared/how-to-use-ai-for-writing-effective-runbooks-and-incident-playbooks/)
-- [ChatGPT vs Claude for Writing Effective Celery Task Error](/ai-tools-compared/chatgpt-vs-claude-for-writing-effective-celery-task-error-ha/)
-- [How to Use AI for Writing Effective Prometheus Recording Rul](/ai-tools-compared/how-to-use-ai-for-writing-effective-prometheus-recording-rul/)
-- [How to Use AI for Writing Effective Sli Slo Definitions](/ai-tools-compared/how-to-use-ai-for-writing-effective-sli-slo-definitions-for-services/)
-- [How to Use AI for Writing Effective Terraform State Manageme](/ai-tools-compared/how-to-use-ai-for-writing-effective-terraform-state-manageme/)
-
+- [How to Use AI for Writing Effective Runbooks](/ai-tools-compared/how-to-use-ai-for-writing-effective-runbooks-and-incident-playbooks/)
+- [AI Powered Incident Response Tools for DevOps Teams Compared](/ai-tools-compared/ai-powered-incident-response-tools-for-devops-teams-compared/)
+- [How to Use AI for Incident Response Automation](/ai-tools-compared/how-to-use-ai-for-incident-response-automation/)
+- [Best AI Tool for Cybersecurity Analysts Incident](/ai-tools-compared/best-ai-tool-for-cybersecurity-analysts-incident-reports/)
+- [Best AI Tools for Technical Documentation Writing in 2026](/ai-tools-compared/ai-tools-for-technical-writing-documentation-2026/---)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

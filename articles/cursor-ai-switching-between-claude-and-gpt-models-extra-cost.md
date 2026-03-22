@@ -39,6 +39,16 @@ Switching between Claude and GPT models in Cursor AI does not incur any extra fe
 - **Does Claude offer a**: free tier? Most major tools offer some form of free tier or trial period.
 - **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 
+## Table of Contents
+
+- [How Model Switching Works in Cursor](#how-model-switching-works-in-cursor)
+- [Cost Implications: What You Need to Know](#cost-implications-what-you-need-to-know)
+- [Practical Switching Strategies](#practical-switching-strategies)
+- [Managing Costs Effectively](#managing-costs-effectively)
+- [Bring Your Own API Key (BYOK)](#bring-your-own-api-key-byok)
+- [Common Questions](#common-questions)
+- [Making the Switch](#making-the-switch)
+
 ## How Model Switching Works in Cursor
 
 Cursor AI provides a dropdown menu in the settings panel where you can select your preferred AI model. The interface shows the current model being used for completions and chat interactions. You can switch between models like Claude 3.5 Sonnet, GPT-4o, and newer alternatives depending on your subscription tier.

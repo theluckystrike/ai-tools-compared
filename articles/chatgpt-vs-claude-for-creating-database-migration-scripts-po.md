@@ -40,6 +40,19 @@ When you need to generate PostgreSQL migration scripts, the choice between ChatG
 - **Use Claude when migrations**: involve critical data, complex relationships, or require rollback strategies.
 - **However**: ChatGPT remains useful for rapid iteration.
 
+## Table of Contents
+
+- [Understanding the Migration Challenge](#understanding-the-migration-challenge)
+- [ChatGPT for PostgreSQL Migrations](#chatgpt-for-postgresql-migrations)
+- [Claude for PostgreSQL Migrations](#claude-for-postgresql-migrations)
+- [Side-by-Side Comparison](#side-by-side-comparison)
+- [When to Use Each Tool](#when-to-use-each-tool)
+- [Recommendations](#recommendations)
+- [Real-World Migration Scenario: Scaling Production Database](#real-world-migration-scenario-scaling-production-database)
+- [Migration Complexity Levels](#migration-complexity-levels)
+- [Alembic Integration with AI](#alembic-integration-with-ai)
+- [Testing Migrations Before Production](#testing-migrations-before-production)
+
 ## Understanding the Migration Challenge
 
 Database migrations involve more than just creating tables. You need to handle data migrations, rollback strategies, constraint management, and often complex relationships between tables. The best AI assistant for this task should understand PostgreSQL's specific features, including arrays, JSONB, CTEs, and proper transaction handling.

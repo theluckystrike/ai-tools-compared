@@ -51,6 +51,16 @@ GitHub Copilot remains a solid choice at $10 per month—the exact upper limit o
 - **- Already in VS**: Code? GitHub Copilot integrates and justifies its $10/month cost through time savings.
 - **If you have used**: the tool for at least 3 months and plan to continue, the annual discount usually makes sense.
 
+## Table of Contents
+
+- [What Makes an AI Coding Assistant Worth It for Freelancers](#what-makes-an-ai-coding-assistant-worth-it-for-freelancers)
+- [Top Budget AI Coding Assistants for Freelance Developers](#top-budget-ai-coding-assistants-for-freelance-developers)
+- [Making the Most of Your AI Assistant](#making-the-most-of-your-ai-assistant)
+- [Which Budget AI Coding Assistant Should You Choose?](#which-budget-ai-coding-assistant-should-you-choose)
+- [Measuring ROI on AI Coding Tools](#measuring-roi-on-ai-coding-tools)
+- [Avoiding Common Pitfalls](#avoiding-common-pitfalls)
+- [Stacking Tools for Maximum Productivity](#stacking-tools-for-maximum-productivity)
+
 ## What Makes an AI Coding Assistant Worth It for Freelancers
 
 Before exploring specific tools, it's worth understanding what matters most for freelance work. Speed matters when you're billing by the hour—any tool that saves time directly impacts your income. Code quality matters because poor code creates future maintenance headaches for you or your clients. Context awareness matters because you often switch between projects, and a tool that understands your codebase saves hours of explanation time.
@@ -299,10 +309,9 @@ Policies vary widely. Some tools let you access your data for a grace period aft
 
 ## Related Articles
 
-- [AI Coding Assistant for Rust Developers Compared](/ai-tools-compared/ai-coding-assistant-for-rust-developers-compared/)
-- [Best AI Writing Assistant for Freelance Writers 2026](/ai-tools-compared/best-ai-writing-assistant-for-freelance-writers-2026/)
-- [AI Coding Productivity Tips for Senior Developers Switching](/ai-tools-compared/ai-coding-productivity-tips-for-senior-developers-switching-/)
-- [Best AI Coding Tool for Golang Developers 2026](/ai-tools-compared/best-ai-coding-tool-for-golang-developers-2026/)
-- [Best AI for Converting Figma Designs to React Components](/ai-tools-compared/best-ai-for-converting-figma-designs-to-react-components-2026/)
-
+- [AI Coding Tools Under $10 Per Month Ranked](/ai-tools-compared/ai-coding-tools-under-10-dollars-per-month-ranked/)
+- [Best AI Coding Tools With Generous Free Tier for Hobbyists](/ai-tools-compared/best-ai-coding-tools-with-generous-free-tier-for-hobbyists/)
+- [Best AI Coding Assistant for Under $5 Per](/ai-tools-compared/best-ai-coding-assistant-for-under-5-dollars-per-month/)
+- [Best Free AI Coding Tool With No Message Limits in 2026](/ai-tools-compared/best-free-ai-coding-tool-with-no-message-limits-2026/)
+- [Best AI Coding Tool Under $20 Per Month (2026)](/ai-tools-compared/best-ai-coding-tool-under-20-dollars-per-month-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

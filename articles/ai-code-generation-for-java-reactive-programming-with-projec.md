@@ -11,7 +11,8 @@ score: 9
 voice-checked: true
 reviewed: true
 intent-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI Code Generation for Java Reactive Programming"
@@ -25,7 +26,8 @@ score: 9
 voice-checked: true
 reviewed: true
 intent-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 
 Java reactive programming has become essential for building responsive, resilient applications. Project Reactor, the reactive foundation for Spring WebFlux, provides a powerful approach for handling asynchronous data streams. This article examines how AI code generation tools assist developers working with Project Reactor, highlighting practical approaches and quality considerations.
@@ -38,6 +40,16 @@ Java reactive programming has become essential for building responsive, resilien
 - **For order-sensitive workflows**: pagination, audit logs — `concatMap` is almost always the right choice, yet AI tools frequently default to `flatMap`.
 - **AI tools frequently confuse the two**: validate which behavior your use case requires before accepting generated code.
 - **Copilot is fastest for**: routine patterns when working inside an IDE.
+
+## Table of Contents
+
+- [Understanding Project Reactor Fundamentals](#understanding-project-reactor-fundamentals)
+- [Practical Code Generation Examples](#practical-code-generation-examples)
+- [AI Tool Comparison for Reactor Code Generation](#ai-tool-comparison-for-reactor-code-generation)
+- [AI Generation Quality Factors](#ai-generation-quality-factors)
+- [Best Practices for Working with AI Assistants](#best-practices-for-working-with-ai-assistants)
+- [Advanced Patterns Worth Knowing](#advanced-patterns-worth-knowing)
+- [Common Pitfalls in AI-Generated Reactive Code](#common-pitfalls-in-ai-generated-reactive-code)
 
 ## Understanding Project Reactor Fundamentals
 

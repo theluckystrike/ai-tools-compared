@@ -40,6 +40,20 @@ execute(query), executeAsync(query), transaction(callback), and close().
 - **Do these tools work**: offline? Most AI-powered tools require an internet connection since they run models on remote servers.
 - **How quickly do AI**: tool recommendations go out of date? AI tools evolve rapidly, with major updates every few months.
 
+## Table of Contents
+
+- [Why AI Tools Transform Mock Writing](#why-ai-tools-transform-mock-writing)
+- [Mock Generation Challenges](#mock-generation-challenges)
+- [Claude Code](#claude-code)
+- [GitHub Copilot](#github-copilot)
+- [Cursor](#cursor)
+- [Codeium](#codeium)
+- [Comparison: Mock Generation Tools](#comparison-mock-generation-tools)
+- [Practical Mock Generation Scenarios](#practical-mock-generation-scenarios)
+- [Recommended Workflow](#recommended-workflow)
+- [Common Mock Generation Mistakes to Avoid](#common-mock-generation-mistakes-to-avoid)
+- [Related Reading](#related-reading)
+
 ## Why AI Tools Transform Mock Writing
 
 Writing mocks manually introduces systematic problems: incomplete method coverage, inconsistent assertion patterns, forgotten error cases, and repetitive boilerplate. A typical unit test requires 5-10 mocks per test file, multiplied across hundreds of tests in large projects. Manual mock creation becomes error-prone at scale.

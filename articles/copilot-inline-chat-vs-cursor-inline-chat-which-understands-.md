@@ -43,6 +43,22 @@ This guide provides an overview to help you understand and make informed decisio
 - **Use symbol references**: Reference functions by name and Cursor finds them across your project
 4.
 
+## Table of Contents
+
+- [How Inline Chat Works in Each Platform](#how-inline-chat-works-in-each-platform)
+- [Quick Comparison](#quick-comparison)
+- [Context Gathering and Code Understanding](#context-gathering-and-code-understanding)
+- [Handling Complex Refactoring Tasks](#handling-complex-refactoring-tasks)
+- [Practical Performance Examples](#practical-performance-examples)
+- [Response Quality and Accuracy](#response-quality-and-accuracy)
+- [When Each Tool Excels](#when-each-tool-excels)
+- [Making the Choice](#making-the-choice)
+- [Advanced Techniques for Maximum Effectiveness](#advanced-techniques-for-maximum-effectiveness)
+- [Pricing and Real-World Value Comparison](#pricing-and-real-world-value-comparison)
+- [Real-World Debugging Showdown](#real-world-debugging-showdown)
+- [Performance Metrics Over Time](#performance-metrics-over-time)
+- [Migration Path: Switching from Copilot to Cursor](#migration-path-switching-from-copilot-to-cursor)
+
 ## How Inline Chat Works in Each Platform
 
 GitHub Copilot's inline chat activates through the `Ctrl+I` (Windows/Linux) or `Cmd+I` (Mac) shortcut in VS Code. The feature integrates directly into the editor and provides context-aware suggestions based on your open files and project structure. Copilot Chat has evolved significantly, but the inline variant maintains an improved approach focused on quick, targeted assistance.
@@ -325,10 +341,9 @@ Expected onboarding time: 3-5 hours to feel as productive as on Copilot.
 ## Related Articles
 
 - [How to Transfer Copilot Inline Chat Shortcuts](/ai-tools-compared/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)
-- [Copilot vs Cursor vs Windsurf Inline Diff Preview Comparison](/ai-tools-compared/copilot-vs-cursor-vs-windsurf-inline-diff-preview-comparison/)
+- [Best AI Inline Chat Features in VS Code Compared to](/ai-tools-compared/best-ai-inline-chat-features-in-vscode-compared-to-jetbrains/)
+- [How to Use AI Inline Chat to Refactor Single Function](/ai-tools-compared/how-to-use-ai-inline-chat-to-refactor-single-function-step-by-step/)
 - [How to Migrate Copilot Chat History and Context to Cursor AI](/ai-tools-compared/migrate-copilot-chat-history-and-context-to-cursor-ai-guide/)
-- [Best AI Inline Chat Features in VSCode Compared to Jetbrains](/ai-tools-compared/best-ai-inline-chat-features-in-vscode-compared-to-jetbrains/)
-- [How to Use AI Inline Chat to Refactor Single Function Step](/ai-tools-compared/how-to-use-ai-inline-chat-to-refactor-single-function-step-by-step/)
-
+- [Copilot vs Cursor vs Windsurf Inline Diff Preview Comparison](/ai-tools-compared/copilot-vs-cursor-vs-windsurf-inline-diff-preview-comparison/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

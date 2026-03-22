@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 ---
 layout: default
 title: "Best AI Tools for Generating Unit Tests 2026"
@@ -25,7 +26,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 {% raw %}
 
@@ -39,6 +41,22 @@ Generating useful unit tests with AI is harder than it looks. The easy version â
 - **Generating useful unit tests**: with AI is harder than it looks.
 - **For coverage improvement on**: existing code: CodiumAI is the most efficient.
 - **A week-long trial with**: actual work gives better signal than feature comparison charts.
+
+## Table of Contents
+
+- [Tools Compared](#tools-compared)
+- [What Separates Good Test Generation from Bad](#what-separates-good-test-generation-from-bad)
+- [Test Subject: Payment Processor Function](#test-subject-payment-processor-function)
+- [CodiumAI / Qodo](#codiumai-qodo)
+- [GitHub Copilot with /tests](#github-copilot-with-tests)
+- [Claude with a Strong Prompt](#claude-with-a-strong-prompt)
+- [Coverage Comparison](#coverage-comparison)
+- [Workflow Recommendation](#workflow-recommendation)
+- [Test Generation for Async Code](#test-generation-for-async-code)
+- [Integration Tests vs Unit Tests](#integration-tests-vs-unit-tests)
+- [Parameterized Tests for Multiple Inputs](#parameterized-tests-for-multiple-inputs)
+- [Test Maintenance and Coverage Monitoring](#test-maintenance-and-coverage-monitoring)
+- [Test Generation for Different Frameworks](#test-generation-for-different-frameworks)
 
 ## Tools Compared
 

@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, troubleshooting, comparison, artificial-intelligence]---
+tags: [ai-tools-compared, troubleshooting, comparison, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI Debugging Assistants Compared 2026"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, troubleshooting, comparison, artificial-intelligence]---
+tags: [ai-tools-compared, troubleshooting, comparison, artificial-intelligence]
+---
 
 {% raw %}
 
@@ -39,6 +41,23 @@ AI debugging assistants have moved beyond "explain this error" into genuine root
 - **What changed that would**: cause a 10x slowdown?" # For concurrency bugs "Multiple async tasks run in parallel.
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+
+## Table of Contents
+
+- [What Good AI Debugging Looks Like](#what-good-ai-debugging-looks-like)
+- [Tool Overview](#tool-overview)
+- [Scenario 1: Python Async Race Condition](#scenario-1-python-async-race-condition)
+- [Scenario 2: TypeScript "Cannot read properties of undefined"](#scenario-2-typescript-cannot-read-properties-of-undefined)
+- [Scenario 3: SQL N+1 Query Problem](#scenario-3-sql-n1-query-problem)
+- [Scenario 4: Memory Leak in Node.js](#scenario-4-memory-leak-in-nodejs)
+- [Performance Comparison](#performance-comparison)
+- [Scenario 5: Deadlock in Concurrent Rust Code](#scenario-5-deadlock-in-concurrent-rust-code)
+- [Scenario 6: JavaScript Event Loop Blocking](#scenario-6-javascript-event-loop-blocking)
+- [Using Claude Code's Repository Search for Debugging](#using-claude-codes-repository-search-for-debugging)
+- [Quick Debugging Prompt Templates](#quick-debugging-prompt-templates)
+- [Debugging Workflows by Error Category](#debugging-workflows-by-error-category)
+- [Cost Impact on Debugging](#cost-impact-on-debugging)
+- [Building a Debugging Prompt Library](#building-a-debugging-prompt-library)
 
 ## What Good AI Debugging Looks Like
 
@@ -340,11 +359,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
+- [Best AI Assistant for Debugging Swift Compiler Errors](/ai-tools-compared/best-ai-assistant-for-debugging-swift-compiler-errors-in-xco/)
+- [Best AI Tools for Data Pipeline Debugging 2026](/ai-tools-compared/best-ai-tools-for-data-pipeline-debugging-2026/)
+- [AI-Powered Log Analysis Tools for Debugging](/ai-tools-compared/ai-log-analysis-tools-for-debugging/)
+- [Effective Strategies for AI Assisted Debugging of](/ai-tools-compared/effective-strategies-for-ai-assisted-debugging-of-intermittent-failures/)
 - [AI Powered Log Analysis Tools for Production Debugging](/ai-tools-compared/ai-powered-log-analysis-tools-for-production-debugging-compa/)
-- [AI Tools for Debugging CSS Media Query Breakpoints Not Match](/ai-tools-compared/ai-tools-for-debugging-css-media-query-breakpoints-not-match/)
-- [AI Tools for Debugging Flaky Cypress Tests Caused by Timing](/ai-tools-compared/ai-tools-for-debugging-flaky-cypress-tests-caused-by-timing-issues/)
-- [AI Tools for Debugging iOS Autolayout Constraint Conflict Wa](/ai-tools-compared/ai-tools-for-debugging-ios-autolayout-constraint-conflict-wa/)
-- [AI Tools for Debugging Postgres Query Planner Choosing Wrong](/ai-tools-compared/ai-tools-for-debugging-postgres-query-planner-choosing-wrong/)
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -40,6 +40,15 @@ NPM peer dependency conflicts are among the most frustrating issues developers f
 - **Understanding how to use**: AI tools to diagnose and resolve these conflicts can save hours of frustration and accelerate your development workflow.
 - **When you paste an**: error message into an AI tool, it can break down the conflict chain and identify the root cause.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [When to Use Force and Overrides](#when-to-use-force-and-overrides)
+- [Advanced Dependency Resolution Strategies](#advanced-dependency-resolution-strategies)
+- [Version Management Best Practices](#version-management-best-practices)
+- [Troubleshooting Specific Scenarios](#troubleshooting-specific-scenarios)
+- [Performance Impact of Dependency Conflicts](#performance-impact-of-dependency-conflicts)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
@@ -486,11 +495,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Use AI to Resolve Python Import Circular Dependency E](/ai-tools-compared/how-to-use-ai-to-resolve-python-import-circular-dependency-e/)
-- [How to Use AI to Resolve CMake Configuration Errors for Cros](/ai-tools-compared/how-to-use-ai-to-resolve-cmake-configuration-errors-for-cros/)
-- [How to Use AI to Resolve Cmake Configuration Errors](/ai-tools-compared/how-to-use-ai-to-resolve-cmake-configuration-errors-for-cross-compilation/)
-- [How to Use AI to Resolve Nginx 502 Bad Gateway Errors](/ai-tools-compared/how-to-use-ai-to-resolve-nginx-502-bad-gateway-errors-from-u/)
-- [AI Tools for Debugging iOS Autolayout Constraint Conflict Wa](/ai-tools-compared/ai-tools-for-debugging-ios-autolayout-constraint-conflict-wa/)
-
+- [AI Tools for Automated Dependency Analysis](/ai-tools-compared/ai-tools-for-automated-dependency-analysis)
+- [How to Use AI to Resolve Python Import Circular Dependency](/ai-tools-compared/how-to-use-ai-to-resolve-python-import-circular-dependency-e/)
+- [AI Tools for Generating Pull Request Merge Conflict](/ai-tools-compared/ai-tools-for-generating-pull-request-merge-conflict-resoluti/)
+- [AI Tools for Generating Dependency Update Pull Request](/ai-tools-compared/ai-tools-for-generating-dependency-update-pull-request-descr/)
+- [How to Use AI for Cloud Migration Planning and Dependency](/ai-tools-compared/how-to-use-ai-for-cloud-migration-planning-and-dependency-ma/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -40,6 +40,16 @@ AI tools for education student support use large language models, recommendation
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Understanding Student Support Requirements](#understanding-student-support-requirements)
+- [AI-Powered Tutoring and Academic Assistance](#ai-powered-tutoring-and-academic-assistance)
+- [Intelligent Content Recommendation](#intelligent-content-recommendation)
+- [Chatbot Systems for Administrative Support](#chatbot-systems-for-administrative-support)
+- [Mental Health and Wellbeing Support](#mental-health-and-wellbeing-support)
+- [Accessibility and Inclusive Learning](#accessibility-and-inclusive-learning)
+- [Implementation Recommendations](#implementation-recommendations)
+
 ## Understanding Student Support Requirements
 
 Student support in educational technology spans multiple domains: academic assistance, mental health resources, administrative help, and accessibility services. Each domain benefits from different AI approaches, and the most effective platforms combine several tools rather than relying on a single solution.

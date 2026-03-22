@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI Tools for Explaining Sorting Algorithm Tradeoffs"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 
 Understanding when to use one sorting algorithm over another requires analyzing your data's characteristics. AI tools have emerged as valuable resources for developers seeking to grasp these tradeoffs without reading through dense academic papers. This guide examines how these tools explain sorting algorithm selection based on real-world data scenarios.
@@ -38,6 +40,21 @@ Understanding when to use one sorting algorithm over another requires analyzing 
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **Understanding when to use**: one sorting algorithm over another requires analyzing your data's characteristics.
+
+## Table of Contents
+
+- [Why Data Characteristics Drive Algorithm Choice](#why-data-characteristics-drive-algorithm-choice)
+- [Common Data Patterns and Algorithm Matching](#common-data-patterns-and-algorithm-matching)
+- [How AI Tools Explain Tradeoffs](#how-ai-tools-explain-tradeoffs)
+- [Practical Example: Choosing Based on Real Constraints](#practical-example-choosing-based-on-real-constraints)
+- [AI Tools for Algorithm Explanation](#ai-tools-for-algorithm-explanation)
+- [Practical Benchmarking Approach](#practical-benchmarking-approach)
+- [Real-World Scenarios with Algorithm Recommendations](#real-world-scenarios-with-algorithm-recommendations)
+- [Decision Framework AI Can Help Generate](#decision-framework-ai-can-help-generate)
+- [Real-Time Complexity Calculator](#real-time-complexity-calculator)
+- [Customizing Sorts for Your Exact Use Case](#customizing-sorts-for-your-exact-use-case)
+- [When Human Judgment Still Matters](#when-human-judgment-still-matters)
+- [Profiling and Validation Workflow](#profiling-and-validation-workflow)
 
 ## Why Data Characteristics Drive Algorithm Choice
 

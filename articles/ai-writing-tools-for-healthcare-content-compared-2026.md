@@ -11,7 +11,8 @@ score: 9
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison, artificial-intelligence]---
+tags: [ai-tools-compared, comparison, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI Writing Tools for Healthcare Content Compared 2026"
@@ -25,7 +26,8 @@ score: 9
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, comparison, artificial-intelligence]---
+tags: [ai-tools-compared, comparison, artificial-intelligence]
+---
 
 {% raw %}
 
@@ -39,6 +41,19 @@ Choose Claude or GPT-4 if you need the best combination of medical terminology a
 - **Claude demonstrates 95%+ accuracy**: on medical terminology tasks, while GPT-4 reaches 92% accuracy.
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
+
+## Table of Contents
+
+- [What Healthcare Content Requires from AI Tools](#what-healthcare-content-requires-from-ai-tools)
+- [Tool Comparison Overview](#tool-comparison-overview)
+- [Practical Integration Approaches](#practical-integration-approaches)
+- [Evaluating Tool Performance](#evaluating-tool-performance)
+- [Building a Healthcare Content Workflow](#building-a-healthcare-content-workflow)
+- [Pricing and API Access](#pricing-and-api-access)
+- [Integration with Healthcare Systems](#integration-with-healthcare-systems)
+- [CLI Tools for Batch Processing](#cli-tools-for-batch-processing)
+- [Verification Workflows](#verification-workflows)
+- [Key Selection Criteria](#key-selection-criteria)
 
 ## What Healthcare Content Requires from AI Tools
 

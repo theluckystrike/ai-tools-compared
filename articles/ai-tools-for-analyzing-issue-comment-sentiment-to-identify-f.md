@@ -40,6 +40,13 @@ Identifying frustrated users early in your issue triage process helps prioritize
 - **AI-powered sentiment analysis applied**: to issue comments provides a systematic way to surface frustrated users and escalate their concerns appropriately.
 - **This approach works particularly**: well for open-source projects and SaaS products handling high issue volumes.
 
+## Table of Contents
+
+- [Why Sentiment Analysis Matters for Issue Tracking](#why-sentiment-analysis-matters-for-issue-tracking)
+- [Approaches to Sentiment Analysis](#approaches-to-sentiment-analysis)
+- [Practical Implementation Patterns](#practical-implementation-patterns)
+- [Choosing the Right Approach](#choosing-the-right-approach)
+
 ## Why Sentiment Analysis Matters for Issue Tracking
 
 Issue trackers collect valuable feedback, but manually reading every comment to gauge user frustration doesn't scale. Automated sentiment analysis solves this by processing large volumes of comments and flagging those requiring immediate attention. This approach works particularly well for open-source projects and SaaS products handling high issue volumes.
@@ -272,11 +279,10 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 
 ## Related Articles
 
-- [Best AI for Writing Good First Issue Descriptions That](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attra/)
-- [Best AI for Writing Good First Issue Descriptions That — Attract](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attract-new-contributors/)
-- [How to Use AI to Create GitHub Issue Triage Flowcharts](/ai-tools-compared/how-to-use-ai-to-create-github-issue-triage-flowcharts-for-n/)
 - [AI Tools for Analyzing Which Open Source Issues Would Benefi](/ai-tools-compared/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
-- [Best AI for Analyzing Google Analytics Data Exports with Pan](/ai-tools-compared/best-ai-for-analyzing-google-analytics-data-exports-with-pan/)
-
+- [Best AI for Writing Good First Issue Descriptions That](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attract-new-contributors/)
+- [Best AI Tool for Triaging GitHub Issues by Severity and Cate](/ai-tools-compared/best-ai-tool-for-triaging-github-issues-by-severity-and-cate/)
+- [Best AI for Writing Good First Issue Descriptions: Attra](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attra/)
+- [Best AI Tools for Competitor Analysis](/ai-tools-compared/best-ai-tools-for-competitor-analysis/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

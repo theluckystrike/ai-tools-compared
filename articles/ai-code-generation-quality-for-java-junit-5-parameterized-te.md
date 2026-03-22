@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI Code Generation Quality for Java JUnit 5 Parameterized"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 
 Java developers working with JUnit 5 parameterized tests frequently rely on AI coding assistants to generate test cases, data providers, and parameterized method implementations. The quality of AI-generated parameterized tests varies significantly across different tools, and understanding these differences helps developers choose the right assistant for their testing needs.
@@ -38,6 +40,21 @@ Java developers working with JUnit 5 parameterized tests frequently rely on AI c
 - **AI-generated code sometimes places**: `@ParameterizedTest` on methods that JUnit 5 does not recognize as test methods, or confuses JUnit 4 `@Parameters` annotation with JUnit 5 equivalents.
 - **Verify that the JUnit**: 5 vintage engine is not mistakenly included, which would cause Jupiter annotations to be ignored.
 - **Cursor provides good context**: awareness for project-specific data structures but may generate outdated JUnit 4 syntax when the project uses JUnit 5.
+
+## Table of Contents
+
+- [Understanding JUnit 5 Parameterized Tests](#understanding-junit-5-parameterized-tests)
+- [Common AI Generation Issues](#common-ai-generation-issues)
+- [Practical Examples](#practical-examples)
+- [Quality Assessment Criteria](#quality-assessment-criteria)
+- [Tool-Specific Observations](#tool-specific-observations)
+- [Recommendations for Developers](#recommendations-for-developers)
+- [Tool-Specific Quality Assessment](#tool-specific-quality-assessment)
+- [Advanced Parameterized Test Examples](#advanced-parameterized-test-examples)
+- [Common Quality Issues and Fixes](#common-quality-issues-and-fixes)
+- [Testing the Generated Code](#testing-the-generated-code)
+- [Prompting Strategy for Better Results](#prompting-strategy-for-better-results)
+- [Integration with Test Frameworks](#integration-with-test-frameworks)
 
 ## Understanding JUnit 5 Parameterized Tests
 

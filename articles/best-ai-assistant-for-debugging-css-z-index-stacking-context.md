@@ -11,7 +11,8 @@ score: 9
 voice-checked: true
 reviewed: true
 intent-checked: true
-tags: [ai-tools-compared, troubleshooting, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, troubleshooting, best-of, artificial-intelligence]
+---
 ---
 layout: default
 title: "Best AI Assistant for Debugging CSS Z Index Stacking"
@@ -25,7 +26,8 @@ score: 9
 voice-checked: true
 reviewed: true
 intent-checked: true
-tags: [ai-tools-compared, troubleshooting, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, troubleshooting, best-of, artificial-intelligence]
+---
 
 {% raw %}
 
@@ -39,6 +41,18 @@ CSS z-index and stacking context issues rank among the most confusing problems d
 - **Could this problem be**: caused by a recent update? Yes, updates frequently introduce new bugs or change behavior.
 - **If no one else reports it**: your local environment configuration is likely the cause.
 - **Should I reinstall the**: tool to fix this? A clean reinstall sometimes resolves persistent issues caused by corrupted caches or configuration files.
+
+## Table of Contents
+
+- [Understanding Stacking Context and Z-Index](#understanding-stacking-context-and-z-index)
+- [How AI Tools Help Debug Stacking Context Issues](#how-ai-tools-help-debug-stacking-context-issues)
+- [Practical Examples of AI-Assisted Z-Index Debugging](#practical-examples-of-ai-assisted-z-index-debugging)
+- [Best Practices for Getting AI Help with Z-Index Issues](#best-practices-for-getting-ai-help-with-z-index-issues)
+- [Advanced Debugging Techniques](#advanced-debugging-techniques)
+- [CSS Z-Index Best Practices AI Helps Enforce](#css-z-index-best-practices-ai-helps-enforce)
+- [Tool Comparison for Z-Index Debugging](#tool-comparison-for-z-index-debugging)
+- [Performance Impact of Z-Index Solutions](#performance-impact-of-z-index-solutions)
+- [Integration with CI/CD](#integration-with-cicd)
 
 ## Understanding Stacking Context and Z-Index
 

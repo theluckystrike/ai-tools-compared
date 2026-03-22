@@ -50,6 +50,16 @@ Several AI tools excel at scientific computing tasks. This guide recommends the 
 - **A strong AI assistant**: mentions `np.asfortranarray()` when generating column-heavy operations, or at least avoids access patterns that defeat CPU prefetchers.
 - **Most assistants don't reach**: this level unprompted, but Claude Code and Cursor will include it if you ask about performance.
 
+## Table of Contents
+
+- [What Defines Quality in Scientific Computing Code Generation](#what-defines-quality-in-scientific-computing-code-generation)
+- [Comparing AI Assistants for NumPy and Scientific Computing](#comparing-ai-assistants-for-numpy-and-scientific-computing)
+- [Key Differences in Scientific Computing Capabilities](#key-differences-in-scientific-computing-capabilities)
+- [Recommendations for Scientific Computing Development](#recommendations-for-scientific-computing-development)
+- [Advanced Testing Patterns for AI-Generated Code](#advanced-testing-patterns-for-ai-generated-code)
+- [AI Tool Performance Benchmarks](#ai-tool-performance-benchmarks)
+- [Migration Strategy: Loop-Based to Vectorized](#migration-strategy-loop-based-to-vectorized)
+
 ## What Defines Quality in Scientific Computing Code Generation
 
 High-quality scientific computing code requires more than syntactically correct Python. The best AI assistants generate code that uses NumPy's vectorized operations for performance, handles edge cases like empty arrays and broadcasting correctly, and produces numerically stable algorithms. Key evaluation criteria include proper use of NumPy functions over Python loops, correct handling of array shapes and data types, appropriate error handling, and integration with related scientific libraries like SciPy, pandas, and matplotlib.
@@ -396,11 +406,10 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [AI Code Generation for Python FastAPI Endpoints](/ai-tools-compared/ai-code-generation-for-python-fastapi-endpoints-with-pydantic-models-compared/)
-- [Best AI Code Completion for Python Data Science 2026](/ai-tools-compared/ai-code-completion-python-data-science-2026/)
+- [Free AI Tools for Learning Python with Code Examples 2026](/ai-tools-compared/free-ai-tools-for-learning-python-with-code-examples-2026/)
 - [Best AI Tools for Code Migration Python 2](/ai-tools-compared/best-ai-tools-for-code-migration-python-2-to-3-java-8-to-21-guide/)
+- [Best AI Assistant for Writing pandas Code](/ai-tools-compared/best-ai-assistant-for-writing-pandas-code-to-process-nested-json-api-pagination/)
 - [Best AI Tools for Python Celery Task Queue Code Generation](/ai-tools-compared/best-ai-tools-for-python-celery-task-queue-code-generation-2/)
-- [Best AI Tools for Python Pydantic V2 Model Validation Code](/ai-tools-compared/best-ai-tools-for-python-pydantic-v2-model-validation-code-2/)
-
+- [Best AI for Analyzing Google Analytics Data Exports](/ai-tools-compared/best-ai-for-analyzing-google-analytics-data-exports-with-pan/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

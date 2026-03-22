@@ -11,7 +11,8 @@ intent-checked: true
 voice-checked: true
 score: 9
 reviewed: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI Tools for Automatic Subtitles and Captions"
@@ -25,7 +26,8 @@ intent-checked: true
 voice-checked: true
 score: 8
 reviewed: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 
 For developers building video applications, automatic subtitle generation has become significantly more accessible through modern AI APIs. This guide covers practical approaches to implementing subtitle generation in your projects, comparing the available tools and providing code examples for common workflows.
@@ -38,6 +40,17 @@ For developers building video applications, automatic subtitle generation has be
 - **How do I get**: started quickly? Pick one tool from the options discussed and sign up for a free trial.
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Leading services now achieve**: 95%+ accuracy on clear audio with proper language models, though accuracy drops with background noise, multiple speakers, or accented speech.
+
+## Table of Contents
+
+- [Why AI-Powered Subtitle Generation Matters](#why-ai-powered-subtitle-generation-matters)
+- [Comparing Leading AI Subtitle Tools](#comparing-leading-ai-subtitle-tools)
+- [Tool Comparison at a Glance](#tool-comparison-at-a-glance)
+- [Handling Multiple Speakers and Timestamps](#handling-multiple-speakers-and-timestamps)
+- [Post-Processing Considerations](#post-processing-considerations)
+- [Integration Patterns for Developers](#integration-patterns-for-developers)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+- [Related Reading](#related-reading)
 
 ## Why AI-Powered Subtitle Generation Matters
 

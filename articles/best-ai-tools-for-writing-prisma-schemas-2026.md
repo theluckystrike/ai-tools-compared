@@ -133,6 +133,15 @@ model OrderItem {
 
 ### 2. Cursor (AI Code Editor)
 
+## Table of Contents
+
+- [Feature Comparison Table](#feature-comparison-table)
+- [Code Generation Accuracy Comparison](#code-generation-accuracy-comparison)
+- [Best Practices for AI Schema Generation](#best-practices-for-ai-schema-generation)
+- [Real-World Example: E-Commerce Platform](#real-world-example-e-commerce-platform)
+- [Recommendations by Use Case](#recommendations-by-use-case)
+- [Related Reading](#related-reading)
+
 **Price:** $20/month or $200/year
 
 Cursor is an AI-first code editor built on VSCode that excels at schema generation through chat and inline editing.

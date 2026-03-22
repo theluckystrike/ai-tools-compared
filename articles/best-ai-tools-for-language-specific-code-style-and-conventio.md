@@ -40,6 +40,19 @@ Several AI tools excel at this task. This guide recommends the best options base
 - **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
 - **It recognizes when to**: use list comprehensions versus generator expressions, and can suggest type hints based on function behavior.
 
+## Table of Contents
+
+- [Why AI-Powered Style Enforcement Matters](#why-ai-powered-style-enforcement-matters)
+- [Claude Code: Multi-Language Style Enforcement](#claude-code-multi-language-style-enforcement)
+- [GitHub Copilot: IDE-Integrated Style Suggestions](#github-copilot-ide-integrated-style-suggestions)
+- [Cursor: Project-Wide Convention Understanding](#cursor-project-wide-convention-understanding)
+- [CodeRabbit: Automated Code Review](#coderabbit-automated-code-review)
+- [Amazon CodeWhisperer: Enterprise Convention Management](#amazon-codewhisperer-enterprise-convention-management)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+- [Advanced Style Enforcement Strategies](#advanced-style-enforcement-strategies)
+- [Benchmarking AI Style Enforcement Accuracy](#benchmarking-ai-style-enforcement-accuracy)
+- [Integrating AI Style Review into Pull Request Automation](#integrating-ai-style-review-into-pull-request-automation)
+
 ## Why AI-Powered Style Enforcement Matters
 
 Traditional linters like ESLint for JavaScript, Rustfmt for Rust, and Black for Python enforce syntax rules effectively, but they lack understanding of intent and domain-specific patterns. AI tools bring contextual awareness, understanding when a deviation from standard style improves readability versus when it violates team conventions. They can learn your codebase's unique patterns and apply them consistently.
@@ -375,11 +388,10 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Copilot vs Codeium for JavaScript Framework-Specific Code](/ai-tools-compared/copilot-vs-codeium-for-javascript-framework-specific-code-ge/)
-- [How to Move Midjourney Style References to Stable Diffusion](/ai-tools-compared/how-to-move-midjourney-style-references-to-stable-diffusion-/)
-- [Jasper AI Brand Voice vs Claude Style Matching](/ai-tools-compared/jasper-ai-brand-voice-vs-claude-style-matching/)
-- [Configuring AI Coding Tools to Match Your Teams Specific Doc](/ai-tools-compared/configuring-ai-coding-tools-to-match-your-teams-specific-doc/)
-- [Writing Claude Md Files That Teach AI Your Project Specific](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/)
-
+- [Best AI Tools for Automated Code Review 2026](/ai-tools-compared/best-ai-tools-for-automated-code-review-2026/)
+- [AI Code Review Automation Tools Comparison 2026](/ai-tools-compared/ai-code-review-automation-tools-comparison/)
+- [Best AI Tools for Code Review Automation 2026](/ai-tools-compared/best-ai-tools-for-code-review-automation-2026/---)
+- [Free AI Tools for Learning Python with Code Examples 2026](/ai-tools-compared/free-ai-tools-for-learning-python-with-code-examples-2026/)
+- [Free AI Code Review Tools That Integrate With GitHub (2026)](/ai-tools-compared/free-ai-code-review-tools-that-integrate-with-github-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

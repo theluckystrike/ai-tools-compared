@@ -39,6 +39,14 @@ To move Copilot suggested code patterns to Cursor snippets, manually capture you
 - **Use snippets for patterns you type dozens of times per day**: boilerplate that never changes.
 - **Use Copilot for one-off**: solutions that require heavy context awareness.
 
+## Table of Contents
+
+- [Why Move Copilot Patterns to Cursor Snippets?](#why-move-copilot-patterns-to-cursor-snippets)
+- [Prerequisites](#prerequisites)
+- [Advanced Snippet Techniques](#advanced-snippet-techniques)
+- [Migrating Copilot History to Snippets](#migrating-copilot-history-to-snippets)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Move Copilot Patterns to Cursor Snippets?
 
 Copilot excels at contextual code generation, but it relies on AI inference each time you type. If you frequently use a specific pattern—a particular error-handling wrapper, an utility function, or a React component structure—waiting for Copilot to generate it can introduce unnecessary latency.
@@ -357,10 +365,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Move Copilot Suggested Code Patterns to Cursor](/ai-tools-compared/how-to-move-copilot-suggested-code-patterns-to-cursor-snippets/)
-- [Copilot vs Cursor for Implementing Redis Caching Patterns](/ai-tools-compared/copilot-vs-cursor-for-implementing-redis-caching-patterns-in/)
-- [AI Code Completion Latency Comparison](/ai-tools-compared/ai-code-completion-latency-comparison-copilot-vs-cursor-vs-cody-2026/)
+- [How to Move Copilot Suggested Code Patterns to: Snippets](/ai-tools-compared/how-to-move-copilot-suggested-code-patterns-to-cursor-snippets/)
 - [How to Transfer Copilot Code Review Settings](/ai-tools-compared/transfer-copilot-code-review-settings-to-cursor-ai-review-co/)
-- [Prompt Engineering Patterns for Code Generation](/ai-tools-compared/prompt-engineering-patterns-for-code-generation/)
-
+- [How to Use Copilot Chat to Generate Code from Natural](/ai-tools-compared/how-to-use-copilot-chat-to-generate-code-from-natural-langua/)
+- [Copilot for JetBrains: Does It Cost Same as VS Code Version](/ai-tools-compared/copilot-for-jetbrains-does-it-cost-same-as-vscode-version/)
+- [Copilot vs Codeium for JavaScript Framework-Specific Code](/ai-tools-compared/copilot-vs-codeium-for-javascript-framework-specific-code-ge/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

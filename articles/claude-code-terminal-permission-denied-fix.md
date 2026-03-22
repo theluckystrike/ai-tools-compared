@@ -40,6 +40,20 @@ To fix "permission denied" errors in Claude Code, run `chmod +x` on the failing 
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 - **The detailed fixes below**: cover every common cause.
 
+## Table of Contents
+
+- [Understanding the Error](#understanding-the-error)
+- [Fix 1: Verify Shell Command Execution Permissions](#fix-1-verify-shell-command-execution-permissions)
+- [Fix 2: Check Directory and File Access](#fix-2-check-directory-and-file-access)
+- [Fix 3: Fix Claude Code's Internal Permissions](#fix-3-fix-claude-codes-internal-permissions)
+- [Fix 4: Resolve Shell Profile Issues](#fix-4-resolve-shell-profile-issues)
+- [Fix 5: Handle macOS Gatekeeper and Quarantine](#fix-5-handle-macos-gatekeeper-and-quarantine)
+- [Fix 6: Check Sudo and Root Access Issues](#fix-6-check-sudo-and-root-access-issues)
+- [Fix 7: npm and Node.js Global Package Permissions](#fix-7-npm-and-nodejs-global-package-permissions)
+- [Fix 8: Python Virtual Environment and pip Issues](#fix-8-python-virtual-environment-and-pip-issues)
+- [Diagnostic Tips](#diagnostic-tips)
+- [Preventing Future Issues](#preventing-future-issues)
+
 ## Understanding the Error
 
 When Claude Code throws a permission denied error, it usually happens in one of three contexts: when executing shell commands through Claude Code, when accessing specific files or directories, or when Claude Code attempts to run its own internal processes. Identifying which context triggers your error determines the right fix.

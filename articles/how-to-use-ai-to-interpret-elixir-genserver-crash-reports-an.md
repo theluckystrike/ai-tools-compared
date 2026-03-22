@@ -43,6 +43,16 @@ This guide shows how to use AI assistance effectively when debugging GenServer c
 - **Understanding each helps you**: provide better context to AI tools.
 - **badarg typically means you**: passed an argument of the wrong type to a function, often in a pattern match or guard clause.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Practical Example: Debugging a State Machine GenServer](#practical-example-debugging-a-state-machine-genserver)
+- [Best Practices for AI-Assisted Debugging](#best-practices-for-ai-assisted-debugging)
+- [Troubleshooting](#troubleshooting)
+- [Common GenServer Error Patterns Reference](#common-genserver-error-patterns-reference)
+- [Production Monitoring for GenServer Health](#production-monitoring-for-genserver-health)
+- [Advanced: Root Cause Analysis Using AI](#advanced-root-cause-analysis-using-ai)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
@@ -351,10 +361,9 @@ Using AI for pattern analysis at scale improves your entire production system's 
 
 ## Related Articles
 
-- [How to Use AI to Interpret and Fix Java OutOfMemory Heap Spa](/ai-tools-compared/how-to-use-ai-to-interpret-and-fix-java-outofmemory-heap-spa/)
-- [AI for Automated Regression Test Generation from Bug Reports](/ai-tools-compared/ai-for-automated-regression-test-generation-from-bug-reports/)
-- [Best AI Assistant for QA Engineers Writing Test Coverage Gap](/ai-tools-compared/best-ai-assistant-for-qa-engineers-writing-test-coverage-gap/)
-- [Best AI Tool for Cybersecurity Analysts Incident Reports](/ai-tools-compared/best-ai-tool-for-cybersecurity-analysts-incident-reports/)
-- [Best AI Tool for Financial Advisors Client Reports](/ai-tools-compared/best-ai-tool-for-financial-advisors-client-reports/)
-
+- [Claude vs Copilot for Elixir Development 2026](/ai-tools-compared/claude-vs-copilot-for-elixir-development-2026/)
+- [How to Use AI to Create pandas DataFrame Profiling Reports](/ai-tools-compared/how-to-use-ai-to-create-pandas-dataframe-profiling-reports-f/)
+- [AI Debugging Assistants Compared 2026](/ai-tools-compared/ai-debugging-assistants-compared-2026/)
+- [Best AI Tools for Data Pipeline Debugging 2026](/ai-tools-compared/best-ai-tools-for-data-pipeline-debugging-2026/)
+- [How to Use AI to Interpret and Fix Java OutOfMemory Heap](/ai-tools-compared/how-to-use-ai-to-interpret-and-fix-java-outofmemory-heap-spa/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

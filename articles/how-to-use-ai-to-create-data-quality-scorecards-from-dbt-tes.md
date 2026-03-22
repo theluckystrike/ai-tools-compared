@@ -44,6 +44,16 @@ This guide shows you how to use AI to create data quality scorecards from dbt te
 - **When `not_null` tests fail**: on three downstream models simultaneously, AI can recognize that all three depend on the same upstream source model and surface that root cause immediately.
 - **- Model-Level Scores**: Identify which models need the most attention.
 
+## Table of Contents
+
+- [Understanding dbt Test Results](#understanding-dbt-test-results)
+- [Building Your AI-Powered Scorecard System](#building-your-ai-powered-scorecard-system)
+- [AI Tooling Comparison for dbt Scorecard Generation](#ai-tooling-comparison-for-dbt-scorecard-generation)
+- [Real-World Workflow: CI/CD Integration](#real-world-workflow-cicd-integration)
+- [Performance Benchmarks: Manual vs AI-Assisted Scoring](#performance-benchmarks-manual-vs-ai-assisted-scoring)
+- [Automating Your Pipeline](#automating-your-pipeline)
+- [Interpreting Your Scorecard](#interpreting-your-scorecard)
+
 ## Understanding dbt Test Results
 
 dbt provides several built-in tests: `unique`, `not_null`, `accepted_values`, `relationships`, and `foreign_key`. When you run `dbt test`, these tests produce JSON or CSV output that includes test status, timing information, and failure details.

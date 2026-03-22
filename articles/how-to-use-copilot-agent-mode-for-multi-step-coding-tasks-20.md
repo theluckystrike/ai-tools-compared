@@ -43,6 +43,14 @@ This guide covers practical approaches for using Copilot agent mode in your deve
 - **The more information Copilot**: has about your project structure, coding conventions, and specific requirements, the better the results.
 - **Include relevant file paths**: describe your architecture, and mention any constraints or preferences.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Practical Example: Building a Feature End-to-End](#practical-example-building-a-feature-end-to-end)
+- [Best Practices for Effective Agent Mode Usage](#best-practices-for-effective-agent-mode-usage)
+- [Getting Started](#getting-started)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

@@ -45,6 +45,19 @@ This article examines practical implementations of AI tools for automated infras
 6.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Understanding Infrastructure Drift](#understanding-infrastructure-drift)
+- [AI-Powered Drift Detection Mechanisms](#ai-powered-drift-detection-mechanisms)
+- [Implementing Automated Correction](#implementing-automated-correction)
+- [Practical Integration Patterns](#practical-integration-patterns)
+- [Comparing AI Drift Detection Tools](#comparing-ai-drift-detection-tools)
+- [Choosing AI Drift Detection Tools](#choosing-ai-drift-detection-tools)
+- [Handling False Positives](#handling-false-positives)
+- [Multi-Cloud Drift Complexity](#multi-cloud-drift-complexity)
+- [Setting Drift Detection Thresholds](#setting-drift-detection-thresholds)
+- [Security Considerations](#security-considerations)
+
 ## Understanding Infrastructure Drift
 
 When you deploy infrastructure using Terraform, Pulumi, or CloudFormation, you define a desired state. Over time, manual changes through cloud consoles, emergency patches, or failed deployments create gaps between your code-defined state and reality. This is drift.

@@ -38,6 +38,22 @@ Cursor Composer, the AI-powered code generation feature in the Cursor editor, so
 - **Avoid deeply nested folder**: hierarchies that confuse AI context extraction.
 - **Consistent Naming Conventions**: Use predictable naming for directories.
 
+## Table of Contents
+
+- [Understanding the File Path Issue](#understanding-the-file-path-issue)
+- [Common Causes](#common-causes)
+- [Practical Solutions](#practical-solutions)
+- [Automated Verification Scripts](#automated-verification-scripts)
+- [Project Configuration Best Practices](#project-configuration-best-practices)
+- [Workaround: Manual Path Correction](#workaround-manual-path-correction)
+- [Automated Path Correction Script](#automated-path-correction-script)
+- [Path Validation Testing](#path-validation-testing)
+- [Real-World Pattern: NextJS Project Configuration](#real-world-pattern-nextjs-project-configuration)
+- [Debugging: Understanding Composer's Context Extraction](#debugging-understanding-composers-context-extraction)
+- [Emergency Recovery: Batch Path Fix](#emergency-recovery-batch-path-fix)
+- [Platform-Specific Path Handling](#platform-specific-path-handling)
+- [Integration with Your IDE](#integration-with-your-ide)
+
 ## Understanding the File Path Issue
 
 Cursor Composer relies on context from your project structure to determine where files should be created or modified. When this context is incomplete or misinterpreted, the AI generates paths that point to non-existent directories or creates files in unexpected locations. The problem typically occurs in three scenarios: initial project setup, multi-module repositories, and monorepo configurations with complex folder hierarchies.

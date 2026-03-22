@@ -43,6 +43,23 @@ Solution: Remove least-active member or upgrade
 ### 3.
 - **Understanding the differences between**: Free and Pro plan limits is essential for choosing the right collaboration setup for your workflow.
 
+## Table of Contents
+
+- [What Are Perplexity Spaces?](#what-are-perplexity-spaces)
+- [Free Plan: Collaboration Limits](#free-plan-collaboration-limits)
+- [Pro Plan: Enhanced Collaboration Features](#pro-plan-enhanced-collaboration-features)
+- [Feature-by-Feature Comparison](#feature-by-feature-comparison)
+- [Practical Recommendations](#practical-recommendations)
+- [Making the Switch](#making-the-switch)
+- [Real-World Collaboration Workflows](#real-world-collaboration-workflows)
+- [Comparing Collaboration Features Beyond Limits](#comparing-collaboration-features-beyond-limits)
+- [Migration Strategies from Free to Pro](#migration-strategies-from-free-to-pro)
+- [Cost Analysis for Teams](#cost-analysis-for-teams)
+- [Setting Up Effective Spaces for Your Use Case](#setting-up-effective-spaces-for-your-use-case)
+- [Evaluating Whether Pro Is Worth the Cost](#evaluating-whether-pro-is-worth-the-cost)
+- [Common Pain Points to Avoid](#common-pain-points-to-avoid)
+- [Workspace Organization for Collaboration](#workspace-organization-for-collaboration)
+
 ## What Are Perplexity Spaces?
 
 Perplexity Spaces function as collaborative research workspaces where users can share conversations, organize sources, and build shared knowledge repositories. Teams use Spaces for group research projects, content collaboration, and collective problem-solving. The feature integrates deeply with Perplexity's AI search capabilities, allowing multiple team members to contribute to and benefit from shared research threads.

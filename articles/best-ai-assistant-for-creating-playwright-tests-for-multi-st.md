@@ -49,6 +49,20 @@ Claude Code excels at generating Playwright tests for multi-step form wizards be
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Why Multi-Step Form Wizards Need Specialized Testing](#why-multi-step-form-wizards-need-specialized-testing)
+- [What Makes an AI Assistant Effective for This Use Case](#what-makes-an-ai-assistant-effective-for-this-use-case)
+- [Comparing Top AI Assistants for Playwright Wizard Testing](#comparing-top-ai-assistants-for-playwright-wizard-testing)
+- [Practical Strategies for AI-Assisted Wizard Testing](#practical-strategies-for-ai-assisted-wizard-testing)
+- [Recommendations](#recommendations)
+- [Testing Dynamic Field Visibility in Wizards](#testing-dynamic-field-visibility-in-wizards)
+- [Managing State Across Browser Navigation](#managing-state-across-browser-navigation)
+- [Testing Wizard Progress Indicators](#testing-wizard-progress-indicators)
+- [Testing Error Recovery in Multi-Step Forms](#testing-error-recovery-in-multi-step-forms)
+- [Performance Testing for Large Wizards](#performance-testing-for-large-wizards)
+- [Testing Accessibility in Multi-Step Forms](#testing-accessibility-in-multi-step-forms)
+
 ## Why Multi-Step Form Wizards Need Specialized Testing
 
 Multi-step form wizards differ from simple single-page forms in several critical ways. Each step typically maintains partial form state that must persist when users navigate forward or backward. Conditional fields may appear or disappear based on previous selections. Progress indicators track completion status. Validation rules apply differently at each step, and some fields may only validate after users reach specific stages.

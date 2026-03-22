@@ -11,7 +11,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, best-of, artificial-intelligence]
+---
 ---
 layout: default
 title: "Best AI Tool for Traders: Market Research Summaries"
@@ -25,7 +26,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, best-of, artificial-intelligence]
+---
 
 
 | Tool | Market Analysis | Data Processing | Real-Time Support | Pricing |
@@ -49,6 +51,17 @@ tags: [ai-tools-compared, best-of, artificial-intelligence]---
 - **Instead of scanning 15+ sources**: they receive a five-minute briefing highlighting the items most likely to affect their watchlist.
 - **Start with the tool**: that matches your primary use case and expand only as your workflow demands it.
 - **Start with free options**: to find what works for your workflow, then upgrade when you hit limitations.
+
+## Table of Contents
+
+- [What Traders Need from Market Research Summaries](#what-traders-need-from-market-research-summaries)
+- [Leading AI Tools for Market Research Summaries](#leading-ai-tools-for-market-research-summaries)
+- [Real-World Use Cases](#real-world-use-cases)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+- [Building Your Workflow](#building-your-workflow)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+- [API Cost Comparison: GPT-4 vs Alternatives](#api-cost-comparison-gpt-4-vs-alternatives)
+- [Structured Output Extraction Comparison](#structured-output-extraction-comparison)
 
 ## What Traders Need from Market Research Summaries
 

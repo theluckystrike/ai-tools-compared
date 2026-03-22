@@ -41,6 +41,26 @@ This guide provides an overview to help you understand and make informed decisio
 - **For example**: suppose you want to add user authentication to a React application.
 - **Copilot Workspace typically takes**: a few seconds to generate multi-file plans, while Cursor's Tab completions appear almost instantly.
 
+## Table of Contents
+
+- [Understanding the Two Approaches](#understanding-the-two-approaches)
+- [Quick Comparison](#quick-comparison)
+- [Multi-File Editing in Copilot Workspace](#multi-file-editing-in-copilot-workspace)
+- [Multi-File Editing in Cursor Composer](#multi-file-editing-in-cursor-composer)
+- [Practical Comparison: Adding a Feature](#practical-comparison-adding-a-feature)
+- [Context and Memory](#context-and-memory)
+- [Which Tool for Multi-File Editing?](#which-tool-for-multi-file-editing)
+- [Performance Considerations](#performance-considerations)
+- [Pricing and Model Access](#pricing-and-model-access)
+- [Real-World Workflow Comparison](#real-world-workflow-comparison)
+- [File Context Limits and Workarounds](#file-context-limits-and-workarounds)
+- [Current Authentication Structure](#current-authentication-structure)
+- [Integration with Version Control](#integration-with-version-control)
+- [Handling Conflicts in Multi-File Edits](#handling-conflicts-in-multi-file-edits)
+- [Scaling to Large Teams](#scaling-to-large-teams)
+- [Decision Tree: Which Tool to Choose](#decision-tree-which-tool-to-choose)
+- [Practical Tips for Each Tool](#practical-tips-for-each-tool)
+
 ## Understanding the Two Approaches
 
 GitHub Copilot Workspace, released as an evolution of Copilot Chat, takes a session-based approach to multi-file changes. You describe what you want to accomplish, and Copilot generates a plan that spans multiple files. The system maintains context throughout your coding session and allows you to apply changes across your entire project.

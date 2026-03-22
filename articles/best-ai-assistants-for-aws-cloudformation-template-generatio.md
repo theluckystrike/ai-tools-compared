@@ -11,7 +11,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, best-of, artificial-intelligence]
+---
 ---
 layout: default
 title: "Best AI Assistants for AWS CloudFormation Template"
@@ -25,7 +26,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, best-of, artificial-intelligence]
+---
 
 
 | Tool | AWS Integration | Template Quality | Error Handling | Pricing |
@@ -49,6 +51,20 @@ The best AI assistant for AWS CloudFormation template generation and validation 
 - **The best ones catch errors before deployment**: incorrect ARN formats, circular dependencies, invalid IAM policy syntax, and missing Availability Zone specifications all cause failed stacks.
 - **Does AWS offer a**: free tier? Most major tools offer some form of free tier or trial period.
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
+
+## Table of Contents
+
+- [What to Look for in an AI CloudFormation Assistant](#what-to-look-for-in-an-ai-cloudformation-assistant)
+- [Practical Examples of AI CloudFormation Generation](#practical-examples-of-ai-cloudformation-generation)
+- [Validation Capabilities That Matter](#validation-capabilities-that-matter)
+- [Comparing Top AI Assistants for CloudFormation](#comparing-top-ai-assistants-for-cloudformation)
+- [Effective Prompting Strategies](#effective-prompting-strategies)
+- [Advanced Template Patterns](#advanced-template-patterns)
+- [Security-Focused Generation](#security-focused-generation)
+- [Common CloudFormation Anti-Patterns](#common-cloudformation-anti-patterns)
+- [Testing and Validation Workflows](#testing-and-validation-workflows)
+- [Managing Template Versions and Changes](#managing-template-versions-and-changes)
+- [Cost Optimization Through AI](#cost-optimization-through-ai)
 
 ## What to Look for in an AI CloudFormation Assistant
 

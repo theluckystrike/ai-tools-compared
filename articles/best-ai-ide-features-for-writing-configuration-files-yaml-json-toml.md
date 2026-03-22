@@ -50,6 +50,23 @@ VS Code with AI completion extensions catches YAML indentation errors and JSON s
 - **Both offer strong schema**: detection; choose VS Code for quick config edits with inline suggestions, or JetBrains for complex multi-file configurations requiring deep validation.
 - **Many issues that used**: to require manual editing can now be resolved with a single click or keyboard shortcut.
 
+## Table of Contents
+
+- [Intelligent Schema Validation](#intelligent-schema-validation)
+- [Smart Autocomplete for Nested Structures](#smart-autocomplete-for-nested-structures)
+- [Automatic Fixes and Refactoring](#automatic-fixes-and-refactoring)
+- [Context-Aware Documentation Display](#context-aware-documentation-display)
+- [Multi-File Configuration Linking](#multi-file-configuration-linking)
+- [Error Prevention Through Pattern Learning](#error-prevention-through-pattern-learning)
+- [AI-Powered Search and Navigation](#ai-powered-search-and-navigation)
+- [Validation Against Best Practices](#validation-against-best-practices)
+- [Version Compatibility Checking](#version-compatibility-checking)
+- [Choosing the Right AI IDE](#choosing-the-right-ai-ide)
+- [IDE-Specific Configuration Support Comparison](#ide-specific-configuration-support-comparison)
+- [Advanced Configuration Patterns with AI](#advanced-configuration-patterns-with-ai)
+- [Team Configuration Best Practices](#team-configuration-best-practices)
+- [Measuring Configuration Quality Improvements](#measuring-configuration-quality-improvements)
+
 ## Intelligent Schema Validation
 
 Modern AI IDEs now include real-time schema validation that goes beyond simple syntax checking. When you open a `package.json` or `docker-compose.yml` file, the IDE recognizes the file type and applies the appropriate schema automatically. You'll see inline error markers before you even try to run your application.
@@ -539,11 +556,10 @@ roi = 19x
 
 ## Related Articles
 
+- [Which AI Tool Is Better for Writing CircleCI Config YAML](/ai-tools-compared/which-ai-tool-is-better-for-writing-circleci-config-yaml-fil/)
 - [Best AI IDE Features for Database Query Writing and](/ai-tools-compared/best-ai-ide-features-for-database-query-writing-and-optimization/)
-- [Best AI IDE Features for Pair Programming](/ai-tools-compared/best-ai-ide-features-for-pair-programming-with-remote-team-members/)
-- [Best AI IDE Features for Refactoring Class Hierarchies](/ai-tools-compared/best-ai-ide-features-for-refactoring-class-hierarchies-and-i/)
-- [Best AI IDE Features for Understanding and Modifying Legacy](/ai-tools-compared/best-ai-ide-features-for-understanding-and-modifying-legacy-/)
 - [Best Practices for Maintaining AI Tool Configuration Files](/ai-tools-compared/best-practices-for-maintaining-ai-tool-configuration-files-a/)
-
+- [Best AI IDE Features for Pair Programming](/ai-tools-compared/best-ai-ide-features-for-pair-programming-with-remote-team-members/)
+- [Best AI IDE Features for Understanding and Modifying Legacy](/ai-tools-compared/best-ai-ide-features-for-understanding-and-modifying-legacy-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

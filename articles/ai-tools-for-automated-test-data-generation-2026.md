@@ -11,7 +11,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI Tools for Automated Test Data Generation 2026"
@@ -25,7 +26,8 @@ reviewed: true
 score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 {% raw %}
 
@@ -39,6 +41,21 @@ Test data generation is more complex than it looks. Random strings and integers 
 - **For example**: "user_ids must be one of [1, 2, 3, 4, 5]" ensures referential integrity without DB lookups.
 - **Custom List types ensure**: status fields use your exact enum values.
 - **The tradeoff is generation speed and API cost**: use it for complex edge-case data, not for high-volume load test fixtures.
+
+## Table of Contents
+
+- [The Problem with Simple Fake Data](#the-problem-with-simple-fake-data)
+- [Tools Compared](#tools-compared)
+- [Faker and Mimesis: The Baseline](#faker-and-mimesis-the-baseline)
+- [AI-Generated Contextually Coherent Data](#ai-generated-contextually-coherent-data)
+- [Building Schema-Driven Generators](#building-schema-driven-generators)
+- [Mockaroo for Team Use](#mockaroo-for-team-use)
+- [PII-Safe Test Data](#pii-safe-test-data)
+- [Generating Business-Rule-Compliant Data](#generating-business-rule-compliant-data)
+- [Generating Edge Case and Boundary Data](#generating-edge-case-and-boundary-data)
+- [Using Pytest Fixtures with Generated Data](#using-pytest-fixtures-with-generated-data)
+- [Parameterized Testing with Generated Datasets](#parameterized-testing-with-generated-datasets)
+- [Comparison Table](#comparison-table)
 
 ## The Problem with Simple Fake Data
 
@@ -434,11 +451,10 @@ Mimesis is 2-5x faster and better for generating millions of rows for load tests
 
 ## Related Articles
 
-- [AI for Automated Regression Test Generation from Bug Reports](/ai-tools-compared/ai-for-automated-regression-test-generation-from-bug-reports/)
-- [AI Tools for Automated Changelog Generation 2026](/ai-tools-compared/ai-tools-for-automated-changelog-generation-2026/)
-- [AI Tools for Automated Load Testing Script Generation and An](/ai-tools-compared/ai-tools-for-automated-load-testing-script-generation-and-an/)
-- [AI Tools for Creating Test Data Generators That Respect Busi](/ai-tools-compared/ai-tools-for-creating-test-data-generators-that-respect-busi/)
-- [AI Tools for Creating Test Data Snapshots for Database](/ai-tools-compared/ai-tools-for-creating-test-data-snapshots-for-database-rollback-between-test-runs/)
-
+- [AI Tools for Creating Test Data Generators That Respect](/ai-tools-compared/ai-tools-for-creating-test-data-generators-that-respect-busi/)
+- [AI Tools for Creating Realistic Test Datasets That Preserve](/ai-tools-compared/ai-tools-for-creating-realistic-test-datasets-that-preserve-/)
+- [How to Use AI to Generate Realistic Test Data for Postgres](/ai-tools-compared/how-to-use-ai-to-generate-realistic-test-data-for-postgres-d/)
+- [Self-Hosted AI Tools for Generating Test Data and Fixtures](/ai-tools-compared/self-hosted-ai-tools-for-generating-test-data-and-fixtures-l/)
+- [AI Tools for Qa Engineers Generating Data Driven Test](/ai-tools-compared/ai-tools-for-qa-engineers-generating-data-driven-test-scenar/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

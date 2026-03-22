@@ -40,6 +40,20 @@ AI tools can generate complex PromQL queries and Grafana panel configurations fo
 - **Values above 100% indicate**: faster consumption (warning sign), while values below 100% mean you're under-consuming your budget (potentially too conservative with SLO targets).
 - **The SLO is 99.9%**: over 7 days.
 
+## Table of Contents
+
+- [Understanding SLO Burn Rate Calculations](#understanding-slo-burn-rate-calculations)
+- [AI Tools for Generating SLO Queries](#ai-tools-for-generating-slo-queries)
+- [Creating Multi-Panel SLO Dashboards](#creating-multi-panel-slo-dashboards)
+- [Handling Multi-Layer SLOs](#handling-multi-layer-slos)
+- [Practical Workflow for SLO Dashboard Creation](#practical-workflow-for-slo-dashboard-creation)
+- [Best AI Tools for SLO Query Generation](#best-ai-tools-for-slo-query-generation)
+- [Advanced Burn Rate Query Patterns](#advanced-burn-rate-query-patterns)
+- [Dashboard JSON Generation Tips](#dashboard-json-generation-tips)
+- [Validating Queries Against Live Prometheus Data](#validating-queries-against-live-prometheus-data)
+- [Common Mistakes AI Tools Sometimes Make](#common-mistakes-ai-tools-sometimes-make)
+- [Integration with Alerting Rules](#integration-with-alerting-rules)
+
 ## Understanding SLO Burn Rate Calculations
 
 Before looking at AI-assisted creation, let's establish what burn rate panels need. Burn rate represents how quickly your error budget is being consumed. A burn rate of 100% means you're using your error budget at the expected rate. Values above 100% indicate faster consumption (warning sign), while values below 100% mean you're under-consuming your budget (potentially too conservative with SLO targets).
@@ -315,11 +329,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
+- [AI Tools for Generating Grafana Dashboard JSON Templates](/ai-tools-compared/ai-tools-for-generating-grafana-dashboard-json-templates-fro/)
+- [AI Tools for Generating Grafana Dashboards from Metrics](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
 - [Best AI Assistant for Building Grafana Dashboard Panels](/ai-tools-compared/best-ai-assistant-for-building-grafana-dashboard-panels-from-prometheus-queries/)
-- [AI Tools for Generating Grafana Dashboard JSON Templates Fro](/ai-tools-compared/ai-tools-for-generating-grafana-dashboard-json-templates-fro/)
-- [How to Use AI for Writing Effective Sli Slo Definitions](/ai-tools-compared/how-to-use-ai-for-writing-effective-sli-slo-definitions-for-services/)
-- [How to Use AI Assistants for Generating Retool Admin.](/ai-tools-compared/how-to-use-ai-assistants-for-generating-retool-admin-panels-/)
-- [AI Tools for Generating Grafana Dashboards from Metrics Auto](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
-
+- [AI Tools for Creating Custom Algorithm Visualization](/ai-tools-compared/ai-tools-for-creating-custom-algorithm-visualization-tutoria/)
+- [AI Tools for Creating Property-Based Test Cases](/ai-tools-compared/ai-tools-for-creating-property-based-test-cases-using-hypoth/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

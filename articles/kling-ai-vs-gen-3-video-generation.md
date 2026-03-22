@@ -42,6 +42,17 @@ Choose Kling AI if you need longer video clips with strong motion coherence and 
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
+## Table of Contents
+
+- [Understanding the Video Generation Field](#understanding-the-video-generation-field)
+- [API Architecture and Authentication](#api-architecture-and-authentication)
+- [Video Quality and Capabilities](#video-quality-and-capabilities)
+- [Image-to-Video Capabilities](#image-to-video-capabilities)
+- [Rate Limits and Pricing](#rate-limits-and-pricing)
+- [Integration Patterns for Production](#integration-patterns-for-production)
+- [When to Choose Each Platform](#when-to-choose-each-platform)
+- [Implementation Checklist](#implementation-checklist)
+
 ## Understanding the Video Generation Field
 
 AI video generation has moved beyond novelty into production-ready tooling. For developers building applications that incorporate generated video, understanding the technical differences between platforms determines project success. Kling AI and Gen 3 represent different approaches to text-to-video and image-to-video generation, each with distinct trade-offs for implementation.

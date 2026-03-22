@@ -41,6 +41,20 @@ AI tools can rapidly decode Django middleware chain tracebacks by recognizing er
 - **Your middleware must check**: if user is authenticated before accessing related objects MIDDLEWARE = [ # ...
 - **Could this problem be**: caused by a recent update? Yes, updates frequently introduce new bugs or change behavior.
 
+## Table of Contents
+
+- [Understanding Django Middleware Chain Errors](#understanding-django-middleware-chain-errors)
+- [How AI Tools Help Decode Middleware Tracebacks](#how-ai-tools-help-decode-middleware-tracebacks)
+- [Practical Example: Resolving Middleware Ordering Issues](#practical-example-resolving-middleware-ordering-issues)
+- [Using AI for Contextual Debugging](#using-ai-for-contextual-debugging)
+- [Common Middleware Chain Error Patterns](#common-middleware-chain-error-patterns)
+- [AI Tools Comparison for Django Debugging](#ai-tools-comparison-for-django-debugging)
+- [Real Django Middleware Debugging Scenarios](#real-django-middleware-debugging-scenarios)
+- [Django-Specific Error Patterns AI Recognizes](#django-specific-error-patterns-ai-recognizes)
+- [Advanced Debugging Prompt Strategies](#advanced-debugging-prompt-strategies)
+- [Best Practices for AI-Assisted Debugging](#best-practices-for-ai-assisted-debugging)
+- [Building Custom Debugging Utilities with AI](#building-custom-debugging-utilities-with-ai)
+
 ## Understanding Django Middleware Chain Errors
 
 Django middleware operates as a series of processing layers that each request and response passes through. When an error occurs within this chain, the traceback can point to various points in your middleware stack, views, or third-party packages. A typical middleware error might look like this:

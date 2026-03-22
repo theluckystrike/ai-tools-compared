@@ -39,6 +39,14 @@ Claude Code transforms how teams create and maintain operational runbooks. Inste
 - **Here are best practices**: for getting the most out of Claude Code-generated runbooks: Provide Context: The quality of Claude Code's runbook output directly correlates with the context you provide.
 - **The more information Claude**: Code has about your systems, the more accurate and useful the documentation will be.
 
+## Table of Contents
+
+- [Why Use Claude Code for Runbook Documentation](#why-use-claude-code-for-runbook-documentation)
+- [Prerequisites](#prerequisites)
+- [Best Practices for Claude Code Runbooks](#best-practices-for-claude-code-runbooks)
+- [Advanced Runbook Automation](#advanced-runbook-automation)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Use Claude Code for Runbook Documentation
 
 Operational runbooks serve as the critical bridge between complex systems and the teams who maintain them. Traditional runbook creation is often tedious—documenting every step, capturing all edge cases, and keeping documentation synchronized with evolving systems requires significant effort. Claude Code changes this equation by understanding your infrastructure, services, and operational procedures to generate relevant, accurate runbooks automatically.
@@ -319,10 +327,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [ChatGPT vs Claude for Writing API Documentation](/ai-tools-compared/chatgpt-vs-claude-for-writing-api-documentation/)
-- [Claude vs ChatGPT for Converting REST API Documentation](/ai-tools-compared/claude-vs-chatgpt-for-converting-rest-api-documentation-to-g/)
-- [Gemini vs Claude for Generating Markdown Documentation](/ai-tools-compared/gemini-vs-claude-for-generating-markdown-documentation-from-/)
-- [AI Tools for API Documentation from Code 2026](/ai-tools-compared/ai-tools-for-api-documentation-from-code-2026/)
-- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)
-
+- [Claude Code Developer Portal Setup Guide](/ai-tools-compared/claude-code-developer-portal-setup-guide/)
+- [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
+- [Claude Code for Node.js Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-nodejs-profiling-workflow-tutorial/)
+- [Configuring Claude Code to Understand Your Teams Pull](/ai-tools-compared/configuring-claude-code-to-understand-your-teams-pull-reques/)
+- [Claude Code Losing Context Across Sessions](/ai-tools-compared/claude-code-losing-context-across-sessions-fix/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

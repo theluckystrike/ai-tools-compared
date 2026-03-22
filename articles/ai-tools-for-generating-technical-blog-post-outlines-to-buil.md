@@ -53,6 +53,23 @@ Building a developer brand requires consistent, high-quality technical content. 
 - **Use outline to guide**: research and code examples 4.
 - **Use AI to expand**: thin sections 6.
 
+## Table of Contents
+
+- [Why Structured Outlines Matter for Developer Content](#why-structured-outlines-matter-for-developer-content)
+- [Approaches to AI-Assisted Outline Generation](#approaches-to-ai-assisted-outline-generation)
+- [Code Example: Outline Generator Script](#code-example-outline-generator-script)
+- [Building Your Brand Through Consistent Outlining](#building-your-brand-through-consistent-outlining)
+- [Practical Tips for Better Outlines](#practical-tips-for-better-outlines)
+- [Tool Comparison: Which AI Works Best for Technical Outlines](#tool-comparison-which-ai-works-best-for-technical-outlines)
+- [Automating Outline Generation at Scale](#automating-outline-generation-at-scale)
+- [Measuring Outline Quality and Brand Impact](#measuring-outline-quality-and-brand-impact)
+- [Best AI Tools for Outline Generation](#best-ai-tools-for-outline-generation)
+- [Advanced Outline Optimization Techniques](#advanced-outline-optimization-techniques)
+- [Practical Outline Templates](#practical-outline-templates)
+- [Measuring Outline Quality](#measuring-outline-quality)
+- [Integration with Your Publishing Pipeline](#integration-with-your-publishing-pipeline)
+- [Batching Outlines for Series](#batching-outlines-for-series)
+
 ## Why Structured Outlines Matter for Developer Content
 
 Technical blog posts demand clear organization. Readers expect logical flow, actionable code examples, and detailed coverage of complex topics. Without a solid outline, you risk:
@@ -417,9 +434,10 @@ The developers reading your posts don't care whether you used AI to plan the str
 
 ## Related Articles
 
-- [AI Data Labeling Tools Comparison: A Developer Guide](/ai-data-labeling-tools-comparison/)
-- [AI Tools for Converting Code Comments into Developer Facing](/ai-tools-for-converting-code-comments-into-developer-facing-/)
-- [AI Tools for Devrel Teams Creating Developer Onboarding](/ai-tools-for-devrel-teams-creating-developer-onboarding-chec/)
-
+- [AI Tools for Generating Closed Captions and Transcripts](/ai-tools-compared/ai-tools-for-generating-closed-captions-and-transcripts-from/)
+- [AI Tools for Generating Platform Specific Code in Kotlin](/ai-tools-compared/ai-tools-for-generating-platform-specific-code-in-kotlin-mul/)
+- [AI Tools for Generating Grafana Dashboards from Metrics](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
+- [AI Tools for Generating Contributor License Agreement](/ai-tools-compared/ai-tools-for-generating-contributor-license-agreement-explan/)
+- [How to Prevent AI Coding Tools from Generating Overly](/ai-tools-compared/how-to-prevent-ai-coding-tools-from-generating-overly-complex-solutions/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

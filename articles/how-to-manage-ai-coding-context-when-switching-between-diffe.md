@@ -41,6 +41,13 @@ This guide covers practical methods for maintaining context continuity with AI c
 - **- Large projects (many**: concurrent features): Use context automation plus dedicated context files per feature, stored in version control.
 - **Your AI coding assistant**: performs best when you clearly define what context matters for the current task.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Common Mistakes to Avoid](#common-mistakes-to-avoid)
+- [Advanced Context Management Workflows](#advanced-context-management-workflows)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

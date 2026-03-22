@@ -41,6 +41,22 @@ When working with data analysis in Python, pandas aggregation operations rank am
 5.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [The Challenge with Pandas GroupBy Operations](#the-challenge-with-pandas-groupby-operations)
+- [How AI Tools Generate GroupBy Code](#how-ai-tools-generate-groupby-code)
+- [Practical Applications for Developers](#practical-applications-for-developers)
+- [Working with Multi-Level Grouping](#working-with-multi-level-grouping)
+- [Limitations and Best Practices](#limitations-and-best-practices)
+- [Integration with Development Environments](#integration-with-development-environments)
+- [Performance Optimization for Large Datasets](#performance-optimization-for-large-datasets)
+- [Real-World Example: E-Commerce Analytics](#real-world-example-e-commerce-analytics)
+- [Common Groupby Patterns and AI Generation](#common-groupby-patterns-and-ai-generation)
+- [Debugging AI-Generated Queries](#debugging-ai-generated-queries)
+- [Tool Comparison: Pandas Code Generation](#tool-comparison-pandas-code-generation)
+- [Advanced Patterns for Complex Analysis](#advanced-patterns-for-complex-analysis)
+- [Best Practices When Working with AI](#best-practices-when-working-with-ai)
+
 ## The Challenge with Pandas GroupBy Operations
 
 Pandas provides powerful grouping and aggregation capabilities, but the syntax can be verbose and counterintuitive. Consider a scenario where you have sales data and need to calculate the average order value by region, then filter for regions with above-average performance. The resulting code involves multiple steps:

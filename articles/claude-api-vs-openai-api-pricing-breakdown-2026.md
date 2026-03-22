@@ -40,6 +40,18 @@ API pricing determines whether an AI feature is viable at scale. A prompt that c
 - **If your system prompt**: is large and reused heavily, Anthropic caching pays off faster.
 - **Claude and the second**: tool serve different strengths, so combining them can cover more use cases than relying on either one alone.
 
+## Table of Contents
+
+- [Current Pricing (March 2026)](#current-pricing-march-2026)
+- [Batch Processing Discounts](#batch-processing-discounts)
+- [Context Window Cost Impact](#context-window-cost-impact)
+- [Real Workload Cost Analysis](#real-workload-cost-analysis)
+- [Prompt Caching](#prompt-caching)
+- [When to Choose Each Provider](#when-to-choose-each-provider)
+- [Detailed Cost Calculator](#detailed-cost-calculator)
+- [Hidden Costs and Gotchas](#hidden-costs-and-gotchas)
+- [ROI Analysis: When API Costs Pay for Themselves](#roi-analysis-when-api-costs-pay-for-themselves)
+
 ## Current Pricing (March 2026)
 
 ### Anthropic Claude Models

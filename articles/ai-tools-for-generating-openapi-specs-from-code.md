@@ -103,6 +103,17 @@ cat /path/to/api/routes.js | curl -X POST https://api.anthropic.com/v1/messages 
 
 ## GitHub Copilot: IDE-Native Generation
 
+## Table of Contents
+
+- [GitHub Copilot: IDE-Native Generation](#github-copilot-ide-native-generation)
+- [Cursor: Purpose-Built for Code Generation](#cursor-purpose-built-for-code-generation)
+- [Swagger Codegen: The Dedicated Tool](#swagger-codegen-the-dedicated-tool)
+- [openapi-generator: Modern Alternative](#openapi-generator-modern-alternative)
+- [Comparison Table](#comparison-table)
+- [Workflow Recommendations](#workflow-recommendations)
+- [Pitfalls to Avoid](#pitfalls-to-avoid)
+- [Bottom Line](#bottom-line)
+
 Copilot integrates into VS Code, making spec generation a 2-minute task inside your editor.
 
 **Setup:**

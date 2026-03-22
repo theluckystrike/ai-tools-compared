@@ -40,6 +40,33 @@ The Midjourney Pro plan ($60/month) adds stealth mode and faster generation over
 - **The 15 hours of**: fast generation is typically enough for most projects, and the unlimited relaxed mode means you can continue generating images without hitting strict limits.
 - **However**: if you're primarily creating for personal projects, sharing your work with the community, or just exploring AI image generation, the Standard plan delivers 95% of the value at half the price.
 
+## Table of Contents
+
+- [Understanding Midjourney's Subscription Tiers](#understanding-midjourneys-subscription-tiers)
+- [What Both Plans Share](#what-both-plans-share)
+- [The Standard Plan: What You Get](#the-standard-plan-what-you-get)
+- [The Pro Plan: Enhanced Capabilities](#the-pro-plan-enhanced-capabilities)
+- [What Is Stealth Mode?](#what-is-stealth-mode)
+- [Is Stealth Mode Worth the Extra Cost?](#is-stealth-mode-worth-the-extra-cost)
+- [How to Enable Stealth Mode](#how-to-enable-stealth-mode)
+- [Pricing and Cost Analysis](#pricing-and-cost-analysis)
+- [Speed and Generation Time Impact](#speed-and-generation-time-impact)
+- [Making the Decision](#making-the-decision)
+- [Decision Matrix](#decision-matrix)
+- [Upgrade Path and Testing](#upgrade-path-and-testing)
+- [Tier Upgrade Timing Strategy](#tier-upgrade-timing-strategy)
+- [Advanced Midjourney Features Comparison](#advanced-midjourney-features-comparison)
+- [Comparing Alternative AI Image Generation Services](#comparing-alternative-ai-image-generation-services)
+- [ROI Calculation for Professional Users](#roi-calculation-for-professional-users)
+- [Features Locked to Pro Plan](#features-locked-to-pro-plan)
+- [Stealth Mode Implementation Details](#stealth-mode-implementation-details)
+- [Practical Workflow Optimization](#practical-workflow-optimization)
+- [When Standard Is Truly Sufficient](#when-standard-is-truly-sufficient)
+- [When Pro Becomes Essential](#when-pro-becomes-essential)
+- [Advanced Settings and Optimization](#advanced-settings-and-optimization)
+- [Testing Before Upgrade](#testing-before-upgrade)
+- [Stealth Mode Alternatives](#stealth-mode-alternatives)
+
 ## Understanding Midjourney's Subscription Tiers
 
 Midjourney currently offers several plans, but the two most popular options for serious users are the Standard and Pro subscriptions. The Standard plan provides solid access to image generation with reasonable usage limits, while the Pro plan unlocks additional features including the controversial stealth mode.
@@ -448,10 +475,9 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
+- [Midjourney Basic Plan Image Limits Per Month: Real Numbers](/ai-tools-compared/midjourney-basic-plan-image-limits-per-month-real-numbers-20/)
+- [How to Export Midjourney Images Before Downgrading Plan](/ai-tools-compared/how-to-export-midjourney-images-before-downgrading-plan-2026/)
+- [Cursor Hobby Plan Limitations vs Paying for Pro Worth](/ai-tools-compared/cursor-hobby-plan-limitations-vs-paying-for-pro-worth-it/)
 - [Cursor Pro Privacy Mode Does It Cost Extra](/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
-- [Cursor Hobby Plan Limitations vs Paying for Pro Worth It](/ai-tools-compared/cursor-hobby-plan-limitations-vs-paying-for-pro-worth-it/)
-- [Is Tabnine Free Plan Still Worth Using in 2026?](/ai-tools-compared/is-tabnine-free-plan-still-worth-using-in-2026/)
-- [ChatGPT Voice Mode Advanced Does It Use Extra Credits or](/ai-tools-compared/chatgpt-voice-mode-advanced-does-it-use-extra-credits-or-free/)
-- [Cursor AI Switching Between Claude and GPT Models Extra Cost](/ai-tools-compared/cursor-ai-switching-between-claude-and-gpt-models-extra-cost/)
-
+- [Midjourney Relax Mode Queue Times How Slow Is It Really](/ai-tools-compared/midjourney-relax-mode-queue-times-how-slow-is-it-really-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

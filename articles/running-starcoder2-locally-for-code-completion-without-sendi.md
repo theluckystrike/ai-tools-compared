@@ -40,6 +40,25 @@ Starcoder2 running locally is the solution for developers who need AI code compl
 - **You'll need a machine**: with at least 16GB of RAM for smaller variants like Starcoder2-3b, though the 7b and 15b models require more memory.
 - **The 7b model handles**: most development scenarios effectively, while the 15b variant excels at understanding complex codebases but requires significant resources.
 
+## Table of Contents
+
+- [Understanding Starcoder2 and Local Code Completion](#understanding-starcoder2-and-local-code-completion)
+- [Prerequisites for Running Starcoder2 Locally](#prerequisites-for-running-starcoder2-locally)
+- [Setting Up Ollama and Starcoder2](#setting-up-ollama-and-starcoder2)
+- [Integrating Starcoder2 with VS Code](#integrating-starcoder2-with-vs-code)
+- [Alternative Integration with Neovim](#alternative-integration-with-neovim)
+- [Optimizing Performance for Local Inference](#optimizing-performance-for-local-inference)
+- [Comparing Starcoder2 Variants](#comparing-starcoder2-variants)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [When Local Code Completion Makes Sense](#when-local-code-completion-makes-sense)
+- [Advanced Configuration for Production](#advanced-configuration-for-production)
+- [Performance Benchmarking](#performance-benchmarking)
+- [Comparison: Starcoder2 vs Cloud Alternatives](#comparison-starcoder2-vs-cloud-alternatives)
+- [Privacy Compliance and Data Handling](#privacy-compliance-and-data-handling)
+- [Integrating with CI/CD Pipelines](#integrating-with-cicd-pipelines)
+- [Troubleshooting and Optimization](#troubleshooting-and-optimization)
+- [Cost Analysis: Local vs Cloud](#cost-analysis-local-vs-cloud)
+
 ## Understanding Starcoder2 and Local Code Completion
 
 Starcoder2 is a family of open-source code generation models developed by BigCode, designed specifically for code completion and generation tasks. These models are trained on a diverse corpus of programming languages and can generate contextually appropriate code suggestions in real-time.
@@ -521,11 +540,10 @@ Yes, with Ollama's `MODELFILE` extension. Requires GPU and significant engineeri
 
 ## Related Articles
 
-- [Running CodeLlama Locally vs Using Cloud Copilot for Proprie](/ai-tools-compared/running-codellama-locally-vs-using-cloud-copilot-for-proprie/)
-- [Running DeepSeek Coder Locally vs Cloud API for Private Repo](/ai-tools-compared/running-deepseek-coder-locally-vs-cloud-api-for-private-repo/)
-- [ChatGPT Code Interpreter Not Running Python: Fixes and Fix](/ai-tools-compared/chatgpt-code-interpreter-not-running-python-fix/)
-- [Best AI Tools for Generating Unit Tests — From](/ai-tools-compared/best-ai-tools-for-generating-unit-tests-from-legacy-code-without-tests/)
-- [How to Switch from Cursor to Claude Code Without Losing](/ai-tools-compared/how-to-switch-from-cursor-to-claude-code-without-losing-settings/)
-
+- [How to Run CodeLlama Locally for Private Code Completion](/ai-tools-compared/how-to-run-codellama-locally-for-private-code-completion-ste/)
+- [Best Air Gapped AI Code Completion Solutions for Offline](/ai-tools-compared/best-air-gapped-ai-code-completion-solutions-for-offline-dev/)
+- [Best Local LLM Options for Code Generation 2026](/ai-tools-compared/best-local-llm-options-for-code-generation-2026/)
+- [Running CodeLlama Locally vs Using Cloud Copilot](/ai-tools-compared/running-codellama-locally-vs-using-cloud-copilot-for-proprie/)
+- [Cheapest Way to Get AI Code Completion in Vim 2026](/ai-tools-compared/cheapest-way-to-get-ai-code-completion-in-vim-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -50,6 +50,14 @@ AI tools like Claude and ChatGPT 4o can generate pandas code for Google Analytic
 I have a Google Analytics 4 CSV export with columns: date, session_id, user_id, event_name, event_params (JSON string), device_category, country.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [Why AI-Assisted Analytics Matters](#why-ai-assisted-analytics-matters)
+- [Top AI Tools for Pandas-Based Analytics](#top-ai-tools-for-pandas-based-analytics)
+- [Practical Implementation](#practical-implementation)
+- [Best Practices for AI-Assisted Analytics](#best-practices-for-ai-assisted-analytics)
+- [Performance Considerations](#performance-considerations)
+
 ## Why AI-Assisted Analytics Matters
 
 Google Analytics 4 exports arrive as CSV or JSON files with nested structures, session data, and event parameters. Cleaning and transforming this data manually takes time. AI tools can generate pandas code that handles common scenarios, from basic cleanup to complex funnel analysis.
@@ -276,10 +284,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Analyzing Issue Comment Sentiment to Identify F](/ai-tools-compared/ai-tools-for-analyzing-issue-comment-sentiment-to-identify-f/)
-- [AI Tools for Analyzing Which Open Source Issues Would Benefi](/ai-tools-compared/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
-- [Best AI for Analyzing Parquet Files and Generating Summary](/ai-tools-compared/best-ai-for-analyzing-parquet-files-and-generating-summary-s/)
-- [Gemini Advanced Google One Storage: Does AI Use Your Storage](/ai-tools-compared/gemini-advanced-google-one-storage-does-ai-use-your-storage-/)
-- [Gemini in Google Docs Not Showing Up? Fixes for 2026](/ai-tools-compared/gemini-in-google-docs-not-showing-up-fix-2026/)
-
+- [Best AI Assistant for Writing pandas Code](/ai-tools-compared/best-ai-assistant-for-writing-pandas-code-to-process-nested-json-api-pagination/)
+- [Best AI Code Completion for Python Data Science 2026](/ai-tools-compared/ai-code-completion-python-data-science-2026/)
+- [Best AI for Generating pandas Code to Merge Data](/ai-tools-compared/best-ai-for-generating-pandas-code-to-merge-data-from-multip/)
+- [Claude vs GPT-4 for Data Analysis Tasks](/ai-tools-compared/claude-vs-gpt4-for-data-analysis/)
+- [Best AI Coding Tools for Python Data Science and pandas](/ai-tools-compared/best-ai-coding-tools-for-python-data-science-and-pandas-work/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

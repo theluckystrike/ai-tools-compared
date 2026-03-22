@@ -41,6 +41,17 @@ Proc macros remain one of Rust's most powerful features, enabling code generatio
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **The key was using `$(#field_ids)**:*` for repetition.
 
+## Table of Contents
+
+- [Testing Methodology](#testing-methodology)
+- [Test Results at a Glance](#test-results-at-a-glance)
+- [Declarative Macro Generation](#declarative-macro-generation)
+- [Attribute Macro Generation](#attribute-macro-generation)
+- [Procedural Macro for Custom Derive](#procedural-macro-for-custom-derive)
+- [Key Findings](#key-findings)
+- [Practical Recommendations](#practical-recommendations)
+- [Best Practices When Working with AI-Generated Macros](#best-practices-when-working-with-ai-generated-macros)
+
 ## Testing Methodology
 
 I evaluated four major AI coding tools: Claude (via Cursor), GitHub Copilot, Gemini, and GPT-4. Each tool was given three macro-related tasks of increasing complexity:

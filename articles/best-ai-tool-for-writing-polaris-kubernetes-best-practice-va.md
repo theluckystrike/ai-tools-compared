@@ -39,6 +39,17 @@ Polaris validates Kubernetes deployments against best practices, but writing val
 - **Claude and Cursor both**: produce syntactically correct JSON Schema definitions for most single-field validations.
 - **When you use Claude to generate a production-grade config, review the `severity: error` checks carefully before enabling webhook mode**: any error-severity check will block deployments that fail it.
 
+## Table of Contents
+
+- [Understanding Polaris Validation Configs](#understanding-polaris-validation-configs)
+- [Testing Methodology](#testing-methodology)
+- [Results: Config Generation Quality](#results-config-generation-quality)
+- [Performance Benchmarks](#performance-benchmarks)
+- [Practical Recommendations](#practical-recommendations)
+- [Integrating AI-Generated Polaris Configs into CI/CD Pipelines](#integrating-ai-generated-polaris-configs-into-cicd-pipelines)
+- [Using Polaris with Admission Controllers](#using-polaris-with-admission-controllers)
+- [Maintaining and Evolving Your Polaris Config Over Time](#maintaining-and-evolving-your-polaris-config-over-time)
+
 ## Understanding Polaris Validation Configs
 
 Polaris uses YAML-based validation rules to check your Kubernetes manifests. A typical Polaris validation config includes:
@@ -400,8 +411,9 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [AI Tools for Writing Kubernetes Helm Charts 2026](/ai-tools-for-writing-kubernetes-helm-charts-2026/)
-- [AI Tools for Writing Kubernetes Operators 2026](/ai-tools-for-writing-kubernetes-operators-2026/)
-- [Best AI Tool for Doctors Writing Clinical](/best-ai-tool-for-doctors-writing-clinical-notes/)
-
+- [Best AI Tools for Writing Kubernetes Custom Resource](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-custom-resource-definitions-2026/)
+- [Best AI Tools for Writing Kubernetes Operator Code](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-operator-code-from-scratch/)
+- [AI Tools for Writing Kubernetes Operators 2026](/ai-tools-compared/ai-tools-for-writing-kubernetes-operators-2026/)
+- [Best AI Tools for Writing Kubernetes Manifests and Helm](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-manifests-and-helm-charts-2026/)
+- [AI Tools for Kubernetes Troubleshooting 2026](/ai-tools-compared/ai-tools-for-kubernetes-troubleshooting-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

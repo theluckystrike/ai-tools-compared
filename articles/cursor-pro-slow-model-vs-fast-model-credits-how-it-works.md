@@ -44,6 +44,23 @@ User: "Fix the auth error in login.js.
 - **We use JWT with**: refresh tokens stored in httpOnly cookies.
 - **Start with whichever matches**: your most frequent task, then add the other when you hit its limits.
 
+## Table of Contents
+
+- [What Are Cursor Pro Credits?](#what-are-cursor-pro-credits)
+- [Quick Comparison](#quick-comparison)
+- [The Fast Model: Speed Over Depth](#the-fast-model-speed-over-depth)
+- [The Slow Model: Thorough Analysis](#the-slow-model-thorough-analysis)
+- [How Credit Consumption Works](#how-credit-consumption-works)
+- [Practical Strategy: Optimizing Your Credit Usage](#practical-strategy-optimizing-your-credit-usage)
+- [Real-World Example: Fixing a Bug](#real-world-example-fixing-a-bug)
+- [Monitoring and Managing Credits](#monitoring-and-managing-credits)
+- [Making the Right Choice](#making-the-right-choice)
+- [Advanced Model Selection Strategies](#advanced-model-selection-strategies)
+- [Credit Economy Deep Dive](#credit-economy-deep-dive)
+- [Credit Forecasting for Teams](#credit-forecasting-for-teams)
+- [Practical Debugging Scenario](#practical-debugging-scenario)
+- [Team Policy Recommendations](#team-policy-recommendations)
+
 ## What Are Cursor Pro Credits?
 
 Cursor Pro operates on a credit-based system where every AI request consumes a specific number of credits. The credit cost varies depending on which model you select for your request. This system replaces the traditional unlimited query model found in the free tier, providing more control over AI usage while enabling access to more powerful models.
@@ -399,11 +416,10 @@ Document your policy and communicate expectations clearly so developers understa
 
 ## Related Articles
 
+- [Cursor AI Model Selection Guide Which Model for Which Coding](/ai-tools-compared/cursor-ai-model-selection-guide-which-model-for-which-coding/)
+- [Cursor AI Slow Response Time How to Speed Up (2026)](/ai-tools-compared/cursor-ai-slow-response-time-how-to-speed-up-2026/)
 - [Windsurf Premium Model Access Which Models Cost Extra](/ai-tools-compared/windsurf-premium-model-access-which-models-cost-extra-credits-2026/)
-- [Cursor AI Codebase Indexing: How It Works and Why It Matters](/ai-tools-compared/cursor-ai-codebase-indexing-how-it-works-and-why-it-matters-/)
-- [Cursor AI Multi File Editing Feature How It Actually Works](/ai-tools-compared/cursor-ai-multi-file-editing-feature-how-it-actually-works-explained/)
-- [Cursor AI Slow on Large monorepo Fix (2026)](/ai-tools-compared/cursor-ai-slow-on-large-monorepo-fix-2026/)
-- [Gemini Flash vs Pro API Pricing: When to Use Which Model](/ai-tools-compared/gemini-flash-vs-pro-api-pricing-when-to-use-which-model/)
-
+- [Cursor AI Apply Model How It Merges Generated Code](/ai-tools-compared/cursor-ai-apply-model-how-it-merges-generated-code-into-exis/)
+- [Cursor AI Switching Between Claude and GPT Models Extra](/ai-tools-compared/cursor-ai-switching-between-claude-and-gpt-models-extra-cost/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```

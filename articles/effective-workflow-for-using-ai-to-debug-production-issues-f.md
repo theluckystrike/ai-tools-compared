@@ -40,6 +40,18 @@ AI tools can accelerate production debugging by parsing logs, suggesting root ca
 - Root cause (one sentence)
 2.
 
+## Table of Contents
+
+- [The Core Debugging Workflow](#the-core-debugging-workflow)
+- [Practical Example](#practical-example)
+- [Best Practices for Log Debugging](#best-practices-for-log-debugging)
+- [Integrating AI into Your Incident Response](#integrating-ai-into-your-incident-response)
+- [Advanced Log Analysis Techniques](#advanced-log-analysis-techniques)
+- [Production Debugging Checklist](#production-debugging-checklist)
+- [Real-World Debugging Example](#real-world-debugging-example)
+- [Tool-Specific Capabilities](#tool-specific-capabilities)
+- [Integration with Monitoring Systems](#integration-with-monitoring-systems)
+
 ## The Core Debugging Workflow
 
 The most effective approach combines AI pattern recognition with human domain expertise. Rather than blindly pasting entire log files, structure your AI debugging sessions to maximize relevant context while minimizing noise.

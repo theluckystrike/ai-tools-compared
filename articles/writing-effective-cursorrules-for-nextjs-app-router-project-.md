@@ -39,6 +39,37 @@ CursorRules provide a powerful way to customize Cursor AI's behavior for your sp
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **This guide shows you**: how to create effective CursorRules that align with Next.js App Router best practices.
 
+## Table of Contents
+
+- [Why CursorRules Matter for Next.js App Router](#why-cursorrules-matter-for-nextjs-app-router)
+- [Setting Up Your CursorRules File](#setting-up-your-cursorrules-file)
+- [Project Structure](#project-structure)
+- [File Naming Conventions](#file-naming-conventions)
+- [Defining Component Patterns](#defining-component-patterns)
+- [Component Guidelines](#component-guidelines)
+- [API Route Conventions](#api-route-conventions)
+- [API Route Guidelines](#api-route-guidelines)
+- [Database and Data Access Patterns](#database-and-data-access-patterns)
+- [Database Guidelines](#database-guidelines)
+- [TypeScript Configuration](#typescript-configuration)
+- [TypeScript Guidelines](#typescript-guidelines)
+- [Testing Conventions](#testing-conventions)
+- [Testing Guidelines](#testing-guidelines)
+- [Applying Your CursorRules](#applying-your-cursorrules)
+- [Advanced CursorRules Patterns](#advanced-cursorrules-patterns)
+- [Styling Guidelines](#styling-guidelines)
+- [Error Handling](#error-handling)
+- [Auth Guidelines](#auth-guidelines)
+- [Example CursorRules for Data-Heavy App](#example-cursorrules-for-data-heavy-app)
+- [Numbers and Calculations](#numbers-and-calculations)
+- [Database Queries](#database-queries)
+- [Forms](#forms)
+- [Measuring CursorRules Effectiveness](#measuring-cursorrules-effectiveness)
+- [Common CursorRules Mistakes to Avoid](#common-cursorrules-mistakes-to-avoid)
+- [Integration with Team Workflow](#integration-with-team-workflow)
+- [Performance Optimization Rules](#performance-optimization-rules)
+- [Performance Guidelines](#performance-guidelines)
+
 ## Why CursorRules Matter for Next.js App Router
 
 Next.js App Router introduces a different mental model compared to the traditional Pages Router. The file-system-based routing, Server Components by default, and the separation between client and server code require specific conventions that differ from other React frameworks. Without proper guidance, AI coding assistants often generate code that fights against these conventions.
@@ -338,10 +369,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How to Use AI to Generate Jest Tests for Next.js API Routes](/ai-tools-compared/how-to-use-ai-to-generate-jest-tests-for-nextjs-api-routes/)
-- [Cursor vs Windsurf for Building Next Js App from Design Mock](/ai-tools-compared/cursor-vs-windsurf-for-building-next-js-app-from-design-mock/)
+- [Writing CursorRules for Golang Projects with Specific](/ai-tools-compared/writing-cursorrules-for-golang-projects-with-specific-concur/)
 - [Writing Effective CursorRules for React TypeScript Projects](/ai-tools-compared/writing-effective-cursorrules-for-react-typescript-projects-/)
-- [Best Way to Configure CursorRules for Python FastAPI Project](/ai-tools-compared/best-way-to-configure-cursorrules-for-python-fastapi-project/)
-- [Best Way to Structure CursorRules for Microservices Project](/ai-tools-compared/best-way-to-structure-cursorrules-for-microservices-project-/)
-
+- [Create CursorRules That Enforce Your Team's Git](/ai-tools-compared/how-to-create-cursorrules-that-enforce-your-teams-git-commit/)
+- [Create CursorRules That Teach Cursor Your Team's State](/ai-tools-compared/how-to-create-cursorrules-that-teach-cursor-your-teams-state/)
+- [Best Way to Configure CursorRules for Python FastAPI](/ai-tools-compared/best-way-to-configure-cursorrules-for-python-fastapi-project/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

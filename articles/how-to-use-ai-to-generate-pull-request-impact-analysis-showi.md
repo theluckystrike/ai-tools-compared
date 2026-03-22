@@ -41,6 +41,13 @@ AI coding assistants can help you analyze pull request changes and identify affe
 - **Here are recommendations based**: on practical experience: Define your service boundaries explicitly.
 - Use consistent naming conventions.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Practical Example: Analyzing a Shared Library Change](#practical-example-analyzing-a-shared-library-change)
+- [Best Practices for AI-Powered Impact Analysis](#best-practices-for-ai-powered-impact-analysis)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:

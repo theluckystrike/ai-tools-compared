@@ -40,6 +40,23 @@ Creating user personas from survey responses is a repetitive but essential task 
 - **For production use**: integrate with language models to generate natural language descriptions from the extracted data points.
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 
+## Table of Contents
+
+- [The Survey-to-Persona Pipeline](#the-survey-to-persona-pipeline)
+- [Python Workflow for Persona Generation](#python-workflow-for-persona-generation)
+- [Using Language Models for Persona Refinement](#using-language-models-for-persona-refinement)
+- [Practical Considerations](#practical-considerations)
+- [Tools That Support This Workflow](#tools-that-support-this-workflow)
+- [Measuring Persona Quality](#measuring-persona-quality)
+- [Avoiding Common Pitfalls](#avoiding-common-pitfalls)
+- [Getting Started Today](#getting-started-today)
+- [Advanced Persona Segmentation Techniques](#advanced-persona-segmentation-techniques)
+- [Validation Framework for AI-Generated Personas](#validation-framework-for-ai-generated-personas)
+- [Cross-Functional Persona Review Process](#cross-functional-persona-review-process)
+- [Multi-Language Persona Generation](#multi-language-persona-generation)
+- [Ongoing Persona Maintenance](#ongoing-persona-maintenance)
+- [Persona Delivery and Adoption](#persona-delivery-and-adoption)
+
 ## The Survey-to-Persona Pipeline
 
 The core challenge is converting unstructured survey responses into coherent persona profiles. Most product teams collect responses in various formats: Google Forms exports, Typeform results, or custom database entries. The pipeline typically involves data cleaning, theme extraction, persona clustering, and document generation.
@@ -372,11 +389,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
+- [Best AI for Product Managers Creating Stakeholder Update](/ai-tools-compared/best-ai-for-product-managers-creating-stakeholder-update-dec/)
 - [Best AI Tool for Product Managers Writing User Stories](/ai-tools-compared/best-ai-tool-for-product-managers-writing-user-stories-from-customer-feedback-2026/)
-- [Best AI for Product Managers Creating Stakeholder Update Dec](/ai-tools-compared/best-ai-for-product-managers-creating-stakeholder-update-dec/)
 - [AI Tools for Product Managers Converting Customer](/ai-tools-compared/ai-tools-for-product-managers-converting-customer-interview-/)
 - [AI Tools for Product Managers Drafting Release](/ai-tools-compared/ai-tools-for-product-managers-drafting-release-communication-emails-from-feature-lists/)
-- [Best AI Assistant for Product Managers Writing Sprint](/ai-tools-compared/best-ai-assistant-for-product-managers-writing-sprint-retrospective-summaries-from-notes-2026/)
-
+- [How to Use AI to Help Product Managers Write Data-Driven](/ai-tools-compared/how-to-use-ai-to-help-product-managers-write-data-driven-fea/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

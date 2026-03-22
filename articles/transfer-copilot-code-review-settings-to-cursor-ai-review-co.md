@@ -39,6 +39,34 @@ Transfer Copilot code review settings to Cursor by exporting rules, reconfigurin
 - **When you configure Copilot**: those preferences are stored in your GitHub account and synced across machines.
 - **This matters because different**: models respond differently to the same review instructions, so you may need to adjust prompt wording when migrating rules.
 
+## Table of Contents
+
+- [Understanding the Difference Between Copilot and Cursor](#understanding-the-difference-between-copilot-and-cursor)
+- [How Copilot and Cursor Approach Code Review Differently](#how-copilot-and-cursor-approach-code-review-differently)
+- [Exporting Your Copilot Code Review Settings](#exporting-your-copilot-code-review-settings)
+- [Translating Settings to Cursor AI](#translating-settings-to-cursor-ai)
+- [Setting Comparison: Copilot vs Cursor](#setting-comparison-copilot-vs-cursor)
+- [Step-by-Step Migration Process](#step-by-step-migration-process)
+- [Handling GitHub Integration](#handling-github-integration)
+- [Recreating PR-Level Code Review Workflows](#recreating-pr-level-code-review-workflows)
+- [Verifying Your Migration](#verifying-your-migration)
+- [Common Migration Issues](#common-migration-issues)
+- [Advanced Rule Configuration Patterns](#advanced-rule-configuration-patterns)
+- [Type Safety](#type-safety)
+- [Testing](#testing)
+- [Performance](#performance)
+- [Code Quality](#code-quality)
+- [For database migrations](#for-database-migrations)
+- [For API changes](#for-api-changes)
+- [For dependency updates](#for-dependency-updates)
+- [For refactoring](#for-refactoring)
+- [Automating Rule Application](#automating-rule-application)
+- [Team-Level Review Policies](#team-level-review-policies)
+- [Handling Review False Positives](#handling-review-false-positives)
+- [Reduce false positives](#reduce-false-positives)
+- [Enforce strict checking on critical code](#enforce-strict-checking-on-critical-code)
+- [Migration Monitoring](#migration-monitoring)
+
 ## Understanding the Difference Between Copilot and Cursor
 
 GitHub Copilot works as a GitHub-native extension that suggests code completions and reviews within your IDE. Cursor AI, built on top of VS Code, offers a more integrated approach with its own tab completion, chat interface, and Rules for AI feature. The core concepts map loosely between them, but you'll need to manually translate certain settings.

@@ -46,6 +46,17 @@ Browser caching can cause display issues that look like billing errors:
 - **Seat provisioning typically propagates**: within 2-5 minutes; tell the user to reload VS Code after waiting.
 - **Step 3**: Check SSO enforcement. If your organization enforces SAML SSO, users must authorize their personal access token for SSO before Copilot can authenticate.
 
+## Table of Contents
+
+- [Common GitHub Copilot Billing Error Types](#common-github-copilot-billing-error-types)
+- [Copilot Plan Comparison: Individual, Business, and Enterprise](#copilot-plan-comparison-individual-business-and-enterprise)
+- [Step-by-Step Troubleshooting Solutions](#step-by-step-troubleshooting-solutions)
+- [Diagnostic Tips for Power Users](#diagnostic-tips-for-power-users)
+- [Full Troubleshooting Workflow for Organization Admins](#full-troubleshooting-workflow-for-organization-admins)
+- [Preventing Future Billing Issues](#preventing-future-billing-issues)
+- [When to Contact GitHub Support](#when-to-contact-github-support)
+- [Quick Reference: Error Messages and Solutions](#quick-reference-error-messages-and-solutions)
+
 ## Common GitHub Copilot Billing Error Types
 
 Understanding the error type helps you apply the right solution:
@@ -264,10 +275,9 @@ GitHub Enterprise supports invoicing via purchase order for annual commitments. 
 ## Related Articles
 
 - [GitHub Copilot Usage Based Billing How API Calls Are Counted](/ai-tools-compared/github-copilot-usage-based-billing-how-api-calls-are-counted/)
-- [Copilot vs Cursor for Writing Rust Error Handling with](/ai-tools-compared/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
-- [Best Practices for Writing GitHub Copilot Custom Instruction](/ai-tools-compared/best-practices-for-writing-github-copilot-custom-instruction/)
-- [Completely Free Alternatives to GitHub Copilot That Actually](/ai-tools-compared/completely-free-alternatives-to-github-copilot-that-actually/)
-- [Continue Dev vs GitHub Copilot: Open Source Comparison](/ai-tools-compared/continue-dev-vs-github-copilot-open-source-comparison/)
-
+- [Copilot Suggestions Not Showing Up Fix 2026](/ai-tools-compared/copilot-suggestions-not-showing-up-fix-2026/)
+- [How to Transfer GitHub Copilot Organization Settings](/ai-tools-compared/transfer-github-copilot-org-settings-when-switching-to-curso/)
+- [Copilot Chat Not Responding in GitHub](/ai-tools-compared/copilot-chat-not-responding-in-github-fix/)
+- [How to Build a Custom GitHub Copilot Extension](/ai-tools-compared/how-to-build-custom-copilot-extension/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -41,6 +41,13 @@ Playwright's storage state feature solves this problem by capturing authenticate
 - **Provide the AI with**: clear context about your authentication mechanism, the page structure, and how you want to use stored state.
 - **A well-structured prompt includes**: your login URL, the selectors for login form elements, the expected post-login URL, and instructions to use storage state.
 
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Best Practices for AI-Generated Authentication Tests](#best-practices-for-ai-generated-authentication-tests)
+- [Advanced Storage State Management](#advanced-storage-state-management)
+- [Troubleshooting](#troubleshooting)
+
 ## Prerequisites
 
 Before you begin, make sure you have the following ready:
@@ -456,11 +463,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Use AI to Generate Playwright Keyboard Navigation Tes](/ai-tools-compared/how-to-use-ai-to-generate-playwright-keyboard-navigation-tes/)
-- [How to Use AI to Generate Playwright Network Interception](/ai-tools-compared/how-to-use-ai-to-generate-playwright-network-interception-te/)
-- [How to Use AI to Generate Playwright Tests for Iframe and](/ai-tools-compared/how-to-use-ai-to-generate-playwright-tests-for-iframe-and-cross-origin-content/)
-- [Best AI for Learning OAuth2 and OIDC Authentication Flows](/ai-tools-compared/best-ai-for-learning-oauth2-and-oidc-authentication-flows-wi/)
-- [Cursor vs Copilot for Implementing Oauth2 Authentication Flo](/ai-tools-compared/cursor-vs-copilot-for-implementing-oauth2-authentication-flo/)
-
+- [Which AI Is Better for Writing Playwright End-to-End Tests](/ai-tools-compared/which-ai-is-better-for-writing-playwright-end-to-end-tests-2/)
+- [Best AI Tools for Writing Playwright Tests 2026](/ai-tools-compared/best-ai-tools-for-writing-playwright-tests-2026/)
+- [Best AI Tools for Writing Playwright E2E Tests 2026](/ai-tools-compared/best-ai-tools-for-writing-playwright-e2e-tests-2026/)
+- [Best AI Tools for Writing Playwright Tests](/ai-tools-compared/ai-tools-for-writing-playwright-tests-guide)
+- [How to Use AI to Generate Playwright Keyboard Navigation](/ai-tools-compared/how-to-use-ai-to-generate-playwright-keyboard-navigation-tes/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

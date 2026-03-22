@@ -40,6 +40,13 @@ Testing Celery task chains requires understanding how tasks execute in sequence,
 - **Provide it with your**: Celery app configuration, your fixture sample data, and the eager mode setup code so it has the full context needed to generate something you can use immediately.
 - **Data accumulation across all**: chain steps Use task_always_eager=True for testing.
 
+## Table of Contents
+
+- [Understanding Celery Task Chain Testing Requirements](#understanding-celery-task-chain-testing-requirements)
+- [Prerequisites](#prerequisites)
+- [Best Practices for AI-Generated Tests](#best-practices-for-ai-generated-tests)
+- [Troubleshooting](#troubleshooting)
+
 ## Understanding Celery Task Chain Testing Requirements
 
 Celery task chains (`celery.chain`) execute tasks sequentially, where output from one task becomes input for the next. Testing these chains involves verifying correct execution order, data transformation through each stage, error handling, and retry behavior.
@@ -508,10 +515,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 ## Related Articles
 
 - [Best AI Tools for Python Celery Task Queue Code Generation](/ai-tools-compared/best-ai-tools-for-python-celery-task-queue-code-generation-2/)
-- [ChatGPT vs Claude for Writing Effective Celery Task Error](/ai-tools-compared/chatgpt-vs-claude-for-writing-effective-celery-task-error-ha/)
-- [How to Use AI to Generate pytest Tests for Django REST Frame](/ai-tools-compared/how-to-use-ai-to-generate-pytest-tests-for-django-rest-frame/)
+- [How to Use AI to Generate pytest Tests for Django REST](/ai-tools-compared/how-to-use-ai-to-generate-pytest-tests-for-django-rest-frame/)
+- [Notion AI vs ClickUp AI: Task Writing Compared](/ai-tools-compared/notion-ai-vs-clickup-ai-task-writing-compared/)
 - [How to Use AI to Generate pytest Tests for Rate Limited](/ai-tools-compared/how-to-use-ai-to-generate-pytest-tests-for-rate-limited-endpoint-throttling-behavior/)
-- [AI Tools for Writing pytest Tests for Alembic Database](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migra/)
-
+- [ChatGPT vs Claude for Writing Effective Celery Task Error](/ai-tools-compared/chatgpt-vs-claude-for-writing-effective-celery-task-error-ha/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

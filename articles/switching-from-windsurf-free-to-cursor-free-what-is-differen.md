@@ -39,6 +39,19 @@ Choose Windsurf Free if you want faster, more numerous completions (roughly 500 
 - **Cursor Free offers around**: 2000 completions per month, which resets monthly.
 - **Cursor Free provides access**: to the chat interface with Claude integration.
 
+## Table of Contents
+
+- [Understanding the Free Tier Differences](#understanding-the-free-tier-differences)
+- [Feature Comparison for Developers](#feature-comparison-for-developers)
+- [Workflow Integration Differences](#workflow-integration-differences)
+- [Making the Switch](#making-the-switch)
+- [In-Depth Performance Metrics](#in-depth-performance-metrics)
+- [Advanced Features Comparison](#advanced-features-comparison)
+- [Migration Workflow and Gotchas](#migration-workflow-and-gotchas)
+- [Real-World Usage Scenarios](#real-world-usage-scenarios)
+- [Cost-Benefit Analysis](#cost-benefit-analysis)
+- [Which Should You Choose?](#which-should-you-choose)
+
 ## Understanding the Free Tier Differences
 
 The most significant difference between Windsurf Free and Cursor Free lies in how they handle AI interactions and available features. Windsurf, developed by Codeium, positions itself as an "AIFlow" editor that combines traditional autocomplete with agentic AI capabilities. Cursor, built by the team behind Claude, integrates the Claude AI model directly into the editing experience.
@@ -320,9 +333,8 @@ Policies vary widely. Some tools let you access your data for a grace period aft
 ## Related Articles
 
 - [Switching from Windsurf to Cursor How to Transfer Project](/ai-tools-compared/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
-- [Cursor Free Plan vs Windsurf Free Plan Which Gives More](/ai-tools-compared/cursor-free-plan-vs-windsurf-free-plan-which-gives-more/)
-- [AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026](/ai-tools-compared/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
-- [Copilot vs Cursor vs Windsurf Inline Diff Preview Comparison](/ai-tools-compared/copilot-vs-cursor-vs-windsurf-inline-diff-preview-comparison/)
-- [Copilot vs Cursor vs Windsurf: Monthly Cost Breakdown](/ai-tools-compared/copilot-vs-cursor-vs-windsurf-monthly-cost-breakdown-which-saves-money-2026/)
-
+- [Cursor vs Windsurf for Implementing Drag and Drop Interfaces](/ai-tools-compared/cursor-vs-windsurf-for-implementing-drag-and-drop-interfaces/)
+- [Cursor Free Plan vs Windsurf Free Plan Which Gives](/ai-tools-compared/cursor-free-plan-vs-windsurf-free-plan-which-gives-more/)
+- [How Much Does Cursor AI Actually Cost Per Month All](/ai-tools-compared/how-much-does-cursor-ai-actually-cost-per-month-all-plans/)
+- [Cursor vs Windsurf for Building Next Js App from Design](/ai-tools-compared/cursor-vs-windsurf-for-building-next-js-app-from-design-mock/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

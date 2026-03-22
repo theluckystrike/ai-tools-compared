@@ -11,7 +11,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, best-of, artificial-intelligence]
+---
 ---
 layout: default
 title: "Best AI Tools for Data Governance"
@@ -25,7 +26,8 @@ score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, best-of, artificial-intelligence]---
+tags: [ai-tools-compared, best-of, artificial-intelligence]
+---
 
 {% raw %}
 
@@ -41,6 +43,15 @@ The best AI tools for data governance are Amundsen and DataHub for open-source c
 Amundsen**: developed by Lyft, provides data discovery and cataloging with metadata ingestion from multiple sources.
 - **Teams at large companies**: use it to solve the "I know we have a table for this, but I can't find it" problem.
 - **The ML-based table and**: column recommendations surface related assets that users may not have considered, reducing the time spent searching for data.
+
+## Table of Contents
+
+- [What Makes an AI Tool Effective for Data Governance](#what-makes-an-ai-tool-effective-for-data-governance)
+- [Comparison at a Glance](#comparison-at-a-glance)
+- [Top AI Tools for Data Governance](#top-ai-tools-for-data-governance)
+- [Choosing the Right Tool](#choosing-the-right-tool)
+- [Implementation Approach](#implementation-approach)
+- [Related Reading](#related-reading)
 
 ## What Makes an AI Tool Effective for Data Governance
 

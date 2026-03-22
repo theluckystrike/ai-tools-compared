@@ -39,6 +39,18 @@ Claude excels at generating Playwright multi-browser test matrices integrated wi
 - **How often should I**: run the full cross-browser matrix? Most teams run full cross-browser matrices on merges to main and in nightly scheduled runs.
 - **Maintain readability**: Use descriptive names for projects and clear comments explaining browser selections.
 
+## Table of Contents
+
+- [Understanding Playwright Multi-Browser Test Matrices](#understanding-playwright-multi-browser-test-matrices)
+- [AI Tool Comparison for Test Matrix Generation](#ai-tool-comparison-for-test-matrix-generation)
+- [Top AI Tools for Test Matrix Generation](#top-ai-tools-for-test-matrix-generation)
+- [GitHub Actions Integration](#github-actions-integration)
+- [Optimizing Your Test Matrix](#optimizing-your-test-matrix)
+- [Best Practices for AI-Generated Test Matrices](#best-practices-for-ai-generated-test-matrices)
+- [Step-by-Step: Using Claude to Generate Your First Matrix](#step-by-step-using-claude-to-generate-your-first-matrix)
+- [Choosing the Right AI Tool](#choosing-the-right-ai-tool)
+- [Related Reading](#related-reading)
+
 ## Understanding Playwright Multi-Browser Test Matrices
 
 A test matrix ensures your application works consistently across different browser combinations. With Playwright, you can test against Chromium, Firefox, WebKit, and their respective versions. When combined with GitHub Actions, you create automated CI/CD pipelines that validate your code against these matrices on every push.

@@ -332,6 +332,17 @@ The integration quality varies—some tools work only in specific IDEs, while ot
 | Response time | Real-time (IDE) | 2-5 minutes | 2-5 minutes | 1-3 minutes |
 | Customization | Limited | High | Medium | High |
 
+## Table of Contents
+
+- [Configuration Examples by Tool](#configuration-examples-by-tool)
+- [Real-World Review Quality Assessment](#real-world-review-quality-assessment)
+- [Integration with Team Workflows](#integration-with-team-workflows)
+- [Performance and Cost Implications](#performance-and-cost-implications)
+- [Setting Up a Multi-Tool Review System](#setting-up-a-multi-tool-review-system)
+- [Monitoring and Metrics](#monitoring-and-metrics)
+- [Recommendations by Project Type](#recommendations-by-project-type)
+- [Related Reading](#related-reading)
+
 ## Configuration Examples by Tool
 
 **CodeRabbit Advanced Configuration:**
@@ -495,6 +506,14 @@ Over 2-3 weeks, you'll see which tools provide real value for your team's codeba
 - [How to Maximize GitHub Copilot Free Tier for Open Source](/ai-tools-compared/how-to-maximize-github-copilot-free-tier-for-open-source/)
 - [Best Free AI Coding Extensions for Visual Studio Code 2026](/ai-tools-compared/best-free-ai-coding-extensions-for-visual-studio-code-2026/)
 - [Best Free AI Tool for Code Explanation and Documentation](/ai-tools-compared/best-free-ai-tool-for-code-explanation-and-documentation/)
+
+## Related Articles
+
+- [AI Code Review Automation Tools Comparison 2026](/ai-tools-compared/ai-code-review-automation-tools-comparison/)
+- [Best AI Tools for Automated Code Review 2026](/ai-tools-compared/best-ai-tools-for-automated-code-review-2026/)
+- [AI Tools for Generating GitHub Actions Workflows (2)](/ai-tools-compared/ai-tools-github-actions-workflows/)
+- [Free AI Tools for Learning Python with Code Examples 2026](/ai-tools-compared/free-ai-tools-for-learning-python-with-code-examples-2026/)
+- [How to Audit What Source Code AI Coding Tools Transmit](/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

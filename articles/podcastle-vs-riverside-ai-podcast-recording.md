@@ -39,6 +39,15 @@ For developers building podcast production workflows, choosing the right AI-powe
 - **The API authentication uses**: API keys that you generate through the developer dashboard.
 - **Castle uses WebRTC-based recording**: with adaptive bitrate streaming.
 
+## Table of Contents
+
+- [Understanding the Recording Platform Market](#understanding-the-recording-platform-market)
+- [API Capabilities and Developer Integration](#api-capabilities-and-developer-integration)
+- [Audio Quality and Processing](#audio-quality-and-processing)
+- [Integration Patterns for Podcast Automation](#integration-patterns-for-podcast-automation)
+- [Cost Considerations for Scaling](#cost-considerations-for-scaling)
+- [Decision Framework for Developers](#decision-framework-for-developers)
+
 ## Understanding the Recording Platform Market
 
 Both platforms position themselves as AI-enhanced recording solutions, but their architectural approaches differ significantly. Castle emphasizes browser-based recording with AI-powered editing features, while Riverside focuses on studio-quality local recording with cloud processing. Understanding these foundational differences helps you select the platform that aligns with your technical requirements.
@@ -315,8 +324,9 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Best AI Tools for Podcast Show Notes](/ai-tools-compared/best-ai-tools-for-podcast-show-notes/)
 - [Best AI Tools for Screen Recording Editing](/ai-tools-compared/best-ai-tools-for-screen-recording-editing/)
-- [How to Use AI for Writing Effective Prometheus Recording Rul](/ai-tools-compared/how-to-use-ai-for-writing-effective-prometheus-recording-rul/)
-
+- [AI Employee Onboarding Tools Comparison 2026](/ai-tools-compared/ai-employee-onboarding-tools-comparison-2026/)
+- [Runway ML vs Pika AI: Video Generation Tools Compared](/ai-tools-compared/runway-ml-vs-pika-ai-video-generation/)
+- [AI Tools for Automated Security Scanning Compared](/ai-tools-compared/ai-tools-for-automated-security-scanning-compared/)
+- [AI Tools for API Documentation from Code 2026](/ai-tools-compared/ai-tools-for-api-documentation-from-code-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

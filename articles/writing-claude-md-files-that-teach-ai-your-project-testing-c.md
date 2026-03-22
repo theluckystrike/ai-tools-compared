@@ -42,6 +42,28 @@ This guide shows you how to write CLAUDE.md files that effectively teach AI assi
 - **Step 3**: Write rules as commands, not suggestions. Use phrases like "always," "never," "use X instead of Y." Hedging with "prefer" or "consider" gives AI room to revert to defaults.
 - **Documenting aspirations**: not reality. If your codebase has 300 tests using getByTestId and your CLAUDE.md says to use getByRole, AI will produce inconsistent output.
 
+## Table of Contents
+
+- [Why Testing Conventions Belong in CLAUDE.md](#why-testing-conventions-belong-in-claudemd)
+- [Core Sections for Testing Conventions](#core-sections-for-testing-conventions)
+- [Testing Stack](#testing-stack)
+- [Test File Organization](#test-file-organization)
+- [Test Naming Conventions](#test-naming-conventions)
+- [Documenting Test Patterns](#documenting-test-patterns)
+- [Test Setup Patterns](#test-setup-patterns)
+- [Mocking Conventions](#mocking-conventions)
+- [Async Testing](#async-testing)
+- [Integration with CI/CD](#integration-with-cicd)
+- [CI Testing Requirements](#ci-testing-requirements)
+- [Real-World Examples](#real-world-examples)
+- [React Component Tests](#react-component-tests)
+- [API Endpoint Tests](#api-endpoint-tests)
+- [Advanced Patterns: Coverage and Reporting](#advanced-patterns-coverage-and-reporting)
+- [Practical Examples: Teaching AI Your Project Idioms](#practical-examples-teaching-ai-your-project-idioms)
+- [Step-by-Step: Building Your First CLAUDE.md Testing Section](#step-by-step-building-your-first-claudemd-testing-section)
+- [Common Pitfalls When Writing Testing Conventions for AI](#common-pitfalls-when-writing-testing-conventions-for-ai)
+- [Maintaining Your CLAUDE.md](#maintaining-your-claudemd)
+
 ## Why Testing Conventions Belong in CLAUDE.md
 
 Your test suite likely follows specific patterns that new developers (and AI) need to learn. Without explicit guidance, AI assistants generate tests that work but don't match your project's style. They might use different assertion libraries, naming conventions, or setup patterns than your team prefers.
@@ -268,10 +290,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [Writing Claude Md Files That Teach AI Your Project Specific](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/)
-- [Writing CLAUDE.md Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy/)
 - [Writing CLAUDE MD Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
-- [How to Structure Project Files So AI Coding Tools Understand](/ai-tools-compared/how-to-structure-project-files-so-ai-coding-tools-understand/)
-- [Claude Code API Snapshot Testing Guide](/ai-tools-compared/claude-code-api-snapshot-testing-guide/)
-
+- [Writing CLAUDE.md Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy/)
+- [Claude Code Screen Reader Testing Workflow](/ai-tools-compared/claude-code-screen-reader-testing-workflow/)
+- [Claude Code Parallel Testing Configuration](/ai-tools-compared/claude-code-parallel-testing-configuration/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

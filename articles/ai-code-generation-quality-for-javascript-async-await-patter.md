@@ -39,6 +39,17 @@ Use AI tools that generate async code with proper error handling, resource clean
 - **Mastering advanced features takes**: 1-2 weeks of regular use.
 - **Focus on the 20%**: of features that cover 80% of your needs first, then explore advanced capabilities as specific needs arise.
 
+## Table of Contents
+
+- [Why Async/Await Patterns Matter for AI Code Generation](#why-asyncawait-patterns-matter-for-ai-code-generation)
+- [Test Methodology](#test-methodology)
+- [Basic Async Function Generation](#basic-async-function-generation)
+- [Error Handling Quality](#error-handling-quality)
+- [Parallel Execution Patterns](#parallel-execution-patterns)
+- [Sequential Dependencies](#sequential-dependencies)
+- [Resource Cleanup Patterns](#resource-cleanup-patterns)
+- [Recommendations](#recommendations)
+
 ## Why Async/Await Patterns Matter for AI Code Generation
 
 Async/await syntax has become the standard for handling asynchronous operations in JavaScript. When AI tools generate this code, they must understand promise chaining, error propagation, concurrent execution patterns, and proper resource cleanup. Poorly generated async code can introduce subtle bugs, memory leaks, or unhandled rejections that are difficult to debug.

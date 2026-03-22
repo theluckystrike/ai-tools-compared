@@ -41,6 +41,17 @@ Claude's batch processing API enables you to queue hundreds or thousands of requ
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Claude's batch processing API**: enables you to queue hundreds or thousands of requests for off-peak processing, reducing costs by 50% compared to real-time API calls.
 
+## Table of Contents
+
+- [Why Batch Processing Matters for Document Workflows](#why-batch-processing-matters-for-document-workflows)
+- [Setting Up Batch Processing](#setting-up-batch-processing)
+- [Real-World Document Analysis Example](#real-world-document-analysis-example)
+- [Organizing Large-Scale Batch Operations](#organizing-large-scale-batch-operations)
+- [Cost Optimization Tips](#cost-optimization-tips)
+- [Error Handling and Retries](#error-handling-and-retries)
+- [Comparing Batch vs. Real-Time Processing](#comparing-batch-vs-real-time-processing)
+- [When to Use Batch Processing](#when-to-use-batch-processing)
+
 ## Why Batch Processing Matters for Document Workflows
 
 Document processing often doesn't require immediate responses. You might need to analyze hundreds of PDFs, extract structured data from emails, or categorize documents—tasks that benefit from asynchronous, cost-optimized processing.
@@ -431,10 +442,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 ## Related Articles
 
 - [Claude API Batch Processing: How Much Cheaper Than Discount](/ai-tools-compared/claude-api-batch-processing-discount-how-much-cheaper-than-r/)
-- [Claude Code vs Cursor for Large Codebase Refactoring](/ai-tools-compared/claude-code-vs-cursor-for-large-codebase-refactoring/)
-- [Gemini vs Claude for Analyzing Large CSV Datasets Over 100MB](/ai-tools-compared/gemini-vs-claude-for-analyzing-large-csv-datasets-over-100mb/)
-- [How to Transfer Notion AI Workflows to Claude Projects 2026](/ai-tools-compared/how-to-transfer-notion-ai-workflows-to-claude-projects-2026/)
-- [Migrating from ChatGPT Plugins to Claude MCP Tools for.](/ai-tools-compared/migrating-from-chatgpt-plugins-to-claude-mcp-tools-for-coding-workflows/)
-
+- [Claude API vs OpenAI API Pricing Breakdown 2026](/ai-tools-compared/claude-api-vs-openai-api-pricing-breakdown-2026/)
+- [How to Use Claude API Cheaply for Small Coding Projects](/ai-tools-compared/how-to-use-claude-api-cheaply-for-small-coding-projects/)
+- [Writing CLAUDE MD Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
+- [AI Tools for API Documentation from Code 2026](/ai-tools-compared/ai-tools-for-api-documentation-from-code-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

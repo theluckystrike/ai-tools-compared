@@ -11,7 +11,8 @@ voice-checked: true
 score: 9
 reviewed: true
 intent-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 ---
 layout: default
 title: "AI Tools for Video Color Grading"
@@ -25,7 +26,8 @@ voice-checked: true
 score: 9
 reviewed: true
 intent-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 {% raw %}
 
@@ -39,6 +41,16 @@ For developers building video processing pipelines and power users automating po
 - **What is the learning**: curve like? Most tools discussed here can be used productively within a few hours.
 - **Most tools handle common**: formats (ProRes, H.264, H.265), but specialized formats may require preprocessing.
 - **For quick integration and prototyping**: Color.io's API offers the fastest path to functional color grading without local GPU requirements.
+
+## Table of Contents
+
+- [Why AI Color Grading Matters for Developers](#why-ai-color-grading-matters-for-developers)
+- [Practical AI Color Grading Tools](#practical-ai-color-grading-tools)
+- [Key Considerations for Integration](#key-considerations-for-integration)
+- [Recommendations by Use Case](#recommendations-by-use-case)
+- [Deep Integration Examples for Production Pipelines](#deep-integration-examples-for-production-pipelines)
+- [Tool Pricing and Performance Comparison](#tool-pricing-and-performance-comparison)
+- [Best Practices for Automated Grading](#best-practices-for-automated-grading)
 
 ## Why AI Color Grading Matters for Developers
 

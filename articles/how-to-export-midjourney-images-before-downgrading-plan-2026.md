@@ -39,6 +39,13 @@ Midjourney offers powerful AI image generation, but subscription costs add up qu
 - **Then use a library**: like discord.js to listen for Midjourney bot responses and extract image URLs.
 - **Click any image to view it full-size**: then use the download button to save it.
 
+## Table of Contents
+
+- [Why Export Before Downgrading](#why-export-before-downgrading)
+- [Prerequisites](#prerequisites)
+- [Best Practices Before Downgrading](#best-practices-before-downgrading)
+- [Troubleshooting](#troubleshooting)
+
 ## Why Export Before Downgrading
 
 Midjourney stores your image generations on their servers while your subscription remains active. When you downgrade, access to higher-tier features—and in some cases, your image history—becomes restricted or disappears entirely. Unlike a local-first workflow where you own everything, Midjourney's cloud-centric model means your generations live on their infrastructure until you explicitly download them.
@@ -479,10 +486,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Export Dall E Generated Images at Full Resolution](/ai-tools-compared/how-to-export-dall-e-generated-images-at-full-resolution-before-leaving/)
-- [Ideogram vs Midjourney for Text in Images Compared](/ai-tools-compared/ideogram-vs-midjourney-for-text-in-images-compared/)
 - [Midjourney Basic Plan Image Limits Per Month: Real Numbers](/ai-tools-compared/midjourney-basic-plan-image-limits-per-month-real-numbers-20/)
+- [How to Export Dall E Generated Images at Full Resolution](/ai-tools-compared/how-to-export-dall-e-generated-images-at-full-resolution-before-leaving/)
 - [Midjourney Standard vs Pro Plan: Is Stealth Mode Worth](/ai-tools-compared/midjourney-standard-vs-pro-plan-stealth-mode-worth-extra-cost/)
-- [AI Tools for Generating Website Hero Images Compared](/ai-tools-compared/ai-tools-for-generating-website-hero-images-compared/)
-
+- [Ideogram vs Midjourney for Text in Images Compared](/ai-tools-compared/ideogram-vs-midjourney-for-text-in-images-compared/)
+- [Switching from Midjourney to Dall E 3 Prompt Adaptation](/ai-tools-compared/switching-from-midjourney-to-dall-e-3-prompt-adaptation-guid/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -40,6 +40,18 @@ Choose Claude for creative storytelling when character voice consistency and lon
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 - **Choose ChatGPT when you need structured**: plot-driven narratives with clear emotional beats and predictable story arcs.
 
+## Table of Contents
+
+- [API Integration and Setup](#api-integration-and-setup)
+- [Narrative Coherence and Character Voice](#narrative-coherence-and-character-voice)
+- [Handling Long-Form Context](#handling-long-form-context)
+- [Temperature and Creativity Control](#temperature-and-creativity-control)
+- [Streaming for Interactive Applications](#streaming-for-interactive-applications)
+- [Prompt Engineering for Better Story Output](#prompt-engineering-for-better-story-output)
+- [Cost Considerations for Content Generation](#cost-considerations-for-content-generation)
+- [Which Model Should You Choose?](#which-model-should-you-choose)
+- [Related Reading](#related-reading)
+
 ## API Integration and Setup
 
 Both models offer straightforward API access, but their client libraries and configuration differ slightly.
@@ -242,6 +254,14 @@ For developers building interactive fiction or content-generation tools, testing
 - [ChatGPT vs Claude for Creating Database Migration Scripts](/ai-tools-compared/chatgpt-vs-claude-for-creating-database-migration-scripts-po/)
 - [ChatGPT vs Claude for Creating OpenAPI Spec from Existing](/ai-tools-compared/chatgpt-vs-claude-for-creating-openapi-spec-from-existing-co/)
 - [ChatGPT vs Claude for Explaining TensorFlow Model](/ai-tools-compared/chatgpt-vs-claude-for-explaining-tensorflow-model-architectu/)
+
+## Related Articles
+
+- [ChatGPT vs Claude for Writing API Documentation](/ai-tools-compared/chatgpt-vs-claude-for-writing-api-documentation/)
+- [Claude Free vs ChatGPT Free Which Gives More Per](/ai-tools-compared/claude-free-vs-chatgpt-free-which-gives-more-per-day/)
+- [ChatGPT vs Claude for Explaining TensorFlow Model](/ai-tools-compared/chatgpt-vs-claude-for-explaining-tensorflow-model-architectu/)
+- [Claude vs ChatGPT for Writing Datadog Dashboard Terraform](/ai-tools-compared/claude-vs-chatgpt-for-writing-datadog-dashboard-terraform-de/)
+- [Claude vs ChatGPT for Converting REST API Documentation](/ai-tools-compared/claude-vs-chatgpt-for-converting-rest-api-documentation-to-g/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

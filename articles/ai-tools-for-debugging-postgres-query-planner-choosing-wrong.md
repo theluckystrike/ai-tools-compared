@@ -40,6 +40,23 @@ When your PostgreSQL query planner selects a suboptimal index scan path, query p
 - **The more information you**: can give about your schema, data distribution, and query patterns, the more accurate the AI's recommendations will be.
 - **Poor correlation estimates can**: cause the planner to avoid efficient index scans.
 
+## Table of Contents
+
+- [Understanding PostgreSQL Index Scan Selection](#understanding-postgresql-index-scan-selection)
+- [Why Index Scan Paths Go Wrong](#why-index-scan-paths-go-wrong)
+- [Practical Example: Identifying the Wrong Index Choice](#practical-example-identifying-the-wrong-index-choice)
+- [Using AI Tools for Query Analysis](#using-ai-tools-for-query-analysis)
+- [How AI Tools Analyze Execution Plans](#how-ai-tools-analyze-execution-plans)
+- [Common Fixes the AI Might Suggest](#common-fixes-the-ai-might-suggest)
+- [Real-World Debugging Workflow](#real-world-debugging-workflow)
+- [Prevention Strategies](#prevention-strategies)
+- [Advanced Analysis: Using pg_stat_statements with AI](#advanced-analysis-using-pgstatstatements-with-ai)
+- [Planner Configuration Tuning](#planner-configuration-tuning)
+- [Building a Query Performance Dashboard](#building-a-query-performance-dashboard)
+- [AI Tool Effectiveness Comparison](#ai-tool-effectiveness-comparison)
+- [Real-World Example: Production Outage Response](#real-world-example-production-outage-response)
+- [Building a Local AI Query Analyzer](#building-a-local-ai-query-analyzer)
+
 ## Understanding PostgreSQL Index Scan Selection
 
 PostgreSQL's query planner evaluates multiple factors when deciding between index scans, sequential scans, or bitmap scans. The planner considers table statistics, index selectivity estimates, correlation values, and configuration parameters like `random_page_cost` and `effective_cache_size`. When these estimates are inaccurate or when multiple indexes exist, the planner may choose a scan path that performs poorly in practice.
@@ -508,11 +525,10 @@ Yes, if you provide schema and sample data. More context always improves AI anal
 
 ## Related Articles
 
-- [Gemini AI Giving Wrong Answers: Debugging Tips and Fixes](/ai-tools-compared/gemini-ai-giving-wrong-answers-debugging-tips/)
-- [AI Tools for Debugging CSS Media Query Breakpoints Not Match](/ai-tools-compared/ai-tools-for-debugging-css-media-query-breakpoints-not-match/)
-- [Best AI Tool for Converting MySQL Queries to Postgres Compat](/ai-tools-compared/best-ai-tool-for-converting-mysql-queries-to-postgres-compat/)
-- [Copilot Suggestions Wrong How to Fix](/ai-tools-compared/copilot-suggestions-wrong-how-to-fix/)
-- [Cursor Tab Accepting Wrong Suggestion Fix](/ai-tools-compared/cursor-tab-accepting-wrong-suggestion-fix/)
-
+- [Best AI Tools for SQL Query Generation 2026](/ai-tools-compared/best-ai-tools-for-sql-query-generation-2026/)
+- [Best AI Tools for SQL Query Optimization and Database](/ai-tools-compared/best-ai-tools-for-sql-query-optimization-and-database-performance/)
+- [AI-Powered Database Query Optimization Tools 2026](/ai-tools-compared/ai-powered-database-query-optimization-tools/)
+- [AI Tools for Database Performance Optimization Query](/ai-tools-compared/ai-tools-for-database-performance-optimization-query-analysis/)
+- [AI-Powered Database Performance Tuning Tools](/ai-tools-compared/ai-powered-database-performance-tuning)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

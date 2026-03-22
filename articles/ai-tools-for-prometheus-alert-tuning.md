@@ -29,6 +29,19 @@ Alert fatigue kills on-call effectiveness. The average engineering team has hund
 - **AI tools can analyze your alerting rules**: identify structural problems, and generate better expressions with appropriate thresholds and inhibition rules.
 - **Inhibition rules to suppress**: ticket alerts when pager fires Use these labels: severity=page|ticket, team=[team from config] Include runbook_url in annotations.
 
+## Table of Contents
+
+- [The Three Alert Problems AI Solves](#the-three-alert-problems-ai-solves)
+- [Why Prometheus Alert Quality Degrades Over Time](#why-prometheus-alert-quality-degrades-over-time)
+- [Approach 1: AI-Assisted Alert Review](#approach-1-ai-assisted-alert-review)
+- [Approach 2: Generate Alerts from SLOs](#approach-2-generate-alerts-from-slos)
+- [Approach 3: Threshold Tuning from Historical Data](#approach-3-threshold-tuning-from-historical-data)
+- [Approach 4: Auto-Generate Runbooks](#approach-4-auto-generate-runbooks)
+- [[Alert Name]](#alert-name)
+- [Comparing AI Tools for PromQL Generation](#comparing-ai-tools-for-promql-generation)
+- [Alertmanager Inhibition Patterns AI Gets Right](#alertmanager-inhibition-patterns-ai-gets-right)
+- [Related Reading](#related-reading)
+
 ## The Three Alert Problems AI Solves
 
 1. **Threshold tuning**: Alerts firing at wrong thresholds based on intuition, not data
@@ -388,6 +401,14 @@ When asked to generate inhibition rules for a service dependency graph, Claude p
 - [How to Use AI for Chaos Engineering](/ai-tools-compared/how-to-use-ai-for-chaos-engineering/)
 
 ---
+
+## Related Articles
+
+- [How to Use AI for Writing Prometheus Alerting Rules](/ai-tools-compared/how-to-use-ai-for-writing-prometheus-alerting-rules-effectively/)
+- [AI Tools for Generating Prometheus Alerting Rules (2026)](/ai-tools-compared/ai-tools-for-generating-prometheus-alerting-rules-2026/---)
+- [AI-Powered Monitoring and Alerting Setup Guide](/ai-tools-compared/ai-powered-monitoring-and-alerting-setup/)
+- [How to Use AI for Writing Effective Prometheus Recording](/ai-tools-compared/how-to-use-ai-for-writing-effective-prometheus-recording-rul/)
+- [AI-Powered Database Performance Tuning Tools](/ai-tools-compared/ai-powered-database-performance-tuning)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

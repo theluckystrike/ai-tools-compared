@@ -41,6 +41,22 @@ For HRTF personalization and binaural rendering code, Claude and GPT-4 are the s
 - **Game developers use these**: tools to implement adaptive audio that responds to gameplay events, player location, and environmental changes.
 - **Research teams working on**: acoustic simulation use AI assistants to implement ray-tracing algorithms and create synthetic training data.
 
+## Table of Contents
+
+- [What to Look for in AI Tools for Spatial Audio](#what-to-look-for-in-ai-tools-for-spatial-audio)
+- [Practical Examples of AI-Assisted Spatial Audio Development](#practical-examples-of-ai-assisted-spatial-audio-development)
+- [Real-World Use Cases](#real-world-use-cases)
+- [Evaluating AI Tools for Your Spatial Audio Workflow](#evaluating-ai-tools-for-your-spatial-audio-workflow)
+- [Limitations and Best Practices](#limitations-and-best-practices)
+- [Implementation Strategy](#implementation-strategy)
+- [Complete Web Audio API Example](#complete-web-audio-api-example)
+- [Tool-Specific Strengths](#tool-specific-strengths)
+- [Comparison of Spatial Audio Libraries](#comparison-of-spatial-audio-libraries)
+- [Practical Implementation: Gaming Audio](#practical-implementation-gaming-audio)
+- [Performance Validation Metrics](#performance-validation-metrics)
+- [Pricing Analysis](#pricing-analysis)
+- [Integration Best Practices](#integration-best-practices)
+
 ## What to Look for in AI Tools for Spatial Audio
 
 Modern spatial audio production demands specific capabilities from AI assistants:
@@ -287,11 +303,10 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Best AI Tools for Audio Mastering: A Practical Guide for](/ai-tools-compared/best-ai-tools-for-audio-mastering/)
 - [Best AI Tools for Audio Noise Removal](/ai-tools-compared/best-ai-tools-for-audio-noise-removal/)
 - [Best AI Tools for Concert Audio Mixing](/ai-tools-compared/best-ai-tools-for-concert-audio-mixing/)
-- [Lalal AI vs Izotope Rx Audio Separation](/ai-tools-compared/lalal-ai-vs-izotope-rx-audio-separation/)
-- [AI CI/CD Pipeline Optimization: A Developer Guide](/ai-tools-compared/ai-ci-cd-pipeline-optimization/)
-
+- [Best AI Tools for Audio Mastering](/ai-tools-compared/best-ai-tools-for-audio-mastering/)
+- [Best AI Tools for Sound](/ai-tools-compared/best-ai-tools-for-sound-design/)
+- [AI Tools for Converting Code Comments into Developer Facing](/ai-tools-compared/ai-tools-for-converting-code-comments-into-developer-facing-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

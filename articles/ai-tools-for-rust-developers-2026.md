@@ -10,7 +10,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 ---
 layout: default
 title: "Best AI Coding Tools for Rust Developers 2026"
@@ -23,7 +24,8 @@ reviewed: true
 score: 8
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, artificial-intelligence]---
+tags: [ai-tools-compared, artificial-intelligence]
+---
 
 {% raw %}
 
@@ -37,6 +39,16 @@ Rust's ownership model, borrow checker, and type system create unique challenges
 - **A week-long trial with**: actual work gives better signal than feature comparison charts.
 - **Do these tools work**: offline? Most AI-powered tools require an internet connection since they run models on remote servers.
 - **How quickly do AI**: tool recommendations go out of date? AI tools evolve rapidly, with major updates every few months.
+
+## Table of Contents
+
+- [The Rust-Specific Challenge](#the-rust-specific-challenge)
+- [Borrow Checker Assistance](#borrow-checker-assistance)
+- [Async/Await Pattern Generation](#asyncawait-pattern-generation)
+- [Macro Generation](#macro-generation)
+- [Tool Rankings for Rust](#tool-rankings-for-rust)
+- [Practical Workflow](#practical-workflow)
+- [Related Reading](#related-reading)
 
 ## The Rust-Specific Challenge
 
@@ -289,6 +301,14 @@ cargo build 2>&1 | claude "explain these Rust errors and provide fixes"
 - [AI Coding Assistant for Rust Developers Compared](/ai-tools-compared/ai-coding-assistant-for-rust-developers-compared/)
 - [How to Evaluate AI Coding Assistant Accuracy](/ai-tools-compared/how-to-evaluate-ai-coding-assistant-accuracy/)
 - [AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026](/ai-tools-compared/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
+
+## Related Articles
+
+- [AI Tools for Interpreting Rust Compiler Borrow Checker](/ai-tools-compared/ai-tools-for-interpreting-rust-compiler-borrow-checker-error/)
+- [AI Coding Assistant for Rust Developers Compared](/ai-tools-compared/ai-coding-assistant-for-rust-developers-compared/)
+- [How Accurate Are AI Tools for Rust Unsafe Code Blocks](/ai-tools-compared/how-accurate-are-ai-tools-for-rust-unsafe-code-blocks-and-ff/)
+- [AI Code Generation Producing Syntax Errors in Rust Fix Guide](/ai-tools-compared/ai-code-generation-producing-syntax-errors-in-rust-fix-guide/)
+- [Best AI Tools for Writing Rust Async Code with Tokio](/ai-tools-compared/best-ai-tools-for-writing-rust-async-code-with-tokio-runtime/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

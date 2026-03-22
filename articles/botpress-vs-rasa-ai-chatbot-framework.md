@@ -41,6 +41,16 @@ This comparison focuses on practical implementation details to help you decide w
 - **This comparison focuses on**: practical implementation details to help you decide which framework fits your project.
 - **The DIETClassifier handles both**: intent classification and entity extraction in a single model, which often produces better results than separated approaches.
 
+## Table of Contents
+
+- [Architecture and Design Philosophy](#architecture-and-design-philosophy)
+- [Quick Comparison](#quick-comparison)
+- [Natural Language Understanding](#natural-language-understanding)
+- [Conversation Management](#conversation-management)
+- [Deployment and Production Considerations](#deployment-and-production-considerations)
+- [When to Choose Each Framework](#when-to-choose-each-framework)
+- [Code Example: Basic Echo Bot](#code-example-basic-echo-bot)
+
 ## Architecture and Design Philosophy
 
 ### Botpress
@@ -303,10 +313,9 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [AI Coding Assistants for Typescript Deno Fresh Framework Com](/ai-tools-compared/ai-coding-assistants-for-typescript-deno-fresh-framework-com/)
-- [Best AI Tools for Rust Web Development with Axum Framework](/ai-tools-compared/best-ai-tools-for-rust-web-development-with-axum-framework-2/)
-- [ChatGPT vs Custom Chatbot for Business: A Developer Guide](/ai-tools-compared/chatgpt-vs-custom-chatbot-for-business/)
-- [Copilot vs Codeium for JavaScript Framework-Specific Code](/ai-tools-compared/copilot-vs-codeium-for-javascript-framework-specific-code-ge/)
+- [Verloop vs Engati AI Chatbot Platform Compared](/ai-tools-compared/verloop-vs-engati-ai-chatbot-platform/)
+- [AI Tools for Generating UI Mockups Compared in 2026](/ai-tools-compared/ai-tools-for-generating-ui-mockups-compared-2026/)
 - [How to Use AI to Generate Serverless Framework Configuration](/ai-tools-compared/how-to-use-ai-to-generate-serverless-framework-configuration/)
-
+- [Best AI Tools for Rust Web Development with Axum Framework](/ai-tools-compared/best-ai-tools-for-rust-web-development-with-axum-framework-2/)
+- [Streamlit vs Gradio for AI Data Apps: A Practical Comparison](/ai-tools-compared/streamlit-vs-gradio-ai-data-apps/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -38,6 +38,17 @@ Multimodal coding tasks — where you provide an image or document alongside a t
 - **Use AI-generated tests as**: a starting point, then add cases that cover your unique requirements and failure modes.
 - **If you work with**: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.
 
+## Table of Contents
+
+- [Test Setup](#test-setup)
+- [Task 1: Database ERD to ORM Models](#task-1-database-erd-to-orm-models)
+- [Task 2: Screenshot to React Component](#task-2-screenshot-to-react-component)
+- [Task 3: Architecture Diagram to Kubernetes Config](#task-3-architecture-diagram-to-kubernetes-config)
+- [Task 4: API Documentation PDF to SDK Code](#task-4-api-documentation-pdf-to-sdk-code)
+- [Performance Summary](#performance-summary)
+- [Workflow Recommendation](#workflow-recommendation)
+- [Related Reading](#related-reading)
+
 ## Test Setup
 
 All tests use:
