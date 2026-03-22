@@ -23,6 +23,8 @@ AI assistants can generate HTML output, but without proper system prompts, the m
 
 When an AI assistant generates HTML fragments for your application, that code becomes part of your user interface. If the output lacks proper heading hierarchy, missing alt text on images, or no keyboard navigation support, you inherit accessibility violations that affect real users. Rather than fixing generated code manually, you can embed accessibility requirements directly into your system prompts.
 
+WCAG 2.1 AA is the benchmark most organizations target. It covers perceivability (text alternatives, adaptable content, distinguishable presentation), operability (keyboard access, timing, navigation), understandability (readable text, predictable behavior, input assistance), and robustness (compatibility with assistive technologies). AI-generated HTML that does not meet these criteria can expose your organization to legal risk and—more importantly—exclude users who rely on screen readers, keyboard navigation, or other assistive tools.
+
 
 ## Core Principles for System Prompts
 
@@ -50,6 +52,9 @@ Generate HTML for a product card component. All markup must be semantic HTML5. U
 ```
 
 
+The difference is measurable. The weak prompt produces a div-heavy layout with no ARIA attributes and a generic img tag. The strong prompt produces an article element, a headed hierarchy, and alt text that describes the product.
+
+
 ### Specify Constraints Explicitly
 
 
@@ -64,6 +69,12 @@ Your output must follow these rules:
 4. Use <nav> for navigation regions, <main> for primary content, <footer> for footer
 5. Any element hidden from screen readers must use aria-hidden="true"
 ```
+
+
+### Include Negative Constraints
+
+
+Positive rules tell the model what to do. Negative constraints tell it what to avoid. Both matter. AI models trained on large codebases have encountered countless examples of inaccessible patterns—placeholder-as-label, onclick on divs, decorative images without empty alt text. Explicitly banning these patterns reduces their occurrence in output.
 
 
 ## Practical System Prompt Examples
@@ -124,6 +135,22 @@ Return clean, semantic HTML5 markup.
 ```
 
 
+## Writing Prompts for Specific AI Tools
+
+
+System prompt behavior varies across tools. Understanding these differences helps you write prompts that work reliably.
+
+**Claude (via API or Claude.ai Projects):** Claude responds well to structured rules lists with numbered constraints. Use the Projects feature to store your accessibility system prompt persistently, so it applies to every conversation without re-pasting.
+
+**ChatGPT (via Custom GPTs or API):** OpenAI's system prompt field in the API behaves consistently. Custom GPTs allow you to embed instructions in the configuration interface. For HTML generation tasks, including a brief example of desired output in the system prompt significantly improves consistency.
+
+**GitHub Copilot Chat:** Copilot Chat does not have a traditional system prompt mechanism, but you can prepend a rules block to your chat messages. Saving a snippet with your accessibility rules makes this repeatable.
+
+**Cursor AI:** Use the `.cursorrules` file to define persistent instructions. For HTML generation, add a dedicated section specifying semantic requirements. Cursor applies these rules to every generation in the project.
+
+The underlying principle is the same across tools: persistent, explicit, structured rules outperform ad hoc prompting.
+
+
 ## Combining Prompts with Output Validation
 
 
@@ -153,9 +180,16 @@ function validateAccessibleHTML(html) {
     issues.push('Found empty links with no accessible text');
   }
 
+  // Check for div-based buttons
+  if (html.match(/<div[^>]*onclick/i)) {
+    issues.push('Interactive div elements found — use button instead');
+  }
+
   return issues;
 }
 ```
+
+For production workflows, replace this manual check with an established library. `axe-core` can run in Node.js and validate HTML strings programmatically. `html-validate` offers a ruleset specifically aligned with WCAG. Running either after AI generation catches issues before they reach your codebase.
 
 
 ## Testing Generated Output
@@ -168,9 +202,11 @@ After implementing your system prompt, verify the output with accessibility tool
 
 2. Test keyboard navigation manually—can you tab through all interactive elements?
 
-3. Use a screen reader to experience the content as users would
+3. Use a screen reader to experience the content as users would; NVDA (Windows, free), JAWS (Windows, paid), and VoiceOver (macOS/iOS, built-in) are the most widely used
 
-4. Check color contrast ratios meet WCAG AA standards (4.5:1 for normal text)
+4. Check color contrast ratios meet WCAG AA standards (4.5:1 for normal text, 3:1 for large text)
+
+5. Run Lighthouse in Chrome DevTools and aim for an Accessibility score above 90
 
 
 ## Common Pitfalls to Avoid
@@ -179,7 +215,7 @@ After implementing your system prompt, verify the output with accessibility tool
 Several patterns consistently produce inaccessible HTML:
 
 
-- Using <div> and <span> for interactive elements instead of <button> or <a>
+- Using `<div>` and `<span>` for interactive elements instead of `<button>` or `<a>`
 
 - Relying solely on color to convey information
 
@@ -188,6 +224,8 @@ Several patterns consistently produce inaccessible HTML:
 - Creating content that requires mouse interaction
 
 - Using generic link text like "here" or "read more"
+
+- Generating images with missing or empty alt text when images are informative
 
 
 Add these as explicit exclusions in your system prompts:
@@ -200,6 +238,7 @@ Never do the following:
 - Create links with non-descriptive text
 - Use <img> without alt attribute
 - Rely on color alone to convey meaning
+- Skip heading levels (e.g., jump from h1 to h3)
 ```
 
 
@@ -229,35 +268,227 @@ Exclusions:
 Output only the HTML markup without additional explanation.
 ```
 
+Treat this prompt as a living document. As your projects evolve—adding new component types, adopting new frameworks, or responding to audit findings—update the prompt to reflect new requirements. Version-control your system prompts alongside your code so changes are traceable and reversible.
 
 
 ## Frequently Asked Questions
 
 
-**How long does it take to write system prompts for ai assistants that produce?**
+**How long does it take to write system prompts for accessible HTML generation?**
 
-For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your credentials and environment ready before starting saves significant time.
+For a straightforward setup, expect 30 minutes to 2 hours depending on your familiarity with the tools involved. Complex configurations with custom requirements may take longer. Having your accessibility standards documented before starting saves significant time.
 
 
 **What are the most common mistakes to avoid?**
 
-The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully. Follow the steps in order, verify each one works before moving on, and check the official documentation if something behaves unexpectedly.
+The most frequent issues are vague constraints ("make it accessible"), not testing generated output with real tools, and skipping negative constraints. Follow the steps in order, verify each generation works before moving on, and check axe or WAVE to confirm compliance.
 
 
 **Do I need prior experience to follow this guide?**
 
-Basic familiarity with the relevant tools and command line is helpful but not strictly required. Each step is explained with context. If you get stuck, the official documentation for each tool covers fundamentals that may fill in knowledge gaps.
+Basic familiarity with HTML and WCAG guidelines is helpful but not strictly required. Each step is explained with context. If you get stuck, the MDN Web Docs accessibility section and the official WCAG 2.1 specification cover fundamentals that fill in knowledge gaps.
 
 
 **Can I adapt this for a different tech stack?**
 
-Yes, the underlying concepts transfer to other stacks, though the specific implementation details will differ. Look for equivalent libraries and patterns in your target stack. The architecture and workflow design remain similar even when the syntax changes.
+Yes, the underlying concepts transfer to other stacks. For React, you would adapt these HTML patterns to JSX—for example, `htmlFor` instead of `for` on label elements. For Vue, the same semantic principles apply within template blocks. The accessibility requirements are framework-agnostic.
 
 
 **Where can I get help if I run into issues?**
 
-Start with the official documentation for each tool mentioned. Stack Overflow and GitHub Issues are good next steps for specific error messages. Community forums and Discord servers for the relevant tools often have active members who can help with setup problems.
+Start with the official WCAG 2.1 documentation and the axe-core GitHub repository. The WebAIM community forum and the A11y Project Slack are active resources for accessibility-specific questions. For prompt engineering issues, Anthropic's and OpenAI's developer documentation cover system prompt behavior in detail.
 
+
+## Advanced Prompt Techniques for Production Systems
+
+Once you're comfortable with basic system prompts, these advanced patterns help you control AI output at scale.
+
+### Technique 1: Constraint Ladder
+
+Rather than listing all constraints at once, organize them by priority:
+
+```
+CRITICAL (never violate):
+- All interactive elements must be keyboard accessible
+- Never output img tags without alt attributes
+- Form fields must have labels
+
+IMPORTANT (follow unless user explicitly asks otherwise):
+- Use semantic HTML5 elements
+- Keep CSS classes minimal
+- Use aria-label only when semantic HTML won't work
+
+NICE TO HAVE (follow if reasonable):
+- Include comments explaining accessibility decisions
+- Use BEM naming convention for classes
+- Validate against WCAG 2.1 AA standards
+```
+
+This prevents over-specification that makes AI conservative, while ensuring critical requirements are always met.
+
+### Technique 2: Example-Driven Prompts
+
+Instead of describing rules, show examples:
+
+```
+You generate accessible component HTML. Here are three examples of correct output:
+
+EXAMPLE 1 - Form field:
+<label for="email-input">Email Address</label>
+<input id="email-input" type="email" required aria-required="true">
+
+EXAMPLE 2 - Navigation:
+<nav>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About</a></li>
+  </ul>
+</nav>
+
+EXAMPLE 3 - Modal:
+<dialog open aria-labelledby="modal-title">
+  <h2 id="modal-title">Confirm Action</h2>
+  <button>Cancel</button>
+  <button>Confirm</button>
+</dialog>
+
+Generate similar HTML for: [USER REQUEST]
+```
+
+AI consistency improves dramatically when it can pattern-match against examples.
+
+### Technique 3: Constraint Chains
+
+For complex output requirements, create conditional logic:
+
+```
+IF the component is interactive (button, link, input, select):
+  THEN it must have a text label or aria-label
+  AND it must respond to keyboard navigation
+  AND it must have sufficient color contrast
+
+IF the component displays dynamic data (list, table, data):
+  THEN it must have a clear heading or aria-label
+  AND it must include loading and error states
+  AND it must be responsive to screen reader announcements
+
+IF the component is decorative only:
+  THEN use aria-hidden="true"
+  AND ensure it doesn't affect keyboard navigation
+```
+
+This logic prevents conflicting requirements (e.g., "add aria-label to everything" leading to redundant labels on labeled inputs).
+
+## Testing System Prompts for Effectiveness
+
+Don't assume a system prompt works—validate it:
+
+```javascript
+// Test suite for validating system prompt effectiveness
+const testCases = [
+  {
+    input: "Create a login form",
+    shouldContain: ['<label', 'aria-required', '<button'],
+    shouldNotContain: ['placeholder (for="', '<div onclick="'],
+    accessibilityScore: 0.9
+  },
+  {
+    input: "Build a data table",
+    shouldContain: ['<caption>', '<thead>', 'scope="col"'],
+    shouldNotContain: ['<div></div>', 'width="100%"'],
+    accessibilityScore: 0.95
+  }
+];
+
+async function validatePrompt(systemPrompt, testCases) {
+  const results = [];
+  for (const test of testCases) {
+    const response = await callAI(systemPrompt, test.input);
+    const passed = test.shouldContain.every(s => response.includes(s)) &&
+                   !test.shouldNotContain.some(s => response.includes(s));
+    results.push({
+      test: test.input,
+      passed,
+      score: passed ? 1.0 : 0.5
+    });
+  }
+  return results;
+}
+```
+
+Run this validation test against your system prompt before deployment. Iterate on the prompt if pass rate is below 85%.
+
+## Prompt Versioning and A/B Testing
+
+For production systems, version your prompts and track effectiveness:
+
+```
+System Prompt v1 (baseline):
+"Generate accessible HTML components"
+
+System Prompt v2 (with constraints):
+"Generate accessible HTML. Requirements: semantic HTML5, explicit labels for inputs, keyboard navigation"
+
+System Prompt v3 (with examples):
+[includes example components]
+
+System Prompt v4 (with constraint chains):
+[includes conditional logic]
+
+Metrics tracking:
+- v1: 65% passes accessibility validation
+- v2: 78% passes
+- v3: 89% passes
+- v4: 94% passes
+```
+
+Deploy v3 or v4 based on your accuracy requirements and latency tolerances.
+
+## Integration with Design Systems
+
+Link your system prompts to your design system to ensure consistency:
+
+```
+You generate HTML components that implement our design system.
+Reference: https://design.company.com/
+
+Component library standards:
+- Use only colors from our palette
+- Use only font sizes: 12px, 14px, 16px, 18px, 24px, 32px
+- Use only spacing units: 4px, 8px, 16px, 24px, 32px
+- Use consistent button styles from Button.tsx
+- Use our Icon component from @company/icons
+
+When generating UI, reference existing patterns from https://github.com/company/design-system
+```
+
+This prevents drift between AI-generated components and your actual design system.
+
+## Monitoring System Prompt Effectiveness Over Time
+
+Track how well your system prompt performs:
+
+```python
+# Log system prompt effectiveness metrics
+metrics = {
+    "timestamp": "2026-03-22T10:00:00Z",
+    "system_prompt_version": "v4",
+    "requests_processed": 247,
+    "accessibility_failures": 15,  # Down from 54 with v1
+    "semantic_html_violations": 3,
+    "label_missing_errors": 1,
+    "keyboard_accessibility_failures": 0,
+    "user_feedback_score": 4.7  # Out of 5
+}
+
+# Track over time
+historical_data = [metrics_week1, metrics_week2, metrics_week3]
+improvement = (metrics_week1["accessibility_failures"] -
+               metrics_week3["accessibility_failures"]) / metrics_week1["accessibility_failures"]
+# Result: 81% reduction in failures over 3 weeks
+```
+
+Use this data to justify refinement investments and identify where the prompt needs adjustment.
 
 ## Related Articles
 

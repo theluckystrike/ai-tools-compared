@@ -27,6 +27,9 @@ Your Gemini workspace contains more than just chat logs. Depending on your subsc
 Developers and power users especially benefit from exporting conversation history because those threads often contain debugging sessions, architectural discussions, and code generation that you may want to reference later.
 
 
+There is also a practical timing consideration: once your Gemini subscription lapses, you may lose access to Gems you created, shared prompts, and older conversation threads depending on your account type. Export before canceling, not after.
+
+
 ## What Data You Can Export
 
 
@@ -187,6 +190,87 @@ def export_gems(gemini_path: str) -> dict:
 Document these custom instructions manually, as they represent valuable workflows you may want to recreate in Claude.
 
 
+## Recreating Gems as Claude Projects
+
+
+Claude Team uses Projects instead of Gems. A Project is a persistent workspace with custom instructions, uploaded files, and shared conversation history for your team. The mapping from Gemini Gems to Claude Projects is fairly direct:
+
+
+| Gemini Gem Feature | Claude Project Equivalent |
+|-------------------|---------------------------|
+| Custom instructions | Project system prompt |
+| Tool access (web search) | Claude's built-in web search |
+| Tool access (code execution) | Claude's built-in code execution |
+| Shared prompts | Shared project instructions |
+| Name and description | Project name and description |
+
+
+To recreate a Gem as a Claude Project:
+
+1. Open Claude Team and create a new Project
+2. Paste the Gem's system instructions into the Project instructions field
+3. Upload any reference documents the Gem depended on
+4. Invite the relevant team members to the Project
+
+
+For Gems that used Google-specific tool integrations (Google Docs, Sheets, Drive), you will need alternative approaches in Claude since direct Google Workspace integration works differently. Claude can read documents you upload directly, or you can use copy-paste workflows.
+
+
+## Searching and Indexing Your Exported History
+
+
+After exporting, your Gemini conversation history can become a searchable reference library. Use tools like `ripgrep` or build a simple search interface:
+
+
+```python
+import sqlite3
+import json
+from pathlib import Path
+
+def index_conversations(conversations: list[dict], db_path: str = "gemini_history.db"):
+    """Index conversations in SQLite for fast search."""
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS messages (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            conversation_title TEXT,
+            role TEXT,
+            content TEXT,
+            timestamp TEXT
+        )
+    """)
+
+    for conv in conversations:
+        title = conv.get('title', 'Untitled')
+        for msg in conv.get('messages', []):
+            cursor.execute(
+                "INSERT INTO messages (conversation_title, role, content, timestamp) VALUES (?, ?, ?, ?)",
+                (title, msg.get('role'), msg.get('content'), msg.get('timestamp'))
+            )
+
+    conn.commit()
+    conn.close()
+    print(f"Indexed {len(conversations)} conversations")
+
+def search_history(query: str, db_path: str = "gemini_history.db"):
+    """Full-text search across conversation history."""
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+    cursor.execute(
+        "SELECT conversation_title, role, content FROM messages WHERE content LIKE ? LIMIT 20",
+        (f"%{query}%",)
+    )
+    results = cursor.fetchall()
+    conn.close()
+    return results
+```
+
+
+This gives you a local, searchable archive of all your Gemini work—useful when you need to recall how you solved a specific problem months ago.
+
+
 ## Preserving Context for Claude Migration
 
 
@@ -252,6 +336,8 @@ Before canceling your Gemini subscription:
 4. **Test restoration** - Confirm you can read and search your exported data
 
 5. **Keep local backups** - Store exports in multiple locations
+
+6. **Overlap subscriptions briefly** - Consider keeping both active for 1-2 weeks during the transition to catch anything you missed
 
 
 

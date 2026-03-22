@@ -27,6 +27,9 @@ Stable Diffusion gives you control over every aspect of the generation process. 
 When migrating workflows, you trade explicit configuration for Midjourney's style-oriented parameters. Instead of specifying "Euler a sampler at 25 steps with CFG 7," you describe the visual outcome you want and let Midjourney's models interpret your intent.
 
 
+The tradeoff is real: you gain consistently polished output with less fiddling, but you lose reproducibility and the ability to make surgical adjustments. If your SD workflow depends on precise ControlNet poses or inpainting for specific edits, Midjourney will require workarounds or a hybrid approach.
+
+
 ## Prompt Conversion Strategies
 
 
@@ -65,14 +68,11 @@ For text prompts without explicit weighting, map your Stable Diffusion emphasis 
 
 
 | Stable Diffusion | Midjourney Equivalent |
-
 |-----------------|----------------------|
-
 | `(term:1.2)` | Repeat term or use `::` weight |
-
 | `(term:0.8)` | Use lower weight: `term::0.5` |
-
 | `[term]` | Omit or deprioritize in prompt |
+| Negative prompt | `--no term1 term2` |
 
 
 ## Parameter Mapping Reference
@@ -81,24 +81,37 @@ For text prompts without explicit weighting, map your Stable Diffusion emphasis 
 Stable Diffusion users configure numerous explicit parameters. Here's how they translate to Midjourney:
 
 
+### Full Parameter Comparison Table
+
+
+| SD Parameter | Typical Range | Midjourney Equivalent | Notes |
+|-------------|---------------|-----------------------|-------|
+| CFG Scale | 7-9 (standard) | `--cfg 0-100` | MJ default ~7, higher = more literal |
+| Steps | 20-40 | `--quality 0.25-2` | Higher quality = more compute |
+| Seed | Any int | `--seed 0-4294967295` | Same seed = reproducible outputs |
+| Width x Height | 512-1024px | `--ar W:H` | Aspect ratio only, no fixed pixels |
+| Sampler | Euler, DPM++ | Not exposed | Managed internally by MJ |
+| Denoising (i2i) | 0.0-1.0 | `--iw 0-3` | Image weight for reference inputs |
+
+
 ### Sampling and Steps
 
 
 Stable Diffusion's sampler selection (Euler, DPM++, DDIM) has no direct Midjourney equivalent. Midjourney manages this internally. However, you can control iteration behavior:
 
 
-Midjourney uses `--step` or `--steps` for iteration count (range 10-1000, default varies by model). The `--quality` or `--q` flag adjusts rendering time (0.25, 0.5, 1, 2).
+Midjourney uses `--quality` or `--q` to adjust rendering time (0.25, 0.5, 1, 2). Higher values spend more GPU time and generally produce more detail.
 
 
 ```
-/imagine prompt: serene mountain landscape --steps 100 --quality 1
+/imagine prompt: serene mountain landscape --quality 1
 ```
 
 
 ### CFG Scale
 
 
-Stable Diffusion's CFG (Classifier Free Guidance) scale ranges from 1-30, typically around 7-9 for normal operation. Midjourney uses `--cfg` with a narrower range (0-100, default varies):
+Stable Diffusion's CFG (Classifier Free Guidance) scale ranges from 1-30, typically around 7-9 for normal operation. Midjourney uses `--cfg` with a similar effective range:
 
 
 ```
@@ -123,12 +136,7 @@ Stable Diffusion defaults to 512x512 or 768x768, with common XL outputs at 1024x
 ```
 
 
-For high-resolution output, Midjourney's upscaling happens post-generation:
-
-
-```
-/imagine prompt: detailed portrait --ar 4:5 --upbeta
-```
+For high-resolution output, Midjourney's upscaling happens post-generation. Use the Upscale buttons after generation, or add `--upbeta` for the enhanced upscaling model.
 
 
 ## Workflow Adaptation Patterns
@@ -148,19 +156,27 @@ If you used Automatic1111's web UI, your iteration loop likely looked like this:
 
 Key commands for iteration:
 
+- **V1-V4** — Create variations of any of the four generated images
+- **U1-U4** — Upscale the selected image
+- **Re-roll** — Run the same prompt again with a new seed
+- `/imagine` with `--seed NNNN` — Reproduce a specific output
 
-Use V1-V4 to create variations of any generated image, the regenerate button to rerun the same prompt, and the Upscale option to increase resolution of selected images.
+
+The Discord interface feels clunky compared to A1111's web UI at first. Consider using Midjourney's native web app at midjourney.com for a more organized workspace with image history, folders, and prompt search.
 
 
 ### ControlNet Equivalents
 
 
-Stable Diffusion's ControlNet provides precise structural control through pose detection, depth maps, and edge detection. Midjourney offers `--cref' for character reference and `--sref' for style reference:
+Stable Diffusion's ControlNet provides precise structural control through pose detection, depth maps, and edge detection. Midjourney offers `--cref` for character reference and `--sref` for style reference:
 
 
 ```
 /imagine prompt: fashion photograph --sref [style_image_url] --cref [character_image_url]
 ```
+
+
+The `--cref` weight can be controlled with `--cw` (0-100), where lower values preserve only the face and higher values carry over body proportions and clothing.
 
 
 For structural guidance similar to ControlNet's Canny or Depth, use Midjourney's image prompting with descriptive weights:
@@ -169,6 +185,9 @@ For structural guidance similar to ControlNet's Canny or Depth, use Midjourney's
 ```
 /imagine prompt: [edge_description] [target_subject] --iw 0.7
 ```
+
+
+This is a meaningful capability gap. If your workflow depends heavily on ControlNet for consistent character poses or architectural layouts, you will find Midjourney's tools less precise. Some teams maintain a hybrid workflow: use SD with ControlNet for structural reference, then use Midjourney's `--sref` to apply aesthetic styles on top.
 
 
 ### Batch Processing
@@ -182,7 +201,7 @@ Stable Diffusion excels at batch generation for testing prompts or creating vari
 ```
 
 
-This generates four variations from the same prompt, useful for rapid iteration.
+This generates four independent image sets from the same prompt, useful for rapid iteration. Note that `--repeat` consumes GPU time proportionally—`--repeat 4` uses four times your standard GPU allocation.
 
 
 ## Model Version Management
@@ -192,11 +211,10 @@ Stable Diffusion checkpoint files provide explicit model selection. Midjourney u
 
 
 ```
---v 6          # Current version (as of early 2026)
+--v 6          # Current flagship version (as of early 2026)
 --v 5.2        # Previous versions available
---niji         # Anime-styled output
---test         # Test builds
---testp        # Test with photography focus
+--niji 6       # Anime-styled output, excellent for illustrations
+--style raw    # Less opinionated, closer to literal prompt following
 ```
 
 
@@ -204,14 +222,14 @@ For workflows requiring specific aesthetic characteristics, version selection re
 
 
 | Task | Stable Diffusion | Midjourney |
-
 |------|-----------------|------------|
-
-| Photorealism | Realistic Vision | `--v 6 --style photorealistic` |
-
-| Illustration | Anime/Comic models | `--niji 6` |
-
+| Photorealism | Realistic Vision, Juggernaut | `--v 6 --style raw` |
+| Anime/Illustration | AnyLoRA, Pony, Counterfeit | `--niji 6` |
 | General art | SDXL, Pony | `--v 6` |
+| Stylized renders | DreamShaper | `--v 6 --stylize 1000` |
+
+
+The `--stylize` flag (range 0-1000, default 100) controls how strongly Midjourney applies its aesthetic preferences. Lower values produce more literal prompt adherence; higher values lean into Midjourney's signature style.
 
 
 ## Practical Example: Portrait Workflow Conversion
@@ -240,7 +258,8 @@ Equivalent Midjourney workflow:
 
 
 ```
-/imagine prompt: realistic portrait, 1woman, sharp eyes, detailed skin texture --ar 3:4 --v 6 --style photorealistic --no blurry low quality distorted ugly --step 40 --cfg 8
+/imagine prompt: realistic portrait, 1woman, sharp eyes, detailed skin texture
+--ar 3:4 --v 6 --style raw --no blurry low quality distorted ugly --cfg 8
 ```
 
 
@@ -253,16 +272,18 @@ Note how negative prompts use `--no` in Midjourney rather than a separate parame
 Stable Diffusion workflows often chain multiple generation stages: initial generation, img2img refinement, inpainting for corrections, then upscaling. Midjourney handles this differently:
 
 
-1. Generation: Initial creation with `--step` for quality control
+1. **Generation**: Initial creation with `--quality` for detail control
 
-2. Upscaling: Built-in upscale options after generation
+2. **Upscaling**: Built-in upscale options after generation (Upscale Subtle, Upscale Creative)
 
-3. Inpainting: Not natively supported; requires external tools or regeneration
+3. **Inpainting**: Not natively supported; requires external tools (Adobe Firefly, DALL-E, or back to SD)
 
-4. Variation: Use V buttons or `--seed` manipulation for iterations
+4. **Variation**: Use V buttons or `--seed` manipulation for directed iterations
+
+5. **Style transfer**: `--sref` for applying aesthetic styles from reference images
 
 
-For complex pipelines requiring inpainting, consider maintaining Stable Diffusion as a secondary tool while using Midjourney for initial exploration and final outputs.
+For complex pipelines requiring inpainting, consider maintaining Stable Diffusion as a secondary tool while using Midjourney for initial exploration and final outputs. The two tools complement each other well—Midjourney for ideation and aesthetic polish, SD for precise corrections and automation.
 
 
 

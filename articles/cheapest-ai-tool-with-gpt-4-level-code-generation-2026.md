@@ -32,8 +32,10 @@ Before looking at alternatives, let us establish what "GPT-4 level" means for co
 
 - Debugging proficiency: Identifying and fixing errors in existing code
 
+- Test generation: Writing meaningful unit tests that cover edge cases
 
-Tools that meet these criteria at lower price points represent the best value for developers.
+
+Tools that meet these criteria at lower price points represent the best value for developers. As a reference baseline, GPT-4o scores around 90% on HumanEval (OpenAI's Python coding benchmark) and approximately 72% on the more difficult LiveCodeBench. Any tool claiming GPT-4 parity should come close to these numbers.
 
 
 ## Top Budget-Friendly AI Code Generation Tools
@@ -47,11 +49,11 @@ Anthropic's Claude Code offers a generous free tier that covers most individual 
 
 **Pricing:**
 
-- Free for individual developers
+- Free for individual developers with usage limits
 
 - Pro plan: $20/month for higher limits
 
-- Claude Code CLI: Completely free
+- Claude Code CLI: Free to use with your Anthropic account
 
 
 **Code generation example:**
@@ -92,10 +94,10 @@ def process_user_data(user_id: int, data: dict) -> dict:
 ```
 
 
-The free tier handles most coding tasks effectively, making it the top choice for budget-conscious developers.
+The free tier handles most coding tasks effectively. Claude Sonnet 4.5 (the current default model) scores around 93% on HumanEval, matching or exceeding GPT-4o on most coding tasks. The terminal-first approach with `claude` CLI commands makes it the top choice for budget-conscious developers.
 
 
-### 2. Gemini 2.0 (Free Through Google AI Studio)
+### 2. Gemini 2.0 Flash (Free Through Google AI Studio)
 
 
 Google's Gemini 2.0 Flash model provides impressive code generation through AI Studio, completely free with generous rate limits.
@@ -103,77 +105,126 @@ Google's Gemini 2.0 Flash model provides impressive code generation through AI S
 
 **Pricing:**
 
-- Free tier: 15 RPM, 1M tokens/month
+- Free tier: 15 RPM, 1 million tokens/day via AI Studio
 
-- Paid tier: $0.075/million input tokens
-
-
-**Use case:** Excellent for quick code generation and understanding unfamiliar APIs.
+- Paid API: $0.075 per million input tokens, $0.30 per million output tokens
 
 
-### 3. Qwen 2.5 Coder (Open Source)
+**Use case:** Excellent for quick code generation, understanding unfamiliar APIs, and tasks that benefit from long context — Gemini 2.0 Flash supports a 1 million token context window even on the free tier, making it uniquely suited to analyzing large codebases in a single prompt.
+
+**Setup:**
+
+```bash
+# Install the Google Generative AI SDK
+pip install google-generativeai
+
+# Use Gemini 2.0 Flash via Python
+import google.generativeai as genai
+genai.configure(api_key="YOUR_API_KEY")  # Free key from aistudio.google.com
+
+model = genai.GenerativeModel("gemini-2.0-flash")
+response = model.generate_content("Write a Python async rate limiter class")
+print(response.text)
+```
 
 
-Alibaba's Qwen 2.5 Coder is an open-source model that punches above its weight class in code generation benchmarks.
+### 3. Qwen 2.5 Coder (Open Source, Self-Hosted)
+
+
+Alibaba's Qwen 2.5 Coder is an open-source model that punches above its weight class in code generation benchmarks. The 32B parameter version scores 92.9% on HumanEval, matching GPT-4o.
 
 
 **Pricing:**
 
-- Completely free (self-hosted option)
+- Completely free (self-hosted via Ollama or llama.cpp)
 
-- API pricing available through cloud providers
+- API access through cloud providers (Together AI, Fireworks) at ~$0.20/million tokens
 
 
 **Running locally:**
 
 
 ```bash
-# Run Qwen 2.5 Coder locally with Ollama
+# Run Qwen 2.5 Coder locally with Ollama (requires 8GB+ VRAM for 7B, 20GB+ for 32B)
+ollama pull qwen2.5-coder:7b
 ollama run qwen2.5-coder:7b
 
 # Example interaction
 # >>> Write a Python function to calculate Fibonacci numbers
-# >>> def fibonacci(n: int) -> list[int]:
-# ...     """Generate Fibonacci sequence up to n numbers."""
-# ...     if n <= 0:
-# ...         return []
-# ...     fib_sequence = [0, 1]
-# ...     while len(fib_sequence) < n:
-# ...         fib_sequence.append(fib_sequence[-1] + fib_sequence[-2])
-# ...     return fib_sequence[:n]
+# def fibonacci(n: int) -> list[int]:
+#     """Generate Fibonacci sequence up to n numbers."""
+#     if n <= 0:
+#         return []
+#     fib_sequence = [0, 1]
+#     while len(fib_sequence) < n:
+#         fib_sequence.append(fib_sequence[-1] + fib_sequence[-2])
+#     return fib_sequence[:n]
 ```
 
 
-Self-hosting eliminates API costs entirely, though it requires local compute resources.
+Self-hosting eliminates API costs entirely, though it requires local compute resources. The 7B model runs on a laptop with 16GB RAM; the 32B model needs a dedicated GPU workstation or cloud instance.
 
 
 ### 4. DeepSeek Coder V2 (Free API Available)
 
 
-DeepSeek Coder V2 offers an API with a generous free tier that works well for moderate usage.
+DeepSeek Coder V2 offers an API with a generous free tier. It scores 90.2% on HumanEval and performs particularly well on competitive programming problems.
 
 
 **Pricing:**
 
-- Free tier: 2M tokens/day
+- Free tier: 2 million tokens/day
 
-- Paid: $0.14/million input tokens
+- Paid: $0.14 per million input tokens (cache hit), $0.28 per million output tokens
+
+
+**API usage:**
+
+```python
+from openai import OpenAI
+
+# DeepSeek uses the OpenAI-compatible API format
+client = OpenAI(
+    api_key="YOUR_DEEPSEEK_KEY",  # Free key from platform.deepseek.com
+    base_url="https://api.deepseek.com"
+)
+
+response = client.chat.completions.create(
+    model="deepseek-coder",
+    messages=[{"role": "user", "content": "Write a Rust rate limiter"}],
+)
+print(response.choices[0].message.content)
+```
+
+
+### 5. GitHub Copilot Free (New in 2025)
+
+
+GitHub now offers a free tier for Copilot with 2,000 completions per month and 50 chat messages per month — enough for light to moderate individual use.
+
+
+**Pricing:**
+
+- Free: 2,000 completions/month, 50 chat messages/month (GitHub account required)
+
+- Individual: $10/month for unlimited completions
+
+- Business: $19/user/month with policy controls
+
+
+This makes Copilot the only major commercial inline code completion tool with a meaningful free tier, and it integrates directly into VSCode, JetBrains, Vim, and Neovim without any additional configuration.
 
 
 ## Comparative Benchmark
 
 
-| Tool | Free Tier | Paid Tier | Code Quality | Best For |
-
-|------|-----------|-----------|--------------|----------|
-
-| Claude Code | Unlimited | $20/mo | Excellent | Terminal workflow |
-
-| Gemini 2.0 | 1M tokens/mo | $0.075/M | Very Good | Quick generation |
-
-| Qwen 2.5 | Unlimited | Free | Good | Self-hosting |
-
-| DeepSeek | 2M tokens/day | $0.14/M | Very Good | High volume |
+| Tool | Free Tier | Paid Tier | HumanEval Score | Best For |
+|------|-----------|-----------|-----------------|----------|
+| Claude Code | Limited free | $20/month | ~93% | Terminal workflow, agents |
+| Gemini 2.0 Flash | 1M tokens/day | $0.075/M | ~88% | Long context, large files |
+| Qwen 2.5 Coder 32B | Unlimited (local) | Free | 92.9% | Privacy, self-hosted |
+| DeepSeek Coder V2 | 2M tokens/day | $0.14/M | 90.2% | High volume, competitive |
+| GitHub Copilot Free | 2K completions/month | $10/month | ~87% | Inline IDE completions |
 
 
 ## Practical Examples Across Languages
@@ -275,19 +326,17 @@ impl RateLimiter {
 When selecting the cheapest AI tool with GPT-4 level code generation, consider these factors:
 
 
-1. Usage volume: If you generate code constantly, self-hosted options like Qwen 2.5 eliminate per-token costs
-
-2. Integration needs: Claude Code works in terminal workflows
-
-3. Language requirements: Some tools excel in specific languages—test your primary stack
-
-4. Privacy concerns: Self-hosting keeps code entirely local
+1. **Usage volume**: If you generate code constantly, self-hosted Qwen 2.5 Coder eliminates per-token costs entirely
+2. **Integration needs**: Claude Code and GitHub Copilot integrate into existing terminal and IDE workflows
+3. **Language requirements**: Test your primary stack — DeepSeek Coder V2 excels at competitive programming, while Claude handles multi-file refactoring better
+4. **Privacy concerns**: Self-hosting Qwen 2.5 Coder keeps all code on your own hardware
+5. **Context length**: Gemini 2.0 Flash's 1M token context window is unmatched for large codebase analysis
 
 
-For most developers in 2026, Claude Code's free tier provides the best balance of capability and cost. The quality matches or exceeds GPT-4 for typical coding tasks, and the terminal-first approach fits naturally into existing workflows.
+For most developers in 2026, Claude Code's free tier or GitHub Copilot Free provides the best balance of capability and cost. The quality matches or exceeds GPT-4 for typical coding tasks.
 
 
-If you need higher volume or specific features, Gemini 2.0 through Google AI Studio offers excellent value, while Qwen 2.5 Coder provides a viable free alternative for those willing to run locally.
+If you need higher volume or specific features, Gemini 2.0 through Google AI Studio offers excellent value at scale, while Qwen 2.5 Coder provides a compelling free alternative for those willing to run locally.
 
 
 The "cheapest" option ultimately depends on your specific use case, but these tools ensure you do not need to sacrifice quality for affordability.

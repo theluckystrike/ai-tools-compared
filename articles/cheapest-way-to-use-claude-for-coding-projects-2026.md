@@ -30,6 +30,17 @@ Anthropic offers Claude through multiple channels, each with different pricing m
 Claude API uses a token-based pricing model where you pay for both input tokens (your prompts) and output tokens (Claude's responses). The pricing varies by model—Haiku is the cheapest, Sonnet offers the best value, and Opus provides the highest capability at premium rates.
 
 
+As of early 2026, the approximate pricing tiers are:
+
+| Model | Input (per 1M tokens) | Output (per 1M tokens) | Best Use Case |
+|-------|-----------------------|------------------------|---------------|
+| Claude 3 Haiku | $0.25 | $1.25 | Simple, repetitive tasks |
+| Claude 3.5 Sonnet | $3.00 | $15.00 | Code review, refactoring |
+| Claude 3 Opus | $15.00 | $75.00 | Complex reasoning, research |
+
+For most coding tasks, Haiku and Sonnet cover 95% of use cases at a fraction of Opus pricing.
+
+
 ## Free Options for Individual Developers
 
 
@@ -55,7 +66,7 @@ claude
 ```
 
 
-The free tier includes access to Sonnet (the mid-tier model), which handles most coding tasks effectively. This works well for code reviews, debugging, refactoring, and generating boilerplate code.
+The free tier includes access to Sonnet (the mid-tier model), which handles most coding tasks effectively. This works well for code reviews, debugging, refactoring, and generating boilerplate code. Usage limits apply—heavy daily usage will eventually hit the free cap, at which point you either wait until the next day or upgrade to the paid Max plan.
 
 
 ### Anthropic Console
@@ -77,6 +88,18 @@ def validate_email(email: str) -> bool:
     pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
     return bool(re.match(pattern, email))
 ```
+
+
+### Third-Party Integrations with Free Plans
+
+
+Several tools give you access to Claude without paying Anthropic directly:
+
+- **Cursor** — the AI code editor includes Claude Sonnet in its Hobby tier (free, limited requests)
+- **Codeium** — offers Claude access through its Pro plan with a free trial period
+- **GitHub Copilot** — experimentally supports Claude models on certain plan tiers
+
+These indirect routes can extend your zero-cost Claude usage significantly if you work primarily inside an IDE.
 
 
 ## Cost-Effective API Strategies
@@ -125,22 +148,45 @@ prompt = f"""Review this entire file:
 
 # Cost-effective: Relevant snippet only
 prompt = """Review this function for bugs:
-```python
 def process_data(data):
-
- return data.filter(x => x > 0)
-
-```"""
+    return data.filter(x => x > 0)
+"""
 ```
 
 
-Reducing prompt length by 75% translates directly to 75% savings on input costs.
+Reducing prompt length by 75% translates directly to 75% savings on input costs. If you have a 2,000-token file but only care about one 200-token function, paste only the function.
 
 
-### Caching Common Contexts
+### Prompt Caching with the API
 
 
-If you repeatedly ask Claude to work with the same codebase sections, use caching strategies to reduce costs:
+Anthropic's prompt caching feature (available on Sonnet and Haiku) lets you cache large context blocks—system prompts, codebase summaries, documentation—and pay a reduced rate on subsequent requests that reuse them. Cache writes cost 25% more than base input pricing, but cache hits cost 90% less.
+
+
+```python
+# Using prompt caching for a repeated codebase context
+response = client.messages.create(
+    model="claude-3-5-sonnet-20241022",
+    max_tokens=1000,
+    system=[
+        {
+            "type": "text",
+            "text": "You are a senior Python developer...",
+            "cache_control": {"type": "ephemeral"}
+        }
+    ],
+    messages=[{"role": "user", "content": "Review this function for edge cases."}]
+)
+```
+
+
+For projects where you repeatedly send the same large system prompt or project context, caching can reduce costs by 60-80% on those repeated tokens.
+
+
+### Caching Common Contexts Locally
+
+
+If you repeatedly ask Claude to work with the same codebase sections, use local caching strategies to avoid redundant API calls entirely:
 
 
 ```python
@@ -178,14 +224,12 @@ def ask_claude(prompt):
 
 
 | Task Type | Recommended Model | Reason |
-
 |-----------|-------------------|--------|
-
 | Simple code generation | Haiku | Fast and cheap |
-
 | Code review, refactoring | Sonnet | Best value |
-
 | Complex debugging | Opus | Superior reasoning |
+| CI/CD automation | Haiku | High volume, low cost |
+| Architecture planning | Sonnet or Opus | Needs broader context |
 
 
 **Cost comparison example:**
@@ -254,6 +298,9 @@ Use Anthropic's billing dashboard to set spending alerts:
 4. Configure email notifications at 50%, 75%, and 90% thresholds
 
 
+You can also set hard spend limits that cut off API access once reached, preventing runaway costs if a bug causes infinite loops in your automation.
+
+
 ## Practical Example: Full Workflow
 
 
@@ -278,7 +325,7 @@ This hybrid approach maximizes capability while minimizing costs—the free CLI 
 ## Maximizing Free Tier Usage
 
 
-For developers on tight budgets,充分利用免费层:
+For developers on tight budgets, make the most of the free tier:
 
 
 1. **Use Claude Code as your primary tool** — It handles 90% of coding tasks for free
@@ -288,6 +335,11 @@ For developers on tight budgets,充分利用免费层:
 3. **Batch requests** — Combine multiple small tasks into single prompts
 
 4. **Choose Haiku for API usage** — The speed-to-cost ratio is unbeatable for simple tasks
+
+5. **Use prompt caching** — For repeated contexts, caching pays for itself quickly above ~100 requests per day
+
+
+A realistic monthly budget for a solo developer using Claude seriously: $5-$20 using Haiku for automation plus free Claude Code for interactive use.
 
 
 
@@ -329,5 +381,3 @@ Policies vary widely. Some tools let you access your data for a grace period aft
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
-```
-```

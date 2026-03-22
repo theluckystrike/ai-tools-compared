@@ -9,7 +9,7 @@ permalink: /ai-tools-for-generating-api-versioning-documentation-and-dep/
 categories: [guides]
 tags: [ai-tools-compared, api, documentation, versioning, deprecation, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: false
 voice-checked: false
 ---
