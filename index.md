@@ -5,7 +5,7 @@ description: "Side-by-side comparisons of AI coding tools, LLMs, and productivit
 permalink: /
 ---
 
-{% assign all_articles = site.pages | where_exp: "p", "p.path contains 'articles/'" | sort: "date" | reverse %}
+{% assign all_articles = site.pages | where_exp: "p", "p.path contains 'articles/'" | sort: "title" %}
 
 <div style="text-align:center; padding: 2rem 0 1.5rem;">
   <h1 style="font-size: 2.2rem; margin-bottom: 0.3rem;">AI Tools Compared</h1>
