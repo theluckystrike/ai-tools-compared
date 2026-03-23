@@ -859,6 +859,7 @@
 
 
 
+
 layout: default
 title: "Cursor Free Tier Limitations: What Stops Working After Trial"
 description: "What breaks when Cursor's free trial ends: feature lockouts, model downgrades, completion limits, and whether the free tier is still usable."
@@ -885,6 +886,7 @@ date: 2026-03-15
 last_modified_at: 2026-03-22
 tags: [ai-tools-compared]
 ---
+
 
 
 
