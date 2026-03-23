@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bestremotetools.com/sitemap.xml
+Sitemap: https://securetoolsguide.com/sitemap.xml
