@@ -10,7 +10,8 @@ tags: [ai-tools-compared, best-of, artificial-intelligence, api]
 reviewed: true
 score: 8
 intent-checked: true
-voice-checked: true---
+voice-checked: true
+---
 {% raw %}
 
 ## Why OpenAPI Spec Generation Matters
