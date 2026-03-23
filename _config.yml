@@ -3,7 +3,6 @@ description: "Side-by-side comparisons of AI tools, LLMs, and productivity assis
 url: "https://bestremotetools.com"
 baseurl: ""
 permalink: /:title/
-theme: minima
 twitter:
   username: _alphashark_
   card: summary_large_image
