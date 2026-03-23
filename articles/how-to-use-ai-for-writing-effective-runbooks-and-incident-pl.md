@@ -9,7 +9,7 @@ permalink: /how-to-use-ai-for-writing-effective-runbooks-and-incident-pl/
 categories: [guides]
 tags: [ai-tools-compared, devops, ai, sre, artificial-intelligence]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 ---
