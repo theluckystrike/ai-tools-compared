@@ -348,11 +348,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Transfer Your Cursor Composer Prompt Library](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code/)
-- [Claude Code vs Cursor Composer](/ai-tools-compared/claude-code-vs-cursor-composer-for-full-stack-development-comparison/)
-- [Claude Code vs Cursor for Large Codebase Refactoring](/ai-tools-compared/claude-code-vs-cursor-for-large-codebase-refactoring/)
-- [How to Switch from Cursor to Claude Code Without Losing](/ai-tools-compared/how-to-switch-from-cursor-to-claude-code-without-losing-settings/)
-- [Using Claude Code for Backend and Cursor for Frontend Same](/ai-tools-compared/using-claude-code-for-backend-and-cursor-for-frontend-same-p/)
+- [How to Transfer Your Cursor Composer Prompt Library](/transfer-cursor-composer-prompt-library-to-claude-code/)
+- [Claude Code vs Cursor Composer](/claude-code-vs-cursor-composer-for-full-stack-development-comparison/)
+- [Claude Code vs Cursor for Large Codebase Refactoring](/claude-code-vs-cursor-for-large-codebase-refactoring/)
+- [How to Switch from Cursor to Claude Code Without Losing](/how-to-switch-from-cursor-to-claude-code-without-losing-settings/)
+- [Using Claude Code for Backend and Cursor for Frontend Same](/using-claude-code-for-backend-and-cursor-for-frontend-same-p/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 ```

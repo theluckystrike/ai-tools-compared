@@ -442,10 +442,10 @@ func TestUserService_GetUser(t *testing.T) {
 
 ## Related Articles
 
-- [Best AI Tools for Writing Go GRPC Service Definitions](/ai-tools-compared/best-ai-tools-for-writing-go-grpc-service-definitions-and-implementations/)
-- [Best AI Tools for Mobile App Development 2026](/ai-tools-compared/ai-tools-for-mobile-app-development-2026/)
-- [How to Use AI to Generate pytest Tests for Celery Task](/ai-tools-compared/how-to-use-ai-to-generate-pytest-tests-for-celery-task-chain/)
-- [AI Tools for Microservice Architecture](/ai-tools-compared/ai-tools-for-microservice-architecture-design/)
-- [Best AI Tools for Python Celery Task Queue Code Generation](/ai-tools-compared/best-ai-tools-for-python-celery-task-queue-code-generation-2/)
+- [Best AI Tools for Writing Go GRPC Service Definitions](/best-ai-tools-for-writing-go-grpc-service-definitions-and-implementations/)
+- [Best AI Tools for Mobile App Development 2026](/ai-tools-for-mobile-app-development-2026/)
+- [How to Use AI to Generate pytest Tests for Celery Task](/how-to-use-ai-to-generate-pytest-tests-for-celery-task-chain/)
+- [AI Tools for Microservice Architecture](/ai-tools-for-microservice-architecture-design/)
+- [Best AI Tools for Python Celery Task Queue Code Generation](/best-ai-tools-for-python-celery-task-queue-code-generation-2/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

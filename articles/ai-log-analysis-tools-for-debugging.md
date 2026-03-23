@@ -299,9 +299,9 @@ For routine monitoring, use dedicated tools (Datadog, Honeycomb). For complex in
 
 ## Related Reading
 
-- [AI-Powered Log Analysis Tools for Production Debugging](/ai-tools-compared/ai-powered-log-analysis-tools-for-production-debugging-compa/)
-- [AI-Powered Incident Response Tools for DevOps Teams](/ai-tools-compared/ai-powered-incident-response-tools-for-devops-teams-compared/)
-- [AI Postmortem Generation](/ai-tools-compared/ai-postmortem-generation/)
+- [AI-Powered Log Analysis Tools for Production Debugging](/ai-powered-log-analysis-tools-for-production-debugging-compa/)
+- [AI-Powered Incident Response Tools for DevOps Teams](/ai-powered-incident-response-tools-for-devops-teams-compared/)
+- [AI Postmortem Generation](/ai-postmortem-generation/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

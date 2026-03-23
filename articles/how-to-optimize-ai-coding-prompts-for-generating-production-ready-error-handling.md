@@ -269,10 +269,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Best AI Tools for Writing Idiomatic Rust Error Handling](/ai-tools-compared/best-ai-tools-for-writing-idiomatic-rust-error-handling-with/)
-- [Claude Code API Error Handling Standards](/ai-tools-compared/claude-code-api-error-handling-standards/)
-- [Copilot vs Cursor for Writing Rust Error Handling with](/ai-tools-compared/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
-- [Writing Claude Md Files That Teach AI Your Project Specific](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/)
-- [How to Optimize Your AI Coding Tool Configuration for Specif](/ai-tools-compared/how-to-optimize-your-ai-coding-tool-configuration-for-specif/)
+- [Best AI Tools for Writing Idiomatic Rust Error Handling](/best-ai-tools-for-writing-idiomatic-rust-error-handling-with/)
+- [Claude Code API Error Handling Standards](/claude-code-api-error-handling-standards/)
+- [Copilot vs Cursor for Writing Rust Error Handling with](/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
+- [Writing Claude Md Files That Teach AI Your Project Specific](/writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/)
+- [How to Optimize Your AI Coding Tool Configuration for Specif](/how-to-optimize-your-ai-coding-tool-configuration-for-specif/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

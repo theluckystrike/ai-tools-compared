@@ -389,11 +389,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Transfer Cursor Composer Prompt Library](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code-commands/)
-- [How to Transfer Your Cursor Composer Prompt Library](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code/)
-- [Ideogram vs Midjourney for Text in Images Compared](/ai-tools-compared/ideogram-vs-midjourney-for-text-in-images-compared/)
-- [Switching from Dall E to Midjourney Prompt Format Difference](/ai-tools-compared/switching-from-dall-e-to-midjourney-prompt-format-difference/)
-- [Switching from Midjourney to Dall E 3 Prompt Adaptation Guid](/ai-tools-compared/switching-from-midjourney-to-dall-e-3-prompt-adaptation-guid/)
+- [How to Transfer Cursor Composer Prompt Library](/transfer-cursor-composer-prompt-library-to-claude-code-commands/)
+- [How to Transfer Your Cursor Composer Prompt Library](/transfer-cursor-composer-prompt-library-to-claude-code/)
+- [Ideogram vs Midjourney for Text in Images Compared](/ideogram-vs-midjourney-for-text-in-images-compared/)
+- [Switching from Dall E to Midjourney Prompt Format Difference](/switching-from-dall-e-to-midjourney-prompt-format-difference/)
+- [Switching from Midjourney to Dall E 3 Prompt Adaptation Guid](/switching-from-midjourney-to-dall-e-3-prompt-adaptation-guid/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -317,11 +317,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Generating pandas Merge and Join Operations Fro](/ai-tools-compared/ai-tools-for-generating-pandas-merge-and-join-operations-fro/)
-- [AI Tools for Generating pandas GroupBy Aggregation Code](/ai-tools-compared/ai-tools-for-generating-pandas-groupby-aggregation-code-from/)
-- [AI Tools for Generating Pull Request Merge Conflict](/ai-tools-compared/ai-tools-for-generating-pull-request-merge-conflict-resoluti/)
-- [Best AI Coding Tools for Python Data Science and pandas Work](/ai-tools-compared/best-ai-coding-tools-for-python-data-science-and-pandas-work/)
-- [pandas AI vs Polars AI Data Processing Compared](/ai-tools-compared/pandas-ai-vs-polars-ai-data-processing/)
+- [AI Tools for Generating pandas Merge and Join Operations Fro](/ai-tools-for-generating-pandas-merge-and-join-operations-fro/)
+- [AI Tools for Generating pandas GroupBy Aggregation Code](/ai-tools-for-generating-pandas-groupby-aggregation-code-from/)
+- [AI Tools for Generating Pull Request Merge Conflict](/ai-tools-for-generating-pull-request-merge-conflict-resoluti/)
+- [Best AI Coding Tools for Python Data Science and pandas Work](/best-ai-coding-tools-for-python-data-science-and-pandas-work/)
+- [pandas AI vs Polars AI Data Processing Compared](/pandas-ai-vs-polars-ai-data-processing/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

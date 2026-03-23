@@ -287,11 +287,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Cursor AI Apply Model How It Merges Generated Code into Exis](/ai-tools-compared/cursor-ai-apply-model-how-it-merges-generated-code-into-exis/)
-- [Cursor Pro Slow Model vs Fast Model Credits How It Works](/ai-tools-compared/cursor-pro-slow-model-vs-fast-model-credits-how-it-works/)
-- [How to Evaluate AI Coding Tool Model Training Data Provenanc](/ai-tools-compared/how-to-evaluate-ai-coding-tool-model-training-data-provenanc/)
-- [AI Tools for Creating dbt Model Definitions from Raw Databas](/ai-tools-compared/ai-tools-for-creating-dbt-model-definitions-from-raw-databas/)
-- [AI Tools for Creating System Context Diagrams Using C4 Model](/ai-tools-compared/ai-tools-for-creating-system-context-diagrams-using-c4-model/)
+- [Cursor AI Apply Model How It Merges Generated Code into Exis](/cursor-ai-apply-model-how-it-merges-generated-code-into-exis/)
+- [Cursor Pro Slow Model vs Fast Model Credits How It Works](/cursor-pro-slow-model-vs-fast-model-credits-how-it-works/)
+- [How to Evaluate AI Coding Tool Model Training Data Provenanc](/how-to-evaluate-ai-coding-tool-model-training-data-provenanc/)
+- [AI Tools for Creating dbt Model Definitions from Raw Databas](/ai-tools-for-creating-dbt-model-definitions-from-raw-databas/)
+- [AI Tools for Creating System Context Diagrams Using C4 Model](/ai-tools-for-creating-system-context-diagrams-using-c4-model/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

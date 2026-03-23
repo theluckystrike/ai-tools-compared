@@ -250,10 +250,10 @@ Yes. You can set access to private (only you), anyone with the link, or public v
 
 ## Related Articles
 
-- [How to Migrate ChatGPT Plugins](/ai-tools-compared/migrate-chatgpt-plugins-to-custom-gpts-step-by-step-2026/)
-- [Do ChatGPT Plus Memory and Custom GPTs Count Toward](/ai-tools-compared/chatgpt-plus-memory-and-custom-gpts-count-toward-usage-limit/)
-- [Transfer ChatGPT Custom GPTs to Claude Projects Step by Step](/ai-tools-compared/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
-- [Migrating from ChatGPT Plugins to Claude MCP Tools for.](/ai-tools-compared/migrating-from-chatgpt-plugins-to-claude-mcp-tools-for-coding-workflows/)
-- [ChatGPT API Assistants API Pricing Threads and Runs Cost](/ai-tools-compared/chatgpt-api-assistants-api-pricing-threads-and-runs-cost-breakdown/)
+- [How to Migrate ChatGPT Plugins](/migrate-chatgpt-plugins-to-custom-gpts-step-by-step-2026/)
+- [Do ChatGPT Plus Memory and Custom GPTs Count Toward](/chatgpt-plus-memory-and-custom-gpts-count-toward-usage-limit/)
+- [Transfer ChatGPT Custom GPTs to Claude Projects Step by Step](/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
+- [Migrating from ChatGPT Plugins to Claude MCP Tools for.](/migrating-from-chatgpt-plugins-to-claude-mcp-tools-for-coding-workflows/)
+- [ChatGPT API Assistants API Pricing Threads and Runs Cost](/chatgpt-api-assistants-api-pricing-threads-and-runs-cost-breakdown/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

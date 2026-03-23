@@ -542,7 +542,7 @@ Create a team runbook:
 - [ChatGPT Image Upload Not Working Fix (2026)](/chatgpt-image-upload-not-working-fix-2026/)
 - [Copilot Chat Not Responding in GitHub](/copilot-chat-not-responding-in-github-fix/)
 - [Copilot Enterprise License Not Assigned](/copilot-enterprise-license-not-assigned-fix/)
-- [Copilot Completions Extremely Slow on Large Python Files Fix](/ai-tools-compared/copilot-completions-extremely-slow-on-large-python-files-fix/)
+- [Copilot Completions Extremely Slow on Large Python Files Fix](/copilot-completions-extremely-slow-on-large-python-files-fix/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

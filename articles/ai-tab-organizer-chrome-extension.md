@@ -272,9 +272,9 @@ Most extensions support exclusion rules based on URL patterns. In Workona, you c
 
 ## Related Articles
 
-- [AI Summarizer Chrome Extension: A Developer Guide](/ai-tools-compared/ai-summarizer-chrome-extension/)
-- [AI Research Assistant Chrome Extension](/ai-tools-compared/ai-research-assistant-chrome-extension/)
-- [AI Presentation Maker Chrome Extension](/ai-tools-compared/ai-presentation-maker-chrome-extension/)
-- [Screen Sharing Chrome Extension](/ai-tools-compared/screen-sharing-chrome-extension/)
-- [Chrome Extension Budget Tracker Shopping](/ai-tools-compared/chrome-extension-budget-tracker-shopping/)
+- [AI Summarizer Chrome Extension: A Developer Guide](/ai-summarizer-chrome-extension/)
+- [AI Research Assistant Chrome Extension](/ai-research-assistant-chrome-extension/)
+- [AI Presentation Maker Chrome Extension](/ai-presentation-maker-chrome-extension/)
+- [Screen Sharing Chrome Extension](/screen-sharing-chrome-extension/)
+- [Chrome Extension Budget Tracker Shopping](/chrome-extension-budget-tracker-shopping/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

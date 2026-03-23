@@ -498,10 +498,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Writing Effective .cursorrules for Next.js App Router](/ai-tools-compared/writing-effective-cursorrules-for-nextjs-app-router-project-with-specific-file-conventions/)
-- [How to Use AI to Generate Jest Component Tests with Testing](/ai-tools-compared/how-to-use-ai-to-generate-jest-component-tests-with-testing-/)
-- [How to Use AI to Generate Jest Integration Tests for Express](/ai-tools-compared/how-to-use-ai-to-generate-jest-integration-tests-for-express/)
-- [How to Use AI to Generate Jest Tests for](/ai-tools-compared/how-to-use-ai-to-generate-jest-tests-for-internationalizatio/)
-- [How to Use AI to Generate Jest Tests for Redux Toolkit Slice](/ai-tools-compared/how-to-use-ai-to-generate-jest-tests-for-redux-toolkit-slice/)
+- [Writing Effective .cursorrules for Next.js App Router](/writing-effective-cursorrules-for-nextjs-app-router-project-with-specific-file-conventions/)
+- [How to Use AI to Generate Jest Component Tests with Testing](/how-to-use-ai-to-generate-jest-component-tests-with-testing-/)
+- [How to Use AI to Generate Jest Integration Tests for Express](/how-to-use-ai-to-generate-jest-integration-tests-for-express/)
+- [How to Use AI to Generate Jest Tests for](/how-to-use-ai-to-generate-jest-tests-for-internationalizatio/)
+- [How to Use AI to Generate Jest Tests for Redux Toolkit Slice](/how-to-use-ai-to-generate-jest-tests-for-redux-toolkit-slice/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

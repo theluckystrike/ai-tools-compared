@@ -392,11 +392,11 @@ jobs:
 
 ## Related Articles
 
-- [Which AI Is Better for Writing Playwright End-to-End Tests](/ai-tools-compared/which-ai-is-better-for-writing-playwright-end-to-end-tests-2/)
-- [Best AI Assistant for Creating Playwright Tests for Multi](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-multi-st/)
-- [Best AI Tools for Writing Playwright E2E Tests 2026](/ai-tools-compared/best-ai-tools-for-writing-playwright-e2e-tests-2026/)
-- [AI for Automated Regression Test Generation from Bug](/ai-tools-compared/ai-for-automated-regression-test-generation-from-bug-reports/)
-- [Best AI Assistant for Creating Playwright Tests for File](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-file-upl/)
+- [Which AI Is Better for Writing Playwright End-to-End Tests](/which-ai-is-better-for-writing-playwright-end-to-end-tests-2/)
+- [Best AI Assistant for Creating Playwright Tests for Multi](/best-ai-assistant-for-creating-playwright-tests-for-multi-st/)
+- [Best AI Tools for Writing Playwright E2E Tests 2026](/best-ai-tools-for-writing-playwright-e2e-tests-2026/)
+- [AI for Automated Regression Test Generation from Bug](/ai-for-automated-regression-test-generation-from-bug-reports/)
+- [Best AI Assistant for Creating Playwright Tests for File](/best-ai-assistant-for-creating-playwright-tests-for-file-upl/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

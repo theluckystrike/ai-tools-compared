@@ -302,10 +302,10 @@ When evaluating these tools, verify these integration points:
 
 ## Related Reading
 
-- [Best AI Tools for Image Data Analysis: A Developer Guide](/ai-tools-compared/best-ai-tools-for-image-data-analysis/)
-- [AI CI/CD Pipeline Optimization: A Developer Guide](/ai-tools-compared/ai-ci-cd-pipeline-optimization/)
-- [AI Summarizer Chrome Extension: A Developer Guide](/ai-tools-compared/ai-summarizer-chrome-extension/)
-- [AI Tools for Converting Code Comments into Developer Facing](/ai-tools-compared/ai-tools-for-converting-code-comments-into-developer-facing-/)
-- [AI Tools for Devrel Teams Creating Developer Onboarding Chec](/ai-tools-compared/ai-tools-for-devrel-teams-creating-developer-onboarding-chec/)
+- [Best AI Tools for Image Data Analysis: A Developer Guide](/best-ai-tools-for-image-data-analysis/)
+- [AI CI/CD Pipeline Optimization: A Developer Guide](/ai-ci-cd-pipeline-optimization/)
+- [AI Summarizer Chrome Extension: A Developer Guide](/ai-summarizer-chrome-extension/)
+- [AI Tools for Converting Code Comments into Developer Facing](/ai-tools-for-converting-code-comments-into-developer-facing-/)
+- [AI Tools for Devrel Teams Creating Developer Onboarding Chec](/ai-tools-for-devrel-teams-creating-developer-onboarding-chec/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

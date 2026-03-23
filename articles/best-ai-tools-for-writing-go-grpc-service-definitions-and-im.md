@@ -429,12 +429,12 @@ GitHub Copilot costs $10/month for individuals, making it attractive for explori
 
 For individual developers learning gRPC, start with Copilot's low cost. For teams building production services, Claude's accuracy justifies the per-request costs. Cursor sits between these poles, offering good value for interactive development.
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/)
-- [AI Tools Guides Hub](/ai-tools-compared/)
-- [Which AI Is Better for Writing gRPC Protobuf Service.](/ai-tools-compared/which-ai-is-better-for-writing-grpc-protobuf-service-definitions/)
-- [Best AI Tools for Writing GitHub Actions Reusable.](/ai-tools-compared/best-ai-tools-for-writing-github-actions-reusable-workflow-t/)
-- [Which AI Generates Better Go Goroutine Patterns for.](/ai-tools-compared/which-ai-generates-better-go-goroutine-patterns-for-concurre/)
+- [Best AI Coding Assistants Compared](/)
+- [Best AI Coding Assistant Tools Compared 2026](/)
+- [AI Tools Guides Hub](/)
+- [Which AI Is Better for Writing gRPC Protobuf Service.](/which-ai-is-better-for-writing-grpc-protobuf-service-definitions/)
+- [Best AI Tools for Writing GitHub Actions Reusable.](/best-ai-tools-for-writing-github-actions-reusable-workflow-t/)
+- [Which AI Generates Better Go Goroutine Patterns for.](/which-ai-generates-better-go-goroutine-patterns-for-concurre/)
 
 ## Frequently Asked Questions
 
@@ -460,10 +460,10 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [AI Tools for Writing gRPC Protobuf Definitions 2026](/ai-tools-compared/ai-tools-for-writing-grpc-protobuf-definitions-2026/)
-- [Which AI Is Better for Writing gRPC Protobuf Service](/ai-tools-compared/which-ai-is-better-for-writing-grpc-protobuf-service-definitions/)
-- [How to Use AI for Writing Effective Sli Slo Definitions](/ai-tools-compared/how-to-use-ai-for-writing-effective-sli-slo-definitions-for-services/)
-- [AI Tools for Writing Jest Tests for Web Worker and Service](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-web-worker-and-service-w/)
-- [AI Tools for Creating dbt Model Definitions from Raw Databas](/ai-tools-compared/ai-tools-for-creating-dbt-model-definitions-from-raw-databas/)
+- [AI Tools for Writing gRPC Protobuf Definitions 2026](/ai-tools-for-writing-grpc-protobuf-definitions-2026/)
+- [Which AI Is Better for Writing gRPC Protobuf Service](/which-ai-is-better-for-writing-grpc-protobuf-service-definitions/)
+- [How to Use AI for Writing Effective Sli Slo Definitions](/how-to-use-ai-for-writing-effective-sli-slo-definitions-for-services/)
+- [AI Tools for Writing Jest Tests for Web Worker and Service](/ai-tools-for-writing-jest-tests-for-web-worker-and-service-w/)
+- [AI Tools for Creating dbt Model Definitions from Raw Databas](/ai-tools-for-creating-dbt-model-definitions-from-raw-databas/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

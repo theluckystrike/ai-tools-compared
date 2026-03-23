@@ -324,11 +324,11 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [GitHub Copilot vs Cody Sourcegraph Comparison](/ai-tools-compared/github-copilot-vs-cody-sourcegraph-comparison/)
-- [How to Move Copilot Suggested Code Patterns to Cursor Snippe](/ai-tools-compared/how-to-move-copilot-suggested-code-patterns-to-cursor-snippe/)
-- [How to Move Copilot Suggested Code Patterns to Cursor](/ai-tools-compared/how-to-move-copilot-suggested-code-patterns-to-cursor-snippets/)
-- [How to Transfer Copilot Code Review Settings](/ai-tools-compared/transfer-copilot-code-review-settings-to-cursor-ai-review-co/)
-- [AI Code Completion for Java Jakarta EE Migration from Javax](/ai-tools-compared/ai-code-completion-for-java-jakarta-ee-migration-from-javax-/)
+- [GitHub Copilot vs Cody Sourcegraph Comparison](/github-copilot-vs-cody-sourcegraph-comparison/)
+- [How to Move Copilot Suggested Code Patterns to Cursor Snippe](/how-to-move-copilot-suggested-code-patterns-to-cursor-snippe/)
+- [How to Move Copilot Suggested Code Patterns to Cursor](/how-to-move-copilot-suggested-code-patterns-to-cursor-snippets/)
+- [How to Transfer Copilot Code Review Settings](/transfer-copilot-code-review-settings-to-cursor-ai-review-co/)
+- [AI Code Completion for Java Jakarta EE Migration from Javax](/ai-code-completion-for-java-jakarta-ee-migration-from-javax-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ## Related Reading

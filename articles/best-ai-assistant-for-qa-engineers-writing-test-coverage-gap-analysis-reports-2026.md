@@ -265,10 +265,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Automated Code Coverage Reporting](/ai-tools-compared/ai-tools-for-code-coverage-reporting)
-- [Claude Code Coverage Reporting Setup Guide](/ai-tools-compared/claude-code-coverage-reporting-setup-guide/)
-- [AI-Powered Code Coverage Improvement Tools](/ai-tools-compared/ai-powered-code-coverage-improvement)
-- [Best AI Assistant for Creating Test Data Factories with Real](/ai-tools-compared/best-ai-assistant-for-creating-test-data-factories-with-real/)
-- [Best AI Assistant for Writing pytest Tests for Background](/ai-tools-compared/best-ai-assistant-for-writing-pytest-tests-for-background-job-retry-failure-scenarios/)
+- [AI Tools for Automated Code Coverage Reporting](/ai-tools-for-code-coverage-reporting)
+- [Claude Code Coverage Reporting Setup Guide](/claude-code-coverage-reporting-setup-guide/)
+- [AI-Powered Code Coverage Improvement Tools](/ai-powered-code-coverage-improvement)
+- [Best AI Assistant for Creating Test Data Factories with Real](/best-ai-assistant-for-creating-test-data-factories-with-real/)
+- [Best AI Assistant for Writing pytest Tests for Background](/best-ai-assistant-for-writing-pytest-tests-for-background-job-retry-failure-scenarios/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

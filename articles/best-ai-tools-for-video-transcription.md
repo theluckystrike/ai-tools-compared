@@ -320,10 +320,10 @@ Split long videos into chunks before submission. Use ffmpeg to cut at silence bo
 
 ## Related Articles
 
-- [AI Tools for Video Compression: A Developer Guide](/ai-tools-compared/ai-tools-for-video-compression/)
-- [Kling AI vs Gen 3 Video Generation: Developer Comparison](/ai-tools-compared/kling-ai-vs-gen-3-video-generation/)
-- [AI Tools for Video Accessibility Features](/ai-tools-compared/ai-tools-for-video-accessibility-features/)
-- [AI Tools for Video Color Grading](/ai-tools-compared/ai-tools-for-video-color-grading/)
-- [AI Tools for Video Frame Interpolation](/ai-tools-compared/ai-tools-for-video-frame-interpolation/)
+- [AI Tools for Video Compression: A Developer Guide](/ai-tools-for-video-compression/)
+- [Kling AI vs Gen 3 Video Generation: Developer Comparison](/kling-ai-vs-gen-3-video-generation/)
+- [AI Tools for Video Accessibility Features](/ai-tools-for-video-accessibility-features/)
+- [AI Tools for Video Color Grading](/ai-tools-for-video-color-grading/)
+- [AI Tools for Video Frame Interpolation](/ai-tools-for-video-frame-interpolation/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

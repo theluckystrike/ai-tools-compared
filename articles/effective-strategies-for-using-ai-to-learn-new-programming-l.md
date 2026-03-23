@@ -309,9 +309,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Effective Context Loading Strategies for AI Tools](/ai-tools-compared/effective-context-loading-strategies-for-ai-tools-in-polyglo/)
-- [Effective Prompting Strategies for AI Generation of Complex](/ai-tools-compared/effective-prompting-strategies-for-ai-generation-of-complex-/)
-- [Effective Strategies for Using AI to Write](/ai-tools-compared/effective-strategies-for-using-ai-to-write--api/)
-- [Effective Strategies for AI-Assisted Refactoring](/ai-tools-compared/effective-strategies-for-ai-assisted-refactoring-without-bre/)
-- [Effective Context Management Strategies for AI Coding](/ai-tools-compared/effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/)
+- [Effective Context Loading Strategies for AI Tools](/effective-context-loading-strategies-for-ai-tools-in-polyglo/)
+- [Effective Prompting Strategies for AI Generation of Complex](/effective-prompting-strategies-for-ai-generation-of-complex-/)
+- [Effective Strategies for Using AI to Write](/effective-strategies-for-using-ai-to-write--api/)
+- [Effective Strategies for AI-Assisted Refactoring](/effective-strategies-for-ai-assisted-refactoring-without-bre/)
+- [Effective Context Management Strategies for AI Coding](/effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

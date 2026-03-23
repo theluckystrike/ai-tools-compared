@@ -301,10 +301,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Cursor AI Background Agent Feature for Autonomous Multi Step](/ai-tools-compared/cursor-ai-background-agent-feature-for-autonomous-multi-step/)
-- [Best Practices for Breaking Down Complex Coding Tasks](/ai-tools-compared/best-practices-for-breaking-down-complex-coding-tasks-for-ai/)
-- [Migrating from JetBrains AI to Copilot in IntelliJ -.](/ai-tools-compared/migrating-jetbrains-ai-to-copilot-intellij-step-by-step-guide/)
-- [Copilot Workspace vs Cursor Composer Multi File Editing Comp](/ai-tools-compared/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)
-- [How to Use Copilot to Write Dockerfiles for Multi-Stage Buil](/ai-tools-compared/how-to-use-copilot-to-write-dockerfiles-for-multi-stage-buil/)
+- [Cursor AI Background Agent Feature for Autonomous Multi Step](/cursor-ai-background-agent-feature-for-autonomous-multi-step/)
+- [Best Practices for Breaking Down Complex Coding Tasks](/best-practices-for-breaking-down-complex-coding-tasks-for-ai/)
+- [Migrating from JetBrains AI to Copilot in IntelliJ -.](/migrating-jetbrains-ai-to-copilot-intellij-step-by-step-guide/)
+- [Copilot Workspace vs Cursor Composer Multi File Editing Comp](/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)
+- [How to Use Copilot to Write Dockerfiles for Multi-Stage Buil](/how-to-use-copilot-to-write-dockerfiles-for-multi-stage-buil/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

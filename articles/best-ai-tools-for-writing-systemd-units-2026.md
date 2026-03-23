@@ -508,20 +508,20 @@ For either tool: always run `systemd-analyze verify` before deploying, and `syst
 
 ## Related Reading
 
-- [Best AI Tools for Writing Makefiles](/ai-tools-compared/best-ai-tools-for-writing-makefiles-2026/)
-- [How to Use AI for Nix Package Management](/ai-tools-compared/how-to-use-ai-for-nix-package-management/)
-- [AI-Powered Observability Configuration Tools](/ai-tools-compared/ai-powered-observability-configuration-tools-2026/)
+- [Best AI Tools for Writing Makefiles](/best-ai-tools-for-writing-makefiles-2026/)
+- [How to Use AI for Nix Package Management](/how-to-use-ai-for-nix-package-management/)
+- [AI-Powered Observability Configuration Tools](/ai-powered-observability-configuration-tools-2026/)
 
-- [AI Assistants for Writing Correct AWS IAM Policies](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
+- [AI Assistants for Writing Correct AWS IAM Policies](/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
 ---
 
 ## Related Articles
 
-- [Best AI Tools for Writing Ansible Playbooks](/ai-tools-compared/ai-tools-for-writing-ansible-playbooks-guide)
-- [AI Tools for Writing Jest Tests for Web Worker and Service](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-web-worker-and-service-w/)
-- [Best AI Tools for Writing Kubernetes Custom Resource](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-custom-resource-definitions-2026/)
-- [Best AI Tools for Technical Documentation Writing in 2026](/ai-tools-compared/ai-tools-for-technical-writing-documentation-2026/---)
-- [AI Tools for Writing Terraform Infrastructure-as-Code](/ai-tools-compared/ai-tools-for-writing-terraform-infrastructure-as-code-comparison-2026/)
+- [Best AI Tools for Writing Ansible Playbooks](/ai-tools-for-writing-ansible-playbooks-guide)
+- [AI Tools for Writing Jest Tests for Web Worker and Service](/ai-tools-for-writing-jest-tests-for-web-worker-and-service-w/)
+- [Best AI Tools for Writing Kubernetes Custom Resource](/best-ai-tools-for-writing-kubernetes-custom-resource-definitions-2026/)
+- [Best AI Tools for Technical Documentation Writing in 2026](/ai-tools-for-technical-writing-documentation-2026/---)
+- [AI Tools for Writing Terraform Infrastructure-as-Code](/ai-tools-for-writing-terraform-infrastructure-as-code-comparison-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```

@@ -354,10 +354,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Perplexity API Pricing vs Using Pro Subscription Which Is Ch](/ai-tools-compared/perplexity-api-pricing-vs-using-pro-subscription-which-is-ch/)
-- [Export Perplexity Collections Before Switching to ChatGPT Se](/ai-tools-compared/export-perplexity-collections-before-switching-to-chatgpt-se/)
-- [Switching from ChatGPT Plus to Perplexity Pro Feature Compar](/ai-tools-compared/switching-from-chatgpt-plus-to-perplexity-pro-feature-compar/)
-- [Switching from ChatGPT Search to Perplexity Pro Search](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
-- [Switching from ChatGPT Search to Perplexity Pro Search](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
+- [Perplexity API Pricing vs Using Pro Subscription Which Is Ch](/perplexity-api-pricing-vs-using-pro-subscription-which-is-ch/)
+- [Export Perplexity Collections Before Switching to ChatGPT Se](/export-perplexity-collections-before-switching-to-chatgpt-se/)
+- [Switching from ChatGPT Plus to Perplexity Pro Feature Compar](/switching-from-chatgpt-plus-to-perplexity-pro-feature-compar/)
+- [Switching from ChatGPT Search to Perplexity Pro Search](/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
+- [Switching from ChatGPT Search to Perplexity Pro Search](/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

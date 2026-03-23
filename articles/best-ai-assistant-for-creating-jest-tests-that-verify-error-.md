@@ -379,12 +379,12 @@ Specify what you want tested: Does the component need to handle retry logic? Do 
 
 After generation, immediately check that the tests actually fail when you break the component. Run the error boundary without proper error handling and verify tests catch the issue. This validates that assertions are real, not just syntactically correct placeholder checks.
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/)
-- [AI Tools Guides Hub](/ai-tools-compared/)
-- [Best AI for Creating Jest Tests That Verify Correct.](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-react-co/)
-- [Best AI for Creating Jest Tests That Verify Correct Suspense and Lazy Loading Behavior](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-suspense/)
-- [Best AI Assistant for Creating Playwright Tests for.](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-table-sorting-filtering-and-pagination/)
+- [Best AI Coding Assistants Compared](/)
+- [Best AI Coding Assistant Tools Compared 2026](/)
+- [AI Tools Guides Hub](/)
+- [Best AI for Creating Jest Tests That Verify Correct.](/best-ai-for-creating-jest-tests-that-verify-correct-react-co/)
+- [Best AI for Creating Jest Tests That Verify Correct Suspense and Lazy Loading Behavior](/best-ai-for-creating-jest-tests-that-verify-correct-suspense/)
+- [Best AI Assistant for Creating Playwright Tests for.](/best-ai-assistant-for-creating-playwright-tests-for-table-sorting-filtering-and-pagination/)
 
 ## Frequently Asked Questions
 
@@ -410,10 +410,10 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 
 ## Related Articles
 
-- [Best AI for Creating Jest Tests That Verify Correct React](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-react-co/)
-- [Best AI for Creating Jest Tests That Verify Correct Suspense](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-suspense/)
-- [Best AI for Creating Jest Tests That Cover Race Conditions](/ai-tools-compared/best-ai-for-creating-jest-tests-that-cover-race-conditions-i/)
-- [Best AI Assistant for Creating Playwright Tests for File Upl](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-file-upl/)
-- [Best AI Assistant for Creating Playwright Tests for Multi](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-multi-st/)
+- [Best AI for Creating Jest Tests That Verify Correct React](/best-ai-for-creating-jest-tests-that-verify-correct-react-co/)
+- [Best AI for Creating Jest Tests That Verify Correct Suspense](/best-ai-for-creating-jest-tests-that-verify-correct-suspense/)
+- [Best AI for Creating Jest Tests That Cover Race Conditions](/best-ai-for-creating-jest-tests-that-cover-race-conditions-i/)
+- [Best AI Assistant for Creating Playwright Tests for File Upl](/best-ai-assistant-for-creating-playwright-tests-for-file-upl/)
+- [Best AI Assistant for Creating Playwright Tests for Multi](/best-ai-assistant-for-creating-playwright-tests-for-multi-st/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -473,11 +473,11 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Best Practices for AI Coding Tool Project Configuration](/ai-tools-compared/best-practices-for-ai-coding-tool-project-configuration-in-l/)
-- [Best Practices for Breaking Down Complex Coding Tasks](/ai-tools-compared/best-practices-for-breaking-down-complex-coding-tasks-for-ai/)
-- [Best Practices for Keeping AI Coding Suggestions Aligned](/ai-tools-compared/best-practices-for-keeping-ai-coding-suggestions-aligned-with-design-patterns/)
-- [Best Practices for Using AI Coding Tools in HIPAA Regulated](/ai-tools-compared/best-practices-for-using-ai-coding-tools-in-hipaa-regulated-/)
-- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy Polici](/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
+- [Best Practices for AI Coding Tool Project Configuration](/best-practices-for-ai-coding-tool-project-configuration-in-l/)
+- [Best Practices for Breaking Down Complex Coding Tasks](/best-practices-for-breaking-down-complex-coding-tasks-for-ai/)
+- [Best Practices for Keeping AI Coding Suggestions Aligned](/best-practices-for-keeping-ai-coding-suggestions-aligned-with-design-patterns/)
+- [Best Practices for Using AI Coding Tools in HIPAA Regulated](/best-practices-for-using-ai-coding-tools-in-hipaa-regulated-/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy Polici](/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

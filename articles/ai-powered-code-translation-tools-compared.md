@@ -377,9 +377,9 @@ Neither tool produces code that compiles without any review. Plan for 15-30% of 
 
 ## Related Reading
 
-- [Best AI IDE Features for Refactoring Class Hierarchies](/ai-tools-compared/best-ai-ide-features-for-refactoring-class-hierarchies-and-i/)
-- [Claude vs ChatGPT for Refactoring Legacy Java to Kotlin](/ai-tools-compared/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
-- [How to Use AI Context Management for Large Refactoring](/ai-tools-compared/how-to-use-ai-context-management-to-work-on-large-refactorin/)
+- [Best AI IDE Features for Refactoring Class Hierarchies](/best-ai-ide-features-for-refactoring-class-hierarchies-and-i/)
+- [Claude vs ChatGPT for Refactoring Legacy Java to Kotlin](/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
+- [How to Use AI Context Management for Large Refactoring](/how-to-use-ai-context-management-to-work-on-large-refactorin/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

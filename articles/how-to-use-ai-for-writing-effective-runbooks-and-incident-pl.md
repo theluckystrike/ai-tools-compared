@@ -273,9 +273,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Use AI for Writing Effective Runbooks](/ai-tools-compared/how-to-use-ai-for-writing-effective-runbooks-and-incident-playbooks/)
-- [AI Powered Incident Response Tools for DevOps Teams Compared](/ai-tools-compared/ai-powered-incident-response-tools-for-devops-teams-compared/)
-- [How to Use AI for Incident Response Automation](/ai-tools-compared/how-to-use-ai-for-incident-response-automation/)
-- [Best AI Tool for Cybersecurity Analysts Incident](/ai-tools-compared/best-ai-tool-for-cybersecurity-analysts-incident-reports/)
-- [Best AI Tools for Technical Documentation Writing in 2026](/ai-tools-compared/ai-tools-for-technical-writing-documentation-2026/---)
+- [How to Use AI for Writing Effective Runbooks](/how-to-use-ai-for-writing-effective-runbooks-and-incident-playbooks/)
+- [AI Powered Incident Response Tools for DevOps Teams Compared](/ai-powered-incident-response-tools-for-devops-teams-compared/)
+- [How to Use AI for Incident Response Automation](/how-to-use-ai-for-incident-response-automation/)
+- [Best AI Tool for Cybersecurity Analysts Incident](/best-ai-tool-for-cybersecurity-analysts-incident-reports/)
+- [Best AI Tools for Technical Documentation Writing in 2026](/ai-tools-for-technical-writing-documentation-2026/---)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

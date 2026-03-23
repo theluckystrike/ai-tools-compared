@@ -303,11 +303,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [AI Tools for Generating Coloring Book Pages Compared](/ai-tools-compared/ai-tools-for-generating-coloring-book-pages-compared/)
-- [AI Tools for Generating Contributor License Agreement Explan](/ai-tools-compared/ai-tools-for-generating-contributor-license-agreement-explan/)
-- [AI Tools for Generating Grafana Dashboard JSON Templates Fro](/ai-tools-compared/ai-tools-for-generating-grafana-dashboard-json-templates-fro/)
-- [AI Tools for Generating pandas Merge and Join Operations Fro](/ai-tools-compared/ai-tools-for-generating-pandas-merge-and-join-operations-fro/)
-- [Best AI Assistant for Building Superset Dashboard Charts Fro](/ai-tools-compared/best-ai-assistant-for-building-superset-dashboard-charts-fro/)
+- [AI Tools for Generating Coloring Book Pages Compared](/ai-tools-for-generating-coloring-book-pages-compared/)
+- [AI Tools for Generating Contributor License Agreement Explan](/ai-tools-for-generating-contributor-license-agreement-explan/)
+- [AI Tools for Generating Grafana Dashboard JSON Templates Fro](/ai-tools-for-generating-grafana-dashboard-json-templates-fro/)
+- [AI Tools for Generating pandas Merge and Join Operations Fro](/ai-tools-for-generating-pandas-merge-and-join-operations-fro/)
+- [Best AI Assistant for Building Superset Dashboard Charts Fro](/best-ai-assistant-for-building-superset-dashboard-charts-fro/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

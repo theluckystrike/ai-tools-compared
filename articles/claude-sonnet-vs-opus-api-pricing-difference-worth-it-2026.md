@@ -320,10 +320,10 @@ Run an A/B test across 500 representative requests. Score outputs on your domain
 
 ## Related Articles
 
-- [Claude Sonnet vs Opus for Different Coding Tasks](/ai-tools-compared/claude-sonnet-vs-opus-for-coding-tasks/)
-- [How to Use Claude API Cheaply for Small Coding Projects](/ai-tools-compared/how-to-use-claude-api-cheaply-for-small-coding-projects/)
-- [Claude API vs OpenAI API Pricing Breakdown 2026](/ai-tools-compared/claude-api-vs-openai-api-pricing-breakdown-2026/)
-- [Claude API Pay Per Token vs Pro Subscription Which Cheaper](/ai-tools-compared/claude-api-pay-per-token-vs-pro-subscription-which-cheaper/)
-- [ChatGPT API Assistants API Pricing Threads and Runs Cost](/ai-tools-compared/chatgpt-api-assistants-api-pricing-threads-and-runs-cost-breakdown/)
+- [Claude Sonnet vs Opus for Different Coding Tasks](/claude-sonnet-vs-opus-for-coding-tasks/)
+- [How to Use Claude API Cheaply for Small Coding Projects](/how-to-use-claude-api-cheaply-for-small-coding-projects/)
+- [Claude API vs OpenAI API Pricing Breakdown 2026](/claude-api-vs-openai-api-pricing-breakdown-2026/)
+- [Claude API Pay Per Token vs Pro Subscription Which Cheaper](/claude-api-pay-per-token-vs-pro-subscription-which-cheaper/)
+- [ChatGPT API Assistants API Pricing Threads and Runs Cost](/chatgpt-api-assistants-api-pricing-threads-and-runs-cost-breakdown/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

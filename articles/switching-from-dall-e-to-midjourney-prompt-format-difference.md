@@ -395,10 +395,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Switching from Midjourney to Dall E 3 Prompt Adaptation Guid](/ai-tools-compared/switching-from-midjourney-to-dall-e-3-prompt-adaptation-guid/)
-- [Migrate ChatGPT System Prompts](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-format/)
-- [How to Transfer Midjourney Prompt Library to Ideogram Prompt](/ai-tools-compared/how-to-transfer-midjourney-prompt-library-to-ideogram-prompt/)
-- [Claude Max vs Claude Pro Actual Difference](/ai-tools-compared/claude-max-vs-claude-pro-actual-difference-in-daily-message-limits/)
-- [Claude Sonnet vs Opus API Pricing Difference Worth It](/ai-tools-compared/claude-sonnet-vs-opus-api-pricing-difference-worth-it-2026/)
+- [Switching from Midjourney to Dall E 3 Prompt Adaptation Guid](/switching-from-midjourney-to-dall-e-3-prompt-adaptation-guid/)
+- [Migrate ChatGPT System Prompts](/migrate-chatgpt-system-prompts-to-claude-system-prompt-format/)
+- [How to Transfer Midjourney Prompt Library to Ideogram Prompt](/how-to-transfer-midjourney-prompt-library-to-ideogram-prompt/)
+- [Claude Max vs Claude Pro Actual Difference](/claude-max-vs-claude-pro-actual-difference-in-daily-message-limits/)
+- [Claude Sonnet vs Opus API Pricing Difference Worth It](/claude-sonnet-vs-opus-api-pricing-difference-worth-it-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

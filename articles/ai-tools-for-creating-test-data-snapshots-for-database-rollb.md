@@ -331,10 +331,10 @@ A: Configure your snapshot to be taken after migrations run but before test data
 
 ## Related Articles
 
-- [AI Tools for Creating Test Data Generators That Respect Busi](/ai-tools-compared/ai-tools-for-creating-test-data-generators-that-respect-busi/)
-- [AI Tools for Creating Test Data That Covers Timezone](/ai-tools-compared/ai-tools-for-creating-test-data-that-covers-timezone-dayligh/)
-- [Best AI Assistant for Creating Test Data Factories with Real](/ai-tools-compared/best-ai-assistant-for-creating-test-data-factories-with-real/)
-- [Claude Code Database Test Fixtures Guide](/ai-tools-compared/claude-code-database-test-fixtures-guide/)
-- [ChatGPT vs Claude for Creating Database Migration Scripts](/ai-tools-compared/chatgpt-vs-claude-for-creating-database-migration-scripts-po/)
+- [AI Tools for Creating Test Data Generators That Respect Busi](/ai-tools-for-creating-test-data-generators-that-respect-busi/)
+- [AI Tools for Creating Test Data That Covers Timezone](/ai-tools-for-creating-test-data-that-covers-timezone-dayligh/)
+- [Best AI Assistant for Creating Test Data Factories with Real](/best-ai-assistant-for-creating-test-data-factories-with-real/)
+- [Claude Code Database Test Fixtures Guide](/claude-code-database-test-fixtures-guide/)
+- [ChatGPT vs Claude for Creating Database Migration Scripts](/chatgpt-vs-claude-for-creating-database-migration-scripts-po/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

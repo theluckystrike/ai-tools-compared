@@ -392,11 +392,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI Tools for Writing Idiomatic Rust Error Handling](/ai-tools-compared/best-ai-tools-for-writing-idiomatic-rust-error-handling-with/)
-- [Copilot vs Cursor for Writing Rust Error Handling with](/ai-tools-compared/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
-- [Best AI Assistant for Debugging Swift Compiler Errors in Xco](/ai-tools-compared/best-ai-assistant-for-debugging-swift-compiler-errors-in-xco/)
-- [Best AI Assistant for Debugging Swift Compiler Errors](/ai-tools-compared/best-ai-assistant-for-debugging-swift-compiler-errors-in-xcode-build-phases-2026/)
-- [AI Tools for Interpreting Python Traceback Errors](/ai-tools-compared/ai-tools-for-interpreting-python-traceback-errors-in-django-middleware-chains/)
+- [Best AI Tools for Writing Idiomatic Rust Error Handling](/best-ai-tools-for-writing-idiomatic-rust-error-handling-with/)
+- [Copilot vs Cursor for Writing Rust Error Handling with](/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
+- [Best AI Assistant for Debugging Swift Compiler Errors in Xco](/best-ai-assistant-for-debugging-swift-compiler-errors-in-xco/)
+- [Best AI Assistant for Debugging Swift Compiler Errors](/best-ai-assistant-for-debugging-swift-compiler-errors-in-xcode-build-phases-2026/)
+- [AI Tools for Interpreting Python Traceback Errors](/ai-tools-for-interpreting-python-traceback-errors-in-django-middleware-chains/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

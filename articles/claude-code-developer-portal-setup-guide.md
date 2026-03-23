@@ -405,11 +405,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Best AI for Writing Internal Developer Portal Content](/ai-tools-compared/best-ai-for-writing-internal-developer-portal-content-from-s/)
-- [Claude Code Coverage Reporting Setup Guide](/ai-tools-compared/claude-code-coverage-reporting-setup-guide/)
-- [How to Migrate From Copilot for Neovim](/ai-tools-compared/migrate-copilot-for-neovim-setup-to-claude-code-terminal-wor/)
-- [AI Tools for Converting Code Comments into Developer Facing](/ai-tools-compared/ai-tools-for-converting-code-comments-into-developer-facing-/)
-- [Gemini Code Assist Enterprise Pricing Per Developer](/ai-tools-compared/gemini-code-assist-enterprise-pricing-per-developer-breakdown-2026/)
+- [Best AI for Writing Internal Developer Portal Content](/best-ai-for-writing-internal-developer-portal-content-from-s/)
+- [Claude Code Coverage Reporting Setup Guide](/claude-code-coverage-reporting-setup-guide/)
+- [How to Migrate From Copilot for Neovim](/migrate-copilot-for-neovim-setup-to-claude-code-terminal-wor/)
+- [AI Tools for Converting Code Comments into Developer Facing](/ai-tools-for-converting-code-comments-into-developer-facing-/)
+- [Gemini Code Assist Enterprise Pricing Per Developer](/gemini-code-assist-enterprise-pricing-per-developer-breakdown-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```

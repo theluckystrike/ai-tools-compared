@@ -342,10 +342,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Writing Flutter Integration Tests with Patrol](/ai-tools-compared/ai-tools-for-writing-flutter-integration-tests-with-patrol-f/)
-- [AI Tools for Writing Playwright Tests That Verify Accessibil](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-accessibil/)
-- [AI Tools for Writing Jest Tests for Graphql Resolvers](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-graphql-resolvers-with-dataloader-batching/)
-- [AI Tools for Writing pytest Tests for Alembic Database Paths](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
-- [AI Tools for Writing pytest Tests with Moto Library for AWS](/ai-tools-compared/ai-tools-for-writing-pytest-tests-with-moto-library-for-aws-/)
+- [AI Tools for Writing Flutter Integration Tests with Patrol](/ai-tools-for-writing-flutter-integration-tests-with-patrol-f/)
+- [AI Tools for Writing Playwright Tests That Verify Accessibil](/ai-tools-for-writing-playwright-tests-that-verify-accessibil/)
+- [AI Tools for Writing Jest Tests for Graphql Resolvers](/ai-tools-for-writing-jest-tests-for-graphql-resolvers-with-dataloader-batching/)
+- [AI Tools for Writing pytest Tests for Alembic Database Paths](/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
+- [AI Tools for Writing pytest Tests with Moto Library for AWS](/ai-tools-for-writing-pytest-tests-with-moto-library-for-aws-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

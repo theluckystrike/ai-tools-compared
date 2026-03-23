@@ -479,9 +479,9 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Free AI Tools for Writing Bash Scripts and Automation](/ai-tools-compared/free-ai-tools-for-writing-bash-scripts-and-automation/)
-- [AI Code Completion for Writing Shell Commands Inside](/ai-tools-compared/ai-code-completion-for-writing-shell-commands-inside-scripts/)
-- [AI Tools for Writing GitHub Actions Workflows (2026)](/ai-tools-compared/ai-tools/best-ai-tools-for-github-actions-workflows/)
-- [AI Tools for Writing Database Migration Rollback Scripts](/ai-tools-compared/ai-tools-for-writing-database-migration-rollback-scripts-2026/)
-- [Best AI Tools for Writing Redis Lua Scripts (2026)](/ai-tools-compared/best-ai-tools-for-writing-redis-lua-scripts-2026/---)
+- [Free AI Tools for Writing Bash Scripts and Automation](/free-ai-tools-for-writing-bash-scripts-and-automation/)
+- [AI Code Completion for Writing Shell Commands Inside](/ai-code-completion-for-writing-shell-commands-inside-scripts/)
+- [AI Tools for Writing GitHub Actions Workflows (2026)](/ai-tools/best-ai-tools-for-github-actions-workflows/)
+- [AI Tools for Writing Database Migration Rollback Scripts](/ai-tools-for-writing-database-migration-rollback-scripts-2026/)
+- [Best AI Tools for Writing Redis Lua Scripts (2026)](/best-ai-tools-for-writing-redis-lua-scripts-2026/---)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

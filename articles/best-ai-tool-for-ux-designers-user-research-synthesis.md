@@ -356,10 +356,10 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Best AI Assistant for Designers Writing User Journey Maps](/ai-tools-compared/best-ai-assistant-for-designers-writing-user-journey-maps-fr/)
-- [Best AI for Product Managers Creating User Persona Documents](/ai-tools-compared/best-ai-for-product-managers-creating-user-persona-documents/)
-- [Best AI Tool for Product Managers Writing User Stories](/ai-tools-compared/best-ai-tool-for-product-managers-writing-user-stories-from-customer-feedback-2026/)
-- [How to Use AI to Generate Activity Diagrams from User](/ai-tools-compared/how-to-use-ai-to-generate-activity-diagrams-from-user-acceptance-criteria/)
-- [AI Research Assistant Chrome Extension](/ai-tools-compared/ai-research-assistant-chrome-extension/)
+- [Best AI Assistant for Designers Writing User Journey Maps](/best-ai-assistant-for-designers-writing-user-journey-maps-fr/)
+- [Best AI for Product Managers Creating User Persona Documents](/best-ai-for-product-managers-creating-user-persona-documents/)
+- [Best AI Tool for Product Managers Writing User Stories](/best-ai-tool-for-product-managers-writing-user-stories-from-customer-feedback-2026/)
+- [How to Use AI to Generate Activity Diagrams from User](/how-to-use-ai-to-generate-activity-diagrams-from-user-acceptance-criteria/)
+- [AI Research Assistant Chrome Extension](/ai-research-assistant-chrome-extension/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

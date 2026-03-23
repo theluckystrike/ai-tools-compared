@@ -454,9 +454,9 @@ For most teams: Renovate free tier is optimal. Add Socket.dev if you're security
 
 ## Related Reading
 
-- [AI Tools for Automated Infrastructure Drift Detection](/ai-tools-compared/ai-tools-for-automated-infrastructure-drift-detection-and-co/)
-- [AI Tools for Automated Changelog Generation 2026](/ai-tools-compared/ai-tools-for-automated-changelog-generation-2026/)
-- [AI-Powered Database Migration Tools Comparison](/ai-tools-compared/ai-powered-database-migration-tools-comparison/)
+- [AI Tools for Automated Infrastructure Drift Detection](/ai-tools-for-automated-infrastructure-drift-detection-and-co/)
+- [AI Tools for Automated Changelog Generation 2026](/ai-tools-for-automated-changelog-generation-2026/)
+- [AI-Powered Database Migration Tools Comparison](/ai-powered-database-migration-tools-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

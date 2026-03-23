@@ -303,19 +303,19 @@ Preprocess with AI filters, select the codec for your delivery requirements, and
 
 ## Related Reading
 
-- [Best AI Tools for Video Transcription: A Developer's Guide](/ai-tools-compared/best-ai-tools-for-video-transcription/)
-- [Kling AI vs Gen 3 Video Generation: Developer Comparison](/ai-tools-compared/kling-ai-vs-gen-3-video-generation/)
-- [AI Tools for Video Accessibility Features](/ai-tools-compared/ai-tools-for-video-accessibility-features/)
-- [AI Tools for Video Color Grading](/ai-tools-compared/ai-tools-for-video-color-grading/)
-- [AI Tools for Video Frame Interpolation](/ai-tools-compared/ai-tools-for-video-frame-interpolation/)
+- [Best AI Tools for Video Transcription: A Developer's Guide](/best-ai-tools-for-video-transcription/)
+- [Kling AI vs Gen 3 Video Generation: Developer Comparison](/kling-ai-vs-gen-3-video-generation/)
+- [AI Tools for Video Accessibility Features](/ai-tools-for-video-accessibility-features/)
+- [AI Tools for Video Color Grading](/ai-tools-for-video-color-grading/)
+- [AI Tools for Video Frame Interpolation](/ai-tools-for-video-frame-interpolation/)
 
 ## Related Articles
 
-- [Best AI Tools for Video Transcription: A Developer's Guide](/ai-tools-compared/best-ai-tools-for-video-transcription/)
-- [AI Tools for Video Summarization](/ai-tools-compared/ai-tools-for-video-summarization/)
-- [AI Tools for Video Accessibility Features](/ai-tools-compared/ai-tools-for-video-accessibility-features/)
-- [AI Tools for Video Thumbnail Generation](/ai-tools-compared/ai-tools-for-video-thumbnail-generation/)
-- [AI Tools for Video Color Grading](/ai-tools-compared/ai-tools-for-video-color-grading/)
+- [Best AI Tools for Video Transcription: A Developer's Guide](/best-ai-tools-for-video-transcription/)
+- [AI Tools for Video Summarization](/ai-tools-for-video-summarization/)
+- [AI Tools for Video Accessibility Features](/ai-tools-for-video-accessibility-features/)
+- [AI Tools for Video Thumbnail Generation](/ai-tools-for-video-thumbnail-generation/)
+- [AI Tools for Video Color Grading](/ai-tools-for-video-color-grading/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -367,6 +367,6 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [Best AI Tool for Generating Accessible Cookie Consent Banner Components in 2026](/best-ai-tool-for-generating-accessible-cookie-consent-banner/)
 - [Best AI Tool for Generating Accessible Data Table Markup with Proper Headers](/best-ai-tool-for-generating-accessible-data-table-markup-wit/)
 - [Best AI Tool for Generating Accessible Search Results Page Markup](/best-ai-tool-for-generating-accessible-search-results-page-m/)
-- [AI Tools for Generating Closed Captions and Transcripts](/ai-tools-compared/ai-tools-for-generating-closed-captions-and-transcripts-from/)
+- [AI Tools for Generating Closed Captions and Transcripts](/ai-tools-for-generating-closed-captions-and-transcripts-from/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

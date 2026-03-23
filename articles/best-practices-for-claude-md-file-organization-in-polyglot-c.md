@@ -401,11 +401,11 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Best Practices for Writing .cursorrules File That Improves](/ai-tools-compared/best-practices-for-writing-cursorrules-file-that-improves-co/)
-- [Best Way to Structure Claude MD File for Python Django Proje](/ai-tools-compared/best-way-to-structure-claude-md-file-for-python-django-proje/)
-- [How to Write Effective CLAUDE MD File for monorepo With Mult](/ai-tools-compared/how-to-write-effective-claude-md-file-for-monorepo-with-mult/)
-- [How to Transfer GitHub Copilot Organization Settings](/ai-tools-compared/transfer-github-copilot-org-settings-when-switching-to-curso/)
-- [Best AI Assistant for Creating Playwright Tests for File Upl](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-file-upl/)
+- [Best Practices for Writing .cursorrules File That Improves](/best-practices-for-writing-cursorrules-file-that-improves-co/)
+- [Best Way to Structure Claude MD File for Python Django Proje](/best-way-to-structure-claude-md-file-for-python-django-proje/)
+- [How to Write Effective CLAUDE MD File for monorepo With Mult](/how-to-write-effective-claude-md-file-for-monorepo-with-mult/)
+- [How to Transfer GitHub Copilot Organization Settings](/transfer-github-copilot-org-settings-when-switching-to-curso/)
+- [Best AI Assistant for Creating Playwright Tests for File Upl](/best-ai-assistant-for-creating-playwright-tests-for-file-upl/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

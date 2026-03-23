@@ -303,11 +303,11 @@ Claude Code will create the full directory tree and populate each file, respecti
 
 ## Related Articles
 
-- [AI Tools for Writing Kubernetes Helm Charts 2026](/ai-tools-compared/ai-tools-for-writing-kubernetes-helm-charts-2026/)
-- [Best AI Tools for Generating Kubernetes Helm Charts 2026](/ai-tools-compared/best-ai-tools-for-generating-kubernetes-helm-charts-2026/)
-- [Best AI Tools for Writing Kubernetes Manifests and Helm](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-manifests-and-helm-charts-2026/)
-- [Best AI Tools for Writing Kubernetes Custom Resource](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-custom-resource-definitions-2026/)
-- [Claude vs ChatGPT for Writing Kubernetes Helm Chart Values](/ai-tools-compared/claude-vs-chatgpt-for-writing-kubernetes-helm-chart-values-f/)
+- [AI Tools for Writing Kubernetes Helm Charts 2026](/ai-tools-for-writing-kubernetes-helm-charts-2026/)
+- [Best AI Tools for Generating Kubernetes Helm Charts 2026](/best-ai-tools-for-generating-kubernetes-helm-charts-2026/)
+- [Best AI Tools for Writing Kubernetes Manifests and Helm](/best-ai-tools-for-writing-kubernetes-manifests-and-helm-charts-2026/)
+- [Best AI Tools for Writing Kubernetes Custom Resource](/best-ai-tools-for-writing-kubernetes-custom-resource-definitions-2026/)
+- [Claude vs ChatGPT for Writing Kubernetes Helm Chart Values](/claude-vs-chatgpt-for-writing-kubernetes-helm-chart-values-f/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 

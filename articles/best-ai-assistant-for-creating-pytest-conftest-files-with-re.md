@@ -327,11 +327,11 @@ Request: "Review every fixture and confirm it cleans up all resources after yiel
 
 ## Related Articles
 
-- [AI Tools for Generating pytest Fixtures from Database](/ai-tools-compared/ai-tools-for-generating-pytest-fixtures-from-database-schema/)
-- [Best AI Assistant for Writing pytest Tests for Background](/ai-tools-compared/best-ai-assistant-for-writing-pytest-tests-for-background-job-retry-failure-scenarios/)
-- [AI Tools for Writing pytest Tests for Alembic Database Paths](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
-- [AI Tools for Creating Property-Based Test Cases](/ai-tools-compared/ai-tools-for-creating-property-based-test-cases-using-hypoth/)
-- [AI Tools for Writing dbt Seeds and Fixtures for Testing](/ai-tools-compared/ai-tools-for-writing-dbt-seeds-and-fixtures-for-testing-mode/)
+- [AI Tools for Generating pytest Fixtures from Database](/ai-tools-for-generating-pytest-fixtures-from-database-schema/)
+- [Best AI Assistant for Writing pytest Tests for Background](/best-ai-assistant-for-writing-pytest-tests-for-background-job-retry-failure-scenarios/)
+- [AI Tools for Writing pytest Tests for Alembic Database Paths](/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
+- [AI Tools for Creating Property-Based Test Cases](/ai-tools-for-creating-property-based-test-cases-using-hypoth/)
+- [AI Tools for Writing dbt Seeds and Fixtures for Testing](/ai-tools-for-writing-dbt-seeds-and-fixtures-for-testing-mode/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

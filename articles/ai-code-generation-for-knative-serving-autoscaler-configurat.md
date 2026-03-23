@@ -193,7 +193,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [AI Code Completion for Flutter BLoC Pattern Event and State Class Generation](/ai-code-completion-for-flutter-bloc-pattern-event-and-state-/)
 - [AI Code Generation for Java Reactive Programming](/ai-code-generation-for-java-reactive-programming-with-projec/)
 - [AI Code Generation for Java Virtual Threads Project Loom](/ai-code-generation-for-java-virtual-threads-project-loom-pat/)
-- [AI Code Generation for Python FastAPI Endpoints](/ai-tools-compared/ai-code-generation-for-python-fastapi-endpoints-with-pydantic-models-compared/)
+- [AI Code Generation for Python FastAPI Endpoints](/ai-code-generation-for-python-fastapi-endpoints-with-pydantic-models-compared/)
 ## Advanced Scaling with Multiple Metrics
 
 While Knative defaults to request-based scaling, you can extend configurations with custom metrics. AI tools can help generate configurations that respond to custom Prometheus metrics:

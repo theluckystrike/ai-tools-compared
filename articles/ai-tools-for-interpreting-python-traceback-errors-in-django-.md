@@ -342,10 +342,10 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 
 ## Related Articles
 
-- [AI Tools for Interpreting Terraform Plan Errors with Provide](/ai-tools-compared/ai-tools-for-interpreting-terraform-plan-errors-with-provide/)
-- [AI Tools for Interpreting Terraform Plan Errors](/ai-tools-compared/ai-tools-for-interpreting-terraform-plan-errors-with-provider-version-conflicts/)
-- [Best Way to Structure Claude MD File for Python Django Proje](/ai-tools-compared/best-way-to-structure-claude-md-file-for-python-django-proje/)
-- [AI Tools for Interpreting Rust Compiler Borrow Checker Error](/ai-tools-compared/ai-tools-for-interpreting-rust-compiler-borrow-checker-error/)
-- [Copilot vs Claude Code for Scaffolding New Django REST Frame](/ai-tools-compared/copilot-vs-claude-code-for-scaffolding-new-django-rest-frame/)
+- [AI Tools for Interpreting Terraform Plan Errors with Provide](/ai-tools-for-interpreting-terraform-plan-errors-with-provide/)
+- [AI Tools for Interpreting Terraform Plan Errors](/ai-tools-for-interpreting-terraform-plan-errors-with-provider-version-conflicts/)
+- [Best Way to Structure Claude MD File for Python Django Proje](/best-way-to-structure-claude-md-file-for-python-django-proje/)
+- [AI Tools for Interpreting Rust Compiler Borrow Checker Error](/ai-tools-for-interpreting-rust-compiler-borrow-checker-error/)
+- [Copilot vs Claude Code for Scaffolding New Django REST Frame](/copilot-vs-claude-code-for-scaffolding-new-django-rest-frame/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

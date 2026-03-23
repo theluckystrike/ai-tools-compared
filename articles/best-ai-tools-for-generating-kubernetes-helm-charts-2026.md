@@ -505,10 +505,10 @@ A: Not dedicated ones as of 2026. Most Helm generation flows through general-pur
 
 ## Related Articles
 
-- [AI Tools for Writing Kubernetes Helm Charts 2026](/ai-tools-compared/ai-tools-for-writing-kubernetes-helm-charts-2026/)
-- [Best AI Tools for Writing Helm Charts](/ai-tools-compared/best-ai-tools-for-writing-helm-charts/)
-- [Best AI Tools for Writing Kubernetes Manifests and Helm](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-manifests-and-helm-charts-2026/)
-- [Claude vs ChatGPT for Writing Kubernetes Helm Chart Values](/ai-tools-compared/claude-vs-chatgpt-for-writing-kubernetes-helm-chart-values-f/)
-- [Best AI Tools for Kubernetes Manifest Generation](/ai-tools-compared/best-ai-tools-for-kubernetes-manifest-generation/)
+- [AI Tools for Writing Kubernetes Helm Charts 2026](/ai-tools-for-writing-kubernetes-helm-charts-2026/)
+- [Best AI Tools for Writing Helm Charts](/best-ai-tools-for-writing-helm-charts/)
+- [Best AI Tools for Writing Kubernetes Manifests and Helm](/best-ai-tools-for-writing-kubernetes-manifests-and-helm-charts-2026/)
+- [Claude vs ChatGPT for Writing Kubernetes Helm Chart Values](/claude-vs-chatgpt-for-writing-kubernetes-helm-chart-values-f/)
+- [Best AI Tools for Kubernetes Manifest Generation](/best-ai-tools-for-kubernetes-manifest-generation/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

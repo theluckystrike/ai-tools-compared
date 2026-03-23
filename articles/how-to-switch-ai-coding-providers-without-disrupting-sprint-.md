@@ -313,11 +313,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Switch from Cursor to Claude Code Without Losing](/ai-tools-compared/how-to-switch-from-cursor-to-claude-code-without-losing-settings/)
-- [Free AI Coding Tools That Work Offline Without Internet](/ai-tools-compared/free-ai-coding-tools-that-work-offline-without-internet/)
-- [How to Reduce AI Coding Tool Costs Without Losing](/ai-tools-compared/how-to-reduce-ai-coding-tool-costs-without-losing-productivi/)
-- [How to Use AI Coding Tools Without Becoming Dependent on Aut](/ai-tools-compared/how-to-use-ai-coding-tools-without-becoming-dependent-on-aut/)
-- [Best AI Assistant for Product Managers Writing Sprint](/ai-tools-compared/best-ai-assistant-for-product-managers-writing-sprint-retrospective-summaries-from-notes-2026/)
-- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
+- [How to Switch from Cursor to Claude Code Without Losing](/how-to-switch-from-cursor-to-claude-code-without-losing-settings/)
+- [Free AI Coding Tools That Work Offline Without Internet](/free-ai-coding-tools-that-work-offline-without-internet/)
+- [How to Reduce AI Coding Tool Costs Without Losing](/how-to-reduce-ai-coding-tool-costs-without-losing-productivi/)
+- [How to Use AI Coding Tools Without Becoming Dependent on Aut](/how-to-use-ai-coding-tools-without-becoming-dependent-on-aut/)
+- [Best AI Assistant for Product Managers Writing Sprint](/best-ai-assistant-for-product-managers-writing-sprint-retrospective-summaries-from-notes-2026/)
+- [AI Project Status Generator for Remote Teams Pulling](https://welikeremotestack.com/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

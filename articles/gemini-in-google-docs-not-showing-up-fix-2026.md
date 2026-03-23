@@ -296,11 +296,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Notion AI vs Google Docs AI: Complete Writing Features](/ai-tools-compared/notion-ai-writing-features-vs-google-docs-ai-compared/)
-- [Gemini AI Giving Wrong Answers: Debugging Tips and Fixes](/ai-tools-compared/gemini-ai-giving-wrong-answers-debugging-tips/)
-- [Copilot Suggestions Not Showing Up Fix 2026](/ai-tools-compared/copilot-suggestions-not-showing-up-fix-2026/)
-- [Gemini Advanced Google One Storage: Does AI Use Your Storage](/ai-tools-compared/gemini-advanced-google-one-storage-does-ai-use-your-storage-/)
-- [Gemini vs ChatGPT for Writing Google Cloud Function Deployme](/ai-tools-compared/gemini-vs-chatgpt-for-writing-google-cloud-function-deployme/)
+- [Notion AI vs Google Docs AI: Complete Writing Features](/notion-ai-writing-features-vs-google-docs-ai-compared/)
+- [Gemini AI Giving Wrong Answers: Debugging Tips and Fixes](/gemini-ai-giving-wrong-answers-debugging-tips/)
+- [Copilot Suggestions Not Showing Up Fix 2026](/copilot-suggestions-not-showing-up-fix-2026/)
+- [Gemini Advanced Google One Storage: Does AI Use Your Storage](/gemini-advanced-google-one-storage-does-ai-use-your-storage-/)
+- [Gemini vs ChatGPT for Writing Google Cloud Function Deployme](/gemini-vs-chatgpt-for-writing-google-cloud-function-deployme/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

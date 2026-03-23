@@ -268,11 +268,11 @@ Review them quarterly or whenever your brand positioning shifts. Brand voice dri
 
 ## Related Articles
 
-- [How to Transfer WriteSonic Content to Jasper AI Brand Voice](/ai-tools-compared/how-to-transfer-writesonic-content-to-jasper-ai-brand-voice/)
-- [Jasper AI Brand Voice vs Claude Style Matching](/ai-tools-compared/jasper-ai-brand-voice-vs-claude-style-matching/)
-- [How to Migrate ChatGPT Plugins](/ai-tools-compared/migrate-chatgpt-plugins-to-custom-gpts-step-by-step-2026/)
-- [ChatGPT Voice Mode Advanced Does It Use Extra Credits or](/ai-tools-compared/chatgpt-voice-mode-advanced-does-it-use-extra-credits-or-free/)
-- [Switching from ChatGPT Voice to Gemini Live Conversation](/ai-tools-compared/switching-from-chatgpt-voice-to-gemini-live-conversation-differences/)
+- [How to Transfer WriteSonic Content to Jasper AI Brand Voice](/how-to-transfer-writesonic-content-to-jasper-ai-brand-voice/)
+- [Jasper AI Brand Voice vs Claude Style Matching](/jasper-ai-brand-voice-vs-claude-style-matching/)
+- [How to Migrate ChatGPT Plugins](/migrate-chatgpt-plugins-to-custom-gpts-step-by-step-2026/)
+- [ChatGPT Voice Mode Advanced Does It Use Extra Credits or](/chatgpt-voice-mode-advanced-does-it-use-extra-credits-or-free/)
+- [Switching from ChatGPT Voice to Gemini Live Conversation](/switching-from-chatgpt-voice-to-gemini-live-conversation-differences/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

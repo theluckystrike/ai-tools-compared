@@ -445,11 +445,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Best AI Inline Chat Features in VS Code Compared to](/ai-tools-compared/best-ai-inline-chat-features-in-vscode-compared-to-jetbrains/)
-- [Copilot Inline Chat vs Cursor Inline Chat: Which Understands](/ai-tools-compared/copilot-inline-chat-vs-cursor-inline-chat-which-understands-/)
-- [How to Transfer Copilot Inline Chat Shortcuts](/ai-tools-compared/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)
-- [How to Use AI Inline Completion](/ai-tools-compared/how-to-use-ai-inline-completion-for-writing-function-signatures-quickly/)
-- [How to Use Copilot Chat to Generate Code from Natural](/ai-tools-compared/how-to-use-copilot-chat-to-generate-code-from-natural-langua/)
+- [Best AI Inline Chat Features in VS Code Compared to](/best-ai-inline-chat-features-in-vscode-compared-to-jetbrains/)
+- [Copilot Inline Chat vs Cursor Inline Chat: Which Understands](/copilot-inline-chat-vs-cursor-inline-chat-which-understands-/)
+- [How to Transfer Copilot Inline Chat Shortcuts](/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)
+- [How to Use AI Inline Completion](/how-to-use-ai-inline-completion-for-writing-function-signatures-quickly/)
+- [How to Use Copilot Chat to Generate Code from Natural](/how-to-use-copilot-chat-to-generate-code-from-natural-langua/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 ```

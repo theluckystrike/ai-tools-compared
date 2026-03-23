@@ -374,11 +374,11 @@ The time invested in configuring CursorRules properly pays dividends through imp
 
 ## Related Articles
 
-- [Best Way to Structure CursorRules for Microservices Project](/ai-tools-compared/best-way-to-structure-cursorrules-for-microservices-project-/)
-- [Best Way to Configure AI Coding Tools to Follow Your Databas](/ai-tools-compared/best-way-to-configure-ai-coding-tools-to-follow-your-databas/)
-- [Best Way to Configure Claude Code to Understand Your Interna](/ai-tools-compared/best-way-to-configure-claude-code-to-understand-your-interna/)
-- [AI Code Generation for Python FastAPI Endpoints](/ai-tools-compared/ai-code-generation-for-python-fastapi-endpoints-with-pydantic-models-compared/)
-- [Best Way to Structure Claude MD File for Python Django Proje](/ai-tools-compared/best-way-to-structure-claude-md-file-for-python-django-proje/)
+- [Best Way to Structure CursorRules for Microservices Project](/best-way-to-structure-cursorrules-for-microservices-project-/)
+- [Best Way to Configure AI Coding Tools to Follow Your Databas](/best-way-to-configure-ai-coding-tools-to-follow-your-databas/)
+- [Best Way to Configure Claude Code to Understand Your Interna](/best-way-to-configure-claude-code-to-understand-your-interna/)
+- [AI Code Generation for Python FastAPI Endpoints](/ai-code-generation-for-python-fastapi-endpoints-with-pydantic-models-compared/)
+- [Best Way to Structure Claude MD File for Python Django Proje](/best-way-to-structure-claude-md-file-for-python-django-proje/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

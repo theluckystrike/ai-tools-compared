@@ -278,10 +278,10 @@ AI can walk through this tradeoff based on team size, cloud provider, and compli
 
 ## Related Articles
 
-- [AI Tools for Writing Terraform Infrastructure-as-Code](/ai-tools-compared/ai-tools-for-writing-terraform-infrastructure-as-code-comparison-2026/)
-- [Best AI Tools for Writing Terraform Modules 2026](/ai-tools-compared/best-ai-tools-for-writing-terraform-modules-2026/)
-- [Claude vs ChatGPT for Writing Datadog Dashboard Terraform](/ai-tools-compared/claude-vs-chatgpt-for-writing-datadog-dashboard-terraform-de/)
-- [Copilot vs Cursor for Writing Terraform Modules from Scratch](/ai-tools-compared/copilot-vs-cursor-for-writing-terraform-modules-from-scratch/)
-- [How to Use Copilot for Writing Terraform Provider Configurat](/ai-tools-compared/how-to-use-copilot-for-writing-terraform-provider-configurat/)
+- [AI Tools for Writing Terraform Infrastructure-as-Code](/ai-tools-for-writing-terraform-infrastructure-as-code-comparison-2026/)
+- [Best AI Tools for Writing Terraform Modules 2026](/best-ai-tools-for-writing-terraform-modules-2026/)
+- [Claude vs ChatGPT for Writing Datadog Dashboard Terraform](/claude-vs-chatgpt-for-writing-datadog-dashboard-terraform-de/)
+- [Copilot vs Cursor for Writing Terraform Modules from Scratch](/copilot-vs-cursor-for-writing-terraform-modules-from-scratch/)
+- [How to Use Copilot for Writing Terraform Provider Configurat](/how-to-use-copilot-for-writing-terraform-provider-configurat/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -428,10 +428,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Copilot Workspace vs Cursor Composer Multi File Editing Comp](/ai-tools-compared/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)
-- [How to Use Copilot Agent Mode for Multi-Step Coding Tasks](/ai-tools-compared/how-to-use-copilot-agent-mode-for-multi-step-coding-tasks-20/)
-- [Best AI Assistant for Creating Playwright Tests for Multi](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-multi-st/)
-- [Best AI for Writing Playwright Multi Browser Test Matrices](/ai-tools-compared/best-ai-for-writing-playwright-multi-browser-test-matrices-with-github-actions-2026/)
-- [Cursor AI Background Agent Feature for Autonomous Multi Step](/ai-tools-compared/cursor-ai-background-agent-feature-for-autonomous-multi-step/)
+- [Copilot Workspace vs Cursor Composer Multi File Editing Comp](/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)
+- [How to Use Copilot Agent Mode for Multi-Step Coding Tasks](/how-to-use-copilot-agent-mode-for-multi-step-coding-tasks-20/)
+- [Best AI Assistant for Creating Playwright Tests for Multi](/best-ai-assistant-for-creating-playwright-tests-for-multi-st/)
+- [Best AI for Writing Playwright Multi Browser Test Matrices](/best-ai-for-writing-playwright-multi-browser-test-matrices-with-github-actions-2026/)
+- [Cursor AI Background Agent Feature for Autonomous Multi Step](/cursor-ai-background-agent-feature-for-autonomous-multi-step/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -258,10 +258,10 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Best Way to Configure Claude Code to Understand Your](/ai-tools-compared/best-way-to-configure-claude-code-to-understand-your-interna/)
-- [Best Practices for AI Tool Customization Files When Onboardi](/ai-tools-compared/best-practices-for-ai-tool-customization-files-when-onboardi/)
-- [Best Practices for AI Coding Tool Project Configuration](/ai-tools-compared/best-practices-for-ai-coding-tool-project-configuration-in-l/)
-- [Best AI Tools for Writing Kubernetes Operator Code](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-operator-code-from-scratch/)
-- [Best AI Tools for Python Celery Task Queue Code Generation](/ai-tools-compared/best-ai-tools-for-python-celery-task-queue-code-generation-2/)
+- [Best Way to Configure Claude Code to Understand Your](/best-way-to-configure-claude-code-to-understand-your-interna/)
+- [Best Practices for AI Tool Customization Files When Onboardi](/best-practices-for-ai-tool-customization-files-when-onboardi/)
+- [Best Practices for AI Coding Tool Project Configuration](/best-practices-for-ai-coding-tool-project-configuration-in-l/)
+- [Best AI Tools for Writing Kubernetes Operator Code](/best-ai-tools-for-writing-kubernetes-operator-code-from-scratch/)
+- [Best AI Tools for Python Celery Task Queue Code Generation](/best-ai-tools-for-python-celery-task-queue-code-generation-2/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

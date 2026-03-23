@@ -387,10 +387,10 @@ This ensures your team can't commit broken toolchain configurations.
 
 ## Related Articles
 
-- [How to Use AI to Resolve CMake Configuration Errors for Cros](/ai-tools-compared/how-to-use-ai-to-resolve-cmake-configuration-errors-for-cros/)
-- [How to Use AI to Debug CORS Errors in Cross-Origin API Reque](/ai-tools-compared/how-to-use-ai-to-debug-cors-errors-in-cross-origin-api-reque/)
-- [How to Use AI to Resolve Nginx 502 Bad Gateway Errors](/ai-tools-compared/how-to-use-ai-to-resolve-nginx-502-bad-gateway-errors-from-u/)
-- [How to Use AI to Resolve NPM Peer Dependency Conflict Errors](/ai-tools-compared/how-to-use-ai-to-resolve-npm-peer-dependency-conflict-errors/)
-- [How Accurate Are AI Tools at Rust WASM Compilation and Bindg](/ai-tools-compared/how-accurate-are-ai-tools-at-rust-wasm-compilation-and-bindg/)
+- [How to Use AI to Resolve CMake Configuration Errors for Cros](/how-to-use-ai-to-resolve-cmake-configuration-errors-for-cros/)
+- [How to Use AI to Debug CORS Errors in Cross-Origin API Reque](/how-to-use-ai-to-debug-cors-errors-in-cross-origin-api-reque/)
+- [How to Use AI to Resolve Nginx 502 Bad Gateway Errors](/how-to-use-ai-to-resolve-nginx-502-bad-gateway-errors-from-u/)
+- [How to Use AI to Resolve NPM Peer Dependency Conflict Errors](/how-to-use-ai-to-resolve-npm-peer-dependency-conflict-errors/)
+- [How Accurate Are AI Tools at Rust WASM Compilation and Bindg](/how-accurate-are-ai-tools-at-rust-wasm-compilation-and-bindg/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -333,9 +333,9 @@ Claude's stronger performance on Caddy tasks comes partly from its tendency to q
 
 ## Related Reading
 
-- [AI Tools for Generating Nginx and Caddy Reverse Proxy Configs](/ai-tools-compared/ai-tools-for-generating-nginx-and-caddy-reverse-proxy-config/)
-- [Best AI Tools for Writing Apache Configs](/ai-tools-compared/ai-tools-for-writing-apache-configs/)
-- [AI Tools for Automated SSL/TLS Configuration](/ai-tools-compared/ai-tools-automated-ssl-tls-config/)
+- [AI Tools for Generating Nginx and Caddy Reverse Proxy Configs](/ai-tools-for-generating-nginx-and-caddy-reverse-proxy-config/)
+- [Best AI Tools for Writing Apache Configs](/ai-tools-for-writing-apache-configs/)
+- [AI Tools for Automated SSL/TLS Configuration](/ai-tools-automated-ssl-tls-config/)
 
 ---
 

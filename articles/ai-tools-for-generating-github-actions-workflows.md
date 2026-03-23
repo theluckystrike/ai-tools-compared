@@ -490,11 +490,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Generating GitHub Actions Workflows](/ai-tools-compared/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
-- [AI Tools for Writing GitHub Actions Workflows (2026)](/ai-tools-compared/ai-tools/best-ai-tools-for-github-actions-workflows/)
-- [Best AI Tools for Generating GitHub Actions Composite](/ai-tools-compared/ai-tools-for-generating-github-actions-composite-actions-2026/---)
-- [Best AI Tools for Writing GitHub Actions Reusable Workflow](/ai-tools-compared/best-ai-tools-for-writing-github-actions-reusable-workflow-t/)
-- [Best AI Tools for Writing GitHub Actions Workflows 2026](/ai-tools-compared/best-ai-tools-for-writing-github-actions-workflows-2026/)
-- [GitHub Actions Workflow for Remote Dev Teams](https://theluckystrike.github.io/remote-work-tools/github-actions-remote-dev-workflow/)
+- [AI Tools for Generating GitHub Actions Workflows](/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
+- [AI Tools for Writing GitHub Actions Workflows (2026)](/ai-tools/best-ai-tools-for-github-actions-workflows/)
+- [Best AI Tools for Generating GitHub Actions Composite](/ai-tools-for-generating-github-actions-composite-actions-2026/---)
+- [Best AI Tools for Writing GitHub Actions Reusable Workflow](/best-ai-tools-for-writing-github-actions-reusable-workflow-t/)
+- [Best AI Tools for Writing GitHub Actions Workflows 2026](/best-ai-tools-for-writing-github-actions-workflows-2026/)
+- [GitHub Actions Workflow for Remote Dev Teams](https://welikeremotestack.com/github-actions-remote-dev-workflow/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

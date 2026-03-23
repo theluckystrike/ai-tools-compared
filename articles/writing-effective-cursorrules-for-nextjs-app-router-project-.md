@@ -340,10 +340,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How to Use AI to Generate Jest Tests for Next.js API Routes](/ai-tools-compared/how-to-use-ai-to-generate-jest-tests-for-nextjs-api-routes/)
-- [Cursor vs Windsurf for Building Next Js App from Design Mock](/ai-tools-compared/cursor-vs-windsurf-for-building-next-js-app-from-design-mock/)
-- [Writing Effective CursorRules for React TypeScript Projects](/ai-tools-compared/writing-effective-cursorrules-for-react-typescript-projects-/)
-- [Best Way to Configure CursorRules for Python FastAPI Project](/ai-tools-compared/best-way-to-configure-cursorrules-for-python-fastapi-project/)
-- [Best Way to Structure CursorRules for Microservices Project](/ai-tools-compared/best-way-to-structure-cursorrules-for-microservices-project-/)
+- [How to Use AI to Generate Jest Tests for Next.js API Routes](/how-to-use-ai-to-generate-jest-tests-for-nextjs-api-routes/)
+- [Cursor vs Windsurf for Building Next Js App from Design Mock](/cursor-vs-windsurf-for-building-next-js-app-from-design-mock/)
+- [Writing Effective CursorRules for React TypeScript Projects](/writing-effective-cursorrules-for-react-typescript-projects-/)
+- [Best Way to Configure CursorRules for Python FastAPI Project](/best-way-to-configure-cursorrules-for-python-fastapi-project/)
+- [Best Way to Structure CursorRules for Microservices Project](/best-way-to-structure-cursorrules-for-microservices-project-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

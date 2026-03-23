@@ -288,9 +288,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Migrate Windsurf AI Rules to Cursor Dot Cursor Rules](/ai-tools-compared/migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/)
-- [How to Migrate Cursor Rules File](/ai-tools-compared/migrate-cursor-rules-file-to-windsurf-rules-format-guide/)
-- [Switching from Windsurf Free to Cursor Free What Is](/ai-tools-compared/switching-from-windsurf-free-to-cursor-free-what-is-different/)
-- [How to Migrate Cursor AI Snippets and Templates](/ai-tools-compared/migrate-cursor-ai-snippets-and-templates-to-windsurf-editor/)
-- [Cursor vs Windsurf for Implementing Drag and Drop Interfaces](/ai-tools-compared/cursor-vs-windsurf-for-implementing-drag-and-drop-interfaces/)
+- [Migrate Windsurf AI Rules to Cursor Dot Cursor Rules](/migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/)
+- [How to Migrate Cursor Rules File](/migrate-cursor-rules-file-to-windsurf-rules-format-guide/)
+- [Switching from Windsurf Free to Cursor Free What Is](/switching-from-windsurf-free-to-cursor-free-what-is-different/)
+- [How to Migrate Cursor AI Snippets and Templates](/migrate-cursor-ai-snippets-and-templates-to-windsurf-editor/)
+- [Cursor vs Windsurf for Implementing Drag and Drop Interfaces](/cursor-vs-windsurf-for-implementing-drag-and-drop-interfaces/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

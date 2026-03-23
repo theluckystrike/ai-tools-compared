@@ -335,9 +335,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Auditing Accessible Responsive Design](/ai-tools-compared/ai-tools-for-auditing-accessible-responsive-design-breakpoin/)
-- [AI Tools for Designers Writing Handoff Notes That Include](/ai-tools-compared/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
-- [AI Tools for Interior Design Visualization Compared](/ai-tools-compared/ai-tools-for-interior-design-visualization-compared/)
-- [How to Use AI to Practice Object-Oriented Design Interview](/ai-tools-compared/how-to-use-ai-to-practice-object-oriented-design-interview-q/)
-- [Best AI Tool for Game Developers Design Docs Writing](/ai-tools-compared/best-ai-tool-for-game-developers-design-docs-writing/)
+- [AI Tools for Auditing Accessible Responsive Design](/ai-tools-for-auditing-accessible-responsive-design-breakpoin/)
+- [AI Tools for Designers Writing Handoff Notes That Include](/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
+- [AI Tools for Interior Design Visualization Compared](/ai-tools-for-interior-design-visualization-compared/)
+- [How to Use AI to Practice Object-Oriented Design Interview](/how-to-use-ai-to-practice-object-oriented-design-interview-q/)
+- [Best AI Tool for Game Developers Design Docs Writing](/best-ai-tool-for-game-developers-design-docs-writing/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

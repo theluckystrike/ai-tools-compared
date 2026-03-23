@@ -465,10 +465,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Write Custom Instructions That Make AI Follow Your](/ai-tools-compared/how-to-write-custom-instructions-that-make-ai-follow-your-error-response-schema/)
-- [Writing Custom Instructions That Make AI Follow Your Team's](/ai-tools-compared/writing-custom-instructions-that-make-ai-follow-your-teams-changelog-entry-format/)
-- [How to Write ChatGPT Custom Instructions](/ai-tools-compared/how-to-write-chatgpt-custom-instructions-for-consistent-api-design-suggestions/)
-- [How to Write Custom Instructions That Make AI Respect Your](/ai-tools-compared/how-to-write-custom-instructions-that-make-ai-respect-your-api-rate-limit-patterns/)
-- [ChatGPT Custom GPT Not Following Instructions](/ai-tools-compared/chatgpt-custom-gpt-not-following-instructions/)
+- [How to Write Custom Instructions That Make AI Follow Your](/how-to-write-custom-instructions-that-make-ai-follow-your-error-response-schema/)
+- [Writing Custom Instructions That Make AI Follow Your Team's](/writing-custom-instructions-that-make-ai-follow-your-teams-changelog-entry-format/)
+- [How to Write ChatGPT Custom Instructions](/how-to-write-chatgpt-custom-instructions-for-consistent-api-design-suggestions/)
+- [How to Write Custom Instructions That Make AI Respect Your](/how-to-write-custom-instructions-that-make-ai-respect-your-api-rate-limit-patterns/)
+- [ChatGPT Custom GPT Not Following Instructions](/chatgpt-custom-gpt-not-following-instructions/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

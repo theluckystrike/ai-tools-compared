@@ -312,11 +312,11 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 
 ## Related Articles
 
-- [How to Use AI to Write pytest Parametrize Test Cases](/ai-tools-compared/how-to-use-ai-to-write-pytest-parametrize-test-cases-for-edg/)
-- [How to Use AI to Generate Jest Integration Tests](/ai-tools-compared/how-to-use-ai-to-generate-jest-integration-tests-for-express/)
-- [How to Use AI to Write pytest Parametrize Test Cases: Edge](/ai-tools-compared/how-to-use-ai-to-write-pytest-parametrize-test-cases-for-edge-conditions/)
-- [Best AI Assistant for Writing pytest Tests for Background](/ai-tools-compared/best-ai-assistant-for-writing-pytest-tests-for-background-job-retry-failure-scenarios/)
-- [AI Tools for Writing pytest Tests for Alembic Database Paths](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
+- [How to Use AI to Write pytest Parametrize Test Cases](/how-to-use-ai-to-write-pytest-parametrize-test-cases-for-edg/)
+- [How to Use AI to Generate Jest Integration Tests](/how-to-use-ai-to-generate-jest-integration-tests-for-express/)
+- [How to Use AI to Write pytest Parametrize Test Cases: Edge](/how-to-use-ai-to-write-pytest-parametrize-test-cases-for-edge-conditions/)
+- [Best AI Assistant for Writing pytest Tests for Background](/best-ai-assistant-for-writing-pytest-tests-for-background-job-retry-failure-scenarios/)
+- [AI Tools for Writing pytest Tests for Alembic Database Paths](/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
 ## Frequently Asked Questions
 
 **How long does it take to use ai to generate pytest tests for django rest?**

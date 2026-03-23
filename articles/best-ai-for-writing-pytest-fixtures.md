@@ -296,9 +296,9 @@ The more specific the prompt, the less time you spend fixing scope and teardown 
 
 ## Related Reading
 
-- [Copilot vs Cursor for Writing Pytest Fixtures](/ai-tools-compared/copilot-vs-cursor-for-writing-comprehensive-pytest-fixtures-/)
-- [AI Tools for Writing Pytest Tests with Moto for AWS](/ai-tools-compared/ai-tools-for-writing-pytest-tests-with-moto-library-for-aws-/)
-- [Best AI Assistant for Writing Pytest asyncio Tests](/ai-tools-compared/best-ai-for-writing-pytest-asyncio-tests-for-websocket-handl/)
+- [Copilot vs Cursor for Writing Pytest Fixtures](/copilot-vs-cursor-for-writing-comprehensive-pytest-fixtures-/)
+- [AI Tools for Writing Pytest Tests with Moto for AWS](/ai-tools-for-writing-pytest-tests-with-moto-library-for-aws-/)
+- [Best AI Assistant for Writing Pytest asyncio Tests](/best-ai-for-writing-pytest-asyncio-tests-for-websocket-handl/)
 
 ---
 

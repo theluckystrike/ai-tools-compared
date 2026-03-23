@@ -715,11 +715,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for API Documentation from Code 2026](/ai-tools-compared/ai-tools-for-api-documentation-from-code-2026/)
-- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)
-- [Best AI Tools for Generating API Documentation From Code](/ai-tools-compared/best-ai-tools-for-generating-api-documentation-from-code-2026/)
-- [Best Free AI Tool for Code Explanation and Documentation](/ai-tools-compared/best-free-ai-tool-for-code-explanation-and-documentation/)
-- [Claude Code Runbook Documentation Guide](/ai-tools-compared/claude-code-runbook-documentation-guide/)
+- [AI Tools for API Documentation from Code 2026](/ai-tools-for-api-documentation-from-code-2026/)
+- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-for-automated-api-documentation-from-code-comments/)
+- [Best AI Tools for Generating API Documentation From Code](/best-ai-tools-for-generating-api-documentation-from-code-2026/)
+- [Best Free AI Tool for Code Explanation and Documentation](/best-free-ai-tool-for-code-explanation-and-documentation/)
+- [Claude Code Runbook Documentation Guide](/claude-code-runbook-documentation-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

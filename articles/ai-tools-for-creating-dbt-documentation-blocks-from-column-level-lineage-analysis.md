@@ -312,19 +312,19 @@ The initial investment in setting up automated documentation pays dividends thro
 
 ## Related Reading
 
-- [AI Tools for Creating dbt Model Definitions from Raw Databas](/ai-tools-compared/ai-tools-for-creating-dbt-model-definitions-from-raw-databas/)
-- [Cheapest AI Tool With GPT-4 Level Code Generation 2026](/ai-tools-compared/cheapest-ai-tool-with-gpt-4-level-code-generation-2026/)
-- [How Accurate Are AI Tools for Rust Unsafe Code Blocks](/ai-tools-compared/how-accurate-are-ai-tools-for-rust-unsafe-code-blocks-and-ff/)
-- [How to Use AI to Generate Terraform Import Blocks for](/ai-tools-compared/how-to-use-ai-to-generate-terraform-import-blocks-for-existi/)
-- [AI Tools for Generating dbt Project Structure from Existing](/ai-tools-compared/ai-tools-for-generating-dbt-project-structure-from-existing-/)
+- [AI Tools for Creating dbt Model Definitions from Raw Databas](/ai-tools-for-creating-dbt-model-definitions-from-raw-databas/)
+- [Cheapest AI Tool With GPT-4 Level Code Generation 2026](/cheapest-ai-tool-with-gpt-4-level-code-generation-2026/)
+- [How Accurate Are AI Tools for Rust Unsafe Code Blocks](/how-accurate-are-ai-tools-for-rust-unsafe-code-blocks-and-ff/)
+- [How to Use AI to Generate Terraform Import Blocks for](/how-to-use-ai-to-generate-terraform-import-blocks-for-existi/)
+- [AI Tools for Generating dbt Project Structure from Existing](/ai-tools-for-generating-dbt-project-structure-from-existing-/)
 
 ## Related Articles
 
-- [AI Tools for Reviewing Documentation Pull Requests](/ai-tools-compared/ai-tools-for-reviewing-documentation-pull-requests-for-accur/)
-- [AI Tools for Creating dbt Model Definitions from Raw](/ai-tools-compared/ai-tools-for-creating-dbt-model-definitions-from-raw-databas/)
-- [AI Tools for Writing dbt Seeds and Fixtures for Testing](/ai-tools-compared/ai-tools-for-writing-dbt-seeds-and-fixtures-for-testing-mode/)
-- [AI Tools for Generating dbt Project Structure from Existing](/ai-tools-compared/ai-tools-for-generating-dbt-project-structure-from-existing-/)
-- [Best AI Tools for Code Documentation Generation 2026](/ai-tools-compared/best-ai-tools-for-code-documentation-generation-2026/)
+- [AI Tools for Reviewing Documentation Pull Requests](/ai-tools-for-reviewing-documentation-pull-requests-for-accur/)
+- [AI Tools for Creating dbt Model Definitions from Raw](/ai-tools-for-creating-dbt-model-definitions-from-raw-databas/)
+- [AI Tools for Writing dbt Seeds and Fixtures for Testing](/ai-tools-for-writing-dbt-seeds-and-fixtures-for-testing-mode/)
+- [AI Tools for Generating dbt Project Structure from Existing](/ai-tools-for-generating-dbt-project-structure-from-existing-/)
+- [Best AI Tools for Code Documentation Generation 2026](/best-ai-tools-for-code-documentation-generation-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

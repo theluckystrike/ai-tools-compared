@@ -321,10 +321,10 @@ A: Claude Code re-reads file contents each time you reference them, so file-leve
 
 ## Related Articles
 
-- [How to Switch from Cursor to Claude Code Without Losing](/ai-tools-compared/how-to-switch-from-cursor-to-claude-code-without-losing-settings/)
-- [How to Manage AI Coding Context Across Multiple Related Repo](/ai-tools-compared/how-to-manage-ai-coding-context-across-multiple-related-repo/)
-- [Claude Code Not Pushing to GitHub Fix: Troubleshooting Guide](/ai-tools-compared/claude-code-not-pushing-to-github-fix/)
-- [Claude Code Terminal Permission Denied Fix](/ai-tools-compared/claude-code-terminal-permission-denied-fix/)
-- [Claude Code Tool Use Loop Not Terminating Fix](/ai-tools-compared/claude-code-tool-use-loop-not-terminating-fix/)
+- [How to Switch from Cursor to Claude Code Without Losing](/how-to-switch-from-cursor-to-claude-code-without-losing-settings/)
+- [How to Manage AI Coding Context Across Multiple Related Repo](/how-to-manage-ai-coding-context-across-multiple-related-repo/)
+- [Claude Code Not Pushing to GitHub Fix: Troubleshooting Guide](/claude-code-not-pushing-to-github-fix/)
+- [Claude Code Terminal Permission Denied Fix](/claude-code-terminal-permission-denied-fix/)
+- [Claude Code Tool Use Loop Not Terminating Fix](/claude-code-tool-use-loop-not-terminating-fix/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

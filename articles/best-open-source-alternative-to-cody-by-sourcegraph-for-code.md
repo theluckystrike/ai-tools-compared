@@ -261,7 +261,7 @@ For most teams replacing Cody, the recommended starting point is **Tabby** for a
 - [Continue Dev Free vs Cody Free: Open Source AI Comparison](/continue-dev-free-vs-cody-free-open-source-ai-comparison/)
 - [Copilot Code Referencing Feature: How It Handles Open Source](/copilot-code-referencing-feature-how-it-handles-open-source-/)
 - [Fine Tune Open Source Code Models for Your Codebase](/fine-tune-open-source-code-models-for-your-codebase-2026/)
-- [Best AI Assistant for Creating Open Source Project Branding](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)
+- [Best AI Assistant for Creating Open Source Project Branding](/best-ai-assistant-for-creating-open-source-project-branding-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

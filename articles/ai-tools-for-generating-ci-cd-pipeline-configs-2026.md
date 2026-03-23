@@ -469,11 +469,11 @@ For most teams, Claude's accuracy for platform-specific syntax and best-practice
 
 ## Related Articles
 
-- [Best AI Tools for Writing Ansible Playbooks 2026](/ai-tools-compared/best-ai-tools-for-writing-ansible-playbooks-2026/)
-- [GitHub Actions Advanced Matrix Builds and Conditional Logic](/ai-tools-compared/github-actions-advanced-matrix-builds/)
-- [Claude for Infrastructure Code: IaC Best Practices](/ai-tools-compared/claude-infrastructure-code-iac/)
-- [GitHub Copilot for DevOps Workflows: Editor Integration](/ai-tools-compared/github-copilot-devops-workflows/)
-- [GitLab CI vs GitHub Actions: Pipeline Architecture Comparison](/ai-tools-compared/gitlab-ci-vs-github-actions/)
+- [Best AI Tools for Writing Ansible Playbooks 2026](/best-ai-tools-for-writing-ansible-playbooks-2026/)
+- [GitHub Actions Advanced Matrix Builds and Conditional Logic](/github-actions-advanced-matrix-builds/)
+- [Claude for Infrastructure Code: IaC Best Practices](/claude-infrastructure-code-iac/)
+- [GitHub Copilot for DevOps Workflows: Editor Integration](/github-copilot-devops-workflows/)
+- [GitLab CI vs GitHub Actions: Pipeline Architecture Comparison](/gitlab-ci-vs-github-actions/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

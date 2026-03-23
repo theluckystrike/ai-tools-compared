@@ -312,11 +312,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI for Generating pandas Code to Merge Data from Multip](/ai-tools-compared/best-ai-for-generating-pandas-code-to-merge-data-from-multip/)
-- [AI Tools for Generating Pull Request Merge Conflict](/ai-tools-compared/ai-tools-for-generating-pull-request-merge-conflict-resoluti/)
-- [AI Tools for Generating Grafana Dashboard JSON Templates Fro](/ai-tools-compared/ai-tools-for-generating-grafana-dashboard-json-templates-fro/)
-- [AI Tools for Generating pandas GroupBy Aggregation Code](/ai-tools-compared/ai-tools-for-generating-pandas-groupby-aggregation-code-from/)
-- [Best AI for Resolving Git Merge Conflict Markers in Complex](/ai-tools-compared/best-ai-for-resolving-git-merge-conflict-markers-in-complex-/)
+- [Best AI for Generating pandas Code to Merge Data from Multip](/best-ai-for-generating-pandas-code-to-merge-data-from-multip/)
+- [AI Tools for Generating Pull Request Merge Conflict](/ai-tools-for-generating-pull-request-merge-conflict-resoluti/)
+- [AI Tools for Generating Grafana Dashboard JSON Templates Fro](/ai-tools-for-generating-grafana-dashboard-json-templates-fro/)
+- [AI Tools for Generating pandas GroupBy Aggregation Code](/ai-tools-for-generating-pandas-groupby-aggregation-code-from/)
+- [Best AI for Resolving Git Merge Conflict Markers in Complex](/best-ai-for-resolving-git-merge-conflict-markers-in-complex-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

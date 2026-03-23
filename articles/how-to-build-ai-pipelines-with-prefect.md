@@ -329,10 +329,10 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 
 ## Related Articles
 
-- [How to Build Voice AI Apps with Claude](/ai-tools-compared/how-to-build-voice-ai-apps-with-claude)
-- [How to Use AI to Create Data Pipeline Orchestration Configs](/ai-tools-compared/how-to-use-ai-to-create-data-pipeline-orchestration-configs-/)
-- [Prefect vs Dagster for AI Workflows](/ai-tools-compared/prefect-vs-dagster-ai-workflows/)
-- [How to Use AI to Generate Terraform Import Blocks](/ai-tools-compared/how-to-use-ai-to-generate-terraform-import-blocks-for-existi/)
-- [How to Use AI to Resolve Python Import Circular Dependency](/ai-tools-compared/how-to-use-ai-to-resolve-python-import-circular-dependency-e/)
+- [How to Build Voice AI Apps with Claude](/how-to-build-voice-ai-apps-with-claude)
+- [How to Use AI to Create Data Pipeline Orchestration Configs](/how-to-use-ai-to-create-data-pipeline-orchestration-configs-/)
+- [Prefect vs Dagster for AI Workflows](/prefect-vs-dagster-ai-workflows/)
+- [How to Use AI to Generate Terraform Import Blocks](/how-to-use-ai-to-generate-terraform-import-blocks-for-existi/)
+- [How to Use AI to Resolve Python Import Circular Dependency](/how-to-use-ai-to-resolve-python-import-circular-dependency-e/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

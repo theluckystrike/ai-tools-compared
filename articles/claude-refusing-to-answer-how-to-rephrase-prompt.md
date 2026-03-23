@@ -419,11 +419,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Migrate ChatGPT System Prompts](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-forma/)
-- [Migrate ChatGPT System Prompts](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-format/)
-- [How to Transfer Cursor Composer Prompt Library](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code-commands/)
-- [How to Transfer Your Cursor Composer Prompt Library](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code/)
-- [How to Create Custom System Prompt for ChatGPT API That Enfo](/ai-tools-compared/how-to-create-custom-system-prompt-for-chatgpt-api-that-enfo/)
+- [How to Migrate ChatGPT System Prompts](/migrate-chatgpt-system-prompts-to-claude-system-prompt-forma/)
+- [Migrate ChatGPT System Prompts](/migrate-chatgpt-system-prompts-to-claude-system-prompt-format/)
+- [How to Transfer Cursor Composer Prompt Library](/transfer-cursor-composer-prompt-library-to-claude-code-commands/)
+- [How to Transfer Your Cursor Composer Prompt Library](/transfer-cursor-composer-prompt-library-to-claude-code/)
+- [How to Create Custom System Prompt for ChatGPT API That Enfo](/how-to-create-custom-system-prompt-for-chatgpt-api-that-enfo/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

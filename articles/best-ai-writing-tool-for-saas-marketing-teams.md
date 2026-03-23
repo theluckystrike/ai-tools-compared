@@ -267,10 +267,10 @@ Build a versioned context document that tracks product changes by date. When run
 
 ## Related Reading
 
-- [ChatGPT vs Claude for Writing Cold Outreach Emails to Saas](/ai-tools-compared/chatgpt-vs-claude-for-writing-cold-outreach-emails-to-saas-f/)
-- [Writing Custom Instructions That Make AI Follow Your Team's](/ai-tools-compared/writing-custom-instructions-that-make-ai-follow-your-teams-changelog-entry-format/)
-- [Best AI Tools for SaaS Customer Support](/ai-tools-compared/best-ai-tools-for-saas-customer-support/)
-- [Best AI Tool for Marketing Managers Campaign Briefs](/ai-tools-compared/best-ai-tool-for-marketing-managers-campaign-briefs/)
-- [Jasper AI vs Anyword: Performance Marketing Copy Compared](/ai-tools-compared/jasper-ai-vs-anyword-performance-marketing-copy/)
+- [ChatGPT vs Claude for Writing Cold Outreach Emails to Saas](/chatgpt-vs-claude-for-writing-cold-outreach-emails-to-saas-f/)
+- [Writing Custom Instructions That Make AI Follow Your Team's](/writing-custom-instructions-that-make-ai-follow-your-teams-changelog-entry-format/)
+- [Best AI Tools for SaaS Customer Support](/best-ai-tools-for-saas-customer-support/)
+- [Best AI Tool for Marketing Managers Campaign Briefs](/best-ai-tool-for-marketing-managers-campaign-briefs/)
+- [Jasper AI vs Anyword: Performance Marketing Copy Compared](/jasper-ai-vs-anyword-performance-marketing-copy/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -292,10 +292,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI Tools for TypeScript Type Inference and Generic](/ai-tools-compared/best-ai-tools-for-typescript-type-inference-and-generic-type/)
-- [Best AI Tools for Writing Python Type Hints 2026](/ai-tools-compared/best-ai-tools-for-writing-python-type-hints-2026/)
-- [How Well Do AI Tools Handle Go Generics Type Parameter](/ai-tools-compared/how-well-do-ai-tools-handle-go-generics-type-parameter-const/)
-- [Cursor vs Copilot for Adding Type Hints to Untyped Python](/ai-tools-compared/cursor-vs-copilot-for-adding-type-hints-to-untyped-python-co/)
-- [Best AI Tools for Python Type Annotation](/ai-tools-compared/ai-tools-for-python-type-annotation)
+- [Best AI Tools for TypeScript Type Inference and Generic](/best-ai-tools-for-typescript-type-inference-and-generic-type/)
+- [Best AI Tools for Writing Python Type Hints 2026](/best-ai-tools-for-writing-python-type-hints-2026/)
+- [How Well Do AI Tools Handle Go Generics Type Parameter](/how-well-do-ai-tools-handle-go-generics-type-parameter-const/)
+- [Cursor vs Copilot for Adding Type Hints to Untyped Python](/cursor-vs-copilot-for-adding-type-hints-to-untyped-python-co/)
+- [Best AI Tools for Python Type Annotation](/ai-tools-for-python-type-annotation)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

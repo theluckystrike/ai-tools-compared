@@ -288,8 +288,8 @@ Implement a slot reservation queue: when a user starts the booking flow, tempora
 - [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
 - [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
 - [AI Tools Hub](/guides-hub/)
-- [ChatGPT Enterprise vs Custom Support Bot](/ai-tools-compared/chatgpt-enterprise-vs-custom-support-bot/)
-- [AI Tools for Self Service Support Portals](/ai-tools-compared/ai-tools-for-self-service-support-portals/)
+- [ChatGPT Enterprise vs Custom Support Bot](/chatgpt-enterprise-vs-custom-support-bot/)
+- [AI Tools for Self Service Support Portals](/ai-tools-for-self-service-support-portals/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -359,10 +359,10 @@ CREATE INDEX CONCURRENTLY idx_orders_priority ON orders(priority_level);
 
 ## Related Reading
 
-- [AI Tools for Database Schema Migration Review 2026](/ai-tools-compared/ai-tools-for-database-schema-migration-review-2026/)
-- [How to Use AI for PostgreSQL Query Optimization](/ai-tools-compared/ai-for-postgresql-query-optimization/)
-- [AI Tools for Generating Pytest Fixtures from Database Schema](/ai-tools-compared/ai-tools-for-generating-pytest-fixtures-from-database-schema/)
-- [AI-Powered Database Migration Tools Comparison 2026](/ai-tools-compared/ai-powered-database-migration-tools-comparison/)
+- [AI Tools for Database Schema Migration Review 2026](/ai-tools-for-database-schema-migration-review-2026/)
+- [How to Use AI for PostgreSQL Query Optimization](/ai-for-postgresql-query-optimization/)
+- [AI Tools for Generating Pytest Fixtures from Database Schema](/ai-tools-for-generating-pytest-fixtures-from-database-schema/)
+- [AI-Powered Database Migration Tools Comparison 2026](/ai-powered-database-migration-tools-comparison/)
 
 ---
 

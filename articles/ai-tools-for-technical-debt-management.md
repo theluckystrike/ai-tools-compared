@@ -297,9 +297,9 @@ A developer who would previously fix 2 debt items in a sprint can address 6-8 wi
 
 ## Related Reading
 
-- [How to Use AI Coding Assistants for Technical Debt Reduction](/ai-tools-compared/how-to-use-ai-coding-assistants-for-technical-debt-reduction/)
-- [AI Code Review Automation Tools Comparison](/ai-tools-compared/ai-code-review-automation-tools-comparison/)
-- [Free AI Tools for Code Refactoring That Actually Improve Quality](/ai-tools-compared/free-ai-tools-for-code-refactoring-that-actually-improve-qua/)
+- [How to Use AI Coding Assistants for Technical Debt Reduction](/how-to-use-ai-coding-assistants-for-technical-debt-reduction/)
+- [AI Code Review Automation Tools Comparison](/ai-code-review-automation-tools-comparison/)
+- [Free AI Tools for Code Refactoring That Actually Improve Quality](/free-ai-tools-for-code-refactoring-that-actually-improve-qua/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

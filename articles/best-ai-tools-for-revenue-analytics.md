@@ -339,10 +339,10 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [AI Tools for Customer Journey Analytics](/ai-tools-compared/ai-tools-for-customer-journey-analytics/)
-- [AI Tools for Inventory Analytics: A Practical Guide for](/ai-tools-compared/ai-tools-for-inventory-analytics/)
-- [AI Tools for Real-Time Analytics: A Practical Guide](/ai-tools-compared/ai-tools-for-real-time-analytics/)
-- [AI Tools for Social Media Analytics: A Practical Guide](/ai-tools-compared/ai-tools-for-social-media-analytics/)
-- [Best AI for Analyzing Google Analytics Data Exports with Pan](/ai-tools-compared/best-ai-for-analyzing-google-analytics-data-exports-with-pan/)
+- [AI Tools for Customer Journey Analytics](/ai-tools-for-customer-journey-analytics/)
+- [AI Tools for Inventory Analytics: A Practical Guide for](/ai-tools-for-inventory-analytics/)
+- [AI Tools for Real-Time Analytics: A Practical Guide](/ai-tools-for-real-time-analytics/)
+- [AI Tools for Social Media Analytics: A Practical Guide](/ai-tools-for-social-media-analytics/)
+- [Best AI for Analyzing Google Analytics Data Exports with Pan](/best-ai-for-analyzing-google-analytics-data-exports-with-pan/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

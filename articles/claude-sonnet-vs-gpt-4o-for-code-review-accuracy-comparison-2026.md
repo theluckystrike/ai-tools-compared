@@ -539,10 +539,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Switching from GPT-4o to Claude Sonnet for Code Review](/ai-tools-compared/switching-from-gpt-4o-to-claude-sonnet-for-code-review-which/)
-- [Claude Sonnet vs GPT-4o for Code Generation: Practical](/ai-tools-compared/claude-sonnet-vs-gpt-4o-for-code-generation/)
-- [AI Pair Programming Tools Comparison 2026: Claude Code](/ai-tools-compared/ai-pair-programming-tools-comparison-2026/)
-- [Claude Code Runbook Documentation Guide](/ai-tools-compared/claude-code-runbook-documentation-guide/)
-- [Claude Code vs ChatGPT Code Interpreter Comparison](/ai-tools-compared/claude-code-vs-chatgpt-code-interpreter-comparison/)
+- [Switching from GPT-4o to Claude Sonnet for Code Review](/switching-from-gpt-4o-to-claude-sonnet-for-code-review-which/)
+- [Claude Sonnet vs GPT-4o for Code Generation: Practical](/claude-sonnet-vs-gpt-4o-for-code-generation/)
+- [AI Pair Programming Tools Comparison 2026: Claude Code](/ai-pair-programming-tools-comparison-2026/)
+- [Claude Code Runbook Documentation Guide](/claude-code-runbook-documentation-guide/)
+- [Claude Code vs ChatGPT Code Interpreter Comparison](/claude-code-vs-chatgpt-code-interpreter-comparison/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

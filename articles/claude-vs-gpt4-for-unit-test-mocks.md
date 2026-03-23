@@ -446,9 +446,9 @@ GPT-4 tends to reach for `jest.mock('axios')` or `jest.mock('fetch')` by default
 
 ## Related Reading
 
-- [Best AI Tools for Generating Unit Test Mocks and Stubs 2026](/ai-tools-compared/ai-tools-for-generating-unit-test-mocks-and-stubs-2026/)
-- [Best AI Tools for Writing Unit Test Mocks 2026](/ai-tools-compared/best-ai-tools-for-writing-unit-test-mocks-2026/)
-- [AI Code Generation Quality for Java JUnit 5 Parameterized Tests](/ai-tools-compared/ai-code-generation-quality-for-java-junit-5-parameterized-te/)
+- [Best AI Tools for Generating Unit Test Mocks and Stubs 2026](/ai-tools-for-generating-unit-test-mocks-and-stubs-2026/)
+- [Best AI Tools for Writing Unit Test Mocks 2026](/best-ai-tools-for-writing-unit-test-mocks-2026/)
+- [AI Code Generation Quality for Java JUnit 5 Parameterized Tests](/ai-code-generation-quality-for-java-junit-5-parameterized-te/)
 
 ---
 

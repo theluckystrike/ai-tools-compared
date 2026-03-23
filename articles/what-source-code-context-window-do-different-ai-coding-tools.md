@@ -262,10 +262,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How Context Window Size Affects AI Code Suggestions](/ai-tools-compared/how-context-window-size-affects-ai-code-suggestions-in-different-idess/)
-- [How to Audit What Source Code AI Coding Tools Transmit](/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
-- [Best AI Context Window Management Strategies for Large](/ai-tools-compared/best-ai-context-window-management-strategies-for-large-codeb/)
-- [How to Manage AI Coding Context Window to Avoid Hallucinated](/ai-tools-compared/how-to-manage-ai-coding-context-window-to-avoid-hallucinated/)
-- [What Code Snippets Get Logged in AI Coding Tool Provider](/ai-tools-compared/what-code-snippets-get-logged-in-ai-coding-tool-provider-aud/)
+- [How Context Window Size Affects AI Code Suggestions](/how-context-window-size-affects-ai-code-suggestions-in-different-idess/)
+- [How to Audit What Source Code AI Coding Tools Transmit](/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
+- [Best AI Context Window Management Strategies for Large](/best-ai-context-window-management-strategies-for-large-codeb/)
+- [How to Manage AI Coding Context Window to Avoid Hallucinated](/how-to-manage-ai-coding-context-window-to-avoid-hallucinated/)
+- [What Code Snippets Get Logged in AI Coding Tool Provider](/what-code-snippets-get-logged-in-ai-coding-tool-provider-aud/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

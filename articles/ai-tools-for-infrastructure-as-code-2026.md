@@ -283,9 +283,9 @@ Claude's security-conscious defaults save 15-20 minutes per resource compared to
 
 ## Related Reading
 
-- [Claude vs GPT-4 for Terraform and Pulumi Infrastructure Code](/ai-tools-compared/claude-vs-gpt4-terraform-pulumi-infrastructure-code-2026/)
-- [AI Tools for Writing Terraform Infrastructure as Code](/ai-tools-compared/ai-tools-for-writing-terraform-infrastructure-as-code-comparison-2026/)
-- [Best Workflow for Using AI to Write Infrastructure as Code](/ai-tools-compared/best-workflow-for-using-ai-to-write-infrastructure-as-code-f/)
+- [Claude vs GPT-4 for Terraform and Pulumi Infrastructure Code](/claude-vs-gpt4-terraform-pulumi-infrastructure-code-2026/)
+- [AI Tools for Writing Terraform Infrastructure as Code](/ai-tools-for-writing-terraform-infrastructure-as-code-comparison-2026/)
+- [Best Workflow for Using AI to Write Infrastructure as Code](/best-workflow-for-using-ai-to-write-infrastructure-as-code-f/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

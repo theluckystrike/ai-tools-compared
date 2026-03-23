@@ -283,9 +283,9 @@ If you're using Envoy as a sidecar with xDS (e.g., in Istio), tell the AI — th
 
 ## Related Reading
 
-- [AI Tools for Automated Istio Configuration](/ai-tools-compared/ai-tools-for-automated-istio-configuration/)
-- [AI-Powered Distributed Tracing Setup Tools](/ai-tools-compared/ai-powered-distributed-tracing-setup-tools/)
-- [AI-Powered Container Orchestration Tools](/ai-tools-compared/ai-powered-container-orchestration-tools/)
+- [AI Tools for Automated Istio Configuration](/ai-tools-for-automated-istio-configuration/)
+- [AI-Powered Distributed Tracing Setup Tools](/ai-powered-distributed-tracing-setup-tools/)
+- [AI-Powered Container Orchestration Tools](/ai-powered-container-orchestration-tools/)
 
 ---
 

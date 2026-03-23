@@ -526,11 +526,11 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [AI Tools for Generating Semver Version Bump Recommendations](/ai-tools-compared/ai-tools-for-generating-semver-version-bump-recommendations-/)
-- [AI Tools for Interpreting Terraform Plan Errors](/ai-tools-compared/ai-tools-for-interpreting-terraform-plan-errors-with-provider-version-conflicts/)
-- [Copilot for JetBrains: Does It Cost Same as VSCode Version](/ai-tools-compared/copilot-for-jetbrains-does-it-cost-same-as-vscode-version/)
-- [Claude vs ChatGPT for Building Custom ESLint Rules for React](/ai-tools-compared/claude-vs-chatgpt-for-building-custom-eslint-rules-for-react/)
-- [Cursor AI Rules Files How to Customize AI Behavior](/ai-tools-compared/cursor-ai-rules-files-how-to-customize-ai-behavior-for-your-project/)
+- [AI Tools for Generating Semver Version Bump Recommendations](/ai-tools-for-generating-semver-version-bump-recommendations-/)
+- [AI Tools for Interpreting Terraform Plan Errors](/ai-tools-for-interpreting-terraform-plan-errors-with-provider-version-conflicts/)
+- [Copilot for JetBrains: Does It Cost Same as VSCode Version](/copilot-for-jetbrains-does-it-cost-same-as-vscode-version/)
+- [Claude vs ChatGPT for Building Custom ESLint Rules for React](/claude-vs-chatgpt-for-building-custom-eslint-rules-for-react/)
+- [Cursor AI Rules Files How to Customize AI Behavior](/cursor-ai-rules-files-how-to-customize-ai-behavior-for-your-project/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

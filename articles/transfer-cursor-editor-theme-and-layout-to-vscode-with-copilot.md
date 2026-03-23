@@ -360,9 +360,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Transfer Copilot Code Review Settings](/ai-tools-compared/transfer-copilot-code-review-settings-to-cursor-ai-review-co/)
-- [How to Transfer GitHub Copilot Organization Settings](/ai-tools-compared/transfer-github-copilot-org-settings-when-switching-to-curso/)
-- [How to Migrate VS Code Copilot Keybindings](/ai-tools-compared/migrate-vscode-copilot-keybindings-to-cursor-ai-editor-2026/)
-- [Switching from Windsurf to Cursor How to Transfer Project](/ai-tools-compared/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
-- [How to Transfer Cursor Composer Prompt Library](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code-commands/)
+- [How to Transfer Copilot Code Review Settings](/transfer-copilot-code-review-settings-to-cursor-ai-review-co/)
+- [How to Transfer GitHub Copilot Organization Settings](/transfer-github-copilot-org-settings-when-switching-to-curso/)
+- [How to Migrate VS Code Copilot Keybindings](/migrate-vscode-copilot-keybindings-to-cursor-ai-editor-2026/)
+- [Switching from Windsurf to Cursor How to Transfer Project](/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
+- [How to Transfer Cursor Composer Prompt Library](/transfer-cursor-composer-prompt-library-to-claude-code-commands/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

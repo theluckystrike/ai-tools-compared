@@ -369,9 +369,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
-- [Claude Code Runbook Documentation Guide](/ai-tools-compared/claude-code-runbook-documentation-guide/)
-- [Claude Code Java Library Development Guide](/ai-tools-compared/claude-code-java-library-development-guide/)
-- [Claude Code for Node.js Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-nodejs-profiling-workflow-tutorial/)
-- [Claude Code vs Cursor for Backend Development](/ai-tools-compared/claude-code-vs-cursor-for-backend-development/)
+- [Claude Code Go Module Development Guide](/claude-code-go-module-development-guide/)
+- [Claude Code Runbook Documentation Guide](/claude-code-runbook-documentation-guide/)
+- [Claude Code Java Library Development Guide](/claude-code-java-library-development-guide/)
+- [Claude Code for Node.js Profiling Workflow Tutorial](/claude-code-for-nodejs-profiling-workflow-tutorial/)
+- [Claude Code vs Cursor for Backend Development](/claude-code-vs-cursor-for-backend-development/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

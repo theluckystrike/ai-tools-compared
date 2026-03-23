@@ -310,11 +310,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Claude Code Developer Portal Setup Guide](/ai-tools-compared/claude-code-developer-portal-setup-guide/)
-- [Best AI Tools for Help Center Content](/ai-tools-compared/best-ai-tools-for-help-center-content/)
-- [AI Writing Tools for Healthcare Content Compared 2026](/ai-tools-compared/ai-writing-tools-for-healthcare-content-compared-2026/)
-- [AI Tools for Converting Code Comments into Developer Facing](/ai-tools-compared/ai-tools-for-converting-code-comments-into-developer-facing-/)
-- [AI Tools for Designers Writing Handoff Notes That Include](/ai-tools-compared/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
+- [Claude Code Developer Portal Setup Guide](/claude-code-developer-portal-setup-guide/)
+- [Best AI Tools for Help Center Content](/best-ai-tools-for-help-center-content/)
+- [AI Writing Tools for Healthcare Content Compared 2026](/ai-writing-tools-for-healthcare-content-compared-2026/)
+- [AI Tools for Converting Code Comments into Developer Facing](/ai-tools-for-converting-code-comments-into-developer-facing-/)
+- [AI Tools for Designers Writing Handoff Notes That Include](/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
 ```
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

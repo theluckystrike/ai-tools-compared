@@ -642,11 +642,11 @@ fi
 
 ## Related Articles
 
-- [AI Tools for Self Service Support Portals: Practical Guide](/ai-tools-compared/ai-tools-for-self-service-support-portals/)
-- [AI Tools for Support Quality Assurance](/ai-tools-compared/ai-tools-for-support-quality-assurance/)
-- [Best AI Tools for Support Agent Assist](/ai-tools-compared/best-ai-tools-for-support-agent-assist/)
-- [Drift vs ChatGPT for Customer Support: A Technical](/ai-tools-compared/drift-vs-chatgpt-for-customer-support/)
-- [AI Tools for Education Student](/ai-tools-compared/ai-tools-for-education-student-support/)
+- [AI Tools for Self Service Support Portals: Practical Guide](/ai-tools-for-self-service-support-portals/)
+- [AI Tools for Support Quality Assurance](/ai-tools-for-support-quality-assurance/)
+- [Best AI Tools for Support Agent Assist](/best-ai-tools-for-support-agent-assist/)
+- [Drift vs ChatGPT for Customer Support: A Technical](/drift-vs-chatgpt-for-customer-support/)
+- [AI Tools for Education Student](/ai-tools-for-education-student-support/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -310,11 +310,11 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Best AI Tools for Podcast Show Notes](/ai-tools-compared/best-ai-tools-for-podcast-show-notes/)
-- [AI Tools for Designers Writing Handoff Notes That Include](/ai-tools-compared/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
-- [Best AI Assistant for Product Managers Writing Sprint](/ai-tools-compared/best-ai-assistant-for-product-managers-writing-sprint-retrospective-summaries-from-notes-2026/)
-- [Best AI Tool for Doctors Writing Clinical Notes](/ai-tools-compared/best-ai-tool-for-doctors-writing-clinical-notes/)
-- [AI Assistants for Writing Correct AWS IAM Policies](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
+- [Best AI Tools for Podcast Show Notes](/best-ai-tools-for-podcast-show-notes/)
+- [AI Tools for Designers Writing Handoff Notes That Include](/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
+- [Best AI Assistant for Product Managers Writing Sprint](/best-ai-assistant-for-product-managers-writing-sprint-retrospective-summaries-from-notes-2026/)
+- [Best AI Tool for Doctors Writing Clinical Notes](/best-ai-tool-for-doctors-writing-clinical-notes/)
+- [AI Assistants for Writing Correct AWS IAM Policies](/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

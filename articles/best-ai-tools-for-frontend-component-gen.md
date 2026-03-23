@@ -341,9 +341,9 @@ The components that benefit least (lowest quality / highest manual work):
 
 ## Related Reading
 
-- [AI Coding Assistant Comparison for React Component Generation](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
-- [Best AI Tools for Generating CSS from Designs](/ai-tools-compared/best-ai-tools-for-css-from-designs/)
-- [AI Coding Assistant Comparison for TypeScript Tailwind CSS](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-tailwind-css-c/)
+- [AI Coding Assistant Comparison for React Component Generation](/ai-coding-assistant-comparison-for-react-component-generatio/)
+- [Best AI Tools for Generating CSS from Designs](/best-ai-tools-for-css-from-designs/)
+- [AI Coding Assistant Comparison for TypeScript Tailwind CSS](/ai-coding-assistant-comparison-for-typescript-tailwind-css-c/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

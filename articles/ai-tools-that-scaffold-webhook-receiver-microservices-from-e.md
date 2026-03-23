@@ -493,7 +493,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [AI Tools That Analyze Application Performance Bottlenecks From Traces Compared 2026](/ai-tools-that-analyze-application-performance-bottlenecks-fr/)
 - [How to Create Custom Instructions for AI Coding Tools That](/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
 - [AI Coding Tools for Automating Changelog Generation from Conventional Commits](/ai-coding-tools-for-automating-changelog-generation-from-con/)
-- [Best AI Coding Tools for Java Microservices](/ai-tools-compared/best-ai-coding-tools-for-java-microservices-with-spring-cloud/)
+- [Best AI Coding Tools for Java Microservices](/best-ai-coding-tools-for-java-microservices-with-spring-cloud/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

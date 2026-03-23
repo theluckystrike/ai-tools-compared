@@ -303,10 +303,10 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Best AI Tools for Writing Python Type Hints 2026](/ai-tools-compared/best-ai-tools-for-writing-python-type-hints-2026/)
-- [Best AI Assistant for Fixing TypeScript Strict Mode Type](/ai-tools-compared/best-ai-assistant-for-fixing-typescript-strict-mode-type-nar/)
-- [How Well Do AI Tools Handle Go Generics Type Parameter](/ai-tools-compared/how-well-do-ai-tools-handle-go-generics-type-parameter-const/)
-- [Cursor vs Copilot for Adding Type Hints to Untyped Python](/ai-tools-compared/cursor-vs-copilot-for-adding-type-hints-to-untyped-python-co/)
-- [AI Tools for Writing TypeScript Zod Schemas 2026](/ai-tools-compared/ai-tools-for-writing-typescript-zod-schemas-2026/)
+- [Best AI Tools for Writing Python Type Hints 2026](/best-ai-tools-for-writing-python-type-hints-2026/)
+- [Best AI Assistant for Fixing TypeScript Strict Mode Type](/best-ai-assistant-for-fixing-typescript-strict-mode-type-nar/)
+- [How Well Do AI Tools Handle Go Generics Type Parameter](/how-well-do-ai-tools-handle-go-generics-type-parameter-const/)
+- [Cursor vs Copilot for Adding Type Hints to Untyped Python](/cursor-vs-copilot-for-adding-type-hints-to-untyped-python-co/)
+- [AI Tools for Writing TypeScript Zod Schemas 2026](/ai-tools-for-writing-typescript-zod-schemas-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

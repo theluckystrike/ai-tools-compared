@@ -404,20 +404,20 @@ Next 5 executions:
 
 ## Related Reading
 
-- [Best AI Tools for Writing Systemd Units](/ai-tools-compared/best-ai-tools-for-writing-systemd-units-2026/)
-- [AI-Powered CI/CD Pipeline Optimization](/ai-tools-compared/ai-powered-cicd-pipeline-optimization-2026/)
-- [Best AI Tools for Writing Makefiles](/ai-tools-compared/best-ai-tools-for-writing-makefiles-2026/)
-- [AI Assistants for Writing Correct AWS IAM Policies](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
+- [Best AI Tools for Writing Systemd Units](/best-ai-tools-for-writing-systemd-units-2026/)
+- [AI-Powered CI/CD Pipeline Optimization](/ai-powered-cicd-pipeline-optimization-2026/)
+- [Best AI Tools for Writing Makefiles](/best-ai-tools-for-writing-makefiles-2026/)
+- [AI Assistants for Writing Correct AWS IAM Policies](/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
 
 ---
 
 ## Related Articles
 
-- [AI Tools for Writing Terraform Infrastructure-as-Code](/ai-tools-compared/ai-tools-for-writing-terraform-infrastructure-as-code-comparison-2026/)
-- [Best AI Tools for Writing GraphQL Schemas 2026](/ai-tools-compared/best-ai-tools-for-writing-graphql-schemas-2026/)
-- [AI Coding Tools Under $10 Per Month Ranked](/ai-tools-compared/ai-coding-tools-under-10-dollars-per-month-ranked/)
-- [Best AI Tools for Writing Kubernetes Operator Code](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-operator-code-from-scratch/)
-- [Best AI Tools for Writing GitHub Actions](/ai-tools-compared/ai-tools-for-writing-github-actions-guide)
+- [AI Tools for Writing Terraform Infrastructure-as-Code](/ai-tools-for-writing-terraform-infrastructure-as-code-comparison-2026/)
+- [Best AI Tools for Writing GraphQL Schemas 2026](/best-ai-tools-for-writing-graphql-schemas-2026/)
+- [AI Coding Tools Under $10 Per Month Ranked](/ai-coding-tools-under-10-dollars-per-month-ranked/)
+- [Best AI Tools for Writing Kubernetes Operator Code](/best-ai-tools-for-writing-kubernetes-operator-code-from-scratch/)
+- [Best AI Tools for Writing GitHub Actions](/ai-tools-for-writing-github-actions-guide)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

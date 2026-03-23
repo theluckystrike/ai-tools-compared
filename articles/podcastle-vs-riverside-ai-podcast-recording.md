@@ -317,8 +317,8 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Best AI Tools for Podcast Show Notes](/ai-tools-compared/best-ai-tools-for-podcast-show-notes/)
-- [Best AI Tools for Screen Recording Editing](/ai-tools-compared/best-ai-tools-for-screen-recording-editing/)
-- [How to Use AI for Writing Effective Prometheus Recording Rul](/ai-tools-compared/how-to-use-ai-for-writing-effective-prometheus-recording-rul/)
+- [Best AI Tools for Podcast Show Notes](/best-ai-tools-for-podcast-show-notes/)
+- [Best AI Tools for Screen Recording Editing](/best-ai-tools-for-screen-recording-editing/)
+- [How to Use AI for Writing Effective Prometheus Recording Rul](/how-to-use-ai-for-writing-effective-prometheus-recording-rul/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

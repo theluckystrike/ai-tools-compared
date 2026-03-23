@@ -285,11 +285,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Manage AI Coding Tool Rate Limits Across Team of](/ai-tools-compared/how-to-manage-ai-coding-tool-rate-limits-across-team-of-developers/)
-- [AI Coding Assistant Accuracy for Typescript Next Js Server C](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
-- [AI Coding Assistant Accuracy for TypeScript Svelte Component](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-svelte-component/)
-- [AI Coding Assistant Comparison for React Component](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
-- [AI Coding Assistant Comparison for Typescript monorepo](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-monorepo-with-turborepo-setup/)
-- [How to Use AI Tools to Generate Remote Team Meeting](https://theluckystrike.github.io/remote-work-tools/how-to-use-ai-tool-to-generate-remote-team-meeting-agendas-f/)
+- [How to Manage AI Coding Tool Rate Limits Across Team of](/how-to-manage-ai-coding-tool-rate-limits-across-team-of-developers/)
+- [AI Coding Assistant Accuracy for Typescript Next Js Server C](/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
+- [AI Coding Assistant Accuracy for TypeScript Svelte Component](/ai-coding-assistant-accuracy-for-typescript-svelte-component/)
+- [AI Coding Assistant Comparison for React Component](/ai-coding-assistant-comparison-for-react-component-generatio/)
+- [AI Coding Assistant Comparison for Typescript monorepo](/ai-coding-assistant-comparison-for-typescript-monorepo-with-turborepo-setup/)
+- [How to Use AI Tools to Generate Remote Team Meeting](https://welikeremotestack.com/how-to-use-ai-tool-to-generate-remote-team-meeting-agendas-f/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

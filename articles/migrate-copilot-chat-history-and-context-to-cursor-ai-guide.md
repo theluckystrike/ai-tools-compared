@@ -309,10 +309,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Use AI Chat History Effectively for Iterating on Code](/ai-tools-compared/how-to-use-ai-chat-history-effectively-for-iterating-on-code/)
-- [Copilot Inline Chat vs Cursor Inline Chat: Which Understands](/ai-tools-compared/copilot-inline-chat-vs-cursor-inline-chat-which-understands-/)
-- [How to Transfer Copilot Inline Chat Shortcuts](/ai-tools-compared/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)
-- [Migrate GitHub Copilot Workspace Setup to Cursor Background](/ai-tools-compared/migrate-github-copilot-workspace-setup-to-cursor-background-/)
-- [How to Migrate VSCode Copilot Keybindings](/ai-tools-compared/migrate-vscode-copilot-keybindings-to-cursor-ai-editor-2026/)
+- [How to Use AI Chat History Effectively for Iterating on Code](/how-to-use-ai-chat-history-effectively-for-iterating-on-code/)
+- [Copilot Inline Chat vs Cursor Inline Chat: Which Understands](/copilot-inline-chat-vs-cursor-inline-chat-which-understands-/)
+- [How to Transfer Copilot Inline Chat Shortcuts](/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)
+- [Migrate GitHub Copilot Workspace Setup to Cursor Background](/migrate-github-copilot-workspace-setup-to-cursor-background-/)
+- [How to Migrate VSCode Copilot Keybindings](/migrate-vscode-copilot-keybindings-to-cursor-ai-editor-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

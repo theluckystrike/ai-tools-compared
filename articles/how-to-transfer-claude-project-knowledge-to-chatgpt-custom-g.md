@@ -376,11 +376,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Transfer Claude Project Knowledge to ChatGPT Custom (2)](/ai-tools-compared/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-gpt/)
-- [Transfer ChatGPT Custom GPTs to Claude Projects Step by Step](/ai-tools-compared/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
-- [Claude vs ChatGPT for Building Custom ESLint Rules for React](/ai-tools-compared/claude-vs-chatgpt-for-building-custom-eslint-rules-for-react/)
-- [Switching from Windsurf to Cursor How to Transfer Project](/ai-tools-compared/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
-- [How to Transfer Notion AI Workflows to Claude Projects 2026](/ai-tools-compared/how-to-transfer-notion-ai-workflows-to-claude-projects-2026/)
+- [How to Transfer Claude Project Knowledge to ChatGPT Custom (2)](/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-gpt/)
+- [Transfer ChatGPT Custom GPTs to Claude Projects Step by Step](/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
+- [Claude vs ChatGPT for Building Custom ESLint Rules for React](/claude-vs-chatgpt-for-building-custom-eslint-rules-for-react/)
+- [Switching from Windsurf to Cursor How to Transfer Project](/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
+- [How to Transfer Notion AI Workflows to Claude Projects 2026](/how-to-transfer-notion-ai-workflows-to-claude-projects-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -476,10 +476,10 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [AI Tools for Writing Jest Tests for Web Worker and Service](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-web-worker-and-service-w/)
-- [Best AI Tools for Rust Web Development with Axum Framework](/ai-tools-compared/best-ai-tools-for-rust-web-development-with-axum-framework-2/)
-- [How to Switch From Lovable to Cursor for Building Web Apps](/ai-tools-compared/how-to-switch-from-lovable-to-cursor-for-building-web-apps-c/)
-- [AI Coding Assistant Data Sovereignty Requirements](/ai-tools-compared/ai-coding-assistant-data-sovereignty-requirements-for-companies-operating-in-eu-2026/)
-- [AI Coding Assistant Session Data Lifecycle](/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [AI Tools for Writing Jest Tests for Web Worker and Service](/ai-tools-for-writing-jest-tests-for-web-worker-and-service-w/)
+- [Best AI Tools for Rust Web Development with Axum Framework](/best-ai-tools-for-rust-web-development-with-axum-framework-2/)
+- [How to Switch From Lovable to Cursor for Building Web Apps](/how-to-switch-from-lovable-to-cursor-for-building-web-apps-c/)
+- [AI Coding Assistant Data Sovereignty Requirements](/ai-coding-assistant-data-sovereignty-requirements-for-companies-operating-in-eu-2026/)
+- [AI Coding Assistant Session Data Lifecycle](/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

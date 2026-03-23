@@ -293,9 +293,9 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [How to Use AI to Debug Tailwind CSS Classes Not Applying](/ai-tools-compared/how-to-use-ai-to-debug-tailwind-css-classes-not-applying-in-/)
-- [AI Coding Assistant Comparison for TypeScript monorepo](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-monorepo-with-turborepo-setup/)
-- [ChatGPT vs Gemini for Generating Tailwind CSS from Hand](/ai-tools-compared/chatgpt-vs-gemini-for-generating-tailwind-css-from-hand-draw/)
-- [AI Coding Assistant Comparison for React Component](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
-- [AI Coding Assistant Accuracy for TypeScript Next Js Server](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
+- [How to Use AI to Debug Tailwind CSS Classes Not Applying](/how-to-use-ai-to-debug-tailwind-css-classes-not-applying-in-/)
+- [AI Coding Assistant Comparison for TypeScript monorepo](/ai-coding-assistant-comparison-for-typescript-monorepo-with-turborepo-setup/)
+- [ChatGPT vs Gemini for Generating Tailwind CSS from Hand](/chatgpt-vs-gemini-for-generating-tailwind-css-from-hand-draw/)
+- [AI Coding Assistant Comparison for React Component](/ai-coding-assistant-comparison-for-react-component-generatio/)
+- [AI Coding Assistant Accuracy for TypeScript Next Js Server](/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

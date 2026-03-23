@@ -407,7 +407,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [AI Tools for Generating dbt Project Structure from Existing](/ai-tools-for-generating-dbt-project-structure-from-existing-/)
 - [AI Tools for Generating GitHub Actions Workflows](/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
 - [AI Tools for Generating GitHub Wiki Pages from Repository Structure](/ai-tools-for-generating-github-wiki-pages-from-repository-st/)
-- [Best AI Assistant for Designers Generating Accessibility](/ai-tools-compared/best-ai-assistant-for-designers-generating-accessibility-aud/)
+- [Best AI Assistant for Designers Generating Accessibility](/best-ai-assistant-for-designers-generating-accessibility-aud/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

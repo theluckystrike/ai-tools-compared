@@ -518,10 +518,10 @@ Yes, with Ollama's `MODELFILE` extension. Requires GPU and significant engineeri
 
 ## Related Articles
 
-- [How to Run CodeLlama Locally for Private Code Completion](/ai-tools-compared/how-to-run-codellama-locally-for-private-code-completion-ste/)
-- [Best Air Gapped AI Code Completion Solutions for Offline](/ai-tools-compared/best-air-gapped-ai-code-completion-solutions-for-offline-dev/)
-- [Best Local LLM Options for Code Generation 2026](/ai-tools-compared/best-local-llm-options-for-code-generation-2026/)
-- [Running CodeLlama Locally vs Using Cloud Copilot](/ai-tools-compared/running-codellama-locally-vs-using-cloud-copilot-for-proprie/)
-- [Cheapest Way to Get AI Code Completion in Vim 2026](/ai-tools-compared/cheapest-way-to-get-ai-code-completion-in-vim-2026/)
+- [How to Run CodeLlama Locally for Private Code Completion](/how-to-run-codellama-locally-for-private-code-completion-ste/)
+- [Best Air Gapped AI Code Completion Solutions for Offline](/best-air-gapped-ai-code-completion-solutions-for-offline-dev/)
+- [Best Local LLM Options for Code Generation 2026](/best-local-llm-options-for-code-generation-2026/)
+- [Running CodeLlama Locally vs Using Cloud Copilot](/running-codellama-locally-vs-using-cloud-copilot-for-proprie/)
+- [Cheapest Way to Get AI Code Completion in Vim 2026](/cheapest-way-to-get-ai-code-completion-in-vim-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

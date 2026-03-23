@@ -299,9 +299,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [AI Tools for Inventory Analytics](/ai-tools-compared/ai-tools-for-inventory-analytics/)
-- [AI Tools for Customer Journey Analytics](/ai-tools-compared/ai-tools-for-customer-journey-analytics/)
-- [AI Tools for Social Media Analytics: A Practical Guide](/ai-tools-compared/ai-tools-for-social-media-analytics/)
-- [Best AI Powered Chatops Tools](/ai-tools-compared/best-ai-powered-chatops-tools-for-slack-and-devops-integration/)
-- [Best AI Coding Tool for Generating Mobile Analytics Event](/ai-tools-compared/best-ai-coding-tool-for-generating-mobile-analytics-event-tr/)
+- [AI Tools for Inventory Analytics](/ai-tools-for-inventory-analytics/)
+- [AI Tools for Customer Journey Analytics](/ai-tools-for-customer-journey-analytics/)
+- [AI Tools for Social Media Analytics: A Practical Guide](/ai-tools-for-social-media-analytics/)
+- [Best AI Powered Chatops Tools](/best-ai-powered-chatops-tools-for-slack-and-devops-integration/)
+- [Best AI Coding Tool for Generating Mobile Analytics Event](/best-ai-coding-tool-for-generating-mobile-analytics-event-tr/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

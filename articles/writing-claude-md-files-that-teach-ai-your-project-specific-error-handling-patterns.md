@@ -315,11 +315,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Writing Claude Md Files That Teach AI Your Project Testing](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-testing-conventions-and-patterns/)
-- [Writing CLAUDE.md Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy/)
-- [Writing CLAUDE MD Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
-- [Claude Code API Error Handling Standards](/ai-tools-compared/claude-code-api-error-handling-standards/)
-- [Best AI Tools for Writing Idiomatic Rust Error Handling](/ai-tools-compared/best-ai-tools-for-writing-idiomatic-rust-error-handling-with/)
+- [Writing Claude Md Files That Teach AI Your Project Testing](/writing-claude-md-files-that-teach-ai-your-project-testing-conventions-and-patterns/)
+- [Writing CLAUDE.md Files That Define Your Project's API](/writing-claude-md-files-that-define-your-projects-api-versioning-strategy/)
+- [Writing CLAUDE MD Files That Define Your Project's API](/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
+- [Claude Code API Error Handling Standards](/claude-code-api-error-handling-standards/)
+- [Best AI Tools for Writing Idiomatic Rust Error Handling](/best-ai-tools-for-writing-idiomatic-rust-error-handling-with/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

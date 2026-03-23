@@ -329,11 +329,11 @@ Assuming 40 migrations/month (typical startup):
 
 ## Related Articles
 
-- [AI Tools for Database Schema Migration Review 2026](/ai-tools-compared/ai-tools-for-database-schema-migration-review-2026/)
-- [AI Tools for Database Migration Review 2026](/ai-tools-compared/ai-tools-for-database-migration-review-2026/)
-- [AI-Powered Database Migration Tools Comparison 2026](/ai-tools-compared/ai-powered-database-migration-tools-comparison/)
-- [AI Tools for Writing Database Migration Rollback Scripts](/ai-tools-compared/ai-tools-for-writing-database-migration-rollback-scripts-2026/)
-- [AI Tools for Automated Migration Testing 2026](/ai-tools-compared/ai-tools-for-automated-migration-testing-2026/)
+- [AI Tools for Database Schema Migration Review 2026](/ai-tools-for-database-schema-migration-review-2026/)
+- [AI Tools for Database Migration Review 2026](/ai-tools-for-database-migration-review-2026/)
+- [AI-Powered Database Migration Tools Comparison 2026](/ai-powered-database-migration-tools-comparison/)
+- [AI Tools for Writing Database Migration Rollback Scripts](/ai-tools-for-writing-database-migration-rollback-scripts-2026/)
+- [AI Tools for Automated Migration Testing 2026](/ai-tools-for-automated-migration-testing-2026/)
 1. [Flyway Best Practices for Large-Scale Migrations](/articles/flyway-best-practices-large-scale/)
 2. [Liquibase Conditional Changesets for Multi-Environment Deploys](/articles/liquibase-conditional-changesets/)
 3. [Database Rollback Strategies: Online DDL, Blue-Green, Feature Flags](/articles/database-rollback-strategies/)

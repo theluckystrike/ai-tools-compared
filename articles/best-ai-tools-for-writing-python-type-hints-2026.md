@@ -497,8 +497,8 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Python Type Checking Best Practices](/ai-tools-compared/python-type-checking-best-practices/)
-- [Automated Code Review Tools with AI 2026](/ai-tools-compared/automated-code-review-tools-with-ai-2026/)
-- [Github Copilot vs Cursor AI Comparison](/ai-tools-compared/github-copilot-vs-cursor-ai-comparison/)
+- [Python Type Checking Best Practices](/python-type-checking-best-practices/)
+- [Automated Code Review Tools with AI 2026](/automated-code-review-tools-with-ai-2026/)
+- [Github Copilot vs Cursor AI Comparison](/github-copilot-vs-cursor-ai-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

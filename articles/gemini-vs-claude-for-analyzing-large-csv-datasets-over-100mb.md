@@ -315,10 +315,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Claude API Batch Processing for Large Document Workflows](/ai-tools-compared/claude-api-batch-processing-for-large-document-workflows/)
-- [Claude Code vs Cursor for Large Codebase Refactoring](/ai-tools-compared/claude-code-vs-cursor-for-large-codebase-refactoring/)
-- [Claude vs Gemini for Converting Jupyter Notebooks to Product](/ai-tools-compared/claude-vs-gemini-for-converting-jupyter-notebooks-to-product/)
-- [Gemini vs Claude for Generating Markdown Documentation](/ai-tools-compared/gemini-vs-claude-for-generating-markdown-documentation-from-/)
-- [Gemini vs Claude for Summarizing Quarterly Earnings Call Tra](/ai-tools-compared/gemini-vs-claude-for-summarizing-quarterly-earnings-call-tra/)
+- [Claude API Batch Processing for Large Document Workflows](/claude-api-batch-processing-for-large-document-workflows/)
+- [Claude Code vs Cursor for Large Codebase Refactoring](/claude-code-vs-cursor-for-large-codebase-refactoring/)
+- [Claude vs Gemini for Converting Jupyter Notebooks to Product](/claude-vs-gemini-for-converting-jupyter-notebooks-to-product/)
+- [Gemini vs Claude for Generating Markdown Documentation](/gemini-vs-claude-for-generating-markdown-documentation-from-/)
+- [Gemini vs Claude for Summarizing Quarterly Earnings Call Tra](/gemini-vs-claude-for-summarizing-quarterly-earnings-call-tra/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

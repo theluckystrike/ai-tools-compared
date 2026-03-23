@@ -305,10 +305,10 @@ Trained reviewers can often identify interpolated footage from characteristic mo
 
 ## Related Articles
 
-- [Copilot vs Claude Code for Scaffolding New Django REST Frame](/ai-tools-compared/copilot-vs-claude-code-for-scaffolding-new-django-rest-frame/)
-- [How to Use AI to Generate pytest Tests for Django REST Frame](/ai-tools-compared/how-to-use-ai-to-generate-pytest-tests-for-django-rest-frame/)
-- [AI Tools for Video Accessibility Features](/ai-tools-compared/ai-tools-for-video-accessibility-features/)
-- [AI Tools for Video Color Grading](/ai-tools-compared/ai-tools-for-video-color-grading/)
-- [AI Tools for Video Compression: A Developer Guide](/ai-tools-compared/ai-tools-for-video-compression/)
+- [Copilot vs Claude Code for Scaffolding New Django REST Frame](/copilot-vs-claude-code-for-scaffolding-new-django-rest-frame/)
+- [How to Use AI to Generate pytest Tests for Django REST Frame](/how-to-use-ai-to-generate-pytest-tests-for-django-rest-frame/)
+- [AI Tools for Video Accessibility Features](/ai-tools-for-video-accessibility-features/)
+- [AI Tools for Video Color Grading](/ai-tools-for-video-color-grading/)
+- [AI Tools for Video Compression: A Developer Guide](/ai-tools-for-video-compression/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

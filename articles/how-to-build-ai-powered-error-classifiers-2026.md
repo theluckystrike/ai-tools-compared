@@ -396,20 +396,20 @@ After the first week of operation, most production errors route through the simi
 
 ## Related Reading
 
-- [How to Build Semantic Search with Embeddings](/ai-tools-compared/how-to-build-semantic-search-with-embeddings/)
-- [AI-Powered Observability Configuration Tools](/ai-tools-compared/ai-powered-observability-configuration-tools-2026/)
-- [How to Build AI-Powered CLI Tools](/ai-tools-compared/how-to-build-ai-powered-cli-tools-2026/)
-- [How to Build AI-Powered Code Formatters](/ai-tools-compared/build-ai-powered-code-formatters/)
+- [How to Build Semantic Search with Embeddings](/how-to-build-semantic-search-with-embeddings/)
+- [AI-Powered Observability Configuration Tools](/ai-powered-observability-configuration-tools-2026/)
+- [How to Build AI-Powered CLI Tools](/how-to-build-ai-powered-cli-tools-2026/)
+- [How to Build AI-Powered Code Formatters](/build-ai-powered-code-formatters/)
 
 ---
 
 ## Related Articles
 
-- [Best AI Tools for Go Error Wrapping and Sentinel Error](/ai-tools-compared/best-ai-tools-for-go-error-wrapping-and-sentinel-error-patte/)
-- [Best AI Tools for Writing Idiomatic Rust Error Handling](/ai-tools-compared/best-ai-tools-for-writing-idiomatic-rust-error-handling-with/)
-- [Ideogram vs Midjourney for Text in Images Compared](/ai-tools-compared/ideogram-vs-midjourney-for-text-in-images-compared/)
-- [Copilot vs Cursor for Writing Rust Error Handling](/ai-tools-compared/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
-- [Claude Code API Error Handling Standards](/ai-tools-compared/claude-code-api-error-handling-standards/)
+- [Best AI Tools for Go Error Wrapping and Sentinel Error](/best-ai-tools-for-go-error-wrapping-and-sentinel-error-patte/)
+- [Best AI Tools for Writing Idiomatic Rust Error Handling](/best-ai-tools-for-writing-idiomatic-rust-error-handling-with/)
+- [Ideogram vs Midjourney for Text in Images Compared](/ideogram-vs-midjourney-for-text-in-images-compared/)
+- [Copilot vs Cursor for Writing Rust Error Handling](/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
+- [Claude Code API Error Handling Standards](/claude-code-api-error-handling-standards/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

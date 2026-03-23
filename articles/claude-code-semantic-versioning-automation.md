@@ -364,11 +364,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Claude Code Parallel Testing Configuration - Complete](/ai-tools-compared/claude-code-parallel-testing-configuration/)
-- [Writing CLAUDE MD Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
-- [AI Code Review Automation Tools Comparison 2026](/ai-tools-compared/ai-code-review-automation-tools-comparison/)
-- [Best AI Tools for Code Review Automation 2026](/ai-tools-compared/best-ai-tools-for-code-review-automation-2026/)
-- [AI Tools for Detecting Duplicate GitHub Issues Using](/ai-tools-compared/ai-tools-for-detecting-duplicate-github-issues-using-semantic-similarity-matching/)
+- [Claude Code Parallel Testing Configuration - Complete](/claude-code-parallel-testing-configuration/)
+- [Writing CLAUDE MD Files That Define Your Project's API](/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
+- [AI Code Review Automation Tools Comparison 2026](/ai-code-review-automation-tools-comparison/)
+- [Best AI Tools for Code Review Automation 2026](/best-ai-tools-for-code-review-automation-2026/)
+- [AI Tools for Detecting Duplicate GitHub Issues Using](/ai-tools-for-detecting-duplicate-github-issues-using-semantic-similarity-matching/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

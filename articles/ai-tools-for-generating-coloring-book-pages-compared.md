@@ -420,11 +420,11 @@ def optimize_prompts_for_coloring(base_theme: str, n_iterations: int = 3) -> str
 
 ## Related Articles
 
-- [How to Use AI to Generate Contributor Hall of Fame Pages Fro](/ai-tools-compared/how-to-use-ai-to-generate-contributor-hall-of-fame-pages-fro/)
-- [AI Tools for Generating API Client SDKs 2026](/ai-tools-compared/ai-tools-for-generating-api-client-sdks-2026/)
-- [AI Tools for Generating API Mock Servers 2026](/ai-tools-compared/ai-tools-for-generating-api-mock-servers-2026/)
-- [AI Tools for Generating Coding Kata Exercises Tailored to Yo](/ai-tools-compared/ai-tools-for-generating-coding-kata-exercises-tailored-to-yo/)
-- [AI Tools for Generating Contributor License Agreement Explan](/ai-tools-compared/ai-tools-for-generating-contributor-license-agreement-explan/)
+- [How to Use AI to Generate Contributor Hall of Fame Pages Fro](/how-to-use-ai-to-generate-contributor-hall-of-fame-pages-fro/)
+- [AI Tools for Generating API Client SDKs 2026](/ai-tools-for-generating-api-client-sdks-2026/)
+- [AI Tools for Generating API Mock Servers 2026](/ai-tools-for-generating-api-mock-servers-2026/)
+- [AI Tools for Generating Coding Kata Exercises Tailored to Yo](/ai-tools-for-generating-coding-kata-exercises-tailored-to-yo/)
+- [AI Tools for Generating Contributor License Agreement Explan](/ai-tools-for-generating-contributor-license-agreement-explan/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

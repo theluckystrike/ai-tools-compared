@@ -236,11 +236,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Cursor Pro Privacy Mode Does It Cost Extra](/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
-- [Midjourney Standard vs Pro Plan: Is Stealth Mode Worth](/ai-tools-compared/midjourney-standard-vs-pro-plan-stealth-mode-worth-extra-cost/)
-- [Cursor AI Codebase Indexing: How It Works and Why It Matters](/ai-tools-compared/cursor-ai-codebase-indexing-how-it-works-and-why-it-matters-/)
-- [Perplexity Pro File Upload Limits and Storage Costs Explaine](/ai-tools-compared/perplexity-pro-file-upload-limits-and-storage-costs-explaine/)
-- [Claude Code vs Cursor for Large Codebase Refactoring](/ai-tools-compared/claude-code-vs-cursor-for-large-codebase-refactoring/)
+- [Cursor Pro Privacy Mode Does It Cost Extra](/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
+- [Midjourney Standard vs Pro Plan: Is Stealth Mode Worth](/midjourney-standard-vs-pro-plan-stealth-mode-worth-extra-cost/)
+- [Cursor AI Codebase Indexing: How It Works and Why It Matters](/cursor-ai-codebase-indexing-how-it-works-and-why-it-matters-/)
+- [Perplexity Pro File Upload Limits and Storage Costs Explaine](/perplexity-pro-file-upload-limits-and-storage-costs-explaine/)
+- [Claude Code vs Cursor for Large Codebase Refactoring](/claude-code-vs-cursor-for-large-codebase-refactoring/)
 
 ## Real-World Indexing Scenarios
 
@@ -550,8 +550,8 @@ No. Indexing is separate from AI request credits. Indexing is included in the su
 
 ## Related Articles
 
-- [Cursor vs GitHub Copilot for Large Codebases](/ai-tools-compared/cursor-vs-copilot-large-codebase/)
-- [Monorepo Best Practices with AI Coding Assistants](/ai-tools-compared/monorepo-best-practices-ai-coding/)
-- [Setting Up Cursor for Turborepo Projects](/ai-tools-compared/cursor-turborepo-setup/)
+- [Cursor vs GitHub Copilot for Large Codebases](/cursor-vs-copilot-large-codebase/)
+- [Monorepo Best Practices with AI Coding Assistants](/monorepo-best-practices-ai-coding/)
+- [Setting Up Cursor for Turborepo Projects](/cursor-turborepo-setup/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

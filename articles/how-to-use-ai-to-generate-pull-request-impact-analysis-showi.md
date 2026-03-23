@@ -432,11 +432,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [AI Tools for Generating Dependency Update Pull Request Descr](/ai-tools-compared/ai-tools-for-generating-dependency-update-pull-request-descr/)
-- [AI Tools for Generating Pull Request Merge Conflict](/ai-tools-compared/ai-tools-for-generating-pull-request-merge-conflict-resoluti/)
-- [AI Coding Assistant Session Data Lifecycle](/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-- [AI Tools for Reviewing Documentation Pull Requests for Accur](/ai-tools-compared/ai-tools-for-reviewing-documentation-pull-requests-for-accur/)
-- [Configuring Claude Code to Understand Your Teams Pull Reques](/ai-tools-compared/configuring-claude-code-to-understand-your-teams-pull-reques/)
+- [AI Tools for Generating Dependency Update Pull Request Descr](/ai-tools-for-generating-dependency-update-pull-request-descr/)
+- [AI Tools for Generating Pull Request Merge Conflict](/ai-tools-for-generating-pull-request-merge-conflict-resoluti/)
+- [AI Coding Assistant Session Data Lifecycle](/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [AI Tools for Reviewing Documentation Pull Requests for Accur](/ai-tools-for-reviewing-documentation-pull-requests-for-accur/)
+- [Configuring Claude Code to Understand Your Teams Pull Reques](/configuring-claude-code-to-understand-your-teams-pull-reques/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

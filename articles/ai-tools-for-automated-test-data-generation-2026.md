@@ -436,11 +436,11 @@ Mimesis is 2-5x faster and better for generating millions of rows for load tests
 
 ## Related Articles
 
-- [AI for Automated Regression Test Generation from Bug Reports](/ai-tools-compared/ai-for-automated-regression-test-generation-from-bug-reports/)
-- [AI Tools for Automated Changelog Generation 2026](/ai-tools-compared/ai-tools-for-automated-changelog-generation-2026/)
-- [AI Tools for Automated Load Testing Script Generation and An](/ai-tools-compared/ai-tools-for-automated-load-testing-script-generation-and-an/)
-- [AI Tools for Creating Test Data Generators That Respect Busi](/ai-tools-compared/ai-tools-for-creating-test-data-generators-that-respect-busi/)
-- [AI Tools for Creating Test Data Snapshots for Database](/ai-tools-compared/ai-tools-for-creating-test-data-snapshots-for-database-rollback-between-test-runs/)
+- [AI for Automated Regression Test Generation from Bug Reports](/ai-for-automated-regression-test-generation-from-bug-reports/)
+- [AI Tools for Automated Changelog Generation 2026](/ai-tools-for-automated-changelog-generation-2026/)
+- [AI Tools for Automated Load Testing Script Generation and An](/ai-tools-for-automated-load-testing-script-generation-and-an/)
+- [AI Tools for Creating Test Data Generators That Respect Busi](/ai-tools-for-creating-test-data-generators-that-respect-busi/)
+- [AI Tools for Creating Test Data Snapshots for Database](/ai-tools-for-creating-test-data-snapshots-for-database-rollback-between-test-runs/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

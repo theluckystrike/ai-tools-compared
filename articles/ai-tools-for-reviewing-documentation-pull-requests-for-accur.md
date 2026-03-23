@@ -296,10 +296,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Creating Dbt Documentation Blocks](/ai-tools-compared/ai-tools-for-creating-dbt-documentation-blocks-from-column-level-lineage-analysis/)
-- [Best AI Tools for Code Documentation Generation 2026](/ai-tools-compared/best-ai-tools-for-code-documentation-generation-2026/)
-- [AI Tools for Keeping Documentation in Sync with Codebase Changes Compared 2026](/ai-tools-compared/ai-tools-for-keeping-documentation-in-sync-with-codebase-cha/)
-- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)
-- [Best AI Tools for Technical Documentation Writing in 2026](/ai-tools-compared/ai-tools-for-technical-writing-documentation-2026/---)
+- [AI Tools for Creating Dbt Documentation Blocks](/ai-tools-for-creating-dbt-documentation-blocks-from-column-level-lineage-analysis/)
+- [Best AI Tools for Code Documentation Generation 2026](/best-ai-tools-for-code-documentation-generation-2026/)
+- [AI Tools for Keeping Documentation in Sync with Codebase Changes Compared 2026](/ai-tools-for-keeping-documentation-in-sync-with-codebase-cha/)
+- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-for-automated-api-documentation-from-code-comments/)
+- [Best AI Tools for Technical Documentation Writing in 2026](/ai-tools-for-technical-writing-documentation-2026/---)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

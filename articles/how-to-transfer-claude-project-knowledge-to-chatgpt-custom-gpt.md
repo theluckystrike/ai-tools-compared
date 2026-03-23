@@ -380,10 +380,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Transfer Claude Project Knowledge to ChatGPT Custom](/ai-tools-compared/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-g/)
-- [Transfer ChatGPT Custom GPTs to Claude Projects Step by Step](/ai-tools-compared/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
-- [ChatGPT Custom GPT Not Following Instructions](/ai-tools-compared/chatgpt-custom-gpt-not-following-instructions/)
-- [Claude vs ChatGPT for Building Custom ESLint Rules for React](/ai-tools-compared/claude-vs-chatgpt-for-building-custom-eslint-rules-for-react/)
-- [Switching from Windsurf to Cursor How to Transfer Project](/ai-tools-compared/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
+- [How to Transfer Claude Project Knowledge to ChatGPT Custom](/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-g/)
+- [Transfer ChatGPT Custom GPTs to Claude Projects Step by Step](/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
+- [ChatGPT Custom GPT Not Following Instructions](/chatgpt-custom-gpt-not-following-instructions/)
+- [Claude vs ChatGPT for Building Custom ESLint Rules for React](/claude-vs-chatgpt-for-building-custom-eslint-rules-for-react/)
+- [Switching from Windsurf to Cursor How to Transfer Project](/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

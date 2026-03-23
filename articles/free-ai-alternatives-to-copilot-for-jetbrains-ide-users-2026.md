@@ -270,11 +270,11 @@ Policies vary widely. Some tools let you access your data for a grace period aft
 
 ## Related Articles
 
-- [Completely Free Alternatives to GitHub Copilot That Actually](/ai-tools-compared/completely-free-alternatives-to-github-copilot-that-actually/)
-- [Free Alternatives to ChatGPT Plus for Code Generation](/ai-tools-compared/free-alternatives-to-chatgpt-plus-for-code-generation-2026/)
-- [Copilot for JetBrains: Does It Cost Same as VSCode Version](/ai-tools-compared/copilot-for-jetbrains-does-it-cost-same-as-vscode-version/)
-- [Migrating from JetBrains AI to Copilot in IntelliJ -.](/ai-tools-compared/migrating-jetbrains-ai-to-copilot-intellij-step-by-step-guide/)
-- [Copilot for Students Free Access: What Exactly Is Included](/ai-tools-compared/copilot-for-students-free-access-what-exactly-is-included-20/)
+- [Completely Free Alternatives to GitHub Copilot That Actually](/completely-free-alternatives-to-github-copilot-that-actually/)
+- [Free Alternatives to ChatGPT Plus for Code Generation](/free-alternatives-to-chatgpt-plus-for-code-generation-2026/)
+- [Copilot for JetBrains: Does It Cost Same as VSCode Version](/copilot-for-jetbrains-does-it-cost-same-as-vscode-version/)
+- [Migrating from JetBrains AI to Copilot in IntelliJ -.](/migrating-jetbrains-ai-to-copilot-intellij-step-by-step-guide/)
+- [Copilot for Students Free Access: What Exactly Is Included](/copilot-for-students-free-access-what-exactly-is-included-20/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

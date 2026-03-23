@@ -350,10 +350,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Best AI Assistant for Generating Open Source Release](/ai-tools-compared/best-ai-assistant-for-generating-open-source-release-announcements/)
-- [AI Tools for Product Managers Drafting Release](/ai-tools-compared/ai-tools-for-product-managers-drafting-release-communication-emails-from-feature-lists/)
-- [AI Tools for Creating Automated Release Changelog](/ai-tools-compared/ai-tools-for-creating-automated-release-changelog-from-conve/)
-- [How to Use AI to Write Security Advisory Descriptions](/ai-tools-compared/how-to-use-ai-to-write-security-advisory-descriptions-for-cv/)
-- [Best AI for Writing Good First Issue Descriptions That](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attract-new-contributors/)
+- [Best AI Assistant for Generating Open Source Release](/best-ai-assistant-for-generating-open-source-release-announcements/)
+- [AI Tools for Product Managers Drafting Release](/ai-tools-for-product-managers-drafting-release-communication-emails-from-feature-lists/)
+- [AI Tools for Creating Automated Release Changelog](/ai-tools-for-creating-automated-release-changelog-from-conve/)
+- [How to Use AI to Write Security Advisory Descriptions](/how-to-use-ai-to-write-security-advisory-descriptions-for-cv/)
+- [Best AI for Writing Good First Issue Descriptions That](/best-ai-for-writing-good-first-issue-descriptions-that-attract-new-contributors/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -392,10 +392,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Continue Dev Free vs Cody Free: Open Source AI Comparison](/ai-tools-compared/continue-dev-free-vs-cody-free-open-source-ai-comparison/)
-- [How to Maximize GitHub Copilot Free Tier for Open Source](/ai-tools-compared/how-to-maximize-github-copilot-free-tier-for-open-source/)
-- [Copilot Code Referencing Feature: How It Handles Open Source](/ai-tools-compared/copilot-code-referencing-feature-how-it-handles-open-source-/)
-- [AI Tools for Analyzing Which Open Source Issues Would Benefi](/ai-tools-compared/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
-- [Best AI Assistant for Creating Open Source Project Branding](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)
+- [Continue Dev Free vs Cody Free: Open Source AI Comparison](/continue-dev-free-vs-cody-free-open-source-ai-comparison/)
+- [How to Maximize GitHub Copilot Free Tier for Open Source](/how-to-maximize-github-copilot-free-tier-for-open-source/)
+- [Copilot Code Referencing Feature: How It Handles Open Source](/copilot-code-referencing-feature-how-it-handles-open-source-/)
+- [AI Tools for Analyzing Which Open Source Issues Would Benefi](/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
+- [Best AI Assistant for Creating Open Source Project Branding](/best-ai-assistant-for-creating-open-source-project-branding-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

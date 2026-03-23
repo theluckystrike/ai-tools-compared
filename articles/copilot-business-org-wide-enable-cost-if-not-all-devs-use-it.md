@@ -348,11 +348,11 @@ Policies vary widely. Some tools let you access your data for a grace period aft
 
 ## Related Articles
 
-- [Copilot Business vs Cursor Business Per Developer Cost](/ai-tools-compared/copilot-business-vs-cursor-business-per-developer-cost-comparison/)
-- [How to Transfer GitHub Copilot Organization Settings](/ai-tools-compared/transfer-github-copilot-org-settings-when-switching-to-curso/)
-- [Switching from Copilot Enterprise to Cursor Business Migrati](/ai-tools-compared/switching-from-copilot-enterprise-to-cursor-business-migrati/)
-- [Copilot for JetBrains: Does It Cost Same as VSCode Version](/ai-tools-compared/copilot-for-jetbrains-does-it-cost-same-as-vscode-version/)
-- [Copilot Individual vs Cursor Pro Annual Cost Breakdown 2026](/ai-tools-compared/copilot-individual-vs-cursor-pro-annual-cost-breakdown-2026/)
+- [Copilot Business vs Cursor Business Per Developer Cost](/copilot-business-vs-cursor-business-per-developer-cost-comparison/)
+- [How to Transfer GitHub Copilot Organization Settings](/transfer-github-copilot-org-settings-when-switching-to-curso/)
+- [Switching from Copilot Enterprise to Cursor Business Migrati](/switching-from-copilot-enterprise-to-cursor-business-migrati/)
+- [Copilot for JetBrains: Does It Cost Same as VSCode Version](/copilot-for-jetbrains-does-it-cost-same-as-vscode-version/)
+- [Copilot Individual vs Cursor Pro Annual Cost Breakdown 2026](/copilot-individual-vs-cursor-pro-annual-cost-breakdown-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

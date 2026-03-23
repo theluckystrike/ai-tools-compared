@@ -373,11 +373,11 @@ Always profile with debug symbols enabled. Release builds with optimizations can
 
 ## Related Articles
 
-- [Cursor Git Integration Broken How to Fix](/ai-tools-compared/cursor-git-integration-broken-how-to-fix/)
-- [How to Use AI to Debug Flaky Integration Tests in CI Pipelin](/ai-tools-compared/how-to-use-ai-to-debug-flaky-integration-tests-in-ci-pipelin/)
-- [How to Use AI to Generate Jest Integration Tests for Express](/ai-tools-compared/how-to-use-ai-to-generate-jest-integration-tests-for-express/)
-- [AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026](/ai-tools-compared/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
-- [AI Pair Programming Tools Comparison 2026: Claude Code.](/ai-tools-compared/ai-pair-programming-tools-comparison-2026/)
+- [Cursor Git Integration Broken How to Fix](/cursor-git-integration-broken-how-to-fix/)
+- [How to Use AI to Debug Flaky Integration Tests in CI Pipelin](/how-to-use-ai-to-debug-flaky-integration-tests-in-ci-pipelin/)
+- [How to Use AI to Generate Jest Integration Tests for Express](/how-to-use-ai-to-generate-jest-integration-tests-for-express/)
+- [AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026](/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
+- [AI Pair Programming Tools Comparison 2026: Claude Code.](/ai-pair-programming-tools-comparison-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

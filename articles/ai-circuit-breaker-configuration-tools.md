@@ -408,9 +408,9 @@ rate(resilience4j_circuitbreaker_calls_total{name="payment-service"}[5m])
 
 ## Related Reading
 
-- [Claude vs Copilot for Java Spring Boot Microservices](/ai-tools-compared/claude-vs-copilot-java-spring-boot/)
-- [AI Tools for Automated Rate Limiter Configuration](/ai-tools-compared/ai-tools-automated-rate-limiter-config/)
-- [AI CI/CD Pipeline Optimization](/ai-tools-compared/ai-ci-cd-pipeline-optimization/)
+- [Claude vs Copilot for Java Spring Boot Microservices](/claude-vs-copilot-java-spring-boot/)
+- [AI Tools for Automated Rate Limiter Configuration](/ai-tools-automated-rate-limiter-config/)
+- [AI CI/CD Pipeline Optimization](/ai-ci-cd-pipeline-optimization/)
 
 ---
 

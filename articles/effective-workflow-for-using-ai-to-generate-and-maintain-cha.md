@@ -287,11 +287,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Effective AI Coding Workflow for Building Features from Prod](/ai-tools-compared/effective-ai-coding-workflow-for-building-features-from-prod/)
-- [Effective Tool Chaining Workflow Using Copilot and Claude](/ai-tools-compared/effective-tool-chaining-workflow-using-copilot-and-claude-together-for-coding/)
-- [Effective Workflow for AI-Assisted Open Source Contribution](/ai-tools-compared/effective-workflow-for-ai-assisted-open-source-contribution-/)
-- [Effective Workflow for Using AI](/ai-tools-compared/effective-workflow-for-using-ai-to-debug-production-issues-from-logs/)
-- [Best AI Tools for Writing GitHub Actions Reusable Workflow](/ai-tools-compared/best-ai-tools-for-writing-github-actions-reusable-workflow-t/)
+- [Effective AI Coding Workflow for Building Features from Prod](/effective-ai-coding-workflow-for-building-features-from-prod/)
+- [Effective Tool Chaining Workflow Using Copilot and Claude](/effective-tool-chaining-workflow-using-copilot-and-claude-together-for-coding/)
+- [Effective Workflow for AI-Assisted Open Source Contribution](/effective-workflow-for-ai-assisted-open-source-contribution-/)
+- [Effective Workflow for Using AI](/effective-workflow-for-using-ai-to-debug-production-issues-from-logs/)
+- [Best AI Tools for Writing GitHub Actions Reusable Workflow](/best-ai-tools-for-writing-github-actions-reusable-workflow-t/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

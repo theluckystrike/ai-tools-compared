@@ -310,11 +310,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Generating Docker Compose Files for Complex Mic](/ai-tools-compared/ai-tools-for-generating-docker-compose-files-for-complex-mic/)
-- [Best AI Tools for Writing Docker Compose Files 2026](/ai-tools-compared/best-ai-tools-for-writing-docker-compose-files-2026/)
-- [Effective Context Loading Strategies for AI Tools](/ai-tools-compared/effective-context-loading-strategies-for-ai-tools-in-polyglo/)
-- [What Source Code Context Window Do Different AI Coding Tools](/ai-tools-compared/what-source-code-context-window-do-different-ai-coding-tools/)
-- [Self-Hosted AI Assistant for Writing Docker Files Without](/ai-tools-compared/self-hosted-ai-assistant-for-writing-docker-files-without-cl/)
+- [AI Tools for Generating Docker Compose Files for Complex Mic](/ai-tools-for-generating-docker-compose-files-for-complex-mic/)
+- [Best AI Tools for Writing Docker Compose Files 2026](/best-ai-tools-for-writing-docker-compose-files-2026/)
+- [Effective Context Loading Strategies for AI Tools](/effective-context-loading-strategies-for-ai-tools-in-polyglo/)
+- [What Source Code Context Window Do Different AI Coding Tools](/what-source-code-context-window-do-different-ai-coding-tools/)
+- [Self-Hosted AI Assistant for Writing Docker Files Without](/self-hosted-ai-assistant-for-writing-docker-files-without-cl/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 {% endraw %}

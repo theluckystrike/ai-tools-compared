@@ -293,11 +293,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Copilot Code Referencing Feature: How It Handles Open Source](/ai-tools-compared/copilot-code-referencing-feature-how-it-handles-open-source-/)
-- [Copilot Next Edit Suggestion Feature How It Predicts Your In](/ai-tools-compared/copilot-next-edit-suggestion-feature-how-it-predicts-your-in/)
-- [Cursor Pro vs Copilot Individual Price Per Feature](/ai-tools-compared/cursor-pro-vs-copilot-individual-price-per-feature-compariso/)
-- [Best AI IDE Features for Understanding and Modifying Legacy](/ai-tools-compared/best-ai-ide-features-for-understanding-and-modifying-legacy-/)
-- [How to Use AI Assistants for Codebase](/ai-tools-compared/how-to-use-ai-assistants-for--codebase-understanding-and-onboarding/)
+- [Copilot Code Referencing Feature: How It Handles Open Source](/copilot-code-referencing-feature-how-it-handles-open-source-/)
+- [Copilot Next Edit Suggestion Feature How It Predicts Your In](/copilot-next-edit-suggestion-feature-how-it-predicts-your-in/)
+- [Cursor Pro vs Copilot Individual Price Per Feature](/cursor-pro-vs-copilot-individual-price-per-feature-compariso/)
+- [Best AI IDE Features for Understanding and Modifying Legacy](/best-ai-ide-features-for-understanding-and-modifying-legacy-/)
+- [How to Use AI Assistants for Codebase](/how-to-use-ai-assistants-for--codebase-understanding-and-onboarding/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -363,11 +363,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Which AI Is Better for Writing gRPC Protobuf Service](/ai-tools-compared/which-ai-is-better-for-writing-grpc-protobuf-service-definitions/)
-- [Best AI Tools for Writing Go gRPC Service Definitions and](/ai-tools-compared/best-ai-tools-for-writing-go-grpc-service-definitions-and-implementations/)
-- [How to Use AI for Writing Effective Sli Slo Definitions](/ai-tools-compared/how-to-use-ai-for-writing-effective-sli-slo-definitions-for-services/)
-- [AI Tools for Creating dbt Model Definitions from Raw Databas](/ai-tools-compared/ai-tools-for-creating-dbt-model-definitions-from-raw-databas/)
-- [How Well Do AI Tools Generate Rust Macro Definitions and Pro](/ai-tools-compared/how-well-do-ai-tools-generate-rust-macro-definitions-and-pro/)
+- [Which AI Is Better for Writing gRPC Protobuf Service](/which-ai-is-better-for-writing-grpc-protobuf-service-definitions/)
+- [Best AI Tools for Writing Go gRPC Service Definitions and](/best-ai-tools-for-writing-go-grpc-service-definitions-and-implementations/)
+- [How to Use AI for Writing Effective Sli Slo Definitions](/how-to-use-ai-for-writing-effective-sli-slo-definitions-for-services/)
+- [AI Tools for Creating dbt Model Definitions from Raw Databas](/ai-tools-for-creating-dbt-model-definitions-from-raw-databas/)
+- [How Well Do AI Tools Generate Rust Macro Definitions and Pro](/how-well-do-ai-tools-generate-rust-macro-definitions-and-pro/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

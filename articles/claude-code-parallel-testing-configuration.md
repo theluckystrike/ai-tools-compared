@@ -397,10 +397,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Claude Code Shift Left Testing Strategy Guide](/ai-tools-compared/claude-code-shift-left-testing-strategy-guide/)
-- [Configure Claude Code](/ai-tools-compared/how-to-configure-claude-code-to-follow-your-teams-feature-fl/)
-- [Claude Code Screen Reader Testing Workflow](/ai-tools-compared/claude-code-screen-reader-testing-workflow/)
-- [Claude Code SDK Testing Workflow Guide](/ai-tools-compared/claude-code-sdk-testing-workflow-guide/)
-- [Configuring Claude Code to Understand Your Teams Pull](/ai-tools-compared/configuring-claude-code-to-understand-your-teams-pull-reques/)
+- [Claude Code Shift Left Testing Strategy Guide](/claude-code-shift-left-testing-strategy-guide/)
+- [Configure Claude Code](/how-to-configure-claude-code-to-follow-your-teams-feature-fl/)
+- [Claude Code Screen Reader Testing Workflow](/claude-code-screen-reader-testing-workflow/)
+- [Claude Code SDK Testing Workflow Guide](/claude-code-sdk-testing-workflow-guide/)
+- [Configuring Claude Code to Understand Your Teams Pull](/configuring-claude-code-to-understand-your-teams-pull-reques/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

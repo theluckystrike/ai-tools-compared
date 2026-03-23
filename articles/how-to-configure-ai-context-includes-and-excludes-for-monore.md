@@ -252,11 +252,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Claude Projects Feature Which Plan Tier Includes It Explaine](/ai-tools-compared/claude-projects-feature-which-plan-tier-includes-it-explaine/)
-- [Best Way to Configure AI Coding Tools to Follow Your Databas](/ai-tools-compared/best-way-to-configure-ai-coding-tools-to-follow-your-databas/)
-- [Best Way to Configure Claude Code to Understand Your Interna](/ai-tools-compared/best-way-to-configure-claude-code-to-understand-your-interna/)
-- [Best Way to Configure CursorRules for Python FastAPI Project](/ai-tools-compared/best-way-to-configure-cursorrules-for-python-fastapi-project/)
-- [How to Configure AI Coding Tools to Exclude Secrets and](/ai-tools-compared/how-to-configure-ai-coding-tools-to-exclude-secrets-and-env-/)
+- [Claude Projects Feature Which Plan Tier Includes It Explaine](/claude-projects-feature-which-plan-tier-includes-it-explaine/)
+- [Best Way to Configure AI Coding Tools to Follow Your Databas](/best-way-to-configure-ai-coding-tools-to-follow-your-databas/)
+- [Best Way to Configure Claude Code to Understand Your Interna](/best-way-to-configure-claude-code-to-understand-your-interna/)
+- [Best Way to Configure CursorRules for Python FastAPI Project](/best-way-to-configure-cursorrules-for-python-fastapi-project/)
+- [How to Configure AI Coding Tools to Exclude Secrets and](/how-to-configure-ai-coding-tools-to-exclude-secrets-and-env-/)
 
 ### Step 7: Tool-Specific Configuration Deep Dives
 
@@ -696,8 +696,8 @@ After optimizing configuration:
 
 ## Related Articles
 
-- [Cursor Configuration Best Practices for Teams](/ai-tools-compared/cursor-configuration-teams/)
-- [Managing Multiple Monorepos with AI Assistants](/ai-tools-compared/multiple-monorepos-ai/)
-- [Context Window Management for Large Projects](/ai-tools-compared/context-window-large-projects/)
+- [Cursor Configuration Best Practices for Teams](/cursor-configuration-teams/)
+- [Managing Multiple Monorepos with AI Assistants](/multiple-monorepos-ai/)
+- [Context Window Management for Large Projects](/context-window-large-projects/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

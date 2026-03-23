@@ -379,11 +379,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)
-- [Claude Code API Backward Compatibility Guide](/ai-tools-compared/claude-code-api-backward-compatibility-guide/)
-- [Claude Code API Client TypeScript Guide: Build Type-Safe](/ai-tools-compared/claude-code-api-client-typescript-guide/)
-- [Claude Code API Error Handling Standards](/ai-tools-compared/claude-code-api-error-handling-standards/)
-- [Claude Code API Snapshot Testing Guide](/ai-tools-compared/claude-code-api-snapshot-testing-guide/)
+- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-for-automated-api-documentation-from-code-comments/)
+- [Claude Code API Backward Compatibility Guide](/claude-code-api-backward-compatibility-guide/)
+- [Claude Code API Client TypeScript Guide: Build Type-Safe](/claude-code-api-client-typescript-guide/)
+- [Claude Code API Error Handling Standards](/claude-code-api-error-handling-standards/)
+- [Claude Code API Snapshot Testing Guide](/claude-code-api-snapshot-testing-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -269,10 +269,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [ChatGPT Conversation History Disappeared Fix](/ai-tools-compared/chatgpt-conversation-history-disappeared-fix/)
-- [Switching from ChatGPT Voice to Gemini Live Conversation](/ai-tools-compared/switching-from-chatgpt-voice-to-gemini-live-conversation-differences/)
-- [How to Transfer WriteSonic Content to Jasper AI Brand Voice](/ai-tools-compared/how-to-transfer-writesonic-content-to-jasper-ai-brand-voice/)
-- [Writesonic vs Jasper AI: Copywriting Tools Compared](/ai-tools-compared/writesonic-vs-jasper-ai-copywriting-tool-comparison/)
-- [ChatGPT API 429 Too Many Requests Fix](/ai-tools-compared/chatgpt-api-429-too-many-requests-fix/)
+- [ChatGPT Conversation History Disappeared Fix](/chatgpt-conversation-history-disappeared-fix/)
+- [Switching from ChatGPT Voice to Gemini Live Conversation](/switching-from-chatgpt-voice-to-gemini-live-conversation-differences/)
+- [How to Transfer WriteSonic Content to Jasper AI Brand Voice](/how-to-transfer-writesonic-content-to-jasper-ai-brand-voice/)
+- [Writesonic vs Jasper AI: Copywriting Tools Compared](/writesonic-vs-jasper-ai-copywriting-tool-comparison/)
+- [ChatGPT API 429 Too Many Requests Fix](/chatgpt-api-429-too-many-requests-fix/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

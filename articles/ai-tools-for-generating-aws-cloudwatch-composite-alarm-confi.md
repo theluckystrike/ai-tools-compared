@@ -438,11 +438,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How Accurate Are AI Tools at Generating Rust Crossbeam](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
-- [AI Tools for Writing pytest Tests with Moto Library for AWS](/ai-tools-compared/ai-tools-for-writing-pytest-tests-with-moto-library-for-aws-/)
-- [How Accurate Are AI Tools at Generating TypeScript Zod](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-typescript-zod-schem/)
-- [How to Prevent AI Coding Tools from Generating Overly](/ai-tools-compared/how-to-prevent-ai-coding-tools-from-generating-overly-complex-solutions/)
-- [Best AI Tools for Writing AWS CDK Infrastructure Code](/ai-tools-compared/best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/)
+- [How Accurate Are AI Tools at Generating Rust Crossbeam](/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
+- [AI Tools for Writing pytest Tests with Moto Library for AWS](/ai-tools-for-writing-pytest-tests-with-moto-library-for-aws-/)
+- [How Accurate Are AI Tools at Generating TypeScript Zod](/how-accurate-are-ai-tools-at-generating-typescript-zod-schem/)
+- [How to Prevent AI Coding Tools from Generating Overly](/how-to-prevent-ai-coding-tools-from-generating-overly-complex-solutions/)
+- [Best AI Tools for Writing AWS CDK Infrastructure Code](/best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/)
 Remember that composite alarms are one piece of observability. Pair them with good instrumentation, proper threshold tuning, and strong runbooks that guide your team's response. The goal isn't just alerting—it's enabling fast, confident incident response.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

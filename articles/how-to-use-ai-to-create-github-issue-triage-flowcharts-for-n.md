@@ -577,11 +577,11 @@ Limit to 10-15 core labels. Revisit quarterly and consolidate overlapping labels
 
 ## Related Articles
 
-- [Best AI Tool for Triaging GitHub Issues by Severity and Cate](/ai-tools-compared/best-ai-tool-for-triaging-github-issues-by-severity-and-cate/)
-- [AI Tools for Generating GitHub Actions Workflows (2)](/ai-tools-compared/ai-tools-github-actions-workflows/)
-- [Best AI for Writing Good First Issue Descriptions That](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attract-new-contributors/)
-- [AI Tools for Generating GitHub Actions Workflows](/ai-tools-compared/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
-- [How to Use AI to Optimize GitHub Actions Workflow Run Times](/ai-tools-compared/how-to-use-ai-to-optimize-github-actions-workflow-run-times-/)
-- [Best Open Source CRM for Remote Agency Self-Hosted Compared](https://theluckystrike.github.io/remote-work-tools/best-open-source-crm-for-remote-agency-self-hosted-compared-/)
+- [Best AI Tool for Triaging GitHub Issues by Severity and Cate](/best-ai-tool-for-triaging-github-issues-by-severity-and-cate/)
+- [AI Tools for Generating GitHub Actions Workflows (2)](/ai-tools-github-actions-workflows/)
+- [Best AI for Writing Good First Issue Descriptions That](/best-ai-for-writing-good-first-issue-descriptions-that-attract-new-contributors/)
+- [AI Tools for Generating GitHub Actions Workflows](/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
+- [How to Use AI to Optimize GitHub Actions Workflow Run Times](/how-to-use-ai-to-optimize-github-actions-workflow-run-times-/)
+- [Best Open Source CRM for Remote Agency Self-Hosted Compared](https://welikeremotestack.com/best-open-source-crm-for-remote-agency-self-hosted-compared-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

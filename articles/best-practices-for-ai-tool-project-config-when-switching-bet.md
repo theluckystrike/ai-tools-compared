@@ -277,9 +277,9 @@ Yes. Combine your switcher script with direnv and a post-switch hook that opens 
 
 ## Related Articles
 
-- [Best Practices for AI Coding Tool Project Configuration](/ai-tools-compared/best-practices-for-ai-coding-tool-project-configuration-in-l/)
-- [Cheapest AI Tool for Generating Entire Project](/ai-tools-compared/cheapest-ai-tool-for-generating-entire-project-from-description/)
-- [Best Practices for Maintaining AI Tool Configuration Files](/ai-tools-compared/best-practices-for-maintaining-ai-tool-configuration-files-a/)
-- [Best Practices for Sharing AI Tool Configuration Files](/ai-tools-compared/best-practices-for-sharing-ai-tool-configuration-files-acros/)
-- [Best Practices for AI Tool Customization Files When Onboardi](/ai-tools-compared/best-practices-for-ai-tool-customization-files-when-onboardi/)
+- [Best Practices for AI Coding Tool Project Configuration](/best-practices-for-ai-coding-tool-project-configuration-in-l/)
+- [Cheapest AI Tool for Generating Entire Project](/cheapest-ai-tool-for-generating-entire-project-from-description/)
+- [Best Practices for Maintaining AI Tool Configuration Files](/best-practices-for-maintaining-ai-tool-configuration-files-a/)
+- [Best Practices for Sharing AI Tool Configuration Files](/best-practices-for-sharing-ai-tool-configuration-files-acros/)
+- [Best Practices for AI Tool Customization Files When Onboardi](/best-practices-for-ai-tool-customization-files-when-onboardi/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

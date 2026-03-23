@@ -546,10 +546,10 @@ const UpdateUserResponse = z.object({
 
 ## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/)
-- [AI Coding Assistant Comparison for React Component Generation](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
-- [AI Tools for Converting Raw JSON API Responses](/ai-tools-compared/ai-tools-for-converting-raw-json-api-responses-into-clean-pandas-dataframes/)
-- [AI Tools Guides Hub](/ai-tools-compared/)
+- [Best AI Coding Assistants Compared](/)
+- [AI Coding Assistant Comparison for React Component Generation](/ai-coding-assistant-comparison-for-react-component-generatio/)
+- [AI Tools for Converting Raw JSON API Responses](/ai-tools-for-converting-raw-json-api-responses-into-clean-pandas-dataframes/)
+- [AI Tools Guides Hub](/)
 
 ## Frequently Asked Questions
 
@@ -575,10 +575,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How Accurate Are AI Tools at Generating TypeScript Zod](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-typescript-zod-schem/)
-- [Best AI Tools for Writing Prisma Schemas in 2026](/ai-tools-compared/articles/best-ai-tools-for-writing-prisma-schemas-2026/)
-- [Best AI Tools for Writing GraphQL Schemas 2026](/ai-tools-compared/best-ai-tools-for-writing-graphql-schemas-2026/)
-- [Best AI Tools for GraphQL Schema Generation](/ai-tools-compared/ai-tools-for-graphql-schema-generation/)
-- [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-compared/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)
+- [How Accurate Are AI Tools at Generating TypeScript Zod](/how-accurate-are-ai-tools-at-generating-typescript-zod-schem/)
+- [Best AI Tools for Writing Prisma Schemas in 2026](/articles/best-ai-tools-for-writing-prisma-schemas-2026/)
+- [Best AI Tools for Writing GraphQL Schemas 2026](/best-ai-tools-for-writing-graphql-schemas-2026/)
+- [Best AI Tools for GraphQL Schema Generation](/ai-tools-for-graphql-schema-generation/)
+- [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

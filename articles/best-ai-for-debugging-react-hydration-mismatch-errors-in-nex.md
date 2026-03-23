@@ -310,11 +310,11 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Best AI Assistant for Debugging Swift Compiler Errors in Xco](/ai-tools-compared/best-ai-assistant-for-debugging-swift-compiler-errors-in-xco/)
-- [Best AI Assistant for Debugging Swift Compiler Errors](/ai-tools-compared/best-ai-assistant-for-debugging-swift-compiler-errors-in-xcode-build-phases-2026/)
-- [AI Coding Assistant Comparison for React Component](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
-- [AI Tools for Interpreting Python Traceback Errors](/ai-tools-compared/ai-tools-for-interpreting-python-traceback-errors-in-django-middleware-chains/)
-- [AI Tools for Interpreting Terraform Plan Errors with Provide](/ai-tools-compared/ai-tools-for-interpreting-terraform-plan-errors-with-provide/)
+- [Best AI Assistant for Debugging Swift Compiler Errors in Xco](/best-ai-assistant-for-debugging-swift-compiler-errors-in-xco/)
+- [Best AI Assistant for Debugging Swift Compiler Errors](/best-ai-assistant-for-debugging-swift-compiler-errors-in-xcode-build-phases-2026/)
+- [AI Coding Assistant Comparison for React Component](/ai-coding-assistant-comparison-for-react-component-generatio/)
+- [AI Tools for Interpreting Python Traceback Errors](/ai-tools-for-interpreting-python-traceback-errors-in-django-middleware-chains/)
+- [AI Tools for Interpreting Terraform Plan Errors with Provide](/ai-tools-for-interpreting-terraform-plan-errors-with-provide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

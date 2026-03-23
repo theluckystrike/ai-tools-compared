@@ -279,11 +279,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Set Up Model Context Protocol for Feeding Jira Ticket](/ai-tools-compared/how-to-set-up-model-context-protocol-for-feeding-jira-ticket/)
-- [How to Set Up Model Context Protocol Server for Custom Proje](/ai-tools-compared/how-to-set-up-model-context-protocol-server-for-custom-proje/)
-- [How to Set Up Model Context Protocol Server for Internal Pac](/ai-tools-compared/how-to-set-up-model-context-protocol-server-for-internal-pac/)
-- [How to Set Up Model Context Protocol Server Providing Live](/ai-tools-compared/how-to-set-up-model-context-protocol-server-providing-live-d/)
-- [How to Set Up Model Context Protocol with Local Database](/ai-tools-compared/how-to-set-up-model-context-protocol-with-local-database-schema-information-2026/)
+- [How to Set Up Model Context Protocol for Feeding Jira Ticket](/how-to-set-up-model-context-protocol-for-feeding-jira-ticket/)
+- [How to Set Up Model Context Protocol Server for Custom Proje](/how-to-set-up-model-context-protocol-server-for-custom-proje/)
+- [How to Set Up Model Context Protocol Server for Internal Pac](/how-to-set-up-model-context-protocol-server-for-internal-pac/)
+- [How to Set Up Model Context Protocol Server Providing Live](/how-to-set-up-model-context-protocol-server-providing-live-d/)
+- [How to Set Up Model Context Protocol with Local Database](/how-to-set-up-model-context-protocol-with-local-database-schema-information-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

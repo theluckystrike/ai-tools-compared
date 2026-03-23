@@ -440,10 +440,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Configure Claude Code](/ai-tools-compared/how-to-configure-claude-code-to-follow-your-teams-feature-fl/)
-- [Best Way to Configure Claude Code to Understand Your](/ai-tools-compared/best-way-to-configure-claude-code-to-understand-your-interna/)
-- [Claude Code Runbook Documentation Guide](/ai-tools-compared/claude-code-runbook-documentation-guide/)
-- [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
-- [Does Claude Code Send Terminal Output to Anthropic Servers](/ai-tools-compared/does-claude-code-send-terminal-output-to-anthropic-servers-p/)
-- [Best Practices for Async Pull Request Reviews on](https://theluckystrike.github.io/remote-work-tools/best-practices-for-async-pull-request-reviews-on-distributed/)
+- [Configure Claude Code](/how-to-configure-claude-code-to-follow-your-teams-feature-fl/)
+- [Best Way to Configure Claude Code to Understand Your](/best-way-to-configure-claude-code-to-understand-your-interna/)
+- [Claude Code Runbook Documentation Guide](/claude-code-runbook-documentation-guide/)
+- [Claude Code Go Module Development Guide](/claude-code-go-module-development-guide/)
+- [Does Claude Code Send Terminal Output to Anthropic Servers](/does-claude-code-send-terminal-output-to-anthropic-servers-p/)
+- [Best Practices for Async Pull Request Reviews on](https://welikeremotestack.com/best-practices-for-async-pull-request-reviews-on-distributed/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

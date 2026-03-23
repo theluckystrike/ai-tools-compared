@@ -393,11 +393,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Video Accessibility Features](/ai-tools-compared/ai-tools-for-video-accessibility-features/)
-- [AI Tools for Video Compression: A Developer Guide](/ai-tools-compared/ai-tools-for-video-compression/)
-- [AI Tools for Video Frame Interpolation](/ai-tools-compared/ai-tools-for-video-frame-interpolation/)
-- [AI Tools for Video Lip Sync 2026](/ai-tools-compared/ai-tools-for-video-lip-sync-2026/)
-- [AI Tools for Video Object Tracking](/ai-tools-compared/ai-tools-for-video-object-tracking/)
+- [AI Tools for Video Accessibility Features](/ai-tools-for-video-accessibility-features/)
+- [AI Tools for Video Compression: A Developer Guide](/ai-tools-for-video-compression/)
+- [AI Tools for Video Frame Interpolation](/ai-tools-for-video-frame-interpolation/)
+- [AI Tools for Video Lip Sync 2026](/ai-tools-for-video-lip-sync-2026/)
+- [AI Tools for Video Object Tracking](/ai-tools-for-video-object-tracking/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

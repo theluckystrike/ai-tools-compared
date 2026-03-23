@@ -303,11 +303,11 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Best AI Tool for Graphic Designers Brief Creation](/ai-tools-compared/best-ai-tool-for-graphic-designers-brief-creation/)
-- [Notion AI vs ChatGPT for Content Creation Compared](/ai-tools-compared/notion-ai-vs-chatgpt-for-content-creation-compared/)
-- [Steve AI vs Raw Shorts: AI Video Creation Comparison for](/ai-tools-compared/steve-ai-vs-raw-shorts-ai-video/)
-- [AI Tools for Interpreting Terraform Plan Errors with Provide](/ai-tools-compared/ai-tools-for-interpreting-terraform-plan-errors-with-provide/)
-- [AI Tools for Interpreting Terraform Plan Errors](/ai-tools-compared/ai-tools-for-interpreting-terraform-plan-errors-with-provider-version-conflicts/)
+- [Best AI Tool for Graphic Designers Brief Creation](/best-ai-tool-for-graphic-designers-brief-creation/)
+- [Notion AI vs ChatGPT for Content Creation Compared](/notion-ai-vs-chatgpt-for-content-creation-compared/)
+- [Steve AI vs Raw Shorts: AI Video Creation Comparison for](/steve-ai-vs-raw-shorts-ai-video/)
+- [AI Tools for Interpreting Terraform Plan Errors with Provide](/ai-tools-for-interpreting-terraform-plan-errors-with-provide/)
+- [AI Tools for Interpreting Terraform Plan Errors](/ai-tools-for-interpreting-terraform-plan-errors-with-provider-version-conflicts/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

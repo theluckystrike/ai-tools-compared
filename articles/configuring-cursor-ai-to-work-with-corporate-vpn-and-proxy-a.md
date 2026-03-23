@@ -279,10 +279,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Configuring Cursor AI Notepads for Reusable Project Context](/ai-tools-compared/configuring-cursor-ai-notepads-for-reusable-project-context-/)
-- [VPN Tunnel Interface vs Full Tunnel Routing Difference](/ai-tools-compared/vpn-tunnel-interface-vs-full-tunnel-routing-difference-explained/)
-- [AI Tools for Generating Nginx and Caddy Reverse Proxy Config](/ai-tools-compared/ai-tools-for-generating-nginx-and-caddy-reverse-proxy-config/)
-- [ChatGPT vs Claude for Writing Nginx Reverse Proxy Configurat](/ai-tools-compared/chatgpt-vs-claude-for-writing-nginx-reverse-proxy-configurat/)
-- [Best AI Coding Tools for Python Data Science and pandas Work](/ai-tools-compared/best-ai-coding-tools-for-python-data-science-and-pandas-work/)
+- [Configuring Cursor AI Notepads for Reusable Project Context](/configuring-cursor-ai-notepads-for-reusable-project-context-/)
+- [VPN Tunnel Interface vs Full Tunnel Routing Difference](/vpn-tunnel-interface-vs-full-tunnel-routing-difference-explained/)
+- [AI Tools for Generating Nginx and Caddy Reverse Proxy Config](/ai-tools-for-generating-nginx-and-caddy-reverse-proxy-config/)
+- [ChatGPT vs Claude for Writing Nginx Reverse Proxy Configurat](/chatgpt-vs-claude-for-writing-nginx-reverse-proxy-configurat/)
+- [Best AI Coding Tools for Python Data Science and pandas Work](/best-ai-coding-tools-for-python-data-science-and-pandas-work/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

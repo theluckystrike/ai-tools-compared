@@ -384,20 +384,20 @@ When asked to generate inhibition rules for a service dependency graph, Claude p
 
 ## Related Reading
 
-- [AI Tools for Generating Prometheus Alerting Rules](/ai-tools-compared/ai-tools-for-generating-prometheus-alerting-rules-2026/)
-- [How to Use AI for Log Anomaly Detection](/ai-tools-compared/how-to-use-ai-for-log-anomaly-detection/)
-- [How to Use AI for Chaos Engineering](/ai-tools-compared/how-to-use-ai-for-chaos-engineering/)
-- [AI-Powered Database Performance Tuning Tools](/ai-tools-compared/ai-powered-database-performance-tuning)
+- [AI Tools for Generating Prometheus Alerting Rules](/ai-tools-for-generating-prometheus-alerting-rules-2026/)
+- [How to Use AI for Log Anomaly Detection](/how-to-use-ai-for-log-anomaly-detection/)
+- [How to Use AI for Chaos Engineering](/how-to-use-ai-for-chaos-engineering/)
+- [AI-Powered Database Performance Tuning Tools](/ai-powered-database-performance-tuning)
 
 ---
 
 ## Related Articles
 
-- [How to Use AI for Writing Prometheus Alerting Rules](/ai-tools-compared/how-to-use-ai-for-writing-prometheus-alerting-rules-effectively/)
-- [AI Tools for Generating Prometheus Alerting Rules (2026)](/ai-tools-compared/ai-tools-for-generating-prometheus-alerting-rules-2026/---)
-- [AI-Powered Monitoring and Alerting Setup Guide](/ai-tools-compared/ai-powered-monitoring-and-alerting-setup/)
-- [How to Use AI for Writing Effective Prometheus Recording](/ai-tools-compared/how-to-use-ai-for-writing-effective-prometheus-recording-rul/)
-- [AI-Powered Database Performance Tuning Tools](/ai-tools-compared/ai-powered-database-performance-tuning)
+- [How to Use AI for Writing Prometheus Alerting Rules](/how-to-use-ai-for-writing-prometheus-alerting-rules-effectively/)
+- [AI Tools for Generating Prometheus Alerting Rules (2026)](/ai-tools-for-generating-prometheus-alerting-rules-2026/---)
+- [AI-Powered Monitoring and Alerting Setup Guide](/ai-powered-monitoring-and-alerting-setup/)
+- [How to Use AI for Writing Effective Prometheus Recording](/how-to-use-ai-for-writing-effective-prometheus-recording-rul/)
+- [AI-Powered Database Performance Tuning Tools](/ai-powered-database-performance-tuning)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

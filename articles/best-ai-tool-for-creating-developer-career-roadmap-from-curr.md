@@ -390,6 +390,6 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [AI Tools for Creating Automated Release Changelog](/ai-tools-for-creating-automated-release-changelog-from-conve/)
 - [AI Tools for Creating Dbt Documentation Blocks](/ai-tools-for-creating-dbt-documentation-blocks-from-column-level-lineage-analysis/)
 - [AI Tools for Creating dbt Model Definitions from Raw](/ai-tools-for-creating-dbt-model-definitions-from-raw-databas/)
-- [AI Tools for Devrel Teams Creating Developer Onboarding](/ai-tools-compared/ai-tools-for-devrel-teams-creating-developer-onboarding-chec/)
+- [AI Tools for Devrel Teams Creating Developer Onboarding](/ai-tools-for-devrel-teams-creating-developer-onboarding-chec/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

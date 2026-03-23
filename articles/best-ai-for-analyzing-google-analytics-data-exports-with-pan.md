@@ -260,9 +260,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI Assistant for Writing pandas Code](/ai-tools-compared/best-ai-assistant-for-writing-pandas-code-to-process-nested-json-api-pagination/)
-- [Best AI Code Completion for Python Data Science 2026](/ai-tools-compared/ai-code-completion-python-data-science-2026/)
-- [Best AI for Generating pandas Code to Merge Data](/ai-tools-compared/best-ai-for-generating-pandas-code-to-merge-data-from-multip/)
-- [Claude vs GPT-4 for Data Analysis Tasks](/ai-tools-compared/claude-vs-gpt4-for-data-analysis/)
-- [Best AI Coding Tools for Python Data Science and pandas](/ai-tools-compared/best-ai-coding-tools-for-python-data-science-and-pandas-work/)
+- [Best AI Assistant for Writing pandas Code](/best-ai-assistant-for-writing-pandas-code-to-process-nested-json-api-pagination/)
+- [Best AI Code Completion for Python Data Science 2026](/ai-code-completion-python-data-science-2026/)
+- [Best AI for Generating pandas Code to Merge Data](/best-ai-for-generating-pandas-code-to-merge-data-from-multip/)
+- [Claude vs GPT-4 for Data Analysis Tasks](/claude-vs-gpt4-for-data-analysis/)
+- [Best AI Coding Tools for Python Data Science and pandas](/best-ai-coding-tools-for-python-data-science-and-pandas-work/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

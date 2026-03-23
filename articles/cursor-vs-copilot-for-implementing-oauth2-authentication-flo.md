@@ -356,11 +356,11 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Best AI for Learning OAuth2 and OIDC Authentication Flows](/ai-tools-compared/best-ai-for-learning-oauth2-and-oidc-authentication-flows-wi/)
-- [Copilot vs Cursor for Implementing Redis Caching Patterns](/ai-tools-compared/copilot-vs-cursor-for-implementing-redis-caching-patterns-in/)
-- [Copilot vs Cursor for Implementing Server-Sent Events in Spr](/ai-tools-compared/copilot-vs-cursor-for-implementing-server-sent-events-in-spr/)
-- [Cursor vs Copilot for Implementing Stripe Payment](/ai-tools-compared/cursor-vs-copilot-for-implementing-stripe-payment-integratio/)
-- [Cursor vs Windsurf for Implementing Drag and Drop Interfaces](/ai-tools-compared/cursor-vs-windsurf-for-implementing-drag-and-drop-interfaces/)
+- [Best AI for Learning OAuth2 and OIDC Authentication Flows](/best-ai-for-learning-oauth2-and-oidc-authentication-flows-wi/)
+- [Copilot vs Cursor for Implementing Redis Caching Patterns](/copilot-vs-cursor-for-implementing-redis-caching-patterns-in/)
+- [Copilot vs Cursor for Implementing Server-Sent Events in Spr](/copilot-vs-cursor-for-implementing-server-sent-events-in-spr/)
+- [Cursor vs Copilot for Implementing Stripe Payment](/cursor-vs-copilot-for-implementing-stripe-payment-integratio/)
+- [Cursor vs Windsurf for Implementing Drag and Drop Interfaces](/cursor-vs-windsurf-for-implementing-drag-and-drop-interfaces/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

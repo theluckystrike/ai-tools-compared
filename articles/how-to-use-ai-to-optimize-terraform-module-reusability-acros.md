@@ -436,10 +436,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Best Practices for Sharing AI Tool Configuration Files Acros](/ai-tools-compared/best-practices-for-sharing-ai-tool-configuration-files-acros/)
-- [AI Tools for Resolving Yarn Berry PnP Module Resolution Erro](/ai-tools-compared/ai-tools-for-resolving-yarn-berry-pnp-module-resolution-erro/)
-- [Best AI Tools for Go Project Structure and Module](/ai-tools-compared/best-ai-tools-for-go-project-structure-and-module-organization/)
-- [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
-- [How to Optimize AI Coding Prompts for Generating Production](/ai-tools-compared/how-to-optimize-ai-coding-prompts-for-generating-production-ready-error-handling/)
+- [Best Practices for Sharing AI Tool Configuration Files Acros](/best-practices-for-sharing-ai-tool-configuration-files-acros/)
+- [AI Tools for Resolving Yarn Berry PnP Module Resolution Erro](/ai-tools-for-resolving-yarn-berry-pnp-module-resolution-erro/)
+- [Best AI Tools for Go Project Structure and Module](/best-ai-tools-for-go-project-structure-and-module-organization/)
+- [Claude Code Go Module Development Guide](/claude-code-go-module-development-guide/)
+- [How to Optimize AI Coding Prompts for Generating Production](/how-to-optimize-ai-coding-prompts-for-generating-production-ready-error-handling/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

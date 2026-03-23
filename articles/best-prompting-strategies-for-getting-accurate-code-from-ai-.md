@@ -259,11 +259,11 @@ Each refinement produces a more accurate result than starting over.
 
 ## Related Reading
 
-- [Effective Prompting Strategies for AI Generation of Complex](/ai-tools-compared/effective-prompting-strategies-for-ai-generation-of-complex-/)
-- [How Accurate Are AI Tools for Rust Unsafe Code Blocks](/ai-tools-compared/how-accurate-are-ai-tools-for-rust-unsafe-code-blocks-and-ff/)
-- [Effective Strategies for Reviewing AI Generated Code Before](/ai-tools-compared/effective-strategies-for-reviewing-ai-generated-code-before-committing-to-repo/)
-- [Effective Prompting for AI Generation of Accessible Frontend](/ai-tools-compared/effective-prompting-for-ai-generation-of-accessible-frontend/)
-- [How Accurate Are AI Tools at Generating Rust Crossbeam](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
+- [Effective Prompting Strategies for AI Generation of Complex](/effective-prompting-strategies-for-ai-generation-of-complex-/)
+- [How Accurate Are AI Tools for Rust Unsafe Code Blocks](/how-accurate-are-ai-tools-for-rust-unsafe-code-blocks-and-ff/)
+- [Effective Strategies for Reviewing AI Generated Code Before](/effective-strategies-for-reviewing-ai-generated-code-before-committing-to-repo/)
+- [Effective Prompting for AI Generation of Accessible Frontend](/effective-prompting-for-ai-generation-of-accessible-frontend/)
+- [How Accurate Are AI Tools at Generating Rust Crossbeam](/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
 
 ## Frequently Asked Questions
 

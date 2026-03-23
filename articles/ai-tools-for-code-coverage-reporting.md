@@ -437,20 +437,20 @@ This gives engineering managers a concrete number to bring to sprint planning ra
 
 ## Related Reading
 
-- [AI-Powered Code Coverage Improvement Tools](/ai-tools-compared/ai-powered-code-coverage-improvement/)
-- [Claude Code Coverage Reporting Setup Guide](/ai-tools-compared/claude-code-coverage-reporting-setup-guide/)
-- [AI Tools for Automated PR Description Generation](/ai-tools-compared/ai-tools-for-automated-pr-description-generation/)
-- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)
+- [AI-Powered Code Coverage Improvement Tools](/ai-powered-code-coverage-improvement/)
+- [Claude Code Coverage Reporting Setup Guide](/claude-code-coverage-reporting-setup-guide/)
+- [AI Tools for Automated PR Description Generation](/ai-tools-for-automated-pr-description-generation/)
+- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-for-automated-api-documentation-from-code-comments/)
 
 ---
 
 ## Related Articles
 
-- [Claude Code Coverage Reporting Setup Guide](/ai-tools-compared/claude-code-coverage-reporting-setup-guide/)
-- [AI-Powered Code Coverage Improvement Tools](/ai-tools-compared/ai-powered-code-coverage-improvement)
-- [Best AI Assistant for QA Engineers Writing Test Coverage](/ai-tools-compared/best-ai-assistant-for-qa-engineers-writing-test-coverage-gap/)
-- [Best AI Tools for Generating Unit Tests](/ai-tools-compared/best-ai-tools-for-generating-unit-tests-from-legacy-code-comparison/)
-- [Best AI Tools for Automated Code Review 2026](/ai-tools-compared/best-ai-tools-for-automated-code-review-2026/)
+- [Claude Code Coverage Reporting Setup Guide](/claude-code-coverage-reporting-setup-guide/)
+- [AI-Powered Code Coverage Improvement Tools](/ai-powered-code-coverage-improvement)
+- [Best AI Assistant for QA Engineers Writing Test Coverage](/best-ai-assistant-for-qa-engineers-writing-test-coverage-gap/)
+- [Best AI Tools for Generating Unit Tests](/best-ai-tools-for-generating-unit-tests-from-legacy-code-comparison/)
+- [Best AI Tools for Automated Code Review 2026](/best-ai-tools-for-automated-code-review-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

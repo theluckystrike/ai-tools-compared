@@ -406,11 +406,11 @@ No. EMU is an enterprise-level feature. If you need EMU's centralized control bu
 
 ## Related Articles
 
-- [Switching from Copilot Enterprise to Cursor Business Migrati](/ai-tools-compared/switching-from-copilot-enterprise-to-cursor-business-migrati/)
-- [Copilot Chat Not Responding in GitHub Fix](/ai-tools-compared/copilot-chat-not-responding-in-github-fix/)
-- [Copilot Not Suggesting Imports Automatically Fix](/ai-tools-compared/copilot-not-suggesting-imports-automatically-fix/)
-- [Copilot Suggestions Not Showing Up Fix 2026](/ai-tools-compared/copilot-suggestions-not-showing-up-fix-2026/)
-- [Copilot Suggestions Wrong How to Fix](/ai-tools-compared/copilot-suggestions-wrong-how-to-fix/)
+- [Switching from Copilot Enterprise to Cursor Business Migrati](/switching-from-copilot-enterprise-to-cursor-business-migrati/)
+- [Copilot Chat Not Responding in GitHub Fix](/copilot-chat-not-responding-in-github-fix/)
+- [Copilot Not Suggesting Imports Automatically Fix](/copilot-not-suggesting-imports-automatically-fix/)
+- [Copilot Suggestions Not Showing Up Fix 2026](/copilot-suggestions-not-showing-up-fix-2026/)
+- [Copilot Suggestions Wrong How to Fix](/copilot-suggestions-wrong-how-to-fix/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

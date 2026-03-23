@@ -398,11 +398,11 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Which AI Writes Better Ansible Playbooks Copilot or Claude C](/ai-tools-compared/which-ai-writes-better-ansible-playbooks-copilot-or-claude-c/)
-- [How to Use AI for Writing Effective Runbooks and Incident](/ai-tools-compared/how-to-use-ai-for-writing-effective-runbooks-and-incident-playbooks/)
-- [AI Assistants for Writing Correct AWS IAM Policies](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
-- [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
-- [AI Autocomplete for Writing Tests: Comparison of Suggestion](/ai-tools-compared/ai-autocomplete-for-writing-tests-comparison-of-suggestion-q/)
+- [Which AI Writes Better Ansible Playbooks Copilot or Claude C](/which-ai-writes-better-ansible-playbooks-copilot-or-claude-c/)
+- [How to Use AI for Writing Effective Runbooks and Incident](/how-to-use-ai-for-writing-effective-runbooks-and-incident-playbooks/)
+- [AI Assistants for Writing Correct AWS IAM Policies](/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
+- [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
+- [AI Autocomplete for Writing Tests: Comparison of Suggestion](/ai-autocomplete-for-writing-tests-comparison-of-suggestion-q/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

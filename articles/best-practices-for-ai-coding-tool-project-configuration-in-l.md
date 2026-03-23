@@ -404,10 +404,10 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Best Practices for Maintaining AI Tool Configuration Files](/ai-tools-compared/best-practices-for-maintaining-ai-tool-configuration-files-a/)
-- [Best Practices for AI Tool Customization Files When Onboardi](/ai-tools-compared/best-practices-for-ai-tool-customization-files-when-onboardi/)
-- [How to Optimize Your AI Coding Tool Configuration](/ai-tools-compared/how-to-optimize-your-ai-coding-tool-configuration-for-specif/)
-- [Best Practices for Sharing AI Tool Configuration Files](/ai-tools-compared/best-practices-for-sharing-ai-tool-configuration-files-acros/)
-- [Best Practices for Breaking Down Complex Coding Tasks](/ai-tools-compared/best-practices-for-breaking-down-complex-coding-tasks-for-ai/)
+- [Best Practices for Maintaining AI Tool Configuration Files](/best-practices-for-maintaining-ai-tool-configuration-files-a/)
+- [Best Practices for AI Tool Customization Files When Onboardi](/best-practices-for-ai-tool-customization-files-when-onboardi/)
+- [How to Optimize Your AI Coding Tool Configuration](/how-to-optimize-your-ai-coding-tool-configuration-for-specif/)
+- [Best Practices for Sharing AI Tool Configuration Files](/best-practices-for-sharing-ai-tool-configuration-files-acros/)
+- [Best Practices for Breaking Down Complex Coding Tasks](/best-practices-for-breaking-down-complex-coding-tasks-for-ai/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

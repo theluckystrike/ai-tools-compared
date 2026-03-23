@@ -573,11 +573,11 @@ cy.get('[data-testid="submit-btn"]').click({ force: true });
 
 ## Related Articles
 
-- [Best AI Tools for Writing Playwright Tests](/ai-tools-compared/ai-tools-for-writing-playwright-tests-guide)
-- [AI Tools for Writing Selenium to Cypress Test Migration 2026](/ai-tools-compared/ai-tools-for-writing-selenium-cypress-test-migration-2026/)
-- [ChatGPT vs Claude for Generating Cypress Component Test](/ai-tools-compared/chatgpt-vs-claude-for-generating-cypress-component-test-boil/)
-- [AI Tools for Debugging Flaky Cypress Tests Caused by Timing](/ai-tools-compared/ai-tools-for-debugging-flaky-cypress-tests-caused-by-timing-issues/)
-- [Best AI Tools for Writing Unit Tests Comparison 2026](/ai-tools-compared/best-ai-tools-for-writing-unit-tests-comparison-2026/)
+- [Best AI Tools for Writing Playwright Tests](/ai-tools-for-writing-playwright-tests-guide)
+- [AI Tools for Writing Selenium to Cypress Test Migration 2026](/ai-tools-for-writing-selenium-cypress-test-migration-2026/)
+- [ChatGPT vs Claude for Generating Cypress Component Test](/chatgpt-vs-claude-for-generating-cypress-component-test-boil/)
+- [AI Tools for Debugging Flaky Cypress Tests Caused by Timing](/ai-tools-for-debugging-flaky-cypress-tests-caused-by-timing-issues/)
+- [Best AI Tools for Writing Unit Tests Comparison 2026](/best-ai-tools-for-writing-unit-tests-comparison-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

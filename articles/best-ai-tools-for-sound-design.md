@@ -381,10 +381,10 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [AI Tools for Interior Design Visualization Compared](/ai-tools-compared/ai-tools-for-interior-design-visualization-compared/)
-- [Best AI Tool for Game Developers Design Docs Writing](/ai-tools-compared/best-ai-tool-for-game-developers-design-docs-writing/)
-- [Canva AI vs Adobe Firefly: Design Tool Compared](/ai-tools-compared/canva-ai-vs-adobe-firefly-design-tool-compared/)
-- [Cursor vs Windsurf for Building Next Js App from Design Mock](/ai-tools-compared/cursor-vs-windsurf-for-building-next-js-app-from-design-mock/)
-- [How to Use AI to Practice Object-Oriented Design Interview](/ai-tools-compared/how-to-use-ai-to-practice-object-oriented-design-interview-q/)
+- [AI Tools for Interior Design Visualization Compared](/ai-tools-for-interior-design-visualization-compared/)
+- [Best AI Tool for Game Developers Design Docs Writing](/best-ai-tool-for-game-developers-design-docs-writing/)
+- [Canva AI vs Adobe Firefly: Design Tool Compared](/canva-ai-vs-adobe-firefly-design-tool-compared/)
+- [Cursor vs Windsurf for Building Next Js App from Design Mock](/cursor-vs-windsurf-for-building-next-js-app-from-design-mock/)
+- [How to Use AI to Practice Object-Oriented Design Interview](/how-to-use-ai-to-practice-object-oriented-design-interview-q/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

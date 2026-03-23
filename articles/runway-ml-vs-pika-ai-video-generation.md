@@ -267,10 +267,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Runway ML vs Pika Labs: AI Video Generation Comparison 2026](/ai-tools-compared/runway-ml-vs-pika-labs-ai-video-comparison-2026/)
-- [Sora vs Runway AI Video Generation: A Technical](/ai-tools-compared/sora-vs-runway-ai-video-generation/)
-- [AI Tools for Video Thumbnail Generation](/ai-tools-compared/ai-tools-for-video-thumbnail-generation/)
-- [Kling AI vs Gen 3 Video Generation: Developer Comparison](/ai-tools-compared/kling-ai-vs-gen-3-video-generation/)
-- [Runway Inpainting vs Adobe Firefly Generative Fill](/ai-tools-compared/runway-inpainting-vs-adobe-firefly-generative-fill/)
+- [Runway ML vs Pika Labs: AI Video Generation Comparison 2026](/runway-ml-vs-pika-labs-ai-video-comparison-2026/)
+- [Sora vs Runway AI Video Generation: A Technical](/sora-vs-runway-ai-video-generation/)
+- [AI Tools for Video Thumbnail Generation](/ai-tools-for-video-thumbnail-generation/)
+- [Kling AI vs Gen 3 Video Generation: Developer Comparison](/kling-ai-vs-gen-3-video-generation/)
+- [Runway Inpainting vs Adobe Firefly Generative Fill](/runway-inpainting-vs-adobe-firefly-generative-fill/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

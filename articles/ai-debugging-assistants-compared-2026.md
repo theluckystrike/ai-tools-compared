@@ -342,11 +342,11 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [AI Powered Log Analysis Tools for Production Debugging](/ai-tools-compared/ai-powered-log-analysis-tools-for-production-debugging-compa/)
-- [AI Tools for Debugging CSS Media Query Breakpoints Not Match](/ai-tools-compared/ai-tools-for-debugging-css-media-query-breakpoints-not-match/)
-- [AI Tools for Debugging Flaky Cypress Tests Caused by Timing](/ai-tools-compared/ai-tools-for-debugging-flaky-cypress-tests-caused-by-timing-issues/)
-- [AI Tools for Debugging iOS Autolayout Constraint Conflict Wa](/ai-tools-compared/ai-tools-for-debugging-ios-autolayout-constraint-conflict-wa/)
-- [AI Tools for Debugging Postgres Query Planner Choosing Wrong](/ai-tools-compared/ai-tools-for-debugging-postgres-query-planner-choosing-wrong/)
+- [AI Powered Log Analysis Tools for Production Debugging](/ai-powered-log-analysis-tools-for-production-debugging-compa/)
+- [AI Tools for Debugging CSS Media Query Breakpoints Not Match](/ai-tools-for-debugging-css-media-query-breakpoints-not-match/)
+- [AI Tools for Debugging Flaky Cypress Tests Caused by Timing](/ai-tools-for-debugging-flaky-cypress-tests-caused-by-timing-issues/)
+- [AI Tools for Debugging iOS Autolayout Constraint Conflict Wa](/ai-tools-for-debugging-ios-autolayout-constraint-conflict-wa/)
+- [AI Tools for Debugging Postgres Query Planner Choosing Wrong](/ai-tools-for-debugging-postgres-query-planner-choosing-wrong/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

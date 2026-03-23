@@ -409,11 +409,11 @@ Claude reliably catches common mistakes: missing `permissions:` blocks that expo
 
 ## Related Articles
 
-- [AI CI/CD Pipeline Optimization: A Developer Guide](/ai-tools-compared/ai-ci-cd-pipeline-optimization/)
-- [AI Tools for Generating CI/CD Pipeline Configs 2026](/ai-tools-compared/ai-tools-for-generating-ci-cd-pipeline-configs-2026/)
-- [AI Tools for Automated Data Pipeline Testing](/ai-tools-compared/ai-tools-for-automated-data-pipeline-testing)
-- [Best AI Tools for Writing GitHub Actions](/ai-tools-compared/ai-tools-for-writing-github-actions-guide/)
-- [Best AI Tools for Data Pipeline Debugging 2026](/ai-tools-compared/best-ai-tools-for-data-pipeline-debugging-2026/)
+- [AI CI/CD Pipeline Optimization: A Developer Guide](/ai-ci-cd-pipeline-optimization/)
+- [AI Tools for Generating CI/CD Pipeline Configs 2026](/ai-tools-for-generating-ci-cd-pipeline-configs-2026/)
+- [AI Tools for Automated Data Pipeline Testing](/ai-tools-for-automated-data-pipeline-testing)
+- [Best AI Tools for Writing GitHub Actions](/ai-tools-for-writing-github-actions-guide/)
+- [Best AI Tools for Data Pipeline Debugging 2026](/best-ai-tools-for-data-pipeline-debugging-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

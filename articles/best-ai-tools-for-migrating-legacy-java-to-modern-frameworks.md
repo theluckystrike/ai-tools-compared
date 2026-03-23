@@ -429,11 +429,11 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Claude vs ChatGPT for Refactoring Legacy Java Code to Kotlin](/ai-tools-compared/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
-- [Migrating Copilot Custom Instructions to Cursor Rules.](/ai-tools-compared/migrating-copilot-custom-instructions-to-cursor-rules-file-f/)
-- [Migrating from ChatGPT Plugins to Claude MCP Tools for.](/ai-tools-compared/migrating-from-chatgpt-plugins-to-claude-mcp-tools-for-coding-workflows/)
-- [Migrating from JetBrains AI to Copilot in IntelliJ -.](/ai-tools-compared/migrating-jetbrains-ai-to-copilot-intellij-step-by-step-guide/)
-- [Best AI IDE Features for Understanding and Modifying Legacy](/ai-tools-compared/best-ai-ide-features-for-understanding-and-modifying-legacy-/)
+- [Claude vs ChatGPT for Refactoring Legacy Java Code to Kotlin](/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
+- [Migrating Copilot Custom Instructions to Cursor Rules.](/migrating-copilot-custom-instructions-to-cursor-rules-file-f/)
+- [Migrating from ChatGPT Plugins to Claude MCP Tools for.](/migrating-from-chatgpt-plugins-to-claude-mcp-tools-for-coding-workflows/)
+- [Migrating from JetBrains AI to Copilot in IntelliJ -.](/migrating-jetbrains-ai-to-copilot-intellij-step-by-step-guide/)
+- [Best AI IDE Features for Understanding and Modifying Legacy](/best-ai-ide-features-for-understanding-and-modifying-legacy-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

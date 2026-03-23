@@ -318,10 +318,10 @@ Policies vary widely. Some tools let you access your data for a grace period aft
 
 ## Related Articles
 
-- [How to Use Claude API Cheaply for Small Coding Projects](/ai-tools-compared/how-to-use-claude-api-cheaply-for-small-coding-projects/)
-- [Claude Free vs ChatGPT Free Which Gives More Per](/ai-tools-compared/claude-free-vs-chatgpt-free-which-gives-more-per-day/)
-- [Claude Max vs Claude Pro Actual Difference](/ai-tools-compared/claude-max-vs-claude-pro-actual-difference-in-daily-message-limits/)
-- [aider vs Claude Code: Terminal AI Coding Assistants Compared](/ai-tools-compared/aider-vs-claude-code-terminal-ai-comparison/)
-- [Transfer ChatGPT Custom GPTs to Claude Projects](/ai-tools-compared/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
+- [How to Use Claude API Cheaply for Small Coding Projects](/how-to-use-claude-api-cheaply-for-small-coding-projects/)
+- [Claude Free vs ChatGPT Free Which Gives More Per](/claude-free-vs-chatgpt-free-which-gives-more-per-day/)
+- [Claude Max vs Claude Pro Actual Difference](/claude-max-vs-claude-pro-actual-difference-in-daily-message-limits/)
+- [aider vs Claude Code: Terminal AI Coding Assistants Compared](/aider-vs-claude-code-terminal-ai-comparison/)
+- [Transfer ChatGPT Custom GPTs to Claude Projects](/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

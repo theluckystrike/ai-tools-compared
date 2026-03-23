@@ -298,11 +298,11 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 
 ## Related Articles
 
-- [Grammarly AI Not Working in Browser Fix (2026)](/ai-tools-compared/grammarly-ai-not-working-in-browser-fix-2026/)
-- [Notion AI Not Working as Expected Fix (2026)](/ai-tools-compared/notion-ai-not-working-as-expected-fix-2026/)
-- [Perplexity Pro Search Not Working Fix (2026)](/ai-tools-compared/perplexity-pro-search-not-working-fix-2026/)
-- [DALL-E 3 Credit Cost Per Image: ChatGPT Plus vs API](/ai-tools-compared/dall-e-3-credit-cost-per-image-chatgpt-plus-vs-api/)
-- [Perplexity Pro File Upload Limits and Storage Costs Explaine](/ai-tools-compared/perplexity-pro-file-upload-limits-and-storage-costs-explaine/)
+- [Grammarly AI Not Working in Browser Fix (2026)](/grammarly-ai-not-working-in-browser-fix-2026/)
+- [Notion AI Not Working as Expected Fix (2026)](/notion-ai-not-working-as-expected-fix-2026/)
+- [Perplexity Pro Search Not Working Fix (2026)](/perplexity-pro-search-not-working-fix-2026/)
+- [DALL-E 3 Credit Cost Per Image: ChatGPT Plus vs API](/dall-e-3-credit-cost-per-image-chatgpt-plus-vs-api/)
+- [Perplexity Pro File Upload Limits and Storage Costs Explaine](/perplexity-pro-file-upload-limits-and-storage-costs-explaine/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

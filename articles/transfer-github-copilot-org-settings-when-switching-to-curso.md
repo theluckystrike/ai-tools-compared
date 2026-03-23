@@ -428,10 +428,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Transfer Copilot Code Review Settings](/ai-tools-compared/transfer-copilot-code-review-settings-to-cursor-ai-review-co/)
-- [Migrate GitHub Copilot Workspace Setup to Cursor Background](/ai-tools-compared/migrate-github-copilot-workspace-setup-to-cursor-background-/)
-- [Copilot Suggestions Not Showing Up Fix 2026](/ai-tools-compared/copilot-suggestions-not-showing-up-fix-2026/)
-- [How to Transfer Cursor Editor Theme and Layout](/ai-tools-compared/transfer-cursor-editor-theme-and-layout-to-vscode-with-copil/)
-- [GitHub Copilot Billing Error Troubleshoot 2026: Complete](/ai-tools-compared/github-copilot-billing-error-troubleshoot-2026/)
+- [How to Transfer Copilot Code Review Settings](/transfer-copilot-code-review-settings-to-cursor-ai-review-co/)
+- [Migrate GitHub Copilot Workspace Setup to Cursor Background](/migrate-github-copilot-workspace-setup-to-cursor-background-/)
+- [Copilot Suggestions Not Showing Up Fix 2026](/copilot-suggestions-not-showing-up-fix-2026/)
+- [How to Transfer Cursor Editor Theme and Layout](/transfer-cursor-editor-theme-and-layout-to-vscode-with-copil/)
+- [GitHub Copilot Billing Error Troubleshoot 2026: Complete](/github-copilot-billing-error-troubleshoot-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

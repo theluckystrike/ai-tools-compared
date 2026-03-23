@@ -436,9 +436,9 @@ def cached_ai_lint(file_path: str) -> list[dict]:
 
 ## Related Reading
 
-- [How to Build AI-Powered Code Formatters](/ai-tools-compared/build-ai-powered-code-formatters/)
-- [Open Source AI Code Linting Tools with Automatic Fix Suggestions](/ai-tools-compared/open-source-ai-code-linting-tools-with-automatic-fix-suggest/)
-- [Claude vs ChatGPT for Building Custom ESLint Rules for React](/ai-tools-compared/claude-vs-chatgpt-for-building-custom-eslint-rules-for-react/)
+- [How to Build AI-Powered Code Formatters](/build-ai-powered-code-formatters/)
+- [Open Source AI Code Linting Tools with Automatic Fix Suggestions](/open-source-ai-code-linting-tools-with-automatic-fix-suggest/)
+- [Claude vs ChatGPT for Building Custom ESLint Rules for React](/claude-vs-chatgpt-for-building-custom-eslint-rules-for-react/)
 
 ---
 

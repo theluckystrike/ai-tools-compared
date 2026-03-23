@@ -360,9 +360,9 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Copilot vs Claude Code for Writing GitHub Actions Cicd](/ai-tools-compared/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
-- [Copilot vs Claude Code for Writing Complex SQL Stored Proced](/ai-tools-compared/copilot-vs-claude-code-for-writing-complex-sql-stored-proced/)
-- [Effective Tool Chaining Workflow Using Copilot and Claude](/ai-tools-compared/effective-tool-chaining-workflow-using-copilot-and-claude-together-for-coding/)
-- [Copilot vs Claude Code for Writing Jest Test](/ai-tools-compared/copilot-vs-claude-code-for-writing--jest-test-s/)
-- [Copilot vs Codeium for JavaScript Framework-Specific Code](/ai-tools-compared/copilot-vs-codeium-for-javascript-framework-specific-code-ge/)
+- [Copilot vs Claude Code for Writing GitHub Actions Cicd](/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
+- [Copilot vs Claude Code for Writing Complex SQL Stored Proced](/copilot-vs-claude-code-for-writing-complex-sql-stored-proced/)
+- [Effective Tool Chaining Workflow Using Copilot and Claude](/effective-tool-chaining-workflow-using-copilot-and-claude-together-for-coding/)
+- [Copilot vs Claude Code for Writing Jest Test](/copilot-vs-claude-code-for-writing--jest-test-s/)
+- [Copilot vs Codeium for JavaScript Framework-Specific Code](/copilot-vs-codeium-for-javascript-framework-specific-code-ge/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

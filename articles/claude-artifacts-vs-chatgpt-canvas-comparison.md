@@ -341,9 +341,9 @@ Start with Artifacts for visual feedback, export to your editor, then use Canvas
 
 ## Related Reading
 
-- [How to Use Claude Artifacts for Rapid Prototyping React Components](/ai-tools-compared/how-to-use-claude-artifacts-for-rapid-prototyping-react-components/)
-- [Claude Artifacts Not Rendering Fix 2026](/ai-tools-compared/claude-artifacts-not-rendering-fix-2026/)
-- [ChatGPT Canvas Not Saving Changes Fix 2026](/ai-tools-compared/chatgpt-canvas-not-saving-changes-fix-2026/)
+- [How to Use Claude Artifacts for Rapid Prototyping React Components](/how-to-use-claude-artifacts-for-rapid-prototyping-react-components/)
+- [Claude Artifacts Not Rendering Fix 2026](/claude-artifacts-not-rendering-fix-2026/)
+- [ChatGPT Canvas Not Saving Changes Fix 2026](/chatgpt-canvas-not-saving-changes-fix-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

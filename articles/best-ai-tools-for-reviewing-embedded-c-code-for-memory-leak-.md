@@ -447,11 +447,11 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Effective Strategies for Reviewing AI Generated Code Before](/ai-tools-compared/effective-strategies-for-reviewing-ai-generated-code-before-committing-to-repo/)
-- [AI Tools for Writing SPI Flash External Memory Driver.](/ai-tools-compared/ai-tools-for-writing-spi-flash-external-memory-driver-code-f/)
-- [Claude Code for Memory Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-memory-profiling-workflow-tutorial/)
-- [How to Configure Claude Code Project Memory for Persistent](/ai-tools-compared/how-to-configure-claude-code-project-memory-for-persistent-c/)
-- [AI Tools for Reviewing Documentation Pull Requests for Accur](/ai-tools-compared/ai-tools-for-reviewing-documentation-pull-requests-for-accur/)
+- [Effective Strategies for Reviewing AI Generated Code Before](/effective-strategies-for-reviewing-ai-generated-code-before-committing-to-repo/)
+- [AI Tools for Writing SPI Flash External Memory Driver.](/ai-tools-for-writing-spi-flash-external-memory-driver-code-f/)
+- [Claude Code for Memory Profiling Workflow Tutorial](/claude-code-for-memory-profiling-workflow-tutorial/)
+- [How to Configure Claude Code Project Memory for Persistent](/how-to-configure-claude-code-project-memory-for-persistent-c/)
+- [AI Tools for Reviewing Documentation Pull Requests for Accur](/ai-tools-for-reviewing-documentation-pull-requests-for-accur/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

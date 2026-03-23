@@ -356,11 +356,11 @@ Not directly through the GPT Builder interface, which requires publicly accessib
 
 ## Related Articles
 
-- [ChatGPT Plugins Replacement Custom Gpts Pricing](/ai-tools-compared/chatgpt-plugins-replacement-custom-gpts-pricing-for-developers/)
-- [Transfer ChatGPT Custom GPTs to Claude Projects Step by Step](/ai-tools-compared/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
-- [Do ChatGPT Plus Memory and Custom GPTs Count Toward](/ai-tools-compared/chatgpt-plus-memory-and-custom-gpts-count-toward-usage-limit/)
-- [Migrate Jasper AI Brand Voice Settings to ChatGPT Custom Ins](/ai-tools-compared/migrate-jasper-ai-brand-voice-settings-to-chatgpt-custom-ins/)
-- [Migrating from ChatGPT Plugins to Claude MCP Tools for.](/ai-tools-compared/migrating-from-chatgpt-plugins-to-claude-mcp-tools-for-coding-workflows/)
+- [ChatGPT Plugins Replacement Custom Gpts Pricing](/chatgpt-plugins-replacement-custom-gpts-pricing-for-developers/)
+- [Transfer ChatGPT Custom GPTs to Claude Projects Step by Step](/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
+- [Do ChatGPT Plus Memory and Custom GPTs Count Toward](/chatgpt-plus-memory-and-custom-gpts-count-toward-usage-limit/)
+- [Migrate Jasper AI Brand Voice Settings to ChatGPT Custom Ins](/migrate-jasper-ai-brand-voice-settings-to-chatgpt-custom-ins/)
+- [Migrating from ChatGPT Plugins to Claude MCP Tools for.](/migrating-from-chatgpt-plugins-to-claude-mcp-tools-for-coding-workflows/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

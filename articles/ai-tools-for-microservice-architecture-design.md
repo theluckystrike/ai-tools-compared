@@ -281,9 +281,9 @@ Each step takes 15-30 minutes instead of 2-4 hours. The AI won't get the design 
 
 ## Related Reading
 
-- [AI Assistants for Multi-Cloud Infrastructure Management](/ai-tools-compared/ai-assistants-for-multicloud-infrastructure-management-and-d/)
-- [Claude vs GPT-4 for Terraform and Pulumi Infrastructure Code](/ai-tools-compared/claude-vs-gpt4-terraform-pulumi-infrastructure-code-2026/)
-- [AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026](/ai-tools-compared/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
+- [AI Assistants for Multi-Cloud Infrastructure Management](/ai-assistants-for-multicloud-infrastructure-management-and-d/)
+- [Claude vs GPT-4 for Terraform and Pulumi Infrastructure Code](/claude-vs-gpt4-terraform-pulumi-infrastructure-code-2026/)
+- [AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026](/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

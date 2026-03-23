@@ -351,11 +351,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Jasper AI Brand Voice vs Claude Style Matching](/ai-tools-compared/jasper-ai-brand-voice-vs-claude-style-matching/)
-- [Migrate Jasper AI Brand Voice Settings to ChatGPT Custom Ins](/ai-tools-compared/migrate-jasper-ai-brand-voice-settings-to-chatgpt-custom-ins/)
-- [Writesonic vs Jasper AI: Copywriting Tools Compared](/ai-tools-compared/writesonic-vs-jasper-ai-copywriting-tool-comparison/)
-- [Writesonic Chatsonic vs ChatGPT: Conversation Comparison](/ai-tools-compared/writesonic-chatsonic-vs-chatgpt-conversation-comparison/)
-- [AI Writing Tools for Healthcare Content Compared 2026](/ai-tools-compared/ai-writing-tools-for-healthcare-content-compared-2026/)
+- [Jasper AI Brand Voice vs Claude Style Matching](/jasper-ai-brand-voice-vs-claude-style-matching/)
+- [Migrate Jasper AI Brand Voice Settings to ChatGPT Custom Ins](/migrate-jasper-ai-brand-voice-settings-to-chatgpt-custom-ins/)
+- [Writesonic vs Jasper AI: Copywriting Tools Compared](/writesonic-vs-jasper-ai-copywriting-tool-comparison/)
+- [Writesonic Chatsonic vs ChatGPT: Conversation Comparison](/writesonic-chatsonic-vs-chatgpt-conversation-comparison/)
+- [AI Writing Tools for Healthcare Content Compared 2026](/ai-writing-tools-for-healthcare-content-compared-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

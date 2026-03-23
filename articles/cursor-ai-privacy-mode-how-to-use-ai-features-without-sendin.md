@@ -296,11 +296,11 @@ Privacy mode in Cursor AI provides a practical solution for developers who need 
 
 ## Related Articles
 
-- [Cursor Pro Privacy Mode Does It Cost Extra](/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
-- [Does Cursor AI Store Your Code on Their Servers Data](/ai-tools-compared/does-cursor-ai-store-your-code-on-their-servers-data-privacy/)
-- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
-- [How to Use Copilot Agent Mode for Multi-Step Coding Tasks](/ai-tools-compared/how-to-use-copilot-agent-mode-for-multi-step-coding-tasks-20/)
-- [How to Switch from Cursor to Claude Code Without Losing](/ai-tools-compared/how-to-switch-from-cursor-to-claude-code-without-losing-settings/)
+- [Cursor Pro Privacy Mode Does It Cost Extra](/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
+- [Does Cursor AI Store Your Code on Their Servers Data](/does-cursor-ai-store-your-code-on-their-servers-data-privacy/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
+- [How to Use Copilot Agent Mode for Multi-Step Coding Tasks](/how-to-use-copilot-agent-mode-for-multi-step-coding-tasks-20/)
+- [How to Switch from Cursor to Claude Code Without Losing](/how-to-switch-from-cursor-to-claude-code-without-losing-settings/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

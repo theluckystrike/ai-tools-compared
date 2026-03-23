@@ -362,10 +362,10 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Claude Code Screen Reader Testing Workflow](/ai-tools-compared/claude-code-screen-reader-testing-workflow/)
-- [How to Use AI for Writing Effective Prometheus Recording Rul](/ai-tools-compared/how-to-use-ai-for-writing-effective-prometheus-recording-rul/)
-- [Podcastle vs Riverside: AI Podcast Recording Tools Compared](/ai-tools-compared/podcastle-vs-riverside-ai-podcast-recording/)
-- [Screen Sharing Chrome Extension](/ai-tools-compared/screen-sharing-chrome-extension/)
-- [Best AI Tool for Academic Paper Editing 2026](/ai-tools-compared/best-ai-tool-for-academic-paper-editing-2026/)
+- [Claude Code Screen Reader Testing Workflow](/claude-code-screen-reader-testing-workflow/)
+- [How to Use AI for Writing Effective Prometheus Recording Rul](/how-to-use-ai-for-writing-effective-prometheus-recording-rul/)
+- [Podcastle vs Riverside: AI Podcast Recording Tools Compared](/podcastle-vs-riverside-ai-podcast-recording/)
+- [Screen Sharing Chrome Extension](/screen-sharing-chrome-extension/)
+- [Best AI Tool for Academic Paper Editing 2026](/best-ai-tool-for-academic-paper-editing-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

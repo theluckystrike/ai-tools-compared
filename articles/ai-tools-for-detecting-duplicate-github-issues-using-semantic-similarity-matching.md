@@ -360,11 +360,11 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 
 ## Related Articles
 
-- [Best AI Tool for Triaging GitHub Issues by Severity and Cate](/ai-tools-compared/best-ai-tool-for-triaging-github-issues-by-severity-and-cate/)
-- [AI Tools for Detecting Kubernetes Misconfiguration Before](/ai-tools-compared/ai-tools-for-detecting-kubernetes-misconfiguration-before-de/)
-- [AI Code Generation Quality for Java Pattern Matching and Swi](/ai-tools-compared/ai-code-generation-quality-for-java-pattern-matching-and-swi/)
-- [AtScale vs Cube AI Semantic Layer: A Developer Comparison](/ai-tools-compared/atscale-vs-cube-ai-semantic-layer/)
-- [Claude Code Semantic Versioning Automation: A Complete Guide](/ai-tools-compared/claude-code-semantic-versioning-automation/)
+- [Best AI Tool for Triaging GitHub Issues by Severity and Cate](/best-ai-tool-for-triaging-github-issues-by-severity-and-cate/)
+- [AI Tools for Detecting Kubernetes Misconfiguration Before](/ai-tools-for-detecting-kubernetes-misconfiguration-before-de/)
+- [AI Code Generation Quality for Java Pattern Matching and Swi](/ai-code-generation-quality-for-java-pattern-matching-and-swi/)
+- [AtScale vs Cube AI Semantic Layer: A Developer Comparison](/atscale-vs-cube-ai-semantic-layer/)
+- [Claude Code Semantic Versioning Automation: A Complete Guide](/claude-code-semantic-versioning-automation/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

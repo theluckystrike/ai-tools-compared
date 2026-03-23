@@ -303,10 +303,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [AI Tools for Generating dbt Project Structure from Existing](/ai-tools-compared/ai-tools-for-generating-dbt-project-structure-from-existing-/)
-- [Best AI Tools for Go Project Structure and Module](/ai-tools-compared/best-ai-tools-for-go-project-structure-and-module-organization/)
-- [Best Way to Structure CursorRules for Microservices Project](/ai-tools-compared/best-way-to-structure-cursorrules-for-microservices-project-/)
-- [Writing CLAUDE.md Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy/)
-- [Writing CLAUDE MD Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
+- [AI Tools for Generating dbt Project Structure from Existing](/ai-tools-for-generating-dbt-project-structure-from-existing-/)
+- [Best AI Tools for Go Project Structure and Module](/best-ai-tools-for-go-project-structure-and-module-organization/)
+- [Best Way to Structure CursorRules for Microservices Project](/best-way-to-structure-cursorrules-for-microservices-project-/)
+- [Writing CLAUDE.md Files That Define Your Project's API](/writing-claude-md-files-that-define-your-projects-api-versioning-strategy/)
+- [Writing CLAUDE MD Files That Define Your Project's API](/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

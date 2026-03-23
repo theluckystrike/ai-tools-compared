@@ -335,10 +335,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How to Fine-Tune Llama 3 for Code Completion](/ai-tools-compared/how-to-fine-tune-llama-3-for-code-completion/)
-- [Copilot Code Referencing Feature: How It Handles Open Source](/ai-tools-compared/copilot-code-referencing-feature-how-it-handles-open-source-/)
-- [AI Tools for Analyzing Which Open Source Issues Would Benefi](/ai-tools-compared/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
-- [Best AI Assistant for Creating Open Source Project Branding](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)
-- [Best AI Assistant for Drafting Open Source Partnership and](/ai-tools-compared/best-ai-assistant-for-drafting-open-source-partnership-and-integration-proposals-2026/)
+- [How to Fine-Tune Llama 3 for Code Completion](/how-to-fine-tune-llama-3-for-code-completion/)
+- [Copilot Code Referencing Feature: How It Handles Open Source](/copilot-code-referencing-feature-how-it-handles-open-source-/)
+- [AI Tools for Analyzing Which Open Source Issues Would Benefi](/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
+- [Best AI Assistant for Creating Open Source Project Branding](/best-ai-assistant-for-creating-open-source-project-branding-/)
+- [Best AI Assistant for Drafting Open Source Partnership and](/best-ai-assistant-for-drafting-open-source-partnership-and-integration-proposals-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

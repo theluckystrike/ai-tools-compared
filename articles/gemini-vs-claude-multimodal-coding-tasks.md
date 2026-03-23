@@ -268,9 +268,9 @@ def multimodal_coding_task(image_path, prompt, task_type):
 
 ## Related Reading
 
-- [Best AI Tools for Generating CSS from Designs](/ai-tools-compared/best-ai-tools-for-css-from-designs/)
-- [Which AI Generates Better Swift UI Views from Design Specs](/ai-tools-compared/which-ai-generates-better-swift-ui-views-from-design-specs-2/)
-- [AI Coding Assistant Comparison for React Component Generation](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
+- [Best AI Tools for Generating CSS from Designs](/best-ai-tools-for-css-from-designs/)
+- [Which AI Generates Better Swift UI Views from Design Specs](/which-ai-generates-better-swift-ui-views-from-design-specs-2/)
+- [AI Coding Assistant Comparison for React Component Generation](/ai-coding-assistant-comparison-for-react-component-generatio/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

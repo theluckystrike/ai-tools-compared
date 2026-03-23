@@ -336,11 +336,11 @@ Both modes can suggest imports, but inline suggestions are faster for this use c
 
 ## Related Articles
 
-- [Best Free AI Tool for Writing Unit Tests Automatically](/ai-tools-compared/best-free-ai-tool-for-writing-unit-tests-automatically/)
-- [Copilot Chat Not Responding in GitHub Fix](/ai-tools-compared/copilot-chat-not-responding-in-github-fix/)
-- [Copilot Enterprise License Not Assigned Fix](/ai-tools-compared/copilot-enterprise-license-not-assigned-fix/)
-- [Copilot Suggestions Not Showing Up Fix 2026](/ai-tools-compared/copilot-suggestions-not-showing-up-fix-2026/)
-- [Copilot Suggestions Wrong How to Fix](/ai-tools-compared/copilot-suggestions-wrong-how-to-fix/)
+- [Best Free AI Tool for Writing Unit Tests Automatically](/best-free-ai-tool-for-writing-unit-tests-automatically/)
+- [Copilot Chat Not Responding in GitHub Fix](/copilot-chat-not-responding-in-github-fix/)
+- [Copilot Enterprise License Not Assigned Fix](/copilot-enterprise-license-not-assigned-fix/)
+- [Copilot Suggestions Not Showing Up Fix 2026](/copilot-suggestions-not-showing-up-fix-2026/)
+- [Copilot Suggestions Wrong How to Fix](/copilot-suggestions-wrong-how-to-fix/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

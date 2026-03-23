@@ -300,10 +300,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [AI Tools for Generating GitHub Actions Workflows](/ai-tools-compared/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
-- [AI Tools for Generating GitHub Actions Workflows (2)](/ai-tools-compared/ai-tools-github-actions-workflows/)
-- [AI Tools for Writing GitHub Actions Workflows (2026)](/ai-tools-compared/ai-tools/best-ai-tools-for-github-actions-workflows/)
-- [Claude API Batch Processing for Large Document Workflows](/ai-tools-compared/claude-api-batch-processing-for-large-document-workflows/)
-- [How to Build Custom AI Coding Workflows with MCP Server](/ai-tools-compared/how-to-build-custom-ai-coding-workflows-with-mcp-server-inte/)
+- [AI Tools for Generating GitHub Actions Workflows](/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
+- [AI Tools for Generating GitHub Actions Workflows (2)](/ai-tools-github-actions-workflows/)
+- [AI Tools for Writing GitHub Actions Workflows (2026)](/ai-tools/best-ai-tools-for-github-actions-workflows/)
+- [Claude API Batch Processing for Large Document Workflows](/claude-api-batch-processing-for-large-document-workflows/)
+- [How to Build Custom AI Coding Workflows with MCP Server](/how-to-build-custom-ai-coding-workflows-with-mcp-server-inte/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

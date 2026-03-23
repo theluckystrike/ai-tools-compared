@@ -405,10 +405,10 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 
 ## Related Articles
 
-- [AI Tools for Interpreting Terraform Plan Errors](/ai-tools-compared/ai-tools-for-interpreting-terraform-plan-errors-with-provider-version-conflicts/)
-- [AI Tools for Interpreting Python Traceback Errors](/ai-tools-compared/ai-tools-for-interpreting-python-traceback-errors-in-django-middleware-chains/)
-- [AI Tools for Interpreting Rust Compiler Borrow Checker Error](/ai-tools-compared/ai-tools-for-interpreting-rust-compiler-borrow-checker-error/)
-- [Best AI Tool for Dietitians Meal Plan Creation 2026](/ai-tools-compared/best-ai-tool-for-dietitians-meal-plan-creation-2026/)
-- [Claude Projects Feature Which Plan Tier Includes It Explaine](/ai-tools-compared/claude-projects-feature-which-plan-tier-includes-it-explaine/)
+- [AI Tools for Interpreting Terraform Plan Errors](/ai-tools-for-interpreting-terraform-plan-errors-with-provider-version-conflicts/)
+- [AI Tools for Interpreting Python Traceback Errors](/ai-tools-for-interpreting-python-traceback-errors-in-django-middleware-chains/)
+- [AI Tools for Interpreting Rust Compiler Borrow Checker Error](/ai-tools-for-interpreting-rust-compiler-borrow-checker-error/)
+- [Best AI Tool for Dietitians Meal Plan Creation 2026](/best-ai-tool-for-dietitians-meal-plan-creation-2026/)
+- [Claude Projects Feature Which Plan Tier Includes It Explaine](/claude-projects-feature-which-plan-tier-includes-it-explaine/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -208,11 +208,11 @@ This prompt consistently improves GPT-4o's output by about 30% on the failure-mo
 
 ## Related Articles
 
-- [Switching from GPT-4o to Claude Sonnet for Code Review](/ai-tools-compared/switching-from-gpt-4o-to-claude-sonnet-for-code-review-which/)
-- [Claude Code vs ChatGPT Code Interpreter Comparison](/ai-tools-compared/claude-code-vs-chatgpt-code-interpreter-comparison/)
-- [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
-- [Claude Code Developer Portal Setup Guide](/ai-tools-compared/claude-code-developer-portal-setup-guide/)
-- [Claude Code for Node.js Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-nodejs-profiling-workflow-tutorial/)
+- [Switching from GPT-4o to Claude Sonnet for Code Review](/switching-from-gpt-4o-to-claude-sonnet-for-code-review-which/)
+- [Claude Code vs ChatGPT Code Interpreter Comparison](/claude-code-vs-chatgpt-code-interpreter-comparison/)
+- [Claude Code Go Module Development Guide](/claude-code-go-module-development-guide/)
+- [Claude Code Developer Portal Setup Guide](/claude-code-developer-portal-setup-guide/)
+- [Claude Code for Node.js Profiling Workflow Tutorial](/claude-code-for-nodejs-profiling-workflow-tutorial/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## When to Choose Each Model

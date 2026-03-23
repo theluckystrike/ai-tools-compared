@@ -326,11 +326,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI Assistants for Pulumi Infrastructure Code](/ai-tools-compared/best-ai-assistants-for-pulumi-infrastructure-code-in-typescript-2026/)
-- [AI Tools for Automated Infrastructure Drift Detection: Co](/ai-tools-compared/ai-tools-for-automated-infrastructure-drift-detection-and-co/)
-- [AI Tools for Automated SSL Certificate Management](/ai-tools-compared/ai-tools-for-automated-ssl-certificate-management-and-monito/)
-- [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-compared/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)
-- [Best AI Tools for Infrastructure as Code 2026](/ai-tools-compared/ai-tools-for-infrastructure-as-code-2026/)
+- [Best AI Assistants for Pulumi Infrastructure Code](/best-ai-assistants-for-pulumi-infrastructure-code-in-typescript-2026/)
+- [AI Tools for Automated Infrastructure Drift Detection: Co](/ai-tools-for-automated-infrastructure-drift-detection-and-co/)
+- [AI Tools for Automated SSL Certificate Management](/ai-tools-for-automated-ssl-certificate-management-and-monito/)
+- [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)
+- [Best AI Tools for Infrastructure as Code 2026](/ai-tools-for-infrastructure-as-code-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ## Related Reading
 

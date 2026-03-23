@@ -467,11 +467,11 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [ChatGPT vs Claude for Generating Pydantic Models from JSON](/ai-tools-compared/chatgpt-vs-claude-for-generating-pydantic-models-from-json-s/)
-- [Cursor AI Switching Between Claude and GPT Models Extra Cost](/ai-tools-compared/cursor-ai-switching-between-claude-and-gpt-models-extra-cost/)
-- [Cursor AI with Claude vs GPT Models: Which Gives Better Code](/ai-tools-compared/cursor-ai-with-claude-vs-gpt-models-which-gives-better-code-/)
-- [Fine Tune Open Source Code Models for Your Codebase](/ai-tools-compared/fine-tune-open-source-code-models-for-your-codebase-2026/)
-- [How to Move Tabnine AI Models When Switching to Supermaven](/ai-tools-compared/how-to-move-tabnine-ai-models-when-switching-to-supermaven/)
+- [ChatGPT vs Claude for Generating Pydantic Models from JSON](/chatgpt-vs-claude-for-generating-pydantic-models-from-json-s/)
+- [Cursor AI Switching Between Claude and GPT Models Extra Cost](/cursor-ai-switching-between-claude-and-gpt-models-extra-cost/)
+- [Cursor AI with Claude vs GPT Models: Which Gives Better Code](/cursor-ai-with-claude-vs-gpt-models-which-gives-better-code-/)
+- [Fine Tune Open Source Code Models for Your Codebase](/fine-tune-open-source-code-models-for-your-codebase-2026/)
+- [How to Move Tabnine AI Models When Switching to Supermaven](/how-to-move-tabnine-ai-models-when-switching-to-supermaven/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

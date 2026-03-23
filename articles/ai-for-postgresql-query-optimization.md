@@ -487,11 +487,11 @@ Claude recognizes these patterns:
 
 ## Related Articles
 
-- [Best AI Tools for SQL Query Optimization and Database](/ai-tools-compared/best-ai-tools-for-sql-query-optimization-and-database-performance/)
-- [AI Tools for Database Performance Optimization Query](/ai-tools-compared/ai-tools-for-database-performance-optimization-query-analysis/)
-- [AI-Powered Database Query Optimization Tools 2026](/ai-tools-compared/ai-powered-database-query-optimization-tools/)
-- [Best AI Assistant for SQL Query Optimization](/ai-tools-compared/best-ai-assistant-for-sql-query-optimization/)
-- [AI Tools for Debugging Postgres Query Planner Choosing](/ai-tools-compared/ai-tools-for-debugging-postgres-query-planner-choosing-wrong/)
+- [Best AI Tools for SQL Query Optimization and Database](/best-ai-tools-for-sql-query-optimization-and-database-performance/)
+- [AI Tools for Database Performance Optimization Query](/ai-tools-for-database-performance-optimization-query-analysis/)
+- [AI-Powered Database Query Optimization Tools 2026](/ai-powered-database-query-optimization-tools/)
+- [Best AI Assistant for SQL Query Optimization](/best-ai-assistant-for-sql-query-optimization/)
+- [AI Tools for Debugging Postgres Query Planner Choosing](/ai-tools-for-debugging-postgres-query-planner-choosing-wrong/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

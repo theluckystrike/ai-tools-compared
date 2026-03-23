@@ -377,11 +377,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Container Security Scanning](/ai-tools-compared/ai-container-security-scanning/)
-- [AI Tools for Automated Security Scanning Compared](/ai-tools-compared/ai-tools-for-automated-security-scanning-compared/)
-- [Best AI Tools for Container Security Scanning in Deployment](/ai-tools-compared/best-ai-tools-for-container-security-scanning-in-deployment-/)
-- [Best AI Tools for Automated Compliance Reporting for Cloud](/ai-tools-compared/best-ai-tools-for-automated-compliance-reporting-for-cloud-i/)
-- [Best AI Tools for Cloud Resource Tagging Compliance](/ai-tools-compared/best-ai-tools-for-cloud-resource-tagging-compliance-automati/)
+- [AI Container Security Scanning](/ai-container-security-scanning/)
+- [AI Tools for Automated Security Scanning Compared](/ai-tools-for-automated-security-scanning-compared/)
+- [Best AI Tools for Container Security Scanning in Deployment](/best-ai-tools-for-container-security-scanning-in-deployment-/)
+- [Best AI Tools for Automated Compliance Reporting for Cloud](/best-ai-tools-for-automated-compliance-reporting-for-cloud-i/)
+- [Best AI Tools for Cloud Resource Tagging Compliance](/best-ai-tools-for-cloud-resource-tagging-compliance-automati/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -474,10 +474,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Copilot Suggestions Wrong How to Fix](/ai-tools-compared/copilot-suggestions-wrong-how-to-fix/)
-- [Cursor Tab vs Copilot Ghost Text Comparison](/ai-tools-compared/cursor-tab-vs-copilot-ghost-text-comparison/)
-- [Switching from Copilot Ghost Text to Cursor Tab Autocomplete](/ai-tools-compared/switching-from-copilot-ghost-text-to-cursor-tab-autocomplete/)
-- [Cursor AI Making Too Many API Calls Fix: Troubleshooting](/ai-tools-compared/cursor-ai-making-too-many-api-calls-fix/)
-- [Cursor AI Not Autocompleting TypeScript Fix](/ai-tools-compared/cursor-ai-not-autocompleting-typescript-fix/)
+- [Copilot Suggestions Wrong How to Fix](/copilot-suggestions-wrong-how-to-fix/)
+- [Cursor Tab vs Copilot Ghost Text Comparison](/cursor-tab-vs-copilot-ghost-text-comparison/)
+- [Switching from Copilot Ghost Text to Cursor Tab Autocomplete](/switching-from-copilot-ghost-text-to-cursor-tab-autocomplete/)
+- [Cursor AI Making Too Many API Calls Fix: Troubleshooting](/cursor-ai-making-too-many-api-calls-fix/)
+- [Cursor AI Not Autocompleting TypeScript Fix](/cursor-ai-not-autocompleting-typescript-fix/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

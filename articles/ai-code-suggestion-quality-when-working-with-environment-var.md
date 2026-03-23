@@ -337,11 +337,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Code Generation Quality for Java JUnit 5 Parameterized](/ai-tools-compared/ai-code-generation-quality-for-java-junit-5-parameterized-te/)
-- [AI Code Generation Quality for Java Pattern Matching and Swi](/ai-tools-compared/ai-code-generation-quality-for-java-pattern-matching-and-swi/)
-- [AI Code Generation Quality for Java Spring Security](/ai-tools-compared/ai-code-generation-quality-for-java-spring-security-configur/)
-- [AI Code Generation Quality for JavaScript Async Await Patter](/ai-tools-compared/ai-code-generation-quality-for-javascript-async-await-patter/)
-- [How to Build a Model Context Protocol Server That](/ai-tools-compared/how-to-build-model-context-protocol-server-that-provides-deployment-environment-context/)
+- [AI Code Generation Quality for Java JUnit 5 Parameterized](/ai-code-generation-quality-for-java-junit-5-parameterized-te/)
+- [AI Code Generation Quality for Java Pattern Matching and Swi](/ai-code-generation-quality-for-java-pattern-matching-and-swi/)
+- [AI Code Generation Quality for Java Spring Security](/ai-code-generation-quality-for-java-spring-security-configur/)
+- [AI Code Generation Quality for JavaScript Async Await Patter](/ai-code-generation-quality-for-javascript-async-await-patter/)
+- [How to Build a Model Context Protocol Server That](/how-to-build-model-context-protocol-server-that-provides-deployment-environment-context/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

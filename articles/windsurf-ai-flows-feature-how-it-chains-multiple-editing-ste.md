@@ -421,10 +421,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Cursor AI Multi File Editing Feature How It Actually Works](/ai-tools-compared/cursor-ai-multi-file-editing-feature-how-it-actually-works-explained/)
-- [Does WindSurf AI Send Entire Project Context or Just Open](/ai-tools-compared/does-windsurf-ai-send-entire-project-context-or-just-open-fi/)
-- [Windsurf AI Not Picking Up ESLint Config](/ai-tools-compared/windsurf-ai-not-picking-up-eslint-config-troubleshooting-gui/)
-- [Windsurf Cascade vs Cursor Composer: Multi-File AI Editing](/ai-tools-compared/windsurf-cascade-vs-cursor-composer-multi-file-ai-editing-co/)
-- [Configure Claude Code](/ai-tools-compared/how-to-configure-claude-code-to-follow-your-teams-feature-fl/)
+- [Cursor AI Multi File Editing Feature How It Actually Works](/cursor-ai-multi-file-editing-feature-how-it-actually-works-explained/)
+- [Does WindSurf AI Send Entire Project Context or Just Open](/does-windsurf-ai-send-entire-project-context-or-just-open-fi/)
+- [Windsurf AI Not Picking Up ESLint Config](/windsurf-ai-not-picking-up-eslint-config-troubleshooting-gui/)
+- [Windsurf Cascade vs Cursor Composer: Multi-File AI Editing](/windsurf-cascade-vs-cursor-composer-multi-file-ai-editing-co/)
+- [Configure Claude Code](/how-to-configure-claude-code-to-follow-your-teams-feature-fl/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

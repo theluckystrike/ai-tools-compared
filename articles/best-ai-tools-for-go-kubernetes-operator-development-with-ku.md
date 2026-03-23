@@ -373,11 +373,11 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Best AI Tools for Writing Kubernetes Operator Code](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-operator-code-from-scratch/)
-- [AI Tools for Writing Kubernetes Operators 2026](/ai-tools-compared/ai-tools-for-writing-kubernetes-operators-2026/)
-- [Best AI Tools for Writing Kubernetes Custom Resource](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-custom-resource-definitions-2026/)
-- [AI Tools for Kubernetes Troubleshooting 2026](/ai-tools-compared/ai-tools-for-kubernetes-troubleshooting-2026/)
-- [Best AI Tools for Kubernetes Manifest Generation](/ai-tools-compared/best-ai-tools-for-kubernetes-manifest-generation/)
+- [Best AI Tools for Writing Kubernetes Operator Code](/best-ai-tools-for-writing-kubernetes-operator-code-from-scratch/)
+- [AI Tools for Writing Kubernetes Operators 2026](/ai-tools-for-writing-kubernetes-operators-2026/)
+- [Best AI Tools for Writing Kubernetes Custom Resource](/best-ai-tools-for-writing-kubernetes-custom-resource-definitions-2026/)
+- [AI Tools for Kubernetes Troubleshooting 2026](/ai-tools-for-kubernetes-troubleshooting-2026/)
+- [Best AI Tools for Kubernetes Manifest Generation](/best-ai-tools-for-kubernetes-manifest-generation/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 ```

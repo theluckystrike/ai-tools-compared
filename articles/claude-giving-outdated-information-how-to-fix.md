@@ -360,11 +360,11 @@ Bookmark these pages and check them when Claude provides version-specific recomm
 
 ## Related Articles
 
-- [Gemini AI Giving Wrong Answers: Debugging Tips and Fixes](/ai-tools-compared/gemini-ai-giving-wrong-answers-debugging-tips/)
-- [How to Set Up Model Context Protocol with Local Database](/ai-tools-compared/how-to-set-up-model-context-protocol-with-local-database-schema-information-2026/)
-- [Claude Artifacts Not Rendering Fix 2026](/ai-tools-compared/claude-artifacts-not-rendering-fix-2026/)
-- [Claude Code Losing Context Across Sessions Fix](/ai-tools-compared/claude-code-losing-context-across-sessions-fix/)
-- [Claude Code Not Pushing to GitHub Fix: Troubleshooting Guide](/ai-tools-compared/claude-code-not-pushing-to-github-fix/)
+- [Gemini AI Giving Wrong Answers: Debugging Tips and Fixes](/gemini-ai-giving-wrong-answers-debugging-tips/)
+- [How to Set Up Model Context Protocol with Local Database](/how-to-set-up-model-context-protocol-with-local-database-schema-information-2026/)
+- [Claude Artifacts Not Rendering Fix 2026](/claude-artifacts-not-rendering-fix-2026/)
+- [Claude Code Losing Context Across Sessions Fix](/claude-code-losing-context-across-sessions-fix/)
+- [Claude Code Not Pushing to GitHub Fix: Troubleshooting Guide](/claude-code-not-pushing-to-github-fix/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

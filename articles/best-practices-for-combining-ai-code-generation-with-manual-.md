@@ -251,9 +251,9 @@ Some teams annotate AI-generated functions with a comment like `# generated: cla
 
 ## Related Articles
 
-- [AI Code Generation for Java Reactive Programming](/ai-tools-compared/ai-code-generation-for-java-reactive-programming-with-projec/)
-- [Claude Sonnet vs GPT-4o for Code Generation: Practical](/ai-tools-compared/claude-sonnet-vs-gpt-4o-for-code-generation/)
-- [Best Local LLM Options for Code Generation 2026](/ai-tools-compared/best-local-llm-options-for-code-generation-2026/)
-- [Prompt Engineering Patterns for Code Generation](/ai-tools-compared/prompt-engineering-patterns-for-code-generation/)
-- [Cheapest AI Tool With GPT-4 Level Code Generation 2026](/ai-tools-compared/cheapest-ai-tool-with-gpt-4-level-code-generation-2026/)
+- [AI Code Generation for Java Reactive Programming](/ai-code-generation-for-java-reactive-programming-with-projec/)
+- [Claude Sonnet vs GPT-4o for Code Generation: Practical](/claude-sonnet-vs-gpt-4o-for-code-generation/)
+- [Best Local LLM Options for Code Generation 2026](/best-local-llm-options-for-code-generation-2026/)
+- [Prompt Engineering Patterns for Code Generation](/prompt-engineering-patterns-for-code-generation/)
+- [Cheapest AI Tool With GPT-4 Level Code Generation 2026](/cheapest-ai-tool-with-gpt-4-level-code-generation-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

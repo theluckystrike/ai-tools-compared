@@ -343,11 +343,11 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [AI Code Generation Quality for JavaScript Async Await Patter](/ai-tools-compared/ai-code-generation-quality-for-javascript-async-await-patter/)
-- [Best AI Tools for Writing Idiomatic Rust Error Handling](/ai-tools-compared/best-ai-tools-for-writing-idiomatic-rust-error-handling-with/)
-- [Copilot vs Cursor for Writing Rust Error Handling with](/ai-tools-compared/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
-- [How Accurate Are AI Tools for Rust Unsafe Code Blocks](/ai-tools-compared/how-accurate-are-ai-tools-for-rust-unsafe-code-blocks-and-ff/)
-- [AI Coding Assistant for Rust Developers Compared](/ai-tools-compared/ai-coding-assistant-for-rust-developers-compared/)
+- [AI Code Generation Quality for JavaScript Async Await Patter](/ai-code-generation-quality-for-javascript-async-await-patter/)
+- [Best AI Tools for Writing Idiomatic Rust Error Handling](/best-ai-tools-for-writing-idiomatic-rust-error-handling-with/)
+- [Copilot vs Cursor for Writing Rust Error Handling with](/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
+- [How Accurate Are AI Tools for Rust Unsafe Code Blocks](/how-accurate-are-ai-tools-for-rust-unsafe-code-blocks-and-ff/)
+- [AI Coding Assistant for Rust Developers Compared](/ai-coding-assistant-for-rust-developers-compared/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

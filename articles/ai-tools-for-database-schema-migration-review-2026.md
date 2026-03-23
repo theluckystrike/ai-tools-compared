@@ -438,10 +438,10 @@ Check the export options before committing. Most tools let you export your data,
 
 ## Related Articles
 
-- [AI Powered Database Migration Tools Comparison](/ai-tools-compared/ai-powered-database-migration-tools-comparison/)
-- [AI Tools for Database Performance Optimization Query Analysis](/ai-tools-compared/ai-tools-for-database-performance-optimization-query-analysis/)
-- [AI Tools for Reviewing Terraform Plans Before Applying to Production](/ai-tools-compared/ai-tools-for-reviewing-terraform-plans-before-applying-to-pr/)
-- [Best AI Tools for Data Pipeline Debugging 2026](/ai-tools-compared/best-ai-tools-for-data-pipeline-debugging-2026/)
-- [AI Tools for Automated Rollback Decision Making in Deployments](/ai-tools-compared/ai-tools-for-automated-rollback-decision-making-in-deploymen/)
+- [AI Powered Database Migration Tools Comparison](/ai-powered-database-migration-tools-comparison/)
+- [AI Tools for Database Performance Optimization Query Analysis](/ai-tools-for-database-performance-optimization-query-analysis/)
+- [AI Tools for Reviewing Terraform Plans Before Applying to Production](/ai-tools-for-reviewing-terraform-plans-before-applying-to-pr/)
+- [Best AI Tools for Data Pipeline Debugging 2026](/best-ai-tools-for-data-pipeline-debugging-2026/)
+- [AI Tools for Automated Rollback Decision Making in Deployments](/ai-tools-for-automated-rollback-decision-making-in-deploymen/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

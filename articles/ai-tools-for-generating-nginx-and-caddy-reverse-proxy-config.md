@@ -482,10 +482,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [ChatGPT vs Claude for Writing Nginx Reverse Proxy Configurat](/ai-tools-compared/chatgpt-vs-claude-for-writing-nginx-reverse-proxy-configurat/)
-- [Census vs HighTouch Reverse ETL AI: A Practical](/ai-tools-compared/census-vs-hightouch-reverse-etl-ai/)
-- [Configuring Cursor AI to Work with Corporate VPN and Proxy](/ai-tools-compared/configuring-cursor-ai-to-work-with-corporate-vpn-and-proxy-a/)
-- [AI Tools for Writing Nginx Configurations 2026](/ai-tools-compared/ai-tools-for-writing-nginx-configurations-2026/)
-- [Best Practices for AI Tool Project Config When Switching](/ai-tools-compared/best-practices-for-ai-tool-project-config-when-switching-between-multiple-client-projects/)
+- [ChatGPT vs Claude for Writing Nginx Reverse Proxy Configurat](/chatgpt-vs-claude-for-writing-nginx-reverse-proxy-configurat/)
+- [Census vs HighTouch Reverse ETL AI: A Practical](/census-vs-hightouch-reverse-etl-ai/)
+- [Configuring Cursor AI to Work with Corporate VPN and Proxy](/configuring-cursor-ai-to-work-with-corporate-vpn-and-proxy-a/)
+- [AI Tools for Writing Nginx Configurations 2026](/ai-tools-for-writing-nginx-configurations-2026/)
+- [Best Practices for AI Tool Project Config When Switching](/best-practices-for-ai-tool-project-config-when-switching-between-multiple-client-projects/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

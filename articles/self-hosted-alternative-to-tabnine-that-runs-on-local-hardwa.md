@@ -249,7 +249,7 @@ Once you have a working setup, benchmark it against your actual workflow before 
 - [Best Self-Hosted AI Model for JavaScript TypeScript Code](/best-self-hosted-ai-model-for-javascript-typescript-code-gen/)
 - [Self-Hosted AI Assistant for Writing Docker Files Without](/self-hosted-ai-assistant-for-writing-docker-files-without-cl/)
 - [Self Hosted AI Coding Tools That Support Air Gapped](/self-hosted-ai-coding-tools-that-support-air-gapped-environm/)
-- [Best Self Hosted AI Model for Writing SQL Queries from](/ai-tools-compared/best-self-hosted-ai-model-for-writing-sql-queries-from-natural-language/)
+- [Best Self Hosted AI Model for Writing SQL Queries from](/best-self-hosted-ai-model-for-writing-sql-queries-from-natural-language/)
 
 ## Performance Optimization and Tuning
 

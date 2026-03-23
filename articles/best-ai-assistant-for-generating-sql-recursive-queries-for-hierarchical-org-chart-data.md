@@ -348,12 +348,12 @@ WHERE manager_id = id;  -- Circular reference found
 
 These diagnostic queries help data quality teams fix issues before they break recursive queries.
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/)
-- [AI Tools Guides Hub](/ai-tools-compared/)
-- [AI Autocomplete Comparison for Writing SQL Queries.](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
-- [Best AI Assistant for Designers Generating Accessibility.](/ai-tools-compared/best-ai-assistant-for-designers-generating-accessibility-aud/)
-- [Effective Prompting Strategies for AI Generation of Complex SQL Queries 2026](/ai-tools-compared/effective-prompting-strategies-for-ai-generation-of-complex-/)
+- [Best AI Coding Assistants Compared](/)
+- [Best AI Coding Assistant Tools Compared 2026](/)
+- [AI Tools Guides Hub](/)
+- [AI Autocomplete Comparison for Writing SQL Queries.](/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
+- [Best AI Assistant for Designers Generating Accessibility.](/best-ai-assistant-for-designers-generating-accessibility-aud/)
+- [Effective Prompting Strategies for AI Generation of Complex SQL Queries 2026](/effective-prompting-strategies-for-ai-generation-of-complex-/)
 
 ## Frequently Asked Questions
 
@@ -379,10 +379,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI for Writing SQL Performance Tuning Recommendations](/ai-tools-compared/best-ai-for-writing-sql-performance-tuning-recommendations-f/)
-- [Best AI for Writing dbt Macros That Generate Dynamic SQL](/ai-tools-compared/best-ai-for-writing-dbt-macros-that-generate-dynamic-sql-bas/)
-- [Best AI Assistant for SQL Query Optimization](/ai-tools-compared/best-ai-assistant-for-sql-query-optimization/)
-- [Best AI IDE Features for Database Query Writing and](/ai-tools-compared/best-ai-ide-features-for-database-query-writing-and-optimization/)
-- [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
+- [Best AI for Writing SQL Performance Tuning Recommendations](/best-ai-for-writing-sql-performance-tuning-recommendations-f/)
+- [Best AI for Writing dbt Macros That Generate Dynamic SQL](/best-ai-for-writing-dbt-macros-that-generate-dynamic-sql-bas/)
+- [Best AI Assistant for SQL Query Optimization](/best-ai-assistant-for-sql-query-optimization/)
+- [Best AI IDE Features for Database Query Writing and](/best-ai-ide-features-for-database-query-writing-and-optimization/)
+- [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -269,11 +269,11 @@ Yes, for obscure APIs. Common packages (servlet, persistence, validation, ws.rs)
 
 ## Related Articles
 
-- [Best AI Tools for Code Migration Python 2](/ai-tools-compared/best-ai-tools-for-code-migration-python-2-to-3-java-8-to-21-guide/)
-- [AI Code Completion for Java Record Classes and Sealed Interf](/ai-tools-compared/ai-code-completion-for-java-record-classes-and-sealed-interf/)
-- [Best AI Tools for Code Migration Between Languages 2026](/ai-tools-compared/best-ai-tools-for-code-migration-between-languages-2026/)
-- [How to Use AI for Automated Code Migration](/ai-tools-compared/how-to-use-ai-for-automated-code-migration/)
-- [AI Code Completion for Writing Shell Commands Inside Scripts](/ai-tools-compared/ai-code-completion-for-writing-shell-commands-inside-scripts/)
+- [Best AI Tools for Code Migration Python 2](/best-ai-tools-for-code-migration-python-2-to-3-java-8-to-21-guide/)
+- [AI Code Completion for Java Record Classes and Sealed Interf](/ai-code-completion-for-java-record-classes-and-sealed-interf/)
+- [Best AI Tools for Code Migration Between Languages 2026](/best-ai-tools-for-code-migration-between-languages-2026/)
+- [How to Use AI for Automated Code Migration](/how-to-use-ai-for-automated-code-migration/)
+- [AI Code Completion for Writing Shell Commands Inside Scripts](/ai-code-completion-for-writing-shell-commands-inside-scripts/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ## Related Reading

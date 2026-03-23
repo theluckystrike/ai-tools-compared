@@ -332,10 +332,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI Tools for Automated Code Review 2026](/ai-tools-compared/best-ai-tools-for-automated-code-review-2026/)
-- [AI Tools for Automated SSL Certificate Management](/ai-tools-compared/ai-tools-for-automated-ssl-certificate-management-and-monito/)
-- [How to Configure AI Coding Tools to Exclude Secrets and Env](/ai-tools-compared/how-to-configure-ai-coding-tools-to-exclude-secrets-and-env-/)
-- [How Accurate Are AI Tools](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-serde-serialization-code/)
-- [AI Tools for Automated Security Scanning Compared](/ai-tools-compared/ai-tools-for-automated-security-scanning-compared/)
+- [Best AI Tools for Automated Code Review 2026](/best-ai-tools-for-automated-code-review-2026/)
+- [AI Tools for Automated SSL Certificate Management](/ai-tools-for-automated-ssl-certificate-management-and-monito/)
+- [How to Configure AI Coding Tools to Exclude Secrets and Env](/how-to-configure-ai-coding-tools-to-exclude-secrets-and-env-/)
+- [How Accurate Are AI Tools](/how-accurate-are-ai-tools-at-generating-rust-serde-serialization-code/)
+- [AI Tools for Automated Security Scanning Compared](/ai-tools-for-automated-security-scanning-compared/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

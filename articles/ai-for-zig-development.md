@@ -435,9 +435,9 @@ No. Zig is strict about memory ownership and the AI can miss subtle issues — a
 
 ## Related Reading
 
-- [How to Use AI for WebAssembly Development](/ai-tools-compared/ai-for-webassembly-development/)
-- [AI Code Generation Producing Syntax Errors in Rust: Fix Guide](/ai-tools-compared/ai-code-generation-producing-syntax-errors-in-rust-fix-guide/)
-- [Best AI Tools for C++ Modern Refactoring](/ai-tools-compared/ai-tools-cpp-modern-refactoring/)
+- [How to Use AI for WebAssembly Development](/ai-for-webassembly-development/)
+- [AI Code Generation Producing Syntax Errors in Rust: Fix Guide](/ai-code-generation-producing-syntax-errors-in-rust-fix-guide/)
+- [Best AI Tools for C++ Modern Refactoring](/ai-tools-cpp-modern-refactoring/)
 
 ---
 

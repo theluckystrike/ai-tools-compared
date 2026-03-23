@@ -349,10 +349,10 @@ A minimum of 1,000-2,000 labeled return events with known fraud/legitimate outco
 
 ## Related Articles
 
-- [Cursor Pro Refund Policy Can You Get Money Back After Subscr](/ai-tools-compared/cursor-pro-refund-policy-can-you-get-money-back-after-subscr/)
-- [AI Code Review Automation Tools Comparison 2026](/ai-tools-compared/ai-code-review-automation-tools-comparison/)
-- [Best AI Tool for DevOps Engineers Runbook Automation](/ai-tools-compared/best-ai-tool-for-devops-engineers-runbook-automation/)
-- [Best AI Tools for Code Review Automation 2026](/ai-tools-compared/best-ai-tools-for-code-review-automation-2026/)
-- [Claude Code Semantic Versioning Automation: A Complete Guide](/ai-tools-compared/claude-code-semantic-versioning-automation/)
+- [Cursor Pro Refund Policy Can You Get Money Back After Subscr](/cursor-pro-refund-policy-can-you-get-money-back-after-subscr/)
+- [AI Code Review Automation Tools Comparison 2026](/ai-code-review-automation-tools-comparison/)
+- [Best AI Tool for DevOps Engineers Runbook Automation](/best-ai-tool-for-devops-engineers-runbook-automation/)
+- [Best AI Tools for Code Review Automation 2026](/best-ai-tools-for-code-review-automation-2026/)
+- [Claude Code Semantic Versioning Automation: A Complete Guide](/claude-code-semantic-versioning-automation/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

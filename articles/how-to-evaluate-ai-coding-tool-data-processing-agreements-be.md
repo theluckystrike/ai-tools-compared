@@ -362,9 +362,9 @@ Audit rights (if negotiated) help, but aren't foolproof. Look for SOC 2 Type II 
 
 ## Related Articles
 
-- [How to Evaluate AI Coding Tool Model Training Data Provenanc](/ai-tools-compared/how-to-evaluate-ai-coding-tool-model-training-data-provenanc/)
-- [How to Evaluate AI Coding Tool Encryption Standards](/ai-tools-compared/how-to-evaluate-ai-coding-tool-encryption-standards-for-data/)
-- [AI Coding Assistant Session Data Lifecycle](/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-- [AI Coding Tool GDPR Compliance Checklist for European](/ai-tools-compared/ai-coding-tool-gdpr-compliance-checklist-for-european-engine/)
-- [Enterprise Data Loss Prevention Rules for AI Coding Assistan](/ai-tools-compared/enterprise-data-loss-prevention-rules-for-ai-coding-assistan/)
+- [How to Evaluate AI Coding Tool Model Training Data Provenanc](/how-to-evaluate-ai-coding-tool-model-training-data-provenanc/)
+- [How to Evaluate AI Coding Tool Encryption Standards](/how-to-evaluate-ai-coding-tool-encryption-standards-for-data/)
+- [AI Coding Assistant Session Data Lifecycle](/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [AI Coding Tool GDPR Compliance Checklist for European](/ai-coding-tool-gdpr-compliance-checklist-for-european-engine/)
+- [Enterprise Data Loss Prevention Rules for AI Coding Assistan](/enterprise-data-loss-prevention-rules-for-ai-coding-assistan/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

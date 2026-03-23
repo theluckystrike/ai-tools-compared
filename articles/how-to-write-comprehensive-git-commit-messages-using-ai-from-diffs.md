@@ -323,10 +323,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [AI Git Commit Message Generators Compared 2026](/ai-tools-compared/ai-git-commit-message-generators-compared/)
-- [Create CursorRules That Enforce Your Team's Git Commit](/ai-tools-compared/how-to-create-cursorrules-that-enforce-your-teams-git-commit/)
-- [How to Use AI to Write Commit Message Guidelines](/ai-tools-compared/how-to-use-ai-to-write-commit-message-guidelines-for-open-source-projects/)
-- [Effective Strategies for Using AI to Write API](/ai-tools-compared/effective-strategies-for-using-ai-to-write--api/)
-- [Best AI for Resolving Git Merge Conflict Markers in Complex](/ai-tools-compared/best-ai-for-resolving-git-merge-conflict-markers-in-complex-/)
+- [AI Git Commit Message Generators Compared 2026](/ai-git-commit-message-generators-compared/)
+- [Create CursorRules That Enforce Your Team's Git Commit](/how-to-create-cursorrules-that-enforce-your-teams-git-commit/)
+- [How to Use AI to Write Commit Message Guidelines](/how-to-use-ai-to-write-commit-message-guidelines-for-open-source-projects/)
+- [Effective Strategies for Using AI to Write API](/effective-strategies-for-using-ai-to-write--api/)
+- [Best AI for Resolving Git Merge Conflict Markers in Complex](/best-ai-for-resolving-git-merge-conflict-markers-in-complex-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

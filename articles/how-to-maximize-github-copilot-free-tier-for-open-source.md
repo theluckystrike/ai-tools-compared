@@ -302,10 +302,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [GitHub Copilot Free Tier Hidden Limits You Should Know 2026](/ai-tools-compared/github-copilot-free-tier-hidden-limits-you-should-know-2026/)
-- [Continue Dev vs GitHub Copilot: Open Source Comparison](/ai-tools-compared/continue-dev-vs-github-copilot-open-source-comparison/)
-- [Continue Dev Free vs Cody Free: Open Source AI Comparison](/ai-tools-compared/continue-dev-free-vs-cody-free-open-source-ai-comparison/)
-- [Copilot Code Referencing Feature: How It Handles Open Source](/ai-tools-compared/copilot-code-referencing-feature-how-it-handles-open-source-/)
-- [Completely Free Alternatives to GitHub Copilot That Actually](/ai-tools-compared/completely-free-alternatives-to-github-copilot-that-actually/)
+- [GitHub Copilot Free Tier Hidden Limits You Should Know 2026](/github-copilot-free-tier-hidden-limits-you-should-know-2026/)
+- [Continue Dev vs GitHub Copilot: Open Source Comparison](/continue-dev-vs-github-copilot-open-source-comparison/)
+- [Continue Dev Free vs Cody Free: Open Source AI Comparison](/continue-dev-free-vs-cody-free-open-source-ai-comparison/)
+- [Copilot Code Referencing Feature: How It Handles Open Source](/copilot-code-referencing-feature-how-it-handles-open-source-/)
+- [Completely Free Alternatives to GitHub Copilot That Actually](/completely-free-alternatives-to-github-copilot-that-actually/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

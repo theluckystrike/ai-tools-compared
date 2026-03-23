@@ -287,11 +287,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Generating pandas GroupBy Aggregation Code](/ai-tools-compared/ai-tools-for-generating-pandas-groupby-aggregation-code-from/)
-- [Best AI for Generating pandas Code to Merge Data from Multip](/ai-tools-compared/best-ai-for-generating-pandas-code-to-merge-data-from-multip/)
-- [Best AI Tool for Explaining Java Stack Traces with Nested](/ai-tools-compared/best-ai-tool-for-explaining-java-stack-traces-with-nested-ex/)
-- [Best AI Assistant for Designers Writing User Journey Maps](/ai-tools-compared/best-ai-assistant-for-designers-writing-user-journey-maps-fr/)
-- [Best AI Assistant for Product Managers Writing Sprint](/ai-tools-compared/best-ai-assistant-for-product-managers-writing-sprint-retrospective-summaries-from-notes-2026/)
+- [AI Tools for Generating pandas GroupBy Aggregation Code](/ai-tools-for-generating-pandas-groupby-aggregation-code-from/)
+- [Best AI for Generating pandas Code to Merge Data from Multip](/best-ai-for-generating-pandas-code-to-merge-data-from-multip/)
+- [Best AI Tool for Explaining Java Stack Traces with Nested](/best-ai-tool-for-explaining-java-stack-traces-with-nested-ex/)
+- [Best AI Assistant for Designers Writing User Journey Maps](/best-ai-assistant-for-designers-writing-user-journey-maps-fr/)
+- [Best AI Assistant for Product Managers Writing Sprint](/best-ai-assistant-for-product-managers-writing-sprint-retrospective-summaries-from-notes-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```

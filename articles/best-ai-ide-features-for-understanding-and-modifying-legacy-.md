@@ -391,9 +391,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI IDE Features for Pair Programming](/ai-tools-compared/best-ai-ide-features-for-pair-programming-with-remote-team-members/)
-- [Best AI IDE Features for Refactoring Class Hierarchies](/ai-tools-compared/best-ai-ide-features-for-refactoring-class-hierarchies-and-i/)
-- [Best AI Features for Generating API Client Code](/ai-tools-compared/best-ai-features-for-generating-api-client-code-from-openapi/)
-- [Best AI IDE Features for Writing Configuration Files YAML](/ai-tools-compared/best-ai-ide-features-for-writing-configuration-files-yaml-json-toml/)
-- [Best AI IDE Features for Database Query Writing and](/ai-tools-compared/best-ai-ide-features-for-database-query-writing-and-optimization/)
+- [Best AI IDE Features for Pair Programming](/best-ai-ide-features-for-pair-programming-with-remote-team-members/)
+- [Best AI IDE Features for Refactoring Class Hierarchies](/best-ai-ide-features-for-refactoring-class-hierarchies-and-i/)
+- [Best AI Features for Generating API Client Code](/best-ai-features-for-generating-api-client-code-from-openapi/)
+- [Best AI IDE Features for Writing Configuration Files YAML](/best-ai-ide-features-for-writing-configuration-files-yaml-json-toml/)
+- [Best AI IDE Features for Database Query Writing and](/best-ai-ide-features-for-database-query-writing-and-optimization/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

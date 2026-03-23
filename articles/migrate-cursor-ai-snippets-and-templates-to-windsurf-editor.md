@@ -323,11 +323,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Migrate VSCode Copilot Keybindings](/ai-tools-compared/migrate-vscode-copilot-keybindings-to-cursor-ai-editor-2026/)
-- [How to Migrate Cursor Rules File](/ai-tools-compared/migrate-cursor-rules-file-to-windsurf-rules-format-guide/)
-- [Migrate Windsurf AI Rules to Cursor Dot Cursor Rules Format](/ai-tools-compared/migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/)
-- [How to Move Copilot Suggested Code Patterns to Cursor](/ai-tools-compared/how-to-move-copilot-suggested-code-patterns-to-cursor-snippets/)
-- [How to Transfer Cursor Editor Theme and Layout](/ai-tools-compared/transfer-cursor-editor-theme-and-layout-to-vscode-with-copil/)
+- [How to Migrate VSCode Copilot Keybindings](/migrate-vscode-copilot-keybindings-to-cursor-ai-editor-2026/)
+- [How to Migrate Cursor Rules File](/migrate-cursor-rules-file-to-windsurf-rules-format-guide/)
+- [Migrate Windsurf AI Rules to Cursor Dot Cursor Rules Format](/migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/)
+- [How to Move Copilot Suggested Code Patterns to Cursor](/how-to-move-copilot-suggested-code-patterns-to-cursor-snippets/)
+- [How to Transfer Cursor Editor Theme and Layout](/transfer-cursor-editor-theme-and-layout-to-vscode-with-copil/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

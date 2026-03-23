@@ -294,12 +294,12 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Claude Code vs Cursor Composer](/ai-tools-compared/claude-code-vs-cursor-composer-for-full-stack-development-comparison/)
-- [Best AI Tool for Explaining Java Stack Traces with Nested](/ai-tools-compared/best-ai-tool-for-explaining-java-stack-traces-with-nested-ex/)
-- [How to Manage AI Coding Context Across Multiple Related Repo](/ai-tools-compared/how-to-manage-ai-coding-context-across-multiple-related-repo/)
-- [Windsurf AI Flows Feature How It Chains Multiple Editing Ste](/ai-tools-compared/windsurf-ai-flows-feature-how-it-chains-multiple-editing-ste/)
-- [AI Coding Assistants for TypeScript Express Middleware Chain](/ai-tools-compared/ai-coding-assistants-for-typescript-express-middleware-chain/)
-- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
+- [Claude Code vs Cursor Composer](/claude-code-vs-cursor-composer-for-full-stack-development-comparison/)
+- [Best AI Tool for Explaining Java Stack Traces with Nested](/best-ai-tool-for-explaining-java-stack-traces-with-nested-ex/)
+- [How to Manage AI Coding Context Across Multiple Related Repo](/how-to-manage-ai-coding-context-across-multiple-related-repo/)
+- [Windsurf AI Flows Feature How It Chains Multiple Editing Ste](/windsurf-ai-flows-feature-how-it-chains-multiple-editing-ste/)
+- [AI Coding Assistants for TypeScript Express Middleware Chain](/ai-coding-assistants-for-typescript-express-middleware-chain/)
+- [AI Project Status Generator for Remote Teams Pulling](https://welikeremotestack.com/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

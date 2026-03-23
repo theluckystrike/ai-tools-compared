@@ -316,9 +316,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for API Documentation from Code 2026](/ai-tools-compared/ai-tools-for-api-documentation-from-code-2026/)
-- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)
-- [AI Tools for Automated API Documentation Generation in 2026](/ai-tools-compared/ai-tools-for-automated-api-documentation-generation-2026/)
-- [Best AI Tools for Generating API Documentation From Code](/ai-tools-compared/best-ai-tools-for-generating-api-documentation-from-code-2026/)
-- [Effective Strategies for Using AI](/ai-tools-compared/effective-strategies-for-using-ai-to-learn-new-programming-languages-faster/)
+- [AI Tools for API Documentation from Code 2026](/ai-tools-for-api-documentation-from-code-2026/)
+- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-for-automated-api-documentation-from-code-comments/)
+- [AI Tools for Automated API Documentation Generation in 2026](/ai-tools-for-automated-api-documentation-generation-2026/)
+- [Best AI Tools for Generating API Documentation From Code](/best-ai-tools-for-generating-api-documentation-from-code-2026/)
+- [Effective Strategies for Using AI](/effective-strategies-for-using-ai-to-learn-new-programming-languages-faster/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

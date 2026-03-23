@@ -437,9 +437,9 @@ For dashboards and presentations, Claude's visualization code requires less twea
 
 ## Related Reading
 
-- [AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026](/ai-tools-compared/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
-- [AI Tools for API Load Testing Comparison](/ai-tools-compared/ai-assisted-api-load-testing-tools-comparison/)
-- [Prompt Engineering Patterns for Code Generation](/ai-tools-compared/prompt-engineering-patterns-for-code-generation/)
+- [AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026](/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
+- [AI Tools for API Load Testing Comparison](/ai-assisted-api-load-testing-tools-comparison/)
+- [Prompt Engineering Patterns for Code Generation](/prompt-engineering-patterns-for-code-generation/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

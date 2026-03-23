@@ -401,20 +401,20 @@ Point your GitHub or GitLab webhook at `/webhooks/docs-updated` with a shared se
 
 ## Related Reading
 
-- [How to Build Semantic Search with Embeddings](/ai-tools-compared/how-to-build-semantic-search-with-embeddings/)
-- [How to Build AI-Powered Code Search](/ai-tools-compared/how-to-build-ai-powered-code-search-2026/)
-- [How to Build a RAG Chatbot with Pinecone](/ai-tools-compared/how-to-build-rag-chatbot-with-pinecone/)
+- [How to Build Semantic Search with Embeddings](/how-to-build-semantic-search-with-embeddings/)
+- [How to Build AI-Powered Code Search](/how-to-build-ai-powered-code-search-2026/)
+- [How to Build a RAG Chatbot with Pinecone](/how-to-build-rag-chatbot-with-pinecone/)
 
-- [AI Tools for API Documentation from Code 2026](/ai-tools-compared/ai-tools-for-api-documentation-from-code-2026/)
+- [AI Tools for API Documentation from Code 2026](/ai-tools-for-api-documentation-from-code-2026/)
 ---
 
 ## Related Articles
 
-- [AI Tools for Automated Code Documentation](/ai-tools-compared/ai-tools-for-automated-code-documentation)
-- [How to Use AI to Create Onboarding Documentation for New](/ai-tools-compared/how-to-use-ai-to-create-onboarding-documentation-for-new-tea/)
-- [Gemini vs Claude for Generating Markdown Documentation](/ai-tools-compared/gemini-vs-claude-for-generating-markdown-documentation-from-/)
-- [How to Build AI Pipelines with Prefect](/ai-tools-compared/how-to-build-ai-pipelines-with-prefect)
-- [How to Build Voice AI Apps with Claude](/ai-tools-compared/how-to-build-voice-ai-apps-with-claude)
+- [AI Tools for Automated Code Documentation](/ai-tools-for-automated-code-documentation)
+- [How to Use AI to Create Onboarding Documentation for New](/how-to-use-ai-to-create-onboarding-documentation-for-new-tea/)
+- [Gemini vs Claude for Generating Markdown Documentation](/gemini-vs-claude-for-generating-markdown-documentation-from-/)
+- [How to Build AI Pipelines with Prefect](/how-to-build-ai-pipelines-with-prefect)
+- [How to Build Voice AI Apps with Claude](/how-to-build-voice-ai-apps-with-claude)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -418,11 +418,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Claude API Batch Processing: How Much Cheaper Than Discount](/ai-tools-compared/claude-api-batch-processing-discount-how-much-cheaper-than-r/)
-- [Claude API vs OpenAI API Pricing Breakdown 2026](/ai-tools-compared/claude-api-vs-openai-api-pricing-breakdown-2026/)
-- [How to Use Claude API Cheaply for Small Coding Projects](/ai-tools-compared/how-to-use-claude-api-cheaply-for-small-coding-projects/)
-- [Writing CLAUDE MD Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
-- [AI Tools for API Documentation from Code 2026](/ai-tools-compared/ai-tools-for-api-documentation-from-code-2026/)
-- [Example: Trigger BambooHR onboarding workflow via API](https://theluckystrike.github.io/remote-work-tools/best-onboarding-platform-for-remote-companies-processing-mor/)
+- [Claude API Batch Processing: How Much Cheaper Than Discount](/claude-api-batch-processing-discount-how-much-cheaper-than-r/)
+- [Claude API vs OpenAI API Pricing Breakdown 2026](/claude-api-vs-openai-api-pricing-breakdown-2026/)
+- [How to Use Claude API Cheaply for Small Coding Projects](/how-to-use-claude-api-cheaply-for-small-coding-projects/)
+- [Writing CLAUDE MD Files That Define Your Project's API](/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
+- [AI Tools for API Documentation from Code 2026](/ai-tools-for-api-documentation-from-code-2026/)
+- [Example: Trigger BambooHR onboarding workflow via API](https://welikeremotestack.com/best-onboarding-platform-for-remote-companies-processing-mor/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -406,11 +406,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI IDE Features for Database Query Writing and](/ai-tools-compared/best-ai-ide-features-for-database-query-writing-and-optimization/)
-- [Best AI IDE Features for Pair Programming](/ai-tools-compared/best-ai-ide-features-for-pair-programming-with-remote-team-members/)
-- [Best AI IDE Features for Understanding and Modifying Legacy](/ai-tools-compared/best-ai-ide-features-for-understanding-and-modifying-legacy-/)
-- [Best AI IDE Features for Writing Configuration Files YAML](/ai-tools-compared/best-ai-ide-features-for-writing-configuration-files-yaml-json-toml/)
-- [Claude Code vs Cursor for Large Codebase Refactoring](/ai-tools-compared/claude-code-vs-cursor-for-large-codebase-refactoring/)
+- [Best AI IDE Features for Database Query Writing and](/best-ai-ide-features-for-database-query-writing-and-optimization/)
+- [Best AI IDE Features for Pair Programming](/best-ai-ide-features-for-pair-programming-with-remote-team-members/)
+- [Best AI IDE Features for Understanding and Modifying Legacy](/best-ai-ide-features-for-understanding-and-modifying-legacy-/)
+- [Best AI IDE Features for Writing Configuration Files YAML](/best-ai-ide-features-for-writing-configuration-files-yaml-json-toml/)
+- [Claude Code vs Cursor for Large Codebase Refactoring](/claude-code-vs-cursor-for-large-codebase-refactoring/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

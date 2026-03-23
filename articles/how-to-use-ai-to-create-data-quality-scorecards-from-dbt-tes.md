@@ -329,10 +329,10 @@ Aggregate failure data before sending it to the AI. Instead of passing all 2,000
 
 ## Related Articles
 
-- [How to Use AI to Create Data Pipeline Orchestration Configs](/ai-tools-compared/how-to-use-ai-to-create-data-pipeline-orchestration-configs-/)
-- [AI Tools for Creating Dbt Documentation Blocks](/ai-tools-compared/ai-tools-for-creating-dbt-documentation-blocks-from-column-level-lineage-analysis/)
-- [AI Tools for Creating dbt Model Definitions from Raw Databas](/ai-tools-compared/ai-tools-for-creating-dbt-model-definitions-from-raw-databas/)
-- [AI Code Generation Quality for Java JUnit 5 Parameterized](/ai-tools-compared/ai-code-generation-quality-for-java-junit-5-parameterized-te/)
+- [How to Use AI to Create Data Pipeline Orchestration Configs](/how-to-use-ai-to-create-data-pipeline-orchestration-configs-/)
+- [AI Tools for Creating Dbt Documentation Blocks](/ai-tools-for-creating-dbt-documentation-blocks-from-column-level-lineage-analysis/)
+- [AI Tools for Creating dbt Model Definitions from Raw Databas](/ai-tools-for-creating-dbt-model-definitions-from-raw-databas/)
+- [AI Code Generation Quality for Java JUnit 5 Parameterized](/ai-code-generation-quality-for-java-junit-5-parameterized-te/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

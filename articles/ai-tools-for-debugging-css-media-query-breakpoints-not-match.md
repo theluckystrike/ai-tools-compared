@@ -395,10 +395,10 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 
 ## Related Articles
 
-- [AI Tools for Debugging Postgres Query Planner Choosing Wrong](/ai-tools-compared/ai-tools-for-debugging-postgres-query-planner-choosing-wrong/)
-- [Best AI Assistant for Debugging CSS Custom Property](/ai-tools-compared/best-ai-assistant-for-debugging-css-custom-property-inheritance-failures-in-shadow-dom/)
-- [Best AI Assistant for Debugging CSS Grid Layout Overflow Iss](/ai-tools-compared/best-ai-assistant-for-debugging-css-grid-layout-overflow-iss/)
-- [Best AI Assistant for Debugging CSS Z Index Stacking Context](/ai-tools-compared/best-ai-assistant-for-debugging-css-z-index-stacking-context/)
-- [Best AI for Debugging CSS Flexbox Alignment Issues Across](/ai-tools-compared/best-ai-for-debugging-css-flexbox-alignment-issues-across-di/)
+- [AI Tools for Debugging Postgres Query Planner Choosing Wrong](/ai-tools-for-debugging-postgres-query-planner-choosing-wrong/)
+- [Best AI Assistant for Debugging CSS Custom Property](/best-ai-assistant-for-debugging-css-custom-property-inheritance-failures-in-shadow-dom/)
+- [Best AI Assistant for Debugging CSS Grid Layout Overflow Iss](/best-ai-assistant-for-debugging-css-grid-layout-overflow-iss/)
+- [Best AI Assistant for Debugging CSS Z Index Stacking Context](/best-ai-assistant-for-debugging-css-z-index-stacking-context/)
+- [Best AI for Debugging CSS Flexbox Alignment Issues Across](/best-ai-for-debugging-css-flexbox-alignment-issues-across-di/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

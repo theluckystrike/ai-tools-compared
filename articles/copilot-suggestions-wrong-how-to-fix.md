@@ -458,11 +458,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Copilot Suggestions Not Showing Up Fix 2026](/ai-tools-compared/copilot-suggestions-not-showing-up-fix-2026/)
-- [Cursor Tab Accepting Wrong Suggestion Fix](/ai-tools-compared/cursor-tab-accepting-wrong-suggestion-fix/)
-- [Copilot Suggestions in Private Repos Do They Cost More Than](/ai-tools-compared/copilot-suggestions-in-private-repos-do-they-cost-more-than-public/)
-- [Copilot Chat Not Responding in GitHub Fix](/ai-tools-compared/copilot-chat-not-responding-in-github-fix/)
-- [Copilot Enterprise License Not Assigned Fix](/ai-tools-compared/copilot-enterprise-license-not-assigned-fix/)
+- [Copilot Suggestions Not Showing Up Fix 2026](/copilot-suggestions-not-showing-up-fix-2026/)
+- [Cursor Tab Accepting Wrong Suggestion Fix](/cursor-tab-accepting-wrong-suggestion-fix/)
+- [Copilot Suggestions in Private Repos Do They Cost More Than](/copilot-suggestions-in-private-repos-do-they-cost-more-than-public/)
+- [Copilot Chat Not Responding in GitHub Fix](/copilot-chat-not-responding-in-github-fix/)
+- [Copilot Enterprise License Not Assigned Fix](/copilot-enterprise-license-not-assigned-fix/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

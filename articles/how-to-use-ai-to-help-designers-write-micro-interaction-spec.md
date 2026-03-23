@@ -320,10 +320,10 @@ Start with example specifications from your design system documentation. Post sp
 
 ## Related Articles
 
-- [How to Use AI to Help Product Managers Write Data-Driven Fea](/ai-tools-compared/how-to-use-ai-to-help-product-managers-write-data-driven-fea/)
-- [ChatGPT vs Claude for Creating OpenAPI Spec from Existing](/ai-tools-compared/chatgpt-vs-claude-for-creating-openapi-spec-from-existing-co/)
-- [AI Tools for Designers Creating Component Naming Conventions](/ai-tools-compared/ai-tools-for-designers-creating-component-naming-conventions/)
-- [AI Tools for Designers Writing Handoff Notes That Include](/ai-tools-compared/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
-- [Best AI Assistant for Designers Generating Accessibility Aud](/ai-tools-compared/best-ai-assistant-for-designers-generating-accessibility-aud/)
+- [How to Use AI to Help Product Managers Write Data-Driven Fea](/how-to-use-ai-to-help-product-managers-write-data-driven-fea/)
+- [ChatGPT vs Claude for Creating OpenAPI Spec from Existing](/chatgpt-vs-claude-for-creating-openapi-spec-from-existing-co/)
+- [AI Tools for Designers Creating Component Naming Conventions](/ai-tools-for-designers-creating-component-naming-conventions/)
+- [AI Tools for Designers Writing Handoff Notes That Include](/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
+- [Best AI Assistant for Designers Generating Accessibility Aud](/best-ai-assistant-for-designers-generating-accessibility-aud/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

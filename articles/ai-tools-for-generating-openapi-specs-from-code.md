@@ -469,10 +469,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Generate Openapi Specs from Existing Codebase AI Tools](/ai-tools-compared/generate-openapi-specs-from-existing-codebase-ai-tools/)
-- [Best AI Features for Generating API Client Code from](/ai-tools-compared/best-ai-features-for-generating-api-client-code-from-openapi/)
-- [Which AI Generates Better SwiftUI Views From Design Swift UI](/ai-tools-compared/which-ai-generates-better-swift-ui-views-from-design-specs-2/)
-- [AI Tools for Writing OpenAPI Specifications in 2026](/ai-tools-compared/articles/ai-tools-for-writing-openapi-specifications-2026/)
-- [ChatGPT vs Claude for Creating OpenAPI Spec from Existing](/ai-tools-compared/chatgpt-vs-claude-for-creating-openapi-spec-from-existing-co/)
+- [Generate Openapi Specs from Existing Codebase AI Tools](/generate-openapi-specs-from-existing-codebase-ai-tools/)
+- [Best AI Features for Generating API Client Code from](/best-ai-features-for-generating-api-client-code-from-openapi/)
+- [Which AI Generates Better SwiftUI Views From Design Swift UI](/which-ai-generates-better-swift-ui-views-from-design-specs-2/)
+- [AI Tools for Writing OpenAPI Specifications in 2026](/articles/ai-tools-for-writing-openapi-specifications-2026/)
+- [ChatGPT vs Claude for Creating OpenAPI Spec from Existing](/chatgpt-vs-claude-for-creating-openapi-spec-from-existing-co/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

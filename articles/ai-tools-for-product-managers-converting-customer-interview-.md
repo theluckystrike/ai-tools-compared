@@ -353,10 +353,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Product Managers Drafting Release](/ai-tools-compared/ai-tools-for-product-managers-drafting-release-communication-emails-from-feature-lists/)
-- [Best AI for Product Managers Creating Stakeholder Update](/ai-tools-compared/best-ai-for-product-managers-creating-stakeholder-update-dec/)
-- [Best AI for Product Managers Creating User Persona Documents](/ai-tools-compared/best-ai-for-product-managers-creating-user-persona-documents/)
-- [AI Tools for Customer Health Scoring](/ai-tools-compared/ai-tools-for-customer-health-scoring/)
-- [Best AI Tools for Customer Onboarding: A Developer Guide](/ai-tools-compared/best-ai-tools-for-customer-onboarding/)
+- [AI Tools for Product Managers Drafting Release](/ai-tools-for-product-managers-drafting-release-communication-emails-from-feature-lists/)
+- [Best AI for Product Managers Creating Stakeholder Update](/best-ai-for-product-managers-creating-stakeholder-update-dec/)
+- [Best AI for Product Managers Creating User Persona Documents](/best-ai-for-product-managers-creating-user-persona-documents/)
+- [AI Tools for Customer Health Scoring](/ai-tools-for-customer-health-scoring/)
+- [Best AI Tools for Customer Onboarding: A Developer Guide](/best-ai-tools-for-customer-onboarding/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

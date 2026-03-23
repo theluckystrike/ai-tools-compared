@@ -480,11 +480,11 @@ Review this error code documentation for:
 
 ## Related Articles
 
-- [Claude Code API Error Handling Standards](/ai-tools-compared/claude-code-api-error-handling-standards/)
-- [AI Tools for API Documentation from Code 2026](/ai-tools-compared/ai-tools-for-api-documentation-from-code-2026/)
-- [How to Use AI to Create Edge Case Test Scenarios from API Er](/ai-tools-compared/how-to-use-ai-to-create-edge-case-test-scenarios-from-api-er/)
-- [Best AI Tools for Go Error Wrapping and Sentinel Error](/ai-tools-compared/best-ai-tools-for-go-error-wrapping-and-sentinel-error-patte/)
-- [Best AI Tools for Generating API Documentation From Code](/ai-tools-compared/best-ai-tools-for-generating-api-documentation-from-code-2026/)
+- [Claude Code API Error Handling Standards](/claude-code-api-error-handling-standards/)
+- [AI Tools for API Documentation from Code 2026](/ai-tools-for-api-documentation-from-code-2026/)
+- [How to Use AI to Create Edge Case Test Scenarios from API Er](/how-to-use-ai-to-create-edge-case-test-scenarios-from-api-er/)
+- [Best AI Tools for Go Error Wrapping and Sentinel Error](/best-ai-tools-for-go-error-wrapping-and-sentinel-error-patte/)
+- [Best AI Tools for Generating API Documentation From Code](/best-ai-tools-for-generating-api-documentation-from-code-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

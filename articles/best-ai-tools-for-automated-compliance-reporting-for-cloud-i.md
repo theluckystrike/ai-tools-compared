@@ -436,10 +436,10 @@ def generate_soc2_report(findings_file, framework="SOC 2 Type II"):
 
 ## Related Articles
 
-- [AI Tools for Automating Cloud Security Compliance Scanning](/ai-tools-compared/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
-- [Best AI Tools for Cloud Resource Tagging Compliance](/ai-tools-compared/best-ai-tools-for-cloud-resource-tagging-compliance-automati/)
-- [Best AI Tools for Automated Code Review 2026](/ai-tools-compared/best-ai-tools-for-automated-code-review-2026/)
-- [AI Tools for Automated Security Scanning Compared](/ai-tools-compared/ai-tools-for-automated-security-scanning-compared/)
-- [AI Tools for Automated SSL Certificate Management](/ai-tools-compared/ai-tools-for-automated-ssl-certificate-management-and-monito/)
+- [AI Tools for Automating Cloud Security Compliance Scanning](/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
+- [Best AI Tools for Cloud Resource Tagging Compliance](/best-ai-tools-for-cloud-resource-tagging-compliance-automati/)
+- [Best AI Tools for Automated Code Review 2026](/best-ai-tools-for-automated-code-review-2026/)
+- [AI Tools for Automated Security Scanning Compared](/ai-tools-for-automated-security-scanning-compared/)
+- [AI Tools for Automated SSL Certificate Management](/ai-tools-for-automated-ssl-certificate-management-and-monito/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

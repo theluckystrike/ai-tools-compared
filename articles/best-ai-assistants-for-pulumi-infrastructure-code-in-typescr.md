@@ -342,10 +342,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-compared/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)
-- [Claude vs Gpt4 Terraform Pulumi Infrastructure Code](/ai-tools-compared/claude-vs-gpt4-terraform-pulumi-infrastructure-code-2026/)
-- [AI Assistants for Multicloud Infrastructure Management](/ai-tools-compared/ai-assistants-for-multicloud-infrastructure-management-and-d/)
-- [AI Tools for Writing Terraform Infrastructure-as-Code](/ai-tools-compared/ai-tools-for-writing-terraform-infrastructure-as-code-comparison-2026/)
-- [Best AI Tools for Writing AWS CDK Infrastructure Code](/ai-tools-compared/best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/)
+- [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)
+- [Claude vs Gpt4 Terraform Pulumi Infrastructure Code](/claude-vs-gpt4-terraform-pulumi-infrastructure-code-2026/)
+- [AI Assistants for Multicloud Infrastructure Management](/ai-assistants-for-multicloud-infrastructure-management-and-d/)
+- [AI Tools for Writing Terraform Infrastructure-as-Code](/ai-tools-for-writing-terraform-infrastructure-as-code-comparison-2026/)
+- [Best AI Tools for Writing AWS CDK Infrastructure Code](/best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

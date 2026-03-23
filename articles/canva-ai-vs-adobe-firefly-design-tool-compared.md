@@ -257,10 +257,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Runway Inpainting vs Adobe Firefly Generative Fill](/ai-tools-compared/runway-inpainting-vs-adobe-firefly-generative-fill/)
-- [Adobe Photoshop AI vs Canva Magic Eraser Compared](/ai-tools-compared/adobe-photoshop-ai-vs-canva-magic-eraser-compared/)
-- [Canva AI Video Editor vs CapCut AI Compared 2026](/ai-tools-compared/canva-ai-video-editor-vs-capcut-ai-compared-2026/)
-- [AI Tools for Interior Design Visualization Compared](/ai-tools-compared/ai-tools-for-interior-design-visualization-compared/)
-- [Best AI Tool for Game Developers Design Docs Writing](/ai-tools-compared/best-ai-tool-for-game-developers-design-docs-writing/)
+- [Runway Inpainting vs Adobe Firefly Generative Fill](/runway-inpainting-vs-adobe-firefly-generative-fill/)
+- [Adobe Photoshop AI vs Canva Magic Eraser Compared](/adobe-photoshop-ai-vs-canva-magic-eraser-compared/)
+- [Canva AI Video Editor vs CapCut AI Compared 2026](/canva-ai-video-editor-vs-capcut-ai-compared-2026/)
+- [AI Tools for Interior Design Visualization Compared](/ai-tools-for-interior-design-visualization-compared/)
+- [Best AI Tool for Game Developers Design Docs Writing](/best-ai-tool-for-game-developers-design-docs-writing/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

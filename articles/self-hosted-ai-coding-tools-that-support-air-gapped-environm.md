@@ -413,7 +413,7 @@ This type of audit trail helps satisfy security and compliance requirements that
 - [AI Tools for Self Service Support Portals: Practical Guide](/ai-tools-for-self-service-support-portals/)
 - [Free AI Coding Tools That Work Offline Without Internet](/free-ai-coding-tools-that-work-offline-without-internet/)
 - [How to Create Custom Instructions for AI Coding Tools That](/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
-- [Best Air Gapped AI Code Completion Solutions for Offline](/ai-tools-compared/best-air-gapped-ai-code-completion-solutions-for-offline-dev/)
+- [Best Air Gapped AI Code Completion Solutions for Offline](/best-air-gapped-ai-code-completion-solutions-for-offline-dev/)
 
 For organizations with strict compliance requirements, air-gapped AI tools provide the only viable path to AI-assisted development without creating security or regulatory risks.
 

@@ -258,10 +258,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI Tools for Go Project Structure and Module](/ai-tools-compared/best-ai-tools-for-go-project-structure-and-module-organization/)
-- [AI Tools for Generating Pull Request Merge Conflict](/ai-tools-compared/ai-tools-for-generating-pull-request-merge-conflict-resoluti/)
-- [Configure AI Coding Tools](/ai-tools-compared/how-to-configure-ai-coding-tools-to-respect-your-teams-branc/)
-- [AI Tools for Creating Property-Based Test Cases](/ai-tools-compared/ai-tools-for-creating-property-based-test-cases-using-hypoth/)
-- [How Accurate Are AI Tools](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-serde-serialization-code/)
+- [Best AI Tools for Go Project Structure and Module](/best-ai-tools-for-go-project-structure-and-module-organization/)
+- [AI Tools for Generating Pull Request Merge Conflict](/ai-tools-for-generating-pull-request-merge-conflict-resoluti/)
+- [Configure AI Coding Tools](/how-to-configure-ai-coding-tools-to-respect-your-teams-branc/)
+- [AI Tools for Creating Property-Based Test Cases](/ai-tools-for-creating-property-based-test-cases-using-hypoth/)
+- [How Accurate Are AI Tools](/how-accurate-are-ai-tools-at-generating-rust-serde-serialization-code/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

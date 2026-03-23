@@ -343,17 +343,17 @@ Yes. Specify `pytest-asyncio` and `httpx.AsyncClient` in your prompt. Claude gen
 
 ## Related Reading
 
-- [AI Tools for Writing pytest Tests for Alembic Database Migrations](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migra/)
-- [AI Tools for Writing pytest Tests for FastAPI Endpoints](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-fastapi-endpoints-with/)
-- [Best AI Assistant for Creating pytest Conftest Files with Re](/ai-tools-compared/best-ai-assistant-for-creating-pytest-conftest-files-with-re/)
-- [Self-Hosted AI Tools for Generating Test Data and Fixtures](/ai-tools-compared/self-hosted-ai-tools-for-generating-test-data-and-fixtures-l/)
+- [AI Tools for Writing pytest Tests for Alembic Database Migrations](/ai-tools-for-writing-pytest-tests-for-alembic-database-migra/)
+- [AI Tools for Writing pytest Tests for FastAPI Endpoints](/ai-tools-for-writing-pytest-tests-for-fastapi-endpoints-with/)
+- [Best AI Assistant for Creating pytest Conftest Files with Re](/best-ai-assistant-for-creating-pytest-conftest-files-with-re/)
+- [Self-Hosted AI Tools for Generating Test Data and Fixtures](/self-hosted-ai-tools-for-generating-test-data-and-fixtures-l/)
 
 ## Related Articles
 
-- [Self-Hosted AI Tools for Generating Test Data and Fixtures](/ai-tools-compared/self-hosted-ai-tools-for-generating-test-data-and-fixtures-l/)
-- [AI Tools for Writing pytest Tests for Alembic Database](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migra/)
-- [AI Tools for Writing pytest Tests for Alembic Database Paths](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
-- [Copilot vs Cursor for Writing pytest Fixtures](/ai-tools-compared/copilot-vs-cursor-for-writing--pytest-fixtures-/)
-- [AI Tools for Writing dbt Seeds and Fixtures for Testing](/ai-tools-compared/ai-tools-for-writing-dbt-seeds-and-fixtures-for-testing-mode/)
+- [Self-Hosted AI Tools for Generating Test Data and Fixtures](/self-hosted-ai-tools-for-generating-test-data-and-fixtures-l/)
+- [AI Tools for Writing pytest Tests for Alembic Database](/ai-tools-for-writing-pytest-tests-for-alembic-database-migra/)
+- [AI Tools for Writing pytest Tests for Alembic Database Paths](/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
+- [Copilot vs Cursor for Writing pytest Fixtures](/copilot-vs-cursor-for-writing--pytest-fixtures-/)
+- [AI Tools for Writing dbt Seeds and Fixtures for Testing](/ai-tools-for-writing-dbt-seeds-and-fixtures-for-testing-mode/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

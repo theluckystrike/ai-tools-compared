@@ -297,11 +297,11 @@ For API users hitting context limits, the standard solution is to implement a sl
 
 ## Related Reading
 
-- [Best AI Context Window Management Strategies for Large Codeb](/ai-tools-compared/best-ai-context-window-management-strategies-for-large-codeb/)
-- [How Context Window Size Affects AI Code Suggestions](/ai-tools-compared/how-context-window-size-affects-ai-code-suggestions-in-different-idess/)
-- [How to Manage AI Coding Context Window to Avoid Hallucinated](/ai-tools-compared/how-to-manage-ai-coding-context-window-to-avoid-hallucinated/)
-- [What Source Code Context Window Do Different AI Coding Tools](/ai-tools-compared/what-source-code-context-window-do-different-ai-coding-tools/)
-- [Claude Max vs Claude Pro Actual Difference](/ai-tools-compared/claude-max-vs-claude-pro-actual-difference-in-daily-message-limits/)
+- [Best AI Context Window Management Strategies for Large Codeb](/best-ai-context-window-management-strategies-for-large-codeb/)
+- [How Context Window Size Affects AI Code Suggestions](/how-context-window-size-affects-ai-code-suggestions-in-different-idess/)
+- [How to Manage AI Coding Context Window to Avoid Hallucinated](/how-to-manage-ai-coding-context-window-to-avoid-hallucinated/)
+- [What Source Code Context Window Do Different AI Coding Tools](/what-source-code-context-window-do-different-ai-coding-tools/)
+- [Claude Max vs Claude Pro Actual Difference](/claude-max-vs-claude-pro-actual-difference-in-daily-message-limits/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

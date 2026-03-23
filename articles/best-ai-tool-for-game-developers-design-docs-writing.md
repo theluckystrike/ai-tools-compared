@@ -273,11 +273,11 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Notion AI vs Google Docs AI: Complete Writing Features](/ai-tools-compared/notion-ai-writing-features-vs-google-docs-ai-compared/)
-- [Best AI Tools for Video Game Trailers](/ai-tools-compared/best-ai-tools-for-video-game-trailers/)
-- [Cheapest AI Coding Tool for Indie Game Developer 2026](/ai-tools-compared/cheapest-ai-coding-tool-for-indie-game-developer-2026/)
-- [Gemini in Google Docs Not Showing Up? Fixes for 2026](/ai-tools-compared/gemini-in-google-docs-not-showing-up-fix-2026/)
-- [AI Coding Assistant for Rust Developers Compared](/ai-tools-compared/ai-coding-assistant-for-rust-developers-compared/)
+- [Notion AI vs Google Docs AI: Complete Writing Features](/notion-ai-writing-features-vs-google-docs-ai-compared/)
+- [Best AI Tools for Video Game Trailers](/best-ai-tools-for-video-game-trailers/)
+- [Cheapest AI Coding Tool for Indie Game Developer 2026](/cheapest-ai-coding-tool-for-indie-game-developer-2026/)
+- [Gemini in Google Docs Not Showing Up? Fixes for 2026](/gemini-in-google-docs-not-showing-up-fix-2026/)
+- [AI Coding Assistant for Rust Developers Compared](/ai-coding-assistant-for-rust-developers-compared/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

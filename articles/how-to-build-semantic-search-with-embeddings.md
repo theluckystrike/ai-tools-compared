@@ -389,11 +389,11 @@ Before shipping semantic search to production, verify:
 
 ## Related Articles
 
-- [Switching from ChatGPT Search to Perplexity Pro Search](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
-- [How to Build AI-Powered Code Search 2026](/ai-tools-compared/how-to-build-ai-powered-code-search-2026/)
-- [Switching from ChatGPT Search to Perplexity Pro: Explained](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
-- [How to Build a RAG Pipeline with LangChain 2026](/ai-tools-compared/how-to-build-a-rag-pipeline-with-langchain-2026/)
-- [How to Build a RAG Chatbot with Pinecone](/ai-tools-compared/how-to-build-rag-chatbot-with-pinecone)
+- [Switching from ChatGPT Search to Perplexity Pro Search](/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
+- [How to Build AI-Powered Code Search 2026](/how-to-build-ai-powered-code-search-2026/)
+- [Switching from ChatGPT Search to Perplexity Pro: Explained](/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
+- [How to Build a RAG Pipeline with LangChain 2026](/how-to-build-a-rag-pipeline-with-langchain-2026/)
+- [How to Build a RAG Chatbot with Pinecone](/how-to-build-rag-chatbot-with-pinecone)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

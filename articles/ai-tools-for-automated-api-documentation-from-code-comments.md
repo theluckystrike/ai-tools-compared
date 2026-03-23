@@ -579,10 +579,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for API Documentation from Code 2026](/ai-tools-compared/ai-tools-for-api-documentation-from-code-2026/)
-- [AI Tools for Automated API Documentation Generation in 2026](/ai-tools-compared/ai-tools-for-automated-api-documentation-generation-2026/)
-- [Best AI Tools for Generating API Documentation From Code](/ai-tools-compared/best-ai-tools-for-generating-api-documentation-from-code-2026/)
-- [AI Tools for Converting Code Comments into Developer Facing](/ai-tools-compared/ai-tools-for-converting-code-comments-into-developer-facing-/)
-- [AI Tools for Automated Code Documentation Generation in 2026](/ai-tools-compared/ai-tools-for-automated-code-documentation-generation-2026/---)
+- [AI Tools for API Documentation from Code 2026](/ai-tools-for-api-documentation-from-code-2026/)
+- [AI Tools for Automated API Documentation Generation in 2026](/ai-tools-for-automated-api-documentation-generation-2026/)
+- [Best AI Tools for Generating API Documentation From Code](/best-ai-tools-for-generating-api-documentation-from-code-2026/)
+- [AI Tools for Converting Code Comments into Developer Facing](/ai-tools-for-converting-code-comments-into-developer-facing-/)
+- [AI Tools for Automated Code Documentation Generation in 2026](/ai-tools-for-automated-code-documentation-generation-2026/---)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

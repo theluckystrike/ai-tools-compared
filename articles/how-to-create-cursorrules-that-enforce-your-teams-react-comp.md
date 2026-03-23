@@ -329,12 +329,12 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Create CursorRules That Enforce Your Team's Git Commit](/ai-tools-compared/how-to-create-cursorrules-that-enforce-your-teams-git-commit/)
-- [Create CursorRules That Teach Cursor Your Team's State](/ai-tools-compared/how-to-create-cursorrules-that-teach-cursor-your-teams-state/)
-- [Writing Effective CursorRules for React TypeScript Projects](/ai-tools-compared/writing-effective-cursorrules-for-react-typescript-projects-/)
-- [How to Use AI to Help Devrel Teams Create Video Tutorial Scr](/ai-tools-compared/how-to-use-ai-to-help-devrel-teams-create-video-tutorial-scr/)
-- [How to Use AI to Help Sre Teams Create on Call Handoff Docum](/ai-tools-compared/how-to-use-ai-to-help-sre-teams-create-on-call-handoff-docum/)
-- [Best Tools for Remote React Native Teams Coordinating iOS](https://theluckystrike.github.io/remote-work-tools/best-tools-for-remote-react-native-teams-coordinating-ios-an/)
+- [Create CursorRules That Enforce Your Team's Git Commit](/how-to-create-cursorrules-that-enforce-your-teams-git-commit/)
+- [Create CursorRules That Teach Cursor Your Team's State](/how-to-create-cursorrules-that-teach-cursor-your-teams-state/)
+- [Writing Effective CursorRules for React TypeScript Projects](/writing-effective-cursorrules-for-react-typescript-projects-/)
+- [How to Use AI to Help Devrel Teams Create Video Tutorial Scr](/how-to-use-ai-to-help-devrel-teams-create-video-tutorial-scr/)
+- [How to Use AI to Help Sre Teams Create on Call Handoff Docum](/how-to-use-ai-to-help-sre-teams-create-on-call-handoff-docum/)
+- [Best Tools for Remote React Native Teams Coordinating iOS](https://welikeremotestack.com/best-tools-for-remote-react-native-teams-coordinating-ios-an/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -359,10 +359,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Best AI Tools for Debugging Production Incidents](/ai-tools-compared/best-ai-tools-for-debugging-production-incidents-with-log-analysis/)
-- [How to Use AI for Writing Effective Runbooks](/ai-tools-compared/how-to-use-ai-for-writing-effective-runbooks-and-incident-playbooks/)
-- [AI Powered Incident Response Tools for DevOps Teams Compared](/ai-tools-compared/ai-powered-incident-response-tools-for-devops-teams-compared/)
-- [AI Debugging Assistants Compared 2026](/ai-tools-compared/ai-debugging-assistants-compared-2026/)
-- [How to Use AI to Help Sre Teams Create on Call Handoff](/ai-tools-compared/how-to-use-ai-to-help-sre-teams-create-on-call-handoff-docum/)
-- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
+- [Best AI Tools for Debugging Production Incidents](/best-ai-tools-for-debugging-production-incidents-with-log-analysis/)
+- [How to Use AI for Writing Effective Runbooks](/how-to-use-ai-for-writing-effective-runbooks-and-incident-playbooks/)
+- [AI Powered Incident Response Tools for DevOps Teams Compared](/ai-powered-incident-response-tools-for-devops-teams-compared/)
+- [AI Debugging Assistants Compared 2026](/ai-debugging-assistants-compared-2026/)
+- [How to Use AI to Help Sre Teams Create on Call Handoff](/how-to-use-ai-to-help-sre-teams-create-on-call-handoff-docum/)
+- [AI Project Status Generator for Remote Teams Pulling](https://welikeremotestack.com/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

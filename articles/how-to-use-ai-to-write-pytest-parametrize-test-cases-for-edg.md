@@ -345,9 +345,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Use AI to Write pytest Parametrize Test Cases: Edge](/ai-tools-compared/how-to-use-ai-to-write-pytest-parametrize-test-cases-for-edge-conditions/)
-- [Best AI Tool for Generating Jest Test Cases from React](/ai-tools-compared/best-ai-tool-for-generating-jest-test-cases-from-react-compo/)
-- [Best AI Assistant for Writing pytest Tests for Background](/ai-tools-compared/best-ai-assistant-for-writing-pytest-tests-for-background-job-retry-failure-scenarios/)
-- [How to Use AI to Generate pytest Tests for Django REST](/ai-tools-compared/how-to-use-ai-to-generate-pytest-tests-for-django-rest-frame/)
-- [Best AI for Creating Negative Test Cases](/ai-tools-compared/best-ai-for-creating--negative-test-cases-from-/)
+- [How to Use AI to Write pytest Parametrize Test Cases: Edge](/how-to-use-ai-to-write-pytest-parametrize-test-cases-for-edge-conditions/)
+- [Best AI Tool for Generating Jest Test Cases from React](/best-ai-tool-for-generating-jest-test-cases-from-react-compo/)
+- [Best AI Assistant for Writing pytest Tests for Background](/best-ai-assistant-for-writing-pytest-tests-for-background-job-retry-failure-scenarios/)
+- [How to Use AI to Generate pytest Tests for Django REST](/how-to-use-ai-to-generate-pytest-tests-for-django-rest-frame/)
+- [Best AI for Creating Negative Test Cases](/best-ai-for-creating--negative-test-cases-from-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

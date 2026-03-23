@@ -325,10 +325,10 @@ For CDK development specifically, both tools handle the basics well. The differe
 
 ## Related Articles
 
-- [Best AI Tools for Writing AWS CDK Infrastructure Code](/ai-tools-compared/best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/)
-- [ChatGPT vs Claude for Creating Database Migration Scripts](/ai-tools-compared/chatgpt-vs-claude-for-creating-database-migration-scripts-po/)
-- [ChatGPT vs Claude for Creating OpenAPI Spec from Existing](/ai-tools-compared/chatgpt-vs-claude-for-creating-openapi-spec-from-existing-co/)
-- [Claude vs Gpt4 Terraform Pulumi Infrastructure Code](/ai-tools-compared/claude-vs-gpt4-terraform-pulumi-infrastructure-code-2026/)
-- [AI Assistants for Writing Correct AWS IAM Policies](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
+- [Best AI Tools for Writing AWS CDK Infrastructure Code](/best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/)
+- [ChatGPT vs Claude for Creating Database Migration Scripts](/chatgpt-vs-claude-for-creating-database-migration-scripts-po/)
+- [ChatGPT vs Claude for Creating OpenAPI Spec from Existing](/chatgpt-vs-claude-for-creating-openapi-spec-from-existing-co/)
+- [Claude vs Gpt4 Terraform Pulumi Infrastructure Code](/claude-vs-gpt4-terraform-pulumi-infrastructure-code-2026/)
+- [AI Assistants for Writing Correct AWS IAM Policies](/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -321,11 +321,11 @@ Check the export options before committing. Most tools let you export your data,
 
 ## Related Articles
 
-- [Best AI for Creating Open Source Project Architecture Docume](/ai-tools-compared/best-ai-for-creating-open-source-project-architecture-docume/)
-- [AI Tools for Data Mesh Architecture: A Practical Guide](/ai-tools-compared/ai-tools-for-data-mesh-architecture/)
-- [AI Code Generation Quality for Java Spring Security](/ai-tools-compared/ai-code-generation-quality-for-java-spring-security-configur/)
-- [AI Container Security Scanning](/ai-tools-compared/ai-container-security-scanning/)
-- [AI Tools for Automated Security Scanning Compared](/ai-tools-compared/ai-tools-for-automated-security-scanning-compared/)
+- [Best AI for Creating Open Source Project Architecture Docume](/best-ai-for-creating-open-source-project-architecture-docume/)
+- [AI Tools for Data Mesh Architecture: A Practical Guide](/ai-tools-for-data-mesh-architecture/)
+- [AI Code Generation Quality for Java Spring Security](/ai-code-generation-quality-for-java-spring-security-configur/)
+- [AI Container Security Scanning](/ai-container-security-scanning/)
+- [AI Tools for Automated Security Scanning Compared](/ai-tools-for-automated-security-scanning-compared/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ## Related Reading

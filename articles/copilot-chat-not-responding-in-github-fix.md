@@ -321,11 +321,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Copilot Inline Chat vs Cursor Inline Chat: Which Understands](/ai-tools-compared/copilot-inline-chat-vs-cursor-inline-chat-which-understands-/)
-- [How to Use Copilot Chat to Generate Code from Natural](/ai-tools-compared/how-to-use-copilot-chat-to-generate-code-from-natural-langua/)
-- [How to Migrate Copilot Chat History and Context to Cursor AI](/ai-tools-compared/migrate-copilot-chat-history-and-context-to-cursor-ai-guide/)
-- [How to Transfer Copilot Inline Chat Shortcuts](/ai-tools-compared/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)
-- [Claude Code Not Pushing to GitHub Fix: Troubleshooting Guide](/ai-tools-compared/claude-code-not-pushing-to-github-fix/)
+- [Copilot Inline Chat vs Cursor Inline Chat: Which Understands](/copilot-inline-chat-vs-cursor-inline-chat-which-understands-/)
+- [How to Use Copilot Chat to Generate Code from Natural](/how-to-use-copilot-chat-to-generate-code-from-natural-langua/)
+- [How to Migrate Copilot Chat History and Context to Cursor AI](/migrate-copilot-chat-history-and-context-to-cursor-ai-guide/)
+- [How to Transfer Copilot Inline Chat Shortcuts](/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)
+- [Claude Code Not Pushing to GitHub Fix: Troubleshooting Guide](/claude-code-not-pushing-to-github-fix/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

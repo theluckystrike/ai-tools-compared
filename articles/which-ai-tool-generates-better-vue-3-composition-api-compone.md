@@ -310,11 +310,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Which AI Generates Better Go Goroutine Patterns for Concurre](/ai-tools-compared/which-ai-generates-better-go-goroutine-patterns-for-concurre/)
-- [Which AI Generates Better SwiftUI Views From Design Swift UI](/ai-tools-compared/which-ai-generates-better-swift-ui-views-from-design-specs-2/)
-- [Cursor AI with Claude vs GPT Models: Which Gives Better Code](/ai-tools-compared/cursor-ai-with-claude-vs-gpt-models-which-gives-better-code-/)
-- [How to Get Better AI Autocomplete Suggestions by Structuring](/ai-tools-compared/how-to-get-better-ai-autocomplete-suggestions-by-structuring/)
-- [How to Write Better Prompts for AI Code Generation with](/ai-tools-compared/how-to-write-better-prompts-for-ai-code-generation-with-examples/)
+- [Which AI Generates Better Go Goroutine Patterns for Concurre](/which-ai-generates-better-go-goroutine-patterns-for-concurre/)
+- [Which AI Generates Better SwiftUI Views From Design Swift UI](/which-ai-generates-better-swift-ui-views-from-design-specs-2/)
+- [Cursor AI with Claude vs GPT Models: Which Gives Better Code](/cursor-ai-with-claude-vs-gpt-models-which-gives-better-code-/)
+- [How to Get Better AI Autocomplete Suggestions by Structuring](/how-to-get-better-ai-autocomplete-suggestions-by-structuring/)
+- [How to Write Better Prompts for AI Code Generation with](/how-to-write-better-prompts-for-ai-code-generation-with-examples/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

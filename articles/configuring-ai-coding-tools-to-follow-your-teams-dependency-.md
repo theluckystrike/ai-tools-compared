@@ -349,12 +349,12 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Configuring AI Coding Tools to Match Your Teams Specific Doc](/ai-tools-compared/configuring-ai-coding-tools-to-match-your-teams-specific-doc/)
-- [Configuring Claude Code to Understand Your Teams Pull Reques](/ai-tools-compared/configuring-claude-code-to-understand-your-teams-pull-reques/)
-- [Configure Claude Code](/ai-tools-compared/how-to-configure-claude-code-to-follow-your-teams-feature-fl/)
-- [Writing Custom Instructions That Make AI Follow Your Team's](/ai-tools-compared/writing-custom-instructions-that-make-ai-follow-your-teams-changelog-entry-format/)
-- [Best Way to Configure AI Coding Tools to Follow Your Databas](/ai-tools-compared/best-way-to-configure-ai-coding-tools-to-follow-your-databas/)
-- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
+- [Configuring AI Coding Tools to Match Your Teams Specific Doc](/configuring-ai-coding-tools-to-match-your-teams-specific-doc/)
+- [Configuring Claude Code to Understand Your Teams Pull Reques](/configuring-claude-code-to-understand-your-teams-pull-reques/)
+- [Configure Claude Code](/how-to-configure-claude-code-to-follow-your-teams-feature-fl/)
+- [Writing Custom Instructions That Make AI Follow Your Team's](/writing-custom-instructions-that-make-ai-follow-your-teams-changelog-entry-format/)
+- [Best Way to Configure AI Coding Tools to Follow Your Databas](/best-way-to-configure-ai-coding-tools-to-follow-your-databas/)
+- [AI Project Status Generator for Remote Teams Pulling](https://welikeremotestack.com/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

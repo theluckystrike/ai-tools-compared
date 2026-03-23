@@ -283,6 +283,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [AI Tools for Writing Database Migration Rollback Scripts](/ai-tools-for-writing-database-migration-rollback-scripts-2026/)
 - [AI Tools for Writing pytest Tests for Alembic Database Paths](/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
 - [Best AI Tools for Writing Unit Test Mocks 2026](/best-ai-tools-for-writing-unit-test-mocks-2026/)
-- [Best AI for QA Engineers Writing API Contract Testing Cases](/ai-tools-compared/best-ai-for-qa-engineers-writing-api-contract-test-cases-fro/)
+- [Best AI for QA Engineers Writing API Contract Testing Cases](/best-ai-for-qa-engineers-writing-api-contract-test-cases-fro/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

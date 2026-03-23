@@ -353,9 +353,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How Accurate Are AI Tools for Rust Unsafe Code Blocks](/ai-tools-compared/how-accurate-are-ai-tools-for-rust-unsafe-code-blocks-and-ff/)
-- [How Accurate Are AI Tools at Generating Rust Crossbeam](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
-- [How Accurate Are AI Tools at Generating TypeScript Zod](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-typescript-zod-schem/)
-- [Configure AI Coding Tools](/ai-tools-compared/how-to-configure-ai-coding-tools-to-respect-your-teams-branc/)
-- [How Well Do AI Tools Generate Rust Macro Definitions and Pro](/ai-tools-compared/how-well-do-ai-tools-generate-rust-macro-definitions-and-pro/)
+- [How Accurate Are AI Tools for Rust Unsafe Code Blocks](/how-accurate-are-ai-tools-for-rust-unsafe-code-blocks-and-ff/)
+- [How Accurate Are AI Tools at Generating Rust Crossbeam](/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
+- [How Accurate Are AI Tools at Generating TypeScript Zod](/how-accurate-are-ai-tools-at-generating-typescript-zod-schem/)
+- [Configure AI Coding Tools](/how-to-configure-ai-coding-tools-to-respect-your-teams-branc/)
+- [How Well Do AI Tools Generate Rust Macro Definitions and Pro](/how-well-do-ai-tools-generate-rust-macro-definitions-and-pro/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

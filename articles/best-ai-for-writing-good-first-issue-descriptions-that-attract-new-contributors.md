@@ -256,11 +256,11 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 
 ## Related Articles
 
-- [Best AI for Writing Good First Issue Descriptions That](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attra/)
-- [AI Tools for Writing App Store Descriptions 2026](/ai-tools-compared/ai-tools-for-writing-app-store-descriptions-2026/)
-- [How to Use AI to Write GitHub Actions Bot Comments for First](/ai-tools-compared/how-to-use-ai-to-write-github-actions-bot-comments-for-first/)
-- [AI Tools for Analyzing Issue Comment Sentiment to Identify F](/ai-tools-compared/ai-tools-for-analyzing-issue-comment-sentiment-to-identify-f/)
-- [Copilot vs Claude Code for Scaffolding New Django REST Frame](/ai-tools-compared/copilot-vs-claude-code-for-scaffolding-new-django-rest-frame/)
+- [Best AI for Writing Good First Issue Descriptions That](/best-ai-for-writing-good-first-issue-descriptions-that-attra/)
+- [AI Tools for Writing App Store Descriptions 2026](/ai-tools-for-writing-app-store-descriptions-2026/)
+- [How to Use AI to Write GitHub Actions Bot Comments for First](/how-to-use-ai-to-write-github-actions-bot-comments-for-first/)
+- [AI Tools for Analyzing Issue Comment Sentiment to Identify F](/ai-tools-for-analyzing-issue-comment-sentiment-to-identify-f/)
+- [Copilot vs Claude Code for Scaffolding New Django REST Frame](/copilot-vs-claude-code-for-scaffolding-new-django-rest-frame/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

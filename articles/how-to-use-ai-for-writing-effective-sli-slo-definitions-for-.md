@@ -312,10 +312,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [AI Tools for Writing gRPC Protobuf Definitions 2026](/ai-tools-compared/ai-tools-for-writing-grpc-protobuf-definitions-2026/)
-- [Best AI Tools for Writing Go gRPC Service Definitions and](/ai-tools-compared/best-ai-tools-for-writing-go-grpc-service-definitions-and-implementations/)
-- [AI Tools for Creating Grafana SLO Dashboard Panels with Burn](/ai-tools-compared/ai-tools-for-creating-grafana-slo-dashboard-panels-with-burn/)
-- [ChatGPT vs Claude for Writing Effective Celery Task Error](/ai-tools-compared/chatgpt-vs-claude-for-writing-effective-celery-task-error-ha/)
-- [How to Use AI for Writing Effective Prometheus Recording Rul](/ai-tools-compared/how-to-use-ai-for-writing-effective-prometheus-recording-rul/)
+- [AI Tools for Writing gRPC Protobuf Definitions 2026](/ai-tools-for-writing-grpc-protobuf-definitions-2026/)
+- [Best AI Tools for Writing Go gRPC Service Definitions and](/best-ai-tools-for-writing-go-grpc-service-definitions-and-implementations/)
+- [AI Tools for Creating Grafana SLO Dashboard Panels with Burn](/ai-tools-for-creating-grafana-slo-dashboard-panels-with-burn/)
+- [ChatGPT vs Claude for Writing Effective Celery Task Error](/chatgpt-vs-claude-for-writing-effective-celery-task-error-ha/)
+- [How to Use AI for Writing Effective Prometheus Recording Rul](/how-to-use-ai-for-writing-effective-prometheus-recording-rul/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

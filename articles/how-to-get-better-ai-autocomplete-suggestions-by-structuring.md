@@ -316,10 +316,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Get AI Code Suggestions That Follow Your Project](/ai-tools-compared/how-to-get-ai-code-suggestions-that-follow-your-project-naming-conventions/)
-- [Cheapest Way to Get AI Autocomplete in Neovim 2026](/ai-tools-compared/cheapest-way-to-get-ai-autocomplete-in-neovim-2026/)
-- [Best Practices for Keeping AI Coding Suggestions Aligned](/ai-tools-compared/best-practices-for-keeping-ai-coding-suggestions-aligned-with-design-patterns/)
-- [ChatGPT Edu Pricing Per Student: How Schools Get Volume](/ai-tools-compared/chatgpt-edu-pricing-per-student-how-schools-get-volume-disco/)
-- [Cheapest Way to Get AI Code Completion in Vim 2026](/ai-tools-compared/cheapest-way-to-get-ai-code-completion-in-vim-2026/)
+- [How to Get AI Code Suggestions That Follow Your Project](/how-to-get-ai-code-suggestions-that-follow-your-project-naming-conventions/)
+- [Cheapest Way to Get AI Autocomplete in Neovim 2026](/cheapest-way-to-get-ai-autocomplete-in-neovim-2026/)
+- [Best Practices for Keeping AI Coding Suggestions Aligned](/best-practices-for-keeping-ai-coding-suggestions-aligned-with-design-patterns/)
+- [ChatGPT Edu Pricing Per Student: How Schools Get Volume](/chatgpt-edu-pricing-per-student-how-schools-get-volume-disco/)
+- [Cheapest Way to Get AI Code Completion in Vim 2026](/cheapest-way-to-get-ai-code-completion-in-vim-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

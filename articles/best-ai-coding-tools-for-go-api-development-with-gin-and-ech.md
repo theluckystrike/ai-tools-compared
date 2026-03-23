@@ -288,10 +288,10 @@ The frameworks themselves have different performance characteristics (Gin is gen
 
 ## Related Articles
 
-- [Best AI Coding Assistant for React Development](/ai-tools-compared/best-ai-coding-assistant-for-react-development/)
-- [How to Use AI Coding Tools to Enforce Consistent API](/ai-tools-compared/how-to-use-ai-coding-tools-to-enforce-consistent-api-response-formats/)
-- [How to Use Claude API Cheaply for Small Coding Projects](/ai-tools-compared/how-to-use-claude-api-cheaply-for-small-coding-projects/)
-- [AI Pair Programming Tools for C# and .NET Development](/ai-tools-compared/ai-pair-programming-tools-for-c-sharp-dotnet/)
-- [Best AI Assistant for Writing Open Source Plugin Development](/ai-tools-compared/best-ai-assistant-for-writing-open-source-plugin-development/)
+- [Best AI Coding Assistant for React Development](/best-ai-coding-assistant-for-react-development/)
+- [How to Use AI Coding Tools to Enforce Consistent API](/how-to-use-ai-coding-tools-to-enforce-consistent-api-response-formats/)
+- [How to Use Claude API Cheaply for Small Coding Projects](/how-to-use-claude-api-cheaply-for-small-coding-projects/)
+- [AI Pair Programming Tools for C# and .NET Development](/ai-pair-programming-tools-for-c-sharp-dotnet/)
+- [Best AI Assistant for Writing Open Source Plugin Development](/best-ai-assistant-for-writing-open-source-plugin-development/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

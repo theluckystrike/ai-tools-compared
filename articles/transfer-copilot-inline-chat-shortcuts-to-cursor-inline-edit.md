@@ -545,9 +545,9 @@ Give yourself 2-3 weeks to adjust to new shortcuts. During this time, keep a che
 
 ## Related Articles
 
-- [Copilot Inline Chat vs Cursor Inline Chat: Which Understands](/ai-tools-compared/copilot-inline-chat-vs-cursor-inline-chat-which-understands-/)
-- [Best AI Inline Chat Features in VS Code Compared to](/ai-tools-compared/best-ai-inline-chat-features-in-vscode-compared-to-jetbrains/)
-- [Copilot Chat Not Responding in GitHub](/ai-tools-compared/copilot-chat-not-responding-in-github-fix/)
-- [How to Use AI Inline Chat to Refactor Single Function](/ai-tools-compared/how-to-use-ai-inline-chat-to-refactor-single-function-step-by-step/)
-- [How to Migrate Copilot Chat History and Context to Cursor AI](/ai-tools-compared/migrate-copilot-chat-history-and-context-to-cursor-ai-guide/)
+- [Copilot Inline Chat vs Cursor Inline Chat: Which Understands](/copilot-inline-chat-vs-cursor-inline-chat-which-understands-/)
+- [Best AI Inline Chat Features in VS Code Compared to](/best-ai-inline-chat-features-in-vscode-compared-to-jetbrains/)
+- [Copilot Chat Not Responding in GitHub](/copilot-chat-not-responding-in-github-fix/)
+- [How to Use AI Inline Chat to Refactor Single Function](/how-to-use-ai-inline-chat-to-refactor-single-function-step-by-step/)
+- [How to Migrate Copilot Chat History and Context to Cursor AI](/migrate-copilot-chat-history-and-context-to-cursor-ai-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

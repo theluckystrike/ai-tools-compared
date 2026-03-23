@@ -380,9 +380,9 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Best Self Hosted AI Tool for Writing Unit Tests in Java](/ai-tools-compared/best-self-hosted-ai-tool-for-writing-unit-tests-in-java-loca/)
-- [How to Chain Multiple AI Tools Together for Full Stack](/ai-tools-compared/how-to-chain-multiple-ai-tools-together-for-full-stack-devel/)
-- [Best Practices for AI Tool Customization Files When Onboardi](/ai-tools-compared/best-practices-for-ai-tool-customization-files-when-onboardi/)
-- [How to Use AI to Interpret and Fix Java OutOfMemory Heap](/ai-tools-compared/how-to-use-ai-to-interpret-and-fix-java-outofmemory-heap-spa/)
-- [AI Debugging Assistants Compared 2026](/ai-tools-compared/ai-debugging-assistants-compared-2026/)
+- [Best Self Hosted AI Tool for Writing Unit Tests in Java](/best-self-hosted-ai-tool-for-writing-unit-tests-in-java-loca/)
+- [How to Chain Multiple AI Tools Together for Full Stack](/how-to-chain-multiple-ai-tools-together-for-full-stack-devel/)
+- [Best Practices for AI Tool Customization Files When Onboardi](/best-practices-for-ai-tool-customization-files-when-onboardi/)
+- [How to Use AI to Interpret and Fix Java OutOfMemory Heap](/how-to-use-ai-to-interpret-and-fix-java-outofmemory-heap-spa/)
+- [AI Debugging Assistants Compared 2026](/ai-debugging-assistants-compared-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

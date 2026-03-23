@@ -382,10 +382,10 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [AI Tools for Automated Secrets Rotation and Vault Management](/ai-tools-compared/ai-tools-for-automated-secrets-rotation-and-vault-management/)
-- [AI Tools for Automated SSL Certificate Management and](/ai-tools-compared/ai-tools-for-automated-ssl-certificate-management-and-monito/)
-- [Best AI IDE Features for Writing Configuration Files YAML](/ai-tools-compared/best-ai-ide-features-for-writing-configuration-files-yaml-json-toml/)
-- [Best Practices for AI Coding Tool Project Configuration](/ai-tools-compared/best-practices-for-ai-coding-tool-project-configuration-in-l/)
-- [Best Practices for Maintaining AI Tool Configuration Files](/ai-tools-compared/best-practices-for-maintaining-ai-tool-configuration-files-a/)
+- [AI Tools for Automated Secrets Rotation and Vault Management](/ai-tools-for-automated-secrets-rotation-and-vault-management/)
+- [AI Tools for Automated SSL Certificate Management and](/ai-tools-for-automated-ssl-certificate-management-and-monito/)
+- [Best AI IDE Features for Writing Configuration Files YAML](/best-ai-ide-features-for-writing-configuration-files-yaml-json-toml/)
+- [Best Practices for AI Coding Tool Project Configuration](/best-practices-for-ai-coding-tool-project-configuration-in-l/)
+- [Best Practices for Maintaining AI Tool Configuration Files](/best-practices-for-maintaining-ai-tool-configuration-files-a/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

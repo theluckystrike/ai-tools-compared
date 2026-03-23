@@ -405,10 +405,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Automated SSL Certificate Management and](/ai-tools-compared/ai-tools-for-automated-ssl-certificate-management-and-monito/)
-- [AI Coding Assistants for TypeScript Express Middleware Chain](/ai-tools-compared/ai-coding-assistants-for-typescript-express-middleware-chain/)
-- [AI Tools for Resolving Docker Build Context Permission Denie](/ai-tools-compared/ai-tools-for-resolving-docker-build-context-permission-denie/)
-- [AI Tools for Resolving Yarn Berry PnP Module Resolution Erro](/ai-tools-compared/ai-tools-for-resolving-yarn-berry-pnp-module-resolution-erro/)
-- [Best AI for Resolving Git Merge Conflict Markers in Complex](/ai-tools-compared/best-ai-for-resolving-git-merge-conflict-markers-in-complex-/)
+- [AI Tools for Automated SSL Certificate Management and](/ai-tools-for-automated-ssl-certificate-management-and-monito/)
+- [AI Coding Assistants for TypeScript Express Middleware Chain](/ai-coding-assistants-for-typescript-express-middleware-chain/)
+- [AI Tools for Resolving Docker Build Context Permission Denie](/ai-tools-for-resolving-docker-build-context-permission-denie/)
+- [AI Tools for Resolving Yarn Berry PnP Module Resolution Erro](/ai-tools-for-resolving-yarn-berry-pnp-module-resolution-erro/)
+- [Best AI for Resolving Git Merge Conflict Markers in Complex](/best-ai-for-resolving-git-merge-conflict-markers-in-complex-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

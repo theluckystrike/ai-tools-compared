@@ -152,10 +152,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Use AI to Debug CORS Errors in Cross-Origin API Reque](/ai-tools-compared/how-to-use-ai-to-debug-cors-errors-in-cross-origin-api-reque/)
-- [How to Use AI to Generate Playwright Authentication Flow Tes](/ai-tools-compared/how-to-use-ai-to-generate-playwright-authentication-flow-tes/)
-- [How to Use AI to Generate Playwright Keyboard Navigation Tes](/ai-tools-compared/how-to-use-ai-to-generate-playwright-keyboard-navigation-tes/)
-- [How to Use AI to Generate Playwright Network Interception](/ai-tools-compared/how-to-use-ai-to-generate-playwright-network-interception-te/)
-- [AI Tools for Writing Playwright Tests That Verify Accessibil](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-accessibil/)
+- [How to Use AI to Debug CORS Errors in Cross-Origin API Reque](/how-to-use-ai-to-debug-cors-errors-in-cross-origin-api-reque/)
+- [How to Use AI to Generate Playwright Authentication Flow Tes](/how-to-use-ai-to-generate-playwright-authentication-flow-tes/)
+- [How to Use AI to Generate Playwright Keyboard Navigation Tes](/how-to-use-ai-to-generate-playwright-keyboard-navigation-tes/)
+- [How to Use AI to Generate Playwright Network Interception](/how-to-use-ai-to-generate-playwright-network-interception-te/)
+- [AI Tools for Writing Playwright Tests That Verify Accessibil](/ai-tools-for-writing-playwright-tests-that-verify-accessibil/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

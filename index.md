@@ -29,16 +29,16 @@ Every article includes working code examples, benchmark data where possible, and
 
 Browse articles by topic for focused comparisons:
 
-- [AI Code Review Tools](/ai-tools-compared/topics/ai-code-review-tools/) — automated PR review, CodeRabbit, Sourcery
-- [AI Coding Assistants Compared](/ai-tools-compared/topics/ai-coding-assistants-comparison/) — Copilot vs Cursor vs Claude Code
-- [AI Testing Tools](/ai-tools-compared/topics/ai-testing-tools/) — pytest, Jest, Playwright test generation
-- [AI Documentation Tools](/ai-tools-compared/topics/ai-documentation-tools/) — changelog, API docs, README generation
-- [AI DevOps Tools](/ai-tools-compared/topics/ai-devops-tools/) — CI/CD, Docker, Kubernetes, Terraform
-- [AI Security & Privacy](/ai-tools-compared/topics/ai-security-privacy/) — audits, GDPR compliance, data protection
-- [AI SQL & Database Tools](/ai-tools-compared/topics/ai-sql-database-tools/) — query optimization, migration, cataloging
-- [AI Tools on a Budget](/ai-tools-compared/topics/ai-free-budget-tools/) — free tiers, pricing, value comparisons
-- [AI IDE & Editor Extensions](/ai-tools-compared/topics/ai-ide-editor-tools/) — VS Code, JetBrains, Vim, Neovim
-- [AI Product Management](/ai-tools-compared/topics/ai-product-management/) — sprint planning, retrospectives, onboarding
+- [AI Code Review Tools](/topics/ai-code-review-tools/) — automated PR review, CodeRabbit, Sourcery
+- [AI Coding Assistants Compared](/topics/ai-coding-assistants-comparison/) — Copilot vs Cursor vs Claude Code
+- [AI Testing Tools](/topics/ai-testing-tools/) — pytest, Jest, Playwright test generation
+- [AI Documentation Tools](/topics/ai-documentation-tools/) — changelog, API docs, README generation
+- [AI DevOps Tools](/topics/ai-devops-tools/) — CI/CD, Docker, Kubernetes, Terraform
+- [AI Security & Privacy](/topics/ai-security-privacy/) — audits, GDPR compliance, data protection
+- [AI SQL & Database Tools](/topics/ai-sql-database-tools/) — query optimization, migration, cataloging
+- [AI Tools on a Budget](/topics/ai-free-budget-tools/) — free tiers, pricing, value comparisons
+- [AI IDE & Editor Extensions](/topics/ai-ide-editor-tools/) — VS Code, JetBrains, Vim, Neovim
+- [AI Product Management](/topics/ai-product-management/) — sprint planning, retrospectives, onboarding
 
 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 1.5rem 0;">
 

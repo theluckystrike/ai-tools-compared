@@ -362,11 +362,11 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Best AI Assistant for Fixing TypeScript Strict Mode Type Nar](/ai-tools-compared/best-ai-assistant-for-fixing-typescript-strict-mode-type-nar/)
-- [Best AI Tools for TypeScript Type Inference and Generic Type](/ai-tools-compared/best-ai-tools-for-typescript-type-inference-and-generic-type/)
-- [Claude Code API Client TypeScript Guide: Build Type-Safe](/ai-tools-compared/claude-code-api-client-typescript-guide/)
-- [How Well Do AI Tools Handle Go Generics Type Parameter Const](/ai-tools-compared/how-well-do-ai-tools-handle-go-generics-type-parameter-const/)
-- [AI Code Completion Latency Comparison](/ai-tools-compared/ai-code-completion-latency-comparison-copilot-vs-cursor-vs-cody-2026/)
+- [Best AI Assistant for Fixing TypeScript Strict Mode Type Nar](/best-ai-assistant-for-fixing-typescript-strict-mode-type-nar/)
+- [Best AI Tools for TypeScript Type Inference and Generic Type](/best-ai-tools-for-typescript-type-inference-and-generic-type/)
+- [Claude Code API Client TypeScript Guide: Build Type-Safe](/claude-code-api-client-typescript-guide/)
+- [How Well Do AI Tools Handle Go Generics Type Parameter Const](/how-well-do-ai-tools-handle-go-generics-type-parameter-const/)
+- [AI Code Completion Latency Comparison](/ai-code-completion-latency-comparison-copilot-vs-cursor-vs-cody-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

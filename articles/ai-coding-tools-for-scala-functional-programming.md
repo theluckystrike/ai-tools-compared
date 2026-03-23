@@ -354,10 +354,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Code Generation for Java Reactive Programming with Projec](/ai-tools-compared/ai-code-generation-for-java-reactive-programming-with-projec/)
-- [AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026](/ai-tools-compared/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
-- [AI Pair Programming Tools Comparison 2026: Claude Code.](/ai-tools-compared/ai-pair-programming-tools-comparison-2026/)
-- [AI Pair Programming Tools for C# and .NET Development](/ai-tools-compared/ai-pair-programming-tools-for-c-sharp-dotnet/)
-- [Best AI IDE Features for Pair Programming](/ai-tools-compared/best-ai-ide-features-for-pair-programming-with-remote-team-members/)
+- [AI Code Generation for Java Reactive Programming with Projec](/ai-code-generation-for-java-reactive-programming-with-projec/)
+- [AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026](/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
+- [AI Pair Programming Tools Comparison 2026: Claude Code.](/ai-pair-programming-tools-comparison-2026/)
+- [AI Pair Programming Tools for C# and .NET Development](/ai-pair-programming-tools-for-c-sharp-dotnet/)
+- [Best AI IDE Features for Pair Programming](/best-ai-ide-features-for-pair-programming-with-remote-team-members/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

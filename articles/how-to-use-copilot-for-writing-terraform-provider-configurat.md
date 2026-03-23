@@ -301,10 +301,10 @@ Not always. Copilot optimizes for common patterns, which sometimes means suggest
 
 ## Related Articles
 
-- [AI Tools for Interpreting Terraform Plan Errors](/ai-tools-compared/ai-tools-for-interpreting-terraform-plan-errors-with-provider-version-conflicts/)
-- [Copilot vs Cursor for Writing Terraform Modules from Scratch](/ai-tools-compared/copilot-vs-cursor-for-writing-terraform-modules-from-scratch/)
-- [ChatGPT vs Claude for Writing Nginx Reverse Proxy Configurat](/ai-tools-compared/chatgpt-vs-claude-for-writing-nginx-reverse-proxy-configurat/)
-- [AI Tools for Writing Terraform Infrastructure-as-Code](/ai-tools-compared/ai-tools-for-writing-terraform-infrastructure-as-code-comparison-2026/)
-- [Best AI Tools for Writing Terraform Modules 2026](/ai-tools-compared/best-ai-tools-for-writing-terraform-modules-2026/)
+- [AI Tools for Interpreting Terraform Plan Errors](/ai-tools-for-interpreting-terraform-plan-errors-with-provider-version-conflicts/)
+- [Copilot vs Cursor for Writing Terraform Modules from Scratch](/copilot-vs-cursor-for-writing-terraform-modules-from-scratch/)
+- [ChatGPT vs Claude for Writing Nginx Reverse Proxy Configurat](/chatgpt-vs-claude-for-writing-nginx-reverse-proxy-configurat/)
+- [AI Tools for Writing Terraform Infrastructure-as-Code](/ai-tools-for-writing-terraform-infrastructure-as-code-comparison-2026/)
+- [Best AI Tools for Writing Terraform Modules 2026](/best-ai-tools-for-writing-terraform-modules-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

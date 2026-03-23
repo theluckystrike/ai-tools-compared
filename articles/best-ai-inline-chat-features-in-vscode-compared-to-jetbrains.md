@@ -261,10 +261,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Copilot for JetBrains: Does It Cost Same as VSCode Version](/ai-tools-compared/copilot-for-jetbrains-does-it-cost-same-as-vscode-version/)
-- [Copilot Inline Chat vs Cursor Inline Chat: Which Understands](/ai-tools-compared/copilot-inline-chat-vs-cursor-inline-chat-which-understands-/)
-- [How to Use AI Inline Chat to Refactor Single Function Step](/ai-tools-compared/how-to-use-ai-inline-chat-to-refactor-single-function-step-by-step/)
-- [How to Transfer Copilot Inline Chat Shortcuts](/ai-tools-compared/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)
-- [Free AI Alternatives to Copilot for JetBrains IDE Users 2026](/ai-tools-compared/free-ai-alternatives-to-copilot-for-jetbrains-ide-users-2026/)
+- [Copilot for JetBrains: Does It Cost Same as VSCode Version](/copilot-for-jetbrains-does-it-cost-same-as-vscode-version/)
+- [Copilot Inline Chat vs Cursor Inline Chat: Which Understands](/copilot-inline-chat-vs-cursor-inline-chat-which-understands-/)
+- [How to Use AI Inline Chat to Refactor Single Function Step](/how-to-use-ai-inline-chat-to-refactor-single-function-step-by-step/)
+- [How to Transfer Copilot Inline Chat Shortcuts](/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)
+- [Free AI Alternatives to Copilot for JetBrains IDE Users 2026](/free-ai-alternatives-to-copilot-for-jetbrains-ide-users-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

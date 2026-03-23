@@ -645,9 +645,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Git Workflow Best Practices for Large Teams 2026](/ai-tools-compared/git-workflow-best-practices-large-teams-2026/)
-- [Automated Semantic Versioning in CI/CD Pipelines](/ai-tools-compared/automated-semantic-versioning-cicd-pipelines/)
-- [Release Management Automation for Monorepos](/ai-tools-compared/release-management-automation-monorepos/)
+- [Git Workflow Best Practices for Large Teams 2026](/git-workflow-best-practices-large-teams-2026/)
+- [Automated Semantic Versioning in CI/CD Pipelines](/automated-semantic-versioning-cicd-pipelines/)
+- [Release Management Automation for Monorepos](/release-management-automation-monorepos/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

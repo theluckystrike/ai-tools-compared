@@ -259,9 +259,9 @@ Large projects eventually exceed any tool's context window. Generate subsystems 
 
 ## Related Articles
 
-- [Cheapest AI Tool for Generating Entire Project](/ai-tools-compared/cheapest-ai-tool-for-generating-entire-project-from-description/)
-- [AI Tools for Generating dbt Project Structure from Existing](/ai-tools-compared/ai-tools-for-generating-dbt-project-structure-from-existing-/)
-- [Best Practices for AI Tool Project Config When Switching](/ai-tools-compared/best-practices-for-ai-tool-project-config-when-switching-between-multiple-client-projects/)
-- [Best Practices for AI Coding Tool Project Configuration](/ai-tools-compared/best-practices-for-ai-coding-tool-project-configuration-in-l/)
-- [Comparing AI Tools for Generating No-Code Membership](/ai-tools-compared/comparing-ai-tools-for-generating-no-code-membership-and-sub/)
+- [Cheapest AI Tool for Generating Entire Project](/cheapest-ai-tool-for-generating-entire-project-from-description/)
+- [AI Tools for Generating dbt Project Structure from Existing](/ai-tools-for-generating-dbt-project-structure-from-existing-/)
+- [Best Practices for AI Tool Project Config When Switching](/best-practices-for-ai-tool-project-config-when-switching-between-multiple-client-projects/)
+- [Best Practices for AI Coding Tool Project Configuration](/best-practices-for-ai-coding-tool-project-configuration-in-l/)
+- [Comparing AI Tools for Generating No-Code Membership](/comparing-ai-tools-for-generating-no-code-membership-and-sub/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

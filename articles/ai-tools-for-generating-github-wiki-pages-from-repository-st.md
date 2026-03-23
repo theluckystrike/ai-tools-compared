@@ -513,7 +513,7 @@ done
 - [AI Tools for Generating dbt Project Structure from Existing](/ai-tools-for-generating-dbt-project-structure-from-existing-/)
 - [AI Tools for Generating GitHub Actions Workflows](/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
 - [AI Tools for Generating Closed Captions and Transcripts from Video Compared 2026](/ai-tools-for-generating-closed-captions-and-transcripts-from/)
-- [AI Tools for Generating API Versioning Documentation and](/ai-tools-compared/ai-tools-for-generating-api-versioning-documentation-and-dep/)
+- [AI Tools for Generating API Versioning Documentation and](/ai-tools-for-generating-api-versioning-documentation-and-dep/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

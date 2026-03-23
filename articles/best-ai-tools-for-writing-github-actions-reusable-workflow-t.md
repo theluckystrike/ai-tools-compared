@@ -295,12 +295,12 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [How to Use AI to Optimize GitHub Actions Workflow Run Times](/ai-tools-compared/how-to-use-ai-to-optimize-github-actions-workflow-run-times-/)
-- [AI Tools for Writing GitHub Actions Workflows (2026)](/ai-tools-compared/ai-tools/best-ai-tools-for-github-actions-workflows/)
-- [Best AI Tools for Writing GitHub Actions Matrix Build Strate](/ai-tools-compared/best-ai-tools-for-writing-github-actions-matrix-build-strate/)
-- [Copilot vs Claude Code for Writing GitHub Actions Cicd Workf](/ai-tools-compared/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
-- [AI Tools for Generating GitHub Actions Workflows](/ai-tools-compared/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
-- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
+- [How to Use AI to Optimize GitHub Actions Workflow Run Times](/how-to-use-ai-to-optimize-github-actions-workflow-run-times-/)
+- [AI Tools for Writing GitHub Actions Workflows (2026)](/ai-tools/best-ai-tools-for-github-actions-workflows/)
+- [Best AI Tools for Writing GitHub Actions Matrix Build Strate](/best-ai-tools-for-writing-github-actions-matrix-build-strate/)
+- [Copilot vs Claude Code for Writing GitHub Actions Cicd Workf](/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
+- [AI Tools for Generating GitHub Actions Workflows](/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
+- [AI Project Status Generator for Remote Teams Pulling](https://welikeremotestack.com/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

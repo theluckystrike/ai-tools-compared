@@ -424,10 +424,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Configure Cursor AI Rules for Consistent CSS and Tail](/ai-tools-compared/how-to-configure-cursor-ai-rules-for-consistent-css-and-tail/)
-- [How to Migrate Cursor Rules File](/ai-tools-compared/migrate-cursor-rules-file-to-windsurf-rules-format-guide/)
-- [Migrate Windsurf AI Rules to Cursor Dot Cursor Rules Format](/ai-tools-compared/migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/)
-- [Migrating Copilot Custom Instructions to Cursor Rules.](/ai-tools-compared/migrating-copilot-custom-instructions-to-cursor-rules-file-f/)
-- [AI Autocomplete Behavior Differences Between VSCode Jetbrain](/ai-tools-compared/ai-autocomplete-behavior-differences-between-vscode-jetbrain/)
+- [How to Configure Cursor AI Rules for Consistent CSS and Tail](/how-to-configure-cursor-ai-rules-for-consistent-css-and-tail/)
+- [How to Migrate Cursor Rules File](/migrate-cursor-rules-file-to-windsurf-rules-format-guide/)
+- [Migrate Windsurf AI Rules to Cursor Dot Cursor Rules Format](/migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/)
+- [Migrating Copilot Custom Instructions to Cursor Rules.](/migrating-copilot-custom-instructions-to-cursor-rules-file-f/)
+- [AI Autocomplete Behavior Differences Between VSCode Jetbrain](/ai-autocomplete-behavior-differences-between-vscode-jetbrain/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

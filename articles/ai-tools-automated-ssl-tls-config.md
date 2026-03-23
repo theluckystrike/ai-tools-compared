@@ -405,9 +405,9 @@ The more specific the prompt, the less you need to verify manually. Both Claude 
 
 ## Related Reading
 
-- [Best AI Tools for Writing Apache Configs](/ai-tools-compared/ai-tools-for-writing-apache-configs/)
-- [Best AI Tools for Writing Caddy Configs](/ai-tools-compared/ai-tools-for-writing-caddy-configs/)
-- [How to Use AI for JWT Token Debugging](/ai-tools-compared/ai-for-jwt-token-debugging/)
+- [Best AI Tools for Writing Apache Configs](/ai-tools-for-writing-apache-configs/)
+- [Best AI Tools for Writing Caddy Configs](/ai-tools-for-writing-caddy-configs/)
+- [How to Use AI for JWT Token Debugging](/ai-for-jwt-token-debugging/)
 
 ---
 

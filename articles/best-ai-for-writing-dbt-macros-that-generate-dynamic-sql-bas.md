@@ -385,11 +385,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI for Writing Playwright Tests That Handle Dynamic Loa](/ai-tools-compared/best-ai-for-writing-playwright-tests-that-handle-dynamic-loa/)
-- [AI Tools for Writing dbt Seeds and Fixtures for Testing Mode](/ai-tools-compared/ai-tools-for-writing-dbt-seeds-and-fixtures-for-testing-mode/)
-- [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
-- [Best AI for Writing SQL Performance Tuning Recommendations](/ai-tools-compared/best-ai-for-writing-sql-performance-tuning-recommendations-f/)
-- [Best AI Tools for Writing SQL Migrations in 2026](/ai-tools-compared/articles/best-ai-tools-for-writing-sql-migrations-2026/)
+- [Best AI for Writing Playwright Tests That Handle Dynamic Loa](/best-ai-for-writing-playwright-tests-that-handle-dynamic-loa/)
+- [AI Tools for Writing dbt Seeds and Fixtures for Testing Mode](/ai-tools-for-writing-dbt-seeds-and-fixtures-for-testing-mode/)
+- [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
+- [Best AI for Writing SQL Performance Tuning Recommendations](/best-ai-for-writing-sql-performance-tuning-recommendations-f/)
+- [Best AI Tools for Writing SQL Migrations in 2026](/articles/best-ai-tools-for-writing-sql-migrations-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -272,11 +272,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Use AI to Generate Activity Diagrams from User](/ai-tools-compared/how-to-use-ai-to-generate-activity-diagrams-from-user-acceptance-criteria/)
-- [How to Use AI to Generate Component Diagrams from React](/ai-tools-compared/how-to-use-ai-to-generate-component-diagrams-from-react-or-v/)
-- [How to Use AI Multi File Context to Generate Consistent API](/ai-tools-compared/how-to-use-ai-multi-file-context-to-generate-consistent-api-endpoints/)
-- [How to Use AI to Generate Jest Tests for Next.js API Routes](/ai-tools-compared/how-to-use-ai-to-generate-jest-tests-for-nextjs-api-routes/)
-- [How to Use AI to Generate Pagination Edge Case Tests for API](/ai-tools-compared/how-to-use-ai-to-generate-pagination-edge-case-tests-for-api/)
+- [How to Use AI to Generate Activity Diagrams from User](/how-to-use-ai-to-generate-activity-diagrams-from-user-acceptance-criteria/)
+- [How to Use AI to Generate Component Diagrams from React](/how-to-use-ai-to-generate-component-diagrams-from-react-or-v/)
+- [How to Use AI Multi File Context to Generate Consistent API](/how-to-use-ai-multi-file-context-to-generate-consistent-api-endpoints/)
+- [How to Use AI to Generate Jest Tests for Next.js API Routes](/how-to-use-ai-to-generate-jest-tests-for-nextjs-api-routes/)
+- [How to Use AI to Generate Pagination Edge Case Tests for API](/how-to-use-ai-to-generate-pagination-edge-case-tests-for-api/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```

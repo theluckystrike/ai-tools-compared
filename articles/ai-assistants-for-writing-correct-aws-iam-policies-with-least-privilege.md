@@ -301,11 +301,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI Assistants for AWS CloudFormation Template](/ai-tools-compared/best-ai-assistants-for-aws-cloudformation-template-generatio/)
-- [AI Tools for Writing pytest Tests with Moto Library for AWS](/ai-tools-compared/ai-tools-for-writing-pytest-tests-with-moto-library-for-aws-/)
-- [Best AI Assistant for Preparing for AWS Solutions Architect](/ai-tools-compared/best-ai-assistant-for-preparing-for-aws-solutions-architect/)
-- [GitHub Copilot vs Amazon Codewhisperer for AWS Development](/ai-tools-compared/github-copilot-vs-amazon-codewhisperer-for-aws-development-2026/)
-- [Best AI Assistants for Writing CircleCI and GitLab CI](/ai-tools-compared/best-ai-assistants-for-writing-circleci-and-gitlab-ci-pipeli/)
+- [Best AI Assistants for AWS CloudFormation Template](/best-ai-assistants-for-aws-cloudformation-template-generatio/)
+- [AI Tools for Writing pytest Tests with Moto Library for AWS](/ai-tools-for-writing-pytest-tests-with-moto-library-for-aws-/)
+- [Best AI Assistant for Preparing for AWS Solutions Architect](/best-ai-assistant-for-preparing-for-aws-solutions-architect/)
+- [GitHub Copilot vs Amazon Codewhisperer for AWS Development](/github-copilot-vs-amazon-codewhisperer-for-aws-development-2026/)
+- [Best AI Assistants for Writing CircleCI and GitLab CI](/best-ai-assistants-for-writing-circleci-and-gitlab-ci-pipeli/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ## Related Reading
 

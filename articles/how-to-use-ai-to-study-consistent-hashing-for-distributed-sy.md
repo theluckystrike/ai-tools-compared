@@ -417,11 +417,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Configure Cursor AI Rules for Consistent CSS and Tail](/ai-tools-compared/how-to-configure-cursor-ai-rules-for-consistent-css-and-tail/)
-- [How to Use AI Coding Tools to Enforce Consistent API](/ai-tools-compared/how-to-use-ai-coding-tools-to-enforce-consistent-api-response-formats/)
-- [How to Use AI Multi File Context to Generate Consistent API](/ai-tools-compared/how-to-use-ai-multi-file-context-to-generate-consistent-api-endpoints/)
-- [How to Write ChatGPT Custom Instructions](/ai-tools-compared/how-to-write-chatgpt-custom-instructions-for-consistent-api-design-suggestions/)
-- [Post new team playlist additions to Slack every 4 hours](https://theluckystrike.github.io/remote-work-tools/distributed-team-music-playlist-collaboration-for-remote-work/)
-- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
+- [How to Configure Cursor AI Rules for Consistent CSS and Tail](/how-to-configure-cursor-ai-rules-for-consistent-css-and-tail/)
+- [How to Use AI Coding Tools to Enforce Consistent API](/how-to-use-ai-coding-tools-to-enforce-consistent-api-response-formats/)
+- [How to Use AI Multi File Context to Generate Consistent API](/how-to-use-ai-multi-file-context-to-generate-consistent-api-endpoints/)
+- [How to Write ChatGPT Custom Instructions](/how-to-write-chatgpt-custom-instructions-for-consistent-api-design-suggestions/)
+- [Post new team playlist additions to Slack every 4 hours](https://welikeremotestack.com/distributed-team-music-playlist-collaboration-for-remote-work/)
+- [AI Project Status Generator for Remote Teams Pulling](https://welikeremotestack.com/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

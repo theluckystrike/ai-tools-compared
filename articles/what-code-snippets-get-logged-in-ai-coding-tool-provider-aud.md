@@ -260,10 +260,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [What Source Code Context Window Do Different AI Coding Tools](/ai-tools-compared/what-source-code-context-window-do-different-ai-coding-tools/)
-- [How to Audit What Source Code AI Coding Tools Transmit](/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
-- [Configure AI Coding Tools](/ai-tools-compared/how-to-configure-ai-coding-tools-to-respect-your-teams-branc/)
-- [How to Evaluate AI Coding Tool Encryption Standards](/ai-tools-compared/how-to-evaluate-ai-coding-tool-encryption-standards-for-data/)
-- [Self Hosted AI Coding Tools That Support Air Gapped](/ai-tools-compared/self-hosted-ai-coding-tools-that-support-air-gapped-environm/)
+- [What Source Code Context Window Do Different AI Coding Tools](/what-source-code-context-window-do-different-ai-coding-tools/)
+- [How to Audit What Source Code AI Coding Tools Transmit](/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
+- [Configure AI Coding Tools](/how-to-configure-ai-coding-tools-to-respect-your-teams-branc/)
+- [How to Evaluate AI Coding Tool Encryption Standards](/how-to-evaluate-ai-coding-tool-encryption-standards-for-data/)
+- [Self Hosted AI Coding Tools That Support Air Gapped](/self-hosted-ai-coding-tools-that-support-air-gapped-environm/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

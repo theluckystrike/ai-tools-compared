@@ -427,10 +427,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Canva AI vs Adobe Firefly: Design Tool Compared](/ai-tools-compared/canva-ai-vs-adobe-firefly-design-tool-compared/)
-- [Adobe Photoshop AI vs Canva Magic Eraser Compared](/ai-tools-compared/adobe-photoshop-ai-vs-canva-magic-eraser-compared/)
-- [Runway ML vs Pika AI: Video Generation Tools Compared](/ai-tools-compared/runway-ml-vs-pika-ai-video-generation/)
-- [Runway ML vs Pika Labs: AI Video Generation Comparison 2026](/ai-tools-compared/runway-ml-vs-pika-labs-ai-video-comparison-2026/)
-- [Sora vs Runway AI Video Generation: A Technical](/ai-tools-compared/sora-vs-runway-ai-video-generation/)
+- [Canva AI vs Adobe Firefly: Design Tool Compared](/canva-ai-vs-adobe-firefly-design-tool-compared/)
+- [Adobe Photoshop AI vs Canva Magic Eraser Compared](/adobe-photoshop-ai-vs-canva-magic-eraser-compared/)
+- [Runway ML vs Pika AI: Video Generation Tools Compared](/runway-ml-vs-pika-ai-video-generation/)
+- [Runway ML vs Pika Labs: AI Video Generation Comparison 2026](/runway-ml-vs-pika-labs-ai-video-comparison-2026/)
+- [Sora vs Runway AI Video Generation: A Technical](/sora-vs-runway-ai-video-generation/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

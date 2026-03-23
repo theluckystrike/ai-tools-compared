@@ -445,20 +445,20 @@ After inserting a large batch of new embeddings, run `VACUUM ANALYZE code_units`
 
 ## Related Reading
 
-- [How to Build Semantic Search with Embeddings](/ai-tools-compared/how-to-build-semantic-search-with-embeddings/)
-- [How to Build AI Documentation Chatbots](/ai-tools-compared/how-to-build-ai-documentation-chatbots-2026/)
-- [How to Build AI-Powered CLI Tools](/ai-tools-compared/how-to-build-ai-powered-cli-tools-2026/)
-- [How to Build AI-Powered Code Formatters](/ai-tools-compared/build-ai-powered-code-formatters/)
+- [How to Build Semantic Search with Embeddings](/how-to-build-semantic-search-with-embeddings/)
+- [How to Build AI Documentation Chatbots](/how-to-build-ai-documentation-chatbots-2026/)
+- [How to Build AI-Powered CLI Tools](/how-to-build-ai-powered-cli-tools-2026/)
+- [How to Build AI-Powered Code Formatters](/build-ai-powered-code-formatters/)
 
 ---
 
 ## Related Articles
 
-- [How to Build an AI-Powered Code Linter](/ai-tools-compared/how-to-build-ai-powered-code-linter/)
-- [How to Use AI Codebase Search to Find Relevant Code Before](/ai-tools-compared/how-to-use-ai-codebase-search-to-find-relevant-code-before-g/)
-- [How to Structure Prompts for AI to Generate Idiomatic Code](/ai-tools-compared/how-to-structure-prompts-for-ai-to-generate-idiomatic-code-i/)
-- [Claude Code vs ChatGPT Code Interpreter Comparison](/ai-tools-compared/claude-code-vs-chatgpt-code-interpreter-comparison/)
-- [Best AI Tool for Software Engineers Code Review 2026](/ai-tools-compared/best-ai-tool-for-software-engineers-code-review-2026/)
+- [How to Build an AI-Powered Code Linter](/how-to-build-ai-powered-code-linter/)
+- [How to Use AI Codebase Search to Find Relevant Code Before](/how-to-use-ai-codebase-search-to-find-relevant-code-before-g/)
+- [How to Structure Prompts for AI to Generate Idiomatic Code](/how-to-structure-prompts-for-ai-to-generate-idiomatic-code-i/)
+- [Claude Code vs ChatGPT Code Interpreter Comparison](/claude-code-vs-chatgpt-code-interpreter-comparison/)
+- [Best AI Tool for Software Engineers Code Review 2026](/best-ai-tool-for-software-engineers-code-review-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

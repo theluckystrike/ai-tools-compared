@@ -241,19 +241,19 @@ Getting accurate Svelte 5 output from any AI assistant improves significantly wi
 
 ## Related Reading
 
-- [AI Coding Assistant Accuracy for Typescript Next Js Server C](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
-- [AI Coding Assistant Comparison for React Component](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
-- [AI Coding Assistant Comparison for Typescript monorepo](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-monorepo-with-turborepo-setup/)
-- [AI Coding Assistant Comparison for TypeScript Tailwind CSS](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-tailwind-css-c/)
-- [Best AI Assistant for Fixing TypeScript Strict Mode Type Nar](/ai-tools-compared/best-ai-assistant-for-fixing-typescript-strict-mode-type-nar/)
+- [AI Coding Assistant Accuracy for Typescript Next Js Server C](/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
+- [AI Coding Assistant Comparison for React Component](/ai-coding-assistant-comparison-for-react-component-generatio/)
+- [AI Coding Assistant Comparison for Typescript monorepo](/ai-coding-assistant-comparison-for-typescript-monorepo-with-turborepo-setup/)
+- [AI Coding Assistant Comparison for TypeScript Tailwind CSS](/ai-coding-assistant-comparison-for-typescript-tailwind-css-c/)
+- [Best AI Assistant for Fixing TypeScript Strict Mode Type Nar](/best-ai-assistant-for-fixing-typescript-strict-mode-type-nar/)
 
 ## Related Articles
 
-- [How to Use Claude for Svelte Development](/ai-tools-compared/claude-for-svelte-development-guide-2026/)
-- [AI Coding Assistant Accuracy for TypeScript Next Js Server](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
-- [How to Evaluate AI Coding Assistant Accuracy](/ai-tools-compared/how-to-evaluate-ai-coding-assistant-accuracy/)
-- [AI Coding Assistant Comparison for React Component](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
-- [AI Coding Assistant Comparison for TypeScript monorepo](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-monorepo-with-turborepo-setup/)
+- [How to Use Claude for Svelte Development](/claude-for-svelte-development-guide-2026/)
+- [AI Coding Assistant Accuracy for TypeScript Next Js Server](/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
+- [How to Evaluate AI Coding Assistant Accuracy](/how-to-evaluate-ai-coding-assistant-accuracy/)
+- [AI Coding Assistant Comparison for React Component](/ai-coding-assistant-comparison-for-react-component-generatio/)
+- [AI Coding Assistant Comparison for TypeScript monorepo](/ai-coding-assistant-comparison-for-typescript-monorepo-with-turborepo-setup/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

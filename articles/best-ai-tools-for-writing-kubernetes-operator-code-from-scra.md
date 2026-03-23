@@ -246,11 +246,11 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Best AI Tools for Go Kubernetes Operator Development](/ai-tools-compared/best-ai-tools-for-go-kubernetes-operator-development-with-kubebuilder-2026/)
-- [AI Tools for Writing Kubernetes Helm Charts 2026](/ai-tools-compared/ai-tools-for-writing-kubernetes-helm-charts-2026/)
-- [Best AI Tools for Writing Kubernetes Admission Webhook](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-admission-webhook-confi/)
-- [Best AI Tools for Writing Kubernetes Custom Resource](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-custom-resource-definitions-2026/)
-- [Best AI Tools for Writing Kubernetes Manifests and Helm](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-manifests-and-helm-charts-2026/)
+- [Best AI Tools for Go Kubernetes Operator Development](/best-ai-tools-for-go-kubernetes-operator-development-with-kubebuilder-2026/)
+- [AI Tools for Writing Kubernetes Helm Charts 2026](/ai-tools-for-writing-kubernetes-helm-charts-2026/)
+- [Best AI Tools for Writing Kubernetes Admission Webhook](/best-ai-tools-for-writing-kubernetes-admission-webhook-confi/)
+- [Best AI Tools for Writing Kubernetes Custom Resource](/best-ai-tools-for-writing-kubernetes-custom-resource-definitions-2026/)
+- [Best AI Tools for Writing Kubernetes Manifests and Helm](/best-ai-tools-for-writing-kubernetes-manifests-and-helm-charts-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

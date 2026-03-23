@@ -308,10 +308,10 @@ Yes, all four main tools support generating `Benchmark*` functions in Go's `test
 
 ## Related Articles
 
-- [AI Coding Assistant for Rust Developers Compared](/ai-tools-compared/ai-coding-assistant-for-rust-developers-compared/)
-- [AI Coding Productivity Tips for Senior Developers Switching](/ai-tools-compared/ai-coding-productivity-tips-for-senior-developers-switching-/)
-- [Best Budget AI Coding Assistant for Freelance Developers 202](/ai-tools-compared/best-budget-ai-coding-assistant-for-freelance-developers-202/)
-- [How to Use AI to Diagnose and Fix Golang Goroutine Deadlock](/ai-tools-compared/how-to-use-ai-to-diagnose-and-fix-golang-goroutine-deadlock-/)
-- [Writing CursorRules for Golang Projects with Specific Concur](/ai-tools-compared/writing-cursorrules-for-golang-projects-with-specific-concur/)
+- [AI Coding Assistant for Rust Developers Compared](/ai-coding-assistant-for-rust-developers-compared/)
+- [AI Coding Productivity Tips for Senior Developers Switching](/ai-coding-productivity-tips-for-senior-developers-switching-/)
+- [Best Budget AI Coding Assistant for Freelance Developers 202](/best-budget-ai-coding-assistant-for-freelance-developers-202/)
+- [How to Use AI to Diagnose and Fix Golang Goroutine Deadlock](/how-to-use-ai-to-diagnose-and-fix-golang-goroutine-deadlock-/)
+- [Writing CursorRules for Golang Projects with Specific Concur](/writing-cursorrules-for-golang-projects-with-specific-concur/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

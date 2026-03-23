@@ -342,11 +342,11 @@ This hybrid approach saves costs while ensuring quality where it matters.
 
 ## Related Articles
 
-- [Claude Sonnet vs Opus API Pricing Difference Worth It](/ai-tools-compared/claude-sonnet-vs-opus-api-pricing-difference-worth-it-2026/)
-- [Gemini vs Claude for Multimodal Coding](/ai-tools-compared/gemini-vs-claude-multimodal-coding-tasks/)
-- [Claude Sonnet vs GPT-4o for Code Generation: Practical](/ai-tools-compared/claude-sonnet-vs-gpt-4o-for-code-generation/)
-- [How to Use Claude API Cheaply for Small Coding Projects](/ai-tools-compared/how-to-use-claude-api-cheaply-for-small-coding-projects/)
-- [Switching from GPT-4o to Claude Sonnet for Code Review](/ai-tools-compared/switching-from-gpt-4o-to-claude-sonnet-for-code-review-which/)
+- [Claude Sonnet vs Opus API Pricing Difference Worth It](/claude-sonnet-vs-opus-api-pricing-difference-worth-it-2026/)
+- [Gemini vs Claude for Multimodal Coding](/gemini-vs-claude-multimodal-coding-tasks/)
+- [Claude Sonnet vs GPT-4o for Code Generation: Practical](/claude-sonnet-vs-gpt-4o-for-code-generation/)
+- [How to Use Claude API Cheaply for Small Coding Projects](/how-to-use-claude-api-cheaply-for-small-coding-projects/)
+- [Switching from GPT-4o to Claude Sonnet for Code Review](/switching-from-gpt-4o-to-claude-sonnet-for-code-review-which/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

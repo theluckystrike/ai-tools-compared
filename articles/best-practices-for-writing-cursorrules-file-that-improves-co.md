@@ -266,10 +266,10 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Best Practices for Writing GitHub Copilot Custom Instruction](/ai-tools-compared/best-practices-for-writing-github-copilot-custom-instruction/)
-- [Best Practices for AI Coding Tool Project Configuration](/ai-tools-compared/best-practices-for-ai-coding-tool-project-configuration-in-l/)
-- [Best Practices for Breaking Down Complex Coding Tasks](/ai-tools-compared/best-practices-for-breaking-down-complex-coding-tasks-for-ai/)
-- [Best Practices for Maintaining AI Tool Configuration Files](/ai-tools-compared/best-practices-for-maintaining-ai-tool-configuration-files-a/)
-- [Best Practices for AI Tool Customization Files When Onboardi](/ai-tools-compared/best-practices-for-ai-tool-customization-files-when-onboardi/)
+- [Best Practices for Writing GitHub Copilot Custom Instruction](/best-practices-for-writing-github-copilot-custom-instruction/)
+- [Best Practices for AI Coding Tool Project Configuration](/best-practices-for-ai-coding-tool-project-configuration-in-l/)
+- [Best Practices for Breaking Down Complex Coding Tasks](/best-practices-for-breaking-down-complex-coding-tasks-for-ai/)
+- [Best Practices for Maintaining AI Tool Configuration Files](/best-practices-for-maintaining-ai-tool-configuration-files-a/)
+- [Best Practices for AI Tool Customization Files When Onboardi](/best-practices-for-ai-tool-customization-files-when-onboardi/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

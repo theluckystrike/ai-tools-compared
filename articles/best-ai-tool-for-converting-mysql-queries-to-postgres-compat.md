@@ -306,11 +306,11 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [How to Use AI to Convert Between SQL Dialects Postgres Mysql](/ai-tools-compared/how-to-use-ai-to-convert-between-sql-dialects-postgres-mysql/)
-- [AI Tools for Debugging Postgres Query Planner Choosing Wrong](/ai-tools-compared/ai-tools-for-debugging-postgres-query-planner-choosing-wrong/)
-- [How to Use AI to Generate Realistic Test Data for Postgres](/ai-tools-compared/how-to-use-ai-to-generate-realistic-test-data-for-postgres-d/)
-- [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
-- [Best AI Assistant for Generating SQL Recursive Queries](/ai-tools-compared/best-ai-assistant-for-generating-sql-recursive-queries-for-hierarchical-org-chart-data/)
+- [How to Use AI to Convert Between SQL Dialects Postgres Mysql](/how-to-use-ai-to-convert-between-sql-dialects-postgres-mysql/)
+- [AI Tools for Debugging Postgres Query Planner Choosing Wrong](/ai-tools-for-debugging-postgres-query-planner-choosing-wrong/)
+- [How to Use AI to Generate Realistic Test Data for Postgres](/how-to-use-ai-to-generate-realistic-test-data-for-postgres-d/)
+- [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
+- [Best AI Assistant for Generating SQL Recursive Queries](/best-ai-assistant-for-generating-sql-recursive-queries-for-hierarchical-org-chart-data/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

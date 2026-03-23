@@ -375,11 +375,11 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [How to Use AI to Diagnose Spring Boot Application Context](/ai-tools-compared/how-to-use-ai-to-diagnose-spring-boot-application-context-st/)
-- [AI Code Generation Quality for Java Spring Security](/ai-tools-compared/ai-code-generation-quality-for-java-spring-security-configur/)
-- [Best AI Coding Tools for Java Microservices](/ai-tools-compared/best-ai-coding-tools-for-java-microservices-with-spring-cloud/)
-- [Claude vs Copilot for Generating FastAPI Endpoint Boilerplat](/ai-tools-compared/claude-vs-copilot-for-generating-fastapi-endpoint-boilerplat/)
-- [Claude Code Java Library Development Guide](/ai-tools-compared/claude-code-java-library-development-guide/)
+- [How to Use AI to Diagnose Spring Boot Application Context](/how-to-use-ai-to-diagnose-spring-boot-application-context-st/)
+- [AI Code Generation Quality for Java Spring Security](/ai-code-generation-quality-for-java-spring-security-configur/)
+- [Best AI Coding Tools for Java Microservices](/best-ai-coding-tools-for-java-microservices-with-spring-cloud/)
+- [Claude vs Copilot for Generating FastAPI Endpoint Boilerplat](/claude-vs-copilot-for-generating-fastapi-endpoint-boilerplat/)
+- [Claude Code Java Library Development Guide](/claude-code-java-library-development-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

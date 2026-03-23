@@ -366,10 +366,10 @@ Trying to change everything at once. Pick one or two practices, implement them w
 
 ## Related Articles
 
-- [Claude Code API Backward Compatibility Guide](/ai-tools-compared/claude-code-api-backward-compatibility-guide/)
-- [AI Tools for Writing dbt Seeds and Fixtures for Testing Mode](/ai-tools-compared/ai-tools-for-writing-dbt-seeds-and-fixtures-for-testing-mode/)
-- [Best AI for QA Engineers Writing API Contract Testing Cases](/ai-tools-compared/best-ai-for-qa-engineers-writing-api-contract-test-cases-fro/)
-- [Writing Claude Md Files That Teach AI Your Project Testing](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-testing-conventions-and-patterns/)
-- [AI Coding Tool GDPR Compliance Checklist for European Engine](/ai-tools-compared/ai-coding-tool-gdpr-compliance-checklist-for-european-engine/)
+- [Claude Code API Backward Compatibility Guide](/claude-code-api-backward-compatibility-guide/)
+- [AI Tools for Writing dbt Seeds and Fixtures for Testing Mode](/ai-tools-for-writing-dbt-seeds-and-fixtures-for-testing-mode/)
+- [Best AI for QA Engineers Writing API Contract Testing Cases](/best-ai-for-qa-engineers-writing-api-contract-test-cases-fro/)
+- [Writing Claude Md Files That Teach AI Your Project Testing](/writing-claude-md-files-that-teach-ai-your-project-testing-conventions-and-patterns/)
+- [AI Coding Tool GDPR Compliance Checklist for European Engine](/ai-coding-tool-gdpr-compliance-checklist-for-european-engine/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

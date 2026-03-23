@@ -276,11 +276,11 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 
 ## Related Reading
 
-- [How to Use AI for Capacity Planning and Resource Right Sizin](/ai-tools-compared/how-to-use-ai-for-capacity-planning-and-resource-right-sizin/)
-- [How to Use AI to Create Milestone Planning Documents](/ai-tools-compared/how-to-use-ai-to-create-milestone-planning-documents-from-is/)
-- [AI Tools for Generating Dependency Update Pull Request Descr](/ai-tools-compared/ai-tools-for-generating-dependency-update-pull-request-descr/)
-- [Configuring AI Coding Tools to Follow Your Teams Dependency](/ai-tools-compared/configuring-ai-coding-tools-to-follow-your-teams-dependency-/)
-- [How to Use AI to Resolve NPM Peer Dependency Conflict Errors](/ai-tools-compared/how-to-use-ai-to-resolve-npm-peer-dependency-conflict-errors/)
+- [How to Use AI for Capacity Planning and Resource Right Sizin](/how-to-use-ai-for-capacity-planning-and-resource-right-sizin/)
+- [How to Use AI to Create Milestone Planning Documents](/how-to-use-ai-to-create-milestone-planning-documents-from-is/)
+- [AI Tools for Generating Dependency Update Pull Request Descr](/ai-tools-for-generating-dependency-update-pull-request-descr/)
+- [Configuring AI Coding Tools to Follow Your Teams Dependency](/configuring-ai-coding-tools-to-follow-your-teams-dependency-/)
+- [How to Use AI to Resolve NPM Peer Dependency Conflict Errors](/how-to-use-ai-to-resolve-npm-peer-dependency-conflict-errors/)
 
 ## Frequently Asked Questions
 

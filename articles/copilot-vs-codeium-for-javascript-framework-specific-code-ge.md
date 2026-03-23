@@ -315,11 +315,11 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [AI Code Generation Quality for JavaScript Async Await Patter](/ai-tools-compared/ai-code-generation-quality-for-javascript-async-await-patter/)
-- [AI Autocomplete Accuracy Comparison: Copilot vs Codeium Vs](/ai-tools-compared/ai-autocomplete-accuracy-comparison-copilot-vs-codeium-vs-ta/)
-- [Codeium Pro vs Copilot Individual Features Per Dollar Compar](/ai-tools-compared/codeium-pro-vs-copilot-individual-features-per-dollar-compar/)
-- [Copilot vs Codeium for TypeScript Projects 2026](/ai-tools-compared/copilot-vs-codeium-for-typescript-projects-2026/)
-- [Switching from Copilot to Codeium What Extensions to Install](/ai-tools-compared/switching-from-copilot-to-codeium-what-extensions-to-install/)
+- [AI Code Generation Quality for JavaScript Async Await Patter](/ai-code-generation-quality-for-javascript-async-await-patter/)
+- [AI Autocomplete Accuracy Comparison: Copilot vs Codeium Vs](/ai-autocomplete-accuracy-comparison-copilot-vs-codeium-vs-ta/)
+- [Codeium Pro vs Copilot Individual Features Per Dollar Compar](/codeium-pro-vs-copilot-individual-features-per-dollar-compar/)
+- [Copilot vs Codeium for TypeScript Projects 2026](/copilot-vs-codeium-for-typescript-projects-2026/)
+- [Switching from Copilot to Codeium What Extensions to Install](/switching-from-copilot-to-codeium-what-extensions-to-install/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

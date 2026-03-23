@@ -266,11 +266,11 @@ Claude is better for:
 
 ## Related Articles
 
-- [Claude Code Runbook Documentation Guide](/ai-tools-compared/claude-code-runbook-documentation-guide/)
-- [Best AI Tools for Writing Swagger API Documentation 2026](/ai-tools-compared/best-ai-tools-for-writing-swagger-api-documentation-2026/)
-- [Gemini vs Claude for Generating Markdown Documentation](/ai-tools-compared/gemini-vs-claude-for-generating-markdown-documentation-from-/)
-- [Best AI Tools for Technical Documentation Writing in 2026](/ai-tools-compared/ai-tools-for-technical-writing-documentation-2026/)
-- [ChatGPT vs Claude for Writing API Documentation](/ai-tools-compared/chatgpt-vs-claude-for-writing-api-documentation/)
+- [Claude Code Runbook Documentation Guide](/claude-code-runbook-documentation-guide/)
+- [Best AI Tools for Writing Swagger API Documentation 2026](/best-ai-tools-for-writing-swagger-api-documentation-2026/)
+- [Gemini vs Claude for Generating Markdown Documentation](/gemini-vs-claude-for-generating-markdown-documentation-from-/)
+- [Best AI Tools for Technical Documentation Writing in 2026](/ai-tools-for-technical-writing-documentation-2026/)
+- [ChatGPT vs Claude for Writing API Documentation](/chatgpt-vs-claude-for-writing-api-documentation/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 ```

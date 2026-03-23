@@ -298,10 +298,10 @@ Streamlit uses a `secrets.toml` file locally and the Secrets management UI in Co
 
 ## Related Articles
 
-- [AI Powered Data Cataloging Tools: A Practical Guide for](/ai-tools-compared/ai-powered-data-cataloging-tools/)
-- [AI Tools for Data Mesh Architecture: A Practical Guide](/ai-tools-compared/ai-tools-for-data-mesh-architecture/)
-- [Best AI Tools for Data Cleaning: A Practical Guide for](/ai-tools-compared/best-ai-tools-for-data-cleaning/)
-- [Best AI Tools for Data Governance: A Practical Guide for](/ai-tools-compared/best-ai-tools-for-data-governance/)
-- [How to Switch From Lovable to Cursor for Building Web Apps](/ai-tools-compared/how-to-switch-from-lovable-to-cursor-for-building-web-apps-c/)
+- [AI Powered Data Cataloging Tools: A Practical Guide for](/ai-powered-data-cataloging-tools/)
+- [AI Tools for Data Mesh Architecture: A Practical Guide](/ai-tools-for-data-mesh-architecture/)
+- [Best AI Tools for Data Cleaning: A Practical Guide for](/best-ai-tools-for-data-cleaning/)
+- [Best AI Tools for Data Governance: A Practical Guide for](/best-ai-tools-for-data-governance/)
+- [How to Switch From Lovable to Cursor for Building Web Apps](/how-to-switch-from-lovable-to-cursor-for-building-web-apps-c/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

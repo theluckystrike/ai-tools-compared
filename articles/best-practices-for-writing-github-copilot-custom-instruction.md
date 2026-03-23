@@ -430,11 +430,11 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [How to Build a Custom GitHub Copilot Extension](/ai-tools-compared/how-to-build-custom-copilot-extension/)
-- [Copilot vs Claude Code for Writing GitHub Actions Cicd Workf](/ai-tools-compared/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
-- [How to Use Copilot for Writing CI CD Pipelines in GitHub Act](/ai-tools-compared/how-to-use-copilot-for-writing-ci-cd-pipelines-in-github-act/)
-- [Completely Free Alternatives to GitHub Copilot That Actually](/ai-tools-compared/completely-free-alternatives-to-github-copilot-that-actually/)
-- [Continue Dev vs GitHub Copilot: Open Source Comparison](/ai-tools-compared/continue-dev-vs-github-copilot-open-source-comparison/)
+- [How to Build a Custom GitHub Copilot Extension](/how-to-build-custom-copilot-extension/)
+- [Copilot vs Claude Code for Writing GitHub Actions Cicd Workf](/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
+- [How to Use Copilot for Writing CI CD Pipelines in GitHub Act](/how-to-use-copilot-for-writing-ci-cd-pipelines-in-github-act/)
+- [Completely Free Alternatives to GitHub Copilot That Actually](/completely-free-alternatives-to-github-copilot-that-actually/)
+- [Continue Dev vs GitHub Copilot: Open Source Comparison](/continue-dev-vs-github-copilot-open-source-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

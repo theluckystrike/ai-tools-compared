@@ -443,10 +443,10 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 
 ## Related Articles
 
-- [Best AI Assistant for Debugging CSS Z Index Stacking](/ai-tools-compared/best-ai-assistant-for-debugging-css-z-index-stacking-context/)
-- [Best AI Assistant for Debugging CSS Grid Layout Overflow](/ai-tools-compared/best-ai-assistant-for-debugging-css-grid-layout-overflow-iss/)
-- [AI Tools for Debugging CSS Media Query Breakpoints Not](/ai-tools-compared/ai-tools-for-debugging-css-media-query-breakpoints-not-match/)
-- [Best AI Tools for Generating CSS](/ai-tools-compared/best-ai-tools-for-css-from-designs/)
-- [Best AI Tool for Debugging Android ProGuard R8 Class](/ai-tools-compared/best-ai-tool-for-debugging-android-proguard-r8-class-shrinki/)
+- [Best AI Assistant for Debugging CSS Z Index Stacking](/best-ai-assistant-for-debugging-css-z-index-stacking-context/)
+- [Best AI Assistant for Debugging CSS Grid Layout Overflow](/best-ai-assistant-for-debugging-css-grid-layout-overflow-iss/)
+- [AI Tools for Debugging CSS Media Query Breakpoints Not](/ai-tools-for-debugging-css-media-query-breakpoints-not-match/)
+- [Best AI Tools for Generating CSS](/best-ai-tools-for-css-from-designs/)
+- [Best AI Tool for Debugging Android ProGuard R8 Class](/best-ai-tool-for-debugging-android-proguard-r8-class-shrinki/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

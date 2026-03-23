@@ -288,9 +288,9 @@ cargo build 2>&1 | claude "explain these Rust errors and provide fixes"
 
 ## Related Reading
 
-- [AI Coding Assistant for Rust Developers Compared](/ai-tools-compared/ai-coding-assistant-for-rust-developers-compared/)
-- [How to Evaluate AI Coding Assistant Accuracy](/ai-tools-compared/how-to-evaluate-ai-coding-assistant-accuracy/)
-- [AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026](/ai-tools-compared/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
+- [AI Coding Assistant for Rust Developers Compared](/ai-coding-assistant-for-rust-developers-compared/)
+- [How to Evaluate AI Coding Assistant Accuracy](/how-to-evaluate-ai-coding-assistant-accuracy/)
+- [AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026](/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

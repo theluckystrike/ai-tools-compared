@@ -349,10 +349,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Copilot Workspace vs Cursor Composer Multi File Editing Comp](/ai-tools-compared/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)
-- [Cursor AI Multi File Editing Feature How It Actually Works](/ai-tools-compared/cursor-ai-multi-file-editing-feature-how-it-actually-works-explained/)
-- [Cursor Multi-File Edit Breaking Code Fix (2026)](/ai-tools-compared/cursor-multi-file-edit-breaking-code-fix-2026/)
-- [How to Migrate Cursor Rules File](/ai-tools-compared/migrate-cursor-rules-file-to-windsurf-rules-format-guide/)
-- [Windsurf AI Flows Feature How It Chains Multiple Editing Ste](/ai-tools-compared/windsurf-ai-flows-feature-how-it-chains-multiple-editing-ste/)
+- [Copilot Workspace vs Cursor Composer Multi File Editing Comp](/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)
+- [Cursor AI Multi File Editing Feature How It Actually Works](/cursor-ai-multi-file-editing-feature-how-it-actually-works-explained/)
+- [Cursor Multi-File Edit Breaking Code Fix (2026)](/cursor-multi-file-edit-breaking-code-fix-2026/)
+- [How to Migrate Cursor Rules File](/migrate-cursor-rules-file-to-windsurf-rules-format-guide/)
+- [Windsurf AI Flows Feature How It Chains Multiple Editing Ste](/windsurf-ai-flows-feature-how-it-chains-multiple-editing-ste/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

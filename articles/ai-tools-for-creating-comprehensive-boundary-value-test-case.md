@@ -338,10 +338,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI for Creating Negative Test Cases](/ai-tools-compared/best-ai-for-creating--negative-test-cases-from-/)
-- [How to Use AI to Create Edge Case Test Scenarios from API Er](/ai-tools-compared/how-to-use-ai-to-create-edge-case-test-scenarios-from-api-er/)
-- [How to Use AI to Generate Timezone Edge Case Test Data](/ai-tools-compared/how-to-use-ai-to-generate-timezone-edge-case-test-data/)
-- [Copilot vs Claude Code for Writing Jest Test](/ai-tools-compared/copilot-vs-claude-code-for-writing--jest-test-s/)
-- [AI Tools for Creating Property-Based Test Cases](/ai-tools-compared/ai-tools-for-creating-property-based-test-cases-using-hypoth/)
+- [Best AI for Creating Negative Test Cases](/best-ai-for-creating--negative-test-cases-from-/)
+- [How to Use AI to Create Edge Case Test Scenarios from API Er](/how-to-use-ai-to-create-edge-case-test-scenarios-from-api-er/)
+- [How to Use AI to Generate Timezone Edge Case Test Data](/how-to-use-ai-to-generate-timezone-edge-case-test-data/)
+- [Copilot vs Claude Code for Writing Jest Test](/copilot-vs-claude-code-for-writing--jest-test-s/)
+- [AI Tools for Creating Property-Based Test Cases](/ai-tools-for-creating-property-based-test-cases-using-hypoth/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -327,9 +327,9 @@ Both tools perform well on notebooks under 300 lines. Above 500 lines, Claude ma
 
 ## Related Articles
 
-- [Gemini vs Claude for Summarizing Quarterly Earnings Call](/ai-tools-compared/gemini-vs-claude-for-summarizing-quarterly-earnings-call-tra/)
-- [Switching from Gemini Advanced to Claude Pro: What You](/ai-tools-compared/switching-from-gemini-advanced-to-claude-pro-what-you-lose/)
-- [Gemini vs Claude for Writing Apache Kafka Consumer Producer](/ai-tools-compared/gemini-vs-claude-for-writing-apache-kafka-consumer-producer-/)
-- [Gemini vs Claude for Multimodal Coding](/ai-tools-compared/gemini-vs-claude-multimodal-coding-tasks/)
-- [Gemini vs Claude for Analyzing Large CSV Datasets Over](/ai-tools-compared/gemini-vs-claude-for-analyzing-large-csv-datasets-over-100mb/)
+- [Gemini vs Claude for Summarizing Quarterly Earnings Call](/gemini-vs-claude-for-summarizing-quarterly-earnings-call-tra/)
+- [Switching from Gemini Advanced to Claude Pro: What You](/switching-from-gemini-advanced-to-claude-pro-what-you-lose/)
+- [Gemini vs Claude for Writing Apache Kafka Consumer Producer](/gemini-vs-claude-for-writing-apache-kafka-consumer-producer-/)
+- [Gemini vs Claude for Multimodal Coding](/gemini-vs-claude-multimodal-coding-tasks/)
+- [Gemini vs Claude for Analyzing Large CSV Datasets Over](/gemini-vs-claude-for-analyzing-large-csv-datasets-over-100mb/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

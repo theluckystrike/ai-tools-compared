@@ -298,10 +298,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Converting Figma Designs to Code 2026](/ai-tools-compared/articles/ai-tools-for-converting-figma-designs-to-code-2026/)
-- [How to Use Claude Artifacts](/ai-tools-compared/how-to-use-claude-artifacts-for-rapid-prototyping-react-components/)
-- [Best Budget AI Coding Assistant for Freelance Developers 202](/ai-tools-compared/best-budget-ai-coding-assistant-for-freelance-developers-202/)
-- [AI Tools for Converting Code Comments into Developer Facing](/ai-tools-compared/ai-tools-for-converting-code-comments-into-developer-facing-/)
-- [AI Tools for Converting Raw JSON API Responses into Clean](/ai-tools-compared/ai-tools-for-converting-raw-json-api-responses-into-clean-pandas-dataframes/)
+- [AI Tools for Converting Figma Designs to Code 2026](/articles/ai-tools-for-converting-figma-designs-to-code-2026/)
+- [How to Use Claude Artifacts](/how-to-use-claude-artifacts-for-rapid-prototyping-react-components/)
+- [Best Budget AI Coding Assistant for Freelance Developers 202](/best-budget-ai-coding-assistant-for-freelance-developers-202/)
+- [AI Tools for Converting Code Comments into Developer Facing](/ai-tools-for-converting-code-comments-into-developer-facing-/)
+- [AI Tools for Converting Raw JSON API Responses into Clean](/ai-tools-for-converting-raw-json-api-responses-into-clean-pandas-dataframes/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

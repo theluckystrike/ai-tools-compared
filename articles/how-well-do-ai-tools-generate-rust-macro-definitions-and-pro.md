@@ -299,11 +299,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How Well Do AI Tools Handle Rust Lifetime Elision Rules Corr](/ai-tools-compared/how-well-do-ai-tools-handle-rust-lifetime-elision-rules-corr/)
-- [How Well Do AI Tools Generate Correct Go Interface Implement](/ai-tools-compared/how-well-do-ai-tools-generate-correct-go-interface-implement/)
-- [AI Autocomplete for Test Files How Well Different Tools Pred](/ai-tools-compared/ai-autocomplete-for-test-files-how-well-different-tools-pred/)
-- [AI Tools for Creating dbt Model Definitions from Raw Databas](/ai-tools-compared/ai-tools-for-creating-dbt-model-definitions-from-raw-databas/)
-- [AI Tools for Writing gRPC Protobuf Definitions 2026](/ai-tools-compared/ai-tools-for-writing-grpc-protobuf-definitions-2026/)
+- [How Well Do AI Tools Handle Rust Lifetime Elision Rules Corr](/how-well-do-ai-tools-handle-rust-lifetime-elision-rules-corr/)
+- [How Well Do AI Tools Generate Correct Go Interface Implement](/how-well-do-ai-tools-generate-correct-go-interface-implement/)
+- [AI Autocomplete for Test Files How Well Different Tools Pred](/ai-autocomplete-for-test-files-how-well-different-tools-pred/)
+- [AI Tools for Creating dbt Model Definitions from Raw Databas](/ai-tools-for-creating-dbt-model-definitions-from-raw-databas/)
+- [AI Tools for Writing gRPC Protobuf Definitions 2026](/ai-tools-for-writing-grpc-protobuf-definitions-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -402,20 +402,20 @@ Regardless of which tool you use, apply these steps before any AI-generated ngin
 
 ## Related Reading
 
-- [Best AI Tools for Writing Nginx Configs](/ai-tools-compared/best-ai-tools-for-writing-nginx-configs-2026/)
-- [AI Tools for Generating Nginx and Caddy Reverse Proxy Configs](/ai-tools-compared/ai-tools-for-generating-nginx-and-caddy-reverse-proxy-config/)
-- [Best AI Tools for Writing GitHub Actions](/ai-tools-compared/ai-tools-for-writing-github-actions-guide/)
-- [AI Tools for Writing Nginx Configurations 2026](/ai-tools-compared/ai-tools-for-writing-nginx-configurations-2026/)
+- [Best AI Tools for Writing Nginx Configs](/best-ai-tools-for-writing-nginx-configs-2026/)
+- [AI Tools for Generating Nginx and Caddy Reverse Proxy Configs](/ai-tools-for-generating-nginx-and-caddy-reverse-proxy-config/)
+- [Best AI Tools for Writing GitHub Actions](/ai-tools-for-writing-github-actions-guide/)
+- [AI Tools for Writing Nginx Configurations 2026](/ai-tools-for-writing-nginx-configurations-2026/)
 
 ---
 
 ## Related Articles
 
-- [AI Tools for Generating Nginx Configuration Files 2026](/ai-tools-compared/ai-tools-for-generating-nginx-configuration-files-2026/)
-- [Best AI Tools for Writing Nginx Configs in 2026](/ai-tools-compared/best-ai-tools-for-writing-nginx-configs-2026/---)
-- [AI Tools for Writing Nginx Configurations 2026](/ai-tools-compared/ai-tools-for-writing-nginx-configurations-2026/)
-- [AI Tools for API Security Testing](/ai-tools-compared/ai-tools-for-api-security-testing/)
-- [Writing Custom Instructions for AI Tools That Enforce Your](/ai-tools-compared/writing-custom-instructions-for-ai-tools-that-enforce-your-security-header-standards/)
+- [AI Tools for Generating Nginx Configuration Files 2026](/ai-tools-for-generating-nginx-configuration-files-2026/)
+- [Best AI Tools for Writing Nginx Configs in 2026](/best-ai-tools-for-writing-nginx-configs-2026/---)
+- [AI Tools for Writing Nginx Configurations 2026](/ai-tools-for-writing-nginx-configurations-2026/)
+- [AI Tools for API Security Testing](/ai-tools-for-api-security-testing/)
+- [Writing Custom Instructions for AI Tools That Enforce Your](/writing-custom-instructions-for-ai-tools-that-enforce-your-security-header-standards/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

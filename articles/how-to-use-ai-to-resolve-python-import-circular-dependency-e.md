@@ -297,10 +297,10 @@ For packages, relative imports (e.g., `from . import utils`) make the dependency
 
 ## Related Articles
 
-- [Best AI Tools for Code Migration Python 2](/ai-tools-compared/best-ai-tools-for-code-migration-python-2-to-3-java-8-to-21-guide/)
-- [How to Use AI to Resolve NPM Peer Dependency Conflict](/ai-tools-compared/how-to-use-ai-to-resolve-npm-peer-dependency-conflict-errors/)
-- [AI Tools for Automated Dependency Analysis](/ai-tools-compared/ai-tools-for-automated-dependency-analysis)
-- [How to Use AI to Generate Terraform Import Blocks](/ai-tools-compared/how-to-use-ai-to-generate-terraform-import-blocks-for-existi/)
-- [Free AI Tools for Learning Python with Code Examples 2026](/ai-tools-compared/free-ai-tools-for-learning-python-with-code-examples-2026/)
+- [Best AI Tools for Code Migration Python 2](/best-ai-tools-for-code-migration-python-2-to-3-java-8-to-21-guide/)
+- [How to Use AI to Resolve NPM Peer Dependency Conflict](/how-to-use-ai-to-resolve-npm-peer-dependency-conflict-errors/)
+- [AI Tools for Automated Dependency Analysis](/ai-tools-for-automated-dependency-analysis)
+- [How to Use AI to Generate Terraform Import Blocks](/how-to-use-ai-to-generate-terraform-import-blocks-for-existi/)
+- [Free AI Tools for Learning Python with Code Examples 2026](/free-ai-tools-for-learning-python-with-code-examples-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

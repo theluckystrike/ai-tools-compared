@@ -409,20 +409,20 @@ When writing Pulumi TypeScript:
 
 ## Related Reading
 
-- [Best AI Assistants for Pulumi Infrastructure Code in TypeScript](/ai-tools-compared/best-ai-assistants-for-pulumi-infrastructure-code-in-typescr/)
-- [Claude vs GPT-4 Terraform Pulumi Infrastructure Code](/ai-tools-compared/claude-vs-gpt4-terraform-pulumi-infrastructure-code-2026/)
-- [Best AI Tools for Writing GitHub Actions Workflows](/ai-tools-compared/best-ai-tools-for-writing-github-actions-workflows-2026/)
-- [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-compared/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)
+- [Best AI Assistants for Pulumi Infrastructure Code in TypeScript](/best-ai-assistants-for-pulumi-infrastructure-code-in-typescr/)
+- [Claude vs GPT-4 Terraform Pulumi Infrastructure Code](/claude-vs-gpt4-terraform-pulumi-infrastructure-code-2026/)
+- [Best AI Tools for Writing GitHub Actions Workflows](/best-ai-tools-for-writing-github-actions-workflows-2026/)
+- [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)
 
 ---
 
 ## Related Articles
 
-- [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-compared/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)
-- [Best AI Tools for Writing AWS CDK Infrastructure Code](/ai-tools-compared/best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/)
-- [AI Tools for Writing AWS CDK Infrastructure 2026](/ai-tools-compared/ai-tools-for-writing-aws-cdk-infrastructure-2026/)
-- [Best AI Assistants for Pulumi Infrastructure Code](/ai-tools-compared/best-ai-assistants-for-pulumi-infrastructure-code-in-typescript-2026/)
-- [Best AI Tools for Go Microservice Development](/ai-tools-compared/best-ai-tools-for-go-microservice-development)
+- [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)
+- [Best AI Tools for Writing AWS CDK Infrastructure Code](/best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/)
+- [AI Tools for Writing AWS CDK Infrastructure 2026](/ai-tools-for-writing-aws-cdk-infrastructure-2026/)
+- [Best AI Assistants for Pulumi Infrastructure Code](/best-ai-assistants-for-pulumi-infrastructure-code-in-typescript-2026/)
+- [Best AI Tools for Go Microservice Development](/best-ai-tools-for-go-microservice-development)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

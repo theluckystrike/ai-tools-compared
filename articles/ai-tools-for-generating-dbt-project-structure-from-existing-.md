@@ -382,11 +382,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI Tools for Go Project Structure and Module](/ai-tools-compared/best-ai-tools-for-go-project-structure-and-module-organization/)
-- [Best Way to Structure CursorRules for Microservices Project](/ai-tools-compared/best-way-to-structure-cursorrules-for-microservices-project-/)
-- [How to Structure Project Files So AI Coding Tools Understand](/ai-tools-compared/how-to-structure-project-files-so-ai-coding-tools-understand/)
-- [Cheapest AI Tool for Generating an Entire Project](/ai-tools-compared/cheapest-ai-tool-for-generating-entire-project-from-description/)
-- [Cheapest AI Tool for Generating Entire Project](/ai-tools-compared/cheapest-ai-tool-for-generating-entire-project-from-description/)
+- [Best AI Tools for Go Project Structure and Module](/best-ai-tools-for-go-project-structure-and-module-organization/)
+- [Best Way to Structure CursorRules for Microservices Project](/best-way-to-structure-cursorrules-for-microservices-project-/)
+- [How to Structure Project Files So AI Coding Tools Understand](/how-to-structure-project-files-so-ai-coding-tools-understand/)
+- [Cheapest AI Tool for Generating an Entire Project](/cheapest-ai-tool-for-generating-entire-project-from-description/)
+- [Cheapest AI Tool for Generating Entire Project](/cheapest-ai-tool-for-generating-entire-project-from-description/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

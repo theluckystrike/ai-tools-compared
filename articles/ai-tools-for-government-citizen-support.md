@@ -325,11 +325,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Education Student Support](/ai-tools-compared/ai-tools-for-education-student-support/)
-- [AI Tools for Multilingual Customer Support](/ai-tools-compared/ai-tools-for-multilingual-customer-support/)
-- [AI Tools for Self Service Support Portals: Practical Guide](/ai-tools-compared/ai-tools-for-self-service-support-portals/)
-- [AI Tools for Subscription Management Support](/ai-tools-compared/ai-tools-for-subscription-management-support/)
-- [AI Tools for Support Quality Assurance](/ai-tools-compared/ai-tools-for-support-quality-assurance/)
+- [AI Tools for Education Student Support](/ai-tools-for-education-student-support/)
+- [AI Tools for Multilingual Customer Support](/ai-tools-for-multilingual-customer-support/)
+- [AI Tools for Self Service Support Portals: Practical Guide](/ai-tools-for-self-service-support-portals/)
+- [AI Tools for Subscription Management Support](/ai-tools-for-subscription-management-support/)
+- [AI Tools for Support Quality Assurance](/ai-tools-for-support-quality-assurance/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

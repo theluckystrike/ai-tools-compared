@@ -372,20 +372,20 @@ Claude's advantage is explaining *why* a query is slow in plain language — use
 
 ## Related Reading
 
-- [Best AI Tools for SQL Query Optimization](/ai-tools-compared/best-ai-tools-for-sql-query-optimization-and-database-performance/)
-- [How to Use AI for Log Anomaly Detection](/ai-tools-compared/how-to-use-ai-for-log-anomaly-detection/)
-- [AI Tools for Automated Schema Validation](/ai-tools-compared/ai-tools-for-automated-schema-validation/)
-- [AI-Powered Database Migration Tools Comparison 2026](/ai-tools-compared/ai-powered-database-migration-tools-comparison/)
+- [Best AI Tools for SQL Query Optimization](/best-ai-tools-for-sql-query-optimization-and-database-performance/)
+- [How to Use AI for Log Anomaly Detection](/how-to-use-ai-for-log-anomaly-detection/)
+- [AI Tools for Automated Schema Validation](/ai-tools-for-automated-schema-validation/)
+- [AI-Powered Database Migration Tools Comparison 2026](/ai-powered-database-migration-tools-comparison/)
 
 ---
 
 ## Related Articles
 
-- [AI Tools for Database Performance Optimization Query](/ai-tools-compared/ai-tools-for-database-performance-optimization-query-analysis/)
-- [AI-Powered Database Query Optimization Tools 2026](/ai-tools-compared/ai-powered-database-query-optimization-tools/)
-- [Best AI for Writing SQL Performance Tuning Recommendations](/ai-tools-compared/best-ai-for-writing-sql-performance-tuning-recommendations-f/)
-- [Best AI Tools for SQL Query Optimization and Database](/ai-tools-compared/best-ai-tools-for-sql-query-optimization-and-database-performance/)
-- [AI Tools for Automated Performance Profiling](/ai-tools-compared/ai-tools-automated-performance-profiling/)
+- [AI Tools for Database Performance Optimization Query](/ai-tools-for-database-performance-optimization-query-analysis/)
+- [AI-Powered Database Query Optimization Tools 2026](/ai-powered-database-query-optimization-tools/)
+- [Best AI for Writing SQL Performance Tuning Recommendations](/best-ai-for-writing-sql-performance-tuning-recommendations-f/)
+- [Best AI Tools for SQL Query Optimization and Database](/best-ai-tools-for-sql-query-optimization-and-database-performance/)
+- [AI Tools for Automated Performance Profiling](/ai-tools-automated-performance-profiling/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

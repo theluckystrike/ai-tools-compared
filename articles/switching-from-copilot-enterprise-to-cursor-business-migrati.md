@@ -266,10 +266,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Copilot Business vs Cursor Business Per Developer Cost](/ai-tools-compared/copilot-business-vs-cursor-business-per-developer-cost-comparison/)
-- [Switching from Copilot Ghost Text to Cursor Tab Autocomplete](/ai-tools-compared/switching-from-copilot-ghost-text-to-cursor-tab-autocomplete/)
-- [Copilot Business Org-Wide Enable: Cost If Not All Devs Use](/ai-tools-compared/copilot-business-org-wide-enable-cost-if-not-all-devs-use-it/)
-- [Cursor Business Seat Minimum and Onboarding Costs Breakdown](/ai-tools-compared/cursor-business-seat-minimum-and-onboarding-costs-breakdown-/)
-- [Copilot Enterprise License Not Assigned Fix](/ai-tools-compared/copilot-enterprise-license-not-assigned-fix/)
+- [Copilot Business vs Cursor Business Per Developer Cost](/copilot-business-vs-cursor-business-per-developer-cost-comparison/)
+- [Switching from Copilot Ghost Text to Cursor Tab Autocomplete](/switching-from-copilot-ghost-text-to-cursor-tab-autocomplete/)
+- [Copilot Business Org-Wide Enable: Cost If Not All Devs Use](/copilot-business-org-wide-enable-cost-if-not-all-devs-use-it/)
+- [Cursor Business Seat Minimum and Onboarding Costs Breakdown](/cursor-business-seat-minimum-and-onboarding-costs-breakdown-/)
+- [Copilot Enterprise License Not Assigned Fix](/copilot-enterprise-license-not-assigned-fix/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

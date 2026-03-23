@@ -331,10 +331,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [AI Tools for Debugging Flaky Cypress Tests Caused by Timing](/ai-tools-compared/ai-tools-for-debugging-flaky-cypress-tests-caused-by-timing-issues/)
-- [How to Use AI to Generate Jest Integration Tests for Express](/ai-tools-compared/how-to-use-ai-to-generate-jest-integration-tests-for-express/)
-- [Claude Code Profiler Integration Guide](/ai-tools-compared/claude-code-profiler-integration-guide/)
-- [Cursor Git Integration Broken How to Fix](/ai-tools-compared/cursor-git-integration-broken-how-to-fix/)
-- [Effective Workflow for Using AI](/ai-tools-compared/effective-workflow-for-using-ai-to-debug-production-issues-from-logs/)
+- [AI Tools for Debugging Flaky Cypress Tests Caused by Timing](/ai-tools-for-debugging-flaky-cypress-tests-caused-by-timing-issues/)
+- [How to Use AI to Generate Jest Integration Tests for Express](/how-to-use-ai-to-generate-jest-integration-tests-for-express/)
+- [Claude Code Profiler Integration Guide](/claude-code-profiler-integration-guide/)
+- [Cursor Git Integration Broken How to Fix](/cursor-git-integration-broken-how-to-fix/)
+- [Effective Workflow for Using AI](/effective-workflow-for-using-ai-to-debug-production-issues-from-logs/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

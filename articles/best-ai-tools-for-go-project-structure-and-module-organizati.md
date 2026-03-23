@@ -301,11 +301,11 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [AI Tools for Generating dbt Project Structure from Existing](/ai-tools-compared/ai-tools-for-generating-dbt-project-structure-from-existing-/)
-- [Best Way to Structure CursorRules for Microservices Project](/ai-tools-compared/best-way-to-structure-cursorrules-for-microservices-project-/)
-- [How to Structure Project Files So AI Coding Tools Understand](/ai-tools-compared/how-to-structure-project-files-so-ai-coding-tools-understand/)
-- [AI Tools for Resolving Yarn Berry PnP Module Resolution Erro](/ai-tools-compared/ai-tools-for-resolving-yarn-berry-pnp-module-resolution-erro/)
-- [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
+- [AI Tools for Generating dbt Project Structure from Existing](/ai-tools-for-generating-dbt-project-structure-from-existing-/)
+- [Best Way to Structure CursorRules for Microservices Project](/best-way-to-structure-cursorrules-for-microservices-project-/)
+- [How to Structure Project Files So AI Coding Tools Understand](/how-to-structure-project-files-so-ai-coding-tools-understand/)
+- [AI Tools for Resolving Yarn Berry PnP Module Resolution Erro](/ai-tools-for-resolving-yarn-berry-pnp-module-resolution-erro/)
+- [Claude Code Go Module Development Guide](/claude-code-go-module-development-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

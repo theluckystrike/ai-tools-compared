@@ -384,11 +384,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI Assistants for Writing CircleCI and GitLab CI](/ai-tools-compared/best-ai-assistants-for-writing-circleci-and-gitlab-ci-pipeli/)
-- [Best AI IDE Features for Writing Configuration Files YAML](/ai-tools-compared/best-ai-ide-features-for-writing-configuration-files-yaml-json-toml/)
-- [Which AI Is Better for Writing gRPC Protobuf Service](/ai-tools-compared/which-ai-is-better-for-writing-grpc-protobuf-service-definitions/)
-- [Which AI Is Better for Writing Playwright End-to-End Tests](/ai-tools-compared/which-ai-is-better-for-writing-playwright-end-to-end-tests-2/)
-- [AI Tools for Generating Nginx and Caddy Reverse Proxy Config](/ai-tools-compared/ai-tools-for-generating-nginx-and-caddy-reverse-proxy-config/)
+- [Best AI Assistants for Writing CircleCI and GitLab CI](/best-ai-assistants-for-writing-circleci-and-gitlab-ci-pipeli/)
+- [Best AI IDE Features for Writing Configuration Files YAML](/best-ai-ide-features-for-writing-configuration-files-yaml-json-toml/)
+- [Which AI Is Better for Writing gRPC Protobuf Service](/which-ai-is-better-for-writing-grpc-protobuf-service-definitions/)
+- [Which AI Is Better for Writing Playwright End-to-End Tests](/which-ai-is-better-for-writing-playwright-end-to-end-tests-2/)
+- [AI Tools for Generating Nginx and Caddy Reverse Proxy Config](/ai-tools-for-generating-nginx-and-caddy-reverse-proxy-config/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -313,11 +313,11 @@ Notion AI uses temperature sampling, so outputs vary. Use specific, constrained 
 
 ## Related Articles
 
-- [ChatGPT Image Upload Not Working Fix (2026)](/ai-tools-compared/chatgpt-image-upload-not-working-fix-2026/)
-- [Grammarly AI Not Working in Browser Fix (2026)](/ai-tools-compared/grammarly-ai-not-working-in-browser-fix-2026/)
-- [Perplexity Pro Search Not Working Fix (2026)](/ai-tools-compared/perplexity-pro-search-not-working-fix-2026/)
-- [AI Code Suggestion Quality When Working With Environment Var](/ai-tools-compared/ai-code-suggestion-quality-when-working-with-environment-var/)
-- [Cursor Free Tier Limitations: What Stops Working After Trial](/ai-tools-compared/cursor-free-tier-limitations-what-stops-working-after-trial/)
+- [ChatGPT Image Upload Not Working Fix (2026)](/chatgpt-image-upload-not-working-fix-2026/)
+- [Grammarly AI Not Working in Browser Fix (2026)](/grammarly-ai-not-working-in-browser-fix-2026/)
+- [Perplexity Pro Search Not Working Fix (2026)](/perplexity-pro-search-not-working-fix-2026/)
+- [AI Code Suggestion Quality When Working With Environment Var](/ai-code-suggestion-quality-when-working-with-environment-var/)
+- [Cursor Free Tier Limitations: What Stops Working After Trial](/cursor-free-tier-limitations-what-stops-working-after-trial/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

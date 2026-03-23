@@ -326,10 +326,10 @@ Use **Cursor Composer** when:
 
 ## Related Articles
 
-- [Claude Code vs Cursor for Large Codebase Refactoring](/ai-tools-compared/claude-code-vs-cursor-for-large-codebase-refactoring/)
-- [Claude Code vs Cursor Composer](/ai-tools-compared/claude-code-vs-cursor-composer-for-full-stack-development-comparison/)
-- [Claude Code Losing Context Across Sessions](/ai-tools-compared/claude-code-losing-context-across-sessions-fix/)
-- [Claude Code vs Cursor for Backend Development](/ai-tools-compared/claude-code-vs-cursor-for-backend-development/)
-- [AI Pair Programming Tools Comparison 2026: Claude Code](/ai-tools-compared/ai-pair-programming-tools-comparison-2026/)
+- [Claude Code vs Cursor for Large Codebase Refactoring](/claude-code-vs-cursor-for-large-codebase-refactoring/)
+- [Claude Code vs Cursor Composer](/claude-code-vs-cursor-composer-for-full-stack-development-comparison/)
+- [Claude Code Losing Context Across Sessions](/claude-code-losing-context-across-sessions-fix/)
+- [Claude Code vs Cursor for Backend Development](/claude-code-vs-cursor-for-backend-development/)
+- [AI Pair Programming Tools Comparison 2026: Claude Code](/ai-pair-programming-tools-comparison-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

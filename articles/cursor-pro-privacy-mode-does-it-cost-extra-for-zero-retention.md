@@ -253,10 +253,10 @@ Policies vary widely. Some tools let you access your data for a grace period aft
 
 ## Related Articles
 
-- [Cursor AI Privacy Mode How to Use AI Features](/ai-tools-compared/cursor-ai-privacy-mode-how-to-use-ai-features-without-sendin/)
-- [Copilot Individual vs Cursor Pro Annual Cost Breakdown 2026](/ai-tools-compared/copilot-individual-vs-cursor-pro-annual-cost-breakdown-2026/)
-- [How Much Does Cursor AI Actually Cost Per Month All](/ai-tools-compared/how-much-does-cursor-ai-actually-cost-per-month-all-plans/)
-- [Windsurf Pro vs Cursor Pro: Price and Features Compared 2026](/ai-tools-compared/windsurf-pro-vs-cursor-pro-price-and-features-compared-2026/)
-- [Does Cursor Pro Charge Extra for Large File Indexing in 2026](/ai-tools-compared/does-cursor-pro-charge-extra-for-large-file-indexing-2026/)
+- [Cursor AI Privacy Mode How to Use AI Features](/cursor-ai-privacy-mode-how-to-use-ai-features-without-sendin/)
+- [Copilot Individual vs Cursor Pro Annual Cost Breakdown 2026](/copilot-individual-vs-cursor-pro-annual-cost-breakdown-2026/)
+- [How Much Does Cursor AI Actually Cost Per Month All](/how-much-does-cursor-ai-actually-cost-per-month-all-plans/)
+- [Windsurf Pro vs Cursor Pro: Price and Features Compared 2026](/windsurf-pro-vs-cursor-pro-price-and-features-compared-2026/)
+- [Does Cursor Pro Charge Extra for Large File Indexing in 2026](/does-cursor-pro-charge-extra-for-large-file-indexing-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

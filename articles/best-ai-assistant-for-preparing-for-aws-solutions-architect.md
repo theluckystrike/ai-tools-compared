@@ -294,10 +294,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best Air Gapped AI Code Completion Solutions for Offline Dev](/ai-tools-compared/best-air-gapped-ai-code-completion-solutions-for-offline-dev/)
-- [AI Assistants for Writing Correct AWS IAM Policies](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
-- [AI Tools for Writing pytest Tests with Moto Library for AWS](/ai-tools-compared/ai-tools-for-writing-pytest-tests-with-moto-library-for-aws-/)
-- [Best AI Assistants for AWS CloudFormation Template](/ai-tools-compared/best-ai-assistants-for-aws-cloudformation-template-generatio/)
-- [Best AI Tools for Cloud Cost Optimization Across AWS Azure G](/ai-tools-compared/best-ai-tools-for-cloud-cost-optimization-across-aws-azure-g/)
+- [Best Air Gapped AI Code Completion Solutions for Offline Dev](/best-air-gapped-ai-code-completion-solutions-for-offline-dev/)
+- [AI Assistants for Writing Correct AWS IAM Policies](/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
+- [AI Tools for Writing pytest Tests with Moto Library for AWS](/ai-tools-for-writing-pytest-tests-with-moto-library-for-aws-/)
+- [Best AI Assistants for AWS CloudFormation Template](/best-ai-assistants-for-aws-cloudformation-template-generatio/)
+- [Best AI Tools for Cloud Cost Optimization Across AWS Azure G](/best-ai-tools-for-cloud-cost-optimization-across-aws-azure-g/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

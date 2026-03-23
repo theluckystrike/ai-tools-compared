@@ -332,11 +332,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Move ChatGPT Team Workspace Data to Claude Team](/ai-tools-compared/how-to-move-chatgpt-team-workspace-data-to-claude-team/)
-- [Switching from Gemini Advanced to Claude Pro: What You Lose](/ai-tools-compared/switching-from-gemini-advanced-to-claude-pro-what-you-lose/)
-- [Export Perplexity Collections Before Switching to ChatGPT Se](/ai-tools-compared/export-perplexity-collections-before-switching-to-chatgpt-se/)
-- [How to Export Grammarly Personal Dictionary Before Switching](/ai-tools-compared/how-to-export-grammarly-personal-dictionary-before-switching/)
-- [Switching from ChatGPT Voice to Gemini Live Conversation](/ai-tools-compared/switching-from-chatgpt-voice-to-gemini-live-conversation-differences/)
-- [Best Hot Desking Software for Hybrid Offices with Under 100](https://theluckystrike.github.io/remote-work-tools/best-hot-desking-software-for-hybrid-offices-with-under-100-employees-2026/)
+- [How to Move ChatGPT Team Workspace Data to Claude Team](/how-to-move-chatgpt-team-workspace-data-to-claude-team/)
+- [Switching from Gemini Advanced to Claude Pro: What You Lose](/switching-from-gemini-advanced-to-claude-pro-what-you-lose/)
+- [Export Perplexity Collections Before Switching to ChatGPT Se](/export-perplexity-collections-before-switching-to-chatgpt-se/)
+- [How to Export Grammarly Personal Dictionary Before Switching](/how-to-export-grammarly-personal-dictionary-before-switching/)
+- [Switching from ChatGPT Voice to Gemini Live Conversation](/switching-from-chatgpt-voice-to-gemini-live-conversation-differences/)
+- [Best Hot Desking Software for Hybrid Offices with Under 100](https://welikeremotestack.com/best-hot-desking-software-for-hybrid-offices-with-under-100-employees-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

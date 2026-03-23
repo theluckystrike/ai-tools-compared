@@ -409,11 +409,11 @@ Self-hosting code generation at scale introduces security concerns:
 
 ## Related Articles
 
-- [Best Local LLM Options for Code Generation 2026](/ai-tools-compared/best-local-llm-options-for-code-generation-2026/)
-- [Claude Code API Client TypeScript Guide: Build Type-Safe](/ai-tools-compared/claude-code-api-client-typescript-guide/)
-- [AI Code Generation Quality for JavaScript Async Await Patter](/ai-tools-compared/ai-code-generation-quality-for-javascript-async-await-patter/)
-- [Copilot vs Codeium for JavaScript Framework-Specific Code](/ai-tools-compared/copilot-vs-codeium-for-javascript-framework-specific-code-ge/)
-- [Best Practices for Combining AI Code Generation](/ai-tools-compared/best-practices-for-combining-ai-code-generation-with-manual-code-review/)
+- [Best Local LLM Options for Code Generation 2026](/best-local-llm-options-for-code-generation-2026/)
+- [Claude Code API Client TypeScript Guide: Build Type-Safe](/claude-code-api-client-typescript-guide/)
+- [AI Code Generation Quality for JavaScript Async Await Patter](/ai-code-generation-quality-for-javascript-async-await-patter/)
+- [Copilot vs Codeium for JavaScript Framework-Specific Code](/copilot-vs-codeium-for-javascript-framework-specific-code-ge/)
+- [Best Practices for Combining AI Code Generation](/best-practices-for-combining-ai-code-generation-with-manual-code-review/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

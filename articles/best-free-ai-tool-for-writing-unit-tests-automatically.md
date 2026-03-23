@@ -427,10 +427,10 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Best AI Tools for Writing Unit Tests Comparison 2026.](/ai-tools-compared/best-ai-tools-for-writing-unit-tests-comparison-2026/)
-- [Best AI Tools for Generating Unit Tests 2026](/ai-tools-compared/ai-tools-for-generating-unit-tests-2026/)
-- [Best AI Tools for Generating Unit Tests](/ai-tools-compared/best-ai-tools-for-generating-unit-tests-from-legacy-code-comparison/)
-- [Best AI Tools for Generating Unit Tests — From](/ai-tools-compared/best-ai-tools-for-generating-unit-tests-from-legacy-code-without-tests/)
-- [Copilot Not Suggesting Imports Automatically Fix](/ai-tools-compared/copilot-not-suggesting-imports-automatically-fix/)
+- [Best AI Tools for Writing Unit Tests Comparison 2026.](/best-ai-tools-for-writing-unit-tests-comparison-2026/)
+- [Best AI Tools for Generating Unit Tests 2026](/ai-tools-for-generating-unit-tests-2026/)
+- [Best AI Tools for Generating Unit Tests](/best-ai-tools-for-generating-unit-tests-from-legacy-code-comparison/)
+- [Best AI Tools for Generating Unit Tests — From](/best-ai-tools-for-generating-unit-tests-from-legacy-code-without-tests/)
+- [Copilot Not Suggesting Imports Automatically Fix](/copilot-not-suggesting-imports-automatically-fix/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

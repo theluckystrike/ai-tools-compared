@@ -284,10 +284,10 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [How to Use Copilot Agent Mode for Multi-Step Coding Tasks](/ai-tools-compared/how-to-use-copilot-agent-mode-for-multi-step-coding-tasks-20/)
-- [Best Practices for AI Coding Tool Project Configuration](/ai-tools-compared/best-practices-for-ai-coding-tool-project-configuration-in-l/)
-- [Best Practices for AI Coding Tools](/ai-tools-compared/best-practices-for-ai-coding-tools-in-sox-compliant-financial-environments/)
-- [Best Practices for Keeping AI Coding Suggestions Aligned](/ai-tools-compared/best-practices-for-keeping-ai-coding-suggestions-aligned-with-design-patterns/)
-- [Best Practices for Using AI Coding Tools in HIPAA Regulated](/ai-tools-compared/best-practices-for-using-ai-coding-tools-in-hipaa-regulated-/)
+- [How to Use Copilot Agent Mode for Multi-Step Coding Tasks](/how-to-use-copilot-agent-mode-for-multi-step-coding-tasks-20/)
+- [Best Practices for AI Coding Tool Project Configuration](/best-practices-for-ai-coding-tool-project-configuration-in-l/)
+- [Best Practices for AI Coding Tools](/best-practices-for-ai-coding-tools-in-sox-compliant-financial-environments/)
+- [Best Practices for Keeping AI Coding Suggestions Aligned](/best-practices-for-keeping-ai-coding-suggestions-aligned-with-design-patterns/)
+- [Best Practices for Using AI Coding Tools in HIPAA Regulated](/best-practices-for-using-ai-coding-tools-in-hipaa-regulated-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -454,7 +454,7 @@ rules:
 - [Copilot Workspace vs Cursor Composer Multi File Editing](/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)
 - [Cursor Composer Stuck in Loop: How](/cursor-composer-stuck-in-loop-how-to-fix/)
 - [Cursor Multi-File Edit Breaking Code Fix (2026)](/cursor-multi-file-edit-breaking-code-fix-2026/)
-- [Cursor Tab Accepting Wrong Suggestion](/ai-tools-compared/cursor-tab-accepting-wrong-suggestion-fix/)
+- [Cursor Tab Accepting Wrong Suggestion](/cursor-tab-accepting-wrong-suggestion-fix/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

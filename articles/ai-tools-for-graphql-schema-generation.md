@@ -407,9 +407,9 @@ AI-generated schemas often create relationships that trigger N+1 queries. Use Da
 
 ## Related Reading
 
-- [AI Coding Assistants for TypeScript GraphQL Resolver and Schema](/ai-tools-compared/ai-coding-assistants-for-typescript-graphql-resolver-and-schema-generation-2026/)
-- [AI Tools for API Documentation from Code 2026](/ai-tools-compared/ai-tools-for-api-documentation-from-code-2026/)
-- [Prompt Engineering Patterns for Code Generation](/ai-tools-compared/prompt-engineering-patterns-for-code-generation/)
+- [AI Coding Assistants for TypeScript GraphQL Resolver and Schema](/ai-coding-assistants-for-typescript-graphql-resolver-and-schema-generation-2026/)
+- [AI Tools for API Documentation from Code 2026](/ai-tools-for-api-documentation-from-code-2026/)
+- [Prompt Engineering Patterns for Code Generation](/prompt-engineering-patterns-for-code-generation/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

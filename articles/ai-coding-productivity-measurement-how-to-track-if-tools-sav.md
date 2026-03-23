@@ -322,10 +322,10 @@ Yes. Git commit timestamps, PR open/close times, and CI pass rates are all progr
 
 ## Related Articles
 
-- [AI Coding Productivity Tips for Senior Developers Switching](/ai-tools-compared/ai-coding-productivity-tips-for-senior-developers-switching-/)
-- [AI Coding Assistant Accuracy for Typescript Next Js Server C](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
-- [AI Coding Assistant Accuracy for TypeScript Svelte Component](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-svelte-component/)
-- [AI Coding Assistant Comparison for React Component](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
-- [AI Coding Assistant Comparison for Typescript monorepo](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-monorepo-with-turborepo-setup/)
+- [AI Coding Productivity Tips for Senior Developers Switching](/ai-coding-productivity-tips-for-senior-developers-switching-/)
+- [AI Coding Assistant Accuracy for Typescript Next Js Server C](/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
+- [AI Coding Assistant Accuracy for TypeScript Svelte Component](/ai-coding-assistant-accuracy-for-typescript-svelte-component/)
+- [AI Coding Assistant Comparison for React Component](/ai-coding-assistant-comparison-for-react-component-generatio/)
+- [AI Coding Assistant Comparison for Typescript monorepo](/ai-coding-assistant-comparison-for-typescript-monorepo-with-turborepo-setup/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

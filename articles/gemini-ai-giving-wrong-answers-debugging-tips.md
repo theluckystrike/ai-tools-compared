@@ -273,11 +273,11 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 
 ## Related Articles
 
-- [Gemini in Google Docs Not Showing Up? Fixes for 2026](/ai-tools-compared/gemini-in-google-docs-not-showing-up-fix-2026/)
-- [AI Tools for Debugging Postgres Query Planner Choosing Wrong](/ai-tools-compared/ai-tools-for-debugging-postgres-query-planner-choosing-wrong/)
-- [AI Coding Productivity Tips for Senior Developers Switching](/ai-tools-compared/ai-coding-productivity-tips-for-senior-developers-switching-/)
-- [Claude Giving Outdated Information? How to Fix This](/ai-tools-compared/claude-giving-outdated-information-how-to-fix/)
-- [ChatGPT Code Interpreter Not Running Python: Fixes and Fix](/ai-tools-compared/chatgpt-code-interpreter-not-running-python-fix/)
+- [Gemini in Google Docs Not Showing Up? Fixes for 2026](/gemini-in-google-docs-not-showing-up-fix-2026/)
+- [AI Tools for Debugging Postgres Query Planner Choosing Wrong](/ai-tools-for-debugging-postgres-query-planner-choosing-wrong/)
+- [AI Coding Productivity Tips for Senior Developers Switching](/ai-coding-productivity-tips-for-senior-developers-switching-/)
+- [Claude Giving Outdated Information? How to Fix This](/claude-giving-outdated-information-how-to-fix/)
+- [ChatGPT Code Interpreter Not Running Python: Fixes and Fix](/chatgpt-code-interpreter-not-running-python-fix/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```

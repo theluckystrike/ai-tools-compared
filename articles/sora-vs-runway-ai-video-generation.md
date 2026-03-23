@@ -399,10 +399,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Runway ML vs Pika AI: Video Generation Tools Compared](/ai-tools-compared/runway-ml-vs-pika-ai-video-generation/)
-- [Runway ML vs Pika Labs: AI Video Generation Comparison 2026](/ai-tools-compared/runway-ml-vs-pika-labs-ai-video-comparison-2026/)
-- [Kling AI vs Gen 3 Video Generation: Developer Comparison](/ai-tools-compared/kling-ai-vs-gen-3-video-generation/)
-- [AI Tools for Video Thumbnail Generation](/ai-tools-compared/ai-tools-for-video-thumbnail-generation/)
-- [Best AI Tools for Video Game Trailers](/ai-tools-compared/best-ai-tools-for-video-game-trailers/)
+- [Runway ML vs Pika AI: Video Generation Tools Compared](/runway-ml-vs-pika-ai-video-generation/)
+- [Runway ML vs Pika Labs: AI Video Generation Comparison 2026](/runway-ml-vs-pika-labs-ai-video-comparison-2026/)
+- [Kling AI vs Gen 3 Video Generation: Developer Comparison](/kling-ai-vs-gen-3-video-generation/)
+- [AI Tools for Video Thumbnail Generation](/ai-tools-for-video-thumbnail-generation/)
+- [Best AI Tools for Video Game Trailers](/best-ai-tools-for-video-game-trailers/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

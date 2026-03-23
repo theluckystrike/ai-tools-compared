@@ -300,10 +300,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Create Custom System Prompts for AI That Match Your](/ai-tools-compared/how-to-create-custom-system-prompts-for-ai-that-match-your-d/)
-- [How to Set Up Model Context Protocol Server for Custom Proje](/ai-tools-compared/how-to-set-up-model-context-protocol-server-for-custom-proje/)
-- [ChatGPT Custom GPT Not Following Instructions](/ai-tools-compared/chatgpt-custom-gpt-not-following-instructions/)
-- [How to Create Custom Instructions for AI Coding Tools That E](/ai-tools-compared/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
-- [How to Create Custom Instructions for AI Tools to Generate](/ai-tools-compared/how-to-create-custom-instructions-for-ai-tools-to-generate-y/)
+- [How to Create Custom System Prompts for AI That Match Your](/how-to-create-custom-system-prompts-for-ai-that-match-your-d/)
+- [How to Set Up Model Context Protocol Server for Custom Proje](/how-to-set-up-model-context-protocol-server-for-custom-proje/)
+- [ChatGPT Custom GPT Not Following Instructions](/chatgpt-custom-gpt-not-following-instructions/)
+- [How to Create Custom Instructions for AI Coding Tools That E](/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
+- [How to Create Custom Instructions for AI Tools to Generate](/how-to-create-custom-instructions-for-ai-tools-to-generate-y/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

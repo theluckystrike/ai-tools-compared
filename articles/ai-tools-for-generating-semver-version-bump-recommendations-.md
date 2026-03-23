@@ -317,10 +317,10 @@ Consider these factors when selecting a tool:
 
 ## Related Articles
 
-- [How Accurate Are AI Tools at Generating Rust Crossbeam](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
-- [AI Coding Tools for Automating Changelog Generation from](/ai-tools-compared/ai-coding-tools-for-automating-changelog-generation-from-con/)
-- [AI Tools for Creating Automated Release Changelog](/ai-tools-compared/ai-tools-for-creating-automated-release-changelog-from-conve/)
-- [AI Tools for Generating Dependency Update Pull Request](/ai-tools-compared/ai-tools-for-generating-dependency-update-pull-request-descr/)
-- [AI Tools for Generating Grafana Dashboards from Metrics](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
+- [How Accurate Are AI Tools at Generating Rust Crossbeam](/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
+- [AI Coding Tools for Automating Changelog Generation from](/ai-coding-tools-for-automating-changelog-generation-from-con/)
+- [AI Tools for Creating Automated Release Changelog](/ai-tools-for-creating-automated-release-changelog-from-conve/)
+- [AI Tools for Generating Dependency Update Pull Request](/ai-tools-for-generating-dependency-update-pull-request-descr/)
+- [AI Tools for Generating Grafana Dashboards from Metrics](/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

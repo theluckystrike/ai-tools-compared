@@ -473,10 +473,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [AI Tools for Automated Dependency Analysis](/ai-tools-compared/ai-tools-for-automated-dependency-analysis)
-- [How to Use AI to Resolve Python Import Circular Dependency](/ai-tools-compared/how-to-use-ai-to-resolve-python-import-circular-dependency-e/)
-- [AI Tools for Generating Pull Request Merge Conflict](/ai-tools-compared/ai-tools-for-generating-pull-request-merge-conflict-resoluti/)
-- [AI Tools for Generating Dependency Update Pull Request](/ai-tools-compared/ai-tools-for-generating-dependency-update-pull-request-descr/)
-- [How to Use AI for Cloud Migration Planning and Dependency](/ai-tools-compared/how-to-use-ai-for-cloud-migration-planning-and-dependency-ma/)
+- [AI Tools for Automated Dependency Analysis](/ai-tools-for-automated-dependency-analysis)
+- [How to Use AI to Resolve Python Import Circular Dependency](/how-to-use-ai-to-resolve-python-import-circular-dependency-e/)
+- [AI Tools for Generating Pull Request Merge Conflict](/ai-tools-for-generating-pull-request-merge-conflict-resoluti/)
+- [AI Tools for Generating Dependency Update Pull Request](/ai-tools-for-generating-dependency-update-pull-request-descr/)
+- [How to Use AI for Cloud Migration Planning and Dependency](/how-to-use-ai-for-cloud-migration-planning-and-dependency-ma/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

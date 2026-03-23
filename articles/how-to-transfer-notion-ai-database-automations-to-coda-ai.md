@@ -329,10 +329,10 @@ Coda's AI formula layer uses Coda's own AI infrastructure, which abstracts the u
 
 ## Related Articles
 
-- [How to Transfer Notion AI Workflows to Claude Projects 2026](/ai-tools-compared/how-to-transfer-notion-ai-workflows-to-claude-projects-2026/)
-- [Notion AI Not Working as Expected Fix (2026)](/ai-tools-compared/notion-ai-not-working-as-expected-fix-2026/)
-- [Notion AI vs ChatGPT for Content Creation Compared](/ai-tools-compared/notion-ai-vs-chatgpt-for-content-creation-compared/)
-- [Notion AI vs Google Docs AI: Complete Writing Features](/ai-tools-compared/notion-ai-writing-features-vs-google-docs-ai-compared/)
-- [How to Set Up Model Context Protocol with Local Database](/ai-tools-compared/how-to-set-up-model-context-protocol-with-local-database-schema-information-2026/)
+- [How to Transfer Notion AI Workflows to Claude Projects 2026](/how-to-transfer-notion-ai-workflows-to-claude-projects-2026/)
+- [Notion AI Not Working as Expected Fix (2026)](/notion-ai-not-working-as-expected-fix-2026/)
+- [Notion AI vs ChatGPT for Content Creation Compared](/notion-ai-vs-chatgpt-for-content-creation-compared/)
+- [Notion AI vs Google Docs AI: Complete Writing Features](/notion-ai-writing-features-vs-google-docs-ai-compared/)
+- [How to Set Up Model Context Protocol with Local Database](/how-to-set-up-model-context-protocol-with-local-database-schema-information-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

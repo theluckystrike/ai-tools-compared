@@ -259,11 +259,11 @@ No. Each conversation starts with a fresh sandbox. Code, variables, and uploaded
 
 ## Related Reading
 
-- [Claude Code vs ChatGPT Code Interpreter Comparison](/ai-tools-compared/claude-code-vs-chatgpt-code-interpreter-comparison/)
-- [Gemini in Google Docs Not Showing Up? Fixes for 2026](/ai-tools-compared/gemini-in-google-docs-not-showing-up-fix-2026/)
-- [Running Starcoder2 Locally for Code Completion Without](/ai-tools-compared/running-starcoder2-locally-for-code-completion-without-sendi/)
-- [Gemini vs ChatGPT for Translating Python Data Pipelines](/ai-tools-compared/gemini-vs-chatgpt-for-translating-python-data-pipelines-to-rust/)
-- [AI Code Generation for Python FastAPI Endpoints](/ai-tools-compared/ai-code-generation-for-python-fastapi-endpoints-with-pydantic-models-compared/)
+- [Claude Code vs ChatGPT Code Interpreter Comparison](/claude-code-vs-chatgpt-code-interpreter-comparison/)
+- [Gemini in Google Docs Not Showing Up? Fixes for 2026](/gemini-in-google-docs-not-showing-up-fix-2026/)
+- [Running Starcoder2 Locally for Code Completion Without](/running-starcoder2-locally-for-code-completion-without-sendi/)
+- [Gemini vs ChatGPT for Translating Python Data Pipelines](/gemini-vs-chatgpt-for-translating-python-data-pipelines-to-rust/)
+- [AI Code Generation for Python FastAPI Endpoints](/ai-code-generation-for-python-fastapi-endpoints-with-pydantic-models-compared/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

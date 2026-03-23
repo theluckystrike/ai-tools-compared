@@ -342,10 +342,10 @@ For most teams, Claude provides the best balance of code quality and explanation
 
 ## Related Articles
 
-- [Which AI Is Better for Writing Playwright End-to-End Tests](/ai-tools-compared/which-ai-is-better-for-writing-playwright-end-to-end-tests-2/)
-- [Best AI for Creating Test Matrices That Cover All Input](/ai-tools-compared/best-ai-for-creating-test-matrices-that-cover-all-input-comb/)
-- [Best AI Assistant for Creating Playwright Tests for Multi](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-multi-st/)
-- [Copilot vs Claude Code for Writing Jest Test](/ai-tools-compared/copilot-vs-claude-code-for-writing--jest-test-s/)
-- [Best AI Tool for Generating Jest Test Cases from React](/ai-tools-compared/best-ai-tool-for-generating-jest-test-cases-from-react-compo/)
+- [Which AI Is Better for Writing Playwright End-to-End Tests](/which-ai-is-better-for-writing-playwright-end-to-end-tests-2/)
+- [Best AI for Creating Test Matrices That Cover All Input](/best-ai-for-creating-test-matrices-that-cover-all-input-comb/)
+- [Best AI Assistant for Creating Playwright Tests for Multi](/best-ai-assistant-for-creating-playwright-tests-for-multi-st/)
+- [Copilot vs Claude Code for Writing Jest Test](/copilot-vs-claude-code-for-writing--jest-test-s/)
+- [Best AI Tool for Generating Jest Test Cases from React](/best-ai-tool-for-generating-jest-test-cases-from-react-compo/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

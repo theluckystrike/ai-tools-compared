@@ -313,9 +313,9 @@ For most teams, the "Pyroscope + Claude" pattern costs less than $5/month in LLM
 
 ## Related Reading
 
-- [AI-Powered Incident Response Tools for DevOps Teams](/ai-tools-compared/ai-powered-incident-response-tools-for-devops-teams-compared/)
-- [AI Tools for Automated Load Testing Script Generation](/ai-tools-compared/ai-tools-for-automated-load-testing-script-generation-and-an/)
-- [AI CI/CD Pipeline Optimization](/ai-tools-compared/ai-ci-cd-pipeline-optimization/)
+- [AI-Powered Incident Response Tools for DevOps Teams](/ai-powered-incident-response-tools-for-devops-teams-compared/)
+- [AI Tools for Automated Load Testing Script Generation](/ai-tools-for-automated-load-testing-script-generation-and-an/)
+- [AI CI/CD Pipeline Optimization](/ai-ci-cd-pipeline-optimization/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

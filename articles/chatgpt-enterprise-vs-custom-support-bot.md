@@ -523,10 +523,10 @@ Your conversation logs, knowledge base, and analytics remain under your control 
 
 ## Related Articles
 
-- [AI Tools for Self Service Support Portals: Practical Guide](/ai-tools-compared/ai-tools-for-self-service-support-portals/)
-- [ChatGPT Enterprise Minimum Seats and Contract Length Require](/ai-tools-compared/chatgpt-enterprise-minimum-seats-and-contract-length-require/)
-- [Drift vs ChatGPT for Customer Support: A Technical](/ai-tools-compared/drift-vs-chatgpt-for-customer-support/)
-- [ChatGPT Custom GPT Not Following Instructions](/ai-tools-compared/chatgpt-custom-gpt-not-following-instructions/)
-- [ChatGPT Plugins Replacement Custom Gpts Pricing](/ai-tools-compared/chatgpt-plugins-replacement-custom-gpts-pricing-for-developers/)
+- [AI Tools for Self Service Support Portals: Practical Guide](/ai-tools-for-self-service-support-portals/)
+- [ChatGPT Enterprise Minimum Seats and Contract Length Require](/chatgpt-enterprise-minimum-seats-and-contract-length-require/)
+- [Drift vs ChatGPT for Customer Support: A Technical](/drift-vs-chatgpt-for-customer-support/)
+- [ChatGPT Custom GPT Not Following Instructions](/chatgpt-custom-gpt-not-following-instructions/)
+- [ChatGPT Plugins Replacement Custom Gpts Pricing](/chatgpt-plugins-replacement-custom-gpts-pricing-for-developers/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

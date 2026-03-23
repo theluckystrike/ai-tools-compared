@@ -316,11 +316,11 @@ API-first tools integrate better with existing tooling. Prioritize tools with Op
 
 ## Related Reading
 
-- [AI Powered Data Cataloging Tools: A Practical Guide for](/ai-tools-compared/ai-powered-data-cataloging-tools/)
-- [AI Tools for Data Mesh Architecture: A Practical Guide](/ai-tools-compared/ai-tools-for-data-mesh-architecture/)
-- [Best AI Tools for Data Cleaning: A Practical Guide for](/ai-tools-compared/best-ai-tools-for-data-cleaning/)
-- [Streamlit vs Gradio for AI Data Apps: A Practical Comparison](/ai-tools-compared/streamlit-vs-gradio-ai-data-apps/)
-- [AI Tools for Cohort Analysis: A Practical Guide for](/ai-tools-compared/ai-tools-for-cohort-analysis/)
+- [AI Powered Data Cataloging Tools: A Practical Guide for](/ai-powered-data-cataloging-tools/)
+- [AI Tools for Data Mesh Architecture: A Practical Guide](/ai-tools-for-data-mesh-architecture/)
+- [Best AI Tools for Data Cleaning: A Practical Guide for](/best-ai-tools-for-data-cleaning/)
+- [Streamlit vs Gradio for AI Data Apps: A Practical Comparison](/streamlit-vs-gradio-ai-data-apps/)
+- [AI Tools for Cohort Analysis: A Practical Guide for](/ai-tools-for-cohort-analysis/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

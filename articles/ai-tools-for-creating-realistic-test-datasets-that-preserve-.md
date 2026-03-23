@@ -402,10 +402,10 @@ def validate_test_data(connection):
 
 ## Related Articles
 
-- [How to Use AI to Generate Realistic Test Data for Postgres](/ai-tools-compared/how-to-use-ai-to-generate-realistic-test-data-for-postgres-d/)
-- [AI Tools for Creating Test Data Generators That Respect](/ai-tools-compared/ai-tools-for-creating-test-data-generators-that-respect-busi/)
-- [AI Tools for Creating Test Data Snapshots for Database](/ai-tools-compared/ai-tools-for-creating-test-data-snapshots-for-database-rollback-between-test-runs/)
-- [Best AI Assistant for Creating Test Data Factories with Real](/ai-tools-compared/best-ai-assistant-for-creating-test-data-factories-with-real/)
-- [AI Tools for Automated Test Data Generation 2026](/ai-tools-compared/ai-tools-for-automated-test-data-generation-2026/)
+- [How to Use AI to Generate Realistic Test Data for Postgres](/how-to-use-ai-to-generate-realistic-test-data-for-postgres-d/)
+- [AI Tools for Creating Test Data Generators That Respect](/ai-tools-for-creating-test-data-generators-that-respect-busi/)
+- [AI Tools for Creating Test Data Snapshots for Database](/ai-tools-for-creating-test-data-snapshots-for-database-rollback-between-test-runs/)
+- [Best AI Assistant for Creating Test Data Factories with Real](/best-ai-assistant-for-creating-test-data-factories-with-real/)
+- [AI Tools for Automated Test Data Generation 2026](/ai-tools-for-automated-test-data-generation-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -367,7 +367,7 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [AI Tools for Education Student](/ai-tools-for-education-student-support/)
 - [Free AI Tools for Learning Python with Code Examples 2026](/free-ai-tools-for-learning-python-with-code-examples-2026/)
 - [Free AI Tools for Students Learning to Code 2026 List](/free-ai-tools-for-students-learning-to-code-2026-list/)
-- [Best AI Assistant for Learning Python Decorators](/ai-tools-compared/best-ai-assistant-for-learning-python-decorators-and-metacla/)
+- [Best AI Assistant for Learning Python Decorators](/best-ai-assistant-for-learning-python-decorators-and-metacla/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

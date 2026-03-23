@@ -325,10 +325,10 @@ Paste your current `values.yaml` into the AI prompt and ask it to generate the e
 
 ## Related Articles
 
-- [AI-Powered Service Mesh Configuration 2026](/ai-tools-compared/ai-powered-service-mesh-configuration-2026/)
-- [Best AI Tools for Kubernetes Manifest Generation](/ai-tools-compared/best-ai-tools-for-kubernetes-manifest-generation/)
-- [Best AI Tools for Writing Kubernetes Custom Resource](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-custom-resource-definitions-2026/)
-- [AI Tools for Microservice Architecture](/ai-tools-compared/ai-tools-for-microservice-architecture-design/)
-- [AI Tools for Detecting Kubernetes Misconfiguration Before](/ai-tools-compared/ai-tools-for-detecting-kubernetes-misconfiguration-before-de/)
+- [AI-Powered Service Mesh Configuration 2026](/ai-powered-service-mesh-configuration-2026/)
+- [Best AI Tools for Kubernetes Manifest Generation](/best-ai-tools-for-kubernetes-manifest-generation/)
+- [Best AI Tools for Writing Kubernetes Custom Resource](/best-ai-tools-for-writing-kubernetes-custom-resource-definitions-2026/)
+- [AI Tools for Microservice Architecture](/ai-tools-for-microservice-architecture-design/)
+- [AI Tools for Detecting Kubernetes Misconfiguration Before](/ai-tools-for-detecting-kubernetes-misconfiguration-before-de/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

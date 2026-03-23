@@ -282,10 +282,10 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [How to Set Up Model Context Protocol Server Providing Live](/ai-tools-compared/how-to-set-up-model-context-protocol-server-providing-live-d/)
-- [How to Use AI Coding Tools Effectively During Live Coding](/ai-tools-compared/how-to-use-ai-coding-tools-effectively-during-live-coding-interviews-2026/)
-- [Switching from ChatGPT Voice to Gemini Live Conversation](/ai-tools-compared/switching-from-chatgpt-voice-to-gemini-live-conversation-differences/)
-- [AI Assistants for Creating Security Architecture Review](/ai-tools-compared/ai-assistants-for-creating-security-architecture-review-docu/)
+- [How to Set Up Model Context Protocol Server Providing Live](/how-to-set-up-model-context-protocol-server-providing-live-d/)
+- [How to Use AI Coding Tools Effectively During Live Coding](/how-to-use-ai-coding-tools-effectively-during-live-coding-interviews-2026/)
+- [Switching from ChatGPT Voice to Gemini Live Conversation](/switching-from-chatgpt-voice-to-gemini-live-conversation-differences/)
+- [AI Assistants for Creating Security Architecture Review](/ai-assistants-for-creating-security-architecture-review-docu/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

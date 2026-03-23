@@ -431,10 +431,10 @@ For repositories with strong test coverage, instruct Claude to use the existing 
 
 ## Related Reading
 
-- [AI Code Review Automation Tools Comparison](/ai-tools-compared/ai-code-review-automation-tools-comparison/)
-- [How to Use AI for WebAssembly Development](/ai-tools-compared/ai-for-webassembly-development/)
-- [Claude vs GPT-4 for Writing Unit Test Mocks](/ai-tools-compared/claude-vs-gpt4-for-unit-test-mocks/)
-- [AI Coding Tools for Automating Changelog Generation from](/ai-tools-compared/ai-coding-tools-for-automating-changelog-generation-from-con/)
+- [AI Code Review Automation Tools Comparison](/ai-code-review-automation-tools-comparison/)
+- [How to Use AI for WebAssembly Development](/ai-for-webassembly-development/)
+- [Claude vs GPT-4 for Writing Unit Test Mocks](/claude-vs-gpt4-for-unit-test-mocks/)
+- [AI Coding Tools for Automating Changelog Generation from](/ai-coding-tools-for-automating-changelog-generation-from-con/)
 
 ---
 

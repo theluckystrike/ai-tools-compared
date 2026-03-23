@@ -352,10 +352,10 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Best AI Tools for Generating API Rate Limiting Code 2026](/ai-tools-compared/best-ai-tools-for-generating-api-rate-limiting-code-2026/)
-- [Best AI Tools for Writing API Rate Limiting Code 2026](/ai-tools-compared/best-ai-tools-for-writing-api-rate-limiting-code-2026/)
-- [AI Tools for API Security Testing](/ai-tools-compared/ai-tools-for-api-security-testing/)
-- [AI Tools for API Documentation from Code 2026](/ai-tools-compared/ai-tools-for-api-documentation-from-code-2026/)
-- [How to Use AI to Generate pytest Tests for Rate Limited](/ai-tools-compared/how-to-use-ai-to-generate-pytest-tests-for-rate-limited-endpoint-throttling-behavior/)
+- [Best AI Tools for Generating API Rate Limiting Code 2026](/best-ai-tools-for-generating-api-rate-limiting-code-2026/)
+- [Best AI Tools for Writing API Rate Limiting Code 2026](/best-ai-tools-for-writing-api-rate-limiting-code-2026/)
+- [AI Tools for API Security Testing](/ai-tools-for-api-security-testing/)
+- [AI Tools for API Documentation from Code 2026](/ai-tools-for-api-documentation-from-code-2026/)
+- [How to Use AI to Generate pytest Tests for Rate Limited](/how-to-use-ai-to-generate-pytest-tests-for-rate-limited-endpoint-throttling-behavior/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

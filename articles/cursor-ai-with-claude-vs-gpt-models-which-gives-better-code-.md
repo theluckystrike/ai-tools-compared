@@ -362,10 +362,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Cursor AI Switching Between Claude and GPT Models Extra](/ai-tools-compared/cursor-ai-switching-between-claude-and-gpt-models-extra-cost/)
-- [Claude Code vs Cursor Composer](/ai-tools-compared/claude-code-vs-cursor-composer-for-full-stack-development-comparison/)
-- [How to Switch from Cursor to Claude Code Without Losing](/ai-tools-compared/how-to-switch-from-cursor-to-claude-code-without-losing-settings/)
-- [Claude Code vs Cursor for Large Codebase Refactoring](/ai-tools-compared/claude-code-vs-cursor-for-large-codebase-refactoring/)
-- [Claude Code vs Cursor for Backend Development](/ai-tools-compared/claude-code-vs-cursor-for-backend-development/)
+- [Cursor AI Switching Between Claude and GPT Models Extra](/cursor-ai-switching-between-claude-and-gpt-models-extra-cost/)
+- [Claude Code vs Cursor Composer](/claude-code-vs-cursor-composer-for-full-stack-development-comparison/)
+- [How to Switch from Cursor to Claude Code Without Losing](/how-to-switch-from-cursor-to-claude-code-without-losing-settings/)
+- [Claude Code vs Cursor for Large Codebase Refactoring](/claude-code-vs-cursor-for-large-codebase-refactoring/)
+- [Claude Code vs Cursor for Backend Development](/claude-code-vs-cursor-for-backend-development/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

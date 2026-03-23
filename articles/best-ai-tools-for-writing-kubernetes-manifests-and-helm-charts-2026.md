@@ -422,11 +422,11 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [AI Tools for Writing Kubernetes Helm Charts 2026](/ai-tools-compared/ai-tools-for-writing-kubernetes-helm-charts-2026/)
-- [Claude vs ChatGPT for Writing Kubernetes Helm Chart Values](/ai-tools-compared/claude-vs-chatgpt-for-writing-kubernetes-helm-chart-values-f/)
-- [AI Tools for Writing ArgoCD Application Manifests and Gitops](/ai-tools-compared/ai-tools-for-writing-argocd-application-manifests-and-gitops/)
-- [Best AI Tools for Writing Kubernetes Admission Webhook](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-admission-webhook-confi/)
-- [Best AI Tools for Writing Kubernetes Custom Resource](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-custom-resource-definitions-2026/)
+- [AI Tools for Writing Kubernetes Helm Charts 2026](/ai-tools-for-writing-kubernetes-helm-charts-2026/)
+- [Claude vs ChatGPT for Writing Kubernetes Helm Chart Values](/claude-vs-chatgpt-for-writing-kubernetes-helm-chart-values-f/)
+- [AI Tools for Writing ArgoCD Application Manifests and Gitops](/ai-tools-for-writing-argocd-application-manifests-and-gitops/)
+- [Best AI Tools for Writing Kubernetes Admission Webhook](/best-ai-tools-for-writing-kubernetes-admission-webhook-confi/)
+- [Best AI Tools for Writing Kubernetes Custom Resource](/best-ai-tools-for-writing-kubernetes-custom-resource-definitions-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

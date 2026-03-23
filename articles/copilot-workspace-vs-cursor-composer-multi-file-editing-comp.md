@@ -366,12 +366,12 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Windsurf Cascade vs Cursor Composer: Multi-File AI Editing](/ai-tools-compared/windsurf-cascade-vs-cursor-composer-multi-file-ai-editing-co/)
-- [Cursor AI Multi File Editing Feature How It Actually Works](/ai-tools-compared/cursor-ai-multi-file-editing-feature-how-it-actually-works-explained/)
-- [Cursor Multi-File Edit Breaking Code Fix (2026)](/ai-tools-compared/cursor-multi-file-edit-breaking-code-fix-2026/)
-- [Migrate GitHub Copilot Workspace Setup to Cursor Background](/ai-tools-compared/migrate-github-copilot-workspace-setup-to-cursor-background-/)
-- [Copilot Edits Panel vs Cursor Composer Workflow Comparison](/ai-tools-compared/copilot-edits-panel-vs-cursor-composer-workflow-comparison-f/)
-- [Best Open Source CRM for Remote Agency Self-Hosted Compared](https://theluckystrike.github.io/remote-work-tools/best-open-source-crm-for-remote-agency-self-hosted-compared-/)
+- [Windsurf Cascade vs Cursor Composer: Multi-File AI Editing](/windsurf-cascade-vs-cursor-composer-multi-file-ai-editing-co/)
+- [Cursor AI Multi File Editing Feature How It Actually Works](/cursor-ai-multi-file-editing-feature-how-it-actually-works-explained/)
+- [Cursor Multi-File Edit Breaking Code Fix (2026)](/cursor-multi-file-edit-breaking-code-fix-2026/)
+- [Migrate GitHub Copilot Workspace Setup to Cursor Background](/migrate-github-copilot-workspace-setup-to-cursor-background-/)
+- [Copilot Edits Panel vs Cursor Composer Workflow Comparison](/copilot-edits-panel-vs-cursor-composer-workflow-comparison-f/)
+- [Best Open Source CRM for Remote Agency Self-Hosted Compared](https://welikeremotestack.com/best-open-source-crm-for-remote-agency-self-hosted-compared-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

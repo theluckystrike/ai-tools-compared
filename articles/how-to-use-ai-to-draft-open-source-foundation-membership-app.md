@@ -442,11 +442,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Use AI to Draft RFC Documents for Proposed Open](/ai-tools-compared/how-to-use-ai-to-draft-rfc-documents-for-proposed-open-source-feature-changes/)
-- [AI Tools for Analyzing Which Open Source Issues Would Benefi](/ai-tools-compared/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
-- [Best AI Assistant for Creating Open Source Project Branding](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)
-- [Best AI Assistant for Drafting Open Source Partnership and](/ai-tools-compared/best-ai-assistant-for-drafting-open-source-partnership-and-integration-proposals-2026/)
-- [Best AI Assistant for Generating Open Source Release](/ai-tools-compared/best-ai-assistant-for-generating-open-source-release-announcements/)
+- [How to Use AI to Draft RFC Documents for Proposed Open](/how-to-use-ai-to-draft-rfc-documents-for-proposed-open-source-feature-changes/)
+- [AI Tools for Analyzing Which Open Source Issues Would Benefi](/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
+- [Best AI Assistant for Creating Open Source Project Branding](/best-ai-assistant-for-creating-open-source-project-branding-/)
+- [Best AI Assistant for Drafting Open Source Partnership and](/best-ai-assistant-for-drafting-open-source-partnership-and-integration-proposals-2026/)
+- [Best AI Assistant for Generating Open Source Release](/best-ai-assistant-for-generating-open-source-release-announcements/)
 
 ```
 

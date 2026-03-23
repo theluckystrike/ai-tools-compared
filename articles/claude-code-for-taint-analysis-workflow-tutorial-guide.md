@@ -295,12 +295,12 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Claude Code for Node.js Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-nodejs-profiling-workflow-tutorial/)
-- [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
-- [Claude vs GPT-4 for Data Analysis Tasks](/ai-tools-compared/claude-vs-gpt4-for-data-analysis/)
-- [Claude Code for Memory Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-memory-profiling-workflow-tutorial/)
-- [Claude Code Runbook Documentation Guide](/ai-tools-compared/claude-code-runbook-documentation-guide/)
-- [Claude Code for Faker.js Test Data Workflow Guide](https://theluckystrike.github.io/remote-work-tools/claude-code-for-faker-js-test-data-workflow-guide/)
+- [Claude Code for Node.js Profiling Workflow Tutorial](/claude-code-for-nodejs-profiling-workflow-tutorial/)
+- [Claude Code Go Module Development Guide](/claude-code-go-module-development-guide/)
+- [Claude vs GPT-4 for Data Analysis Tasks](/claude-vs-gpt4-for-data-analysis/)
+- [Claude Code for Memory Profiling Workflow Tutorial](/claude-code-for-memory-profiling-workflow-tutorial/)
+- [Claude Code Runbook Documentation Guide](/claude-code-runbook-documentation-guide/)
+- [Claude Code for Faker.js Test Data Workflow Guide](https://welikeremotestack.com/claude-code-for-faker-js-test-data-workflow-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 ```

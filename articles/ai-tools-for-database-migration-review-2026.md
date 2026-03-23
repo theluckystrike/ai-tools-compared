@@ -387,11 +387,11 @@ For teams running many PRs simultaneously, add a queue (Redis or SQS) in front o
 
 ## Related Articles
 
-- [AI Tools for Database Schema Migration Review 2026](/ai-tools-compared/ai-tools-for-database-schema-migration-review-2026/)
-- [AI Tools for Automated Migration Testing 2026](/ai-tools-compared/ai-tools-for-automated-migration-testing-2026/)
-- [Best AI Tools for Database Schema Migration Review 2026](/ai-tools-compared/best-ai-tools-for-database-schema-migration-review-2026/)
-- [AI Tools for Writing pytest Tests for Alembic Database](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migra/)
-- [AI Tools for Writing Database Migration Rollback Scripts](/ai-tools-compared/ai-tools-for-writing-database-migration-rollback-scripts-2026/)
+- [AI Tools for Database Schema Migration Review 2026](/ai-tools-for-database-schema-migration-review-2026/)
+- [AI Tools for Automated Migration Testing 2026](/ai-tools-for-automated-migration-testing-2026/)
+- [Best AI Tools for Database Schema Migration Review 2026](/best-ai-tools-for-database-schema-migration-review-2026/)
+- [AI Tools for Writing pytest Tests for Alembic Database](/ai-tools-for-writing-pytest-tests-for-alembic-database-migra/)
+- [AI Tools for Writing Database Migration Rollback Scripts](/ai-tools-for-writing-database-migration-rollback-scripts-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

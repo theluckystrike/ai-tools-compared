@@ -283,10 +283,10 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 
 ## Related Articles
 
-- [AI Tools for Generating Pull Request Merge Conflict](/ai-tools-compared/ai-tools-for-generating-pull-request-merge-conflict-resoluti/)
-- [Best AI for Resolving Git Merge Conflict Markers in Complex](/ai-tools-compared/best-ai-for-resolving-git-merge-conflict-markers-in-complex-/)
-- [How to Use AI to Resolve NPM Peer Dependency Conflict Errors](/ai-tools-compared/how-to-use-ai-to-resolve-npm-peer-dependency-conflict-errors/)
-- [AI Debugging Assistants Compared 2026](/ai-tools-compared/ai-debugging-assistants-compared-2026/)
-- [AI Powered Log Analysis Tools for Production Debugging](/ai-tools-compared/ai-powered-log-analysis-tools-for-production-debugging-compa/)
+- [AI Tools for Generating Pull Request Merge Conflict](/ai-tools-for-generating-pull-request-merge-conflict-resoluti/)
+- [Best AI for Resolving Git Merge Conflict Markers in Complex](/best-ai-for-resolving-git-merge-conflict-markers-in-complex-/)
+- [How to Use AI to Resolve NPM Peer Dependency Conflict Errors](/how-to-use-ai-to-resolve-npm-peer-dependency-conflict-errors/)
+- [AI Debugging Assistants Compared 2026](/ai-debugging-assistants-compared-2026/)
+- [AI Powered Log Analysis Tools for Production Debugging](/ai-powered-log-analysis-tools-for-production-debugging-compa/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -342,11 +342,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Generating Grafana Dashboards from Metrics Auto](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
-- [AI Tools for Customer Health Scoring](/ai-tools-compared/ai-tools-for-customer-health-scoring/)
-- [Health Insurance Options for Freelancers 2026](/ai-tools-compared/health-insurance-options-for-freelancers-2026/)
-- [AI Regulatory Change Monitoring Tools Guide](/ai-tools-compared/ai-regulatory-change-monitoring-tools-guide-2026/)
-- [Best AI Tools for Writing Datadog Monitoring Queries and](/ai-tools-compared/best-ai-tools-for-writing-datadog-monitoring-queries-and-dashboards/)
+- [AI Tools for Generating Grafana Dashboards from Metrics Auto](/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
+- [AI Tools for Customer Health Scoring](/ai-tools-for-customer-health-scoring/)
+- [Health Insurance Options for Freelancers 2026](/health-insurance-options-for-freelancers-2026/)
+- [AI Regulatory Change Monitoring Tools Guide](/ai-regulatory-change-monitoring-tools-guide-2026/)
+- [Best AI Tools for Writing Datadog Monitoring Queries and](/best-ai-tools-for-writing-datadog-monitoring-queries-and-dashboards/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

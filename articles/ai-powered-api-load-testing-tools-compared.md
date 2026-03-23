@@ -286,11 +286,11 @@ Claude identifies patterns in the timing data that Grafana's automated analysis 
 
 ## Related Articles
 
-- [AI-Assisted API Load Testing Tools Comparison 2026](/ai-tools-compared/ai-assisted-api-load-testing-tools-comparison/)
-- [AI Tools for Automated Load Testing Script Generation](/ai-tools-compared/ai-tools-for-automated-load-testing-script-generation-and-an/)
-- [AI Tools for API Security Testing](/ai-tools-compared/ai-tools-for-api-security-testing/)
-- [Claude Code API Snapshot Testing Guide](/ai-tools-compared/claude-code-api-snapshot-testing-guide/)
-- [Best AI for QA Engineers Writing API Contract Testing Cases](/ai-tools-compared/best-ai-for-qa-engineers-writing-api-contract-test-cases-fro/)
+- [AI-Assisted API Load Testing Tools Comparison 2026](/ai-assisted-api-load-testing-tools-comparison/)
+- [AI Tools for Automated Load Testing Script Generation](/ai-tools-for-automated-load-testing-script-generation-and-an/)
+- [AI Tools for API Security Testing](/ai-tools-for-api-security-testing/)
+- [Claude Code API Snapshot Testing Guide](/claude-code-api-snapshot-testing-guide/)
+- [Best AI for QA Engineers Writing API Contract Testing Cases](/best-ai-for-qa-engineers-writing-api-contract-test-cases-fro/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

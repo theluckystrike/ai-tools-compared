@@ -402,9 +402,9 @@ A: Use `terraform import` for existing resources, then generate new ones. Never 
 
 ## Related Articles
 
-- [AI Tools for Interpreting Terraform Plan Errors: Provider](/ai-tools-compared/ai-tools-for-interpreting-terraform-plan-errors-with-provider-version-conflicts/)
-- [Best AI Tools for Writing Terraform Provider Plugins 2026](/ai-tools-compared/best-ai-tools-for-writing-terraform-provider-plugins-2026/)
-- [Best AI Tools for Writing Terraform Modules in 2026](/ai-tools-compared/best-ai-tools-for-writing-terraform-modules-2026/---)
-- [Best AI Tools for Writing Terraform Modules](/ai-tools-compared/best-ai-tools-for-writing-terraform-modules/)
-- [AI Tools for Interpreting Terraform Plan Errors](/ai-tools-compared/ai-tools-for-interpreting-terraform-plan-errors-with-provide/)
+- [AI Tools for Interpreting Terraform Plan Errors: Provider](/ai-tools-for-interpreting-terraform-plan-errors-with-provider-version-conflicts/)
+- [Best AI Tools for Writing Terraform Provider Plugins 2026](/best-ai-tools-for-writing-terraform-provider-plugins-2026/)
+- [Best AI Tools for Writing Terraform Modules in 2026](/best-ai-tools-for-writing-terraform-modules-2026/---)
+- [Best AI Tools for Writing Terraform Modules](/best-ai-tools-for-writing-terraform-modules/)
+- [AI Tools for Interpreting Terraform Plan Errors](/ai-tools-for-interpreting-terraform-plan-errors-with-provide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

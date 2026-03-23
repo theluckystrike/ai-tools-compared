@@ -341,10 +341,10 @@ The efficiency gains from AI-assisted accessible component generation compound a
 
 ## Related Articles
 
-- [Effective Prompting Strategies for AI Generation of Complex](/ai-tools-compared/effective-prompting-strategies-for-ai-generation-of-complex-/)
-- [Using Claude Code for Backend and Cursor for Frontend Same P](/ai-tools-compared/using-claude-code-for-backend-and-cursor-for-frontend-same-p/)
-- [Best Prompting Strategies for Getting Accurate Code from](/ai-tools-compared/best-prompting-strategies-for-getting-accurate-code-from-ai-/)
-- [ChatGPT vs Claude for Writing Effective Celery Task Error](/ai-tools-compared/chatgpt-vs-claude-for-writing-effective-celery-task-error-ha/)
-- [Effective AI Coding Workflow for Building Features from Prod](/ai-tools-compared/effective-ai-coding-workflow-for-building-features-from-prod/)
+- [Effective Prompting Strategies for AI Generation of Complex](/effective-prompting-strategies-for-ai-generation-of-complex-/)
+- [Using Claude Code for Backend and Cursor for Frontend Same P](/using-claude-code-for-backend-and-cursor-for-frontend-same-p/)
+- [Best Prompting Strategies for Getting Accurate Code from](/best-prompting-strategies-for-getting-accurate-code-from-ai-/)
+- [ChatGPT vs Claude for Writing Effective Celery Task Error](/chatgpt-vs-claude-for-writing-effective-celery-task-error-ha/)
+- [Effective AI Coding Workflow for Building Features from Prod](/effective-ai-coding-workflow-for-building-features-from-prod/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

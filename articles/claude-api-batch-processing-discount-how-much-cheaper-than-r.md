@@ -316,11 +316,11 @@ Policies vary widely. Some tools let you access your data for a grace period aft
 
 ## Related Articles
 
-- [Claude API Batch Processing for Large Document Workflows](/ai-tools-compared/claude-api-batch-processing-for-large-document-workflows/)
-- [Claude API Pay Per Token vs Pro Subscription Which Cheaper](/ai-tools-compared/claude-api-pay-per-token-vs-pro-subscription-which-cheaper/)
-- [How Much Does Cursor AI Actually Cost Per Month All Plans](/ai-tools-compared/how-much-does-cursor-ai-actually-cost-per-month-all-plans/)
-- [How to Evaluate AI Coding Tool Data Processing Agreements](/ai-tools-compared/how-to-evaluate-ai-coding-tool-data-processing-agreements-be/)
-- [pandas AI vs Polars AI Data Processing Compared](/ai-tools-compared/pandas-ai-vs-polars-ai-data-processing/)
+- [Claude API Batch Processing for Large Document Workflows](/claude-api-batch-processing-for-large-document-workflows/)
+- [Claude API Pay Per Token vs Pro Subscription Which Cheaper](/claude-api-pay-per-token-vs-pro-subscription-which-cheaper/)
+- [How Much Does Cursor AI Actually Cost Per Month All Plans](/how-much-does-cursor-ai-actually-cost-per-month-all-plans/)
+- [How to Evaluate AI Coding Tool Data Processing Agreements](/how-to-evaluate-ai-coding-tool-data-processing-agreements-be/)
+- [pandas AI vs Polars AI Data Processing Compared](/pandas-ai-vs-polars-ai-data-processing/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -326,10 +326,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Kling AI vs Gen 3 Video Generation: Developer Comparison](/ai-tools-compared/kling-ai-vs-gen-3-video-generation/)
-- [Runway ML vs Pika AI: Video Generation Tools Compared](/ai-tools-compared/runway-ml-vs-pika-ai-video-generation/)
-- [Runway ML vs Pika Labs: AI Video Generation Comparison 2026](/ai-tools-compared/runway-ml-vs-pika-labs-ai-video-comparison-2026/)
-- [Sora vs Runway AI Video Generation: A Technical](/ai-tools-compared/sora-vs-runway-ai-video-generation/)
-- [AI Tools for Video Accessibility Features](/ai-tools-compared/ai-tools-for-video-accessibility-features/)
+- [Kling AI vs Gen 3 Video Generation: Developer Comparison](/kling-ai-vs-gen-3-video-generation/)
+- [Runway ML vs Pika AI: Video Generation Tools Compared](/runway-ml-vs-pika-ai-video-generation/)
+- [Runway ML vs Pika Labs: AI Video Generation Comparison 2026](/runway-ml-vs-pika-labs-ai-video-comparison-2026/)
+- [Sora vs Runway AI Video Generation: A Technical](/sora-vs-runway-ai-video-generation/)
+- [AI Tools for Video Accessibility Features](/ai-tools-for-video-accessibility-features/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

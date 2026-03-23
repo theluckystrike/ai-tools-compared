@@ -349,11 +349,11 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Configure Claude Code](/ai-tools-compared/how-to-configure-claude-code-to-follow-your-teams-feature-fl/)
-- [Best Way to Configure Claude Code to Understand Your Interna](/ai-tools-compared/best-way-to-configure-claude-code-to-understand-your-interna/)
-- [Best Way to Configure CursorRules for Python FastAPI Project](/ai-tools-compared/best-way-to-configure-cursorrules-for-python-fastapi-project/)
-- [Configuring AI Coding Tools to Follow Your Teams Dependency](/ai-tools-compared/configuring-ai-coding-tools-to-follow-your-teams-dependency-/)
-- [Cheapest Way to Use Claude for Coding Projects 2026](/ai-tools-compared/cheapest-way-to-use-claude-for-coding-projects-2026/)
+- [Configure Claude Code](/how-to-configure-claude-code-to-follow-your-teams-feature-fl/)
+- [Best Way to Configure Claude Code to Understand Your Interna](/best-way-to-configure-claude-code-to-understand-your-interna/)
+- [Best Way to Configure CursorRules for Python FastAPI Project](/best-way-to-configure-cursorrules-for-python-fastapi-project/)
+- [Configuring AI Coding Tools to Follow Your Teams Dependency](/configuring-ai-coding-tools-to-follow-your-teams-dependency-/)
+- [Cheapest Way to Use Claude for Coding Projects 2026](/cheapest-way-to-use-claude-for-coding-projects-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

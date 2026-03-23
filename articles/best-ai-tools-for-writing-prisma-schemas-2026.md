@@ -651,11 +651,11 @@ This schema was generated in under 5 minutes and requires minimal revision.
 
 ## Related Articles
 
-- [Copilot vs Cursor for Writing Clean Prisma Schema](/ai-tools-compared/copilot-vs-cursor-for-writing-clean-prisma-schema-with-relat/)
-- [AI Tools for Writing TypeScript Zod Schemas 2026](/ai-tools-compared/ai-tools-for-writing-typescript-zod-schemas-2026/)
-- [Best AI Tools for Writing GraphQL Schemas 2026](/ai-tools-compared/best-ai-tools-for-writing-graphql-schemas-2026/)
-- [Best AI Tools for GraphQL Schema Generation](/ai-tools-compared/ai-tools-for-graphql-schema-generation/)
-- [Best AI Tools for Writing SQL Migrations in 2026](/ai-tools-compared/articles/best-ai-tools-for-writing-sql-migrations-2026/)
+- [Copilot vs Cursor for Writing Clean Prisma Schema](/copilot-vs-cursor-for-writing-clean-prisma-schema-with-relat/)
+- [AI Tools for Writing TypeScript Zod Schemas 2026](/ai-tools-for-writing-typescript-zod-schemas-2026/)
+- [Best AI Tools for Writing GraphQL Schemas 2026](/best-ai-tools-for-writing-graphql-schemas-2026/)
+- [Best AI Tools for GraphQL Schema Generation](/ai-tools-for-graphql-schema-generation/)
+- [Best AI Tools for Writing SQL Migrations in 2026](/articles/best-ai-tools-for-writing-sql-migrations-2026/)
 ## Frequently Asked Questions
 
 **Are free AI tools good enough for ai tools for writing prisma schemas in?**

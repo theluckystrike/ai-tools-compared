@@ -346,10 +346,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Use AI for Capacity Planning and Resource Right Sizin](/ai-tools-compared/how-to-use-ai-for-capacity-planning-and-resource-right-sizin/)
-- [How to Use AI for Cloud Migration Planning and Dependency](/ai-tools-compared/how-to-use-ai-for-cloud-migration-planning-and-dependency-ma/)
-- [Best AI Assistant for Writing Open Source Roadmap Documents](/ai-tools-compared/best-ai-assistant-for-writing-open-source-roadmap-documents-from-issue-milestone-data/)
-- [Best AI for Product Managers Creating User Persona Documents](/ai-tools-compared/best-ai-for-product-managers-creating-user-persona-documents/)
-- [How to Use AI to Draft RFC Documents for Proposed Open](/ai-tools-compared/how-to-use-ai-to-draft-rfc-documents-for-proposed-open-source-feature-changes/)
+- [How to Use AI for Capacity Planning and Resource Right Sizin](/how-to-use-ai-for-capacity-planning-and-resource-right-sizin/)
+- [How to Use AI for Cloud Migration Planning and Dependency](/how-to-use-ai-for-cloud-migration-planning-and-dependency-ma/)
+- [Best AI Assistant for Writing Open Source Roadmap Documents](/best-ai-assistant-for-writing-open-source-roadmap-documents-from-issue-milestone-data/)
+- [Best AI for Product Managers Creating User Persona Documents](/best-ai-for-product-managers-creating-user-persona-documents/)
+- [How to Use AI to Draft RFC Documents for Proposed Open](/how-to-use-ai-to-draft-rfc-documents-for-proposed-open-source-feature-changes/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

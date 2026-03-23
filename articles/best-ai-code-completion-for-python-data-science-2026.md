@@ -506,10 +506,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI Coding Tools for Python Data Science and pandas Work](/ai-tools-compared/best-ai-coding-tools-for-python-data-science-and-pandas-work/)
-- [Gemini vs ChatGPT for Translating Python Data Pipelines](/ai-tools-compared/gemini-vs-chatgpt-for-translating-python-data-pipelines-to-rust/)
-- [AI Code Completion for Java Jakarta EE Migration from Javax](/ai-tools-compared/ai-code-completion-for-java-jakarta-ee-migration-from-javax-/)
-- [AI Code Completion for Java Record Classes and Sealed Interf](/ai-tools-compared/ai-code-completion-for-java-record-classes-and-sealed-interf/)
-- [AI Code Completion for Writing Shell Commands Inside Scripts](/ai-tools-compared/ai-code-completion-for-writing-shell-commands-inside-scripts/)
+- [Best AI Coding Tools for Python Data Science and pandas Work](/best-ai-coding-tools-for-python-data-science-and-pandas-work/)
+- [Gemini vs ChatGPT for Translating Python Data Pipelines](/gemini-vs-chatgpt-for-translating-python-data-pipelines-to-rust/)
+- [AI Code Completion for Java Jakarta EE Migration from Javax](/ai-code-completion-for-java-jakarta-ee-migration-from-javax-/)
+- [AI Code Completion for Java Record Classes and Sealed Interf](/ai-code-completion-for-java-record-classes-and-sealed-interf/)
+- [AI Code Completion for Writing Shell Commands Inside Scripts](/ai-code-completion-for-writing-shell-commands-inside-scripts/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

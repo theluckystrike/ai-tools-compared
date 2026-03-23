@@ -370,10 +370,10 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 
 ## Related Articles
 
-- [AI Tools for Interpreting Terraform Plan Errors with Provide](/ai-tools-compared/ai-tools-for-interpreting-terraform-plan-errors-with-provide/)
-- [How to Use Copilot for Writing Terraform Provider Configurat](/ai-tools-compared/how-to-use-copilot-for-writing-terraform-provider-configurat/)
-- [AI Tools for Interpreting Python Traceback Errors](/ai-tools-compared/ai-tools-for-interpreting-python-traceback-errors-in-django-middleware-chains/)
-- [Best AI for Fixing CSS Specificity Conflicts When Integratin](/ai-tools-compared/best-ai-for-fixing-css-specificity-conflicts-when-integratin/)
-- [What Code Snippets Get Logged in AI Coding Tool Provider Aud](/ai-tools-compared/what-code-snippets-get-logged-in-ai-coding-tool-provider-aud/)
+- [AI Tools for Interpreting Terraform Plan Errors with Provide](/ai-tools-for-interpreting-terraform-plan-errors-with-provide/)
+- [How to Use Copilot for Writing Terraform Provider Configurat](/how-to-use-copilot-for-writing-terraform-provider-configurat/)
+- [AI Tools for Interpreting Python Traceback Errors](/ai-tools-for-interpreting-python-traceback-errors-in-django-middleware-chains/)
+- [Best AI for Fixing CSS Specificity Conflicts When Integratin](/best-ai-for-fixing-css-specificity-conflicts-when-integratin/)
+- [What Code Snippets Get Logged in AI Coding Tool Provider Aud](/what-code-snippets-get-logged-in-ai-coding-tool-provider-aud/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

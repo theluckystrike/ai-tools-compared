@@ -395,11 +395,11 @@ export function query<T>(
 
 ## Related Articles
 
-- [Best AI Coding Tool Under $20 Per Month (2026)](/ai-tools-compared/best-ai-coding-tool-under-20-dollars-per-month-2026/)
-- [Best Budget AI Coding Assistant for Freelance Developers](/ai-tools-compared/best-budget-ai-coding-assistant-for-freelance-developers-202/)
-- [AI Coding Assistant Accuracy for TypeScript Next Js Server](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
-- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)
-- [Best AI Coding Assistant for Under $5 Per](/ai-tools-compared/best-ai-coding-assistant-for-under-5-dollars-per-month/)
+- [Best AI Coding Tool Under $20 Per Month (2026)](/best-ai-coding-tool-under-20-dollars-per-month-2026/)
+- [Best Budget AI Coding Assistant for Freelance Developers](/best-budget-ai-coding-assistant-for-freelance-developers-202/)
+- [AI Coding Assistant Accuracy for TypeScript Next Js Server](/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
+- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-for-automated-api-documentation-from-code-comments/)
+- [Best AI Coding Assistant for Under $5 Per](/best-ai-coding-assistant-for-under-5-dollars-per-month/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

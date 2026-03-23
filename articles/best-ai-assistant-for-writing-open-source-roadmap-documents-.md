@@ -329,10 +329,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI Assistant for Writing Open Source Plugin Development](/ai-tools-compared/best-ai-assistant-for-writing-open-source-plugin-development/)
-- [Best AI for Writing: Open Source Maintainer Burnout](/ai-tools-compared/best-ai-for-writing-open-source-maintainer-burnout-preventio/)
-- [Effective Workflow for AI-Assisted Open Source Contribution](/ai-tools-compared/effective-workflow-for-ai-assisted-open-source-contribution-/)
-- [Best AI for Writing Good First Issue Descriptions That](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attract-new-contributors/)
-- [Best AI Assistant for Drafting Open Source Partnership](/ai-tools-compared/best-ai-assistant-for-drafting-open-source-partnership-and-integration-proposals-2026/)
+- [Best AI Assistant for Writing Open Source Plugin Development](/best-ai-assistant-for-writing-open-source-plugin-development/)
+- [Best AI for Writing: Open Source Maintainer Burnout](/best-ai-for-writing-open-source-maintainer-burnout-preventio/)
+- [Effective Workflow for AI-Assisted Open Source Contribution](/effective-workflow-for-ai-assisted-open-source-contribution-/)
+- [Best AI for Writing Good First Issue Descriptions That](/best-ai-for-writing-good-first-issue-descriptions-that-attract-new-contributors/)
+- [Best AI Assistant for Drafting Open Source Partnership](/best-ai-assistant-for-drafting-open-source-partnership-and-integration-proposals-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -429,10 +429,10 @@ CursorRules are plain text—there is no special syntax to learn beyond what you
 
 ## Related Articles
 
-- [Writing CursorRules for Golang Projects with Specific](/ai-tools-compared/writing-cursorrules-for-golang-projects-with-specific-concur/)
-- [How to Create .cursorrules That Enforce Your Teams React](/ai-tools-compared/how-to-create-cursorrules-that-enforce-your-teams-react-comp/)
-- [AI Coding Assistant Comparison for React Component](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
-- [Cursor vs Windsurf for React Development 2026](/ai-tools-compared/cursor-vs-windsurf-for-react-development-2026/)
-- [Create CursorRules That Teach Cursor Your Team's State](/ai-tools-compared/how-to-create-cursorrules-that-teach-cursor-your-teams-state/)
+- [Writing CursorRules for Golang Projects with Specific](/writing-cursorrules-for-golang-projects-with-specific-concur/)
+- [How to Create .cursorrules That Enforce Your Teams React](/how-to-create-cursorrules-that-enforce-your-teams-react-comp/)
+- [AI Coding Assistant Comparison for React Component](/ai-coding-assistant-comparison-for-react-component-generatio/)
+- [Cursor vs Windsurf for React Development 2026](/cursor-vs-windsurf-for-react-development-2026/)
+- [Create CursorRules That Teach Cursor Your Team's State](/how-to-create-cursorrules-that-teach-cursor-your-teams-state/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

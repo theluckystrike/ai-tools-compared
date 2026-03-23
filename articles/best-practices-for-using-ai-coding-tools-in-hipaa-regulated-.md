@@ -303,10 +303,10 @@ HIPAA requires audit logs to capture who accessed what and when, but does not sp
 
 ## Related Articles
 
-- [Best Practices for AI Coding Tool Project Configuration](/ai-tools-compared/best-practices-for-ai-coding-tool-project-configuration-in-l/)
-- [Best Practices for AI Coding Tools](/ai-tools-compared/best-practices-for-ai-coding-tools-in-sox-compliant-financial-environments/)
-- [Best Practices for Breaking Down Complex Coding Tasks](/ai-tools-compared/best-practices-for-breaking-down-complex-coding-tasks-for-ai/)
-- [Best Practices for Keeping AI Coding Suggestions Aligned](/ai-tools-compared/best-practices-for-keeping-ai-coding-suggestions-aligned-with-design-patterns/)
-- [Best Practices for AI Assisted Code Review Response and Revi](/ai-tools-compared/best-practices-for-ai-assisted-code-review-response-and-revi/)
+- [Best Practices for AI Coding Tool Project Configuration](/best-practices-for-ai-coding-tool-project-configuration-in-l/)
+- [Best Practices for AI Coding Tools](/best-practices-for-ai-coding-tools-in-sox-compliant-financial-environments/)
+- [Best Practices for Breaking Down Complex Coding Tasks](/best-practices-for-breaking-down-complex-coding-tasks-for-ai/)
+- [Best Practices for Keeping AI Coding Suggestions Aligned](/best-practices-for-keeping-ai-coding-suggestions-aligned-with-design-patterns/)
+- [Best Practices for AI Assisted Code Review Response and Revi](/best-practices-for-ai-assisted-code-review-response-and-revi/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

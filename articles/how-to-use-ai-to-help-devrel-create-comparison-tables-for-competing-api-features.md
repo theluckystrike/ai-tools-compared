@@ -336,11 +336,11 @@ A comparison of fewer than 3 options provides limited value—it becomes obvious
 
 ## Related Articles
 
-- [How to Use AI to Help Devrel Create Interactive Coding](/ai-tools-compared/how-to-use-ai-to-help-devrel-create-interactive-coding-playgrounds/)
-- [How to Use AI to Help Devrel Teams Create Video Tutorial Scr](/ai-tools-compared/how-to-use-ai-to-help-devrel-teams-create-video-tutorial-scr/)
-- [How to Use AI to Help QA Engineers Create Test Environment](/ai-tools-compared/how-to-use-ai-to-help-qa-engineers-create-test-environment-p/)
-- [How to Use AI to Help Sre Teams Create on Call Handoff Docum](/ai-tools-compared/how-to-use-ai-to-help-sre-teams-create-on-call-handoff-docum/)
-- [Best AI Features for Generating API Client Code from](/ai-tools-compared/best-ai-features-for-generating-api-client-code-from-openapi/)
+- [How to Use AI to Help Devrel Create Interactive Coding](/how-to-use-ai-to-help-devrel-create-interactive-coding-playgrounds/)
+- [How to Use AI to Help Devrel Teams Create Video Tutorial Scr](/how-to-use-ai-to-help-devrel-teams-create-video-tutorial-scr/)
+- [How to Use AI to Help QA Engineers Create Test Environment](/how-to-use-ai-to-help-qa-engineers-create-test-environment-p/)
+- [How to Use AI to Help Sre Teams Create on Call Handoff Docum](/how-to-use-ai-to-help-sre-teams-create-on-call-handoff-docum/)
+- [Best AI Features for Generating API Client Code from](/best-ai-features-for-generating-api-client-code-from-openapi/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

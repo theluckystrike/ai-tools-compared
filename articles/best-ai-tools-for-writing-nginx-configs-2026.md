@@ -227,7 +227,7 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [AI Tools for Writing Nginx Configurations 2026](/ai-tools-for-writing-nginx-configurations-2026/)
 - [AI Coding Tools for Writing Chainguard Image Supply Chain](/ai-coding-tools-for-writing-chainguard-image-supply-chain-se/)
 - [AI Tools for Designers Writing Handoff Notes That Include](/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
-- [Best AI Tools for Writing Nginx Configurations](/ai-tools-compared/ai-tools-for-nginx-configuration)
+- [Best AI Tools for Writing Nginx Configurations](/ai-tools-for-nginx-configuration)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ## Testing AI-Generated Nginx Configs Safely

@@ -307,10 +307,10 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 
 ## Related Articles
 
-- [How to Use AI to Debug Flaky Integration Tests in CI](/ai-tools-compared/how-to-use-ai-to-debug-flaky-integration-tests-in-ci-pipelin/)
-- [Best AI Tools for Generating Unit Tests 2026](/ai-tools-compared/ai-tools-for-generating-unit-tests-2026/)
-- [Best AI Tools for Generating Unit Tests: Legacy](/ai-tools-compared/best-ai-tools-for-generating-unit-tests-from-legacy-code-without-tests/)
-- [Best AI Tools for Writing Playwright Tests 2026](/ai-tools-compared/best-ai-tools-for-writing-playwright-tests-2026/)
-- [Best AI Tools for Generating Unit Tests](/ai-tools-compared/best-ai-tools-for-generating-unit-tests-from-legacy-code-comparison/)
+- [How to Use AI to Debug Flaky Integration Tests in CI](/how-to-use-ai-to-debug-flaky-integration-tests-in-ci-pipelin/)
+- [Best AI Tools for Generating Unit Tests 2026](/ai-tools-for-generating-unit-tests-2026/)
+- [Best AI Tools for Generating Unit Tests: Legacy](/best-ai-tools-for-generating-unit-tests-from-legacy-code-without-tests/)
+- [Best AI Tools for Writing Playwright Tests 2026](/best-ai-tools-for-writing-playwright-tests-2026/)
+- [Best AI Tools for Generating Unit Tests](/best-ai-tools-for-generating-unit-tests-from-legacy-code-comparison/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

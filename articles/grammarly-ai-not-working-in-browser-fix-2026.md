@@ -387,10 +387,10 @@ Only after trying all fixes above. Reinstalling is a nuclear option that works m
 
 ## Related Articles
 
-- [ChatGPT Image Upload Not Working Fix (2026)](/ai-tools-compared/chatgpt-image-upload-not-working-fix-2026/)
-- [Notion AI Not Working as Expected Fix (2026)](/ai-tools-compared/notion-ai-not-working-as-expected-fix-2026/)
-- [Perplexity Pro Search Not Working Fix (2026)](/ai-tools-compared/perplexity-pro-search-not-working-fix-2026/)
-- [AI Tab Organizer Chrome Extension: Managing Browser Tabs](/ai-tools-compared/ai-tab-organizer-chrome-extension/)
-- [Best AI for Writing Playwright Multi Browser Test Matrices](/ai-tools-compared/best-ai-for-writing-playwright-multi-browser-test-matrices-with-github-actions-2026/)
+- [ChatGPT Image Upload Not Working Fix (2026)](/chatgpt-image-upload-not-working-fix-2026/)
+- [Notion AI Not Working as Expected Fix (2026)](/notion-ai-not-working-as-expected-fix-2026/)
+- [Perplexity Pro Search Not Working Fix (2026)](/perplexity-pro-search-not-working-fix-2026/)
+- [AI Tab Organizer Chrome Extension: Managing Browser Tabs](/ai-tab-organizer-chrome-extension/)
+- [Best AI for Writing Playwright Multi Browser Test Matrices](/best-ai-for-writing-playwright-multi-browser-test-matrices-with-github-actions-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

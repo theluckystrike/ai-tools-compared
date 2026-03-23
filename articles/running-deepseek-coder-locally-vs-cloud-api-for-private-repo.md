@@ -460,10 +460,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Running CodeLlama Locally vs Using Cloud Copilot for Proprie](/ai-tools-compared/running-codellama-locally-vs-using-cloud-copilot-for-proprie/)
-- [Running Starcoder2 Locally for Code Completion Without](/ai-tools-compared/running-starcoder2-locally-for-code-completion-without-sendi/)
-- [How to Manage AI Coding Context Across Multiple Related Repo](/ai-tools-compared/how-to-manage-ai-coding-context-across-multiple-related-repo/)
-- [Copilot Suggestions in Private Repos Do They Cost More Than](/ai-tools-compared/copilot-suggestions-in-private-repos-do-they-cost-more-than-public/)
-- [How to Set Up Ollama as Private AI Coding Assistant](/ai-tools-compared/how-to-set-up-ollama-as-private-ai-coding-assistant-for-sensitive-codebases/)
+- [Running CodeLlama Locally vs Using Cloud Copilot for Proprie](/running-codellama-locally-vs-using-cloud-copilot-for-proprie/)
+- [Running Starcoder2 Locally for Code Completion Without](/running-starcoder2-locally-for-code-completion-without-sendi/)
+- [How to Manage AI Coding Context Across Multiple Related Repo](/how-to-manage-ai-coding-context-across-multiple-related-repo/)
+- [Copilot Suggestions in Private Repos Do They Cost More Than](/copilot-suggestions-in-private-repos-do-they-cost-more-than-public/)
+- [How to Set Up Ollama as Private AI Coding Assistant](/how-to-set-up-ollama-as-private-ai-coding-assistant-for-sensitive-codebases/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

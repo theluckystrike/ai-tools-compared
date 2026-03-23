@@ -318,11 +318,11 @@ Claude and ChatGPT understand table-driven test patterns well. GitHub Copilot ge
 
 ## Related Articles
 
-- [Effective Workflow for AI-Assisted Open Source Contribution](/ai-tools-compared/effective-workflow-for-ai-assisted-open-source-contribution-/)
-- [AI Tools for Qa Engineers Generating Data Driven Test Scenar](/ai-tools-compared/ai-tools-for-qa-engineers-generating-data-driven-test-scenar/)
-- [AI Coding Assistants for Go Testing Table Driven Tests Gener](/ai-tools-compared/ai-coding-assistants-for-go-testing-table-driven-tests-gener/)
-- [How to Use AI to Help Product Managers Write Data-Driven Fea](/ai-tools-compared/how-to-use-ai-to-help-product-managers-write-data-driven-fea/)
-- [AI-Assisted API Load Testing Tools Comparison 2026](/ai-tools-compared/ai-assisted-api-load-testing-tools-comparison/)
-- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
+- [Effective Workflow for AI-Assisted Open Source Contribution](/effective-workflow-for-ai-assisted-open-source-contribution-/)
+- [AI Tools for Qa Engineers Generating Data Driven Test Scenar](/ai-tools-for-qa-engineers-generating-data-driven-test-scenar/)
+- [AI Coding Assistants for Go Testing Table Driven Tests Gener](/ai-coding-assistants-for-go-testing-table-driven-tests-gener/)
+- [How to Use AI to Help Product Managers Write Data-Driven Fea](/how-to-use-ai-to-help-product-managers-write-data-driven-fea/)
+- [AI-Assisted API Load Testing Tools Comparison 2026](/ai-assisted-api-load-testing-tools-comparison/)
+- [AI Project Status Generator for Remote Teams Pulling](https://welikeremotestack.com/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

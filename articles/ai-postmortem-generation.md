@@ -407,11 +407,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Code Generation for Java Reactive Programming with Projec](/ai-tools-compared/ai-code-generation-for-java-reactive-programming-with-projec/)
-- [AI Code Generation for Java Virtual Threads Project Loom Pat](/ai-tools-compared/ai-code-generation-for-java-virtual-threads-project-loom-pat/)
-- [AI Code Generation for Python FastAPI Endpoints](/ai-tools-compared/ai-code-generation-for-python-fastapi-endpoints-with-pydantic-models-compared/)
-- [AI Code Generation Quality for Java JUnit 5 Parameterized](/ai-tools-compared/ai-code-generation-quality-for-java-junit-5-parameterized-te/)
-- [AI Code Generation Quality for Java Pattern Matching and Swi](/ai-tools-compared/ai-code-generation-quality-for-java-pattern-matching-and-swi/)
+- [AI Code Generation for Java Reactive Programming with Projec](/ai-code-generation-for-java-reactive-programming-with-projec/)
+- [AI Code Generation for Java Virtual Threads Project Loom Pat](/ai-code-generation-for-java-virtual-threads-project-loom-pat/)
+- [AI Code Generation for Python FastAPI Endpoints](/ai-code-generation-for-python-fastapi-endpoints-with-pydantic-models-compared/)
+- [AI Code Generation Quality for Java JUnit 5 Parameterized](/ai-code-generation-quality-for-java-junit-5-parameterized-te/)
+- [AI Code Generation Quality for Java Pattern Matching and Swi](/ai-code-generation-quality-for-java-pattern-matching-and-swi/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

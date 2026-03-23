@@ -266,10 +266,10 @@ Policies vary widely. Some tools let you access your data for a grace period aft
 
 ## Related Articles
 
-- [ChatGPT API Fine Tuning Costs Training Plus Inference Total](/ai-tools-compared/chatgpt-api-fine-tuning-costs-training-plus-inference-total-estimate/)
-- [ChatGPT Canvas Feature Is It Included in Plus or Team Only](/ai-tools-compared/chatgpt-canvas-feature-is-it-included-in-plus-or-team-only/)
-- [ChatGPT Plus Browsing and DALL-E Usage Limits Per Three](/ai-tools-compared/chatgpt-plus-browsing-and-dalle-usage-limits-per-three-hours/)
-- [ChatGPT Plus Cancel Mid Month: Do You Keep Access Until End?](/ai-tools-compared/chatgpt-plus-cancel-mid-month-do-you-keep-access-until-end/)
-- [Do ChatGPT Plus Memory and Custom GPTs Count Toward](/ai-tools-compared/chatgpt-plus-memory-and-custom-gpts-count-toward-usage-limit/)
+- [ChatGPT API Fine Tuning Costs Training Plus Inference Total](/chatgpt-api-fine-tuning-costs-training-plus-inference-total-estimate/)
+- [ChatGPT Canvas Feature Is It Included in Plus or Team Only](/chatgpt-canvas-feature-is-it-included-in-plus-or-team-only/)
+- [ChatGPT Plus Browsing and DALL-E Usage Limits Per Three](/chatgpt-plus-browsing-and-dalle-usage-limits-per-three-hours/)
+- [ChatGPT Plus Cancel Mid Month: Do You Keep Access Until End?](/chatgpt-plus-cancel-mid-month-do-you-keep-access-until-end/)
+- [Do ChatGPT Plus Memory and Custom GPTs Count Toward](/chatgpt-plus-memory-and-custom-gpts-count-toward-usage-limit/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

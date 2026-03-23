@@ -441,9 +441,9 @@ The best approach combines tools — use Claude for architectural decisions and 
 
 ## Related Articles
 
-- [Best AI Tools for Writing Terraform Modules](/ai-tools-compared/best-ai-tools-for-writing-terraform-modules/)
-- [AI Tools for Writing Terraform Infrastructure-as-Code](/ai-tools-compared/ai-tools-for-writing-terraform-infrastructure-as-code-comparison-2026/)
-- [AI Tools for Generating Terraform Provider Configurations 2026](/ai-tools-compared/ai-tools-for-generating-terraform-provider-configurations-2026/)
-- [Copilot vs Cursor for Writing Terraform Modules](/ai-tools-compared/copilot-vs-cursor-for-writing-terraform-modules-from-scratch/)
-- [Best AI Tools for Writing Terraform Provider Plugins 2026](/ai-tools-compared/best-ai-tools-for-writing-terraform-provider-plugins-2026/)
+- [Best AI Tools for Writing Terraform Modules](/best-ai-tools-for-writing-terraform-modules/)
+- [AI Tools for Writing Terraform Infrastructure-as-Code](/ai-tools-for-writing-terraform-infrastructure-as-code-comparison-2026/)
+- [AI Tools for Generating Terraform Provider Configurations 2026](/ai-tools-for-generating-terraform-provider-configurations-2026/)
+- [Copilot vs Cursor for Writing Terraform Modules](/copilot-vs-cursor-for-writing-terraform-modules-from-scratch/)
+- [Best AI Tools for Writing Terraform Provider Plugins 2026](/best-ai-tools-for-writing-terraform-provider-plugins-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

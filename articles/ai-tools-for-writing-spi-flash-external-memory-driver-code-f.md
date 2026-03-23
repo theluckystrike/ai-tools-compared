@@ -409,11 +409,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI Tools for Reviewing Embedded C Code for Memory.](/ai-tools-compared/best-ai-tools-for-reviewing-embedded-c-code-for-memory-leak-and-buffer-overflow/)
-- [Claude Code for Memory Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-memory-profiling-workflow-tutorial/)
-- [How to Configure Claude Code Project Memory for Persistent](/ai-tools-compared/how-to-configure-claude-code-project-memory-for-persistent-c/)
-- [Gemini Flash vs Pro API Pricing: When to Use Which Model](/ai-tools-compared/gemini-flash-vs-pro-api-pricing-when-to-use-which-model/)
-- [Best AI Assistant for Debugging Memory Leaks Shown](/ai-tools-compared/best-ai-assistant-for-debugging-memory-leaks-shown-in-chrome-devtools-heap-snapshot/)
+- [Best AI Tools for Reviewing Embedded C Code for Memory.](/best-ai-tools-for-reviewing-embedded-c-code-for-memory-leak-and-buffer-overflow/)
+- [Claude Code for Memory Profiling Workflow Tutorial](/claude-code-for-memory-profiling-workflow-tutorial/)
+- [How to Configure Claude Code Project Memory for Persistent](/how-to-configure-claude-code-project-memory-for-persistent-c/)
+- [Gemini Flash vs Pro API Pricing: When to Use Which Model](/gemini-flash-vs-pro-api-pricing-when-to-use-which-model/)
+- [Best AI Assistant for Debugging Memory Leaks Shown](/best-ai-assistant-for-debugging-memory-leaks-shown-in-chrome-devtools-heap-snapshot/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

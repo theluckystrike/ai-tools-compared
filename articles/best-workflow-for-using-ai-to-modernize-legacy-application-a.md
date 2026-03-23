@@ -261,10 +261,10 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Best Workflow for Using AI to Write Infrastructure as Code](/ai-tools-compared/best-workflow-for-using-ai-to-write-infrastructure-as-code-f/)
-- [Effective Workflow for Using AI: Generate](/ai-tools-compared/effective-workflow-for-using-ai-to-generate-and-maintain-changelog-documentation/)
-- [Best AI Tools for Generating Unit Tests: Legacy](/ai-tools-compared/best-ai-tools-for-generating-unit-tests-from-legacy-code-without-tests/)
-- [Effective Workflow for Using AI](/ai-tools-compared/effective-workflow-for-using-ai-to-debug-production-issues-from-logs/)
-- [Best AI IDE Features for Understanding and Modifying Legacy](/ai-tools-compared/best-ai-ide-features-for-understanding-and-modifying-legacy-/)
-- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
+- [Best Workflow for Using AI to Write Infrastructure as Code](/best-workflow-for-using-ai-to-write-infrastructure-as-code-f/)
+- [Effective Workflow for Using AI: Generate](/effective-workflow-for-using-ai-to-generate-and-maintain-changelog-documentation/)
+- [Best AI Tools for Generating Unit Tests: Legacy](/best-ai-tools-for-generating-unit-tests-from-legacy-code-without-tests/)
+- [Effective Workflow for Using AI](/effective-workflow-for-using-ai-to-debug-production-issues-from-logs/)
+- [Best AI IDE Features for Understanding and Modifying Legacy](/best-ai-ide-features-for-understanding-and-modifying-legacy-/)
+- [AI Project Status Generator for Remote Teams Pulling](https://welikeremotestack.com/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

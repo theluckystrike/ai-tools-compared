@@ -310,9 +310,9 @@ Policies vary widely. Some tools let you access your data for a grace period aft
 
 ## Related Articles
 
-- [Switching from Windsurf to Cursor How to Transfer Project](/ai-tools-compared/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
-- [Cursor vs Windsurf for Implementing Drag and Drop Interfaces](/ai-tools-compared/cursor-vs-windsurf-for-implementing-drag-and-drop-interfaces/)
-- [Cursor Free Plan vs Windsurf Free Plan Which Gives](/ai-tools-compared/cursor-free-plan-vs-windsurf-free-plan-which-gives-more/)
-- [How Much Does Cursor AI Actually Cost Per Month All](/ai-tools-compared/how-much-does-cursor-ai-actually-cost-per-month-all-plans/)
-- [Cursor vs Windsurf for Building Next Js App from Design](/ai-tools-compared/cursor-vs-windsurf-for-building-next-js-app-from-design-mock/)
+- [Switching from Windsurf to Cursor How to Transfer Project](/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
+- [Cursor vs Windsurf for Implementing Drag and Drop Interfaces](/cursor-vs-windsurf-for-implementing-drag-and-drop-interfaces/)
+- [Cursor Free Plan vs Windsurf Free Plan Which Gives](/cursor-free-plan-vs-windsurf-free-plan-which-gives-more/)
+- [How Much Does Cursor AI Actually Cost Per Month All](/how-much-does-cursor-ai-actually-cost-per-month-all-plans/)
+- [Cursor vs Windsurf for Building Next Js App from Design](/cursor-vs-windsurf-for-building-next-js-app-from-design-mock/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

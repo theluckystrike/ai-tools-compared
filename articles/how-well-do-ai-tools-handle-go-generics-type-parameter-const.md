@@ -257,10 +257,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How Well Do AI Tools Handle Rust Lifetime Elision Rules Corr](/ai-tools-compared/how-well-do-ai-tools-handle-rust-lifetime-elision-rules-corr/)
-- [Best AI for Writing Playwright Tests That Handle Dynamic Loa](/ai-tools-compared/best-ai-for-writing-playwright-tests-that-handle-dynamic-loa/)
-- [AI Autocomplete for Test Files How Well Different Tools Pred](/ai-tools-compared/ai-autocomplete-for-test-files-how-well-different-tools-pred/)
-- [Best AI Assistant for Fixing TypeScript Strict Mode Type Nar](/ai-tools-compared/best-ai-assistant-for-fixing-typescript-strict-mode-type-nar/)
-- [Best AI Tools for TypeScript Type Inference and Generic Type](/ai-tools-compared/best-ai-tools-for-typescript-type-inference-and-generic-type/)
+- [How Well Do AI Tools Handle Rust Lifetime Elision Rules Corr](/how-well-do-ai-tools-handle-rust-lifetime-elision-rules-corr/)
+- [Best AI for Writing Playwright Tests That Handle Dynamic Loa](/best-ai-for-writing-playwright-tests-that-handle-dynamic-loa/)
+- [AI Autocomplete for Test Files How Well Different Tools Pred](/ai-autocomplete-for-test-files-how-well-different-tools-pred/)
+- [Best AI Assistant for Fixing TypeScript Strict Mode Type Nar](/best-ai-assistant-for-fixing-typescript-strict-mode-type-nar/)
+- [Best AI Tools for TypeScript Type Inference and Generic Type](/best-ai-tools-for-typescript-type-inference-and-generic-type/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

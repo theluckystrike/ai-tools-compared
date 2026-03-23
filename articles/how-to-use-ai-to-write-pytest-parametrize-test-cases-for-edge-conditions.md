@@ -373,11 +373,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Use AI to Write pytest Parametrize Test Cases for Edg](/ai-tools-compared/how-to-use-ai-to-write-pytest-parametrize-test-cases-for-edg/)
-- [AI Tools for Creating Property-Based Test Cases](/ai-tools-compared/ai-tools-for-creating-property-based-test-cases-using-hypoth/)
-- [Best AI for Creating Negative Test Cases](/ai-tools-compared/best-ai-for-creating--negative-test-cases-from-/)
-- [Best AI for QA Engineers Writing API Contract Testing Cases](/ai-tools-compared/best-ai-for-qa-engineers-writing-api-contract-test-cases-fro/)
-- [Best AI Tool for Generating Jest Test Cases from React](/ai-tools-compared/best-ai-tool-for-generating-jest-test-cases-from-react-compo/)
+- [How to Use AI to Write pytest Parametrize Test Cases for Edg](/how-to-use-ai-to-write-pytest-parametrize-test-cases-for-edg/)
+- [AI Tools for Creating Property-Based Test Cases](/ai-tools-for-creating-property-based-test-cases-using-hypoth/)
+- [Best AI for Creating Negative Test Cases](/best-ai-for-creating--negative-test-cases-from-/)
+- [Best AI for QA Engineers Writing API Contract Testing Cases](/best-ai-for-qa-engineers-writing-api-contract-test-cases-fro/)
+- [Best AI Tool for Generating Jest Test Cases from React](/best-ai-tool-for-generating-jest-test-cases-from-react-compo/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -359,12 +359,12 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How to Create .cursorrules That Enforce Your Teams React](/ai-tools-compared/how-to-create-cursorrules-that-enforce-your-teams-react-comp/)
-- [Create CursorRules That Teach Cursor Your Team's State](/ai-tools-compared/how-to-create-cursorrules-that-teach-cursor-your-teams-state/)
-- [AI Git Commit Message Generators Compared 2026](/ai-tools-compared/ai-git-commit-message-generators-compared/)
-- [How to Write Git Commit Messages Using AI](/ai-tools-compared/how-to-write--git-commit-messages-using-ai-from-diffs/)
-- [Best Practices for Versioning CursorRules Files Across Team](/ai-tools-compared/best-practices-for-versioning-cursorrules-files-across-team-/)
-- [How to Create Remote Employee Exit Interview Process](https://theluckystrike.github.io/remote-work-tools/how-to-create-remote-employee-exit-interview-process-for-distributed-teams/)
+- [How to Create .cursorrules That Enforce Your Teams React](/how-to-create-cursorrules-that-enforce-your-teams-react-comp/)
+- [Create CursorRules That Teach Cursor Your Team's State](/how-to-create-cursorrules-that-teach-cursor-your-teams-state/)
+- [AI Git Commit Message Generators Compared 2026](/ai-git-commit-message-generators-compared/)
+- [How to Write Git Commit Messages Using AI](/how-to-write--git-commit-messages-using-ai-from-diffs/)
+- [Best Practices for Versioning CursorRules Files Across Team](/best-practices-for-versioning-cursorrules-files-across-team-/)
+- [How to Create Remote Employee Exit Interview Process](https://welikeremotestack.com/how-to-create-remote-employee-exit-interview-process-for-distributed-teams/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

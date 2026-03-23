@@ -273,9 +273,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Writing TypeScript Zod Schemas 2026](/ai-tools-compared/ai-tools-for-writing-typescript-zod-schemas-2026/)
-- [How Accurate Are AI Tools at Generating Rust Crossbeam](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
-- [How Accurate Are AI Tools](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-serde-serialization-code/)
-- [How to Prevent AI Coding Tools from Generating Overly](/ai-tools-compared/how-to-prevent-ai-coding-tools-from-generating-overly-complex-solutions/)
-- [How Accurate Are AI Tools for Rust Unsafe Code Blocks](/ai-tools-compared/how-accurate-are-ai-tools-for-rust-unsafe-code-blocks-and-ff/)
+- [AI Tools for Writing TypeScript Zod Schemas 2026](/ai-tools-for-writing-typescript-zod-schemas-2026/)
+- [How Accurate Are AI Tools at Generating Rust Crossbeam](/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
+- [How Accurate Are AI Tools](/how-accurate-are-ai-tools-at-generating-rust-serde-serialization-code/)
+- [How to Prevent AI Coding Tools from Generating Overly](/how-to-prevent-ai-coding-tools-from-generating-overly-complex-solutions/)
+- [How Accurate Are AI Tools for Rust Unsafe Code Blocks](/how-accurate-are-ai-tools-for-rust-unsafe-code-blocks-and-ff/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

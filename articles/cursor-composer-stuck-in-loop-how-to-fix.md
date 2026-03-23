@@ -356,10 +356,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Claude Code Tool Use Loop Not Terminating Fix](/ai-tools-compared/claude-code-tool-use-loop-not-terminating-fix/)
-- [Claude Code vs Cursor Composer](/ai-tools-compared/claude-code-vs-cursor-composer-for-full-stack-development-comparison/)
-- [Copilot Edits Panel vs Cursor Composer Workflow Comparison](/ai-tools-compared/copilot-edits-panel-vs-cursor-composer-workflow-comparison-f/)
-- [Copilot Workspace vs Cursor Composer Multi File Editing Comp](/ai-tools-compared/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)
-- [How to Transfer Cursor Composer Prompt Library](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code-commands/)
+- [Claude Code Tool Use Loop Not Terminating Fix](/claude-code-tool-use-loop-not-terminating-fix/)
+- [Claude Code vs Cursor Composer](/claude-code-vs-cursor-composer-for-full-stack-development-comparison/)
+- [Copilot Edits Panel vs Cursor Composer Workflow Comparison](/copilot-edits-panel-vs-cursor-composer-workflow-comparison-f/)
+- [Copilot Workspace vs Cursor Composer Multi File Editing Comp](/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)
+- [How to Transfer Cursor Composer Prompt Library](/transfer-cursor-composer-prompt-library-to-claude-code-commands/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

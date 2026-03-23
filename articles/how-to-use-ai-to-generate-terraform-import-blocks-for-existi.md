@@ -315,11 +315,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Use AI to Resolve Python Import Circular Dependency E](/ai-tools-compared/how-to-use-ai-to-resolve-python-import-circular-dependency-e/)
-- [AI Tools for Creating Dbt Documentation Blocks](/ai-tools-compared/ai-tools-for-creating-dbt-documentation-blocks-from-column-level-lineage-analysis/)
-- [How Accurate Are AI Tools for Rust Unsafe Code Blocks](/ai-tools-compared/how-accurate-are-ai-tools-for-rust-unsafe-code-blocks-and-ff/)
-- [AI Tools for Interpreting Terraform Plan Errors with Provide](/ai-tools-compared/ai-tools-for-interpreting-terraform-plan-errors-with-provide/)
-- [AI Tools for Interpreting Terraform Plan Errors](/ai-tools-compared/ai-tools-for-interpreting-terraform-plan-errors-with-provider-version-conflicts/)
+- [How to Use AI to Resolve Python Import Circular Dependency E](/how-to-use-ai-to-resolve-python-import-circular-dependency-e/)
+- [AI Tools for Creating Dbt Documentation Blocks](/ai-tools-for-creating-dbt-documentation-blocks-from-column-level-lineage-analysis/)
+- [How Accurate Are AI Tools for Rust Unsafe Code Blocks](/how-accurate-are-ai-tools-for-rust-unsafe-code-blocks-and-ff/)
+- [AI Tools for Interpreting Terraform Plan Errors with Provide](/ai-tools-for-interpreting-terraform-plan-errors-with-provide/)
+- [AI Tools for Interpreting Terraform Plan Errors](/ai-tools-for-interpreting-terraform-plan-errors-with-provider-version-conflicts/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

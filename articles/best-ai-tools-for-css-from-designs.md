@@ -332,9 +332,9 @@ For one-off component extraction: Figma Dev Mode CSS, pasted into Claude with "m
 
 ## Related Reading
 
-- [AI Coding Assistant Comparison for React Component Generation](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
-- [AI Coding Assistant Comparison for TypeScript Tailwind CSS](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-tailwind-css-c/)
-- [Which AI Tool Generates Better Vue 3 Composition API Components](/ai-tools-compared/which-ai-tool-generates-better-vue-3-composition-api-components/)
+- [AI Coding Assistant Comparison for React Component Generation](/ai-coding-assistant-comparison-for-react-component-generatio/)
+- [AI Coding Assistant Comparison for TypeScript Tailwind CSS](/ai-coding-assistant-comparison-for-typescript-tailwind-css-c/)
+- [Which AI Tool Generates Better Vue 3 Composition API Components](/which-ai-tool-generates-better-vue-3-composition-api-components/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

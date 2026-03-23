@@ -309,10 +309,10 @@ Yes. Anthropic's console lets you set monthly spend limits per API key. Set a li
 
 ## Related Articles
 
-- [Writing CLAUDE.md Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy/)
-- [Writing CLAUDE MD Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
-- [Cheapest Way to Use Claude for Coding Projects 2026](/ai-tools-compared/cheapest-way-to-use-claude-for-coding-projects-2026/)
-- [Claude Projects Feature Which Plan Tier Includes It Explaine](/ai-tools-compared/claude-projects-feature-which-plan-tier-includes-it-explaine/)
-- [How to Transfer Notion AI Workflows to Claude Projects 2026](/ai-tools-compared/how-to-transfer-notion-ai-workflows-to-claude-projects-2026/)
+- [Writing CLAUDE.md Files That Define Your Project's API](/writing-claude-md-files-that-define-your-projects-api-versioning-strategy/)
+- [Writing CLAUDE MD Files That Define Your Project's API](/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
+- [Cheapest Way to Use Claude for Coding Projects 2026](/cheapest-way-to-use-claude-for-coding-projects-2026/)
+- [Claude Projects Feature Which Plan Tier Includes It Explaine](/claude-projects-feature-which-plan-tier-includes-it-explaine/)
+- [How to Transfer Notion AI Workflows to Claude Projects 2026](/how-to-transfer-notion-ai-workflows-to-claude-projects-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

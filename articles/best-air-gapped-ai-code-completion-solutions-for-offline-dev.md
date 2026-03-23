@@ -239,11 +239,11 @@ Consider hybrid approaches: Some tools offer partial offline mode where basic co
 
 ## Related Reading
 
-- [AI Code Completion for Java Jakarta EE Migration from Javax](/ai-tools-compared/ai-code-completion-for-java-jakarta-ee-migration-from-javax-/)
-- [AI Code Completion for Java Record Classes and Sealed Interf](/ai-tools-compared/ai-code-completion-for-java-record-classes-and-sealed-interf/)
-- [AI Code Completion for Writing Shell Commands Inside Scripts](/ai-tools-compared/ai-code-completion-for-writing-shell-commands-inside-scripts/)
-- [AI Code Completion Latency Comparison](/ai-tools-compared/ai-code-completion-latency-comparison-copilot-vs-cursor-vs-cody-2026/)
-- [Best AI Code Completion for Python Data Science 2026](/ai-tools-compared/ai-code-completion-python-data-science-2026/)
+- [AI Code Completion for Java Jakarta EE Migration from Javax](/ai-code-completion-for-java-jakarta-ee-migration-from-javax-/)
+- [AI Code Completion for Java Record Classes and Sealed Interf](/ai-code-completion-for-java-record-classes-and-sealed-interf/)
+- [AI Code Completion for Writing Shell Commands Inside Scripts](/ai-code-completion-for-writing-shell-commands-inside-scripts/)
+- [AI Code Completion Latency Comparison](/ai-code-completion-latency-comparison-copilot-vs-cursor-vs-cody-2026/)
+- [Best AI Code Completion for Python Data Science 2026](/ai-code-completion-python-data-science-2026/)
 
 ## Frequently Asked Questions
 
@@ -269,10 +269,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Running Starcoder2 Locally for Code Completion](/ai-tools-compared/running-starcoder2-locally-for-code-completion-without-sendi/)
-- [Self Hosted AI Coding Tools That Support Air Gapped](/ai-tools-compared/self-hosted-ai-coding-tools-that-support-air-gapped-environm/)
-- [Cheapest Way to Get AI Code Completion in Vim 2026](/ai-tools-compared/cheapest-way-to-get-ai-code-completion-in-vim-2026/)
-- [Open Source AI Code Completion for Neovim Without Cloud API](/ai-tools-compared/open-source-ai-code-completion-for-neovim-without-cloud-api-/)
-- [AI Code Completion for Java Record Classes and Sealed](/ai-tools-compared/ai-code-completion-for-java-record-classes-and-sealed-interf/)
+- [Running Starcoder2 Locally for Code Completion](/running-starcoder2-locally-for-code-completion-without-sendi/)
+- [Self Hosted AI Coding Tools That Support Air Gapped](/self-hosted-ai-coding-tools-that-support-air-gapped-environm/)
+- [Cheapest Way to Get AI Code Completion in Vim 2026](/cheapest-way-to-get-ai-code-completion-in-vim-2026/)
+- [Open Source AI Code Completion for Neovim Without Cloud API](/open-source-ai-code-completion-for-neovim-without-cloud-api-/)
+- [AI Code Completion for Java Record Classes and Sealed](/ai-code-completion-for-java-record-classes-and-sealed-interf/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

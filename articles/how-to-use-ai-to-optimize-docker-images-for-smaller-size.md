@@ -390,11 +390,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How Context Window Size Affects AI Code Suggestions](/ai-tools-compared/how-context-window-size-affects-ai-code-suggestions-in-different-idess/)
-- [AI Tools for Generating Docker Compose Files for Complex Mic](/ai-tools-compared/ai-tools-for-generating-docker-compose-files-for-complex-mic/)
-- [AI Tools for Resolving Docker Build Context Permission Denie](/ai-tools-compared/ai-tools-for-resolving-docker-build-context-permission-denie/)
-- [Best AI Tools for Writing Docker Compose Files 2026](/ai-tools-compared/best-ai-tools-for-writing-docker-compose-files-2026/)
-- [AI Tools for Generating Website Hero Images Compared](/ai-tools-compared/ai-tools-for-generating-website-hero-images-compared/)
+- [How Context Window Size Affects AI Code Suggestions](/how-context-window-size-affects-ai-code-suggestions-in-different-idess/)
+- [AI Tools for Generating Docker Compose Files for Complex Mic](/ai-tools-for-generating-docker-compose-files-for-complex-mic/)
+- [AI Tools for Resolving Docker Build Context Permission Denie](/ai-tools-for-resolving-docker-build-context-permission-denie/)
+- [Best AI Tools for Writing Docker Compose Files 2026](/best-ai-tools-for-writing-docker-compose-files-2026/)
+- [AI Tools for Generating Website Hero Images Compared](/ai-tools-for-generating-website-hero-images-compared/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

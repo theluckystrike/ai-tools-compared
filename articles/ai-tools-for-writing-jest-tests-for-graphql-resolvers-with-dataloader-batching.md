@@ -291,9 +291,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI Tools for Writing GraphQL Resolvers 2026](/ai-tools-compared/best-ai-tools-for-writing-graphql-resolvers-2026/)
-- [AI Tools for Writing Jest Tests for Web Worker and Service](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-web-worker-and-service-w/)
-- [AI Tools for Writing Playwright Tests That Verify Accessibil](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-accessibil/)
-- [AI Tools for Writing Playwright Tests That Verify Responsive](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-responsive/)
-- [AI Tools for Writing pytest Tests for Alembic Database Paths](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
+- [Best AI Tools for Writing GraphQL Resolvers 2026](/best-ai-tools-for-writing-graphql-resolvers-2026/)
+- [AI Tools for Writing Jest Tests for Web Worker and Service](/ai-tools-for-writing-jest-tests-for-web-worker-and-service-w/)
+- [AI Tools for Writing Playwright Tests That Verify Accessibil](/ai-tools-for-writing-playwright-tests-that-verify-accessibil/)
+- [AI Tools for Writing Playwright Tests That Verify Responsive](/ai-tools-for-writing-playwright-tests-that-verify-responsive/)
+- [AI Tools for Writing pytest Tests for Alembic Database Paths](/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

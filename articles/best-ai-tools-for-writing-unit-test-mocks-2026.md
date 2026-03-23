@@ -522,11 +522,11 @@ public class UserServiceTest {
 
 ## Related Articles
 
-- [AI Tools for Generating Unit Test Mocks and Stubs 2026](/ai-tools-compared/ai-tools-for-generating-unit-test-mocks-and-stubs-2026/)
-- [AI Tools for Generating Jest Mock Implementations](/ai-tools-compared/ai-tools-for-generating-jest-mock-implementations-for-comple/)
-- [Best Free AI Tool for Writing Unit Tests Automatically](/ai-tools-compared/best-free-ai-tool-for-writing-unit-tests-automatically/)
-- [AI Tools for Generating API Mock Servers 2026](/ai-tools-compared/ai-tools-for-generating-api-mock-servers-2026/)
-- [Best AI Tools for Writing Unit Tests Comparison 2026](/ai-tools-compared/best-ai-tools-for-writing-unit-tests-comparison-2026/)
+- [AI Tools for Generating Unit Test Mocks and Stubs 2026](/ai-tools-for-generating-unit-test-mocks-and-stubs-2026/)
+- [AI Tools for Generating Jest Mock Implementations](/ai-tools-for-generating-jest-mock-implementations-for-comple/)
+- [Best Free AI Tool for Writing Unit Tests Automatically](/best-free-ai-tool-for-writing-unit-tests-automatically/)
+- [AI Tools for Generating API Mock Servers 2026](/ai-tools-for-generating-api-mock-servers-2026/)
+- [Best AI Tools for Writing Unit Tests Comparison 2026](/best-ai-tools-for-writing-unit-tests-comparison-2026/)
 ## Frequently Asked Questions
 
 **Are free AI tools good enough for ai tools for writing unit test mocks?**

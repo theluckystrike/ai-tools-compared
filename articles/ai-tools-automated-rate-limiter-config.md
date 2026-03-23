@@ -300,9 +300,9 @@ def tier_rate_limiter(get_user_id: Callable):
 
 ## Related Reading
 
-- [Best AI Tools for Writing API Rate Limiting Code 2026](/ai-tools-compared/best-ai-tools-for-writing-api-rate-limiting-code-2026/)
-- [Best AI Tools for Automated API Rate Limiting and Abuse Detection](/ai-tools-compared/best-ai-tools-for-automated-api-rate-limiting-and-abuse-dete/)
-- [AI Tools for Automated SSL/TLS Configuration](/ai-tools-compared/ai-tools-automated-ssl-tls-config/)
+- [Best AI Tools for Writing API Rate Limiting Code 2026](/best-ai-tools-for-writing-api-rate-limiting-code-2026/)
+- [Best AI Tools for Automated API Rate Limiting and Abuse Detection](/best-ai-tools-for-automated-api-rate-limiting-and-abuse-dete/)
+- [AI Tools for Automated SSL/TLS Configuration](/ai-tools-automated-ssl-tls-config/)
 
 ---
 

@@ -275,10 +275,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Use AI Coding Tools Effectively During Live Coding](/ai-tools-compared/how-to-use-ai-coding-tools-effectively-during-live-coding-interviews-2026/)
-- [AI Coding Assistants for Go Testing Table Driven Tests Gener](/ai-tools-compared/ai-coding-assistants-for-go-testing-table-driven-tests-gener/)
-- [AI Coding Assistants for Typescript Deno Fresh Framework Com](/ai-tools-compared/ai-coding-assistants-for-typescript-deno-fresh-framework-com/)
-- [AI Coding Assistants for TypeScript Express Middleware Chain](/ai-tools-compared/ai-coding-assistants-for-typescript-express-middleware-chain/)
-- [AI Coding Assistants for Typescript Graphql Resolver and](/ai-tools-compared/ai-coding-assistants-for-typescript-graphql-resolver-and-schema-generation-2026/)
+- [How to Use AI Coding Tools Effectively During Live Coding](/how-to-use-ai-coding-tools-effectively-during-live-coding-interviews-2026/)
+- [AI Coding Assistants for Go Testing Table Driven Tests Gener](/ai-coding-assistants-for-go-testing-table-driven-tests-gener/)
+- [AI Coding Assistants for Typescript Deno Fresh Framework Com](/ai-coding-assistants-for-typescript-deno-fresh-framework-com/)
+- [AI Coding Assistants for TypeScript Express Middleware Chain](/ai-coding-assistants-for-typescript-express-middleware-chain/)
+- [AI Coding Assistants for Typescript Graphql Resolver and](/ai-coding-assistants-for-typescript-graphql-resolver-and-schema-generation-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

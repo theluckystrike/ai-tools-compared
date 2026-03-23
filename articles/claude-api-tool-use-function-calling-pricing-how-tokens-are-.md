@@ -470,11 +470,11 @@ Policies vary widely. Some tools let you access your data for a grace period aft
 
 ## Related Articles
 
-- [Claude API Extended Thinking: How Output Tokens Are Billed](/ai-tools-compared/claude-api-extended-thinking-cost-how-output-tokens-are-bill/)
-- [Claude API vs OpenAI API Pricing Breakdown 2026](/ai-tools-compared/claude-api-vs-openai-api-pricing-breakdown-2026/)
-- [Claude Sonnet vs Opus API Pricing Difference Worth It](/ai-tools-compared/claude-sonnet-vs-opus-api-pricing-difference-worth-it-2026/)
-- [ChatGPT API Assistants API Pricing Threads and Runs Cost](/ai-tools-compared/chatgpt-api-assistants-api-pricing-threads-and-runs-cost-breakdown/)
-- [ChatGPT API Token Pricing Calculator How to Estimate Monthly](/ai-tools-compared/chatgpt-api-token-pricing-calculator-how-to-estimate-monthly/)
+- [Claude API Extended Thinking: How Output Tokens Are Billed](/claude-api-extended-thinking-cost-how-output-tokens-are-bill/)
+- [Claude API vs OpenAI API Pricing Breakdown 2026](/claude-api-vs-openai-api-pricing-breakdown-2026/)
+- [Claude Sonnet vs Opus API Pricing Difference Worth It](/claude-sonnet-vs-opus-api-pricing-difference-worth-it-2026/)
+- [ChatGPT API Assistants API Pricing Threads and Runs Cost](/chatgpt-api-assistants-api-pricing-threads-and-runs-cost-breakdown/)
+- [ChatGPT API Token Pricing Calculator How to Estimate Monthly](/chatgpt-api-token-pricing-calculator-how-to-estimate-monthly/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

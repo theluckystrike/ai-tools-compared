@@ -332,11 +332,11 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Generate Openapi Specs from Existing Codebase AI Tools](/ai-tools-compared/generate-openapi-specs-from-existing-codebase-ai-tools/)
-- [ChatGPT vs Claude for Creating Database Migration Scripts](/ai-tools-compared/chatgpt-vs-claude-for-creating-database-migration-scripts-po/)
-- [Claude vs ChatGPT for Creating AWS CDK Infrastructure Stacks](/ai-tools-compared/claude-vs-chatgpt-for-creating-aws-cdk-infrastructure-stacks/)
-- [How to Use AI to Help Designers Write Micro Interaction Spec](/ai-tools-compared/how-to-use-ai-to-help-designers-write-micro-interaction-spec/)
-- [AI Tools for Generating dbt Project Structure from Existing](/ai-tools-compared/ai-tools-for-generating-dbt-project-structure-from-existing-/)
+- [Generate Openapi Specs from Existing Codebase AI Tools](/generate-openapi-specs-from-existing-codebase-ai-tools/)
+- [ChatGPT vs Claude for Creating Database Migration Scripts](/chatgpt-vs-claude-for-creating-database-migration-scripts-po/)
+- [Claude vs ChatGPT for Creating AWS CDK Infrastructure Stacks](/claude-vs-chatgpt-for-creating-aws-cdk-infrastructure-stacks/)
+- [How to Use AI to Help Designers Write Micro Interaction Spec](/how-to-use-ai-to-help-designers-write-micro-interaction-spec/)
+- [AI Tools for Generating dbt Project Structure from Existing](/ai-tools-for-generating-dbt-project-structure-from-existing-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

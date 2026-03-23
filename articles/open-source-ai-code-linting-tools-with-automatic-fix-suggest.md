@@ -317,7 +317,7 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 - [AI Tools for Analyzing Which Open Source Issues Would Benefi](/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
 - [How to Audit What Source Code AI Coding Tools Transmit](/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 - [Open Source AI Code Completion for Neovim Without Cloud API](/open-source-ai-code-completion-for-neovim-without-cloud-api-/)
-- [AI Code Generation Producing Syntax Errors in Rust Fix Guide](/ai-tools-compared/ai-code-generation-producing-syntax-errors-in-rust-fix-guide/)
+- [AI Code Generation Producing Syntax Errors in Rust Fix Guide](/ai-code-generation-producing-syntax-errors-in-rust-fix-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

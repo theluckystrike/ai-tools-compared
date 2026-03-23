@@ -481,10 +481,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Export Dall E Generated Images at Full Resolution](/ai-tools-compared/how-to-export-dall-e-generated-images-at-full-resolution-before-leaving/)
-- [Ideogram vs Midjourney for Text in Images Compared](/ai-tools-compared/ideogram-vs-midjourney-for-text-in-images-compared/)
-- [Midjourney Basic Plan Image Limits Per Month: Real Numbers](/ai-tools-compared/midjourney-basic-plan-image-limits-per-month-real-numbers-20/)
-- [Midjourney Standard vs Pro Plan: Is Stealth Mode Worth](/ai-tools-compared/midjourney-standard-vs-pro-plan-stealth-mode-worth-extra-cost/)
-- [AI Tools for Generating Website Hero Images Compared](/ai-tools-compared/ai-tools-for-generating-website-hero-images-compared/)
+- [How to Export Dall E Generated Images at Full Resolution](/how-to-export-dall-e-generated-images-at-full-resolution-before-leaving/)
+- [Ideogram vs Midjourney for Text in Images Compared](/ideogram-vs-midjourney-for-text-in-images-compared/)
+- [Midjourney Basic Plan Image Limits Per Month: Real Numbers](/midjourney-basic-plan-image-limits-per-month-real-numbers-20/)
+- [Midjourney Standard vs Pro Plan: Is Stealth Mode Worth](/midjourney-standard-vs-pro-plan-stealth-mode-worth-extra-cost/)
+- [AI Tools for Generating Website Hero Images Compared](/ai-tools-for-generating-website-hero-images-compared/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

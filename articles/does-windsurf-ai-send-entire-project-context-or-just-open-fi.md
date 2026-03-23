@@ -329,10 +329,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [What Source Code Context Window Do Different AI Coding Tools](/ai-tools-compared/what-source-code-context-window-do-different-ai-coding-tools/)
-- [Windsurf AI Not Picking Up ESLint Config](/ai-tools-compared/windsurf-ai-not-picking-up-eslint-config-troubleshooting-gui/)
-- [Configuring Cursor AI Notepads for Reusable Project Context](/ai-tools-compared/configuring-cursor-ai-notepads-for-reusable-project-context-/)
-- [How to Use AI Context Management to Work on Large Refactorin](/ai-tools-compared/how-to-use-ai-context-management-to-work-on-large-refactorin/)
-- [Switching from Windsurf to Cursor How to Transfer Project](/ai-tools-compared/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
+- [What Source Code Context Window Do Different AI Coding Tools](/what-source-code-context-window-do-different-ai-coding-tools/)
+- [Windsurf AI Not Picking Up ESLint Config](/windsurf-ai-not-picking-up-eslint-config-troubleshooting-gui/)
+- [Configuring Cursor AI Notepads for Reusable Project Context](/configuring-cursor-ai-notepads-for-reusable-project-context-/)
+- [How to Use AI Context Management to Work on Large Refactorin](/how-to-use-ai-context-management-to-work-on-large-refactorin/)
+- [Switching from Windsurf to Cursor How to Transfer Project](/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

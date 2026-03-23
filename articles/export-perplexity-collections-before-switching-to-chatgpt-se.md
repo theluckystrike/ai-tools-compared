@@ -287,11 +287,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Switching from ChatGPT Plus to Perplexity Pro Feature Compar](/ai-tools-compared/switching-from-chatgpt-plus-to-perplexity-pro-feature-compar/)
-- [Switching from ChatGPT Search to Perplexity Pro Search](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
-- [Switching from ChatGPT Search to Perplexity Pro Search](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
-- [How to Export Gemini Workspace Data Before Switching to](/ai-tools-compared/how-to-export-gemini-workspace-data-before-switching-to-claude-team/)
-- [How to Export Grammarly Personal Dictionary Before Switching](/ai-tools-compared/how-to-export-grammarly-personal-dictionary-before-switching/)
+- [Switching from ChatGPT Plus to Perplexity Pro Feature Compar](/switching-from-chatgpt-plus-to-perplexity-pro-feature-compar/)
+- [Switching from ChatGPT Search to Perplexity Pro Search](/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
+- [Switching from ChatGPT Search to Perplexity Pro Search](/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
+- [How to Export Gemini Workspace Data Before Switching to](/how-to-export-gemini-workspace-data-before-switching-to-claude-team/)
+- [How to Export Grammarly Personal Dictionary Before Switching](/how-to-export-grammarly-personal-dictionary-before-switching/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

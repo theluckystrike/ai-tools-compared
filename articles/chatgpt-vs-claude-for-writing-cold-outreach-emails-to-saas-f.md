@@ -526,9 +526,9 @@ Only one way: Send them. Track open rates, reply rates, and meetings booked. Com
 
 ## Related Articles
 
-- [Best AI Tool for Writing Cold Outreach](/ai-tools-compared/best-ai-tool-for-writing-cold-outreach-emails/)
-- [Claude vs ChatGPT for Technical Writing 2026](/ai-tools-compared/claude-vs-chatgpt-for-technical-writing-2026/)
-- [ChatGPT vs Claude for Writing API Documentation](/ai-tools-compared/chatgpt-vs-claude-for-writing-api-documentation/)
-- [Claude vs ChatGPT for Writing Datadog Dashboard Terraform](/ai-tools-compared/claude-vs-chatgpt-for-writing-datadog-dashboard-terraform-de/)
-- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
+- [Best AI Tool for Writing Cold Outreach](/best-ai-tool-for-writing-cold-outreach-emails/)
+- [Claude vs ChatGPT for Technical Writing 2026](/claude-vs-chatgpt-for-technical-writing-2026/)
+- [ChatGPT vs Claude for Writing API Documentation](/chatgpt-vs-claude-for-writing-api-documentation/)
+- [Claude vs ChatGPT for Writing Datadog Dashboard Terraform](/claude-vs-chatgpt-for-writing-datadog-dashboard-terraform-de/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy](/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

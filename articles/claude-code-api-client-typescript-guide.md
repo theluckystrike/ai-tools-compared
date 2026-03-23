@@ -478,11 +478,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Best AI Features for Generating API Client Code from](/ai-tools-compared/best-ai-features-for-generating-api-client-code-from-openapi/)
-- [Best AI Assistant for Fixing TypeScript Strict Mode Type Nar](/ai-tools-compared/best-ai-assistant-for-fixing-typescript-strict-mode-type-nar/)
-- [Best AI Tools for TypeScript Type Inference and Generic Type](/ai-tools-compared/best-ai-tools-for-typescript-type-inference-and-generic-type/)
-- [AI Tools for Generating API Client SDKs 2026](/ai-tools-compared/ai-tools-for-generating-api-client-sdks-2026/)
-- [How to Use the Claude API for Automated Code Review](/ai-tools-compared/how-to-use-claude-api-for-automated-code-review/)
+- [Best AI Features for Generating API Client Code from](/best-ai-features-for-generating-api-client-code-from-openapi/)
+- [Best AI Assistant for Fixing TypeScript Strict Mode Type Nar](/best-ai-assistant-for-fixing-typescript-strict-mode-type-nar/)
+- [Best AI Tools for TypeScript Type Inference and Generic Type](/best-ai-tools-for-typescript-type-inference-and-generic-type/)
+- [AI Tools for Generating API Client SDKs 2026](/ai-tools-for-generating-api-client-sdks-2026/)
+- [How to Use the Claude API for Automated Code Review](/how-to-use-claude-api-for-automated-code-review/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

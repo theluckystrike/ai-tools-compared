@@ -267,10 +267,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Writing Claude Md Files That Teach AI Your Project Specific](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/)
-- [Writing CLAUDE MD Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
-- [Writing CLAUDE.md Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy/)
-- [Claude Code Screen Reader Testing Workflow](/ai-tools-compared/claude-code-screen-reader-testing-workflow/)
-- [Claude Code Parallel Testing Configuration](/ai-tools-compared/claude-code-parallel-testing-configuration/)
+- [Writing Claude Md Files That Teach AI Your Project Specific](/writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/)
+- [Writing CLAUDE MD Files That Define Your Project's API](/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
+- [Writing CLAUDE.md Files That Define Your Project's API](/writing-claude-md-files-that-define-your-projects-api-versioning-strategy/)
+- [Claude Code Screen Reader Testing Workflow](/claude-code-screen-reader-testing-workflow/)
+- [Claude Code Parallel Testing Configuration](/claude-code-parallel-testing-configuration/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -289,11 +289,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI Tools for Writing Ansible Playbooks and Roles](/ai-tools-compared/best-ai-tools-for-writing-ansible-playbooks-and-roles-automatically/)
-- [Which AI Writes Better PowerShell Scripts for Windows Server](/ai-tools-compared/which-ai-writes-better-powershell-scripts-for-windows-server/)
-- [Cursor AI with Claude vs GPT Models: Which Gives Better Code](/ai-tools-compared/cursor-ai-with-claude-vs-gpt-models-which-gives-better-code-/)
-- [How to Use AI for Writing Effective Runbooks and Incident](/ai-tools-compared/how-to-use-ai-for-writing-effective-runbooks-and-incident-playbooks/)
-- [Claude vs Copilot for Generating FastAPI Endpoint Boilerplat](/ai-tools-compared/claude-vs-copilot-for-generating-fastapi-endpoint-boilerplat/)
+- [Best AI Tools for Writing Ansible Playbooks and Roles](/best-ai-tools-for-writing-ansible-playbooks-and-roles-automatically/)
+- [Which AI Writes Better PowerShell Scripts for Windows Server](/which-ai-writes-better-powershell-scripts-for-windows-server/)
+- [Cursor AI with Claude vs GPT Models: Which Gives Better Code](/cursor-ai-with-claude-vs-gpt-models-which-gives-better-code-/)
+- [How to Use AI for Writing Effective Runbooks and Incident](/how-to-use-ai-for-writing-effective-runbooks-and-incident-playbooks/)
+- [Claude vs Copilot for Generating FastAPI Endpoint Boilerplat](/claude-vs-copilot-for-generating-fastapi-endpoint-boilerplat/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

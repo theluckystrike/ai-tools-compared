@@ -407,10 +407,10 @@ Profile your production data on a schedule and compare key statistics — mean, 
 
 ## Related Articles
 
-- [Claude Code for Memory Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-memory-profiling-workflow-tutorial/)
-- [Claude Code for Node.js Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-nodejs-profiling-workflow-tutorial/)
-- [AI for Automated Regression Test Generation from Bug Reports](/ai-tools-compared/ai-for-automated-regression-test-generation-from-bug-reports/)
-- [Best AI Assistant for QA Engineers Writing Test Coverage Gap](/ai-tools-compared/best-ai-assistant-for-qa-engineers-writing-test-coverage-gap/)
-- [Best AI Tool for Cybersecurity Analysts Incident Reports](/ai-tools-compared/best-ai-tool-for-cybersecurity-analysts-incident-reports/)
+- [Claude Code for Memory Profiling Workflow Tutorial](/claude-code-for-memory-profiling-workflow-tutorial/)
+- [Claude Code for Node.js Profiling Workflow Tutorial](/claude-code-for-nodejs-profiling-workflow-tutorial/)
+- [AI for Automated Regression Test Generation from Bug Reports](/ai-for-automated-regression-test-generation-from-bug-reports/)
+- [Best AI Assistant for QA Engineers Writing Test Coverage Gap](/best-ai-assistant-for-qa-engineers-writing-test-coverage-gap/)
+- [Best AI Tool for Cybersecurity Analysts Incident Reports](/best-ai-tool-for-cybersecurity-analysts-incident-reports/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

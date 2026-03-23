@@ -428,11 +428,11 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 
 ## Related Articles
 
-- [How to Build Custom MCP Servers for Claude](/ai-tools-compared/how-to-build-custom-mcp-servers-for-claude)
-- [Claude Code SDK Testing Workflow Guide](/ai-tools-compared/claude-code-sdk-testing-workflow-guide/)
-- [Claude Code API Client TypeScript Guide: Build Type-Safe](/ai-tools-compared/claude-code-api-client-typescript-guide/)
-- [How to Use the Claude API for Automated Code Review](/ai-tools-compared/how-to-use-claude-api-for-automated-code-review/)
-- [Best AI Tools for Support Agent Assist](/ai-tools-compared/best-ai-tools-for-support-agent-assist/)
+- [How to Build Custom MCP Servers for Claude](/how-to-build-custom-mcp-servers-for-claude)
+- [Claude Code SDK Testing Workflow Guide](/claude-code-sdk-testing-workflow-guide/)
+- [Claude Code API Client TypeScript Guide: Build Type-Safe](/claude-code-api-client-typescript-guide/)
+- [How to Use the Claude API for Automated Code Review](/how-to-use-claude-api-for-automated-code-review/)
+- [Best AI Tools for Support Agent Assist](/best-ai-tools-for-support-agent-assist/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

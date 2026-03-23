@@ -249,10 +249,10 @@ Policies vary widely. Some tools let you access your data for a grace period aft
 
 ## Related Articles
 
-- [Copilot Chat Not Responding in GitHub](/ai-tools-compared/copilot-chat-not-responding-in-github-fix/)
-- [GitHub Copilot Free Tier Hidden Limits You Should Know 2026](/ai-tools-compared/github-copilot-free-tier-hidden-limits-you-should-know-2026/)
-- [How to Maximize GitHub Copilot Free Tier for Open Source](/ai-tools-compared/how-to-maximize-github-copilot-free-tier-for-open-source/)
-- [Free AI Alternatives to Copilot for JetBrains IDE Users 2026](/ai-tools-compared/free-ai-alternatives-to-copilot-for-jetbrains-ide-users-2026/)
-- [GitHub Copilot vs Cody Sourcegraph Comparison](/ai-tools-compared/github-copilot-vs-cody-sourcegraph-comparison/)
+- [Copilot Chat Not Responding in GitHub](/copilot-chat-not-responding-in-github-fix/)
+- [GitHub Copilot Free Tier Hidden Limits You Should Know 2026](/github-copilot-free-tier-hidden-limits-you-should-know-2026/)
+- [How to Maximize GitHub Copilot Free Tier for Open Source](/how-to-maximize-github-copilot-free-tier-for-open-source/)
+- [Free AI Alternatives to Copilot for JetBrains IDE Users 2026](/free-ai-alternatives-to-copilot-for-jetbrains-ide-users-2026/)
+- [GitHub Copilot vs Cody Sourcegraph Comparison](/github-copilot-vs-cody-sourcegraph-comparison/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -287,11 +287,11 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 
 ## Related Articles
 
-- [ChatGPT API 429 Too Many Requests Fix](/ai-tools-compared/chatgpt-api-429-too-many-requests-fix/)
-- [Cursor Keeps Crashing Fix 2026: Complete Troubleshooting](/ai-tools-compared/cursor-keeps-crashing-fix-2026/)
-- [GitHub Copilot Usage Based Billing How API Calls Are Counted](/ai-tools-compared/github-copilot-usage-based-billing-how-api-calls-are-counted/)
-- [ChatGPT Slow Response Fix 2026: Complete Troubleshooting](/ai-tools-compared/chatgpt-slow-response-fix-2026/)
-- [Claude Code Not Pushing to GitHub Fix: Troubleshooting Guide](/ai-tools-compared/claude-code-not-pushing-to-github-fix/)
+- [ChatGPT API 429 Too Many Requests Fix](/chatgpt-api-429-too-many-requests-fix/)
+- [Cursor Keeps Crashing Fix 2026: Complete Troubleshooting](/cursor-keeps-crashing-fix-2026/)
+- [GitHub Copilot Usage Based Billing How API Calls Are Counted](/github-copilot-usage-based-billing-how-api-calls-are-counted/)
+- [ChatGPT Slow Response Fix 2026: Complete Troubleshooting](/chatgpt-slow-response-fix-2026/)
+- [Claude Code Not Pushing to GitHub Fix: Troubleshooting Guide](/claude-code-not-pushing-to-github-fix/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

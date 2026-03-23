@@ -509,9 +509,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI Tools for Writing AWS CDK Infrastructure Code](/ai-tools-compared/best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/)
-- [Claude vs ChatGPT for Creating AWS CDK Infrastructure](/ai-tools-compared/claude-vs-chatgpt-for-creating-aws-cdk-infrastructure-stacks/)
-- [AI Tools for Writing Terraform Infrastructure-as-Code](/ai-tools-compared/ai-tools-for-writing-terraform-infrastructure-as-code-comparison-2026/)
-- [AI Tools for Writing pytest Tests with Moto Library for AWS](/ai-tools-compared/ai-tools-for-writing-pytest-tests-with-moto-library-for-aws-/)
-- [Best AI Assistant for Preparing for AWS Solutions Architect](/ai-tools-compared/best-ai-assistant-for-preparing-for-aws-solutions-architect/)
+- [Best AI Tools for Writing AWS CDK Infrastructure Code](/best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/)
+- [Claude vs ChatGPT for Creating AWS CDK Infrastructure](/claude-vs-chatgpt-for-creating-aws-cdk-infrastructure-stacks/)
+- [AI Tools for Writing Terraform Infrastructure-as-Code](/ai-tools-for-writing-terraform-infrastructure-as-code-comparison-2026/)
+- [AI Tools for Writing pytest Tests with Moto Library for AWS](/ai-tools-for-writing-pytest-tests-with-moto-library-for-aws-/)
+- [Best AI Assistant for Preparing for AWS Solutions Architect](/best-ai-assistant-for-preparing-for-aws-solutions-architect/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -419,20 +419,20 @@ When you paste an existing NetworkPolicy and ask Claude to review it, it reliabl
 
 ## Related Reading
 
-- [AI-Powered Service Mesh Configuration](/ai-tools-compared/ai-powered-service-mesh-configuration-2026/)
-- [AI-Powered API Gateway Configuration Tools](/ai-tools-compared/ai-powered-api-gateway-configuration-tools-2026/)
-- [AI Tools for Automated Load Balancer Config](/ai-tools-compared/ai-tools-for-load-balancer-config-2026/)
-- [AI Tools for Automated Vault Policy Generation 2026](/ai-tools-compared/ai-tools-for-automated-vault-policy-generation-2026/)
+- [AI-Powered Service Mesh Configuration](/ai-powered-service-mesh-configuration-2026/)
+- [AI-Powered API Gateway Configuration Tools](/ai-powered-api-gateway-configuration-tools-2026/)
+- [AI Tools for Automated Load Balancer Config](/ai-tools-for-load-balancer-config-2026/)
+- [AI Tools for Automated Vault Policy Generation 2026](/ai-tools-for-automated-vault-policy-generation-2026/)
 
 ---
 
 ## Related Articles
 
-- [How to Use AI to Generate Kubernetes Network Policies](/ai-tools-compared/how-to-use-ai-to-generate-kubernetes-network-policies-correc/)
-- [AI Tools for Writing Kubernetes Network Policies 2026](/ai-tools-compared/ai-tools-for-writing-kubernetes-network-policies-2026/)
-- [Best AI Tools for Kubernetes Manifest Generation](/ai-tools-compared/best-ai-tools-for-kubernetes-manifest-generation/)
-- [AI Policy Management Tools Enterprise Compliance](/ai-tools-compared/ai-policy-management-tools-enterprise-compliance-2026/)
-- [How to Write an Enterprise Acceptable Use Policy for AI](/ai-tools-compared/how-to-write-enterprise-acceptable-use-policy-for-ai-coding-assistants/)
+- [How to Use AI to Generate Kubernetes Network Policies](/how-to-use-ai-to-generate-kubernetes-network-policies-correc/)
+- [AI Tools for Writing Kubernetes Network Policies 2026](/ai-tools-for-writing-kubernetes-network-policies-2026/)
+- [Best AI Tools for Kubernetes Manifest Generation](/best-ai-tools-for-kubernetes-manifest-generation/)
+- [AI Policy Management Tools Enterprise Compliance](/ai-policy-management-tools-enterprise-compliance-2026/)
+- [How to Write an Enterprise Acceptable Use Policy for AI](/how-to-write-enterprise-acceptable-use-policy-for-ai-coding-assistants/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

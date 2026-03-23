@@ -353,11 +353,11 @@ Yes. The profiling flags (`--prof`, `--inspect`) and external tools (clinic.js, 
 
 ## Related Articles
 
-- [Claude Code for Memory Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-memory-profiling-workflow-tutorial/)
-- [Claude Code Profiler Integration Guide](/ai-tools-compared/claude-code-profiler-integration-guide/)
-- [Claude Code for Taint Analysis Workflow Tutorial Guide](/ai-tools-compared/claude-code-for-taint-analysis-workflow-tutorial-guide/)
-- [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
-- [Claude Code Runbook Documentation Guide](/ai-tools-compared/claude-code-runbook-documentation-guide/)
-- [Claude Code for Faker.js Test Data Workflow Guide](https://theluckystrike.github.io/remote-work-tools/claude-code-for-faker-js-test-data-workflow-guide/)
+- [Claude Code for Memory Profiling Workflow Tutorial](/claude-code-for-memory-profiling-workflow-tutorial/)
+- [Claude Code Profiler Integration Guide](/claude-code-profiler-integration-guide/)
+- [Claude Code for Taint Analysis Workflow Tutorial Guide](/claude-code-for-taint-analysis-workflow-tutorial-guide/)
+- [Claude Code Go Module Development Guide](/claude-code-go-module-development-guide/)
+- [Claude Code Runbook Documentation Guide](/claude-code-runbook-documentation-guide/)
+- [Claude Code for Faker.js Test Data Workflow Guide](https://welikeremotestack.com/claude-code-for-faker-js-test-data-workflow-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

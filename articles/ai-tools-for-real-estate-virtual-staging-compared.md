@@ -350,11 +350,11 @@ Most MLS systems accept images up to 25MB with a minimum of 640x480 pixels. For 
 
 ## Related Articles
 
-- [Best AI Tool for Real Estate Agents Property Listings](/ai-tools-compared/best-ai-tool-for-real-estate-agents-property-listings/)
-- [Best AI Tool for Real Estate Investors Deal Analysis](/ai-tools-compared/best-ai-tool-for-real-estate-investors-deal-analysis/)
-- [Best AI Tools for Real Estate Chatbots](/ai-tools-compared/best-ai-tools-for-real-estate-chatbots/)
-- [AI Code Generation for Java Virtual Threads Project Loom Pat](/ai-tools-compared/ai-code-generation-for-java-virtual-threads-project-loom-pat/)
-- [Cognigy vs Boost AI Virtual Agents: A Developer Comparison](/ai-tools-compared/cognigy-vs-boost-ai-virtual-agents/)
+- [Best AI Tool for Real Estate Agents Property Listings](/best-ai-tool-for-real-estate-agents-property-listings/)
+- [Best AI Tool for Real Estate Investors Deal Analysis](/best-ai-tool-for-real-estate-investors-deal-analysis/)
+- [Best AI Tools for Real Estate Chatbots](/best-ai-tools-for-real-estate-chatbots/)
+- [AI Code Generation for Java Virtual Threads Project Loom Pat](/ai-code-generation-for-java-virtual-threads-project-loom-pat/)
+- [Cognigy vs Boost AI Virtual Agents: A Developer Comparison](/cognigy-vs-boost-ai-virtual-agents/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

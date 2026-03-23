@@ -419,10 +419,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Manage AI Coding Context Across Multiple Related Repo](/ai-tools-compared/how-to-manage-ai-coding-context-across-multiple-related-repo/)
-- [How to Manage AI Coding Context When Switching Between Diffe](/ai-tools-compared/how-to-manage-ai-coding-context-when-switching-between-diffe/)
-- [What Source Code Context Window Do Different AI Coding Tools](/ai-tools-compared/what-source-code-context-window-do-different-ai-coding-tools/)
-- [Best AI Context Window Management Strategies for Large Codeb](/ai-tools-compared/best-ai-context-window-management-strategies-for-large-codeb/)
-- [Claude Max Context Window Exceeded: What To Do](/ai-tools-compared/claude-max-context-window-exceeded-what-to-do/)
+- [How to Manage AI Coding Context Across Multiple Related Repo](/how-to-manage-ai-coding-context-across-multiple-related-repo/)
+- [How to Manage AI Coding Context When Switching Between Diffe](/how-to-manage-ai-coding-context-when-switching-between-diffe/)
+- [What Source Code Context Window Do Different AI Coding Tools](/what-source-code-context-window-do-different-ai-coding-tools/)
+- [Best AI Context Window Management Strategies for Large Codeb](/best-ai-context-window-management-strategies-for-large-codeb/)
+- [Claude Max Context Window Exceeded: What To Do](/claude-max-context-window-exceeded-what-to-do/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

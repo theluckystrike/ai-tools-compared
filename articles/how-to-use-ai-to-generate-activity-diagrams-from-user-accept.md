@@ -281,11 +281,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Generate Mermaid Sequence Diagrams from API Endpoint](/ai-tools-compared/how-to-generate-mermaid-sequence-diagrams-from-api-endpoint-descriptions-using-ai/)
-- [How to Use AI to Generate Component Diagrams from React](/ai-tools-compared/how-to-use-ai-to-generate-component-diagrams-from-react-or-v/)
-- [AI Tools for Creating System Context Diagrams Using C4 Model](/ai-tools-compared/ai-tools-for-creating-system-context-diagrams-using-c4-model/)
-- [Best AI Assistant for Designers Writing User Journey Maps](/ai-tools-compared/best-ai-assistant-for-designers-writing-user-journey-maps-fr/)
-- [Best AI for Product Managers Creating User Persona Documents](/ai-tools-compared/best-ai-for-product-managers-creating-user-persona-documents/)
+- [How to Generate Mermaid Sequence Diagrams from API Endpoint](/how-to-generate-mermaid-sequence-diagrams-from-api-endpoint-descriptions-using-ai/)
+- [How to Use AI to Generate Component Diagrams from React](/how-to-use-ai-to-generate-component-diagrams-from-react-or-v/)
+- [AI Tools for Creating System Context Diagrams Using C4 Model](/ai-tools-for-creating-system-context-diagrams-using-c4-model/)
+- [Best AI Assistant for Designers Writing User Journey Maps](/best-ai-assistant-for-designers-writing-user-journey-maps-fr/)
+- [Best AI for Product Managers Creating User Persona Documents](/best-ai-for-product-managers-creating-user-persona-documents/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

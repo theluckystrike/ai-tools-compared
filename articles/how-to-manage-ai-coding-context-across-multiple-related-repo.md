@@ -407,9 +407,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Manage AI Coding Context When Switching](/ai-tools-compared/how-to-manage-ai-coding-context-when-switching-between-diffe/)
-- [How to Manage AI Coding Context Window to Avoid Hallucinated](/ai-tools-compared/how-to-manage-ai-coding-context-window-to-avoid-hallucinated/)
-- [Effective Context Management Strategies for AI Coding](/ai-tools-compared/effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/)
-- [What Source Code Context Window Do Different AI Coding Tools](/ai-tools-compared/what-source-code-context-window-do-different-ai-coding-tools/)
-- [Best Practices for AI Coding Tool Project Configuration](/ai-tools-compared/best-practices-for-ai-coding-tool-project-configuration-in-l/)
+- [How to Manage AI Coding Context When Switching](/how-to-manage-ai-coding-context-when-switching-between-diffe/)
+- [How to Manage AI Coding Context Window to Avoid Hallucinated](/how-to-manage-ai-coding-context-window-to-avoid-hallucinated/)
+- [Effective Context Management Strategies for AI Coding](/effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/)
+- [What Source Code Context Window Do Different AI Coding Tools](/what-source-code-context-window-do-different-ai-coding-tools/)
+- [Best Practices for AI Coding Tool Project Configuration](/best-practices-for-ai-coding-tool-project-configuration-in-l/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -449,7 +449,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [AI Tools for Interior Design Visualization Compared](/ai-tools-for-interior-design-visualization-compared/)
 - [AI Tools for Microservice Architecture](/ai-tools-for-microservice-architecture-design/)
 - [AI Tools for Writing Playwright Tests That Verify Responsive](/ai-tools-for-writing-playwright-tests-that-verify-responsive/)
-- [Best AI Tool for Generating Accessible Data Table Markup](/ai-tools-compared/best-ai-tool-for-generating-accessible-data-table-markup-wit/)
+- [Best AI Tool for Generating Accessible Data Table Markup](/best-ai-tool-for-generating-accessible-data-table-markup-wit/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

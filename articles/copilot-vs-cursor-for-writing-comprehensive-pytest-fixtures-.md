@@ -457,10 +457,10 @@ This suite represents best practices—session scoping for expensive setup, func
 
 ## Related Articles
 
-- [Copilot vs Claude Code for Writing Jest Test](/ai-tools-compared/copilot-vs-claude-code-for-writing--jest-test-s/)
-- [AI Tools for Generating pytest Fixtures from Database](/ai-tools-compared/ai-tools-for-generating-pytest-fixtures-from-database-schema/)
-- [AI Tools for Writing dbt Seeds and Fixtures for Testing Mode](/ai-tools-compared/ai-tools-for-writing-dbt-seeds-and-fixtures-for-testing-mode/)
-- [Copilot vs Cursor for Writing Clean Prisma Schema with Relat](/ai-tools-compared/copilot-vs-cursor-for-writing-clean-prisma-schema-with-relat/)
-- [Copilot vs Cursor for Writing Rust Error Handling with](/ai-tools-compared/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
+- [Copilot vs Claude Code for Writing Jest Test](/copilot-vs-claude-code-for-writing--jest-test-s/)
+- [AI Tools for Generating pytest Fixtures from Database](/ai-tools-for-generating-pytest-fixtures-from-database-schema/)
+- [AI Tools for Writing dbt Seeds and Fixtures for Testing Mode](/ai-tools-for-writing-dbt-seeds-and-fixtures-for-testing-mode/)
+- [Copilot vs Cursor for Writing Clean Prisma Schema with Relat](/copilot-vs-cursor-for-writing-clean-prisma-schema-with-relat/)
+- [Copilot vs Cursor for Writing Rust Error Handling with](/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

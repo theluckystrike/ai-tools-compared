@@ -432,11 +432,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Configuring Cursor AI to Work with Corporate VPN and Proxy](/ai-tools-compared/configuring-cursor-ai-to-work-with-corporate-vpn-and-proxy-a/)
-- [Does WindSurf AI Send Entire Project Context or Just Open](/ai-tools-compared/does-windsurf-ai-send-entire-project-context-or-just-open-fi/)
-- [Cursor Project-Wide Refactor Breaking Build Fix](/ai-tools-compared/cursor-project-wide-refactor-breaking-build-fix/)
-- [Switching from Windsurf to Cursor How to Transfer Project](/ai-tools-compared/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
-- [How to Migrate Copilot Chat History and Context to Cursor AI](/ai-tools-compared/migrate-copilot-chat-history-and-context-to-cursor-ai-guide/)
+- [Configuring Cursor AI to Work with Corporate VPN and Proxy](/configuring-cursor-ai-to-work-with-corporate-vpn-and-proxy-a/)
+- [Does WindSurf AI Send Entire Project Context or Just Open](/does-windsurf-ai-send-entire-project-context-or-just-open-fi/)
+- [Cursor Project-Wide Refactor Breaking Build Fix](/cursor-project-wide-refactor-breaking-build-fix/)
+- [Switching from Windsurf to Cursor How to Transfer Project](/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
+- [How to Migrate Copilot Chat History and Context to Cursor AI](/migrate-copilot-chat-history-and-context-to-cursor-ai-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

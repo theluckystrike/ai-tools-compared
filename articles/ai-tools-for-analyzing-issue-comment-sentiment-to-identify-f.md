@@ -257,10 +257,10 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 
 ## Related Articles
 
-- [AI Tools for Analyzing Which Open Source Issues Would Benefi](/ai-tools-compared/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
-- [Best AI for Writing Good First Issue Descriptions That](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attract-new-contributors/)
-- [Best AI Tool for Triaging GitHub Issues by Severity and Cate](/ai-tools-compared/best-ai-tool-for-triaging-github-issues-by-severity-and-cate/)
-- [Best AI for Writing Good First Issue Descriptions: Attra](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attra/)
-- [Best AI Tools for Competitor Analysis](/ai-tools-compared/best-ai-tools-for-competitor-analysis/)
+- [AI Tools for Analyzing Which Open Source Issues Would Benefi](/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
+- [Best AI for Writing Good First Issue Descriptions That](/best-ai-for-writing-good-first-issue-descriptions-that-attract-new-contributors/)
+- [Best AI Tool for Triaging GitHub Issues by Severity and Cate](/best-ai-tool-for-triaging-github-issues-by-severity-and-cate/)
+- [Best AI for Writing Good First Issue Descriptions: Attra](/best-ai-for-writing-good-first-issue-descriptions-that-attra/)
+- [Best AI Tools for Competitor Analysis](/best-ai-tools-for-competitor-analysis/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

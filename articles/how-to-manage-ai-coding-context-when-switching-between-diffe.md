@@ -366,10 +366,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Manage AI Coding Context Across Multiple Related Repo](/ai-tools-compared/how-to-manage-ai-coding-context-across-multiple-related-repo/)
-- [How to Manage AI Coding Context Window to Avoid Hallucinated](/ai-tools-compared/how-to-manage-ai-coding-context-window-to-avoid-hallucinated/)
-- [Switching from ChatGPT Search to Perplexity Pro Search](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
-- [How Context Window Size Affects AI Code Suggestions](/ai-tools-compared/how-context-window-size-affects-ai-code-suggestions-in-different-idess/)
-- [How to Manage AI Coding Tool Rate Limits Across Team of](/ai-tools-compared/how-to-manage-ai-coding-tool-rate-limits-across-team-of-developers/)
+- [How to Manage AI Coding Context Across Multiple Related Repo](/how-to-manage-ai-coding-context-across-multiple-related-repo/)
+- [How to Manage AI Coding Context Window to Avoid Hallucinated](/how-to-manage-ai-coding-context-window-to-avoid-hallucinated/)
+- [Switching from ChatGPT Search to Perplexity Pro Search](/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
+- [How Context Window Size Affects AI Code Suggestions](/how-context-window-size-affects-ai-code-suggestions-in-different-idess/)
+- [How to Manage AI Coding Tool Rate Limits Across Team of](/how-to-manage-ai-coding-tool-rate-limits-across-team-of-developers/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

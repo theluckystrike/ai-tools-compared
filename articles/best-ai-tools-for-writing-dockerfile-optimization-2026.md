@@ -380,10 +380,10 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [AI Tools for Generating Docker Compose Files for Complex Microservices](/ai-tools-compared/ai-tools-for-generating-docker-compose-files-for-complex-mic/)
-- [AI Container Security Scanning](/ai-tools-compared/ai-container-security-scanning/)
-- [AI Tools for Kubernetes Troubleshooting 2026](/ai-tools-compared/ai-tools-for-kubernetes-troubleshooting-2026/)
-- [AI Tools for Detecting Kubernetes Misconfiguration Before Deployment](/ai-tools-compared/ai-tools-for-detecting-kubernetes-misconfiguration-before-de/)
-- [Best AI Tools for DevOps Automation 2026](/ai-tools-compared/best-ai-tools-for-devops-automation-2026/)
+- [AI Tools for Generating Docker Compose Files for Complex Microservices](/ai-tools-for-generating-docker-compose-files-for-complex-mic/)
+- [AI Container Security Scanning](/ai-container-security-scanning/)
+- [AI Tools for Kubernetes Troubleshooting 2026](/ai-tools-for-kubernetes-troubleshooting-2026/)
+- [AI Tools for Detecting Kubernetes Misconfiguration Before Deployment](/ai-tools-for-detecting-kubernetes-misconfiguration-before-de/)
+- [Best AI Tools for DevOps Automation 2026](/best-ai-tools-for-devops-automation-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

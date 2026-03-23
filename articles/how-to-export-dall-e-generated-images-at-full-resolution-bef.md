@@ -538,10 +538,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Export Midjourney Images Before Downgrading Plan](/ai-tools-compared/how-to-export-midjourney-images-before-downgrading-plan-2026/)
-- [AI Tools for Resolving Yarn Berry PnP Module Resolution Erro](/ai-tools-compared/ai-tools-for-resolving-yarn-berry-pnp-module-resolution-erro/)
-- [Best Practices for Documenting AI-Generated Code for Future](/ai-tools-compared/best-practices-for-documenting-ai-generated-code-for-future-/)
-- [Claude Code vs Cursor Composer](/ai-tools-compared/claude-code-vs-cursor-composer-for-full-stack-development-comparison/)
-- [Cursor AI Apply Model How It Merges Generated Code into Exis](/ai-tools-compared/cursor-ai-apply-model-how-it-merges-generated-code-into-exis/)
+- [How to Export Midjourney Images Before Downgrading Plan](/how-to-export-midjourney-images-before-downgrading-plan-2026/)
+- [AI Tools for Resolving Yarn Berry PnP Module Resolution Erro](/ai-tools-for-resolving-yarn-berry-pnp-module-resolution-erro/)
+- [Best Practices for Documenting AI-Generated Code for Future](/best-practices-for-documenting-ai-generated-code-for-future-/)
+- [Claude Code vs Cursor Composer](/claude-code-vs-cursor-composer-for-full-stack-development-comparison/)
+- [Cursor AI Apply Model How It Merges Generated Code into Exis](/cursor-ai-apply-model-how-it-merges-generated-code-into-exis/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

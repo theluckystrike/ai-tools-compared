@@ -329,11 +329,11 @@ Policies vary widely. Some tools let you access your data for a grace period aft
 
 ## Related Articles
 
-- [Copilot Suggestions Not Showing Up Fix 2026](/ai-tools-compared/copilot-suggestions-not-showing-up-fix-2026/)
-- [Copilot Suggestions Wrong How to Fix](/ai-tools-compared/copilot-suggestions-wrong-how-to-fix/)
-- [Copilot Business Org-Wide Enable: Cost If Not All Devs Use](/ai-tools-compared/copilot-business-org-wide-enable-cost-if-not-all-devs-use-it/)
-- [Copilot Business vs Cursor Business Per Developer Cost](/ai-tools-compared/copilot-business-vs-cursor-business-per-developer-cost-comparison/)
-- [Copilot for JetBrains: Does It Cost Same as VSCode Version](/ai-tools-compared/copilot-for-jetbrains-does-it-cost-same-as-vscode-version/)
+- [Copilot Suggestions Not Showing Up Fix 2026](/copilot-suggestions-not-showing-up-fix-2026/)
+- [Copilot Suggestions Wrong How to Fix](/copilot-suggestions-wrong-how-to-fix/)
+- [Copilot Business Org-Wide Enable: Cost If Not All Devs Use](/copilot-business-org-wide-enable-cost-if-not-all-devs-use-it/)
+- [Copilot Business vs Cursor Business Per Developer Cost](/copilot-business-vs-cursor-business-per-developer-cost-comparison/)
+- [Copilot for JetBrains: Does It Cost Same as VSCode Version](/copilot-for-jetbrains-does-it-cost-same-as-vscode-version/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

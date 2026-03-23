@@ -314,10 +314,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Generating Dependency Update Pull Request](/ai-tools-compared/ai-tools-for-generating-dependency-update-pull-request-descr/)
-- [AI Tools for Generating pandas Merge and Join Operations](/ai-tools-compared/ai-tools-for-generating-pandas-merge-and-join-operations-fro/)
-- [Best AI for Resolving Git Merge Conflict Markers in Complex](/ai-tools-compared/best-ai-for-resolving-git-merge-conflict-markers-in-complex-/)
-- [Best AI for Generating pandas Code to Merge Data](/ai-tools-compared/best-ai-for-generating-pandas-code-to-merge-data-from-multip/)
-- [AI Tools for Reviewing Documentation Pull Requests](/ai-tools-compared/ai-tools-for-reviewing-documentation-pull-requests-for-accur/)
+- [AI Tools for Generating Dependency Update Pull Request](/ai-tools-for-generating-dependency-update-pull-request-descr/)
+- [AI Tools for Generating pandas Merge and Join Operations](/ai-tools-for-generating-pandas-merge-and-join-operations-fro/)
+- [Best AI for Resolving Git Merge Conflict Markers in Complex](/best-ai-for-resolving-git-merge-conflict-markers-in-complex-/)
+- [Best AI for Generating pandas Code to Merge Data](/best-ai-for-generating-pandas-code-to-merge-data-from-multip/)
+- [AI Tools for Reviewing Documentation Pull Requests](/ai-tools-for-reviewing-documentation-pull-requests-for-accur/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

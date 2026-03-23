@@ -448,9 +448,9 @@ Copilot generates a basic Deployment but typically omits the separate readiness 
 
 ## Related Reading
 
-- [Copilot vs Claude for Generating Java Spring Boot](/ai-tools-compared/copilot-vs-claude-for-generating-java-spring-boot-applicatio/)
-- [AI Code Generation for Java Reactive Programming with Project Reactor](/ai-tools-compared/ai-code-generation-for-java-reactive-programming-with-projec/)
-- [AI Code Generation Quality for Java Spring Security Configuration](/ai-tools-compared/ai-code-generation-quality-for-java-spring-security-configur/)
+- [Copilot vs Claude for Generating Java Spring Boot](/copilot-vs-claude-for-generating-java-spring-boot-applicatio/)
+- [AI Code Generation for Java Reactive Programming with Project Reactor](/ai-code-generation-for-java-reactive-programming-with-projec/)
+- [AI Code Generation Quality for Java Spring Security Configuration](/ai-code-generation-quality-for-java-spring-security-configur/)
 
 ---
 

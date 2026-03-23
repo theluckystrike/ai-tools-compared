@@ -305,9 +305,9 @@ jobs:
 
 ## Related Reading
 
-- [AI Tools for Automated Swagger Documentation](/ai-tools-compared/ai-tools-automated-swagger-docs/)
-- [AI-Powered Database Schema Diff Tools](/ai-tools-compared/ai-powered-database-schema-diff-tools/)
-- [AI Code Review Automation Tools Comparison](/ai-tools-compared/ai-code-review-automation-tools-comparison/)
+- [AI Tools for Automated Swagger Documentation](/ai-tools-automated-swagger-docs/)
+- [AI-Powered Database Schema Diff Tools](/ai-powered-database-schema-diff-tools/)
+- [AI Code Review Automation Tools Comparison](/ai-code-review-automation-tools-comparison/)
 
 ---
 

@@ -466,10 +466,10 @@ config.vm.provision :reload
 
 ## Related Reading
 
-- [Best AI Tools for Writing Apache Configs](/ai-tools-compared/ai-tools-for-writing-apache-configs/)
-- [Best AI Tools for Writing Caddy Configs](/ai-tools-compared/ai-tools-for-writing-caddy-configs/)
-- [AI Tools for Automated SSL/TLS Configuration](/ai-tools-compared/ai-tools-automated-ssl-tls-config/)
-- [AI Assistants for Writing Correct AWS IAM Policies](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
+- [Best AI Tools for Writing Apache Configs](/ai-tools-for-writing-apache-configs/)
+- [Best AI Tools for Writing Caddy Configs](/ai-tools-for-writing-caddy-configs/)
+- [AI Tools for Automated SSL/TLS Configuration](/ai-tools-automated-ssl-tls-config/)
+- [AI Assistants for Writing Correct AWS IAM Policies](/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
 
 ---
 

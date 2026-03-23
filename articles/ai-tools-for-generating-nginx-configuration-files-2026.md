@@ -609,10 +609,10 @@ A: Claude can, with proper context. Copilot struggles with non-standard modules.
 ## Related Articles
 
 - [Nginx SSL/TLS Configuration Best Practices](/ai-tools-for-generating-nginx-configuration-files-2026/)
-- [How to Debug Nginx Reverse Proxy Errors](/ai-tools-compared/)
-- [Rate Limiting Strategies for Web APIs](/ai-tools-compared/)
-- [WebSocket Proxying in Nginx](/ai-tools-compared/)
-- [Nginx Performance Tuning Guide](/ai-tools-compared/)
+- [How to Debug Nginx Reverse Proxy Errors](/)
+- [Rate Limiting Strategies for Web APIs](/)
+- [WebSocket Proxying in Nginx](/)
+- [Nginx Performance Tuning Guide](/)
 
 ---
 

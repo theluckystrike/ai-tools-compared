@@ -338,10 +338,10 @@ Trying to change everything at once. Pick one or two practices, implement them w
 
 ## Related Articles
 
-- [AI Coding Assistants for TypeScript Express Middleware Chain](/ai-tools-compared/ai-coding-assistants-for-typescript-express-middleware-chain/)
-- [AI Coding Assistants for Typescript Graphql Resolver and](/ai-tools-compared/ai-coding-assistants-for-typescript-graphql-resolver-and-schema-generation-2026/)
-- [AI Coding Assistant Accuracy for Typescript Next Js Server C](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
-- [AI Coding Assistant Accuracy for TypeScript Svelte Component](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-svelte-component/)
-- [AI Coding Assistant Comparison for Typescript monorepo](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-monorepo-with-turborepo-setup/)
+- [AI Coding Assistants for TypeScript Express Middleware Chain](/ai-coding-assistants-for-typescript-express-middleware-chain/)
+- [AI Coding Assistants for Typescript Graphql Resolver and](/ai-coding-assistants-for-typescript-graphql-resolver-and-schema-generation-2026/)
+- [AI Coding Assistant Accuracy for Typescript Next Js Server C](/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
+- [AI Coding Assistant Accuracy for TypeScript Svelte Component](/ai-coding-assistant-accuracy-for-typescript-svelte-component/)
+- [AI Coding Assistant Comparison for Typescript monorepo](/ai-coding-assistant-comparison-for-typescript-monorepo-with-turborepo-setup/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

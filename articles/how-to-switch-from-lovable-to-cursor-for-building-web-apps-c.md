@@ -350,9 +350,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Cursor Keeps Crashing Fix 2026: Complete Troubleshooting](/ai-tools-compared/cursor-keeps-crashing-fix-2026/)
-- [Switching from Windsurf Free to Cursor Free What Is](/ai-tools-compared/switching-from-windsurf-free-to-cursor-free-what-is-different/)
-- [Switching from Windsurf to Cursor How to Transfer Project](/ai-tools-compared/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
-- [How to Switch from Cursor to Claude Code Without Losing](/ai-tools-compared/how-to-switch-from-cursor-to-claude-code-without-losing-settings/)
-- [Cursor vs Windsurf for Building Next Js App from Design](/ai-tools-compared/cursor-vs-windsurf-for-building-next-js-app-from-design-mock/)
+- [Cursor Keeps Crashing Fix 2026: Complete Troubleshooting](/cursor-keeps-crashing-fix-2026/)
+- [Switching from Windsurf Free to Cursor Free What Is](/switching-from-windsurf-free-to-cursor-free-what-is-different/)
+- [Switching from Windsurf to Cursor How to Transfer Project](/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
+- [How to Switch from Cursor to Claude Code Without Losing](/how-to-switch-from-cursor-to-claude-code-without-losing-settings/)
+- [Cursor vs Windsurf for Building Next Js App from Design](/cursor-vs-windsurf-for-building-next-js-app-from-design-mock/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -255,11 +255,11 @@ For most academic developers, a combination of LanguageTool for baseline checks 
 
 ## Related Reading
 
-- [Best AI Tools for Screen Recording Editing](/ai-tools-compared/best-ai-tools-for-screen-recording-editing/)
-- [Copilot Workspace vs Cursor Composer Multi File Editing Comp](/ai-tools-compared/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)
-- [Cursor AI Multi File Editing Feature How It Actually Works](/ai-tools-compared/cursor-ai-multi-file-editing-feature-how-it-actually-works-explained/)
-- [Switching from Grammarly to ChatGPT for Editing Workflow Mig](/ai-tools-compared/switching-from-grammarly-to-chatgpt-for-editing-workflow-mig/)
-- [Windsurf AI Flows Feature How It Chains Multiple Editing Ste](/ai-tools-compared/windsurf-ai-flows-feature-how-it-chains-multiple-editing-ste/)
+- [Best AI Tools for Screen Recording Editing](/best-ai-tools-for-screen-recording-editing/)
+- [Copilot Workspace vs Cursor Composer Multi File Editing Comp](/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)
+- [Cursor AI Multi File Editing Feature How It Actually Works](/cursor-ai-multi-file-editing-feature-how-it-actually-works-explained/)
+- [Switching from Grammarly to ChatGPT for Editing Workflow Mig](/switching-from-grammarly-to-chatgpt-for-editing-workflow-mig/)
+- [Windsurf AI Flows Feature How It Chains Multiple Editing Ste](/windsurf-ai-flows-feature-how-it-chains-multiple-editing-ste/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

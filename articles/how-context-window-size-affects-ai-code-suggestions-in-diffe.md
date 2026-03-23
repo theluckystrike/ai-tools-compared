@@ -309,11 +309,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [What Source Code Context Window Do Different AI Coding Tools](/ai-tools-compared/what-source-code-context-window-do-different-ai-coding-tools/)
-- [How to Manage AI Coding Context When Switching Between Diffe](/ai-tools-compared/how-to-manage-ai-coding-context-when-switching-between-diffe/)
-- [Best AI Context Window Management Strategies for Large Codeb](/ai-tools-compared/best-ai-context-window-management-strategies-for-large-codeb/)
-- [Claude Max Context Window Exceeded: What To Do](/ai-tools-compared/claude-max-context-window-exceeded-what-to-do/)
-- [How to Manage AI Coding Context Window to Avoid Hallucinated](/ai-tools-compared/how-to-manage-ai-coding-context-window-to-avoid-hallucinated/)
+- [What Source Code Context Window Do Different AI Coding Tools](/what-source-code-context-window-do-different-ai-coding-tools/)
+- [How to Manage AI Coding Context When Switching Between Diffe](/how-to-manage-ai-coding-context-when-switching-between-diffe/)
+- [Best AI Context Window Management Strategies for Large Codeb](/best-ai-context-window-management-strategies-for-large-codeb/)
+- [Claude Max Context Window Exceeded: What To Do](/claude-max-context-window-exceeded-what-to-do/)
+- [How to Manage AI Coding Context Window to Avoid Hallucinated](/how-to-manage-ai-coding-context-window-to-avoid-hallucinated/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

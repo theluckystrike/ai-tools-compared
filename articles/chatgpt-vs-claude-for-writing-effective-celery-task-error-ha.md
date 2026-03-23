@@ -436,10 +436,10 @@ Copy your task code to Claude and ask: "Improve this for production with proper 
 
 ## Related Articles
 
-- [Claude vs ChatGPT for Technical Writing 2026](/ai-tools-compared/claude-vs-chatgpt-for-technical-writing-2026/)
-- [ChatGPT vs Claude for Writing API Documentation](/ai-tools-compared/chatgpt-vs-claude-for-writing-api-documentation/)
-- [Claude Code API Error Handling Standards](/ai-tools-compared/claude-code-api-error-handling-standards/)
-- [ChatGPT vs Claude for Creating OpenAPI Spec from Existing](/ai-tools-compared/chatgpt-vs-claude-for-creating-openapi-spec-from-existing-co/)
-- [Claude vs ChatGPT for Refactoring Legacy Java Code](/ai-tools-compared/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
+- [Claude vs ChatGPT for Technical Writing 2026](/claude-vs-chatgpt-for-technical-writing-2026/)
+- [ChatGPT vs Claude for Writing API Documentation](/chatgpt-vs-claude-for-writing-api-documentation/)
+- [Claude Code API Error Handling Standards](/claude-code-api-error-handling-standards/)
+- [ChatGPT vs Claude for Creating OpenAPI Spec from Existing](/chatgpt-vs-claude-for-creating-openapi-spec-from-existing-co/)
+- [Claude vs ChatGPT for Refactoring Legacy Java Code](/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

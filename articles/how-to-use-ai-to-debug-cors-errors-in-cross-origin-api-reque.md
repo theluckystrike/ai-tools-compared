@@ -269,11 +269,11 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 
 ## Related Articles
 
-- [Best AI Tool for API Error Code Docs (2026)](/ai-tools-compared/best-ai-assistant-for-creating-api-error-code-reference-docu/)
-- [Claude Code API Error Handling Standards](/ai-tools-compared/claude-code-api-error-handling-standards/)
-- [Best AI Assistant for Debugging Swift Compiler Errors](/ai-tools-compared/best-ai-assistant-for-debugging-swift-compiler-errors-in-xco/)
-- [How to Use AI to Resolve Cmake Configuration Errors: Cross](/ai-tools-compared/how-to-use-ai-to-resolve-cmake-configuration-errors-for-cross-compilation/)
-- [How to Use AI to Resolve Nginx 502 Bad Gateway Errors](/ai-tools-compared/how-to-use-ai-to-resolve-nginx-502-bad-gateway-errors-from-u/)
+- [Best AI Tool for API Error Code Docs (2026)](/best-ai-assistant-for-creating-api-error-code-reference-docu/)
+- [Claude Code API Error Handling Standards](/claude-code-api-error-handling-standards/)
+- [Best AI Assistant for Debugging Swift Compiler Errors](/best-ai-assistant-for-debugging-swift-compiler-errors-in-xco/)
+- [How to Use AI to Resolve Cmake Configuration Errors: Cross](/how-to-use-ai-to-resolve-cmake-configuration-errors-for-cross-compilation/)
+- [How to Use AI to Resolve Nginx 502 Bad Gateway Errors](/how-to-use-ai-to-resolve-nginx-502-bad-gateway-errors-from-u/)
 ## Frequently Asked Questions
 
 **How long does it take to use ai to debug cors errors in cross-origin api?**

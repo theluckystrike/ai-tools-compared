@@ -441,10 +441,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Which AI Is Better for Writing Playwright End-to-End Tests](/ai-tools-compared/which-ai-is-better-for-writing-playwright-end-to-end-tests-2/)
-- [Best AI Tools for Writing Playwright Tests 2026](/ai-tools-compared/best-ai-tools-for-writing-playwright-tests-2026/)
-- [Best AI Tools for Writing Playwright E2E Tests 2026](/ai-tools-compared/best-ai-tools-for-writing-playwright-e2e-tests-2026/)
-- [Best AI Tools for Writing Playwright Tests](/ai-tools-compared/ai-tools-for-writing-playwright-tests-guide)
-- [How to Use AI to Generate Playwright Keyboard Navigation](/ai-tools-compared/how-to-use-ai-to-generate-playwright-keyboard-navigation-tes/)
+- [Which AI Is Better for Writing Playwright End-to-End Tests](/which-ai-is-better-for-writing-playwright-end-to-end-tests-2/)
+- [Best AI Tools for Writing Playwright Tests 2026](/best-ai-tools-for-writing-playwright-tests-2026/)
+- [Best AI Tools for Writing Playwright E2E Tests 2026](/best-ai-tools-for-writing-playwright-e2e-tests-2026/)
+- [Best AI Tools for Writing Playwright Tests](/ai-tools-for-writing-playwright-tests-guide)
+- [How to Use AI to Generate Playwright Keyboard Navigation](/how-to-use-ai-to-generate-playwright-keyboard-navigation-tes/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

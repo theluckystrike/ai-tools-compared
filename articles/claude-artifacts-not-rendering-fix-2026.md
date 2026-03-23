@@ -262,11 +262,11 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 
 ## Related Articles
 
-- [Claude Artifacts vs ChatGPT Canvas Collaborative Coding](/ai-tools-compared/claude-artifacts-vs-chatgpt-canvas-collaborative-coding/)
-- [How to Use Claude Artifacts](/ai-tools-compared/how-to-use-claude-artifacts-for-rapid-prototyping-react-components/)
-- [Claude Code Losing Context Across Sessions Fix](/ai-tools-compared/claude-code-losing-context-across-sessions-fix/)
-- [Claude Code Not Pushing to GitHub Fix: Troubleshooting Guide](/ai-tools-compared/claude-code-not-pushing-to-github-fix/)
-- [Claude Code Terminal Permission Denied Fix](/ai-tools-compared/claude-code-terminal-permission-denied-fix/)
+- [Claude Artifacts vs ChatGPT Canvas Collaborative Coding](/claude-artifacts-vs-chatgpt-canvas-collaborative-coding/)
+- [How to Use Claude Artifacts](/how-to-use-claude-artifacts-for-rapid-prototyping-react-components/)
+- [Claude Code Losing Context Across Sessions Fix](/claude-code-losing-context-across-sessions-fix/)
+- [Claude Code Not Pushing to GitHub Fix: Troubleshooting Guide](/claude-code-not-pushing-to-github-fix/)
+- [Claude Code Terminal Permission Denied Fix](/claude-code-terminal-permission-denied-fix/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

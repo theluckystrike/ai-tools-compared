@@ -299,11 +299,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [aider vs Claude Code: Terminal AI Coding Assistants Compared](/ai-tools-compared/aider-vs-claude-code-terminal-ai-comparison/)
-- [Does Claude Code Send Terminal Output to Anthropic Servers P](/ai-tools-compared/does-claude-code-send-terminal-output-to-anthropic-servers-p/)
-- [How to Migrate From Copilot for Neovim](/ai-tools-compared/migrate-copilot-for-neovim-setup-to-claude-code-terminal-wor/)
-- [Claude Code Losing Context Across Sessions Fix](/ai-tools-compared/claude-code-losing-context-across-sessions-fix/)
-- [Claude Code Not Pushing to GitHub Fix: Troubleshooting Guide](/ai-tools-compared/claude-code-not-pushing-to-github-fix/)
+- [aider vs Claude Code: Terminal AI Coding Assistants Compared](/aider-vs-claude-code-terminal-ai-comparison/)
+- [Does Claude Code Send Terminal Output to Anthropic Servers P](/does-claude-code-send-terminal-output-to-anthropic-servers-p/)
+- [How to Migrate From Copilot for Neovim](/migrate-copilot-for-neovim-setup-to-claude-code-terminal-wor/)
+- [Claude Code Losing Context Across Sessions Fix](/claude-code-losing-context-across-sessions-fix/)
+- [Claude Code Not Pushing to GitHub Fix: Troubleshooting Guide](/claude-code-not-pushing-to-github-fix/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

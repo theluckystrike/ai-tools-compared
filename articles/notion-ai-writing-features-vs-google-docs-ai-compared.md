@@ -263,11 +263,11 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Gemini in Google Docs Not Showing Up? Fixes for 2026](/ai-tools-compared/gemini-in-google-docs-not-showing-up-fix-2026/)
-- [Best AI Tool for Game Developers Design Docs Writing](/ai-tools-compared/best-ai-tool-for-game-developers-design-docs-writing/)
-- [Gemini vs ChatGPT for Writing Google Cloud Function Deployme](/ai-tools-compared/gemini-vs-chatgpt-for-writing-google-cloud-function-deployme/)
-- [Notion AI vs ClickUp AI: Task Writing Compared](/ai-tools-compared/notion-ai-vs-clickup-ai-task-writing-compared/)
-- [Best AI IDE Features for Database Query Writing and](/ai-tools-compared/best-ai-ide-features-for-database-query-writing-and-optimization/)
+- [Gemini in Google Docs Not Showing Up? Fixes for 2026](/gemini-in-google-docs-not-showing-up-fix-2026/)
+- [Best AI Tool for Game Developers Design Docs Writing](/best-ai-tool-for-game-developers-design-docs-writing/)
+- [Gemini vs ChatGPT for Writing Google Cloud Function Deployme](/gemini-vs-chatgpt-for-writing-google-cloud-function-deployme/)
+- [Notion AI vs ClickUp AI: Task Writing Compared](/notion-ai-vs-clickup-ai-task-writing-compared/)
+- [Best AI IDE Features for Database Query Writing and](/best-ai-ide-features-for-database-query-writing-and-optimization/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

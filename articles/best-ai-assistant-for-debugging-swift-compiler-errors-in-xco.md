@@ -294,10 +294,10 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 
 ## Related Articles
 
-- [Best AI Assistant for Debugging Swift Compiler Errors: 2026](/ai-tools-compared/best-ai-assistant-for-debugging-swift-compiler-errors-in-xcode-build-phases-2026/)
-- [AI Debugging Assistants Compared 2026](/ai-tools-compared/ai-debugging-assistants-compared-2026/)
-- [How to Use AI to Resolve Cmake Configuration Errors: Cross](/ai-tools-compared/how-to-use-ai-to-resolve-cmake-configuration-errors-for-cross-compilation/)
-- [AI Tools for Interpreting Python Traceback Errors](/ai-tools-compared/ai-tools-for-interpreting-python-traceback-errors-in-django-middleware-chains/)
-- [Claude vs Copilot for Swift Development 2026](/ai-tools-compared/claude-vs-copilot-for-swift-development-2026/)
+- [Best AI Assistant for Debugging Swift Compiler Errors: 2026](/best-ai-assistant-for-debugging-swift-compiler-errors-in-xcode-build-phases-2026/)
+- [AI Debugging Assistants Compared 2026](/ai-debugging-assistants-compared-2026/)
+- [How to Use AI to Resolve Cmake Configuration Errors: Cross](/how-to-use-ai-to-resolve-cmake-configuration-errors-for-cross-compilation/)
+- [AI Tools for Interpreting Python Traceback Errors](/ai-tools-for-interpreting-python-traceback-errors-in-django-middleware-chains/)
+- [Claude vs Copilot for Swift Development 2026](/claude-vs-copilot-for-swift-development-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

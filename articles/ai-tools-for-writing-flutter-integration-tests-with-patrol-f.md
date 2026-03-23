@@ -466,7 +466,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [AI Tools for Writing Flutter Golden Image Snapshot Tests for Widget Regression](/ai-tools-for-writing-flutter-golden-image-snapshot-tests-for/)
 - [AI Tools for Writing Jest Tests for Graphql Resolvers](/ai-tools-for-writing-jest-tests-for-graphql-resolvers-with-dataloader-batching/)
 - [AI Tools for Writing Jest Tests for Web Worker and Service](/ai-tools-for-writing-jest-tests-for-web-worker-and-service-w/)
-- [AI Code Completion for Flutter BLoC Pattern Event and State](/ai-tools-compared/ai-code-completion-for-flutter-bloc-pattern-event-and-state-/)
+- [AI Code Completion for Flutter BLoC Pattern Event and State](/ai-code-completion-for-flutter-bloc-pattern-event-and-state-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```

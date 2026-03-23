@@ -402,11 +402,11 @@ If the latency bothers you, keep both. Disable Copilot for chat (use Cody), use 
 
 ## Related Articles
 
-- [AI Code Completion Latency Comparison](/ai-tools-compared/ai-code-completion-latency-comparison-copilot-vs-cursor-vs-cody-2026/)
-- [Best Practices for Writing GitHub Copilot Custom Instruction](/ai-tools-compared/best-practices-for-writing-github-copilot-custom-instruction/)
-- [Completely Free Alternatives to GitHub Copilot That Actually](/ai-tools-compared/completely-free-alternatives-to-github-copilot-that-actually/)
-- [Continue Dev vs GitHub Copilot: Open Source Comparison](/ai-tools-compared/continue-dev-vs-github-copilot-open-source-comparison/)
-- [Copilot Chat Not Responding in GitHub Fix](/ai-tools-compared/copilot-chat-not-responding-in-github-fix/)
+- [AI Code Completion Latency Comparison](/ai-code-completion-latency-comparison-copilot-vs-cursor-vs-cody-2026/)
+- [Best Practices for Writing GitHub Copilot Custom Instruction](/best-practices-for-writing-github-copilot-custom-instruction/)
+- [Completely Free Alternatives to GitHub Copilot That Actually](/completely-free-alternatives-to-github-copilot-that-actually/)
+- [Continue Dev vs GitHub Copilot: Open Source Comparison](/continue-dev-vs-github-copilot-open-source-comparison/)
+- [Copilot Chat Not Responding in GitHub Fix](/copilot-chat-not-responding-in-github-fix/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

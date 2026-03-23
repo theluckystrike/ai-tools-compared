@@ -436,10 +436,10 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 
 ## Related Articles
 
-- [Best AI for Writing Good First Issue Descriptions That](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attract-new-contributors/)
-- [Best AI Assistant for Writing Open Source Roadmap Documents](/ai-tools-compared/best-ai-assistant-for-writing-open-source-roadmap-documents-from-issue-milestone-data/)
-- [AI Tools for Writing App Store Descriptions 2026](/ai-tools-compared/ai-tools-for-writing-app-store-descriptions-2026/)
-- [AI Tools for Analyzing Which Open Source Issues Would Benefi](/ai-tools-compared/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
-- [AI Tools for Analyzing Issue Comment Sentiment to Identify](/ai-tools-compared/ai-tools-for-analyzing-issue-comment-sentiment-to-identify-f/)
+- [Best AI for Writing Good First Issue Descriptions That](/best-ai-for-writing-good-first-issue-descriptions-that-attract-new-contributors/)
+- [Best AI Assistant for Writing Open Source Roadmap Documents](/best-ai-assistant-for-writing-open-source-roadmap-documents-from-issue-milestone-data/)
+- [AI Tools for Writing App Store Descriptions 2026](/ai-tools-for-writing-app-store-descriptions-2026/)
+- [AI Tools for Analyzing Which Open Source Issues Would Benefi](/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
+- [AI Tools for Analyzing Issue Comment Sentiment to Identify](/ai-tools-for-analyzing-issue-comment-sentiment-to-identify-f/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

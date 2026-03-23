@@ -282,9 +282,9 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Claude Code Database Test Fixtures Guide](/ai-tools-compared/claude-code-database-test-fixtures-guide/)
-- [Best AI Tool for Generating Jest Test Cases from React](/ai-tools-compared/best-ai-tool-for-generating-jest-test-cases-from-react-compo/)
-- [Copilot vs Claude Code for Writing Complex SQL Stored Proced](/ai-tools-compared/copilot-vs-claude-code-for-writing-complex-sql-stored-proced/)
-- [Copilot vs Claude Code for Writing GitHub Actions Cicd](/ai-tools-compared/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
-- [Copilot vs Claude Code for Scaffolding New Django REST](/ai-tools-compared/copilot-vs-claude-code-for-scaffolding-new-django-rest-frame/)
+- [Claude Code Database Test Fixtures Guide](/claude-code-database-test-fixtures-guide/)
+- [Best AI Tool for Generating Jest Test Cases from React](/best-ai-tool-for-generating-jest-test-cases-from-react-compo/)
+- [Copilot vs Claude Code for Writing Complex SQL Stored Proced](/copilot-vs-claude-code-for-writing-complex-sql-stored-proced/)
+- [Copilot vs Claude Code for Writing GitHub Actions Cicd](/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
+- [Copilot vs Claude Code for Scaffolding New Django REST](/copilot-vs-claude-code-for-scaffolding-new-django-rest-frame/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

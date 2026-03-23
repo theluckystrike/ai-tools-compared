@@ -428,11 +428,11 @@ Verify layout and spacing changes appropriately.
 
 ## Related Articles
 
-- [AI Tools for Writing Jest Tests for Graphql Resolvers](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-graphql-resolvers-with-dataloader-batching/)
-- [AI Tools for Writing Jest Tests for Web Worker and Service](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-web-worker-and-service-w/)
-- [Best AI Assistant for Creating Jest Tests That Verify Error](/ai-tools-compared/best-ai-assistant-for-creating-jest-tests-that-verify-error-/)
-- [Best AI for Creating Jest Tests That Cover Race Conditions](/ai-tools-compared/best-ai-for-creating-jest-tests-that-cover-race-conditions-i/)
-- [Best AI for Creating Jest Tests That Verify Correct React](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-react-co/)
+- [AI Tools for Writing Jest Tests for Graphql Resolvers](/ai-tools-for-writing-jest-tests-for-graphql-resolvers-with-dataloader-batching/)
+- [AI Tools for Writing Jest Tests for Web Worker and Service](/ai-tools-for-writing-jest-tests-for-web-worker-and-service-w/)
+- [Best AI Assistant for Creating Jest Tests That Verify Error](/best-ai-assistant-for-creating-jest-tests-that-verify-error-/)
+- [Best AI for Creating Jest Tests That Cover Race Conditions](/best-ai-for-creating-jest-tests-that-cover-race-conditions-i/)
+- [Best AI for Creating Jest Tests That Verify Correct React](/best-ai-for-creating-jest-tests-that-verify-correct-react-co/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

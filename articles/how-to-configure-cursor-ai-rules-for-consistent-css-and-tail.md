@@ -399,9 +399,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Migrate Cursor Rules File](/ai-tools-compared/migrate-cursor-rules-file-to-windsurf-rules-format-guide/)
-- [Migrate Windsurf AI Rules to Cursor Dot Cursor Rules](/ai-tools-compared/migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/)
-- [Cursor AI Rules Files How to Customize AI Behavior](/ai-tools-compared/cursor-ai-rules-files-how-to-customize-ai-behavior-for-your-project/)
-- [Migrating Copilot Custom Instructions to Cursor Rules](/ai-tools-compared/migrating-copilot-custom-instructions-to-cursor-rules-file-f/)
-- [How to Transfer Copilot Code Review Settings](/ai-tools-compared/transfer-copilot-code-review-settings-to-cursor-ai-review-co/)
+- [How to Migrate Cursor Rules File](/migrate-cursor-rules-file-to-windsurf-rules-format-guide/)
+- [Migrate Windsurf AI Rules to Cursor Dot Cursor Rules](/migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/)
+- [Cursor AI Rules Files How to Customize AI Behavior](/cursor-ai-rules-files-how-to-customize-ai-behavior-for-your-project/)
+- [Migrating Copilot Custom Instructions to Cursor Rules](/migrating-copilot-custom-instructions-to-cursor-rules-file-f/)
+- [How to Transfer Copilot Code Review Settings](/transfer-copilot-code-review-settings-to-cursor-ai-review-co/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

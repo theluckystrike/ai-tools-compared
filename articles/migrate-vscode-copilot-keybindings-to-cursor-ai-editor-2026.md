@@ -581,9 +581,9 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [How to Transfer Copilot Code Review Settings](/ai-tools-compared/transfer-copilot-code-review-settings-to-cursor-ai-review-co/)
-- [How to Migrate Copilot Chat History and Context to Cursor AI](/ai-tools-compared/migrate-copilot-chat-history-and-context-to-cursor-ai-guide/)
-- [Migrate GitHub Copilot Workspace Setup to Cursor Background](/ai-tools-compared/migrate-github-copilot-workspace-setup-to-cursor-background-/)
-- [How to Transfer Copilot Inline Chat Shortcuts](/ai-tools-compared/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)
-- [How to Transfer Cursor Editor Theme and Layout](/ai-tools-compared/transfer-cursor-editor-theme-and-layout-to-vscode-with-copil/)
+- [How to Transfer Copilot Code Review Settings](/transfer-copilot-code-review-settings-to-cursor-ai-review-co/)
+- [How to Migrate Copilot Chat History and Context to Cursor AI](/migrate-copilot-chat-history-and-context-to-cursor-ai-guide/)
+- [Migrate GitHub Copilot Workspace Setup to Cursor Background](/migrate-github-copilot-workspace-setup-to-cursor-background-/)
+- [How to Transfer Copilot Inline Chat Shortcuts](/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)
+- [How to Transfer Cursor Editor Theme and Layout](/transfer-cursor-editor-theme-and-layout-to-vscode-with-copil/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

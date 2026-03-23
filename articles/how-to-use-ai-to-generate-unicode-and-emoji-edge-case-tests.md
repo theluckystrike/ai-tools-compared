@@ -302,11 +302,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Use AI to Generate Pagination Edge Case Tests for API](/ai-tools-compared/how-to-use-ai-to-generate-pagination-edge-case-tests-for-api/)
-- [How to Use AI to Generate Timezone Edge Case Test Data](/ai-tools-compared/how-to-use-ai-to-generate-timezone-edge-case-test-data/)
-- [How to Use AI to Create Edge Case Test Scenarios from API Er](/ai-tools-compared/how-to-use-ai-to-create-edge-case-test-scenarios-from-api-er/)
-- [How to Use AI to Generate Currency Decimal Precision Edge Ca](/ai-tools-compared/how-to-use-ai-to-generate-currency-decimal-precision-edge-ca/)
-- [How to Use AI to Generate Jest Component Tests with Testing](/ai-tools-compared/how-to-use-ai-to-generate-jest-component-tests-with-testing-/)
+- [How to Use AI to Generate Pagination Edge Case Tests for API](/how-to-use-ai-to-generate-pagination-edge-case-tests-for-api/)
+- [How to Use AI to Generate Timezone Edge Case Test Data](/how-to-use-ai-to-generate-timezone-edge-case-test-data/)
+- [How to Use AI to Create Edge Case Test Scenarios from API Er](/how-to-use-ai-to-create-edge-case-test-scenarios-from-api-er/)
+- [How to Use AI to Generate Currency Decimal Precision Edge Ca](/how-to-use-ai-to-generate-currency-decimal-precision-edge-ca/)
+- [How to Use AI to Generate Jest Component Tests with Testing](/how-to-use-ai-to-generate-jest-component-tests-with-testing-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

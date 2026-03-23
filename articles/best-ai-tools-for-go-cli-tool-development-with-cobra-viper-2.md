@@ -351,10 +351,10 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [AI Tools for Writing pytest Tests for Click or Typer CLI Com](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-click-or-typer-cli-com/)
-- [AI Pair Programming Tools for C# and .NET Development](/ai-tools-compared/ai-pair-programming-tools-for-c-sharp-dotnet/)
-- [Best AI Assistant for Writing Open Source Plugin Development](/ai-tools-compared/best-ai-assistant-for-writing-open-source-plugin-development/)
-- [Best AI Coding Assistant for React Development](/ai-tools-compared/best-ai-coding-assistant-for-react-development/)
-- [Best AI Coding Tools for Go API Development with Gin and Ech](/ai-tools-compared/best-ai-coding-tools-for-go-api-development-with-gin-and-ech/)
+- [AI Tools for Writing pytest Tests for Click or Typer CLI Com](/ai-tools-for-writing-pytest-tests-for-click-or-typer-cli-com/)
+- [AI Pair Programming Tools for C# and .NET Development](/ai-pair-programming-tools-for-c-sharp-dotnet/)
+- [Best AI Assistant for Writing Open Source Plugin Development](/best-ai-assistant-for-writing-open-source-plugin-development/)
+- [Best AI Coding Assistant for React Development](/best-ai-coding-assistant-for-react-development/)
+- [Best AI Coding Tools for Go API Development with Gin and Ech](/best-ai-coding-tools-for-go-api-development-with-gin-and-ech/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

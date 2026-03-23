@@ -439,9 +439,9 @@ Specify your minimum supported compiler and standard in the prompt: "This code m
 
 ## Related Reading
 
-- [How to Use AI to Debug Segmentation Faults in C and C++ Programs](/ai-tools-compared/how-to-use-ai-to-debug-segmentation-faults-in-c-and-cpp-prog/)
-- [How to Use AI for Zig Development](/ai-tools-compared/ai-for-zig-development/)
-- [How to Use AI for WebAssembly Development](/ai-tools-compared/ai-for-webassembly-development/)
+- [How to Use AI to Debug Segmentation Faults in C and C++ Programs](/how-to-use-ai-to-debug-segmentation-faults-in-c-and-cpp-prog/)
+- [How to Use AI for Zig Development](/ai-for-zig-development/)
+- [How to Use AI for WebAssembly Development](/ai-for-webassembly-development/)
 
 ---
 

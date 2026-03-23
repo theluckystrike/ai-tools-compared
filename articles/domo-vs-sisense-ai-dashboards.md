@@ -285,10 +285,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Lightdash vs Preset AI Dashboards: A Practical](/ai-tools-compared/lightdash-vs-preset-ai-dashboards/)
-- [AI Tools for Generating Grafana Dashboards from Metrics Auto](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
-- [AI Powered Data Cataloging Tools: A Practical Guide for](/ai-tools-compared/ai-powered-data-cataloging-tools/)
-- [AI Tools for Cohort Analysis: A Practical Guide for](/ai-tools-compared/ai-tools-for-cohort-analysis/)
-- [AI Tools for Data Mesh Architecture: A Practical Guide](/ai-tools-compared/ai-tools-for-data-mesh-architecture/)
+- [Lightdash vs Preset AI Dashboards: A Practical](/lightdash-vs-preset-ai-dashboards/)
+- [AI Tools for Generating Grafana Dashboards from Metrics Auto](/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
+- [AI Powered Data Cataloging Tools: A Practical Guide for](/ai-powered-data-cataloging-tools/)
+- [AI Tools for Cohort Analysis: A Practical Guide for](/ai-tools-for-cohort-analysis/)
+- [AI Tools for Data Mesh Architecture: A Practical Guide](/ai-tools-for-data-mesh-architecture/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

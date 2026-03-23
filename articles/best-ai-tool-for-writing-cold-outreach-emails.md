@@ -474,11 +474,11 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [ChatGPT vs Claude for Writing Cold Outreach Emails to Saas](/ai-tools-compared/chatgpt-vs-claude-for-writing-cold-outreach-emails-to-saas-f/)
-- [AI Tools for Product Managers Drafting Release](/ai-tools-compared/ai-tools-for-product-managers-drafting-release-communication-emails-from-feature-lists/)
-- [AI Assistants for Writing Correct AWS IAM Policies](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
-- [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
-- [AI Autocomplete for Writing Tests: Comparison of Suggestion](/ai-tools-compared/ai-autocomplete-for-writing-tests-comparison-of-suggestion-q/)
+- [ChatGPT vs Claude for Writing Cold Outreach Emails to Saas](/chatgpt-vs-claude-for-writing-cold-outreach-emails-to-saas-f/)
+- [AI Tools for Product Managers Drafting Release](/ai-tools-for-product-managers-drafting-release-communication-emails-from-feature-lists/)
+- [AI Assistants for Writing Correct AWS IAM Policies](/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
+- [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
+- [AI Autocomplete for Writing Tests: Comparison of Suggestion](/ai-autocomplete-for-writing-tests-comparison-of-suggestion-q/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

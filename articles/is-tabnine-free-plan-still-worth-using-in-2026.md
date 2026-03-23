@@ -343,11 +343,11 @@ Policies vary widely. Some tools let you access your data for a grace period aft
 
 ## Related Articles
 
-- [Cursor Hobby Plan Limitations vs Paying for Pro Worth It](/ai-tools-compared/cursor-hobby-plan-limitations-vs-paying-for-pro-worth-it/)
-- [Midjourney Standard vs Pro Plan: Is Stealth Mode Worth](/ai-tools-compared/midjourney-standard-vs-pro-plan-stealth-mode-worth-extra-cost/)
-- [Tabnine Pro vs Free: What Autocomplete Features Are Locked](/ai-tools-compared/tabnine-pro-vs-free-what-autocomplete-features-are-locked/)
-- [Cursor Free Plan vs Windsurf Free Plan Which Gives More](/ai-tools-compared/cursor-free-plan-vs-windsurf-free-plan-which-gives-more/)
-- [How to Move Tabnine AI Models When Switching to Supermaven](/ai-tools-compared/how-to-move-tabnine-ai-models-when-switching-to-supermaven/)
+- [Cursor Hobby Plan Limitations vs Paying for Pro Worth It](/cursor-hobby-plan-limitations-vs-paying-for-pro-worth-it/)
+- [Midjourney Standard vs Pro Plan: Is Stealth Mode Worth](/midjourney-standard-vs-pro-plan-stealth-mode-worth-extra-cost/)
+- [Tabnine Pro vs Free: What Autocomplete Features Are Locked](/tabnine-pro-vs-free-what-autocomplete-features-are-locked/)
+- [Cursor Free Plan vs Windsurf Free Plan Which Gives More](/cursor-free-plan-vs-windsurf-free-plan-which-gives-more/)
+- [How to Move Tabnine AI Models When Switching to Supermaven](/how-to-move-tabnine-ai-models-when-switching-to-supermaven/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

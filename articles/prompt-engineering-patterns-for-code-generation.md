@@ -467,11 +467,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How to Move Copilot Suggested Code Patterns to Cursor Snippe](/ai-tools-compared/how-to-move-copilot-suggested-code-patterns-to-cursor-snippe/)
-- [How to Move Copilot Suggested Code Patterns to Cursor](/ai-tools-compared/how-to-move-copilot-suggested-code-patterns-to-cursor-snippets/)
-- [How to Transfer Cursor Composer Prompt Library](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code-commands/)
-- [How to Transfer Your Cursor Composer Prompt Library](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code/)
-- [Best AI-Powered Platform Engineering Tools for Developer Sel](/ai-tools-compared/best-ai-powered-platform-engineering-tools-for-developer-sel/)
+- [How to Move Copilot Suggested Code Patterns to Cursor Snippe](/how-to-move-copilot-suggested-code-patterns-to-cursor-snippe/)
+- [How to Move Copilot Suggested Code Patterns to Cursor](/how-to-move-copilot-suggested-code-patterns-to-cursor-snippets/)
+- [How to Transfer Cursor Composer Prompt Library](/transfer-cursor-composer-prompt-library-to-claude-code-commands/)
+- [How to Transfer Your Cursor Composer Prompt Library](/transfer-cursor-composer-prompt-library-to-claude-code/)
+- [Best AI-Powered Platform Engineering Tools for Developer Sel](/best-ai-powered-platform-engineering-tools-for-developer-sel/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

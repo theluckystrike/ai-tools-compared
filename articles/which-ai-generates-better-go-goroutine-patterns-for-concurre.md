@@ -303,10 +303,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Which AI Generates Better SwiftUI Views From Design Swift UI](/ai-tools-compared/which-ai-generates-better-swift-ui-views-from-design-specs-2/)
-- [Which AI Tool Generates Better Vue 3 Composition API](/ai-tools-compared/which-ai-tool-generates-better-vue-3-composition-api-components/)
-- [How to Use AI to Diagnose and Fix Golang Goroutine Deadlock](/ai-tools-compared/how-to-use-ai-to-diagnose-and-fix-golang-goroutine-deadlock-/)
-- [Best AI Tool for Generating Regex Patterns Compared](/ai-tools-compared/best-ai-tool-for-generating-regex-patterns-compared/)
-- [Best Free AI Tool for Generating Regex Patterns Explained](/ai-tools-compared/best-free-ai-tool-for-generating-regex-patterns-explained/)
+- [Which AI Generates Better SwiftUI Views From Design Swift UI](/which-ai-generates-better-swift-ui-views-from-design-specs-2/)
+- [Which AI Tool Generates Better Vue 3 Composition API](/which-ai-tool-generates-better-vue-3-composition-api-components/)
+- [How to Use AI to Diagnose and Fix Golang Goroutine Deadlock](/how-to-use-ai-to-diagnose-and-fix-golang-goroutine-deadlock-/)
+- [Best AI Tool for Generating Regex Patterns Compared](/best-ai-tool-for-generating-regex-patterns-compared/)
+- [Best Free AI Tool for Generating Regex Patterns Explained](/best-free-ai-tool-for-generating-regex-patterns-explained/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

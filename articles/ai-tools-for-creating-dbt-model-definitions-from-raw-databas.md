@@ -319,10 +319,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Creating Dbt Documentation Blocks](/ai-tools-compared/ai-tools-for-creating-dbt-documentation-blocks-from-column-level-lineage-analysis/)
-- [AI Tools for Writing dbt Seeds and Fixtures for Testing](/ai-tools-compared/ai-tools-for-writing-dbt-seeds-and-fixtures-for-testing-mode/)
-- [AI Tools for Generating dbt Project Structure from Existing](/ai-tools-compared/ai-tools-for-generating-dbt-project-structure-from-existing-/)
-- [AI Tools for Creating Property-Based Test Cases](/ai-tools-compared/ai-tools-for-creating-property-based-test-cases-using-hypoth/)
-- [AI Tools for Creating System Context Diagrams Using C4](/ai-tools-compared/ai-tools-for-creating-system-context-diagrams-using-c4-model/)
+- [AI Tools for Creating Dbt Documentation Blocks](/ai-tools-for-creating-dbt-documentation-blocks-from-column-level-lineage-analysis/)
+- [AI Tools for Writing dbt Seeds and Fixtures for Testing](/ai-tools-for-writing-dbt-seeds-and-fixtures-for-testing-mode/)
+- [AI Tools for Generating dbt Project Structure from Existing](/ai-tools-for-generating-dbt-project-structure-from-existing-/)
+- [AI Tools for Creating Property-Based Test Cases](/ai-tools-for-creating-property-based-test-cases-using-hypoth/)
+- [AI Tools for Creating System Context Diagrams Using C4](/ai-tools-for-creating-system-context-diagrams-using-c4-model/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

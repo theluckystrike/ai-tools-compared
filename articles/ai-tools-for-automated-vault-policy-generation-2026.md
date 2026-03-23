@@ -344,10 +344,10 @@ AI is particularly useful for Vault audit log queries because the JSONL format a
 
 ## Related Reading
 
-- [AI-Powered Feature Flag Management Tools](/ai-tools-compared/ai-powered-feature-flag-management-tools-2026/)
-- [AI-Powered Observability Configuration Tools](/ai-tools-compared/ai-powered-observability-configuration-tools-2026/)
-- [Best AI Tools for Writing Systemd Units](/ai-tools-compared/best-ai-tools-for-writing-systemd-units-2026/)
-- [AI for Automated Regression Test Generation from Bug](/ai-tools-compared/ai-for-automated-regression-test-generation-from-bug-reports/)
+- [AI-Powered Feature Flag Management Tools](/ai-powered-feature-flag-management-tools-2026/)
+- [AI-Powered Observability Configuration Tools](/ai-powered-observability-configuration-tools-2026/)
+- [Best AI Tools for Writing Systemd Units](/best-ai-tools-for-writing-systemd-units-2026/)
+- [AI for Automated Regression Test Generation from Bug](/ai-for-automated-regression-test-generation-from-bug-reports/)
 
 ---
 
@@ -532,17 +532,17 @@ ssh -i ~/.ssh/id_rsa -i ~/.ssh/id_rsa-cert.pub ubuntu@prod-web-01.internal
 
 ## Related Reading
 
-- [AI-Powered Feature Flag Management Tools](/ai-tools-compared/ai-powered-feature-flag-management-tools-2026/)
-- [AI-Powered Observability Configuration Tools](/ai-tools-compared/ai-powered-observability-configuration-tools-2026/)
-- [Best AI Tools for Writing Systemd Units](/ai-tools-compared/best-ai-tools-for-writing-systemd-units-2026/)
+- [AI-Powered Feature Flag Management Tools](/ai-powered-feature-flag-management-tools-2026/)
+- [AI-Powered Observability Configuration Tools](/ai-powered-observability-configuration-tools-2026/)
+- [Best AI Tools for Writing Systemd Units](/best-ai-tools-for-writing-systemd-units-2026/)
 
 ---
 
-- [AI Tools for Automated Secrets Rotation and Vault Management](/ai-tools-compared/ai-tools-for-automated-secrets-rotation-and-vault-management/)
-- [AI Tools for Automated Test Data Generation 2026](/ai-tools-compared/ai-tools-for-automated-test-data-generation-2026/)
-- [AI Policy Management Tools Enterprise Compliance](/ai-tools-compared/ai-policy-management-tools-enterprise-compliance-2026/)
-- [How to Configure AI Coding Tools to Exclude Secrets and Env](/ai-tools-compared/how-to-configure-ai-coding-tools-to-exclude-secrets-and-env-/)
-- [AI Tools for Automated Changelog Generation 2026](/ai-tools-compared/ai-tools-for-automated-changelog-generation-2026/)
+- [AI Tools for Automated Secrets Rotation and Vault Management](/ai-tools-for-automated-secrets-rotation-and-vault-management/)
+- [AI Tools for Automated Test Data Generation 2026](/ai-tools-for-automated-test-data-generation-2026/)
+- [AI Policy Management Tools Enterprise Compliance](/ai-policy-management-tools-enterprise-compliance-2026/)
+- [How to Configure AI Coding Tools to Exclude Secrets and Env](/how-to-configure-ai-coding-tools-to-exclude-secrets-and-env-/)
+- [AI Tools for Automated Changelog Generation 2026](/ai-tools-for-automated-changelog-generation-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

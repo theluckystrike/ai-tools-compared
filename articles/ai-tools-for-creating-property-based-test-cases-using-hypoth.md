@@ -301,10 +301,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Creating Boundary Value Test](/ai-tools-compared/ai-tools-for-creating--boundary-value-test-case/)
-- [AI Tools for Creating Mutation Testing Configurations](/ai-tools-compared/ai-tools-for-creating-mutation-testing-configurations-to-find-weak-test-assertions/)
-- [AI Tools for Creating Test Data That Covers Timezone](/ai-tools-compared/ai-tools-for-creating-test-data-that-covers-timezone-dayligh/)
-- [AI Tools for Creating Test Data Generators That Respect](/ai-tools-compared/ai-tools-for-creating-test-data-generators-that-respect-busi/)
-- [Best AI for Creating Negative Test Cases](/ai-tools-compared/best-ai-for-creating--negative-test-cases-from-/)
+- [AI Tools for Creating Boundary Value Test](/ai-tools-for-creating--boundary-value-test-case/)
+- [AI Tools for Creating Mutation Testing Configurations](/ai-tools-for-creating-mutation-testing-configurations-to-find-weak-test-assertions/)
+- [AI Tools for Creating Test Data That Covers Timezone](/ai-tools-for-creating-test-data-that-covers-timezone-dayligh/)
+- [AI Tools for Creating Test Data Generators That Respect](/ai-tools-for-creating-test-data-generators-that-respect-busi/)
+- [Best AI for Creating Negative Test Cases](/best-ai-for-creating--negative-test-cases-from-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

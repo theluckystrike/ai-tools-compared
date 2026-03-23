@@ -427,10 +427,10 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 
 ## Related Articles
 
-- [How to Build Custom AI Coding Workflows with MCP Server](/ai-tools-compared/how-to-build-custom-ai-coding-workflows-with-mcp-server-inte/)
-- [Claude MCP Server Connection Failed Fix (2026)](/ai-tools-compared/claude-mcp-server-connection-failed-fix-2026/)
-- [Migrating from ChatGPT Plugins to Claude MCP Tools](/ai-tools-compared/migrating-from-chatgpt-plugins-to-claude-mcp-tools-for-coding-workflows/)
-- [How to Build Model Context Protocol Server That Provides Rea](/ai-tools-compared/how-to-build-model-context-protocol-server-that-provides-rea/)
-- [Transfer ChatGPT Custom GPTs to Claude Projects](/ai-tools-compared/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
+- [How to Build Custom AI Coding Workflows with MCP Server](/how-to-build-custom-ai-coding-workflows-with-mcp-server-inte/)
+- [Claude MCP Server Connection Failed Fix (2026)](/claude-mcp-server-connection-failed-fix-2026/)
+- [Migrating from ChatGPT Plugins to Claude MCP Tools](/migrating-from-chatgpt-plugins-to-claude-mcp-tools-for-coding-workflows/)
+- [How to Build Model Context Protocol Server That Provides Rea](/how-to-build-model-context-protocol-server-that-provides-rea/)
+- [Transfer ChatGPT Custom GPTs to Claude Projects](/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

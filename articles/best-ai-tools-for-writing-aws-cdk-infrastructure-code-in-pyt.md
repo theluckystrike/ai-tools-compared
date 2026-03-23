@@ -245,11 +245,11 @@ Regardless of which tool you use, how you phrase your prompts significantly affe
 
 ## Related Articles
 
-- [AI Tools for Writing AWS CDK Infrastructure 2026](/ai-tools-compared/ai-tools-for-writing-aws-cdk-infrastructure-2026/)
-- [Claude vs ChatGPT for Creating AWS CDK Infrastructure](/ai-tools-compared/claude-vs-chatgpt-for-creating-aws-cdk-infrastructure-stacks/)
-- [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-compared/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)
-- [Best AI Tools for Infrastructure as Code 2026](/ai-tools-compared/ai-tools-for-infrastructure-as-code-2026/)
-- [AI Tools for Writing pytest Tests with Moto Library for AWS](/ai-tools-compared/ai-tools-for-writing-pytest-tests-with-moto-library-for-aws-/)
+- [AI Tools for Writing AWS CDK Infrastructure 2026](/ai-tools-for-writing-aws-cdk-infrastructure-2026/)
+- [Claude vs ChatGPT for Creating AWS CDK Infrastructure](/claude-vs-chatgpt-for-creating-aws-cdk-infrastructure-stacks/)
+- [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)
+- [Best AI Tools for Infrastructure as Code 2026](/ai-tools-for-infrastructure-as-code-2026/)
+- [AI Tools for Writing pytest Tests with Moto Library for AWS](/ai-tools-for-writing-pytest-tests-with-moto-library-for-aws-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

@@ -562,11 +562,11 @@ No. Even after AI approval, require manual `terraform apply`. AI is augmented in
 
 ## Related Articles
 
-- [How to Use AI to Debug Tailwind CSS Classes Not Applying](/ai-tools-compared/how-to-use-ai-to-debug-tailwind-css-classes-not-applying-in-/)
-- [Best AI Tools for Generating Red Team Engagement Plans.](/ai-tools-compared/best-ai-tools-for-generating-red-team-engagement-plans-from-/)
-- [How Much Does Cursor AI Actually Cost Per Month All Plans](/ai-tools-compared/how-much-does-cursor-ai-actually-cost-per-month-all-plans/)
-- [AI Tools for Reviewing Documentation Pull Requests for Accur](/ai-tools-compared/ai-tools-for-reviewing-documentation-pull-requests-for-accur/)
-- [Best AI Tools for Reviewing Embedded C Code for Memory.](/ai-tools-compared/best-ai-tools-for-reviewing-embedded-c-code-for-memory-leak-and-buffer-overflow/)
+- [How to Use AI to Debug Tailwind CSS Classes Not Applying](/how-to-use-ai-to-debug-tailwind-css-classes-not-applying-in-/)
+- [Best AI Tools for Generating Red Team Engagement Plans.](/best-ai-tools-for-generating-red-team-engagement-plans-from-/)
+- [How Much Does Cursor AI Actually Cost Per Month All Plans](/how-much-does-cursor-ai-actually-cost-per-month-all-plans/)
+- [AI Tools for Reviewing Documentation Pull Requests for Accur](/ai-tools-for-reviewing-documentation-pull-requests-for-accur/)
+- [Best AI Tools for Reviewing Embedded C Code for Memory.](/best-ai-tools-for-reviewing-embedded-c-code-for-memory-leak-and-buffer-overflow/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

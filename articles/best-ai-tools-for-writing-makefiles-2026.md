@@ -517,11 +517,11 @@ For CI, add a separate job that runs `make --dry-run` to catch syntax errors bef
 
 ## Related Articles
 
-- [Best AI Tools for Writing Bazel BUILD Files 2026](/ai-tools-compared/best-ai-tools-for-writing-bazel-build-files-2026/)
-- [Best AI Tools for Writing Unit Test Mocks 2026](/ai-tools-compared/best-ai-tools-for-writing-unit-test-mocks-2026/)
-- [Copilot vs Claude Code for Writing Jest Test](/ai-tools-compared/copilot-vs-claude-code-for-writing--jest-test-s/)
-- [Best Free AI Tool for Writing Unit Tests Automatically](/ai-tools-compared/best-free-ai-tool-for-writing-unit-tests-automatically/)
-- [Best AI Tools for Writing Unit Tests Comparison 2026](/ai-tools-compared/best-ai-tools-for-writing-unit-tests-comparison-2026/)
+- [Best AI Tools for Writing Bazel BUILD Files 2026](/best-ai-tools-for-writing-bazel-build-files-2026/)
+- [Best AI Tools for Writing Unit Test Mocks 2026](/best-ai-tools-for-writing-unit-test-mocks-2026/)
+- [Copilot vs Claude Code for Writing Jest Test](/copilot-vs-claude-code-for-writing--jest-test-s/)
+- [Best Free AI Tool for Writing Unit Tests Automatically](/best-free-ai-tool-for-writing-unit-tests-automatically/)
+- [Best AI Tools for Writing Unit Tests Comparison 2026](/best-ai-tools-for-writing-unit-tests-comparison-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

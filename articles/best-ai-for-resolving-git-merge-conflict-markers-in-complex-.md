@@ -538,11 +538,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Generating Pull Request Merge Conflict](/ai-tools-compared/ai-tools-for-generating-pull-request-merge-conflict-resoluti/)
-- [AI Tools for Debugging iOS Autolayout Constraint Conflict Wa](/ai-tools-compared/ai-tools-for-debugging-ios-autolayout-constraint-conflict-wa/)
-- [AI Tools for Generating pandas Merge and Join Operations Fro](/ai-tools-compared/ai-tools-for-generating-pandas-merge-and-join-operations-fro/)
-- [AI Tools for Resolving Docker Build Context Permission Denie](/ai-tools-compared/ai-tools-for-resolving-docker-build-context-permission-denie/)
-- [AI Tools for Resolving SSL Certificate Chain Verification](/ai-tools-compared/ai-tools-for-resolving-ssl-certificate-chain-verification-er/)
+- [AI Tools for Generating Pull Request Merge Conflict](/ai-tools-for-generating-pull-request-merge-conflict-resoluti/)
+- [AI Tools for Debugging iOS Autolayout Constraint Conflict Wa](/ai-tools-for-debugging-ios-autolayout-constraint-conflict-wa/)
+- [AI Tools for Generating pandas Merge and Join Operations Fro](/ai-tools-for-generating-pandas-merge-and-join-operations-fro/)
+- [AI Tools for Resolving Docker Build Context Permission Denie](/ai-tools-for-resolving-docker-build-context-permission-denie/)
+- [AI Tools for Resolving SSL Certificate Chain Verification](/ai-tools-for-resolving-ssl-certificate-chain-verification-er/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

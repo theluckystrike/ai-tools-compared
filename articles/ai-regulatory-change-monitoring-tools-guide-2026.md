@@ -309,10 +309,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [AI Tools for Monitoring Kubernetes Cluster Health and Auto](/ai-tools-compared/ai-tools-for-monitoring-kubernetes-cluster-health-and-auto-remediation/)
-- [Best AI Tools for Writing Datadog Monitoring Queries and](/ai-tools-compared/best-ai-tools-for-writing-datadog-monitoring-queries-and-dashboards/)
-- [How to Set Up Model Context Protocol for Feeding Monitoring](/ai-tools-compared/how-to-set-up-model-context-protocol-for-feeding-monitoring-/)
-- [AI-Powered Monitoring and Alerting Setup Guide](/ai-tools-compared/ai-powered-monitoring-and-alerting-setup/)
+- [AI Tools for Monitoring Kubernetes Cluster Health and Auto](/ai-tools-for-monitoring-kubernetes-cluster-health-and-auto-remediation/)
+- [Best AI Tools for Writing Datadog Monitoring Queries and](/best-ai-tools-for-writing-datadog-monitoring-queries-and-dashboards/)
+- [How to Set Up Model Context Protocol for Feeding Monitoring](/how-to-set-up-model-context-protocol-for-feeding-monitoring-/)
+- [AI-Powered Monitoring and Alerting Setup Guide](/ai-powered-monitoring-and-alerting-setup/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

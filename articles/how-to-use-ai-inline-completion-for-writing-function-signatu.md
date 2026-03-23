@@ -296,10 +296,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Use AI Inline Chat to Refactor Single Function Step](/ai-tools-compared/how-to-use-ai-inline-chat-to-refactor-single-function-step-by-step/)
-- [Gemini vs ChatGPT for Writing Google Cloud Function Deployme](/ai-tools-compared/gemini-vs-chatgpt-for-writing-google-cloud-function-deployme/)
-- [AI Code Completion for Writing Shell Commands Inside Scripts](/ai-tools-compared/ai-code-completion-for-writing-shell-commands-inside-scripts/)
-- [Claude API Tool Use Function Calling Pricing How Tokens Are](/ai-tools-compared/claude-api-tool-use-function-calling-pricing-how-tokens-are-/)
-- [Best AI Inline Chat Features in VSCode Compared to Jetbrains](/ai-tools-compared/best-ai-inline-chat-features-in-vscode-compared-to-jetbrains/)
+- [How to Use AI Inline Chat to Refactor Single Function Step](/how-to-use-ai-inline-chat-to-refactor-single-function-step-by-step/)
+- [Gemini vs ChatGPT for Writing Google Cloud Function Deployme](/gemini-vs-chatgpt-for-writing-google-cloud-function-deployme/)
+- [AI Code Completion for Writing Shell Commands Inside Scripts](/ai-code-completion-for-writing-shell-commands-inside-scripts/)
+- [Claude API Tool Use Function Calling Pricing How Tokens Are](/claude-api-tool-use-function-calling-pricing-how-tokens-are-/)
+- [Best AI Inline Chat Features in VSCode Compared to Jetbrains](/best-ai-inline-chat-features-in-vscode-compared-to-jetbrains/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

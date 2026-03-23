@@ -302,10 +302,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI Assistant for Product Managers Writing Sprint](/ai-tools-compared/best-ai-assistant-for-product-managers-writing-sprint-retrospective-summaries-from-notes-2026/)
-- [Best AI Tool for Doctors Writing Clinical Notes](/ai-tools-compared/best-ai-tool-for-doctors-writing-clinical-notes/)
-- [Best AI Tool for Podcasters Show Notes Writing](/ai-tools-compared/best-ai-tool-for-podcasters-show-notes-writing/)
-- [Best AI Assistant for Designers Writing User Journey Maps](/ai-tools-compared/best-ai-assistant-for-designers-writing-user-journey-maps-fr/)
-- [How to Use AI to Help Sre Teams Create on Call Handoff Docum](/ai-tools-compared/how-to-use-ai-to-help-sre-teams-create-on-call-handoff-docum/)
+- [Best AI Assistant for Product Managers Writing Sprint](/best-ai-assistant-for-product-managers-writing-sprint-retrospective-summaries-from-notes-2026/)
+- [Best AI Tool for Doctors Writing Clinical Notes](/best-ai-tool-for-doctors-writing-clinical-notes/)
+- [Best AI Tool for Podcasters Show Notes Writing](/best-ai-tool-for-podcasters-show-notes-writing/)
+- [Best AI Assistant for Designers Writing User Journey Maps](/best-ai-assistant-for-designers-writing-user-journey-maps-fr/)
+- [How to Use AI to Help Sre Teams Create on Call Handoff Docum](/how-to-use-ai-to-help-sre-teams-create-on-call-handoff-docum/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

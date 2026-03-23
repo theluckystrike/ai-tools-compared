@@ -390,11 +390,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Comparing AI Tools for Generating No-Code Helpdesk.](/ai-tools-compared/comparing-ai-tools-for-generating-no-code-helpdesk-ticketing/)
-- [Comparing AI Tools for Generating Retool Resource.](/ai-tools-compared/comparing-ai-tools-for-generating-retool-resource-queries-fr/)
-- [How to Use AI to Draft Open Source Foundation Membership App](/ai-tools-compared/how-to-use-ai-to-draft-open-source-foundation-membership-app/)
-- [AI Tools for Generating OpenAPI Specs from Code](/ai-tools-compared/ai-tools-openapi-spec-generation/)
-- [AI Tools for Generating pandas GroupBy Aggregation Code](/ai-tools-compared/ai-tools-for-generating-pandas-groupby-aggregation-code-from/)
+- [Comparing AI Tools for Generating No-Code Helpdesk.](/comparing-ai-tools-for-generating-no-code-helpdesk-ticketing/)
+- [Comparing AI Tools for Generating Retool Resource.](/comparing-ai-tools-for-generating-retool-resource-queries-fr/)
+- [How to Use AI to Draft Open Source Foundation Membership App](/how-to-use-ai-to-draft-open-source-foundation-membership-app/)
+- [AI Tools for Generating OpenAPI Specs from Code](/ai-tools-openapi-spec-generation/)
+- [AI Tools for Generating pandas GroupBy Aggregation Code](/ai-tools-for-generating-pandas-groupby-aggregation-code-from/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

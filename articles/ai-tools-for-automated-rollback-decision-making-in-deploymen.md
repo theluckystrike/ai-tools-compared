@@ -280,11 +280,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Cursor AI Making Too Many API Calls Fix: Troubleshooting](/ai-tools-compared/cursor-ai-making-too-many-api-calls-fix/)
-- [AI for Automated Regression Test Generation from Bug Reports](/ai-tools-compared/ai-for-automated-regression-test-generation-from-bug-reports/)
-- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)
-- [AI Tools for Automated Changelog Generation 2026](/ai-tools-compared/ai-tools-for-automated-changelog-generation-2026/)
-- [AI Tools for Automated Infrastructure Drift Detection](/ai-tools-compared/ai-tools-for-automated-infrastructure-drift-detection-and-co/)
+- [Cursor AI Making Too Many API Calls Fix: Troubleshooting](/cursor-ai-making-too-many-api-calls-fix/)
+- [AI for Automated Regression Test Generation from Bug Reports](/ai-for-automated-regression-test-generation-from-bug-reports/)
+- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-for-automated-api-documentation-from-code-comments/)
+- [AI Tools for Automated Changelog Generation 2026](/ai-tools-for-automated-changelog-generation-2026/)
+- [AI Tools for Automated Infrastructure Drift Detection](/ai-tools-for-automated-infrastructure-drift-detection-and-co/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

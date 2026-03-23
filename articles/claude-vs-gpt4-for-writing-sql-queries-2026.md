@@ -388,11 +388,11 @@ For production SQL work — especially analytics queries with window functions, 
 
 ## Related Articles
 
-- [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
-- [Best Self Hosted AI Model for Writing SQL Queries from](/ai-tools-compared/best-self-hosted-ai-model-for-writing-sql-queries-from-natural-language/)
-- [Best AI Assistant for Generating SQL Recursive Queries](/ai-tools-compared/best-ai-assistant-for-generating-sql-recursive-queries-for-hierarchical-org-chart-data/)
-- [Best AI for Writing dbt Macros That Generate Dynamic SQL](/ai-tools-compared/best-ai-for-writing-dbt-macros-that-generate-dynamic-sql-bas/)
-- [Best AI for Writing SQL Performance Tuning Recommendations](/ai-tools-compared/best-ai-for-writing-sql-performance-tuning-recommendations-f/)
+- [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
+- [Best Self Hosted AI Model for Writing SQL Queries from](/best-self-hosted-ai-model-for-writing-sql-queries-from-natural-language/)
+- [Best AI Assistant for Generating SQL Recursive Queries](/best-ai-assistant-for-generating-sql-recursive-queries-for-hierarchical-org-chart-data/)
+- [Best AI for Writing dbt Macros That Generate Dynamic SQL](/best-ai-for-writing-dbt-macros-that-generate-dynamic-sql-bas/)
+- [Best AI for Writing SQL Performance Tuning Recommendations](/best-ai-for-writing-sql-performance-tuning-recommendations-f/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

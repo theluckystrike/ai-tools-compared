@@ -474,11 +474,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI Context Window Management Strategies for Large Codeb](/ai-tools-compared/best-ai-context-window-management-strategies-for-large-codeb/)
-- [Effective Context Loading Strategies for AI Tools in](/ai-tools-compared/effective-context-loading-strategies-for-ai-tools-in-polyglo/)
-- [Effective Prompting Strategies for AI Generation of Complex](/ai-tools-compared/effective-prompting-strategies-for-ai-generation-of-complex-/)
-- [Effective Strategies for AI Assisted Debugging of](/ai-tools-compared/effective-strategies-for-ai-assisted-debugging-of-intermittent-failures/)
-- [Effective Strategies for AI-Assisted Refactoring Without Bre](/ai-tools-compared/effective-strategies-for-ai-assisted-refactoring-without-bre/)
+- [Best AI Context Window Management Strategies for Large Codeb](/best-ai-context-window-management-strategies-for-large-codeb/)
+- [Effective Context Loading Strategies for AI Tools in](/effective-context-loading-strategies-for-ai-tools-in-polyglo/)
+- [Effective Prompting Strategies for AI Generation of Complex](/effective-prompting-strategies-for-ai-generation-of-complex-/)
+- [Effective Strategies for AI Assisted Debugging of](/effective-strategies-for-ai-assisted-debugging-of-intermittent-failures/)
+- [Effective Strategies for AI-Assisted Refactoring Without Bre](/effective-strategies-for-ai-assisted-refactoring-without-bre/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

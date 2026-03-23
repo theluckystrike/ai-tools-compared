@@ -555,10 +555,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Write System Prompts for AI Assistants That Produce](/ai-tools-compared/how-to-write-system-prompts-for-ai-assistants-that-produce-a/)
-- [How to Write System Prompts for AI Coding Assistants Project](/ai-tools-compared/how-to-write-system-prompts-for-ai-coding-assistants-project/)
-- [How to Structure Prompts for AI to Generate Idiomatic Code](/ai-tools-compared/how-to-structure-prompts-for-ai-to-generate-idiomatic-code-i/)
-- [Cursor AI with Claude vs GPT Models: Which Gives Better Code](/ai-tools-compared/cursor-ai-with-claude-vs-gpt-models-which-gives-better-code-/)
-- [Best Workflow for Using AI to Write Infrastructure as Code F](/ai-tools-compared/best-workflow-for-using-ai-to-write-infrastructure-as-code-f/)
+- [How to Write System Prompts for AI Assistants That Produce](/how-to-write-system-prompts-for-ai-assistants-that-produce-a/)
+- [How to Write System Prompts for AI Coding Assistants Project](/how-to-write-system-prompts-for-ai-coding-assistants-project/)
+- [How to Structure Prompts for AI to Generate Idiomatic Code](/how-to-structure-prompts-for-ai-to-generate-idiomatic-code-i/)
+- [Cursor AI with Claude vs GPT Models: Which Gives Better Code](/cursor-ai-with-claude-vs-gpt-models-which-gives-better-code-/)
+- [Best Workflow for Using AI to Write Infrastructure as Code F](/best-workflow-for-using-ai-to-write-infrastructure-as-code-f/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

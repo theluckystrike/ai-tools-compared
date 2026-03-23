@@ -232,11 +232,11 @@ Experiment with different input types—some tools handle website URLs, document
 
 ## Related Reading
 
-- [AI Research Assistant Chrome Extension](/ai-tools-compared/ai-research-assistant-chrome-extension/)
-- [AI Summarizer Chrome Extension: A Developer Guide](/ai-tools-compared/ai-summarizer-chrome-extension/)
-- [AI Tab Organizer Chrome Extension: Managing Browser Tabs](/ai-tools-compared/ai-tab-organizer-chrome-extension/)
-- [Chrome Extension Budget Tracker Shopping](/ai-tools-compared/chrome-extension-budget-tracker-shopping/)
-- [Screen Sharing Chrome Extension](/ai-tools-compared/screen-sharing-chrome-extension/)
+- [AI Research Assistant Chrome Extension](/ai-research-assistant-chrome-extension/)
+- [AI Summarizer Chrome Extension: A Developer Guide](/ai-summarizer-chrome-extension/)
+- [AI Tab Organizer Chrome Extension: Managing Browser Tabs](/ai-tab-organizer-chrome-extension/)
+- [Chrome Extension Budget Tracker Shopping](/chrome-extension-budget-tracker-shopping/)
+- [Screen Sharing Chrome Extension](/screen-sharing-chrome-extension/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

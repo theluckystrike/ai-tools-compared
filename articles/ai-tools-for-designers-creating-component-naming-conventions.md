@@ -312,9 +312,9 @@ AI tools can generate a migration mapping—old name to new name—formatted as 
 
 ## Related Articles
 
-- [AI Tools for Converting Figma Designs to Code 2026](/ai-tools-compared/articles/ai-tools-for-converting-figma-designs-to-code-2026/)
-- [AI Tools for Designers Writing Handoff Notes That Include In](/ai-tools-compared/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
-- [Best AI for Converting Figma Designs to React Components](/ai-tools-compared/best-ai-for-converting-figma-designs-to-react-components-2026/)
-- [AI Assistants for Creating Security Architecture Review](/ai-tools-compared/ai-assistants-for-creating-security-architecture-review-docu/)
+- [AI Tools for Converting Figma Designs to Code 2026](/articles/ai-tools-for-converting-figma-designs-to-code-2026/)
+- [AI Tools for Designers Writing Handoff Notes That Include In](/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
+- [Best AI for Converting Figma Designs to React Components](/best-ai-for-converting-figma-designs-to-react-components-2026/)
+- [AI Assistants for Creating Security Architecture Review](/ai-assistants-for-creating-security-architecture-review-docu/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

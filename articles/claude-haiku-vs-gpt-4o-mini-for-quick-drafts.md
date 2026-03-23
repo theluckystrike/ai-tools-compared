@@ -270,10 +270,10 @@ Both handle long documents well. Claude Haiku's 200K window gives it more headro
 
 ## Related Reading
 
-- [Claude Sonnet vs GPT-4o for Code Generation: Practical](/ai-tools-compared/claude-sonnet-vs-gpt-4o-for-code-generation/)
-- [Claude Sonnet vs GPT-4o for Code Review Accuracy Comparison](/ai-tools-compared/claude-sonnet-vs-gpt-4o-for-code-review-accuracy-comparison-2026/)
-- [Cursor AI Switching Between Claude and GPT Models Extra Cost](/ai-tools-compared/cursor-ai-switching-between-claude-and-gpt-models-extra-cost/)
-- [Cursor AI with Claude vs GPT Models: Which Gives Better Code](/ai-tools-compared/cursor-ai-with-claude-vs-gpt-models-which-gives-better-code-/)
-- [How to Transfer Claude Project Knowledge to ChatGPT Custom (2)](/ai-tools-compared/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-gpt/)
+- [Claude Sonnet vs GPT-4o for Code Generation: Practical](/claude-sonnet-vs-gpt-4o-for-code-generation/)
+- [Claude Sonnet vs GPT-4o for Code Review Accuracy Comparison](/claude-sonnet-vs-gpt-4o-for-code-review-accuracy-comparison-2026/)
+- [Cursor AI Switching Between Claude and GPT Models Extra Cost](/cursor-ai-switching-between-claude-and-gpt-models-extra-cost/)
+- [Cursor AI with Claude vs GPT Models: Which Gives Better Code](/cursor-ai-with-claude-vs-gpt-models-which-gives-better-code-/)
+- [How to Transfer Claude Project Knowledge to ChatGPT Custom (2)](/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-gpt/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

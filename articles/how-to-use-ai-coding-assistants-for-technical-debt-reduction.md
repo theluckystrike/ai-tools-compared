@@ -309,10 +309,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [AI Coding Assistants for Go Testing Table Driven Tests Gener](/ai-tools-compared/ai-coding-assistants-for-go-testing-table-driven-tests-gener/)
-- [AI Coding Assistants for Typescript Deno Fresh Framework Com](/ai-tools-compared/ai-coding-assistants-for-typescript-deno-fresh-framework-com/)
-- [AI Coding Assistants for TypeScript Express Middleware Chain](/ai-tools-compared/ai-coding-assistants-for-typescript-express-middleware-chain/)
-- [AI Coding Assistants for Typescript Graphql Resolver and](/ai-tools-compared/ai-coding-assistants-for-typescript-graphql-resolver-and-schema-generation-2026/)
-- [aider vs Claude Code: Terminal AI Coding Assistants Compared](/ai-tools-compared/aider-vs-claude-code-terminal-ai-comparison/)
+- [AI Coding Assistants for Go Testing Table Driven Tests Gener](/ai-coding-assistants-for-go-testing-table-driven-tests-gener/)
+- [AI Coding Assistants for Typescript Deno Fresh Framework Com](/ai-coding-assistants-for-typescript-deno-fresh-framework-com/)
+- [AI Coding Assistants for TypeScript Express Middleware Chain](/ai-coding-assistants-for-typescript-express-middleware-chain/)
+- [AI Coding Assistants for Typescript Graphql Resolver and](/ai-coding-assistants-for-typescript-graphql-resolver-and-schema-generation-2026/)
+- [aider vs Claude Code: Terminal AI Coding Assistants Compared](/aider-vs-claude-code-terminal-ai-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

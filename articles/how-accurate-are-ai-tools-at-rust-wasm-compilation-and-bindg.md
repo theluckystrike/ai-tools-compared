@@ -344,9 +344,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How Accurate Are AI Tools for Rust Unsafe Code Blocks](/ai-tools-compared/how-accurate-are-ai-tools-for-rust-unsafe-code-blocks-and-ff/)
-- [How Accurate Are AI Tools at Generating Rust Crossbeam](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
-- [Best AI Coding Tools for Rust Developers 2026](/ai-tools-compared/ai-tools-for-rust-developers-2026/)
-- [How Accurate Are AI Tools](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-serde-serialization-code/)
-- [AI Code Generation Producing Syntax Errors in Rust Fix Guide](/ai-tools-compared/ai-code-generation-producing-syntax-errors-in-rust-fix-guide/)
+- [How Accurate Are AI Tools for Rust Unsafe Code Blocks](/how-accurate-are-ai-tools-for-rust-unsafe-code-blocks-and-ff/)
+- [How Accurate Are AI Tools at Generating Rust Crossbeam](/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
+- [Best AI Coding Tools for Rust Developers 2026](/ai-tools-for-rust-developers-2026/)
+- [How Accurate Are AI Tools](/how-accurate-are-ai-tools-at-generating-rust-serde-serialization-code/)
+- [AI Code Generation Producing Syntax Errors in Rust Fix Guide](/ai-code-generation-producing-syntax-errors-in-rust-fix-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

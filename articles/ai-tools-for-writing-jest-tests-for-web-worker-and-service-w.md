@@ -395,10 +395,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Claude Code MSW Mock Service Worker Guide](/ai-tools-compared/claude-code-msw-mock-service-worker-guide/)
-- [AI Tools for Writing Jest Tests for Graphql Resolvers](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-graphql-resolvers-with-dataloader-batching/)
-- [Best AI for Writing Jest Tests for React Custom Hooks](/ai-tools-compared/best-ai-for-writing-jest-tests-for-react-custom-hooks-with-c/)
-- [Best AI Assistant for Creating Jest Tests That Verify Error](/ai-tools-compared/best-ai-assistant-for-creating-jest-tests-that-verify-error-/)
-- [Best AI for Creating Jest Tests That Cover Race Conditions](/ai-tools-compared/best-ai-for-creating-jest-tests-that-cover-race-conditions-i/)
+- [Claude Code MSW Mock Service Worker Guide](/claude-code-msw-mock-service-worker-guide/)
+- [AI Tools for Writing Jest Tests for Graphql Resolvers](/ai-tools-for-writing-jest-tests-for-graphql-resolvers-with-dataloader-batching/)
+- [Best AI for Writing Jest Tests for React Custom Hooks](/best-ai-for-writing-jest-tests-for-react-custom-hooks-with-c/)
+- [Best AI Assistant for Creating Jest Tests That Verify Error](/best-ai-assistant-for-creating-jest-tests-that-verify-error-/)
+- [Best AI for Creating Jest Tests That Cover Race Conditions](/best-ai-for-creating-jest-tests-that-cover-race-conditions-i/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -288,9 +288,9 @@ Both tools are useful. Claude edges ahead on large files and HCL accuracy. Use C
 
 ## Related Reading
 
-- [AI Tools for Writing Terraform Modules](/ai-tools-compared/best-ai-tools-for-writing-terraform-modules-2026/)
-- [How to Use AI to Generate Terraform Import Blocks](/ai-tools-compared/how-to-use-ai-to-generate-terraform-import-blocks-for-existi/)
-- [Claude vs GPT-4 for Terraform and Pulumi](/ai-tools-compared/claude-vs-gpt4-terraform-pulumi-infrastructure-code-2026/)
+- [AI Tools for Writing Terraform Modules](/best-ai-tools-for-writing-terraform-modules-2026/)
+- [How to Use AI to Generate Terraform Import Blocks](/how-to-use-ai-to-generate-terraform-import-blocks-for-existi/)
+- [Claude vs GPT-4 for Terraform and Pulumi](/claude-vs-gpt4-terraform-pulumi-infrastructure-code-2026/)
 
 ---
 

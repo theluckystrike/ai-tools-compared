@@ -375,11 +375,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Use AI to Generate Jest Component Tests with Testing](/ai-tools-compared/how-to-use-ai-to-generate-jest-component-tests-with-testing-/)
-- [How to Use AI to Generate Jest Integration Tests for Express](/ai-tools-compared/how-to-use-ai-to-generate-jest-integration-tests-for-express/)
-- [How to Use AI to Generate Jest Tests for Next.js API Routes](/ai-tools-compared/how-to-use-ai-to-generate-jest-tests-for-nextjs-api-routes/)
-- [How to Use AI to Generate Jest Tests for Redux Toolkit Slice](/ai-tools-compared/how-to-use-ai-to-generate-jest-tests-for-redux-toolkit-slice/)
-- [AI Tools for Writing Jest Tests for Graphql Resolvers](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-graphql-resolvers-with-dataloader-batching/)
+- [How to Use AI to Generate Jest Component Tests with Testing](/how-to-use-ai-to-generate-jest-component-tests-with-testing-/)
+- [How to Use AI to Generate Jest Integration Tests for Express](/how-to-use-ai-to-generate-jest-integration-tests-for-express/)
+- [How to Use AI to Generate Jest Tests for Next.js API Routes](/how-to-use-ai-to-generate-jest-tests-for-nextjs-api-routes/)
+- [How to Use AI to Generate Jest Tests for Redux Toolkit Slice](/how-to-use-ai-to-generate-jest-tests-for-redux-toolkit-slice/)
+- [AI Tools for Writing Jest Tests for Graphql Resolvers](/ai-tools-for-writing-jest-tests-for-graphql-resolvers-with-dataloader-batching/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

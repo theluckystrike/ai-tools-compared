@@ -266,9 +266,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI Coding Tools for Rust Developers 2026](/ai-tools-compared/ai-tools-for-rust-developers-2026/)
-- [How Accurate Are AI Tools for Rust Unsafe Code Blocks](/ai-tools-compared/how-accurate-are-ai-tools-for-rust-unsafe-code-blocks-and-ff/)
-- [How Accurate Are AI Tools at Generating Rust Crossbeam](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
-- [How Well Do AI Tools Generate Rust Macro Definitions and Pro](/ai-tools-compared/how-well-do-ai-tools-generate-rust-macro-definitions-and-pro/)
-- [AI Tools for Interpreting Rust Compiler Borrow Checker](/ai-tools-compared/ai-tools-for-interpreting-rust-compiler-borrow-checker-error/)
+- [Best AI Coding Tools for Rust Developers 2026](/ai-tools-for-rust-developers-2026/)
+- [How Accurate Are AI Tools for Rust Unsafe Code Blocks](/how-accurate-are-ai-tools-for-rust-unsafe-code-blocks-and-ff/)
+- [How Accurate Are AI Tools at Generating Rust Crossbeam](/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
+- [How Well Do AI Tools Generate Rust Macro Definitions and Pro](/how-well-do-ai-tools-generate-rust-macro-definitions-and-pro/)
+- [AI Tools for Interpreting Rust Compiler Borrow Checker](/ai-tools-for-interpreting-rust-compiler-borrow-checker-error/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

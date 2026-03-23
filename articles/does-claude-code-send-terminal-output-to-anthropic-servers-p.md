@@ -462,10 +462,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [aider vs Claude Code: Terminal AI Coding Assistants Compared](/ai-tools-compared/aider-vs-claude-code-terminal-ai-comparison/)
-- [Claude Code Terminal Permission Denied Fix](/ai-tools-compared/claude-code-terminal-permission-denied-fix/)
-- [How to Migrate From Copilot for Neovim](/ai-tools-compared/migrate-copilot-for-neovim-setup-to-claude-code-terminal-wor/)
-- [Claude API Extended Thinking: How Output Tokens Are Billed](/ai-tools-compared/claude-api-extended-thinking-cost-how-output-tokens-are-bill/)
-- [Does Cursor AI Store Your Code on Their Servers Data Privacy](/ai-tools-compared/does-cursor-ai-store-your-code-on-their-servers-data-privacy/)
+- [aider vs Claude Code: Terminal AI Coding Assistants Compared](/aider-vs-claude-code-terminal-ai-comparison/)
+- [Claude Code Terminal Permission Denied Fix](/claude-code-terminal-permission-denied-fix/)
+- [How to Migrate From Copilot for Neovim](/migrate-copilot-for-neovim-setup-to-claude-code-terminal-wor/)
+- [Claude API Extended Thinking: How Output Tokens Are Billed](/claude-api-extended-thinking-cost-how-output-tokens-are-bill/)
+- [Does Cursor AI Store Your Code on Their Servers Data Privacy](/does-cursor-ai-store-your-code-on-their-servers-data-privacy/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

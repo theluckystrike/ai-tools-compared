@@ -397,9 +397,9 @@ For polyglot schemas (Protobuf + JSON + SQL in one repo), an AI-based approach i
 
 ## Related Reading
 
-- [AI Tools for Automated Data Pipeline Testing](/ai-tools-compared/best-ai-tools-for-data-pipeline-debugging-2026/)
-- [Best AI Tools for Writing Ansible Playbooks](/ai-tools-compared/best-ai-tools-for-writing-ansible-playbooks-and-roles-automa/)
-- [AI Tools for Automated PR Description Generation](/ai-tools-compared/ai-tools-for-automated-pr-description-generation/)
+- [AI Tools for Automated Data Pipeline Testing](/best-ai-tools-for-data-pipeline-debugging-2026/)
+- [Best AI Tools for Writing Ansible Playbooks](/best-ai-tools-for-writing-ansible-playbooks-and-roles-automa/)
+- [AI Tools for Automated PR Description Generation](/ai-tools-for-automated-pr-description-generation/)
 ---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

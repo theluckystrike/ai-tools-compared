@@ -402,10 +402,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [ChatGPT API Fine Tuning Costs Training Plus Inference Total](/ai-tools-compared/chatgpt-api-fine-tuning-costs-training-plus-inference-total-estimate/)
-- [ChatGPT Canvas Feature Is It Included in Plus or Team Only](/ai-tools-compared/chatgpt-canvas-feature-is-it-included-in-plus-or-team-only/)
-- [ChatGPT Plus Browsing and DALL-E Usage Limits Per Three](/ai-tools-compared/chatgpt-plus-browsing-and-dalle-usage-limits-per-three-hours/)
-- [Do ChatGPT Plus Memory and Custom GPTs Count Toward](/ai-tools-compared/chatgpt-plus-memory-and-custom-gpts-count-toward-usage-limit/)
-- [ChatGPT Plus Subscription Not Activating Fix](/ai-tools-compared/chatgpt-plus-subscription-not-activating-fix/)
+- [ChatGPT API Fine Tuning Costs Training Plus Inference Total](/chatgpt-api-fine-tuning-costs-training-plus-inference-total-estimate/)
+- [ChatGPT Canvas Feature Is It Included in Plus or Team Only](/chatgpt-canvas-feature-is-it-included-in-plus-or-team-only/)
+- [ChatGPT Plus Browsing and DALL-E Usage Limits Per Three](/chatgpt-plus-browsing-and-dalle-usage-limits-per-three-hours/)
+- [Do ChatGPT Plus Memory and Custom GPTs Count Toward](/chatgpt-plus-memory-and-custom-gpts-count-toward-usage-limit/)
+- [ChatGPT Plus Subscription Not Activating Fix](/chatgpt-plus-subscription-not-activating-fix/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

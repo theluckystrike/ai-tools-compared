@@ -307,10 +307,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Generating Grafana Dashboard JSON Templates](/ai-tools-compared/ai-tools-for-generating-grafana-dashboard-json-templates-fro/)
-- [AI Tools for Generating Grafana Dashboards from Metrics](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
-- [Best AI Assistant for Building Grafana Dashboard Panels](/ai-tools-compared/best-ai-assistant-for-building-grafana-dashboard-panels-from-prometheus-queries/)
-- [AI Tools for Creating Custom Algorithm Visualization](/ai-tools-compared/ai-tools-for-creating-custom-algorithm-visualization-tutoria/)
-- [AI Tools for Creating Property-Based Test Cases](/ai-tools-compared/ai-tools-for-creating-property-based-test-cases-using-hypoth/)
+- [AI Tools for Generating Grafana Dashboard JSON Templates](/ai-tools-for-generating-grafana-dashboard-json-templates-fro/)
+- [AI Tools for Generating Grafana Dashboards from Metrics](/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
+- [Best AI Assistant for Building Grafana Dashboard Panels](/best-ai-assistant-for-building-grafana-dashboard-panels-from-prometheus-queries/)
+- [AI Tools for Creating Custom Algorithm Visualization](/ai-tools-for-creating-custom-algorithm-visualization-tutoria/)
+- [AI Tools for Creating Property-Based Test Cases](/ai-tools-for-creating-property-based-test-cases-using-hypoth/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

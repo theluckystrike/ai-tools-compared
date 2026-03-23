@@ -356,9 +356,9 @@ For these, agents are tools for acceleration, not replacement. Use them to gener
 
 ## Related Reading
 
-- [AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026](/ai-tools-compared/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
-- [How to Evaluate AI Coding Assistant Accuracy](/ai-tools-compared/how-to-evaluate-ai-coding-assistant-accuracy/)
-- [AI Code Review Automation Tools Comparison](/ai-tools-compared/ai-code-review-automation-tools-comparison/)
+- [AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026](/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
+- [How to Evaluate AI Coding Assistant Accuracy](/how-to-evaluate-ai-coding-assistant-accuracy/)
+- [AI Code Review Automation Tools Comparison](/ai-code-review-automation-tools-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

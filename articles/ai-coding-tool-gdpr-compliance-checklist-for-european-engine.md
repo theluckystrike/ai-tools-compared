@@ -315,10 +315,10 @@ Trying to change everything at once. Pick one or two practices, implement them w
 
 ## Related Articles
 
-- [Best AI for Writing Backward Compatibility Testing Checklist](/ai-tools-compared/best-ai-for-writing-backward-compatibility-testing-checklist/)
-- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy Polici](/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
-- [Starburst vs Trino AI Query Engine](/ai-tools-compared/starburst-vs-trino-ai-query-engine/)
-- [AI Policy Management Tools Enterprise Compliance](/ai-tools-compared/ai-policy-management-tools-enterprise-compliance-2026/)
-- [AI Tools for Automating Cloud Security Compliance Scanning I](/ai-tools-compared/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
+- [Best AI for Writing Backward Compatibility Testing Checklist](/best-ai-for-writing-backward-compatibility-testing-checklist/)
+- [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy Polici](/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)
+- [Starburst vs Trino AI Query Engine](/starburst-vs-trino-ai-query-engine/)
+- [AI Policy Management Tools Enterprise Compliance](/ai-policy-management-tools-enterprise-compliance-2026/)
+- [AI Tools for Automating Cloud Security Compliance Scanning I](/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

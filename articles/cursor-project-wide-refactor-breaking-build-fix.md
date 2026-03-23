@@ -347,10 +347,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Cursor Multi-File Edit Breaking Code Fix (2026)](/ai-tools-compared/cursor-multi-file-edit-breaking-code-fix-2026/)
-- [Configuring Cursor AI Notepads for Reusable Project Context](/ai-tools-compared/configuring-cursor-ai-notepads-for-reusable-project-context-/)
-- [Switching from Windsurf to Cursor How to Transfer Project](/ai-tools-compared/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
-- [Copilot Business Org-Wide Enable: Cost If Not All Devs Use](/ai-tools-compared/copilot-business-org-wide-enable-cost-if-not-all-devs-use-it/)
-- [How to Use AI Inline Chat to Refactor Single Function Step](/ai-tools-compared/how-to-use-ai-inline-chat-to-refactor-single-function-step-by-step/)
+- [Cursor Multi-File Edit Breaking Code Fix (2026)](/cursor-multi-file-edit-breaking-code-fix-2026/)
+- [Configuring Cursor AI Notepads for Reusable Project Context](/configuring-cursor-ai-notepads-for-reusable-project-context-/)
+- [Switching from Windsurf to Cursor How to Transfer Project](/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
+- [Copilot Business Org-Wide Enable: Cost If Not All Devs Use](/copilot-business-org-wide-enable-cost-if-not-all-devs-use-it/)
+- [How to Use AI Inline Chat to Refactor Single Function Step](/how-to-use-ai-inline-chat-to-refactor-single-function-step-by-step/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

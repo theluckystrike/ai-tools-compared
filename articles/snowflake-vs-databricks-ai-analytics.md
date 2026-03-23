@@ -279,11 +279,11 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Databricks vs BigQuery AI ML Features: A Practical](/ai-tools-compared/databricks-vs-bigquery-ai-ml-features/)
-- [AI Tools for Customer Journey Analytics](/ai-tools-compared/ai-tools-for-customer-journey-analytics/)
-- [AI Tools for Inventory Analytics: A Practical Guide for](/ai-tools-compared/ai-tools-for-inventory-analytics/)
-- [AI Tools for Real-Time Analytics: A Practical Guide](/ai-tools-compared/ai-tools-for-real-time-analytics/)
-- [AI Tools for Social Media Analytics: A Practical Guide](/ai-tools-compared/ai-tools-for-social-media-analytics/)
+- [Databricks vs BigQuery AI ML Features: A Practical](/databricks-vs-bigquery-ai-ml-features/)
+- [AI Tools for Customer Journey Analytics](/ai-tools-for-customer-journey-analytics/)
+- [AI Tools for Inventory Analytics: A Practical Guide for](/ai-tools-for-inventory-analytics/)
+- [AI Tools for Real-Time Analytics: A Practical Guide](/ai-tools-for-real-time-analytics/)
+- [AI Tools for Social Media Analytics: A Practical Guide](/ai-tools-for-social-media-analytics/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

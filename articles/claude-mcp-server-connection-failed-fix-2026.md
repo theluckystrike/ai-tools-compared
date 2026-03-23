@@ -349,11 +349,11 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 
 ## Related Articles
 
-- [How to Build Custom AI Coding Workflows with MCP Server](/ai-tools-compared/how-to-build-custom-ai-coding-workflows-with-mcp-server-inte/)
-- [Migrating from ChatGPT Plugins to Claude MCP Tools for.](/ai-tools-compared/migrating-from-chatgpt-plugins-to-claude-mcp-tools-for-coding-workflows/)
-- [How to Use Claude for Debugging Failed CI/CD Pipeline Logs](/ai-tools-compared/how-to-use-claude-for-debugging-failed-ci-cd-pipeline-logs/)
-- [Claude Artifacts Not Rendering Fix 2026](/ai-tools-compared/claude-artifacts-not-rendering-fix-2026/)
-- [Claude Code Losing Context Across Sessions Fix](/ai-tools-compared/claude-code-losing-context-across-sessions-fix/)
+- [How to Build Custom AI Coding Workflows with MCP Server](/how-to-build-custom-ai-coding-workflows-with-mcp-server-inte/)
+- [Migrating from ChatGPT Plugins to Claude MCP Tools for.](/migrating-from-chatgpt-plugins-to-claude-mcp-tools-for-coding-workflows/)
+- [How to Use Claude for Debugging Failed CI/CD Pipeline Logs](/how-to-use-claude-for-debugging-failed-ci-cd-pipeline-logs/)
+- [Claude Artifacts Not Rendering Fix 2026](/claude-artifacts-not-rendering-fix-2026/)
+- [Claude Code Losing Context Across Sessions Fix](/claude-code-losing-context-across-sessions-fix/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

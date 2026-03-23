@@ -485,10 +485,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Create Custom System Prompt for ChatGPT API That](/ai-tools-compared/how-to-create-custom-system-prompt-for-chatgpt-api-that-enfo/)
-- [How to Create Custom System Prompts for AI That Match Your](/ai-tools-compared/how-to-create-custom-system-prompts-for-ai-that-match-your-d/)
-- [How to Use AI to Help Devrel Create Interactive Coding](/ai-tools-compared/how-to-use-ai-to-help-devrel-create-interactive-coding-playgrounds/)
-- [How to Write System Prompts for AI Coding Assistants](/ai-tools-compared/how-to-write-system-prompts-for-ai-coding-assistants-project/)
-- [How to Create Custom Instructions for AI Coding Tools That](/ai-tools-compared/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
+- [How to Create Custom System Prompt for ChatGPT API That](/how-to-create-custom-system-prompt-for-chatgpt-api-that-enfo/)
+- [How to Create Custom System Prompts for AI That Match Your](/how-to-create-custom-system-prompts-for-ai-that-match-your-d/)
+- [How to Use AI to Help Devrel Create Interactive Coding](/how-to-use-ai-to-help-devrel-create-interactive-coding-playgrounds/)
+- [How to Write System Prompts for AI Coding Assistants](/how-to-write-system-prompts-for-ai-coding-assistants-project/)
+- [How to Create Custom Instructions for AI Coding Tools That](/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

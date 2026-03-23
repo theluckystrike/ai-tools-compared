@@ -434,11 +434,11 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [ChatGPT API Assistants API Pricing Threads and Runs Cost](/ai-tools-compared/chatgpt-api-assistants-api-pricing-threads-and-runs-cost-breakdown/)
-- [Claude API Tool Use Function Calling Pricing How Tokens Are](/ai-tools-compared/claude-api-tool-use-function-calling-pricing-how-tokens-are-/)
-- [Claude Sonnet vs Opus API Pricing Difference Worth It](/ai-tools-compared/claude-sonnet-vs-opus-api-pricing-difference-worth-it-2026/)
-- [Gemini Code Assist Enterprise Pricing Per Developer](/ai-tools-compared/gemini-code-assist-enterprise-pricing-per-developer-breakdown-2026/)
-- [ChatGPT API Token Pricing Calculator How to Estimate Monthly](/ai-tools-compared/chatgpt-api-token-pricing-calculator-how-to-estimate-monthly/)
+- [ChatGPT API Assistants API Pricing Threads and Runs Cost](/chatgpt-api-assistants-api-pricing-threads-and-runs-cost-breakdown/)
+- [Claude API Tool Use Function Calling Pricing How Tokens Are](/claude-api-tool-use-function-calling-pricing-how-tokens-are-/)
+- [Claude Sonnet vs Opus API Pricing Difference Worth It](/claude-sonnet-vs-opus-api-pricing-difference-worth-it-2026/)
+- [Gemini Code Assist Enterprise Pricing Per Developer](/gemini-code-assist-enterprise-pricing-per-developer-breakdown-2026/)
+- [ChatGPT API Token Pricing Calculator How to Estimate Monthly](/chatgpt-api-token-pricing-calculator-how-to-estimate-monthly/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -279,11 +279,11 @@ Yes. This is the main barrier for non-technical teams. If your marketing team wi
 
 ## Related Articles
 
-- [AI Tools for Social Media Analytics: A Practical Guide](/ai-tools-compared/ai-tools-for-social-media-analytics/)
-- [Notion AI vs ChatGPT for Content Creation Compared](/ai-tools-compared/notion-ai-vs-chatgpt-for-content-creation-compared/)
-- [AI Tools for Debugging CSS Media Query Breakpoints Not Match](/ai-tools-compared/ai-tools-for-debugging-css-media-query-breakpoints-not-match/)
-- [Copy.ai vs ClosersCopy: Sales Copywriting Compared](/ai-tools-compared/copy-ai-vs-closerscopy-sales-copywriting-compared/)
-- [Jasper AI vs Anyword: Performance Marketing Copy Compared](/ai-tools-compared/jasper-ai-vs-anyword-performance-marketing-copy/)
+- [AI Tools for Social Media Analytics: A Practical Guide](/ai-tools-for-social-media-analytics/)
+- [Notion AI vs ChatGPT for Content Creation Compared](/notion-ai-vs-chatgpt-for-content-creation-compared/)
+- [AI Tools for Debugging CSS Media Query Breakpoints Not Match](/ai-tools-for-debugging-css-media-query-breakpoints-not-match/)
+- [Copy.ai vs ClosersCopy: Sales Copywriting Compared](/copy-ai-vs-closerscopy-sales-copywriting-compared/)
+- [Jasper AI vs Anyword: Performance Marketing Copy Compared](/jasper-ai-vs-anyword-performance-marketing-copy/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

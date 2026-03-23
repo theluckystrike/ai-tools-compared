@@ -391,9 +391,9 @@ This test-first mindset is something Claude applies automatically when you ask f
 
 ## Related Reading
 
-- [How Accurate Are AI Tools at Rust/Wasm Compilation and Binding Generation](/ai-tools-compared/how-accurate-are-ai-tools-at-rust-wasm-compilation-and-bindg/)
-- [How to Use AI for Zig Development](/ai-tools-compared/ai-for-zig-development/)
-- [AI Code Generation Producing Syntax Errors in Rust: Fix Guide](/ai-tools-compared/ai-code-generation-producing-syntax-errors-in-rust-fix-guide/)
+- [How Accurate Are AI Tools at Rust/Wasm Compilation and Binding Generation](/how-accurate-are-ai-tools-at-rust-wasm-compilation-and-bindg/)
+- [How to Use AI for Zig Development](/ai-for-zig-development/)
+- [AI Code Generation Producing Syntax Errors in Rust: Fix Guide](/ai-code-generation-producing-syntax-errors-in-rust-fix-guide/)
 
 ---
 

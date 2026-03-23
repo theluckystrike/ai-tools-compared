@@ -377,10 +377,10 @@ Total: under $15/day for production anomaly detection with root cause analysis.
 
 ## Related Articles
 
-- [AI-Powered Log Analysis Tools for Debugging](/ai-tools-compared/ai-log-analysis-tools-for-debugging/)
-- [Best AI Tools for Debugging Production Incidents](/ai-tools-compared/best-ai-tools-for-debugging-production-incidents-with-log-analysis/)
-- [Claude vs GPT-4 for Shell Scripting 2026](/ai-tools-compared/claude-vs-gpt4-for-shell-scripting-2026/)
-- [AI Powered Log Analysis Tools for Production Debugging](/ai-tools-compared/ai-powered-log-analysis-tools-for-production-debugging-compa/)
-- [Effective Workflow for Using AI](/ai-tools-compared/effective-workflow-for-using-ai-to-debug-production-issues-from-logs/)
+- [AI-Powered Log Analysis Tools for Debugging](/ai-log-analysis-tools-for-debugging/)
+- [Best AI Tools for Debugging Production Incidents](/best-ai-tools-for-debugging-production-incidents-with-log-analysis/)
+- [Claude vs GPT-4 for Shell Scripting 2026](/claude-vs-gpt4-for-shell-scripting-2026/)
+- [AI Powered Log Analysis Tools for Production Debugging](/ai-powered-log-analysis-tools-for-production-debugging-compa/)
+- [Effective Workflow for Using AI](/effective-workflow-for-using-ai-to-debug-production-issues-from-logs/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -336,12 +336,12 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How to Write Custom Instructions That Make AI Follow Your](/ai-tools-compared/how-to-write-custom-instructions-that-make-ai-follow-your-error-response-schema/)
-- [How to Write Custom Instructions That Make AI Respect Your](/ai-tools-compared/how-to-write-custom-instructions-that-make-ai-respect-your-api-rate-limit-patterns/)
-- [How to Write Custom Instructions for AI That Follow Your](/ai-tools-compared/how-to-write-custom-instructions-for-ai-that-follow-your-teams-code-review-standards/)
-- [Writing Custom Instructions for AI Tools That Enforce Your](/ai-tools-compared/writing-custom-instructions-for-ai-tools-that-enforce-your-security-header-standards/)
-- [Configuring AI Coding Tools to Follow Your Teams Dependency](/ai-tools-compared/configuring-ai-coding-tools-to-follow-your-teams-dependency-/)
-- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
+- [How to Write Custom Instructions That Make AI Follow Your](/how-to-write-custom-instructions-that-make-ai-follow-your-error-response-schema/)
+- [How to Write Custom Instructions That Make AI Respect Your](/how-to-write-custom-instructions-that-make-ai-respect-your-api-rate-limit-patterns/)
+- [How to Write Custom Instructions for AI That Follow Your](/how-to-write-custom-instructions-for-ai-that-follow-your-teams-code-review-standards/)
+- [Writing Custom Instructions for AI Tools That Enforce Your](/writing-custom-instructions-for-ai-tools-that-enforce-your-security-header-standards/)
+- [Configuring AI Coding Tools to Follow Your Teams Dependency](/configuring-ai-coding-tools-to-follow-your-teams-dependency-/)
+- [AI Project Status Generator for Remote Teams Pulling](https://welikeremotestack.com/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

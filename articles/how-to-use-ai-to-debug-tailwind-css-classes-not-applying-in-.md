@@ -249,10 +249,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [AI Coding Assistant Comparison for TypeScript Tailwind CSS](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-tailwind-css-c/)
-- [ChatGPT vs Gemini for Generating Tailwind CSS from Hand Draw](/ai-tools-compared/chatgpt-vs-gemini-for-generating-tailwind-css-from-hand-draw/)
-- [AI Code Completion for Java Record Classes and Sealed Interf](/ai-tools-compared/ai-code-completion-for-java-record-classes-and-sealed-interf/)
-- [AI Tools for Reviewing Terraform Plans Before Applying](/ai-tools-compared/ai-tools-for-reviewing-terraform-plans-before-applying-to-pr/)
-- [Effective Workflow for Using AI](/ai-tools-compared/effective-workflow-for-using-ai-to-debug-production-issues-from-logs/)
+- [AI Coding Assistant Comparison for TypeScript Tailwind CSS](/ai-coding-assistant-comparison-for-typescript-tailwind-css-c/)
+- [ChatGPT vs Gemini for Generating Tailwind CSS from Hand Draw](/chatgpt-vs-gemini-for-generating-tailwind-css-from-hand-draw/)
+- [AI Code Completion for Java Record Classes and Sealed Interf](/ai-code-completion-for-java-record-classes-and-sealed-interf/)
+- [AI Tools for Reviewing Terraform Plans Before Applying](/ai-tools-for-reviewing-terraform-plans-before-applying-to-pr/)
+- [Effective Workflow for Using AI](/effective-workflow-for-using-ai-to-debug-production-issues-from-logs/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

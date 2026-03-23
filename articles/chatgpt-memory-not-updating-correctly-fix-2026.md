@@ -298,10 +298,10 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 
 ## Related Articles
 
-- [Do ChatGPT Plus Memory and Custom GPTs Count Toward](/ai-tools-compared/chatgpt-plus-memory-and-custom-gpts-count-toward-usage-limit/)
-- [ChatGPT API 429 Too Many Requests Fix](/ai-tools-compared/chatgpt-api-429-too-many-requests-fix/)
-- [ChatGPT Canvas Not Saving Changes Fix (2026)](/ai-tools-compared/chatgpt-canvas-not-saving-changes-fix-2026/)
-- [ChatGPT Code Interpreter Not Running Python: Fixes and Fix](/ai-tools-compared/chatgpt-code-interpreter-not-running-python-fix/)
-- [ChatGPT Conversation History Disappeared Fix](/ai-tools-compared/chatgpt-conversation-history-disappeared-fix/)
+- [Do ChatGPT Plus Memory and Custom GPTs Count Toward](/chatgpt-plus-memory-and-custom-gpts-count-toward-usage-limit/)
+- [ChatGPT API 429 Too Many Requests Fix](/chatgpt-api-429-too-many-requests-fix/)
+- [ChatGPT Canvas Not Saving Changes Fix (2026)](/chatgpt-canvas-not-saving-changes-fix-2026/)
+- [ChatGPT Code Interpreter Not Running Python: Fixes and Fix](/chatgpt-code-interpreter-not-running-python-fix/)
+- [ChatGPT Conversation History Disappeared Fix](/chatgpt-conversation-history-disappeared-fix/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

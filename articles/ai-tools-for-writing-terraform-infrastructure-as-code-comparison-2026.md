@@ -328,9 +328,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI Tools for Writing Terraform Modules in 2026](/ai-tools-compared/best-ai-tools-for-writing-terraform-modules-2026/---)
-- [AI Tools for Generating Terraform Provider Configurations 2026](/ai-tools-compared/ai-tools-for-generating-terraform-provider-configurations-2026/)
-- [Best AI Tools for Writing Terraform Provider Plugins 2026](/ai-tools-compared/best-ai-tools-for-writing-terraform-provider-plugins-2026/)
-- [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-compared/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)
-- [AI Tools for Reviewing Terraform Plans Before Applying](/ai-tools-compared/ai-tools-for-reviewing-terraform-plans-before-applying-to-pr/)
+- [Best AI Tools for Writing Terraform Modules in 2026](/best-ai-tools-for-writing-terraform-modules-2026/---)
+- [AI Tools for Generating Terraform Provider Configurations 2026](/ai-tools-for-generating-terraform-provider-configurations-2026/)
+- [Best AI Tools for Writing Terraform Provider Plugins 2026](/best-ai-tools-for-writing-terraform-provider-plugins-2026/)
+- [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)
+- [AI Tools for Reviewing Terraform Plans Before Applying](/ai-tools-for-reviewing-terraform-plans-before-applying-to-pr/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

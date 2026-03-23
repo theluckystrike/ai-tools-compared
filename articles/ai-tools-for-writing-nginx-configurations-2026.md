@@ -376,10 +376,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Writing CI CD Pipeline Configurations 2026](/ai-tools-compared/ai-tools-for-writing-ci-cd-pipeline-configurations-2026/)
-- [ChatGPT vs Claude for Writing Nginx Reverse Proxy Configurat](/ai-tools-compared/chatgpt-vs-claude-for-writing-nginx-reverse-proxy-configurat/)
-- [AI Tools for Creating Mutation Testing Configurations](/ai-tools-compared/ai-tools-for-creating-mutation-testing-configurations-to-find-weak-test-assertions/)
-- [AI Tools for Generating Nginx and Caddy Reverse Proxy Config](/ai-tools-compared/ai-tools-for-generating-nginx-and-caddy-reverse-proxy-config/)
-- [How to Use AI to Resolve Nginx 502 Bad Gateway Errors](/ai-tools-compared/how-to-use-ai-to-resolve-nginx-502-bad-gateway-errors-from-u/)
+- [AI Tools for Writing CI CD Pipeline Configurations 2026](/ai-tools-for-writing-ci-cd-pipeline-configurations-2026/)
+- [ChatGPT vs Claude for Writing Nginx Reverse Proxy Configurat](/chatgpt-vs-claude-for-writing-nginx-reverse-proxy-configurat/)
+- [AI Tools for Creating Mutation Testing Configurations](/ai-tools-for-creating-mutation-testing-configurations-to-find-weak-test-assertions/)
+- [AI Tools for Generating Nginx and Caddy Reverse Proxy Config](/ai-tools-for-generating-nginx-and-caddy-reverse-proxy-config/)
+- [How to Use AI to Resolve Nginx 502 Bad Gateway Errors](/how-to-use-ai-to-resolve-nginx-502-bad-gateway-errors-from-u/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

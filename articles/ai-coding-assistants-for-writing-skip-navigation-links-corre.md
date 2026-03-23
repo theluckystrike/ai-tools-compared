@@ -360,8 +360,8 @@ Quality of input dramatically affects output quality when working with AI tools.
 
 ## Related Articles on Accessibility and AI
 
-- [AI Tools for WCAG Compliance Testing and Fixes](/ai-tools-compared/ai-tools-for-wcag-compliance-testing/)
-- [Using Claude for Accessibility Audits](/ai-tools-compared/using-claude-for-accessibility-audits/)
-- [GitHub Copilot for Semantic HTML Generation](/ai-tools-compared/github-copilot-for-semantic-html/)
+- [AI Tools for WCAG Compliance Testing and Fixes](/ai-tools-for-wcag-compliance-testing/)
+- [Using Claude for Accessibility Audits](/using-claude-for-accessibility-audits/)
+- [GitHub Copilot for Semantic HTML Generation](/github-copilot-for-semantic-html/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

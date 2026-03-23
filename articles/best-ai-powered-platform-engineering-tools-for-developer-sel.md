@@ -240,11 +240,11 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Best AI Powered Chatops Tools](/ai-tools-compared/best-ai-powered-chatops-tools-for-slack-and-devops-integration/)
-- [AI-Powered API Gateway Configuration Tools 2026](/ai-tools-compared/ai-powered-api-gateway-configuration-tools-2026/)
-- [AI Tools for Converting Code Comments into Developer Facing](/ai-tools-compared/ai-tools-for-converting-code-comments-into-developer-facing-/)
-- [AI Tools for Video Compression: A Developer Guide](/ai-tools-compared/ai-tools-for-video-compression/)
-- [Best AI Tools for Automated Compliance Reporting for Cloud](/ai-tools-compared/best-ai-tools-for-automated-compliance-reporting-for-cloud-i/)
+- [Best AI Powered Chatops Tools](/best-ai-powered-chatops-tools-for-slack-and-devops-integration/)
+- [AI-Powered API Gateway Configuration Tools 2026](/ai-powered-api-gateway-configuration-tools-2026/)
+- [AI Tools for Converting Code Comments into Developer Facing](/ai-tools-for-converting-code-comments-into-developer-facing-/)
+- [AI Tools for Video Compression: A Developer Guide](/ai-tools-for-video-compression/)
+- [Best AI Tools for Automated Compliance Reporting for Cloud](/best-ai-tools-for-automated-compliance-reporting-for-cloud-i/)
 ## Hands-On Example: AI Provisioning Workflow
 
 Imagine a developer needs a staging environment for a feature branch. Without AI:
@@ -456,8 +456,8 @@ Best choice: Custom platform tool built on Claude/GPT-4
 
 ## Related Articles
 
-- [Terraform Best Practices for AI-Generated Code](/ai-tools-compared/terraform-best-practices-ai-generated/)
-- [Building Internal Developer Platforms with AI](/ai-tools-compared/building-idp-with-ai/)
-- [Kubernetes Manifest Generation Using AI](/ai-tools-compared/kubernetes-manifests-ai-generation/)
+- [Terraform Best Practices for AI-Generated Code](/terraform-best-practices-ai-generated/)
+- [Building Internal Developer Platforms with AI](/building-idp-with-ai/)
+- [Kubernetes Manifest Generation Using AI](/kubernetes-manifests-ai-generation/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

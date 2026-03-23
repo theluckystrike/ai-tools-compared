@@ -374,11 +374,11 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [AI Tools for Generating Nginx and Caddy Reverse Proxy Config](/ai-tools-compared/ai-tools-for-generating-nginx-and-caddy-reverse-proxy-config/)
-- [ChatGPT vs Claude for Writing Nginx Reverse Proxy Configurat](/ai-tools-compared/chatgpt-vs-claude-for-writing-nginx-reverse-proxy-configurat/)
-- [AI Powered Data Cataloging Tools: A Practical Guide for](/ai-tools-compared/ai-powered-data-cataloging-tools/)
-- [AI Tools for Cohort Analysis: A Practical Guide for](/ai-tools-compared/ai-tools-for-cohort-analysis/)
-- [AI Tools for Data Mesh Architecture: A Practical Guide](/ai-tools-compared/ai-tools-for-data-mesh-architecture/)
+- [AI Tools for Generating Nginx and Caddy Reverse Proxy Config](/ai-tools-for-generating-nginx-and-caddy-reverse-proxy-config/)
+- [ChatGPT vs Claude for Writing Nginx Reverse Proxy Configurat](/chatgpt-vs-claude-for-writing-nginx-reverse-proxy-configurat/)
+- [AI Powered Data Cataloging Tools: A Practical Guide for](/ai-powered-data-cataloging-tools/)
+- [AI Tools for Cohort Analysis: A Practical Guide for](/ai-tools-for-cohort-analysis/)
+- [AI Tools for Data Mesh Architecture: A Practical Guide](/ai-tools-for-data-mesh-architecture/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

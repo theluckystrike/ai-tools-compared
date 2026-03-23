@@ -318,10 +318,10 @@ Policies vary widely. Some tools let you access your data for a grace period aft
 
 ## Related Articles
 
-- [Perplexity Spaces Collaboration Feature Free vs Pro Limits](/ai-tools-compared/perplexity-spaces-collaboration-feature-free-vs-pro-limits-explained/)
-- [Claude Max vs Claude Pro Actual Difference](/ai-tools-compared/claude-max-vs-claude-pro-actual-difference-in-daily-message-limits/)
-- [Perplexity API Pricing vs Using Pro Subscription Which Is Ch](/ai-tools-compared/perplexity-api-pricing-vs-using-pro-subscription-which-is-ch/)
-- [Perplexity Pro Search Not Working Fix (2026)](/ai-tools-compared/perplexity-pro-search-not-working-fix-2026/)
-- [Switching from ChatGPT Plus to Perplexity Pro Feature Compar](/ai-tools-compared/switching-from-chatgpt-plus-to-perplexity-pro-feature-compar/)
+- [Perplexity Spaces Collaboration Feature Free vs Pro Limits](/perplexity-spaces-collaboration-feature-free-vs-pro-limits-explained/)
+- [Claude Max vs Claude Pro Actual Difference](/claude-max-vs-claude-pro-actual-difference-in-daily-message-limits/)
+- [Perplexity API Pricing vs Using Pro Subscription Which Is Ch](/perplexity-api-pricing-vs-using-pro-subscription-which-is-ch/)
+- [Perplexity Pro Search Not Working Fix (2026)](/perplexity-pro-search-not-working-fix-2026/)
+- [Switching from ChatGPT Plus to Perplexity Pro Feature Compar](/switching-from-chatgpt-plus-to-perplexity-pro-feature-compar/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

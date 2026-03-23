@@ -181,11 +181,11 @@ Over 2-3 weeks, you'll see which tools provide real value for your team's codeba
 
 ## Related Reading
 
-- [Completely Free Alternatives to GitHub Copilot That Actually](/ai-tools-compared/completely-free-alternatives-to-github-copilot-that-actually/)
-- [GitHub Copilot Free Tier Hidden Limits You Should Know 2026](/ai-tools-compared/github-copilot-free-tier-hidden-limits-you-should-know-2026/)
-- [How to Maximize GitHub Copilot Free Tier for Open Source](/ai-tools-compared/how-to-maximize-github-copilot-free-tier-for-open-source/)
-- [Best Free AI Coding Extensions for Visual Studio Code 2026](/ai-tools-compared/best-free-ai-coding-extensions-for-visual-studio-code-2026/)
-- [Best Free AI Tool for Code Explanation and Documentation](/ai-tools-compared/best-free-ai-tool-for-code-explanation-and-documentation/)
+- [Completely Free Alternatives to GitHub Copilot That Actually](/completely-free-alternatives-to-github-copilot-that-actually/)
+- [GitHub Copilot Free Tier Hidden Limits You Should Know 2026](/github-copilot-free-tier-hidden-limits-you-should-know-2026/)
+- [How to Maximize GitHub Copilot Free Tier for Open Source](/how-to-maximize-github-copilot-free-tier-for-open-source/)
+- [Best Free AI Coding Extensions for Visual Studio Code 2026](/best-free-ai-coding-extensions-for-visual-studio-code-2026/)
+- [Best Free AI Tool for Code Explanation and Documentation](/best-free-ai-tool-for-code-explanation-and-documentation/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

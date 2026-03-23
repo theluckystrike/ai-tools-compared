@@ -322,9 +322,9 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Copilot vs Claude Code for Writing GitHub Actions Cicd](/ai-tools-compared/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
-- [Copilot vs Claude Code for Scaffolding New Django REST](/ai-tools-compared/copilot-vs-claude-code-for-scaffolding-new-django-rest-frame/)
-- [Copilot vs Claude Code for Writing Jest Test](/ai-tools-compared/copilot-vs-claude-code-for-writing--jest-test-s/)
-- [AI Pair Programming Tools Comparison 2026: Claude Code](/ai-tools-compared/ai-pair-programming-tools-comparison-2026/)
-- [Claude vs ChatGPT for Refactoring Legacy Java Code](/ai-tools-compared/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
+- [Copilot vs Claude Code for Writing GitHub Actions Cicd](/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
+- [Copilot vs Claude Code for Scaffolding New Django REST](/copilot-vs-claude-code-for-scaffolding-new-django-rest-frame/)
+- [Copilot vs Claude Code for Writing Jest Test](/copilot-vs-claude-code-for-writing--jest-test-s/)
+- [AI Pair Programming Tools Comparison 2026: Claude Code](/ai-pair-programming-tools-comparison-2026/)
+- [Claude vs ChatGPT for Refactoring Legacy Java Code](/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

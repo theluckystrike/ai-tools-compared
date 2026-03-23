@@ -384,10 +384,10 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Cursor Free Tier Limitations: What Stops Working After Trial](/ai-tools-compared/cursor-free-tier-limitations-what-stops-working-after-trial/)
-- [GitHub Copilot Free Tier Hidden Limits You Should Know 2026](/ai-tools-compared/github-copilot-free-tier-hidden-limits-you-should-know-2026/)
-- [How to Maximize GitHub Copilot Free Tier for Open Source](/ai-tools-compared/how-to-maximize-github-copilot-free-tier-for-open-source/)
-- [Best AI Coding Tool Free Trial Longest No Credit Card](/ai-tools-compared/best-ai-coding-tool-free-trial-longest-no-credit-card/)
-- [Best Free AI Coding Extensions for Visual Studio Code 2026](/ai-tools-compared/best-free-ai-coding-extensions-for-visual-studio-code-2026/)
+- [Cursor Free Tier Limitations: What Stops Working After Trial](/cursor-free-tier-limitations-what-stops-working-after-trial/)
+- [GitHub Copilot Free Tier Hidden Limits You Should Know 2026](/github-copilot-free-tier-hidden-limits-you-should-know-2026/)
+- [How to Maximize GitHub Copilot Free Tier for Open Source](/how-to-maximize-github-copilot-free-tier-for-open-source/)
+- [Best AI Coding Tool Free Trial Longest No Credit Card](/best-ai-coding-tool-free-trial-longest-no-credit-card/)
+- [Best Free AI Coding Extensions for Visual Studio Code 2026](/best-free-ai-coding-extensions-for-visual-studio-code-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

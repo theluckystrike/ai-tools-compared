@@ -308,11 +308,11 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [AI Tools for Writing GitHub Actions Workflows (2026)](/ai-tools-compared/ai-tools/best-ai-tools-for-github-actions-workflows/)
-- [Best AI Tools for Writing GitHub Actions Matrix Build Strate](/ai-tools-compared/best-ai-tools-for-writing-github-actions-matrix-build-strate/)
-- [Best AI Tools for Writing GitHub Actions Reusable Workflow](/ai-tools-compared/best-ai-tools-for-writing-github-actions-reusable-workflow-t/)
-- [Copilot vs Claude Code for Writing Complex SQL Stored Proced](/ai-tools-compared/copilot-vs-claude-code-for-writing-complex-sql-stored-proced/)
-- [Copilot vs Claude Code for Writing Jest Test](/ai-tools-compared/copilot-vs-claude-code-for-writing--jest-test-s/)
+- [AI Tools for Writing GitHub Actions Workflows (2026)](/ai-tools/best-ai-tools-for-github-actions-workflows/)
+- [Best AI Tools for Writing GitHub Actions Matrix Build Strate](/best-ai-tools-for-writing-github-actions-matrix-build-strate/)
+- [Best AI Tools for Writing GitHub Actions Reusable Workflow](/best-ai-tools-for-writing-github-actions-reusable-workflow-t/)
+- [Copilot vs Claude Code for Writing Complex SQL Stored Proced](/copilot-vs-claude-code-for-writing-complex-sql-stored-proced/)
+- [Copilot vs Claude Code for Writing Jest Test](/copilot-vs-claude-code-for-writing--jest-test-s/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

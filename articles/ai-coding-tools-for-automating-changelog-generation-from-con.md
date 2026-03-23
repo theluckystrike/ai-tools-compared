@@ -308,7 +308,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [AI Tools for Automated Changelog Generation 2026](/ai-tools-for-automated-changelog-generation-2026/)
 - [AI Tools for Creating Automated Release Changelog](/ai-tools-for-creating-automated-release-changelog-from-conve/)
 - [How to Prevent AI Coding Tools from Generating Overly](/how-to-prevent-ai-coding-tools-from-generating-overly-complex-solutions/)
-- [AI for Automated Regression Test Generation from Bug](/ai-tools-compared/ai-for-automated-regression-test-generation-from-bug-reports/)
+- [AI for Automated Regression Test Generation from Bug](/ai-for-automated-regression-test-generation-from-bug-reports/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

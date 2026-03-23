@@ -319,11 +319,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Configuring AI Coding Tools to Follow Your Teams Dependency](/ai-tools-compared/configuring-ai-coding-tools-to-follow-your-teams-dependency-/)
-- [Best Way to Configure AI Coding Tools to Follow Your](/ai-tools-compared/best-way-to-configure-ai-coding-tools-to-follow-your-databas/)
-- [Configuring AI Coding Tools to Match Your Teams Specific](/ai-tools-compared/configuring-ai-coding-tools-to-match-your-teams-specific-doc/)
-- [What Source Code Context Window Do Different AI Coding Tools](/ai-tools-compared/what-source-code-context-window-do-different-ai-coding-tools/)
-- [How to Audit What Source Code AI Coding Tools Transmit](/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
-- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
+- [Configuring AI Coding Tools to Follow Your Teams Dependency](/configuring-ai-coding-tools-to-follow-your-teams-dependency-/)
+- [Best Way to Configure AI Coding Tools to Follow Your](/best-way-to-configure-ai-coding-tools-to-follow-your-databas/)
+- [Configuring AI Coding Tools to Match Your Teams Specific](/configuring-ai-coding-tools-to-match-your-teams-specific-doc/)
+- [What Source Code Context Window Do Different AI Coding Tools](/what-source-code-context-window-do-different-ai-coding-tools/)
+- [How to Audit What Source Code AI Coding Tools Transmit](/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
+- [AI Project Status Generator for Remote Teams Pulling](https://welikeremotestack.com/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

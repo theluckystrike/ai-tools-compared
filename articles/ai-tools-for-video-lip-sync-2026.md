@@ -342,11 +342,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI for Fixing Android Gradle Sync Failed Errors in Larg](/ai-tools-compared/best-ai-for-fixing-android-gradle-sync-failed-errors-in-larg/)
-- [AI Tools for Video Accessibility Features](/ai-tools-compared/ai-tools-for-video-accessibility-features/)
-- [AI Tools for Video Color Grading](/ai-tools-compared/ai-tools-for-video-color-grading/)
-- [AI Tools for Video Compression: A Developer Guide](/ai-tools-compared/ai-tools-for-video-compression/)
-- [AI Tools for Video Frame Interpolation](/ai-tools-compared/ai-tools-for-video-frame-interpolation/)
+- [Best AI for Fixing Android Gradle Sync Failed Errors in Larg](/best-ai-for-fixing-android-gradle-sync-failed-errors-in-larg/)
+- [AI Tools for Video Accessibility Features](/ai-tools-for-video-accessibility-features/)
+- [AI Tools for Video Color Grading](/ai-tools-for-video-color-grading/)
+- [AI Tools for Video Compression: A Developer Guide](/ai-tools-for-video-compression/)
+- [AI Tools for Video Frame Interpolation](/ai-tools-for-video-frame-interpolation/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

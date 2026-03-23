@@ -282,10 +282,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Domo vs Sisense AI Dashboards: A Practical Comparison](/ai-tools-compared/domo-vs-sisense-ai-dashboards/)
-- [AI Tools for Generating Grafana Dashboards from Metrics Auto](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
-- [AI Powered Data Cataloging Tools: A Practical Guide for](/ai-tools-compared/ai-powered-data-cataloging-tools/)
-- [AI Tools for Cohort Analysis: A Practical Guide for](/ai-tools-compared/ai-tools-for-cohort-analysis/)
-- [AI Tools for Data Mesh Architecture: A Practical Guide](/ai-tools-compared/ai-tools-for-data-mesh-architecture/)
+- [Domo vs Sisense AI Dashboards: A Practical Comparison](/domo-vs-sisense-ai-dashboards/)
+- [AI Tools for Generating Grafana Dashboards from Metrics Auto](/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
+- [AI Powered Data Cataloging Tools: A Practical Guide for](/ai-powered-data-cataloging-tools/)
+- [AI Tools for Cohort Analysis: A Practical Guide for](/ai-tools-for-cohort-analysis/)
+- [AI Tools for Data Mesh Architecture: A Practical Guide](/ai-tools-for-data-mesh-architecture/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -365,10 +365,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Generating Contributor License Agreement](/ai-tools-compared/ai-tools-for-generating-contributor-license-agreement-explan/)
-- [AI Tools for Designers Writing Handoff Notes That Include](/ai-tools-compared/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
-- [How Accurate Are AI Tools](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-serde-serialization-code/)
-- [AI Tools for Writing CI CD Pipeline Configurations 2026](/ai-tools-compared/ai-tools-for-writing-ci-cd-pipeline-configurations-2026/)
-- [AI Tools for Writing OpenAPI Specifications in 2026](/ai-tools-compared/articles/ai-tools-for-writing-openapi-specifications-2026/---)
+- [AI Tools for Generating Contributor License Agreement](/ai-tools-for-generating-contributor-license-agreement-explan/)
+- [AI Tools for Designers Writing Handoff Notes That Include](/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
+- [How Accurate Are AI Tools](/how-accurate-are-ai-tools-at-generating-rust-serde-serialization-code/)
+- [AI Tools for Writing CI CD Pipeline Configurations 2026](/ai-tools-for-writing-ci-cd-pipeline-configurations-2026/)
+- [AI Tools for Writing OpenAPI Specifications in 2026](/articles/ai-tools-for-writing-openapi-specifications-2026/---)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

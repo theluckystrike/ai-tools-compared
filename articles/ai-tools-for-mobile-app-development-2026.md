@@ -339,9 +339,9 @@ class SettingsScreen extends StatelessWidget {
 
 ## Related Reading
 
-- [Which AI Generates Better Swift UI Views from Design Specs](/ai-tools-compared/which-ai-generates-better-swift-ui-views-from-design-specs-2/)
-- [Best AI Tools for Frontend Component Generation](/ai-tools-compared/best-ai-tools-for-frontend-component-generation/)
-- [AI Coding Assistant Comparison for TypeScript Svelte Components](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-svelte-component/)
+- [Which AI Generates Better Swift UI Views from Design Specs](/which-ai-generates-better-swift-ui-views-from-design-specs-2/)
+- [Best AI Tools for Frontend Component Generation](/best-ai-tools-for-frontend-component-generation/)
+- [AI Coding Assistant Comparison for TypeScript Svelte Components](/ai-coding-assistant-accuracy-for-typescript-svelte-component/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

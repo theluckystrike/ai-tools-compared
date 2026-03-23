@@ -420,10 +420,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Comparing AI Tools for Generating No-Code Membership](/ai-tools-compared/comparing-ai-tools-for-generating-no-code-membership-and-sub/)
-- [AI Tools for Generating Grafana Dashboards from Metrics](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
-- [Comparing AI Tools for Generating Retool Resource](/ai-tools-compared/comparing-ai-tools-for-generating-retool-resource-queries-fr/)
-- [AI Tools for Generating Platform Specific Code in Kotlin](/ai-tools-compared/ai-tools-for-generating-platform-specific-code-in-kotlin-mul/)
-- [AI Tools for Generating Closed Captions and Transcripts](/ai-tools-compared/ai-tools-for-generating-closed-captions-and-transcripts-from/)
+- [Comparing AI Tools for Generating No-Code Membership](/comparing-ai-tools-for-generating-no-code-membership-and-sub/)
+- [AI Tools for Generating Grafana Dashboards from Metrics](/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
+- [Comparing AI Tools for Generating Retool Resource](/comparing-ai-tools-for-generating-retool-resource-queries-fr/)
+- [AI Tools for Generating Platform Specific Code in Kotlin](/ai-tools-for-generating-platform-specific-code-in-kotlin-mul/)
+- [AI Tools for Generating Closed Captions and Transcripts](/ai-tools-for-generating-closed-captions-and-transcripts-from/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

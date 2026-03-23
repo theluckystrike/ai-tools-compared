@@ -362,11 +362,11 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [AI Code Generation Quality for Java Pattern Matching and Swi](/ai-tools-compared/ai-code-generation-quality-for-java-pattern-matching-and-swi/)
-- [Best AI Tool for Generating Regex Patterns Compared](/ai-tools-compared/best-ai-tool-for-generating-regex-patterns-compared/)
-- [Best Free AI Tool for Generating Regex Patterns Explained](/ai-tools-compared/best-free-ai-tool-for-generating-regex-patterns-explained/)
-- [AI Code Generation for Java Reactive Programming with Projec](/ai-tools-compared/ai-code-generation-for-java-reactive-programming-with-projec/)
-- [AI Code Generation for Java Virtual Threads Project Loom Pat](/ai-tools-compared/ai-code-generation-for-java-virtual-threads-project-loom-pat/)
+- [AI Code Generation Quality for Java Pattern Matching and Swi](/ai-code-generation-quality-for-java-pattern-matching-and-swi/)
+- [Best AI Tool for Generating Regex Patterns Compared](/best-ai-tool-for-generating-regex-patterns-compared/)
+- [Best Free AI Tool for Generating Regex Patterns Explained](/best-free-ai-tool-for-generating-regex-patterns-explained/)
+- [AI Code Generation for Java Reactive Programming with Projec](/ai-code-generation-for-java-reactive-programming-with-projec/)
+- [AI Code Generation for Java Virtual Threads Project Loom Pat](/ai-code-generation-for-java-virtual-threads-project-loom-pat/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

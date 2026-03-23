@@ -308,10 +308,10 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [AI Tools for Writing GitHub Actions Workflows (2026)](/ai-tools-compared/ai-tools/best-ai-tools-for-github-actions-workflows/)
-- [Best AI Tools for Writing GitHub Actions](/ai-tools-compared/ai-tools-for-writing-github-actions-guide)
-- [Best AI Tools for Writing GitHub Actions Workflows 2026](/ai-tools-compared/best-ai-tools-for-writing-github-actions-workflows-2026/)
-- [Best AI Tools for Writing GitHub Actions Reusable Workflow](/ai-tools-compared/best-ai-tools-for-writing-github-actions-reusable-workflow-t/)
-- [AI Tools for Generating GitHub Actions Workflows](/ai-tools-compared/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
+- [AI Tools for Writing GitHub Actions Workflows (2026)](/ai-tools/best-ai-tools-for-github-actions-workflows/)
+- [Best AI Tools for Writing GitHub Actions](/ai-tools-for-writing-github-actions-guide)
+- [Best AI Tools for Writing GitHub Actions Workflows 2026](/best-ai-tools-for-writing-github-actions-workflows-2026/)
+- [Best AI Tools for Writing GitHub Actions Reusable Workflow](/best-ai-tools-for-writing-github-actions-reusable-workflow-t/)
+- [AI Tools for Generating GitHub Actions Workflows](/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -416,11 +416,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Use AI for Writing Effective Runbooks and Incident](/ai-tools-compared/how-to-use-ai-for-writing-effective-runbooks-and-incident-pl/)
-- [Best AI Tools for Writing Ansible Playbooks and Roles](/ai-tools-compared/best-ai-tools-for-writing-ansible-playbooks-and-roles-automatically/)
-- [ChatGPT vs Claude for Writing Effective Celery Task Error](/ai-tools-compared/chatgpt-vs-claude-for-writing-effective-celery-task-error-ha/)
-- [How to Use AI for Writing Effective Prometheus Recording Rul](/ai-tools-compared/how-to-use-ai-for-writing-effective-prometheus-recording-rul/)
-- [How to Use AI for Writing Effective Sli Slo Definitions](/ai-tools-compared/how-to-use-ai-for-writing-effective-sli-slo-definitions-for-services/)
+- [How to Use AI for Writing Effective Runbooks and Incident](/how-to-use-ai-for-writing-effective-runbooks-and-incident-pl/)
+- [Best AI Tools for Writing Ansible Playbooks and Roles](/best-ai-tools-for-writing-ansible-playbooks-and-roles-automatically/)
+- [ChatGPT vs Claude for Writing Effective Celery Task Error](/chatgpt-vs-claude-for-writing-effective-celery-task-error-ha/)
+- [How to Use AI for Writing Effective Prometheus Recording Rul](/how-to-use-ai-for-writing-effective-prometheus-recording-rul/)
+- [How to Use AI for Writing Effective Sli Slo Definitions](/how-to-use-ai-for-writing-effective-sli-slo-definitions-for-services/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```

@@ -416,10 +416,10 @@ For horizons beyond 30 days, statistical confidence intervals widen significantl
 
 ## Related Articles
 
-- [How to Use AI for Capacity Planning and Resource Right](/ai-tools-compared/how-to-use-ai-for-capacity-planning-and-resource-right-sizin/)
-- [How to Use AI to Create Milestone Planning Documents](/ai-tools-compared/how-to-use-ai-to-create-milestone-planning-documents-from-is/)
-- [How to Use AI for Cloud Migration Planning and Dependency](/ai-tools-compared/how-to-use-ai-for-cloud-migration-planning-and-dependency-ma/)
-- [How to Use AI for Predicting Infrastructure Scaling Needs](/ai-tools-compared/how-to-use-ai-for-predicting-infrastructure-scaling-needs-au/)
-- [AI Tools for Automated Infrastructure Drift Detection: Co](/ai-tools-compared/ai-tools-for-automated-infrastructure-drift-detection-and-co/)
+- [How to Use AI for Capacity Planning and Resource Right](/how-to-use-ai-for-capacity-planning-and-resource-right-sizin/)
+- [How to Use AI to Create Milestone Planning Documents](/how-to-use-ai-to-create-milestone-planning-documents-from-is/)
+- [How to Use AI for Cloud Migration Planning and Dependency](/how-to-use-ai-for-cloud-migration-planning-and-dependency-ma/)
+- [How to Use AI for Predicting Infrastructure Scaling Needs](/how-to-use-ai-for-predicting-infrastructure-scaling-needs-au/)
+- [AI Tools for Automated Infrastructure Drift Detection: Co](/ai-tools-for-automated-infrastructure-drift-detection-and-co/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

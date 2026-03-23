@@ -526,11 +526,11 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [AI Code Completion for Java Jakarta EE Migration from Javax](/ai-tools-compared/ai-code-completion-for-java-jakarta-ee-migration-from-javax-/)
-- [Best AI Tools for Code Migration Python 2](/ai-tools-compared/best-ai-tools-for-code-migration-python-2-to-3-java-8-to-21-guide/)
-- [How to Use AI for Automated Code Migration](/ai-tools-compared/how-to-use-ai-for-automated-code-migration/)
-- [AI-Powered Database Migration Tools Comparison 2026](/ai-tools-compared/ai-powered-database-migration-tools-comparison/)
-- [AI Tools for Writing pytest Tests for Alembic Database](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
+- [AI Code Completion for Java Jakarta EE Migration from Javax](/ai-code-completion-for-java-jakarta-ee-migration-from-javax-/)
+- [Best AI Tools for Code Migration Python 2](/best-ai-tools-for-code-migration-python-2-to-3-java-8-to-21-guide/)
+- [How to Use AI for Automated Code Migration](/how-to-use-ai-for-automated-code-migration/)
+- [AI-Powered Database Migration Tools Comparison 2026](/ai-powered-database-migration-tools-comparison/)
+- [AI Tools for Writing pytest Tests for Alembic Database](/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```

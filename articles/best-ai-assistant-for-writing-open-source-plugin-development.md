@@ -475,10 +475,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI Assistant for Writing Open Source Roadmap Documents](/ai-tools-compared/best-ai-assistant-for-writing-open-source-roadmap-documents-from-issue-milestone-data/)
-- [Best AI Assistant for Writing Playwright Tests](/ai-tools-compared/best-ai-assistant-for-writing-playwright-tests-for-drag-and-drop-interactions-2026/)
-- [Best AI Coding Assistant for React Development](/ai-tools-compared/best-ai-coding-assistant-for-react-development/)
-- [AI Tools for Designers Writing Handoff Notes That Include](/ai-tools-compared/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
-- [Best AI for Writing: Open Source Maintainer Burnout](/ai-tools-compared/best-ai-for-writing-open-source-maintainer-burnout-preventio/)
+- [Best AI Assistant for Writing Open Source Roadmap Documents](/best-ai-assistant-for-writing-open-source-roadmap-documents-from-issue-milestone-data/)
+- [Best AI Assistant for Writing Playwright Tests](/best-ai-assistant-for-writing-playwright-tests-for-drag-and-drop-interactions-2026/)
+- [Best AI Coding Assistant for React Development](/best-ai-coding-assistant-for-react-development/)
+- [AI Tools for Designers Writing Handoff Notes That Include](/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
+- [Best AI for Writing: Open Source Maintainer Burnout](/best-ai-for-writing-open-source-maintainer-burnout-preventio/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

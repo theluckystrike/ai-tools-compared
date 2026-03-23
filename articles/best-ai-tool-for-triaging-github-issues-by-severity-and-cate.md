@@ -362,11 +362,11 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [AI Tools for Detecting Duplicate GitHub Issues Using](/ai-tools-compared/ai-tools-for-detecting-duplicate-github-issues-using-semantic-similarity-matching/)
-- [AI Tools for Analyzing Which Open Source Issues Would Benefi](/ai-tools-compared/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
-- [AI Tools for Debugging Flaky Cypress Tests Caused by Timing](/ai-tools-compared/ai-tools-for-debugging-flaky-cypress-tests-caused-by-timing-issues/)
-- [Best AI for Debugging CSS Flexbox Alignment Issues Across](/ai-tools-compared/best-ai-for-debugging-css-flexbox-alignment-issues-across-di/)
-- [Effective Workflow for Using AI](/ai-tools-compared/effective-workflow-for-using-ai-to-debug-production-issues-from-logs/)
+- [AI Tools for Detecting Duplicate GitHub Issues Using](/ai-tools-for-detecting-duplicate-github-issues-using-semantic-similarity-matching/)
+- [AI Tools for Analyzing Which Open Source Issues Would Benefi](/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
+- [AI Tools for Debugging Flaky Cypress Tests Caused by Timing](/ai-tools-for-debugging-flaky-cypress-tests-caused-by-timing-issues/)
+- [Best AI for Debugging CSS Flexbox Alignment Issues Across](/best-ai-for-debugging-css-flexbox-alignment-issues-across-di/)
+- [Effective Workflow for Using AI](/effective-workflow-for-using-ai-to-debug-production-issues-from-logs/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

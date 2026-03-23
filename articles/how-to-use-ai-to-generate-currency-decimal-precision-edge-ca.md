@@ -329,10 +329,10 @@ Cryptocurrencies like Bitcoin use up to 8 decimal places (satoshis). Ethereum's 
 
 ## Related Articles
 
-- [How to Use AI to Generate Timezone Edge Case Test](/ai-tools-compared/how-to-use-ai-to-generate-timezone-edge-case-test-data/)
-- [How to Use AI to Generate Unicode and Emoji Edge Case](/ai-tools-compared/how-to-use-ai-to-generate-unicode-and-emoji-edge-case-tests/)
-- [How to Use AI to Generate Pagination Edge Case Tests](/ai-tools-compared/how-to-use-ai-to-generate-pagination-edge-case-tests-for-api/)
-- [How to Use AI to Generate pytest Tests for Django REST](/ai-tools-compared/how-to-use-ai-to-generate-pytest-tests-for-django-rest-frame/)
-- [How to Use AI to Generate Jest Integration Tests](/ai-tools-compared/how-to-use-ai-to-generate-jest-integration-tests-for-express/)
+- [How to Use AI to Generate Timezone Edge Case Test](/how-to-use-ai-to-generate-timezone-edge-case-test-data/)
+- [How to Use AI to Generate Unicode and Emoji Edge Case](/how-to-use-ai-to-generate-unicode-and-emoji-edge-case-tests/)
+- [How to Use AI to Generate Pagination Edge Case Tests](/how-to-use-ai-to-generate-pagination-edge-case-tests-for-api/)
+- [How to Use AI to Generate pytest Tests for Django REST](/how-to-use-ai-to-generate-pytest-tests-for-django-rest-frame/)
+- [How to Use AI to Generate Jest Integration Tests](/how-to-use-ai-to-generate-jest-integration-tests-for-express/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -319,10 +319,10 @@ Trying to change everything at once. Pick one or two practices, implement them w
 
 ## Related Articles
 
-- [How to Write an Enterprise Acceptable Use Policy for AI](/ai-tools-compared/how-to-write-enterprise-acceptable-use-policy-for-ai-coding-assistants/)
-- [Best AI Tool for Compliance Officers Policy Review](/ai-tools-compared/best-ai-tool-for-compliance-officers-policy-review/)
-- [AI Tools for Automated SSL Certificate Management](/ai-tools-compared/ai-tools-for-automated-ssl-certificate-management-and-monito/)
-- [AI Tools for Subscription Management](/ai-tools-compared/ai-tools-for-subscription-management-support/)
-- [AI Third Party Risk Management Tools Comparison 2026](/ai-tools-compared/ai-third-party-risk-management-tools-comparison-2026/)
+- [How to Write an Enterprise Acceptable Use Policy for AI](/how-to-write-enterprise-acceptable-use-policy-for-ai-coding-assistants/)
+- [Best AI Tool for Compliance Officers Policy Review](/best-ai-tool-for-compliance-officers-policy-review/)
+- [AI Tools for Automated SSL Certificate Management](/ai-tools-for-automated-ssl-certificate-management-and-monito/)
+- [AI Tools for Subscription Management](/ai-tools-for-subscription-management-support/)
+- [AI Third Party Risk Management Tools Comparison 2026](/ai-third-party-risk-management-tools-comparison-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

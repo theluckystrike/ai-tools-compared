@@ -401,10 +401,10 @@ Trying to generate everything in one mega-prompt produces configs where the coll
 
 ## Related Reading
 
-- [AI Tools for Generating OpenTelemetry Instrumentation Code](/ai-tools-compared/ai-tools-for-generating-opentelemetry-instrumentation-2026/)
-- [AI Tools for Writing OpenTelemetry Instrumentation](/ai-tools-compared/ai-tools-for-writing-opentelemetry-instrumentation-2026/)
-- [AI CI/CD Pipeline Optimization](/ai-tools-compared/ai-ci-cd-pipeline-optimization/)
-- [AI for Automated Regression Test Generation from Bug](/ai-tools-compared/ai-for-automated-regression-test-generation-from-bug-reports/)
+- [AI Tools for Generating OpenTelemetry Instrumentation Code](/ai-tools-for-generating-opentelemetry-instrumentation-2026/)
+- [AI Tools for Writing OpenTelemetry Instrumentation](/ai-tools-for-writing-opentelemetry-instrumentation-2026/)
+- [AI CI/CD Pipeline Optimization](/ai-ci-cd-pipeline-optimization/)
+- [AI for Automated Regression Test Generation from Bug](/ai-for-automated-regression-test-generation-from-bug-reports/)
 
 ---
 

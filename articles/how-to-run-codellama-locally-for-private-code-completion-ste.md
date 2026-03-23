@@ -251,11 +251,11 @@ With CodeLlama running locally, explore fine-tuning options for specialized doma
 
 ## Related Articles
 
-- [Running Starcoder2 Locally for Code Completion](/ai-tools-compared/running-starcoder2-locally-for-code-completion-without-sendi/)
-- [Running CodeLlama Locally vs Using Cloud Copilot](/ai-tools-compared/running-codellama-locally-vs-using-cloud-copilot-for-proprie/)
-- [How to Build Custom AI Code Completion Models](/ai-tools-compared/how-to-build-custom-ai-code-completion-models/)
-- [How to Fine-Tune Llama 3 for Code Completion](/ai-tools-compared/how-to-fine-tune-llama-3-for-code-completion/)
-- [Running DeepSeek Coder Locally vs Cloud API for Private](/ai-tools-compared/running-deepseek-coder-locally-vs-cloud-api-for-private-repo/)
+- [Running Starcoder2 Locally for Code Completion](/running-starcoder2-locally-for-code-completion-without-sendi/)
+- [Running CodeLlama Locally vs Using Cloud Copilot](/running-codellama-locally-vs-using-cloud-copilot-for-proprie/)
+- [How to Build Custom AI Code Completion Models](/how-to-build-custom-ai-code-completion-models/)
+- [How to Fine-Tune Llama 3 for Code Completion](/how-to-fine-tune-llama-3-for-code-completion/)
+- [Running DeepSeek Coder Locally vs Cloud API for Private](/running-deepseek-coder-locally-vs-cloud-api-for-private-repo/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```

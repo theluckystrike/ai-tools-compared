@@ -411,10 +411,10 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [ChatGPT vs Claude for Creating Database Migration Scripts](/ai-tools-compared/chatgpt-vs-claude-for-creating-database-migration-scripts-po/)
-- [AI Code Completion for Writing Shell Commands Inside Scripts](/ai-tools-compared/ai-code-completion-for-writing-shell-commands-inside-scripts/)
-- [Best AI Tools for Writing Shell Scripts](/ai-tools-compared/best-ai-tools-for-writing-shell-scripts-for-server-automation/)
-- [Free AI Tools for Writing Bash Scripts and Automation](/ai-tools-compared/free-ai-tools-for-writing-bash-scripts-and-automation/)
-- [AI Tools for Writing pytest Tests for Alembic Database](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migra/)
+- [ChatGPT vs Claude for Creating Database Migration Scripts](/chatgpt-vs-claude-for-creating-database-migration-scripts-po/)
+- [AI Code Completion for Writing Shell Commands Inside Scripts](/ai-code-completion-for-writing-shell-commands-inside-scripts/)
+- [Best AI Tools for Writing Shell Scripts](/best-ai-tools-for-writing-shell-scripts-for-server-automation/)
+- [Free AI Tools for Writing Bash Scripts and Automation](/free-ai-tools-for-writing-bash-scripts-and-automation/)
+- [AI Tools for Writing pytest Tests for Alembic Database](/ai-tools-for-writing-pytest-tests-for-alembic-database-migra/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

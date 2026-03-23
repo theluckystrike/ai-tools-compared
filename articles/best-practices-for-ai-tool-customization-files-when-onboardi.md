@@ -331,11 +331,11 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Best Practices for Maintaining AI Tool Configuration Files](/ai-tools-compared/best-practices-for-maintaining-ai-tool-configuration-files-a/)
-- [Best Practices for Sharing AI Tool Configuration Files Acros](/ai-tools-compared/best-practices-for-sharing-ai-tool-configuration-files-acros/)
-- [Best Practices for Versioning CursorRules Files Across Team](/ai-tools-compared/best-practices-for-versioning-cursorrules-files-across-team-/)
-- [AI Tool Customization Comparison: Claude.md vs .cursorrules](/ai-tools-compared/ai-tool-customization-comparison-claude-md-vs-cursorrules-vs/)
-- [AI Autocomplete for Test Files How Well Different Tools Pred](/ai-tools-compared/ai-autocomplete-for-test-files-how-well-different-tools-pred/)
+- [Best Practices for Maintaining AI Tool Configuration Files](/best-practices-for-maintaining-ai-tool-configuration-files-a/)
+- [Best Practices for Sharing AI Tool Configuration Files Acros](/best-practices-for-sharing-ai-tool-configuration-files-acros/)
+- [Best Practices for Versioning CursorRules Files Across Team](/best-practices-for-versioning-cursorrules-files-across-team-/)
+- [AI Tool Customization Comparison: Claude.md vs .cursorrules](/ai-tool-customization-comparison-claude-md-vs-cursorrules-vs/)
+- [AI Autocomplete for Test Files How Well Different Tools Pred](/ai-autocomplete-for-test-files-how-well-different-tools-pred/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

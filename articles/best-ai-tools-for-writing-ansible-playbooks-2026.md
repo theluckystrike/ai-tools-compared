@@ -394,11 +394,11 @@ For most infrastructure teams, Claude's superior accuracy for Ansible-specific r
 
 ## Related Articles
 
-- [AI Tools for Generating CI/CD Pipeline Configs 2026](/ai-tools-compared/ai-tools-for-generating-ci-cd-pipeline-configs-2026/)
-- [Best AI Assistants for Infrastructure as Code Review](/ai-tools-compared/best-ai-assistants-infrastructure-as-code-review/)
-- [Claude for DevOps: Automation and Infrastructure](/ai-tools-compared/claude-for-devops-automation-infrastructure/)
-- [GitHub Copilot for Infrastructure Code: Practical Workflow](/ai-tools-compared/github-copilot-infrastructure-code-workflow/)
-- [GPT-4 vs Claude for System Administration Tasks](/ai-tools-compared/gpt-4-vs-claude-system-administration/)
+- [AI Tools for Generating CI/CD Pipeline Configs 2026](/ai-tools-for-generating-ci-cd-pipeline-configs-2026/)
+- [Best AI Assistants for Infrastructure as Code Review](/best-ai-assistants-infrastructure-as-code-review/)
+- [Claude for DevOps: Automation and Infrastructure](/claude-for-devops-automation-infrastructure/)
+- [GitHub Copilot for Infrastructure Code: Practical Workflow](/github-copilot-infrastructure-code-workflow/)
+- [GPT-4 vs Claude for System Administration Tasks](/gpt-4-vs-claude-system-administration/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

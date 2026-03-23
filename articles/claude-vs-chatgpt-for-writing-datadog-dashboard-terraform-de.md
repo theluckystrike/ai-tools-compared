@@ -323,10 +323,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [ChatGPT vs Claude for Writing API Documentation](/ai-tools-compared/chatgpt-vs-claude-for-writing-api-documentation/)
-- [Claude vs Gpt4 Terraform Pulumi Infrastructure Code](/ai-tools-compared/claude-vs-gpt4-terraform-pulumi-infrastructure-code-2026/)
-- [Claude vs ChatGPT for Technical Writing 2026](/ai-tools-compared/claude-vs-chatgpt-for-technical-writing-2026/)
-- [ChatGPT vs Claude for Generating Cypress Component Test](/ai-tools-compared/chatgpt-vs-claude-for-generating-cypress-component-test-boil/)
-- [ChatGPT vs Claude for Explaining TensorFlow Model](/ai-tools-compared/chatgpt-vs-claude-for-explaining-tensorflow-model-architectu/)
+- [ChatGPT vs Claude for Writing API Documentation](/chatgpt-vs-claude-for-writing-api-documentation/)
+- [Claude vs Gpt4 Terraform Pulumi Infrastructure Code](/claude-vs-gpt4-terraform-pulumi-infrastructure-code-2026/)
+- [Claude vs ChatGPT for Technical Writing 2026](/claude-vs-chatgpt-for-technical-writing-2026/)
+- [ChatGPT vs Claude for Generating Cypress Component Test](/chatgpt-vs-claude-for-generating-cypress-component-test-boil/)
+- [ChatGPT vs Claude for Explaining TensorFlow Model](/chatgpt-vs-claude-for-explaining-tensorflow-model-architectu/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

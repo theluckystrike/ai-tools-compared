@@ -337,9 +337,9 @@ Using AI for pattern analysis at scale improves your entire production system's 
 
 ## Related Articles
 
-- [Claude vs Copilot for Elixir Development 2026](/ai-tools-compared/claude-vs-copilot-for-elixir-development-2026/)
-- [How to Use AI to Create pandas DataFrame Profiling Reports](/ai-tools-compared/how-to-use-ai-to-create-pandas-dataframe-profiling-reports-f/)
-- [AI Debugging Assistants Compared 2026](/ai-tools-compared/ai-debugging-assistants-compared-2026/)
-- [Best AI Tools for Data Pipeline Debugging 2026](/ai-tools-compared/best-ai-tools-for-data-pipeline-debugging-2026/)
-- [How to Use AI to Interpret and Fix Java OutOfMemory Heap](/ai-tools-compared/how-to-use-ai-to-interpret-and-fix-java-outofmemory-heap-spa/)
+- [Claude vs Copilot for Elixir Development 2026](/claude-vs-copilot-for-elixir-development-2026/)
+- [How to Use AI to Create pandas DataFrame Profiling Reports](/how-to-use-ai-to-create-pandas-dataframe-profiling-reports-f/)
+- [AI Debugging Assistants Compared 2026](/ai-debugging-assistants-compared-2026/)
+- [Best AI Tools for Data Pipeline Debugging 2026](/best-ai-tools-for-data-pipeline-debugging-2026/)
+- [How to Use AI to Interpret and Fix Java OutOfMemory Heap](/how-to-use-ai-to-interpret-and-fix-java-outofmemory-heap-spa/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

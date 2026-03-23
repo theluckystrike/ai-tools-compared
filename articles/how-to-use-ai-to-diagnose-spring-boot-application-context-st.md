@@ -370,11 +370,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Copilot vs Claude for Generating Java Spring Boot](/ai-tools-compared/copilot-vs-claude-for-generating-java-spring-boot-applicatio/)
-- [AI Tools for Writing ArgoCD Application Manifests and Gitops](/ai-tools-compared/ai-tools-for-writing-argocd-application-manifests-and-gitops/)
-- [Best Workflow for Using AI to Modernize Legacy Application A](/ai-tools-compared/best-workflow-for-using-ai-to-modernize-legacy-application-a/)
-- [How to Use AI to Diagnose and Fix Golang Goroutine Deadlock](/ai-tools-compared/how-to-use-ai-to-diagnose-and-fix-golang-goroutine-deadlock-/)
-- [How to Use AI to Diagnose Kubernetes Pod Crashloopbackoff Fr](/ai-tools-compared/how-to-use-ai-to-diagnose-kubernetes-pod-crashloopbackoff-fr/)
+- [Copilot vs Claude for Generating Java Spring Boot](/copilot-vs-claude-for-generating-java-spring-boot-applicatio/)
+- [AI Tools for Writing ArgoCD Application Manifests and Gitops](/ai-tools-for-writing-argocd-application-manifests-and-gitops/)
+- [Best Workflow for Using AI to Modernize Legacy Application A](/best-workflow-for-using-ai-to-modernize-legacy-application-a/)
+- [How to Use AI to Diagnose and Fix Golang Goroutine Deadlock](/how-to-use-ai-to-diagnose-and-fix-golang-goroutine-deadlock-/)
+- [How to Use AI to Diagnose Kubernetes Pod Crashloopbackoff Fr](/how-to-use-ai-to-diagnose-kubernetes-pod-crashloopbackoff-fr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

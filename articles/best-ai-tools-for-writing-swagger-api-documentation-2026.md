@@ -561,10 +561,10 @@ For regular API documentation work (monthly), Claude subscription wins on both t
 
 ## Related Articles
 
-- [OpenAPI vs AsyncAPI: API Documentation Standard Comparison](/ai-tools-compared/openapi-vs-asyncapi-api-documentation-comparison/)
-- [Best AI Tools for Converting REST APIs to GraphQL](/ai-tools-compared/best-ai-tools-for-converting-rest-apis-to-graphql/)
-- [Claude vs ChatGPT for Code Documentation Generation](/ai-tools-compared/claude-vs-chatgpt-code-documentation-generation/)
-- [Swagger Codegen vs OpenAPI Generator: Automated Code Generation](/ai-tools-compared/swagger-codegen-vs-openapi-generator/)
-- [AI Tools for Fixing API Documentation Errors at Scale](/ai-tools-compared/ai-tools-for-fixing-api-documentation-errors-at-scale/)
+- [OpenAPI vs AsyncAPI: API Documentation Standard Comparison](/openapi-vs-asyncapi-api-documentation-comparison/)
+- [Best AI Tools for Converting REST APIs to GraphQL](/best-ai-tools-for-converting-rest-apis-to-graphql/)
+- [Claude vs ChatGPT for Code Documentation Generation](/claude-vs-chatgpt-code-documentation-generation/)
+- [Swagger Codegen vs OpenAPI Generator: Automated Code Generation](/swagger-codegen-vs-openapi-generator/)
+- [AI Tools for Fixing API Documentation Errors at Scale](/ai-tools-for-fixing-api-documentation-errors-at-scale/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

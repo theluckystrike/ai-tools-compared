@@ -311,11 +311,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI for QA Engineers Writing API Contract Testing Cases](/ai-tools-compared/best-ai-for-qa-engineers-writing-api-contract-test-cases-fro/)
-- [AI Tools for Creating Mutation Testing Configurations](/ai-tools-compared/ai-tools-for-creating-mutation-testing-configurations-to-find-weak-test-assertions/)
-- [AI Tools for Video Accessibility Features](/ai-tools-compared/ai-tools-for-video-accessibility-features/)
-- [Best AI Assistant for Designers Generating Accessibility Aud](/ai-tools-compared/best-ai-assistant-for-designers-generating-accessibility-aud/)
-- [AI Tools for Qa Engineers Generating Data Driven Test Scenar](/ai-tools-compared/ai-tools-for-qa-engineers-generating-data-driven-test-scenar/)
+- [Best AI for QA Engineers Writing API Contract Testing Cases](/best-ai-for-qa-engineers-writing-api-contract-test-cases-fro/)
+- [AI Tools for Creating Mutation Testing Configurations](/ai-tools-for-creating-mutation-testing-configurations-to-find-weak-test-assertions/)
+- [AI Tools for Video Accessibility Features](/ai-tools-for-video-accessibility-features/)
+- [Best AI Assistant for Designers Generating Accessibility Aud](/best-ai-assistant-for-designers-generating-accessibility-aud/)
+- [AI Tools for Qa Engineers Generating Data Driven Test Scenar](/ai-tools-for-qa-engineers-generating-data-driven-test-scenar/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

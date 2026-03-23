@@ -404,9 +404,9 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-compared/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)
-- [Claude vs ChatGPT for Writing Datadog Dashboard Terraform](/ai-tools-compared/claude-vs-chatgpt-for-writing-datadog-dashboard-terraform-de/)
-- [Claude Code Runbook Documentation Guide](/ai-tools-compared/claude-code-runbook-documentation-guide/)
-- [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
-- [Best AI Tools for Infrastructure as Code 2026](/ai-tools-compared/ai-tools-for-infrastructure-as-code-2026/)
+- [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)
+- [Claude vs ChatGPT for Writing Datadog Dashboard Terraform](/claude-vs-chatgpt-for-writing-datadog-dashboard-terraform-de/)
+- [Claude Code Runbook Documentation Guide](/claude-code-runbook-documentation-guide/)
+- [Claude Code Go Module Development Guide](/claude-code-go-module-development-guide/)
+- [Best AI Tools for Infrastructure as Code 2026](/ai-tools-for-infrastructure-as-code-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

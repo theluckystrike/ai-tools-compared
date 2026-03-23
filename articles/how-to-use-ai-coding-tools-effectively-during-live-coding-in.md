@@ -282,11 +282,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Use AI Coding Assistants Effectively with Trunk Based](/ai-tools-compared/how-to-use-ai-coding-assistants-effectively-with-trunk-based/)
-- [How to Use AI Chat History Effectively for Iterating on Code](/ai-tools-compared/how-to-use-ai-chat-history-effectively-for-iterating-on-code/)
-- [Best AI Tools for Live Stream Enhancement](/ai-tools-compared/best-ai-tools-for-live-stream-enhancement/)
-- [How to Set Up Model Context Protocol Server Providing Live](/ai-tools-compared/how-to-set-up-model-context-protocol-server-providing-live-d/)
-- [Switching from ChatGPT Voice to Gemini Live Conversation](/ai-tools-compared/switching-from-chatgpt-voice-to-gemini-live-conversation-differences/)
+- [How to Use AI Coding Assistants Effectively with Trunk Based](/how-to-use-ai-coding-assistants-effectively-with-trunk-based/)
+- [How to Use AI Chat History Effectively for Iterating on Code](/how-to-use-ai-chat-history-effectively-for-iterating-on-code/)
+- [Best AI Tools for Live Stream Enhancement](/best-ai-tools-for-live-stream-enhancement/)
+- [How to Set Up Model Context Protocol Server Providing Live](/how-to-set-up-model-context-protocol-server-providing-live-d/)
+- [Switching from ChatGPT Voice to Gemini Live Conversation](/switching-from-chatgpt-voice-to-gemini-live-conversation-differences/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

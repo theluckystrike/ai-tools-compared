@@ -352,10 +352,10 @@ This prevents the "black box" problem where AI-generated code enters production 
 
 ## Related Articles
 
-- [Cursor AI Model Selection Guide Which Model for Which Coding](/ai-tools-compared/cursor-ai-model-selection-guide-which-model-for-which-coding/)
-- [Does Cursor AI Store Your Code on Their Servers Data](/ai-tools-compared/does-cursor-ai-store-your-code-on-their-servers-data-privacy/)
-- [Using Claude Code for Backend and Cursor for Frontend Same](/ai-tools-compared/using-claude-code-for-backend-and-cursor-for-frontend-same-p/)
-- [Cursor AI Multi File Editing Feature How It Actually Works](/ai-tools-compared/cursor-ai-multi-file-editing-feature-how-it-actually-works-explained/)
-- [Cursor Free Tier Limitations: What Stops Working After Trial](/ai-tools-compared/cursor-free-tier-limitations-what-stops-working-after-trial/)
+- [Cursor AI Model Selection Guide Which Model for Which Coding](/cursor-ai-model-selection-guide-which-model-for-which-coding/)
+- [Does Cursor AI Store Your Code on Their Servers Data](/does-cursor-ai-store-your-code-on-their-servers-data-privacy/)
+- [Using Claude Code for Backend and Cursor for Frontend Same](/using-claude-code-for-backend-and-cursor-for-frontend-same-p/)
+- [Cursor AI Multi File Editing Feature How It Actually Works](/cursor-ai-multi-file-editing-feature-how-it-actually-works-explained/)
+- [Cursor Free Tier Limitations: What Stops Working After Trial](/cursor-free-tier-limitations-what-stops-working-after-trial/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

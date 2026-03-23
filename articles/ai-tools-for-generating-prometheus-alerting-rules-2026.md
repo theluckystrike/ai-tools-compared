@@ -424,7 +424,7 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [How to Use AI for Writing Prometheus Alerting Rules](/how-to-use-ai-for-writing-prometheus-alerting-rules-effectively/)
 - [AI Tools for Generating API Client SDKs 2026](/ai-tools-for-generating-api-client-sdks-2026/)
 - [AI Tools for Generating API Mock Servers 2026](/ai-tools-for-generating-api-mock-servers-2026/)
-- [AI-Powered Monitoring and Alerting Setup Guide](/ai-tools-compared/ai-powered-monitoring-and-alerting-setup/)
+- [AI-Powered Monitoring and Alerting Setup Guide](/ai-powered-monitoring-and-alerting-setup/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

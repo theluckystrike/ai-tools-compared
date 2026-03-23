@@ -280,9 +280,9 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Copilot vs Cursor for Writing Terraform Modules](/ai-tools-compared/copilot-vs-cursor-for-writing-terraform-modules-from-scratch/)
-- [Best AI Tools for Writing Prisma Schemas in 2026](/ai-tools-compared/articles/best-ai-tools-for-writing-prisma-schemas-2026/)
-- [Copilot vs Cursor for Writing pytest Fixtures](/ai-tools-compared/copilot-vs-cursor-for-writing--pytest-fixtures-/)
-- [Copilot vs Cursor for Implementing Server-Sent Events](/ai-tools-compared/copilot-vs-cursor-for-implementing-server-sent-events-in-spr/)
-- [Switching from Copilot Enterprise to Cursor Business](/ai-tools-compared/switching-from-copilot-enterprise-to-cursor-business-migrati/)
+- [Copilot vs Cursor for Writing Terraform Modules](/copilot-vs-cursor-for-writing-terraform-modules-from-scratch/)
+- [Best AI Tools for Writing Prisma Schemas in 2026](/articles/best-ai-tools-for-writing-prisma-schemas-2026/)
+- [Copilot vs Cursor for Writing pytest Fixtures](/copilot-vs-cursor-for-writing--pytest-fixtures-/)
+- [Copilot vs Cursor for Implementing Server-Sent Events](/copilot-vs-cursor-for-implementing-server-sent-events-in-spr/)
+- [Switching from Copilot Enterprise to Cursor Business](/switching-from-copilot-enterprise-to-cursor-business-migrati/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -325,10 +325,10 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 
 ## Related Articles
 
-- [AI Tools for Detecting Duplicate GitHub Issues Using](/ai-tools-compared/ai-tools-for-detecting-duplicate-github-issues-using-semantic-similarity-matching/)
-- [Best AI Tool for Triaging GitHub Issues by Severity and Cate](/ai-tools-compared/best-ai-tool-for-triaging-github-issues-by-severity-and-cate/)
-- [AI Tools for Analyzing Issue Comment Sentiment to Identify](/ai-tools-compared/ai-tools-for-analyzing-issue-comment-sentiment-to-identify-f/)
-- [Best AI Powered Chatops Tools](/ai-tools-compared/best-ai-powered-chatops-tools-for-slack-and-devops-integration/)
-- [Best AI for Writing Good First Issue Descriptions That](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attract-new-contributors/)
+- [AI Tools for Detecting Duplicate GitHub Issues Using](/ai-tools-for-detecting-duplicate-github-issues-using-semantic-similarity-matching/)
+- [Best AI Tool for Triaging GitHub Issues by Severity and Cate](/best-ai-tool-for-triaging-github-issues-by-severity-and-cate/)
+- [AI Tools for Analyzing Issue Comment Sentiment to Identify](/ai-tools-for-analyzing-issue-comment-sentiment-to-identify-f/)
+- [Best AI Powered Chatops Tools](/best-ai-powered-chatops-tools-for-slack-and-devops-integration/)
+- [Best AI for Writing Good First Issue Descriptions That](/best-ai-for-writing-good-first-issue-descriptions-that-attract-new-contributors/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

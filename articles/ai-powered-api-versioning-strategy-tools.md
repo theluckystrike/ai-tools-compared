@@ -393,20 +393,20 @@ Use bullet points. Be specific about field names and endpoints."""
 
 ## Related Reading
 
-- [AI Tools for Automated Schema Validation](/ai-tools-compared/ai-tools-for-automated-schema-validation/)
-- [Best AI Tools for Writing GitHub Actions Workflows](/ai-tools-compared/best-ai-tools-for-writing-github-actions-workflows-2026/)
-- [AI Tools for Automated Dependency Analysis](/ai-tools-compared/ai-tools-for-automated-dependency-analysis/)
-- [AI-Powered API Gateway Configuration Tools 2026](/ai-tools-compared/ai-powered-api-gateway-configuration-tools-2026/)
+- [AI Tools for Automated Schema Validation](/ai-tools-for-automated-schema-validation/)
+- [Best AI Tools for Writing GitHub Actions Workflows](/best-ai-tools-for-writing-github-actions-workflows-2026/)
+- [AI Tools for Automated Dependency Analysis](/ai-tools-for-automated-dependency-analysis/)
+- [AI-Powered API Gateway Configuration Tools 2026](/ai-powered-api-gateway-configuration-tools-2026/)
 
 ---
 
 ## Related Articles
 
-- [AI Tools for Generating API Versioning Documentation and](/ai-tools-compared/ai-tools-for-generating-api-versioning-documentation-and-dep/)
-- [Writing CLAUDE.md Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy/)
-- [Writing CLAUDE MD Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
-- [AI-Powered API Gateway Configuration Tools 2026](/ai-tools-compared/ai-powered-api-gateway-configuration-tools-2026/)
-- [AI Tools for API Documentation from Code 2026](/ai-tools-compared/ai-tools-for-api-documentation-from-code-2026/)
+- [AI Tools for Generating API Versioning Documentation and](/ai-tools-for-generating-api-versioning-documentation-and-dep/)
+- [Writing CLAUDE.md Files That Define Your Project's API](/writing-claude-md-files-that-define-your-projects-api-versioning-strategy/)
+- [Writing CLAUDE MD Files That Define Your Project's API](/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
+- [AI-Powered API Gateway Configuration Tools 2026](/ai-powered-api-gateway-configuration-tools-2026/)
+- [AI Tools for API Documentation from Code 2026](/ai-tools-for-api-documentation-from-code-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

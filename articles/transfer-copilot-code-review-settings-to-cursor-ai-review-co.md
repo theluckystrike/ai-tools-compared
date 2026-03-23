@@ -200,7 +200,7 @@ One area where Copilot's GitHub integration has no direct Cursor equivalent is a
 
 **Option 1: Manual review with Cursor chat.** Paste the git diff into a Cursor chat window with your review rules as context. This is less automated but gives you more nuanced control over what gets flagged.
 
-**Option 2: Use a GitHub Action with the Claude API.** For teams that want automated PR review, the Claude API can be wired into a GitHub Actions workflow to comment on PRs. This separates the review automation from the IDE entirely. See [Best AI Coding Assistants Compared](/ai-tools-compared/) for more context on when this makes sense.
+**Option 2: Use a GitHub Action with the Claude API.** For teams that want automated PR review, the Claude API can be wired into a GitHub Actions workflow to comment on PRs. This separates the review automation from the IDE entirely. See [Best AI Coding Assistants Compared](/) for more context on when this makes sense.
 
 ## Verifying Your Migration
 
@@ -534,10 +534,10 @@ Create a test PR with intentional violations of your rules. Cursor should flag t
 
 ## Related Articles
 
-- [How to Transfer GitHub Copilot Organization Settings](/ai-tools-compared/transfer-github-copilot-org-settings-when-switching-to-curso/)
-- [How to Transfer Copilot Inline Chat Shortcuts](/ai-tools-compared/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)
-- [How to Transfer Cursor Editor Theme and Layout](/ai-tools-compared/transfer-cursor-editor-theme-and-layout-to-vscode-with-copil/)
-- [How to Transfer Cursor Composer Prompt Library](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code-commands/)
-- [How to Transfer Your Cursor Composer Prompt Library](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code/)
+- [How to Transfer GitHub Copilot Organization Settings](/transfer-github-copilot-org-settings-when-switching-to-curso/)
+- [How to Transfer Copilot Inline Chat Shortcuts](/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)
+- [How to Transfer Cursor Editor Theme and Layout](/transfer-cursor-editor-theme-and-layout-to-vscode-with-copil/)
+- [How to Transfer Cursor Composer Prompt Library](/transfer-cursor-composer-prompt-library-to-claude-code-commands/)
+- [How to Transfer Your Cursor Composer Prompt Library](/transfer-cursor-composer-prompt-library-to-claude-code/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

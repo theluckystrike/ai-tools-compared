@@ -386,11 +386,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Use AI to Help Devrel Create Comparison Tables](/ai-tools-compared/how-to-use-ai-to-help-devrel-create-comparison-tables-for-competing-api-features/)
-- [How to Use AI to Help Devrel Teams Create Video Tutorial Scr](/ai-tools-compared/how-to-use-ai-to-help-devrel-teams-create-video-tutorial-scr/)
-- [How to Use AI to Help QA Engineers Create Test Environment](/ai-tools-compared/how-to-use-ai-to-help-qa-engineers-create-test-environment-p/)
-- [How to Use AI to Help Sre Teams Create on Call Handoff Docum](/ai-tools-compared/how-to-use-ai-to-help-sre-teams-create-on-call-handoff-docum/)
-- [How to Create Custom Instructions for AI Coding Tools That E](/ai-tools-compared/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
+- [How to Use AI to Help Devrel Create Comparison Tables](/how-to-use-ai-to-help-devrel-create-comparison-tables-for-competing-api-features/)
+- [How to Use AI to Help Devrel Teams Create Video Tutorial Scr](/how-to-use-ai-to-help-devrel-teams-create-video-tutorial-scr/)
+- [How to Use AI to Help QA Engineers Create Test Environment](/how-to-use-ai-to-help-qa-engineers-create-test-environment-p/)
+- [How to Use AI to Help Sre Teams Create on Call Handoff Docum](/how-to-use-ai-to-help-sre-teams-create-on-call-handoff-docum/)
+- [How to Create Custom Instructions for AI Coding Tools That E](/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

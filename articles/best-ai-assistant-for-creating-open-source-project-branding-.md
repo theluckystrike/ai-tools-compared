@@ -313,11 +313,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI for Creating Open Source Project Architecture Docume](/ai-tools-compared/best-ai-for-creating-open-source-project-architecture-docume/)
-- [Best AI Assistant for Drafting Open Source Partnership and](/ai-tools-compared/best-ai-assistant-for-drafting-open-source-partnership-and-integration-proposals-2026/)
-- [Best AI Assistant for Generating Open Source Release](/ai-tools-compared/best-ai-assistant-for-generating-open-source-release-announcements/)
-- [Best AI Assistant for Writing Open Source Plugin Development](/ai-tools-compared/best-ai-assistant-for-writing-open-source-plugin-development/)
-- [Best AI Assistant for Writing Open Source Roadmap Documents](/ai-tools-compared/best-ai-assistant-for-writing-open-source-roadmap-documents-from-issue-milestone-data/)
+- [Best AI for Creating Open Source Project Architecture Docume](/best-ai-for-creating-open-source-project-architecture-docume/)
+- [Best AI Assistant for Drafting Open Source Partnership and](/best-ai-assistant-for-drafting-open-source-partnership-and-integration-proposals-2026/)
+- [Best AI Assistant for Generating Open Source Release](/best-ai-assistant-for-generating-open-source-release-announcements/)
+- [Best AI Assistant for Writing Open Source Plugin Development](/best-ai-assistant-for-writing-open-source-plugin-development/)
+- [Best AI Assistant for Writing Open Source Roadmap Documents](/best-ai-assistant-for-writing-open-source-roadmap-documents-from-issue-milestone-data/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

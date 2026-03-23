@@ -391,11 +391,11 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Using Claude Code for Backend and Cursor for Frontend Same P](/ai-tools-compared/using-claude-code-for-backend-and-cursor-for-frontend-same-p/)
-- [Claude Code vs Cursor Composer](/ai-tools-compared/claude-code-vs-cursor-composer-for-full-stack-development-comparison/)
-- [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
-- [Claude Code Java Library Development Guide](/ai-tools-compared/claude-code-java-library-development-guide/)
-- [Cursor vs Windsurf for React Development 2026](/ai-tools-compared/cursor-vs-windsurf-for-react-development-2026/)
+- [Using Claude Code for Backend and Cursor for Frontend Same P](/using-claude-code-for-backend-and-cursor-for-frontend-same-p/)
+- [Claude Code vs Cursor Composer](/claude-code-vs-cursor-composer-for-full-stack-development-comparison/)
+- [Claude Code Go Module Development Guide](/claude-code-go-module-development-guide/)
+- [Claude Code Java Library Development Guide](/claude-code-java-library-development-guide/)
+- [Cursor vs Windsurf for React Development 2026](/cursor-vs-windsurf-for-react-development-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

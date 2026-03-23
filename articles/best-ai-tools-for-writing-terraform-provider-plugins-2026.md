@@ -362,9 +362,9 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [AI Assistants for Writing Correct AWS IAM Policies](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
-- [Best AI Tools for Writing AWS CDK Infrastructure Code](/ai-tools-compared/best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/)
-- [AI Tools for Generating CI CD Pipeline Configs 2026](/ai-tools-compared/ai-tools-for-generating-ci-cd-pipeline-configs-2026/)
-- [Best AI Assistants for Writing CircleCI and GitLab CI](/ai-tools-compared/best-ai-assistants-for-writing-circleci-and-gitlab-ci-pipeli/)
+- [AI Assistants for Writing Correct AWS IAM Policies](/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
+- [Best AI Tools for Writing AWS CDK Infrastructure Code](/best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/)
+- [AI Tools for Generating CI CD Pipeline Configs 2026](/ai-tools-for-generating-ci-cd-pipeline-configs-2026/)
+- [Best AI Assistants for Writing CircleCI and GitLab CI](/best-ai-assistants-for-writing-circleci-and-gitlab-ci-pipeli/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

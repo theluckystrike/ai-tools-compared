@@ -382,10 +382,10 @@ Check the export options before committing. Most tools let you export your data,
 
 ## Related Articles
 
-- [Claude Sonnet vs GPT-4o for Code Generation: Practical](/ai-tools-compared/claude-sonnet-vs-gpt-4o-for-code-generation/)
-- [Claude Sonnet vs GPT-4o for Code Review Accuracy Comparison](/ai-tools-compared/claude-sonnet-vs-gpt-4o-for-code-review-accuracy-comparison-2026/)
-- [Cursor AI Switching Between Claude and GPT Models Extra Cost](/ai-tools-compared/cursor-ai-switching-between-claude-and-gpt-models-extra-cost/)
-- [Cursor AI with Claude vs GPT Models: Which Gives Better Code](/ai-tools-compared/cursor-ai-with-claude-vs-gpt-models-which-gives-better-code-/)
-- [Claude Sonnet vs Opus API Pricing Difference Worth It](/ai-tools-compared/claude-sonnet-vs-opus-api-pricing-difference-worth-it-2026/)
+- [Claude Sonnet vs GPT-4o for Code Generation: Practical](/claude-sonnet-vs-gpt-4o-for-code-generation/)
+- [Claude Sonnet vs GPT-4o for Code Review Accuracy Comparison](/claude-sonnet-vs-gpt-4o-for-code-review-accuracy-comparison-2026/)
+- [Cursor AI Switching Between Claude and GPT Models Extra Cost](/cursor-ai-switching-between-claude-and-gpt-models-extra-cost/)
+- [Cursor AI with Claude vs GPT Models: Which Gives Better Code](/cursor-ai-with-claude-vs-gpt-models-which-gives-better-code-/)
+- [Claude Sonnet vs Opus API Pricing Difference Worth It](/claude-sonnet-vs-opus-api-pricing-difference-worth-it-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

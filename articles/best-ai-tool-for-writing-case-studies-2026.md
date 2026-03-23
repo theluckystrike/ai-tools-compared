@@ -558,10 +558,10 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [AI Tools for Creating Boundary Value Test Case](/ai-tools-compared/ai-tools-for-creating--boundary-value-test-case/)
-- [How to Use AI to Create Edge Case Test Scenarios from API Er](/ai-tools-compared/how-to-use-ai-to-create-edge-case-test-scenarios-from-api-er/)
-- [How to Use AI to Generate Pagination Edge Case Tests for API](/ai-tools-compared/how-to-use-ai-to-generate-pagination-edge-case-tests-for-api/)
-- [How to Use AI to Generate Timezone Edge Case Test Data](/ai-tools-compared/how-to-use-ai-to-generate-timezone-edge-case-test-data/)
-- [How to Use AI to Generate Unicode and Emoji Edge Case Tests](/ai-tools-compared/how-to-use-ai-to-generate-unicode-and-emoji-edge-case-tests/)
+- [AI Tools for Creating Boundary Value Test Case](/ai-tools-for-creating--boundary-value-test-case/)
+- [How to Use AI to Create Edge Case Test Scenarios from API Er](/how-to-use-ai-to-create-edge-case-test-scenarios-from-api-er/)
+- [How to Use AI to Generate Pagination Edge Case Tests for API](/how-to-use-ai-to-generate-pagination-edge-case-tests-for-api/)
+- [How to Use AI to Generate Timezone Edge Case Test Data](/how-to-use-ai-to-generate-timezone-edge-case-test-data/)
+- [How to Use AI to Generate Unicode and Emoji Edge Case Tests](/how-to-use-ai-to-generate-unicode-and-emoji-edge-case-tests/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -284,11 +284,11 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [AI Tools for Automated Code Documentation Generation in 2026](/ai-tools-compared/ai-tools-for-automated-code-documentation-generation-2026/---)
-- [Best AI Tools for Generating API Documentation From Code](/ai-tools-compared/best-ai-tools-for-generating-api-documentation-from-code-2026/)
-- [AI Tools for Code Documentation Generation 2026](/ai-tools-compared/ai-code-documentation-generation-2026/)
-- [Best Free AI Tool for Code Explanation and Documentation](/ai-tools-compared/best-free-ai-tool-for-code-explanation-and-documentation/)
-- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)
+- [AI Tools for Automated Code Documentation Generation in 2026](/ai-tools-for-automated-code-documentation-generation-2026/---)
+- [Best AI Tools for Generating API Documentation From Code](/best-ai-tools-for-generating-api-documentation-from-code-2026/)
+- [AI Tools for Code Documentation Generation 2026](/ai-code-documentation-generation-2026/)
+- [Best Free AI Tool for Code Explanation and Documentation](/best-free-ai-tool-for-code-explanation-and-documentation/)
+- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-for-automated-api-documentation-from-code-comments/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 ```

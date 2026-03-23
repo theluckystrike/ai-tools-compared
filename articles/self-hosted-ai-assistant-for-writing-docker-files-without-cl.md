@@ -408,6 +408,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Best AI Tools for Writing Docker Compose Files 2026](/best-ai-tools-for-writing-docker-compose-files-2026/)
 - [Best Self-Hosted AI Model for JavaScript TypeScript Code](/best-self-hosted-ai-model-for-javascript-typescript-code-gen/)
 - [Best Self Hosted AI Tool for Writing Unit Tests in Java](/best-self-hosted-ai-tool-for-writing-unit-tests-in-java-loca/)
-- [AI Tools for Generating Docker Compose Files for Complex Mic](/ai-tools-compared/ai-tools-for-generating-docker-compose-files-for-complex-mic/)
+- [AI Tools for Generating Docker Compose Files for Complex Mic](/ai-tools-for-generating-docker-compose-files-for-complex-mic/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

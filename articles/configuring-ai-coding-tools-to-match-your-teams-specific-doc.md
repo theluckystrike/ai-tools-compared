@@ -414,10 +414,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Configuring AI Coding Tools to Follow Your Teams Dependency](/ai-tools-compared/configuring-ai-coding-tools-to-follow-your-teams-dependency-/)
-- [Configuring Claude Code to Understand Your Teams Pull Reques](/ai-tools-compared/configuring-claude-code-to-understand-your-teams-pull-reques/)
-- [Configure AI Coding Tools](/ai-tools-compared/how-to-configure-ai-coding-tools-to-respect-your-teams-branc/)
-- [AI Tools for Debugging CSS Media Query Breakpoints Not Match](/ai-tools-compared/ai-tools-for-debugging-css-media-query-breakpoints-not-match/)
-- [How to Create Custom System Prompts for AI That Match Your](/ai-tools-compared/how-to-create-custom-system-prompts-for-ai-that-match-your-d/)
+- [Configuring AI Coding Tools to Follow Your Teams Dependency](/configuring-ai-coding-tools-to-follow-your-teams-dependency-/)
+- [Configuring Claude Code to Understand Your Teams Pull Reques](/configuring-claude-code-to-understand-your-teams-pull-reques/)
+- [Configure AI Coding Tools](/how-to-configure-ai-coding-tools-to-respect-your-teams-branc/)
+- [AI Tools for Debugging CSS Media Query Breakpoints Not Match](/ai-tools-for-debugging-css-media-query-breakpoints-not-match/)
+- [How to Create Custom System Prompts for AI That Match Your](/how-to-create-custom-system-prompts-for-ai-that-match-your-d/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

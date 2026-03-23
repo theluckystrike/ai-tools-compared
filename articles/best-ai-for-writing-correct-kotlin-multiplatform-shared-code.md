@@ -437,16 +437,16 @@ When pasting code to AI, include the comment: `// This is in commonMain source s
 
 ## Related Reading
 
-- [Claude vs ChatGPT for Refactoring Legacy Java Code to Kotlin](/ai-tools-compared/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
-- [Best AI for Fixing Android Gradle Sync Failed Errors in Large Projects](/ai-tools-compared/best-ai-for-fixing-android-gradle-sync-failed-errors-in-larg/)
-- [AI Code Generation Quality for Java Pattern Matching and Switch Expressions](/ai-tools-compared/ai-code-generation-quality-for-java-pattern-matching-and-swi/)
+- [Claude vs ChatGPT for Refactoring Legacy Java Code to Kotlin](/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
+- [Best AI for Fixing Android Gradle Sync Failed Errors in Large Projects](/best-ai-for-fixing-android-gradle-sync-failed-errors-in-larg/)
+- [AI Code Generation Quality for Java Pattern Matching and Switch Expressions](/ai-code-generation-quality-for-java-pattern-matching-and-swi/)
 
 ## Related Articles
 
-- [Claude vs ChatGPT for Refactoring Legacy Java Code to Kotlin](/ai-tools-compared/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
-- [AI Assistants for Writing Correct AWS IAM Policies](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
-- [How to Export ChatGPT Shared Links Before Account Deletion](/ai-tools-compared/how-to-export-chatgpt-shared-links-before-account-deletion-2026/)
-- [Best AI for Creating Jest Tests That Verify Correct React](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-react-co/)
-- [Best AI for Creating Jest Tests That Verify Correct Suspense](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-suspense/)
+- [Claude vs ChatGPT for Refactoring Legacy Java Code to Kotlin](/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
+- [AI Assistants for Writing Correct AWS IAM Policies](/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
+- [How to Export ChatGPT Shared Links Before Account Deletion](/how-to-export-chatgpt-shared-links-before-account-deletion-2026/)
+- [Best AI for Creating Jest Tests That Verify Correct React](/best-ai-for-creating-jest-tests-that-verify-correct-react-co/)
+- [Best AI for Creating Jest Tests That Verify Correct Suspense](/best-ai-for-creating-jest-tests-that-verify-correct-suspense/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

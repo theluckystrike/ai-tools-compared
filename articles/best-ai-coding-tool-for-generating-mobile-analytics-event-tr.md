@@ -282,7 +282,7 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [AI Tools for Generating Platform Specific Code in Kotlin Multiplatform Projects](/ai-tools-for-generating-platform-specific-code-in-kotlin-mul/)
 - [Self-Hosted AI Tool for Generating OpenAPI Specs from Existing Code 2026](/self-hosted-ai-tool-for-generating-openapi-specs-from-existi/)
 - [What Code Snippets Get Logged in AI Coding Tool Provider](/what-code-snippets-get-logged-in-ai-coding-tool-provider-aud/)
-- [AI Code Completion for Flutter BLoC Pattern Event and State](/ai-tools-compared/ai-code-completion-for-flutter-bloc-pattern-event-and-state-/)
+- [AI Code Completion for Flutter BLoC Pattern Event and State](/ai-code-completion-for-flutter-bloc-pattern-event-and-state-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

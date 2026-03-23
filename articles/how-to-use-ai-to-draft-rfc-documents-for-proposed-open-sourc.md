@@ -334,11 +334,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Use AI to Draft Open Source Foundation Membership App](/ai-tools-compared/how-to-use-ai-to-draft-open-source-foundation-membership-app/)
-- [Best AI Assistant for Writing Open Source Roadmap Documents](/ai-tools-compared/best-ai-assistant-for-writing-open-source-roadmap-documents-from-issue-milestone-data/)
-- [How to Use AI to Help SRE Teams Draft Root Cause Analysis](/ai-tools-compared/how-to-use-ai-to-help-sre-teams-draft-root-cause-analysis-do/)
-- [Best AI for Product Managers Creating User Persona Documents](/ai-tools-compared/best-ai-for-product-managers-creating-user-persona-documents/)
-- [How to Use AI to Create Milestone Planning Documents](/ai-tools-compared/how-to-use-ai-to-create-milestone-planning-documents-from-is/)
+- [How to Use AI to Draft Open Source Foundation Membership App](/how-to-use-ai-to-draft-open-source-foundation-membership-app/)
+- [Best AI Assistant for Writing Open Source Roadmap Documents](/best-ai-assistant-for-writing-open-source-roadmap-documents-from-issue-milestone-data/)
+- [How to Use AI to Help SRE Teams Draft Root Cause Analysis](/how-to-use-ai-to-help-sre-teams-draft-root-cause-analysis-do/)
+- [Best AI for Product Managers Creating User Persona Documents](/best-ai-for-product-managers-creating-user-persona-documents/)
+- [How to Use AI to Create Milestone Planning Documents](/how-to-use-ai-to-create-milestone-planning-documents-from-is/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

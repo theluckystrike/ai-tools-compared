@@ -366,6 +366,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [Best AI Assistant for Learning Python Decorators](/best-ai-assistant-for-learning-python-decorators-and-metacla/)
 - [AI Assistants for Creating Security Architecture Review](/ai-assistants-for-creating-security-architecture-review-docu/)
 - [AI Code Generation Quality for Java Spring Security](/ai-code-generation-quality-for-java-spring-security-configur/)
-- [AI Coding Assistant Session Data Lifecycle](/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [AI Coding Assistant Session Data Lifecycle](/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

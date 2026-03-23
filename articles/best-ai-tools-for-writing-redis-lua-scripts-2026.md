@@ -274,7 +274,7 @@ A: Store in `.lua` files, not inline in application code. Use CI to `SCRIPT LOAD
 - [AI Tools for Writing Database Migration Rollback Scripts](/ai-tools-for-writing-database-migration-rollback-scripts-2026/)
 - [AI Tools for Writing Redis Caching Strategies 2026](/ai-tools-for-writing-redis-caching-strategies-2026/)
 - [Best AI Tools for Writing Database Seed Scripts 2026](/best-ai-tools-for-writing-database-seed-scripts-2026/)
-- [AI Code Completion for Writing Shell Commands Inside](/ai-tools-compared/ai-code-completion-for-writing-shell-commands-inside-scripts/)
+- [AI Code Completion for Writing Shell Commands Inside](/ai-code-completion-for-writing-shell-commands-inside-scripts/)
 - [Redis Cluster Key Hashing Explained](/redis-cluster-key-hashing/)
 - [Building Distributed Rate Limiters](/distributed-rate-limiters/)
 - [Debugging Redis Lua Scripts in Production](/debugging-redis-lua/)

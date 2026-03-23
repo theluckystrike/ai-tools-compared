@@ -461,10 +461,10 @@ Use CIDR blocks in NetworkPolicy `ipBlock` rules. Specify the IP ranges of exter
 
 ## Related Articles
 
-- [Kubernetes RBAC Configuration with AI Tools](/ai-tools-compared/kubernetes-rbac-configuration-with-ai-tools/)
-- [Claude vs GPT-4 for Writing Helm Charts](/ai-tools-compared/claude-vs-gpt4-for-writing-helm-charts/)
-- [Best AI Tools for Generating Kubernetes Manifests](/ai-tools-compared/best-ai-tools-for-generating-kubernetes-manifests-2026/)
-- [Copilot vs Claude for Writing Docker Security Policies](/ai-tools-compared/copilot-vs-claude-for-writing-docker-security-policies/)
-- [GPT-4 vs Copilot for Kubernetes Deployment Configuration](/ai-tools-compared/gpt4-vs-copilot-for-kubernetes-deployment-configuration/)
+- [Kubernetes RBAC Configuration with AI Tools](/kubernetes-rbac-configuration-with-ai-tools/)
+- [Claude vs GPT-4 for Writing Helm Charts](/claude-vs-gpt4-for-writing-helm-charts/)
+- [Best AI Tools for Generating Kubernetes Manifests](/best-ai-tools-for-generating-kubernetes-manifests-2026/)
+- [Copilot vs Claude for Writing Docker Security Policies](/copilot-vs-claude-for-writing-docker-security-policies/)
+- [GPT-4 vs Copilot for Kubernetes Deployment Configuration](/gpt4-vs-copilot-for-kubernetes-deployment-configuration/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

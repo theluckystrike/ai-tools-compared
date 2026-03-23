@@ -374,10 +374,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [AI Tools for Generating Nginx and Caddy Reverse Proxy Config](/ai-tools-compared/ai-tools-for-generating-nginx-and-caddy-reverse-proxy-config/)
-- [How to Use Copilot for Writing Terraform Provider Configurat](/ai-tools-compared/how-to-use-copilot-for-writing-terraform-provider-configurat/)
-- [AI Tools for Writing Nginx Configurations 2026](/ai-tools-compared/ai-tools-for-writing-nginx-configurations-2026/)
-- [ChatGPT vs Claude for Writing API Documentation](/ai-tools-compared/chatgpt-vs-claude-for-writing-api-documentation/)
-- [ChatGPT vs Claude for Writing Cold Outreach Emails to Saas](/ai-tools-compared/chatgpt-vs-claude-for-writing-cold-outreach-emails-to-saas-f/)
+- [AI Tools for Generating Nginx and Caddy Reverse Proxy Config](/ai-tools-for-generating-nginx-and-caddy-reverse-proxy-config/)
+- [How to Use Copilot for Writing Terraform Provider Configurat](/how-to-use-copilot-for-writing-terraform-provider-configurat/)
+- [AI Tools for Writing Nginx Configurations 2026](/ai-tools-for-writing-nginx-configurations-2026/)
+- [ChatGPT vs Claude for Writing API Documentation](/chatgpt-vs-claude-for-writing-api-documentation/)
+- [ChatGPT vs Claude for Writing Cold Outreach Emails to Saas](/chatgpt-vs-claude-for-writing-cold-outreach-emails-to-saas-f/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

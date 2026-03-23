@@ -300,9 +300,9 @@ In Cursor, use Claude as the backend model when working on Kotlin with coroutine
 
 ## Related Reading
 
-- [AI Code Completion for Kotlin Compose Multiplatform](/ai-tools-compared/ai-code-completion-for-kotlin-compose-multiplatform-shared-u/)
-- [Claude vs ChatGPT for Refactoring Legacy Java to Kotlin](/ai-tools-compared/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
-- [Best AI for Writing Correct Kotlin Multiplatform Shared Code](/ai-tools-compared/best-ai-for-writing-correct-kotlin-multiplatform-shared-code/)
+- [AI Code Completion for Kotlin Compose Multiplatform](/ai-code-completion-for-kotlin-compose-multiplatform-shared-u/)
+- [Claude vs ChatGPT for Refactoring Legacy Java to Kotlin](/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
+- [Best AI for Writing Correct Kotlin Multiplatform Shared Code](/best-ai-for-writing-correct-kotlin-multiplatform-shared-code/)
 
 ---
 

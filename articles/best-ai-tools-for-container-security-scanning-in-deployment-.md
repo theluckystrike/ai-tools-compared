@@ -283,10 +283,10 @@ Yes. Trivy includes secret detection using entropy analysis and pattern matching
 
 ## Related Articles
 
-- [AI Container Security Scanning](/ai-tools-compared/ai-container-security-scanning/)
-- [AI Tools for Automated Security Scanning Compared](/ai-tools-compared/ai-tools-for-automated-security-scanning-compared/)
-- [AI Tools for Detecting Kubernetes Misconfiguration Before Deployment](/ai-tools-compared/ai-tools-for-detecting-kubernetes-misconfiguration-before-de/)
-- [AI Tools for Automating Cloud Security Compliance Scanning](/ai-tools-compared/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
+- [AI Container Security Scanning](/ai-container-security-scanning/)
+- [AI Tools for Automated Security Scanning Compared](/ai-tools-for-automated-security-scanning-compared/)
+- [AI Tools for Detecting Kubernetes Misconfiguration Before Deployment](/ai-tools-for-detecting-kubernetes-misconfiguration-before-de/)
+- [AI Tools for Automating Cloud Security Compliance Scanning](/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

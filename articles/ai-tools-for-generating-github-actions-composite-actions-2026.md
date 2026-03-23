@@ -539,11 +539,11 @@ action-validator .github/actions/my-action/action.yml
 
 ## Related Articles
 
-- [AI Tools for Generating GitHub Actions Workflows (2)](/ai-tools-compared/ai-tools-github-actions-workflows/)
-- [AI Tools for Generating GitHub Actions Workflows](/ai-tools-compared/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
-- [Best AI Tools for Writing GitHub Actions](/ai-tools-compared/ai-tools-for-writing-github-actions-guide)
-- [AI Tools for Writing GitHub Actions Workflows (2026)](/ai-tools-compared/ai-tools/best-ai-tools-for-github-actions-workflows/)
-- [Best AI Tools for Writing GitHub Actions Reusable Workflow](/ai-tools-compared/best-ai-tools-for-writing-github-actions-reusable-workflow-t/)
+- [AI Tools for Generating GitHub Actions Workflows (2)](/ai-tools-github-actions-workflows/)
+- [AI Tools for Generating GitHub Actions Workflows](/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
+- [Best AI Tools for Writing GitHub Actions](/ai-tools-for-writing-github-actions-guide)
+- [AI Tools for Writing GitHub Actions Workflows (2026)](/ai-tools/best-ai-tools-for-github-actions-workflows/)
+- [Best AI Tools for Writing GitHub Actions Reusable Workflow](/best-ai-tools-for-writing-github-actions-reusable-workflow-t/)
 1. [GitHub Actions Matrix Builds: Parallel Testing Across Node Versions](/articles/github-actions-matrix-builds/)
 2. [Securing GitHub Actions: Secrets, Permissions, OIDC Tokens](/articles/github-actions-security-secrets/)
 3. [Publishing Actions to GitHub Marketplace: Complete Checklist](/articles/github-marketplace-action-publishing/)

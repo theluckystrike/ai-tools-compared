@@ -3,7 +3,7 @@
 
   <!-- Homepage -->
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/</loc>
+    <loc>https://theluckystrike.github.io/</loc>
     <lastmod>2026-03-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -11,61 +11,61 @@
 
   <!-- Topic hub pages -->
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/topics/ai-code-review-tools/</loc>
+    <loc>https://theluckystrike.github.io/topics/ai-code-review-tools/</loc>
     <lastmod>2026-03-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/topics/ai-coding-assistants-comparison/</loc>
+    <loc>https://theluckystrike.github.io/topics/ai-coding-assistants-comparison/</loc>
     <lastmod>2026-03-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/topics/ai-devops-tools/</loc>
+    <loc>https://theluckystrike.github.io/topics/ai-devops-tools/</loc>
     <lastmod>2026-03-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/topics/ai-documentation-tools/</loc>
+    <loc>https://theluckystrike.github.io/topics/ai-documentation-tools/</loc>
     <lastmod>2026-03-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/topics/ai-free-budget-tools/</loc>
+    <loc>https://theluckystrike.github.io/topics/ai-free-budget-tools/</loc>
     <lastmod>2026-03-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/topics/ai-ide-editor-tools/</loc>
+    <loc>https://theluckystrike.github.io/topics/ai-ide-editor-tools/</loc>
     <lastmod>2026-03-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/topics/ai-product-management/</loc>
+    <loc>https://theluckystrike.github.io/topics/ai-product-management/</loc>
     <lastmod>2026-03-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/topics/ai-security-privacy/</loc>
+    <loc>https://theluckystrike.github.io/topics/ai-security-privacy/</loc>
     <lastmod>2026-03-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/topics/ai-sql-database-tools/</loc>
+    <loc>https://theluckystrike.github.io/topics/ai-sql-database-tools/</loc>
     <lastmod>2026-03-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/topics/ai-testing-tools/</loc>
+    <loc>https://theluckystrike.github.io/topics/ai-testing-tools/</loc>
     <lastmod>2026-03-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -73,252 +73,252 @@
 
   <!-- 50 most recent articles -->
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/yellow-ai-vs-haptik-enterprise-chatbot/</loc>
+    <loc>https://theluckystrike.github.io/yellow-ai-vs-haptik-enterprise-chatbot/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/writing-effective-system-prompts-for-ai-coding-assistants-th/</loc>
+    <loc>https://theluckystrike.github.io/writing-effective-system-prompts-for-ai-coding-assistants-th/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/writing-effective-cursorrules-for-react-typescript-projects-/</loc>
+    <loc>https://theluckystrike.github.io/writing-effective-cursorrules-for-react-typescript-projects-/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/writing-effective-cursorrules-for-nextjs-app-router-project-/</loc>
+    <loc>https://theluckystrike.github.io/writing-effective-cursorrules-for-nextjs-app-router-project-/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/writing-custom-instructions-that-make-ai-follow-your-teams-c/</loc>
+    <loc>https://theluckystrike.github.io/writing-custom-instructions-that-make-ai-follow-your-teams-c/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/writing-custom-instructions-for-ai-tools-that-enforce-your-s/</loc>
+    <loc>https://theluckystrike.github.io/writing-custom-instructions-for-ai-tools-that-enforce-your-s/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/writing-cursorrules-for-golang-projects-with-specific-concur/</loc>
+    <loc>https://theluckystrike.github.io/writing-cursorrules-for-golang-projects-with-specific-concur/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-testing-c/</loc>
+    <loc>https://theluckystrike.github.io/writing-claude-md-files-that-teach-ai-your-project-testing-c/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/</loc>
+    <loc>https://theluckystrike.github.io/writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/</loc>
+    <loc>https://theluckystrike.github.io/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versio/</loc>
+    <loc>https://theluckystrike.github.io/writing-claude-md-files-that-define-your-projects-api-versio/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/writesonic-vs-jasper-ai-copywriting-tool-comparison/</loc>
+    <loc>https://theluckystrike.github.io/writesonic-vs-jasper-ai-copywriting-tool-comparison/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/writesonic-chatsonic-vs-chatgpt-conversation-comparison/</loc>
+    <loc>https://theluckystrike.github.io/writesonic-chatsonic-vs-chatgpt-conversation-comparison/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/wordtune-vs-quillbot-sentence-rewriting-comparison/</loc>
+    <loc>https://theluckystrike.github.io/wordtune-vs-quillbot-sentence-rewriting-comparison/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/wondershare-filmora-ai-vs-final-cut-pro/</loc>
+    <loc>https://theluckystrike.github.io/wondershare-filmora-ai-vs-final-cut-pro/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/windsurf-pro-vs-cursor-pro-price-and-features-compared-2026/</loc>
+    <loc>https://theluckystrike.github.io/windsurf-pro-vs-cursor-pro-price-and-features-compared-2026/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/windsurf-pro-annual-vs-monthly-pricing-actual-savings-calcul/</loc>
+    <loc>https://theluckystrike.github.io/windsurf-pro-annual-vs-monthly-pricing-actual-savings-calcul/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/windsurf-premium-model-access-which-models-cost-extra-credits-2026/</loc>
+    <loc>https://theluckystrike.github.io/windsurf-premium-model-access-which-models-cost-extra-credits-2026/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/windsurf-cascade-vs-cursor-composer-multi-file-ai-editing-co/</loc>
+    <loc>https://theluckystrike.github.io/windsurf-cascade-vs-cursor-composer-multi-file-ai-editing-co/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/windsurf-ai-not-picking-up-eslint-config-troubleshooting-gui/</loc>
+    <loc>https://theluckystrike.github.io/windsurf-ai-not-picking-up-eslint-config-troubleshooting-gui/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/windsurf-ai-flows-feature-how-it-chains-multiple-editing-ste/</loc>
+    <loc>https://theluckystrike.github.io/windsurf-ai-flows-feature-how-it-chains-multiple-editing-ste/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/which-ai-writes-better-powershell-scripts-for-windows-server/</loc>
+    <loc>https://theluckystrike.github.io/which-ai-writes-better-powershell-scripts-for-windows-server/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/which-ai-writes-better-ansible-playbooks-copilot-or-claude-c/</loc>
+    <loc>https://theluckystrike.github.io/which-ai-writes-better-ansible-playbooks-copilot-or-claude-c/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/which-ai-tool-is-better-for-writing-circleci-config-yaml-fil/</loc>
+    <loc>https://theluckystrike.github.io/which-ai-tool-is-better-for-writing-circleci-config-yaml-fil/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/which-ai-tool-generates-better-vue-3-composition-api-compone/</loc>
+    <loc>https://theluckystrike.github.io/which-ai-tool-generates-better-vue-3-composition-api-compone/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/which-ai-is-better-for-writing-playwright-end-to-end-tests-2/</loc>
+    <loc>https://theluckystrike.github.io/which-ai-is-better-for-writing-playwright-end-to-end-tests-2/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/which-ai-is-better-for-writing-grpc-protobuf-service-definit/</loc>
+    <loc>https://theluckystrike.github.io/which-ai-is-better-for-writing-grpc-protobuf-service-definit/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/which-ai-generates-better-swift-ui-views-from-design-specs-2/</loc>
+    <loc>https://theluckystrike.github.io/which-ai-generates-better-swift-ui-views-from-design-specs-2/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/which-ai-generates-better-go-goroutine-patterns-for-concurre/</loc>
+    <loc>https://theluckystrike.github.io/which-ai-generates-better-go-goroutine-patterns-for-concurre/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/what-source-code-context-window-do-different-ai-coding-tools/</loc>
+    <loc>https://theluckystrike.github.io/what-source-code-context-window-do-different-ai-coding-tools/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/what-code-snippets-get-logged-in-ai-coding-tool-provider-aud/</loc>
+    <loc>https://theluckystrike.github.io/what-code-snippets-get-logged-in-ai-coding-tool-provider-aud/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/vpn-tunnel-interface-vs-full-tunnel-routing-difference-explained/</loc>
+    <loc>https://theluckystrike.github.io/vpn-tunnel-interface-vs-full-tunnel-routing-difference-explained/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/verloop-vs-engati-ai-chatbot-platform/</loc>
+    <loc>https://theluckystrike.github.io/verloop-vs-engati-ai-chatbot-platform/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/using-claude-code-for-backend-and-cursor-for-frontend-same-p/</loc>
+    <loc>https://theluckystrike.github.io/using-claude-code-for-backend-and-cursor-for-frontend-same-p/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/transfer-github-copilot-org-settings-when-switching-to-curso/</loc>
+    <loc>https://theluckystrike.github.io/transfer-github-copilot-org-settings-when-switching-to-curso/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/transfer-cursor-editor-theme-and-layout-to-vscode-with-copilot/</loc>
+    <loc>https://theluckystrike.github.io/transfer-cursor-editor-theme-and-layout-to-vscode-with-copilot/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code/</loc>
+    <loc>https://theluckystrike.github.io/transfer-cursor-composer-prompt-library-to-claude-code/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code-comma/</loc>
+    <loc>https://theluckystrike.github.io/transfer-cursor-composer-prompt-library-to-claude-code-comma/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/</loc>
+    <loc>https://theluckystrike.github.io/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/transfer-copilot-code-review-settings-to-cursor-ai-review-co/</loc>
+    <loc>https://theluckystrike.github.io/transfer-copilot-code-review-settings-to-cursor-ai-review-co/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/</loc>
+    <loc>https://theluckystrike.github.io/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/tidio-vs-intercom-ai-chatbot/</loc>
+    <loc>https://theluckystrike.github.io/tidio-vs-intercom-ai-chatbot/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/talkdesk-vs-five9-ai-contact-center/</loc>
+    <loc>https://theluckystrike.github.io/talkdesk-vs-five9-ai-contact-center/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/tabnine-pro-vs-free-what-autocomplete-features-are-locked/</loc>
+    <loc>https://theluckystrike.github.io/tabnine-pro-vs-free-what-autocomplete-features-are-locked/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/synthesia-vs-heygen-ai-avatar-videos/</loc>
+    <loc>https://theluckystrike.github.io/synthesia-vs-heygen-ai-avatar-videos/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/switching-from-windsurf-to-cursor-how-to-transfer-project-config/</loc>
+    <loc>https://theluckystrike.github.io/switching-from-windsurf-to-cursor-how-to-transfer-project-config/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/switching-from-windsurf-free-to-cursor-free-what-is-differen/</loc>
+    <loc>https://theluckystrike.github.io/switching-from-windsurf-free-to-cursor-free-what-is-differen/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/switching-from-midjourney-to-dall-e-3-prompt-adaptation-guid/</loc>
+    <loc>https://theluckystrike.github.io/switching-from-midjourney-to-dall-e-3-prompt-adaptation-guid/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/switching-from-grammarly-to-chatgpt-for-editing-workflow-mig/</loc>
+    <loc>https://theluckystrike.github.io/switching-from-grammarly-to-chatgpt-for-editing-workflow-mig/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://theluckystrike.github.io/ai-tools-compared/switching-from-gpt-4o-to-claude-sonnet-for-code-review-which/</loc>
+    <loc>https://theluckystrike.github.io/switching-from-gpt-4o-to-claude-sonnet-for-code-review-which/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

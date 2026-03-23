@@ -375,9 +375,9 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Configure Claude Code](/ai-tools-compared/how-to-configure-claude-code-to-follow-your-teams-feature-fl/)
-- [Claude Code Losing Context Across Sessions](/ai-tools-compared/claude-code-losing-context-across-sessions-fix/)
-- [Configuring Claude Code to Understand Your Teams Pull](/ai-tools-compared/configuring-claude-code-to-understand-your-teams-pull-reques/)
-- [AI Pair Programming Tools Comparison 2026: Claude Code](/ai-tools-compared/ai-pair-programming-tools-comparison-2026/)
-- [Claude Code Runbook Documentation Guide](/ai-tools-compared/claude-code-runbook-documentation-guide/)
+- [Configure Claude Code](/how-to-configure-claude-code-to-follow-your-teams-feature-fl/)
+- [Claude Code Losing Context Across Sessions](/claude-code-losing-context-across-sessions-fix/)
+- [Configuring Claude Code to Understand Your Teams Pull](/configuring-claude-code-to-understand-your-teams-pull-reques/)
+- [AI Pair Programming Tools Comparison 2026: Claude Code](/ai-pair-programming-tools-comparison-2026/)
+- [Claude Code Runbook Documentation Guide](/claude-code-runbook-documentation-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

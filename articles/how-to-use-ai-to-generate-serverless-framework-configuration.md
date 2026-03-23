@@ -338,11 +338,11 @@ Test in staging first. Deploy to a non-production environment to verify the conf
 
 ## Related Reading
 
-- [AI Coding Assistants for Typescript Deno Fresh Framework Com](/ai-tools-compared/ai-coding-assistants-for-typescript-deno-fresh-framework-com/)
-- [Best AI Tools for Rust Web Development with Axum Framework](/ai-tools-compared/best-ai-tools-for-rust-web-development-with-axum-framework-2/)
-- [Botpress vs Rasa AI Chatbot Framework Compared](/ai-tools-compared/botpress-vs-rasa-ai-chatbot-framework/)
-- [Copilot vs Codeium for JavaScript Framework-Specific Code](/ai-tools-compared/copilot-vs-codeium-for-javascript-framework-specific-code-ge/)
-- [Best AI IDE Features for Writing Configuration Files YAML](/ai-tools-compared/best-ai-ide-features-for-writing-configuration-files-yaml-json-toml/)
+- [AI Coding Assistants for Typescript Deno Fresh Framework Com](/ai-coding-assistants-for-typescript-deno-fresh-framework-com/)
+- [Best AI Tools for Rust Web Development with Axum Framework](/best-ai-tools-for-rust-web-development-with-axum-framework-2/)
+- [Botpress vs Rasa AI Chatbot Framework Compared](/botpress-vs-rasa-ai-chatbot-framework/)
+- [Copilot vs Codeium for JavaScript Framework-Specific Code](/copilot-vs-codeium-for-javascript-framework-specific-code-ge/)
+- [Best AI IDE Features for Writing Configuration Files YAML](/best-ai-ide-features-for-writing-configuration-files-yaml-json-toml/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

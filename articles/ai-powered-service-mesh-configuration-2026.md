@@ -412,20 +412,20 @@ For both tools: always validate with `istioctl analyze` before applying to a clu
 
 ## Related Reading
 
-- [AI Tools for Generating Kubernetes Service Mesh Configuration](/ai-tools-compared/ai-tools-for-generating-kubernetes-service-mesh-configuratio/)
-- [AI-Powered API Gateway Configuration Tools](/ai-tools-compared/ai-powered-api-gateway-configuration-tools-2026/)
-- [How to Use AI for Network Policy Generation](/ai-tools-compared/how-to-use-ai-for-network-policy-generation-2026/)
-- [AI-Powered Observability Configuration Tools 2026](/ai-tools-compared/ai-powered-observability-configuration-tools-2026/)
+- [AI Tools for Generating Kubernetes Service Mesh Configuration](/ai-tools-for-generating-kubernetes-service-mesh-configuratio/)
+- [AI-Powered API Gateway Configuration Tools](/ai-powered-api-gateway-configuration-tools-2026/)
+- [How to Use AI for Network Policy Generation](/how-to-use-ai-for-network-policy-generation-2026/)
+- [AI-Powered Observability Configuration Tools 2026](/ai-powered-observability-configuration-tools-2026/)
 
 ---
 
 ## Related Articles
 
-- [AI Tools for Generating Kubernetes Service Mesh](/ai-tools-compared/ai-tools-for-generating-kubernetes-service-mesh-configuratio/)
-- [AI-Powered Observability Configuration Tools 2026](/ai-tools-compared/ai-powered-observability-configuration-tools-2026/)
-- [AI-Powered API Gateway Configuration Tools 2026](/ai-tools-compared/ai-powered-api-gateway-configuration-tools-2026/)
-- [Claude Code MSW Mock Service Worker Guide](/ai-tools-compared/claude-code-msw-mock-service-worker-guide/)
-- [HubSpot vs Salesforce Service Cloud](/ai-tools-compared/hubspot-vs-salesforce-service-cloud-ai/)
+- [AI Tools for Generating Kubernetes Service Mesh](/ai-tools-for-generating-kubernetes-service-mesh-configuratio/)
+- [AI-Powered Observability Configuration Tools 2026](/ai-powered-observability-configuration-tools-2026/)
+- [AI-Powered API Gateway Configuration Tools 2026](/ai-powered-api-gateway-configuration-tools-2026/)
+- [Claude Code MSW Mock Service Worker Guide](/claude-code-msw-mock-service-worker-guide/)
+- [HubSpot vs Salesforce Service Cloud](/hubspot-vs-salesforce-service-cloud-ai/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

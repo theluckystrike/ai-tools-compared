@@ -300,10 +300,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Generating Docker Compose Files for Complex Mic](/ai-tools-compared/ai-tools-for-generating-docker-compose-files-for-complex-mic/)
-- [AI Tools for Analyzing Issue Comment Sentiment to Identify F](/ai-tools-compared/ai-tools-for-analyzing-issue-comment-sentiment-to-identify-f/)
-- [AI Tools for Analyzing Which Open Source Issues Would Benefi](/ai-tools-compared/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
-- [Best AI for Analyzing Google Analytics Data Exports with Pan](/ai-tools-compared/best-ai-for-analyzing-google-analytics-data-exports-with-pan/)
-- [Gemini vs Claude for Analyzing Large CSV Datasets Over 100MB](/ai-tools-compared/gemini-vs-claude-for-analyzing-large-csv-datasets-over-100mb/)
+- [AI Tools for Generating Docker Compose Files for Complex Mic](/ai-tools-for-generating-docker-compose-files-for-complex-mic/)
+- [AI Tools for Analyzing Issue Comment Sentiment to Identify F](/ai-tools-for-analyzing-issue-comment-sentiment-to-identify-f/)
+- [AI Tools for Analyzing Which Open Source Issues Would Benefi](/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
+- [Best AI for Analyzing Google Analytics Data Exports with Pan](/best-ai-for-analyzing-google-analytics-data-exports-with-pan/)
+- [Gemini vs Claude for Analyzing Large CSV Datasets Over 100MB](/gemini-vs-claude-for-analyzing-large-csv-datasets-over-100mb/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

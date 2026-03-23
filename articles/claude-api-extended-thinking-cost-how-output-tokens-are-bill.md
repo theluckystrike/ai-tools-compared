@@ -312,10 +312,10 @@ No. The recommended pattern is to enable it selectively based on query complexit
 
 ## Related Articles
 
-- [Claude API Tool Use Function Calling Pricing How Tokens Are](/ai-tools-compared/claude-api-tool-use-function-calling-pricing-how-tokens-are-/)
-- [How to Use Claude API Cheaply for Small Coding Projects](/ai-tools-compared/how-to-use-claude-api-cheaply-for-small-coding-projects/)
-- [ChatGPT API Assistants API Pricing Threads and Runs Cost](/ai-tools-compared/chatgpt-api-assistants-api-pricing-threads-and-runs-cost-breakdown/)
-- [Claude API vs OpenAI API Pricing Breakdown 2026](/ai-tools-compared/claude-api-vs-openai-api-pricing-breakdown-2026/)
-- [Claude API Pay Per Token vs Pro Subscription Which Cheaper](/ai-tools-compared/claude-api-pay-per-token-vs-pro-subscription-which-cheaper/)
+- [Claude API Tool Use Function Calling Pricing How Tokens Are](/claude-api-tool-use-function-calling-pricing-how-tokens-are-/)
+- [How to Use Claude API Cheaply for Small Coding Projects](/how-to-use-claude-api-cheaply-for-small-coding-projects/)
+- [ChatGPT API Assistants API Pricing Threads and Runs Cost](/chatgpt-api-assistants-api-pricing-threads-and-runs-cost-breakdown/)
+- [Claude API vs OpenAI API Pricing Breakdown 2026](/claude-api-vs-openai-api-pricing-breakdown-2026/)
+- [Claude API Pay Per Token vs Pro Subscription Which Cheaper](/claude-api-pay-per-token-vs-pro-subscription-which-cheaper/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

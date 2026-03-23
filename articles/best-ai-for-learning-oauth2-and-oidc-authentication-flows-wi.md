@@ -288,11 +288,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Cursor vs Copilot for Implementing Oauth2 Authentication Flo](/ai-tools-compared/cursor-vs-copilot-for-implementing-oauth2-authentication-flo/)
-- [Windsurf AI Flows Feature How It Chains Multiple Editing Ste](/ai-tools-compared/windsurf-ai-flows-feature-how-it-chains-multiple-editing-ste/)
-- [How to Use AI to Generate Playwright Authentication Flow Tes](/ai-tools-compared/how-to-use-ai-to-generate-playwright-authentication-flow-tes/)
-- [Best AI Assistant for Learning Python Decorators and](/ai-tools-compared/best-ai-assistant-for-learning-python-decorators-and-metacla/)
-- [Free AI Tools for Learning Python with Code Examples 2026](/ai-tools-compared/free-ai-tools-for-learning-python-with-code-examples-2026/)
+- [Cursor vs Copilot for Implementing Oauth2 Authentication Flo](/cursor-vs-copilot-for-implementing-oauth2-authentication-flo/)
+- [Windsurf AI Flows Feature How It Chains Multiple Editing Ste](/windsurf-ai-flows-feature-how-it-chains-multiple-editing-ste/)
+- [How to Use AI to Generate Playwright Authentication Flow Tes](/how-to-use-ai-to-generate-playwright-authentication-flow-tes/)
+- [Best AI Assistant for Learning Python Decorators and](/best-ai-assistant-for-learning-python-decorators-and-metacla/)
+- [Free AI Tools for Learning Python with Code Examples 2026](/free-ai-tools-for-learning-python-with-code-examples-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

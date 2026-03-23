@@ -277,11 +277,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Perplexity Pro Search Not Working Fix (2026)](/ai-tools-compared/perplexity-pro-search-not-working-fix-2026/)
-- [ChatGPT vs Perplexity for Researching Competitor Pricing Str](/ai-tools-compared/chatgpt-vs-perplexity-for-researching-competitor-pricing-str/)
-- [Export Perplexity Collections Before Switching to ChatGPT Se](/ai-tools-compared/export-perplexity-collections-before-switching-to-chatgpt-se/)
-- [Perplexity API Pricing vs Using Pro Subscription Which Is Ch](/ai-tools-compared/perplexity-api-pricing-vs-using-pro-subscription-which-is-ch/)
-- [Perplexity Pro File Upload Limits and Storage Costs Explaine](/ai-tools-compared/perplexity-pro-file-upload-limits-and-storage-costs-explaine/)
+- [Perplexity Pro Search Not Working Fix (2026)](/perplexity-pro-search-not-working-fix-2026/)
+- [ChatGPT vs Perplexity for Researching Competitor Pricing Str](/chatgpt-vs-perplexity-for-researching-competitor-pricing-str/)
+- [Export Perplexity Collections Before Switching to ChatGPT Se](/export-perplexity-collections-before-switching-to-chatgpt-se/)
+- [Perplexity API Pricing vs Using Pro Subscription Which Is Ch](/perplexity-api-pricing-vs-using-pro-subscription-which-is-ch/)
+- [Perplexity Pro File Upload Limits and Storage Costs Explaine](/perplexity-pro-file-upload-limits-and-storage-costs-explaine/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

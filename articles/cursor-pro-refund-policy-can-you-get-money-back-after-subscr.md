@@ -235,11 +235,11 @@ Cursor does not offer a formal free trial for Pro. The Hobby tier serves as a fu
 
 ## Related Articles
 
-- [Windsurf Pro vs Cursor Pro: Price and Features Compared 2026](/ai-tools-compared/windsurf-pro-vs-cursor-pro-price-and-features-compared-2026/)
-- [Cursor Pro Usage Cap: How Many Requests Per Day in 2026](/ai-tools-compared/cursor-pro-usage-cap-how-many-requests-per-day-2026/)
-- [Does Cursor Pro Charge Extra for Large File Indexing in 2026](/ai-tools-compared/does-cursor-pro-charge-extra-for-large-file-indexing-2026/)
-- [Cursor Hobby Plan Limitations vs Paying for Pro Worth](/ai-tools-compared/cursor-hobby-plan-limitations-vs-paying-for-pro-worth-it/)
-- [AI Tools for Returns and Refund Automation](/ai-tools-compared/ai-tools-for-returns-and-refund-automation/)
+- [Windsurf Pro vs Cursor Pro: Price and Features Compared 2026](/windsurf-pro-vs-cursor-pro-price-and-features-compared-2026/)
+- [Cursor Pro Usage Cap: How Many Requests Per Day in 2026](/cursor-pro-usage-cap-how-many-requests-per-day-2026/)
+- [Does Cursor Pro Charge Extra for Large File Indexing in 2026](/does-cursor-pro-charge-extra-for-large-file-indexing-2026/)
+- [Cursor Hobby Plan Limitations vs Paying for Pro Worth](/cursor-hobby-plan-limitations-vs-paying-for-pro-worth-it/)
+- [AI Tools for Returns and Refund Automation](/ai-tools-for-returns-and-refund-automation/)
 ## Detailed Refund Timelines
 
 **Timeline from Refund Request to Payout**
@@ -434,8 +434,8 @@ Treat the first 10 days as an unpaid trial. If you're not sold by day 10, reques
 
 ## Related Articles on AI Coding Tool Costs
 
-- [Cursor Pro vs GitHub Copilot Annual Cost Comparison](/ai-tools-compared/cursor-pro-vs-github-copilot-annual/)
-- [Best Free AI Coding Tools for 2026](/ai-tools-compared/best-free-ai-coding-tools-2026/)
-- [Hidden Costs of AI Coding Subscriptions](/ai-tools-compared/hidden-costs-ai-coding-subscriptions/)
+- [Cursor Pro vs GitHub Copilot Annual Cost Comparison](/cursor-pro-vs-github-copilot-annual/)
+- [Best Free AI Coding Tools for 2026](/best-free-ai-coding-tools-2026/)
+- [Hidden Costs of AI Coding Subscriptions](/hidden-costs-ai-coding-subscriptions/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

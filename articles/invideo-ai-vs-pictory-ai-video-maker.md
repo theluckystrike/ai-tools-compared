@@ -336,11 +336,11 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [AI Presentation Maker Chrome Extension](/ai-tools-compared/ai-presentation-maker-chrome-extension/)
-- [AI Tools for Video Accessibility Features](/ai-tools-compared/ai-tools-for-video-accessibility-features/)
-- [AI Tools for Video Color Grading](/ai-tools-compared/ai-tools-for-video-color-grading/)
-- [AI Tools for Video Compression: A Developer Guide](/ai-tools-compared/ai-tools-for-video-compression/)
-- [AI Tools for Video Frame Interpolation](/ai-tools-compared/ai-tools-for-video-frame-interpolation/)
+- [AI Presentation Maker Chrome Extension](/ai-presentation-maker-chrome-extension/)
+- [AI Tools for Video Accessibility Features](/ai-tools-for-video-accessibility-features/)
+- [AI Tools for Video Color Grading](/ai-tools-for-video-color-grading/)
+- [AI Tools for Video Compression: A Developer Guide](/ai-tools-for-video-compression/)
+- [AI Tools for Video Frame Interpolation](/ai-tools-for-video-frame-interpolation/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

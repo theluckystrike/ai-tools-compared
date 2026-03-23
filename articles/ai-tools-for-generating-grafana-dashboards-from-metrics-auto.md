@@ -372,11 +372,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Generating Grafana Dashboard JSON Templates Fro](/ai-tools-compared/ai-tools-for-generating-grafana-dashboard-json-templates-fro/)
-- [AI Tools for Monitoring Kubernetes Cluster Health and Auto](/ai-tools-compared/ai-tools-for-monitoring-kubernetes-cluster-health-and-auto-remediation/)
-- [Domo vs Sisense AI Dashboards: A Practical Comparison](/ai-tools-compared/domo-vs-sisense-ai-dashboards/)
-- [Lightdash vs Preset AI Dashboards: A Practical](/ai-tools-compared/lightdash-vs-preset-ai-dashboards/)
-- [AI Tools for Creating Grafana SLO Dashboard Panels with Burn](/ai-tools-compared/ai-tools-for-creating-grafana-slo-dashboard-panels-with-burn/)
+- [AI Tools for Generating Grafana Dashboard JSON Templates Fro](/ai-tools-for-generating-grafana-dashboard-json-templates-fro/)
+- [AI Tools for Monitoring Kubernetes Cluster Health and Auto](/ai-tools-for-monitoring-kubernetes-cluster-health-and-auto-remediation/)
+- [Domo vs Sisense AI Dashboards: A Practical Comparison](/domo-vs-sisense-ai-dashboards/)
+- [Lightdash vs Preset AI Dashboards: A Practical](/lightdash-vs-preset-ai-dashboards/)
+- [AI Tools for Creating Grafana SLO Dashboard Panels with Burn](/ai-tools-for-creating-grafana-slo-dashboard-panels-with-burn/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

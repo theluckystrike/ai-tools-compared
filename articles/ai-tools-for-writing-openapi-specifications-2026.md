@@ -870,11 +870,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Generating OpenAPI Specs from Code](/ai-tools-compared/ai-tools-openapi-spec-generation/)
-- [Best AI Features for Generating API Client Code from](/ai-tools-compared/best-ai-features-for-generating-api-client-code-from-openapi/)
-- [ChatGPT vs Claude for Creating OpenAPI Spec from Existing](/ai-tools-compared/chatgpt-vs-claude-for-creating-openapi-spec-from-existing-co/)
-- [Generate Openapi Specs from Existing Codebase AI Tools](/ai-tools-compared/generate-openapi-specs-from-existing-codebase-ai-tools/)
-- [AI Assistants for Writing Correct AWS IAM Policies](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
+- [AI Tools for Generating OpenAPI Specs from Code](/ai-tools-openapi-spec-generation/)
+- [Best AI Features for Generating API Client Code from](/best-ai-features-for-generating-api-client-code-from-openapi/)
+- [ChatGPT vs Claude for Creating OpenAPI Spec from Existing](/chatgpt-vs-claude-for-creating-openapi-spec-from-existing-co/)
+- [Generate Openapi Specs from Existing Codebase AI Tools](/generate-openapi-specs-from-existing-codebase-ai-tools/)
+- [AI Assistants for Writing Correct AWS IAM Policies](/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```

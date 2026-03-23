@@ -347,10 +347,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Use AI to Diagnose Kubernetes Pod Crashloopbackoff Fr](/ai-tools-compared/how-to-use-ai-to-diagnose-kubernetes-pod-crashloopbackoff-fr/)
-- [GitHub Copilot Billing Error Troubleshoot 2026: Complete](/ai-tools-compared/github-copilot-billing-error-troubleshoot-2026/)
-- [AI Tools for Detecting Kubernetes Misconfiguration Before](/ai-tools-compared/ai-tools-for-detecting-kubernetes-misconfiguration-before-de/)
-- [AI Tools for Generating Kubernetes Service Mesh](/ai-tools-compared/ai-tools-for-generating-kubernetes-service-mesh-configuratio/)
-- [AI Tools for Kubernetes Troubleshooting 2026](/ai-tools-compared/ai-tools-for-kubernetes-troubleshooting-2026/)
+- [How to Use AI to Diagnose Kubernetes Pod Crashloopbackoff Fr](/how-to-use-ai-to-diagnose-kubernetes-pod-crashloopbackoff-fr/)
+- [GitHub Copilot Billing Error Troubleshoot 2026: Complete](/github-copilot-billing-error-troubleshoot-2026/)
+- [AI Tools for Detecting Kubernetes Misconfiguration Before](/ai-tools-for-detecting-kubernetes-misconfiguration-before-de/)
+- [AI Tools for Generating Kubernetes Service Mesh](/ai-tools-for-generating-kubernetes-service-mesh-configuratio/)
+- [AI Tools for Kubernetes Troubleshooting 2026](/ai-tools-for-kubernetes-troubleshooting-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -373,10 +373,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Video Accessibility Features](/ai-tools-compared/ai-tools-for-video-accessibility-features/)
-- [AI Tools for Qa Engineers Creating Accessibility Testing](/ai-tools-compared/ai-tools-for-qa-engineers-creating-accessibility-testing-che/)
-- [AI Tools for Generating Closed Captions and Transcripts](/ai-tools-compared/ai-tools-for-generating-closed-captions-and-transcripts-from/)
-- [AI Tools for Automated Accessibility Testing](/ai-tools-compared/ai-tools-for-automated-accessibility-testing/)
-- [AI Tools for Generating Grafana Dashboards from Metrics](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
+- [AI Tools for Video Accessibility Features](/ai-tools-for-video-accessibility-features/)
+- [AI Tools for Qa Engineers Creating Accessibility Testing](/ai-tools-for-qa-engineers-creating-accessibility-testing-che/)
+- [AI Tools for Generating Closed Captions and Transcripts](/ai-tools-for-generating-closed-captions-and-transcripts-from/)
+- [AI Tools for Automated Accessibility Testing](/ai-tools-for-automated-accessibility-testing/)
+- [AI Tools for Generating Grafana Dashboards from Metrics](/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

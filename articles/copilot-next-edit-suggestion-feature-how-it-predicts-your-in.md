@@ -330,10 +330,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How to Transfer Copilot Inline Chat Shortcuts](/ai-tools-compared/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)
-- [Copilot Code Referencing Feature: How It Handles Open Source](/ai-tools-compared/copilot-code-referencing-feature-how-it-handles-open-source-/)
-- [Copilot Vision Feature for Understanding Screenshots and Moc](/ai-tools-compared/copilot-vision-feature-for-understanding-screenshots-and-moc/)
-- [Cursor Pro vs Copilot Individual Price Per Feature](/ai-tools-compared/cursor-pro-vs-copilot-individual-price-per-feature-compariso/)
-- [Cursor Multi-File Edit Breaking Code Fix (2026)](/ai-tools-compared/cursor-multi-file-edit-breaking-code-fix-2026/)
+- [How to Transfer Copilot Inline Chat Shortcuts](/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)
+- [Copilot Code Referencing Feature: How It Handles Open Source](/copilot-code-referencing-feature-how-it-handles-open-source-/)
+- [Copilot Vision Feature for Understanding Screenshots and Moc](/copilot-vision-feature-for-understanding-screenshots-and-moc/)
+- [Cursor Pro vs Copilot Individual Price Per Feature](/cursor-pro-vs-copilot-individual-price-per-feature-compariso/)
+- [Cursor Multi-File Edit Breaking Code Fix (2026)](/cursor-multi-file-edit-breaking-code-fix-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

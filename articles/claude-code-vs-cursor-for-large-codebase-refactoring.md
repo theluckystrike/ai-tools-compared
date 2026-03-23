@@ -425,11 +425,11 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Claude vs ChatGPT for Refactoring Legacy Java Code to Kotlin](/ai-tools-compared/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
-- [Cursor AI Codebase Indexing: How It Works and Why It Matters](/ai-tools-compared/cursor-ai-codebase-indexing-how-it-works-and-why-it-matters-/)
-- [Cursor AI Slow on Large monorepo Fix (2026)](/ai-tools-compared/cursor-ai-slow-on-large-monorepo-fix-2026/)
-- [Does Cursor Pro Charge Extra for Large File Indexing in 2026](/ai-tools-compared/does-cursor-pro-charge-extra-for-large-file-indexing-2026/)
-- [Free AI Tools for Code Refactoring That Actually Improve Qua](/ai-tools-compared/free-ai-tools-for-code-refactoring-that-actually-improve-qua/)
+- [Claude vs ChatGPT for Refactoring Legacy Java Code to Kotlin](/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
+- [Cursor AI Codebase Indexing: How It Works and Why It Matters](/cursor-ai-codebase-indexing-how-it-works-and-why-it-matters-/)
+- [Cursor AI Slow on Large monorepo Fix (2026)](/cursor-ai-slow-on-large-monorepo-fix-2026/)
+- [Does Cursor Pro Charge Extra for Large File Indexing in 2026](/does-cursor-pro-charge-extra-for-large-file-indexing-2026/)
+- [Free AI Tools for Code Refactoring That Actually Improve Qua](/free-ai-tools-for-code-refactoring-that-actually-improve-qua/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

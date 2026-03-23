@@ -305,10 +305,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI Assistant for Building Grafana Dashboard Panels](/ai-tools-compared/best-ai-assistant-for-building-grafana-dashboard-panels-from-prometheus-queries/)
-- [Best AI Assistant for SQL Query Optimization](/ai-tools-compared/best-ai-assistant-for-sql-query-optimization/)
-- [Best AI Assistant for Generating SQL Recursive Queries](/ai-tools-compared/best-ai-assistant-for-generating-sql-recursive-queries-for-hierarchical-org-chart-data/)
-- [Best AI for Writing dbt Macros That Generate Dynamic SQL](/ai-tools-compared/best-ai-for-writing-dbt-macros-that-generate-dynamic-sql-bas/)
-- [Best AI Coding Assistant for Under $5 Per](/ai-tools-compared/best-ai-coding-assistant-for-under-5-dollars-per-month/)
+- [Best AI Assistant for Building Grafana Dashboard Panels](/best-ai-assistant-for-building-grafana-dashboard-panels-from-prometheus-queries/)
+- [Best AI Assistant for SQL Query Optimization](/best-ai-assistant-for-sql-query-optimization/)
+- [Best AI Assistant for Generating SQL Recursive Queries](/best-ai-assistant-for-generating-sql-recursive-queries-for-hierarchical-org-chart-data/)
+- [Best AI for Writing dbt Macros That Generate Dynamic SQL](/best-ai-for-writing-dbt-macros-that-generate-dynamic-sql-bas/)
+- [Best AI Coding Assistant for Under $5 Per](/best-ai-coding-assistant-for-under-5-dollars-per-month/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

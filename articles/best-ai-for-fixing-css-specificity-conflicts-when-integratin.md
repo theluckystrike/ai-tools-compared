@@ -496,10 +496,10 @@ CSS cascade layers (`@layer`) are the modern, clean solution for third-party lib
 
 ## Related Articles
 
-- [AI Tools for Interpreting Terraform Plan Errors](/ai-tools-compared/ai-tools-for-interpreting-terraform-plan-errors-with-provider-version-conflicts/)
-- [Best AI Assistant for Fixing TypeScript Strict Mode Type Nar](/ai-tools-compared/best-ai-assistant-for-fixing-typescript-strict-mode-type-nar/)
-- [Best AI for Fixing Android Gradle Sync Failed Errors in Larg](/ai-tools-compared/best-ai-for-fixing-android-gradle-sync-failed-errors-in-larg/)
-- [Best AI for Fixing Ruby on Rails ActiveRecord Migration Roll](/ai-tools-compared/best-ai-for-fixing-ruby-on-rails-activerecord-migration-roll/)
-- [AI Coding Assistant Comparison for TypeScript Tailwind CSS](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-tailwind-css-c/)
+- [AI Tools for Interpreting Terraform Plan Errors](/ai-tools-for-interpreting-terraform-plan-errors-with-provider-version-conflicts/)
+- [Best AI Assistant for Fixing TypeScript Strict Mode Type Nar](/best-ai-assistant-for-fixing-typescript-strict-mode-type-nar/)
+- [Best AI for Fixing Android Gradle Sync Failed Errors in Larg](/best-ai-for-fixing-android-gradle-sync-failed-errors-in-larg/)
+- [Best AI for Fixing Ruby on Rails ActiveRecord Migration Roll](/best-ai-for-fixing-ruby-on-rails-activerecord-migration-roll/)
+- [AI Coding Assistant Comparison for TypeScript Tailwind CSS](/ai-coding-assistant-comparison-for-typescript-tailwind-css-c/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

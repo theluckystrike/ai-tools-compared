@@ -470,10 +470,10 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 
 ## Related Articles
 
-- [Copilot Suggestions Not Showing Up Fix 2026](/ai-tools-compared/copilot-suggestions-not-showing-up-fix-2026/)
-- [Copilot Not Suggesting Imports Automatically](/ai-tools-compared/copilot-not-suggesting-imports-automatically-fix/)
-- [Copilot Suggestions Wrong How](/ai-tools-compared/copilot-suggestions-wrong-how-to-fix/)
-- [Copilot for JetBrains: Does It Cost Same as VS Code Version](/ai-tools-compared/copilot-for-jetbrains-does-it-cost-same-as-vscode-version/)
-- [How to Use Copilot for Writing Terraform Provider Configurat](/ai-tools-compared/how-to-use-copilot-for-writing-terraform-provider-configurat/)
-- [Top 10 AI Tools for Developers in 2024](https://theluckystrike.github.io/remote-work-tools/top-10-ai-tools-for-developers-in-2024/)
+- [Copilot Suggestions Not Showing Up Fix 2026](/copilot-suggestions-not-showing-up-fix-2026/)
+- [Copilot Not Suggesting Imports Automatically](/copilot-not-suggesting-imports-automatically-fix/)
+- [Copilot Suggestions Wrong How](/copilot-suggestions-wrong-how-to-fix/)
+- [Copilot for JetBrains: Does It Cost Same as VS Code Version](/copilot-for-jetbrains-does-it-cost-same-as-vscode-version/)
+- [How to Use Copilot for Writing Terraform Provider Configurat](/how-to-use-copilot-for-writing-terraform-provider-configurat/)
+- [Top 10 AI Tools for Developers in 2024](https://welikeremotestack.com/top-10-ai-tools-for-developers-in-2024/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -393,11 +393,11 @@ Only after trying cache clear and extension isolation. Reinstalling is nuclearâ€
 
 ## Related Articles
 
-- [ChatGPT Slow Response Fix 2026: Complete Troubleshooting](/ai-tools-compared/chatgpt-slow-response-fix-2026/)
-- [Cursor AI Making Too Many API Calls Fix: Troubleshooting](/ai-tools-compared/cursor-ai-making-too-many-api-calls-fix/)
-- [Claude Code Not Pushing to GitHub Fix: Troubleshooting Guide](/ai-tools-compared/claude-code-not-pushing-to-github-fix/)
-- [Cursor AI Not Autocompleting TypeScript Fix](/ai-tools-compared/cursor-ai-not-autocompleting-typescript-fix/)
-- [Cursor AI Slow on Large monorepo Fix (2026)](/ai-tools-compared/cursor-ai-slow-on-large-monorepo-fix-2026/)
+- [ChatGPT Slow Response Fix 2026: Complete Troubleshooting](/chatgpt-slow-response-fix-2026/)
+- [Cursor AI Making Too Many API Calls Fix: Troubleshooting](/cursor-ai-making-too-many-api-calls-fix/)
+- [Claude Code Not Pushing to GitHub Fix: Troubleshooting Guide](/claude-code-not-pushing-to-github-fix/)
+- [Cursor AI Not Autocompleting TypeScript Fix](/cursor-ai-not-autocompleting-typescript-fix/)
+- [Cursor AI Slow on Large monorepo Fix (2026)](/cursor-ai-slow-on-large-monorepo-fix-2026/)
 
 Built by theluckystrike â€” More at [zovo.one](https://zovo.one)
 {% endraw %}

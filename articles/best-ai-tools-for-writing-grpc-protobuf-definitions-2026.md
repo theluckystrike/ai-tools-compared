@@ -626,9 +626,9 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [AI Tools for Writing gRPC Protobuf Definitions 2026](/ai-tools-compared/ai-tools-for-writing-grpc-protobuf-definitions-2026/)
-- [Best AI Tools for Writing Go GRPC Service Definitions](/ai-tools-compared/best-ai-tools-for-writing-go-grpc-service-definitions-and-implementations/)
-- [Which AI Is Better for Writing gRPC Protobuf Service](/ai-tools-compared/which-ai-is-better-for-writing-grpc-protobuf-service-definitions/)
-- [Best AI Tools for Writing GraphQL Schemas 2026](/ai-tools-compared/best-ai-tools-for-writing-graphql-schemas-2026/)
-- [Best AI Tools for Writing Unit Test Mocks 2026](/ai-tools-compared/best-ai-tools-for-writing-unit-test-mocks-2026/)
+- [AI Tools for Writing gRPC Protobuf Definitions 2026](/ai-tools-for-writing-grpc-protobuf-definitions-2026/)
+- [Best AI Tools for Writing Go GRPC Service Definitions](/best-ai-tools-for-writing-go-grpc-service-definitions-and-implementations/)
+- [Which AI Is Better for Writing gRPC Protobuf Service](/which-ai-is-better-for-writing-grpc-protobuf-service-definitions/)
+- [Best AI Tools for Writing GraphQL Schemas 2026](/best-ai-tools-for-writing-graphql-schemas-2026/)
+- [Best AI Tools for Writing Unit Test Mocks 2026](/best-ai-tools-for-writing-unit-test-mocks-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

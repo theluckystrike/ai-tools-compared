@@ -376,11 +376,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)
-- [Best AI Tools for Automated Code Review 2026](/ai-tools-compared/best-ai-tools-for-automated-code-review-2026/)
-- [How to Use AI for Automated Code Migration](/ai-tools-compared/how-to-use-ai-for-automated-code-migration/)
-- [How to Use the Claude API for Automated Code Review](/ai-tools-compared/how-to-use-claude-api-for-automated-code-review/)
-- [Effective Tool Chaining Workflow Using Copilot and Claude](/ai-tools-compared/effective-tool-chaining-workflow-using-copilot-and-claude-together-for-coding/)
+- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-for-automated-api-documentation-from-code-comments/)
+- [Best AI Tools for Automated Code Review 2026](/best-ai-tools-for-automated-code-review-2026/)
+- [How to Use AI for Automated Code Migration](/how-to-use-ai-for-automated-code-migration/)
+- [How to Use the Claude API for Automated Code Review](/how-to-use-claude-api-for-automated-code-review/)
+- [Effective Tool Chaining Workflow Using Copilot and Claude](/effective-tool-chaining-workflow-using-copilot-and-claude-together-for-coding/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

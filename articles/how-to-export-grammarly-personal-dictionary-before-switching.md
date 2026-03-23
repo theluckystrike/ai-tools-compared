@@ -415,11 +415,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Switching from Grammarly to ChatGPT for Editing Workflow Mig](/ai-tools-compared/switching-from-grammarly-to-chatgpt-for-editing-workflow-mig/)
-- [Export Perplexity Collections Before Switching to ChatGPT Se](/ai-tools-compared/export-perplexity-collections-before-switching-to-chatgpt-se/)
-- [How to Export Gemini Workspace Data Before Switching to](/ai-tools-compared/how-to-export-gemini-workspace-data-before-switching-to-claude-team/)
-- [Grammarly AI Not Working in Browser Fix (2026)](/ai-tools-compared/grammarly-ai-not-working-in-browser-fix-2026/)
-- [Grammarly Business vs ChatGPT Team for Enterprises](/ai-tools-compared/grammarly-business-vs-chatgpt-team-for-enterprises/)
+- [Switching from Grammarly to ChatGPT for Editing Workflow Mig](/switching-from-grammarly-to-chatgpt-for-editing-workflow-mig/)
+- [Export Perplexity Collections Before Switching to ChatGPT Se](/export-perplexity-collections-before-switching-to-chatgpt-se/)
+- [How to Export Gemini Workspace Data Before Switching to](/how-to-export-gemini-workspace-data-before-switching-to-claude-team/)
+- [Grammarly AI Not Working in Browser Fix (2026)](/grammarly-ai-not-working-in-browser-fix-2026/)
+- [Grammarly Business vs ChatGPT Team for Enterprises](/grammarly-business-vs-chatgpt-team-for-enterprises/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```

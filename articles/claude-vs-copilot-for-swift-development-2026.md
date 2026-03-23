@@ -439,20 +439,20 @@ This test pattern — `async throws` on the test function, no `XCTestExpectation
 
 ## Related Reading
 
-- [Claude vs Copilot for Elixir Development](/ai-tools-compared/claude-vs-copilot-for-elixir-development-2026/)
-- [Best AI Assistant for Debugging Swift Compiler Errors](/ai-tools-compared/best-ai-assistant-for-debugging-swift-compiler-errors-in-xcode-build-phases-2026/)
-- [How to Use Claude for Svelte Development](/ai-tools-compared/claude-for-svelte-development-guide-2026/)
+- [Claude vs Copilot for Elixir Development](/claude-vs-copilot-for-elixir-development-2026/)
+- [Best AI Assistant for Debugging Swift Compiler Errors](/best-ai-assistant-for-debugging-swift-compiler-errors-in-xcode-build-phases-2026/)
+- [How to Use Claude for Svelte Development](/claude-for-svelte-development-guide-2026/)
 
-- [Claude vs Copilot for Rust Development](/ai-tools-compared/claude-vs-copilot-for-rust-development)
+- [Claude vs Copilot for Rust Development](/claude-vs-copilot-for-rust-development)
 ---
 
 ## Related Articles
 
-- [Claude Code API Error Handling Standards](/ai-tools-compared/claude-code-api-error-handling-standards/)
-- [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
-- [Best AI Tools for Go Error Wrapping and Sentinel Error](/ai-tools-compared/best-ai-tools-for-go-error-wrapping-and-sentinel-error-patte/)
-- [Claude vs Copilot for Rust Development](/ai-tools-compared/claude-vs-copilot-for-rust-development)
-- [Best AI Assistant for Debugging Swift Compiler Errors](/ai-tools-compared/best-ai-assistant-for-debugging-swift-compiler-errors-in-xco/)
+- [Claude Code API Error Handling Standards](/claude-code-api-error-handling-standards/)
+- [Claude Code Go Module Development Guide](/claude-code-go-module-development-guide/)
+- [Best AI Tools for Go Error Wrapping and Sentinel Error](/best-ai-tools-for-go-error-wrapping-and-sentinel-error-patte/)
+- [Claude vs Copilot for Rust Development](/claude-vs-copilot-for-rust-development)
+- [Best AI Assistant for Debugging Swift Compiler Errors](/best-ai-assistant-for-debugging-swift-compiler-errors-in-xco/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

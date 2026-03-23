@@ -348,10 +348,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How to Migrate ChatGPT System Prompts](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-forma/)
-- [How to Create Custom System Prompt for ChatGPT API That](/ai-tools-compared/how-to-create-custom-system-prompt-for-chatgpt-api-that-enfo/)
-- [Transfer ChatGPT Custom GPTs to Claude Projects](/ai-tools-compared/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
-- [How to Create Custom System Prompts for AI That Match Your](/ai-tools-compared/how-to-create-custom-system-prompts-for-ai-that-match-your-d/)
-- [How to Write System Prompts for AI Assistants That Produce](/ai-tools-compared/how-to-write-system-prompts-for-ai-assistants-that-produce-a/)
+- [How to Migrate ChatGPT System Prompts](/migrate-chatgpt-system-prompts-to-claude-system-prompt-forma/)
+- [How to Create Custom System Prompt for ChatGPT API That](/how-to-create-custom-system-prompt-for-chatgpt-api-that-enfo/)
+- [Transfer ChatGPT Custom GPTs to Claude Projects](/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
+- [How to Create Custom System Prompts for AI That Match Your](/how-to-create-custom-system-prompts-for-ai-that-match-your-d/)
+- [How to Write System Prompts for AI Assistants That Produce](/how-to-write-system-prompts-for-ai-assistants-that-produce-a/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

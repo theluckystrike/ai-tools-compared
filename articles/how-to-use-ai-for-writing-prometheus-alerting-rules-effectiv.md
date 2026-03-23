@@ -322,11 +322,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Use AI for Writing Effective Prometheus Recording Rul](/ai-tools-compared/how-to-use-ai-for-writing-effective-prometheus-recording-rul/)
-- [Best Practices for Version Controlling AI Prompts and Rules](/ai-tools-compared/best-practices-for-version-controlling-ai-prompts-and-rules-/)
-- [Claude vs ChatGPT for Building Custom ESLint Rules for React](/ai-tools-compared/claude-vs-chatgpt-for-building-custom-eslint-rules-for-react/)
-- [Cursor AI Rules Files How to Customize AI Behavior](/ai-tools-compared/cursor-ai-rules-files-how-to-customize-ai-behavior-for-your-project/)
-- [Enterprise Data Loss Prevention Rules for AI Coding Assistan](/ai-tools-compared/enterprise-data-loss-prevention-rules-for-ai-coding-assistan/)
+- [How to Use AI for Writing Effective Prometheus Recording Rul](/how-to-use-ai-for-writing-effective-prometheus-recording-rul/)
+- [Best Practices for Version Controlling AI Prompts and Rules](/best-practices-for-version-controlling-ai-prompts-and-rules-/)
+- [Claude vs ChatGPT for Building Custom ESLint Rules for React](/claude-vs-chatgpt-for-building-custom-eslint-rules-for-react/)
+- [Cursor AI Rules Files How to Customize AI Behavior](/cursor-ai-rules-files-how-to-customize-ai-behavior-for-your-project/)
+- [Enterprise Data Loss Prevention Rules for AI Coding Assistan](/enterprise-data-loss-prevention-rules-for-ai-coding-assistan/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```

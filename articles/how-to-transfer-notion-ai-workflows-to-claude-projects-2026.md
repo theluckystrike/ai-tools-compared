@@ -333,12 +333,12 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Transfer ChatGPT Custom GPTs to Claude Projects Step by Step](/ai-tools-compared/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
-- [How to Transfer Notion AI Database Automations to Coda AI](/ai-tools-compared/how-to-transfer-notion-ai-database-automations-to-coda-ai/)
-- [Claude API Batch Processing for Large Document Workflows](/ai-tools-compared/claude-api-batch-processing-for-large-document-workflows/)
-- [Migrating from ChatGPT Plugins to Claude MCP Tools for.](/ai-tools-compared/migrating-from-chatgpt-plugins-to-claude-mcp-tools-for-coding-workflows/)
-- [Cheapest Way to Use Claude for Coding Projects 2026](/ai-tools-compared/cheapest-way-to-use-claude-for-coding-projects-2026/)
-- [Claude Code for Faker.js Test Data Workflow Guide](https://theluckystrike.github.io/remote-work-tools/claude-code-for-faker-js-test-data-workflow-guide/)
+- [Transfer ChatGPT Custom GPTs to Claude Projects Step by Step](/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
+- [How to Transfer Notion AI Database Automations to Coda AI](/how-to-transfer-notion-ai-database-automations-to-coda-ai/)
+- [Claude API Batch Processing for Large Document Workflows](/claude-api-batch-processing-for-large-document-workflows/)
+- [Migrating from ChatGPT Plugins to Claude MCP Tools for.](/migrating-from-chatgpt-plugins-to-claude-mcp-tools-for-coding-workflows/)
+- [Cheapest Way to Use Claude for Coding Projects 2026](/cheapest-way-to-use-claude-for-coding-projects-2026/)
+- [Claude Code for Faker.js Test Data Workflow Guide](https://welikeremotestack.com/claude-code-for-faker-js-test-data-workflow-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

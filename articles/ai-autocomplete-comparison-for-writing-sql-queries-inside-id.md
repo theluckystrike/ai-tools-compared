@@ -593,11 +593,11 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Best AI Assistant for Generating SQL Recursive Queries](/ai-tools-compared/best-ai-assistant-for-generating-sql-recursive-queries-for-hierarchical-org-chart-data/)
-- [AI Code Completion for Writing Shell Commands Inside Scripts](/ai-tools-compared/ai-code-completion-for-writing-shell-commands-inside-scripts/)
-- [Best AI Tools for Writing Datadog Monitoring Queries and](/ai-tools-compared/best-ai-tools-for-writing-datadog-monitoring-queries-and-dashboards/)
-- [AI Autocomplete for Writing Tests: Comparison of Suggestion](/ai-tools-compared/ai-autocomplete-for-writing-tests-comparison-of-suggestion-q/)
-- [Best AI for Writing dbt Macros That Generate Dynamic SQL Bas](/ai-tools-compared/best-ai-for-writing-dbt-macros-that-generate-dynamic-sql-bas/)
+- [Best AI Assistant for Generating SQL Recursive Queries](/best-ai-assistant-for-generating-sql-recursive-queries-for-hierarchical-org-chart-data/)
+- [AI Code Completion for Writing Shell Commands Inside Scripts](/ai-code-completion-for-writing-shell-commands-inside-scripts/)
+- [Best AI Tools for Writing Datadog Monitoring Queries and](/best-ai-tools-for-writing-datadog-monitoring-queries-and-dashboards/)
+- [AI Autocomplete for Writing Tests: Comparison of Suggestion](/ai-autocomplete-for-writing-tests-comparison-of-suggestion-q/)
+- [Best AI for Writing dbt Macros That Generate Dynamic SQL Bas](/best-ai-for-writing-dbt-macros-that-generate-dynamic-sql-bas/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

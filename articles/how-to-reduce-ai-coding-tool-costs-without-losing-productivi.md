@@ -260,10 +260,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Switch from Cursor to Claude Code Without Losing](/ai-tools-compared/how-to-switch-from-cursor-to-claude-code-without-losing-settings/)
-- [Free AI Coding Tools That Work Offline Without Internet](/ai-tools-compared/free-ai-coding-tools-that-work-offline-without-internet/)
-- [How to Switch AI Coding Providers Without Disrupting.](/ai-tools-compared/how-to-switch-ai-coding-providers-without-disrupting-sprint-velocity-2026/)
-- [How to Use AI Coding Tools Without Becoming Dependent on Aut](/ai-tools-compared/how-to-use-ai-coding-tools-without-becoming-dependent-on-aut/)
-- [ChatGPT Hallucinating Facts: How to Reduce Errors](/ai-tools-compared/chatgpt-hallucinating-facts-how-to-reduce-errors/)
+- [How to Switch from Cursor to Claude Code Without Losing](/how-to-switch-from-cursor-to-claude-code-without-losing-settings/)
+- [Free AI Coding Tools That Work Offline Without Internet](/free-ai-coding-tools-that-work-offline-without-internet/)
+- [How to Switch AI Coding Providers Without Disrupting.](/how-to-switch-ai-coding-providers-without-disrupting-sprint-velocity-2026/)
+- [How to Use AI Coding Tools Without Becoming Dependent on Aut](/how-to-use-ai-coding-tools-without-becoming-dependent-on-aut/)
+- [ChatGPT Hallucinating Facts: How to Reduce Errors](/chatgpt-hallucinating-facts-how-to-reduce-errors/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

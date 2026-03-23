@@ -319,10 +319,10 @@ For AI teams needing to query Kafka streams or MongoDB collections, Hex's broade
 
 ## Related Articles
 
-- [AI Tools for Inventory Analytics: A Practical Guide for](/ai-tools-compared/ai-tools-for-inventory-analytics/)
-- [AI Tools for Real-Time Analytics: A Practical Guide](/ai-tools-compared/ai-tools-for-real-time-analytics/)
-- [AI Tools for Social Media Analytics: A Practical Guide](/ai-tools-compared/ai-tools-for-social-media-analytics/)
-- [Claude vs Gemini for Converting Jupyter Notebooks to Product](/ai-tools-compared/claude-vs-gemini-for-converting-jupyter-notebooks-to-product/)
-- [AI Tools for Customer Journey Analytics](/ai-tools-compared/ai-tools-for-customer-journey-analytics/)
+- [AI Tools for Inventory Analytics: A Practical Guide for](/ai-tools-for-inventory-analytics/)
+- [AI Tools for Real-Time Analytics: A Practical Guide](/ai-tools-for-real-time-analytics/)
+- [AI Tools for Social Media Analytics: A Practical Guide](/ai-tools-for-social-media-analytics/)
+- [Claude vs Gemini for Converting Jupyter Notebooks to Product](/claude-vs-gemini-for-converting-jupyter-notebooks-to-product/)
+- [AI Tools for Customer Journey Analytics](/ai-tools-for-customer-journey-analytics/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

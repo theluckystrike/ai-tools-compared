@@ -262,9 +262,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Coding Assistants for TypeScript Graphql Resolver](/ai-tools-compared/ai-coding-assistants-for-typescript-graphql-resolver-and-schema-generation-2026/)
-- [AI Coding Assistants for TypeScript Deno Fresh Framework](/ai-tools-compared/ai-coding-assistants-for-typescript-deno-fresh-framework-com/)
-- [AI Coding Assistant Accuracy for TypeScript Next Js Server](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
-- [Best AI Coding Tools With Generous Free Tier for Hobbyists](/ai-tools-compared/best-ai-coding-tools-with-generous-free-tier-for-hobbyists/)
-- [AI Coding Assistant Comparison for TypeScript monorepo](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-monorepo-with-turborepo-setup/)
+- [AI Coding Assistants for TypeScript Graphql Resolver](/ai-coding-assistants-for-typescript-graphql-resolver-and-schema-generation-2026/)
+- [AI Coding Assistants for TypeScript Deno Fresh Framework](/ai-coding-assistants-for-typescript-deno-fresh-framework-com/)
+- [AI Coding Assistant Accuracy for TypeScript Next Js Server](/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
+- [Best AI Coding Tools With Generous Free Tier for Hobbyists](/best-ai-coding-tools-with-generous-free-tier-for-hobbyists/)
+- [AI Coding Assistant Comparison for TypeScript monorepo](/ai-coding-assistant-comparison-for-typescript-monorepo-with-turborepo-setup/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

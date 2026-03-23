@@ -313,10 +313,10 @@ Claude generally produces more test coverage without prompting. If you ask eithe
 
 ## Related Articles
 
-- [ChatGPT vs Claude for Explaining TensorFlow Model](/ai-tools-compared/chatgpt-vs-claude-for-explaining-tensorflow-model-architectu/)
-- [ChatGPT vs Claude for Writing API Documentation](/ai-tools-compared/chatgpt-vs-claude-for-writing-api-documentation/)
-- [Claude vs ChatGPT for Writing Datadog Dashboard Terraform](/ai-tools-compared/claude-vs-chatgpt-for-writing-datadog-dashboard-terraform-de/)
-- [ChatGPT vs Claude for Generating Cypress Component Test](/ai-tools-compared/chatgpt-vs-claude-for-generating-cypress-component-test-boil/)
-- [Claude vs ChatGPT for Refactoring Legacy Java Code](/ai-tools-compared/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
+- [ChatGPT vs Claude for Explaining TensorFlow Model](/chatgpt-vs-claude-for-explaining-tensorflow-model-architectu/)
+- [ChatGPT vs Claude for Writing API Documentation](/chatgpt-vs-claude-for-writing-api-documentation/)
+- [Claude vs ChatGPT for Writing Datadog Dashboard Terraform](/claude-vs-chatgpt-for-writing-datadog-dashboard-terraform-de/)
+- [ChatGPT vs Claude for Generating Cypress Component Test](/chatgpt-vs-claude-for-generating-cypress-component-test-boil/)
+- [Claude vs ChatGPT for Refactoring Legacy Java Code](/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

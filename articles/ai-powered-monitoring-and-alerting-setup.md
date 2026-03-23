@@ -419,11 +419,11 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 
 ## Related Articles
 
-- [How to Use AI for Writing Prometheus Alerting Rules](/ai-tools-compared/how-to-use-ai-for-writing-prometheus-alerting-rules-effectively/)
-- [AI Tools for Generating Prometheus Alerting Rules (2026)](/ai-tools-compared/ai-tools-for-generating-prometheus-alerting-rules-2026/)
-- [How to Set Up Model Context Protocol for Feeding Monitoring](/ai-tools-compared/how-to-set-up-model-context-protocol-for-feeding-monitoring-/)
-- [How to Use AI for Writing Effective Prometheus Recording](/ai-tools-compared/how-to-use-ai-for-writing-effective-prometheus-recording-rul/)
-- [How to Use AI for Incident Response Automation](/ai-tools-compared/how-to-use-ai-for-incident-response-automation/)
+- [How to Use AI for Writing Prometheus Alerting Rules](/how-to-use-ai-for-writing-prometheus-alerting-rules-effectively/)
+- [AI Tools for Generating Prometheus Alerting Rules (2026)](/ai-tools-for-generating-prometheus-alerting-rules-2026/)
+- [How to Set Up Model Context Protocol for Feeding Monitoring](/how-to-set-up-model-context-protocol-for-feeding-monitoring-/)
+- [How to Use AI for Writing Effective Prometheus Recording](/how-to-use-ai-for-writing-effective-prometheus-recording-rul/)
+- [How to Use AI for Incident Response Automation](/how-to-use-ai-for-incident-response-automation/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

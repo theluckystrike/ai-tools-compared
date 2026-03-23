@@ -342,11 +342,11 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [AI Tools for Video Compression: A Developer Guide](/ai-tools-compared/ai-tools-for-video-compression/)
-- [Best AI Tools for Video Transcription: A Developer's Guide](/ai-tools-compared/best-ai-tools-for-video-transcription/)
-- [AI Tools for Video Thumbnail Generation](/ai-tools-compared/ai-tools-for-video-thumbnail-generation/)
-- [Runway ML vs Pika AI: Video Generation Tools Compared](/ai-tools-compared/runway-ml-vs-pika-ai-video-generation/)
-- [Runway ML vs Pika Labs: AI Video Generation Comparison 2026](/ai-tools-compared/runway-ml-vs-pika-labs-ai-video-comparison-2026/)
+- [AI Tools for Video Compression: A Developer Guide](/ai-tools-for-video-compression/)
+- [Best AI Tools for Video Transcription: A Developer's Guide](/best-ai-tools-for-video-transcription/)
+- [AI Tools for Video Thumbnail Generation](/ai-tools-for-video-thumbnail-generation/)
+- [Runway ML vs Pika AI: Video Generation Tools Compared](/runway-ml-vs-pika-ai-video-generation/)
+- [Runway ML vs Pika Labs: AI Video Generation Comparison 2026](/runway-ml-vs-pika-labs-ai-video-comparison-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

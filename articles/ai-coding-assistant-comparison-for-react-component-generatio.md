@@ -260,19 +260,19 @@ All four assistants can extract component logic into custom hooks, but Claude Co
 
 ## Related Reading
 
-- [AI Coding Assistant Accuracy for TypeScript Svelte Component](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-svelte-component/)
-- [Best AI Coding Assistant for React Development](/ai-tools-compared/best-ai-coding-assistant-for-react-development/)
-- [How to Use AI to Generate Component Diagrams from React](/ai-tools-compared/how-to-use-ai-to-generate-component-diagrams-from-react-or-v/)
-- [Best AI Assistants for AWS CloudFormation Template](/ai-tools-compared/best-ai-assistants-for-aws-cloudformation-template-generatio/)
-- [AI Coding Assistant Accuracy for Typescript Next Js Server C](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
+- [AI Coding Assistant Accuracy for TypeScript Svelte Component](/ai-coding-assistant-accuracy-for-typescript-svelte-component/)
+- [Best AI Coding Assistant for React Development](/best-ai-coding-assistant-for-react-development/)
+- [How to Use AI to Generate Component Diagrams from React](/how-to-use-ai-to-generate-component-diagrams-from-react-or-v/)
+- [Best AI Assistants for AWS CloudFormation Template](/best-ai-assistants-for-aws-cloudformation-template-generatio/)
+- [AI Coding Assistant Accuracy for Typescript Next Js Server C](/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
 
 ## Related Articles
 
-- [Best AI Coding Assistant for React Development](/ai-tools-compared/best-ai-coding-assistant-for-react-development/)
-- [Cursor vs Windsurf for React Development 2026](/ai-tools-compared/cursor-vs-windsurf-for-react-development-2026/)
-- [How to Create .cursorrules That Enforce Your Teams React](/ai-tools-compared/how-to-create-cursorrules-that-enforce-your-teams-react-comp/)
-- [AI Coding Assistant Comparison for TypeScript monorepo](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-monorepo-with-turborepo-setup/)
-- [Writing Effective CursorRules for React TypeScript Projects](/ai-tools-compared/writing-effective-cursorrules-for-react-typescript-projects-/)
+- [Best AI Coding Assistant for React Development](/best-ai-coding-assistant-for-react-development/)
+- [Cursor vs Windsurf for React Development 2026](/cursor-vs-windsurf-for-react-development-2026/)
+- [How to Create .cursorrules That Enforce Your Teams React](/how-to-create-cursorrules-that-enforce-your-teams-react-comp/)
+- [AI Coding Assistant Comparison for TypeScript monorepo](/ai-coding-assistant-comparison-for-typescript-monorepo-with-turborepo-setup/)
+- [Writing Effective CursorRules for React TypeScript Projects](/writing-effective-cursorrules-for-react-typescript-projects-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

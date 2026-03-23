@@ -404,20 +404,20 @@ For inline autocomplete in editors, GitHub Copilot remains convenient — it's f
 
 ## Related Reading
 
-- [Best AI Tools for Writing Shell Scripts for Server Automation](/ai-tools-compared/best-ai-tools-for-writing-shell-scripts-for-server-automatio/)
-- [Best AI Tools for Writing Makefiles](/ai-tools-compared/best-ai-tools-for-writing-makefiles-2026/)
-- [AI-Powered CI/CD Pipeline Optimization](/ai-tools-compared/ai-powered-cicd-pipeline-optimization-2026/)
+- [Best AI Tools for Writing Shell Scripts for Server Automation](/best-ai-tools-for-writing-shell-scripts-for-server-automatio/)
+- [Best AI Tools for Writing Makefiles](/best-ai-tools-for-writing-makefiles-2026/)
+- [AI-Powered CI/CD Pipeline Optimization](/ai-powered-cicd-pipeline-optimization-2026/)
 
-- [Claude Sonnet vs GPT-4o for Code Review Accuracy Comparison](/ai-tools-compared/claude-sonnet-vs-gpt-4o-for-code-review-accuracy-comparison-2026/)
+- [Claude Sonnet vs GPT-4o for Code Review Accuracy Comparison](/claude-sonnet-vs-gpt-4o-for-code-review-accuracy-comparison-2026/)
 ---
 
 ## Related Articles
 
-- [AI-Powered Log Analysis Tools for Debugging](/ai-tools-compared/ai-log-analysis-tools-for-debugging/)
-- [How to Use AI for Log Anomaly Detection](/ai-tools-compared/how-to-use-ai-for-log-anomaly-detection)
-- [AI Powered Log Analysis Tools for Production Debugging](/ai-tools-compared/ai-powered-log-analysis-tools-for-production-debugging-compa/)
-- [How to Use Claude for Debugging Failed CI/CD Pipeline](/ai-tools-compared/how-to-use-claude-for-debugging-failed-ci-cd-pipeline-logs/)
-- [Claude vs Cursor: Refactoring Strategy Comparison](/ai-tools-compared/claude-vs-cursor-refactoring-strategies-compared/)
+- [AI-Powered Log Analysis Tools for Debugging](/ai-log-analysis-tools-for-debugging/)
+- [How to Use AI for Log Anomaly Detection](/how-to-use-ai-for-log-anomaly-detection)
+- [AI Powered Log Analysis Tools for Production Debugging](/ai-powered-log-analysis-tools-for-production-debugging-compa/)
+- [How to Use Claude for Debugging Failed CI/CD Pipeline](/how-to-use-claude-for-debugging-failed-ci-cd-pipeline-logs/)
+- [Claude vs Cursor: Refactoring Strategy Comparison](/claude-vs-cursor-refactoring-strategies-compared/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

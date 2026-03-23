@@ -289,11 +289,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Writing CLAUDE MD Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
-- [Writing Claude Md Files That Teach AI Your Project Specific](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/)
-- [Writing Claude Md Files That Teach AI Your Project Testing](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-testing-conventions-and-patterns/)
-- [How to Use Claude API Cheaply for Small Coding Projects](/ai-tools-compared/how-to-use-claude-api-cheaply-for-small-coding-projects/)
-- [How to Structure Project Files So AI Coding Tools Understand](/ai-tools-compared/how-to-structure-project-files-so-ai-coding-tools-understand/)
+- [Writing CLAUDE MD Files That Define Your Project's API](/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
+- [Writing Claude Md Files That Teach AI Your Project Specific](/writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/)
+- [Writing Claude Md Files That Teach AI Your Project Testing](/writing-claude-md-files-that-teach-ai-your-project-testing-conventions-and-patterns/)
+- [How to Use Claude API Cheaply for Small Coding Projects](/how-to-use-claude-api-cheaply-for-small-coding-projects/)
+- [How to Structure Project Files So AI Coding Tools Understand](/how-to-structure-project-files-so-ai-coding-tools-understand/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

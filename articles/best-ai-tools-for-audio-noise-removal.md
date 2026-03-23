@@ -230,11 +230,11 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Best AI Tools for Spatial Audio: A Developer Guide](/ai-tools-compared/best-ai-tools-for-spatial-audio/)
-- [Best AI Tools for Concert Audio Mixing](/ai-tools-compared/best-ai-tools-for-concert-audio-mixing/)
-- [AI Tools for Music Separation](/ai-tools-compared/ai-tools-for-music-separation-and-stems/)
-- [Best AI Tools for Sound](/ai-tools-compared/best-ai-tools-for-sound-design/)
-- [Best AI Tools for Audio Mastering](/ai-tools-compared/best-ai-tools-for-audio-mastering/)
+- [Best AI Tools for Spatial Audio: A Developer Guide](/best-ai-tools-for-spatial-audio/)
+- [Best AI Tools for Concert Audio Mixing](/best-ai-tools-for-concert-audio-mixing/)
+- [AI Tools for Music Separation](/ai-tools-for-music-separation-and-stems/)
+- [Best AI Tools for Sound](/best-ai-tools-for-sound-design/)
+- [Best AI Tools for Audio Mastering](/best-ai-tools-for-audio-mastering/)
 ## Comparison: Real-World Audio Scenarios
 
 Testing each tool on actual recording scenarios reveals practical differences:
@@ -457,9 +457,9 @@ This hybrid approach combines strengths of each tool.
 
 ## Related Tools and Comparisons
 
-- [Lalal.ai vs iZotope RX for Audio Separation](/ai-tools-compared/lalal-ai-vs-izotope-rx-audio-separation/)
-- [Best AI Tools for Podcast Production](/ai-tools-compared/best-ai-tools-podcast-production/)
-- [Audio Enhancement Tools for Video Editing](/ai-tools-compared/audio-enhancement-tools-video-editing/)
+- [Lalal.ai vs iZotope RX for Audio Separation](/lalal-ai-vs-izotope-rx-audio-separation/)
+- [Best AI Tools for Podcast Production](/best-ai-tools-podcast-production/)
+- [Audio Enhancement Tools for Video Editing](/audio-enhancement-tools-video-editing/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

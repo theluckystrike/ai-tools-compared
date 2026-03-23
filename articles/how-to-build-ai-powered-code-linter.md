@@ -332,9 +332,9 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 
 ## Related Reading
 
-- [AI Code Review Automation Tools Comparison](/ai-tools-compared/ai-code-review-automation-tools-comparison/)
-- [Prompt Engineering Patterns for Code Generation](/ai-tools-compared/prompt-engineering-patterns-for-code-generation/)
-- [AI Debugging Assistants Compared 2026](/ai-tools-compared/ai-debugging-assistants-compared-2026/)
+- [AI Code Review Automation Tools Comparison](/ai-code-review-automation-tools-comparison/)
+- [Prompt Engineering Patterns for Code Generation](/prompt-engineering-patterns-for-code-generation/)
+- [AI Debugging Assistants Compared 2026](/ai-debugging-assistants-compared-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

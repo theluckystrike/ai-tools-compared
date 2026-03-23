@@ -495,9 +495,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How Accurate Are AI Tools at Generating Rust Crossbeam](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
-- [Best AI Coding Tools for Rust Developers 2026](/ai-tools-compared/ai-tools-for-rust-developers-2026/)
-- [How Accurate Are AI Tools](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-serde-serialization-code/)
-- [How Well Do AI Tools Generate Rust Macro Definitions and Pro](/ai-tools-compared/how-well-do-ai-tools-generate-rust-macro-definitions-and-pro/)
-- [How Accurate Are AI Tools at Rust WASM Compilation](/ai-tools-compared/how-accurate-are-ai-tools-at-rust-wasm-compilation-and-bindg/)
+- [How Accurate Are AI Tools at Generating Rust Crossbeam](/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
+- [Best AI Coding Tools for Rust Developers 2026](/ai-tools-for-rust-developers-2026/)
+- [How Accurate Are AI Tools](/how-accurate-are-ai-tools-at-generating-rust-serde-serialization-code/)
+- [How Well Do AI Tools Generate Rust Macro Definitions and Pro](/how-well-do-ai-tools-generate-rust-macro-definitions-and-pro/)
+- [How Accurate Are AI Tools at Rust WASM Compilation](/how-accurate-are-ai-tools-at-rust-wasm-compilation-and-bindg/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

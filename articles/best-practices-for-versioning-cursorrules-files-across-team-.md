@@ -302,11 +302,11 @@ Yes, and it is worth doing. Rules like "never suggest storing secrets in environ
 
 ## Related Articles
 
-- [Create CursorRules That Enforce Your Team's Git](/ai-tools-compared/how-to-create-cursorrules-that-enforce-your-teams-git-commit/)
-- [Best Practices for Sharing AI Tool Configuration Files](/ai-tools-compared/best-practices-for-sharing-ai-tool-configuration-files-acros/)
-- [Best Practices for AI Tool Customization Files When Onboardi](/ai-tools-compared/best-practices-for-ai-tool-customization-files-when-onboardi/)
-- [Best Way to Structure CursorRules for Microservices Project](/ai-tools-compared/best-way-to-structure-cursorrules-for-microservices-project-/)
-- [Create CursorRules That Teach Cursor Your Team's State](/ai-tools-compared/how-to-create-cursorrules-that-teach-cursor-your-teams-state/)
-- [Hybrid Team Social Events: Best Practices (2026)](https://theluckystrike.github.io/remote-work-tools/best-practice-for-hybrid-team-social-events-including-both-r/)
+- [Create CursorRules That Enforce Your Team's Git](/how-to-create-cursorrules-that-enforce-your-teams-git-commit/)
+- [Best Practices for Sharing AI Tool Configuration Files](/best-practices-for-sharing-ai-tool-configuration-files-acros/)
+- [Best Practices for AI Tool Customization Files When Onboardi](/best-practices-for-ai-tool-customization-files-when-onboardi/)
+- [Best Way to Structure CursorRules for Microservices Project](/best-way-to-structure-cursorrules-for-microservices-project-/)
+- [Create CursorRules That Teach Cursor Your Team's State](/how-to-create-cursorrules-that-teach-cursor-your-teams-state/)
+- [Hybrid Team Social Events: Best Practices (2026)](https://welikeremotestack.com/best-practice-for-hybrid-team-social-events-including-both-r/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

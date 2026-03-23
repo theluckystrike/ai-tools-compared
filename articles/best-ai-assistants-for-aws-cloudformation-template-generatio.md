@@ -339,11 +339,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Assistants for Writing Correct AWS IAM Policies](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
-- [AI Coding Assistant Comparison for React Component](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
-- [AI Tools for Writing pytest Tests with Moto Library for AWS](/ai-tools-compared/ai-tools-for-writing-pytest-tests-with-moto-library-for-aws-/)
-- [Best AI Assistant for Preparing for AWS Solutions Architect](/ai-tools-compared/best-ai-assistant-for-preparing-for-aws-solutions-architect/)
-- [Best AI Tools for Cloud Cost Optimization Across AWS Azure G](/ai-tools-compared/best-ai-tools-for-cloud-cost-optimization-across-aws-azure-g/)
+- [AI Assistants for Writing Correct AWS IAM Policies](/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
+- [AI Coding Assistant Comparison for React Component](/ai-coding-assistant-comparison-for-react-component-generatio/)
+- [AI Tools for Writing pytest Tests with Moto Library for AWS](/ai-tools-for-writing-pytest-tests-with-moto-library-for-aws-/)
+- [Best AI Assistant for Preparing for AWS Solutions Architect](/best-ai-assistant-for-preparing-for-aws-solutions-architect/)
+- [Best AI Tools for Cloud Cost Optimization Across AWS Azure G](/best-ai-tools-for-cloud-cost-optimization-across-aws-azure-g/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

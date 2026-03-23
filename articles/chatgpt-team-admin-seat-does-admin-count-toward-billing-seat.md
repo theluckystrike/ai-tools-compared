@@ -303,11 +303,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [ChatGPT Team vs Claude Team Cost Per Seat Comparison 2026](/ai-tools-compared/chatgpt-team-vs-claude-team-cost-per-seat-comparison-2026/)
-- [ChatGPT Canvas Feature Is It Included in Plus or Team Only](/ai-tools-compared/chatgpt-canvas-feature-is-it-included-in-plus-or-team-only/)
-- [Grammarly Business vs ChatGPT Team for Enterprises](/ai-tools-compared/grammarly-business-vs-chatgpt-team-for-enterprises/)
-- [How to Move ChatGPT Team Workspace Data to Claude](/ai-tools-compared/how-to-move-chatgpt-team-workspace-data-to-claude-team/)
-- [Do ChatGPT Plus Memory and Custom GPTs Count Toward](/ai-tools-compared/chatgpt-plus-memory-and-custom-gpts-count-toward-usage-limit/)
-- [Find all GitHub repositories where user is admin](https://theluckystrike.github.io/remote-work-tools/best-practice-for-remote-team-offboarding-at-scale-ensuring-/)
+- [ChatGPT Team vs Claude Team Cost Per Seat Comparison 2026](/chatgpt-team-vs-claude-team-cost-per-seat-comparison-2026/)
+- [ChatGPT Canvas Feature Is It Included in Plus or Team Only](/chatgpt-canvas-feature-is-it-included-in-plus-or-team-only/)
+- [Grammarly Business vs ChatGPT Team for Enterprises](/grammarly-business-vs-chatgpt-team-for-enterprises/)
+- [How to Move ChatGPT Team Workspace Data to Claude](/how-to-move-chatgpt-team-workspace-data-to-claude-team/)
+- [Do ChatGPT Plus Memory and Custom GPTs Count Toward](/chatgpt-plus-memory-and-custom-gpts-count-toward-usage-limit/)
+- [Find all GitHub repositories where user is admin](https://welikeremotestack.com/best-practice-for-remote-team-offboarding-at-scale-ensuring-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

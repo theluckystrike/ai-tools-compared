@@ -491,9 +491,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Does WindSurf AI Send Entire Project Context or Just Open](/ai-tools-compared/does-windsurf-ai-send-entire-project-context-or-just-open-fi/)
-- [Windsurf AI Flows Feature How It Chains Multiple Editing](/ai-tools-compared/windsurf-ai-flows-feature-how-it-chains-multiple-editing-ste/)
-- [Switching from Windsurf to Cursor How to Transfer Project](/ai-tools-compared/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
-- [Cursor Free Plan vs Windsurf Free Plan Which Gives](/ai-tools-compared/cursor-free-plan-vs-windsurf-free-plan-which-gives-more/)
-- [Switching from Windsurf Free to Cursor Free What Is](/ai-tools-compared/switching-from-windsurf-free-to-cursor-free-what-is-different/)
+- [Does WindSurf AI Send Entire Project Context or Just Open](/does-windsurf-ai-send-entire-project-context-or-just-open-fi/)
+- [Windsurf AI Flows Feature How It Chains Multiple Editing](/windsurf-ai-flows-feature-how-it-chains-multiple-editing-ste/)
+- [Switching from Windsurf to Cursor How to Transfer Project](/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
+- [Cursor Free Plan vs Windsurf Free Plan Which Gives](/cursor-free-plan-vs-windsurf-free-plan-which-gives-more/)
+- [Switching from Windsurf Free to Cursor Free What Is](/switching-from-windsurf-free-to-cursor-free-what-is-different/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

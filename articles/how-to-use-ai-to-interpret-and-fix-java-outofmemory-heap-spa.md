@@ -402,11 +402,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [AI Code Completion for Java Record Classes and Sealed](/ai-tools-compared/ai-code-completion-for-java-record-classes-and-sealed-interf/)
-- [AI Code Generation Quality for Java Pattern Matching](/ai-tools-compared/ai-code-generation-quality-for-java-pattern-matching-and-swi/)
-- [Claude Code Java Library Development Guide](/ai-tools-compared/claude-code-java-library-development-guide/)
-- [AI Code Generation for Java Reactive Programming](/ai-tools-compared/ai-code-generation-for-java-reactive-programming-with-projec/)
-- [Best AI Tools for Debugging Memory Leaks 2026](/ai-tools-compared/best-ai-tools-for-debugging-memory-leaks-2026/)
+- [AI Code Completion for Java Record Classes and Sealed](/ai-code-completion-for-java-record-classes-and-sealed-interf/)
+- [AI Code Generation Quality for Java Pattern Matching](/ai-code-generation-quality-for-java-pattern-matching-and-swi/)
+- [Claude Code Java Library Development Guide](/claude-code-java-library-development-guide/)
+- [AI Code Generation for Java Reactive Programming](/ai-code-generation-for-java-reactive-programming-with-projec/)
+- [Best AI Tools for Debugging Memory Leaks 2026](/best-ai-tools-for-debugging-memory-leaks-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 ```

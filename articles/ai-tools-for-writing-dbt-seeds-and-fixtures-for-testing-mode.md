@@ -250,11 +250,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Copilot vs Cursor for Writing pytest Fixtures](/ai-tools-compared/copilot-vs-cursor-for-writing--pytest-fixtures-/)
-- [Best AI for Writing dbt Macros That Generate Dynamic SQL Bas](/ai-tools-compared/best-ai-for-writing-dbt-macros-that-generate-dynamic-sql-bas/)
-- [Best AI Assistant for Writing pytest Tests for Pydantic Mode](/ai-tools-compared/best-ai-assistant-for-writing-pytest-tests-for-pydantic-mode/)
-- [Best AI for QA Engineers Writing API Contract Testing Cases](/ai-tools-compared/best-ai-for-qa-engineers-writing-api-contract-test-cases-fro/)
-- [Best AI for Writing Backward Compatibility Testing Checklist](/ai-tools-compared/best-ai-for-writing-backward-compatibility-testing-checklist/)
+- [Copilot vs Cursor for Writing pytest Fixtures](/copilot-vs-cursor-for-writing--pytest-fixtures-/)
+- [Best AI for Writing dbt Macros That Generate Dynamic SQL Bas](/best-ai-for-writing-dbt-macros-that-generate-dynamic-sql-bas/)
+- [Best AI Assistant for Writing pytest Tests for Pydantic Mode](/best-ai-assistant-for-writing-pytest-tests-for-pydantic-mode/)
+- [Best AI for QA Engineers Writing API Contract Testing Cases](/best-ai-for-qa-engineers-writing-api-contract-test-cases-fro/)
+- [Best AI for Writing Backward Compatibility Testing Checklist](/best-ai-for-writing-backward-compatibility-testing-checklist/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

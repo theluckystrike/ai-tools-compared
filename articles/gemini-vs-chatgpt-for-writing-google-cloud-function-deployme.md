@@ -474,10 +474,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Gemini in Google Docs Not Showing Up? Fixes for 2026](/ai-tools-compared/gemini-in-google-docs-not-showing-up-fix-2026/)
-- [Gemini Advanced vs ChatGPT Plus Price Per Feature Comparison](/ai-tools-compared/gemini-advanced-vs-chatgpt-plus-price-per-feature-comparison-2026/)
-- [Gemini vs ChatGPT for Translating Python Data Pipelines](/ai-tools-compared/gemini-vs-chatgpt-for-translating-python-data-pipelines-to-rust/)
-- [ChatGPT vs Gemini for Generating Tailwind CSS from Hand](/ai-tools-compared/chatgpt-vs-gemini-for-generating-tailwind-css-from-hand-draw/)
-- [Gemini vs ChatGPT for Writing BigQuery SQL Window Functions](/ai-tools-compared/gemini-vs-chatgpt-for-writing-bigquery-sql-window-functions-/)
+- [Gemini in Google Docs Not Showing Up? Fixes for 2026](/gemini-in-google-docs-not-showing-up-fix-2026/)
+- [Gemini Advanced vs ChatGPT Plus Price Per Feature Comparison](/gemini-advanced-vs-chatgpt-plus-price-per-feature-comparison-2026/)
+- [Gemini vs ChatGPT for Translating Python Data Pipelines](/gemini-vs-chatgpt-for-translating-python-data-pipelines-to-rust/)
+- [ChatGPT vs Gemini for Generating Tailwind CSS from Hand](/chatgpt-vs-gemini-for-generating-tailwind-css-from-hand-draw/)
+- [Gemini vs ChatGPT for Writing BigQuery SQL Window Functions](/gemini-vs-chatgpt-for-writing-bigquery-sql-window-functions-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

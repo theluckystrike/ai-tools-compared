@@ -277,10 +277,10 @@ Run `nginx -t` to validate syntax, then `nginx -s reload` for a graceful reload 
 
 ## Related Articles
 
-- [How to Use AI to Resolve CMake Configuration Errors for Cros](/ai-tools-compared/how-to-use-ai-to-resolve-cmake-configuration-errors-for-cros/)
-- [How to Use AI to Resolve Cmake Configuration Errors](/ai-tools-compared/how-to-use-ai-to-resolve-cmake-configuration-errors-for-cross-compilation/)
-- [How to Use AI to Resolve NPM Peer Dependency Conflict Errors](/ai-tools-compared/how-to-use-ai-to-resolve-npm-peer-dependency-conflict-errors/)
-- [AI Tools for Generating Nginx and Caddy Reverse Proxy Config](/ai-tools-compared/ai-tools-for-generating-nginx-and-caddy-reverse-proxy-config/)
-- [AI Tools for Writing Nginx Configurations 2026](/ai-tools-compared/ai-tools-for-writing-nginx-configurations-2026/)
+- [How to Use AI to Resolve CMake Configuration Errors for Cros](/how-to-use-ai-to-resolve-cmake-configuration-errors-for-cros/)
+- [How to Use AI to Resolve Cmake Configuration Errors](/how-to-use-ai-to-resolve-cmake-configuration-errors-for-cross-compilation/)
+- [How to Use AI to Resolve NPM Peer Dependency Conflict Errors](/how-to-use-ai-to-resolve-npm-peer-dependency-conflict-errors/)
+- [AI Tools for Generating Nginx and Caddy Reverse Proxy Config](/ai-tools-for-generating-nginx-and-caddy-reverse-proxy-config/)
+- [AI Tools for Writing Nginx Configurations 2026](/ai-tools-for-writing-nginx-configurations-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

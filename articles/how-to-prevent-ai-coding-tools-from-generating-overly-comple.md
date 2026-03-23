@@ -339,10 +339,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [AI Tools for Generating Jest Mock Implementations for Comple](/ai-tools-compared/ai-tools-for-generating-jest-mock-implementations-for-comple/)
-- [AI Tools for Generating Coding Kata Exercises Tailored to Yo](/ai-tools-compared/ai-tools-for-generating-coding-kata-exercises-tailored-to-yo/)
-- [How to Optimize AI Coding Prompts for Generating Production](/ai-tools-compared/how-to-optimize-ai-coding-prompts-for-generating-production-ready-error-handling/)
-- [AI Tools for Generating API Client SDKs 2026](/ai-tools-compared/ai-tools-for-generating-api-client-sdks-2026/)
-- [AI Tools for Generating API Mock Servers 2026](/ai-tools-compared/ai-tools-for-generating-api-mock-servers-2026/)
+- [AI Tools for Generating Jest Mock Implementations for Comple](/ai-tools-for-generating-jest-mock-implementations-for-comple/)
+- [AI Tools for Generating Coding Kata Exercises Tailored to Yo](/ai-tools-for-generating-coding-kata-exercises-tailored-to-yo/)
+- [How to Optimize AI Coding Prompts for Generating Production](/how-to-optimize-ai-coding-prompts-for-generating-production-ready-error-handling/)
+- [AI Tools for Generating API Client SDKs 2026](/ai-tools-for-generating-api-client-sdks-2026/)
+- [AI Tools for Generating API Mock Servers 2026](/ai-tools-for-generating-api-mock-servers-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

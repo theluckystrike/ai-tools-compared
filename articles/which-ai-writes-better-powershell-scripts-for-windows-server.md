@@ -345,9 +345,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI Tools for Writing Shell Scripts](/ai-tools-compared/best-ai-tools-for-writing-shell-scripts-for-server-automation/)
-- [Free AI Tools for Writing Bash Scripts and Automation](/ai-tools-compared/free-ai-tools-for-writing-bash-scripts-and-automation/)
-- [AI Tools for Writing Database Migration Rollback Scripts](/ai-tools-compared/ai-tools-for-writing-database-migration-rollback-scripts-2026/)
-- [AI Coding Assistant Accuracy for TypeScript Next Js Server](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
-- [AI Tools for Generating Platform Specific Code in Kotlin](/ai-tools-compared/ai-tools-for-generating-platform-specific-code-in-kotlin-mul/)
+- [Best AI Tools for Writing Shell Scripts](/best-ai-tools-for-writing-shell-scripts-for-server-automation/)
+- [Free AI Tools for Writing Bash Scripts and Automation](/free-ai-tools-for-writing-bash-scripts-and-automation/)
+- [AI Tools for Writing Database Migration Rollback Scripts](/ai-tools-for-writing-database-migration-rollback-scripts-2026/)
+- [AI Coding Assistant Accuracy for TypeScript Next Js Server](/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
+- [AI Tools for Generating Platform Specific Code in Kotlin](/ai-tools-for-generating-platform-specific-code-in-kotlin-mul/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -394,11 +394,11 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 
 ## Related Articles
 
-- [How to Fine-Tune Llama 3 for Code Completion](/ai-tools-compared/how-to-fine-tune-llama-3-for-code-completion/)
-- [How to Run CodeLlama Locally for Private Code Completion](/ai-tools-compared/how-to-run-codellama-locally-for-private-code-completion-ste/)
-- [Fine Tune Open Source Code Models for Your Codebase](/ai-tools-compared/fine-tune-open-source-code-models-for-your-codebase-2026/)
-- [Best Self-Hosted AI Model for JavaScript TypeScript Code](/ai-tools-compared/best-self-hosted-ai-model-for-javascript-typescript-code-gen/)
-- [How to Build an AI-Powered Code Linter](/ai-tools-compared/how-to-build-ai-powered-code-linter/)
+- [How to Fine-Tune Llama 3 for Code Completion](/how-to-fine-tune-llama-3-for-code-completion/)
+- [How to Run CodeLlama Locally for Private Code Completion](/how-to-run-codellama-locally-for-private-code-completion-ste/)
+- [Fine Tune Open Source Code Models for Your Codebase](/fine-tune-open-source-code-models-for-your-codebase-2026/)
+- [Best Self-Hosted AI Model for JavaScript TypeScript Code](/best-self-hosted-ai-model-for-javascript-typescript-code-gen/)
+- [How to Build an AI-Powered Code Linter](/how-to-build-ai-powered-code-linter/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Frequently Asked Questions

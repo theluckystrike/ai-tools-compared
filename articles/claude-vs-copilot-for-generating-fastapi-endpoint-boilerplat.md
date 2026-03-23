@@ -296,11 +296,11 @@ Copilot runs $10-19/month as a flat subscription regardless of usage. Claude API
 
 ## Related Articles
 
-- [Copilot vs Claude for Generating Java Spring Boot](/ai-tools-compared/copilot-vs-claude-for-generating-java-spring-boot-applicatio/)
-- [How to Generate Mermaid Sequence Diagrams from API Endpoint](/ai-tools-compared/how-to-generate-mermaid-sequence-diagrams-from-api-endpoint-descriptions-using-ai/)
-- [AI Code Generation for Python FastAPI Endpoints](/ai-tools-compared/ai-code-generation-for-python-fastapi-endpoints-with-pydantic-models-compared/)
-- [AI Tools for Writing pytest Tests for FastAPI Endpoints](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-fastapi-endpoints-with/)
-- [Best Way to Configure CursorRules for Python FastAPI Project](/ai-tools-compared/best-way-to-configure-cursorrules-for-python-fastapi-project/)
+- [Copilot vs Claude for Generating Java Spring Boot](/copilot-vs-claude-for-generating-java-spring-boot-applicatio/)
+- [How to Generate Mermaid Sequence Diagrams from API Endpoint](/how-to-generate-mermaid-sequence-diagrams-from-api-endpoint-descriptions-using-ai/)
+- [AI Code Generation for Python FastAPI Endpoints](/ai-code-generation-for-python-fastapi-endpoints-with-pydantic-models-compared/)
+- [AI Tools for Writing pytest Tests for FastAPI Endpoints](/ai-tools-for-writing-pytest-tests-for-fastapi-endpoints-with/)
+- [Best Way to Configure CursorRules for Python FastAPI Project](/best-way-to-configure-cursorrules-for-python-fastapi-project/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```

@@ -390,6 +390,6 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 - [AI Coding Tools for Writing Chainguard Image Supply Chain Security Policies](/ai-coding-tools-for-writing-chainguard-image-supply-chain-se/)
 - [AI Tools for API Documentation from Code 2026](/ai-tools-for-api-documentation-from-code-2026/)
 - [AI Tools for Automated API Documentation from Code Comments](/ai-tools-for-automated-api-documentation-from-code-comments/)
-- [AI Tools for Generating Technical Blog Post Outlines to](/ai-tools-compared/ai-tools-for-generating-technical-blog-post-outlines-to-build-developer-brand-2026/)
+- [AI Tools for Generating Technical Blog Post Outlines to](/ai-tools-for-generating-technical-blog-post-outlines-to-build-developer-brand-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

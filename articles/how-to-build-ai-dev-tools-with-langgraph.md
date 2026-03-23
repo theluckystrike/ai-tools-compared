@@ -372,9 +372,9 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 
 ## Related Reading
 
-- [How to Build an AI-Powered Code Linter](/ai-tools-compared/how-to-build-ai-powered-code-linter/)
-- [How to Build an AI Code Review Bot](/ai-tools-compared/how-to-build-ai-code-review-bot/)
-- [Prompt Engineering Patterns for Code Generation](/ai-tools-compared/prompt-engineering-patterns-for-code-generation/)
+- [How to Build an AI-Powered Code Linter](/how-to-build-ai-powered-code-linter/)
+- [How to Build an AI Code Review Bot](/how-to-build-ai-code-review-bot/)
+- [Prompt Engineering Patterns for Code Generation](/prompt-engineering-patterns-for-code-generation/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -338,11 +338,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Writing Effective .cursorrules for Next.js App Router](/ai-tools-compared/writing-effective-cursorrules-for-nextjs-app-router-project-with-specific-file-conventions/)
-- [Best AI for Writing Good First Issue Descriptions That](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attra/)
-- [Best AI for Writing Good First Issue Descriptions That — Attract](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attract-new-contributors/)
-- [Does Cursor AI Store Your Code on Their Servers Data Privacy](/ai-tools-compared/does-cursor-ai-store-your-code-on-their-servers-data-privacy/)
-- [Cursor vs Windsurf for Building Next Js App from Design Mock](/ai-tools-compared/cursor-vs-windsurf-for-building-next-js-app-from-design-mock/)
+- [Writing Effective .cursorrules for Next.js App Router](/writing-effective-cursorrules-for-nextjs-app-router-project-with-specific-file-conventions/)
+- [Best AI for Writing Good First Issue Descriptions That](/best-ai-for-writing-good-first-issue-descriptions-that-attra/)
+- [Best AI for Writing Good First Issue Descriptions That — Attract](/best-ai-for-writing-good-first-issue-descriptions-that-attract-new-contributors/)
+- [Does Cursor AI Store Your Code on Their Servers Data Privacy](/does-cursor-ai-store-your-code-on-their-servers-data-privacy/)
+- [Cursor vs Windsurf for Building Next Js App from Design Mock](/cursor-vs-windsurf-for-building-next-js-app-from-design-mock/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```

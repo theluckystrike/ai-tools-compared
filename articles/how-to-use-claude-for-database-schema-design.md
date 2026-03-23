@@ -292,9 +292,9 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 
 ## Related Reading
 
-- [AI-Powered Database Migration Tools Comparison](/ai-tools-compared/ai-powered-database-migration-tools-comparison/)
-- [AI-Powered Database Query Optimization Tools](/ai-tools-compared/ai-powered-database-query-optimization-tools/)
-- [AI Tools for Generating pytest Fixtures from Database Schema](/ai-tools-compared/ai-tools-for-generating-pytest-fixtures-from-database-schema/)
+- [AI-Powered Database Migration Tools Comparison](/ai-powered-database-migration-tools-comparison/)
+- [AI-Powered Database Query Optimization Tools](/ai-powered-database-query-optimization-tools/)
+- [AI Tools for Generating pytest Fixtures from Database Schema](/ai-tools-for-generating-pytest-fixtures-from-database-schema/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -286,9 +286,9 @@ Claude adjusts the feedback relevance well at this prompt. GPT-4 tends to give F
 
 ## Related Reading
 
-- [Claude vs GPT-4 for Data Analysis](/ai-tools-compared/claude-vs-gpt4-for-data-analysis/)
-- [Claude vs ChatGPT for Technical Writing](/ai-tools-compared/claude-vs-chatgpt-for-technical-writing-2026/)
-- [AI Pair Programming: Cursor vs Windsurf vs Claude Code](/ai-tools-compared/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
+- [Claude vs GPT-4 for Data Analysis](/claude-vs-gpt4-for-data-analysis/)
+- [Claude vs ChatGPT for Technical Writing](/claude-vs-chatgpt-for-technical-writing-2026/)
+- [AI Pair Programming: Cursor vs Windsurf vs Claude Code](/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
 ---
 
 ## Deep Dive: Interview-Specific Metrics
@@ -403,9 +403,9 @@ Use GPT-4 for speed and breadth. Use Claude for the depth that converts offers.
 
 ## Related Comparisons
 
-- [Claude vs GPT-4 for Algorithm Interview Prep](/ai-tools-compared/claude-vs-gpt4-algorithm-interview-prep/)
-- [Best AI Tools for Technical Interview Coaching](/ai-tools-compared/best-ai-tools-technical-interview-coaching/)
-- [Comparing Claude, GPT-4, and Gemini for Learning Backend Architecture](/ai-tools-compared/comparing-claude-gpt4-gemini-backend-architecture/)
+- [Claude vs GPT-4 for Algorithm Interview Prep](/claude-vs-gpt4-algorithm-interview-prep/)
+- [Best AI Tools for Technical Interview Coaching](/best-ai-tools-technical-interview-coaching/)
+- [Comparing Claude, GPT-4, and Gemini for Learning Backend Architecture](/comparing-claude-gpt4-gemini-backend-architecture/)
 
 {% endraw %}---
 

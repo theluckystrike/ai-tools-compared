@@ -401,10 +401,10 @@ The developers reading your posts don't care whether you used AI to plan the str
 
 ## Related Articles
 
-- [AI Tools for Generating Closed Captions and Transcripts](/ai-tools-compared/ai-tools-for-generating-closed-captions-and-transcripts-from/)
-- [AI Tools for Generating Platform Specific Code in Kotlin](/ai-tools-compared/ai-tools-for-generating-platform-specific-code-in-kotlin-mul/)
-- [AI Tools for Generating Grafana Dashboards from Metrics](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
-- [AI Tools for Generating Contributor License Agreement](/ai-tools-compared/ai-tools-for-generating-contributor-license-agreement-explan/)
-- [How to Prevent AI Coding Tools from Generating Overly](/ai-tools-compared/how-to-prevent-ai-coding-tools-from-generating-overly-complex-solutions/)
+- [AI Tools for Generating Closed Captions and Transcripts](/ai-tools-for-generating-closed-captions-and-transcripts-from/)
+- [AI Tools for Generating Platform Specific Code in Kotlin](/ai-tools-for-generating-platform-specific-code-in-kotlin-mul/)
+- [AI Tools for Generating Grafana Dashboards from Metrics](/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
+- [AI Tools for Generating Contributor License Agreement](/ai-tools-for-generating-contributor-license-agreement-explan/)
+- [How to Prevent AI Coding Tools from Generating Overly](/how-to-prevent-ai-coding-tools-from-generating-overly-complex-solutions/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

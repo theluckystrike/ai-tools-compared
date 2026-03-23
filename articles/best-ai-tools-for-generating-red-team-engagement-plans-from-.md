@@ -345,10 +345,10 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [AI Tools for Reviewing Terraform Plans Before Applying](/ai-tools-compared/ai-tools-for-reviewing-terraform-plans-before-applying-to-pr/)
-- [How to Prevent AI Coding Tools from Generating Overly](/ai-tools-compared/how-to-prevent-ai-coding-tools-from-generating-overly-complex-solutions/)
-- [How Accurate Are AI Tools at Generating Rust Crossbeam](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
-- [Best AI Powered Chatops Tools](/ai-tools-compared/best-ai-powered-chatops-tools-for-slack-and-devops-integration/)
-- [How Accurate Are AI Tools at Generating TypeScript Zod](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-typescript-zod-schem/)
-- [How to Use AI Tools to Generate Remote Team Meeting](https://theluckystrike.github.io/remote-work-tools/how-to-use-ai-tool-to-generate-remote-team-meeting-agendas-f/)
+- [AI Tools for Reviewing Terraform Plans Before Applying](/ai-tools-for-reviewing-terraform-plans-before-applying-to-pr/)
+- [How to Prevent AI Coding Tools from Generating Overly](/how-to-prevent-ai-coding-tools-from-generating-overly-complex-solutions/)
+- [How Accurate Are AI Tools at Generating Rust Crossbeam](/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
+- [Best AI Powered Chatops Tools](/best-ai-powered-chatops-tools-for-slack-and-devops-integration/)
+- [How Accurate Are AI Tools at Generating TypeScript Zod](/how-accurate-are-ai-tools-at-generating-typescript-zod-schem/)
+- [How to Use AI Tools to Generate Remote Team Meeting](https://welikeremotestack.com/how-to-use-ai-tool-to-generate-remote-team-meeting-agendas-f/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

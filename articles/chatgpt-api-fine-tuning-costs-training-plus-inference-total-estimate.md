@@ -258,10 +258,10 @@ Policies vary widely. Some tools let you access your data for a grace period aft
 
 ## Related Articles
 
-- [ChatGPT API Token Pricing Calculator How to Estimate Monthly](/ai-tools-compared/chatgpt-api-token-pricing-calculator-how-to-estimate-monthly/)
-- [LLM Fine-Tuning Platforms Comparison 2026](/ai-tools-compared/llm-fine-tuning-platforms-comparison-2026/)
-- [How to Export ChatGPT API Fine-Tuned Model for Local Use](/ai-tools-compared/how-to-export-chatgpt-api-fine-tuned-model-for-local-use/)
-- [DALL-E 3 Credit Cost Per Image: ChatGPT Plus vs API](/ai-tools-compared/dall-e-3-credit-cost-per-image-chatgpt-plus-vs-api/)
-- [ChatGPT Canvas Feature Is It Included in Plus or Team Only](/ai-tools-compared/chatgpt-canvas-feature-is-it-included-in-plus-or-team-only/)
+- [ChatGPT API Token Pricing Calculator How to Estimate Monthly](/chatgpt-api-token-pricing-calculator-how-to-estimate-monthly/)
+- [LLM Fine-Tuning Platforms Comparison 2026](/llm-fine-tuning-platforms-comparison-2026/)
+- [How to Export ChatGPT API Fine-Tuned Model for Local Use](/how-to-export-chatgpt-api-fine-tuned-model-for-local-use/)
+- [DALL-E 3 Credit Cost Per Image: ChatGPT Plus vs API](/dall-e-3-credit-cost-per-image-chatgpt-plus-vs-api/)
+- [ChatGPT Canvas Feature Is It Included in Plus or Team Only](/chatgpt-canvas-feature-is-it-included-in-plus-or-team-only/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

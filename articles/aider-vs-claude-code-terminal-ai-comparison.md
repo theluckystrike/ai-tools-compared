@@ -338,10 +338,10 @@ For teams with large monorepos, Claude Code's manual context selection often pro
 
 ## Related Articles
 
-- [Claude Code Terminal Permission Denied Fix](/ai-tools-compared/claude-code-terminal-permission-denied-fix/)
-- [Does Claude Code Send Terminal Output to Anthropic Servers P](/ai-tools-compared/does-claude-code-send-terminal-output-to-anthropic-servers-p/)
-- [How to Migrate From Copilot for Neovim](/ai-tools-compared/migrate-copilot-for-neovim-setup-to-claude-code-terminal-wor/)
-- [AI Coding Assistants for Go Testing Table Driven Tests Gener](/ai-tools-compared/ai-coding-assistants-for-go-testing-table-driven-tests-gener/)
-- [AI Coding Assistants for Typescript Deno Fresh Framework Com](/ai-tools-compared/ai-coding-assistants-for-typescript-deno-fresh-framework-com/)
+- [Claude Code Terminal Permission Denied Fix](/claude-code-terminal-permission-denied-fix/)
+- [Does Claude Code Send Terminal Output to Anthropic Servers P](/does-claude-code-send-terminal-output-to-anthropic-servers-p/)
+- [How to Migrate From Copilot for Neovim](/migrate-copilot-for-neovim-setup-to-claude-code-terminal-wor/)
+- [AI Coding Assistants for Go Testing Table Driven Tests Gener](/ai-coding-assistants-for-go-testing-table-driven-tests-gener/)
+- [AI Coding Assistants for Typescript Deno Fresh Framework Com](/ai-coding-assistants-for-typescript-deno-fresh-framework-com/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

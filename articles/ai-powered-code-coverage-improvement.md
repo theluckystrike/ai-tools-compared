@@ -398,20 +398,20 @@ This creates an auditable record of coverage health alongside your commit histor
 
 ## Related Reading
 
-- [Claude Code Coverage Reporting Setup Guide](/ai-tools-compared/claude-code-coverage-reporting-setup-guide/)
-- [AI Tools for Automated PR Description Generation](/ai-tools-compared/ai-tools-for-automated-pr-description-generation/)
-- [Best AI Tools for Writing Playwright Tests](/ai-tools-compared/best-ai-tools-for-writing-playwright-tests-2026/)
-- [AI-Powered Code Translation Tools Compared](/ai-tools-compared/ai-powered-code-translation-tools-compared/)
+- [Claude Code Coverage Reporting Setup Guide](/claude-code-coverage-reporting-setup-guide/)
+- [AI Tools for Automated PR Description Generation](/ai-tools-for-automated-pr-description-generation/)
+- [Best AI Tools for Writing Playwright Tests](/best-ai-tools-for-writing-playwright-tests-2026/)
+- [AI-Powered Code Translation Tools Compared](/ai-powered-code-translation-tools-compared/)
 
 ---
 
 ## Related Articles
 
-- [AI Tools for Automated Code Coverage Reporting](/ai-tools-compared/ai-tools-for-code-coverage-reporting)
-- [Claude Code Coverage Reporting Setup Guide](/ai-tools-compared/claude-code-coverage-reporting-setup-guide/)
-- [Best AI Tools for Generating Unit Tests](/ai-tools-compared/best-ai-tools-for-generating-unit-tests-from-legacy-code-comparison/)
-- [Best AI Assistant for QA Engineers Writing Test Coverage](/ai-tools-compared/best-ai-assistant-for-qa-engineers-writing-test-coverage-gap/)
-- [Best AI Tools for Generating Unit Tests 2026](/ai-tools-compared/ai-tools-for-generating-unit-tests-2026/)
+- [AI Tools for Automated Code Coverage Reporting](/ai-tools-for-code-coverage-reporting)
+- [Claude Code Coverage Reporting Setup Guide](/claude-code-coverage-reporting-setup-guide/)
+- [Best AI Tools for Generating Unit Tests](/best-ai-tools-for-generating-unit-tests-from-legacy-code-comparison/)
+- [Best AI Assistant for QA Engineers Writing Test Coverage](/best-ai-assistant-for-qa-engineers-writing-test-coverage-gap/)
+- [Best AI Tools for Generating Unit Tests 2026](/ai-tools-for-generating-unit-tests-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

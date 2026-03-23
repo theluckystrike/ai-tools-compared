@@ -393,10 +393,10 @@ For a production formatter, test both models against your codebase's actual code
 
 ## Related Reading
 
-- [How to Build AI-Powered Linting Rules](/ai-tools-compared/build-ai-powered-linting-rules/)
-- [Claude vs GPT-4 for Writing Unit Test Mocks](/ai-tools-compared/claude-vs-gpt4-for-unit-test-mocks/)
-- [Open Source AI Code Linting Tools with Automatic Fix Suggestions](/ai-tools-compared/open-source-ai-code-linting-tools-with-automatic-fix-suggest/)
-- [How to Build an AI-Powered Code Linter](/ai-tools-compared/how-to-build-ai-powered-code-linter/)
+- [How to Build AI-Powered Linting Rules](/build-ai-powered-linting-rules/)
+- [Claude vs GPT-4 for Writing Unit Test Mocks](/claude-vs-gpt4-for-unit-test-mocks/)
+- [Open Source AI Code Linting Tools with Automatic Fix Suggestions](/open-source-ai-code-linting-tools-with-automatic-fix-suggest/)
+- [How to Build an AI-Powered Code Linter](/how-to-build-ai-powered-code-linter/)
 
 ---
 

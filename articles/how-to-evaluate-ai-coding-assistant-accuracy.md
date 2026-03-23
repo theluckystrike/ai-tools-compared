@@ -363,9 +363,9 @@ This tiered approach gives better outcomes than a single model selection, and th
 
 ## Related Reading
 
-- [AI Coding Productivity Measurement: How to Track If Tools Save Time](/ai-tools-compared/ai-coding-productivity-measurement-how-to-track-if-tools-save-time/)
-- [Devin vs SWE-Agent for Autonomous Coding](/ai-tools-compared/devin-vs-swe-agent-autonomous-coding/)
-- [AI Autocomplete Accuracy Comparison: Copilot vs Codeium vs Tabnine](/ai-tools-compared/ai-autocomplete-accuracy-comparison-copilot-vs-codeium-vs-ta/)
+- [AI Coding Productivity Measurement: How to Track If Tools Save Time](/ai-coding-productivity-measurement-how-to-track-if-tools-save-time/)
+- [Devin vs SWE-Agent for Autonomous Coding](/devin-vs-swe-agent-autonomous-coding/)
+- [AI Autocomplete Accuracy Comparison: Copilot vs Codeium vs Tabnine](/ai-autocomplete-accuracy-comparison-copilot-vs-codeium-vs-ta/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

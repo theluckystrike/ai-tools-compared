@@ -433,11 +433,11 @@ Store these prompts in your project management system for easy reuse and continu
 
 ## Related Articles
 
-- [Best AI Tool for Dietitians Meal Plan Creation 2026](/ai-tools-compared/best-ai-tool-for-dietitians-meal-plan-creation-2026/)
-- [Notion AI vs ChatGPT for Content Creation Compared](/ai-tools-compared/notion-ai-vs-chatgpt-for-content-creation-compared/)
-- [Steve AI vs Raw Shorts: AI Video Creation Comparison for](/ai-tools-compared/steve-ai-vs-raw-shorts-ai-video/)
-- [AI Tools for Designers Creating Component Naming Conventions](/ai-tools-compared/ai-tools-for-designers-creating-component-naming-conventions/)
-- [AI Tools for Designers Writing Handoff Notes That Include](/ai-tools-compared/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
+- [Best AI Tool for Dietitians Meal Plan Creation 2026](/best-ai-tool-for-dietitians-meal-plan-creation-2026/)
+- [Notion AI vs ChatGPT for Content Creation Compared](/notion-ai-vs-chatgpt-for-content-creation-compared/)
+- [Steve AI vs Raw Shorts: AI Video Creation Comparison for](/steve-ai-vs-raw-shorts-ai-video/)
+- [AI Tools for Designers Creating Component Naming Conventions](/ai-tools-for-designers-creating-component-naming-conventions/)
+- [AI Tools for Designers Writing Handoff Notes That Include](/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

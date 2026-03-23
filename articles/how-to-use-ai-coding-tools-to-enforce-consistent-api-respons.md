@@ -328,10 +328,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Use AI Multi File Context to Generate Consistent API](/ai-tools-compared/how-to-use-ai-multi-file-context-to-generate-consistent-api-endpoints/)
-- [How to Write ChatGPT Custom Instructions](/ai-tools-compared/how-to-write-chatgpt-custom-instructions-for-consistent-api-design-suggestions/)
-- [Best AI Coding Tools for Go API Development with Gin and Ech](/ai-tools-compared/best-ai-coding-tools-for-go-api-development-with-gin-and-ech/)
-- [How to Use Claude API Cheaply for Small Coding Projects](/ai-tools-compared/how-to-use-claude-api-cheaply-for-small-coding-projects/)
-- [Create CursorRules That Enforce Your Team's Git Commit](/ai-tools-compared/how-to-create-cursorrules-that-enforce-your-teams-git-commit/)
+- [How to Use AI Multi File Context to Generate Consistent API](/how-to-use-ai-multi-file-context-to-generate-consistent-api-endpoints/)
+- [How to Write ChatGPT Custom Instructions](/how-to-write-chatgpt-custom-instructions-for-consistent-api-design-suggestions/)
+- [Best AI Coding Tools for Go API Development with Gin and Ech](/best-ai-coding-tools-for-go-api-development-with-gin-and-ech/)
+- [How to Use Claude API Cheaply for Small Coding Projects](/how-to-use-claude-api-cheaply-for-small-coding-projects/)
+- [Create CursorRules That Enforce Your Team's Git Commit](/how-to-create-cursorrules-that-enforce-your-teams-git-commit/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

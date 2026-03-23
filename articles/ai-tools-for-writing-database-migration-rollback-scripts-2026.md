@@ -497,6 +497,6 @@ Most tools discussed here can be used productively within a few hours. Mastering
 - [AI Tools for Writing pytest Tests for Alembic Database Paths](/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
 - [Best AI Tools for Writing Database Seed Scripts 2026](/best-ai-tools-for-writing-database-seed-scripts-2026/)
 - [AI-Powered Database Migration Tools Comparison 2026](/ai-powered-database-migration-tools-comparison/)
-- [AI Code Completion for Writing Shell Commands Inside](/ai-tools-compared/ai-code-completion-for-writing-shell-commands-inside-scripts/)
+- [AI Code Completion for Writing Shell Commands Inside](/ai-code-completion-for-writing-shell-commands-inside-scripts/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

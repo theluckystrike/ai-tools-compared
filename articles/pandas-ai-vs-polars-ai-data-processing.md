@@ -367,10 +367,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [How to Evaluate AI Coding Tool Data Processing Agreements](/ai-tools-compared/how-to-evaluate-ai-coding-tool-data-processing-agreements-be/)
-- [Best AI Coding Tools for Python Data Science and pandas Work](/ai-tools-compared/best-ai-coding-tools-for-python-data-science-and-pandas-work/)
-- [Best AI for Generating pandas Code to Merge Data from Multip](/ai-tools-compared/best-ai-for-generating-pandas-code-to-merge-data-from-multip/)
-- [Claude API Batch Processing: How Much Cheaper Than Discount](/ai-tools-compared/claude-api-batch-processing-discount-how-much-cheaper-than-r/)
-- [Claude API Batch Processing for Large Document Workflows](/ai-tools-compared/claude-api-batch-processing-for-large-document-workflows/)
+- [How to Evaluate AI Coding Tool Data Processing Agreements](/how-to-evaluate-ai-coding-tool-data-processing-agreements-be/)
+- [Best AI Coding Tools for Python Data Science and pandas Work](/best-ai-coding-tools-for-python-data-science-and-pandas-work/)
+- [Best AI for Generating pandas Code to Merge Data from Multip](/best-ai-for-generating-pandas-code-to-merge-data-from-multip/)
+- [Claude API Batch Processing: How Much Cheaper Than Discount](/claude-api-batch-processing-discount-how-much-cheaper-than-r/)
+- [Claude API Batch Processing for Large Document Workflows](/claude-api-batch-processing-for-large-document-workflows/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

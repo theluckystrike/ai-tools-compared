@@ -304,11 +304,11 @@ Yes, this can happen during a sync delay—your payment succeeds but the tier ha
 
 ## Related Articles
 
-- [Perplexity Pro Search Not Working Fix (2026)](/ai-tools-compared/perplexity-pro-search-not-working-fix-2026/)
-- [ChatGPT Plus vs Claude Pro Monthly Cost for Daily Coding](/ai-tools-compared/chatgpt-plus-vs-claude-pro-monthly-cost-for-daily-coding/)
-- [Claude API Pay Per Token vs Pro Subscription Which Cheaper](/ai-tools-compared/claude-api-pay-per-token-vs-pro-subscription-which-cheaper/)
-- [Claude Max vs Claude Pro Actual Difference](/ai-tools-compared/claude-max-vs-claude-pro-actual-difference-in-daily-message-limits/)
-- [Switching from Gemini Advanced to Claude Pro: What You Lose](/ai-tools-compared/switching-from-gemini-advanced-to-claude-pro-what-you-lose/)
+- [Perplexity Pro Search Not Working Fix (2026)](/perplexity-pro-search-not-working-fix-2026/)
+- [ChatGPT Plus vs Claude Pro Monthly Cost for Daily Coding](/chatgpt-plus-vs-claude-pro-monthly-cost-for-daily-coding/)
+- [Claude API Pay Per Token vs Pro Subscription Which Cheaper](/claude-api-pay-per-token-vs-pro-subscription-which-cheaper/)
+- [Claude Max vs Claude Pro Actual Difference](/claude-max-vs-claude-pro-actual-difference-in-daily-message-limits/)
+- [Switching from Gemini Advanced to Claude Pro: What You Lose](/switching-from-gemini-advanced-to-claude-pro-what-you-lose/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

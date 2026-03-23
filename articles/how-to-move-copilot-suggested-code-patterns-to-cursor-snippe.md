@@ -343,9 +343,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Move Copilot Suggested Code Patterns to: Snippets](/ai-tools-compared/how-to-move-copilot-suggested-code-patterns-to-cursor-snippets/)
-- [How to Transfer Copilot Code Review Settings](/ai-tools-compared/transfer-copilot-code-review-settings-to-cursor-ai-review-co/)
-- [How to Use Copilot Chat to Generate Code from Natural](/ai-tools-compared/how-to-use-copilot-chat-to-generate-code-from-natural-langua/)
-- [Copilot for JetBrains: Does It Cost Same as VS Code Version](/ai-tools-compared/copilot-for-jetbrains-does-it-cost-same-as-vscode-version/)
-- [Copilot vs Codeium for JavaScript Framework-Specific Code](/ai-tools-compared/copilot-vs-codeium-for-javascript-framework-specific-code-ge/)
+- [How to Move Copilot Suggested Code Patterns to: Snippets](/how-to-move-copilot-suggested-code-patterns-to-cursor-snippets/)
+- [How to Transfer Copilot Code Review Settings](/transfer-copilot-code-review-settings-to-cursor-ai-review-co/)
+- [How to Use Copilot Chat to Generate Code from Natural](/how-to-use-copilot-chat-to-generate-code-from-natural-langua/)
+- [Copilot for JetBrains: Does It Cost Same as VS Code Version](/copilot-for-jetbrains-does-it-cost-same-as-vscode-version/)
+- [Copilot vs Codeium for JavaScript Framework-Specific Code](/copilot-vs-codeium-for-javascript-framework-specific-code-ge/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

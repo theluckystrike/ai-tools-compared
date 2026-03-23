@@ -545,15 +545,15 @@ The best approach combines AI efficiency with developer judgment and accessibili
 - [Best AI Tools for Web Developers](/best-ai-tools-for-web-developers-2026/)
 - [Accessibility Testing Tools Comparison](/accessibility-testing-tools/)
 - [Semantic HTML Best Practices](/semantic-html-best-practices/)
-- [Best AI Tool for Generating Accessible Data Table Markup](/ai-tools-compared/best-ai-tool-for-generating-accessible-data-table-markup-wit/)
+- [Best AI Tool for Generating Accessible Data Table Markup](/best-ai-tool-for-generating-accessible-data-table-markup-wit/)
 
 ## Related Articles
 
-- [Best AI Tool for Generating Accessible Data Table Markup](/ai-tools-compared/best-ai-tool-for-generating-accessible-data-table-markup-wit/)
-- [Best AI Tool for Generating Accessible Cookie Consent](/ai-tools-compared/best-ai-tool-for-generating-accessible-cookie-consent-banner/)
-- [Best AI Tool for Generating Accessible Stepper and Wizard](/ai-tools-compared/best-ai-tool-for-generating-accessible-stepper-and-wizard-co/)
-- [Perplexity Not Finding Recent Results](/ai-tools-compared/perplexity-not-finding-recent-results-fix/)
-- [Switching from ChatGPT Search to Perplexity Pro Search](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
+- [Best AI Tool for Generating Accessible Data Table Markup](/best-ai-tool-for-generating-accessible-data-table-markup-wit/)
+- [Best AI Tool for Generating Accessible Cookie Consent](/best-ai-tool-for-generating-accessible-cookie-consent-banner/)
+- [Best AI Tool for Generating Accessible Stepper and Wizard](/best-ai-tool-for-generating-accessible-stepper-and-wizard-co/)
+- [Perplexity Not Finding Recent Results](/perplexity-not-finding-recent-results-fix/)
+- [Switching from ChatGPT Search to Perplexity Pro Search](/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

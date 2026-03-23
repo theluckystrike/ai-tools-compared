@@ -350,10 +350,10 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 
 ## Related Articles
 
-- [Copilot Suggestions in Private Repos Do They Cost More Than](/ai-tools-compared/copilot-suggestions-in-private-repos-do-they-cost-more-than-public/)
-- [Running DeepSeek Coder Locally vs Cloud API for Private Repo](/ai-tools-compared/running-deepseek-coder-locally-vs-cloud-api-for-private-repo/)
-- [AI Coding Assistant Accuracy for Typescript Next Js Server C](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
-- [AI Coding Assistant Accuracy for TypeScript Svelte Component](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-svelte-component/)
-- [AI Coding Assistant Comparison for React Component](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
+- [Copilot Suggestions in Private Repos Do They Cost More Than](/copilot-suggestions-in-private-repos-do-they-cost-more-than-public/)
+- [Running DeepSeek Coder Locally vs Cloud API for Private Repo](/running-deepseek-coder-locally-vs-cloud-api-for-private-repo/)
+- [AI Coding Assistant Accuracy for Typescript Next Js Server C](/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
+- [AI Coding Assistant Accuracy for TypeScript Svelte Component](/ai-coding-assistant-accuracy-for-typescript-svelte-component/)
+- [AI Coding Assistant Comparison for React Component](/ai-coding-assistant-comparison-for-react-component-generatio/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

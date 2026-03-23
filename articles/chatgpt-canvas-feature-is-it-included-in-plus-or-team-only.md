@@ -255,11 +255,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [ChatGPT Plus Cancel Mid Month: Do You Keep Access Until End?](/ai-tools-compared/chatgpt-plus-cancel-mid-month-do-you-keep-access-until-end/)
-- [Switching from ChatGPT Plus to Perplexity Pro Feature](/ai-tools-compared/switching-from-chatgpt-plus-to-perplexity-pro-feature-compar/)
-- [ChatGPT Plus Subscription Not Activating](/ai-tools-compared/chatgpt-plus-subscription-not-activating-fix/)
-- [Claude Artifacts vs ChatGPT Canvas Comparison](/ai-tools-compared/claude-artifacts-vs-chatgpt-canvas-comparison/)
-- [ChatGPT Canvas Not Saving Changes Fix (2026)](/ai-tools-compared/chatgpt-canvas-not-saving-changes-fix-2026/)
-- [Best Tools for Remote Team Feature Flags](https://theluckystrike.github.io/remote-work-tools/best-tools-remote-team-feature-flags/)
+- [ChatGPT Plus Cancel Mid Month: Do You Keep Access Until End?](/chatgpt-plus-cancel-mid-month-do-you-keep-access-until-end/)
+- [Switching from ChatGPT Plus to Perplexity Pro Feature](/switching-from-chatgpt-plus-to-perplexity-pro-feature-compar/)
+- [ChatGPT Plus Subscription Not Activating](/chatgpt-plus-subscription-not-activating-fix/)
+- [Claude Artifacts vs ChatGPT Canvas Comparison](/claude-artifacts-vs-chatgpt-canvas-comparison/)
+- [ChatGPT Canvas Not Saving Changes Fix (2026)](/chatgpt-canvas-not-saving-changes-fix-2026/)
+- [Best Tools for Remote Team Feature Flags](https://welikeremotestack.com/best-tools-remote-team-feature-flags/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

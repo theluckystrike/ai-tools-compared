@@ -430,11 +430,11 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)
-- [How to Use AI for Automated Code Migration](/ai-tools-compared/how-to-use-ai-for-automated-code-migration/)
-- [How to Use AI Tool Chaining for Automated Code Review](/ai-tools-compared/how-to-use-ai-tool-chaining-for-automated-code-review-and-fi/)
-- [How to Use the Claude API for Automated Code Review](/ai-tools-compared/how-to-use-claude-api-for-automated-code-review/)
-- [AI for Automated Regression Test Generation from Bug Reports](/ai-tools-compared/ai-for-automated-regression-test-generation-from-bug-reports/)
+- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-for-automated-api-documentation-from-code-comments/)
+- [How to Use AI for Automated Code Migration](/how-to-use-ai-for-automated-code-migration/)
+- [How to Use AI Tool Chaining for Automated Code Review](/how-to-use-ai-tool-chaining-for-automated-code-review-and-fi/)
+- [How to Use the Claude API for Automated Code Review](/how-to-use-claude-api-for-automated-code-review/)
+- [AI for Automated Regression Test Generation from Bug Reports](/ai-for-automated-regression-test-generation-from-bug-reports/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

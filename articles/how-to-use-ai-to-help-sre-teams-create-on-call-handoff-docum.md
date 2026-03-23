@@ -528,11 +528,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Use AI to Help SRE Teams Draft Root Cause Analysis](/ai-tools-compared/how-to-use-ai-to-help-sre-teams-draft-root-cause-analysis-do/)
-- [How to Use AI to Help Devrel Teams Create Video Tutorial Scr](/ai-tools-compared/how-to-use-ai-to-help-devrel-teams-create-video-tutorial-scr/)
-- [How to Use AI to Help Devrel Create Comparison Tables](/ai-tools-compared/how-to-use-ai-to-help-devrel-create-comparison-tables-for-competing-api-features/)
-- [How to Use AI to Help Devrel Create Interactive Coding](/ai-tools-compared/how-to-use-ai-to-help-devrel-create-interactive-coding-playgrounds/)
-- [How to Use AI to Help QA Engineers Create Test Environment](/ai-tools-compared/how-to-use-ai-to-help-qa-engineers-create-test-environment-p/)
-- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
+- [How to Use AI to Help SRE Teams Draft Root Cause Analysis](/how-to-use-ai-to-help-sre-teams-draft-root-cause-analysis-do/)
+- [How to Use AI to Help Devrel Teams Create Video Tutorial Scr](/how-to-use-ai-to-help-devrel-teams-create-video-tutorial-scr/)
+- [How to Use AI to Help Devrel Create Comparison Tables](/how-to-use-ai-to-help-devrel-create-comparison-tables-for-competing-api-features/)
+- [How to Use AI to Help Devrel Create Interactive Coding](/how-to-use-ai-to-help-devrel-create-interactive-coding-playgrounds/)
+- [How to Use AI to Help QA Engineers Create Test Environment](/how-to-use-ai-to-help-qa-engineers-create-test-environment-p/)
+- [AI Project Status Generator for Remote Teams Pulling](https://welikeremotestack.com/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

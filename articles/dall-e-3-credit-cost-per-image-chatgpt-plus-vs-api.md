@@ -234,11 +234,11 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [ChatGPT Plus Browsing and DALL-E Usage Limits Per Three](/ai-tools-compared/chatgpt-plus-browsing-and-dalle-usage-limits-per-three-hours/)
-- [ChatGPT Plus vs Claude Pro Monthly Cost for Daily Coding](/ai-tools-compared/chatgpt-plus-vs-claude-pro-monthly-cost-for-daily-coding/)
-- [ChatGPT Plus Cancel Mid Month: Do You Keep Access Until End?](/ai-tools-compared/chatgpt-plus-cancel-mid-month-do-you-keep-access-until-end/)
-- [DALL-E Image Generation Failed: How](/ai-tools-compared/dalle-image-generation-failed-how-to-retry/)
-- [Claude Free vs ChatGPT Free Which Gives More Per](/ai-tools-compared/claude-free-vs-chatgpt-free-which-gives-more-per-day/)
+- [ChatGPT Plus Browsing and DALL-E Usage Limits Per Three](/chatgpt-plus-browsing-and-dalle-usage-limits-per-three-hours/)
+- [ChatGPT Plus vs Claude Pro Monthly Cost for Daily Coding](/chatgpt-plus-vs-claude-pro-monthly-cost-for-daily-coding/)
+- [ChatGPT Plus Cancel Mid Month: Do You Keep Access Until End?](/chatgpt-plus-cancel-mid-month-do-you-keep-access-until-end/)
+- [DALL-E Image Generation Failed: How](/dalle-image-generation-failed-how-to-retry/)
+- [Claude Free vs ChatGPT Free Which Gives More Per](/claude-free-vs-chatgpt-free-which-gives-more-per-day/)
 ## Real-World Cost Scenarios
 
 **Scenario 1: Content Creator Generating Social Media Images**
@@ -515,9 +515,9 @@ print(f"Remaining: ${generator.remaining_budget():.2f}")
 
 ## Related Articles
 
-- [Comparing DALL-E 3, Midjourney, and Stable Diffusion Costs](/ai-tools-compared/dalle3-midjourney-stable-diffusion-cost/)
-- [Building Automated Image Generation Pipelines](/ai-tools-compared/automated-image-generation-pipelines/)
-- [ROI Analysis: AI Image Generation for E-commerce](/ai-tools-compared/roi-ai-image-generation-ecommerce/)
+- [Comparing DALL-E 3, Midjourney, and Stable Diffusion Costs](/dalle3-midjourney-stable-diffusion-cost/)
+- [Building Automated Image Generation Pipelines](/automated-image-generation-pipelines/)
+- [ROI Analysis: AI Image Generation for E-commerce](/roi-ai-image-generation-ecommerce/)
 
 {% endraw %}---
 

@@ -655,10 +655,10 @@ For teams already using **Docusaurus**, the plugin ecosystem provides flexibilit
 {% endraw %}
 ## Related Articles
 
-- [Best AI Tools for Code Documentation Generation 2026](/ai-tools-compared/best-ai-tools-for-code-documentation-generation-2026/)
-- [AI Tools for Reviewing Documentation Pull Requests](/ai-tools-compared/ai-tools-for-reviewing-documentation-pull-requests-for-accur/)
-- [Best AI Tools for Generating API Documentation From Code](/ai-tools-compared/best-ai-tools-for-generating-api-documentation-from-code-2026/)
-- [AI Tools for Automated Code Documentation Generation in 2026](/ai-tools-compared/ai-tools-for-automated-code-documentation-generation-2026/---)
-- [AI Tools for Generating API Versioning Documentation and](/ai-tools-compared/ai-tools-for-generating-api-versioning-documentation-and-dep/)
+- [Best AI Tools for Code Documentation Generation 2026](/best-ai-tools-for-code-documentation-generation-2026/)
+- [AI Tools for Reviewing Documentation Pull Requests](/ai-tools-for-reviewing-documentation-pull-requests-for-accur/)
+- [Best AI Tools for Generating API Documentation From Code](/best-ai-tools-for-generating-api-documentation-from-code-2026/)
+- [AI Tools for Automated Code Documentation Generation in 2026](/ai-tools-for-automated-code-documentation-generation-2026/---)
+- [AI Tools for Generating API Versioning Documentation and](/ai-tools-for-generating-api-versioning-documentation-and-dep/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

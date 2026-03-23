@@ -297,11 +297,11 @@ Most tools discussed here can be used productively within a few hours for basic 
 
 ## Related Articles
 
-- [Best AI Tools for Writing Kubernetes Manifests and Helm](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-manifests-and-helm-charts-2026/)
-- [Best Workflow for Using AI to Modernize Legacy Application A](/ai-tools-compared/best-workflow-for-using-ai-to-modernize-legacy-application-a/)
-- [How to Use AI to Diagnose Spring Boot Application Context](/ai-tools-compared/how-to-use-ai-to-diagnose-spring-boot-application-context-st/)
-- [AI Assistants for Writing Correct AWS IAM Policies](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
-- [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
+- [Best AI Tools for Writing Kubernetes Manifests and Helm](/best-ai-tools-for-writing-kubernetes-manifests-and-helm-charts-2026/)
+- [Best Workflow for Using AI to Modernize Legacy Application A](/best-workflow-for-using-ai-to-modernize-legacy-application-a/)
+- [How to Use AI to Diagnose Spring Boot Application Context](/how-to-use-ai-to-diagnose-spring-boot-application-context-st/)
+- [AI Assistants for Writing Correct AWS IAM Policies](/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
+- [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

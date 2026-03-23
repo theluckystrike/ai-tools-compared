@@ -330,9 +330,9 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Canva AI vs Adobe Firefly: Design Tool Compared](/ai-tools-compared/canva-ai-vs-adobe-firefly-design-tool-compared/)
-- [Canva AI Video Editor vs CapCut AI Compared 2026](/ai-tools-compared/canva-ai-video-editor-vs-capcut-ai-compared-2026/)
-- [Runway Inpainting vs Adobe Firefly Generative Fill](/ai-tools-compared/runway-inpainting-vs-adobe-firefly-generative-fill/)
+- [Canva AI vs Adobe Firefly: Design Tool Compared](/canva-ai-vs-adobe-firefly-design-tool-compared/)
+- [Canva AI Video Editor vs CapCut AI Compared 2026](/canva-ai-video-editor-vs-capcut-ai-compared-2026/)
+- [Runway Inpainting vs Adobe Firefly Generative Fill](/runway-inpainting-vs-adobe-firefly-generative-fill/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ## Related Reading

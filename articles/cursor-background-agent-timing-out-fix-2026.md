@@ -348,11 +348,11 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 
 ## Related Articles
 
-- [Cursor AI Background Agent Feature for Autonomous Multi Step](/ai-tools-compared/cursor-ai-background-agent-feature-for-autonomous-multi-step/)
-- [Migrate GitHub Copilot Workspace Setup to Cursor Background](/ai-tools-compared/migrate-github-copilot-workspace-setup-to-cursor-background-/)
-- [AI Tools for Debugging Flaky Cypress Tests Caused by Timing](/ai-tools-compared/ai-tools-for-debugging-flaky-cypress-tests-caused-by-timing-issues/)
-- [Cursor AI Making Too Many API Calls Fix: Troubleshooting](/ai-tools-compared/cursor-ai-making-too-many-api-calls-fix/)
-- [Cursor AI Not Autocompleting TypeScript Fix](/ai-tools-compared/cursor-ai-not-autocompleting-typescript-fix/)
+- [Cursor AI Background Agent Feature for Autonomous Multi Step](/cursor-ai-background-agent-feature-for-autonomous-multi-step/)
+- [Migrate GitHub Copilot Workspace Setup to Cursor Background](/migrate-github-copilot-workspace-setup-to-cursor-background-/)
+- [AI Tools for Debugging Flaky Cypress Tests Caused by Timing](/ai-tools-for-debugging-flaky-cypress-tests-caused-by-timing-issues/)
+- [Cursor AI Making Too Many API Calls Fix: Troubleshooting](/cursor-ai-making-too-many-api-calls-fix/)
+- [Cursor AI Not Autocompleting TypeScript Fix](/cursor-ai-not-autocompleting-typescript-fix/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

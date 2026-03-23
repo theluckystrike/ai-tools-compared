@@ -286,11 +286,11 @@ Treating the catalog as an one-time setup task. Metadata goes stale as schemas e
 
 ## Related Articles
 
-- [AI Powered Data Cataloging Tools: A Practical Guide for](/ai-tools-compared/ai-powered-data-cataloging-tools/)
-- [Best AI Tools for Data Cleaning: A Practical Guide for](/ai-tools-compared/best-ai-tools-for-data-cleaning/)
-- [Best AI Tools for Data Governance: A Practical Guide for](/ai-tools-compared/best-ai-tools-for-data-governance/)
-- [Streamlit vs Gradio for AI Data Apps: A Practical Comparison](/ai-tools-compared/streamlit-vs-gradio-ai-data-apps/)
-- [AI Tools for Generating Kubernetes Service Mesh](/ai-tools-compared/ai-tools-for-generating-kubernetes-service-mesh-configuratio/)
+- [AI Powered Data Cataloging Tools: A Practical Guide for](/ai-powered-data-cataloging-tools/)
+- [Best AI Tools for Data Cleaning: A Practical Guide for](/best-ai-tools-for-data-cleaning/)
+- [Best AI Tools for Data Governance: A Practical Guide for](/best-ai-tools-for-data-governance/)
+- [Streamlit vs Gradio for AI Data Apps: A Practical Comparison](/streamlit-vs-gradio-ai-data-apps/)
+- [AI Tools for Generating Kubernetes Service Mesh](/ai-tools-for-generating-kubernetes-service-mesh-configuratio/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

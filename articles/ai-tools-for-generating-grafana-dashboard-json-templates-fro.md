@@ -277,10 +277,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Generating Grafana Dashboards from Metrics](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
-- [AI Tools for Creating Grafana SLO Dashboard Panels](/ai-tools-compared/ai-tools-for-creating-grafana-slo-dashboard-panels-with-burn/)
-- [Best AI Assistant for Building Grafana Dashboard Panels](/ai-tools-compared/best-ai-assistant-for-building-grafana-dashboard-panels-from-prometheus-queries/)
-- [AI Tools for Converting Raw JSON API Responses into Clean](/ai-tools-compared/ai-tools-for-converting-raw-json-api-responses-into-clean-pandas-dataframes/)
-- [AI Tools for Writing CI CD Pipeline Configurations 2026](/ai-tools-compared/ai-tools-for-writing-ci-cd-pipeline-configurations-2026/)
+- [AI Tools for Generating Grafana Dashboards from Metrics](/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
+- [AI Tools for Creating Grafana SLO Dashboard Panels](/ai-tools-for-creating-grafana-slo-dashboard-panels-with-burn/)
+- [Best AI Assistant for Building Grafana Dashboard Panels](/best-ai-assistant-for-building-grafana-dashboard-panels-from-prometheus-queries/)
+- [AI Tools for Converting Raw JSON API Responses into Clean](/ai-tools-for-converting-raw-json-api-responses-into-clean-pandas-dataframes/)
+- [AI Tools for Writing CI CD Pipeline Configurations 2026](/ai-tools-for-writing-ci-cd-pipeline-configurations-2026/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

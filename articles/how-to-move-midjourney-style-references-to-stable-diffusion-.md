@@ -282,10 +282,10 @@ Yes. Tools like `kohya-ss` and `sd-scripts` include a `merge_lora.py` script for
 
 ## Related Articles
 
-- [Move Stable Diffusion Workflows to Midjourney](/ai-tools-compared/how-to-move-stable-diffusion-workflows-to-midjourney-equivalent-setup/)
-- [Stable Diffusion vs Midjourney for Character Design](/ai-tools-compared/stable-diffusion-vs-midjourney-for-character-design/)
-- [DALL-E 3 vs Stable Diffusion for Illustrations](/ai-tools-compared/dall-e-3-vs-stable-diffusion-for-illustrations/)
-- [Stable Diffusion ComfyUI vs Automatic1111 Comparison](/ai-tools-compared/stable-diffusion-comfyui-vs-automatic1111-comparison/)
+- [Move Stable Diffusion Workflows to Midjourney](/how-to-move-stable-diffusion-workflows-to-midjourney-equivalent-setup/)
+- [Stable Diffusion vs Midjourney for Character Design](/stable-diffusion-vs-midjourney-for-character-design/)
+- [DALL-E 3 vs Stable Diffusion for Illustrations](/dall-e-3-vs-stable-diffusion-for-illustrations/)
+- [Stable Diffusion ComfyUI vs Automatic1111 Comparison](/stable-diffusion-comfyui-vs-automatic1111-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```

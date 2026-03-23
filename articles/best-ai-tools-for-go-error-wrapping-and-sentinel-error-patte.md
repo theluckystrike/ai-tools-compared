@@ -517,10 +517,10 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Best AI Tools for Writing Idiomatic Rust Error Handling](/ai-tools-compared/best-ai-tools-for-writing-idiomatic-rust-error-handling-with/)
-- [Claude Code API Error Handling Standards](/ai-tools-compared/claude-code-api-error-handling-standards/)
-- [Copilot vs Cursor for Writing Rust Error Handling](/ai-tools-compared/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
-- [Best AI Assistant for Creating API Error Code Reference Documentation 2026](/ai-tools-compared/best-ai-assistant-for-creating-api-error-code-reference-docu/)
-- [Best AI Assistant for Creating Jest Tests That Verify Error](/ai-tools-compared/best-ai-assistant-for-creating-jest-tests-that-verify-error-/)
+- [Best AI Tools for Writing Idiomatic Rust Error Handling](/best-ai-tools-for-writing-idiomatic-rust-error-handling-with/)
+- [Claude Code API Error Handling Standards](/claude-code-api-error-handling-standards/)
+- [Copilot vs Cursor for Writing Rust Error Handling](/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
+- [Best AI Assistant for Creating API Error Code Reference Documentation 2026](/best-ai-assistant-for-creating-api-error-code-reference-docu/)
+- [Best AI Assistant for Creating Jest Tests That Verify Error](/best-ai-assistant-for-creating-jest-tests-that-verify-error-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

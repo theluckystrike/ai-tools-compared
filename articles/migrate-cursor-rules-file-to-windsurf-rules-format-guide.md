@@ -286,10 +286,10 @@ Review Codeium's privacy policy for current details. Project-level rules in `.wi
 
 ## Related Articles
 
-- [Migrate Windsurf AI Rules to Cursor Dot Cursor Rules Format](/ai-tools-compared/migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/)
-- [Migrating Copilot Custom Instructions to Cursor Rules.](/ai-tools-compared/migrating-copilot-custom-instructions-to-cursor-rules-file-f/)
-- [How to Migrate Cursor AI Snippets and Templates](/ai-tools-compared/migrate-cursor-ai-snippets-and-templates-to-windsurf-editor/)
-- [Windsurf Cascade vs Cursor Composer: Multi-File AI Editing](/ai-tools-compared/windsurf-cascade-vs-cursor-composer-multi-file-ai-editing-co/)
-- [Migrate ChatGPT System Prompts](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-format/)
+- [Migrate Windsurf AI Rules to Cursor Dot Cursor Rules Format](/migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/)
+- [Migrating Copilot Custom Instructions to Cursor Rules.](/migrating-copilot-custom-instructions-to-cursor-rules-file-f/)
+- [How to Migrate Cursor AI Snippets and Templates](/migrate-cursor-ai-snippets-and-templates-to-windsurf-editor/)
+- [Windsurf Cascade vs Cursor Composer: Multi-File AI Editing](/windsurf-cascade-vs-cursor-composer-multi-file-ai-editing-co/)
+- [Migrate ChatGPT System Prompts](/migrate-chatgpt-system-prompts-to-claude-system-prompt-format/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

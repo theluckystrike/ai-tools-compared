@@ -362,10 +362,10 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 
 ## Related Articles
 
-- [AI Tools for Generating pytest Fixtures from Database](/ai-tools-compared/ai-tools-for-generating-pytest-fixtures-from-database-schema/)
-- [AI Tools for Creating Test Data Snapshots for Database](/ai-tools-compared/ai-tools-for-creating-test-data-snapshots-for-database-rollback-between-test-runs/)
-- [Copilot vs Claude Code for Writing Jest Test](/ai-tools-compared/copilot-vs-claude-code-for-writing--jest-test-s/)
-- [ChatGPT vs Claude for Creating Database Migration Scripts](/ai-tools-compared/chatgpt-vs-claude-for-creating-database-migration-scripts-po/)
-- [ChatGPT vs Claude for Generating Cypress Component Test Boil](/ai-tools-compared/chatgpt-vs-claude-for-generating-cypress-component-test-boil/)
+- [AI Tools for Generating pytest Fixtures from Database](/ai-tools-for-generating-pytest-fixtures-from-database-schema/)
+- [AI Tools for Creating Test Data Snapshots for Database](/ai-tools-for-creating-test-data-snapshots-for-database-rollback-between-test-runs/)
+- [Copilot vs Claude Code for Writing Jest Test](/copilot-vs-claude-code-for-writing--jest-test-s/)
+- [ChatGPT vs Claude for Creating Database Migration Scripts](/chatgpt-vs-claude-for-creating-database-migration-scripts-po/)
+- [ChatGPT vs Claude for Generating Cypress Component Test Boil](/chatgpt-vs-claude-for-generating-cypress-component-test-boil/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

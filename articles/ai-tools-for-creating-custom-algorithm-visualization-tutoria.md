@@ -407,9 +407,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Explaining Sorting Algorithm Tradeoffs](/ai-tools-compared/ai-tools-for-explaining-sorting-algorithm-tradeoffs-for-diff/)
-- [How Accurate Are AI Tools](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-serde-serialization-code/)
-- [AI Tools for Devrel Teams Creating Developer Onboarding](/ai-tools-compared/ai-tools-for-devrel-teams-creating-developer-onboarding-chec/)
-- [How Accurate Are AI Tools at Generating TypeScript Zod](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-typescript-zod-schem/)
-- [AI Tools for Creating Property-Based Test Cases](/ai-tools-compared/ai-tools-for-creating-property-based-test-cases-using-hypoth/)
+- [AI Tools for Explaining Sorting Algorithm Tradeoffs](/ai-tools-for-explaining-sorting-algorithm-tradeoffs-for-diff/)
+- [How Accurate Are AI Tools](/how-accurate-are-ai-tools-at-generating-rust-serde-serialization-code/)
+- [AI Tools for Devrel Teams Creating Developer Onboarding](/ai-tools-for-devrel-teams-creating-developer-onboarding-chec/)
+- [How Accurate Are AI Tools at Generating TypeScript Zod](/how-accurate-are-ai-tools-at-generating-typescript-zod-schem/)
+- [AI Tools for Creating Property-Based Test Cases](/ai-tools-for-creating-property-based-test-cases-using-hypoth/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

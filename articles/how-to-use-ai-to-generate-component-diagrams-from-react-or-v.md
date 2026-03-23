@@ -296,10 +296,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Use AI to Generate Activity Diagrams from User](/ai-tools-compared/how-to-use-ai-to-generate-activity-diagrams-from-user-acceptance-criteria/)
-- [How to Generate Mermaid Sequence Diagrams from API Endpoint](/ai-tools-compared/how-to-generate-mermaid-sequence-diagrams-from-api-endpoint-descriptions-using-ai/)
-- [AI Coding Assistant Comparison for React Component](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
-- [AI Tools for Creating System Context Diagrams Using C4](/ai-tools-compared/ai-tools-for-creating-system-context-diagrams-using-c4-model/)
-- [How to Use AI to Generate Jest Component Tests with Testing](/ai-tools-compared/how-to-use-ai-to-generate-jest-component-tests-with-testing-/)
+- [How to Use AI to Generate Activity Diagrams from User](/how-to-use-ai-to-generate-activity-diagrams-from-user-acceptance-criteria/)
+- [How to Generate Mermaid Sequence Diagrams from API Endpoint](/how-to-generate-mermaid-sequence-diagrams-from-api-endpoint-descriptions-using-ai/)
+- [AI Coding Assistant Comparison for React Component](/ai-coding-assistant-comparison-for-react-component-generatio/)
+- [AI Tools for Creating System Context Diagrams Using C4](/ai-tools-for-creating-system-context-diagrams-using-c4-model/)
+- [How to Use AI to Generate Jest Component Tests with Testing](/how-to-use-ai-to-generate-jest-component-tests-with-testing-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

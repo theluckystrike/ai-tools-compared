@@ -569,11 +569,11 @@ Traditional autocomplete suggests the next word. AI understands intent and gener
 
 ## Related Articles
 
-- [Best AI Tools for Writing Shell Scripts](/ai-tools-compared/best-ai-tools-for-writing-shell-scripts-for-server-automation/)
-- [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-compared/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)
-- [Free AI Tools for Writing Bash Scripts and Automation](/ai-tools-compared/free-ai-tools-for-writing-bash-scripts-and-automation/)
-- [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
-- [Copilot vs Claude Code for Writing GitHub Actions Cicd](/ai-tools-compared/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
+- [Best AI Tools for Writing Shell Scripts](/best-ai-tools-for-writing-shell-scripts-for-server-automation/)
+- [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)
+- [Free AI Tools for Writing Bash Scripts and Automation](/free-ai-tools-for-writing-bash-scripts-and-automation/)
+- [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
+- [Copilot vs Claude Code for Writing GitHub Actions Cicd](/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Related Reading

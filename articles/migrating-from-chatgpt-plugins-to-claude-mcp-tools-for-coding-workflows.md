@@ -403,11 +403,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How to Build Custom MCP Servers for Claude](/ai-tools-compared/how-to-build-custom-mcp-servers-for-claude)
-- [Transfer ChatGPT Custom GPTs to Claude Projects](/ai-tools-compared/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
-- [Claude Free vs ChatGPT Free Which Gives More Per](/ai-tools-compared/claude-free-vs-chatgpt-free-which-gives-more-per-day/)
-- [Migrate ChatGPT System Prompts](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-format/)
-- [ChatGPT vs Claude for Explaining TensorFlow Model](/ai-tools-compared/chatgpt-vs-claude-for-explaining-tensorflow-model-architectu/)
-- [Claude Code for Faker.js Test Data Workflow Guide](https://theluckystrike.github.io/remote-work-tools/claude-code-for-faker-js-test-data-workflow-guide/)
+- [How to Build Custom MCP Servers for Claude](/how-to-build-custom-mcp-servers-for-claude)
+- [Transfer ChatGPT Custom GPTs to Claude Projects](/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
+- [Claude Free vs ChatGPT Free Which Gives More Per](/claude-free-vs-chatgpt-free-which-gives-more-per-day/)
+- [Migrate ChatGPT System Prompts](/migrate-chatgpt-system-prompts-to-claude-system-prompt-format/)
+- [ChatGPT vs Claude for Explaining TensorFlow Model](/chatgpt-vs-claude-for-explaining-tensorflow-model-architectu/)
+- [Claude Code for Faker.js Test Data Workflow Guide](https://welikeremotestack.com/claude-code-for-faker-js-test-data-workflow-guide/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

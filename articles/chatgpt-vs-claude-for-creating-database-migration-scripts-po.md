@@ -433,11 +433,11 @@ def test_migration():
 
 ## Related Articles
 
-- [Best AI Tools for Writing Database Seed Scripts 2026](/ai-tools-compared/best-ai-tools-for-writing-database-seed-scripts-2026/)
-- [AI-Powered Database Migration Tools Comparison 2026](/ai-tools-compared/ai-powered-database-migration-tools-comparison/)
-- [AI Tools for Writing pytest Tests for Alembic Database](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
-- [ChatGPT vs Claude for Creating OpenAPI Spec from Existing](/ai-tools-compared/chatgpt-vs-claude-for-creating-openapi-spec-from-existing-co/)
-- [Claude vs ChatGPT for Creating AWS CDK Infrastructure Stacks](/ai-tools-compared/claude-vs-chatgpt-for-creating-aws-cdk-infrastructure-stacks/)
+- [Best AI Tools for Writing Database Seed Scripts 2026](/best-ai-tools-for-writing-database-seed-scripts-2026/)
+- [AI-Powered Database Migration Tools Comparison 2026](/ai-powered-database-migration-tools-comparison/)
+- [AI Tools for Writing pytest Tests for Alembic Database](/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
+- [ChatGPT vs Claude for Creating OpenAPI Spec from Existing](/chatgpt-vs-claude-for-creating-openapi-spec-from-existing-co/)
+- [Claude vs ChatGPT for Creating AWS CDK Infrastructure Stacks](/claude-vs-chatgpt-for-creating-aws-cdk-infrastructure-stacks/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

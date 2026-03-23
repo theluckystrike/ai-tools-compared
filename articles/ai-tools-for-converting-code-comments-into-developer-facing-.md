@@ -460,11 +460,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)
-- [AI Tools for Converting Figma Designs to Code 2026](/ai-tools-compared/articles/ai-tools-for-converting-figma-designs-to-code-2026/)
-- [How to Use AI to Write GitHub Actions Bot Comments for First](/ai-tools-compared/how-to-use-ai-to-write-github-actions-bot-comments-for-first/)
-- [Claude Code Developer Portal Setup Guide](/ai-tools-compared/claude-code-developer-portal-setup-guide/)
-- [Gemini Code Assist Enterprise Pricing Per Developer](/ai-tools-compared/gemini-code-assist-enterprise-pricing-per-developer-breakdown-2026/)
+- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-for-automated-api-documentation-from-code-comments/)
+- [AI Tools for Converting Figma Designs to Code 2026](/articles/ai-tools-for-converting-figma-designs-to-code-2026/)
+- [How to Use AI to Write GitHub Actions Bot Comments for First](/how-to-use-ai-to-write-github-actions-bot-comments-for-first/)
+- [Claude Code Developer Portal Setup Guide](/claude-code-developer-portal-setup-guide/)
+- [Gemini Code Assist Enterprise Pricing Per Developer](/gemini-code-assist-enterprise-pricing-per-developer-breakdown-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

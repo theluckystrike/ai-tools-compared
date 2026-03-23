@@ -331,11 +331,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for Automated Changelog Generation 2026](/ai-tools-compared/ai-tools-for-automated-changelog-generation-2026/)
-- [How to Use AI to Create Changelog Entries Grouped by Breakin](/ai-tools-compared/how-to-use-ai-to-create-changelog-entries-grouped-by-breakin/)
-- [AI Tools for Product Managers Drafting Release](/ai-tools-compared/ai-tools-for-product-managers-drafting-release-communication-emails-from-feature-lists/)
-- [Best AI Assistant for Generating Open Source Release](/ai-tools-compared/best-ai-assistant-for-generating-open-source-release-announcements/)
-- [How to Use AI to Write GitHub Release Tag Descriptions](/ai-tools-compared/how-to-use-ai-to-write-github-release-tag-descriptions-with-/)
+- [AI Tools for Automated Changelog Generation 2026](/ai-tools-for-automated-changelog-generation-2026/)
+- [How to Use AI to Create Changelog Entries Grouped by Breakin](/how-to-use-ai-to-create-changelog-entries-grouped-by-breakin/)
+- [AI Tools for Product Managers Drafting Release](/ai-tools-for-product-managers-drafting-release-communication-emails-from-feature-lists/)
+- [Best AI Assistant for Generating Open Source Release](/best-ai-assistant-for-generating-open-source-release-announcements/)
+- [How to Use AI to Write GitHub Release Tag Descriptions](/how-to-use-ai-to-write-github-release-tag-descriptions-with-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -365,10 +365,10 @@ Pick one tool from the options discussed and sign up for a free trial. Spend 30 
 
 ## Related Articles
 
-- [AI-Powered Dependency Update Tools Compared](/ai-tools-compared/ai-powered-dependency-update-tools-compared/)
-- [AI Tools for Generating Grafana Dashboards from Metrics](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
-- [AI Tools for Generating Dependency Update Pull Request](/ai-tools-compared/ai-tools-for-generating-dependency-update-pull-request-descr/)
-- [AI-Powered API Gateway Configuration Tools 2026](/ai-tools-compared/ai-powered-api-gateway-configuration-tools-2026/)
-- [AI Tools for Generating Closed Captions and Transcripts](/ai-tools-compared/ai-tools-for-generating-closed-captions-and-transcripts-from/)
+- [AI-Powered Dependency Update Tools Compared](/ai-powered-dependency-update-tools-compared/)
+- [AI Tools for Generating Grafana Dashboards from Metrics](/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
+- [AI Tools for Generating Dependency Update Pull Request](/ai-tools-for-generating-dependency-update-pull-request-descr/)
+- [AI-Powered API Gateway Configuration Tools 2026](/ai-powered-api-gateway-configuration-tools-2026/)
+- [AI Tools for Generating Closed Captions and Transcripts](/ai-tools-for-generating-closed-captions-and-transcripts-from/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

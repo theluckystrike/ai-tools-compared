@@ -431,20 +431,20 @@ This kind of structured diagnostic output — triage list plus investigation com
 
 ## Related Reading
 
-- [Gemini vs Claude for Writing Apache Kafka Consumer/Producer Config](/ai-tools-compared/gemini-vs-claude-for-writing-apache-kafka-consumer-producer-/)
-- [AI-Powered CI/CD Pipeline Optimization](/ai-tools-compared/ai-powered-cicd-pipeline-optimization-2026/)
-- [AI-Powered Observability Configuration Tools](/ai-tools-compared/ai-powered-observability-configuration-tools-2026/)
+- [Gemini vs Claude for Writing Apache Kafka Consumer/Producer Config](/gemini-vs-claude-for-writing-apache-kafka-consumer-producer-/)
+- [AI-Powered CI/CD Pipeline Optimization](/ai-powered-cicd-pipeline-optimization-2026/)
+- [AI-Powered Observability Configuration Tools](/ai-powered-observability-configuration-tools-2026/)
 
-- [AI-Powered API Gateway Configuration Tools 2026](/ai-tools-compared/ai-powered-api-gateway-configuration-tools-2026/)
+- [AI-Powered API Gateway Configuration Tools 2026](/ai-powered-api-gateway-configuration-tools-2026/)
 ---
 
 ## Related Articles
 
-- [Gemini vs Claude for Writing Apache Kafka Consumer Producer](/ai-tools-compared/gemini-vs-claude-for-writing-apache-kafka-consumer-producer-/)
-- [Best AI Tools for Writing Nginx Configurations](/ai-tools-compared/ai-tools-for-nginx-configuration)
-- [AI Tools for Automated Load Balancer Config 2026](/ai-tools-compared/ai-tools-for-load-balancer-config-2026/)
-- [How to Use AI to Generate Serverless Framework Configuration](/ai-tools-compared/how-to-use-ai-to-generate-serverless-framework-configuration/)
-- [AI Tools for Generating Nginx Configuration Files 2026](/ai-tools-compared/ai-tools-for-generating-nginx-configuration-files-2026/)
+- [Gemini vs Claude for Writing Apache Kafka Consumer Producer](/gemini-vs-claude-for-writing-apache-kafka-consumer-producer-/)
+- [Best AI Tools for Writing Nginx Configurations](/ai-tools-for-nginx-configuration)
+- [AI Tools for Automated Load Balancer Config 2026](/ai-tools-for-load-balancer-config-2026/)
+- [How to Use AI to Generate Serverless Framework Configuration](/how-to-use-ai-to-generate-serverless-framework-configuration/)
+- [AI Tools for Generating Nginx Configuration Files 2026](/ai-tools-for-generating-nginx-configuration-files-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

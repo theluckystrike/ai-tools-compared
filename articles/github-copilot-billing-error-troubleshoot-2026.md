@@ -265,11 +265,11 @@ GitHub Enterprise supports invoicing via purchase order for annual commitments. 
 
 ## Related Articles
 
-- [GitHub Copilot Usage Based Billing How API Calls Are Counted](/ai-tools-compared/github-copilot-usage-based-billing-how-api-calls-are-counted/)
-- [Copilot vs Cursor for Writing Rust Error Handling with](/ai-tools-compared/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
-- [Best Practices for Writing GitHub Copilot Custom Instruction](/ai-tools-compared/best-practices-for-writing-github-copilot-custom-instruction/)
-- [Completely Free Alternatives to GitHub Copilot That Actually](/ai-tools-compared/completely-free-alternatives-to-github-copilot-that-actually/)
-- [Continue Dev vs GitHub Copilot: Open Source Comparison](/ai-tools-compared/continue-dev-vs-github-copilot-open-source-comparison/)
+- [GitHub Copilot Usage Based Billing How API Calls Are Counted](/github-copilot-usage-based-billing-how-api-calls-are-counted/)
+- [Copilot vs Cursor for Writing Rust Error Handling with](/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
+- [Best Practices for Writing GitHub Copilot Custom Instruction](/best-practices-for-writing-github-copilot-custom-instruction/)
+- [Completely Free Alternatives to GitHub Copilot That Actually](/completely-free-alternatives-to-github-copilot-that-actually/)
+- [Continue Dev vs GitHub Copilot: Open Source Comparison](/continue-dev-vs-github-copilot-open-source-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

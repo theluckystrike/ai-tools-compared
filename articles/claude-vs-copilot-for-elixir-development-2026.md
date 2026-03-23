@@ -418,20 +418,20 @@ Claude adds `async: false` because the test uses a named GenServer process, and 
 
 ## Related Reading
 
-- [Claude vs Copilot for Swift Development](/ai-tools-compared/claude-vs-copilot-for-swift-development-2026/)
-- [How to Use AI to Interpret Elixir GenServer Crash Reports](/ai-tools-compared/how-to-use-ai-to-interpret-elixir-genserver-crash-reports-an/)
-- [Claude vs GPT-4 for Shell Scripting](/ai-tools-compared/claude-vs-gpt4-for-shell-scripting-2026/)
-- [Claude vs Copilot for Rust Development](/ai-tools-compared/claude-vs-copilot-for-rust-development)
+- [Claude vs Copilot for Swift Development](/claude-vs-copilot-for-swift-development-2026/)
+- [How to Use AI to Interpret Elixir GenServer Crash Reports](/how-to-use-ai-to-interpret-elixir-genserver-crash-reports-an/)
+- [Claude vs GPT-4 for Shell Scripting](/claude-vs-gpt4-for-shell-scripting-2026/)
+- [Claude vs Copilot for Rust Development](/claude-vs-copilot-for-rust-development)
 
 ---
 
 ## Related Articles
 
-- [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
-- [Claude Max Context Window Exceeded: What](/ai-tools-compared/claude-max-context-window-exceeded-what-to-do/)
-- [Effective Tool Chaining Workflow Using Copilot and Claude](/ai-tools-compared/effective-tool-chaining-workflow-using-copilot-and-claude-together-for-coding/)
-- [Best AI Tools for Generating API Rate Limiting Code 2026](/ai-tools-compared/best-ai-tools-for-generating-api-rate-limiting-code-2026/)
-- [Claude vs Copilot for Swift Development 2026](/ai-tools-compared/claude-vs-copilot-for-swift-development-2026/)
+- [Claude Code Go Module Development Guide](/claude-code-go-module-development-guide/)
+- [Claude Max Context Window Exceeded: What](/claude-max-context-window-exceeded-what-to-do/)
+- [Effective Tool Chaining Workflow Using Copilot and Claude](/effective-tool-chaining-workflow-using-copilot-and-claude-together-for-coding/)
+- [Best AI Tools for Generating API Rate Limiting Code 2026](/best-ai-tools-for-generating-api-rate-limiting-code-2026/)
+- [Claude vs Copilot for Swift Development 2026](/claude-vs-copilot-for-swift-development-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

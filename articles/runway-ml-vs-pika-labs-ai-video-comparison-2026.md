@@ -284,10 +284,10 @@ Implement a queue (Redis-backed with Celery, or a simple database table) that ho
 
 ## Related Articles
 
-- [Runway ML vs Pika AI: Video Generation Tools Compared](/ai-tools-compared/runway-ml-vs-pika-ai-video-generation/)
-- [Sora vs Runway AI Video Generation: A Technical](/ai-tools-compared/sora-vs-runway-ai-video-generation/)
-- [AI Tools for Video Thumbnail Generation](/ai-tools-compared/ai-tools-for-video-thumbnail-generation/)
-- [Kling AI vs Gen 3 Video Generation: Developer Comparison](/ai-tools-compared/kling-ai-vs-gen-3-video-generation/)
-- [Play Ht vs Wellsaid Labs AI Voice](/ai-tools-compared/play-ht-vs-wellsaid-labs-ai-voice/)
+- [Runway ML vs Pika AI: Video Generation Tools Compared](/runway-ml-vs-pika-ai-video-generation/)
+- [Sora vs Runway AI Video Generation: A Technical](/sora-vs-runway-ai-video-generation/)
+- [AI Tools for Video Thumbnail Generation](/ai-tools-for-video-thumbnail-generation/)
+- [Kling AI vs Gen 3 Video Generation: Developer Comparison](/kling-ai-vs-gen-3-video-generation/)
+- [Play Ht vs Wellsaid Labs AI Voice](/play-ht-vs-wellsaid-labs-ai-voice/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -442,11 +442,11 @@ Check your internet connection and firewall settings. If using a VPN, try discon
 
 ## Related Reading
 
-- [AI Git Commit Message Generators Compared](/ai-tools-compared/ai-git-commit-message-generators-compared/)
-- [AI Tools for Automated Changelog Generation 2026](/ai-tools-compared/ai-tools-for-automated-changelog-generation-2026/)
-- [How to Build an AI Code Review Bot](/ai-tools-compared/how-to-build-ai-code-review-bot/)
-- [Example: GitHub Actions workflow for assessment tracking](https://theluckystrike.github.io/remote-work-tools/how-to-set-up-remote-hiring-pipeline-with-async-interviews-f/)
-- [Remote Content Team Collaboration Workflow for Distributed](https://theluckystrike.github.io/remote-work-tools/remote-content-team-collaboration-workflow-for-distributed-seo-writers-2026-guide/)
+- [AI Git Commit Message Generators Compared](/ai-git-commit-message-generators-compared/)
+- [AI Tools for Automated Changelog Generation 2026](/ai-tools-for-automated-changelog-generation-2026/)
+- [How to Build an AI Code Review Bot](/how-to-build-ai-code-review-bot/)
+- [Example: GitHub Actions workflow for assessment tracking](https://welikeremotestack.com/how-to-set-up-remote-hiring-pipeline-with-async-interviews-f/)
+- [Remote Content Team Collaboration Workflow for Distributed](https://welikeremotestack.com/remote-content-team-collaboration-workflow-for-distributed-seo-writers-2026-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

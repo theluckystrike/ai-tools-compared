@@ -435,10 +435,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [AI Tools for API Documentation from Code 2026](/ai-tools-compared/ai-tools-for-api-documentation-from-code-2026/)
-- [AI Tools for API Security Testing](/ai-tools-compared/ai-tools-for-api-security-testing/)
-- [AI Tools for Product Managers Converting Customer](/ai-tools-compared/ai-tools-for-product-managers-converting-customer-interview-/)
-- [AI Tools for Generating Grafana Dashboard JSON Templates](/ai-tools-compared/ai-tools-for-generating-grafana-dashboard-json-templates-fro/)
-- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)
+- [AI Tools for API Documentation from Code 2026](/ai-tools-for-api-documentation-from-code-2026/)
+- [AI Tools for API Security Testing](/ai-tools-for-api-security-testing/)
+- [AI Tools for Product Managers Converting Customer](/ai-tools-for-product-managers-converting-customer-interview-/)
+- [AI Tools for Generating Grafana Dashboard JSON Templates](/ai-tools-for-generating-grafana-dashboard-json-templates-fro/)
+- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-for-automated-api-documentation-from-code-comments/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

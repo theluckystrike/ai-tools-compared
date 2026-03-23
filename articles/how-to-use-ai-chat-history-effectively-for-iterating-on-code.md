@@ -461,11 +461,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Migrate Copilot Chat History and Context to Cursor AI](/ai-tools-compared/migrate-copilot-chat-history-and-context-to-cursor-ai-guide/)
-- [Copilot Inline Chat vs Cursor Inline Chat: Which Understands](/ai-tools-compared/copilot-inline-chat-vs-cursor-inline-chat-which-understands-/)
-- [How to Use Copilot Chat to Generate Code from Natural](/ai-tools-compared/how-to-use-copilot-chat-to-generate-code-from-natural-langua/)
-- [Best AI Inline Chat Features in VS Code Compared to](/ai-tools-compared/best-ai-inline-chat-features-in-vscode-compared-to-jetbrains/)
-- [Copilot Chat Not Responding in GitHub](/ai-tools-compared/copilot-chat-not-responding-in-github-fix/)
-- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
+- [How to Migrate Copilot Chat History and Context to Cursor AI](/migrate-copilot-chat-history-and-context-to-cursor-ai-guide/)
+- [Copilot Inline Chat vs Cursor Inline Chat: Which Understands](/copilot-inline-chat-vs-cursor-inline-chat-which-understands-/)
+- [How to Use Copilot Chat to Generate Code from Natural](/how-to-use-copilot-chat-to-generate-code-from-natural-langua/)
+- [Best AI Inline Chat Features in VS Code Compared to](/best-ai-inline-chat-features-in-vscode-compared-to-jetbrains/)
+- [Copilot Chat Not Responding in GitHub](/copilot-chat-not-responding-in-github-fix/)
+- [AI Project Status Generator for Remote Teams Pulling](https://welikeremotestack.com/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```

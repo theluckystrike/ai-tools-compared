@@ -316,11 +316,11 @@ Running timezone tests in multiple system timezones (UTC, US/Eastern, Australia/
 
 ## Related Articles
 
-- [How to Use AI to Generate Timezone Edge Case Test Data](/ai-tools-compared/how-to-use-ai-to-generate-timezone-edge-case-test-data/)
-- [AI Tools for Creating Test Data Generators That Respect Busi](/ai-tools-compared/ai-tools-for-creating-test-data-generators-that-respect-busi/)
-- [AI Tools for Creating Test Data Snapshots for Database](/ai-tools-compared/ai-tools-for-creating-test-data-snapshots-for-database-rollback-between-test-runs/)
-- [Best AI Assistant for Creating Test Data Factories with Real](/ai-tools-compared/best-ai-assistant-for-creating-test-data-factories-with-real/)
-- [AI Tools for Creating Boundary Value Test Case](/ai-tools-compared/ai-tools-for-creating--boundary-value-test-case/)
-- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
+- [How to Use AI to Generate Timezone Edge Case Test Data](/how-to-use-ai-to-generate-timezone-edge-case-test-data/)
+- [AI Tools for Creating Test Data Generators That Respect Busi](/ai-tools-for-creating-test-data-generators-that-respect-busi/)
+- [AI Tools for Creating Test Data Snapshots for Database](/ai-tools-for-creating-test-data-snapshots-for-database-rollback-between-test-runs/)
+- [Best AI Assistant for Creating Test Data Factories with Real](/best-ai-assistant-for-creating-test-data-factories-with-real/)
+- [AI Tools for Creating Boundary Value Test Case](/ai-tools-for-creating--boundary-value-test-case/)
+- [AI Project Status Generator for Remote Teams Pulling](https://welikeremotestack.com/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

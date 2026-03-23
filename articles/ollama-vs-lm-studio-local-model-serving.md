@@ -387,9 +387,9 @@ This gives you the best of both tools.
 
 ## Related Reading
 
-- [How to Set Up Ollama as a Private AI Coding Assistant](/ai-tools-compared/how-to-set-up-ollama-as-private-ai-coding-assistant-for-sensitive-codebases/)
-- [Running CodeLlama Locally vs Using Cloud Copilot](/ai-tools-compared/running-codellama-locally-vs-using-cloud-copilot-for-proprie/)
-- [Running DeepSeek Coder Locally vs Cloud API](/ai-tools-compared/running-deepseek-coder-locally-vs-cloud-api-for-private-repo/)
+- [How to Set Up Ollama as a Private AI Coding Assistant](/how-to-set-up-ollama-as-private-ai-coding-assistant-for-sensitive-codebases/)
+- [Running CodeLlama Locally vs Using Cloud Copilot](/running-codellama-locally-vs-using-cloud-copilot-for-proprie/)
+- [Running DeepSeek Coder Locally vs Cloud API](/running-deepseek-coder-locally-vs-cloud-api-for-private-repo/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

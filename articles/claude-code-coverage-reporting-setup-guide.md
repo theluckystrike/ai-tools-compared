@@ -338,11 +338,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [Claude Code Developer Portal Setup Guide](/ai-tools-compared/claude-code-developer-portal-setup-guide/)
-- [How to Migrate From Copilot for Neovim](/ai-tools-compared/migrate-copilot-for-neovim-setup-to-claude-code-terminal-wor/)
-- [Best AI Assistant for QA Engineers Writing Test Coverage Gap](/ai-tools-compared/best-ai-assistant-for-qa-engineers-writing-test-coverage-gap/)
-- [Best AI Tool for Environmental Scientists Reporting](/ai-tools-compared/best-ai-tool-for-environmental-scientists-reporting/)
-- [Best AI Tool for Principals Administrative Reporting](/ai-tools-compared/best-ai-tool-for-principals-administrative-reporting/)
+- [Claude Code Developer Portal Setup Guide](/claude-code-developer-portal-setup-guide/)
+- [How to Migrate From Copilot for Neovim](/migrate-copilot-for-neovim-setup-to-claude-code-terminal-wor/)
+- [Best AI Assistant for QA Engineers Writing Test Coverage Gap](/best-ai-assistant-for-qa-engineers-writing-test-coverage-gap/)
+- [Best AI Tool for Environmental Scientists Reporting](/best-ai-tool-for-environmental-scientists-reporting/)
+- [Best AI Tool for Principals Administrative Reporting](/best-ai-tool-for-principals-administrative-reporting/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

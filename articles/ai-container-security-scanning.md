@@ -520,11 +520,11 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Best AI Tools for Container Security Scanning in Deployment](/ai-tools-compared/best-ai-tools-for-container-security-scanning-in-deployment-/)
-- [AI Tools for Automated Security Scanning Compared](/ai-tools-compared/ai-tools-for-automated-security-scanning-compared/)
-- [AI Tools for Automating Cloud Security Compliance Scanning I](/ai-tools-compared/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
-- [AI Powered Tools for Container Orchestration Beyond](/ai-tools-compared/ai-powered-tools-for-container-orchestration-beyond-kubernetes-compared/)
-- [AI Assistants for Creating Security Architecture Review.](/ai-tools-compared/ai-assistants-for-creating-security-architecture-review-docu/)
+- [Best AI Tools for Container Security Scanning in Deployment](/best-ai-tools-for-container-security-scanning-in-deployment-/)
+- [AI Tools for Automated Security Scanning Compared](/ai-tools-for-automated-security-scanning-compared/)
+- [AI Tools for Automating Cloud Security Compliance Scanning I](/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
+- [AI Powered Tools for Container Orchestration Beyond](/ai-powered-tools-for-container-orchestration-beyond-kubernetes-compared/)
+- [AI Assistants for Creating Security Architecture Review.](/ai-assistants-for-creating-security-architecture-review-docu/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

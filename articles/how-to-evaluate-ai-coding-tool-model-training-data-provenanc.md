@@ -315,9 +315,9 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Evaluate AI Coding Tool Data Processing Agreements](/ai-tools-compared/how-to-evaluate-ai-coding-tool-data-processing-agreements-be/)
-- [How to Evaluate AI Coding Tool Encryption Standards](/ai-tools-compared/how-to-evaluate-ai-coding-tool-encryption-standards-for-data/)
-- [AI Coding Assistant Data Sovereignty Requirements](/ai-tools-compared/ai-coding-assistant-data-sovereignty-requirements-for-companies-operating-in-eu-2026/)
-- [AI Coding Assistant Session Data Lifecycle](/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-- [AI Coding Tool GDPR Compliance Checklist for European](/ai-tools-compared/ai-coding-tool-gdpr-compliance-checklist-for-european-engine/)
+- [How to Evaluate AI Coding Tool Data Processing Agreements](/how-to-evaluate-ai-coding-tool-data-processing-agreements-be/)
+- [How to Evaluate AI Coding Tool Encryption Standards](/how-to-evaluate-ai-coding-tool-encryption-standards-for-data/)
+- [AI Coding Assistant Data Sovereignty Requirements](/ai-coding-assistant-data-sovereignty-requirements-for-companies-operating-in-eu-2026/)
+- [AI Coding Assistant Session Data Lifecycle](/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [AI Coding Tool GDPR Compliance Checklist for European](/ai-coding-tool-gdpr-compliance-checklist-for-european-engine/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

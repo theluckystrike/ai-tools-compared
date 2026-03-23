@@ -268,9 +268,9 @@ Both models handle earnings call transcripts effectively. Your choice ultimately
 
 ## Related Articles
 
-- [Claude vs Gemini for Converting Jupyter Notebooks](/ai-tools-compared/claude-vs-gemini-for-converting-jupyter-notebooks-to-product/)
-- [Switching from Gemini Advanced to Claude Pro: What You](/ai-tools-compared/switching-from-gemini-advanced-to-claude-pro-what-you-lose/)
-- [Gemini vs Claude for Writing Apache Kafka Consumer Producer](/ai-tools-compared/gemini-vs-claude-for-writing-apache-kafka-consumer-producer-/)
-- [Gemini vs Claude for Multimodal Coding](/ai-tools-compared/gemini-vs-claude-multimodal-coding-tasks/)
-- [Claude Max vs Claude Pro Actual Difference](/ai-tools-compared/claude-max-vs-claude-pro-actual-difference-in-daily-message-limits/)
+- [Claude vs Gemini for Converting Jupyter Notebooks](/claude-vs-gemini-for-converting-jupyter-notebooks-to-product/)
+- [Switching from Gemini Advanced to Claude Pro: What You](/switching-from-gemini-advanced-to-claude-pro-what-you-lose/)
+- [Gemini vs Claude for Writing Apache Kafka Consumer Producer](/gemini-vs-claude-for-writing-apache-kafka-consumer-producer-/)
+- [Gemini vs Claude for Multimodal Coding](/gemini-vs-claude-multimodal-coding-tasks/)
+- [Claude Max vs Claude Pro Actual Difference](/claude-max-vs-claude-pro-actual-difference-in-daily-message-limits/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -315,10 +315,10 @@ Expected onboarding time: 3-5 hours to feel as productive as on Copilot.
 
 ## Related Articles
 
-- [How to Transfer Copilot Inline Chat Shortcuts](/ai-tools-compared/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)
-- [Best AI Inline Chat Features in VS Code Compared to](/ai-tools-compared/best-ai-inline-chat-features-in-vscode-compared-to-jetbrains/)
-- [How to Use AI Inline Chat to Refactor Single Function](/ai-tools-compared/how-to-use-ai-inline-chat-to-refactor-single-function-step-by-step/)
-- [How to Migrate Copilot Chat History and Context to Cursor AI](/ai-tools-compared/migrate-copilot-chat-history-and-context-to-cursor-ai-guide/)
-- [Copilot vs Cursor vs Windsurf Inline Diff Preview Comparison](/ai-tools-compared/copilot-vs-cursor-vs-windsurf-inline-diff-preview-comparison/)
+- [How to Transfer Copilot Inline Chat Shortcuts](/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)
+- [Best AI Inline Chat Features in VS Code Compared to](/best-ai-inline-chat-features-in-vscode-compared-to-jetbrains/)
+- [How to Use AI Inline Chat to Refactor Single Function](/how-to-use-ai-inline-chat-to-refactor-single-function-step-by-step/)
+- [How to Migrate Copilot Chat History and Context to Cursor AI](/migrate-copilot-chat-history-and-context-to-cursor-ai-guide/)
+- [Copilot vs Cursor vs Windsurf Inline Diff Preview Comparison](/copilot-vs-cursor-vs-windsurf-inline-diff-preview-comparison/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -513,11 +513,11 @@ A clean reinstall sometimes resolves persistent issues caused by corrupted cache
 
 ## Related Articles
 
-- [Best AI Assistant for Debugging CSS Custom Property](/ai-tools-compared/best-ai-assistant-for-debugging-css-custom-property-inheritance-failures-in-shadow-dom/)
-- [Best AI Assistant for Debugging CSS Grid Layout Overflow Iss](/ai-tools-compared/best-ai-assistant-for-debugging-css-grid-layout-overflow-iss/)
-- [AI Tools for Debugging CSS Media Query Breakpoints Not Match](/ai-tools-compared/ai-tools-for-debugging-css-media-query-breakpoints-not-match/)
-- [Best AI for Debugging CSS Flexbox Alignment Issues Across](/ai-tools-compared/best-ai-for-debugging-css-flexbox-alignment-issues-across-di/)
-- [AI Coding Assistant Comparison for TypeScript Tailwind CSS](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-tailwind-css-c/)
+- [Best AI Assistant for Debugging CSS Custom Property](/best-ai-assistant-for-debugging-css-custom-property-inheritance-failures-in-shadow-dom/)
+- [Best AI Assistant for Debugging CSS Grid Layout Overflow Iss](/best-ai-assistant-for-debugging-css-grid-layout-overflow-iss/)
+- [AI Tools for Debugging CSS Media Query Breakpoints Not Match](/ai-tools-for-debugging-css-media-query-breakpoints-not-match/)
+- [Best AI for Debugging CSS Flexbox Alignment Issues Across](/best-ai-for-debugging-css-flexbox-alignment-issues-across-di/)
+- [AI Coding Assistant Comparison for TypeScript Tailwind CSS](/ai-coding-assistant-comparison-for-typescript-tailwind-css-c/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

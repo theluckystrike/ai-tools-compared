@@ -327,11 +327,11 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [How to Write System Prompts for AI Coding Assistants](/ai-tools-compared/how-to-write-system-prompts-for-ai-coding-assistants-project/)
-- [Best Practices for AI Coding Tools](/ai-tools-compared/best-practices-for-ai-coding-tools-in-sox-compliant-financial-environments/)
-- [Best Practices for AI Coding Tool Project Configuration](/ai-tools-compared/best-practices-for-ai-coding-tool-project-configuration-in-l/)
-- [How to Train Your AI Coding Assistant on Your Team Coding](/ai-tools-compared/how-to-train-your-ai-coding-assistant-on-your-team-coding-st/)
-- [Configuring AI Coding Tools to Follow Your Teams Dependency](/ai-tools-compared/configuring-ai-coding-tools-to-follow-your-teams-dependency-/)
+- [How to Write System Prompts for AI Coding Assistants](/how-to-write-system-prompts-for-ai-coding-assistants-project/)
+- [Best Practices for AI Coding Tools](/best-practices-for-ai-coding-tools-in-sox-compliant-financial-environments/)
+- [Best Practices for AI Coding Tool Project Configuration](/best-practices-for-ai-coding-tool-project-configuration-in-l/)
+- [How to Train Your AI Coding Assistant on Your Team Coding](/how-to-train-your-ai-coding-assistant-on-your-team-coding-st/)
+- [Configuring AI Coding Tools to Follow Your Teams Dependency](/configuring-ai-coding-tools-to-follow-your-teams-dependency-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
 ```

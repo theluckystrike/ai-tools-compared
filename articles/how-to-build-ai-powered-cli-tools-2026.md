@@ -478,18 +478,18 @@ Keep tests focused on CLI behavior (argument parsing, output format, exit codes)
 
 ## Related Reading
 
-- [Best AI Tools for Go CLI Tool Development](/ai-tools-compared/best-ai-tools-for-go-cli-tool-development-with-cobra-viper-2/)
-- [How to Build AI-Powered Code Search](/ai-tools-compared/how-to-build-ai-powered-code-search-2026/)
-- [How to Build AI-Powered Error Classifiers](/ai-tools-compared/how-to-build-ai-powered-error-classifiers-2026/)
-- [How to Build an AI-Powered Code Linter](/ai-tools-compared/how-to-build-ai-powered-code-linter/)
+- [Best AI Tools for Go CLI Tool Development](/best-ai-tools-for-go-cli-tool-development-with-cobra-viper-2/)
+- [How to Build AI-Powered Code Search](/how-to-build-ai-powered-code-search-2026/)
+- [How to Build AI-Powered Error Classifiers](/how-to-build-ai-powered-error-classifiers-2026/)
+- [How to Build an AI-Powered Code Linter](/how-to-build-ai-powered-code-linter/)
 
 ## Related Articles
 
-- [Best AI Tools for Generating OpenAPI Specs](/ai-tools-compared/best-ai-tools-for-generating-openapi-specs/)
-- [AI-Powered API Gateway Configuration Tools 2026](/ai-tools-compared/ai-powered-api-gateway-configuration-tools-2026/)
-- [AI Tools for Writing pytest Tests for Click or Typer CLI](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-click-or-typer-cli-com/)
-- [How to Create Custom System Prompt for ChatGPT API That](/ai-tools-compared/how-to-create-custom-system-prompt-for-chatgpt-api-that-enfo/)
-- [AI Tools for Creating System Context Diagrams Using C4](/ai-tools-compared/ai-tools-for-creating-system-context-diagrams-using-c4-model/)
+- [Best AI Tools for Generating OpenAPI Specs](/best-ai-tools-for-generating-openapi-specs/)
+- [AI-Powered API Gateway Configuration Tools 2026](/ai-powered-api-gateway-configuration-tools-2026/)
+- [AI Tools for Writing pytest Tests for Click or Typer CLI](/ai-tools-for-writing-pytest-tests-for-click-or-typer-cli-com/)
+- [How to Create Custom System Prompt for ChatGPT API That](/how-to-create-custom-system-prompt-for-chatgpt-api-that-enfo/)
+- [AI Tools for Creating System Context Diagrams Using C4](/ai-tools-for-creating-system-context-diagrams-using-c4-model/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

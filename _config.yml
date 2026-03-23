@@ -1,7 +1,7 @@
 title: "AI Tools Compared"
 description: "Side-by-side comparisons of AI tools, LLMs, and productivity assistants to help you choose the right one"
-url: "https://theluckystrike.github.io"
-baseurl: "/ai-tools-compared"
+url: "https://bestremotetools.com"
+baseurl: ""
 permalink: /:title/
 theme: minima
 twitter:
@@ -19,4 +19,4 @@ defaults:
       path: "articles"
     values:
       layout: default
-      image: /ai-tools-compared/assets/og-default.svg
+      image: /assets/og-default.svg

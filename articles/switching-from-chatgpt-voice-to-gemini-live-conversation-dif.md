@@ -361,9 +361,9 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [ChatGPT Voice Mode Advanced Does it Use Extra Credits](/ai-tools-compared/chatgpt-voice-mode-advanced-does-it-use-extra-credits-or-free/)
-- [Switching from ChatGPT Search to Perplexity Pro: Explained](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
-- [Switching from ChatGPT Plus to Perplexity Pro Feature](/ai-tools-compared/switching-from-chatgpt-plus-to-perplexity-pro-feature-compar/)
-- [Gemini vs ChatGPT for Writing Google Cloud Function Deployme](/ai-tools-compared/gemini-vs-chatgpt-for-writing-google-cloud-function-deployme/)
-- [Switching from Grammarly to ChatGPT for Editing Workflow](/ai-tools-compared/switching-from-grammarly-to-chatgpt-for-editing-workflow-mig/)
+- [ChatGPT Voice Mode Advanced Does it Use Extra Credits](/chatgpt-voice-mode-advanced-does-it-use-extra-credits-or-free/)
+- [Switching from ChatGPT Search to Perplexity Pro: Explained](/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
+- [Switching from ChatGPT Plus to Perplexity Pro Feature](/switching-from-chatgpt-plus-to-perplexity-pro-feature-compar/)
+- [Gemini vs ChatGPT for Writing Google Cloud Function Deployme](/gemini-vs-chatgpt-for-writing-google-cloud-function-deployme/)
+- [Switching from Grammarly to ChatGPT for Editing Workflow](/switching-from-grammarly-to-chatgpt-for-editing-workflow-mig/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

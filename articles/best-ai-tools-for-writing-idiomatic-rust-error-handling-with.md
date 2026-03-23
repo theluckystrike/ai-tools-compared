@@ -361,10 +361,10 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Copilot vs Cursor for Writing Rust Error Handling](/ai-tools-compared/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
-- [Best AI Tools for Go Error Wrapping and Sentinel Error](/ai-tools-compared/best-ai-tools-for-go-error-wrapping-and-sentinel-error-patte/)
-- [Claude Code API Error Handling Standards](/ai-tools-compared/claude-code-api-error-handling-standards/)
-- [Best AI Coding Tools for Rust Developers 2026](/ai-tools-compared/ai-tools-for-rust-developers-2026/)
-- [Writing Claude Md Files That Teach AI Your Project Specific](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/)
+- [Copilot vs Cursor for Writing Rust Error Handling](/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
+- [Best AI Tools for Go Error Wrapping and Sentinel Error](/best-ai-tools-for-go-error-wrapping-and-sentinel-error-patte/)
+- [Claude Code API Error Handling Standards](/claude-code-api-error-handling-standards/)
+- [Best AI Coding Tools for Rust Developers 2026](/ai-tools-for-rust-developers-2026/)
+- [Writing Claude Md Files That Teach AI Your Project Specific](/writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

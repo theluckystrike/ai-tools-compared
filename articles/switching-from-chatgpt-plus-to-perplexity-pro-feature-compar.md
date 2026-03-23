@@ -292,10 +292,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Switching from ChatGPT Search to Perplexity Pro Search](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
-- [Switching from ChatGPT Search to Perplexity Pro Search](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
-- [Perplexity Spaces Collaboration Feature Free vs Pro Limits](/ai-tools-compared/perplexity-spaces-collaboration-feature-free-vs-pro-limits-explained/)
-- [ChatGPT Canvas Feature Is It Included in Plus or Team Only](/ai-tools-compared/chatgpt-canvas-feature-is-it-included-in-plus-or-team-only/)
-- [Gemini Advanced vs ChatGPT Plus Price Per Feature Comparison](/ai-tools-compared/gemini-advanced-vs-chatgpt-plus-price-per-feature-comparison-2026/)
+- [Switching from ChatGPT Search to Perplexity Pro Search](/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
+- [Switching from ChatGPT Search to Perplexity Pro Search](/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
+- [Perplexity Spaces Collaboration Feature Free vs Pro Limits](/perplexity-spaces-collaboration-feature-free-vs-pro-limits-explained/)
+- [ChatGPT Canvas Feature Is It Included in Plus or Team Only](/chatgpt-canvas-feature-is-it-included-in-plus-or-team-only/)
+- [Gemini Advanced vs ChatGPT Plus Price Per Feature Comparison](/gemini-advanced-vs-chatgpt-plus-price-per-feature-comparison-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

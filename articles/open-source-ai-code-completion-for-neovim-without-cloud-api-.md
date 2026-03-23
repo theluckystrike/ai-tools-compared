@@ -447,7 +447,7 @@ Local completion makes sense when privacy matters more than raw speed, or when y
 - [Open Source AI Code Linting Tools With Automatic Fix](/open-source-ai-code-linting-tools-with-automatic-fix-suggest/)
 - [AI Code Completion for Flutter BLoC Pattern Event and State](/ai-code-completion-for-flutter-bloc-pattern-event-and-state-/)
 - [AI Code Completion for Java Jakarta EE Migration from Javax](/ai-code-completion-for-java-jakarta-ee-migration-from-javax-/)
-- [AI Code Completion for Java Record Classes and Sealed](/ai-tools-compared/ai-code-completion-for-java-record-classes-and-sealed-interf/)
+- [AI Code Completion for Java Record Classes and Sealed](/ai-code-completion-for-java-record-classes-and-sealed-interf/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

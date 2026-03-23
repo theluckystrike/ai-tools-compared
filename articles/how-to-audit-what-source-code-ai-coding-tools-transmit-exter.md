@@ -356,11 +356,11 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [What Source Code Context Window Do Different AI Coding Tools](/ai-tools-compared/what-source-code-context-window-do-different-ai-coding-tools/)
-- [Copilot Code Referencing Feature: How It Handles Open Source](/ai-tools-compared/copilot-code-referencing-feature-how-it-handles-open-source-/)
-- [Fine Tune Open Source Code Models for Your Codebase](/ai-tools-compared/fine-tune-open-source-code-models-for-your-codebase-2026/)
-- [AI Audit Trail and Evidence Collection Tools](/ai-tools-compared/ai-audit-trail-and-evidence-collection-tools-2026/)
-- [Best AI Tool for Auditors: Audit Report Generation Compared](/ai-tools-compared/best-ai-tool-for-auditors-audit-report-generation/)
+- [What Source Code Context Window Do Different AI Coding Tools](/what-source-code-context-window-do-different-ai-coding-tools/)
+- [Copilot Code Referencing Feature: How It Handles Open Source](/copilot-code-referencing-feature-how-it-handles-open-source-/)
+- [Fine Tune Open Source Code Models for Your Codebase](/fine-tune-open-source-code-models-for-your-codebase-2026/)
+- [AI Audit Trail and Evidence Collection Tools](/ai-audit-trail-and-evidence-collection-tools-2026/)
+- [Best AI Tool for Auditors: Audit Report Generation Compared](/best-ai-tool-for-auditors-audit-report-generation/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```

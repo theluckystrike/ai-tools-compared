@@ -259,10 +259,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [How to Migrate Cursor Rules File](/ai-tools-compared/migrate-cursor-rules-file-to-windsurf-rules-format-guide/)
-- [How to Migrate Cursor AI Snippets and Templates](/ai-tools-compared/migrate-cursor-ai-snippets-and-templates-to-windsurf-editor/)
-- [Migrate ChatGPT System Prompts](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-format/)
-- [Cursor AI Rules Files How to Customize AI Behavior](/ai-tools-compared/cursor-ai-rules-files-how-to-customize-ai-behavior-for-your-project/)
-- [How to Configure Cursor AI Rules for Consistent CSS and Tail](/ai-tools-compared/how-to-configure-cursor-ai-rules-for-consistent-css-and-tail/)
+- [How to Migrate Cursor Rules File](/migrate-cursor-rules-file-to-windsurf-rules-format-guide/)
+- [How to Migrate Cursor AI Snippets and Templates](/migrate-cursor-ai-snippets-and-templates-to-windsurf-editor/)
+- [Migrate ChatGPT System Prompts](/migrate-chatgpt-system-prompts-to-claude-system-prompt-format/)
+- [Cursor AI Rules Files How to Customize AI Behavior](/cursor-ai-rules-files-how-to-customize-ai-behavior-for-your-project/)
+- [How to Configure Cursor AI Rules for Consistent CSS and Tail](/how-to-configure-cursor-ai-rules-for-consistent-css-and-tail/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

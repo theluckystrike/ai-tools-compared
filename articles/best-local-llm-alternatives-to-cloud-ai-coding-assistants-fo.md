@@ -301,11 +301,11 @@ Continue.dev supports direct Ollama integration without running a separate serve
 
 ## Related Articles
 
-- [Best Local LLM Options for Code Generation 2026](/ai-tools-compared/best-local-llm-options-for-code-generation-2026/)
-- [How to Use AI Coding Tools in FedRAMP Authorized Cloud Envir](/ai-tools-compared/how-to-use-ai-coding-tools-in-fedramp-authorized-cloud-envir/)
-- [AI Coding Assistants for Go Testing Table Driven Tests Gener](/ai-tools-compared/ai-coding-assistants-for-go-testing-table-driven-tests-gener/)
-- [AI Coding Assistants for Typescript Deno Fresh Framework Com](/ai-tools-compared/ai-coding-assistants-for-typescript-deno-fresh-framework-com/)
-- [AI Coding Assistants for TypeScript Express Middleware Chain](/ai-tools-compared/ai-coding-assistants-for-typescript-express-middleware-chain/)
+- [Best Local LLM Options for Code Generation 2026](/best-local-llm-options-for-code-generation-2026/)
+- [How to Use AI Coding Tools in FedRAMP Authorized Cloud Envir](/how-to-use-ai-coding-tools-in-fedramp-authorized-cloud-envir/)
+- [AI Coding Assistants for Go Testing Table Driven Tests Gener](/ai-coding-assistants-for-go-testing-table-driven-tests-gener/)
+- [AI Coding Assistants for Typescript Deno Fresh Framework Com](/ai-coding-assistants-for-typescript-deno-fresh-framework-com/)
+- [AI Coding Assistants for TypeScript Express Middleware Chain](/ai-coding-assistants-for-typescript-express-middleware-chain/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

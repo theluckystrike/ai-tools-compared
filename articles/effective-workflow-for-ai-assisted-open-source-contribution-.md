@@ -255,10 +255,10 @@ Most tools discussed here can be used productively within a few hours. Mastering
 
 ## Related Articles
 
-- [Effective Workflow for Using AI: Generate](/ai-tools-compared/effective-workflow-for-using-ai-to-generate-and-maintain-changelog-documentation/)
-- [Effective Workflow for Using AI](/ai-tools-compared/effective-workflow-for-using-ai-to-debug-production-issues-from-logs/)
-- [Effective Strategies for AI-Assisted Refactoring](/ai-tools-compared/effective-strategies-for-ai-assisted-refactoring-without-bre/)
-- [Effective AI Coding Workflow for Building Features](/ai-tools-compared/effective-ai-coding-workflow-for-building-features-from-prod/)
-- [Effective Strategies for Using AI](/ai-tools-compared/effective-strategies-for-using-ai-to-learn-new-programming-languages-faster/)
-- [Best Open Source CRM for Remote Agency Self-Hosted Compared](https://theluckystrike.github.io/remote-work-tools/best-open-source-crm-for-remote-agency-self-hosted-compared-/)
+- [Effective Workflow for Using AI: Generate](/effective-workflow-for-using-ai-to-generate-and-maintain-changelog-documentation/)
+- [Effective Workflow for Using AI](/effective-workflow-for-using-ai-to-debug-production-issues-from-logs/)
+- [Effective Strategies for AI-Assisted Refactoring](/effective-strategies-for-ai-assisted-refactoring-without-bre/)
+- [Effective AI Coding Workflow for Building Features](/effective-ai-coding-workflow-for-building-features-from-prod/)
+- [Effective Strategies for Using AI](/effective-strategies-for-using-ai-to-learn-new-programming-languages-faster/)
+- [Best Open Source CRM for Remote Agency Self-Hosted Compared](https://welikeremotestack.com/best-open-source-crm-for-remote-agency-self-hosted-compared-/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

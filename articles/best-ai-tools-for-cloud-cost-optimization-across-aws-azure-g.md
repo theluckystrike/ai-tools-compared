@@ -281,10 +281,10 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [Best AI for Debugging CSS Flexbox Alignment Issues Across](/ai-tools-compared/best-ai-for-debugging-css-flexbox-alignment-issues-across-di/)
-- [Best Practices for Versioning CursorRules Files Across Team](/ai-tools-compared/best-practices-for-versioning-cursorrules-files-across-team-/)
-- [Claude Code Losing Context Across Sessions Fix](/ai-tools-compared/claude-code-losing-context-across-sessions-fix/)
-- [How to Manage AI Coding Context Across Multiple Related Repo](/ai-tools-compared/how-to-manage-ai-coding-context-across-multiple-related-repo/)
-- [How to Manage AI Coding Tool Rate Limits Across Team of](/ai-tools-compared/how-to-manage-ai-coding-tool-rate-limits-across-team-of-developers/)
+- [Best AI for Debugging CSS Flexbox Alignment Issues Across](/best-ai-for-debugging-css-flexbox-alignment-issues-across-di/)
+- [Best Practices for Versioning CursorRules Files Across Team](/best-practices-for-versioning-cursorrules-files-across-team-/)
+- [Claude Code Losing Context Across Sessions Fix](/claude-code-losing-context-across-sessions-fix/)
+- [How to Manage AI Coding Context Across Multiple Related Repo](/how-to-manage-ai-coding-context-across-multiple-related-repo/)
+- [How to Manage AI Coding Tool Rate Limits Across Team of](/how-to-manage-ai-coding-tool-rate-limits-across-team-of-developers/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

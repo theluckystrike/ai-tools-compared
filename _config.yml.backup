@@ -1,0 +1,22 @@
+title: "AI Tools Compared"
+description: "Side-by-side comparisons of AI tools, LLMs, and productivity assistants to help you choose the right one"
+url: "https://theluckystrike.github.io"
+baseurl: "/ai-tools-compared"
+permalink: /:title/
+theme: minima
+twitter:
+  username: _alphashark_
+  card: summary_large_image
+
+author: "Michael Lip"
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+defaults:
+  - scope:
+      path: "articles"
+    values:
+      layout: default
+      image: /ai-tools-compared/assets/og-default.svg

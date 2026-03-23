@@ -408,9 +408,9 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Migrating from JetBrains AI to Copilot in IntelliJ](/ai-tools-compared/migrating-jetbrains-ai-to-copilot-intellij-step-by-step-guide/)
-- [Free AI Alternatives to Copilot for JetBrains IDE Users 2026](/ai-tools-compared/free-ai-alternatives-to-copilot-for-jetbrains-ide-users-2026/)
-- [Copilot Suggestions in Private Repos Do They Cost More Than](/ai-tools-compared/copilot-suggestions-in-private-repos-do-they-cost-more-than-public/)
-- [How to Transfer Copilot Code Review Settings](/ai-tools-compared/transfer-copilot-code-review-settings-to-cursor-ai-review-co/)
-- [How to Use Copilot Chat to Generate Code from Natural](/ai-tools-compared/how-to-use-copilot-chat-to-generate-code-from-natural-langua/)
+- [Migrating from JetBrains AI to Copilot in IntelliJ](/migrating-jetbrains-ai-to-copilot-intellij-step-by-step-guide/)
+- [Free AI Alternatives to Copilot for JetBrains IDE Users 2026](/free-ai-alternatives-to-copilot-for-jetbrains-ide-users-2026/)
+- [Copilot Suggestions in Private Repos Do They Cost More Than](/copilot-suggestions-in-private-repos-do-they-cost-more-than-public/)
+- [How to Transfer Copilot Code Review Settings](/transfer-copilot-code-review-settings-to-cursor-ai-review-co/)
+- [How to Use Copilot Chat to Generate Code from Natural](/how-to-use-copilot-chat-to-generate-code-from-natural-langua/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

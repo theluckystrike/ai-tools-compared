@@ -361,6 +361,6 @@ CodeLlama excels at statically-typed languages (Java, Go, TypeScript). Mistral p
 - [AI Tools for Generating OpenAPI Specs from Code](/ai-tools-openapi-spec-generation/)
 - [Self-Hosted AI Tools for Generating Test Data and Fixtures](/self-hosted-ai-tools-for-generating-test-data-and-fixtures-l/)
 - [Best AI Features for Generating API Client Code](/best-ai-features-for-generating-api-client-code-from-openapi/)
-- [Generate Openapi Specs from Existing Codebase AI Tools](/ai-tools-compared/generate-openapi-specs-from-existing-codebase-ai-tools/)
+- [Generate Openapi Specs from Existing Codebase AI Tools](/generate-openapi-specs-from-existing-codebase-ai-tools/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

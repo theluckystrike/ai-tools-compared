@@ -402,12 +402,12 @@ Trying to change everything at once. Pick one or two practices, implement them w
 
 ## Related Articles
 
-- [AI Coding Productivity Measurement How](/ai-tools-compared/ai-coding-productivity-measurement-how-to-track-if-tools-save-time/)
-- [AI Coding Assistant for Rust Developers Compared](/ai-tools-compared/ai-coding-assistant-for-rust-developers-compared/)
-- [Best AI Coding Tool for Golang Developers 2026](/ai-tools-compared/best-ai-coding-tool-for-golang-developers-2026/)
-- [Best Budget AI Coding Assistant for Freelance Developers 202](/ai-tools-compared/best-budget-ai-coding-assistant-for-freelance-developers-202/)
-- [How to Manage AI Coding Context When Switching Between Diffe](/ai-tools-compared/how-to-manage-ai-coding-context-when-switching-between-diffe/)
-- [AI Project Status Generator for Remote Teams Pulling](https://theluckystrike.github.io/remote-work-tools/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
+- [AI Coding Productivity Measurement How](/ai-coding-productivity-measurement-how-to-track-if-tools-save-time/)
+- [AI Coding Assistant for Rust Developers Compared](/ai-coding-assistant-for-rust-developers-compared/)
+- [Best AI Coding Tool for Golang Developers 2026](/best-ai-coding-tool-for-golang-developers-2026/)
+- [Best Budget AI Coding Assistant for Freelance Developers 202](/best-budget-ai-coding-assistant-for-freelance-developers-202/)
+- [How to Manage AI Coding Context When Switching Between Diffe](/how-to-manage-ai-coding-context-when-switching-between-diffe/)
+- [AI Project Status Generator for Remote Teams Pulling](https://welikeremotestack.com/ai-project-status-generator-for-remote-teams-pulling-data-fr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```

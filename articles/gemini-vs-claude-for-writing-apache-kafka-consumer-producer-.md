@@ -351,10 +351,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Claude vs Gemini for Converting Jupyter Notebooks to Product](/ai-tools-compared/claude-vs-gemini-for-converting-jupyter-notebooks-to-product/)
-- [Gemini vs Claude for Analyzing Large CSV Datasets Over 100MB](/ai-tools-compared/gemini-vs-claude-for-analyzing-large-csv-datasets-over-100mb/)
-- [Gemini vs Claude for Generating Markdown Documentation](/ai-tools-compared/gemini-vs-claude-for-generating-markdown-documentation-from-/)
-- [Gemini vs Claude for Summarizing Quarterly Earnings Call Tra](/ai-tools-compared/gemini-vs-claude-for-summarizing-quarterly-earnings-call-tra/)
-- [How to Export Gemini Workspace Data Before Switching to](/ai-tools-compared/how-to-export-gemini-workspace-data-before-switching-to-claude-team/)
+- [Claude vs Gemini for Converting Jupyter Notebooks to Product](/claude-vs-gemini-for-converting-jupyter-notebooks-to-product/)
+- [Gemini vs Claude for Analyzing Large CSV Datasets Over 100MB](/gemini-vs-claude-for-analyzing-large-csv-datasets-over-100mb/)
+- [Gemini vs Claude for Generating Markdown Documentation](/gemini-vs-claude-for-generating-markdown-documentation-from-/)
+- [Gemini vs Claude for Summarizing Quarterly Earnings Call Tra](/gemini-vs-claude-for-summarizing-quarterly-earnings-call-tra/)
+- [How to Export Gemini Workspace Data Before Switching to](/how-to-export-gemini-workspace-data-before-switching-to-claude-team/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

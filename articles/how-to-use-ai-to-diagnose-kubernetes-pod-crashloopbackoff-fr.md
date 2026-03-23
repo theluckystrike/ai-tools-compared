@@ -321,10 +321,10 @@ Start with the official documentation for each tool mentioned. Stack Overflow an
 
 ## Related Articles
 
-- [How to Use AI to Troubleshoot Kubernetes Pod Crashloopbackof](/ai-tools-compared/how-to-use-ai-to-troubleshoot-kubernetes-pod-crashloopbackof/)
-- [How to Use AI to Diagnose and Fix Golang Goroutine Deadlock](/ai-tools-compared/how-to-use-ai-to-diagnose-and-fix-golang-goroutine-deadlock-/)
-- [How to Use AI to Diagnose Spring Boot Application Context](/ai-tools-compared/how-to-use-ai-to-diagnose-spring-boot-application-context-st/)
-- [AI Tools for Detecting Kubernetes Misconfiguration Before](/ai-tools-compared/ai-tools-for-detecting-kubernetes-misconfiguration-before-de/)
-- [AI Tools for Generating Kubernetes Service Mesh](/ai-tools-compared/ai-tools-for-generating-kubernetes-service-mesh-configuratio/)
+- [How to Use AI to Troubleshoot Kubernetes Pod Crashloopbackof](/how-to-use-ai-to-troubleshoot-kubernetes-pod-crashloopbackof/)
+- [How to Use AI to Diagnose and Fix Golang Goroutine Deadlock](/how-to-use-ai-to-diagnose-and-fix-golang-goroutine-deadlock-/)
+- [How to Use AI to Diagnose Spring Boot Application Context](/how-to-use-ai-to-diagnose-spring-boot-application-context-st/)
+- [AI Tools for Detecting Kubernetes Misconfiguration Before](/ai-tools-for-detecting-kubernetes-misconfiguration-before-de/)
+- [AI Tools for Generating Kubernetes Service Mesh](/ai-tools-for-generating-kubernetes-service-mesh-configuratio/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

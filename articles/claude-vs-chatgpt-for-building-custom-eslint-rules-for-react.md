@@ -265,10 +265,10 @@ Review each tool's privacy policy and terms of service carefully. Most AI tools 
 
 ## Related Articles
 
-- [Transfer ChatGPT Custom GPTs to Claude Projects](/ai-tools-compared/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
-- [ChatGPT vs Claude for Explaining TensorFlow Model](/ai-tools-compared/chatgpt-vs-claude-for-explaining-tensorflow-model-architectu/)
-- [ChatGPT vs Claude for Writing API Documentation](/ai-tools-compared/chatgpt-vs-claude-for-writing-api-documentation/)
-- [ChatGPT vs Claude for Creative Storytelling Compared](/ai-tools-compared/chatgpt-vs-claude-for-creative-storytelling-compared/)
-- [ChatGPT vs Claude for Generating Cypress Component Test](/ai-tools-compared/chatgpt-vs-claude-for-generating-cypress-component-test-boil/)
+- [Transfer ChatGPT Custom GPTs to Claude Projects](/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
+- [ChatGPT vs Claude for Explaining TensorFlow Model](/chatgpt-vs-claude-for-explaining-tensorflow-model-architectu/)
+- [ChatGPT vs Claude for Writing API Documentation](/chatgpt-vs-claude-for-writing-api-documentation/)
+- [ChatGPT vs Claude for Creative Storytelling Compared](/chatgpt-vs-claude-for-creative-storytelling-compared/)
+- [ChatGPT vs Claude for Generating Cypress Component Test](/chatgpt-vs-claude-for-generating-cypress-component-test-boil/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

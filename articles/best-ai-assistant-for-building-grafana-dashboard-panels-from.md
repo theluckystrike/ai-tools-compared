@@ -285,9 +285,9 @@ For simple dashboards (under 10 panels), yes—AI-generated JSON is a practical 
 
 ## Related Articles
 
-- [AI Tools for Generating Grafana Dashboard JSON Templates](/ai-tools-compared/ai-tools-for-generating-grafana-dashboard-json-templates-fro/)
-- [AI Tools for Creating Grafana SLO Dashboard Panels](/ai-tools-compared/ai-tools-for-creating-grafana-slo-dashboard-panels-with-burn/)
-- [Best AI Assistant for Building Superset Dashboard Charts](/ai-tools-compared/best-ai-assistant-for-building-superset-dashboard-charts-fro/)
-- [AI Tools for Generating Grafana Dashboards from Metrics](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
-- [Best AI Assistant for Generating SQL Recursive Queries](/ai-tools-compared/best-ai-assistant-for-generating-sql-recursive-queries-for-hierarchical-org-chart-data/)
+- [AI Tools for Generating Grafana Dashboard JSON Templates](/ai-tools-for-generating-grafana-dashboard-json-templates-fro/)
+- [AI Tools for Creating Grafana SLO Dashboard Panels](/ai-tools-for-creating-grafana-slo-dashboard-panels-with-burn/)
+- [Best AI Assistant for Building Superset Dashboard Charts](/best-ai-assistant-for-building-superset-dashboard-charts-fro/)
+- [AI Tools for Generating Grafana Dashboards from Metrics](/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
+- [Best AI Assistant for Generating SQL Recursive Queries](/best-ai-assistant-for-generating-sql-recursive-queries-for-hierarchical-org-chart-data/)
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

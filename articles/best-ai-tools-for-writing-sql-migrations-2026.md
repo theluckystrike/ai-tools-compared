@@ -490,11 +490,11 @@ Switching costs are real: learning curves, workflow disruption, and data migrati
 
 ## Related Articles
 
-- [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
-- [Best AI for Writing dbt Macros That Generate Dynamic SQL Bas](/ai-tools-compared/best-ai-for-writing-dbt-macros-that-generate-dynamic-sql-bas/)
-- [Best AI for Writing SQL Performance Tuning Recommendations](/ai-tools-compared/best-ai-for-writing-sql-performance-tuning-recommendations-f/)
-- [Copilot vs Claude Code for Writing Complex SQL Stored Proced](/ai-tools-compared/copilot-vs-claude-code-for-writing-complex-sql-stored-proced/)
-- [Gemini vs ChatGPT for Writing BigQuery SQL Window Functions](/ai-tools-compared/gemini-vs-chatgpt-for-writing-bigquery-sql-window-functions-/)
+- [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
+- [Best AI for Writing dbt Macros That Generate Dynamic SQL Bas](/best-ai-for-writing-dbt-macros-that-generate-dynamic-sql-bas/)
+- [Best AI for Writing SQL Performance Tuning Recommendations](/best-ai-for-writing-sql-performance-tuning-recommendations-f/)
+- [Copilot vs Claude Code for Writing Complex SQL Stored Proced](/copilot-vs-claude-code-for-writing-complex-sql-stored-proced/)
+- [Gemini vs ChatGPT for Writing BigQuery SQL Window Functions](/gemini-vs-chatgpt-for-writing-bigquery-sql-window-functions-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ```
