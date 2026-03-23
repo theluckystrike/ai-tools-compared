@@ -1,13 +1,17 @@
 ---
+
 layout: default
 title: "GitHub Copilot Enterprise Features Worth the Price Increase Over Business Tier in 2026"
 description: "Explore the GitHub Copilot Enterprise features that justify the price increase compared to Business tier. Learn about code generation, security, and compliance benefits for development teams."
 date: 2026-03-21
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /github-copilot-enterprise-features-worth-the-price-increase-/
 categories: [guides]
 tags: [ai-tools-compared, github, copilot, enterprise]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 
