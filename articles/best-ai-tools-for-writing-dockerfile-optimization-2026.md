@@ -18,7 +18,6 @@ Dockerfile optimization is tedious and error-prone. Most developers write workin
 
 This guide compares the practical approaches AI tools take to Dockerfile optimization and shows which tools produce production-ready improvements.
 
-Key Takeaways
 
 - Most developers write working Dockerfiles, not efficient ones: discovering bloat only in production when images hit 2GB.
 - AI tools now handle multi-stage builds: layer caching strategy, and security hardening automatically, cutting image sizes by 60-80% while reducing attack surface.

@@ -253,9 +253,9 @@ Pricing for AI Code Review Tools
 
 | Tool | Cost | Best For |
 |------|------|----------|
-| Claude API | $3–15 per 1M input tokens | Detailed analysis, security review |
-| GitHub Copilot | $10–20/month | IDE-integrated, real-time |
-| ChatGPT (GPT-4) | $0.03–0.06 per 1K input tokens | Fast feedback, iterative debugging |
+| Claude API | $3, 15 per 1M input tokens | Detailed analysis, security review |
+| GitHub Copilot | $10, 20/month | IDE-integrated, real-time |
+| ChatGPT (GPT-4) | $0.03, 0.06 per 1K input tokens | Fast feedback, iterative debugging |
 | Amazon Q Developer | $20/month | AWS integration, focused learning |
 | Cursor | $20/month | File-level security checks |
 
@@ -288,7 +288,7 @@ For each issue found:
 3. Provide a corrected code snippet
 ```
 
-Expected output: Detailed analysis with 3–8 issues identified, fix recommendations for critical items.
+Expected output: Detailed analysis with 3, 8 issues identified, fix recommendations for critical items.
 
 Step 3: Validate Against Static Analysis Results
 
@@ -299,7 +299,7 @@ Comparing AI Assistance with Traditional Methods
 | Aspect | AI Review | Static Analyzer | Code Review | Runtime Test |
 |--------|-----------|-----------------|-------------|--------------|
 | False positives | Medium | High | Low | Low |
-| Speed | Fast (1–5 min) | Very fast (seconds) | Slow (hours) | Slow (hours) |
+| Speed | Fast (1, 5 min) | Very fast (seconds) | Slow (hours) | Slow (hours) |
 | Logic errors | Good | Poor | Excellent | Excellent |
 | Common patterns | Excellent | Excellent | Good | Poor |
 | Context understanding | Excellent | Limited | Excellent | Limited |

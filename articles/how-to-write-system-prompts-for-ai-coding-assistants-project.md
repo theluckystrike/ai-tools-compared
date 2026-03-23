@@ -32,7 +32,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Writing effective system prompts for AI coding assistants requires understanding how these tools interpret instructions and what information they need to generate contextually appropriate code. When you work on a project with specific conventions, testing requirements, or architectural patterns, conveying those details through well-crafted system prompts significantly improves the quality of AI-generated code.
 
-Key Takeaways
 
 - The practical approach is to start with a core prompt covering your three or four most critical conventions: the ones where deviation causes the most rework.
 - Language and framework specifics: Version requirements, preferred patterns

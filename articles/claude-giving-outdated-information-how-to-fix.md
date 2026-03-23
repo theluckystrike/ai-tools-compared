@@ -33,7 +33,6 @@ tags: [ai-tools-compared, troubleshooting, claude-ai]
 
 To fix Claude giving outdated information, start a fresh conversation to clear contaminated context, then include explicit timeframe markers in your prompts (e.g., "as of March 2026"). Verify that your local project documentation is up to date, since Claude references those files and will propagate stale data. For real-time accuracy, enable web fetching with `claude config set web_fetch_enabled true` and ask Claude to look up current versions directly.
 
-Key Takeaways
 
 - A recommendation for React: 18 might be outdated when React 19 or 20 is stable.
 - Always specify you want: current recommendations 2.

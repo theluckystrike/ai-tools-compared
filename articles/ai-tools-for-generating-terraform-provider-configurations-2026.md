@@ -93,7 +93,7 @@ Strengths:
 - Handles edge cases (IPv6, cross-account IAM, multi-region)
 - Strong on best practices guidance
 
-Pricing: Free tier (limited), $20/month Plus, $0.02–$0.30 per 1K tokens (API)
+Pricing: Free tier (limited), $20/month Plus, $0.02, $0.30 per 1K tokens (API)
 
 Prompt Accuracy: 8/10. Occasionally generates deprecated resources or suboptimal naming.
 
@@ -147,7 +147,7 @@ Detailed Comparison Table
 | Copilot | 9 | 8 | 6 | 7 | 7 | $10/mo | AWS-focused, rapid iteration |
 | ChatGPT 4 | 8 | 8 | 8 | 8 | 8 | $20/mo | Documentation + code |
 | Cursor+Claude | 9 | 9 | 9 | 9 | 9 | $20/mo | Large infrastructure repos |
-| Tabnine | 7 | 7 | 5 | 6 | 6 | Free–$300 | Local privacy needs |
+| Tabnine | 7 | 7 | 5 | 6 | 6 | Free, $300 | Local privacy needs |
 
 Practical Terraform Examples
 

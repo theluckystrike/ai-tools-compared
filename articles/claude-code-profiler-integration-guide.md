@@ -33,7 +33,6 @@ tags: [ai-tools-compared, integration, claude-ai]
 
 Profiling is essential for understanding your application's performance characteristics and identifying bottlenecks. Integrating profilers with Claude Code creates a powerful workflow for analyzing performance data and implementing optimizations. This guide covers how to set up and use various profiling tools alongside Claude Code for performance analysis.
 
-Key Takeaways
 
 - The function `process_image` appears: at the top with 4.2 seconds cumulative time out of 5 seconds total.
 - This guide covers how: to set up and use various profiling tools alongside Claude Code for performance analysis.

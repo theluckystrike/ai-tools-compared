@@ -33,7 +33,6 @@ tags: [ai-tools-compared, best-of, artificial-intelligence]
 
 For developers and power users, a general-purpose LLM like Claude or GPT-4 with well-crafted custom prompts is the best tool for writing cold outreach emails. It outperforms specialized platforms like Copy.ai or Jasper on personalization depth, tone control, and workflow integration -- you can tune prompts per campaign, incorporate recipient-specific context from LinkedIn or CRM data, and embed generation directly into your existing pipelines. Specialized tools get you started faster but cap your control over output quality and customization.
 
-Key Takeaways
 
 - For developers and power users: a general-purpose LLM like Claude or GPT-4 with well-crafted custom prompts is the best tool for writing cold outreach emails.
 - The best tool ultimately depends on your specific requirements: volume, personalization depth, integration needs, and how much time you're willing to invest in setup.

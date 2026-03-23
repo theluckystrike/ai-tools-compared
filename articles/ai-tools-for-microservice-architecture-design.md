@@ -17,7 +17,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Microservice architecture decisions have long-term consequences that are hard to reverse. AI tools can accelerate the design phase. generating service boundaries from domain models, producing API contracts, suggesting event schemas, and identifying coupling problems. This guide covers practical workflows for each stage.
 
-Key Takeaways
 
 - Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
 - Use Claude for domain: decomposition (better DDD reasoning) 2.

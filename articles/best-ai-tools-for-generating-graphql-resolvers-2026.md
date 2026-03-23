@@ -30,7 +30,6 @@ tags: [ai-tools-compared, graphql, resolvers, code-generation, performance-optim
 
 Modern AI coding assistants can generate production-ready GraphQL resolvers with performance optimizations built in. Claude (opus), GPT-4, and GitHub Copilot each handle N+1 query prevention, DataLoader integration, and error handling differently. This guide compares their output quality, turnaround time, and ability to prevent common pitfalls like missing batch loaders and inefficient data fetching patterns.
 
-Key Takeaways
 
 - const posts = await: db.query( 'SELECT * FROM posts WHERE user_id = $1', [user.id] ); return posts; } } ``` All three AI tools catch this.
 - Here's the wrong way: ```javascript

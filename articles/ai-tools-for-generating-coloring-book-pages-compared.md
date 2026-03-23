@@ -33,7 +33,6 @@ tags: [ai-tools-compared, comparison, artificial-intelligence]
 
 For most developers, running Stable Diffusion locally with a specialized line art LoRA model produces the best coloring book pages, clean outlines, no shading, and unlimited generation after initial hardware setup. If you want a faster start with less control, use the DALL-E 3 API with a coloring-book-specific prompt, then run the output through an OpenCV edge-detection pipeline to clean up the soft edges. Both approaches are covered below with working code examples.
 
-Key Takeaways
 
 - If you want a: faster start with less control, use the DALL-E 3 API with a coloring-book-specific prompt, then run the output through an OpenCV edge-detection pipeline to clean up the soft edges.
 - Stable Diffusion with Outline: LoRAs Stable Diffusion, particularly when run locally via ComfyUI or Automatic1111, offers the most control.

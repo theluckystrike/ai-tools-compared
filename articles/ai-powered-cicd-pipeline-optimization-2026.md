@@ -361,7 +361,7 @@ Python with uv:
   run: uv sync --frozen
 ```
 
-`uv` is a Rust-based pip replacement that installs dependencies 10–100x faster than pip. For a typical Python project with 50 dependencies, it cuts install time from 90 seconds to under 5 seconds.
+`uv` is a Rust-based pip replacement that installs dependencies 10, 100x faster than pip. For a typical Python project with 50 dependencies, it cuts install time from 90 seconds to under 5 seconds.
 
 Go modules:
 ```yaml

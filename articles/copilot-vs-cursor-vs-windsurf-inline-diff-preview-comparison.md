@@ -244,7 +244,7 @@ Detailed Comparison Table
 | Accept partial changes | No | Yes | Yes |
 | Performance | Very fast | Fast | Fast |
 | IDE integration | VS Code, JB | Cursor only | VS Code, JB |
-| Cost | $10–20/mo | $20/mo | $30/mo |
+| Cost | $10, 20/mo | $20/mo | $30/mo |
 | Multi-file diff | Limited | Excellent | Very good |
 | Keyboard control | Excellent (Tab/Esc) | Good | Good |
 
@@ -330,10 +330,10 @@ Up/Down                      # Navigate diffs
 
 Detailed Cost Analysis
 
-Copilot: $10–20/month
+Copilot: $10, 20/month
 - VS Code: $10/month
 - GitHub Pro bundle: $4/month (includes Copilot)
-- JetBrains: varies by IDE, ~$15–20/month
+- JetBrains: varies by IDE, ~$15, 20/month
 - Best value if: you use multiple GitHub features
 
 Cursor: $20/month
@@ -403,7 +403,7 @@ Choose Copilot if:
 - You need fast inline completions for simple suggestions
 - You're okay with ghost text preview (no explicit diff)
 - You want integration across VS Code, GitHub, and JetBrains
-- Budget is tight ($10–20/month is your limit)
+- Budget is tight ($10, 20/month is your limit)
 
 Choose Cursor if:
 - Detailed diff review is important for your workflow

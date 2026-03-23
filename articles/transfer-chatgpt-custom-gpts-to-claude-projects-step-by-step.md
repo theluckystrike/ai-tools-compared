@@ -266,14 +266,14 @@ This script automates the folder creation and file copying, letting you focus on
 
 Evaluating Behavior Parity After Migration
 
-Once your Claude Project is running, use a systematic test to compare its behavior against the original GPT. Create a test matrix of 10–20 representative prompts covering:
+Once your Claude Project is running, use a systematic test to compare its behavior against the original GPT. Create a test matrix of 10, 20 representative prompts covering:
 
 - Core use case queries (the primary reason you built the GPT)
 - Edge case inputs that the GPT handled well
 - Inputs the GPT correctly declined or redirected
 - Prompts that test knowledge file recall
 
-Score each on a 1–3 scale (1 = wrong/off, 2 = close, 3 = equivalent or better). A score of 2.5+ indicates a successful migration. Items scoring 1 usually point to missing instructions or knowledge context that needs to be re-added.
+Score each on a 1, 3 scale (1 = wrong/off, 2 = close, 3 = equivalent or better). A score of 2.5+ indicates a successful migration. Items scoring 1 usually point to missing instructions or knowledge context that needs to be re-added.
 
 Frequently Asked Questions
 

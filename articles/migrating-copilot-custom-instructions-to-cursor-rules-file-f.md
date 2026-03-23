@@ -18,7 +18,6 @@ tags: [ai-tools-compared, guides]
 
 If you have been using GitHub Copilot with custom instructions and want to switch to Cursor, you need to understand how to migrate your configuration. Both tools use configuration files to customize AI behavior, but the formats differ significantly. This guide walks you through converting Copilot custom instructions into Cursor rules files, with practical examples and common conversion patterns.
 
-Key Takeaways
 
 - Free tiers typically have: usage limits that work for evaluation but may not be sufficient for daily professional use.
 - Does Copilot offer a: free tier? Most major tools offer some form of free tier or trial period.

@@ -137,11 +137,11 @@ Tool Selection for Security Architecture Analysis
 
 Different AI tools bring distinct capabilities to security architecture review:
 
-Claude 3.5 Sonnet: Excels at understanding complex threat models and chaining attack vectors. Its reasoning depth makes it superior for identifying non-obvious vulnerabilities. Cost: ~$3–15 per 1M input tokens via API.
+Claude 3.5 Sonnet: Excels at understanding complex threat models and chaining attack vectors. Its reasoning depth makes it superior for identifying non-obvious vulnerabilities. Cost: ~$3, 15 per 1M input tokens via API.
 
-GPT-4: Strong at following detailed review templates and producing structured output. Faster iteration than Claude but sometimes less thorough on subtle security issues. Cost: ~$0.03–0.06 per 1K input tokens.
+GPT-4: Strong at following detailed review templates and producing structured output. Faster iteration than Claude but sometimes less thorough on subtle security issues. Cost: ~$0.03, 0.06 per 1K input tokens.
 
-GitHub Copilot: Integrated into your IDE; useful for reviewing code patterns in real-time. Less effective for architecture reviews but excellent for catching security issues during coding. Cost: $10–20/month flat rate.
+GitHub Copilot: Integrated into your IDE; useful for reviewing code patterns in real-time. Less effective for architecture reviews but excellent for catching security issues during coding. Cost: $10, 20/month flat rate.
 
 Specialized security tools like GitHub Advanced Security or CodeQL provide scanning automation but lack the reasoning capabilities of general LLMs. Best used alongside AI assistants.
 
@@ -226,14 +226,14 @@ Authorization Gaps:
 
 Price Comparison for AI-Assisted Security Reviews
 
-Building security documentation manually: 40–80 developer hours per project = $4,000–16,000 in labor.
+Building security documentation manually: 40, 80 developer hours per project = $4,000, 16,000 in labor.
 
 AI-assisted approach:
-- Claude API: 2–4 hours AI interaction = $2–10 in API costs
+- Claude API: 2, 4 hours AI interaction = $2, 10 in API costs
 - GitHub Copilot: $20/month flat rate (amortized per project)
-- GPT-4 API: 2–4 hours interaction = $3–15 in API costs
+- GPT-4 API: 2, 4 hours interaction = $3, 15 in API costs
 
-ROI: AI tools reduce security documentation effort by 70–85%, cutting costs from thousands to tens of dollars.
+ROI: AI tools reduce security documentation effort by 70, 85%, cutting costs from thousands to tens of dollars.
 
 Practical Example: Full Security Architecture Review
 
@@ -260,7 +260,7 @@ Please generate a complete security architecture review addressing:
 5. Specific implementation code for the top 3 recommendations
 ```
 
-Expected output quality: , 400–600 word document with specific code examples and clear prioritization.
+Expected output quality: , 400, 600 word document with specific code examples and clear prioritization.
 
 Integration with CI/CD Pipelines
 

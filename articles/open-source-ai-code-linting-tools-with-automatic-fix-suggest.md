@@ -71,7 +71,7 @@ The `--unsafe-fixes` flag enables a second tier of fixes that transform semantic
 
 2. Oxc
 
-Oxc is a high-performance JavaScript/TypeScript linter written in Rust. It provides linting capabilities similar to ESLint but with dramatically improved speed, benchmarks show 50–100x faster than ESLint on large TypeScript codebases. It is part of a broader toolchain that also includes a parser, resolver, minifier, and transformer.
+Oxc is a high-performance JavaScript/TypeScript linter written in Rust. It provides linting capabilities similar to ESLint but with dramatically improved speed, benchmarks show 50, 100x faster than ESLint on large TypeScript codebases. It is part of a broader toolchain that also includes a parser, resolver, minifier, and transformer.
 
 Key Features:
 - 300+ rules compatible with ESLint, including React hooks rules and accessibility checks

@@ -215,15 +215,15 @@ Known Constraints:
 Generate the red team plan with clear phases, timeline, and resource allocation.
 ```
 
-Expected output: Structured plan with recon, initial access, escalation phases, 4–6 hours generation value.
+Expected output: Structured plan with recon, initial access, escalation phases, 4, 6 hours generation value.
 
 Pricing Comparison for Plan Generation
 
 | Tool | Cost per Engagement | Setup Time | Integration Effort |
 |------|-----|------|-----|
-| Claude API | $5–20 | Minimal | Low |
-| GPT-4 API | $8–25 | Minimal | Low |
-| Gemini Pro | $3–15 | Minimal | Low |
+| Claude API | $5, 20 | Minimal | Low |
+| GPT-4 API | $8, 25 | Minimal | Low |
+| Gemini Pro | $3, 15 | Minimal | Low |
 | CodeLLama 70B | Free (self-hosted) | High | Medium |
 | GitHub Copilot | $20/mo flat | Low | High |
 
@@ -311,15 +311,15 @@ Pricing Reality Check
 
 Cost comparison for engagement planning:
 
-Manual planning by senior security engineer: 20–40 hours = $4,000–12,000
+Manual planning by senior security engineer: 20, 40 hours = $4,000, 12,000
 
 AI-assisted planning:
 - Prompt development: 1 hour
-- AI generation: $5–20 in API costs
-- Plan review/refinement: 2–3 hours
-- Total: 3–4 hours + $20 = ~$1,200
+- AI generation: $5, 20 in API costs
+- Plan review/refinement: 2, 3 hours
+- Total: 3, 4 hours + $20 = ~$1,200
 
-AI value: Reduces planning effort by 85–90%, freeing senior security staff for execution and validation rather than documentation.
+AI value: Reduces planning effort by 85, 90%, freeing senior security staff for execution and validation rather than documentation.
 
 Frequently Asked Questions
 

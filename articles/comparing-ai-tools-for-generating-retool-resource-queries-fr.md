@@ -111,13 +111,13 @@ Pricing and Practical Implementation Costs
 
 When evaluating AI tools for Retool query generation, consider your total cost of ownership:
 
-Claude API via Anthropic: $3–15 per 1M input tokens, $15–75 per 1M output tokens. A typical query generation workflow consumes 10k–50k input tokens (schema context + prompt) and 2k–10k output tokens (generated SQL). Average cost: $0.05–0.15 per query generation session.
+Claude API via Anthropic: $3, 15 per 1M input tokens, $15, 75 per 1M output tokens. A typical query generation workflow consumes 10k, 50k input tokens (schema context + prompt) and 2k, 10k output tokens (generated SQL). Average cost: $0.05, 0.15 per query generation session.
 
-ChatGPT API (GPT-4): $0.03–0.06 per 1K input tokens, $0.06–0.12 per 1K output tokens. Similar query cost profile: ~$0.10–0.20 per session. Faster response times but sometimes less precise for complex schema understanding.
+ChatGPT API (GPT-4): $0.03, 0.06 per 1K input tokens, $0.06, 0.12 per 1K output tokens. Similar query cost profile: ~$0.10, 0.20 per session. Faster response times but sometimes less precise for complex schema understanding.
 
-GitHub Copilot: $10–20/month for IDE integration; free for public repositories. No per-query cost. Best for developers already using Copilot in their editor. Retool query generation works reasonably well when you @mention schema files or documentation.
+GitHub Copilot: $10, 20/month for IDE integration; free for public repositories. No per-query cost. Best for developers already using Copilot in their editor. Retool query generation works reasonably well when you @mention schema files or documentation.
 
-Locally hosted models (Ollama, LM Studio): Free after setup. Meta's Llama 2 13B–70B fine-tuned for SQL runs on a laptop. Trade-off: slower inference, less accurate for complex queries, but zero per-query cost and privacy benefits.
+Locally hosted models (Ollama, LM Studio): Free after setup. Meta's Llama 2 13B, 70B fine-tuned for SQL runs on a laptop. Trade-off: slower inference, less accurate for complex queries, but zero per-query cost and privacy benefits.
 
 Practical Prompting Strategies for Better Query Generation
 
@@ -140,7 +140,7 @@ order date, and total in the results."
 Generate the SQL query for Retool.
 ```
 
-AI output quality: 85–95% accuracy. The AI understands the schema, identifies relevant tables and joins, applies time filters correctly.
+AI output quality: 85, 95% accuracy. The AI understands the schema, identifies relevant tables and joins, applies time filters correctly.
 
 Pattern 2: Reference Example + Variation
 
@@ -194,11 +194,11 @@ Comparison Table: Tools and Their Strengths
 
 | Tool | Best For | Speed | Cost | Context Depth |
 |------|----------|-------|------|---|
-| Claude 3.5 Sonnet | Complex schemas, multi-table joins | 2–5s | ~$0.10/query | Excellent |
-| GPT-4 Turbo | Fast iteration, simple queries | 1–3s | ~$0.15/query | Very Good |
-| Gemini 1.5 Pro | Large schemas (1M+ tokens) | 3–6s | ~$0.12/query | Excellent |
-| GitHub Copilot | IDE-integrated, fast | Real-time | $10–20/mo flat | Good |
-| Ollama Llama 2 | Privacy-critical, offline | 10–30s | Free | Adequate |
+| Claude 3.5 Sonnet | Complex schemas, multi-table joins | 2, 5s | ~$0.10/query | Excellent |
+| GPT-4 Turbo | Fast iteration, simple queries | 1, 3s | ~$0.15/query | Very Good |
+| Gemini 1.5 Pro | Large schemas (1M+ tokens) | 3, 6s | ~$0.12/query | Excellent |
+| GitHub Copilot | IDE-integrated, fast | Real-time | $10, 20/mo flat | Good |
+| Ollama Llama 2 | Privacy-critical, offline | 10, 30s | Free | Adequate |
 
 Troubleshooting Query Generation Issues
 

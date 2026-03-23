@@ -34,7 +34,6 @@ Choosing between Botpress and Rasa requires understanding how each framework app
 
 This comparison focuses on practical implementation details to help you decide which framework fits your project.
 
-Key Takeaways
 
 - For most use cases: the default engine works without additional configuration.
 - Start with whichever matches: your most frequent task, then add the other when you hit its limits.

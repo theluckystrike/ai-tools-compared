@@ -274,7 +274,7 @@ Common false positive scenarios include:
 
 - Region-specific defaults that differ from your primary deployment region
 
-Configure your AI drift tool with an exception list for known patterns, and route ambiguous events to a review queue rather than triggering automatic alerts. After 30 days of operation, most teams report a 60–70% reduction in alert fatigue compared to rule-based detection.
+Configure your AI drift tool with an exception list for known patterns, and route ambiguous events to a review queue rather than triggering automatic alerts. After 30 days of operation, most teams report a 60, 70% reduction in alert fatigue compared to rule-based detection.
 
 Multi-Cloud Drift Complexity
 

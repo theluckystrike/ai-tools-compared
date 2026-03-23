@@ -124,7 +124,7 @@ AI Tool Comparison at a Glance
 | Framework awareness | Broad (React, Vue, Angular) | Context-driven | Strong reasoning on any stack |
 | Explanation quality | Minimal inline comments | Moderate | Detailed explanations |
 | Best for | Standard patterns, large teams | SPA-heavy projects | Learning and complex flows |
-| Subscription cost | $10–19/month | $20/month | Pay-per-use / Pro plan |
+| Subscription cost | $10, 19/month | $20/month | Pay-per-use / Pro plan |
 
 Practical Testing Patterns
 

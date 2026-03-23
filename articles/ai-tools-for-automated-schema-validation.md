@@ -18,7 +18,6 @@ Schema drift silently breaks APIs, corrupts databases, and causes midnight pages
 
 This guide covers three approaches: AI-generated validation rules, LLM-assisted schema review in CI, and schema evolution analysis.
 
-Key Takeaways
 
 - Manual review catches maybe: 60% of issues.
 - Breaking changes (field removal: type change, number reuse in Protobuf)

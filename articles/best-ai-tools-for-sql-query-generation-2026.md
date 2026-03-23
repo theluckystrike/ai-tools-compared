@@ -33,7 +33,6 @@ tags: [ai-tools-compared, best-of, artificial-intelligence]
 
 SQL query generation is one of the few AI tasks with objective evaluation criteria. the query either returns correct results or it doesn't. This makes it unusually easy to benchmark. This guide covers dedicated text-to-SQL tools, general LLMs, and IDE-integrated options, with accuracy benchmarks on real-world query patterns.
 
-Key Takeaways
 
 - Include only products with: at least 5 orders.
 - Without it: they hallucinate reasonable-sounding but wrong column names about 30% of the time.

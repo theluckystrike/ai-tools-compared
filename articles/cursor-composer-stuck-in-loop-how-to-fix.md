@@ -32,7 +32,6 @@ tags: [ai-tools-compared, troubleshooting]
 
 To fix Cursor Composer stuck in a loop, clear the Cursor cache (Cmd+Shift+P > "Clear Cache"), then restart the application to eliminate corrupted cache files. If the loop continues, reset the context window by closing all open files and starting a fresh Composer thread, and disable conflicting extensions -- especially other AI coding assistants. These three fixes resolve the infinite-loop issue in most cases, with full details below.
 
-Key Takeaways
 
 - Free tiers typically have: usage limits that work for evaluation but may not be sufficient for daily professional use.
 - Does Cursor offer a: free tier? Most major tools offer some form of free tier or trial period.

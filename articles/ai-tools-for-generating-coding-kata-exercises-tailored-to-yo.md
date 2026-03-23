@@ -32,7 +32,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Coding kata exercises have long been a staple of developer practice, but finding the right difficulty level and variety can be challenging. AI-powered tools now make it possible to generate customized coding exercises that match your exact skill level, helping you practice exactly what you need without spending time searching through generic repositories.
 
-Key Takeaways
 
 - Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
 - ChatGPT and Claude for: Custom Kata Creation The most flexible approach uses general-purpose AI assistants.

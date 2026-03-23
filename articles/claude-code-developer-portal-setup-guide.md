@@ -32,7 +32,6 @@ tags: [ai-tools-compared, claude-ai]
 
 Claude Code transforms how teams build and maintain developer portals. Instead of manually writing documentation or wrestling with static site generators, you can use Claude Code's AI capabilities to generate, organize, and keep your portal current. This guide walks through setting up a developer portal from scratch using Claude Code, with practical examples and automation strategies.
 
-Key Takeaways
 
 - A team of 5: generating documentation daily would spend $150/month for AI-powered portal generation.
 - When requesting a tutorial: provide context about your API's purpose and common use cases:

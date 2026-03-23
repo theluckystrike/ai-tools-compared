@@ -291,7 +291,7 @@ How do I handle fallback when the AI cannot answer?
 Design an explicit handoff path. Detect low-confidence responses by checking if the model expresses uncertainty, then route to a human agent queue or a specific support email. Never let the assistant guess on order-critical information like shipping dates or prices.
 
 What is the typical latency for LLM-based commerce assistants?
-Claude and GPT-4o typically return first-token responses in 500–900ms under normal load. For streaming responses this is acceptable; for voice interfaces it is too slow. Use smaller models (GPT-4o-mini, Claude Haiku) for latency-sensitive channels and reserve the larger models for complex queries.
+Claude and GPT-4o typically return first-token responses in 500, 900ms under normal load. For streaming responses this is acceptable; for voice interfaces it is too slow. Use smaller models (GPT-4o-mini, Claude Haiku) for latency-sensitive channels and reserve the larger models for complex queries.
 
 Can conversational commerce assistants handle returns and refunds?
 Yes, but limit the assistant to information gathering and status lookups. The actual refund trigger should remain in your order management system with proper authentication. The assistant collects the order ID and reason, then calls an API that handles authorization and processing with appropriate human oversight for high-value refunds.

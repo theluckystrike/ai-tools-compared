@@ -33,7 +33,6 @@ tags: [ai-tools-compared, troubleshooting]
 
 When your organization has purchased GitHub Copilot Enterprise but you cannot access the features, the "license not assigned" error blocks productivity. This issue typically occurs during initial setup, user onboarding, or after organizational changes. This guide walks you through the most effective solutions.
 
-Key Takeaways
 
 - Use Copilot Business ($21/user/month) as the team tier instead: it's cheaper than Enterprise and covers most team needs.
 - Most administrators encounter this: issue when migrating from Copilot Business to Enterprise, during bulk user imports, or when setting up Copilot for the first time in a new organization.
@@ -377,7 +376,7 @@ When deciding to invest in Copilot Enterprise:
 | GitHub Copilot Enterprise | $39/user/month (org) | Web + IDE | VS Code, JetBrains, Vim | Code excluded from training (contract) |
 | Cursor | $20/month | Standalone IDE | Cursor only | Local-first, optional cloud |
 | AWS CodeWhisperer | Free or $99/month | VS Code, JetBrains | Good integration | Excluded from training (free tier) |
-| Anthropic Claude API | $3–15/million tokens | API only | Via integration | Excluded from training (default) |
+| Anthropic Claude API | $3, 15/million tokens | API only | Via integration | Excluded from training (default) |
 | Tabnine | $25/month | IDE plugins | Excellent | Local on-device option |
 
 For teams already invested in GitHub, Copilot Enterprise's cost is justified by integration and policy compliance. For privacy-first teams, Cursor or local tools are better.

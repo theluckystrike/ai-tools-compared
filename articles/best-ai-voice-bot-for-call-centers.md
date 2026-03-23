@@ -33,7 +33,6 @@ tags: [ai-tools-compared, best-of, artificial-intelligence]
 
 Building an AI voice bot for call center operations requires understanding speech recognition, natural language understanding, text-to-speech synthesis, and conversation flow management. This guide covers the technical components you need to evaluate when selecting a platform, with practical code examples for integration.
 
-Key Takeaways
 
 - Google Cloud Contact Center AI: ~$0.07 per minute, minimum $500/month per instance.
 - For a 1:000-call center processing 2,000 calls daily (average 3 minutes each), monthly cost is ~$18,000.

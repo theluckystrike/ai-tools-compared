@@ -43,7 +43,6 @@ tags: [ai-tools-compared, best-of, artificial-intelligence]
 
 Managing AI tool configuration files alongside your code documentation ensures consistency across development environments and makes your AI assistants more effective at understanding your project. When your configuration lives alongside your documentation, team members can quickly understand how AI tools interact with your codebase without hunting through separate repositories or wikis.
 
-Key Takeaways
 
 - Every two weeks, ask: "Did our AI tool configurations cause problems or produce worse results this sprint?" If the answer is yes, update the configuration before starting the next sprint.
 - Start with free options: to find what works for your workflow, then upgrade when you hit limitations.

@@ -268,7 +268,7 @@ A practical validation checklist:
 - Ask Cursor a project-specific question that relies on your `.cursorrules` context and confirm the response respects your stated conventions.
 - Test escalating complexity: start with single-function completion, then a new feature request, then an architectural question. Each tier should benefit from the codebase index.
 
-Track your time-to-first-useful-suggestion during the first week. Most developers find Cursor's first-day performance roughly equivalent to Copilot's, with quality improving noticeably by day 3–5 as the codebase index refines and you learn how to frame prompts for Cursor's model selection. The transition cost is real but short-lived. typically under a week before Cursor's codebase awareness begins paying dividends on complex tasks where Copilot's limited context window was previously a bottleneck.
+Track your time-to-first-useful-suggestion during the first week. Most developers find Cursor's first-day performance roughly equivalent to Copilot's, with quality improving noticeably by day 3, 5 as the codebase index refines and you learn how to frame prompts for Cursor's model selection. The transition cost is real but short-lived. typically under a week before Cursor's codebase awareness begins paying dividends on complex tasks where Copilot's limited context window was previously a bottleneck.
 
 Troubleshooting
 

@@ -32,7 +32,6 @@ tags: [ai-tools-compared, comparison]
 
 Runway inpainting and Adobe Firefly Generative Fill both use generative AI to modify images, but they approach the problem differently and serve distinct use cases.
 
-Key Takeaways
 
 - Adobe Firefly requires a: Creative Cloud subscription, with Photoshop plans starting around $23/month.
 - The Generative Fill feature: works within existing Photoshop selection workflows, making it familiar to users already comfortable with Adobe's ecosystem.

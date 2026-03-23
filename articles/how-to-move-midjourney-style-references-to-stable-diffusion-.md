@@ -32,7 +32,6 @@ tags: [ai-tools-compared]
 
 If you have developed a distinctive visual style in Midjourney and want to recreate it within Stable Diffusion, transferring those style references to LoRA training offers a powerful solution. This process allows you to preserve the aesthetic qualities you have cultivated, specific color grading, texture preferences, composition rules, and artistic influences, and apply them to generate new images using open-source models. This guide walks you through the technical steps for developers and power users who want to move their Midjourney expertise into the Stable Diffusion ecosystem.
 
-Key Takeaways
 
 - Use consistent prompting patterns: ```
 /imagine prompt: [subject] --style [your-custom-parameters] --v 6 --s 250

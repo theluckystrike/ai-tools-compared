@@ -32,7 +32,6 @@ tags: [ai-tools-compared]
 
 Moving your development team from GitHub Copilot Enterprise to Cursor Business requires more than just installing a new extension. This checklist covers the technical configuration, workflow adjustments, and organizational changes needed for a smooth transition.
 
-Key Takeaways
 
 - Free tiers typically have: usage limits that work for evaluation but may not be sufficient for daily professional use.
 - Does Copilot offer a: free tier? Most major tools offer some form of free tier or trial period.

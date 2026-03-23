@@ -203,7 +203,7 @@ Provide:
 5. Complete header file with error codes
 ```
 
-Expected output: 300–400 lines of production-ready code with proper error handling.
+Expected output: 300, 400 lines of production-ready code with proper error handling.
 
 Example 2: Performance-Optimized Driver with FastRead
 
@@ -364,11 +364,11 @@ Pricing for AI-Assisted Driver Development
 
 | Scenario | Manual Dev Time | AI-Assisted Time | Cost Savings |
 |----------|---|---|---|
-| Simple driver | 8–12 hours | 1–2 hours | $700–1100 |
-| Complex driver | 20–30 hours | 3–6 hours | $1400–2400 |
-| Optimization pass | 10–15 hours | 2–3 hours | $700–1200 |
+| Simple driver | 8, 12 hours | 1, 2 hours | $700, 1100 |
+| Complex driver | 20, 30 hours | 3, 6 hours | $1400, 2400 |
+| Optimization pass | 10, 15 hours | 2, 3 hours | $700, 1200 |
 
-For typical embedded teams, AI assistance reduces driver development time by 70–85%, translating to $1000–2500 saved per driver.
+For typical embedded teams, AI assistance reduces driver development time by 70, 85%, translating to $1000, 2500 saved per driver.
 
 Best Practices for Working with AI
 

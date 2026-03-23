@@ -32,7 +32,6 @@ tags: [ai-tools-compared, comparison, artificial-intelligence]
 
 Choose Trino if you have Kubernetes expertise, need zero licensing costs, and want full customization of your AI query engine. Choose Starburst if you need enterprise support, out-of-box query optimization, and integrated security with audit logging for production AI systems. Starburst is built on top of Trino with added enterprise features like adaptive caching, cost-based optimization, and high availability, while Trino remains fully open-source and free.
 
-Key Takeaways
 
 - Starburst enterprise pricing starts: around $0.40 per query per hour, plus annual support contract costs.
 - A typical production Trino: cluster with 1 coordinator and 8 workers on AWS costs roughly $3,000-$8,000 per month in EC2 costs depending on instance types, plus engineering time to operate it.

@@ -93,7 +93,7 @@ Strengths:
 - Produces readable test names and organization
 
 Weaknesses:
-- Slower than Copilot (2–5 sec per test suite)
+- Slower than Copilot (2, 5 sec per test suite)
 - Requires conversation/prompting for best results
 - No auto-execution; requires manual test run
 - Priced per API token
@@ -215,7 +215,7 @@ Comparison Table
 | Test Execution |  |  |  |  (local) |  |
 | Framework Count | 8 | 10+ | 3 | 5 | 30+ |
 | Setup Friction | Low | Medium | Medium | Low | Low |
-| Pricing | $10/mo | $15–20/mo | $99–399/mo | $29–99/mo | Free–$240/yr |
+| Pricing | $10/mo | $15, 20/mo | $99, 399/mo | $29, 99/mo | Free, $240/yr |
 
 ---
 

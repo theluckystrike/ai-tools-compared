@@ -163,9 +163,9 @@ Pricing & Value Analysis
 
 | Tool | Cost | Speed | Accuracy | Iterations Needed |
 |------|------|-------|----------|-------------------|
-| Claude API | $3–$15/MTok | ~4s/req | 92% | 1–1.5 |
-| Copilot | $10–20/mo | ~2s/req | 78% | 2–3 |
-| Cursor | $20/mo | ~2s/req | 82% | 1.5–2 |
+| Claude API | $3, $15/MTok | ~4s/req | 92% | 1, 1.5 |
+| Copilot | $10, 20/mo | ~2s/req | 78% | 2, 3 |
+| Cursor | $20/mo | ~2s/req | 82% | 1.5, 2 |
 
 Cost-per-config:
 - Claude (web): ~$0.10 per 300-line config

@@ -19,7 +19,6 @@ tags: [ai-tools-compared, comparison, artificial-intelligence]
 
 Yellow AI and Haptik represent two distinct approaches to conversational AI in the enterprise space, differing most in their API philosophy, NLU customization depth, and deployment model.
 
-Key Takeaways
 
 - The platform offers pre-trained: models for common use cases (e-commerce, banking, support) but custom model training requires enterprise plans.
 - The free tier includes: basic bot building with limited API calls.

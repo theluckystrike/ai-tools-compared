@@ -28,7 +28,6 @@ tags: [ai-tools-compared, artificial-intelligence, kotlin, kotlin-multiplatform]
 
 Kotlin Multiplatform has become a standard approach for sharing code across Android, iOS, web, desktop, and server targets. However, generating platform-specific implementations remains one of the most time-consuming aspects of KMP development. This guide examines which AI tools effectively assist with generating expect/actual declarations, platform-specific implementations, and native API integrations.
 
-Key Takeaways
 
 - Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
 - How do I get: started quickly? Pick one tool from the options discussed and sign up for a free trial.

@@ -31,7 +31,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Marketing claims for AI coding tools are unreliable. "10x productivity" and "generates correct code" mean nothing without a reproducible evaluation framework. This guide shows how to run your own accuracy tests on the tools you're considering, using your actual codebase and task types.
 
-Key Takeaways
 
 - A model with 85%: accuracy at $15 per million tokens costs more per correct output than one with 78% accuracy at $3 per million tokens.
 - No model approaches 90% on those: iterative use is still necessary.

@@ -355,7 +355,7 @@ Generate a Terraform module for [resource type] with:
 Follow Terraform best practices with locals for computed values.
 ```
 
-This prompt format reduces back-and-forth iterations by 60–70% across all tested tools because it front-loads the decisions the AI would otherwise ask about one by one.
+This prompt format reduces back-and-forth iterations by 60, 70% across all tested tools because it front-loads the decisions the AI would otherwise ask about one by one.
 
 State Management and Remote Backends
 
@@ -400,9 +400,9 @@ Cost Comparison for High-Volume Use
 
 For teams generating 50+ modules monthly:
 
-- Claude: $750–$1,200/month (input-heavy, longer prompts)
-- GPT-4: $500–$800/month (faster generation)
-- Copilot: $100–$1,000/month (100–1,000 users)
+- Claude: $750, $1,200/month (input-heavy, longer prompts)
+- GPT-4: $500, $800/month (faster generation)
+- Copilot: $100, $1,000/month (100, 1,000 users)
 - Cursor: $2,000/month (100 users)
 - CodeWhisperer: $1,900/month (100 users)
 

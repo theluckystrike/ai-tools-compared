@@ -18,7 +18,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Legal technology continues evolving rapidly, and Clio remains a dominant player in cloud-based practice management. This review examines Clio's AI capabilities as of 2026, focusing on what developers and technically-minded practitioners need to know before integrating it into their workflows.
 
-Key Takeaways
 
 - Rate limits apply: currently around 500 requests per minute for standard accounts, which suffices for most integration scenarios.
 - The 15-day trial provides: sufficient evaluation time for most use cases.

@@ -44,7 +44,6 @@ Fiction writers seeking AI assistance face a crowded market, but two platforms c
 | Image Generation | No | Yes (Opus tier) |
 | Best For | Guided drafting and revision | Controlled long-form fiction |
 
-Key Takeaways
 
 - This comparison breaks down: the technical capabilities, customization options, and integration possibilities that matter to developers and power users.
 - For casual writers (1 novel/month): NovelAI's Basic tier is most economical.

@@ -33,7 +33,6 @@ tags: [ai-tools-compared, claude-ai]
 
 To get Claude to answer when it refuses your prompt, remove trigger words that activate safety filters, add clear context about your legitimate purpose, and explicitly state what you are building. For example, replace "How do I bypass authentication" with "Explain common authentication patterns for my application." If refusals persist, break complex requests into smaller parts and use educational framing such as "I'm learning about X. Can you explain how it works and what defenses prevent misuse?"
 
-Key Takeaways
 
 - What defenses or security: measures prevent misuse 4.
 - To get Claude to: answer when it refuses your prompt, remove trigger words that activate safety filters, add clear context about your legitimate purpose, and explicitly state what you are building.

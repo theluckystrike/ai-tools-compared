@@ -32,7 +32,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 When managing a TypeScript monorepo with Turborepo, choosing the right AI coding assistant can significantly impact your development workflow. Turborepo's caching, remote execution, and task orchestration features create unique requirements that not all AI assistants handle equally well. This comparison evaluates the leading options based on their ability to understand monorepo structure, work across multiple packages, and integrate with Turborepo's specific tooling.
 
-Key Takeaways
 
 - Claude Code is most: cost-effective for terminal-focused developers.
 - Modify `packages/web/src/hooks/useData.ts` to use: request deduplication 4.

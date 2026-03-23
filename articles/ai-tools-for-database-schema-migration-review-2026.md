@@ -18,7 +18,6 @@ Database migrations are the highest-risk deployments in most systems. A schema c
 
 This guide evaluates which AI tools provide actionable migration review and which produce false confidence.
 
-Key Takeaways
 
 - others) - Models the: actual blocking time accurately - Suggests a zero-downtime approach with chunking - Provides a testable sequence Cost: Free with Claude Code, or $20/month Claude Pro.
 - Cost: $20/month or self-hosted.

@@ -138,11 +138,11 @@ Slow backend operations, database queries, external API calls, heavy computation
 
 | Upstream Type | Recommended proxy_read_timeout | Notes |
 |--------------|-------------------------------|-------|
-| REST API | 30s–60s | Most requests complete quickly |
-| File processing | 120s–300s | Depends on file size |
+| REST API | 30s, 60s | Most requests complete quickly |
+| File processing | 120s, 300s | Depends on file size |
 | WebSocket | 3600s | Long-lived connections |
-| ML inference | 60s–120s | Model load adds latency |
-| Database-heavy | 60s–90s | Watch for N+1 query patterns |
+| ML inference | 60s, 120s | Model load adds latency |
+| Database-heavy | 60s, 90s | Watch for N+1 query patterns |
 
 Step 4: AI-Powered Log Analysis
 

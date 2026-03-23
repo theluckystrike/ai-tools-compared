@@ -84,7 +84,7 @@ Weaknesses:
 
 Best For: Production infrastructure, enterprise stacks, multi-account deployments, security-critical configurations.
 
-Cost/Article Ratio: ~$0.40–$0.60 per complex stack article (VPC + RDS + Lambda + monitoring). Higher upfront cost, lower revision cycles.
+Cost/Article Ratio: ~$0.40, $0.60 per complex stack article (VPC + RDS + Lambda + monitoring). Higher upfront cost, lower revision cycles.
 ---
 
 ChatGPT 4o (Reliable Basics; Gaps on Advanced Patterns)
@@ -148,7 +148,7 @@ Weaknesses:
 
 Best For: Tutorial content, getting-started guides, educational articles targeting beginners.
 
-Cost/Article Ratio: ~$0.15–$0.25 per article. Fast output, but requires more editorial review on security and advanced topics.
+Cost/Article Ratio: ~$0.15, $0.25 per article. Fast output, but requires more editorial review on security and advanced topics.
 
 ---
 
@@ -201,7 +201,7 @@ Weaknesses:
 
 Best For: Individual developers writing CDK; not cost-effective for content generation at scale.
 
-Cost/Article Ratio: ~$0.30–$0.50 per article. Slower than Claude API for batch generation.
+Cost/Article Ratio: ~$0.30, $0.50 per article. Slower than Claude API for batch generation.
 
 ---
 
@@ -245,11 +245,11 @@ Comparison Table
 
 | Tool | TypeScript | Constructs | IAM Policies | Cross-Stack | Best Practices | Cost/Article | Recommended |
 |------|-----------|-----------|-------------|-------------|---------------|------------|-------------|
-| Claude Opus 4.6 | Excellent | Excellent | Excellent | Excellent | Excellent | $0.40–0.60 | Yes |
-| ChatGPT 4o | Good | Good | Fair | Fair | Fair | $0.15–0.25 | Conditional |
+| Claude Opus 4.6 | Excellent | Excellent | Excellent | Excellent | Excellent | $0.40, 0.60 | Yes |
+| ChatGPT 4o | Good | Good | Fair | Fair | Fair | $0.15, 0.25 | Conditional |
 | Copilot | Good | Fair | Poor | Poor | Fair | Subscription | No |
-| Cursor | Excellent | Excellent | Excellent | Excellent | Excellent | $0.30–0.50 | Conditional |
-| Codeium | Fair | Poor | Poor | Poor | Poor | Free–$12/mo | No |
+| Cursor | Excellent | Excellent | Excellent | Excellent | Excellent | $0.30, 0.50 | Conditional |
+| Codeium | Fair | Poor | Poor | Poor | Poor | Free, $12/mo | No |
 | TabbyML | Fair | Poor | Poor | Poor | Poor | Free | No |
 
 ---
@@ -481,7 +481,7 @@ Cost Analysis: 12-Month Content Strategy
 Generate 30 CDK stack articles (5 simple, 15 intermediate, 10 advanced):
 - Claude API cost: ~$18 (30 stacks × $0.60 average)
 - ChatGPT 4o equivalent: ~$15 (cheaper but lower quality, more revisions)
-- Time saved vs. manual CDK learning: ~150 hours (worth $7,500–$15,000 at contractor rates)
+- Time saved vs. manual CDK learning: ~150 hours (worth $7,500, $15,000 at contractor rates)
 
 Conclusion: Claude Opus 4.6 is the clear winner for CDK infrastructure content. Reliable, production-safe, and cost-efficient. Use ChatGPT 4o for secondary sources or educational framing. Avoid Copilot and Codeium for stack generation.
 

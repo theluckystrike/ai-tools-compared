@@ -34,7 +34,6 @@ Creating accurate comparison tables for competing API products is a core respons
 
 This guide covers how to use AI to help DevRel create comparison tables for competing API features, focusing on practical workflows that maintain accuracy while reducing manual effort.
 
-Key Takeaways
 
 - What's the minimum table size before comparison becomes useful?
 

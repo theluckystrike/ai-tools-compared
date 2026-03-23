@@ -30,7 +30,6 @@ tags: [ai-tools-compared, artificial-intelligence, kotlin, best-of]
 
 Kotlin Multiplatform has matured significantly, enabling developers to share code across Android, iOS, web, desktop, and server targets from a single codebase. However, writing correct shared code modules requires careful attention to platform-specific limitations, expect/actual patterns, and compilation targets. In 2026, AI coding assistants have developed varying levels of sophistication for handling these challenges. This guide evaluates which tools best help developers produce correct Kotlin Multiplatform implementations.
 
-Key Takeaways
 
 - Use case: Serialization with kotlinx.serialization
 

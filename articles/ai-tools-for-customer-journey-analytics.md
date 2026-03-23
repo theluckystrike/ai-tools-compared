@@ -32,7 +32,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Understanding how customers interact with your product across multiple touchpoints transforms raw data into practical recommendations. Customer journey analytics tracks users from first contact through conversion, retention, and beyond. AI-powered tools now make this analysis more sophisticated and accessible for development teams.
 
-Key Takeaways
 
 - The most common approach: is to call an `identify()` function at signup that associates the anonymous session ID with the permanent user ID.
 - You only need a: data warehouse if you require joining journey data with other business data (revenue, support tickets, CRM records) or if you want to train custom ML models on your full event history.

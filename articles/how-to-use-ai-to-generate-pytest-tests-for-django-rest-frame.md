@@ -40,7 +40,7 @@ Django REST Framework serializers handle data validation, transformation, and se
 
 Traditional test writing requires manually crafting test cases for valid data, invalid data, edge cases, and boundary conditions. AI can generate a solid foundation of tests that you then refine based on your specific requirements.
 
-The benefit of AI-generated tests compounds as serializers grow in complexity. A serializer with 8 validated fields and 3 cross-field constraints can easily require 30–40 individual test cases to achieve meaningful coverage. Writing those manually takes hours. Using AI as a starting point gets you to 80% coverage in minutes, leaving human effort for the business-logic-specific edge cases the AI cannot infer.
+The benefit of AI-generated tests compounds as serializers grow in complexity. A serializer with 8 validated fields and 3 cross-field constraints can easily require 30, 40 individual test cases to achieve meaningful coverage. Writing those manually takes hours. Using AI as a starting point gets you to 80% coverage in minutes, leaving human effort for the business-logic-specific edge cases the AI cannot infer.
 
 Step 2: Preparing Your Serializer for AI-Assisted Testing
 

@@ -33,7 +33,6 @@ tags: [ai-tools-compared]
 
 Fine-tuning Llama 3 on your own codebase produces a model that knows your internal libraries, naming conventions, and common patterns. The result is better autocomplete suggestions than a general-purpose model. without sending your code to an external API.
 
-Key Takeaways
 
 - Only the LoRA adapter: weights (about 0.5% of total parameters) are trained at full precision.
 - Stop early and use the checkpoint with the lowest eval loss: `load_best_model_at_end=True` handles this automatically.

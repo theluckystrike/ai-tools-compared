@@ -438,8 +438,8 @@ For repositories with more than 50,000 code units, the IVFFlat index becomes cri
 | Repository size | Recommended lists | Approximate query time |
 |---|---|---|
 | < 10,000 units | 20 | < 10ms |
-| 10,000–100,000 units | 100 | 10–30ms |
-| > 100,000 units | 200–500 | 30–80ms |
+| 10,000, 100,000 units | 100 | 10, 30ms |
+| > 100,000 units | 200, 500 | 30, 80ms |
 
 After inserting a large batch of new embeddings, run `VACUUM ANALYZE code_units` to refresh statistics and ensure the index planner uses the vector index rather than a sequential scan.
 

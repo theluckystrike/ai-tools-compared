@@ -33,7 +33,6 @@ tags: [ai-tools-compared, comparison, claude-ai, chatgpt]
 
 Technical writing is one of the highest-value tasks for AI assistance. and one where the quality gap between models is most visible. A poorly written runbook gets followed incorrectly during an incident. A vague architecture decision record creates confusion months later. This comparison tests Claude and ChatGPT (GPT-4o) on the specific writing tasks engineers and technical leads face weekly.
 
-Key Takeaways
 
 - README files for open-source: libraries 5.
 - ChatGPT's output is accurate but less detailed: the missing permission documentation is a real gap that causes integration errors.

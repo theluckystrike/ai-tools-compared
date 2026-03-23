@@ -33,7 +33,6 @@ tags: [ai-tools-compared, troubleshooting]
 
 To fix Cursor crashing, clear the cache folder at `~/Library/Application Support/Cursor/User/Cache` (macOS) or `%APPDATA%\Cursor\User\Cache` (Windows), then launch in safe mode by holding Shift to isolate extension conflicts. If crashes persist, update your GPU drivers and add the `--disable-gpu` launch flag to rule out rendering issues. These three steps resolve the majority of Cursor stability problems, with a full walkthrough below.
 
-Key Takeaways
 
 - Extension conflicts remain one: of the most frequent causes of crashes.
 - -z "$pid" ]; then: lsof -p $pid 2>/dev/null | wc -l >> $LOGFILE fi fi fi sleep 5 done ``` Run this in the background, then reproduce the crash.

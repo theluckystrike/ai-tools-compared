@@ -32,7 +32,6 @@ tags: [ai-tools-compared, comparison, artificial-intelligence]
 
 When evaluating AI-powered customer success platforms, developers and technical decision-makers need more than marketing claims. This comparison examines Custify and Gainsight AI through the lens of implementation complexity, API capabilities, and extensibility for power users building custom workflows.
 
-Key Takeaways
 
 - The platform uses OAuth: 2.0 for authentication, which adds an initial setup step but provides better security for enterprise environments.
 - Custom field support: can you extend the data model for your specific use cases?

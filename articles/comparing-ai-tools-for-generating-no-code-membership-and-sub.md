@@ -323,14 +323,14 @@ When evaluating AI-generated membership architectures, consider the operational 
 
 | Component | Tool | Estimated Monthly Cost |
 |-----------|------|----------------------|
-| Authentication | Auth0, Firebase Auth | $0–500 (depending on MAU) |
-| Database | PostgreSQL (self-hosted) | $30–200 |
-| Vector search (for personalization) | Pinecone | $0–100 |
+| Authentication | Auth0, Firebase Auth | $0, 500 (depending on MAU) |
+| Database | PostgreSQL (self-hosted) | $30, 200 |
+| Vector search (for personalization) | Pinecone | $0, 100 |
 | Payment processing | Stripe | 2.9% + $0.30 per transaction |
-| Hosting (compute) | Vercel, AWS | $20–500+ |
-| Cache layer | Redis | $5–100 |
+| Hosting (compute) | Vercel, AWS | $20, 500+ |
+| Cache layer | Redis | $5, 100 |
 
-A typical small membership site (1,000 active users) costs $200–400/month in infrastructure, plus payment processing fees. Claude Code and Cursor usually suggest this cost breakdown when asked to evaluate architecture trade-offs.
+A typical small membership site (1,000 active users) costs $200, 400/month in infrastructure, plus payment processing fees. Claude Code and Cursor usually suggest this cost breakdown when asked to evaluate architecture trade-offs.
 
 Testing Membership Logic with AI Assistance
 

@@ -50,7 +50,7 @@ Platforms designed specifically for real estate often include AI features integr
 
 For example, when you input a property's bedroom count, square footage, lot size, and notable features, these platforms generate descriptions that highlight key selling points. Agents using these systems report saving 15-30 minutes per listing compared to manual writing.
 
-#### Popular Real Estate Listing Platforms with AI:
+Popular Real Estate Listing Platforms with AI:
 
 Zillow Premier Agent with AI:
 - Generates initial descriptions based on MLS data

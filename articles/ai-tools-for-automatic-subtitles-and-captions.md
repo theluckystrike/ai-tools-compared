@@ -32,7 +32,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 For developers building video applications, automatic subtitle generation has become significantly more accessible through modern AI APIs. This guide covers practical approaches to implementing subtitle generation in your projects, comparing the available tools and providing code examples for common workflows.
 
-Key Takeaways
 
 - Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
 - AI-powered alternatives can process: the same content in seconds, reducing costs by 90% or more while maintaining acceptable accuracy for many use cases.
@@ -163,7 +162,7 @@ Tool Comparison at a Glance
 
 | Feature | Whisper API | Google STT | AWS Transcribe | AssemblyAI |
 |---|---|---|---|---|
-| Price per minute | $0.006 | $0.016–$0.048 | $0.024 | $0.012 |
+| Price per minute | $0.006 | $0.016, $0.048 | $0.024 | $0.012 |
 | Languages | 99+ | 125+ | 100+ | 99+ |
 | Speaker diarization | No (base) | Yes | Yes | Yes |
 | Real-time streaming | No | Yes | Yes | Yes |

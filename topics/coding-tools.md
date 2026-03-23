@@ -5,7 +5,7 @@ description: "Comparisons and guides for AI coding tools: Copilot, Cursor, Claud
 permalink: /topics/coding-tools/
 ---
 
-# AI Coding Tools
+AI Coding Tools
 
 Comparisons and guides for AI coding assistants, autocomplete engines, and code generation tools. Copilot, Cursor, Claude Code, Windsurf, Codeium, Tabnine, and more.
 

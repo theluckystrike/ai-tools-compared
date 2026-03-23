@@ -34,7 +34,6 @@ User research synthesis is one of the most time-intensive phases in UX design. A
 
 AI tools designed for user research synthesis have emerged to address this challenge. These tools help designers transcribe interviews, identify recurring themes, extract quotes, and generate structured insights from raw research data. The right tool can reduce synthesis time from days to hours while maintaining the nuance and context that make research valuable.
 
-Key Takeaways
 
 - How different user types (freelancers: small teams, enterprise) differ in needs
 4.

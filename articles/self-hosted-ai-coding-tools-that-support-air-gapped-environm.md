@@ -215,7 +215,7 @@ GPU and Storage Requirements for Air-Gapped Deployments
 
 All these tools perform significantly better with a dedicated GPU. An NVIDIA RTX 3060 (12GB VRAM) handles 7B parameter models comfortably for single-user scenarios. For 13B models, a RTX 4090 (24GB VRAM) or RTX 3090 provides enough headroom. For multi-user team deployments serving 10 or more developers simultaneously, consider server-class hardware: an A10G (24GB) handles concurrent 7B model requests well, and an A100 (40GB or 80GB) supports larger 34B models.
 
-Running on CPU alone is viable for smaller 1B–3B parameter models like TabbyML/StarCoder-1B, but expect 3–8 second completion latency rather than sub-second responses. For developers who need responsive inline completions, GPU access is effectively a requirement for models above 3B parameters.
+Running on CPU alone is viable for smaller 1B, 3B parameter models like TabbyML/StarCoder-1B, but expect 3, 8 second completion latency rather than sub-second responses. For developers who need responsive inline completions, GPU access is effectively a requirement for models above 3B parameters.
 
 For storage planning: a 7B model at GGUF Q5_K_M is roughly 5GB; a 13B model is approximately 9GB; a 34B model is around 22GB. Budget additional space for model metadata and vector embeddings if using codebase indexing features. When transferring models via portable media, verify file integrity with SHA256 checksums before deployment.
 

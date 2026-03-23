@@ -17,7 +17,7 @@ intent-checked: true
 
 Code migration between programming languages ranks among the most tedious refactoring tasks. Teams often commit to rewriting entire codebases, sometimes thousands of lines, when business requirements shift or performance demands change. A financial firm might need to migrate Python analytics code to Rust for performance. A mobile team might convert Java Android code to Kotlin for modern features. A startup might convert JavaScript to TypeScript for type safety.
 
-Without AI assistance, language migration projects consume 200–800 developer hours. AI tools now reduce this to 20–50 hours by automating syntax conversion, idiom translation, and library mapping. This guide compares the best AI approaches for migrating production code between languages.
+Without AI assistance, language migration projects consume 200, 800 developer hours. AI tools now reduce this to 20, 50 hours by automating syntax conversion, idiom translation, and library mapping. This guide compares the best AI approaches for migrating production code between languages.
 
 Table of Contents
 
@@ -34,13 +34,13 @@ Why Language Migration Matters
 
 Companies migrate code for:
 
-- Performance: Python → Rust, Java → Go (10–100x speed improvements)
+- Performance: Python → Rust, Java → Go (10, 100x speed improvements)
 - Type safety: JavaScript → TypeScript, Python → Java (fewer production bugs)
 - Ecosystem shift: Node.js → Python/Go (access to better libraries)
 - Mobile modernization: Java → Kotlin, Objective-C → Swift (modern language features)
 - Cost reduction: Ruby → Go/Rust (lower memory footprint, cheaper infrastructure)
 
-A typical commercial codebase: 50,000–500,000 lines. Manual migration: $50,000–500,000 in labor. AI-assisted: $1,000–5,000 (primarily for review and testing).
+A typical commercial codebase: 50,000, 500,000 lines. Manual migration: $50,000, 500,000 in labor. AI-assisted: $1,000, 5,000 (primarily for review and testing).
 
 AI Tools for Code Migration: Capabilities Comparison
 
@@ -62,7 +62,7 @@ Real-world result: Converting 15,000-line Python data processing pipeline to Rus
 4. Suggested Rayon for parallel processing
 5. Output: 12,000 lines of production-ready Rust (~80% compile-ready)
 
-Cost: $3–12 per 1M input tokens via API; $20/month for Claude.ai subscriber
+Cost: $3, 12 per 1M input tokens via API; $20/month for Claude.ai subscriber
 
 Example workflow:
 
@@ -101,7 +101,7 @@ Real-world result: Converting 8,000-line Next.js project to SvelteKit. GPT-4:
 3. Migrated API routes correctly
 4. Output: 7,500 lines, ~75% compile-ready
 
-Cost: $0.03–0.06 per 1K input tokens via API; $20/month for ChatGPT Plus
+Cost: $0.03, 0.06 per 1K input tokens via API; $20/month for ChatGPT Plus
 
 Google Gemini 2.0
 
@@ -209,7 +209,7 @@ fn process_data(input_path: &str) -> Result<DataFrame> {
 }
 ```
 
-80–90% of module is production-ready. Remaining 10–20% is performance tuning and error handling refinement.
+80, 90% of module is production-ready. Remaining 10, 20% is performance tuning and error handling refinement.
 
 Java to Kotlin (Android Migration)
 
@@ -385,19 +385,19 @@ Cost Comparison: Manual vs. AI-Assisted
 | 12K JS → TS | 100 hours ($10K) | 15 hours ($2K) | $8K |
 | 100K Java → Go | 800 hours ($80K) | 90 hours ($9K) | $71K |
 
-Average savings: 75–80% of refactoring labor
+Average savings: 75, 80% of refactoring labor
 
 Decision Framework: Which AI Tool to Use
 
 | Migration | Best Tool | Reason | Time |
 |-----------|-----------|--------|------|
-| Python → Rust | Claude | Complex semantic mapping, performance idioms | 40–60h |
-| Java → Kotlin | Claude | Language-specific patterns, Android context | 25–35h |
-| JS → TS | GPT-4 | Fast iteration, web-focused | 15–25h |
-| Node.js → Python | Claude | Async patterns, library mapping | 30–45h |
-| C++ → Rust | Claude | Memory safety patterns, performance | 50–80h |
-| C# → Go | Claude | Goroutines, interface patterns | 35–50h |
-| TensorFlow (Py) → JAX | Gemini | ML framework expertise | 30–50h |
+| Python → Rust | Claude | Complex semantic mapping, performance idioms | 40, 60h |
+| Java → Kotlin | Claude | Language-specific patterns, Android context | 25, 35h |
+| JS → TS | GPT-4 | Fast iteration, web-focused | 15, 25h |
+| Node.js → Python | Claude | Async patterns, library mapping | 30, 45h |
+| C++ → Rust | Claude | Memory safety patterns, performance | 50, 80h |
+| C# → Go | Claude | Goroutines, interface patterns | 35, 50h |
+| TensorFlow (Py) → JAX | Gemini | ML framework expertise | 30, 50h |
 
 Real-World Workflow: Python to Rust Financial Pipeline
 
@@ -410,17 +410,17 @@ Week 1: Analysis
 - Identify external dependencies (NumPy, SciPy, pandas)
 - Map to Rust equivalents (ndarray, polars, statrs)
 
-Week 2–3: Prompt-Driven Conversion (Claude)
+Week 2, 3: Prompt-Driven Conversion (Claude)
 - Module 1 (core math): 2,000 lines → 1,800 lines Rust (prompt: 30 min, review: 4h)
 - Module 2 (data loading): 1,500 lines → 1,200 lines Rust
-- Module 3–10 (analysis): 18,000 lines → 15,000 lines Rust
-- Module 11–15 (I/O): 12,000 lines → 8,000 lines Rust
+- Module 3, 10 (analysis): 18,000 lines → 15,000 lines Rust
+- Module 11, 15 (I/O): 12,000 lines → 8,000 lines Rust
 
 Week 4: Integration & Testing
 - Compile all modules together
 - Test with reference data against original Python
 - Performance testing (target: <2 minutes vs. original 45 minutes)
-- Fix compilation errors (typically 2–5% of code)
+- Fix compilation errors (typically 2, 5% of code)
 
 Week 5: Optimization
 - Profile hot paths
@@ -433,10 +433,10 @@ Common Pitfalls to Avoid
 
 1. Expecting 100% AI-Generated Code Quality
 
-AI produces 70–85% production-ready code. Plan for:
-- 15–30% code review
-- 5–10% bug fixes
-- 5–10% performance tuning
+AI produces 70, 85% production-ready code. Plan for:
+- 15, 30% code review
+- 5, 10% bug fixes
+- 5, 10% performance tuning
 
 2. Migrating Entire Project at Once
 

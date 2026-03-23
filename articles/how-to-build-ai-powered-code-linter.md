@@ -31,7 +31,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Static linters catch syntax errors and style violations. AI linters catch logic errors, security anti-patterns, and architectural problems that rules-based systems miss. This guide walks through building a working AI code linter: a Node.js CLI tool that calls an LLM API to analyze code and output structured lint results.
 
-Key Takeaways
 
 - A typical PR with: 10 changed files costs under $0.01 with Claude Haiku.
 - Sends code to Claude Haiku (fast: cheap) with a lint-focused system prompt

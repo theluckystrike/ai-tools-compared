@@ -33,11 +33,10 @@ tags: [ai-tools-compared]
 
 Retrieval-Augmented Generation (RAG) lets you ground LLM responses in your own documents. LangChain remains the most widely adopted framework for wiring together the components. loaders, splitters, embeddings, vector stores, and retrievers. This guide walks through building a production-quality RAG pipeline from scratch with real code, covering the decisions that actually affect answer quality.
 
-Key Takeaways
 
 - Retrieval: Given a user query, embed it and find the most semantically similar chunks.
 - For better recall: use MMR (Maximum Marginal Relevance) to trade off relevance against diversity.
-- In testing across hundreds of datasets: hybrid search typically improves recall by 15–25% over vector-only retrieval.
+- In testing across hundreds of datasets: hybrid search typically improves recall by 15, 25% over vector-only retrieval.
 - Often a hybrid: semantic boundaries with a 512-token size limit, performs best.
 - Embedding model selection: `text-embedding-3-small` (62M dimensions) costs $0.02 per million tokens.
 - `text-embedding-3-large` (3072 dimensions) costs: $0.13 per million tokens.
@@ -86,8 +85,8 @@ print(f"Split {len(raw_docs)} documents into {len(docs)} chunks")
 ```
 
 Chunk size guidance:
-- 256–512 tokens: good for factual Q&A, dense technical docs
-- 512–1024 tokens: better for narrative text, legal documents
+- 256, 512 tokens: good for factual Q&A, dense technical docs
+- 512, 1024 tokens: better for narrative text, legal documents
 - Parent-child chunking (small retrieval chunk, large context chunk) often beats both
 
 Step 2: Embed and Store
@@ -197,7 +196,7 @@ compression_retriever = ContextualCompressionRetriever(
 )
 ```
 
-This two-stage approach (bi-encoder fetch + cross-encoder rerank) is the standard production pattern and typically improves answer quality by 10–20% over embedding-only retrieval.
+This two-stage approach (bi-encoder fetch + cross-encoder rerank) is the standard production pattern and typically improves answer quality by 10, 20% over embedding-only retrieval.
 
 Evaluating RAG Quality
 
@@ -228,7 +227,7 @@ scores = evaluate(dataset, metrics=[faithfulness, answer_relevancy, context_prec
 print(scores)
 ```
 
-Run this on 50–100 question/answer pairs before deploying. A faithfulness score below 0.8 means the model is hallucinating outside the retrieved context.
+Run this on 50, 100 question/answer pairs before deploying. A faithfulness score below 0.8 means the model is hallucinating outside the retrieved context.
 
 Common Production Issues
 
@@ -269,7 +268,7 @@ qa_chain = RetrievalQA.from_chain_type(
 )
 ```
 
-Hybrid search reduces "false negatives", cases where relevant documents exist but the embedding model doesn't consider them similar to the query. In testing across hundreds of datasets, hybrid search typically improves recall by 15–25% over vector-only retrieval.
+Hybrid search reduces "false negatives", cases where relevant documents exist but the embedding model doesn't consider them similar to the query. In testing across hundreds of datasets, hybrid search typically improves recall by 15, 25% over vector-only retrieval.
 
 Chunking Strategy Deep Dive
 
@@ -329,7 +328,7 @@ PROMPT = PromptTemplate(
 )
 ```
 
-The key improvements: explicit instruction to refuse when uncertain, requirement to cite sources, and emphasis on factuality. Studies show this reduces hallucination by 30–40% compared to generic prompts.
+The key improvements: explicit instruction to refuse when uncertain, requirement to cite sources, and emphasis on factuality. Studies show this reduces hallucination by 30, 40% compared to generic prompts.
 
 Performance Optimization Techniques
 
@@ -367,7 +366,7 @@ async def async_rag_pipeline(query: str):
     return response, docs
 ```
 
-Async operations and caching reduce end-to-end latency from 3–5 seconds to 800ms–1.2 seconds for typical queries.
+Async operations and caching reduce end-to-end latency from 3, 5 seconds to 800ms, 1.2 seconds for typical queries.
 
 Scaling RAG to Production
 

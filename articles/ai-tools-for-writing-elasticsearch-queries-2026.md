@@ -30,7 +30,6 @@ tags: [ai-tools-compared, elasticsearch, dsl-queries, search-optimization, aggre
 
 Elasticsearch DSL queries require understanding nested bool filters, aggregation pipelines, and performance implications. AI coding assistants excel at generating correct DSL syntax and suggesting optimization patterns. Claude handles complex requirements well, GPT-4 produces clean examples, and Copilot autocompletes within IDE context. This guide compares their outputs with real query examples and performance considerations.
 
-Key Takeaways
 
 - Missing filter context: All tools include filter block alongside must clause
 4.

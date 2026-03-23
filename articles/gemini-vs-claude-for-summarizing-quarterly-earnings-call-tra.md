@@ -45,7 +45,7 @@ Quarterly earnings calls present unique challenges for AI summarization. These t
 
 The best model for your use case depends on your integration requirements, volume needs, and whether you prioritize speed, accuracy, or cost efficiency.
 
-A typical S&P 500 earnings call transcript runs 8,000–15,000 words, covering a prepared remarks section (CEO and CFO) followed by analyst Q&A. The Q&A section is often where the most actionable information appears, executives answering probing questions about guidance, margin pressure, or competitive dynamics. A good summarization model must handle both the structured prepared remarks and the free-flowing Q&A with equal reliability.
+A typical S&P 500 earnings call transcript runs 8,000, 15,000 words, covering a prepared remarks section (CEO and CFO) followed by analyst Q&A. The Q&A section is often where the most actionable information appears, executives answering probing questions about guidance, margin pressure, or competitive dynamics. A good summarization model must handle both the structured prepared remarks and the free-flowing Q&A with equal reliability.
 
 Claude for Transcript Summarization
 

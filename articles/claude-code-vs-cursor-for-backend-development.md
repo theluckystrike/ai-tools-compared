@@ -33,7 +33,6 @@ tags: [ai-tools-compared, comparison, claude-ai]
 
 Backend development sits in a different zone from frontend work. The tasks. schema migrations, API endpoint design, service orchestration, query optimization, deployment configuration. often span many files and require understanding system-level constraints. Claude Code and Cursor approach these tasks differently, and the right choice depends on your working style.
 
-Key Takeaways
 
 - Each notification has: user_id (FK to users), title (str, max 200 chars), body (text), read (bool, default false),
 created_at (timestamp).

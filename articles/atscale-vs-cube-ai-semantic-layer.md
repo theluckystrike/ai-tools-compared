@@ -32,7 +32,6 @@ tags: [ai-tools-compared, comparison, artificial-intelligence]
 
 When building AI-powered applications that need reliable data access, choosing the right semantic layer becomes critical. Both AtScale and Cube offer AI capabilities that sit between your data warehouse and your application, but they take different approaches. This comparison examines what each platform offers developers building AI-driven data applications.
 
-Key Takeaways
 
 - Users ask: "What was revenue last month?"
 

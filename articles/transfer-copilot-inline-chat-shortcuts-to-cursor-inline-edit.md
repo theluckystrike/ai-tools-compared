@@ -198,7 +198,7 @@ Having overlapping keybindings can slow down key processing. If you notice laten
 2. Remove conflicting bindings from extensions you don't need
 3. Use the `when` clause liberally to limit binding scope
 
-A minimal keybinding file (10–20 entries) processes instantly. Hundreds of bindings can introduce 100–200ms latency.
+A minimal keybinding file (10, 20 entries) processes instantly. Hundreds of bindings can introduce 100, 200ms latency.
 
 Migrating Other Shortcuts Beyond Inline Chat
 

@@ -33,7 +33,6 @@ tags: [ai-tools-compared, comparison, claude-ai]
 
 Claude Code wins for repo-wide refactoring that requires reasoning across many files simultaneously. it reads entire directory trees, plans changes across dozens of files, and executes them with a single session. Cursor wins for iterative, file-by-file refactoring inside an IDE where you want inline diffs, immediate preview, and the ability to accept/reject individual changes. The deciding factor is usually the size of what you're changing: single module or service → Cursor; cross-cutting concern affecting 20+ files → Claude Code.
 
-Key Takeaways
 
 - If `getUserById()` is called: via a wrapper that itself is called 40 places, Claude Code traces that chain; Cursor Composer may stop at the direct callers.
 - Group by: Prisma schema, DB queries, API layer, React components, tests."
@@ -311,15 +310,15 @@ Step 4: Update types in @src/types/ for Fastify request/reply
 Show me the diff for each file before applying. I'll accept or reject per-file changes.
 ```
 
-Expected workflow: 60–90 minutes, includes human review of each diff, catches more edge cases.
+Expected workflow: 60, 90 minutes, includes human review of each diff, catches more edge cases.
 
 Table: Tool Strengths by Scenario
 
 | Scenario | Claude Code | Cursor | Winner |
 |----------|---|---|---|
 | Single large file refactor | Good | Excellent | Cursor |
-| 5–10 file refactor | Very Good | Excellent | Cursor |
-| 20–50 file refactor | Excellent | Good | Claude Code |
+| 5, 10 file refactor | Very Good | Excellent | Cursor |
+| 20, 50 file refactor | Excellent | Good | Claude Code |
 | 50+ file refactor with dependencies | Excellent | Fair | Claude Code |
 | Real-time iterative changes | Fair | Excellent | Cursor |
 | Schema migrations (DB + code) | Excellent | Good | Claude Code |

@@ -19,7 +19,6 @@ tags: [ai-tools-compared, best-of, artificial-intelligence]
 
 Building a real estate chatbot requires careful selection of AI tools that handle property searches, appointment scheduling, and lead qualification effectively. This guide covers the most practical options for developers and power users implementing real estate conversational AI.
 
-Key Takeaways
 
 - This guide covers the: most practical options for developers and power users implementing real estate conversational AI.
 - Start with free options: to find what works for your workflow, then upgrade when you hit limitations.
@@ -213,7 +212,7 @@ A production real estate chatbot typically follows this lead qualification seque
 
 1. Capture intent. Determine whether the user is buying, selling, or renting.
 2. Gather search criteria. Collect location, budget, property type, and timeline through guided questions.
-3. Surface matching listings. Query your MLS API or property database and return the top 3–5 results with photos and key details.
+3. Surface matching listings. Query your MLS API or property database and return the top 3, 5 results with photos and key details.
 4. Qualify budget and financing. Ask whether the buyer is pre-approved, which informs how urgently to route the lead to an agent.
 5. Schedule a viewing. Integrate with Google Calendar or Calendly to book viewings directly from the chat.
 6. Hand off to CRM. Push the qualified lead with all collected context to HubSpot, Follow Up Boss, or your CRM of choice.
@@ -234,7 +233,7 @@ Not storing conversation history. Lead qualification value compounds across sess
 Pro Tips for Production Deployments
 
 
-Rate-limit your MLS API calls. Real estate databases often enforce strict rate limits. Cache property search results locally for 5–15 minutes using Redis or Memcached so repeated queries for the same location and criteria do not exhaust your API quota during peak hours when many users search simultaneously.
+Rate-limit your MLS API calls. Real estate databases often enforce strict rate limits. Cache property search results locally for 5, 15 minutes using Redis or Memcached so repeated queries for the same location and criteria do not exhaust your API quota during peak hours when many users search simultaneously.
 
 Personalize follow-up messages. After a viewing is scheduled, trigger an automated follow-up message 24 hours before the appointment that includes the property address, agent contact details, and a link to the listing photos. Foundation models can generate these messages dynamically using the stored conversation context, which feels more personal than a generic template.
 

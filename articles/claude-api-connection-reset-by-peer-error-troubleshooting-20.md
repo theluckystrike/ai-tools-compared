@@ -17,7 +17,6 @@ tags: [ai-tools-compared, troubleshooting, claude-ai, api]
 
 The "connection reset by peer" error is one of the most frustrating issues developers encounter when working with the Claude API. This error indicates that the remote server terminated the connection unexpectedly, disrupting your API calls and potentially causing data loss or incomplete requests. Understanding the root causes and implementing proper error handling can save hours of debugging and ensure your applications run reliably.
 
-Key Takeaways
 
 - Set the idle timeout: to at least 300 seconds in your ALB listener settings.
 - Nginx proxy timeout settings: If your application runs behind Nginx, the default `proxy_read_timeout` of 60 seconds will cut long Claude responses.
@@ -249,7 +248,7 @@ location /api/claude/ {
 
 AWS ALB idle timeout. Application Load Balancers have a default 60-second idle timeout. For streaming responses where Claude may not emit tokens continuously, this causes mid-response resets. Set the idle timeout to at least 300 seconds in your ALB listener settings.
 
-Connection pool exhaustion. If you are using a connection pool (common in async frameworks like aiohttp or httpx), a pool that is too small under load forces new connections that may be slower to establish and more prone to resets. Start with a pool size of 10–20 connections and scale based on observed concurrency.
+Connection pool exhaustion. If you are using a connection pool (common in async frameworks like aiohttp or httpx), a pool that is too small under load forces new connections that may be slower to establish and more prone to resets. Start with a pool size of 10, 20 connections and scale based on observed concurrency.
 
 Streaming Responses and Reset Errors
 

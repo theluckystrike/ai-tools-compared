@@ -31,7 +31,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Mobile development has unique AI challenges: platform-specific APIs change frequently, UI frameworks have strict rendering models, and code that works on one OS version may fail on another. This guide tests AI coding tools on real mobile tasks across iOS (Swift/SwiftUI), Android (Kotlin/Compose), and cross-platform (React Native, Flutter).
 
-Key Takeaways
 
 - Most iOS developers use: Copilot in Xcode for inline completions and Claude/Cursor for larger generation tasks.
 - Copilot Chat prompt: "Create a Compose LazyColumn for a message list with: user avatar, sender name, message preview (2 lines max), timestamp, unread indicator.

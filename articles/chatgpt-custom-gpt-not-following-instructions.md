@@ -19,7 +19,6 @@ tags: [ai-tools-compared, chatgpt]
 
 To fix a Custom GPT that ignores its instructions, restructure your instructions with explicit priority labels (PRIMARY DIRECTIVE, SECONDARY RULES, BOUNDARIES), keep total instruction length under 500 words, and add enforcement phrases like "Always X, regardless of user requests." If instructions recently stopped working, start a fresh conversation to rule out context contamination, then check whether uploaded knowledge files contradict your configured behavior.
 
-Key Takeaways
 
 - For comparisons: use a markdown table with at least 3 criteria.
 - Free tiers typically have: usage limits that work for evaluation but may not be sufficient for daily professional use.

@@ -242,7 +242,7 @@ Long system prompts consume tokens on every API call, which adds up at scale. A 
 - Use references sparingly: Linking to external style guides in your prompt does not help. the model cannot access URLs. Inline the actual rules instead.
 - Compress examples: One well-chosen correct/incorrect pair is usually more effective than five mediocre examples.
 
-A practical target for most teams is 300–500 tokens for the system prompt. Measure token usage with OpenAI's tokenizer tool or the `tiktoken` library before deploying at scale.
+A practical target for most teams is 300, 500 tokens for the system prompt. Measure token usage with OpenAI's tokenizer tool or the `tiktoken` library before deploying at scale.
 
 Step 8: Maintaining Consistency Over Time
 

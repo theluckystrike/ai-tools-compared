@@ -31,7 +31,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 An AI code review bot runs on every pull request, posts inline comments on specific lines, and enforces the rules your team cares about. without a human having to review every diff. This guide builds a working GitHub Actions bot that reviews PRs using Claude, posts comments as a GitHub App, and runs in under 60 seconds.
 
-Key Takeaways
 
 - This guide builds a: working GitHub Actions bot that reviews PRs using Claude, posts comments as a GitHub App, and runs in under 60 seconds.
 - What are the most: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.

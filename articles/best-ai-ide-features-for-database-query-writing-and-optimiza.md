@@ -263,7 +263,7 @@ ORDER BY units_sold DESC;
 --   ON order_items(created_at, product_id, quantity);
 ```
 
-The distinction between a regular index and a covering index matters at scale. A regular index on `created_at` still requires the database to fetch `product_id` and `quantity` from the main table row for each match. A covering index includes all queried columns, allowing the database to satisfy the query entirely from the index structure, often reducing I/O by 60–80% on large tables.
+The distinction between a regular index and a covering index matters at scale. A regular index on `created_at` still requires the database to fetch `product_id` and `quantity` from the main table row for each match. A covering index includes all queried columns, allowing the database to satisfy the query entirely from the index structure, often reducing I/O by 60, 80% on large tables.
 
 Migrating from a Basic SQL Editor to an AI-Powered IDE
 
@@ -273,9 +273,9 @@ Phase 1. Schema sync setup (day 1): Connect the IDE to your database using a rea
 
 Phase 2. Baseline your slow query log (week 1): Export your database's current slow query log and create a tracking spreadsheet. As the AI suggests optimizations, implement them on a branch and compare explain plan costs before and after. Teams that skip this step underestimate the AI's impact because they have no measurement baseline.
 
-Phase 3. Team-wide adoption (weeks 2–4): Share query snippet libraries through the IDE's team sync feature. JetBrains DataGrip supports shared data sources and query history through Space; Cursor supports `.cursorrules` files that embed database context for all team members. The accumulated pattern learning accelerates noticeably once the whole team contributes query history.
+Phase 3. Team-wide adoption (weeks 2, 4): Share query snippet libraries through the IDE's team sync feature. JetBrains DataGrip supports shared data sources and query history through Space; Cursor supports `.cursorrules` files that embed database context for all team members. The accumulated pattern learning accelerates noticeably once the whole team contributes query history.
 
-A realistic expectation for productivity gain: developers with 2–3 years of SQL experience typically see a 20–35% reduction in time spent on query writing and debugging in the first month. Senior DBAs with deep expertise often see smaller productivity gains from completion assistance but significant value from the execution plan translation feature when reviewing code from junior teammates.
+A realistic expectation for productivity gain: developers with 2, 3 years of SQL experience typically see a 20, 35% reduction in time spent on query writing and debugging in the first month. Senior DBAs with deep expertise often see smaller productivity gains from completion assistance but significant value from the execution plan translation feature when reviewing code from junior teammates.
 
 Choosing the Right AI Database IDE
 

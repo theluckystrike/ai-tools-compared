@@ -31,7 +31,6 @@ tags: [ai-tools-compared, workflow, artificial-intelligence, automation]
 
 Git workflow tasks are repetitive, context-dependent, and time-consuming when done manually. Writing commit messages that actually explain the "why", describing PRs completely, and naming branches consistently are tasks AI handles well. This guide covers specific automation workflows with working code.
 
-Key Takeaways
 
 - Use 'git add' first.": exit 1 fi # Count approximate token size (rough: 4 chars per token) DIFF_SIZE=${#DIFF} if [ $DIFF_SIZE -gt 40000 ]; then echo "Diff too large for AI ($DIFF_SIZE chars).
 - Recommend which version to keep: or how to merge them

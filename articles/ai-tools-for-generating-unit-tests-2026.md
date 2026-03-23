@@ -33,7 +33,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Generating useful unit tests with AI is harder than it looks. The easy version. generating tests that pass. is trivially achievable. The hard version. generating tests that catch bugs, cover edge cases, and stay maintainable. requires tools that understand what your code should do, not just what it currently does.
 
-Key Takeaways
 
 - The most cost-efficient approach: for most teams: use Claude with a structured prompt.
 - For integration tests: use test database or fixtures.

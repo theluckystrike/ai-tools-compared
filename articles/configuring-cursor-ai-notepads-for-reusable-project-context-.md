@@ -33,7 +33,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Cursor AI notepads provide a powerful mechanism for preserving project context between coding sessions. Instead of repeatedly explaining your project structure, coding standards, or architectural decisions every time you open the editor, you can configure notepads that automatically load relevant information. This guide walks through setting up and using notepads effectively.
 
-Key Takeaways
 
 - Free tiers typically have: usage limits that work for evaluation but may not be sufficient for daily professional use.
 - Does Cursor offer a: free tier? Most major tools offer some form of free tier or trial period.

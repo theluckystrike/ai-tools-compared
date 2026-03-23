@@ -33,7 +33,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Artificial intelligence has transformed how developers approach infrastructure configuration. When working with Serverless Framework, AI can help you generate production-ready serverless.yml files faster while reducing configuration errors. This guide shows you practical methods for using AI to create and optimize Serverless Framework configurations in 2026.
 
-Key Takeaways
 
 - For multi-cloud or nuanced: configurations, Claude and GPT-4o handle complex constraints better.
 - Set memory to 512MB: and timeout to 30 seconds.

@@ -32,7 +32,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Go generics, introduced in Go 1.18, brought powerful abstraction capabilities to the language. Type parameter constraints define what operations are permitted on type parameters, enabling developers to write flexible, reusable code while maintaining type safety. Understanding how AI coding assistants handle generics and constraints helps developers use these features effectively.
 
-Key Takeaways
 
 - Free tiers typically have: usage limits that work for evaluation but may not be sufficient for daily professional use.
 - Does Go offer a: free tier? Most major tools offer some form of free tier or trial period.

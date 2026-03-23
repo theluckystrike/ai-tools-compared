@@ -196,7 +196,7 @@ Side-by-Side Summary Table
 
 | Factor | Claude API | Claude Pro |
 |--------|------------|------------|
-| Monthly cost | Variable ($0.001–$500+) | Fixed $20 |
+| Monthly cost | Variable ($0.001, $500+) | Fixed $20 |
 | API access | Yes | No |
 | Chat interface | Build your own | claude.ai included |
 | Usage limits | None (rate limits apply) | ~100-200 msgs/day |
@@ -253,8 +253,8 @@ Detailed Pricing Comparison Matrix
 | Per-message cost (Sonnet) | $0.018 | $0.20 (if hitting limit) |
 | Per-message cost (Haiku) | $0.0015 | $0.20 (if hitting limit) |
 | Usage Parameters | | |
-| Daily message limit | None | 100–200 |
-| Rate limits (requests/min) | 50–1,000+ | 2 |
+| Daily message limit | None | 100, 200 |
+| Rate limits (requests/min) | 50, 1,000+ | 2 |
 | Monthly cap | None | ~6,000 messages |
 | Features | | |
 | Projects (persistent context) | No | Yes |
@@ -316,7 +316,7 @@ The optimal strategy for many organizations:
 - Application integration: API with per-request billing
 - High-volume automation: Batch API at 50% discount
 
-This costs approximately $20 + $0.001–0.01 per API call, depending on volume.
+This costs approximately $20 + $0.001, 0.01 per API call, depending on volume.
 
 Frequently Asked Questions
 

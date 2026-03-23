@@ -303,9 +303,9 @@ terraform plan
 
 Pricing Impact of Version Management
 
-Manual provider version debugging: 2–4 hours per incident = $250–500
+Manual provider version debugging: 2, 4 hours per incident = $250, 500
 
-AI-assisted diagnosis: 10–15 minutes = $0–5 in API costs
+AI-assisted diagnosis: 10, 15 minutes = $0, 5 in API costs
 
 For teams with 5+ infrastructure environments, AI assistance saves thousands annually.
 

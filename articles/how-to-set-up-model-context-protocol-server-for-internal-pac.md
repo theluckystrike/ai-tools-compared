@@ -32,7 +32,6 @@ tags: [ai-tools-compared]
 
 Building internal tools that bridge AI assistants with your package registry documentation requires a solid integration strategy. The Model Context Protocol (MCP) provides a standardized way for AI models to interact with external services, making it an ideal choice for creating a documentation server that your AI coding assistants can query directly. This guide walks you through setting up an MCP server specifically designed for internal package registry documentation.
 
-Key Takeaways
 
 - Your internal package registry: documentation becomes accessible through a consistent API that any MCP-compatible AI assistant can use.
 - MCP uses a JSON-RPC: 2.0 transport over stdio or HTTP/SSE.

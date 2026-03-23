@@ -40,7 +40,7 @@ A mock API server must:
 - Run in Docker for consistency across environments
 - Scale to handle load testing scenarios
 
-Building these manually takes 30–60 hours per project. AI tools reduce this to 1–2 hours of prompt engineering and review.
+Building these manually takes 30, 60 hours per project. AI tools reduce this to 1, 2 hours of prompt engineering and review.
 
 AI-Powered Mock Server Generation Workflow
 
@@ -225,7 +225,7 @@ Deliver:
 - package.json
 ```
 
-Expected output: Complete, production-ready mock server (~300–400 lines).
+Expected output: Complete, production-ready mock server (~300, 400 lines).
 
 Docker Implementation Example
 
@@ -288,7 +288,7 @@ Choose WireMock if:
 - You're testing error paths extensively
 - Your Java team already uses WireMock
 - You need stateful order tracking across requests
-- Setup time: 30–45 minutes
+- Setup time: 30, 45 minutes
 
 Choose Mockoon if:
 - Your team prefers visual configuration
@@ -302,21 +302,21 @@ Choose Custom Node/Python (Claude-generated) if:
 - Your mock server will live in production for months
 - You want full control over behavior
 - Your team is comfortable with code maintenance
-- Setup time: 45–90 minutes including review
+- Setup time: 45, 90 minutes including review
 
 Cost Comparison: Manual vs. AI-Assisted
 
 Manual approach:
-- Developer time: 40–60 hours @ $100/hour = $4,000–6,000
-- Maintenance (schema updates): 5–10 hours/month
+- Developer time: 40, 60 hours @ $100/hour = $4,000, 6,000
+- Maintenance (schema updates): 5, 10 hours/month
 
 AI-assisted approach:
-- Claude API prompts: ~$15–30 for complete generation
+- Claude API prompts: ~$15, 30 for complete generation
 - Prism (free) or WireMock (free) hosting: $0
 - Maintenance (AI rewrites on spec change): 30 minutes, ~$5
-- Savings: $3,970–5,985 per project
+- Savings: $3,970, 5,985 per project
 
-For a team generating 3–4 mocks annually, AI saves $12,000–24,000.
+For a team generating 3, 4 mocks annually, AI saves $12,000, 24,000.
 
 Advanced: AI-Generated Load Testing Mock Server
 

@@ -32,7 +32,6 @@ categories: [guides]
 
 Video content dominates the internet, but processing and extracting value from hours of footage remains challenging. For developers building applications that handle video content, AI-powered summarization tools offer practical solutions.
 
-Key Takeaways
 
 - Whisper large-v3 consistently produces: the most accurate transcriptions, which directly improves summary quality since the LLM works from cleaner input.
 - Use GPT-4o Vision or: Gemini 1.5 Pro to process key frames extracted at regular intervals.

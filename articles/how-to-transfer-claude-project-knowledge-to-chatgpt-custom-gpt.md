@@ -32,7 +32,6 @@ tags: [ai-tools-compared, claude-ai, chatgpt]
 
 Transferring your Claude project knowledge to ChatGPT Custom GPTs requires understanding the different architectures of both platforms. While Claude uses project instructions and knowledge files, ChatGPT employs Custom GPTs with specific configuration options. This guide walks you through the complete migration process.
 
-Key Takeaways
 
 - List all Claude projects: curl -H "Authorization: Bearer $CLAUDE_API_KEY" \ https://api.anthropic.com/v1/projects # 2.
 - Use the following structure: 1.

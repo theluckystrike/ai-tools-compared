@@ -32,7 +32,6 @@ tags: [ai-tools-compared, comparison, artificial-intelligence]
 
 Choose Mode Analytics if your team is SQL-centric with structured reporting needs and stakeholder-facing dashboards. Choose Hex AI Notebooks if you need complex Python workflows, AI-assisted analysis throughout, and the ability to publish interactive data apps. This comparison covers query handling, AI integration, collaboration features, and performance differences between both platforms.
 
-Key Takeaways
 
 - Write SQL to pull: customer metrics from warehouse 2.
 - Write Python cell for: scoring (can use sklearn) 3.

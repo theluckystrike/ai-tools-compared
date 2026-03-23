@@ -33,7 +33,6 @@ tags: [ai-tools-compared, troubleshooting, claude-ai]
 
 To fix "permission denied" errors in Claude Code, run `chmod +x` on the failing command, verify your project directory has `755` permissions, and reset ownership of Claude's data directory with `sudo chown -R $(whoami)`. If the error persists, check your shell profile for broken sourced scripts and remove any macOS quarantine attributes with `xattr -rd com.apple.quarantine`. The detailed fixes below cover every common cause.
 
-Key Takeaways
 
 - Free tiers typically have: usage limits that work for evaluation but may not be sufficient for daily professional use.
 - Does Claude offer a: free tier? Most major tools offer some form of free tier or trial period.

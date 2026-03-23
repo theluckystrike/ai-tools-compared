@@ -19,7 +19,6 @@ tags: [ai-tools-compared, troubleshooting]
 
 To fix Copilot not suggesting imports, first verify that `editor.inlineSuggest.enabled` is set to `true` in your VS Code `settings.json` and that your programming language is not disabled under Copilot's Language Visibility settings. If those are correct, clear the Copilot cache by deleting the `github-copilot` folder in your editor's global storage directory and re-authenticate. This guide covers all ten common fixes, from simple setting checks to extension conflict resolution.
 
-Key Takeaways
 
 - If you see import: suggestions working in `.ts` files but not `.tsx` files, this is almost always the cause.
 - This is the single most common cause of "invisible" Copilot suggestions: the AI is working, but the rendering layer is suppressed.
