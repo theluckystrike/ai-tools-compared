@@ -8,8 +8,42 @@
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <link rel="dns-prefetch" href="//bestremotetools.com">
   {% seo %}
+  <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/feed.xml' | absolute_url }}">
   <link rel="alternate" hreflang="en" href="{{ page.url | absolute_url }}">
   <link rel="alternate" hreflang="x-default" href="{{ page.url | absolute_url }}">
+  {% if page.url == "/" %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "{{ site.title | escape }}",
+    "url": "{{ site.url }}",
+    "description": "{{ site.description | escape }}",
+    "publisher": {
+      "@type": "Organization",
+      "name": "AI Tools Compared",
+      "url": "https://bestremotetools.com"
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.google.com/search?q=site:bestremotetools.com+{search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": [
+      { "@type": "SiteNavigationElement", "position": 1, "name": "Coding", "url": "https://bestremotetools.com/topics/coding-tools/" },
+      { "@type": "SiteNavigationElement", "position": 2, "name": "Writing", "url": "https://bestremotetools.com/topics/writing-tools/" },
+      { "@type": "SiteNavigationElement", "position": 3, "name": "Design", "url": "https://bestremotetools.com/topics/design-tools/" },
+      { "@type": "SiteNavigationElement", "position": 4, "name": "Productivity", "url": "https://bestremotetools.com/topics/productivity/" }
+    ]
+  }
+  </script>
+  {% endif %}
   {% if page.date %}
   <script type="application/ld+json">
   {
