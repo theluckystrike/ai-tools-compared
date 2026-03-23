@@ -9,7 +9,7 @@ permalink: /github-copilot-business-vs-individual-pricing-is-the-upgrade/
 categories: [guides]
 tags: [ai-tools-compared, tools, github-copilot, pricing, comparison]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 ---

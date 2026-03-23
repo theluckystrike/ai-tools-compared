@@ -7,7 +7,7 @@ last_modified_at: 2026-03-17
 author: theluckystrike
 permalink: /free-alternatives-to-chatgpt-plus-for-code-generation-2026/
 reviewed: true
-score: 9
+score: 8
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
