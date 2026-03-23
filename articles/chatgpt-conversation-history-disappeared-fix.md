@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /chatgpt-conversation-history-disappeared-fix/
 categories: [guides]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, troubleshooting, chatgpt]
