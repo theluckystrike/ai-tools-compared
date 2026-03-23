@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /verloop-vs-engati-ai-chatbot-platform/
 voice-checked: true
 categories: [comparisons]
-score: 9
+score: 8
 reviewed: true
 intent-checked: true
 tags: [ai-tools-compared, comparison, artificial-intelligence]
