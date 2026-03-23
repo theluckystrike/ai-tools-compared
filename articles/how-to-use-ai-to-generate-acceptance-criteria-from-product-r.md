@@ -35,7 +35,6 @@ Generating acceptance criteria from product requirement documents is a repetitiv
 
 This guide shows you practical approaches to generate acceptance criteria using AI, with concrete examples you can apply immediately.
 
-Key Takeaways
 
 - Most contain a mix of user stories: feature descriptions, business rules, and technical constraints.
 - Password requirements: minimum 8 characters, at least one uppercase letter, one number, and one

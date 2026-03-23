@@ -116,7 +116,7 @@ Example Output
 
 The AI generates documentation similar to this:
 
-#### Cache CRD API Reference
+Cache CRD API Reference
 
 | Field | Type | Default | Required | Description |
 |-------|------|---------|----------|-------------|
@@ -127,7 +127,7 @@ The AI generates documentation similar to this:
 | `status.phase` | string | - | No | Current status of the Cache resource. Values: Pending, Ready, Failed |
 | `status.conditions[]` | array | - | No | Array of condition objects tracking resource lifecycle |
 
-#### Example Cache Resource
+Example Cache Resource
 
 ```yaml
 apiVersion: example.com/v1

@@ -233,11 +233,11 @@ ROI Benchmarks: What Teams Actually Report
 
 The financial case for Cursor Business usually rests on measurable productivity gains. Industry surveys and team case studies consistently point to the same categories of time savings:
 
-Code completion speed: Developers report writing routine code 30–50% faster once they internalize Cursor's Tab-complete patterns for repetitive logic, boilerplate, and test scaffolding.
+Code completion speed: Developers report writing routine code 30, 50% faster once they internalize Cursor's Tab-complete patterns for repetitive logic, boilerplate, and test scaffolding.
 
 Code review throughput: Cursor's inline explanations reduce back-and-forth during reviews. Teams with junior developers report that PR turnaround times drop by roughly 20% within the first month.
 
-Debugging time: The Ctrl+K in-file chat allows developers to ask questions about unfamiliar code without context switching to a browser. Teams report saving 20–40 minutes per developer per day on average once adoption is solid.
+Debugging time: The Ctrl+K in-file chat allows developers to ask questions about unfamiliar code without context switching to a browser. Teams report saving 20, 40 minutes per developer per day on average once adoption is solid.
 
 To quantify ROI for your team specifically, use a conservative estimate of one hour per developer per day saved. At $80/hour loaded developer cost, a 10-person team saves $800/day. The $15/seat/month annual plan adds up to $1,800/year for 10 seats. a payback period of roughly two to three workdays. Even under pessimistic assumptions (30 minutes saved per day), the ROI case is strong for teams working primarily in large, complex codebases.
 

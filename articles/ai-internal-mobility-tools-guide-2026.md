@@ -33,7 +33,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 AI-powered internal mobility tools have become essential infrastructure for organizations looking to retain talent and optimize workforce planning. This guide covers the technical foundations, implementation approaches, and practical considerations for developers building or integrating these systems in 2026.
 
-Key Takeaways
 
 - Buying Three major platforms: dominate enterprise mobility: Fuel50 ($8-15/user/month): Skill graph is pre-built with 1,200+ competencies.
 - Beamery ($12-20/user/month): Emphasizes recruitment alongside mobility.
@@ -209,7 +208,7 @@ Track these metrics after deployment to evaluate your internal mobility program'
 
 | Metric | Target Range | Why It Matters |
 |--------|-------------|----------------|
-| Internal hire rate | 25–40% of open roles | Signals talent retention and cost savings |
+| Internal hire rate | 25, 40% of open roles | Signals talent retention and cost savings |
 | Time-to-fill (internal) | 30% faster than external | Validates matching efficiency |
 | Employee adoption | >60% profile completion | Low adoption means poor data quality |
 | Match acceptance rate | >35% of suggestions | Indicates recommendation relevance |
@@ -422,7 +421,7 @@ Frequently Asked Questions
 
 How long does it take to implement an AI internal mobility system?
 
-For a SaaS vendor deployment, expect 8–16 weeks for configuration, data integration, and pilot testing. Custom builds take 4–9 months depending on team size and data readiness. The longest lead time is usually cleaning HRIS data and building a coherent skill taxonomy, plan for this before writing any matching code.
+For a SaaS vendor deployment, expect 8, 16 weeks for configuration, data integration, and pilot testing. Custom builds take 4, 9 months depending on team size and data readiness. The longest lead time is usually cleaning HRIS data and building a coherent skill taxonomy, plan for this before writing any matching code.
 
 What are the most common mistakes to avoid?
 

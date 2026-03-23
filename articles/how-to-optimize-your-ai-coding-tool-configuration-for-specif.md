@@ -32,7 +32,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 AI coding tools have become essential for developer productivity, but default configurations rarely suit every project type. Whether you're building a React application, working with Python data pipelines, or maintaining a legacy PHP codebase, optimizing your AI assistant's settings significantly impacts code quality and completion relevance. This guide shows you how to tailor configuration for specific project types with practical examples you can apply immediately.
 
-Key Takeaways
 
 - Here's a practical framework: ### Monorepo Configuration
 

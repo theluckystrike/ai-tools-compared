@@ -158,7 +158,7 @@ Aider shines for developers comfortable in the terminal. It can refactor existin
 
 Aider vs. Continue: When to Choose Each
 
-The core difference is workflow integration. Continue embeds in VS Code and behaves like a supercharged inline assistant. you stay in your editor, accept suggestions, and occasionally open the chat panel. Aider takes over the terminal and operates in a conversational loop: you describe what you want, Aider writes the code and shows you the diff, you accept or reject.
+The core difference is workflow integration. Continue embeds in VS Code and behaves like a enhanced inline assistant. you stay in your editor, accept suggestions, and occasionally open the chat panel. Aider takes over the terminal and operates in a conversational loop: you describe what you want, Aider writes the code and shows you the diff, you accept or reject.
 
 Aider is a better fit for tasks that span multiple files and require orchestration. "add pagination to all three API endpoints" is the kind of instruction Aider handles well. Continue excels at single-file tasks and inline help while coding. Most developers end up using both: Continue for day-to-day coding and Aider for larger refactoring sessions.
 

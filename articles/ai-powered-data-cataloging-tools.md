@@ -33,7 +33,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 AI-powered data cataloging tools automatically discover, classify, and document your data assets using machine learning for metadata extraction, semantic classification, and relationship inference. They replace manual spreadsheet tracking, reducing hours of tedious metadata entry while strengthening data governance. This guide covers how they work under the hood, which approaches fit different development scenarios, and how to implement one effectively in a real data stack.
 
-Key Takeaways
 
 - Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
 - Instead: start with your two or three most-used databases.
@@ -117,7 +116,7 @@ Confidence Scoring and Human-in-the-Loop Review
 AI classifications are probabilistic. Good catalog tools expose confidence scores and flag low-confidence classifications for human review rather than silently marking everything as correct. A well-configured review workflow might look like this:
 
 - Score ≥ 0.90: Auto-accept, log for audit
-- Score 0.70–0.89: Flag for data steward review within 48h
+- Score 0.70, 0.89: Flag for data steward review within 48h
 - Score < 0.70: Block from publishing until manually reviewed
 
 This tiered approach lets you move fast on high-confidence assets while maintaining governance standards where uncertainty is high.

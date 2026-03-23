@@ -35,7 +35,6 @@ Testing Unicode and emoji handling is one of those development tasks that seems 
 
 This guide shows you how to use AI to generate Unicode and emoji edge case tests that catch real-world issues before they reach production.
 
-Key Takeaways
 
 - This guide shows you: how to use AI to generate Unicode and emoji edge case tests that catch real-world issues before they reach production.
 - Use the `grapheme` library: or `regex` module's `\X` pattern for correct grapheme counting.

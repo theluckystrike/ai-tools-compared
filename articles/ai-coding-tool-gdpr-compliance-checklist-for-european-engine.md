@@ -32,7 +32,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 European engineering teams face unique challenges when adopting AI coding assistants. The General Data Protection Regulation (GDPR) imposes strict requirements on how personal data is processed, stored, and transferred, and code that developers write may contain personal information that triggers these obligations. This checklist helps engineering teams ensure their AI coding tools comply with GDPR while maintaining developer productivity.
 
-Key Takeaways
 
 - Most modern tools offer: privacy-focused settings.
 - Do these recommendations work: for small teams? Yes, most practices scale down well.

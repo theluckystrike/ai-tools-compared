@@ -150,7 +150,7 @@ Weaknesses:
 - Sometimes over-configures for simple use cases
 - Doesn't test syntax (requires manual `nginx -t`)
 
-Pricing model: Per-token. Nginx config generation (2–5K tokens) costs ~$0.01–$0.03 per config.
+Pricing model: Per-token. Nginx config generation (2, 5K tokens) costs ~$0.01, $0.03 per config.
 
 GitHub Copilot (GitHub/OpenAI)
 
@@ -275,10 +275,10 @@ Comparison Table
 
 | Tool | Nginx Accuracy | TLS/Cert Logic | Variable Scoping | IDE Integration | Cost | Best Use |
 |------|---|---|---|---|---|---|
-| Claude 3.5 Sonnet | 9/10 | Excellent | Excellent | Web/API | $0.01–$0.03 per config | Full config design, debugging |
+| Claude 3.5 Sonnet | 9/10 | Excellent | Excellent | Web/API | $0.01, $0.03 per config | Full config design, debugging |
 | GitHub Copilot | 7/10 | Fair | Fair | Excellent (VS Code) | $10/month | Edits, pattern completion |
 | ChatGPT 4o | 7/10 | Good | Good | Web only | $20/month | Iterative debugging |
-| Codeium | 5/10 | Poor | Poor | Good (multi-IDE) | Free–$12/month | Quick boilerplate |
+| Codeium | 5/10 | Poor | Poor | Good (multi-IDE) | Free, $12/month | Quick boilerplate |
 
 Real-World Workflow: Building a Production Nginx Config
 

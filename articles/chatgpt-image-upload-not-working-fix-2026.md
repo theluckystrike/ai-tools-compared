@@ -19,7 +19,6 @@ tags: [ai-tools-compared, troubleshooting, chatgpt]
 
 To fix ChatGPT image uploads not working, first confirm your file is under 20MB and in a supported format (PNG, JPEG, GIF, WEBP). Then clear your browser's site data for chat.openai.com, disable all browser extensions, and retry the upload in an incognito window. If uploads still fail, check the OpenAI status page for outages and verify your account has not exceeded its daily image upload quota. These steps resolve the most common upload failures.
 
-Key Takeaways
 
 - For free tier users, monitor your usage: 1.
 - Check if you've exceeded: daily image limits If you consistently hit limits, consider upgrading to ChatGPT Plus ($20/month) for higher quotas.

@@ -33,7 +33,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 If you have been building content in WriteSonic and now need to use Jasper AI's Brand Voice feature for consistent tone and style across your content, you need a clear migration path. This guide walks you through extracting your WriteSonic content, converting it to a format Jasper AI can consume, and setting up Brand Voice to maintain your established writing style.
 
-Key Takeaways
 
 - Upload your WriteSonic content: samples (recommended: 5-10 documents) 5.
 - If you have been: building content in WriteSonic and now need to use Jasper AI's Brand Voice feature for consistent tone and style across your content, you need a clear migration path.

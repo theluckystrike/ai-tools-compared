@@ -32,7 +32,6 @@ tags: [ai-tools-compared, troubleshooting, integration]
 
 To fix broken Git integration in Cursor, first verify Git is installed and accessible by running `git --version` in your terminal, then confirm you opened the repository's root folder (not a subdirectory) in Cursor. If the Source Control panel remains empty, reset the Git index with `git reset` and check your authentication by running `ssh -T git@github.com`. For persistent issues, manually set the Git executable path in Cursor settings and disable recently installed extensions that may conflict.
 
-Key Takeaways
 
 - Missing Git Installation or: Path Issues The most fundamental cause of broken Git integration is an incorrect Git path or missing Git installation entirely.
 - Free tiers typically have: usage limits that work for evaluation but may not be sufficient for daily professional use.

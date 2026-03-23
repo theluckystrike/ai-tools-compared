@@ -17,7 +17,6 @@ tags: [ai-tools-compared, comparison, claude-ai, chatgpt]
 
 When building AWS infrastructure with the Cloud Development Kit (CDK) in Python, choosing the right AI assistant can significantly impact your productivity. Both Claude and ChatGPT can help you write CDK code, but they approach infrastructure-as-code tasks differently. This comparison examines how each tool performs when creating AWS CDK stacks in Python, with practical examples to help you decide which fits your workflow.
 
-Key Takeaways
 
 - CDK generation prompts tend: to be moderately long because you are often pasting existing stack code for context.
 - The more useful question: is which tool reduces your revision cycles per stack.

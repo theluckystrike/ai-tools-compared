@@ -26,7 +26,6 @@ tags: [ai-tools-compared, artificial-intelligence, api]
 ---
 {% raw %}
 
-Key Takeaways
 
 - $25/month for teams with: private docs and custom domains.
 - Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.

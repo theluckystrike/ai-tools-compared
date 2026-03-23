@@ -200,7 +200,7 @@ WHERE spend_rank <= 10
 ORDER BY region, spend_rank;
 ```
 
-That same query, written manually, takes 3–5 minutes for a developer who knows window functions well. With Cursor, it takes under 30 seconds. and the generated query is correct, readable, and ready to run.
+That same query, written manually, takes 3, 5 minutes for a developer who knows window functions well. With Cursor, it takes under 30 seconds. and the generated query is correct, readable, and ready to run.
 
 Dialect-Specific Behavior
 

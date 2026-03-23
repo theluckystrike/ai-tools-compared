@@ -31,7 +31,6 @@ tags: [ai-tools-compared, claude-ai]
 
 Database schema design is a task where AI provides substantial value. not by replacing judgment, but by generating a solid starting point, catching normalization problems, suggesting indices, and modeling constraints you might miss. Claude handles the structured reasoning required for relational schemas particularly well. This guide shows specific prompts and workflows.
 
-Key Takeaways
 
 - Running the generated schema: through this critique loop produces better output than a single large prompt.
 - What are the most: common mistakes to avoid? The most frequent issues are skipping prerequisite steps, using outdated package versions, and not reading error messages carefully.

@@ -42,7 +42,6 @@ tags: [ai-tools-compared, troubleshooting, best-of, artificial-intelligence]
 
 ActiveRecord migration rollbacks in production can be terrifying. You've deployed a new feature, everything worked fine in staging, and then production throws an error during rollback that leaves your database in an inconsistent state. This guide covers how AI tools can help you diagnose, understand, and fix these issues faster.
 
-Key Takeaways
 
 - Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
 - What is the learning: curve like? Most tools discussed here can be used productively within a few hours.
@@ -126,13 +125,13 @@ Practical AI Workflow for Migration Fixes
 
 When using AI to fix migration issues, provide context for better responses:
 
-1. Include your Rails version – Different Rails versions have different migration capabilities
+1. Include your Rails version, Different Rails versions have different migration capabilities
 
-2. Share the exact error message – Paste the full stack trace
+2. Share the exact error message, Paste the full stack trace
 
-3. Describe your database – PostgreSQL, MySQL, SQLite handle constraints differently
+3. Describe your database, PostgreSQL, MySQL, SQLite handle constraints differently
 
-4. Explain what the migration should accomplish – Helps AI suggest the right fix
+4. Explain what the migration should accomplish, Helps AI suggest the right fix
 
 A good prompt to an AI assistant looks like:
 

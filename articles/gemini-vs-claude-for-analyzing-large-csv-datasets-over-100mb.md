@@ -32,7 +32,6 @@ tags: [ai-tools-compared, comparison, claude-ai]
 
 When your CSV files grow beyond 100MB, traditional spreadsheet tools start to struggle. Loading a 500MB CSV into Excel often crashes or freezes entirely. This is where AI assistants like Google Gemini and Anthropic Claude offer alternative approaches to data exploration and analysis. Both can help you query, summarize, and extract insights from large datasets, but they take different paths to get there.
 
-Key Takeaways
 
 - The best approach often uses both: start with Claude for initial exploration and understanding, then use Gemini to rapidly iterate on the analysis code you need.
 - Loading a 500MB CSV: into Excel often crashes or freezes entirely.

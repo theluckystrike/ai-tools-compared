@@ -34,7 +34,6 @@ Managing a project backlog effectively requires transforming scattered issue pri
 
 This guide walks you through using AI to create milestone planning documents from issue backlog priorities, with practical examples and code snippets you can apply immediately.
 
-Key Takeaways
 
 - Core features (user-facing functionality)
 4.

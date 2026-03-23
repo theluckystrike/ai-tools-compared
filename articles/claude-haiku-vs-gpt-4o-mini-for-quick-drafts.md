@@ -45,7 +45,6 @@ Choose Claude Haiku if you need the fastest response times, a larger 200K contex
 | Tone Control | Strong instruction following | Good with system prompts |
 | Best For | Nuanced drafts, long context | High-volume, cost-sensitive tasks |
 
-Key Takeaways
 
 - Choose Claude Haiku if: you need the fastest response times, a larger 200K context window, and consistent convention-following output for technical documentation drafts.
 - GPT-4o Mini's 128K window: is sufficient for most use cases.

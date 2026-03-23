@@ -5,7 +5,7 @@ description: "Comparisons of AI writing tools: ChatGPT, Claude, Grammarly, Jaspe
 permalink: /topics/writing-tools/
 ---
 
-# AI Writing Tools
+AI Writing Tools
 
 Guides and comparisons for AI writing assistants, content generators, and editing tools.
 

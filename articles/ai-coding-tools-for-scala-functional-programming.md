@@ -32,7 +32,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Claude models produce the most functionally pure Scala code by default, generating solutions using map, flatMap, and fold operations rather than mutable variables. GPT models handle complex specifications well but sometimes need explicit instructions to avoid imperative-style Scala. Both work effectively with libraries like Cats, ZIO, and Akka Streams when you provide version and library context in your prompts. This guide covers practical techniques and code examples for getting the best Scala output from AI coding tools.
 
-Key Takeaways
 
 - Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
 - How do I get: started quickly? Pick one tool from the options discussed and sign up for a free trial.

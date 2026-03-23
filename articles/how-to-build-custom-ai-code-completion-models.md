@@ -143,7 +143,7 @@ with open("training_data.jsonl", "w") as f:
         f.write(json.dumps(ex) + "\n")
 ```
 
-A codebase of 200,000 lines typically yields 8,000–15,000 usable FIM examples after filtering. Aim for at least 5,000 examples before fine-tuning; below that, the model memorizes rather than generalizes.
+A codebase of 200,000 lines typically yields 8,000, 15,000 usable FIM examples after filtering. Aim for at least 5,000 examples before fine-tuning; below that, the model memorizes rather than generalizes.
 
 Step 4: Fine-Tuning with QLoRA
 
@@ -222,7 +222,7 @@ trainer.model.save_pretrained("./fine-tuned-model")
 tokenizer.save_pretrained("./fine-tuned-model")
 ```
 
-Training 10,000 examples for 3 epochs on a single A100 takes roughly 45–90 minutes. Monitor your TensorBoard loss curve: if training loss drops below 0.8 but validation loss stops improving, you're starting to overfit. Reduce epochs or increase dropout.
+Training 10,000 examples for 3 epochs on a single A100 takes roughly 45, 90 minutes. Monitor your TensorBoard loss curve: if training loss drops below 0.8 but validation loss stops improving, you're starting to overfit. Reduce epochs or increase dropout.
 
 Step 5: Merging LoRA Weights
 
@@ -314,7 +314,7 @@ print(f"Exact match: {exact_matches}/{len(results)} ({exact_matches/len(results)
 print(f"Average token overlap: {avg_overlap:.1%}")
 ```
 
-A well-tuned model on an internal codebase typically reaches 20–35% exact match on single-function completions and 60–75% token overlap. The exact match number sounds low, but in practice it means the model produces functionally equivalent code even when the whitespace or variable name differs slightly. Run the suggested completions through your unit tests as a more meaningful quality signal.
+A well-tuned model on an internal codebase typically reaches 20, 35% exact match on single-function completions and 60, 75% token overlap. The exact match number sounds low, but in practice it means the model produces functionally equivalent code even when the whitespace or variable name differs slightly. Run the suggested completions through your unit tests as a more meaningful quality signal.
 
 Step 7: Deploy with Ollama
 
@@ -347,7 +347,7 @@ Test it
 ollama run custom-coder "def process_payment(amount: float, currency: str) ->"
 ```
 
-The Q4_K_M quantization reduces a 7B model to roughly 4.5 GB. On a MacBook Pro M3, this runs at 25–40 tokens per second. fast enough for real-time autocomplete. For a team deployment, run Ollama on a shared Linux machine with a GPU and point all developer clients at `http://your-server:11434`.
+The Q4_K_M quantization reduces a 7B model to roughly 4.5 GB. On a MacBook Pro M3, this runs at 25, 40 tokens per second. fast enough for real-time autocomplete. For a team deployment, run Ollama on a shared Linux machine with a GPU and point all developer clients at `http://your-server:11434`.
 
 Step 8: VS Code Integration
 

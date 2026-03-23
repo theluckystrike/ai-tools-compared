@@ -35,7 +35,6 @@ When integrating AI voice synthesis into applications, developers need to evalua
 
 The choice between these services affects more than audio quality. It shapes your deployment architecture: whether you poll for completed audio, stream it in real time, or cache it at the CDN layer. Getting this decision right early avoids painful refactors when your usage scales.
 
-Key Takeaways
 
 - WellSaid Labs offers limited SSML support: primarily pauses and basic rate control.
 - Cache hit rates above: 80% are common for applications with fixed UI strings.
@@ -257,7 +256,7 @@ The server-side `/api/tts` route calls your chosen TTS service and pipes the aud
 
 Handling Long-Form Content
 
-Both services impose character limits per request (typically 2,000–5,000 characters). For podcast scripts, e-learning modules, or long-form narration, you need to chunk the input:
+Both services impose character limits per request (typically 2,000, 5,000 characters). For podcast scripts, e-learning modules, or long-form narration, you need to chunk the input:
 
 ```javascript
 function chunkText(text, maxLength = 2000) {

@@ -31,7 +31,6 @@ tags: [ai-tools-compared, comparison, artificial-intelligence]
 
 Keeping dependencies updated is maintenance work that AI can automate well beyond what Dependabot does. The difference between a dumb version-bump bot and an AI-enhanced one is the ability to read changelogs, identify breaking changes, update call sites, and write an accurate PR description. This guide compares the tools available in 2026.
 
-Key Takeaways
 
 - PR description from Renovate: ${pr.body}
 

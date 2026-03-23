@@ -17,9 +17,8 @@ tags: [ai-tools-compared, best-of, artificial-intelligence]
 
 The best AI tools for fraud detection are Stripe Radar for payment-integrated scoring, Sift for multi-channel fraud prevention, DataRobot and H2O.ai for custom ML models, and Azure Anomaly Detector for time-series pattern analysis. This guide compares each tool with code examples, pricing considerations, and integration guidance for developers building fraud prevention into production systems.
 
-Key Takeaways
 
-- Fraud datasets are typically: 0.1–2% positive examples, which causes naive models to predict "not fraud" on everything and achieve high accuracy without detecting any fraud.
+- Fraud datasets are typically: 0.1, 2% positive examples, which causes naive models to predict "not fraud" on everything and achieve high accuracy without detecting any fraud.
 - Radar for Fraud Teams: (the paid upgrade) adds machine learning review queues and manual dispute management tools, which is valuable for platforms processing over $1M monthly.
 - The platform supports custom: machine learning models for specialized use cases.
 - You can send `$login`: `$account_update`, and `$content_status` events.
@@ -170,7 +169,7 @@ def score_transaction(model_id, transaction_features):
 
 DataRobot's strength lies in rapid model development and deployment. The platform handles feature engineering and model selection automatically.
 
-For fraud use cases specifically, DataRobot's class imbalance handling is important. Fraud datasets are typically 0.1–2% positive examples, which causes naive models to predict "not fraud" on everything and achieve high accuracy without detecting any fraud. DataRobot's AutoML applies SMOTE oversampling and threshold tuning automatically, producing models with meaningful precision-recall balance rather than misleading accuracy numbers.
+For fraud use cases specifically, DataRobot's class imbalance handling is important. Fraud datasets are typically 0.1, 2% positive examples, which causes naive models to predict "not fraud" on everything and achieve high accuracy without detecting any fraud. DataRobot's AutoML applies SMOTE oversampling and threshold tuning automatically, producing models with meaningful precision-recall balance rather than misleading accuracy numbers.
 
 
 4. H2O.ai

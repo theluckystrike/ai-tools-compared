@@ -32,7 +32,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Video accessibility is a critical requirement for reaching broader audiences and complying with regulations like WCAG 2.1 and ADA. AI-powered tools have transformed how developers implement accessibility features, making it possible to add captions, audio descriptions, and sign language interpretation without manual transcription. This guide covers practical approaches to implementing video accessibility features using AI APIs and libraries.
 
-Key Takeaways
 
 - Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
 - Manual captioning costs around: $1-3 per minute, while AI-powered solutions reduce this to cents.

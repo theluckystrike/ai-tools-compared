@@ -377,9 +377,9 @@ MonkeyType captures what types actually flowed through at runtime, which elimina
 
 Choosing the Right Tool by Team Size
 
-For solo projects or small teams (1–5 engineers): Use Claude Code interactively. Ask it to annotate one module at a time and review the output. Focus on public function signatures first; internal helpers can wait.
+For solo projects or small teams (1, 5 engineers): Use Claude Code interactively. Ask it to annotate one module at a time and review the output. Focus on public function signatures first; internal helpers can wait.
 
-For medium teams (5–20 engineers): Add mypy to CI with `--strict` on new code only (`--exclude` existing modules). Use MonkeyType to collect runtime types for existing modules, then AI-review the generated stubs before committing.
+For medium teams (5, 20 engineers): Add mypy to CI with `--strict` on new code only (`--exclude` existing modules). Use MonkeyType to collect runtime types for existing modules, then AI-review the generated stubs before committing.
 
 For large codebases: Run pyright in watch mode for developers and mypy in CI. Use a staged rollout. annotate utilities and shared libraries first, then work outward. Copilot handles the mechanical volume; Claude handles the complex patterns like ParamSpec and Protocol.
 

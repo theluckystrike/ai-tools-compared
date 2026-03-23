@@ -32,7 +32,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Capacity planning and resource right sizing represent critical challenges for engineering teams managing cloud infrastructure. Overprovisioning leads to wasted budget, while underprovisioning causes performance degradation and potential outages. AI-powered tools now offer sophisticated approaches to predict workload demands and optimize resource allocation with greater accuracy than traditional rule-of-thumb methods.
 
-Key Takeaways
 
 - For most infrastructure use cases: time series forecasting provides the most immediate value.
 - Services where p95 usage: is below 40% of the current limit are flagged as over-provisioned.
@@ -240,7 +239,7 @@ Tuesday. model scoring. The Prophet or ARIMA models score the fresh data against
 
 Wednesday. review and approval. Engineers review the flagged recommendations in a 30-minute sync. Over-provisioned services get limit reductions queued for the next deployment cycle. Under-provisioned services get emergency limit increases applied immediately via kubectl patch or Terraform apply.
 
-Thursday–Friday. deploy and monitor. Changes roll out through staging first, then production. The monitoring dashboard tracks OOM events and throttling rates in real time. Any regression triggers an automatic rollback by restoring the previous resource configuration from version control.
+Thursday, Friday. deploy and monitor. Changes roll out through staging first, then production. The monitoring dashboard tracks OOM events and throttling rates in real time. Any regression triggers an automatic rollback by restoring the previous resource configuration from version control.
 
 This cadence keeps resource configurations close to actual demand without requiring individual engineers to continuously monitor dashboards. The AI models handle the signal extraction; humans handle the risk assessment and approval.
 

@@ -32,7 +32,6 @@ tags: [ai-tools-compared]
 
 Midjourney offers powerful AI image generation, but subscription costs add up quickly. If you're considering downgrading your plan, whether moving from Pro to Standard or Standard to Basic, you need to export your generated images first. Once you downgrade, you lose access to your previous generations stored on Midjourney's servers. This guide covers practical methods for developers and power users to export Midjourney images before downgrading, with code examples and automation strategies.
 
-Key Takeaways
 
 - The 2026 pricing structure: shows the practical impact: Pro plan users get 2000+ fast hours monthly with full access to all features and image storage.
 - This guide covers practical: methods for developers and power users to export Midjourney images before downgrading, with code examples and automation strategies.

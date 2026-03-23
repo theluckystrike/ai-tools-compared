@@ -203,7 +203,7 @@ Time: 1.2 seconds for 1M rows
 Time: 340 ms for 1M rows
 ```
 
-The optimized approach uses pandas' native `.join()` method with pre-indexed DataFrames, typically delivering 3–4x speedup for large datasets.
+The optimized approach uses pandas' native `.join()` method with pre-indexed DataFrames, typically delivering 3, 4x speedup for large datasets.
 
 Decision Tree for Merge Type Selection
 

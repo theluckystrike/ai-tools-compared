@@ -19,7 +19,6 @@ tags: [ai-tools-compared, troubleshooting, claude-ai]
 
 To stop a Claude Code tool use loop that won't terminate, press `Ctrl+C` to interrupt the current operation, then start a fresh session with `claude --new-session` to clear the accumulated context causing the loop. If the problem recurs, provide explicit exit conditions in your prompts (e.g., "Stop after correcting lines 12, 24, and 31") and enable confirmation prompts with `CLAUDE_CODE_PROMPT_CONFIRMATION=true` so you can break cycles manually. This guide covers all the root causes and fixes below.
 
-Key Takeaways
 
 - Free tiers typically have: usage limits that work for evaluation but may not be sufficient for daily professional use.
 - Does Claude offer a: free tier? Most major tools offer some form of free tier or trial period.

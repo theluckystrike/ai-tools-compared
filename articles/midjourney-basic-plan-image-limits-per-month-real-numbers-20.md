@@ -17,7 +17,6 @@ tags: [ai-tools-compared]
 
 The Midjourney Basic Plan remains the entry point for developers and hobbyists who want to explore AI image generation without committing to expensive subscriptions. Understanding the actual image limits requires examining how Midjourney measures usage, specifically through "fast mode" GPU hours rather than raw image counts.
 
-Key Takeaways
 
 - If you have used: the tool for at least 3 months and plan to continue, the annual discount usually makes sense.
 - For the Basic Plan at $10/month: you receive 3.3 hours of fast mode time per month.

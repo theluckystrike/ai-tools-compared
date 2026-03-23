@@ -123,7 +123,7 @@ Limitations:
 - Requires manual git interaction for context (can't auto-scan directories)
 - Less suitable for front-end visual work
 
-Pricing: Free (pay for API calls to Claude/OpenAI: ~$2–5 per session)
+Pricing: Free (pay for API calls to Claude/OpenAI: ~$2, 5 per session)
 
 Best For: Backend refactors, infrastructure changes, developers who prefer git workflows
 
@@ -141,7 +141,7 @@ Key Strengths:
 - Excellent for enterprises with compliance requirements
 
 Limitations:
-- Local models are 10–100x slower than Claude/GPT-4
+- Local models are 10, 100x slower than Claude/GPT-4
 - Remote model support requires manual setup (no official hosted backend)
 - Less reliable multi-file editing than Cursor or Claude Code
 - Smaller community; fewer tutorials and workflows documented
@@ -160,7 +160,7 @@ Comparison Table
 | Context window | 200K | 4K | 32K | 100K+ | 32K+ |
 | Setup friction | Medium (CLI) | Low | Medium (fork) | High (CLI) | Low |
 | Inline completions | Good | Excellent | Excellent | Fair | Good |
-| Pricing | $15–20/mo | $10/mo | $20/mo | ~$2–5/use | Free |
+| Pricing | $15, 20/mo | $10/mo | $20/mo | ~$2, 5/use | Free |
 | IDE support | VS Code (CLI) | 15+ editors | VS Code only | Terminal | VS Code, JetBrains |
 | Offline capable | Yes (CLI) | No | No | Yes | Yes |
 
@@ -210,11 +210,11 @@ Single-file Python completion (average time to first suggestion):
 - Continue (local): 2000ms+
 
 Multi-file refactor (time to editable state, 10-file change):
-- Cursor: 5–8 minutes
-- Claude Code: 8–12 minutes
-- Aider: 6–10 minutes
+- Cursor: 5, 8 minutes
+- Claude Code: 8, 12 minutes
+- Aider: 6, 10 minutes
 - Copilot Chat: Manual coordination required
-- Continue: 10–15 minutes
+- Continue: 10, 15 minutes
 
 Context accuracy (understanding intent across 100K+ LOC):
 - Claude Code: 94%

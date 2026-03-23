@@ -33,7 +33,6 @@ tags: [ai-tools-compared, comparison, artificial-intelligence]
 
 A good commit message tells your future self (and teammates) why a change was made, not just what changed. AI commit message generators have gotten good enough that the question is no longer "can AI write a useful commit message" but "which tool produces messages that match my team's conventions without constant editing."
 
-Key Takeaways
 
 - Most developers skip the body because writing it is tedious: this is exactly where AI helps most.
 - Start with whichever matches: your most frequent task, then add the other when you hit its limits.

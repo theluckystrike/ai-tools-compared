@@ -32,7 +32,6 @@ tags: [ai-tools-compared, troubleshooting, artificial-intelligence]
 
 To fix Gemini AI giving wrong answers, lower the temperature to 0.1-0.3 for factual queries, rewrite your prompt with explicit output format and domain context, and add "Show your reasoning step by step" to force more accurate logic. If answers remain incorrect, start a fresh conversation to clear accumulated context, specify exact software versions in your prompt, and cross-verify any factual claims against official documentation before acting on them.
 
-Key Takeaways
 
 - Context window limitations mean: that lengthy conversations cause the model to lose track of earlier details, leading to contradictions or errors in later responses.
 - Use the 5-whys technique: When Gemini gives a suspect answer, probe deeper by asking "Why?" repeatedly.
@@ -104,7 +103,7 @@ response = model.generate_content(
 )
 ```
 
-Lowering temperature to 0.1–0.3 produces more deterministic, factual responses. Raising top_p restricts the token selection pool, reducing the likelihood of unusual word choices.
+Lowering temperature to 0.1, 0.3 produces more deterministic, factual responses. Raising top_p restricts the token selection pool, reducing the likelihood of unusual word choices.
 
 Common Scenarios and Fixes
 
@@ -152,7 +151,7 @@ generation_config={
 }
 ```
 
-For creative tasks requiring variety, increase temperature to 0.7–0.9. Understanding this spectrum helps you choose appropriate settings for different tasks.
+For creative tasks requiring variety, increase temperature to 0.7, 0.9. Understanding this spectrum helps you choose appropriate settings for different tasks.
 
 Prompt Engineering Patterns
 

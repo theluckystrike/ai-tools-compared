@@ -32,7 +32,6 @@ tags: [ai-tools-compared, comparison]
 
 When choosing between Cursor and Windsurf for AI-assisted coding, the free tier limitations matter significantly for developers on a budget. Both tools market themselves as AI-powered code editors, but their free offerings differ in meaningful ways. This comparison breaks down exactly what you get with each free plan and which one delivers more value for typical development workflows.
 
-Key Takeaways
 
 - The key limitation is: that free users cannot access Cursor's most advanced features.
 - For those who prefer: predictable monthly budgets and work on fewer but more complex problems, Cursor's free plan provides better structure.

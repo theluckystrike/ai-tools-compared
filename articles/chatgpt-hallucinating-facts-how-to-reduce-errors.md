@@ -19,7 +19,6 @@ tags: [ai-tools-compared, troubleshooting, chatgpt]
 
 Three changes reduce ChatGPT hallucinations immediately: set temperature to 0.0-0.2 for factual queries, add "If you are uncertain about any detail, state that rather than guessing" to your prompt, and break complex questions into smaller focused requests. For production applications, implement retrieval-augmented generation (RAG) to ground responses in verified documents. These techniques and more are detailed below.
 
-Key Takeaways
 
 - Instead of: ```
 Explain machine learning from scratch

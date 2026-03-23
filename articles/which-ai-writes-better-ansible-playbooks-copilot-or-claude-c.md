@@ -17,7 +17,6 @@ tags: [ai-tools-compared, artificial-intelligence, claude-ai]
 
 Writing Ansible playbooks requires understanding infrastructure-as-code patterns, idempotency principles, and the specific YAML syntax that Ansible expects. The question of which AI assistant handles this better, GitHub Copilot or Claude Code, matters because poorly written playbooks can introduce security vulnerabilities, fail during deployments, or become difficult to maintain. This comparison evaluates both tools using practical Ansible tasks that DevOps engineers encounter regularly.
 
-Key Takeaways
 
 - Claude Code is available: through Anthropic's paid Claude subscription, generally around $20/month for professional use, with API-based pricing for team deployments.
 - It's integrated directly into: most major IDEs, making setup trivial for existing GitHub users.

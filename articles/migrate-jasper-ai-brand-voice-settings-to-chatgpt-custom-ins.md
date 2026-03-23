@@ -33,7 +33,6 @@ tags: [ai-tools-compared, artificial-intelligence, chatgpt]
 
 If you have been using Jasper AI's Brand Voice feature to maintain consistent tone and style across your content, you might be looking for ways to replicate that functionality in ChatGPT. While Jasper AI provides a structured UI for uploading sample content and extracting style preferences, ChatGPT achieves similar results through Custom Instructions. This guide shows you how to migrate your Jasper Brand Voice settings to ChatGPT, with practical examples and code snippets.
 
-Key Takeaways
 
 - Use {config['vocabulary']}." ``` ChatGPT's: web interface only stores one Custom Instructions profile at a time, which is the primary limitation versus Jasper's multi-brand support.
 - For large batches: use the Batch API endpoint to reduce costs by 50%.

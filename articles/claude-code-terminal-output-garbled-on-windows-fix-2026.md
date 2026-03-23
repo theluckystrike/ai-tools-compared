@@ -30,7 +30,6 @@ tags: [ai-tools-compared, troubleshooting, claude-code, windows, terminal, claud
 
 Windows users running Claude Code frequently encounter garbled output, characters that appear as boxes, question marks, or completely wrong symbols. This problem stems from encoding mismatches between Claude Code's output and Windows terminal expectations. In 2026, several reliable solutions exist to fix this issue and restore clean, readable terminal output.
 
-Key Takeaways
 
 - Add each variable with: value `1` or `en_US.UTF-8` ## Solution: Terminal Font Compatibility Some fonts don't support the full Unicode character range that Claude Code uses.
 - Restoring UTF-8..." chcp 65001: | Out-Null } # Verify environment variables if (-not $env:PYTHONIOENCODING -eq 'utf-8') { Write-Warning "PYTHONIOENCODING not set.

@@ -33,13 +33,12 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Appointment scheduling bots automate the process of booking, rescheduling, and canceling appointments across calendars, messaging platforms, and booking systems. These bots handle the back-and-forth coordination that traditionally consumes significant administrative time, freeing human staff to focus on higher-value interactions.
 
-Key Takeaways
 
 - How do I prevent: the bot from overbooking during peak demand? Implement a slot reservation queue: when a user starts the booking flow, temporarily hold the slot for 90 seconds.
 - If your organization already: uses Microsoft 365, the Graph API provides direct access to Outlook calendars, making integration particularly smooth.
 - Research shows that automated: reminders reduce no-show rates by 30-40%, making this component essential for practical deployment.
 - This comparison covers the: four most popular platforms for scheduling bot development in 2026.
-- Implement optimistic locking at: the database level: fetch available slots, reserve a slot with a short-lived lock (30–60 seconds), confirm the booking, then release the lock.
+- Implement optimistic locking at: the database level: fetch available slots, reserve a slot with a short-lived lock (30, 60 seconds), confirm the booking, then release the lock.
 - A common pattern is: to allow free cancellation up to 24 hours before an appointment, charge a fee for same-day cancellations, and mark no-shows separately for analytics.
 
 Core Components of Scheduling Bots
@@ -247,7 +246,7 @@ Handling Edge Cases: Conflicts, Cancellations, and No-Shows
 
 Real-world scheduling bots encounter three categories of edge cases that require explicit design decisions.
 
-Double-booking conflicts occur when two users attempt to claim the same slot simultaneously. Implement optimistic locking at the database level: fetch available slots, reserve a slot with a short-lived lock (30–60 seconds), confirm the booking, then release the lock. Most calendar APIs do not provide atomic reservation, so your application layer must handle this.
+Double-booking conflicts occur when two users attempt to claim the same slot simultaneously. Implement optimistic locking at the database level: fetch available slots, reserve a slot with a short-lived lock (30, 60 seconds), confirm the booking, then release the lock. Most calendar APIs do not provide atomic reservation, so your application layer must handle this.
 
 Cancellation windows need clearly defined rules. A common pattern is to allow free cancellation up to 24 hours before an appointment, charge a fee for same-day cancellations, and mark no-shows separately for analytics. Store the cancellation policy as a configurable rule per service type so the bot can communicate it accurately when users ask.
 
@@ -267,7 +266,7 @@ Use structured output formats for date parsing. Rather than parsing natural lang
 
 Implement confirmation loops before finalizing bookings. Before writing to the calendar, present a summary, "I'll book you with Dr. Smith on Tuesday, April 8th at 2:30 PM. Shall I confirm?", and require an explicit affirmation. This single step dramatically reduces erroneous bookings caused by NLP misinterpretation.
 
-Log all intent classifications with confidence scores. Low-confidence classifications are a leading indicator of user experience failures. Set a threshold (typically 0.6–0.7) below which the bot escalates to a human agent rather than guessing. Review these logs weekly to identify training data gaps.
+Log all intent classifications with confidence scores. Low-confidence classifications are a leading indicator of user experience failures. Set a threshold (typically 0.6, 0.7) below which the bot escalates to a human agent rather than guessing. Review these logs weekly to identify training data gaps.
 
 Frequently Asked Questions
 
@@ -278,7 +277,7 @@ How do I handle scheduling across multiple time zones for a distributed team?
 Store all times in UTC, display in the user's local time zone (detect from browser or ask explicitly), and always show the time zone label in confirmations. Never display "3:00 PM" without "3:00 PM EST" or equivalent. This eliminates the most common source of booking confusion.
 
 What is the typical no-show rate for automated scheduling bots versus human scheduling?
-Automated bots with multi-step reminders (48-hour email + 2-hour SMS) typically achieve no-show rates of 8–12%, compared to 20–30% for manually scheduled appointments with no reminders. The reminder cadence matters more than which tool you use.
+Automated bots with multi-step reminders (48-hour email + 2-hour SMS) typically achieve no-show rates of 8, 12%, compared to 20, 30% for manually scheduled appointments with no reminders. The reminder cadence matters more than which tool you use.
 
 How do I prevent the bot from overbooking during peak demand?
 Implement a slot reservation queue: when a user starts the booking flow, temporarily hold the slot for 90 seconds. If the user does not confirm within that window, release it. On the backend, use database-level constraints (unique indexes on provider + start_time) as a final safety net.

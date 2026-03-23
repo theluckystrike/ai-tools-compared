@@ -44,7 +44,6 @@ Choosing between Opus Clip and Vidyo AI for short-form video creation requires u
 | Pricing Model | Per-export credits | Per-minute API billing |
 | Best For | Single video quality optimization | High-volume batch pipelines |
 
-Key Takeaways
 
 - Start with whichever matches: your most frequent task, then add the other when you hit its limits.
 - If you work with: sensitive or proprietary content, look for options to opt out of data collection or use enterprise tiers with stronger privacy guarantees.

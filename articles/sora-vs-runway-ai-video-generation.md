@@ -117,7 +117,7 @@ Feature Comparison at a Glance
 
 | Feature | Sora | Runway Gen-3 |
 |---|---|---|
-| Max duration | 60+ seconds | 10–16 seconds |
+| Max duration | 60+ seconds | 10, 16 seconds |
 | Image-to-video | Limited | Strong (core feature) |
 | Video-to-video | No | Yes |
 | Physics coherence | Excellent | Good |

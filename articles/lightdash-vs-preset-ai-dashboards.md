@@ -242,7 +242,7 @@ For AI workloads, query performance matters significantly:
 
 Pricing and Team Size Fit
 
-Lightdash offers a free self-hosted tier and a cloud plan starting at around $400/month for small teams. The cost scales with seats, which works well for focused analytics teams of 5–20 people where most users are analysts who benefit directly from the dbt-integrated workflow.
+Lightdash offers a free self-hosted tier and a cloud plan starting at around $400/month for small teams. The cost scales with seats, which works well for focused analytics teams of 5, 20 people where most users are analysts who benefit directly from the dbt-integrated workflow.
 
 Preset's pricing is usage-based and typically higher for small teams but more cost-effective for large organizations where many users need read-only dashboard access. Preset's enterprise tier includes SSO, role-based access control, and dedicated support, features that matter more at organizations with hundreds of dashboard consumers than at a startup where everyone is an admin.
 

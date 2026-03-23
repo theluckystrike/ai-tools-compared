@@ -72,7 +72,7 @@ Weaknesses:
 - Sometimes over-engineers for small use cases
 - Doesn't validate against your specific Kubernetes version
 
-Pricing model: Per-token. Helm chart generation (5–10K tokens) costs ~$0.03–$0.05 per chart.
+Pricing model: Per-token. Helm chart generation (5, 10K tokens) costs ~$0.03, $0.05 per chart.
 
 GitHub Copilot (GitHub/OpenAI)
 
@@ -189,10 +189,10 @@ Comparison Table
 
 | Tool | Helm Accuracy | Multi-File Context | IDE Integration | Cost | Best Use Case |
 |------|---------------|-------------------|-----------------|------|---|
-| Claude 3.5 Sonnet | 9/10 | Excellent | Web/API | $0.03–$0.05 per chart | Full chart design, complex logic |
+| Claude 3.5 Sonnet | 9/10 | Excellent | Web/API | $0.03, $0.05 per chart | Full chart design, complex logic |
 | GitHub Copilot | 7/10 | Fair | Excellent (VS Code) | $10/month | Quick edits, pattern matching |
 | Claude 3 Opus | 10/10 | Excellent | Web/API | $0.10+ per chart | Edge cases, debugging |
-| Codeium | 6/10 | Poor | Good (multi-IDE) | Free–$12/month | Budget scaffolding |
+| Codeium | 6/10 | Poor | Good (multi-IDE) | Free, $12/month | Budget scaffolding |
 | ChatGPT 4o (OpenAI) | 7/10 | Fair | Web only | $20/month | Iteration, documentation |
 
 Real-World Workflow: Generating a Production Helm Chart

@@ -17,7 +17,6 @@ score: 9
 
 AI-powered pricing optimization has moved beyond simple markup formulas. Modern tools use machine learning to analyze demand elasticity, competitor behavior, and historical sales data to set prices that maximize revenue or profit. This guide covers practical AI tools for pricing optimization, with code examples you can integrate into your own systems.
 
-Key Takeaways
 
 - If you have used: the tool for at least 3 months and plan to continue, the annual discount usually makes sense.
 - Prisync is better suited: to e-commerce retailers tracking thousands of SKUs, while Competera adds AI-driven price recommendations on top of its monitoring layer.
@@ -38,7 +37,7 @@ Pricing optimization uses data to find the price point that balances volume and 
 
 - Constraint handling. respecting business rules like minimum margins or price floors
 
-Traditional rule-based pricing fails because it cannot handle the complexity of real-world demand curves. AI tools address this by learning from data and adapting to market changes. The difference between static and dynamic pricing can be significant: retailers using AI-driven dynamic pricing typically see 2–5% revenue lift compared to rule-based approaches, with some verticals like hospitality and airlines achieving 10%+ improvements.
+Traditional rule-based pricing fails because it cannot handle the complexity of real-world demand curves. AI tools address this by learning from data and adapting to market changes. The difference between static and dynamic pricing can be significant: retailers using AI-driven dynamic pricing typically see 2, 5% revenue lift compared to rule-based approaches, with some verticals like hospitality and airlines achieving 10%+ improvements.
 
 Open-Source Libraries for Pricing Optimization
 

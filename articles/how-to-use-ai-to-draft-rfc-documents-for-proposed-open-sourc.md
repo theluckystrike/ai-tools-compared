@@ -33,7 +33,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Artificial intelligence has become a valuable assistant for open source maintainers and contributors drafting Request for Comments (RFC) documents. When proposing new features to open source projects, a well-structured RFC helps reviewers understand your proposal, its rationale, and implementation details. AI tools can accelerate this process significantly.
 
-Key Takeaways
 
 - Start by explaining the: project and its RFC template requirements: ``` I need to write an RFC for an open source project that uses the following RFC template: 1.
 - Most large open source projects: including Kubernetes, Rust, and Django, have established RFC processes that require contributors to document their proposed changes before implementation begins.

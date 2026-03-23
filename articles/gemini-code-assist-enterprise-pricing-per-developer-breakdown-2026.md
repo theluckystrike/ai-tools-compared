@@ -85,7 +85,7 @@ annual_cost = developers * 19 * 12
 Enterprise tier has volume discounts. Expect 10-20% off list price for 100+ seats on annual contracts. Annual contracts are standard. month-to-month is typically 20% more expensive.
 Enterprise base licensing generally follows an annual subscription model with per-developer pricing. Organizations can typically expect to pay less per seat as their developer count increases, with tiered pricing structures rewarding larger deployments. The exact figures depend on negotiated agreements and specific feature inclusions.
 
-#### Cost Calculation Example
+Cost Calculation Example
 
 For a 50-developer team, enterprise pricing typically breaks down as:
 
@@ -99,7 +99,7 @@ Per-developer monthly: $25-50
 
 For larger organizations (200+ developers), per-seat costs typically decrease to $20-35/month due to volume discounts, resulting in better overall ROI.
 
-#### Additional Cost Variables
+Additional Cost Variables
 
 - Managed Deployment: +$500-2,000/month for private cloud hosting
 - SSO/SAML Integration: One-time setup fee of $1,000-3,000
@@ -111,7 +111,7 @@ Additional Cost Considerations
 
 Beyond base licensing, enterprises should budget for implementation support, integration with existing tooling, and administrative overhead. Security features like SSO integration, audit logging, and data residency options may incur additional charges depending on the chosen enterprise plan.
 
-#### ROI and Payback Analysis
+ROI and Payback Analysis
 
 Organizations deploying Gemini Code Assist enterprise typically see measurable productivity gains. Industry research suggests:
 

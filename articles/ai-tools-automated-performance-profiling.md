@@ -31,7 +31,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Performance profiling traditionally requires expertise to interpret flame graphs, read allocation traces, and correlate CPU spikes with code paths. AI tools are changing this by reading profiler output and explaining what to fix in plain language. This guide covers the tools and workflows that actually save debugging time.
 
-Key Takeaways
 
 - Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
 - Hot functions (sorted by self CPU time): ${JSON.stringify(hotFunctions, null, 2)}

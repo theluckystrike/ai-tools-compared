@@ -35,7 +35,6 @@ Product managers spend hours each week translating raw project tracker data into
 
 This guide examines the most effective approaches for automating stakeholder update creation in 2026, focusing on tools that integrate with popular project management platforms and produce developer-friendly outputs.
 
-Key Takeaways
 
 - Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
 - How do I get: started quickly? Pick one tool from the options discussed and sign up for a free trial.
@@ -263,7 +262,7 @@ Track how much time AI saves and where:
 | Review and refinement | 20 min | 20 min | 0% |
 | Total | 120 min | 30 min | 75% |
 
-Most teams find 75–85% time savings, with the remaining time spent on human review and strategic context-adding that only PMs can provide.
+Most teams find 75, 85% time savings, with the remaining time spent on human review and strategic context-adding that only PMs can provide.
 
 Frequently Asked Questions
 

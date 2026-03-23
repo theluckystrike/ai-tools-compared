@@ -252,28 +252,28 @@ Choose Softr if:
 - You need rapid deployment (weeks)
 - Your team is non-technical
 - You want Airtable integration as primary data source
-- Budget: $30–100/month
+- Budget: $30, 100/month
 
 Choose Glide if:
 - Mobile-first experience is critical
 - You have users on smartphones primarily
 - Real-time synchronization matters
-- Budget: $50–150/month
+- Budget: $50, 150/month
 
 Choose Bubble if:
 - You need complex custom workflows
 - Your escalation rules are sophisticated
 - You want to build a white-label solution
 - You need deep API integrations
-- Budget: $100–500+/month
+- Budget: $100, 500+/month
 
 Cost Analysis: Build vs. No-Code vs. SaaS
 
 | Solution | Setup Cost | Monthly Cost | Time to Deploy | Maintenance |
 |----------|-----------|---|------|---|
-| Build custom | $10k–50k | $500–2k | 3–6 months | High |
-| No-code (Softr/Glide) | $0–5k | $30–150 | 2–4 weeks | Low |
-| SaaS (Zendesk/Jira) | $0 | $100–1000 | Days | None |
+| Build custom | $10k, 50k | $500, 2k | 3, 6 months | High |
+| No-code (Softr/Glide) | $0, 5k | $30, 150 | 2, 4 weeks | Low |
+| SaaS (Zendesk/Jira) | $0 | $100, 1000 | Days | None |
 
 For fast validation: No-code. For long-term scalability: Mix no-code for MVP, then consider SaaS if feature requirements exceed platform limits.
 
@@ -386,13 +386,13 @@ avg by (priority) (resolution_time_hours)
 
 Migration Path: From Manual to Automated
 
-Week 1–2: Implement basic ticketing in your chosen platform
+Week 1, 2: Implement basic ticketing in your chosen platform
 
-Week 3–4: Add SLA automation and notifications
+Week 3, 4: Add SLA automation and notifications
 
-Week 5–6: Integrate with Slack/Teams for team adoption
+Week 5, 6: Integrate with Slack/Teams for team adoption
 
-Week 7–8: Monitor, refine, iterate based on team feedback
+Week 7, 8: Monitor, refine, iterate based on team feedback
 
 Month 3+: Consider adding knowledge base, automations for common issues
 

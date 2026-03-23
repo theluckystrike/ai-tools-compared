@@ -32,7 +32,6 @@ categories: [guides]
 
 Video frame interpolation transforms footage by generating intermediate frames between existing ones, effectively increasing the frame rate or creating smooth slow-motion effects. AI-powered tools have dramatically improved the quality of interpolated frames, moving beyond traditional optical flow methods to neural network approaches that produce more natural results.
 
-Key Takeaways
 
 - Tile large frames. For 4K and above: most models support tile-based inference that splits the frame into overlapping chunks, processes each chunk, and blends the results.
 - What resolution inputs do: these models support? Most models accept any resolution but are trained on standard resolutions (720p, 1080p).

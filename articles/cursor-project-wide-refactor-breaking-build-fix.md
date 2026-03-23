@@ -33,7 +33,6 @@ tags: [ai-tools-compared, troubleshooting]
 
 To fix a broken build after a Cursor project-wide refactor, start by running `git diff --stat` to identify all modified files, then clean and rebuild with `rm -rf node_modules package-lock.json && npm install`. The most common causes are broken import paths, out-of-sync TypeScript type definitions, and stale build caches. This guide provides a systematic five-step recovery process covering import fixes, type consistency, configuration files, and dependency resolution.
 
-Key Takeaways
 
 - Free tiers typically have: usage limits that work for evaluation but may not be sufficient for daily professional use.
 - The most common causes: are broken import paths, out-of-sync TypeScript type definitions, and stale build caches.

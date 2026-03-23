@@ -19,7 +19,6 @@ System design interviews are half memorization, half reasoning under pressure. Y
 
 This guide tests both on real interview scenarios: designing a URL shortener, a distributed cache, and a real-time notification system.
 
-Key Takeaways
 
 - Cache the hot 20%: → cache hit rate ~80%.
 - Redis needs: 30GB * 20% = 6 GB for hot URLs.

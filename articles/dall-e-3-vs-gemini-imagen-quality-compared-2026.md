@@ -31,7 +31,6 @@ voice-checked: true
 tags: [ai-tools-compared, comparison]
 ---
 
-Key Takeaways
 
 - Choose Gemini Imagen if: you prioritize photorealistic detail in complex scenes, human portrait generation, and integration with the Google Cloud ecosystem.
 - DALL-E 3 wins on: ease of use and stylistic control, while Imagen produces superior photorealistic output with more accurate lighting and shadow physics.

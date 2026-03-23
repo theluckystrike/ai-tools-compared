@@ -32,7 +32,6 @@ tags: [ai-tools-compared]
 
 Multi-stage Docker builds dramatically reduce image size by separating build dependencies from runtime artifacts. GitHub Copilot can accelerate Dockerfile creation by suggesting appropriate base images, stage configurations, and optimization strategies. This guide shows how to effectively collaborate with Copilot to produce production-ready multi-stage Dockerfiles.
 
-Key Takeaways
 
 - FROM --platform=$BUILDPLATFORM golang: 1.21-alpine as builder
 ARG TARGETARCH

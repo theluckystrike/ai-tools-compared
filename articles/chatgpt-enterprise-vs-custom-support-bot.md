@@ -137,7 +137,7 @@ Cost Structure
 
 ChatGPT Enterprise pricing is straightforward: pay per token. For moderate volume, this works well. A custom bot adds infrastructure costs, vector databases, API gateway, hosting, but gives you more predictable scaling as usage grows.
 
-To put realistic numbers on this, consider a support operation handling 10,000 conversations per month at roughly 1,000 tokens per conversation. At GPT-4o API rates (~$2.50/1M input tokens, ~$10/1M output tokens), a custom bot using the same underlying model costs approximately $30–50/month in API fees alone, plus $50–150/month for vector database and hosting. ChatGPT Enterprise pricing is not public, but enterprise agreements typically start at $30/user/month with minimum seat commitments. For small teams under 20 users, a custom bot often costs less at equivalent conversation volume.
+To put realistic numbers on this, consider a support operation handling 10,000 conversations per month at roughly 1,000 tokens per conversation. At GPT-4o API rates (~$2.50/1M input tokens, ~$10/1M output tokens), a custom bot using the same underlying model costs approximately $30, 50/month in API fees alone, plus $50, 150/month for vector database and hosting. ChatGPT Enterprise pricing is not public, but enterprise agreements typically start at $30/user/month with minimum seat commitments. For small teams under 20 users, a custom bot often costs less at equivalent conversation volume.
 
 Customization Depth
 
@@ -149,7 +149,7 @@ Maintenance Burden
 
 With ChatGPT Enterprise, OpenAI handles model updates, infrastructure, and reliability. A custom bot requires monitoring, updates, and troubleshooting. The maintenance investment grows with complexity, adding RAG, fine-tuning, or multi-channel deployment each add operational requirements.
 
-Expect a custom bot to require 4–8 engineering hours per month for routine maintenance: updating the knowledge base, reviewing failed responses, adjusting prompts, and handling library dependency updates. Add a one-time build cost of 80–200 hours for initial implementation, testing, and deployment.
+Expect a custom bot to require 4, 8 engineering hours per month for routine maintenance: updating the knowledge base, reviewing failed responses, adjusting prompts, and handling library dependency updates. Add a one-time build cost of 80, 200 hours for initial implementation, testing, and deployment.
 
 Data Control
 
@@ -513,7 +513,7 @@ Can I use ChatGPT Enterprise for HIPAA-compliant healthcare support?
 OpenAI offers a Business Associate Agreement (BAA) for ChatGPT Enterprise, making it eligible for use with Protected Health Information. Review the agreement terms carefully before deployment, and ensure your integration layer also meets HIPAA technical safeguards.
 
 How long does it take to build a production-quality custom support bot?
-A minimal viable bot with RAG and basic escalation logic takes 3–6 weeks for an experienced team. Adding fine-tuning, multi-channel deployment (web, mobile, Slack), and enterprise-grade monitoring extends the timeline to 3–4 months. Factor in time for knowledge base curation, which is often underestimated.
+A minimal viable bot with RAG and basic escalation logic takes 3, 6 weeks for an experienced team. Adding fine-tuning, multi-channel deployment (web, mobile, Slack), and enterprise-grade monitoring extends the timeline to 3, 4 months. Factor in time for knowledge base curation, which is often underestimated.
 
 Does ChatGPT Enterprise support integration with Salesforce or Zendesk?
 ChatGPT Enterprise integrates with third-party platforms primarily through its API. OpenAI offers native connectors for some platforms, and the broader ecosystem of middleware tools (Zapier, Make, custom webhooks) covers most CRM and ticketing systems. A custom bot typically achieves tighter integration by calling service APIs directly within the response pipeline.

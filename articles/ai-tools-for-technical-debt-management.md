@@ -31,7 +31,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Technical debt accumulates in every codebase. AI tools don't eliminate debt, but they can accelerate the three stages that matter: identifying it systematically, prioritizing what to fix, and generating the refactored code. This guide covers practical workflows for each stage.
 
-Key Takeaways
 
 - The Community Edition is: free and covers the most common debt patterns for Java, Python, JavaScript, and TypeScript.
 - CRITICAL - likely to cause bugs: security issues, or major maintenance problems

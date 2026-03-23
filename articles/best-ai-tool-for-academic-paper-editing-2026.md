@@ -33,7 +33,6 @@ tags: [ai-tools-compared, best-of, artificial-intelligence]
 
 For most academic developers, combine LanguageTool for baseline grammar and custom rule enforcement with the ChatGPT API for advanced style editing, this pipeline gives you self-hosted data privacy, batch processing, and fully customizable editing rules. If you need a single-tool solution, Grammarly offers the best balance of academic writing detection and API integration. Wordtune's Overleaf integration makes it the top pick specifically for LaTeX-based STEM papers.
 
-Key Takeaways
 
 - Researchers using Overleaf will: find Wordtune's integration most useful.
 - The business-tier API supports: document-level requests up to 150,000 characters, which covers most research papers comfortably.
@@ -102,7 +101,7 @@ def academic_rewrite(text, mode='formal'):
     return paraphrased.text
 ```
 
-The tool's citation generator supports APA, MLA, and Chicago formats, though integration with Zotero or BibTeX requires custom scripting. A practical workflow pairs QuillBot's paraphrasing at strength 4–5 (moderate transformation) with a subsequent LanguageTool pass to catch any grammar issues introduced during rewriting.
+The tool's citation generator supports APA, MLA, and Chicago formats, though integration with Zotero or BibTeX requires custom scripting. A practical workflow pairs QuillBot's paraphrasing at strength 4, 5 (moderate transformation) with a subsequent LanguageTool pass to catch any grammar issues introduced during rewriting.
 
 3. LanguageTool: Open-Source Flexibility
 
@@ -179,7 +178,7 @@ def academic_edit(document, target_journal='nature'):
     return response.choices[0].message.content
 ```
 
-This approach requires more setup but delivers highly customized results. Adding reference validation via CrossRef API enhances the workflow significantly. Set `temperature` to 0.2–0.3 for editing tasks; higher values introduce undesirable variation in technical text.
+This approach requires more setup but delivers highly customized results. Adding reference validation via CrossRef API enhances the workflow significantly. Set `temperature` to 0.2, 0.3 for editing tasks; higher values introduce undesirable variation in technical text.
 
 Comparative Analysis
 

@@ -2241,7 +2241,6 @@ Cursor Free Tier Limitations: What Stops Working After Trial
 
 Cursor AI offers a free tier that allows developers to experience the power of AI-assisted coding before committing to a paid plan. However, once the initial trial period or free credits are exhausted, several key features become limited or unavailable. Understanding these limitations helps you decide whether to upgrade to a paid plan or adjust your workflow accordingly.
 
-Key Takeaways
 
 - Limited Chat Access Free: users can still use Cursor's chat feature, albeit with: - Reduced message limits per day - Access to the basic fast model only - Shorter conversation history ### 3.
 - If you have used: the tool for at least 3 months and plan to continue, the annual discount usually makes sense.

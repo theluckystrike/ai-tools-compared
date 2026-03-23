@@ -370,8 +370,8 @@ AI-generated documentation should include all five elements: parameter descripti
 
 Cost Comparison for 1000+ Functions
 
-- Claude: $50–$100/month (batch documentation generation)
-- Copilot: $100–$1,000/month (100–1,000 users)
+- Claude: $50, $100/month (batch documentation generation)
+- Copilot: $100, $1,000/month (100, 1,000 users)
 - Mintlify Pro: $50/month + free tier for public APIs
 
 Claude provides the best ROI for teams with large codebases.

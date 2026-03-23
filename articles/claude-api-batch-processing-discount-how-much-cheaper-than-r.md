@@ -290,7 +290,7 @@ Not storing batch IDs persistently: If your process crashes before retrieval, yo
 
 Ignoring the 24-hour processing window: Batch processing is not suitable for SLA-bound workflows. If you need guaranteed sub-minute response times, use real-time even at higher cost.
 
-Using batch mode for tiny volumes: The overhead of managing asynchronous state is only worth it when you have at least a few hundred requests. For 10–20 requests, real-time is simpler and the cost difference is negligible.
+Using batch mode for tiny volumes: The overhead of managing asynchronous state is only worth it when you have at least a few hundred requests. For 10, 20 requests, real-time is simpler and the cost difference is negligible.
 
 Frequently Asked Questions
 

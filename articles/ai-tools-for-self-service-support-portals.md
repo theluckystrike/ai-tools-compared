@@ -32,7 +32,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Self-service support portals have evolved beyond static FAQ pages. Modern implementations use AI to provide instant answers, automate ticket routing, and personalize user experiences. This guide covers practical implementations of AI tools for developers building or enhancing self-service support portals.
 
-Key Takeaways
 
 - The result: reduced support volume, faster resolution times, and improved user satisfaction.
 - Modern implementations use AI: to provide instant answers, automate ticket routing, and personalize user experiences.
@@ -263,7 +262,7 @@ Confidence Thresholds and Routing Rules
 Raw classification scores tell you how confident the model is, but confidence alone doesn't dictate the right action. Combine confidence with routing rules to build a tiered triage system:
 
 - High confidence (>0.85): Auto-route to the correct queue with no human review
-- Medium confidence (0.60–0.85): Route to the queue but flag for agent spot-check
+- Medium confidence (0.60, 0.85): Route to the queue but flag for agent spot-check
 - Low confidence (<0.60): Send to a triage agent who reviews and reclassifies manually
 
 Store misclassified tickets and their corrected labels. Over time this dataset becomes training data for a fine-tuned classifier that outperforms the zero-shot baseline on your specific product vocabulary.

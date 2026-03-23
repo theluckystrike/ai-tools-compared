@@ -373,7 +373,7 @@ Performance Notes
 - Embedding a single query with `text-embedding-3-small` takes ~50ms
 - Batch indexing: 1000 chunks/minute is a safe rate without hitting OpenAI rate limits
 - Consider `pgvector`'s HNSW index if you need consistent <10ms query latency
-- HNSW build time is 5–10x slower than IVFFlat but query time is more predictable under load
+- HNSW build time is 5, 10x slower than IVFFlat but query time is more predictable under load
 - For 10M+ rows, consider partitioning the `documents` table by tenant or date to keep per-partition index sizes manageable
 
 Operational Checklist

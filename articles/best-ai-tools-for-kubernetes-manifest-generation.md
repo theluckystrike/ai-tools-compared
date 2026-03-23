@@ -33,7 +33,6 @@ tags: [ai-tools-compared, best-of, artificial-intelligence]
 
 Writing Kubernetes manifests by hand is error-prone. the YAML is verbose, security defaults are non-obvious, and a missing field can cause silent misconfigurations that only surface under load. AI tools have gotten good at generating correct, production-ready manifests.
 
-Key Takeaways
 
 - Writing Kubernetes manifests by hand is error-prone: the YAML is verbose, security defaults are non-obvious, and a missing field can cause silent misconfigurations that only surface under load.
 - Start with free options: to find what works for your workflow, then upgrade when you hit limitations.

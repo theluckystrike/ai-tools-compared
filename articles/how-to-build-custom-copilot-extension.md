@@ -31,7 +31,6 @@ tags: [ai-tools-compared]
 
 GitHub Copilot Extensions let you build custom agents that appear as `@your-agent` in Copilot Chat. Users can invoke your extension directly from their editor or github.com, and you handle the conversation with your own backend. This guide covers the full build: registering the app, handling authentication, streaming responses, and deploying.
 
-Key Takeaways
 
 - Users can invoke your: extension directly from their editor or github.com, and you handle the conversation with your own backend.
 - You choose the LLM: the data sources, and the business logic.

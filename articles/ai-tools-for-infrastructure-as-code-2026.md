@@ -31,7 +31,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Infrastructure as Code is one of the highest-risk areas for AI hallucinations. A hallucinated Terraform resource that references a non-existent attribute doesn't just fail tests. it can leave infrastructure in a broken state or, worse, create insecure configurations silently. This guide evaluates AI tools specifically for IaC accuracy and security defaults.
 
-Key Takeaways
 
 - Use Claude Sonnet for initial IaC generation: best security defaults
 2.

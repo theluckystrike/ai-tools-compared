@@ -32,7 +32,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Writing prompts that produce clean, idiomatic code requires more than simply describing what you want. The difference between generic code and language-appropriate solutions often comes down to how you structure your request. This guide covers practical techniques for eliciting idiomatic code from AI coding assistants across multiple programming languages.
 
-Key Takeaways
 
 - Use case context: Describe what the code should accomplish
 

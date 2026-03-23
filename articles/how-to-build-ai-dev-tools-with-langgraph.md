@@ -31,7 +31,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 LangGraph lets you build AI workflows that maintain state across multiple steps, loop until conditions are met, and route to different agents based on intermediate results. For developer tools, this means you can build a code agent that writes code, runs tests, reads the failure output, fixes the code, and loops until tests pass. without hardcoding the number of steps.
 
-Key Takeaways
 
 - Use simple LLM calls: for one-shot tasks or when latency is critical (graph overhead adds ~50ms).
 - Use streaming for long: tasks. LangGraph supports streaming intermediate state.

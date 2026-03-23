@@ -32,7 +32,6 @@ tags: [ai-tools-compared, workflow, chatgpt]
 
 If you have been using Grammarly for writing assistance and want to explore ChatGPT as an alternative editing tool, this guide will help you migrate your workflow effectively. Both tools serve similar purposes but operate differently, and understanding these differences will help you transition smoothly.
 
-Key Takeaways
 
 - The free tier through: chat.openai.com works for occasional editing but becomes limiting for heavy users.
 - Free tiers typically have: usage limits that work for evaluation but may not be sufficient for daily professional use.
@@ -198,8 +197,8 @@ When evaluating long-term investment:
 |------|------|----------|---------|
 | Grammarly Free | $0 | Basic grammar checks | Real-time |
 | Grammarly Premium | $120/year | Advanced suggestions | Real-time |
-| ChatGPT Plus | $200/year | Bulk editing, rewriting | 2–5 seconds |
-| Claude Pro | $240/year | Deep editing, refactoring | 2–5 seconds |
+| ChatGPT Plus | $200/year | Bulk editing, rewriting | 2, 5 seconds |
+| Claude Pro | $240/year | Deep editing, refactoring | 2, 5 seconds |
 | Custom GPT API | Pay-per-use | High-volume automation | Variable |
 
 For heavy users (20+ documents/month), ChatGPT Plus or Claude Pro pays for itself through time savings. For lighter use, Grammarly Premium alone may suffice.
@@ -305,7 +304,7 @@ metrics = compare_edits(original, chatgpt_edited)
 print(json.dumps(metrics, indent=2))
 ```
 
-Track these metrics across 10–20 documents to determine if ChatGPT editing meets your quality bar and justifies the subscription cost.
+Track these metrics across 10, 20 documents to determine if ChatGPT editing meets your quality bar and justifies the subscription cost.
 
 Frequently Asked Questions
 

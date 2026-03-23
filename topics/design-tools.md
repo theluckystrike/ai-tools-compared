@@ -5,7 +5,7 @@ description: "Comparisons of AI design tools: Midjourney, DALL-E, Figma AI, Canv
 permalink: /topics/design-tools/
 ---
 
-# AI Design Tools
+AI Design Tools
 
 Guides and comparisons for AI image generation, UI mockup tools, and visual design assistants.
 

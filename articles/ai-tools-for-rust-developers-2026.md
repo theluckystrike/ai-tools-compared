@@ -31,7 +31,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Rust's ownership model, borrow checker, and type system create unique challenges for AI code generation. Most models understand Rust syntax but struggle with lifetime annotations, async/await with Send + Sync bounds, and error handling patterns. This guide tests the tools specifically on Rust's hard parts.
 
-Key Takeaways
 
 - Start with free options: to find what works for your workflow, then upgrade when you hit limitations.
 - Most models understand Rust: syntax but struggle with lifetime annotations, async/await with Send + Sync bounds, and error handling patterns.

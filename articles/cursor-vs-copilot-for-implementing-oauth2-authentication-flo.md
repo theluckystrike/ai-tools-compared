@@ -33,7 +33,6 @@ tags: [ai-tools-compared, comparison]
 
 Implementing OAuth2 authentication in an Express application involves multiple components: route setup, token handling, callback processing, and security considerations. Both GitHub Copilot and Cursor can assist with this task, but their approaches differ. This comparison examines how each tool performs when building OAuth2 flows in Express.
 
-Key Takeaways
 
 - Redirecting users to the: authorization server 2.
 - Start with whichever matches: your most frequent task, then add the other when you hit its limits.

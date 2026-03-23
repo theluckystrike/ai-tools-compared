@@ -8,7 +8,7 @@ voice-checked: true
 date: 2026-03-21
 ---
 
-# AI IDE & Editor Extensions. VS Code, JetBrains, Vim & Neovim
+AI IDE & Editor Extensions. VS Code, JetBrains, Vim & Neovim
 
 Your choice of IDE shapes how you interact with AI coding assistants. VS Code, JetBrains IntelliJ, Vim, and Neovim each offer different AI extension ecosystems with varying levels of integration. This hub covers autocomplete behavior differences between editors, keybinding migration guides when switching tools, and setup instructions for getting the most out of AI features in your preferred development environment. From Copilot in Neovim to Cursor AI editor themes, find the right configuration for your workflow.
 

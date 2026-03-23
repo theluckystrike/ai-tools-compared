@@ -81,7 +81,7 @@ Strengths:
 - Can generate workflows AND documentation
 - Widely available, stable API
 
-Pricing: Free tier (limited), $20/month Plus, $0.02–$0.30 per 1K tokens (API)
+Pricing: Free tier (limited), $20/month Plus, $0.02, $0.30 per 1K tokens (API)
 
 Workflow Generation Accuracy: 8/10. Occasionally over-complicates simple tasks.
 
@@ -135,7 +135,7 @@ Detailed Comparison Table
 | Copilot | 9 | 8 | 6 | 7 | 7 | $10/mo | Interactive editing, speed |
 | ChatGPT 4 | 8 | 8 | 7 | 8 | 8 | $20/mo | Documentation + workflow |
 | Cursor+Claude | 9 | 9 | 9 | 9 | 9 | $20/mo | Large codebases, DX |
-| CodeWhisperer | 7 | 7 | 6 | 7 | 7 | Free–$19 | AWS deployments |
+| CodeWhisperer | 7 | 7 | 6 | 7 | 7 | Free, $19 | AWS deployments |
 
 Practical Workflow Examples
 
@@ -273,7 +273,7 @@ Q: Can AI-generated workflows go straight to production?
 A: Not recommended. Always review for security (secret handling, permissions), test with `act` locally, and run on a test branch first.
 
 Q: Do I need to pay for each tool, or can I pick one?
-A: Most teams use 1–2 tools. Copilot ($10/mo) covers 80% of cases; add Claude ($20/mo) for complex workflows.
+A: Most teams use 1, 2 tools. Copilot ($10/mo) covers 80% of cases; add Claude ($20/mo) for complex workflows.
 
 Q: How often do workflows need regeneration?
 A: Actions and best practices change monthly. Regenerate quarterly or when adding new deployment targets.

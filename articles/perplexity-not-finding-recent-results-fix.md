@@ -33,7 +33,6 @@ tags: [ai-tools-compared, troubleshooting]
 
 Perplexity has become a go-to tool for developers and researchers who need AI-powered search with citations. However, users sometimes encounter issues where the tool fails to return recent results or provides outdated information. This guide covers the most common causes and practical solutions.
 
-Key Takeaways
 
 - Account and Subscription Tier: Free tier users sometimes experience limitations on search frequency and recency.
 - Free tiers typically have: usage limits that work for evaluation but may not be sufficient for daily professional use.

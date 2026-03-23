@@ -112,7 +112,7 @@ time_hours,heap_mb,external_mb,gc_frequency
 
 Claude identified:
 
-1. Growth rate: ~85MB per hour in hours 0–7, then plateau attempt at hour 8 (GC thrashing).
+1. Growth rate: ~85MB per hour in hours 0, 7, then plateau attempt at hour 8 (GC thrashing).
 2. External memory stable: Not a C++ binding leak (Buffer-related).
 3. GC frequency drops: Sign of GC pause cost increasing (more to scan).
 

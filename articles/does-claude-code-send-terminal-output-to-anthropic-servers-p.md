@@ -32,7 +32,6 @@ tags: [ai-tools-compared, claude-ai]
 
 Understanding what data Claude Code transmits to Anthropic's servers is crucial for developers working in sensitive environments or those with strict privacy requirements. This article examines the actual data flow between Claude Code and Anthropic's infrastructure, providing you with the technical details needed to make informed decisions about using this AI coding assistant.
 
-Key Takeaways
 
 - Use read-only commands when possible: Commands like `claude --read` limit write operations
 

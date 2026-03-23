@@ -32,7 +32,6 @@ tags: [ai-tools-compared, best-of, artificial-intelligence]
 
 Claude Code and Cursor lead the pack for Python asyncio development, with Claude Code excelling at complex concurrent patterns and Cursor providing the tightest editor integration. Both tools understand asyncio fundamentals, but they differ in their strengths when handling advanced patterns like task groups, shared state management, and error propagation across concurrent operations.
 
-Key Takeaways
 
 - It should recognize when: to use semaphores for rate limiting, implement proper cancellation handling, and avoid common pitfalls like blocking calls in async functions.
 - Cursor: Best Editor Integration

@@ -5,7 +5,7 @@ description: "Comparisons of AI productivity tools for developers: CI/CD, DevOps
 permalink: /topics/productivity/
 ---
 
-# AI Productivity Tools
+AI Productivity Tools
 
 Guides and comparisons for AI tools that improve developer productivity, from CI/CD automation to testing and cost management.
 

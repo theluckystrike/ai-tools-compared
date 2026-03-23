@@ -146,11 +146,11 @@ Here are approximate ranges based on task type, using Claude 3.5 Sonnet pricing 
 
 | Task Type | Approx Reasoning Tokens | Extra Cost per Request |
 |-----------|------------------------|----------------------|
-| Simple factual lookup | 0–50 | ~$0.0008 |
-| Basic code generation | 100–300 | ~$0.003 |
-| Algorithm design | 500–1,500 | ~$0.015 |
-| Complex debugging | 1,000–3,000 | ~$0.03 |
-| System architecture | 2,000–6,000 | ~$0.075 |
+| Simple factual lookup | 0, 50 | ~$0.0008 |
+| Basic code generation | 100, 300 | ~$0.003 |
+| Algorithm design | 500, 1,500 | ~$0.015 |
+| Complex debugging | 1,000, 3,000 | ~$0.03 |
+| System architecture | 2,000, 6,000 | ~$0.075 |
 
 These are estimates. actual token counts depend on the model version, your specific prompt, and how deep the reasoning chain runs. Monitor your actual usage with the tracking pattern described in the next section to build an accurate picture for your workload.
 
@@ -278,11 +278,11 @@ Step-by-Step Workflow: Benchmarking Extended Thinking for Your Use Case
 
 Before committing to extended thinking across your application, run a structured benchmark to measure whether the quality improvement justifies the cost increase for your specific workload.
 
-Step 1: Select representative prompts. Pick 20–30 prompts from your actual production logs that span the range of complexity in your workload. Include both simple and complex cases.
+Step 1: Select representative prompts. Pick 20, 30 prompts from your actual production logs that span the range of complexity in your workload. Include both simple and complex cases.
 
 Step 2: Run each prompt twice. Send each prompt once with extended thinking enabled and once without. Use the same `max_tokens` value for both runs. Record the input tokens, output tokens, and response content for each.
 
-Step 3: Score the responses. Use a simple rubric: correctness (0–3), completeness (0–3), and clarity (0–2). Have at least two reviewers score each response independently and average the scores.
+Step 3: Score the responses. Use a simple rubric: correctness (0, 3), completeness (0, 3), and clarity (0, 2). Have at least two reviewers score each response independently and average the scores.
 
 Step 4: Calculate the cost delta. For each prompt pair, compute the extra cost from extended thinking: `(extended_output_tokens - standard_output_tokens) / 1_000_000 * output_rate`.
 

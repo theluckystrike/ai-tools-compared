@@ -32,7 +32,6 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 Modern software projects increasingly span multiple programming languages. A typical stack might combine Python data processing, TypeScript frontends, Rust performance components, and Go microservices. This polyglot reality creates unique challenges for AI coding assistants that rely on context windows to understand and generate code.
 
-Key Takeaways
 
 - Are there free alternatives: available? Free alternatives exist for most tool categories, though they typically come with limitations on features, usage volume, or support.
 - Stale dependency graphs are worse than none: they cause AI tools to generate code targeting the wrong communication pattern.
