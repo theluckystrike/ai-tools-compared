@@ -9,7 +9,7 @@ permalink: /how-to-use-ai-coding-assistants-for-technical-debt-reduction/
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 ---
